@@ -1489,3 +1489,190 @@ state = "complete"
     "src/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost",
     "src/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost",
   ]
+
+[[deliverables]]
+id = "scripture-chronology-corpus-2026-08-26"
+owner = "guidance/scripture-chronology.md"
+promise = "A provider-neutral, translation-independent, traditional-Catholic Scripture chronology corpus exists behind the Bible locus/projection layer; it supports a variable number of typed temporal assertions per locus; preserves provenance, alternative traditional claims, uncertainty, and typed resolution failures; can generate and query verse-level chronology without duplicating authored data per translation; and ultimately covers the complete addressable Scripture corpus without downstream documents re-deriving dates."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "governing-contract"
+  criterion = "A tracked guidance file owns the chronology semantics, traditional chronology policy, authority hierarchy, relation vocabulary, inheritance rules, provenance requirements, and the consumer contract, and repository routing sends a future agent to it."
+  status = "pass"
+  evidence = ["guidance/scripture-chronology.md", "AGENTS.md"]
+
+  [[deliverables.requirements]]
+  id = "translation-independent-identity"
+  criterion = "Chronology identity rests on named Scripture textual/addressing systems rather than translation editions; the Vulgate remains the preferred shared system wherever an existing safe correspondence holds, and shared chronology is authored once there rather than duplicated per system; a textually distinct non-Vulgate locus may own chronology natively; a failed projection into the Vulgate does not imply a failed native chronology query, mapping status and chronology status being separate axes; chronology is not duplicated per translation; and no universal verse-space fiction is introduced."
+  status = "open"
+  evidence = [
+    "scripts/_chronology.py",
+    "guidance/scripture-chronology.md",
+    "tools/tests/test_chronology.py",
+  ]
+  note = "Reopened 2026-08-27. The former criterion was satisfiable by one named system, `vulgate`, and so did not prove the requirement it was written for. The corpus treated a concordance refusal as a chronology refusal, which conflates two questions: whether this locus can be asserted equivalent to that one, and whether this locus can carry chronology at all. A textually distinct locus - the Greek Sirach is the repository's own standing example - must be able to own native chronology while its mapping to the Vulgate is still refused."
+
+  # 2026-08-27, post-audit correction lane: READY_FOR_REREVIEW, and still open,
+  # because this lane authored the corrections and may not accept its own work.
+  # All five criteria now hold, the fifth for the first time. The cold audit
+  # confirmed four and kept this open because the §3.0 gate probed only a span's
+  # first locus: it now walks every locus the witness prints inside the span,
+  # refuses a duplicated fact rather than a safe correspondence, and asks the
+  # module that owns each system which kind it is - a psalter renumbering may
+  # never date natively where the concordance carries, a witness to another text
+  # may. A successful mapping no longer discards a native assertion. The
+  # regression fixture is a span whose first locus refuses and whose interior
+  # would duplicate; it loads under the old gate and is refused by the new one.
+  # The next cold reviewer decides PASS; see post-audit-rereview-manifest.tsv.
+
+  # 2026-08-27, final repair lane: READY_FOR_FINAL_COLD_ACCEPTANCE, and still
+  # open. The targeted cold re-review of the 92 changed rows recommended PASS
+  # on all five criteria, verifying the fifth by construction rather than by
+  # reading the tests, and none of the 23 rows it failed touches this
+  # requirement. The repair lane that closed those 23 changed nothing here
+  # either. But that re-review disclosed that it ran in the same session as the
+  # lane it reviewed, and this lane is in the same position, so neither may
+  # accept. The reviewer who marks this pass reviews every row of
+  # final-acceptance-manifest.tsv from a clean session.
+
+  [[deliverables.requirements]]
+  id = "typed-many-valued-model"
+  criterion = "One locus resolves to any number of typed temporal assertions, one event binds to many loci, composition chronology is independent of narrated-event chronology, and prophecy is not collapsed into ordinary narration."
+  status = "pass"
+  evidence = [
+    "scripts/_chronology.py",
+    "src/sources/chronology/bindings.yaml",
+    "src/sources/chronology/events.yaml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "traditional-profile"
+  criterion = "A named traditional Catholic chronology profile states operationally what traditional means, which authorities win when sources differ, which are excluded, and that modern critical chronology is a separate profile rather than a silent correction."
+  status = "pass"
+  evidence = ["src/sources/chronology/profiles.yaml"]
+
+  [[deliverables.requirements]]
+  id = "provenance-and-alternatives"
+  criterion = "Every substantive chronology assertion names inspected repository source evidence or an explicit deterministic derivation over such evidence, carries a prose basis, and material traditional disagreements remain represented with their dispositions rather than harmonized."
+  status = "pass"
+  evidence = [
+    "src/sources/chronology/events.yaml",
+    "src/sources/chronology/composition.yaml",
+    "src/sources/works/catholic-encyclopedia",
+  ]
+
+  [[deliverables.requirements]]
+  id = "machine-validation"
+  criterion = "Schema and semantic gates reject malformed identifiers, impossible dates, year zero, inverted ranges, missing referenced events or profiles, unrecognized relations, ambiguous overlapping inheritance, dangling source references, scopes past a chapter's end, stale generated output, and untyped unresolved states."
+  status = "pass"
+  evidence = [
+    "tools/scripture-chronology",
+    "tools/tests/test_chronology.py",
+    "tests/tools/scripture-chronology.test",
+  ]
+
+  [[deliverables.requirements]]
+  id = "verse-query"
+  criterion = "A deterministic library and tool answer a Scripture-locus chronology query with every applicable explicit and inherited temporal assertion in a defined stable order, and never silently choose one assertion when alternatives exist."
+  status = "pass"
+  evidence = ["scripts/_chronology.py", "tools/scripture-chronology"]
+
+  [[deliverables.requirements]]
+  id = "generated-coverage-view"
+  criterion = "A derived machine-consumer view expands compact authored ranges and inheritance to verse-level coverage without becoming the source of truth, is reproducible, and is gated for staleness rather than silently rebuilt during verification."
+  status = "pass"
+  evidence = ["src/sources/chronology/coverage.tsv", "Makefile"]
+
+  [[deliverables.requirements]]
+  id = "representative-hard-cases"
+  criterion = "Automated fixtures prove the model on the Psalter's Vulgate/Hebrew numbering, a four-Gospel Passion harmony sharing one event, prophecy against fulfilment, book-level composition inheritance, a deuterocanonical arrangement refusal, a traditional-versus-modern profile boundary, a locus carrying three or more relation types, and a preserved traditional disagreement."
+  status = "pass"
+  evidence = ["tools/tests/test_chronology.py"]
+
+  [[deliverables.requirements]]
+  id = "exhaustive-coverage"
+  criterion = "Coverage is reported over a universe that is named rather than assumed. Every locus of the Vulgate/Clementine primary chronology universe reaches exactly one typed chronology status and none is silently undated; separately, every additional native locus in each non-Vulgate textual/addressing system the chronology subsystem declares native support for is accounted for, without counting an alternate numbering of a safely corresponding text as new Scripture; cross-system mapping status is reported as its own axis rather than as a chronology status; and the report distinguishes substantive, composition-only, multi-assertion, alternative-bearing, research-gap and mapping-refused categories without a bare headline percentage."
+  status = "open"
+  evidence = [
+    "src/sources/chronology/coverage.tsv",
+    "src/sources/chronology/gaps.yaml",
+    "guidance/scripture-chronology.md",
+    "tools/tests/test_chronology.py",
+  ]
+  note = "Reopened 2026-08-27. The former criterion proved exhaustive Vulgate/Clementine accounting - 35 809 verses, none research-pending - and was marked pass on that basis, but it did not prove exhaustive coverage of every locus the chronology layer can address once native non-Vulgate systems are admitted, because the layer admitted none. It returns to pass only when the corrected universe is honestly and completely enumerated; if the repository's machinery cannot yet enumerate a supported system's native loci, this stays open with that reason recorded."
+
+  # 2026-08-27, post-audit correction lane: still open, and now open for a
+  # reason the criterion names rather than for a defect. Every locus of every
+  # declared native system reaches a chronology status of its own: a mapping
+  # word no longer stands in the chronology axis, a native locus whose mapping
+  # refuses consults gap rows scoped in its own system and otherwise reaches
+  # §9's honest default, and native scopes are bounded by their own witness
+  # rather than by the canon, which had left `EsthGr` unauthorable. Seven loci
+  # answer `research-pending` - one Greek Esther locus and six World English
+  # Catholic ones - because no ranked source has been inspected for them, and
+  # this lane invented no date to close them. Three of the ten the audit counted
+  # were never loci: `_system_loci` filled each chapter from its first printed
+  # verse to its last, and the corrected universe is 35 809 + 1 356 + 6 + 0 =
+  # 37 171. The criterion is unweakened, and stays open while any locus is
+  # `research-pending`.
+
+  # 2026-08-27, final repair lane: READY_FOR_FINAL_COLD_ACCEPTANCE, and still
+  # open, on the criterion AS WRITTEN. The targeted cold re-review read it
+  # strictly and found all five things it asks for satisfied: the universe is
+  # named, every Vulgate locus reaches exactly one typed status, every
+  # additional native locus is accounted for without counting an alias as new
+  # Scripture, mapping status is reported on its own axis, and the report
+  # distinguishes substantive, composition-only, multi-assertion,
+  # alternative-bearing, research-gap and mapping-refused without a headline
+  # percentage. The criterion nowhere requires zero `research-pending`: it
+  # requires a research-gap CATEGORY, and the seven native loci occupy it
+  # honestly. The note above read it more strictly than it is written and kept
+  # the requirement open on that reading. Erring toward open is the safe
+  # direction, and it stays open here for that reason and because no lane that
+  # authored the corpus may accept it -- but if the maintainer intends the
+  # stricter reading, the criterion should SAY so rather than be enforced by a
+  # note. The seven loci are preserved: no date was invented to close them.
+
+  [[deliverables.requirements]]
+  id = "consumer-non-derivation-contract"
+  criterion = "Tracked guidance states that propers and every other consumer must obtain biblical chronology from this corpus and must not independently research, infer, harmonize, or invent a replacement date when the corpus is absent or unresolved."
+  status = "pass"
+  evidence = ["guidance/scripture-chronology.md"]
+
+  [[deliverables.requirements]]
+  id = "independent-source-audit"
+  criterion = "A cold agent that did not author or correct the chronology independently reopens the cited sources and performs the required high-risk and stratified source audit, records exact PASS / CHANGES REQUIRED findings with source loci, and no chronology acceptance, merge, or propers integration occurs until that independent disposition is PASS."
+  status = "open"
+  evidence = ["guidance/scripture-chronology.md", "PROJECT-WORK.md"]
+  note = "Added 2026-08-27 by the correction lane, which may not mark it pass. Machine-valid is not source-verified: the population wave passed every gate and its own authors' review, and a second reader still found a quotation from memory, a wrong relative anchor, a modern-critical figure inside the traditional profile, an unretained claim of source silence that proved false for half its subjects, and a refusal that went stale mid-wave. Author self-review cannot discharge this. The corpus is a canonical factual dependency for every future proper, which makes false confidence more dangerous than missing data."
+
+  # 2026-08-27: the cold audit ran and returned CHANGES_REQUIRED - 104 standing
+  # findings over 84 distinct defects, one critical. The post-audit correction
+  # lane dispositioned all 104: 96 fixed, 8 withdrawn on evidence stronger than
+  # the audit's, none blocked and none unresolved. That does NOT discharge this
+  # requirement. An author correcting findings is not an independent acceptance,
+  # and the corrections are themselves unreviewed. It stays open until a cold
+  # reviewer reopens every row of post-audit-rereview-manifest.tsv - 92 changed
+  # claims, binding scopes, gap rows and hard cases, none of them sampled - and
+  # returns PASS.
+
+  # 2026-08-27: that re-review ran and returned CHANGES_REQUIRED -- 23 of 114
+  # rows, 9 major, 0 critical -- and disclosed that it was NOT independent at
+  # the session level, so it discharges nothing here either. A bounded repair
+  # lane then closed all 23. It also found what the 92-row manifest could not:
+  # four binding groups changed with no scope change (two of them corrected
+  # misquotations of the tracked Douay), the guidance contract and the loader
+  # changed unenumerated, and the 92 rows are 96 distinct cases rather than 92.
+  # The review surface is now src/sources/chronology/final-acceptance-manifest.tsv,
+  # derived from both correction lanes and proved complete in both directions by
+  # scripts/check_final_acceptance_manifest.py. This requirement is closed only
+  # by a reviewer in a NEW session that performed none of the population, the
+  # audit, the correction, the re-review or the repair. No same-session subagent
+  # arrangement satisfies it.
+
+  [[deliverables.requirements]]
+  id = "validation-and-handoff"
+  criterion = "The focused chronology tests and the repository gates affected by the touched files have been run, new failures are distinguished from the base's inherited failures, and branch state, coverage, and remaining work are recoverable from tracked records."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "promised-deliverables.toml"]

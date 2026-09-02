@@ -1709,7 +1709,7 @@ release attachment, announcement, or promotion.
 | `LICENSES/MIT.txt` | `afd9c125b68a36b60c78cf63656f4cea2613fadce57e95ebabacebff8817ef60` |
 | `README.md` | `34f935c869fb50db51926eeceaec81335467ad179f8a04964a885b42238c359d` |
 | `THIRD_PARTY.md` | `853d246dff358c1880f08ed1c32310797cee95ec6681ac1eda2876eb09fa6f39` |
-| `docs/bibles.md` | `f97601d14da975140e987cbcb405266dc3138b2739edddc1b0fda83290bb7b52` |
+| `docs/bibles.md` | `30f365ebfecfafde316b0aff7b17d1fc666b007b9e0264d71c333f9ef1b6c65e` |
 | `docs/reading-and-commentary.md` | `b0861dd1b6ce0a81b62ab2158b20d093664381cc3c93d9e62f53cdb2b1a84e32` |
 | `docs/the-mass.md` | `caec51b5a6dcede8df1c1e771dde3007de7d5e8a74afd5241c5493a5923422db` |
 | `library/biographies.md` | `c2de5d8013c126500ec283334fd3311fb907c826e3a3a800145d575347be21ab` |

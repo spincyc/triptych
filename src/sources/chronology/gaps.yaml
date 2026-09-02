@@ -1,0 +1,829 @@
+# Where the corpus knowingly says nothing dated, and why. Only the statuses an
+# author may assert appear here: undated-in-tradition, not-alignable,
+# textually-distinct. A locus reached by none of them and by no assertion is
+# research-pending, which is the honest default and is not authored.
+schema: triptych-chronology-gaps/v1
+# Every locus below is numbered in the vulgate system, the one
+# scripts/_projection.py projects into. Declared here so that no row's
+# numbering is a thing the reader assumed.
+numbering: vulgate
+updated: '2026-08-26'
+
+gaps:
+  # === type-the-gaps ===================================================
+  - status: undated-in-tradition
+    scope: [{book: Lev}]
+    reason: >-
+      The received Catholic apparatus dates the writing of Leviticus nowhere.
+      The Catholic Encyclopedia treats the book nowhere at length - "Leviticus"
+      (09207a) is a one-sentence stub that defines the title and stops there,
+      "The third book of the Pentateuch, so called because it treats of the
+      offices, ministries, rites, and ceremonies of the priests and Levites",
+      treating the introductory questions nowhere and referring them nowhere,
+      as the parallel "Deuteronomy" stub at least does - and the "Pentateuch"
+      article, which is where the question is actually treated, states
+      authorship and no time: it reports the
+      Biblical Commission's reply of 27 June 1906 that the critics' arguments
+      do not give the right "to maintain that these books have not Moses as
+      their author", and attaches no year, century or expressible period to
+      the act of writing. Moses is an author, not a date. The Anno Mundi and
+      A.C. figures the Haydock edition prints in Exodus date narrated events
+      and must not be borrowed to fill this. Genesis, Exodus, Numbers and
+      Deuteronomy stand under the same inspected silence about composition, and
+      each carries its own row in this file. What distinguishes Leviticus is
+      that no verse of it carries a dated assertion of any kind, so this row is
+      the answer a query actually reaches for all 858 of its verses, while
+      theirs are wholly displaced by dated events in Exodus and Deuteronomy and
+      partly displaced in Genesis and Numbers.
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11646c-b7ab7001
+      - artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09207a-e9463bc3
+      - artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04761b-babad506
+  - status: undated-in-tradition
+    scope: [{book: Ruth}]
+    reason: >-
+      The Catholic Encyclopedia's "Book of Ruth" opens its section on the
+      question by refusing it: "The name of the author of the book of Ruth is
+      unknown, and so is also the precise date of its composition." It offers
+      only the unnumbered bound "most likely written before the Babylonian
+      exile", and says the internal data "remain indecisive with regard to the
+      precise date to which its composition should be referred, as clearly
+      appears from the conflicting inferences which have been drawn from them
+      by recent Catholic scholars." No year of any era is printed for the book
+      or for anything in it, and no other ranked source inspected for this
+      corpus supplies one.
+    sources: [artifact.catholic-encyclopedia.volume-13.new-york-1912.newadvent-13276a-df1b3002]
+  - status: undated-in-tradition
+    scope: [{book: Job}]
+    reason: >-
+      The Catholic Encyclopedia's "Job" states the refusal outright: "The
+      author of the book is unknown, neither can the period in which it was
+      written be exactly determined." What it then offers is bounded by
+      reigns and not by years - not earlier than the reign of Solomon, earlier
+      than Ezechiel - and of the Solomonic dating many Catholic investigators
+      hold it says "The proofs, however, are not very convincing." The book's
+      own patriarchal setting is dated by no source inspected for this corpus
+      either. Nothing here is a year, and nothing here should be made into one.
+    sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08413a-56b4c047]
+  - status: undated-in-tradition
+    scope: [{book: Prov}]
+    reason: >-
+      The Catholic Encyclopedia's "Book of Proverbs" ascribes the principal
+      collections to Solomon and dates nothing: Catholic writers are "wellnigh
+      unanimous in ascribing them to Solomon", yet the article leaves the
+      book's assembly open "at whatever time - either under Ezechias, or as
+      late as Esdras - all the collections embodied in the Book of Proverbs
+      reached their present form and arrangement." The ascription is also
+      expressly partial, most Catholic scholars being free to treat the Agur,
+      Lamuel and "the wise" collections as non-Solomonic, so it could not be
+      carried across the whole book even if it carried a date. It carries none.
+    sources: [artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12505b-04e7ea59]
+  - status: undated-in-tradition
+    scope: [{book: Eccles}]
+    reason: >-
+      The Catholic Encyclopedia's "Ecclesiastes" defends the tradition of
+      Solomonic authorship - "we must listen to the voice of tradition, which
+      has always attributed Ecclesiastes to him" - and attaches no year to the
+      writing. The years the article prints are other men's, not its own. The
+      paragraph that opens "The time of the composition of our book is
+      variously set down by the critics who deny the authorship of Solomon"
+      reports that "Every period from Solomon to 200 has been suggested by
+      them" and that "Grätz thinks that he has discovered clear proof that the
+      book was written under King Herod (40-4 B.C.)", and earlier in the same
+      article, "From ix, 13-15, Hitzig concludes that the author lived about
+      the year 200". Each is a named critic's figure, set down in a survey of
+      incompatible ones the article immediately turns against - "This shows
+      clearly how little likely the linguistic criterion and the other internal
+      arguments are to lead to an agreement of opinion" - so none of them is
+      the encyclopedia's own date, and modern critical chronology is excluded
+      from this profile in any case. In its own voice the article offers only a
+      conditional: "If Solomon wrote Ecclesiastes towards the end of his life,
+      the sombre tone of the book is easily explained". It also allows a later
+      editorial layer ("It is possible that Ecclesiastes was received into the
+      canon in some such later edition"), so tradition here settles an author
+      and declines a date.
+    sources: [artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05244b-2fe7b66b]
+  - status: undated-in-tradition
+    scope: [{book: Cant}]
+    reason: >-
+      The Catholic Encyclopedia's "Canticle of Canticles" reports that
+      "Tradition, in harmony with the superscription, attributes the song to
+      Solomon" and prints no year for it. The nearest thing to a period on the
+      page is not the encyclopedia's own voice but its quotation of De Wette,
+      "The entire series of pictures and relationships and the freshness of
+      the life connect these songs with the age of Solomon"; and of the rival
+      post-exilic proposals the article says only "for all this there is a
+      lack of clear proof." An author and an ascribed age, with no date in
+      either.
+    sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03302a-0e74e2ad]
+  - status: undated-in-tradition
+    scope: [{book: Lam}]
+    reason: >-
+      The Catholic Encyclopedia has no article on the Lamentations; they are
+      treated inside "Jeremias", which gives them an author and an occasion
+      and no year. What it reports is the Septuagint superscription - "after
+      Israel was carried into captivity, and Jerusalem was desolate, that
+      Jeremias the prophet sat weeping" - and it is careful that this
+      inscription "was not written by the author of Lamentations", so it is
+      evidence of a setting and not a date of writing. The book itself carries
+      no chronological statement, and no source inspected for this corpus
+      dates any part of it.
+    sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08334a-dd4ae528]
+  - status: undated-in-tradition
+    scope: [{book: Bar}]
+    reason: >-
+      The Catholic Encyclopedia's "Baruch" accepts the book's own statement
+      that it "was written by Baruch at Babylon in the fifth year after
+      Jerusalem had been burned by the Chaldeans", and then declines to turn
+      that into a year. The article prints 599 B.C. for the plundering of the
+      temple and 588 B.C. for the fall of the Holy City elsewhere on the same
+      page and never computes the fifth year from either, so no B.C. figure
+      for this book stands in any source inspected for this corpus. Chapter 6,
+      the Epistle of Jeremias, which the article says is "truly distinct from
+      the rest of the work", is given no date of its own either.
+    sources: [artifact.catholic-encyclopedia.volume-2.new-york-1907.newadvent-02319c-ccd7f7e3]
+  - status: undated-in-tradition
+    scope: [{book: Amos}]
+    reason: >-
+      The Catholic Encyclopedia's "Amos" upholds the traditional ascription -
+      "all scholars maintain the correctness of the traditional view which
+      refers the book of Amos to the Judean prophet of that name" - and gives
+      the writing no year, saying only that the prophet withdrew to Juda
+      "where at leisure he arranged his oracles in their well-planned
+      disposition." Nor does it date the ministry: "Amos's mission to Israel
+      was but a temporary one. It extended apparently from two years before to
+      a few years after an earthquake, the exact date of which is unknown."
+      The one pair of numerals on the page, "Jeroboam II (c. 781-741 B.C.)",
+      dates a king's reign and must never be read as the date of the book.
+    sources: [artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01435a-42725cc2]
+  # === lane deuteronomy ===
+  - status: undated-in-tradition
+    scope: [{book: Deut}]
+    reason: >-
+      The received Catholic apparatus dates the writing of Deuteronomy nowhere.
+      The Catholic Encyclopedia's "Deuteronomy" (04761b) is a stub that treats
+      only the meaning of the title and then refers the question away: "The
+      introductory questions concerning the Book of Deuteronomy are treated in
+      the article PENTATEUCH." The "Pentateuch" article, where the question is
+      actually treated, settles authorship and attaches no time to the writing:
+      it reports the Biblical Commission's reply of 27 June 1906 that the
+      critics' arguments do not give the right "to maintain that these books
+      have not Moses as their author, but are compiled from sources for the
+      greatest part later than the Mosaic age", and attaches no year, century
+      or expressible period to the act of composition. The years that article
+      prints are other men's, not its own. Setting out the critical hypothesis
+      it is rebutting, it has the law-book "almost entirely embodied in our
+      actual Book of Deuteronomy, discovered in the temple 621 B.C.", records
+      that "Wellhausen and his adherents do not wish to assign to D1 a higher
+      age than 621 B.C.", and has a redactor combine J and E "after D had been
+      completed in the sixth century B.C." Those are the reconstruction's
+      dates, not the encyclopedia's own dating of this book, and modern
+      critical chronology is excluded from this profile in any case. Moses is
+      an author, not a date. Deuteronomy 1:3 dates the speaking of the discourses and is bound
+      as utterance; it is not a composition date and must not be read as one.
+      Two further silences are kept rather than smoothed. First, chapter 34
+      narrates Moses' own death, and the same article treats that as a distinct
+      question, not as part of the book's Mosaic authorship: "The Pentateuch in
+      its present form does not present itself as a complete literary
+      production of Moses. It contains an account of Moses' death, it tells the
+      story of his life in the third person and in an indirect form"; the
+      Commission's fourth reply allows "post-Mosaic additions either appended
+      by an inspired author or inserted into the text as glosses and
+      explanations"; and the article reports as a strict reading of that decree
+      that "With the exception of those portions that belong to the time after
+      the death of Moses, and of certain accidental changes of the text due to
+      transcribers, the whole of the Pentateuch is the work of Moses." Whatever
+      chapter 34 is, then, no source inspected for this corpus says when it was
+      written, and this row covers it with the rest. Second, the article
+      reports datable redaction hypotheses without adopting them - of Vetter,
+      that "he places the first redaction of the Pentateuch in the time of the
+      erection of Solomon's temple, and its last redaction in the time of
+      Esdras" - and those are one scholar's opinion about the Pentateuch,
+      reported in a survey of several incompatible ones, not the encyclopedia's
+      own claim about this book. The "Moses" article's remark that of the
+      thirty-eight years in the desert "It is during this period that tradition
+      places the composition of a large part of the Pentateuch" is likewise no
+      date for Deuteronomy, whose own frame puts its discourses in the fortieth
+      year. Nothing above is a year and nothing above is made into one. This
+      row is a record of that silence rather than a live answer: every verse of
+      Deuteronomy carries at least one dated event assertion, so no query
+      reaches this status, and the Leviticus row's remark that Deuteronomy
+      "stands under the same silence about composition" is now recorded where a
+      reader of this book will find it.
+    sources:
+      - artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04761b-babad506
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11646c-5333461d
+      - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10596a-ae23faf9
+  # === lane exodus ===
+  - status: undated-in-tradition
+    scope: [{book: Ex}]
+    reason: >-
+      Nothing inspected for this corpus dates the writing of Exodus. The
+      Catholic Encyclopedia has no article on the book at all: its alphabetical
+      index carries "Exodus" only as a cross-reference to "Pentateuch"
+      (11646c), which is where the question is actually treated, and that
+      article states an author and no time. What it settles is authorship - the
+      Biblical Commission's reply of 27 June 1906 that the critics' arguments
+      are "not of such weight as to give us the right ... to maintain that
+      these books have not Moses as their author" - and it expressly leaves the
+      manner of the writing open, allowing "the hypothesis of those can be
+      admitted who believe that he entrusted the composition of the work itself
+      ... to others". The years the article prints are other men's, not its
+      own. Most of them belong to the critical hypotheses it is rebutting - 621
+      B.C. for the law-book found in the temple, "about 444 B.C." for Esdras
+      reading the Priestly Code, the fourth century B.C. for the Samaritans'
+      acceptance - and the remaining ones are the redaction dates of a Catholic
+      scholar reported as an opinion rather than adopted, Vetter, of whom the
+      article says that "he places the first redaction of the Pentateuch in the
+      time of the erection of Solomon's temple, and its last redaction in the
+      time of Esdras", set down in a list of the incompatible ways Catholic
+      scholars interpret the Biblical Commission's allowance of post-Mosaic
+      additions. Neither kind is the encyclopedia's own date for the writing of
+      Exodus, and neither is scoped to this book. Moses is an author, not a
+      date. The two Exodus-specific articles read for this lane add nothing:
+      "Plagues of Egypt" (12143a) opens by refusing even the interval of the
+      events it treats - "The interval of time within which they occurred
+      cannot be stated with certainty" - and "Moses" (10596a) says of the
+      thirty-eight years in the Badiet et-Tih that "It is during this period
+      that tradition places the composition of a large part of the Pentateuch",
+      which names no year, no era and no book. The Pentateuch contains Exodus,
+      so that sentence is not about another book; but "a large part of the
+      Pentateuch" cannot be scoped to Exodus any more than it can to Numbers,
+      where the same sentence is read the same way, and a period named only as
+      "this period" is not a date. It is therefore not carried as one. The
+      Anno Mundi and A. C. figures the Haydock edition prints on its four
+      Exodus chronology pages - A. M. 2513 at Exodus 3, A. M. 2518 at Exodus 5,
+      A. M. 2513 after Exodus 16:30, A. M. 2518 at Exodus 32 - date narrated
+      events and are recorded on those events; they are not composition
+      evidence and must never be borrowed to fill this. What this row catches
+      is every verse of Exodus that carries no assertion at all, and as the
+      corpus now stands that is none of them: all
+      1211 verses of the book are reached by a narrated-event, utterance or
+      retrospective-event binding, so the row asserts the inspected silence
+      about composition without displacing anything. It becomes visible the
+      moment any of those bindings is withdrawn, which is exactly when a reader
+      needs to be told that the silence here was looked into rather than
+      skipped.
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11646c-b7ab7001
+      - artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12143a-0612afa4
+      - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10596a-59d1207b
+  # === lane genesis ===
+  - status: undated-in-tradition
+    scope: [{book: Gen}]
+    reason: >-
+      The received Catholic apparatus dates the writing of Genesis nowhere. The
+      Catholic Encyclopedia has no article on the book at all - New Advent's
+      full index for G, the unabridged page to which its abridged letter index
+      sends a reader because that one lists, in its own words, "only a tiny
+      fraction of articles available on the New Advent website", runs
+      "Genealogy (in the Bible)", "Genealogy of Christ", "General Judgment",
+      "General Chapter", "Generation", "Genesareth", "Genesius", "Genevieve,
+      Saint", "Genezareth, Land of", carrying nothing for the book at the place
+      between "Genesareth" and "Genesius" where it would fall and no entry
+      reading "Genesis" or "Genesis, Book of" anywhere on the page, which is
+      the form that index gives an article filed under its keyword, and the
+      encyclopedia's own articles across
+      that stretch of the alphabet are "General Chapter" (06412b), "Generation"
+      (06412c), "Genesareth" (06413a) and "Genesius" (06413c), the article
+      number between the last two being unassigned - and the introductory
+      questions are treated in "Pentateuch", which states an author and no time:
+      it reports the Biblical Commission's reply of 27 June 1906 that the
+      critics' arguments do not give the right "to maintain that these books
+      have not Moses as their author", and attaches no year, century or
+      expressible period to the act of writing. Moses is an author, not a date.
+      The one place where a ranked source inspected for this corpus does print
+      years for the making of the book of Genesis is the Catholic
+      Encyclopedia's "Abraham", and it prints them expressly in another man's
+      voice. The paragraph that carries them, under "Viewpoint of Old
+      Testament", opens "Quite a different view on the section of Genesis
+      treating of Abraham, and indeed of the whole of Genesis, is taken by
+      modern critical scholars. They almost unanimously hold", and it stays in
+      the third person to its end: the collections J and E "closed before the
+      time of the prophets; J some time in the ninth century B.C., and E early
+      in the eighth century", and of the later priestly writing, "according to
+      the critics the moral standpoint is that of the fifth century B.C." The
+      writer says what he thinks of the method further down the article, of a
+      different question and under a different heading, "Viewpoint of legend":
+      "In setting forth the critical view on the subject, I must not be taken as
+      giving my own views also." A date the source refuses to assert is not a
+      date this corpus may carry.
+      This row is book-scoped and therefore reaches every verse of Genesis, but
+      an assertion always beats it: what it actually catches is the verses where
+      this corpus answers with no assertion at all, which after the 2026-09-01 lane's
+      work are
+      Genesis 3:1-24, 4:1-24, 6:1-2, 6:4-12, 9:1-27, 11:1-9, 11:28-30, 12:6-9,
+      12:10-20, 13, 14,
+      15:1-12,
+      15:17-21, 19:30-38, 20, 21:9-34, 22, 25:27-34, 26:1-33, 27, 28, 32, 33, 34,
+      35:1-26, 36, 38 and 39 - the Fall, Cain and Abel, the wickedness before the
+      Flood, the covenant with Noe and the cursing of Chanaan, the tower of Babel,
+      Abram's journey through the land to Bethel and the Negeb, the descent into
+      Egypt and Sarai before Pharao, the war of the four kings and Melchisedech,
+      the parting of Abram and Lot, the covenant sacrifice, Lot and his daughters
+      in the cave and the begetting of Moab and Ammon, Abimelech at Gerara, the
+      casting out of Agar, the sacrifice of Isaac, the pottage of lentils, Isaac
+      at Gerara, the stolen blessing, the ladder at Bethel, Phanuel and the
+      meeting with Esau, Dina, the return to Bethel and the death of Rachel, the
+      generations of Esau, Juda and Thamar, and Joseph in Putiphar's house. The
+      whole book was swept for this row. Genesis itself states an age, an
+      interval or a month and day at every place this lane has bound, and states
+      none at any of the places listed above; the Catholic Encyclopedia's
+      "Biblical Chronology", "Israelites", "Abraham", "Isaac", "Jacob",
+      "Joseph", "Deluge" and "Noah" were read for them and date none of them
+      either, WITH ONE EXCEPTION, taken up at the end of this row. Its "Adam", "Cain", "Sodom and Gomorrha" and "Sara" were fetched,
+      registered and read in full for the same purpose, and add nothing: "Cain"
+      and "Sodom and Gomorrha" print no figure of any kind. "Adam" prints only
+      figures Genesis 5 states and this corpus already carries from it, quoting
+      "And Adam lived a hundred and thirty years, and begot a son to his own
+      image and likeness, and called his name Seth ... And all the time that
+      Adam lived came to nine hundred and thirty years, and he died". "Sara"
+      prints three ages, and they are three different kinds of figure, which
+      the earlier wording of this row flattened into one: "Sara lived to the
+      age of one hundred and twenty-seven years" is Genesis 23:1, which this
+      corpus carries on the death of Sara; "After having been barren till the
+      age of ninety" is the ninety Genesis 17:17 states of her, which Scripture
+      does state and this corpus does NOT hold; and "who though sixty-five
+      years of age is very beautiful" is the article's own computation and no
+      verse's words - Genesis gives Abram's seventy-five years at the going
+      forth (12:4) and Sara's ninety against his hundred (17:17), and states
+      her age at the descent into Egypt nowhere. "Sara" does treat Genesis 20
+      and Genesis 21, but it dates neither, and none of the four dates any of
+      the passages listed
+      above. The relative dates this corpus does hold for Genesis reach no era:
+      the Anno Mundi figures the encyclopedia prints for the Deluge are totals
+      of a genealogy that differs by text-family, and they must not be borrowed
+      to fill this.
+      THE ONE EXCEPTION IS 12:6-9, and it is the reason that range joined the list
+      above on 2026-09-01. Those four verses are not a place no ranked source has
+      spoken about. "Israelites" does print a figure that reaches them: it says
+      Abraham "appears to have reached Chanaan about 2300 B.C." That figure is not a
+      silence and this row does not pretend it is one. It is held on
+      israel.patriarchs.abram-enters-chanaan in events.yaml, preserved rather than
+      deleted and legible under --evidence, and it is not answered with, because the
+      same encyclopedia's "Biblical Chronology" states where it comes from - Professor
+      Sayce's reckoning, on the condition "if the chronology of the native Babylonian
+      historians is correct" - and this profile does not answer with a value whose own
+      source names Babylonian or Assyriological chronology as its warrant, whatever the
+      rank of the work that prints it. What this row therefore says at
+      12:6-9 is that the tradition it answers under states no time for them, not that
+      nobody looked. Genesis 12:5 is unaffected and still answers from the call of
+      Abram, which Genesis 12:4 dates by his own years.
+      GENESIS 12:10-20 AND GENESIS 14 ARE NOT UNAFFECTED, and this row said until
+      2026-09-01 that they were. The reasoning it gave was that what the article
+      says of those chapters "is where they stand relative to the arrival, and a
+      position is not the excluded year". That position was held on
+      israel.patriarchs.abram-contact-with-egypt-and-elam as an answerable and
+      preferred claim, and two things were wrong with it at once: its anchor was
+      the arrival, which by this row's own account carries no answerable date,
+      and the interval it stated - "when he came into passing contact with Egypt
+      (Genesis 12) and Elam (Genesis 14)" - was the event restated rather than
+      any interval at all. Thirty-five verses reported status `dated` on it. That
+      claim is now preserved on the same ground as the arrival it belongs to:
+      one sentence of "Israelites", one method, Sayce's Babylonian synchronism.
+      So what this row says at 12:10-20 and at 14 is what it says at 12:6-9 - a
+      ranked source WAS read, it does speak about these chapters, and what it
+      says about them is tied to a year this profile does not consult. It is not
+      a claim that nobody looked. Genesis 14:4-5's own reckoning, "For they had
+      served Chodorlahomor twelve years, and in the thirteenth year they revolted
+      from him. And in the fourteenth year came Chodorlahomor", counts from the
+      beginning of a servitude no source inspected for this corpus dates, so it
+      states a sequence and reaches no year; it is reported on that event and is
+      not authored as a claim.
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11646c-b7ab7001
+      - artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01051a-8bd3c845
+      - artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01129a-25f0e925
+      - artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03142b-1c3293d8
+      - artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04
+      - artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04702a-dd9aa535
+      - artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06412b-bdfebbee
+      - artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06412c-57ecea11
+      - artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06413a-88aaf066
+      - artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06413c-a10d26f7
+      - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08175a-b904fd43
+      - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08193a-4931095f
+      - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08261a-9865c411
+      - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08506a-07813cad
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11088a-f05fae40
+      - artifact.catholic-encyclopedia.volume-13.new-york-1912.newadvent-13468a-d7d96560
+      - artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14130a-425447ae
+      - artifact.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-g-064c6c3b
+      - artifact.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-g-ce-5c91a95b
+      - passage.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-g
+      - passage.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-g-ce
+  # === lane numbers ===
+  - status: undated-in-tradition
+    scope: [{book: Num}]
+    reason: >-
+      Two silences, and this row is honest about which of them it actually
+      catches. The first is composition, and it runs the whole book: no source
+      inspected for this corpus dates the writing of Numbers. The Catholic
+      Encyclopedia has no article on the book at all - New Advent's full index
+      for N, the unabridged page to which its abridged letter index sends a
+      reader because that one lists, in its own words, "only a tiny fraction of
+      articles available on the New Advent website", carries only "Numbers, Use
+      of, in the Church" (11151a), which is
+      Thurston's article on the symbolism of numbers and not on the book, and
+      no neighbouring article number carries one either: 11150a is "Francis
+      Nugent", 11152a is "Numismatics", and 11151b is unassigned - so the
+      question is treated
+      only inside "Pentateuch", which states an author and no time: it reports
+      the Biblical Commission's reply that the critics' arguments do not give
+      the right "to maintain that these books have not Moses as their author",
+      and attaches no year, century or expressible period to the act of
+      writing. Its section on Numbers dates the narrative instead - the book
+      "takes up the account from the first month of the second year, and brings
+      it down to the eleventh month of the fortieth year" - which is a
+      statement about what is told, not about when it was told. On Numbers
+      33:1-2 the same article says only "Here we are informed that Moses wrote
+      the list of the people's encampments in the desert", again an author with
+      no time. The nearest thing to a period anywhere is the "Moses" article's
+      "It is during this period that tradition places the composition of a
+      large part of the Pentateuch", said of the thirty-eight years in the
+      Badiet et-Tih; it names no year, no era and no book, and "a large part of
+      the Pentateuch" cannot be scoped to Numbers, so it is not carried as a
+      date. The second silence is narrower and is what a verse actually
+      resolves to this row for. The book was swept end to end for its own
+      datelines, and every one of them is authored: 1:1, 7:1, 9:1-5, 10:11,
+      20:1, 33:3 and 33:38, with the encampments at Sinai and in the plains of
+      Moab bounding the sections that stand under them. One passage outside
+      those datelines is nevertheless reached, and is named here so that this
+      row is not read as covering it: Numbers 14:33-34, the sentence of the
+      forty years as the Lord pronounces it at the return of the spies, is
+      bound as prophecy-given to the forty years in the desert, which is the
+      event dated from those very words. What is left over is Numbers 11, 13,
+      14:1-32, 14:35-45, 15-19 and 21 - the murmuring and the quails, the spies
+      and the consternation, the doom on the fathers and the death of the
+      spies, the laws of the offerings, Core's rebellion, Aaron's rod, the
+      priestly dues, the red heifer, Arad, the brazen serpent, Sehon and Og
+      - and nothing dates them. Scripture gives them no dateline; the Catholic
+      Encyclopedia's "Aaron" accounts for the largest part of the silence
+      rather than filling it, saying that "Of the next thirty-seven years of
+      Aaron's life, the Bible gives no detail; its narrative is concerned only
+      with the first three and the last years of the wandering life of the
+      Hebrews in the desert"; its "Balaam", read in full, prints no date of any
+      kind; and its "Biblical Chronology" dates nothing in Numbers, opening
+      instead with Silvester de Sacy's "There is no Chronology of the Bible"
+      and granting that "for large parts of the Bible there is little to guide
+      us to an exact determination as to when the events related happened."
+      Where a verse of Numbers carries a dated assertion the corpus answers
+      with it and this row is not reached; where it does not, this row is the
+      answer, and it must not be read as licence to borrow the dateline of a
+      neighbouring section.
+    sources:
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11646c-b7ab7001
+      - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10596a-59d1207b
+      - artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01003a-5adaeca0
+      - artifact.catholic-encyclopedia.volume-2.new-york-1907.newadvent-02214b-53ac6d68
+      - artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04
+      - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11151a-aaa70339
+      - artifact.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-n-ef3ba0eb
+      - artifact.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-n-ce-5fd9c5e7
+      - passage.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-n
+      - passage.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-n-ce
+  # === lane psalter-policy ===
+  - status: undated-in-tradition
+    scope: [{book: Ps}]
+    reason: >-
+      Drum's "Psalms" in the Catholic Encyclopedia was read in full for this
+      corpus and dates the writing of no psalm except three cases authored
+      separately in composition.yaml: Ps.73 and Ps.82 in this vulgate numbering,
+      and the psalms of the sons of Korah as a group. Of those three, two are still
+      answered with and one is not, so this row now reaches Ps.73 as well and the
+      reader is owed the reason. Ps.73 is the one the article does not date on its own
+      authority: it gives the date "as Briggs surmises", adopting the surmise of the
+      modern critical commentary it cites by page in the same treatment of the Asaph
+      psalms - Briggs's "Psalms", New York, 1906 - and this profile
+      admits no such adoption - its one narrow lift is named for Ussher and says in
+      terms that it extends to no one else. That figure is therefore held in
+      composition.yaml as preserved evidence, legible under --evidence, and is not a
+      candidate answer; a reader who reaches this row at Ps.73 is being told that the
+      tradition this profile answers under dates the psalm nowhere, not that nobody
+      looked at it. Ps.82 is different and is untouched: there the article names
+      Briggs's dating and rejects it, asserting its own reading, so that claim stands
+      and this row never reaches Ps.82 at all. Everywhere else it settles
+      authorship and refuses date. Of David, its strongest sentence is the
+      Biblical Commission's of 1 May 1910, that "It cannot be prudently denied
+      that David is the chief author of the songs of the Psalter" - an author,
+      not a year, a reign or a period, and the same decree adds that neither the
+      councils nor the Fathers "have such weight as to determine that David is
+      sole author of the whole Psalter". Of the Asaph psalms it says they
+      "pertain to widely-separated periods of Jewish history"; of Moses and
+      Solomon in the titles it offers imitation rather than date, "this
+      imitation may be the reason of the title"; of the Machabean question it
+      says "There are no certain proofs that these or any psalms are Machabean"
+      and "leaves that question still open". The historical superscriptions are
+      occasions and not compositions: thirteen Davidic psalms are merely
+      "referred to the time of David's persecution by Saul", to his sin, or to
+      his flight from Absalom, and the article expressly denies that the titles
+      settle even authorship - "Does this preposition mean authorship? No in
+      every title" - so none of them may be promoted to a date. The one dated
+      thing the article does offer about the collection is the closing of the
+      canon, not the writing of the text: the Palestinian canon "was practically
+      closed during the time of Esdras", and at the latest the Jewish canon of
+      the Psalms "was undoubtedly closed before the date of the Septuagint
+      translation. This date is 285 B.C. ... or, at the very latest 132 B.C." A
+      canon closing is not a text being written, and this corpus will not borrow
+      it. The Psalter is an anthology and is given no book-wide composition date
+      here; psalms that carry a superscription-setting, a historical setting or
+      a prophetic referent are asserted individually and those assertions stand
+      over this row.
+    sources: [artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25]
+  # === lane tail ===
+  - status: undated-in-tradition
+    scope: [{book: Mich, chapter: 6, through: 7}]
+    reason: >-
+      Van Hoonacker's "Book of Micheas" in the Catholic Encyclopedia dates the
+      book's first two parts and refuses the third. Of chapters 1-3 it says they
+      "must have been composed shortly before the destruction of the Kingdom of
+      Samaria by the Assyrians (722 B.C.)"; of chapters 4-5, that they "probably
+      date from shortly after the fall of Samaria in 722 B.C."; of chapters 6-7
+      it says only "The opinions of critics are much divided on the composition
+      of these chapters." What it then settles is authorship and not time: "it
+      seems unnecessary to deny to the Prophet Micheas the authorship of these
+      two chapters." Its only temporal remark about them is relative and names no
+      year - on its own hypothesis the prophet "casts a retrospective look at the
+      causes which brought about the fall of Samaria" - and its defence is framed
+      as a compatibility, "there is nothing which does not exactly tally with the
+      circumstances of Micheas's time", not as a date of writing. The reigns the
+      article prints for the ministry, "Joathan (c. 740-735 B. C.), Achaz
+      (735-727?), and Ezechias (727-698?)", date kings, and the same article
+      warns that "We do not, however, appear to possess any of his addresses
+      prior to the reign of Ezechias"; neither sentence may be read as the date
+      of these chapters. No other source inspected for this corpus dates them.
+    sources: [artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10278a-734c8637]
+  - status: undated-in-tradition
+    scope: [{book: Nah, chapter: 1}]
+    reason: >-
+      Souvay's "Nahum" in the Catholic Encyclopedia dates the book's second part
+      and leaves the first without a year of any kind. Its dating argument is
+      expressly bounded and expressly partial: "The date of this second part
+      cannot be determined to the year", and the limits it then fixes - Thebes
+      "captured and destroyed by Assurbanipal in 664-663 B.C." and the fall of
+      Ninive "at 607 or 606 B.C." - are given for "this part of the book of
+      Nahum". When the article turns back - "We may now return to the first part
+      of the book. This first chapter, on account of the transcendent ideas it
+      deals with, and of the lyric enthusiasm which pervades it throughout has
+      not inappropriately been called a psalm" - it discusses only the chapter's
+      alphabetical form and whether it is Nahum's at all, and prints no date. It
+      reports the argument for a late one without adopting it: "This explanation
+      of the textual condition of the poem implies the assumption that this
+      chapter is not to be attributed to Nahum, but is a later addition ... the
+      artificiality of the acrostic form is characteristic of a late date. These
+      arguments, however, are not unanswerable. In any case it cannot be denied
+      that the psalm is a most fitting preface to the prophecy." The chapter is
+      thus left undated in both directions: the 664-606 envelope is not extended
+      to it, and the "late date" the acrostic argument would imply is neither
+      accepted nor numbered. The scholars the article lists for the poem's
+      reconstruction - Frohnmeyer, Bickell, Gunkel, Nowack, Gray, Arnold, Happel,
+      Marti, Lohr, Van Hoonacker - are cited on the text, not on its date, and
+      several are outside this profile in any case. This row stops at the end of
+      chapter 1 although the article's own first part runs one verse further
+      (Douay 2:2), because that verse belongs to the composition unit for chapters
+      2-3, which still holds the article's bounding argument as preserved evidence;
+      the row below carries chapters 2-3 and states why the argument is held rather
+      than answered with. Keeping the two rows apart keeps two different facts apart:
+      chapter 1 is a locus the article prints no date for at all, and chapters 2-3 are
+      a locus it dates on a basis this profile excludes. No other source inspected for
+      this corpus dates the chapter.
+    sources: [artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10670a-83d20cfa]
+  - status: undated-in-tradition
+    scope: [{book: Nah, chapter: 2, through: 3}]
+    reason: >-
+      A ranked source WAS inspected for these chapters, and this row exists so that
+      the corpus does not say otherwise. Souvay's "Nahum" in the Catholic
+      Encyclopedia was read for this corpus and it does bound the second part of the
+      book -
+      "Thebes was captured and destroyed by Assurbanipal in 664-663 B.C." above, and
+      below "the fall of Ninive, which a well-known inscription of Nabonidus permits
+      us to fix at 607 or 606 B.C." - but it names the warrant for those limits in the
+      same breath as the limits, and the warrant is an Assyriological inscription.
+      This profile does not answer with a value whose own source names Assyriological
+      inscription evidence as its warrant, whatever the rank of the work that prints
+      it, so neither endpoint of that envelope is a date this corpus may answer with; the
+      envelope itself is kept, in composition.yaml, preserved rather than deleted, and
+      is reachable under --evidence. Nothing admissible is left standing behind it.
+      The article assigns no year of writing in any case - "The date of this second
+      part cannot be determined to the year", and it offers only "a sufficiently
+      accurate approximation" - and the older traditions that would have supplied one
+      are the very things it discards on the same Assyriological ground: Josephus's
+      placing of the prophecy "115 years before the fall of Ninive (about 721 B.C.)"
+      and Nicephorus's making Nahum a contemporary of Phacee "ought to be discarded as
+      impossible", and Eutychius's dating five years after the fall of Jerusalem,
+      "therefore about 583-581", is excluded with them. So the tradition this profile
+      answers under dates these chapters nowhere: what stood in its place has been
+      discarded by the one ranked work that treats the question, on a method this
+      profile excludes. No other source inspected for this corpus dates them. This row
+      says that, and it must not be read as saying that nobody looked.
+    sources:
+      - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10670a-2f9e032c
+      - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10670a-83d20cfa
+  - status: undated-in-tradition
+    scope: [{book: Jdt}]
+    reason: >-
+      The Catholic Encyclopedia's "Book of Judith" (Hugh Pope, vol. 8, 1910,
+      newadvent.org/cathen/08554a.htm) was read in full for this corpus and
+      has no section on authorship or on the date of composition at all: its
+      headings are History, The text, Historicity and Canonicity. Its
+      conservative position - that "the book is perfectly historical and deals
+      with facts which actually took place" - is a claim about historicity and
+      not about when the book was written, and the only dating language on the
+      page belongs to the view it attributes to "Some few Catholic writers",
+      that the story "was committed to writing at a period long subsequent to
+      the facts." No year is stated for the writing, and none for the events
+      the book narrates. The one pair of numerals on the page that could be
+      mistaken for either, "Artaxerxes the Great (464-424 B.C.)", dates a
+      Persian king's reign inside that same reported opinion, which infers from
+      the high priest Joachim that he "must therefore have lived" in it; the
+      rival conservative identification the article reports, Vigouroux's
+      referring of the events to "the time of the captivity of Manasses under
+      Assur-bani-pal", carries no numerals at all. The article adopts neither.
+    sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08554a-689b854e]
+  # === lane esdras ===
+  - status: undated-in-tradition
+    scope: [{book: 1Esd}]
+    reason: >-
+      No source inspected for this corpus dates the writing of the First Book
+      of Esdras on any authority this profile consults, and this row replaces
+      a composition unit that was withdrawn for that reason. Souvay's "Esdras"
+      (Catholic Encyclopedia, vol. 5, New York, 1909) treats the question and
+      prints no year in its own voice or on Catholic authority. Of authorship
+      it reports: "The composition of the work has long been attributed
+      without discussion to Esdras himself. This view, taught by the Talmud,
+      and still admitted by scholars of good standing, is, however, abandoned
+      by several modern Biblical students, who, although their opinions are
+      widely at variance on the question of the date, fairly agree,
+      nevertheless, that the book is later than 330 B.C." The traditional half
+      of that sentence names an author and no time; its one figure, 330 B.C.,
+      is reported of "several modern Biblical students" and is modern critical
+      chronology, which guidance/scripture-chronology.md 4.3 excludes from this
+      profile. The same article's account of how the book was made is undated
+      throughout: "I Esd. is a compilation the various parts of which differ in
+      nature, in origin, and even in language. At least three of the parts may
+      be recognized: the personal memoirs of Esdras (vii, 27-ix, 15); lists
+      very likely taken from public documents (ii, 1-70; vii, 1-5); Aramaic
+      writings (iv, 7-vi, 18; vii, 12-26), supposed with some probability to be
+      a portion of ..." - the source completing the sentence with Stade's
+      phrase, "a more comprehensive history of the restored community". Not one
+      of those three parts, and not the compiler's own work upon them, is given
+      a date. Van Hoonacker's "Book of Nehemiah" (vol. 10, New York, 1911),
+      which treats the two books as one compilation, prints the only year
+      either article carries for the writing, and prints it inside a clause
+      attributed to others: the documents of which the books are composed
+      "underwent compilation and redaction together at the hands probably, as
+      most critics think, of the author of Paralipomenon about B.C. 300." That
+      is a report of what most critics think. It is the same kind of sentence
+      as the "Most modern non-Catholic scholars ... place its date between 300
+      and 250 B.C." that composition.first-book-of-paralipomenon quarantines,
+      and it makes none of the distinction that unit's accepted clause makes
+      when it says "most Catholic authors". No unit is authored from it.
+      Souvay's "twenty-one years (536-515)" dates the events the first part of
+      the book narrates and is held on
+      israel.restoration.return-and-temple-rebuilding; it is a date of what is
+      told, not of the telling, and must not be borrowed to fill this. The row
+      is book-scoped, so an assertion always beats it and it contradicts none
+      of the narrated events bound across the book; what it answers is the
+      composition question, which is the thing the corpus has nothing for.
+    sources:
+      - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05535a-50771778
+      - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10737c-8f80f067
+  - status: undated-in-tradition
+    scope: [{book: 2Esd}]
+    reason: >-
+      The same silence, on the same two articles, and this row likewise
+      replaces a withdrawn composition unit. Souvay's "Esdras" does not treat
+      this book at all: its whole section on it reads "II Esdras - See the Book
+      of Nehemiah." Van Hoonacker's "Book of Nehemiah" (Catholic Encyclopedia,
+      vol. 10, New York, 1911) is therefore the article of record, and the one
+      year it prints for the writing stands inside a clause it attributes to
+      others: the documents of which the two books are composed "underwent
+      compilation and redaction together at the hands probably, as most critics
+      think, of the author of Paralipomenon about B.C. 300." A date reported of
+      "most critics" is modern critical chronology, which
+      guidance/scripture-chronology.md 4.3 excludes from this profile, and it
+      is not made Catholic authority by the article's reporting it; the
+      neighbouring "most Catholic authors" that
+      composition.first-book-of-paralipomenon does accept shows the encyclopedia
+      making the distinction where it means it. What the article says in its own
+      voice about the making of this book names authors and a redactor and no
+      time at all: the book "is made up, at least in the great part, from the
+      authentic memoirs of the principal figure"; chapters 1-6 comprise "the
+      account, written by Nehemiah himself, of the restoration of the walls of
+      Jerusalem"; and of section II's dependence on I Esdras it says only that
+      it "is probably due to the redactor, who in this place gave a new form to
+      the notes supplied him by the Jewish governor's memoirs which also
+      explains the latter's being spoken of in the third person, Neh., viii,
+      9." The regnal and era years the article does print - the twentieth year
+      of Artaxerxes, "B. C. 433" for the return to Susa, "B. C. 398" for
+      Esdras's return - date events the book narrates and are held on the
+      restoration events; none of them dates the book. The row is book-scoped
+      and an assertion always beats it, so it neither contradicts nor displaces
+      those events; it records that the composition of this book is undated in
+      the tradition inspected here. One stretch of the book does resolve to it
+      outright, and only because nothing else in the corpus reaches those
+      verses: 2 Esdras 12:1-26, the list of priests and Levites, which the same
+      article sets aside in so many words -- "The list in xii, 1-26, has no
+      connexion whatever with the events of this epoch." No event is bound
+      across it for that reason, and with no composition unit over the book it
+      now stands under this row, which is the honest answer for it.
+    sources:
+      - artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10737c-8f80f067
+      - artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05535a-50771778
+  # === lane ezechiel ===
+  - status: undated-in-tradition
+    scope: [{book: Ezech}]
+    reason: >-
+      This row is about the COMPOSITION of Ezechiel and about the chapters no
+      dateline in the book reaches. It is not about the dated oracles: it is
+      book-scoped and therefore names no chapter, an assertion always beats a
+      gap, and every verse of Ezechiel already carries the two book-wide
+      bindings, so nothing here contradicts the fourteen datelines Scripture
+      states to the day. It exists because no composition unit is authored for
+      this book and, without it, the corpus would record that silence nowhere,
+      though it records it for every other book it has inspected. Schets's
+      "Ezekiel" (Catholic Encyclopedia, vol. 5, New York, 1909) was read in
+      full. It dates the prophet and never the book: "in the year 598 B.C." for
+      the deportation he was carried off in, "In the fifth year after the
+      captivity of Joachim ... Ezekiel received his call as a prophet", and
+      "From Ezek. xxix, 17 it appears that he prophesied during at least
+      twenty-two years." A ministry is not a writing, and the article nowhere
+      says when the prophecies were set down, by whom they were collected, or
+      whether the collecting was the prophet's own act. Where it does treat the
+      book as a book it settles authenticity and not date: "The genuineness of
+      the book of Ezekiel is generally conceded. Some few consider chapters
+      xl-xlviii to be apocryphal, because the plan there described in the
+      building of the temple was not followed, but they overlook the fact that
+      Ezekiel here gives a symbolic representation of the temple, that was to
+      find spiritual realization in God's new kingdom." That defends the last
+      nine chapters and gives them no more of a date than it gives the rest.
+      The nearest thing to a time anywhere on the page belongs to the copyists
+      and is unnumbered: "a number of copyist mistakes have crept into the text,
+      and that at an early date, since the Septuagint has some of them in common
+      with the earliest Hebrew text we have." No year, century or era is printed
+      for the writing in that sentence or in any other. The second silence this
+      row covers is the stretches the datelines do not reach - Ezech. 12-19, 25,
+      30:1-19 and 33:1-20 - which carry no date of their own; the two book-wide
+      bindings reach them with the occasion and the span of the ministry and
+      with no day, and no source inspected here dates them more nearly. The
+      dateline of a neighbouring section must not be borrowed to fill either
+      silence.
+    sources: [artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05737b-06e3e070]
+  # === lane jonas ===
+  - status: undated-in-tradition
+    scope: [{book: Jon}]
+    reason: >-
+      No source inspected for this corpus dates the writing of the Book of
+      Jonas, and this row replaces a composition unit that was withdrawn for
+      that reason. Driscoll's "Jonah" (Catholic Encyclopedia, vol. 8, New York,
+      1910) treats the question in a single sentence and prints no date of
+      writing on any authority this profile consults: "Jewish tradition assumed
+      that the Prophet Jonah was the author of the book bearing his name, and
+      the same has been generally maintained by the Christian writers who
+      defend the historical character of the narrative. But it may be remarked
+      that nowhere does the book itself claim to have been written by the
+      Prophet (who is supposed to have lived in the eighth century B.C.), and
+      most modern scholars, for various reasons, assign the date of the
+      composition to a much later epoch, probably the fifth century B.C." The
+      traditional half of that sentence names an author and no time. Its one
+      traditional figure, the eighth century, stands in a parenthesis about the
+      PROPHET's lifetime, in the unattributed hedged form "is supposed to have
+      lived", and the main clause it hangs from denies that the book claims the
+      Prophet as its writer; guidance/scripture-chronology.md 8 lets authorship
+      support a composition claim only to the degree an inspected source
+      actually dates or bounds the writing, and this one does not. The other
+      figure, "probably the fifth century B.C.", is reported of "most modern
+      scholars" and is the modern critical chronology 4.3 excludes. The
+      article's only other years date what the book narrates and not the
+      telling - "It is likely that the incidents took place during the period
+      of Assyrian decadence, i.e., the reign of either Asurdanil or Asurnirar
+      (770-745 B.C.)" and "A pest had ravaged the land from 765 till 759 B.C."
+      - and must not be borrowed to fill this. The article carries no other
+      year of any era, and no other source inspected for this corpus dates the
+      writing of the book.
+    sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08497b-3ef68123]
+  # === lane profile-contract remediation ===
+  - status: undated-in-tradition
+    scope: [{book: Mal}]
+    reason: >-
+      A ranked source WAS inspected for this book, and this row exists so that
+      the corpus does not say otherwise. Van Hoonacker's "Malachias (Malachi)"
+      in the Catholic Encyclopedia was read for this corpus and it does state a
+      date of writing - "Critics are practically agreed in dating the book from
+      about the middle of the fifth century B.C." - but it states in the same
+      breath who agrees and on what. The agreement is the critics', not the
+      tradition's; the article says of the text itself that "The text itself
+      does not furnish any explicit information"; and the ground it gives is
+      internal criticism, the Persian title Peha and the state of worship,
+      "because not only the Temple exists, but relaxation in the exercise of
+      worship already prevails". No Father, no liturgical witness, no received
+      apparatus and no traditional commentator inspected for this corpus dates
+      the writing of Malachias, and the article cites none of them for the year
+      it prints. So the century it names is not a date this profile may answer
+      with. The figure itself is kept, in composition.yaml, preserved rather
+      than deleted, and is reachable under --evidence. The only other date on
+      the page is the second-century proposal the article reports in order to
+      dismiss it, which "has received no support", and that is not a date this
+      corpus may carry either. This row says that, and it must not be read as
+      saying that nobody looked.
+    sources: [artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09562b-38fb6fcd]

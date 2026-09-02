@@ -70,13 +70,14 @@ GROUPS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
     ),
     (
         "scripture",
-        "The biblical text, the citations that address it, and the commentary "
-        "keyed to those citations.",
+        "The biblical text, the citations that address it, the commentary "
+        "keyed to those citations, and when the text and its events are dated.",
         (
             "citations",
             "commentary-work-index",
             "index-bible",
             "reading-plan",
+            "scripture-chronology",
             "typeset-bible",
         ),
     ),
@@ -205,6 +206,7 @@ REACHES: dict[str, str] = {
     "release-bindings": NOTHING,
     "render-sanctuary-dictionary": NOTHING,
     "research-staleness": NOTHING,
+    "scripture-chronology": NOTHING,
     "source-family-migration": NOTHING,
     "source-first-cartographic-artwork": NOTHING,
     "source-inventory": NOTHING,

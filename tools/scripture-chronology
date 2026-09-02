@@ -1,0 +1,585 @@
+#!/usr/bin/env python3
+"""Answer when a Scripture locus was written and when what it tells of happened.
+
+Usage: scripture-chronology {validate,query,coverage,build,check} [--json]
+
+The corpus under src/sources/chronology holds typed temporal assertions keyed
+to canonical Scripture loci: composition, narrated event, utterance, historical
+and superscription setting, retrospective event, prophecy given, and prophetic
+referent. One event is dated once and bound from every locus that needs it, so
+parallel passages cannot acquire parallel dates. guidance/scripture-chronology.md
+owns the contract and scripts/_chronology.py is the whole seam.
+
+This is its own tool rather than a verb on an existing one because its question
+is its own. Every neighbouring tool answers where a text is, how it is numbered,
+or what is printed at it; none of them answers when, and giving one of them a
+second question is the thing the shared launcher's own listing exists to
+prevent. The commentary edge is the precedent: a new tracked data family beside
+the source library, with its own guidance and its own registered tool.
+
+`validate` collects every problem rather than stopping at the first, because an
+author fixing authored data wants the list. `check` refuses a stale generated
+table instead of rebuilding it, because a verification that repairs what it was
+meant to detect reports success either way.
+
+Requires PyYAML (requirements-tools.txt).
+"""
+from __future__ import annotations
+
+import argparse
+import sys
+from pathlib import Path
+# Shared CLI helpers live outside tools/ so that tmt's registry scan,
+# which requires every file in tools/ to be a registered tool, stays clean.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
+import _chronology  # noqa: E402
+from _tooling import (  # noqa: E402
+    Example,
+    examples_live_on_the_verbs,
+    print_json,
+    run_verb_cli,
+    with_examples,
+)
+
+ROOT = Path(__file__).resolve().parents[1]
+CORPUS = Path("src/sources/chronology")
+TABLE = "coverage.tsv"
+
+# The derived table's columns. Written once here and read by build and check
+# alike, so the writer and the gate cannot disagree about the shape.
+COLUMNS = ("locus", "verses", "status", "relations", "subjects")
+
+HEADER = (
+    "# Derived by scripture-chronology build; do not hand-edit.\n"
+    "# One row a maximal run of consecutive verses the corpus answers alike,\n"
+    "# in canonical vulgate numbering. guidance/scripture-chronology.md §13.\n"
+)
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "validate": (
+        Example("tools/scripture-chronology validate",
+            (
+                "# no binding reaches event apostolic-age.accession-of-vespasian",
+                "# no binding reaches event apostolic-age.arrival-of-cestius-gallus-at-jerusalem",
+                "# no binding reaches event apostolic-age.arrival-of-saint-peter-at-rome",
+                "# no binding reaches event apostolic-age.burning-of-the-temple",
+                "# no binding reaches event apostolic-age.death-of-saint-john",
+                "# no binding reaches event apostolic-age.flight-of-the-christians-from-jerusalem",
+                "# no binding reaches event apostolic-age.martyrdom-of-saint-paul",
+                "# no binding reaches event apostolic-age.return-of-saint-john-from-patmos",
+                "# no binding reaches event apostolic-age.saint-paul-second-period-of-activity",
+                "# no binding reaches event apostolic-age.second-arrest-of-saint-paul",
+                "# no binding reaches event apostolic-age.siege-of-jerusalem-begun",
+                "# no binding reaches event apostolic-age.vespasian-invades-galilee",
+                "# no binding reaches event israel.exile.nabuchodonosor-accession",
+                "# no binding reaches event israel.exodus.passage-of-the-red-sea",
+                "# no binding reaches event israel.judges.ark-comes-to-cariathiarim",
+                "# no binding reaches event israel.maccabees.seleucid-era",
+                "# no binding reaches event israel.restoration.reign-of-artaxerxes-i",
+                "chronology corpus valid: 1 profiles, 279 events, 62 composition_units, 375 bindings, 23 gaps, 73 books",
+            ),
+        ),
+        Example("tools/scripture-chronology validate --json",
+            (
+                "{\"answerability\":{\"by_basis\":{\"derived\":2,\"modern-critical\":10,\"patristic\":4,\"profane-harmonisation\":6,\"refusa... [+1169 chars]",
+            ),
+        ),
+    ),
+    "query": (
+        Example("tools/scripture-chronology query Ps.21.19",
+            (
+                "Ps.21.19\tdated",
+                "prophetic-referent\tthe 14th of Nisan, on a Friday\tdisputed\tinherited\tlife-of-christ.crucifixion\tThe Crucifixion of Our Lord",
+                "prophetic-referent\tFriday, the fifteenth day of Nisan\tdisputed\tinherited\tlife-of-christ.crucifixion\tThe Crucifixion of Our Lord",
+                "prophetic-referent\tA.U.C. 772-90, or A.D. 18-36\tdisputed\tinherited\tlife-of-christ.crucifixion\tThe Crucifixion of Our Lord",
+                "prophetic-referent\tbetween A.D. 26 and 36\tdisputed\tinherited\tlife-of-christ.crucifixion\tThe Crucifixion of Our Lord",
+                "prophetic-referent\tA.D. 29, or A.U.C. 782\tdisputed\tinherited\tlife-of-christ.crucifixion\tThe Crucifixion of Our Lord",
+                "... 4 more lines",
+            ),
+        ),
+        Example(
+            "tools/scripture-chronology query Ecclus.35.1 --system greek",
+            (
+                "Ecclus.35.1\tcomposition-only",
+                "composition\tnot long after ... the year 132 B.C.\tpreferred\tinherited\tcomposition.book-of-ecclesiasticus.greek\tEcclesiasticus, the Greek translation",
+            ),
+            note=(
+                "exit 0: the Latin and the Greek Ecclesiasticus are two texts, "
+                "so the concordance records no correspondence and the mapping "
+                "refuses - and the query answers anyway, from chronology "
+                "authored at this locus in its own system. The two are separate "
+                "axes; --json shows the refusal beside the answer"
+            ),
+        ),
+        Example("tools/scripture-chronology query Sus.1.1 --system greek --json",
+            (
+                "{\"asked\":\"Sus.1.1\",\"assertions\":[{\"answerability\":\"answerable\",\"basis\":\"Gigot's \\\"Book of Daniel\\\" states of t... [+2938 chars]",
+            ),
+        ),
+    ),
+    "coverage": (
+        Example("tools/scripture-chronology coverage",
+            (
+                "verses\t35809",
+                "runs\t1876",
+                "status\tcomposition-only\t16405",
+                "status\tdated\t12491",
+                "status\tnot-alignable\t0",
+                "status\tresearch-pending\t0",
+                "status\ttextually-distinct\t0",
+                "status\tundated-in-tradition\t6913",
+                "... 11 more lines",
+            ),
+        ),
+        Example("tools/scripture-chronology coverage --json",
+            (
+                "{\"by_relation\":{\"composition\":22019,\"historical-setting\":2934,\"narrated-event\":7970,\"prophecy-given\":1612,\"pro... [+1764 chars]",
+            ),
+        ),
+    ),
+    "build": (
+        Example(
+            "tools/scripture-chronology build --dry-run",
+            (
+                "dry-run\tsrc/sources/chronology/coverage.tsv\t1876 rows\tunchanged",
+            ),
+            note=(
+                "reads and reports only. Without --dry-run this rewrites the "
+                "tracked src/sources/chronology/coverage.tsv, which is why the "
+                "replayed example is the dry run"
+            ),
+        ),
+        Example(
+            "tools/scripture-chronology build --dry-run --json",
+            (
+                "{\"changed\":false,\"path\":\"src/sources/chronology/coverage.tsv\",\"rows\":1876,\"status\":\"dry-run\",\"v\":1}",
+            ),
+            note="the same, as the machine contract",
+        ),
+    ),
+    "check": (
+        Example("tools/scripture-chronology check",
+            (
+                "chronology coverage table current: 1876 rows",
+            ),
+        ),
+        Example("tools/scripture-chronology check --json",
+            (
+                "{\"problems\":[],\"rows\":1876,\"status\":\"ok\",\"v\":1}",
+            ),
+        ),
+    ),
+}
+
+
+def _root(arguments: argparse.Namespace) -> Path | None:
+    given = getattr(arguments, "root", None)
+    return Path(given) if given else None
+
+
+def _corpus_root(arguments: argparse.Namespace) -> Path:
+    given = _root(arguments)
+    return (given / CORPUS) if given else _chronology.CORPUS_ROOT
+
+
+def _table_path(arguments: argparse.Namespace) -> Path:
+    return _corpus_root(arguments) / TABLE
+
+
+def _rows(arguments: argparse.Namespace) -> list[str]:
+    """The generated table's body, derived. The only place it is composed."""
+    root = _corpus_root(arguments)
+    lines = ["\t".join(COLUMNS)]
+    for run in _chronology.runs(root):
+        locus = f"{run.token}.{run.chapter}.{run.first}"
+        if run.last != run.first:
+            locus = f"{locus}-{run.last}"
+        lines.append(
+            "\t".join(
+                (
+                    locus,
+                    str(run.verses),
+                    run.status,
+                    ",".join(run.relations),
+                    ",".join(run.subjects),
+                )
+            )
+        )
+    return lines
+
+
+def _rendered(arguments: argparse.Namespace) -> str:
+    return HEADER + "\n".join(_rows(arguments)) + "\n"
+
+
+def validate(arguments: argparse.Namespace) -> dict[str, object]:
+    """Every problem the authored corpus has, not the first one it hits."""
+    root = _corpus_root(arguments)
+    problems: list[str] = []
+    counts: dict[str, int] = {}
+    try:
+        corpus = _chronology.load(root)
+    except _chronology.ChronologyError as error:
+        return {"status": "error", "problems": [str(error)], "counts": {}}
+    counts = {
+        "profiles": len(corpus.profiles),
+        "events": len(corpus.events),
+        "composition_units": len(corpus.units),
+        "bindings": len(corpus.bindings),
+        "gaps": len(corpus.gaps),
+        "books": len(corpus.books),
+    }
+    # The PREFERRED shared system must be the one every tracked projection
+    # projects into. Two names for one choice is one way of discovering later
+    # that they had stopped agreeing. Chronology may be authored natively in
+    # other named systems, but only where the concordance refuses to carry the
+    # text - the loader gates that - so this remains the system that shared
+    # facts are held in.
+    import _projection  # noqa: PLC0415
+
+    if _chronology.PREFERRED_SYSTEM != _projection.CANONICAL:
+        problems.append(
+            f"chronology prefers {_chronology.PREFERRED_SYSTEM!r} but "
+            f"projections project into {_projection.CANONICAL!r}"
+        )
+    # An event nothing binds is not an error — it may be a parent, or authored
+    # ahead of its bindings — but an event bound under no relation at all is
+    # invisible, and saying so is cheaper than finding out from a coverage
+    # number that did not move.
+    bound = {binding.event for binding in corpus.bindings}
+    unbound = sorted(
+        event.id
+        for event in corpus.events.values()
+        if event.id not in bound
+        and not any(other.parent == event.id for other in corpus.events.values())
+    )
+    for problem in _chronology.audit(root, _root(arguments)):
+        problems.append(problem)
+    return {
+        "status": "error" if problems else "ok",
+        "problems": problems,
+        "counts": counts,
+        # WHAT THE PROFILE ANSWERS WITH, reported beside the counts rather than
+        # inside them. A profile-policy edit moves claims between these numbers
+        # without any claim file changing, and `by_basis` carries the standing
+        # debt: every claim still on the profile's unstated basis class is one
+        # nobody has classified under the admissibility contract yet.
+        "answerability": _chronology.answerability(root),
+        "unbound_events": unbound,
+    }
+
+
+def query(arguments: argparse.Namespace) -> dict[str, object]:
+    """Everything the corpus says about one locus, in its stable order."""
+    root = _corpus_root(arguments)
+    answer = _chronology.chronology(
+        _chronology.parse_locus(
+            arguments.locus, "locus", arguments.system or _chronology.PREFERRED_SYSTEM
+        ),
+        profile=arguments.profile,
+        root=root,
+        evidence=getattr(arguments, "evidence", False),
+    )
+    if isinstance(answer, _chronology.Unresolved):
+        return {
+            "status": "unresolved",
+            "locus": answer.locus or arguments.locus,
+            "chronology_status": answer.status,
+            "reason": answer.reason,
+            "assertions": [],
+        }
+    return {
+        "status": "ok",
+        "locus": str(answer.locus),
+        "chronology_status": answer.status,
+        "reason": answer.note,
+        # A SEPARATE AXIS. `chronology_status` says what this locus has;
+        # `mapping` says whether it may be asserted equivalent to a locus in
+        # the preferred shared system. A textually distinct text can be dated
+        # and unmappable at once, and a consumer reading either field as the
+        # other will get the Greek Ecclesiasticus wrong in one direction or the
+        # Vulgate's wrong in the other.
+        **(
+            {
+                "asked": answer.asked,
+                "mapping": {
+                    "system": answer.mapping.system,
+                    "status": answer.mapping.status,
+                    "reached": answer.mapping.reached,
+                    "note": answer.mapping.note,
+                },
+            }
+            if answer.mapping is not None
+            else {}
+        ),
+        "assertions": [
+            {
+                "relation": item.relation,
+                "subject": item.subject,
+                "title": item.title,
+                "date": str(item.claim.date),
+                "precision": item.claim.date.precision,
+                "label": item.claim.date.label,
+                "disposition": item.claim.disposition,
+                # WHAT THIS IS TO A CONSUMER, and the field that stops a
+                # consumer having to read a note to find out. `answerability`
+                # says whether the profile answers with this claim;
+                # `basis_class` says on what method, which is what decided it.
+                "answerability": item.claim.answerability,
+                "basis_class": item.claim.basis_class,
+                "reporting_exception": item.claim.reporting_exception,
+                "profile": item.claim.profile,
+                "basis": item.claim.basis,
+                "derived": item.claim.derived,
+                "inherited": item.inherited,
+                "scope": item.scope,
+                "sources": list(item.claim.sources),
+                "note": item.claim.note,
+            }
+            for item in answer.assertions
+        ],
+    }
+
+
+def coverage(arguments: argparse.Namespace) -> dict[str, object]:
+    """Counts by category. Never one number: see the guidance, §9.1."""
+    return _chronology.coverage(_corpus_root(arguments), arguments.profile)
+
+
+def build(arguments: argparse.Namespace) -> dict[str, object]:
+    """Rewrite the derived table. Mutates; `check` is the read-only half."""
+    path = _table_path(arguments)
+    rendered = _rendered(arguments)
+    existing = path.read_text(encoding="utf-8") if path.exists() else None
+    if not arguments.dry_run:
+        path.write_text(rendered, encoding="utf-8")
+    return {
+        "status": "dry-run" if arguments.dry_run else "ok",
+        "path": str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path),
+        "rows": len(_rows(arguments)) - 1,
+        "changed": existing != rendered,
+    }
+
+
+def check(arguments: argparse.Namespace) -> dict[str, object]:
+    """Is the tracked table what a fresh derivation produces? Never rebuilds."""
+    path = _table_path(arguments)
+    rendered = _rendered(arguments)
+    if not path.exists():
+        return {
+            "status": "error",
+            "problems": [f"{path}: the derived table is missing; run build"],
+            "rows": len(_rows(arguments)) - 1,
+        }
+    existing = path.read_text(encoding="utf-8")
+    if existing == rendered:
+        return {"status": "ok", "problems": [], "rows": len(_rows(arguments)) - 1}
+    fresh, tracked = rendered.splitlines(), existing.splitlines()
+    first = next(
+        (
+            index
+            for index, (left, right) in enumerate(zip(fresh, tracked), start=1)
+            if left != right
+        ),
+        min(len(fresh), len(tracked)) + 1,
+    )
+    return {
+        "status": "error",
+        "problems": [
+            f"{path}: the derived table is stale; {len(tracked)} tracked lines "
+            f"against {len(fresh)} derived, first differing at line {first}"
+        ],
+        "rows": len(fresh) - 1,
+    }
+
+
+def _render(payload: object, arguments: argparse.Namespace) -> int:
+    # A refusal is a first-class output and prints its reason, but it is still a
+    # refusal: a caller piping this must be able to tell "no" from "here it is"
+    # without parsing prose. Hence 1, the repository's validation-refusal code.
+    refused = isinstance(payload, dict) and payload.get("status") in ("error", "unresolved")
+    if getattr(arguments, "json", False):
+        print_json(payload if isinstance(payload, dict) else {})
+        return 1 if refused else 0
+    if not isinstance(payload, dict):
+        print("scripture-chronology error: invalid payload", file=sys.stderr)
+        return 70
+    verb = getattr(arguments, "command", "")
+    if verb == "query":
+        return _render_query(payload)
+    if verb == "coverage":
+        return _render_coverage(payload)
+    if verb in ("validate", "check"):
+        return _render_problems(payload, verb)
+    print(
+        f"{payload['status']}\t{payload.get('path', '')}\t"
+        f"{payload.get('rows', 0)} rows\t"
+        f"{'changed' if payload.get('changed') else 'unchanged'}"
+    )
+    return 0
+
+
+def _render_query(payload: dict) -> int:
+    print(f"{payload['locus']}\t{payload['chronology_status']}")
+    if not payload["assertions"]:
+        print(f"# {payload['reason']}", file=sys.stderr)
+        # NO ASSERTIONS IS THE "no", whatever produced it. This used to key on
+        # `status == "unresolved"`, which stopped tracking the distinction when
+        # a locus whose mapping refuses began answering `research-pending` on
+        # the chronology axis instead of returning the mapping word as its
+        # answer. A caller piping this asks one question - did I get chronology
+        # - and an empty list is the same "no" whether the corpus refused the
+        # mapping, holds an authored gap, or has simply not been asked yet.
+        return 1
+    for item in payload["assertions"]:
+        reach = "inherited" if item["inherited"] else "direct"
+        # The source's own words where it left any, because "01-14" is the
+        # machine's reading of "the 14th of Nisan, on a Friday" and only one of
+        # the two is what anybody wrote down. The structured form stays the
+        # truth and stays in --json.
+        shown = item["label"] or item["date"]
+        # PRESERVED EVIDENCE IS NOT AN ANSWER, and --evidence is the one surface
+        # that returns both, so the reader has to be able to tell them apart
+        # without going to --json. `answerability` is the field that decides it
+        # (guidance §4.6), so this prints that word rather than a second
+        # vocabulary. It rides in the disposition cell, and only where the state
+        # is not `answerable`, so the column shape is fixed and the default
+        # candidate set - which never carries a preserved claim - renders
+        # exactly as it did.
+        disposition = item["disposition"]
+        if item["answerability"] != "answerable":
+            disposition = f"{disposition} ({item['answerability']})"
+        print(
+            f"{item['relation']}\t{shown}\t{disposition}"
+            f"\t{reach}\t{item['subject']}\t{item['title']}"
+        )
+    return 0
+
+
+def _render_coverage(payload: dict) -> int:
+    total = payload["total_verses"]
+    print(f"verses\t{total}")
+    print(f"runs\t{payload['runs']}")
+    for status, count in payload["by_status"].items():
+        print(f"status\t{status}\t{count}")
+    for relation, count in payload["by_relation"].items():
+        if count:
+            print(f"relation\t{relation}\t{count}")
+    print(f"multiple-relations\t{payload['verses_with_multiple_relations']}")
+    print(f"event-assertions\t{payload['verses_with_substantive_event_assertions']}")
+    print(f"alternatives\t{payload['verses_with_alternative_traditional_claims']}")
+    return 0
+
+
+def _render_problems(payload: dict, verb: str) -> int:
+    for problem in payload.get("problems", []):
+        print(f"scripture-chronology error: {problem}", file=sys.stderr)
+    if payload["status"] == "error":
+        return 1
+    if verb == "validate":
+        counts = payload.get("counts", {})
+        detail = ", ".join(f"{count} {name}" for name, count in counts.items())
+        print(f"chronology corpus valid: {detail}")
+        for event in payload.get("unbound_events", []):
+            print(f"# no binding reaches event {event}", file=sys.stderr)
+    else:
+        print(f"chronology coverage table current: {payload['rows']} rows")
+    return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    shared = argparse.ArgumentParser(add_help=False)
+    shared.add_argument("--root", help="a checkout to read instead of this one")
+    shared.add_argument(
+        "--json",
+        action="store_true",
+        help="emit one compact key-sorted JSON object (cli-v1)",
+    )
+    profiled = argparse.ArgumentParser(add_help=False, parents=[shared])
+    profiled.add_argument("--profile", help="answer under one chronology profile only")
+
+    parser = argparse.ArgumentParser(
+        prog="scripture-chronology",
+        description=(
+            "Answer when a Scripture locus was written and when what it tells "
+            "of happened."
+        ),
+        parents=[shared],
+    )
+    examples_live_on_the_verbs(parser, "scripture-chronology")
+    sub = parser.add_subparsers(dest="command")
+
+    with_examples(
+        sub.add_parser(
+            "validate",
+            help="check the authored corpus, collecting every problem",
+            parents=[shared],
+        ),
+        EXAMPLES["validate"],
+    )
+    ask = sub.add_parser(
+        "query", help="what the corpus says about one locus", parents=[profiled]
+    )
+    ask.add_argument("locus", help="a locus, book.chapter.verse, e.g. Ps.50.3")
+    ask.add_argument(
+        "--system",
+        help=(
+            "the numbering the locus is given in; the corpus is authored in "
+            "vulgate and converts through the concordance or refuses"
+        ),
+    )
+    ask.add_argument(
+        "--evidence",
+        action="store_true",
+        help=(
+            "also return preserved non-answerable evidence, which the default "
+            "candidate set excludes: what a source printed and this profile "
+            "does not answer with; such a row carries its answerability state "
+            "beside its disposition, as 'alternate (preserved)'"
+        ),
+    )
+    with_examples(ask, EXAMPLES["query"])
+    with_examples(
+        sub.add_parser(
+            "coverage", help="what is covered, by category", parents=[profiled]
+        ),
+        EXAMPLES["coverage"],
+    )
+    writer = sub.add_parser(
+        "build", help="rewrite the derived coverage table", parents=[shared]
+    )
+    writer.add_argument(
+        "--dry-run", action="store_true", help="report what would be written"
+    )
+    with_examples(writer, EXAMPLES["build"])
+    with_examples(
+        sub.add_parser(
+            "check",
+            help="refuse a stale derived table without rebuilding it",
+            parents=[shared],
+        ),
+        EXAMPLES["check"],
+    )
+
+    return run_verb_cli(
+        parser=parser,
+        handlers={
+            "validate": validate,
+            "query": query,
+            "coverage": coverage,
+            "build": build,
+            "check": check,
+        },
+        renderer=_render,
+        prefix="scripture-chronology",
+        argv=argv,
+        default_verb="validate",
+        dependency_message="PyYAML is required (requirements-tools.txt)",
+        mapped_errors={_chronology.ChronologyError: ("chronology", 65)},
+    )
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

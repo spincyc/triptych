@@ -1,0 +1,565 @@
+# Chronology profiles: what a date in this corpus is a date *under*.
+#
+# A profile is a policy, not a fact. It says which authorities win when they
+# disagree, what "traditional" is being asserted, and what the profile refuses
+# to do. Facts live in events.yaml, composition.yaml and bindings.yaml and name
+# the profile they were authored under.
+#
+# guidance/scripture-chronology.md owns the semantics. Nothing here restates it.
+schema: triptych-chronology-profiles/v1
+
+profiles:
+  - id: catholic-traditional-v1
+    title: Traditional Catholic chronology, first profile
+    intent: >-
+      The chronology a traditional Catholic apparatus states about Scripture:
+      what Scripture says about its own sequence, what the Roman liturgical
+      books assert, what the received Catholic biblical apparatus prints, and
+      what the Fathers and traditional Catholic commentators transmit. It is
+      the default profile for every consumer in this repository.
+    authority:
+      # Read in order. A lower rank is consulted only where every higher rank
+      # is silent, and a higher rank never yields to a lower one merely because
+      # the lower one is more precise. Precision is not authority.
+      - rank: 1
+        name: Scripture's own chronological and relational statements
+        what: >-
+          An interval, regnal year, age, or ordering the sacred text itself
+          states. Read from the tracked editions under src/sources/bibles.
+        holds_in_repository: src/sources/bibles
+      - rank: 2
+        name: Roman liturgical witnesses, where they make a chronological claim
+        what: >-
+          A date the Roman books themselves assert, not a date inferred from
+          the day a feast is kept. Most feasts assert nothing chronological and
+          this rank is therefore silent far more often than it speaks.
+        holds_in_repository: src/sources/calendars
+      - rank: 3
+        name: The received Catholic biblical apparatus, edition-identified
+        what: >-
+          A traditional Catholic annotated Bible or chronological table tied to
+          an identified printing. Haydock's Douay-Rheims commentary is the
+          instance this repository holds.
+        holds_in_repository: src/sources/works/george-leo-haydock
+      - rank: 4
+        name: Patristic and early ecclesiastical chronological testimony
+        what: >-
+          A Father or early ecclesiastical writer stating a date, sequence, or
+          composition circumstance. Eusebius and Jerome are the chronological
+          witnesses proper; others speak where they speak.
+        holds_in_repository: src/sources/works/eusebius, src/sources/works/jerome
+      - rank: 5
+        name: Traditional Catholic commentators and chronologists
+        what: >-
+          A major traditional Catholic commentator reporting or computing a
+          date. Cornelius a Lapide is the instance this repository holds.
+        holds_in_repository: src/sources/works/cornelius-a-lapide
+      - rank: 6
+        name: Later traditional Catholic reference works
+        what: >-
+          A traditional Catholic reference work consulted where every stronger
+          rank is silent. The 1907-1914 Catholic Encyclopedia is the instance
+          this repository holds.
+        holds_in_repository: src/sources/works/catholic-encyclopedia
+      - rank: 7
+        name: Project derivation from the above
+        what: >-
+          A date this project computed from ranked claims by an explicit rule.
+          Permitted only with basis "derived", a named rule, and every input
+          claim identified. A derivation never overwrites a sourced assertion.
+        holds_in_repository: src/sources/chronology
+    non_authorities:
+      # Named because they are the ones that would otherwise arrive silently.
+      - name: Protestant chronologies, Ussher in particular
+        rule: >-
+          May be cited as comparison or corroboration, and may be reported
+          where a ranked Catholic source itself reports it — Haydock prints
+          Usher's Anno Mundi figures and that printing is Haydock's testimony,
+          recorded as such. Ussher is never the source of record for this
+          profile, and no assertion may name him alone.
+      - name: Modern critical, archaeological, Egyptological and Assyriological chronology
+        rule: >-
+          Not consulted, not used to adjust a traditional date, and not treated
+          as a correction. A divergence between this profile and modern
+          scholarship is a profile boundary, not an error in either. A modern
+          chronology, if ever wanted, is a separate profile with its own id.
+      - name: Any model's unsourced recollection
+        rule: >-
+          Never an authority at any rank. A date nobody read is research-pending,
+          which is a status this corpus can hold.
+    admissibility:
+      # ADMISSIBILITY IS NOT RANK, AND IT IS DECIDED FIRST.
+      #
+      # `authority` above orders evidence. It says which testimony wins when two
+      # admissible sources disagree. It cannot say whether a particular printed
+      # number belongs in this profile's answers at all, and reading it as
+      # though it could is the defect this block exists to close: a work sits at
+      # a rank, so everything it prints was treated as ranked testimony, and a
+      # modern-critical figure reprinted in a Catholic reference work arrived as
+      # traditional chronology because of the shelf it was standing on.
+      #
+      # Two questions, asked in this order:
+      #
+      #     1. is the SOURCE admissible?              `authority` / `non_authorities`
+      #     2. is the BASIS OF THIS VALUE admissible? here
+      #
+      # and only then, over what survives both, 3. which rank wins?
+      # THE BASIS TEST IS A DISCLOSURE TEST. It reads what the source says
+      # about its own value. It does not audit where the value ultimately came
+      # from, and `what_this_rule_does_not_do` says so in terms.
+      rule: >-
+        A chronology value may be returned as a candidate answer under this
+        profile only when BOTH the source AND the basis of that particular
+        value are admissible. The source test asks who is speaking, and
+        `authority` with `non_authorities` answers it. THE BASIS TEST ASKS
+        WHAT THE SOURCE SAYS THE VALUE RESTS ON: the value is refused where the
+        work that carries it PRESENTS it as resting on a method this profile
+        excludes -- naming the warrant, adopting another's reckoning, or
+        declaring the method of the table it prints. It is a test of what the
+        source DISCLOSES about that value, read in the source's own words and
+        quoted in the claim that rests on it. Either test failing is enough to
+        make the value non-answerable.
+      what_this_rule_does_not_do: >-
+        IT DOES NOT AUDIT PROVENANCE, and saying so as plainly as what it does
+        is the whole point of this paragraph. Where a ranked Catholic work
+        prints a conventional year as settled and states no method for it, this
+        profile answers with that year and does not go behind the work to ask
+        what the year ultimately rests on. Reid's "Samaria ... was not taken
+        till 722 B.C." is answered with; Sloet's "722-1" for the same event is
+        refused, because Sloet says of his own table that it gives the
+        chronology "in conjunction with the data of profane history" after
+        "the deciphering of the Assyro-Babylonian inscriptions". Both numbers
+        descend from the same Assyrian eponym canon. This profile answers with
+        the one whose source does not say so. A reviewer who thinks that is the
+        wrong line should attack this paragraph on its merits; it is written
+        here so that it can be attacked, instead of being discovered by reading
+        the code.
+      decision: >-
+        MAINTAINER'S DECISION, 2026-09-02. BINDING ON LATER SESSIONS, AND NOT
+        TO BE RE-LITIGATED FROM SCRATCH. Until this date `rule` was written as
+        a METHOD test -- a value was inadmissible if the method behind it was
+        excluded, "whoever prints it" -- while the corpus enforced a DISCLOSURE
+        test, refusing a value only where its source NAMED an excluded warrant.
+        An independent cold review found the stated rule and the enforced rule
+        apart. The maintainer decided that the disclosure test is the operative
+        policy, on this reasoning, which is recorded here because a policy whose
+        grounds are not written down gets re-argued by whoever reads it next.
+        A method test applied faithfully would disqualify very nearly every
+        absolute B.C. year in Old Testament history, because virtually all of
+        them trace to Assyrian eponym-canon synchronism no matter who prints
+        them -- the fall of Samaria at 722/721 included, and with it Reid,
+        Howlett and the Petavius table that this profile answers with today.
+        A profile enforcing it could state almost no date at all: it would be
+        left with Scripture's relative sequence and nothing else, which is not
+        the chronology a traditional Catholic apparatus states, and stating
+        that chronology is what `intent` says this profile is for. So the
+        profile refuses a value its source PRESENTS as resting on an excluded
+        method, and does not audit the ultimate provenance of a conventional
+        date a ranked Catholic work prints as settled. THIS IS A NARROWING AND
+        IT IS DELIBERATE. It is not a loophole, and it is not silent: a session
+        that wants the method test back is changing what this profile answers
+        with, which `versioning` below makes a new profile id and not an edit
+        of this one.
+      own_voice: >-
+        A Catholic author's own grammatical voice is not sufficient, and
+        Catholic publication context is not a basis. Where the source's own
+        words show the value explicitly derived from, harmonised to, or adopted
+        from a chronology methodology this profile excludes, the value is not
+        answerable -- whatever the rank of the work that prints it, whatever
+        voice it is printed in, and however Catholic the publication context.
+        Drum's "as Briggs surmises" is such an adoption, and Psalm 73 is refused
+        on it. The same article's dating of Psalm 82, which names no method and
+        rejects Briggs rather than adopting him, is not, and Psalm 82 is
+        answered with. The difference is in the two sentences, not in this
+        corpus's opinion of the two psalms.
+      disclosure_is_read_not_inferred: >-
+        The disclosure has to be READ, and quoted in the claim that rests on
+        it. It is the source's own account of its ground for THAT value: the
+        sentence carrying the value, the declared method of the table that
+        prints it, or another place in the same work where that work says in
+        terms whose reckoning that same figure is -- as the Catholic
+        Encyclopedia's "Biblical Chronology" says of the "about 2300 B.C." its
+        "Israelites" prints for the arrival in Chanaan, attributing it to
+        Professor Sayce on the condition "if the chronology of the native
+        Babylonian historians is correct". What may never supply the disclosure
+        is this project's own knowledge of where a date really comes from. An
+        inference about a method the source does not state is not a disclosure,
+        and refusing on one would be this apparatus doing the modern chronology
+        it says it does not do -- silently, and against the source it claims to
+        be reporting.
+      corroboration_is_not_the_ground: >-
+        A source may name a material or modern datum as CORROBORATING a value
+        it reaches on other grounds, and that is not the shape this rule
+        refuses. The question is what the source presents as the GROUND of the
+        value. Where the excluded warrant is the only one the source offers,
+        the value is refused. Where the source argues the value from an
+        admissible ground and adds the other as confirmation, the value stands,
+        and the claim's note must say which reading it took and on which words.
+        Souvay fixes the fall of Ninive by "a well-known inscription of
+        Nabonidus" and offers nothing else for it, so Nahum 2-3 is refused.
+        Howlett places the death of Herod Agrippa "from what Josephus says, and
+        the evidence of the coinage" -- Josephus first, and the same year
+        reached in Prat's "St. Paul" from Acts and Josephus, naming no coin --
+        so it stands. A
+        claim reading a named warrant as corroborative must show the admissible
+        ground it says is primary; if it cannot, the warrant is the ground.
+      a_sources_rejection_on_an_excluded_ground_is_not_followed: >-
+        RULED 2026-09-02, ONCE, HERE, because it was being relied on in four
+        claims and stated in none. Sloet's "Chronology of the Kings" opens the
+        second half of its article with "Since the deciphering of the
+        Assyro-Babylonian inscriptions, the chronology of the period of Kings
+        before 730 B.C. has become untenable", and that sentence stands before
+        BOTH of the article's tables. Four of the ten figures this profile
+        answers with from the Petavius table it reproduces fall inside the
+        period that sentence declares untenable -- B.C. 1055 for David and
+        B.C. 1015 for Solomon, both `preferred`, and B.C. 1012 for the
+        foundation of the Temple and B.C. 975 for Roboam. The question a cold
+        reader is entitled to ask is why the article's own rejection does not
+        reach the figures this corpus takes from the article. Two answers, and
+        the first is the operative one.
+        FIRST, THE GROUND OF THE REJECTION IS THE EXCLUDED METHOD, IN THE
+        SENTENCE'S OWN WORDS. What makes the period untenable, on Sloet's
+        account, is the deciphering of the Assyro-Babylonian inscriptions; the
+        table he sets against it is the one he says gives the chronology "in
+        conjunction with the data of profane history", which this profile
+        refuses under `profane-harmonisation` and does refuse, at
+        israel.monarchy.david-accession#1 and its siblings. A profile that will
+        not answer with a method's NUMBERS cannot follow that method's
+        VERDICTS: doing so would adopt the excluded reckoning as an authority
+        over the received one while declining to print its results, which is
+        the worst of both and is not a position. The disclosure test cuts both
+        ways or it is not a test.
+        SECOND, AND SEPARATELY, THIS IS NOT `rejected-by-source`. That class is
+        for a figure the citing source itself refuses, and Sloet refuses none
+        of the Petavius figures. He reproduces the table and describes it as
+        having, "with few alterations, been in vogue for a long time"; what he
+        sets against it is his own table, which this corpus preserves on his own
+        declared method and does not answer with. A source may print a
+        chronology it does not personally hold, and reporting it is what
+        `reported-traditional` is for.
+        WHAT THIS DOES NOT LICENSE. It is not a rule that a source's objections
+        may be ignored. Where a source rejects a figure on a ground this profile
+        admits -- Scripture, the Fathers, the received apparatus -- the
+        rejection reaches the figure and `rejected-by-source` is the class for
+        it, as at event:apostolic-age.exile-of-saint-john-to-patmos#1. The
+        narrow holding is that a rejection whose stated warrant is a method this
+        profile excludes is refused on exactly the same test, and for the same
+        reason, as a value with that warrant would be.
+      before_rank: >-
+        Admissibility is determined BEFORE source rank. Rank orders admissible
+        evidence; rank never makes an inadmissible basis admissible, and there
+        is no rank at which an excluded basis becomes answerable. The rule
+        reads identically at rank 1 and at rank 6: there is no rank-6 exception,
+        and no rank-6-only rule. What rank does not do is SUPPLY a basis. A
+        work's standing says nothing about the ground of any particular number
+        it prints, which is why the disclosure test asks the source and not the
+        shelf.
+      preservation: >-
+        A figure may be worth preserving as documentary evidence without being
+        an answerable chronology assertion. Refusing a basis is not an
+        instruction to delete what a source printed. Under a disclosure test
+        preservation carries a second weight: a refused figure was refused
+        because its own source said something, and the preserved claim is where
+        that sentence stays readable. A reviewer testing whether the refusal was
+        right has to be able to read the disclosure it was made on, and deleting
+        the figure would delete the evidence for the ruling along with it.
+      # The basis classes this profile knows, and whether each is admissible.
+      # A claim names one in `basis_class`. An unlisted name is a load error:
+      # a vocabulary that admits what it does not recognise cannot tell a typo
+      # from a policy.
+      # A CLAIM THAT NAMES NO BASIS CLASS IS NOT A DEFAULT ANSWER. This line
+      # said `unreviewed` until 2026-09-01, and `unreviewed` is a class this
+      # profile answered with, so a claim authored with neither `basis_class`
+      # nor `answerability` was silently a default answer on a basis nobody had
+      # looked at. The count was reported by `validate --json` and failed
+      # nothing, which is a dashboard and not a gate. It now lands on
+      # `unresolved`, which is inadmissible, so such a claim is a LOAD ERROR
+      # and every consumer refuses it -- not one command reporting a number.
+      unstated: unresolved
+      bases:
+        - id: scripture
+          admissible: true
+          what: >-
+            The sacred text's own chronological or relational statement, read
+            at a locus in a tracked edition. Rank 1, and the basis nothing
+            lower-ranked may suppress.
+        - id: liturgical
+          admissible: true
+          what: >-
+            A chronological claim the Roman books themselves assert. Not the
+            day a feast is kept, which asserts nothing chronological.
+        - id: patristic
+          admissible: true
+          what: >-
+            A Father or early ecclesiastical writer's own chronological
+            testimony.
+        - id: traditional-catholic
+          admissible: true
+          what: >-
+            A ranked traditional Catholic authority stating or computing the
+            value on traditional grounds — Scripture, the Fathers, the received
+            apparatus, or its own traditional reckoning.
+        - id: reported-traditional
+          admissible: true
+          what: >-
+            A ranked work reporting another admissible traditional chronology.
+            The reporting is the reporting work's testimony and is recorded as
+            such; the basis is still traditional, so the value stays answerable.
+        - id: derived
+          admissible: true
+          what: >-
+            This project's derivation from admissible ranked claims by a named
+            rule, with every input identified. Rank 7. A derivation whose inputs
+            are not answerable is not answerable either.
+        - id: unreviewed
+          admissible: false
+          what: >-
+            The basis is stated in the claim's own `basis` prose and has not yet
+            been classified under this contract. This is the state a claim
+            authored before the contract carried. THE DEBT IS EMPTY: the last
+            five were ruled on 2026-09-01 - Nahum 2-3, Psalms 73 and 82, and the
+            two Abram claims - and the disposition of each is recorded in
+            src/sources/chronology/profile-contract-corrections.tsv, row PCC-08.
+            It was `admissible: true` while the debt was being worked off, on the
+            ground that the standing rule those claims were authored under was
+            that only ranked traditional sources may be cited — which is a fact
+            about their SOURCES and settles nothing about their BASES, the very
+            confusion this whole block exists to end. Nothing carries it now, so
+            the transitional admission has been withdrawn: an unclassified basis
+            is an unknown one, and an unknown basis is not a traditional one.
+            The class stays in this vocabulary so that a claim which names it
+            explicitly is refused by name rather than by a typo error, and so
+            that the correction ledger's references to it still resolve.
+        - id: modern-critical
+          admissible: false
+          what: >-
+            Modern critical, archaeological, Egyptological or Assyriological
+            chronology, WHERE THE SOURCE PRESENTS THE VALUE AS RESTING ON IT.
+            `non_authorities` excludes the method; this class is how a claim
+            records that its own source disclosed the method for that value. A
+            Catholic work printing such a value is a Catholic work reporting a
+            chronology this profile does not hold, and the Catholic imprint
+            does not make it traditional. A conventional year that a ranked
+            work prints as settled, stating no method for it, is NOT this
+            class: see `rule` and `what_this_rule_does_not_do`, which say why
+            this profile does not go behind such a year.
+        - id: profane-harmonisation
+          admissible: false
+          what: >-
+            A value arrived at by harmonising Scripture with secular or profane
+            history — the source's own account of its method, not an inference
+            about it. A source that says its table works "in conjunction with
+            the data of profane history" has stated this basis for the values
+            that table carries.
+        - id: reported-excluded
+          admissible: false
+          what: >-
+            A ranked work reporting or adopting a chronology this profile
+            excludes. Preservation is permitted; a default answer is not. The
+            only lift is a `reporting_exception` declared below, by name.
+        - id: rejected-by-source
+          admissible: false
+          what: >-
+            A figure the citing source itself rejects. Recording what a source
+            refused is provenance; returning it as that source's chronology
+            would invert the source.
+        - id: refusal-to-date
+          admissible: false
+          what: >-
+            A source's statement that it will not assign a date. This is not a
+            date assertion at all: it is negative evidence, methodological
+            testimony, and a reason a locus may be undated. It may never be
+            returned as a date candidate, and a claim carrying it must be
+            `preserved`.
+        - id: comparison-only
+          admissible: false
+          what: >-
+            A figure printed for comparison with the profile's own chronology
+            rather than asserted as it.
+        - id: superseded
+          admissible: false
+          what: >-
+            A figure this corpus once carried and has withdrawn, kept so an
+            audit can trace what changed and why.
+        - id: unresolved
+          admissible: false
+          what: >-
+            The basis is mixed or unclear and the source has not settled it.
+            Not answerable while it stays unresolved: an unknown basis is not a
+            traditional one, and guessing which it is would be the fluent wrong
+            answer this apparatus exists to catch.
+      # NARROW, NAMED, AND NOT A PRECEDENT. Each exception lifts exactly one
+      # basis class for exactly one named non-authority, and lifts it nowhere
+      # else. It is not a general licence for chronology printed in a Catholic
+      # work, and it does not extend by analogy to any other name.
+      reporting_exceptions:
+        - id: ussher-reported-by-a-ranked-catholic-source
+          named: Ussher
+          basis: reported-excluded
+          requires: >-
+            The claim's source of record is the ranked Catholic work that
+            printed the figure — Haydock prints Usher's Anno Mundi figures — and
+            the claim records the printing as that work's testimony. Ussher is
+            never the source of record and no assertion may name him alone.
+          display: >-
+            Answerable, at the rank of the reporting work and never higher,
+            carrying the reporting work's provenance and its own note saying
+            whose computation is being reported.
+          does_not_generalise: >-
+            This exception names Ussher and no one else. It does not extend to
+            Sayce, Driver, Wellhausen, Sloet, or any other excluded authority,
+            and it does not make `modern-critical`, `profane-harmonisation` or
+            any other inadmissible basis answerable. A claim naming this
+            exception whose basis class is anything but `reported-excluded` is
+            a load error, which is what stops the analogy being drawn.
+    answerability:
+      # ANSWERABLE CHRONOLOGY IS NOT THE SAME THING AS PRESERVED EVIDENCE, and
+      # the corpus holds both. A claim states which it is; the query layer reads
+      # this profile to decide, and a claim whose basis this profile excludes
+      # cannot be authored as answerable at all.
+      unstated: answerable
+      states:
+        answerable: >-
+          May be returned by a normal chronology query as candidate chronology.
+          Explicit Scriptural chronology, admissible traditional Catholic
+          chronology, and admissible traditional alternatives and disagreements.
+        preserved: >-
+          Retained for provenance, history, comparison, methodology, rejection
+          or audit traceability, and excluded from the default candidate set.
+          Modern-critical chronology printed by a Catholic source, secular
+          harmonisation this profile excludes, chronology the source itself
+          rejects, a source's refusal to assign a date, comparison-only figures,
+          and superseded figures kept so the record can be traced.
+      query: >-
+        The default candidate set is every answerable claim and nothing else.
+        Preserved evidence is reachable only through the provenance, detail and
+        audit surfaces, which a caller opens deliberately. The exclusion is
+        STRUCTURAL: it is decided here, by this profile, in the query layer,
+        before anything is ordered or preferred. A note that says "do not
+        display" is not a control, and a claim whose only protection was such a
+        note was returned by every default consumer that ever asked.
+      refusal: >-
+        A source statement refusing to assign a date is not a chronology date
+        assertion. It may support a methodological note, source-specific
+        negative evidence, an undated state where this corpus permits one, and
+        provenance. It may not be returned as a date candidate.
+      dispositions: >-
+        Answerability is a separate axis from `disposition`. `alternate` and
+        `disputed` are positions WITHIN the candidate set and leave a claim
+        answerable; they are not a way to half-exclude one. A preserved claim
+        may not be `preferred`, and preserved claims take no part in the
+        one-preferred-per-subject arithmetic, because that arithmetic is about
+        what this profile answers with.
+    conflict:
+      # What happens when ranked sources actually disagree.
+      rule: >-
+        Preserve the disagreement. Every sourced claim is kept with its own
+        provenance and a disposition. Exactly one claim per temporal subject
+        per profile may be "preferred", and only when a higher authority rank
+        settles it or the profile's own note records why. Where nothing settles
+        it, every claim is "disputed" and the query returns them all.
+      dispositions:
+        preferred: >-
+          The claim this profile displays first. Requires either a strictly
+          higher authority rank than every alternate, or an explicit note.
+        alternate: >-
+          A sourced claim this profile does not display first, kept queryable
+          with its provenance.
+        disputed: >-
+          A sourced claim in unsettled disagreement with another. No claim on
+          the subject is preferred while any is disputed.
+      forbidden: >-
+        No numeric confidence, no model score, and no silent harmonisation of
+        two claims into a third nobody asserted.
+    display:
+      rule: >-
+        A source's own printed form is preserved in "label" and is never the
+        machine truth. Anno Mundi figures are recorded in the era they were
+        printed in and are not converted to B.C. by this corpus; a conversion
+        is a derivation and needs its own rule, inputs, and epoch.
+      era_epochs: >-
+        No Anno Mundi epoch is fixed by this profile. Traditional sources use
+        several and this corpus has inspected none of them as an epoch claim.
+      century_notation: >-
+        A source that names a CENTURY and no year is notated as that century
+        ENTIRE: "the eighth century B.C." is the interval 800 B.C. to 701 B.C.,
+        and "the end of the fifth or at the beginning of the fourth century
+        B.C." is 500 B.C. to 301 B.C., both centuries. A phrase that narrows
+        within the century — "the early portion of", "about the middle of", "at
+        the turn of" — keeps its narrowing in the label and DOES NOT move the
+        bounds, because the narrowing names no year and the alternative is to
+        invent one the source never printed. The interval is therefore
+        deliberately wider than the claim, and neither of its endpoints is
+        asserted: a consumer reading 700 B.C. or 601 B.C. as a date this profile
+        holds has read the notation as a claim about its own limits, which it is
+        not, and the label is what the source said.
+
+        This is NOTATION, not derivation, and rank 7 `derived` neither applies
+        to it nor may be used for it. A derivation computes a date FROM ranked
+        claims by a rule and needs its inputs identified; a century phrase is
+        ONE claim, restated in the units the machine stores, with nothing
+        combined and nothing inferred. Six claims are notated this way -
+        composition.first-book-of-paralipomenon, second-book-of-paralipomenon,
+        book-of-tobias, book-of-joel, book-of-abdias and book-of-malachias - and
+        each says so in its own note.
+
+        Written down here on 2026-09-02. The rule had been stated only inside
+        those six notes, so a cold reviewer met the same convention six times
+        and the convention nowhere, and reasonably read the widened bounds as an
+        undeclared project computation sitting on a `traditional-catholic` or
+        `reported-traditional` basis. The convention was already uniform; what
+        was missing was a reader who could find it.
+      stated_bounds: >-
+        AN INTERVAL'S ENDPOINTS ARE YEARS THE SOURCE STATES, AND THE YEARS
+        BETWEEN THEM ARE ASSERTED. Written down on 2026-09-02, when a cold
+        review found four claims whose stored intervals were wider than
+        anything their sources said and whose own notes conceded it. A note is
+        not what a consumer computes with. If the machine value says 29 to 33,
+        this profile has asserted 31 and 32, whatever the prose beside it adds.
+        THREE SHAPES, AND WHAT EACH IS DONE WITH.
+        A SET OF CANDIDATE YEARS IS NOT AN INTERVAL. Where a source names two
+        or more years and chooses between none of them -- Howlett's "the years
+        29, 30, and 33 to choose between for the death of Jesus Christ" -- each
+        is recorded as its own `disputed` claim. Spanning them would assert the
+        years the source's own test has just eliminated. life-of-christ
+        .crucifixion holds three such claims and composition.book-of-wisdom two,
+        one for each of the two reigns Gigot offers, because the fifty-nine
+        years between those reigns are exactly what his argument excludes.
+        A CONCESSIVE BOUND IS TAKEN AT THE CONCESSION. "At the end of the reign
+        of Xerxes I (485-465 B.C.)" states a bound at the END of that reign; the
+        parenthesis identifies the reign and does not open the window. The
+        bounds are the years the sentence actually leaves available, and
+        composition.book-of-esther is stored 465 to 425 for that reason.
+        A CENTURY PHRASE IS THE EXCEPTION AND IS NOT A PRECEDENT FOR ANY OTHER
+        WIDENING. `century_notation` above widens deliberately, because a
+        century names its own bounds and narrowing inside it would invent a year
+        the source never printed. That is the opposite case: there the source's
+        unit IS the century. It licenses nothing beyond century phrases, and a
+        claim reaching for it to justify a wider interval is misreading it.
+      a_printed_heading_is_the_works_own_text: >-
+        A YEAR THE WORK PRINTS IN ITS OWN HEADING IS THE WORK STATING THAT YEAR.
+        Written down on 2026-09-02 with `stated_bounds`, because two claims rest
+        on it and both notes read as apologies rather than as a rule.
+        Meistermann's "Jerusalem (Before A.D. 71)" heads the city's Roman period
+        "Under the Roman domination; until A.D. 70", and Bechtel's "Judaizers"
+        heads its treatment "Council of Jerusalem (A.D. 50 or 51)". In neither
+        does the body of the section repeat the year. Both are answered with.
+        A heading is text the work printed, in its own voice, in its own
+        apparatus; reading it is reading the source. What this profile refuses
+        is not text in an unusual position but a value this project WORKED OUT
+        -- and the difference is visible at
+        event:israel.restoration.nehemias-mission#2, where Meistermann prints
+        "Thirteen years later" and no year, and this corpus records the interval
+        as an interval and computes no year from its 458 for Esdras. Reading a
+        heading is not arithmetic. A claim resting on a heading must say in its
+        note that the year is printed as a heading and whether the body repeats
+        it, so that a reader can weigh it; both of these do.
+    non_goals:
+      - Deciding questions the Church has not defined.
+      - Dating every verse. A verse the sources do not date stays undated and says so.
+      - Reconciling traditional chronology with modern chronology.
+      - Serving as the composition date of any *edition*; guidance/sources.md owns that.
+    versioning: >-
+      The id ends in a version because a change of authority policy is a new
+      profile, not an edit of this one. Correcting a typo or adding a rank's
+      repository instance is an edit; changing what wins is not.

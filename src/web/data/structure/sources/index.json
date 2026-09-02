@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 1782,
-  "editions": 716,
-  "passages": 2869,
+  "artifacts": 1920,
+  "editions": 722,
+  "passages": 2873,
   "readable": 1635,
-  "works": 534
+  "works": 540
  },
  "facets": {
   "authors": [
@@ -163,7 +163,7 @@
    },
    {
     "id": "Augustine of Hippo",
-    "works": 6
+    "works": 7
    },
    {
     "id": "Bahya ben Asher ibn Halawa",
@@ -259,7 +259,7 @@
    },
    {
     "id": "Charles G. Herbermann and others",
-    "works": 3
+    "works": 8
    },
    {
     "id": "Charles G. Herbermann and the Catholic Encyclopedia editorial board",
@@ -1248,11 +1248,19 @@
     "works": 8
    },
    {
+    "id": "reference-encyclopedia",
+    "works": 8
+   },
+   {
     "id": "encyclical",
     "works": 7
    },
    {
     "id": "papal-letter",
+    "works": 7
+   },
+   {
+    "id": "patristic-treatise",
     "works": 7
    },
    {
@@ -1265,10 +1273,6 @@
    },
    {
     "id": "patristic-homily-series",
-    "works": 6
-   },
-   {
-    "id": "patristic-treatise",
     "works": 6
    },
    {
@@ -1393,10 +1397,6 @@
    },
    {
     "id": "philosophical-treatise",
-    "works": 3
-   },
-   {
-    "id": "reference-encyclopedia",
     "works": 3
    },
    {
@@ -2290,7 +2290,7 @@
   ],
   "languages": [
    {
-    "editions": 352,
+    "editions": 358,
     "id": "en"
    },
    {
@@ -2421,12 +2421,12 @@
     "label": "19th century"
    },
    {
-    "editions": 166,
+    "editions": 170,
     "id": "1900",
     "label": "20th century"
    },
    {
-    "editions": 382,
+    "editions": 384,
     "id": "2000",
     "label": "21st century"
    }
@@ -2437,7 +2437,7 @@
     "id": "public-domain"
    },
    {
-    "artifacts": 392,
+    "artifacts": 530,
     "id": "restricted"
    },
    {
@@ -4372,6 +4372,34 @@
   },
   {
    "alternate_titles": [
+    "Harmony of the Gospels",
+    "On the Harmony of the Evangelists"
+   ],
+   "author": "Augustine of Hippo",
+   "category": "patristic-treatise",
+   "directory": "editions/augustine/de-consensu-evangelistarum/",
+   "editions": [
+    {
+     "date": "2026-08-26",
+     "file": "2026-english-salmond-npnf1-6-newadvent-web-2026-08-26.json",
+     "id": "edition.augustine.de-consensu-evangelistarum.english-salmond-npnf1-6-newadvent-web-2026-08-26",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "year": 2026
+    }
+   ],
+   "id": "work.augustine.de-consensu-evangelistarum",
+   "languages": [
+    "la"
+   ],
+   "title": "De consensu evangelistarum"
+  },
+  {
+   "alternate_titles": [
     "Expositions on the Psalms"
    ],
    "author": "Augustine of Hippo",
@@ -4396,6 +4424,7 @@
      "passages": 5,
      "readable": 0,
      "rights": [
+      "restricted",
       "unresolved"
      ],
      "year": 2026
@@ -6197,6 +6226,87 @@
   },
   {
    "alternate_titles": [
+    "CE 10"
+   ],
+   "author": "Charles G. Herbermann and others",
+   "category": "reference-encyclopedia",
+   "directory": "editions/catholic-encyclopedia/volume-10/",
+   "editions": [
+    {
+     "date": "1911",
+     "file": "1911-new-york-1911.json",
+     "id": "edition.catholic-encyclopedia.volume-10.new-york-1911",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "year": 1911
+    }
+   ],
+   "id": "work.catholic-encyclopedia.volume-10",
+   "languages": [
+    "en"
+   ],
+   "title": "The Catholic Encyclopedia, Volume 10"
+  },
+  {
+   "alternate_titles": [
+    "CE 12"
+   ],
+   "author": "Charles G. Herbermann and others",
+   "category": "reference-encyclopedia",
+   "directory": "editions/catholic-encyclopedia/volume-12/",
+   "editions": [
+    {
+     "date": "1911",
+     "file": "1911-new-york-1911.json",
+     "id": "edition.catholic-encyclopedia.volume-12.new-york-1911",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "year": 1911
+    }
+   ],
+   "id": "work.catholic-encyclopedia.volume-12",
+   "languages": [
+    "en"
+   ],
+   "title": "The Catholic Encyclopedia, Volume 12"
+  },
+  {
+   "alternate_titles": [
+    "CE 15"
+   ],
+   "author": "Charles G. Herbermann and others",
+   "category": "reference-encyclopedia",
+   "directory": "editions/catholic-encyclopedia/volume-15/",
+   "editions": [
+    {
+     "date": "1912",
+     "file": "1912-new-york-1912.json",
+     "id": "edition.catholic-encyclopedia.volume-15.new-york-1912",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "year": 1912
+    }
+   ],
+   "id": "work.catholic-encyclopedia.volume-15",
+   "languages": [
+    "en"
+   ],
+   "title": "The Catholic Encyclopedia, Volume 15"
+  },
+  {
+   "alternate_titles": [
     "CE 3"
    ],
    "author": "Charles G. Herbermann and others",
@@ -6210,7 +6320,9 @@
      "language": "en",
      "passages": 0,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
      "year": 1908
     }
    ],
@@ -6250,6 +6362,33 @@
   },
   {
    "alternate_titles": [
+    "CE 6"
+   ],
+   "author": "Charles G. Herbermann and others",
+   "category": "reference-encyclopedia",
+   "directory": "editions/catholic-encyclopedia/volume-6/",
+   "editions": [
+    {
+     "date": "1909",
+     "file": "1909-new-york-1909.json",
+     "id": "edition.catholic-encyclopedia.volume-6.new-york-1909",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "year": 1909
+    }
+   ],
+   "id": "work.catholic-encyclopedia.volume-6",
+   "languages": [
+    "en"
+   ],
+   "title": "The Catholic Encyclopedia, Volume 6"
+  },
+  {
+   "alternate_titles": [
     "CE 9"
    ],
    "author": "Charles G. Herbermann and others",
@@ -6276,6 +6415,31 @@
    "title": "The Catholic Encyclopedia, Volume 9"
   },
   {
+   "alternate_titles": [],
+   "author": "Charles G. Herbermann and others",
+   "category": "reference-encyclopedia",
+   "directory": "editions/catholic-encyclopedia/alphabetical-index/",
+   "editions": [
+    {
+     "date": "2026",
+     "file": "2026-newadvent-web-2026-08-27.json",
+     "id": "edition.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27",
+     "language": "en",
+     "passages": 4,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "year": 2026
+    }
+   ],
+   "id": "work.catholic-encyclopedia.alphabetical-index",
+   "languages": [
+    "en"
+   ],
+   "title": "The Catholic Encyclopedia, alphabetical index"
+  },
+  {
    "alternate_titles": [
     "Catholic Encyclopedia, vol. 1 (Aachen-Assize)"
    ],
@@ -6290,7 +6454,9 @@
      "language": "en",
      "passages": 0,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
      "year": 1907
     }
    ],
@@ -6315,7 +6481,9 @@
      "language": "en",
      "passages": 0,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
      "year": 1911
     }
    ],
@@ -6367,7 +6535,9 @@
      "language": "en",
      "passages": 0,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
      "year": 1912
     }
    ],
@@ -6392,7 +6562,9 @@
      "language": "en",
      "passages": 0,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
      "year": 1907
     }
    ],
@@ -6417,7 +6589,9 @@
      "language": "en",
      "passages": 0,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
      "year": 1909
     }
    ],
@@ -6442,7 +6616,9 @@
      "language": "en",
      "passages": 0,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
      "year": 1910
     }
    ],
@@ -6468,7 +6644,8 @@
      "passages": 1,
      "readable": 0,
      "rights": [
-      "public-domain"
+      "public-domain",
+      "restricted"
      ],
      "year": 1910
     }
