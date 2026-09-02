@@ -78,12 +78,12 @@ EXAMPLES = {
                 "# no binding reaches event israel.judges.ark-comes-to-cariathiarim",
                 "# no binding reaches event israel.maccabees.seleucid-era",
                 "# no binding reaches event israel.restoration.reign-of-artaxerxes-i",
-                "chronology corpus valid: 1 profiles, 279 events, 62 composition_units, 375 bindings, 22 gaps, 73 books",
+                "chronology corpus valid: 1 profiles, 279 events, 62 composition_units, 375 bindings, 23 gaps, 73 books",
             ),
         ),
         Example("tools/scripture-chronology validate --json",
             (
-                "{\"answerability\":{\"by_basis\":{\"derived\":2,\"modern-critical\":2,\"patristic\":4,\"profane-harmonisation\":6,\"refusal... [+1145 chars]",
+                "{\"answerability\":{\"by_basis\":{\"derived\":2,\"modern-critical\":8,\"patristic\":4,\"profane-harmonisation\":6,\"refusal... [+1168 chars]",
             ),
         ),
     ),
@@ -123,19 +123,19 @@ EXAMPLES = {
         Example("tools/scripture-chronology coverage",
             (
                 "verses\t35809",
-                "runs\t1881",
-                "status\tcomposition-only\t16450",
-                "status\tdated\t12536",
+                "runs\t1876",
+                "status\tcomposition-only\t16405",
+                "status\tdated\t12491",
                 "status\tnot-alignable\t0",
                 "status\tresearch-pending\t0",
                 "status\ttextually-distinct\t0",
-                "status\tundated-in-tradition\t6823",
+                "status\tundated-in-tradition\t6913",
                 "... 11 more lines",
             ),
         ),
         Example("tools/scripture-chronology coverage --json",
             (
-                "{\"by_relation\":{\"composition\":22074,\"historical-setting\":2934,\"narrated-event\":8015,\"prophecy-given\":1612,\"pro... [+1764 chars]",
+                "{\"by_relation\":{\"composition\":22019,\"historical-setting\":2934,\"narrated-event\":7970,\"prophecy-given\":1612,\"pro... [+1764 chars]",
             ),
         ),
     ),
@@ -143,7 +143,7 @@ EXAMPLES = {
         Example(
             "tools/scripture-chronology build --dry-run",
             (
-                "dry-run\tsrc/sources/chronology/coverage.tsv\t1881 rows\tunchanged",
+                "dry-run\tsrc/sources/chronology/coverage.tsv\t1876 rows\tunchanged",
             ),
             note=(
                 "reads and reports only. Without --dry-run this rewrites the "
@@ -154,7 +154,7 @@ EXAMPLES = {
         Example(
             "tools/scripture-chronology build --dry-run --json",
             (
-                "{\"changed\":false,\"path\":\"src/sources/chronology/coverage.tsv\",\"rows\":1881,\"status\":\"dry-run\",\"v\":1}",
+                "{\"changed\":false,\"path\":\"src/sources/chronology/coverage.tsv\",\"rows\":1876,\"status\":\"dry-run\",\"v\":1}",
             ),
             note="the same, as the machine contract",
         ),
@@ -162,12 +162,12 @@ EXAMPLES = {
     "check": (
         Example("tools/scripture-chronology check",
             (
-                "chronology coverage table current: 1881 rows",
+                "chronology coverage table current: 1876 rows",
             ),
         ),
         Example("tools/scripture-chronology check --json",
             (
-                "{\"problems\":[],\"rows\":1881,\"status\":\"ok\",\"v\":1}",
+                "{\"problems\":[],\"rows\":1876,\"status\":\"ok\",\"v\":1}",
             ),
         ),
     ),

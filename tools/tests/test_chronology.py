@@ -15,6 +15,7 @@ would go green against the wrong file.
 """
 from __future__ import annotations
 
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -2644,8 +2645,15 @@ class LastUnreviewedClaimsTests(unittest.TestCase):
         "composition.psalm-73": ("reported-excluded", "preserved"),
         "composition.psalm-82": ("traditional-catholic", "answerable"),
         "israel.patriarchs.abram-enters-chanaan": ("modern-critical", "preserved"),
+        # RE-RULED 2026-09-01 by the profile-contract remediation lane, and
+        # the change is the point of the row rather than a detail of it: PCC-08
+        # ruled this one `traditional-catholic` and answerable on the ground
+        # that it "carries no year at all", and what it carried instead was its
+        # own subject restated -- "when he came into passing contact with Egypt
+        # (Genesis 12) and Elam (Genesis 14)" -- measured to an anchor PCC-08
+        # had just refused to date. See PCC-16.
         "israel.patriarchs.abram-contact-with-egypt-and-elam": (
-            "traditional-catholic", "answerable",
+            "modern-critical", "preserved",
         ),
     }
 
@@ -2734,12 +2742,15 @@ class LastUnreviewedClaimsTests(unittest.TestCase):
             [item.subject for item in eighty_two.assertions], ["composition.psalm-82"]
         )
 
-    def test_the_abram_year_stops_answering_and_the_position_survives(self) -> None:
-        """The two Abram claims are ruled apart because they carry different
-        things. The arrival carries "about 2300 B.C.", which the same
-        encyclopedia attributes to Sayce's Babylonian synchronism; the contact
-        carries no year at all, only where the two episodes stand relative to
-        the arrival, which the article grounds in Genesis 12 and 14."""
+    def test_the_abram_sentence_is_ruled_once_and_reaches_no_verse(self) -> None:
+        """One sentence of "Israelites", one method, one ruling. It carried
+        "about 2300 B.C." on the arrival -- which the same encyclopedia
+        attributes to Sayce's Babylonian synchronism -- and, on the contact, a
+        position measured to that same arrival whose stated interval was the
+        contact restated. PCC-08 split them, answering with the second while
+        refusing the first; both are preserved now, both stay legible under
+        --evidence, and the thirty-five verses that reported `dated` on the
+        tautology fall to the book-scoped Genesis row."""
         for locus in ("Gen.12.6", "Gen.12.9"):
             answer = self.ask(locus)
             self.assertEqual(answer.status, "undated-in-tradition", locus)
@@ -2757,14 +2768,403 @@ class LastUnreviewedClaimsTests(unittest.TestCase):
             ],
         )
         self.assertEqual(self.ask("Gen.12.5").status, "dated")
-        for locus in ("Gen.12.10", "Gen.14.1"):
+        for locus in ("Gen.12.10", "Gen.12.20", "Gen.14.1", "Gen.14.24"):
             answer = self.ask(locus)
-            self.assertEqual(answer.status, "dated", locus)
+            self.assertEqual(answer.status, "undated-in-tradition", locus)
+            self.assertEqual(answer.assertions, (), locus)
+            self.assertNotIn(self.FALSE_NOTE, answer.note, locus)
+            self.assertIn("12:10-20", answer.note, locus)
+            # The row must not still say what it said before, which was that
+            # these verses were unaffected. A gap reason is what a consumer
+            # reads, so a false one is a false answer.
+            self.assertNotIn(
+                "Genesis 12:10-20 and 14 are\n      unaffected", answer.note, locus
+            )
+        preserved = [
+            item.claim.date.label
+            for item in self.ask("Gen.14.1", evidence=True).assertions
+        ]
+        self.assertIn(
+            "when he came into passing contact with Egypt (Genesis 12) and "
+            "Elam (Genesis 14)",
+            preserved,
+        )
+
+
+# --- The profile-contract remediation lane, 2026-09-01 ----------------------
+
+
+class RemediationTests(unittest.TestCase):
+    """PCC-13..PCC-21: the defects an independent cold review of c1dee9fc0,
+    52b2467d8 and ad0644bb1 found in the RULING layer, and the invariants that
+    stop each of them coming back.
+
+    Every one of them was a claim whose stored label said something its own
+    recorded `basis` prose denied. That is the failure mode this whole contract
+    exists to catch, arriving one level up: the mechanism was sound, the
+    application of it was not, and nothing in the corpus was checking the
+    application against the prose it was supposed to be reading.
+    """
+
+    def claims(self):
+        corpus = _chronology.load()
+        holders = {**corpus.events, **corpus.units}
+        return corpus, holders
+
+    def claim(self, identifier: str, index: int = 0):
+        _corpus, holders = self.claims()
+        return holders[identifier].claims[index]
+
+    # --- PCC-18: the contract was circumventable ---------------------------
+
+    def test_a_claim_that_names_no_basis_class_cannot_be_a_default_answer(self) -> None:
+        """THE GATE. `unstated` used to be `unreviewed`, and `unreviewed` used
+        to be admissible, so a claim authored with neither field was silently a
+        default answer on a basis nobody had classified. `validate` counted it
+        and failed on nothing, which is a dashboard."""
+        profile = _chronology.load().policies["catholic-traditional-v1"]
+        self.assertNotIn(profile.unstated_basis, profile.admissible)
+        self.assertNotIn("unreviewed", profile.admissible)
+
+    def test_the_gate_is_a_load_error_and_not_one_command_s_opinion(self) -> None:
+        """Landing the unstated default on an inadmissible class means the
+        refusal happens in the loader, so `query`, `build`, `check`, `coverage`
+        and every other consumer refuses too -- not only `validate`."""
+        body = (
+            "events:\n"
+            "  - id: e.one\n"
+            "    title: Authored without a basis class\n"
+            "    dates:\n"
+            "      - profile: catholic-traditional-v1\n"
+            "        basis: A source printed it.\n"
+            "        sources: [bible.douay-rheims]\n"
+            "        date: {precision: year, from: {year: 33, era: ad}}\n"
+        )
+        gated = PROFILES.replace("      unstated: unreviewed\n",
+                                 "      unstated: unresolved\n").replace(
+            "        - id: unreviewed\n          admissible: true\n",
+            "        - id: unreviewed\n          admissible: false\n").replace(
+            "        - id: refusal-to-date\n",
+            "        - id: unresolved\n"
+            "          admissible: false\n"
+            "          what: The basis is mixed or unclear.\n"
+            "        - id: refusal-to-date\n")
+        refuses(self, "is not admissible under", profiles=gated, events=body)
+
+    # --- PCC-13: four claims ruled against their own basis prose -----------
+
+    RE_RULED = {
+        # id, index: (basis class, answerability, a phrase from its own basis)
+        ("composition.book-of-malachias", 0): (
+            "reported-excluded", "preserved", "Critics are practically agreed"),
+        ("apostolic-age.exile-of-saint-john-to-patmos", 1): (
+            "rejected-by-source", "preserved", "records and rejects a rival"),
+        ("life-of-christ.baptism", 0): (
+            "reported-excluded", "preserved", "adopts Ramsay's"),
+        ("composition.gospel-of-mark", 1): (
+            "reported-traditional", "answerable", "reported as the Chronicle's"),
+    }
+
+    def test_each_claim_is_ruled_by_the_prose_it_records(self) -> None:
+        for (identifier, index), (klass, state, phrase) in self.RE_RULED.items():
+            claim = self.claim(identifier, index)
+            self.assertEqual(claim.basis_class, klass, identifier)
+            self.assertEqual(claim.answerability, state, identifier)
+            self.assertIn(phrase, claim.basis, identifier)
+
+    def test_the_class_the_profile_declared_and_never_used_is_used(self) -> None:
+        """`rejected-by-source` was declared, described exactly, and carried by
+        no claim, while the corpus's clearest instance of it was answered
+        with."""
+        corpus, holders = self.claims()
+        rejected = [
+            f"{holder.id}#{index}"
+            for holder in holders.values()
+            for index, claim in enumerate(holder.claims)
+            if claim.basis_class == "rejected-by-source"
+        ]
+        self.assertIn("apostolic-age.exile-of-saint-john-to-patmos#1", rejected)
+        for claim in holders["apostolic-age.exile-of-saint-john-to-patmos"].claims:
+            if claim.basis_class == "rejected-by-source":
+                self.assertFalse(corpus.answers_with(claim))
+
+    def test_apocalypse_1_9_still_answers_with_the_reign_of_domitian(self) -> None:
+        answer = _chronology.chronology("Apoc.1.9")
+        labels = [item.claim.date.label for item in answer.assertions]
+        self.assertIn("the reign of the Emperor Domitian (81-96)", labels)
+        self.assertNotIn("the reign of Claudius, A.D. 41-54", labels)
+
+    def test_the_rejected_figure_is_still_inspectable(self) -> None:
+        labels = [
+            item.claim.date.label
+            for item in _chronology.chronology("Apoc.1.9", evidence=True).assertions
+        ]
+        self.assertIn("the reign of Claudius, A.D. 41-54", labels)
+
+    # --- PCC-14: rank-1 labels on rank-6 values ----------------------------
+
+    RANK_SIX = (
+        "israel.wilderness.mary-stricken-at-haseroth",
+        "israel.wilderness.coming-to-cades",
+        "israel.restoration.strange-wives-put-away",
+        "israel.restoration.covenant-renewed",
+    )
+
+    def test_no_rank_6_value_stands_under_the_rank_1_label(self) -> None:
+        """`scripture` is rank 1 and, in this profile, the basis nothing
+        lower-ranked may suppress. Four values the sources say came from the
+        Catholic Encyclopedia alone were carrying it -- one of them beside a
+        note reading "the year is taken from rank 6 and from nowhere else"."""
+        for identifier in self.RANK_SIX:
+            claim = self.claim(identifier)
+            self.assertEqual(claim.basis_class, "traditional-catholic", identifier)
+            self.assertEqual(claim.answerability, "answerable", identifier)
+
+    def test_the_haseroth_provenance_names_the_verse_its_prose_quotes(self) -> None:
+        claim = self.claim("israel.wilderness.mary-stricken-at-haseroth")
+        self.assertIn("Numbers 13:1", claim.basis)
+        self.assertIn("bible:douay-rheims:Num.13.1", claim.sources)
+        self.assertNotIn("bible:douay-rheims:Num.12.1", claim.sources)
+
+    # --- PCC-15: one apparatus, one ruling ---------------------------------
+
+    HAYDOCK = "george-leo-haydock"
+
+    def test_the_haydock_chronology_is_ruled_one_way_across_the_edition(self) -> None:
+        """Exodus 3, 5, 16 and 32 and Psalm 70 were `reported-excluded` under
+        the Ussher lift while seven claims on the same uninitialled apparatus in
+        1 and 2 Kings were `traditional-catholic` with no lift, on notes saying
+        the markers are not attributed to any named commentator. One printing,
+        one apparatus, one epoch, two opposite rulings."""
+        _corpus, holders = self.claims()
+        family = [
+            (f"{holder.id}#{index}", claim)
+            for holder in holders.values()
+            for index, claim in enumerate(holder.claims)
+            if any(self.HAYDOCK in source for source in claim.sources)
+        ]
+        self.assertGreaterEqual(len(family), 15)
+        for identifier, claim in family:
+            if claim.basis_class == "scripture":
+                # A Scriptural claim may cite the edition for context; what it
+                # answers with is the verse, and this rule is about the values
+                # the apparatus itself supplies.
+                continue
+            self.assertEqual(claim.basis_class, "reported-excluded", identifier)
             self.assertEqual(
-                [item.subject for item in answer.assertions],
-                ["israel.patriarchs.abram-contact-with-egypt-and-elam"],
+                claim.reporting_exception,
+                "ussher-reported-by-a-ranked-catholic-source",
+                identifier,
+            )
+
+    def test_every_lifted_claim_still_says_whose_computation_it_reports(self) -> None:
+        """The lift's own display clause requires it, and the seven Kings claims
+        were relying on a note the lift does not read."""
+        _corpus, holders = self.claims()
+        for holder in holders.values():
+            for index, claim in enumerate(holder.claims):
+                if not claim.reporting_exception:
+                    continue
+                self.assertRegex(claim.basis, r"\bUss?her\b", f"{holder.id}#{index}")
+
+    # --- PCC-17: the lift stretched one step past Ussher -------------------
+
+    PAST_USSHER = (
+        ("israel.exodus.the-exodus", 0, "the year 1490 B.C."),
+        ("israel.monarchy.temple-begun", 2,
+         "the Temple was begun in the fourth year of that king, or in 1010"),
+    )
+
+    def test_a_figure_computed_from_ussher_is_not_a_figure_ussher_stated(self) -> None:
+        """What the source quotes Ussher as giving is "the reign of King Solomon
+        from 1014-975 B.C." The 1010 and the 1490 are Howlett's arithmetic upon
+        it, and `own_voice` disqualifies a value "explicitly derived from" an
+        excluded chronology. The corpus's own Haydock claims print Ussher's
+        actual Exodus year, 1491, two events away."""
+        for identifier, index, label in self.PAST_USSHER:
+            claim = self.claim(identifier, index)
+            self.assertEqual(claim.date.label, label, identifier)
+            self.assertEqual(claim.answerability, "preserved", identifier)
+            self.assertIsNone(claim.reporting_exception, identifier)
+
+    def test_both_subjects_are_still_dated_by_scripture(self) -> None:
+        for identifier in ("israel.exodus.the-exodus", "israel.monarchy.temple-begun"):
+            preferred = [
+                claim for claim in _chronology.load().events[identifier].claims
+                if claim.answerability == "answerable"
+                and claim.disposition == "preferred"
+            ]
+            self.assertEqual(len(preferred), 1, identifier)
+            self.assertEqual(preferred[0].basis_class, "scripture", identifier)
+
+    # --- PCC-16: the Abram tautology, and the loader refusal ---------------
+
+    def test_a_relative_claim_measured_to_a_refused_anchor_is_refused(self) -> None:
+        """The shape the corpus was in: the year on the anchor withdrawn as
+        inadmissible, and a position measured to that anchor, out of the same
+        sentence of the same source, still answering."""
+        body = (
+            "events:\n"
+            "  - id: e.anchor\n"
+            "    title: The anchor whose only date this profile refuses\n"
+            "    dates:\n"
+            "      - profile: catholic-traditional-v1\n"
+            "        disposition: alternate\n"
+            "        answerability: preserved\n"
+            "        basis_class: modern-critical\n"
+            "        basis: One sentence, giving a year and a position.\n"
+            "        sources: [artifact.one]\n"
+            "        date: {precision: year, from: {year: 2300, era: bc}}\n"
+            "  - id: e.position\n"
+            "    title: The position out of that same sentence\n"
+            "    dates:\n"
+            "      - profile: catholic-traditional-v1\n"
+            "        basis_class: traditional-catholic\n"
+            "        basis: The same sentence, minus the year.\n"
+            "        sources: [artifact.one]\n"
+            "        date:\n"
+            "          precision: relative\n"
+            "          relative: {of: e.anchor, statement: when it happened}\n"
+        )
+        refuses(self, "one half of a source statement", events=body)
+
+    def test_a_relative_claim_on_a_subject_nobody_dates_is_not_refused(self) -> None:
+        """AND THIS IS THE LINE. `israel.monarchy.saul-accession` holds no
+        answerable claim and three claims are measured from it, two of them
+        rank-1 Scriptural relations -- "about a month after this". This
+        profile's first authority is "Scripture's own chronological and
+        RELATIONAL statements", so a rule refusing a position because nobody can
+        put a year on its anchor would refuse the thing the profile ranks
+        highest. What makes the Abram case different is the shared source."""
+        body = (
+            "events:\n"
+            "  - id: e.anchor\n"
+            "    title: A subject this corpus openly does not date\n"
+            "    dates:\n"
+            "      - profile: catholic-traditional-v1\n"
+            "        disposition: alternate\n"
+            "        answerability: preserved\n"
+            "        basis_class: modern-critical\n"
+            "        basis: The one figure ever inspected, and it is excluded.\n"
+            "        sources: [artifact.one]\n"
+            "        date: {precision: year, from: {year: 1020, era: bc}}\n"
+            "  - id: e.position\n"
+            "    title: Scripture's own interval from it\n"
+            "    dates:\n"
+            "      - profile: catholic-traditional-v1\n"
+            "        basis_class: scripture\n"
+            "        basis: And it came to pass about a month after this.\n"
+            "        sources: [bible.douay-rheims]\n"
+            "        date:\n"
+            "          precision: relative\n"
+            "          relative: {of: e.anchor, statement: about a month after this}\n"
+        )
+        kept = corpus(self, events=body)
+        claim = _chronology.load(kept.root).events["e.position"].claims[0]
+        self.assertEqual(claim.answerability, "answerable")
+
+    def test_the_three_saul_relations_the_narrow_rule_protects_still_load(self) -> None:
+        corpus, holders = self.claims()
+        self.assertFalse(
+            any(claim.answerability == "answerable"
+                for claim in holders["israel.monarchy.saul-accession"].claims)
+        )
+        for identifier in ("israel.monarchy.anointing-of-saul",
+                           "israel.monarchy.deliverance-of-jabes-galaad",
+                           "composition.book-of-judges"):
+            claim = holders[identifier].claims[0]
+            self.assertEqual(claim.date.relative["of"],
+                             "israel.monarchy.saul-accession", identifier)
+            self.assertTrue(corpus.answers_with(claim), identifier)
+
+    # --- PCC-19: a withdrawn figure is preserved, never deleted ------------
+
+    WITHDRAWN = {
+        "israel.exodus.the-exodus": "about 1277",
+        "israel.monarchy.saul-accession": "the monarchy was founded by Saul, 1020",
+        "israel.monarchy.david-accession": "David mounted the throne, 1002",
+        "israel.monarchy.solomon-accession": "Solomon in 962",
+        "israel.monarchy.temple-begun": "the Temple was begun, 958 B.C.",
+    }
+
+    def test_the_deleted_howlett_sentence_is_held_as_evidence_again(self) -> None:
+        """One sentence, five figures, one remedy. They were deleted outright
+        and survived only in subject notes, while the profile says "Refusing a
+        basis is not an instruction to delete what a source printed" and the
+        corpus gave Nahum, Psalm 73 and Abram the preserving remedy."""
+        corpus, _holders = self.claims()
+        for identifier, label in self.WITHDRAWN.items():
+            held = [
+                claim for claim in corpus.events[identifier].claims
+                if claim.date.label == label
+            ]
+            self.assertEqual(len(held), 1, identifier)
+            self.assertEqual(held[0].answerability, "preserved", identifier)
+            self.assertEqual(held[0].basis_class, "modern-critical", identifier)
+            self.assertFalse(corpus.answers_with(held[0]), identifier)
+
+    def test_restoring_them_answered_nothing_new(self) -> None:
+        for locus in ("Ex.12.41", "3Kings.6.1"):
+            labels = [
+                item.claim.date.label
+                for item in _chronology.chronology(locus).assertions
+            ]
+            for label in self.WITHDRAWN.values():
+                self.assertNotIn(label, labels, locus)
+
+    # --- PCC-21: the verses the withdrawals displaced ----------------------
+
+    def test_malachias_falls_to_a_row_that_says_a_source_was_read(self) -> None:
+        for locus in ("Mal.1.1", "Mal.4.6"):
+            answer = _chronology.chronology(locus)
+            self.assertEqual(answer.status, "undated-in-tradition", locus)
+            self.assertIn("Van Hoonacker", answer.note, locus)
+            self.assertNotIn("no ranked source has been inspected", answer.note, locus)
+
+    def test_the_malachias_figure_is_preserved_and_not_deleted(self) -> None:
+        labels = [
+            item.claim.date.label
+            for item in _chronology.chronology("Mal.1.1", evidence=True).assertions
+        ]
+        self.assertIn("about the middle of the fifth century B.C.", labels)
+
+    def test_the_baptism_verses_keep_their_gospel_and_lose_the_year(self) -> None:
+        for locus in ("Matt.3.13", "Mark.1.9", "Luke.3.21"):
+            answer = _chronology.chronology(locus)
+            self.assertEqual(answer.status, "composition-only", locus)
+            self.assertTrue(
+                all(item.relation == "composition" for item in answer.assertions),
                 locus,
             )
+            self.assertNotIn(
+                "A.D. 27", [item.claim.date.label for item in answer.assertions], locus
+            )
+
+    # --- PCC-20: the review record's own key, and its drift gate -----------
+
+    def test_the_correction_ledger_has_one_row_per_correction_id(self) -> None:
+        """§27 makes `correction_id` the key of this file, and it carried PCC-09
+        twice -- the gap-row consequence and the semantic-differ repair."""
+        path = (REPOSITORY_ROOT / "src" / "sources" / "chronology"
+                / "profile-contract-corrections.tsv")
+        ids = [
+            line.split("\t", 1)[0]
+            for line in path.read_text().splitlines()
+            if line.startswith("PCC-")
+        ]
+        self.assertEqual(sorted(ids), sorted(set(ids)), "duplicate correction_id")
+        self.assertTrue(ids)
+
+    def test_the_cold_review_manifest_is_not_stale(self) -> None:
+        """The manifest is derived and is the surface a cold reviewer works
+        from, and it had no way of saying it had gone stale. `--check`
+        re-derives against the base its own header records."""
+        builder = REPOSITORY_ROOT / "scripts" / "build_profile_contract_manifest.py"
+        done = subprocess.run(
+            [sys.executable, str(builder), "--check"],
+            capture_output=True, text=True, cwd=str(REPOSITORY_ROOT),
+        )
+        self.assertEqual(done.returncode, 0, done.stdout + done.stderr)
 
 
 if __name__ == "__main__":

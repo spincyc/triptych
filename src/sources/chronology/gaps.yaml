@@ -312,12 +312,14 @@ gaps:
       an assertion always beats it: what it actually catches is the verses where
       this corpus answers with no assertion at all, which after the 2026-09-01 lane's
       work are
-      Genesis 3:1-24, 4:1-24, 6:1-2, 6:4-12, 9:1-27, 11:1-9, 11:28-30, 12:6-9, 13,
+      Genesis 3:1-24, 4:1-24, 6:1-2, 6:4-12, 9:1-27, 11:1-9, 11:28-30, 12:6-9,
+      12:10-20, 13, 14,
       15:1-12,
       15:17-21, 19:30-38, 20, 21:9-34, 22, 25:27-34, 26:1-33, 27, 28, 32, 33, 34,
       35:1-26, 36, 38 and 39 - the Fall, Cain and Abel, the wickedness before the
       Flood, the covenant with Noe and the cursing of Chanaan, the tower of Babel,
-      Abram's journey through the land to Bethel and the Negeb,
+      Abram's journey through the land to Bethel and the Negeb, the descent into
+      Egypt and Sarai before Pharao, the war of the four kings and Melchisedech,
       the parting of Abram and Lot, the covenant sacrifice, Lot and his daughters
       in the cave and the begetting of Moab and Ammon, Abimelech at Gerara, the
       casting out of Agar, the sacrifice of Isaac, the pottage of lentils, Isaac
@@ -365,9 +367,28 @@ gaps:
       Assyriological chronology whoever prints it. What this row therefore says at
       12:6-9 is that the tradition it answers under states no time for them, not that
       nobody looked. Genesis 12:5 is unaffected and still answers from the call of
-      Abram, which Genesis 12:4 dates by his own years; and Genesis 12:10-20 and 14 are
-      unaffected too, because what the article says of those chapters is where they
-      stand relative to the arrival, and a position is not the excluded year.
+      Abram, which Genesis 12:4 dates by his own years.
+      GENESIS 12:10-20 AND GENESIS 14 ARE NOT UNAFFECTED, and this row said until
+      2026-09-01 that they were. The reasoning it gave was that what the article
+      says of those chapters "is where they stand relative to the arrival, and a
+      position is not the excluded year". That position was held on
+      israel.patriarchs.abram-contact-with-egypt-and-elam as an answerable and
+      preferred claim, and two things were wrong with it at once: its anchor was
+      the arrival, which by this row's own account carries no answerable date,
+      and the interval it stated - "when he came into passing contact with Egypt
+      (Genesis 12) and Elam (Genesis 14)" - was the event restated rather than
+      any interval at all. Thirty-five verses reported status `dated` on it. That
+      claim is now preserved on the same ground as the arrival it belongs to:
+      one sentence of "Israelites", one method, Sayce's Babylonian synchronism.
+      So what this row says at 12:10-20 and at 14 is what it says at 12:6-9 - a
+      ranked source WAS read, it does speak about these chapters, and what it
+      says about them is tied to a year this profile does not consult. It is not
+      a claim that nobody looked. Genesis 14:4-5's own reckoning, "For they had
+      served Chodorlahomor twelve years, and in the thirteenth year they revolted
+      from him. And in the fourteenth year came Chodorlahomor", counts from the
+      beginning of a servitude no source inspected for this corpus dates, so it
+      states a sequence and reaches no year; it is reported on that event and is
+      not authored as a claim.
     sources:
       - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11646c-b7ab7001
       - artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01051a-8bd3c845
@@ -779,3 +800,28 @@ gaps:
       year of any era, and no other source inspected for this corpus dates the
       writing of the book.
     sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08497b-3ef68123]
+  # === lane profile-contract remediation ===
+  - status: undated-in-tradition
+    scope: [{book: Mal}]
+    reason: >-
+      A ranked source WAS inspected for this book, and this row exists so that
+      the corpus does not say otherwise. Van Hoonacker's "Malachias (Malachi)"
+      in the Catholic Encyclopedia was read for this corpus and it does state a
+      date of writing - "Critics are practically agreed in dating the book from
+      about the middle of the fifth century B.C." - but it states in the same
+      breath who agrees and on what. The agreement is the critics', not the
+      tradition's; the article says of the text itself that "The text itself
+      does not furnish any explicit information"; and the ground it gives is
+      internal criticism, the Persian title Peha and the state of worship,
+      "because not only the Temple exists, but relaxation in the exercise of
+      worship already prevails". No Father, no liturgical witness, no received
+      apparatus and no traditional commentator inspected for this corpus dates
+      the writing of Malachias, and the article cites none of them for the year
+      it prints. So the century it names is not a date this profile may answer
+      with. The figure itself is kept, in composition.yaml, preserved rather
+      than deleted, and is reachable under --evidence. The only other date on
+      the page is the second-century proposal the article reports in order to
+      dismiss it, which "has received no support", and that is not a date this
+      corpus may carry either. This row says that, and it must not be read as
+      saying that nobody looked.
+    sources: [artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09562b-38fb6fcd]

@@ -346,20 +346,29 @@ Three consequences, each of which the corpus has actually been got wrong by:
   this is literal — `_candidates` gates every claim before `sort_key` orders
   anything, and ordering is the whole of what rank does.
 
-`unreviewed` is the transitional class and is admissible. It is what a claim
-authored before this contract carries, and it is admissible because the rule
-those claims were authored under was that only ranked traditional sources may
-be cited — **not** because anything has found their basis admissible. It is a
-debt, `tools/tpt scripture-chronology validate --json` counts it under
-`answerability.by_basis`, and the correction lanes exist to empty it. **The
-debt is empty.** The basis-ruling lane of 2026-09-01 emptied it down to five
-claims and named them rather than guessing at them; the completion lane of the
-same day ruled all five, and
+`unreviewed` was the transitional class. It is what a claim authored before
+this contract carried, and it was admissible while the debt was being worked
+off, on the ground that the rule those claims were authored under was that only
+ranked traditional sources may be cited — which is a fact about their SOURCES
+and settles nothing about their BASES, the very confusion §4.5 exists to end.
+**The debt is empty.** The basis-ruling lane of 2026-09-01 emptied it down to
+five claims and named them rather than guessing at them; the completion lane of
+the same day ruled all five, and
 `src/sources/chronology/profile-contract-corrections.tsv` row PCC-08 records
-what each was ruled and on which sentence of its source. A claim carrying
-`unreviewed` is therefore an open case and not a backlog item: it is a claim
-that arrived after the corpus had none, and authoring one needs a reason
-stated in the same place.
+what each was ruled and on which sentence of its source.
+
+**The transitional admission is therefore withdrawn, and the contract is now a
+gate rather than a report.** `unreviewed` is `admissible: false`, and the
+profile's `unstated` basis class is `unresolved`, which is inadmissible too. A
+claim authored with no `basis_class` is a **load error**, so `query`, `build`,
+`check`, `coverage` and every other consumer refuses it — not `validate` alone.
+Until 2026-09-01 the profile's `unstated` was `unreviewed` and `unreviewed` was
+admissible, so a claim authored with neither field was silently a default answer
+on a basis nobody had classified, and `validate` reported the count and failed
+on nothing. A number nobody has to act on is a dashboard, not a control;
+`src/sources/chronology/profile-contract-corrections.tsv` row PCC-18 records the
+change and why the loader was chosen over the command. The class stays declared
+so that naming it explicitly is refused by name rather than as a typo.
 
 #### 4.5.1 The Ussher reporting exception is narrow, and named
 
@@ -1134,8 +1143,9 @@ source. Check for them by name.
 `make check`. The focused tests are `tools/tests/test_chronology.py`.
 
 `validate --json` reports `answerability` beside its counts: how many claims
-the profiles answer with, how many are preserved, and how many still stand on
-the transitional `unreviewed` basis class (§4.5). `python3
+the profiles answer with, how many are preserved, and the population by basis
+class, including the `unreviewed` and `unresolved` classes a claim can no longer
+be answerable on (§4.5). The report is a description; the gate is the loader. `python3
 scripts/chronology_review_diff.py BASE HEAD` compares two revisions as objects,
 including the `profiles` and `answerability` sections §4.7 describes.
 

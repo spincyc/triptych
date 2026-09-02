@@ -31,12 +31,28 @@ review, and a manifest that could only be built after the commit would be
 built too late to inform it.
 
   python3 scripts/build_profile_contract_manifest.py [--base REV]
+  python3 scripts/build_profile_contract_manifest.py --check   # exit 1 if stale
+
+`--check` re-derives and compares against the tracked file rather than writing
+it, so the manifest cannot drift from its own rule unnoticed. It was added on
+2026-09-01 because it was missing: this file is derived, is the surface a cold
+reviewer works from, and had no way of saying it had gone stale -- a review
+surface that quietly stops describing the corpus reads as a clean bill.
+
+WHERE `--check` GETS ITS BASE, and why it is not `HEAD`. The manifest is a diff
+against one committed revision, so re-deriving it against a different base is a
+different artifact and not a drift report. The base is therefore read out of the
+tracked manifest's own header, which prints it, unless `--base` says otherwise.
+That makes the check self-describing and independent of where HEAD has moved to
+since.
 """
 from __future__ import annotations
 
 import argparse
 import csv
+import io
 import json
+import re
 import subprocess
 import sys
 import tempfile
@@ -159,15 +175,24 @@ class Surface:
         return row
 
 
-def main(argv=None) -> int:
-    parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    parser.add_argument("--base", default="HEAD")
-    parser.add_argument("--repo", default=str(REPO))
-    args = parser.parse_args(argv)
-    repo = Path(args.repo).resolve()
+# The header's own record of what the manifest was derived against. Read
+# rather than assumed, so `--check` compares like with like.
+BASE_IN_HEADER = re.compile(r"^# Derived by diffing the corpus at ([0-9a-f]{7,40})", re.M)
 
+
+def tracked_base(repo: Path) -> str | None:
+    """The revision the tracked manifest says it was derived against."""
+    target = repo / CHRONOLOGY / "profile-contract-rereview-manifest.tsv"
+    if not target.exists():
+        return None
+    found = BASE_IN_HEADER.search(target.read_text())
+    return found.group(1) if found else None
+
+
+def render(repo: Path, base: str) -> tuple[str, int]:
+    """The manifest text this repository's data and rules produce right now."""
     with tempfile.TemporaryDirectory(prefix="chronology-review-") as tmp:
-        old = review.load_revision(repo, args.base, Path(tmp))
+        old = review.load_revision(repo, base, Path(tmp))
     new = working_tree(repo)
 
     fields = review.FIELD_SETS["full"]
@@ -310,15 +335,51 @@ def main(argv=None) -> int:
     columns = ["review_id", "case_type", "case_id", "changed_in_lane", "change",
                "answerability_change", "basis_class", "answerability",
                "disposition", "source_record", "prior_review_ids", "why_in_review"]
-    out = repo / CHRONOLOGY / "profile-contract-rereview-manifest.tsv"
-    with out.open("w", newline="") as fh:
-        fh.write(HEADER.format(base=review._git(repo, "rev-parse", args.base).strip(),
+    buffer = io.StringIO(newline="")
+    buffer.write(HEADER.format(base=review._git(repo, "rev-parse", base).strip(),
                                rows=len(rows)))
-        writer = csv.DictWriter(fh, columns, delimiter="\t", lineterminator="\n")
-        writer.writeheader()
-        for row in rows:
-            writer.writerow({c: row.get(c, "-") for c in columns})
-    print(f"ok\t{out.relative_to(repo)}\t{len(rows)} rows")
+    writer = csv.DictWriter(buffer, columns, delimiter="\t", lineterminator="\n")
+    writer.writeheader()
+    for row in rows:
+        writer.writerow({c: row.get(c, "-") for c in columns})
+    return buffer.getvalue(), len(rows)
+
+
+def main(argv=None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    parser.add_argument("--base", default=None)
+    parser.add_argument("--repo", default=str(REPO))
+    parser.add_argument("--check", action="store_true")
+    args = parser.parse_args(argv)
+    repo = Path(args.repo).resolve()
+    out = repo / CHRONOLOGY / "profile-contract-rereview-manifest.tsv"
+
+    base = args.base or (tracked_base(repo) if args.check else None) or "HEAD"
+    text, count = render(repo, base)
+
+    if args.check:
+        if not out.exists():
+            print(f"{out.relative_to(repo)} does not exist", file=sys.stderr)
+            return 1
+        tracked = out.read_text()
+        if tracked == text:
+            print(f"{out.relative_to(repo)} is current: {count} rows against "
+                  f"a fresh derivation from {base}")
+            return 0
+        # SAY WHERE, because "differs" on a 490-row derived file is a report a
+        # reader cannot act on without re-deriving it themselves.
+        mine, theirs = text.splitlines(), tracked.splitlines()
+        where = next(
+            (i for i, (a, b) in enumerate(zip(mine, theirs), start=1) if a != b),
+            min(len(mine), len(theirs)) + 1,
+        )
+        print(f"{out.relative_to(repo)} differs from a fresh derivation from "
+              f"{base}: {len(theirs)} tracked lines against {len(mine)} derived, "
+              f"first differing at line {where}", file=sys.stderr)
+        return 1
+
+    out.write_text(text)
+    print(f"ok\t{out.relative_to(repo)}\t{count} rows")
     return 0
 
 

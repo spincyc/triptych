@@ -174,24 +174,44 @@ units:
           label: "the tenth or twelfth year after the Ascension (A.D. 38-40)"
       - profile: catholic-traditional-v1
         disposition: disputed
-        basis_class: traditional-catholic
+        basis_class: reported-traditional
         basis: >-
           The same article: 'The "Paschal Chronicle" assigns it to A.D. 40.'
           The figure is reported as the Chronicle's, among the early dates the
           article lists and then treats with reserve.
         sources: [artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09674b-f5a5a8a9]
+        note: >-
+          RULED 2026-09-01 on the basis prose above, which says in its own words
+          that the figure is reported as another work's - the "Paschal
+          Chronicle"'s - and not computed by MacRory. That is exactly
+          `reported-traditional`, which is what the sibling claim above already
+          carries for the manuscript subscriptions the same paragraph reports.
+          The class was `traditional-catholic`, which asserted that the
+          encyclopedia reached A.D. 40 on its own traditional reckoning, and its
+          own basis line denied that. Both classes are admissible, so nothing
+          this claim answers changes; what changes is that the record no longer
+          says two things about one paragraph.
         date:
           precision: year
           from: {year: 40, era: ad}
           label: "A.D. 40"
       - profile: catholic-traditional-v1
         disposition: disputed
-        basis_class: traditional-catholic
+        basis_class: reported-traditional
         basis: >-
           The same article: 'the "Chronicle" of Eusebius [assigns it] to the
           third year of Claudius (A.D. 43).' The parenthetical A.D. year is the
           encyclopedia's gloss on Eusebius's regnal reckoning.
         sources: [artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09674b-f5a5a8a9]
+        note: >-
+          RULED 2026-09-01 with the claim above and on the same ground: this is
+          the encyclopedia reporting the "Chronicle" of Eusebius, which the basis
+          line says in its own words, and a ranked work reporting another
+          admissible traditional chronology is `reported-traditional`. It stood
+          in one sentence with the Paschal Chronicle figure and was classed the
+          other way, which is the split this ruling closes. Eusebius is himself a
+          rank-4 witness, so the reported chronology is admissible and this claim
+          stays answerable.
         date:
           precision: year
           from: {year: 43, era: ad}
@@ -2096,8 +2116,9 @@ units:
     scope: {book: Mal}
     dates:
       - profile: catholic-traditional-v1
-        disposition: preferred
-        basis_class: traditional-catholic
+        disposition: alternate
+        answerability: preserved
+        basis_class: reported-excluded
         basis: >-
           Van Hoonacker's "Malachias (Malachi)" in the Catholic Encyclopedia states that
           "Critics are practically agreed in dating the book from about the middle of
@@ -2113,6 +2134,24 @@ units:
           determination. The source names a century and narrows within it to "about the
           middle", so the structured bounds are the fifth century B.C. entire and are
           wider than the claim.
+          RULED 2026-09-01 on that same recorded prose, which had been left standing
+          beside a `traditional-catholic` label and a `preferred` disposition, so that a
+          figure this note already said was "not a tradition" was the default answer for
+          every verse of Malachias. The value's basis is the consensus of critics, which
+          Van Hoonacker reports and adopts; the article's own ground for it is internal
+          criticism - the Persian title Peha and the state of worship - and no tradition,
+          no Father and no ranked apparatus is cited for the year. A ranked Catholic work
+          adopting a chronology this profile excludes is `reported-excluded`, and the one
+          lift the profile grants is named for Ussher and says in terms that it extends
+          to nobody else. This is the same ruling, on the same reasoning, that
+          composition.psalm-73 already carries for "as Briggs surmises"; the difference
+          there was a named critic and here a named consensus, which is not a difference
+          in basis. The figure is preserved, not deleted, and stays legible under
+          --evidence. Malachias therefore falls to its own row in gaps.yaml, which says
+          that a ranked source WAS read and what it found. The Machabees claims below
+          are untouched and are not the same case: their bounds are the reign of John
+          Hyrcanus and Pompey's occupation of Jerusalem, historical events the article
+          reasons from in its own voice, not a consensus of critics it reports.
         date:
           precision: interval
           from: {year: 500, era: bc}

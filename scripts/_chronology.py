@@ -1791,7 +1791,9 @@ def _span_loci(span: Span) -> list[tuple[str, int, int]]:
 def _refuse_dangling_anchors(
     events: dict[str, Event], units: dict[str, Unit], where: Path
 ) -> None:
-    """A relative date's anchor must be something this corpus holds.
+    """A relative date's anchor must be something this corpus holds, and — where
+    the claim and the anchor's refused date come out of one source record — the
+    anchor must be something this profile actually answers with.
 
     Found by an author, not by a test: a claim reading "forty years after
     <event>" loaded cleanly and audited cleanly while naming an event that did
@@ -1799,8 +1801,38 @@ def _refuse_dangling_anchors(
     is `guidance/the-shape.md` §1 inside the apparatus built to catch it, and
     it is checked here rather than in the audit because a dangling anchor is a
     structural defect and not a question about the rest of the repository.
+
+    THE SECOND REFUSAL is the same defect one level up, and the corpus met it at
+    `israel.patriarchs.abram-contact-with-egypt-and-elam`. One sentence of the
+    Catholic Encyclopedia said that Abram "appears to have reached Chanaan about
+    2300 B.C., when he came into passing contact with Egypt (Genesis 12) and
+    Elam (Genesis 14)". The corpus refused the year, on Sayce's Babylonian
+    synchronism, and preserved it on the arrival. It then went on ANSWERING with
+    the rest of that same sentence, as a relative claim measured to the arrival
+    it had just refused to date — and the interval it stated was the event
+    restated, so thirty-five verses of Genesis reported status `dated` on a
+    tautology whose only chronological content was the excluded number.
+
+    So the refusal is narrow and says exactly that: an ANSWERABLE relative claim
+    whose anchor holds claims, none of them answerable, and which cites a source
+    record one of those refused claims also cites. That is the corpus answering
+    with one half of a source statement whose other half it refused, where the
+    half it answers with is only a position measured to the half it refused.
+
+    WHAT IT DELIBERATELY DOES NOT REFUSE, because refusing it would be wrong:
+    a relative claim anchored on a subject the corpus openly does not date at
+    all. `israel.monarchy.saul-accession` holds no answerable claim and three
+    claims are measured from it — the private anointing, the deliverance of
+    Jabes Galaad, and the writing of Judges — and two of those three are rank-1
+    Scriptural relations, which this profile's authority list puts FIRST:
+    "Scripture's own chronological and RELATIONAL statements". "About a month
+    after this" is chronology, and it is chronology whether or not anyone can
+    say which year the month fell in. A rule refusing those would refuse the
+    thing the profile ranks highest in order to catch a tautology, so it does
+    not; what makes the Abram case different is not that the anchor is undated
+    but that the claim and the anchor's refused figure are one source statement.
     """
-    known = set(events) | set(units)
+    known = {**events, **units}
     for kind, holder in (
         *(("event", event) for event in events.values()),
         *(("composition unit", unit) for unit in units.values()),
@@ -1838,6 +1870,28 @@ def _refuse_dangling_anchors(
                 raise ChronologyError(
                     f"{where}: {kind} {holder.id} is dated relative to "
                     f"{anchor} without saying what the interval is"
+                )
+            if claim.answerability != "answerable":
+                continue
+            anchored = known[anchor]
+            if not anchored.claims:
+                continue
+            if any(other.answerability == "answerable" for other in anchored.claims):
+                continue
+            shared = sorted(
+                set(claim.sources).intersection(
+                    source for other in anchored.claims for source in other.sources
+                )
+            )
+            if shared:
+                raise ChronologyError(
+                    f"{where}: {kind} {holder.id} answers with a date relative "
+                    f"to {anchor}, whose every claim this profile refuses, on "
+                    f"the same source record(s) {shared}; the corpus would be "
+                    f"answering with one half of a source statement whose other "
+                    f"half it withdrew, and the half it answers with is only a "
+                    f"position measured to the half it withdrew. Preserve it "
+                    f"too, or ground it on a source that dates it independently"
                 )
 
 

@@ -130,7 +130,15 @@ profiles:
       # A claim names one in `basis_class`. An unlisted name is a load error:
       # a vocabulary that admits what it does not recognise cannot tell a typo
       # from a policy.
-      unstated: unreviewed
+      # A CLAIM THAT NAMES NO BASIS CLASS IS NOT A DEFAULT ANSWER. This line
+      # said `unreviewed` until 2026-09-01, and `unreviewed` is a class this
+      # profile answered with, so a claim authored with neither `basis_class`
+      # nor `answerability` was silently a default answer on a basis nobody had
+      # looked at. The count was reported by `validate --json` and failed
+      # nothing, which is a dashboard and not a gate. It now lands on
+      # `unresolved`, which is inadmissible, so such a claim is a LOAD ERROR
+      # and every consumer refuses it -- not one command reporting a number.
+      unstated: unresolved
       bases:
         - id: scripture
           admissible: true
@@ -167,23 +175,24 @@ profiles:
             rule, with every input identified. Rank 7. A derivation whose inputs
             are not answerable is not answerable either.
         - id: unreviewed
-          admissible: true
+          admissible: false
           what: >-
             The basis is stated in the claim's own `basis` prose and has not yet
             been classified under this contract. This is the state a claim
-            authored before the contract carries, and it is admissible because
-            the standing rule those claims were authored under was that only
-            ranked traditional sources may be cited — NOT because anything has
-            found the basis admissible. It is a debt, it is counted by
-            `tools/tpt scripture-chronology validate --json`, and the correction
-            lanes exist to empty it. THE DEBT IS NOW EMPTY. The last five were
-            ruled on 2026-09-01 - Nahum 2-3, Psalms 73 and 82, and the two Abram
-            claims - and the disposition of each is recorded in
+            authored before the contract carried. THE DEBT IS EMPTY: the last
+            five were ruled on 2026-09-01 - Nahum 2-3, Psalms 73 and 82, and the
+            two Abram claims - and the disposition of each is recorded in
             src/sources/chronology/profile-contract-corrections.tsv, row PCC-08.
-            The class stays in this vocabulary because a claim authored without a
-            `basis_class` still lands on it by the `unstated` rule above, so the
-            count is now an alarm and not a backlog: a claim carrying it is an
-            unruled claim that arrived after the corpus had none.
+            It was `admissible: true` while the debt was being worked off, on the
+            ground that the standing rule those claims were authored under was
+            that only ranked traditional sources may be cited — which is a fact
+            about their SOURCES and settles nothing about their BASES, the very
+            confusion this whole block exists to end. Nothing carries it now, so
+            the transitional admission has been withdrawn: an unclassified basis
+            is an unknown one, and an unknown basis is not a traditional one.
+            The class stays in this vocabulary so that a claim which names it
+            explicitly is refused by name rather than by a typo error, and so
+            that the correction ledger's references to it still resolve.
         - id: modern-critical
           admissible: false
           what: >-
