@@ -789,7 +789,35 @@ a re-entry, whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
-The `proper` workflow is at version 15. Version 15 gave the workflow a
+The `proper` workflow is at version 16. Version 16 gave that producer a
+verifier. Version 15 told `author-proper` to copy the run's identity off its
+own packet header into the `\AIGenerationProvenance` record, and nothing read
+what it wrote: an instruction obeyed and an instruction ignored left the same
+tree, and the one leaf that already had a record stated the version of the run
+before the one that wrote it, because a `v10` in the prose of an
+`\AIModelContribution` survived a v11 pass and became a structured fact.
+`content-preflight` now carries a sixth check, `provenance-matches-run`, which
+holds the record's workflow, version, source digest, run id and seed commit
+against the run driving the stage; any one of them wrong fails the gate to
+`content-revision` with the mismatch named. `install_commit` is not compared —
+it is legitimately `unknown` while the document is being written, since the
+commit the artifact enters the tree on does not exist yet.
+
+Only the run can settle this, and until now a gate command could not name the
+run at all: a check command was substituted from the run's normalized
+arguments and nothing else. Gate commands are now substituted from those
+arguments *and* the run's own identity, under a reserved `run.` namespace —
+`{run.workflow_id}`, `{run.workflow_version}`, `{run.workflow_digest}`,
+`{run.run_id}`, `{run.repo_commit}`. The dot is what keeps the two apart: an
+argument name is a plain identifier, so a workflow that declares an argument
+called `run_id` still gets `{run_id}` for its value and `{run.run_id}` for the
+engine's, and an argument in the reserved namespace is refused when the
+definition loads and again when a gate runs. Run facts are shell-quoted
+exactly as arguments are, and substitution is now a single pass, so no
+supplied value can smuggle a placeholder into what a later name expands to. A
+run seeded against version 15 or earlier fails closed; seed it again.
+
+The `proper` workflow was at version 15. Version 15 gave the workflow a
 producer for the record every document is required to carry. The
 `\AIGenerationProvenance` record states which workflow, at which version and
 which source digest, under which run and from which seed commit, produced a
@@ -967,11 +995,16 @@ version is bound to that source and fails closed rather than continuing under
 fragments it never started with; seed it again.
 
 `content-preflight` is a gate like any other: advance it with
-`tpt proper <id> advance <run-id> --run-gate <doc>`. Each of its five checks is
+`tpt proper <id> advance <run-id> --run-gate <doc>`. Each of its six checks is
 one invocation of `tools/tpt check-content-preflight --check <name>`, judged by
 exit code, and the tool prints what it counted on a pass and names the entry,
-identifier, relation, quotation or restricted reproduction it refused on a
-failure. It was four until version 11 added `restricted-not-reproduced`. It
+identifier, relation, quotation, restricted reproduction or provenance
+mismatch it refused on a failure. It was four until version 11 added
+`restricted-not-reproduced` and version 16 added `provenance-matches-run`.
+Five of the six read only the repository and can be run over a published leaf
+at any time; `provenance-matches-run` also takes the run's identity, which the
+gate supplies from the engine, so running the tool with no `--check` runs the
+five and never passes the sixth for want of an answer. It
 exists so the five-lane evaluation behind it spends its budget on judgment
 rather than on things grep can settle; it does not replace any of that
 judgment. A failed check sends the run to `content-revision` with the check's

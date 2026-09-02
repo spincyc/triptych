@@ -1,6 +1,6 @@
 {
   "id": "proper",
-  "version": 15,
+  "version": 16,
   "description": "1962 propers synthesis production workflow",
   "document_argument": "proper",
   "document_discovery": {
@@ -236,6 +236,11 @@
           "id": "unquoted-not-quoted",
           "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check unquoted-not-quoted",
           "required_result": "no source the References declare the guide does not quote may be credited with a printed quotation; the contradiction shows in neither statement alone"
+        },
+        {
+          "id": "provenance-matches-run",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check provenance-matches-run --run-workflow {run.workflow_id} --run-workflow-version {run.workflow_version} --run-workflow-digest {run.workflow_digest} --run-id {run.run_id} --run-seed-commit {run.repo_commit}",
+          "required_result": "the leaf's \\AIGenerationProvenance record must state this run: its workflow, version, source digest, run id and seed commit, as the packet header states them and not as the leaf's existing record or an earlier contribution's prose states them; the leaf cannot be held against the run by anything the leaf alone says, and a v10 copied out of prose survived a v11 pass because nothing held it"
         }
       ],
       "pass_transition": "content-evaluation",

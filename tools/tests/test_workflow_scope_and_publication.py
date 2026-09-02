@@ -431,26 +431,44 @@ class PublicationAcceptanceTests(unittest.TestCase):
         gates = [stage for stage in workflow_json()["stages"]
                  if stage["type"] == "gate"]
         self.assertTrue(gates)
+        checked = 0
         for stage in gates:
             for check in stage.get("checks", []):
-                if "{proper}" not in check["command"]:
+                # Every name the command carries, the document id and the
+                # run's own identity alike. A gate command may name the run it
+                # belongs to -- `{run.workflow_digest}` and its four siblings
+                # -- and those values are engine-generated, which is not a
+                # reason to substitute them differently. The property is the
+                # property: whatever a check is written as, a hostile value in
+                # any of its names must survive as inert data.
+                names = sorted(set(re.findall(
+                    r"\{([A-Za-z_][A-Za-z0-9_.]*)\}", check["command"])))
+                if not names:
                     continue
-                for payload in payloads:
-                    with self.subTest(gate=stage["id"], check=check["id"],
-                                      payload=payload):
-                        rendered = _substitute_args(
-                            check["command"],
-                            {"proper": payload, "provider": "claude"},
-                            quote=True)
-                        tokens = shlex.split(rendered)
-                        self.assertTrue(
-                            any(payload in token for token in tokens),
-                            f"{stage['id']}/{check['id']}: the id did not "
-                            f"survive substitution as inert data")
-                        self.assertNotIn(
-                            "touch", tokens,
-                            f"{stage['id']}/{check['id']}: the payload split "
-                            f"apart, so part of the id became a shell word")
+                for name in names:
+                    for payload in payloads:
+                        with self.subTest(gate=stage["id"],
+                                          check=check["id"], name=name,
+                                          payload=payload):
+                            args = {"proper": DOC, "provider": "claude"}
+                            args.update({
+                                other: "inert" for other in names
+                                if other not in args})
+                            args[name] = payload
+                            rendered = _substitute_args(
+                                check["command"], args, quote=True)
+                            tokens = shlex.split(rendered)
+                            self.assertTrue(
+                                any(payload in token for token in tokens),
+                                f"{stage['id']}/{check['id']}: {name} did not "
+                                f"survive substitution as inert data")
+                            self.assertNotIn(
+                                "touch", tokens,
+                                f"{stage['id']}/{check['id']}: the payload "
+                                f"split apart, so part of {name} became a "
+                                f"shell word")
+                            checked += 1
+        self.assertGreater(checked, 0, "no gate command was substituted")
 
     def test_the_installed_artifacts_are_checked_not_the_built_ones(self):
         """A build-tree check would accept a publication nobody installed."""

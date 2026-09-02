@@ -23,6 +23,7 @@ import fcntl
 import hashlib
 import json
 import os
+import re
 import shlex
 import shutil
 import subprocess
@@ -79,6 +80,20 @@ STRICT_UNION = "strict-union"
 # escalation record instead of dying inside it as a note nobody reads.
 ESCALATION = "escalation"
 
+
+# The namespace a gate command may name the run itself in. A gate check is a
+# shell command over the run's normalized arguments; the run's own identity —
+# which workflow, at which version and digest, under which run id and from
+# which seed commit — was not nameable there at all, so a check could compare a
+# document against its arguments but never against the run producing it.
+#
+# The dot is what makes the addition safe rather than merely convenient. An
+# argument name is a plain identifier, so `{run.run_id}` cannot be written by
+# any argument a workflow declares, and a workflow that declares an argument
+# called `run_id` still gets `{run_id}` for its own value and `{run.run_id}`
+# for the engine's. `_validate_workflow` refuses an argument name in this
+# namespace outright, so the two can never mean the same placeholder.
+RUN_IDENTITY_PREFIX = "run."
 
 # Dispositions
 PASS = "PASS"
@@ -2747,7 +2762,11 @@ class WorkflowEngine:
         is persisted with the transition it produces, like any other result.
         """
         checks = stage.get("checks", [])
-        args = state["normalized_args"]
+        # A gate command names the run's arguments and, under the reserved
+        # `run.` namespace, the run itself: a check that must hold a document
+        # against the run producing it has no other way to know which run that
+        # is.
+        args = _gate_substitutions(workflow, state)
         findings = []
         all_passed = True
         stage_iter = _current_packet(state, stage["id"])["iteration"]
@@ -2974,6 +2993,14 @@ def _validate_workflow(data: dict[str, Any], path: Path) -> None:
         raise WorkflowError(f"{path}: version must be a positive integer")
     if not isinstance(data["stages"], list) or not data["stages"]:
         raise WorkflowError(f"{path}: stages must be a nonempty list")
+
+    for arg_name in data.get("argument_schema", {}):
+        if str(arg_name).startswith(RUN_IDENTITY_PREFIX):
+            raise WorkflowError(
+                f"{path}: argument {arg_name!r} is in the reserved "
+                f"`{RUN_IDENTITY_PREFIX}` namespace, which a gate command "
+                f"uses to name the run's own identity"
+            )
 
     doc_arg = data.get("document_argument")
     if doc_arg is not None and doc_arg not in data.get("argument_schema", {}):
@@ -3506,18 +3533,82 @@ def _utc_timestamp() -> str:
     return time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
 
 
+# One placeholder: a brace pair with no brace inside it. The name between the
+# braces is looked up, and a name nothing supplies is left exactly as written.
+_PLACEHOLDER = re.compile(r"\{([^{}]*)\}")
+
+
 def _substitute_args(template: str, args: dict[str, str],
                      quote: bool = False) -> str:
-    """Substitute {arg_name} placeholders in a template.
+    """Substitute {name} placeholders in a template, in one pass.
 
     With quote=True the value is shell-quoted, for a gate command that runs
     through a shell.
+
+    One pass is the security property, not an optimisation. Substituting each
+    name in turn re-reads what the previous substitution wrote, so a value
+    holding the text of another placeholder had that placeholder expanded
+    inside it — a supplied value deciding what a later name expands to, inside
+    a template the workflow wrote. Nothing in this repository exploited it and
+    nothing needs to: a value is data, and data is never scanned for names. A
+    name no caller supplies is still left alone, so a template may say
+    `{example}` and mean it.
     """
-    result = template
-    for key in sorted(args):
-        value = shlex.quote(args[key]) if quote else args[key]
-        result = result.replace(f"{{{key}}}", value)
-    return result
+    def replace(match: re.Match[str]) -> str:
+        key = match.group(1)
+        if key not in args:
+            return match.group(0)
+        return shlex.quote(args[key]) if quote else args[key]
+
+    return _PLACEHOLDER.sub(replace, template)
+
+
+def _run_identity(workflow: dict[str, Any],
+                  state: dict[str, Any]) -> dict[str, str]:
+    """The run's own facts, under the reserved `run.` namespace.
+
+    These are exactly the five identifying facts the packet header states —
+    workflow, version, source digest, run id, seed commit — and they are
+    stated here for the same reason the header states them: a check that must
+    hold a document against the run that produced it cannot do it from the
+    document's arguments, which say nothing about which run is holding them.
+
+    Every one is engine-generated: two are hashes, one is a workflow id the
+    definition declares, one an integer, one a commit sha. None of that is
+    relied on. They are substituted as data and shell-quoted exactly like an
+    argument, because a value's provenance is not a security property.
+    """
+    return {
+        f"{RUN_IDENTITY_PREFIX}workflow_id": str(workflow["id"]),
+        f"{RUN_IDENTITY_PREFIX}workflow_version": str(workflow["version"]),
+        f"{RUN_IDENTITY_PREFIX}workflow_digest": str(state["workflow_digest"]),
+        f"{RUN_IDENTITY_PREFIX}run_id": str(state["run_id"]),
+        f"{RUN_IDENTITY_PREFIX}repo_commit": str(state["repo_commit"]),
+    }
+
+
+def _gate_substitutions(workflow: dict[str, Any],
+                        state: dict[str, Any]) -> dict[str, str]:
+    """What a gate command may name: the run's arguments and the run itself.
+
+    A collision here would let an argument decide what a run fact expands to,
+    which is the whole of what this namespace exists to prevent, so it is a
+    refusal and not a precedence rule. `_validate_workflow` refuses such an
+    argument when the definition is loaded; this refuses it again at the point
+    of use, because an argument may reach a run without being declared.
+    """
+    args = state["normalized_args"]
+    identity = _run_identity(workflow, state)
+    collisions = sorted(set(args) & set(identity))
+    if collisions:
+        raise WorkflowError(
+            f"run {state['run_id']}: argument "
+            f"{', '.join(repr(name) for name in collisions)} is in the "
+            f"reserved `{RUN_IDENTITY_PREFIX}` namespace, which names the "
+            f"run's own identity to a gate command; an argument may not "
+            f"decide what a run fact expands to"
+        )
+    return {**args, **identity}
 
 
 def _result_bytes(result: dict[str, Any]) -> bytes:

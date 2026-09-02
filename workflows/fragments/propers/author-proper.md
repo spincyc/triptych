@@ -70,7 +70,10 @@ learns belongs in the files this stage owns, listed below.
      copy any of these six values out of the leaf's existing record or out of
      the prose of an `\AIModelContribution` — that prose was written by an
      earlier pass and states an earlier run. This packet's header is the only
-     source for them.
+     source for them. `content-preflight` holds the five run fields of the
+     record against the run producing this leaf and fails the stage on any
+     one of them that does not match, so a value carried over from the
+     leaf's previous record is caught rather than published.
    - `\AIModelContribution{model}{qualifiers}{runtime}` records after it, one
      per model contribution.
    None of this renders: the macro typesets nothing, so the record leaves the

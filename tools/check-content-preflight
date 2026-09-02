@@ -14,6 +14,11 @@ from pathlib import Path
 # requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
+from _corpus import (  # noqa: E402
+    PRODUCTION_FIELDS,
+    PRODUCTION_RE,
+    active_tex,
+)
 from _tooling import Example, with_examples  # noqa: E402
 
 DEFAULT_ROOT = Path(__file__).resolve().parents[1]
@@ -75,9 +80,26 @@ EXAMPLES = {
             "built on",
         ),
         Example(
+            "tools/check-content-preflight --provider claude --document "
+            "liturgy/roman-rite/1962/propers/temporal/"
+            "54-fourteenth-after-pentecost --check provenance-matches-run",
+            (
+                "check-content-preflight error: provenance-matches-run: this "
+                "check holds the leaf's provenance record against the run "
+                "producing it, so it needs the run's own identity: "
+                "--run-workflow, --run-workflow-version, "
+                "--run-workflow-digest, --run-id, --run-seed-commit. The "
+                "`content-preflight` gate supplies them from the engine; by "
+                "hand, read them off a packet header.",
+            ),
+            "exits 1; the one check the tree cannot answer alone is refused "
+            "rather than skipped when nothing says which run is asking",
+        ),
+        Example(
             "tools/check-content-preflight --list",
             (
                 "identifiers-resolve",
+                "provenance-matches-run",
                 "references-used",
                 "relation-coverage",
                 "restricted-not-reproduced",
@@ -684,6 +706,97 @@ def check_restricted_not_reproduced(
         f"none reproduced")
 
 
+# --- The leaf against the run producing it ---------------------------------
+
+# The record's fields this check holds against the run, in the order
+# `\AIGenerationProvenance` writes them, each with the option that supplies
+# what the run says it should be. `install_commit` is deliberately absent: it
+# states the commit the produced artifact entered the tree on, and while a
+# document is being written that commit does not exist.
+RUN_FIELDS = (
+    ("workflow_id", "--run-workflow"),
+    ("workflow_version", "--run-workflow-version"),
+    ("workflow_digest", "--run-workflow-digest"),
+    ("run_id", "--run-id"),
+    ("seed_commit", "--run-seed-commit"),
+)
+
+RUN_CHECK = "provenance-matches-run"
+
+
+def check_provenance_matches_run(
+    leaf: Path, root: Path, run: dict[str, str]
+) -> tuple[list[str], str]:
+    """The leaf states the run producing it, and not some earlier one.
+
+    `check-generation-metadata` requires every leaf to carry exactly one
+    `\\AIGenerationProvenance` record, and the authoring fragment tells the
+    stage to copy the workflow, version, digest, run id and seed commit off its
+    own packet header. Nothing read the result. So the record could state any
+    run at all and still satisfy every gate, which is not a hypothetical: a
+    `v10` written into the prose of an `\\AIModelContribution` survived a v11
+    pass and became a structured fact, exactly the copying the fragment
+    forbids and exactly what no check was in a position to see.
+
+    Only the run can settle this. A leaf compared against itself is consistent
+    with whatever it says, and the tree holds no other statement of which run
+    is driving the stage — which is why this check takes the run's identity as
+    arguments and the `content-preflight` gate hands it the engine's own
+    values. It is refused rather than skipped when they are absent: a check
+    that passed for want of an answer would be worth less than no check.
+    """
+    missing = [option for field, option in RUN_FIELDS if not run.get(field)]
+    if missing:
+        raise ValueError(
+            f"this check holds the leaf's provenance record against the run "
+            f"producing it, so it needs the run's own identity: "
+            f"{', '.join(missing)}. The `content-preflight` gate supplies "
+            f"them from the engine; by hand, read them off a packet header."
+        )
+
+    metadata = leaf / "generation-metadata.tex"
+    if not metadata.is_file():
+        return ([
+            "the leaf has no generation-metadata.tex, so it states nothing "
+            "about what produced it"
+        ], "")
+
+    found = PRODUCTION_RE.findall(active_tex(
+        metadata.read_text(encoding="utf-8")))
+    if not found:
+        return ([
+            "generation-metadata.tex carries no \\AIGenerationProvenance "
+            "record; the record states which workflow, at which version and "
+            "digest, under which run and from which seed commit produced this "
+            "leaf, and every leaf is required to carry one"
+        ], "")
+    if len(found) > 1:
+        return ([
+            f"generation-metadata.tex carries {len(found)} "
+            f"\\AIGenerationProvenance records; exactly one run produced "
+            f"this leaf, so exactly one record may state which"
+        ], "")
+
+    recorded = dict(zip(PRODUCTION_FIELDS,
+                        (value.strip() for value in found[0])))
+    problems = []
+    for field, option in RUN_FIELDS:
+        stated, expected = recorded[field], run[field]
+        if stated == expected:
+            continue
+        problems.append(
+            f"the record states {field} {stated!r}; the run producing this "
+            f"leaf has {field} {expected!r}. Read it off this packet's own "
+            f"header, never off the leaf's existing record or the prose of an "
+            f"earlier contribution."
+        )
+    return problems, (
+        f"the record states run {run['run_id']} of {run['workflow_id']} "
+        f"v{run['workflow_version']}, digest {run['workflow_digest'][:12]}, "
+        f"seed commit {run['seed_commit'][:12]}"
+    )
+
+
 CHECKS = {
     "identifiers-resolve": check_identifiers_resolve,
     "references-used": check_references_used,
@@ -691,6 +804,17 @@ CHECKS = {
     "restricted-not-reproduced": check_restricted_not_reproduced,
     "unquoted-not-quoted": check_unquoted_not_quoted,
 }
+
+# A check the tree cannot answer on its own. Everything in CHECKS reads only
+# the repository, so the whole preflight can be run over a published leaf years
+# later; this one asks what run is driving the stage right now, which nothing
+# in the tree knows. It is named by `--check` and never swept up by a run over
+# all of them, because there is no run to compare a bare invocation against.
+RUN_CHECKS = {
+    RUN_CHECK: check_provenance_matches_run,
+}
+
+ALL_CHECKS = sorted({**CHECKS, **RUN_CHECKS})
 
 
 def main() -> int:
@@ -704,15 +828,27 @@ def main() -> int:
                         help="provider directory under src/ (default: gpt)")
     parser.add_argument("--document",
                         help="leaf id under the provider root")
-    parser.add_argument("--check", choices=sorted(CHECKS),
-                        help="run one check instead of all of them")
+    parser.add_argument("--check", choices=ALL_CHECKS,
+                        help=f"run one check instead of all of them; "
+                             f"{RUN_CHECK} is only ever run this way")
     parser.add_argument("--list", action="store_true",
                         help="print every check id, one a line")
+    parser.add_argument("--run-workflow",
+                        help=f"[{RUN_CHECK}] the workflow id of the run "
+                             f"producing this leaf")
+    parser.add_argument("--run-workflow-version",
+                        help=f"[{RUN_CHECK}] its workflow version")
+    parser.add_argument("--run-workflow-digest",
+                        help=f"[{RUN_CHECK}] its bound workflow source digest")
+    parser.add_argument("--run-id",
+                        help=f"[{RUN_CHECK}] its run id")
+    parser.add_argument("--run-seed-commit",
+                        help=f"[{RUN_CHECK}] the commit it was seeded at")
     with_examples(parser, EXAMPLES[""])
     args = parser.parse_args()
 
     if args.list:
-        for name in sorted(CHECKS):
+        for name in ALL_CHECKS:
             print(name)
         return 0
     if not args.document:
@@ -726,11 +862,22 @@ def main() -> int:
         print(f"{ERROR}{exc}", file=sys.stderr)
         return 1
 
+    run = {
+        "workflow_id": args.run_workflow,
+        "workflow_version": args.run_workflow_version,
+        "workflow_digest": args.run_workflow_digest,
+        "run_id": args.run_id,
+        "seed_commit": args.run_seed_commit,
+    }
+
     selected = [args.check] if args.check else sorted(CHECKS)
     failed = False
     for name in selected:
         try:
-            problems, summary = CHECKS[name](leaf, root)
+            problems, summary = (
+                RUN_CHECKS[name](leaf, root, run) if name in RUN_CHECKS
+                else CHECKS[name](leaf, root)
+            )
         except (OSError, ValueError, tomllib.TOMLDecodeError) as exc:
             print(f"{ERROR}{name}: {exc}", file=sys.stderr)
             failed = True

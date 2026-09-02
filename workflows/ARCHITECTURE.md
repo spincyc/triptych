@@ -244,7 +244,7 @@ A run records the digest at seed time, in both the manifest and the state, and
 every `advance` and `replay` recomputes it. If the workflow source has changed
 since the run was seeded, the run fails closed rather than continuing under
 guidance it never started with. A changed workflow means a new run. The
-`proper` workflow is at version 15: version 10 gave `content-evaluation` a
+`proper` workflow is at version 16: version 10 gave `content-evaluation` a
 third repair owner and inserted the `content-preflight` gate between
 `author-proper` and `content-evaluation`, version 11 made the iteration
 budget charge repetition rather than failure, carried a blocking finding to its
@@ -260,8 +260,10 @@ back from the workers that had been attesting to them, and version 14 gave
 gave the required `\AIGenerationProvenance` record a producer: the packet
 header carries `RUN_ID` beside the workflow, digest and seed commit it already
 carried, and `author-proper` names those header fields as the only source for
-the record it writes. A run seeded against version 14 or earlier fails closed
-and is seeded again.
+the record it writes, and version 16 gave that producer a verifier by
+extending gate substitution to the run's own identity and giving
+`content-preflight` a sixth check that holds the record against the run. A run
+seeded against version 15 or earlier fails closed and is seeded again.
 `workflows/OPERATOR.md` carries the version history in full.
 
 ### Iteration budgets
@@ -489,6 +491,25 @@ quotes that witness not, and — since version 11 — a restricted artifact whos
 bytes the leaf reproduces. Each is one check, one command,
 `tools/tpt check-content-preflight --check <name>`, judged by exit code like
 every other gate check.
+
+Since version 16 there is a sixth, and it is the one check here that the tree
+cannot answer alone. `provenance-matches-run` holds the leaf's
+`\AIGenerationProvenance` record — the workflow, version, source digest, run
+id and seed commit it states — against the run driving the stage. A leaf
+compared against itself is consistent with whatever it says, so the run has to
+be an input, and a gate command could not name the run: check commands were
+substituted from `normalized_args` and nothing else. Gate substitution now
+covers a reserved `run.` namespace as well — `{run.workflow_id}`,
+`{run.workflow_version}`, `{run.workflow_digest}`, `{run.run_id}`,
+`{run.repo_commit}` — the same five facts the packet header states to the
+worker that writes the record. Argument names are plain identifiers, so the
+dotted names cannot collide with one; an argument declared in the namespace is
+refused when the definition loads and again when a gate runs; run facts are
+shell-quoted exactly as arguments are, because a value's provenance is not a
+security property; and substitution is a single pass, so a supplied value can
+never smuggle a placeholder into what a later name expands to.
+`install_commit` is not compared, being legitimately `unknown` while the
+document is written.
 
 Its `fail_transition` is `content-revision` and never `research`. These are
 defects in the leaf: none of them says anything about whether the evidence

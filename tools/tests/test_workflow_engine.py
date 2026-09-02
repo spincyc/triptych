@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import json
 import os
+import shlex
 import shutil
 import subprocess
 import sys
@@ -21,7 +22,13 @@ ROOT = Path(__file__).resolve().parents[2]
 LAUNCHER = ROOT / "tools" / "tpt"
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from _workflow import WorkflowEngine, WorkflowError  # noqa: E402
+from _workflow import (  # noqa: E402
+    RUN_IDENTITY_PREFIX,
+    WorkflowEngine,
+    WorkflowError,
+    _gate_substitutions,
+    _substitute_args,
+)
 
 
 def _run(*argv: str, cwd: Path | None = None) -> subprocess.CompletedProcess:
@@ -433,6 +440,180 @@ class GateExecutionTests(unittest.TestCase):
             self.assertEqual(result["disposition"], "ACCEPTED")
         finally:
             shutil.rmtree(repo, ignore_errors=True)
+
+
+class RunIdentitySubstitutionTests(unittest.TestCase):
+    """What a gate command may name, and what it may never be made to mean.
+
+    A gate check is a shell command over the run's normalized arguments. That
+    let a check compare a document against its own arguments and never against
+    the run producing it, which is the one comparison a document's provenance
+    record needs: the record states which run wrote it, and only the run can
+    say whether that is this one. So the substitution namespace carries the
+    run's own identity as well, under a reserved `run.` prefix.
+
+    The prefix is the whole of the safety. Argument names are plain
+    identifiers, so `{run.run_id}` is not a name any workflow can declare, and
+    a workflow that declares `run_id` gets `{run_id}` for its value while the
+    engine keeps `{run.run_id}`. These tests run a real gate in a real
+    repository and read what the shell was actually given.
+    """
+
+    ARGS = {"doc": "a-document", "run_id": "an argument, not the run"}
+
+    def setUp(self):
+        self.repo = Path(tempfile.mkdtemp(prefix="tpt-run-identity-"))
+        self.addCleanup(shutil.rmtree, self.repo, ignore_errors=True)
+        workflows = self.repo / "workflows"
+        (workflows / "fragments" / "synthetic").mkdir(parents=True)
+        (workflows / "pipelines").mkdir(parents=True)
+        (workflows / "schema").mkdir(parents=True)
+        (workflows / "fragments" / "synthetic" / "brief.md").write_text(
+            "brief", encoding="utf-8")
+        for name, content in (
+            ("worker-result.json", {
+                "required_fields": ["disposition", "summary"],
+                "valid_dispositions": ["PASS"], "finding_fields": []}),
+            ("gate-result.json", {
+                "required_fields": ["disposition", "findings"],
+                "valid_dispositions": ["PASS", "FAIL"],
+                "finding_fields": ["id", "severity", "check", "problem",
+                                   "required_result"]}),
+        ):
+            (workflows / "schema" / name).write_text(
+                json.dumps(content), encoding="utf-8")
+        self.write_workflow()
+        subprocess.run(["git", "init"], cwd=self.repo, capture_output=True)
+        subprocess.run(["git", "add", "."], cwd=self.repo,
+                       capture_output=True)
+        subprocess.run(
+            ["git", "commit", "-m", "x"], cwd=self.repo, capture_output=True,
+            env={**os.environ, "GIT_AUTHOR_NAME": "t",
+                 "GIT_AUTHOR_EMAIL": "t@t", "GIT_COMMITTER_NAME": "t",
+                 "GIT_COMMITTER_EMAIL": "t@t"})
+        self.engine = WorkflowEngine(self.repo, workflows)
+
+    # The command writes one line per name, so the test reads exactly what
+    # the shell was handed rather than what the template said.
+    COMMAND = (
+        "printf '%s\\n' {run.workflow_id} {run.workflow_version} "
+        "{run.workflow_digest} {run.run_id} {run.repo_commit} {doc} "
+        "{run_id} > substituted.txt"
+    )
+
+    def write_workflow(self, command=None, arguments=None):
+        workflow = {
+            "id": "identity-test", "version": 3,
+            "description": "run identity in a gate command",
+            "argument_schema": arguments if arguments is not None else {
+                "doc": {"type": "string", "required": True},
+                "run_id": {"type": "string", "required": True},
+            },
+            "stages": [{
+                "id": "gate", "type": "gate",
+                "execution": {"mode": "program"},
+                "checks": [{"id": "substitute",
+                            "command": command or self.COMMAND,
+                            "required_result": "must pass"}],
+                "pass_transition": "ACCEPTED",
+                "fail_transition": "BLOCKED", "max_iterations": 1,
+            }],
+        }
+        (self.repo / "workflows" / "pipelines"
+         / "identity-test.json").write_text(
+            json.dumps(workflow), encoding="utf-8")
+
+    def run_the_gate(self, args=None):
+        seeded = self.engine.seed("identity-test", args or dict(self.ARGS))
+        out = self.engine.advance(seeded["run_id"], run_gate=True)
+        written = (self.repo / "substituted.txt").read_text(encoding="utf-8")
+        return seeded, out, written.splitlines()
+
+    def test_a_gate_command_is_given_the_runs_own_identity(self):
+        seeded, out, lines = self.run_the_gate()
+        self.assertEqual(out["disposition"], "ACCEPTED")
+        state = self.engine.load_state(seeded["run_id"])
+        self.assertEqual(lines[:5], [
+            "identity-test",
+            str(state["workflow_version"]),
+            state["workflow_digest"],
+            seeded["run_id"],
+            state["repo_commit"],
+        ], "the five run facts the packet header states")
+
+    def test_an_argument_called_run_id_is_not_the_runs_run_id(self):
+        """The collision the dotted namespace exists to make impossible."""
+        seeded, _, lines = self.run_the_gate()
+        self.assertEqual(lines[5], self.ARGS["doc"])
+        self.assertEqual(lines[6], self.ARGS["run_id"],
+                         "the workflow's own argument keeps its value")
+        self.assertEqual(lines[3], seeded["run_id"])
+        self.assertNotEqual(lines[6], lines[3],
+                            "an argument named after a run fact must not "
+                            "become it, or shadow it")
+
+    def test_a_hostile_argument_cannot_escape_a_run_naming_command(self):
+        """The `fab7db40b` property, over the enlarged namespace.
+
+        Every substituted value is shell-quoted, run facts included, so a
+        hostile document id is one word of data however many names the
+        template carries beside it.
+        """
+        payload = "x`touch escaped` $(touch escaped) ; touch escaped"
+        _, out, lines = self.run_the_gate(
+            {"doc": payload, "run_id": payload})
+        self.assertEqual(out["disposition"], "ACCEPTED")
+        self.assertEqual(lines[5], payload,
+                         "the id did not survive as inert data")
+        self.assertEqual(lines[6], payload)
+        self.assertFalse((self.repo / "escaped").exists(),
+                         "a substituted value ran as shell")
+
+    def test_a_run_fact_is_quoted_like_any_other_value(self):
+        """Not because these values are hostile: because quoting is the rule.
+
+        Every one of them is engine-generated, and none of that is relied on.
+        The property is asserted where it can be asserted -- over the
+        substitution itself, with a hostile value put where a run fact goes.
+        """
+        payload = "x`touch /tmp/triptych-run-identity-escape`"
+        rendered = _substitute_args(
+            "check --run-id {run.run_id}",
+            {"run.run_id": payload}, quote=True)
+        self.assertEqual(shlex.split(rendered),
+                         ["check", "--run-id", payload])
+
+    def test_an_argument_in_the_reserved_namespace_is_refused_at_load(self):
+        self.write_workflow(arguments={
+            "doc": {"type": "string", "required": True},
+            f"{RUN_IDENTITY_PREFIX}run_id": {"type": "string"},
+        })
+        with self.assertRaises(WorkflowError) as caught:
+            self.engine.load_workflow("identity-test")
+        self.assertIn("reserved", str(caught.exception))
+        self.assertIn(RUN_IDENTITY_PREFIX, str(caught.exception))
+
+    def test_a_reserved_argument_is_refused_again_at_the_point_of_use(self):
+        """A definition is not the only way an argument reaches a run.
+
+        Loading refuses a declared one; this refuses one that arrived any
+        other way, at the moment it would decide what a run fact expands to.
+        """
+        workflow = {"id": "identity-test", "version": 3}
+        state = {
+            "run_id": "0123456789abcdef", "workflow_digest": "d" * 64,
+            "repo_commit": "c" * 40,
+            "normalized_args": {f"{RUN_IDENTITY_PREFIX}run_id": "mine"},
+        }
+        with self.assertRaises(WorkflowError) as caught:
+            _gate_substitutions(workflow, state)
+        self.assertIn("reserved", str(caught.exception))
+
+    def test_a_name_nothing_supplies_is_left_exactly_as_written(self):
+        self.assertEqual(
+            _substitute_args("{doc} {run.nothing} {unknown}",
+                             {"doc": "a", "run.run_id": "b"}),
+            "a {run.nothing} {unknown}")
 
 
 if __name__ == "__main__":

@@ -36,7 +36,7 @@ trap 'rm -rf "$sandbox"' EXIT INT TERM
 # --list is the enumeration every other assertion is written against.
 run_tool --list >"$sandbox/first.txt"
 listed="$(wc -l <"$sandbox/first.txt" | tr -d ' ')"
-[ "$listed" = 5 ] || fail "--list named $listed checks, expected 5"
+[ "$listed" = 6 ] || fail "--list named $listed checks, expected 6"
 run_tool --list >"$sandbox/second.txt"
 cmp -s "$sandbox/first.txt" "$sandbox/second.txt" || fail "--list is not byte-stable"
 sort -c "$sandbox/first.txt" || fail "--list is not in sorted order"
@@ -58,11 +58,23 @@ done
 [ "$leaves" -gt 0 ] || fail "found no published leaves: the regression checked nothing"
 
 # Each check named alone must also pass on a published leaf, because that is
-# how the gate runs them.
+# how the gate runs them. `provenance-matches-run` is not one of them: it
+# holds the leaf's provenance record against the run producing it, and the run
+# that produced a published leaf is over. It is exercised below, over a
+# synthetic leaf whose record can be written to state a run.
 while read -r check; do
+	[ "$check" = provenance-matches-run ] && continue
 	run_tool --provider claude --document "$ninth" --check "$check" >/dev/null ||
 		fail "$check refused a published leaf when run alone"
 done <"$sandbox/first.txt"
+
+# The whole preflight, with no check named, runs the five the tree can answer
+# and leaves that one out rather than passing it for want of an answer.
+run_tool --provider claude --document "$ninth" >"$sandbox/sweep.txt" ||
+	fail "the whole preflight refused a published leaf"
+if grep -q provenance-matches-run "$sandbox/sweep.txt"; then
+	fail "the sweep reported a check it cannot answer"
+fi
 
 # --- A synthetic leaf, so each refusal can be produced one at a time -------
 
@@ -255,6 +267,64 @@ write_manifest "$good_relation"
 rm "$tree/src/claude/probe/proper-components.toml"
 reject_probe --check relation-coverage
 write_manifest "$good_relation"
+
+# provenance-matches-run: the leaf's record of what produced it, against the
+# run producing it. Five facts, and any one of them wrong is a refusal.
+run_digest="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+run_seed="bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+
+write_provenance() {
+	cat >"$tree/src/claude/probe/generation-metadata.tex" <<TEX
+\\AIDocumentRevisionTimestamp{2026-09-01T00:00:00Z}
+\\AIGenerationProvenance{${1:-proper}}{${2:-16}}{${3:-$run_digest}}{${4:-0123456789abcdef}}{${5:-$run_seed}}{unknown}
+\\AIModelContribution{a-model}{unexposed}{an agent}
+TEX
+}
+
+against_run() {
+	probe --check provenance-matches-run \
+		--run-workflow proper --run-workflow-version 16 \
+		--run-workflow-digest "$run_digest" \
+		--run-id 0123456789abcdef --run-seed-commit "$run_seed" "$@"
+}
+
+write_provenance
+against_run >/dev/null || fail "a record of this run was refused"
+
+# The defect this check was written for: a version copied out of the leaf's
+# own history instead of read off the packet header.
+write_provenance proper 10
+if against_run >/dev/null 2>&1; then
+	fail "a record stating another workflow version was accepted"
+fi
+
+# A run id from the run before this one.
+write_provenance proper 16 "$run_digest" feedfacefeedface
+if against_run >/dev/null 2>&1; then
+	fail "a record stating another run id was accepted"
+fi
+
+# A record that says the facts were unreadable, when the header carried them.
+write_provenance unknown unknown unknown unknown unknown
+if against_run >/dev/null 2>&1; then
+	fail "a record stating nothing about its run was accepted"
+fi
+
+# No record at all.
+: >"$tree/src/claude/probe/generation-metadata.tex"
+if against_run >/dev/null 2>&1; then
+	fail "a leaf with no provenance record was accepted"
+fi
+rm "$tree/src/claude/probe/generation-metadata.tex"
+if against_run >/dev/null 2>&1; then
+	fail "a leaf with no generation metadata was accepted"
+fi
+
+# And with no run to compare against, it is refused rather than skipped.
+write_provenance
+reject_probe --check provenance-matches-run
+reject_probe --check provenance-matches-run --run-workflow proper
+rm "$tree/src/claude/probe/generation-metadata.tex"
 
 # --- Refusals about the invocation itself ----------------------------------
 

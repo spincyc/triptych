@@ -49,9 +49,25 @@ from test_workflow_repair_routing import (  # noqa: E402
 
 STAGE = "content-preflight"
 TOOL = "check-content-preflight"
-CHECKS = ("references-used", "identifiers-resolve",
-          "restricted-not-reproduced", "relation-coverage",
-          "unquoted-not-quoted")
+# The check that holds the leaf against the run producing it, and the five
+# that read only the tree. It is kept apart because everything about how it is
+# run is different: it takes the run's own identity, the gate supplies that
+# identity from the engine, and no published leaf can satisfy it outside the
+# run that wrote its provenance record.
+RUN_CHECK = "provenance-matches-run"
+LEAF_CHECKS = ("references-used", "identifiers-resolve",
+               "restricted-not-reproduced", "relation-coverage",
+               "unquoted-not-quoted")
+CHECKS = LEAF_CHECKS + (RUN_CHECK,)
+# The five names a gate command may substitute from the run itself, and the
+# option each is handed to the tool as.
+RUN_PLACEHOLDERS = {
+    "{run.workflow_id}": "--run-workflow",
+    "{run.workflow_version}": "--run-workflow-version",
+    "{run.workflow_digest}": "--run-workflow-digest",
+    "{run.run_id}": "--run-id",
+    "{run.repo_commit}": "--run-seed-commit",
+}
 # A leaf the whole evaluation loop has already accepted, in the provider the
 # rest of the workflow suite drives runs against.
 PUBLISHED = ("gpt", DOC)
@@ -114,7 +130,7 @@ class TopologyTests(unittest.TestCase):
     def test_every_check_is_one_command_over_the_run_s_own_arguments(self):
         commands = check_commands()
         self.assertEqual(list(commands), list(CHECKS),
-                         "the five checks the design names, in order")
+                         "the six checks the design names, in order")
         registry = json.loads(
             (ROOT / "tmt.json").read_text(encoding="utf-8"))["tools"]
         for check_id, command in commands.items():
@@ -125,14 +141,23 @@ class TopologyTests(unittest.TestCase):
                 self.assertIn(f"--check {check_id}", command)
                 residue = command.replace("{proper}", "").replace(
                     "{provider}", "")
+                for placeholder in RUN_PLACEHOLDERS:
+                    residue = residue.replace(placeholder, "")
                 self.assertNotRegex(
-                    residue, r"\{[A-Za-z_][A-Za-z0-9_]*\}",
-                    "the gate takes an argument the run has not normalized")
+                    residue, r"\{[A-Za-z_][A-Za-z0-9_.]*\}",
+                    "the gate takes a name the run supplies nothing for")
                 for shell in ("&&", "||", ";", "|"):
                     self.assertNotIn(
                         shell, command,
                         "each check is one command, judged by its own exit "
                         "code")
+
+    PAYLOADS = (
+        "x`touch /tmp/triptych-preflight-escape`",
+        "x$(touch /tmp/triptych-preflight-escape)",
+        "x; touch /tmp/triptych-preflight-escape",
+        "x' ; touch /tmp/triptych-preflight-escape ; '",
+    )
 
     def test_a_hostile_identity_survives_as_data(self):
         """The property fab7db40b established, held for the new checks too.
@@ -140,17 +165,11 @@ class TopologyTests(unittest.TestCase):
         A template that wraps its own placeholder in quotes cancels the
         shell-quoting `_substitute_args` applies, and the rest of the id is
         read as shell. The suite asserts this over every gate; it is asserted
-        here as well because these four commands are the newest place it
-        could be got wrong.
+        here as well because these commands are the newest place it could be
+        got wrong.
         """
-        payloads = (
-            "x`touch /tmp/triptych-preflight-escape`",
-            "x$(touch /tmp/triptych-preflight-escape)",
-            "x; touch /tmp/triptych-preflight-escape",
-            "x' ; touch /tmp/triptych-preflight-escape ; '",
-        )
         for check_id, command in check_commands().items():
-            for payload in payloads:
+            for payload in self.PAYLOADS:
                 with self.subTest(check=check_id, payload=payload):
                     rendered = _substitute_args(
                         command, {"proper": payload, "provider": "claude"},
@@ -161,6 +180,77 @@ class TopologyTests(unittest.TestCase):
                         "the id did not survive substitution as inert data")
                     self.assertNotIn("touch", tokens,
                                      "part of the id became a shell word")
+
+    def test_a_hostile_run_identity_survives_as_data_too(self):
+        """The run's own facts are quoted for the same reason a document is.
+
+        They are engine-generated -- two hashes, a workflow id, an integer and
+        a commit sha -- and nothing here relies on that. A value's provenance
+        is not a security property, and the day one of these is computed from
+        something a worker wrote is not the day to discover the difference.
+        """
+        for check_id, command in check_commands().items():
+            for placeholder in RUN_PLACEHOLDERS:
+                if placeholder not in command:
+                    continue
+                for payload in self.PAYLOADS:
+                    with self.subTest(check=check_id, name=placeholder,
+                                      payload=payload):
+                        rendered = _substitute_args(
+                            command,
+                            {"proper": DOC, "provider": "claude",
+                             placeholder.strip("{}"): payload},
+                            quote=True)
+                        tokens = shlex.split(rendered)
+                        self.assertIn(
+                            payload, tokens,
+                            "the run fact did not survive as inert data")
+                        self.assertNotIn(
+                            "touch", tokens,
+                            "part of the run fact became a shell word")
+
+    def test_a_hostile_argument_cannot_smuggle_a_run_placeholder(self):
+        """A value is data, and data is never scanned for names.
+
+        Substituting name after name over the growing result re-reads what
+        the last substitution wrote, so a document id holding the text
+        `{run.run_id}` would have the engine expand it: a supplied value
+        deciding what a later name expands to, inside a template the workflow
+        wrote. One pass is what forecloses it.
+        """
+        command = check_commands()[RUN_CHECK]
+        smuggled = "x{run.run_id}y"
+        rendered = _substitute_args(
+            command,
+            {"proper": smuggled, "provider": "claude",
+             "run.run_id": "deadbeefdeadbeef",
+             "run.workflow_id": "proper", "run.workflow_version": "16",
+             "run.workflow_digest": "d" * 64, "run.repo_commit": "c" * 40},
+            quote=True)
+        tokens = shlex.split(rendered)
+        self.assertIn(smuggled, tokens,
+                      "the argument was rewritten by a later name")
+        self.assertEqual(
+            [token for token in tokens if token == "deadbeefdeadbeef"],
+            ["deadbeefdeadbeef"],
+            "the run id reached the command once, where the template asked "
+            "for it")
+
+    def test_the_run_check_names_the_run_and_never_an_argument(self):
+        """Where the identity comes from, stated in the command itself.
+
+        Text, and deliberately only text: what the engine actually puts in
+        each of these places is executed in `RunIdentitySubstitutionTests` in
+        test_workflow_engine.py, and the whole chain again in
+        `DrivenRunTests` below.
+        """
+        command = check_commands()[RUN_CHECK]
+        for placeholder, option in RUN_PLACEHOLDERS.items():
+            with self.subTest(option=option):
+                self.assertIn(f"{option} {placeholder}", command)
+        self.assertNotIn("--run-install-commit", command,
+                         "install_commit does not exist while the document "
+                         "is being written")
 
 
 class CheckBehaviourTests(unittest.TestCase):
@@ -280,7 +370,7 @@ evidence = ["source-grounded-synthesis"]
             capture_output=True, text=True, cwd=ROOT)
 
     def test_every_check_passes_on_a_published_leaf(self):
-        for check in CHECKS:
+        for check in LEAF_CHECKS:
             with self.subTest(check=check):
                 result = self.published(check)
                 self.assertEqual(
@@ -308,7 +398,7 @@ evidence = ["source-grounded-synthesis"]
         self.assertGreater(checked, 0, "no published leaf was checked")
 
     def test_the_probe_leaf_passes_before_anything_is_broken(self):
-        for check in CHECKS:
+        for check in LEAF_CHECKS:
             with self.subTest(check=check):
                 self.assertEqual(self.probe(check).returncode, 0,
                                  self.probe(check).stderr)
@@ -467,6 +557,181 @@ evidence = ["source-grounded-synthesis"]
         self.assertIn("no proper-components.toml", result.stderr)
 
 
+class ProvenanceCheckTests(unittest.TestCase):
+    """The leaf's record of what produced it, held against the run.
+
+    Every test here runs the tool. The record is the only place a document
+    states which workflow, at which version and digest, under which run and
+    from which seed commit it was written, and until this check nothing read
+    it: the instruction to copy those five facts off the packet header was
+    obeyed or ignored to exactly the same effect. One leaf that already had a
+    record stated `v10` through a v11 pass, because the value was copied out
+    of the prose of an earlier `\\AIModelContribution` rather than off the
+    header -- which is the case `a_stale_version` is.
+    """
+
+    RUN = {
+        "--run-workflow": "proper",
+        "--run-workflow-version": "16",
+        "--run-workflow-digest": "a" * 64,
+        "--run-id": "0123456789abcdef",
+        "--run-seed-commit": "b" * 40,
+    }
+
+    def setUp(self):
+        self.tree = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, self.tree, ignore_errors=True)
+        self.leaf = self.tree / "src" / "claude" / "probe"
+        self.leaf.mkdir(parents=True)
+        self.write_record()
+
+    def write_record(self, workflow="proper", version="16", digest="a" * 64,
+                     run_id="0123456789abcdef", seed="b" * 40,
+                     install="unknown", body=None):
+        record = (
+            f"\\AIGenerationProvenance{{{workflow}}}{{{version}}}"
+            f"{{{digest}}}{{{run_id}}}{{{seed}}}{{{install}}}"
+        ) if body is None else body
+        (self.leaf / "generation-metadata.tex").write_text(
+            "\\AIDocumentRevisionTimestamp{2026-09-01T00:00:00Z}\n"
+            f"{record}\n"
+            "\\AIModelContribution{a-model}{unexposed}{an agent}\n",
+            encoding="utf-8")
+
+    def check(self, **overrides):
+        run = dict(self.RUN)
+        for option, value in overrides.items():
+            if value is None:
+                run.pop(option, None)
+            else:
+                run[option] = value
+        argv = [str(ROOT / "tools" / TOOL), "--root", str(self.tree),
+                "--provider", "claude", "--document", "probe",
+                "--check", RUN_CHECK]
+        for option, value in run.items():
+            argv += [option, value]
+        return subprocess.run(argv, capture_output=True, text=True, cwd=ROOT)
+
+    def test_a_record_of_this_run_passes(self):
+        result = self.check()
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertTrue(result.stdout.startswith(f"{RUN_CHECK}: "))
+        self.assertIn(self.RUN["--run-id"], result.stdout,
+                      "a passing check says which run it read")
+
+    def test_a_stale_version_is_refused(self):
+        """The defect this check was written for, exactly as it happened."""
+        self.write_record(version="10")
+        result = self.check()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("workflow_version '10'", result.stderr,
+                      "the refusal names what the leaf states")
+        self.assertIn("workflow_version '16'", result.stderr,
+                      "and what the run producing it states")
+
+    def test_a_stale_run_id_is_refused(self):
+        self.write_record(run_id="feedfacefeedface")
+        result = self.check()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("run_id 'feedfacefeedface'", result.stderr)
+        self.assertIn(f"run_id '{self.RUN['--run-id']}'", result.stderr)
+
+    def test_a_stale_digest_or_seed_commit_is_refused(self):
+        for option, kwargs, stated in (
+                ("--run-workflow-digest", {"digest": "c" * 64}, "c" * 64),
+                ("--run-seed-commit", {"seed": "d" * 40}, "d" * 40),
+                ("--run-workflow", {"workflow": "not-this-workflow"},
+                 "not-this-workflow")):
+            with self.subTest(field=option):
+                self.write_record(**kwargs)
+                result = self.check()
+                self.assertEqual(result.returncode, 1)
+                self.assertIn(stated, result.stderr)
+
+    def test_a_leaf_with_no_record_at_all_is_refused(self):
+        self.write_record(body="")
+        result = self.check()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("carries no", result.stderr)
+        self.assertIn("AIGenerationProvenance", result.stderr)
+
+    def test_a_commented_out_record_states_nothing(self):
+        """A record behind a `%` is not a record, and never a pass."""
+        self.write_record(body=(
+            "% \\AIGenerationProvenance{proper}{16}{" + "a" * 64
+            + "}{0123456789abcdef}{" + "b" * 40 + "}{unknown}"))
+        result = self.check()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("AIGenerationProvenance", result.stderr)
+
+    def test_a_leaf_with_no_generation_metadata_is_refused(self):
+        (self.leaf / "generation-metadata.tex").unlink()
+        result = self.check()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("no generation-metadata.tex", result.stderr)
+
+    def test_an_unknown_field_is_a_mismatch_like_any_other(self):
+        """`unknown` is a record of a fact nobody could read.
+
+        Every one of these five is on the packet header the stage was handed,
+        so none of them is unreadable, and a leaf that says otherwise about
+        the run producing it is refused exactly as a wrong value is.
+        """
+        self.write_record(digest="unknown")
+        result = self.check()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("workflow_digest 'unknown'", result.stderr)
+
+    def test_install_commit_is_not_compared(self):
+        """It states where the artifact entered the tree; it has not yet."""
+        for install in ("unknown", "e" * 40):
+            with self.subTest(install_commit=install):
+                self.write_record(install=install)
+                self.assertEqual(self.check().returncode, 0)
+
+    def test_two_records_are_refused(self):
+        record = ("\\AIGenerationProvenance{proper}{16}{" + "a" * 64
+                  + "}{0123456789abcdef}{" + "b" * 40 + "}{unknown}")
+        self.write_record(body=f"{record}\n{record}")
+        result = self.check()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("2 ", result.stderr)
+
+    def test_the_check_is_refused_rather_than_skipped_without_a_run(self):
+        """A check passing for want of an answer is worth less than none."""
+        result = self.check(**{option: None for option in self.RUN})
+        self.assertEqual(result.returncode, 1)
+        for option in self.RUN:
+            self.assertIn(option, result.stderr,
+                          "the refusal names what it needs")
+
+    def test_a_partial_identity_is_refused_rather_than_partly_checked(self):
+        for option in self.RUN:
+            with self.subTest(missing=option):
+                result = self.check(**{option: None})
+                self.assertEqual(result.returncode, 1)
+                self.assertIn(option, result.stderr)
+
+    def test_the_sweep_over_a_published_leaf_neither_runs_nor_passes_it(self):
+        """A published leaf's record names the run that wrote it, not this one.
+
+        So the whole-preflight invocation cannot include this check, and the
+        thing to prove is that it is left out rather than answered: the
+        listing names it, and the sweep does not report it as passing.
+        """
+        provider, document = PUBLISHED
+        sweep = subprocess.run(
+            [str(ROOT / "tools" / TOOL), "--provider", provider,
+             "--document", document],
+            capture_output=True, text=True, cwd=ROOT)
+        self.assertEqual(sweep.returncode, 0, sweep.stderr)
+        self.assertNotIn(RUN_CHECK, sweep.stdout)
+        listed = subprocess.run(
+            [str(ROOT / "tools" / TOOL), "--list"],
+            capture_output=True, text=True, cwd=ROOT)
+        self.assertEqual(listed.stdout.split(), sorted(CHECKS))
+
+
 class DrivenRunTests(RoutingCase):
     """The gate as a run actually meets it."""
 
@@ -506,6 +771,14 @@ class DrivenRunTests(RoutingCase):
         self.engine._run_gate = run_gate
 
     def test_the_gate_runs_for_real_and_passes_the_published_leaf(self):
+        """The five checks the tree can answer, over a real published leaf.
+
+        The sixth is filtered out by the harness, for the reason
+        `PropersCase` gives: these runs submit a synthetic `author-proper`
+        result, so no author writes the provenance record, and the leaf they
+        drive over states the run that really did write it. What the gate does
+        when it is not filtered is the next test.
+        """
         run_id = self.drive_to_preflight()
         out = self.engine.advance(run_id, run_gate=True)
         self.assertEqual(out["stage"], "content-evaluation")
@@ -518,13 +791,59 @@ class DrivenRunTests(RoutingCase):
             (self.engine.run_dir(run_id) / "gate-logs").glob(f"{STAGE}-*"))
         self.assertEqual(
             [name.split("-", 3)[-1] for name in logs],
-            sorted(f"{check}.log" for check in CHECKS),
+            sorted(f"{check}.log" for check in LEAF_CHECKS),
             "every declared check ran and left its untouched log")
         for name in logs:
             text = (self.engine.run_dir(run_id) / "gate-logs" / name
                     ).read_text(encoding="utf-8")
             self.assertIn("exit 0", text)
             self.assertIn(f"tools/tpt {TOOL}", text)
+
+    def test_the_gate_refuses_a_leaf_that_states_another_run(self):
+        """The whole chain, unstubbed, over a leaf that really is stale.
+
+        The published leaf this suite drives runs against records `unknown`
+        for all five run fields: it was installed before any run wrote a
+        provenance record. That is precisely the leaf a stage which ignored
+        the instruction would leave behind, so the gate must refuse it, and
+        refusing it proves every link at once -- the engine substituted its
+        own run identity into the check command, the tool compared the record
+        against it, and the mismatch came back as a blocking finding routed to
+        the reviser.
+        """
+        self.unsatisfiable_checks.clear()
+        run_id = self.drive_to_preflight()
+        out = self.engine.advance(run_id, run_gate=True)
+        self.assertEqual(out["stage"], "content-revision",
+                         "a leaf stating another run is a leaf defect")
+        state = self.engine.load_state(run_id)
+        self.assertEqual(state["transitions"][-1],
+                         {"from": STAGE, "to": "content-revision",
+                          "disposition": FAIL})
+
+        log = next(
+            (self.engine.run_dir(run_id) / "gate-logs").glob(
+                f"{STAGE}-*-{RUN_CHECK}.log")).read_text(encoding="utf-8")
+        self.assertIn("exit 1", log)
+        for value in (run_id, state["workflow_digest"], state["repo_commit"],
+                      str(state["workflow_version"])):
+            self.assertIn(str(value), log,
+                          "the command the gate ran carried the run's own "
+                          "identity, not a placeholder")
+        self.assertNotIn("{run.", log,
+                         "a name the engine did not substitute would have "
+                         "been compared as literal text")
+
+        packet = Path(out["packet_abs_path"]).read_text(encoding="utf-8")
+        forwarded = json.loads(next(
+            line for line in packet.splitlines()
+            if line.startswith("PRIOR_FINDINGS: "))[len("PRIOR_FINDINGS: "):])
+        self.assertEqual([finding["id"] for finding in forwarded],
+                         [f"GATE-{RUN_CHECK.upper()}"])
+        self.assertIn("the record states workflow_id 'unknown'",
+                      forwarded[0]["problem"],
+                      "the reviser is told which field disagrees and what "
+                      "the leaf says about it")
 
     def test_a_failing_gate_sends_the_run_to_content_revision(self):
         """The wiring, with the checks themselves stubbed out.

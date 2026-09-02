@@ -188,6 +188,17 @@ class PropersCase(unittest.TestCase):
         self.engine.runs_dir = self.runs
         self.answers = self.runs / "answers"
         self.answers.mkdir(parents=True, exist_ok=True)
+        # A gate check this harness cannot honestly satisfy, filtered out of
+        # the gates that otherwise run for real. `provenance-matches-run`
+        # holds the leaf's `\AIGenerationProvenance` record against the run
+        # producing it; these runs are driven by submitting a synthetic
+        # `author-proper` result, so no author ever writes that record, and
+        # the leaf they drive over is a published one produced by a different
+        # run, which a test may not rewrite. Its real behaviour is held in
+        # test_workflow_content_preflight.py, over fixtures and over a real
+        # run whose leaf does state another run. A test about the check
+        # itself clears this set.
+        self.unsatisfiable_checks = {"provenance-matches-run"}
         self._pass_the_scope_gate()
 
     def _pass_the_scope_gate(self):
@@ -204,17 +215,24 @@ class PropersCase(unittest.TestCase):
         gate's own commands are held to their real behaviour against
         fixtures in test_workflow_scope_and_publication.py.
 
-        Every other gate still runs for real.
+        Every other gate still runs for real, less whatever
+        `unsatisfiable_checks` names.
         """
         real_run_gate = self.engine._run_gate
 
         def run_gate(workflow, stage, state, run_id):
-            if stage["id"] != "scope-gate":
-                return real_run_gate(workflow, stage, state, run_id)
-            return {
-                "disposition": PASS, "findings": [], "stage": stage["id"],
-                "iteration": _current_packet(state, stage["id"])["iteration"],
-            }
+            if stage["id"] == "scope-gate":
+                return {
+                    "disposition": PASS, "findings": [],
+                    "stage": stage["id"],
+                    "iteration": _current_packet(
+                        state, stage["id"])["iteration"],
+                }
+            if self.unsatisfiable_checks:
+                stage = {**stage, "checks": [
+                    check for check in stage.get("checks", [])
+                    if check["id"] not in self.unsatisfiable_checks]}
+            return real_run_gate(workflow, stage, state, run_id)
 
         self.engine._run_gate = run_gate
 
