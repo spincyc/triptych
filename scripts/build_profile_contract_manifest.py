@@ -298,7 +298,18 @@ def render(repo: Path, base: str) -> tuple[str, int]:
         if ids:
             have = [] if row["prior_review_ids"] == "-" else row["prior_review_ids"].split(";")
             row["prior_review_ids"] = ";".join(dict.fromkeys(have + ids))
+    # A contract file this lane changed is one changed SINCE THE BASE, whether
+    # that change is committed yet or not. Reading only the working tree made
+    # this column flip from "yes" to "no" the moment the lane's own files were
+    # committed, which staled the tracked manifest as a side effect of
+    # committing it -- so the artifact could never be both current and
+    # committed at once. The union is stable across that boundary.
     touched = {
+        line.strip()
+        for line in review._git(
+            repo, "diff", "--name-only", f"{base}..HEAD").splitlines()
+        if line.strip()
+    } | {
         line[3:].strip().strip('"')
         for line in review._git(repo, "status", "--porcelain").splitlines()
     }
