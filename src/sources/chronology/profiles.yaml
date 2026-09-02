@@ -203,6 +203,48 @@ profiles:
         so it stands. A
         claim reading a named warrant as corroborative must show the admissible
         ground it says is primary; if it cannot, the warrant is the ground.
+      a_sources_rejection_on_an_excluded_ground_is_not_followed: >-
+        RULED 2026-09-02, ONCE, HERE, because it was being relied on in four
+        claims and stated in none. Sloet's "Chronology of the Kings" opens the
+        second half of its article with "Since the deciphering of the
+        Assyro-Babylonian inscriptions, the chronology of the period of Kings
+        before 730 B.C. has become untenable", and that sentence stands before
+        BOTH of the article's tables. Four of the ten figures this profile
+        answers with from the Petavius table it reproduces fall inside the
+        period that sentence declares untenable -- B.C. 1055 for David and
+        B.C. 1015 for Solomon, both `preferred`, and B.C. 1012 for the
+        foundation of the Temple and B.C. 975 for Roboam. The question a cold
+        reader is entitled to ask is why the article's own rejection does not
+        reach the figures this corpus takes from the article. Two answers, and
+        the first is the operative one.
+        FIRST, THE GROUND OF THE REJECTION IS THE EXCLUDED METHOD, IN THE
+        SENTENCE'S OWN WORDS. What makes the period untenable, on Sloet's
+        account, is the deciphering of the Assyro-Babylonian inscriptions; the
+        table he sets against it is the one he says gives the chronology "in
+        conjunction with the data of profane history", which this profile
+        refuses under `profane-harmonisation` and does refuse, at
+        israel.monarchy.david-accession#1 and its siblings. A profile that will
+        not answer with a method's NUMBERS cannot follow that method's
+        VERDICTS: doing so would adopt the excluded reckoning as an authority
+        over the received one while declining to print its results, which is
+        the worst of both and is not a position. The disclosure test cuts both
+        ways or it is not a test.
+        SECOND, AND SEPARATELY, THIS IS NOT `rejected-by-source`. That class is
+        for a figure the citing source itself refuses, and Sloet refuses none
+        of the Petavius figures. He reproduces the table and describes it as
+        having, "with few alterations, been in vogue for a long time"; what he
+        sets against it is his own table, which this corpus preserves on his own
+        declared method and does not answer with. A source may print a
+        chronology it does not personally hold, and reporting it is what
+        `reported-traditional` is for.
+        WHAT THIS DOES NOT LICENSE. It is not a rule that a source's objections
+        may be ignored. Where a source rejects a figure on a ground this profile
+        admits -- Scripture, the Fathers, the received apparatus -- the
+        rejection reaches the figure and `rejected-by-source` is the class for
+        it, as at event:apostolic-age.exile-of-saint-john-to-patmos#1. The
+        narrow holding is that a rejection whose stated warrant is a method this
+        profile excludes is refused on exactly the same test, and for the same
+        reason, as a value with that warrant would be.
       before_rank: >-
         Admissibility is determined BEFORE source rank. Rank orders admissible
         evidence; rank never makes an inadmissible basis admissible, and there
@@ -467,6 +509,51 @@ profiles:
         undeclared project computation sitting on a `traditional-catholic` or
         `reported-traditional` basis. The convention was already uniform; what
         was missing was a reader who could find it.
+      stated_bounds: >-
+        AN INTERVAL'S ENDPOINTS ARE YEARS THE SOURCE STATES, AND THE YEARS
+        BETWEEN THEM ARE ASSERTED. Written down on 2026-09-02, when a cold
+        review found four claims whose stored intervals were wider than
+        anything their sources said and whose own notes conceded it. A note is
+        not what a consumer computes with. If the machine value says 29 to 33,
+        this profile has asserted 31 and 32, whatever the prose beside it adds.
+        THREE SHAPES, AND WHAT EACH IS DONE WITH.
+        A SET OF CANDIDATE YEARS IS NOT AN INTERVAL. Where a source names two
+        or more years and chooses between none of them -- Howlett's "the years
+        29, 30, and 33 to choose between for the death of Jesus Christ" -- each
+        is recorded as its own `disputed` claim. Spanning them would assert the
+        years the source's own test has just eliminated. life-of-christ
+        .crucifixion holds three such claims and composition.book-of-wisdom two,
+        one for each of the two reigns Gigot offers, because the fifty-nine
+        years between those reigns are exactly what his argument excludes.
+        A CONCESSIVE BOUND IS TAKEN AT THE CONCESSION. "At the end of the reign
+        of Xerxes I (485-465 B.C.)" states a bound at the END of that reign; the
+        parenthesis identifies the reign and does not open the window. The
+        bounds are the years the sentence actually leaves available, and
+        composition.book-of-esther is stored 465 to 425 for that reason.
+        A CENTURY PHRASE IS THE EXCEPTION AND IS NOT A PRECEDENT FOR ANY OTHER
+        WIDENING. `century_notation` above widens deliberately, because a
+        century names its own bounds and narrowing inside it would invent a year
+        the source never printed. That is the opposite case: there the source's
+        unit IS the century. It licenses nothing beyond century phrases, and a
+        claim reaching for it to justify a wider interval is misreading it.
+      a_printed_heading_is_the_works_own_text: >-
+        A YEAR THE WORK PRINTS IN ITS OWN HEADING IS THE WORK STATING THAT YEAR.
+        Written down on 2026-09-02 with `stated_bounds`, because two claims rest
+        on it and both notes read as apologies rather than as a rule.
+        Meistermann's "Jerusalem (Before A.D. 71)" heads the city's Roman period
+        "Under the Roman domination; until A.D. 70", and Bechtel's "Judaizers"
+        heads its treatment "Council of Jerusalem (A.D. 50 or 51)". In neither
+        does the body of the section repeat the year. Both are answered with.
+        A heading is text the work printed, in its own voice, in its own
+        apparatus; reading it is reading the source. What this profile refuses
+        is not text in an unusual position but a value this project WORKED OUT
+        -- and the difference is visible at
+        event:israel.restoration.nehemias-mission#2, where Meistermann prints
+        "Thirteen years later" and no year, and this corpus records the interval
+        as an interval and computes no year from its 458 for Esdras. Reading a
+        heading is not arithmetic. A claim resting on a heading must say in its
+        note that the year is printed as a heading and whether the body repeats
+        it, so that a reader can weigh it; both of these do.
     non_goals:
       - Deciding questions the Church has not defined.
       - Dating every verse. A verse the sources do not date stays undated and says so.

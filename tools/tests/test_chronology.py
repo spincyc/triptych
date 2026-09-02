@@ -30,6 +30,7 @@ sys.path.insert(0, str(REPOSITORY_ROOT / "scripts"))
 import _chronology  # noqa: E402
 import chronology_review_diff as review_diff  # noqa: E402
 import build_profile_contract_manifest as review_builder  # noqa: E402
+import _canon  # noqa: E402
 import _projection  # noqa: E402
 import _psalms  # noqa: E402
 
@@ -3373,6 +3374,28 @@ class HaydockEpochArgumentTests(unittest.TestCase):
                     notes[f"{event.id}#{index}"] = claim.note
         return notes
 
+    @classmethod
+    def _lift_bases(cls) -> dict[str, str]:
+        """The `basis` of every claim taking the Usher lift.
+
+        Read separately from the notes because THE BASIS IS WHERE THE PROFILE
+        REQUIRES THE DISCLOSURE. `profiles.yaml` `reporting_exceptions` makes
+        the exception turn on the claim recording the printing as the ranked
+        work's testimony, and that record is the basis; a note is commentary on
+        it. Until 2026-09-02 every test in this class read `claim.note` alone,
+        and seven bases -- six of them `preferred` -- kept for a further pass a
+        clause PCC-27 had removed from the notes, saying the Psalm 70 page
+        stood "on this same epoch" while the note three sentences later said
+        that page prints no Anno Christi and so is not one of the nine. Nothing
+        looked at the half of the claim the profile actually relies on.
+        """
+        bases = {}
+        for event in _chronology.load().events.values():
+            for index, claim in enumerate(event.claims):
+                if claim.reporting_exception == cls.LIFT and claim.basis:
+                    bases[f"{event.id}#{index}"] = claim.basis
+        return bases
+
     def test_the_corpus_records_one_pair_off_the_epoch_and_says_which(self) -> None:
         """The data, first: the outlier is real, it is where the notes say it
         is, and harmonising it away would break this test rather than pass it."""
@@ -3399,18 +3422,64 @@ class HaydockEpochArgumentTests(unittest.TestCase):
                 f"{identifier} lists {sorted(listed)} but the corpus records "
                 f"{sorted(expected)}")
 
+    # Every wording of the withdrawn universal, and the withdrawn clause that
+    # put the Psalm 70:1 page on an epoch the corpus cannot check, because that
+    # page prints no Anno Christi. Asserted against notes AND bases.
+    WITHDRAWN = (
+        "one epoch across every Anno Mundi",
+        "every Anno Mundi and Anno Christi pair this corpus records from "
+        "it sums to the same number",
+        "every Anno Mundi and Anno Christi pair this corpus records from "
+        "the apparatus",
+        "one epoch across every recorded pair",
+        "on this same epoch",
+        "on that same epoch",
+    )
+
     def test_no_note_states_the_epoch_as_a_universal(self) -> None:
-        """The false sentence itself, in both of the wordings it had."""
-        false = (
-            "one epoch across every Anno Mundi",
-            "every Anno Mundi and Anno Christi pair this corpus records from "
-            "it sums to the same number",
-            "every Anno Mundi and Anno Christi pair this corpus records from "
-            "the apparatus",
-        )
+        """The false sentence itself, in every wording it had."""
         for identifier, note in self._arguing_notes().items():
-            for sentence in false:
+            for sentence in self.WITHDRAWN:
                 self.assertNotIn(sentence, note, identifier)
+
+    def test_no_basis_states_the_epoch_as_a_universal(self) -> None:
+        """The same sentences, in the half of the claim the profile relies on.
+
+        This is the test that was missing. The notes were corrected under
+        PCC-27 and the bases were not, and no test read a basis, so seven
+        claims went on asserting in their warrant what their own notes denied
+        three sentences later.
+        """
+        bases = self._lift_bases()
+        self.assertEqual(len(bases), 15, sorted(bases))
+        for identifier, basis in bases.items():
+            for sentence in self.WITHDRAWN:
+                self.assertNotIn(sentence, basis, identifier)
+
+    def test_no_basis_and_note_of_one_claim_contradict_on_the_psalm_70_page(
+            self) -> None:
+        """The specific contradiction, stated as itself.
+
+        The Psalm 70:1 page is the one place the edition names Usher and it
+        prints no Anno Christi, so it is NOT one of the nine pairs and its
+        epoch is not checkable from anything this corpus holds. A claim may
+        cite it for the attribution; no claim may say what epoch it is on.
+        """
+        corpus = _chronology.load()
+        for identifier in self._lift_bases():
+            event_id, index = identifier.split("#")
+            claim = corpus.events[event_id].claims[int(index)]
+            for where, text in (("basis", claim.basis), ("note", claim.note)):
+                if not text:
+                    continue
+                flat = re.sub(r"\s+", " ", text)
+                for sentence in re.split(r"(?<=\.) ", flat):
+                    if "Psalm 70" in sentence and "epoch" in sentence:
+                        self.fail(
+                            f"{identifier} {where} puts the Psalm 70 page on "
+                            f"an epoch in one sentence; that page prints no "
+                            f"Anno Christi, so its epoch is not checkable "
+                            f"from anything this corpus holds: {sentence!r}")
 
     def test_the_outlier_is_named_where_the_lift_is_argued(self) -> None:
         """Naming the pairs is not enough: the note has to say that one of them
@@ -3419,6 +3488,43 @@ class HaydockEpochArgumentTests(unittest.TestCase):
         for identifier, note in self._arguing_notes().items():
             self.assertIn("4009", note, identifier)
             self.assertIn("Exodus 5", note, identifier)
+
+    def test_the_ledger_does_not_still_assert_the_withdrawn_universal(self) -> None:
+        """The correction ledger is a record a cold reviewer reads as current
+        ground, and two of its rows went on asserting in the present tense the
+        universal PCC-27 withdrew: PCC-15 listed seven pairs and said the Psalm
+        70:1 note stands "on that same epoch", and PCC-17 gave the whole
+        identification as resting on "one epoch across every recorded pair".
+        Neither was quoted history; both read as statements of what is so.
+
+        A withdrawn sentence may still APPEAR in the ledger -- quoting it is how
+        a correction says what it corrected -- so the rule enforced here is that
+        a row containing one must also say, in its own text, that it is
+        withdrawn. That is exactly the difference between recording a defect and
+        repeating it.
+        """
+        import csv
+
+        path = (REPOSITORY_ROOT / "src" / "sources" / "chronology"
+                / "profile-contract-corrections.tsv")
+        with path.open() as handle:
+            rows = list(csv.reader(
+                (line for line in handle if not line.startswith("#")),
+                delimiter="\t"))
+        self.assertGreater(len(rows), 30, "the ledger did not parse")
+        carrying = []
+        for row in rows[1:]:
+            blob = " ".join(row)
+            if any(sentence in blob for sentence in self.WITHDRAWN):
+                carrying.append(row[0])
+                self.assertIn(
+                    "withdrawn", blob,
+                    f"{row[0]} contains a sentence PCC-27 withdrew and does "
+                    f"not say it is withdrawn, so it reads as current ground")
+        self.assertEqual(
+            sorted(carrying), ["PCC-15", "PCC-17", "PCC-27", "PCC-35"],
+            "the set of ledger rows quoting the withdrawn universal has "
+            "changed; each has to be read before this is updated")
 
     def test_the_answers_resting_on_the_lift_are_the_ones_declared(self) -> None:
         """Ten preferred answers rest on this argument. If that number moves,
@@ -3442,7 +3548,8 @@ class HaydockEpochArgumentTests(unittest.TestCase):
 
 
 class QuotedBasisTests(unittest.TestCase):
-    """Every quotation in a `basis` is checked against the bytes it cites.
+    """Every quotation in a `basis` is checked against THE SOURCE ITS OWN
+    SENTENCE NAMES, and every quotation is checked.
 
     Nothing tested this until 2026-09-02, and nothing COULD: the sources were
     registered but not retained, so a basis could quote a sentence that was not
@@ -3450,13 +3557,51 @@ class QuotedBasisTests(unittest.TestCase):
     exactly as before. A misquotation is the failure this corpus is least able
     to survive and was the only one it could not see.
 
-    The sources are retained now, so the check is possible and is made here.
-    For every claim, every run of >= 25 characters inside quotation marks in
-    its `basis` must occur in the retained text of one of the sources that
-    claim cites -- the extracted article for a work artifact, the chapter (and
-    its neighbours) for a `bible:` citation, and the passage record's own prose
-    for a `passage:` citation, which for a remote facsimile is what this
-    repository holds in place of the page.
+    The first version of this class closed most of that hole and left four
+    doors open, which a third cold review walked through on 2026-09-02:
+
+      1. IT POOLED THE SOURCES. `bodies()` gathered every source a claim cited
+         into one list and asked only whether a span occurred in ANY of them.
+         On event:apostolic-age.council-of-jerusalem#4 the auditor SWAPPED the
+         attributions -- gave Galatians 2:1's words to Prat's article and the
+         article's words to Galatians -- and both still matched. A basis could
+         put Scripture's words in the encyclopedia's mouth and nothing said so.
+      2. IT DISCARDED WHAT IT COULD NOT CHECK. A claim citing only an artifact
+         whose bytes are not retained produced `skipped` spans, and the caller
+         threw the count away. A fabricated `patristic` claim with an invented
+         Eusebius quotation, citing one unretained NPNF artifact, loaded
+         cleanly and passed all 197 tests. An unreopenable citation was a
+         hiding place.
+      3. IT DID NOT LOOK AT SHORT QUOTATIONS. The 25-character floor left 284
+         quoted runs unchecked, and 15 of them did not occur as quoted.
+      4. IT DID NOT FOLLOW A SIBLING EXTRACTION. Where a remote delivery's text
+         is retained under a sibling `-article-text` artifact of the same page,
+         the claim looked unreopenable when it was not.
+
+    WHAT IS CHECKED NOW. For every claim, every run inside quotation marks in
+    its `basis`, at any length, must occur in the retained text of the source
+    THAT RUN IS ATTRIBUTED TO -- not the claim's sources pooled.
+
+    HOW A RUN IS ATTRIBUTED, and what that does and does not separate. Each
+    source is given the names the prose can call it by: for Scripture, the
+    book, matched only where a chapter or verse number follows it, so that
+    "Exodus 3", "Ezechiel 30:20-21" and "1 Kings (1 Samuel) 7:1" all name their
+    book and the word "exodus" in a sentence does not; for a work, the author's
+    surname and the article's own title, read off the artifact record. A run is
+    attributed to the source whose name stands NEAREST to it in the basis,
+    counting only names outside quotation marks, so that a book named inside
+    the encyclopedia's quoted words cannot claim that quotation. Ties are
+    resolved in favour of every source at that distance.
+
+    This separates WITNESSES -- Scripture from the encyclopedia, one article
+    from another, one edition's page from another's. It does not separate
+    chapters of the same book, and does not try to: a `bible:` body already
+    carries the cited chapter and its neighbours, because a basis may quote
+    across a chapter break.
+
+    A run that no source's name stands anywhere near cannot be attributed. That
+    is a failure, not a fallback -- except on a claim citing ONE source, where
+    there is nothing to be wrong about.
 
     WHAT IS FOLDED BEFORE COMPARING, and why each fold is safe: whitespace,
     because the extraction collapses the page's line breaks; curly quotation
@@ -3464,10 +3609,13 @@ class QuotedBasisTests(unittest.TestCase):
     the encyclopedia sets and the corpus does not; double quotation marks to
     single, because a quotation nested inside a quotation changes its marks and
     not its words; whitespace around punctuation and hyphens, which the
-    extraction moves. A trailing full stop is allowed to be dropped, because a
-    basis that quotes the first half of a verse ends the sentence it is inside.
-    None of these can turn one word into another; every one of them is applied
-    to BOTH sides.
+    extraction moves. A trailing full stop or comma is allowed to be dropped,
+    because a basis that quotes the first half of a verse ends the sentence it
+    is inside. Where all of that fails, the comparison is retried with every
+    hyphen removed from BOTH sides, because the retained extraction carries the
+    printed table's end-of-line hyphenation inside its cells -- "Capture of
+    Jerusa-lem" -- which is typography and not words. None of these can turn
+    one word into another; every one of them is applied to BOTH sides.
 
     A span broken by an ellipsis is checked in pieces, which is what an
     ellipsis means. A quotation that silently drops words WITHOUT one is a
@@ -3476,20 +3624,39 @@ class QuotedBasisTests(unittest.TestCase):
     composition.book-of-judges#0 had moved an opening quotation mark so that
     "Saul had" fell inside the article's words; composition.book-of-habacuc#0
     and israel.maccabees.temple-plundered#1 had each closed an inner quotation
-    early, at a point the article runs past.
+    early, at a point the article runs past. Fifteen more were found when the
+    length floor came off, and are recorded in PCC-37.
+
+    A PASSAGE RECORD IS NOT THE PAGE. For a remote facsimile the repository
+    holds a passage record whose `context` is the project's own summary of what
+    the page prints. That is evidence a person read the page; it is not the
+    page's bytes, and a span "verified" against it is the corpus quoting
+    itself. Such a span is reported separately and has to be declared, exactly
+    like a span that cannot be reopened at all.
     """
 
-    MINIMUM = 25
-    FOLD = (("\u2019", "'"), ("\u2018", "'"), ("\u201c", "'"), ("\u201d", "'"),
-            ('"', "'"), ("\u2014", "-"), ("\u2013", "-"), ("\u2010", "-"),
-            ("\u00a0", " "), ("\u00e6", "ae"), ("\u00c6", "Ae"),
-            ("\u0153", "oe"), ("\u0152", "Oe"))
-    ELLIPSIS = re.compile(r"\s*(?:\.\.\.|\u2026)\s*")
+    # No floor. The 25-character floor was itself a defect: '"(740 B.C. )"' at
+    # composition.book-of-isaias#0 -- where the article reads "(740 B.C.;" --
+    # and '"Epistle of Saint Jude"' -- where the article says "St. Jude" --
+    # were both under it.
+    FOLD = (("’", "'"), ("‘", "'"), ("“", "'"), ("”", "'"),
+            ('"', "'"), ("—", "-"), ("–", "-"), ("‐", "-"),
+            (" ", " "), ("æ", "ae"), ("Æ", "Ae"),
+            ("œ", "oe"), ("Œ", "Oe"))
+    ELLIPSIS = re.compile(r"\s*(?:\.\.\.|…)\s*")
+    ORDINAL = r"(?:[1-4]|I{1,3}|IV|First|Second|Third|Fourth)"
 
     # The spans that cannot be reopened from this repository's bytes, with the
     # reason, and the count of them on each claim. Asserted in BOTH directions:
     # an undeclared failure fails the test, and a declared one that has started
     # matching fails it too, so this list cannot quietly outlive its reason.
+    #
+    # THE THREE NPNF-BACKED CLAIMS AT THE BOTTOM WERE MISSING UNTIL 2026-09-02.
+    # They cite only an artifact whose bytes are not retained, so the old
+    # `survey` returned all their spans as `skipped` and the caller discarded
+    # the count. Two of them are `preferred`. That silence was the hiding place
+    # a fabricated claim with a fabricated quotation walked into, and it is why
+    # an undeclared skip is now a failure.
     UNREOPENABLE = {
         "event:apostolic-age.exile-of-saint-john-to-patmos#0": (2, (
             "Eusebius, Church History III.18.1, in the NPNF translation New "
@@ -3497,6 +3664,18 @@ class QuotedBasisTests(unittest.TestCase):
             "are not retained, so its words cannot be reopened here.")),
         "event:apostolic-age.return-of-saint-john-from-patmos#0": (1, (
             "Eusebius, Church History III.23.1, same artifact, same reason.")),
+        "event:apostolic-age.martyrdom-of-saint-paul#3": (1, (
+            "Jerome, De viris illustribus 5, in the NPNF translation New "
+            "Advent hosts. Registered and hashed, bytes not retained. The "
+            "claim cites this artifact and nothing else, so every span on it "
+            "is unreopenable.")),
+        "event:apostolic-age.flight-of-the-christians-from-jerusalem#0": (1, (
+            "Eusebius, Church History III.5.3, same unretained NPNF artifact. "
+            "This claim is `preferred`, which is why it is named here rather "
+            "than passed over.")),
+        "event:apostolic-age.destruction-of-jerusalem#0": (1, (
+            "Eusebius, Church History III.5, same unretained NPNF artifact. "
+            "Also `preferred`.")),
         "event:israel.exile.first-captivity#0": (1, (
             "The Usher chronology printed at Psalm 70:1 in the Haydock "
             "Douay-Rheims. The artifact is a remote 1.2 GB facsimile PDF and "
@@ -3510,14 +3689,52 @@ class QuotedBasisTests(unittest.TestCase):
             "The same Psalm 70:1 sentence, quoted on the third captivity.")),
     }
 
+    # Spans whose only witness is a passage record's `context` -- the project's
+    # own summary of a page it cannot retain. Declared for the same reason: the
+    # corpus may not quietly stand as its own source.
+    #
+    # EVERY ONE OF THEM IS A HAYDOCK MARGINAL YEAR MARKER, and they are all
+    # here for one reason: the delivery of that edition is a remote 1.2 GB
+    # facsimile PDF which this repository does not retain, so what stands for
+    # the page is the passage record a person wrote after reading it. The
+    # marker is quoted in that record's `context`, so the span is reopenable
+    # HERE and not in the edition. Ten `preferred` answers rest on these.
+    HAYDOCK = (
+        "A Haydock marginal year marker, quoted from the passage record's "
+        "`context` because the edition's own delivery is the remote facsimile "
+        "PDF and is not retained. Verified against the printed page on the "
+        "date the passage record names; not reopenable from the edition's "
+        "bytes in this repository.")
+    SELF_WITNESSED = {
+        "event:israel.exodus.burning-bush#0": (1, HAYDOCK),
+        "event:israel.exodus.moses-before-pharao#0": (1, HAYDOCK),
+        "event:israel.wilderness.manna#1": (1, HAYDOCK),
+        "event:israel.wilderness.golden-calf#0": (1, HAYDOCK),
+        "event:israel.monarchy.david-at-geth#0": (1, HAYDOCK),
+        "event:israel.monarchy.david-in-the-desert-of-maon#0": (1, HAYDOCK),
+        "event:israel.monarchy.nabal-in-the-wilderness-of-maon#0": (1, HAYDOCK),
+        "event:israel.monarchy.absalom-preparations#0": (2, HAYDOCK),
+        "event:israel.monarchy.absalom-revolt#1": (1, HAYDOCK),
+        "event:israel.monarchy.absalom-defeat#0": (1, HAYDOCK),
+        "event:israel.monarchy.david-in-the-cave#0": (1, (
+            "Not a marker but a SENTENCE OF THE PASSAGE RECORD ITSELF, quoted "
+            "as such: the basis says 'the verified record read across artifact "
+            "pages 400-401 for 1 Kings 23 states of the following chapter "
+            "that ...'. It is the one span in the corpus that quotes the "
+            "project's own prose openly rather than the page behind it, and it "
+            "says so in its own words.")),
+    }
+
     @classmethod
     def setUpClass(cls) -> None:
         import tomllib
 
         cls.tracked = {}
+        cls.records = {}
         for record in REPOSITORY_ROOT.glob(
                 "src/sources/works/**/artifacts/*/artifact.toml"):
             entry = tomllib.loads(record.read_text())
+            cls.records[entry["id"]] = entry
             if entry.get("storage") == "tracked" and entry.get("path"):
                 cls.tracked[entry["id"]] = REPOSITORY_ROOT / entry["path"]
         cls.passages = {}
@@ -3525,6 +3742,7 @@ class QuotedBasisTests(unittest.TestCase):
                 "src/sources/works/**/passages/*.toml"):
             entry = tomllib.loads(record.read_text())
             cls.passages[entry["id"]] = entry
+        cls.books = {book["token"]: book for book in _canon.books()}
         cls.cache = {}
 
     @classmethod
@@ -3561,9 +3779,66 @@ class QuotedBasisTests(unittest.TestCase):
         return cls.cache[path]
 
     @classmethod
-    def bodies(cls, claim) -> list:
+    def _article(cls, artifact: str) -> list:
+        """The retained bytes of one artifact's text, sibling extractions
+        included.
+
+        A New Advent page can be registered twice -- the exact delivery that
+        was hashed, and a second delivery of the same page -- and the article
+        text is extracted and retained ONCE, under whichever of them it was
+        taken from. `composition.book-of-micheas.chapters-4-5#0` cites the
+        delivery that is not the one the extraction hangs off, and its
+        quotation was counted as unreopenable while its words sat in the
+        repository under the sibling.
+
+        A sibling is followed only where the cited record's OWN notes name the
+        sibling artifact by id -- which is where it says the two are
+        byte-identical. Without that the corpus would be borrowing another
+        page's bytes to verify itself.
+        """
         found = []
+        for candidate in (artifact + "-article-text", artifact):
+            if candidate in cls.tracked:
+                found.append(cls._file(cls.tracked[candidate]))
+        if found:
+            return found
+        notes = cls.records.get(artifact, {}).get("notes", "")
+        stem = artifact.rsplit("-", 1)[0] + "-"
+        for identifier, path in cls.tracked.items():
+            if (identifier.startswith(stem)
+                    and identifier.endswith("-article-text")
+                    and identifier in notes):
+                found.append(cls._file(path))
+        return found
+
+    @classmethod
+    def witness_of(cls, source: str) -> str:
+        """The WITNESS a source belongs to.
+
+        Every verse cited from one book of one edition is one witness, because
+        a basis quoting a book quotes its chapters together and the chapter
+        bodies already reach their neighbours. A passage record is its own
+        witness, because two pages of one edition are two pages. Everything
+        else is its artifact.
+        """
+        if source.startswith("bible:"):
+            _, edition, locus = source.split(":", 2)
+            return f"bible:{edition}:{locus.split('.')[0]}"
+        return source
+
+    @classmethod
+    def witnesses(cls, claim) -> dict:
+        """{witness: (retained bodies, project-authored bodies)}.
+
+        The two are kept apart because a passage record's `context` is the
+        project's prose about a page, not the page. `states` is a list of
+        workflow words and is not text at all, so it is no longer offered as
+        something a quotation can match.
+        """
+        found = {}
         for source in claim.sources:
+            key = cls.witness_of(source)
+            retained, project = found.setdefault(key, ([], []))
             if source.startswith("bible:"):
                 _, edition, locus = source.split(":", 2)
                 where = _chronology.parse_locus(locus)
@@ -3571,49 +3846,212 @@ class QuotedBasisTests(unittest.TestCase):
                 # chapter break, and the citation names only where it starts.
                 for chapter in range(max(1, where.chapter - 1), where.chapter + 2):
                     text = cls._chapter(edition, where.token, chapter)
-                    if text:
-                        found.append(text)
-                continue
-            artifact = source
-            if source.startswith("passage."):
-                record = cls.passages.get(source)
-                if not record:
-                    continue
-                for field in ("states", "context", "notes"):
-                    if record.get(field):
-                        found.append(cls.fold(str(record[field])))
-                artifact = record.get("artifact_id", "")
-            for candidate in (artifact + "-article-text", artifact):
-                if candidate in cls.tracked:
-                    found.append(cls._file(cls.tracked[candidate]))
+                    if text and text not in retained:
+                        retained.append(text)
+            else:
+                artifact = source
+                if source.startswith("passage."):
+                    record = cls.passages.get(source, {})
+                    for field in ("context", "notes"):
+                        if record.get(field):
+                            project.append(cls.fold(str(record[field])))
+                    artifact = record.get("artifact_id", "")
+                retained.extend(cls._article(artifact))
         return found
 
+    # --- attribution -------------------------------------------------------
+
     @classmethod
-    def spans(cls, basis: str) -> list:
+    def _book_cue(cls, token: str):
+        """The names prose calls one book of Scripture by, required to be
+        followed by a number.
+
+        The token IS the Douay abbreviation, so a trailing run of lower-case
+        letters carries it to the Douay name the prose uses: Ezech -> Ezechiel,
+        Jer -> Jeremias, Jos -> Josue, Par -> Paralipomenon. The lookahead for a
+        digit within eighteen characters is what makes it a CITATION and not a
+        word: it matches "Exodus 3" and "1 Kings (1 Samuel) 7:1" and does not
+        match "the exodus from Egypt".
+        """
+        head = re.match(r"(\d)(\S+)", token)
+        stem = head.group(2) if head else token
+        lead = (cls.ORDINAL + r"\s*") if head else (r"(?:%s\s*)?" % cls.ORDINAL)
+        # the lookahead steps over a parenthetical gloss, because the corpus
+        # names a book both ways at once: "1 Esdras (Ezra) 6:15", "1 Kings
+        # (1 Samuel) 7:1".
+        return re.compile(
+            r"\b%s%s[a-z]*\b(?=[^A-Za-z]{0,4}(?:\([^)]{0,24}\))?[^A-Za-z]{0,4}\d)"
+            % (lead, re.escape(stem)))
+
+    @classmethod
+    def _locus_token(cls, locus: str):
+        """The canonical book token a passage record's `locus` names, or None.
+
+        Passage records were written before the chronology corpus and use the
+        edition's own short forms -- "1K.21.1-15" for 1 Kings 21 -- so the head
+        is resolved against the canon by unique prefix. Ambiguity resolves to
+        nothing rather than to a guess, and a locus that is prose (one record's
+        is "article 'David, King,' printed p. 642") names no book at all.
+        """
+        head = locus.split(".")[0]
+        if head in cls.books:
+            return head
+        matches = [token for token in cls.books if token.startswith(head)]
+        return matches[0] if head and len(matches) == 1 else None
+
+    @classmethod
+    def cues(cls, source: str):
+        """(names to look for outside quotation marks, names to look for
+        anywhere). An article's title is looked for anywhere because a basis
+        names an article by quoting its title."""
+        if source.startswith("bible:"):
+            _, edition, locus = source.split(":", 2)
+            # the edition answers for its own text: "The Douay-Rheims text
+            # supplies the two datelines the article reckons from: ..." names
+            # Scripture and nothing else, and prints no chapter to hang on.
+            spelt = r"\s*-?\s*".join(
+                re.escape(word) for word in edition.split("-"))
+            return ([cls._book_cue(locus.split(".")[0]),
+                     re.compile(spelt, re.IGNORECASE)], [])
+        if source.startswith("passage."):
+            token = cls._locus_token(
+                cls.passages.get(source, {}).get("locus", ""))
+            return ([cls._book_cue(token)], []) if token else ([], [])
+        notes = cls.records.get(source, {}).get("notes", "")
+        outside, anywhere = [], []
+        author = re.match(
+            r"([A-Z][A-Za-z'\-]+(?: [A-Z][A-Za-z'\-]+)*),", notes)
+        if author:
+            outside.append(
+                re.compile(r"\b" + re.escape(author.group(1).strip()) + r"\b"))
+        for title in re.findall(r'"([^"]{3,90}?)\.?"', notes):
+            anywhere.append(re.compile(re.escape(title.strip().rstrip("."))))
+        return outside, anywhere
+
+    @classmethod
+    def quotations(cls, basis: str) -> list:
+        """[(offset, text)] for every run inside quotation marks, ellipses
+        split, at any length. Returns [] for an unbalanced basis, which
+        `test_no_basis_leaves_a_quotation_mark_unclosed` refuses separately."""
         parts = basis.split('"')
-        if len(parts) % 2 == 0:      # unbalanced: reported separately
+        if len(parts) % 2 == 0:
             return []
-        out = []
-        for quoted in parts[1::2]:
-            for piece in cls.ELLIPSIS.split(quoted):
-                if len(piece.strip()) >= cls.MINIMUM:
-                    out.append(piece)
+        out, at = [], 0
+        for index, part in enumerate(parts):
+            if index % 2:
+                offset = at
+                for piece in cls.ELLIPSIS.split(part):
+                    if piece.strip():
+                        out.append((offset + part.find(piece), piece))
+            at += len(part) + 1
         return out
+
+    @classmethod
+    def attribute(cls, claim) -> dict:
+        """{offset: {source, ...}} -- who each quoted run is attributed to."""
+        basis = claim.basis
+        chars = list(basis)
+        at = 0
+        for index, part in enumerate(basis.split('"')):
+            if index % 2:
+                for position in range(at, at + len(part)):
+                    chars[position] = " "
+            at += len(part) + 1
+        masked = "".join(chars)
+
+        where, titles = {}, {}
+        for source in claim.sources:
+            key = cls.witness_of(source)
+            outside, anywhere = cls.cues(source)
+            where.setdefault(key, []).extend(
+                found.start() for cue in outside for found in cue.finditer(masked))
+            for cue in anywhere:
+                titles.setdefault(key, set()).add(
+                    cls.fold(cue.pattern.replace("\\", "")).rstrip("."))
+
+        # A TITLE NAMES ITS SOURCE ONLY WHERE IT IS QUOTED AS A TITLE. Matching
+        # it anywhere in the prose put Genesis 25:20's words into the "Isaac"
+        # article, because the word "Isaac's" stood nearer the quotation than
+        # the citation did.
+        for offset, text in cls.quotations(basis):
+            folded = cls.fold(text).rstrip(".")
+            for key, seen in titles.items():
+                if folded in seen:
+                    where.setdefault(key, []).append(offset)
+
+        keys = {cls.witness_of(source) for source in claim.sources}
+        attributed = {}
+        for offset, text in cls.quotations(basis):
+            # A QUOTED TITLE NAMES ITS OWN SOURCE. "Deluge" and "Biblical
+            # Chronology" are how a basis says which article it is about, and
+            # distance would send them to the other one.
+            folded = cls.fold(text).rstrip(".")
+            named = {key for key, seen in titles.items() if folded in seen}
+            if named:
+                attributed[offset] = named
+                continue
+            # ATTRIBUTION PRECEDES QUOTATION. "The Deluge article gives the
+            # Samaritan reckoning: '...'. Its Biblical Chronology prints ..."
+            # -- the name that answers for a quotation is the one BEFORE it,
+            # and a plain nearest-neighbour rule hands it to the next article
+            # named. So the nearest preceding name wins outright, and a
+            # following one is used only where nothing precedes.
+            nearest = cls._nearest(where, offset, len(text), before=True)
+            if not nearest:
+                nearest = cls._nearest(where, offset, len(text), before=False)
+            if not nearest and len(keys) == 1:
+                nearest = set(keys)
+            attributed[offset] = nearest
+        return attributed
+
+    @classmethod
+    def _nearest(cls, where: dict, offset: int, length: int, before: bool):
+        nearest, best = set(), None
+        for key, positions in where.items():
+            for position in positions:
+                if offset <= position <= offset + length:
+                    continue                          # inside the quotation
+                if before and position > offset:
+                    continue
+                if not before and position < offset:
+                    continue
+                distance = abs(position - offset)
+                if best is None or distance < best:
+                    best, nearest = distance, {key}
+                elif distance == best:
+                    nearest.add(key)
+        return nearest
 
     @classmethod
     def present(cls, span: str, bodies: list) -> bool:
         folded = cls.fold(span)
-        trimmed = folded.rstrip(".,;:")
-        return any(
-            folded in body
-            or (len(trimmed) >= cls.MINIMUM and trimmed in body)
-            for body in bodies)
+        candidates = [folded, folded.rstrip(".,;:")]
+        for body in bodies:
+            for candidate in candidates:
+                if candidate and candidate in body:
+                    return True
+        # last resort: the extraction's end-of-line hyphenation inside a table
+        # cell, dropped from BOTH sides. Typography, not words.
+        plain = [c.replace("-", "") for c in candidates]
+        for body in bodies:
+            stripped = body.replace("-", "")
+            for candidate in plain:
+                if candidate and candidate in stripped:
+                    return True
+        return False
 
     @classmethod
     def survey(cls):
-        """(checked, matched, {claim: [unmatched spans]}, skipped)."""
-        checked = matched = skipped = 0
-        failing = {}
+        """(checked, matched, failing, unreopenable, self_witnessed).
+
+        `failing`, `unreopenable` and `self_witnessed` are all
+        {claim: [spans]}, and ALL THREE have to be declared. The old survey
+        returned a `skipped` count that its caller threw away, which is how an
+        `answerable`, `patristic` claim citing one unretained NPNF artifact,
+        with an invented Eusebius quotation, passed 197 tests.
+        """
+        checked = matched = 0
+        failing, unreopenable, self_witnessed = {}, {}, {}
         corpus = _chronology.load()
         for kind, holder in (("event", corpus.events), ("unit", corpus.units)):
             for subject in holder.values():
@@ -3621,54 +4059,126 @@ class QuotedBasisTests(unittest.TestCase):
                     if not claim.basis:
                         continue
                     identifier = f"{kind}:{subject.id}#{index}"
-                    bodies = cls.bodies(claim)
-                    spans = cls.spans(claim.basis)
-                    if not bodies:
-                        skipped += len(spans)
-                        continue
-                    for span in spans:
+                    parties = cls.witnesses(claim)
+                    attributed = cls.attribute(claim)
+                    for offset, span in cls.quotations(claim.basis):
+                        sources = attributed.get(offset) or set()
+                        retained, project = [], []
+                        for source in sources:
+                            have, mine = parties.get(source, ([], []))
+                            retained.extend(have)
+                            project.extend(mine)
                         checked += 1
-                        if cls.present(span, bodies):
+                        if retained and cls.present(span, retained):
                             matched += 1
+                        elif project and cls.present(span, project):
+                            self_witnessed.setdefault(identifier, []).append(span)
+                        elif not retained:
+                            unreopenable.setdefault(identifier, []).append(span)
                         else:
                             failing.setdefault(identifier, []).append(span)
-        return checked, matched, failing, skipped
+        return checked, matched, failing, unreopenable, self_witnessed
 
     def test_every_quoted_basis_span_is_in_the_source_it_cites(self) -> None:
-        checked, matched, failing, _skipped = self.survey()
-        self.assertGreater(checked, 600, "the survey stopped finding quotations")
-        undeclared = {
-            identifier: spans for identifier, spans in failing.items()
-            if identifier not in self.UNREOPENABLE
-        }
+        checked, matched, failing, _unreopenable, _self = self.survey()
+        self.assertGreater(checked, 900, "the survey stopped finding quotations")
         self.assertEqual(
-            undeclared, {},
-            "a basis quotes words that are not in the source it cites:\n"
+            failing, {},
+            "a basis quotes words that are not in the source its own sentence "
+            "names:\n"
             + "\n".join(f"  {identifier}: {span[:120]!r}"
-                         for identifier, spans in sorted(undeclared.items())
-                         for span in spans))
-        for identifier, spans in failing.items():
-            expected, _reason = self.UNREOPENABLE[identifier]
+                        for identifier, spans in sorted(failing.items())
+                        for span in spans))
+        self.assertEqual(matched, checked - sum(
+            len(spans) for spans in
+            list(_unreopenable.values()) + list(_self.values())))
+
+    def test_a_span_that_cannot_be_reopened_is_declared_and_not_discarded(
+            self) -> None:
+        """THE HIDING PLACE, CLOSED. A claim citing only unretained bytes used
+        to produce `skipped` spans that the caller dropped on the floor.
+
+        Asserted in both directions and by count, so that neither a new
+        unreopenable citation nor a declared one that has started matching can
+        pass unnoticed."""
+        _checked, _matched, _failing, unreopenable, _self = self.survey()
+        self.assertEqual(
+            sorted(unreopenable), sorted(self.UNREOPENABLE),
+            "the exception list and the spans that actually cannot be reopened "
+            "have come apart")
+        for identifier, spans in unreopenable.items():
+            expected, reason = self.UNREOPENABLE[identifier]
             self.assertEqual(
                 len(spans), expected,
                 f"{identifier} has {len(spans)} unreopenable spans, not "
                 f"{expected}; the exception list has to say what it covers")
-        self.assertEqual(matched, checked - sum(len(s) for s in failing.values()))
-
-    def test_the_exception_list_is_not_carrying_a_span_that_now_matches(self) -> None:
-        """An exception that has quietly started passing is a claim nobody is
-        checking any more. Every declared claim must still be failing."""
-        _checked, _matched, failing, _skipped = self.survey()
-        self.assertEqual(
-            sorted(failing), sorted(self.UNREOPENABLE),
-            "the exception list and the spans that actually cannot be reopened "
-            "have come apart")
-        for identifier, (_count, reason) in self.UNREOPENABLE.items():
             self.assertGreater(len(reason), 40, identifier)
 
+    def test_the_corpus_is_not_standing_as_its_own_source(self) -> None:
+        """A span whose only witness is a passage record's `context` is the
+        project's own prose, not the page's bytes. Permitted where the page
+        cannot be retained, and only where it is written down."""
+        _checked, _matched, _failing, _unreopenable, self_witnessed = self.survey()
+        self.assertEqual(sorted(self_witnessed), sorted(self.SELF_WITNESSED))
+        for identifier, spans in self_witnessed.items():
+            expected, reason = self.SELF_WITNESSED[identifier]
+            self.assertEqual(len(spans), expected, identifier)
+            self.assertGreater(len(reason), 40, identifier)
+
+    def test_every_quoted_run_is_attributed_to_a_source(self) -> None:
+        """A run nobody's name stands near is a run nothing checks. On a claim
+        with more than one source that is a failure, because pooling them is
+        exactly the defect this class exists to close."""
+        corpus = _chronology.load()
+        loose = []
+        for kind, holder in (("event", corpus.events), ("unit", corpus.units)):
+            for subject in holder.values():
+                for index, claim in enumerate(subject.claims):
+                    if not claim.basis:
+                        continue
+                    attributed = self.attribute(claim)
+                    for offset, span in self.quotations(claim.basis):
+                        if not attributed.get(offset):
+                            loose.append(
+                                f"{kind}:{subject.id}#{index}: {span[:80]!r}")
+        self.assertEqual(loose, [])
+
+    def test_a_swapped_attribution_does_not_match(self) -> None:
+        """The auditor's attack, run as a test.
+
+        event:apostolic-age.council-of-jerusalem#4 quotes Galatians 2:1 and
+        then Prat's "St. Paul" article. Under the old pooled check, exchanging
+        the two quotations left both matching. Here the basis is rewritten in
+        memory with the two runs exchanged, and the claim must FAIL -- twice,
+        once for each half.
+        """
+        corpus = _chronology.load()
+        claim = corpus.events["apostolic-age.council-of-jerusalem"].claims[4]
+        runs = [span for _offset, span in self.quotations(claim.basis)]
+        scripture = next(s for s in runs if "after fourteen years" in s)
+        article = next(s for s in runs if "relate to the same fact" in s)
+        swapped = claim.basis.replace(
+            scripture, "\x00").replace(article, scripture).replace("\x00", article)
+        self.assertNotEqual(swapped, claim.basis)
+        forged = claim._replace(basis=swapped)
+
+        parties = self.witnesses(forged)
+        attributed = self.attribute(forged)
+        wrong = 0
+        for offset, span in self.quotations(swapped):
+            sources = attributed.get(offset) or set()
+            retained = [b for source in sources
+                        for b in parties.get(source, ([], []))[0]]
+            if span in (scripture, article) and not self.present(span, retained):
+                wrong += 1
+        self.assertEqual(
+            wrong, 2,
+            "swapping the attributions of Galatians 2:1 and Prat's article no "
+            "longer fails; the pooled check is back")
+
     def test_no_basis_leaves_a_quotation_mark_unclosed(self) -> None:
-        """`spans` reads quotation marks in pairs, so an odd number of them
-        would silently stop this whole test seeing a claim."""
+        """`quotations` reads quotation marks in pairs, so an odd number of
+        them would silently stop this whole test seeing a claim."""
         corpus = _chronology.load()
         odd = []
         for kind, holder in (("event", corpus.events), ("unit", corpus.units)):
@@ -3677,7 +4187,6 @@ class QuotedBasisTests(unittest.TestCase):
                     if claim.basis and claim.basis.count('"') % 2:
                         odd.append(f"{kind}:{subject.id}#{index}")
         self.assertEqual(odd, [])
-
 
 # --- PCC-28: century notation, written down where a reader will find it -----
 
@@ -3774,16 +4283,23 @@ class PetaviusTableTests(unittest.TestCase):
               ".newadvent-08654a-645bba6c")
 
     # (block name, the label that opens the paired range, the label that closes
-    #  it, the constant offset, and the pairings the claims rest on).
+    #  it, the constant offset, and the pairings the claims rest on -- each
+    #  pairing carrying THE CLAIM IT JUSTIFIES, so that the year read off the
+    #  article is checked against the year the corpus stores and answers with).
     BLOCKS = (
         ("first Juda block", "David", "Joas", 21,
-         (("David", "1055"), ("Solomon", "1015"),
-          ("(Building of the", "1012"), ("Roboam", "975"))),
+         (("David", "1055", "israel.monarchy.david-accession#0"),
+          ("Solomon", "1015", "israel.monarchy.solomon-accession#0"),
+          ("(Building of the", "1012", "israel.monarchy.temple-begun#1"),
+          ("Roboam", "975", "israel.divided-kingdom.division#1"))),
         ("second Juda block", "Amasias", '" (end)', 19,
-         (("Ezechias", "727"), ("Josias", "641"), ("Joakim", "610"),
-          ("Sedecias", "599"), ('" (end)', "588"))),
+         (("Ezechias", "727", "israel.divided-kingdom.ezechias-accession#0"),
+          ("Josias", "641", "israel.divided-kingdom.josias-reign#1"),
+          ("Joakim", "610", "israel.exile.joakim-accession#0"),
+          ("Sedecias", "599", "israel.exile.sedecias-reign#1"),
+          ('" (end)', "588", "israel.exile.third-captivity#3"))),
         ("Israel block", "Jeroboam", '"(end)', 17,
-         (('"(end)', "721"),)),
+         (('"(end)', "721", "israel.divided-kingdom.fall-of-samaria#3"),)),
     )
 
     @classmethod
@@ -3798,12 +4314,65 @@ class PetaviusTableTests(unittest.TestCase):
 
     def test_each_label_pairs_with_its_year_at_the_blocks_constant(self) -> None:
         for name, _open, _close, offset, pairings in self.BLOCKS:
-            for label, year in pairings:
+            for label, year, _claim in pairings:
                 at = self._first(label)
                 self.assertEqual(
                     self.lines[at + offset], year,
                     f"{name}: {label!r} at line {at + 1} does not pair with "
                     f"{year!r} at the block's offset of {offset}")
+
+    def test_the_years_read_off_the_table_are_the_years_the_corpus_stores(
+            self) -> None:
+        """THE HALF THAT WAS MISSING, and the reason a 100-year error could sit
+        in a `preferred` answer with 197 tests green.
+
+        Everything above verifies the article against the article: the ten
+        label/year pairings were read off the retained text and hardcoded here,
+        and then checked back against the same text. Nothing compared them to
+        the corpus. A cold auditor changed
+        `israel.monarchy.david-accession#0` from `year: 1055` to `1155` --
+        leaving the printed label reading "B.C. 1055" and the basis still
+        quoting the table's 1055 -- and the whole suite stayed green, because
+        the stored machine value was the one thing no test read.
+
+        So the table's year, the claim's LABEL and the claim's stored DATE are
+        asserted against each other here, all three, for all ten.
+        """
+        corpus = _chronology.load()
+        seen = set()
+        for name, _open, _close, _offset, pairings in self.BLOCKS:
+            for _label, year, identifier in pairings:
+                event_id, index = identifier.split("#")
+                self.assertIn(event_id, corpus.events, identifier)
+                claim = corpus.events[event_id].claims[int(index)]
+                seen.add(identifier)
+                self.assertIn(
+                    self.SOURCE, claim.sources,
+                    f"{identifier} no longer cites the Petavius table")
+                date = claim.date
+                self.assertIsNotNone(date, identifier)
+                self.assertEqual(
+                    date.label, f"B.C. {year}",
+                    f"{name}: {identifier} is labelled {date.label!r} and the "
+                    f"table prints {year!r}")
+                for endpoint in (date.begin, date.end):
+                    self.assertIsNotNone(endpoint, identifier)
+                    self.assertEqual(
+                        endpoint.year, int(year),
+                        f"{name}: {identifier} STORES {endpoint.year} while "
+                        f"the table prints {year} and its own label says "
+                        f"B.C. {year}")
+                    self.assertEqual(endpoint.era, "bc", identifier)
+        # and the ten are the ten: a claim cannot be dropped out of this check
+        # by being unhooked from the block table above.
+        resting = {
+            f"{event.id}#{index}"
+            for event in corpus.events.values()
+            for index, claim in enumerate(event.claims)
+            if self.SOURCE in claim.sources
+            and claim.basis_class == "reported-traditional"
+        }
+        self.assertEqual(seen, resting)
 
     def test_the_two_columns_share_one_blank_line_skeleton(self) -> None:
         """The property that makes the pairing structural rather than a guess:
@@ -3842,6 +4411,452 @@ class PetaviusTableTests(unittest.TestCase):
         for identifier, claim in resting.items():
             self.assertIn("CHECKED 2026-09-02", claim.note or "", identifier)
             self.assertIn("NARROWED, NOT WITHDRAWN", claim.note or "", identifier)
+
+
+# --- PCC-36: the stored year and the label that justifies it ---------------
+
+
+class StoredDateAgreesWithItsLabelTests(unittest.TestCase):
+    """The machine value and the printed words have to say the same thing.
+
+    A claim carries a `date` the tools compute with and a `label` the reader
+    sees, and until 2026-09-02 NOTHING compared them. PetaviusTableTests was
+    the closest thing to a check and it verified the article against the
+    article; a cold auditor moved `israel.monarchy.david-accession#0` from
+    1055 to 1155, left the label reading "B.C. 1055" and the basis still
+    quoting the table's 1055, and all 197 tests passed. That is a hundred-year
+    error in a `preferred` answer over 2 Kings, invisible.
+
+    PetaviusTableTests now pins those ten. This class is the GENERAL case, and
+    it is the general case because the defect is not about Petavius: any claim
+    anywhere can have its stored endpoints edited away from the words that
+    justify them, and the label is what a reader checks the basis against.
+
+    THE RULE: every year an endpoint stores must be licensed by the label.
+    Licensed means the label prints it, or the label prints it in the
+    abbreviated form the sources use for a span -- "B.C. 933-2" for 933 to 932,
+    "B. C. 465-24" for 465 to 424, "63-4" for 63 to 64 -- which is completed
+    here by taking the head digits from the number before it. Century notation
+    is out of scope and belongs to CenturyNotationTests, which holds those six
+    to `display.century_notation` instead.
+
+    A label may also be prose that prints no year at all, which is legitimate
+    and is why this test has an exception list rather than a threshold. Each
+    exception names the claim, the years, and where they come from; the list is
+    asserted in BOTH directions, so an exception that starts agreeing with its
+    label fails here and has to be removed.
+    """
+
+    NUMBER = re.compile(r"\d+")
+    ERA_BC = re.compile(r"\bB\.?\s?C\.?")
+    ERA_AD = re.compile(r"\bA\.?\s?D\.?\B|\bA\.\s?D\.")
+
+    UNLABELLED = {
+        "event:apostolic-age.famine-under-claudius#0": (
+            "The label is the article's own phrase 'precisely in this year' "
+            "and prints no figure; the year 44 is the one the sentence it "
+            "continues has just given, and the basis quotes both halves."),
+        "event:apostolic-age.saint-paul-first-roman-captivity#1": (
+            "The label prints only Howlett's 'hence till 64', which is the "
+            "END. The begin, 62, is the arrival year the same passage gives "
+            "as 'Perhaps we may say 62' and the basis quotes in full; the "
+            "claim's note says the begin endpoint carries a hedge the end "
+            "does not."),
+        "unit:composition.gospel-of-john#0": (
+            "The label is '96 or one of the succeeding years'. The end, 100, "
+            "is where this corpus stops 'the succeeding years'; the note "
+            "carries that and the label prints no second figure."),
+    }
+
+    @classmethod
+    def _licensed(cls, label: str) -> set:
+        """Every year the label's own digits license, abbreviations completed."""
+        printed = [n for n in cls.NUMBER.findall(label)]
+        years = {int(n) for n in printed}
+        for before, after in zip(printed, printed[1:]):
+            if len(after) < len(before):
+                years.add(int(before[:len(before) - len(after)] + after))
+        return years
+
+    @classmethod
+    def _century_notated(cls) -> set:
+        """The six claims CenturyNotationTests owns, found the same way."""
+        found = set()
+        corpus = _chronology.load()
+        for kind, holder in (("event", corpus.events), ("unit", corpus.units)):
+            for subject in holder.values():
+                for index, claim in enumerate(subject.claims):
+                    date = claim.date
+                    if not date or date.precision != "interval":
+                        continue
+                    begin, end = date.begin, date.end
+                    if not begin or not end:
+                        continue
+                    if begin.year is None or end.year is None:
+                        continue
+                    if begin.year % 100 == 0 and end.year % 100 == 1:
+                        found.add(f"{kind}:{subject.id}#{index}")
+        return found
+
+    @classmethod
+    def survey(cls):
+        """(checked, {claim: (label, the years it stores that it does not print)})."""
+        centuries = cls._century_notated()
+        corpus = _chronology.load()
+        checked = 0
+        adrift = {}
+        for kind, holder in (("event", corpus.events), ("unit", corpus.units)):
+            for subject in holder.values():
+                for index, claim in enumerate(subject.claims):
+                    identifier = f"{kind}:{subject.id}#{index}"
+                    date = claim.date
+                    if not date or not date.label or identifier in centuries:
+                        continue
+                    stored = [
+                        endpoint.year
+                        for endpoint in (date.begin, date.end)
+                        if endpoint is not None and endpoint.year is not None
+                    ]
+                    if not stored:
+                        continue
+                    checked += 1
+                    licensed = cls._licensed(date.label)
+                    missing = sorted({y for y in stored if y not in licensed})
+                    if missing:
+                        adrift[identifier] = (date.label, missing)
+        return checked, adrift
+
+    def test_no_stored_year_is_absent_from_the_label_that_justifies_it(
+            self) -> None:
+        checked, adrift = self.survey()
+        self.assertGreater(checked, 200, "the survey stopped finding dates")
+        undeclared = {
+            identifier: value for identifier, value in adrift.items()
+            if identifier not in self.UNLABELLED
+        }
+        self.assertEqual(
+            undeclared, {},
+            "a claim stores a year its own label does not print:\n"
+            + "\n".join(
+                f"  {identifier}: stores {missing} under label {label!r}"
+                for identifier, (label, missing) in sorted(undeclared.items())))
+
+    def test_the_exception_list_is_exactly_the_claims_whose_labels_are_prose(
+            self) -> None:
+        """An exception that has started agreeing with its label is a claim
+        nobody is checking any more."""
+        _checked, adrift = self.survey()
+        self.assertEqual(sorted(adrift), sorted(self.UNLABELLED))
+        for identifier, reason in self.UNLABELLED.items():
+            self.assertGreater(len(reason), 40, identifier)
+
+    def test_the_era_the_endpoint_stores_is_the_era_the_label_prints(self) -> None:
+        """The other half of a drifting endpoint: 588 B.C. and A.D. 588 are the
+        same digits and eleven centuries apart."""
+        corpus = _chronology.load()
+        wrong = []
+        for kind, holder in (("event", corpus.events), ("unit", corpus.units)):
+            for subject in holder.values():
+                for index, claim in enumerate(subject.claims):
+                    date = claim.date
+                    if not date or not date.label:
+                        continue
+                    # matched with word boundaries and case: "traditional"
+                    # contains "ad", and folding the label to lower case with
+                    # its punctuation stripped made every such label read as
+                    # Anno Domini.
+                    says_bc = bool(self.ERA_BC.search(date.label))
+                    says_ad = bool(self.ERA_AD.search(date.label))
+                    if says_bc == says_ad:      # both or neither: prose label
+                        continue
+                    era = "bc" if says_bc else "ad"
+                    for endpoint in (date.begin, date.end):
+                        if endpoint is not None and endpoint.era != era:
+                            wrong.append(
+                                f"{kind}:{subject.id}#{index} stores "
+                                f"{endpoint.era} under label {date.label!r}")
+        self.assertEqual(wrong, [])
+
+
+# --- PCC-40: retained text later than the edition it hangs under ------------
+
+
+class PostImprintContentTests(unittest.TestCase):
+    """Three retained article texts carry material printed AFTER the edition
+    year of the record they hang under.
+
+    `09420a` and `09674b` in the 1910 volume, and `01117a` in the 1907 volume,
+    all quote decisions of the Biblical Commission of 1913. So New Advent's
+    delivery is a later state of those articles than the first printing of
+    their volumes, and the "edition-identified" requirement that
+    `authority` ranks 3 and 6 place on a source is not met for them. Low
+    severity, and recorded rather than repaired: no chronology claim in this
+    corpus rests on the 1913 material, and the rights conclusion is untouched.
+
+    The point of the test is that the SET cannot grow in silence. It is derived
+    from the retained bytes against the edition year in the path, and the two
+    numerals that look like post-imprint years and are not are declared with
+    their reasons, in both directions.
+    """
+
+    LATE = re.compile(r"\b(19[0-4]\d)\b")
+
+    NOT_A_DATE = {
+        ("03302a", 1911): (
+            "A Migne column number: 'Ambrose (Migne, P.L., XIII, 1855, 1911)'. "
+            "The volume is 1908 and the figure is a citation, not a year."),
+        ("03738a", 1939): (
+            "An arithmetic example in the article on the calendar: \"the year "
+            "'39 of any century (939, 1539, 1839, 1939)\". Not a date the "
+            "article carries as content."),
+    }
+
+    DECLARED = {
+        ("01117a", 1913): "the Biblical Commission's decision of 12 June 1913, "
+                          "in a volume of 1907",
+        ("09420a", 1913): "the Biblical Commission's answers of 26 June 1913, "
+                          "in a volume of 1910",
+        ("09674b", 1913): "the Biblical Commission's decision of 26 January "
+                          "1913, cross-referenced, in a volume of 1910",
+    }
+
+    @classmethod
+    def survey(cls):
+        found = {}
+        root = REPOSITORY_ROOT / "src" / "sources" / "works" / "catholic-encyclopedia"
+        for path in root.glob("**/*-article-text/*.txt"):
+            edition = next(p for p in path.parts if p.startswith("new-york-"))
+            year = int(edition.rsplit("-", 1)[1])
+            page = path.name.split("-")[1]
+            for later in {int(m) for m in cls.LATE.findall(path.read_text())}:
+                if later > year:
+                    found.setdefault((page, later), set()).add(year)
+        return found
+
+    def test_the_set_of_post_imprint_years_is_the_declared_one(self) -> None:
+        found = self.survey()
+        self.assertGreater(len(found), 0, "the survey stopped reading files")
+        undeclared = sorted(
+            key for key in found
+            if key not in self.DECLARED and key not in self.NOT_A_DATE)
+        self.assertEqual(
+            undeclared, [],
+            "a retained article carries a year later than the edition it hangs "
+            "under, and nothing says so")
+        self.assertEqual(
+            sorted(key for key in found if key in self.DECLARED),
+            sorted(self.DECLARED))
+        self.assertEqual(
+            sorted(key for key in found if key in self.NOT_A_DATE),
+            sorted(self.NOT_A_DATE))
+
+    def test_each_affected_record_says_so_in_its_own_notes(self) -> None:
+        """A ledger row a reader of the source will never open is not
+        disclosure. The artifact records carry it."""
+        import tomllib
+
+        seen = 0
+        root = REPOSITORY_ROOT / "src" / "sources" / "works" / "catholic-encyclopedia"
+        for path in root.glob("**/*-article-text/artifact.toml"):
+            page = path.parent.name.split("-")[1]
+            if not any(page == key[0] for key in self.DECLARED):
+                continue
+            seen += 1
+            notes = tomllib.loads(path.read_text()).get("notes", "")
+            self.assertIn("POST-IMPRINT", notes, page)
+            self.assertIn("1913", notes, page)
+            self.assertIn("edition-identified", notes, page)
+        self.assertEqual(seen, len(self.DECLARED))
+
+
+# --- PCC-39: no interval wider than what its source states ------------------
+
+
+class StatedBoundsTests(unittest.TestCase):
+    """An interval asserts every year between its endpoints, so its endpoints
+    have to be years the source states.
+
+    Four claims were wider than anything their sources said, and every one of
+    them said so in its own note while the machine value went on asserting the
+    excluded years: life-of-christ.crucifixion held 29-33 for "the years 29, 30,
+    and 33 to choose between", asserting 31 and 32 that the article's own test
+    had eliminated; composition.book-of-wisdom held 221-117 across two disjoint
+    reigns, asserting the fifty-nine years between them that its argument
+    excludes; composition.book-of-esther opened at 485, the year the reign
+    BEGAN, where the source says "at the end of the reign of Xerxes I
+    (485-465 B.C.)". A note is not what a consumer computes with.
+
+    The rule is now `display.stated_bounds`, and these tests hold the rule and
+    the repaired data to each other.
+    """
+
+    RULE = "stated_bounds"
+    HEADING_RULE = "a_printed_heading_is_the_works_own_text"
+
+    @staticmethod
+    def _display():
+        return _chronology.load().profiles["catholic-traditional-v1"]["display"]
+
+    def test_the_profile_states_both_rules(self) -> None:
+        display = self._display()
+        self.assertIn(self.RULE, display)
+        self.assertIn(self.HEADING_RULE, display)
+        bounds = display[self.RULE]
+        self.assertIn("century_notation", bounds,
+                      "the widening rule has to say how it stands to the one "
+                      "notation that does widen deliberately")
+        heading = display[self.HEADING_RULE]
+        self.assertIn("nehemias-mission", heading,
+                      "the heading rule has to name the case it is NOT")
+
+    def test_the_three_crucifixion_years_are_three_claims(self) -> None:
+        claims = _chronology.load().events["life-of-christ.crucifixion"].claims
+        offered = {
+            claim.date.begin.year: claim
+            for claim in claims
+            if claim.date and claim.date.precision == "year"
+            and "to choose between" in (claim.date.label or "")
+        }
+        self.assertEqual(sorted(offered), [29, 30, 33])
+        for year, claim in offered.items():
+            self.assertEqual(claim.disposition, "disputed", year)
+            self.assertEqual(claim.date.end.year, year,
+                             "a candidate year is a year, not a span")
+        # and no claim on this event spans the eliminated years
+        for claim in claims:
+            date = claim.date
+            if not date or not date.begin or not date.end:
+                continue
+            if date.begin.year == 29 and date.end.year == 33:
+                self.fail("the 29-33 interval is back; it asserts 31 and 32, "
+                          "which the article eliminates")
+
+    def test_the_two_wisdom_reigns_are_two_claims(self) -> None:
+        claims = _chronology.load().units["composition.book-of-wisdom"].claims
+        spans = sorted(
+            (claim.date.begin.year, claim.date.end.year) for claim in claims)
+        self.assertEqual(spans, [(145, 117), (221, 204)])
+        for claim in claims:
+            self.assertEqual(claim.disposition, "disputed",
+                             "the article chooses between neither reign")
+
+    def test_esther_opens_at_the_end_of_the_reign_and_not_its_beginning(
+            self) -> None:
+        claim = _chronology.load().units["composition.book-of-esther"].claims[0]
+        self.assertEqual(claim.date.begin.year, 465)
+        self.assertEqual(claim.date.end.year, 425)
+        self.assertIn("485", claim.date.label,
+                      "the label still carries the article's own words")
+
+    def test_the_two_claims_resting_on_a_heading_say_so_and_cite_the_rule(
+            self) -> None:
+        corpus = _chronology.load()
+        for identifier, index in (("apostolic-age.destruction-of-jerusalem", 1),
+                                  ("apostolic-age.council-of-jerusalem", 2)):
+            claim = corpus.events[identifier].claims[index]
+            note = claim.note or ""
+            self.assertIn("heading", note, identifier)
+            self.assertIn(self.HEADING_RULE, note, identifier)
+
+    def test_the_corpus_still_computes_no_year_for_the_nehemias_interval(
+            self) -> None:
+        """The case the heading rule is contrasted with. If this ever gains a
+        year, the contrast the rule rests on is gone."""
+        claim = (_chronology.load()
+                 .events["israel.restoration.nehemias-mission"].claims[2])
+        self.assertEqual(claim.date.precision, "relative")
+        self.assertIsNone(claim.date.begin)
+        self.assertIsNone(claim.date.end)
+
+
+# --- PCC-38: the article's own "untenable" sentence, answered once ---------
+
+
+class UntenablePeriodTests(unittest.TestCase):
+    """Sloet declares the chronology of the kings before 730 B.C. untenable,
+    and this profile answers with four figures inside that period.
+
+    The sentence stands before BOTH of the article's tables, so it is not
+    confined to the one this corpus refuses; four of the ten Petavius figures
+    the corpus answers with fall inside the period it names, two of them
+    `preferred`; and until 2026-09-02 nothing in the corpus said why the
+    article's rejection does not reach them. The defence exists -- the stated
+    warrant of the sentence is the excluded method, so the profile no more
+    follows the method's verdicts than it answers with its numbers -- and the
+    defect was that it was nowhere made.
+
+    It is made once, in `profiles.yaml`. These tests hold the written ruling and
+    the data to each other, so that neither can move without the other: the
+    profile must state it, the sentence must still be in the retained article,
+    and exactly the claims inside the period must cite the rule.
+    """
+
+    RULE = "a_sources_rejection_on_an_excluded_ground_is_not_followed"
+    SENTENCE = ("Since the deciphering of the Assyro-Babylonian inscriptions, "
+                "the chronology of the period of Kings before 730 B.C. has "
+                "become untenable.")
+    BOUNDARY = 730
+    SOURCE = ("artifact.catholic-encyclopedia.volume-8.new-york-1910"
+              ".newadvent-08654a-645bba6c")
+
+    def test_the_profile_states_the_ruling(self) -> None:
+        admissibility = (_chronology.load().profiles["catholic-traditional-v1"]
+                         ["admissibility"])
+        self.assertIn(self.RULE, admissibility,
+                      "the ruling is not written down in the profile")
+        stated = admissibility[self.RULE]
+        # the three things the ruling has to settle
+        self.assertIn("730 B.C.", stated)
+        self.assertIn("rejected-by-source", stated)
+        self.assertIn("VERDICTS", stated)
+
+    def test_the_sentence_is_still_in_the_retained_article(self) -> None:
+        """The ruling answers a sentence. If the sentence is not there, the
+        ruling is answering nothing and has to be re-read."""
+        text = (REPOSITORY_ROOT / "src" / "sources" / "works"
+                / "catholic-encyclopedia" / "volume-8" / "editions"
+                / "new-york-1910" / "artifacts"
+                / "newadvent-08654a-645bba6c-article-text"
+                / "newadvent-08654a-645bba6c-article-text.txt").read_text()
+        self.assertIn(self.SENTENCE, text)
+
+    @classmethod
+    def _answered_with_from_the_table(cls):
+        corpus = _chronology.load()
+        return {
+            f"{event.id}#{index}": claim
+            for event in corpus.events.values()
+            for index, claim in enumerate(event.claims)
+            if cls.SOURCE in claim.sources
+            and claim.basis_class == "reported-traditional"
+        }
+
+    def test_exactly_the_claims_inside_the_period_cite_the_ruling(self) -> None:
+        """Derived from the DATES, not from a list, so that a figure moving
+        across 730 B.C. moves this test with it."""
+        inside, outside = {}, {}
+        for identifier, claim in self._answered_with_from_the_table().items():
+            year = claim.date.begin.year if claim.date and claim.date.begin else None
+            self.assertIsNotNone(year, identifier)
+            (inside if year > self.BOUNDARY else outside)[identifier] = claim
+        self.assertEqual(
+            sorted(inside),
+            ["israel.divided-kingdom.division#1",
+             "israel.monarchy.david-accession#0",
+             "israel.monarchy.solomon-accession#0",
+             "israel.monarchy.temple-begun#1"])
+        self.assertEqual(
+            sum(1 for claim in inside.values()
+                if claim.disposition == "preferred"), 2)
+        for identifier, claim in inside.items():
+            self.assertIn(self.RULE, claim.note or "", identifier)
+            self.assertIn("untenable", claim.note or "", identifier)
+        for identifier, claim in outside.items():
+            self.assertNotIn(
+                self.RULE, claim.note or "",
+                f"{identifier} is outside the period the sentence names and "
+                f"does not need the ruling; citing it there makes the ruling "
+                f"look broader than it is")
 
 
 # --- PCC-22: the stated rule and the enforced rule, pinned together ---------

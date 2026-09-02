@@ -472,20 +472,82 @@ events:
         basis_class: traditional-catholic
         basis: >-
           The same article, having tested which years satisfy the paschal and
-          weekday conditions, states its result as an open choice: "We are left,
+          weekday conditions, states its result as an open choice between three
+          years, of which this is the first: "We are left,
           then, with the years 29, 30, and 33 to choose between for the death of
           Jesus Christ. We cannot be certain in our choice."
         sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
         note: >-
-          The article names exactly three candidate years, not a continuous
-          window; the endpoints recorded here are the first and last of the
-          three and the years between them are not thereby asserted. The label
-          carries the article's own words.
+          One of the three years the article leaves open, recorded as the year
+          it is. THREE CLAIMS, NOT ONE INTERVAL, FROM 2026-09-02. Until then
+          this sentence was held as a single claim whose stored interval ran
+          A.D. 29 to 33, which asserts 31 and 32 -- two years the article's own
+          test has just eliminated. The old note conceded that the years between
+          the endpoints "are not thereby asserted", but a note is not what a
+          consumer computes with, and the date said otherwise. A set of
+          candidate years is not an interval, and this corpus has a way of
+          holding a set: one `disputed` claim each, which is how it already
+          holds every other unresolved disagreement. Nothing was chosen between
+          and no year was added or dropped; the same three years the article
+          prints are the three claims here.
         date:
-          precision: interval
+          precision: year
           from: {year: 29, era: ad}
-          to: {year: 33, era: ad}
-          label: "the years 29, 30, and 33 to choose between"
+          label: "the years 29, 30, and 33 to choose between: 29"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis_class: traditional-catholic
+        basis: >-
+          The same article, having tested which years satisfy the paschal and
+          weekday conditions, states its result as an open choice between three
+          years, of which this is the second: "We are left,
+          then, with the years 29, 30, and 33 to choose between for the death of
+          Jesus Christ. We cannot be certain in our choice."
+        sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
+        note: >-
+          One of the three years the article leaves open, recorded as the year
+          it is. THREE CLAIMS, NOT ONE INTERVAL, FROM 2026-09-02. Until then
+          this sentence was held as a single claim whose stored interval ran
+          A.D. 29 to 33, which asserts 31 and 32 -- two years the article's own
+          test has just eliminated. The old note conceded that the years between
+          the endpoints "are not thereby asserted", but a note is not what a
+          consumer computes with, and the date said otherwise. A set of
+          candidate years is not an interval, and this corpus has a way of
+          holding a set: one `disputed` claim each, which is how it already
+          holds every other unresolved disagreement. Nothing was chosen between
+          and no year was added or dropped; the same three years the article
+          prints are the three claims here.
+        date:
+          precision: year
+          from: {year: 30, era: ad}
+          label: "the years 29, 30, and 33 to choose between: 30"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis_class: traditional-catholic
+        basis: >-
+          The same article, having tested which years satisfy the paschal and
+          weekday conditions, states its result as an open choice between three
+          years, of which this is the third: "We are left,
+          then, with the years 29, 30, and 33 to choose between for the death of
+          Jesus Christ. We cannot be certain in our choice."
+        sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
+        note: >-
+          One of the three years the article leaves open, recorded as the year
+          it is. THREE CLAIMS, NOT ONE INTERVAL, FROM 2026-09-02. Until then
+          this sentence was held as a single claim whose stored interval ran
+          A.D. 29 to 33, which asserts 31 and 32 -- two years the article's own
+          test has just eliminated. The old note conceded that the years between
+          the endpoints "are not thereby asserted", but a note is not what a
+          consumer computes with, and the date said otherwise. A set of
+          candidate years is not an interval, and this corpus has a way of
+          holding a set: one `disputed` claim each, which is how it already
+          holds every other unresolved disagreement. Nothing was chosen between
+          and no year was added or dropped; the same three years the article
+          prints are the three claims here.
+        date:
+          precision: year
+          from: {year: 33, era: ad}
+          label: "the years 29, 30, and 33 to choose between: 33"
       - profile: catholic-traditional-v1
         disposition: disputed
         basis_class: traditional-catholic
@@ -680,7 +742,7 @@ events:
           "We may place the martyrdom of St. Stephen a year earlier (i.e. in 33)
           not more; for Saul was still 'breathing out threatenings and slaughter'
           (Acts 9:1) at the date of his conversion." The figure is the article's
-          own inference, hedged by "we may place".
+          own inference, hedged by "We may place".
         sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
         note: >-
           Wholly dependent on the same article's chosen date for the Council of
@@ -1083,7 +1145,14 @@ events:
         sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08537a-e2154141]
         note: >-
           The figure appears in a section heading; the body of the section gives
-          no year of its own.
+          no year of its own. THIS IS ANSWERED WITH, AND THE RULE IS WRITTEN
+          DOWN, from 2026-09-02: profiles.yaml
+          display.a_printed_heading_is_the_works_own_text. Bechtel printed
+          "Council of Jerusalem (A.D. 50 or 51)" as his own heading, offering
+          two years and choosing neither, which is why this claim is `disputed`
+          and stores the pair. Reading it is reading the source; computing a
+          year the source does not print is the act this corpus refuses, and
+          refuses at israel.restoration.nehemias-mission#2.
         date:
           precision: interval
           from: {year: 50, era: ad}
@@ -1812,6 +1881,18 @@ events:
           The year is printed as a section heading; the article's narrative of
           the siege gives days and months but no year number at all. No source
           inspected for this lane states A.D. 70 in a narrative sentence.
+          THIS IS ANSWERED WITH, AND THE RULE IS WRITTEN DOWN, from 2026-09-02:
+          profiles.yaml display.a_printed_heading_is_the_works_own_text. A
+          heading is text the work printed, in its own voice and its own
+          apparatus, and reading it is reading the source; the article's own
+          title, "Jerusalem (Before A.D. 71)", says the same thing a second
+          time. What this profile declines to do is COMPUTE, which is a
+          different act and is declined a few events away at
+          israel.restoration.nehemias-mission#2, where the same author prints
+          "Thirteen years later" and no year and this corpus derives none. The
+          sentence above is not a concession that the claim is weak; it is the
+          disclosure the rule requires, so that a reader can weigh where the
+          year stands on the page.
         date:
           precision: year
           from: {year: 70, era: ad}
@@ -2654,12 +2735,25 @@ events:
           "The days of my pilgrimage are a hundred and thirty years, few, and
           evil, and they are not come up to the days of the pilgrimage of my
           fathers."
-        sources: [bible:douay-rheims:Gen.47.9]
+        sources:
+          - bible:douay-rheims:Gen.47.9
+          - artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04
         note: >-
           The verse gives Jacob's age at the audience with Pharao. The
           identification of that moment with the arrival in Egypt is the
-          Catholic Encyclopedia's - "Jacob arrived in Egypt, at the age of 130"
-          - and not the verse's own.
+          Catholic Encyclopedia's - Howlett's "Biblical Chronology", section
+          "Birth of Abraham to the Exodus", writes "Jacob arrived in Egypt, at
+          the age of 130 (xlvii, 9)" - and not the verse's own.
+          THE CITING ARTICLE IS IN `sources` FROM 2026-09-02, and was not
+          before. This is a rank-1 `scripture` claim, and its label and its
+          `relative` statement are the verse's own words; but WHAT THE VERSE IS
+          ATTACHED TO -- the descent into Egypt rather than the audience with
+          Pharao -- is the encyclopedia's identification, and the note quoted a
+          work the claim did not cite. A rank-1 claim resting for its
+          attachment on an uncited rank 6 is a provenance the evidence surface
+          could not show. The rank of the claim is unchanged: the DATE is
+          Scripture's and is what this profile answers with, and the article is
+          cited for the identification alone.
         date:
           precision: relative
           relative:
@@ -3773,6 +3867,18 @@ events:
           cannot be run without a network. The figures stand where they stood; what has
           changed is that a reader can reopen the pairing in this repository instead of
           taking it on trust.
+          THE ARTICLE'S OWN "UNTENABLE" SENTENCE reaches this figure's period
+          and does not reach this figure. Sloet writes, before both of his
+          tables, "Since the deciphering of the Assyro-Babylonian inscriptions,
+          the chronology of the period of Kings before 730 B.C. has become
+          untenable", and this year stands inside that period. The ruling is
+          written once, in profiles.yaml under
+          admissibility.a_sources_rejection_on_an_excluded_ground_is_not_followed:
+          the stated warrant of that sentence is the excluded method, and a
+          profile that will not answer with that method's numbers does not
+          follow its verdicts. Sloet rejects none of the Petavius figures; he
+          reproduces them and sets his own table against them, and that table is
+          preserved here and not answered with.
         date:
           precision: year
           from: {year: 1055, era: bc}
@@ -3916,10 +4022,10 @@ events:
           chapter and into the next, so that the flight to Achis at 1 Kings
           21:10-15 falls between those bounding year marks. The Anno Mundi reckoning this
           apparatus carries is not Haydock's own computation: where the same
-          edition dates the captivities at Psalm 70, on this same epoch, it
-          attributes the chronology explicitly to Usher, and the passage record
-          for this page attributes the apparatus to the edition rather than to
-          any named commentator.
+          edition dates the captivities at Psalm 70 it attributes the
+          chronology explicitly to Usher, and the passage record for this page
+          attributes the apparatus to the edition rather than to any named
+          commentator.
         sources:
           - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.first-kings-21-achis-geth-chronology
           - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology
@@ -3986,10 +4092,10 @@ events:
           the desert and wilderness of Maon, and 1 Kings 24 then opens under the
           next marker, A.M. 2946, A.C. 1058. The Anno Mundi reckoning this
           apparatus carries is not Haydock's own computation: where the same
-          edition dates the captivities at Psalm 70, on this same epoch, it
-          attributes the chronology explicitly to Usher, and the passage record
-          for this page attributes the apparatus to the edition rather than to
-          any named commentator.
+          edition dates the captivities at Psalm 70 it attributes the
+          chronology explicitly to Usher, and the passage record for this page
+          attributes the apparatus to the edition rather than to any named
+          commentator.
         sources:
           - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.first-kings-23-maon-chronology
           - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology
@@ -4054,10 +4160,10 @@ events:
           1057" at 1 Kings 25, where verses 1-2 place Nabal in the wilderness of
           Maon. The Anno Mundi reckoning this
           apparatus carries is not Haydock's own computation: where the same
-          edition dates the captivities at Psalm 70, on this same epoch, it
-          attributes the chronology explicitly to Usher, and the passage record
-          for this page attributes the apparatus to the edition rather than to
-          any named commentator.
+          edition dates the captivities at Psalm 70 it attributes the
+          chronology explicitly to Usher, and the passage record for this page
+          attributes the apparatus to the edition rather than to any named
+          commentator.
         sources:
           - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.first-kings-25-maon-chronology
           - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology
@@ -4159,10 +4265,10 @@ events:
           C. 1025", and then prints a second marker inside the same chapter, "A.
           M. 2980, A. C. 1024", at verse 7. The Anno Mundi reckoning this
           apparatus carries is not Haydock's own computation: where the same
-          edition dates the captivities at Psalm 70, on this same epoch, it
-          attributes the chronology explicitly to Usher, and the passage record
-          for this page attributes the apparatus to the edition rather than to
-          any named commentator.
+          edition dates the captivities at Psalm 70 it attributes the
+          chronology explicitly to Usher, and the passage record for this page
+          attributes the apparatus to the edition rather than to any named
+          commentator.
         sources:
           - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.second-kings-15-absalom-conspiracy-chronology
           - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology
@@ -4267,10 +4373,10 @@ events:
           against 2 Kings 15:7, where the conspiracy moves to Hebron, the
           chapter itself having opened under A. M. 2979, A. C. 1025. The Anno Mundi reckoning this
           apparatus carries is not Haydock's own computation: where the same
-          edition dates the captivities at Psalm 70, on this same epoch, it
-          attributes the chronology explicitly to Usher, and the passage record
-          for this page attributes the apparatus to the edition rather than to
-          any named commentator.
+          edition dates the captivities at Psalm 70 it attributes the
+          chronology explicitly to Usher, and the passage record for this page
+          attributes the apparatus to the edition rather than to any named
+          commentator.
         sources:
           - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.second-kings-15-absalom-conspiracy-chronology
           - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology
@@ -4335,10 +4441,10 @@ events:
           at the opening of 2 Kings 16 and again at the opening battle of 2
           Kings 18. The Anno Mundi reckoning this
           apparatus carries is not Haydock's own computation: where the same
-          edition dates the captivities at Psalm 70, on this same epoch, it
-          attributes the chronology explicitly to Usher, and the passage record
-          for this page attributes the apparatus to the edition rather than to
-          any named commentator.
+          edition dates the captivities at Psalm 70 it attributes the
+          chronology explicitly to Usher, and the passage record for this page
+          attributes the apparatus to the edition rather than to any named
+          commentator.
         sources:
           - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.second-kings-18-absalom-defeat-chronology
           - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology
@@ -4436,8 +4542,8 @@ events:
         basis_class: reported-traditional
         basis: >-
           The Petavius table reproduced in Sloet's "Chronology of the Kings"
-          (Catholic Encyclopedia, New York, 1910) sets "Solomon" against "B.C.
-          1015" in the Juda column, between David at 1055 and the Building of
+          (Catholic Encyclopedia, New York, 1910) sets "Solomon" against "1015" in the
+          Juda column, whose head is "B.C.", between David at 1055 and the Building of
           the Temple at 1012.
         sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08654a-645bba6c]
         note: >-
@@ -4471,6 +4577,18 @@ events:
           cannot be run without a network. The figures stand where they stood; what has
           changed is that a reader can reopen the pairing in this repository instead of
           taking it on trust.
+          THE ARTICLE'S OWN "UNTENABLE" SENTENCE reaches this figure's period
+          and does not reach this figure. Sloet writes, before both of his
+          tables, "Since the deciphering of the Assyro-Babylonian inscriptions,
+          the chronology of the period of Kings before 730 B.C. has become
+          untenable", and this year stands inside that period. The ruling is
+          written once, in profiles.yaml under
+          admissibility.a_sources_rejection_on_an_excluded_ground_is_not_followed:
+          the stated warrant of that sentence is the excluded method, and a
+          profile that will not answer with that method's numbers does not
+          follow its verdicts. Sloet rejects none of the Petavius figures; he
+          reproduces them and sets his own table against them, and that table is
+          preserved here and not answered with.
         date:
           precision: year
           from: {year: 1015, era: bc}
@@ -4481,7 +4599,7 @@ events:
         basis_class: profane-harmonisation
         basis: >-
           Sloet's own table in the same article, harmonised with the Assyrian
-          data, sets "Solomon" against "B.C. 972".
+          data, sets "Solomon" against "972" in a column headed "B.C.".
         sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08654a-645bba6c]
         note: >-
           PRESERVED, NOT ANSWERED. Sloet states the method of this table himself
@@ -4647,7 +4765,7 @@ events:
         basis: >-
           The Petavius table reproduced in Sloet's "Chronology of the Kings"
           (Catholic Encyclopedia, New York, 1910) sets "(Building of the
-          Temple)" against "B.C. 1012" in the Juda column.
+          Temple)" against "1012" in the Juda column, whose head is "B.C.".
         sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08654a-645bba6c]
         note: >-
           Table extraction: the labels and the years stand in separate cells and
@@ -4675,6 +4793,18 @@ events:
           cannot be run without a network. The figures stand where they stood; what has
           changed is that a reader can reopen the pairing in this repository instead of
           taking it on trust.
+          THE ARTICLE'S OWN "UNTENABLE" SENTENCE reaches this figure's period
+          and does not reach this figure. Sloet writes, before both of his
+          tables, "Since the deciphering of the Assyro-Babylonian inscriptions,
+          the chronology of the period of Kings before 730 B.C. has become
+          untenable", and this year stands inside that period. The ruling is
+          written once, in profiles.yaml under
+          admissibility.a_sources_rejection_on_an_excluded_ground_is_not_followed:
+          the stated warrant of that sentence is the excluded method, and a
+          profile that will not answer with that method's numbers does not
+          follow its verdicts. Sloet rejects none of the Petavius figures; he
+          reproduces them and sets his own table against them, and that table is
+          preserved here and not answered with.
         date:
           precision: year
           from: {year: 1012, era: bc}
@@ -4736,7 +4866,7 @@ events:
         basis_class: profane-harmonisation
         basis: >-
           Sloet's own table in "Chronology of the Kings" sets "(Building of the
-          Temple)" against "B.C. 969".
+          Temple)" against "969" in a column headed "B.C.".
         sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08654a-645bba6c]
         note: >-
           PRESERVED, NOT ANSWERED. Sloet states the method of this table himself
@@ -4852,7 +4982,7 @@ events:
       the assembly "made him king over all Israel", so no date is authored from
       that locus.
 
-      Two figures inspected here are recorded and not held. Howlett's "Biblical
+      Two figures inspected here are preserved and not held. Howlett's "Biblical
       Chronology" writes "We have fixed roughly the date of the revolt of the
       Ten Tribes for the year 936 B.C. But the traditional date is 975", and
       summarises the same reckoning as "The secession of the Ten Tribes took
@@ -4863,10 +4993,14 @@ events:
       chronology"; he then derives from it that "Solomon reigned from 973 to
       936, and David from 1013 to 973. So, to speak roughly, the revolt of the
       Ten Tribes must have taken place somewhere about the year 936." They were
-      withdrawn from this profile on 2026-08-27, with the 958 and about 969 on
-      israel.monarchy.temple-begun, because a modern chronology is a separate
-      profile with its own id and is not consulted, adjusted with, or treated as
-      a correction here. The traditional 975 that the same sentence names as
+      withdrawn from this profile's ANSWERS on 2026-08-27, with the 958 and
+      about 969 on israel.monarchy.temple-begun, because a modern chronology is
+      a separate profile with its own id and is not consulted, adjusted with, or
+      treated as a correction here. They were also deleted outright on that
+      date and survived only as this prose, which PCC-19 ruled a separate
+      defect and gave a single remedy: RESTORED 2026-09-02 as two `preserved`,
+      `modern-critical` claims below, neither a candidate answer, both reachable
+      under --evidence. The traditional 975 that the same sentence names as
       traditional is kept, and is displayed first.
     dates:
       - profile: catholic-traditional-v1
@@ -4905,8 +5039,8 @@ events:
         basis_class: reported-traditional
         basis: >-
           The Petavius table reproduced in Sloet's "Chronology of the Kings"
-          (Catholic Encyclopedia, New York, 1910) sets "Roboam" against "B.C.
-          975" in the Juda column, immediately after the Building of the Temple
+          (Catholic Encyclopedia, New York, 1910) sets "Roboam" against "975" in the
+          Juda column, whose head is "B.C.",, immediately after the Building of the Temple
           at 1012.
         sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08654a-645bba6c]
         note: >-
@@ -4934,6 +5068,18 @@ events:
           cannot be run without a network. The figures stand where they stood; what has
           changed is that a reader can reopen the pairing in this repository instead of
           taking it on trust.
+          THE ARTICLE'S OWN "UNTENABLE" SENTENCE reaches this figure's period
+          and does not reach this figure. Sloet writes, before both of his
+          tables, "Since the deciphering of the Assyro-Babylonian inscriptions,
+          the chronology of the period of Kings before 730 B.C. has become
+          untenable", and this year stands inside that period. The ruling is
+          written once, in profiles.yaml under
+          admissibility.a_sources_rejection_on_an_excluded_ground_is_not_followed:
+          the stated warrant of that sentence is the excluded method, and a
+          profile that will not answer with that method's numbers does not
+          follow its verdicts. Sloet rejects none of the Petavius figures; he
+          reproduces them and sets his own table against them, and that table is
+          preserved here and not answered with.
         date:
           precision: year
           from: {year: 975, era: bc}
@@ -4944,7 +5090,7 @@ events:
         basis_class: profane-harmonisation
         basis: >-
           Sloet's own table in "Chronology of the Kings" sets "Roboam" against
-          "B.C. 933-2", and the Israel column sets Jeroboam I at the same
+          "933-2" in a column headed "B.C.", and the Israel column sets Jeroboam I at the same
           figure.
         sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08654a-645bba6c]
         note: >-
@@ -4967,6 +5113,67 @@ events:
           from: {year: 933, era: bc}
           to: {year: 932, era: bc}
           label: "B.C. 933-2"
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        answerability: preserved
+        basis_class: modern-critical
+        basis: >-
+          Howlett's "Biblical Chronology" (Catholic Encyclopedia, New York,
+          1908) gives his own figure in the sentence that also names the
+          traditional one: "We have fixed roughly the date of the revolt of the
+          Ten Tribes for the year 936 B.C. But the traditional date is 975".
+          He reaches it in the preceding paragraph from the reign lengths his
+          Assyrian reckoning yields: "Solomon reigned from 973 to 936, and
+          David from 1013 to 973. So, to speak roughly, the revolt of the Ten
+          Tribes must have taken place somewhere about the year 936."
+        sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
+        note: >-
+          PRESERVED, NEVER ANSWERED WITH, AND RESTORED 2026-09-02 rather than
+          left as prose. This figure was withdrawn from this profile's answers
+          on 2026-08-27 in the same wave as the five of Howlett's Exodus
+          sentence, and like them it was DELETED rather than preserved,
+          surviving only in this event's subject note. PCC-19 ruled that defect
+          class -- withdrawal-by-deletion -- and gave it one remedy, and a
+          third cold review found that the remedy had been applied to the five
+          siblings and not here. It is applied here now, on the same reasoning
+          and with no new judgement: a note carries no provenance of its own,
+          cannot be queried, and is not reached by --evidence, so the only
+          record of a figure this corpus inspected and refused was prose.
+          The chain the figure hangs on is Howlett's own and is stated by him:
+          the section's project, quoted from Mangenot at its head, is that the
+          chronology of the kings "must be made to accord with the Assyrian
+          chronology", and the foundation year it is measured back from is his
+          "about 969", taken "according to Sayce" from the Tyrian annals. That
+          is the modern reconstruction guidance/scripture-chronology.md 4.3
+          says is "not consulted", which is why the figure is not a candidate
+          answer here and never was one after 2026-08-27. What changed on
+          2026-09-02 is only that it is inspectable.
+        date:
+          precision: year
+          from: {year: 936, era: bc}
+          label: "the year 936 B.C."
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        answerability: preserved
+        basis_class: modern-critical
+        basis: >-
+          The same article states the same reckoning a second time, a year
+          apart, in its closing summary of the period: "The secession of the
+          Ten Tribes took place about 937."
+        sources: [artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04]
+        note: >-
+          PRESERVED, NEVER ANSWERED WITH, AND RESTORED 2026-09-02 with the 936
+          beside it, for the reason given there. IT IS RECORDED SEPARATELY
+          BECAUSE THE ARTICLE PRINTS IT SEPARATELY. Howlett writes 936 where he
+          derives the figure and 937 where he summarises it; the two are one
+          reckoning stated twice and not two reckonings, and the corpus
+          harmonises neither into the other. Recording only one of them would
+          be choosing between two things a source printed, which is the act
+          this corpus exists not to perform silently.
+        date:
+          precision: approximate-year
+          from: {year: 937, era: bc}
+          label: "about 937"
 
   - id: israel.divided-kingdom.sesac-invasion
     title: Sesac's attack on Jerusalem
@@ -5194,8 +5401,8 @@ events:
         basis_class: reported-traditional
         basis: >-
           The Petavius table in Sloet's "Chronology of the Kings" (Catholic
-          Encyclopedia, New York, 1910) sets "Ezechias" against "B.C. 727" in
-          the Juda column.
+          Encyclopedia, New York, 1910) sets "Ezechias" against "727" in the
+          Juda column, whose head is "B.C.",.
         sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08654a-645bba6c]
         note: >-
           Now the only claim this profile answers with on the subject, and so
@@ -5237,7 +5444,7 @@ events:
         basis_class: profane-harmonisation
         basis: >-
           Sloet's own table in the same article, harmonised with the Assyrian
-          data, sets Ezechias at "B.C. 718-7".
+          data, sets Ezechias at "718-7" in a column headed "B.C.".
         sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08654a-645bba6c]
         note: >-
           PRESERVED, NOT ANSWERED. Sloet states the method of this table himself
@@ -5308,8 +5515,8 @@ events:
         basis_class: reported-traditional
         basis: >-
           The Petavius table in Sloet's "Chronology of the Kings" (Catholic
-          Encyclopedia, New York, 1910) sets "Josias" against "B.C. 641" in the
-          Juda column, two years earlier than Gigot's 639.
+          Encyclopedia, New York, 1910) sets "Josias" against "641" in the Juda
+          column, whose head is "B.C.",, two years earlier than Gigot's 639.
         sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08654a-645bba6c]
         note: >-
           An accession year, not a reign span. The same article gives 641 in
@@ -5418,7 +5625,7 @@ events:
         basis: >-
           The Petavius table in Sloet's "Chronology of the Kings" (Catholic
           Encyclopedia, New York, 1910) sets "Joachaz" and "Joakim" both against
-          "B.C. 610" in the Juda column.
+          "610" in the Juda column, whose head is "B.C.".
         sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08654a-645bba6c]
         note: >-
           Table extraction: thirteen labels map onto thirteen years, paired by
@@ -5666,7 +5873,8 @@ events:
         basis: >-
           The Petavius table in Sloet's "Chronology of the Kings" (Catholic
           Encyclopedia, New York, 1910) sets "Joachin" and "Sedecias" both
-          against "B.C. 599", the table then closing at 588 with the Remarks
+          against "599" in a column headed "B.C.", the table then closing at 588
+          with the Remarks
           cell "Capture of Jerusalem".
         sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08654a-645bba6c]
         note: >-
@@ -10585,10 +10793,10 @@ events:
           fled from Saul into the cave. [1 Kings 24.]", and 1 Kings 24:4 is
           where David and his men are in the cave and Saul enters it. The Anno Mundi reckoning this
           apparatus carries is not Haydock's own computation: where the same
-          edition dates the captivities at Psalm 70, on this same epoch, it
-          attributes the chronology explicitly to Usher, and the passage record
-          for this page attributes the apparatus to the edition rather than to
-          any named commentator.
+          edition dates the captivities at Psalm 70 it attributes the
+          chronology explicitly to Usher, and the passage record for this page
+          attributes the apparatus to the edition rather than to any named
+          commentator.
         sources:
           - passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.first-kings-23-maon-chronology
           - bible:douay-rheims:Ps.56.1

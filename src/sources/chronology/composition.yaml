@@ -556,17 +556,60 @@ units:
     dates:
       - profile: catholic-traditional-v1
         disposition: disputed
-        basis_class: traditional-catholic
+        basis_class: reported-traditional
         basis: >-
           Aherne's article "Epistle to the Galatians" in the Catholic
           Encyclopedia (vol. 6, 1909), first opinion: "Prof. Sir W. Ramsay ...
           and a Catholic professor, Dr. Valentin Weber ... maintain that it was
           written from Antioch, before the council (A.D. 49-50)", Marcion
-          having asserted that it was the first of St Paul's Epistles.
+          having asserted that it was the first of St Paul's Epistles. Aherne
+          REPORTS this dating and does not state or compute it himself; the
+          reporting is his article's testimony and is recorded as such, and the
+          chronology reported is Weber's, argued on the ground the article
+          gives for it in its own next sentences — "The two visits to Galatia
+          are the double journey to Derbe and back. This solution is offered to
+          obviate apparent discrepancies between Galatians 2 and Acts 15."
         sources: [artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06336a-508d2398]
         note: >-
           Of this earliest dating the article says: "Weber's arguments are very
           plausible, but not quite convincing."
+          RULED 2026-09-02. This claim was `traditional-catholic` until then,
+          which was wrong on the face of its own basis: that class is a ranked
+          traditional Catholic authority STATING OR COMPUTING the value on
+          traditional grounds, and Aherne does neither. He prints the opinion as
+          the first of three, attributes it to two named men, and declines to be
+          convinced by it. The class is now `reported-traditional`, which is
+          what a ranked work reporting another chronology is; the value stays
+          answerable and stays `disputed`, and the answer set over Galatians
+          does not move.
+          WHY RAMSAY IS ANSWERED WITH HERE AND REFUSED ELSEWHERE, because this
+          corpus refuses him twice and must say what the difference is. The
+          basis test this profile runs is a DISCLOSURE test: it asks what the
+          source says the VALUE rests on. At event:life-of-christ.baptism#0 the
+          article's own sentence adopts Ramsay's reckoning of Tiberius's years
+          and obtains A.D. 27 from it, so the disclosed warrant of the value IS
+          the excluded reckoning, and that claim is `reported-excluded` and
+          preserved. At event:apostolic-age.saint-paul-sent-to-rome#1 the
+          Ramsay figure is 60, which is Ramsay's OWN year, named among three
+          rival scholarly figures the article weighs and does not adopt before
+          giving its own 62; a non-authority's own chronology is not authored
+          here at all, and that note says so. HERE the value is neither
+          computed from Ramsay's reckoning nor Ramsay's own year. It is an
+          exegetical dating of the epistle relative to the council of Acts 15,
+          which the article grounds on a reading of Galatians 2 against Acts —
+          Scripture, and no method this profile excludes — maintained by a
+          Catholic professor whose arguments are the ones the article
+          summarises, asserted in antiquity by Marcion, and concurred in by
+          Ramsay. Ramsay is named as one who holds the position, not as the
+          warrant it rests on, and no lift is invoked: the Ussher reporting
+          exception is not touched by this claim and does not extend to Ramsay
+          (PCC-13).
+          NOT `rejected-by-source`. "Not quite convincing" is said of Weber's
+          arguments and is a decline, not the source's rejection of the dating;
+          the article prints it as opinion (1) of three in a section it does not
+          close, which is why every claim on this unit is `disputed`. Contrast
+          event:apostolic-age.exile-of-saint-john-to-patmos#1, which is
+          `rejected-by-source` on "appears exceedingly improbable".
         date:
           precision: interval
           from: {year: 49, era: ad}
@@ -747,8 +790,17 @@ units:
           despatched at the same time, between A.D. 61-63."
         sources: [artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11797b-acad9502]
         note: >-
-          The window is stated of Colossians, Ephesians and Philippians, with
-          Philemon placed beside them as the fourth captivity epistle. The
+          THE EPISTLE IS NOT NAMED IN THE WINDOW, AND THE BASIS NOW QUOTES BOTH
+          SENTENCES SO THAT A READER CAN SEE IT. The years 61-63 are stated of
+          Colossians, Ephesians and Philippians. What attaches them to Philemon
+          is the article's own first sentence in the same section, which names
+          Philemon as one of the four Captivity Epistles of the first Roman
+          imprisonment; the grouping is the article's, made in this epistle's
+          own dating section, and this corpus adds nothing to it. Recorded
+          2026-09-02 in these terms after a cold review found the basis quoting
+          the window without the sentence that reaches it. The claim stays
+          `disputed` and is not alone on this unit: claim #1 carries a source
+          that names Philemon itself in a dated list. The
           article records a rejected alternative: "Some scholars assign the
           composition to Caesarea (Acts 23-26: A.D. 59-60), but both tradition
           and internal evidence are in favour of Rome."
@@ -1068,7 +1120,7 @@ units:
         disposition: preferred
         basis_class: traditional-catholic
         basis: >-
-          Camerlynck's article "Epistle of Saint Jude" in the Catholic
+          Camerlynck's article "Epistle of St. Jude" in the Catholic
           Encyclopedia (vol. 8, 1910): "we have shown that the Epistle of St.
           Jude was written before II Peter, which latter was probably written
           A.D. 64 (65). Therefore St. Jude must have written shortly before 64
@@ -1487,21 +1539,48 @@ units:
           the beginning of the third century B.C., or the early years of the Greek
           period which began 332 B.C." — of which "The majority accept the last
           opinion." Those are the modern critical positions, not this claim.
+          BOUND NARROWED 2026-09-02, AND NOTHING ELSE MOVED. The lower bound
+          stood at 485, which is the year Xerxes I's reign BEGAN. What the
+          article says is "at the end of the reign of Xerxes I (485-465 B.C.)",
+          and the parenthesis gives the reign, not the window: the whole of
+          Xerxes' reign is exactly what the sentence excludes by saying "at the
+          end" of it. Storing 485 asserted twenty years the source states the
+          book was not written in. The two options the sentence offers are
+          contiguous -- the end of Xerxes, then the reign of his son -- so the
+          envelope the article does state runs from the close of Xerxes' reign
+          through Artaxerxes I, and the bounds are 465 and 425, both of them
+          years the sentence prints. The label is unchanged and still carries
+          the article's own words, including the 485 the article prints for the
+          start of the reign it names.
         date:
           precision: interval
-          from: {year: 485, era: bc}
+          from: {year: 465, era: bc}
           to: {year: 425, era: bc}
           label: "at the end of the reign of Xerxes I (485-465 B.C.) or during the reign of his son Artaxerxes I (465-425 B.C.)"
 
   - id: composition.book-of-wisdom
     title: The Book of Wisdom
     scope: {book: Wis}
+    note: >-
+      TWO REIGNS, TWO CLAIMS, AND THE GAP BETWEEN THEM IS NOT ASSERTED. Gigot
+      offers a choice between the reign of Ptolemy IV Philopator (221-204 B.C.)
+      and that of Ptolemy VII Physicon (145-117 B.C.) and declines to make it.
+      Until 2026-09-02 this unit held ONE claim whose stored interval ran
+      221-117, which spans both reigns and the fifty-nine years between them --
+      203 to 146 -- that the source's own sentence excludes, since its whole
+      argument is that only under those two depraved princes were the Egyptian
+      Jews persecuted. The note conceded the widening and the machine value did
+      not, and a consumer computing with the date got the years the article
+      rules out. The two reigns are now two `disputed` claims, each bounded by
+      the years the article prints for it, and neither is `preferred`, because
+      the article chooses neither.
     dates:
       - profile: catholic-traditional-v1
-        disposition: preferred
+        disposition: disputed
         basis_class: traditional-catholic
         basis: >-
-          Gigot's "Book of Wisdom" in the Catholic Encyclopedia states that "It is
+          Gigot's "Book of Wisdom" in the Catholic Encyclopedia offers two reigns
+          and this is the earlier of them: "It is
           universally admitted that when the writer describes a period of moral
           degradation and persecution under unrighteous rulers who are threatened with
           heavy judgment, he has in view the time of either Ptolemy IV Philopator
@@ -1512,8 +1591,8 @@ units:
           The article does not choose between the two reigns — "it is confessedly
           difficult to decide which of these two monarchs the author of Wisdom had
           actually in view" — and allows that the work "was published after the demise
-          of those princes," so the structured bounds are the envelope of the two
-          reigns the source prints, not a single stated window. This is the case where
+          of those princes," so neither claim on this unit is preferred. This is the
+          case where
           the Catholic Encyclopedia's own position DISPLACES the older tradition: it
           holds that "the fact that the entire Book of Wisdom was composed in Greek
           rules out its Solomonic authorship" and that "At the present day, it is freely
@@ -1525,8 +1604,27 @@ units:
         date:
           precision: interval
           from: {year: 221, era: bc}
+          to: {year: 204, era: bc}
+          label: "the time of ... Ptolemy IV Philopator (221-204 B.C.)"
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis_class: traditional-catholic
+        basis: >-
+          The same sentence of the same article offers the later reign: "he has in
+          view the time of either Ptolemy IV Philopator
+          (221-204 B.C.), or Ptolemy VII Physicon (145-117 B.C.)".
+        sources: [artifact.catholic-encyclopedia.volume-15.new-york-1912.newadvent-15666a-999fbc07]
+        note: >-
+          The second of the two reigns Gigot offers, recorded on its own bounds
+          for the reason the subject note gives: an interval spanning both would
+          assert the years between them, and the article's argument is that the
+          persecution it reads in the book belongs to one of these two reigns and
+          not to the time between.
+        date:
+          precision: interval
+          from: {year: 145, era: bc}
           to: {year: 117, era: bc}
-          label: "the time of either Ptolemy IV Philopator (221-204 B.C.), or Ptolemy VII Physicon (145-117 B.C.)"
+          label: "the time of ... Ptolemy VII Physicon (145-117 B.C.)"
 
   - id: composition.book-of-ecclesiasticus
     title: Ecclesiasticus
@@ -1652,7 +1750,7 @@ units:
         basis: >-
           Souvay's "Isaias" in the Catholic Encyclopedia places the prophetical
           ministry "from the closing year of Ozias, King of Juda," which it gives as
-          the year of that prince's death, "(740 B.C. )", and holds that "since no
+          the year of that prince's death, "740 B.C.", and holds that "since no
           prophecies appear to be later than 701 B.C. , it is doubtful if Isaias saw the
           reign of Manasses at all." Of the collection the article says it "might still
           possibly be attributed to the last years of the Prophet's life or shortly
