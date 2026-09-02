@@ -779,9 +779,10 @@ units:
         basis_class: traditional-catholic
         basis: >-
           Drum's article "Epistles to the Thessalonians" in the Catholic
-          Encyclopedia (vol. 14, 1912): "First Thessalonians was written during
-          the eighteen months Paul stayed at Corinth ... in the year 53 or 54
-          according to the commonly received scheme of Pauline chronology."
+          Encyclopedia (vol. 14, 1912): "First Thessalonians, then, was written
+          during the eighteen months Paul stayed at Corinth ... in the year 53
+          or 54 according to the commonly received scheme of Pauline
+          chronology."
           Both Thessalonian letters "are generally considered to be the
           earliest extant writings of St. Paul."
         sources: [artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14629d-95947a74]
@@ -1373,7 +1374,11 @@ units:
           and fourth centuries B.C. entire, which is wider than the claim: the article
           places the composition at the TURN of those centuries. The narrowing is in
           the label and is the machine-readable claim's own limit, not a licence to
-          treat 500 or 301 B.C. as asserted. This is a statement of what "most Catholic
+          treat 500 or 301 B.C. as asserted.
+          The notation is the profile's and not this claim's: `display.century_notation`
+          in profiles.yaml settles that a century phrase is recorded as that century
+          entire and that a narrowing within it stays in the label, which is why these
+          bounds are not a rank-7 `derived` computation and must not be authored as one. This is a statement of what "most Catholic
           authors" hold, not a magisterial determination. PROFILE BOUNDARY: the same
           paragraph reports that "Most modern non-Catholic scholars attribute the work
           to an unknown writer and place its date between 300 and 250 B.C." — a modern
@@ -1403,6 +1408,10 @@ units:
           The source names centuries, not years. The structured bounds are the fifth
           and fourth centuries B.C. entire, which is wider than the claim: the article
           places the composition at the TURN of those centuries, as the label records.
+          The notation is the profile's and not this claim's: `display.century_notation`
+          in profiles.yaml settles that a century phrase is recorded as that century
+          entire and that a narrowing within it stays in the label, which is why these
+          bounds are not a rank-7 `derived` computation and must not be authored as one.
           This is a statement of what "most Catholic authors" hold, not a magisterial
           determination. PROFILE BOUNDARY: the same paragraph reports that "Most modern
           non-Catholic scholars attribute the work to an unknown writer and place its
@@ -1433,7 +1442,11 @@ units:
           story as fact-narrative," which the article defends but does not treat as
           self-evident. The source names a century, not a year, and narrows within it
           to "the early portion"; the structured bounds are the seventh century B.C.
-          entire and are therefore wider than the claim. The article adds that "It is
+          entire and are therefore wider than the claim.
+          The notation is the profile's and not this claim's: `display.century_notation`
+          in profiles.yaml settles that a century phrase is recorded as that century
+          entire and that a narrowing within it stays in the label, which is why these
+          bounds are not a rank-7 `derived` computation and must not be authored as one. The article adds that "It is
           likely that the elder Tobias wrote at least that part of the original work in
           which he uses the first person singular." The article's own placement of the
           deportation of Nephthali at 734 B.C. sits oddly beside a seventh-century
@@ -1859,6 +1872,10 @@ units:
           alternatives without adopting either: the period of King Josias, and, by
           "Later commentators", the period after the Exile. The source names a century,
           not a year, so the structured bounds are the eighth century B.C. entire.
+          The notation is the profile's and not this claim's: `display.century_notation`
+          in profiles.yaml settles that a century phrase is recorded as that century
+          entire and that a narrowing within it stays in the label, which is why these
+          bounds are not a rank-7 `derived` computation and must not be authored as one.
         date:
           precision: interval
           from: {year: 800, era: bc}
@@ -1887,7 +1904,11 @@ units:
           on identifying the capture of Jerusalem in Abdias 11-14 with the sacking under
           Joram rather than with Nabuchodonosor. The source names a century and narrows
           within it to "about the middle", so the structured bounds are the ninth
-          century B.C. entire and are wider than the claim. Two further opinions stand
+          century B.C. entire and are wider than the claim.
+          The notation is the profile's and not this claim's: `display.century_notation`
+          in profiles.yaml settles that a century phrase is recorded as that century
+          entire and that a narrowing within it stays in the label, which is why these
+          bounds are not a rank-7 `derived` computation and must not be authored as one. Two further opinions stand
           in the same section. The second is not the modern critical voice SS4.3
           excludes and could be authored: Meyrick, Jahn, Ackerman and Allioli "refer
           the composition of the book to about the time of the Babylonian Captivity ,
@@ -2008,7 +2029,9 @@ units:
           Gigot's "Habacuc (Habakkuk)" in the Catholic Encyclopedia, after surveying the
           opinions, states that "the view which ascribes the book to 605-600 B.C. 'is
           best in harmony with the historical circumstances under which the Chaldeans
-          are presented in the prophecy of Habacuc' (Van Hoonacker)."
+          are presented in the prophecy of Habacuc ...' (Van Hoonacker)." The inner
+          quotation continues in the article past the words taken here; the ellipsis
+          is this corpus's and marks the cut, which until 2026-09-02 it did not.
         sources: [artifact.catholic-encyclopedia.volume-7.new-york-1910.newadvent-07097a-8ad7be64]
         note: >-
           The preference is quoted from Van Hoonacker, not asserted flatly, and the
@@ -2136,6 +2159,10 @@ units:
           determination. The source names a century and narrows within it to "about the
           middle", so the structured bounds are the fifth century B.C. entire and are
           wider than the claim.
+          The notation is the profile's and not this claim's: `display.century_notation`
+          in profiles.yaml settles that a century phrase is recorded as that century
+          entire and that a narrowing within it stays in the label, which is why these
+          bounds are not a rank-7 `derived` computation and must not be authored as one.
           RULED 2026-09-01 on that same recorded prose, which had been left standing
           beside a `traditional-catholic` label and a `preferred` disposition, so that a
           figure this note already said was "not a tradition" was the default answer for
@@ -2392,7 +2419,7 @@ units:
           reign, there is no more probable writer thereof than Samuel." It
           reaches it from step (4), that "it is likely that Judges antedates
           even the first seven years of David's reign and the last years of
-          Saul's", because in that period "Saul had rooted out the magicians
+          Saul's", because in that period Saul had "rooted out the magicians
           and soothsayers from the land" and the book's purpose "to keep the
           children of Israel from idolatry" would have had no occasion.
         sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08547a-5242e582]

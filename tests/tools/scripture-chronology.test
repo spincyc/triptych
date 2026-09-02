@@ -93,6 +93,28 @@ run_tool query Sus.1.1 --system greek --json | grep -q '"locus":"Dan.13.1"' || {
 	exit 1
 }
 
+# --evidence returns answers and preserved evidence in ONE list, so the human
+# surface has to say which is which. Until 2026-09-02 every row of it read
+# `alternate` and a reader without --json could not tell a figure this profile
+# refuses to answer with from a live traditional alternative. 3Kings.6.1 is
+# where both stand side by side: five alternates on `temple-begun`, three of
+# them preserved.
+evidence="$(run_tool query 3Kings.6.1 --evidence)"
+printf '%s\n' "$evidence" | grep -q '958 B.C..*alternate (preserved)' || {
+	echo "a preserved figure rendered as an ordinary alternate" >&2
+	exit 1
+}
+if printf '%s\n' "$evidence" | grep -q 'B.C. 1012.*(preserved)'; then
+	echo "a live alternate was marked preserved" >&2
+	exit 1
+fi
+# And the default candidate set, which carries no preserved evidence at all, is
+# unchanged: the marking is the opt-in surface's, not a new column everywhere.
+if run_tool query 3Kings.6.1 | grep -q 'preserved'; then
+	echo "the default query surface acquired an answerability marking" >&2
+	exit 1
+fi
+
 # Machine output is one key-sorted object and carries its status.
 run_tool coverage --json | grep -q '"total_verses"'
 run_tool validate --json | grep -q '"status":"ok"'

@@ -15,6 +15,7 @@ would go green against the wrong file.
 """
 from __future__ import annotations
 
+import re
 import subprocess
 import sys
 import tempfile
@@ -28,6 +29,7 @@ sys.path.insert(0, str(REPOSITORY_ROOT / "scripts"))
 
 import _chronology  # noqa: E402
 import chronology_review_diff as review_diff  # noqa: E402
+import build_profile_contract_manifest as review_builder  # noqa: E402
 import _projection  # noqa: E402
 import _psalms  # noqa: E402
 
@@ -3158,13 +3160,688 @@ class RemediationTests(unittest.TestCase):
     def test_the_cold_review_manifest_is_not_stale(self) -> None:
         """The manifest is derived and is the surface a cold reviewer works
         from, and it had no way of saying it had gone stale. `--check`
-        re-derives against the base its own header records."""
+        re-derives against the base PINNED IN THE BUILDER."""
         builder = REPOSITORY_ROOT / "scripts" / "build_profile_contract_manifest.py"
         done = subprocess.run(
             [sys.executable, str(builder), "--check"],
             capture_output=True, text=True, cwd=str(REPOSITORY_ROOT),
         )
         self.assertEqual(done.returncode, 0, done.stdout + done.stderr)
+
+    # --- PCC-26: the drift gate could not see the drift it exists for -------
+    #
+    # A second cold review, on 2026-09-02, ran the regeneration command the
+    # manifest's own header advertised, in a clean clone. Write mode defaulted
+    # its base to HEAD, so the surface was rebased and collapsed from 475 rows
+    # to 95; `--check` then read its base out of the header of the very file it
+    # was checking, found the rebased file consistent with the rebased base, and
+    # reported the wreckage as current, exit 0.
+    #
+    # These two tests are that attack, run against the builder as it ships. They
+    # are the reason to believe the gate can see anything at all, so they are
+    # end-to-end and not a unit test of the argument parser: the defect was in
+    # what the command DID, and only running it shows that.
+
+    @staticmethod
+    def _scratch_repository(into: Path) -> Path:
+        """A throwaway clone whose working tree is the one under test.
+
+        Object storage is shared and the checkout is sparse, so this costs a
+        few megabytes and a fraction of a second against a 1.2 GiB history.
+        `scripts` and the corpus are then overlaid from the working tree,
+        because the point is to exercise the builder AS IT STANDS HERE and not
+        the one committed at HEAD; the base side of the diff is what the shared
+        history is for. `src/sources/bibles` and `src/sources/works` are
+        symlinked rather than checked out: both loaders read them and neither
+        writes them.
+        """
+        import shutil
+
+        clone = into / "clone"
+        subprocess.run(
+            ["git", "clone", "--quiet", "--shared", "--no-checkout",
+             str(REPOSITORY_ROOT), str(clone)],
+            check=True, capture_output=True, text=True,
+        )
+        subprocess.run(
+            ["git", "-C", str(clone), "sparse-checkout", "set", "--no-cone",
+             "scripts", "src/sources/chronology"],
+            check=True, capture_output=True, text=True,
+        )
+        subprocess.run(["git", "-C", str(clone), "checkout", "--quiet"],
+                       check=True, capture_output=True, text=True)
+        for path in ("scripts", "src/sources/chronology"):
+            shutil.rmtree(clone / path, ignore_errors=True)
+            shutil.copytree(REPOSITORY_ROOT / path, clone / path,
+                            ignore=shutil.ignore_patterns("__pycache__"))
+        for shared in ("src/sources/bibles", "src/sources/works"):
+            link = clone / shared
+            link.parent.mkdir(parents=True, exist_ok=True)
+            link.symlink_to(REPOSITORY_ROOT / shared)
+        return clone
+
+    @staticmethod
+    def _manifest_of(repo: Path) -> Path:
+        return (repo / "src" / "sources" / "chronology"
+                / "profile-contract-rereview-manifest.tsv")
+
+    @staticmethod
+    def _declared_base(manifest: Path) -> str:
+        import re
+
+        found = re.search(r"^# Derived by diffing the corpus at ([0-9a-f]{7,40})",
+                          manifest.read_text(), re.M)
+        return found.group(1) if found else ""
+
+    @staticmethod
+    def _advertised_command(manifest: Path) -> list[str]:
+        """The regeneration command the artifact tells a reader to run.
+
+        Taken out of the header rather than written here, because the defect
+        was that the file advertised a command that destroyed it. A test that
+        hard-coded the safe command would go green against the wrong string.
+        """
+        import re
+
+        found = re.findall(
+            r"`python3 (scripts/build_profile_contract_manifest\.py)`",
+            manifest.read_text())
+        assert found, "the manifest header advertises no regeneration command"
+        return [sys.executable, found[0]]
+
+    def _run_builder(self, repo: Path, *args: str) -> subprocess.CompletedProcess:
+        return subprocess.run(
+            [*self._advertised_command(self._manifest_of(repo)), *args],
+            capture_output=True, text=True, cwd=str(repo),
+        )
+
+    def test_the_command_the_manifest_advertises_does_not_collapse_it(self) -> None:
+        """The reviewer's attack, verbatim: run what the file says to run."""
+        builder = REPOSITORY_ROOT / "scripts" / "build_profile_contract_manifest.py"
+        pinned = review_builder.BASE_REVISION
+        head = subprocess.run(
+            ["git", "-C", str(REPOSITORY_ROOT), "rev-parse", "HEAD"],
+            check=True, capture_output=True, text=True).stdout.strip()
+        if head.startswith(pinned) or pinned.startswith(head):
+            self.skipTest("HEAD is the pinned base, so a rebase onto HEAD is a "
+                          "no-op and this attack cannot be staged")
+
+        tracked = self._manifest_of(REPOSITORY_ROOT)
+        before = len(tracked.read_text().splitlines())
+        with tempfile.TemporaryDirectory(prefix="manifest-gate-") as tmp:
+            repo = self._scratch_repository(Path(tmp))
+            done = self._run_builder(repo)
+            self.assertEqual(done.returncode, 0, done.stdout + done.stderr)
+
+            manifest = self._manifest_of(repo)
+            after = len(manifest.read_text().splitlines())
+            self.assertEqual(
+                self._declared_base(manifest), pinned,
+                "the advertised command rebased the review surface: it must "
+                "derive against the base pinned in the builder, not HEAD")
+            self.assertEqual(
+                after, before,
+                f"the advertised command collapsed the review surface from "
+                f"{before} lines to {after}")
+
+            # and having run it, the file it wrote is the tracked one.
+            check = self._run_builder(repo, "--check")
+            self.assertEqual(check.returncode, 0, check.stdout + check.stderr)
+        self.assertEqual(
+            len(tracked.read_text().splitlines()), before,
+            "the test wrote to the tracked manifest")
+
+    def test_a_rebased_manifest_cannot_report_itself_as_current(self) -> None:
+        """`--check` took its base from the file under test, so a rebased
+        manifest named the rebased base and re-derived to match it. The base
+        lives in the rule now, where the artifact cannot reach it."""
+        builder = REPOSITORY_ROOT / "scripts" / "build_profile_contract_manifest.py"
+        head = subprocess.run(
+            ["git", "-C", str(REPOSITORY_ROOT), "rev-parse", "HEAD"],
+            check=True, capture_output=True, text=True).stdout.strip()
+        if head.startswith(review_builder.BASE_REVISION):
+            self.skipTest("HEAD is the pinned base")
+
+        with tempfile.TemporaryDirectory(prefix="manifest-gate-") as tmp:
+            repo = self._scratch_repository(Path(tmp))
+            manifest = self._manifest_of(repo)
+            # exactly what the old write mode produced: a nearly empty diff of
+            # HEAD against itself, honestly labelled with the base it used.
+            body = manifest.read_text().replace(
+                review_builder.BASE_REVISION, head, 1)
+            manifest.write_text("".join(body.splitlines(True)[:40]))
+
+            done = self._run_builder(repo, "--check")
+            self.assertEqual(
+                done.returncode, 1,
+                "a rebased manifest reported itself as current:\n"
+                + done.stdout + done.stderr)
+            self.assertIn("REBASED", done.stdout + done.stderr)
+
+
+# --- PCC-27: the Usher lift's epoch argument, checked against the data ------
+
+
+class HaydockEpochArgumentTests(unittest.TestCase):
+    """The argument that identifies the Haydock apparatus's chronology as
+    Usher's runs on the epoch its printed Anno Mundi / Anno Christi pairs
+    share. Eleven notes stated that argument, and until 2026-09-02 every one of
+    them stated it as a UNIVERSAL -- "every Anno Mundi and Anno Christi pair
+    this corpus records" -- while listing seven of the nine pairs the corpus
+    actually holds. One of the two it left out, A. M. 2518 + A. C. 1491 at
+    Exodus 5, sums to 4009 and not 4004, and the claim carrying it carried the
+    universal that excluded it.
+
+    Ten `preferred` answers rest on that argument, so its stated evidence has to
+    be checked against the corpus rather than read. These tests derive the pairs
+    from the data and require every note that makes the argument to name ALL of
+    them: a list that calls itself exhaustive cannot be allowed to go stale when
+    a pair is added, and an outlier cannot be dropped from it again.
+    """
+
+    LIFT = "ussher-reported-by-a-ranked-catholic-source"
+    EPOCH = 4004
+    # The sentence every note that makes the argument contains, and the thing
+    # that makes it findable without listing the notes here by hand.
+    MARKER = "Anno Christi pairs from this apparatus"
+    ERA_MARKERS = re.compile(r"A\.\s*[MC]\.\s*")
+    PAIR = re.compile(r"\b(\d{4})\s*\+\s*(\d{4})\b")
+
+    @classmethod
+    def _printed_pairs(cls) -> dict[str, tuple[int, int]]:
+        """Every Anno Mundi / Anno Christi pair the corpus records from the
+        apparatus, read off the claims themselves and not off the notes."""
+        pairs = {}
+        for event in _chronology.load().events.values():
+            for index, claim in enumerate(event.claims):
+                if claim.reporting_exception != cls.LIFT:
+                    continue
+                label = claim.date.label if claim.date else ""
+                found = re.search(
+                    r"A\.\s*M\.\s*(\d+),\s*A\.\s*C\.\s*(\d+)", label or "")
+                if found:
+                    pairs[f"{event.id}#{index}"] = (
+                        int(found.group(1)), int(found.group(2)))
+        return pairs
+
+    @classmethod
+    def _arguing_notes(cls) -> dict[str, str]:
+        notes = {}
+        for event in _chronology.load().events.values():
+            for index, claim in enumerate(event.claims):
+                if claim.note and cls.MARKER in claim.note:
+                    notes[f"{event.id}#{index}"] = claim.note
+        return notes
+
+    def test_the_corpus_records_one_pair_off_the_epoch_and_says_which(self) -> None:
+        """The data, first: the outlier is real, it is where the notes say it
+        is, and harmonising it away would break this test rather than pass it."""
+        pairs = self._printed_pairs()
+        self.assertEqual(len(pairs), 9, sorted(pairs))
+        off = {k: v for k, v in pairs.items() if sum(v) != self.EPOCH}
+        self.assertEqual(
+            off, {"israel.exodus.moses-before-pharao#0": (2518, 1491)},
+            "the set of pairs that break the epoch has changed; every note "
+            "that argues from the epoch has to be re-read before this is "
+            "updated")
+        self.assertEqual(sum(off["israel.exodus.moses-before-pharao#0"]), 4009)
+
+    def test_every_note_that_argues_from_the_epoch_lists_every_pair(self) -> None:
+        pairs = self._printed_pairs()
+        expected = {tuple(v) for v in pairs.values()}
+        notes = self._arguing_notes()
+        self.assertEqual(len(notes), 11, sorted(notes))
+        for identifier, note in notes.items():
+            plain = self.ERA_MARKERS.sub("", note)
+            listed = {(int(a), int(b)) for a, b in self.PAIR.findall(plain)}
+            self.assertEqual(
+                listed, expected,
+                f"{identifier} lists {sorted(listed)} but the corpus records "
+                f"{sorted(expected)}")
+
+    def test_no_note_states_the_epoch_as_a_universal(self) -> None:
+        """The false sentence itself, in both of the wordings it had."""
+        false = (
+            "one epoch across every Anno Mundi",
+            "every Anno Mundi and Anno Christi pair this corpus records from "
+            "it sums to the same number",
+            "every Anno Mundi and Anno Christi pair this corpus records from "
+            "the apparatus",
+        )
+        for identifier, note in self._arguing_notes().items():
+            for sentence in false:
+                self.assertNotIn(sentence, note, identifier)
+
+    def test_the_outlier_is_named_where_the_lift_is_argued(self) -> None:
+        """Naming the pairs is not enough: the note has to say that one of them
+        does not sum, or a reader counting nine identical-looking pairs learns
+        nothing from the list."""
+        for identifier, note in self._arguing_notes().items():
+            self.assertIn("4009", note, identifier)
+            self.assertIn("Exodus 5", note, identifier)
+
+    def test_the_answers_resting_on_the_lift_are_the_ones_declared(self) -> None:
+        """Ten preferred answers rest on this argument. If that number moves,
+        the argument has been extended to claims nobody re-read."""
+        resting = [
+            f"{event.id}#{index}"
+            for event in _chronology.load().events.values()
+            for index, claim in enumerate(event.claims)
+            if claim.reporting_exception == self.LIFT
+        ]
+        self.assertEqual(len(resting), 15, sorted(resting))
+        preferred = [
+            identifier for identifier in resting
+            if _chronology.load().events[identifier.split("#")[0]]
+            .claims[int(identifier.split("#")[1])].disposition == "preferred"
+        ]
+        self.assertEqual(len(preferred), 10, sorted(preferred))
+
+
+# --- PCC-30: a quotation has to be IN the thing it is quoted from -----------
+
+
+class QuotedBasisTests(unittest.TestCase):
+    """Every quotation in a `basis` is checked against the bytes it cites.
+
+    Nothing tested this until 2026-09-02, and nothing COULD: the sources were
+    registered but not retained, so a basis could quote a sentence that was not
+    in its article and the corpus would validate, answer and coverage-check
+    exactly as before. A misquotation is the failure this corpus is least able
+    to survive and was the only one it could not see.
+
+    The sources are retained now, so the check is possible and is made here.
+    For every claim, every run of >= 25 characters inside quotation marks in
+    its `basis` must occur in the retained text of one of the sources that
+    claim cites -- the extracted article for a work artifact, the chapter (and
+    its neighbours) for a `bible:` citation, and the passage record's own prose
+    for a `passage:` citation, which for a remote facsimile is what this
+    repository holds in place of the page.
+
+    WHAT IS FOLDED BEFORE COMPARING, and why each fold is safe: whitespace,
+    because the extraction collapses the page's line breaks; curly quotation
+    marks and dashes to their ASCII forms; `ae`/`oe` for the ligatures, which
+    the encyclopedia sets and the corpus does not; double quotation marks to
+    single, because a quotation nested inside a quotation changes its marks and
+    not its words; whitespace around punctuation and hyphens, which the
+    extraction moves. A trailing full stop is allowed to be dropped, because a
+    basis that quotes the first half of a verse ends the sentence it is inside.
+    None of these can turn one word into another; every one of them is applied
+    to BOTH sides.
+
+    A span broken by an ellipsis is checked in pieces, which is what an
+    ellipsis means. A quotation that silently drops words WITHOUT one is a
+    failure, and four were found and repaired when this test was written:
+    composition.first-epistle-to-the-thessalonians#0 had dropped ", then,";
+    composition.book-of-judges#0 had moved an opening quotation mark so that
+    "Saul had" fell inside the article's words; composition.book-of-habacuc#0
+    and israel.maccabees.temple-plundered#1 had each closed an inner quotation
+    early, at a point the article runs past.
+    """
+
+    MINIMUM = 25
+    FOLD = (("\u2019", "'"), ("\u2018", "'"), ("\u201c", "'"), ("\u201d", "'"),
+            ('"', "'"), ("\u2014", "-"), ("\u2013", "-"), ("\u2010", "-"),
+            ("\u00a0", " "), ("\u00e6", "ae"), ("\u00c6", "Ae"),
+            ("\u0153", "oe"), ("\u0152", "Oe"))
+    ELLIPSIS = re.compile(r"\s*(?:\.\.\.|\u2026)\s*")
+
+    # The spans that cannot be reopened from this repository's bytes, with the
+    # reason, and the count of them on each claim. Asserted in BOTH directions:
+    # an undeclared failure fails the test, and a declared one that has started
+    # matching fails it too, so this list cannot quietly outlive its reason.
+    UNREOPENABLE = {
+        "event:apostolic-age.exile-of-saint-john-to-patmos#0": (2, (
+            "Eusebius, Church History III.18.1, in the NPNF translation New "
+            "Advent hosts. The artifact is registered and hashed but its bytes "
+            "are not retained, so its words cannot be reopened here.")),
+        "event:apostolic-age.return-of-saint-john-from-patmos#0": (1, (
+            "Eusebius, Church History III.23.1, same artifact, same reason.")),
+        "event:israel.exile.first-captivity#0": (1, (
+            "The Usher chronology printed at Psalm 70:1 in the Haydock "
+            "Douay-Rheims. The artifact is a remote 1.2 GB facsimile PDF and "
+            "the passage record that stands for it SUMMARISES the paragraph "
+            "rather than transcribing it, so the printed sentence the claim "
+            "quotes is verified but not held. Transcribing it into the passage "
+            "record would close this, and would close the next two with it.")),
+        "event:israel.exile.second-captivity#0": (1, (
+            "The same Psalm 70:1 sentence, quoted on the second captivity.")),
+        "event:israel.exile.third-captivity#0": (1, (
+            "The same Psalm 70:1 sentence, quoted on the third captivity.")),
+    }
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        import tomllib
+
+        cls.tracked = {}
+        for record in REPOSITORY_ROOT.glob(
+                "src/sources/works/**/artifacts/*/artifact.toml"):
+            entry = tomllib.loads(record.read_text())
+            if entry.get("storage") == "tracked" and entry.get("path"):
+                cls.tracked[entry["id"]] = REPOSITORY_ROOT / entry["path"]
+        cls.passages = {}
+        for record in REPOSITORY_ROOT.glob(
+                "src/sources/works/**/passages/*.toml"):
+            entry = tomllib.loads(record.read_text())
+            cls.passages[entry["id"]] = entry
+        cls.cache = {}
+
+    @classmethod
+    def fold(cls, text: str) -> str:
+        import unicodedata
+
+        text = unicodedata.normalize("NFC", text)
+        for old, new in cls.FOLD:
+            text = text.replace(old, new)
+        text = re.sub(r"\s+", " ", text)
+        text = re.sub(r"\s+([,.;:!?)\]])", r"\1", text)
+        text = re.sub(r"([(\[])\s+", r"\1", text)
+        text = re.sub(r"\s*-\s*", "-", text)
+        return text.strip()
+
+    @classmethod
+    def _file(cls, path) -> str:
+        if path not in cls.cache:
+            cls.cache[path] = cls.fold(path.read_text())
+        return cls.cache[path]
+
+    @classmethod
+    def _chapter(cls, edition: str, book: str, chapter: int):
+        path = (REPOSITORY_ROOT / "src" / "sources" / "bibles" / edition
+                / "chapters" / book / f"{chapter}.json")
+        if not path.exists():
+            return None
+        if path not in cls.cache:
+            import json
+
+            verses = json.loads(path.read_text())["verses"]
+            cls.cache[path] = cls.fold(" ".join(
+                verses[key] for key in sorted(verses, key=int)))
+        return cls.cache[path]
+
+    @classmethod
+    def bodies(cls, claim) -> list:
+        found = []
+        for source in claim.sources:
+            if source.startswith("bible:"):
+                _, edition, locus = source.split(":", 2)
+                where = _chronology.parse_locus(locus)
+                # the neighbouring chapters too: a basis may quote across a
+                # chapter break, and the citation names only where it starts.
+                for chapter in range(max(1, where.chapter - 1), where.chapter + 2):
+                    text = cls._chapter(edition, where.token, chapter)
+                    if text:
+                        found.append(text)
+                continue
+            artifact = source
+            if source.startswith("passage."):
+                record = cls.passages.get(source)
+                if not record:
+                    continue
+                for field in ("states", "context", "notes"):
+                    if record.get(field):
+                        found.append(cls.fold(str(record[field])))
+                artifact = record.get("artifact_id", "")
+            for candidate in (artifact + "-article-text", artifact):
+                if candidate in cls.tracked:
+                    found.append(cls._file(cls.tracked[candidate]))
+        return found
+
+    @classmethod
+    def spans(cls, basis: str) -> list:
+        parts = basis.split('"')
+        if len(parts) % 2 == 0:      # unbalanced: reported separately
+            return []
+        out = []
+        for quoted in parts[1::2]:
+            for piece in cls.ELLIPSIS.split(quoted):
+                if len(piece.strip()) >= cls.MINIMUM:
+                    out.append(piece)
+        return out
+
+    @classmethod
+    def present(cls, span: str, bodies: list) -> bool:
+        folded = cls.fold(span)
+        trimmed = folded.rstrip(".,;:")
+        return any(
+            folded in body
+            or (len(trimmed) >= cls.MINIMUM and trimmed in body)
+            for body in bodies)
+
+    @classmethod
+    def survey(cls):
+        """(checked, matched, {claim: [unmatched spans]}, skipped)."""
+        checked = matched = skipped = 0
+        failing = {}
+        corpus = _chronology.load()
+        for kind, holder in (("event", corpus.events), ("unit", corpus.units)):
+            for subject in holder.values():
+                for index, claim in enumerate(subject.claims):
+                    if not claim.basis:
+                        continue
+                    identifier = f"{kind}:{subject.id}#{index}"
+                    bodies = cls.bodies(claim)
+                    spans = cls.spans(claim.basis)
+                    if not bodies:
+                        skipped += len(spans)
+                        continue
+                    for span in spans:
+                        checked += 1
+                        if cls.present(span, bodies):
+                            matched += 1
+                        else:
+                            failing.setdefault(identifier, []).append(span)
+        return checked, matched, failing, skipped
+
+    def test_every_quoted_basis_span_is_in_the_source_it_cites(self) -> None:
+        checked, matched, failing, _skipped = self.survey()
+        self.assertGreater(checked, 600, "the survey stopped finding quotations")
+        undeclared = {
+            identifier: spans for identifier, spans in failing.items()
+            if identifier not in self.UNREOPENABLE
+        }
+        self.assertEqual(
+            undeclared, {},
+            "a basis quotes words that are not in the source it cites:\n"
+            + "\n".join(f"  {identifier}: {span[:120]!r}"
+                         for identifier, spans in sorted(undeclared.items())
+                         for span in spans))
+        for identifier, spans in failing.items():
+            expected, _reason = self.UNREOPENABLE[identifier]
+            self.assertEqual(
+                len(spans), expected,
+                f"{identifier} has {len(spans)} unreopenable spans, not "
+                f"{expected}; the exception list has to say what it covers")
+        self.assertEqual(matched, checked - sum(len(s) for s in failing.values()))
+
+    def test_the_exception_list_is_not_carrying_a_span_that_now_matches(self) -> None:
+        """An exception that has quietly started passing is a claim nobody is
+        checking any more. Every declared claim must still be failing."""
+        _checked, _matched, failing, _skipped = self.survey()
+        self.assertEqual(
+            sorted(failing), sorted(self.UNREOPENABLE),
+            "the exception list and the spans that actually cannot be reopened "
+            "have come apart")
+        for identifier, (_count, reason) in self.UNREOPENABLE.items():
+            self.assertGreater(len(reason), 40, identifier)
+
+    def test_no_basis_leaves_a_quotation_mark_unclosed(self) -> None:
+        """`spans` reads quotation marks in pairs, so an odd number of them
+        would silently stop this whole test seeing a claim."""
+        corpus = _chronology.load()
+        odd = []
+        for kind, holder in (("event", corpus.events), ("unit", corpus.units)):
+            for subject in holder.values():
+                for index, claim in enumerate(subject.claims):
+                    if claim.basis and claim.basis.count('"') % 2:
+                        odd.append(f"{kind}:{subject.id}#{index}")
+        self.assertEqual(odd, [])
+
+
+# --- PCC-28: century notation, written down where a reader will find it -----
+
+
+class CenturyNotationTests(unittest.TestCase):
+    """A source that names a century and no year is stored as an interval, and
+    the interval is the century entire even where the source narrows inside it.
+
+    Six claims did that while the rule for it lived only inside their own six
+    notes, so a cold reviewer met the convention six times and the convention
+    nowhere, and read the widened bounds as an undeclared project computation
+    sitting on a `traditional-catholic` or `reported-traditional` basis --
+    which rank 7 permits only as `derived`, with a named rule and every input
+    identified. The rule is now `display.century_notation` in profiles.yaml.
+    These tests hold the data and the written rule to each other.
+    """
+
+    RULE = "century_notation"
+
+    @staticmethod
+    def _century_notated():
+        corpus = _chronology.load()
+        found = {}
+        for unit in corpus.units.values():
+            for index, claim in enumerate(unit.claims):
+                date = claim.date
+                if not date or date.precision != "interval":
+                    continue
+                begin, end = date.begin, date.end
+                if not begin or not end or begin.year is None or end.year is None:
+                    continue
+                if begin.year % 100 == 0 and end.year % 100 == 1:
+                    found[f"{unit.id}#{index}"] = claim
+        return found
+
+    def test_the_profile_states_the_rule_these_claims_run_on(self) -> None:
+        profile = _chronology.load().profiles["catholic-traditional-v1"]
+        display = profile.get("display", {})
+        self.assertIn(self.RULE, display,
+                      "the notation rule is not written down in the profile")
+        stated = display[self.RULE]
+        # the two things the rule has to settle, and did not before.
+        self.assertIn("entire", stated.lower())
+        self.assertIn("derived", stated.lower())
+
+    def test_every_century_notated_claim_cites_the_rule(self) -> None:
+        claims = self._century_notated()
+        self.assertEqual(len(claims), 6, sorted(claims))
+        for identifier, claim in claims.items():
+            self.assertIsNotNone(claim.note, identifier)
+            self.assertIn(self.RULE, claim.note, identifier)
+
+    def test_no_century_notated_claim_pretends_to_be_a_derivation(self) -> None:
+        """The alternative settlement was to re-author these as rank-7
+        `derived`. It was not taken, so nothing may carry the marks of it."""
+        for identifier, claim in self._century_notated().items():
+            self.assertNotEqual(claim.basis_class, "derived", identifier)
+            self.assertIsNone(claim.date.derivation, identifier)
+
+    def test_the_bounds_are_the_whole_century_and_never_narrower(self) -> None:
+        """A narrowing inside the century lives in the label. If it ever
+        reaches the bounds, the corpus has asserted a year no source printed."""
+        for identifier, claim in self._century_notated().items():
+            begin, end = claim.date.begin, claim.date.end
+            self.assertEqual(begin.year % 100, 0, identifier)
+            self.assertEqual(end.year % 100, 1, identifier)
+            self.assertEqual((begin.year - end.year + 1) % 100, 0, identifier)
+
+
+# --- PCC-29: the Petavius table's positional extraction, re-checked ---------
+
+
+class PetaviusTableTests(unittest.TestCase):
+    """Ten answerable claims, four of them preferred, come from a table whose
+    label cells and year cells New Advent delivers as separate blocks; the
+    corpus paired them BY POSITION and every one of the ten notes said to
+    re-verify against a page image before publishing.
+
+    The article's bytes are now retained, so the pairing is reopenable here.
+    These tests are that re-check, run as a test rather than asserted in prose:
+    inside each block of the table the year for a label stands a constant
+    number of lines further on, and on that constant all ten figures pair as
+    the claims record. What is NOT settled by them, and is not claimed by them,
+    is whether New Advent's delivery reproduces the printed page's rows; the
+    volume-8 facsimile is registered `remote` and is not retained.
+    """
+
+    ARTICLE = (REPOSITORY_ROOT / "src" / "sources" / "works"
+               / "catholic-encyclopedia" / "volume-8" / "editions"
+               / "new-york-1910" / "artifacts"
+               / "newadvent-08654a-645bba6c-article-text"
+               / "newadvent-08654a-645bba6c-article-text.txt")
+    SOURCE = ("artifact.catholic-encyclopedia.volume-8.new-york-1910"
+              ".newadvent-08654a-645bba6c")
+
+    # (block name, the label that opens the paired range, the label that closes
+    #  it, the constant offset, and the pairings the claims rest on).
+    BLOCKS = (
+        ("first Juda block", "David", "Joas", 21,
+         (("David", "1055"), ("Solomon", "1015"),
+          ("(Building of the", "1012"), ("Roboam", "975"))),
+        ("second Juda block", "Amasias", '" (end)', 19,
+         (("Ezechias", "727"), ("Josias", "641"), ("Joakim", "610"),
+          ("Sedecias", "599"), ('" (end)', "588"))),
+        ("Israel block", "Jeroboam", '"(end)', 17,
+         (('"(end)', "721"),)),
+    )
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.lines = [line.rstrip() for line in cls.ARTICLE.read_text().splitlines()]
+
+    def _first(self, text: str) -> int:
+        for index, line in enumerate(self.lines):
+            if line == text:
+                return index
+        self.fail(f"{text!r} is not in the retained article text")
+
+    def test_each_label_pairs_with_its_year_at_the_blocks_constant(self) -> None:
+        for name, _open, _close, offset, pairings in self.BLOCKS:
+            for label, year in pairings:
+                at = self._first(label)
+                self.assertEqual(
+                    self.lines[at + offset], year,
+                    f"{name}: {label!r} at line {at + 1} does not pair with "
+                    f"{year!r} at the block's offset of {offset}")
+
+    def test_the_two_columns_share_one_blank_line_skeleton(self) -> None:
+        """The property that makes the pairing structural rather than a guess:
+        a blank line in the label column always faces a blank line in the year
+        column, and the only label lines facing a blank belong to a label that
+        wraps onto two lines."""
+        wrapped = {"Temple)", "Jeroboam", "num)"}
+        for name, opener, closer, offset, _pairings in self.BLOCKS:
+            first, last = self._first(opener), self._first(closer)
+            self.assertLess(first, last, name)
+            for at in range(first, last + 1):
+                label, year = self.lines[at], self.lines[at + offset]
+                if label == "":
+                    self.assertEqual(
+                        year, "",
+                        f"{name}: a blank label line at {at + 1} faces "
+                        f"{year!r}")
+                elif year == "":
+                    self.assertIn(
+                        label, wrapped,
+                        f"{name}: {label!r} at line {at + 1} faces a blank "
+                        f"year and is not a wrapped label")
+
+    def test_the_ten_claims_are_the_ones_the_notes_say_they_are(self) -> None:
+        resting = {
+            f"{event.id}#{index}": claim
+            for event in _chronology.load().events.values()
+            for index, claim in enumerate(event.claims)
+            if self.SOURCE in claim.sources
+            and claim.basis_class == "reported-traditional"
+        }
+        self.assertEqual(len(resting), 10, sorted(resting))
+        self.assertEqual(
+            sum(1 for claim in resting.values()
+                if claim.disposition == "preferred"), 4)
+        for identifier, claim in resting.items():
+            self.assertIn("CHECKED 2026-09-02", claim.note or "", identifier)
+            self.assertIn("NARROWED, NOT WITHDRAWN", claim.note or "", identifier)
 
 
 # --- PCC-22: the stated rule and the enforced rule, pinned together ---------
@@ -3341,6 +4018,18 @@ class StatedRuleIsTheEnforcedRuleTests(unittest.TestCase):
         holder = corpus_.events if kind == "event" else corpus_.units
         return holder[subject].claims[int(index)]
 
+    @staticmethod
+    def every_claim() -> dict:
+        """Every claim in the tracked corpus, by the id this class names them
+        with. A test that wants "the corpus's instances of X" asks the corpus."""
+        corpus_ = _chronology.load()
+        found = {}
+        for kind, holder in (("event", corpus_.events), ("unit", corpus_.units)):
+            for subject in holder.values():
+                for index, claim in enumerate(subject.claims):
+                    found[f"{kind}:{subject.id}#{index}"] = claim
+        return found
+
     def test_every_example_the_rule_names_is_ruled_the_way_it_says(self) -> None:
         for identifier, answerable, key in self.cases():
             with self.subTest(claim=identifier):
@@ -3365,13 +4054,39 @@ class StatedRuleIsTheEnforcedRuleTests(unittest.TestCase):
 
     def test_the_corroborative_reading_shows_its_primary_ground(self) -> None:
         # `corroboration_is_not_the_ground` does not let a claim assert the
-        # reading and stop: it has to show the admissible ground. Agrippa is
-        # the corpus's one instance, and Prat is what it shows.
-        claim = self.claim("event:apostolic-age.death-of-herod-agrippa#0")
-        note = " ".join(claim.note.split())
+        # reading and stop: it has to show the admissible ground.
+        #
+        # This comment said "Agrippa is the corpus's one instance" until
+        # 2026-09-02, and it was wrong: life-of-christ.death-of-herod#0 invokes
+        # the same clause over Josephus's lunar eclipse and was untested, so a
+        # regression there would have gone green. The instances are found by
+        # QUERY now, and the count is asserted, so a third one cannot arrive
+        # unnoticed either.
+        invoking = sorted(
+            identifier for identifier, claim in self.every_claim().items()
+            if claim.note and "corroboration_is_not_the_ground" in claim.note
+        )
+        self.assertEqual(
+            invoking,
+            ["event:apostolic-age.death-of-herod-agrippa#0",
+             "event:life-of-christ.death-of-herod#0"],
+            "a claim invokes the corroboration clause and is not tested here")
+
+        # Agrippa: the ground shown is Prat's reckoning, not the coin.
+        note = " ".join(self.claim(
+            "event:apostolic-age.death-of-herod-agrippa#0").note.split())
         self.assertIn("corroboration_is_not_the_ground", note)
         self.assertIn("These combined facts bring us to the year 44", note)
         self.assertIn("naming no coin", note)
+
+        # Herod the Great: the ground shown is Howlett's reckoning from
+        # Josephus on the reign, not the eclipse the article corroborates with.
+        herod = " ".join(self.claim(
+            "event:life-of-christ.death-of-herod#0").note.split())
+        self.assertIn("corroboration_is_not_the_ground", herod)
+        self.assertIn("corroborated by an eclipse of the moon", herod)
+        self.assertIn("names no eclipse", herod)
+
         # And the refusing side says why its warrant is the sole ground.
         nahum = self.claim("unit:composition.book-of-nahum.chapters-2-3#0")
         self.assertIn("inscription of Nabonidus", " ".join(nahum.basis.split()))

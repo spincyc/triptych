@@ -493,6 +493,14 @@ preserved non-answerable evidence
 provenance views may expose preserved non-answerable evidence, and have to ask
 for it.
 
+**A surface that returns both must say which is which.** `--evidence` returns
+answers and preserved evidence in one list, so a row whose `answerability` is
+not `answerable` carries that word beside its disposition — `alternate
+(preserved)` — in the human output, exactly as `--json` carries the
+`answerability` field. `disposition` alone never says it: a preserved figure
+and a live alternative are both `alternate` (§4.6), and a reader who cannot
+tell them apart is reading the default's exclusion as a ranking.
+
 ### 4.7 Profile policy is production semantic state
 
 A profile edit can change the meaning of hundreds of claims whose files nobody

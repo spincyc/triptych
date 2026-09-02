@@ -440,8 +440,19 @@ def _render_query(payload: dict) -> int:
         # the two is what anybody wrote down. The structured form stays the
         # truth and stays in --json.
         shown = item["label"] or item["date"]
+        # PRESERVED EVIDENCE IS NOT AN ANSWER, and --evidence is the one surface
+        # that returns both, so the reader has to be able to tell them apart
+        # without going to --json. `answerability` is the field that decides it
+        # (guidance §4.6), so this prints that word rather than a second
+        # vocabulary. It rides in the disposition cell, and only where the state
+        # is not `answerable`, so the column shape is fixed and the default
+        # candidate set - which never carries a preserved claim - renders
+        # exactly as it did.
+        disposition = item["disposition"]
+        if item["answerability"] != "answerable":
+            disposition = f"{disposition} ({item['answerability']})"
         print(
-            f"{item['relation']}\t{shown}\t{item['disposition']}"
+            f"{item['relation']}\t{shown}\t{disposition}"
             f"\t{reach}\t{item['subject']}\t{item['title']}"
         )
     return 0
@@ -525,7 +536,8 @@ def main(argv: list[str] | None = None) -> int:
         help=(
             "also return preserved non-answerable evidence, which the default "
             "candidate set excludes: what a source printed and this profile "
-            "does not answer with"
+            "does not answer with; such a row carries its answerability state "
+            "beside its disposition, as 'alternate (preserved)'"
         ),
     )
     with_examples(ask, EXAMPLES["query"])

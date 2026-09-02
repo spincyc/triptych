@@ -4,13 +4,16 @@
 # This file exists because the repository had been holding two answers to one
 # question at the same time. The Internet Archive facsimiles of volumes 4 and 8
 # were recorded as `rights_status = "public-domain"`, jurisdiction United
-# States. The 122 New Advent deliveries of the very same articles were recorded
-# as `rights_status = "restricted"`, with the reason given only in prose, and
-# with the note "Remote bytes are not retained." on every one of them. The
+# States. All 122 New Advent deliveries registered under the same work — 118 of
+# them of the very same articles, and four of New Advent's own letter indexes —
+# were recorded as `rights_status = "restricted"`, with the reason given only in
+# prose, and with the note "Remote bytes are not retained." on them. The
 # encyclopedia cannot be both. Calling a public-domain text restricted because
 # the page it was read on carries somebody's footer is the error this record
 # exists to stop, and it had already cost the project the ability to reopen
-# roughly two hundred rank-6 quotations without a network.
+# offline the 281 of the Scripture chronology corpus's 463 dated claims that
+# cite a Catholic Encyclopedia article. Both figures are measured, by the
+# command in `how_to_check_this_record`, not estimated.
 #
 # It is not legal advice, it is not an opinion of counsel, and it binds nobody
 # outside this repository. Where it states a proposition of law it states the
@@ -19,6 +22,20 @@
 rights_schema = 1
 record_type = "catholic-encyclopedia-rights"
 recorded_on = "2026-09-02"
+revised_on = "2026-09-02"
+revision_note = """
+Revised the same day it was written, on a cold reader's finding. The first
+draft said the imprint years could be read off "the citation block this project
+retains" and that "the check is the page's own printed volume and year, which
+the retained bytes carry". That was false of the files it pointed at: the
+extraction stops AT New Advent's "About this page" block, so no *-article-text
+file contains "Robert Appleton" or "The Catholic Encyclopedia. Vol". The
+conclusion did not move; the stated method did, to the place the evidence
+actually is, and `how_to_check_this_record` now gives the commands. The same
+pass found four New Advent letter-index pages registered as public-domain
+encyclopedia articles and de-registered their derivatives; see
+`the_index_pages`.
+"""
 jurisdiction = "United States"
 
 holding = """
@@ -41,6 +58,11 @@ exact HTML delivery stays `remote`, hashed, with its access limitation written
 out. The encyclopedia article inside it is extracted mechanically, retained as a
 tracked derivative under `rights_status = "public-domain"`, and is what every
 consuming claim can be reopened against offline.
+
+All of that is about the encyclopedia's articles. It does not reach New Advent's
+own per-letter index pages, which are its compilation and not the encyclopedia's
+text at all; `the_index_pages` says why they fall outside this record and what
+was done about the four of them registered here.
 """
 
 [the_underlying_text]
@@ -49,13 +71,53 @@ answer = "No. Its longest possible term expired at the end of 2007."
 reasoning = """
 The Catholic Encyclopedia was published in New York by the Robert Appleton
 Company in sixteen volumes. The fifteen volumes of articles carry imprint years
-from 1907 to 1912, and the index volume 1914. Those years are not assumed here:
-each New Advent article prints its own volume and year in the citation block
-this project retains, and the two Internet Archive facsimiles registered in this
-library reproduce the printed volumes themselves — volume 4 dated 1908, volume 8
-dated 1910. Across the 118 articles retained on 2026-09-02, the printed years
-read: volumes 1-2, 1907; 3-4, 1908; 5-6, 1909; 7-9, 1910; 10-12, 1911; 13-15,
-1912. The latest year on any of them is 1912.
+from 1907 to 1912, and the index volume 1914.
+
+Those years are not assumed here, and it matters exactly where they can be read,
+because the first draft of this record named the wrong place. They are NOT in
+the retained article text. The extraction described in `what_is_retained` stops
+at New Advent's "About this page" block, which is precisely where the page
+prints its citation, so not one of the 110 retained *-article-text files
+contains the string "Robert Appleton" or the string "The Catholic Encyclopedia.
+Vol". A reader told to look there would find nothing.
+
+They are in the tracked artifact records. The `notes` field of each New Advent
+article delivery quotes that page's own citation line, in the form
+
+  <author>. "<title>." The Catholic Encyclopedia. Vol. <n>. New York: Robert
+  Appleton Company, <year>.
+
+and each retained derivative's record inherits its parent's notes, so the line
+stands in 224 tracked `artifact.toml` files: the 114 article deliveries and the
+110 derivatives extracted from them. In all 224 the volume and the year that
+line states agree with the volume and the year in the record's own `edition_id`.
+Reading the imprint back is therefore a grep and a comparison over tracked
+bytes, and `how_to_check_this_record` gives both commands and their output. The
+years so read are: volumes 1-2, 1907; 3-4, 1908; 5-6, 1909; 7-9, 1910; 10-12,
+1911; 13-15, 1912. The latest year on any of them is 1912. The same mapping is
+carried independently by the fifteen tracked `edition.toml` records, whose
+`publication` lines read "New York: Robert Appleton Company, <year>".
+
+Eight registered New Advent deliveries carry no such line, and neither is an
+exception to any of this. Four are the letter-index pages of `the_index_pages`,
+which are not encyclopedia articles. Four are the deliveries of
+`what_was_not_retained`, registered before this convention, each naming its
+article and its printed year in prose instead.
+
+One line of New Advent's citation apparatus is thus retained, deliberately, in
+the artifact records — and only there, never in the article files. It is kept
+because it is the imprint evidence and nothing else held here carries it. It is
+a single bibliographic sentence naming author, title, volume, publisher and
+year, quoted to identify a source, and what this record rests on is the facts it
+states rather than its wording.
+
+The two Internet Archive facsimiles registered in this library are of the
+printed volumes themselves, and their records report that the page images were
+rendered and inspected — volume 4 dated 1908, volume 8 dated 1910. That is
+recorded provenance and not an offline check, and it is named as such: both are
+`storage = "remote"`, at 112,731,583 and 135,877,116 bytes, so a reader who
+wants to see a title page must refetch the file and verify it against the
+sha256 its record carries.
 
 A work published in the United States in 1912 secured its copyright on
 publication with notice under the Copyright Act of 1909, for a first term of 28
@@ -105,8 +167,22 @@ The selection, arrangement, wording and design of that apparatus are New
 Advent's own work and this project treats them as protected. Nothing in this
 record disputes the footer's application to them, and nothing here redistributes
 them: the extraction described in `what_is_retained` cuts the page at the
-article's own heading and stops at the "About this page" block, and the retained
-files were checked to contain none of that apparatus.
+article's own heading and stops at the "About this page" block. That was
+checked, over the retained bytes, and it holds: none of the 110 retained
+*-article-text files contains any of "Robert Appleton", "The Catholic
+Encyclopedia. Vol", "About this page", "New Advent", "Nihil Obstat",
+"Imprimatur", "Transcribed" or "Copyright". `how_to_check_this_record` gives
+the one command that shows it.
+
+Two qualifications, because the sentence above is easy to over-read. It is a
+statement about the retained article files only. The artifact RECORDS do quote
+one line of the apparatus — the page's own bibliographic citation — and
+`the_underlying_text` says why and treats it as retained. And the description
+of the rest of the page in this section is of bytes that are remote: nobody can
+open them from this checkout, and a reader who wants to confirm the navigation,
+the advertising containers, the solicitation or the footer must refetch a
+delivery and authenticate it against the sha256 and byte_size its record
+carries.
 
 What the footer does not do is make the article copyrighted. A notice on a page
 is a claim about the page, and a claim is not a determination; the encyclopedia
@@ -138,10 +214,14 @@ as reasoning, not as authority.
 Where a transcriber does add something of their own — a new introduction,
 editorial notes, a fresh translation, corrections and conjectures that are the
 transcriber's judgement rather than the printed page's words — that addition is
-theirs, and this record does not reach it. New Advent's pages carry no such
-additions inside the article body: they carry the article, hyperlinked. The
-project's position is that the article text on a New Advent cathen page is the
-public-domain article and nothing more.
+theirs, and this record does not reach it. New Advent's cathen ARTICLE pages
+carry no such additions inside the article body: they carry the article,
+hyperlinked. The project's position is that the article text on a New Advent
+cathen article page is the public-domain article and nothing more.
+
+New Advent's per-letter index pages are the counterexample and are the reason
+that sentence names article pages rather than pages. Those are New Advent's own
+writing throughout, and `the_index_pages` treats them separately.
 
 Recorded as a judgement, because it is one. If it is wrong, it is wrong in one
 direction only: the extracted files would contain a transcription New Advent
@@ -153,13 +233,82 @@ source_ids = [
   "artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04",
 ]
 
+[the_index_pages]
+question = "Do New Advent's per-letter index pages fall under this record?"
+answer = "No. They are New Advent's own compilations, not encyclopedia articles."
+reasoning = """
+Four artifacts registered under work.catholic-encyclopedia.alphabetical-index
+are not Catholic Encyclopedia articles at all, and for part of 2026-09-02 this
+project registered extractions of them as though they were, under the
+public-domain basis stated above. They are New Advent's per-letter indexes:
+
+  artifact.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-g-064c6c3b
+  artifact.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-g-ce-5c91a95b
+  artifact.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-n-ce-5fd9c5e7
+  artifact.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-n-ef3ba0eb
+
+Each is a list of links to encyclopedia articles, every link followed by a
+one-line description. The article titles are the encyclopedia's. The selection,
+the arrangement and the descriptions are New Advent's, and the descriptions are
+frequently not the article's own words. Two comparisons, both openable in this
+repository. The encyclopedia's "Nahum" article opens, under its title, "One of
+the Prophets of the Old Testament, the seventh in the traditional list of the
+twelve Minor Prophets."; the index entry for it read "Essay on the Old Testament
+prophet and the book which bears his name". The encyclopedia's "Genesius"
+article opens, under its title, "Genesius (of Rome)"; the index entry for it
+read "Five people with this name including: Genesius of Rome; Genesius of Arles;
+Genesius, Bishop of Clermont; Genesius Count of Clermont; and Genesius of
+Lyons". The two encyclopedia openings are in
+the retained text of newadvent-10670a-2f9e032c and newadvent-06413c-a10d26f7,
+named in full in `source_ids` below. The two abridged pages also carried, above
+their first entry, a paragraph that is New Advent's site prose and nobody
+else's: "This list represents only a tiny fraction of articles available on the
+New Advent website. For a more complete list, please see the full index for G or
+use the search box at the top of this page."
+
+So the two-component analysis of `the_host_delivery` does not reach these pages.
+There is no pre-existing public-domain article sitting inside a host's
+presentation here. There is a host's compilation, and it is the whole page. A
+derivative of it cannot be retained under the encyclopedia's basis, because the
+encyclopedia's basis is about the encyclopedia's words and these are not they.
+
+What was done, on 2026-09-02: the four `*-article-text` derivatives were
+de-registered and their bytes removed; the four delivery records had
+`rights_status` corrected from `public-domain` to `restricted` and their
+`rights_basis` rewritten to say what the page actually is; and the sentence
+"The exact page is not retained here", which had been copied onto the very files
+that WERE the retained text, went with the files it was false on.
+
+De-registering cost nothing that was in use. No chronology record cited the
+derivatives — the gap rows that rest on these pages cite the remote deliveries,
+which are untouched, hash and byte size intact — and nothing else in the
+repository referred to them. What each page can and cannot bear as evidence
+was already written out in its passage record and stays there.
+
+This record does not decide whether New Advent's compilation is protected, and
+does not need to. The project has no use for the page's prose, does not
+redistribute the bytes, and the disposition would be the same either way. The
+four glosses and the one paragraph quoted above are quoted as the evidence for
+that disposition, not republished as content.
+"""
+source_ids = [
+  "artifact.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-g-064c6c3b",
+  "artifact.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-g-ce-5c91a95b",
+  "artifact.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-n-ce-5fd9c5e7",
+  "artifact.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27.index-n-ef3ba0eb",
+  "artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10670a-2f9e032c-article-text",
+  "artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06413c-a10d26f7-article-text",
+]
+
 [what_is_retained]
 question = "What actually enters the repository, and under what disposition?"
 answer = "The article text, as a tracked derivative; never the exact page."
 reasoning = """
-For every New Advent Catholic Encyclopedia delivery whose exact acquired bytes
-this project still holds and can authenticate against the hash its record
-already carried, two artifacts now exist.
+For every New Advent Catholic Encyclopedia ARTICLE delivery whose exact
+acquired bytes this project still holds and can authenticate against the hash
+its record already carried, two artifacts now exist. The qualifier is load-
+bearing: the four letter-index pages of `the_index_pages` are deliveries under
+the same work but are not articles, and they have no second artifact.
 
 The exact HTML response keeps its identity and stays `remote`: hash, byte size,
 retrieval date, source URL, and an access limitation saying in plain words that
@@ -168,7 +317,9 @@ a reader should open instead. Its `rights_status` is corrected from
 `restricted` to `public-domain`, because that field states the standing of the
 work the artifact carries, and the encyclopedia is public domain; the reason the
 bytes are not republished is a fact about New Advent's apparatus and belongs in
-`rights_basis`, where it now is.
+`rights_basis`, where it now is. The four index deliveries are the one place
+where that correction was made and then withdrawn: their `rights_status` is
+`restricted`, because the work THEY carry is New Advent's own compilation.
 
 The article text is a second artifact, `artifact_type = "normalized-text"`,
 `storage = "tracked"`, `rights_status = "public-domain"`, jurisdiction United
@@ -197,16 +348,24 @@ consuming claim in this repository was already resting on.
 
 [what_was_not_retained]
 question = "After the retention pass of 2026-09-02, what is still not held here, and why?"
-answer = "Four deliveries, for a reason of evidence rather than of rights."
+answer = "Eight deliveries: four for a reason of evidence, four because they are not articles."
 reasoning = """
-118 of the 122 New Advent Catholic Encyclopedia deliveries registered in this
-library now have their article text retained: 114 as their own tracked
-derivative, and 4 more whose extracted text proved byte-identical to a sibling
-delivery of the same article and is therefore held once rather than twice. Every
-one of the 114 deliveries the Scripture chronology corpus cites is among them,
-where before this pass none was.
+The 122 New Advent deliveries registered in this library divide as follows.
+114 are Catholic Encyclopedia articles whose exact bytes were held and
+authenticated: 110 of them now carry their own tracked text derivative, and the
+other 4 carry none because their extracted text proved byte-identical to a
+sibling delivery of the same article, so it is held once rather than twice and
+each record names the sibling to open. Every one of the 111 article deliveries
+the Scripture chronology corpus cites is among the 114, where before this pass
+none was reopenable offline.
 
-Four are not:
+Four more are the letter-index pages of `the_index_pages`. They are not
+encyclopedia articles, they carry no article text to extract, and the
+derivatives briefly registered against them on 2026-09-02 were de-registered the
+same day. That is a question of what the pages are, not of evidence, and it is
+settled in its own section.
+
+The remaining four are not retained for a reason of evidence:
 
   artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-credence-html
   artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-manuterge-html
@@ -242,9 +401,10 @@ examined = """
 RETAIN THE EXACT HTML AS TRACKED. Refused. It would redistribute New Advent's
 navigation, styling, advertising markup, solicitation and "About this page"
 apparatus, which are theirs and for which no permission exists. It would also
-put 4.6 MB of site chrome into the repository to carry 2.7 MB of text. The
-project's rule is that `tracked` needs an affirmative distribution basis, and
-there is none for the apparatus.
+put the whole of 4,599,797 bytes of delivery into the repository to carry the
+2,522,626 bytes of article text that were actually wanted, both measured by the
+command in `how_to_check_this_record`. The project's rule is that `tracked`
+needs an affirmative distribution basis, and there is none for the apparatus.
 
 EXTRACT THE ARTICLE AND TRACK THAT. Adopted. It is the route
 `guidance/sources.md` already prescribes in terms — "Distinguish the underlying
@@ -258,7 +418,8 @@ where a New Advent page's public-domain text is tracked and the delivery is not.
 TRACK THE INTERNET ARCHIVE FACSIMILES INSTEAD. Held in reserve, not adopted
 now, on measured size. The two volumes already registered are 112,731,583 and
 135,877,116 bytes; sixteen volumes at that scale is roughly 2 GB, against a
-repository that presently holds 775 tracked artifacts in total. This is the one
+repository that holds 885 tracked artifacts in total after this pass, counted by
+the command in `how_to_check_this_record`. This is the one
 place in this record where a genuine size argument exists, and it is recorded
 with the measurement rather than asserted. Extracting per-article text from the
 facsimiles' OCR layer would be a way to keep the evidence without the bulk; it
@@ -267,9 +428,10 @@ question, and OCR text would need its own accuracy record.
 
 WIKISOURCE AND OTHER MIRRORS. Examined and not pursued. Other hosts carry the
 1913 encyclopedia, and their text would raise exactly the same two-component
-question this record answers, with the added defect that the project's 463
-chronology claims were read against New Advent's pages and not against a
-mirror's. Substituting a different host's transcription would change what the
+question this record answers, with the added defect that the corpus's 463 dated
+chronology claims — 281 of which cite a Catholic Encyclopedia article, both
+figures measured by the command in `how_to_check_this_record` — were read
+against New Advent's pages and not against a mirror's. Substituting a different host's transcription would change what the
 claims are evidence of. If the New Advent extraction ever has to be abandoned,
 the replacement should be the printed volumes, not another website.
 
@@ -298,7 +460,7 @@ site, to keep the project's dealings straight.
 AN AUTHORITY HOLDING THAT A FAITHFUL TRANSCRIPTION IS ORIGINAL. The
 transcription judgement in `the_host_delivery` is the load-bearing one and the
 one a reasonable person could dispute. A controlling decision the other way
-would mean replacing the 114 extracted files with extractions from the Internet
+would mean replacing the 110 extracted files with extractions from the Internet
 Archive facsimiles of the printed volumes, which no transcription question
 touches. That is work, not a crisis, and it is why the facsimiles stay
 registered.
@@ -307,14 +469,132 @@ AN ARTICLE THAT IS NOT FROM THE 1907-1912 IMPRINT. New Advent's cathen tree is
 the original encyclopedia, but if any page ever proves to carry a later
 revision, a supplement, or an editorial addition rather than the printed
 article, that page falls outside this record entirely and needs its own basis.
-The check is the page's own printed volume and year, which the retained bytes
-carry.
+The check that can be run here is the one `the_underlying_text` describes: the
+volume and year of the page's own citation line, quoted in the delivery's
+tracked record, against the volume and year of the edition it is filed under.
+That catches a page filed to the wrong volume. It cannot catch a later revision
+that New Advent left the citation line untouched for; nothing retained here can,
+because the article files are a transcription of the site and not of the print,
+and a reader who needs that answer must compare against a facsimile of the
+printed volume. `the_index_pages` records the one case where a page under this
+work proved not to be an article at all, and it was caught by reading the page,
+not by any check stated here.
 
 A JURISDICTION OTHER THAN THE UNITED STATES. Stated in `limits` above and
 repeated because it is the likeliest way for this record to be misused: it
 settles nothing for a life-plus-70 country, and a reader who needs that answer
 must trace the individual contributors.
 """
+
+[how_to_check_this_record]
+question = "Which of this record's assertions can a reader with no network reopen, and how?"
+answer = "Every count and the imprint. Seven commands, run from the repository root."
+limits = '''
+These commands check what this repository holds. They do not check the printed
+volumes, and nothing offline here can: the two facsimiles are remote and the
+article text is a transcription of a website. What they establish is that the
+imprint this record reasons from is recorded in tracked bytes, is internally
+consistent, and is not something a reader has to take on trust from this file.
+'''
+checks = '''
+Each command was run against this checkout on 2026-09-02, and the output quoted
+under it is what it printed. If a figure in this record and a figure here
+disagree, this section is the one that was measured.
+
+1. THE IMPRINT, read off tracked bytes. Every New Advent article delivery
+   quotes its page own citation line in its record notes, and each retained
+   derivative inherits its parent notes:
+
+     grep -ho "New York: Robert Appleton Company, [0-9]*\." \
+       src/sources/works/catholic-encyclopedia/*/editions/*/artifacts/*/artifact.toml \
+       | sort | uniq -c
+
+   22 x 1907, 30 x 1908, 28 x 1909, 70 x 1910, 46 x 1911, 28 x 1912. 224 lines,
+   no other year, and 1912 is the latest.
+
+2. THE IMPRINT, checked against the record it is filed under. Every one of
+   those 224 must agree with its own edition_id:
+
+     python3 -c "
+     import glob,re,tomllib
+     n=0;bad=[]
+     for p in glob.glob('src/sources/works/catholic-encyclopedia/*/editions/*/artifacts/*/artifact.toml'):
+         r=tomllib.load(open(p,'rb'))
+         m=re.search(r'The Catholic Encyclopedia[.] Vol[.] (\d+)[.] New York: Robert Appleton Company, (\d{4})[.]', r.get('notes','') or '')
+         if not m: continue
+         n+=1
+         e=r['edition_id']
+         if ('volume-%s.'%m.group(1)) not in e or ('new-york-%s'%m.group(2)) not in e: bad.append(r['id'])
+     print(n,'records carry the printed citation;',len(bad),'disagree with their edition_id')
+     "
+
+   224 records carry the printed citation; 0 disagree with their edition_id
+
+3. THE SAME MAPPING, independently, in the edition records:
+
+     grep -h "^publication" \
+       src/sources/works/catholic-encyclopedia/volume-*/editions/*/edition.toml \
+       | sort | uniq -c
+
+   Fifteen lines over six years: 2 x 1907, 2 x 1908, 2 x 1909, 3 x 1910,
+   3 x 1911, 3 x 1912.
+
+4. WHAT THE RETAINED ARTICLE FILES DO AND DO NOT CONTAIN. The count, then the
+   apparatus check that `the_host_delivery` states:
+
+     ls src/sources/works/catholic-encyclopedia/volume-*/editions/*/artifacts/*-article-text/*.txt | wc -l
+     grep -rlF -e "Robert Appleton" -e "The Catholic Encyclopedia. Vol" \
+       -e "About this page" -e "New Advent" -e "Nihil Obstat" -e "Imprimatur" \
+       -e "Transcribed" -e "Copyright" \
+       src/sources/works/catholic-encyclopedia/volume-*/editions/*/artifacts/*-article-text/*.txt | wc -l
+
+   110, then 0. The second is why this record does NOT send a reader to these
+   files for the imprint: the citation block is exactly what the extraction cuts
+   away.
+
+5. THE SIZES the size argument in `routes_examined` rests on:
+
+     python3 -c "
+     import glob,tomllib
+     w=t=0
+     for p in glob.glob('src/sources/works/catholic-encyclopedia/*/editions/*/artifacts/*/artifact.toml'):
+         r=tomllib.load(open(p,'rb'))
+         if 'alphabetical-index' in r['edition_id']: continue
+         if r['artifact_type']=='web-page': w+=r['byte_size']
+         if r['artifact_type']=='normalized-text': t+=r['byte_size']
+     print(w,'bytes of delivery,',t,'bytes of retained article text')
+     "
+
+   4599797 bytes of delivery, 2522626 bytes of retained article text
+
+   And the repository-wide tracked count:
+
+     grep -rl '^storage = "tracked"' --include=artifact.toml src/sources/works | wc -l
+
+   885.
+
+6. THE CHRONOLOGY FIGURES quoted in the header and in `routes_examined`:
+
+     python3 -c "
+     import yaml
+     t=c=0
+     for f,k in (('events','events'),('composition','units')):
+         for i in yaml.safe_load(open('src/sources/chronology/'+f+'.yaml'))[k]:
+             for d in (i.get('dates') or []):
+                 t+=1
+                 if any('catholic-encyclopedia' in s for s in (d.get('sources') or [])): c+=1
+     print(t,'dated claims;',c,'cite a Catholic Encyclopedia artifact')
+     "
+
+   463 dated claims; 281 cite a Catholic Encyclopedia artifact
+
+7. THE WHOLE LIBRARY still validates after all of the above:
+
+     python3 tools/tpt source-library validate
+
+   source-library valid: artifact=2030 corpus=5 edition=722 passage=2873
+   segment=71 work=540 bindings=2150
+'''
 
 [what_this_does_not_establish]
 reasoning = """

@@ -438,6 +438,35 @@ profiles:
       era_epochs: >-
         No Anno Mundi epoch is fixed by this profile. Traditional sources use
         several and this corpus has inspected none of them as an epoch claim.
+      century_notation: >-
+        A source that names a CENTURY and no year is notated as that century
+        ENTIRE: "the eighth century B.C." is the interval 800 B.C. to 701 B.C.,
+        and "the end of the fifth or at the beginning of the fourth century
+        B.C." is 500 B.C. to 301 B.C., both centuries. A phrase that narrows
+        within the century — "the early portion of", "about the middle of", "at
+        the turn of" — keeps its narrowing in the label and DOES NOT move the
+        bounds, because the narrowing names no year and the alternative is to
+        invent one the source never printed. The interval is therefore
+        deliberately wider than the claim, and neither of its endpoints is
+        asserted: a consumer reading 700 B.C. or 601 B.C. as a date this profile
+        holds has read the notation as a claim about its own limits, which it is
+        not, and the label is what the source said.
+
+        This is NOTATION, not derivation, and rank 7 `derived` neither applies
+        to it nor may be used for it. A derivation computes a date FROM ranked
+        claims by a rule and needs its inputs identified; a century phrase is
+        ONE claim, restated in the units the machine stores, with nothing
+        combined and nothing inferred. Six claims are notated this way -
+        composition.first-book-of-paralipomenon, second-book-of-paralipomenon,
+        book-of-tobias, book-of-joel, book-of-abdias and book-of-malachias - and
+        each says so in its own note.
+
+        Written down here on 2026-09-02. The rule had been stated only inside
+        those six notes, so a cold reviewer met the same convention six times
+        and the convention nowhere, and reasonably read the widened bounds as an
+        undeclared project computation sitting on a `traditional-catholic` or
+        `reported-traditional` basis. The convention was already uniform; what
+        was missing was a reader who could find it.
     non_goals:
       - Deciding questions the Church has not defined.
       - Dating every verse. A verse the sources do not date stays undated and says so.

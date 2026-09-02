@@ -30,8 +30,9 @@ loader in it: this lane leaves its work uncommitted for a coordinator to
 review, and a manifest that could only be built after the commit would be
 built too late to inform it.
 
-  python3 scripts/build_profile_contract_manifest.py [--base REV]
-  python3 scripts/build_profile_contract_manifest.py --check   # exit 1 if stale
+  python3 scripts/build_profile_contract_manifest.py            # safe to run
+  python3 scripts/build_profile_contract_manifest.py --check    # exit 1 if stale
+  python3 scripts/build_profile_contract_manifest.py --base REV # a DIFFERENT artifact
 
 `--check` re-derives and compares against the tracked file rather than writing
 it, so the manifest cannot drift from its own rule unnoticed. It was added on
@@ -39,12 +40,30 @@ it, so the manifest cannot drift from its own rule unnoticed. It was added on
 reviewer works from, and had no way of saying it had gone stale -- a review
 surface that quietly stops describing the corpus reads as a clean bill.
 
-WHERE `--check` GETS ITS BASE, and why it is not `HEAD`. The manifest is a diff
-against one committed revision, so re-deriving it against a different base is a
-different artifact and not a drift report. The base is therefore read out of the
-tracked manifest's own header, which prints it, unless `--base` says otherwise.
-That makes the check self-describing and independent of where HEAD has moved to
-since.
+WHERE THE BASE COMES FROM, and why it is not `HEAD` and not the artifact. The
+manifest is a diff against ONE committed revision, so re-deriving it against a
+different base is a different artifact and not a drift report. The base is
+therefore pinned in this file, as `BASE_REVISION`, and both modes use it.
+
+That pin replaced two separate defects found by a cold reviewer on 2026-09-02,
+which together made the gate unable to see the one failure it exists for:
+
+  - WRITE mode defaulted its base to `HEAD`. So the regeneration command this
+    file's own header advertised, run in a clean clone, silently rebased the
+    manifest onto HEAD and collapsed it from 475 rows to 95 -- the diff of a
+    revision against itself is nearly empty, and nearly empty is what a review
+    surface looks like when there is nothing left to review.
+  - `--check` then read its base OUT OF THE HEADER OF THE FILE IT WAS CHECKING,
+    so the rebased file named the rebased base, the re-derivation matched it,
+    and the gate reported the wreckage as current, exit 0. A file that supplies
+    the standard it is judged by can always vouch for itself.
+
+So the base now lives in the RULE and not in the OUTPUT. `--check` compares the
+base the tracked file declares against this pin BEFORE it derives anything, and
+a file whose header names some other revision is reported as rebased rather than
+re-derived to match. Moving the base is a deliberate edit to this constant, by
+someone who means to, and `--base` remains for one-off comparisons that are
+explicitly not the tracked artifact.
 """
 from __future__ import annotations
 
@@ -64,6 +83,14 @@ sys.path.insert(0, str(REPO / "scripts"))
 import chronology_review_diff as review  # noqa: E402
 
 CHRONOLOGY = "src/sources/chronology"
+
+# THE PINNED BASE. The one committed revision this manifest is a diff against:
+# the last commit before the profile-contract correction lane began. It is a
+# constant of the rule, not a field of the artifact, so that a manifest which
+# has been rebased onto some other revision cannot present its own header as
+# evidence that it is current. See the module docstring for what happened when
+# it could.
+BASE_REVISION = "c1dee9fc0ddfea3ea06d951c7ad25d05b75b0341"
 HOWLETT = "artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04"
 SLOET = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08654a-645bba6c"
 
@@ -175,8 +202,10 @@ class Surface:
         return row
 
 
-# The header's own record of what the manifest was derived against. Read
-# rather than assumed, so `--check` compares like with like.
+# The header's own record of what the manifest was derived against. This is
+# read to CHALLENGE the artifact, never to configure the check: a file that
+# names a revision other than the pin has been rebased, and saying so is the
+# whole point of reading it.
 BASE_IN_HEADER = re.compile(r"^# Derived by diffing the corpus at ([0-9a-f]{7,40})", re.M)
 
 
@@ -187,6 +216,14 @@ def tracked_base(repo: Path) -> str | None:
         return None
     found = BASE_IN_HEADER.search(target.read_text())
     return found.group(1) if found else None
+
+
+def same_revision(one: str | None, other: str | None) -> bool:
+    """Two spellings of one commit. Abbreviations compare by prefix."""
+    if not one or not other:
+        return False
+    shorter, longer = sorted((one.lower(), other.lower()), key=len)
+    return longer.startswith(shorter)
 
 
 def render(repo: Path, base: str) -> tuple[str, int]:
@@ -365,13 +402,36 @@ def main(argv=None) -> int:
     repo = Path(args.repo).resolve()
     out = repo / CHRONOLOGY / "profile-contract-rereview-manifest.tsv"
 
-    base = args.base or (tracked_base(repo) if args.check else None) or "HEAD"
-    text, count = render(repo, base)
+    # The pin, in both modes. `--base` is an explicit one-off comparison and is
+    # not the tracked artifact; nothing else may move the base, and in
+    # particular the artifact under test may not nominate its own base.
+    base = args.base or BASE_REVISION
 
     if args.check:
         if not out.exists():
             print(f"{out.relative_to(repo)} does not exist", file=sys.stderr)
             return 1
+        # BEFORE deriving anything: does the tracked file even claim to be the
+        # artifact this rule produces? A rebased manifest is internally
+        # consistent -- it names its own base and re-derives to match it -- so
+        # the only thing that catches it is a base held somewhere it cannot
+        # reach. Answering this first also means the rebase is reported AS a
+        # rebase, rather than as 380 missing rows a reader has to interpret.
+        declared = tracked_base(repo)
+        if not same_revision(declared, base):
+            print(
+                f"{out.relative_to(repo)} was derived against "
+                f"{declared or 'no revision it records'}, but this manifest is "
+                f"a diff against {base}. It has been REBASED, not updated: a "
+                f"diff against a different revision is a different artifact, "
+                f"and against a recent one it is nearly empty. Restore it with "
+                f"`git checkout -- {out.relative_to(repo)}` and regenerate with "
+                f"`python3 scripts/build_profile_contract_manifest.py`, which "
+                f"uses the pinned base.",
+                file=sys.stderr,
+            )
+            return 1
+        text, count = render(repo, base)
         tracked = out.read_text()
         if tracked == text:
             print(f"{out.relative_to(repo)} is current: {count} rows against "
@@ -389,8 +449,18 @@ def main(argv=None) -> int:
               f"first differing at line {where}", file=sys.stderr)
         return 1
 
+    if not same_revision(base, BASE_REVISION):
+        print(
+            f"WARNING: writing a diff against {base}, which is not the pinned "
+            f"base {BASE_REVISION}. What lands in "
+            f"{out.relative_to(repo)} will NOT be the tracked review surface, "
+            f"and `--check` will report it as rebased. Restore it with "
+            f"`git checkout -- {out.relative_to(repo)}` when you are done.",
+            file=sys.stderr,
+        )
+    text, count = render(repo, base)
     out.write_text(text)
-    print(f"ok\t{out.relative_to(repo)}\t{count} rows")
+    print(f"ok\t{out.relative_to(repo)}\t{count} rows against {base}")
     return 0
 
 
@@ -416,7 +486,18 @@ HEADER = """\
 # reason that reached a row, so a case that four clauses of the brief reach
 # is one row that says so four times rather than four rows saying it once.
 #
-# Regenerate with `python3 scripts/build_profile_contract_manifest.py`.
+# Regenerate with `python3 scripts/build_profile_contract_manifest.py`, and ask
+# whether it has drifted with the same command and `--check`. BOTH derive
+# against the base PINNED IN THE BUILDER as `BASE_REVISION`, and NEITHER reads
+# the base out of the line above. Until 2026-09-02 write mode defaulted to HEAD,
+# so a cold reviewer who ran the command printed here in a clean clone rebased
+# this surface onto HEAD and collapsed it from 475 rows to 95 -- and `--check`,
+# which took its base from this file's own header, then reported the collapse as
+# current. Both halves are fixed; the command above is safe to run.
+#
+# `--base REV` still exists, for a one-off comparison against some other
+# revision. What it produces is a DIFFERENT artifact and is not this one, and
+# `--check` will say so.
 # Rows: {rows}.
 """
 
