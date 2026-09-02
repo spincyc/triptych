@@ -3167,5 +3167,226 @@ class RemediationTests(unittest.TestCase):
         self.assertEqual(done.returncode, 0, done.stdout + done.stderr)
 
 
+# --- PCC-22: the stated rule and the enforced rule, pinned together ---------
+
+
+DISCLOSED_METHOD = """\
+events:
+  - id: fall.of.samaria
+    title: The fall of Samaria
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        answerability: answerable
+        basis_class: traditional-catholic
+        basis: >-
+          The ranked work prints the year and states no method for it:
+          "Samaria was not taken till 722 B.C."
+        sources: [artifact.one]
+        date: {precision: year, from: {year: 722, era: bc}, label: "722 B.C."}
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        answerability: preserved
+        basis_class: modern-critical
+        basis: >-
+          The same ranked work's own table, of which it says that it gives the
+          chronology "in conjunction with the data of profane history", sets the
+          same event against "722-1".
+        sources: [artifact.one]
+        date: {precision: year, from: {year: 722, era: bc}, label: "722-1"}
+"""
+
+DISCLOSED_BINDINGS = """\
+bindings:
+  - event: fall.of.samaria
+    relation: narrated-event
+    scope: [{book: 4Kings, chapter: 17, first: 6}]
+"""
+
+
+class StatedRuleIsTheEnforcedRuleTests(unittest.TestCase):
+    """The defect this class exists to catch is the profile SAYING one rule
+    while the corpus ENFORCES another.
+
+    An independent cold review found exactly that: `admissibility.rule` was
+    written as a METHOD test -- a value is inadmissible if the method behind it
+    is excluded, "whoever prints it" -- while the corpus enforced a DISCLOSURE
+    test, refusing a claim only where its source NAMED an excluded warrant. The
+    maintainer ruled on 2026-09-02 that the disclosure test is the operative
+    policy and that the profile must say so; `profiles.yaml`
+    `admissibility.decision` carries the reasoning.
+
+    Neither half of that can be checked alone. A test that only read the prose
+    would go green on a rule nothing enforces, and a test that only exercised
+    the loader would go green on a rule nobody wrote down. So this class asserts
+    BOTH, over the same named examples: the profile's own text must state the
+    disclosure test and name these cases, and the tracked corpus must rule them
+    that way.
+    """
+
+    def setUp(self) -> None:
+        _chronology.load.cache_clear()
+        self.addCleanup(_chronology.load.cache_clear)
+        profiles, policies = _chronology._load_profiles(
+            REPOSITORY_ROOT / "src" / "sources" / "chronology"
+        )
+        self.profile = profiles[PROFILE]
+        self.policy = policies[PROFILE]
+        self.admissibility = self.profile["admissibility"]
+
+    def flat(self, key: str) -> str:
+        return " ".join(str(self.admissibility[key]).split())
+
+    # -- half one: what the profile SAYS ------------------------------------
+
+    def test_the_stated_rule_is_a_disclosure_test(self) -> None:
+        rule = self.flat("rule")
+        self.assertIn("BOTH the source AND the basis", rule)
+        # The load-bearing half: the basis test reads what the SOURCE SAYS.
+        self.assertIn("WHAT THE SOURCE SAYS THE VALUE RESTS ON", rule)
+        self.assertIn("PRESENTS it as resting on a method this profile excludes", rule)
+        self.assertIn("DISCLOSES", rule)
+
+    def test_the_profile_states_what_the_rule_does_not_do(self) -> None:
+        # A rule that says only what it catches hides its own narrowness, and
+        # the reviewer who wants to attack it has to reconstruct it from code.
+        does_not = self.flat("what_this_rule_does_not_do")
+        self.assertIn("IT DOES NOT AUDIT PROVENANCE", does_not)
+        self.assertIn("states no method for it", does_not)
+        # Both halves of the pair the narrowness is visible in.
+        self.assertIn("722 B.C.", does_not)
+        self.assertIn("722-1", does_not)
+        self.assertIn("eponym canon", does_not)
+
+    def test_the_narrowing_is_recorded_as_a_dated_maintainer_decision(self) -> None:
+        decision = self.flat("decision")
+        self.assertIn("MAINTAINER'S DECISION, 2026-09-02", decision)
+        self.assertIn("BINDING ON LATER SESSIONS", decision)
+        # The reasoning, not just the ruling: a decision whose grounds are not
+        # written down is re-argued by whoever reads it next.
+        self.assertIn("eponym-canon", decision)
+        self.assertIn("THIS IS A NARROWING AND IT IS DELIBERATE", decision)
+        # And the way back out is a new profile, not an edit of this one.
+        self.assertIn("new profile id", decision)
+
+    def test_the_withdrawn_method_test_survives_only_as_quoted_history(self) -> None:
+        # "whoever prints it" was the method test's formula. It may appear in
+        # `decision`, which records what was withdrawn; anywhere else in this
+        # block it is the old rule creeping back into the statement of the new.
+        for key, value in self.admissibility.items():
+            if key in ("decision", "bases", "reporting_exceptions"):
+                continue
+            self.assertNotIn("whoever prints it", " ".join(str(value).split()), key)
+
+    def test_the_two_edge_clauses_are_declared(self) -> None:
+        read = self.flat("disclosure_is_read_not_inferred")
+        self.assertIn("has to be READ", read)
+        self.assertIn("inference about a method the source does not state", read)
+        corroboration = self.flat("corroboration_is_not_the_ground")
+        self.assertIn("CORROBORATING", corroboration)
+        self.assertIn("must show the admissible", corroboration)
+
+    # -- half two: what the loader ENFORCES ---------------------------------
+
+    def test_one_source_two_values_and_only_the_disclosed_one_is_refused(self) -> None:
+        # The enforced rule keys on the claim's own disclosed basis and on
+        # nothing else. Same source record, same year, same event: the value
+        # whose source declares the excluded method is not a candidate, and the
+        # value whose source declares nothing is. If the gate were the shelf --
+        # the source, its rank, or where the number ultimately came from --
+        # these two could not come apart.
+        built = corpus(self, events=DISCLOSED_METHOD, bindings=DISCLOSED_BINDINGS)
+        answer = built.ask("4Kings.17.6")
+        labels = {item.claim.date.label for item in answer.assertions}
+        self.assertEqual(labels, {"722 B.C."})
+        with_evidence = built.ask("4Kings.17.6", evidence=True)
+        self.assertIn(
+            "722-1", {item.claim.date.label for item in with_evidence.assertions}
+        )
+
+    def test_admissibility_is_a_set_of_disclosed_classes_and_not_a_rank(self) -> None:
+        # Enforcement has no provenance step and no rank threshold to have one
+        # in: `Policy.admissible` is a set of basis-class names.
+        self.assertIsInstance(self.policy.admissible, frozenset)
+        self.assertIn("traditional-catholic", self.policy.admissible)
+        self.assertNotIn("modern-critical", self.policy.admissible)
+
+    # -- both halves, over the examples the profile itself names -------------
+
+    def cases(self):
+        """(claim id, answerable?, the profile text that must still name it).
+
+        Every row is an example the rule's own prose uses to explain itself. If
+        the profile stops naming one, the rule is being restated and this table
+        is where that has to be argued; if the corpus stops ruling one this way,
+        the enforcement has drifted from the statement.
+        """
+        return (
+            ("event:israel.divided-kingdom.fall-of-samaria#1", True,
+             "what_this_rule_does_not_do"),
+            ("event:israel.divided-kingdom.fall-of-samaria#4", False,
+             "what_this_rule_does_not_do"),
+            ("event:apostolic-age.death-of-herod-agrippa#0", True,
+             "corroboration_is_not_the_ground"),
+            ("unit:composition.book-of-nahum.chapters-2-3#0", False,
+             "corroboration_is_not_the_ground"),
+            ("unit:composition.psalm-82#0", True, "own_voice"),
+            ("unit:composition.psalm-73#0", False, "own_voice"),
+        )
+
+    def claim(self, identifier: str):
+        kind, rest = identifier.split(":", 1)
+        subject, index = rest.rsplit("#", 1)
+        corpus_ = _chronology.load()
+        holder = corpus_.events if kind == "event" else corpus_.units
+        return holder[subject].claims[int(index)]
+
+    def test_every_example_the_rule_names_is_ruled_the_way_it_says(self) -> None:
+        for identifier, answerable, key in self.cases():
+            with self.subTest(claim=identifier):
+                claim = self.claim(identifier)
+                self.assertEqual(
+                    self.policy.answers_with(claim), answerable,
+                    f"{identifier} is not ruled the way `{key}` says it is",
+                )
+
+    def test_the_profile_still_names_every_example_it_is_pinned_to(self) -> None:
+        expected = {
+            "what_this_rule_does_not_do": ("Reid", "Sloet", "profane history"),
+            "corroboration_is_not_the_ground": (
+                "Souvay", "Nabonidus", "Herod Agrippa", "coinage", "Josephus",
+            ),
+            "own_voice": ("Briggs", "Psalm 73", "Psalm 82"),
+        }
+        for key, needles in expected.items():
+            text = self.flat(key)
+            for needle in needles:
+                self.assertIn(needle, text, key)
+
+    def test_the_corroborative_reading_shows_its_primary_ground(self) -> None:
+        # `corroboration_is_not_the_ground` does not let a claim assert the
+        # reading and stop: it has to show the admissible ground. Agrippa is
+        # the corpus's one instance, and Prat is what it shows.
+        claim = self.claim("event:apostolic-age.death-of-herod-agrippa#0")
+        note = " ".join(claim.note.split())
+        self.assertIn("corroboration_is_not_the_ground", note)
+        self.assertIn("These combined facts bring us to the year 44", note)
+        self.assertIn("naming no coin", note)
+        # And the refusing side says why its warrant is the sole ground.
+        nahum = self.claim("unit:composition.book-of-nahum.chapters-2-3#0")
+        self.assertIn("inscription of Nabonidus", " ".join(nahum.basis.split()))
+
+    def test_psalm_82_rests_on_the_policy_and_not_on_a_neighbour(self) -> None:
+        # The reviewer's objection to the 2026-09-01 note was that it argued
+        # from consistency with another claim rather than from the rule. The
+        # ruling now names the decision, and says plainly what it does not
+        # claim about the year's ultimate provenance.
+        note = " ".join(self.claim("unit:composition.psalm-82#0").note.split())
+        self.assertIn("admissibility.decision", note)
+        self.assertIn("WHAT THIS RULING DOES NOT SAY", note)
+        self.assertIn("eponym-canon synchronism", note)
+        self.assertNotIn("Van Hoonacker", note)
+
+
 if __name__ == "__main__":
     unittest.main()

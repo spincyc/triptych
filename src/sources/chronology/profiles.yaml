@@ -104,28 +104,123 @@ profiles:
       #     2. is the BASIS OF THIS VALUE admissible? here
       #
       # and only then, over what survives both, 3. which rank wins?
+      # THE BASIS TEST IS A DISCLOSURE TEST. It reads what the source says
+      # about its own value. It does not audit where the value ultimately came
+      # from, and `what_this_rule_does_not_do` says so in terms.
       rule: >-
         A chronology value may be returned as a candidate answer under this
-        profile only when BOTH the source AND the basis — the method by which
-        that particular value was arrived at — are admissible under this
-        profile. Either one failing is enough to make the value non-answerable.
+        profile only when BOTH the source AND the basis of that particular
+        value are admissible. The source test asks who is speaking, and
+        `authority` with `non_authorities` answers it. THE BASIS TEST ASKS
+        WHAT THE SOURCE SAYS THE VALUE RESTS ON: the value is refused where the
+        work that carries it PRESENTS it as resting on a method this profile
+        excludes -- naming the warrant, adopting another's reckoning, or
+        declaring the method of the table it prints. It is a test of what the
+        source DISCLOSES about that value, read in the source's own words and
+        quoted in the claim that rests on it. Either test failing is enough to
+        make the value non-answerable.
+      what_this_rule_does_not_do: >-
+        IT DOES NOT AUDIT PROVENANCE, and saying so as plainly as what it does
+        is the whole point of this paragraph. Where a ranked Catholic work
+        prints a conventional year as settled and states no method for it, this
+        profile answers with that year and does not go behind the work to ask
+        what the year ultimately rests on. Reid's "Samaria ... was not taken
+        till 722 B.C." is answered with; Sloet's "722-1" for the same event is
+        refused, because Sloet says of his own table that it gives the
+        chronology "in conjunction with the data of profane history" after
+        "the deciphering of the Assyro-Babylonian inscriptions". Both numbers
+        descend from the same Assyrian eponym canon. This profile answers with
+        the one whose source does not say so. A reviewer who thinks that is the
+        wrong line should attack this paragraph on its merits; it is written
+        here so that it can be attacked, instead of being discovered by reading
+        the code.
+      decision: >-
+        MAINTAINER'S DECISION, 2026-09-02. BINDING ON LATER SESSIONS, AND NOT
+        TO BE RE-LITIGATED FROM SCRATCH. Until this date `rule` was written as
+        a METHOD test -- a value was inadmissible if the method behind it was
+        excluded, "whoever prints it" -- while the corpus enforced a DISCLOSURE
+        test, refusing a value only where its source NAMED an excluded warrant.
+        An independent cold review found the stated rule and the enforced rule
+        apart. The maintainer decided that the disclosure test is the operative
+        policy, on this reasoning, which is recorded here because a policy whose
+        grounds are not written down gets re-argued by whoever reads it next.
+        A method test applied faithfully would disqualify very nearly every
+        absolute B.C. year in Old Testament history, because virtually all of
+        them trace to Assyrian eponym-canon synchronism no matter who prints
+        them -- the fall of Samaria at 722/721 included, and with it Reid,
+        Howlett and the Petavius table that this profile answers with today.
+        A profile enforcing it could state almost no date at all: it would be
+        left with Scripture's relative sequence and nothing else, which is not
+        the chronology a traditional Catholic apparatus states, and stating
+        that chronology is what `intent` says this profile is for. So the
+        profile refuses a value its source PRESENTS as resting on an excluded
+        method, and does not audit the ultimate provenance of a conventional
+        date a ranked Catholic work prints as settled. THIS IS A NARROWING AND
+        IT IS DELIBERATE. It is not a loophole, and it is not silent: a session
+        that wants the method test back is changing what this profile answers
+        with, which `versioning` below makes a new profile id and not an edit
+        of this one.
       own_voice: >-
-        A Catholic author's own grammatical voice is not sufficient. Where the
-        value is explicitly derived from, harmonised to, or adopted from a
-        chronology methodology this profile excludes, the value is not
-        answerable — whatever the rank of the work that prints it, whatever
+        A Catholic author's own grammatical voice is not sufficient, and
+        Catholic publication context is not a basis. Where the source's own
+        words show the value explicitly derived from, harmonised to, or adopted
+        from a chronology methodology this profile excludes, the value is not
+        answerable -- whatever the rank of the work that prints it, whatever
         voice it is printed in, and however Catholic the publication context.
-        Publication context is not a basis.
+        Drum's "as Briggs surmises" is such an adoption, and Psalm 73 is refused
+        on it. The same article's dating of Psalm 82, which names no method and
+        rejects Briggs rather than adopting him, is not, and Psalm 82 is
+        answered with. The difference is in the two sentences, not in this
+        corpus's opinion of the two psalms.
+      disclosure_is_read_not_inferred: >-
+        The disclosure has to be READ, and quoted in the claim that rests on
+        it. It is the source's own account of its ground for THAT value: the
+        sentence carrying the value, the declared method of the table that
+        prints it, or another place in the same work where that work says in
+        terms whose reckoning that same figure is -- as the Catholic
+        Encyclopedia's "Biblical Chronology" says of the "about 2300 B.C." its
+        "Israelites" prints for the arrival in Chanaan, attributing it to
+        Professor Sayce on the condition "if the chronology of the native
+        Babylonian historians is correct". What may never supply the disclosure
+        is this project's own knowledge of where a date really comes from. An
+        inference about a method the source does not state is not a disclosure,
+        and refusing on one would be this apparatus doing the modern chronology
+        it says it does not do -- silently, and against the source it claims to
+        be reporting.
+      corroboration_is_not_the_ground: >-
+        A source may name a material or modern datum as CORROBORATING a value
+        it reaches on other grounds, and that is not the shape this rule
+        refuses. The question is what the source presents as the GROUND of the
+        value. Where the excluded warrant is the only one the source offers,
+        the value is refused. Where the source argues the value from an
+        admissible ground and adds the other as confirmation, the value stands,
+        and the claim's note must say which reading it took and on which words.
+        Souvay fixes the fall of Ninive by "a well-known inscription of
+        Nabonidus" and offers nothing else for it, so Nahum 2-3 is refused.
+        Howlett places the death of Herod Agrippa "from what Josephus says, and
+        the evidence of the coinage" -- Josephus first, and the same year
+        reached in Prat's "St. Paul" from Acts and Josephus, naming no coin --
+        so it stands. A
+        claim reading a named warrant as corroborative must show the admissible
+        ground it says is primary; if it cannot, the warrant is the ground.
       before_rank: >-
         Admissibility is determined BEFORE source rank. Rank orders admissible
-        evidence; rank never makes an inadmissible methodology admissible, and
-        there is no rank at which an excluded basis becomes answerable. The rule
+        evidence; rank never makes an inadmissible basis admissible, and there
+        is no rank at which an excluded basis becomes answerable. The rule
         reads identically at rank 1 and at rank 6: there is no rank-6 exception,
-        and no rank-6-only rule.
+        and no rank-6-only rule. What rank does not do is SUPPLY a basis. A
+        work's standing says nothing about the ground of any particular number
+        it prints, which is why the disclosure test asks the source and not the
+        shelf.
       preservation: >-
         A figure may be worth preserving as documentary evidence without being
         an answerable chronology assertion. Refusing a basis is not an
-        instruction to delete what a source printed.
+        instruction to delete what a source printed. Under a disclosure test
+        preservation carries a second weight: a refused figure was refused
+        because its own source said something, and the preserved claim is where
+        that sentence stays readable. A reviewer testing whether the refusal was
+        right has to be able to read the disclosure it was made on, and deleting
+        the figure would delete the evidence for the ruling along with it.
       # The basis classes this profile knows, and whether each is admissible.
       # A claim names one in `basis_class`. An unlisted name is a load error:
       # a vocabulary that admits what it does not recognise cannot tell a typo
@@ -197,9 +292,15 @@ profiles:
           admissible: false
           what: >-
             Modern critical, archaeological, Egyptological or Assyriological
-            chronology. Excluded by `non_authorities` whoever prints it. A
-            Catholic work printing it is a Catholic work reporting a chronology
-            this profile does not hold.
+            chronology, WHERE THE SOURCE PRESENTS THE VALUE AS RESTING ON IT.
+            `non_authorities` excludes the method; this class is how a claim
+            records that its own source disclosed the method for that value. A
+            Catholic work printing such a value is a Catholic work reporting a
+            chronology this profile does not hold, and the Catholic imprint
+            does not make it traditional. A conventional year that a ranked
+            work prints as settled, stating no method for it, is NOT this
+            class: see `rule` and `what_this_rule_does_not_do`, which say why
+            this profile does not go behind such a year.
         - id: profane-harmonisation
           admissible: false
           what: >-

@@ -320,25 +320,69 @@ The governing rule, held in machine form in `profiles.yaml` under
 `admissibility` and enforced by `scripts/_chronology.py`:
 
 > A chronology value may be returned as a candidate answer under
-> `catholic-traditional-v1` only when **both the source and the basis — the
-> method by which that particular value was arrived at — are admissible under
-> the profile**.
+> `catholic-traditional-v1` only when **both the source and the basis of that
+> particular value are admissible under the profile**. The source test asks who
+> is speaking. **The basis test asks what the source says the value rests on:**
+> the value is refused where the work carrying it *presents* it as resting on a
+> method the profile excludes — naming the warrant, adopting another's
+> reckoning, or declaring the method of the table it prints.
+
+**It is a disclosure test, and it is not a provenance audit.** Where a ranked
+Catholic work prints a conventional year as settled and states no method for it,
+the profile answers with that year and does not go behind the work. Reid's
+"Samaria … was not taken till 722 B.C." is answered with; Sloet's "722-1" for
+the same event is refused, because Sloet says of his own table that it works
+"in conjunction with the data of profane history" after "the deciphering of the
+Assyro-Babylonian inscriptions". Both numbers descend from the same Assyrian
+eponym canon.
+
+That is a **maintainer's decision of 2026-09-02**, and its reasoning is written
+out in `profiles.yaml` under `admissibility.decision`, which governs. In short:
+the rule was *stated* as a method test — inadmissible if the method behind the
+value is excluded, "whoever prints it" — while the corpus *enforced* the
+disclosure test, and an independent cold review found the two apart. A method
+test applied faithfully would disqualify very nearly every absolute B.C. year in
+Old Testament history, 722/721 included, leaving the profile able to state
+almost nothing but Scripture's relative sequence. The disclosure test is the
+operative policy; the narrowing is deliberate, and reversing it is a new profile
+id under §`versioning`, not an edit.
+
+Two clauses do the work at the edges, and both live in `profiles.yaml`:
+
+- `disclosure_is_read_not_inferred` — the disclosure must be **read and quoted**
+  in the claim. It is the sentence carrying the value, the declared method of
+  the table printing it, or another place in the same work saying in terms whose
+  reckoning that same figure is. This project's own knowledge of where a date
+  really comes from may never supply it.
+- `corroboration_is_not_the_ground` — a source may name a material or modern
+  datum as *corroborating* a value it reaches on other grounds, and that is not
+  the shape refused. Where the excluded warrant is the only one offered, the
+  value is refused (Souvay's inscription of Nabonidus, at Nahum 2-3). Where the
+  source argues from an admissible ground and adds the other as confirmation, it
+  stands (Howlett's "from what Josephus says, and the evidence of the coinage",
+  at the death of Herod Agrippa, with Prat reaching the same year from Acts and
+  Josephus alone). A claim taking the corroborative reading **must show the
+  admissible ground it says is primary**, in its own note.
 
 Three consequences, each of which the corpus has actually been got wrong by:
 
 - **Method/basis matters.** Every claim carries a `basis_class` naming the kind
-  of method its value came from, and the profile says which classes it answers
-  with. `scripture`, `liturgical`, `patristic`, `traditional-catholic`,
+  of ground its source discloses for the value, and the profile says which
+  classes it answers with. `scripture`, `liturgical`, `patristic`, `traditional-catholic`,
   `reported-traditional` and `derived` are admissible. `modern-critical`,
   `profane-harmonisation`, `reported-excluded`, `rejected-by-source`,
   `refusal-to-date`, `comparison-only`, `superseded` and `unresolved` are not.
   A class the profile does not declare is a load error, not something to
   interpret.
-- **A Catholic author's own voice is not a basis.** Where the value is
-  explicitly derived from, harmonised to, or adopted from a chronology this
-  profile excludes, it is not answerable — whatever the rank of the work that
-  prints it, and whatever voice it is printed in. **Catholic publication
-  context does not make a modern or secular chronology traditional.**
+- **A Catholic author's own voice is not a basis.** Where the source's own
+  words show the value explicitly derived from, harmonised to, or adopted from a
+  chronology this profile excludes, it is not answerable — whatever the rank of
+  the work that prints it, and whatever voice it is printed in. **Catholic
+  publication context does not make a modern or secular chronology
+  traditional.** Drum's "as Briggs surmises" is such an adoption and Psalm 73 is
+  refused on it; the same article's dating of Psalm 82, which names no method and
+  rejects Briggs rather than adopting him, is answered with. The difference is in
+  the two sentences, not in this corpus's opinion of the two psalms.
 - **Admissibility is determined before rank.** Rank orders admissible evidence;
   rank never makes an inadmissible methodology admissible. There is no rank at
   which an excluded basis becomes answerable, no rank-6 exception, and no

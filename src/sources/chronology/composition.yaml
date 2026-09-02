@@ -1980,7 +1980,9 @@ units:
           Nabonidus permits us to fix at 607 or 606 B.C.", and the upper limit is the
           Assurbanipal capture of Thebes. Both endpoints of this interval are therefore
           fixed by Assyriological inscription evidence, which the profile's
-          `modern-critical` basis excludes "whoever prints it"; and the article uses
+          `modern-critical` basis excludes wherever the source itself presents the
+          value as resting on it, whatever the rank of the work that prints it; and
+          the article uses
           that same evidence to discard Josephus and Nicephorus "as impossible", which
           is the profile boundary in the plainest form the corpus holds - an excluded
           method overturning a traditional one. The figures are kept, because refusing
@@ -2602,22 +2604,35 @@ units:
           Persian period" is the opinion the article is rejecting, not a second
           traditional date, so it is reported here and not authored as an
           alternate.
-          RULED 2026-09-01 `traditional-catholic`, and the reason is worth stating
-          because the neighbouring psalm went the other way. Here the ranked work is
-          not adopting anyone: it names Briggs's dating and REJECTS it, and asserts its
-          own reading of what the psalm describes. It states no method for the year,
-          and 737 B.C. is the year it prints for the Assyrian invasion rather than for
-          the act of writing, which this note already said. The profile's own_voice
-          rule bites where a value is EXPLICITLY derived from, harmonised to or adopted
-          from an excluded methodology; nothing in this sentence is. Calling it
-          Assyriological would be an inference about a method the source does not
-          state, and it would not survive contact with the rest of the corpus, which
-          answers with the same shape elsewhere on the same terms - Van Hoonacker
-          dating Micheas 1-3 "shortly before the destruction of the Kingdom of Samaria
-          by the Assyrians (722 B.C.)" is ruled traditional-catholic, and a ranked
-          Catholic work's bare year for an Assyrian event is not the same thing as a
-          work naming an inscription as its warrant, which is what Souvay does at Nahum
-          2-3 and why that claim is preserved and this one is not.
+          RULED 2026-09-01 `traditional-catholic`, and CONFIRMED 2026-09-02 on the
+          maintainer's decision recorded in profiles.yaml under
+          `admissibility.decision`. This note rests on that decision now, and no
+          longer on the comparison with other claims it used to argue from: whether
+          this psalm is answerable is settled by the policy, not by what the corpus
+          happens to have done at Micheas. The policy is a DISCLOSURE test. A value is
+          refused where the work carrying it PRESENTS it as resting on a method this
+          profile excludes, and the profile does not audit where a conventional year
+          that a ranked Catholic work prints as settled ultimately comes from. Drum
+          discloses nothing of the kind here. He names Briggs's dating and REJECTS it,
+          rather than adopting it as he does at Psalm 73; he asserts his own reading of
+          what the psalm describes; and he states no method at all for the year, which
+          is in any case the year he prints for the Assyrian invasion and not for the
+          act of writing, as this note already said. Nothing in the sentence is
+          explicitly derived from, harmonised to, or adopted from an excluded
+          chronology, which is what the profile's `own_voice` clause asks. So the
+          claim is answerable.
+          WHAT THIS RULING DOES NOT SAY is that 737 B.C. for Tiglath-pileser III's
+          invasion is independent of Assyriology. It is almost certainly not: like
+          very nearly every absolute B.C. year in Old Testament history it descends
+          from Assyrian eponym-canon synchronism, and the profile's decision paragraph
+          says in terms that a test chasing that provenance would leave this profile
+          unable to state almost any date at all. The line the profile draws is between
+          a source that NAMES an excluded warrant for its value and one that does not.
+          Souvay's "a well-known inscription of Nabonidus permits us to fix at 607 or
+          606 B.C." at Nahum 2-3 is on the far side of that line; this sentence of
+          Drum's is not. The line is a policy, it can be argued with, and it is stated
+          in profiles.yaml so that it is argued with there rather than re-decided one
+          psalm at a time.
         date:
           precision: approximate-year
           from: {year: 737, era: bc}

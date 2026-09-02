@@ -93,6 +93,21 @@ events:
           eclipse "from 12 to 13 March, A.U.C. 750"; those figures are printed
           in Anno Urbis Conditae and this corpus neither records that era nor
           converts it.
+          RULED 2026-09-02 ANSWERABLE, and recorded because a named datum stands in
+          the basis. The eclipse is not a method this profile's `non_authorities`
+          excludes at all — it is a datum Josephus reports, not modern critical,
+          archaeological, Egyptological or Assyriological chronology — and the article
+          in any case names it as corroboration, in its own word: "That date is
+          corroborated by an eclipse of the moon which occurred (Ant., XVII, vi, 4) on
+          the very night that Herod burnt Matthias alive, a few days before his own
+          death; for there was an eclipse of the moon from 12 March to 13 March, 4
+          B.C." The eclipse reaches the article through Josephus, whom it cites for
+          it, and it corroborates a year the article has already reached and hedges
+          on. The profile's
+          `corroboration_is_not_the_ground` clause requires the admissible ground to
+          be shown: it is Howlett's own reckoning from Josephus's account of Herod's
+          reign, hedged in the sentence this note already quotes, and the same year is
+          carried independently by the "Magi" article, which names no eclipse.
         date:
           precision: approximate-year
           from: {year: 4, era: bc}
@@ -302,10 +317,16 @@ events:
           Gospels do not — "the fourth year of the governorship of Pontius
           Pilate" — which puts him on the sole-reign reckoning, four years later
           than Ramsay's.
-          RULED 2026-09-01 on the basis prose above, which states the method in
-          the article's own terms: it "adopts Ramsay's reckoning of Tiberius's
-          years" and says that reckoning "would allow enough time for the baptism
-          of Our Lord in A.D. 27." The profile's `own_voice` clause disqualifies
+          RULED 2026-09-01, and CONFIRMED 2026-09-02 under the disclosure test
+          profiles.yaml now states, on the article's own sentence and not on any
+          inference about it: "But Professor Ramsay (St. Paul the Traveller, p. 387)
+          thinks the fifteenth year of Tiberius is reckoned from A.D. 12, when he was
+          associated with Augustus in the government of the empire. That would take us
+          to A.D. 6 for the beginning of St. John's ministry, and would allow enough
+          time for the baptism of Our Lord in A.D. 27." The named reckoning is the only
+          ground the article offers for THIS value, and it offers it to escape a datum
+          that would otherwise move the year. The profile's `own_voice` clause
+          disqualifies
           a value "explicitly derived from, harmonised to, or adopted from a
           chronology methodology this profile excludes" whatever the rank of the
           work that prints it and however Catholic the publication context, and
@@ -860,6 +881,30 @@ events:
           II.10.9), gives only regnal and age reckonings — "in the fifty-fourth
           year of his age, and in the seventh year of his reign" — which this
           corpus does not convert.
+          RULED 2026-09-02 ANSWERABLE, on the disclosure test the profile now states,
+          and the reasoning is written out because the shape here is the one the
+          profile refuses at Nahum. Howlett does name a material warrant in the very
+          sentence that carries the year: "from what Josephus says, and the evidence
+          of the coinage, we cannot be far wrong in placing that event in the year
+          44." The profile's `corroboration_is_not_the_ground` clause asks what the
+          source presents as the GROUND of the value, and it requires a claim reading
+          a named warrant as corroborative to SHOW the admissible ground it says is
+          primary. That ground is shown here, and twice. Howlett's own sentence puts
+          Josephus first and the coinage after him, both under one hedge. And Prat's
+          "St. Paul" reaches the same year 44 from Acts and Josephus alone, naming no
+          coin: Agrippa died shortly after the Pasch, at Caesarea, "in the third year
+          of his reign, which had begun in 41 (Josephus, 'Ant.', XIX, vii, 2)", and
+          "These combined facts bring us to the year 44". This corpus would carry
+          A.D. 44 on that sentence alone if Howlett's clause about the coinage were
+          struck out. Souvay at
+          Nahum 2-3 is the other case, and is refused: the fall of Ninive is what "a
+          well-known inscription of Nabonidus permits us to fix at 607 or 606 B.C.",
+          the inscription is the only warrant he offers for that limit, and he uses it
+          to DISCARD Josephus rather than to confirm him. A named artefact and a named
+          inscription are not treated differently here; a sole ground and an added
+          corroboration are. A reviewer who reads Howlett's "and" as joining two
+          grounds of equal weight rather than a ground and its confirmation should
+          re-argue this claim, and what that reading has to get past is Prat.
         date:
           precision: year
           from: {year: 44, era: ad}
@@ -2845,7 +2890,9 @@ events:
           that "we are left with only about 327 years, as against 480 required
           by 1 Kings 6:1", and the article itself says of the Exodus figure
           "This is not the traditional date of the Exodus". That is
-          `modern-critical`, which this profile excludes whoever prints it, and
+          `modern-critical`, which this profile excludes wherever the source
+          itself presents the value as resting on it -- the Catholic imprint of
+          the work that prints it does not make it traditional -- and
           the claim is `preserved`: it is not a candidate answer, it takes no
           part in the one-preferred-per-subject arithmetic, and it is reachable
           only through the evidence and provenance surfaces.
@@ -3553,7 +3600,9 @@ events:
           that "we are left with only about 327 years, as against 480 required
           by 1 Kings 6:1", and the article itself says of the Exodus figure
           "This is not the traditional date of the Exodus". That is
-          `modern-critical`, which this profile excludes whoever prints it, and
+          `modern-critical`, which this profile excludes wherever the source
+          itself presents the value as resting on it -- the Catholic imprint of
+          the work that prints it does not make it traditional -- and
           the claim is `preserved`: it is not a candidate answer, it takes no
           part in the one-preferred-per-subject arithmetic, and it is reachable
           only through the evidence and provenance surfaces.
@@ -3693,7 +3742,9 @@ events:
           that "we are left with only about 327 years, as against 480 required
           by 1 Kings 6:1", and the article itself says of the Exodus figure
           "This is not the traditional date of the Exodus". That is
-          `modern-critical`, which this profile excludes whoever prints it, and
+          `modern-critical`, which this profile excludes wherever the source
+          itself presents the value as resting on it -- the Catholic imprint of
+          the work that prints it does not make it traditional -- and
           the claim is `preserved`: it is not a candidate answer, it takes no
           part in the one-preferred-per-subject arithmetic, and it is reachable
           only through the evidence and provenance surfaces.
@@ -4298,7 +4349,9 @@ events:
           that "we are left with only about 327 years, as against 480 required
           by 1 Kings 6:1", and the article itself says of the Exodus figure
           "This is not the traditional date of the Exodus". That is
-          `modern-critical`, which this profile excludes whoever prints it, and
+          `modern-critical`, which this profile excludes wherever the source
+          itself presents the value as resting on it -- the Catholic imprint of
+          the work that prints it does not make it traditional -- and
           the claim is `preserved`: it is not a candidate answer, it takes no
           part in the one-preferred-per-subject arithmetic, and it is reachable
           only through the evidence and provenance surfaces.
@@ -4538,7 +4591,9 @@ events:
           that "we are left with only about 327 years, as against 480 required
           by 1 Kings 6:1", and the article itself says of the Exodus figure
           "This is not the traditional date of the Exodus". That is
-          `modern-critical`, which this profile excludes whoever prints it, and
+          `modern-critical`, which this profile excludes wherever the source
+          itself presents the value as resting on it -- the Catholic imprint of
+          the work that prints it does not make it traditional -- and
           the claim is `preserved`: it is not a candidate answer, it takes no
           part in the one-preferred-per-subject arithmetic, and it is reachable
           only through the evidence and provenance surfaces.
