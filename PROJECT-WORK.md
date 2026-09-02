@@ -2607,3 +2607,59 @@ validation above was not rerun and is unchanged; this work touched only
 `release/public-alpha.json` and `release/rights/public-alpha-2026-07-15.md`. The
 hardening and evidence-tooling backlogs, the twenty separately owned concerns,
 and the V17 cancellation all remain exactly as the merge left them.
+
+## Fan-out lanes share one scratch directory, 2026-09-02
+
+During the `proper` v17 run `ca03f1b357e7ec25` (Claude, Fourteenth Sunday after
+Pentecost), the seven research lanes ran concurrently and two of them worked in
+the same scratch directory. The `patristic-reception` lane reported that a
+sibling overwrote its `build.py` mid-run, under a filename either lane would
+plausibly have chosen; it noticed, re-established its work under a
+lane-specific subdirectory, and lost no findings. Nothing else noticed. The
+lane reported it in the prose of its own hand-back, and there is no check that
+would have reported it otherwise.
+
+The cause is that the `FANOUT / HOST-MAX` execution policy — composed in
+`_driver_instructions` in `scripts/_workflow.py` — dictates a great deal about
+dispatch and nothing about where a lane works. It fixes the lane count, forbids
+inventing or combining lanes, pins each result to its `lane_packet_hash`, and
+reserves the join to `tpt`. All of that protects lane *identity*. None of it
+can see a lane whose evidence was computed by a script a sibling replaced,
+because the driver, not the workflow, decides where lanes work, and every
+concurrent delegate inherits the same default working area from its host unless
+its brief says otherwise. That a research lane is read-only with respect to the
+repository does not help: it writes no tracked file and still writes scripts and
+intermediate output.
+
+This is §1 of `guidance/the-shape.md` arriving in the apparatus again — a
+script that resolves successfully and wrongly. The failure mode is silent by
+construction: a lane that had not happened to notice would have returned
+findings computed by another lane's code, correctly shaped, correctly hashed,
+correctly joined, and wrong.
+
+Nothing in the engine was changed while a run was in flight. The coordinator
+instead gave every subsequent stage of that run a `.scratch/<stage>/`
+directory of its own by hand, and the maintainer's own delegation guidance was
+amended so that a lane brief must name the lane's scratch directory — an
+unnamed one is a shared one.
+
+Owed to this repository, and not yet done:
+
+- Extend the `FANOUT / HOST-MAX` policy text in `_driver_instructions` to
+  require that each lane be given a working area of its own, disjoint from
+  every sibling's. Keep it host-neutral: the engine should state the
+  requirement, not name a path shape belonging to one host.
+- Update the two tests that assert on that text —
+  `tools/tests/test_workflow_execution_policy.py:372` and
+  `tools/tests/test_workflow_research_fanout.py:696` — and the policy
+  descriptions in `workflows/OPERATOR.md` (lines 184, 231) and
+  `workflows/ARCHITECTURE.md` (line 788).
+
+The rule belongs in the driver instructions and not in
+`workflows/fragments/common/agent-brief.md`, for two reasons. It is the
+dispatcher's decision, not the worker's: a lane cannot allocate itself a
+directory disjoint from siblings it cannot see. And `workflow_source_digest`
+covers the pipeline JSON, every fragment, and the schemas, but not
+`scripts/_workflow.py`, so amending the policy text moves no recorded digest
+and invalidates no run in flight, whereas amending the fragment would
+invalidate every one.
