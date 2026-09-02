@@ -296,6 +296,17 @@
       "stage": "draft",
       "usage": "pdf-review [--output DIR] [--changed-from REV] [PDF ...]"
     },
+    "proper-chronology": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Answer a proper's appointed loci from the Scripture chronology corpus.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "proper-chronology {loci,record} --document ID [--provider P] [--json]"
+    },
     "public-alpha": {
       "idempotent": true,
       "json": false,

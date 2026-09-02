@@ -789,7 +789,50 @@ a re-entry, whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
-The `proper` workflow is at version 16. Version 16 gave that producer a
+The `proper` workflow is at version 17. Version 17 wired the propers to the
+Scripture chronology corpus, which is now the only place a proper guide may
+get a biblical date from. `guidance/scripture-chronology.md` §14 states the
+rule — a publication that needs biblical chronology MUST read the corpus and
+MUST NOT independently infer, research, harmonize or assign a replacement —
+and until this version nothing carried it into a proper. Each guide found its
+own dates, from whichever commentary or chronological table a research lane
+reached, and a wrong year read exactly like a right one on the page.
+
+`resolve-context` now writes the corpus's answer for the formulary's own
+appointed verses to `src/<provider>/<proper>/research/chronology.toml`,
+through `tools/tpt proper-chronology record --write`. The record is generated
+from the calendar's citation encoding and `scripts/_chronology.py`, and it
+carries the stable ids §14 asks a consumer to hold — event or
+composition-unit id, relation, profile — beside the source's own label.
+`research-scripture-context` reads it instead of researching a date;
+`research-synthesis` restates it in the brief as the
+`Scriptural chronology audit`; `author-proper` prints from it through two
+macros, `\chronology{subject}{relation}{label}` for one assertion and
+`\chronodate{element-keys}{content}` for one dossier row's date cell.
+
+`content-preflight` carries two further checks, making eight.
+`chronology-record-current` regenerates the record from the corpus and
+refuses a leaf whose copy has drifted — the record is generated, so the
+repair is to rewrite it and re-read the prose that rested on it, never to
+edit it toward the guide. `chronology-claims-supported` refuses a
+`\chronology` claim the corpus does not make at the verses that element
+appoints, and, from this version, refuses a date cell that prints any figure
+outside such a claim or an appointed Scripture with no cell at all. Where the
+corpus answers `undated-in-tradition` or `research-pending` there is nothing
+to print, and the guide states the absence rather than filling it.
+
+The contract binds from v17 and the leaf says which version produced it, so
+the five leaves published before this wiring — which state `proper` v11 or
+`unknown` — are reported out of scope rather than refused for work that was
+correct when it was done. The two checks interlock with
+`provenance-matches-run`: a stage cannot dodge the chronology contract by
+understating its version without failing the check that holds that version
+against the run driving it. A leaf that carries a chronology record is held
+to it whatever version it states, so deleting the record is not an escape
+either. A run seeded against version 16 or earlier fails closed; seed it
+again.
+
+The `proper` workflow was at version 16. Version 16 gave that producer a
 verifier. Version 15 told `author-proper` to copy the run's identity off its
 own packet header into the `\AIGenerationProvenance` record, and nothing read
 what it wrote: an instruction obeyed and an instruction ignored left the same

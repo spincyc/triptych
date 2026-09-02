@@ -1069,8 +1069,49 @@ Consumers should carry the stable chronology ids — event id, unit id, profile,
 relation — in their research or audit payload, so prose can be regenerated
 without re-researching the fact.
 
-**Propers are not wired to chronology yet, and this document does not wire
-them.** That is a separate bounded lane. The rule above binds it when it comes.
+### 14.1 The propers, wired
+
+**The 1962 propers are wired.** The lane this document said would come has
+run, and the rule above binds their production workflow from `proper` v17.
+
+- `scripts/_proper_chronology.py` is the wiring. It resolves a formulary's
+  appointed verses through `scripts/_calendars.py`, the machinery every other
+  consumer of the calendar already uses, spells them as loci through
+  `scripts/_canon.py` — the same book index `_chronology._canon_books` reads,
+  so the two cannot come to spell a book differently — and asks
+  `chronology()`. It parses no citation and reads no corpus file. The calendar
+  declares `psalm_numbering: vulgate` and the corpus prefers `vulgate`; the
+  wiring asserts that agreement and refuses rather than converting. **[verified]**
+- `tools/tpt proper-chronology` is the command. `loci` prints the appointed
+  loci and their statuses; `record` renders the answer as the leaf's
+  `research/chronology.toml` and writes or verifies it.
+- The record is where the stable ids are carried, as §14 asks. It holds, per
+  appointed element, the loci, the corpus's `status` and `reason`, and for
+  each assertion the `subject`, `relation`, `profile`, `disposition`,
+  `answerability`, `basis_class`, `scope`, `sources`, the normalized `date`
+  and the source's own `label`. It carries no `basis` and no `note`: those are
+  the corpus's prose, they run to thousands of characters, and a copy of them
+  in a leaf would be a second place they could be edited. A reader who wants
+  them runs `scripture-chronology query <locus> --evidence`.
+- `content-preflight` enforces it. `chronology-record-current` regenerates the
+  record and refuses a leaf whose copy has drifted — it is generated, so it is
+  rewritten from the corpus and never reconciled toward the guide.
+  `chronology-claims-supported` refuses a claim the corpus does not assert at
+  the verses that element appoints, and refuses a date cell that prints any
+  figure with no claim behind it, or an appointed Scripture with no cell.
+
+The second refusal is the one that answers "it does not invent one". A date is
+a well-formed integer, so a wrong one reads exactly like a right one, and no
+check can tell a remembered figure from a sourced one by looking at it. So the
+guide states which assertion each figure rests on, by its subject and
+relation, and the check resolves that assertion against this corpus. Where the
+corpus answers `undated-in-tradition` or `research-pending` there is no
+assertion to name, the cell carries no figure, and the guide states the
+absence — which is this section's own rule, made mechanical.
+
+`workflows/OPERATOR.md` and `workflows/ARCHITECTURE.md` carry the workflow
+side of it. Nothing here changes for other consumers: a publication that is
+not a 1962 proper is bound by §14 exactly as before, and has no wiring yet.
 
 ---
 

@@ -88,16 +88,60 @@ learns belongs in the files this stage owns, listed below.
    it covers entries you cannot publish, or if the gallery or the proposals
    you would publish differ from the audited ones, block rather than publish
    an unaudited entry or amend the audit yourself.
-9. Ensure the brief synthesis markers
+9. Print every biblical date through the chronology macros, and print no
+   other. `guidance/scripture-chronology.md` §14 forbids this guide to infer,
+   research, harmonize or recall a biblical date; the corpus's answer for this
+   formulary is in `src/{provider}/{proper}/research/chronology.toml` and
+   restated in the brief's `Scriptural chronology audit`, and those are the
+   only dates that may reach the page.
+
+   Define two macros in `format.tex` and use them on page 2:
+
+   ```latex
+   % \chronology{subject}{relation}{label} -- one assertion of the corpus.
+   % Typesets the label; the first two arguments are the corpus's own ids and
+   % render nothing.
+   \newcommand{\chronology}[3]{#3}
+   % \chronodate{element-keys}{content} -- one dossier row's Date cell.
+   % Typesets the content; the keys render nothing.
+   \newcommand{\chronodate}[2]{#2}
+   ```
+
+   - `subject` and `relation` are copied from the record, exactly. `label` is
+     the record's `label` — the source's own words — and never its `date`,
+     which is the normalized form and is not for the page.
+   - `element-keys` is the comma-separated list of appointed elements the row
+     covers, in the manifest's spelling: `\chronodate{gospel,communion}{...}`
+     for a row that carries both.
+   - **Every appointed Scripture gets a cell**, including the ones the corpus
+     dates nowhere. Where the status is `undated-in-tradition` or
+     `research-pending`, or the element carries no assertion, the cell states
+     that absence in the guide's own voice — a fact about the sources, in the
+     register the house voice requires — and carries no figure at all.
+   - **A Date cell may hold no figure outside a `\chronology` claim.** Not a
+     year, not a reign, not a range, not an Anno Mundi number, whatever
+     source you met it in. A well-formed year reads exactly like a right one,
+     which is why this is the one place in the guide where a fact may not be
+     stated without naming the assertion behind it.
+
+   `content-preflight` runs `chronology-record-current` and
+   `chronology-claims-supported` over what you write: a claim the corpus does
+   not make at that element's own verses, a figure with no claim behind it,
+   an appointed Scripture with no cell, or a record that has drifted from the
+   corpus all fail the gate to `content-revision` with the defect named. A
+   date you remember is not evidence, and a date a commentary prints is that
+   commentary's reception, reported as such and never as the date of the
+   passage.
+10. Ensure the brief synthesis markers
    (`triptych:brief-synthesis:start`, `:end`, `:next`) are placed correctly
    for the two-page gate.
-10. Follow `guidance/editorial.md` for evidence states, attribution,
+11. Follow `guidance/editorial.md` for evidence states, attribution,
     metadata, review, publication standards, and the house voice below.
-11. Follow `guidance/liturgy/roman-1962-propers.md`, the profile that governs
+12. Follow `guidance/liturgy/roman-1962-propers.md`, the profile that governs
     this genre: the fixed reader order, the five claim classes, the reception
     sweep, the gallery and proposal contracts, the terminal apparatus, and
     this genre's deltas against the house voice.
-12. Follow `guidance/repository.md` for source ownership, target paths, and
+13. Follow `guidance/repository.md` for source ownership, target paths, and
     build rules.
 
 ## House voice

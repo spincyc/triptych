@@ -244,7 +244,7 @@ A run records the digest at seed time, in both the manifest and the state, and
 every `advance` and `replay` recomputes it. If the workflow source has changed
 since the run was seeded, the run fails closed rather than continuing under
 guidance it never started with. A changed workflow means a new run. The
-`proper` workflow is at version 16: version 10 gave `content-evaluation` a
+`proper` workflow is at version 17: version 10 gave `content-evaluation` a
 third repair owner and inserted the `content-preflight` gate between
 `author-proper` and `content-evaluation`, version 11 made the iteration
 budget charge repetition rather than failure, carried a blocking finding to its
@@ -262,8 +262,16 @@ header carries `RUN_ID` beside the workflow, digest and seed commit it already
 carried, and `author-proper` names those header fields as the only source for
 the record it writes, and version 16 gave that producer a verifier by
 extending gate substitution to the run's own identity and giving
-`content-preflight` a sixth check that holds the record against the run. A run
-seeded against version 15 or earlier fails closed and is seeded again.
+`content-preflight` a sixth check that holds the record against the run, and
+version 17 wired the propers to the Scripture chronology corpus so that a
+biblical date reaches a guide from `src/sources/chronology/` or does not
+reach it: `resolve-context` writes the corpus's answer for the formulary's
+appointed loci to the leaf's `research/chronology.toml`, the research lane
+and the brief carry its stable ids rather than researching a date, and
+`content-preflight` gained a seventh and eighth check that regenerate the
+record from the corpus and refuse any printed figure with no corpus assertion
+behind it. A run seeded against version 16 or earlier fails closed and is
+seeded again.
 `workflows/OPERATOR.md` carries the version history in full.
 
 ### Iteration budgets
@@ -510,6 +518,29 @@ security property; and substitution is a single pass, so a supplied value can
 never smuggle a placeholder into what a later name expands to.
 `install_commit` is not compared, being legitimately `unknown` while the
 document is written.
+
+Since version 17 there are eight, and the last two hold the leaf against the
+Scripture chronology corpus. `guidance/scripture-chronology.md` §14 forbids a
+proper to infer, research, harmonize or recall a biblical date, and until
+that version nothing in this workflow carried the rule.
+`chronology-record-current` regenerates `research/chronology.toml` from the
+corpus — through `scripts/_proper_chronology.py`, which resolves the
+formulary's appointed verses with the calendar's own machinery and asks
+`scripts/_chronology.py`, the corpus's whole seam — and refuses a leaf whose
+copy has drifted from what the corpus answers now.
+`chronology-claims-supported` refuses a `\chronology{subject}{relation}{label}`
+the corpus does not assert at the verses that element appoints, and refuses a
+date cell holding any figure that is not inside such a claim, or an appointed
+Scripture with no cell at all.
+
+The second half is the one that catches recall, and it needs the macro
+discipline because a well-formed year is indistinguishable on the page from a
+right one: there is no way to tell a remembered date from a sourced one by
+reading it, so the leaf states which assertion each figure rests on and the
+check resolves that assertion. The contract binds from `proper` v17 and the
+leaf's own `\AIGenerationProvenance` record says which version produced it, so
+leaves published earlier are out of scope — and cannot claim to be, because
+`provenance-matches-run` holds that same version against the run.
 
 Its `fail_transition` is `content-revision` and never `research`. These are
 defects in the leaf: none of them says anything about whether the evidence

@@ -36,7 +36,7 @@ trap 'rm -rf "$sandbox"' EXIT INT TERM
 # --list is the enumeration every other assertion is written against.
 run_tool --list >"$sandbox/first.txt"
 listed="$(wc -l <"$sandbox/first.txt" | tr -d ' ')"
-[ "$listed" = 6 ] || fail "--list named $listed checks, expected 6"
+[ "$listed" = 8 ] || fail "--list named $listed checks, expected 8"
 run_tool --list >"$sandbox/second.txt"
 cmp -s "$sandbox/first.txt" "$sandbox/second.txt" || fail "--list is not byte-stable"
 sort -c "$sandbox/first.txt" || fail "--list is not in sorted order"
@@ -325,6 +325,121 @@ write_provenance
 reject_probe --check provenance-matches-run
 reject_probe --check provenance-matches-run --run-workflow proper
 rm "$tree/src/claude/probe/generation-metadata.tex"
+
+# --- The chronology contract, over a real formulary ------------------------
+#
+# `guidance/scripture-chronology.md` section 14: a proper that needs a
+# biblical date MUST read the chronology corpus and may not infer, research,
+# harmonize or recall a replacement. These two checks are how that is
+# enforced, and every assertion below RUNS them rather than reading their
+# command line. The leaf has to be a registered identity at its real path,
+# because the loci come from the calendar's own resolution of the formulary.
+
+chrono="$sandbox/chrono"
+fourteenth="liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"
+mkdir -p "$chrono/src/claude/$(dirname "$fourteenth")"
+cp -R "$repo/src/claude/$fourteenth" "$chrono/src/claude/$fourteenth"
+ln -s "$repo/src/sources" "$chrono/src/sources"
+rm -f "$chrono/src/claude/$fourteenth/research/chronology.toml"
+
+bound() {
+	run_tool --root "$chrono" --provider claude --document "$fourteenth" "$@"
+}
+
+reject_bound() {
+	if bound "$@" >/dev/null 2>&1; then
+		fail "expected failure: bound $*"
+	fi
+}
+
+# As published the leaf states `proper` v11, which is before the contract
+# binds, so both checks report it out of scope rather than refusing work that
+# was correct when it was done.
+bound --check chronology-record-current >/dev/null ||
+	fail "a leaf published before the contract was refused"
+bound --check chronology-claims-supported >/dev/null ||
+	fail "a leaf published before the contract was refused"
+
+# Bind it: the leaf now says the version that carries the contract.
+sed -i.bak 's/{proper}{11}/{proper}{17}/' \
+	"$chrono/src/claude/$fourteenth/generation-metadata.tex"
+rm -f "$chrono/src/claude/$fourteenth/generation-metadata.tex.bak"
+
+# A bound leaf with no chronology record cannot have carried the corpus's ids.
+reject_bound --check chronology-record-current
+"$tool" proper-chronology record --root "$chrono" --provider claude \
+	--document "$fourteenth" --write >/dev/null ||
+	fail "the record generator refused a registered formulary"
+bound --check chronology-record-current >/dev/null ||
+	fail "the record the generator just wrote was refused"
+
+# A record edited to say what a guide wishes the corpus said. This is the
+# defect the whole wiring exists for: the figure is well-formed, and a reader
+# cannot tell it from the corpus's own.
+record="$chrono/src/claude/$fourteenth/research/chronology.toml"
+cp "$record" "$sandbox/record.bak"
+sed 's/^label = "A. M. 2944, A. C. 1060"$/label = "1055-1015 B.C."/' \
+	"$sandbox/record.bak" >"$record"
+if cmp -s "$record" "$sandbox/record.bak"; then
+	fail "the edit changed nothing, so the refusal below proves nothing"
+fi
+reject_bound --check chronology-record-current
+cp "$sandbox/record.bak" "$record"
+bound --check chronology-record-current >/dev/null ||
+	fail "the restored record was refused"
+
+dossier="$chrono/src/claude/$fourteenth/sections/10-date-location.tex"
+
+write_dossier() {
+	cat >"$dossier" <<TEX
+\\section*{Scriptural Date and Location}
+\\chronodate{introit}{\\chronology{composition.psalms-of-the-sons-of-korah}{composition}{between the days of Isaias and the return from exile}}
+\\chronodate{epistle}{\\chronology{composition.epistle-to-the-galatians}{composition}{${1:-A.D.~57 or 58}}}
+\\chronodate{gradual}{${2:-No year is held for this psalm.}}
+\\chronodate{alleluia}{No year is held for this psalm.}
+\\chronodate{gospel,communion}{\\chronology{composition.gospel-of-matthew}{composition}{about the year 50}}
+\\chronodate{offertory}{\\chronology{israel.monarchy.david-at-geth}{superscription-setting}{A.~M.~2944, A.~C.~1060}}
+TEX
+}
+
+# A leaf that prints only what the corpus asserts, in the corpus's own words,
+# with a cell for every appointed Scripture. LaTeX ties and an en-dash are not
+# a different date, and the check must not make an author fight its typesetter.
+write_dossier
+bound --check chronology-claims-supported >/dev/null ||
+	fail "a dossier built entirely from corpus assertions was refused"
+
+# Every appointed Scripture needs a cell. An element with none is
+# indistinguishable from one whose date was forgotten.
+grep -v 'chronodate{alleluia}' "$dossier" >"$sandbox/no-alleluia.tex"
+cp "$sandbox/no-alleluia.tex" "$dossier"
+reject_bound --check chronology-claims-supported
+
+# A date the corpus does not support. Cornelius a Lapide's A.D. 58 is a real
+# reading of a real source and the corpus does not assert it, which is exactly
+# the case section 14 is about.
+write_dossier 'A.D.~58'
+reject_bound --check chronology-claims-supported
+
+# An invented date where the corpus returns undated-in-tradition. There is no
+# claim to make at Ps. 117, so a figure in that cell has nothing behind it.
+write_dossier '' "David's reign, 1055--1015 B.C."
+reject_bound --check chronology-claims-supported
+
+# A real corpus assertion, printed at an element whose verses it says nothing
+# about.
+write_dossier '' '\\chronology{israel.monarchy.david-at-geth}{superscription-setting}{A.~M.~2944, A.~C.~1060}'
+reject_bound --check chronology-claims-supported
+
+# A claim standing outside any date cell is held to the same rule.
+write_dossier
+printf '%s\n' '\\chronology{composition.gospel-of-matthew}{composition}{about the year 51}' >>"$dossier"
+reject_bound --check chronology-claims-supported
+
+# The other six checks must be unaffected by any of it.
+write_dossier
+bound --check references-used >/dev/null ||
+	fail "the chronology fixture broke a check that is not about chronology"
 
 # --- Refusals about the invocation itself ----------------------------------
 

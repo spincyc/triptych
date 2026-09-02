@@ -58,7 +58,17 @@ RUN_CHECK = "provenance-matches-run"
 LEAF_CHECKS = ("references-used", "identifiers-resolve",
                "restricted-not-reproduced", "relation-coverage",
                "unquoted-not-quoted")
-CHECKS = LEAF_CHECKS + (RUN_CHECK,)
+# The two that hold the leaf against the Scripture chronology corpus. They
+# read only the tree, like LEAF_CHECKS, but they are named apart because what
+# they do over a leaf depends on the workflow version that leaf states: the
+# contract binds from `proper` v17, and every leaf published before it is
+# reported out of scope rather than refused for work that was correct when it
+# was done. See tools/tests/test_workflow_chronology.py, which drives them
+# over a leaf that IS bound.
+CHRONOLOGY_CHECKS = ("chronology-record-current",
+                     "chronology-claims-supported")
+TREE_CHECKS = LEAF_CHECKS + CHRONOLOGY_CHECKS
+CHECKS = LEAF_CHECKS + (RUN_CHECK,) + CHRONOLOGY_CHECKS
 # The five names a gate command may substitute from the run itself, and the
 # option each is handed to the tool as.
 RUN_PLACEHOLDERS = {
@@ -130,7 +140,7 @@ class TopologyTests(unittest.TestCase):
     def test_every_check_is_one_command_over_the_run_s_own_arguments(self):
         commands = check_commands()
         self.assertEqual(list(commands), list(CHECKS),
-                         "the six checks the design names, in order")
+                         "the eight checks the design names, in order")
         registry = json.loads(
             (ROOT / "tmt.json").read_text(encoding="utf-8"))["tools"]
         for check_id, command in commands.items():
@@ -370,7 +380,7 @@ evidence = ["source-grounded-synthesis"]
             capture_output=True, text=True, cwd=ROOT)
 
     def test_every_check_passes_on_a_published_leaf(self):
-        for check in LEAF_CHECKS:
+        for check in TREE_CHECKS:
             with self.subTest(check=check):
                 result = self.published(check)
                 self.assertEqual(
@@ -398,7 +408,7 @@ evidence = ["source-grounded-synthesis"]
         self.assertGreater(checked, 0, "no published leaf was checked")
 
     def test_the_probe_leaf_passes_before_anything_is_broken(self):
-        for check in LEAF_CHECKS:
+        for check in TREE_CHECKS:
             with self.subTest(check=check):
                 self.assertEqual(self.probe(check).returncode, 0,
                                  self.probe(check).stderr)
@@ -771,9 +781,9 @@ class DrivenRunTests(RoutingCase):
         self.engine._run_gate = run_gate
 
     def test_the_gate_runs_for_real_and_passes_the_published_leaf(self):
-        """The five checks the tree can answer, over a real published leaf.
+        """The seven checks the tree can answer, over a real published leaf.
 
-        The sixth is filtered out by the harness, for the reason
+        The eighth is filtered out by the harness, for the reason
         `PropersCase` gives: these runs submit a synthetic `author-proper`
         result, so no author writes the provenance record, and the leaf they
         drive over states the run that really did write it. What the gate does
@@ -791,7 +801,7 @@ class DrivenRunTests(RoutingCase):
             (self.engine.run_dir(run_id) / "gate-logs").glob(f"{STAGE}-*"))
         self.assertEqual(
             [name.split("-", 3)[-1] for name in logs],
-            sorted(f"{check}.log" for check in LEAF_CHECKS),
+            sorted(f"{check}.log" for check in TREE_CHECKS),
             "every declared check ran and left its untouched log")
         for name in logs:
             text = (self.engine.run_dir(run_id) / "gate-logs" / name

@@ -32,15 +32,13 @@ EXAMPLES = {
             "liturgy/roman-rite/1962/propers/temporal/"
             "49-ninth-after-pentecost",
             (
-                "identifiers-resolve: 2 source identifiers, every one "
-                "registered",
+                "chronology-claims-supported: no chronology claim printed (the leaf states no proper provenance record and carries no research/chronology.toml, so it predates the chronology contract, which binds from proper v17)",
+                "chronology-record-current: not in scope: the leaf states no proper provenance record and carries no research/chronology.toml, so it predates the chronology contract, which binds from proper v17",
+                "identifiers-resolve: 2 source identifiers, every one registered",
                 "references-used: 32 entries, every one used in the body",
-                "relation-coverage: 4 relations, every element key claimed "
-                "by the unit that carries its evidence",
-                "restricted-not-reproduced: 18 bound sources, 3 of them "
-                "restricted, none reproduced",
-                "unquoted-not-quoted: 2 sources declared unquoted, none "
-                "attributed a quotation",
+                "relation-coverage: 4 relations, every element key claimed by the unit that carries its evidence",
+                "restricted-not-reproduced: 18 bound sources, 3 of them restricted, none reproduced",
+                "unquoted-not-quoted: 2 sources declared unquoted, none attributed a quotation",
             ),
             "the whole preflight over a published leaf; exits 0",
         ),
@@ -96,8 +94,22 @@ EXAMPLES = {
             "rather than skipped when nothing says which run is asking",
         ),
         Example(
+            "tools/check-content-preflight --provider gpt --document "
+            "liturgy/roman-rite/1962/propers/temporal/"
+            "50-tenth-after-pentecost --check chronology-claims-supported",
+            (
+                "chronology-claims-supported: no chronology claim printed (the leaf states no proper provenance record and carries no research/chronology.toml, so it predates the chronology contract, which binds from proper v17)",
+            ),
+            "the chronology contract binds from `proper` v17 and the leaf "
+            "says which version produced it, so a leaf published before the "
+            "wiring existed is reported out of scope rather than passed in "
+            "silence",
+        ),
+        Example(
             "tools/check-content-preflight --list",
             (
+                "chronology-claims-supported",
+                "chronology-record-current",
                 "identifiers-resolve",
                 "provenance-matches-run",
                 "references-used",
@@ -797,7 +809,367 @@ def check_provenance_matches_run(
     )
 
 
+# --- The leaf against the Scripture chronology corpus -----------------------
+#
+# `guidance/scripture-chronology.md` §14: a proper that needs a biblical date
+# MUST read `src/sources/chronology/`, and MUST NOT independently infer,
+# research, harmonize or assign a replacement. Where the corpus returns an
+# unresolved state the proper preserves that state or omits the date.
+#
+# Two checks, because the contract has two halves and each is invisible in the
+# other. `chronology-record-current` holds the leaf's carried ids against what
+# the corpus answers now. `chronology-claims-supported` holds the leaf's
+# printed dates against the same answer, and refuses a date printed outside a
+# claim at all — which is the half that catches a recalled figure, since a
+# well-formed year reads exactly like a right one.
+#
+# THE CONTRACT BINDS FROM VERSION 17, and the leaf itself says which version
+# produced it. Every leaf published before this wiring existed states `proper`
+# v11 or `unknown` in the `\AIGenerationProvenance` record that
+# `provenance-matches-run` holds against the run, so the two checks interlock:
+# a stage cannot dodge the chronology contract by understating its version
+# without failing the check that compares that version with the run driving
+# it. A leaf that carries a chronology record is held to it whatever version
+# it states, so the record cannot be escaped by deleting it either.
+CHRONOLOGY_WORKFLOW = "proper"
+CHRONOLOGY_FROM_VERSION = 17
+
+# How a leaf prints a biblical date, and how it prints the cell one belongs in.
+#
+#   \chronology{subject}{relation}{label}   one assertion the corpus makes
+#   \chronodate{element-keys}{content}      one dossier row's date cell
+#
+# The macros are the leaf's own — `author-proper.md` states what they must
+# render — and they exist so that a date has a machine-readable claim behind
+# it. `workflows/fragments/propers/author-proper.md` is where an author is
+# told to use them; this is what makes the instruction more than an
+# instruction.
+CHRONOLOGY_CLAIM = "chronology"
+CHRONOLOGY_CELL = "chronodate"
+DIGIT = re.compile(r"[0-9]")
+TIE = re.compile(r"~|\\,|\\;|\\:|\\ |\\quad|\\qquad|\\thinspace")
+DASH = re.compile(r"-{2,}|–|—")
+
+
+def _normalized_label(text: str) -> str:
+    """A printed label reduced to what it says, so typesetting is not a diff.
+
+    A guide sets `A.~M.~2944` and the corpus holds `A. M. 2944`; an en-dash is
+    `--` on the page and `-` in the source it was read from. Neither is a
+    different date, and a check that called them different would be teaching
+    authors to fight it rather than to quote. Nothing else is folded: a digit,
+    a word and a letter case all stay exactly as printed.
+    """
+    text = TIE.sub(" ", text)
+    text = DASH.sub("-", text)
+    return " ".join(text.split())
+
+
+def _braced(text: str, index: int) -> tuple[str, int]:
+    """Read the braced argument starting at `text[index]`, nesting included."""
+    if index >= len(text) or text[index] != "{":
+        raise ValueError("expected a braced argument")
+    depth, start = 0, index
+    while index < len(text):
+        char = text[index]
+        if char == "{" and (index == start or text[index - 1] != "\\"):
+            depth += 1
+        elif char == "}" and text[index - 1] != "\\":
+            depth -= 1
+            if depth == 0:
+                return text[start + 1:index], index + 1
+        index += 1
+    raise ValueError("unclosed braced argument")
+
+
+def _macro_calls(text: str, name: str, arity: int) -> list[tuple[list[str], int, int]]:
+    """Every `\\name{..}...` in `text`, with its arguments and its extent."""
+    found = []
+    marker = "\\" + name
+    at = text.find(marker)
+    while at != -1:
+        after = at + len(marker)
+        if after < len(text) and (text[after].isalpha() or text[after] == "@"):
+            at = text.find(marker, after)
+            continue
+        index, args = after, []
+        try:
+            while len(args) < arity:
+                while index < len(text) and text[index] in " \t\r\n":
+                    index += 1
+                arg, index = _braced(text, index)
+                args.append(arg)
+        except ValueError as exc:
+            raise ValueError(
+                f"\\{name} at character {at} takes {arity} braced arguments "
+                f"and this one does not have them: {exc}"
+            ) from None
+        found.append((args, at, index))
+        at = text.find(marker, index)
+    return found
+
+
+def _wiring():
+    """`scripts/_proper_chronology`, imported only when a check needs it.
+
+    It pulls in the chronology corpus's reader, which wants PyYAML. The other
+    five checks read nothing but the tree and must keep working in a checkout
+    that has not installed the tool requirements.
+    """
+    import _proper_chronology  # noqa: PLC0415
+
+    return _proper_chronology
+
+
+def _leaf_document(leaf: Path, root: Path) -> str:
+    """The leaf id, recovered from where the leaf sits under its provider."""
+    parts = leaf.relative_to(root / "src").parts
+    return "/".join(parts[1:])
+
+
+def _stated_version(leaf: Path) -> int | None:
+    """The workflow version the leaf's provenance record states, if any."""
+    metadata = leaf / "generation-metadata.tex"
+    if not metadata.is_file():
+        return None
+    found = PRODUCTION_RE.findall(active_tex(
+        metadata.read_text(encoding="utf-8")))
+    if len(found) != 1:
+        return None
+    recorded = dict(zip(PRODUCTION_FIELDS, (v.strip() for v in found[0])))
+    if recorded["workflow_id"] != CHRONOLOGY_WORKFLOW:
+        return None
+    try:
+        return int(recorded["workflow_version"])
+    except ValueError:
+        return None
+
+
+def _chronology_scope(leaf: Path) -> tuple[bool, bool, str]:
+    """`(record required, macro discipline required, why)` for this leaf."""
+    version = _stated_version(leaf)
+    wiring = _wiring()
+    carried = (leaf / wiring.RECORD).is_file()
+    bound = version is not None and version >= CHRONOLOGY_FROM_VERSION
+    if bound:
+        why = (f"the leaf states {CHRONOLOGY_WORKFLOW} v{version}, at or past "
+               f"the version the chronology contract binds from")
+    elif carried:
+        why = f"the leaf carries {wiring.RECORD}"
+    else:
+        stated = "no proper provenance record" if version is None else \
+            f"{CHRONOLOGY_WORKFLOW} v{version}"
+        why = (f"the leaf states {stated} and carries no {wiring.RECORD}, so "
+               f"it predates the chronology contract, which binds from "
+               f"{CHRONOLOGY_WORKFLOW} v{CHRONOLOGY_FROM_VERSION}")
+    return bound or carried, bound, why
+
+
+def _corpus_answer(leaf: Path, root: Path):
+    """What the chronology corpus answers about this proper, right now."""
+    wiring = _wiring()
+    return wiring.dossier(
+        _leaf_document(leaf, root),
+        root=root,
+        corpus_root=root / "src" / "sources" / "chronology",
+    )
+
+
+def check_chronology_record_current(leaf: Path, root: Path) -> tuple[list[str], str]:
+    """The carried chronology ids are the corpus's, and are the corpus's now.
+
+    §14 asks a consumer to carry the stable ids — event id, unit id, profile,
+    relation — "so prose can be regenerated without re-researching the fact".
+    A carried id is only worth carrying if it still names what the corpus
+    holds, and a copy of a fact is a prediction that the two will differ, so
+    this regenerates the record from the corpus and compares. There is no
+    tolerance and no merge: the record is generated, and a leaf whose copy has
+    drifted is told to rewrite it rather than to reconcile it.
+    """
+    wiring = _wiring()
+    required, _macros, why = _chronology_scope(leaf)
+    path = leaf / wiring.RECORD
+    if not required:
+        return [], f"not in scope: {why}"
+    if not path.is_file():
+        return ([
+            f"{why}, so the leaf must carry {wiring.RECORD}; write it with "
+            f"`tools/tpt proper-chronology record --document "
+            f"{_leaf_document(leaf, root)} --write`"
+        ], "")
+    found = _corpus_answer(leaf, root)
+    rendered = wiring.render(found)
+    if path.read_text(encoding="utf-8") != rendered:
+        return ([
+            f"{wiring.RECORD} is not what the chronology corpus answers now. "
+            f"It is generated, not authored: rewrite it with `tools/tpt "
+            f"proper-chronology record --document "
+            f"{_leaf_document(leaf, root)} --write` and re-read the prose "
+            f"that rests on it. Editing it to agree with the guide is the one "
+            f"repair this check exists to refuse."
+        ], "")
+    claims = sum(len(element.claims) for element in found.elements)
+    scriptural = [e for e in found.elements if e.loci]
+    return [], (
+        f"{len(scriptural)} scriptural elements, {claims} corpus assertions "
+        f"carried, current with the corpus"
+    )
+
+
+def check_chronology_claims_supported(leaf: Path, root: Path) -> tuple[list[str], str]:
+    """Every date the guide prints is one the corpus asserts, and it says which.
+
+    Two failures, and only the second needs the macro discipline.
+
+    A `\\chronology{subject}{relation}{label}` naming an assertion the corpus
+    does not make is refused wherever it stands, in any leaf, at any version:
+    that is a claim about the corpus's contents, and it is either true of them
+    or it is the invention §14 forbids.
+
+    A date printed with no claim behind it is refused from `proper` v17, and
+    that is the half which catches recall. A guide that quietly writes a year
+    it remembers produces a page indistinguishable from a right one, so the
+    date cell of the scriptural dossier may hold no digit except inside a
+    claim, and every scriptural element of the formulary must have such a
+    cell. Where the
+    corpus returns `undated-in-tradition` or `research-pending` there is no
+    claim to make, so the cell states the absence and carries no figure at
+    all — which is exactly what §14 requires a consumer to preserve.
+    """
+    _required, macros, why = _chronology_scope(leaf)
+    printed = {
+        path: active_tex(path.read_text(encoding="utf-8"))
+        for path in leaf_tex(leaf)
+    }
+    # THE CORPUS IS NOT CONSULTED WHEN THERE IS NOTHING TO HOLD AGAINST IT. A
+    # leaf that prints no chronology claim and is not yet bound by the macro
+    # discipline has nothing for this check to judge, and resolving the
+    # formulary's loci to say so would make every synthetic fixture in the
+    # tree need a registered calendar identity.
+    marks = ("\\" + CHRONOLOGY_CLAIM, "\\" + CHRONOLOGY_CELL)
+    if not macros and not any(
+        mark in text for text in printed.values() for mark in marks
+    ):
+        return [], f"no chronology claim printed ({why})"
+    found = _corpus_answer(leaf, root)
+    supported: dict[str, set[tuple[str, str, str]]] = {
+        element.key: {
+            (claim.subject, claim.relation, _normalized_label(claim.label))
+            for claim in element.claims
+        }
+        for element in found.elements
+    }
+    everywhere = set().union(*supported.values()) if supported else set()
+    problems: list[str] = []
+    covered: set[str] = set()
+    claims_seen = 0
+
+    def hold(args: list[str], where: str, allowed: set[tuple[str, str, str]]) -> None:
+        nonlocal claims_seen
+        claims_seen += 1
+        subject, relation, label = (arg.strip() for arg in args)
+        key = (subject, relation, _normalized_label(label))
+        if key in allowed:
+            return
+        near = sorted(lbl for sub, rel, lbl in allowed if sub == subject
+                      and rel == relation)
+        if near:
+            found_here = f"; what it holds there is {near}"
+        elif key in everywhere:
+            # The one near miss worth naming separately: the assertion is
+            # real, and it is about another element's verses. Printing it here
+            # would make the corpus say something about a passage it says
+            # nothing about, which is the harder error to see on the page.
+            found_here = (
+                "; it asserts that of another element of this formulary, and "
+                "not at the verses this element appoints")
+        else:
+            found_here = "; it holds no such assertion at this proper's loci"
+        problems.append(
+            f"{where}: the corpus asserts no {relation!r} of {subject!r} "
+            f"reading {_normalized_label(label)!r}{found_here}. A date the "
+            f"corpus does not assert may not be printed, researched into "
+            f"place, or recalled: guidance/scripture-chronology.md section 14."
+        )
+
+    for path, text in printed.items():
+        name = path.relative_to(leaf)
+        try:
+            cells = _macro_calls(text, CHRONOLOGY_CELL, 2)
+            # Parsed here only so that a malformed claim anywhere in the file
+            # is a refusal rather than a claim silently not found: a
+            # `\\chronology` missing its third argument would otherwise be
+            # invisible to both sweeps below.
+            _macro_calls(text, CHRONOLOGY_CLAIM, 3)
+        except ValueError as exc:
+            problems.append(f"{name}: {exc}")
+            continue
+        for (keys, content), _start, _end in cells:
+            named = [key.strip() for key in keys.split(",") if key.strip()]
+            where = f"{name}: date cell for {', '.join(named) or '(no element)'}"
+            if not named:
+                problems.append(
+                    f"{name}: a \\{CHRONOLOGY_CELL} names no element key, so "
+                    f"nothing says which appointed text its date belongs to")
+            allowed: set[tuple[str, str, str]] = set()
+            for key in named:
+                element = found.element(key)
+                if element is None:
+                    problems.append(
+                        f"{where}: the formulary appoints no element {key!r}; "
+                        f"its elements are "
+                        f"{[e.key for e in found.elements]}")
+                    continue
+                covered.add(key)
+                allowed |= supported[key]
+            spans = _macro_calls(content, CHRONOLOGY_CLAIM, 3)
+            for args, _at, _stop in spans:
+                hold(args, where, allowed)
+            bare = content
+            for _args, at, stop in reversed(spans):
+                bare = bare[:at] + " " + bare[stop:]
+            if DIGIT.search(prose(bare)) and macros:
+                problems.append(
+                    f"{where}: prints a figure outside a "
+                    f"\\{CHRONOLOGY_CLAIM} claim: "
+                    f"{' '.join(prose(bare).split())[:80]!r}. A date reaches "
+                    f"this cell from the chronology corpus or it does not "
+                    f"reach it; a figure with no claim behind it is "
+                    f"indistinguishable on the page from one with.")
+        # A claim standing outside a date cell is still a claim about the
+        # corpus's contents, so it is held to the same rule against the whole
+        # formulary. The cells are cut out first rather than compared by
+        # offset: a claim judged twice would be counted twice and, worse,
+        # judged the second time against every element instead of its own.
+        loose = text
+        for _args, at, stop in reversed(cells):
+            loose = loose[:at] + " " + loose[stop:]
+        for args, _at, _stop in _macro_calls(loose, CHRONOLOGY_CLAIM, 3):
+            hold(args, f"{name}: \\{CHRONOLOGY_CLAIM} outside a date cell",
+                 everywhere)
+
+    if macros:
+        wanted = [e.key for e in found.elements if e.loci]
+        missing = [key for key in wanted if key not in covered]
+        if missing:
+            problems.append(
+                f"the scriptural dossier declares no date cell for "
+                f"{missing}; every appointed Scripture gets a "
+                f"\\{CHRONOLOGY_CELL} stating what the corpus holds for it, "
+                f"including the elements it holds nothing for — an element "
+                f"with no cell is indistinguishable from one whose date was "
+                f"forgotten")
+
+    scope = "the macro discipline binds" if macros else f"claims only: {why}"
+    return problems, (
+        f"{claims_seen} chronology claims, every one asserted by the corpus "
+        f"({scope})"
+    )
+
+
 CHECKS = {
+    "chronology-claims-supported": check_chronology_claims_supported,
+    "chronology-record-current": check_chronology_record_current,
     "identifiers-resolve": check_identifiers_resolve,
     "references-used": check_references_used,
     "relation-coverage": check_relation_coverage,

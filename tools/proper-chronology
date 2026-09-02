@@ -1,0 +1,326 @@
+#!/usr/bin/env python3
+"""Answer a proper's appointed loci from the Scripture chronology corpus.
+
+Usage: proper-chronology {loci,record} --document ID [--provider P] [--json]
+
+`guidance/scripture-chronology.md` §14 says a proper that needs a biblical
+date MUST read `src/sources/chronology/` and may not infer, research,
+harmonize or recall a replacement. This is the route it reads it by: the
+calendar resolves the formulary's appointed verses, `_canon` spells them as
+loci, and `scripts/_chronology.py` — the whole seam onto the corpus — answers.
+Nothing here parses a citation and nothing here reads the corpus YAML.
+
+`record` renders the answer as the leaf's `research/chronology.toml`, which is
+the audit payload §14 asks a consumer to carry the stable ids in: event or
+composition-unit id, profile, relation, and the source's own label. It is
+generated, never authored; `check-content-preflight --check
+chronology-record-current` regenerates it and refuses a leaf whose copy has
+drifted, so the ids a guide prints are the corpus's and stay the corpus's.
+"""
+
+from __future__ import annotations
+
+import argparse
+import sys
+from pathlib import Path
+
+# Shared CLI helpers live outside tools/ so that tmt's registry scan, which
+# requires every file in tools/ to be a registered tool, stays clean.
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+
+import _chronology  # noqa: E402
+import _proper_chronology as _wiring  # noqa: E402
+from _tooling import (  # noqa: E402
+    Example,
+    examples_live_on_the_verbs,
+    print_json,
+    run_verb_cli,
+    with_examples,
+)
+
+ROOT = Path(__file__).resolve().parents[1]
+PREFIX = "proper-chronology error"
+NINTH = "liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost"
+FOURTEENTH = "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"
+
+# Captured transcripts, never composed; see scripts/_tooling.py.
+EXAMPLES = {
+    "loci": (
+        Example(
+            "tools/proper-chronology loci --document "
+            "liturgy/roman-rite/1962/propers/temporal/"
+            "54-fourteenth-after-pentecost",
+            (
+                "introit        composition-only     Ps.83.10 Ps.83.11 Ps.83.2 Ps.83.3",
+                "collect        (no scripture)",
+                "epistle        composition-only     Gal.5.16 Gal.5.17 Gal.5.18 Gal.5.19 Gal.5.20 Gal.5.21 Gal.5.22 Gal.5.23 Gal.5.24",
+                "gradual        undated-in-tradition Ps.117.8 Ps.117.9",
+                "alleluia       undated-in-tradition Ps.94.1",
+                "gospel         composition-only     Matt.6.24 Matt.6.25 Matt.6.26 Matt.6.27 Matt.6.28 Matt.6.29 Matt.6.30 Matt.6.31 Matt.6.32 Matt.6.33",
+                "offertory      dated                Ps.33.8 Ps.33.9",
+                "secret         (no scripture)",
+                "communion      composition-only     Matt.6.33",
+                "postcommunion  (no scripture)",
+            ),
+            "which verses the formulary appoints, in the corpus's own "
+            "spelling, and what the corpus has at them",
+        ),
+        Example(
+            "tools/proper-chronology loci --document "
+            "liturgy/roman-rite/1962/propers/temporal/"
+            "49-ninth-after-pentecost --json",
+            (
+                "{\"document\":\"liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost\",\"elements\":[{\"key\":\"introit\",\"loci\":[\"Ps.53.6\",\"Ps.53.7\",\"Ps.53.3\"],\"n... [+1180 chars]",
+            ),
+            "the same, as the machine contract a stage reads",
+        ),
+    ),
+    "record": (
+        Example(
+            "tools/proper-chronology record --document "
+            "liturgy/roman-rite/1962/propers/temporal/"
+            "54-fourteenth-after-pentecost --summary",
+            (
+                "introit        composition-only     1 claim",
+                "collect        -                    0 claims",
+                "epistle        composition-only     4 claims",
+                "gradual        undated-in-tradition 0 claims",
+                "alleluia       undated-in-tradition 0 claims",
+                "gospel         composition-only     6 claims",
+                "offertory      dated                1 claim",
+                "secret         -                    0 claims",
+                "communion      composition-only     6 claims",
+                "postcommunion  -                    0 claims",
+            ),
+            "what the record holds, without printing the record; the two "
+            "psalms the corpus dates nowhere are named as undated rather "
+            "than left blank",
+        ),
+        Example(
+            "tools/proper-chronology record --document "
+            "liturgy/roman-rite/1962/propers/temporal/"
+            "54-fourteenth-after-pentecost --provider claude --check",
+            (
+                "proper-chronology error: src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/research/chronology.toml does not exist; write it with `tools/tpt proper-chronology record --document liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost --provider claude --write`",
+            ),
+            "exits 1; this leaf was authored before the wiring existed and "
+            "carries no record, which is the refusal the content-preflight "
+            "gate is built on",
+        ),
+    ),
+}
+
+
+def _dossier(arguments: argparse.Namespace) -> _wiring.Dossier:
+    root = Path(arguments.root).resolve() if arguments.root else ROOT
+    return _wiring.dossier(
+        arguments.document,
+        root=root,
+        profile=arguments.profile,
+        corpus_root=(root / "src/sources/chronology") if arguments.root else None,
+    )
+
+
+def _leaf(arguments: argparse.Namespace) -> Path:
+    root = Path(arguments.root).resolve() if arguments.root else ROOT
+    provider = arguments.provider
+    if not provider or "/" in provider or provider.startswith("."):
+        raise ValueError(f"not a provider name: {provider!r}")
+    provider_root = (root / "src" / provider).resolve()
+    leaf = (provider_root / arguments.document).resolve()
+    if leaf != provider_root and provider_root not in leaf.parents:
+        raise ValueError(f"document leaves the provider root: {arguments.document!r}")
+    if not leaf.is_dir():
+        raise ValueError(f"no such leaf: src/{provider}/{arguments.document}")
+    return leaf
+
+
+def loci(arguments: argparse.Namespace) -> dict[str, object]:
+    """Which verses the formulary appoints, and what the corpus has at them."""
+    found = _dossier(arguments)
+    return {
+        "status": "ok",
+        "document": found.document,
+        "mass": found.mass,
+        "system": found.system,
+        "elements": [
+            {
+                "key": element.key,
+                "name": element.name,
+                "refs": list(element.refs),
+                "loci": list(element.loci),
+                "status": element.status,
+            }
+            for element in found.elements
+        ],
+    }
+
+
+def record(arguments: argparse.Namespace) -> dict[str, object]:
+    """Render the leaf's chronology record, and optionally write or check it."""
+    found = _dossier(arguments)
+    rendered = _wiring.render(found)
+    payload: dict[str, object] = {
+        "status": "ok",
+        "document": found.document,
+        "mass": found.mass,
+        "path": _wiring.RECORD,
+        "elements": [
+            {
+                "key": element.key,
+                "status": element.status,
+                "claims": len(element.claims),
+                "subjects": sorted({claim.subject for claim in element.claims}),
+            }
+            for element in found.elements
+        ],
+    }
+    if not (arguments.write or arguments.check):
+        payload["record"] = rendered
+        return payload
+
+    path = _wiring.record_path(_leaf(arguments))
+    shown = path.relative_to(Path(arguments.root).resolve() if arguments.root else ROOT)
+    if arguments.check:
+        if not path.is_file():
+            raise ValueError(
+                f"{shown} does not exist; write it with "
+                f"`tools/tpt proper-chronology record --document "
+                f"{found.document} --provider {arguments.provider} --write`"
+            )
+        if path.read_text(encoding="utf-8") != rendered:
+            raise ValueError(
+                f"{shown} is not what the corpus now answers; it is generated, "
+                f"so rewrite it with --write rather than editing it"
+            )
+        payload["checked"] = str(shown)
+        return payload
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    changed = (
+        not path.is_file() or path.read_text(encoding="utf-8") != rendered
+    )
+    if changed:
+        path.write_text(rendered, encoding="utf-8")
+    payload["written"] = str(shown)
+    payload["changed"] = changed
+    return payload
+
+
+STATUS_WIDTH = 21
+
+
+def _render_elements(payload: dict, counts: bool) -> int:
+    for element in payload["elements"]:
+        status = element["status"] or ("-" if counts else "(no scripture)")
+        if counts:
+            total = element["claims"]
+            tail = f"{total} claim" if total == 1 else f"{total} claims"
+        else:
+            tail = " ".join(element["loci"])
+        line = f"  {element['key']:<15}{status:<{STATUS_WIDTH}}{tail}".rstrip()
+        print(line[2:] if line.startswith("  ") else line)
+    return 0
+
+
+def _render(payload: object, arguments: argparse.Namespace) -> int:
+    if not isinstance(payload, dict):
+        return 0
+    if getattr(arguments, "json", False):
+        print_json(payload)
+        return 0
+    verb = arguments.command
+    if verb == "loci":
+        return _render_elements(payload, counts=False)
+    if "checked" in payload:
+        print(f"{payload['checked']}: current with the chronology corpus")
+        return 0
+    if "written" in payload:
+        state = "rewritten" if payload["changed"] else "already current"
+        print(f"{payload['written']}: {state}")
+        return 0
+    if arguments.summary:
+        return _render_elements(payload, counts=True)
+    sys.stdout.write(str(payload["record"]))
+    return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    shared = argparse.ArgumentParser(add_help=False)
+    shared.add_argument(
+        "--document",
+        required=True,
+        help=f"the proper leaf id, e.g. {FOURTEENTH}",
+    )
+    shared.add_argument(
+        "--provider",
+        default="claude",
+        help="provider directory under src/ (default: claude)",
+    )
+    shared.add_argument("--root", help="a checkout to read instead of this one")
+    shared.add_argument(
+        "--profile", help="answer under one chronology profile only"
+    )
+    shared.add_argument(
+        "--json",
+        action="store_true",
+        help="emit one compact key-sorted JSON object (cli-v1)",
+    )
+
+    parser = argparse.ArgumentParser(
+        prog="proper-chronology",
+        description=(
+            "Answer a proper's appointed loci from the Scripture chronology "
+            "corpus. A proper may not date a locus any other way: "
+            "guidance/scripture-chronology.md section 14."
+        ),
+    )
+    examples_live_on_the_verbs(parser, "proper-chronology")
+    sub = parser.add_subparsers(dest="command")
+
+    with_examples(
+        sub.add_parser(
+            "loci",
+            help="the verses the formulary appoints, as corpus loci",
+            parents=[shared],
+        ),
+        EXAMPLES["loci"],
+    )
+    writer = sub.add_parser(
+        "record",
+        help="render, write or verify the leaf's research/chronology.toml",
+        parents=[shared],
+    )
+    writer.add_argument(
+        "--write",
+        action="store_true",
+        help="write the record into the leaf instead of printing it",
+    )
+    writer.add_argument(
+        "--check",
+        action="store_true",
+        help="refuse a leaf whose record is missing or has drifted",
+    )
+    writer.add_argument(
+        "--summary",
+        action="store_true",
+        help="print what the record holds instead of the record",
+    )
+    with_examples(writer, EXAMPLES["record"])
+
+    return run_verb_cli(
+        parser=parser,
+        handlers={"loci": loci, "record": record},
+        renderer=_render,
+        prefix=PREFIX,
+        argv=argv,
+        mapped_errors={
+            _wiring.ChronologyWiringError: ("wiring", 1),
+            _chronology.ChronologyError: ("chronology", 1),
+            ValueError: ("refused", 1),
+        },
+    )
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -1,0 +1,137 @@
+#!/bin/sh
+# Test for `tools/tpt proper-chronology`: exit 0 = pass (the stable gate).
+#
+# This tool is the propers' only route to biblical chronology
+# (`guidance/scripture-chronology.md` section 14), so the assertions that
+# matter most are the ones about what it will NOT do: it converts no psalm
+# number, it invents no locus for an unregistered identity, and it refuses a
+# record that has drifted from the corpus instead of rewriting the tree to
+# agree with the leaf.
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="proper-chronology"
+collection="liturgy/roman-rite/1962/propers"
+fourteenth="$collection/temporal/54-fourteenth-after-pentecost"
+
+run_tool() {
+	"$tool" "$tool_id" "$@"
+}
+
+fail() {
+	echo "$1" >&2
+	exit 1
+}
+
+reject() {
+	if run_tool "$@" >/dev/null 2>&1; then
+		fail "expected failure: $*"
+	fi
+}
+
+run_tool --help >/dev/null
+run_tool loci --help >/dev/null
+run_tool record --help >/dev/null
+
+sandbox="$(mktemp -d)"
+trap 'rm -rf "$sandbox"' EXIT INT TERM
+
+# Every published leaf both providers hold must resolve to loci. A proper the
+# calendar appoints Scripture for and this tool cannot address is a proper the
+# contract cannot be enforced on.
+leaves=0
+for provider in gpt claude; do
+	for leaf in "$repo/src/$provider/$collection"/*/*/; do
+		[ -f "$leaf/proper-components.toml" ] || continue
+		slug="${leaf#"$repo/src/$provider/"}"
+		slug="${slug%/}"
+		run_tool loci --provider "$provider" --document "$slug" >/dev/null ||
+			fail "published leaf refused: src/$provider/$slug"
+		leaves=$((leaves + 1))
+	done
+done
+[ "$leaves" -gt 0 ] || fail "found no published leaves: the regression checked nothing"
+
+# The loci are the corpus's own spelling, taken from the canonical book index
+# and never from a table written here. Psalm 83 is the Vulgate number the
+# missal prints, not the 84 an English psalter would.
+run_tool loci --document "$fourteenth" >"$sandbox/loci.txt"
+grep -q '^introit .*Ps\.83\.10 ' "$sandbox/loci.txt" ||
+	fail "the Introit did not resolve to its Vulgate psalm loci"
+grep -q '^gospel .*Matt\.6\.24 ' "$sandbox/loci.txt" ||
+	fail "the Gospel did not resolve to Matthew loci"
+# An element the missal composes carries no Scripture, and the line says so
+# rather than being dropped: an absent row and a forgotten row look alike.
+grep -q '^collect  *(no scripture)$' "$sandbox/loci.txt" ||
+	fail "a composed element was dropped instead of reported"
+
+# Byte-stable, because a gate reruns it and a record is compared against it.
+run_tool loci --document "$fourteenth" >"$sandbox/loci-again.txt"
+cmp -s "$sandbox/loci.txt" "$sandbox/loci-again.txt" ||
+	fail "loci output is not byte-stable"
+
+# The status is the corpus's, and the two psalms it dates nowhere must come
+# back saying so. A tool that quietly returned nothing for them would let a
+# consumer read absence as "not looked at".
+grep -q '^gradual  *undated-in-tradition ' "$sandbox/loci.txt" ||
+	fail "Ps. 117 did not come back undated-in-tradition"
+grep -q '^offertory  *dated ' "$sandbox/loci.txt" ||
+	fail "Ps. 33 did not come back dated"
+
+# The record carries the stable ids section 14 requires a consumer to carry.
+run_tool record --document "$fourteenth" >"$sandbox/record.toml"
+for field in relation subject profile label locus; do
+	grep -q "^$field = " "$sandbox/record.toml" ||
+		fail "the record carries no $field field"
+done
+grep -q '^subject = "israel.monarchy.david-at-geth"$' "$sandbox/record.toml" ||
+	fail "the record does not carry the event id the corpus answered with"
+grep -q '^generated_by = ' "$sandbox/record.toml" ||
+	fail "the record does not say what generated it"
+
+run_tool record --document "$fourteenth" >"$sandbox/record-again.toml"
+cmp -s "$sandbox/record.toml" "$sandbox/record-again.toml" ||
+	fail "the record is not byte-stable"
+
+# --write and --check, over a copied leaf so the tree is untouched.
+copy="$sandbox/root"
+mkdir -p "$copy/src/claude/$collection/temporal"
+cp -R "$repo/src/claude/$fourteenth" "$copy/src/claude/$collection/temporal/"
+ln -s "$repo/src/sources" "$copy/src/sources"
+rm -f "$copy/src/claude/$fourteenth/research/chronology.toml"
+
+reject record --root "$copy" --provider claude --document "$fourteenth" --check
+run_tool record --root "$copy" --provider claude --document "$fourteenth" --write \
+	>/dev/null || fail "--write refused a leaf it had just been asked to write"
+run_tool record --root "$copy" --provider claude --document "$fourteenth" --check \
+	>/dev/null || fail "--check refused the record --write had just written"
+
+# A hand-edited record is the failure this whole wiring exists to catch: a
+# date that looks exactly like the corpus's and is not.
+sed 's/^label = "A. M. 2944, A. C. 1060"$/label = "1055-1015 B.C."/' \
+	"$copy/src/claude/$fourteenth/research/chronology.toml" \
+	>"$sandbox/edited.toml"
+if cmp -s "$sandbox/edited.toml" \
+	"$copy/src/claude/$fourteenth/research/chronology.toml"; then
+	fail "the sed edit changed nothing, so the refusal below proves nothing"
+fi
+cp "$sandbox/edited.toml" "$copy/src/claude/$fourteenth/research/chronology.toml"
+reject record --root "$copy" --provider claude --document "$fourteenth" --check
+
+# An identity no mass entry registers names no appointed Scripture, and this
+# tool says so rather than returning an empty dossier that reads as "no dates".
+reject loci --document "$collection/temporal/99-invented-sunday"
+# A slug with no catalog identity in it names no formulary. The full leaf-id
+# grammar is `check-proper-identity`'s, and the scope gate has already run it
+# by the time anything here does; this only refuses what it cannot look up.
+reject loci --document "$collection/temporal/fourteenth-after-pentecost"
+# The provider boundary, which decides where --write may put a file.
+reject record --provider ../etc --document "$fourteenth" --check
+# Asking nothing is not a pass.
+reject loci
+reject
+# An unknown flag is refused rather than ignored.
+reject loci --badflag --document "$fourteenth"
+
+echo ok

@@ -1,6 +1,6 @@
 {
   "id": "proper",
-  "version": 16,
+  "version": 17,
   "description": "1962 propers synthesis production workflow",
   "document_argument": "proper",
   "document_discovery": {
@@ -241,6 +241,16 @@
           "id": "provenance-matches-run",
           "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check provenance-matches-run --run-workflow {run.workflow_id} --run-workflow-version {run.workflow_version} --run-workflow-digest {run.workflow_digest} --run-id {run.run_id} --run-seed-commit {run.repo_commit}",
           "required_result": "the leaf's \\AIGenerationProvenance record must state this run: its workflow, version, source digest, run id and seed commit, as the packet header states them and not as the leaf's existing record or an earlier contribution's prose states them; the leaf cannot be held against the run by anything the leaf alone says, and a v10 copied out of prose survived a v11 pass because nothing held it"
+        },
+        {
+          "id": "chronology-record-current",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check chronology-record-current",
+          "required_result": "the leaf must carry the chronology corpus's own answer for its appointed loci in research/chronology.toml, and it must be the answer the corpus gives now; guidance/scripture-chronology.md section 14 requires a consumer to carry the stable ids -- event id, unit id, profile, relation -- so that prose can be regenerated without re-researching the fact, and a carried id that no longer names what the corpus holds is the second source of truth the corpus exists to prevent. The record is generated, so a leaf whose copy has drifted is rewritten from the corpus and never reconciled toward the guide"
+        },
+        {
+          "id": "chronology-claims-supported",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check chronology-claims-supported",
+          "required_result": "every biblical date the leaf prints must be an assertion the chronology corpus makes at the verses the element appoints, printed in the source's own label and carrying the corpus's subject and relation; and from this version the date cell of the scriptural dossier may hold no figure that is not inside such a claim, with one cell for every appointed Scripture including the ones the corpus dates nowhere. A well-formed year reads exactly like a right one, so a date recalled or researched into place is invisible to every other gate and to the leaf's own self-consistency"
         }
       ],
       "pass_transition": "content-evaluation",

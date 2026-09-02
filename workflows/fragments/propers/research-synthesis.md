@@ -135,10 +135,32 @@ Integrate the joined research into one research brief that the
    Where there is no prior run for this target, say so in one line under that
    heading. An absent statement and an empty history are not distinguishable
    afterwards, and the next stage must be able to tell them apart.
-12. Write into `research/scope.md`: the passage-by-passage reception matrix,
+12. Assemble the `Scriptural chronology audit` from
+   `src/{provider}/{proper}/research/chronology.toml`, which `resolve-context`
+   wrote from the Scripture chronology corpus and which nothing in this
+   workflow may edit. One entry per appointed Scripture, naming the element,
+   its loci, the corpus's `status`, and — for each assertion it carries — the
+   `subject`, the `relation`, the `profile`, and the `label` in the source's
+   own words. Carry the ids: `guidance/scripture-chronology.md` §14 asks a
+   consumer to hold them "so prose can be regenerated without re-researching
+   the fact", and the author prints a date by naming the subject and relation
+   you record here.
+
+   Where the status is `undated-in-tradition` or `research-pending`, or the
+   element carries no assertion, say so in that entry in those words. That is
+   the corpus's answer and the guide will state it; it is not a coverage gap
+   for you to close, and it is not something a lane finding, a commentary or
+   a chronological table may fill. A lane that reported a date the record
+   does not carry reported reception — record it as what that source says,
+   attributed to it, and never as the date of the passage. You do not read
+   the corpus yourself and you do not add to this audit from any other
+   source: the record is the whole of what this brief may say about when a
+   passage was written or when what it tells of happened.
+13. Write into `research/scope.md`: the passage-by-passage reception matrix,
    the corpora and languages searched, material negative results, rejected
    and unresolved leads, competing historical judgments, the
    `Notable-and-quotable audit`, the `Interpretive-proposal audit`, the
+   `Scriptural chronology audit`, the
    section-by-section evidence coverage statement, the
    `Prior-production carry-forward`, and the organized brief.
    This stage is the sole writer of `research/scope.md` in the workflow:

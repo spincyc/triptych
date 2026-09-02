@@ -97,6 +97,7 @@ GROUPS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
             "mass-ordinary",
             "mass-propers",
             "mass-today",
+            "proper-chronology",
         ),
     ),
     (
@@ -201,6 +202,7 @@ REACHES: dict[str, str] = {
     "mass-propers": NOTHING,
     "mass-today": NOTHING,
     "pdf-review": NOTHING,
+    "proper-chronology": NOTHING,
     "public-alpha": NOTHING,
     "reading-plan": NOTHING,
     "release-bindings": NOTHING,
