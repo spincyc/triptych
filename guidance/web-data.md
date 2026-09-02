@@ -199,7 +199,7 @@ outside the repository along with its index and cannot reach the public tree.
 
 ### 3. Structure — citations resolved
 
-`<out>/propers/<calendar>.json`, written by `mass-propers structure`:
+`<out>/structure/propers/<calendar>.json`, written by `mass-propers structure`:
 
 ```json
 {"ref":"Psalm 24:1-3","book":"Psalms","token":"Ps",
@@ -222,6 +222,46 @@ them confidently. A page that explains itself beats one that is quietly wrong.
 Cycle-varying propers keep each year's citations apart under `cycles`, because
 a merged list is one the browser cannot tell apart — and because merging them
 silently dropped 43% of the postconciliar citations when it was first written.
+
+The outer structure remains `triptych-propers-structure/v1`. Fresh generation
+adds stable, source-authored form identity without removing the v1 flat view:
+each proper carries `form_id`, a multi-form mass carries ordered
+`forms: [{id, name, ordinal, propers}]`, and concatenating those grouped
+`propers` in ordinal order exactly reproduces the legacy flat `mass.propers`.
+This is an additive compatibility rule, not permission to guess identity.
+A legacy payload with no form manifest or form labels may normalize its sole
+formulary to `main`; any payload showing multiple or ambiguous formularies but
+lacking stable IDs is refused. Display labels remain presentation, never keys.
+
+The same public Proper rows retain exact source-authored
+`ordinary_disposition` mappings. An `alternative` row carries stable `group`
+and `option` ids plus its source basis; every member is preserved inside one
+atomic unresolved choice until a consumer has an explicit selection. An
+`unplaced` row carries a stable group, a source basis, and exactly
+`before-frame` or `after-frame`; it remains visible in source order with an
+unseated identity. Names, parentheses, adjacency, and array order infer none of
+these meanings. A form may also override its Mass's `ordinary_frame`; the
+effective frame is the selected `forms[].ordinary_frame`, then the Mass frame,
+then the implicit full frame. The cross-layer Ordinary checker rejects orphan
+choice groups, mixed seats, unknown or backwards full-frame rows, middle-frame
+unplaced claims, and an unplaced claim made stale by a newly declared slot.
+
+A recension projection retains its aggregate historical boundary as the
+top-level `stands_before` list. Each generated `mass.recension` stamp retains
+the optional `act` on its primary claim and on every row under `also`. These ids
+are act-history stations or attribution records: consumers display them and may
+link them to the act history, but do not derive chronology, causation, or an
+unstated middle recension from their order. The absence of a row-level `act`
+remains meaningful and must not be filled from the aggregate boundary.
+
+A source-side translation-absence audit is richer than its public projection.
+Generated Proper absence rows expose exactly `{target, lang, state}`. `target`
+contains only `{mass, form_id, proper, cycle, occurrence, extent}`; `state` is
+`unavailable` or `rights-restricted`. Incipits, notes, witnesses, source and
+artifact IDs, locators, hashes, rights evidence, and permission internals never
+cross this boundary. Cycle-specific rows live inside that cycle's owner.
+Neither public state implies that a wording body is held: its language
+capability is `held: false, available: false`.
 
 ### 4. Manifest — what may be offered
 
@@ -318,12 +358,12 @@ a **reference and never a copy**: it is a mass key in the same propers structure
 in exactly one place and a feria cannot drift from the Sunday it repeats. It
 states no ranking, and a date carrying a feast carries its ferial formulary
 beside it, unused; whether the day is a feria belongs to the rubrics layer below.
-Where the immediately preceding Sunday carries no Mass of the Sunday in the index
-— a Sunday the Most Holy Name of Jesus has taken — the map fails closed and the
-year records the refusal, rather than borrowing the feast's Mass instead. Only a
-calendar whose own rubrics appoint such a borrowing carries the block at all: the
-reformed books give a weekday its own formulary and, in Ordinary Time, a choice
-under IGMR 355, so the postconciliar files carry none.
+Where a calendar's own rubric explicitly provides otherwise, the map follows the
+date-keyed exception recorded in the canonical calendar-computation guidance; it
+does not substitute the feast that occupied the preceding Sunday. Where no such
+rubric has been read for that calendar, the map fails closed. The reformed books
+give a weekday its own formulary and, in Ordinary Time, a choice under IGMR 355,
+so the postconciliar files carry none.
 
 ## The rubrics layer
 
@@ -405,36 +445,60 @@ was serving sat inside those 45.
 
 **Two absences, kept apart.** Each element records which of its two texts is
 missing and under which named reason, because the reasons are different and the
-difference is the point. On the postconciliar missal the English is absent
-because ICEL holds it and the Latin because no distribution basis for the
-*editio typica* is recorded here; on the 1962 missal the English is present and
-only the Latin is untranscribed. Collapsing both into one "missing" would hide
+difference is the point. On the postconciliar missal protected Latin new matter
+has no distribution basis recorded here. English can be absent for a different
+reason: no exact authoritative exemplar, a different rightsholder, or a
+permission limited to a web-display surface that does not extend to the
+repository's clonable static-data bundle. On the 1962 missal the gaps and their
+witnesses differ again. Collapsing all of these into one "missing" would hide
 exactly what a reader needs to be able to see. An element that carries neither
 text nor a stated reason is a hard failure: a silent gap is the one thing this
 layer must never emit.
+
+The artifact owns the text and layout it prints; the inventory owns the later
+editorial classification of that evidence. An artifact-backed section therefore
+may set one default Latin-absence reason and narrow it with
+`absent_latin_by_element`. Every override must name an English source row whose
+Latin artifact holds no text and must point to a reason the inventory declares.
+This classification is local to the target recension: a 1962 finding does not
+propagate into the pre-1955 projection of the same witness. Target-recension
+exclusions remain separate accounting and never erase the source-side finding.
 
 **Languages are declared, and one of them holds nothing.** Each file carries a
 `languages` block naming every language the layer speaks of, the side of
 `absent` that records why each is missing, and how many of the file's elements
 each reaches. It is the schema's table and not a missal's, so it is stated once
 in `mass-ordinary` rather than twice in the two inventories that would each
-repeat the same two rows. The browser's language control is filled from it, and
-offers a language nothing is held in — the Latin of both missals — because
-choosing an empty language is how a reader is shown, at every element and at
-the place it falls due, under which recorded reason it is empty. Reading the
-reason by ISO code against the side-names is the mistake this replaced: `show
---lang la` found nothing under `la`, fell through to the English side, and
-reported the postconciliar Latin as withheld under ICEL. That is a real reason,
-for the other text, printed under this one.
+repeat the same rows. The browser's language control is filled from it and can
+offer a declared language even where all or part of that language is unavailable;
+the reader then sees the reason at the element and at the place it falls due.
+Reading the reason by ISO code against the side-names is the mistake this
+replaced: `show --lang la` once found nothing under `la`, fell through to the
+English side, and reported a Latin gap under an English rightsholder. The
+language side, source, and reason must travel together.
 
-**A third rights state.** `mass-propers` publishes `public-domain` and
-`project-created` and withholds the rest, which is two states. The ELLC
-ecumenical common texts are a third — under copyright, licensed for free use,
-and carrying an acknowledgement the licence requires. `licensed-free` is that
-state, a witness declaring it must carry a nonempty `acknowledgement`, and the
-acknowledgement is emitted beside every text it covers. It renders at the point
-of use rather than once in a page footer, because a reader who copies a prayer
-out must carry the condition with it.
+**Rights basis and publication surface are separate axes.** `public-domain` and
+`project-created` are not the only provenance states. A rights record may
+preserve evidence of a free-use grant, including the ELLC grant for ecumenical
+common texts and its required acknowledgement, without carrying the text.
+`licensed-free` remains a provenance/schema state, not a claim that the current
+assembled or source-Git surface publishes such a payload. The current tree
+quarantines the ELLC payload and retains only its text-free grant metadata.
+ICEL's standing permission is different and narrower: it is a conditional
+permission for exact approved, recognized, and promulgated text on a no-fee
+noncommercial Internet site, not for the clonable data file from which this
+static site is assembled. Its text-free source metadata may likewise retain the
+basis and required excerpt acknowledgement while the public bundle retains no
+ICEL payload.
+
+A licensed or permitted witness must declare a nonempty `acknowledgement` before
+an eligible surface may display its text. If a later surface is separately
+approved to display it, that acknowledgement must travel beside every text it
+covers rather than appear only in a detachable footer.
+For excerpts from the 2010 Roman Missal translation, ICEL's current prescribed
+form begins `Excerpts from the English translation`; the entire-work form is not
+an interchangeable substitute. An acknowledgement is a condition and an
+attribution, not a rights decision by itself.
 
 **Variants are the celebrant's choice, not a filter.** Where a missal offers
 several forms of one element — the four postconciliar Eucharistic Prayers — the
@@ -491,10 +555,13 @@ numbering.
 
 ## Rights
 
-Only the verse text is rights-bearing. The propers definitions, the reading
-plan, and the structure files are the project's own work or are bare
-references, and a reference is a fact. That is why a licensed translation
-changes nothing structural: it ships fragments or it does not.
+Verse text is not the only rights-bearing payload. Composed propers, Ordinary
+text, rubrics, translations, and other authored wording require their own
+per-text and per-surface basis. Bare lectionary assignments and citations are
+facts, and project-authored structure may be licensed as project work, but a
+structure file does not become non-rights-bearing merely because it is JSON.
+That is why publication filters must inspect every wording-bearing layer rather
+than only Bible fragments.
 
 Permission to *use* a text is not permission to *republish* it, and an
 ecclesiastical imprimatur is not a copyright licence — it attests that a work
@@ -532,9 +599,10 @@ could be reached the only English on the site with no source behind it was also
 the only English served with no caution. So the sidecar's `sources` table takes
 a row keyed `source_id = ""`, and `mass-propers` reads it exactly as it reads a
 named witness — the label it prints and the caution it renders come from that
-row and are not invented by the tool. The postconciliar calendar has one:
-70 orations of new English, labelled as the project's, cautioned as unreviewed
-and non-liturgical.
+row and are not invented by the tool. The postconciliar calendar's project-
+created orations are labelled as the project's, cautioned as unreviewed and
+non-liturgical; derive their current count from the inventory rather than this
+guidance page.
 
 `check-calendar-masses` refuses a `source_id` that resolves to no record in the
 source library, in the propers and in the sidecar alike. An id that names

@@ -207,10 +207,12 @@ was taken is citations, under `the_citation_question`.
 """
 landed = true
 landed_what = """
-The Lectionary citations of 152 celebrations, read at 200 dpi across artifact
-pages 328-374 (printed 274-320), nn. 514-700, which is the whole Proprium de
-Sanctis read end to end in five waves. A sixth wave then read the COMMUNIA
-entire, artifact pages 375-398 (printed 321-344), nn. 701-742, and landed no
+The Lectionary citations of 181 celebrations: 152 read at 200 dpi across artifact
+pages 328-374 (printed 274-320), nn. 514-700, in the original five waves, plus
+29 formularies held back until the 2026-08-27 identity split and then verified
+at 400 dpi. Together they carry 750 citation records from the whole Proprium de
+Sanctis read end to end. A sixth wave read the COMMUNIA entirely, artifact pages
+375-398 (printed 321-344), nn. 701-742, and landed no
 citation from them; see `the_communia_read`. Between them the two runs cover
 artifact pages 328-398 without a gap, which is every page of this book that
 bears on the sanctoral. See `[landed]` below.
@@ -631,6 +633,48 @@ rights_basis = "CC BY-SA 4.0, which would require share-alike on any derived wor
 landed = false
 why_not = "Redistributable and carries none of the three things wanted. Named so the next lane does not survey it again."
 
+[[works]]
+id = "missale-romanum-1922-mame"
+label = "Missale Romanum, editio quarta juxta typicam Vaticanam, Tours: Alfred Mame, 1922"
+what_it_carries = """
+A public-domain historical antecedent for two unresolved postconciliar entries.
+The universal sanctoral prints Saint Bede on 27 May with a Common-of-Doctors
+pointer and proper Collect, Secret and Postcommunion. Saint Rita is absent from
+the bounded universal-sanctoral sequence between 20 and 25 May, but the same
+book's Missae pro aliquibus locis appendix prints her complete Mass for 22 May,
+including Collect, Secret and Postcommunion. It does not establish whether the
+2002 third typical edition retained, revised or replaced either antecedent.
+"""
+already_registered = true
+registered_as = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+surveyed = true
+survey_method = """
+The exact whole 51,720,493-byte Internet Archive PDF for item
+missaleromanum0000unse was fetched over HTTPS and hashed on 2026-08-27
+(SHA-256 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005).
+The title and approval leaves were read first. The universal May sequence,
+Bede's two pages, and all three Rita appendix pages were then read directly in
+the PDF or corresponding BookReader page images. The whole DjVu OCR was fetched
+only to locate candidates; no negative or content finding rests on OCR.
+"""
+rights = "public-domain-us-pre-1931"
+may_publish_text = "yes"
+redistributable = true
+rights_basis = """
+First publication at Tours in 1922 is before the pre-1931 United States line,
+and its maximum possible term expired before URAA restoration. The mechanical
+scan adds no human authorship. The conclusion does not rely on the host's
+availability or licence label; the exact registered artifact records the full
+basis and provenance.
+"""
+landed = false
+why_not = """
+No historical prayer body is needed in this inventory, and none was copied into
+the postconciliar calendar. The public-domain antecedent establishes that a
+candidate historical formulary exists; it does not establish identity with the
+restricted 2002 target edition. Exact target-edition collation remains open.
+"""
+
 # ---------------------------------------------------------------------------
 # The collation that decided it.
 # ---------------------------------------------------------------------------
@@ -704,10 +748,13 @@ cleanly, and looks right.
 
 [landed]
 what = """
-152 Masses and 632 Lectionary citations, over five waves. A sixth wave read the
-Communia and landed no citation at all; what it landed instead was the
-resolution of every cross-reference the five had left standing, and the reason
-the Communia cannot be carried as Masses. See `the_communia_read`.
+181 Masses and 750 Lectionary citations. The original five waves landed 152
+Masses and 632 citations. After the coordinated identity split, 29 exact
+formularies comprising 118 citations were carried under their singular
+celebration identities on 2026-08-27. A sixth wave read the Communia and landed
+no citation at all; what it landed instead was the resolution of every
+cross-reference the five had left standing, and the reason the Communia cannot
+be carried as Masses. See `the_communia_read`.
 """
 masses = [
   "saint-agnes-virgin-martyr",
@@ -862,14 +909,45 @@ masses = [
   "holy-innocents-martyrs",
   "saint-thomas-becket-bishop-martyr",
   "saint-sylvester-i-pope",
+  "saint-fabian-pope-martyr",
+  "saint-sebastian-martyr",
+  "saint-blaise-bishop-martyr",
+  "saint-ansgar-bishop",
+  "saint-jerome-emiliani",
+  "saint-george-martyr",
+  "saint-peter-chanel-priest-martyr",
+  "saints-nereus-achilleus-martyrs",
+  "saint-pancras-martyr",
+  "saint-bede-venerable-priest-doctor-church",
+  "saint-gregory-vii-pope",
+  "saint-mary-magdalene-pazzi-virgin",
+  "saint-paulinus-nola-bishop",
+  "saints-john-fisher-bishop-thomas-more",
+  "saint-eusebius-vercelli-bishop",
+  "saint-louis",
+  "saint-joseph-calasanz-priest",
+  "saint-robert-bellarmine-bishop-doctor-church",
+  "saint-wenceslaus-martyr",
+  "saints-denis-bishop-companions-martyrs",
+  "saint-john-leonardi-priest",
+  "saint-hedwig-religious",
+  "saint-margaret-mary-alacoque-virgin",
+  "saints-john-brebeuf-isaac-jogues-priests",
+  "saint-paul-cross-priest",
+  "saint-margaret-scotland",
+  "saint-gertrude-virgin",
+  "saint-clement-i-pope-martyr",
+  "saint-columban-abbot",
 ]
 witness = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
 loci = """
 artifact pages 328-374, printed pages 274-320, nn. 514-700 read without a break
 across five runs. That is the whole Proprium de Sanctis: artifact page 375 is the
 COMMUNIA divider, so the book's sanctoral ends at n. 700 and not at n. 707 as the
-fourth wave's estimate assumed. Thirty-two of those numbered entries were read
-and not landed; they are named under `not_landed_from_the_same_pages`.
+fourth wave's estimate assumed. The 29 formularies once held back for composite
+keys are now carried under singular identities. Only n. 668 remains without a
+structured citation formulary, because the book prints no formulary there; see
+`what_is_absent_and_why`.
 
 The fifth wave opened one page outside that run, and only to settle a misprint:
 artifact page 395, printed page 341, which carries the Communia's `n. 740`. The
@@ -920,8 +998,10 @@ both ends by what was read and not by an estimate. Six loci were read again at
 400 dpi, over five pages. NOTHING WAS LANDED. Three separate reasons say so, and each is worth
 keeping apart, because only the first was foreseen.
 
-FIRST, this calendar carries no Common as a Mass, so there is no entry to fill.
-That was known.
+FIRST, at the time of this 2026-08-02 reading the calendar carried no Common as
+a Mass, so there was no entry to fill. The seven edition-identified Common
+identities were modeled later with typed unavailable/rights dispositions; no
+target-edition formulary text was supplied.
 
 SECOND, and this is the finding that changes `the_commons`: the Ordo's Communia
 are not formularies at all. They are LISTS OF OPTIONS. Each of the seven Commons
@@ -993,20 +1073,19 @@ read at 400 dpi here. That word is recorded and not harmonized, on the same
 footing as every other divergence inside this book; it changes nothing, because
 neither locus can be carried at all.
 
-One thing was measured for whoever eventually does land Commons, from whatever
-book, so that the measurement is not made twice. A `common` section costs far
-less than a dated Mass does. `tools/calendar-rubrics` skips the Commune entirely
+One thing was measured before the seven Common identities were modeled, so that
+the measurement would not be made twice. A `common` section costs far less than
+a dated Mass does. `tools/calendar-rubrics` skips the Commune entirely
 when it loads masses - `load_masses` drops any section whose kind is `common`,
 on the stated ground that a Common is a formulary and not a liturgical day - so
 adding one does NOT invalidate `src/web/data/structure/rubrics/postconciliar.json`
 or the roughly 100 year files under `src/web/data/structure/calendar/`. The
 roman-1962 index proves it from the other side: it carries 490 Masses of which 30
 are Commons, and its rubrics layer classifies exactly 460 and holds no `commune-`
-key. So the three-generated-layers cost recorded under `why_the_split_was_not_done`
-is a cost of SPLITTING DATED KEYS and not of adding Commons; what a Common
-section would still need is a registry id rule, the postconciliar scheme deriving
-every id as `pc-<MM-DD>` from a civil date a Common does not have.
-
+key. The three-generated-layers cost recorded under `why_the_split_was_not_done`
+was a cost of SPLITTING DATED KEYS and not of adding Commons. The later model
+settled the non-date namespace as `pc-C-<slug>` and represents each identity
+with a typed unavailable/rights disposition rather than target-edition text.
 The consequence for the whole survey: no citation anywhere in the postconciliar
 sanctoral is now unread for want of following a pointer. The seventeen absent
 slots recorded across the five landing waves are absent because the book prints
@@ -1014,13 +1093,14 @@ words, and there is no eighteenth kind waiting to be found. The sixth wave added
 no absent slot of its own, having landed no Mass.
 """
 every_landed_citation_was_read = """
-Nothing here was taken from a compilation. Every one of the 632 citations was
-read in a page image of the Ordo, and the 152 Masses are exactly the
-celebrations on those pages that this calendar carries under a key of their own
-and that the 1981 book prints. The celebrations read on the same pages and NOT
-landed are named under `not_landed_from_the_same_pages`; the celebrations this
-calendar carries in the same span that the 1981 book does not print at all are
-named under `inscribed_after_the_witness`.
+Nothing here was taken from a compilation. Every landed citation was read in a
+page image of the Ordo. The 2026-08-27 identity split added no unverified reading:
+it moved already-structured formularies to their own celebration identities and
+allowed the remaining eleven already-read sets to be transcribed exactly. The
+historical holdback is retained under `not_landed_from_the_same_pages`; every one
+of its 29 formularies is now carried. Celebrations this calendar carries in the
+same span that the 1981 book does not print at all are named under
+`inscribed_after_the_witness`.
 """
 inscribed_after_the_witness = """
 Five keys in the span the third wave read hold celebrations the 1981 Ordo cannot
@@ -1149,9 +1229,10 @@ Each landed Mass carries a `notes` line saying, in terms, that its Entrance and
 Communion Antiphons and its three orations are printed in the Missal and not in
 the Ordo, and are absent because no witness to them is on disk that this project
 may publish. Where the Ordo heads a celebration `De Communi ...`, the heading is
-recorded in the same note and NOT resolved into a `takes_from`, because this
-calendar carries no Common as a Mass and a pointer to a Common that does not
-exist would resolve to nothing.
+recorded in the same note and was NOT resolved into a `takes_from`, because the
+calendar then carried no Common as a Mass and a pointer to a Common that did not
+exist would have resolved to nothing. The later seven Common identity records
+do not retroactively establish a specific Missal formulary or supply its text.
 
 Two slots are absent for a different reason and say so on their own Masses. At
 n. 536, Saint Polycarp, and again at n. 551, Saint Martin I, the Ordo prints
@@ -1325,8 +1406,10 @@ Ignatius of Antioch: the Ordo prints a proper formulary and then adds `Vel de
 Communi martyrum vel pastorum` AFTER it. Everywhere else a `De Communi` heading
 stands before the readings and governs them; here it is an alternative to a
 proper formulary that has already been given. The proper readings are what is
-stored, and the trailing alternative is recorded on the Mass as a Common pointer
-like every other, unresolved because this calendar carries no Common.
+stored, and the trailing alternative was recorded on the Mass as a Common
+pointer like every other, unresolved because the calendar then carried no
+Common. The later identity-only Common records do not select a target-edition
+formulary.
 """
 a_divergence_inside_the_book = """
 Recorded rather than harmonized, under the second invariant of
@@ -1355,8 +1438,8 @@ error but whether the edition is uniform, and it is not. All eight are carried a
 printed, and the sentence that says so was restated in one pass on every landed
 Mass that carries the selection, so that no Mass is left saying "in four places"
 when the true figure is eight. Two of the fifth wave's four - nn. 655, Saint John
-Leonardi, and 683, Saint Columban - are on joined keys and are landed nowhere, so
-the sentence stands on six Masses and names all eight loci. That count was
+Leonardi, and 683, Saint Columban - were formerly blocked by composite identities;
+both are now carried under independently keyed celebrations. That count was
 checked against the written file rather than assumed.
 
 The sixth wave read the NINTH printing, and it is the one that matters most,
@@ -1381,8 +1464,8 @@ at the second, which is the Greek's, with the part letters differing as well.
 Both were read at 400 dpi on artifact pages 338 and 342. This is the same defect
 the calendar already records for John 6 in `citation_divergences`, and it is now
 attested inside the witness rather than only between the witness and this file.
-n. 552 is landed and carries what its own page prints; n. 567 belongs to a
-joined key and is not landed. A resolution row was added to the calendar's John
+n. 552 and n. 567 are both landed under independent identities and carry what
+their own pages print. A resolution row was added to the calendar's John
 locus so that a Vulgate-numbered edition resolves `John 6:64b, 69b` to itself
 and a Hebrew-numbered one refuses rather than guesses; that behaviour was
 exercised directly against `tools/index-bible`'s own `Divergences` class rather
@@ -1417,14 +1500,15 @@ It found a THIRD printing of the John 6 Alleluia in two numbering systems: at
 n. 641, Saint Robert Bellarmine, artifact page 360, the Ordo prints `Io 6, 63c.
 68c` under the same `n. 729,3` it prints as `Io 6, 64b et 69b` at n. 552 and as
 `Io 6, 63c. 68c` at n. 567. Read at 400 dpi. So the Greek form now stands twice
-against the Vulgate's once. Nothing was landed from it - n. 641 is a joined key -
-and the calendar's John 6 divergence row already carries both forms, so no
+against the Vulgate's once. n. 641 is now landed under Saint Robert Bellarmine's
+independent identity; the calendar's John 6 divergence row already carries both forms, so no
 declaration changed.
 
 It found a SECOND printing of the Sirach dual numbering at n. 658, Saint Hedwig,
 which prints `Sir 26, 1-4. 16-21 (gr. 1-4. 13-16)` - the identical string the
-fourth wave read at n. 632, Saint Monica, and already declared. n. 658 is a
-joined key and is not landed, so nothing followed from it. A THIRD, at n. 672,
+fourth wave read at n. 632, Saint Monica, and already declared. Saint Hedwig now
+has an independent key and n. 658 is now carried there, with the Latin-number
+form structured and the Greek numbering retained in its provenance note. A THIRD, at n. 672,
 Saint Leo the Great, prints `Sir 39, 8-14 (gr. 6-11)` and IS landed; the Latin
 number the book prints first is carried, as at Monica. No divergence row was
 needed for it, because chapter 39 is not among the five Sirach chapters this
@@ -1502,11 +1586,12 @@ The net effect on the count is a fall, from six unresolved postconciliar
 citations to five, because the third row cleared one that predated this wave.
 """
 not_landed_from_the_same_pages = """
-Thirty-one numbered entries have now been read on these pages and NOT landed for
-this reason, and all thirty-one fail the same way. (A thirty-second, n. 668, fails
+Historical inventory, disposition updated 2026-08-27. Twenty-nine numbered entries
+were initially read on these pages and held back for the composite-key reason.
+(A thirtieth, n. 668, fails
 differently and is recorded under `what_is_absent_and_why`: the book prints no
-formulary for it at all.) This calendar joins several optional memorials of one
-date under a single key, so writing one saint's readings onto a key that stands
+formulary for it at all.) This calendar then joined several optional memorials of one
+date under a single key, so writing one saint's readings onto a key that stood
 for several would attribute them to all of them:
 
   n. 514 Saint Fabian and n. 515 Saint Sebastian      `saint-fabian-pope-martyr`
@@ -1520,8 +1605,6 @@ for several would attribute them to all of them:
   n. 569 Saint Mary Magdalene de' Pazzi               `saint-bede-venerable-priest-doctor-church`
   n. 584 Saint Paulinus and n. 585 Fisher and More    `saint-paulinus-nola-bishop`
   n. 611 Saint Eusebius of Vercelli               `saint-eusebius-vercelli-bishop`
-  n. 615 Saints Sixtus II and Companions and
-  n. 616 Saint Cajetan          `saints-sixtus-ii-pope-companions-martyrs`
   n. 630 Saint Louis and n. 631 Saint Joseph Calasanz              `saint-louis`
   n. 641 Saint Robert Bellarmine   `saint-robert-bellarmine-bishop-doctor-church`
   n. 646 Saint Wenceslaus                              `saint-wenceslaus-martyr`
@@ -1536,27 +1619,32 @@ for several would attribute them to all of them:
   n. 682 Saint Clement I and
   n. 683 Saint Columban                        `saint-clement-i-pope-martyr`
 
-Most of these are several Ordo formularies to one key: nn. 514, 515, 525, 526,
-562, 563, 567, 568, 569, 584, 585, 615, 616, 630, 631, 654, 655, 658, 659, 662,
-663, 676, 677, 682 and 683 are twenty-five Masses over twelve keys. Six are a
+Most of these were several Ordo formularies to one key: nn. 514, 515, 525, 526,
+562, 563, 567, 568, 569, 584, 585, 630, 631, 654, 655, 658, 659, 662, 663, 676,
+677, 682 and 683 are twenty-three Masses over eleven keys. Six are a
 case of a different shape - nn. 529, 553, 556, 611, 641 and 646 -
-where the Ordo prints ONE formulary and the key still cannot take it, because
-the key's name joins that saint with another the 1981 book does not appoint
+where the Ordo prints ONE formulary and the former key could not take it, because
+the key's name joined that saint with another the 1981 book does not appoint
 those readings to: Saint Josephine Bakhita with Saint Jerome Emiliani, Saint
 Adalbert with Saint George, Saint Louis Grignion de Montfort with Saint Peter
 Chanel, Saint Peter Julian Eymard with Saint Eusebius of Vercelli, Saint
 Hildegard of Bingen with Saint Robert Bellarmine, Saint Lawrence Ruiz and
-Companions with Saint Wenceslaus. Landing the single formulary on the joined key
-would claim it for both.
+Companions with Saint Wenceslaus.
 
-ALL EIGHTEEN of this calendar's joined keys are now blocked by read evidence
-rather than by the absence of it: 20 January, 3 February, 8 February, 23 April,
-28 April, 12 May, 25 May, 22 June, 2 August, 7 August, 25 August, 17 September,
-28 September, 9 October, 16 October, 19 October, 16 November and 23 November.
-None is waiting on anybody to open the book again. What each is waiting on is the
-one coherent change described under `why_the_split_was_not_done`, and the pile it
-would release is no longer growing, because there are no unread pages left to
-grow it from.
+SETTLED structurally and transcriptionally on 2026-08-27: all seventeen dates
+now contain separately keyed, singular optional memorials, and all 29 citation
+formularies from this historical list are carried under their exact celebration
+identities. The final eleven were nn. 529, 553, 584, 585, 630, 631, 646, 658,
+659, 676 and 677. No body or citation was inferred merely from the former
+composite association; every citation was read directly from its page image.
+
+The former joined 7 August key is the first resolved case. It now preserves
+`saints-sixtus-ii-pope-companions-martyrs` with registry `pc-08-07` for n. 615
+and adds `saint-cajetan-priest` with the stable, file-unique registry
+`pc-08-07-cajetan` for n. 616. Both carry singular rank `Optional memorial`, and
+both citation formularies were transcribed from artifact page 354, printed page
+300. The registry suffix disambiguates source records only; the calendar spine
+assembles the date by the two Mass keys and gives neither an implicit winner.
 
 One key in the fourth wave's span was NOT treated as joined, and the test it
 established was applied three more times in the fifth.
@@ -1575,8 +1663,8 @@ these readings to, which is exactly what a joined key makes impossible.
 
 The original statement of the test follows. `saints-martha-mary-lazarus` names three
 saints and the Ordo heads 29 July `S. Marthae` alone, yet it was landed. The
-objective test used here is the printed rank. The eighteen joined keys all carry
-the plural rank `Optional memorials` and stand for two or more co-equal
+objective test used here is the printed rank. The original eighteen joined keys
+all carried the plural rank `Optional memorials` and stood for two or more co-equal
 celebrations sharing a date; 29 July carries `Memorial`, singular - one
 celebration, whose title was widened in 2021 and whose day the 1981 book does
 appoint these readings to. The attribution is to the celebration and not to a
@@ -1584,13 +1672,13 @@ saint picked out of a list, which is precisely what a joined key makes
 impossible. The Mass's own notes say the book heads it `S. Marthae`, so a reader
 is not left to discover that.
 
-The joined-key problem is recorded in rubrics.yaml under `unsettled`. It is
-still the cheapest unblocking left in terms of acquisition - none is needed -
-but it is NOT the small change the earlier note called it, for the reason under
-`why_the_split_was_not_done`.
+The former joined-key problem has been removed from rubrics.yaml. The historical
+cost analysis remains under `why_the_split_was_not_done`; it no longer describes
+an active blocker.
 """
 why_the_split_was_not_done = """
-Measured on 2026-08-01 by the lane that landed the second wave, which was sent
+Historical analysis, settled by the coordinated 2026-08-27 split. Measured on
+2026-08-01 by the lane that landed the second wave, which was sent
 to split `saint-fabian-pope-martyr` and `saint-paulinus-nola-bishop` and
 declined after measuring the cost. Three findings, none of them an argument
 against splitting and all of them about who must do it.
@@ -1634,6 +1722,15 @@ settle the id rule, split all eighteen joined keys at once, retire the plural
 rank and its assignment rule, and regenerate the three layers together. Doing
 two of the eighteen in isolation would leave the file in two conventions at once
 and break a gate.
+
+Final resolution, 2026-08-27: after the 7 August pilot, the calendar and content
+owners applied the discriminator convention to every remaining composite date.
+The existing Sixtus key retains `pc-08-07`; the new Cajetan key uses the quoted,
+file-unique discriminator `pc-08-07-cajetan`. Both are independent singular
+optional memorial candidates, neither is a Mass form, and the calendar spine
+continues to assemble by Mass key. Every other split likewise preserves the
+first identity's registry and gives the additional identity an explicit stable
+discriminator. No split silently chooses a winner.
 """
 
 [counts]
@@ -1642,17 +1739,18 @@ Derived from the [[works]] table, not typed beside it. If these disagree with
 the table, the table is right. Recompute with:
   python3 -c 'import tomllib;d=tomllib.load(open("src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml","rb"));w=d["works"];print(len(w),sum(1 for x in w if x["surveyed"]),sum(1 for x in w if x["redistributable"]),sum(1 for x in w if x["landed"]))'
 """
-works_named = 14
-works_surveyed = 12
-works_redistributable = 2
+works_named = 15
+works_surveyed = 13
+works_redistributable = 3
 works_landed = 1
 redistributable_note = """
-Two of fourteen, and neither carries anything wanted: `calendarium-romanum`
-under LGPL-3.0-or-MIT and the Wikimedia calendar pages under CC BY-SA. Every
-witness that carries a sanctoral antiphon, oration, Common pointer or Lectionary
-citation is either encumbered or unlicensed. That is the survey's central
-finding, and it is why the landing rests on `the_citation_question` rather than
-on anybody's grant.
+Three of fifteen. `calendarium-romanum` under LGPL-3.0-or-MIT and the Wikimedia
+calendar pages under CC BY-SA carry nothing wanted. The third is the
+public-domain 1922 Mame Missal, which carries historical Bede and Rita
+antecedents but cannot answer whether the restricted 2002 target edition keeps
+their wording. The target Lectionary and Missal witnesses remain encumbered;
+the existing citation landing therefore still rests on `the_citation_question`
+rather than on anybody's grant.
 """
 
 placeholder_masses_before = 205
@@ -1679,9 +1777,10 @@ than disappointing: it landed no Mass and no citation, and it changed only prose
 - seventeen `notes` lines, the calendar's `verification` header and two of its
 `open_collation_items`. Measured after it, by the same census verb: 53
 placeholder Masses and 55 placeholder propers, 269 Masses, 1513 propers, 1721
-encoded passages, 63 books, 89 slot names. Every figure in this block therefore
-stands as the fifth wave left it, and the `census_delta` below is unchanged and
-still unwritten.
+encoded passages, 63 books, 89 slot names. Those figures describe the historical
+fifth/sixth-wave state; the later identity split and the 29 recovered formularies
+supersede them. `census_delta` retains the historical transition and records the
+final eleven-formulary source delta separately.
 
 The whole survey's arc in one line: 205 placeholder Masses on the morning of
 1 August and 53 at the end of the Proprium de Sanctis. The fall of 152 is exactly
@@ -1693,15 +1792,14 @@ guidance/propers-for-agents.md and docs/the-mass.md is written by
 `tools/tpt mass-propers census --write` and by nothing else; the third, fourth,
 fifth and sixth waves each declined to run it, because other lanes were moving
 the same working tree at the same time and a partial rewrite would have published
-one lane's figures over another's. The delta the fifth wave leaves for whoever
-does run it is recorded in `census_delta` below, and the sixth adds nothing to
-it.
+one lane's figures over another's. The historical delta the fifth wave left is
+recorded in `census_delta` below; the canonical current census must be regenerated
+from the current source rather than reconstructed from that old delta.
 """
 census_delta = """
-What `tools/tpt mass-propers census --write` will move when the coordinator runs
-it, postconciliar column only; every other column is another lane's. Measured
-against the block as it stands at HEAD, into which the fourth wave's figures were
-already bound.
+Historical fifth-wave delta that `tools/tpt mass-propers census --write` would
+have moved then, postconciliar column only. It was measured against the block at
+that lane's HEAD, into which the fourth wave's figures were already bound.
 
 Propers 1356 to 1513; propers named `Placeholder` 108 to 55; Masses holding only
 placeholders 106 to 53; propers that are not placeholders 1248 to 1458, of those
@@ -1714,8 +1812,11 @@ section, christological propers 20 to 23 and its placeholder-holding Masses 4 to
 seasonal unchanged at 832 and 2. No Mass count moves in any section: this wave
 filled entries and created none.
 
-Unchanged by the sixth wave, which landed nothing countable. Whoever runs the
-census still writes exactly the delta above.
+Unchanged by the sixth wave, which landed nothing countable. This is a historical
+delta, not a current rewrite instruction. The coordinated identity recovery
+later carried 29 formularies and 118 citation records in all; the final eleven
+formularies added 46 scripture propers and 46 encoded passages to the already-
+split source without adding a Mass identity. The current census is generator-owned.
 """
 scan_rate = """
 The fifth wave's sixteen artifact pages carried sixty-six numbered entries, of
@@ -1749,6 +1850,17 @@ page 399 onward, which no entry of this calendar points into.
 """
 
 [open_items]
+historical_oration_collation = """
+The acquisition question for Bede and Rita is closed, but the editorial
+collation question is not. The registered 1922 Mame witness prints Bede in the
+universal sanctoral and Rita in Missae pro aliquibus locis; its exact passage
+records identify the page ranges without carrying prayer bodies. A permitted
+exact witness to the 2002 third typical edition would still have to be compared
+oration by oration before either historical body could be identified with or
+used for the postconciliar target. Until then both target Collects remain
+unavailable and no historical wording may be copied into the calendar merely
+because it is public domain.
+"""
 the_antiphons = """
 The largest remaining piece, and it is bounded. The scriptural Entrance and
 Communion antiphons of the sanctoral are citable under
@@ -1764,18 +1876,17 @@ lane and should be briefed as one. The Missal's Commons are the only Commons a
 `takes_from` can point at, because they name one text per slot where the Ordo's
 Communia name dozens, and the Missal sends most memorials to a Common for their
 antiphons in any case. The same reading of the same book answers both, and doing
-either alone would mean opening it twice. Add the Commons to the roughly 180
-celebrations above.
+either alone would mean opening it twice. This was the 2026-08-02 plan; the
+later identity-only Common model closes the structural gap without supplying or
+requiring acquisition of the restricted target-edition formularies.
 """
 the_commons = """
-This calendar carries no Common of Saints as a Mass, so every entry that takes
-one has nowhere to point. That is now measurable rather than estimated: 139 of
-the 152 landed Masses record a `De Communi` heading in their notes, unresolved.
-Adding the Communia as Masses is a prerequisite for `takes_from`, and it is the
-same acquisition problem one level down: the Ordo gives the Communia's readings
-at nn. 701-742 and the Missal gives their antiphons and orations. Until they
-exist, a `De Communi` heading is recorded in prose and not resolved, which is
-what every wave did.
+Closed structurally after this survey: the calendar now carries seven
+edition-identified Common identities under `pc-C-<slug>`. They are represented
+with typed unavailable/rights dispositions, not generic placeholders or supplied
+target-edition text. The 139 `De Communi` headings measured here remain evidence
+about the Ordo's reading appointments; they do not by themselves select a
+Missal prayer formulary.
 
 The Communia have now been READ - artifact pages 375 to 398, nn. 701 to 742, on
 2026-08-02 - and the item has moved not forward but sideways, because the reading
@@ -1790,19 +1901,11 @@ in the book's own order, attached to no celebration, is precisely the reproducti
 of the compilers' selection that `the_citation_question` declines to claim a right
 to. `the_communia_read` sets both out in full.
 
-So the prerequisite for `takes_from` is NOT this book. It is a Common that names
-one reading per slot together with its antiphons and orations, and that is a
-MISSAL's Common - the Missale Romanum 2002, already registered, already
-`storage = restricted`, and already the thing `the_antiphons` needs. The two
-items were thought to be halves of different jobs and are one job: read the 2002
-Missal's Commons and its Proprium de Sanctis, and both the antiphon references
-and a resolvable Common arrive together. Whoever takes it should read
-`the_antiphons` and this entry as a single brief.
-
-Until that exists, a `De Communi` heading stays recorded in prose and unresolved,
-which is what all five landing waves did and remains right. What has changed is
-that this is no longer a gap waiting on an unread book; it is a decision waiting
-on a different book, and the one it was waiting on has been read to the end.
+The survey's proposed text-bearing `takes_from` prerequisite therefore remains
+unsupported: the Ordo does not supply a one-text-per-slot Missal formulary, and
+the restricted 2002 Missal is not a publication source for one. The current
+identity records make that boundary explicit rather than treating Commons as an
+open acquisition deliverable.
 """
 the_orations = """
 Not reachable by the ancient-source route for most of the sanctoral. That route
@@ -1833,32 +1936,24 @@ Nothing in this survey is now blocked on opening this book again. Say that
 plainly, because four of the five previous waves ended by recommending more of
 it.
 
-Split the joined optional-memorial keys - still as one change, not eighteen.
-Thirty-one numbered entries collated across five waves cannot land because ALL
-EIGHTEEN joined keys hold more than one celebration apiece: 20 January, 3
-February, 8 February, 23 April, 28 April, 12 May, 25 May, 22 June, 2 August, 7
-August, 25 August, 17 September, 28 September, 9 October, 16 October, 19 October,
-16 November and 23 November. Two things about this have changed and both argue
-for doing it now. It is no longer partly speculative - every one of the eighteen
-is blocked on evidence somebody read, not on nobody having looked - and the pile
-has stopped growing, because there are no unread sanctoral pages left to grow it
-from. So the cost is now known exactly and will not rise. It is still not a
-four-line edit, and the lane that measured it wrote down why under
-`landed.why_the_split_was_not_done`: settle the registry id rule first, then split
-all eighteen in one change with rubrics.yaml and the three generated layers.
+The coordinated optional-memorial identity split and exact transcription of all
+29 formerly blocked formularies were completed on 2026-08-27. The final eleven
+were nn. 529, 553, 584, 585, 630, 631, 646, 658, 659, 676 and 677. They now sit,
+with the other eighteen, under stable singular celebration identities. Generated
+layers must be regenerated from those source identities; they are not an
+independent evidence source.
 
-Then the Missale Romanum 2002, which is now ONE lane and not two. `the_antiphons`
-and `the_commons` were listed apart on the assumption that the Ordo could supply
-a resolvable Common; it cannot, and both now want the same book, the same pages
-and the same reading. Taken together they are the largest remaining piece of this
-survey by a wide margin and the only one that would change what a reader sees.
+The scriptural antiphon-reference work described in `the_antiphons` remains
+separate. Commons are no longer an open acquisition lane: their seven identities
+are modeled with typed unavailable/rights dispositions, without claiming or publishing
+the restricted target-edition formularies.
 
 Then the Tamil collation, which has lost most of what value it had. It stands
 where the first wave left it, at fifteen formularies with no divergence; the
 readings it would have corroborated have all been read at the primary witness
 instead. Its remaining value was said to be its 179 Common POINTERS, and that
 sentence should be corrected rather than repeated: the Ordo states the Common of
-each celebration in its own heading, and every one of the 152 landed Masses
+each celebration in its own heading, and every one of the 181 landed Masses
 already carries that heading in its notes, read at a page image. A compilation
 that agrees with a witness this project has read adds nothing. What the Tamil
 lectionary could still be is a check on the 2002 Missal lane when that runs.

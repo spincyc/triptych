@@ -47,6 +47,23 @@ blocking item and is a fact about this repository's tooling rather than about th
 availability of any book.
 """
 
+current_state = """
+UPDATED 2026-08-26. A `roman-pre-1955/rubrics.yaml` now ships, and its own
+advisory calls it a LINEARIZATION and not the rule itself. It reduces criteria
+(a)-(d) to numbered rows, carries criterion (e) only through bounded overrides,
+and records the cases that reduction cannot settle. It is therefore a useful
+finding aid and makes the recension selectable, but it does not close the schema
+finding below or make a source-shaped pre-1955 precedence implementation
+writable.
+
+The two headline counts preserve that distinction:
+`rubrics_sources_this_record_makes_writable = 0` remains the answer for a
+faithful expression of the five criteria, while
+`linearized_finding_aids_shipped = 1` records the bounded approximation that is
+actually tracked. Treating either number as the other would turn explicit
+uncertainty into a false completion claim.
+"""
+
 evidence = """
 Three evidence levels, and no row claims one it did not reach. The classes are
 the ones `missal-acquisition-audit-v1.toml` fixed, used identically here.
@@ -68,29 +85,48 @@ Internet Archive OCR text layer. That grade is `ocr-only` in
 repository collated 99 orations from one such layer against that printing's page
 images and corrected 38 [recorded, guidance/recensions.md section 8.4].
 
-It is admissible for STRUCTURE, and the distinction is what this file rests on.
-Whether a book contains a section titled `De Translatione Festorum`, and whether
-a numbered table of precedence appears anywhere between two headings, are facts
-about the presence and absence of large printed structures over hundreds of
-lines. They survive character-level error; a table cannot be spelt away. Every
-Latin phrase quoted below is quoted as the OCR gives it and is offered as a
-locator, never as a transcription fit to publish.
+It is admissible for STRUCTURE, SEARCH, AND LOCATING only, and the distinction is
+what this file rests on. Whether a book contains a section titled `De
+Translatione Festorum`, and whether a numbered table of precedence appears
+anywhere between two headings, are facts about the presence and absence of large
+printed structures over hundreds of lines. They survive character-level error;
+a table cannot be spelt away. Every Latin phrase quoted below is quoted as the
+OCR gives it and is offered as a locator, never as a transcription fit to
+publish.
+
+The source called `MissaleRomanum1920` or `missale-romanum-1920` below has a
+second, independent limit: its canonical artifact record proves that the
+scanned book is a later composite, with a body printed in 1951-1954 and an
+appendix containing post-1970 matter. It therefore cannot govern exact 1920
+wording, establish that a variant was printed in 1920, or date a chronological
+change. Its only role in this record is structural, search, and locating
+evidence. The registered Benziger witness or another honestly dated source must
+carry any wording or chronology claim.
 """
 
 derivative_hazard = """
 INTERNET ARCHIVE DERIVATIVES ARE REGENERATED, AND THIS REPOSITORY ALREADY HOLDS
-LOCI PINNED TO OLD ONES. `roman-holy-week-acts-v1.toml` records the 1920 witness
-as `MissaleRomanum1920_djvu.txt, 123278 lines, 2918085 bytes`. The copy fetched
-on 2026-08-01 from the same item is 119621 lines and 2932349 bytes [verified], so
-line numbers pinned against the older derivative land somewhere else in the newer
-one, or nowhere. Nothing in that inventory is changed here.
+LOCI PINNED TO OLD ONES. The canonical artifact
+`artifact.catholic-church.missale-romanum.vatican-typica-1920.missale-romanum-1920-text-aa646196`
+records `MissaleRomanum1920_djvu.txt` as 123278 lines, 2918085 bytes, sha256
+aa6461961702b5cbae51460a7385f7a982c6f5a2649822d0bb8d5f13b6b387e0. The copy
+fetched on 2026-08-01 from the same item is 119621 lines and 2932349 bytes,
+sha256 eaf3ba379d4d9c0227ce991ac34be66e5177ab52642a8e0376776be81fd0041a
+[verified], so line numbers pinned against the older derivative land somewhere
+else in the newer one, or nowhere.
+
+The canonical artifact also proves that the scanned book is not a 1920
+impression: its body is a 1951-1954 printing and its continuous appendix
+contains matter composed after 1970. Both hashes authenticate OCR derivatives
+of that later composite scan. Neither hash authenticates a 1920 printing, and
+neither may carry exact 1920 wording or chronology.
 
 Every locus in this file therefore carries the sha256 of the bytes it was read
 from, and a locus without one should be treated as unreproducible rather than as
 wrong.
 
-THE DRIFT WAS MEASURED, AND IT IS NOT AN OFFSET. Four loci the recension cites
-against the 1920 witness were looked for in the 2026-08-01 bytes [verified]:
+THE DRIFT WAS MEASURED, AND IT IS NOT AN OFFSET. Four loci formerly cited as a
+1920 witness were looked for in the 2026-08-01 composite bytes [verified]:
 
   cited   found   drift   passage
    9614    9710    +96    Rubricae generales XV, De hora celebrandi Missam
@@ -102,11 +138,13 @@ The drift changes sign and grows through the book, so no single constant
 converts the old addresses to the new ones and none should be computed. Each
 locus has to be re-read.
 
-WHAT THIS DOES NOT MEAN. Every one of the four passages IS THERE, and each says
-what the record citing it says it says. The recension's bases are sound; their
-addresses are stale. That distinction is the whole content of this note, and a
-reader who follows a stale locus, lands on an unrelated page, and concludes the
-claim was invented would have it exactly backwards.
+WHAT THIS DOES MEAN. Every one of the four large structures is still locatable,
+so the refreshed addresses remain useful for search and navigation. It does not
+mean that the OCR reproduces their exact wording, that the scanned leaves were
+printed in 1920, or that a difference from another witness records a change
+between 1920 and that witness. A reader may use these loci to find a passage and
+must use an honestly dated controlling witness to establish wording or
+chronology.
 """
 
 # ---------------------------------------------------------------------------
@@ -119,8 +157,10 @@ id = "the-missal-defers-precedence-to-the-office"
 claim = "The pre-1955 Missal does not state an order of precedence, and says so itself."
 grade = "verified"
 basis = """
-Two sentences, both in the Missal's own Rubricae generales, both read in two
-independent pre-1955 witnesses.
+Two structures in the Missal's Rubricae generales were located in one registered
+pre-1955 witness and in the later composite OCR formerly labelled as the 1920
+typical edition. The composite contributes structural and locating corroboration
+only; it is not an independent 1920 wording witness.
 
 FIRST, the opening rubric of the whole apparatus, before title I:
 `Missa quotidie dicitur secundum Ordinem Officii: de Festo Duplici, vel
@@ -134,9 +174,12 @@ SECOND, title VI, `De Translatione Festorum`, in terms:
 quando majori aliquo Festo, seu Dominica impediuntur.`
 When a feast is impeded, what governs is the ORDER OF THE BREVIARY.
 
-That is a book declining jurisdiction over the decision `rubrics.yaml` exists to
-record, and it is the single most useful thing established here.
+The quoted strings are OCR locators rather than exact transcriptions. At the
+structural level, the opening apparatus orders the Mass by the Office and title
+VI points translation to the Breviary. That is enough to locate the governing
+book without asking the composite OCR to establish 1920 wording or chronology.
 """
+source_roles = { "missale-romanum-1920" = "structural-search-locating-only", "benziger-1942" = "dated-pre-1955-control" }
 loci = [
   "missale-romanum-1920 8894-8897 (opening rubric) and 9134-9136 (title VI), sha256 eaf3ba379d4d9c0227ce991ac34be66e5177ab52642a8e0376776be81fd0041a",
   "benziger-1942 4497-4501 (opening rubric) and 4722-4726 (title VI), sha256 724a04fa083f780580a066b6ff2cad806190406d0c2112f74d2d8b8efbfc4bcb",
@@ -261,53 +304,57 @@ kalendarium.
 
 [[findings]]
 id = "the-two-witnesses-disagree-about-the-hour"
-claim = "The general rubric De hora celebrandi Missam differs between two pre-1955 printings."
+claim = "The two OCR derivatives locate different forms of De hora celebrandi Missam, but the composite source cannot date either form to 1920."
 grade = "verified"
 basis = """
-The 1920 typical edition prints `Missa privata saltem post Matutinum et Laudes
-quacumque hora ab aurora usque ad meridiem dici potest`. The 1942 Benziger
-prints the same title with a wider window, `ab una hora ante auroram usque ad
-unam horam post meridiem`, which is the measure of canon 821 of the 1917 Code
-rather than the older rubric.
+The later composite OCR locates the string `Missa privata saltem post Matutinum
+et Laudes quacumque hora ab aurora usque ad meridiem dici potest`. The registered
+1942 Benziger OCR locates a wider form under the same title, `ab una hora ante
+auroram usque ad unam horam post meridiem`.
 
-Recorded because `src/sources/calendars/roman-pre-1955/propers.yaml` argues from
-this rubric in its largest departure, the Easter Vigil, and because it is a
-worked example of the hazard guidance/recensions.md Rule 5 names: `pre-1955` is
-a boundary and not an edition, and one witness does not speak for the state.
+Those are search locators, not exact transcriptions. The difference is verified
+between the two hashed OCR files; it is NOT verified as a change from 1920 to
+1942. The canonical artifact record dates the first scan's body to 1951-1954 and
+its appendix after 1970. The row is retained as a worked example of the hazard
+guidance/recensions.md Rule 5 names: `pre-1955` is a boundary and not an edition,
+and a misdated witness cannot speak for an earlier state.
 """
+source_roles = { "missale-romanum-1920" = "structural-search-locating-only", "benziger-1942" = "dated-pre-1955-control" }
 loci = [
   "missale-romanum-1920 9710-9713, sha256 eaf3ba379d4d9c0227ce991ac34be66e5177ab52642a8e0376776be81fd0041a",
   "benziger-1942 5248-5250, sha256 724a04fa083f780580a066b6ff2cad806190406d0c2112f74d2d8b8efbfc4bcb",
 ]
 consequence = """
-The Easter Vigil row's conclusion is untouched -- one hour after noon is still
-not the night the reform moved the Vigil to -- and its reasoning is narrowed.
-Both are recorded in that file's `open_collation_items`.
+No chronology may be derived from this pair. The registered Benziger witness may
+locate its own 1942 form; an honestly identified 1920 impression is required
+before this inventory can state what the 1920 typical edition printed or when
+the variant entered the Missal.
 """
 
 [[findings]]
 id = "holy-thursday-carries-one-mass"
-claim = "Neither pre-1955 witness prints a Chrism Mass; Holy Thursday has one Introit."
+claim = "Each OCR span structurally locates one Holy Thursday Mass between the Holy Thursday and Good Friday headings."
 grade = "verified"
 basis = """
-In each witness the span from the Holy Thursday heading to the Good Friday
-heading contains exactly one `Introitus`, `Gal. 6, 14`, `Nos autem gloriari`, and
-the string `Chrismatis` occurs nowhere in Holy Week in either book. Immediately
-before the heading the 1920 witness prints `Triduo sequenti prohibentur omnes
-Missae privatae`, which forbids the other Masses rather than merely omitting them.
+In each hashed OCR file the span from the Holy Thursday heading to the Good
+Friday heading contains one `Introitus`, located by `Gal. 6, 14` and `Nos autem
+gloriari`. The search string `Chrismatis` has no hit in either bounded Holy Week
+span. These are structural and search observations: OCR can miss a string, and
+the later composite cannot establish what a 1920 impression printed.
 
-This closed an open question that had been carried deliberately unanswered, and
-the departure now stands in the recension with this reading as its basis.
+The structure supports a locating lead for one printed Holy Thursday Mass. It
+does not by itself prove a universal negative about every pre-1955 Missal or
+govern the chronology of the Chrism Mass.
 """
+source_roles = { "missale-romanum-1920" = "structural-search-locating-only", "benziger-1942" = "dated-pre-1955-control" }
 loci = [
-  "missale-romanum-1920 34612-35196, single Introit at 34620, next day at 35197",
-  "benziger-1942 32721-33444, single Introit at 32730",
+  "missale-romanum-1920 34612-35196, single Introit at 34620, next day at 35197, sha256 eaf3ba379d4d9c0227ce991ac34be66e5177ab52642a8e0376776be81fd0041a",
+  "benziger-1942 32721-33444, single Introit at 32730, sha256 724a04fa083f780580a066b6ff2cad806190406d0c2112f74d2d8b8efbfc4bcb",
 ]
 consequence = """
-It is a statement about THE MISSAL. In the pre-1955 rite the oils are blessed
-within the one Mass of the Lord's Supper by a rite the Pontificale Romanum
-carries; no pre-1955 Pontificale has been read here, so the recension says
-nothing about the blessing of the oils. See `[[wanted]]` `pontificale-pre-1955`.
+This inventory does not settle the blessing of the oils or the complete
+pre-1955 Mass inventory. No pre-1955 Pontificale has been read here; see
+`[[wanted]]` `pontificale-pre-1955`.
 """
 
 # ---------------------------------------------------------------------------
@@ -330,8 +377,9 @@ bytes_match_basis = """
 The fetched sha256 and byte size are identical to the ones the artifact record
 carries [verified]. This is the first reading in this repository made against the
 exact registered object rather than against a re-fetch assumed to be the same
-bytes, and it is recorded because the sibling 1920 witness shows what happens
-when that assumption is not checked -- see `derivative_hazard`.
+bytes, and it is recorded because the sibling composite derivative formerly
+labelled 1920 shows what happens when that assumption is not checked -- see
+`derivative_hazard`.
 """
 rights = "unresolved"
 may_publish_text = "unresolved"
@@ -355,32 +403,40 @@ numbered order of precedence. Its title VI refers the reader to the Breviary; se
 
 [[held]]
 id = "missale-romanum-1920"
-label = "Missale Romanum, editio typica Vaticana, 1920"
-registered = "unregistered in the source library; used as a witness in roman-holy-week-acts-v1.toml"
-repository = "Internet Archive, item MissaleRomanum1920"
+label = "Later composite scan formerly labelled Missale Romanum, editio typica Vaticana, 1920"
+registered = "edition.catholic-church.missale-romanum.vatican-typica-1920"
+artifact = "artifact.catholic-church.missale-romanum.vatican-typica-1920.missale-romanum-1920-text-aa646196"
+canonical_artifact_sha256 = "aa6461961702b5cbae51460a7385f7a982c6f5a2649822d0bb8d5f13b6b387e0"
+repository = "Internet Archive, item MissaleRomanumBenedettoXV; the derivative was historically cited as MissaleRomanum1920_djvu.txt"
 read_from = "ocr-only"
+source_role = "structural-search-locating-only"
+printing_identity = "later-composite-not-1920-impression"
 sha256 = "eaf3ba379d4d9c0227ce991ac34be66e5177ab52642a8e0376776be81fd0041a"
 byte_size = 2932349
 lines = 119621
 retrieved = "2026-08-01"
 bytes_match_the_registered_artifact = false
 bytes_match_basis = """
-There is no registered artifact to match. `roman-holy-week-acts-v1.toml` records
-this text layer as `123278 lines, 2918085 bytes`, and the copy fetched on
-2026-08-01 from the same item is 119621 lines and 2932349 bytes. The derivative
-was regenerated between the two readings. See `derivative_hazard`.
+The canonical artifact records the earlier derivative as 123278 lines, 2918085
+bytes, sha256 aa6461961702b5cbae51460a7385f7a982c6f5a2649822d0bb8d5f13b6b387e0.
+The copy fetched on 2026-08-01 from the same item is 119621 lines, 2932349 bytes,
+sha256 eaf3ba379d4d9c0227ce991ac34be66e5177ab52642a8e0376776be81fd0041a.
+The OCR derivative was regenerated between the two readings. Both derivatives
+describe the same later composite scan; neither is a 1920 impression. See
+`derivative_hazard`.
 """
-rights = "public-domain-us-pre-1931"
-may_publish_text = "yes"
+rights = "unresolved"
+may_publish_text = "unresolved"
 rights_basis = """
-A 1920 printing, published before 1931, and therefore in the public domain in the
-United States on the frame `missal-acquisition-audit-v1.toml` sources line by
-line. The Internet Archive item carries no licence field, which is why the acts
-inventory calls this a weaker basis than the pre-1900 printings; the date alone
-carries it.
+Carried from the canonical artifact record. The exact scan combines a body
+printed in 1951-1954 with an appendix containing matter composed after 1970, so
+the 1920 typical edition's pre-1931 status does not clear the complete artifact.
+The Internet Archive item's availability and absence of a rights field supply
+no distribution basis. The artifact is therefore `remote` and its exact rights
+remain unresolved.
 """
-carries = "The same Rubricae generales Missalis and Additiones et Variationes, in the typical edition's own setting."
-does_not_carry = "The same absences as the row above, for the same reason."
+carries = "Structurally locates the Rubricae generales Missalis and Additiones et Variationes in the composite body's OCR; it does not establish exact 1920 wording or setting."
+does_not_carry = "The bounded OCR search locates no Breviary rubric, table of occurrence, table of concurrence, or numbered order of precedence; this is structural/search evidence only, not an exhaustive textual negative."
 
 # ---------------------------------------------------------------------------
 # What is wanted, in the order that settles the most.
@@ -754,6 +810,7 @@ repositories_searched = 5
 repositories_actually_reached = 4
 books_still_wanted = 3
 rubrics_sources_this_record_makes_writable = 0
+linearized_finding_aids_shipped = 1
 counts_note = """
 `rubrics_sources_this_record_makes_writable = 0` is the headline and is written
 as a number so that it cannot be read past. IT DID NOT MOVE WHEN THE SEARCH
@@ -764,6 +821,11 @@ promulgated it, in the public domain and publishable. The count is still zero,
 because the rule is five ordered criteria and `tools/calendar-rubrics` can only
 express a table of numbered rows. Sourcing is finished; the schema is the
 blocker. See `[[findings]]` `the-rule-is-criteria-not-rows`.
+
+`linearized_finding_aids_shipped = 1` records the companion that now consumes
+that source through a disclosed numbered approximation. It did not move the
+faithful-source count above, because the companion itself states where the
+linearization cannot carry the source's semantics.
 
 `repositories_actually_reached = 4` of 5 is the other number to read. Google
 Books was quota-blocked on every query including a trivial one, so five prepared

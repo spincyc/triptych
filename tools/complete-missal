@@ -1,0 +1,1107 @@
+#!/usr/bin/env python3
+"""Report the machine-represented completeness of all three Missal families.
+
+This is an accounting composition, not a fourth corpus owner.  It combines the
+Propers census, calendar reachability, and Ordinary coverage.  A missing target
+inventory is reported as a typed unresolved dimension with ``count: null``;
+represented rows are never promoted into an invented completeness denominator.
+"""
+from __future__ import annotations
+
+import argparse
+import collections
+import json
+import subprocess
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+TOOLS = ROOT / "tools"
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from _tooling import Example, print_json, with_examples  # noqa: E402
+
+
+FAMILIES = ("roman-pre-1955", "roman-1962", "postconciliar")
+STRUCTURAL_DIMENSIONS = (
+    "expected_celebrations",
+    "represented_celebrations",
+    "missing_celebrations",
+    "duplicate_identities",
+)
+TEXTUAL_DIMENSIONS = (
+    "expected_text_slots",
+    "filled_text_slots",
+    "inherited_reference_slots",
+    "lawfully_external_syndicated_slots",
+    "truly_unavailable_slots",
+    "malformed_slots",
+    "unknown_slots",
+    "orphan_texts",
+    "unreachable_texts",
+)
+PROVENANCE_DIMENSIONS = (
+    "source_less_texts",
+    "rights_pending_texts",
+)
+GROUPS = {
+    "structural": STRUCTURAL_DIMENSIONS,
+    "textual": TEXTUAL_DIMENSIONS,
+    "provenance": PROVENANCE_DIMENSIONS,
+}
+DIMENSIONS = frozenset(
+    dimension for dimensions in GROUPS.values() for dimension in dimensions
+)
+PLACEMENT_FIRST_YEAR = 2020
+PLACEMENT_LAST_YEAR = 2120
+
+
+EXAMPLES = {
+    "": (
+        Example(
+            "tools/complete-missal",
+            (
+                "complete-missal completeness: unresolved",
+                "placement span: 2020-2120",
+                "roman-pre-1955: 8 represented celebrations (recension-delta); at least 5160 modeled text slots; 13/15 dimensions unresolved",
+                "... 5 more lines",
+            ),
+        ),
+        Example(
+            "tools/complete-missal --help",
+            (
+                "usage: complete-missal [-h] [--check | --require-resolved] [--json]",
+                "",
+                "Compose the owning corpus reports into a deterministic §13 completeness report without inventing an expected universe.",
+                "... 11 more lines",
+            ),
+        ),
+    ),
+}
+
+
+class Refused(RuntimeError):
+    """An owning report failed or returned a shape this composition cannot use."""
+
+
+def invoke(tool: str, arguments: list[str]) -> dict:
+    """Run one registered sibling command and require a successful JSON object."""
+
+    command = [sys.executable, str(TOOLS / tool), *arguments, "--json"]
+    finished = subprocess.run(
+        command,
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        timeout=240,
+    )
+    if finished.returncode != 0:
+        detail = (finished.stderr or finished.stdout or "").strip().splitlines()
+        raise Refused(
+            f"{tool} {' '.join(arguments)} exited {finished.returncode}: "
+            f"{detail[-1] if detail else 'no diagnostic'}"
+        )
+    try:
+        payload = json.loads(finished.stdout)
+    except json.JSONDecodeError as error:
+        raise Refused(f"{tool} did not return JSON: {error}") from error
+    if not isinstance(payload, dict):
+        raise Refused(f"{tool} returned {type(payload).__name__}, not an object")
+    return payload
+
+
+def owning_reports() -> tuple[dict, dict, dict]:
+    """The three independently owned, reproducible inputs to this report."""
+
+    propers = invoke("mass-propers", ["census"])
+    placement = invoke(
+        "calendar-days",
+        [
+            "coverage",
+            "--first",
+            str(PLACEMENT_FIRST_YEAR),
+            "--last",
+            str(PLACEMENT_LAST_YEAR),
+        ],
+    )
+    ordinary = invoke("mass-ordinary", ["coverage"])
+    return propers, placement, ordinary
+
+
+def integer(value: object, where: str) -> int:
+    if isinstance(value, bool) or not isinstance(value, int) or value < 0:
+        raise Refused(f"{where} must be a non-negative integer, got {value!r}")
+    return value
+
+
+def rows_by_calendar(payload: dict, key: str, owner: str) -> dict[str, dict]:
+    rows = payload.get(key)
+    if not isinstance(rows, list):
+        raise Refused(f"{owner}.{key} must be an array")
+    indexed: dict[str, dict] = {}
+    for index, row in enumerate(rows):
+        if not isinstance(row, dict):
+            raise Refused(f"{owner}.{key}[{index}] must be an object")
+        calendar = row.get("calendar")
+        if not isinstance(calendar, str) or not calendar:
+            raise Refused(f"{owner}.{key}[{index}].calendar must be a string")
+        if calendar in indexed:
+            raise Refused(f"{owner}.{key} repeats calendar {calendar!r}")
+        indexed[calendar] = row
+    missing = sorted(set(FAMILIES) - set(indexed))
+    if missing:
+        raise Refused(f"{owner}.{key} omits {', '.join(missing)}")
+    extra = sorted(set(indexed) - set(FAMILIES))
+    if extra:
+        raise Refused(f"{owner}.{key} has unsupported calendars {', '.join(extra)}")
+    return indexed
+
+
+def measured(count: int, basis: str, **details: object) -> dict:
+    return {"basis": basis, "count": count, "state": "measured", **details}
+
+
+def unresolved(
+    kind: str,
+    basis: str,
+    *,
+    lower_bound: int = 0,
+    **details: object,
+) -> dict:
+    return {
+        "basis": basis,
+        "count": None,
+        "lower_bound": lower_bound,
+        "reason": {"kind": kind},
+        "state": "unresolved",
+        **details,
+    }
+
+
+def represented_celebrations(
+    census: dict, calendar: str, raw_mass_rows: int
+) -> int:
+    ranks = census.get("ranks")
+    if not isinstance(ranks, list):
+        raise Refused(f"mass-propers.calendars.{calendar}.ranks must be an array")
+    total = 0
+    entry_total = 0
+    seen_ranks: set[str] = set()
+    for index, row in enumerate(ranks):
+        where = f"mass-propers.calendars.{calendar}.ranks[{index}]"
+        if not isinstance(row, dict):
+            raise Refused(f"{where} must be an object")
+        exact_fields(row, {"rank", "entries", "celebrations"}, where)
+        rank = row.get("rank")
+        if not isinstance(rank, str) or not rank:
+            raise Refused(f"{where}.rank must be a non-empty string")
+        if rank in seen_ranks:
+            raise Refused(f"{where}.rank repeats {rank!r}")
+        seen_ranks.add(rank)
+        entries = integer(row.get("entries"), f"{where}.entries")
+        celebrations = integer(row.get("celebrations"), f"{where}.celebrations")
+        if celebrations < entries:
+            raise Refused(
+                f"{where}.celebrations cannot be less than its entry count: "
+                f"{celebrations} < {entries}"
+            )
+        entry_total += entries
+        total += celebrations
+    if entry_total != raw_mass_rows:
+        raise Refused(
+            f"mass-propers.calendars.{calendar}.ranks entry total does not "
+            f"partition its masses: {entry_total} != {raw_mass_rows}"
+        )
+    return total
+
+
+def exact_fields(row: dict, expected: set[str], where: str) -> None:
+    if set(row) != expected:
+        missing = sorted(expected - set(row))
+        extra = sorted(set(row) - expected)
+        details = []
+        if missing:
+            details.append(f"missing {', '.join(missing)}")
+        if extra:
+            details.append(f"unexpected {', '.join(extra)}")
+        raise Refused(f"{where} fields are not exact: {'; '.join(details)}")
+
+
+def ordinary_languages(
+    row: dict, calendar: str, elements: int
+) -> tuple[list[dict], dict[str, int]]:
+    languages = row.get("language_coverage")
+    if not isinstance(languages, list) or not languages:
+        raise Refused(
+            f"mass-ordinary.coverage.{calendar}.language_coverage must be a "
+            "non-empty array"
+        )
+    normalized = []
+    held: dict[str, int] = {}
+    for index, language_row in enumerate(languages):
+        where = f"mass-ordinary.coverage.{calendar}.language_coverage[{index}]"
+        if not isinstance(language_row, dict):
+            raise Refused(f"{where} must be an object")
+        exact_fields(
+            language_row,
+            {"lang", "elements", "held", "missing", "absent"},
+            where,
+        )
+        language = language_row.get("lang")
+        if not isinstance(language, str) or not language:
+            raise Refused(f"{where}.lang must be a non-empty string")
+        if language in held:
+            raise Refused(f"{where}.lang repeats {language!r}")
+        language_elements = integer(language_row.get("elements"), f"{where}.elements")
+        language_held = integer(language_row.get("held"), f"{where}.held")
+        missing = integer(language_row.get("missing"), f"{where}.missing")
+        absent = integer(language_row.get("absent"), f"{where}.absent")
+        if language_elements != elements:
+            raise Refused(
+                f"{where}.elements does not match its target-recension universe: "
+                f"{language_elements} != {elements}"
+            )
+        if language_held + missing != elements:
+            raise Refused(
+                f"{where} does not partition elements: "
+                f"{language_held} + {missing} != {elements}"
+            )
+        if absent != missing:
+            raise Refused(f"{where}.absent does not equal missing: {absent} != {missing}")
+        held[language] = language_held
+        normalized.append(dict(language_row))
+    return sorted(normalized, key=lambda item: item["lang"]), held
+
+
+def ordinary_relations(
+    row: dict, calendar: str, held_by_language: dict[str, int]
+) -> tuple[list[dict], dict[str, int]]:
+    relations = row.get("relation_coverage")
+    if not isinstance(relations, list):
+        raise Refused(
+            f"mass-ordinary.coverage.{calendar}.relation_coverage must be an array"
+        )
+    normalized = []
+    seen: set[tuple[str, str, str]] = set()
+    relation_totals = dict.fromkeys(held_by_language, 0)
+    target_edition_held = dict.fromkeys(held_by_language, 0)
+    for index, relation_row in enumerate(relations):
+        where = f"mass-ordinary.coverage.{calendar}.relation_coverage[{index}]"
+        if not isinstance(relation_row, dict):
+            raise Refused(f"{where} must be an object")
+        exact_fields(relation_row, {"lang", "relation", "collation", "count"}, where)
+        language = relation_row.get("lang")
+        if not isinstance(language, str) or language not in held_by_language:
+            raise Refused(f"{where}.lang must name a covered language")
+        relation = relation_row.get("relation")
+        collation = relation_row.get("collation")
+        if relation == "own":
+            if collation != "not-applicable":
+                raise Refused(f"{where} own text must use not-applicable collation")
+        elif relation == "antecedent":
+            if collation not in ("collated", "uncollated"):
+                raise Refused(
+                    f"{where} antecedent text must be collated or uncollated"
+                )
+        else:
+            raise Refused(f"{where}.relation must be own or antecedent")
+        identity = (language, relation, collation)
+        if identity in seen:
+            raise Refused(f"{where} repeats relation bucket {identity!r}")
+        seen.add(identity)
+        count = integer(relation_row.get("count"), f"{where}.count")
+        if count == 0:
+            raise Refused(f"{where}.count must be positive for an emitted bucket")
+        relation_totals[language] += count
+        if relation == "own":
+            target_edition_held[language] += count
+        normalized.append(dict(relation_row))
+    for language, held in held_by_language.items():
+        if relation_totals[language] != held:
+            raise Refused(
+                f"mass-ordinary {calendar} {language} relation buckets do not "
+                f"partition held elements: {relation_totals[language]} != {held}"
+            )
+    return (
+        sorted(
+            normalized,
+            key=lambda item: (item["lang"], item["relation"], item["collation"]),
+        ),
+        dict(sorted(target_edition_held.items())),
+    )
+
+
+def expected_absence_state(kind: str) -> str:
+    return {
+        "rights-withheld": "rights-restricted",
+        "rights-unresolved": "unresolved",
+    }.get(kind, "unavailable")
+
+
+def ordinary_absences(
+    row: dict, calendar: str, held_by_language: dict[str, int], elements: int
+) -> tuple[list[dict], list[dict]]:
+    absent = row.get("absent")
+    if not isinstance(absent, list):
+        raise Refused(f"mass-ordinary.coverage.{calendar}.absent must be an array")
+    normalized = []
+    absences: dict[str, dict] = {}
+    for index, reason in enumerate(absent):
+        where = f"mass-ordinary.coverage.{calendar}.absent[{index}]"
+        if not isinstance(reason, dict):
+            raise Refused(f"{where} must be an object")
+        exact_fields(reason, {"key", "count", "state", "kind"}, where)
+        key = reason.get("key")
+        if not isinstance(key, str) or not key:
+            raise Refused(f"{where}.key must be a non-empty string")
+        if key in absences:
+            raise Refused(f"mass-ordinary {calendar} repeats absence {key!r}")
+        count = integer(reason.get("count"), f"{where}.count")
+        kind = reason.get("kind")
+        if not isinstance(kind, str) or not kind:
+            raise Refused(f"{where}.kind must be a non-empty string")
+        state = reason.get("state")
+        if state != expected_absence_state(kind):
+            raise Refused(f"{where}.state is inconsistent with kind {kind!r}")
+        normalized.append(dict(reason))
+        absences[key] = {"count": count, "kind": kind, "state": state}
+
+    language_absences = row.get("language_absences")
+    if not isinstance(language_absences, list):
+        raise Refused(
+            f"mass-ordinary.coverage.{calendar}.language_absences must be an array"
+        )
+    normalized_languages = []
+    seen: set[tuple[str, str]] = set()
+    by_key = dict.fromkeys(absences, 0)
+    by_language = dict.fromkeys(held_by_language, 0)
+    for index, language_row in enumerate(language_absences):
+        where = f"mass-ordinary.coverage.{calendar}.language_absences[{index}]"
+        if not isinstance(language_row, dict):
+            raise Refused(f"{where} must be an object")
+        exact_fields(language_row, {"key", "lang", "count", "state", "kind"}, where)
+        key = language_row.get("key")
+        language = language_row.get("lang")
+        if not isinstance(key, str) or key not in absences:
+            raise Refused(f"{where}.key must name a typed absence")
+        if not isinstance(language, str) or language not in held_by_language:
+            raise Refused(f"{where}.lang must name a covered language")
+        identity = (key, language)
+        if identity in seen:
+            raise Refused(f"{where} repeats language absence {identity!r}")
+        seen.add(identity)
+        count = integer(language_row.get("count"), f"{where}.count")
+        if count == 0:
+            raise Refused(f"{where}.count must be positive for an emitted row")
+        parent = absences[key]
+        if (
+            language_row.get("kind") != parent["kind"]
+            or language_row.get("state") != parent["state"]
+        ):
+            raise Refused(f"{where} does not retain its absence type")
+        by_key[key] += count
+        by_language[language] += count
+        normalized_languages.append(dict(language_row))
+    for key, parent in absences.items():
+        if by_key[key] != parent["count"]:
+            raise Refused(
+                f"mass-ordinary {calendar} absence {key!r} language counts do not "
+                f"partition its count: {by_key[key]} != {parent['count']}"
+            )
+    for language, held in held_by_language.items():
+        missing = elements - held
+        if by_language[language] != missing:
+            raise Refused(
+                f"mass-ordinary {calendar} {language} absence counts do not "
+                f"partition missing elements: {by_language[language]} != {missing}"
+            )
+    return (
+        sorted(normalized, key=lambda item: item["key"]),
+        sorted(normalized_languages, key=lambda item: (item["key"], item["lang"])),
+    )
+
+
+def ordinary_exclusions(row: dict, calendar: str) -> list[dict]:
+    exclusions = row.get("exclusions")
+    if not isinstance(exclusions, list):
+        raise Refused(f"mass-ordinary.coverage.{calendar}.exclusions must be an array")
+    normalized = []
+    seen: set[str] = set()
+    allowed_source_fields = {
+        "lang",
+        "source_id",
+        "artifact_id",
+        "element",
+        "relation",
+        "collation",
+        "note",
+        "collation_finding",
+    }
+    for index, exclusion in enumerate(exclusions):
+        where = f"mass-ordinary.coverage.{calendar}.exclusions[{index}]"
+        if not isinstance(exclusion, dict):
+            raise Refused(f"{where} must be an object")
+        exact_fields(
+            exclusion,
+            {"key", "state", "basis", "sources", "evidence"},
+            where,
+        )
+        key = exclusion.get("key")
+        if not isinstance(key, str) or not key:
+            raise Refused(f"{where}.key must be a non-empty string")
+        if key in seen:
+            raise Refused(f"{where}.key repeats {key!r}")
+        seen.add(key)
+        if exclusion.get("state") != "not-in-target-recension":
+            raise Refused(f"{where}.state must be not-in-target-recension")
+        basis = exclusion.get("basis")
+        if not isinstance(basis, str) or not basis.strip():
+            raise Refused(f"{where}.basis must be a non-empty string")
+        sources = exclusion.get("sources")
+        if (
+            not isinstance(sources, list)
+            or not sources
+            or any(not isinstance(source, str) or not source for source in sources)
+            or sources != sorted(set(sources))
+        ):
+            raise Refused(
+                f"{where}.sources must be a non-empty sorted unique string array"
+            )
+        evidence = exclusion.get("evidence")
+        if not isinstance(evidence, list) or not evidence:
+            raise Refused(f"{where}.evidence must be a non-empty array")
+        normalized_evidence = []
+        source_languages: set[str] = set()
+        evidence_sources: set[str] = set()
+        for source_index, source in enumerate(evidence):
+            source_where = f"{where}.evidence[{source_index}]"
+            if not isinstance(source, dict):
+                raise Refused(f"{source_where} must be an object")
+            required = {"lang", "source_id", "artifact_id", "element", "relation"}
+            if not required <= set(source) or not set(source) <= allowed_source_fields:
+                raise Refused(f"{source_where} fields are not an allowed source record")
+            for field in ("lang", "source_id", "artifact_id", "element"):
+                if not isinstance(source.get(field), str) or not source[field]:
+                    raise Refused(f"{source_where}.{field} must be a non-empty string")
+            evidence_sources.add(source["source_id"])
+            if source["lang"] in source_languages:
+                raise Refused(f"{source_where}.lang repeats {source['lang']!r}")
+            source_languages.add(source["lang"])
+            relation = source.get("relation")
+            if relation == "own":
+                if set(source) != required:
+                    raise Refused(f"{source_where} own relation has inapplicable fields")
+            elif relation == "antecedent":
+                collation = source.get("collation")
+                note = source.get("note")
+                if collation not in ("collated", "uncollated"):
+                    raise Refused(f"{source_where} antecedent relation lacks collation")
+                if not isinstance(note, str) or not note.strip():
+                    raise Refused(f"{source_where} antecedent relation lacks a note")
+                finding = source.get("collation_finding")
+                if collation == "collated":
+                    if not isinstance(finding, str) or not finding.strip():
+                        raise Refused(f"{source_where} collated relation lacks a finding")
+                elif "collation_finding" in source:
+                    raise Refused(f"{source_where} uncollated relation cites a finding")
+            else:
+                raise Refused(f"{source_where}.relation must be own or antecedent")
+            normalized_evidence.append(dict(source))
+        if evidence_sources != set(sources):
+            raise Refused(
+                f"{where}.sources do not exactly name the evidence source_id values"
+            )
+        normalized.append(dict(exclusion) | {"evidence": normalized_evidence})
+    return sorted(normalized, key=lambda item: item["key"])
+
+
+def english_counts(row: dict, calendar: str) -> dict[str, object]:
+    if "error" in row:
+        exact_fields(row, {"calendar", "error"}, f"mass-propers.english_coverage.{calendar}")
+        error = row.get("error")
+        if not isinstance(error, str) or not error.strip():
+            raise Refused(
+                f"mass-propers.english_coverage.{calendar}.error must be a "
+                "non-empty string"
+            )
+        return {"derivation_error": error}
+    fields = (
+        "slots",
+        "with_english",
+        "rights_restricted",
+        "ledgered_untranslated",
+        "unaccounted",
+        "outside_the_ledger",
+        "unmatched_records",
+        "stale_translation_records",
+    )
+    counted = {
+        field: integer(row.get(field), f"mass-propers.english_coverage.{calendar}.{field}")
+        for field in fields
+    }
+    partition = (
+        counted["with_english"]
+        + counted["rights_restricted"]
+        + counted["ledgered_untranslated"]
+        + counted["unaccounted"]
+    )
+    if partition != counted["slots"]:
+        raise Refused(
+            f"{calendar} English coverage does not partition its slots: "
+            f"{partition} != {counted['slots']}"
+        )
+    where = f"mass-propers.english_coverage.{calendar}"
+    ledger_calendar = row.get("translation_ledger_calendar")
+    if not isinstance(ledger_calendar, str) or not ledger_calendar:
+        raise Refused(f"{where}.translation_ledger_calendar must be a non-empty string")
+    ledger_calendars = row.get("translation_ledger_calendars")
+    if (
+        not isinstance(ledger_calendars, list)
+        or not ledger_calendars
+        or any(not isinstance(owner, str) or not owner for owner in ledger_calendars)
+        or len(ledger_calendars) != len(set(ledger_calendars))
+    ):
+        raise Refused(
+            f"{where}.translation_ledger_calendars must be a non-empty unique "
+            "string array"
+        )
+    if ledger_calendar != ledger_calendars[-1]:
+        raise Refused(
+            f"{where}.translation_ledger_calendar must name the last ledger "
+            "in translation_ledger_calendars"
+        )
+    inherited = row.get("translation_ledger_inherited")
+    if not isinstance(inherited, bool):
+        raise Refused(f"{where}.translation_ledger_inherited must be a boolean")
+    expected_inherited = any(owner != calendar for owner in ledger_calendars)
+    if inherited != expected_inherited:
+        raise Refused(
+            f"{where}.translation_ledger_inherited is inconsistent with "
+            "translation_ledger_calendars"
+        )
+    return counted | {
+        "translation_ledger_calendar": ledger_calendar,
+        "translation_ledger_calendars": list(ledger_calendars),
+        "translation_ledger_inherited": inherited,
+    }
+
+
+def unresolved_common_set_selections(finding: dict, calendar: str) -> list[dict]:
+    """Validate and preserve the owner's typed unresolved Common choices."""
+
+    rows = finding.get("unresolved_common_set_selections")
+    if not isinstance(rows, list):
+        raise Refused(
+            f"mass-propers.finding_aid_coverage.{calendar}."
+            "unresolved_common_set_selections must be an array"
+        )
+    normalized = []
+    seen: set[tuple[str, str, str]] = set()
+    for index, row in enumerate(rows):
+        where = (
+            f"mass-propers.finding_aid_coverage.{calendar}."
+            f"unresolved_common_set_selections[{index}]"
+        )
+        if not isinstance(row, dict):
+            raise Refused(f"{where} must be an object")
+        exact_fields(row, {"mass", "target", "group", "candidates"}, where)
+        for field in ("mass", "target", "group"):
+            if not isinstance(row.get(field), str) or not row[field]:
+                raise Refused(f"{where}.{field} must be a non-empty string")
+        candidates = row.get("candidates")
+        if (
+            not isinstance(candidates, list)
+            or len(candidates) < 2
+            or any(not isinstance(candidate, str) or not candidate for candidate in candidates)
+            or len(candidates) != len(set(candidates))
+        ):
+            raise Refused(
+                f"{where}.candidates must contain at least two unique non-empty strings"
+            )
+        identity = (row["mass"], row["target"], row["group"])
+        if identity in seen:
+            raise Refused(f"{where} repeats Common selection {identity!r}")
+        seen.add(identity)
+        normalized.append(dict(row) | {"candidates": list(candidates)})
+    return sorted(
+        normalized,
+        key=lambda row: (row["mass"], row["target"], row["group"]),
+    )
+
+
+def one_family(
+    calendar: str,
+    census: dict,
+    finding: dict,
+    english: dict,
+    placement: dict,
+    ordinary: dict,
+    latin: dict | None,
+) -> dict:
+    raw_mass_rows = integer(census.get("masses"), f"{calendar}.census.masses")
+    effective_mass_rows = integer(placement.get("masses"), f"{calendar}.placement.masses")
+    represented = represented_celebrations(census, calendar, raw_mass_rows)
+    effective_celebrations = integer(
+        finding.get("effective_celebrations"),
+        f"mass-propers.finding_aid_coverage.{calendar}.effective_celebrations",
+    )
+    if effective_celebrations < effective_mass_rows:
+        raise Refused(
+            f"mass-propers.finding_aid_coverage.{calendar}.effective_celebrations "
+            f"cannot be less than effective mass rows: "
+            f"{effective_celebrations} < {effective_mass_rows}"
+        )
+    representation_scope = (
+        "family-index" if raw_mass_rows == effective_mass_rows else "recension-delta"
+    )
+
+    resolved = integer(
+        finding.get("resolved_proper_occurrences"), f"{calendar}.resolved occurrences"
+    )
+    direct = integer(
+        finding.get("direct_resolved_occurrences"), f"{calendar}.direct occurrences"
+    )
+    referenced = integer(
+        finding.get("referenced_resolved_occurrences"),
+        f"{calendar}.referenced occurrences",
+    )
+    if direct + referenced != resolved:
+        raise Refused(
+            f"{calendar} proper resolution does not partition: "
+            f"{direct} + {referenced} != {resolved}"
+        )
+
+    exact_fields(
+        ordinary,
+        {
+            "calendar",
+            "elements",
+            "witnesses",
+            "language_coverage",
+            "relation_coverage",
+            "absent",
+            "language_absences",
+            "exclusions",
+        },
+        f"mass-ordinary.coverage.{calendar}",
+    )
+    witnesses = ordinary.get("witnesses")
+    if not isinstance(witnesses, list):
+        raise Refused(f"mass-ordinary.coverage.{calendar}.witnesses must be an array")
+    ordinary_elements = integer(ordinary.get("elements"), f"{calendar}.ordinary.elements")
+    language_coverage, held_by_language = ordinary_languages(
+        ordinary, calendar, ordinary_elements
+    )
+    relation_coverage, target_edition_held_by_language = ordinary_relations(
+        ordinary, calendar, held_by_language
+    )
+    absence_reasons, language_absences = ordinary_absences(
+        ordinary, calendar, held_by_language, ordinary_elements
+    )
+    exclusions = ordinary_exclusions(ordinary, calendar)
+    english_known = english_counts(english, calendar)
+    english_public = (
+        integer(english_known.get("with_english"), f"{calendar}.with_english")
+        if "derivation_error" not in english_known
+        else 0
+    )
+    latin_resident = 0
+    if latin is not None and latin.get("calendar") == calendar:
+        latin_resident = integer(latin.get("resident_bodies"), f"{calendar}.resident_bodies")
+    filled_lower_bound = max(english_public, latin_resident) + max(
+        target_edition_held_by_language.values(), default=0
+    )
+
+    resolution_errors = finding.get("resolution_errors")
+    if not isinstance(resolution_errors, list):
+        raise Refused(f"{calendar}.resolution_errors must be an array")
+    for index, resolution_error in enumerate(resolution_errors):
+        if not isinstance(resolution_error, dict):
+            raise Refused(f"{calendar}.resolution_errors[{index}] must be an object")
+    unresolved_common_sets = unresolved_common_set_selections(finding, calendar)
+
+    span = placement.get("span")
+    if not isinstance(span, dict):
+        raise Refused(f"calendar-days.coverage.{calendar}.span must be an object")
+    exact_fields(span, {"first", "last"}, f"calendar-days.coverage.{calendar}.span")
+    first = integer(span.get("first"), f"{calendar}.placement.span.first")
+    last = integer(span.get("last"), f"{calendar}.placement.span.last")
+    if (first, last) != (PLACEMENT_FIRST_YEAR, PLACEMENT_LAST_YEAR):
+        raise Refused(
+            f"calendar-days.coverage.{calendar}.span is {first}-{last}, expected "
+            f"{PLACEMENT_FIRST_YEAR}-{PLACEMENT_LAST_YEAR}"
+        )
+    unplaced = placement.get("masses_never_placed")
+    if not isinstance(unplaced, list):
+        raise Refused(f"{calendar}.masses_never_placed must be an array")
+    declared_unplaced = 0
+    undeclared_unplaced = 0
+    unplaced_keys: set[str] = set()
+    for index, row in enumerate(unplaced):
+        where = f"calendar-days.coverage.{calendar}.masses_never_placed[{index}]"
+        if not isinstance(row, dict):
+            raise Refused(f"{where} must be an object")
+        exact_fields(row, {"key", "name", "section", "why", "declared"}, where)
+        key = row.get("key")
+        if not isinstance(key, str) or not key:
+            raise Refused(f"{where}.key must be a non-empty string")
+        if key in unplaced_keys:
+            raise Refused(f"{where}.key repeats {key!r}")
+        unplaced_keys.add(key)
+        for field in ("name", "section", "why"):
+            if not isinstance(row.get(field), str) or not row[field].strip():
+                raise Refused(f"{where}.{field} must be a non-empty string")
+        declared = row.get("declared")
+        if not isinstance(declared, bool):
+            raise Refused(f"{where}.declared must be a boolean")
+        if declared:
+            declared_unplaced += 1
+        else:
+            undeclared_unplaced += 1
+
+    placeholder_records = integer(
+        finding.get("placeholder_proper_records"), f"{calendar}.placeholder records"
+    )
+    empty_masses = integer(
+        finding.get("masses_resolving_no_propers"), f"{calendar}.empty masses"
+    )
+    english_orphans = (
+        integer(english_known.get("unmatched_records"), f"{calendar}.unmatched records")
+        if "derivation_error" not in english_known
+        else 0
+    )
+    latin_orphans = (
+        integer(latin.get("unmatched_overlay_records"), f"{calendar}.Latin orphans")
+        if latin is not None and latin.get("calendar") == calendar
+        else 0
+    )
+
+    structural = {
+        "expected_celebrations": unresolved(
+            "expectation-model-gap",
+            "No target-edition inventory defines every expected celebration.",
+            lower_bound=max(represented, effective_celebrations),
+            effective_celebrations=effective_celebrations,
+            represented_source_rows=represented,
+            effective_mass_rows=effective_mass_rows,
+        ),
+        "represented_celebrations": measured(
+            represented,
+            "Sum of the source index's rank-parsed celebration counts.",
+            effective_celebrations=effective_celebrations,
+            effective_mass_rows=effective_mass_rows,
+            raw_mass_rows=raw_mass_rows,
+            scope=representation_scope,
+        ),
+        "missing_celebrations": unresolved(
+            "expectation-model-gap",
+            "Missing celebrations cannot be subtracted until the expected universe exists.",
+        ),
+        "duplicate_identities": unresolved(
+            "duplicate-count-not-represented",
+            "Owning validators refuse duplicate identities but expose no unified typed count.",
+        ),
+    }
+    textual = {
+        "expected_text_slots": unresolved(
+            "expectation-model-gap",
+            "The modeled occurrences omit slots in celebrations and Missal domains not yet inventoried.",
+            lower_bound=resolved + ordinary_elements,
+            ordinary_exclusions=exclusions,
+            modeled_ordinary_elements=ordinary_elements,
+            modeled_proper_occurrences=resolved,
+        ),
+        "filled_text_slots": unresolved(
+            "text-completeness-model-gap",
+            "Current owners measure language/surface slices, not one all-family filled-slot universe.",
+            lower_bound=filled_lower_bound,
+            english=english_known,
+            latin_recension=latin if latin is not None and latin.get("calendar") == calendar else None,
+            ordinary_language_coverage=language_coverage,
+            ordinary_relation_coverage=relation_coverage,
+            ordinary_target_edition_held_by_language=target_edition_held_by_language,
+        ),
+        "inherited_reference_slots": measured(
+            referenced,
+            "Effective proper occurrences resolved through a Mass or proper reference.",
+            direct_occurrences=direct,
+            modeled_occurrences=resolved,
+        ),
+        "lawfully_external_syndicated_slots": unresolved(
+            "syndication-not-represented",
+            "Scripture delegation is modeled, but no structured syndication binding supplies this count.",
+        ),
+        "truly_unavailable_slots": unresolved(
+            "availability-classification-gap",
+            "Typed absences include no-exemplar and witness gaps that are not absence from the rite.",
+            english=english_known,
+            ordinary_absences=absence_reasons,
+            ordinary_language_absences=language_absences,
+        ),
+        "malformed_slots": unresolved(
+            "malformed-count-not-represented",
+            "Validators diagnose file- and record-level errors but do not emit an exhaustive typed slot count.",
+            lower_bound=len(resolution_errors),
+            known_resolution_errors=len(resolution_errors),
+        ),
+        "unknown_slots": unresolved(
+            "unknown-universe-gap",
+            "Known gap counters do not cover the unmodeled target-edition slot universe.",
+            lower_bound=len(unresolved_common_sets),
+            known_counts={
+                "english_unaccounted": (
+                    english_known.get("unaccounted", 0)
+                    if "derivation_error" not in english_known
+                    else None
+                ),
+                "masses_resolving_no_propers": empty_masses,
+                "placeholder_proper_records": placeholder_records,
+                "unresolved_common_set_selections": len(unresolved_common_sets),
+            },
+            unresolved_common_set_selections=unresolved_common_sets,
+        ),
+        "orphan_texts": unresolved(
+            "orphan-count-partial",
+            "Translation and Latin sidecars expose orphan records, not a repository-wide text table.",
+            lower_bound=english_orphans + latin_orphans,
+            known_english_orphan_records=english_orphans,
+            known_latin_orphan_records=latin_orphans,
+        ),
+        "unreachable_texts": unresolved(
+            "unreachable-text-join-gap",
+            "Placement is mass-level; text owners are not joined to it as a complete body-level census.",
+            known_unplaced_masses={
+                "declared": declared_unplaced,
+                "undeclared": undeclared_unplaced,
+            },
+        ),
+    }
+    provenance = {
+        "source_less_texts": unresolved(
+            "provenance-universe-gap",
+            "Source checks are layer-specific and project-created text may legitimately omit source_id.",
+        ),
+        "rights_pending_texts": unresolved(
+            "rights-classification-gap",
+            "Pending rights are not yet counted separately from affirmative restriction and missing exemplars.",
+            known_english_rights_restricted=(
+                english_known.get("rights_restricted", 0)
+                if "derivation_error" not in english_known
+                else None
+            ),
+            ordinary_absences=absence_reasons,
+            ordinary_language_absences=language_absences,
+        ),
+    }
+    return {
+        "calendar": calendar,
+        "provenance": provenance,
+        "structural": structural,
+        "textual": textual,
+    }
+
+
+def validate_family(family: dict) -> None:
+    calendar = family.get("calendar")
+    found: set[str] = set()
+    for group, expected in GROUPS.items():
+        dimensions = family.get(group)
+        if not isinstance(dimensions, dict):
+            raise Refused(f"{calendar}.{group} must be an object")
+        if set(dimensions) != set(expected):
+            raise Refused(f"{calendar}.{group} does not expose its exact §13 dimensions")
+        for name, dimension in dimensions.items():
+            found.add(name)
+            if not isinstance(dimension, dict):
+                raise Refused(f"{calendar}.{name} must be an object")
+            count = dimension.get("count")
+            state = dimension.get("state")
+            if state == "measured":
+                integer(count, f"{calendar}.{name}.count")
+            elif state == "unresolved":
+                if count is not None:
+                    raise Refused(f"{calendar}.{name}.count must be null while unresolved")
+                integer(
+                    dimension.get("lower_bound"),
+                    f"{calendar}.{name}.lower_bound",
+                )
+                reason = dimension.get("reason")
+                if (
+                    not isinstance(reason, dict)
+                    or not isinstance(reason.get("kind"), str)
+                    or not reason["kind"]
+                ):
+                    raise Refused(f"{calendar}.{name} lacks a typed unresolved reason")
+            else:
+                raise Refused(f"{calendar}.{name}.state is not closed")
+    if found != DIMENSIONS:
+        raise Refused(f"{calendar} does not expose all 15 §13 dimensions")
+
+
+def build_report(propers: dict, placement: dict, ordinary: dict) -> dict:
+    census = propers.get("calendars")
+    if not isinstance(census, dict):
+        raise Refused("mass-propers.calendars must be an object")
+    missing_census = sorted(set(FAMILIES) - set(census))
+    if missing_census:
+        raise Refused(f"mass-propers census omits {', '.join(missing_census)}")
+    extra_census = sorted(set(census) - set(FAMILIES))
+    if extra_census:
+        raise Refused(
+            f"mass-propers census has unsupported calendars {', '.join(extra_census)}"
+        )
+    for calendar in FAMILIES:
+        if not isinstance(census[calendar], dict):
+            raise Refused(f"mass-propers.calendars.{calendar} must be an object")
+    finding = rows_by_calendar(
+        propers, "finding_aid_coverage", "mass-propers"
+    )
+    english = rows_by_calendar(propers, "english_coverage", "mass-propers")
+    placed = rows_by_calendar(placement, "coverage", "calendar-days")
+    ordinaries = rows_by_calendar(ordinary, "coverage", "mass-ordinary")
+    latin = propers.get("latin_recension_coverage")
+    if latin is not None and not isinstance(latin, dict):
+        raise Refused("mass-propers.latin_recension_coverage must be an object or null")
+    if latin is not None:
+        latin_calendar = latin.get("calendar")
+        if not isinstance(latin_calendar, str) or latin_calendar not in FAMILIES:
+            raise Refused(
+                "mass-propers.latin_recension_coverage.calendar must name a "
+                "supported family"
+            )
+
+    families = [
+        one_family(
+            calendar,
+            census[calendar],
+            finding[calendar],
+            english[calendar],
+            placed[calendar],
+            ordinaries[calendar],
+            latin,
+        )
+        for calendar in FAMILIES
+    ]
+    for family in families:
+        validate_family(family)
+
+    reasons: collections.Counter[str] = collections.Counter()
+    for family in families:
+        for group in GROUPS:
+            for dimension in family[group].values():
+                if dimension["state"] == "unresolved":
+                    reasons[str(dimension["reason"]["kind"])] += 1
+    unresolved_count = sum(reasons.values())
+    resolved = unresolved_count == 0
+    return {
+        "check": {
+            "resolved": resolved,
+            "unresolved_dimension_cells": unresolved_count,
+            "valid": True,
+        },
+        "families": families,
+        "schema": "triptych-complete-missal-completeness/v1",
+        "scope": {
+            "dimensions": {
+                group: list(dimensions) for group, dimensions in GROUPS.items()
+            },
+            "inputs": [
+                "tools/calendar-days coverage --first 2020 --last 2120 --json",
+                "tools/mass-ordinary coverage --json",
+                "tools/mass-propers census --json",
+            ],
+            "placement_span": {
+                "first": PLACEMENT_FIRST_YEAR,
+                "last": PLACEMENT_LAST_YEAR,
+            },
+            "runtime_year_gate": {
+                "command": "TRIPTYCH_COMPLETE_MISSAL_YEAR=1 python3 -m unittest tools.tests.test_complete_missal_year -v",
+                "expected_renders": 4380,
+                "included": False,
+                "reason": "Runtime rendering is separate from corpus completeness accounting.",
+            },
+        },
+        "status": "ready" if resolved else "unresolved",
+        "unresolved_by_kind": [
+            {"count": count, "kind": kind} for kind, count in sorted(reasons.items())
+        ],
+        "v": 1,
+    }
+
+
+def render_text(report: dict) -> None:
+    print(f"complete-missal completeness: {report['status']}")
+    span = report["scope"]["placement_span"]
+    print(f"placement span: {span['first']}-{span['last']}")
+    for family in report["families"]:
+        represented = family["structural"]["represented_celebrations"]
+        modeled = family["textual"]["expected_text_slots"]["lower_bound"]
+        unresolved_count = sum(
+            dimension["state"] == "unresolved"
+            for group in GROUPS
+            for dimension in family[group].values()
+        )
+        print(
+            f"{family['calendar']}: {represented['count']} represented celebrations "
+            f"({represented['scope']}); at least {modeled} modeled text slots; "
+            f"{unresolved_count}/15 dimensions unresolved"
+        )
+    kinds = ", ".join(
+        f"{row['kind']}={row['count']}" for row in report["unresolved_by_kind"]
+    )
+    print(f"unresolved by kind: {kinds or 'none'}")
+    runtime = report["scope"]["runtime_year_gate"]
+    print(
+        f"runtime year gate: separate, {runtime['expected_renders']} expected renders; "
+        f"{runtime['command']}"
+    )
+    print(
+        "check: valid and fully resolved"
+        if report["check"]["resolved"]
+        else (
+            "check: valid "
+            f"({report['check']['unresolved_dimension_cells']} typed unresolved dimension cells)"
+        )
+    )
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        prog="complete-missal",
+        description=(
+            "Compose the owning corpus reports into a deterministic §13 completeness "
+            "report without inventing an expected universe."
+        ),
+    )
+    resolution = parser.add_mutually_exclusive_group()
+    resolution.add_argument(
+        "--check",
+        action="store_true",
+        help="validate all 15 dimensions and typed unresolved states",
+    )
+    resolution.add_argument(
+        "--require-resolved",
+        action="store_true",
+        help="exit 1 after reporting while any dimension remains unresolved",
+    )
+    parser.add_argument(
+        "--json",
+        action="store_true",
+        help="emit one compact key-sorted JSON object (cli-v1)",
+    )
+    with_examples(parser, EXAMPLES[""])
+    arguments = parser.parse_args(argv)
+    try:
+        report = build_report(*owning_reports())
+    except (OSError, Refused, subprocess.TimeoutExpired) as error:
+        print(f"complete-missal: {error}", file=sys.stderr)
+        return 2
+    if arguments.json:
+        print_json(report)
+    else:
+        render_text(report)
+    return 1 if arguments.require_resolved and not report["check"]["resolved"] else 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

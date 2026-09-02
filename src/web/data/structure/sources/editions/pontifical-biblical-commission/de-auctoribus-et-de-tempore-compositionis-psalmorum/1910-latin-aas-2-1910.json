@@ -1,5 +1,21 @@
 {
- "artifacts": [],
+ "artifacts": [
+  {
+   "artifact_type": "official-gazette-volume-facsimile-pdf",
+   "byte_size": null,
+   "edition_owned": false,
+   "id": "artifact.holy-see.acta-apostolicae-sedis.volume-2-1910.internet-archive-vatican-ocr-pdf-e1d32b09",
+   "media_type": "application/pdf",
+   "notes": null,
+   "page_count": null,
+   "retrieved": null,
+   "rights": "public-domain",
+   "rights_basis": "The volume was published in 1910 and is in the United States public domain by publication date. The PDF is a mechanical scan and OCR derivative of that public-domain official-gazette printing.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/AAS-02-1910/AAS-02-1910.pdf",
+   "storage": "remote"
+  }
+ ],
  "edition": {
   "authority": "Pontifical Biblical Commission",
   "date": "1910-05-01",
@@ -7,7 +23,6 @@
   "id": "edition.pontifical-biblical-commission.de-auctoribus-et-de-tempore-compositionis-psalmorum.latin-aas-2-1910",
   "jurisdiction": "Universal Catholic Church",
   "language": "la",
-  "notes": "The official Latin text of the eight responsa as printed under Commissio de re Biblica, with the notice that Pope Pius X ratified them and ordered their publication.",
   "publication": "Acta Apostolicae Sedis 2 (1910): 354-355",
   "title": "De auctoribus et de tempore compositionis Psalmorum",
   "translators": [],
@@ -17,15 +32,12 @@
   {
    "artifact_id": "artifact.holy-see.acta-apostolicae-sedis.volume-2-1910.internet-archive-vatican-ocr-pdf-e1d32b09",
    "artifact_type": "official-gazette-volume-facsimile-pdf",
-   "context": "Responsa I-VIII deny that David must be held the sole author of every Psalm while affirming the antiquity and ordinary evidentiary weight of the titles, David as principal author, the Davidic origin of Psalms expressly attributed to him in Scripture, the possibility of division, combination, and slight liturgical revision, and the prophetic and Messianic character of multiple Psalms.",
    "id": "passage.pontifical-biblical-commission.de-auctoribus-et-de-tempore-compositionis-psalmorum.latin-aas-2-1910.responsa-i-viii",
    "locus": "responsa-i-viii",
    "media_type": "application/pdf",
-   "notes": "Read visually in the official-gazette page images. The constituent begins below the preceding letter on p. 354 and concludes with the approval notice and consultors' signatures on p. 355.",
    "readable": false,
    "reason": "The exact bytes are not retained in this repository; the record keeps their retrieval location, hash and rights instead.",
    "rights": "public-domain",
-   "rights_basis": "The volume was published in 1910 and is in the United States public domain by publication date. The PDF is a mechanical scan and OCR derivative of that public-domain official-gazette printing.",
    "rights_jurisdiction": "United States",
    "segment_id": "segment.pontifical-biblical-commission.de-auctoribus-et-de-tempore-compositionis-psalmorum.latin-aas-2-1910.aas-2-1910-pages-354-355",
    "source_url": "https://archive.org/download/AAS-02-1910/AAS-02-1910.pdf",

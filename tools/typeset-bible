@@ -123,8 +123,8 @@ EXAMPLES = {
         Example(
             "tools/typeset-bible check --volume narrative-spine-landmarks-king-james-version --verbose",
             (
-                "narrative-spine-landmarks-king-james-version: 36 readings, 43 chapters, 1142 verses, 1 refused (pu... [+31 chars]",
-                "  refused 263 The desolation of the sanctuary (1 Maccabees 1:1-67): 1Mach 1:65 is past 1Mach 1:64, ... [+126 chars]",
+                "narrative-spine-landmarks-king-james-version: 36 readings, 43 chapters, 1142 verses, 1 refused (pu... [+27 chars]",
+                "  refused 263 The desolation of the sanctuary (1 Maccabees 1:1-67): 1Mach 1:65 is past 1Mach 1:64, ... [+134 chars]",
                 "refused (not publishable): knox",
             ),
             "a refused reading is named, never dropped: this edition ends that chapter a verse earlier",
@@ -149,8 +149,8 @@ EXAMPLES = {
         Example(
             "tools/typeset-bible render --volume narrative-spine-landmarks-douay-rheims --out build/example-typeset",
             (
-                "narrative-spine-landmarks-douay-rheims: written <repo>/build/example-typeset/narrative-spine-overv... [+31 chars]",
-                "  narrative-spine-landmarks-douay-rheims: 36 readings, 44 chapters, 1210 verses, 0 refused (public-d... [+22 chars]",
+                "narrative-spine-landmarks-douay-rheims: unchanged <repo>/build/example-typeset/narrative-spine-lan... [+23 chars]",
+                "  narrative-spine-landmarks-douay-rheims: 36 readings, 44 chapters, 1210 verses, 0 refused (public-d... [+21 chars]",
             ),
             "WRITES TeX for one tier of one plan in one edition",
         ),

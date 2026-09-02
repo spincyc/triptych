@@ -4,19 +4,24 @@
 from __future__ import annotations
 
 import argparse
+from contextlib import contextmanager
 import hashlib
 import html
 from html.parser import HTMLParser
 from importlib.metadata import PackageNotFoundError, version as distribution_version
 import json
+import os
 import posixpath
 import re
-import shutil
+import secrets
+import stat
 import struct
 import sys
+import tempfile
 import tomllib
+import unicodedata
 from collections import Counter, defaultdict
-from collections.abc import Iterable
+from collections.abc import Callable, Iterable
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path, PurePosixPath
 from urllib.parse import unquote, urlsplit
@@ -59,10 +64,10 @@ EXAMPLES = {
             (
                 "{",
                 "  \"approval_conferred\": false,",
-                "  \"notice\": \"PREPARATION ONLY \u2014 NOT AN APPROVAL OR AUTHORIZATION. These hashes report current files and do not... [+281 chars]",
+                "  \"notice\": \"PREPARATION ONLY — NOT AN APPROVAL OR AUTHORIZATION. These hashes report current files and do not... [+281 chars]",
                 "  \"pdfs\": [",
                 "    {",
-                "... 2257 more lines",
+                "... 82729 more lines",
             ),
             "prepare prints a candidate hash inventory only; it records no approval and changes no release file",
         ),
@@ -132,6 +137,73 @@ PICTORIAL_GALLERY_ASSET_ROOT = PurePosixPath("assets/pictorial-gallery")
 WEB_DATA_ROOT_RELATIVE = PurePosixPath("src/web/data")
 WEB_BROWSER_ROOT_RELATIVE = PurePosixPath("src/web/browser")
 BIBLE_SOURCE_ROOT_RELATIVE = PurePosixPath("src/sources/bibles")
+POSTCONCILIAR_TRANSLATIONS_RELATIVE = PurePosixPath(
+    "src/sources/inventories/postconciliar-proper-translations-v1.toml"
+)
+POSTCONCILIAR_QUARANTINE_BASELINE_ROWS = 172
+# Rights recorded as `permission` are not automatically grants for every
+# public surface.  ICEL's standing web-display permission, in particular, does
+# not cover the downloadable JSON, public Git corpus, CLI or PDFs assembled by
+# this release tool.  Nor does the generic inventory spelling `licensed-free`
+# prove authorization for every one of those surfaces: licensed source-study
+# words must not become an assembled liturgy merely because a generator copied
+# that spelling into its output.  Source-browser structures are bound as exact
+# public inputs too, but their typed source-study metadata is governed by the
+# source projection rather than by the liturgy quarantine below.  Only the two
+# non-licensed rights states below are authorized in generated public liturgy
+# structures. Every copied JSON byte is bound below, including newly added
+# structure families and the offered Bible fragments; a hand-maintained family
+# allowlist made served browser data invisible to the authorization record.
+LITURGICAL_RIGHTS_STRUCTURE_KINDS = ("calendar", "ordinary", "propers", "rubrics")
+PUBLIC_LITURGICAL_TEXT_RIGHTS = frozenset(("public-domain", "project-created"))
+ICEL_SOURCE_MARKERS = (
+    "international-commission-on-english-in-the-liturgy",
+    "icel-antiphonary",
+)
+ELLC_SOURCE_MARKERS = ("english-language-liturgical-consultation",)
+RESTRICTED_AUTHORITY_REFERENCE_RE = re.compile(
+    r"\b(?:ICEL|ELLC)\b|"
+    r"International(?: |-)Commission(?: |-)on(?: |-)English(?: |-)in(?: |-)the(?: |-)Liturgy|"
+    r"English(?: |-)Language(?: |-)Liturgical(?: |-)Consultation",
+    re.IGNORECASE,
+)
+# A rights absence is deliberately much smaller than its private provenance
+# record.  Public projections may say only which target/language is absent and
+# give its typed state.  Source ids, artifact ids, hashes, page loci, rights
+# bases and permission details remain on the private/source-study side.
+RESTRICTED_PROJECTION_STATES = frozenset(("rights-restricted",))
+RESTRICTED_PROJECTION_KINDS = frozenset(("rights-withheld",))
+RESTRICTED_PROJECTION_FIELDS = frozenset(("target", "lang", "state"))
+RESTRICTED_TARGET_FIELDS = frozenset(
+    ("mass", "form_id", "proper", "cycle", "occurrence", "extent")
+)
+ORDINARY_ABSENCE_FIELDS = frozenset(("key", "count", "state", "kind"))
+ORDINARY_LANGUAGE_ABSENCE_FIELDS = frozenset(
+    ("key", "lang", "count", "state", "kind")
+)
+ORDINARY_ABSENCE_KINDS = frozenset(
+    (
+        "witness-gap",
+        "rights-withheld",
+        "rights-unresolved",
+        "no-exemplar",
+        "model-gap",
+        "outside-layer",
+        "not-applicable",
+    )
+)
+SAFE_TYPED_KEY_RE = re.compile(r"^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$")
+NON_NEUTRAL_ABSENCE_KEY_PARTS = (
+    "artifact", "copyright", "ellc", "icel", "permission", "source"
+)
+ORDINARY_ABSENCE_LOCATION_RE = re.compile(r"^\$\.absences\[[0-9]+\]$")
+ORDINARY_LANGUAGE_ABSENCE_LOCATION_RE = re.compile(
+    r"^\$\.language_absences\[[0-9]+\]$"
+)
+_PROTECTED_IDENTITY_PATTERNS: dict[str, re.Pattern[str] | None] = {}
+_POSTCONCILIAR_QUARANTINE_HASHES: dict[
+    tuple[str, int, int], frozenset[str]
+] = {}
 # Tracks of the abridged plans: one tier of one plan in one edition, typeset
 # from the tracked plan and the tracked verse text and installed as a reviewed
 # PDF. A track is not a publication record and deliberately has none: it has no
@@ -201,13 +273,17 @@ FIXED_ARTIFACT_INPUT_PATHS = {
     "release/public-alpha/assets/social-card.png",
     "release/public-alpha/assets/icon.png",
     "requirements-public-alpha.txt",
+    POSTCONCILIAR_TRANSLATIONS_RELATIVE.as_posix(),
     "tools/public-alpha",
 }
-# The one origin the published site is reached at. A link preview needs an
+# The one origin the published site is reached at. Keep this as an origin
+# serialization (no trailing slash); public_site_url adds the path separator.
+# In-artifact navigation stays relative so the same Pages artifact remains
+# portable under a project-path preview. A link preview, by contrast, needs an
 # absolute URL: the Open Graph protocol's URL type admits only http:// and
 # https:// forms (https://ogp.me/), and Apple's own worked example in TN3156
-# uses one, so nothing here may be left for a fetcher to resolve relatively.
-SITE_ORIGIN = "https://spincyc.github.io/triptych"
+# uses one, so nothing there may be left for a fetcher to resolve relatively.
+SITE_ORIGIN = "https://mystago.gy"
 # Apple's TN3156 is explicit that the site name belongs in og:site_name and not
 # in og:title, so the preview reads as a page rather than as the site repeated.
 # `document_title` already appends this for the browser tab; the social title is
@@ -271,6 +347,344 @@ CANDIDATE_INVENTORY_NOTICE = (
 
 class ReleaseError(RuntimeError):
     pass
+
+
+class InstalledCleanupError(ReleaseError):
+    """The new target is installed safely, but a retired-name cleanup was refused."""
+
+
+DIRECTORY_OPEN_FLAGS = (
+    os.O_RDONLY
+    | getattr(os, "O_CLOEXEC", 0)
+    | getattr(os, "O_DIRECTORY", 0)
+    | getattr(os, "O_NOFOLLOW", 0)
+)
+
+
+def _entry_stat(parent_fd: int, name: str) -> os.stat_result | None:
+    try:
+        return os.stat(name, dir_fd=parent_fd, follow_symlinks=False)
+    except FileNotFoundError:
+        return None
+
+
+def _same_inode(left: os.stat_result, right: os.stat_result) -> bool:
+    return (left.st_dev, left.st_ino) == (right.st_dev, right.st_ino)
+
+
+def _require_path_matches_fd(path: Path, descriptor: int) -> None:
+    try:
+        entry = os.stat(path, follow_symlinks=False)
+    except OSError as exc:
+        raise ReleaseError(f"output path disappeared during operation: {path}") from exc
+    held = os.fstat(descriptor)
+    if not stat.S_ISDIR(entry.st_mode) or not _same_inode(entry, held):
+        raise ReleaseError(f"output path changed during operation: {path}")
+
+
+def _require_entry_matches_fd(
+    parent_fd: int,
+    name: str,
+    descriptor: int,
+    label: Path,
+) -> None:
+    entry = _entry_stat(parent_fd, name)
+    held = os.fstat(descriptor)
+    if (
+        entry is None
+        or not stat.S_ISDIR(entry.st_mode)
+        or stat.S_ISLNK(entry.st_mode)
+        or not _same_inode(entry, held)
+    ):
+        raise ReleaseError(f"output path changed during operation: {label}")
+
+
+def _open_child_directory(
+    parent_fd: int,
+    parent: Path,
+    name: str,
+    *,
+    create: bool,
+) -> int:
+    """Open one directory component without ever following a symlink."""
+    child = parent / name
+    entry = _entry_stat(parent_fd, name)
+    if entry is None and create:
+        try:
+            os.mkdir(name, dir_fd=parent_fd)
+        except FileExistsError:
+            pass
+        entry = _entry_stat(parent_fd, name)
+    if entry is None:
+        raise ReleaseError(f"artifact path does not exist: {child}")
+    if stat.S_ISLNK(entry.st_mode):
+        raise ReleaseError(f"refusing unsafe output path: {child} is a symlink")
+    if not stat.S_ISDIR(entry.st_mode):
+        raise ReleaseError(f"refusing unsafe output path: {child} is not a directory")
+    try:
+        descriptor = os.open(name, DIRECTORY_OPEN_FLAGS, dir_fd=parent_fd)
+    except OSError as exc:
+        raise ReleaseError(f"cannot safely open output directory {child}: {exc}") from exc
+    opened = os.fstat(descriptor)
+    if not _same_inode(opened, entry):
+        os.close(descriptor)
+        raise ReleaseError(f"refusing output path changed while opening: {child}")
+    return descriptor
+
+
+def _descriptor_path(descriptor: int) -> Path:
+    """Expose a held directory to the existing Path-based renderer."""
+    path = Path("/proc/self/fd") / str(descriptor)
+    if not path.is_dir():
+        raise ReleaseError(
+            "descriptor-anchored output paths require a mounted /proc/self/fd"
+        )
+    return path
+
+
+@contextmanager
+def _public_alpha_parent(*, create: bool):
+    """Hold ROOT/build/public-alpha by descriptors for a complete operation."""
+    expected = ROOT / "build" / "public-alpha"
+    if OUTPUT_ROOT != expected:
+        raise ReleaseError(
+            f"refusing unsafe output path: {OUTPUT_ROOT} is not {expected}"
+        )
+    try:
+        root_fd = os.open(ROOT, DIRECTORY_OPEN_FLAGS)
+    except OSError as exc:
+        raise ReleaseError(f"cannot safely open repository root {ROOT}: {exc}") from exc
+    build_fd: int | None = None
+    output_fd: int | None = None
+    try:
+        build_fd = _open_child_directory(root_fd, ROOT, "build", create=create)
+        output_fd = _open_child_directory(
+            build_fd, ROOT / "build", "public-alpha", create=create
+        )
+        yield output_fd
+    finally:
+        try:
+            _require_path_matches_fd(ROOT, root_fd)
+            if build_fd is not None:
+                _require_entry_matches_fd(
+                    root_fd, "build", build_fd, ROOT / "build"
+                )
+            if build_fd is not None and output_fd is not None:
+                _require_entry_matches_fd(
+                    build_fd,
+                    "public-alpha",
+                    output_fd,
+                    ROOT / "build" / "public-alpha",
+                )
+        finally:
+            if output_fd is not None:
+                os.close(output_fd)
+            if build_fd is not None:
+                os.close(build_fd)
+            os.close(root_fd)
+
+
+def _new_directory_entry(parent_fd: int, prefix: str) -> tuple[str, int]:
+    for _ in range(100):
+        name = f".{prefix}-{secrets.token_hex(8)}"
+        try:
+            os.mkdir(name, dir_fd=parent_fd)
+        except FileExistsError:
+            continue
+        descriptor: int | None = None
+        try:
+            entry = _entry_stat(parent_fd, name)
+            if entry is None or not stat.S_ISDIR(entry.st_mode):
+                raise ReleaseError(
+                    f"private output directory changed while opening: {name}"
+                )
+            descriptor = os.open(name, DIRECTORY_OPEN_FLAGS, dir_fd=parent_fd)
+            if not _same_inode(entry, os.fstat(descriptor)):
+                os.close(descriptor)
+                raise ReleaseError(
+                    f"private output directory changed while opening: {name}"
+                )
+            return name, descriptor
+        except OSError as exc:
+            if descriptor is not None:
+                _remove_directory_entry(parent_fd, name, descriptor, {})
+            raise ReleaseError(
+                f"cannot safely open private output directory {name}: {exc}"
+            ) from exc
+        except ReleaseError:
+            if descriptor is not None:
+                _remove_directory_entry(parent_fd, name, descriptor, {})
+            raise
+    raise ReleaseError(f"could not allocate a private {prefix} directory")
+
+
+def _purge_directory_contents(
+    directory_fd: int,
+    label: str,
+    expected: dict[str, os.stat_result],
+    parent: PurePosixPath = PurePosixPath(),
+) -> None:
+    """Remove only inventoried children whose current identities still match."""
+    children = sorted(
+        (
+            (PurePosixPath(relative), entry)
+            for relative, entry in expected.items()
+            if PurePosixPath(relative).parent == parent
+        ),
+        key=lambda item: item[0].name,
+    )
+    for relative, entry in children:
+        name = relative.name
+        current = _entry_stat(directory_fd, name)
+        matches = current is not None and (
+            stat.S_ISDIR(entry.st_mode)
+            and stat.S_ISDIR(current.st_mode)
+            and _same_inode(current, entry)
+            or not stat.S_ISDIR(entry.st_mode)
+            and _artifact_entry_identity(current) == _artifact_entry_identity(entry)
+        )
+        if not matches:
+            continue
+        if stat.S_ISDIR(entry.st_mode):
+            try:
+                child_fd = os.open(name, DIRECTORY_OPEN_FLAGS, dir_fd=directory_fd)
+            except OSError:
+                continue
+            try:
+                if not _same_inode(entry, os.fstat(child_fd)):
+                    continue
+                _purge_directory_contents(child_fd, label, expected, relative)
+                current = _entry_stat(directory_fd, name)
+                if current is not None and _same_inode(current, os.fstat(child_fd)):
+                    try:
+                        os.rmdir(name, dir_fd=directory_fd)
+                    except OSError:
+                        pass
+            finally:
+                os.close(child_fd)
+        else:
+            current = _entry_stat(directory_fd, name)
+            if current is not None and _artifact_entry_identity(
+                current
+            ) == _artifact_entry_identity(entry):
+                try:
+                    os.unlink(name, dir_fd=directory_fd)
+                except OSError:
+                    pass
+
+
+def _remove_directory_entry(
+    parent_fd: int,
+    name: str,
+    expected_fd: int,
+    expected: dict[str, os.stat_result],
+) -> None:
+    """Purge only the held directory and remove its name only if identity matches."""
+    entry = _entry_stat(parent_fd, name)
+    if entry is None:
+        return
+    if not stat.S_ISDIR(entry.st_mode) or not _same_inode(
+        entry, os.fstat(expected_fd)
+    ):
+        raise ReleaseError(f"private entry changed during cleanup: {name}")
+    _purge_directory_contents(expected_fd, name, expected)
+    entry = _entry_stat(parent_fd, name)
+    if entry is None:
+        return
+    if not stat.S_ISDIR(entry.st_mode) or not _same_inode(
+        entry, os.fstat(expected_fd)
+    ):
+        raise ReleaseError(f"private entry changed during cleanup: {name}")
+    try:
+        os.rmdir(name, dir_fd=parent_fd)
+    except OSError as exc:
+        raise ReleaseError(f"could not safely remove private entry {name}: {exc}") from exc
+
+
+def _replace_directory_entry(
+    parent_fd: int,
+    staged: str,
+    staged_fd: int,
+    target: str,
+    validate_installed: Callable[[], None] | None = None,
+) -> None:
+    """Atomically install staged and clean the detached prior tree safely."""
+    _require_entry_matches_fd(
+        parent_fd, staged, staged_fd, OUTPUT_ROOT / staged
+    )
+    current = _entry_stat(parent_fd, target)
+    if current is not None:
+        if stat.S_ISLNK(current.st_mode):
+            raise ReleaseError(f"refusing unsafe output path: {OUTPUT_ROOT / target} is a symlink")
+        if not stat.S_ISDIR(current.st_mode):
+            raise ReleaseError(
+                f"refusing unsafe output path: {OUTPUT_ROOT / target} is not a directory"
+            )
+
+    retired: str | None = None
+    retired_fd: int | None = None
+    retired_topology: dict[str, os.stat_result] | None = None
+    if current is not None:
+        retired_fd = _open_child_directory(
+            parent_fd, OUTPUT_ROOT, target, create=False
+        )
+        if _artifact_entry_identity(os.fstat(retired_fd)) != _artifact_entry_identity(
+            current
+        ):
+            os.close(retired_fd)
+            raise ReleaseError(
+                f"refusing output path changed while replacing: {OUTPUT_ROOT / target}"
+            )
+        retired_topology = _scan_artifact_topology(retired_fd)
+        retired = f".{target}-retired-{secrets.token_hex(8)}"
+        os.rename(target, retired, src_dir_fd=parent_fd, dst_dir_fd=parent_fd)
+        moved = _entry_stat(parent_fd, retired)
+        if moved is None or not _same_inode(moved, os.fstat(retired_fd)):
+            if moved is not None and _entry_stat(parent_fd, target) is None:
+                os.rename(retired, target, src_dir_fd=parent_fd, dst_dir_fd=parent_fd)
+            os.close(retired_fd)
+            raise ReleaseError(f"refusing output path changed while replacing: {OUTPUT_ROOT / target}")
+    try:
+        try:
+            _require_entry_matches_fd(
+                parent_fd, staged, staged_fd, OUTPUT_ROOT / staged
+            )
+            os.rename(staged, target, src_dir_fd=parent_fd, dst_dir_fd=parent_fd)
+            _require_entry_matches_fd(
+                parent_fd, target, staged_fd, OUTPUT_ROOT / target
+            )
+            if validate_installed is not None:
+                validate_installed()
+        except (OSError, ReleaseError):
+            installed = _entry_stat(parent_fd, target)
+            if (
+                installed is not None
+                and _same_inode(installed, os.fstat(staged_fd))
+                and _entry_stat(parent_fd, staged) is None
+            ):
+                os.rename(
+                    target,
+                    staged,
+                    src_dir_fd=parent_fd,
+                    dst_dir_fd=parent_fd,
+                )
+            if retired is not None and _entry_stat(parent_fd, target) is None:
+                os.rename(retired, target, src_dir_fd=parent_fd, dst_dir_fd=parent_fd)
+            raise
+        if (
+            retired is not None
+            and retired_fd is not None
+            and retired_topology is not None
+        ):
+            try:
+                _remove_directory_entry(
+                    parent_fd, retired, retired_fd, retired_topology
+                )
+            except ReleaseError as exc:
+                raise InstalledCleanupError(str(exc)) from exc
+    finally:
+        if retired_fd is not None:
+            os.close(retired_fd)
 
 
 def requires_unadvertised_controls(authorization: dict) -> bool:
@@ -660,6 +1074,383 @@ def is_unserved_browser_page(relative: str) -> bool:
     )
 
 
+def protected_source_identity_pattern() -> re.Pattern[str] | None:
+    """Compile identities ineligible for every public-alpha liturgy surface.
+
+    The manifest library, not a provider-name heuristic, decides which source
+    identities are protected. Source-study redistribution is deliberately not
+    enough: generic ``licensed`` material may be readable in the Sources
+    browser while remaining unauthorized for the downloadable liturgy JSON,
+    CLI and PDF surfaces assembled here. An edition id is protected only when
+    every one of its artifacts lacks public-liturgy rights; one restricted
+    capture must not poison a sibling public-domain artifact. Exact restricted
+    artifact ids are always protected. Cache per ``ROOT`` because tests repoint
+    the module at fixtures and a release process validates many structure files.
+    """
+    cache_key = str(ROOT.resolve())
+    if cache_key in _PROTECTED_IDENTITY_PATTERNS:
+        return _PROTECTED_IDENTITY_PATTERNS[cache_key]
+    works = ROOT / "src/sources/works"
+    records: list[dict] = []
+    for path in sorted(works.glob("**/artifact.toml")) if works.is_dir() else []:
+        try:
+            record = tomllib.loads(path.read_text(encoding="utf-8"))
+        except (OSError, UnicodeError, tomllib.TOMLDecodeError) as exc:
+            label = path.relative_to(ROOT).as_posix()
+            raise ReleaseError(f"cannot read source artifact manifest {label}: {exc}") from exc
+        if not isinstance(record, dict):
+            label = path.relative_to(ROOT).as_posix()
+            raise ReleaseError(f"source artifact manifest {label} is not a table")
+        for field in ("id", "edition_id", "rights_status"):
+            if not isinstance(record.get(field), str) or not record[field]:
+                label = path.relative_to(ROOT).as_posix()
+                raise ReleaseError(
+                    f"source artifact manifest {label} has no nonempty {field}"
+                )
+        records.append(record)
+
+    protected = {
+        record["id"]
+        for record in records
+        if record.get("rights_status") not in PUBLIC_LITURGICAL_TEXT_RIGHTS
+    }
+    by_edition: dict[str, list[dict]] = defaultdict(list)
+    for record in records:
+        by_edition[record["edition_id"]].append(record)
+    protected.update(
+        edition_id
+        for edition_id, artifacts in by_edition.items()
+        if artifacts
+        and all(
+            artifact.get("rights_status") not in PUBLIC_LITURGICAL_TEXT_RIGHTS
+            for artifact in artifacts
+        )
+    )
+    pattern = (
+        re.compile(
+            r"(?<![a-z0-9._-])(?:"
+            + "|".join(
+                re.escape(identity) for identity in sorted(protected, key=len, reverse=True)
+            )
+            + r")(?![a-z0-9._-])"
+        )
+        if protected
+        else None
+    )
+    _PROTECTED_IDENTITY_PATTERNS[cache_key] = pattern
+    return pattern
+
+
+def postconciliar_quarantined_text_hashes() -> frozenset[str]:
+    """Load the ledger's exact English body hashes; never retain the bodies."""
+    inventory = ROOT / POSTCONCILIAR_TRANSLATIONS_RELATIVE
+    label = POSTCONCILIAR_TRANSLATIONS_RELATIVE.as_posix()
+    try:
+        stat = inventory.stat()
+        cache_key = (str(inventory.resolve()), stat.st_mtime_ns, stat.st_size)
+        if cache_key in _POSTCONCILIAR_QUARANTINE_HASHES:
+            return _POSTCONCILIAR_QUARANTINE_HASHES[cache_key]
+        document = tomllib.loads(inventory.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, tomllib.TOMLDecodeError) as exc:
+        raise ReleaseError(f"cannot read postconciliar quarantine ledger {label}: {exc}") from exc
+    rows = document.get("untranslated")
+    if not isinstance(rows, list):
+        raise ReleaseError(f"postconciliar quarantine ledger {label} has no row list")
+    values: list[str] = []
+    for index, row in enumerate(rows):
+        if not isinstance(row, dict):
+            raise ReleaseError(f"postconciliar quarantine row {index} is not a table")
+        raw = row.get("quarantined_text_sha256")
+        if raw is None:
+            continue
+        if row.get("lang") != "en" or row.get("extent") != "body":
+            raise ReleaseError(
+                f"postconciliar quarantine row {index} hashes a non-English body"
+            )
+        if (
+            not isinstance(raw, list)
+            or not raw
+            or any(
+                not isinstance(digest, str) or SHA256_RE.fullmatch(digest) is None
+                for digest in raw
+            )
+        ):
+            raise ReleaseError(
+                f"postconciliar quarantine row {index} has malformed exact hashes"
+            )
+        values.extend(raw)
+    if len(values) < POSTCONCILIAR_QUARANTINE_BASELINE_ROWS:
+        raise ReleaseError(
+            "postconciliar English quarantine lost baseline hashes: expected at least "
+            f"{POSTCONCILIAR_QUARANTINE_BASELINE_ROWS}, found {len(values)}"
+        )
+    hashes = frozenset(values)
+    _POSTCONCILIAR_QUARANTINE_HASHES[cache_key] = hashes
+    return hashes
+
+
+def validate_liturgical_public_data(path: Path) -> None:
+    """Refuse quarantined wording and restricted witnesses in public JSON.
+
+    Generators own the positive inclusion rules.  This release gate is the
+    independent negative rule: even a stale or hand-edited structure file may
+    not be copied merely because it already sits under ``src/web/data``.
+    """
+    data_root = ROOT / WEB_DATA_ROOT_RELATIVE
+    try:
+        relative = path.relative_to(data_root)
+    except ValueError:
+        return
+    if path.suffix != ".json":
+        return
+    parts = relative.parts
+    label = (WEB_DATA_ROOT_RELATIVE / relative).as_posix()
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+        raise ReleaseError(f"cannot read liturgical structure {label}: {exc}") from exc
+    quarantined_text_hashes = postconciliar_quarantined_text_hashes()
+
+    def visit_quarantined(value: object, location: str = "$") -> None:
+        if isinstance(value, list):
+            for index, item in enumerate(value):
+                visit_quarantined(item, f"{location}[{index}]")
+            return
+        if isinstance(value, dict):
+            for key, item in value.items():
+                visit_quarantined(item, f"{location}.{key}")
+            return
+        if not isinstance(value, str):
+            return
+        candidates = {
+            value,
+            unicodedata.normalize("NFC", " ".join(value.split())),
+        }
+        matched_hash = next(
+            (
+                digest
+                for candidate in candidates
+                if (digest := hashlib.sha256(candidate.encode("utf-8")).hexdigest())
+                in quarantined_text_hashes
+            ),
+            None,
+        )
+        if matched_hash is not None:
+            raise ReleaseError(
+                f"{label} {location}: quarantined English body sha256 "
+                f"{matched_hash} reached public-alpha data"
+            )
+
+    visit_quarantined(payload)
+    if (
+        len(parts) < 3
+        or parts[0] != "structure"
+        or parts[1] not in LITURGICAL_RIGHTS_STRUCTURE_KINDS
+    ):
+        return
+    protected_identity = protected_source_identity_pattern()
+
+    def visit(value: object, location: str = "$") -> None:
+        if isinstance(value, list):
+            for index, item in enumerate(value):
+                visit(item, f"{location}[{index}]")
+            return
+        if isinstance(value, str):
+            match = protected_identity.search(value) if protected_identity is not None else None
+            if match is not None:
+                raise ReleaseError(
+                    f"{label} {location}: protected source identity {match.group(0)!r} "
+                    "belongs only in the source-study record"
+                )
+            if RESTRICTED_AUTHORITY_REFERENCE_RE.search(value):
+                raise ReleaseError(
+                    f"{label} {location}: restricted-authority metadata belongs only "
+                    "in the source-study record, not an assembled public liturgy"
+                )
+            return
+        if not isinstance(value, dict):
+            return
+        ordinary_absence = (
+            parts[1] == "ordinary"
+            and ORDINARY_ABSENCE_LOCATION_RE.fullmatch(location)
+        )
+        ordinary_language_absence = (
+            parts[1] == "ordinary"
+            and ORDINARY_LANGUAGE_ABSENCE_LOCATION_RE.fullmatch(location)
+        )
+        if ordinary_absence or ordinary_language_absence:
+            fields = set(value)
+            expected_fields = (
+                ORDINARY_LANGUAGE_ABSENCE_FIELDS
+                if ordinary_language_absence
+                else ORDINARY_ABSENCE_FIELDS
+            )
+            row_label = (
+                "language absence" if ordinary_language_absence else "absence catalog"
+            )
+            expected_field_label = (
+                "key, lang, count, state and kind"
+                if ordinary_language_absence
+                else "key, count, state and kind"
+            )
+            if fields != expected_fields:
+                raise ReleaseError(
+                    f"{label} {location}: public Ordinary {row_label} row must "
+                    f"contain exactly {expected_field_label}"
+                )
+            key = value.get("key")
+            count = value.get("count")
+            kind = value.get("kind")
+            state = value.get("state")
+            if (
+                not isinstance(key, str)
+                or not SAFE_TYPED_KEY_RE.fullmatch(key)
+                or RESTRICTED_AUTHORITY_REFERENCE_RE.search(key)
+                or any(part in key for part in NON_NEUTRAL_ABSENCE_KEY_PARTS)
+            ):
+                raise ReleaseError(
+                    f"{label} {location}: public Ordinary absence key must be a "
+                    "neutral typed key"
+                )
+            if not isinstance(count, int) or isinstance(count, bool) or count < 0:
+                raise ReleaseError(
+                    f"{label} {location}: public Ordinary absence count must be a "
+                    "nonnegative integer"
+                )
+            if not isinstance(kind, str) or kind not in ORDINARY_ABSENCE_KINDS:
+                raise ReleaseError(
+                    f"{label} {location}: public Ordinary absence kind {kind!r} is "
+                    "outside the safe taxonomy"
+                )
+            if ordinary_language_absence:
+                lang = value.get("lang")
+                if not isinstance(lang, str) or not SAFE_TYPED_KEY_RE.fullmatch(lang):
+                    raise ReleaseError(
+                        f"{label} {location}: public Ordinary language absence "
+                        "must name a safe language key"
+                    )
+            expected_state = {
+                "rights-withheld": "rights-restricted",
+                "rights-unresolved": "unresolved",
+            }.get(kind, "unavailable")
+            if state != expected_state:
+                raise ReleaseError(
+                    f"{label} {location}: public Ordinary absence kind {kind!r} "
+                    f"requires state {expected_state!r}"
+                )
+            return
+        rights = value.get("rights")
+        rights_status = value.get("rights_status")
+        source_id = value.get("source_id")
+        restricted_permission = rights == "permission" or rights_status == "permission"
+        icel_witness = isinstance(source_id, str) and any(
+            marker in source_id.casefold() for marker in ICEL_SOURCE_MARKERS
+        )
+        ellc_witness = isinstance(source_id, str) and any(
+            marker in source_id.casefold() for marker in ELLC_SOURCE_MARKERS
+        )
+        if restricted_permission or icel_witness or ellc_witness:
+            reason = (
+                "permission-scoped rights"
+                if restricted_permission
+                else "ICEL witness"
+                if icel_witness
+                else "ELLC witness"
+            )
+            raise ReleaseError(
+                f"{label} {location}: {reason} is not distributable on public-alpha surfaces"
+            )
+        if rights is not None and (
+            not isinstance(rights, str)
+            or rights not in PUBLIC_LITURGICAL_TEXT_RIGHTS
+        ):
+            raise ReleaseError(
+                f"{label} {location}: rights {rights!r} have no explicit authorization "
+                "for every public-alpha liturgy surface"
+            )
+        if rights_status is not None and (
+            not isinstance(rights_status, str)
+            or rights_status not in PUBLIC_LITURGICAL_TEXT_RIGHTS
+        ):
+            raise ReleaseError(
+                f"{label} {location}: rights_status {rights_status!r} has no explicit "
+                "authorization for every public-alpha liturgy surface"
+            )
+        if rights is not None and rights_status is not None and rights != rights_status:
+            raise ReleaseError(
+                f"{label} {location}: rights {rights!r} and rights_status "
+                f"{rights_status!r} do not name the same public authorization"
+            )
+
+        state = value.get("state")
+        if isinstance(state, str) and state in RESTRICTED_PROJECTION_STATES:
+            difference = sorted(set(value) ^ RESTRICTED_PROJECTION_FIELDS)
+            if difference:
+                raise ReleaseError(
+                    f"{label} {location}: rights-restricted public projection must "
+                    "contain exactly target, lang and state; field difference "
+                    f"{', '.join(difference)}"
+                )
+            lang = value.get("lang")
+            if "lang" in value and (
+                not isinstance(lang, str) or not lang.strip()
+            ):
+                raise ReleaseError(
+                    f"{label} {location}: rights-restricted public projection has "
+                    "a non-string or empty lang"
+                )
+            target = value.get("target")
+            target_is_string = isinstance(target, str) and bool(target.strip())
+            target_is_structured = (
+                isinstance(target, dict)
+                and set(target) == RESTRICTED_TARGET_FIELDS
+                and all(
+                    isinstance(target.get(field), str) and bool(target[field].strip())
+                    for field in ("mass", "form_id", "proper", "cycle", "extent")
+                )
+                and isinstance(target.get("occurrence"), int)
+                and not isinstance(target.get("occurrence"), bool)
+                and target["occurrence"] >= 1
+            )
+            if "target" in value and not (target_is_string or target_is_structured):
+                raise ReleaseError(
+                    f"{label} {location}: rights-restricted public projection has "
+                    "an unsafe target; it may be a label or the exact safe target schema"
+                )
+        kind = value.get("kind")
+        if isinstance(kind, str) and kind in RESTRICTED_PROJECTION_KINDS:
+            if parts[1] == "propers":
+                raise ReleaseError(
+                    f"{label} {location}: a rights-withheld Proper must project only "
+                    "as target, lang and state"
+                )
+            extra = sorted(set(value) - {"kind"})
+            if extra:
+                raise ReleaseError(
+                    f"{label} {location}: rights-withheld public reason exposes private "
+                    f"fields {', '.join(extra)}; only its typed kind is safe"
+                )
+        for key, item in value.items():
+            visit(item, f"{location}.{key}")
+
+    visit(payload)
+
+
+def is_bound_web_data_source(path: Path) -> bool:
+    """Whether this generated-data input belongs to the approval closure.
+
+    Every JSON file copied from ``src/web/data`` is authoritative served
+    content, not a disposable cache. New structure families are therefore
+    included without another allowlist update. Offered Bible fragments live
+    under ``src/sources/bibles`` and join the closure from ``web_data_files``.
+    """
+    try:
+        relative = path.relative_to(ROOT / WEB_DATA_ROOT_RELATIVE)
+    except ValueError:
+        return False
+    return path.suffix == ".json"
+
+
 def web_data_files() -> dict[str, Path]:
     """Map every copied artifact data-root path to the repository file it copies.
 
@@ -698,6 +1489,7 @@ def web_data_files() -> dict[str, Path]:
                 "the generated data root must hold JSON only: "
                 f"{path.relative_to(ROOT).as_posix()}"
             )
+        validate_liturgical_public_data(path)
         relative = path.relative_to(data_root).as_posix()
         files[(SITE_DATA_ROOT / relative).as_posix()] = path
 
@@ -773,30 +1565,28 @@ def site_source_paths() -> set[str]:
     pages are: a reader reaches them, and the approval is a statement about what
     a reader may reach. `bibles.json` is here because it is the single decision
     about which scripture editions the site may serve, so an edition added or a
-    publishable flag flipped moves the authorization.
+    publishable flag flipped moves the authorization. Every generated liturgy
+    structure and source-browser projection is here too: those JSON bytes are
+    the exact calendar, proper, rubric, Ordinary and source-graph content the
+    artifact serves, so binding only its generator would not catch a stale or
+    hand-edited result.
 
-    The 9,387 verse fragments are deliberately not bound. Binding them would add
-    a hash line per fragment and move the authorization on every regeneration,
-    which makes an approval record nobody can read — and the manifest above is
-    the decision, while the fragments are its consequence. Three checks already
-    stand between an unpublishable edition and the site: the copy is driven from
-    the manifest and never from a directory listing, `verify_web_data` refuses
-    the build if an unoffered edition id reaches the data root, and the artifact
-    file-set check refuses anything unexpected.
+    Every copied JSON byte is bound, including offered Bible fragments. The
+    manifest remains the inclusion decision and prevents an unoffered edition
+    from being copied, while the exact per-file hashes prevent a fragment or a
+    newly introduced structure family from changing after authorization.
     """
     browser = {
         path.relative_to(ROOT).as_posix()
-        for path in (*web_browser_pages().values(), *web_data_files().values())
-        if WEB_BROWSER_ROOT_RELATIVE.as_posix() in path.relative_to(ROOT).as_posix()
+        for path in web_browser_pages().values()
     }
-    manifest = web_data_manifest_path()
-    if manifest.is_file():
-        browser.add(manifest.relative_to(ROOT).as_posix())
-    # The tracks are bound, where the fragments are not, because nothing else
-    # decides them: a fragment is a consequence of bibles.json, while a track is
-    # a whole published volume of scripture whose only gate is the file being
-    # here. Six hash lines, and a plan or a text that changes moves the
-    # authorization, which is what a change to published content should do.
+    browser.update(
+        path.relative_to(ROOT).as_posix()
+        for path in web_data_files().values()
+    )
+    # Reading-plan PDFs remain independently bound as published volumes. Their
+    # exact derived bytes are served outside the browser data copy, so they join
+    # the same authorization closure explicitly here.
     return (
         set(SITE_SOURCE_PATHS)
         | set(document_pages())
@@ -2207,6 +2997,16 @@ def shorten_description(text: str) -> str:
     return text[:DESCRIPTION_CEILING].rsplit(" ", 1)[0].rstrip(" ,;:—-") + "…"
 
 
+def public_site_url(relative: str) -> str:
+    """Return one canonical public URL without changing artifact link behavior."""
+    path = PurePosixPath(relative)
+    if not relative or path.is_absolute() or ".." in path.parts:
+        raise ReleaseError(
+            f"public site URL requires a contained relative path: {relative!r}"
+        )
+    return f"{SITE_ORIGIN}/{path.as_posix()}"
+
+
 def social_meta(output_relative: str, title: str, description: str) -> str:
     """The link-preview metadata, absolute, for one page.
 
@@ -2220,8 +3020,8 @@ def social_meta(output_relative: str, title: str, description: str) -> str:
     """
     card = TEMPLATE_ROOT / SOCIAL_CARD_RELATIVE
     width, height = png_dimensions(card)
-    page_url = f"{SITE_ORIGIN}/{output_relative}"
-    card_url = f"{SITE_ORIGIN}/{SOCIAL_CARD_RELATIVE}"
+    page_url = public_site_url(output_relative)
+    card_url = public_site_url(SOCIAL_CARD_RELATIVE)
     properties = [
         ("og:type", "website"),
         ("og:site_name", SITE_NAME),
@@ -2801,32 +3601,36 @@ def parsed_html(path: Path) -> LinkParser:
 
 def verify_links(output: Path) -> list[str]:
     errors: list[str] = []
-    parsers = {path.resolve(): parsed_html(path) for path in output.rglob("*.html")}
+    parsers = {
+        path.resolve(): (path.relative_to(output), parsed_html(path))
+        for path in output.rglob("*.html")
+    }
     output_resolved = output.resolve()
-    for path_resolved, parser in parsers.items():
+    for path_resolved, (relative, parser) in parsers.items():
         path = Path(path_resolved)
         for href in parser.links:
             parts = urlsplit(href)
             if parts.scheme or parts.netloc or href.startswith("//"):
                 continue
             if parts.path.startswith("/"):
-                errors.append(f"{path.relative_to(output)}: root-relative link is not portable: {href}")
+                errors.append(f"{relative}: root-relative link is not portable: {href}")
                 continue
             target = path if not parts.path else (path.parent / unquote(parts.path)).resolve()
             try:
                 target.relative_to(output_resolved)
             except ValueError:
-                errors.append(f"{path.relative_to(output)}: link leaves artifact: {href}")
+                errors.append(f"{relative}: link leaves artifact: {href}")
                 continue
             if target.is_dir():
                 target = target / "index.html"
             if not target.is_file():
-                errors.append(f"{path.relative_to(output)}: broken local link: {href}")
+                errors.append(f"{relative}: broken local link: {href}")
                 continue
             if parts.fragment and target.suffix == ".html":
-                target_parser = parsers.get(target.resolve())
+                target_record = parsers.get(target.resolve())
+                target_parser = target_record[1] if target_record else None
                 if target_parser is None or unquote(parts.fragment) not in target_parser.ids:
-                    errors.append(f"{path.relative_to(output)}: missing fragment target: {href}")
+                    errors.append(f"{relative}: missing fragment target: {href}")
     return errors
 
 
@@ -2873,7 +3677,7 @@ def verify_catalog_reachability(
 
 
 def verify_web_data(output: Path) -> list[str]:
-    """Confirm the assembled data root serves exactly what it may, and all of it."""
+    """Confirm copied browser machinery and data match their repository bytes."""
     expected = web_data_files()
     if not expected:
         return []
@@ -2887,9 +3691,16 @@ def verify_web_data(output: Path) -> list[str]:
         for path in data_root.rglob("*")
         if path.is_file()
     }
-    for relative in sorted(actual & set(expected)):
-        if sha256(output / relative) != sha256(expected[relative]):
-            errors.append(f"{relative}: data file does not match its repository source")
+    for relative, source in sorted(expected.items()):
+        artifact = output / relative
+        # Presence is owned by the exact artifact file-set check. This parity
+        # check independently authenticates every copied byte, including JS and
+        # CSS outside the data root; regenerating artifact-local checksums must
+        # not make a modified browser program acceptable.
+        if artifact.is_file() and sha256(artifact) != sha256(source):
+            errors.append(
+                f"{relative}: copied browser/data file does not match its repository source"
+            )
 
     manifest_relative = (SITE_DATA_ROOT / "bibles.json").as_posix()
     if manifest_relative not in actual:
@@ -3026,7 +3837,254 @@ def site_source_binding_errors(manifest: dict) -> list[str]:
     return errors
 
 
-def verify_output(
+def _artifact_entry_identity(entry: os.stat_result) -> tuple[int, int, int, int, int, int]:
+    """Fields that prove a captured artifact entry is still the same object."""
+    return (
+        entry.st_dev,
+        entry.st_ino,
+        entry.st_mode,
+        entry.st_size,
+        entry.st_mtime_ns,
+        entry.st_ctime_ns,
+    )
+
+
+def _scan_artifact_topology(
+    root_fd: int,
+) -> dict[str, os.stat_result]:
+    """Inventory a held artifact tree without following any descendant link."""
+    entries: dict[str, os.stat_result] = {}
+
+    def scan(directory_fd: int, parent: PurePosixPath) -> None:
+        try:
+            names = sorted(os.listdir(directory_fd))
+        except OSError as exc:
+            raise ReleaseError(f"cannot safely scan artifact directory {parent}: {exc}") from exc
+        for name in names:
+            relative = parent / name
+            label = relative.as_posix()
+            try:
+                entry = os.stat(name, dir_fd=directory_fd, follow_symlinks=False)
+            except OSError as exc:
+                raise ReleaseError(
+                    f"artifact path changed during verification: {label}"
+                ) from exc
+            entries[label] = entry
+            if not stat.S_ISDIR(entry.st_mode):
+                continue
+            try:
+                child_fd = os.open(name, DIRECTORY_OPEN_FLAGS, dir_fd=directory_fd)
+            except OSError as exc:
+                raise ReleaseError(
+                    f"artifact path changed during verification: {label}"
+                ) from exc
+            try:
+                if not _same_inode(entry, os.fstat(child_fd)):
+                    raise ReleaseError(
+                        f"artifact path changed during verification: {label}"
+                    )
+                scan(child_fd, relative)
+            finally:
+                os.close(child_fd)
+
+    scan(root_fd, PurePosixPath())
+    return entries
+
+
+def _artifact_topology_errors(
+    entries: dict[str, os.stat_result],
+) -> list[str]:
+    errors: list[str] = []
+    for relative, entry in entries.items():
+        path = PurePosixPath(relative)
+        if stat.S_ISLNK(entry.st_mode):
+            errors.append(f"artifact contains a symlink: {relative}")
+        elif stat.S_ISREG(entry.st_mode):
+            if entry.st_nlink != 1:
+                errors.append(f"artifact contains an unsafe hard link: {relative}")
+            if (
+                path.name not in {".nojekyll", "SHA256SUMS", "robots.txt", "_headers"}
+                and path.suffix not in TEXT_SUFFIXES | {".pdf", ".png"}
+            ):
+                errors.append(f"artifact contains an unexpected file type: {relative}")
+        elif not stat.S_ISDIR(entry.st_mode):
+            errors.append(f"artifact contains a special file: {relative}")
+        if any(
+            part in {".git", "src", "guidance", "build", "__pycache__"}
+            for part in path.parts
+        ):
+            errors.append(f"artifact contains a forbidden path: {relative}")
+        if path.suffix in {".md", ".tex", ".log", ".aux"} or path.name == "retrieved.txt":
+            errors.append(f"artifact contains a forbidden source/build file: {relative}")
+    return errors
+
+
+def _open_artifact_parent(
+    root_fd: int,
+    relative: PurePosixPath,
+    topology: dict[str, os.stat_result],
+) -> int:
+    """Open every parent of an inventoried file from the held artifact root."""
+    directory_fd = os.dup(root_fd)
+    parent = PurePosixPath()
+    try:
+        for component in relative.parts[:-1]:
+            parent /= component
+            label = parent.as_posix()
+            expected = topology.get(label)
+            if expected is None or not stat.S_ISDIR(expected.st_mode):
+                raise ReleaseError(f"artifact path changed during verification: {label}")
+            try:
+                entry = os.stat(
+                    component, dir_fd=directory_fd, follow_symlinks=False
+                )
+                child_fd = os.open(
+                    component, DIRECTORY_OPEN_FLAGS, dir_fd=directory_fd
+                )
+            except OSError as exc:
+                raise ReleaseError(
+                    f"artifact path changed during verification: {label}"
+                ) from exc
+            if (
+                not stat.S_ISDIR(entry.st_mode)
+                or _artifact_entry_identity(entry)
+                != _artifact_entry_identity(expected)
+                or not _same_inode(entry, os.fstat(child_fd))
+            ):
+                os.close(child_fd)
+                raise ReleaseError(f"artifact path changed during verification: {label}")
+            os.close(directory_fd)
+            directory_fd = child_fd
+        return directory_fd
+    except BaseException:
+        os.close(directory_fd)
+        raise
+
+
+def _read_artifact_regular_file(
+    root_fd: int,
+    relative: str,
+    expected: os.stat_result,
+    topology: dict[str, os.stat_result],
+) -> bytes:
+    """Capture one inventoried file through a no-follow descriptor chain."""
+    if not getattr(os, "O_NOFOLLOW", 0):
+        raise ReleaseError("safe no-follow artifact file opens are unavailable")
+    path = PurePosixPath(relative)
+    parent_fd = _open_artifact_parent(root_fd, path, topology)
+    descriptor: int | None = None
+    try:
+        try:
+            entry = os.stat(path.name, dir_fd=parent_fd, follow_symlinks=False)
+            descriptor = os.open(
+                path.name,
+                os.O_RDONLY
+                | getattr(os, "O_CLOEXEC", 0)
+                | getattr(os, "O_NOFOLLOW", 0)
+                | getattr(os, "O_NONBLOCK", 0),
+                dir_fd=parent_fd,
+            )
+        except OSError as exc:
+            raise ReleaseError(
+                f"artifact path changed during verification: {relative}"
+            ) from exc
+        opened = os.fstat(descriptor)
+        if (
+            not stat.S_ISREG(entry.st_mode)
+            or not stat.S_ISREG(opened.st_mode)
+            or _artifact_entry_identity(entry) != _artifact_entry_identity(expected)
+            or not _same_inode(entry, opened)
+        ):
+            raise ReleaseError(f"artifact path changed during verification: {relative}")
+        chunks: list[bytes] = []
+        while chunk := os.read(descriptor, 1024 * 1024):
+            chunks.append(chunk)
+        if _artifact_entry_identity(os.fstat(descriptor)) != _artifact_entry_identity(
+            expected
+        ):
+            raise ReleaseError(f"artifact changed while being read: {relative}")
+        return b"".join(chunks)
+    finally:
+        if descriptor is not None:
+            os.close(descriptor)
+        os.close(parent_fd)
+
+
+@contextmanager
+def _capture_artifact_snapshot(
+    root_fd: int,
+    topology: dict[str, os.stat_result],
+):
+    """Materialize descriptor-captured bytes for all path-based verifiers."""
+    with tempfile.TemporaryDirectory(prefix="triptych-public-alpha-verify-") as temporary:
+        temporary_path = Path(temporary)
+        temporary_fd = os.open(temporary_path, DIRECTORY_OPEN_FLAGS)
+        snapshot_fd: int | None = None
+        try:
+            os.mkdir("artifact", dir_fd=temporary_fd)
+            snapshot_fd = _open_child_directory(
+                temporary_fd, temporary_path, "artifact", create=False
+            )
+            snapshot = _descriptor_path(snapshot_fd)
+            for relative, entry in sorted(
+                topology.items(),
+                key=lambda item: (len(PurePosixPath(item[0]).parts), item[0]),
+            ):
+                destination = snapshot.joinpath(*PurePosixPath(relative).parts)
+                if stat.S_ISDIR(entry.st_mode):
+                    destination.mkdir()
+                elif stat.S_ISREG(entry.st_mode):
+                    destination.write_bytes(
+                        _read_artifact_regular_file(
+                            root_fd, relative, entry, topology
+                        )
+                    )
+            yield snapshot
+        finally:
+            if snapshot_fd is not None:
+                os.close(snapshot_fd)
+            os.close(temporary_fd)
+
+
+def _require_artifact_topology_matches(
+    root_fd: int,
+    expected: dict[str, os.stat_result],
+) -> None:
+    current = _scan_artifact_topology(root_fd)
+    if current.keys() != expected.keys():
+        raise ReleaseError("artifact contents changed during verification")
+    for relative, entry in current.items():
+        if _artifact_entry_identity(entry) != _artifact_entry_identity(expected[relative]):
+            raise ReleaseError(f"artifact path changed during verification: {relative}")
+
+
+def _verify_output_contents(
+    manifest: dict,
+    publications: dict[tuple[str, str], dict],
+    output_fd: int,
+    preview: bool,
+) -> None:
+    """Capture a held artifact safely, then verify only its immutable copy."""
+    topology = _scan_artifact_topology(output_fd)
+    topology_errors = _artifact_topology_errors(topology)
+    unsafe = [
+        error
+        for error in topology_errors
+        if error.startswith("artifact contains a symlink:")
+        or error.startswith("artifact contains a special file:")
+        or error.startswith("artifact contains an unsafe hard link:")
+    ]
+    if unsafe:
+        errors = site_source_binding_errors(manifest) + topology_errors
+        raise ReleaseError("Public-alpha artifact verification failed:\n- " + "\n- ".join(errors))
+    with _capture_artifact_snapshot(output_fd, topology) as snapshot:
+        try:
+            _verify_snapshot_contents(manifest, publications, snapshot, preview)
+        finally:
+            _require_artifact_topology_matches(output_fd, topology)
+
+
+def _verify_snapshot_contents(
     manifest: dict,
     publications: dict[tuple[str, str], dict],
     output: Path,
@@ -3047,10 +4105,13 @@ def verify_output(
 
     actual_file_paths: set[str] = set()
     actual_pdf_paths: set[str] = set()
+    unsafe_topology_errors: list[str] = []
     for path in output.rglob("*"):
         relative = path.relative_to(output).as_posix()
         if path.is_symlink():
-            errors.append(f"artifact contains a symlink: {relative}")
+            error = f"artifact contains a symlink: {relative}"
+            errors.append(error)
+            unsafe_topology_errors.append(error)
             actual_file_paths.add(relative)
         elif path.is_file():
             actual_file_paths.add(relative)
@@ -3059,11 +4120,19 @@ def verify_output(
             elif path.name not in {".nojekyll", "SHA256SUMS", "robots.txt", "_headers"} and path.suffix not in TEXT_SUFFIXES | {".png"}:
                 errors.append(f"artifact contains an unexpected file type: {relative}")
         elif not path.is_dir():
-            errors.append(f"artifact contains a special file: {relative}")
+            error = f"artifact contains a special file: {relative}"
+            errors.append(error)
+            unsafe_topology_errors.append(error)
         if any(part in {".git", "src", "guidance", "build", "__pycache__"} for part in path.relative_to(output).parts):
             errors.append(f"artifact contains a forbidden path: {relative}")
         if path.suffix in {".md", ".tex", ".log", ".aux"} or path.name == "retrieved.txt":
             errors.append(f"artifact contains a forbidden source/build file: {relative}")
+
+    # Every later verification pass opens artifact files.  Once the topology
+    # scan has found an entry that could redirect or synthesize those reads,
+    # report it before any hash, parser, or privacy scanner touches the tree.
+    if unsafe_topology_errors:
+        raise ReleaseError("Public-alpha artifact verification failed:\n- " + "\n- ".join(errors))
 
     expected_file_paths = expected_artifact_files(
         manifest, included, preview, expected_authorization
@@ -3256,6 +4325,35 @@ def verify_output(
         raise ReleaseError("Public-alpha artifact verification failed:\n- " + "\n- ".join(errors))
 
 
+def verify_output(
+    manifest: dict,
+    publications: dict[tuple[str, str], dict],
+    output: Path,
+    preview: bool,
+) -> None:
+    """Verify the fixed artifact while holding every parent directory open."""
+    expected = OUTPUT_ROOT / ("preview" if preview else "site")
+    if output != expected:
+        raise ReleaseError(f"refusing unsafe verification path: {output} is not {expected}")
+    with _public_alpha_parent(create=False) as parent_fd:
+        target = "preview" if preview else "site"
+        output_fd = _open_child_directory(
+            parent_fd, OUTPUT_ROOT, target, create=False
+        )
+        try:
+            _verify_output_contents(
+                manifest,
+                publications,
+                output_fd,
+                preview,
+            )
+            _require_entry_matches_fd(
+                parent_fd, target, output_fd, OUTPUT_ROOT / target
+            )
+        finally:
+            os.close(output_fd)
+
+
 SOCIAL_PROPERTY_RE = re.compile(r'<meta property="(og:[a-z_:]+)" content="([^"]*)">')
 SOCIAL_NAME_RE = re.compile(r'<meta name="((?:twitter:[a-z]+)|description)" content="([^"]*)">')
 # TN3156, "Respect resource usage guidelines": the previewed document is limited
@@ -3329,14 +4427,15 @@ def verify_link_previews(output: Path, preview: bool, authorization: dict) -> li
             errors.append(
                 f"{relative}: og:title repeats the site name, which belongs in og:site_name"
             )
-        expected_url = f"{SITE_ORIGIN}/{relative}"
+        expected_url = public_site_url(relative)
         if properties.get("og:url") != expected_url:
             errors.append(f"{relative}: og:url is not {expected_url}")
         image = properties.get("og:image", "")
-        if not image.startswith(f"{SITE_ORIGIN}/"):
-            errors.append(f"{relative}: og:image is not an absolute URL on {SITE_ORIGIN}")
+        expected_image = public_site_url(SOCIAL_CARD_RELATIVE)
+        if image != expected_image:
+            errors.append(f"{relative}: og:image is not {expected_image}")
             continue
-        card = output / image.removeprefix(f"{SITE_ORIGIN}/")
+        card = output / SOCIAL_CARD_RELATIVE
         if not card.is_file():
             errors.append(f"{relative}: og:image {image} is not in the artifact")
             continue
@@ -3353,72 +4452,308 @@ def verify_link_previews(output: Path, preview: bool, authorization: dict) -> li
     return errors
 
 
-def assemble_web_data(output: Path, preview: bool, authorization: dict) -> None:
+class StagingWriter:
+    """Create one artifact tree solely through held directory descriptors."""
+
+    def __init__(self, root_fd: int):
+        if not getattr(os, "O_NOFOLLOW", 0) or not getattr(os, "O_DIRECTORY", 0):
+            raise ReleaseError(
+                "descriptor-safe staged artifact writes are unavailable"
+            )
+        self.root_fd = os.dup(root_fd)
+        self.directories: dict[PurePosixPath, os.stat_result] = {
+            PurePosixPath(): os.fstat(self.root_fd)
+        }
+        self.files: dict[str, tuple[str, os.stat_result]] = {}
+
+    def close(self) -> None:
+        if self.root_fd >= 0:
+            os.close(self.root_fd)
+            self.root_fd = -1
+
+    def __enter__(self) -> StagingWriter:
+        return self
+
+    def __exit__(self, *_exc) -> None:
+        self.close()
+
+    @staticmethod
+    def _relative(value: str | PurePosixPath) -> PurePosixPath:
+        path = PurePosixPath(value)
+        if (
+            path.is_absolute()
+            or not path.parts
+            or any(part in {"", ".", ".."} for part in path.parts)
+        ):
+            raise ReleaseError(f"unsafe staged artifact path: {value}")
+        return path
+
+    def _open_directory(self, path: PurePosixPath) -> int:
+        """Reopen a recorded chain with at most one descendant fd held."""
+        descriptor = os.dup(self.root_fd)
+        current = PurePosixPath()
+        try:
+            for component in path.parts:
+                current /= component
+                expected = self.directories.get(current)
+                if expected is None:
+                    raise ReleaseError(
+                        f"staged directory changed during build: {current}"
+                    )
+                entry = _entry_stat(descriptor, component)
+                if (
+                    entry is None
+                    or not stat.S_ISDIR(entry.st_mode)
+                    or not _same_inode(entry, expected)
+                ):
+                    raise ReleaseError(
+                        f"staged directory changed during build: {current}"
+                    )
+                try:
+                    child_fd = os.open(
+                        component, DIRECTORY_OPEN_FLAGS, dir_fd=descriptor
+                    )
+                except OSError as exc:
+                    raise ReleaseError(
+                        f"staged directory changed during build: {current}"
+                    ) from exc
+                if not _same_inode(entry, os.fstat(child_fd)):
+                    os.close(child_fd)
+                    raise ReleaseError(
+                        f"staged directory changed during build: {current}"
+                    )
+                os.close(descriptor)
+                descriptor = child_fd
+            return descriptor
+        except BaseException:
+            os.close(descriptor)
+            raise
+
+    def _directory(self, path: PurePosixPath) -> int:
+        if path in self.directories:
+            return self._open_directory(path)
+        parent_fd = self._directory(path.parent)
+        try:
+            try:
+                os.mkdir(path.name, dir_fd=parent_fd)
+            except OSError as exc:
+                raise ReleaseError(
+                    f"could not exclusively create staged directory: {path}"
+                ) from exc
+            entry = _entry_stat(parent_fd, path.name)
+            if entry is None or not stat.S_ISDIR(entry.st_mode):
+                raise ReleaseError(f"staged directory changed while opening: {path}")
+            try:
+                descriptor = os.open(
+                    path.name, DIRECTORY_OPEN_FLAGS, dir_fd=parent_fd
+                )
+            except OSError as exc:
+                raise ReleaseError(
+                    f"staged directory changed while opening: {path}"
+                ) from exc
+            if not _same_inode(entry, os.fstat(descriptor)):
+                os.close(descriptor)
+                raise ReleaseError(f"staged directory changed while opening: {path}")
+            self.directories[path] = entry
+            return descriptor
+        finally:
+            os.close(parent_fd)
+
+    def _validate_directories(self) -> None:
+        for path in sorted(self.directories, key=lambda item: len(item.parts)):
+            descriptor = self._open_directory(path)
+            os.close(descriptor)
+
+    def _write(self, relative: str, chunks: Iterable[bytes]) -> None:
+        path = self._relative(relative)
+        label = path.as_posix()
+        if label in self.files or path in self.directories:
+            raise ReleaseError(f"staged artifact path written twice: {label}")
+        parent_fd = self._directory(path.parent)
+        descriptor: int | None = None
+        digest = hashlib.sha256()
+        try:
+            try:
+                descriptor = os.open(
+                    path.name,
+                    os.O_WRONLY
+                    | os.O_CREAT
+                    | os.O_EXCL
+                    | getattr(os, "O_CLOEXEC", 0)
+                    | getattr(os, "O_NOFOLLOW", 0)
+                    | getattr(os, "O_NONBLOCK", 0),
+                    0o666,
+                    dir_fd=parent_fd,
+                )
+            except OSError as exc:
+                raise ReleaseError(
+                    f"could not exclusively create staged file: {label}"
+                ) from exc
+            opened = os.fstat(descriptor)
+            entry = _entry_stat(parent_fd, path.name)
+            if (
+                entry is None
+                or not stat.S_ISREG(entry.st_mode)
+                or entry.st_nlink != 1
+                or not _same_inode(entry, opened)
+            ):
+                raise ReleaseError(f"staged file changed while opening: {label}")
+            size = 0
+            for chunk in chunks:
+                digest.update(chunk)
+                view = memoryview(chunk)
+                while view:
+                    written = os.write(descriptor, view)
+                    if written <= 0:
+                        raise ReleaseError(f"short write to staged file: {label}")
+                    size += written
+                    view = view[written:]
+            final = os.fstat(descriptor)
+            current = _entry_stat(parent_fd, path.name)
+            if (
+                current is None
+                or not stat.S_ISREG(final.st_mode)
+                or final.st_nlink != 1
+                or final.st_size != size
+                or not _same_inode(current, final)
+            ):
+                raise ReleaseError(f"staged file changed while writing: {label}")
+            self.files[label] = (digest.hexdigest(), final)
+            check_fd = self._open_directory(path.parent)
+            os.close(check_fd)
+        finally:
+            if descriptor is not None:
+                try:
+                    current = os.fstat(descriptor)
+                    self.files.setdefault(label, ("", current))
+                finally:
+                    os.close(descriptor)
+            os.close(parent_fd)
+
+    def copy(self, source: Path, relative: str) -> None:
+        with source.open("rb") as stream:
+            self._write(
+                relative,
+                iter(lambda: stream.read(1024 * 1024), b""),
+            )
+
+    def text(self, relative: str, value: str) -> None:
+        self._write(relative, (value.encode("utf-8"),))
+
+    def checksums(self) -> None:
+        lines = [
+            f"{self.files[relative][0]}  {relative}"
+            for relative in sorted(self.files, key=PurePosixPath)
+        ]
+        self.text("SHA256SUMS", "\n".join(lines) + "\n")
+
+    def cleanup_topology(self) -> dict[str, os.stat_result]:
+        topology = {
+            path.as_posix(): entry
+            for path, entry in self.directories.items()
+            if path.parts
+        }
+        topology.update(
+            {relative: entry for relative, (_digest, entry) in self.files.items()}
+        )
+        return topology
+
+    def finish(self) -> dict[str, os.stat_result]:
+        self._validate_directories()
+        expected = self.cleanup_topology()
+        current = _scan_artifact_topology(self.root_fd)
+        if current.keys() != expected.keys():
+            raise ReleaseError("staged artifact contents changed during build")
+        for relative, entry in current.items():
+            recorded = expected[relative]
+            if stat.S_ISDIR(recorded.st_mode):
+                matches = stat.S_ISDIR(entry.st_mode) and _same_inode(entry, recorded)
+            else:
+                matches = _artifact_entry_identity(entry) == _artifact_entry_identity(
+                    recorded
+                )
+            if not matches:
+                raise ReleaseError(f"staged artifact changed during build: {relative}")
+        unsafe = [
+            error
+            for error in _artifact_topology_errors(current)
+            if error.startswith("artifact contains a symlink:")
+            or error.startswith("artifact contains a special file:")
+            or error.startswith("artifact contains an unsafe hard link:")
+        ]
+        if unsafe:
+            raise ReleaseError("unsafe staged artifact:\n- " + "\n- ".join(unsafe))
+        return current
+
+
+def assemble_web_data(
+    writer: StagingWriter | Path, preview: bool, authorization: dict
+) -> None:
     """Assemble the reading pages, their shared machinery, and the corpus."""
+    if isinstance(writer, Path):
+        output = writer
+        try:
+            output.mkdir()
+            entry = os.stat(output, follow_symlinks=False)
+            output_fd = os.open(output, DIRECTORY_OPEN_FLAGS)
+        except OSError as exc:
+            raise ReleaseError(
+                f"cannot safely create browser-data output {output}: {exc}"
+            ) from exc
+        try:
+            if not _same_inode(entry, os.fstat(output_fd)):
+                raise ReleaseError(
+                    f"browser-data output changed while opening: {output}"
+                )
+            with StagingWriter(output_fd) as anchored:
+                assemble_web_data(anchored, preview, authorization)
+                anchored.finish()
+        finally:
+            os.close(output_fd)
+        return
     for destination_relative, source in sorted(web_data_files().items()):
-        destination = output / destination_relative
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(source, destination)
+        writer.copy(source, destination_relative)
     for output_relative, source in sorted(web_browser_pages().items()):
-        destination = output / output_relative
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        destination.write_text(
+        writer.text(
+            output_relative,
             render_browser_page(source, output_relative, preview, authorization),
-            encoding="utf-8",
         )
 
 
-def build_site(
-    manifest: dict, publications: dict[tuple[str, str], dict], preview: bool
-) -> Path:
+def _build_site_contents(
+    manifest: dict,
+    publications: dict[tuple[str, str], dict],
+    preview: bool,
+    writer: StagingWriter,
+) -> None:
     included = included_publications(publications, preview)
     authorization = artifact_authorization(manifest, included)
-    output = OUTPUT_ROOT / ("preview" if preview else "site")
-    output_root_resolved = OUTPUT_ROOT.resolve()
-    try:
-        output.resolve().relative_to(output_root_resolved)
-    except ValueError as exc:
-        raise ReleaseError(f"refusing unsafe output path: {output}") from exc
-    if output.exists():
-        shutil.rmtree(output)
-    output.mkdir(parents=True)
 
     for asset_relative in ("assets/site.css", SOCIAL_CARD_RELATIVE, SITE_ICON_RELATIVE):
-        asset_destination = output / asset_relative
-        asset_destination.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(TEMPLATE_ROOT / asset_relative, asset_destination)
+        writer.copy(TEMPLATE_ROOT / asset_relative, asset_relative)
 
     for source_relative in artifact_license_source_paths():
         license_path = ROOT / source_relative
-        destination = output / source_relative
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(license_path, destination)
+        writer.copy(license_path, source_relative)
 
     for provider, leaf in sorted(included):
         source = ROOT / "pdf" / provider / f"{leaf}.pdf"
-        destination = output / "pdf" / provider / f"{leaf}.pdf"
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(source, destination)
+        writer.copy(source, f"pdf/{provider}/{leaf}.pdf")
 
     for destination_relative, source in sorted(reading_plan_pdfs().items()):
-        destination = output / destination_relative
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(source, destination)
+        writer.copy(source, destination_relative)
 
     if (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file():
         for card in pictorial_gallery_data():
-            destination = output / card["destination"]
-            destination.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copyfile(card["source"], destination)
+            writer.copy(card["source"], card["destination"])
 
-    assemble_web_data(output, preview, authorization)
+    assemble_web_data(writer, preview, authorization)
 
     included_ids = set(included)
     rendered_pages = {**PAGE_MAP, **included_document_pages(included_ids)}
     for source_relative, output_relative in rendered_pages.items():
-        destination = output / output_relative
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        destination.write_text(
+        writer.text(
+            output_relative,
             render_source_page(
                 source_relative,
                 output_relative,
@@ -3426,37 +4761,110 @@ def build_site(
                 preview,
                 authorization,
             ),
-            encoding="utf-8",
         )
     if (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file():
-        gallery_destination = output / PICTORIAL_GALLERY_OUTPUT
-        gallery_destination.parent.mkdir(parents=True, exist_ok=True)
-        gallery_destination.write_text(
-            render_pictorial_gallery(preview, authorization), encoding="utf-8"
+        writer.text(
+            PICTORIAL_GALLERY_OUTPUT,
+            render_pictorial_gallery(preview, authorization),
         )
 
     artifact_manifest = artifact_manifest_data(manifest, included, preview)
-    (output / "PUBLICATION-MANIFEST.json").write_text(
+    writer.text(
+        "PUBLICATION-MANIFEST.json",
         json.dumps(artifact_manifest, indent=2, ensure_ascii=False) + "\n",
-        encoding="utf-8",
     )
-    (output / ".nojekyll").write_text("", encoding="utf-8")
+    writer.text(".nojekyll", "")
     controlled_hosting = requires_unadvertised_controls(authorization)
     robots = "User-agent: *\nDisallow: /\n" if preview else "User-agent: *\nAllow: /\n"
-    (output / "robots.txt").write_text(robots, encoding="utf-8")
+    writer.text("robots.txt", robots)
     if preview or controlled_hosting:
-        (output / "_headers").write_text(
-            headers_policy_text(authorization, preview), encoding="utf-8"
-        )
+        writer.text("_headers", headers_policy_text(authorization, preview))
     if not preview and controlled_hosting:
         if authorization.get("expires_at"):
-            (output / "_worker.js").write_text(worker_policy_text(authorization), encoding="utf-8")
-        (output / "HOSTING-CONDITIONS.txt").write_text(
+            writer.text("_worker.js", worker_policy_text(authorization))
+        writer.text(
+            "HOSTING-CONDITIONS.txt",
             hosting_conditions_text(authorization),
-            encoding="utf-8",
         )
-    write_checksums(output)
-    return output
+    writer.checksums()
+
+
+def build_site(
+    manifest: dict, publications: dict[tuple[str, str], dict], preview: bool
+) -> Path:
+    """Build privately, then atomically replace the fixed artifact directory."""
+    target = "preview" if preview else "site"
+    with _public_alpha_parent(create=True) as parent_fd:
+        current = _entry_stat(parent_fd, target)
+        if current is not None:
+            if stat.S_ISLNK(current.st_mode):
+                raise ReleaseError(
+                    f"refusing unsafe output path: {OUTPUT_ROOT / target} is a symlink"
+                )
+            if not stat.S_ISDIR(current.st_mode):
+                raise ReleaseError(
+                    f"refusing unsafe output path: {OUTPUT_ROOT / target} is not a directory"
+                )
+        staged, staged_fd = _new_directory_entry(parent_fd, f"{target}-build")
+        writer: StagingWriter | None = None
+        try:
+            writer = StagingWriter(staged_fd)
+            _build_site_contents(
+                manifest,
+                publications,
+                preview,
+                writer,
+            )
+            staged_topology = writer.finish()
+            try:
+                _replace_directory_entry(
+                    parent_fd,
+                    staged,
+                    staged_fd,
+                    target,
+                    validate_installed=lambda: _require_artifact_topology_matches(
+                        staged_fd, staged_topology
+                    ),
+                )
+            except InstalledCleanupError:
+                staged = ""
+                raise
+            try:
+                _require_entry_matches_fd(
+                    parent_fd, target, staged_fd, OUTPUT_ROOT / target
+                )
+                _require_artifact_topology_matches(staged_fd, staged_topology)
+            except ReleaseError:
+                installed = _entry_stat(parent_fd, target)
+                if (
+                    installed is not None
+                    and _same_inode(installed, os.fstat(staged_fd))
+                    and _entry_stat(parent_fd, staged) is None
+                ):
+                    os.rename(
+                        target,
+                        staged,
+                        src_dir_fd=parent_fd,
+                        dst_dir_fd=parent_fd,
+                    )
+                raise
+            staged = ""
+        finally:
+            try:
+                if staged:
+                    _remove_directory_entry(
+                        parent_fd,
+                        staged,
+                        staged_fd,
+                        writer.cleanup_topology() if writer is not None else {},
+                    )
+            finally:
+                try:
+                    if writer is not None:
+                        writer.close()
+                finally:
+                    os.close(staged_fd)
+    return OUTPUT_ROOT / target
 
 
 def print_policy_summary(manifest: dict, publications: dict[tuple[str, str], dict]) -> None:

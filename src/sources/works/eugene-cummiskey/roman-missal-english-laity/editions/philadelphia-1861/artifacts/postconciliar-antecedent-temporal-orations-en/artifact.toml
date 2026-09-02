@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.postconciliar-antecedent-temporal-orations-en"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The ten rows reproduce only English wording printed in an 1861 Philadelphia edition, which is in the United States public domain by publication date. They contain no Google or Internet Archive header, watermark, page image, OCR, markup, or annotation. A faithful project transcription of public-domain wording creates no new copyright. The exact Google-digitized PDF remains remote and unresolved; it is the visual verification artifact, not this publication payload."
+rights_jurisdiction = "United States"
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+transformation = "Narrow human-verified selection made on 2026-08-27 for eleven postconciliar antecedent uses. Ten distinct English oration cells were copied byte-exact from the tracked temporal-orations-en transcription after rendering and visually collating every named leaf against the registered Cummiskey 1861 facsimile; the post-pascha-05 Secret cell is repeated for its two active targets so each publication passage controls exactly one target row. The Corpus Christi Secret's terminal punctuation was corrected in the parent transcription first: the page prints bare `Thro`, with neither apostrophe nor full stop. Headings, labels, surrounding text, Google matter, line-break hyphenation and page furniture were omitted; words split only by a printed line break were joined. Wording, spelling, capitalization and punctuation were retained exactly. Antecedent formulary and oration columns are cataloguing identities and are not represented as Cummiskey page transcription."
+retrieved = "2026-08-27"
+sha256 = "f5dc43206ffb714d28a83e793f39766f3d793fda477fb36019041842d829e5e0"
+byte_size = 3143
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/postconciliar-antecedent-temporal-orations-en/postconciliar-antecedent-temporal-orations-en.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "One header and eleven exact English rows. The post-pascha-05 Secret is intentionally repeated for its two active postconciliar overlay targets, so ten distinct temporal bodies support eleven exact target rows. Coverage is restricted to those eleven uses and makes no publication claim for other rows in the broad temporal transcription."

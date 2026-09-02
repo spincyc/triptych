@@ -1,0 +1,12 @@
+schema = 2
+record_type = "passage"
+id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-comm-s-chrysogoni-martyris--main--collect--all--1"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+artifact_sha256 = "85034c90d5cbfe891f4359fb2faff907d217dbd11a30458b55e4c48eae028898"
+locus = "comm-s-chrysogoni-martyris/collect"
+artifact_page_ranges = [[707, 707]]
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "printed p. 698 historical English body for comm-s-chrysogoni-martyris / Collect."
+verified_on = "2026-08-19"
+notes = "Read on leaf n706, printed p. 698, running head `24th AND 25th NOVEMBER.`. The witness prints this commemoration under the 24 November heading `XXIV. St. JOHN of the CROSS. c.`, as `Of St. CHRYSOGONUS. Adesto.` immediately after that day's own Collect, with a Secret and a P. Comm. `Of the same` below it. The Latin cue `Adesto` answers the 1962 incipit `Adesto, Domine, supplicationibus nostris`. Kalendar p. 776 (leaf n784) confirms the join. Date agrees: 24 November in both books. PUNCTUATION AS PRINTED, FLAGGED: the page reads `Give ear, O God. to our prayers` -- a full stop, not a comma, after `God`. The mark was examined at 4x magnification on the page image and it has no comma tail, unlike `ear,` two words earlier on the same line. It is reproduced here unmended. This is exactly the class the file's `corrections` block already handles (`a full stop falling inside a clause was removed`); the integrator, not this lane, should decide whether to apply that standing rule. Alignment status in the normalized evidence artifact: candidate."

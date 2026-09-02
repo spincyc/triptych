@@ -65,15 +65,16 @@ EXAMPLES = {
         Example(
             "tools/citations encode --root build/example-cal",
             (
-                "build/example-cal/postconciliar/propers.yaml\t1082 already_encoded\t0 encoded",
-                "build/example-cal/roman-1962/propers.yaml\t1108 already_encoded\t0 encoded",
+                "build/example-cal/postconciliar/propers.yaml\t3590 already_encoded\t0 encoded",
+                "build/example-cal/roman-1962/propers.yaml\t2600 already_encoded\t0 encoded",
+                "build/example-cal/roman-pre-1955/propers.yaml\t0 already_encoded\t0 encoded",
             ),
             "WRITES. --root here is an untracked copy; with no --root this rewrites the tracked src/sources/calendars YAML in place",
         ),
         Example(
             "tools/citations encode --root build/example-cal --json",
             (
-                "{\"files\":{\"build/example-cal/postconciliar/propers.yaml\":{\"already_encoded\":3534,\"encoded\":0},\"b... [+196 chars]",
+                "{\"files\":{\"build/example-cal/postconciliar/propers.yaml\":{\"already_encoded\":3590,\"encoded\":0},\"b... [+196 chars]",
             ),
             "WRITES. Rerun on the same tree: everything is already encoded, so nothing changes",
         ),
@@ -82,19 +83,18 @@ EXAMPLES = {
         Example(
             "tools/citations check",
             (
-                "citation error: src/sources/calendars/postconciliar/propers.yaml: ascension/Vigil Mass/Entrance ... [+74 chars]",
-                "citation error: src/sources/calendars/postconciliar/propers.yaml: ascension/Vigil Mass/Entrance ... [+72 chars]",
-                "citation error: src/sources/calendars/postconciliar/propers.yaml: ascension/Vigil Mass/Entrance ... [+74 chars]",
-                "citation error: src/sources/calendars/postconciliar/propers.yaml: ascension/Vigil Mass/Entrance ... [+72 chars]",
-                "... 25 more lines",
-                "src/sources/calendars/roman-1962/propers.yaml\t47 books\t1108 passages",
+                "citation excepted: src/sources/calendars/postconciliar/propers.yaml: ot-23-thursday/Responsorial... [+73 chars]",
+                "citation excepted: src/sources/calendars/postconciliar/propers.yaml: ot-24-saturday/Responsorial... [+74 chars]",
+                "citation excepted: src/sources/calendars/postconciliar/propers.yaml: ot-33-wednesday/Responsoria... [+75 chars]",
+                "citation excepted: src/sources/calendars/postconciliar/propers.yaml: christ-the-king/Communion A... [+73 chars]",
+                "... 3 more lines",
             ),
             "exit 1: the tracked postconciliar propers really do cite verses past the end of their hebrew-numbered psalms, and check refuses rather than clamping",
         ),
         Example(
             "tools/citations check --json",
             (
-                "{\"files\":{\"src/sources/calendars/postconciliar/propers.yaml\":{\"books\":61,\"passages\":1082},\"src/s... [+4178 chars]",
+                "{\"excepted\":[\"src/sources/calendars/postconciliar/propers.yaml: ot-23-thursday/Responsorial Psal... [+811 chars]",
             ),
             "exit 1, every problem in one payload",
         ),
@@ -102,6 +102,21 @@ EXAMPLES = {
 }
 
 DEFAULT_ROOT = Path("src/sources/calendars")
+
+# A calendar may carry exact psalm loci whose numbering remains an open
+# collation question.  They are findings, not a permission to ignore the next
+# bad reference in the same psalm, so the check reports them separately and
+# still exits nonzero for every unlisted locus.
+EXCEPTIONS = "psalm_numbering_exceptions"
+PSALM_LOCUS = re.compile(r"Psalm (\d+):(\d+)$")
+PSALM_TROUBLE = re.compile(
+    r"^(?P<owner>.+)/(?:begin|end): "
+    r"(?P<locus>Psalm \d+(?::\d+)?) (?:exceeds|precedes|is outside)\b"
+)
+PSALM_NUMBERING = frozenset({"hebrew", "vulgate"})
+PASSAGE_FIELDS = frozenset({"book", "ranges", "ref"})
+RANGE_FIELDS = frozenset({"begin", "end"})
+EXCEPTION_FIELDS = frozenset({"psalm", "divergence", "loci"})
 
 # Canonical Catholic canon, in canonical order, with the aliases and printed
 # variants that actually occur in liturgical books.
@@ -243,6 +258,8 @@ def parse_citation(text: str) -> dict[str, object]:
     within a chapter ("Psalm 22:8-9, 17-20"), several chapter blocks
     ("Exodus 14:24-31; 15:1"), and printed part-verse letters ("Isaiah 50:4-9a").
     """
+    if not isinstance(text, str):
+        raise CitationError(f"citation must be a string, got {text!r}")
     stripped = text.strip()
     if stripped != text:
         raise CitationError(f"citation has stray whitespace: {text!r}")
@@ -373,10 +390,15 @@ def check_ref_agrees(where: str, passage: dict, problems: list[str]) -> None:
         return
     # A book the passage spells wrongly is already reported above; saying it
     # again here would count one defect twice.
-    if passage.get("book") in CANONICAL and derived["book"] != passage["book"]:
+    stored_book = passage.get("book")
+    if (
+        isinstance(stored_book, str)
+        and stored_book in CANONICAL
+        and derived["book"] != stored_book
+    ):
         problems.append(
             f"{where}: ref {ref!r} names book {derived['book']!r}, "
-            f"but the passage stores {passage['book']!r}"
+            f"but the passage stores {stored_book!r}"
         )
     stored, wanted = extents(passage), extents(derived)
     if stored != wanted:
@@ -387,7 +409,7 @@ def check_ref_agrees(where: str, passage: dict, problems: list[str]) -> None:
 
 
 def check_passage(
-    where: str, passage: object, problems: list[str], numbering: str | None = None
+    where: str, passage: object, problems: list[str], numbering: object = None
 ) -> None:
     if isinstance(passage, str):
         problems.append(f"{where}: citation is still a bare string: {passage!r}")
@@ -395,14 +417,27 @@ def check_passage(
     if not isinstance(passage, dict):
         problems.append(f"{where}: passage is not a mapping")
         return
+    unknown_passage = set(passage) - PASSAGE_FIELDS
+    if unknown_passage:
+        problems.append(
+            f"{where}: passage has unknown keys "
+            f"{sorted(unknown_passage, key=repr)}"
+        )
     book = passage.get("book")
-    if book not in CANONICAL:
+    if not isinstance(book, str) or book not in CANONICAL:
         problems.append(f"{where}: book is not a canonical name: {book!r}")
     ranges = passage.get("ranges")
     if not isinstance(ranges, list) or not ranges:
         problems.append(f"{where}: ranges must be a nonempty list")
         return
-    if book == PSALMS and numbering:
+    if book == PSALMS and numbering is not None and (
+        not isinstance(numbering, str) or numbering not in PSALM_NUMBERING
+    ):
+        problems.append(
+            f"{where}: psalm numbering must be one of {sorted(PSALM_NUMBERING)}, "
+            f"got {numbering!r}"
+        )
+    elif book == PSALMS and numbering:
         for entry in ranges:
             if not isinstance(entry, dict):
                 continue
@@ -410,7 +445,23 @@ def check_passage(
                 point = entry.get(edge)
                 if not isinstance(point, dict):
                     continue
-                trouble = validate_psalm(point.get("chapter"), point.get("verse"), numbering)
+                chapter = point.get("chapter")
+                verse = point.get("verse")
+                if (
+                    isinstance(chapter, bool)
+                    or not isinstance(chapter, int)
+                    or chapter < 1
+                    or (
+                        verse is not None
+                        and (
+                            isinstance(verse, bool)
+                            or not isinstance(verse, int)
+                            or verse < 1
+                        )
+                    )
+                ):
+                    continue
+                trouble = validate_psalm(chapter, verse, numbering)
                 if trouble:
                     problems.append(f"{where}/{edge}: {trouble}")
     structural = len(problems)
@@ -419,6 +470,11 @@ def check_passage(
         if not isinstance(extent, dict):
             problems.append(f"{scope}: range is not a mapping")
             continue
+        unknown_range = set(extent) - RANGE_FIELDS
+        if unknown_range:
+            problems.append(
+                f"{scope}: range has unknown keys {sorted(unknown_range, key=repr)}"
+            )
         bounds = []
         for edge in ("begin", "end"):
             marker = extent.get(edge)
@@ -428,14 +484,22 @@ def check_passage(
                 continue
             unknown = set(marker) - {"chapter", "verse", "part"}
             if unknown:
-                problems.append(f"{scope}/{edge}: unknown keys {sorted(unknown)}")
+                problems.append(
+                    f"{scope}/{edge}: unknown keys {sorted(unknown, key=repr)}"
+                )
             chapter = marker.get("chapter")
-            if not isinstance(chapter, int) or chapter < 1:
+            if (
+                isinstance(chapter, bool)
+                or not isinstance(chapter, int)
+                or chapter < 1
+            ):
                 problems.append(f"{scope}/{edge}: chapter must be a positive integer")
                 bounds.append(None)
                 continue
             verse = marker.get("verse")
-            if verse is not None and (not isinstance(verse, int) or verse < 1):
+            if verse is not None and (
+                isinstance(verse, bool) or not isinstance(verse, int) or verse < 1
+            ):
                 problems.append(f"{scope}/{edge}: verse must be a positive integer")
                 bounds.append(None)
                 continue
@@ -471,9 +535,16 @@ def iter_masses(document: dict) -> list:
     and the calendar-mass checker rejects a file that reintroduces one.
     """
     out = []
-    for _, body in sorted((document.get("sections") or {}).items()):
-        if isinstance(body, dict):
-            out.extend(m for m in (body.get("masses") or []) if isinstance(m, dict))
+    sections = document.get("sections")
+    if not isinstance(sections, dict):
+        return out
+    for _, body in sorted(sections.items(), key=lambda item: str(item[0])):
+        if not isinstance(body, dict):
+            continue
+        masses = body.get("masses")
+        if not isinstance(masses, list):
+            continue
+        out.extend(m for m in masses if isinstance(m, dict))
     return out
 
 
@@ -484,13 +555,31 @@ def each_proper(document: object):
     for entry in iter_masses(document):
         key = entry.get("key", "?")
         groups = [(key, entry.get("propers"))]
-        for form in entry.get("forms") or []:
-            if isinstance(form, dict):
-                groups.append((f"{key}/{form.get('name', '?')}", form.get("propers")))
+        forms = entry.get("forms")
+        if isinstance(forms, list):
+            for form in forms:
+                if isinstance(form, dict):
+                    groups.append(
+                        (f"{key}/{form.get('name', '?')}", form.get("propers"))
+                    )
         for label, propers in groups:
-            for proper in propers or []:
-                if isinstance(proper, dict):
-                    yield f"{label}/{proper.get('name', '?')}", proper
+            if not isinstance(propers, list):
+                continue
+            names = [
+                str(proper.get("name", "?"))
+                for proper in propers
+                if isinstance(proper, dict)
+            ]
+            totals = {name: names.count(name) for name in set(names)}
+            occurrences: dict[str, int] = {}
+            for proper in propers:
+                if not isinstance(proper, dict):
+                    continue
+                name = str(proper.get("name", "?"))
+                occurrence = occurrences.get(name, 0) + 1
+                occurrences[name] = occurrence
+                qualified = f"{name}#{occurrence}" if totals[name] > 1 else name
+                yield f"{label}/{qualified}", proper
 
 
 # The two reading courses a proper may vary on: Sundays on the three-year
@@ -504,10 +593,177 @@ def verse_lists(proper: dict) -> list[tuple[str, dict, str]]:
     """Every (label-suffix, owner, key) holding a verses list on one proper."""
     owners = [("", proper, "verses")]
     for cycles in CYCLE_KEYS:
-        for cycle, value in (proper.get(cycles) or {}).items():
+        branches = proper.get(cycles)
+        if not isinstance(branches, dict):
+            # Shape belongs to check-calendar-masses.  A malformed branch must
+            # not crash this delegated content check before that tool can
+            # report the actionable schema problem it already found.
+            continue
+        for cycle, value in branches.items():
             if isinstance(value, dict):
                 owners.append((f"/{cycle}", value, "verses"))
     return [(suffix, owner, key) for suffix, owner, key in owners if key in owner]
+
+
+def numbered_verse_lists(
+    proper: dict, default: object
+) -> list[tuple[str, dict, str, object]]:
+    """Every verses owner paired with the psalm numbering it inherits.
+
+    The calendar-level declaration is only a default.  A proper may override
+    it, and either reading course may override the proper in turn.  This is the
+    same inheritance used when the Proper reader resolves a citation;
+    validating every owner under the file default made the validator disagree
+    with the reader about eleven postconciliar antiphons.
+    """
+    inherited = (
+        proper.get("psalm_numbering")
+        if "psalm_numbering" in proper
+        else default
+    )
+    return [
+        (
+            suffix,
+            owner,
+            key,
+            owner.get("psalm_numbering")
+            if "psalm_numbering" in owner
+            else inherited,
+        )
+        for suffix, owner, key in verse_lists(proper)
+    ]
+
+
+def exception_owners(
+    cited: str, known_owners: set[str] | None = None
+) -> tuple[str, ...]:
+    """Canonical owner paths named by one ledger value.
+
+    The ledger predates the machine path and preserves its readable spelling:
+    multiple owners are separated by semicolons, a course is written as
+    ``, cycle II``, and an antiphon's incipit may follow in parentheses.  Those
+    are presentation only; the resulting paths are the labels emitted by
+    :func:`each_proper` and :func:`verse_lists`.
+    """
+    owners: list[str] = []
+    for item in cited.split(";"):
+        written = item.strip()
+        without_note = re.sub(
+            r"\s+\([^()]*(?:\([^()]*\)[^()]*)*\)$", "", written
+        )
+        candidates = [
+            re.sub(
+                r",\s*cycle\s+([^,]+)$", r"/\1", candidate, flags=re.IGNORECASE
+            )
+            for candidate in dict.fromkeys((written, without_note))
+        ]
+        owner = candidates[-1]
+        if known_owners is not None:
+            owner = next(
+                (candidate for candidate in candidates if candidate in known_owners),
+                owner,
+            )
+        if owner:
+            owners.append(owner)
+    return tuple(owners)
+
+
+def psalm_exceptions(
+    document: object,
+    problems: list[str],
+    known_owners: set[str] | None = None,
+) -> dict[str, tuple[str, ...]]:
+    """Validate and return one calendar's exact-locus exception ledger.
+
+    Bounds are still derived by :func:`check_passage`.  This reader merely
+    identifies which of those derived findings the calendar has explicitly
+    recorded, one locus at a time; it cannot excuse a whole psalm or an
+    unrelated validation error.
+    """
+    if not isinstance(document, dict):
+        return {}
+    payload = document.get(EXCEPTIONS)
+    if payload is None:
+        return {}
+    if not isinstance(payload, list) or not payload:
+        problems.append(f"{EXCEPTIONS} must be a nonempty list, or absent")
+        return {}
+    listed: dict[str, tuple[str, ...]] = {}
+    for index, entry in enumerate(payload):
+        where = f"{EXCEPTIONS}[{index}]"
+        if not isinstance(entry, dict):
+            problems.append(f"{where}: entry is not a mapping")
+            continue
+        unknown = set(entry) - EXCEPTION_FIELDS
+        if unknown:
+            problems.append(
+                f"{where}: entry has unknown keys {sorted(unknown, key=repr)}"
+            )
+        psalm = entry.get("psalm")
+        if isinstance(psalm, bool) or not isinstance(psalm, int):
+            problems.append(f"{where}: psalm must be the cited psalm's number")
+            psalm = None
+        divergence = entry.get("divergence")
+        if not isinstance(divergence, str) or not divergence.strip():
+            problems.append(f"{where}: divergence must say how the systems differ here")
+        loci = entry.get("loci")
+        if not isinstance(loci, dict) or not loci:
+            problems.append(f"{where}: loci must be a nonempty mapping")
+            continue
+        for locus_name, cited in loci.items():
+            found = PSALM_LOCUS.fullmatch(locus_name) if isinstance(locus_name, str) else None
+            if found is None:
+                problems.append(
+                    f"{where}: {locus_name!r} is not a Psalm chapter:verse locus"
+                )
+                continue
+            if psalm is not None and int(found.group(1)) != psalm:
+                problems.append(f"{where}: {locus_name} does not belong to Psalm {psalm}")
+                continue
+            if not isinstance(cited, str) or not cited.strip():
+                problems.append(f"{where}: {locus_name} must name the proper that cites it")
+                continue
+            owners = exception_owners(cited, known_owners)
+            if not owners:
+                problems.append(f"{where}: {locus_name} must name at least one proper")
+                continue
+            if locus_name in listed:
+                problems.append(f"{EXCEPTIONS} lists {locus_name} twice")
+            listed[locus_name] = owners
+    return listed
+
+
+def apply_psalm_exceptions(
+    problems: list[str], listed: dict[str, tuple[str, ...]]
+) -> tuple[list[str], list[str]]:
+    """Partition exact exceptions and reject ledger claims that went stale.
+
+    Owner is as load-bearing as locus.  A ledger value may name more than one
+    owning Proper, so each named owner must still produce the exact breach it
+    claims.  Otherwise a corrected owner would leave behind a standing
+    permission hidden behind another Proper that still cites the same locus.
+    """
+    kept: list[str] = []
+    excepted: list[str] = []
+    met: set[tuple[str, str]] = set()
+    for problem in problems:
+        found = PSALM_TROUBLE.search(problem)
+        if (
+            found is not None
+            and found.group("owner") in listed.get(found.group("locus"), ())
+        ):
+            excepted.append(problem)
+            met.add((found.group("locus"), found.group("owner")))
+        else:
+            kept.append(problem)
+    for locus, owners in listed.items():
+        for owner in owners:
+            if (locus, owner) not in met:
+                kept.append(
+                    f"{EXCEPTIONS} lists {locus} for {owner}, which no longer "
+                    "breaches this calendar's numbering; update or delete the entry"
+                )
+    return kept, excepted
 
 
 def indexes(root: Path) -> list[Path]:
@@ -581,13 +837,24 @@ def encode(root: Path) -> dict[str, object]:
     files: dict[str, object] = {}
     problems: list[str] = []
     for path in indexes(root):
-        document = yaml.safe_load(path.read_text(encoding="utf-8"))
+        try:
+            document = yaml.safe_load(path.read_text(encoding="utf-8"))
+        except (OSError, yaml.YAMLError) as error:
+            problems.append(f"{path}: unreadable: {error}")
+            files[path.as_posix()] = {"encoded": 0, "already_encoded": 0}
+            continue
         encoded = 0
         already = 0
         for label, proper in each_proper(document):
             for suffix, owner, key in verse_lists(proper):
+                citations = owner[key]
+                if not isinstance(citations, list) or not citations:
+                    problems.append(
+                        f"{path}: {label}{suffix}: {key} must be a nonempty list"
+                    )
+                    continue
                 passages = []
-                for citation in owner[key]:
+                for citation in citations:
                     if isinstance(citation, dict):
                         already += 1
                         passages.append(citation)
@@ -614,24 +881,46 @@ def check(root: Path) -> dict[str, object]:
 
     files: dict[str, object] = {}
     problems: list[str] = []
+    excepted: list[str] = []
     for path in indexes(root):
-        document = yaml.safe_load(path.read_text(encoding="utf-8"))
+        try:
+            document = yaml.safe_load(path.read_text(encoding="utf-8"))
+        except (OSError, yaml.YAMLError) as error:
+            problems.append(f"{path}: unreadable: {error}")
+            files[path.as_posix()] = {"passages": 0, "books": 0}
+            continue
         passages = 0
-        before = len(problems)
+        file_problems: list[str] = []
         books: set[str] = set()
         numbering = document.get("psalm_numbering") if isinstance(document, dict) else None
-        for label, proper in each_proper(document):
-            for suffix, owner, key in verse_lists(proper):
-                for passage in owner[key]:
-                    check_passage(f"{label}{suffix}", passage, problems, numbering)
+        propers = list(each_proper(document))
+        known_owners = {
+            f"{label}{suffix}"
+            for label, proper in propers
+            for suffix, _, _ in verse_lists(proper)
+        }
+        listed = psalm_exceptions(document, file_problems, known_owners)
+        for label, proper in propers:
+            for suffix, owner, key, effective in numbered_verse_lists(proper, numbering):
+                passages_value = owner[key]
+                if not isinstance(passages_value, list) or not passages_value:
+                    file_problems.append(
+                        f"{label}{suffix}: {key} must be a nonempty list"
+                    )
+                    continue
+                for passage in passages_value:
+                    check_passage(f"{label}{suffix}", passage, file_problems, effective)
                     passages += 1
-                    if isinstance(passage, dict) and passage.get("book") in CANONICAL:
-                        books.add(passage["book"])
+                    if isinstance(passage, dict):
+                        book = passage.get("book")
+                        if isinstance(book, str) and book in CANONICAL:
+                            books.add(book)
+        file_problems, file_excepted = apply_psalm_exceptions(file_problems, listed)
         files[path.as_posix()] = {"passages": passages, "books": len(books)}
-        # Prefix only this file's own problems; re-prefixing the whole list
-        # stamped earlier files' problems with a later file's name.
-        problems[before:] = [f"{path}: {problem}" for problem in problems[before:]]
+        problems.extend(f"{path}: {problem}" for problem in file_problems)
+        excepted.extend(f"{path}: {problem}" for problem in file_excepted)
     return {
+        "excepted": excepted,
         "files": files,
         "problems": problems,
         "status": "error" if problems else "ok",
@@ -643,6 +932,8 @@ def emit(payload: dict[str, object], as_json: bool) -> int:
     if as_json:
         print_json(payload)
         return 1 if problems else 0
+    for problem in payload.get("excepted") or []:
+        print(f"citation excepted: {problem}", file=sys.stderr)
     for problem in problems:
         print(f"citation error: {problem}", file=sys.stderr)
     for path, counts in (payload.get("files") or {}).items():

@@ -5,6 +5,8 @@ from __future__ import annotations
 
 import copy
 import hashlib
+import importlib.machinery
+import importlib.util
 import json
 import shutil
 import subprocess
@@ -20,6 +22,23 @@ ADAPTERS = ROOT / "src/web/browser/liturgy/reader-state-adapters.js"
 ASSEMBLY = ROOT / "src/web/browser/liturgy/assembly-model.js"
 SEATING = ROOT / "src/web/browser/liturgy/ordinary-seating.js"
 MASS_TODAY = ROOT / "tools/mass-today"
+BROWSER_CORE = ROOT / "src/web/browser/shared/browser-core.js"
+
+
+def load_tool_module(name: str, path: Path):
+    loader = importlib.machinery.SourceFileLoader(name, str(path))
+    spec = importlib.util.spec_from_loader(name, loader)
+    if spec is None:
+        raise RuntimeError(f"cannot load {path}")
+    module = importlib.util.module_from_spec(spec)
+    loader.exec_module(module)
+    return module
+
+
+MASS_TODAY_MODULE = load_tool_module("reader_state_mass_today", MASS_TODAY)
+MASS_PROPERS_MODULE = load_tool_module(
+    "reader_state_mass_propers", ROOT / "tools/mass-propers"
+)
 
 
 NODE_BRIDGE = r"""
@@ -68,6 +87,8 @@ function selectedProjection(selected) {
     language: selected.language || null,
     cycle: selected.cycle || null,
     cycles: selected.cycles || [],
+    weekdayCycles: selected.weekdayCycles || [],
+    cycleDimension: selected.cycleDimension || null,
     references: selected.references || [],
     bible: selected.bible || null,
     numbering: selected.numbering || null,
@@ -75,12 +96,19 @@ function selectedProjection(selected) {
     rights: Object.prototype.hasOwnProperty.call(selected, 'rights') ? selected.rights : null,
     missing: Boolean(selected.missing),
     availability: selected.availability || null,
+    reason: selected.reason || null,
+    unavailableState: selected.unavailableState || null,
+    extent: selected.extent || null,
+    held: selected.held === true,
     absenceKey: selected.absenceKey || null,
+    relation: selected.relation || null,
+    collation: selected.collation || null,
     unresolvedWitnesses: selected.unresolvedWitnesses || [],
     text: Object.prototype.hasOwnProperty.call(selected, 'text') ? selected.text : null,
     alternatives: (selected.alternatives || []).map((alternative) => ({
       id: alternative.id,
       cycle: alternative.cycle,
+      cycleDimension: alternative.cycleDimension || null,
       material: selectedProjection(alternative.material),
       sourceHooks: alternative.sourceHooks || []
     }))
@@ -111,7 +139,8 @@ function resultProjection(result) {
     events: (result.events || []).map(eventProjection),
     coverage: result.coverage || [],
     explicitAbsences: result.explicitAbsences || [],
-    unresolvedChoices: result.unresolvedChoices || []
+    unresolvedChoices: result.unresolvedChoices || [],
+    ordinaryUnresolved: result.ordinaryUnresolved || []
   };
 }
 
@@ -270,7 +299,7 @@ if (input.op === 'fixture-validate') {
     schema: C.STATE_SCHEMA, entrance: 'propers', civilDate: null,
     edition: {id: 'synthetic-cycle-edition'},
     formulary: {id: 'synthetic-cycle-formulary', type: 'contract'},
-    languages: {orations: 'la'}, requestedMode: 'read',
+    languages: {orations: input.translationOnly ? 'en' : 'la'}, requestedMode: 'read',
     options: {ordinary: false, legitimate: {}}, coverage: [],
     unresolvedChoices: [], sourceHooks: []
   };
@@ -278,7 +307,10 @@ if (input.op === 'fixture-validate') {
   const order = input.reverseCycles ? ['C', 'B', 'A'] : ['A', 'B', 'C'];
   const cycles = {};
   for (const cycle of order) {
-    cycles[cycle] = {citations: [], text: 'contract-material-' + cycle};
+    cycles[cycle] = input.translationOnly
+      ? {citations: [], translations: [{lang: 'en', source_id: 'witness-cycle-' + cycle,
+          rights: 'public-domain', text: 'translated-cycle-' + cycle}]}
+      : {citations: [], text: 'contract-material-' + cycle};
   }
   output = resultProjection(A.adaptPropers({
     request,
@@ -286,10 +318,182 @@ if (input.op === 'fixture-validate') {
       calendar: 'synthetic-cycle-edition', translations: [],
       masses: [{
         key: 'synthetic-cycle-formulary', kind: 'contract',
-        propers: [{name: 'Collect', source: 'composed', text: null, citations: [], cycles}]
+        propers: [{
+          name: 'Collect', form_id: 'main', source: 'composed',
+          text: null, citations: [], cycles
+        }]
       }]
     }
   }));
+} else if (input.op === 'synthetic-day-cycle') {
+  const request = {
+    schema: C.STATE_SCHEMA, entrance: 'day', civilDate: '2026-08-26',
+    edition: {id: 'synthetic-cycle-edition'}, calendar: {id: 'synthetic-cycle-edition'},
+    selectedReadableFormulary: {id: 'synthetic-cycle-formulary'},
+    bible: {id: 'douay-rheims', numbering: 'vulgate'},
+    languages: {orations: 'la'}, requestedMode: 'read',
+    options: {ordinary: false, legitimate: {}}, coverage: [],
+    unresolvedChoices: [], sourceHooks: []
+  };
+  const sunday = input.reverse ? ['C', 'B', 'A'] : ['A', 'B', 'C'];
+  const weekday = input.reverse ? ['II', 'I'] : ['I', 'II'];
+  const cycleRows = Object.fromEntries(sunday.map((key) => [key, {
+    citations: [{ref: 'Sunday ' + key, unresolved: null}], text: null
+  }]));
+  const weekdayRows = Object.fromEntries(weekday.map((key) => [key, {
+    citations: [{ref: 'Weekday ' + key, unresolved: null}], text: null
+  }]));
+  const proper = {
+    name: 'First Reading', form_id: 'main', source: 'scripture', citations: []
+  };
+  if (input.family === 'sunday' || input.family === 'both') proper.cycles = cycleRows;
+  if (input.family === 'weekday' || input.family === 'both') proper.weekday_cycles = weekdayRows;
+  output = resultProjection(A.adaptDay({
+    request,
+    derived: {
+      date: request.civilDate, calendar: request.calendar.id,
+      liturgicalYear: {lectionary: input.lectionary || {sunday: 'B', weekday: 'II'}},
+      options: [{
+        option: null, winner: {id: 'synthetic-day'}, settled: true,
+        readable: [{key: 'synthetic-cycle-formulary', state: 'said'}]
+      }]
+    },
+    structure: {
+      calendar: request.edition.id, translations: [],
+      masses: [{key: 'synthetic-cycle-formulary', kind: 'contract', propers: [proper]}]
+    }
+  }));
+} else if (input.op === 'synthetic-cycle-untranslated') {
+  const request = {
+    schema: C.STATE_SCHEMA, entrance: 'day', civilDate: '2026-08-30',
+    edition: {id: 'synthetic-cycle-edition'}, calendar: {id: 'synthetic-cycle-edition'},
+    selectedReadableFormulary: {id: 'synthetic-cycle-formulary'},
+    bible: {id: 'douay-rheims', numbering: 'vulgate'},
+    languages: {orations: 'en'}, requestedMode: 'read',
+    options: {ordinary: false, legitimate: {}}, coverage: [],
+    unresolvedChoices: [], sourceHooks: []
+  };
+  const absence = (cycle, state) => ({
+    target: {mass: 'synthetic-cycle-formulary', form_id: 'main', proper: 'Collect',
+      cycle, occurrence: 1, extent: 'body'},
+    lang: 'en', state
+  });
+  const proper = {
+    name: 'Collect', form_id: 'main', source: 'composed', citations: [],
+    cycles: {
+      A: {citations: [], unavailable_translations: [absence('A', 'rights-restricted')]},
+      C: {citations: [], untranslated: [absence('C', 'unavailable')]}
+    }
+  };
+  if (input.variant === 'cycle-owned-translation') {
+    proper.text = 'Parent Latin body';
+    proper.translations = [{
+      lang: 'en', source_id: 'edition.synthetic.parent',
+      rights: 'public-domain', text: 'Parent English must not win.'
+    }];
+    proper.cycles.A = {
+      citations: [], text: 'Cycle A Latin body', translations: [{
+        lang: 'en', source_id: 'edition.synthetic.cycle-a',
+        rights: 'public-domain', text: 'Cycle A held English.'
+      }]
+    };
+  } else if (input.variant === 'cycle-owned-restriction') {
+    proper.text = 'Parent Latin body';
+    proper.translations = [{
+      lang: 'en', source_id: 'edition.synthetic.parent-protected',
+      rights: 'public-domain', text: 'Parent English must not escape.'
+    }];
+    proper.cycles.A = {
+      citations: [], text: 'Cycle A Latin body',
+      unavailable_translations: [absence('A', 'rights-restricted')]
+    };
+  }
+  output = resultProjection(A.adaptDay({
+    request,
+    derived: {
+      date: request.civilDate, calendar: request.calendar.id,
+      liturgicalYear: {lectionary: {sunday: input.cycle, weekday: 'II'}},
+      options: [{option: null, winner: {id: 'synthetic-day'}, settled: true,
+        readable: [{key: 'synthetic-cycle-formulary', state: 'said'}]}]
+    },
+    structure: {calendar: request.edition.id, translations: [], masses: [{
+      key: 'synthetic-cycle-formulary', kind: 'contract', propers: [proper]
+    }]}
+  }));
+} else if (input.op === 'synthetic-cli-language') {
+  const withheldLatin = input.kind === 'withheld-latin';
+  const language = withheldLatin ? 'la' : 'en';
+  const request = {
+    schema: C.STATE_SCHEMA, entrance: 'day', civilDate: '2026-08-30',
+    edition: {id: 'synthetic-language-edition'}, calendar: {id: 'synthetic-language-edition'},
+    selectedReadableFormulary: {id: 'synthetic-language-formulary'},
+    bible: {id: 'douay-rheims', numbering: 'vulgate'},
+    languages: {orations: language}, requestedMode: 'read',
+    options: {ordinary: false, legitimate: {}}, coverage: [],
+    unresolvedChoices: [], sourceHooks: []
+  };
+  const translations = withheldLatin ? [] : [{
+    lang: 'en', source_id: 'edition.synthetic.safe-english',
+    rights: 'public-domain', text: 'Held English text.'
+  }];
+  const generatedProper = {
+    name: 'Collect', form_id: 'main', source: 'composed', citations: [], cycles: {},
+    text: withheldLatin ? null : 'Retained Latin text.', translations,
+    latin: withheldLatin ? {
+      withheld: true, held: false, available: false, state: 'unavailable',
+      target: 'Collect'
+    } : null
+  };
+  const payloadProper = {
+    name: 'Collect', form: null, form_id: 'main', source: 'composed',
+    text: withheldLatin ? null : 'Retained Latin text.', translations,
+    taken_from: null, verses: []
+  };
+  if (withheldLatin) {
+    payloadProper.latin = {
+      target: 'Collect', state: 'unavailable', withheld: true,
+      held: false, available: false
+    };
+    payloadProper.language_selection = {
+      requested: 'la', status: 'unavailable', held: false,
+      available: false, complete: false,
+      reason: {state: 'text-withheld', lang: 'la'}
+    };
+  } else {
+    payloadProper.language_selection = {
+      requested: 'en', status: 'full-text', held: true,
+      available: true, complete: true, texts: translations
+    };
+  }
+  const derived = {
+    date: request.civilDate, calendar: request.calendar.id,
+    liturgicalYear: {lectionary: {sunday: 'A', weekday: 'II'}},
+    options: [{option: null, winner: {id: 'synthetic-day'}, settled: true,
+      readable: [{key: 'synthetic-language-formulary', state: 'said'}], absent: []}]
+  };
+  const structure = {calendar: request.edition.id, translations: [], masses: [{
+    key: 'synthetic-language-formulary', kind: 'contract',
+    ordinary_frame: {applicability: 'full', basis: 'synthetic full-frame basis'},
+    propers: [generatedProper]
+  }]};
+  const payload = {
+    date: request.civilDate, scripture: {id: request.bible.id},
+    days: [{
+      calendar: request.calendar.id, selected_territory: null,
+      territory_choice_required: false, settled: true,
+      why: {lectionary: {sunday: 'A', weekday: 'II'}},
+      masses: [{
+        key: 'synthetic-language-formulary', standing: 'said',
+        bible: {id: request.bible.id}, selected_form: 'main',
+        form_choice_required: false,
+        ordinary_frame: {applicability: 'full', basis: 'synthetic full-frame basis'},
+        propers: [payloadProper]
+      }]
+    }]
+  };
+  const day = A.adaptDay({request, derived, structure});
+  const cli = A.adaptCli({request, payload, derived, structure});
+  output = {day: resultProjection(day), cli: resultProjection(cli)};
 } else if (input.op === 'full-parity') {
   const request = input.request;
   const id = request.edition.id;
@@ -389,20 +593,224 @@ if (input.op === 'fixture-validate') {
     options: {ordinary: false, legitimate: {}}, coverage: [],
     unresolvedChoices: [], sourceHooks: []
   };
-  const translations = (input.translationOrder || ['witness-a', 'witness-b']).map((id) => ({
-    lang: 'en', source_id: id, rights: 'public-domain', text: 'contract-only'
-  }));
+  if (input.translationWitness) {
+    request.languages.translationWitness = input.translationWitness;
+  }
+  const translations = input.rightsRestricted ? [] :
+    (input.translationOrder || ['witness-a', 'witness-b']).map((id) => ({
+      lang: 'en', source_id: id, rights: 'public-domain', text: 'contract-only'
+    }));
+  const unavailableTranslations = input.rightsRestricted ? [{
+    lang: 'en', state: 'rights-restricted',
+    target: {
+      mass: 'synthetic-test-formulary', form_id: 'main', proper: 'Collect',
+      cycle: 'all', occurrence: 1, extent: 'body'
+    },
+    source_id: 'protected-witness-must-not-escape',
+    text: 'protected exact wording must not escape'
+  }] : [];
   const structure = {
     calendar: 'synthetic-test-edition', translations: [],
     masses: [{
       key: 'synthetic-test-formulary', kind: 'contract', propers: [
-        {name: 'Placeholder', source: 'composed', text: 'not held', citations: [], cycles: {}},
-        {name: 'Introit', source: 'scripture', citations: [{ref: 'Synthetic ref', unresolved: null}], cycles: {}},
-        {name: 'Collect', source: 'composed', text: 'synthetic latin', citations: [], cycles: {}, translations}
+        {name: 'Placeholder', form_id: 'main', source: 'composed', text: 'not held', citations: [], cycles: {}},
+        {name: 'Introit', form_id: 'main', source: 'scripture', citations: [{ref: 'Synthetic ref', unresolved: null}], cycles: {}},
+        {
+          name: 'Collect', form_id: 'main', source: 'composed',
+          text: input.latinWithheld ? null : 'synthetic latin',
+          citations: [], cycles: {}, translations,
+          latin: input.latinWithheld ? Object.assign({
+            withheld: true, held: false, available: false, state: 'unavailable',
+            target: 'Collect'
+          }, input.malformedLatin || {}) : null,
+          unavailable_translations: unavailableTranslations
+        }
       ]
     }]
   };
   output = resultProjection(A.adaptPropers({request, structure}));
+} else if (input.op === 'synthetic-ordinary-frame') {
+  const request = {
+    schema: C.STATE_SCHEMA, entrance: 'day', civilDate: '2027-03-26',
+    edition: {id: 'synthetic-frame-edition'}, calendar: {id: 'synthetic-frame-edition'},
+    selectedReadableFormulary: {id: 'exceptional-rite'},
+    languages: {orations: 'la', ordinary: 'la'}, requestedMode: 'study',
+    options: {ordinary: true, legitimate: {}}, coverage: [],
+    unresolvedChoices: [], sourceHooks: []
+  };
+  const frame = Object.prototype.hasOwnProperty.call(input, 'frame') ? input.frame : {
+    applicability: input.applicability, basis: 'source-owned frame basis'
+  };
+  const proper = input.properName ? {
+    name: input.properName, form_id: 'main', source: 'composed',
+    text: 'synthetic proper body', citations: [], cycles: {}
+  } : {
+    name: 'Placeholder', form_id: 'main', source: 'composed',
+    text: 'repository status, not liturgy', citations: [], cycles: {}
+  };
+  const mass = {
+    key: 'exceptional-rite', kind: 'contract',
+    propers: [proper]
+  };
+  if (!input.omitFrame) mass.ordinary_frame = frame;
+  const adaptFrame = () => resultProjection(A.adaptDay({
+    request,
+    derived: {
+      date: request.civilDate, calendar: request.calendar.id,
+      options: [{
+        option: null, winner: {id: 'exceptional-rite'}, settled: true,
+        readable: [{key: 'exceptional-rite', state: 'said'}]
+      }]
+    },
+    structure: {
+      calendar: request.edition.id, translations: [],
+      masses: [mass]
+    },
+    ordinary: {
+      calendar: request.edition.id, languages: [], sections: [], slots: [], variants: []
+    }
+  }));
+  if (input.captureError) {
+    try { output = adaptFrame(); }
+    catch (error) { output = {error: String(error && error.message || error)}; }
+  } else output = adaptFrame();
+} else if (input.op === 'cross-recension') {
+  const request = {
+    schema: C.STATE_SCHEMA, entrance: 'day', civilDate: '2027-03-26',
+    edition: {id: 'requested-edition'}, calendar: {id: 'requested-edition'},
+    selectedReadableFormulary: {id: 'synthetic-mass'},
+    bible: {id: 'douay-rheims', numbering: 'vulgate'},
+    languages: {orations: 'la', ordinary: 'en'}, requestedMode: 'study',
+    options: {ordinary: true, legitimate: {}}, coverage: [],
+    unresolvedChoices: [], sourceHooks: []
+  };
+  const derived = {
+    date: request.civilDate, calendar: request.calendar.id,
+    options: [{option: null, winner: {id: 'synthetic-mass'}, settled: true,
+      readable: [{key: 'synthetic-mass', state: 'said'}]}]
+  };
+  const structure = {
+    calendar: 'requested-edition', translations: [],
+    masses: [{key: 'synthetic-mass', kind: 'contract', propers: []}]
+  };
+  const payload = {
+    date: request.civilDate, scripture: {id: request.bible.id},
+    days: [{calendar: request.calendar.id, ordinary: {calendar: 'foreign-edition'},
+      masses: []}]
+  };
+  const message = (call) => {
+    try { call(); return null; }
+    catch (error) { return String(error && error.message || error); }
+  };
+  output = {
+    dayStructure: message(() => A.adaptDay({
+      request, derived, structure: Object.assign({}, structure, {calendar: 'foreign-edition'})
+    })),
+    dayOrdinary: message(() => A.adaptDay({
+      request, derived, structure, ordinary: {calendar: 'foreign-edition'}
+    })),
+    cliStructure: message(() => A.adaptCli({
+      request, derived, payload,
+      structure: Object.assign({}, structure, {calendar: 'foreign-edition'})
+    })),
+    cliOrdinary: message(() => A.adaptCli({request, derived, payload, structure}))
+  };
+} else if (input.op === 'synthetic-ordinary-condition') {
+  const request = {
+    schema: C.STATE_SCHEMA, entrance: 'day', civilDate: '2027-03-26',
+    edition: {id: 'synthetic-condition'}, calendar: {id: 'synthetic-condition'},
+    selectedReadableFormulary: {id: 'synthetic-mass'},
+    bible: {id: 'douay-rheims', numbering: 'vulgate'},
+    languages: {orations: 'la', ordinary: 'en'}, requestedMode: 'study',
+    options: {ordinary: true, legitimate: {}}, coverage: [],
+    unresolvedChoices: [], sourceHooks: []
+  };
+  const ordinary = {
+    calendar: 'synthetic-condition',
+    languages: [{lang: 'en', absent: 'english', elements: 1, held: 1}],
+    language_coverage: [{lang: 'en', elements: 1, held: 1, missing: 0, absent: 0}],
+    relation_coverage: [{lang: 'en', relation: 'own', collation: 'not-applicable', count: 1}],
+    language_absences: [], absences: [], exclusions: [], variants: [], slots: [],
+    translations: [{lang: 'en', source_id: 'edition.synthetic.ordinary'}],
+    sections: [{key: 'conditional', elements: [{
+      key: 'conditional/element', kind: 'prayer', speaker: 'priest',
+      absent: {english: null},
+      conditions: [{kind: 'include-when-any', predicates: ['source-fact'], basis: 'source basis'}],
+      translations: [{lang: 'en', source_id: 'edition.synthetic.ordinary',
+        rights: 'public-domain', relation: 'own', collation: 'not-applicable', text: 'Held.'}]
+    }]}]
+  };
+  output = resultProjection(A.adaptDay({
+    request,
+    derived: {date: request.civilDate, calendar: request.calendar.id,
+      options: [{option: null, winner: {id: 'synthetic-mass'}, settled: true,
+        readable: [{key: 'synthetic-mass', state: 'said'}]}]},
+    structure: {calendar: request.edition.id, translations: [],
+      masses: [{key: 'synthetic-mass', kind: 'contract', propers: []}]},
+    ordinary
+  }));
+} else if (input.op === 'synthetic-ordinary-variants') {
+  const request = {
+    schema: C.STATE_SCHEMA, entrance: 'day', civilDate: '2027-03-26',
+    edition: {id: 'synthetic-variants'}, calendar: {id: 'synthetic-variants'},
+    selectedReadableFormulary: {id: 'synthetic-mass'},
+    bible: {id: 'douay-rheims', numbering: 'vulgate'},
+    languages: {orations: 'la', ordinary: 'en'}, requestedMode: 'study',
+    options: {ordinary: true, legitimate: {first: 'b', second: 'y'}},
+    coverage: [], unresolvedChoices: [], sourceHooks: []
+  };
+  const combinations = [['a', 'x'], ['a', 'y'], ['b', 'x'], ['b', 'y']];
+  const elements = combinations.map(([first, second]) => ({
+    key: 'variants/' + first + second, kind: 'prayer', speaker: 'priest',
+    absent: {english: null}, conditions: [],
+    alternatives: [{group: 'first', option: first}, {group: 'second', option: second}],
+    translations: [{lang: 'en', source_id: 'edition.synthetic.ordinary',
+      rights: 'public-domain', relation: 'own', collation: 'not-applicable',
+      text: first + second}]
+  }));
+  const ordinary = {
+    calendar: request.edition.id,
+    languages: [{lang: 'en', absent: 'english', elements: 4, held: 4}],
+    language_coverage: [{lang: 'en', elements: 4, held: 4, missing: 0, absent: 0}],
+    relation_coverage: [{lang: 'en', relation: 'own', collation: 'not-applicable', count: 4}],
+    language_absences: [], absences: [], exclusions: [], slots: [],
+    translations: [{lang: 'en', source_id: 'edition.synthetic.ordinary'}],
+    variants: [
+      {group: 'first', mode: 'one-of', options: [{id: 'a', default: true}, {id: 'b'}]},
+      {group: 'second', mode: 'one-of', options: [{id: 'x', default: true}, {id: 'y'}]}
+    ],
+    sections: [{key: 'variants', elements}]
+  };
+  output = resultProjection(A.adaptDay({
+    request,
+    derived: {date: request.civilDate, calendar: request.calendar.id,
+      options: [{option: null, winner: {id: 'synthetic-mass'}, settled: true,
+        readable: [{key: 'synthetic-mass', state: 'said'}]}]},
+    structure: {calendar: request.edition.id, translations: [],
+      masses: [{key: 'synthetic-mass', kind: 'contract', propers: []}]},
+    ordinary
+  }));
+} else if (input.op === 'browser-oration') {
+  global.window = {location: {search: ''}};
+  require('./src/web/browser/shared/browser-core.js');
+  output = global.window.Triptych.orationFor(input.proper, input.language, input.witness || null);
+} else if (input.op === 'browser-cycles') {
+  global.window = {location: {search: ''}};
+  require('./src/web/browser/shared/browser-core.js');
+  const T = global.window.Triptych;
+  output = {
+    all: T.cycleKeysOf(input.proper),
+    sunday: T.sundayCycleKeysOf(input.proper),
+    weekday: T.weekdayCycleKeysOf(input.proper),
+    selected: T.cycleOf(input.proper, input.cycle),
+    citations: T.citationsOf({propers: [input.proper]}).map((row) => row.ref)
+  };
+} else if (input.op === 'url-foundation') {
+  output = {
+    bible: C.defaultBibleId(input.bibles, input.preferred || null),
+    dayRoute: C.canonicalRoute('day', input.dayPath),
+    propersRoute: C.canonicalRoute('propers', input.propersPath)
+  };
 } else if (input.op === 'ordinary-coverage') {
   const request = input.request;
   const id = request.edition.id;
@@ -411,6 +819,42 @@ if (input.op === 'fixture-validate') {
     structure: read(base + 'propers/' + id + '.json'),
     ordinary: read(base + 'ordinary/' + id + '.json')
   }));
+} else if (input.op === 'source-ordinary-frame') {
+  const request = {
+    schema: C.STATE_SCHEMA, entrance: 'day', civilDate: input.date,
+    edition: {id: input.id}, calendar: {id: input.id},
+    selectedReadableFormulary: {id: input.mass},
+    bible: {id: 'douay-rheims', numbering: 'vulgate'},
+    languages: {orations: 'la', ordinary: 'en'}, requestedMode: 'study',
+    options: {ordinary: true, legitimate: {}}, coverage: [],
+    unresolvedChoices: [], sourceHooks: []
+  };
+  if (input.form) request.form = input.form;
+  output = resultProjection(A.adaptDay({
+    request, derived: derive(input.id, input.date),
+    structure: read(base + 'propers/' + input.id + '.json'),
+    ordinary: read(base + 'ordinary/' + input.id + '.json')
+  }));
+} else if (input.op === 'source-claim-coverage') {
+  const structure = read(base + 'propers/' + input.id + '.json');
+  const mass = structure.masses.find((one) => one.key === input.mass);
+  if (input.malformed === 'mass-status') mass.text_status.extra = true;
+  if (input.malformed === 'proper-status') {
+    mass.propers.find((proper) => proper.text_status).text_status.scope = 'whole-proper';
+  }
+  if (input.malformed === 'common-set') {
+    mass.takes_from.common_sets.orations.candidates = ['c3'];
+  }
+  const request = {
+    schema: C.STATE_SCHEMA, entrance: 'propers', civilDate: null,
+    edition: {id: input.id},
+    formulary: {id: input.mass, type: mass.kind},
+    bible: {id: 'douay-rheims', numbering: 'vulgate'},
+    languages: {orations: input.language || 'la'}, requestedMode: 'read',
+    options: {ordinary: false, legitimate: {}}, coverage: [],
+    unresolvedChoices: [], sourceHooks: []
+  };
+  output = resultProjection(A.adaptPropers({request, structure}));
 } else {
   throw new Error('unknown operation');
 }
@@ -547,6 +991,9 @@ class ContractTests(unittest.TestCase):
             state = copy.deepcopy(day)
             state[field] = value
             invalid.append(state)
+        state = copy.deepcopy(day)
+        state["form"] = "night"
+        invalid.append(state)
         for field, value in (
             ("calendar", {"id": "roman-1962"}),
             ("selectedReadableFormulary", {"id": "advent-1"}),
@@ -555,6 +1002,10 @@ class ContractTests(unittest.TestCase):
             state[field] = value
             invalid.append(state)
         state = copy.deepcopy(propers)
+        state["browse"] = {"kind": "browse-entry"}
+        invalid.append(state)
+        state = copy.deepcopy(propers)
+        state["form"] = "night"
         state["browse"] = {"kind": "browse-entry"}
         invalid.append(state)
         comparison = fixture_named("compare-day-2026-08-02")["requested"]["comparison"]
@@ -596,12 +1047,13 @@ class ContractTests(unittest.TestCase):
         self.assertEqual(
             day["hash"],
             ["date", "missal", "bible", "orations", "why", "ordinary",
-             "ordinary-lang", "rubrics", "mass", "eucharistic-prayer"],
+             "ordinary-lang", "rubrics", "mass", "form", "translation-witness",
+             "mode", "location", "eucharistic-prayer"],
         )
         self.assertEqual(
             propers["hash"],
-            ["missal", "type", "mass", "bible", "orations", "cycle",
-             "alternative", "translation-witness"],
+            ["missal", "type", "mass", "bible", "orations", "form", "cycle",
+             "alternative", "translation-witness", "mode", "location"],
         )
         self.assertEqual(day["query"], ["data"])
         self.assertEqual(propers["query"], ["data", "missals"])
@@ -632,6 +1084,26 @@ class FixtureTests(unittest.TestCase):
                 fixture["expected"]["url"] = {"legacy": "not-a-hash", "canonical": "#ok=1"}
             mutations.append(fixture)
         results = node_call({"op": "fixture-validate", "fixtures": mutations})
+        self.assertTrue(all(not result["ok"] for result in results))
+
+        unavailable = fixture_named("propers-roman-1962-advent-1")
+        unavailable_mutations = []
+        for mutation in (
+            {"held": True},
+            {"missing": False},
+            {"text": "protected text must not escape"},
+            {"sourceId": "private-source"},
+            {"source": "private-source"},
+        ):
+            fixture = copy.deepcopy(unavailable)
+            fixture["expected"]["events"][1]["selected"].update(mutation)
+            unavailable_mutations.append(fixture)
+        fixture = copy.deepcopy(unavailable)
+        fixture["expected"]["events"][1]["selected"].pop("reason")
+        unavailable_mutations.append(fixture)
+        results = node_call({
+            "op": "fixture-validate", "fixtures": unavailable_mutations,
+        })
         self.assertTrue(all(not result["ok"] for result in results))
 
     def test_fixture_validator_rejects_malformed_cycle_alternatives(self) -> None:
@@ -716,7 +1188,8 @@ class UrlContractTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.day_context = node_call({
-            "op": "context", "entrance": "day", "id": "roman-1962", "date": "2026-08-02"
+            "op": "context", "entrance": "day", "id": "roman-1962",
+            "date": "2026-08-02", "includeOrdinary": True,
         })
         cls.post_context = node_call({
             "op": "context", "entrance": "day", "id": "postconciliar", "date": "2026-11-29",
@@ -739,6 +1212,93 @@ class UrlContractTests(unittest.TestCase):
         else:
             defaults.update({"type": request["formulary"]["type"], "mass": request["formulary"]["id"]})
         return defaults
+
+    def test_mode_location_routes_and_bible_default_are_canonical_and_order_free(self) -> None:
+        rows = [{"id": "world-english-bible-catholic"}, {"id": "douay-rheims"}]
+        forward = node_call({
+            "op": "url-foundation", "bibles": rows,
+            "dayPath": "/prefix/liturgy/day-reader.html",
+            "propersPath": "/prefix/liturgy/propers-reader.html",
+        })
+        reverse = node_call({
+            "op": "url-foundation", "bibles": list(reversed(rows)),
+            "dayPath": "/prefix/liturgy/day-reader.html",
+            "propersPath": "/prefix/liturgy/propers-reader.html",
+        })
+        self.assertEqual(forward, reverse)
+        self.assertEqual(forward["bible"], "douay-rheims")
+        self.assertEqual(forward["dayRoute"], "/prefix/liturgy/day.html")
+        self.assertEqual(forward["propersRoute"], "/prefix/liturgy/index.html")
+
+        fallback = node_call({
+            "op": "url-foundation", "bibles": [{"id": "z"}, {"id": "a"}],
+            "dayPath": "/unrelated", "propersPath": "/unrelated",
+        })
+        self.assertEqual(fallback["bible"], "a")
+        self.assertEqual(fallback["dayRoute"], "/unrelated")
+        self.assertEqual(fallback["propersRoute"], "/unrelated")
+
+    def test_mode_and_semantic_location_round_trip_and_legacy_ordinary_canonicalizes(self) -> None:
+        legacy = node_call({
+            "op": "url", "entrance": "day",
+            "hash": (
+                "#date=2026-08-02&missal=roman-1962&bible=douay-rheims&"
+                "orations=la&ordinary=1&location=proper%2Froman-1962%2Fadvent-1%2F001"
+            ),
+            "context": self.day_context,
+            "defaults": {"date": "2026-08-02", "missal": "roman-1962",
+                         "bible": "douay-rheims", "orations": "la",
+                         "why": "0", "ordinary": "0", "ordinary-lang": "en",
+                         "rubrics": "1"},
+        })
+        self.assertTrue(legacy["normalized"]["ok"], legacy["normalized"]["errors"])
+        state = legacy["normalized"]["state"]
+        self.assertEqual(state["requestedMode"], "missal")
+        self.assertTrue(state["options"]["ordinary"])
+        self.assertEqual(
+            state["semanticLocation"],
+            {"eventId": "proper/roman-1962/advent-1/001"},
+        )
+        self.assertIn("mode=missal", legacy["serialized"])
+        self.assertIn("ordinary-lang=en", legacy["serialized"])
+        self.assertIn("location=proper%2Froman-1962%2Fadvent-1%2F001", legacy["serialized"])
+        self.assertNotIn("ordinary=", legacy["serialized"])
+        self.assertEqual(legacy["renormalized"]["state"], state)
+
+        propers = node_call({
+            "op": "url", "entrance": "propers",
+            "hash": (
+                "#missal=roman-1962&type=seasonal&mass=advent-1&"
+                "bible=douay-rheims&orations=la&mode=read&"
+                "location=proper%2Froman-1962%2Fadvent-1%2F003"
+            ),
+            "context": self.propers_context,
+            "defaults": {"missal": "roman-1962", "type": "seasonal",
+                         "mass": "advent-1", "bible": "douay-rheims", "orations": "la"},
+        })
+        self.assertTrue(propers["normalized"]["ok"], propers["normalized"]["errors"])
+        self.assertEqual(propers["normalized"]["state"]["requestedMode"], "read")
+        self.assertEqual(
+            propers["normalized"]["state"]["semanticLocation"]["eventId"],
+            "proper/roman-1962/advent-1/003",
+        )
+        self.assertEqual(propers["reserialized"], propers["serialized"])
+
+        conflict = node_call({
+            "op": "url", "entrance": "day",
+            "hash": (
+                "#date=2026-08-02&missal=roman-1962&bible=douay-rheims&"
+                "orations=la&mode=read&ordinary=1"
+            ),
+            "context": self.day_context,
+            "defaults": {"date": "2026-08-02", "missal": "roman-1962",
+                         "bible": "douay-rheims", "orations": "la"},
+        })
+        self.assertFalse(conflict["normalized"]["ok"])
+        self.assertIn(
+            "conflicting-explicit-mode",
+            [one["code"] for one in conflict["normalized"]["errors"]],
+        )
 
     def test_every_real_legacy_fixture_round_trips_canonically(self) -> None:
         for name, context in (
@@ -765,7 +1325,7 @@ class UrlContractTests(unittest.TestCase):
         day_hash = (
             "#date=2026-11-29&missal=postconciliar&bible=douay-rheims&orations=en&"
             "why=1&ordinary=1&ordinary-lang=en&rubrics=0&mass=advent-1&"
-            "eucharistic-prayer=ep-ii"
+            "translation-witness=witness-english&eucharistic-prayer=ep-ii"
         )
         day = node_call({
             "op": "url", "entrance": "day", "hash": day_hash,
@@ -780,12 +1340,19 @@ class UrlContractTests(unittest.TestCase):
         self.assertEqual(state["civilDate"], "2026-11-29")
         self.assertEqual(state["edition"]["id"], "postconciliar")
         self.assertEqual(state["bible"]["id"], "douay-rheims")
-        self.assertEqual(state["languages"], {"orations": "en", "ordinary": "en"})
+        self.assertEqual(state["languages"], {
+            "orations": "en", "ordinary": "en",
+            "translationWitness": "witness-english",
+        })
         self.assertEqual(state["apparatus"], {"why": True, "rubrics": False})
         self.assertTrue(state["options"]["ordinary"])
         self.assertEqual(state["options"]["legitimate"]["eucharistic-prayer"], "ep-ii")
         self.assertEqual(state["selectedReadableFormulary"]["id"], "advent-1")
-        self.assertEqual(day["serialized"], day_hash)
+        self.assertEqual(day["serialized"], (
+            "#date=2026-11-29&missal=postconciliar&bible=douay-rheims&orations=en&"
+            "mode=missal&why=1&ordinary-lang=en&rubrics=0&mass=advent-1&"
+            "translation-witness=witness-english&eucharistic-prayer=ep-ii"
+        ))
         self.assertEqual(day["renormalized"]["state"], state)
 
         propers_hash = (
@@ -802,7 +1369,7 @@ class UrlContractTests(unittest.TestCase):
         self.assertEqual(propers["normalized"]["state"]["formulary"],
                          {"id": "advent-1", "type": "seasonal"})
         self.assertEqual(propers["normalized"]["state"]["languages"]["orations"], "en")
-        self.assertEqual(propers["serialized"], propers_hash)
+        self.assertEqual(propers["serialized"], propers_hash + "&mode=read")
         self.assertEqual(propers["renormalized"]["state"], propers["normalized"]["state"])
 
     def test_propers_public_choice_keys_round_trip_canonically(self) -> None:
@@ -830,8 +1397,13 @@ class UrlContractTests(unittest.TestCase):
         self.assertEqual(state["cycle"], "B")
         self.assertEqual(state["alternative"], {"id": "option-b"})
         self.assertEqual(state["languages"]["translationWitness"], "witness-english")
-        self.assertEqual(result["serialized"], url)
-        self.assertEqual(result["reserialized"], url)
+        canonical = (
+            "#missal=roman-1962&type=seasonal&mass=advent-1&"
+            "bible=douay-rheims&orations=en&mode=read&cycle=B&alternative=option-b&"
+            "translation-witness=witness-english"
+        )
+        self.assertEqual(result["serialized"], canonical)
+        self.assertEqual(result["reserialized"], canonical)
         self.assertEqual(result["renormalized"]["state"], state)
         self.assertNotIn("_", result["serialized"])
         self.assertNotIn("_candidate", CONTRACT.read_text(encoding="utf-8"))
@@ -874,7 +1446,10 @@ class UrlContractTests(unittest.TestCase):
             "variantKeys": ["eucharistic-prayer"],
         })
         self.assertTrue(result["normalized"]["ok"])
-        self.assertEqual(result["serialized"], explicit)
+        self.assertEqual(result["serialized"], (
+            "#date=2026-08-02&missal=roman-1962&bible=douay-rheims&orations=la&"
+            "mode=read&why=0&ordinary-lang=en&rubrics=1"
+        ))
         self.assertEqual(result["renormalized"]["state"], result["normalized"]["state"])
 
         storage_defaults = node_call({
@@ -887,6 +1462,24 @@ class UrlContractTests(unittest.TestCase):
         self.assertTrue(storage_defaults["normalized"]["ok"])
         self.assertEqual(storage_defaults["normalized"]["legacy"]["sources"]["missal"],
                          "repository-default")
+
+        selected_without_language = node_call({
+            "op": "url", "entrance": "day",
+            "hash": (
+                "#date=2026-08-02&missal=roman-1962&bible=douay-rheims&"
+                "ordinary=1"
+            ),
+            "context": self.day_context,
+            "defaults": {
+                key: value for key, value in defaults.items()
+                if key != "ordinary-lang"
+            },
+        })
+        self.assertFalse(selected_without_language["normalized"]["ok"])
+        self.assertIn(
+            "required-url-value",
+            {error["code"] for error in selected_without_language["normalized"]["errors"]},
+        )
 
     @staticmethod
     def probe_storage_free() -> dict:
@@ -986,6 +1579,70 @@ class UrlContractTests(unittest.TestCase):
 
 
 class ParityTests(unittest.TestCase):
+    def optional_day_request(self, date: str, selected: str | None = None) -> dict:
+        request = copy.deepcopy(fixture_named("day-postconciliar-2026-11-29")["requested"])
+        request["civilDate"] = date
+        request["options"]["ordinary"] = False
+        if selected is None:
+            request.pop("selectedReadableFormulary", None)
+        else:
+            request["selectedReadableFormulary"] = {"id": selected}
+        return request
+
+    def optional_day_payload(self, date: str) -> dict:
+        run = subprocess.run(
+            [
+                str(MASS_TODAY), "show", "--date", date,
+                "--calendar", "postconciliar", "--bible", "douay-rheims",
+                "--expanded", "--why", "--format", "json",
+            ],
+            capture_output=True,
+            text=True,
+            cwd=ROOT,
+            check=False,
+        )
+        self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
+        return json.loads(run.stdout)
+
+    def territory_payload(self, date: str, territory: str | None = None) -> dict:
+        command = [
+            str(MASS_TODAY), "show", "--date", date,
+            "--calendar", "postconciliar", "--bible", "douay-rheims",
+            "--expanded", "--why", "--format", "json",
+        ]
+        if territory is not None:
+            command.extend(["--territory", territory])
+        run = subprocess.run(
+            command, capture_output=True, text=True, cwd=ROOT, check=False,
+        )
+        self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
+        return json.loads(run.stdout)
+
+    def form_payload(self, date: str, form: str) -> dict:
+        run = subprocess.run(
+            [
+                str(MASS_TODAY), "show", "--date", date,
+                "--calendar", "roman-1962", "--bible", "douay-rheims",
+                "--ordinary", "--expanded", "--why", "--form", form,
+                "--format", "json",
+            ],
+            capture_output=True, text=True, cwd=ROOT, check=False,
+        )
+        self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
+        return json.loads(run.stdout)
+
+    def historical_payload(self, date: str) -> dict:
+        run = subprocess.run(
+            [
+                str(MASS_TODAY), "show", "--date", date,
+                "--calendar", "roman-pre-1955", "--bible", "douay-rheims",
+                "--ordinary", "--expanded", "--why", "--format", "json",
+            ],
+            capture_output=True, text=True, cwd=ROOT, check=False,
+        )
+        self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
+        return json.loads(run.stdout)
+
     def test_source_ordinals_slots_and_translation_choices_are_stable(self) -> None:
         latin = node_call({"op": "synthetic-propers", "language": "la"})
         proper_events = [one for one in latin["events"] if one["kind"] == "proper"]
@@ -1015,14 +1672,568 @@ class ParityTests(unittest.TestCase):
                 ["witness-a", "witness-b"],
             )
 
+        direct = node_call({
+            "op": "browser-oration", "language": "en", "proper": {
+                "text": "Latin body",
+                "translations": [
+                    {"lang": "en", "source_id": "witness-b", "text": "B"},
+                    {"lang": "en", "source_id": "witness-a", "text": "A"},
+                ],
+            },
+        })
+        self.assertEqual(direct["availability"], "choice-required")
+        self.assertEqual(direct["reason"], "translation-choice-required")
+        self.assertIsNone(direct["text"])
+        self.assertIsNone(direct["source"])
+
+        explicit = node_call({
+            "op": "synthetic-propers", "language": "en",
+            "translationWitness": "witness-a",
+        })
+        selected = next(
+            one for one in explicit["events"] if one["editionSlotLabel"] == "Collect"
+        )["selected"]
+        self.assertEqual(selected["availability"], "held")
+        self.assertEqual(selected["sourceId"], "witness-a")
+        with self.assertRaisesRegex(AssertionError, "translation witness"):
+            node_call({
+                "op": "synthetic-propers", "language": "en",
+                "translationWitness": "not-held",
+            })
+        with self.assertRaisesRegex(AssertionError, "Latin source language"):
+            node_call({
+                "op": "synthetic-propers", "language": "la",
+                "translationWitness": "witness-a",
+            })
+
+    def test_explicit_ordinary_witness_must_be_held_by_selected_elements(self) -> None:
+        request = copy.deepcopy(
+            fixture_named("day-roman-1962-2026-08-02")["requested"]
+        )
+        request["requestedMode"] = "study"
+        request["options"]["ordinary"] = True
+        request["languages"]["ordinary"] = "en"
+        ordinary = json.loads(
+            (DATA / "structure/ordinary/roman-1962.json").read_text(encoding="utf-8")
+        )
+        witness = ordinary["translations"][0]["source_id"]
+        request["languages"]["ordinaryWitness"] = witness
+        result = node_call({"op": "ordinary-coverage", "request": request})
+        ordinary_events = [
+            event for event in result["events"] if event["kind"] == "ordinary-element"
+        ]
+        self.assertTrue(ordinary_events)
+        self.assertTrue(any(event["selected"]["sourceId"] == witness
+                            for event in ordinary_events))
+
+        request["languages"]["ordinaryWitness"] = "not-held"
+        with self.assertRaisesRegex(AssertionError, "Ordinary witness"):
+            node_call({"op": "ordinary-coverage", "request": request})
+
+    def test_ordinary_antecedent_witness_is_never_reported_complete(self) -> None:
+        request = copy.deepcopy(
+            fixture_named("day-roman-1962-2026-08-02")["requested"]
+        )
+        request["requestedMode"] = "study"
+        request["options"]["ordinary"] = True
+        request["languages"]["ordinary"] = "en"
+        result = node_call({"op": "ordinary-coverage", "request": request})
+        coverage = next(
+            row for row in result["coverage"]
+            if row["scope"] == "ordinary:roman-1962:en"
+        )
+        self.assertEqual(coverage["state"], "supported")
+        self.assertEqual(coverage["completeness"], "partial")
+        relation = next(
+            reason for reason in coverage["reasons"]
+            if reason["kind"] == "partial-recension" and
+            reason.get("domain") == "ordinary"
+        )
+        self.assertEqual(relation["relation"], "antecedent")
+        self.assertEqual(relation["collation"], "uncollated")
+        self.assertTrue(coverage["exclusions"])
+        for exclusion in coverage["exclusions"]:
+            self.assertEqual(exclusion["state"], "not-in-target-recension")
+            self.assertTrue(exclusion["basis"])
+            self.assertTrue(exclusion["sources"])
+            self.assertTrue(all(isinstance(source, str) and source
+                                for source in exclusion["sources"]))
+            self.assertTrue(exclusion["evidence"])
+            self.assertNotIn('"text"', json.dumps(exclusion["evidence"]))
+        event = next(
+            event for event in result["events"]
+            if event["kind"] == "ordinary-element" and
+            event["selected"]["availability"] == "held"
+        )
+        self.assertEqual(event["selected"]["relation"], "antecedent")
+        self.assertEqual(event["selected"]["collation"], "uncollated")
+
+    def test_ordinary_unavailable_language_preserves_typed_absence_states(self) -> None:
+        request = copy.deepcopy(
+            fixture_named("day-postconciliar-2026-11-29")["requested"]
+        )
+        request["requestedMode"] = "study"
+        request["options"]["ordinary"] = True
+        request["languages"]["ordinary"] = "en"
+        result = node_call({"op": "ordinary-coverage", "request": request})
+        coverage = next(
+            row for row in result["coverage"]
+            if row["scope"] == "ordinary:postconciliar:en"
+        )
+        self.assertEqual(coverage["state"], "unavailable")
+        self.assertNotIn("language-missing", {
+            reason["kind"] for reason in coverage["reasons"]
+        })
+        restricted = next(
+            reason for reason in coverage["reasons"]
+            if reason.get("sourceState") == "rights-restricted"
+        )
+        self.assertEqual(restricted["kind"], "text-withheld")
+        self.assertEqual(restricted["sourceKind"], "rights-withheld")
+        self.assertGreater(restricted["count"], 0)
+        unavailable = next(
+            reason for reason in coverage["reasons"]
+            if reason.get("sourceState") == "unavailable"
+        )
+        self.assertEqual(unavailable["kind"], "text-not-held")
+        applicability = next(
+            reason for reason in coverage["reasons"]
+            if reason.get("sourceKind") == "applicability-unresolved"
+        )
+        self.assertEqual(applicability["sourceState"], "unresolved")
+        self.assertEqual(
+            [row["element"] for row in result["ordinaryUnresolved"]],
+            ["ritus-initiales/gloria-in-excelsis"],
+        )
+        self.assertIn(
+            "ordinary-element/symbolum/symbolum-nicaenum",
+            {event["id"] for event in result["events"]},
+        )
+
+        event = next(
+            event for event in result["events"]
+            if event["kind"] == "ordinary-element" and
+            event["selected"]["absenceKey"] ==
+            "approved-english-publication-restriction"
+        )
+        selected = event["selected"]
+        self.assertEqual(selected["availability"], "unavailable")
+        self.assertFalse(selected["held"])
+        self.assertEqual(selected["reason"], "rights-restricted")
+        self.assertEqual(selected["unavailableState"], "rights-restricted")
+        self.assertIsNone(selected["sourceId"])
+        self.assertIsNone(selected["text"])
+
+    def test_unmodelled_preface_and_local_solemnity_facts_stay_unresolved(self) -> None:
+        request = copy.deepcopy(
+            fixture_named("day-postconciliar-2026-11-29")["requested"]
+        )
+        request["requestedMode"] = "study"
+        request["options"]["ordinary"] = True
+        request["options"]["legitimate"]["eucharistic-prayer"] = "ep-iv"
+        request["languages"]["ordinary"] = "en"
+        result = node_call({"op": "ordinary-coverage", "request": request})
+        unresolved = {
+            row["element"]: row["condition"]
+            for row in result["ordinaryUnresolved"]
+        }
+        self.assertIn("ritus-initiales/gloria-in-excelsis", unresolved)
+        self.assertIn("particular-celebration-of-more-solemn-character",
+                      unresolved["ritus-initiales/gloria-in-excelsis"]["predicates"])
+        self.assertEqual(
+            unresolved["prex-eucharistica/prex-eucharistica-iv"]["predicates"],
+            ["mass-has-no-proper-preface"],
+        )
+        event_ids = {event["id"] for event in result["events"]}
+        self.assertNotIn(
+            "ordinary-element/prex-eucharistica/prex-eucharistica-iv",
+            event_ids,
+        )
+
+    def test_day_and_cli_reject_cross_recension_structure_and_ordinary(self) -> None:
+        result = node_call({"op": "cross-recension"})
+        self.assertRegex(result["dayStructure"], r"structure.*requested edition")
+        self.assertRegex(result["dayOrdinary"], r"Ordinary.*requested edition")
+        self.assertRegex(result["cliStructure"], r"structure.*requested edition")
+        self.assertRegex(result["cliOrdinary"], r"Ordinary.*requested edition")
+
+    def test_unknown_ordinary_applicability_is_suppressed_and_typed(self) -> None:
+        result = node_call({"op": "synthetic-ordinary-condition"})
+        self.assertEqual(result["events"], [])
+        self.assertEqual(len(result["ordinaryUnresolved"]), 1)
+        unresolved = result["ordinaryUnresolved"][0]
+        self.assertEqual(unresolved["kind"], "ordinary-unresolved")
+        self.assertEqual(unresolved["state"], "unresolved")
+        self.assertEqual(unresolved["element"], "conditional/element")
+        self.assertEqual(unresolved["condition"]["kind"], "include-when-any")
+        coverage = next(
+            row for row in result["coverage"] if row["scope"].startswith("ordinary:")
+        )
+        self.assertEqual(coverage["state"], "supported")
+        self.assertEqual(coverage["completeness"], "partial")
+        reason = next(
+            row for row in coverage["reasons"]
+            if row.get("sourceKind") == "applicability-unresolved"
+        )
+        self.assertEqual(reason["sourceState"], "unresolved")
+        self.assertEqual(reason["elements"], ["conditional/element"])
+
+    def test_all_ordinary_variant_groups_are_selected_without_concatenation(self) -> None:
+        result = node_call({"op": "synthetic-ordinary-variants"})
+        elements = [
+            event for event in result["events"] if event["kind"] == "ordinary-element"
+        ]
+        self.assertEqual([event["id"] for event in elements], [
+            "ordinary-element/variants/by",
+        ])
+        self.assertEqual(elements[0]["selected"]["text"], "by")
+        self.assertEqual(result["ordinaryUnresolved"], [])
+
+    def test_rights_restricted_translation_is_typed_and_never_leaks(self) -> None:
+        result = node_call({
+            "op": "synthetic-propers", "language": "en", "rightsRestricted": True,
+        })
+        collect = next(one for one in result["events"] if one["editionSlotLabel"] == "Collect")
+        selected = collect["selected"]
+        self.assertEqual(selected["availability"], "unavailable")
+        self.assertEqual(selected["reason"], "rights-restricted")
+        self.assertEqual(selected["unavailableState"], "rights-restricted")
+        self.assertFalse(selected["held"])
+        self.assertTrue(selected["missing"])
+        self.assertIsNone(selected["text"])
+        self.assertIsNone(selected["sourceId"])
+        self.assertIsNone(selected["rights"])
+        serialized = json.dumps(result)
+        self.assertNotIn("protected-witness-must-not-escape", serialized)
+        self.assertNotIn("protected exact wording must not escape", serialized)
+        reasons = [reason["kind"] for row in result["coverage"] for reason in row["reasons"]]
+        self.assertIn("text-withheld", reasons)
+        self.assertNotIn("translation-missing", reasons)
+
+        proper = {
+            "text": "safe source Latin",
+            "translations": [],
+            "unavailable_translations": [{
+                "lang": "en", "state": "rights-restricted",
+                "source_id": "protected-witness-must-not-escape",
+                "text": "protected exact wording must not escape",
+            }],
+        }
+        direct = node_call({"op": "browser-oration", "proper": proper, "language": "en"})
+        self.assertEqual(direct["availability"], "unavailable")
+        self.assertEqual(direct["reason"], "rights-restricted")
+        self.assertIsNone(direct["text"])
+        self.assertIsNone(direct["source"])
+        self.assertNotIn("protected", json.dumps(direct))
+
+        corpus_gap = node_call({
+            "op": "browser-oration",
+            "proper": {"text": "safe source Latin", "translations": []},
+            "language": "en",
+        })
+        self.assertNotEqual(corpus_gap.get("reason"), "rights-restricted")
+
+        latin = node_call({
+            "op": "synthetic-propers", "language": "la", "latinWithheld": True,
+        })
+        selected_latin = next(
+            one for one in latin["events"] if one["editionSlotLabel"] == "Collect"
+        )["selected"]
+        self.assertEqual(selected_latin["availability"], "unavailable")
+        self.assertEqual(selected_latin["reason"], "latin-withheld")
+        self.assertEqual(selected_latin["unavailableState"], "unavailable")
+        self.assertFalse(selected_latin["held"])
+        self.assertTrue(selected_latin["missing"])
+        self.assertIsNone(selected_latin["text"])
+        self.assertNotIn("protected-latin", json.dumps(latin))
+        latin_coverage = next(
+            row for row in latin["coverage"] if row["scope"] == "proper-original:la"
+        )
+        self.assertEqual(latin_coverage, {
+            "state": "unavailable",
+            "scope": "proper-original:la",
+            "reasons": [{"kind": "text-withheld", "count": 1}],
+        })
+        self.assertNotIn(
+            "proper-translation:la", [row["scope"] for row in latin["coverage"]]
+        )
+        with self.assertRaises(AssertionError):
+            node_call({
+                "op": "synthetic-propers",
+                "language": "la",
+                "latinWithheld": True,
+                "malformedLatin": {"held": True},
+            })
+
+        browser_latin = node_call({
+            "op": "browser-oration",
+            "proper": {
+                "text": "protected Latin words must not escape",
+                "latin": {
+                    "withheld": True,
+                    "retained": True,
+                    "state": "rights-restricted",
+                },
+            },
+            "language": "la",
+        })
+        self.assertEqual(browser_latin["availability"], "unavailable")
+        self.assertFalse(browser_latin["held"])
+        self.assertIsNone(browser_latin["text"])
+        self.assertNotIn("protected Latin words", json.dumps(browser_latin))
+        browser_source = BROWSER_CORE.read_text(encoding="utf-8")
+        self.assertEqual(browser_source.count("'Latin text unavailable'"), 2)
+        self.assertNotIn("Latin body is unavailable for public display", browser_source)
+
+    def test_browser_typed_proper_body_absence_never_becomes_empty_text(self) -> None:
+        proper = {
+            "name": "Collect",
+            "text": None,
+            "text_status": {
+                "state": "unavailable",
+                "scope": "proper-body",
+                "reasons": [{"kind": "witness-gap"}],
+            },
+            "translations": [],
+        }
+
+        latin = node_call({
+            "op": "browser-oration", "proper": proper, "language": "la",
+        })
+        self.assertEqual(latin["availability"], "unavailable")
+        self.assertEqual(latin["reason"], "latin-unavailable")
+        self.assertEqual(latin["lang"], "la")
+        self.assertTrue(latin["missing"])
+        self.assertFalse(latin["held"])
+        self.assertIsNone(latin["text"])
+        self.assertIsNone(latin["source"])
+
+        english_proper = copy.deepcopy(proper)
+        english_proper["untranslated"] = [{
+            "lang": "en",
+            "state": "unavailable",
+            "target": {"extent": "body"},
+        }]
+        english = node_call({
+            "op": "browser-oration", "proper": english_proper, "language": "en",
+        })
+        self.assertEqual(english.get("availability"), "unavailable")
+        self.assertEqual(english.get("reason"), "text-unavailable")
+        self.assertEqual(english.get("lang"), "en")
+        self.assertTrue(english.get("missing"))
+        self.assertFalse(english.get("held"))
+        self.assertIsNone(english.get("text"))
+        self.assertIsNone(english.get("source"))
+        self.assertNotEqual(english.get("lang"), "la")
+
+    def test_browser_typed_body_absence_preserves_english_rights_reason(self) -> None:
+        proper = {
+            "name": "Collect",
+            "text": None,
+            "text_status": {
+                "state": "unavailable",
+                "scope": "proper-body",
+                "reasons": [{"kind": "witness-gap"}],
+            },
+            "translations": [],
+            "unavailable_translations": [{
+                "lang": "en",
+                "state": "rights-restricted",
+                "target": {"extent": "body"},
+            }],
+        }
+
+        english = node_call({
+            "op": "browser-oration", "proper": proper, "language": "en",
+        })
+        self.assertEqual(english["availability"], "unavailable")
+        self.assertEqual(english["reason"], "rights-restricted")
+        self.assertEqual(english["unavailableState"], "rights-restricted")
+        self.assertEqual(english["lang"], "en")
+        self.assertTrue(english["missing"])
+        self.assertFalse(english["held"])
+        self.assertIsNone(english["text"])
+        self.assertIsNone(english["source"])
+
+    def test_browser_typed_body_absence_without_english_ledger_is_unavailable(self) -> None:
+        proper = {
+            "name": "Collect",
+            "text": None,
+            "text_status": {
+                "state": "unavailable",
+                "scope": "proper-body",
+                "reasons": [{"kind": "witness-gap"}],
+            },
+            "translations": [],
+        }
+
+        english = node_call({
+            "op": "browser-oration", "proper": proper, "language": "en",
+        })
+        self.assertEqual(english["availability"], "unavailable")
+        self.assertEqual(english["reason"], "text-unavailable")
+        self.assertEqual(english["lang"], "en")
+        self.assertTrue(english["missing"])
+        self.assertFalse(english["held"])
+        self.assertIsNone(english["text"])
+        self.assertIsNone(english["source"])
+        self.assertNotEqual(english["lang"], "la")
+
     def test_missing_ordinary_language_is_explicitly_unavailable(self) -> None:
         request = copy.deepcopy(fixture_named("day-roman-1962-2026-08-02")["requested"])
+        request["requestedMode"] = "missal"
         request["options"]["ordinary"] = True
         request["languages"]["ordinary"] = "zz-contract-unheld"
         result = node_call({"op": "ordinary-coverage", "request": request})
         row = next(one for one in result["coverage"] if one["scope"].startswith("ordinary:"))
         self.assertEqual(row["state"], "unavailable")
         self.assertEqual(row["reasons"][0]["kind"], "language-missing")
+
+    def test_ordinary_frame_producers_share_the_fail_closed_contract(self) -> None:
+        self.assertEqual(
+            MASS_TODAY_MODULE.validated_ordinary_frame(),
+            {"applicability": "full"},
+        )
+        accepted = (
+            {"applicability": "full"},
+            {"applicability": "full", "basis": "source basis"},
+            {"applicability": "none", "basis": "source basis"},
+            {"applicability": "unavailable", "basis": "source basis"},
+        )
+        validators = (
+            MASS_TODAY_MODULE.validated_ordinary_frame,
+            MASS_PROPERS_MODULE.public_ordinary_frame,
+        )
+        for validator in validators:
+            for frame in accepted:
+                with self.subTest(validator=validator.__module__, accepted=frame):
+                    self.assertEqual(validator(frame), frame)
+
+        malformed = (
+            None,
+            False,
+            [],
+            "full",
+            {},
+            {"basis": "source"},
+            {1: "source"},
+            {"applicability": "invented"},
+            {"applicability": "none"},
+            {"applicability": "none", "basis": ""},
+            {"applicability": "none", "basis": "   "},
+            {"applicability": "none", "basis": 123},
+            {"applicability": "unavailable"},
+            {"applicability": "full", "basis": ""},
+            {"applicability": "full", "basis": "   "},
+            {"applicability": "full", "basis": 123},
+            {"applicability": "full", "basis": "source", "extra": True},
+        )
+        for validator in validators:
+            for frame in malformed:
+                with self.subTest(validator=validator.__module__, malformed=frame):
+                    with self.assertRaises((ValueError, MASS_TODAY_MODULE.Refused)):
+                        validator(frame)
+
+    def test_mass_today_withheld_latin_capability_uses_public_unavailable_state(self) -> None:
+        proper = {
+            "name": "Collect",
+            "text": None,
+            "latin": {
+                "withheld": True,
+                "held": False,
+                "available": False,
+                "state": "unavailable",
+                "target": "Collect",
+            },
+        }
+        self.assertEqual(
+            MASS_TODAY_MODULE.language_projection(proper, "la", None),
+            {
+                "requested": "la",
+                "status": "unavailable",
+                "held": False,
+                "available": False,
+                "complete": False,
+                "reason": {"state": "text-withheld", "lang": "la"},
+            },
+        )
+        for mutation in ({"held": True}, {"available": True}, {"state": "private"}):
+            malformed = copy.deepcopy(proper)
+            malformed["latin"].update(mutation)
+            with self.subTest(mutation=mutation), self.assertRaises(
+                MASS_TODAY_MODULE.Refused
+            ):
+                MASS_TODAY_MODULE.language_projection(malformed, "la", None)
+        malformed = copy.deepcopy(proper)
+        malformed["text"] = "private Latin body"
+        with self.assertRaises(MASS_TODAY_MODULE.Refused):
+            MASS_TODAY_MODULE.language_projection(malformed, "la", None)
+
+    def test_exceptional_rites_never_borrow_or_seat_the_ordinary_frame(self) -> None:
+        expected = {
+            "none": ("absent", "semantic-absence"),
+            "unavailable": ("unavailable", "text-not-held"),
+        }
+        for applicability, (state, reason) in expected.items():
+            with self.subTest(applicability=applicability):
+                result = node_call({
+                    "op": "synthetic-ordinary-frame",
+                    "applicability": applicability,
+                })
+                self.assertEqual(result["events"], [])
+                frame = next(
+                    row for row in result["coverage"]
+                    if row["scope"].startswith("ordinary-frame:")
+                )
+                self.assertEqual(frame["state"], state)
+                self.assertEqual(frame["reasons"], [{
+                    "kind": reason,
+                    "basis": "source-owned frame basis",
+                    "applicability": applicability,
+                }])
+
+        with self.assertRaisesRegex(AssertionError, "no usable semantic Ordinary seat"):
+            node_call({
+                "op": "synthetic-ordinary-frame", "applicability": "full",
+                "properName": "Collect",
+            })
+
+        accepted = (
+            {"frame": {"applicability": "none", "basis": "source basis"}},
+            {"frame": {"applicability": "unavailable", "basis": "source basis"}},
+        )
+        for case in accepted:
+            with self.subTest(accepted=case):
+                result = node_call({
+                    "op": "synthetic-ordinary-frame", "properName": "Collect", **case,
+                })
+                self.assertNotIn("error", result)
+
+        malformed = (
+            None,
+            False,
+            [],
+            "full",
+            {},
+            {"basis": "source"},
+            {"applicability": "invented"},
+            {"applicability": "none"},
+            {"applicability": "none", "basis": ""},
+            {"applicability": "none", "basis": "   "},
+            {"applicability": "none", "basis": 123},
+            {"applicability": "unavailable"},
+            {"applicability": "full", "basis": ""},
+            {"applicability": "full", "basis": "   "},
+            {"applicability": "full", "basis": 123},
+            {"applicability": "full", "basis": "source", "extra": True},
+        )
+        for frame in malformed:
+            with self.subTest(frame=frame):
+                refused = node_call({
+                    "op": "synthetic-ordinary-frame", "frame": frame,
+                    "captureError": True,
+                })
+                self.assertRegex(refused["error"], r"Ordinary.frame|Ordinary-frame|source basis")
 
     def test_real_day_and_propers_fixtures_match_current_semantics(self) -> None:
         for name in (
@@ -1039,6 +2250,48 @@ class ParityTests(unittest.TestCase):
             assert_subset(self, expected["events"], actual["events"], name + ".events")
             self.assertEqual(actual["coverage"], expected["coverage"], name)
             self.assertEqual(actual["explicitAbsences"], expected["explicitAbsences"], name)
+
+    def test_inherited_pre_1955_propers_are_partial_not_complete(self) -> None:
+        request = copy.deepcopy(
+            fixture_named("propers-roman-1962-advent-1")["requested"]
+        )
+        request["edition"] = {"id": "roman-pre-1955"}
+
+        result = node_call({
+            "op": "adapt-fixture",
+            "fixture": {"requested": request},
+        })
+        formulary = next(
+            row for row in result["coverage"]
+            if row["scope"] == "formulary:advent-1"
+        )
+        self.assertEqual(formulary, {
+            "state": "supported",
+            "scope": "formulary:advent-1",
+            "completeness": "partial",
+            "reasons": [{
+                "kind": "partial-recension",
+                "recensionStatus": "structural-only",
+                "domain": "propers",
+                "domainState": "none",
+                "sourceCalendar": "roman-1962",
+                "inheritanceStatus": "uncollated",
+            }, {
+                "kind": "text-not-held",
+                "count": 3,
+                "repositoryTerm": "proper-body",
+                "claims": [
+                    {"proper": "Collect", "cycle": None},
+                    {"proper": "Secret", "cycle": None},
+                    {"proper": "Postcommunion", "cycle": None},
+                ],
+            }],
+        })
+        self.assertFalse(any(
+            row.get("scope") == "formulary:advent-1"
+            and row.get("completeness") == "complete"
+            for row in result["coverage"]
+        ))
 
     def test_propers_cycles_are_structured_not_merged_or_order_selected(self) -> None:
         fixture = fixture_named("propers-postconciliar-transfiguration-cycles")
@@ -1098,16 +2351,452 @@ class ParityTests(unittest.TestCase):
         explicit = node_call({"op": "synthetic-composed-cycles", "cycle": "B"})
         self.assertEqual(explicit["events"][0]["selected"]["text"], "contract-material-B")
 
+        translated = node_call({
+            "op": "synthetic-composed-cycles", "translationOnly": True, "cycle": "B",
+        })
+        selected = translated["events"][0]["selected"]
+        self.assertEqual(selected["availability"], "held")
+        self.assertEqual(selected["sourceId"], "witness-cycle-B")
+        self.assertEqual(selected["text"], "translated-cycle-B")
+
+    def test_day_cycle_families_are_independent_order_free_and_mixed_fails_closed(self) -> None:
+        for family, lectionary, cycle, dimension, references in (
+            ("sunday", {"sunday": "A", "weekday": "II"}, "A", "sunday", ["Sunday A"]),
+            ("sunday", {"sunday": "B", "weekday": "I"}, "B", "sunday", ["Sunday B"]),
+            ("weekday", {"sunday": "A", "weekday": "II"}, "II", "weekday", ["Weekday II"]),
+            ("weekday", {"sunday": "B", "weekday": "I"}, "I", "weekday", ["Weekday I"]),
+        ):
+            forward = node_call({
+                "op": "synthetic-day-cycle", "family": family, "lectionary": lectionary,
+            })
+            reverse = node_call({
+                "op": "synthetic-day-cycle", "family": family,
+                "lectionary": lectionary, "reverse": True,
+            })
+            self.assertEqual(forward, reverse)
+            selected = forward["events"][0]["selected"]
+            self.assertEqual(selected["cycle"], cycle)
+            self.assertEqual(selected["cycleDimension"], dimension)
+            self.assertEqual(selected["references"], references)
+            self.assertEqual(selected["cycles"], [cycle] if dimension == "sunday" else [])
+            self.assertEqual(
+                selected["weekdayCycles"], [cycle] if dimension == "weekday" else [],
+            )
+        # The source contract defines no composition rule for two axes on one
+        # Proper; selecting both would merge appointed material by invention.
+        with self.assertRaises(AssertionError):
+            node_call({"op": "synthetic-day-cycle", "family": "both"})
+
+        core = node_call({
+            "op": "browser-cycles", "cycle": "II", "proper": {
+                "citations": [{"ref": "annual"}],
+                "cycles": {"B": {"citations": [{"ref": "Sunday B"}]}},
+                "weekday_cycles": {"II": {"citations": [{"ref": "Weekday II"}]}},
+            },
+        })
+        self.assertEqual(core["all"], ["B", "II"])
+        self.assertEqual(core["sunday"], ["B"])
+        self.assertEqual(core["weekday"], ["II"])
+        self.assertEqual([one["ref"] for one in core["selected"]["citations"]], ["Weekday II"])
+        self.assertEqual(core["citations"], ["annual", "Sunday B", "Weekday II"])
+
+    def test_selected_cycle_uses_only_its_typed_untranslated_state(self) -> None:
+        cases = (
+            ("A", "rights-restricted"),
+            ("C", "unavailable"),
+        )
+        for cycle, state in cases:
+            with self.subTest(cycle=cycle):
+                result = node_call({"op": "synthetic-cycle-untranslated", "cycle": cycle})
+                selected = result["events"][0]["selected"]
+                self.assertEqual(selected["cycle"], cycle)
+                self.assertEqual(selected["cycles"], [cycle])
+                self.assertEqual(selected["unavailableState"], state)
+                self.assertFalse(selected["held"])
+                self.assertTrue(selected["missing"])
+                self.assertIsNone(selected["text"])
+
+        held = node_call({
+            "op": "synthetic-cycle-untranslated", "cycle": "A",
+            "variant": "cycle-owned-translation",
+        })["events"][0]["selected"]
+        self.assertEqual(held["availability"], "held")
+        self.assertEqual(held["text"], "Cycle A held English.")
+        self.assertEqual(held["sourceId"], "edition.synthetic.cycle-a")
+        self.assertNotIn("Parent English", json.dumps(held))
+
+        restricted = node_call({
+            "op": "synthetic-cycle-untranslated", "cycle": "A",
+            "variant": "cycle-owned-restriction",
+        })["events"][0]["selected"]
+        self.assertEqual(restricted["availability"], "unavailable")
+        self.assertEqual(restricted["unavailableState"], "rights-restricted")
+        self.assertFalse(restricted["held"])
+        self.assertIsNone(restricted["text"])
+        self.assertNotIn("Parent English", json.dumps(restricted))
+
+    def test_cli_and_day_match_held_english_and_withheld_latin(self) -> None:
+        held = node_call({"op": "synthetic-cli-language", "kind": "held-english"})
+        self.assertEqual(held["day"], held["cli"])
+        selected = held["day"]["events"][0]["selected"]
+        self.assertEqual(selected["language"], "en")
+        self.assertEqual(selected["availability"], "held")
+        self.assertEqual(selected["text"], "Held English text.")
+
+        withheld = node_call({"op": "synthetic-cli-language", "kind": "withheld-latin"})
+        self.assertEqual(withheld["day"], withheld["cli"])
+        selected = withheld["day"]["events"][0]["selected"]
+        self.assertEqual(selected["reason"], "latin-withheld")
+        self.assertEqual(selected["unavailableState"], "unavailable")
+        self.assertFalse(selected["held"])
+        self.assertIsNone(selected["text"])
+        self.assertNotIn("protected-latin", json.dumps(withheld))
+
     def test_propers_adapter_rejects_a_mismatched_formulary_type(self) -> None:
         fixture = fixture_named("propers-roman-1962-advent-1")
         fixture["requested"]["formulary"]["type"] = "saints"
         with self.assertRaises(AssertionError):
             node_call({"op": "adapt-fixture", "fixture": fixture})
 
+    def test_optional_day_choices_match_cli_and_require_explicit_formulary(self) -> None:
+        cases = {
+            "2026-08-07": [
+                "saints-sixtus-ii-pope-companions-martyrs",
+                "saint-cajetan-priest",
+                "ot-18-friday",
+            ],
+            "2027-06-05": [
+                "immaculate-heart-blessed-virgin-mary",
+                "saint-boniface-bishop-martyr",
+                "ot-9-saturday",
+            ],
+        }
+        for date, keys in cases.items():
+            with self.subTest(date=date):
+                parity = node_call({
+                    "op": "full-parity",
+                    "request": self.optional_day_request(date),
+                    "payload": self.optional_day_payload(date),
+                })
+                self.assertEqual(parity["day"], parity["cli"])
+                outcome = parity["day"]
+                self.assertIsNone(outcome["resolved"])
+                self.assertEqual(outcome["events"], [])
+                self.assertEqual(len(outcome["unresolvedChoices"]), 1)
+                choice = outcome["unresolvedChoices"][0]
+                self.assertEqual(choice["id"], "calendar-formulary")
+                self.assertEqual([one["id"] for one in choice["options"]], keys)
+                self.assertTrue(all(one.get("selected") is not True for one in choice["options"]))
+                self.assertEqual(outcome["coverage"][0]["state"], "absent")
+
+    def test_every_optional_day_arm_is_selectable_and_invalid_never_falls_back(self) -> None:
+        cases = {
+            "2026-08-07": [
+                "saints-sixtus-ii-pope-companions-martyrs",
+                "saint-cajetan-priest",
+                "ot-18-friday",
+            ],
+            "2027-06-05": [
+                "immaculate-heart-blessed-virgin-mary",
+                "saint-boniface-bishop-martyr",
+                "ot-9-saturday",
+            ],
+        }
+        for date, keys in cases.items():
+            payload = self.optional_day_payload(date)
+            for key in keys:
+                with self.subTest(date=date, key=key):
+                    parity = node_call({
+                        "op": "full-parity",
+                        "request": self.optional_day_request(date, key),
+                        "payload": payload,
+                    })
+                    self.assertEqual(parity["day"]["resolved"], parity["cli"]["resolved"])
+                    self.assertEqual(
+                        parity["day"]["calendarResult"], parity["cli"]["calendarResult"]
+                    )
+                    expected = {
+                        "edition": "postconciliar", "formulary": key, "standing": "option",
+                    }
+                    for outcome in (parity["day"], parity["cli"]):
+                        self.assertEqual(outcome["resolved"], expected)
+                        self.assertTrue(outcome["events"])
+                        self.assertNotIn(
+                            "calendar-formulary",
+                            [one["id"] for one in outcome["unresolvedChoices"]],
+                        )
+            with self.subTest(date=date, key="not-authorized"):
+                with self.assertRaises(AssertionError):
+                    node_call({
+                        "op": "full-parity",
+                        "request": self.optional_day_request(date, "not-authorized"),
+                        "payload": payload,
+                    })
+
+    def test_territory_choice_and_each_explicit_branch_match_without_default(self) -> None:
+        date = "2026-05-14"
+        template = copy.deepcopy(
+            fixture_named("day-postconciliar-2026-11-29")["requested"]
+        )
+        template["civilDate"] = date
+        template["options"]["ordinary"] = False
+        template.pop("selectedReadableFormulary", None)
+
+        unresolved = node_call({
+            "op": "full-parity",
+            "request": template,
+            "payload": self.territory_payload(date),
+        })
+        self.assertIsNone(unresolved["day"]["resolved"])
+        self.assertEqual(unresolved["day"], unresolved["cli"])
+        self.assertEqual(
+            unresolved["day"]["unresolvedChoices"][0]["id"],
+            "calendar-territory",
+        )
+        self.assertEqual(
+            [
+                row["id"]
+                for row in unresolved["day"]["unresolvedChoices"][0]["options"]
+            ],
+            ["ascension-thursday", "ascension-transferred-to-sunday"],
+        )
+
+        cases = (
+            ("ascension-thursday", "ascension"),
+            ("ascension-transferred-to-sunday", "saint-matthias-apostle"),
+        )
+        for territory, mass in cases:
+            with self.subTest(territory=territory):
+                request = copy.deepcopy(template)
+                request["calendar"]["territory"] = {"id": territory}
+                request["selectedReadableFormulary"] = {"id": mass}
+                parity = node_call({
+                    "op": "full-parity",
+                    "request": request,
+                    "payload": self.territory_payload(date, territory),
+                })
+                self.assertEqual(parity["day"]["resolved"], parity["cli"]["resolved"])
+                self.assertEqual(
+                    parity["day"]["calendarResult"], parity["cli"]["calendarResult"]
+                )
+                self.assertEqual(
+                    parity["day"]["calendarResult"]["selectedBranch"], territory
+                )
+                self.assertEqual(parity["day"]["resolved"]["formulary"], mass)
+
+        invalid = copy.deepcopy(template)
+        invalid["calendar"]["territory"] = {"id": "not-held"}
+        with self.assertRaisesRegex(AssertionError, "territorial Day branch is not held"):
+            node_call({
+                "op": "full-parity", "request": invalid,
+                "payload": self.territory_payload(date),
+            })
+
+    def test_real_multiform_subsequences_keep_exact_seating_and_event_ids(self) -> None:
+        cases = (
+            ("2026-12-25", "nativitate-domini-octave", "night", 10),
+            ("2026-12-25", "nativitate-domini-octave", "dawn", 10),
+            ("2026-12-25", "nativitate-domini-octave", "day", 9),
+            ("2026-11-02", "commemoratione-omnium-fidelium-defunctorum", "first", 11),
+            ("2026-11-02", "commemoratione-omnium-fidelium-defunctorum", "second", 11),
+            ("2026-11-02", "commemoratione-omnium-fidelium-defunctorum", "third", 11),
+        )
+        template = fixture_named("day-roman-1962-2026-08-02")["requested"]
+        for date, mass, form, proper_count in cases:
+            with self.subTest(date=date, mass=mass, form=form):
+                request = copy.deepcopy(template)
+                request["civilDate"] = date
+                request["selectedReadableFormulary"] = {"id": mass}
+                request["form"] = form
+                request["requestedMode"] = "missal"
+                request["options"]["ordinary"] = True
+                parity = node_call({
+                    "op": "full-parity", "request": request,
+                    "payload": self.form_payload(date, form),
+                })
+                self.assertEqual(parity["day"], parity["cli"])
+                self.assertEqual(parity["day"]["resolved"]["form"], form)
+                proper_events = [
+                    event for event in parity["day"]["events"]
+                    if event["kind"] == "proper"
+                ]
+                self.assertEqual(len(proper_events), proper_count)
+                if mass == "commemoratione-omnium-fidelium-defunctorum":
+                    labels = [event["editionSlotLabel"] for event in proper_events]
+                    self.assertLess(labels.index("Tract"), labels.index("Sequence"))
+                    self.assertLess(labels.index("Sequence"), labels.index("Gospel"))
+                self.assertEqual(
+                    len({event["id"] for event in parity["day"]["events"]}),
+                    len(parity["day"]["events"]),
+                )
+                self.assertTrue(all(
+                    event["seat"] and event["seat"]["placement"] == "seated" and
+                    event["seat"]["id"]
+                    for event in proper_events
+                ))
+
+        for form, proper_count, first_index in (
+            ("longer", 19, 1),
+            ("shorter", 11, 20),
+        ):
+            with self.subTest(date="2026-12-19", mass="advent-ember-saturday", form=form):
+                result = node_call({
+                    "op": "source-ordinary-frame", "id": "roman-1962",
+                    "date": "2026-12-19", "mass": "advent-ember-saturday",
+                    "form": form,
+                })
+                self.assertEqual(result["resolved"]["form"], form)
+                self.assertEqual(len(result["events"]), proper_count)
+                self.assertEqual(
+                    [event["id"] for event in result["events"]],
+                    [
+                        f"proper/roman-1962/advent-ember-saturday/{index:03d}"
+                        for index in range(first_index, first_index + proper_count)
+                    ],
+                )
+                self.assertTrue(all(
+                    event["kind"] == "proper" and event["seat"] is None
+                    for event in result["events"]
+                ))
+                placement = next(
+                    row for row in result["coverage"]
+                    if row["scope"] == "ordinary-placement:roman-1962"
+                )
+                frame = next(
+                    row for row in result["coverage"]
+                    if row["scope"] == "ordinary-frame:roman-1962"
+                )
+                self.assertEqual(placement["state"], "unsupported")
+                self.assertEqual(
+                    placement["reasons"][0]["kind"],
+                    "ordinary-placement-unavailable",
+                )
+                self.assertEqual(frame["state"], "unavailable")
+                self.assertEqual(
+                    frame["reasons"][0]["applicability"], "unavailable"
+                )
+
+    def test_real_exceptional_rites_never_borrow_the_ordinary(self) -> None:
+        cases = (
+            ("2027-03-21", "palm-sunday", "unavailable", "unavailable", "text-not-held"),
+            ("2027-03-26", "good-friday", "none", "absent", "semantic-absence"),
+            ("2027-03-27", "easter-vigil", "unavailable", "unavailable", "text-not-held"),
+        )
+        template = fixture_named("day-roman-1962-2026-08-02")["requested"]
+        for date, mass, applicability, state, reason in cases:
+            with self.subTest(date=date, mass=mass):
+                request = copy.deepcopy(template)
+                request["civilDate"] = date
+                request["edition"] = {"id": "roman-pre-1955"}
+                request["calendar"] = {"id": "roman-pre-1955"}
+                request["selectedReadableFormulary"] = {"id": mass}
+                request["requestedMode"] = "missal"
+                request["options"]["ordinary"] = True
+                parity = node_call({
+                    "op": "full-parity", "request": request,
+                    "payload": self.historical_payload(date),
+                })
+                self.assertEqual(parity["day"], parity["cli"])
+                self.assertFalse(any(
+                    event["kind"].startswith("ordinary-")
+                    for event in parity["day"]["events"]
+                ))
+                frame = next(
+                    row for row in parity["day"]["coverage"]
+                    if row["scope"] == "ordinary-frame:roman-pre-1955"
+                )
+                self.assertEqual(frame["state"], state)
+                self.assertEqual(frame["reasons"][0]["kind"], reason)
+                self.assertEqual(
+                    frame["reasons"][0]["applicability"], applicability
+                )
+                self.assertTrue(frame["reasons"][0]["basis"])
+
+    def test_source_owned_postconciliar_exceptional_frames_reach_adapter(self) -> None:
+        cases = (
+            ("2027-03-26", "good-friday", "none", "absent", "semantic-absence"),
+            ("2027-03-27", "easter-vigil", "unavailable", "unavailable", "text-not-held"),
+        )
+        for date, mass, applicability, state, reason in cases:
+            with self.subTest(date=date, mass=mass):
+                result = node_call({
+                    "op": "source-ordinary-frame", "id": "postconciliar",
+                    "date": date, "mass": mass,
+                })
+                self.assertFalse(any(
+                    event["kind"].startswith("ordinary-") for event in result["events"]
+                ))
+                frame = next(
+                    row for row in result["coverage"]
+                    if row["scope"] == "ordinary-frame:postconciliar"
+                )
+                self.assertEqual(frame["state"], state)
+                self.assertEqual(frame["reasons"][0]["kind"], reason)
+                self.assertEqual(frame["reasons"][0]["applicability"], applicability)
+                self.assertTrue(frame["reasons"][0]["basis"])
+
+    def test_source_claim_absences_and_common_sets_block_complete_coverage(self) -> None:
+        fatima = node_call({
+            "op": "source-claim-coverage", "id": "postconciliar",
+            "mass": "our-lady-fatima",
+        })
+        self.assertEqual(fatima["events"], [])
+        self.assertEqual(fatima["coverage"][0]["state"], "unavailable")
+        self.assertNotEqual(fatima["coverage"][0].get("completeness"), "complete")
+
+        lawrence_key = "s-laurentii-brundusio-confessoris-ecclesiae-doctoris"
+        lawrence = node_call({
+            "op": "source-claim-coverage", "id": "roman-1962",
+            "mass": lawrence_key,
+        })
+        formulary = next(row for row in lawrence["coverage"]
+                         if row["scope"] == f"formulary:{lawrence_key}")
+        self.assertEqual((formulary["state"], formulary["completeness"]),
+                         ("supported", "partial"))
+        self.assertTrue(any(
+            row["scope"].endswith("/main/collect")
+            and row["repositoryTerm"] == "proper-collect"
+            for row in lawrence["explicitAbsences"]
+        ))
+        self.assertFalse(any(
+            event.get("editionSlotLabel") == "Collect"
+            for event in lawrence["events"]
+        ))
+
+        stanislaus = node_call({
+            "op": "source-claim-coverage", "id": "roman-1962",
+            "mass": "s-stanislai-episcopi-martyris",
+        })
+        common_choice = next(
+            row for row in stanislaus["unresolvedChoices"]
+            if row["id"].startswith("common-set:")
+        )
+        self.assertEqual([option["id"] for option in common_choice["options"]],
+                         ["c3", "c4"])
+        self.assertEqual(stanislaus["coverage"][0]["completeness"], "partial")
+        self.assertIn("unresolved-choice", {
+            reason["kind"] for reason in stanislaus["coverage"][0]["reasons"]
+        })
+
+    def test_source_claim_statuses_and_common_set_dispositions_fail_closed(self) -> None:
+        malformed = (
+            ("postconciliar", "our-lady-fatima", "mass-status"),
+            ("roman-1962", "s-laurentii-brundusio-confessoris-ecclesiae-doctoris",
+             "proper-status"),
+            ("roman-1962", "s-stanislai-episcopi-martyris", "common-set"),
+        )
+        for edition, mass, mutation in malformed:
+            with self.subTest(mutation=mutation), self.assertRaises(AssertionError):
+                node_call({
+                    "op": "source-claim-coverage", "id": edition,
+                    "mass": mass, "malformed": mutation,
+                })
+
     def test_mass_today_expanded_matches_day_identity_order_seats_and_sources(self) -> None:
         for name in ("day-roman-1962-2026-08-02", "day-postconciliar-2026-11-29"):
             fixture = fixture_named(name)
             request = copy.deepcopy(fixture["requested"])
+            request["requestedMode"] = "missal"
             request["options"]["ordinary"] = True
             run = subprocess.run(
                 [str(MASS_TODAY), "show", "--date", request["civilDate"],
@@ -1126,13 +2815,79 @@ class ParityTests(unittest.TestCase):
                              parity["cli"]["explicitAbsences"], name)
             self.assertEqual(parity["day"]["unresolvedChoices"],
                              parity["cli"]["unresolvedChoices"], name)
+            self.assertEqual(parity["day"]["ordinaryUnresolved"],
+                             parity["cli"]["ordinaryUnresolved"], name)
             proper_events = [one for one in parity["day"]["events"] if one["kind"] == "proper"]
             self.assertEqual(len(proper_events), 10)
             self.assertTrue(all(one["seat"]["placement"] == "seated" for one in proper_events))
 
+    def test_postconciliar_2026_2027_weekday_and_sunday_cli_browser_cycle_parity(self) -> None:
+        cases = (
+            ("2027-08-26", "weekday", "I", "1 Thessalonians 3:7-13"),
+            ("2026-08-26", "weekday", "II", "2 Thessalonians 3:6-10, 16-18"),
+            ("2026-08-30", "sunday", "A", "Jeremiah 20:7-9"),
+        )
+        template = fixture_named("day-postconciliar-2026-11-29")["requested"]
+        for date, dimension, cycle, first_reading in cases:
+            run = subprocess.run(
+                [str(MASS_TODAY), "show", "--date", date,
+                 "--calendar", "postconciliar", "--bible", "douay-rheims",
+                 "--expanded", "--why", "--format", "json"],
+                capture_output=True, text=True, cwd=ROOT, check=False,
+            )
+            self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
+            payload = json.loads(run.stdout)
+            day = payload["days"][0]
+            said = [one for one in day["masses"] if one["standing"] == "said"]
+            if said:
+                self.assertEqual(len(said), 1)
+                mass = said[0]
+            else:
+                # Ordinary-Time weekdays hold a deterministic ferial reading
+                # course but no source-selected oration owner.  Select that
+                # sole readable formulary explicitly without upgrading its
+                # fail-closed standing to "said".
+                self.assertEqual(len(day["masses"]), 1)
+                mass = day["masses"][0]
+                self.assertEqual(mass["standing"], "unresolved")
+            request = copy.deepcopy(template)
+            request["civilDate"] = date
+            request["selectedReadableFormulary"] = {"id": mass["key"]}
+            request["options"]["ordinary"] = False
+            parity = node_call({"op": "full-parity", "request": request, "payload": payload})
+            self.assertEqual(parity["day"]["resolved"], parity["cli"]["resolved"], date)
+            self.assertEqual(parity["day"]["calendarResult"], parity["cli"]["calendarResult"], date)
+            self.assertEqual(parity["day"]["events"], parity["cli"]["events"], date)
+            event = next(
+                one for one in parity["day"]["events"]
+                if one["editionSlotLabel"] == "First Reading"
+            )
+            self.assertEqual(event["selected"]["references"], [first_reading])
+            self.assertEqual(event["selected"]["cycle"], cycle)
+            self.assertEqual(event["selected"]["cycleDimension"], dimension)
+            self.assertEqual(
+                event["selected"]["cycles"], [cycle] if dimension == "sunday" else [],
+            )
+            self.assertEqual(
+                event["selected"]["weekdayCycles"],
+                [cycle] if dimension == "weekday" else [],
+            )
+            payload_proper = next(
+                one for one in mass["propers"] if one["name"] == "First Reading"
+            )
+            self.assertEqual(
+                sorted((payload_proper.get("cycles") or {}).keys()),
+                ["A", "B", "C"] if dimension == "sunday" else [],
+            )
+            self.assertEqual(
+                sorted((payload_proper.get("weekday_cycles") or {}).keys()),
+                ["I", "II"] if dimension == "weekday" else [],
+            )
+
     def test_cli_parity_rejects_bible_lectionary_reference_and_text_drift(self) -> None:
         fixture = fixture_named("day-roman-1962-2026-08-02")
         request = copy.deepcopy(fixture["requested"])
+        request["requestedMode"] = "missal"
         request["options"]["ordinary"] = True
         run = subprocess.run(
             [str(MASS_TODAY), "show", "--date", request["civilDate"],
@@ -1145,22 +2900,31 @@ class ParityTests(unittest.TestCase):
         mutations = []
         changed = copy.deepcopy(payload)
         changed["scripture"]["id"] = "not-requested"
-        mutations.append(changed)
+        mutations.append((changed, "payload Bible does not match"))
         changed = copy.deepcopy(payload)
         changed["days"][0]["why"]["lectionary"] = {"sunday": "X", "weekday": "Y"}
-        mutations.append(changed)
+        mutations.append((changed, "lectionary result disagrees"))
         changed = copy.deepcopy(payload)
         scripture = next(one for one in changed["days"][0]["masses"][0]["propers"] if one["verses"])
         scripture["verses"][0]["ref"] = "invented drift"
-        mutations.append(changed)
+        mutations.append((changed, "scripture references disagree"))
         changed = copy.deepcopy(payload)
-        composed = next(
-            one for one in changed["days"][0]["masses"][0]["propers"] if one.get("text")
+        withheld = next(
+            one
+            for mass in changed["days"][0]["masses"]
+            for one in mass["propers"]
+            if (one.get("latin") or {}).get("withheld")
         )
-        composed["text"] += " drift"
-        mutations.append(changed)
-        for changed in mutations:
-            with self.assertRaises(AssertionError):
+        withheld["latin"]["state"] = (
+            "rights-restricted"
+            if withheld["latin"]["state"] == "unavailable"
+            else "unavailable"
+        )
+        mutations.append((changed, "withheld Latin state disagrees"))
+        for changed, expected in mutations:
+            with self.subTest(expected=expected), self.assertRaisesRegex(
+                AssertionError, expected
+            ):
                 node_call({"op": "full-parity", "request": request, "payload": changed})
 
     def test_day_compare_holds_date_and_context_then_resolves_each_side(self) -> None:

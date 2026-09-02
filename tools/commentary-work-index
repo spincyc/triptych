@@ -83,7 +83,7 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index discover --passage 'Psalm 24:1-3' --numbering vulgate --max-results 2 --json",
             (
-                "{\"cited_numbering\":\"vulgate\",\"discoveries\":[{\"cited\":\"Psalm 24:1-3\",\"passage\":\"Psalms 24:1-24:3\"... [+401 chars]",
+                "{\"cited_numbering\":\"vulgate\",\"discoveries\":[{\"cited\":\"Psalm 24:1-3\",\"passage\":\"Psalms 24:1-24:3\"... [+499 chars]",
             ),
         ),
         Example(
@@ -91,8 +91,7 @@ EXAMPLES = {
             (
                 "passage: Joel 3:1-3:5",
                 "  cited as: Joel 3:1-5",
-                "  refused Joel 3: postconciliar cites 'Joel 3:1-5', which that calendar's"
-                " own citation_divergences resolves to 'Joel 2:28-32'... [+130 chars]",
+                "  refused Joel 3: postconciliar cites 'Joel 3:1-5', which that calendar's own citation_divergences resolves to 'Joel 2:28-32'... [+128 chars]",
                 "  - no mapped commentaries yet",
             ),
             "a refusal is a result: the index holds a Joel 3 row and says it is not this canon's Joel 3",
@@ -143,7 +142,7 @@ EXAMPLES = {
             "tools/commentary-work-index build-corpus --calendar roman-1962 --output build/example-corpus.yaml",
             (
                 "masses: 331 covered of 331",
-                "total works in union corpus: 175",
+                "total works in union corpus: 176",
                 "unresolved passages: 110",
                 "refused loci: 0",
                 "",
@@ -551,6 +550,19 @@ def numbering_survey(citations, calendars: dict[str, dict[str, Any]]) -> dict[st
     for calendar in sorted(calendars):
         document = calendars[calendar]
         moved = moved_citations(document)
+        divergence_citations = {
+            str(cited)
+            for entry in document.get("citation_divergences") or []
+            if isinstance(entry, dict)
+            for cited in (entry.get("citations") or {})
+        }
+        unrecorded_loci = {
+            f"{entry.get('book')} {chapter}"
+            for entry in document.get("citation_divergences") or []
+            if isinstance(entry, dict)
+            and UNRECORDED in (entry.get("numbering") or {}).values()
+            for chapter in entry.get("chapters") or []
+        }
         for record in _collect_mass_records(citations, document, calendar):
             cited = _coerce_str(
                 record["passage"].get("cited_ref") or record["passage"].get("ref")
@@ -562,7 +574,21 @@ def numbering_survey(citations, calendars: dict[str, dict[str, Any]]) -> dict[st
                 # reference that cannot be converted produces no key.
                 continue
             for locus in chapter_loci(canonical["ref"]):
-                entry = (calendar, cited, moved.get(cited, ""))
+                # Some lectionary loci retain lettered subverses for which no
+                # Vulgate target has been established.  A chapter-level
+                # `unrecorded` declaration still means those citations cannot
+                # make the identically numbered Vulgate commentary key sound.
+                entry = (
+                    calendar,
+                    cited,
+                    moved.get(
+                        cited,
+                        UNRECORDED
+                        if locus in unrecorded_loci
+                        and cited not in divergence_citations
+                        else "",
+                    ),
+                )
                 if entry not in reached.setdefault(locus, []):
                     reached[locus].append(entry)
 
@@ -571,19 +597,37 @@ def numbering_survey(citations, calendars: dict[str, dict[str, Any]]) -> dict[st
         foreign = [
             (calendar, cited, resolved)
             for calendar, cited, resolved in entries
-            if resolved and locus not in chapter_loci(resolved)
+            if resolved
+            and (
+                resolved == UNRECORDED
+                or locus not in chapter_loci(resolved)
+            )
         ]
         if not entries or len(foreign) != len(entries):
             continue
-        calendar, cited, resolved = foreign[0]
+        # Prefer an exact recorded correspondence when the same chapter also
+        # has an unresolved lettered citation.  It supplies the concrete basis
+        # without pretending the unresolved citation shares that target.
+        calendar, cited, resolved = next(
+            (entry for entry in foreign if entry[2] != UNRECORDED),
+            foreign[0],
+        )
         others = "; ".join(
-            f"{c} cites {q!r} ({r})" for c, q, r in foreign[1:]
+            f"{c} cites {q!r} ({r})"
+            for c, q, r in foreign
+            if (c, q, r) != (calendar, cited, resolved) and r != UNRECORDED
+        )
+        basis = (
+            f"{calendar} cites {cited!r}, within a chapter whose target "
+            "numbering that calendar declares unrecorded"
+            if resolved == UNRECORDED
+            else f"{calendar} cites {cited!r}, which that calendar's own "
+                 f"citation_divergences resolves to {resolved!r}"
         )
         survey[locus] = {
             "numbering": UNRECORDED,
             "numbering_basis": (
-                f"{calendar} cites {cited!r}, which that calendar's own "
-                f"citation_divergences resolves to {resolved!r}; no proper cites "
+                basis + "; no proper cites "
                 f"this chapter of the {CANONICAL_NUMBERING} canon, so the works "
                 "here were harvested against a locus whose system nobody stated"
                 + (f". Also reached by: {others}" if others else "")

@@ -1,0 +1,14 @@
+schema = 1
+record_type = "work"
+id = "work.triptych.roman-1962-latin-proper-editorial-projection"
+title = "Roman 1962 Latin Proper Editorial Projection"
+responsible = "Triptych contributors"
+work_type = "editorial-source-projection"
+languages = ["la"]
+composed = "2026-08-27"
+composed_basis = "Created through Triptych's recorded page-image collations of public-domain historical prayers against the 1962 target edition."
+relations = [
+  "work.francis-xavier-lasance.the-new-roman-missal",
+  "work.catholic-church.missale-romanum",
+]
+description = "A project-created editorial source projection containing bounded Latin prayer bodies in date-specific artifacts. It is neither an edition of a historical hand missal nor an edition of the Missale Romanum. Each artifact records the transformation rule over separate public-domain antecedent and 1962 page-image witnesses; its passages let consumers cite the projected bodies without assigning Triptych's target-controlled collation choices to the antecedent printing."

@@ -3,6 +3,7 @@
   {
    "artifact_type": "web-transcription",
    "byte_size": 679307,
+   "edition_owned": true,
    "id": "artifact.augustine.de-genesi-ad-litteram.migne-pl-34.degenesi-latin-text-ec363ece",
    "media_type": "text/plain; charset=utf-8",
    "notes": "Keyed text, not OCR, and that distinction is the whole finding here. guidance/catena.md records that Migne PL 34's Internet Archive text layer corrupts roughly one word in eight and concluded that \"the unencumbered Latin is OCR wreckage and the clean Latin is encumbered\". That is true of the scan and false of the volume: this is the University of Zurich's Corpus Corporum TEI encoding of the same columns, keyed rather than scanned, republished on Latin Wikisource under a stated CC BY-SA 4.0 markup licence over a public-domain printing. This is a transcription of a web witness of the 1841 printing and not a collation against the printed column, so no passage taken from it rises above inspected.",
@@ -17,6 +18,7 @@
   {
    "artifact_type": "wiki-export-xml",
    "byte_size": 698089,
+   "edition_owned": true,
    "id": "artifact.augustine.de-genesi-ad-litteram.migne-pl-34.degenesi-wikisource-export-d46cdc8e",
    "media_type": "application/xml",
    "notes": "The pages carry the Corpus Corporum encoding note recording that the file was encoded in TEI XML for the University of Zurich's Corpus Corporum project by Ph. Roelli in 2013 from Migne's Patrologia Latina tomus 34. That is the encoder's statement about the file and is not part of Migne; the transformation below removes it. This retrieval also settles, in the opposite direction from the earlier finding, that PL 34 is reachable as keyed text and not only as the Internet Archive's corrupt scan.",
@@ -38,7 +40,6 @@
   "id": "edition.augustine.de-genesi-ad-litteram.migne-pl-34",
   "jurisdiction": null,
   "language": "la",
-  "notes": "Migne's reprint of the Maurist text, complete in twelve books, each preceded by the Maurists' own argument stating which verses of Genesis the book expounds. Those arguments are the ground on which each book's scriptural extent is declared here, and they are carried in the transcription rather than paraphrased beside it. No English translation of this work is in the public domain: the first complete one is J. H. Taylor's, Ancient Christian Writers 41-42, 1982, which is in copyright, so this work is held in Latin only and the site says so.",
   "publication": "Patrologia Latina, tomus 34, Paris: J.-P. Migne, 1841, coll. 245-486",
   "title": "De Genesi ad litteram, Patrologia Latina tomus 34",
   "translators": [],

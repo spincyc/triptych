@@ -72,6 +72,49 @@ sections:
         text: Movetur.
 """
 
+COVERAGE = """\
+recension_coverage:
+  schema: triptych-recension-coverage/v1
+  as_of: '2026-08-26'
+  status: structural-only
+  domains:
+    calendar:
+      state: structural-only
+      basis: One fixture departure is established.
+    precedence:
+      state: unexamined
+      basis: The fixture makes no precedence claim.
+    propers:
+      state: inherited-uncollated
+      basis: Fixture text is carried only to exercise inheritance.
+    commons:
+      state: unexamined
+      basis: The fixture makes no Common claim.
+    ordinary:
+      state: out-of-scope
+      basis: The fixture does not model an Ordinary.
+    ceremonies:
+      state: structural-only
+      basis: The fixture models only a structural departure.
+  inheritance:
+    source_calendar: base
+    status: uncollated
+    basis: Inherited entries exercise mechanics and do not assert collation.
+  evidence:
+  - id: fixture-structure
+    domains: [calendar, ceremonies]
+    grade: source-read
+    record: records/fixture.toml
+    basis: This synthetic fixture is the source for its own expected structure.
+    witnesses: [synthetic-base]
+  blockers:
+  - id: fixture-not-a-corpus
+    kind: scope-exclusion
+    status: open
+    record: records/fixture.toml
+    requirement: This fixture is not a complete missal corpus.
+"""
+
 
 def recension(rows: str, header: str = "") -> str:
     return (
@@ -80,8 +123,9 @@ def recension(rows: str, header: str = "") -> str:
         "edition_short: Older\n"
         "calendar: older\n"
         "text_from: base\n"
-        + ("" if header == "-" else "stands_before: some-act-1955\n")
+        + ("" if header == "-" else "stands_before: [some-act-1955, other-act-1955]\n")
         + (header if header != "-" else "")
+        + COVERAGE
         + "sections:\n  seasonal:\n    kind: seasonal\n    masses:\n"
         + textwrap.indent(textwrap.dedent(rows), "    ")
     )
@@ -90,7 +134,27 @@ def recension(rows: str, header: str = "") -> str:
 class RecensionTest(unittest.TestCase):
     def setUp(self) -> None:
         self._dir = TemporaryDirectory()
-        self.root = Path(self._dir.name)
+        repository = Path(self._dir.name)
+        self.root = repository / "calendars"
+        self.root.mkdir()
+        inventories = repository / "inventories"
+        inventories.mkdir()
+        (inventories / _calendars.RECENSION_ACT_INVENTORY).write_text(
+            'acts_schema = 1\nextends = "fixture-acts-base.toml"\n',
+            encoding="utf-8",
+        )
+        (inventories / "fixture-acts-base.toml").write_text(
+            "acts_schema = 1\n"
+            "[[acts]]\nid = \"some-act-1955\"\n"
+            "[[acts]]\nid = \"other-act-1955\"\n",
+            encoding="utf-8",
+        )
+        records = repository / "records"
+        records.mkdir()
+        (records / "fixture.toml").write_text(
+            'schema = "triptych-recension-test-fixture/v1"\n',
+            encoding="utf-8",
+        )
         (self.root / "base").mkdir()
         (self.root / "base" / "propers.yaml").write_text(BASE, encoding="utf-8")
         (self.root / "older").mkdir()
@@ -142,6 +206,61 @@ class RecensionTest(unittest.TestCase):
         self.assertEqual(stamp["text_from"], "base")
         self.assertFalse(stamp["stated"])
         self.assertEqual(stamp["kind"], "")
+
+    def test_multi_hop_inheritance_keeps_the_terminal_text_residence(self):
+        """A middle projection is not the printing from which its words were read."""
+        (self.root / "middle").mkdir()
+        (self.root / "middle" / "propers.yaml").write_text(
+            "schema: triptych-calendar-masses/v1\n"
+            "calendar: middle\n"
+            "text_from: base\n"
+            "sections: {}\n",
+            encoding="utf-8",
+        )
+        (self.root / "leaf").mkdir()
+        (self.root / "leaf" / "propers.yaml").write_text(
+            "schema: triptych-calendar-masses/v1\n"
+            "calendar: leaf\n"
+            "text_from: middle\n"
+            "sections: {}\n",
+            encoding="utf-8",
+        )
+        mass = _calendars.mass_index(
+            _calendars.load_document(self.root, "leaf")
+        )["kept"]
+        self.assertEqual(mass["recension"]["calendar"], "base")
+        self.assertEqual(mass["recension"]["text_from"], "base")
+
+    def test_multi_hop_overlay_keeps_the_terminal_text_residence(self):
+        """Changing placement at the leaf does not relocate the inherited words."""
+        (self.root / "middle").mkdir()
+        (self.root / "middle" / "propers.yaml").write_text(
+            "schema: triptych-calendar-masses/v1\n"
+            "calendar: middle\n"
+            "text_from: base\n"
+            "sections: {}\n",
+            encoding="utf-8",
+        )
+        (self.root / "leaf").mkdir()
+        (self.root / "leaf" / "propers.yaml").write_text(
+            "schema: triptych-calendar-masses/v1\n"
+            "calendar: leaf\n"
+            "text_from: middle\n"
+            "sections:\n"
+            "  seasonal:\n"
+            "    masses:\n"
+            "    - key: kept\n"
+            "      name: Kept elsewhere\n"
+            "      departure: moved\n"
+            "      basis: A fixture act moved it.\n",
+            encoding="utf-8",
+        )
+        mass = _calendars.mass_index(
+            _calendars.load_document(self.root, "leaf")
+        )["kept"]
+        self.assertEqual(mass["name"], "Kept elsewhere")
+        self.assertEqual(mass["recension"]["kind"], "moved")
+        self.assertEqual(mass["recension"]["text_from"], "base")
 
     # -- the seven kinds ---------------------------------------------------
 
@@ -239,6 +358,43 @@ class RecensionTest(unittest.TestCase):
         stamp = self.masses()["shifted"]["recension"]
         self.assertEqual([row["kind"] for row in stamp["also"]], ["replaced", "renamed"])
         self.assertEqual(self.problems(), [])
+
+    def test_act_history_stations_are_resolved_and_survive_the_stamp(self):
+        self.write("""\
+            - key: shifted
+              name: Sabbato Sancto
+              registry: '3'
+              season: lent
+              departure: moved
+              act: some-act-1955
+              basis: Section 9 of the decree.
+              also:
+              - departure: renamed
+                act: other-act-1955
+                basis: The later station records the renamed service.
+            """)
+        stamp = self.masses()["shifted"]["recension"]
+        self.assertEqual(stamp["act"], "some-act-1955")
+        self.assertEqual(stamp["also"][0]["act"], "other-act-1955")
+        self.assertEqual(self.problems(), [])
+
+    def test_act_history_stations_must_resolve(self):
+        self.write("""\
+            - key: shifted
+              name: Shifted
+              registry: '3'
+              season: lent
+              departure: moved
+              act: invented-act-1955
+              basis: A decree.
+              also:
+              - departure: renamed
+                act: Not-an-id
+                basis: A later station.
+            """)
+        problems = self.problems()
+        self.assertTrue(any("act names unknown act 'invented-act-1955'" in row for row in problems))
+        self.assertTrue(any("also act is not an act id" in row for row in problems))
 
     def test_also_may_not_repeat_the_primary_kind(self):
         self.write("""\
@@ -365,6 +521,154 @@ class RecensionTest(unittest.TestCase):
         )
         self.assertTrue(any("stands_before" in p for p in self.problems()))
 
+    def test_historical_claim_must_name_an_act_in_the_authoritative_inventory(self):
+        self.write(
+            """\
+            - key: kept
+              name: Kept
+              registry: '1'
+              season: lent
+              departure: renamed
+              basis: A reading.
+            """,
+            header="stands_before: [invented-act-1955]\n",
+        )
+        self.assertTrue(
+            any("stands_before names unknown act 'invented-act-1955'" in row for row in self.problems())
+        )
+
+    def test_historical_claim_is_a_nonempty_unique_list_of_act_ids(self):
+        rows = """\
+            - key: kept
+              name: Kept
+              registry: '1'
+              season: lent
+              departure: renamed
+              basis: A reading.
+            """
+        for header in (
+            "stands_before: some-act-1955\n",
+            "stands_before: []\n",
+            "stands_before: [some-act-1955, some-act-1955]\n",
+            "stands_before: [some-act-1955, 2]\n",
+        ):
+            with self.subTest(header=header):
+                self.write(rows, header=header)
+                self.assertTrue(any("stands_before" in row for row in self.problems()))
+
+    def test_indirect_inheritance_cycle_is_reported_without_recursing_forever(self):
+        (self.root / "middle").mkdir()
+        (self.root / "middle" / "propers.yaml").write_text(
+            "schema: triptych-calendar-masses/v1\n"
+            "calendar: middle\n"
+            "text_from: older\n"
+            "sections: {}\n",
+            encoding="utf-8",
+        )
+        self.write(
+            """\
+            - key: kept
+              name: Kept
+              registry: '1'
+              season: lent
+              departure: renamed
+              basis: A reading.
+            """,
+            header="text_from: middle\n",
+        )
+        with self.assertRaisesRegex(
+            ValueError, "calendar recension inheritance cycle: older -> middle -> older"
+        ):
+            _calendars.load_document(self.root, "older")
+        self.assertTrue(
+            any("older -> middle -> older" in row for row in self.problems())
+        )
+
+    def test_a_recension_must_account_for_its_coverage(self):
+        text = recension("""\
+            - key: kept
+              name: Kept
+              registry: '1'
+              season: lent
+              departure: renamed
+              basis: A reading.
+            """).replace(COVERAGE, "")
+        (self.root / "older" / "propers.yaml").write_text(text, encoding="utf-8")
+        self.assertTrue(any("recension_coverage must be a mapping" in p for p in self.problems()))
+
+    def test_coverage_inheritance_must_name_the_mechanical_base(self):
+        text = recension("""\
+            - key: kept
+              name: Kept
+              registry: '1'
+              season: lent
+              departure: renamed
+              basis: A reading.
+            """).replace("source_calendar: base", "source_calendar: another")
+        (self.root / "older" / "propers.yaml").write_text(text, encoding="utf-8")
+        self.assertTrue(any("must equal text_from 'base'" in p for p in self.problems()))
+
+    def test_coverage_fields_and_evidence_grades_are_closed(self):
+        text = recension("""\
+            - key: kept
+              name: Kept
+              registry: '1'
+              season: lent
+              departure: renamed
+              basis: A reading.
+            """)
+        text = text.replace(
+            "  status: structural-only\n",
+            "  status: structural-only\n  assumed_complete: true\n",
+            1,
+        ).replace("grade: source-read", "grade: trustworthy")
+        (self.root / "older" / "propers.yaml").write_text(text, encoding="utf-8")
+        problems = self.problems()
+        self.assertTrue(any("unknown fields: assumed_complete" in p for p in problems))
+        self.assertTrue(any(".grade must be one of" in p for p in problems))
+
+    def test_coverage_records_and_ids_must_resolve(self):
+        text = recension("""\
+            - key: kept
+              name: Kept
+              registry: '1'
+              season: lent
+              departure: renamed
+              basis: A reading.
+            """).replace("records/fixture.toml", "records/not-there.toml", 1)
+        text = text.replace("id: fixture-not-a-corpus", "id: Not an id", 1)
+        (self.root / "older" / "propers.yaml").write_text(text, encoding="utf-8")
+        problems = self.problems()
+        self.assertTrue(any("names missing record 'records/not-there.toml'" in row for row in problems))
+        self.assertTrue(any("id is not kebab-case: 'Not an id'" in row for row in problems))
+
+    def test_coverage_as_of_must_be_a_real_calendar_date(self):
+        text = recension("""\
+            - key: kept
+              name: Kept
+              registry: '1'
+              season: lent
+              departure: renamed
+              basis: A reading.
+            """).replace("as_of: '2026-08-26'", "as_of: '2026-99-99'")
+        (self.root / "older" / "propers.yaml").write_text(text, encoding="utf-8")
+        self.assertTrue(any("is not a calendar date" in p for p in self.problems()))
+
+    def test_complete_coverage_requires_every_domain_and_inheritance_complete(self):
+        text = recension("""\
+            - key: kept
+              name: Kept
+              registry: '1'
+              season: lent
+              departure: renamed
+              basis: A reading.
+            """).replace("status: structural-only", "status: complete", 1)
+        (self.root / "older" / "propers.yaml").write_text(text, encoding="utf-8")
+        problems = self.problems()
+        self.assertTrue(any("domains are not complete" in p for p in problems))
+        self.assertTrue(any("inheritance.status is not complete" in p for p in problems))
+        self.assertTrue(any("complete but blockers remain" in p for p in problems))
+
 
 class TrackedRecensionTest(unittest.TestCase):
     """The recension this repository actually ships, held to its own rules."""
@@ -374,11 +678,40 @@ class TrackedRecensionTest(unittest.TestCase):
     def test_the_pre_1955_recension_states_no_broken_departure(self):
         self.assertEqual(_calendars.recension_problems(self.root, "roman-pre-1955"), [])
 
-    def test_it_departs_in_the_four_liturgies_the_design_named(self):
+    def test_coverage_names_every_domain_and_the_uncollated_inheritance(self):
+        document = _calendars.load_document(self.root, "roman-pre-1955", effective=False)
+        coverage = document["recension_coverage"]
+        self.assertEqual(coverage["status"], "structural-only")
+        self.assertEqual(
+            set(coverage["domains"]),
+            set(_calendars.RECENSION_COVERAGE_DOMAINS),
+        )
+        self.assertEqual(coverage["domains"]["propers"]["state"], "none")
+        self.assertEqual(coverage["domains"]["commons"]["state"], "inherited-uncollated")
+        self.assertEqual(coverage["domains"]["precedence"]["state"], "partial")
+        self.assertEqual(coverage["inheritance"]["source_calendar"], "roman-1962")
+        self.assertEqual(coverage["inheritance"]["status"], "uncollated")
+        advisory = document["advisory"].lower()
+        self.assertIn("structural-only", advisory)
+        self.assertIn("not a complete 1920 missal corpus", advisory)
+        self.assertIn("six holy week departures", advisory)
+        self.assertIn("st joseph the worker", advisory)
+        self.assertIn("queenship of the blessed virgin mary", advisory)
+        self.assertIn("roman-1962", advisory)
+        self.assertIn("inherited and uncollated", advisory)
+        self.assertIn(
+            "implement-criteria-precedence",
+            {row["id"] for row in coverage["blockers"]},
+        )
+        self.assertEqual(
+            document["stands_before"],
+            ["de-rubricis-simpliciorem-1955", "maxima-redemptionis-1955"],
+        )
+
+    def test_it_retains_the_sourced_departures_the_design_named(self):
         document = _calendars.load_document(self.root, "roman-pre-1955", effective=False)
         stated = {str(m.get("key")) for _, _, m in _calendars.departures_of(document)}
-        self.assertEqual(
-            stated,
+        self.assertLessEqual(
             {
                 "palm-sunday",
                 "blessing-of-palms",
@@ -386,8 +719,38 @@ class TrackedRecensionTest(unittest.TestCase):
                 "mass-of-the-lords-supper",
                 "good-friday",
                 "easter-vigil",
+                "s-ioseph-opificis-sponsi-beatae-mariae",
+                "beatae-mariae-virginis-reginae",
             },
+            stated,
         )
+
+    def test_exact_post_1954_absences_are_source_bounded_and_not_served(self):
+        raw = _calendars.load_document(self.root, "roman-pre-1955", effective=False)
+        stated = {
+            mass["key"]: (section, mass)
+            for section, _, mass in _calendars.departures_of(raw)
+        }
+        expected = {
+            "s-ioseph-opificis-sponsi-beatae-mariae":
+                ("sanctoral", "05-01", "I", "sanctoral"),
+            "beatae-mariae-virginis-reginae":
+                ("marian", "05-31", "II", "marian"),
+        }
+        for key, (section, date, rank, kind) in expected.items():
+            held_section, row = stated[key]
+            self.assertEqual(held_section, section)
+            self.assertEqual(row["departure"], "absent")
+            self.assertEqual((row["date"], row["rank"], row["kind"]), (date, rank, kind))
+            self.assertNotIn("act", row)
+            basis = row["basis"]
+            self.assertIn("missale-romanum-1962-facsimile-rights-v1.toml", basis)
+            self.assertIn("St Pius X negative was corrected as false", basis)
+        served = _calendars.mass_index(
+            _calendars.load_document(self.root, "roman-pre-1955")
+        )
+        for key in expected:
+            self.assertNotIn(key, served)
 
     def test_the_chrism_mass_is_not_served_under_this_recension(self):
         """The pre-1955 books print one Mass on Holy Thursday; `absent` removes it."""
@@ -397,21 +760,59 @@ class TrackedRecensionTest(unittest.TestCase):
         base = _calendars.mass_index(_calendars.load_document(self.root, "roman-1962"))
         self.assertIn("chrism-mass", base)
 
-    def test_it_carries_no_transcribed_text(self):
-        """No source text routes through this file; every proper is a placeholder."""
+    def test_holy_week_gaps_are_typed_absences_not_placeholder_propers(self):
+        """Structural departures never manufacture an appointed Proper slot."""
         document = _calendars.load_document(self.root, "roman-pre-1955", effective=False)
+        holy_week = {
+            "palm-sunday", "blessing-of-palms", "chrism-mass",
+            "mass-of-the-lords-supper", "good-friday", "easter-vigil",
+        }
         for _, _, mass in _calendars.departures_of(document):
-            for proper in mass.get("propers") or []:
-                self.assertEqual(proper.get("name"), "Placeholder", mass.get("key"))
+            if mass.get("key") not in holy_week:
+                continue
+            self.assertNotIn("propers", mass, mass.get("key"))
+            status = mass.get("text_status")
+            self.assertIsInstance(status, dict, mass.get("key"))
+            self.assertEqual(status.get("state"), "unavailable", mass.get("key"))
+            self.assertEqual(
+                status.get("scope"), "missal-formulary", mass.get("key")
+            )
+            self.assertEqual(
+                [row.get("kind") for row in status.get("reasons") or []],
+                ["witness-gap"],
+                mass.get("key"),
+            )
+
+    def test_holy_week_departure_stations_are_exact(self):
+        document = _calendars.load_document(self.root, "roman-pre-1955", effective=False)
+        rows = {mass["key"]: mass for _, _, mass in _calendars.departures_of(document)}
+        maxima = "maxima-redemptionis-1955"
+        self.assertEqual(rows["palm-sunday"]["act"], maxima)
+        self.assertEqual(rows["blessing-of-palms"]["act"], maxima)
+        self.assertNotIn("act", rows["chrism-mass"])
+        self.assertEqual(rows["mass-of-the-lords-supper"]["act"], maxima)
+        self.assertEqual(rows["good-friday"]["act"], "editio-typica-1962")
+        self.assertEqual(
+            [(row["departure"], row.get("act")) for row in rows["good-friday"]["also"]],
+            [("moved", maxima), ("renamed", maxima), ("unrecorded", "editio-typica-1962")],
+        )
+        self.assertEqual(rows["easter-vigil"]["act"], maxima)
 
     def test_it_serves_the_rest_of_the_year_from_a_named_printing(self):
         served = _calendars.mass_index(_calendars.load_document(self.root, "roman-pre-1955"))
         self.assertGreater(len(served), 400)
         self.assertEqual(served["advent-1"]["recension"]["text_from"], "roman-1962")
 
-    def test_it_ships_no_rubrics_source_so_the_selector_cannot_offer_it(self):
-        """The 1962 precedence table answers to the 1960 code and is not this book's."""
-        self.assertFalse((self.root / "roman-pre-1955" / "rubrics.yaml").exists())
+    def test_a_linearized_rubrics_source_discloses_its_limit(self):
+        """A table-shaped approximation must not present itself as the five criteria."""
+        path = self.root / "roman-pre-1955" / "rubrics.yaml"
+        if not path.exists():
+            return
+        document = _calendars.read_yaml(path)
+        advisory = str(document.get("advisory") or "").lower()
+        self.assertIn("linearization", advisory)
+        self.assertIn("not the rule itself", advisory)
+        self.assertTrue(document.get("divergences"))
 
 
 class RubricsSourcingRecordTest(unittest.TestCase):
@@ -455,11 +856,20 @@ class RubricsSourcingRecordTest(unittest.TestCase):
             self.assertIn(row.get("rights"), allowed, row["id"])
             self.assertIn(row.get("may_publish_text"), {"yes", "no", "mixed", "unresolved"}, row["id"])
 
-    def test_the_headline_stays_honest_while_no_rubrics_source_ships(self):
-        """Rule 6, as a number. If a rubrics.yaml lands, this count has to move with it."""
+    def test_the_faithful_source_and_linearized_finding_aid_stay_distinct(self):
+        """Shipping a bounded approximation does not claim criteria support."""
         shipped = (ROOT / "src" / "sources" / "calendars" / "roman-pre-1955" / "rubrics.yaml").exists()
         writable = self.record["counts"]["rubrics_sources_this_record_makes_writable"]
-        self.assertEqual(bool(writable), shipped)
+        linearized = self.record["counts"]["linearized_finding_aids_shipped"]
+        self.assertEqual(writable, 0)
+        self.assertEqual(linearized, int(shipped))
+        if shipped:
+            document = _calendars.read_yaml(
+                ROOT / "src" / "sources" / "calendars" / "roman-pre-1955" / "rubrics.yaml"
+            )
+            advisory = str(document.get("advisory") or "").lower()
+            self.assertIn("linearization", advisory)
+            self.assertIn("not the rule itself", advisory)
 
 
 def _calendar_rubrics():

@@ -3,6 +3,7 @@
   {
    "artifact_type": "geojson-vector-layer",
    "byte_size": 10110735,
+   "edition_owned": true,
    "id": "artifact.natural-earth.vector-map-data.version-5.1.2-f1890d9f.ne-10m-coastline-6f75ae0e",
    "media_type": "application/geo+json",
    "notes": "The complete Natural Earth 1:10m coastline line layer. It is recorded remotely because the publication retains its exact acquisition and crop receipt rather than duplicating the 10 MB world layer in Git.",
@@ -17,6 +18,7 @@
   {
    "artifact_type": "geojson-vector-layer",
    "byte_size": 5043554,
+   "edition_owned": true,
    "id": "artifact.natural-earth.vector-map-data.version-5.1.2-f1890d9f.ne-10m-lakes-2d036f53",
    "media_type": "application/geo+json",
    "notes": "The complete Natural Earth 1:10m lakes polygon layer. It is recorded remotely because the publication retains its exact acquisition and crop receipt rather than duplicating the 5 MB world layer in Git.",
@@ -31,6 +33,7 @@
   {
    "artifact_type": "geojson-vector-layer",
    "byte_size": 10157965,
+   "edition_owned": true,
    "id": "artifact.natural-earth.vector-map-data.version-5.1.2-f1890d9f.ne-10m-land-1ac90796",
    "media_type": "application/geo+json",
    "notes": "The complete Natural Earth 1:10m land polygon layer. It is recorded remotely because the publication retains its exact acquisition and crop receipt rather than duplicating the 10 MB world layer in Git.",
@@ -45,6 +48,7 @@
   {
    "artifact_type": "geojson-vector-layer",
    "byte_size": 7307743,
+   "edition_owned": true,
    "id": "artifact.natural-earth.vector-map-data.version-5.1.2-f1890d9f.ne-10m-rivers-lake-centerlines-bb854a90",
    "media_type": "application/geo+json",
    "notes": "The complete Natural Earth 1:10m rivers and lake centerlines layer. It is recorded remotely because the publication retains its exact acquisition and crop receipt rather than duplicating the 7 MB world layer in Git.",
@@ -68,7 +72,6 @@
   "id": "edition.natural-earth.vector-map-data.version-5.1.2-f1890d9f",
   "jurisdiction": null,
   "language": "und",
-  "notes": "Release v5.1.2 points to commit f1890d9f152c896d250a77557a5751a93d494776. The registered artifacts are the four exact 1:10m GeoJSON layers used as the publication's vector basemap inputs; this edition record does not imply that the whole release archive was acquired.",
   "publication": "Natural Earth Vector GitHub repository, release v5.1.2",
   "title": "Natural Earth Vector release 5.1.2, commit f1890d9f152c896d250a77557a5751a93d494776",
   "translators": [],

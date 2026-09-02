@@ -51,7 +51,7 @@ rows, and they agree with the publication.
 | Holy Family | *Dominica infra octavam Nativitatis, vel, ea deficiente, die 30 decembris* | Feast | General Roman Calendar, appended to December | Latin read |
 | Baptism of the Lord | *Dominica post diem 6 ianuarii* | Feast | General Roman Calendar, appended to January, with the Monday note | Latin read |
 | Most Sacred Heart of Jesus | *Feria VI post dominicam secundam post Pentecosten* | Solemnity | General Roman Calendar, appended to June | Latin read |
-| Immaculate Heart of the Blessed Virgin Mary | *Sabbato post dominicam secundam post Pentecosten* | Obligatory memorial | General Roman Calendar, appended to June | Latin read; subject to the 1998 notification, which is reported not read |
+| Immaculate Heart of the Blessed Virgin Mary | *Sabbato post dominicam secundam post Pentecosten* | Obligatory memorial | General Roman Calendar, appended to June | Latin calendar entry read. The original Claude audit reported the 1998 notification without reaching it; an independent 2026-08-26 check read the official Vatican Latin delivery and *Notitiae* 35 (1999), 157. That notification makes both coinciding obligatory memorials optional for the occurrence; Universal Norms 14 and 16 c and table places 12 and 13 govern the resulting choice and weekday |
 | Blessed Virgin Mary, Mother of the Church | Monday after Pentecost | Obligatory memorial | post-2002 addition | Reported from the territorial calendar; the inserting decree was not reached |
 
 ## 5. Movable offsets from Easter (11 rows)
@@ -151,9 +151,8 @@ particularia* nn. 2, 3, 4, 23, 24, 36.
    Universal Norms 33 and the Missal's own arrangement. Both are published.
 2. The Blessed Virgin Mary, Mother of the Church, and any other post-2002 universal addition are
    reported from a territorial calendar, not from their inserting decrees.
-3. The 1998 notification governing the Immaculate Heart is reported, not read.
-4. No amendment to the Table of Liturgical Days after 1969 was located; that is bounded, not proved.
-5. The February dates of five leap-year rows of the *Tabella temporaria* disagree with the norms in
+3. No amendment to the Table of Liturgical Days after 1969 was located; that is bounded, not proved.
+4. The February dates of five leap-year rows of the *Tabella temporaria* disagree with the norms in
    the artifact examined; the origin of the defect is not determined.
-6. No United States determination for Rogation and Ember Days was sought; the row records the
+5. No United States determination for Rogation and Ember Days was sought; the row records the
    devolution only.

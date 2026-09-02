@@ -3,6 +3,7 @@
   {
    "artifact_type": "checked-transcription",
    "byte_size": 2634,
+   "edition_owned": true,
    "id": "artifact.gregory-the-great.homiliae-in-hiezechihelem-prophetam.1849-migne-pl-76-corpus-corporum.i.10.20-checked-text",
    "media_type": "text/plain; charset=utf-8",
    "notes": "The scan confirms 'ei' in 'Adducunt ei surdum', correcting the keyed Wikisource witness's apparent 'ci'. It also confirms the repeated spelling 'exspuens'.",
@@ -17,13 +18,12 @@
   {
    "artifact_type": "facsimile-pdf",
    "byte_size": 13873379,
+   "edition_owned": true,
    "id": "artifact.gregory-the-great.homiliae-in-hiezechihelem-prophetam.1849-migne-pl-76-corpus-corporum.migne-facsimile-pdf-5b80cc3d",
    "media_type": "application/pdf",
-   "notes": "Complete 144-page PDF. Book I, homily 10, section 20 begins at the bottom of PL running column 893 and continues through PL column 894, both on PDF page 55. The bold numerals 1270 and 1271 embedded in the body are inherited Maurist-edition page markers, not PL columns; this distinction resolves the otherwise conflicting locator. The file is not retained because the host reserves rights in its electronic edition.",
    "page_count": null,
    "retrieved": "2026-08-20",
    "rights": "restricted",
-   "rights_basis": "Gregory's Latin and Migne's 1849 printing are public domain by age, but Documenta Catholica Omnia states that rights in its electronic edition are reserved. No permission to redistribute the host's PDF was established, so the exact bytes are identified but not retained.",
    "rights_jurisdiction": "United States",
    "source_url": "http://www.documentacatholicaomnia.eu/01p/0590-0604%2C_SS_Gregorius_I_Magnus%2C_Homiliarum_In_Ezechielem_Prophetam_Libri_Duo%2C_MLT.pdf",
    "storage": "restricted"
@@ -31,6 +31,7 @@
   {
    "artifact_type": "wikisource-raw-wikitext",
    "byte_size": 760356,
+   "edition_owned": true,
    "id": "artifact.gregory-the-great.homiliae-in-hiezechihelem-prophetam.1849-migne-pl-76-corpus-corporum.wikisource-raw-wikitext-16854df0",
    "media_type": "text/plain; charset=utf-8",
    "notes": "The single page contains both books of the work. It is preserved as exact contributor-licensed wikitext, including templates, links, notes, and unusually long physical lines; it is therefore not registered as a raw-line search artifact.",
@@ -50,7 +51,6 @@
   "id": "edition.gregory-the-great.homiliae-in-hiezechihelem-prophetam.1849-migne-pl-76-corpus-corporum",
   "jurisdiction": null,
   "language": "la",
-  "notes": "The edition record joins the 1849 Migne print witness to the complete Corpus Corporum keyed transcription of that printing. The checked passage was collated directly to the facsimile, so it is not dependent on the Wikisource reading where the web witness differs or contains markup.",
   "publication": "Jacques-Paul Migne, Patrologiae cursus completus, Series Latina, volume 76 (Paris, 1849), columns 785-1072; Corpus Corporum electronic transcription republished by Latin Wikisource",
   "title": "Homiliae in Hiezechihelem prophetam — Patrologia Latina 76",
   "translators": [],

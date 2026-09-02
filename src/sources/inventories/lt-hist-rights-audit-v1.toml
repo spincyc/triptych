@@ -57,10 +57,11 @@ open question `lasance-renewal` was closed on 2026-08-01 by
 `src/sources/inventories/lasance-new-roman-missal-rights-v1.toml`: neither
 registered edition was renewed, so the text is public domain in the United
 States by failure to renew. It is admissible on THAT ground, not on age and not
-on lt-hist's. One exclusion travels with it -- the appendix at pages 1298a-1298n
--- and the artifact is a printing of about 1955-56, not of 1937. See its row.
+on lt-hist's. Two page-bounded exclusions travel with it -- the appendix at pages
+1298a-1298n and the unestablished insert at pages 1302a-1302d -- and the artifact
+is a printing of about 1955-56, not of 1937. See its row.
 
-The six that may come on age are admissible because they were published before
+The five that may come on age are admissible because they were published before
 1931, and on that ground alone. They are NOT admissible on the ground lt-hist gives
 for them, which is that the Internet Archive marks the scan public domain. That
 ground is insufficient here by rule -- guidance/sources.md is explicit that
@@ -75,8 +76,9 @@ lt-hist downloaded. See `[[notices]]`.
 ALL SEVEN WERE FOLDED IN AND SIX REMAIN FOLDED IN. What follows
 records how, in the order it happened. The Lasance went first and alone on
 2026-08-01, to establish the pattern: a fresh acquisition through the source
-library, a rights basis rewritten from the renewal record, the excluded appendix
-removed from the tracked bytes rather than disclaimed beside them, the text
+library, a rights basis rewritten from the renewal record, the two excluded
+lettered inserts removed from the tracked bytes rather than disclaimed beside
+them, the text
 landed as a plain OCR artifact and not as structured liturgical records, and
 nothing whatever inherited from the corpus -- which was not even the route the
 bytes came by.
@@ -1001,9 +1003,9 @@ every line number in the record are unchanged, so the file is recoverable in ful
 from the Internet Archive and authenticated by the sha256 already recorded; what
 is gone is the repository's distribution of it and the claim that it was lawful.
 
-ROUTE (a) WAS EXAMINED AND IS NOT AVAILABLE. The Lasance pattern -- one stated
-replayable deletion of one contiguous range, `sed '140854,141805d' SOURCE > OUT`
--- fits an appendix on printed-page boundaries and does not fit this book. The
+ROUTE (a) WAS EXAMINED AND IS NOT AVAILABLE. The Lasance pattern -- two stated
+replayable deletions, `sed -e '140854,141805d' -e '142275,142800d' SOURCE > OUT`
+-- fits discrete inserts on audited printed-page boundaries and does not fit this book. The
 post-1920 matter sits in five different parts of it at once: eight interleaved
 day-entries in the kalendarium table, a Praefatio indexed in three places,
 occurrence and transfer rubrics in the general rubrics, nine formularies through
@@ -1072,10 +1074,13 @@ So it is a printing of about 1955-56 of the 1945 edition (A 192159) with a
 post-1954 appendix, mislabelled by the uploader and inherited unexamined by
 lt-hist. The rights verdict is unaffected because both editions are unrenewed.
 
-ONE EXCLUSION TRAVELS WITH THE TEXT. Pages 1298a-1298n are new matter first
+TWO EXCLUSIONS TRAVEL WITH THE TEXT. Pages 1298a-1298n are new matter first
 published after October 1954 under no registration found, and they are EXCLUDED
-from any publication basis until the printing is dated from a physical copy
-[recorded, lasance-new-roman-missal-rights-v1.toml `[the_appendix_exclusion]`].
+until the printing is dated from a physical copy [recorded,
+lasance-new-roman-missal-rights-v1.toml `[the_appendix_exclusion]`]. Pages
+1302a-1302d are separately excluded because they have not been established as
+part of either registered edition or under another affirmative basis [recorded,
+same file `[the_1302_insert_exclusion]`].
 """
 why_lt_hist_did_not_settle_it = """
 KEPT AS A METHOD NOTE, BECAUSE THE CORPUS REACHED THE RIGHT ANSWER BY A METHOD
@@ -1119,7 +1124,7 @@ and the largest by a factor of two and a half.
 lt_hist_basis_rejected = """
 The corpus's ground was its own assumption plus an unsound negative search, and
 neither is the ground relied on here. `admissible` on this row rests on the
-renewal record, exactly as the six pre-1931 rows rest on their publication
+renewal record, exactly as the five pre-1931 rows rest on their publication
 dates.
 """
 carries_forward = """
@@ -1134,7 +1139,7 @@ folded_in_records = [
   "src/sources/works/francis-xavier-lasance/the-new-roman-missal/work.toml",
   "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/edition.toml",
   "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/internet-archive-djvu-ocr-21f1bbf1/artifact.toml",
-  "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/new-roman-missal-text-deb5d167/artifact.toml",
+  "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/new-roman-missal-text-80b34759/artifact.toml",
   "src/sources/inventories/source-family-migration-v1.toml -- family.francis-xavier-lasance.the-new-roman-missal",
 ]
 folded_in_note = """
@@ -1161,10 +1166,11 @@ which this file forbids.
   section files, its `metadata.json` or its `sources/manifest.json` across
   either. Nothing of the corpus's front matter exists in this repository.
 
-  It did not land the appendix. Printed pages 1298a-1298n were removed from the
-  tracked bytes by a stated one-range deletion, rather than tracked and
-  disclaimed in prose. The retrieved whole file is registered separately as
-  `remote` and `unresolved` precisely because it still contains them.
+  It did not land either excluded insert. Printed pages 1298a-1298n and
+  1302a-1302d were removed from the tracked bytes by two stated page-bounded
+  deletions, rather than tracked and disclaimed in prose. The retrieved whole
+  file is registered separately as `remote` and `unresolved` precisely because
+  it still contains both.
 
 THE ENCODING DECISION, MADE THE OTHER WAY FROM lt-hist. The text is landed as a
 plain OCR source artifact and NOT as structured liturgical records. This file's
@@ -1742,12 +1748,16 @@ the term expired at the close of the twenty-eighth year, in 1965, and the 1945
 edition's did not expire until 1973.
 """
 what_did_not_come_free = """
-The settled record is not a blanket. Two things it excludes belong in this file
+The settled record is not a blanket. Three things it excludes belong in this file
 because a fold-in would meet them:
 
   The appendix at pages 1298a-1298n of lt-hist's own downloaded OCR is new
   matter first published after October 1954 under no registration found, and is
   EXCLUDED until the printing is dated from a physical copy.
+
+  The inserted Common at pages 1302a-1302d has not been established as part of
+  either unrenewed registered edition and is EXCLUDED until edition evidence or
+  another affirmative basis resolves it.
 
   Other Lasance titles WERE renewed. The New Missal for Every Day -- one word
   from this title, same author, same publisher, same William R. Kelly -- carries
@@ -1882,10 +1892,10 @@ undecided = 4
 undecided_folded_in = 0
 admissible_bytes = 13735513
 admissible_size = "13.74 MB"
-admissible_bytes_now_tracked_here = 13710649
+admissible_bytes_now_tracked_here = 13700591
 admissible_bytes_now_tracked_here_note = """
-All six, less the 24,864 bytes of the Lasance appendix that
-`[the_appendix_exclusion]` removed. That is the whole of what this audit's
+All six, less the 34,922 bytes of the two Lasance inserts that
+`[the_appendix_exclusion]` and `[the_1302_insert_exclusion]` removed. That is the whole of what this audit's
 `admissible` verdict eventually put into Git and left there, and it is the number
 to compare against `excluded_bytes_present_in_lt_hist = 14851202`, which is what
 it kept out.

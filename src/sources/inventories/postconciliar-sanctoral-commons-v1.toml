@@ -1,0 +1,3627 @@
+# Recovery of every current dated postconciliar Mass whose own calendar
+# record identifies a Common. This table is not a resolver input and supplies
+# no Common formulary. It preserves evidence already present in the calendar
+# notes/common-direction records so identity splits and prose revisions cannot
+# silently lose the reading.
+
+inventory_schema = 1
+record_type = "postconciliar-sanctoral-commons-recovery"
+recorded_on = "2026-08-27"
+calendar = "postconciliar"
+target_edition = "Missale Romanum, editio typica tertia, reimpressio emendata 2008"
+calendar_path = "src/sources/calendars/postconciliar/propers.yaml"
+status = "recovery-not-resolution"
+projection_disposition = "not-projected"
+
+purpose = """
+One row names one stable, singular dated Mass identity and preserves the Common
+evidence its current calendar record carries. The old 113-row estimate preceded
+the split of composite date entries and later official additions; it is not an
+inventory count. Counts below are derived from the current rows and are enforced
+against the calendar.
+"""
+
+authority_boundary = """
+An Ordo lectionum Missae heading governs the Lectionary provision only. It does
+not establish the target Missal's antiphons, orations, internal Common
+subdivisions, or a whole-formulary pointer. An Antiphonary direction governs
+antiphons only: that excerpt contains no orations and is not a ritual edition.
+The four later official addition notes preserve both headings reported by their
+current calendar records, but this recovery table does not independently
+register or re-verify those remote annexes. Every row therefore remains
+resolvable = false and target_formulary_body_authority = false. The table must
+never be consumed as takes_from/common_from data.
+"""
+
+wrong_edition_rule = """
+wrong_edition_evidence marks a row whose calendar note also discusses an 1862
+Tridentine antecedent. The flag quarantines that evidence from the target
+postconciliar edition; it does not negate the separately recorded Ordo heading
+on the same row and it never licenses the antecedent as target-Missal evidence.
+"""
+
+[counts.rows]
+rows = 163
+ordo_1981 = 144
+official_additiones = 4
+antiphonary = 15
+alternatives = 85
+with_subselection = 83
+wrong_edition_evidence = 8
+
+[counts.sections]
+marian = 7
+sanctoral = 156
+
+[counts.category_appearances]
+"dedication-of-a-church" = 0
+"blessed-virgin-mary" = 8
+"martyrs" = 46
+"pastors" = 88
+"doctors-of-the-church" = 30
+"virgins" = 19
+"saints-and-holy-women" = 59
+
+[witnesses.ordo-1981]
+artifact_id = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+artifact_sha256 = "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d"
+storage = "restricted"
+role = "Ordo headings and exact artifact/printed-page/entry locators; Lectionary scope only"
+
+[witnesses.icel-antiphonary-2010]
+artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
+artifact_sha256 = "e6b82741acc77fb5e0d7c887813f6f2652b4ec088abc8526f5c77320e9762aca"
+storage = "remote"
+role = "Common directions for antiphons only; no orations or whole formularies"
+
+[[rows]]
+key = "postconciliar-common.saint-fabian-pope-martyr"
+mass_key = "saint-fabian-pope-martyr"
+registry = "pc-01-20"
+date = "01-20"
+section = "sanctoral"
+celebration = "Saint Fabian, Pope and Martyr"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 328, printed page 274, n. 514"
+artifact_page = 328
+printed_page = 274
+entry_number = "514"
+heading = "De Communi martyrum vel pastorum [pro papa]"
+categories = ["martyrs", "pastors"]
+subselections = ["pro papa"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-sebastian-martyr"
+mass_key = "saint-sebastian-martyr"
+registry = "pc-01-20-sebastian"
+date = "01-20"
+section = "sanctoral"
+celebration = "Saint Sebastian, Martyr"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 328, printed page 274, n. 515"
+artifact_page = 328
+printed_page = 274
+entry_number = "515"
+heading = "De Communi martyrum"
+categories = ["martyrs"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-agnes-virgin-martyr"
+mass_key = "saint-agnes-virgin-martyr"
+registry = "pc-01-21"
+date = "01-21"
+section = "sanctoral"
+celebration = "Saint Agnes, Virgin and Martyr"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 328, printed page 274, n. 516"
+artifact_page = 328
+printed_page = 274
+entry_number = "516"
+heading = "De Communi martyrum vel virginum"
+categories = ["martyrs", "virgins"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-vincent-deacon-martyr"
+mass_key = "saint-vincent-deacon-martyr"
+registry = "pc-01-22"
+date = "01-22"
+section = "sanctoral"
+celebration = "Saint Vincent, Deacon and Martyr"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 328, printed page 274, n. 517"
+artifact_page = 328
+printed_page = 274
+entry_number = "517"
+heading = "De Communi martyrum"
+categories = ["martyrs"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-francis-sales-bishop-doctor-church"
+mass_key = "saint-francis-sales-bishop-doctor-church"
+registry = "pc-01-24"
+date = "01-24"
+section = "sanctoral"
+celebration = "Saint Francis de Sales, Bishop and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 328, printed page 274, n. 518"
+artifact_page = 328
+printed_page = 274
+entry_number = "518"
+heading = "De Communi pastorum vel doctorum Ecclesiae"
+categories = ["pastors", "doctors-of-the-church"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saints-timothy-titus-bishops"
+mass_key = "saints-timothy-titus-bishops"
+registry = "pc-01-26"
+date = "01-26"
+section = "sanctoral"
+celebration = "Saints Timothy and Titus, Bishops"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 329, printed page 275, n. 520"
+artifact_page = 329
+printed_page = 275
+entry_number = "520"
+heading = "De Communi pastorum"
+categories = ["pastors"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-angela-merici-virgin"
+mass_key = "saint-angela-merici-virgin"
+registry = "pc-01-27"
+date = "01-27"
+section = "sanctoral"
+celebration = "Saint Angela Merici, Virgin"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 329, printed page 275, n. 521"
+artifact_page = 329
+printed_page = 275
+entry_number = "521"
+heading = "De Communi virginum vel sanctarum [pro educatoribus]"
+categories = ["virgins", "saints-and-holy-women"]
+subselections = ["pro educatoribus"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-thomas-aquinas-priest-doctor-church"
+mass_key = "saint-thomas-aquinas-priest-doctor-church"
+registry = "pc-01-28"
+date = "01-28"
+section = "sanctoral"
+celebration = "Saint Thomas Aquinas, Priest and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 330, printed page 276, n. 522"
+artifact_page = 330
+printed_page = 276
+entry_number = "522"
+heading = "De Communi doctorum Ecclesiae vel pastorum"
+categories = ["doctors-of-the-church", "pastors"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-john-bosco-priest"
+mass_key = "saint-john-bosco-priest"
+registry = "pc-01-31"
+date = "01-31"
+section = "sanctoral"
+celebration = "Saint John Bosco, Priest"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 330, printed page 276, n. 523"
+artifact_page = 330
+printed_page = 276
+entry_number = "523"
+heading = "De Communi pastorum vel sanctorum [pro educatoribus]"
+categories = ["pastors", "saints-and-holy-women"]
+subselections = ["pro educatoribus"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-ansgar-bishop"
+mass_key = "saint-ansgar-bishop"
+registry = "pc-02-03-ansgar"
+date = "02-03"
+section = "sanctoral"
+celebration = "Saint Ansgar, Bishop"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 331, printed page 277, n. 526"
+artifact_page = 331
+printed_page = 277
+entry_number = "526"
+heading = "De Communi pastorum [pro missionariis]"
+categories = ["pastors"]
+subselections = ["pro missionariis"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-blaise-bishop-martyr"
+mass_key = "saint-blaise-bishop-martyr"
+registry = "pc-02-03"
+date = "02-03"
+section = "sanctoral"
+celebration = "Saint Blaise, Bishop and Martyr"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 331, printed page 277, n. 525"
+artifact_page = 331
+printed_page = 277
+entry_number = "525"
+heading = "De Communi martyrum vel pastorum"
+categories = ["martyrs", "pastors"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-agatha-virgin-martyr"
+mass_key = "saint-agatha-virgin-martyr"
+registry = "pc-02-05"
+date = "02-05"
+section = "sanctoral"
+celebration = "Saint Agatha, Virgin and Martyr"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 331, printed page 277, n. 527"
+artifact_page = 331
+printed_page = 277
+entry_number = "527"
+heading = "De Communi martyrum vel virginum"
+categories = ["martyrs", "virgins"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saints-paul-miki-companions-martyrs"
+mass_key = "saints-paul-miki-companions-martyrs"
+registry = "pc-02-06"
+date = "02-06"
+section = "sanctoral"
+celebration = "Saints Paul Miki and Companions, Martyrs"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 332, printed page 278, n. 528"
+artifact_page = 332
+printed_page = 278
+entry_number = "528"
+heading = "De Communi martyrum"
+categories = ["martyrs"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-jerome-emiliani"
+mass_key = "saint-jerome-emiliani"
+registry = "pc-02-08"
+date = "02-08"
+section = "sanctoral"
+celebration = "Saint Jerome Emiliani"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 332, printed page 278, n. 529"
+artifact_page = 332
+printed_page = 278
+entry_number = "529"
+heading = "De Communi sanctorum [pro educatoribus]"
+categories = ["saints-and-holy-women"]
+subselections = ["pro educatoribus"]
+alternatives = false
+wrong_edition_evidence = true
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-josephine-bakhita-virgin"
+mass_key = "saint-josephine-bakhita-virgin"
+registry = "pc-02-08-bakhita"
+date = "02-08"
+section = "sanctoral"
+celebration = "Saint Josephine Bakhita, Virgin"
+basis = "icel-antiphonary-2010"
+evidence_scope = "missal-antiphons"
+source = "icel-antiphonary-2010"
+source_locus = "artifact page 103, printed page 95"
+artifact_page = 103
+printed_page = 95
+categories = ["virgins"]
+subselections = ["For One Virgin"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-scholastica-virgin"
+mass_key = "saint-scholastica-virgin"
+registry = "pc-02-10"
+date = "02-10"
+section = "sanctoral"
+celebration = "Saint Scholastica, Virgin"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 332, printed page 278, n. 530"
+artifact_page = 332
+printed_page = 278
+entry_number = "530"
+heading = "De Communi virginum vel sanctarum [pro religiosis]"
+categories = ["virgins", "saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.our-lady-lourdes"
+mass_key = "our-lady-lourdes"
+registry = "pc-02-11"
+date = "02-11"
+section = "marian"
+celebration = "Our Lady of Lourdes"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 332, printed page 278, n. 531"
+artifact_page = 332
+printed_page = 278
+entry_number = "531"
+heading = "De Communi beatae Mariae Virginis"
+categories = ["blessed-virgin-mary"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saints-cyril-monk-methodius-bishop"
+mass_key = "saints-cyril-monk-methodius-bishop"
+registry = "pc-02-14"
+date = "02-14"
+section = "sanctoral"
+celebration = "Saints Cyril, Monk, and Methodius, Bishop"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 332, printed page 278, n. 532"
+artifact_page = 332
+printed_page = 278
+entry_number = "532"
+heading = "De Communi pastorum [pro missionariis] vel sanctorum"
+categories = ["pastors", "saints-and-holy-women"]
+subselections = ["pro missionariis"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.seven-holy-founders-servite-order"
+mass_key = "seven-holy-founders-servite-order"
+registry = "pc-02-17"
+date = "02-17"
+section = "sanctoral"
+celebration = "The Seven Holy Founders of the Servite Order"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 333, printed page 279, n. 533"
+artifact_page = 333
+printed_page = 279
+entry_number = "533"
+heading = "De Communi sanctorum [pro religiosis]"
+categories = ["saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-peter-damian-bishop-doctor-church"
+mass_key = "saint-peter-damian-bishop-doctor-church"
+registry = "pc-02-21"
+date = "02-21"
+section = "sanctoral"
+celebration = "Saint Peter Damian, Bishop and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 333, printed page 279, n. 534"
+artifact_page = 333
+printed_page = 279
+entry_number = "534"
+heading = "De Communi doctorum Ecclesiae vel pastorum vel sanctorum [pro religiosis]"
+categories = ["doctors-of-the-church", "pastors", "saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-polycarp-bishop-martyr"
+mass_key = "saint-polycarp-bishop-martyr"
+registry = "pc-02-23"
+date = "02-23"
+section = "sanctoral"
+celebration = "Saint Polycarp, Bishop and Martyr"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 333, printed page 279, n. 536"
+artifact_page = 333
+printed_page = 279
+entry_number = "536"
+heading = "De Communi martyrum vel pastorum"
+categories = ["martyrs", "pastors"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-gregory-narek-abbot-doctor-church"
+mass_key = "saint-gregory-narek-abbot-doctor-church"
+registry = "pc-02-27"
+date = "02-27"
+section = "sanctoral"
+celebration = "Saint Gregory of Narek, Abbot and Doctor of the Church"
+basis = "official-additiones-recovered-from-calendar-note"
+evidence_scope = "reported-missal-and-lectionary-directions"
+source_url = "https://www.liturgyoffice.org.uk/Calendar/Sanctoral/February/Doctors-CDW-Texts-Lat.pdf"
+source_locus = "PDF page 1"
+entry_number = "536bis"
+heading = "De Communi doctorum Ecclesiae, vel sanctorum [pro religiosis]"
+missal_heading = "De Communi doctorum Ecclesiae (p. 943), vel sanctorum: pro abbate (p. 958)."
+categories = ["doctors-of-the-church", "saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-casimir"
+mass_key = "saint-casimir"
+registry = "pc-03-04"
+date = "03-04"
+section = "sanctoral"
+celebration = "Saint Casimir"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 334, printed page 280, n. 537"
+artifact_page = 334
+printed_page = 280
+entry_number = "537"
+heading = "De Communi sanctorum"
+categories = ["saints-and-holy-women"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saints-perpetua-felicity-martyrs"
+mass_key = "saints-perpetua-felicity-martyrs"
+registry = "pc-03-07"
+date = "03-07"
+section = "sanctoral"
+celebration = "Saints Perpetua and Felicity, Martyrs"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 334, printed page 280, n. 538"
+artifact_page = 334
+printed_page = 280
+entry_number = "538"
+heading = "De Communi martyrum"
+categories = ["martyrs"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-john-god-religious"
+mass_key = "saint-john-god-religious"
+registry = "pc-03-08"
+date = "03-08"
+section = "sanctoral"
+celebration = "Saint John of God, Religious"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 334, printed page 280, n. 539"
+artifact_page = 334
+printed_page = 280
+entry_number = "539"
+heading = "De Communi sanctorum [pro religiosis; pro iis qui opera misericordiae exercuerunt]"
+categories = ["saints-and-holy-women"]
+subselections = ["pro religiosis; pro iis qui opera misericordiae exercuerunt"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-frances-rome-religious"
+mass_key = "saint-frances-rome-religious"
+registry = "pc-03-09"
+date = "03-09"
+section = "sanctoral"
+celebration = "Saint Frances of Rome, Religious"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 334, printed page 280, n. 540"
+artifact_page = 334
+printed_page = 280
+entry_number = "540"
+heading = "De Communi sanctarum"
+categories = ["saints-and-holy-women"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-patrick-bishop"
+mass_key = "saint-patrick-bishop"
+registry = "pc-03-17"
+date = "03-17"
+section = "sanctoral"
+celebration = "Saint Patrick, Bishop"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 335, printed page 281, n. 541"
+artifact_page = 335
+printed_page = 281
+entry_number = "541"
+heading = "De Communi pastorum [pro missionariis]"
+categories = ["pastors"]
+subselections = ["pro missionariis"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-cyril-jerusalem-bishop-doctor-church"
+mass_key = "saint-cyril-jerusalem-bishop-doctor-church"
+registry = "pc-03-18"
+date = "03-18"
+section = "sanctoral"
+celebration = "Saint Cyril of Jerusalem, Bishop and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 335, printed page 281, n. 542"
+artifact_page = 335
+printed_page = 281
+entry_number = "542"
+heading = "De Communi pastorum vel doctorum Ecclesiae"
+categories = ["pastors", "doctors-of-the-church"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-turibius-mogrovejo-bishop"
+mass_key = "saint-turibius-mogrovejo-bishop"
+registry = "pc-03-23"
+date = "03-23"
+section = "sanctoral"
+celebration = "Saint Turibius of Mogrovejo, Bishop"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 335, printed page 281, n. 544"
+artifact_page = 335
+printed_page = 281
+entry_number = "544"
+heading = "De Communi pastorum"
+categories = ["pastors"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-francis-paola-hermit"
+mass_key = "saint-francis-paola-hermit"
+registry = "pc-04-02"
+date = "04-02"
+section = "sanctoral"
+celebration = "Saint Francis of Paola, Hermit"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 337, printed page 283, n. 546"
+artifact_page = 337
+printed_page = 283
+entry_number = "546"
+heading = "De Communi sanctorum [pro religiosis]"
+categories = ["saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-isidore-bishop-doctor-church"
+mass_key = "saint-isidore-bishop-doctor-church"
+registry = "pc-04-04"
+date = "04-04"
+section = "sanctoral"
+celebration = "Saint Isidore, Bishop and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 337, printed page 283, n. 547"
+artifact_page = 337
+printed_page = 283
+entry_number = "547"
+heading = "De Communi pastorum vel doctorum Ecclesiae"
+categories = ["pastors", "doctors-of-the-church"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-vincent-ferrer-priest"
+mass_key = "saint-vincent-ferrer-priest"
+registry = "pc-04-05"
+date = "04-05"
+section = "sanctoral"
+celebration = "Saint Vincent Ferrer, Priest"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 337, printed page 283, n. 548"
+artifact_page = 337
+printed_page = 283
+entry_number = "548"
+heading = "De Communi pastorum [pro missionariis]"
+categories = ["pastors"]
+subselections = ["pro missionariis"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-john-baptist-la-salle-priest"
+mass_key = "saint-john-baptist-la-salle-priest"
+registry = "pc-04-07"
+date = "04-07"
+section = "sanctoral"
+celebration = "Saint John Baptist de la Salle, Priest"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 337, printed page 283, n. 549"
+artifact_page = 337
+printed_page = 283
+entry_number = "549"
+heading = "De Communi pastorum vel sanctorum [pro educatoribus]"
+categories = ["pastors", "saints-and-holy-women"]
+subselections = ["pro educatoribus"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-stanislaus-bishop-martyr"
+mass_key = "saint-stanislaus-bishop-martyr"
+registry = "pc-04-11"
+date = "04-11"
+section = "sanctoral"
+celebration = "Saint Stanislaus, Bishop and Martyr"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 337, printed page 283, n. 550"
+artifact_page = 337
+printed_page = 283
+entry_number = "550"
+heading = "De Communi martyrum vel pastorum"
+categories = ["martyrs", "pastors"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-martin-i-pope-martyr"
+mass_key = "saint-martin-i-pope-martyr"
+registry = "pc-04-13"
+date = "04-13"
+section = "sanctoral"
+celebration = "Saint Martin I, Pope and Martyr"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 338, printed page 284, n. 551"
+artifact_page = 338
+printed_page = 284
+entry_number = "551"
+heading = "De Communi martyrum vel pastorum [pro papa]"
+categories = ["martyrs", "pastors"]
+subselections = ["pro papa"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-anselm-bishop-doctor-church"
+mass_key = "saint-anselm-bishop-doctor-church"
+registry = "pc-04-21"
+date = "04-21"
+section = "sanctoral"
+celebration = "Saint Anselm, Bishop and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 338, printed page 284, n. 552"
+artifact_page = 338
+printed_page = 284
+entry_number = "552"
+heading = "De Communi pastorum vel doctorum Ecclesiae"
+categories = ["pastors", "doctors-of-the-church"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-adalbert-bishop-martyr"
+mass_key = "saint-adalbert-bishop-martyr"
+registry = "pc-04-23-adalbert"
+date = "04-23"
+section = "sanctoral"
+celebration = "Saint Adalbert, Bishop and Martyr"
+basis = "icel-antiphonary-2010"
+evidence_scope = "missal-antiphons"
+source = "icel-antiphonary-2010"
+source_locus = "artifact page 108, printed page 100"
+artifact_page = 108
+printed_page = 100
+categories = ["martyrs", "pastors"]
+subselections = ["For One Martyr during Easter Time", "For a Bishop"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-george-martyr"
+mass_key = "saint-george-martyr"
+registry = "pc-04-23"
+date = "04-23"
+section = "sanctoral"
+celebration = "Saint George, Martyr"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 338, printed page 284, n. 553"
+artifact_page = 338
+printed_page = 284
+entry_number = "553"
+heading = "De Communi martyrum"
+categories = ["martyrs"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = true
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-fidelis-sigmaringen-priest-martyr"
+mass_key = "saint-fidelis-sigmaringen-priest-martyr"
+registry = "pc-04-24"
+date = "04-24"
+section = "sanctoral"
+celebration = "Saint Fidelis of Sigmaringen, Priest and Martyr"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 338, printed page 284, n. 554"
+artifact_page = 338
+printed_page = 284
+entry_number = "554"
+heading = "De Communi martyrum vel pastorum"
+categories = ["martyrs", "pastors"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-louis-grignion-montfort-priest"
+mass_key = "saint-louis-grignion-montfort-priest"
+registry = "pc-04-28-montfort"
+date = "04-28"
+section = "sanctoral"
+celebration = "Saint Louis Grignion de Montfort, Priest"
+basis = "icel-antiphonary-2010"
+evidence_scope = "missal-antiphons"
+source = "icel-antiphonary-2010"
+source_locus = "artifact page 109, printed page 101"
+artifact_page = 109
+printed_page = 101
+categories = ["pastors"]
+subselections = ["For One Pastor"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-peter-chanel-priest-martyr"
+mass_key = "saint-peter-chanel-priest-martyr"
+registry = "pc-04-28"
+date = "04-28"
+section = "sanctoral"
+celebration = "Saint Peter Chanel, Priest and Martyr"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 339, printed page 285, n. 556"
+artifact_page = 339
+printed_page = 285
+entry_number = "556"
+heading = "De Communi martyrum vel pastorum [pro missionariis]"
+categories = ["martyrs", "pastors"]
+subselections = ["pro missionariis"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-catherine-siena-virgin-doctor-church"
+mass_key = "saint-catherine-siena-virgin-doctor-church"
+registry = "pc-04-29"
+date = "04-29"
+section = "sanctoral"
+celebration = "Saint Catherine of Siena, Virgin and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 339, printed page 285, n. 557"
+artifact_page = 339
+printed_page = 285
+entry_number = "557"
+heading = "De Communi virginum"
+categories = ["virgins"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-pius-v-pope"
+mass_key = "saint-pius-v-pope"
+registry = "pc-04-30"
+date = "04-30"
+section = "sanctoral"
+celebration = "Saint Pius V, Pope"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 339, printed page 285, n. 558"
+artifact_page = 339
+printed_page = 285
+entry_number = "558"
+heading = "De Communi pastorum [pro papa]"
+categories = ["pastors"]
+subselections = ["pro papa"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-athanasius-bishop-doctor-church"
+mass_key = "saint-athanasius-bishop-doctor-church"
+registry = "pc-05-02"
+date = "05-02"
+section = "sanctoral"
+celebration = "Saint Athanasius, Bishop and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 340, printed page 286, n. 560"
+artifact_page = 340
+printed_page = 286
+entry_number = "560"
+heading = "De Communi pastorum vel doctorum Ecclesiae"
+categories = ["pastors", "doctors-of-the-church"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-john-avila-priest-doctor-church"
+mass_key = "saint-john-avila-priest-doctor-church"
+registry = "pc-05-10"
+date = "05-10"
+section = "sanctoral"
+celebration = "Saint John of Avila, Priest and Doctor of the Church"
+basis = "official-additiones-recovered-from-calendar-note"
+evidence_scope = "reported-missal-and-lectionary-directions"
+source_url = "https://www.liturgyoffice.org.uk/Calendar/Sanctoral/February/Doctors-CDW-Texts-Lat.pdf"
+source_locus = "PDF page 4"
+entry_number = "561bis"
+heading = "De Communi pastorum vel doctorum Ecclesiae"
+missal_heading = "De Communi pastorum: pro uno pastore (p. 933), vel de Communi doctorum Ecclesiae (p. 943)."
+categories = ["pastors", "doctors-of-the-church"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-pancras-martyr"
+mass_key = "saint-pancras-martyr"
+registry = "pc-05-12-pancras"
+date = "05-12"
+section = "sanctoral"
+celebration = "Saint Pancras, Martyr"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 341, printed page 287, n. 563"
+artifact_page = 341
+printed_page = 287
+entry_number = "563"
+heading = "De Communi martyrum"
+categories = ["martyrs"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saints-nereus-achilleus-martyrs"
+mass_key = "saints-nereus-achilleus-martyrs"
+registry = "pc-05-12"
+date = "05-12"
+section = "sanctoral"
+celebration = "Saints Nereus and Achilleus, Martyrs"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 341, printed page 287, n. 562"
+artifact_page = 341
+printed_page = 287
+entry_number = "562"
+heading = "De Communi martyrum"
+categories = ["martyrs"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.our-lady-fatima"
+mass_key = "our-lady-fatima"
+registry = "pc-05-13"
+date = "05-13"
+section = "marian"
+celebration = "Our Lady of Fatima"
+basis = "icel-antiphonary-2010"
+evidence_scope = "missal-antiphons"
+source = "icel-antiphonary-2010"
+source_locus = "artifact page 111, printed page 103"
+artifact_page = 111
+printed_page = 103
+categories = ["blessed-virgin-mary"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-john-i-pope-martyr"
+mass_key = "saint-john-i-pope-martyr"
+registry = "pc-05-18"
+date = "05-18"
+section = "sanctoral"
+celebration = "Saint John I, Pope and Martyr"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 341, printed page 287, n. 565"
+artifact_page = 341
+printed_page = 287
+entry_number = "565"
+heading = "De Communi martyrum vel pastorum [pro papa]"
+categories = ["martyrs", "pastors"]
+subselections = ["pro papa"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-bernardine-siena-priest"
+mass_key = "saint-bernardine-siena-priest"
+registry = "pc-05-20"
+date = "05-20"
+section = "sanctoral"
+celebration = "Saint Bernardine of Siena, Priest"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 342, printed page 288, n. 566"
+artifact_page = 342
+printed_page = 288
+entry_number = "566"
+heading = "De Communi pastorum [pro missionariis]"
+categories = ["pastors"]
+subselections = ["pro missionariis"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saints-christopher-magallanes-priest-companions-martyrs"
+mass_key = "saints-christopher-magallanes-priest-companions-martyrs"
+registry = "pc-05-21"
+date = "05-21"
+section = "sanctoral"
+celebration = "Saints Christopher Magallanes, Priest, and Companions, Martyrs"
+basis = "icel-antiphonary-2010"
+evidence_scope = "missal-antiphons"
+source = "icel-antiphonary-2010"
+source_locus = "artifact page 112, printed page 104"
+artifact_page = 112
+printed_page = 104
+categories = ["martyrs"]
+subselections = ["For Several Martyrs"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-rita-cascia-religious"
+mass_key = "saint-rita-cascia-religious"
+registry = "pc-05-22"
+date = "05-22"
+section = "sanctoral"
+celebration = "Saint Rita of Cascia, Religious"
+basis = "icel-antiphonary-2010"
+evidence_scope = "missal-antiphons"
+source = "icel-antiphonary-2010"
+source_locus = "artifact page 112, printed page 104"
+artifact_page = 112
+printed_page = 104
+categories = ["saints-and-holy-women"]
+subselections = ["For Religious"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-bede-venerable-priest-doctor-church"
+mass_key = "saint-bede-venerable-priest-doctor-church"
+registry = "pc-05-25"
+date = "05-25"
+section = "sanctoral"
+celebration = "Saint Bede the Venerable, Priest and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 342, printed page 288, n. 567"
+artifact_page = 342
+printed_page = 288
+entry_number = "567"
+heading = "De Communi pastorum vel doctorum Ecclesiae"
+categories = ["pastors", "doctors-of-the-church"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-gregory-vii-pope"
+mass_key = "saint-gregory-vii-pope"
+registry = "pc-05-25-gregory-vii"
+date = "05-25"
+section = "sanctoral"
+celebration = "Saint Gregory VII, Pope"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 342, printed page 288, n. 568"
+artifact_page = 342
+printed_page = 288
+entry_number = "568"
+heading = "De Communi pastorum [pro papa]"
+categories = ["pastors"]
+subselections = ["pro papa"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-mary-magdalene-pazzi-virgin"
+mass_key = "saint-mary-magdalene-pazzi-virgin"
+registry = "pc-05-25-pazzi"
+date = "05-25"
+section = "sanctoral"
+celebration = "Saint Mary Magdalene de' Pazzi, Virgin"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 342, printed page 288, n. 569"
+artifact_page = 342
+printed_page = 288
+entry_number = "569"
+heading = "De Communi virginum vel sanctarum [pro religiosis]"
+categories = ["virgins", "saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-philip-neri-priest"
+mass_key = "saint-philip-neri-priest"
+registry = "pc-05-26"
+date = "05-26"
+section = "sanctoral"
+celebration = "Saint Philip Neri, Priest"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 342, printed page 288, n. 570"
+artifact_page = 342
+printed_page = 288
+entry_number = "570"
+heading = "De Communi pastorum vel sanctorum [pro religiosis]"
+categories = ["pastors", "saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-augustine-canterbury-bishop"
+mass_key = "saint-augustine-canterbury-bishop"
+registry = "pc-05-27"
+date = "05-27"
+section = "sanctoral"
+celebration = "Saint Augustine of Canterbury, Bishop"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 343, printed page 289, n. 571"
+artifact_page = 343
+printed_page = 289
+entry_number = "571"
+heading = "De Communi pastorum [pro missionariis]"
+categories = ["pastors"]
+subselections = ["pro missionariis"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-paul-vi-pope"
+mass_key = "saint-paul-vi-pope"
+registry = "pc-05-29"
+date = "05-29"
+section = "sanctoral"
+celebration = "Saint Paul VI, Pope"
+basis = "official-additiones-recovered-from-calendar-note"
+evidence_scope = "reported-missal-and-lectionary-directions"
+source_url = "https://www.liturgyoffice.org.uk/Calendar/Sanctoral/May/May29-LatinText.pdf"
+source_locus = "PDF page 1"
+entry_number = "571a"
+heading = "De Communi pastorum [pro papa]"
+missal_heading = "De Communi pastorum: pro papa."
+categories = ["pastors"]
+subselections = ["pro papa"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-justin-martyr"
+mass_key = "saint-justin-martyr"
+registry = "pc-06-01"
+date = "06-01"
+section = "sanctoral"
+celebration = "Saint Justin, Martyr"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 344, printed page 290, n. 574"
+artifact_page = 344
+printed_page = 290
+entry_number = "574"
+heading = "De Communi martyrum"
+categories = ["martyrs"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saints-marcellinus-peter-martyrs"
+mass_key = "saints-marcellinus-peter-martyrs"
+registry = "pc-06-02"
+date = "06-02"
+section = "sanctoral"
+celebration = "Saints Marcellinus and Peter, Martyrs"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 344, printed page 290, n. 575"
+artifact_page = 344
+printed_page = 290
+entry_number = "575"
+heading = "De Communi martyrum"
+categories = ["martyrs"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saints-charles-lwanga-companions-martyrs"
+mass_key = "saints-charles-lwanga-companions-martyrs"
+registry = "pc-06-03"
+date = "06-03"
+section = "sanctoral"
+celebration = "Saints Charles Lwanga and Companions, Martyrs"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 344, printed page 290, n. 576"
+artifact_page = 344
+printed_page = 290
+entry_number = "576"
+heading = "De Communi martyrum"
+categories = ["martyrs"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-boniface-bishop-martyr"
+mass_key = "saint-boniface-bishop-martyr"
+registry = "pc-06-05"
+date = "06-05"
+section = "sanctoral"
+celebration = "Saint Boniface, Bishop and Martyr"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 344, printed page 290, n. 577"
+artifact_page = 344
+printed_page = 290
+entry_number = "577"
+heading = "De Communi martyrum vel pastorum [pro missionariis]"
+categories = ["martyrs", "pastors"]
+subselections = ["pro missionariis"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-norbert-bishop"
+mass_key = "saint-norbert-bishop"
+registry = "pc-06-06"
+date = "06-06"
+section = "sanctoral"
+celebration = "Saint Norbert, Bishop"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 344, printed page 290, n. 578"
+artifact_page = 344
+printed_page = 290
+entry_number = "578"
+heading = "De Communi pastorum vel sanctorum [pro religiosis]"
+categories = ["pastors", "saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-ephrem-deacon-doctor-church"
+mass_key = "saint-ephrem-deacon-doctor-church"
+registry = "pc-06-09"
+date = "06-09"
+section = "sanctoral"
+celebration = "Saint Ephrem, Deacon and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 345, printed page 291, n. 579"
+artifact_page = 345
+printed_page = 291
+entry_number = "579"
+heading = "De Communi doctorum Ecclesiae"
+categories = ["doctors-of-the-church"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-anthony-padua-priest-doctor-church"
+mass_key = "saint-anthony-padua-priest-doctor-church"
+registry = "pc-06-13"
+date = "06-13"
+section = "sanctoral"
+celebration = "Saint Anthony of Padua, Priest and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 345, printed page 291, n. 581"
+artifact_page = 345
+printed_page = 291
+entry_number = "581"
+heading = "De Communi pastorum vel doctorum Ecclesiae vel sanctorum [pro religiosis]"
+categories = ["pastors", "doctors-of-the-church", "saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-romuald-abbot"
+mass_key = "saint-romuald-abbot"
+registry = "pc-06-19"
+date = "06-19"
+section = "sanctoral"
+celebration = "Saint Romuald, Abbot"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 345, printed page 291, n. 582"
+artifact_page = 345
+printed_page = 291
+entry_number = "582"
+heading = "De Communi sanctorum [pro religiosis]"
+categories = ["saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-aloysius-gonzaga-religious"
+mass_key = "saint-aloysius-gonzaga-religious"
+registry = "pc-06-21"
+date = "06-21"
+section = "sanctoral"
+celebration = "Saint Aloysius Gonzaga, Religious"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 346, printed page 292, n. 583"
+artifact_page = 346
+printed_page = 292
+entry_number = "583"
+heading = "De Communi sanctorum virorum [pro religiosis]"
+categories = ["saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-paulinus-nola-bishop"
+mass_key = "saint-paulinus-nola-bishop"
+registry = "pc-06-22"
+date = "06-22"
+section = "sanctoral"
+celebration = "Saint Paulinus of Nola, Bishop"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 346, printed page 292, n. 584"
+artifact_page = 346
+printed_page = 292
+entry_number = "584"
+heading = "De Communi pastorum"
+categories = ["pastors"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = true
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saints-john-fisher-bishop-thomas-more"
+mass_key = "saints-john-fisher-bishop-thomas-more"
+registry = "pc-06-22-fisher-more"
+date = "06-22"
+section = "sanctoral"
+celebration = "Saints John Fisher, Bishop, and Thomas More, Martyrs"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 346, printed page 292, n. 585"
+artifact_page = 346
+printed_page = 292
+entry_number = "585"
+heading = "De Communi martyrum"
+categories = ["martyrs"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-cyril-alexandria-bishop-doctor-church"
+mass_key = "saint-cyril-alexandria-bishop-doctor-church"
+registry = "pc-06-27"
+date = "06-27"
+section = "sanctoral"
+celebration = "Saint Cyril of Alexandria, Bishop and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 347, printed page 293, n. 588"
+artifact_page = 347
+printed_page = 293
+entry_number = "588"
+heading = "De Communi pastorum vel doctorum Ecclesiae"
+categories = ["pastors", "doctors-of-the-church"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-irenaeus-bishop-martyr-doctor-church"
+mass_key = "saint-irenaeus-bishop-martyr-doctor-church"
+registry = "pc-06-28"
+date = "06-28"
+section = "sanctoral"
+celebration = "Saint Irenaeus, Bishop, Martyr, and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 347, printed page 293, n. 589"
+artifact_page = 347
+printed_page = 293
+entry_number = "589"
+heading = "De Communi martyrum vel doctorum Ecclesiae"
+categories = ["martyrs", "doctors-of-the-church"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.first-martyrs-holy-roman-church"
+mass_key = "first-martyrs-holy-roman-church"
+registry = "pc-06-30"
+date = "06-30"
+section = "sanctoral"
+celebration = "The First Martyrs of the Holy Roman Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 348, printed page 294, n. 592"
+artifact_page = 348
+printed_page = 294
+entry_number = "592"
+heading = "De Communi martyrum"
+categories = ["martyrs"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-elizabeth-portugal"
+mass_key = "saint-elizabeth-portugal"
+registry = "pc-07-04"
+date = "07-04"
+section = "sanctoral"
+celebration = "Saint Elizabeth of Portugal"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 349, printed page 295, n. 594"
+artifact_page = 349
+printed_page = 295
+entry_number = "594"
+heading = "De Communi sanctarum [pro iis qui opera misericordiae exercuerunt]"
+categories = ["saints-and-holy-women"]
+subselections = ["pro iis qui opera misericordiae exercuerunt"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-anthony-zaccaria-priest"
+mass_key = "saint-anthony-zaccaria-priest"
+registry = "pc-07-05"
+date = "07-05"
+section = "sanctoral"
+celebration = "Saint Anthony Zaccaria, Priest"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 349, printed page 295, n. 595"
+artifact_page = 349
+printed_page = 295
+entry_number = "595"
+heading = "De Communi pastorum vel sanctorum [pro educatoribus et pro religiosis]"
+categories = ["pastors", "saints-and-holy-women"]
+subselections = ["pro educatoribus et pro religiosis"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-maria-goretti-virgin-martyr"
+mass_key = "saint-maria-goretti-virgin-martyr"
+registry = "pc-07-06"
+date = "07-06"
+section = "sanctoral"
+celebration = "Saint Maria Goretti, Virgin and Martyr"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 349, printed page 295, n. 596"
+artifact_page = 349
+printed_page = 295
+entry_number = "596"
+heading = "De Communi martyrum vel virginum"
+categories = ["martyrs", "virgins"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saints-augustine-zhao-rong-priest-companions"
+mass_key = "saints-augustine-zhao-rong-priest-companions"
+registry = "pc-07-09"
+date = "07-09"
+section = "sanctoral"
+celebration = "Saints Augustine Zhao Rong, Priest, and Companions, Martyrs"
+basis = "icel-antiphonary-2010"
+evidence_scope = "missal-antiphons"
+source = "icel-antiphonary-2010"
+source_locus = "artifact page 119, printed page 111"
+artifact_page = 119
+printed_page = 111
+categories = ["martyrs"]
+subselections = ["For Several Martyrs"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-benedict-abbot"
+mass_key = "saint-benedict-abbot"
+registry = "pc-07-11"
+date = "07-11"
+section = "sanctoral"
+celebration = "Saint Benedict, Abbot"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 350, printed page 296, n. 597"
+artifact_page = 350
+printed_page = 296
+entry_number = "597"
+heading = "De Communi sanctorum [pro religiosis]"
+categories = ["saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-henry"
+mass_key = "saint-henry"
+registry = "pc-07-13"
+date = "07-13"
+section = "sanctoral"
+celebration = "Saint Henry"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 350, printed page 296, n. 598"
+artifact_page = 350
+printed_page = 296
+entry_number = "598"
+heading = "De Communi sanctorum"
+categories = ["saints-and-holy-women"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-camillus-lellis-priest"
+mass_key = "saint-camillus-lellis-priest"
+registry = "pc-07-14"
+date = "07-14"
+section = "sanctoral"
+celebration = "Saint Camillus de Lellis, Priest"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 350, printed page 296, n. 599"
+artifact_page = 350
+printed_page = 296
+entry_number = "599"
+heading = "De Communi sanctorum [pro iis qui opera misericordiae exercuerunt]"
+categories = ["saints-and-holy-women"]
+subselections = ["pro iis qui opera misericordiae exercuerunt"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-bonaventure-bishop-doctor-church"
+mass_key = "saint-bonaventure-bishop-doctor-church"
+registry = "pc-07-15"
+date = "07-15"
+section = "sanctoral"
+celebration = "Saint Bonaventure, Bishop and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 350, printed page 296, n. 600"
+artifact_page = 350
+printed_page = 296
+entry_number = "600"
+heading = "De Communi pastorum vel doctorum Ecclesiae"
+categories = ["pastors", "doctors-of-the-church"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.our-lady-mount-carmel"
+mass_key = "our-lady-mount-carmel"
+registry = "pc-07-16"
+date = "07-16"
+section = "marian"
+celebration = "Our Lady of Mount Carmel"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 350, printed page 296, n. 601"
+artifact_page = 350
+printed_page = 296
+entry_number = "601"
+heading = "De Communi beatae Mariae Virginis"
+categories = ["blessed-virgin-mary"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-lawrence-brindisi-priest-doctor-church"
+mass_key = "saint-lawrence-brindisi-priest-doctor-church"
+registry = "pc-07-21"
+date = "07-21"
+section = "sanctoral"
+celebration = "Saint Lawrence of Brindisi, Priest and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 351, printed page 297, n. 602"
+artifact_page = 351
+printed_page = 297
+entry_number = "602"
+heading = "De Communi pastorum vel doctorum Ecclesiae"
+categories = ["pastors", "doctors-of-the-church"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-bridget-religious"
+mass_key = "saint-bridget-religious"
+registry = "pc-07-23"
+date = "07-23"
+section = "sanctoral"
+celebration = "Saint Bridget, Religious"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 351, printed page 297, n. 604"
+artifact_page = 351
+printed_page = 297
+entry_number = "604"
+heading = "De Communi sanctarum [pro religiosis]"
+categories = ["saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-sharbel-makhluf-priest"
+mass_key = "saint-sharbel-makhluf-priest"
+registry = "pc-07-24"
+date = "07-24"
+section = "sanctoral"
+celebration = "Saint Sharbel Makhluf, Priest"
+basis = "icel-antiphonary-2010"
+evidence_scope = "missal-antiphons"
+source = "icel-antiphonary-2010"
+source_locus = "artifact page 121, printed page 113"
+artifact_page = 121
+printed_page = 113
+categories = ["pastors", "saints-and-holy-women"]
+subselections = ["For One Pastor", "For a Monk"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saints-martha-mary-lazarus"
+mass_key = "saints-martha-mary-lazarus"
+registry = "pc-07-29"
+date = "07-29"
+section = "sanctoral"
+celebration = "Saints Martha, Mary, and Lazarus"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 352, printed page 298, n. 607"
+artifact_page = 352
+printed_page = 298
+entry_number = "607"
+heading = "De Communi sanctarum"
+categories = ["saints-and-holy-women"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-peter-chrysologus-bishop-doctor-church"
+mass_key = "saint-peter-chrysologus-bishop-doctor-church"
+registry = "pc-07-30"
+date = "07-30"
+section = "sanctoral"
+celebration = "Saint Peter Chrysologus, Bishop and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 352, printed page 298, n. 608"
+artifact_page = 352
+printed_page = 298
+entry_number = "608"
+heading = "De Communi pastorum vel doctorum Ecclesiae"
+categories = ["pastors", "doctors-of-the-church"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-ignatius-loyola-priest"
+mass_key = "saint-ignatius-loyola-priest"
+registry = "pc-07-31"
+date = "07-31"
+section = "sanctoral"
+celebration = "Saint Ignatius of Loyola, Priest"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 352, printed page 298, n. 609"
+artifact_page = 352
+printed_page = 298
+entry_number = "609"
+heading = "De Communi pastorum vel sanctorum [pro religiosis]"
+categories = ["pastors", "saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-alphonsus-liguori-bishop-doctor-church"
+mass_key = "saint-alphonsus-liguori-bishop-doctor-church"
+registry = "pc-08-01"
+date = "08-01"
+section = "sanctoral"
+celebration = "Saint Alphonsus Liguori, Bishop and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 353, printed page 299, n. 610"
+artifact_page = 353
+printed_page = 299
+entry_number = "610"
+heading = "De Communi pastorum vel doctorum Ecclesiae"
+categories = ["pastors", "doctors-of-the-church"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-eusebius-vercelli-bishop"
+mass_key = "saint-eusebius-vercelli-bishop"
+registry = "pc-08-02"
+date = "08-02"
+section = "sanctoral"
+celebration = "Saint Eusebius of Vercelli, Bishop"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 353, printed page 299, n. 611"
+artifact_page = 353
+printed_page = 299
+entry_number = "611"
+heading = "De Communi pastorum"
+categories = ["pastors"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-peter-julian-eymard-priest"
+mass_key = "saint-peter-julian-eymard-priest"
+registry = "pc-08-02-eymard"
+date = "08-02"
+section = "sanctoral"
+celebration = "Saint Peter Julian Eymard, Priest"
+basis = "icel-antiphonary-2010"
+evidence_scope = "missal-antiphons"
+source = "icel-antiphonary-2010"
+source_locus = "artifact page 124, printed page 116"
+artifact_page = 124
+printed_page = 116
+categories = ["saints-and-holy-women", "pastors"]
+subselections = ["For Religious", "For One Pastor"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-john-vianney-priest"
+mass_key = "saint-john-vianney-priest"
+registry = "pc-08-04"
+date = "08-04"
+section = "sanctoral"
+celebration = "Saint John Vianney, Priest"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 353, printed page 299, n. 612"
+artifact_page = 353
+printed_page = 299
+entry_number = "612"
+heading = "De Communi pastorum"
+categories = ["pastors"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.dedication-basilica-saint-mary-major"
+mass_key = "dedication-basilica-saint-mary-major"
+registry = "pc-08-05"
+date = "08-05"
+section = "sanctoral"
+celebration = "The Dedication of the Basilica of Saint Mary Major"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 353, printed page 299, n. 613"
+artifact_page = 353
+printed_page = 299
+entry_number = "613"
+heading = "De Communi beatae Mariae Virginis"
+categories = ["blessed-virgin-mary"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-cajetan-priest"
+mass_key = "saint-cajetan-priest"
+registry = "pc-08-07-cajetan"
+date = "08-07"
+section = "sanctoral"
+celebration = "Saint Cajetan, Priest"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 354, printed page 300, n. 616"
+artifact_page = 354
+printed_page = 300
+entry_number = "616"
+heading = "De Communi pastorum vel sanctorum [pro religiosis]"
+categories = ["pastors", "saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saints-sixtus-ii-pope-companions-martyrs"
+mass_key = "saints-sixtus-ii-pope-companions-martyrs"
+registry = "pc-08-07"
+date = "08-07"
+section = "sanctoral"
+celebration = "Saints Sixtus II, Pope, and Companions, Martyrs"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 354, printed page 300, n. 615"
+artifact_page = 354
+printed_page = 300
+entry_number = "615"
+heading = "De Communi martyrum"
+categories = ["martyrs"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = true
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-dominic-priest"
+mass_key = "saint-dominic-priest"
+registry = "pc-08-08"
+date = "08-08"
+section = "sanctoral"
+celebration = "Saint Dominic, Priest"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 354, printed page 300, n. 617"
+artifact_page = 354
+printed_page = 300
+entry_number = "617"
+heading = "De Communi pastorum [pro missionariis] vel sanctorum [pro religiosis]"
+categories = ["pastors", "saints-and-holy-women"]
+subselections = ["pro missionariis", "pro religiosis"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-teresa-benedicta-cross-virgin-martyr"
+mass_key = "saint-teresa-benedicta-cross-virgin-martyr"
+registry = "pc-08-09"
+date = "08-09"
+section = "sanctoral"
+celebration = "Saint Teresa Benedicta of the Cross, Virgin and Martyr"
+basis = "icel-antiphonary-2010"
+evidence_scope = "missal-antiphons"
+source = "icel-antiphonary-2010"
+source_locus = "artifact page 125, printed page 117"
+artifact_page = 125
+printed_page = 117
+categories = ["martyrs", "virgins"]
+subselections = ["For a Virgin Martyr", "For One Virgin"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-clare-virgin"
+mass_key = "saint-clare-virgin"
+registry = "pc-08-11"
+date = "08-11"
+section = "sanctoral"
+celebration = "Saint Clare, Virgin"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 355, printed page 301, n. 619"
+artifact_page = 355
+printed_page = 301
+entry_number = "619"
+heading = "De Communi virginum vel sanctarum [pro religiosis]"
+categories = ["virgins", "saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-jane-frances-chantal-religious"
+mass_key = "saint-jane-frances-chantal-religious"
+registry = "pc-08-12"
+date = "08-12"
+section = "sanctoral"
+celebration = "Saint Jane Frances de Chantal, Religious"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 372, printed page 318, n. 691"
+artifact_page = 372
+printed_page = 318
+entry_number = "691"
+heading = "De Communi sanctarum [pro religiosis]"
+categories = ["saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saints-pontian-pope-hippolytus-priest-martyrs"
+mass_key = "saints-pontian-pope-hippolytus-priest-martyrs"
+registry = "pc-08-13"
+date = "08-13"
+section = "sanctoral"
+celebration = "Saints Pontian, Pope, and Hippolytus, Priest, Martyrs"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 355, printed page 301, n. 620"
+artifact_page = 355
+printed_page = 301
+entry_number = "620"
+heading = "De Communi martyrum vel pastorum"
+categories = ["martyrs", "pastors"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-stephen-hungary"
+mass_key = "saint-stephen-hungary"
+registry = "pc-08-16"
+date = "08-16"
+section = "sanctoral"
+celebration = "Saint Stephen of Hungary"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 356, printed page 302, n. 623"
+artifact_page = 356
+printed_page = 302
+entry_number = "623"
+heading = "De Communi sanctorum"
+categories = ["saints-and-holy-women"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-john-eudes-priest"
+mass_key = "saint-john-eudes-priest"
+registry = "pc-08-19"
+date = "08-19"
+section = "sanctoral"
+celebration = "Saint John Eudes, Priest"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 356, printed page 302, n. 624"
+artifact_page = 356
+printed_page = 302
+entry_number = "624"
+heading = "De Communi pastorum vel sanctorum"
+categories = ["pastors", "saints-and-holy-women"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-bernard-abbot-doctor-church"
+mass_key = "saint-bernard-abbot-doctor-church"
+registry = "pc-08-20"
+date = "08-20"
+section = "sanctoral"
+celebration = "Saint Bernard, Abbot and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 356, printed page 302, n. 625"
+artifact_page = 356
+printed_page = 302
+entry_number = "625"
+heading = "De Communi doctorum Ecclesiae vel sanctorum [pro religiosis]"
+categories = ["doctors-of-the-church", "saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-pius-x-pope"
+mass_key = "saint-pius-x-pope"
+registry = "pc-08-21"
+date = "08-21"
+section = "sanctoral"
+celebration = "Saint Pius X, Pope"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 357, printed page 303, n. 626"
+artifact_page = 357
+printed_page = 303
+entry_number = "626"
+heading = "De Communi pastorum [pro papa]"
+categories = ["pastors"]
+subselections = ["pro papa"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.queenship-blessed-virgin-mary"
+mass_key = "queenship-blessed-virgin-mary"
+registry = "pc-08-22"
+date = "08-22"
+section = "marian"
+celebration = "The Queenship of the Blessed Virgin Mary"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 357, printed page 303, n. 627"
+artifact_page = 357
+printed_page = 303
+entry_number = "627"
+heading = "De Communi beatae Mariae Virginis"
+categories = ["blessed-virgin-mary"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-rose-lima-virgin"
+mass_key = "saint-rose-lima-virgin"
+registry = "pc-08-23"
+date = "08-23"
+section = "sanctoral"
+celebration = "Saint Rose of Lima, Virgin"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 357, printed page 303, n. 628"
+artifact_page = 357
+printed_page = 303
+entry_number = "628"
+heading = "De Communi virginum vel sanctarum mulierum [pro religiosis]"
+categories = ["virgins", "saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-joseph-calasanz-priest"
+mass_key = "saint-joseph-calasanz-priest"
+registry = "pc-08-25-calasanz"
+date = "08-25"
+section = "sanctoral"
+celebration = "Saint Joseph Calasanz, Priest"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 358, printed page 304, n. 631"
+artifact_page = 358
+printed_page = 304
+entry_number = "631"
+heading = "De Communi pastorum vel sanctorum [pro educatoribus]"
+categories = ["pastors", "saints-and-holy-women"]
+subselections = ["pro educatoribus"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-louis"
+mass_key = "saint-louis"
+registry = "pc-08-25"
+date = "08-25"
+section = "sanctoral"
+celebration = "Saint Louis"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 357, printed page 303, n. 630"
+artifact_page = 357
+printed_page = 303
+entry_number = "630"
+heading = "De Communi sanctorum"
+categories = ["saints-and-holy-women"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = true
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-monica"
+mass_key = "saint-monica"
+registry = "pc-08-27"
+date = "08-27"
+section = "sanctoral"
+celebration = "Saint Monica"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 358, printed page 304, n. 632"
+artifact_page = 358
+printed_page = 304
+entry_number = "632"
+heading = "De Communi sanctarum"
+categories = ["saints-and-holy-women"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-augustine-bishop-doctor-church"
+mass_key = "saint-augustine-bishop-doctor-church"
+registry = "pc-08-28"
+date = "08-28"
+section = "sanctoral"
+celebration = "Saint Augustine, Bishop and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 358, printed page 304, n. 633"
+artifact_page = 358
+printed_page = 304
+entry_number = "633"
+heading = "De Communi pastorum aut doctorum Ecclesiae"
+categories = ["pastors", "doctors-of-the-church"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-gregory-great-pope-doctor-church"
+mass_key = "saint-gregory-great-pope-doctor-church"
+registry = "pc-09-03"
+date = "09-03"
+section = "sanctoral"
+celebration = "Saint Gregory the Great, Pope and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 359, printed page 305, n. 635"
+artifact_page = 359
+printed_page = 305
+entry_number = "635"
+heading = "De Communi pastorum [pro papa] vel doctorum Ecclesiae"
+categories = ["pastors", "doctors-of-the-church"]
+subselections = ["pro papa"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-john-chrysostom-bishop-doctor-church"
+mass_key = "saint-john-chrysostom-bishop-doctor-church"
+registry = "pc-09-13"
+date = "09-13"
+section = "sanctoral"
+celebration = "Saint John Chrysostom, Bishop and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 359, printed page 305, n. 637"
+artifact_page = 359
+printed_page = 305
+entry_number = "637"
+heading = "De Communi pastorum vel doctorum Ecclesiae"
+categories = ["pastors", "doctors-of-the-church"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saints-cornelius-pope-cyprian-bishop-martyrs"
+mass_key = "saints-cornelius-pope-cyprian-bishop-martyrs"
+registry = "pc-09-16"
+date = "09-16"
+section = "sanctoral"
+celebration = "Saints Cornelius, Pope, and Cyprian, Bishop, Martyrs"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 360, printed page 306, n. 640"
+artifact_page = 360
+printed_page = 306
+entry_number = "640"
+heading = "De Communi martyrum vel pastorum"
+categories = ["martyrs", "pastors"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-robert-bellarmine-bishop-doctor-church"
+mass_key = "saint-robert-bellarmine-bishop-doctor-church"
+registry = "pc-09-17"
+date = "09-17"
+section = "sanctoral"
+celebration = "Saint Robert Bellarmine, Bishop and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 360, printed page 306, n. 641"
+artifact_page = 360
+printed_page = 306
+entry_number = "641"
+heading = "De Communi pastorum vel doctorum Ecclesiae"
+categories = ["pastors", "doctors-of-the-church"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-januarius-bishop-martyr"
+mass_key = "saint-januarius-bishop-martyr"
+registry = "pc-09-19"
+date = "09-19"
+section = "sanctoral"
+celebration = "Saint Januarius, Bishop and Martyr"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 361, printed page 307, n. 642"
+artifact_page = 361
+printed_page = 307
+entry_number = "642"
+heading = "De Communi martyrum vel pastorum"
+categories = ["martyrs", "pastors"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-pius-pietrelcina-priest"
+mass_key = "saint-pius-pietrelcina-priest"
+registry = "pc-09-23"
+date = "09-23"
+section = "sanctoral"
+celebration = "Saint Pius of Pietrelcina, Priest"
+basis = "icel-antiphonary-2010"
+evidence_scope = "missal-antiphons"
+source = "icel-antiphonary-2010"
+source_locus = "artifact page 134, printed page 126"
+artifact_page = 134
+printed_page = 126
+categories = ["pastors", "saints-and-holy-women"]
+subselections = ["For One Pastor", "For Religious"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saints-cosmas-damian-martyrs"
+mass_key = "saints-cosmas-damian-martyrs"
+registry = "pc-09-26"
+date = "09-26"
+section = "sanctoral"
+celebration = "Saints Cosmas and Damian, Martyrs"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 361, printed page 307, n. 644"
+artifact_page = 361
+printed_page = 307
+entry_number = "644"
+heading = "De Communi martyrum"
+categories = ["martyrs"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-vincent-paul-priest"
+mass_key = "saint-vincent-paul-priest"
+registry = "pc-09-27"
+date = "09-27"
+section = "sanctoral"
+celebration = "Saint Vincent de Paul, Priest"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 361, printed page 307, n. 645"
+artifact_page = 361
+printed_page = 307
+entry_number = "645"
+heading = "De Communi pastorum [pro missionariis] vel sanctorum [pro iis qui opera misericordiae exercuerunt]"
+categories = ["pastors", "saints-and-holy-women"]
+subselections = ["pro missionariis", "pro iis qui opera misericordiae exercuerunt"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-wenceslaus-martyr"
+mass_key = "saint-wenceslaus-martyr"
+registry = "pc-09-28"
+date = "09-28"
+section = "sanctoral"
+celebration = "Saint Wenceslaus, Martyr"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 362, printed page 308, n. 646"
+artifact_page = 362
+printed_page = 308
+entry_number = "646"
+heading = "De Communi martyrum"
+categories = ["martyrs"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = true
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saints-lawrence-ruiz-companions-martyrs"
+mass_key = "saints-lawrence-ruiz-companions-martyrs"
+registry = "pc-09-28-lawrence-ruiz"
+date = "09-28"
+section = "sanctoral"
+celebration = "Saints Lawrence Ruiz and Companions, Martyrs"
+basis = "icel-antiphonary-2010"
+evidence_scope = "missal-antiphons"
+source = "icel-antiphonary-2010"
+source_locus = "artifact page 135, printed page 127"
+artifact_page = 135
+printed_page = 127
+categories = ["martyrs"]
+subselections = ["For Several Martyrs"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-jerome-priest-doctor-church"
+mass_key = "saint-jerome-priest-doctor-church"
+registry = "pc-09-30"
+date = "09-30"
+section = "sanctoral"
+celebration = "Saint Jerome, Priest and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 362, printed page 308, n. 648"
+artifact_page = 362
+printed_page = 308
+entry_number = "648"
+heading = "De Communi doctorum Ecclesiae vel pastorum"
+categories = ["doctors-of-the-church", "pastors"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-therese-child-jesus-virgin-doctor"
+mass_key = "saint-therese-child-jesus-virgin-doctor"
+registry = "pc-10-01"
+date = "10-01"
+section = "sanctoral"
+celebration = "Saint Thérèse of the Child Jesus, Virgin and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 363, printed page 309, n. 649"
+artifact_page = 363
+printed_page = 309
+entry_number = "649"
+heading = "De Communi virginum vel sanctarum [pro religiosis]"
+categories = ["virgins", "saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-francis-assisi"
+mass_key = "saint-francis-assisi"
+registry = "pc-10-04"
+date = "10-04"
+section = "sanctoral"
+celebration = "Saint Francis of Assisi"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 363, printed page 309, n. 651"
+artifact_page = 363
+printed_page = 309
+entry_number = "651"
+heading = "De Communi sanctorum [pro religiosis]"
+categories = ["saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-faustina-kowalska-virgin"
+mass_key = "saint-faustina-kowalska-virgin"
+registry = "pc-10-05"
+date = "10-05"
+section = "sanctoral"
+celebration = "Saint Faustina Kowalska, Virgin"
+basis = "official-additiones-recovered-from-calendar-note"
+evidence_scope = "reported-missal-and-lectionary-directions"
+source_url = "https://www.liturgyoffice.org.uk/Calendar/Sanctoral/October/Oct5-CDW-Texts-Lat.pdf"
+source_locus = "page not stated in the current calendar note"
+entry_number = "651a"
+heading = "De Communi virginum vel sanctarum"
+missal_heading = "De Communi virginum: pro una virgine vel de Communi sanctarum: pro religiosis."
+categories = ["virgins", "saints-and-holy-women"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-bruno-priest"
+mass_key = "saint-bruno-priest"
+registry = "pc-10-06"
+date = "10-06"
+section = "sanctoral"
+celebration = "Saint Bruno, Priest"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 363, printed page 309, n. 652"
+artifact_page = 363
+printed_page = 309
+entry_number = "652"
+heading = "De Communi pastorum vel sanctorum [pro religiosis]"
+categories = ["pastors", "saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.our-lady-rosary"
+mass_key = "our-lady-rosary"
+registry = "pc-10-07"
+date = "10-07"
+section = "marian"
+celebration = "Our Lady of the Rosary"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 364, printed page 310, n. 653"
+artifact_page = 364
+printed_page = 310
+entry_number = "653"
+heading = "De Communi beatae Mariae Virginis"
+categories = ["blessed-virgin-mary"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-john-leonardi-priest"
+mass_key = "saint-john-leonardi-priest"
+registry = "pc-10-09-leonardi"
+date = "10-09"
+section = "sanctoral"
+celebration = "Saint John Leonardi, Priest"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 364, printed page 310, n. 655"
+artifact_page = 364
+printed_page = 310
+entry_number = "655"
+heading = "De Communi pastorum vel sanctorum [pro iis qui opera misericordiae exercuerunt]"
+categories = ["pastors", "saints-and-holy-women"]
+subselections = ["pro iis qui opera misericordiae exercuerunt"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saints-denis-bishop-companions-martyrs"
+mass_key = "saints-denis-bishop-companions-martyrs"
+registry = "pc-10-09"
+date = "10-09"
+section = "sanctoral"
+celebration = "Saints Denis, Bishop, and Companions, Martyrs"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 364, printed page 310, n. 654"
+artifact_page = 364
+printed_page = 310
+entry_number = "654"
+heading = "De Communi martyrum"
+categories = ["martyrs"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-callistus-i-pope-martyr"
+mass_key = "saint-callistus-i-pope-martyr"
+registry = "pc-10-14"
+date = "10-14"
+section = "sanctoral"
+celebration = "Saint Callistus I, Pope and Martyr"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 364, printed page 310, n. 656"
+artifact_page = 364
+printed_page = 310
+entry_number = "656"
+heading = "De Communi martyrum vel pastorum [pro papa]"
+categories = ["martyrs", "pastors"]
+subselections = ["pro papa"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-teresa-jesus-virgin-doctor-church"
+mass_key = "saint-teresa-jesus-virgin-doctor-church"
+registry = "pc-10-15"
+date = "10-15"
+section = "sanctoral"
+celebration = "Saint Teresa of Jesus, Virgin and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 364, printed page 310, n. 657"
+artifact_page = 364
+printed_page = 310
+entry_number = "657"
+heading = "De Communi virginum vel sanctarum [pro religiosis]"
+categories = ["virgins", "saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-hedwig-religious"
+mass_key = "saint-hedwig-religious"
+registry = "pc-10-16"
+date = "10-16"
+section = "sanctoral"
+celebration = "Saint Hedwig, Religious"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 365, printed page 311, n. 658"
+artifact_page = 365
+printed_page = 311
+entry_number = "658"
+heading = "De Communi sanctarum [pro religiosis]"
+categories = ["saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = false
+wrong_edition_evidence = true
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-margaret-mary-alacoque-virgin"
+mass_key = "saint-margaret-mary-alacoque-virgin"
+registry = "pc-10-16-alacoque"
+date = "10-16"
+section = "sanctoral"
+celebration = "Saint Margaret Mary Alacoque, Virgin"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 365, printed page 311, n. 659"
+artifact_page = 365
+printed_page = 311
+entry_number = "659"
+heading = "De Communi virginum vel sanctarum [pro religiosis]"
+categories = ["virgins", "saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-ignatius-antioch-bishop-martyr"
+mass_key = "saint-ignatius-antioch-bishop-martyr"
+registry = "pc-10-17"
+date = "10-17"
+section = "sanctoral"
+celebration = "Saint Ignatius of Antioch, Bishop and Martyr"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 365, printed page 311, n. 660"
+artifact_page = 365
+printed_page = 311
+entry_number = "660"
+heading = "Vel de Communi martyrum vel pastorum"
+categories = ["martyrs", "pastors"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-paul-cross-priest"
+mass_key = "saint-paul-cross-priest"
+registry = "pc-10-19-paul-cross"
+date = "10-19"
+section = "sanctoral"
+celebration = "Saint Paul of the Cross, Priest"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 366, printed page 312, n. 663"
+artifact_page = 366
+printed_page = 312
+entry_number = "663"
+heading = "De Communi pastorum, vel sanctorum [pro religiosis]"
+categories = ["pastors", "saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saints-john-brebeuf-isaac-jogues-priests"
+mass_key = "saints-john-brebeuf-isaac-jogues-priests"
+registry = "pc-10-19"
+date = "10-19"
+section = "sanctoral"
+celebration = "Saints John de Brébeuf and Isaac Jogues, Priests, and Companions, Martyrs"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 365, printed page 311, n. 662"
+artifact_page = 365
+printed_page = 311
+entry_number = "662"
+heading = "De Communi martyrum vel pastorum [pro missionariis]"
+categories = ["martyrs", "pastors"]
+subselections = ["pro missionariis"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-john-capistrano-priest"
+mass_key = "saint-john-capistrano-priest"
+registry = "pc-10-23"
+date = "10-23"
+section = "sanctoral"
+celebration = "Saint John of Capistrano, Priest"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 366, printed page 312, n. 664"
+artifact_page = 366
+printed_page = 312
+entry_number = "664"
+heading = "De Communi pastorum [pro missionariis]"
+categories = ["pastors"]
+subselections = ["pro missionariis"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-anthony-mary-claret-bishop"
+mass_key = "saint-anthony-mary-claret-bishop"
+registry = "pc-10-24"
+date = "10-24"
+section = "sanctoral"
+celebration = "Saint Anthony Mary Claret, Bishop"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 366, printed page 312, n. 665"
+artifact_page = 366
+printed_page = 312
+entry_number = "665"
+heading = "De Communi pastorum [pro missionariis]"
+categories = ["pastors"]
+subselections = ["pro missionariis"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-martin-porres-religious"
+mass_key = "saint-martin-porres-religious"
+registry = "pc-11-03"
+date = "11-03"
+section = "sanctoral"
+celebration = "Saint Martin de Porres, Religious"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 367, printed page 313, n. 669"
+artifact_page = 367
+printed_page = 313
+entry_number = "669"
+heading = "De Communi sanctorum [pro religiosis]"
+categories = ["saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-charles-borromeo-bishop"
+mass_key = "saint-charles-borromeo-bishop"
+registry = "pc-11-04"
+date = "11-04"
+section = "sanctoral"
+celebration = "Saint Charles Borromeo, Bishop"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 367, printed page 313, n. 670"
+artifact_page = 367
+printed_page = 313
+entry_number = "670"
+heading = "De Communi pastorum"
+categories = ["pastors"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-leo-great-pope-doctor-church"
+mass_key = "saint-leo-great-pope-doctor-church"
+registry = "pc-11-10"
+date = "11-10"
+section = "sanctoral"
+celebration = "Saint Leo the Great, Pope and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 368, printed page 314, n. 672"
+artifact_page = 368
+printed_page = 314
+entry_number = "672"
+heading = "De Communi pastorum [pro papa] vel doctorum Ecclesiae"
+categories = ["pastors", "doctors-of-the-church"]
+subselections = ["pro papa"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-martin-tours-bishop"
+mass_key = "saint-martin-tours-bishop"
+registry = "pc-11-11"
+date = "11-11"
+section = "sanctoral"
+celebration = "Saint Martin of Tours, Bishop"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 368, printed page 314, n. 673"
+artifact_page = 368
+printed_page = 314
+entry_number = "673"
+heading = "De Communi pastorum vel sanctorum [pro religiosis]"
+categories = ["pastors", "saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-josaphat-bishop-martyr"
+mass_key = "saint-josaphat-bishop-martyr"
+registry = "pc-11-12"
+date = "11-12"
+section = "sanctoral"
+celebration = "Saint Josaphat, Bishop and Martyr"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 368, printed page 314, n. 674"
+artifact_page = 368
+printed_page = 314
+entry_number = "674"
+heading = "De Communi martyrum vel pastorum"
+categories = ["martyrs", "pastors"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-albert-great-bishop-doctor-church"
+mass_key = "saint-albert-great-bishop-doctor-church"
+registry = "pc-11-15"
+date = "11-15"
+section = "sanctoral"
+celebration = "Saint Albert the Great, Bishop and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 368, printed page 314, n. 675"
+artifact_page = 368
+printed_page = 314
+entry_number = "675"
+heading = "De Communi pastorum vel doctorum Ecclesiae"
+categories = ["pastors", "doctors-of-the-church"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-gertrude-virgin"
+mass_key = "saint-gertrude-virgin"
+registry = "pc-11-16-gertrude"
+date = "11-16"
+section = "sanctoral"
+celebration = "Saint Gertrude, Virgin"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 369, printed page 315, n. 677"
+artifact_page = 369
+printed_page = 315
+entry_number = "677"
+heading = "De Communi virginum vel sanctarum [pro religiosis]"
+categories = ["virgins", "saints-and-holy-women"]
+subselections = ["pro religiosis"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-margaret-scotland"
+mass_key = "saint-margaret-scotland"
+registry = "pc-11-16"
+date = "11-16"
+section = "sanctoral"
+celebration = "Saint Margaret of Scotland"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 369, printed page 315, n. 676"
+artifact_page = 369
+printed_page = 315
+entry_number = "676"
+heading = "De Communi sanctarum [pro iis qui opera misericordiae exercuerunt]"
+categories = ["saints-and-holy-women"]
+subselections = ["pro iis qui opera misericordiae exercuerunt"]
+alternatives = false
+wrong_edition_evidence = true
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-elizabeth-hungary-religious"
+mass_key = "saint-elizabeth-hungary-religious"
+registry = "pc-11-17"
+date = "11-17"
+section = "sanctoral"
+celebration = "Saint Elizabeth of Hungary, Religious"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 369, printed page 315, n. 678"
+artifact_page = 369
+printed_page = 315
+entry_number = "678"
+heading = "De Communi sanctarum [pro iis qui opera misericordiae exercuerunt vel pro religiosis]"
+categories = ["saints-and-holy-women"]
+subselections = ["pro iis qui opera misericordiae exercuerunt vel pro religiosis"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.presentation-blessed-virgin-mary"
+mass_key = "presentation-blessed-virgin-mary"
+registry = "pc-11-21"
+date = "11-21"
+section = "marian"
+celebration = "The Presentation of the Blessed Virgin Mary"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 370, printed page 316, n. 680"
+artifact_page = 370
+printed_page = 316
+entry_number = "680"
+heading = "De Communi beatae Mariae Virginis"
+categories = ["blessed-virgin-mary"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-cecilia-virgin-martyr"
+mass_key = "saint-cecilia-virgin-martyr"
+registry = "pc-11-22"
+date = "11-22"
+section = "sanctoral"
+celebration = "Saint Cecilia, Virgin and Martyr"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 370, printed page 316, n. 681"
+artifact_page = 370
+printed_page = 316
+entry_number = "681"
+heading = "De Communi martyrum vel virginum"
+categories = ["martyrs", "virgins"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-clement-i-pope-martyr"
+mass_key = "saint-clement-i-pope-martyr"
+registry = "pc-11-23"
+date = "11-23"
+section = "sanctoral"
+celebration = "Saint Clement I, Pope and Martyr"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 370, printed page 316, n. 682"
+artifact_page = 370
+printed_page = 316
+entry_number = "682"
+heading = "De Communi martyrum vel pastorum [pro papa]"
+categories = ["martyrs", "pastors"]
+subselections = ["pro papa"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-columban-abbot"
+mass_key = "saint-columban-abbot"
+registry = "pc-11-23-columban"
+date = "11-23"
+section = "sanctoral"
+celebration = "Saint Columban, Abbot"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 370, printed page 316, n. 683"
+artifact_page = 370
+printed_page = 316
+entry_number = "683"
+heading = "De Communi pastorum [pro missionariis] vel sanctorum [pro religiosis]"
+categories = ["pastors", "saints-and-holy-women"]
+subselections = ["pro missionariis", "pro religiosis"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-catherine-alexandria-virgin-martyr"
+mass_key = "saint-catherine-alexandria-virgin-martyr"
+registry = "pc-11-25"
+date = "11-25"
+section = "sanctoral"
+celebration = "Saint Catherine of Alexandria, Virgin and Martyr"
+basis = "icel-antiphonary-2010"
+evidence_scope = "missal-antiphons"
+source = "icel-antiphonary-2010"
+source_locus = "artifact page 147, printed page 139"
+artifact_page = 147
+printed_page = 139
+categories = ["martyrs", "virgins"]
+subselections = ["For a Virgin Martyr", "For One Virgin"]
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-francis-xavier-priest"
+mass_key = "saint-francis-xavier-priest"
+registry = "pc-12-03"
+date = "12-03"
+section = "sanctoral"
+celebration = "Saint Francis Xavier, Priest"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 371, printed page 317, n. 685"
+artifact_page = 371
+printed_page = 317
+entry_number = "685"
+heading = "De Communi pastorum [pro missionariis]"
+categories = ["pastors"]
+subselections = ["pro missionariis"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-john-damascene-priest-doctor-church"
+mass_key = "saint-john-damascene-priest-doctor-church"
+registry = "pc-12-04"
+date = "12-04"
+section = "sanctoral"
+celebration = "Saint John Damascene, Priest and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 371, printed page 317, n. 686"
+artifact_page = 371
+printed_page = 317
+entry_number = "686"
+heading = "De Communi pastorum vel doctorum Ecclesiae"
+categories = ["pastors", "doctors-of-the-church"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-nicholas-bishop"
+mass_key = "saint-nicholas-bishop"
+registry = "pc-12-06"
+date = "12-06"
+section = "sanctoral"
+celebration = "Saint Nicholas, Bishop"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 371, printed page 317, n. 687"
+artifact_page = 371
+printed_page = 317
+entry_number = "687"
+heading = "De Communi pastorum"
+categories = ["pastors"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-ambrose-bishop-doctor-church"
+mass_key = "saint-ambrose-bishop-doctor-church"
+registry = "pc-12-07"
+date = "12-07"
+section = "sanctoral"
+celebration = "Saint Ambrose, Bishop and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 371, printed page 317, n. 688"
+artifact_page = 371
+printed_page = 317
+entry_number = "688"
+heading = "De Communi pastorum vel doctorum Ecclesiae"
+categories = ["pastors", "doctors-of-the-church"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-juan-diego-cuauhtlatoatzin"
+mass_key = "saint-juan-diego-cuauhtlatoatzin"
+registry = "pc-12-09"
+date = "12-09"
+section = "sanctoral"
+celebration = "Saint Juan Diego Cuauhtlatoatzin"
+basis = "icel-antiphonary-2010"
+evidence_scope = "missal-antiphons"
+source = "icel-antiphonary-2010"
+source_locus = "artifact page 149, printed page 141"
+artifact_page = 149
+printed_page = 141
+categories = ["saints-and-holy-women"]
+subselections = ["For One Saint"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-damasus-i-pope"
+mass_key = "saint-damasus-i-pope"
+registry = "pc-12-11"
+date = "12-11"
+section = "sanctoral"
+celebration = "Saint Damasus I, Pope"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 372, printed page 318, n. 690"
+artifact_page = 372
+printed_page = 318
+entry_number = "690"
+heading = "De Communi pastorum [pro papa]"
+categories = ["pastors"]
+subselections = ["pro papa"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.our-lady-guadalupe"
+mass_key = "our-lady-guadalupe"
+registry = "pc-12-12"
+date = "12-12"
+section = "marian"
+celebration = "Our Lady of Guadalupe"
+basis = "icel-antiphonary-2010"
+evidence_scope = "missal-antiphons"
+source = "icel-antiphonary-2010"
+source_locus = "artifact page 149, printed page 141"
+artifact_page = 149
+printed_page = 141
+categories = ["blessed-virgin-mary"]
+subselections = []
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-lucy-virgin-martyr"
+mass_key = "saint-lucy-virgin-martyr"
+registry = "pc-12-13"
+date = "12-13"
+section = "sanctoral"
+celebration = "Saint Lucy, Virgin and Martyr"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 372, printed page 318, n. 692"
+artifact_page = 372
+printed_page = 318
+entry_number = "692"
+heading = "De Communi martyrum vel virginum"
+categories = ["martyrs", "virgins"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-john-cross-priest-doctor-church"
+mass_key = "saint-john-cross-priest-doctor-church"
+registry = "pc-12-14"
+date = "12-14"
+section = "sanctoral"
+celebration = "Saint John of the Cross, Priest and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 373, printed page 319, n. 693"
+artifact_page = 373
+printed_page = 319
+entry_number = "693"
+heading = "De Communi pastorum vel doctorum Ecclesiae"
+categories = ["pastors", "doctors-of-the-church"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-peter-canisius-priest-doctor-church"
+mass_key = "saint-peter-canisius-priest-doctor-church"
+registry = "pc-12-21"
+date = "12-21"
+section = "sanctoral"
+celebration = "Saint Peter Canisius, Priest and Doctor of the Church"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 373, printed page 319, n. 694"
+artifact_page = 373
+printed_page = 319
+entry_number = "694"
+heading = "De Communi pastorum vel doctorum Ecclesiae"
+categories = ["pastors", "doctors-of-the-church"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-john-kanty-priest"
+mass_key = "saint-john-kanty-priest"
+registry = "pc-12-23"
+date = "12-23"
+section = "sanctoral"
+celebration = "Saint John of Kanty, Priest"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 373, printed page 319, n. 695"
+artifact_page = 373
+printed_page = 319
+entry_number = "695"
+heading = "De Communi pastorum [pro iis qui opera misericordiae exercuerunt]"
+categories = ["pastors"]
+subselections = ["pro iis qui opera misericordiae exercuerunt"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-thomas-becket-bishop-martyr"
+mass_key = "saint-thomas-becket-bishop-martyr"
+registry = "pc-12-29"
+date = "12-29"
+section = "sanctoral"
+celebration = "Saint Thomas Becket, Bishop and Martyr"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 374, printed page 320, n. 699"
+artifact_page = 374
+printed_page = 320
+entry_number = "699"
+heading = "De Communi martyrum vel pastorum"
+categories = ["martyrs", "pastors"]
+subselections = []
+alternatives = true
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.saint-sylvester-i-pope"
+mass_key = "saint-sylvester-i-pope"
+registry = "pc-12-31"
+date = "12-31"
+section = "sanctoral"
+celebration = "Saint Sylvester I, Pope"
+basis = "ordo-lectionum-missae-1981"
+evidence_scope = "lectionary-readings"
+source = "ordo-1981"
+source_locus = "artifact page 374, printed page 320, n. 700"
+artifact_page = 374
+printed_page = 320
+entry_number = "700"
+heading = "De Communi pastorum [pro papa]"
+categories = ["pastors"]
+subselections = ["pro papa"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false

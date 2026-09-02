@@ -93,6 +93,8 @@
 
 .edition-open {
   flex: 1 1 auto;
+  min-width: 0;
+  min-height: 44px;
   text-align: left;
   font: inherit;
   font-size: 0.84rem;
@@ -102,6 +104,7 @@
   background: var(--section-row);
   color: inherit;
   cursor: pointer;
+  overflow-wrap: anywhere;
 }
 
 .edition-open:hover,
@@ -131,6 +134,7 @@
 
 .back {
   font: inherit;
+  min-height: 44px;
   font-size: 0.82rem;
   padding: 0.3rem 0.6rem;
   margin-bottom: 1rem;
@@ -200,12 +204,15 @@
 
 .passage-nav select {
   width: 100%;
+  min-height: 44px;
   font: inherit;
   font-size: 0.84rem;
 }
 
 .step {
   font: inherit;
+  min-width: 44px;
+  min-height: 44px;
   font-size: 0.84rem;
   padding: 0.4rem 0.7rem;
   border: 1px solid var(--section-pale);
@@ -352,7 +359,8 @@
 }
 
 .artifact-type,
-.artifact-rights {
+.artifact-rights,
+.artifact-relationship {
   font-variant: small-caps;
   letter-spacing: 0.05em;
   font-weight: 600;
@@ -361,4 +369,15 @@
 .artifact-storage,
 .artifact-basis {
   opacity: 0.82;
+}
+
+/* This stylesheet is served only on the Sources route. Its own cross-section
+   footer is navigation rather than prose, and the published shell's brand is
+   a route control; keep both at the same handset target floor as the reader. */
+.brand a,
+.page-footer a,
+.site-footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.common-marian-verified-en"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The ten rows reproduce only English wording printed in an 1861 Philadelphia edition, which is in the United States public domain by publication date. Nine rows are attached exact alignments; the Dedication Gradual remains an unattached historical candidate because its page prints no facing Latin capable of resolving `astat` versus `adstat`. They contain no Google or Internet Archive header, watermark, page image, OCR, markup, or annotation. A faithful project transcription of public-domain wording creates no new copyright. The exact Google-digitized PDF remains remote and unresolved; it is the visual verification artifact, not this publication payload."
+rights_jurisdiction = "United States"
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+transformation = "Human page-image transcription on 2026-08-26 from the registered Cummiskey 1861 facsimile at printed pp. 500, 505, 507-510 (IA leaves n508, n513 and n515-n518; one-based PDF artifact pages 509, 514 and 516-519). Only the exact printed historical English body was copied: headings, Latin, scripture outside the target, Google matter, line-break hyphenation and page furniture were omitted; words split only by a printed line break were joined. Spelling, capitalization, punctuation, verse markers and printed Alleluias were retained. The Sat-BVM-II Communion is transcribed from its printed body at p. 509/n517/PDF p. 518; p. 510 merely points back to that wording and is not treated as the body locus. Repeated exact bodies remain separate rows because each binds a distinct 1962 target identity. The Dedication row preserves a verified historical candidate without asserting exact target identity. The remote OCR was used only as a locator and does not control a byte."
+retrieved = "2026-08-26"
+sha256 = "1c414c2fb24abd25f211841302a0b4ac95ff89d47a998afbefd2b9a323896851"
+byte_size = 2452
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/common-marian-verified-en/common-marian-verified-en.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "One header and ten historical-English rows. Columns are mass, form_id, proper, latin_incipit, printed_page, ia_leaf_range, pdf_artifact_page_range and english. Every row has form_id main; later consumer bindings must also state cycle=all and occurrence=1. Nine rows are exact positive alignments. The Dedication Gradual row is preserved as a textually verified but unattached candidate and must remain represented as a witness gap until exact Latin identity is established. The artifact contains none of the other refused gap bodies and makes no claim that a cognate historical wording translates a different or incomplete 1962 formula."

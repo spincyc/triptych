@@ -940,22 +940,39 @@ window.Triptych = (function () {
     return new URLSearchParams(window.location.hash.replace(/^#/, ''));
   }
 
-  function writeHash(pairs) {
+  function hashText(pairs) {
     const parts = [];
     for (const [key, value] of pairs) {
       if (value === null || value === undefined || value === '') continue;
       parts.push(key + '=' + encodeURIComponent(value));
     }
-    if (!parts.length) return;
-    const next = '#' + parts.join('&');
+    return parts.length ? '#' + parts.join('&') : '';
+  }
+
+  function writeHash(pairs) {
+    const next = hashText(pairs);
     if (window.location.hash === next) return;
     lastWritten = next;
     window.location.hash = next;
   }
 
+  /** Canonicalize incremental state without filling the Back-button history. */
+  function replaceHash(pairs) {
+    const next = hashText(pairs);
+    if (window.location.hash === next) return;
+    window.history.replaceState(
+      window.history.state,
+      '',
+      window.location.pathname + window.location.search + next
+    );
+  }
+
   function onHashChange(handler) {
     window.addEventListener('hashchange', () => {
-      if (window.location.hash === lastWritten) return;
+      if (window.location.hash === lastWritten) {
+        lastWritten = null;
+        return;
+      }
       handler(readHash());
     });
   }
@@ -1111,20 +1128,71 @@ window.Triptych = (function () {
    * assumed in four; assuming it is what threw a TypeError on every
    * cycle-bearing Mass when the shape changed under the pages.
    */
-  function cycleOf(proper, key) {
-    const held = (proper && proper.cycles && proper.cycles[key]) || null;
+  const SUNDAY_CYCLE_KEYS = Object.freeze(['A', 'B', 'C']);
+  const WEEKDAY_CYCLE_KEYS = Object.freeze(['I', 'II']);
+
+  function cycleFrom(proper, family, key) {
+    const held = (proper && proper[family] && proper[family][key]) || null;
     if (!held) return { citations: [], text: null };
-    return { citations: held.citations || [], text: held.text || null };
+    return {
+      citations: held.citations || [],
+      text: held.text || null,
+      translations: held.translations || [],
+      unavailable_translations: held.unavailable_translations || [],
+      untranslated: held.untranslated || [],
+      latin: held.latin || null
+    };
   }
 
-  /** The years a proper actually varies over, in order, each carrying something. */
-  function cycleKeysOf(proper) {
-    return Object.keys((proper && proper.cycles) || {})
+  function cycleKeysFrom(proper, family, allowed) {
+    const rows = (proper && proper[family]) || {};
+    const keys = Object.keys(rows);
+    const invalid = keys.filter((key) => allowed.indexOf(key) < 0);
+    if (invalid.length) {
+      throw new Error(family + ' carries unsupported Lectionary cycle keys: ' + invalid.join(', '));
+    }
+    return keys
       .sort()
       .filter((key) => {
-        const cycle = cycleOf(proper, key);
-        return cycle.citations.length || cycle.text;
+        const cycle = cycleFrom(proper, family, key);
+        return cycle.citations.length || cycle.text ||
+          cycle.translations.some((translation) => translation && translation.text) ||
+          cycle.unavailable_translations.length || cycle.untranslated.length ||
+          (cycle.latin && cycle.latin.withheld);
       });
+  }
+
+  /** Sunday-cycle material is owned only by the generated `cycles` object. */
+  function sundayCycleOf(proper, key) {
+    return cycleFrom(proper, 'cycles', key);
+  }
+
+  function sundayCycleKeysOf(proper) {
+    return cycleKeysFrom(proper, 'cycles', SUNDAY_CYCLE_KEYS);
+  }
+
+  /** Ferial I/II material is independent and owned only by `weekday_cycles`. */
+  function weekdayCycleOf(proper, key) {
+    return cycleFrom(proper, 'weekday_cycles', key);
+  }
+
+  function weekdayCycleKeysOf(proper) {
+    return cycleKeysFrom(proper, 'weekday_cycles', WEEKDAY_CYCLE_KEYS);
+  }
+
+  /**
+   * Backward-compatible generic access for renderers whose selected cycle key
+   * already identifies its family. The source objects remain distinct.
+   */
+  function cycleOf(proper, key) {
+    if (SUNDAY_CYCLE_KEYS.indexOf(key) >= 0) return sundayCycleOf(proper, key);
+    if (WEEKDAY_CYCLE_KEYS.indexOf(key) >= 0) return weekdayCycleOf(proper, key);
+    return { citations: [], text: null };
+  }
+
+  /** Every held Lectionary variant, without merging the two source objects. */
+  function cycleKeysOf(proper) {
+    return sundayCycleKeysOf(proper).concat(weekdayCycleKeysOf(proper));
   }
 
   /** A cycle's readable name: "Year A" for the Sunday cycles, else the key. */
@@ -1176,6 +1244,7 @@ window.Triptych = (function () {
     for (const proper of (mass && mass.propers) || []) {
       if (isPlaceholder(proper)) continue;
       if (proper.text || proper.incipit) return true;
+      if ((proper.translations || []).some((translation) => translation && translation.text)) return true;
       if ((proper.citations || []).length) return true;
       if (cycleKeysOf(proper).length) return true;
     }
@@ -1197,9 +1266,11 @@ window.Triptych = (function () {
     const held = new Map();
     for (const mass of (structure && structure.masses) || []) {
       for (const proper of mass.propers || []) {
-        if (!proper.text || isPlaceholder(proper)) continue;
+        if (isPlaceholder(proper)) continue;
+        const translations = proper.translations || [];
+        if (!proper.text && !proper.latin && !translations.some((row) => row && row.text)) continue;
         composed += 1;
-        for (const translation of proper.translations || []) {
+        for (const translation of translations) {
           if (!translation || !translation.lang || !translation.text) continue;
           held.set(translation.lang, (held.get(translation.lang) || 0) + 1);
         }
@@ -1302,23 +1373,90 @@ window.Triptych = (function () {
    * reader believe they are looking at the English they asked for. The absence
    * is stated where the text would have been.
    */
+  function properBodyUnavailable(proper) {
+    const status = proper && proper.text_status;
+    return Boolean(status && status.state === 'unavailable' &&
+      status.scope === 'proper-body');
+  }
+
   function orationFor(proper, wanted, witness) {
     const asked = wanted || SOURCE_LANGUAGE;
     if (asked === SOURCE_LANGUAGE) {
+      if (proper.latin && proper.latin.withheld) {
+        return {
+          text: null, lang: SOURCE_LANGUAGE, missing: true, wanted: asked,
+          source: null, availability: 'unavailable', reason: 'latin-withheld',
+          unavailableState: ['rights-restricted', 'unavailable'].includes(proper.latin.state)
+            ? proper.latin.state : 'unavailable',
+          held: false
+        };
+      }
+      if (properBodyUnavailable(proper)) {
+        return {
+          text: null, lang: SOURCE_LANGUAGE, missing: true, wanted: asked,
+          source: null, availability: 'unavailable', reason: 'latin-unavailable',
+          unavailableState: 'unavailable', held: false
+        };
+      }
       return { text: proper.text, lang: SOURCE_LANGUAGE, missing: false, source: null };
     }
-    const found = (proper.translations || []).find((translation) => {
-      if (!translation || translation.lang !== asked || !translation.text) return false;
-      if (!witness) return true;
-      return (translation.source_id || translation.source || null) === witness;
+    const candidates = (proper.translations || []).filter((translation) => {
+      return translation && translation.lang === asked && translation.text;
     });
+    const found = witness
+      ? candidates.find((translation) => {
+          return (translation.source_id || translation.source || null) === witness;
+        })
+      : (candidates.length === 1 ? candidates[0] : null);
     if (found) {
       return {
         text: found.text,
         lang: asked,
         missing: false,
         source: found.source_id || found.source || null,
+        sourceLabel: found.source_label || null,
+        caution: found.caution || null,
+        rights: found.rights || null,
         notice: found.notice || null
+      };
+    }
+    if (!witness && candidates.length > 1) {
+      return {
+        text: null, lang: asked, missing: true, wanted: asked,
+        source: null, availability: 'choice-required',
+        reason: 'translation-choice-required', held: false
+      };
+    }
+    const unavailable = (proper.unavailable_translations || []).concat(
+      proper.untranslated || []
+    ).find((translation) => {
+      return translation && translation.lang === asked;
+    });
+    if (unavailable && !(proper.translations || []).some((translation) => {
+      return translation && translation.lang === asked && translation.text;
+    })) {
+      const state = unavailable.state || 'unavailable';
+      const latinUnavailable = properBodyUnavailable(proper) && !proper.text;
+      const blocksFallback = state === 'rights-restricted' || latinUnavailable;
+      return {
+        text: blocksFallback ? null : (proper.text || null),
+        lang: blocksFallback ? asked : SOURCE_LANGUAGE,
+        missing: true,
+        wanted: asked,
+        source: null,
+        availability: 'unavailable',
+        reason: state === 'rights-restricted'
+          ? state : (latinUnavailable ? 'text-unavailable' : state),
+        unavailableState: state,
+        held: false,
+        extent: unavailable.target && unavailable.target.extent || null
+      };
+    }
+    if (properBodyUnavailable(proper) && !proper.text) {
+      return {
+        text: null, lang: asked, missing: true, wanted: asked,
+        source: null, availability: 'unavailable', reason: 'text-unavailable',
+        unavailableState: 'unavailable', held: false
       };
     }
     return {
@@ -1365,8 +1503,16 @@ window.Triptych = (function () {
     // The incipit is the passage's own opening words, so printing it above the
     // passage says the same thing twice. It earns its place only when the words
     // themselves are not shown.
+    const selectedCycle = held.cycle && (
+      proper.cycles && proper.cycles[held.cycle] ||
+      proper.weekday_cycles && proper.weekday_cycles[held.cycle]
+    ) || null;
+    const latinWithheld = Boolean(
+      selectedCycle && selectedCycle.latin && selectedCycle.latin.withheld ||
+      proper.latin && proper.latin.withheld
+    );
     const showsWords = Boolean(proper.text) || refs.length > 0;
-    if (proper.incipit && !showsWords) {
+    if (proper.incipit && !showsWords && !latinWithheld) {
       section.appendChild(el('p', 'proper-incipit', proper.incipit));
     }
 
@@ -1375,31 +1521,59 @@ window.Triptych = (function () {
     // text, it is shown; where it carries only the incipit, that is said, once
     // and quietly. It is not a failure: the corpus indexes these propers by
     // their opening words and does not hold their bodies.
-    if (proper.text) {
+    const hasOrationState = Boolean(proper.text) ||
+      (proper.translations || []).some((translation) => translation && translation.text) ||
+      (proper.unavailable_translations || []).length > 0 ||
+      (proper.untranslated || []).length > 0 ||
+      Boolean(proper.latin && proper.latin.withheld) ||
+      properBodyUnavailable(proper);
+    if (hasOrationState) {
       const oration = orationFor(proper, held.orations, held.translationWitness || null);
-      const composed = el('p', 'composed');
-      const label = oration.missing
-        ? 'Composed text — not scripture · ' + languageName(SOURCE_LANGUAGE)
-        : 'Composed text — not scripture' +
-          (oration.lang === SOURCE_LANGUAGE ? '' : ' · ' + languageName(oration.lang));
-      composed.appendChild(el('span', 'composed-label', label));
-      composed.appendChild(versicled(oration.text));
-      composed.lang = oration.lang;
-      section.appendChild(composed);
+      if (oration.text) {
+        const composed = el('p', 'composed');
+        const label = oration.missing
+          ? 'Composed text — not scripture · ' + languageName(SOURCE_LANGUAGE)
+          : 'Composed text — not scripture' +
+            (oration.lang === SOURCE_LANGUAGE ? '' : ' · ' + languageName(oration.lang));
+        composed.appendChild(el('span', 'composed-label', label));
+        composed.appendChild(versicled(oration.text));
+        composed.lang = oration.lang;
+        section.appendChild(composed);
+      }
 
       // Said where the English would have been, not in a footnote: a reader who
       // asked for English and was handed Latin needs to know that at the text.
       if (oration.missing) {
+        const missing = oration.reason === 'rights-restricted'
+          ? 'The ' + languageName(oration.wanted) +
+            ' translation is unavailable because its use is rights restricted.'
+          : ['latin-withheld', 'latin-unavailable'].includes(oration.reason)
+            ? 'Latin text unavailable'
+          : oration.reason === 'text-unavailable'
+            ? 'No ' + languageName(oration.wanted) +
+              ' or Latin body is held here.'
+          : oration.reason === 'translation-choice-required'
+            ? 'Several ' + languageName(oration.wanted) +
+              ' translations are held. Choose a witness before reading one.'
+          : oration.reason === 'unavailable'
+            ? 'No ' + languageName(oration.wanted) +
+              ' body is held here. The safe Latin the missal prints is shown instead.'
+          : 'No ' + languageName(oration.wanted) + ' translation is recorded for ' +
+            'this proper. The Latin the missal prints is shown instead.';
         section.appendChild(
-          el('p', 'composed-note',
-            'No ' + languageName(oration.wanted) + ' translation is recorded for ' +
-            'this proper. The Latin the missal prints is shown instead.')
+          el('p', 'composed-note', missing)
         );
       }
       // Whose English it is. A translation is someone's expression, and the
       // reader is entitled to know whose before weighing it.
       if (oration.source) {
-        section.appendChild(el('p', 'composed-note', 'Translation: ' + oration.source));
+        section.appendChild(el(
+          'p', 'composed-note',
+          'Translation: ' + (oration.sourceLabel || oration.source)
+        ));
+      }
+      if (oration.caution) {
+        section.appendChild(el('p', 'composed-note', oration.caution));
       }
       if (oration.notice) {
         section.appendChild(el('p', 'composed-note', oration.notice));
@@ -1433,12 +1607,33 @@ window.Triptych = (function () {
       const cycle = cycleOf(proper, key);
       const block = el('div', 'cycle');
       block.appendChild(el(under, 'cycle-name', cycleLabel(key)));
-      if (cycle.text) {
+      if (cycle.text || cycle.translations.some((translation) => translation && translation.text) ||
+          cycle.unavailable_translations.length || cycle.untranslated.length ||
+          (cycle.latin && cycle.latin.withheld) || properBodyUnavailable(cycle)) {
+        const oration = orationFor(
+          cycle, held.orations, held.translationWitness || null
+        );
+        if (oration.text) {
         const composed = el('p', 'composed');
-        composed.appendChild(el('span', 'composed-label', 'Composed text — not scripture'));
-        composed.appendChild(versicled(cycle.text));
-        composed.lang = SOURCE_LANGUAGE;
+        composed.appendChild(el('span', 'composed-label',
+          'Composed text — not scripture' +
+          (oration.lang === SOURCE_LANGUAGE ? '' : ' · ' + languageName(oration.lang))));
+        composed.appendChild(versicled(oration.text));
+        composed.lang = oration.lang;
         block.appendChild(composed);
+        }
+        if (oration.missing) {
+          const message = oration.reason === 'rights-restricted'
+            ? 'The ' + languageName(oration.wanted) +
+              ' translation is unavailable because its use is rights restricted.'
+            : ['latin-withheld', 'latin-unavailable'].includes(oration.reason)
+              ? 'Latin text unavailable'
+              : oration.reason === 'text-unavailable'
+                ? 'No ' + languageName(oration.wanted) +
+                  ' or Latin body is held for this cycle.'
+              : 'No ' + languageName(oration.wanted) + ' body is held for this cycle.';
+          block.appendChild(el('p', 'composed-note', message));
+        }
       }
       for (const citation of cycle.citations) {
         block.appendChild(renderCitation(citation, bible, fragments, numbering));
@@ -1446,7 +1641,7 @@ window.Triptych = (function () {
       section.appendChild(block);
     }
 
-    if (!proper.text && !proper.incipit && !citations.length && !cycleKeys.length) {
+    if (!hasOrationState && !proper.incipit && !citations.length && !cycleKeys.length) {
       section.appendChild(notice('this proper carries neither a citation nor a text.'));
     }
 
@@ -1508,6 +1703,10 @@ window.Triptych = (function () {
     languageName: languageName,
     cycleOf: cycleOf,
     cycleKeysOf: cycleKeysOf,
+    sundayCycleOf: sundayCycleOf,
+    sundayCycleKeysOf: sundayCycleKeysOf,
+    weekdayCycleOf: weekdayCycleOf,
+    weekdayCycleKeysOf: weekdayCycleKeysOf,
     cycleLabel: cycleLabel,
     citationsOf: citationsOf,
     isPlaceholder: isPlaceholder,
@@ -1542,6 +1741,7 @@ window.Triptych = (function () {
     isCurrentRender: isCurrentRender,
     readHash: readHash,
     writeHash: writeHash,
+    replaceHash: replaceHash,
     onHashChange: onHashChange,
     onArrowStep: onArrowStep
   };

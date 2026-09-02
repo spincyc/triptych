@@ -130,7 +130,7 @@ verse text. Oration English is the anonymous translation in *The Roman Missal
 … for the Use of the Laity* (Philadelphia: Eugene Cummiskey, 1861), printed
 pp. 416–418, Internet Archive leaves 424–426, registered transcription lines
 140–142, SHA-256
-`13c2ad6d4a2cc7b579fa3c9bdd56719ba3933db7a9ae87728d63e0f1ddf389c9`.
+`e50e2cbb39cc0dd41c4d34c2b76f73128d76382d58d1519e646997811fc964e8`.
 The page images were visually checked on 2026-07-28. The historical English
 is public domain in the United States and is neither a literal translation
 nor official English for the 1962 Missal.

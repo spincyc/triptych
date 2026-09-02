@@ -1,5 +1,21 @@
 {
- "artifacts": [],
+ "artifacts": [
+  {
+   "artifact_type": "scan",
+   "byte_size": null,
+   "edition_owned": false,
+   "id": "artifact.jacques-paul-migne.patrologia-latina-volume-37.paris-1845.internet-archive-google-pdf-afe6878f",
+   "media_type": "application/pdf",
+   "notes": null,
+   "page_count": null,
+   "retrieved": null,
+   "rights": "public-domain",
+   "rights_basis": "The represented nineteenth-century printing and Augustine's ancient Latin are in the United States public domain by age. The exact Google Books scan served by Internet Archive is identified remotely rather than redistributed.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/patrologiaecurs234unkngoog/patrologiaecurs234unkngoog.pdf",
+   "storage": "remote"
+  }
+ ],
  "edition": {
   "authority": null,
   "date": "1845",
@@ -10,7 +26,6 @@
   "id": "edition.augustine.enarrationes-in-psalmos.latin-migne-pl37-paris-1845",
   "jurisdiction": null,
   "language": "la",
-  "notes": "The source preserves Migne's edition-local manuscript and printing notes. It is a public-domain historical edition, not a modern critical text.",
   "publication": "Benedictine edition reprinted in Jacques-Paul Migne, Patrologia Latina 37 (Paris collection title, 1845; Augustine constituent title, 1841), cols. 1033-1966",
   "title": "Enarrationes in Psalmos, Psalms 80-150, Benedictine text reprinted in Patrologia Latina 37",
   "translators": [],
@@ -20,15 +35,12 @@
   {
    "artifact_id": "artifact.jacques-paul-migne.patrologia-latina-volume-37.paris-1845.internet-archive-google-pdf-afe6878f",
    "artifact_type": "scan",
-   "context": "On Psalm 88:51, Augustine says that, although Christ lives and sits at the Father's right hand, Christians long bore reproaches and Christ's name itself was treated as their crime. He reads the Church as the once-reproached fruitful widow and the servants' keeping of reproaches 'in the bosom' as Christians bearing them inwardly without retaliating, praying when blasphemed.",
    "id": "passage.augustine.enarrationes-in-psalmos.latin-migne-pl37-paris-1845.88-sermo-ii-12",
    "locus": "88.12",
    "media_type": "application/pdf",
-   "notes": "Read directly at PL 37, col. 1139, on artifact PDF p. 63 (the page spans cols. 1139-1140). Section 12 is wholly in col. 1139. This supports Augustine's ecclesial reception of the servants' reproach as suffering borne by Christians because of Christ; it does not itself establish the Psalm's composition date, original historical referent, or a formulary compiler's intention.",
    "readable": false,
    "reason": "The exact bytes are not retained in this repository; the record keeps their retrieval location, hash and rights instead.",
    "rights": "public-domain",
-   "rights_basis": "The represented nineteenth-century printing and Augustine's ancient Latin are in the United States public domain by age. The exact Google Books scan served by Internet Archive is identified remotely rather than redistributed.",
    "rights_jurisdiction": "United States",
    "segment_id": "segment.augustine.enarrationes-in-psalmos.latin-migne-pl37-paris-1845.psalm-88-columns-1139-1140",
    "source_url": "https://archive.org/download/patrologiaecurs234unkngoog/patrologiaecurs234unkngoog.pdf",

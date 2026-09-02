@@ -25,21 +25,29 @@ lesson the propers side learned expensively: a hand-typed second copy of an
 artifact drifted from it at 45 loci, and every error the site served sat inside
 those 45.
 
-Where a rite has no transcribable text held here --- the postconciliar one,
-whose approved English is ICEL's and whose Latin editio typica this project does
-not hold --- the inventory carries the element skeleton itself, with each
-element's received Latin incipit as its identity and an `absent` key naming the
-reason. An incipit is a reference, and a reference is a fact. The prayer is not
-reproduced.
+An artifact-backed section may classify a missing facing Latin block more
+narrowly with `absent_latin_by_element`.  The override remains in the inventory,
+because it is an editorial finding about the source block rather than wording or
+layout transcribed from the artifact.  The generator refuses an override that
+does not name an English source row, that names a row whose Latin is actually
+held, or that points to an undeclared absence reason.
 
-Those reasons are not one reason, and the Latin side of that file now names six
-rather than one: the reform's own new matter, which is the Holy See's and is
-withheld; an ancient text whose public-domain antecedent this project holds and
-has not yet carried; an ancient text no witness here prints at all; an element
-whose extent spans retained and changed matter together; the Roman Canon, which
-is modelled as one span and must be split before any of it is reachable; and the
-rubric or propers slot that has no words in any book. One key over all of them
-said a rights refusal where no rightsholder had refused anything.
+Where a rite has no text this surface may carry, the inventory preserves the
+element skeleton, with each element's received Latin incipit as its identity and
+an `absent` key naming the reason. The reason distinguishes an unavailable
+witness or exemplar from a rights restriction, a model that spans independently
+sourceable parts, material belonging to another layer, and a structural element
+to which fixed text does not apply. An incipit is a reference, and a reference
+is a fact. The prayer is not reproduced.
+
+Those reasons are not one reason. The postconciliar Latin side distinguishes the
+reform's own withheld matter, sourceable antecedent material not yet carried,
+the absence of an antecedent witness, coarse model spans, and structural or
+outside-layer slots. Its English side separately distinguishes registered
+official exemplars not carried on this surface, proper texts outside the
+Ordinary, elements with no fixed text, composite spans, and quiet prayers for
+which no exact exemplar is held. A generic rightsholder key over those cases
+would turn unlike facts into one false claim.
 
 Two languages, one rule, and the relation that keeps them honest
 ---------------------------------------------------------------
@@ -51,13 +59,12 @@ cannot drift into two rules --- which is exactly what had already happened
 between `from_artifact` and `from_inventory`, and is why the postconciliar Latin
 could not be reached at all however much of it this project held.
 
-The second language is not a second column of one book. The 1962 frame joins two
-facing columns of ONE printing, and `from_artifact` may therefore assume a shared
-key space and a shared edition. Here the English is the ecumenical text of 1998
-and the Latin, where any is carried, is an 1861 Philadelphia lay printing's
-facing column --- a different book, a different rightsholder, a different
-century, joined element by element because the older book prints the ANCIENT
-prayer the postconciliar Missal received, and for no other reason.
+Two languages do not imply one provenance. The artifact-backed Roman frames join
+the facing columns of one printing and may therefore assume only a shared key
+space. Each carried column still declares an `english` or `latin` provenance
+block with its own explicit relation and collation state. Inventory-declared
+elements may instead join languages from different books; `side_text` validates
+each language block independently.
 
 That difference is a claim about identity, and an unlabelled claim is the failure
 this layer exists to prevent. A reader looking at a page headed `Missale Romanum,
@@ -75,8 +82,9 @@ and then two further things are required of it and refused without:
                    and therefore beside the words rather than at the foot of a
                    page: whose words these are, at which leaf and printed page,
                    which accidents of that printing they carry, and the sentence
-                   that the controlling edition's text is not held here and this
-                   is not it. A relation nobody can check is a claim nobody made.
+                   that the frame does not carry the controlling edition's text
+                   on this surface and this is not it. A relation nobody can
+                   check is a claim nobody made.
 
 `collation = "collated"` additionally requires `collation_finding`, a citation to
 the tracked finding. Without it the grade is an assertion, and the whole point of
@@ -86,18 +94,21 @@ What is NOT modelled here, deliberately: the witness's own spelling is never
 normalised toward the target's. The 1861 column prints `justum`, `coelis`,
 `Jesu`, the ae- and oe-ligatures, and its own misprints --- `nodie` for `hodie`
 at In spiritu humilitatis. Normalising them would manufacture a witness to a book
-nobody opened; the note names them instead.
+the selected artifact row does not witness; the note names them instead.
 
-The third rights state
-----------------------
-The propers pass publishes a translation whose `rights` is `public-domain` or
-`project-created` and withholds everything else. That is two states, and the
-ELLC common texts are a third: under copyright, licensed for free use, and
-carrying an acknowledgement the licence requires. `licensed-free` is that state,
-and it is not a softer `public-domain`: a witness declaring it must carry a
-nonempty `acknowledgement`, this tool refuses the file otherwise, and the
-acknowledgement is emitted beside every text it covers so it cannot be separated
-from what it licenses in transit to the page.
+The publication boundary
+------------------------
+This generated corpus publishes only a witness whose `rights` is
+`public-domain` or `project-created`. A licence or permission scoped to some
+other surface is source-study metadata, not a softer public-domain state, and
+it cannot enter the witness table or a text join here.
+
+A `[[restricted_witnesses]]` row is different again: source-only provenance,
+not a text offer.  ICEL's prescribed excerpt acknowledgement and the source
+library's completed text-free quarantine remain checkable there, but neither
+the witness metadata nor any text, source id, rights state, or turns from it
+enter the generated translation manifest.  An element that tries to join a
+restricted witness is refused rather than silently made available.
 
 What this tool refuses to do
 ----------------------------
@@ -147,6 +158,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import re
 import sys
 import textwrap
 import tomllib
@@ -170,19 +182,19 @@ from _tooling import (  # noqa: E402
 EXAMPLES = {
     "check": (
         Example(
-            "tools/mass-ordinary check --out build/example-ordinary",
+            "tools/mass-ordinary check",
             (
-                "postconciliar: 7 sections, 48 elements, 3 witnesses, 1 variants, 11 slots; 27 elements translated, 23 absent",
-                "roman-1962: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; 195 elements translated, 0 absent",
-                "roman-pre-1955: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; 195 elements translated, 0 absent",
+                "postconciliar: 7 sections, 59 elements, 1 witness, 3 variants, 11 slots; en 0 held/59 missing, la 20 held/39 missing; relations la antecedent/collated 5, la antecedent/uncollated 15; 0 target-recension exclusions",
+                "roman-1962: 6 sections, 189 elements, 2 witnesses, 0 variants, 9 slots; en 189 held/0 missing, la 112 held/77 missing; relations en antecedent/uncollated 189, la antecedent/uncollated 112; 6 target-recension exclusions",
+                "roman-pre-1955: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; en 195 held/0 missing, la 112 held/83 missing; relations en antecedent/uncollated 195, la antecedent/uncollated 112; 0 target-recension exclusions",
                 "the written files are current",
             ),
-            "check reads the inventories, joins the artifacts, and reports whether --out is already current; it writes nothing",
+            "check reads the inventories, joins the artifacts, and reports whether the tracked output is current; it writes nothing",
         ),
         Example(
             "tools/mass-ordinary check --calendar roman-1962 --json",
             (
-                "{\"calendars\":[{\"absent\":0,\"calendar\":\"roman-1962\",\"elements\":195,\"sections\":6,\"slots\":9,\"stale\"... [+70 chars]",
+                "{\"calendars\":[{\"absent\":0,\"calendar\":\"roman-1962\",\"elements\":189,\"exclusions\":6,\"language_cover... [+557 chars]",
             ),
         ),
     ),
@@ -206,7 +218,7 @@ EXAMPLES = {
                 "    IN the Name of the Father, and of the Son, and of the Holy Ghost. Amen.",
                 "",
                 "  Introibo ad altare Dei (priest)",
-                "... 770 more lines",
+                "... 744 more lines",
             ),
             "read-only; prints the same assembly `structure` writes for the browser",
         ),
@@ -215,21 +227,22 @@ EXAMPLES = {
             (
                 "The Order of Mass",
                 "=================",
-                "  Missale Romanum, editio typica tertia 2008, reimpressio emendata 2008",
+                "  Missale Romanum, editio typica tertia, reimpressio emendata 2008",
                 "",
                 "The Introductory Rites",
                 "----------------------",
                 "",
                 "  Entrance and veneration of the altar",
-                "    [ All make the Sign of the Cross as the Priest says: In the name of the Father, and",
-                "    of the Son, and of the Holy Spirit. Amen. ]",
+                "    [absent: approved-english-publication-restriction]",
+                "    opens Populo congregato",
                 "",
                 "  The Greeting (all)",
-                "    The grace of our Lord Jesus Christ, and the love of God, and the communion of the",
-                "    Holy Spirit be with you all. Or: Grace to you and peace from God our Father and the",
-                "    Lord Jesus Christ. Or: The Lord be with you. In this first greeting, a Bishop, in",
-                "    place of The Lord be with you, says: Peace be with you. And with your spirit.",
-                "... 276 more lines",
+                "    [absent: approved-english-publication-restriction]",
+                "    opens Dominus vobiscum",
+                "",
+                "  Penitential Act, form I (all)",
+                "    [absent: official-exemplar-not-carried]",
+                "... 204 more lines",
             ),
             "an element no witness reaches names the reason rather than printing a gap",
         ),
@@ -238,42 +251,49 @@ EXAMPLES = {
         Example(
             "tools/mass-ordinary coverage --calendar postconciliar",
             (
-                "postconciliar: 48 elements",
-                "  en  edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21  23 elements  licensed-free",
-                "  en  edition.english-language-liturgical-consultation.praying-together.1998  2 elements  licensed-free",
-                "  la  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  10 elements  public-domain",
-                "  absent: antecedent-held-not-carried 4, canon-not-split 1, editio-typica-new-matter 12, element-spans-mixed-matter 7, icel 17, no-antecedent-witness 2, not-a-text 12, priest-prayer-said-quietly 6",
+                "postconciliar: 59 elements",
+                "  en coverage: 0 held, 59 missing",
+                "  la coverage: 20 held, 39 missing",
+                "  la provenance: antecedent/collated 5",
+                "  la provenance: antecedent/uncollated 15",
+                "  la  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  20 elements  public-domain",
+                "  absent: antecedent-diverges-at-named-words 3 rights-restricted/rights-withheld, antecedent-held-not-carried 1 unavailable/witness-gap, approved-english-publication-restriction 25 rights-restricted/rights-withheld, editio-typica-new-matter 13 rights-restricted/rights-withheld, element-spans-mixed-availability 3 unavailable/model-gap, element-spans-mixed-matter 7 unavailable/model-gap, no-antecedent-witness 3 unavailable/witness-gap, no-fixed-text 3 unavailable/not-applicable, not-a-text 12 unavailable/not-applicable, official-exemplar-not-carried 16 unavailable/witness-gap, priest-prayer-said-quietly 6 unavailable/no-exemplar, proper-text-outside-ordinary 6 unavailable/outside-layer",
             ),
-            "read-only: what each witness reaches, and what is absent under which recorded reason",
+            "read-only: what each publishable witness reaches and what is absent; restricted provenance remains source-only",
         ),
         Example(
             "tools/mass-ordinary coverage --calendar roman-1962",
             (
-                "roman-1962: 195 elements",
-                "  en  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  195 elements  public-domain",
+                "roman-1962: 189 elements",
+                "  en coverage: 189 held, 0 missing",
+                "  la coverage: 112 held, 77 missing",
+                "  en provenance: antecedent/uncollated 189",
+                "  la provenance: antecedent/uncollated 112",
+                "  en  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  189 elements  public-domain",
                 "  la  edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861  112 elements  public-domain",
-                "  absent: no-facing-latin 83",
+                "  absent: no-facing-latin 8 unavailable/witness-gap, not-in-the-1962-ordo 2 unavailable/witness-gap, witness-own-english 67 unavailable/witness-gap",
+                "  target-recension exclusions: oblatio/a-cunctis, oblatio/nota-incarnationis, oblatio/rubrica-collecta-concede, oblatio/rubrica-secreta, oblatio/rubrica-secreta-concede, oblatio/secreta-ii",
             ),
-            "the 1962 Ordinary is held whole in English and not at all in Latin; the absence is recorded, not inferred",
+            "the 1962 Ordinary is held whole in English and partly in facing Latin; every remaining Latin absence is recorded, not inferred",
         ),
     ),
     "structure": (
         Example(
-            "tools/mass-ordinary check --out build/example-ordinary",
+            "tools/mass-ordinary check",
             (
-                "postconciliar: 7 sections, 48 elements, 3 witnesses, 1 variants, 11 slots; 27 elements translated, 23 absent",
-                "roman-1962: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; 195 elements translated, 0 absent",
-                "roman-pre-1955: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; 195 elements translated, 0 absent",
+                "postconciliar: 7 sections, 59 elements, 1 witness, 3 variants, 11 slots; en 0 held/59 missing, la 20 held/39 missing; relations la antecedent/collated 5, la antecedent/uncollated 15; 0 target-recension exclusions",
+                "roman-1962: 6 sections, 189 elements, 2 witnesses, 0 variants, 9 slots; en 189 held/0 missing, la 112 held/77 missing; relations en antecedent/uncollated 189, la antecedent/uncollated 112; 6 target-recension exclusions",
+                "roman-pre-1955: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; en 195 held/0 missing, la 112 held/83 missing; relations en antecedent/uncollated 195, la antecedent/uncollated 112; 0 target-recension exclusions",
                 "the written files are current",
             ),
-            "read-only first: `check` validates the inventories and reports whether --out is current",
+            "read-only first: `check` validates the inventories and reports whether tracked output is current",
         ),
         Example(
             "tools/mass-ordinary structure --out build/example-ordinary",
             (
-                "postconciliar: 7 sections, 48 elements, 3 witnesses, 1 variants, 11 slots; 27 elements translated, 23 absent",
-                "roman-1962: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; 195 elements translated, 0 absent",
-                "roman-pre-1955: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; 195 elements translated, 0 absent",
+                "postconciliar: 7 sections, 59 elements, 1 witness, 3 variants, 11 slots; en 0 held/59 missing, la 20 held/39 missing; relations la antecedent/collated 5, la antecedent/uncollated 15; 0 target-recension exclusions",
+                "roman-1962: 6 sections, 189 elements, 2 witnesses, 0 variants, 9 slots; en 189 held/0 missing, la 112 held/77 missing; relations en antecedent/uncollated 189, la antecedent/uncollated 112; 6 target-recension exclusions",
+                "roman-pre-1955: 6 sections, 195 elements, 2 witnesses, 0 variants, 9 slots; en 195 held/0 missing, la 112 held/83 missing; relations en antecedent/uncollated 195, la antecedent/uncollated 112; 0 target-recension exclusions",
                 "wrote 4 files",
                 "  -> build/example-ordinary/structure/ordinary/index.json",
             ),
@@ -287,13 +307,13 @@ DEFAULT_DATA = ROOT / "src" / "web" / "data"
 CALENDARS = ROOT / "src" / "sources" / "calendars"
 SCHEMA = "triptych-ordo-missae/v1"
 OUT_SCHEMA = "triptych-ordinary-structure/v1"
+PROPERS_OUT_SCHEMA = "triptych-propers-structure/v1"
 INVENTORY_SUFFIX = "-ordo-missae-v1.toml"
 
-# A witness this tool will carry into the published artifact, and what each
-# state obliges. `licensed-free` is the ELLC case: freely granted, and granted
-# on a condition, so the condition travels with it or the file is refused.
-PUBLISHABLE_RIGHTS = ("public-domain", "project-created", "licensed-free")
-NEEDS_ACKNOWLEDGEMENT = ("licensed-free",)
+# A witness this tool will carry into the published artifact. Surface-limited
+# licences and permissions remain source-study metadata; this public corpus
+# carries only the two rights states below.
+PUBLISHABLE_RIGHTS = ("public-domain", "project-created")
 
 # What the source library's own record must say for a witness the inventory
 # declares. Two vocabularies meet here and neither is authoritative over the
@@ -301,7 +321,23 @@ NEEDS_ACKNOWLEDGEMENT = ("licensed-free",)
 LIBRARY_RIGHTS = {
     "public-domain": {"public-domain"},
     "project-created": {"project-created"},
-    "licensed-free": {"licensed", "permission"},
+}
+
+# A restricted witness is provenance the source inventory retains without
+# making it a publication offer.  The first use is ICEL's Roman Missal text:
+# its standing permission reaches a qualifying live web display, not the
+# clonable JSON assembled here.  Requiring the prescribed excerpt notice and
+# the artifact library's completed quarantine state makes this table a
+# fail-closed record rather than a second spelling of a publishable witness.
+RESTRICTED_WITNESS_STATE = "rights-restricted"
+RESTRICTED_ARTIFACT_RIGHTS = ("permission", "restricted")
+RESTRICTED_ARTIFACT_STORAGE = "restricted"
+ICEL_EXCERPT_ACKNOWLEDGEMENT = (
+    "Excerpts from the English translation of The Roman Missal © 2010, "
+    "International Commission on English in the Liturgy Corporation. All rights reserved."
+)
+RESTRICTED_WITNESS_FIELDS = {
+    "id", "lang", "state", "label", "acknowledgement", "caution", "artifacts"
 }
 
 REQUIRED_TOP = ("schema", "calendar", "title", "advisory", "derived_from", "sections")
@@ -318,7 +354,7 @@ SLOT_SIDES = ("before", "after")
 # a bare `("english", "latin")` walked by the element builder while `show
 # --lang` looked the reason up by ISO code against those same side-names, found
 # nothing, and fell back to the English one --- so `--lang la` reported the
-# postconciliar Latin as withheld under ICEL, which is the English reason for
+# postconciliar Latin as rights-restricted, which was the English reason for
 # the other text. That resolved, printed, and was wrong.
 LANGUAGES = (
     {"lang": "en", "absent": "english"},
@@ -338,23 +374,65 @@ ABSENT_SIDES = tuple(one["absent"] for one in LANGUAGES)
 # of.
 SIDE_BLOCKS = {one["lang"]: one["absent"] for one in LANGUAGES}
 
+# A turn is an inventory-owned reading of rows the selected text artifact
+# already exposes.  These closed vocabularies keep speaker and dialogue role
+# independent: a priest can answer, and a server can initiate a prayer.
+TURN_SPEAKERS = ("all", "priest", "server")
+TURN_DIALOGUE_ROLES = ("versicle", "response")
+TURN_FIELDS = {"key", "seq", "speaker", "dialogue_role", "action"}
+TURN_PARTITION_FIELDS = {"element", "lang", "parts"}
+
+# Source inventories may state choices and applicability, but they do not get
+# to invent new boolean languages for each rite.  Alternatives always mean one
+# option from one named group.  The applicability predicates below are the
+# complete context vocabulary this layer currently knows how to publish; a new
+# liturgical rule therefore needs a reviewed schema addition, not a prose
+# string a browser would have to interpret.
+VARIANT_FIELDS = {"group", "name", "what", "options"}
+VARIANT_OPTION_FIELDS = {"id", "name", "default"}
+ALTERNATIVE_FIELDS = {"group", "option"}
+CONDITION_FIELDS = {
+    "include-when-any": {"kind", "predicates", "basis"},
+    "omit-when-option": {"kind", "group", "options", "basis"},
+}
+CONDITION_PREDICATES = (
+    "sunday-outside-advent-and-lent",
+    "solemnity-or-feast",
+    "sunday-or-solemnity",
+    "particular-celebration-of-more-solemn-character",
+    "mass-has-no-proper-preface",
+    "second-reading-appointed",
+)
+
+# An artifact can contain matter which a later target recension does not.  A
+# declaration consumes that source row without relabelling it as target text.
+# The public projection is text-free but keeps enough typed provenance to make
+# the exclusion auditable.
+EXCLUSION_FIELDS = {"element", "basis"}
+EXCLUSION_STATE = "not-in-target-recension"
+
 # What an element's use of a book is, and what has been established about it.
 # Two fields because they are two facts, and collapsing them is how a page comes
 # to say `this is the Missal's Latin` on the strength of a resemblance.
 #
 #   relation  own         the witness IS the edition this frame declares
 #             antecedent  the witness prints an older text this frame's book
-#                         received; the frame's own edition is not held here
+#                         received; this frame does not carry the target text
 #   collation collated    a finding in this repository states the relationship
 #                         between this element's text and the controlling
 #                         edition, and `collation_finding` cites it
 #             uncollated  no such finding; the note must say so in those words
 #
-# `relation` absent means `own`, so the 1962 file needs no back-fill and the
-# facing-column join it makes is unchanged.
+# `relation_of` retains an implicit-own result for legacy inline language
+# blocks. Artifact-backed sections use `artifact_provenance`, which refuses an
+# omission: their wide join would otherwise stamp every row with an identity
+# claim nobody declared.
 RELATIONS = ("own", "antecedent")
 COLLATIONS = ("collated", "uncollated")
 NEEDS_RELATION_NOTE = ("antecedent",)
+ARTIFACT_PROVENANCE_FIELDS = {
+    "relation", "collation", "collation_finding", "note",
+}
 
 
 class SourceError(ValueError):
@@ -405,6 +483,7 @@ def artifact_records(root: Path) -> dict[str, dict]:
         identifier = data.get("id")
         if isinstance(identifier, str):
             data["_path"] = path
+            data["_source_root"] = root.resolve()
             held[identifier] = data
     return held
 
@@ -414,7 +493,20 @@ def payload_rows(record: dict) -> list[dict]:
     relative = record.get("path")
     if not isinstance(relative, str):
         raise SourceError(f"{record['id']}: artifact declares no payload path")
-    path = ROOT / relative
+    source_root = record.get("_source_root")
+    if not isinstance(source_root, Path):
+        raise SourceError(
+            f"{record['id']}: artifact record has no source-library root"
+        )
+    relative_path = Path(relative)
+    if relative_path.is_absolute():
+        raise SourceError(f"{record['id']}: payload path must be relative: {relative}")
+    parts = relative_path.parts
+    if parts[:2] == ("src", "sources"):
+        parts = parts[2:]
+    path = source_root.joinpath(*parts).resolve()
+    if not path.is_relative_to(source_root):
+        raise SourceError(f"{record['id']}: payload path escapes the source library: {relative}")
     if not path.is_file():
         raise SourceError(f"{record['id']}: payload missing at {relative}")
     with path.open(encoding="utf-8", newline="") as handle:
@@ -425,6 +517,88 @@ def payload_rows(record: dict) -> list[dict]:
 
 
 # --------------------------------------------------------------- witnesses
+
+
+def restricted_witness_table(
+    source: dict, library: dict[str, dict], name: str
+) -> dict[tuple[str, str], dict]:
+    """Validate text-free source metadata this generator must never publish.
+
+    A restricted witness is intentionally kept outside `witness_table`: it is
+    neither eligible for a text join nor copied into the generated translation
+    manifest.  Its artifacts must already be quarantined in the source library
+    so an inventory cannot get ahead of the payload removal it claims.
+    """
+    held: dict[tuple[str, str], dict] = {}
+    for entry in source.get("restricted_witnesses") or []:
+        if not isinstance(entry, dict):
+            raise SourceError(f"{name}: a restricted witness is not a table")
+        unknown = set(entry) - RESTRICTED_WITNESS_FIELDS
+        if unknown:
+            raise SourceError(
+                f"{name}: a restricted witness declares unknown fields "
+                f"{', '.join(sorted(unknown))}"
+            )
+        identifier = entry.get("id")
+        if not isinstance(identifier, str) or not identifier:
+            raise SourceError(f"{name}: a restricted witness has no id")
+        language = entry.get("lang")
+        if not isinstance(language, str) or not language:
+            raise SourceError(
+                f"{name}: restricted witness {identifier} declares no lang"
+            )
+        language_row(language)
+        reach = (identifier, language)
+        if reach in held:
+            raise SourceError(
+                f"{name}: restricted witness {identifier} is declared twice for {language}"
+            )
+        if entry.get("state") != RESTRICTED_WITNESS_STATE:
+            raise SourceError(
+                f"{name}: restricted witness {identifier} must declare "
+                f"state = {RESTRICTED_WITNESS_STATE!r}"
+            )
+        if entry.get("acknowledgement") != ICEL_EXCERPT_ACKNOWLEDGEMENT:
+            raise SourceError(
+                f"{name}: restricted witness {identifier} does not carry ICEL's "
+                "exact prescribed excerpt acknowledgement"
+            )
+        artifacts = entry.get("artifacts")
+        if (
+            not isinstance(artifacts, list)
+            or not artifacts
+            or any(not isinstance(one, str) or not one for one in artifacts)
+            or len(artifacts) != len(set(artifacts))
+        ):
+            raise SourceError(
+                f"{name}: restricted witness {identifier} needs a nonempty, "
+                "duplicate-free artifact id array"
+            )
+        for artifact_id in artifacts:
+            record = library.get(artifact_id)
+            if record is None:
+                raise SourceError(
+                    f"{name}: restricted witness {identifier} names unknown "
+                    f"artifact {artifact_id}"
+                )
+            if record.get("rights_status") not in RESTRICTED_ARTIFACT_RIGHTS:
+                raise SourceError(
+                    f"{name}: restricted witness {identifier} is rights-restricted "
+                    f"but {artifact_id} has rights_status "
+                    f"{record.get('rights_status')!r}; one of "
+                    f"{', '.join(RESTRICTED_ARTIFACT_RIGHTS)} is required"
+                )
+            if (
+                record.get("storage") != RESTRICTED_ARTIFACT_STORAGE
+                or "path" in record
+                or record.get("indexable") is not False
+            ):
+                raise SourceError(
+                    f"{name}: restricted witness {identifier} names {artifact_id}, "
+                    "whose artifact record is not text-free restricted storage"
+                )
+        held[reach] = dict(entry)
+    return held
 
 
 def witness_table(source: dict, library: dict[str, dict], name: str) -> dict[str, dict]:
@@ -458,11 +632,6 @@ def witness_table(source: dict, library: dict[str, dict], name: str) -> dict[str
                 f"{name}: witness {identifier} declares rights {rights!r}; "
                 f"this tool publishes only {', '.join(PUBLISHABLE_RIGHTS)}"
             )
-        if rights in NEEDS_ACKNOWLEDGEMENT and not entry.get("acknowledgement"):
-            raise SourceError(
-                f"{name}: witness {identifier} is {rights} and carries no "
-                "acknowledgement; the licence that makes it free requires one"
-            )
         for artifact_id in entry.get("artifacts") or []:
             record = library.get(artifact_id)
             if record is None:
@@ -480,19 +649,37 @@ def witness_table(source: dict, library: dict[str, dict], name: str) -> dict[str
 
 
 # Why a text is not here, as a value a renderer can read rather than prose it
-# would have to parse. The three are genuinely different states and a reader
-# owes the difference to whoever is looking at the empty place:
-#   witness-gap     the source this project holds does not print it
-#   rights-withheld a rightsholder has reserved this use
-#   no-exemplar     the use is permitted and no exact copy of the words is
-#                   reachable, so the gap is an acquisition and not a refusal
-# The distinction is not academic. This inventory said for a year that ICEL's
-# licence forbade the use; it does not, and the reason then was that nobody here
-# had the book. One of those is answered by asking permission and the other by
-# finding a copy. The ICEL copies have since been registered and the elements
-# they print carry that English, so what is left under the `icel` key is neither:
-# text that no tracked payload prints yet, which is a witness gap.
-ABSENCE_KINDS = ("witness-gap", "rights-withheld", "no-exemplar")
+# would have to parse. The acquisition, publication, and modelling states are
+# deliberately disjoint:
+#   witness-gap     a held or registered source has no joined usable payload
+#   rights-withheld this distribution surface has no recorded authorization
+#   rights-unresolved whether this surface may publish has not been established
+#   no-exemplar     no exact authoritative exemplar is registered
+#   model-gap       the element spans independently sourceable matter
+#   outside-layer   the assigned text belongs to another data layer
+#   not-applicable  the element has no fixed text at this layer
+# A proper assigned in another layer and an action with no fixed text are not
+# missing witnesses, while a composite span cannot be repaired merely by
+# acquiring another page.
+ABSENCE_KINDS = (
+    "witness-gap",
+    "rights-withheld",
+    "rights-unresolved",
+    "no-exemplar",
+    "model-gap",
+    "outside-layer",
+    "not-applicable",
+)
+
+ABSENCE_STATES = {
+    "rights-withheld": "rights-restricted",
+    "rights-unresolved": "unresolved",
+}
+
+
+def absence_state(kind: str) -> str:
+    """Public capability state for one closed absence kind."""
+    return ABSENCE_STATES.get(kind, "unavailable")
 
 
 def absence_table(source: dict, name: str) -> dict[str, dict]:
@@ -501,6 +688,8 @@ def absence_table(source: dict, name: str) -> dict[str, dict]:
         key = entry.get("key")
         if not isinstance(key, str) or not key:
             raise SourceError(f"{name}: an absence has no key")
+        if key in held:
+            raise SourceError(f"{name}: absence {key} is declared twice")
         if not entry.get("what"):
             raise SourceError(f"{name}: absence {key} says nothing about why")
         kind = entry.get("kind")
@@ -522,14 +711,47 @@ def variant_table(source: dict, name: str) -> tuple[list[dict], dict[str, str]]:
     """
     groups = []
     options: dict[str, str] = {}
+    seen_groups: set[str] = set()
     for entry in source.get("variants") or []:
+        if not isinstance(entry, dict):
+            raise SourceError(f"{name}: a variant group is not a table")
+        unknown = set(entry) - VARIANT_FIELDS
+        if unknown:
+            raise SourceError(
+                f"{name}: a variant group declares unknown fields "
+                f"{', '.join(sorted(unknown))}"
+            )
         group = entry.get("group")
         if not isinstance(group, str) or not group:
             raise SourceError(f"{name}: a variant group has no id")
+        if group in seen_groups:
+            raise SourceError(f"{name}: variant group {group} is declared twice")
+        seen_groups.add(group)
+        if not isinstance(entry.get("name"), str) or not entry["name"].strip():
+            raise SourceError(f"{name}: variant group {group} has no name")
+        if not isinstance(entry.get("what"), str) or not entry["what"].strip():
+            raise SourceError(f"{name}: variant group {group} says nothing about the choice")
         listed = entry.get("options") or []
+        if not isinstance(listed, list):
+            raise SourceError(f"{name}: variant group {group} options are not an array")
         if len(listed) < 2:
             raise SourceError(f"{name}: variant group {group} offers fewer than two options")
-        defaults = [one for one in listed if one.get("default")]
+        for option in listed:
+            if not isinstance(option, dict):
+                raise SourceError(f"{name}: an option of {group} is not a table")
+            unknown = set(option) - VARIANT_OPTION_FIELDS
+            if unknown:
+                raise SourceError(
+                    f"{name}: an option of {group} declares unknown fields "
+                    f"{', '.join(sorted(unknown))}"
+                )
+            if not isinstance(option.get("default"), bool):
+                raise SourceError(
+                    f"{name}: an option of {group} must declare boolean default"
+                )
+            if not isinstance(option.get("name"), str) or not option["name"].strip():
+                raise SourceError(f"{name}: an option of {group} has no name")
+        defaults = [one for one in listed if one["default"]]
         if len(defaults) != 1:
             raise SourceError(
                 f"{name}: variant group {group} must mark exactly one option default, not {len(defaults)}"
@@ -541,8 +763,125 @@ def variant_table(source: dict, name: str) -> tuple[list[dict], dict[str, str]]:
             if identifier in options:
                 raise SourceError(f"{name}: option {identifier} is declared twice")
             options[identifier] = group
-        groups.append(dict(entry))
+        groups.append(dict(entry) | {"mode": "one-of"})
     return groups, options
+
+
+def element_alternatives(entry: dict, options: dict[str, str], key: str,
+                         name: str) -> tuple[str | None, list[dict]]:
+    """One element's exact memberships in independently selected groups."""
+    legacy = entry.get("variant")
+    declared = entry.get("alternatives")
+    if legacy is not None and declared is not None:
+        raise SourceError(
+            f"{name}: element {key} declares both legacy variant and alternatives"
+        )
+    if legacy is not None:
+        if legacy not in options:
+            raise SourceError(
+                f"{name}: element {key} names option {legacy!r}, which no "
+                "variant group offers"
+            )
+        return legacy, [{"group": options[legacy], "option": legacy}]
+    if declared is None:
+        return None, []
+    if not isinstance(declared, list) or not declared:
+        raise SourceError(f"{name}: element {key} has empty or malformed alternatives")
+    held = []
+    groups = set()
+    for alternative in declared:
+        if not isinstance(alternative, dict):
+            raise SourceError(f"{name}: element {key} has a non-table alternative")
+        unknown = set(alternative) - ALTERNATIVE_FIELDS
+        if unknown:
+            raise SourceError(
+                f"{name}: element {key} alternative declares unknown fields "
+                f"{', '.join(sorted(unknown))}"
+            )
+        group = alternative.get("group")
+        option = alternative.get("option")
+        if not isinstance(group, str) or not group:
+            raise SourceError(f"{name}: element {key} alternative has no group")
+        if not isinstance(option, str) or not option:
+            raise SourceError(f"{name}: element {key} alternative has no option")
+        if options.get(option) != group:
+            raise SourceError(
+                f"{name}: element {key} puts option {option!r} under group "
+                f"{group!r}, but that group does not offer it"
+            )
+        if group in groups:
+            raise SourceError(
+                f"{name}: element {key} belongs to variant group {group} more than once"
+            )
+        groups.add(group)
+        held.append({"group": group, "option": option})
+    return None, held
+
+
+def element_conditions(entry: dict, options: dict[str, str], key: str,
+                       name: str) -> list[dict]:
+    """Closed positive/context conditions; never executable inventory prose."""
+    declared = entry.get("conditions")
+    if declared is None:
+        return []
+    if not isinstance(declared, list) or not declared:
+        raise SourceError(f"{name}: element {key} has empty or malformed conditions")
+    held = []
+    for condition in declared:
+        if not isinstance(condition, dict):
+            raise SourceError(f"{name}: element {key} has a non-table condition")
+        kind = condition.get("kind")
+        fields = CONDITION_FIELDS.get(kind)
+        if fields is None:
+            raise SourceError(
+                f"{name}: element {key} condition has kind {kind!r}; one of "
+                f"{', '.join(CONDITION_FIELDS)} is required"
+            )
+        unknown = set(condition) - fields
+        missing = fields - set(condition)
+        if unknown or missing:
+            detail = []
+            if unknown:
+                detail.append(f"unknown fields {', '.join(sorted(unknown))}")
+            if missing:
+                detail.append(f"missing fields {', '.join(sorted(missing))}")
+            raise SourceError(
+                f"{name}: element {key} {kind} condition has {'; '.join(detail)}"
+            )
+        basis = condition.get("basis")
+        if not isinstance(basis, str) or not basis.strip():
+            raise SourceError(f"{name}: element {key} {kind} condition has no basis")
+        if kind == "include-when-any":
+            predicates = condition["predicates"]
+            if (
+                not isinstance(predicates, list)
+                or not predicates
+                or any(one not in CONDITION_PREDICATES for one in predicates)
+                or len(predicates) != len(set(predicates))
+            ):
+                raise SourceError(
+                    f"{name}: element {key} include-when-any predicates must be a "
+                    "nonempty duplicate-free subset of the closed predicate table"
+                )
+        else:
+            group = condition["group"]
+            selected = condition["options"]
+            if not isinstance(group, str) or not group:
+                raise SourceError(
+                    f"{name}: element {key} omit-when-option condition has no group"
+                )
+            if (
+                not isinstance(selected, list)
+                or not selected
+                or any(options.get(one) != group for one in selected)
+                or len(selected) != len(set(selected))
+            ):
+                raise SourceError(
+                    f"{name}: element {key} omit-when-option options must be a "
+                    "nonempty duplicate-free subset of the named group's options"
+                )
+        held.append(dict(condition) | {"unknown": "unresolved"})
+    return held
 
 
 def slot_table(source: dict, sections: list[dict], name: str) -> list[dict]:
@@ -556,11 +895,11 @@ def slot_table(source: dict, sections: list[dict], name: str) -> list[dict]:
     Epistle while every file still validated.
     """
     order = {}
-    variant_of = {}
+    alternatives_of = {}
     for section in sections:
         for element in section["elements"]:
             order[element["key"]] = len(order)
-            variant_of[element["key"]] = element["variant"]
+            alternatives_of[element["key"]] = element.get("alternatives") or []
 
     held: list[dict] = []
     claimed: dict[str, str] = {}
@@ -583,10 +922,13 @@ def slot_table(source: dict, sections: list[dict], name: str) -> list[dict]:
         anchor = entry[side]
         if anchor not in order:
             raise SourceError(f"{name}: slot {key} anchors to {anchor!r}, which is no element of this file")
-        if variant_of[anchor] is not None:
+        if alternatives_of[anchor]:
+            choices = ", ".join(
+                f"{one['group']}={one['option']}" for one in alternatives_of[anchor]
+            )
             raise SourceError(
                 f"{name}: slot {key} anchors to {anchor!r}, which shows only under "
-                f"option {variant_of[anchor]!r}; a seat that disappears with a choice "
+                f"choice {choices}; a seat that disappears with a choice "
                 "of prayer would drop the proper it holds"
             )
         propers = entry.get("propers") or []
@@ -658,7 +1000,7 @@ def absent_pair(holder: dict, fallback: dict, absences: dict, key: str, name: st
 
 
 def latin_side(
-    section: dict, witnesses: dict, library: dict, name: str
+    section: dict, witnesses: dict, restricted: dict, library: dict, name: str
 ) -> tuple[dict[str, dict], dict | None, str | None]:
     """The section's Latin rows, keyed by element, or nothing where it has none.
 
@@ -676,6 +1018,11 @@ def latin_side(
     if not artifact_id:
         return {}, None, None
     witness_id = section.get("witness_latin") or section.get("witness")
+    if (witness_id, "la") in restricted:
+        raise SourceError(
+            f"{name}: section {section['key']} attempts a Latin text join to "
+            f"rights-restricted witness {witness_id!r}"
+        )
     witness = witnesses.get((witness_id, "la"))
     if witness is None:
         raise SourceError(
@@ -690,23 +1037,250 @@ def latin_side(
     record = library.get(artifact_id)
     if record is None:
         raise SourceError(f"{name}: section {section['key']} names unknown artifact {artifact_id}")
-    rows: dict[str, dict] = {}
+    grouped: dict[str, list[str]] = {}
     for row in payload_rows(record):
         key = (row.get("element_key") or "").strip()
         if not key:
             raise SourceError(f"{artifact_id}: a row has no element_key")
-        if key in rows:
-            raise SourceError(f"{artifact_id}: element {key} appears twice")
         if not (row.get("latin") or "").strip():
             raise SourceError(
                 f"{artifact_id}: row {key} carries no Latin; a section states an "
                 "absence once and an empty row states it nowhere"
             )
-        rows[key] = {"latin": (row.get("latin") or "").strip()}
+        grouped.setdefault(key, []).append((row.get("latin") or "").strip())
+    rows = {key: {"latin": "\n".join(lines)} for key, lines in grouped.items()}
     return rows, witness, witness_id
 
 
-def from_artifact(section: dict, witnesses: dict, absences: dict, library: dict, name: str) -> list[dict]:
+def artifact_provenance(section: dict, lang: str, key: str, name: str) -> dict:
+    """The explicit text-to-edition relation for one artifact-backed side.
+
+    Artifact-backed sections select their text at section granularity, so their
+    provenance declaration lives there too.  It remains language-local: facing
+    columns share row keys, not necessarily a relationship to the edition named
+    by the calendar.  Requiring even `own` to be written prevents a missing
+    declaration from silently becoming an identity claim.
+    """
+    side = SIDE_BLOCKS[lang]
+    block = section.get(side)
+    if not isinstance(block, dict):
+        raise SourceError(
+            f"{name}: section {section['key']} carries {lang} artifact text but "
+            f"declares no [{side}] provenance block"
+        )
+    unknown = set(block) - ARTIFACT_PROVENANCE_FIELDS
+    if unknown:
+        raise SourceError(
+            f"{name}: section {section['key']} [{side}] provenance declares "
+            f"unknown fields {', '.join(sorted(unknown))}"
+        )
+    if block.get("relation") is None:
+        raise SourceError(
+            f"{name}: section {section['key']} [{side}] provenance declares no "
+            "relation; artifact-backed text must state own or antecedent explicitly"
+        )
+    relation = relation_of(block, key, lang, name)
+    if block["relation"] == "own":
+        extras = set(block) - {"relation"}
+        if extras:
+            raise SourceError(
+                f"{name}: section {section['key']} [{side}] relation is own but "
+                f"also declares {', '.join(sorted(extras))}"
+            )
+    return relation
+
+
+def artifact_exclusion_table(section: dict, source_keys: set[str],
+                             name: str) -> dict[str, str]:
+    """Target-recension nonmembers explicitly named from artifact row ids."""
+    declared = section.get("exclusions")
+    if declared is None:
+        return {}
+    if not isinstance(declared, list) or not declared:
+        raise SourceError(
+            f"{name}: section {section['key']} has empty or malformed exclusions"
+        )
+    held = {}
+    for exclusion in declared:
+        if not isinstance(exclusion, dict):
+            raise SourceError(
+                f"{name}: section {section['key']} has a non-table exclusion"
+            )
+        unknown = set(exclusion) - EXCLUSION_FIELDS
+        missing = EXCLUSION_FIELDS - set(exclusion)
+        if unknown or missing:
+            detail = []
+            if unknown:
+                detail.append(f"unknown fields {', '.join(sorted(unknown))}")
+            if missing:
+                detail.append(f"missing fields {', '.join(sorted(missing))}")
+            raise SourceError(
+                f"{name}: section {section['key']} exclusion has {'; '.join(detail)}"
+            )
+        element = exclusion["element"]
+        basis = exclusion["basis"]
+        if not isinstance(element, str) or not element:
+            raise SourceError(f"{name}: section {section['key']} exclusion has no element")
+        if element in held:
+            raise SourceError(
+                f"{name}: section {section['key']} excludes {element} twice"
+            )
+        if element not in source_keys:
+            raise SourceError(
+                f"{name}: section {section['key']} excludes {element!r}, which its "
+                "English artifact does not hold"
+            )
+        if not isinstance(basis, str) or not basis.strip():
+            raise SourceError(
+                f"{name}: section {section['key']} exclusion {element} has no basis"
+            )
+        held[element] = basis
+    return held
+
+
+def artifact_latin_absence_overrides(
+    section: dict, source_keys: set[str], latin_keys: set[str],
+    absences: dict, name: str,
+) -> dict[str, str]:
+    """Inventory-owned absence classifications for English artifact rows.
+
+    The source artifacts own the blocks they print.  Why one of those blocks
+    has no facing Latin is a later finding and therefore stays in the inventory.
+    Excluded target-recension rows may still be classified here: the override
+    accounts for the source witness, while the exclusion separately prevents
+    that source row from being emitted as target text.
+    """
+    declared = section.get("absent_latin_by_element")
+    if declared is None:
+        return {}
+    if not isinstance(declared, dict) or not declared:
+        raise SourceError(
+            f"{name}: section {section['key']} has empty or malformed "
+            "absent_latin_by_element"
+        )
+    held: dict[str, str] = {}
+    for element, reason in declared.items():
+        if not isinstance(element, str) or not element:
+            raise SourceError(
+                f"{name}: section {section['key']} has an empty Latin absence "
+                "override key"
+            )
+        if not isinstance(reason, str) or not reason.strip():
+            raise SourceError(
+                f"{name}: section {section['key']} Latin absence override for "
+                f"{element} has no reason"
+            )
+        if element not in source_keys:
+            raise SourceError(
+                f"{name}: section {section['key']} overrides Latin absence for "
+                f"{element!r}, which its English artifact does not hold"
+            )
+        if element in latin_keys:
+            raise SourceError(
+                f"{name}: section {section['key']} overrides Latin absence for "
+                f"{element!r}, whose Latin artifact already holds text"
+            )
+        if reason not in absences:
+            raise SourceError(
+                f"{name}: section {section['key']} Latin absence override for "
+                f"{element} names {reason!r}, which the file does not state"
+            )
+        held[element] = reason
+    return held
+
+
+def artifact_turn_partition_table(section: dict, name: str) -> dict[tuple[str, str], list]:
+    """Optional language-local partitions, addressed only by source row seq."""
+    declared = section.get("turn_partitions")
+    if declared is None:
+        return {}
+    if not isinstance(declared, list) or not declared:
+        raise SourceError(
+            f"{name}: section {section['key']} has empty or malformed turn_partitions"
+        )
+    held = {}
+    for partition in declared:
+        if not isinstance(partition, dict):
+            raise SourceError(
+                f"{name}: section {section['key']} has a non-table turn partition"
+            )
+        unknown = set(partition) - TURN_PARTITION_FIELDS
+        missing = TURN_PARTITION_FIELDS - set(partition)
+        if unknown or missing:
+            detail = []
+            if unknown:
+                detail.append(f"unknown fields {', '.join(sorted(unknown))}")
+            if missing:
+                detail.append(f"missing fields {', '.join(sorted(missing))}")
+            raise SourceError(
+                f"{name}: section {section['key']} turn partition has "
+                f"{'; '.join(detail)}"
+            )
+        element = partition["element"]
+        lang = partition["lang"]
+        if not isinstance(element, str) or not element:
+            raise SourceError(
+                f"{name}: section {section['key']} turn partition has no element"
+            )
+        language_row(lang)
+        reach = (element, lang)
+        if reach in held:
+            raise SourceError(
+                f"{name}: section {section['key']} repeats turn partition for "
+                f"{element} in {lang}"
+            )
+        parts = partition["parts"]
+        if not isinstance(parts, list) or not parts:
+            raise SourceError(
+                f"{name}: section {section['key']} turn partition for {element} "
+                f"in {lang} has empty or malformed parts"
+            )
+        held[reach] = parts
+    return held
+
+
+def artifact_translation(
+    section: dict, row_key: str, lang: str, text: str, witness: dict,
+    witness_id: str, artifact_id: str, column: str, partitions: dict,
+    library: dict, name: str,
+) -> dict:
+    """One artifact-backed translation plus any exact source-row partition."""
+    translation = {
+        "lang": witness["lang"],
+        "source_id": witness_id,
+        "rights": witness["rights"],
+        "text": text,
+    } | artifact_provenance(section, lang, row_key, name)
+    parts = partitions.pop((row_key, lang), None)
+    if parts is not None:
+        side = SIDE_BLOCKS[lang]
+        turns = structured_turns(
+            {side + "_turns": parts}, side, library, artifact_id, [row_key],
+            column, section["key"] + "/" + row_key, name, text,
+        )
+        translation["turns"] = turns
+    return translation
+
+
+def consistent_artifact_field(rows: list[dict], field: str, artifact_id: str,
+                              key: str) -> str:
+    """One element-level value across source rows, or an explicit refusal."""
+    values = {
+        (row.get(field) or "").strip()
+        for row in rows
+        if (row.get(field) or "").strip()
+    }
+    if len(values) > 1:
+        raise SourceError(
+            f"{artifact_id}: rows for {key} disagree on element-level {field}"
+        )
+    return next(iter(values), "")
+
+
+def from_artifact(
+    section: dict, witnesses: dict, restricted: dict, absences: dict,
+    library: dict, name: str
+) -> tuple[list[dict], list[dict]]:
     """The elements of a section whose text an artifact holds.
 
     Nothing about order, part, kind, speaker or wording is restated in the
@@ -718,6 +1292,11 @@ def from_artifact(section: dict, witnesses: dict, absences: dict, library: dict,
     if record is None:
         raise SourceError(f"{name}: section {section['key']} names unknown artifact {artifact_id}")
     witness_id = section.get("witness")
+    if (witness_id, "en") in restricted:
+        raise SourceError(
+            f"{name}: section {section['key']} attempts an English text join to "
+            f"rights-restricted witness {witness_id!r}"
+        )
     witness = witnesses.get((witness_id, "en"))
     if witness is None:
         raise SourceError(f"{name}: section {section['key']} names undeclared witness {witness_id!r}")
@@ -726,20 +1305,83 @@ def from_artifact(section: dict, witnesses: dict, absences: dict, library: dict,
             f"{name}: section {section['key']} draws on {artifact_id}, which witness "
             f"{witness_id} does not list; the rights check would not have covered it"
         )
-    latin_rows, latin_witness, latin_id = latin_side(section, witnesses, library, name)
+    latin_rows, latin_witness, latin_id = latin_side(
+        section, witnesses, restricted, library, name
+    )
 
-    elements = []
-    for row in payload_rows(record):
+    source_rows = payload_rows(record)
+    source_order = []
+    source_groups: dict[str, list[dict]] = {}
+    for row in source_rows:
         key = (row.get("element_key") or "").strip()
         if not key:
             raise SourceError(f"{artifact_id}: a row has no element_key")
-        kind = (row.get("kind") or "").strip()
+        if key not in source_groups:
+            source_order.append(key)
+            source_groups[key] = []
+        source_groups[key].append(row)
+    excluded = artifact_exclusion_table(section, set(source_groups), name)
+    latin_absence_overrides = artifact_latin_absence_overrides(
+        section, set(source_groups), set(latin_rows), absences, name
+    )
+    partitions = artifact_turn_partition_table(section, name)
+
+    elements = []
+    exclusions = []
+    for key in source_order:
+        rows = source_groups[key]
+        if key in excluded:
+            if (key, "en") in partitions or (key, "la") in partitions:
+                raise SourceError(
+                    f"{name}: section {section['key']} declares turns for excluded "
+                    f"element {key}"
+                )
+            sources = [
+                {
+                    "lang": "en",
+                    "source_id": witness_id,
+                    "artifact_id": artifact_id,
+                    "element": key,
+                }
+                | artifact_provenance(section, "en", key, name)
+            ]
+            if key in latin_rows:
+                sources.append(
+                    {
+                        "lang": "la",
+                        "source_id": latin_id,
+                        "artifact_id": section["artifact_latin"],
+                        "element": key,
+                    }
+                    | artifact_provenance(section, "la", key, name)
+                )
+                latin_rows.pop(key)
+            exclusions.append(
+                {
+                    "key": section["key"] + "/" + key,
+                    "state": EXCLUSION_STATE,
+                    "basis": excluded[key],
+                    "sources": sorted({source["source_id"] for source in sources}),
+                    "evidence": sources,
+                }
+            )
+            continue
+        kind = consistent_artifact_field(rows, "kind", artifact_id, key)
         if kind not in ELEMENT_KINDS:
             raise SourceError(f"{artifact_id}: row {key} has kind {kind!r}")
-        english = (row.get("english") or "").strip()
-        incipit = (row.get("latin_incipit") or "").strip()
+        english_lines = [(row.get("english") or "").strip() for row in rows]
+        if any(english_lines) and not all(english_lines):
+            raise SourceError(
+                f"{artifact_id}: rows for {key} mix English text with empty rows; "
+                "the section must state absence once, not between source turns"
+            )
+        english = "\n".join(english_lines) if all(english_lines) else ""
+        incipit = consistent_artifact_field(rows, "latin_incipit", artifact_id, key)
         latin = (latin_rows.pop(key, {}) or {}).get("latin", "")
-        absent = absent_pair({}, section, absences, key, name)
+        absence_holder = {}
+        if key in latin_absence_overrides:
+            absence_holder["absent_latin"] = latin_absence_overrides[key]
+        absent = absent_pair(absence_holder, section, absences, key, name)
         if english:
             absent["english"] = None
         elif absent["english"] is None:
@@ -749,42 +1391,66 @@ def from_artifact(section: dict, witnesses: dict, absences: dict, library: dict,
             )
         if latin:
             absent["latin"] = None
+        elif absent["latin"] is None:
+            raise SourceError(
+                f"{artifact_id}: row {key} has no Latin and its section names no "
+                "reason; a silent gap is the one thing this layer must never emit"
+            )
+        translations = []
+        if english:
+            translations.append(
+                artifact_translation(
+                    section, key, "en", english, witness, witness_id, artifact_id,
+                    "english", partitions, library, name,
+                )
+            )
+        elif (key, "en") in partitions:
+            raise SourceError(
+                f"{name}: section {section['key']} declares English turns for {key}, "
+                "which carries no English text"
+            )
+        if latin:
+            translations.append(
+                artifact_translation(
+                    section, key, "la", latin, latin_witness, latin_id,
+                    section["artifact_latin"], "latin", partitions, library, name,
+                )
+            )
+        elif (key, "la") in partitions:
+            raise SourceError(
+                f"{name}: section {section['key']} declares Latin turns for {key}, "
+                "which carries no Latin text"
+            )
+        speakers = {
+            (row.get("speaker") or "").strip()
+            for row in rows
+            if (row.get("speaker") or "").strip()
+        }
+        if len(speakers) > 1 and not any(
+            translation.get("turns") for translation in translations
+        ):
+            raise SourceError(
+                f"{artifact_id}: rows for {key} name multiple speakers but no "
+                "source-row turn partition"
+            )
         elements.append(
             {
                 "key": section["key"] + "/" + key,
                 "kind": kind,
-                "speaker": (row.get("speaker") or "").strip() or None,
+                "speaker": next(iter(speakers)) if len(speakers) == 1 else None,
                 "name": incipit or None,
                 "latin_incipit": incipit or None,
-                "locus": (row.get("printed_page") or "").strip() or None,
-                "note": (row.get("notes") or "").strip() or None,
+                "locus": consistent_artifact_field(
+                    rows, "printed_page", artifact_id, key
+                ) or None,
+                "note": consistent_artifact_field(
+                    rows, "notes", artifact_id, key
+                ) or None,
                 "variant": None,
+                "alternatives": [],
+                "conditions": [],
                 "absent": absent,
-                "translations": (
-                    [
-                        {
-                            "lang": witness["lang"],
-                            "source_id": witness_id,
-                            "rights": witness["rights"],
-                            "text": english,
-                        }
-                    ]
-                    if english
-                    else []
-                )
-                + (
-                    [
-                        {
-                            "lang": latin_witness["lang"],
-                            "source_id": latin_id,
-                            "rights": latin_witness["rights"],
-                            "text": latin,
-                        }
-                    ]
-                    if latin
-                    else []
-                )
-                or None,
+                "translations": translations or None,
             }
         )
     if latin_rows:
@@ -792,15 +1458,21 @@ def from_artifact(section: dict, witnesses: dict, absences: dict, library: dict,
             f"{name}: section {section['key']} carries Latin for "
             f"{', '.join(sorted(latin_rows))}, which its English artifact does not hold"
         )
-    return elements
+    if partitions:
+        element, lang = sorted(partitions)[0]
+        raise SourceError(
+            f"{name}: section {section['key']} declares a turn partition for "
+            f"{element} in {lang}, which its selected artifact text does not hold"
+        )
+    return elements, exclusions
 
 
 def artifact_text(library: dict, artifact_id: str, element: str, name: str,
                   column: str = "text") -> str:
     """One artifact element's words, out of the column that holds them.
 
-    The column is named because the library does not use one name. The ELLC
-    common texts carry `text`; the 1861 facing-column artifacts carry `latin`,
+    The column is named because the library does not use one name. Some
+    artifacts carry `text`; the 1861 facing-column artifacts carry `latin`,
     beside the `seq`, `part`, `printed_page`, `ia_leaf` and `notes` that make
     the row checkable against the leaf. Guessing `text` on those raised nothing
     useful --- it raised KeyError from inside a dict comprehension --- so the
@@ -848,7 +1520,7 @@ def relation_of(block: dict, key: str, lang: str, name: str) -> dict:
     """
     relation = block.get("relation")
     if relation is None:
-        return {}
+        return {"relation": "own"}
     if relation not in RELATIONS:
         raise SourceError(
             f"{name}: element {key} declares relation {relation!r} for {lang}; "
@@ -888,7 +1560,151 @@ def relation_of(block: dict, key: str, lang: str, name: str) -> dict:
     return out
 
 
-def side_text(entry: dict, lang: str, witnesses: dict, library: dict,
+def structured_turns(entry: dict, side: str, library: dict, artifact_id: str,
+                     named: list[str], column: str, key: str, name: str,
+                     parent_text: str) -> list[dict] | None:
+    """Validate and project one side's explicit artifact-row turn partition.
+
+    Turn boundaries are source row identities, never offsets or prose matches.
+    The declarations must partition exactly the same rows, in the same order,
+    that produced the parent translation.  This makes turns additive metadata:
+    joining their text is byte-for-byte the already selected parent text.
+    """
+    field = side + "_turns"
+    declarations = entry.get(field)
+    if declarations is None:
+        return None
+    if not isinstance(declarations, list) or not declarations:
+        raise SourceError(f"{name}: element {key} has an empty or malformed {field}")
+
+    record = library.get(artifact_id)
+    if record is None:
+        raise SourceError(f"{name}: element {key} names unknown artifact {artifact_id}")
+    payload = payload_rows(record)
+    selected = []
+    for element in named:
+        selected.extend(
+            row for row in payload
+            if (row.get("element_key") or "").strip() == element
+        )
+
+    source_sequence = []
+    source_rows = {}
+    for row in selected:
+        raw_seq = (row.get("seq") or "").strip()
+        if not raw_seq.isdecimal():
+            raise SourceError(
+                f"{name}: {artifact_id} row for {key} has non-integer seq {raw_seq!r}"
+            )
+        seq = int(raw_seq)
+        if seq in source_rows:
+            raise SourceError(
+                f"{name}: {artifact_id} repeats seq {seq}; turn boundaries would be ambiguous"
+            )
+        if column not in row:
+            raise SourceError(
+                f"{name}: {artifact_id} has no column {column!r} for turn seq {seq}"
+            )
+        text = (row[column] or "").strip()
+        if not text:
+            raise SourceError(
+                f"{name}: {artifact_id} turn seq {seq} carries no {column!r} text"
+            )
+        source_sequence.append(seq)
+        source_rows[seq] = text
+
+    turns = []
+    declared_sequence = []
+    seen_keys = set()
+    for declaration in declarations:
+        if not isinstance(declaration, dict):
+            raise SourceError(f"{name}: element {key} has a non-table turn in {field}")
+        unknown = set(declaration) - TURN_FIELDS
+        if unknown:
+            raise SourceError(
+                f"{name}: element {key} turn declares unknown fields "
+                f"{', '.join(sorted(unknown))}"
+            )
+        turn_key = declaration.get("key")
+        if not isinstance(turn_key, str) or not turn_key:
+            raise SourceError(f"{name}: element {key} has a turn with no key in {field}")
+        turn_key_parts = turn_key.split("-")
+        if any(
+            not part
+            or not part.isascii()
+            or not part.isalnum()
+            or part.lower() != part
+            for part in turn_key_parts
+        ):
+            raise SourceError(
+                f"{name}: element {key} turn key {turn_key!r} is not stable kebab-case"
+            )
+        if turn_key in seen_keys:
+            raise SourceError(f"{name}: element {key} repeats turn key {turn_key!r} in {field}")
+        seen_keys.add(turn_key)
+
+        sequence = declaration.get("seq")
+        if (
+            not isinstance(sequence, list)
+            or not sequence
+            or any(not isinstance(one, int) or isinstance(one, bool) for one in sequence)
+        ):
+            raise SourceError(
+                f"{name}: element {key} turn {turn_key} needs a nonempty integer seq array"
+            )
+        declared_sequence.extend(sequence)
+
+        speaker = declaration.get("speaker")
+        if speaker is not None and speaker not in TURN_SPEAKERS:
+            raise SourceError(
+                f"{name}: element {key} turn {turn_key} has speaker {speaker!r}; "
+                f"one of {', '.join(TURN_SPEAKERS)} is required"
+            )
+        dialogue_role = declaration.get("dialogue_role")
+        if dialogue_role is not None and dialogue_role not in TURN_DIALOGUE_ROLES:
+            raise SourceError(
+                f"{name}: element {key} turn {turn_key} has dialogue_role "
+                f"{dialogue_role!r}; one of {', '.join(TURN_DIALOGUE_ROLES)} is required"
+            )
+        action = declaration.get("action") if "action" in declaration else None
+        if "action" in declaration and action is not True:
+            raise SourceError(
+                f"{name}: element {key} turn {turn_key} action must be true or omitted"
+            )
+        if action and (speaker is not None or dialogue_role is not None):
+            raise SourceError(
+                f"{name}: element {key} turn {turn_key} cannot be both an action "
+                "and a spoken turn"
+            )
+        turns.append(
+            {
+                "key": turn_key,
+                "speaker": speaker,
+                "dialogue_role": dialogue_role,
+                "action": action,
+                "text": None,
+            }
+        )
+
+    if declared_sequence != source_sequence:
+        raise SourceError(
+            f"{name}: element {key} {field} seq {declared_sequence} does not exactly "
+            f"partition source seq {source_sequence} in order"
+        )
+    offset = 0
+    for turn, declaration in zip(turns, declarations):
+        count = len(declaration["seq"])
+        sequence = declared_sequence[offset:offset + count]
+        turn["text"] = "\n".join(source_rows[one] for one in sequence)
+        offset += count
+    if "\n".join(turn["text"] for turn in turns) != parent_text:
+        raise SourceError(
+            f"{name}: element {key} {field} changes the selected parent text"
+        )
+    return turns
+
+
+def side_text(entry: dict, lang: str, witnesses: dict, restricted: dict, library: dict,
               key: str, name: str) -> dict | None:
     """One element's text in one language, from whichever edition holds it.
 
@@ -897,10 +1713,20 @@ def side_text(entry: dict, lang: str, witnesses: dict, library: dict,
     and the column --- and never inferred from which language is being asked
     for, so that adding the Latin could not quietly change what the English did.
     """
-    block = entry.get(SIDE_BLOCKS[lang])
+    side = SIDE_BLOCKS[lang]
+    block = entry.get(side)
     if not block:
+        if side + "_turns" in entry:
+            raise SourceError(
+                f"{name}: element {key} declares {side}_turns without a {side} text block"
+            )
         return None
     witness_id = block.get("witness")
+    if (witness_id, lang) in restricted:
+        raise SourceError(
+            f"{name}: element {key} attempts a {lang} text join to "
+            f"rights-restricted witness {witness_id!r}"
+        )
     witness = witnesses.get((witness_id, lang))
     if witness is None:
         raise SourceError(
@@ -921,18 +1747,27 @@ def side_text(entry: dict, lang: str, witnesses: dict, library: dict,
     if not named:
         raise SourceError(f"{name}: element {key} names no artifact element for {lang}")
     column = block.get("column") or "text"
-    return {
+    text = "\n".join(
+        artifact_text(library, artifact_id, one, name, column) for one in named
+    )
+    translation = {
         "lang": lang,
         "source_id": witness_id,
         "rights": witness["rights"],
-        "text": "\n".join(
-            artifact_text(library, artifact_id, one, name, column) for one in named
-        ),
+        "text": text,
     } | relation_of(block, key, lang, name)
+    turns = structured_turns(
+        entry, SIDE_BLOCKS[lang], library, artifact_id, named, column, key, name, text
+    )
+    if turns is not None:
+        translation["turns"] = turns
+    return translation
 
 
-def from_inventory(section: dict, witnesses: dict, absences: dict, options: dict,
-                   library: dict, name: str) -> list[dict]:
+def from_inventory(
+    section: dict, witnesses: dict, restricted: dict, absences: dict,
+    options: dict, library: dict, name: str
+) -> list[dict]:
     """The elements of a section the inventory states itself.
 
     Used where no artifact of the rite's own text exists to draw on. The
@@ -948,14 +1783,15 @@ def from_inventory(section: dict, witnesses: dict, absences: dict, options: dict
         kind = entry.get("kind")
         if kind not in ELEMENT_KINDS:
             raise SourceError(f"{name}: element {key} has kind {kind!r}")
-        variant = entry.get("variant")
-        if variant is not None and variant not in options:
-            raise SourceError(f"{name}: element {key} names option {variant!r}, which no variant group offers")
+        variant, alternatives = element_alternatives(entry, options, key, name)
+        conditions = element_conditions(entry, options, key, name)
 
         held = [
             row
             for row in (
-                side_text(entry, language["lang"], witnesses, library, key, name)
+                side_text(
+                    entry, language["lang"], witnesses, restricted, library, key, name
+                )
                 for language in LANGUAGES
             )
             if row
@@ -989,6 +1825,8 @@ def from_inventory(section: dict, witnesses: dict, absences: dict, options: dict
                 "locus": entry.get("missal_number") or None,
                 "note": entry.get("note") or None,
                 "variant": variant,
+                "alternatives": alternatives,
+                "conditions": conditions,
                 "absent": absent,
                 "translations": translations,
             }
@@ -1020,12 +1858,22 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
                 f"{name}: {field} belongs to the calendar's mass index and must not be restated here"
             )
 
+    restricted = restricted_witness_table(source, library, name)
     witnesses = witness_table(source, library, name)
+    overlap = set(restricted) & set(witnesses)
+    if overlap:
+        identifier, language = sorted(overlap)[0]
+        raise SourceError(
+            f"{name}: witness {identifier} for {language} is both publishable "
+            "and rights-restricted"
+        )
     absences = absence_table(source, name)
     variants, options = variant_table(source, name)
 
     sections = []
+    exclusions = []
     seen: set[str] = set()
+    seen_exclusions: set[str] = set()
     for section in source["sections"]:
         key = section.get("key")
         if not isinstance(key, str) or not key:
@@ -1033,32 +1881,88 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
         if "artifact" in section and "elements" in section:
             raise SourceError(f"{name}: section {key} names both an artifact and inline elements")
         if "artifact" in section:
-            elements = from_artifact(section, witnesses, absences, library, name)
+            elements, section_exclusions = from_artifact(
+                section, witnesses, restricted, absences, library, name
+            )
         elif "elements" in section:
-            elements = from_inventory(section, witnesses, absences, options, library, name)
+            for field in (
+                "exclusions", "turn_partitions", "absent_latin_by_element",
+            ):
+                if field in section:
+                    raise SourceError(
+                        f"{name}: inline section {key} declares artifact-only {field}"
+                    )
+            elements = from_inventory(
+                section, witnesses, restricted, absences, options, library, name
+            )
+            section_exclusions = []
         else:
             raise SourceError(f"{name}: section {key} carries neither an artifact nor elements")
         for element in elements:
             if element["key"] in seen:
                 raise SourceError(f"{name}: element key {element['key']} occurs twice")
             seen.add(element["key"])
+        for exclusion in section_exclusions:
+            if exclusion["key"] in seen_exclusions:
+                raise SourceError(
+                    f"{name}: exclusion key {exclusion['key']} occurs twice"
+                )
+            seen_exclusions.add(exclusion["key"])
+            exclusions.append(exclusion)
         sections.append({"key": key, "name": section.get("name") or key, "elements": elements})
 
     slots = slot_table(source, sections, name)
+
+    offered = {
+        (entry["group"], option["id"])
+        for entry in variants
+        for option in entry["options"]
+    }
+    used = {
+        (alternative["group"], alternative["option"])
+        for section in sections
+        for element in section["elements"]
+        for alternative in element["alternatives"]
+    }
+    unused = offered - used
+    if unused:
+        group, option = sorted(unused)[0]
+        raise SourceError(
+            f"{name}: variant group {group} offers unused option {option}; a choice "
+            "with no elements would select an empty rite"
+        )
 
     total = sum(len(section["elements"]) for section in sections)
     held: dict[tuple[str, str], int] = {}
     by_lang: dict[str, int] = {}
     absent_counts: dict[str, int] = {}
+    absent_by_lang: dict[str, dict[str, int]] = {}
+    relation_counts: dict[tuple[str, str, str], int] = {}
     for section in sections:
         for element in section["elements"]:
             for translation in element["translations"] or []:
                 reach = (translation["source_id"], translation["lang"])
                 held[reach] = held.get(reach, 0) + 1
                 by_lang[translation["lang"]] = by_lang.get(translation["lang"], 0) + 1
-            for reason in element["absent"].values():
+                relation = translation.get("relation")
+                if relation not in RELATIONS:
+                    raise SourceError(
+                        f"{name}: element {element['key']} has untyped relation "
+                        f"{relation!r} for {translation['lang']}"
+                    )
+                collation = (
+                    translation.get("collation")
+                    if relation == "antecedent"
+                    else "not-applicable"
+                )
+                bucket = (translation["lang"], relation, collation)
+                relation_counts[bucket] = relation_counts.get(bucket, 0) + 1
+            for language in LANGUAGES:
+                reason = element["absent"][language["absent"]]
                 if reason:
                     absent_counts[reason] = absent_counts.get(reason, 0) + 1
+                    by_reason = absent_by_lang.setdefault(reason, {})
+                    by_reason[language["lang"]] = by_reason.get(language["lang"], 0) + 1
 
     manifest = sorted(
         (
@@ -1076,6 +1980,66 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
         key=lambda row: (row["lang"], -row["held"], row["source_id"]),
     )
 
+    absence_rows = [
+        {
+            "key": key,
+            "count": absent_counts.get(key, 0),
+            "state": absence_state(absences[key]["kind"]),
+            "kind": absences[key]["kind"],
+        }
+        for key in sorted(absences)
+    ]
+    language_absences = [
+        {
+            "key": key,
+            "lang": language["lang"],
+            "count": absent_by_lang.get(key, {}).get(language["lang"], 0),
+            "state": absence_state(absences[key]["kind"]),
+            "kind": absences[key]["kind"],
+        }
+        for key in sorted(absences)
+        for language in LANGUAGES
+        if absent_by_lang.get(key, {}).get(language["lang"], 0) > 0
+    ]
+    language_coverage = [
+        {
+            "lang": language["lang"],
+            "elements": total,
+            "held": by_lang.get(language["lang"], 0),
+            "missing": total - by_lang.get(language["lang"], 0),
+            "absent": total - by_lang.get(language["lang"], 0),
+        }
+        for language in LANGUAGES
+    ]
+    relation_coverage = [
+        {"lang": lang, "relation": relation, "collation": collation, "count": count}
+        for (lang, relation, collation), count in sorted(relation_counts.items())
+    ]
+    for language in language_coverage:
+        relation_total = sum(
+            row["count"] for row in relation_coverage
+            if row["lang"] == language["lang"]
+        )
+        absence_total = sum(
+            row["count"] for row in language_absences
+            if row["lang"] == language["lang"]
+        )
+        if relation_total != language["held"] or absence_total != language["missing"]:
+            raise SourceError(
+                f"{name}: {language['lang']} coverage does not partition its "
+                "held and missing elements"
+            )
+    for absence in absence_rows:
+        partitioned = sum(
+            row["count"] for row in language_absences
+            if row["key"] == absence["key"]
+        )
+        if partitioned != absence["count"]:
+            raise SourceError(
+                f"{name}: absence {absence['key']} count does not equal its "
+                "language partition"
+            )
+
     return {
         "schema": OUT_SCHEMA,
         "calendar": calendar,
@@ -1085,7 +2049,9 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
         "advisory": source["advisory"],
         "derived_from": source["derived_from"],
         "slots_derived_from": source.get("slots_derived_from") or None,
-        "absences": [absences[key] | {"count": absent_counts.get(key, 0)} for key in sorted(absences)],
+        "absences": absence_rows,
+        "language_absences": language_absences,
+        "exclusions": sorted(exclusions, key=lambda row: row["key"]),
         # Every language this layer speaks of, whether or not this missal holds
         # a word of it, each carrying how many of its elements are reached and
         # which side of `absent` says why the rest are not. A page offering a
@@ -1093,9 +2059,15 @@ def calendar_structure(sources: Path, path: Path, library: dict[str, dict]) -> d
         # language that is entirely withheld and still say, at every element,
         # under what recorded reason.
         "languages": [
-            one | {"held": by_lang.get(one["lang"], 0), "elements": total}
+            one | {
+                "held": by_lang.get(one["lang"], 0),
+                "elements": total,
+                "missing": total - by_lang.get(one["lang"], 0),
+            }
             for one in LANGUAGES
         ],
+        "language_coverage": language_coverage,
+        "relation_coverage": relation_coverage,
         "variants": variants,
         "slots": slots,
         "translations": manifest,
@@ -1136,6 +2108,34 @@ def relative_paths(built: list[dict], whole: bool) -> dict[str, dict]:
     return files
 
 
+def refuse_symlink_output(root: Path, target: Path) -> None:
+    """Never follow an owned output component outside the requested tree."""
+
+    current = root
+    if current.is_symlink():
+        raise SourceError(f"output root is a symlink: {current}")
+    for part in target.relative_to(root).parts:
+        current = current / part
+        if current.is_symlink():
+            raise SourceError(f"Ordinary output path is a symlink: {current}")
+
+
+def owned_orphans(out: Path, expected: set[str]) -> list[str]:
+    """Unexpected generated Ordinary JSON, bounded to this tool's directory."""
+    directory = out / "structure" / "ordinary"
+    refuse_symlink_output(out, directory)
+    if not directory.is_dir():
+        return []
+    found = []
+    for path in directory.iterdir():
+        if path.suffix != ".json" or not (path.is_file() or path.is_symlink()):
+            continue
+        relative = "structure/ordinary/" + path.name
+        if relative not in expected:
+            found.append(relative)
+    return sorted(found)
+
+
 def serialise(payload: dict) -> str:
     return json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n"
 
@@ -1168,7 +2168,255 @@ def summarise(one: dict, stale: bool | None) -> dict:
         "slots": len(one["slots"]),
         "translated": translated,
         "absent": absent,
+        "language_coverage": one["language_coverage"],
+        "relation_coverage": one["relation_coverage"],
+        "exclusions": len(one["exclusions"]),
         "stale": stale,
+    }
+
+
+QUALIFIED_PROPER = re.compile(r"^(.+?) \(.+\)$")
+
+
+def proper_slot(slots: list[dict], name: str) -> int:
+    """The browser's exact/explicitly-qualified slot lookup, in Python."""
+
+    for ordinal, slot in enumerate(slots):
+        if name in slot["propers"]:
+            return ordinal
+    qualified = QUALIFIED_PROPER.fullmatch(name)
+    if qualified:
+        family = qualified.group(1)
+        for ordinal, slot in enumerate(slots):
+            if slot.get("qualified") and family in slot["propers"]:
+                return ordinal
+    return -1
+
+
+def effective_ordinary_frame(mass: dict, form: dict | None, where: str) -> dict:
+    """One form's exact frame declaration; omission alone means full."""
+
+    value = (
+        form["ordinary_frame"]
+        if form is not None and "ordinary_frame" in form
+        else mass.get("ordinary_frame", {"applicability": "full"})
+    )
+    if not isinstance(value, dict):
+        raise SourceError(f"{where}: ordinary_frame is not a mapping")
+    unknown = sorted(set(value) - {"applicability", "basis"})
+    if unknown:
+        raise SourceError(
+            f"{where}: ordinary_frame carries unknown fields {', '.join(unknown)}"
+        )
+    applicability = value.get("applicability")
+    if applicability not in ("full", "none", "unavailable"):
+        raise SourceError(
+            f"{where}: ordinary_frame applicability must be full, none, or unavailable"
+        )
+    basis = value.get("basis")
+    if applicability != "full" and (
+        not isinstance(basis, str) or not basis.strip()
+    ):
+        raise SourceError(
+            f"{where}: non-full ordinary_frame must carry a nonempty basis"
+        )
+    if "basis" in value and (not isinstance(basis, str) or not basis.strip()):
+        raise SourceError(f"{where}: ordinary_frame basis must be a nonempty string")
+    return value
+
+
+def check_form_seating(
+    ordinary: dict, propers: list[dict], where: str, *, full: bool
+) -> None:
+    """Refuse every row the browser could silently mis-seat or leave unseated.
+
+    This intentionally repeats the small, closed seating derivation used by
+    `ordinary-seating.js`.  It is a producer gate: generated Propers are checked
+    against the newly built Ordinary even when the tracked Ordinary output is
+    stale, so changing a slot cannot leave an old disposition looking current.
+    """
+
+    if not isinstance(propers, list) or any(not isinstance(row, dict) for row in propers):
+        raise SourceError(f"{where}: propers must be an array of mappings")
+    rows = [row for row in propers if row.get("name") != "Placeholder"]
+    for row in rows:
+        if not isinstance(row.get("name"), str) or not row["name"]:
+            raise SourceError(f"{where}: a Proper has no nonempty name")
+
+    source_problems = _calendars.ordinary_disposition_source_problems(
+        where, "", rows
+    )
+    if source_problems:
+        raise SourceError(source_problems[0])
+
+    slots = ordinary["slots"]
+    reached = -1
+    seen_alternatives: set[str] = set()
+    seen_unplaced: set[str] = set()
+    index = 0
+    while index < len(rows):
+        proper = rows[index]
+        disposition = proper.get(_calendars.ORDINARY_DISPOSITION)
+        if disposition is None:
+            if full:
+                ordinal = proper_slot(slots, proper["name"])
+                if ordinal < 0:
+                    raise SourceError(
+                        f"{where}: Proper {proper['name']!r} has no Ordinary seat "
+                        "and no ordinary_disposition"
+                    )
+                if ordinal < reached:
+                    raise SourceError(
+                        f"{where}: Proper {proper['name']!r} runs backward from "
+                        f"slot {reached} to slot {ordinal}"
+                    )
+                reached = ordinal
+            index += 1
+            continue
+
+        try:
+            disposition = _calendars.validate_ordinary_disposition(disposition)
+        except ValueError as error:
+            raise SourceError(f"{where}: Proper {proper['name']!r}: {error}") from error
+        group = disposition["group"]
+        if disposition["kind"] == "unplaced":
+            if group in seen_alternatives:
+                raise SourceError(
+                    f"{where}: ordinary_disposition group {group!r} mixes kinds"
+                )
+            seen_unplaced.add(group)
+            if full and proper_slot(slots, proper["name"]) >= 0:
+                raise SourceError(
+                    f"{where}: unplaced Proper {proper['name']!r} is stale because "
+                    "a usable Ordinary slot now claims it"
+                )
+            index += 1
+            continue
+
+        if group in seen_alternatives or group in seen_unplaced:
+            raise SourceError(
+                f"{where}: alternative group {group!r} is not one contiguous source unit"
+            )
+        seen_alternatives.add(group)
+        basis = disposition["basis"]
+        options: set[str] = set()
+        ordinals: set[int] = set()
+        while index < len(rows):
+            member = rows[index]
+            held = member.get(_calendars.ORDINARY_DISPOSITION)
+            if not isinstance(held, dict) or held.get("kind") != "alternative" \
+                    or held.get("group") != group:
+                break
+            try:
+                held = _calendars.validate_ordinary_disposition(held)
+            except ValueError as error:
+                raise SourceError(
+                    f"{where}: Proper {member['name']!r}: {error}"
+                ) from error
+            if held["basis"] != basis:
+                raise SourceError(
+                    f"{where}: alternative group {group!r} does not retain one basis"
+                )
+            options.add(held["option"])
+            if full:
+                ordinal = proper_slot(slots, member["name"])
+                if ordinal < 0:
+                    raise SourceError(
+                        f"{where}: alternative Proper {member['name']!r} has no "
+                        "usable Ordinary seat"
+                    )
+                ordinals.add(ordinal)
+            index += 1
+        if len(options) < 2:
+            raise SourceError(
+                f"{where}: alternative group {group!r} has fewer than two options"
+            )
+        if full:
+            if len(ordinals) != 1:
+                raise SourceError(
+                    f"{where}: alternative group {group!r} spans Ordinary slots "
+                    f"{sorted(ordinals)}"
+                )
+            ordinal = next(iter(ordinals))
+            if ordinal < reached:
+                raise SourceError(
+                    f"{where}: alternative group {group!r} runs backward from "
+                    f"slot {reached} to slot {ordinal}"
+                )
+            reached = ordinal
+
+
+def read_propers_structure(out: Path, calendar: str) -> dict:
+    """Read one generated Propers file as a closed cross-layer input."""
+
+    target = out / "structure" / "propers" / f"{calendar}.json"
+    refuse_symlink_output(out, target)
+    if not target.is_file():
+        raise SourceError(f"missing generated Propers structure: {target}")
+    try:
+        payload = json.loads(target.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, json.JSONDecodeError) as error:
+        raise SourceError(f"malformed generated Propers structure {target}: {error}") from error
+    if not isinstance(payload, dict):
+        raise SourceError(f"malformed generated Propers structure {target}: not an object")
+    if payload.get("schema") != PROPERS_OUT_SCHEMA:
+        raise SourceError(
+            f"stale generated Propers structure {target}: expected schema "
+            f"{PROPERS_OUT_SCHEMA!r}"
+        )
+    if payload.get("calendar") != calendar:
+        raise SourceError(
+            f"stale generated Propers structure {target}: calendar is "
+            f"{payload.get('calendar')!r}"
+        )
+    if not isinstance(payload.get("masses"), list):
+        raise SourceError(f"malformed generated Propers structure {target}: masses is not an array")
+    return payload
+
+
+def check_calendar_seating(ordinary: dict, propers_file: dict) -> dict:
+    """Check every exact public formulary and report the checked partition."""
+
+    calendar = ordinary["calendar"]
+    full_forms = 0
+    nonfull_forms = 0
+    seen_masses: set[str] = set()
+    for mass in propers_file["masses"]:
+        if not isinstance(mass, dict):
+            raise SourceError(f"{calendar}: a generated mass is not a mapping")
+        key = mass.get("key")
+        if not isinstance(key, str) or not key or key in seen_masses:
+            raise SourceError(f"{calendar}: generated mass key {key!r} is empty or repeated")
+        seen_masses.add(key)
+        forms = mass.get("forms")
+        if forms is not None and (
+            not isinstance(forms, list) or any(not isinstance(form, dict) for form in forms)
+        ):
+            raise SourceError(f"{calendar}/{key}: forms is not an array of mappings")
+        units = [(form, form.get("propers")) for form in forms] if forms else [
+            (None, mass.get("propers"))
+        ]
+        seen_forms: set[str] = set()
+        for form, propers in units:
+            form_id = "main" if form is None else form.get("id")
+            if not isinstance(form_id, str) or not form_id or form_id in seen_forms:
+                raise SourceError(
+                    f"{calendar}/{key}: generated form id {form_id!r} is empty or repeated"
+                )
+            seen_forms.add(form_id)
+            where = f"{calendar}/{key}/{form_id}"
+            frame = effective_ordinary_frame(mass, form, where)
+            full = frame["applicability"] == "full"
+            check_form_seating(ordinary, propers, where, full=full)
+            if full:
+                full_forms += 1
+            else:
+                nonfull_forms += 1
+    return {
+        "calendar": calendar,
+        "full_forms": full_forms,
+        "nonfull_forms": nonfull_forms,
+        "failures": 0,
     }
 
 
@@ -1176,33 +2424,61 @@ def summarise(one: dict, stale: bool | None) -> dict:
 
 
 def run_check(arguments: argparse.Namespace) -> dict:
-    built = build(arguments)
     out = Path(arguments.out)
+    refuse_symlink_output(out, out / "structure" / "ordinary")
+    built = build(arguments)
+    files = relative_paths(built, arguments.calendar is None)
     stale = []
-    for relative, payload in relative_paths(built, arguments.calendar is None).items():
+    for relative, payload in files.items():
         target = out / relative
+        refuse_symlink_output(out, target)
         current = target.read_text(encoding="utf-8") if target.is_file() else None
         if current != serialise(payload):
             stale.append(relative)
+    if arguments.calendar is None:
+        stale.extend(owned_orphans(out, set(files)))
+    seating = [
+        check_calendar_seating(one, read_propers_structure(out, one["calendar"]))
+        for one in built
+    ]
     return {
         "calendars": [
             summarise(one, "structure/ordinary/" + one["calendar"] + ".json" in stale)
             for one in built
         ],
         "stale": sorted(stale),
+        "seating": {
+            "calendars": seating,
+            "full_forms": sum(row["full_forms"] for row in seating),
+            "nonfull_forms": sum(row["nonfull_forms"] for row in seating),
+            "failures": 0,
+        },
     }
 
 
 def run_structure(arguments: argparse.Namespace) -> dict:
-    built = build(arguments)
     out = Path(arguments.out)
+    refuse_symlink_output(out, out / "structure" / "ordinary")
+    built = build(arguments)
+    files = relative_paths(built, arguments.calendar is None)
     written = []
-    for relative, payload in sorted(relative_paths(built, arguments.calendar is None).items()):
+    for relative, payload in sorted(files.items()):
         target = out / relative
+        refuse_symlink_output(out, target)
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(serialise(payload), encoding="utf-8")
         written.append(str(target))
-    return {"calendars": [summarise(one, False) for one in built], "written": written}
+    removed = []
+    if arguments.calendar is None:
+        for relative in owned_orphans(out, set(files)):
+            target = out / relative
+            target.unlink()
+            removed.append(str(target))
+    return {
+        "calendars": [summarise(one, False) for one in built],
+        "written": written,
+        "removed": removed,
+    }
 
 
 def run_show(arguments: argparse.Namespace) -> dict:
@@ -1217,12 +2493,75 @@ def run_show(arguments: argparse.Namespace) -> dict:
     return {"ordinary": build(arguments)}
 
 
+def selected_variants(built: list[dict], requested: list[str]) -> dict[str, dict[str, str]]:
+    """One selected option per group, with source order supplying defaults."""
+    offered: dict[str, str] = {}
+    for ordinary in built:
+        for group in ordinary["variants"]:
+            for option in group["options"]:
+                identifier = option["id"]
+                if identifier in offered and offered[identifier] != group["group"]:
+                    raise SourceError(
+                        f"variant option {identifier} belongs to more than one group"
+                    )
+                offered[identifier] = group["group"]
+    overrides = {}
+    for option in requested:
+        group = offered.get(option)
+        if group is None:
+            raise SourceError(f"no variant option {option!r} in the selected Ordinary")
+        if group in overrides and overrides[group] != option:
+            raise SourceError(
+                f"variant group {group} was given both {overrides[group]!r} and {option!r}"
+            )
+        overrides[group] = option
+
+    selections = {}
+    for ordinary in built:
+        selected = {
+            group["group"]: next(
+                option["id"] for option in group["options"] if option["default"]
+            )
+            for group in ordinary["variants"]
+        }
+        for group, option in overrides.items():
+            if group in selected:
+                selected[group] = option
+        selections[ordinary["calendar"]] = selected
+    return selections
+
+
+def element_applicability(element: dict, selected: dict[str, str]) -> tuple[bool, list[dict]]:
+    """Filter closed choices and retain unknown context as visible state."""
+    if any(
+        selected.get(alternative["group"]) != alternative["option"]
+        for alternative in element.get("alternatives") or []
+    ):
+        return False, []
+    unresolved = []
+    for condition in element.get("conditions") or []:
+        if condition["kind"] == "omit-when-option":
+            if selected.get(condition["group"]) in condition["options"]:
+                return False, []
+        elif condition["kind"] == "include-when-any":
+            # `show` has no day/rank/preface context.  Unknown applicability is
+            # a first-class result, never a reason to include or omit silently.
+            unresolved.append(condition)
+        else:  # generated input should make this unreachable; stay fail-closed.
+            raise SourceError(
+                f"element {element['key']} has unknown generated condition "
+                f"{condition['kind']!r}"
+            )
+    return not unresolved, unresolved
+
+
 def render_ordinary(
     built: list[dict],
     lang: str,
     verbose: bool,
     style: Style,
     show_rubrics: bool = True,
+    requested_variants: list[str] | None = None,
 ) -> int:
     """The Ordinary, with every element set as what its kind says it is.
 
@@ -1233,9 +2572,11 @@ def render_ordinary(
     them, and read as its first and last lines. Nothing was wrong with the
     data; every one of those is its own element correctly carrying `kind:
     rubric`. The distinction is drawn in `scripts/_ordinary_text.py`, once, for
-    this tool and for `mass-today --expanded` alike.
+    this tool and for the expanded daily-Mass renderer alike.
     """
+    selections = selected_variants(built, requested_variants or [])
     for one in built:
+        selected = selections[one["calendar"]]
         for line in style.heading(one["title"], rule="="):
             print(line)
         if one.get("edition"):
@@ -1245,6 +2586,16 @@ def render_ordinary(
             for line in style.heading(str(section["name"]), rule="-"):
                 print(line)
             for element in section["elements"]:
+                visible, unresolved = element_applicability(element, selected)
+                for condition in unresolved:
+                    predicates = ", ".join(condition["predicates"])
+                    print(
+                        f"  [{element.get('name') or element['key']}: "
+                        f"applicability unresolved: {predicates}; "
+                        f"{condition['basis']}]"
+                    )
+                if not visible:
+                    continue
                 for line in element_lines(
                     element, lang, style, indent="  ",
                     show_rubrics=show_rubrics, why=verbose,
@@ -1269,18 +2620,16 @@ def run_coverage(arguments: argparse.Namespace) -> dict:
     built = build(arguments)
     rows = []
     for one in built:
-        absent: dict[str, int] = {}
-        for section in one["sections"]:
-            for element in section["elements"]:
-                for reason in element["absent"].values():
-                    if reason:
-                        absent[reason] = absent.get(reason, 0) + 1
         rows.append(
             {
                 "calendar": one["calendar"],
                 "elements": sum(len(section["elements"]) for section in one["sections"]),
                 "witnesses": one["translations"],
-                "absent": [{"key": key, "count": absent[key]} for key in sorted(absent)],
+                "language_coverage": one["language_coverage"],
+                "relation_coverage": one["relation_coverage"],
+                "absent": one["absences"],
+                "language_absences": one["language_absences"],
+                "exclusions": one["exclusions"],
             }
         )
     return {"coverage": rows}
@@ -1289,12 +2638,12 @@ def run_coverage(arguments: argparse.Namespace) -> dict:
 def render(payload: dict, arguments: argparse.Namespace) -> int:
     if getattr(arguments, "json", False) or arguments.format == "json":
         print_json(payload)
-        return 0
+        return 1 if payload.get("stale") else 0
     if arguments.format == "yaml":
         import yaml
 
         print(yaml.safe_dump(payload, sort_keys=False, allow_unicode=True).rstrip())
-        return 0
+        return 1 if payload.get("stale") else 0
     if "ordinary" in payload:
         return render_ordinary(
             payload["ordinary"],
@@ -1302,25 +2651,50 @@ def render(payload: dict, arguments: argparse.Namespace) -> int:
             arguments.verbose,
             getattr(arguments, "style_resolved", None) or Style(),
             getattr(arguments, "rubrics", True),
+            getattr(arguments, "variant", None),
         )
     if "coverage" in payload:
         for row in payload["coverage"]:
             print(f"{row['calendar']}: {row['elements']} elements")
+            for language in row["language_coverage"]:
+                print(
+                    f"  {language['lang']} coverage: {language['held']} held, "
+                    f"{language['missing']} missing"
+                )
+            for relation in row["relation_coverage"]:
+                print(
+                    f"  {relation['lang']} provenance: {relation['relation']}/"
+                    f"{relation['collation']} {relation['count']}"
+                )
             for witness in row["witnesses"]:
                 print(
                     f"  {witness['lang']}  {witness['source_id']}  "
                     f"{witness['held']} elements  {witness['rights']}"
                 )
             if row["absent"]:
-                named = ", ".join(f"{one['key']} {one['count']}" for one in row["absent"])
+                named = ", ".join(
+                    f"{one['key']} {one['count']} {one['state']}/{one['kind']}"
+                    for one in row["absent"]
+                )
                 print(f"  absent: {named}")
+            if row["exclusions"]:
+                named = ", ".join(one["key"] for one in row["exclusions"])
+                print(f"  target-recension exclusions: {named}")
         return 0
     for row in payload["calendars"]:
+        languages = ", ".join(
+            f"{one['lang']} {one['held']} held/{one['missing']} missing"
+            for one in row["language_coverage"]
+        )
+        relations = ", ".join(
+            f"{one['lang']} {one['relation']}/{one['collation']} {one['count']}"
+            for one in row["relation_coverage"]
+        ) or "none"
         print(
             f"{row['calendar']}: {row['sections']} sections, {row['elements']} elements, "
             f"{row['witnesses']} witness{'' if row['witnesses'] == 1 else 'es'}, "
-            f"{row['variants']} variants, {row['slots']} slots; "
-            f"{row['translated']} elements translated, {row['absent']} absent"
+            f"{row['variants']} variants, {row['slots']} slots; {languages}; "
+            f"relations {relations}; {row['exclusions']} target-recension exclusions"
         )
     if "written" in payload:
         print(f"wrote {len(payload['written'])} files")
@@ -1332,7 +2706,7 @@ def render(payload: dict, arguments: argparse.Namespace) -> int:
         return 0
     stale = payload["stale"]
     print(f"{len(stale)} files would be rewritten" if stale else "the written files are current")
-    return 0
+    return 1 if stale else 0
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -1354,6 +2728,13 @@ def main(argv: list[str] | None = None) -> int:
         action="store_false",
         default=True,
         help="`show`: hide the priest's actions, printing only what is said",
+    )
+    shared.add_argument(
+        "--variant",
+        action="append",
+        default=[],
+        metavar="OPTION",
+        help="`show`: select a nondefault option; repeat for independent groups",
     )
     shared.add_argument("--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)")
     parser = argparse.ArgumentParser(

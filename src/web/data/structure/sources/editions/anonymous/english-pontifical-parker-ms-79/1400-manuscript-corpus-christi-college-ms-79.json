@@ -3,6 +3,7 @@
   {
    "artifact_type": "scan",
    "byte_size": 1266441,
+   "edition_owned": true,
    "id": "artifact.anonymous.english-pontifical-parker-ms-79.manuscript-corpus-christi-college-ms-79.stanford-iiif-folio-43r-width2000",
    "media_type": "image/jpeg",
    "notes": "The 2000-by-3337 JPEG was acquired, hashed, and visually inspected. The reader unit concludes in the left column; the red exorcist-ordination rubric opens in the right column, followed by the candidate summons and the depicted and rubricated delivery of a book. No formula is transcribed.",
@@ -17,6 +18,7 @@
   {
    "artifact_type": "scan",
    "byte_size": 1271570,
+   "edition_owned": true,
    "id": "artifact.anonymous.english-pontifical-parker-ms-79.manuscript-corpus-christi-college-ms-79.stanford-iiif-folio-43v-width2000",
    "media_type": "image/jpeg",
    "notes": "The 2000-by-3322 JPEG was acquired, hashed, and visually inspected. The exorcist unit concludes in the left column; the acolyte-ordination rubric begins in the right column. No formula is transcribed.",
@@ -31,6 +33,7 @@
   {
    "artifact_type": "metadata",
    "byte_size": 821162,
+   "edition_owned": true,
    "id": "artifact.anonymous.english-pontifical-parker-ms-79.manuscript-corpus-christi-college-ms-79.stanford-iiif-manifest",
    "media_type": "application/json",
    "notes": "The exact manifest identifies the manuscript, provides its catalog description, maps fols. 43r–43v to canvases 93–94, and defines adjacent ranges for ordination of readers, exorcists, and acolytes. Attribution: Images courtesy of The Parker Library, Corpus Christi College, Cambridge. Licensed under a Creative Commons Attribution-NonCommercial 4.0 International License. The manifest is catalog and structural metadata, not a transcription or critical edition.",
@@ -50,7 +53,6 @@
   "id": "edition.anonymous.english-pontifical-parker-ms-79.manuscript-corpus-christi-college-ms-79",
   "jurisdiction": null,
   "language": "la",
-  "notes": "The exact Stanford/Parker IIIF manifest identifies a pontifical and dates its two principal stages circa 1400 and circa 1410. Its catalog description calls the book a specifically English pontifical and says London is the probable place of production on stylistic grounds. The proposed patronage by Guy de Mohun and subsequent ownership or additions associated with Richard Clifford and Philip Morgan are catalog inferences from heraldry and codicology, not independently established facts. The same description places the manuscript at St Paul's Cathedral by 1489 from added texts on fols. 1v–2.",
   "publication": "Manuscript, Cambridge, Corpus Christi College, Parker Library, MS 79",
   "title": "English Pontifical, Cambridge, Corpus Christi College, Parker Library MS 79",
   "translators": [],
@@ -60,15 +62,12 @@
   {
    "artifact_id": "artifact.anonymous.english-pontifical-parker-ms-79.manuscript-corpus-christi-college-ms-79.stanford-iiif-folio-43r-width2000",
    "artifact_type": "scan",
-   "context": "Read with the exact manifest range and the independently acquired fol. 43v image, fol. 43r verifies the opening rubric, candidate summons, episcopal book-delivery architecture, and placement after reader ordination; fol. 43v verifies the unit's conclusion before acolyte ordination. This is one English pontifical witness, not a transcription, critical edition, direct descendant of the PRG, or evidence of actual performance, ordinary duties, frequency, efficacy, representativeness, continuity, current law, or modern major-exorcism practice.",
    "id": "passage.anonymous.english-pontifical-parker-ms-79.manuscript-corpus-christi-college-ms-79.folio-43r-43v-ordination-of-exorcists",
    "locus": "folio-43r",
    "media_type": "image/jpeg",
-   "notes": "No formula is transcribed. The passage binds its opening artifact; the exact second-folio artifact and manifest are separately bound by the consumer.",
    "readable": false,
    "reason": "The exact bytes are not retained in this repository; the record keeps their retrieval location, hash and rights instead.",
    "rights": "licensed",
-   "rights_basis": "The governing manifest licenses Parker Library images under Creative Commons Attribution-NonCommercial 4.0 International. Triptych retains no copy.",
    "rights_jurisdiction": "GB",
    "segment_id": null,
    "source_url": "https://stacks.stanford.edu/image/iiif/tx112pf2826%252F079_043_R_TC_46/full/2000,/0/default.jpg",

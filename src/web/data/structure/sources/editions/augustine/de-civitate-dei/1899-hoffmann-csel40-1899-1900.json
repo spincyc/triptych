@@ -3,6 +3,7 @@
   {
    "artifact_type": "preface-illustration",
    "byte_size": 130535,
+   "edition_owned": true,
    "id": "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-1-fig1",
    "media_type": "image/jpeg",
    "notes": "JPEG support asset, 1602 by 528 pixels. It is retained to keep the referenced TEI source package materially self-contained and is intentionally excluded from text-search corpora.",
@@ -17,6 +18,7 @@
   {
    "artifact_type": "tei-xml",
    "byte_size": 2202410,
+   "edition_owned": true,
    "id": "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-1-tei",
    "media_type": "application/tei+xml",
    "notes": "Books 1-13. Exact unmodified TEI bytes from pinned Git commit 2813e3a52b4206df0324299e5110e5bd0d95cee4. The encoding was inspected but not collated by Triptych against page images. Its referenced CSEL40_1_fig1.jpg support asset is retained under a separate artifact record.",
@@ -31,6 +33,7 @@
   {
    "artifact_type": "tei-xml",
    "byte_size": 2310093,
+   "edition_owned": true,
    "id": "artifact.augustine.de-civitate-dei.hoffmann-csel40-1899-1900.csel40-2-tei",
    "media_type": "application/tei+xml",
    "notes": "Books 14-22. Exact unmodified TEI bytes from pinned Git commit 2813e3a52b4206df0324299e5110e5bd0d95cee4. The upstream repository path is Volumes/CSEL40_2.xml, while the embedded filename identifier is CSEL40.xml; both facts are preserved. The encoding was inspected but not collated by Triptych against page images.",
@@ -52,7 +55,6 @@
   "id": "edition.augustine.de-civitate-dei.hoffmann-csel40-1899-1900",
   "jurisdiction": null,
   "language": "la",
-  "notes": "Latin critical-edition text represented by the University of Leipzig/OpenGreekAndLatin TEI encoding at the pinned csel-dev commit.",
   "publication": "Emanuel Hoffmann, ed., Corpus Scriptorum Ecclesiasticorum Latinorum 40.1-40.2 (Vienna, 1899-1900)",
   "title": "Sancti Aurelii Augustini De civitate Dei libri XXII",
   "translators": [],

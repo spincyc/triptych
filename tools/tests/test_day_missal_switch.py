@@ -34,6 +34,7 @@ REPORTED_DATE = "2026-08-08"
 VIANNEY = "s-ioannis-mariae-vianney-confessoris"
 CYRIACUS = "comm-ss-cyriaci-largi-smaragdi-martyrum"
 DOMINIC = "saint-dominic-priest"
+OT_18_SATURDAY = "ot-18-saturday"
 # 2026-05-03 is Easter 4 in 1962 and Easter 5 in the Postconciliar Missal: the
 # target missal holds a formulary for the day, and it is a different one.
 DIVERGENT_DATE = "2026-05-03"
@@ -50,7 +51,8 @@ JOHN_OF_GOD = "s-ioannis-a-deo-confessoris"
 # The frozen reader-state v1 Day inventory, from `guidance/liturgy-reader-state.md`.
 DAY_HASH_KEYS = {
     "date", "missal", "bible", "orations", "why", "ordinary", "ordinary-lang",
-    "rubrics", "mass", "eucharistic-prayer",
+    "rubrics", "mass", "form", "translation-witness", "mode", "location",
+    "eucharistic-prayer",
 }
 
 NODE_PRELUDE = r"""
@@ -290,6 +292,7 @@ def apply_call(hash_value: str, date: str, missal: str, formulary: str | None,
         "formulary": formulary,
         "previous": {"state": {
             "civilDate": previous_date, "edition": {"id": previous_missal},
+            "languages": {"orations": "la"},
         }},
     }
 
@@ -314,7 +317,7 @@ class DayMissalSwitchTests(unittest.TestCase):
              "missal": "postconciliar", "date": REPORTED_DATE},
         ])
         self.assertEqual(rows[0]["readable"], [VIANNEY, CYRIACUS])
-        self.assertEqual(rows[1]["readable"], [DOMINIC])
+        self.assertEqual(rows[1]["readable"], [DOMINIC, OT_18_SATURDAY])
         self.assertEqual(set(rows[0]["readable"]) & set(rows[1]["readable"]), set())
         self.assertEqual(rows[0]["title"], "S. Ioannis Mariae Vianney Confessoris")
         self.assertEqual(rows[1]["title"], "Saint Dominic, Priest")
@@ -402,7 +405,12 @@ class DayMissalSwitchTests(unittest.TestCase):
                        REPORTED_DATE, "roman-1962"),
         ])
         composed = rows[0]["hash"]
-        self.assertEqual(rows[0]["removals"], [])
+        # The newly selected formulary survives. Its prior form and semantic
+        # location do not: both are identities inside the formulary being left.
+        self.assertEqual(
+            rows[0]["removals"],
+            ["form", "translation-witness", "location"],
+        )
         self.assertEqual(pairs_of(composed)["mass"], CYRIACUS)
         resolved = node([{"op": "resolve", "hash": composed,
                           "missal": "roman-1962", "date": REPORTED_DATE}])[0]

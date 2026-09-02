@@ -85,20 +85,24 @@ comparison someone has to perform and could perform wrongly.
 If a gap cannot be represented, it will be filled — silently, plausibly, and by
 whatever is nearest to hand.
 
-So absence is written down, always with its reason: `absent: icel` on a
-postconciliar text two bodies have not agreed this project may publish —
-`missals.md` reads ICEL's conditional permission against the USCCB's refusal and
-finds a conflict, not a prohibition, which is why the reason is named rather
-than assumed; `latin-not-transcribed` on 195 elements
-held whole in English; `untranslated` on three orations whose witness answers
-neither Latin form; `via_unrepresented` on a connector whose descent crosses an
-edition this project does not carry; `unresolved` on a facsimile's rights. A
-placeholder is **counted as a placeholder** and never printed under the heading
-`Collect`. A shortened transcript says how many lines it dropped.
+So absence is written down, always with its reason:
+`editio-typica-new-matter` on protected postconciliar Latin for which this
+project has established no distribution basis; `latin-not-transcribed` on an
+element held whole in English; `untranslated` on an oration whose witness
+answers neither Latin form; `via_unrepresented` on a connector whose descent
+crosses an edition this project does not carry; `unresolved` on a facsimile's
+rights. The ICEL case reinforces the distinction: a conditional permission for
+one web-display surface is not a basis for putting the same payload in a
+downloadable, clonable public data bundle. Record the surface limitation rather
+than converting either the permission or the limitation into a blanket claim
+about the text. A placeholder is **counted as a placeholder** and never printed
+under the heading `Collect`. A shortened transcript says how many lines it
+dropped.
 
-The test of this principle is whether the gap survives contact with a renderer. A
-page that shows nothing where a prayer belongs has told the reader that the Mass
-omits it. A page that says `[absent: icel]` has told the truth.
+The test of this principle is whether the gap survives contact with a renderer.
+A page that shows nothing where a prayer belongs has told the reader that the
+Mass omits it. A page that names the specific witness, rights, exactness, or
+surface reason for the absence has told the truth.
 
 ## 5. Refusal is a first-class output
 

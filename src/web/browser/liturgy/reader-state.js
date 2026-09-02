@@ -7,9 +7,9 @@
  * resolved repository data; it validates identity, coverage, choices, Compare
  * anchors, and legacy URL state without deriving a second liturgical answer.
  *
- * It is intentionally not loaded by either production page during the M1
- * candidate. That keeps the current routes byte-for-byte in control of their
- * deployed behavior while tests establish the fail-closed integration seam.
+ * Both production readers load this contract. Their controllers remain
+ * responsible for rendering and navigation, while this module supplies the
+ * shared fail-closed state and canonical URL vocabulary they enforce.
  * ======================================================================== */
 
 'use strict';
@@ -24,10 +24,11 @@
   const URL_SCHEMA = 'triptych-liturgy-url-state/v1';
   const ENTRANCES = Object.freeze(['day', 'propers']);
   const MODES = Object.freeze(['read', 'missal', 'study', 'compare']);
+  const DEFAULT_BIBLE_ID = 'douay-rheims';
   const STATE_FIELDS = Object.freeze([
     'schema', 'entrance', 'civilDate', 'edition', 'calendar', 'formulary', 'browse',
     'bible', 'languages', 'selectedReadableFormulary', 'requestedMode', 'options',
-    'apparatus', 'cycle', 'alternative', 'semanticLocation', 'sourceHooks',
+    'apparatus', 'form', 'cycle', 'alternative', 'semanticLocation', 'sourceHooks',
     'coverage', 'unresolvedChoices', 'explicitAbsences', 'comparison'
   ]);
 
@@ -42,15 +43,20 @@
     'ordinary-missing',
     'translation-missing',
     'language-missing',
+    'unresolved-choice',
     'unresolved-citation',
+    'ordinary-placement-unavailable',
     'semantic-absence'
   ]);
   const COVERAGE_REASON_STATES = Object.freeze({
     supported: Object.freeze([
       'partial-recension', 'text-not-held', 'text-withheld', 'translation-missing',
-      'language-missing', 'unresolved-citation'
+      'language-missing', 'unresolved-choice', 'unresolved-citation'
     ]),
-    unsupported: Object.freeze(['unsupported-date', 'unsupported-object', 'ordinary-missing']),
+    unsupported: Object.freeze([
+      'unsupported-date', 'unsupported-object', 'ordinary-missing',
+      'ordinary-placement-unavailable'
+    ]),
     unavailable: Object.freeze([
       'text-not-held', 'text-withheld', 'translation-missing',
       'language-missing', 'unresolved-citation'
@@ -60,11 +66,11 @@
 
   const DAY_KEYS = Object.freeze([
     'date', 'missal', 'bible', 'orations', 'why', 'ordinary',
-    'ordinary-lang', 'rubrics', 'mass'
+    'ordinary-lang', 'rubrics', 'mass', 'form', 'translation-witness', 'mode', 'location'
   ]);
   const PROPERS_KEYS = Object.freeze([
     'missal', 'type', 'mass', 'bible', 'orations',
-    'cycle', 'alternative', 'translation-witness'
+    'form', 'cycle', 'alternative', 'translation-witness', 'mode', 'location'
   ]);
   const URL_INVENTORY = Object.freeze({
     day: Object.freeze({
@@ -76,6 +82,10 @@
       hash: PROPERS_KEYS,
       query: Object.freeze(['data', 'missals'])
     })
+  });
+  const CANONICAL_ROUTES = Object.freeze({
+    day: Object.freeze({ canonical: 'day.html', legacy: Object.freeze(['day-reader.html']) }),
+    propers: Object.freeze({ canonical: 'index.html', legacy: Object.freeze(['propers-reader.html']) })
   });
 
   function has(object, key) {
@@ -94,6 +104,20 @@
     if (!/^\d{4}-\d{2}-\d{2}$/.test(value || '')) return false;
     const stamp = Date.parse(value + 'T00:00:00Z');
     return !Number.isNaN(stamp) && new Date(stamp).toISOString().slice(0, 10) === value;
+  }
+
+  /** Replace only a known retained reader basename; preserve its directory. */
+  function canonicalRoute(entrance, pathname) {
+    if (ENTRANCES.indexOf(entrance) < 0) throw new Error('entrance must be day or propers');
+    const route = CANONICAL_ROUTES[entrance];
+    const path = String(pathname || '');
+    const slash = path.lastIndexOf('/');
+    const directory = slash >= 0 ? path.slice(0, slash + 1) : '';
+    const basename = slash >= 0 ? path.slice(slash + 1) : path;
+    if (basename === route.canonical || route.legacy.indexOf(basename) >= 0) {
+      return directory + route.canonical;
+    }
+    return path;
   }
 
   function issue(code, path, message, source) {
@@ -200,6 +224,41 @@
         'selected material needs typed availability'
       ));
     }
+    if (value.availability === 'unavailable') {
+      if (has(value, 'text') && value.text !== null) {
+        errors.push(issue(
+          'selected-unavailable-text', at + '.text',
+          'unavailable selected material may not carry text'
+        ));
+      }
+      if (has(value, 'sourceId') && value.sourceId !== null) {
+        errors.push(issue(
+          'selected-unavailable-source', at + '.sourceId',
+          'unavailable selected material may not claim a held source identity'
+        ));
+      }
+      if (has(value, 'source') && value.source !== null) {
+        errors.push(issue(
+          'selected-unavailable-source', at + '.source',
+          'unavailable selected material may not claim a held source identity'
+        ));
+      }
+      if (value.held === true) {
+        errors.push(issue(
+          'selected-unavailable-held', at + '.held',
+          'unavailable selected material may not be marked held'
+        ));
+      }
+    }
+    if (value.availability === 'choice-required' &&
+        ((has(value, 'text') && value.text !== null) ||
+         (has(value, 'sourceId') && value.sourceId !== null) ||
+         (has(value, 'source') && value.source !== null))) {
+      errors.push(issue(
+        'selected-choice-material', at,
+        'choice-required material may not expose text or a selected source identity'
+      ));
+    }
     if (!has(value, 'rights')) {
       errors.push(issue(
         'selected-rights', at + '.rights',
@@ -291,6 +350,20 @@
         errors.push(issue(
           'selected-composed', at,
           'composed selection needs a language and explicit missing flag'
+        ));
+      }
+      if (value.availability === 'unavailable' &&
+          (value.missing !== true || value.held !== false || !nonempty(value.reason))) {
+        errors.push(issue(
+          'selected-composed-unavailable', at,
+          'unavailable composed material must be unheld, missing, and state a stable reason'
+        ));
+      }
+      if ((value.availability === 'held' || value.availability === 'choice-required') &&
+          value.missing !== false) {
+        errors.push(issue(
+          'selected-composed-missing', at + '.missing',
+          'held or choice-required composed material is not a missing-text result'
         ));
       }
       if (value.availability === 'choice-required' &&
@@ -626,6 +699,9 @@
     if (has(value, 'cycle') && value.cycle !== null && !nonempty(value.cycle)) {
       errors.push(issue('cycle-id', 'cycle', 'cycle must be a stable code or explicit null'));
     }
+    if (has(value, 'form') && !nonempty(value.form)) {
+      errors.push(issue('form-id', 'form', 'form must be a stable nonempty id when supplied'));
+    }
     if (has(value, 'alternative') && value.alternative !== null) {
       assertIdentity(errors, value.alternative, 'alternative');
     } else if (has(value, 'alternative')) {
@@ -688,6 +764,12 @@
           'Day may select only a resolved readable formulary, not a Propers formulary identity'
         ));
       }
+      if (has(value, 'form') && !has(value, 'selectedReadableFormulary')) {
+        errors.push(issue(
+          'day-form-mass', 'form',
+          'a Day form requires an exact selected readable formulary'
+        ));
+      }
     } else {
       if (has(value, 'civilDate') && value.civilDate !== null) {
         errors.push(issue('propers-date', 'civilDate', 'Propers state is calendar-independent'));
@@ -715,6 +797,12 @@
         errors.push(issue(
           'propers-readable-formulary', 'selectedReadableFormulary',
           'a selected readable Day formulary is not Propers entrance state'
+        ));
+      }
+      if (has(value, 'form') && (!has(value, 'formulary') || has(value, 'browse'))) {
+        errors.push(issue(
+          'propers-form-mass', 'form',
+          'a Propers form requires an exact selected formulary and is invalid at browse entry'
         ));
       }
       if (!has(value, 'browse') && (!object(value.formulary) || !nonempty(value.formulary.id))) {
@@ -783,6 +871,27 @@
       errors.push(issue(
         'comparison-mode-state', 'requestedMode',
         'a comparison request requires Compare mode'
+      ));
+    }
+    if (object(value.options) && value.options.ordinary === true &&
+        (!object(value.languages) || !nonempty(value.languages.ordinary))) {
+      errors.push(issue(
+        'ordinary-language-required', 'languages.ordinary',
+        'a selected Ordinary requires an explicit language identity'
+      ));
+    }
+    if (value.requestedMode === 'read' && object(value.options) &&
+        value.options.ordinary === true) {
+      errors.push(issue(
+        'read-mode-ordinary', 'options.ordinary',
+        'Read mode does not present the Ordinary'
+      ));
+    }
+    if (value.requestedMode === 'missal' && object(value.options) &&
+        value.options.ordinary !== true) {
+      errors.push(issue(
+        'missal-mode-ordinary', 'options.ordinary',
+        'Missal mode requires the Ordinary selection'
       ));
     }
     return { ok: errors.length === 0, errors: errors };
@@ -857,6 +966,16 @@
 
   function knownId(table, id) {
     return object(table) && has(table, id);
+  }
+
+  /** Repository preference first, then stable identity order; never manifest order. */
+  function defaultBibleId(rows, preferred) {
+    const held = valuesOf(rows).filter(function (row) {
+      return object(row) && nonempty(row.id);
+    }).map(function (row) { return row.id; });
+    const declared = preferred || DEFAULT_BIBLE_ID;
+    if (held.indexOf(declared) >= 0) return declared;
+    return held.slice().sort()[0] || null;
   }
 
   function normalizeLegacy(parsed, options) {
@@ -936,14 +1055,15 @@
       inert: [],
       variants: {}
     };
+    const mode = validOrDefault('mode', function (value) {
+      return MODES.indexOf(value) >= 0;
+    }, false);
+    const location = validOrDefault('location', nonempty, false);
+    if (location !== null) state.semanticLocation = { eventId: location };
 
     if (parsed.entrance === 'day') {
       state.civilDate = validOrDefault('date', strictDate, true);
       state.calendar = missal ? { id: missalContext.calendar || missal } : null;
-      const ordinaryLanguage = validOrDefault('ordinary-lang', function (lang) {
-        return valuesOf(missalContext.ordinaryLanguages).indexOf(lang) >= 0;
-      }, false);
-      if (ordinaryLanguage !== null) state.languages.ordinary = ordinaryLanguage;
       const why = validOrDefault('why', function (value) {
         return value === '0' || value === '1';
       }, false);
@@ -954,12 +1074,42 @@
         return value === '0' || value === '1';
       }, false);
       state.apparatus = { why: why === '1', rubrics: rubrics !== '0' };
-      state.options = { ordinary: ordinary === '1', legitimate: {} };
+      const legacyMode = ordinary === '1' ? 'missal' : 'read';
+      if (mode !== null && (mode === 'read' || mode === 'missal') &&
+          has(parsed.recognized, 'ordinary') && mode !== legacyMode) {
+        errors.push(issue(
+          'conflicting-explicit-mode', 'mode',
+          'explicit mode and legacy ordinary state select different reader modes', 'url'
+        ));
+      }
+      state.requestedMode = mode === null ? legacyMode : mode;
+      state.options = {
+        ordinary: mode === 'read' ? false : (mode === 'missal' ? true : ordinary === '1'),
+        legitimate: {}
+      };
+      const ordinaryLanguage = validOrDefault('ordinary-lang', function (lang) {
+        return valuesOf(missalContext.ordinaryLanguages).indexOf(lang) >= 0;
+      }, state.options.ordinary === true);
+      if (ordinaryLanguage !== null) state.languages.ordinary = ordinaryLanguage;
       const dayRows = valuesOf(context.dayReadableFormularies);
       const mass = validOrDefault('mass', function (id) {
         return dayRows.some(function (one) { return one.id === id; });
       }, false);
       if (mass) state.selectedReadableFormulary = { id: mass };
+      const form = validOrDefault('form', function (id) {
+        return mass && valuesOf((missalContext.formsByMass || {})[mass]).indexOf(id) >= 0;
+      }, false);
+      if (has(parsed.recognized, 'form') && !has(parsed.recognized, 'mass')) {
+        errors.push(issue(
+          'form-requires-explicit-mass', 'form',
+          'an explicit Day form requires an explicit Mass identity', 'url'
+        ));
+      }
+      if (form !== null) state.form = form;
+      const translationWitness = validOrDefault('translation-witness', nonempty, false);
+      if (translationWitness !== null) {
+        state.languages.translationWitness = translationWitness;
+      }
 
       const groups = missalContext.variantGroups || {};
       for (const key of parsed.variantKeys || []) {
@@ -987,14 +1137,26 @@
       }, true);
       state.formulary = mass ? { id: mass, type: type } : null;
       state.civilDate = null;
+      const form = validOrDefault('form', function (id) {
+        return mass && valuesOf((missalContext.formsByMass || {})[mass]).indexOf(id) >= 0;
+      }, false);
       const cycle = validOrDefault('cycle', nonempty, false);
       const alternative = validOrDefault('alternative', nonempty, false);
       const translationWitness = validOrDefault('translation-witness', nonempty, false);
+      if (has(parsed.recognized, 'form') &&
+          (!has(parsed.recognized, 'type') || !has(parsed.recognized, 'mass'))) {
+        errors.push(issue(
+          'form-requires-explicit-formulary', 'form',
+          'an explicit Propers form requires explicit type and Mass identities', 'url'
+        ));
+      }
+      if (form !== null) state.form = form;
       if (cycle !== null) state.cycle = cycle;
       if (alternative !== null) state.alternative = { id: alternative };
       if (translationWitness !== null) {
         state.languages.translationWitness = translationWitness;
       }
+      state.requestedMode = mode === null ? 'read' : mode;
     }
 
     const validated = validateReaderState(state);
@@ -1015,21 +1177,34 @@
       pairs.push(['missal', state.edition.id]);
       pairs.push(['bible', state.bible.id]);
       pairs.push(['orations', state.languages.orations]);
+      pairs.push(['mode', state.requestedMode || (state.options.ordinary ? 'missal' : 'read')]);
+      if (state.requestedMode && ['read', 'missal'].indexOf(state.requestedMode) < 0) {
+        pairs.push(['ordinary', state.options.ordinary ? '1' : '0']);
+      }
+      if (state.semanticLocation) pairs.push(['location', state.semanticLocation.eventId]);
       pairs.push(['why', state.apparatus.why ? '1' : '0']);
-      pairs.push(['ordinary', state.options.ordinary ? '1' : '0']);
       if (state.languages.ordinary) pairs.push(['ordinary-lang', state.languages.ordinary]);
       pairs.push(['rubrics', state.apparatus.rubrics ? '1' : '0']);
       if (state.selectedReadableFormulary) pairs.push(['mass', state.selectedReadableFormulary.id]);
+      if (state.form) pairs.push(['form', state.form]);
+      if (state.languages.translationWitness) {
+        pairs.push(['translation-witness', state.languages.translationWitness]);
+      }
       Object.keys(normalized.legacy.variants || {}).sort().forEach(function (key) {
         pairs.push([key, normalized.legacy.variants[key]]);
       });
       for (const row of normalized.legacy.inert || []) pairs.push([row.key, row.value]);
     } else {
       pairs.push(['missal', state.edition.id]);
-      pairs.push(['type', state.formulary.type]);
-      pairs.push(['mass', state.formulary.id]);
+      if (state.formulary) {
+        pairs.push(['type', state.formulary.type]);
+        pairs.push(['mass', state.formulary.id]);
+      }
       pairs.push(['bible', state.bible.id]);
       pairs.push(['orations', state.languages.orations]);
+      pairs.push(['mode', state.requestedMode || 'read']);
+      if (state.semanticLocation) pairs.push(['location', state.semanticLocation.eventId]);
+      if (state.form) pairs.push(['form', state.form]);
       if (has(state, 'cycle') && state.cycle !== null) pairs.push(['cycle', state.cycle]);
       if (state.alternative) pairs.push(['alternative', state.alternative.id]);
       if (state.languages.translationWitness) {
@@ -1173,8 +1348,35 @@
         errors.push(issue('fixture-events', 'expected.events', 'fixture events must be an array'));
       } else {
         const ids = [];
-        expected.events.forEach(function (event, index) {
-          const at = 'expected.events[' + index + ']';
+        const stableId = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+        function validateEventSeat(event, at) {
+          if (!has(event, 'seat') || event.seat === null) return;
+          if (!object(event.seat) || !nonempty(event.seat.id) ||
+              !nonempty(event.seat.placement) ||
+              ['seated', 'unseated'].indexOf(event.seat.placement) < 0) {
+            errors.push(issue(
+              'fixture-event-seat', at + '.seat',
+              'event seat must carry a stable id and seated or unseated placement'
+            ));
+            return;
+          }
+          if (event.seat.placement === 'unseated' &&
+              (['before-frame', 'after-frame'].indexOf(event.seat.region) < 0 ||
+               !nonempty(event.seat.basis))) {
+            errors.push(issue(
+              'fixture-event-unseated', at + '.seat',
+              'an unseated Proper must retain its before/after region and source basis'
+            ));
+          }
+          if (event.seat.placement === 'seated' &&
+              (has(event.seat, 'region') || has(event.seat, 'basis'))) {
+            errors.push(issue(
+              'fixture-event-seated-region', at + '.seat',
+              'a seated Proper may not carry an unseated region or basis'
+            ));
+          }
+        }
+        function validateEvent(event, at, nested) {
           if (!object(event) || !nonempty(event.id) || !nonempty(event.kind)) {
             errors.push(issue('fixture-event', at, 'semantic event needs a stable id and kind'));
           } else ids.push(event.id);
@@ -1187,14 +1389,74 @@
               ));
             }
           }
-          if (object(event) && has(event, 'seat') && event.seat !== null) {
-            if (!object(event.seat) || !nonempty(event.seat.id) ||
-                !nonempty(event.seat.placement) ||
-                ['seated', 'unseated'].indexOf(event.seat.placement) < 0) {
+          if (object(event)) validateEventSeat(event, at);
+          if (object(event) && event.kind === 'proper-choice') {
+            const keys = Object.keys(event).sort();
+            const exact = [
+              'choiceBasis', 'group', 'id', 'kind', 'options',
+              'seat', 'selection', 'sourceHooks'
+            ];
+            if (keys.length !== exact.length || keys.some(function (key, index) {
+              return key !== exact[index];
+            })) {
               errors.push(issue(
-                'fixture-event-seat', at + '.seat',
-                'event seat must carry a stable id and seated or unseated placement'
+                'fixture-proper-choice-shape', at,
+                'a Proper choice must carry only its exact atomic contract fields'
               ));
+            }
+            if (!stableId.test(event.group || '') || !object(event.selection) ||
+                event.selection.state !== 'required' || event.selection.option !== null ||
+                Object.keys(event.selection || {}).sort().join(',') !== 'option,state' ||
+                !nonempty(event.choiceBasis)) {
+              errors.push(issue(
+                'fixture-proper-choice-selection', at + '.selection',
+                'a Proper choice needs its source basis, kebab-case group, and exact unresolved selection'
+              ));
+            }
+            if (!Array.isArray(event.options) || event.options.length < 2) {
+              errors.push(issue(
+                'fixture-proper-choice-options', at + '.options',
+                'an atomic Proper choice needs at least two options'
+              ));
+            } else {
+              const optionIds = [];
+              event.options.forEach(function (option, optionIndex) {
+                const optionAt = at + '.options[' + optionIndex + ']';
+                const optionKeys = object(option) ? Object.keys(option).sort() : [];
+                if (!object(option) || optionKeys.join(',') !== 'events,id' ||
+                    !stableId.test(option.id || '') || !Array.isArray(option.events) ||
+                    !option.events.length) {
+                  errors.push(issue(
+                    'fixture-proper-choice-option', optionAt,
+                    'each Proper choice option needs a kebab-case id and nonempty event bundle'
+                  ));
+                  return;
+                }
+                optionIds.push(option.id);
+                option.events.forEach(function (member, memberIndex) {
+                  const memberAt = optionAt + '.events[' + memberIndex + ']';
+                  if (!object(member) || member.kind !== 'proper') {
+                    errors.push(issue(
+                      'fixture-proper-choice-member', memberAt,
+                      'a Proper choice option may contain only Proper source events'
+                    ));
+                  }
+                  validateEvent(member, memberAt, true);
+                  if (object(member) && JSON.stringify(member.seat || null) !==
+                      JSON.stringify(event.seat || null)) {
+                    errors.push(issue(
+                      'fixture-proper-choice-seat', memberAt + '.seat',
+                      'every Proper choice member must retain the atomic choice seat'
+                    ));
+                  }
+                });
+              });
+              if (new Set(optionIds).size !== optionIds.length) {
+                errors.push(issue(
+                  'fixture-proper-choice-option-ids', at + '.options',
+                  'Proper choice option ids must be distinct'
+                ));
+              }
             }
           }
           if (object(event) && (event.kind === 'proper' || event.kind === 'ordinary-element') &&
@@ -1211,6 +1473,15 @@
           if (object(event)) errors.push.apply(
             errors, validateSourceHooks(event.sourceHooks, at + '.sourceHooks', true)
           );
+          if (nested && object(event) && event.kind === 'proper-choice') {
+            errors.push(issue(
+              'fixture-proper-choice-nested', at,
+              'Proper choices may not be nested inside options'
+            ));
+          }
+        }
+        expected.events.forEach(function (event, index) {
+          validateEvent(event, 'expected.events[' + index + ']', false);
         });
         if (new Set(ids).size !== ids.length) {
           errors.push(issue('fixture-event-ids', 'expected.events', 'semantic event ids must be unique'));
@@ -1269,12 +1540,15 @@
     URL_SCHEMA: URL_SCHEMA,
     ENTRANCES: ENTRANCES,
     MODES: MODES,
+    DEFAULT_BIBLE_ID: DEFAULT_BIBLE_ID,
     STATE_FIELDS: STATE_FIELDS,
     COVERAGE_STATES: COVERAGE_STATES,
     COVERAGE_COMPLETENESS: COVERAGE_COMPLETENESS,
     COVERAGE_REASONS: COVERAGE_REASONS,
     URL_INVENTORY: URL_INVENTORY,
+    CANONICAL_ROUTES: CANONICAL_ROUTES,
     strictDate: strictDate,
+    canonicalRoute: canonicalRoute,
     coverage: coverage,
     unresolvedChoice: unresolvedChoice,
     resolveAuthorizedChoice: resolveAuthorizedChoice,
@@ -1287,6 +1561,7 @@
     validateReaderState: validateReaderState,
     parseLegacy: parseLegacy,
     safeRemembered: safeRemembered,
+    defaultBibleId: defaultBibleId,
     normalizeLegacy: normalizeLegacy,
     serializeLegacy: serializeLegacy,
     validateFixture: validateFixture

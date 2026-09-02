@@ -77,11 +77,12 @@ EXAMPLES = {
         Example(
             "tools/index-bible check --bible douay-rheims",
             (
-                "douay-rheims: 1601 passages -> src/sources/bibles/douay-rheims/index.yaml",
-                "  postconciliar: 948/950 references resolved (99.8%)",
-                "  roman-1962: 777/778 references resolved (99.9%)",
+                "douay-rheims: 3458 passages -> src/sources/bibles/douay-rheims/index.yaml",
+                "  postconciliar: 2306/2312 references resolved (99.7%)",
+                "  roman-1962: 1404/1407 references resolved (99.8%)",
+                "  roman-pre-1955: 1349/1352 references resolved (99.8%)",
                 "  projection: 23 rules (merge 7, displaced 16)",
-                "  unresolved: 3",
+                "  unresolved: 12",
             ),
             "exit 0 and no output written. `projection` counts this edition's departures from "
             "the canonical numbering, one rule a departure and nothing where it agrees, so a "
@@ -90,7 +91,7 @@ EXAMPLES = {
         Example(
             "tools/index-bible check --bible clementine-vulgate --json",
             (
-                "{\"bible\":\"clementine-vulgate\",\"calendars\":{\"postconciliar\":{\"cited\":2305,\"resolved\":2301},\"roman... [+298 chars]",
+                "{\"bible\":\"clementine-vulgate\",\"calendars\":{\"postconciliar\":{\"cited\":2312,\"resolved\":2308},\"roman... [+298 chars]",
             ),
             "one key-sorted object; the elided part carries `projection` with a count per "
             "override kind and `total`, which is the diffable form of the same summary",
@@ -98,15 +99,15 @@ EXAMPLES = {
         Example(
             "tools/index-bible check --bible king-james-version --verbose",
             (
-                "king-james-version: 1532 passages -> src/sources/bibles/king-james-version/index.yaml",
-                "  postconciliar: 907/950 references resolved (95.5%)",
-                "  roman-1962: 747/778 references resolved (96.0%)",
+                "king-james-version: 3280 passages -> src/sources/bibles/king-james-version/index.yaml",
+                "  postconciliar: 2213/2312 references resolved (95.7%)",
+                "  roman-1962: 1317/1407 references resolved (93.6%)",
+                "  roman-pre-1955: 1263/1352 references resolved (93.4%)",
                 "  projection: 4313 rules (renumber 2697, merge 2, absent 4, displaced 16, unrecorded 1594)",
                 "  rule renumber Dan.13.1 -> Sus.1.1",
                 "  rule renumber Dan.13.10 -> Sus.1.10",
                 "  rule renumber Dan.13.11 -> Sus.1.11",
-                "  rule renumber Dan.13.12 -> Sus.1.12",
-                "... 4383 more lines",
+                "... 4588 more lines",
             ),
             "--verbose prints every rule and every unresolved citation. A rule whose target "
             "reads `(refused)` says where the text is not: this edition does not carry it, or "
@@ -149,22 +150,24 @@ EXAMPLES = {
         Example(
             "tools/index-bible check --bible douay-rheims",
             (
-                "douay-rheims: 1601 passages -> src/sources/bibles/douay-rheims/index.yaml",
-                "  postconciliar: 948/950 references resolved (99.8%)",
-                "  roman-1962: 777/778 references resolved (99.9%)",
+                "douay-rheims: 3458 passages -> src/sources/bibles/douay-rheims/index.yaml",
+                "  postconciliar: 2306/2312 references resolved (99.7%)",
+                "  roman-1962: 1404/1407 references resolved (99.8%)",
+                "  roman-pre-1955: 1349/1352 references resolved (99.8%)",
                 "  projection: 23 rules (merge 7, displaced 16)",
-                "  unresolved: 3",
+                "  unresolved: 12",
             ),
             "read-only first: `check` rebuilds in memory and reports the same drift, writing nothing",
         ),
         Example(
             "tools/index-bible build --bible douay-rheims --bible-root build/example-bibles",
             (
-                "douay-rheims: 1601 passages -> build/example-bibles/douay-rheims/index.yaml",
-                "  postconciliar: 948/950 references resolved (99.8%)",
-                "  roman-1962: 777/778 references resolved (99.9%)",
+                "douay-rheims: 3458 passages -> build/example-bibles/douay-rheims/index.yaml",
+                "  postconciliar: 2306/2312 references resolved (99.7%)",
+                "  roman-1962: 1404/1407 references resolved (99.8%)",
+                "  roman-pre-1955: 1349/1352 references resolved (99.8%)",
                 "  projection: 23 rules (merge 7, displaced 16)",
-                "  unresolved: 3",
+                "  unresolved: 12",
             ),
             "WRITES an index and one JSON fragment a chapter, and refuses with exit 2 if this "
             "edition's projection cannot be derived. --bible-root here is untracked; the "

@@ -61,7 +61,7 @@ RECOGNISED_HASH_KEYS = {
   "history/history.js": ["station", "unit"],
   "law/law.js": ["act", "canon", "line", "par", "unit"],
   "liturgy/day.js": [
-    "bible", "date", "mass", "missal", "orations", "ordinary", "ordinary-lang",
+    "bible", "date", "form", "mass", "missal", "orations", "ordinary", "ordinary-lang",
     "rubrics", "why",
   ],
   "liturgy/liturgy.js": ["bible", "mass", "missal", "orations", "type"],
@@ -126,12 +126,12 @@ QUERY_PARAMETERS = {
 # The v1 legacy inventory frozen by `guidance/liturgy-reader-state.md`.
 FROZEN_DAY_KEYS = [
   "date", "missal", "bible", "orations", "why", "ordinary", "ordinary-lang",
-  "rubrics", "mass",
+  "rubrics", "mass", "form", "translation-witness", "mode", "location",
 ]
 FROZEN_DAY_VARIANT_KEYS = ["eucharistic-prayer"]
 FROZEN_PROPERS_KEYS = [
-  "missal", "type", "mass", "bible", "orations", "cycle", "alternative",
-  "translation-witness",
+  "missal", "type", "mass", "bible", "orations", "form", "cycle", "alternative",
+  "translation-witness", "mode", "location",
 ]
 
 
@@ -376,6 +376,9 @@ const PROBES = {
       window: core.window,
       document: core.document,
       T: core.T,
+      Contract: require(path.join(BROWSER, 'liturgy/reader-state.js')),
+      readerShell: { captureSemanticLocation() { return null; } },
+      runtime: {},
       URLSearchParams: URLSearchParams,
       history: {
         pushState(state, title, url) { pushed.push(url); },
@@ -419,6 +422,12 @@ const PROBES = {
       unknown: parsed.unknown.map((row) => row.key),
       duplicates: parsed.duplicates.map((row) => row.key)
     };
+  },
+
+  /** The exact public inventories exported by the reader-state contract. */
+  urlInventory() {
+    const contract = require(path.join(BROWSER, 'liturgy/reader-state.js'));
+    return contract.URL_INVENTORY;
   }
 };
 
@@ -453,10 +462,16 @@ def text_of(relative: str) -> str:
 # The receivers a page gives a parsed hash. `T.params` and the several spellings
 # of `location.search` are deliberately not among them: those are query reads.
 HASH_READ = re.compile(r"\b(?:hash|next|state|arriving)\.get\('([^']+)'\)")
+HASH_VALIDATED_FACET_READ = re.compile(
+  r"\bvalidFacet\((?:hash|next|state|arriving),\s*'([^']+)'"
+)
 
 
 def hash_keys_read_by(relative: str) -> list[str]:
-  return sorted(set(HASH_READ.findall(text_of(relative))))
+  text = text_of(relative)
+  return sorted(set(
+    HASH_READ.findall(text) + HASH_VALIDATED_FACET_READ.findall(text)
+  ))
 
 
 needs_node = unittest.skipIf(NODE is None, "node is not installed; the URL models cannot be run")
@@ -487,18 +502,13 @@ class SharedHashRouterTest(unittest.TestCase):
     answer = probe(probe="core", writes=[[["a", "1"], ["b", ""], ["c", None], ["d", "2"]]])
     self.assertEqual(answer["hash"], "#a=1&d=2")
 
-  def test_a_write_whose_every_value_is_empty_leaves_the_old_hash_standing(self):
-    """The router returns before touching the URL when nothing survives.
-
-    This is the mechanism behind the Source Library defect recorded in
-    KnownDefectsTest: a page that clears its whole state does not thereby clear
-    its address.
-    """
+  def test_a_write_whose_every_value_is_empty_clears_the_old_hash(self):
+    """Clearing all state cannot leave an obsolete selection in the URL."""
     answer = probe(
       probe="core", hash="#edition=migne-pl-32&passage=conf%2F1",
       writes=[[["author", ""], ["sort", ""]]],
     )
-    self.assertEqual(answer["hash"], "#edition=migne-pl-32&passage=conf%2F1")
+    self.assertEqual(answer["hash"], "")
 
   def test_the_router_does_not_replay_its_own_write_to_the_page(self):
     answer = probe(
@@ -672,18 +682,20 @@ class CanonicalHashFormTest(unittest.TestCase):
       "#missal=roman-1962&type=seasonal&mass=adv-1&bible=dr&orations=en",
     )
 
-  def test_the_day_page_writes_its_nine_keys_then_its_variants_in_key_order(self):
+  def test_the_day_page_writes_its_ten_keys_then_its_variants_in_key_order(self):
     answer = probe(
       probe="replay", file="liturgy/day.js", extract=["writeHash"], call="writeHash",
       bindings={"state": {
         "date": "2026-08-08", "missalId": "roman-1962", "bibleId": "dr", "orations": "en",
         "why": True, "ordinary": True, "ordinaryLang": "la", "showRubrics": False,
-        "shownMass": "vigil", "variants": {"eucharistic-prayer": "ep2", "a-group": "x"},
+        "shownMass": "vigil", "shownForm": "longer",
+        "variants": {"eucharistic-prayer": "ep2", "a-group": "x"},
       }},
     )
     self.assertEqual(answer["hash"], (
       "#date=2026-08-08&missal=roman-1962&bible=dr&orations=en&why=1&ordinary=1"
-      "&ordinary-lang=la&rubrics=0&mass=vigil&a-group=x&eucharistic-prayer=ep2"
+      "&ordinary-lang=la&rubrics=0&mass=vigil&form=longer"
+      "&a-group=x&eucharistic-prayer=ep2"
     ))
 
   def test_the_day_page_omits_every_departure_it_has_not_taken(self):
@@ -692,7 +704,7 @@ class CanonicalHashFormTest(unittest.TestCase):
       bindings={"state": {
         "date": "2026-08-08", "missalId": "roman-1962", "bibleId": "dr", "orations": "la",
         "why": False, "ordinary": False, "ordinaryLang": None, "showRubrics": True,
-        "shownMass": None, "variants": {},
+        "shownMass": None, "shownForm": None, "variants": {},
       }},
     )
     self.assertEqual(answer["hash"], "#date=2026-08-08&missal=roman-1962&bible=dr")
@@ -953,17 +965,22 @@ class QueryParameterTest(unittest.TestCase):
     self.assertEqual(answer["value"], "./?data=fixture&plan=narrative-spine")
 
   def test_the_query_survives_every_push_the_two_reader_shells_make(self):
-    for relative, builder, page in (
-      ("liturgy/day-reader.js", "hashWith", "/liturgy/day-reader.html"),
-      ("liturgy/propers-reader.js", "internalHash", "/liturgy/propers-reader.html"),
+    for relative, functions, page, expected_page in (
+      ("liturgy/day-reader.js", ["hashWith", "navigate"],
+       "/liturgy/day.html", "/liturgy/day.html"),
+      ("liturgy/propers-reader.js", ["internalHash", "eventLocation", "navigate"],
+       "/liturgy/propers-reader.html", "/liturgy/index.html"),
     ):
       with self.subTest(instrument=relative):
         answer = probe(
-          probe="replay", file=relative, extract=[builder, "navigate"],
+          probe="replay", file=relative, extract=functions,
           call="navigate", args=[{"bible": "dr"}, []],
           hash="#missal=roman-1962", search="?data=fixture", pathname=page,
         )
-        self.assertEqual(answer["pushed"], [page + "?data=fixture#missal=roman-1962&bible=dr"])
+        self.assertEqual(
+          answer["pushed"],
+          [expected_page + "?data=fixture#missal=roman-1962&bible=dr"],
+        )
 
 
 class FrozenInventoryTest(unittest.TestCase):
@@ -996,17 +1013,33 @@ class FrozenInventoryTest(unittest.TestCase):
     self.assertEqual(rows["Propers"][0], FROZEN_PROPERS_KEYS)
     self.assertEqual(rows["Propers"][1], ["data", "missals"])
 
+  @needs_node
+  def test_the_reader_state_module_exports_exactly_the_frozen_inventory(self):
+    inventory = probe(probe="urlInventory")
+    self.assertEqual(inventory["day"]["hash"], FROZEN_DAY_KEYS + FROZEN_DAY_VARIANT_KEYS)
+    self.assertEqual(inventory["day"]["query"], ["data"])
+    self.assertEqual(inventory["propers"]["hash"], FROZEN_PROPERS_KEYS)
+    self.assertEqual(inventory["propers"]["query"], ["data", "missals"])
+
   def test_the_deployed_day_page_reads_the_frozen_day_keys(self):
-    self.assertEqual(hash_keys_read_by("liturgy/day.js"), sorted(FROZEN_DAY_KEYS))
+    # `day.js` owns the retained Day vocabulary. Mode, semantic location, and
+    # the formulary-scoped witness are owned by the reader-state controller.
+    controller_keys = {"mode", "location", "translation-witness"}
+    self.assertEqual(
+      hash_keys_read_by("liturgy/day.js"),
+      sorted(set(FROZEN_DAY_KEYS) - controller_keys),
+    )
 
-  def test_the_deployed_propers_page_reads_the_five_base_propers_keys(self):
-    """The three choice keys are contract-side only until they are integrated.
-
-    `cycle`, `alternative` and `translation-witness` are frozen in the contract
-    and honoured by the Propers reader shell; the deployed `liturgy/index.html`
-    does not read them yet, and this records that boundary rather than hiding it.
-    """
-    self.assertEqual(hash_keys_read_by("liturgy/liturgy.js"), sorted(FROZEN_PROPERS_KEYS[:5]))
+  def test_both_canonical_pages_load_the_contract_and_their_reader_controller(self):
+    for page, controller in (("day.html", "day-reader.js"), ("index.html", "propers-reader.js")):
+      with self.subTest(page=page):
+        source = text_of("liturgy/" + page)
+        scripts = re.findall(r'<script src="([^"]+)"></script>', source)
+        self.assertIn("reader-state.js", scripts)
+        self.assertIn("reader-state-adapters.js", scripts)
+        self.assertIn(controller, scripts)
+        self.assertLess(scripts.index("reader-state.js"), scripts.index(controller))
+        self.assertLess(scripts.index("reader-state-adapters.js"), scripts.index(controller))
 
 
 @needs_node
@@ -1064,19 +1097,8 @@ class KnownDefectsTest(unittest.TestCase):
         moved = probe(probe="functionSource", file="scripture/track.js", name=name)
         self.assertIn("commit(options);", moved["text"])
 
-  def test_back_to_the_corpus_leaves_the_whole_reader_hash_in_the_address_bar(self):
-    """REFUTED AS REPORTED, AND CONFIRMED IN A WORSE FORM.
-
-    It was reported that `sources.js` leaves a bare `#edition=` behind. It does
-    not: `T.writeHash` drops empty values, so `edition=` is never written bare.
-    What actually happens is that a finder whose filters are all at their
-    defaults produces no pairs at all, the router returns before touching the
-    URL, and the reader-mode hash stays whole. Reloading or sharing the address
-    after "Back to the corpus" therefore reopens the edition the reader closed.
-
-    A fix would have `showFinder` clear the fragment explicitly rather than rely
-    on a write that declines to happen.
-    """
+  def test_back_to_the_default_corpus_clears_the_reader_hash(self):
+    """A default finder URL cannot continue to cite the closed reader."""
     answer = probe(
       probe="replay", file="sources/sources.js", extract=["writeHash"], call="writeHash",
       hash="#edition=migne-pl-32&passage=conf%2F1",
@@ -1088,8 +1110,7 @@ class KnownDefectsTest(unittest.TestCase):
         },
       },
     )
-    self.assertNotEqual(answer["hash"], "#edition=")
-    self.assertEqual(answer["hash"], "#edition=migne-pl-32&passage=conf%2F1")
+    self.assertEqual(answer["hash"], "")
 
     # With one filter set, the finder does write, and the reader keys go.
     filtered = probe(

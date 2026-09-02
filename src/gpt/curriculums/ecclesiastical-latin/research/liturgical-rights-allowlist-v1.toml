@@ -1,0 +1,1074 @@
+schema = "triptych-curriculum-liturgical-rights-allowlist-v1"
+fingerprint_registry = "src/sources/inventories/icel-2010-chant-fingerprints-v1.toml"
+contains_protected_wording = false
+
+[[allowance]]
+id = "curriculum-icel-allow-001"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/research/curriculum-map.md"
+line_start = 42
+line_end = 42
+occurrence = 1
+word_count = 4
+normalized_sha256 = "d88d07a0e632b7edc09c8bea1f387e34c22dc57e09a0af9a6b41f540f547e8a6"
+expected_artifact_ids = ["liturgy-word"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/research/curriculum-map.md"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-002"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/research/passage-inventory.md"
+line_start = 242
+line_end = 242
+occurrence = 1
+word_count = 4
+normalized_sha256 = "23a7c8aaab3d632d83adbcf82bf0dc722f3ff6a8fd03dc29816bf57d161240e4"
+expected_artifact_ids = ["blessing", "greeting"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/research/passage-inventory.md"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-003"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/shared/assessments/all.tex"
+line_start = 56
+line_end = 56
+occurrence = 1
+word_count = 4
+normalized_sha256 = "1a01e6572d40a2d684cd531d27cbe0e63ffc0081aea037594191c12d37a6f5c7"
+expected_artifact_ids = ["credo-1"]
+disposition = "independently-retainable"
+basis_kind = "project-created-independent"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/shared/assessments/all.tex"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-004"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/shared/assessments/all.tex"
+line_start = 56
+line_end = 57
+occurrence = 1
+word_count = 4
+normalized_sha256 = "e0e9c69255a224e885027269bc68df3ef9da559d6bed6ba8fdc8f439e7468277"
+expected_artifact_ids = ["credo-1"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/shared/assessments/all.tex"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-005"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/shared/content/memory-workbook/all.tex"
+line_start = 41
+line_end = 41
+occurrence = 1
+word_count = 4
+normalized_sha256 = "17021b5e94081cbaa95ea4c48045772ec473003b3782cd306658393891257c02"
+expected_artifact_ids = ["liturgy-word"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/shared/content/memory-workbook/all.tex"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-006"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/shared/content/memory-workbook/all.tex"
+line_start = 41
+line_end = 41
+occurrence = 1
+word_count = 4
+normalized_sha256 = "d88d07a0e632b7edc09c8bea1f387e34c22dc57e09a0af9a6b41f540f547e8a6"
+expected_artifact_ids = ["liturgy-word"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/shared/content/memory-workbook/all.tex"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-007"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/shared/content/poetry-advanced/practice.tex"
+line_start = 267
+line_end = 267
+occurrence = 1
+word_count = 4
+normalized_sha256 = "f579aaf9b64e6989a054d106c6154f4c9aeceaf4025347cc83364362fdc53a11"
+expected_artifact_ids = ["blessing", "greeting", "sanctus"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/shared/content/poetry-advanced/practice.tex"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-008"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/shared/content/readers/authentic-prose.tex"
+line_start = 1173
+line_end = 1173
+occurrence = 1
+word_count = 4
+normalized_sha256 = "d88d07a0e632b7edc09c8bea1f387e34c22dc57e09a0af9a6b41f540f547e8a6"
+expected_artifact_ids = ["liturgy-word"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/shared/content/readers/authentic-prose.tex"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-009"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/shared/content/reference/all.tex"
+line_start = 392
+line_end = 392
+occurrence = 1
+word_count = 4
+normalized_sha256 = "f579aaf9b64e6989a054d106c6154f4c9aeceaf4025347cc83364362fdc53a11"
+expected_artifact_ids = ["blessing", "greeting", "sanctus"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/shared/content/reference/all.tex"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-010"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/shared/content/volume1/all.tex"
+line_start = 334
+line_end = 335
+occurrence = 1
+word_count = 4
+normalized_sha256 = "8fe31aecb481bf02d0c0f854c4515407ec68b12b1d4e946c8ec76c561ae57c15"
+expected_artifact_ids = ["blessing"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/shared/content/volume1/all.tex"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-011"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/shared/content/volume1/all.tex"
+line_start = 1501
+line_end = 1501
+occurrence = 1
+word_count = 4
+normalized_sha256 = "b31a151612c569996c9ce0729574d6ee594a83a05200ae1be6e87e585281a436"
+expected_artifact_ids = ["credo-1"]
+disposition = "independently-retainable"
+basis_kind = "public-domain-exact-witness"
+basis_record = "passage-inventory.md#W.I.56-I.46.2"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/shared/content/volume1/all.tex"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-012"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/shared/content/volume1/all.tex"
+line_start = 458
+line_end = 458
+occurrence = 1
+word_count = 4
+normalized_sha256 = "f579aaf9b64e6989a054d106c6154f4c9aeceaf4025347cc83364362fdc53a11"
+expected_artifact_ids = ["blessing", "greeting", "sanctus"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/shared/content/volume1/all.tex"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-013"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/shared/content/volume2/all.tex"
+line_start = 1642
+line_end = 1642
+occurrence = 1
+word_count = 4
+normalized_sha256 = "1a01e6572d40a2d684cd531d27cbe0e63ffc0081aea037594191c12d37a6f5c7"
+expected_artifact_ids = ["credo-1"]
+disposition = "independently-retainable"
+basis_kind = "project-created-independent"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/shared/content/volume2/all.tex"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-014"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/shared/content/volume2/all.tex"
+line_start = 71
+line_end = 71
+occurrence = 1
+word_count = 4
+normalized_sha256 = "d88d07a0e632b7edc09c8bea1f387e34c22dc57e09a0af9a6b41f540f547e8a6"
+expected_artifact_ids = ["liturgy-word"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/shared/content/volume2/all.tex"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-015"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume1/all.tex"
+line_start = 80
+line_end = 80
+occurrence = 1
+word_count = 4
+normalized_sha256 = "164aa853dab19b51d569121ec179ccf236a628ab57e84c587ea5c6d4f0b6a30d"
+expected_artifact_ids = ["greeting"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume1/all.tex"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-016"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume1/all.tex"
+line_start = 361
+line_end = 361
+occurrence = 1
+word_count = 4
+normalized_sha256 = "5bfc72f0d2a9913ada835012a0528ad0abdf1c6e3ea92472611124c01dd960cd"
+expected_artifact_ids = ["gloria"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume1/all.tex"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-017"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume1/all.tex"
+line_start = 80
+line_end = 80
+occurrence = 1
+word_count = 4
+normalized_sha256 = "7e132f2bc7a83f6a0f5270fa85fd0d0e2e66e1d80dfdc97582c0c58d8058dcd4"
+expected_artifact_ids = ["blessing", "greeting", "sanctus"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume1/all.tex"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-018"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume1/all.tex"
+line_start = 27
+line_end = 27
+occurrence = 1
+word_count = 4
+normalized_sha256 = "97e917fbe3b9914cc52ddc1cb2a30784737d22148b076899dd4bd42eeb131018"
+expected_artifact_ids = ["sign-of-peace"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume1/all.tex"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-019"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume1/all.tex"
+line_start = 68
+line_end = 68
+occurrence = 1
+word_count = 4
+normalized_sha256 = "97e917fbe3b9914cc52ddc1cb2a30784737d22148b076899dd4bd42eeb131018"
+expected_artifact_ids = ["sign-of-peace"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume1/all.tex"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-020"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume1/all.tex"
+line_start = 486
+line_end = 486
+occurrence = 1
+word_count = 4
+normalized_sha256 = "b31a151612c569996c9ce0729574d6ee594a83a05200ae1be6e87e585281a436"
+expected_artifact_ids = ["credo-1"]
+disposition = "independently-retainable"
+basis_kind = "public-domain-exact-witness"
+basis_record = "passage-inventory.md#W.I.56-I.46.2"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume1/all.tex"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-021"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume1/all.tex"
+line_start = 80
+line_end = 80
+occurrence = 1
+word_count = 4
+normalized_sha256 = "d7a13e166571246ca0388810ad32dd76d9627ed766e90f2b847d8fab91dbfcb1"
+expected_artifact_ids = ["greeting"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume1/all.tex"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-022"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume1/all.tex"
+line_start = 80
+line_end = 80
+occurrence = 1
+word_count = 4
+normalized_sha256 = "f579aaf9b64e6989a054d106c6154f4c9aeceaf4025347cc83364362fdc53a11"
+expected_artifact_ids = ["blessing", "greeting", "sanctus"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume1/all.tex"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-023"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume1/all.tex"
+line_start = 162
+line_end = 162
+occurrence = 1
+word_count = 4
+normalized_sha256 = "f579aaf9b64e6989a054d106c6154f4c9aeceaf4025347cc83364362fdc53a11"
+expected_artifact_ids = ["blessing", "greeting", "sanctus"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume1/all.tex"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-024"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume1/all.tex"
+line_start = 193
+line_end = 193
+occurrence = 1
+word_count = 4
+normalized_sha256 = "f7b44338baca0e634e5a777f54af82971460c70174262f256f2cb3775792d8ba"
+expected_artifact_ids = ["doxology", "greeting"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume1/all.tex"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-025"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume2/all.tex"
+line_start = 137
+line_end = 137
+occurrence = 1
+word_count = 4
+normalized_sha256 = "1a01e6572d40a2d684cd531d27cbe0e63ffc0081aea037594191c12d37a6f5c7"
+expected_artifact_ids = ["credo-1"]
+disposition = "independently-retainable"
+basis_kind = "project-created-independent"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume2/all.tex"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-026"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume2/all.tex"
+line_start = 1109
+line_end = 1110
+occurrence = 1
+word_count = 4
+normalized_sha256 = "1a01e6572d40a2d684cd531d27cbe0e63ffc0081aea037594191c12d37a6f5c7"
+expected_artifact_ids = ["credo-1"]
+disposition = "independently-retainable"
+basis_kind = "project-created-independent"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume2/all.tex"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-027"
+surface = "tracked-source"
+path = "src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume2/all.tex"
+line_start = 1118
+line_end = 1118
+occurrence = 1
+word_count = 4
+normalized_sha256 = "1a01e6572d40a2d684cd531d27cbe0e63ffc0081aea037594191c12d37a6f5c7"
+expected_artifact_ids = ["credo-1"]
+disposition = "independently-retainable"
+basis_kind = "project-created-independent"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "tracked-source:src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume2/all.tex"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-028"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/00-memory-workbook.pdf"
+page_start = 12
+page_end = 12
+occurrence = 1
+word_count = 4
+normalized_sha256 = "17021b5e94081cbaa95ea4c48045772ec473003b3782cd306658393891257c02"
+expected_artifact_ids = ["liturgy-word"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/00-memory-workbook.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-029"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/00-memory-workbook.pdf"
+page_start = 12
+page_end = 12
+occurrence = 1
+word_count = 4
+normalized_sha256 = "d88d07a0e632b7edc09c8bea1f387e34c22dc57e09a0af9a6b41f540f547e8a6"
+expected_artifact_ids = ["liturgy-word"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/00-memory-workbook.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-030"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/00-reference-grammar.pdf"
+page_start = 11
+page_end = 11
+occurrence = 1
+word_count = 4
+normalized_sha256 = "f579aaf9b64e6989a054d106c6154f4c9aeceaf4025347cc83364362fdc53a11"
+expected_artifact_ids = ["blessing", "greeting", "sanctus"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/00-reference-grammar.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-031"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf"
+page_start = 17
+page_end = 17
+occurrence = 1
+word_count = 4
+normalized_sha256 = "97e917fbe3b9914cc52ddc1cb2a30784737d22148b076899dd4bd42eeb131018"
+expected_artifact_ids = ["sign-of-peace"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-032"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf"
+page_start = 21
+page_end = 21
+occurrence = 1
+word_count = 4
+normalized_sha256 = "97e917fbe3b9914cc52ddc1cb2a30784737d22148b076899dd4bd42eeb131018"
+expected_artifact_ids = ["sign-of-peace"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-033"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf"
+page_start = 22
+page_end = 22
+occurrence = 1
+word_count = 4
+normalized_sha256 = "7e132f2bc7a83f6a0f5270fa85fd0d0e2e66e1d80dfdc97582c0c58d8058dcd4"
+expected_artifact_ids = ["blessing", "greeting", "sanctus"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-034"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf"
+page_start = 22
+page_end = 22
+occurrence = 1
+word_count = 4
+normalized_sha256 = "f579aaf9b64e6989a054d106c6154f4c9aeceaf4025347cc83364362fdc53a11"
+expected_artifact_ids = ["blessing", "greeting", "sanctus"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-035"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf"
+page_start = 22
+page_end = 22
+occurrence = 1
+word_count = 4
+normalized_sha256 = "d7a13e166571246ca0388810ad32dd76d9627ed766e90f2b847d8fab91dbfcb1"
+expected_artifact_ids = ["greeting"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-036"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf"
+page_start = 22
+page_end = 22
+occurrence = 1
+word_count = 4
+normalized_sha256 = "164aa853dab19b51d569121ec179ccf236a628ab57e84c587ea5c6d4f0b6a30d"
+expected_artifact_ids = ["greeting"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-037"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf"
+page_start = 30
+page_end = 30
+occurrence = 1
+word_count = 4
+normalized_sha256 = "97e917fbe3b9914cc52ddc1cb2a30784737d22148b076899dd4bd42eeb131018"
+expected_artifact_ids = ["sign-of-peace"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-038"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf"
+page_start = 34
+page_end = 34
+occurrence = 1
+word_count = 4
+normalized_sha256 = "97e917fbe3b9914cc52ddc1cb2a30784737d22148b076899dd4bd42eeb131018"
+expected_artifact_ids = ["sign-of-peace"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-039"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf"
+page_start = 35
+page_end = 35
+occurrence = 1
+word_count = 4
+normalized_sha256 = "7e132f2bc7a83f6a0f5270fa85fd0d0e2e66e1d80dfdc97582c0c58d8058dcd4"
+expected_artifact_ids = ["blessing", "greeting", "sanctus"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-040"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf"
+page_start = 35
+page_end = 35
+occurrence = 1
+word_count = 4
+normalized_sha256 = "f579aaf9b64e6989a054d106c6154f4c9aeceaf4025347cc83364362fdc53a11"
+expected_artifact_ids = ["blessing", "greeting", "sanctus"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-041"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf"
+page_start = 35
+page_end = 35
+occurrence = 1
+word_count = 4
+normalized_sha256 = "d7a13e166571246ca0388810ad32dd76d9627ed766e90f2b847d8fab91dbfcb1"
+expected_artifact_ids = ["greeting"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-042"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf"
+page_start = 35
+page_end = 35
+occurrence = 1
+word_count = 4
+normalized_sha256 = "164aa853dab19b51d569121ec179ccf236a628ab57e84c587ea5c6d4f0b6a30d"
+expected_artifact_ids = ["greeting"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-043"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/02-noun-systems.pdf"
+page_start = 4
+page_end = 4
+occurrence = 1
+word_count = 4
+normalized_sha256 = "8fe31aecb481bf02d0c0f854c4515407ec68b12b1d4e946c8ec76c561ae57c15"
+expected_artifact_ids = ["blessing"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/02-noun-systems.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-044"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/02-noun-systems.pdf"
+page_start = 7
+page_end = 7
+occurrence = 1
+word_count = 4
+normalized_sha256 = "f579aaf9b64e6989a054d106c6154f4c9aeceaf4025347cc83364362fdc53a11"
+expected_artifact_ids = ["blessing", "greeting", "sanctus"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/02-noun-systems.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-045"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/02-noun-systems.pdf"
+page_start = 21
+page_end = 21
+occurrence = 1
+word_count = 4
+normalized_sha256 = "f579aaf9b64e6989a054d106c6154f4c9aeceaf4025347cc83364362fdc53a11"
+expected_artifact_ids = ["blessing", "greeting", "sanctus"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/02-noun-systems.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-046"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/02-noun-systems.pdf"
+page_start = 34
+page_end = 34
+occurrence = 1
+word_count = 4
+normalized_sha256 = "f579aaf9b64e6989a054d106c6154f4c9aeceaf4025347cc83364362fdc53a11"
+expected_artifact_ids = ["blessing", "greeting", "sanctus"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/02-noun-systems.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-047"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/03-nouns-and-adjectives.pdf"
+page_start = 18
+page_end = 18
+occurrence = 1
+word_count = 4
+normalized_sha256 = "f7b44338baca0e634e5a777f54af82971460c70174262f256f2cb3775792d8ba"
+expected_artifact_ids = ["doxology", "greeting"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/03-nouns-and-adjectives.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-048"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/03-nouns-and-adjectives.pdf"
+page_start = 31
+page_end = 31
+occurrence = 1
+word_count = 4
+normalized_sha256 = "f7b44338baca0e634e5a777f54af82971460c70174262f256f2cb3775792d8ba"
+expected_artifact_ids = ["doxology", "greeting"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/03-nouns-and-adjectives.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-049"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/05-perfect-passive-and-deponents.pdf"
+page_start = 30
+page_end = 30
+occurrence = 1
+word_count = 4
+normalized_sha256 = "5bfc72f0d2a9913ada835012a0528ad0abdf1c6e3ea92472611124c01dd960cd"
+expected_artifact_ids = ["gloria"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/05-perfect-passive-and-deponents.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-050"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/06-pronouns-prepositions-and-reading.pdf"
+page_start = 9
+page_end = 9
+occurrence = 1
+word_count = 4
+normalized_sha256 = "b31a151612c569996c9ce0729574d6ee594a83a05200ae1be6e87e585281a436"
+expected_artifact_ids = ["credo-1"]
+disposition = "independently-retainable"
+basis_kind = "public-domain-exact-witness"
+basis_record = "passage-inventory.md#W.I.56-I.46.2"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/06-pronouns-prepositions-and-reading.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-051"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/06-pronouns-prepositions-and-reading.pdf"
+page_start = 42
+page_end = 42
+occurrence = 1
+word_count = 4
+normalized_sha256 = "b31a151612c569996c9ce0729574d6ee594a83a05200ae1be6e87e585281a436"
+expected_artifact_ids = ["credo-1"]
+disposition = "independently-retainable"
+basis_kind = "public-domain-exact-witness"
+basis_record = "passage-inventory.md#W.I.56-I.46.2"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/06-pronouns-prepositions-and-reading.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-052"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/07-reference-comparison-and-number.pdf"
+page_start = 5
+page_end = 5
+occurrence = 1
+word_count = 4
+normalized_sha256 = "d88d07a0e632b7edc09c8bea1f387e34c22dc57e09a0af9a6b41f540f547e8a6"
+expected_artifact_ids = ["liturgy-word"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/07-reference-comparison-and-number.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-053"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/07-reference-comparison-and-number.pdf"
+page_start = 22
+page_end = 22
+occurrence = 1
+word_count = 4
+normalized_sha256 = "1a01e6572d40a2d684cd531d27cbe0e63ffc0081aea037594191c12d37a6f5c7"
+expected_artifact_ids = ["credo-1"]
+disposition = "independently-retainable"
+basis_kind = "project-created-independent"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/07-reference-comparison-and-number.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-054"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/07-reference-comparison-and-number.pdf"
+page_start = 36
+page_end = 36
+occurrence = 1
+word_count = 4
+normalized_sha256 = "1a01e6572d40a2d684cd531d27cbe0e63ffc0081aea037594191c12d37a6f5c7"
+expected_artifact_ids = ["credo-1"]
+disposition = "independently-retainable"
+basis_kind = "project-created-independent"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/07-reference-comparison-and-number.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-055"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression.pdf"
+page_start = 6
+page_end = 6
+occurrence = 1
+word_count = 4
+normalized_sha256 = "1a01e6572d40a2d684cd531d27cbe0e63ffc0081aea037594191c12d37a6f5c7"
+expected_artifact_ids = ["credo-1"]
+disposition = "independently-retainable"
+basis_kind = "project-created-independent"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-056"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression.pdf"
+page_start = 16
+page_end = 16
+occurrence = 1
+word_count = 4
+normalized_sha256 = "1a01e6572d40a2d684cd531d27cbe0e63ffc0081aea037594191c12d37a6f5c7"
+expected_artifact_ids = ["credo-1"]
+disposition = "independently-retainable"
+basis_kind = "project-created-independent"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-057"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression.pdf"
+page_start = 31
+page_end = 31
+occurrence = 1
+word_count = 4
+normalized_sha256 = "1a01e6572d40a2d684cd531d27cbe0e63ffc0081aea037594191c12d37a6f5c7"
+expected_artifact_ids = ["credo-1"]
+disposition = "independently-retainable"
+basis_kind = "project-created-independent"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-058"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression.pdf"
+page_start = 31
+page_end = 31
+occurrence = 2
+word_count = 4
+normalized_sha256 = "1a01e6572d40a2d684cd531d27cbe0e63ffc0081aea037594191c12d37a6f5c7"
+expected_artifact_ids = ["credo-1"]
+disposition = "independently-retainable"
+basis_kind = "project-created-independent"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-059"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-periodic-prose.pdf"
+page_start = 13
+page_end = 13
+occurrence = 1
+word_count = 4
+normalized_sha256 = "d88d07a0e632b7edc09c8bea1f387e34c22dc57e09a0af9a6b41f540f547e8a6"
+expected_artifact_ids = ["liturgy-word"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-periodic-prose.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-060"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-periodic-prose.pdf"
+page_start = 28
+page_end = 28
+occurrence = 1
+word_count = 4
+normalized_sha256 = "d88d07a0e632b7edc09c8bea1f387e34c22dc57e09a0af9a6b41f540f547e8a6"
+expected_artifact_ids = ["liturgy-word"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-periodic-prose.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-061"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/06-rhythmic-hymnody-and-sequences.pdf"
+page_start = 8
+page_end = 8
+occurrence = 1
+word_count = 4
+normalized_sha256 = "f579aaf9b64e6989a054d106c6154f4c9aeceaf4025347cc83364362fdc53a11"
+expected_artifact_ids = ["blessing", "greeting", "sanctus"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/06-rhythmic-hymnody-and-sequences.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-062"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/01-foundations.pdf"
+page_start = 17
+page_end = 17
+occurrence = 1
+word_count = 4
+normalized_sha256 = "1a01e6572d40a2d684cd531d27cbe0e63ffc0081aea037594191c12d37a6f5c7"
+expected_artifact_ids = ["credo-1"]
+disposition = "independently-retainable"
+basis_kind = "project-created-independent"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/01-foundations.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"
+
+[[allowance]]
+id = "curriculum-icel-allow-063"
+surface = "installed-pdf"
+path = "pdf/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced.pdf"
+page_start = 12
+page_end = 12
+occurrence = 1
+word_count = 4
+normalized_sha256 = "d88d07a0e632b7edc09c8bea1f387e34c22dc57e09a0af9a6b41f540f547e8a6"
+expected_artifact_ids = ["liturgy-word"]
+disposition = "non-liturgical-incidental-collision"
+basis_kind = "non-rights-disposition"
+basis_record = "passage-inventory.md#location-scoped-collision-dispositions"
+authority_scope = "installed-pdf:pdf/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced.pdf"
+reviewed_on = "2026-08-27"
+review_record = "passage-inventory.md#location-scoped-collision-dispositions"

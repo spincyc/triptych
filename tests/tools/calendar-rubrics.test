@@ -15,14 +15,284 @@ run_tool --help >/dev/null
 sandbox="$(mktemp -d)"
 trap 'rm -rf "$sandbox"' EXIT INT TERM
 
-# The sources validate and every solved case still agrees with the model the
-# page itself runs. This is the gate that matters: the cases are worked answers
-# taken from the collated publications, so a rule edited into a shape that
-# reaches a different answer fails here rather than on the page.
-run_tool check >/dev/null
+# Active reduction overrides are a closed source contract. Build one valid
+# fixture and mutate one invariant at a time so malformed authority cannot be
+# emitted for the browser to interpret loosely.
+make_override_source() {
+	case_name="$1"
+	case_root="$sandbox/override-$case_name"
+	mkdir -p "$case_root/postconciliar"
+	ln -s "$repo/src/sources/calendars/postconciliar/propers.yaml" "$case_root/postconciliar/propers.yaml"
+	python3 - "$repo/src/sources/calendars/postconciliar/rubrics.yaml" "$case_root/postconciliar/rubrics.yaml" "$case_name" <<'PY'
+import pathlib, sys, yaml
 
+source, target, case_name = pathlib.Path(sys.argv[1]), pathlib.Path(sys.argv[2]), sys.argv[3]
+document = yaml.safe_load(source.read_text(encoding="utf-8"))
+entry = {
+    "id": "joint-obligatory-memorials-become-optional",
+    "key": "immaculate-heart-blessed-virgin-mary",
+    "when_with_basis": "place-10-obligatory-memorial",
+    "reduce_with_to_basis": "place-12-optional-memorial",
+    "locus": "Prot. N. 2671/98/L",
+    "why": "both obligatory memorials become optional for this occurrence",
+}
+if case_name == "missing":
+    del entry["reduce_with_to_basis"]
+elif case_name == "extra":
+    entry["unexpected"] = True
+elif case_name == "missing-mass":
+    entry["key"] = "not-a-mass"
+elif case_name == "unknown-source":
+    entry["when_with_basis"] = "not-a-basis"
+elif case_name == "unknown-target":
+    entry["reduce_with_to_basis"] = "not-a-basis"
+elif case_name == "same-basis":
+    entry["reduce_with_to_basis"] = entry["when_with_basis"]
+elif case_name == "mixed-action":
+    entry["yields_to"] = "weekday"
+elif case_name == "empty":
+    entry["locus"] = ""
+elif case_name == "wrong-type":
+    entry["id"] = 2671
+document["overrides"] = [entry]
+target.write_text(yaml.safe_dump(document, allow_unicode=True, sort_keys=False), encoding="utf-8")
+PY
+	printf '%s\n' "$case_root"
+}
+
+valid_root="$(make_override_source valid)"
+run_tool structure --root "$valid_root" --calendar postconciliar --out "$sandbox/override-valid-out" >/dev/null
+python3 - "$sandbox/override-valid-out/structure/rubrics/postconciliar.json" <<'PY'
+import json, sys
+
+document = json.load(open(sys.argv[1], encoding="utf-8"))
+entry = document["overrides"][0]
+assert set(entry) == {
+    "id", "key", "when_with_basis", "reduce_with_to_basis", "locus", "why"
+}, entry
+
+# Form identity comes only from the source and stays in source order. A mass
+# without authored forms carries an explicit empty list, never an invented
+# `main` form and never an ambiguous missing field.
+assert document["keys"]["nativity"]["forms"] == [
+    {"id": "vigil", "name": "Vigil Mass"},
+    {"id": "night", "name": "Mass during the Night"},
+    {"id": "dawn", "name": "Mass at Dawn"},
+    {"id": "day", "name": "Mass during the Day"},
+]
+# Fabian and Sebastian are distinct optional-Memorial choices on January 20,
+# not forms of one celebration. Neither Mass therefore invents form identity.
+assert document["keys"]["saint-fabian-pope-martyr"]["forms"] == []
+assert document["keys"]["saint-sebastian-martyr"]["forms"] == []
+assert document["keys"]["ot-2"]["forms"] == []
+for key in ("nativity", "saint-fabian-pope-martyr", "saint-sebastian-martyr", "ot-2"):
+    assert set(document["keys"][key]) == {"basis", "forms", "name"}
+PY
+
+expect_bad_override() {
+	case_name="$1"
+	want="$2"
+	case_root="$(make_override_source "$case_name")"
+	status=0
+	run_tool structure --root "$case_root" --calendar postconciliar \
+		--out "$sandbox/override-$case_name-out" >/dev/null 2>"$sandbox/override-$case_name.err" || status=$?
+	if [ "$status" -ne 2 ] || ! grep -q "$want" "$sandbox/override-$case_name.err"; then
+		echo "override case $case_name should exit 2 with '$want', got $status" >&2
+		cat "$sandbox/override-$case_name.err" >&2
+		exit 1
+	fi
+}
+
+expect_bad_override missing "missing fields"
+expect_bad_override extra "unknown fields"
+expect_bad_override missing-mass "index does not carry"
+expect_bad_override unknown-source "names unknown basis"
+expect_bad_override unknown-target "names unknown basis"
+expect_bad_override same-basis "cannot reduce basis"
+expect_bad_override mixed-action "unknown fields"
+expect_bad_override empty "must be a nonempty string"
+expect_bad_override wrong-type "must be a nonempty string"
+
+mkdir -p "$sandbox/data/structure"
+ln -s "$repo/src/web/data/structure/calendar" "$sandbox/data/structure/calendar"
 run_tool structure --out "$sandbox/data" >/dev/null
 root="$sandbox/data/structure/rubrics"
+
+# The sources validate and every solved case still agrees with the model the
+# page itself runs. Point this gate at the fresh fixture above: the tracked
+# projection is allowed to be stale until the integration regeneration, while
+# this tool's own gate must remain deterministic in the meantime. A scoped
+# check validates its selected row within the global index without treating the
+# other calendars as stale. The unscoped check validates the complete index.
+run_tool check --out "$sandbox/data" >/dev/null
+for calendar in postconciliar roman-1962 roman-pre-1955; do
+	run_tool check --out "$sandbox/data" --calendar "$calendar" >/dev/null
+done
+
+# Expected leaves and the complete index are held to the canonical writer
+# bytes, not merely to semantically equivalent JSON. `check` only diagnoses the
+# drift; it never repairs either file.
+leaf="$root/postconciliar.json"
+cp "$leaf" "$sandbox/postconciliar.clean.json"
+printf '\n' >>"$leaf"
+cp "$leaf" "$sandbox/postconciliar.before-check.json"
+status=0
+run_tool check --out "$sandbox/data" --calendar postconciliar >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "a noncanonical rubrics leaf should exit 2, got $status" >&2
+	exit 1
+fi
+cmp "$sandbox/postconciliar.before-check.json" "$leaf"
+cp "$sandbox/postconciliar.clean.json" "$leaf"
+
+cp "$root/index.json" "$sandbox/canonical-index.clean.json"
+printf '\n' >>"$root/index.json"
+cp "$root/index.json" "$sandbox/canonical-index.before-check.json"
+status=0
+run_tool check --out "$sandbox/data" >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "a noncanonical complete rubrics index should exit 2, got $status" >&2
+	exit 1
+fi
+cmp "$sandbox/canonical-index.before-check.json" "$root/index.json"
+cp "$sandbox/canonical-index.clean.json" "$root/index.json"
+
+printf '[]\n' >"$root/index.json"
+status=0
+run_tool check --out "$sandbox/data" --calendar postconciliar >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "a malformed rubrics index should exit 2, got $status" >&2
+	exit 1
+fi
+cp "$sandbox/canonical-index.clean.json" "$root/index.json"
+
+# Scoped structure owns one calendar leaf and its shared-index row. It keeps
+# every complete unrelated row and leaf. An orphan immediate JSON file belongs
+# to the complete rubrics projection: scoped work ignores and retains it, the
+# complete check reports it, and only complete structure prunes it. Nested
+# directories and non-JSON files are outside this cleanup boundary.
+mkdir -p "$root/unknown"
+printf '{}\n' >"$root/orphan.json"
+printf '{}\n' >"$root/unknown/keep.json"
+printf 'keep\n' >"$root/keep.txt"
+python3 - "$root/index.json" <<'PY'
+import json, pathlib, sys
+
+path = pathlib.Path(sys.argv[1])
+document = json.loads(path.read_text(encoding="utf-8"))
+document["calendars"].append({"calendar": "unrelated-incomplete"})
+path.write_text(json.dumps(document, ensure_ascii=False, sort_keys=True, indent=1) + "\n", encoding="utf-8")
+PY
+cp "$root/roman-1962.json" "$sandbox/roman-1962.before-scoped.json"
+run_tool check --out "$sandbox/data" --calendar postconciliar >/dev/null
+status=0
+run_tool check --out "$sandbox/data" >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "an orphan rubrics JSON file should exit 2, got $status" >&2
+	exit 1
+fi
+run_tool structure --out "$sandbox/data" --calendar postconciliar >/dev/null
+cmp "$sandbox/roman-1962.before-scoped.json" "$root/roman-1962.json"
+if [ ! -f "$root/orphan.json" ]; then
+	echo "scoped structure pruned an unrelated rubrics leaf" >&2
+	exit 1
+fi
+python3 - "$root/index.json" <<'PY'
+import json, sys
+
+payload = json.load(open(sys.argv[1], encoding="utf-8"))
+assert [row["calendar"] for row in payload["calendars"]] == [
+    "postconciliar", "roman-1962", "roman-pre-1955", "unrelated-incomplete"
+], payload["calendars"]
+PY
+run_tool structure --out "$sandbox/data" >/dev/null
+if [ -e "$root/orphan.json" ]; then
+	echo "complete structure left an orphan rubrics JSON file" >&2
+	exit 1
+fi
+for kept in "$root/unknown/keep.json" "$root/keep.txt"; do
+	if [ ! -f "$kept" ]; then
+		echo "rubrics cleanup crossed its owned immediate-JSON boundary: $kept" >&2
+		exit 1
+	fi
+done
+run_tool check --out "$sandbox/data" >/dev/null
+
+cp "$root/index.json" "$sandbox/index.clean.json"
+python3 - "$root/index.json" <<'PY'
+import json, pathlib, sys
+
+path = pathlib.Path(sys.argv[1])
+document = json.loads(path.read_text(encoding="utf-8"))
+for row in document["calendars"]:
+    if row["calendar"] == "roman-1962":
+        row["code"] = "stale test value"
+path.write_text(json.dumps(document, ensure_ascii=False, sort_keys=True, indent=1) + "\n", encoding="utf-8")
+PY
+
+# An unrelated stale row is outside a scoped check, but its own scoped check
+# and the complete check must both reject it.
+run_tool check --out "$sandbox/data" --calendar postconciliar >/dev/null
+status=0
+run_tool check --out "$sandbox/data" --calendar roman-1962 >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "a stale index row should exit 2 for its calendar, got $status" >&2
+	exit 1
+fi
+status=0
+run_tool check --out "$sandbox/data" >/dev/null 2>&1 || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "a stale index row should exit 2 for the complete check, got $status" >&2
+	exit 1
+fi
+cp "$sandbox/index.clean.json" "$root/index.json"
+
+# A multi-calendar day lookup must fail if even one calendar cannot be derived;
+# returning the other days with status ok would hide the incomplete result.
+run_tool day --date 2026-04-05 --calendar postconciliar --out "$sandbox/data" >/dev/null
+partial="$sandbox/partial-data/structure"
+mkdir -p "$partial/calendar"
+ln -s "$root" "$partial/rubrics"
+for calendar in postconciliar roman-1962; do
+	ln -s "$repo/src/web/data/structure/calendar/$calendar" "$partial/calendar/$calendar"
+done
+status=0
+run_tool day --date 2026-04-05 --out "$sandbox/partial-data" >"$sandbox/partial.out" 2>"$sandbox/partial.err" || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "a partial day result should exit 2, got $status" >&2
+	exit 1
+fi
+if [ -s "$sandbox/partial.out" ] || ! grep -q "roman-pre-1955" "$sandbox/partial.err"; then
+	echo "a partial day failure should emit only the missing-calendar diagnostic" >&2
+	exit 1
+fi
+
+model_partial="$sandbox/model-partial-data/structure"
+mkdir -p "$model_partial/calendar" "$model_partial/rubrics"
+for calendar in postconciliar roman-1962 roman-pre-1955; do
+	ln -s "$repo/src/web/data/structure/calendar/$calendar" "$model_partial/calendar/$calendar"
+done
+for calendar in postconciliar roman-1962; do
+	ln -s "$root/$calendar.json" "$model_partial/rubrics/$calendar.json"
+done
+python3 - "$root/roman-pre-1955.json" "$model_partial/rubrics/roman-pre-1955.json" <<'PY'
+import json, pathlib, sys
+
+source, target = map(pathlib.Path, sys.argv[1:])
+document = json.loads(source.read_text(encoding="utf-8"))
+document["same_celebration"] = 7
+target.write_text(json.dumps(document), encoding="utf-8")
+PY
+status=0
+run_tool day --date 2026-04-05 --out "$sandbox/model-partial-data" >"$sandbox/model-partial.out" 2>"$sandbox/model-partial.err" || status=$?
+if [ "$status" -ne 2 ]; then
+	echo "a partial model result should exit 2, got $status" >&2
+	exit 1
+fi
+if [ -s "$sandbox/model-partial.out" ] || ! grep -q "model raised" "$sandbox/model-partial.err"; then
+	echo "a partial model failure should emit only the model diagnostic" >&2
+	exit 1
+fi
 
 python3 - "$repo" "$root" <<'PY'
 import json, pathlib, sys
@@ -102,7 +372,7 @@ assert "postconciliar" not in body, "--calendar did not limit the report"
 PY
 
 # Machine form is one key-sorted object.
-run_tool check --format json >"$sandbox/check.json"
+run_tool check --out "$sandbox/data" --format json >"$sandbox/check.json"
 for want in '"calendars"' '"status"'; do
 	if ! grep -q "$want" "$sandbox/check.json"; then
 		echo "payload is missing $want" >&2

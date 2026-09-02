@@ -153,7 +153,7 @@ Dates below are rules, not a 2026 computation. “Sunday” includes its liturgi
 
 ## Complete Fixed General Roman Calendar
 
-This is the fixed universal inventory current through 17 July 2026. The 2002 Latin calendar is the base; the amendment chain is integrated into the rows and identified by notes after the table. Labels are editorial English identifiers, not reproduced formularies. A semicolon separates celebrations that are distinct choices on the same date.
+This is the fixed universal inventory current through 17 July 2026. The 2002 Latin calendar is the base; the amendment chain is integrated into the rows and identified by notes after the table. Labels are editorial English identifiers, not reproduced formularies. Distinct choices on one date are separate singular rows; the date is repeated and every later row carries a discriminator. The repeated rows remain coequal alternatives and state no winner.
 
 | Date | Universal celebration | Rank |
 |:---------|:---------------------------------------|:--------------|
@@ -165,7 +165,8 @@ This is the fixed universal inventory current through 17 July 2026. The 2002 La
 | 7 | Saint Raymond of Penyafort, Priest | <span class="smallcaps">Optional memorial</span> |
 | 13 | Saint Hilary, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
 | 17 | Saint Anthony, Abbot | <span class="smallcaps">Memorial</span> |
-| 20 | Saint Fabian, Pope and Martyr; Saint Sebastian, Martyr | <span class="smallcaps">Optional memorials</span> |
+| 20 | Saint Fabian, Pope and Martyr | <span class="smallcaps">Optional memorial</span> |
+| 20 | Saint Sebastian, Martyr | <span class="smallcaps">Optional memorial</span> |
 | 21 | Saint Agnes, Virgin and Martyr | <span class="smallcaps">Memorial</span> |
 | 22 | Saint Vincent, Deacon and Martyr | <span class="smallcaps">Optional memorial</span> |
 | 24 | Saint Francis de Sales, Bishop and Doctor of the Church | <span class="smallcaps">Memorial</span> |
@@ -176,10 +177,12 @@ This is the fixed universal inventory current through 17 July 2026. The 2002 La
 | 31 | Saint John Bosco, Priest | <span class="smallcaps">Memorial</span> |
 | **February** |  |  |
 | 2 | The Presentation of the Lord | <span class="smallcaps">Feast</span> |
-| 3 | Saint Blaise, Bishop and Martyr; Saint Ansgar, Bishop | <span class="smallcaps">Optional memorials</span> |
+| 3 | Saint Blaise, Bishop and Martyr | <span class="smallcaps">Optional memorial</span> |
+| 3 | Saint Ansgar, Bishop | <span class="smallcaps">Optional memorial</span> |
 | 5 | Saint Agatha, Virgin and Martyr | <span class="smallcaps">Memorial</span> |
 | 6 | Saints Paul Miki and Companions, Martyrs | <span class="smallcaps">Memorial</span> |
-| 8 | Saint Jerome Emiliani; Saint Josephine Bakhita, Virgin | <span class="smallcaps">Optional memorials</span> |
+| 8 | Saint Jerome Emiliani | <span class="smallcaps">Optional memorial</span> |
+| 8 | Saint Josephine Bakhita, Virgin | <span class="smallcaps">Optional memorial</span> |
 | 10 | Saint Scholastica, Virgin | <span class="smallcaps">Memorial</span> |
 | 11 | Our Lady of Lourdes | <span class="smallcaps">Optional memorial</span> |
 | 14 | Saints Cyril, Monk, and Methodius, Bishop | <span class="smallcaps">Memorial</span> |
@@ -206,10 +209,12 @@ This is the fixed universal inventory current through 17 July 2026. The 2002 La
 | 11 | Saint Stanislaus, Bishop and Martyr | <span class="smallcaps">Memorial</span> |
 | 13 | Saint Martin I, Pope and Martyr | <span class="smallcaps">Optional memorial</span> |
 | 21 | Saint Anselm, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-| 23 | Saint George, Martyr; Saint Adalbert, Bishop and Martyr | <span class="smallcaps">Optional memorials</span> |
+| 23 | Saint George, Martyr | <span class="smallcaps">Optional memorial</span> |
+| 23 | Saint Adalbert, Bishop and Martyr | <span class="smallcaps">Optional memorial</span> |
 | 24 | Saint Fidelis of Sigmaringen, Priest and Martyr | <span class="smallcaps">Optional memorial</span> |
 | 25 | Saint Mark, Evangelist | <span class="smallcaps">Feast</span> |
-| 28 | Saint Peter Chanel, Priest and Martyr; Saint Louis Grignion de Montfort, Priest | <span class="smallcaps">Optional memorials</span> |
+| 28 | Saint Peter Chanel, Priest and Martyr | <span class="smallcaps">Optional memorial</span> |
+| 28 | Saint Louis Grignion de Montfort, Priest | <span class="smallcaps">Optional memorial</span> |
 | 29 | Saint Catherine of Siena, Virgin and Doctor of the Church | <span class="smallcaps">Memorial</span> |
 | 30 | Saint Pius V, Pope | <span class="smallcaps">Optional memorial</span> |
 | **May** |  |  |
@@ -217,14 +222,17 @@ This is the fixed universal inventory current through 17 July 2026. The 2002 La
 | 2 | Saint Athanasius, Bishop and Doctor of the Church | <span class="smallcaps">Memorial</span> |
 | 3 | Saints Philip and James, Apostles | <span class="smallcaps">Feast</span> |
 | 10 | Saint John of Avila, Priest and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-| 12 | Saints Nereus and Achilleus, Martyrs; Saint Pancras, Martyr | <span class="smallcaps">Optional memorials</span> |
+| 12 | Saints Nereus and Achilleus, Martyrs | <span class="smallcaps">Optional memorial</span> |
+| 12 | Saint Pancras, Martyr | <span class="smallcaps">Optional memorial</span> |
 | 13 | Our Lady of Fatima | <span class="smallcaps">Optional memorial</span> |
 | 14 | Saint Matthias, Apostle | <span class="smallcaps">Feast</span> |
 | 18 | Saint John I, Pope and Martyr | <span class="smallcaps">Optional memorial</span> |
 | 20 | Saint Bernardine of Siena, Priest | <span class="smallcaps">Optional memorial</span> |
 | 21 | Saints Christopher Magallanes, Priest, and Companions, Martyrs | <span class="smallcaps">Optional memorial</span> |
 | 22 | Saint Rita of Cascia, Religious | <span class="smallcaps">Optional memorial</span> |
-| 25 | Saint Bede the Venerable, Priest and Doctor of the Church; Saint Gregory VII, Pope; Saint Mary Magdalene de’ Pazzi, Virgin | <span class="smallcaps">Optional memorials</span> |
+| 25 | Saint Bede the Venerable, Priest and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
+| 25 | Saint Gregory VII, Pope | <span class="smallcaps">Optional memorial</span> |
+| 25 | Saint Mary Magdalene de’ Pazzi, Virgin | <span class="smallcaps">Optional memorial</span> |
 | 26 | Saint Philip Neri, Priest | <span class="smallcaps">Memorial</span> |
 | 27 | Saint Augustine of Canterbury, Bishop | <span class="smallcaps">Optional memorial</span> |
 | 29 | Saint Paul VI, Pope | <span class="smallcaps">Optional memorial</span> |
@@ -240,7 +248,8 @@ This is the fixed universal inventory current through 17 July 2026. The 2002 La
 | 13 | Saint Anthony of Padua, Priest and Doctor of the Church | <span class="smallcaps">Memorial</span> |
 | 19 | Saint Romuald, Abbot | <span class="smallcaps">Optional memorial</span> |
 | 21 | Saint Aloysius Gonzaga, Religious | <span class="smallcaps">Memorial</span> |
-| 22 | Saint Paulinus of Nola, Bishop; Saints John Fisher, Bishop, and Thomas More, Martyrs | <span class="smallcaps">Optional memorials</span> |
+| 22 | Saint Paulinus of Nola, Bishop | <span class="smallcaps">Optional memorial</span> |
+| 22 | Saints John Fisher, Bishop, and Thomas More, Martyrs | <span class="smallcaps">Optional memorial</span> |
 | 24 | The Nativity of Saint John the Baptist | <span class="smallcaps">Solemnity</span> |
 | 27 | Saint Cyril of Alexandria, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
 | 28 | Saint Irenaeus, Bishop, Martyr, and Doctor of the Church | <span class="smallcaps">Memorial</span> |
@@ -269,11 +278,13 @@ This is the fixed universal inventory current through 17 July 2026. The 2002 La
 | 31 | Saint Ignatius of Loyola, Priest | <span class="smallcaps">Memorial</span> |
 | **August** |  |  |
 | 1 | Saint Alphonsus Liguori, Bishop and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-| 2 | Saint Eusebius of Vercelli, Bishop; Saint Peter Julian Eymard, Priest | <span class="smallcaps">Optional memorials</span> |
+| 2 | Saint Eusebius of Vercelli, Bishop | <span class="smallcaps">Optional memorial</span> |
+| 2 | Saint Peter Julian Eymard, Priest | <span class="smallcaps">Optional memorial</span> |
 | 4 | Saint John Vianney, Priest | <span class="smallcaps">Memorial</span> |
 | 5 | The Dedication of the Basilica of Saint Mary Major | <span class="smallcaps">Optional memorial</span> |
 | 6 | The Transfiguration of the Lord | <span class="smallcaps">Feast</span> |
-| 7 | Saints Sixtus II, Pope, and Companions, Martyrs; Saint Cajetan, Priest | <span class="smallcaps">Optional memorials</span> |
+| 7 | Saints Sixtus II, Pope, and Companions, Martyrs | <span class="smallcaps">Optional memorial</span> |
+| 7 | Saint Cajetan, Priest | <span class="smallcaps">Optional memorial</span> |
 | 8 | Saint Dominic, Priest | <span class="smallcaps">Memorial</span> |
 | 9 | Saint Teresa Benedicta of the Cross, Virgin and Martyr | <span class="smallcaps">Optional memorial</span> |
 | 10 | Saint Lawrence, Deacon and Martyr | <span class="smallcaps">Feast</span> |
@@ -289,7 +300,8 @@ This is the fixed universal inventory current through 17 July 2026. The 2002 La
 | 22 | The Queenship of the Blessed Virgin Mary | <span class="smallcaps">Memorial</span> |
 | 23 | Saint Rose of Lima, Virgin | <span class="smallcaps">Optional memorial</span> |
 | 24 | Saint Bartholomew, Apostle | <span class="smallcaps">Feast</span> |
-| 25 | Saint Louis; Saint Joseph Calasanz, Priest | <span class="smallcaps">Optional memorials</span> |
+| 25 | Saint Louis | <span class="smallcaps">Optional memorial</span> |
+| 25 | Saint Joseph Calasanz, Priest | <span class="smallcaps">Optional memorial</span> |
 | 27 | Saint Monica | <span class="smallcaps">Memorial</span> |
 | 28 | Saint Augustine, Bishop and Doctor of the Church | <span class="smallcaps">Memorial</span> |
 | 29 | The Passion of Saint John the Baptist | <span class="smallcaps">Memorial</span> |
@@ -303,14 +315,16 @@ This is the fixed universal inventory current through 17 July 2026. The 2002 La
 | 14 | The Exaltation of the Holy Cross | <span class="smallcaps">Feast</span> |
 | 15 | Our Lady of Sorrows | <span class="smallcaps">Memorial</span> |
 | 16 | Saints Cornelius, Pope, and Cyprian, Bishop, Martyrs | <span class="smallcaps">Memorial</span> |
-| 17 | Saint Robert Bellarmine, Bishop and Doctor of the Church; Saint Hildegard of Bingen, Virgin and Doctor of the Church | <span class="smallcaps">Optional memorials</span> |
+| 17 | Saint Robert Bellarmine, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
+| 17 | Saint Hildegard of Bingen, Virgin and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
 | 19 | Saint Januarius, Bishop and Martyr | <span class="smallcaps">Optional memorial</span> |
 | 20 | Saints Andrew Kim Tae-gon, Priest, Paul Chong Ha-sang, and Companions, Martyrs | <span class="smallcaps">Memorial</span> |
 | 21 | Saint Matthew, Apostle and Evangelist | <span class="smallcaps">Feast</span> |
 | 23 | Saint Pius of Pietrelcina, Priest | <span class="smallcaps">Memorial</span> |
 | 26 | Saints Cosmas and Damian, Martyrs | <span class="smallcaps">Optional memorial</span> |
 | 27 | Saint Vincent de Paul, Priest | <span class="smallcaps">Memorial</span> |
-| 28 | Saint Wenceslaus, Martyr; Saints Lawrence Ruiz and Companions, Martyrs | <span class="smallcaps">Optional memorials</span> |
+| 28 | Saint Wenceslaus, Martyr | <span class="smallcaps">Optional memorial</span> |
+| 28 | Saints Lawrence Ruiz and Companions, Martyrs | <span class="smallcaps">Optional memorial</span> |
 | 29 | Saints Michael, Gabriel, and Raphael, Archangels | <span class="smallcaps">Feast</span> |
 | 30 | Saint Jerome, Priest and Doctor of the Church | <span class="smallcaps">Memorial</span> |
 | **October** |  |  |
@@ -320,14 +334,18 @@ This is the fixed universal inventory current through 17 July 2026. The 2002 La
 | 5 | Saint Faustina Kowalska, Virgin | <span class="smallcaps">Optional memorial</span> |
 | 6 | Saint Bruno, Priest | <span class="smallcaps">Optional memorial</span> |
 | 7 | Our Lady of the Rosary | <span class="smallcaps">Memorial</span> |
-| 9 | Saints Denis, Bishop, and Companions, Martyrs; Saint John Leonardi, Priest; Saint John Henry Newman, Priest and Doctor of the Church | <span class="smallcaps">Optional memorials</span> |
+| 9 | Saints Denis, Bishop, and Companions, Martyrs | <span class="smallcaps">Optional memorial</span> |
+| 9 | Saint John Leonardi, Priest | <span class="smallcaps">Optional memorial</span> |
+| 9 | Saint John Henry Newman, Priest and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
 | 11 | Saint John XXIII, Pope | <span class="smallcaps">Optional memorial</span> |
 | 14 | Saint Callistus I, Pope and Martyr | <span class="smallcaps">Optional memorial</span> |
 | 15 | Saint Teresa of Jesus, Virgin and Doctor of the Church | <span class="smallcaps">Memorial</span> |
-| 16 | Saint Hedwig, Religious; Saint Margaret Mary Alacoque, Virgin | <span class="smallcaps">Optional memorials</span> |
+| 16 | Saint Hedwig, Religious | <span class="smallcaps">Optional memorial</span> |
+| 16 | Saint Margaret Mary Alacoque, Virgin | <span class="smallcaps">Optional memorial</span> |
 | 17 | Saint Ignatius of Antioch, Bishop and Martyr | <span class="smallcaps">Memorial</span> |
 | 18 | Saint Luke, Evangelist | <span class="smallcaps">Feast</span> |
-| 19 | Saints John de Brébeuf and Isaac Jogues, Priests, and Companions, Martyrs; Saint Paul of the Cross, Priest | <span class="smallcaps">Optional memorials</span> |
+| 19 | Saints John de Brébeuf and Isaac Jogues, Priests, and Companions, Martyrs | <span class="smallcaps">Optional memorial</span> |
+| 19 | Saint Paul of the Cross, Priest | <span class="smallcaps">Optional memorial</span> |
 | 22 | Saint John Paul II, Pope | <span class="smallcaps">Optional memorial</span> |
 | 23 | Saint John of Capistrano, Priest | <span class="smallcaps">Optional memorial</span> |
 | 24 | Saint Anthony Mary Claret, Bishop | <span class="smallcaps">Optional memorial</span> |
@@ -342,12 +360,14 @@ This is the fixed universal inventory current through 17 July 2026. The 2002 La
 | 11 | Saint Martin of Tours, Bishop | <span class="smallcaps">Memorial</span> |
 | 12 | Saint Josaphat, Bishop and Martyr | <span class="smallcaps">Memorial</span> |
 | 15 | Saint Albert the Great, Bishop and Doctor of the Church | <span class="smallcaps">Optional memorial</span> |
-| 16 | Saint Margaret of Scotland; Saint Gertrude, Virgin | <span class="smallcaps">Optional memorials</span> |
+| 16 | Saint Margaret of Scotland | <span class="smallcaps">Optional memorial</span> |
+| 16 | Saint Gertrude, Virgin | <span class="smallcaps">Optional memorial</span> |
 | 17 | Saint Elizabeth of Hungary, Religious | <span class="smallcaps">Memorial</span> |
 | 18 | The Dedication of the Basilicas of Saints Peter and Paul, Apostles | <span class="smallcaps">Optional memorial</span> |
 | 21 | The Presentation of the Blessed Virgin Mary | <span class="smallcaps">Memorial</span> |
 | 22 | Saint Cecilia, Virgin and Martyr | <span class="smallcaps">Memorial</span> |
-| 23 | Saint Clement I, Pope and Martyr; Saint Columban, Abbot | <span class="smallcaps">Optional memorials</span> |
+| 23 | Saint Clement I, Pope and Martyr | <span class="smallcaps">Optional memorial</span> |
+| 23 | Saint Columban, Abbot | <span class="smallcaps">Optional memorial</span> |
 | 24 | Saints Andrew Dung-Lac, Priest, and Companions, Martyrs | <span class="smallcaps">Memorial</span> |
 | 25 | Saint Catherine of Alexandria, Virgin and Martyr | <span class="smallcaps">Optional memorial</span> |
 | 30 | Saint Andrew, Apostle | <span class="smallcaps">Feast</span> |

@@ -94,9 +94,13 @@ outcome of each check is published.
 6. No ecclesiastical statement of the Easter computus was located. The rule is published as an
    inherited rule of the Gregorian calendar. This is a bounded negative result of the searches
    actually run.
-7. The 1998 notification on the Immaculate Heart (prot. 2671/98/L) and the decrees inserting
-   post-2002 additions into the General Roman Calendar are reported from the territorial calendar;
-   the Holy See's portal did not serve them at the paths tried on 2026-07-25.
+7. The original Claude research reported the 1998 notification on the Immaculate Heart (Prot. n.
+   2671/98/L) and the decrees inserting post-2002 additions into the General Roman Calendar from the
+   territorial calendar after the Holy See's portal did not serve them at the paths tried on
+   2026-07-25. An independent subsequent check on 2026-08-26 read the complete notification in the
+   official Vatican Latin delivery and its official publication at *Notitiae* 35 (1999), 157. That
+   later verification does not retroactively attribute access to the Claude sessions. The inserting
+   decrees remain outside the later check.
 8. The United States complementary norm to canon 1246 §2 was not read at its own source; the
    Conference's page returned an access refusal on 2026-07-25. Its effect is reported from the
    Secretariat's 2026 calendar.

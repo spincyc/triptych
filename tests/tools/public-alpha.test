@@ -115,6 +115,7 @@ reject verify --deployment-target nonesuch
 python3 - "$repo" "$sandbox/data-root" <<'PY'
 import importlib.machinery
 import importlib.util
+import hashlib
 import json
 import shutil
 import sys
@@ -142,9 +143,71 @@ offered = set(tool.offered_bible_ids())
 assert offered, "the repository manifest offers no editions"
 assert "knox" not in offered, offered
 assert tool.data_root_edition_ids(tool.web_data_files()) == offered
+real_copied_inputs = {
+    path.relative_to(tool.ROOT).as_posix()
+    for path in tool.web_data_files().values()
+}
+real_bound_inputs = tool.site_source_paths()
+assert real_copied_inputs <= real_bound_inputs, sorted(
+    real_copied_inputs - real_bound_inputs
+)
+
+# Exercise the approval inventory itself, not only its path classifier: every
+# copied browser/data input must reach the exact-byte site-source closure.
+real_structure_prefix = tool.WEB_DATA_ROOT_RELATIVE / "structure"
+real_structure_expected = {
+    path.relative_to(tool.ROOT).as_posix()
+    for path in (tool.ROOT / real_structure_prefix).rglob("*.json")
+    if path.is_file() and not path.is_symlink()
+}
+real_structure_bound = {
+    relative
+    for relative in tool.site_source_paths()
+    if relative.startswith(real_structure_prefix.as_posix() + "/")
+}
+assert real_structure_bound == real_structure_expected, (
+    sorted(real_structure_bound - real_structure_expected),
+    sorted(real_structure_expected - real_structure_bound),
+)
+real_browser_expected = {
+    path.relative_to(tool.ROOT).as_posix()
+    for directory in tool.WEB_BROWSER_DIRECTORIES
+    for path in (tool.ROOT / tool.WEB_BROWSER_ROOT_RELATIVE / directory).glob("*")
+    if path.is_file() and not path.is_symlink() and path.suffix in (".html", ".css", ".js")
+}
+real_browser_bound = {
+    relative
+    for relative in tool.site_source_paths()
+    if relative.startswith(tool.WEB_BROWSER_ROOT_RELATIVE.as_posix() + "/")
+}
+assert real_browser_bound == real_browser_expected, (
+    sorted(real_browser_bound - real_browser_expected),
+    sorted(real_browser_expected - real_browser_bound),
+)
 
 # A sandbox holding one offered edition and one that is on disk only.
 tool.ROOT = sandbox
+# The release gate deliberately refuses a public-data root when its hash-only
+# English quarantine ledger is absent. This isolated root therefore carries a
+# complete synthetic ledger: it exercises the same 172-row floor without
+# copying or materializing any protected wording.
+quarantine = sandbox / tool.POSTCONCILIAR_TRANSLATIONS_RELATIVE
+quarantine.parent.mkdir(parents=True, exist_ok=True)
+quarantine.write_text(
+    "".join(
+        "[[untranslated]]\n"
+        'lang = "en"\n'
+        'extent = "body"\n'
+        f'quarantined_text_sha256 = ["{digest}"]\n'
+        for digest in (
+            hashlib.sha256(
+                f"project-created-public-alpha-quarantine-{index}".encode("utf-8")
+            ).hexdigest()
+            for index in range(tool.POSTCONCILIAR_QUARANTINE_BASELINE_ROWS)
+        )
+    ),
+    encoding="utf-8",
+)
 # The page ships with the data it reads, so a sandbox carrying a data root
 # carries a browser too; without one the assembly refuses, which is the
 # invariant that keeps a corpus from going live with nothing to serve it.
@@ -169,6 +232,12 @@ for directory in tool.WEB_BROWSER_DIRECTORIES:
     page = sandbox / "src/web/browser" / directory / "index.html"
     page.parent.mkdir(parents=True, exist_ok=True)
     page.write_text(WHOLE_PAGE, encoding="utf-8")
+(sandbox / "src/web/browser/shared/browser-core.css").write_text(
+    "body { color: black; }\n", encoding="utf-8"
+)
+(sandbox / "src/web/browser/shared/browser-core.js").write_text(
+    "'use strict';\n", encoding="utf-8"
+)
 data = sandbox / "src/web/data"
 write(
     data / "bibles.json",
@@ -184,6 +253,40 @@ write(
                  "hebrew": [{"chapter": 25, "first": 1, "last": 3}]},
     }]}]}]},
 )
+write(data / "structure/calendar/test/2026.json", {"days": []})
+write(data / "structure/ordinary/test.json", {"sections": []})
+write(data / "structure/rubrics/test.json", {"rules": []})
+write(data / "structure/sources/index.json", {"works": []})
+write(data / "structure/catena/test.json", {"sources": []})
+protected_manifest = (
+    sandbox / "src/sources/works/example/fatima-antiphonary/editions/fixture/"
+    "artifacts/protected/artifact.toml"
+)
+protected_manifest.parent.mkdir(parents=True, exist_ok=True)
+protected_manifest.write_text(
+    'id = "artifact.example.fatima-antiphonary.protected"\n'
+    'edition_id = "edition.example.fatima-antiphonary"\n'
+    'rights_status = "unresolved"\n',
+    encoding="utf-8",
+)
+licensed_manifest = (
+    sandbox / "src/sources/works/example/licensed-missal/editions/fixture/"
+    "artifacts/licensed/artifact.toml"
+)
+licensed_manifest.parent.mkdir(parents=True, exist_ok=True)
+licensed_manifest.write_text(
+    'id = "artifact.example.licensed-missal.licensed"\n'
+    'edition_id = "edition.example.licensed-missal"\n'
+    'rights_status = "licensed"\n',
+    encoding="utf-8",
+)
+# The approval closure binds the exact generated liturgy and source-browser
+# structures it serves. The classifier has no family allowlist: any future
+# copied JSON under the generated data root is bound automatically.
+assert tool.is_bound_web_data_source(data / "bibles.json")
+for kind in ("calendar", "propers", "rubrics", "ordinary", "sources", "catena"):
+    assert tool.is_bound_web_data_source(data / f"structure/{kind}/test.json"), kind
+assert tool.is_bound_web_data_source(data / "future-family/test.json")
 for edition in ("offered", "licensed"):
     write(
         sandbox / f"src/sources/bibles/{edition}/chapters/Ps/24.json",
@@ -193,6 +296,373 @@ for edition in ("offered", "licensed"):
 files = tool.web_data_files()
 assert tool.data_root_edition_ids(files) == {"offered"}, sorted(files)
 assert not any("licensed" in path for path in files), sorted(files)
+bound_sources = tool.site_source_paths()
+copied_sources = {
+    path.relative_to(tool.ROOT).as_posix()
+    for path in files.values()
+}
+assert copied_sources <= bound_sources, sorted(copied_sources - bound_sources)
+assert "src/web/data/structure/catena/test.json" in bound_sources
+assert "src/sources/bibles/offered/chapters/Ps/24.json" in bound_sources
+assert "src/sources/bibles/licensed/chapters/Ps/24.json" not in bound_sources
+
+# Generated liturgical JSON is a downloadable public surface, not merely an
+# implementation detail of the browser. Permission-scoped text, generic
+# licensed-free text and rich restricted provenance are refused before the copy
+# map is assembled, even when an upstream generator or a stale tracked file
+# lets one through.
+proper_path = data / "structure/propers/test.json"
+safe_proper = json.loads(proper_path.read_text(encoding="utf-8"))
+write(
+    proper_path,
+    {"masses": [{"common_from": {
+        "scope": "missal-antiphons",
+        "source_id": "edition.example.fatima-antiphonary",
+        "locus": "private page locator",
+        "options": [{"mass": "Common of the Blessed Virgin Mary"}],
+    }}]},
+)
+try:
+    tool.web_data_files()
+except tool.ReleaseError as exc:
+    assert "protected source identity" in str(exc), exc
+    assert "edition.example.fatima-antiphonary" in str(exc), exc
+else:
+    raise AssertionError("protected Common source identity was accepted")
+write(
+    proper_path,
+    {"masses": [{"common_from": {
+        "scope": "missal-antiphons",
+        "options": [{"mass": "Common of the Blessed Virgin Mary"}],
+    }}]},
+)
+tool.web_data_files()
+write(
+    proper_path,
+    {"masses": [{"propers": [{"translations": [{
+        "lang": "en", "rights": "permission",
+        "source_id": "edition.example.permission", "text": "restricted",
+    }]}]}]},
+)
+try:
+    tool.web_data_files()
+except tool.ReleaseError as exc:
+    assert "permission-scoped rights" in str(exc), exc
+else:
+    raise AssertionError("permission-scoped proper JSON was accepted")
+
+write(
+    proper_path,
+    {"masses": [{"propers": [{"translations": [{
+        "lang": "en", "rights": "public-domain",
+        "rights_status": "permission", "text": "restricted",
+    }]}]}]},
+)
+try:
+    tool.web_data_files()
+except tool.ReleaseError as exc:
+    assert "permission-scoped rights" in str(exc), exc
+else:
+    raise AssertionError("permission-backed proper JSON was accepted")
+
+write(
+    proper_path,
+    {"masses": [{"propers": [{"translations": [{
+        "lang": "en", "rights": "licensed-free",
+        "rights_status": "permission", "text": "restricted",
+    }]}]}]},
+)
+try:
+    tool.web_data_files()
+except tool.ReleaseError as exc:
+    assert "permission-scoped rights" in str(exc), exc
+else:
+    raise AssertionError("licensed-free plus permission proper JSON was accepted")
+
+write(
+    proper_path,
+    {"masses": [{"propers": [{"translations": [{
+        "lang": "en", "rights": "licensed-free",
+        "source_id": "edition.english-language-liturgical-consultation.praying-together.1998",
+        "text": "restricted",
+    }]}]}]},
+)
+try:
+    tool.web_data_files()
+except tool.ReleaseError as exc:
+    assert "ELLC witness" in str(exc), exc
+else:
+    raise AssertionError("generic licensed-free proper JSON was accepted")
+
+# A generic licensed artifact identity is restricted even if a stale producer
+# omits its rights field or lies with a public-domain spelling. Source-study
+# readability is not authorization for every liturgy surface.
+for row in (
+    {
+        "lang": "en",
+        "source_id": "artifact.example.licensed-missal.licensed",
+        "text": "mislabelled licensed source",
+    },
+    {
+        "lang": "en",
+        "rights": "public-domain",
+        "source_id": "artifact.example.licensed-missal.licensed",
+        "text": "mislabelled licensed source",
+    },
+):
+    write(
+        proper_path,
+        {"masses": [{"propers": [{"translations": [row]}]}]},
+    )
+    try:
+        tool.web_data_files()
+    except tool.ReleaseError as exc:
+        assert "protected source identity" in str(exc), exc
+        assert "artifact.example.licensed-missal.licensed" in str(exc), exc
+    else:
+        raise AssertionError("licensed artifact identity was accepted")
+
+write(
+    proper_path,
+    {"masses": [{"propers": [{"translations": [{
+        "lang": "en", "rights": "public-domain",
+        "source_id": (
+            "edition.english-language-liturgical-consultation."
+            "praying-together.1998"
+        ),
+        "text": "mislabelled restricted source",
+    }]}]}]},
+)
+try:
+    tool.web_data_files()
+except tool.ReleaseError as exc:
+    assert "ELLC witness" in str(exc), exc
+else:
+    raise AssertionError("ELLC source identity with a safe-looking rights label was accepted")
+
+for field in ("rights", "rights_status"):
+    for unsafe in ("licensed", "unresolved", "licensed-free"):
+        row = {"lang": "en", "text": "restricted", field: unsafe}
+        if field == "rights_status":
+            row["rights"] = "public-domain"
+        write(
+            proper_path,
+            {"masses": [{"propers": [{"translations": [row]}]}]},
+        )
+        try:
+            tool.web_data_files()
+        except tool.ReleaseError as exc:
+            assert "no explicit authorization" in str(exc), (field, unsafe, exc)
+        else:
+            raise AssertionError(f"{field}={unsafe} proper JSON was accepted")
+
+# The positive boundary is explicit too: a non-licensed public-domain row is
+# still distributable and the independent gate does not erase it.
+write(
+    proper_path,
+    {"masses": [{"propers": [{"translations": [{
+        "lang": "en", "rights": "public-domain",
+        "rights_status": "public-domain", "text": "safe",
+    }]}]}]},
+)
+tool.web_data_files()
+
+write(
+    proper_path,
+    {"masses": [{"propers": [{"translations": [{
+        "lang": "en", "rights": "public-domain",
+        "rights_status": "project-created", "text": "inconsistently labelled",
+    }]}]}]},
+)
+try:
+    tool.web_data_files()
+except tool.ReleaseError as exc:
+    assert "do not name the same public authorization" in str(exc), exc
+else:
+    raise AssertionError("inconsistent public rights vocabularies were accepted")
+
+write(
+    proper_path,
+    {"masses": [{"advisory": (
+        "English Language Liturgical Consultation source-study notice"
+    )}]},
+)
+try:
+    tool.web_data_files()
+except tool.ReleaseError as exc:
+    assert "restricted-authority metadata" in str(exc), exc
+else:
+    raise AssertionError("ELLC source-study metadata was accepted in assembled JSON")
+
+write(
+    proper_path,
+    {"masses": [{"absent": {"english": "icel-surface-restricted"}}]},
+)
+try:
+    tool.web_data_files()
+except tool.ReleaseError as exc:
+    assert "restricted-authority metadata" in str(exc), exc
+else:
+    raise AssertionError("provider-specific restricted state was accepted")
+
+write(
+    proper_path,
+    {"masses": [{"propers": [{
+        "unavailable_translations": [{
+            "lang": "en", "state": "rights-restricted",
+            "source_id": "edition.example.private", "sha256": "not-public",
+        }],
+    }]}]},
+)
+try:
+    tool.web_data_files()
+except tool.ReleaseError as exc:
+    assert "rights-restricted public projection" in str(exc), exc
+    assert "sha256" in str(exc) and "source_id" in str(exc), exc
+else:
+    raise AssertionError("rich rights-restricted projection was accepted")
+
+write(
+    proper_path,
+    {"masses": [{"propers": [{
+        "unavailable_translations": [{
+            "target": {"artifact_id": "private"},
+            "lang": "en", "state": "rights-restricted",
+        }],
+    }]}]},
+)
+try:
+    tool.web_data_files()
+except tool.ReleaseError as exc:
+    assert "unsafe target" in str(exc), exc
+else:
+    raise AssertionError("nested metadata in a rights-restricted target was accepted")
+
+write(
+    proper_path,
+    {"masses": [{"text_status": {
+        "state": "unavailable", "reasons": [{
+            "kind": "rights-withheld", "source_id": "edition.example.private",
+        }],
+    }}]},
+)
+try:
+    tool.web_data_files()
+except tool.ReleaseError as exc:
+    assert "must project only as target, lang and state" in str(exc), exc
+else:
+    raise AssertionError("rich rights-withheld reason was accepted")
+
+# The public absence itself remains useful and contains no private provenance.
+write(
+    proper_path,
+    {"masses": [{"propers": [{
+        "unavailable_translations": [{
+            "target": "Collect", "lang": "en", "state": "rights-restricted",
+        }],
+    }]}]},
+)
+tool.web_data_files()
+write(
+    proper_path,
+    {"masses": [{"propers": [{
+        "unavailable_translations": [{
+            "target": {
+                "mass": "demo", "form_id": "main", "proper": "Collect",
+                "cycle": "all", "occurrence": 1, "extent": "body",
+            },
+            "lang": "en", "state": "rights-restricted",
+        }],
+    }]}]},
+)
+tool.web_data_files()
+write(proper_path, safe_proper)
+
+ordinary_path = data / "structure/ordinary/test.json"
+write(
+    ordinary_path,
+    {"absences": [
+        {"key": "text-rights-withheld", "count": 2,
+         "state": "rights-restricted", "kind": "rights-withheld"},
+        {"key": "witness-gap", "count": 1,
+         "state": "unavailable", "kind": "witness-gap"},
+    ]},
+)
+tool.web_data_files()
+write(
+    ordinary_path,
+    {"language_absences": [
+        {"key": "text-rights-withheld", "lang": "en", "count": 2,
+         "state": "rights-restricted", "kind": "rights-withheld"},
+        {"key": "text-rights-unresolved", "lang": "la", "count": 1,
+         "state": "unresolved", "kind": "rights-unresolved"},
+    ]},
+)
+tool.web_data_files()
+write(
+    ordinary_path,
+    {"language_absences": [{
+        "key": "text-rights-withheld", "lang": "en", "count": 2,
+        "state": "rights-restricted", "kind": "rights-withheld",
+        "source_id": "edition.example.private",
+    }]},
+)
+try:
+    tool.web_data_files()
+except tool.ReleaseError as exc:
+    assert "must contain exactly key, lang, count, state and kind" in str(exc), exc
+else:
+    raise AssertionError("rich public Ordinary language absence was accepted")
+
+write(
+    ordinary_path,
+    {"absences": [{
+        "key": "text-rights-withheld", "count": 2,
+        "state": "rights-restricted", "kind": "rights-withheld",
+        "what": "private source and permission prose",
+    }]},
+)
+try:
+    tool.web_data_files()
+except tool.ReleaseError as exc:
+    assert "must contain exactly key, count, state and kind" in str(exc), exc
+else:
+    raise AssertionError("rich public Ordinary absence catalog was accepted")
+
+write(
+    ordinary_path,
+    {"sections": [{"elements": [{"translations": [{
+        "lang": "en", "rights": "licensed-free",
+        "source_id": (
+            "edition.international-commission-on-english-in-the-liturgy."
+            "music-for-the-roman-missal"
+        ),
+        "text": "restricted",
+    }]}]}]},
+)
+try:
+    tool.web_data_files()
+except tool.ReleaseError as exc:
+    assert "ICEL witness" in str(exc), exc
+else:
+    raise AssertionError("ICEL Ordinary JSON was accepted")
+write(ordinary_path, {"sections": []})
+
+sandbox_structure_prefix = tool.WEB_DATA_ROOT_RELATIVE / "structure"
+sandbox_structure_expected = {
+    path.relative_to(tool.ROOT).as_posix()
+    for path in (tool.ROOT / sandbox_structure_prefix).rglob("*.json")
+    if path.is_file() and not path.is_symlink()
+}
+sandbox_structure_bound = {
+    relative
+    for relative in tool.site_source_paths()
+    if relative.startswith(sandbox_structure_prefix.as_posix() + "/")
+}
+assert sandbox_structure_bound == sandbox_structure_expected, (
+    sorted(sandbox_structure_bound - sandbox_structure_expected),
+    sorted(sandbox_structure_expected - sandbox_structure_bound),
+)
 
 site = sandbox / "site"
 root = tool.SITE_DATA_ROOT.as_posix()
@@ -237,6 +707,20 @@ assert not (site / f"{root}/licensed").exists()
 # citation demand nothing: numbering is a property of the system, not a
 # translation to be shipped twice.
 assert not (site / f"{root}/offered/chapters/Ps/25.json").exists()
+assert tool.verify_web_data(site) == []
+
+# Artifact-local checksums cannot authenticate copied browser programs. Even
+# after rewriting SHA256SUMS, source parity must reject a modified JS payload.
+copied_js = site / "shared/browser-core.js"
+copied_js.write_text("'use strict'; // tampered\n", encoding="utf-8")
+tool.write_checksums(site)
+errors = tool.verify_web_data(site)
+assert any(
+    "shared/browser-core.js" in error and "does not match" in error
+    for error in errors
+), errors
+shutil.copyfile(sandbox / "src/web/browser/shared/browser-core.js", copied_js)
+tool.write_checksums(site)
 assert tool.verify_web_data(site) == []
 
 # Planted after assembly, an unoffered edition still fails verification.

@@ -5,7 +5,7 @@ edition_id = "edition.catholic-church.missale-romanum.2010-english-icel-antiphon
 artifact_type = "publisher-issued-pdf"
 media_type = "application/pdf"
 storage = "remote"
-rights_status = "permission"
+rights_status = "restricted"
 rights_basis = """
 Three layers here, not two, and the third is why this file needs reading before
 it is used.
@@ -17,7 +17,8 @@ the Liturgy Corporation. All rights reserved." Approved, recognised and
 promulgated, so within ICEL's standing permission for a free non-commercial
 website on the six conditions of passage
 passage.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.global-computer-networks.
-That is the basis of this record's rights_status.
+That is text-level permission evidence for a possible qualifying display, not
+a distribution basis for these exact PDF bytes.
 
 THE REVISED GRAIL CARVE-OUT, and it is exact. The same copyright page reserves
 "the English translation of Psalms 23(24), 46(47), and 115(116) from The Revised
@@ -39,8 +40,10 @@ THE FILE. The Liturgy Office publishes it free and entire, and its Missal pages
 carry "(c) CBCEW" with a grant limited to local parish use, which does not reach
 a permanent website; condition (4) of ICEL's clause independently grants no
 licence to publish in another form. So the exact bytes are identified and hashed
-and no payload is retained: storage = remote. That disposes of the file. It
-withholds nothing of the ICEL text, which is publishable under the clause above.
+and no payload is retained: storage = remote and rights_status = restricted.
+Those fields answer only whether this exact PDF may be redistributed. They
+neither withdraw nor extend the separately recorded ICEL text permission for a
+future qualifying non-bundled live-site display.
 
 src/sources/inventories/icel-web-permission-rights-v1.toml settles the question
 once for every later lane.

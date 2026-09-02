@@ -3,6 +3,7 @@
   {
    "artifact_type": "web-transcription",
    "byte_size": 129689,
+   "edition_owned": true,
    "id": "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-latin-text-9924ed7b",
    "media_type": "text/plain; charset=utf-8",
    "notes": "Keyed text, not OCR. guidance/catena.md recorded that the unencumbered Latin is OCR wreckage and the clean Latin encumbered, measuring Migne PL 34's Internet Archive text layer at roughly one corrupted word in eight; that is true of the scan and false of the volume. This is the University of Zurich's Corpus Corporum encoding of Migne PL 23, keyed rather than scanned, republished on Latin Wikisource under a stated CC BY-SA 4.0 markup licence over a public-domain printing. It is a transcription of a web witness of that printing and not a collation against the printed column, so no passage taken from it rises above inspected.",
@@ -17,6 +18,7 @@
   {
    "artifact_type": "wiki-export-xml",
    "byte_size": 148529,
+   "edition_owned": true,
    "id": "artifact.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23.quaestiones-wikisource-export-f47f9069",
    "media_type": "application/xml",
    "notes": "The work occupies one wiki page, current revision 253468 at retrieval, which is the preface and the whole of the questions. Its transcribers keyed every verse number as an anchor template rather than as text, so the printed numbers reach the transcription only through the template table named on the transformation.",
@@ -38,7 +40,6 @@
   "id": "edition.jerome.quaestiones-hebraicae-in-genesim.latin-vallarsi-migne-pl-23",
   "jurisdiction": null,
   "language": "la",
-  "notes": "Migne reprints Vallarsi and Maffei's text. Each quaestio is headed by the printing's own reference, `(Cap. II.—Vers. 8.)` at a chapter change and `(Vers. 11.)` within one, and that reference is what bounds each fragment here. The Hebrew and Greek words the work exists to compare are carried in the transcription: the first pass of the transcriber removed them along with the wiki templates that hold them and exited zero, which is why scripts/migne_transcribe.py now unwraps a named table of prose-bearing templates. No public-domain English translation exists: C. T. R. Hayward's, Oxford Early Christian Studies, 1995, is the first complete one and is in copyright.",
   "publication": "Patrologia Latina, tomus 23, Paris: J.-P. Migne, 1845, coll. 935-1010, reprinting Vallarsi and Maffei's Verona edition of 1767",
   "title": "Liber Hebraicarum quaestionum in Genesim, Patrologia Latina tomus 23",
   "translators": [],

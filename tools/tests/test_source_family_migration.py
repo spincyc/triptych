@@ -723,6 +723,35 @@ class SourceFamilyMigrationTests(unittest.TestCase):
         checked = self.run_tool("check", self.ledger.as_posix())
         self.assertEqual(checked.returncode, 0, checked.stderr)
 
+    def test_catalog_acceptance_with_no_families_preserves_pending_claim(self) -> None:
+        self.bootstrap_ledger()
+        self.add_future_work()
+
+        ordinary = self.run_tool(
+            "refresh",
+            self.ledger.as_posix(),
+            "--audited-on",
+            "2026-07-23",
+        )
+        self.assertEqual(ordinary.returncode, 1)
+        self.assertIn("pinned canonical_catalog_snapshot is stale", ordinary.stderr)
+
+        accepted = self.run_tool(
+            "refresh",
+            self.ledger.as_posix(),
+            "--audited-on",
+            "2026-07-23",
+            "--accept-canonical-catalog",
+        )
+        self.assertEqual(accepted.returncode, 0, accepted.stderr)
+        checked = self.run_tool("check", self.ledger.as_posix())
+        self.assertEqual(checked.returncode, 0, checked.stderr)
+        data = self.ledger_data()
+        self.assertEqual(data["families"], [])
+        self.assertTrue(
+            all(unit["review_state"] == "pending" for unit in data["review_units"])
+        )
+
     def test_catalog_acceptance_seals_reviewed_manifest_content_changes(self) -> None:
         self.bootstrap_ledger()
         self.add_city_family()

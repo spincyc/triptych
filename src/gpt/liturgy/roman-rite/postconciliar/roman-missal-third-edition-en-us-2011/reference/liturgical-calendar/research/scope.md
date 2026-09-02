@@ -34,7 +34,7 @@ The work explains how the postconciliar Roman calendar was historically construc
 
 ## Terminology and method
 
-The work uses the postconciliar ranks *solemnity*, *feast*, *memorial*, and *optional memorial*. “Optional feast days” in the request is normalized to *optional memorials*. A “fixed row” is one civil date; a row can contain multiple distinct optional memorials. The published table uses the 2002 Latin calendar's rule that an entry with no printed rank is an optional memorial, then overlays every checked amendment.
+The work uses the postconciliar ranks *solemnity*, *feast*, *memorial*, and *optional memorial*. “Optional feast days” in the request is normalized to *optional memorials*. A fixed date is one civil date and may contain multiple distinct optional memorials. Each celebration has its own singular table row, so a date repeats without choosing among its coequal candidates. A zero-width source discriminator distinguishes only the later rows' stable registries and does not change their rank or precedence. The published table uses the 2002 Latin calendar's rule that an entry with no printed rank is an optional memorial, then overlays every checked amendment.
 
 The Proper of Time, universal fixed calendar, and U.S. proper are inventoried separately. Actual occurrence must add local calendars and apply the Universal Norms and table of liturgical days.
 

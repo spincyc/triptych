@@ -3,6 +3,7 @@
   {
    "artifact_type": "web-transcription",
    "byte_size": 485055,
+   "edition_owned": true,
    "id": "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-latin-text-dac5a6e2",
    "media_type": "text/plain; charset=utf-8",
    "notes": "Keyed text, not OCR. guidance/catena.md recorded that the unencumbered Latin is OCR wreckage and the clean Latin encumbered, measuring Migne PL 34's Internet Archive text layer at roughly one corrupted word in eight; that is true of the scan and false of the volume. This is the University of Zurich's Corpus Corporum encoding of Migne PL 91, keyed rather than scanned, republished on Latin Wikisource under a stated CC BY-SA 4.0 markup licence over a public-domain printing. It is a transcription of a web witness of that printing and not a collation against the printed column, so no passage taken from it rises above inspected.",
@@ -17,6 +18,7 @@
   {
    "artifact_type": "wiki-export-xml",
    "byte_size": 491714,
+   "edition_owned": true,
    "id": "artifact.bede.in-principium-genesis.latin-migne-pl-91.bede-genesis-wikisource-export-d6d33522",
    "media_type": "application/xml",
    "notes": "The work occupies one wiki page and that page is the whole of it: the letter to Acca and all four books, current revision 267515 at retrieval. The page carries the Corpus Corporum encoding note recording that the file was encoded in TEI XML for the University of Zurich's Corpus Corporum project from Migne's Patrologia Latina tomus 91; that is the encoder's statement about the file and is not part of Migne, and the transformation removes it.",
@@ -38,7 +40,6 @@
   "id": "edition.bede.in-principium-genesis.latin-migne-pl-91",
   "jurisdiction": null,
   "language": "la",
-  "notes": "Migne prints the work in four books under the title Hexaemeron, preceded by Bede's letter to Acca. The printing marks no chapter and no verse anywhere: every paragraph simply opens with the Vulgate lemma it is about, which is what bounds each fragment here. No public-domain English translation exists: C. B. Kendall's, Translated Texts for Historians 48, 2008, is the first and is in copyright, so the work is held in Latin only and the site says so.",
   "publication": "Patrologia Latina, tomus 91, Paris: J.-P. Migne, 1850, coll. 9-190",
   "title": "Hexaemeron, Patrologia Latina tomus 91",
   "translators": [],

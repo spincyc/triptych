@@ -154,7 +154,7 @@
       resolved: result.resolved,
       calendarResult: result.calendarResult,
       events: (result.events || []).map(function (event) {
-        return {
+        const projected = {
           id: event.id,
           kind: event.kind,
           semanticSlot: event.semanticSlot || null,
@@ -166,10 +166,33 @@
           locus: event.locus || null,
           sourceHooks: event.sourceHooks || []
         };
+        if (event.kind === 'proper-choice') {
+          projected.group = event.group;
+          projected.selection = event.selection;
+          projected.choiceBasis = event.choiceBasis;
+          projected.options = (event.options || []).map(function (option) {
+            return {
+              id: option.id,
+              events: (option.events || []).map(function (member) {
+                return {
+                  id: member.id,
+                  kind: member.kind,
+                  semanticSlot: member.semanticSlot || null,
+                  editionSlotLabel: member.editionSlotLabel || null,
+                  selected: member.selected || null,
+                  seat: member.seat || null,
+                  sourceHooks: member.sourceHooks || []
+                };
+              })
+            };
+          });
+        }
+        return projected;
       }),
       coverage: result.coverage || [],
       explicitAbsences: result.explicitAbsences || [],
-      unresolvedChoices: result.unresolvedChoices || []
+      unresolvedChoices: result.unresolvedChoices || [],
+      ordinaryUnresolved: result.ordinaryUnresolved || []
     };
   }
 
@@ -262,14 +285,27 @@
   }
 
   function deferredState(parsed) {
-    return [];
+    const mode = requestedModeOf(parsed);
+    // Compare deliberately does not expose a URL.
+    return mode === 'study' ? ['mode=' + mode] : [];
   }
 
   function requestedModeOf(parsed) {
     const duplicates = (parsed.duplicates || []).some(function (row) {
-      return row.key === 'ordinary';
+      return row.key === 'ordinary' || row.key === 'mode';
     });
     if (duplicates) return null;
+    if (parsed.present.indexOf('mode') >= 0) {
+      const mode = parsed.recognized.mode;
+      if (Contract.MODES.indexOf(mode) < 0) return null;
+      if (parsed.present.indexOf('ordinary') >= 0) {
+        const legacy = parsed.recognized.ordinary === '1' ? 'missal' :
+          (parsed.recognized.ordinary === '0' ? 'read' : null);
+        if (legacy === null ||
+            (['read', 'missal'].indexOf(mode) >= 0 && mode !== legacy)) return null;
+      }
+      return mode;
+    }
     if (parsed.present.indexOf('ordinary') < 0) return 'read';
     if (parsed.recognized.ordinary === '0') return 'read';
     if (parsed.recognized.ordinary === '1') return 'missal';
@@ -279,6 +315,8 @@
   function modeLabel(mode) {
     if (mode === 'missal') return 'Missal';
     if (mode === 'read') return 'Read';
+    if (mode === 'study') return 'Study';
+    if (mode === 'compare') return 'Compare';
     return 'Mode unavailable';
   }
 
@@ -322,10 +360,11 @@
   }
 
   async function validateExplicitVariants(parsed, manifests, selectedMissal) {
-    const present = (parsed.variantKeys || []).filter(function (key) {
+    const variantPresent = (parsed.variantKeys || []).filter(function (key) {
       return parsed.present.indexOf(key) >= 0;
     });
-    if (!present.length) return [];
+    const languagePresent = parsed.present.indexOf('ordinary-lang') >= 0;
+    if (!languagePresent && !variantPresent.length) return [];
     const calendar = ((manifests.ordinaryIndex && manifests.ordinaryIndex.calendars) || [])
       .find(function (row) { return row.calendar === selectedMissal; });
     const structures = calendar
@@ -341,7 +380,17 @@
       });
     });
     const errors = [];
-    present.forEach(function (key) {
+    if (languagePresent && !structures.some(function (structure) {
+      return (structure.languages || []).some(function (row) {
+        return row.lang === parsed.recognized['ordinary-lang'];
+      });
+    })) {
+      errors.push({
+        code: 'invalid-explicit-value', path: 'ordinary-lang',
+        message: 'the explicit Ordinary language is not applicable to the selected edition’s production Ordinary'
+      });
+    }
+    variantPresent.forEach(function (key) {
       if (!allowed[key] || allowed[key].indexOf(parsed.recognized[key]) < 0) {
         errors.push({
           code: 'invalid-explicit-variant', path: key,
@@ -364,15 +413,28 @@
     if (!Contract.strictDate(wantedDate)) {
       errors.push({ code: 'invalid-explicit-value', path: 'date', message: 'the requested date is not a real YYYY-MM-DD civil date' });
     }
+    if (parsed.present.indexOf('mode') >= 0 &&
+        parsed.present.indexOf('ordinary') >= 0 && requestedModeOf(parsed) === null) {
+      errors.push({
+        code: 'conflicting-explicit-mode', path: 'mode',
+        message: 'explicit mode conflicts with the legacy ordinary state'
+      });
+    }
     return { ok: errors.length === 0, missal: wantedMissal, date: wantedDate, errors: errors };
   }
 
   async function assemble(parsed, manifests, preliminary) {
     const missal = preliminary.missal;
     const year = preliminary.date.slice(0, 4);
-    const needsOrdinary = parsed.present.indexOf('ordinary-lang') >= 0 ||
-      parsed.recognized.ordinary === '1' ||
-      (parsed.variantKeys || []).some(function (key) { return parsed.present.indexOf(key) >= 0; });
+    const requestedMode = requestedModeOf(parsed);
+    // Read does not present the Ordinary, but explicit dormant Ordinary state
+    // is still source-validated. Remembered or default state remains cold.
+    const explicitOrdinary = parsed.present.indexOf('ordinary-lang') >= 0 ||
+      (parsed.variantKeys || []).some(function (key) {
+        return parsed.present.indexOf(key) >= 0;
+      });
+    const needsOrdinary = requestedMode === 'missal' ||
+      (requestedMode === 'study' && parsed.recognized.ordinary === '1') || explicitOrdinary;
     const paths = [
       'structure/rubrics/' + missal + '.json',
       'structure/calendar/' + missal + '/' + year + '.json',
@@ -491,7 +553,10 @@
     }));
     orationsSelect.value = state.languages.orations;
     const readable = (runtime.branch && runtime.branch.readable) || [];
-    if (readable.length > 1) {
+    // The unresolved document is the only selector when the source appoints
+    // coequal formularies.  A native select would visibly preselect its first
+    // option and manufacture the very default the adapter refused to choose.
+    if (readable.length > 1 && runtime.outcome !== 'unresolved') {
       T.fillSelect(formularySelect, readable.map(function (row) {
         return { value: row.key, label: (row.label || row.key) + ' — ' + row.state };
       }));
@@ -513,17 +578,18 @@
       }));
       ordinaryLangSelect.value = state.languages.ordinary || 'en';
       ordinaryLangField.hidden = languages.length < 2;
-      const group = window.OrdinarySeating.variantGroupOf(runtime.ordinary);
-      if (group) {
+      const groups = ordinaryVariantGroups(runtime.ordinary);
+      if (groups.length === 1) {
+        const group = groups[0];
         T.fillSelect(ordinaryOptionSelect, (group.options || []).map(function (option) {
           return { value: option.id, label: option.name };
         }));
-        const wanted = state.options && state.options.legitimate && state.options.legitimate[group.group];
-        const chosen = window.OrdinarySeating.chosenOption(group, wanted);
-        if (chosen) ordinaryOptionSelect.value = chosen.id;
+        const chosen = ordinarySelectionMap(state, runtime.ordinary)[group.group];
+        if (chosen) ordinaryOptionSelect.value = chosen;
         ordinaryOptionField.hidden = false;
       } else {
         ordinaryOptionField.hidden = true;
+        ordinaryOptionSelect.replaceChildren();
       }
     } else {
       ordinaryLangField.hidden = true;
@@ -603,12 +669,15 @@
       ['Ordinary language', runtime.mode === 'missal'
         ? humanLanguage(state.languages.ordinary || 'en') : null],
       ['Ordinary option', runtime.mode === 'missal'
-        ? selectedOrdinaryOptionLabel(state, runtime.ordinary) : null],
+        ? selectedOrdinaryOptionLabel(state, runtime.ordinary,
+          runtime.branches.map(function (row) { return row.result; })) : null],
       ['Formulary', runtime.branches.length > 1
         ? runtime.branches.map(function (row) {
           return row.result && row.result.resolved && row.result.resolved.formulary;
         }).filter(Boolean).join('; ')
-        : (runtime.result && runtime.result.resolved && runtime.result.resolved.formulary)]
+        : (runtime.result && runtime.result.resolved && runtime.result.resolved.formulary)],
+      ['Mass form', state.form ||
+        (runtime.result && runtime.result.resolved && runtime.result.resolved.form)]
     ]));
     detailsBody.appendChild(selection);
 
@@ -627,9 +696,18 @@
     } else if (runtime.outcome !== 'ready') {
       const outcome = T.el('section', 'details-section');
       outcome.appendChild(T.el('h3', null, 'Reader outcome'));
+      const ordinaryUnresolved = runtime.branches.some(function (row) {
+        return row.result && (row.result.ordinaryUnresolved || []).length;
+      });
       const messages = {
         deferred: 'An active request is valid and preserved, but is not yet rendered.',
-        unresolved: 'The current request is validated, but no formulary outcome has been selected.',
+        unresolved: ordinaryUnresolved
+          ? 'Some Ordinary elements have unresolved applicability, so their text is not shown.'
+          : runtime.branches.length > 1 && runtime.branches.some(function (row) {
+            return row.result && row.result.resolved && !(row.result.unresolvedChoices || []).length;
+          })
+          ? 'The current request has rendered territorial results alongside a branch-local formulary choice that remains unresolved.'
+          : 'The current request is validated, but no formulary outcome has been selected.',
         unrenderable: 'The current request is valid, but its semantic document cannot be rendered from the available production resources.'
       };
       outcome.appendChild(T.el('p', 'surface-note', messages[runtime.outcome] || 'This selection is not resolved.'));
@@ -662,19 +740,55 @@
     }
   });
 
-  function selectedOrdinaryOptionLabel(state, ordinary) {
-    const group = ordinary && window.OrdinarySeating.variantGroupOf(ordinary);
-    if (!group) return state && state.edition && state.edition.id === 'roman-1962'
+  function ordinaryVariantGroups(ordinary) {
+    return ordinary ? window.OrdinarySeating.variantGroupsOf(ordinary) : [];
+  }
+
+  function ordinarySelectionMap(state, ordinary) {
+    if (!ordinary) return {};
+    const wanted = state && state.options && state.options.legitimate || {};
+    return window.OrdinarySeating.selectionMap(ordinary, wanted);
+  }
+
+  function selectedOrdinaryOptionLabel(state, ordinary, results) {
+    const groups = ordinaryVariantGroups(ordinary);
+    if (!groups.length) return state && state.edition && state.edition.id === 'roman-1962'
       ? 'Roman Canon' : null;
-    const wanted = state.options && state.options.legitimate &&
-      state.options.legitimate[group.group];
-    const chosen = window.OrdinarySeating.chosenOption(group, wanted);
-    return chosen ? group.name + ': ' + chosen.name : group.name + ': choice unresolved';
+    const selected = ordinarySelectionMap(state, ordinary);
+    return groups.map(function (group) {
+      const chosen = (group.options || []).find(function (option) {
+        return option.id === selected[group.group];
+      });
+      if (!chosen) return group.name + ': choice unresolved';
+      const keys = new Set();
+      (ordinary.sections || []).forEach(function (section) {
+        (section.elements || []).forEach(function (element) {
+          if ((element.alternatives || []).some(function (alternative) {
+            return alternative.group === group.group && alternative.option === chosen.id;
+          }) || element.variant === chosen.id) keys.add(element.key);
+        });
+      });
+      const held = results || [];
+      const shown = held.some(function (result) {
+        return (result && result.events || []).some(function (event) {
+          return event.kind === 'ordinary-element' && keys.has(
+            event.id.replace(/^ordinary-element\//, ''));
+        });
+      });
+      const unresolved = held.some(function (result) {
+        return (result && result.ordinaryUnresolved || []).some(function (row) {
+          return keys.has(row.element);
+        });
+      });
+      const status = shown ? '' : unresolved
+        ? ' (applicability unresolved)' : ' (not appointed)';
+      return group.name + ': ' + chosen.name + status;
+    }).join('; ');
   }
 
   function commitOutcomePresentation(presentation) {
     const held = presentation || {};
-    const mode = held.mode === 'read' || held.mode === 'missal' ? held.mode : null;
+    const mode = Contract.MODES.indexOf(held.mode) >= 0 ? held.mode : null;
     runtime.mode = mode;
     runtime.outcome = held.outcome || runtime.outcome;
     window.dayReaderDebug.mode = mode;
@@ -1050,6 +1164,300 @@
     };
   }
 
+  function primaryDayChoice(result, branch) {
+    const readable = new Set();
+    (branch && branch.readable || []).forEach(function (one) {
+      if (one.id) readable.add(one.id);
+      if (one.key) readable.add(one.key);
+    });
+    return (result.unresolvedChoices || []).find(function (one) {
+      return one.id === 'calendar-formulary' || /^proper-form:/.test(one.id) ||
+        ((one.options || []).length > 1 && one.options.every(function (option) {
+          return readable.has(option.id);
+        }));
+    }) || null;
+  }
+
+  function translationIdentity(row) {
+    return row && (row.source_id || row.source || null);
+  }
+
+  /** Witnesses that can supply every translated Proper without suppressing one. */
+  function translationWitnessState(result, structure, language) {
+    if (!result || language === T.SOURCE_LANGUAGE) {
+      return { requiresChoice: false, held: [], choices: [] };
+    }
+    const heldByProper = [];
+    let requiresChoice = false;
+    let anonymousHeldTranslation = false;
+    semanticProperEvents(result).forEach(function (event) {
+      if (!event.selected ||
+          event.selected.kind !== 'composed' || event.selected.language !== language) return;
+      const selected = event.selected;
+      if (selected.availability === 'choice-required') {
+        const ids = Array.from(new Set(selected.unresolvedWitnesses || [])).filter(Boolean);
+        if (ids.length > 1) {
+          requiresChoice = true;
+          heldByProper.push(ids);
+        } else anonymousHeldTranslation = true;
+      } else if (selected.availability === 'held' && !selected.missing && selected.text) {
+        if (selected.sourceId) heldByProper.push([selected.sourceId]);
+        else anonymousHeldTranslation = true;
+      }
+    });
+    if (!heldByProper.length || anonymousHeldTranslation) {
+      return { requiresChoice: requiresChoice, held: [], choices: [] };
+    }
+    const common = heldByProper.reduce(function (intersection, ids) {
+      return intersection.filter(function (id) { return ids.indexOf(id) >= 0; });
+    }, heldByProper[0].slice());
+    const labels = new Map((structure.translations || []).map(function (row) {
+      return [translationIdentity(row), row.label || translationIdentity(row)];
+    }));
+    const names = common.map(function (id) { return labels.get(id) || id; });
+    return {
+      requiresChoice: requiresChoice,
+      held: common,
+      choices: requiresChoice ? common.map(function (id, index) {
+        const label = names[index];
+        return {
+          id: id,
+          label: names.indexOf(label) === names.lastIndexOf(label) ? label : label + ' — ' + id
+        };
+      }) : []
+    };
+  }
+
+  function validateExplicitTranslationWitness(state, derived, structure) {
+    const wanted = state.languages && state.languages.translationWitness || null;
+    if (!wanted) return [];
+    const errors = [];
+    (derived.options || []).forEach(function (branch) {
+      const branchState = resultStateForBranch(state, branch, derived.options.length > 1);
+      const languages = Object.assign({}, branchState.languages);
+      delete languages.translationWitness;
+      const witnessless = Object.assign({}, branchState, { languages: languages });
+      const probe = Adapters.adaptDay({
+        request: witnessless,
+        derived: derived,
+        structure: structure,
+        ordinary: null
+      });
+      const witnessState = translationWitnessState(
+        probe, structure, branchState.languages.orations
+      );
+      if (primaryDayChoice(probe, branch) || witnessState.held.indexOf(wanted) < 0) {
+        errors.push({
+          code: 'invalid-explicit-value', path: 'translation-witness',
+          message: 'the explicit translation witness cannot faithfully supply this resolved Day formulary and language'
+        });
+      }
+    });
+    return errors.slice(0, 1);
+  }
+
+  function validateExplicitSemanticLocation(state, derived, structure, ordinary) {
+    const wanted = state.semanticLocation && state.semanticLocation.eventId || null;
+    if (!wanted) return [];
+    if (state.requestedMode === 'study') {
+      return [{
+        code: 'invalid-semantic-location', path: 'location',
+        message: 'the requested mode renders no semantic event at this location'
+      }];
+    }
+
+    const multiple = (derived.options || []).length > 1;
+    const held = new Set();
+    let adapted = false;
+    (derived.options || []).forEach(function (branch) {
+      try {
+        const branchState = resultStateForBranch(state, branch, multiple);
+        const result = Adapters.adaptDay({
+          request: branchState,
+          derived: derived,
+          structure: structure,
+          ordinary: state.requestedMode === 'missal' ? ordinary : null
+        });
+        adapted = true;
+        if (!result.resolved || primaryDayChoice(result, branch)) return;
+        const prefix = locationPrefix(branch, multiple);
+        (result.events || []).forEach(function (event) {
+          if (state.requestedMode === 'read' &&
+              ['proper', 'proper-choice'].indexOf(event.kind) < 0) return;
+          held.add(prefix + event.id);
+        });
+      } catch (_error) { /* Rendering owns wholly unadaptable state. */ }
+    });
+    if (held.has(wanted) || !adapted) return [];
+    return [{
+      code: 'invalid-semantic-location', path: 'location',
+      message: 'the explicit location is absent from the rendered semantic events'
+    }];
+  }
+
+  function resolvableTranslationWitnessState(result, structure, state) {
+    const witnessState = translationWitnessState(result, structure, state.languages.orations);
+    if (!witnessState.choices.length || !runtime.derived) return witnessState;
+    const choices = witnessState.choices.filter(function (option) {
+      const languages = Object.assign({}, state.languages, {
+        translationWitness: option.id
+      });
+      const candidate = Object.assign({}, state, { languages: languages });
+      return !validateExplicitTranslationWitness(
+        candidate, runtime.derived, structure
+      ).length;
+    });
+    return Object.assign({}, witnessState, { choices: choices });
+  }
+
+  /** A valid Day whose source authorizes several identities and no default. */
+  function unresolvedChoiceDocument(result, branch, structure, prefix) {
+    const choice = primaryDayChoice(result, branch);
+    if (!choice || !choice.options || choice.options.length < 2) {
+      throw new Error('an unresolved Day needs its complete authorized formulary choice');
+    }
+    const properForm = /^proper-form:/.test(choice.id);
+    const mass = properForm && (structure.masses || []).find(function (row) {
+      return result.resolved && row.key === result.resolved.formulary;
+    });
+    if (properForm && !mass) {
+      throw new Error('a Proper-form choice has no resolved source Mass');
+    }
+    const offered = properForm ? (mass.forms || []) : (branch.readable || []);
+    const readable = new Map(offered.map(function (row) {
+      return [row.id || row.key, row];
+    }));
+    const optionIds = choice.options.map(function (option) { return option.id; });
+    if (optionIds.indexOf('main') >= 0) {
+      throw new Error('the internal main form may not become a reader choice');
+    }
+    if (optionIds.some(function (id) { return !readable.has(id); }) ||
+        optionIds.length !== readable.size) {
+      throw new Error('source choice options do not match the readable identities');
+    }
+
+    const titleText = properForm ? 'Choose a Mass form' : 'Choose a formulary';
+    const section = T.el('section', 'candidate-choice ' +
+      (properForm ? 'proper-form-choice' : 'calendar-formulary-choice'));
+    section.dataset.unresolvedChoice = choice.id;
+    section.tabIndex = -1;
+    const heading = T.el('h2', null, titleText);
+    const baseId = properForm ? 'proper-form-choice' : 'calendar-formulary-choice';
+    heading.id = prefix
+      ? baseId + '-' + String(branch.option || 'universal').replace(/[^a-z0-9]+/gi, '-')
+      : baseId;
+    section.appendChild(heading);
+    section.appendChild(T.el('p', 'candidate-choice-reason', choice.reason));
+    const locus = (choice.sourceHooks || []).find(function (one) {
+      return one.kind === 'locus';
+    });
+    if (locus) section.appendChild(T.el('p', 'candidate-choice-locus', locus.id));
+
+    const form = T.el('form', 'candidate-choice-form');
+    form.dataset.choice = choice.id;
+    const fieldset = T.el('fieldset');
+    fieldset.appendChild(T.el('legend', null,
+      properForm ? 'Source-authored forms of this Mass' :
+        'Authorized formularies for this date'));
+    const options = T.el('div', 'candidate-choice-options');
+    choice.options.forEach(function (option) {
+      const row = readable.get(option.id);
+      const label = T.el('label', 'candidate-choice-option');
+      const input = document.createElement('input');
+      input.type = 'radio';
+      input.name = 'day-authorized-choice';
+      input.value = option.id;
+      input.dataset.choiceOption = option.id;
+      label.appendChild(input);
+      label.appendChild(document.createTextNode(row.label || row.name || option.id));
+      options.appendChild(label);
+    });
+    fieldset.appendChild(options);
+    const submit = T.el('button', 'candidate-choice-apply',
+      properForm ? 'Read selected Mass form' : 'Read selected formulary');
+    submit.type = 'submit';
+    submit.disabled = true;
+    fieldset.appendChild(submit);
+    form.appendChild(fieldset);
+    form.addEventListener('change', function () {
+      submit.disabled = !form.querySelector('input[name="day-authorized-choice"]:checked');
+    });
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const selected = form.querySelector('input[name="day-authorized-choice"]:checked');
+      if (!selected) return;
+      readerShell.close({ restoreFocus: false, restoreScroll: false });
+      if (properForm) {
+        navigate({
+          mass: result.resolved.formulary, form: selected.value, location: null
+        }, ['location'], {
+          location: { kind: 'top', id: null }, focus: { kind: 'day-choice-result' }
+        });
+      } else {
+        navigate({ mass: selected.value, form: null, location: null },
+          ['form', 'location'], {
+            location: { kind: 'top', id: null }, focus: { kind: 'day-choice-result' }
+          });
+      }
+    });
+    section.appendChild(form);
+    return { node: section, choice: choice, title: titleText, id: heading.id };
+  }
+
+  function unresolvedBranchDocument(result, branch, structure, prefix) {
+    const documentChoice = unresolvedChoiceDocument(result, branch, structure, prefix);
+    const fragment = document.createDocumentFragment();
+    fragment.appendChild(documentChoice.node);
+    return {
+      branch: branch,
+      result: result,
+      fragment: fragment,
+      contents: [{
+        id: documentChoice.id,
+        label: documentChoice.title,
+        element: documentChoice.node,
+        group: 'Day selection'
+      }],
+      bible: bibleRow(runtime.normalized.state.bible.id),
+      uncompiled: null,
+      notice: coverageMessage(result),
+      prefix: prefix,
+      unresolved: true
+    };
+  }
+
+  function commitUnresolvedChoice(result, branch, assembled, state) {
+    const documentChoice = unresolvedChoiceDocument(
+      result, branch, assembled.structure
+    );
+    reading.replaceChildren(documentChoice.node);
+    reading.setAttribute('aria-busy', 'false');
+    readerShell.setContents([{
+      id: documentChoice.id,
+      label: documentChoice.title,
+      element: documentChoice.node,
+      group: 'Day selection'
+    }]);
+
+    const missal = missalRow(state.edition.id);
+    title.textContent = documentChoice.title;
+    dateLine.textContent = longDate(assembled.derived.date, assembled.derived.weekday);
+    commitOutcomePresentation({
+      mode: runtime.mode,
+      outcome: 'unresolved',
+      outcomeClass: 'unresolved',
+      metadata: [
+        missal && (missal.edition || missal.label),
+        documentChoice.choice.options.length + ' authorized options',
+        'No default selected'
+      ].filter(Boolean).join(' · ')
+    });
+    coverageNotice.textContent = coverageMessage(result);
+    coverageNotice.hidden = false;
+    document.title = documentChoice.title + ' — Day — Triptych';
+    refreshDetailsAfterOutcome();
+  }
+
   async function buildResultDocument(result, structure, branch, renderContext, isCurrent) {
     const state = renderContext.state;
     const mode = renderContext.mode;
@@ -1069,26 +1477,56 @@
 
     const uncompiled = T.massIsUncompiled(mass) ? T.uncompiledNote(mass) : null;
     if (mode === 'missal') {
-      renderMissalDocument(
-        documentFragment, contents, result, mass, structure, bible,
-        fragments.fragments, state, ordinary, prefix, branchLocus
-      );
+      const hasOrdinaryFrame = (result.events || []).some(function (event) {
+        return event.kind === 'ordinary-section' || event.kind === 'ordinary-element';
+      });
+      if (hasOrdinaryFrame) {
+        renderMissalDocument(
+          documentFragment, contents, result, mass, structure, bible,
+          fragments.fragments, state, ordinary, prefix, branchLocus
+        );
+      } else {
+        renderUnframedMissalDocument(
+          documentFragment, contents, result, mass, structure, bible,
+          fragments.fragments, state, prefix, branchLocus
+        );
+      }
     } else {
-      (result.events || []).forEach(function (event) {
+      (result.events || []).forEach(function (event, eventOrdinal) {
+        if (event.kind === 'proper-choice') {
+          const choice = renderProperChoiceEvent(
+            event, mass, structure, bible, fragments.fragments, state,
+            'h2', 'h4', prefix, result, eventOrdinal, false
+          );
+          exposeReaderLocus(choice,
+            branchLocus ? branchLocus + ' · Source alternatives' : 'Source alternatives',
+            properChoiceLabel(event));
+          documentFragment.appendChild(choice);
+          contents.push({
+            id: prefix + event.id,
+            label: properChoiceLabel(event),
+            element: choice,
+            group: 'Proper choices'
+          });
+          return;
+        }
         if (event.kind !== 'proper') return;
         const index = sourceIndex(event);
         const proper = index === null ? null : (mass.propers || [])[index];
         if (!proper || T.isPlaceholder(proper)) return;
         const section = renderProperEvent(event, proper, index, structure, bible,
-          fragments.fragments, state, 'h2', prefix);
-        exposeReaderLocus(section, branchLocus ? branchLocus + ' · Propers' : 'Propers',
+          fragments.fragments, state, 'h2', prefix, result);
+        const unplaced = typedUnplacedSeat(event);
+        const region = unplaced && event.seat.region === 'before-frame'
+          ? 'Before Ordinary frame' : (unplaced ? 'After Ordinary frame' : 'Propers');
+        exposeReaderLocus(section, branchLocus ? branchLocus + ' · ' + region : region,
           event.editionSlotLabel || proper.name || 'Proper');
         documentFragment.appendChild(section);
         contents.push({
           id: prefix + event.id,
           label: event.editionSlotLabel || proper.name || 'Proper',
           element: section,
-          group: 'Proper of the Mass'
+          group: unplaced ? 'Exceptional source-order propers' : 'Proper of the Mass'
         });
       });
     }
@@ -1118,6 +1556,12 @@
 
   function commitResultDocuments(rows, assembled, state, showWhy) {
     const multiple = rows.length > 1;
+    const hasUnresolved = rows.some(function (row) {
+      return row.unresolved || Boolean(
+        row.result && ((row.result.unresolvedChoices || []).length ||
+          (row.result.ordinaryUnresolved || []).length)
+      );
+    });
     const documentFragment = document.createDocumentFragment();
     const contents = [];
     rows.forEach(function (row, ordinal) {
@@ -1160,12 +1604,14 @@
     ];
     if (runtime.mode === 'missal') {
       metadata.push(humanLanguage(state.languages.ordinary || 'en') + ' Ordinary');
-      metadata.push(selectedOrdinaryOptionLabel(state, runtime.ordinary));
+      metadata.push(selectedOrdinaryOptionLabel(
+        state, runtime.ordinary, rows.map(function (row) { return row.result; })
+      ));
     }
     commitOutcomePresentation({
       mode: runtime.mode,
-      outcome: 'ready',
-      outcomeClass: 'ready',
+      outcome: hasUnresolved ? 'unresolved' : 'ready',
+      outcomeClass: hasUnresolved ? 'unresolved' : 'ready',
       metadata: metadata.filter(Boolean).join(' · ')
     });
     document.title = multiple
@@ -1216,25 +1662,348 @@
     return node;
   }
 
-  function renderProperEvent(event, proper, index, structure, bible, fragments, state, heading, prefix) {
+  function semanticProperEvents(result) {
+    const held = [];
+    (result && result.events || []).forEach(function (event) {
+      if (event.kind === 'proper') held.push(event);
+      if (event.kind === 'proper-choice') {
+        (event.options || []).forEach(function (option) {
+          (option.events || []).forEach(function (member) { held.push(member); });
+        });
+      }
+    });
+    return held;
+  }
+
+  function renderTranslationWitnessChoice(event, witnessState, prefix, result, locationEvent) {
+    if (!event.selected || event.selected.availability !== 'choice-required') return null;
+    if (!witnessState.choices.length) {
+      const first = semanticProperEvents(result).find(function (row) {
+        return row.selected && row.selected.availability === 'choice-required';
+      });
+      if (first !== event) return null;
+      const explanation = T.el('p', 'composed-note translation-witness-limitation',
+        'No single held translation witness supplies every translated Proper in this ' +
+          'formulary. Choosing one would suppress another held translation.');
+      explanation.dataset.translationWitnessLimitation = event.id;
+      return explanation;
+    }
+    const fieldset = T.el('fieldset', 'ordinary-choice translation-witness-choice');
+    fieldset.dataset.translationWitnessChoice = event.id;
+    fieldset.appendChild(T.el('legend', null,
+      'Choose a translation witness for ' + (event.editionSlotLabel || 'this Proper')));
+    fieldset.appendChild(T.el('p', 'ordinary-choice-note',
+      'This witness will be used only when it faithfully supplies every translated Proper in this formulary.'));
+    const options = T.el('div', 'ordinary-choice-options');
+    witnessState.choices.forEach(function (option) {
+      const label = T.el('label', 'ordinary-choice-option');
+      const input = document.createElement('input');
+      input.type = 'radio';
+      input.name = 'reader-' + (prefix || '').replace(/[^a-z0-9]+/gi, '-') +
+        event.id.replace(/[^a-z0-9]+/gi, '-') + '-translation-witness';
+      input.value = option.id;
+      input.dataset.translationWitness = option.id;
+      input.addEventListener('change', function () {
+        if (!input.checked) return;
+        const target = locationEvent || event;
+        const location = { kind: 'event', id: (prefix || '') + event.id };
+        if (target !== event) location.id = (prefix || '') + target.id;
+        navigate({ 'translation-witness': option.id }, [], {
+          location: location,
+          focus: { kind: 'translation-witness-result', event: location.id }
+        });
+      });
+      label.appendChild(input);
+      label.appendChild(document.createTextNode(option.label));
+      options.appendChild(label);
+    });
+    fieldset.appendChild(options);
+    return fieldset;
+  }
+
+  function renderProperMaterial(event, proper, structure, bible, fragments, state, heading, prefix, result, locationEvent) {
     const section = T.renderProper(proper, bible, fragments, {
       numbering: structure.numbering || null,
       orations: state.languages.orations,
+      translationWitness: state.languages.translationWitness || null,
       heading: heading,
       cycle: event.selected && event.selected.cycle || null
     });
+    const choice = renderTranslationWitnessChoice(
+      event, resolvableTranslationWitnessState(result, structure, state), prefix, result,
+      locationEvent || event
+    );
+    if (choice) section.appendChild(choice);
+    return section;
+  }
+
+  function typedUnplacedSeat(event) {
+    const seat = event && event.seat;
+    return event && event.kind === 'proper' && seat &&
+      seat.placement === 'unseated' && /^unplaced\//.test(seat.id || '') &&
+      ['before-frame', 'after-frame'].indexOf(seat.region) >= 0 &&
+      typeof seat.basis === 'string' && Boolean(seat.basis.trim());
+  }
+
+  function decorateUnplacedProper(section, event) {
+    if (!typedUnplacedSeat(event)) return section;
+    const region = event.seat.region;
+    section.classList.add('proper-unplaced', 'proper-unplaced-' + region);
+    section.dataset.unplacedRegion = region;
+    section.dataset.unplacedBasis = event.seat.basis;
+    const position = region === 'before-frame' ? 'before' : 'after';
+    const note = T.el('p', 'composed-note proper-unplaced-note',
+      'Exceptional source placement: the source assigns this Proper ' + position +
+      ' the ordinary Mass frame. It remains here in source order; no Ordinary seat is invented.');
+    note.setAttribute('role', 'note');
+    const heading = section.querySelector(':scope > .proper-name');
+    if (heading) heading.after(note);
+    else section.prepend(note);
+    return section;
+  }
+
+  function renderProperEvent(event, proper, index, structure, bible, fragments, state, heading, prefix, result) {
+    const section = renderProperMaterial(
+      event, proper, structure, bible, fragments, state, heading, prefix, result, event
+    );
+    decorateUnplacedProper(section, event);
     return semanticNode(section, event, index, prefix);
+  }
+
+  function validateProperChoiceEvent(event, requireSeat) {
+    if (!event || event.kind !== 'proper-choice' || typeof event.group !== 'string' ||
+        !event.group || typeof event.choiceBasis !== 'string' || !event.choiceBasis.trim() ||
+        !event.selection || !Array.isArray(event.options) ||
+        event.options.length < 2) {
+      throw new Error('a Proper choice needs a stable group, selection, and at least two options');
+    }
+    const selected = event.selection.option;
+    if ((event.selection.state === 'required' && selected !== null) ||
+        (event.selection.state === 'selected' &&
+          (typeof selected !== 'string' || !selected)) ||
+        ['required', 'selected'].indexOf(event.selection.state) < 0) {
+      throw new Error('a Proper choice has an invalid explicit selection state: ' + event.id);
+    }
+    const optionIds = event.options.map(function (option) { return option && option.id; });
+    if (optionIds.some(function (id) { return typeof id !== 'string' || !id; }) ||
+        new Set(optionIds).size !== optionIds.length ||
+        (selected !== null && optionIds.indexOf(selected) < 0)) {
+      throw new Error('a Proper choice has invalid or duplicate option identities: ' + event.id);
+    }
+    const memberIds = [];
+    event.options.forEach(function (option) {
+      if (!Array.isArray(option.events) || !option.events.length ||
+          option.events.some(function (member) {
+            if (!member || member.kind !== 'proper' || typeof member.id !== 'string' || !member.id) {
+              return true;
+            }
+            memberIds.push(member.id);
+            return false;
+          })) {
+        throw new Error('every Proper choice option must retain its source Proper events: ' + event.id);
+      }
+    });
+    if (new Set(memberIds).size !== memberIds.length) {
+      throw new Error('a source Proper occurs in more than one choice option: ' + event.id);
+    }
+    if (requireSeat && (!event.seat || !event.seat.id ||
+        event.seat.placement !== 'seated')) {
+      throw new Error('a Proper choice has no usable semantic seat: ' + event.id);
+    }
+    return selected;
+  }
+
+  function properChoiceLabel(event) {
+    return 'Source Proper choice: ' + T.titleCase(String(event.group).replace(/[-_]+/g, ' '));
+  }
+
+  function renderProperChoiceEvent(event, mass, structure, bible, fragments, state,
+      heading, memberHeading, prefix, result, ordinal, requireSeat) {
+    const selected = validateProperChoiceEvent(event, requireSeat);
+    const wrapper = semanticNode(T.el('section', 'proper-choice'), event, ordinal, prefix);
+    wrapper.dataset.properChoice = event.group;
+    wrapper.dataset.choiceState = event.selection.state;
+    if (selected) wrapper.dataset.choiceSelection = selected;
+    const title = T.el(heading, 'proper-choice-title', properChoiceLabel(event));
+    title.id = wrapper.id + '-title';
+    wrapper.setAttribute('aria-labelledby', title.id);
+    wrapper.appendChild(title);
+    wrapper.appendChild(T.el('p', 'proper-choice-note', selected
+      ? 'The selected source option is shown first. Other source options remain collapsed and are not cumulative.'
+      : 'The source appoints one of these alternatives here. None is selected; the option groups below are not cumulative.'));
+    wrapper.appendChild(T.el('p', 'composed-note proper-choice-basis',
+      'Source basis: ' + event.choiceBasis));
+    const options = T.el('div', 'proper-choice-options');
+    event.options.forEach(function (option) {
+      const isSelected = selected === option.id;
+      const optionName = T.titleCase(String(option.id).replace(/[-_]+/g, ' '));
+      const optionNode = selected && !isSelected
+        ? document.createElement('details') : T.el('section', 'proper-choice-option');
+      optionNode.classList.add('proper-choice-option');
+      optionNode.dataset.properChoiceOption = option.id;
+      optionNode.dataset.choiceStatus = isSelected ? 'selected' :
+        (selected ? 'not-selected' : 'available');
+      if (isSelected) optionNode.setAttribute('aria-current', 'true');
+      const label = (isSelected ? 'Selected option: ' :
+        (selected ? 'Other source option: ' : 'Option: ')) + optionName;
+      if (optionNode.tagName === 'DETAILS') {
+        optionNode.appendChild(T.el('summary', 'proper-choice-option-title', label + ' (not selected)'));
+      } else {
+        optionNode.appendChild(T.el('h' + String(Math.min(Number(memberHeading.slice(1)) - 1, 6)),
+          'proper-choice-option-title', label));
+      }
+      (option.events || []).forEach(function (member) {
+        const index = sourceIndex(member);
+        const proper = index === null ? null : (mass.propers || [])[index];
+        if (!proper || T.isPlaceholder(proper)) {
+          throw new Error('Proper choice member has no production Proper at ' + member.id);
+        }
+        const node = renderProperMaterial(
+          member, proper, structure, bible, fragments, state, memberHeading,
+          prefix, result, event
+        );
+        node.classList.add('proper-choice-member');
+        node.dataset.properChoiceMemberEvent = member.id;
+        optionNode.appendChild(node);
+      });
+      options.appendChild(optionNode);
+    });
+    wrapper.appendChild(options);
+    return wrapper;
+  }
+
+  function nonFullOrdinaryFrameCoverage(result, state) {
+    const scope = 'ordinary-frame:' + state.edition.id;
+    const row = (result.coverage || []).find(function (coverage) {
+      return coverage && coverage.scope === scope;
+    });
+    const reasons = row && row.reasons || [];
+    const reason = reasons.find(function (candidate) {
+      return candidate && ['none', 'unavailable'].indexOf(candidate.applicability) >= 0 &&
+        typeof candidate.basis === 'string' && candidate.basis.trim();
+    });
+    if (!row || !reason ||
+        (reason.applicability === 'none' && row.state !== 'absent') ||
+        (reason.applicability === 'unavailable' && row.state !== 'unavailable')) {
+      throw new Error('Missal mode has no Ordinary events and no exact non-full frame coverage');
+    }
+    return { row: row, reason: reason };
+  }
+
+  function renderUnframedMissalDocument(fragment, contents, result, mass, structure,
+      bible, fragments, state, prefix, branchLocus) {
+    const coverage = nonFullOrdinaryFrameCoverage(result, state);
+    if ((result.events || []).some(function (event) {
+      return ['proper', 'proper-choice'].indexOf(event.kind) < 0;
+    })) {
+      throw new Error('a non-full Ordinary frame contains an unsupported semantic event');
+    }
+    const limitation = T.el('section', 'missal-frame-limitation candidate-limitation');
+    const heading = coverage.reason.applicability === 'none'
+      ? 'This source rite has no ordinary Mass frame'
+      : 'The Ordinary frame is unavailable for this source rite';
+    limitation.appendChild(T.el('h2', null, heading));
+    limitation.appendChild(T.el('p', null,
+      'The appointed Propers remain below in source order. The reader has not invented ' +
+      'Ordinary seats or substituted the standard frame.'));
+    limitation.appendChild(T.el('p', 'composed-note missal-frame-basis',
+      'Source basis: ' + coverage.reason.basis));
+    fragment.appendChild(limitation);
+
+    const properIds = [];
+    (result.events || []).forEach(function (event, eventOrdinal) {
+      if (event.kind === 'proper-choice') {
+        const choice = renderProperChoiceEvent(
+          event, mass, structure, bible, fragments, state,
+          'h2', 'h4', prefix, result, eventOrdinal, false
+        );
+        exposeReaderLocus(choice,
+          branchLocus ? branchLocus + ' · Unframed source rite' : 'Unframed source rite',
+          properChoiceLabel(event));
+        fragment.appendChild(choice);
+        contents.push({
+          id: prefix + event.id,
+          label: properChoiceLabel(event),
+          element: choice,
+          group: 'Proper choices'
+        });
+        (event.options || []).forEach(function (option) {
+          (option.events || []).forEach(function (member) { properIds.push(member.id); });
+        });
+        return;
+      }
+      const index = sourceIndex(event);
+      const proper = index === null ? null : (mass.propers || [])[index];
+      if (!proper || T.isPlaceholder(proper)) {
+        throw new Error('semantic Proper event has no production Proper at ' + event.id);
+      }
+      if (event.seat && event.seat.placement === 'unseated' && !typedUnplacedSeat(event)) {
+        throw new Error('a source Proper has an invalid unseated disposition: ' + event.id);
+      }
+      const node = exposeReaderLocus(
+        renderProperEvent(
+          event, proper, eventOrdinal, structure, bible, fragments,
+          state, 'h2', prefix, result
+        ),
+        branchLocus ? branchLocus + ' · Unframed source rite' : 'Unframed source rite',
+        event.editionSlotLabel || proper.name || 'Proper'
+      );
+      fragment.appendChild(node);
+      contents.push({
+        id: prefix + event.id,
+        label: event.editionSlotLabel || proper.name || 'Proper',
+        element: node,
+        group: typedUnplacedSeat(event)
+          ? 'Exceptional source-order propers' : 'Appointed propers'
+      });
+      properIds.push(event.id);
+    });
+    if (new Set(properIds).size !== properIds.length) {
+      throw new Error('the production semantic stream duplicated an appointed Proper');
+    }
+  }
+
+  function assertMissalProperPlacements(events) {
+    let enteredFrame = false;
+    let leftFrame = false;
+    (events || []).forEach(function (event) {
+      if (event.kind === 'ordinary-section' || event.kind === 'ordinary-element') {
+        if (leftFrame) {
+          throw new Error('an Ordinary event follows an after-frame Proper');
+        }
+        enteredFrame = true;
+        return;
+      }
+      if (event.kind === 'proper-choice') {
+        if (leftFrame) throw new Error('a seated Proper choice follows the Ordinary frame');
+        validateProperChoiceEvent(event, true);
+        return;
+      }
+      if (event.kind !== 'proper') return;
+      if (event.seat && event.seat.id && event.seat.placement === 'seated') {
+        if (leftFrame) throw new Error('a seated Proper follows the Ordinary frame');
+        return;
+      }
+      if (!typedUnplacedSeat(event)) {
+        throw new Error('appointed Proper has no usable semantic seat: ' +
+          (event.editionSlotLabel || event.id));
+      }
+      if (event.seat.region === 'before-frame') {
+        if (enteredFrame || leftFrame) {
+          throw new Error('a before-frame Proper does not precede the Ordinary frame: ' + event.id);
+        }
+      } else {
+        if (!enteredFrame) {
+          throw new Error('an after-frame Proper precedes the Ordinary frame: ' + event.id);
+        }
+        leftFrame = true;
+      }
+    });
   }
 
   function renderMissalDocument(fragment, contents, result, mass, structure, bible, fragments, state, ordinary, prefix, branchLocus) {
     if (!ordinary) throw new Error('the selected edition has no production Ordinary to render');
-    const unseated = (result.events || []).filter(function (event) {
-      return event.kind === 'proper' && (!event.seat || !event.seat.id || event.seat.placement !== 'seated');
-    });
-    if (unseated.length) {
-      throw new Error('appointed Proper has no usable semantic seat: ' +
-        unseated.map(function (event) { return event.editionSlotLabel || event.id; }).join(', '));
-    }
+    assertMissalProperPlacements(result.events || []);
     window.dayReaderDebug.ordinaryPresentations += 1;
 
     OrdinaryRenderer.configure({
@@ -1243,21 +2012,39 @@
       why: false
     });
 
+    const groups = ordinaryVariantGroups(ordinary);
     const sections = new Map();
     const elements = new Map();
+    const groupSections = new Map();
     (ordinary.sections || []).forEach(function (section) {
       sections.set(section.key, section);
-      (section.elements || []).forEach(function (element) { elements.set(element.key, element); });
+      (section.elements || []).forEach(function (element) {
+        elements.set(element.key, element);
+        groups.forEach(function (group) {
+          const owns = (element.alternatives || []).some(function (alternative) {
+            return alternative.group === group.group;
+          }) || (group.options || []).some(function (option) {
+            return option.id === element.variant;
+          });
+          if (owns && !groupSections.has(group.group)) {
+            groupSections.set(group.group, section.key);
+          }
+        });
+      });
     });
-    let optionListed = false;
-    const group = window.OrdinarySeating.variantGroupOf(ordinary);
-    const wantedOption = group && state.options && state.options.legitimate &&
-      state.options.legitimate[group.group];
-    const selectedOption = group && window.OrdinarySeating.chosenOption(group, wantedOption);
-    if (group && !selectedOption) {
-      throw new Error('the production Ordinary leaves ' + group.name + ' unresolved');
-    }
-
+    const selected = ordinarySelectionMap(state, ordinary);
+    const selectedOptions = new Map();
+    groups.forEach(function (group) {
+      const selectedOption = (group.options || []).find(function (option) {
+        return option.id === selected[group.group];
+      });
+      if (!selectedOption) {
+        throw new Error('the production Ordinary leaves ' + group.name + ' unresolved');
+      }
+      selectedOptions.set(group.group, selectedOption);
+    });
+    const listedGroups = new Set();
+    const sectionNodes = new Map();
     const ordinals = new Map((result.events || []).map(function (event, ordinal) {
       return [event.id, ordinal];
     }));
@@ -1265,7 +2052,11 @@
     function namedDivision(name) {
       return branchLocus ? branchLocus + ' · ' + name : name;
     }
-    const frame = OrdinaryRenderer.renderSemanticFrame(result.events, {
+    const frameEvents = (result.events || []).map(function (event) {
+      return event.kind === 'proper-choice'
+        ? Object.assign({}, event, { kind: 'proper', properChoiceEvent: event }) : event;
+    });
+    const frame = OrdinaryRenderer.renderSemanticFrame(frameEvents, {
       section: function (event) {
         const ordinal = ordinals.get(event.id);
         const raw = sections.get(event.id.replace(/^ordinary-section\//, ''));
@@ -1275,6 +2066,7 @@
           semanticNode(T.el('h2', 'mass-subheading ordinary-division', raw.name), event, ordinal, prefix),
           namedDivision(raw.name), null
         );
+        sectionNodes.set(raw.key, node);
         contents.push({ id: prefix + event.id, label: raw.name, element: node, group: 'Rites and divisions' });
         return node;
       },
@@ -1292,24 +2084,57 @@
           namedDivision(currentDivision || ordinary.title || 'Order of Mass'),
           raw.name || null
         );
-        if (!optionListed && group && raw.variant) {
-          optionListed = true;
-          const choice = renderOrdinaryChoice(group, selectedOption, event, prefix);
-          contents.push({
-            id: prefix + event.id,
-            label: selectedOrdinaryOptionLabel(state, ordinary),
-            element: node,
-            group: 'Options'
+        const localGroups = groups.filter(function (group) {
+          return !listedGroups.has(group.group) && (
+            (raw.alternatives || []).some(function (alternative) {
+              return alternative.group === group.group;
+            }) || (group.options || []).some(function (option) {
+              return option.id === raw.variant;
+            })
+          );
+        });
+        if (localGroups.length) {
+          const block = document.createDocumentFragment();
+          localGroups.forEach(function (group) {
+            const option = selectedOptions.get(group.group);
+            const choice = renderOrdinaryChoice(
+              group, option, prefix, ordinary, state, structure,
+              groupSections.get(group.group)
+            );
+            listedGroups.add(group.group);
+            block.appendChild(choice);
+            contents.push({
+              id: prefix + 'ordinary-option/' + group.group,
+              label: group.name + ': ' + option.name,
+              element: choice,
+              group: 'Options'
+            });
           });
-          const pair = document.createDocumentFragment();
-          pair.appendChild(choice);
-          pair.appendChild(node);
-          return pair;
+          block.appendChild(node);
+          return block;
         }
         return node;
       },
       proper: function (event) {
         const ordinal = ordinals.get(event.id);
+        if (event.properChoiceEvent) {
+          const choiceEvent = event.properChoiceEvent;
+          const node = exposeReaderLocus(
+            renderProperChoiceEvent(
+              choiceEvent, mass, structure, bible, fragments, state,
+              'h3', 'h5', prefix, result, ordinal, true
+            ),
+            namedDivision(currentDivision || ordinary.title || 'Order of Mass'),
+            properChoiceLabel(choiceEvent)
+          );
+          contents.push({
+            id: prefix + choiceEvent.id,
+            label: properChoiceLabel(choiceEvent),
+            element: node,
+            group: 'Proper choices'
+          });
+          return node;
+        }
         const index = sourceIndex(event);
         const proper = index === null ? null : (mass.propers || [])[index];
         if (!proper || T.isPlaceholder(proper)) {
@@ -1317,24 +2142,47 @@
         }
         const anchor = event.seat && event.seat.anchor || '';
         const seatedSection = sections.get(anchor.split('/')[0]);
+        const unplaced = typedUnplacedSeat(event);
+        const unplacedDivision = unplaced && event.seat.region === 'before-frame'
+          ? 'Before the Ordinary frame' : (unplaced ? 'After the Ordinary frame' : null);
         const node = exposeReaderLocus(
-          renderProperEvent(event, proper, ordinal, structure, bible, fragments, state, 'h3', prefix),
-          namedDivision(seatedSection && seatedSection.name || currentDivision || 'Appointed propers'),
+          renderProperEvent(event, proper, ordinal, structure, bible, fragments, state, 'h3', prefix, result),
+          namedDivision(unplacedDivision || seatedSection && seatedSection.name ||
+            currentDivision || 'Appointed propers'),
           event.editionSlotLabel || proper.name || 'Proper'
         );
         contents.push({
           id: prefix + event.id,
           label: event.editionSlotLabel || proper.name || 'Proper',
           element: node,
-          group: 'Appointed propers'
+          group: unplaced ? 'Exceptional source-order propers' : 'Appointed propers'
         });
         return node;
       }
     });
 
-    const properIds = (result.events || []).filter(function (event) {
-      return event.kind === 'proper';
-    }).map(function (event) { return event.id; });
+    const tails = new Map();
+    groups.filter(function (group) {
+      return !listedGroups.has(group.group);
+    }).forEach(function (group) {
+      const sectionKey = groupSections.get(group.group);
+      const anchor = tails.get(sectionKey) || sectionNodes.get(sectionKey);
+      if (!anchor) throw new Error('Ordinary option has no rendered division: ' + group.group);
+      const option = selectedOptions.get(group.group);
+      const choice = renderOrdinaryChoice(
+        group, option, prefix, ordinary, state, structure, sectionKey
+      );
+      anchor.after(choice);
+      tails.set(sectionKey, choice);
+      contents.push({
+        id: prefix + 'ordinary-option/' + group.group,
+        label: group.name + ': ' + option.name,
+        element: choice,
+        group: 'Options'
+      });
+    });
+
+    const properIds = semanticProperEvents(result).map(function (event) { return event.id; });
     if (new Set(properIds).size !== properIds.length) {
       throw new Error('the production semantic stream duplicated an appointed Proper');
     }
@@ -1342,26 +2190,69 @@
     fragment.appendChild(OrdinaryRenderer.ordinaryPreamble(ordinary));
   }
 
-  function renderOrdinaryChoice(group, selected, event, prefix) {
+  function renderOrdinaryChoice(group, selected, prefix, ordinary, state, structure, sectionKey) {
     const fieldset = T.el('fieldset', 'ordinary-choice');
+    fieldset.tabIndex = -1;
     fieldset.dataset.optionGroup = group.group;
     fieldset.dataset.optionBranch = prefix || '';
     fieldset.appendChild(T.el('legend', null, group.name));
     fieldset.appendChild(T.el('p', 'ordinary-choice-note',
       'This source-defined choice belongs here in the liturgical sequence.'));
     const options = T.el('div', 'ordinary-choice-options');
+    let selectedApplicability = null;
     (group.options || []).forEach(function (option) {
+      const semanticKeys = [];
+      (ordinary.sections || []).forEach(function (section) {
+        (section.elements || []).forEach(function (element) {
+          const owns = (element.alternatives || []).some(function (alternative) {
+            return alternative.group === group.group && alternative.option === option.id;
+          });
+          if (owns || element.variant === option.id) semanticKeys.push(element.key);
+        });
+      });
+      if (!semanticKeys.length) {
+        throw new Error('Ordinary option has no semantic element: ' + option.id);
+      }
+      let target = null;
+      let applicability = null;
+      try {
+        const legitimate = Object.assign(
+          {}, state.options && state.options.legitimate || {}, { [group.group]: option.id }
+        );
+        const candidateState = Object.assign({}, state, {
+          options: Object.assign({}, state.options || {}, { legitimate: legitimate })
+        });
+        const candidate = Adapters.adaptDay({
+          request: candidateState, derived: runtime.derived,
+          structure: structure, ordinary: ordinary
+        });
+        const events = candidate.events || [];
+        target = events.find(function (row) {
+          return row.kind === 'ordinary-element' && semanticKeys.indexOf(
+            row.id.replace(/^ordinary-element\//, '')) >= 0;
+        }) || events.find(function (row) {
+          return row.id === 'ordinary-section/' + sectionKey;
+        }) || null;
+        if ((candidate.ordinaryUnresolved || []).some(function (row) {
+          return semanticKeys.indexOf(row.element) >= 0;
+        })) applicability = 'unresolved';
+        else if (!target || target.kind !== 'ordinary-element') applicability = 'inapplicable';
+      } catch (_error) {
+        applicability = 'unresolved';
+      }
       const label = T.el('label', 'ordinary-choice-option');
       const input = document.createElement('input');
       input.type = 'radio';
       input.name = 'reader-' + (prefix || '').replace(/[^a-z0-9]+/gi, '-') + group.group;
       input.value = option.id;
       input.checked = Boolean(selected && selected.id === option.id);
+      input.disabled = applicability === 'inapplicable';
+      input.dataset.optionApplicability = applicability || 'applicable';
+      if (input.checked) selectedApplicability = applicability;
       input.addEventListener('change', function () {
         if (!input.checked) return;
-        const location = { kind: 'event', id: (prefix || '') + event.id };
-        navigate({ ordinary: '1', [group.group]: option.id }, [], {
-          location: location,
+        navigate({ mode: 'missal', [group.group]: option.id }, ['ordinary'], {
+          location: target ? { kind: 'event', id: (prefix || '') + target.id } : null,
           focus: {
             kind: 'ordinary-option', group: group.group, option: option.id,
             branch: prefix || ''
@@ -1369,10 +2260,19 @@
         });
       });
       label.appendChild(input);
-      label.appendChild(document.createTextNode(option.name));
+      label.appendChild(document.createTextNode(option.name + (
+        applicability === 'unresolved' ? ' — applicability unresolved' :
+          applicability === 'inapplicable' ? ' — not appointed here' : ''
+      )));
       options.appendChild(label);
     });
     fieldset.appendChild(options);
+    if (selectedApplicability === 'unresolved') {
+      const notice = T.el('p', 'ordinary-choice-note',
+        'This selected option has unresolved applicability here, so its text is not shown.');
+      notice.dataset.ordinaryApplicability = 'unresolved';
+      fieldset.appendChild(notice);
+    }
     return fieldset;
   }
 
@@ -1432,7 +2332,9 @@
         renderFailure(preliminary.errors, { mode: requestedMode });
         return;
       }
-      const variantErrors = await validateExplicitVariants(parsed, manifests, preliminary.missal);
+      const variantErrors = await validateExplicitVariants(
+        parsed, manifests, preliminary.missal
+      );
       if (serial !== runtime.serial) return;
       if (variantErrors.length) {
         renderFailure(variantErrors, { mode: requestedMode });
@@ -1444,35 +2346,61 @@
       const normalized = Contract.normalizeLegacy(parsed, {
         context: assembled.context,
         remembered: {},
-        defaults: {
+        defaults: Object.assign({
           date: preliminary.date,
           missal: preliminary.missal,
-          bible: runtime.bibles[0].id,
+          bible: Contract.defaultBibleId(runtime.bibles),
           orations: T.SOURCE_LANGUAGE
-        }
+        }, requestedMode === 'missal' ||
+          (requestedMode === 'study' && parsed.recognized.ordinary === '1')
+          ? { 'ordinary-lang': 'en' } : {})
       });
       if (!normalized.ok) {
         renderFailure(normalized.errors, { mode: requestedMode });
         return;
       }
-      normalized.state.requestedMode = normalized.state.options.ordinary ? 'missal' : 'read';
       const validation = Contract.validateReaderState(normalized.state);
       if (!validation.ok) {
         renderFailure(validation.errors, { mode: requestedMode });
+        return;
+      }
+      const witnessErrors = validateExplicitTranslationWitness(
+        normalized.state, assembled.derived, assembled.structure
+      );
+      if (witnessErrors.length) {
+        renderFailure(witnessErrors, { mode: requestedMode });
+        return;
+      }
+      const locationErrors = validateExplicitSemanticLocation(
+        normalized.state, assembled.derived, assembled.structure, assembled.ordinary
+      );
+      if (locationErrors.length) {
+        renderFailure(locationErrors, { mode: requestedMode });
         return;
       }
       runtime.normalized = normalized;
       runtime.derived = assembled.derived;
       runtime.rubrics = assembled.rubrics;
       runtime.structure = assembled.structure;
-      runtime.ordinary = normalized.state.options.ordinary ? assembled.ordinary : null;
-      runtime.mode = normalized.state.options.ordinary ? 'missal' : 'read';
+      runtime.mode = normalized.state.requestedMode;
+      runtime.ordinary = runtime.mode === 'missal' ? assembled.ordinary : null;
       runtime.branch = assembled.derived.options.length === 1 ? assembled.derived.options[0] : null;
       runtime.branches = [];
       runtime.deferred = deferredState(parsed);
       window.dayReaderDebug.state = normalized.state;
       window.dayReaderDebug.deferred = runtime.deferred.slice();
       window.dayReaderDebug.legacy = normalized.legacy;
+      if (!pendingNavigation.location && normalized.state.semanticLocation) {
+        pendingNavigation.location = {
+          kind: 'event', id: normalized.state.semanticLocation.eventId
+        };
+      }
+      const canonicalPath = Contract.canonicalRoute('day', window.location.pathname);
+      const canonicalHash = Contract.serializeLegacy(normalized);
+      if (window.location.pathname !== canonicalPath || window.location.hash !== canonicalHash) {
+        history.replaceState(history.state, '',
+          canonicalPath + window.location.search + canonicalHash);
+      }
 
       if (runtime.deferred.length) {
         commitOutcomePresentation({
@@ -1509,6 +2437,14 @@
               structure: assembled.structure,
               ordinary: runtime.ordinary
             });
+            if (primaryDayChoice(result, branch)) {
+              const row = {
+                branch: branch, result: result, prefix: prefix, state: branchState,
+                unresolved: true
+              };
+              rendered.push(row);
+              continue;
+            }
             if (!result.resolved) {
               throw new Error('the production result leaves its formulary unresolved');
             }
@@ -1547,6 +2483,33 @@
       if (!rendered.length || serial !== runtime.serial) return;
       if (branchFailures === rendered.length) {
         throw branchErrors[0];
+      }
+      const unresolved = rendered.filter(function (row) { return row.unresolved; });
+      if (unresolved.length) {
+        if (rendered.length === 1 && !branchFailures) {
+          runtime.branches = [{
+            branch: unresolved[0].branch,
+            result: unresolved[0].result,
+            prefix: unresolved[0].prefix
+          }];
+          runtime.branch = unresolved[0].branch;
+          runtime.result = unresolved[0].result;
+          commitUnresolvedChoice(
+            unresolved[0].result, unresolved[0].branch, assembled, normalized.state
+          );
+          populateDateSurface();
+          window.dayReaderDebug.semantic = semanticProjection(unresolved[0].result);
+          restorePendingNavigation(pendingNavigation);
+          if (modeStartedAt !== null) {
+            window.dayReaderDebug.lastModeSwitchMs = performance.now() - modeStartedAt;
+          }
+          return;
+        }
+        unresolved.forEach(function (row) {
+          Object.assign(row, unresolvedBranchDocument(
+            row.result, row.branch, assembled.structure, row.prefix
+          ));
+        });
       }
       runtime.branches = rendered.map(function (row) {
         return { branch: row.branch, result: row.result, prefix: row.prefix };
@@ -1619,8 +2582,15 @@
   function navigate(updates, removals) {
     const navigation = arguments.length > 2 && arguments[2] || {};
     const currentLocation = readerShell.captureSemanticLocation();
-    history.replaceState({ dayReaderLocation: currentLocation }, '', window.location.href);
-    if (navigation.location) runtime.pendingLocation = navigation.location;
+    history.replaceState(
+      Object.assign({}, history.state || {}, { dayReaderLocation: currentLocation }),
+      '', window.location.href
+    );
+    if (Object.prototype.hasOwnProperty.call(navigation, 'location')) {
+      runtime.pendingLocation = navigation.location;
+      updates.location = navigation.location && navigation.location.kind === 'event'
+        ? navigation.location.id : null;
+    }
     runtime.pendingModeFocus = navigation.modeFocus === true;
     runtime.pendingFocus = navigation.focus || null;
     window.dayReaderDebug.pendingNavigation = {
@@ -1628,9 +2598,12 @@
       modeFocus: runtime.pendingModeFocus,
       focus: runtime.pendingFocus
     };
-    const hash = hashWith(updates, removals);
-    history.pushState({ dayReaderLocation: runtime.pendingLocation }, '',
-      window.location.pathname + window.location.search + hash);
+    const hash = hashWith(updates, (removals || []).concat(['ordinary']));
+    const route = Contract.canonicalRoute('day', window.location.pathname);
+    history.pushState(Object.assign({}, history.state || {}, {
+      dayReaderLocation: runtime.pendingLocation
+    }), '',
+      route + window.location.search + hash);
     renderCandidate();
   }
 
@@ -1643,7 +2616,7 @@
       prefix = territorial[0];
       eventId = eventId.slice(prefix.length);
     }
-    if (/^proper\//.test(eventId)) return location;
+    if (/^(?:proper|proper-choice)\//.test(eventId)) return location;
     let rows = events || [];
     if (prefix) {
       const held = runtime.branches.find(function (row) { return row.prefix === prefix; });
@@ -1697,6 +2670,14 @@
       optionTarget.focus({ preventScroll: true });
       const optionGroup = optionTarget.closest('[data-option-group]');
       (optionGroup || optionTarget).scrollIntoView({ block: 'start', behavior: 'auto' });
+    } else if (held.focus && held.focus.kind === 'day-choice-result') {
+      const target = reading.querySelector('[data-semantic-event-id]');
+      if (target) target.focus({ preventScroll: true });
+    } else if (held.focus && held.focus.kind === 'translation-witness-result') {
+      const target = Array.from(reading.querySelectorAll('[data-semantic-location]')).find(
+        function (node) { return node.dataset.semanticLocation === held.focus.event; }
+      );
+      if (target) target.focus({ preventScroll: true });
     } else if (held.modeFocus) {
       modeAction.focus({ preventScroll: true });
     }
@@ -1705,37 +2686,49 @@
   dateForm.addEventListener('submit', function (event) {
     event.preventDefault();
     const previous = runtime.normalized && runtime.normalized.state;
+    const nextFormulary = formularyField.hidden ? null : formularySelect.value;
     const changedDay = !previous || previous.civilDate !== dateInput.value ||
       previous.edition.id !== missalSelect.value;
+    const previousFormulary = previous && previous.selectedReadableFormulary
+      ? previous.selectedReadableFormulary.id : null;
+    const changedFormulary = previousFormulary !== nextFormulary;
+    const changedOrations = !previous || previous.languages.orations !== orationsSelect.value;
     const updates = {
       date: dateInput.value,
       missal: missalSelect.value,
       bible: bibleSelect.value,
       orations: orationsSelect.value,
-      mass: formularyField.hidden ? null : formularySelect.value
+      mass: nextFormulary
     };
     if (!ordinaryLangField.hidden) updates['ordinary-lang'] = ordinaryLangSelect.value;
     if (!ordinaryOptionField.hidden && runtime.ordinary) {
-      const group = window.OrdinarySeating.variantGroupOf(runtime.ordinary);
-      if (group) updates[group.group] = ordinaryOptionSelect.value;
+      const groups = ordinaryVariantGroups(runtime.ordinary);
+      if (groups.length === 1) updates[groups[0].group] = ordinaryOptionSelect.value;
     }
     readerShell.close({ restoreFocus: false });
-    navigate(updates, changedDay ? ['mass'] : []);
+    navigate(updates, changedDay ? ['mass', 'form', 'translation-witness', 'location'] :
+      (changedFormulary ? ['form', 'translation-witness', 'location'] :
+        (changedOrations ? ['translation-witness'] : [])));
   });
 
   document.getElementById('previous-date').addEventListener('click', function () {
     if (!runtime.normalized) return;
     readerShell.close({ restoreFocus: false });
-    navigate({ date: Model.shift(runtime.normalized.state.civilDate, -1), mass: null }, ['mass']);
+    navigate({ date: Model.shift(runtime.normalized.state.civilDate, -1), mass: null,
+      form: null, 'translation-witness': null, location: null },
+      ['mass', 'form', 'translation-witness', 'location']);
   });
   document.getElementById('today-date').addEventListener('click', function () {
     readerShell.close({ restoreFocus: false });
-    navigate({ date: todayISO(), mass: null }, ['mass']);
+    navigate({ date: todayISO(), mass: null, form: null, 'translation-witness': null,
+      location: null }, ['mass', 'form', 'translation-witness', 'location']);
   });
   document.getElementById('next-date').addEventListener('click', function () {
     if (!runtime.normalized) return;
     readerShell.close({ restoreFocus: false });
-    navigate({ date: Model.shift(runtime.normalized.state.civilDate, 1), mass: null }, ['mass']);
+    navigate({ date: Model.shift(runtime.normalized.state.civilDate, 1), mass: null,
+      form: null, 'translation-witness': null, location: null },
+      ['mass', 'form', 'translation-witness', 'location']);
   });
 
   document.querySelector('[data-mode="read"]').addEventListener('click', function () {
@@ -1747,7 +2740,7 @@
     readerShell.close({ restoreFocus: false, restoreScroll: false });
     window.dayReaderDebug.modeSwitches += 1;
     runtime.modeStartedAt = performance.now();
-    navigate({ ordinary: '0' }, [], { location: location, modeFocus: true });
+    navigate({ mode: 'read' }, ['ordinary'], { location: location, modeFocus: true });
   });
   document.querySelector('[data-mode="missal"]').addEventListener('click', function () {
     if (runtime.mode === 'missal') {
@@ -1758,11 +2751,21 @@
     readerShell.close({ restoreFocus: false, restoreScroll: false });
     window.dayReaderDebug.modeSwitches += 1;
     runtime.modeStartedAt = performance.now();
-    navigate({ ordinary: '1' }, [], { location: location, modeFocus: true });
+    navigate({ mode: 'missal' }, ['ordinary'], { location: location, modeFocus: true });
   });
+  let historyRenderTimer = null;
+  function scheduleHistoryRender() {
+    if (historyRenderTimer !== null) return;
+    historyRenderTimer = window.setTimeout(function () {
+      historyRenderTimer = null;
+      renderCandidate();
+    }, 0);
+  }
   window.addEventListener('popstate', function (event) {
-    runtime.pendingLocation = event.state && event.state.dayReaderLocation ||
-      readerShell.captureSemanticLocation();
+    const hasLocation = event.state &&
+      Object.prototype.hasOwnProperty.call(event.state, 'dayReaderLocation');
+    runtime.pendingLocation = hasLocation
+      ? event.state.dayReaderLocation : null;
     runtime.pendingModeFocus = false;
     runtime.pendingFocus = null;
     window.dayReaderDebug.pendingNavigation = {
@@ -1770,11 +2773,11 @@
       modeFocus: false,
       focus: null
     };
-    renderCandidate();
+    scheduleHistoryRender();
   });
   window.addEventListener('hashchange', function () {
     if (!window.dayReaderDebug.ready) return;
-    renderCandidate();
+    scheduleHistoryRender();
   });
 
   T.setInlineNotice(

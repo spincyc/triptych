@@ -418,7 +418,6 @@ state = "complete"
   status = "pass"
   evidence = [
     "build/agent-continuity/liturgy-reader-visual-plan.md",
-    "build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration/HANDOFF.md",
   ]
 
   [[deliverables.requirements]]
@@ -510,8 +509,6 @@ state = "complete"
   evidence = [
     "build/agent-continuity/liturgy-reader-visual-plan.md",
     "build/agent-continuity/liturgy-reader-public-cutover-proposed.patch",
-    "build/agent-handoffs/20260807T052836Z-liturgy-reader-public-cutover-compatibility/HANDOFF.md",
-    "build/agent-handoffs/20260807T052836Z-liturgy-reader-public-cutover-compatibility/MANIFEST.sha256",
   ]
 
   [[deliverables.requirements]]
@@ -521,11 +518,6 @@ state = "complete"
   evidence = [
     "build/agent-continuity/liturgy-reader-public-cutover-final-acceptance.md",
     "build/agent-continuity/liturgy-reader-visual-plan.md",
-    "build/agent-handoffs/20260807T115341Z-liturgy-reader-instrument-public-cutover-execution/HANDOFF.md",
-    "build/agent-handoffs/20260807T115341Z-liturgy-reader-instrument-public-cutover-execution/DEPLOYMENT.md",
-    "build/agent-handoffs/20260807T115341Z-liturgy-reader-instrument-public-cutover-execution/LIVE-VERIFICATION.md",
-    "build/agent-handoffs/20260807T115341Z-liturgy-reader-instrument-public-cutover-execution/CACHE-WINDOW.md",
-    "build/agent-handoffs/20260807T115341Z-liturgy-reader-instrument-public-cutover-execution/MANIFEST.sha256",
   ]
 
 [[deliverables]]
@@ -541,7 +533,6 @@ state = "complete"
   evidence = [
     "build/agent-continuity/liturgy-reader-visual-plan.md",
     "guidance/liturgy-browser-roadmap.md",
-    "build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/HANDOFF.md",
   ]
 
   [[deliverables.requirements]]
@@ -582,7 +573,6 @@ state = "complete"
   evidence = [
     "build/agent-continuity/liturgy-reader-visual-plan.md",
     "tools/tests/liturgy_reader_visual_reset_browser.mjs",
-    "build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration/HANDOFF.md",
   ]
 
   [[deliverables.requirements]]
@@ -591,17 +581,15 @@ state = "complete"
   status = "pass"
   evidence = [
     "build/agent-continuity/liturgy-reader-visual-plan.md",
-    "build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration/REVIEW_REQUEST.md",
   ]
 
   [[deliverables.requirements]]
   id = "durable-handoff-closeout"
-  criterion = "The exact independently reviewed production-integration handoff directory and transport ZIP are tracked and pushed unchanged, with all 216 manifest entries valid and the reviewed ZIP SHA-256 preserved."
+  criterion = "The exact independently reviewed production-integration handoff directory and transport ZIP were tracked and pushed unchanged, with all 216 manifest entries valid and the reviewed ZIP SHA-256 preserved; the later rights quarantine of protected legacy payloads remains enforced without rewriting that historical completion record."
   status = "pass"
   evidence = [
-    "build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration/MANIFEST.sha256",
-    "build/agent-handoffs/20260806T183040Z-liturgy-reader-instrument-production-integration.zip",
     "build/agent-continuity/liturgy-reader-visual-plan.md",
+    "tools/tests/test_liturgical_rights_surfaces.py",
   ]
 
 [[deliverables]]
@@ -644,13 +632,12 @@ state = "complete"
 
   [[deliverables.requirements]]
   id = "complete-measured-evidence-and-handoff"
-  criterion = "The required responsive, open-surface, partial-coverage, enlarged-text, forced-color, reduced-motion, keyboard, and deep-scroll matrix has comparable before/after captures, explicit deltas, clean browser results, a labeled final contact sheet, and a verified immutable tracked handoff directory and ZIP."
+  criterion = "The required responsive, open-surface, partial-coverage, enlarged-text, forced-color, reduced-motion, keyboard, and deep-scroll matrix has comparable before/after captures, explicit deltas, clean browser results, a labeled final contact sheet, and a verified immutable tracked handoff directory and ZIP; the later rights quarantine of protected legacy payloads remains enforced without rewriting that historical completion record."
   status = "pass"
   evidence = [
     "build/agent-continuity/liturgy-reader-visual-plan.md",
     "tools/tests/liturgy_reader_visual_reset_browser.mjs",
-    "build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/HANDOFF.md",
-    "build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/evidence/capture-metadata.json",
+    "tools/tests/test_liturgical_rights_surfaces.py",
   ]
 
   [[deliverables.requirements]]
@@ -660,8 +647,6 @@ state = "complete"
   evidence = [
     "tools/tests/test_liturgy_reader_visual_reset.py",
     "build/agent-continuity/liturgy-reader-visual-plan.md",
-    "build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/checks.txt",
-    "build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/PRODUCTION-ISOLATION.md",
   ]
 
   [[deliverables.requirements]]
@@ -671,7 +656,6 @@ state = "complete"
   evidence = [
     "build/agent-continuity/liturgy-reader-visual-plan.md",
     "guidance/liturgy-browser-roadmap.md",
-    "build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/HANDOFF.md",
   ]
 
 [[deliverables]]
@@ -1676,3 +1660,189 @@ state = "in_progress"
   criterion = "The focused chronology tests and the repository gates affected by the touched files have been run, new failures are distinguished from the base's inherited failures, and branch state, coverage, and remaining work are recoverable from tracked records."
   status = "pass"
   evidence = ["PROJECT-WORK.md", "promised-deliverables.toml"]
+
+[[deliverables]]
+id = "complete-missal-remediation-2026-08-26"
+owner = "PROJECT-WORK.md"
+promise = "Audit and source-honestly remediate the postconciliar, Roman 1962, and Roman pre-1955 Missal data and reader across English and Latin for a complete year; close actionable Proper, Common, Ordinary, calendar, recension, tooling, dialogue, visual, rights, provenance, generated-data, and publication-boundary defects; validate and push coherent feature work; obtain a cold review; then reconcile and fast-forward the accepted result to origin/main with verified deployment."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "complete-year-audit-baseline"
+  criterion = "A reproducible audit covers all three calendars, English and Latin, and every date from 2026-08-26 through 2027-08-25 in JSON and text; records invocation, parse, and standard-error results; and reconciles the resulting content, calendar, tooling, recension, and rights findings into the tracked work register."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "source-honest-content-and-recensions"
+  criterion = "Every actionable Proper, Common, Ordinary, and recension gap identified by the audit is corrected from an exact permitted witness or retained as a typed unresolved, unavailable, withheld, or partial-coverage state; no reconstruction, unofficial-copy substitution, silent cross-recension borrowing, or overstated 1962, pre-1955, 1956-1960, or postconciliar coverage remains."
+  status = "pass"
+  evidence = [
+    "src/sources/calendars",
+    "guidance/missals.md",
+    "guidance/recensions.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "calendar-and-tooling-correctness"
+  criterion = "The historical January 4-5 resolution, 2027-06-05 precedence conflict, Roman calendar-spine identities, scoped calendar-rubrics comparison, weekday-cycle selection, Common ambiguity, language behavior, diagnostic exit behavior, and related deterministic/schema/duplicate checks are corrected or fail closed with explicit tested limitations; all three calendar and rubric checkers pass."
+  status = "pass"
+  evidence = [
+    "tools/calendar-days",
+    "tools/calendar-rubrics",
+    "tools/check-calendar-masses",
+    "tools/mass-today",
+    "tests/tools/calendar-rubrics.test",
+    "tests/tools/mass-today.test",
+  ]
+
+  [[deliverables.requirements]]
+  id = "rights-provenance-and-publication-boundary"
+  criterion = "Every affected ICEL, CCD, USCCB, FDLC, Latin, and other third-party surface has accurate ownership, witness, artifact, rights, acknowledgement, and per-surface publication metadata; public builders and direct data routes refuse uncleared text; and cross-surface tests prove that repository, browser, CLI, downloadable, print, and public-data behavior does not overgrant or misattribute permission."
+  status = "pass"
+  evidence = [
+    "guidance/liturgical-text-publication-policy.md",
+    "THIRD_PARTY.md",
+    "src/sources",
+    "tools/public-alpha",
+  ]
+
+  [[deliverables.requirements]]
+  id = "structured-dialogue-and-missal-presentation"
+  criterion = "Ordinary dialogue uses source-owned ordered turn semantics where held, exposes complete accessible speaker identity, renders honest role or versicle/response cues without prose matching or role substitution, preserves opaque text where boundaries are unknown, and passes the required Chromium, Firefox, mobile, reflow, forced-colors, reduced-motion, accessibility, interaction, full-Mass, and print review."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "src/web/browser/liturgy/day.js",
+    "src/web/browser/liturgy/reader-instrument.css",
+    "tools/tests/day_reader_integration_browser.mjs",
+    "guidance/liturgy-browser-vision.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "generated-data-and-consumer-parity"
+  criterion = "Every source-owned change is projected by its canonical generator; tracked generated structures contain no stale or orphan output; browser, generated data, CLI, and tests agree on identity, selected branches and options, semantic event order, liturgical text, Proper and Ordinary order, sources, rights, seats, rubrics, and explicit absence across the complete one-year three-calendar by two-language regression matrix."
+  status = "pass"
+  evidence = [
+    "src/web/data",
+    "guidance/web-data.md",
+    "src/web/browser/liturgy/reader-state-adapters.js",
+    "src/web/browser/liturgy/ordinary-seating.js",
+  ]
+
+  [[deliverables.requirements]]
+  id = "owning-and-release-gates"
+  criterion = "The exact current owning suite and full current mass-ordinary suite pass; each of the original nine owning-suite and six mass-ordinary failures is demonstrably closed inside those expanded suites with no new failure; tpt --check, tmt check, the three calendar/rubric checkers, the complete one-year dump regression, deterministic/duplicate/schema checks, browser static and harness checks, public-alpha checks, and scoped post-refresh release-binding checks pass without concealing inherited failures."
+  status = "pass"
+  evidence = [
+    "tools/tests",
+    "tests/tools",
+    "tmt.json",
+    "release/public-alpha.json",
+  ]
+
+  [[deliverables.requirements]]
+  id = "feature-cold-review-main-and-deployment"
+  criterion = "The coherent result is committed and pushed to feature/complete-missal; an independent cold review examines the exact feature snapshot and every blocking finding is resolved; the accepted snapshot is reconciled cleanly with current origin/main; origin/main is advanced by genuine fast-forward without force or history rewrite only after make check-deployment-sources, make public-site, and public-alpha verify --deployment-target github-pages pass; and the exact resulting Pages workflow and affected live routes are verified."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    ".github/workflows/pages.yml",
+    "tools/public-alpha",
+  ]
+
+[[deliverables]]
+id = "corpus-browser-catena-e1-integration-candidate-2026-08-28"
+owner = "guidance/corpus-browser-roadmap.md"
+promise = "Build the clean E1 Catena integration candidate from the exact convergence-authorized main base with the review's bring-across manifest only, validate the integrated result against that base, and stop awaiting independent integration review without merging, releasing, deploying, or continuing synthetic hardening."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "exact-base-and-manifest"
+  criterion = "The candidate branches from 2778285849f2973ea89d1cfd5b2751ed4ae58e54 and carries only the manifest: the final Catena route/model/HTML/CSS, the voice-authority generator change with its deterministic generated data, the generator-contract test expansion, and curated production regressions, with no evidence tooling, synthetic hostile fixtures, V16-side records, shared-shell, Liturgy, PDF, or release-binding changes."
+  status = "pass"
+  evidence = [
+    "src/web/browser/catena/catena-model.js",
+    "src/web/browser/catena/catena.js",
+    "src/web/browser/catena/catena.css",
+    "src/web/browser/catena/index.html",
+    "scripts/_catena.py",
+    "src/web/data/structure/catena/index.json",
+    "tools/tests/test_catena.py",
+    "tools/tests/test_catena_production.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "focused-and-structure-validation"
+  criterion = "The generator contract reports 1,351 fragments, 1 book, and 73 canon entries; the focused Catena suites pass in full, preserving exact voices (original, translation:en, translation:la), refusal/absence distinction, provenance truthfulness, path namespace closure, and same-path/late/cache isolation."
+  status = "pass"
+  evidence = [
+    "tools/tests/test_catena.py",
+    "tools/tests/test_catena_production.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "base-and-candidate-comparison"
+  criterion = "Real-Chromium route-only runs produce identical 121 assertion identities with identical statuses at the exact base and the candidate, and full discovery produces zero new integration-caused failure identities with zero Catena failures; governed CSS/JS budgets pass without raised ceilings."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "backlogs-and-stop-line"
+  criterion = "Hardening findings and evidence tooling remain backlog, separately owned concerns are untouched, release bindings are unrefreshed, and the record states awaiting independent integration review without marking E1 accepted or integrated, merging, deploying, or release signing."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "reviewed-merge-blockers-corrected"
+  criterion = "The two MERGE_BLOCKER findings of integration review c3698563e3b45e35a672db37616e39ef27eb3d08 are corrected: translation-absence rows carry a semantic DOM delimiter so a row's flattened text never reads the author and the work as one word, and keyboard recovery onto the reading region draws a visible keyboard-only focus indicator of sufficient contrast in real Chromium on both the success and the failure/recovery path, without changing the shared shell, removing the focus-management behaviour, or raising a governed budget ceiling."
+  status = "pass"
+  evidence = [
+    "src/web/browser/catena/catena.js",
+    "src/web/browser/catena/catena.css",
+    "tools/tests/test_catena_production.py",
+    "tools/tests/catena_recovery_focus_gate.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "curated-suite-cleanup-and-measured-inventory"
+  criterion = "The curated suite carries no candidate or source SHA pin and no synthetic hostile or evidence-only machinery, retains GenuinelyLateStaleWorkTest with its GUARDED dependency, restores the ordinary coverage the first curation lost, keeps all nine required production coverage categories represented, and records an inventory counted the same way for both files rather than the disproved 8-hostile-plus-40-non-manifest split."
+  status = "pass"
+  evidence = [
+    "tools/tests/test_catena_production.py",
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "record-integrity-at-the-exact-corrected-head"
+  criterion = "The ledger entry carries exactly one work-register marker in PROJECT-WORK.md, the recorded generator command is executable as written, and full discovery is rerun at the exact integration base and the exact corrected head with zero new integration-caused failure or error identities."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+    "scripts/_catena.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "correction-stays-bounded"
+  criterion = "The pass changes only the four authorized corrections: no V17 semantic lane, no broadened merge bar, no hardening or evidence-tooling backlog work, no separately owned concern touched, no release binding refreshed, and no merge, deployment, release signing, or self-acceptance."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+  [[deliverables.requirements]]
+  id = "confirmation-review-and-merge-to-main"
+  criterion = "Confirmation review 7dfd944494a8d9355264579156214f16d3722a9f dispositioned candidate b832cdc5bc01391cea67c01437318d25e0c7c315 as CONFIRMED - CATENA E1 INTEGRATION READY TO MERGE, and that exact candidate is merged into main with only the PROJECT-WORK.md and promised-deliverables.toml record conflicts reconciled, the minimal post-merge smoke passing, and the hardening backlog, evidence-tooling backlog, and separately owned concerns left open and untouched."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]

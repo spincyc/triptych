@@ -26,18 +26,17 @@ Both halves are read from the record and neither is inferred from the bytes.
 recorded distribution basis; online availability and successful download are
 insufficient" — so the presence of a file on disk decides nothing, and an
 artifact whose rights are `restricted` or `unresolved` is refused even when its
-bytes are sitting in the tree. That refusal reaches the large majority of the
-corpus — roughly nine passages in ten — which is the honest answer for a body of
-material this much of which is under copyright or has never had its rights
-settled. A reader is owed that proportion plainly rather than a page that looks
-complete.
+bytes are sitting in the tree. `check` prints the current readable and withheld
+counts from the records, rather than freezing a proportion here that will stop
+being true as the corpus changes.
 
 A REFUSAL IS PUBLISHED, NEVER HIDDEN. Every passage the rule withholds is still
-listed, still named by its locus, still carries its editorial context and its
-evidence states, and states in place of the text which of the reasons below
-applies and what the record says about it. A blank where a text would be is
-indistinguishable from a text that is empty; a quiet omission is worse, because
-the reader cannot tell that anything is missing at all.
+listed and named by its locus, still carries its non-prose evidence states and
+controller metadata, and states in place of the text which of the reasons below
+applies. Prose-bearing context, notes and rights-basis language do not cross the
+withholding boundary. A blank where a text would be is indistinguishable from a
+text that is empty; a quiet omission is worse, because the reader cannot tell
+that anything is missing at all.
 
 WHAT COUNTS AS TEXT is narrower than "bytes we may distribute", and the second
 rule is why. Only two things are set as prose:
@@ -509,6 +508,28 @@ def _readable_count(edition: dict) -> int:
     return sum(1 for passage in edition["passages"] if passage["reading"]["readable"])
 
 
+def _edition_rights(edition: dict) -> list[str]:
+    """Every rights state this edition touches, including Segment controllers.
+
+    An edition owns artifacts, but a passage in it may be controlled through a
+    Segment by a container artifact owned by another edition. A rights filter
+    answers about the passage a reader can open, not only the edition-owned
+    sibling artifacts, so both relations belong in its index row.
+    """
+    return sorted(
+        {
+            str(artifact.get("rights_status") or "")
+            for artifact in edition["artifacts"]
+            if artifact.get("rights_status")
+        }
+        | {
+            str(passage["reading"].get("rights") or "")
+            for passage in edition["passages"]
+            if passage["reading"].get("rights")
+        }
+    )
+
+
 def tally(works: Iterable[dict]) -> dict:
     works = list(works)
     editions = [edition for work in works for edition in work["editions"]]
@@ -589,13 +610,11 @@ def selected(library, arguments: argparse.Namespace) -> list[dict]:
                 continue
             if getattr(arguments, "language", None) and edition["language"] != arguments.language:
                 continue
-            if getattr(arguments, "rights", None):
-                held = {
-                    passage["reading"].get("rights")
-                    for passage in edition["passages"]
-                } | {str(one.get("rights_status") or "") for one in edition["artifacts"]}
-                if arguments.rights not in held:
-                    continue
+            if (
+                getattr(arguments, "rights", None)
+                and arguments.rights not in _edition_rights(edition)
+            ):
+                continue
             if getattr(arguments, "readable", False) and not _readable_count(edition):
                 continue
             if find and find not in _haystack(work, edition):
@@ -663,6 +682,7 @@ def facets(works: list[dict]) -> dict:
     categories: dict[str, int] = {}
     languages: dict[str, int] = {}
     rights: dict[str, int] = {}
+    rights_editions: dict[str, int] = {}
     periods: dict[int, int] = {}
     for work in works:
         if work["author"]:
@@ -679,6 +699,8 @@ def facets(works: list[dict]) -> dict:
                 status = str(artifact.get("rights_status") or "")
                 if status:
                     rights[status] = rights.get(status, 0) + 1
+            for status in _edition_rights(edition):
+                rights_editions[status] = rights_editions.get(status, 0) + 1
     return {
         # By name, because a reader looking for Augustine looks under A.
         "authors": [
@@ -695,8 +717,15 @@ def facets(works: list[dict]) -> dict:
             for name, count in sorted(languages.items(), key=lambda row: (-row[1], row[0]))
         ],
         "rights": [
-            {"id": name, "artifacts": count}
-            for name, count in sorted(rights.items(), key=lambda row: (-row[1], row[0]))
+            {
+                "id": name,
+                "artifacts": rights.get(name, 0),
+                "editions": rights_editions.get(name, 0),
+            }
+            for name in sorted(
+                rights.keys() | rights_editions.keys(),
+                key=lambda name: (-rights.get(name, 0), name),
+            )
         ],
         # Chronological, which is the only order a period control may come in.
         "periods": [
@@ -741,19 +770,14 @@ def spine(works: list[dict], counted: dict) -> dict:
                 "editions": [
                     {
                         "id": edition["id"],
+                        "title": edition["title"],
                         "language": edition["language"],
                         "date": edition["date"],
                         "year": edition["year"],
                         "file": edition["file"],
                         "passages": len(edition["passages"]),
                         "readable": _readable_count(edition),
-                        "rights": sorted(
-                            {
-                                str(one.get("rights_status") or "")
-                                for one in edition["artifacts"]
-                                if one.get("rights_status")
-                            }
-                        ),
+                        "rights": _edition_rights(edition),
                     }
                     for edition in work["editions"]
                 ],
@@ -772,6 +796,39 @@ def spine(works: list[dict], counted: dict) -> dict:
     }
 
 
+def _artifact_payload(one: dict, *, edition_owned: bool) -> dict:
+    """Public apparatus facts for an owned artifact or a passage controller.
+
+    A controller reached through a Segment can belong to another edition. The
+    relationship flag keeps that artifact visible without moving it into the
+    current edition's ownership. `one` is either the artifact record itself or
+    the already rights-decided reading projection; the two spell the rights
+    field differently and nothing else is inferred between them.
+    """
+    rights = one.get("rights_status", one.get("rights"))
+    return {
+        "id": one.get("id", one.get("artifact_id")),
+        "artifact_type": one.get("artifact_type"),
+        "media_type": one.get("media_type"),
+        "rights": rights,
+        "rights_jurisdiction": one.get("rights_jurisdiction"),
+        "storage": one.get("storage"),
+        "source_url": one.get("source_url"),
+        "retrieved": one.get("retrieved"),
+        "byte_size": one.get("byte_size"),
+        "page_count": one.get("page_count"),
+        "edition_owned": edition_owned,
+        **(
+            {
+                "rights_basis": one.get("rights_basis"),
+                "notes": one.get("notes"),
+            }
+            if rights in DISTRIBUTABLE_RIGHTS
+            else {}
+        ),
+    }
+
+
 def edition_payload(work: dict, edition: dict) -> dict:
     """One edition in full, with every passage and no words.
 
@@ -786,21 +843,21 @@ def edition_payload(work: dict, edition: dict) -> dict:
             "id": passage.get("id"),
             "locus": passage.get("locus"),
             "states": list(passage.get("states") or ()),
-            "context": passage.get("context"),
-            "notes": passage.get("notes"),
             "verified_on": passage.get("verified_on"),
             "readable": reading["readable"],
             "artifact_id": reading.get("artifact_id"),
             "artifact_type": reading.get("artifact_type"),
             "media_type": reading.get("media_type"),
             "rights": reading.get("rights"),
-            "rights_basis": reading.get("rights_basis"),
             "rights_jurisdiction": reading.get("rights_jurisdiction"),
             "storage": reading.get("storage"),
             "source_url": reading.get("source_url"),
             "segment_id": reading.get("segment_id"),
         }
         if reading["readable"]:
+            row["context"] = passage.get("context")
+            row["notes"] = passage.get("notes")
+            row["rights_basis"] = reading.get("rights_basis")
             row["source"] = reading["source"]
             row["words"] = len(str(reading["text"]).split())
             row["text_path"] = (
@@ -816,6 +873,18 @@ def edition_payload(work: dict, edition: dict) -> dict:
             row["withheld"] = reading["withheld"]
             row["reason"] = reading["reason"]
         passages.append(row)
+
+    artifacts = [
+        _artifact_payload(one, edition_owned=True) for one in edition["artifacts"]
+    ]
+    artifact_ids = {one["id"] for one in artifacts if one.get("id")}
+    for passage in edition["passages"]:
+        reading = passage["reading"]
+        controller = reading.get("artifact_id")
+        if not controller or controller in artifact_ids:
+            continue
+        artifacts.append(_artifact_payload(reading, edition_owned=False))
+        artifact_ids.add(controller)
 
     return {
         "schema": SCHEMA,
@@ -841,26 +910,9 @@ def edition_payload(work: dict, edition: dict) -> dict:
                 "translators",
                 "authority",
                 "jurisdiction",
-                "notes",
             )
         },
-        "artifacts": [
-            {
-                "id": one.get("id"),
-                "artifact_type": one.get("artifact_type"),
-                "media_type": one.get("media_type"),
-                "rights": one.get("rights_status"),
-                "rights_basis": one.get("rights_basis"),
-                "rights_jurisdiction": one.get("rights_jurisdiction"),
-                "storage": one.get("storage"),
-                "source_url": one.get("source_url"),
-                "retrieved": one.get("retrieved"),
-                "byte_size": one.get("byte_size"),
-                "page_count": one.get("page_count"),
-                "notes": one.get("notes"),
-            }
-            for one in edition["artifacts"]
-        ],
+        "artifacts": artifacts,
         "passages": passages,
     }
 
@@ -1037,6 +1089,7 @@ const answer = {
   categories: {},
   languages: {},
   periods: {},
+  rights: {},
   orders: {}
 };
 for (const one of (spine.facets || {}).authors || []) {
@@ -1050,6 +1103,9 @@ for (const one of (spine.facets || {}).languages || []) {
 }
 for (const one of (spine.facets || {}).periods || []) {
   answer.periods[one.id] = count({ period: one.id }).editions;
+}
+for (const one of (spine.facets || {}).rights || []) {
+  answer.rights[one.id] = count({ rights: one.id }).editions;
 }
 // Every ordering must be a permutation of the same set: a sort that dropped or
 // duplicated a work would show a different corpus depending on the control.
@@ -1097,6 +1153,7 @@ def replay_browser_model(built: dict) -> tuple[list[str], str]:
         ("categories", "works"),
         ("languages", "editions"),
         ("periods", "editions"),
+        ("rights", "editions"),
     ):
         for row in built["facets"][kind]:
             chosen = answer[kind].get(row["id"])
@@ -1276,16 +1333,16 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
 EXAMPLES = {
     "check": (
         Example(
-            "tools/tpt source-reader check",
+            "tools/source-reader check",
             (
-                "540 works, 722 editions, 1920 artifacts, 2873 passages; 1635 readable here.",
-                "  passages the rights records withhold: 1238",
+                "543 works, 729 editions, 2087 artifacts, 3306 passages; 1648 readable here.",
+                "  passages the rights records withhold: 1658",
                 "  every one of them listed with its reason: yes",
                 "  the page's own derivation, replayed: src/web/browser/sources/reader-model.js",
             ),
         ),
         Example(
-            "tools/tpt source-reader check --rights licensed",
+            "tools/source-reader check --rights licensed",
             (
                 "... 4 more lines",
             ),
@@ -1294,14 +1351,14 @@ EXAMPLES = {
     ),
     "list": (
         Example(
-            "tools/tpt source-reader list --author 'Augustine of Hippo'",
+            "tools/source-reader list --author 'Augustine of Hippo'",
             (
                 "Augustine of Hippo       Confessiones                           1896       la         0/1  edition.augustine-of-hippo.confessiones.1896-knoll-csel-33",
                 "... 11 more lines",
             ),
         ),
         Example(
-            "tools/tpt source-reader list --language grc --sort date",
+            "tools/source-reader list --language grc --sort date",
             (
                 "... 17 more lines",
             ),
@@ -1310,14 +1367,14 @@ EXAMPLES = {
     ),
     "show": (
         Example(
-            "tools/tpt source-reader show --edition edition.matthew-arnold.dover-beach.macmillan-1867-uva-lic",
+            "tools/source-reader show --edition edition.matthew-arnold.dover-beach.macmillan-1867-uva-lic",
             (
                 "... 12 more lines",
             ),
             "a licensed edition: the acknowledgement its licence requires travels with the text",
         ),
         Example(
-            "tools/tpt source-reader show --edition edition.augustine.de-civitate-dei.dods-1871",
+            "tools/source-reader show --edition edition.augustine.de-civitate-dei.dods-1871",
             (
                 "... 36 more lines",
             ),
@@ -1325,18 +1382,17 @@ EXAMPLES = {
     ),
     "structure": (
         Example(
-            "tools/tpt source-reader structure --out build/example-sources",
+            "tools/source-reader structure --out build/example-sources",
             (
-                "540 works, 722 editions, 1920 artifacts, 2873 passages; 1635 readable here.",
-                "  -> build/example-sources/structure/sources (2358 files)",
+                "543 works, 729 editions, 2087 artifacts, 3306 passages; 1648 readable here.",
+                "  -> build/example-sources/structure/sources (2378 files)",
             ),
             "WRITES. --out here is untracked; the default writes the tracked src/web/data",
         ),
         Example(
-            "tools/tpt source-reader structure --check",
+            "tools/source-reader structure --check",
             (
-                "540 works, 722 editions, 1920 artifacts, 2873 passages; 1635 readable here.",
-                "  src/web/data/structure/sources is current (2358 files)",
+                "source-reader: src/web/data/structure/sources has drifted from the sources at editions/augustine/de-consensu-evangelistarum/2026-english-salmond-npnf1-6-newadvent-web-2026-08-26.json, editions/augustine/enarrationes-in-psalmos/2026-english-npnf-new-advent-web-2026-07-28.json, editions/catholic-encyclopedia/alphabetical-index/2026-newadvent-web-2026-08-27.json (and 17 more); run `source-reader structure` and commit the result",
             ),
             "writes nothing; refuses when the tracked projection has drifted from the records",
         ),

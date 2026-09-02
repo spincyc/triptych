@@ -33,7 +33,7 @@ async function sha256(path) {
 const STATES = Object.freeze({
   romanRead: '#date=2026-08-02&missal=roman-1962&bible=douay-rheims&orations=la&mass=pentecost-10&ordinary=0',
   romanWhy: '#date=2026-08-02&missal=roman-1962&bible=douay-rheims&orations=la&mass=pentecost-10&ordinary=0&why=1',
-  romanWhyNoSlot: '#date=2026-01-15&missal=roman-1962&bible=douay-rheims&orations=la&ordinary=0&why=1',
+  romanWhyCompleteSlots: '#date=2026-01-15&missal=roman-1962&bible=douay-rheims&orations=la&ordinary=0&why=1',
   romanMissal: '#date=2026-08-02&missal=roman-1962&bible=douay-rheims&orations=la&mass=pentecost-10&ordinary=1&ordinary-lang=en&rubrics=1&why=0',
   postRead: '#date=2026-11-29&missal=postconciliar&bible=douay-rheims&orations=la&mass=advent-1&ordinary=0&ordinary-lang=en&eucharistic-prayer=ep-ii',
   postMissal: '#date=2026-11-29&missal=postconciliar&bible=douay-rheims&orations=la&mass=advent-1&ordinary=1&ordinary-lang=en&rubrics=1&eucharistic-prayer=ep-ii',
@@ -217,9 +217,24 @@ async function fresh(cdp, target, entrance, selector = null) {
   await waitFor(cdp, `location.href === 'about:blank'`, 'blank document');
   await cdp.send('Page.navigate', { url: target });
   const ready = entrance === 'day' ? 'window.dayReaderReady === true' : 'window.propersReaderReady === true';
-  await waitFor(cdp,
-    `location.href === ${JSON.stringify(target)} && ${ready} && window.readerVisualResetDebug`,
-    `${entrance} visual-reset readiness`);
+  try {
+    await waitFor(cdp,
+      `${ready} && window.readerVisualResetDebug`,
+      `${entrance} visual-reset readiness`);
+  } catch (error) {
+    const state = await evaluate(cdp, `({
+      href: location.href,
+      ready: ${ready},
+      visualReset: Boolean(window.readerVisualResetDebug),
+      outcome: window.${entrance === 'day' ? 'dayReaderDebug' : 'propersReaderDebug'}?.outcome,
+      errors: window.${entrance === 'day' ? 'dayReaderDebug' : 'propersReaderDebug'}?.error,
+      renders: window.${entrance === 'day' ? 'dayReaderDebug' : 'propersReaderDebug'}?.renders,
+      loads: window.${entrance === 'day' ? 'dayReaderDebug' : 'propersReaderDebug'}?.loads,
+      title: document.title,
+      reading: document.querySelector('#reader-document')?.textContent.slice(0, 160)
+    })`);
+    throw new Error(error.message + ': ' + JSON.stringify(state));
+  }
   return stableFrames(cdp, selector);
 }
 
@@ -229,20 +244,9 @@ async function productionFresh(cdp, target, entrance, selector = null) {
   await cdp.send('Page.navigate', { url: target });
   const ready = entrance === 'day' ? 'window.dayReaderReady === true' : 'window.propersReaderReady === true';
   await waitFor(cdp,
-    `location.href === ${JSON.stringify(target)} && ${ready} && document.querySelector('.reader-instrument')`,
+    `${ready} && document.querySelector('.reader-instrument')`,
     `${entrance} production Instrument readiness`);
   return stableFrames(cdp, selector);
-}
-
-async function genericFresh(cdp, target, readyExpression) {
-  await cdp.send('Page.navigate', { url: 'about:blank' });
-  await waitFor(cdp, `location.href === 'about:blank'`, 'blank baseline document');
-  await cdp.send('Page.navigate', { url: target });
-  const pathname = new URL(target).pathname;
-  await waitFor(cdp,
-    `location.pathname === ${JSON.stringify(pathname)} && document.readyState === 'complete' && (${readyExpression})`,
-    'baseline page readiness');
-  return stableFrames(cdp);
 }
 
 async function click(cdp, selector) {
@@ -437,17 +441,24 @@ async function runAssertions(cdp, base) {
     assert.notEqual(layouts[1].action, layouts[2].action);
   });
 
-  await check('Day Read and Missal retain real production state and event identity', async () => {
-    for (const [state, mode] of [[STATES.romanRead, 'read'], [STATES.romanMissal, 'missal'],
-      [STATES.postRead, 'read'], [STATES.postMissal, 'missal']]) {
+  await check('Day Read and Missal retain source-honest production outcomes and event identity', async () => {
+    const cases = [
+      [STATES.romanRead, 'read', 'ready', []],
+      [STATES.romanMissal, 'missal', 'ready', []],
+      [STATES.postRead, 'read', 'ready', []],
+      [STATES.postMissal, 'missal', 'unresolved', ['ritus-initiales/gloria-in-excelsis']]
+    ];
+    for (const [state, mode, outcome, ordinaryUnresolved] of cases) {
       await fresh(cdp, prototypeUrl(base, 'day', 'instrument', state), 'day');
       const value = await evaluate(cdp, `({ mode: dayReaderDebug.mode,
         events: dayReaderDebug.semantic.events.length,
         properCount: document.querySelectorAll('#reader-document .proper').length,
         ordinaryCount: document.querySelectorAll('#reader-document .ordinary-element').length,
-        outcome: dayReaderDebug.outcome })`);
+        outcome: dayReaderDebug.outcome,
+        ordinaryUnresolved: dayReaderDebug.semantic.ordinaryUnresolved.map(row => row.element) })`);
       assert.equal(value.mode, mode);
-      assert.equal(value.outcome, 'ready');
+      assert.equal(value.outcome, outcome);
+      assert.deepEqual(value.ordinaryUnresolved, ordinaryUnresolved);
       assert.ok(value.events > 5);
       assert.ok(value.properCount > 0);
       if (mode === 'missal') assert.ok(value.ordinaryCount > 10);
@@ -586,7 +597,7 @@ async function runAssertions(cdp, base) {
       uncompiled: document.querySelectorAll('#reader-document > .uncompiled').length,
       held: document.querySelectorAll('#reader-document .composed, #reader-document .passage').length
     })`);
-    assert.match(value.coverage, /not yet transcribed/i);
+    assert.match(value.coverage, /unavailable/i);
     assert.equal(value.uncompiled, 0);
     assert.ok(value.held > 3);
 
@@ -688,6 +699,53 @@ async function runAssertions(cdp, base) {
     await evaluate(cdp, `document.documentElement.style.fontSize = ''`);
   });
 
+  await check('200% Contents headings keep whole words on Day and Propers', async () => {
+    const cases = [
+      ['day', STATES.romanMissal],
+      ['propers', STATES.propers]
+    ];
+    for (const width of [393, 320]) {
+      for (const [entrance, state] of cases) {
+        await viewport(cdp, width, 852);
+        await productionFresh(cdp, productionUrl(base, entrance, state), entrance);
+        await evaluate(cdp, `document.documentElement.style.fontSize = '200%'`);
+        await stableFrames(cdp);
+        await click(cdp, '[data-reader-action="contents"]');
+        await waitFor(cdp, 'document.querySelector("#contents-surface").open', 'enlarged Contents');
+        const value = await evaluate(cdp, `(() => {
+          const surface = document.querySelector('#contents-surface');
+          const title = document.querySelector('#contents-surface-title');
+          const close = surface.querySelector('[data-reader-close]');
+          const titleBox = title.getBoundingClientRect();
+          const closeBox = close.getBoundingClientRect();
+          const style = getComputedStyle(title);
+          return {
+            pageOverflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+            surfaceOverflow: surface.scrollWidth - surface.clientWidth,
+            titleHeight: titleBox.height,
+            titleLineHeight: parseFloat(style.lineHeight),
+            titleRight: titleBox.right,
+            closeLeft: closeBox.left,
+            closeWidth: closeBox.width,
+            overflowWrap: style.overflowWrap,
+            wordBreak: style.wordBreak
+          };
+        })()`);
+        assert.ok(value.pageOverflow <= 1, `${entrance} ${width}px page overflow: ${value.pageOverflow}`);
+        assert.ok(value.surfaceOverflow <= 1, `${entrance} ${width}px surface overflow: ${value.surfaceOverflow}`);
+        assert.ok(value.titleHeight <= value.titleLineHeight * 1.25,
+          `${entrance} ${width}px Contents title wrapped: ${value.titleHeight}/${value.titleLineHeight}`);
+        assert.ok(value.titleRight <= value.closeLeft,
+          `${entrance} ${width}px Contents title overlaps close control`);
+        assert.ok(value.closeWidth >= 44, `${entrance} ${width}px close width: ${value.closeWidth}`);
+        assert.equal(value.overflowWrap, 'normal');
+        assert.equal(value.wordBreak, 'normal');
+        await escape(cdp);
+        await evaluate(cdp, `document.documentElement.style.fontSize = ''`);
+      }
+    }
+  });
+
   await check('400% browser scale keeps the compact reader operable', async () => {
     await viewport(cdp, 393, 852);
     await fresh(cdp, prototypeUrl(base, 'day', 'reader', STATES.romanRead), 'day');
@@ -711,20 +769,35 @@ async function runAssertions(cdp, base) {
       { name: 'forced-colors', value: 'active' },
       { name: 'prefers-reduced-motion', value: 'reduce' }
     ] });
-    await viewport(cdp, 393, 852);
-    await fresh(cdp, prototypeUrl(base, 'propers', 'reader', STATES.propers), 'propers');
-    await click(cdp, '[data-reader-action="details"]');
-    await waitFor(cdp, 'document.querySelector("#details-surface").open', 'forced-color Details');
-    const value = await evaluate(cdp, `({ close: document.querySelector('#details-surface [data-reader-close]').getBoundingClientRect().width,
-      reduced: matchMedia('(prefers-reduced-motion: reduce)').matches,
-      forced: matchMedia('(forced-colors: active)').matches,
-      focus: document.activeElement.getAttribute('aria-label') })`);
-    assert.equal(value.reduced, true);
-    assert.equal(value.forced, true);
-    assert.ok(value.close >= 44);
-    assert.equal(value.focus, 'Close Details');
-    await escape(cdp);
-    await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
+    try {
+      await viewport(cdp, 393, 852);
+      await productionFresh(cdp, productionUrl(base, 'propers', STATES.propers), 'propers');
+      await click(cdp, '[data-reader-action="details"]');
+      await waitFor(cdp, 'document.querySelector("#details-surface").open', 'forced-color Details');
+      const value = await evaluate(cdp, `({ close: document.querySelector('#details-surface [data-reader-close]').getBoundingClientRect().width,
+        reduced: matchMedia('(prefers-reduced-motion: reduce)').matches,
+        forced: matchMedia('(forced-colors: active)').matches,
+        focus: document.activeElement.getAttribute('aria-label') })`);
+      assert.equal(value.reduced, true);
+      assert.equal(value.forced, true);
+      assert.ok(value.close >= 44);
+      assert.equal(value.focus, 'Close Details');
+      await escape(cdp);
+      const restored = await evaluate(cdp, `(() => {
+        const node = document.activeElement;
+        const style = getComputedStyle(node);
+        return { action: node.dataset.readerAction, visible: node.matches(':focus-visible'),
+          outlineStyle: style.outlineStyle, outlineWidth: style.outlineWidth,
+          outlineOffset: style.outlineOffset };
+      })()`);
+      assert.equal(restored.action, 'details');
+      assert.equal(restored.visible, true);
+      assert.equal(restored.outlineStyle, 'solid');
+      assert.equal(restored.outlineWidth, '2px');
+      assert.equal(restored.outlineOffset, '-3px');
+    } finally {
+      await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
+    }
   });
 
   await check('production Instrument Read matches the accepted axis and portrait measure', async () => {
@@ -792,7 +865,7 @@ async function runAssertions(cdp, base) {
 
     await productionFresh(cdp, productionUrl(base, 'day', STATES.partial), 'day');
     production = await metrics(cdp);
-    assert.match(production.coverage.text, /not yet transcribed/i);
+    assert.match(production.coverage.text, /unavailable/i);
     assert.equal(await evaluate(cdp, `document.querySelectorAll('#reader-document > .uncompiled').length`), 0);
     assert.ok(await evaluate(cdp, `document.querySelectorAll('#reader-document .composed, #reader-document .passage').length`) > 3);
 
@@ -864,18 +937,22 @@ async function runAssertions(cdp, base) {
           branches: branches.map(node => node.dataset.territorialBranch),
           headings: branches.map(node => node.querySelector('.territorial-branch-heading h2').textContent.trim()),
           properCounts: branches.map(node => node.querySelectorAll('.proper').length),
+          unresolvedChoices: branches.map(node =>
+            node.querySelectorAll('[data-unresolved-choice]').length),
           semanticBranches: dayReaderDebug.semantic.map(row => row.territory),
           uniqueLocations: new Set(locations).size === locations.length,
           uniqueIds: new Set(ids).size === ids.length,
           overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth
         };
       })()`);
-      assert.equal(value.outcome, 'ready');
+      assert.equal(value.outcome, 'unresolved');
       assert.equal(value.title, 'Held territorial branches');
       assert.deepEqual(value.branches, ['epiphany-january-6', 'epiphany-transferred-to-sunday']);
       assert.deepEqual(value.semanticBranches, value.branches);
       assert.equal(new Set(value.headings).size, 2);
-      value.properCounts.forEach(count => assert.ok(count > 0));
+      value.properCounts.forEach((count, index) =>
+        assert.ok(count > 0 || value.unresolvedChoices[index] > 0));
+      assert.ok(value.unresolvedChoices.some(count => count > 0));
       assert.equal(value.uniqueLocations, true);
       assert.equal(value.uniqueIds, true);
       assert.ok(value.overflow <= 1);
@@ -1237,6 +1314,9 @@ async function captureMatrix(cdp, base, directory) {
   const productionDirectory = join(directory, 'parity', 'production');
   await mkdir(oracleDirectory, { recursive: true });
   await mkdir(productionDirectory, { recursive: true });
+  // These are two presentations of this exact local tree, not a before/after
+  // comparison. A mutable deployed route cannot serve as historical evidence;
+  // an actual earlier state belongs in its immutable review package.
   for (const [file, entrance, state, width, height, extras] of parityCases) {
     evidence.push(await captureOne(cdp, base, oracleDirectory, {
       file, entrance, design: 'instrument', state, width, height, ...extras, variant: 'prototype'
@@ -1259,7 +1339,7 @@ async function captureMatrix(cdp, base, directory) {
     ['08-propers-details-393x852.png', 'propers', 'propers', 393, 852, { action: 'details' }],
     ['09-day-details-links-393x852.png', 'day', 'romanRead', 393, 852,
       { action: 'details', surfaceEnd: true }],
-    ['10-day-why-no-slot-393x852.png', 'day', 'romanWhyNoSlot', 393, 852, { reasoning: true }],
+    ['10-day-why-complete-slots-393x852.png', 'day', 'romanWhyCompleteSlots', 393, 852, { reasoning: true }],
     ['11-day-why-postconciliar-missal-1440x900.png', 'day', 'postWhy', 1440, 900, { reasoning: true }],
     ['12-day-territorial-why-1440x900.png', 'day', 'territorialEpiphanyWhy', 1440, 900,
       { reasoning: true }],
@@ -1270,28 +1350,6 @@ async function captureMatrix(cdp, base, directory) {
     evidence.push(await captureOne(cdp, base, compatibilityDirectory, {
       file, entrance, design: 'instrument', state, width, height, ...extras, variant: 'production'
     }));
-  }
-
-  const deployed = 'https://spincyc.github.io/triptych/liturgy/';
-  const baselines = [
-    ['current-day', deployed + 'day.html', STATES.romanRead,
-      'window.dayReaderReady === true && !document.querySelector("#celebration-title").textContent.includes("Loading") && document.querySelector("#reader-document").textContent.length > 100'],
-    ['current-propers', deployed + 'index.html', STATES.propers,
-      'window.propersReaderReady === true && !document.querySelector("#formulary-title").textContent.includes("Loading") && document.querySelector("#reader-document").textContent.length > 100'],
-    ['accepted-day', deployed + 'day-reader.html', STATES.romanRead, 'window.dayReaderReady === true'],
-    ['accepted-propers', deployed + 'propers-reader.html', STATES.propers, 'window.propersReaderReady === true']
-  ];
-  for (const [name, page, state, ready] of baselines) {
-    for (const [width, height] of [[1440, 900], [393, 852]]) {
-      await viewport(cdp, width, height);
-      const target = `${page}${state}`;
-      await genericFresh(cdp, target, ready);
-      const file = `before-${name}-${width}x${height}.png`;
-      await shot(cdp, join(directory, file));
-      evidence.push({ file, baseline: name, target, width, height,
-        measured: await evaluate(cdp, `({ href: location.href, viewport: {width: innerWidth, height: innerHeight},
-          scrollWidth: document.documentElement.scrollWidth, clientWidth: document.documentElement.clientWidth })`) });
-    }
   }
 
   await viewport(cdp, 1024, 768);

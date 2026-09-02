@@ -22,8 +22,13 @@ refuses.
 """
 from __future__ import annotations
 
+import json
 import re
+import tomllib
+from datetime import date as calendar_date
 from pathlib import Path
+
+import yaml
 
 MASS_INDEX_SCHEMA = "triptych-calendar-masses/v1"
 MASS_INDEX = "propers.yaml"
@@ -64,13 +69,25 @@ INDEX_OWNED = ("edition", "edition_short")
 # pointer ("Missa Statuit, de Communi unius Martyris I loco [4]"), which is the
 # evidence that the reference is the book's and not the reader's.
 TAKES_FROM = "takes_from"
-REFERENCE_FIELDS = ("mass", "form", "proper", "citation", "note")
+COMMON_SETS = "common_sets"
+REFERENCE_FIELDS = ("mass", "form", "proper", "citation", "note", COMMON_SETS)
 # A proper that takes its text from elsewhere holds no text of its own. Naming
 # the slot twice is the restatement this key exists to remove, so the incipit
 # comes from the resolved proper and may not be retyped beside the reference.
 REFERENCE_EXCLUDES = (
     "source", "text", "verses", "cycles", "weekday_cycles", "incipit", "translations",
 )
+
+# A source Proper can state why it is not one cumulative member of the normal
+# Ordinary frame.  This is row-local because alternatives and exceptional
+# before/after-frame material are facts about the exact appointment, including
+# a referenced appointment, rather than about a same-named slot everywhere.
+ORDINARY_DISPOSITION = "ordinary_disposition"
+ORDINARY_DISPOSITION_KINDS = frozenset({"alternative", "unplaced"})
+ORDINARY_ALTERNATIVE_FIELDS = frozenset({"kind", "group", "option", "basis"})
+ORDINARY_UNPLACED_FIELDS = frozenset({"kind", "group", "region", "basis"})
+ORDINARY_UNPLACED_REGIONS = frozenset({"before-frame", "after-frame"})
+ORDINARY_DISPOSITION_ID = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 
 # --------------------------------------------------------------- recensions
 #
@@ -90,18 +107,79 @@ REFERENCE_EXCLUDES = (
 #                   `roman-1962`, because the 1962 typical edition is the only
 #                   printing anyone here has read a proper from.
 #
-#   `stands_before` HISTORICAL. The id, in an acts inventory, of the act this
-#                   recension stands before. Nothing mechanical reads it. It is
-#                   the claim about descent, and it is kept in the vocabulary of
-#                   acts because guidance/the-shape.md section 7 fixes the
-#                   station as the act and not the book.
+#   `stands_before` HISTORICAL. A non-empty list of ids in the acts inventory,
+#                   naming the acts explicitly used to bound this recension.
+#                   Nothing mechanical reads it. It is the claim
+#                   about descent, and it is kept in the vocabulary of acts
+#                   because guidance/the-shape.md section 7 fixes the station as
+#                   the act and not the book.
 #
 # So a file may say "I stand before Maxima Redemptionis" and "my untouched
 # entries were read from a 1962 printing" at once, and both are true. That is
 # guidance/recensions.md Rule 2a -- attestation is separated from residence --
 # and it is what lets a recension be declared before anything is transcribed.
+RECENSION = "recension"
 RECENSION_BASE = "text_from"
 RECENSION_ACT = "stands_before"
+RECENSION_ACT_INVENTORY = "latin-missal-acts-v1.toml"
+RECENSION_ID = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
+
+# A recension's short departure file is not evidence that the unstated book was
+# checked and found equal to its base.  `recension_coverage` makes that boundary
+# executable: every domain is accounted for, inherited material says how far it
+# was collated, and each evidence or blocker row uses a closed vocabulary.  The
+# prose in guidance/recensions.md Rule 4 remains the explanation; this is the
+# part a gate can refuse when it drifts.
+RECENSION_COVERAGE = "recension_coverage"
+RECENSION_COVERAGE_SCHEMA = "triptych-recension-coverage/v1"
+RECENSION_COVERAGE_FIELDS = frozenset(
+    {"schema", "as_of", "status", "domains", "inheritance", "evidence", "blockers"}
+)
+RECENSION_COVERAGE_STATUSES = frozenset({"structural-only", "partial", "complete"})
+RECENSION_COVERAGE_DOMAINS = (
+    "calendar",
+    "precedence",
+    "propers",
+    "commons",
+    "ordinary",
+    "ceremonies",
+)
+RECENSION_DOMAIN_FIELDS = frozenset({"state", "basis"})
+RECENSION_DOMAIN_STATES = frozenset(
+    {
+        "unexamined",
+        "none",
+        "structural-only",
+        "partial",
+        "complete",
+        "inherited-uncollated",
+        "blocked-by-model",
+        "out-of-scope",
+    }
+)
+RECENSION_INHERITANCE_FIELDS = frozenset({"source_calendar", "status", "basis"})
+RECENSION_INHERITANCE_STATUSES = frozenset({"uncollated", "partial", "complete"})
+RECENSION_EVIDENCE_FIELDS = frozenset(
+    {"id", "domains", "grade", "record", "basis", "witnesses"}
+)
+RECENSION_EVIDENCE_GRADES = frozenset(
+    {"located-only", "ocr-structure-read", "source-read", "page-image-collated"}
+)
+RECENSION_BLOCKER_FIELDS = frozenset({"id", "kind", "status", "record", "requirement"})
+RECENSION_BLOCKER_KINDS = frozenset(
+    {
+        "missing-witness",
+        "unregistered-artifact",
+        "page-image-collation",
+        "rights-restriction",
+        "schema-gap",
+        "unmodeled-recension",
+        "provenance-gap",
+        "data-transcription",
+        "scope-exclusion",
+    }
+)
+RECENSION_BLOCKER_STATUSES = frozenset({"open", "blocked"})
 
 # guidance/recensions.md section 3 fixes this vocabulary. It is closed here so a
 # misspelt kind fails instead of being read as a departure nobody classified.
@@ -133,6 +211,11 @@ OVERLAY_FIELDS = ("name", "title", "date", "rank", "day", "hour", "key")
 # difference someone asserted, which is precisely what this vocabulary exists to
 # keep apart from a difference someone read.
 DEPARTURE_BASIS = "basis"
+# The act-history station or attribution record for one departure claim. It is
+# optional: leaving it unset says that no honest station has been established.
+# An `unrecorded` difference may name the later station that inventories it;
+# consumers must not restate every such station as a causal instrument.
+DEPARTURE_ACT = "act"
 # One liturgy can depart in several ways at once, and the Triduum is where that
 # is the rule rather than the exception: the pre-1955 Holy Saturday service is
 # the same liturgy MOVED to another hour, RENAMED, and REPLACED in most of its
@@ -316,7 +399,12 @@ def departures_of(document: dict) -> list[tuple[str, dict, dict]]:
     return out
 
 
-def load_document(root: Path, calendar: str, effective: bool = True) -> dict:
+def load_document(
+    root: Path,
+    calendar: str,
+    effective: bool = True,
+    _chain: tuple[str, ...] = (),
+) -> dict:
     """A calendar's document: for a recension, the base with its departures applied.
 
     This is the single derivation, and every tool that serves a day reads it
@@ -330,11 +418,14 @@ def load_document(root: Path, calendar: str, effective: bool = True) -> dict:
     section 8.0 settles the same point for editions -- the default rule writes no
     row, so the projection measures distance rather than volume.
     """
+    if calendar in _chain:
+        cycle = " -> ".join((*_chain, calendar))
+        raise ValueError(f"calendar recension inheritance cycle: {cycle}")
     document = _read(root / calendar / MASS_INDEX)
     base_name = document.get(RECENSION_BASE)
     if not effective or not isinstance(base_name, str) or not base_name:
         return document
-    base = load_document(root, base_name, effective=True)
+    base = load_document(root, base_name, effective=True, _chain=(*_chain, calendar))
     return _apply_departures(document, base, base_name)
 
 
@@ -350,6 +441,7 @@ def _stamp(
     basis: str,
     stated: bool,
     also: list[dict] | tuple = (),
+    act: str = "",
 ) -> dict:
     """Mark a mass with how the recension reached it, so a page can say so.
 
@@ -360,18 +452,37 @@ def _stamp(
     reading a calendar that is nobody's recension.
     """
     out = dict(mass)
-    out["recension"] = {
+    stamp = {
         "calendar": calendar,
         "kind": kind,
         "stated": stated,
         "text_from": "" if stated else calendar,
         "basis": basis,
-        "also": [
-            {"kind": str(row.get(DEPARTURE) or ""), "basis": str(row.get(DEPARTURE_BASIS) or "")}
-            for row in also
-        ],
+        "also": [],
     }
+    if act:
+        stamp[DEPARTURE_ACT] = act
+    for row in also:
+        secondary = {
+            "kind": str(row.get(DEPARTURE) or ""),
+            "basis": str(row.get(DEPARTURE_BASIS) or ""),
+        }
+        secondary_act = str(row.get(DEPARTURE_ACT) or "")
+        if secondary_act:
+            secondary[DEPARTURE_ACT] = secondary_act
+        stamp["also"].append(secondary)
+    out[RECENSION] = stamp
     return out
+
+
+def _residence_of(mass: dict, fallback: str) -> str:
+    """The calendar where inherited words reside, through any middle states."""
+    held = mass.get(RECENSION)
+    if not isinstance(held, dict):
+        return fallback
+    if held.get("stated"):
+        return str(held.get("calendar") or fallback)
+    return str(held.get("text_from") or held.get("calendar") or fallback)
 
 
 def _apply_departures(document: dict, base: dict, base_name: str) -> dict:
@@ -393,7 +504,14 @@ def _apply_departures(document: dict, base: dict, base_name: str) -> dict:
             key = str(mass.get("key") or "")
             departure = stated.pop(key, None)
             if departure is None:
-                kept.append(_stamp(mass, base_name, "", "", stated=False))
+                # A multi-hop recension must retain the calendar in which the
+                # words actually reside. Re-stamping A's text as B merely
+                # because C inherits through B creates false provenance.
+                kept.append(
+                    dict(mass)
+                    if isinstance(mass.get(RECENSION), dict)
+                    else _stamp(mass, base_name, "", "", stated=False)
+                )
                 continue
             kind = str(departure.get(DEPARTURE) or "")
             basis = str(departure.get(DEPARTURE_BASIS) or "")
@@ -408,16 +526,46 @@ def _apply_departures(document: dict, base: dict, base_name: str) -> dict:
                 for field in OVERLAY_FIELDS:
                     if field in departure:
                         carried[field] = departure[field]
-                kept.append(_stamp(carried, base_name, kind, basis, stated=False, also=also))
+                kept.append(
+                    _stamp(
+                        carried,
+                        _residence_of(mass, base_name),
+                        kind,
+                        basis,
+                        stated=False,
+                        also=also,
+                        act=str(departure.get(DEPARTURE_ACT) or ""),
+                    )
+                )
                 continue
             if kind == "unrecorded":
                 # Known to differ, correspondence not established. The base entry
                 # is carried so the day still resolves, and the stamp is what
                 # stops the page claiming the base's text was checked.
-                kept.append(_stamp(mass, base_name, kind, basis, stated=False, also=also))
+                kept.append(
+                    _stamp(
+                        mass,
+                        _residence_of(mass, base_name),
+                        kind,
+                        basis,
+                        stated=False,
+                        also=also,
+                        act=str(departure.get(DEPARTURE_ACT) or ""),
+                    )
+                )
                 continue
             # replaced, reslotted: the recension's own entry wins outright.
-            kept.append(_stamp(departure, calendar, kind, basis, stated=True, also=also))
+            kept.append(
+                _stamp(
+                    departure,
+                    calendar,
+                    kind,
+                    basis,
+                    stated=True,
+                    also=also,
+                    act=str(departure.get(DEPARTURE_ACT) or ""),
+                )
+            )
         merged[section] = dict(body, masses=kept)
 
     # `added`, and anything whose key the base does not hold. The latter is a
@@ -435,6 +583,7 @@ def _apply_departures(document: dict, base: dict, base_name: str) -> dict:
                 str(departure.get(DEPARTURE_BASIS) or ""),
                 stated=True,
                 also=_also(departure),
+                act=str(departure.get(DEPARTURE_ACT) or ""),
             ),
         ]
 
@@ -448,6 +597,389 @@ def _section_for(document: dict, key: str) -> str | None:
         if str(mass.get("key") or "") == key:
             return section
     return None
+
+
+def _coverage_shape(
+    problems: list[str], where: str, node: object, required: frozenset[str]
+) -> dict:
+    if not isinstance(node, dict):
+        problems.append(f"{where} must be a mapping")
+        return {}
+    fields = set(node)
+    missing = sorted(required - fields)
+    unknown = sorted(fields - required)
+    if missing:
+        problems.append(f"{where} is missing required fields: {', '.join(missing)}")
+    if unknown:
+        problems.append(f"{where} has unknown fields: {', '.join(unknown)}")
+    return node
+
+
+def _coverage_text(problems: list[str], where: str, node: dict, field: str) -> None:
+    value = node.get(field)
+    if not isinstance(value, str) or not value.strip():
+        problems.append(f"{where}.{field} must be a non-empty string")
+
+
+def _walk(value: object):
+    yield value
+    if isinstance(value, dict):
+        for child in value.values():
+            yield from _walk(child)
+    elif isinstance(value, list):
+        for child in value:
+            yield from _walk(child)
+
+
+def _markdown_anchor(text: str, wanted: str) -> bool:
+    """Whether a Markdown heading owns the GitHub-style fragment ``wanted``."""
+    for line in text.splitlines():
+        match = re.match(r"^#{1,6}\s+(.+?)\s*#*\s*$", line)
+        if not match:
+            continue
+        label = match.group(1).strip().lower()
+        slug = re.sub(r"[^\w\- ]", "", label, flags=re.UNICODE)
+        slug = re.sub(r"[\s-]+", "-", slug).strip("-")
+        if slug == wanted:
+            return True
+    return False
+
+
+def _contained_reference_path(repository: Path, relative: Path) -> Path | None:
+    """Resolve a repository reference without following a symlink out of it."""
+
+    try:
+        root = repository.resolve()
+        source = (root / relative).resolve()
+    except (OSError, RuntimeError):
+        return None
+    return source if source.is_relative_to(root) else None
+
+
+def _coverage_record_problem(repository: Path, reference: object, where: str) -> str | None:
+    """Resolve one coverage evidence/blocker record, including its local locus."""
+    if not isinstance(reference, str) or not reference.strip():
+        return f"{where} must be a non-empty repo-relative reference"
+    raw_path, marker, selector = reference.partition("#")
+    relative = Path(raw_path)
+    if relative.is_absolute() or ".." in relative.parts:
+        return f"{where} must be repo-relative, got {reference!r}"
+    source = _contained_reference_path(repository, relative)
+    if source is None:
+        return f"{where} escapes the repository through a symlink: {reference!r}"
+    if not source.is_file():
+        return f"{where} names missing record {raw_path!r}"
+    if not marker or not selector:
+        return None
+    if source.suffix == ".md":
+        try:
+            text = source.read_text(encoding="utf-8")
+        except OSError as error:
+            return f"{where} cannot inspect {raw_path!r}: {error}"
+        if not _markdown_anchor(text, selector):
+            return f"{where} names absent heading #{selector} in {raw_path}"
+        return None
+    try:
+        if source.suffix == ".toml":
+            held = tomllib.loads(source.read_text(encoding="utf-8"))
+        elif source.suffix == ".json":
+            held = json.loads(source.read_text(encoding="utf-8"))
+        elif source.suffix in {".yaml", ".yml"}:
+            held = read_yaml(source)
+        else:
+            return f"{where} cannot resolve a fragment in {raw_path!r}"
+    except (OSError, ValueError, tomllib.TOMLDecodeError, yaml.YAMLError) as error:
+        return f"{where} cannot inspect {raw_path!r}: {error}"
+    wanted = selector.removeprefix("id=")
+    if isinstance(held, dict) and wanted in held:
+        return None
+    if any(isinstance(row, dict) and row.get("id") == wanted for row in _walk(held)):
+        return None
+    return f"{where} names absent record id {wanted!r} in {raw_path}"
+
+
+def _repository_for_calendar_root(root: Path) -> Path:
+    """The repository owning a canonical or synthetic calendar root."""
+    if (
+        root.name == "calendars"
+        and root.parent.name == "sources"
+        and root.parent.parent.name == "src"
+    ):
+        return root.parent.parent.parent
+    return root.parent
+
+
+def _act_ids(
+    source: Path,
+    chain: tuple[Path, ...] = (),
+    boundary: Path | None = None,
+) -> set[str]:
+    """Act ids from the authoritative inventory and every file it extends."""
+    try:
+        boundary = boundary or source.parent.resolve()
+        source = source.resolve()
+    except (OSError, RuntimeError) as error:
+        raise ValueError(f"cannot resolve authoritative act inventory {source}: {error}") from error
+    if not source.is_relative_to(boundary):
+        raise ValueError(f"act inventory escapes its local directory through a symlink: {source}")
+    if source in chain:
+        route = " -> ".join(str(path) for path in (*chain, source))
+        raise ValueError(f"act inventory extends cycle: {route}")
+    if not source.is_file():
+        raise ValueError(f"no authoritative act inventory at {source}")
+    try:
+        document = tomllib.loads(source.read_text(encoding="utf-8"))
+    except (OSError, tomllib.TOMLDecodeError) as error:
+        raise ValueError(f"cannot read authoritative act inventory {source}: {error}") from error
+    if document.get("acts_schema") != 1:
+        raise ValueError(f"{source}: acts_schema must be 1")
+    found = {
+        row["id"]
+        for row in document.get("acts") or []
+        if isinstance(row, dict) and isinstance(row.get("id"), str)
+    }
+    extends = document.get("extends")
+    if extends is not None:
+        if (
+            not isinstance(extends, str)
+            or not extends.strip()
+            or Path(extends).is_absolute()
+            or ".." in Path(extends).parts
+        ):
+            raise ValueError(f"{source}: extends must be a local relative filename")
+        found.update(_act_ids(source.parent / extends, (*chain, source), boundary))
+    return found
+
+
+def recension_coverage_problems(
+    path: Path,
+    document: dict,
+    base_name: str,
+    *,
+    repository: Path | None = None,
+) -> list[str]:
+    """Validate what a recension independently establishes and merely inherits."""
+    problems: list[str] = []
+    where = f"{path}: {RECENSION_COVERAGE}"
+    coverage = _coverage_shape(
+        problems, where, document.get(RECENSION_COVERAGE), RECENSION_COVERAGE_FIELDS
+    )
+    if not coverage:
+        return problems
+    if coverage.get("schema") != RECENSION_COVERAGE_SCHEMA:
+        problems.append(
+            f"{where}.schema must be {RECENSION_COVERAGE_SCHEMA!r}, got "
+            f"{coverage.get('schema')!r}"
+        )
+    as_of = coverage.get("as_of")
+    if not isinstance(as_of, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", as_of):
+        problems.append(f"{where}.as_of must be a quoted ISO date, got {as_of!r}")
+    else:
+        try:
+            calendar_date.fromisoformat(as_of)
+        except ValueError:
+            problems.append(f"{where}.as_of is not a calendar date: {as_of!r}")
+    status = coverage.get("status")
+    if not isinstance(status, str) or status not in RECENSION_COVERAGE_STATUSES:
+        problems.append(
+            f"{where}.status must be one of "
+            f"{', '.join(sorted(RECENSION_COVERAGE_STATUSES))}, got {status!r}"
+        )
+
+    domains = coverage.get("domains")
+    if not isinstance(domains, dict):
+        problems.append(f"{where}.domains must be a mapping")
+        domains = {}
+    domain_keys = set(domains)
+    missing_domains = sorted(set(RECENSION_COVERAGE_DOMAINS) - domain_keys)
+    unknown_domains = sorted(domain_keys - set(RECENSION_COVERAGE_DOMAINS))
+    if missing_domains:
+        problems.append(
+            f"{where}.domains is missing required domains: {', '.join(missing_domains)}"
+        )
+    if unknown_domains:
+        problems.append(f"{where}.domains has unknown domains: {', '.join(unknown_domains)}")
+    for domain in RECENSION_COVERAGE_DOMAINS:
+        if domain not in domains:
+            continue
+        row_where = f"{where}.domains.{domain}"
+        row = _coverage_shape(
+            problems, row_where, domains.get(domain), RECENSION_DOMAIN_FIELDS
+        )
+        if not row:
+            continue
+        if not isinstance(row.get("state"), str) or row.get("state") not in RECENSION_DOMAIN_STATES:
+            problems.append(
+                f"{row_where}.state must be one of "
+                f"{', '.join(sorted(RECENSION_DOMAIN_STATES))}, got {row.get('state')!r}"
+            )
+        _coverage_text(problems, row_where, row, "basis")
+
+    inheritance_where = f"{where}.inheritance"
+    inheritance = _coverage_shape(
+        problems,
+        inheritance_where,
+        coverage.get("inheritance"),
+        RECENSION_INHERITANCE_FIELDS,
+    )
+    if inheritance:
+        if inheritance.get("source_calendar") != base_name:
+            problems.append(
+                f"{inheritance_where}.source_calendar must equal {RECENSION_BASE} "
+                f"{base_name!r}, got {inheritance.get('source_calendar')!r}"
+            )
+        if (
+            not isinstance(inheritance.get("status"), str)
+            or inheritance.get("status") not in RECENSION_INHERITANCE_STATUSES
+        ):
+            problems.append(
+                f"{inheritance_where}.status must be one of "
+                f"{', '.join(sorted(RECENSION_INHERITANCE_STATUSES))}, got "
+                f"{inheritance.get('status')!r}"
+            )
+        _coverage_text(problems, inheritance_where, inheritance, "basis")
+
+    evidence = coverage.get("evidence")
+    if not isinstance(evidence, list) or not evidence:
+        problems.append(f"{where}.evidence must be a non-empty list")
+        evidence = []
+    evidence_ids: set[str] = set()
+    for index, candidate in enumerate(evidence):
+        row_where = f"{where}.evidence[{index}]"
+        row = _coverage_shape(
+            problems, row_where, candidate, RECENSION_EVIDENCE_FIELDS
+        )
+        if not row:
+            continue
+        _coverage_text(problems, row_where, row, "id")
+        identifier = row.get("id")
+        if isinstance(identifier, str):
+            if not RECENSION_ID.fullmatch(identifier):
+                problems.append(f"{row_where}.id is not kebab-case: {identifier!r}")
+            if identifier in evidence_ids:
+                problems.append(f"{row_where}.id {identifier!r} is repeated")
+            evidence_ids.add(identifier)
+        stated_domains = row.get("domains")
+        if not isinstance(stated_domains, list) or not stated_domains:
+            problems.append(f"{row_where}.domains must be a non-empty list")
+        else:
+            invalid = sorted({
+                repr(one)
+                for one in stated_domains
+                if not isinstance(one, str) or one not in RECENSION_COVERAGE_DOMAINS
+            })
+            if invalid:
+                problems.append(f"{row_where}.domains has unknown domains: {', '.join(invalid)}")
+            if len(stated_domains) != len(set(map(str, stated_domains))):
+                problems.append(f"{row_where}.domains repeats a domain")
+        if (
+            not isinstance(row.get("grade"), str)
+            or row.get("grade") not in RECENSION_EVIDENCE_GRADES
+        ):
+            problems.append(
+                f"{row_where}.grade must be one of "
+                f"{', '.join(sorted(RECENSION_EVIDENCE_GRADES))}, got {row.get('grade')!r}"
+            )
+        _coverage_text(problems, row_where, row, "record")
+        if problem := _coverage_record_problem(
+            repository or _repository_for_calendar_root(path.parent.parent),
+            row.get("record"),
+            f"{row_where}.record",
+        ):
+            problems.append(problem)
+        _coverage_text(problems, row_where, row, "basis")
+        witnesses = row.get("witnesses")
+        if (
+            not isinstance(witnesses, list)
+            or not witnesses
+            or any(not isinstance(one, str) or not one.strip() for one in witnesses)
+        ):
+            problems.append(f"{row_where}.witnesses must be a non-empty list of strings")
+        elif len(witnesses) != len(set(witnesses)):
+            problems.append(f"{row_where}.witnesses repeats a witness")
+
+    blockers = coverage.get("blockers")
+    if not isinstance(blockers, list):
+        problems.append(f"{where}.blockers must be a list")
+        blockers = []
+    blocker_ids: set[str] = set()
+    blocker_kinds: set[str] = set()
+    for index, candidate in enumerate(blockers):
+        row_where = f"{where}.blockers[{index}]"
+        row = _coverage_shape(
+            problems, row_where, candidate, RECENSION_BLOCKER_FIELDS
+        )
+        if not row:
+            continue
+        _coverage_text(problems, row_where, row, "id")
+        identifier = row.get("id")
+        if isinstance(identifier, str):
+            if not RECENSION_ID.fullmatch(identifier):
+                problems.append(f"{row_where}.id is not kebab-case: {identifier!r}")
+            if identifier in blocker_ids:
+                problems.append(f"{row_where}.id {identifier!r} is repeated")
+            blocker_ids.add(identifier)
+        kind = row.get("kind")
+        if not isinstance(kind, str) or kind not in RECENSION_BLOCKER_KINDS:
+            problems.append(
+                f"{row_where}.kind must be one of "
+                f"{', '.join(sorted(RECENSION_BLOCKER_KINDS))}, got {kind!r}"
+            )
+        elif isinstance(kind, str):
+            blocker_kinds.add(kind)
+        if (
+            not isinstance(row.get("status"), str)
+            or row.get("status") not in RECENSION_BLOCKER_STATUSES
+        ):
+            problems.append(
+                f"{row_where}.status must be one of "
+                f"{', '.join(sorted(RECENSION_BLOCKER_STATUSES))}, got "
+                f"{row.get('status')!r}"
+            )
+        _coverage_text(problems, row_where, row, "record")
+        if problem := _coverage_record_problem(
+            repository or _repository_for_calendar_root(path.parent.parent),
+            row.get("record"),
+            f"{row_where}.record",
+        ):
+            problems.append(problem)
+        _coverage_text(problems, row_where, row, "requirement")
+
+    if status == "complete" and blockers:
+        problems.append(f"{where}.status is complete but blockers remain")
+    if status == "complete":
+        incomplete = [
+            domain
+            for domain in RECENSION_COVERAGE_DOMAINS
+            if not isinstance(domains.get(domain), dict)
+            or domains[domain].get("state") != "complete"
+        ]
+        if incomplete:
+            problems.append(
+                f"{where}.status is complete but these domains are not complete: "
+                f"{', '.join(incomplete)}"
+            )
+        if inheritance.get("status") != "complete":
+            problems.append(
+                f"{where}.status is complete but inheritance.status is not complete"
+            )
+    if status != "complete" and not blockers:
+        problems.append(f"{where}.status {status!r} requires at least one blocker")
+    if status == "structural-only" and not any(
+        isinstance(domains.get(domain), dict)
+        and domains[domain].get("state") == "structural-only"
+        for domain in RECENSION_COVERAGE_DOMAINS
+    ):
+        problems.append(
+            f"{where}.status is structural-only but no domain has state structural-only"
+        )
+    if any(
+        isinstance(domains.get(domain), dict)
+        and domains[domain].get("state") == "blocked-by-model"
+        for domain in RECENSION_COVERAGE_DOMAINS
+    ) and "schema-gap" not in blocker_kinds:
+        problems.append(f"{where} has a domain blocked-by-model but no schema-gap blocker")
+    return problems
 
 
 def recension_problems(root: Path, calendar: str) -> list[str]:
@@ -477,13 +1009,51 @@ def recension_problems(root: Path, calendar: str) -> list[str]:
         ]
     if base_name == calendar:
         return [f"{path}: {RECENSION_BASE} points at itself"]
-    if document.get(RECENSION_ACT) in (None, ""):
+    historical_acts = document.get(RECENSION_ACT)
+    known_acts: set[str] = set()
+    if not isinstance(historical_acts, list) or not historical_acts:
         problems.append(
             f"{path}: declares {RECENSION_BASE} without {RECENSION_ACT}. A recension "
-            "must say which act it stands before, because `text_from` records where "
+            "must give a non-empty list of acts it stands before, because `text_from` records where "
             "text was transcribed and is not a claim about which book came first."
         )
-    base = load_document(root, base_name, effective=True)
+    else:
+        invalid_acts = [
+            act
+            for act in historical_acts
+            if not isinstance(act, str) or not RECENSION_ID.fullmatch(act)
+        ]
+        if invalid_acts:
+            problems.append(
+                f"{path}: {RECENSION_ACT} entries must be act ids, got {invalid_acts!r}"
+            )
+        if len(historical_acts) != len(set(map(str, historical_acts))):
+            problems.append(f"{path}: {RECENSION_ACT} repeats an act id")
+        act_source = root.parent / "inventories" / RECENSION_ACT_INVENTORY
+        try:
+            known_acts = _act_ids(act_source)
+        except ValueError as error:
+            problems.append(f"{path}: cannot resolve {RECENSION_ACT}: {error}")
+        else:
+            for historical_act in historical_acts:
+                if isinstance(historical_act, str) and historical_act not in known_acts:
+                    problems.append(
+                        f"{path}: {RECENSION_ACT} names unknown act {historical_act!r} in "
+                        f"{act_source}"
+                    )
+    problems.extend(
+        recension_coverage_problems(
+            path,
+            document,
+            base_name,
+            repository=_repository_for_calendar_root(root),
+        )
+    )
+    try:
+        base = load_document(root, base_name, effective=True, _chain=(calendar,))
+    except (OSError, ValueError) as error:
+        problems.append(f"{path}: cannot resolve {RECENSION_BASE}: {error}")
+        return problems
     held = mass_index(base)
     seen: set[str] = set()
     for _, _, mass in departures_of(document):
@@ -507,6 +1077,16 @@ def recension_problems(root: Path, calendar: str) -> list[str]:
                 f"{where}: {kind} departure states no {DEPARTURE_BASIS}. A difference "
                 "with no basis is a difference someone asserted."
             )
+        departure_act = mass.get(DEPARTURE_ACT)
+        if departure_act is not None:
+            if not isinstance(departure_act, str) or not RECENSION_ID.fullmatch(departure_act):
+                problems.append(
+                    f"{where}: {DEPARTURE_ACT} is not an act id: {departure_act!r}"
+                )
+            elif departure_act not in known_acts:
+                problems.append(
+                    f"{where}: {DEPARTURE_ACT} names unknown act {departure_act!r}"
+                )
         if kind in DEPARTURE_NEEDS_BASE and key not in held:
             problems.append(
                 f"{where}: {kind} names a mass {base_name!r} does not hold. Only "
@@ -543,6 +1123,18 @@ def recension_problems(root: Path, calendar: str) -> list[str]:
                     f"{DEPARTURE_BASIS}; a secondary claim is held to the primary "
                     "one's standard"
                 )
+            secondary_act = row.get(DEPARTURE_ACT)
+            if secondary_act is not None:
+                if not isinstance(secondary_act, str) or not RECENSION_ID.fullmatch(secondary_act):
+                    problems.append(
+                        f"{where}: {DEPARTURE_ALSO} {DEPARTURE_ACT} is not an act id: "
+                        f"{secondary_act!r}"
+                    )
+                elif secondary_act not in known_acts:
+                    problems.append(
+                        f"{where}: {DEPARTURE_ALSO} {DEPARTURE_ACT} names unknown act "
+                        f"{secondary_act!r}"
+                    )
     return problems
 
 
@@ -624,6 +1216,186 @@ def reference_of(node: object) -> dict | None:
     return found if isinstance(found, dict) else None
 
 
+def validate_ordinary_disposition(value: object) -> dict:
+    """Return one exact row disposition, or refuse a lossy/ambiguous shape."""
+
+    if not isinstance(value, dict):
+        raise ValueError(f"{ORDINARY_DISPOSITION} must be a mapping")
+    kind = value.get("kind")
+    if kind not in ORDINARY_DISPOSITION_KINDS:
+        raise ValueError(
+            f"{ORDINARY_DISPOSITION}.kind must be one of "
+            f"{sorted(ORDINARY_DISPOSITION_KINDS)}, got {kind!r}"
+        )
+    fields = (
+        ORDINARY_ALTERNATIVE_FIELDS
+        if kind == "alternative"
+        else ORDINARY_UNPLACED_FIELDS
+    )
+    unknown = sorted(str(field) for field in set(value) - fields)
+    missing = sorted(str(field) for field in fields - set(value))
+    if unknown:
+        raise ValueError(
+            f"{ORDINARY_DISPOSITION} {kind!r} carries unknown field(s) "
+            + ", ".join(unknown)
+        )
+    if missing:
+        raise ValueError(
+            f"{ORDINARY_DISPOSITION} {kind!r} is missing field(s) "
+            + ", ".join(missing)
+        )
+    for field in ("group", "option") if kind == "alternative" else ("group",):
+        held = value.get(field)
+        if not isinstance(held, str) or not ORDINARY_DISPOSITION_ID.fullmatch(held):
+            raise ValueError(
+                f"{ORDINARY_DISPOSITION}.{field} must be a nonempty lowercase "
+                f"kebab-case string, got {held!r}"
+            )
+    basis = value.get("basis")
+    if not isinstance(basis, str) or not basis.strip():
+        raise ValueError(f"{ORDINARY_DISPOSITION}.basis must be a nonempty string")
+    if kind == "unplaced" and value.get("region") not in ORDINARY_UNPLACED_REGIONS:
+        raise ValueError(
+            f"{ORDINARY_DISPOSITION}.region must be one of "
+            f"{sorted(ORDINARY_UNPLACED_REGIONS)}, got {value.get('region')!r}"
+        )
+    # Do not normalize, enrich, or drop evidence.  Public consumers receive the
+    # same closed mapping the source supplied.
+    return dict(value)
+
+
+def ordinary_disposition_group_problems(
+    key: str,
+    entries: list[tuple[str, dict, dict | None]],
+) -> list[str]:
+    """Validate alternative groups over each resolved source formulary.
+
+    Validation after reference resolution makes the rule self-cleaning: a
+    removed option turns its former group into a singleton and a newly added
+    row is not silently swept into a choice by its display name.
+    """
+
+    problems: list[str] = []
+    alternatives: dict[tuple[str, str], list[dict]] = {}
+    unplaced: dict[tuple[str, str], list[dict]] = {}
+    for form, proper, _ in entries:
+        if ORDINARY_DISPOSITION not in proper:
+            continue
+        name = str(proper.get("name") or "")
+        where = (
+            f"mass {key}"
+            + (f" form {form!r}" if form else "")
+            + f" proper {name!r}: {ORDINARY_DISPOSITION}"
+        )
+        try:
+            disposition = validate_ordinary_disposition(
+                proper[ORDINARY_DISPOSITION]
+            )
+        except ValueError as error:
+            problems.append(f"{where}: {error}")
+            continue
+        identity = (form, disposition["group"])
+        if disposition["kind"] == "alternative":
+            alternatives.setdefault(identity, []).append(disposition)
+        else:
+            unplaced.setdefault(identity, []).append(disposition)
+
+    for (form, group), members in alternatives.items():
+        where = f"mass {key}" + (f" form {form!r}" if form else "")
+        if (form, group) in unplaced:
+            problems.append(
+                f"{where}: {ORDINARY_DISPOSITION} group {group!r} mixes "
+                "alternative and unplaced rows"
+            )
+        options = {str(member["option"]) for member in members}
+        if len(options) < 2:
+            problems.append(
+                f"{where}: alternative {ORDINARY_DISPOSITION} group {group!r} "
+                "must retain at least two distinct options"
+            )
+        bases = {str(member["basis"]) for member in members}
+        if len(bases) != 1:
+            problems.append(
+                f"{where}: alternative {ORDINARY_DISPOSITION} group {group!r} "
+                "must carry one identical basis on every member"
+            )
+    for (form, group), members in unplaced.items():
+        where = f"mass {key}" + (f" form {form!r}" if form else "")
+        bases = {str(member["basis"]) for member in members}
+        if len(bases) != 1:
+            problems.append(
+                f"{where}: unplaced {ORDINARY_DISPOSITION} group {group!r} "
+                "must carry one identical basis on every member"
+            )
+        regions = {str(member["region"]) for member in members}
+        if len(regions) != 1:
+            problems.append(
+                f"{where}: unplaced {ORDINARY_DISPOSITION} group {group!r} "
+                "must carry one identical region on every member"
+            )
+    return problems
+
+
+def ordinary_disposition_source_problems(
+    key: str,
+    form: str,
+    propers: list[dict],
+) -> list[str]:
+    """Validate source-local group runs and out-of-frame boundaries."""
+
+    entries = [(form, proper, None) for proper in propers]
+    problems = ordinary_disposition_group_problems(key, entries)
+    groups: dict[tuple[str, str], list[int]] = {}
+    options: dict[tuple[str, str], list[int]] = {}
+    before: list[int] = []
+    after: list[int] = []
+    for index, proper in enumerate(propers):
+        if ORDINARY_DISPOSITION not in proper:
+            continue
+        try:
+            disposition = validate_ordinary_disposition(
+                proper[ORDINARY_DISPOSITION]
+            )
+        except ValueError:
+            # The exact-shape problem is already reported by the shared group
+            # walk; boundary checks cannot safely interpret a malformed row.
+            continue
+        kind = str(disposition["kind"])
+        group = str(disposition["group"])
+        groups.setdefault((kind, group), []).append(index)
+        if kind == "alternative":
+            options.setdefault((group, str(disposition["option"])), []).append(index)
+        elif disposition["region"] == "before-frame":
+            before.append(index)
+        else:
+            after.append(index)
+
+    where = f"mass {key}" + (f" form {form!r}" if form else "")
+    for (kind, group), positions in groups.items():
+        if positions != list(range(positions[0], positions[-1] + 1)):
+            problems.append(
+                f"{where}: {kind} {ORDINARY_DISPOSITION} group {group!r} "
+                "must occupy one contiguous source-order run"
+            )
+    for (group, option), positions in options.items():
+        if positions != list(range(positions[0], positions[-1] + 1)):
+            problems.append(
+                f"{where}: alternative {ORDINARY_DISPOSITION} group {group!r} "
+                f"option {option!r} must occupy one contiguous source-order bundle"
+            )
+    if before and before != list(range(0, before[-1] + 1)):
+        problems.append(
+            f"{where}: before-frame {ORDINARY_DISPOSITION} rows must be an exact "
+            "source-order prefix"
+        )
+    if after and after != list(range(after[0], len(propers))):
+        problems.append(
+            f"{where}: after-frame {ORDINARY_DISPOSITION} rows must be an exact "
+            "source-order suffix"
+        )
+    return problems
+
+
 def _form_propers(mass: dict, form: str) -> tuple[list[dict], str | None]:
     """The propers of one form of a mass, or of the mass itself when `form` is empty."""
     forms = mass.get("forms")
@@ -662,6 +1434,24 @@ def resolve_propers(
     """
     key = str(mass.get("key") or "")
     problems: list[str] = []
+    local_propers = [
+        proper
+        for proper in (mass.get("propers") or [])
+        if isinstance(proper, dict)
+    ]
+    problems.extend(ordinary_disposition_source_problems(key, "", local_propers))
+    for form in mass.get("forms") or []:
+        if not isinstance(form, dict):
+            continue
+        label = str(form.get("name") or "form")
+        form_propers = [
+            proper
+            for proper in (form.get("propers") or [])
+            if isinstance(proper, dict)
+        ]
+        problems.extend(
+            ordinary_disposition_source_problems(key, label, form_propers)
+        )
     reference = reference_of(mass)
     if reference is None:
         base: list[tuple[str, dict, dict | None]] = [
@@ -679,20 +1469,60 @@ def resolve_propers(
                 if isinstance(proper, dict)
             )
     else:
-        base, problems = _resolve_reference(document, mass, reference, chain)
         overrides = [p for p in (mass.get("propers") or []) if isinstance(p, dict)]
-        base = _apply_overrides(base, overrides)
+        local_override_families = {
+            proper_family(str(proper.get("name") or "")) for proper in overrides
+        }
+        base, common_families, problems = _resolve_reference(
+            document, mass, reference, chain, local_override_families
+        )
+        base = _apply_overrides(base, overrides, common_families)
+        # A dated Mass may appoint the Common except for an own Collect family
+        # whose wording is unavailable. Apply local overrides first, then
+        # remove only inherited members of that family: a local non-Collect
+        # override keeps both its printed position and its own provenance.
+        status = mass.get("text_status")
+        if (
+            isinstance(status, dict)
+            and status.get("state") == "unavailable"
+            and status.get("scope") == "proper-collect"
+        ):
+            base = [
+                entry
+                for entry in base
+                if not (
+                    str(entry[1].get("name") or "").split(" (", 1)[0] == "Collect"
+                    and entry[2] is not None
+                )
+            ]
     resolved: list[tuple[str, dict, dict | None]] = []
     for label, proper, provenance in base:
         inner = reference_of(proper)
         if inner is None:
             resolved.append((label, proper, provenance))
             continue
-        taken, trouble = _resolve_proper(document, key, proper, inner, chain)
+        taken, terminal, trouble = _resolve_proper(
+            document, key, proper, inner, chain, source_form=label
+        )
         problems.extend(trouble)
         if taken is not None:
-            resolved.append((label, taken, _provenance(inner, proper)))
+            resolved.append((label, taken, terminal or _provenance(inner, proper)))
+    problems.extend(ordinary_disposition_group_problems(key, resolved))
     return resolved, problems
+
+
+def _appoint_resolved_proper(found: dict, wrapper: dict, wanted: str) -> dict:
+    """Borrow target wording while retaining appointment-local structure."""
+
+    local_name = str(wrapper.get("name") or "")
+    if local_name == wanted and ORDINARY_DISPOSITION not in wrapper:
+        return found
+    appointed = dict(found)
+    if local_name != wanted:
+        appointed["name"] = local_name
+    if ORDINARY_DISPOSITION in wrapper:
+        appointed[ORDINARY_DISPOSITION] = wrapper[ORDINARY_DISPOSITION]
+    return appointed
 
 
 def _provenance(reference: dict, proper: dict) -> dict:
@@ -707,15 +1537,49 @@ def _provenance(reference: dict, proper: dict) -> dict:
 def _apply_overrides(
     base: list[tuple[str, dict, dict | None]],
     overrides: list[dict],
+    family_overrides: set[str] | None = None,
 ) -> list[tuple[str, dict, dict | None]]:
+    family_overrides = family_overrides or set()
     by_name = {str(p.get("name")): p for p in overrides}
+    by_family = {
+        proper_family(str(proper.get("name") or "")): proper
+        for proper in overrides
+        if proper_family(str(proper.get("name") or "")) in family_overrides
+    }
     used: set[str] = set()
+    used_families: set[str] = set()
     out: list[tuple[str, dict, dict | None]] = []
+
+    def appointed_replacement(replacement: dict, inherited: dict) -> dict:
+        # A local override replaces the target's wording at the same appointed
+        # slot. Structural disposition belongs to that appointment and survives
+        # unless the local row explicitly supplies its own exact disposition.
+        if (
+            ORDINARY_DISPOSITION in inherited
+            and ORDINARY_DISPOSITION not in replacement
+        ):
+            return {
+                **replacement,
+                ORDINARY_DISPOSITION: inherited[ORDINARY_DISPOSITION],
+            }
+        return replacement
+
     for label, proper, provenance in base:
         name = str(proper.get("name"))
-        if name in by_name:
+        family = proper_family(name)
+        if family in by_family:
+            if family in used_families:
+                continue
+            replacement = by_family[family]
+            replacement_name = str(replacement.get("name") or "")
+            used.add(replacement_name)
+            used_families.add(family)
+            out.append((label, appointed_replacement(replacement, proper), None))
+        elif name in by_name:
             used.add(name)
-            out.append((label, by_name[name], None))
+            out.append(
+                (label, appointed_replacement(by_name[name], proper), None)
+            )
         else:
             out.append((label, proper, provenance))
     for proper in overrides:
@@ -724,33 +1588,169 @@ def _apply_overrides(
     return out
 
 
+def proper_family(name: str) -> str:
+    """The stable Proper slot governed by a qualified Common-set member."""
+
+    return name.split(" (", 1)[0]
+
+
+def _common_set_propers(
+    target: dict,
+    reference: dict,
+    where: str,
+    local_override_families: set[str],
+) -> tuple[list[dict], set[str], list[str]]:
+    """Filter one Common formulary to its selected, or safely unresolved, sets.
+
+    Common catalog entries remain a flat transcription of every printed
+    alternative.  A whole-Mass reference must explicitly select one option or
+    declare the choice unresolved.  In the latter case the shared formulary is
+    still useful, but no alternative member is emitted as though appointed.
+    """
+
+    propers = [p for p in (target.get("propers") or []) if isinstance(p, dict)]
+    definitions = target.get(COMMON_SETS)
+    selected_by_reference = reference.get(COMMON_SETS)
+    if definitions is None:
+        if selected_by_reference is not None:
+            return (
+                propers,
+                set(),
+                [
+                    f"{where}: {TAKES_FROM}.{COMMON_SETS} selects a target that "
+                    f"defines no {COMMON_SETS}"
+                ],
+            )
+        return propers, set(), []
+    if not isinstance(definitions, dict) or not definitions:
+        return [], set(), [f"{where}: target {COMMON_SETS} must be a nonempty mapping"]
+
+    selections = selected_by_reference if isinstance(selected_by_reference, dict) else {}
+    problems: list[str] = []
+    if not isinstance(selected_by_reference, dict):
+        problems.append(
+            f"{where}: {TAKES_FROM} must disposition every target {COMMON_SETS} group"
+        )
+    selected_names: set[str] = set()
+    grouped_names: set[str] = set()
+    governed_families: set[str] = set()
+    for group_id, group in definitions.items():
+        group_where = f"{where}: {TAKES_FROM}.{COMMON_SETS}.{group_id}"
+        if not isinstance(group, dict):
+            problems.append(f"{group_where} targets a malformed group")
+            continue
+        families = group.get("families")
+        if isinstance(families, list):
+            governed_families.update(
+                family for family in families if isinstance(family, str) and family
+            )
+        options = group.get("options")
+        if not isinstance(options, dict):
+            problems.append(f"{group_where} targets malformed options")
+            continue
+        for members in options.values():
+            if isinstance(members, list):
+                grouped_names.update(
+                    member for member in members if isinstance(member, str) and member
+                )
+        disposition = selections.get(group_id)
+        if not isinstance(disposition, dict):
+            problems.append(f"{group_where} is not dispositioned")
+            continue
+        state = disposition.get("state")
+        if state == "selected":
+            option_id = disposition.get("option")
+            members = options.get(option_id) if isinstance(option_id, str) else None
+            if not isinstance(members, list):
+                problems.append(f"{group_where} names unknown option {option_id!r}")
+                continue
+            selected_names.update(
+                member for member in members if isinstance(member, str) and member
+            )
+        elif state == "unresolved":
+            candidates = disposition.get("candidates")
+            if not isinstance(candidates, list) or not candidates:
+                problems.append(f"{group_where} unresolved candidates must be nonempty")
+            elif any(
+                not isinstance(candidate, str) or candidate not in options
+                for candidate in candidates
+            ):
+                problems.append(f"{group_where} carries an unknown unresolved candidate")
+            # A local oration remains appointed even when the inherited choice
+            # is unresolved. Retain one source-order seat per locally replaced
+            # family; `_apply_overrides` substitutes the local body before any
+            # result is exposed, so no candidate Common wording escapes.
+            seated: set[str] = set()
+            for members in options.values():
+                if not isinstance(members, list):
+                    continue
+                for member in members:
+                    if not isinstance(member, str):
+                        continue
+                    family = proper_family(member)
+                    if family in local_override_families and family not in seated:
+                        selected_names.add(member)
+                        seated.add(family)
+        else:
+            problems.append(f"{group_where}.state must be selected or unresolved")
+    extra = sorted(set(selections) - set(definitions), key=str)
+    if extra:
+        problems.append(
+            f"{where}: {TAKES_FROM}.{COMMON_SETS} carries unknown group(s) "
+            + ", ".join(repr(group) for group in extra)
+        )
+    return (
+        [
+            proper
+            for proper in propers
+            if str(proper.get("name") or "") not in grouped_names
+            or str(proper.get("name") or "") in selected_names
+        ],
+        governed_families,
+        problems,
+    )
+
+
 def _resolve_reference(
     document: dict,
     mass: dict,
     reference: dict,
     chain: tuple[str, ...],
-) -> tuple[list[tuple[str, dict, dict | None]], list[str]]:
+    local_override_families: set[str],
+) -> tuple[list[tuple[str, dict, dict | None]], set[str], list[str]]:
     key = str(mass.get("key") or "")
     where = f"mass {key}"
     target_key = reference.get("mass")
     if not isinstance(target_key, str) or not target_key:
-        return [], [f"{where}: {TAKES_FROM} needs the key of the mass it takes from"]
+        return [], set(), [f"{where}: {TAKES_FROM} needs the key of the mass it takes from"]
     if target_key == key:
-        return [], [f"{where}: {TAKES_FROM} points at itself"]
+        return [], set(), [f"{where}: {TAKES_FROM} points at itself"]
     if target_key in chain:
         route = " -> ".join((*chain, key, target_key))
-        return [], [f"{where}: {TAKES_FROM} closes a cycle: {route}"]
+        return [], set(), [f"{where}: {TAKES_FROM} closes a cycle: {route}"]
     target = mass_index(document).get(target_key)
     if target is None:
-        return [], [f"{where}: {TAKES_FROM} names mass {target_key!r}, which this calendar has no entry for"]
+        return [], set(), [f"{where}: {TAKES_FROM} names mass {target_key!r}, which this calendar has no entry for"]
+    chosen_propers, common_families, set_problems = _common_set_propers(
+        target, reference, where, local_override_families
+    )
     form = str(reference.get("form") or "")
     if form or isinstance(target.get("forms"), list):
+        if target.get(COMMON_SETS) is not None:
+            return (
+                [],
+                common_families,
+                [*set_problems, f"{where}: {TAKES_FROM}.{COMMON_SETS} cannot target forms"],
+            )
         chosen, trouble = _form_propers(target, form)
         if trouble:
-            return [], [f"{where}: {TAKES_FROM} {trouble}"]
+            return [], common_families, [f"{where}: {TAKES_FROM} {trouble}"]
         provenance = {"mass": target_key, "form": form, "proper": "", "citation": str(reference.get("citation") or "")}
-        return [("", p, dict(provenance, proper=str(p.get("name") or ""))) for p in chosen], []
-    inherited, problems = resolve_propers(document, target, (*chain, key))
+        return [("", p, dict(provenance, proper=str(p.get("name") or ""))) for p in chosen], common_families, set_problems
+    filtered_target = dict(target)
+    filtered_target["propers"] = chosen_propers
+    inherited, problems = resolve_propers(document, filtered_target, (*chain, key))
+    problems = [*set_problems, *problems]
     citation = str(reference.get("citation") or "")
     # Where the text is PRINTED, not the first hop toward it.
     #
@@ -776,7 +1776,7 @@ def _resolve_reference(
         )
         for label, proper, inner in inherited
     ]
-    return out, problems
+    return out, common_families, problems
 
 
 def _resolve_proper(
@@ -785,26 +1785,70 @@ def _resolve_proper(
     proper: dict,
     reference: dict,
     chain: tuple[str, ...],
-) -> tuple[dict | None, list[str]]:
+    *,
+    source_form: str = "",
+) -> tuple[dict | None, dict | None, list[str]]:
     name = str(proper.get("name") or "")
     where = f"mass {key} proper {name!r}"
     target_key = reference.get("mass")
     if not isinstance(target_key, str) or not target_key:
-        return None, [f"{where}: {TAKES_FROM} needs the key of the mass it takes from"]
-    if target_key in (*chain, key):
+        return None, None, [f"{where}: {TAKES_FROM} needs the key of the mass it takes from"]
+    form = str(reference.get("form") or "")
+    if target_key == key:
+        # A book may print one proper once and direct a later sibling form back
+        # to it. The explicit, different form is a complete target, not the
+        # self-cycle made by a whole Mass pointing at itself. Keep this exception
+        # narrow: only a directly printed target proper may cross the sibling
+        # edge; same-form and chained sibling references remain refused.
+        if not form or form == source_form:
+            route = " -> ".join((*chain, key, target_key))
+            return None, None, [f"{where}: {TAKES_FROM} closes a cycle: {route}"]
+        target = mass_index(document).get(target_key)
+        if target is None:  # Defensive: the referring mass came from this index.
+            return None, None, [
+                f"{where}: {TAKES_FROM} names mass {target_key!r}, which this calendar has no entry for"
+            ]
+        candidates, trouble = _form_propers(target, form)
+        if trouble:
+            return None, None, [f"{where}: {TAKES_FROM} {trouble}"]
+        wanted = str(reference.get("proper") or name)
+        for found in candidates:
+            if str(found.get("name")) != wanted:
+                continue
+            if reference_of(found) is not None:
+                return None, None, [
+                    f"{where}: {TAKES_FROM} names a sibling-form proper which itself takes from elsewhere"
+                ]
+            appointed = _appoint_resolved_proper(found, proper, wanted)
+            return appointed, _provenance(reference, proper), []
+        return None, None, [
+            f"{where}: {TAKES_FROM} names proper {wanted!r} of form {form!r} of mass "
+            f"{target_key!r}, which appoints no such proper"
+        ]
+    if target_key in chain:
         route = " -> ".join((*chain, key, target_key))
-        return None, [f"{where}: {TAKES_FROM} closes a cycle: {route}"]
+        return None, None, [f"{where}: {TAKES_FROM} closes a cycle: {route}"]
     target = mass_index(document).get(target_key)
     if target is None:
-        return None, [f"{where}: {TAKES_FROM} names mass {target_key!r}, which this calendar has no entry for"]
+        return None, None, [
+            f"{where}: {TAKES_FROM} names mass {target_key!r}, which this calendar has no entry for"
+        ]
     wanted = str(reference.get("proper") or name)
-    form = str(reference.get("form") or "")
     entries, problems = resolve_propers(document, target, (*chain, key))
-    for label, found, _ in entries:
+    for label, found, terminal in entries:
         if str(found.get("name")) == wanted and (not form or label == form):
-            return found, problems
+            # The reference names where the text is printed; the wrapper names
+            # the slot as it is appointed here. Usually those names agree and
+            # the target object can pass through unchanged. A qualified local
+            # slot such as ``Collect (Item altera oratio)`` may deliberately
+            # name the target's unqualified ``Collect``, however. Keep that
+            # local display/slot identity while borrowing every other field
+            # from the target. This is shallow on purpose: verses, cycles and
+            # translations remain the target's objects rather than restated
+            # content free to drift.
+            return _appoint_resolved_proper(found, proper, wanted), terminal, problems
     where_form = f" of form {form!r}" if form else ""
-    return None, [
+    return None, None, [
         *problems,
         f"{where}: {TAKES_FROM} names proper {wanted!r}{where_form} of mass "
         f"{target_key!r}, which appoints no such proper",
@@ -860,3 +1904,52 @@ def texts_of(
             note = f"no {lang} translation{scope} recorded; showing Latin"
         return [(str(proper["text"]), "", note)]
     return []
+
+
+def incipit_only_of(
+    proper: dict, lang: str, witness: str | None = None
+) -> dict[str, str] | None:
+    """Return a cited scripture incipit as apparatus, never selected text.
+
+    A chant's Latin incipit identifies its cited scripture proper and records
+    only the opening words.  It is not a translation into the language the
+    reader requested, and it is not the full Latin proper.  Keep that
+    distinction in shared semantics so a terminal cannot turn an unlabelled
+    incipit into an apparent English rendering merely by printing it below an
+    English heading.
+
+    This result concerns the proper body selected by :func:`texts_of`.
+    Citation-backed scripture is a separate material layer: the Bible may
+    resolve the reference while the liturgical identifier remains a Latin
+    incipit.  A composed proper without a publishable body does *not* enter
+    this path; its typed unavailable or untranslated record owns that absence.
+    """
+    incipit = str(proper.get("incipit") or "").strip()
+    cited_scripture = (
+        proper.get("source") == "scripture"
+        and any(
+            isinstance(verse, dict) and verse.get("ref")
+            for verse in proper.get("verses") or []
+        )
+    )
+    if (
+        not cited_scripture
+        or not incipit
+        or any(text for text, _, _ in texts_of(proper, lang, witness))
+    ):
+        return None
+
+    note = "Latin incipit only"
+    if lang != "la":
+        scope = f" from {witness}" if witness else ""
+        note += f"; no {lang} rendering{scope} recorded"
+    material = {
+        "text": incipit,
+        "language": "la",
+        "extent": "incipit",
+        "requested_language": lang,
+        "note": note,
+    }
+    if witness:
+        material["requested_witness"] = witness
+    return material

@@ -1,0 +1,206 @@
+schema = "triptych-recension-language-coverage/v1"
+id = "roman-missal-en-us-2011-propers"
+recension_id = "roman-missal-en-us-2011"
+calendar = "postconciliar"
+language = "en-US"
+as_of = "2026-08-26"
+status = "incomplete"
+record_kind = "finding-aid"
+overlay_ref = "src/sources/inventories/postconciliar-proper-translations-v1.toml"
+rights_ref = "src/sources/inventories/icel-web-permission-rights-v1.toml"
+rights_matrix_ref = "src/sources/inventories/liturgical-english-rights-v1.toml"
+publication_policy_ref = "guidance/liturgical-text-publication-policy.md"
+derivation = "tools/tpt mass-propers census --json"
+missing_slots = []
+unmatched_records = []
+
+[identity]
+expression = "The Roman Missal, Third Edition, approved ICEL English implemented for use in the United States in 2011"
+latin_parent = "Missale Romanum, editio typica tertia, reimpressio emendata 2008"
+relation = "language-expression"
+scope = "approved ICEL Roman Missal identity among active and unavailable records in the postconciliar overlay"
+adjacent_scope = "Lectionary acclamations are gap-accounted here but do not become Roman Missal ICEL identity."
+
+[capability]
+data_availability = "partial"
+collation = "mixed"
+repository_corpus = "unavailable-pending-permission"
+website_display = "blocked-pending-delivery-gate"
+api = "not-authorized"
+pdf = "not-authorized"
+download = "not-authorized"
+notice = "This record accounts for identities and gaps only. It grants no permission and contains no liturgical English text."
+
+# `verified_identity` says only that a removed body was read in an exemplar
+# which identifies it as the approved ICEL expression. It does not say that the
+# body may be bundled, served, printed, or downloaded. The protected wording is
+# no longer held; the overlay retains source locators and hashes as quarantine
+# metadata until the delivery and acknowledgement dependency is satisfied.
+[[source_classes]]
+source_record_id = "project-created"
+entry_witness = ""
+source_id = ""
+translation_source_ids = [""]
+identity_relation = "project-study-english"
+exemplar_tier = "project"
+verified_identity = false
+active_entries = true
+text_held = true
+currently_servable = true
+corpus_disposition = "not-2011-recension"
+
+[[source_classes]]
+source_record_id = "cummiskey-1861"
+entry_witness = "cummiskey-1861"
+source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+translation_source_ids = ["edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"]
+identity_relation = "historical-antecedent-english"
+exemplar_tier = "historical"
+verified_identity = false
+active_entries = true
+text_held = true
+currently_servable = true
+corpus_disposition = "not-2011-recension"
+
+[[source_classes]]
+source_record_id = "caswall-1849"
+entry_witness = "caswall-1849"
+source_id = "edition.edward-caswall.lyra-catholica.london-1849"
+translation_source_ids = ["edition.edward-caswall.lyra-catholica.london-1849"]
+identity_relation = "historical-literary-english"
+exemplar_tier = "historical"
+verified_identity = false
+active_entries = true
+text_held = true
+currently_servable = true
+corpus_disposition = "not-2011-recension"
+
+[[source_classes]]
+source_record_id = "icel-antiphonary-2010"
+entry_witness = "icel-antiphonary-2010"
+source_id = "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary"
+translation_source_ids = ["edition.catholic-church.missale-romanum.2010-english-icel-antiphonary"]
+identity_relation = "approved-icel-2011"
+exemplar_tier = "official-conference-reprint"
+verified_identity = true
+active_entries = false
+text_held = false
+currently_servable = false
+corpus_disposition = "quarantined-metadata-only"
+
+[[source_classes]]
+source_record_id = "icel-music-2010"
+entry_witness = "icel-music-2010"
+source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+translation_source_ids = ["edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"]
+identity_relation = "approved-icel-2011"
+exemplar_tier = "rightsholder-published"
+verified_identity = true
+active_entries = false
+text_held = false
+currently_servable = false
+corpus_disposition = "quarantined-metadata-only"
+
+[[source_classes]]
+source_record_id = "fdlc-mystagogy-2016"
+entry_witness = "fdlc-mystagogy-2016"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"
+translation_source_ids = ["edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion"]
+identity_relation = "approved-icel-2011"
+exemplar_tier = "authorized-secondary-reprint"
+verified_identity = true
+active_entries = false
+text_held = false
+currently_servable = false
+corpus_disposition = "quarantined-metadata-only"
+
+[[source_classes]]
+source_record_id = "fdlc-mystagogy-2012"
+entry_witness = "fdlc-mystagogy-2012"
+source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects"
+translation_source_ids = ["edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects"]
+identity_relation = "approved-icel-2011"
+exemplar_tier = "authorized-secondary-reprint"
+verified_identity = true
+active_entries = false
+text_held = false
+currently_servable = false
+corpus_disposition = "quarantined-metadata-only"
+
+[[source_classes]]
+source_record_id = ""
+entry_witness = "icel-web-2010"
+source_id = ""
+translation_source_ids = []
+identity_relation = "claimed-icel-2011-unofficial-web-transcription"
+exemplar_tier = "unofficial"
+verified_identity = false
+active_entries = false
+text_held = false
+currently_servable = false
+corpus_disposition = "removed-hash-only"
+former_source_record_id = "icel-web-2010"
+former_source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+provenance_issue = "The witness was read from liturgies.net but carries the source id of ICEL's Music for the Roman Missal."
+
+[[dependencies]]
+id = "authoritative-official-exemplar"
+state = "missing-for-no-exemplar-ledger-rows"
+required_evidence = "An official or authorized exemplar identifying the exact approved English for the exact slot."
+
+[[dependencies]]
+id = "authoritative-official-lectionary-exemplar"
+state = "missing-for-acclamation-rows"
+required_evidence = "The exact applicable United States Lectionary edition, rightsholder layer, authoritative wording and sense lines."
+
+[[dependencies]]
+id = "corrected-source-provenance"
+state = "missing-for-unofficial-web-rows"
+required_evidence = "A source record naming the exemplar actually read, with no borrowed identifier from an unrelated official edition."
+
+[[dependencies]]
+id = "corpus-data-permission"
+state = "missing"
+required_evidence = "Permission covering retention of protected wording in the tracked source corpus and generated data."
+
+[[dependencies]]
+id = "public-git-permission"
+state = "missing"
+required_evidence = "Permission covering distribution of protected wording through a public Git repository."
+
+[[dependencies]]
+id = "command-line-permission"
+state = "missing"
+required_evidence = "Permission covering distribution of protected wording through command-line output."
+
+[[dependencies]]
+id = "api-permission"
+state = "missing"
+required_evidence = "Permission covering distribution of protected wording through an API or equivalent structured-data surface."
+
+[[dependencies]]
+id = "download-and-pdf-permission"
+state = "missing"
+required_evidence = "Permission covering downloadable data and generated PDF artifacts containing protected wording."
+
+[[dependencies]]
+id = "rights-safe-website-delivery"
+state = "not-implemented"
+required_evidence = "A non-bundled source path with exactness enforcement and the required acknowledgement in the first and last display frame."
+
+[unavailable_ledger]
+record_ref = "src/sources/inventories/postconciliar-proper-translations-v1.toml#untranslated"
+language = "en"
+availability = "unavailable"
+identity_fields = ["mass", "form_id", "proper", "cycle", "incipit", "extent", "occurrence"]
+public_target_fields = ["mass", "form_id", "proper", "cycle", "occurrence", "extent"]
+reason_kinds = ["no-exemplar", "rights-withheld"]
+no_exemplar_dependencies = ["authoritative-official-exemplar"]
+no_exemplar_special_cases = ["authoritative-official-lectionary-exemplar"]
+rights_withheld_dependencies = ["corpus-data-permission", "public-git-permission", "command-line-permission", "api-permission", "download-and-pdf-permission", "rights-safe-website-delivery"]
+default_form_id = "main"
+default_cycle = "all"
+default_incipit = ""
+default_extent = "body"
+default_occurrence = 1
+text_retention = "hash-only-where-a-rejected-body-existed"

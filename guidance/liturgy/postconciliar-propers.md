@@ -36,6 +36,26 @@ The shared owner keeps the reusable edition-specific Missal or Ritual Mass audit
 
 Every external owner, shared fragment, and edition registry record that controls a build is an explicit dependency; rebuild and re-review every consumer after it changes. Declare each edge in the Makefile beside the collection's existing shared edges, following the established `SACRAMENT_SHARED` and `POSTCONCILIAR_US_FORMAT` pattern: collection-wide shared material is declared once against the collection's build PDFs, while a per-parent or per-week formulary owner is declared as a prerequisite of each consuming leaf's PDF target. An undeclared owner is a build defect even where the leaf reads correctly.
 
+### Commons recovery evidence
+
+`src/sources/inventories/postconciliar-sanctoral-commons-v1.toml` is the
+durable recovery of Common directions already present on dated calendar
+records. It is an inventory, not a resolver input: no row creates a
+`takes_from` or `common_from` edge, chooses among alternatives, or establishes
+the target Missal's formulary body. An *Ordo lectionum Missae* heading governs
+the reading provision only. A direction recovered from the ICEL Antiphonary
+governs antiphons only, because that excerpt carries no orations and is not a
+ritual edition. A historical antecedent flagged as wrong-edition evidence
+never becomes evidence for the target postconciliar Missal.
+
+Keep one row per singular dated Mass key, including same-date celebrations as
+separate rows. Preserve the exact heading, artifact and printed-page locator,
+entry number, alternatives, and sub-selection stated by the owning evidence;
+do not derive a Common from the saint's title. Refresh the inventory whenever
+those calendar notes or directions change, and leave every row fail-closed
+until a source with authority for the exact target-Missal relation has been
+read. The inventory is deliberately absent from public projections.
+
 ## Required tracked records
 
 Every publishable leaf contains:
@@ -109,11 +129,14 @@ Mark the brief synthesis with
 N+1, and N+2. Page breaks without that validation do not meet the exact
 two-page requirement.
 
-The rights position here is narrower than it is for the 1962 books. The ICEL
-English of the Roman Missal and the
-Lectionary text are under copyright and are never reproduced. Neither is
-any Bible translation under copyright — the Knox, Jerusalem and New
-Jerusalem, RSV and NRSV, NABRE, and the Grail psalms are all excluded.
+The rights position for these installed PDFs is narrower than it is for the
+site's live display. The ICEL English of the Roman Missal is under copyright;
+ICEL's standing permission is limited to a qualifying no-fee noncommercial
+Internet site and expressly grants no license for another form of publication.
+It therefore is not reproduced in these PDFs. Lectionary text is controlled
+separately by CCD and is not reproduced either. Nor is any Bible translation
+under copyright — the Knox, Jerusalem and New Jerusalem, RSV and NRSV, NABRE,
+and the Grail psalms are all excluded.
 A guide may cite a locus, describe what a text says, and quote the short
 phrase an argument actually turns on; it may not stand in for the book.
 
@@ -130,6 +153,13 @@ Within that bound:
   description of what the prayer asks. Do not supply a rendering of the
   project's own, and do not paraphrase the ICEL text closely enough to
   reconstruct it.
+
+Do not copy a live-page acknowledgement into the PDF and infer that it expands
+the permission. For a future qualifying web display of excerpts, ICEL currently
+prescribes `Excerpts from the English translation of The Roman Missal © 2010,
+International Commission on English in the Liturgy Corporation. All rights
+reserved.` That notice is necessary where applicable but does not clear a PDF,
+a public data bundle, USCCB-specific material, or CCD/Lectionary text.
 
 Where this leaves an element without English, say so in that element's
 own place rather than in a general disclaimer. An honest gap is a

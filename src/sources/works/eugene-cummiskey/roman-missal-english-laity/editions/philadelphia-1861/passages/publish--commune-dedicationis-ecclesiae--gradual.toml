@@ -1,0 +1,12 @@
+schema = 2
+record_type = "passage"
+id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-commune-dedicationis-ecclesiae-gradual"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.common-marian-verified-en"
+artifact_sha256 = "1c414c2fb24abd25f211841302a0b4ac95ff89d47a998afbefd2b9a323896851"
+locus = "commune-dedicationis-ecclesiae/gradual"
+physical_line_ranges = [[2, 2]]
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact transcription of Cummiskey's historical English for Locus iste a Deo factus est; retained as an unattached candidate, not an exact 1962 translation."
+verified_on = "2026-08-26"
+notes = "Byte range is one complete TSV data line; visual controller is the sibling verify-commune-dedicationis-ecclesiae-gradual passage. That controller records that no facing Latin appears here, so this passage verifies the 1861 English wording but does not resolve the 1962 `astat` versus historical `adstat` difference or authorize a positive translation binding."

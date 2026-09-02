@@ -12,6 +12,186 @@ run_tool() {
 
 run_tool --help >/dev/null
 
+# A multi-owner ledger is exact in both dimensions: one surviving breach must
+# not keep a corrected sibling owner alive as a standing exception.
+python3 - "$repo/tools/citations" <<'PY'
+import sys
+from importlib.machinery import SourceFileLoader
+from importlib.util import module_from_spec, spec_from_loader
+
+loader = SourceFileLoader("citations_partial_stale", sys.argv[1])
+spec = spec_from_loader(loader.name, loader)
+module = module_from_spec(spec)
+sys.modules[spec.name] = module
+loader.exec_module(module)
+kept, excepted = module.apply_psalm_exceptions(
+    ["mass/Introit/end: Psalm 9:39 exceeds hebrew Psalm 9"],
+    {"Psalm 9:39": ("mass/Introit", "mass/Communion")},
+)
+if len(excepted) != 1 or not any(
+    "Psalm 9:39 for mass/Communion" in problem and "no longer breaches" in problem
+    for problem in kept
+):
+    raise SystemExit(f"partial stale exception was not rejected: {kept}, {excepted}")
+PY
+
+# Traversal is deliberately narrower than the calendar schema validator, but a
+# malformed parent aggregate must still be inert here rather than turning the
+# delegated citation pass into a traceback. Repeated names, on the other hand,
+# are citation identity: qualify them in source order so an exception can name
+# exactly one occurrence.
+python3 - "$repo/tools/citations" <<'PY'
+import sys
+from importlib.machinery import SourceFileLoader
+from importlib.util import module_from_spec, spec_from_loader
+
+loader = SourceFileLoader("citations_strict_shapes", sys.argv[1])
+spec = spec_from_loader(loader.name, loader)
+module = module_from_spec(spec)
+sys.modules[spec.name] = module
+loader.exec_module(module)
+
+malformed = (
+    {"sections": 7},
+    {"sections": {"seasonal": {"masses": 7}}},
+    {"sections": {"seasonal": {"masses": [{"key": "mass", "forms": 7}]}}},
+    {
+        "sections": {
+            "seasonal": {"masses": [{"key": "mass", "propers": 7}]}
+        }
+    },
+)
+for document in malformed:
+    if list(module.each_proper(document)):
+        raise SystemExit(f"malformed aggregates yielded a Proper: {document!r}")
+
+document = {
+    "sections": {
+        "seasonal": {
+            "masses": [
+                {
+                    "key": "mass",
+                    "propers": [
+                        {"name": "Responsorial Psalm", "verses": []},
+                        {"name": "Responsorial Psalm", "verses": []},
+                    ],
+                }
+            ]
+        }
+    }
+}
+labels = [label for label, _ in module.each_proper(document)]
+if labels != ["mass/Responsorial Psalm#1", "mass/Responsorial Psalm#2"]:
+    raise SystemExit(f"repeated Proper names lack exact occurrences: {labels!r}")
+kept, excepted = module.apply_psalm_exceptions(
+    [
+        "mass/Responsorial Psalm#1/end: Psalm 150:6 exceeds hebrew Psalm 150",
+        "mass/Responsorial Psalm#2/end: Psalm 150:6 exceeds hebrew Psalm 150",
+    ],
+    {"Psalm 150:6": ("mass/Responsorial Psalm#2",)},
+)
+if (
+    len(kept) != 1
+    or "#1/end" not in kept[0]
+    or len(excepted) != 1
+    or "#2/end" not in excepted[0]
+):
+    raise SystemExit(f"occurrence-qualified exception was not exact: {kept}, {excepted}")
+
+# A parenthetical may be part of the Proper's real name or an audit incipit.
+# Resolve it against live owner paths before taking the legacy incipit away.
+qualified = {"mass/Entrance Antiphon (alternative)"}
+if module.exception_owners(
+    "mass/Entrance Antiphon (alternative)", qualified
+) != ("mass/Entrance Antiphon (alternative)",):
+    raise SystemExit("a real parenthetical Proper qualifier was stripped")
+if module.exception_owners(
+    "mass/Entrance Antiphon (alternative) (Ecce)", qualified
+) != ("mass/Entrance Antiphon (alternative)",):
+    raise SystemExit("a legacy display incipit was not stripped")
+
+# Presence, not truthiness, chooses an owner's numbering declaration. Otherwise
+# an explicit malformed override quietly inherits a valid enclosing default.
+proper = {"psalm_numbering": "", "verses": []}
+if module.numbered_verse_lists(proper, "hebrew")[0][3] != "":
+    raise SystemExit("a falsey proper numbering override inherited the default")
+cycled = {
+    "weekday_cycles": {"I": {"psalm_numbering": False, "verses": []}}
+}
+if module.numbered_verse_lists(cycled, "hebrew")[0][3] is not False:
+    raise SystemExit("a falsey cycle numbering override inherited the default")
+
+# Passage, range and exception tables are closed, and YAML booleans are not
+# positive integers merely because Python's bool subclasses int.
+problems = []
+module.check_passage(
+    "mass/Introit",
+    {
+        "book": "Psalms",
+        "ranges": [
+            {
+                "begin": {"chapter": True, "verse": 1},
+                "end": {"chapter": 1, "verse": False},
+                "surprise": "range",
+            }
+        ],
+        "surprise": "passage",
+    },
+    problems,
+    "hebrew",
+)
+for wanted in (
+    "passage has unknown keys ['surprise']",
+    "range has unknown keys ['surprise']",
+    "chapter must be a positive integer",
+    "verse must be a positive integer",
+):
+    if not any(wanted in problem for problem in problems):
+        raise SystemExit(f"closed passage validation missed {wanted!r}: {problems}")
+
+problems = []
+module.check_passage(
+    "mass/Introit",
+    {
+        "book": [],
+        "ranges": [
+            {"begin": {"chapter": 1, "verse": 1}, "end": {"chapter": 1, "verse": 1}}
+        ],
+        "ref": "Psalm 1:1",
+    },
+    problems,
+    "hebrew",
+)
+if not any("book is not a canonical name" in problem for problem in problems):
+    raise SystemExit(f"an unhashable malformed book was not controlled: {problems}")
+
+problems = []
+module.psalm_exceptions(
+    {
+        "psalm_numbering_exceptions": [
+            {
+                "psalm": True,
+                "divergence": "test",
+                "loci": {"Psalm 1:999": "mass/Introit"},
+                "surprise": "exception",
+            }
+        ]
+    },
+    problems,
+)
+if not any("entry has unknown keys ['surprise']" in problem for problem in problems):
+    raise SystemExit(f"exception entry schema remained open: {problems}")
+if not any("psalm must be the cited psalm's number" in problem for problem in problems):
+    raise SystemExit(f"a boolean psalm number passed: {problems}")
+
+try:
+    module.parse_citation(7)
+except module.CitationError:
+    pass
+else:
+    raise SystemExit("a non-string citation did not raise CitationError")
+PY
+
 expect() {
 	want="$1"
 	shift
@@ -83,6 +263,50 @@ sandbox="$(mktemp -d)"
 trap 'rm -rf "$sandbox"' EXIT INT TERM
 cd "$sandbox"
 mkdir -p calendars/test
+
+# `verses` is the content aggregate this tool owns. A bad scalar is reported in
+# the normal payload; it must not explode while the calendar checker delegates.
+cat >calendars/test/sundays.yaml <<'YAML'
+schema: triptych-calendar-masses/v1
+psalm_numbering: vulgate
+sections:
+ seasonal:
+  masses:
+  - key: test-sunday
+    propers:
+    - name: Introit
+      verses: 7
+YAML
+if out="$(run_tool check --root calendars 2>&1)"; then
+	echo "expected check to reject a scalar verses aggregate" >&2
+	exit 1
+fi
+case "$out" in
+*"verses must be a nonempty list"*) ;;
+*) echo "expected a controlled verses-shape problem, got: $out" >&2; exit 1 ;;
+esac
+case "$out" in
+*"Traceback"*) echo "malformed verses must not crash citations: $out" >&2; exit 1 ;;
+*) ;;
+esac
+
+cat >calendars/test/sundays.yaml <<'YAML'
+schema: triptych-calendar-masses/v1
+sections: [
+YAML
+if out="$(run_tool check --root calendars 2>&1)"; then
+	echo "expected check to reject malformed YAML" >&2
+	exit 1
+fi
+case "$out" in
+*"unreadable"*) ;;
+*) echo "expected a controlled YAML parse problem, got: $out" >&2; exit 1 ;;
+esac
+case "$out" in
+*"Traceback"*) echo "malformed YAML must not crash citations: $out" >&2; exit 1 ;;
+*) ;;
+esac
+
 cat >calendars/test/sundays.yaml <<'YAML'
 schema: triptych-calendar-masses/v1
 edition: test edition
@@ -429,11 +653,143 @@ if ! run_tool check --root leak 2>&1 | grep -q 'ends at verse 21'; then
 	echo "expected the psalm bound to be named" >&2
 	exit 1
 fi
-sed -i 's/^psalm_numbering: hebrew$/psalm_numbering: vulgate/' leak/heb/propers.yaml
+
+# The calendar declaration is a default: a proper may identify the numbering
+# its own printed citation uses, and the checker must validate under that
+# effective system just as the reader does.
+python3 - <<'PY'
+from pathlib import Path
+
+path = Path("leak/heb/propers.yaml")
+text = path.read_text()
+text = text.replace(
+    "    - name: Introit\n      source: scripture\n",
+    "    - name: Introit\n      source: scripture\n      psalm_numbering: vulgate\n",
+)
+path.write_text(text)
+PY
 if ! run_tool check --root leak >/dev/null 2>&1; then
-	echo "Psalm 9:39 is valid under vulgate numbering" >&2
+	echo "Psalm 9:39 is valid under a proper's vulgate numbering" >&2
 	exit 1
 fi
+
+# A reading course may refine the proper's numbering once more. This fixture
+# proves the validator walks that owner under its own declaration rather than
+# applying either enclosing default to it.
+mkdir -p cycle-numbering/heb
+python3 - <<'PY'
+from pathlib import Path
+import yaml
+
+source = Path("leak/heb/propers.yaml")
+target = Path("cycle-numbering/heb/propers.yaml")
+document = yaml.safe_load(source.read_text())
+proper = document["sections"]["seasonal"]["masses"][0]["propers"][0]
+verses = proper.pop("verses")
+proper.pop("psalm_numbering")
+proper["weekday_cycles"] = {
+    "I": {"psalm_numbering": "vulgate", "verses": verses}
+}
+target.write_text(yaml.safe_dump(document, sort_keys=False))
+PY
+if ! run_tool check --root cycle-numbering >/dev/null 2>&1; then
+	echo "Psalm 9:39 is valid under a cycle's vulgate numbering" >&2
+	exit 1
+fi
+rm -rf cycle-numbering
+
+# A ledgered bound remains visible in `excepted` but does not make the
+# standalone citation check red. The exception is exact: another bad verse in
+# the same psalm remains a genuine failure rather than hiding behind it.
+python3 - <<'PY'
+from pathlib import Path
+
+path = Path("leak/heb/propers.yaml")
+text = path.read_text().replace("      psalm_numbering: vulgate\n", "")
+text = text.replace(
+    "sections:\n",
+    "psalm_numbering_exceptions:\n"
+    "- psalm: 9\n"
+    "  divergence: The fixture deliberately records this one open locus.\n"
+    "  loci:\n"
+    "    'Psalm 9:39': t/Introit\n"
+    "sections:\n",
+)
+path.write_text(text)
+PY
+out="$(run_tool check --root leak --json)"
+case "$out" in
+*'"status":"ok"'*) ;;
+*) echo "expected an exact ledgered locus to pass: $out" >&2; exit 1 ;;
+esac
+case "$out" in
+*'"excepted":['*'Psalm 9:39'*) ;;
+*) echo "expected an exact ledgered locus to be reported but pass: $out" >&2; exit 1 ;;
+esac
+
+# The owner is as exact as the locus. A second Proper citing the same verse is
+# not covered by an exception naming only the Introit.
+python3 - <<'PY'
+from pathlib import Path
+
+path = Path("leak/heb/propers.yaml")
+text = path.read_text()
+needle = "        ref: 'Psalm 9:39'\n"
+addition = """    - name: Communion
+      source: scripture
+      verses:
+      - book: Psalms
+        ranges:
+        - begin: {chapter: 9, verse: 39}
+          end: {chapter: 9, verse: 39}
+        ref: 'Psalm 9:39'
+"""
+text = text.replace(needle, needle + addition, 1)
+path.write_text(text)
+PY
+if out="$(run_tool check --root leak 2>&1)"; then
+	echo "an Introit exception must not excuse the Communion's Psalm 9:39" >&2
+	exit 1
+fi
+case "$out" in
+*'t/Communion'*'Psalm 9:39'*) ;;
+*) echo "expected the unlisted Proper and locus in the failure: $out" >&2; exit 1 ;;
+esac
+
+python3 - <<'PY'
+from pathlib import Path
+
+path = Path("leak/heb/propers.yaml")
+text = path.read_text().replace("verse: 39", "verse: 38").replace(
+    "ref: 'Psalm 9:39'", "ref: 'Psalm 9:38'"
+)
+path.write_text(text)
+PY
+if run_tool check --root leak >/dev/null 2>&1; then
+	echo "an exception for Psalm 9:39 must not excuse Psalm 9:38" >&2
+	exit 1
+fi
+
+# The standalone citation gate owns this ledger, so it must also reject an
+# entry after every named owner has been corrected.  Moving the citation to a
+# valid locus leaves Psalm 9:39 wholly stale instead of merely unlisted.
+python3 - <<'PY'
+from pathlib import Path
+
+path = Path("leak/heb/propers.yaml")
+text = path.read_text().replace("verse: 38", "verse: 1").replace(
+    "ref: 'Psalm 9:38'", "ref: 'Psalm 9:1'"
+)
+path.write_text(text)
+PY
+if out="$(run_tool check --root leak 2>&1)"; then
+	echo "a stale psalm-numbering exception must fail citations check" >&2
+	exit 1
+fi
+case "$out" in
+*'psalm_numbering_exceptions lists Psalm 9:39'*'no longer breaches'*) ;;
+*) echo "expected the stale ledger owner and locus, got: $out" >&2; exit 1 ;;
+esac
 rm -rf leak
 
 # An empty root is an error, not a silent pass.

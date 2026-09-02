@@ -641,10 +641,36 @@ cutover are independently accepted and complete. Canonical
 readers without redirecting. Exact cutover commit
 `9b5f21c0ca26bf02af03d207ddd2617021e16fb3` owns qualifying successful Pages
 run `31175722949`, 936/936 immediate live assertions, and 216/216 ordinary-
-cache assertions after 613 seconds. The immutable execution handoff is
-`build/agent-handoffs/20260807T115341Z-liturgy-reader-instrument-public-cutover-execution/`,
-with verified ZIP SHA-256
+cache assertions after 613 seconds. The immutable execution handoff was
+introduced at commit `1d60b49bcf2a46e5ee43d6326af3e13a43265b72`, with verified
+ZIP SHA-256
 `06752126a3a3235a342f54ec08811faaf4fc2622924008c4362dda519624c410`.
+
+On 2026-08-27 the seven formerly tracked Liturgical Instrument review packages
+were removed from the current tree as whole packages. Their protected PNG/PDF
+evidence could not remain, and leaving partial packages or refreshing their
+manifests would contradict the immutable ignored-handoff contract. The packages
+therefore have no current-tree directories or manifests. Their historical
+locations are:
+
+- `20260806T112813Z-liturgy-reader-instrument-correction` at
+  `50288ddf9759f56e8a25e4907d8de25e27e25e8f`;
+- `20260806T132759Z-liturgy-reader-instrument-correction` at
+  `c388ab42dfc4f5c7d49abc71596d6bb511af5742`;
+- `20260806T141831Z-liturgy-reader-instrument-correction` at
+  `4daf7d8a1e1c509edb81a738cc71223170bbbd2d`;
+- `20260806T183040Z-liturgy-reader-instrument-production-integration` at
+  `8c6e1270f692ca4136f2f6a60002bacd3af0440c`;
+- `20260807T052836Z-liturgy-reader-public-cutover-compatibility` at
+  `e69d91ffff5823dc2970f867f1be8c9eb5b6363b`;
+- `20260807T105259Z-liturgy-reader-public-cutover-gate-repair` at
+  `a996a82a68163dd5f7a2af24ae63f100244d6bc0`; and
+- `20260807T115341Z-liturgy-reader-instrument-public-cutover-execution` at
+  `1d60b49bcf2a46e5ee43d6326af3e13a43265b72`.
+
+Those commits preserve the historical record, including the protected objects;
+this disclosure is not a current distribution clearance or a decision to
+rewrite published history.
 
 Public navigation was not redesigned. Retained `day-reader.html`,
 `propers-reader.html`, and both visual-reset oracle routes remain intact and
@@ -771,6 +797,8 @@ tracked commit say so rather than borrowing a neighboring SHA.
 | 2026-08-07 | Live Reader — Ritual Flow & Orientation kickoff | In progress as a distinct production refinement phase after the accepted cutover. RF-A maps and captures live sustained-reading states and classifies only source-owned semantics; RF-B adds a quiet persistent ritual locus; RF-C makes Contents open on its accessible current place; RF-D restores visual hierarchy between principal action and proved rubric/reference/provenance material; RF-E tunes deep desktop/mobile rhythm while protecting the accepted first viewport and 636-pixel portrait Read measure. No liturgical applicability is inferred. Migration, navigation, candidate/oracle cleanup, search, Study/Compare, print, source, translation, and recension scope remain closed. | Start `1bca6a0ee862fce5873d6b0c2d92389e78ca018b`; deliverable `liturgy-reader-live-ritual-flow-2026-08-07`; canonical continuity and RF-A evidence own the next checkpoint |
 | 2026-08-20 | Missal-mode seating — printed order, qualified variants, and the moved freeze | **Not externally re-accepted; recorded so the change is not silent.** Two defects kept 243 of 491 Masses out of Missal mode. First, a 2026-08-08 scripture wave had appended propers above the orations in 49 formularies, so the seating walk broke at the Collect; the printed order was restored from the CMAA facsimile (Commune unius Martyris I, marginal nos. 4193-4203) and is now enforced by `order_problems` in check-calendar-masses with a self-cleaning `proper_order_exceptions` ledger for the eleven rites that genuinely leave the frame. Second, 95 of the remaining 105 refused on propers the reader had already placed: a slot may now declare `qualified` and claim `<name> (<qualifier>)`, on Ritus servandus V, 2 / VII, 7 / XI, 1, and the Gradual slot gains `Sequence` and `Greater Alleluia` on RS VI, 1 and the Proprium rubric at Sabbato in albis. Refusals fell 243 -> 105 -> 17. **The acceptance freeze in `tools/tests/test_day_missal_integration.py` moved for the second time**, for the same reason it moved on 2026-08-08: completing the propers and commons necessarily rewrites `src/sources/calendars` and `src/web/data`, which that guard pins, and this change also edits `ordinary-seating.js`, which it hashes. What is NOT claimed: nobody has re-accepted the readers against the data or the seating engine as they now stand, and the Missal-mode fail-closed guard in `day-reader.js` is untouched -- admitting riding propers and rendering `before`/`after` through the legacy stated aside remain proposed and unlanded, needing this ledger's own process. | `b24a3e3fd`, `0893e5e8a`, `5d6c92627` |
 | 2026-08-20 | Missal mode — a day of several Masses is seated as one | **Diagnosed and measured; fix written and deliberately NOT applied.** A day that prints several Masses carries them as `forms`, and `mass-propers structure` flattens that block into one `propers` array whose entries keep only a `form` label — a mass carrying forms has no `forms` key in the served file at all. `seatPropers` therefore reads three Masses as one, and the second Introit sends the walk backwards at the first slot it reaches, so the second and third Masses lose their seats and the reader refuses the day. Christmas Day and All Souls are the 1962 cases; the postconciliar Pentecost is another. Measured: seating each form on its own closes 2 of the 1962's 17 remaining refusals and 6 of the postconciliar's 30, 8 masses across both editions. A patch is written at `.scratch/lanes/forms-seating-defect/ordinary-seating.patch` and is additive — `formsOf` and `propersOfForm` helpers, a subsequence and never a reordering, and a caller that names no form gets byte-identical behaviour. **Two reasons it is not landed.** It is inert alone: which of several Masses a reader is at is not deterministic from the data, so a caller must name the form, and that is a reader decision this ledger owns. And it edits `ordinary-seating.js`, which the acceptance freeze hashes and which this branch has already moved twice; a third move for a change that would observably do nothing is not a trade this lane may make. | proposal and measurement in the lane directory; no commit |
+| 2026-08-27 | Missal mode — stable Mass forms supersede the unlanded flattening patch | **The 2026-08-20 diagnosis is historical and its patch must not be applied.** Generated Masses with authored alternatives now carry an ordered `forms[]` manifest whose stable `forms[].id` values partition the legacy flat Proper sequence, and every nested Proper carries its matching `form_id`. The shared reader adapter requires that exact partition, refuses an implicit default when several forms exist, and preserves each selected form's original flat source offsets. This closes the old data-shape blocker without label inference or the lane's obsolete display-label patch; remaining alternative and exceptional-frame seating is tracked separately. | Current generated Propers structures, `properFormSelection`, and form-parity tests; no historical row rewritten |
+| 2026-08-27 | Postconciliar Ordinary boundary recovery and browser evidence refresh | **Implemented, not externally re-accepted.** The Rite of Peace is now two elements at nn. 127 and 128; n. 127 carries only an explicitly uncollated 1861 antecedent because the target evidence does not establish the full response at that locus, and optional n. 128 remains text-free. Eucharistic Prayer I is represented by twelve option-bound children around the already-common n. 91 acclamation and n. 98 doxology; nine carry labelled antecedents, while Communicantes, Qui pridie and Supplices remain empty at their proved divergences. The generated postconciliar structure is 59 elements with 20 Latin antecedents, and no production browser JavaScript changed. The Day Chromium harness now resolves EP I to Te igitur, counts all twelve selected children, and passed that keyboard focus/location assertion plus 39 other source-only assertions. Its sole 40/41 failure was the concurrent source-only Proper scratch fixture saying the January 15 Mass lacked its own oration slot; it did not touch this Ordinary sequence. This row records refreshed acceptance evidence, not a new external blessing. | Working-tree recovery; `mass-ordinary check --calendar postconciliar` current; focused Ordinary/source tests 17/17; Day source-only Chromium 40/41 with the EP-I assertion green |
 
 For later updates, append a dated row with the workstream or unchanged
 historical phase name, the evidence-backed result, and the exact commit(s).

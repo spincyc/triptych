@@ -37,11 +37,12 @@ returns renewals of registrations made on the identical day and at adjacent
 numbers. A negative without controls is indistinguishable from a bad search,
 which is the exact failure mode of the earlier attempt this record supersedes.
 
-Two things are NOT freed and must travel with any use of this text. The appendix
+Three things are NOT freed and must travel with any use of this text. The appendix
 at pages 1298a-1298n of the local artifact is later matter, first published about
-1955 under no registration this record could find, and is EXCLUDED. And other
-Lasance titles WERE renewed -- The New Missal for Every Day is a different book
-and is not free. See `[not_freed]`.
+1955 under no registration this record could find, and is EXCLUDED. The separate
+insert at pages 1302a-1302d has not been established as part of either registered
+edition and is also EXCLUDED. And other Lasance titles WERE renewed -- The New
+Missal for Every Day is a different book and is not free. See `[not_freed]`.
 """
 
 # --- Evidence levels ----------------------------------------------------------
@@ -478,6 +479,26 @@ thing being corrected.
 what_would_close_it = "A physical copy, or a scan of a title page or copyright leaf, giving the printing's own date. Fourteen pages of a 1,298-page book are at stake; the exclusion costs almost nothing and closing it is not urgent."
 evidence = "verified"
 
+[the_1302_insert_exclusion]
+what = "Pages 1302a-1302d of the local artifact: the inserted Common of a Supreme Pontiff."
+disposition = "EXCLUDED from any publication basis until the inserted expression is established as part of the 1937 or 1945 registered edition, or receives an independent affirmative rights basis."
+why = """
+The exact ca. 1955-56 facsimile and its scandata place four lettered leaves
+between ordinary printed pp. 1302 and 1303. This record establishes failure to
+renew for the registered 1937 first edition and 1945 revised edition; it does not
+establish that these later-printing insert leaves were present in either one.
+
+Unlike pp. 1298a-1298n, the text on pp. 1302a-1302d carries no internal statement
+that dates it after 1954. The narrower finding is therefore recorded: inclusion
+within either unrenewed registration is unproved. Treating that absence as proof
+of later authorship would exceed the evidence, but treating the inserted pages as
+registered expression would do the same. The tracked OCR derivative removes the
+complete page-bounded range while preserving the remote source artifact and the
+facsimile as unresolved evidence.
+"""
+what_would_close_it = "A physical or scanned copy of the registered 1937 or 1945 edition showing the same inserted pages and wording; a registration or publication record independently covering the insert; or another affirmative public-domain basis for its expression."
+evidence = "verified, exact facsimile and scandata inspected 2026-08-27"
+
 # --- What is freed ------------------------------------------------------------
 
 [layers_freed]
@@ -560,6 +581,10 @@ missal' will collide with these three, and they run in the opposite direction.
 [[not_freed.item]]
 what = "The appendix at pages 1298a-1298n."
 reason = "See `[the_appendix_exclusion]`. Undated new matter, no registration found, one branch of which would be protected to 2059 or later."
+
+[[not_freed.item]]
+what = "The inserted Common of a Supreme Pontiff at pages 1302a-1302d."
+reason = "See `[the_1302_insert_exclusion]`. These leaves have not been established as part of either unrenewed registered edition and have no independent affirmative publication basis."
 
 [[not_freed.item]]
 what = "Any other Lasance or Benziger title, on the strength of this record."
@@ -706,7 +731,9 @@ items = """
 
   3.  EVIDENCE THAT THE APPENDIX IS 1964 OR LATER, which would not disturb the
       two editions but would harden the exclusion at `[the_appendix_exclusion]`
-      from a precaution into a finding.
+      from a precaution into a finding; or edition evidence locating the
+      1302a-1302d insert inside or outside either registered edition, which would
+      resolve `[the_1302_insert_exclusion]` in the direction that evidence shows.
 
   4.  A DEMONSTRATION THAT THE CONTROLS DO NOT CONTROL -- for instance, that the
       volume in which A 108209 and A 109027 were found was indexed by a

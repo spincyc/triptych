@@ -281,7 +281,8 @@ Production must prove, rather than merely promise:
   containment, Escape close, and focus return;
 - forced-colors legibility and reduced-motion behavior;
 - durable public routes and route-owned hash/history behavior;
-- relative links that work beneath `/triptych/`;
+- relative links that work at the `https://mystago.gy/` root and beneath a
+  GitHub Pages project-path preview such as `/triptych/`;
 - useful identity, content, browse entry, legal/source truth, and canonical PDF
   access without enhancement JavaScript; and
 - clean browser print that hides interactive chrome and points to the canonical

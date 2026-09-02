@@ -16,7 +16,14 @@ those decisions, owns the boundary, and states how to derive what each provider
 has actually published.
 
 - The temporal series uses 68 temporal identities in a stable Advent-first repository order: `01` is the First Sunday of Advent and `68` is the Twenty-fourth and Last Sunday after Pentecost. The Sacred Triduum (`27`–`29`) is numbered inline between Palm Sunday (`26`) and Easter Sunday (`30`). Stable feasts of the Lord (Nativity, Epiphany, Baptism, Ascension, Corpus Christi, Sacred Heart) are inserted inline at their liturgical-year positions. These IDs are catalog identities, not the occurrence schedule of a civil year.
-- A proper guide's numeric path prefix is the identity below, and a mass entry's `registry` field in `src/sources/calendars/roman-1962/propers.yaml` carries that same identity: the Fourteenth Sunday after Pentecost is catalog identity `54`, and its `pentecost-14` mass entry reads `registry: '54'`. The calendar file is therefore the machine-readable read of this registry, and a tool may validate a prefix against it. This profile still owns the series: where the two disagree, the disagreement is a defect to repair here, not a second identity.
+- A proper guide's numeric path prefix is the identity below, and this profile owns the
+  series. The `registry` field of a mass entry in `src/sources/calendars/roman-1962/propers.yaml`
+  is maintained to carry that same identity --- the Fourteenth Sunday after Pentecost is catalog
+  identity `54`, and its `pentecost-14` mass entry reads `registry: '54'` --- so the calendar file
+  is a machine-readable read of this registry and a tool may validate a prefix against it, as
+  `tools/check-proper-identity` does. That agreement does not make the calendar field
+  independently authoritative: it is not a second identity, a guide path is never *derived* from
+  it, and where the two disagree the disagreement is a defect to repair here, in the profile.
 - `64` through `67` identify the resumed Third through Sixth Sundays after the Epiphany. Each is a complete, separately sourced formulary—combining the relevant Epiphany orations, Epistle, and Gospel with the chants appointed for resumed use after Pentecost—and therefore a full identity, not a variant under a shared ordinal. [Calendar computation](calendar-computation.md) owns the arithmetic that decides how many are resumed in a given year; the Missal's own rubric decides which and in what order.
 - `F` identifies a general-calendar feast assigned to Sunday without a stable temporal ordinal. `F01` is Our Lord Jesus Christ the King, which the Missal prints in the Sanctorale. Verify its printed place and occurrence rule; do not invent a permanent Sunday number for a fixed-date, movable, or local feast.
 - `M` identifies a ritual, votive, or other non-Sunday guide. The prefix does not state rank, permission, or authority to replace an occurring Mass.
@@ -93,6 +100,34 @@ Use the following public witnesses unless a better edition-identified witness is
 Visually collate every published Latin form, rubric, citation, and boundary against the controlling facsimile. Check an unclear reading against a second image witness; disclose substitutions and disagreements; never silently blend witnesses. Keep only focused extracts in the repository. Psalm citations use the missal's Vulgate/Septuagint numbering first, with the common modern number in parentheses where it differs.
 
 Study every appointed text in full and read each direct biblical passage in its complete literary context. Every appointed element must contribute to the guide; add, substitute, or locally define cues for Tracts, Sequences, ritual prayers, blessings, and other actual texts rather than forcing a ten-row Sunday template.
+
+### Finding-aid coverage boundary
+
+`src/sources/calendars/roman-1962/propers.yaml` is a historical finding aid,
+not a transcription of the whole Missal and not the source of record for its
+words. The derived `tools/tpt mass-propers census --json` report distinguishes
+rows represented directly, placeholders, references, and the occurrences those
+references resolve. Those dimensions describe storage and resolution only. A
+represented row does not prove a complete formulary, and no sum of represented
+rows supplies the target edition's expected universe.
+
+The edition-identified evidence, typed open limitations, rights boundary, and
+remaining source requirements live in
+`src/sources/inventories/roman-1962-finding-aid-coverage-v1.toml`. Existing
+page-image work is bounded: the seasonal record collates the citation loci it
+names, the sanctoral record recovers the Common pointers it names, and the
+Ordinary record carries an 1861 hand-missal witness with separately sourced
+1962 slot positions. None is a whole-book or element-by-element 1962
+collation. Never fill the difference by inference or generated text.
+
+Apply the current publication policy separately from textual coverage. The
+target facsimile is a collation witness, not a general publication licence;
+preexisting wording needs its recorded public-domain antecedent, and the 1955
+Holy Week, 1960 revisions, post-1920 additions, and 1962 front matter need
+their own lawful basis. ICEL's postconciliar permission and exemplar analysis
+does not supply English for this historical Missal. Historical English remains
+attached to the edition that actually prints it and never becomes an approved
+1962 liturgical translation by being aligned to a slot.
 
 For every new or substantially revised guide, maintain a passage-by-passage reception matrix in `research/scope.md`. Give each distinct appointed passage or material scriptural adaptation one row, name every proper that uses it, and record: direct ancient exegesis checked; medieval, Doctoral, or later saintly reception checked; works, loci, languages, and corpora searched; how any retained witness is used; and material negative results. Search direct commentaries, homilies, and psalm expositions before broader doctrinal or liturgical reuse. Sample both Greek and Latin traditions where relevant and available, then medieval Doctors and later canonized exegetes or spiritual writers. A catena may map leads, but verify the underlying work and locus before publication.
 

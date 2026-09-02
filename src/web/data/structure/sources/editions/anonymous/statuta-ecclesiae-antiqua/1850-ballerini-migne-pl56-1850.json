@@ -1,5 +1,21 @@
 {
- "artifacts": [],
+ "artifacts": [
+  {
+   "artifact_type": "scan",
+   "byte_size": null,
+   "edition_owned": false,
+   "id": "artifact.jacques-paul-migne.patrologia-latina-volume-56.paris-1850.wikimedia-commons-pdf",
+   "media_type": "application/pdf",
+   "notes": null,
+   "page_count": null,
+   "retrieved": null,
+   "rights": "public-domain",
+   "rights_basis": "The 1850 printing is in the United States public domain by date of publication. Wikimedia Commons marks the scan as public domain; the exact 612-page PDF is not retained because of its 88 MB size.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Patrologia_Latina_Vol._56.pdf",
+   "storage": "remote"
+  }
+ ],
  "edition": {
   "authority": null,
   "date": "1850",
@@ -7,7 +23,6 @@
   "id": "edition.anonymous.statuta-ecclesiae-antiqua.ballerini-migne-pl56-1850",
   "jurisdiction": null,
   "language": "la",
-  "notes": "An older edited witness, not the modern critical reconstruction. Its numbering, readings, apparatus and ordering do not control Charles Munier's CCSL 148 edition.",
   "publication": "Pietro and Girolamo Ballerini editorial text, reprinted in Jacques-Paul Migne, Patrologia Latina 56 (Paris, 1850), cols. 879-889",
   "title": "Ballerini editorial text reprinted in Patrologia Latina 56",
   "translators": [],
@@ -17,15 +32,12 @@
   {
    "artifact_id": "artifact.jacques-paul-migne.patrologia-latina-volume-56.paris-1850.wikimedia-commons-pdf",
    "artifact_type": "scan",
-   "context": "Item 7/XCV on PL 56 col. 888, artifact PDF p. 450, was visually checked in its adjacent subdeacon, acolyte, lector and doorkeeper sequence. It directs that the exorcist receive from the bishop a booklet in which exorcisms are written and couples that delivery with a spoken commission. The publication uses only the book-delivery and ordinal-sequence architecture, not the operative wording.",
    "id": "passage.anonymous.statuta-ecclesiae-antiqua.ballerini-migne-pl56-1850.item-7-xcv",
    "locus": "ballerini-95",
    "media_type": "application/pdf",
-   "notes": "The visible apparatus records edition-local variants, including recipient language. No apparatus collation, manuscript adjudication, formula reproduction, practice claim, frequency claim, efficacy claim, or direct-descent claim was made.",
    "readable": false,
    "reason": "The exact bytes are not retained in this repository; the record keeps their retrieval location, hash and rights instead.",
    "rights": "public-domain",
-   "rights_basis": "The 1850 printing is in the United States public domain by date of publication. Wikimedia Commons marks the scan as public domain; the exact 612-page PDF is not retained because of its 88 MB size.",
    "rights_jurisdiction": "United States",
    "segment_id": "segment.anonymous.statuta-ecclesiae-antiqua.ballerini-migne-pl56-1850.pl56-columns-887-888",
    "source_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Patrologia_Latina_Vol._56.pdf",

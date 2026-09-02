@@ -3,6 +3,7 @@
   {
    "artifact_type": "checked-transcription",
    "byte_size": 1121,
+   "edition_owned": true,
    "id": "artifact.cyril-of-alexandria.commentary-on-john.english-pusey-randell-lfc-1874-1885.book-12-jn-20.1-9-checked-text-ccad53e7",
    "media_type": "text/plain; charset=utf-8",
    "notes": null,
@@ -17,6 +18,7 @@
   {
    "artifact_type": "web-page",
    "byte_size": 257666,
+   "edition_owned": true,
    "id": "artifact.cyril-of-alexandria.commentary-on-john.english-pusey-randell-lfc-1874-1885.tertullian-org-book12-ec1fa9b7",
    "media_type": "text/html",
    "notes": "An electronic transcription with the printed page numbers embedded as markers, not a facsimile. An unnoticed transcription error cannot be excluded.",
@@ -31,6 +33,7 @@
   {
    "artifact_type": "web-page",
    "byte_size": 295834,
+   "edition_owned": true,
    "id": "artifact.cyril-of-alexandria.commentary-on-john.english-pusey-randell-lfc-1874-1885.tertullian-org-book4-48e4995d",
    "media_type": "text/html",
    "notes": "Electronic transcription with printed page markers, not a facsimile. The checked John 6 exposition is Pusey's English translation; neither its Greek base nor the printed volume was collated in this verification.",
@@ -52,7 +55,6 @@
   "id": "edition.cyril-of-alexandria.commentary-on-john.english-pusey-randell-lfc-1874-1885",
   "jurisdiction": null,
   "language": "en",
-  "notes": "Pusey began the translation and Randell completed it; the exposition of John 20 stands in the second volume, book 12, and is Randell's work. Registered from the electronic transcription published at tertullian.org, which prints the volume's page numbers as markers in the form 649. No printed volume was consulted for this record, and page references taken through the transcription carry that ceiling.",
   "publication": "Oxford: James Parker and Co., Library of Fathers of the Holy Catholic Church, vols. 43 and 48, 1874 and 1885",
   "title": "Commentary on the Gospel according to S. John, English translation in the Library of Fathers",
   "translators": [
@@ -65,15 +67,12 @@
   {
    "artifact_id": "artifact.cyril-of-alexandria.commentary-on-john.english-pusey-randell-lfc-1874-1885.tertullian-org-book4-48e4995d",
    "artifact_type": "web-page",
-   "context": "The continuous exposition from John 6:51 through 6:58 was read with the chapter heading and surrounding printed page markers. Cyril identifies the bread with Christ or his flesh, grounds the flesh's life-giving power in its union with the Word, joins eating and drinking to participation and mutual indwelling, and connects the gift with resurrection. Verification is of the identified English witness and attribution, not a Greek collation.",
    "id": "passage.cyril-of-alexandria.commentary-on-john.english-pusey-randell-lfc-1874-1885.book-4-jn-6.51-58",
    "locus": "4",
    "media_type": "text/html",
-   "notes": "Chapter 2, on John 6:51-58, spans printed pp. 408-425. The publication paraphrases this passage. The frequently circulated sentence about the manger containing not hay but Christ's life-giving Body does not occur in this controlled passage and is not attributed to Cyril.",
    "readable": false,
    "reason": "The exact bytes are not retained in this repository; the record keeps their retrieval location, hash and rights instead.",
    "rights": "public-domain",
-   "rights_basis": "The 1874 Library of Fathers translation is in the United States public domain by date of publication. tertullian.org publishes an electronic transcription; the exact retrieved HTML is not redistributed from this repository.",
    "rights_jurisdiction": "United States",
    "segment_id": null,
    "source_url": "https://www.tertullian.org/fathers/cyril_on_john_04_book4.htm",

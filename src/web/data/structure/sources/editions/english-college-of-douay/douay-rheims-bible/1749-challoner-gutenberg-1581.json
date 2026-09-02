@@ -3,6 +3,7 @@
   {
    "artifact_type": "collation",
    "byte_size": 569094,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.american-edition-divergences-a814cbcb",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "One row per divergent verse: canonical locus, the reading in this edition's verse files, and the reading of the 1899 American edition. The divergences are overwhelmingly small - word order, \"exceeding\" against \"exceedingly\", presence of the definite article, \"unto\" against \"into\", proper-name spelling - and the vendored readings are consistently the older Challoner ones. Ten were checked against the 1914 John Murphy printing, which agreed with the American-edition column in every case that its OCR could resolve. A guide that must match a reader's printed Douay-Rheims should check its loci against this table before quoting. A locus absent from the table is one where the two traditions agree.",
@@ -17,6 +18,7 @@
   {
    "artifact_type": "reference-table",
    "byte_size": 8433,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.book-index-a7271aac",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Triptych-compiled index of the 73 books of this edition. Each row gives the ordinal, the canonical locus token used in the verse files and in passage loci, the verse file that holds the book, the testament, the Douay-Rheims title, the ordinary modern English name, the abbreviation the 1962 Missal and Breviary use, other accepted spellings, the chapter and verse counts as extracted, and a note recording the traps. Chapter and verse counts were computed from the exact verse files; the names, abbreviations, and notes are Triptych editorial matter.",
@@ -31,6 +33,7 @@
   {
    "artifact_type": "reference-table",
    "byte_size": 38003,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.deuterocanon-numbering-68ea757a",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Two hundred and seventeen rows. Each names both arrangements it speaks about, so no\ncolumn means anything by its position; the psalm concordance beside this one does not,\nand its hebrew column in fact records the Vulgate's division of a psalm under Hebrew\nnumbers, which is a third thing named for neither.\n\nSix relations are expressible: one-to-one, split-right, merged-right, absent-right,\nabsent-left and not-recorded. The psalm concordance can say only the first, because its\nschema requires both runs of a row to be the same length. Three of the six are needed in\nEsther 15 alone. The Vulgate's 15:1-3, Mardochai's charge repeated from 4:8, is absent\nfrom the Greek. Its 15:13 \"thou shalt not die\" and 15:14 \"come near then, and touch the\nsceptre\" are the Greek's single 15:10. Its 15:15, which holds the sceptre, the embrace\nand \"why dost thou not speak to me\", is the Greek's 15:11 and 15:12. Daniel needs the\nsame: the Vulgate's 3:52 carries both \"blessed art thou, O Lord, the God of our fathers\"\nand \"blessed is the holy name of thy glory\", which the Greek numbers 29 and 30, and that\none merge is the whole of the difference between the Canticle's sixty-eight Greek verses\nand the Vulgate's sixty-seven.\n\nWhat was established, and against what.\n\nEsther. Chapters 1 to 10:3 agree verse for verse. The Vulgate's 10:4-16:24 is the Greek\nadditions, which the Revised Version and the King James print as a separate book under\nthe Vulgate's own numbers -- except in chapter 15, where they do not: the Greek's 15:1\nis the Vulgate's 15:4, and the chapter also holds the merge and the split described\nabove. The claim that that book carries the Vulgate's numbers throughout is therefore\nwrong, and this table follows the text.\n\nDaniel. Chapters 1 to 3:23 agree. The Vulgate's 3:24-90 is the Song of the Three, and\nthe correspondence is not an offset: after the merge at 3:52 the two traditions order\nthe Benedicite differently from 3:53 to 3:78 and realign at 3:79. The throne and the\ndepths are exchanged, the angels and the heavens are exchanged, the fountains and the\nseas are exchanged, and the Vulgate keeps its four couplets of cold together where the\nGreek sets nights and days and light and darkness between them. Every one of those\ntwenty-six correspondences was read. The Vulgate's 3:91-97 is the Greek's 3:24-30, its\n3:98-100 is the Greek's 4:1-3, and its chapter 4 therefore runs three verses behind.\nSusanna is Daniel 13:1-64. Daniel 13:65, \"and king Astyages was gathered to his\nfathers\", is Bel 1, so Bel runs one verse ahead of Vulgate Daniel 14 from beginning to\nend, and Vulgate 14:42 has no counterpart at all. The assertion in guidance/versification\nsection 7.2 that Susanna and Bel are pure chapter relabelling, verse for verse, is wrong\non both counts.\n\nEcclesiasticus. Recorded as not-recorded, which is a finding and not a gap. Measured\nagainst the tracked texts, the Vulgate and the Greek differ in all fifty-one chapters,\nnot in the seven that had been reported; only 412 of the Douay's 1591 verses stand at\nthe same number in the World English Catholic Edition's 1359; six chapters share no\nnumber at all; and the dominant mechanism is the Latin subdividing a Greek bicolon,\nwhich happens some two hundred and thirty times. An alignment can be computed between\nthe two English translations, but they are translations of different languages and the\ncomputation is a candidate, not a reading. One locus is recorded, because it was settled\nby reading the verse: the introit Da pacem Domine sustinentibus te is the Vulgate's\n36:18 and the Greek's 36:16, and the Greek's own 36:18 is the proverb of the belly.\n\nWhat is deliberately not modelled.\n\nThe Catholic Public Domain Version's Esther. It prints the book in the Septuagint's\nnarrative order and in fifteen chapters of its own division: its 1:1 is the Vulgate's\n11:2, its 2:1 is the Vulgate's 12:1, its 3:1 is the Vulgate's 1:1, and its chapter 5\nholds thirteen verses where the Vulgate's chapter 3 holds fifteen. The chapter\nboundaries fall inside Vulgate chapters, so this is a re-chaptering of the book and not\na renumbering of it; one edition witnesses it and no calendar cites it. Its Esther stays\nrefused wholesale by the rows that edition's own verse-alias artifact already carries.\n\nThe Brenton Septuagint, for the same reason and by the same earlier decision.\n\nA verse-level Ecclesiasticus concordance, as above.\n\nTwo divergences found while compiling this and left for their owners. The tracked\nClementine Vulgate divides Ecclesiasticus 29:16 into three verses where the Douay has\ntwo, and runs one ahead of it to the end of that chapter, so the Latin witnesses\ndisagree with each other there; it is not recorded here because this table is between\narrangements and that is a departure between two witnesses of one. And the King James\nApocrypha repeats the mountains of Song of the Three 53 at its verse 55, where the\nRevised Version and the Latin both have the seas and rivers, so its 55 and 56 are one\nline out of step; that is a textual defect rather than a numbering one and is declared,\nwith both openings and checked against both texts, in scripts/_deuterocanon.py.\n",
@@ -45,6 +48,7 @@
   {
    "artifact_type": "electronic-text",
    "byte_size": 5880580,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.gutenberg-text-7d10da78",
    "media_type": "text/plain; charset=utf-8",
    "notes": "Exact acquired bytes, CRLF terminated, 144123 LF-delimited physical lines. Lines 1 to 24 and 143773 to the end are Project Gutenberg header, licence, and trademark matter and are not part of the Bible text. Verse text is set as wrapped paragraphs opened by a \"chapter:verse.\" marker, with Challoner's notes, chapter arguments, Latin incipits, and book prologues as unmarked paragraphs between them, so a raw literal search over this artifact can match annotation as well as scripture. Search the per-book verse files instead when the distinction matters.",
@@ -59,6 +63,7 @@
   {
    "artifact_type": "reference-table",
    "byte_size": 451532,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.paragraph-projection-99253f2e",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "8661 rows across 1332 non-psalm chapters: 2239 concurring, at which a break is set, and 6422 disputed, at which none is. So the witnesses concur at 2239 of the 8661 positions where either of them breaks — 25.9 per cent. That figure is the measured disagreement between two modern English typesettings of the same books, and it is the reason the rule requires concurrence instead of taking a majority or a first witness: paragraph division in these editions is an editorial act, the editors disagree about it three times in four, and a break asserted on one witness alone would read as this edition's own. Beyond these positions, 21752 verses are broken by neither witness, 1679 are carried by neither, and 2380 stand in the excluded Psalms. Two witnesses were considered and refused. eBible.org's eng-rv is not used: its transcription of the Revised Version records 386 prose paragraph openings across 80 books — one of them mid-chapter in the whole protocanon — so it does not carry the Revised Version's paragraphing at all, and under a rule requiring every carrying witness to concur it would have vetoed almost every break rather than testifying about any. That is a fact about the file, not about the Revised Version, which was the first major English Bible set in true paragraphs. eBible.org's engDRA and latVUC are not used because they have nothing to say: their paragraph-opening sets are identical to each other and consist of one marker per non-psalm chapter. Two better witnesses exist and are NOT used here, both requiring entry to the source library under guidance/sources.md, which is a human-review gate and not a derivation. First, eBible.org's engkjvcpb is F. H. A. Scrivener's Cambridge Paragraph Bible of 1873, public domain, and the only English witness whose editor documented his method — he states it in The Authorized Edition of the English Bible (1611) (Cambridge, 1884, pp. 128-129), aiming between breaks 'too far apart for the reader's convenience' and 'a virtual return to the discarded verse divisions', and reports a remarkable resemblance between his paragraphs and the 1871 Church Lectionary lesson boundaries. It carries 1987 mid-chapter prose openings in the protocanon. Adding it would make the rule a real two-of-three rather than a unanimity of two. Second, and older than any of them, the Masoretic petuchah and setumah section divisions: verse-aligned, attested from the Dead Sea Scrolls, codified by Maimonides from the Aleppo Codex, and machine-readable under open terms in two independent encodings that agree — tanach.us UXLC ('All biblical Hebrew text, in any format, may be viewed or copied without restriction') and OpenScriptures morphhb (CC BY 4.0). They number 3162 across the 39 books of the Hebrew canon, a mean of 7.3 verses to a section, which is paragraph-scale in the narrative and prophetic books; they are far too coarse in the wisdom books and absent from the Psalms, and they do not reach the deuterocanon or the New Testament at all. They would be the oldest and best-attested witness available and should be the next thing acquired.",
@@ -73,6 +78,7 @@
   {
    "artifact_type": "reference-table",
    "byte_size": 13375,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.psalm-numbering-ee3c7757",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Triptych-compiled concordance between the Vulgate/Septuagint psalm numbering used throughout this edition and in the 1962 Missal, the Hebrew/Masoretic numbering used by the Nova Vulgata and by the New American Bible, and the English convention of the King James, Revised Standard, and most other modern English versions, which leaves the psalm inscription unnumbered. Rows are verse ranges, so the four places where one system joins or divides what the other keeps whole are exact. english_offset is the number of leading Vulgate verses occupied by the inscription; english_offset_uniform is \"no\" for the sixteen psalms where the two systems also divide the body differently, so that the offset holds only from the head of the psalm. The chapter correspondences and the four split points were checked against the Clementine Latin and against the printed 1914 John Murphy edition; the offsets were computed from the extracted verse counts against a King James Version consulted online and not retained, and every psalm inscription was read. Correction of 2026-07-31. Hebrew 13 was flagged uniform and is not. Computing the offsets from verse counts could not catch it: the Douay's Psalm 12 and the English Psalm 13 both print six verses, and the divergences cancel. The Douay's verse 1 carries the inscription together with the first line of the poem, so it takes no verse of its own and english_offset is rightly 0; but the Douay then divides \"How long shall I take counsels in my soul\" from \"How long shall my enemy be exalted over Me?\" into verses 2 and 3 where the King James and the Revised Version hold both in verse 2, and it keeps in its verse 6 what they divide between 5 and 6. Vulgate 12:4 is English 13:3. The row now reads english_offset_uniform \"no\" and the psalm is refused rather than shifted. The correction was made against the tracked Clementine, Douay-Rheims, King James and Revised Version 1895 chapter files, not against the counts.",
@@ -87,6 +93,7 @@
   {
    "artifact_type": "reference-table",
    "byte_size": 790,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-aliases-fef3f2ed",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Triptych-compiled table of loci that carry a verse number in the Clementine Vulgate and in most modern versions but none in the Douay-Rheims, with the Douay-Rheims verse that holds their text. The list is the complete set of such places found by comparing all 35804 extracted verses with eBible.org's public-domain engDRA edition, which restores the standard Vulgate versification. Every entry was then confirmed on the Douay-Rheims side against drbo.org, which likewise has no such verse; Genesis 5:32, 2 Kings 13:39, Amos 9:15, Psalm 28:11, and John 11:57 were further confirmed in the 1914 John Murphy printing, whose OCR could not resolve the other two. The Clementine side rests on engDRA and on the ordinary Vulgate versification, not on a collation with a Clementine text: drbo.org's parallel Latin is aligned to its Douay-Rheims and merges the same verses, so it cannot witness the Clementine division. Treat the list as complete against engDRA, not as a proof that no further divergence exists.",
@@ -101,6 +108,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 202543,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-01-genesis-4f9a0975",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Book of Genesis: 50 chapters and 1530 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Gen<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -115,6 +123,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 169074,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-02-exodus-56072879",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Book of Exodus: 40 chapters and 1211 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Ex<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -129,6 +138,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 121217,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-03-leviticus-f67329d6",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Book of Leviticus: 27 chapters and 858 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Lev<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -143,6 +153,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 169463,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-04-numbers-3e5034d7",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Book of Numbers: 36 chapters and 1288 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Num<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -157,6 +168,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 149266,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-05-deuteronomy-c99711de",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Book of Deuteronomy: 34 chapters and 959 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Deut<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -171,6 +183,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 100023,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-06-josue-a1c1af78",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Book of Josue: 24 chapters and 658 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Jos<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -185,6 +198,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 103778,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-07-judges-2bb62acf",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Book of Judges: 21 chapters and 618 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Judg<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -199,6 +213,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 14134,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-08-ruth-24d28331",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Book of Ruth: 4 chapters and 85 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Ruth<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -213,6 +228,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 140347,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-09-1-kings-7f8a0c63",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The First Book of Samuel, otherwise called the First Book of Kings: 31 chapters and 811 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its 1Kings<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -227,6 +243,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 114615,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-10-2-kings-43e91e43",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Second Book of Samuel, otherwise called the Second Book of Kings: 24 chapters and 694 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its 2Kings<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -241,6 +258,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 136004,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-11-3-kings-d9087035",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Third Book of Kings: 22 chapters and 817 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its 3Kings<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -255,6 +273,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 128887,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-12-4-kings-3c335bd7",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Fourth Book of Kings: 25 chapters and 719 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its 4Kings<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -269,6 +288,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 117072,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-13-1-paralipomenon-5919e86c",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The First Book of Paralipomenon: 29 chapters and 940 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its 1Par<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -283,6 +303,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 145237,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-14-2-paralipomenon-6ae21cdf",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Second Book of Paralipomenon: 36 chapters and 822 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its 2Par<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -297,6 +318,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 42464,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-15-1-esdras-949e2d52",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The First Book of Esdras: 10 chapters and 280 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its 1Esd<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -311,6 +333,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 60209,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-16-2-esdras-bc8c0e1a",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Book of Nehemias, which is called the Second of Esdras: 13 chapters and 404 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its 2Esd<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -325,6 +348,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 38722,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-17-tobias-565b04e8",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Book of Tobias: 14 chapters and 298 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Tob<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -339,6 +363,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 53236,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-18-judith-9dfd5347",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Book of Judith: 16 chapters and 345 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Jdt<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -353,6 +378,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 49410,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-19-esther-59a9e042",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Book of Esther: 16 chapters and 275 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Esth<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -367,6 +393,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 106624,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-20-job-3d1fe0a4",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Book of Job: 42 chapters and 1070 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Job<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -381,6 +408,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 254112,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Book of Psalms: 150 chapters and 2528 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Ps<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -395,6 +423,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 92462,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-22-proverbs-e8c05f66",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Book of Proverbs: 31 chapters and 915 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Prov<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -409,6 +438,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 31155,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-23-ecclesiastes-5c6495db",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Ecclesiastes: 12 chapters and 222 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Eccles<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -423,6 +453,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 14717,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-24-canticle-of-canticles-147bc517",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Solomon’s Canticle of Canticles: 8 chapters and 116 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Cant<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -437,6 +468,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 61540,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-25-wisdom-2fe4073b",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Book of Wisdom: 19 chapters and 439 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Wis<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -451,6 +483,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 181276,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-26-ecclesiasticus-c9d262f0",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "Ecclesiasticus: 51 chapters and 1591 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Ecclus<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -465,6 +498,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 205243,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-27-isaias-7c9a1228",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Prophecy of Isaias: 66 chapters and 1292 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Is<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -479,6 +513,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 236850,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-28-jeremias-85cef8bb",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Prophecy of Jeremias: 52 chapters and 1363 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Jer<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -493,6 +528,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 20584,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-29-lamentations-fd49dc8c",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Lamentations of Jeremias: 5 chapters and 154 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Lam<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -507,6 +543,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 29139,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-30-baruch-a4b30a6f",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Prophecy of Baruch: 6 chapters and 213 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Bar<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -521,6 +558,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 220383,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-31-ezechiel-ebd50fae",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Prophecy of Ezechiel: 48 chapters and 1272 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Ezech<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -535,6 +573,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 87798,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-32-daniel-8954f60d",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Prophecy of Daniel: 14 chapters and 531 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Dan<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -549,6 +588,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 29300,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-33-osee-9c572236",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Prophecy of Osee: 14 chapters and 198 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Os<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -563,6 +603,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 11705,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-34-joel-7617750c",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Prophecy of Joel: 3 chapters and 73 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Joel<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -577,6 +618,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 23038,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-35-amos-0f5aeaea",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Prophecy of Amos: 9 chapters and 146 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Amos<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -591,6 +633,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 3679,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-36-abdias-ed1fc7b5",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Prophecy of Abdias: 1 chapters and 21 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Abd<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -605,6 +648,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 7020,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-37-jonas-0b314e68",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Prophecy of Jonas: 4 chapters and 48 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Jon<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -619,6 +663,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 17474,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-38-micheas-e8a1b3ce",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Prophecy of Micheas: 7 chapters and 104 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Mich<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -633,6 +678,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 7449,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-39-nahum-c03f70aa",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Prophecy of Nahum: 3 chapters and 47 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Nah<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -647,6 +693,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 8510,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-40-habacuc-22eeb703",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Prophecy of Habacuc: 3 chapters and 56 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Hab<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -661,6 +708,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 9291,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-41-sophonias-6c5a710c",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Prophecy of Sophonias: 3 chapters and 53 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Soph<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -675,6 +723,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 6235,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-42-aggeus-7c142c4c",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Prophecy of Aggeus: 2 chapters and 38 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Agg<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -689,6 +738,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 34945,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-43-zacharias-68a50fd4",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Prophecy of Zacharias: 14 chapters and 211 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Zach<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -703,6 +753,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 9509,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-44-malachias-0085acf6",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Prophecy of Malachias: 4 chapters and 55 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Mal<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -717,6 +768,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 135290,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-45-1-machabees-f72f475d",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The First Book of Machabees: 16 chapters and 929 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its 1Mach<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -731,6 +783,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 95591,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-46-2-machabees-44d3912b",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Second Book of Machabees: 15 chapters and 558 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its 2Mach<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -745,6 +798,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 132769,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-47-matthew-dd0ba183",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Holy Gospel of Jesus Christ according to St. Matthew: 28 chapters and 1070 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Matt<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -759,6 +813,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 84212,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-48-mark-69b4cb75",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Holy Gospel of Jesus Christ according to St. Mark: 16 chapters and 677 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Mark<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -773,6 +828,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 143598,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Holy Gospel of Jesus Christ according to St. Luke: 24 chapters and 1151 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Luke<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -787,6 +843,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 106709,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-50-john-27b8f3ed",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Holy Gospel of Jesus Christ according to St. John: 21 chapters and 879 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its John<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -801,6 +858,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 138702,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-51-acts-73f7a420",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Acts of the Apostles: 28 chapters and 1004 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Acts<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -815,6 +873,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 53644,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-52-romans-4d45c497",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Epistle of St. Paul the Apostle to the Romans: 16 chapters and 433 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Rom<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -829,6 +888,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 53041,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-53-1-corinthians-ffc4f260",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The First Epistle of St. Paul to the Corinthians: 16 chapters and 437 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its 1Cor<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -843,6 +903,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 33977,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-54-2-corinthians-f732ea5d",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Second Epistle of St. Paul to the Corinthians: 13 chapters and 255 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its 2Cor<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -857,6 +918,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 17335,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-55-galatians-e95d4a59",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Epistle of St. Paul to the Galatians: 6 chapters and 149 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Gal<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -871,6 +933,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 17590,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-56-ephesians-10c79be0",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Epistle of St. Paul to the Ephesians: 6 chapters and 155 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Eph<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -885,6 +948,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 12556,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-57-philippians-4ff760a7",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Epistle of St. Paul to the Philippians: 4 chapters and 104 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Phil<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -899,6 +963,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 11548,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-58-colossians-d17592ce",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Epistle of St. Paul to the Colossians: 4 chapters and 95 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Col<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -913,6 +978,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 10813,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-59-1-thessalonians-bb539aec",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The First Epistle of St. Paul to the Thessalonians: 5 chapters and 88 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its 1Thess<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -927,6 +993,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 5907,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-60-2-thessalonians-cbd2bd34",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Second Epistle of St. Paul to the Thessalonians: 3 chapters and 46 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its 2Thess<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -941,6 +1008,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 13577,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-61-1-timothy-1f76a59e",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The First Epistle of St. Paul to Timothy: 6 chapters and 113 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its 1Tim<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -955,6 +1023,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 9737,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-62-2-timothy-05954dd5",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Second Epistle of St. Paul to Timothy: 4 chapters and 83 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its 2Tim<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -969,6 +1038,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 5502,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-63-titus-cc381a3c",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Epistle of St. Paul to Titus: 3 chapters and 46 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Tit<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -983,6 +1053,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 2698,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-64-philemon-c45eca55",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Epistle of St. Paul to Philemon: 1 chapters and 25 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Philem<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -997,6 +1068,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 39260,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-65-hebrews-78520956",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Epistle of St. Paul to the Hebrews: 13 chapters and 303 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Heb<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -1011,6 +1083,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 13384,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-66-james-963f1c86",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Catholic Epistle of St. James the Apostle: 5 chapters and 108 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its James<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -1025,6 +1098,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 14190,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-67-1-peter-a30ff490",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The First Epistle of St. Peter the Apostle: 5 chapters and 105 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its 1Pet<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -1039,6 +1113,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 9158,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-68-2-peter-287fb5f6",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Second Epistle of St. Peter the Apostle: 3 chapters and 61 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its 2Pet<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -1053,6 +1128,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 13730,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-69-1-john-109bfb9f",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The First Epistle of St. John the Apostle: 5 chapters and 105 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its 1John<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -1067,6 +1143,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 1728,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-70-2-john-3db75210",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Second Epistle of St. John the Apostle: 1 chapters and 13 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its 2John<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -1081,6 +1158,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 1871,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-71-3-john-4a629e8f",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Third Epistle of St. John the Apostle: 1 chapters and 14 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its 3John<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -1095,6 +1173,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 3876,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-72-jude-5b3006ca",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Catholic Epistle of St. Jude the Apostle: 1 chapters and 25 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Jude<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -1109,6 +1188,7 @@
   {
    "artifact_type": "normalized-text",
    "byte_size": 65863,
+   "edition_owned": true,
    "id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-73-apocalypse-9ae5c352",
    "media_type": "text/tab-separated-values; charset=utf-8",
    "notes": "The Apocalypse of St. John the Apostle: 22 chapters and 405 verses, one LF-terminated physical line per verse after a header line, so verse n of chapter c is found by its Apoc<TAB>chapter<TAB>verse prefix and physical line numbers are stable. Chapter and verse numbers are the Douay-Rheims's own, which follow the Clementine Vulgate; see psalm-numbering.tsv and verse-aliases.tsv in this edition before converting a modern citation.",
@@ -1130,7 +1210,6 @@
   "id": "edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581",
   "jurisdiction": null,
   "language": "en",
-  "notes": "Bishop Challoner's revision of the Douay and Rheims text, made between 1749 and 1752, in the electronic form Project Gutenberg distributes as eBook 1581. Project Gutenberg states that the e-text \"comes from multiple editions of Challoner's revised Douay-Rheims Version\" and does not name one printing, so the exemplar is not exactly identifiable. Its structure was checked against the 1914 John Murphy Company printing registered as a separate edition and agrees throughout: same 73 books, same 1334 chapters, same book order and titles, same chapter arguments and Latin psalm incipits, same Challoner notes, and the same psalm versification, including the restarted numbering at Psalm 9 and Psalm 113 and the merged verses. Its wording, however, is not that of the 1899 and 1914 American edition that most printed Douay-Rheims Bibles and drbo.org reproduce. In 1859 verses it preserves an older Challoner reading against the settled reading of the American edition; every one of those verses is listed with both readings in the american-edition-divergences table registered in this edition, and a consumer that must match a reader's printed Bible must consult it. Project Gutenberg's eBook 8300 is an earlier, less complete state of the same e-text with at least one error this state corrects, and Project Gutenberg directs readers here instead. The eBook also prints, in appendices, apocryphal books and a small body of original-spelling 1582 Rheims and 1610 Douay material; those constituents are registered as segments under their own editions and are not part of this Challoner text.",
   "publication": "Project Gutenberg eBook 1581, released 1 December 1998, most recently updated 23 September 2023; produced by Dennis McCarthy and Tad Book from a text originally published by Catholic Software",
   "title": "The Bible, Douay-Rheims, Complete: the Challoner revision, Project Gutenberg eBook 1581",
   "translators": [],

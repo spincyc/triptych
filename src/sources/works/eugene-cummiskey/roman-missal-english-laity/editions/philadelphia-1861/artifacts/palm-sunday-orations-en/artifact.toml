@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.palm-sunday-orations-en"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The two rows reproduce only English wording printed in an 1861 Philadelphia edition, which is in the United States public domain by publication date. They contain no Google or Internet Archive header, watermark, page image, OCR, markup, or annotation. A faithful project transcription of public-domain wording creates no new copyright. The exact Google-digitized PDF remains remote and unresolved; it is the visual verification artifact, not this publication payload."
+rights_jurisdiction = "United States"
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+transformation = "Human page-image transcription on 2026-08-27 from the registered Cummiskey 1861 facsimile: the Palm Sunday Collect at printed pp. 239-240 (IA leaves n249-n250; one-based PDF artifact pp. 250-251), and the Palm Sunday Secret at printed p. 249 (IA leaf n259; one-based PDF artifact p. 260). Only the two complete printed English oration bodies were copied. Headings, labels, surrounding text, Google matter, line-break hyphenation and page furniture were omitted; words split only by a printed line break were joined. Wording, spelling, capitalization and punctuation were retained exactly, including the Collect's `Thro’.` and the Secret's terminal `Thro’` without a full stop. Antecedent formulary and oration columns are cataloguing identities and are not represented as Cummiskey page transcription."
+retrieved = "2026-08-27"
+sha256 = "0cb9f35e1e32f6252ab923fa25c849501f3ef107f4e7ed5b00a92c534985c23f"
+byte_size = 724
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/palm-sunday-orations-en/palm-sunday-orations-en.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "One header and two English rows. The rows bind only the Palm Sunday Mass Collect and Secret. They make no claim for the surrounding pre-1955 Palm Sunday ceremonies and do not import Latin or wording from a modern liturgical source."

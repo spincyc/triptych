@@ -21,8 +21,9 @@
     three editions and not one text. Search it, open a work, and step through it
     passage by passage. Where a passage may be read here it is set in full;
     where it may not, it is still listed, and the reason is given in place of
-    the words. Nothing on this page is written by hand:
-    <code>tools/tpt source-reader</code> is what generates it.
+    the words. The corpus rows are generated from the source records by
+    <code>tools/source-reader</code>; this page does not discover sources from
+    the filesystem.
   </p>
   <p class="tally" id="tally"></p>
 </header>
@@ -88,12 +89,12 @@
 
 <!-- Not a live region: replacing it would read the whole corpus aloud on every
      change. The shared script announces a one-line summary instead. -->
-<main id="reading" class="reading" tabindex="-1" aria-busy="true">
+<div id="reading" class="reading" tabindex="-1" aria-busy="true">
   <div id="finder" class="finder">
     <p class="placeholder">Loading the corpus…</p>
   </div>
   <div id="reader" class="reader" hidden></div>
-</main>
+</div>
 
 <footer class="page-footer">
   <p>
@@ -103,17 +104,20 @@
     Migne's Latin and a public-domain English translation are three editions and
     never one work with three texts. An <strong>artifact</strong> is the exact
     bytes that were acquired, with their hash and their rights. A
-    <strong>passage</strong> is an addressable place in an edition, controlled by
-    exactly one artifact. Nothing here flattens those four into one.
+    <strong>segment</strong> identifies a bounded part of a container artifact.
+    A <strong>passage</strong> is an addressable place in an edition and names one
+    controlling artifact; where it also names a segment, that segment narrows
+    the artifact rather than replacing it. Nothing here flattens those five
+    into one.
   </p>
   <p>
     <strong>Rights are read from the records, never from the disk.</strong> A
     passage is set here only where the artifact controlling it records an
-    affirmative distribution basis and is stored in the repository. Most of this
-    corpus fails that test — it is under copyright, or its rights have never been
-    settled — and those passages are listed with the reason rather than quietly
-    dropped. A record you cannot read here is still a record you can find, cite
-    and follow to its source.
+    affirmative distribution basis and is stored in the repository. A passage
+    that fails that test — because it is under copyright, its rights have never
+    been settled, or the permitted bytes are not stored here — is listed with
+    the reason rather than quietly dropped. A record you cannot read here is
+    still a record you can find, cite and follow to its source.
   </p>
   <!-- The caution the corpus carries about itself, written here from the file
        rather than repeated in this page. The generator states it once and every

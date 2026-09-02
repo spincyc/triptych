@@ -1,5 +1,21 @@
 {
- "artifacts": [],
+ "artifacts": [
+  {
+   "artifact_type": "scan",
+   "byte_size": null,
+   "edition_owned": false,
+   "id": "artifact.jacques-paul-migne.patrologia-latina-volume-26.paris-1845.internet-archive-google-pdf-0d889bd6",
+   "media_type": "application/pdf",
+   "notes": null,
+   "page_count": null,
+   "retrieved": null,
+   "rights": "public-domain",
+   "rights_basis": "The represented 1845 Paris printing is in the United States public domain by date of publication. The exact Google Books scan served by Internet Archive is recorded remotely rather than redistributed.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/patrologiaecurs240unkngoog/patrologiaecurs240unkngoog.pdf",
+   "storage": "remote"
+  }
+ ],
  "edition": {
   "authority": null,
   "date": "1845",
@@ -11,7 +27,6 @@
   "id": "edition.jerome.commentariorum-in-evangelium-matthaei.vallarsi-migne-pl26-1845",
   "jurisdiction": null,
   "language": "la",
-  "notes": "The edition reprints the Verona editors' text with Migne's prefatory and column apparatus. The prologue begins at PL 26 col. 15; the Lukan provenance sentence appears at col. 18.",
   "publication": "Domenico Vallarsi and Scipione Maffei editorial text, reprinted in Jacques-Paul Migne, Patrologia Latina 26 (Paris, 1845), cols. 15-218",
   "title": "Commentariorum in Evangelium Matthaei ad Eusebium libri quattuor, Vallarsi text reprinted in Patrologia Latina 26",
   "translators": [],
@@ -21,15 +36,12 @@
   {
    "artifact_id": "artifact.jacques-paul-migne.patrologia-latina-volume-26.paris-1845.internet-archive-google-pdf-0d889bd6",
    "artifact_type": "scan",
-   "context": "In his prologue's ordered account of the four canonical evangelists, Jerome identifies Luke as a physician, a Syrian of Antioch, and a disciple of Paul, and says that Luke composed his volume in the regions of Achaia and Boeotia. This controls attribution of that Achaia-Boeotia provenance as Jerome's ancient testimony, not as an independently demonstrated modern historical conclusion.",
    "id": "passage.jerome.commentariorum-in-evangelium-matthaei.vallarsi-migne-pl26-1845.prologus-luke",
    "locus": "prologus",
    "media_type": "application/pdf",
-   "notes": "Directly inspected at PL 26 col. 18, artifact PDF p. 14. The adjacent Vallarsi note reports contrary ancient testimony and the Syriac version's Egypt/Alexandria claim; this passage therefore supports faithful reporting of Jerome's attribution while preserving the edition's visible disagreement. It does not establish a precise city, year, manuscript stemma, or modern critical consensus.",
    "readable": false,
    "reason": "The exact bytes are not retained in this repository; the record keeps their retrieval location, hash and rights instead.",
    "rights": "public-domain",
-   "rights_basis": "The represented 1845 Paris printing is in the United States public domain by date of publication. The exact Google Books scan served by Internet Archive is recorded remotely rather than redistributed.",
    "rights_jurisdiction": "United States",
    "segment_id": "segment.jerome.commentariorum-in-evangelium-matthaei.vallarsi-migne-pl26-1845.pl26-columns-15-218",
    "source_url": "https://archive.org/download/patrologiaecurs240unkngoog/patrologiaecurs240unkngoog.pdf",

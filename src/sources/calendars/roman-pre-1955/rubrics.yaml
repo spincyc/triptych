@@ -39,6 +39,21 @@ advisory: >-
   the religious institute, to a legitimate indult, and to the competent annual
   Ordo, which controls. Nothing here is an occurrence witness and nothing here
   authorises the use of any book.
+latin_text_status:
+  state: unavailable
+  scope: rubric-wording
+  kind: rights-withheld
+  paths:
+  - impediment.transfer.proper_seats[0].latin
+  - impediment.transfer.proper_seats[1].latin
+  - impediment.transfer.keeps_its_class.latin
+  - impediment.fixed_commemoration.latin
+  - impediment.sunday_not_resumed.latin
+  - commemoration.kinds.latin
+  - commemoration.ceilings.latin
+  - commemoration.order.latin
+  - commemoration.surplus.latin
+  - mass_category.latin
 
 # ---------------------------------------------------------------------------
 # Where every rule below came from
@@ -188,16 +203,6 @@ overrides:
     commemorate one another: the lower is simply omitted and is not
     transferred. This file cannot detect that identity from a mass key, so it
     is stated and never applied.
-- id: the-last-sunday-after-pentecost-keeps-the-final-slot
-  key: last-sunday-after-pentecost
-  over_key_matches: '^pentecost-\d+$'
-  when_same_row: true
-  locus: the pre-1955 Breviary rubrics, De Dominica
-  why: >-
-    In a year whose count of Sundays after Pentecost leaves the numbered
-    Sunday and the last Sunday in one slot, the Mass of the last Sunday after
-    Pentecost is the one that is said. Both are minor Sundays at row 19, so the
-    table alone cannot separate them.
 
 # ---------------------------------------------------------------------------
 # The bases. Each is one reason a day carries the row it carries.
@@ -554,7 +559,8 @@ bases:
 
 # ---------------------------------------------------------------------------
 # Assignment. Ordered; the first rule whose predicate matches a mass wins.
-# The pre-1955 calendar inherits 486 of 491 masses from the 1962 typical
+# The pre-1955 calendar has 484 unstated base masses among the 489 masses its
+# effective projection serves. Their source is the 1962 typical
 # edition via the recension projection. The 1962 rank (I, II, III, Comm.) is
 # the only grade information the mass index carries, and it is an
 # APPROXIMATION of the pre-1955 grade:
@@ -781,9 +787,6 @@ impediment:
       impeded_when_easter_offset_between: [-7, 6]
       destination: the Monday after Low Sunday
       seat_easter_offset: 8
-      latin: >-
-        festum Annuntiationis B. Mariae Virg., quando est transferendum post
-        Pascha, transfertur in feriam II post dominicam in albis
     - key: commemoratione-omnium-fidelium-defunctorum
       locus: DA, Titulus III
       own_date: 11-02
@@ -791,12 +794,8 @@ impediment:
       impeded_when_weekday: sunday
       destination: the following Monday
       seat_offset_days: 1
-      latin: >-
-        Commemoratio omnium Fidelium defunctorum, quando occurrit cum dominica,
-        transfertur in feriam II sequentem
     keeps_its_class:
       locus: DA, Titulus III
-      latin: Festa translata sunt eiusdem gradus ac in sede propria.
   reposition:
     locus: DA, Titulus IV
     stated_only: true
@@ -806,15 +805,11 @@ impediment:
       carries no particular calendar, so nothing here is ever repositioned.
   fixed_commemoration:
     locus: DA, Titulus III
-    latin: >-
-      Commemoratio die fixo statuta non transfertur vel reponitur cum festo
-      transferendo vel reponendo, sed fit suo die vel omittitur.
     gloss: >-
       A commemoration attached to a date does not travel with the feast it
       accompanies.
   sunday_not_resumed:
     locus: DA, Titulus III
-    latin: Officium et Missa dominicae impeditae nec anticipantur nec resumuntur.
     gloss: >-
       An impeded Sunday is gone for that year. It is not moved forward, back,
       or into the following week.
@@ -834,11 +829,6 @@ impediment:
 commemoration:
   kinds:
     locus: DA, Titulus VI
-    latin: >-
-      Commemorationes sunt aut privilegiatae aut ordinariae. Commemorationes
-      privilegiatae fiunt in Laudibus et in Vesperis necnon in omnibus Missis;
-      commemorationes vero ordinariae fiunt tantum in Laudibus, in Missis
-      conventualibus et in omnibus Missis lectis.
     gloss: >-
       An ordinary commemoration is made at every Low Mass and at the
       conventual Mass, and at no other sung Mass. A sung parish Mass that is
@@ -851,16 +841,8 @@ commemoration:
     - {clause: c, what: of the days within a privileged octave}
     - {clause: d, what: of the privileged ferias of Advent, Lent and Passiontide}
     - {clause: e, what: of the greater Litanies, in the Mass}
-    closing: Omnes aliae commemorationes sunt commemorationes ordinariae.
   ceilings:
     locus: DA, Titulus VI
-    latin: >-
-      a) in diebus liturgicis I classis et in Missis in cantu non
-      conventualibus, nulla admittitur commemoratio, praeter unam privilegiatam;
-      b) in dominicis II classis, una tantum admittitur commemoratio; c) in
-      aliis diebus liturgicis II classis, una tantum admittitur commemoratio; d)
-      in diebus liturgicis III et IV classis, duae tantum admittuntur
-      commemorationes.
     rules:
     - {clause: a, when_class: I, max: 1, privileged_only: true, what: 'On a duplex I classis day, one commemoration only and it must be privileged.'}
     - {clause: b, when_class: II, when_nature: sunday, max: 1, privileged_only: false, second_class_feasts_only: true, displaced_by_privileged: true, what: 'On a duplex II classis Sunday, one commemoration only, of a duplex II classis feast; omitted if a privileged commemoration is due.'}
@@ -892,13 +874,9 @@ commemoration:
     applied: false
   order:
     locus: DA, Titulus VI
-    latin: >-
-      Commemoratio de Tempore fit primo loco. In admittendis et ordinandis
-      aliis commemorationibus, servetur ordo praecedentiae.
     gloss: The season first, then the order of precedence.
   surplus:
     locus: DA, Titulus VI
-    latin: Quaelibet commemoratio, quae numerum pro singulis diebus statutum superet, omittitur.
   abolished:
     what: >-
       The pre-1955 system carries the full commemoration apparatus that the
@@ -962,7 +940,6 @@ orations:
 mass_category:
   assumed: the Mass of the Office of the day
   locus: the pre-1955 Missal, Rubricae generales, De Missa
-  latin: Missa proinde per se cum Officio diei concordare debet.
   not_tested:
   - {category: festive Mass, locus: the pre-1955 Missal, Rubricae generales}
   - {category: votive Mass, locus: the pre-1955 Missal, Rubricae generales}
@@ -1068,12 +1045,39 @@ divergences:
 # Unsettled cases. Questions this file does not answer.
 # ---------------------------------------------------------------------------
 unsettled:
+- what: the twenty-three-Sunday shortfall after Pentecost
+  why: >-
+    This structural recension inherits the base calendar's computation, which
+    emits both the numbered Sunday and the last Sunday in the shared slot and
+    refuses to choose between them. The former citation to "the pre-1955
+    Breviary rubrics, De Dominica" did not identify a precise, collated locus in
+    a target-edition witness and cannot override that date-scoped refusal. A
+    competent dated Ordo is required.
 - what: two candidates that land on the same row
   why: >-
     The table orders within several rows by properties — primary before
     secondary, proper before common, Apostles before other saints — that a
     mass key does not carry. Where two candidates tie, the derivation stops
     and says the day is not settled here.
+- what: 'a fixed-date feast inherited as 1962 class III colliding with a day in rows 15 through 23'
+  scope: 'occurrence'
+  when:
+    candidate_basis:
+    - 'row-21-semiduplex-lord-bvm'
+    - 'row-22-semiduplex-other'
+    candidate_origin: 'fixed-date'
+    with_precedence_place:
+      min: 15
+      max: 23
+  why: 'The inherited mass index says only that the feast was class III in
+    1962. In the pre-1955 system it may instead have been duplex minus,
+    semiduplex, or simplex, occupying rows 15 through 23 according to personal
+    dignity. Against another day in that same range, the missing historical
+    grade can change the winner, tie, or commemoration disposition. No target
+    edition source held here identifies that grade, so this occurrence must
+    remain unresolved. A competitor above row 15 defeats every possible grade,
+    and one below row 23 loses to every possible grade; those deterministic
+    cases remain settled.'
 - what: criterion (e) propriety in occurrence
   why: >-
     Where a proper feast and a common feast of the same grade occur on the

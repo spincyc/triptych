@@ -37,8 +37,9 @@ confirmed it as the project's governing instruction. This page is that brief's
 standing policy, implemented and verified against sources opened at execution
 time; the brief itself asks for exactly that verification, and where the two
 differ this page governs. The brief's work-order half — its repository sweep,
-phase sequence and report format — was addressed to the agents who executed it
-and is spent.
+completeness audit, phase sequence, Definition of Done and report format — has
+been partly addressed but remains open. This page implements the standing
+rights policy; it does not certify completion of that work order.
 
 ## 1. The presumption, and the priority order
 
@@ -178,7 +179,7 @@ should be confirmed there].
 
 Two existing routes fall outside condition (4), and this is not qualified:
 
-- **Downloadable files.** `pdf/` holds 200 installed PDFs, the browser builds
+- **Downloadable files.** `pdf/` holds installed PDFs, the browser builds
   explicit `download` links to them, and the release authorization's
   `authority_scope` includes `public-web-hosting-and-download`. A file handed to
   a reader is a publication in another form. Free does not cure it.
@@ -195,13 +196,32 @@ marker would be swept into an outbound CC BY 4.0 offer**, purporting to
 sublicense ICEL's translation to the world. That is worse than not publishing,
 and it would happen by omission rather than by decision.
 
-**Therefore: no ICEL text is written into a propers file, a corpus file, or a
-PDF source until the rights model can express a per-text, per-surface decision
-and the publication filter can act on it.** The precedent for the shape exists —
-`mass-ordinary`'s `licensed-free` state, which maps to the source library's
-`licensed` or `permission`, refuses a witness with no acknowledgment, and emits
-the acknowledgment beside every text it covers. The propers path has no
-equivalent and no notice field at all. Build it first.
+**Therefore: no ICEL payload belongs in a propers corpus, public static-data
+bundle, Git distribution, or PDF merely because a free live site could display
+it.** Text-free source, provenance, rights, and acknowledgement metadata may be
+tracked; the payload remains quarantined unless a separate non-bundled display
+route can enforce the per-text and per-surface decision. `mass-ordinary` and
+`mass-propers` can require an acknowledgement for a permission-bearing witness,
+but that validation does not expand the permission or make the generated JSON
+an eligible surface. The public-artifact boundary must refuse the payload as
+well.
+
+The acknowledgement is also surface-specific. ICEL's current copyright page
+prescribes `Excerpts from the English translation ...` for excerpts and a
+different form for an entire work. A selected proper or Ordinary element uses
+the excerpt form. Retaining the entire-work form copied from a source PDF, or
+replacing `©` with `(c)`, does not satisfy the current prescribed wording.
+
+**Current-tree quarantine does not clean Git history.** Earlier commits tracked
+ICEL payloads, including strings sourced through unofficial intermediaries;
+Roman 1962 Latin Proper bodies now covered by the text-free quarantine ledger;
+and a superseded Lasance OCR artifact containing the excluded lettered insert
+at printed pages 1302a--1302d. The commit graph retains those blobs after the
+served files and tracked review artifacts stop carrying them. Whether the
+public repository needs a history rewrite, replacement, access change, or
+another remedy is a release-policy and counsel decision for the maintainer.
+This policy records the residual and does not treat a clean current artifact as
+retroactive clearance of historical distribution.
 
 ---
 
@@ -209,29 +229,31 @@ equivalent and no notice field at all. Build it first.
 
 **This is the single most important distinction in this document.**
 
-ICEL's grant is established. This project still cannot publish one word of the
-202 English slots its postconciliar ledger holds untranslated, and the reason is
-not permission.
+ICEL's grant is established. That does not make a stored copy publishable, and
+it does not establish that any candidate string is exact, approved, recognized,
+promulgated, current for the relevant territory, or ICEL-owned rather than a
+USCCB/CCD or other rightsholder's text.
 
 Condition (3) requires the texts be followed exactly. Brief §14.3 and §15, and
 `sources.md`, forbid sourcing them from blogs, unofficial missal sites, scraped
 parish PDFs, unverified OCR, or generation.
 
 **A first survey on 2026-08-20 got this substantially wrong, and the correction
-is instructive enough to keep rather than overwrite.** It reported that no
-reachable authoritative source supplies the exact English of 183 of the 202
-ledgered slots, and that "ICEL grants the permission and publishes no exemplar:
-its own site has seven pages, catalogues the books it has translated, and offers
-no text and no download". The second sentence is false. Re-scored the same day
-against files actually opened at the bytes, **48 of the 202 have an official,
-free, whole, reachable source and 154 do not**.
+is instructive enough to keep as an audit snapshot rather than overwrite.** It
+claimed that most ledgered slots lacked an authoritative source and that "ICEL
+grants the permission and publishes no exemplar: its own site has seven pages,
+catalogues the books it has translated, and offers no text and no download".
+The second claim is false. Re-scored the same day against files actually opened
+at the bytes, the survey found multiple official, free, whole, reachable sources.
+Its old slot counts are intentionally not restated here: later corpus work
+changed the inventory, and source reachability is not a publication decision.
 
 What that survey missed, and what any later one should look for first:
 
 | Source | What it publishes | Reaches |
 | --- | --- | ---: |
-| ICEL's own open music folder, linked from its News page | 188 free PDFs of the Missal's chanted texts: every Preface, the sung Order of Mass, Eucharistic Prayers I–IV, and the Holy Week ritual chants including all ten Good Friday Solemn Intercessions | the bulk of the Holy Week ritual slots |
-| The ICEL Antiphonary, hosted by the CBCEW Liturgy Office | 265 pp: the English of ALL Entrance and Communion Antiphons of the Missale Romanum 2002/2008, Proper of Time, Saints, Commons, Ritual, Various Needs, Votive and Dead | every antiphon slot, 13 of them |
+| ICEL's own open music folder, linked from its News page | publisher PDFs of the Missal's chanted texts; the inventory distinguishes publisher artifacts, restricted derivatives, and its index rather than treating every manifest as one free PDF | the bulk of the Holy Week ritual slots |
+| The ICEL Antiphonary, hosted by the CBCEW Liturgy Office | 265 pp: the English of ALL Entrance and Communion Antiphons of the Missale Romanum 2002/2008, Proper of Time, Saints, Commons, Ritual, Various Needs, Votive and Dead | every antiphon slot |
 | CBCEW Liturgy Office | the whole Order of Mass and all four Eucharistic Prayers, free and entire | the Order of Mass |
 | USCCB, `/resources/` PDFs | the Committee on Divine Worship Newsletter archive and the post-2011 Mass formularies, several carrying the full English formulary with both Roman decrees | new celebrations |
 
@@ -239,38 +261,36 @@ Two facts about the Antiphonary matter beyond its coverage: its hosting page
 states that **a Word version is available on request**, which is close to the
 machine-readable reference copy the narrow ask below describes; and its own
 copyright block names Psalms 23(24), 46(47) and 115(116) as Revised Grail,
-which is GIA's and not ICEL's — see §5.4.
+which is GIA's and not ICEL's — see §5.1.
 
-The 154 that remain have no official source for a STRUCTURAL reason, not an
-accidental one, and no further searching among conferences will change it: a
-conference publishes what its people do not already own — the Order of Mass, the
-GIRM, new celebrations, Holy Week — and never the Proper of Time's orations,
-because every priest owns the book. 124 of the 154 are exactly those orations.
+The gaps in that dated survey had a structural pattern: conference sites tended
+to publish the Order of Mass, GIRM, new celebrations, and Holy Week, but not the
+whole Proper of Time. That observation is a search lead, not proof that no
+official source exists; later harvests must report their own measured coverage.
 
 The England-and-Wales text must be verified element by element against the U.S.
 state before it lands: the universal ICEL text is common to ICEL territories,
 national adaptations are not. And an authoritative publisher establishes WHO
-says so, not AS OF WHEN: ICEL's own presidential-tones file prints the Advent 1
-Collect with the ending superseded after Cardinal Sarah's letter of May 2020,
-which each conference implemented on its own date.
+says so, not AS OF WHEN: ICEL's own presidential-tones file prints three
+Proper-of-Time orations. Its Advent 1 Collect has the ending superseded after
+Cardinal Sarah's letter of May 2020, which each conference implemented on its
+own date.
 
-So the reason a slot is empty must now be recorded truly. It is no longer
-*"nobody may publish"*, and it is no longer *"the two bodies that would have to
-agree do not"*. It is:
-
-> **The rightsholder permits the use. This project has no exact copy of the
-> words.**
+So the reason a slot is empty must be recorded truly. It is not enough to say
+*"nobody may publish"* or *"ICEL owns it"*. Name the actual blocker: no exact
+authoritative copy, a territory/version mismatch, a different rightsholder, or
+the fact that the only recorded permission is for a live web display while the
+current route would bundle a downloadable copy.
 
 Anything that closes such a slot without naming an exemplar is a
 reconstruction, and §12 forbids it absolutely.
 
-**The narrow ask that follows.** What is needed from ICEL is not a licence — the
-standing grant already reaches the use — but an authoritative **reference copy**
-in any exact machine-readable or page-image form, so that condition (3) can be
-satisfied from an ICEL exemplar rather than a third party's copy. A request is a
+An authoritative **reference copy** can solve the exactness problem. It cannot
+solve the surface problem by itself. A request to a rightsholder is a
 representation about who is asking and what they will do; **only the maintainer
-may send one, and no agent may.** The enumerated scope for it is held with the
-sourcing lane's route record.
+may send one, and no agent may.** Any request must name the unresolved text and
+surface narrowly rather than ask for a blanket license already partly addressed
+by a standing policy.
 
 ---
 
@@ -302,23 +322,23 @@ reaches an ICEL oration: the CCD's governs the readings, the USCCB's governs the
 U.S. adaptations and U.S. propers, and the ICEL line carries "All rights
 reserved" with its terms stated in ICEL's own published policy — which is §3.
 
-**A third consequence, withdrawn.** This page argued on 2026-08-20 that the
-Grail line made the unit of rights smaller than a proper slot, because on Palm
-Sunday an ICEL antiphon and a Grail psalm verse appear together, and that no
-antiphon could land until the model could express it. **That was wrong, and the
-schema already had the answer.** An antiphon slot is `source: mixed`: it carries
-the antiphon's own words as `text` and its scriptural constituents as `verses`,
-which are CITATIONS resolved at render time against whichever bible the reader
-has selected. The 1962 calendar has done this all along — its First Antiphon at
-the Distribution of Palms carries the antiphon's Latin beside `Matthew 21:9` and
-`Psalm 23:1-2, 7-10`, and the psalm's words come from the reader's own edition.
+**A third consequence, corrected twice.** A scriptural constituent ordinarily
+is a citation rather than acquired text. A `source: mixed` proper can therefore
+carry its own words as `text` and resolve its `verses` against the reader's
+selected Bible, as the 1962 palm rite already does. That general rule does not
+answer the approved English of Palm Sunday's Simple Entrance Antiphon.
 
-So a Grail rendering is never needed and never wanted. What this project carries
-from ICEL is the antiphon; what it carries for the psalm is the reference. The
-psalms are the psalms, and they are served from the public-domain editions this
-repository already indexes. No slot is blocked by the Grail line, and the three
-psalms it names require nothing of us but that we do not transcribe ICEL's
-particular rendering of them, which we have no reason to.
+The official ICEL Antiphonary was read again on 2026-08-27 at artifact page 44,
+printed page 36. Its source-owned English body interleaves the ICEL Johannine
+antiphon and refrain, the document's Revised Grail rendering of Psalm 23:9-10,
+and the repeated ICEL refrain. The psalm span matches the Psalm 23 witness on
+artifact page 41, and the copyright page assigns that rendering to Conception
+Abbey/The Grail, administered by GIA. Replacing those lines with a selected
+Bible would construct a different body and would not satisfy ICEL's exactness
+condition. The unit of rights is therefore smaller than this one slot after all.
+Its text-free ledger row records the exact passage witness and withholds the
+whole body until a per-span publication model or a basis reaching the Grail span
+exists; it does not overextend ICEL's permission to GIA's text.
 
 ### 5.2 What ICEL says it owns
 
@@ -340,7 +360,7 @@ English, and `RomanMissal.htm` describes provisional texts issued during the
 translation of the *Missale Romanum* 2002. A provisional Green or Gray Book text
 must never be imported as approved liturgical text.
 
-### 5.3 USCCB and CCD material: the answer is no, and it is not a close call
+### 5.3 USCCB and CCD material: classify it separately and do not import it
 
 Absent from ICEL's inventory of its own property, and owned elsewhere: the *New
 American Bible*; the *Lectionary for Mass for Use in the Dioceses of the United
@@ -363,15 +383,17 @@ affirmative restrictions in the sense of §1 item 7 [sourced 2026-08-20]:
 > means … without permission in writing from the copyright holder. *(The Abbey
 > Psalms and Canticles)*
 
-For this material there is no competing standing grant, the holder's own
-statement is the governing source, and **§1 item 7 applies: do not locally
-republish.** No lane should treat this as ambiguous.
+For this material there is no competing ICEL standing grant, the holder's own
+statement is the governing source, and **§1 item 7 applies to this repository's
+local corpus and public bundle: do not locally republish.** No lane should treat
+ICEL ownership of neighboring material as a basis for these texts.
 
-The CCD/NAB permissions page itself could not be retrieved on 2026-08-20 (§16),
-so its precise fair-quotation allowance is unverified and must not be quoted.
-Nothing turns on that: the unverified page is a gap in knowing how much
-Scripture may be quoted in commentary, not a gap that could make NAB text
-publishable.
+The CCD/NAB permissions page appeared through the official site's indexed web
+view on 2026-08-26 but still returned HTTP 403 to the required whole-document
+retrieval path. Treat that as corroboration, not a verified source-text fetch.
+Nothing turns on the gap: the verified authorized RSS route at §9 does not
+authorize building a permanent local NAB, NABRE, or Lectionary corpus, and it
+does not apply to ICEL Missal text.
 
 ---
 
@@ -423,23 +445,23 @@ the NAB, the LFM, *The Abbey Psalms and Canticles*, U.S. propers and national
 adaptations — this page is the holder's own statement, there is no competing
 grant, and the answer is no. §5.3.
 
-**Why ICEL's grant is not defeated by it.** A third party's permissions FAQ does
-not revoke a different rightsholder's published licence. Nothing located
-establishes that ICEL's Internet clause has been rescinded or superseded, and §2
-requires that showing before a generic permissions page displaces a specific
-express permission from the actual owner. So ICEL's grant governs ICEL's text.
+**What the evidence supports about ICEL.** Nothing located establishes that
+ICEL's Internet clause has been rescinded or superseded, and a different body's
+generic permissions FAQ is not evidence of rescission by the rightsholder. That
+supports recording ICEL's grant for ICEL-owned text. It does not settle whether
+another approval, authentication, or territorial requirement attaches to a
+particular U.S. publication.
 
 **What this policy does not assert.** It does not assert that the USCCB is wrong,
 that no USCCB requirement can attach to a publication in the United States, or
 that the two statements have been reconciled by anyone but this project. The
 2025 guidelines describe a route in which "ICEL … issues licenses for
-publications after receiving the authentication of the Secretariat" — a sequence
-that is never entered when the Internet clause applies, because no licence
-issues at all. The two are reconcilable on their faces and neither is asserted
-here to be rescinded. But they are not the same rule, and 51 pages of the
-guidelines do not mention the Internet clause anywhere. Anyone relying on that
-clause for text displayed in the United States should know this, and it is the
-point on which a reasonable person could most easily disagree with this policy.
+publications after receiving the authentication of the Secretariat." They are
+scheduled to enter force on 29 November 2026, cover digital publications, and
+do not mention ICEL's Internet clause. This repository does not resolve that
+silence into either a revocation or an exemption. Its current public-data route
+quarantines the ICEL payload. Any future non-bundled display in the United
+States must recheck both bodies' then-current requirements before release.
 
 Also carry across the preamble's exactness demand, which is materially ICEL
 condition (3) plus one more requirement:
@@ -467,9 +489,9 @@ independent renderings of the same act]:
 **Encode the date.** It is confirmed. Present requirements and future
 requirements are different things and must be kept apart.
 
-- **Do not** prematurely suppress otherwise permitted material because future
-  review or licensing rules may apply. §1 governs until 29 November 2026 and
-  §1 governs after it; nothing in the guidelines changes the presumption.
+- **Do not** infer from the effective date that ICEL ownership or ICEL's present
+  published policy has changed. Do quarantine any payload whose actual release
+  surface has not been cleared under the complete applicable requirements.
 - **Do** create an explicit record for any present behaviour that becomes
   noncompliant under a plausible reading of the new rules, with an action date
   before 29 November 2026.
@@ -500,7 +522,7 @@ subscription product. It does not reach a free non-subscription reader in the
 ¶69 class. **It would reach one the day that reader became a digital
 participation aid.**
 
-### 7.2 ¶69, and why this project falls in it
+### 7.2 ¶69 is a possible study category, not a classification of the day reader
 
 ¶40 defines participation aids as publications "providing the necessary texts
 and music to fulfill [the lay faithful's] active role in the celebration" —
@@ -512,33 +534,33 @@ hymnals, annual and quarterly pew aids. ¶69 opens the fourth subcategory,
 > nor are they able to be used liturgically. Examples include, but are not
 > limited to catechetical materials, academic books, devotional materials, etc.
 
-**A free source-critical reader for study and reference, presenting three
-historical missal states side by side with provenance apparatus, is on these
-words a ¶69 publication — the same class as an academic book.** The
-characterization is therefore not a dodge; it is the category the guidelines
-themselves supply. Describe the site accurately as a free liturgical reader for
-prayer, study, reference and participation, with precise source attribution.
-Never describe it as an official ritual edition, an approved altar Missal, an
-authenticated liturgical book, as carrying a *concordat cum originali*, as
-reviewed by the Secretariat, or as ICEL- or USCCB-sponsored.
+A comparative source-critical study that quotes only bounded portions may fit
+¶69's description. That possibility does not classify every surface in this
+repository. The day reader lays out a single day's Mass in celebration order,
+offers prayer and Ordinary text, and is explicitly intended to be usable at
+Mass; those facts place it near the participation-aid boundary rather than
+establishing the academic-book category.
 
-**And now the warning, which matters as much as the finding.** This
-characterization is a **description, and must never become a pretext.**
+¶57 supplies the controlling caution: in ambiguity, follow the participation-
+aid requirements, and a publisher may ask the Secretariat whether a work
+qualifies as devotional. **The Secretariat decides; this project does not.**
+Until a release surface is classified and all applicable rights are established,
+do not use ¶69 as a publication basis. Keep ICEL payloads out of the clonable
+public-data bundle and keep USCCB/CCD payloads out unless a separate license or
+authorized syndication route actually covers them.
 
-- ¶57's tie-breaker cuts the other way in doubt: "In cases of ambiguity, it is
-  better to err on the side of following the requirements for the participation
-  aid. Publishers may ask the Secretariat if their publication qualifies as a
-  devotional publication." A day-reader UI that lays out a single day's Mass in
-  celebration order sits closer to that margin than a comparative apparatus
-  does. **The Secretariat decides, not this project, and ¶57 names the remedy:
-  publishers may ask.**
-- ¶69 and ¶71 tie Secretariat review to the moment a copyright holder is about
-  to grant a licence. Where ICEL's standing clause means no licence is sought or
-  granted, the trigger stated in ¶71 does not by its own terms occur. **That is
-  a reading of the text, not a ruling.**
+The dated action record
+[`day-reader-participation-aid-review-v1.toml`](../src/sources/inventories/day-reader-participation-aid-review-v1.toml)
+applies that caution to the present Day-reader surface. It records an internal,
+non-legal fail-closed decision on 26 August 2026 and requires a fresh evidence
+review to begin by 15 November and finish before the guidelines enter into force
+on 29 November 2026. If that review is absent or incomplete, the gate stays
+closed; the date supplies neither a classification nor blanket clearance.
 
-If a surface of this site ever becomes an aid to participation in a celebration
-rather than a reader for study, the category changes and §14 opens.
+Describe every released surface accurately. Never call it an official ritual
+edition, an approved altar Missal, an authenticated liturgical book, or a work
+carrying a *concordat cum originali*; never imply review, sponsorship, or
+endorsement by ICEL, the USCCB, or the Holy See.
 
 ---
 
@@ -553,13 +575,17 @@ respected. Do not conflate:
   typography, newly authored material and edition-specific changes; with
 - the **underlying ancient or otherwise public-domain liturgical text**.
 
-### 8.1 *Postquam Summus Pontifex* (2021) is the current word, and this repository does not hold it
+### 8.1 *Postquam Summus Pontifex* (2021) is the current registered word
 
 Decree of the Congregation for Divine Worship and the Discipline of the
 Sacraments, 22 October 2021, giving effect to canon 838 CIC as modified by
 *Magnum principium*; abbreviated `PSP` and cited at nn. 39–40 by the USCCB's own
-2025 guidelines. Retrieved 2026-08-20 from the Holy See Press Office bulletin
-[verified].
+2025 guidelines. The decree was already registered under the descriptive,
+immutable work ID
+`work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.decree-implementing-canon-838-2021`;
+the earlier title-only search missed that identity. Its exact Holy See Press
+Office bulletin PDF, retrieved 2026-08-20, is now hash-registered without
+tracked bytes, with verified passage records for the loci below.
 
 - **n. 2** — the Latin *editiones typicae* are promulgated by the Apostolic See,
   "which holds their copyright", and the same applies to subsequent editions.
@@ -575,6 +601,19 @@ Sacraments, 22 October 2021, giving effect to canon 838 CIC as modified by
   the Bishops' Conference. This is the 2021 successor to *Liturgiam authenticam*
   n. 117.
 
+The controlling source records are the Press Office PDF artifact
+`artifact.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.decree-implementing-canon-838-2021.english-press-office-bulletin-2021-10-22.press-office-pdf-9fd22cb8`
+and these passages:
+
+- `passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.decree-implementing-canon-838-2021.english-press-office-bulletin-2021-10-22.2`;
+- `passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.decree-implementing-canon-838-2021.english-press-office-bulletin-2021-10-22.3`; and
+- `passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.decree-implementing-canon-838-2021.english-press-office-bulletin-2021-10-22.40`.
+
+Numbers 2 and 3 are on artifact page 2; their footnotes 7 and 8 are on artifact
+page 17; n. 40 is on artifact page 6. The PDF remains untracked because the
+Holy See portal terms reviewed for the artifact establish no repository
+redistribution basis.
+
 **What footnote [8] gives, stated narrowly.** It is the strongest support any
 source gives to §7.2: a study edition is expressly contemplated, expressly
 distinguished from the licensed liturgical-use edition, and routed to a
@@ -584,17 +623,9 @@ study edition may reproduce the copyrighted Latin without permission.** It
 allocates canonical competence; a footnote allocating canonical competence is
 not a copyright licence, and n. 2's ownership claim stands over both cases.
 
-Two open items follow, both real:
+One open item follows:
 
-1. **PSP is not registered anywhere in this repository** — a search on
-   2026-08-20 for "Postquam Summus", "postquam-summus" and `\bPSP\b` found no
-   source record, passage or citation. The repository cites *Liturgiam
-   authenticam* n. 111 (2001) in its place, and n. 111 speaks only of
-   reprinting where PSP n. 3 speaks of the internet. **Registering PSP is the
-   highest-value source acquisition this analysis identified.** Until it is
-   registered, cite it as `[sourced]` from the URL in §16 and not from a
-   repository record.
-2. **The Holy See's own cited authority for its copyright has not been
+1. **The Holy See's own cited authority for its copyright has not been
    retrieved.** PSP n. 2 footnote [7] cites *Secretariat of State, Decree, 13
    May 2005: AAS 97 (2005) 798-799*. That, not LA n. 111, is the instrument the
    Holy See points to. Note also that `missals.md` §5 already cites a
@@ -646,12 +677,12 @@ composed postconciliar collects and prefaces, new Eucharistic Prayers, propers
 for recently canonized saints, post-1955 and post-1962 revisions that are not
 restorations, new rubrics — and give those their own rights basis.
 
-Note that roughly **838 substantive Latin composed texts publish today with no
-per-text rights token and no per-text witness**. Their basis exists in prose, in
-corpus headers and rights records, but it is not uniform across them, and the
-corpus's own record says so. Assigning one basis to all 838 would assert a
-uniformity the record denies. The field must exist and default to nothing, so
-that a text lacking a basis is visibly lacking one.
+The current inventories still contain many substantive Latin bodies with no
+per-text rights token or exact per-text target-edition witness. Their count is
+mutable and must be derived from the inventories and validators rather than
+copied into this policy. Their bases are not uniform, and assigning one basis to
+all of them would assert a uniformity the record denies. The field must exist
+and default to nothing, so that a text lacking a basis is visibly lacking one.
 
 ---
 
@@ -762,22 +793,34 @@ liturgical absence from a data problem. Do not flatten it.
 Attribution is **generated from typed metadata**, not duplicated as free-text
 notices that drift.
 
-For ICEL text the required form is:
+ICEL's current page distinguishes an entire work from excerpts. The entire-work
+form is:
 
 > The English translation of *The Roman Missal* © 2010, International Commission
 > on English in the Liturgy Corporation. All rights reserved.
 
-For excerpts or multiple works, follow ICEL's current prescribed wording at
-`copyright.htm` rather than inventing our own. **Condition (2) fixes the display
-boundary**: the acknowledgment must appear on the first and last pages or frames
-within the site displaying the ICEL text. Attribution required at a boundary
-must not be buried, and any acknowledgment placed by generated metadata rather
-than in the page body must not inherit a stale origin.
+This corpus presents selected propers and Ordinary elements, not the entire
+work. The required excerpt form for that use is:
 
-Attribution and text must not separate in transit. `mass-ordinary` already emits
-the acknowledgment beside every text it covers for exactly this reason, and
-refuses a witness that declares a notice-bearing basis without a notice. Any new
-publication path does the same.
+> Excerpts from the English translation of *The Roman Missal* © 2010,
+> International Commission on English in the Liturgy Corporation. All rights
+> reserved.
+
+For multiple works, follow ICEL's current prescribed wording at `copyright.htm`
+rather than inventing our own. Do not substitute `(c)` for `©`, copy a stale
+notice from an intermediary, or use the entire-work form for an excerpt.
+**Condition (2) fixes the display boundary**: the acknowledgement must appear on
+the first and last pages or frames within the site displaying the ICEL text.
+Attribution required at a boundary must not be buried, and any acknowledgement
+placed by generated metadata rather than in the page body must not inherit a
+stale origin.
+
+Attribution and text must not separate in transit. The renderer can emit an
+acknowledgement beside every covered text, and the structure tools refuse a
+notice-bearing witness without one. Those checks are necessary on an eligible
+surface but do not clear an ineligible bundled corpus. While ICEL payloads are
+quarantined, retain the corrected excerpt acknowledgement as text-free metadata
+for a future non-bundled display route.
 
 Attribution is an **obligation attached to a basis**, never an alternative to
 one: a text can be public-domain *and* attributed. Do not model it as an
@@ -846,12 +889,14 @@ Before any text is written to a tracked file:
    had.
 3. **Determine the actual copyright owner per text**, not per book. Is it ICEL
    universal text? a USCCB national adaptation or U.S. proper? CCD Scripture? a
-   fourth party. **Scripture inside a proper is a citation, not a text to
-   acquire**: an antiphon carries its own words and its scriptural constituents
-   as references, and those resolve against the bible the reader selected. That
-   is why the Revised Grail rendering of three psalms, named in the 2011 book
-   and in ICEL's Antiphonary, blocks nothing — this project never wants a
-   particular publisher's psalm wording, only the reference.
+   fourth party. **Scripture inside a proper is ordinarily a citation, not a
+   text to acquire**: an antiphon carries its own words and its scriptural
+   constituents as references, resolved against the Bible the reader selected.
+   Do not apply that rule where an authoritative approved-English exemplar
+   makes a particular third-party rendering part of the source-owned body. The
+   Palm Sunday Simple Entrance Antiphon is the recorded counterexample: its
+   interleaved Revised Grail span makes the whole text unavailable until the
+   publication model can express per-span rights or another basis reaches it.
 4. **Name the basis** from §1's seven, and record it as a token, not prose.
    Where the basis is a permission, record the policy URL and its retrieval date
    beside the artifact's own source URL: they are different URLs and condition
@@ -915,17 +960,19 @@ only the corrected claim learns nothing about how the error was reached.
 
 | Withdrawn | This page had said | What is true | Corrected |
 | --- | --- | --- | --- |
-| ICEL publishes no exemplar | "its own site has seven pages, catalogues the books it has translated, and offers no text and no download" | ICEL's News page links an open music folder of 188 free PDFs — every Preface, the sung Order of Mass, Eucharistic Prayers I–IV, the Holy Week chants including all ten Good Friday Solemn Intercessions — and the ICEL Antiphonary is published free and entire at 265 pages. 48 of the 202 ledgered slots have an official reachable source, not 19. | 2026-08-21, §4 |
-| The Grail makes the rights unit smaller than a slot | "the unit of rights is therefore smaller than the slot, and this repository types rights per proper, which cannot express it. Until it can, no Palm Sunday antiphon may land" | A psalm inside a proper is a CITATION, not a text to acquire. An antiphon is `source: mixed`: its own words as `text`, its scriptural constituents as `verses`, resolved at render time against the reader's chosen bible. The 1962 calendar has done this since before the objection was written. No slot is blocked. | 2026-08-21, §5.1 |
+| ICEL publishes no exemplar | "its own site has seven pages, catalogues the books it has translated, and offers no text and no download" | ICEL's News page links an open music folder, and the ICEL Antiphonary is published free and entire. These are authoritative exemplar leads; coverage must be measured against the current corpus rather than copied from this dated audit. | 2026-08-21, §4 |
+| The Grail never blocks a slot | "No slot is blocked by the Grail line" | The mixed-proper citation model remains right generally, but the official English of Palm Sunday's Simple Entrance Antiphon interleaves an exact Revised Grail span between ICEL spans. Substituting another Bible would change the approved body. This one slot is withheld with exact text-free witness metadata until per-span rights or a basis for the Grail span exists. | 2026-08-27, §5.1 |
 | The postconciliar Latin is refused entire | carried in the data rather than this page: one `editio-typica` absence asserted a rights refusal over all 48 elements of the Order of Mass | True of 12. The other 36 are twelve slots holding no words, eight modelled too coarsely to source, and sixteen ancient texts no rightsholder has refused. Now six typed keys. | 2026-08-21 |
-| The postconciliar English is wholly this project's own | carried in `THIRD_PARTY.md` and `liturgical-english-rights-v1.toml` | 63 rows are public-domain 1861 Cummiskey English carried as the antecedent of the prayer. | 2026-08-20 |
+| The postconciliar English is wholly this project's own | carried in `THIRD_PARTY.md` and `liturgical-english-rights-v1.toml` | Public-domain 1861 Cummiskey English is also carried for antecedent prayers; derive current coverage from the inventory. | 2026-08-20 |
 
-**Who found them matters more than the list.** Three of the four were overturned
-by the maintainer, not by a tool or a review: he said the text is online
-everywhere, and he said the psalms are the psalms. A page like this one is
-written from what its author could reach, and its most consequential errors will
-usually be the ones only somebody who knows the subject can see. Contradiction
-from such a reader is the intended failure path, not an interruption of it.
+**Who found them matters more than the list.** Several were overturned by the
+maintainer rather than by a tool: he said the text is online everywhere, and he
+said the psalms are the psalms. Both corrections improved the investigation;
+the second still needed the exact official page to show the narrower exception.
+A page like this one is written from what its author could reach, and its most
+consequential errors will usually be the ones only somebody who knows the
+subject can see. Contradiction from such a reader is the intended failure path,
+not an interruption of it.
 
 ### 15.1 The root cause, in the repository's own record
 
@@ -939,28 +986,28 @@ reads:
 > terms.
 
 That un-retrieved booklet is the PDF whose p. 25 carries the grant at §3.1. The
-gap was recorded honestly and then a downstream inventory hardened anyway into
-the reason 202 postconciliar slots are ledgered. **No schema change fixes this
+gap was recorded honestly and then a downstream inventory hardened it into a
+blanket absence reason. **No schema change fixes this
 and no schema change caused it.** It was a sourcing gap, and it is why §13 step
 2 is retrieve-the-whole and why §3.2 records the trap by name.
 
-Registering the *Publication Policies* PDF as a tracked source is a prerequisite
-for citing §3.1 from a repository record rather than from this page. The work
-record exists; the PDF edition does not.
+That prerequisite is now closed. The 2013-amended PDF edition, its artifact,
+hash, and focused passages are registered under
+`src/sources/works/international-commission-on-english-in-the-liturgy/publication-policies/`.
 
 ### 15.2 Statements this policy replaces
 
 **Do not edit these as a side effect of reading this file.** They are listed for
 the coordinator, and each needs its own owning lane.
 
-| File | What it says | Disposition |
+| File | What it said before the owning correction | Disposition |
 | --- | --- | --- |
-| `src/sources/inventories/liturgical-english-rights-v1.toml` | `holding`: "The approved English of the postconciliar Roman Missal may not be published here". `[the_icel_translation]`: "May the approved English be reproduced? — Not without a licence, which this project does not have", reasoned from `copyright.htm` and `whatis.htm` and from the royalty schedule. `[seeking_a_licence]` written on the premise that a written grant is required. | **Superseded on the permission.** It never reaches the Global Computer Networks clause, because the document carrying that clause is the one the library did not retrieve. Rewrite the ICEL section against §3, and rewrite `[seeking_a_licence]` as §4's exemplar request. **Its conclusion for the 202 survives** on a different and truer reason: §4. |
-| `src/sources/inventories/postconciliar-ordo-missae-v1.toml` | `advisory`: "the approved English is the International Commission on English in the Liturgy's and this project has no licence to reproduce it"; `absences.icel` on 39 elements. | **Superseded as a rights statement.** The absence of a licence is no longer the reason; no exemplar is. And the Order of Mass is the one thing now fully in hand — §4. Rewrite the advisory and re-source the Ordinary before touching the propers. The `editio-typica` absence key is a separate question and §8.1 governs it. |
+| `src/sources/inventories/liturgical-english-rights-v1.toml` | `holding`: "The approved English of the postconciliar Roman Missal may not be published here". `[the_icel_translation]`: "May the approved English be reproduced? — Not without a licence, which this project does not have", reasoned from `copyright.htm` and `whatis.htm` and from the royalty schedule. `[seeking_a_licence]` written on the premise that a written grant is required. | **Superseded on the permission.** It never reaches the Global Computer Networks clause, because the document carrying that clause is the one the library did not retrieve. Rewrite the ICEL section against §3, and record exemplar and surface limits separately under §4. |
+| `src/sources/inventories/postconciliar-ordo-missae-v1.toml` | `advisory`: "the approved English is the International Commission on English in the Liturgy's and this project has no licence to reproduce it"; a broad `absences.icel` classification. | **Superseded as a rights statement.** The absence of a licence is not a sufficient reason; classify exactness, provenance, rightsholder, and publication surface separately. The `editio-typica` absence key is a separate question and §8.1 governs it. |
 | `src/sources/inventories/postconciliar-proper-translations-v1.toml` | Header: the Missale Romanum 2002 "is in copyright and not held here", and the file "publishes no English of the Missale Romanum 2002 by any route". | **Still true as written**, and its two routes stand (§15.3). What changes is that a third route is now permitted in principle and blocked in fact; the header should say which. |
-| `guidance/the-shape.md` §4 | `absent: icel` glossed as "a postconciliar text two bodies have not agreed this project may publish", pointing at `missals.md`'s conflict finding. | **Superseded.** The gloss was already a correction of an earlier, falser one ("a text nobody may publish"). It is now wrong in the other direction: the rightsholder has agreed, and the gap is the exemplar. Replace the example's reason, not the principle — the principle that an absence carries a true reason is exactly what this correction demonstrates working. |
+| `guidance/the-shape.md` §4 | `absent: icel` glossed as "a postconciliar text two bodies have not agreed this project may publish", pointing at `missals.md`'s conflict finding. | **Superseded.** The gloss was already a correction of an earlier, falser one ("a text nobody may publish"). It is now wrong in the other direction: ICEL has granted a conditional live-web use. A current absence must name the actual blocker — exemplar/exactness, another rightsholder, territory/version, or a bundled surface outside that permission. Replace the example's reason, not the principle. |
 | `guidance/missals.md` §5 and `src/sources/inventories/missal-acquisition-audit-v1.toml` correction `icel-internet-clause` | Quote the ICEL clause against the USCCB's *Policy on Electronic Copyrights* and record a conflict "recorded, not applied", reserving the resolution to the maintainer: "`absent: icel` remains the right operational default". | **Resolved, on the maintainer's direction.** §2 governs the conflict and §6 states the resolution and its limits. Mark the correction applied and cite this page. The audit's reservation was correct procedure at the time and should be recorded as having been answered, not as having been wrong. |
-| `guidance/liturgy/postconciliar-propers.md` | "The ICEL English of the Roman Missal and the Lectionary text are under copyright and are never reproduced." | **Split.** The Lectionary half stands (§5.3). The ICEL half is superseded on the permission and stands in fact until an exemplar exists — and the profile's actual working rules (Latin incipit plus a description, no rendering of the project's own, no paraphrase close enough to reconstruct) remain correct for the published guides either way. |
+| `guidance/liturgy/postconciliar-propers.md` | "The ICEL English of the Roman Missal and the Lectionary text are under copyright and are never reproduced." | **Split.** The Lectionary half stands (§5.3). The ICEL half is superseded on the permission; current nonreproduction may still follow from an unverified exemplar or version and independently follows for a bundled/downloadable surface outside the standing permission. The profile's working rules remain correct for the published guides unless an eligible surface and exact text are both established. |
 | `guidance/sources.md`, "Settle a recurring rights question once" | Cites `liturgical-english-rights-v1.toml` as the file that "settles whether the English of the postconciliar Roman Missal may be published here". | **Pointer only.** The rule stands unchanged; the file it names needs the rewrite above. Add this page beside it as the governing presumption. |
 | the published Order of Mass exposition and comparative studies under `src/claude/…` and `web/claude/…` | Scope records stating the approved English is not reproduced. | **Unchanged for those documents.** A PDF is a publication in another form and outside ICEL condition (4). §3.4. Do not read this policy as opening the installed PDFs. |
 
@@ -969,8 +1016,13 @@ the coordinator, and each needs its own owning lane.
 - **The antecedent route and the project-created route** in
   `postconciliar-proper-translations-v1.toml`, and everything
   `liturgical-english-rights-v1.toml` says about them, `[the_latin]`,
-  `[public_celebration]`, `[the_1973_translation]`, `[the_ellc_grant]` and
-  `[other_freely_granted_corpora]`. Nothing found disturbs any of them.
+  `[public_celebration]`, and `[the_1973_translation]`. Nothing found disturbs
+  those findings. `[the_ellc_grant]` remains evidence of the grant and its
+  notice conditions, not evidence that an ELLC payload is present or cleared
+  for every surface: the current assembled and source-Git tree quarantines the
+  text and asserts no current ELLC display. Apply the same text-versus-grant and
+  surface analysis to `[other_freely_granted_corpora]` rather than inheriting a
+  blanket conclusion.
 - **The refusal of the mechanical similarity route.** Four of 215 postconciliar
   orations word-for-word identical to a 1962 formulary and ten more at 0.95 is
   not an identity, and no coverage figure licenses a transfer.
@@ -991,16 +1043,16 @@ the coordinator, and each needs its own owning lane.
 
 ## 16. Sources, with retrieval dates
 
-All retrievals 2026-08-20 unless stated. Retained PDFs and their hashes are held
-with the policy-sources lane's notes and are **not yet registered in the source
-library**; that registration is an open item (§15.1).
+Initial retrievals were 2026-08-20 unless stated. ICEL's grant and
+acknowledgement page and the USCCB guidelines landing page were fetched again
+whole on 2026-08-26; their hashes below are from those bytes.
 
 **ICEL**
 
 | Source | URL | State |
 | --- | --- | --- |
-| *Publication Policies*, p. 25 — the grant | `https://www.icelweb.org/PubPolicy.PDF` | retrieved; sha256 recorded with the lane notes |
-| Copyright summary — the acknowledgment wording, **not** the grant | `https://www.icelweb.org/copyright.htm` | retrieved |
+| *Publication Policies*, p. 25 — the grant | `https://www.icelweb.org/PubPolicy.PDF` | registered; re-fetched 2026-08-26; sha256 `e2ec59f7d46f0673f40239a1185c7005f955959e0cb5eeb40e5daa55f2a254e7` |
+| Copyright summary — the acknowledgement wording, **not** the grant | `https://www.icelweb.org/copyright.htm` | re-fetched 2026-08-26; sha256 `8327fb75a0aaa9740b51216b1162a1f32a98f3cd9c7c9a47ef951e1c692e08e8` |
 | ICEL Copyrighted Materials — the ownership inventory | `https://www.icelweb.org/copyrightICEL.htm` | retrieved |
 | Sections of *The Roman Missal* | `https://www.icelweb.org/RomanMissal.htm` | retrieved |
 
@@ -1008,28 +1060,25 @@ library**; that registration is an open item (§15.1).
 
 | Source | URL | State |
 | --- | --- | --- |
-| *Guidelines for the Publication of Liturgical Books* (HTML) | `https://www.usccb.org/committees/divine-worship/policies/guidelines-for-the-publication-of-liturgical-books` | retrieved |
+| *Guidelines for the Publication of Liturgical Books* (HTML) | `https://www.usccb.org/committees/divine-worship/policies/guidelines-for-the-publication-of-liturgical-books` | re-fetched 2026-08-26; sha256 `916a4e98994e7f0faba08a1a2dfc763ae9fa73e292fb219c9653aa0daa8c36e7` |
 | The same, full text, 51 pp. | `https://www.usccb.org/resources/guidelines-publication-liturgical-books.pdf` | retrieved; sha256 `daab2999…` |
 | 2025 guidelines resource page (HTML wrapper) | `https://www.usccb.org/resources/guidelines-publication-liturgical-books` | **HTTP 403**, six attempts; a bot interstitial, not a withdrawal. Nothing rests on it |
 | *Copyright Permission Requirements for the Use of Liturgical Texts* (2021) | `https://www.usccb.org/committees/divine-worship/policies/copyright-permissions-requirements` | retrieved — §6 |
 | *Policy on Electronic Copyrights* | `https://www.usccb.org/committees/divine-worship/policies` | re-read at source — §6 |
 | Authorized RSS feeds | `https://www.usccb.org/subscribe/rss` | retrieved — §9 |
-| CCD/NAB permissions | `https://www.usccb.org/offices/new-american-bible/permissions` | **HTTP 403**, eight attempts, including `bible.usccb.org/permissions`. **Unverified; do not quote.** §5.3 |
+| CCD/NAB permissions | `https://www.usccb.org/offices/new-american-bible/permissions` | still **HTTP 403** to direct whole-document retrieval on 2026-08-26. **Unverified; do not quote.** §5.3 |
 
-**A standing infrastructure problem, not a rights problem.** `usccb.org` refuses
-this environment with a proof-of-work interstitial under HTTP 403, intermittently
-and across several paths. The one page that came back through the harness
-fetcher came back through a model, which `sources.md` disqualifies as a retrieval
-path for source text. **Until this is fixed, no USCCB-hosted route — the Loreto
-supplement, the single-daily-collect channel, any later supplement — is
-reachable in a compliant way.** It is worth fixing independently of everything
-else here.
+**An intermittent infrastructure problem, not a rights problem.** `usccb.org`
+still returns a proof-of-work HTTP 403 on some paths, including the CCD/NAB
+permissions page, while the guidelines landing page can now be fetched whole.
+Treat reachability per URL and per retrieval; an indexed or model-rendered view
+does not satisfy `sources.md`'s source-text retrieval rule.
 
 **Holy See**
 
 | Source | URL | State |
 | --- | --- | --- |
-| CDWDS, *Postquam Summus Pontifex*, 22 Oct 2021 | `https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2021/10/22/211022b.pdf` | retrieved; sha256 `9fd22cb8…`; **not registered in this repository** — §8.1 |
+| CDWDS, *Postquam Summus Pontifex*, 22 Oct 2021 | `https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2021/10/22/211022b.pdf` | registered under the canonical canon-838 work; restricted/hash-only artifact sha256 `9fd22cb8…`; nn. 2, 3 with footnotes 7–8, and 40 verified — §8.1 |
 | *Liturgiam authenticam* nn. 110, 111, 117 | `https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20010507_il_en.html` | held as a verified passage record, verified 2026-08-01 |
 | Secretariat of State, Decree, 13 May 2005: AAS 97 (2005) 798-799 | — | **not retrieved.** PSP's own cited authority — §8.1 |
 
@@ -1052,13 +1101,14 @@ layers, two rights records; conflating them would be an error.**
 ICEL grants, in its own published policy, the reproduction of its approved,
 recognised and promulgated texts on a free non-commercial website, subject to six
 conditions — and its summary page does not say so, which is how this project came
-to believe otherwise. The grant is established. It supplies no text, and no
-reachable authoritative source supplies the exact English of 183 of the 202
-ledgered slots, so the slots stay empty for a truer reason than before. Latin,
+to believe otherwise. The grant is established but supplies no text and does not
+cover the public repository's bundled, downloadable corpus. Latin,
 ICEL English, USCCB adaptations and CCD Scripture are four different properties
 that happen to be bound between the same covers, and the last two are under
 affirmative written-permission restrictions that this policy does not touch. The
 ancient Latin underneath a modern edition is still ancient. Which passage is
 appointed is a fact; the passage's words are somebody's property. And a
-permission is decided per text and per surface: what may be displayed on a page
-is not thereby a file a reader may download or a corpus the world may clone.
+permission is decided per text and per surface: what might be displayed by a
+future eligible route is not thereby a file a reader may download or a corpus
+the world may clone. The current public route quarantines ICEL payloads and
+retains only text-free rights, source, and acknowledgement metadata.

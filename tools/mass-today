@@ -77,6 +77,27 @@ SEATING_MODEL = ROOT / "src" / "web" / "browser" / "liturgy" / "ordinary-seating
 # in full so that a reworded placeholder is still recognised as one.
 PLACEHOLDER = "This entry is a placeholder"
 
+# `--lang` selects among the two language dimensions the held missal data
+# declares. It is intentionally closed: a new language becomes selectable
+# only when its capability/accounting contract lands with it. In particular,
+# a Latin fallback is not evidence that the requested language is available.
+SUPPORTED_LANGUAGES = ("en", "la")
+LANGUAGE_STATUSES = (
+    "full-text",
+    "incipit-only",
+    "fallback-latin",
+    "scripture-delegated",
+    "withheld",
+    "unavailable",
+    "absent",
+)
+TEXT_STATUS_SCOPES = {
+    "proper-collect": "proper collect",
+    "missal-formulary": "missal formulary",
+}
+ORDINARY_FRAME_APPLICABILITY = ("full", "none", "unavailable")
+_ABSENT_ORDINARY_FRAME = object()
+
 PRECEDENCE = (
     "no precedence is stated: this calendar lists every candidate for the "
     "date and does not choose among them"
@@ -108,16 +129,16 @@ EXAMPLES = {
                 "  First Sunday of Advent",
                 "",
                 "    Introit — Psalm 24:1-3; Psalm 24:4",
-                "      Ad te levavi…",
+                "      Latin incipit only; no en rendering recorded: Ad te levavi…",
                 "",
                 "    Collect",
-                "      [edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861]",
-                "      Exert, we beseech thee, O Lord, thy power, and come: that by thy protection we may",
-                "      be freed from the imminent dangers of our sins, and be saved by thy mercy, who",
-                "      liveth and reigneth, &c.",
-                "      [artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en]",
-                "      Exert, we beseech thee, O Lord, thy power, and come: that by thy protection we may",
-                "... 67 more lines",
+                "",
+                "    Epistle — Romans 13:11-14",
+                "",
+                "    Gradual — Psalm 24:3; Psalm 24:4",
+                "      Latin incipit only; no en rendering recorded: Universi, qui te exspectant…",
+                "",
+                "... 43 more lines",
             ),
             "read-only; with no --date it resolves today. Two Masses fall on this "
             "date and both are listed",
@@ -133,6 +154,8 @@ EXAMPLES = {
                 "",
                 "    Introit — Philippians 2:10-11",
                 "",
+                "    Collect",
+                "",
                 "    Epistle — 2 Timothy 2:8-10",
                 "",
                 "    Gradual — Psalms 91:13, 14",
@@ -141,7 +164,11 @@ EXAMPLES = {
                 "",
                 "    Offertory — Psalms 88:25",
                 "",
+                "    Secret",
+                "",
                 "    Communion — Luke 12:49",
+                "",
+                "    Postcommunion",
             ),
             "a Mass whose text is not yet transcribed says so; the placeholder is "
             "never printed as the prayer",
@@ -163,7 +190,7 @@ EXAMPLES = {
                 "",
                 "      THE ORDINARY OF THE MASS.",
                 "      -------------------------",
-                "... 970 more lines",
+                "... 940 more lines",
             ),
             "the whole Mass in one piece: scripture in words under a named "
             "edition, and the propers set into the Ordinary at the slots the "
@@ -198,12 +225,53 @@ def invoke(tool: str, argv: list[str]) -> dict:
         raise Refused(f"{tool} did not return JSON: {error}") from error
 
 
+def invoke_propers(
+    calendar: str, keys: list[str], arguments: argparse.Namespace
+) -> dict[str, dict]:
+    """Resolve several formularies under one complete source validation.
+
+    The repeated ``--mass`` form is an optimization only.  If the batch cannot
+    be trusted, callers fall back to the existing per-mass invocation so one
+    bad formulary retains its local refusal instead of hiding the others.
+    """
+    unique = list(dict.fromkeys(keys))
+    if len(unique) < 2:
+        return {}
+    argv = ["show", "--calendar", calendar]
+    for key in unique:
+        argv += ["--mass", key]
+    for flag in ("bible", "lang", "witness"):
+        value = getattr(arguments, flag, None)
+        if value:
+            argv += [f"--{flag}", str(value)]
+    try:
+        batched = invoke("mass-propers", argv)
+    except Refused:
+        return {}
+    payloads = batched.get("masses")
+    if (
+        not isinstance(payloads, list)
+        or len(payloads) != len(unique)
+        or any(not isinstance(payload, dict) for payload in payloads)
+    ):
+        return {}
+    return dict(zip(unique, payloads))
+
+
 def is_placeholder(proper: dict) -> bool:
-    return str(proper.get("text") or "").lstrip().startswith(PLACEHOLDER)
+    # Historical exceptional-rite records predate the standard placeholder
+    # sentence, but identify themselves with the exact structural name.  They
+    # are repository status records, not liturgical words, and must never be
+    # poured into the Ordinary merely because their explanatory prose differs
+    # from the newer stock sentence.
+    return (
+        str(proper.get("text") or "").lstrip().startswith(PLACEHOLDER)
+        or str(proper.get("name") or "").strip().casefold() == "placeholder"
+    )
 
 
 def indexed_bibles() -> list[dict]:
-    """What `index-bible` has actually indexed, from its own manifest."""
+    """What the Bible index builder has actually indexed, from its manifest."""
     if not BIBLES.is_file():
         return []
     try:
@@ -232,8 +300,482 @@ def default_bible(lang: str) -> dict | None:
     return None
 
 
+def indexed_bible(identifier: str | None) -> dict | None:
+    """The manifest row for a named Bible, without guessing from its id."""
+    if not identifier:
+        return None
+    for one in indexed_bibles():
+        if str(one.get("id")) == identifier:
+            return one
+    return None
+
+
+def requested_language(arguments: argparse.Namespace) -> str:
+    """The language used by the human renderer when none was made explicit."""
+    return str(arguments.lang or "en")
+
+
+def untranslated_reason(proper: dict) -> object:
+    """Project only public, text-free absence semantics from a ledger row."""
+    recorded = proper.get("untranslated")
+    if not recorded:
+        return "no-requested-language-text"
+    rows = [recorded] if isinstance(recorded, dict) else recorded
+    if isinstance(rows, list):
+        safe = []
+        for one in rows:
+            if not isinstance(one, dict):
+                continue
+            state = str(one.get("state") or "unavailable")
+            row = {
+                "state": "ledgered-untranslated",
+                "lang": one.get("lang"),
+                "unavailableState": state,
+            }
+            safe.append(row)
+        return {"state": "ledgered-untranslated", "records": safe}
+    return "ledgered-untranslated"
+
+
+def untranslated_notes(proper: dict) -> list[str]:
+    """Concise absence notes; never stringify the retained typed records."""
+    recorded = proper.get("untranslated")
+    if not recorded:
+        return []
+    if not isinstance(recorded, list):
+        return [f"untranslated: {recorded}" if recorded is not True else "untranslated"]
+    notes = []
+    for row in recorded:
+        if not isinstance(row, dict):
+            continue
+        lang = str(row.get("lang") or "requested language")
+        target = row.get("target") if isinstance(row.get("target"), dict) else row
+        cycle_value = target.get("cycle")
+        cycle = (
+            f", cycle {cycle_value}"
+            if cycle_value not in (None, "", "all")
+            else ""
+        )
+        kind = str(row.get("state") or "unavailable")
+        kind = kind.replace("-", " ")
+        notes.append(f"{lang} unavailable{cycle}: {kind}")
+    return notes
+
+
+def availability_reason_has_state(value: object, state: str) -> bool:
+    """Whether a public language-selection reason contains ``state``."""
+    if isinstance(value, dict):
+        if value.get("state") == state or value.get("unavailableState") == state:
+            return True
+        return any(availability_reason_has_state(one, state) for one in value.values())
+    if isinstance(value, list):
+        return any(availability_reason_has_state(one, state) for one in value)
+    return False
+
+
+def latin_availability_note(proper: dict, lang: str) -> str | None:
+    """The complete public message when no selectable body can be shown."""
+    latin = proper.get("latin")
+    status = proper.get("text_status")
+    body_unavailable = (
+        isinstance(status, dict)
+        and status.get("state") == "unavailable"
+        and status.get("scope") == "proper-body"
+    )
+    latin_unavailable = (
+        isinstance(latin, dict) and bool(latin.get("withheld"))
+    ) or body_unavailable
+    if lang == "la" and latin_unavailable:
+        return "Latin text unavailable"
+    selection = proper.get("language_selection")
+    if (
+        lang != "la"
+        and latin_unavailable
+        and isinstance(selection, dict)
+        and not selection.get("held")
+    ):
+        language = {"en": "English"}.get(lang, lang)
+        if availability_reason_has_state(
+            selection.get("reason"), "rights-restricted"
+        ):
+            return (
+                f"{language} translation unavailable: rights restricted; "
+                "Latin text unavailable"
+            )
+        return f"No {language} or Latin body is held here."
+    return None
+
+
+def select_untranslated_records(proper: dict, cycle: str | None) -> None:
+    """Keep only whole-slot or actually selected-cycle absence records."""
+    records = proper.get("untranslated")
+    if not isinstance(records, list):
+        return
+    selected = [
+        dict(row)
+        for row in records
+        if isinstance(row, dict)
+        and (
+            (
+                row.get("target", {}).get("cycle")
+                if isinstance(row.get("target"), dict)
+                else row.get("cycle")
+            ) in (None, "", "all")
+            or (
+                cycle is not None
+                and (
+                    row.get("target", {}).get("cycle")
+                    if isinstance(row.get("target"), dict)
+                    else row.get("cycle")
+                ) == cycle
+            )
+        )
+    ]
+    if selected:
+        proper["untranslated"] = selected
+    else:
+        proper.pop("untranslated", None)
+
+
+def validated_text_status(value: object) -> dict | None:
+    """The closed text-free availability shape exposed by mass-propers."""
+    if value is None:
+        return None
+    if not isinstance(value, dict):
+        raise Refused("mass-propers returned non-mapping text_status")
+    status = dict(value)
+    if status.get("state") == "unavailable":
+        scope = status.get("scope")
+        if scope not in TEXT_STATUS_SCOPES:
+            held = ", ".join(TEXT_STATUS_SCOPES)
+            raise Refused(
+                f"mass-propers returned unsupported text_status.scope {scope!r}; "
+                f"expected one of {held}"
+            )
+    return status
+
+
+def public_common_from(value: object) -> dict | None:
+    """Keep a Common direction while dropping its source-study locator."""
+    if value is None:
+        return None
+    if not isinstance(value, dict):
+        raise Refused("mass-propers returned non-mapping common_from")
+    if value.get("scope") != "missal-antiphons":
+        raise Refused(
+            "mass-propers returned common_from whose scope is not "
+            "'missal-antiphons'"
+        )
+    return {
+        "scope": value.get("scope"),
+        "options": [
+            {
+                key: option.get(key)
+                for key in ("mass", "selection")
+                if option.get(key) is not None
+            }
+            for option in value.get("options") or []
+            if isinstance(option, dict)
+        ],
+    }
+
+
+def validated_ordinary_frame(value: object = _ABSENT_ORDINARY_FRAME) -> dict:
+    """Normalize an absent frame to full and reject ambiguous exceptions."""
+    if value is _ABSENT_ORDINARY_FRAME:
+        return {"applicability": "full"}
+    if not isinstance(value, dict):
+        raise Refused("mass-propers returned non-mapping ordinary_frame")
+    unknown = sorted(str(key) for key in value if key not in {"applicability", "basis"})
+    if unknown:
+        raise Refused(
+            "mass-propers returned ordinary_frame with unknown field(s) "
+            + ", ".join(unknown)
+        )
+    applicability = value.get("applicability")
+    if applicability not in ORDINARY_FRAME_APPLICABILITY:
+        raise Refused(
+            "mass-propers returned unsupported ordinary_frame.applicability "
+            f"{applicability!r}"
+        )
+    basis = value.get("basis")
+    if applicability != "full" and (
+        not isinstance(basis, str) or not basis.strip()
+    ):
+        raise Refused(
+            f"mass-propers returned ordinary_frame {applicability!r} without a basis"
+        )
+    if "basis" in value and (not isinstance(basis, str) or not basis.strip()):
+        raise Refused("mass-propers returned ordinary_frame with an invalid basis")
+    frame = {"applicability": applicability}
+    if "basis" in value:
+        frame["basis"] = basis
+    return frame
+
+
+def language_projection(proper: dict, lang: str, bible: dict | None) -> dict:
+    """Describe one requested-language selection without changing its record.
+
+    The canonical proper remains beside this projection. These states answer a
+    narrower question: what can this invocation actually select in `lang`? A
+    text in another language is a fallback, not availability; a Bible is a
+    delegated source, not a Proper transcription; and a rights-withheld row is
+    retained as a reason without exposing the withheld text.
+    """
+    latin = proper.get("latin") or {}
+    if lang == "la" and latin.get("withheld"):
+        if (
+            proper.get("text")
+            or any(
+                isinstance(one, dict)
+                and one.get("lang") == "la"
+                and one.get("text")
+                for one in (proper.get("translations") or [])
+            )
+            or latin.get("held") is not False
+            or latin.get("available") is not False
+            or latin.get("state") not in {"rights-restricted", "unavailable"}
+        ):
+            raise Refused(
+                "mass-propers withheld Latin must use the exact public unavailable shape"
+            )
+        return {
+            "requested": lang,
+            "status": "unavailable",
+            "held": False,
+            "available": False,
+            "complete": False,
+            "reason": {"state": "text-withheld", "lang": "la"},
+        }
+    text_status = proper.get("text_status")
+    body_unavailable = (
+        isinstance(text_status, dict)
+        and text_status.get("state") == "unavailable"
+        and text_status.get("scope") == "proper-body"
+    )
+    if lang == "la" and body_unavailable:
+        return {
+            "requested": lang,
+            "status": "unavailable",
+            "held": False,
+            "available": False,
+            "complete": False,
+            "reason": {"state": "text-unavailable", "lang": "la"},
+        }
+    translations = [
+        dict(one)
+        for one in (proper.get("translations") or [])
+        if isinstance(one, dict)
+        and one.get("lang") == lang
+        and one.get("text")
+    ]
+    if translations:
+        return {
+            "requested": lang,
+            "status": "full-text",
+            "held": True,
+            "available": True,
+            "complete": True,
+            "texts": translations,
+        }
+
+    if lang == "la" and proper.get("text"):
+        return {
+            "requested": lang,
+            "status": "full-text",
+            "held": True,
+            "available": True,
+            "complete": True,
+            "texts": [{"lang": "la", "text": proper["text"]}],
+        }
+
+    unavailable = [
+        dict(one)
+        for one in (proper.get("unavailable_translations") or [])
+        if isinstance(one, dict) and one.get("lang") == lang
+    ]
+    if unavailable:
+        return {
+            "requested": lang,
+            "status": "withheld",
+            "held": False,
+            "available": False,
+            "complete": False,
+            "reason": [
+                {
+                    "state": str(one.get("state") or "unavailable"),
+                    "lang": one.get("lang"),
+                }
+                for one in unavailable
+            ],
+        }
+
+
+    untranslated = [
+        row
+        for row in (proper.get("untranslated") or [])
+        if isinstance(row, dict) and row.get("lang") == lang
+    ]
+    rights_withheld = any(
+        row.get("state") == "rights-restricted" for row in untranslated
+    )
+    if rights_withheld:
+        return {
+            "requested": lang,
+            "status": "withheld",
+            "held": False,
+            "available": False,
+            "complete": False,
+            "reason": untranslated_reason(proper),
+        }
+
+    # A canonical Latin text is carried as an explicit fallback only. It may
+    # render in the human view, but it does not make English held or available.
+    if lang != "la" and proper.get("text"):
+        return {
+            "requested": lang,
+            "status": "fallback-latin",
+            "held": False,
+            "available": False,
+            "complete": False,
+            "fallback": {"lang": "la", "text": proper["text"]},
+            "reason": untranslated_reason(proper),
+        }
+
+    references = [
+        str(one.get("ref"))
+        for one in (proper.get("verses") or [])
+        if isinstance(one, dict) and one.get("ref")
+    ]
+    if proper.get("source") == "scripture" and references:
+        matching_bible = bool(bible and str(bible.get("language")) == lang)
+        resolved = sum(
+            1
+            for one in (proper.get("verses") or [])
+            if isinstance(one, dict) and one.get("ref") and one.get("text")
+        )
+        complete = matching_bible and resolved == len(references)
+        return {
+            "requested": lang,
+            "status": "scripture-delegated",
+            "held": False,
+            # The words may be completely resolved by another component, but
+            # they are not a full requested-language Proper held here.
+            "available": False,
+            "complete": False,
+            "delegated_to": {
+                "component": "bible",
+                "id": (bible or {}).get("id"),
+                "language": (bible or {}).get("language"),
+                "references": references,
+                "resolved": resolved,
+                "complete": complete,
+            },
+        }
+
+    if proper.get("incipit"):
+        # Propers currently record their incipits in Latin. Do not let the
+        # presence of that fragment advertise English capability.
+        return {
+            "requested": lang,
+            "status": "incipit-only",
+            "held": False,
+            "available": False,
+            "complete": False,
+            "incipit": {"lang": "la", "text": proper["incipit"]},
+        }
+
+    return {
+        "requested": lang,
+        "status": "absent",
+        "held": False,
+        "available": False,
+        "complete": False,
+        "reason": (
+            untranslated_reason(proper) if proper.get("untranslated") else "not-recorded"
+        ),
+    }
+
+
+def language_account(
+    days: list[dict], requested: str | None, bible: dict | None
+) -> dict:
+    """Add explicit selection metadata and summarize actual day-level support."""
+    counts = {
+        lang: {
+            "lang": lang,
+            "units": 0,
+            "held": 0,
+            "available": 0,
+            "complete": 0,
+            "statuses": {status: 0 for status in LANGUAGE_STATUSES},
+        }
+        for lang in SUPPORTED_LANGUAGES
+    }
+    for day in days:
+        # A selected branch is also retained under `branches`; prefer the flat
+        # selected projection when present so it is not counted twice.  With
+        # no territory selection, account the inspectable branch alternatives
+        # instead of reporting a false zero-unit capability.
+        masses = day.get("masses") or [
+            mass
+            for branch in day.get("branches") or []
+            if isinstance(branch, dict)
+            for mass in branch.get("masses") or []
+            if isinstance(mass, dict)
+        ]
+        for mass in masses:
+            # A form manifest is the canonical partition.  The flat `propers`
+            # member is only the selected compatibility projection and may be
+            # empty, so traverse the nested forms exactly once when present.
+            propers = (
+                [
+                    proper
+                    for form in mass.get("forms") or []
+                    if isinstance(form, dict)
+                    for proper in form.get("propers") or []
+                    if isinstance(proper, dict)
+                ]
+                if mass.get("forms")
+                else mass.get("propers") or []
+            )
+            for proper in propers:
+                selected = None
+                for lang in SUPPORTED_LANGUAGES:
+                    projection = language_projection(proper, lang, bible)
+                    row = counts[lang]
+                    row["units"] += 1
+                    row["held"] += int(projection["held"])
+                    row["available"] += int(projection["available"])
+                    row["complete"] += int(projection["complete"])
+                    row["statuses"][projection["status"]] += 1
+                    if lang == requested:
+                        selected = projection
+                if selected is not None:
+                    proper["language_selection"] = selected
+                # `untranslated` is a source/checker audit ledger.  Its safe
+                # semantic result is the language selection above; repeating
+                # form/cycle/occurrence/reason internals into a public daily
+                # payload would turn a consumer projection back into an audit
+                # export.
+                proper.pop("untranslated", None)
+
+    available = [counts[lang] for lang in SUPPORTED_LANGUAGES]
+    return {
+        "mode": "language-projection" if requested else "canonical-record",
+        "requested": requested,
+        "available": available,
+        "selection": counts.get(requested) if requested else None,
+    }
+
+
 def propers_of(
-    calendar: str, key: str, arguments: argparse.Namespace, lectionary: dict | None = None
+    calendar: str,
+    key: str,
+    arguments: argparse.Namespace,
+    lectionary: dict | None = None,
+    *,
+    payload: dict | None = None,
 ) -> dict:
     """One Mass's propers as APPOINTED, with placeholders separated out.
 
@@ -245,32 +787,116 @@ def propers_of(
     Mass with no propers at all: an absence with no reason, in the one place
     this repository refuses to leave one.
     """
-    argv = ["show", "--calendar", calendar, "--mass", key]
-    for flag in ("bible", "lang", "witness"):
-        value = getattr(arguments, flag, None)
-        if value:
-            argv += [f"--{flag}", str(value)]
-    try:
-        payload = invoke("mass-propers", argv)
-    except Refused as error:
-        return {"refused": str(error), "propers": [], "placeholders": 0}
+    if payload is None:
+        argv = ["show", "--calendar", calendar, "--mass", key]
+        for flag in ("bible", "lang", "witness"):
+            value = getattr(arguments, flag, None)
+            if value:
+                argv += [f"--{flag}", str(value)]
+        try:
+            payload = invoke("mass-propers", argv)
+        except Refused as error:
+            return {"refused": str(error), "propers": [], "placeholders": 0}
     mass = payload.get("mass") or {}
     passages = ((payload.get("bible") or {}).get("passages")) or {}
+
+    # Form identity is authored by the source, never derived from a display
+    # label.  The exact-name lookup is a temporary compatibility bridge while
+    # older mass-propers payloads omit appointed[].form_id: it still consumes
+    # the source-authored mass.forms[].id and refuses an incomplete mapping.
+    source_forms = mass.get("forms") or []
+    forms: list[dict] = []
+    form_name_to_id: dict[str, str] = {}
+    for ordinal, source_form in enumerate(source_forms, start=1):
+        if not isinstance(source_form, dict):
+            return {
+                "refused": "mass-propers returned a non-mapping form",
+                "propers": [],
+                "forms": [],
+                "selected_form": None,
+                "form_choice_required": False,
+                "placeholders": 0,
+            }
+        form_id = str(source_form.get("id") or "").strip()
+        name = str(source_form.get("name") or "").strip()
+        if not form_id or form_id == "main" or not name:
+            return {
+                "refused": "mass-propers returned a form without a valid source-authored id/name",
+                "propers": [],
+                "forms": [],
+                "selected_form": None,
+                "form_choice_required": False,
+                "placeholders": 0,
+            }
+        if form_id in {one["id"] for one in forms} or name in form_name_to_id:
+            return {
+                "refused": f"mass-propers returned duplicate form identity {form_id!r}",
+                "propers": [],
+                "forms": [],
+                "selected_form": None,
+                "form_choice_required": False,
+                "placeholders": 0,
+            }
+        form_name_to_id[name] = form_id
+        forms.append({
+            "id": form_id,
+            "name": name,
+            "ordinal": ordinal,
+            "propers": [],
+            "placeholders": 0,
+            **(
+                {"ordinary_frame": source_form["ordinary_frame"]}
+                if "ordinary_frame" in source_form
+                else {}
+            ),
+        })
+    forms_by_id = {one["id"]: one for one in forms}
+
     entries = []
     for row in payload.get("appointed") or []:
         if not isinstance(row, dict) or not isinstance(row.get("proper"), dict):
             continue
         proper = dict(row["proper"])
-        cycles = proper.get("cycles") or {}
-        for cycle in (
-            (lectionary or {}).get("sunday"),
-            (lectionary or {}).get("weekday"),
+        selected_cycle = None
+        for variants, cycle in (
+            (proper.get("cycles") or {}, (lectionary or {}).get("sunday")),
+            (proper.get("weekday_cycles") or {}, (lectionary or {}).get("weekday")),
         ):
-            selected = cycles.get(cycle) if cycle else None
+            selected = variants.get(cycle) if cycle else None
             if isinstance(selected, dict):
                 proper.update(selected)
+                selected_cycle = str(cycle)
                 break
-        proper["form"] = row.get("form")
+        select_untranslated_records(proper, selected_cycle)
+        form_name = row.get("form")
+        form_id = row.get("form_id")
+        if forms:
+            form_id = str(form_id or form_name_to_id.get(str(form_name or "")) or "")
+            if form_id not in forms_by_id:
+                return {
+                    "refused": (
+                        "mass-propers appointed a form without its source-authored id: "
+                        f"{form_name!r}"
+                    ),
+                    "propers": [],
+                    "forms": [],
+                    "selected_form": None,
+                    "form_choice_required": False,
+                    "placeholders": 0,
+                }
+        elif form_id not in (None, "", "main") or form_name not in (None, ""):
+            return {
+                "refused": "mass-propers appointed a named form absent from mass.forms",
+                "propers": [],
+                "forms": [],
+                "selected_form": None,
+                "form_choice_required": False,
+                "placeholders": 0,
+            }
+        else:
+            form_id = "main"
+        proper["form"] = form_name
+        proper["form_id"] = form_id
         proper["taken_from"] = row.get("taken_from")
         # The words behind each citation, from the resolution `mass-propers`
         # performed. A verse the bible does not carry keeps its reference and
@@ -280,21 +906,109 @@ def propers_of(
             for verse in (proper.get("verses") or [])
             if isinstance(verse, dict)
         ]
+        if forms:
+            form = forms_by_id[str(form_id)]
+            if is_placeholder(proper):
+                form["placeholders"] += 1
+            else:
+                form["propers"].append(proper)
         entries.append(proper)
-    return {
-        "propers": [p for p in entries if not is_placeholder(p)],
-        "placeholders": sum(1 for p in entries if is_placeholder(p)),
+
+    requested_form = getattr(arguments, "form", None)
+    selected_form = "main" if not forms else None
+    if forms and requested_form in forms_by_id:
+        selected_form = str(requested_form)
+    selected_propers = (
+        list(forms_by_id[selected_form]["propers"])
+        if forms and selected_form is not None
+        else ([p for p in entries if not is_placeholder(p)] if not forms else [])
+    )
+    selected_placeholders = (
+        int(forms_by_id[selected_form]["placeholders"])
+        if forms and selected_form is not None
+        else (sum(1 for p in entries if is_placeholder(p)) if not forms else 0)
+    )
+    try:
+        text_status = validated_text_status(mass.get("text_status"))
+        ordinary_frame = validated_ordinary_frame(
+            mass["ordinary_frame"]
+            if "ordinary_frame" in mass
+            else _ABSENT_ORDINARY_FRAME
+        )
+        for form in forms:
+            if "ordinary_frame" in form:
+                form["ordinary_frame"] = validated_ordinary_frame(
+                    form["ordinary_frame"]
+                )
+        if (
+            selected_form in forms_by_id
+            and "ordinary_frame" in forms_by_id[selected_form]
+        ):
+            ordinary_frame = forms_by_id[selected_form]["ordinary_frame"]
+        common_from = public_common_from(mass.get("common_from"))
+    except Refused as error:
+        return {
+            "refused": str(error),
+            "propers": [],
+            "forms": forms,
+            "selected_form": "main" if not forms else None,
+            "form_choice_required": bool(forms),
+            "placeholders": 0,
+        }
+    result = {
+        # `propers` is the documented compatibility projection.  Alternative
+        # forms never concatenate into it: without a selector their ordered
+        # payloads remain inspectable only under `forms`.
+        "propers": selected_propers,
+        "forms": forms,
+        "selected_form": selected_form,
+        "form_choice_required": bool(forms and selected_form is None),
+        "placeholders": selected_placeholders,
         "rank": mass.get("rank"),
         "edition": payload.get("edition"),
+        "advisory": payload.get("advisory"),
+        "stands_before": payload.get(_calendars.RECENSION_ACT),
+        "recension_coverage": payload.get(_calendars.RECENSION_COVERAGE),
+        "recension": mass.get(_calendars.RECENSION),
         "takes_from": mass.get("takes_from"),
+        "common_from": common_from,
+        "text_status": text_status,
+        "ordinary_frame": ordinary_frame,
         "bible": payload.get("bible") and {
             "id": payload["bible"].get("id"),
             "edition": payload["bible"].get("edition"),
         },
     }
+    if forms and selected_form is None:
+        # Absence here is the typed choice-required state, not the no-form
+        # sentinel.  It prevents a null from being mistaken for `main`.
+        result.pop("selected_form")
+    return result
 
 
 def run_show(arguments: argparse.Namespace) -> dict:
+    lang = requested_language(arguments)
+    if lang not in SUPPORTED_LANGUAGES:
+        raise ValueError(
+            f"--lang must be one of {', '.join(SUPPORTED_LANGUAGES)}, not {lang!r}"
+        )
+    if arguments.form == "main":
+        raise ValueError(
+            "--form main is the internal no-form sentinel, not a selectable authored form"
+        )
+    if arguments.ordinary_variant and (
+        arguments.json or arguments.format in {"json", "yaml"}
+    ):
+        raise Refused(
+            "--ordinary-variant is a rendered text selection; machine output "
+            "does not project a selected Ordinary"
+        )
+    if arguments.ordinary_variant and not (
+        arguments.ordinary or arguments.expanded
+    ):
+        raise Refused(
+            "--ordinary-variant requires --ordinary or --expanded"
+        )
     when = arguments.date or dt.date.today().isoformat()
     try:
         dt.date.fromisoformat(when)
@@ -307,12 +1021,12 @@ def run_show(arguments: argparse.Namespace) -> dict:
     # it is not the thing that was asked for.
     chosen_bible = None
     if arguments.expanded and not arguments.bible:
-        chosen_bible = default_bible(arguments.lang or "en")
+        chosen_bible = default_bible(lang)
         if chosen_bible is None:
             held = ", ".join(sorted({str(one.get("id")) for one in indexed_bibles()})) or "none"
             raise ValueError(
                 f"--expanded reads scripture and no indexed bible is held in "
-                f"{arguments.lang or 'en'}; name one with --bible (indexed: {held})"
+                f"{lang}; name one with --bible (indexed: {held})"
             )
         arguments.bible = str(chosen_bible.get("id"))
 
@@ -330,6 +1044,13 @@ def run_show(arguments: argparse.Namespace) -> dict:
     # to recompute what was already in hand — 2.1 of the 7.4 seconds a single
     # run took. The call remains as the fallback, which is the only case that
     # now needs it.
+    problems: list[dict] = []
+
+    def record_problem(problem: dict) -> None:
+        """Keep one root problem per exact failed invocation."""
+        if problem not in problems:
+            problems.append(problem)
+
     ranked: dict[str, dict] = {}
     ranking_refused = None
     narrow = ["--calendar", arguments.calendar] if arguments.calendar else []
@@ -342,6 +1063,13 @@ def run_show(arguments: argparse.Namespace) -> dict:
         }
     except Refused as error:
         ranking_refused = str(error)
+        record_problem({
+            "component": "calendar-rubrics",
+            "date": when,
+            "calendar": arguments.calendar,
+            "error": ranking_refused,
+            "fallback": "calendar-days",
+        })
 
     wanted = [name for name in ranked if not arguments.calendar or name == arguments.calendar]
     if wanted:
@@ -352,40 +1080,205 @@ def run_show(arguments: argparse.Namespace) -> dict:
         resolved = invoke("calendar-days", ["day", "--date", when, *narrow])
 
     days = []
+    valid_territories: set[str] = set()
+    territory_matched = False
+    valid_mass_choices: set[str] = set()
+    mass_choice_matched = False
+
     for day in resolved.get("days") or []:
         if arguments.calendar and day.get("calendar") != arguments.calendar:
             continue
         held = ranked.get(str(day.get("calendar")))
-        branches = (held or {}).get("options") or []
-        branch = branches[0] if branches else None
+        source_branches = [
+            one for one in ((held or {}).get("options") or []) if isinstance(one, dict)
+        ]
+
         # Where the model answered, its own account of the day is the account:
         # asking a second tool for the season would be the second derivation
         # this tool exists not to have.
-        if branch is not None:
-            liturgical_year = held.get("liturgicalYear") or {}
-            day = dict(day, season=held.get("season"), week=held.get("week"),
-                       lectionary=liturgical_year.get("lectionary"),
-                       unresolved=liturgical_year.get("unresolved") or [])
+        if source_branches:
+            liturgical_year = (held or {}).get("liturgicalYear") or {}
+            day = dict(
+                day,
+                season=(held or {}).get("season"),
+                week=(held or {}).get("week"),
+                weekday=(held or {}).get("weekday"),
+                lectionary=liturgical_year.get("lectionary"),
+                unresolved=liturgical_year.get("unresolved") or [],
+            )
 
-        if branch is not None:
-            # One entry per formulary the date carries, each with its standing.
-            masses = []
-            for found in branch.get("readable") or []:
-                entry = {
-                    "key": found.get("key"),
-                    "name": found.get("label"),
-                    "standing": found.get("state"),
-                    "rule": found.get("why"),
-                    "locus": found.get("locus"),
+        proper_keys = [
+            str(found.get("key"))
+            for source_branch in source_branches
+            for found in (source_branch.get("readable") or [])
+            if isinstance(found, dict) and found.get("key")
+        ]
+        if not source_branches:
+            proper_keys.extend(
+                str(candidate.get("key"))
+                for candidate in (day.get("candidates") or [])
+                if isinstance(candidate, dict) and candidate.get("key")
+            )
+            if not proper_keys:
+                proper_keys.extend(
+                    str(candidate.get("key"))
+                    for candidate in (day.get("ferial_formulary") or [])
+                    if isinstance(candidate, dict) and candidate.get("key")
+                )
+        proper_payloads = invoke_propers(
+            str(day["calendar"]), proper_keys, arguments
+        )
+
+        def mass_entry(found: dict) -> dict:
+            entry = {
+                "key": found.get("key"),
+                "name": found.get("label") or found.get("name"),
+                "standing": found.get("state"),
+                "rule": found.get("why") or found.get("rule"),
+                "locus": found.get("locus"),
+            }
+            key = str(found.get("key"))
+            entry.update(
+                propers_of(
+                    str(day["calendar"]),
+                    key,
+                    arguments,
+                    day.get("lectionary"),
+                    payload=proper_payloads.get(key),
+                )
+            )
+            if entry.get("refused"):
+                record_problem({
+                    "component": "mass-propers",
+                    "date": when,
+                    "calendar": day.get("calendar"),
+                    "mass": found.get("key"),
+                    "error": entry["refused"],
+                })
+            return entry
+
+        branch_rows: list[dict] = []
+        selected_branch_index = None
+        if source_branches:
+            branch_ids = []
+            for index, source_branch in enumerate(source_branches):
+                option = source_branch.get("option")
+                branch_id = str(option) if option else "unqualified"
+                if branch_id in branch_ids:
+                    raise Refused(f"calendar-rubrics returned duplicate branch id {branch_id!r}")
+                branch_ids.append(branch_id)
+            if len(source_branches) > 1:
+                valid_territories.update(branch_ids)
+            if arguments.territory:
+                if arguments.territory in branch_ids and len(source_branches) > 1:
+                    selected_branch_index = branch_ids.index(arguments.territory)
+                    territory_matched = True
+            elif len(source_branches) == 1:
+                selected_branch_index = 0
+
+            for index, (source_branch, branch_id) in enumerate(
+                zip(source_branches, branch_ids)
+            ):
+                choice = source_branch.get("choice")
+                choice = dict(choice) if isinstance(choice, dict) else None
+                selectable = []
+                for candidate in (choice or {}).get("among") or []:
+                    if not isinstance(candidate, dict):
+                        continue
+                    mass_key = candidate.get("key") or candidate.get("candidateId")
+                    formulary = candidate.get("formulary")
+                    selectable.append({
+                        "key": mass_key or formulary,
+                        "mass": mass_key,
+                        "formulary": formulary,
+                        "name": candidate.get("name"),
+                    })
+                selected_here = index == selected_branch_index
+                selectable_keys = {
+                    str(value)
+                    for one in selectable
+                    for value in (one.get("key"), one.get("mass"), one.get("formulary"))
+                    if value
                 }
-                entry.update(propers_of(
-                    day["calendar"], str(found.get("key")), arguments, day.get("lectionary")
-                ))
-                masses.append(entry)
+                if selected_here:
+                    valid_mass_choices.update(selectable_keys)
+                requested_mass = (
+                    arguments.mass
+                    if selected_here and arguments.mass in selectable_keys
+                    else None
+                )
+                if requested_mass:
+                    mass_choice_matched = True
+                winner = source_branch.get("winner")
+                winner_formulary = (
+                    winner.get("formulary") if isinstance(winner, dict) else None
+                )
+                winner_key = (
+                    winner_formulary.get("key")
+                    if isinstance(winner_formulary, dict)
+                    else None
+                ) or (winner.get("key") if isinstance(winner, dict) else None)
+                selected_mass = requested_mass or (winner_key if selected_here else None)
+                intrinsic_choice = bool(
+                    source_branch.get("choiceRequired")
+                    or ((choice or {}).get("required") and not winner_key)
+                )
+                masses = [
+                    mass_entry(found)
+                    for found in (source_branch.get("readable") or [])
+                    if isinstance(found, dict) and found.get("key")
+                ]
+                for mass in masses:
+                    mass["selected"] = bool(
+                        selected_here and selected_mass and mass.get("key") == selected_mass
+                    )
+                branch_rows.append({
+                    "id": branch_id,
+                    "option": source_branch.get("option"),
+                    "selected": selected_here,
+                    "conditions": source_branch.get("conditions") or [],
+                    "settled": bool(source_branch.get("settled")),
+                    "winner": winner,
+                    "choice": choice,
+                    "choice_required": bool(
+                        intrinsic_choice and selected_mass is None
+                    ),
+                    "selectable": selectable,
+                    "selected_mass": selected_mass,
+                    "unsettled": source_branch.get("unsettled") or [],
+                    "masses": masses,
+                })
+
+            selected_branch = (
+                branch_rows[selected_branch_index]
+                if selected_branch_index is not None
+                else None
+            )
+            masses = selected_branch["masses"] if selected_branch else []
+            selected_mass = selected_branch.get("selected_mass") if selected_branch else None
+            territory_choice_required = selected_branch is None
+            choice_required = bool(
+                territory_choice_required
+                or (selected_branch and selected_branch.get("choice_required"))
+            )
+            settled = selected_branch.get("settled") if selected_branch else None
+            unsettled = selected_branch.get("unsettled") if selected_branch else []
         else:
-            candidates = [c for c in (day.get("candidates") or []) if isinstance(c, dict)]
+            if arguments.territory:
+                # Validated after all calendars have been inspected, so an
+                # unbranched first calendar cannot reject a later match.
+                pass
+            candidates = [
+                candidate
+                for candidate in (day.get("candidates") or [])
+                if isinstance(candidate, dict)
+            ]
             commemorated = set(day.get("commemorations") or [])
-            proper_masses = [c for c in candidates if c["key"] not in commemorated]
+            proper_masses = [
+                candidate
+                for candidate in candidates
+                if candidate.get("key") not in commemorated
+            ]
             if not proper_masses:
                 for borrowed in day.get("ferial_formulary") or []:
                     if isinstance(borrowed, dict):
@@ -393,21 +1286,39 @@ def run_show(arguments: argparse.Namespace) -> dict:
             masses = []
             for candidate in candidates:
                 entry = dict(candidate)
-                entry.update(propers_of(
-                    day["calendar"], candidate["key"], arguments, day.get("lectionary")
-                ))
+                entry.update(mass_entry(candidate))
                 masses.append(entry)
+            appointed = day.get("appointed")
+            selected_mass = appointed or (
+                masses[0].get("key") if len(masses) == 1 else None
+            )
+            for mass in masses:
+                mass["selected"] = bool(selected_mass and mass.get("key") == selected_mass)
+            territory_choice_required = False
+            choice_required = False
+            settled = None
+            unsettled = []
 
         row = {
             "calendar": day.get("calendar"),
             "season": day.get("season"),
             "week": day.get("week"),
+            "weekday": day.get("weekday"),
             "ranked": day.get("ranked"),
             "appointed": day.get("appointed"),
             "commemorations": day.get("commemorations") or [],
+            "branches": branch_rows,
+            "selected_territory": (
+                branch_rows[selected_branch_index]["id"]
+                if selected_branch_index is not None and len(branch_rows) > 1
+                else None
+            ),
+            "territory_choice_required": territory_choice_required,
+            "choice_required": choice_required,
+            "selected_mass": selected_mass,
             "masses": masses,
-            "settled": None if branch is None else bool(branch.get("settled")),
-            "unsettled": [] if branch is None else (branch.get("unsettled") or []),
+            "settled": settled,
+            "unsettled": unsettled,
             "ranking_refused": ranking_refused,
         }
         if arguments.why:
@@ -417,33 +1328,109 @@ def run_show(arguments: argparse.Namespace) -> dict:
                 "ferial_formulary": day.get("ferial_formulary"),
                 "precedence": None if day.get("ranked") else PRECEDENCE,
             }
-        if arguments.ordinary or arguments.expanded:
+        days.append(row)
+
+    if arguments.territory and not territory_matched:
+        held = ", ".join(sorted(valid_territories)) or "none on this date"
+        raise ValueError(
+            f"--territory {arguments.territory!r} is not available; valid branch ids: {held}"
+        )
+    if arguments.mass and not mass_choice_matched:
+        held = ", ".join(sorted(valid_mass_choices)) or "none on the selected branch"
+        raise ValueError(
+            f"--mass {arguments.mass!r} is not an available Mass/formulary choice; "
+            f"valid keys: {held}"
+        )
+
+    valid_forms: set[str] = set()
+    form_matched = False
+    for row in days:
+        selected_mass = row.get("selected_mass")
+        for mass in row.get("masses") or []:
+            if mass.get("key") != selected_mass:
+                continue
+            valid_forms.update(str(one["id"]) for one in mass.get("forms") or [])
+            if mass.get("selected_form") == arguments.form:
+                form_matched = True
+    if arguments.form and not form_matched:
+        held = ", ".join(sorted(valid_forms)) or "none for the selected Mass"
+        raise ValueError(
+            f"--form {arguments.form!r} is not available; valid form ids: {held}"
+        )
+
+    # The Ordinary belongs to one enacted Mass/form, never to a branch or
+    # formulary alternative merely because it was listed first.
+    if arguments.ordinary or arguments.expanded:
+        for row in days:
+            selected = next(
+                (
+                    mass
+                    for mass in row.get("masses") or []
+                    if mass.get("key") == row.get("selected_mass")
+                ),
+                None,
+            )
+            if selected is None:
+                row["ordinary_suppressed"] = {
+                    "kind": (
+                        "territory-choice-required"
+                        if row.get("territory_choice_required")
+                        else "mass-choice-required"
+                        if row.get("choice_required")
+                        else "ferial-formulary-unavailable"
+                        if row.get("settled") is True
+                        else "day-unsettled"
+                    )
+                }
+                continue
+            if selected.get("form_choice_required"):
+                row["ordinary_suppressed"] = {"kind": "form-choice-required"}
+                continue
+            frame = selected.get("ordinary_frame") or {"applicability": "full"}
+            row["ordinary_frame"] = frame
+            if frame.get("applicability") != "full":
+                row["ordinary_suppressed"] = {
+                    "kind": "ordinary-frame",
+                    "applicability": frame.get("applicability"),
+                    "basis": frame.get("basis"),
+                }
+                continue
             argv = [
                 "show",
                 "--calendar",
-                str(day["calendar"]),
+                str(row["calendar"]),
                 "--lang",
-                arguments.lang or "en",
+                lang,
             ]
             try:
-                row["ordinary"] = (invoke("mass-ordinary", argv).get("ordinary") or [None])[0]
+                row["ordinary"] = (
+                    invoke("mass-ordinary", argv).get("ordinary") or [None]
+                )[0]
             except Refused as error:
-                # A calendar with no ordo-missae inventory is a stated absence,
-                # not an empty frame: the propers are still printed, in the
-                # missal's own order, and the reader is told why there is no
-                # frame around them.
                 row["ordinary"] = {"refused": str(error)}
-        days.append(row)
+                record_problem({
+                    "component": "mass-ordinary",
+                    "date": when,
+                    "calendar": row.get("calendar"),
+                    "error": str(error),
+                })
+
+    bible = chosen_bible or indexed_bible(arguments.bible)
+    language = language_account(days, arguments.lang, bible)
 
     return {
+        "status": "partial" if problems else "ok",
+        "problems": problems,
         "date": when,
         "days": days,
         "advisory": resolved.get("advisory"),
+        "language": language,
         "scripture": (
             {
                 "id": arguments.bible,
-                "label": (chosen_bible or {}).get("label"),
-                "edition": (chosen_bible or {}).get("edition"),
+                "label": (bible or {}).get("label"),
+                "edition": (bible or {}).get("edition"),
+                "language": (bible or {}).get("language"),
                 "defaulted": chosen_bible is not None,
             }
             if arguments.bible
@@ -462,7 +1449,13 @@ def wrap(text: str, indent: str) -> list[str]:
     return [indent + line if line else "" for line in (out[:-1] or out)]
 
 
-def render_ordinary(one: dict, lang: str, style: Style, show_rubrics: bool) -> None:
+def render_ordinary(
+    one: dict,
+    lang: str,
+    style: Style,
+    show_rubrics: bool,
+    wanted: list[str] | str | None = None,
+) -> None:
     """The frame printed after the propers, which is what `--ordinary` means.
 
     It is deliberately NOT what `--expanded` does. This appends the Ordinary
@@ -475,15 +1468,25 @@ def render_ordinary(one: dict, lang: str, style: Style, show_rubrics: bool) -> N
     print("")
     for line in style.heading(one.get("title") or "The Ordinary"):
         print(f"  {line}")
-    for section in one.get("sections") or []:
-        print("")
-        for line in style.heading(str(section["name"]), rule="-"):
-            print(f"  {line}")
-        for element in section.get("elements") or []:
+    resolved = mass_events(one, [], wanted)
+    for event in resolved["events"]:
+        if event.get("kind") == "begin_section":
+            print("")
+            for line in style.heading(str(event["section"]["name"]), rule="-"):
+                print(f"  {line}")
+        elif event.get("kind") == "ordinary_element":
             for line in element_lines(
-                element, lang, style, indent="    ", show_rubrics=show_rubrics
+                event["element"], lang, style, indent="    ",
+                show_rubrics=show_rubrics,
             ):
                 print(line)
+    for unresolved in resolved["unresolved"]:
+        condition = unresolved.get("condition") or {}
+        print("  " + style.note(
+            "ordinary applicability unresolved at "
+            f"{unresolved.get('element')}: "
+            f"{condition.get('basis') or 'no positive source binding is held'}"
+        ))
 
 
 # ---------------------------------------------------------------- the seating
@@ -493,24 +1496,77 @@ def render_ordinary(one: dict, lang: str, style: Style, show_rubrics: bool) -> N
 # seating or traversal rule.
 
 
-def mass_events(ordinary: dict, propers: list[dict], wanted: str | None) -> list[dict]:
+def ordinary_selection_map(
+    ordinary: dict, wanted: list[str] | str | None,
+) -> dict[str, str]:
+    """Validate repeatable option ids and bind each to its declared group."""
+    selected: dict[str, str] = {}
+    requested = [wanted] if isinstance(wanted, str) else list(wanted or [])
+    options = {
+        option.get("id"): group.get("group")
+        for group in ordinary.get("variants") or []
+        for option in group.get("options") or []
+    }
+    for option in requested:
+        group = options.get(option)
+        if group is None:
+            raise Refused(f"the Ordinary declares no variant option {option!r}")
+        previous = selected.get(group)
+        if previous is not None and previous != option:
+            raise Refused(
+                f"the Ordinary cannot select both {previous!r} and {option!r} "
+                f"from one group {group!r}"
+            )
+        selected[group] = option
+    return selected
+
+
+def ordinary_predicates(propers: list[dict]) -> dict[str, bool]:
+    """Positive applicability facts carried by this selected formulary."""
+    predicates: dict[str, bool] = {}
+    if any(proper.get("name") == "Second Reading" for proper in propers):
+        predicates["second-reading-appointed"] = True
+    # No Preface row proves nothing: this corpus says Prefaces are unmodelled.
+    # `mass-has-no-proper-preface` needs a future positive source binding.
+    return predicates
+
+
+def mass_events(
+    ordinary: dict,
+    propers: list[dict],
+    wanted: list[str] | str | None,
+    predicate_context: dict | None = None,
+) -> dict:
     harness = (
         "const model = require(process.argv[1]);\n"
         "let raw = '';\n"
         "process.stdin.on('data', (chunk) => { raw += chunk; });\n"
         "process.stdin.on('end', () => {\n"
         "  const input = JSON.parse(raw);\n"
-        "  const shown = model.shownElements(input.ordinary, input.wanted);\n"
+        "  const predicates = Object.assign(\n"
+        "    {}, model.predicateFacts(input.predicate_context), input.predicates);\n"
+        "  const resolved = model.resolveElements(\n"
+        "    input.ordinary, input.wanted, predicates);\n"
+        "  const shown = resolved.shown;\n"
         "  const placed = model.seatPropers(\n"
         "    input.propers, model.seats(input.ordinary, shown));\n"
         "  const events = model.massEvents(shown, placed);\n"
-        "  process.stdout.write(JSON.stringify({ events: events }));\n"
+        "  process.stdout.write(JSON.stringify({\n"
+        "    events: events, unresolved: resolved.unresolved,\n"
+        "    selected: resolved.selected\n"
+        "  }));\n"
         "});\n"
     )
     try:
         finished = subprocess.run(
             ["node", "-e", harness, str(SEATING_MODEL)],
-            input=json.dumps({"ordinary": ordinary, "propers": propers, "wanted": wanted}),
+            input=json.dumps({
+                "ordinary": ordinary,
+                "propers": propers,
+                "wanted": ordinary_selection_map(ordinary, wanted),
+                "predicate_context": predicate_context,
+                "predicates": ordinary_predicates(propers),
+            }),
             capture_output=True,
             text=True,
             check=False,
@@ -525,11 +1581,15 @@ def mass_events(ordinary: dict, propers: list[dict], wanted: str | None) -> list
     except json.JSONDecodeError as error:
         raise Refused(f"the Ordinary seating model returned invalid JSON: {error}") from error
 
-    return result["events"]
+    if not isinstance(result.get("events"), list) or not isinstance(
+        result.get("unresolved"), list
+    ):
+        raise Refused("the Ordinary seating model returned no typed resolution")
+    return result
 
 
 def proper_head(proper: dict) -> str:
-    """A proper's name, its form where it has one, and its citations."""
+    """A proper's name, its form where it has one, and its scripture references."""
     head = str(proper.get("name") or "proper")
     if proper.get("form"):
         head += f" [{proper['form']}]"
@@ -592,9 +1652,94 @@ def proper_lines(
             lines.extend(wrap_lines(text, body, WIDTH))
         if note:
             lines.append(body + style.note(f"({note})"))
-    if proper.get("untranslated"):
-        lines.append(body + style.note(f"[untranslated: {proper['untranslated']}]"))
+    latin_note = latin_availability_note(proper, lang)
+    if latin_note:
+        lines.append(body + style.note(latin_note))
+    for note in untranslated_notes(proper):
+        lines.append(body + style.note(f"[{note}]"))
     return lines
+
+
+def render_unresolved_formulary(mass: dict, indent: str, style: Style) -> None:
+    """State structural Common directions and withheld formularies without guessing."""
+    frame = mass.get("ordinary_frame") or {"applicability": "full"}
+    if frame.get("applicability") != "full":
+        applicability = str(frame.get("applicability") or "unavailable").replace("-", " ")
+        print(indent + style.note(f"Ordinary frame {applicability} for this rite."))
+        if frame.get("basis"):
+            for line in wrap_lines(str(frame["basis"]), indent + "  ", WIDTH):
+                print(style.note(line))
+    if mass.get("form_choice_required"):
+        print(indent + style.note("form choice required; select one with --form:"))
+        for form in mass.get("forms") or []:
+            if not isinstance(form, dict) or not form.get("id"):
+                continue
+            name = str(form.get("name") or form["id"])
+            print(indent + style.note(f"  {form['id']} — {name}"))
+    common = mass.get("common_from") or {}
+    for option in common.get("options") or []:
+        if not isinstance(option, dict) or not option.get("mass"):
+            continue
+        selection = str(option.get("selection") or "").strip()
+        note = f"Common direction (text not resolved): {option['mass']}"
+        if selection:
+            note += f" — {selection}"
+        print(indent + style.note(note))
+    status = mass.get("text_status") or {}
+    if status.get("state") == "unavailable":
+        reasons = [
+            str(one.get("kind") or "unspecified").replace("-", " ")
+            for one in status.get("reasons") or []
+            if isinstance(one, dict)
+        ]
+        reason = ", ".join(dict.fromkeys(reasons)) or "reason not recorded"
+        scope = str(status.get("scope") or "formulary").replace("-", " ")
+        print(indent + style.note(f"{scope} unavailable: {reason}"))
+
+
+def render_recension_context(mass: dict, indent: str, style: Style) -> None:
+    """Keep inherited text provenance beside the daily formulary it qualifies."""
+
+    coverage = mass.get(_calendars.RECENSION_COVERAGE)
+    stamp = mass.get(_calendars.RECENSION)
+    advisory = str(mass.get("advisory") or "").strip()
+    boundaries = mass.get(_calendars.RECENSION_ACT)
+    if isinstance(boundaries, list) and boundaries:
+        print(indent + style.note(
+            "Historical boundary — stands before: " + "; ".join(boundaries)
+        ))
+    if isinstance(coverage, dict) and coverage.get("status"):
+        print(indent + style.note(f"Recension coverage: {coverage['status']}"))
+    if isinstance(stamp, dict):
+        source = stamp.get("text_from") or stamp.get("calendar")
+        if source:
+            qualifier = "stated for this recension"
+            if stamp.get("stated") is not True:
+                inheritance = coverage.get("inheritance") if isinstance(coverage, dict) else {}
+                collation = (
+                    inheritance.get("status")
+                    if isinstance(inheritance, dict)
+                    else None
+                ) or "uncollated"
+                qualifier = f"inherited, {collation}"
+            print(indent + style.note(
+                f"Proper text source: {source} ({qualifier})"
+            ))
+        if stamp.get(_calendars.DEPARTURE_ACT):
+            print(indent + style.note(
+                f"Departure act: {stamp[_calendars.DEPARTURE_ACT]}"
+            ))
+        for row in stamp.get("also") or []:
+            if isinstance(row, dict) and row.get(_calendars.DEPARTURE_ACT):
+                label = "Additional departure act"
+                if row.get("kind"):
+                    label += f" ({row['kind']})"
+                print(indent + style.note(
+                    f"{label}: {row[_calendars.DEPARTURE_ACT]}"
+                ))
+    if advisory:
+        for line in wrap(advisory, indent):
+            print(style.note(line))
 
 
 def render_expanded_mass(
@@ -604,6 +1749,7 @@ def render_expanded_mass(
     style: Style,
     *,
     frame: bool,
+    predicate_context: dict | None = None,
 ) -> None:
     """One Mass, set into the frame if it is the one the frame is drawn for."""
     indent = "      "
@@ -614,6 +1760,12 @@ def render_expanded_mass(
         reference = mass["takes_from"]
         print(f"    takes the Mass of {reference.get('mass')}"
               + (f", form {reference['form']}" if reference.get("form") else ""))
+    # Structural Common directions and typed availability are orthogonal to
+    # the retained Proper rows.  In particular a borrowed Common may retain
+    # its chants while the source explicitly says that its proper Collect is
+    # unavailable; hiding that notice whenever any Proper exists changes the
+    # meaning of the record.
+    render_unresolved_formulary(mass, "    ", style)
 
     def aside(what: str) -> None:
         print("")
@@ -624,7 +1776,7 @@ def render_expanded_mass(
         for proper, seat in held:
             for line in proper_lines(
                 proper, style, indent,
-                lang=arguments.lang or "en", witness=arguments.witness,
+                lang=requested_language(arguments), witness=arguments.witness,
                 seat=seat, why=arguments.why,
             ):
                 print(line)
@@ -633,7 +1785,7 @@ def render_expanded_mass(
         if ordinary is not None and "refused" in ordinary:
             print(f"\n    no Ordinary is held for this calendar: {ordinary['refused']}")
             print("    the propers are printed in the missal's own order.")
-        elif not frame:
+        elif not frame and not mass.get("day_ordinary_suppressed"):
             aside(
                 "the Ordinary is printed once, above; this formulary's propers "
                 "are set out here in the missal's own order."
@@ -641,8 +1793,19 @@ def render_expanded_mass(
         pour([(proper, None) for proper in propers])
         return
 
+    resolution = mass_events(
+        ordinary, propers, arguments.ordinary_variant, predicate_context
+    )
+    for unresolved in resolution["unresolved"]:
+        condition = unresolved.get("condition") or {}
+        aside(
+            "ordinary applicability unresolved at "
+            f"{unresolved.get('element')}: "
+            f"{condition.get('basis') or 'no positive source binding is held'}"
+        )
+
     announced: set[str] = set()
-    for event in mass_events(ordinary, propers, arguments.ordinary_variant):
+    for event in resolution["events"]:
         kind = event.get("kind")
         if kind == "begin_section":
             section = event["section"]
@@ -651,7 +1814,7 @@ def render_expanded_mass(
                 print(f"    {line}")
         elif kind == "ordinary_element":
             for line in element_lines(
-                event["element"], arguments.lang or "en", style,
+                event["element"], requested_language(arguments), style,
                 indent=indent, show_rubrics=arguments.rubrics, why=arguments.why,
             ):
                 print(line)
@@ -680,12 +1843,12 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
         return 70
     if arguments.json or arguments.format == "json":
         print_json(payload)
-        return 0
+        return 1 if payload.get("problems") else 0
     if arguments.format == "yaml":
         import yaml
 
         print(yaml.safe_dump(payload, sort_keys=False, allow_unicode=True).rstrip())
-        return 0
+        return 1 if payload.get("problems") else 0
 
     style = getattr(arguments, "style_resolved", None) or Style()
     scripture = payload.get("scripture")
@@ -708,13 +1871,32 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
                 f"scripture read from {named}"
                 + (" (defaulted; name another with --bible)" if scripture.get("defaulted") else "")
             ))
-        if not day["masses"]:
+        if not day["masses"] and not day.get("territory_choice_required"):
             print("  no mass is written for this day")
         appointed = day.get("appointed")
         commemorated = set(day.get("commemorations") or [])
 
         if day.get("ranking_refused"):
             print(f"  the rubrics could not be consulted: {day['ranking_refused']}")
+        ordinary_suppressed = day.get("ordinary_suppressed") or {}
+        if day.get("territory_choice_required"):
+            print("  " + style.note("territory choice required; select one with --territory:"))
+            for branch in day.get("branches") or []:
+                if isinstance(branch, dict) and branch.get("id"):
+                    print("  " + style.note(f"  {branch['id']}"))
+        elif day.get("choice_required"):
+            print("  " + style.note("Mass choice required; select one with --mass:"))
+            selected_branch = next(
+                (
+                    branch
+                    for branch in day.get("branches") or []
+                    if isinstance(branch, dict) and branch.get("selected")
+                ),
+                None,
+            )
+            for choice in (selected_branch or {}).get("selectable") or []:
+                if isinstance(choice, dict) and choice.get("key"):
+                    print("  " + style.note(f"  {choice['key']}"))
         # A day the rubrics settle is stated. A day they do not is stated as
         # not settled, with the reason — which is a different thing from the
         # arithmetic layer's older "no precedence is stated", and must not be
@@ -740,19 +1922,42 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
         # one of their propers; what it does not do is print a hundred and
         # ninety-five unvarying elements four times over, or leave a reader to
         # work out which of four Ordinaries is the one they are at.
-        framed = next(
+        # Only an explicitly resolved Mass receives the frame.  Falling back
+        # to `ordered[0]` framed an arbitrary arm of an authorized optional-day
+        # choice and made the next arm claim that an Ordinary had been printed
+        # above when none had been enacted at all.
+        framed = day.get("selected_mass")
+        selected_branch = next(
             (
-                one["key"]
-                for one in ordered
-                if one.get("standing") in (None, "said") and one["key"] not in commemorated
+                branch
+                for branch in day.get("branches") or []
+                if branch.get("selected")
             ),
-            ordered[0]["key"] if ordered else None,
+            None,
         )
+        winner = (
+            selected_branch.get("winner")
+            if isinstance(selected_branch, dict)
+            and isinstance(selected_branch.get("winner"), dict)
+            else {}
+        )
+        ordinary_predicate_context = {
+            "settled": selected_branch.get("settled")
+            if isinstance(selected_branch, dict)
+            else False,
+            "weekday": day.get("weekday"),
+            "season": day.get("season"),
+            "nature": winner.get("nature"),
+        }
         for mass in ordered:
             rank = f" ({mass['rank']})" if mass.get("rank") else ""
             mark = ""
             if mass.get("standing"):
-                word = STANDING_WORDS.get(mass["standing"], mass["standing"])
+                word = (
+                    "an authorized option; select explicitly with --mass"
+                    if day.get("choice_required") and mass["standing"] == "option"
+                    else STANDING_WORDS.get(mass["standing"], mass["standing"])
+                )
                 mark = f"  — {word}" if word else ""
             elif mass.get("borrowed"):
                 mark = "  — " + str(mass.get("rule") or "the formulary this day borrows")
@@ -769,14 +1974,20 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
                     print("  " + style.note(mark.strip()))
             else:
                 print(f"  {style.said(name) if not mark else name}{mark}")
+            render_recension_context(mass, "    ", style)
             if arguments.why and mass.get("rule"):
                 print(f"    why: {mass['rule']}")
             if arguments.expanded:
+                if ordinary_suppressed:
+                    mass["day_ordinary_suppressed"] = True
                 render_expanded_mass(
                     mass, day.get("ordinary"), arguments, style,
                     frame=mass["key"] == framed,
+                    predicate_context=ordinary_predicate_context,
                 )
-                if mass["placeholders"]:
+                if mass["placeholders"] and (
+                    (mass.get("ordinary_frame") or {}).get("applicability", "full") == "full"
+                ):
                     count = mass["placeholders"]
                     print(
                         f"\n    {count} placeholder{'' if count == 1 else 's'}: "
@@ -785,6 +1996,7 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
                 continue
             if mass.get("refused"):
                 print(f"    refused: {mass['refused']}")
+            render_unresolved_formulary(mass, "    ", style)
             for proper in mass["propers"]:
                 # A scripture proper carries its reference rather than its
                 # words: printing the name alone would show an empty slot
@@ -808,10 +2020,18 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
                 # recurred here because a third reader of one file grew its own
                 # rule instead of calling the one that exists.
                 shown = _calendars.texts_of(
-                    proper, arguments.lang, getattr(arguments, "witness", None)
+                    proper, requested_language(arguments), getattr(arguments, "witness", None)
                 )
-                if proper.get("incipit") and not any(text for text, _, _ in shown):
-                    print(f"      {proper['incipit']}…")
+                # A cited chant incipit is Latin identifying apparatus, not an
+                # English rendering and not the full Latin proper.  The shared
+                # helper carries both facts so this compact view cannot
+                # silently put Latin under an English request.  Composed
+                # rights/untranslated absences have their own typed path.
+                incipit = _calendars.incipit_only_of(
+                    proper, requested_language(arguments), getattr(arguments, "witness", None)
+                )
+                if incipit:
+                    print(f"      {incipit['note']}: {incipit['text']}…")
                 for text, attribution, note in shown:
                     if text:
                         if attribution:
@@ -820,7 +2040,16 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
                             print(line)
                     if note:
                         print(f"      ({note})")
-            if mass["placeholders"]:
+                latin_note = latin_availability_note(
+                    proper, requested_language(arguments)
+                )
+                if latin_note:
+                    print(f"      {style.note(latin_note)}")
+                for note in untranslated_notes(proper):
+                    print(f"      [{note}]")
+            if mass["placeholders"] and (
+                (mass.get("ordinary_frame") or {}).get("applicability", "full") == "full"
+            ):
                 count = mass["placeholders"]
                 print(
                     f"\n    {count} placeholder{'' if count == 1 else 's'}: "
@@ -830,8 +2059,18 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
             for note in day["why"].get("unresolved") or []:
                 print(f"\n  unresolved: {note}")
         if arguments.ordinary and not arguments.expanded and day.get("ordinary"):
-            render_ordinary(day["ordinary"], arguments.lang or "en", style, arguments.rubrics)
-    return 0
+            render_ordinary(
+                day["ordinary"], requested_language(arguments), style,
+                arguments.rubrics, arguments.ordinary_variant,
+            )
+    problems = payload.get("problems") or []
+    if problems:
+        count = len(problems)
+        print(
+            f"\npartial result: {count} component "
+            f"failure{'' if count == 1 else 's'}"
+        )
+    return 1 if problems else 0
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -850,7 +2089,23 @@ def main(argv: list[str] | None = None) -> int:
     )
     shared.add_argument(
         "--ordinary-variant",
-        help="select an Ordinary variant option by id (default: the file's default)",
+        action="append",
+        help=(
+            "select an Ordinary variant option by id; repeat for independent "
+            "groups (default: each group's source-declared display default)"
+        ),
+    )
+    shared.add_argument(
+        "--territory",
+        help="select a source-authored territorial calendar branch by id",
+    )
+    shared.add_argument(
+        "--mass",
+        help="select a Mass/formulary key where the rubrics require a choice",
+    )
+    shared.add_argument(
+        "--form",
+        help="select a source-authored form id within the enacted Mass",
     )
     shared.add_argument(
         "--no-rubrics",
@@ -868,7 +2123,13 @@ def main(argv: list[str] | None = None) -> int:
         "--format", choices=("text", "yaml", "json"), default="text", help="output form"
     )
     shared.add_argument("--bible", help="indexed bible to resolve scripture refs against")
-    shared.add_argument("--lang", default="en", help="language to print (default: en)")
+    shared.add_argument(
+        "--lang",
+        help=(
+            "language projection to print, en or la (default renderer: en; "
+            "machine output keeps canonical-record mode)"
+        ),
+    )
     shared.add_argument("--witness", help="show only this translation's source_id")
     shared.add_argument(
         "--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)"

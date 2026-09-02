@@ -1114,10 +1114,14 @@ shell that inlines CSS or a nav manifest into every page multiplies across 144
 pages and can push a long web edition over.
 
 **Root-relative hrefs are banned.** `verify_links` (`:2812`) rejects any `href`
-beginning `/` as "root-relative link is not portable" — the site is served at
-`/triptych/`, a project subpath. Every shell link must be built with
-`relative_link()` (`:2071`) and must resolve from every depth: root, `docs/`,
-`library/`, and `web/<provider>/<deep>/`.
+beginning `/` as "root-relative link is not portable". Production is served
+from the `https://mystago.gy/` root, while the same static artifact must remain
+usable under a GitHub Pages project-path preview such as `/triptych/`. Every
+shell link must therefore be built with `relative_link()` (`:2071`) and must
+resolve from every depth: root, `docs/`, `library/`, and
+`web/<provider>/<deep>/`. Canonical Open Graph metadata is the deliberate
+exception: `public_site_url()` constructs and verification requires an
+absolute URL on the production origin.
 
 **The browser-page `<head>` whitelist.** `BROWSER_HEAD_ALLOWED_RE` (`:2510`)
 permits only comments, `<meta charset="utf-8">`, viewport, `description`,

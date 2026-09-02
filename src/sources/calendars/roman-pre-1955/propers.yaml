@@ -11,14 +11,16 @@ calendar: roman-pre-1955
 # mechanism is `scripts/_calendars.py`, and `tools/tpt check-calendar-masses`
 # refuses a departure that names a mass the base does not hold.
 #
-# The file is six rows long. That is not a stub: under a projection the shared
+# The file is eight rows long. That is not a stub: under a projection the shared
 # remainder of the year expresses no departure, which is to say NO ROWS AT ALL,
 # and the size of this file is therefore a measurement of how far the pre-1955
-# book sits from the 1962 one in the part anyone has established. Five rows are
+# book sits from the 1962 one in the part anyone has established. Five Holy Week rows are
 # the liturgies guidance/recensions.md section 7 named as the place to start; the
 # sixth is the Chrism Mass, which was carried as an open question until the
 # witnesses were read on 2026-08-01 and is the first row here established by
-# reading a pre-1955 book rather than by reading an act.
+# reading a pre-1955 book rather than by reading an act. Two exact sanctoral
+# absences are established by separately retained negative searches of the
+# registered pre-reform witness body.
 
 # --- the two relations, which are not the same claim -------------------------
 #
@@ -43,14 +45,195 @@ calendar: roman-pre-1955
 # provenance nobody established, which is the defect the whole apparatus exists
 # to catch. The flip is the work; declaring the recension is not blocked on it.
 text_from: roman-1962
-stands_before: maxima-redemptionis-1955
+stands_before:
+- de-rubricis-simpliciorem-1955
+- maxima-redemptionis-1955
+
+# This warning is public data, not renderer-owned copy. Consumers must preserve
+# it beside the coverage record so a projected 1962 formulary cannot be
+# described as a complete transcription of the target recension.
+advisory: >-
+  Structural-only pre-1955 projection, not a complete 1920 Missal corpus. Only
+  six Holy Week departures and the exact absences of St Joseph the Worker and
+  the Queenship of the Blessed Virgin Mary are established here. Every unstated
+  formulary is served mechanically from roman-1962 without target-recension
+  collation and must be described as inherited and uncollated rather than
+  complete for 1920.
+
+recension_coverage:
+  schema: triptych-recension-coverage/v1
+  as_of: '2026-08-27'
+  status: structural-only
+  domains:
+    calendar:
+      state: partial
+      basis: >-
+        Six Holy Week departures and two exact post-1954 sanctoral absences are
+        stated. The remainder of the temporal and sanctoral calendar is
+        inherited from roman-1962 without a pre-1955 kalendarium collation,
+        including the octaves and vigils affected by the March 1955
+        simplification.
+    precedence:
+      state: partial
+      basis: >-
+        The companion rubrics source openly linearizes the five Divino afflatu
+        criteria into numbered rows. It records divergences and supports a
+        finding aid, but it does not implement the criteria as criteria.
+    propers:
+      state: none
+      basis: >-
+        No Proper wording in this departure file is transcribed from or
+        page-collated against the 1920 typical edition. Known-different bundled
+        formularies carry typed unavailable status and no pseudo-Proper rows;
+        unstated formularies are mechanical roman-1962 fallback, not pre-1955
+        attestations.
+    commons:
+      state: inherited-uncollated
+      basis: >-
+        Every Common is inherited from roman-1962. No pre-1955 witness has been
+        collated against those formularies, so inheritance proves availability
+        in the projection and not identity in the target recension.
+    ordinary:
+      state: partial
+      basis: >-
+        A separate Ordinary inventory transcribes the 1861 Cummiskey lay
+        missal, including its facing Latin where printed. It is neither the 1920
+        altar book nor an element-by-element collation against that typical
+        edition.
+    ceremonies:
+      state: structural-only
+      basis: >-
+        The act history records structural units for Palm Sunday and the
+        Triduum from OCR and promulgating acts. It expressly excludes a complete
+        ceremonial, notation, the Office, and unstated units.
+  inheritance:
+    source_calendar: roman-1962
+    status: uncollated
+    basis: >-
+      `text_from` is a mechanical fallback to the only target altar-book corpus
+      transcribed in this repository. It does not assert that any unstated 1962
+      entry was checked in a pre-1955 witness or remained unchanged.
+  evidence:
+  - id: roman-holy-week-structure
+    domains: [calendar, ceremonies, propers]
+    grade: ocr-structure-read
+    record: src/sources/inventories/roman-holy-week-acts-v1.toml
+    basis: >-
+      The inventory records the unit-level structure and acts behind these Holy
+      Week departures, while refusing its OCR readings as witnesses to wording.
+      Its source formerly labelled as the 1920 printing is a later composite,
+      body 1951-1954 with a post-1970 appendix; that OCR is held only as a
+      structural/search witness and does not establish exact target-edition
+      correspondence.
+    witnesses:
+    - missale-romanum-later-composite-pre-1955-body
+    - pustet-1862
+    - aas-47-1955
+    - benziger-iuxta-typicam-1962
+  - id: divino-afflatu-precedence
+    domains: [calendar, precedence]
+    grade: source-read
+    record: src/sources/inventories/pre-1955-rubrics-sources-v1.toml
+    basis: >-
+      Titulus II of the 1911 rubrics was read in the publisher PDF. The current
+      table is a disclosed linearization of its five criteria rather than a
+      claim that the source printed numbered precedence rows.
+    witnesses:
+    - aas-03-1911
+  - id: cummiskey-ordinary
+    domains: [ordinary]
+    grade: page-image-collated
+    record: src/sources/inventories/roman-pre-1955-ordo-missae-v1.toml
+    basis: >-
+      The 1861 witness was transcribed from page images at the grades its
+      inventory states. This establishes that witness only, not the wording of
+      the 1920 typical edition.
+    witnesses:
+    - edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861
+  - id: post-1954-sanctoral-negatives
+    domains: [calendar]
+    grade: ocr-structure-read
+    record: src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml
+    basis: >-
+      `[the_1920_substitution.where_it_cannot]`, item 3, and
+      `[the_1920_substitution.a_defect_in_the_1920_artifact_itself].finding`
+      record the separately verified absence of the Queenship of the Blessed
+      Virgin Mary and St Joseph the Worker from the pre-reform witness body.
+      The artifact record bounds that body to 1951-1954, records zero `Opific`
+      hits, and records `Reginae` only in old local-indult material. The same
+      inventory item's St Pius X negative was corrected as false, so these rows
+      rely only on the two retained and reverified results and make no claim
+      about St Pius X.
+    witnesses:
+    - missale-romanum-later-composite-pre-1955-body
+  blockers:
+  - id: register-1920-typical-edition
+    kind: unregistered-artifact
+    status: open
+    record: src/sources/inventories/missal-acquisition-audit-v1.toml#missale-romanum-1920-typica
+    requirement: >-
+      Register and fingerprint one complete page-image artifact of the 1920
+      Vatican typical edition before its wording or page loci become corpus
+      evidence.
+  - id: collate-1920-typical-edition
+    kind: page-image-collation
+    status: open
+    record: src/sources/inventories/missal-acquisition-audit-v1.toml#missale-romanum-1920-typica
+    requirement: >-
+      Transcribe and page-collate the target edition's calendar, Propers,
+      Commons, Ordinary, and Holy Week. OCR may locate text but may not supply
+      it; the measured correction rate was 38 of 99 orations.
+  - id: record-per-proper-attestation
+    kind: provenance-gap
+    status: open
+    record: guidance/recensions.md#6-what-must-be-true-before-any-data-moves
+    requirement: >-
+      Give every Proper a per-witness attestation before residence is moved
+      from roman-1962 or inherited text is described as pre-1955.
+  - id: transcribe-pre-1955-kalendarium
+    kind: data-transcription
+    status: open
+    record: src/sources/inventories/pre-1955-rubrics-sources-v1.toml#pre-1955-kalendarium-read-as-data
+    requirement: >-
+      Read a pre-1955 general calendar from page images, including grades,
+      octaves, and vigils; do not reconstruct it by subtracting 1962.
+  - id: implement-criteria-precedence
+    kind: schema-gap
+    status: open
+    record: src/sources/inventories/pre-1955-rubrics-sources-v1.toml#the-rule-is-criteria-not-rows
+    requirement: >-
+      Model the five ordered criteria directly, including the different role of
+      propriety in occurrence and concurrence, and replace the present numbered
+      linearization with source-shaped evaluation and solved cases.
+  - id: acquire-1900-typical-edition
+    kind: missing-witness
+    status: blocked
+    record: src/sources/inventories/missal-acquisition-audit-v1.toml#missale-romanum-1900-typica
+    requirement: >-
+      Locate the 1900 typical edition that the 1920 decree names as its parent,
+      closing the act history's one `via_unrepresented` edge.
+  - id: distinguish-1956-1960-holy-week
+    kind: unmodeled-recension
+    status: blocked
+    record: src/sources/inventories/missal-acquisition-audit-v1.toml#ordo-hebdomadae-sanctae-1956
+    requirement: >-
+      Read the restricted 1956 Ordo in a lawful accessible copy and model the
+      1956-1960 middle state before attributing every pre-1955-to-1962 Holy Week
+      difference to the 1955 reform.
+  - id: scope-pre-1955-pontifical
+    kind: scope-exclusion
+    status: open
+    record: src/sources/inventories/pre-1955-rubrics-sources-v1.toml#pontificale-pre-1955
+    requirement: >-
+      Keep the blessing of oils outside the Missal claim until an identified
+      pre-1955 Pontificale Romanum edition is registered and read.
 
 series: departures of the pre-1955 Roman Missal from the 1962 typical edition
 ordering: departures in the order the Missal prints the days they fall on
 registry: src/sources/inventories/roman-holy-week-acts-v1.toml (unit-level record)
 psalm_numbering: vulgate
 citation_convention: Vulgate book names and Vulgate psalm numbering
-orthography: 1920 typical edition Latin (j retained, ae/oe digraphs)
+orthography: target 1920 typical-edition Latin (j retained, ae/oe digraphs); no target text held
 
 verification: |
   NO TEXT IS TRANSCRIBED IN THIS FILE, and no row below carries a word of Latin
@@ -59,14 +242,17 @@ verification: |
 
   That is a bound, not an oversight, and it has two causes worth separating.
 
-  The pre-1955 witnesses this project holds — the 1920 typical edition and the
-  1862 Pustet printing — are read only through Internet Archive OCR text layers,
-  which `src/sources/inventories/roman-holy-week-acts-v1.toml` grades `ocr-only`
-  and refuses to treat as a witness to wording. This repository has measured what
-  that grade is worth: on 2026-07-31 it collated 99 orations taken from the OCR
-  of a single printing against that printing's page images and CORRECTED 38 of
-  them. Landing OCR here as payload would put a known 38-in-99 error rate into a
-  file a page reads from.
+  The structural witnesses used here are the 1862 Pustet printing and an
+  Internet Archive OCR artifact whose body is a 1951-1954 pre-reform Missal and
+  whose appendix is post-1970. The latter is NOT a 1920 printing; its canonical
+  artifact record holds its exact bytes remote with unresolved rights. Both are
+  read only through OCR text layers, which
+  `src/sources/inventories/roman-holy-week-acts-v1.toml` grades `ocr-only` and
+  refuses to treat as witnesses to wording or exact target-edition
+  correspondence. This repository has measured what that grade is worth: on
+  2026-07-31 it collated 99 orations taken from the OCR of a single printing
+  against that printing's page images and CORRECTED 38 of them. Landing OCR here
+  as payload would put a known 38-in-99 error rate into a file a page reads from.
 
   The reformed rite's own book — the Ordo Hebdomadae Sanctae instauratus of 1956
   — is located, identified and NOT retrievable: both Internet Archive items
@@ -81,66 +267,60 @@ verification: |
 extent: |
   Four liturgies: Palm Sunday, Thursday, Friday and Saturday of Holy Week, plus
   the blessing of palms that precedes the first of them and the Chrism Mass that
-  the reform gave the second of them and the pre-1955 books do not print. This
-  file claims nothing about any other day, about the Ordinary, about the Canon,
-  about the Office, or about the octaves and vigils the 1955 simplification of
-  the rubrics removed.
+  the reform gave the second of them and the pre-1955 books do not print; and
+  the exact structural absence of the 1962 entries for St Joseph the Worker and
+  the Queenship of the Blessed Virgin Mary from the registered pre-reform
+  witness body. This file claims nothing about any other day, about the
+  Ordinary, about the Canon, about the Office, or about the octaves and vigils
+  the 1955 simplification of the rubrics removed.
 
-  THE RUBRICS ARE NOT CLAIMED AND THIS DIRECTORY DELIBERATELY SHIPS NO
-  `rubrics.yaml`. The 1962 precedence table answers to the 1960 Codex rubricarum;
-  the pre-1955 calendar answers to the general rubrics that preceded both the
-  1955 simplification and the 1960 code, and those must be SOURCED rather than
-  obtained by subtracting 1962 from itself. A pre-1955 precedence table
-  reconstructed by undoing 1962 would resolve successfully and wrongly, which is
-  the one defect guidance/the-shape.md section 1 says wears every costume.
+  THIS DIRECTORY NOW SHIPS AN EXPLICITLY APPROXIMATE `rubrics.yaml`. It
+  linearizes the five ordered criteria of Divino afflatu, Titulus II, into the
+  numbered rows the current calendar tooling can consume, records every known
+  divergence from that reduction, and allows the browser to offer this
+  recension. It is a finding aid and not the pre-1955 rule itself.
 
-  The consequence is deliberate and is the honest one: `src/web/browser/liturgy/`
-  discovers missals from `structure/rubrics/index.json`, so a calendar with no
-  rubrics source is NOT OFFERED in the missal selector. The dropdown entry lands
-  when the rubrics land, and not before.
+  The source is Titulus II, De Festorum praestantia, of the rubrics issued under
+  Divino afflatu, at Acta Apostolicae Sedis 3 (1911) 641-642. The rule is five
+  criteria - higher rite, primary or secondary, dignity of the Person, external
+  solemnity, and propriety of the feast - taken in order until one separates two
+  days, with the fifth applying in occurrence and translation and NOT in
+  concurrence. A single row number cannot preserve that distinction.
 
-  THE RUBRICS HAVE SINCE BEEN SOURCED AND STILL CANNOT BE WRITTEN, which is a
-  different sentence from the one above and a better one. On 2026-08-01 the
-  pre-1955 order of precedence was located, fetched and read: it is Titulus II,
-  De Festorum praestantia, of the rubrics issued under Divino afflatu, at Acta
-  Apostolicae Sedis 3 (1911) 641-642, and being a 1911 publication it is in the
-  public domain and may be printed. That is a stronger rights position than the
-  1960 code the 1962 calendar answers to.
-
-  It is not a table. It is five ordered criteria - higher rite, primary or
-  secondary, dignity of the Person, external solemnity, and propriety of the
-  feast - taken in order until one separates two days, with the fifth applying in
-  occurrence and translation and NOT in concurrence. `tools/calendar-rubrics`
-  requires a precedence table whose rows number 1 to N, and `assembly-model.js`
-  picks a winner by comparing those numbers. A row number is one order for all
-  questions, and the fifth criterion makes the pre-1955 answer differ between two
-  questions, so no numbering carries it.
-
-  So the blocker is no longer the book. It is that this repository's rubrics
-  schema admits one shape of precedence and the pre-1955 rite has another, and
-  bending the rule to fit would produce a file that validates, resolves every day
-  and decides some of them wrongly. The whole sourcing record - seven located
-  sources with rights, the repositories searched and the aliases each was
-  searched under - is at
-  `src/sources/inventories/pre-1955-rubrics-sources-v1.toml`, and
-  guidance/recensions.md section 9.7 states what would have to change.
+  The rubrics file therefore does not establish that any inherited 1962 rank,
+  feast, octave, vigil, commemoration, or formulary is correct for the target
+  recension. Its classifications are an acknowledged projection over the 1962
+  mass index wherever this file states no departure. The full sourcing record,
+  including the located sources, rights, searched repositories, aliases, and
+  schema limitation, is at
+  `src/sources/inventories/pre-1955-rubrics-sources-v1.toml`.
 
 conventions:
 - a departure states one primary `departure` kind, which is what the machinery
   acts on, and carries any further kinds under `also`, each with its own basis.
   The Triduum is where one liturgy departs several ways at once, and a schema
   admitting one kind per row would have made this file choose which difference to
-  record and drop the rest
+  record and drop the rest. Where the inherited formulary is known to differ,
+  `replaced` is primary so the unverified 1962 words cannot be served under a
+  pre-1955 heading; movement, renaming and reslotting remain under `also`
 - a `renamed` or `moved` departure overlays only the scalar fields it restates; the
   formulary stays the base's, because saying the liturgy is the same one and then
   reprinting it beside itself is the copy Rule 2 refuses
 - every departure cites the record that established it. A departure with no basis
   is a difference someone asserted, not one someone read
+- >-
+  `stands_before` names the acts explicitly used to bound this recension.
+  An optional `act` on a primary or `also` departure names its act-history
+  station or attribution record. That station is not necessarily a proved
+  causal instrument: `editio-typica-1962` holds the Good Friday `unrecorded`
+  differences precisely because no promulgating act was found. An unset `act`
+  means no honest station has been established
 - unit-level detail — which prophecy, which oration, which antiphon — lives once,
   in `src/sources/inventories/roman-holy-week-acts-v1.toml`, and is referenced
   here rather than copied. That file holds 38 units of these same four liturgies
-  with their loci in the 1920 and 1862 witnesses; restating them here would be
-  the second source of truth guidance/the-shape.md section 2 forbids
+  with their loci in the 1862 witness and the later composite's pre-reform body;
+  restating them here would be the second source of truth
+  guidance/the-shape.md section 2 forbids
 
 open_collation_items:
 - The 1955 reform and the 1962 typical edition are NOT DISTINGUISHED by the
@@ -153,28 +333,32 @@ open_collation_items:
   as a record of the middle state is reading it wrongly; see
   guidance/recensions.md Rule 5, which is exactly this hazard.
 - >-
-  FOUR ACTS PRODUCE THIS DELTA, NOT ONE, AND THE FILE'S LABEL NAMES ONLY THE
-  SECOND. The distance from the state this file holds to `roman-1962` was made
+  FOUR ACTS PRODUCE THE KNOWN DISTANCE TO 1962, AND THIS FILE NOW NAMES BOTH
+  1955 BOUNDARIES. The distance from the state this file holds to `roman-1962` was made
   by `de-rubricis-simpliciorem-1955` of 23 March 1955, which owns the octaves,
   the vigils and the `semiduplex` vocabulary and is answerable for ZERO of the
   rows below; `maxima-redemptionis-1955` of 16 November 1955, which owns the
   Holy Week order and 36 of the departures the act history records;
   `codex-rubricarum-1960`, which owns 2; and `editio-typica-1962`, which owns 4.
-  `stands_before` is a scalar and names the second of them, so a reader who
-  takes this file as the 1962 book minus one reform charges the 1960 code's work
-  to Pius XII, which is precisely the blending of states this project forbids.
-  Two mechanical fixes are open and neither is made here: whether
-  `stands_before` should name the EARLIEST act a state stands before or admit a
-  list of act ids, which is a schema decision for the maintainer; and whether a
-  departure row should carry an optional `act`, so each row says which act made
-  it instead of the file attributing all of them to one. Until the second lands,
-  the apportionment above is the only place the difference is written down.
+  `stands_before` now records both 1955 acts as a validated list. The primary
+  and additional claims below name `maxima-redemptionis-1955` only where its
+  attribution is established. The Good Friday replacement and `unrecorded`
+  claims name `editio-typica-1962`, the inventory station that explicitly
+  records that no promulgating act was found; that id must not be read as a
+  causal claim. The Chrism absence intentionally carries no `act`. No rows
+  yet express the March simplification's octave, vigil, or grade changes, or
+  the two 1960-code and four 1962-edition unit changes; the apportionment above
+  remains the explicit blocker against reading this as the 1962 book minus one
+  reform.
 - The 1955 simplification of the rubrics (de-rubricis-simpliciorem, 23 March
   1955) removed most octaves and vigils and changed the ranking vocabulary.
   Those are calendar-wide departures — probably the largest set this recension
-  will ever carry — and NOT ONE of them is stated here, because they are
-  rubrical and this file ships no rubrics source. The absence is on the record
-  rather than left for a reader to infer from a short file.
+  will ever carry — and NOT ONE is stated as a departure in this file. The
+  companion `rubrics.yaml` classifies the inherited 1962 mass list through a
+  documented linearization; it is not a pre-1955 calendar witness and does not
+  establish which inherited feasts, octaves or vigils belong in the target
+  state. The absence is on the record rather than left for a reader to infer
+  from a short file.
 - >-
   THE CHRISM MASS QUESTION IS CLOSED, AND HOW IT CLOSED IS THE POINT. This file
   carried it as an open question rather than writing `absent`, because a separate
@@ -185,19 +369,24 @@ open_collation_items:
   now stated with that reading as its basis. The question stood open for one day
   and cost one fetch; had it been answered from what is widely understood, it
   would have been right for the wrong reason and nothing would have recorded the
-  difference.
+  difference. One witness is the independently dated 1942 Benziger printing.
+  The other is the later composite's 1951-1954 body, not an exact 1920 printing;
+  it corroborates the same structural negative and is never counted as
+  target-edition wording.
 - >-
-  THE TWO PRE-1955 WITNESSES DISAGREE ABOUT THE HOUR RUBRIC, AND THIS FILE'S
+  THE TWO PRE-1955 WITNESS BODIES DISAGREE ABOUT THE HOUR RUBRIC, AND THIS FILE'S
   LARGEST DEPARTURE RESTS ON IT. The `easter-vigil` row below argues from the
-  general rubric De hora celebrandi Missam, which the 1920 typical edition prints
-  as `Missa privata saltem post Matutinum et Laudes quacumque hora ab aurora
-  usque ad meridiem dici potest` [MissaleRomanum1920_djvu.txt 9710-9713]. The
+  general rubric De hora celebrandi Missam, which the later composite's
+  1951-1954 body prints as `Missa privata saltem post Matutinum et Laudes
+  quacumque hora ab aurora usque ad meridiem dici potest`
+  [MissaleRomanum1920_djvu.txt 9710-9713]. The
   1942 Benziger prints the SAME title with a WIDER window - `ab una hora ante
   auroram usque ad unam horam post meridiem` [ia-djvu-ocr-724a04fa 5248-5250] -
   which is the measure of canon 821 of the 1917 Code rather than the older
-  rubric. So `the pre-1955 book allows Mass only from dawn to noon` is true of
-  the 1920 printing and NOT of every pre-1955 printing, and this file says so
-  rather than letting one witness stand for a whole state of the rite. The
+  rubric. So `this pre-1955 witness body allows Mass only from dawn to noon` is
+  true of the later composite's body and NOT of every pre-1955 printing, and
+  this file says so rather than letting one witness stand for a whole state of
+  the rite. The
   conclusion the row draws is untouched, because one hour after noon is still
   not the night the reform moved the Vigil to; the reasoning is narrowed, and the
   narrowing is recorded because the next reader would otherwise inherit the
@@ -205,7 +394,7 @@ open_collation_items:
 - >-
   LOCI IN THIS FILE ARE PINNED TO BYTES, BECAUSE INTERNET ARCHIVE DERIVATIVES ARE
   REGENERATED. `src/sources/inventories/roman-holy-week-acts-v1.toml` records the
-  1920 witness as `MissaleRomanum1920_djvu.txt, 123278 lines, 2918085 bytes`. The
+  later composite as `MissaleRomanum1920_djvu.txt, 123278 lines, 2918085 bytes`. The
   copy fetched on 2026-08-01 from the same item is 119621 lines and 2932349
   bytes, so every line number pinned against the older derivative resolves
   somewhere else in the newer one, or nowhere. Nothing has been changed in that
@@ -213,7 +402,7 @@ open_collation_items:
   its loci and lands on the wrong page knows why. Every locus THIS file states
   carries the sha256 of the bytes it was read from.
 
-  FOUR OF THIS FILE'S OWN 1920 LOCI WERE CHECKED AGAINST THE NEW BYTES AND ALL
+  FOUR OF THIS FILE'S OWN COMPOSITE-ARTIFACT LOCI WERE CHECKED AGAINST THE NEW BYTES AND ALL
   FOUR PASSAGES ARE THERE, at drifts of +96, -67, -204 and -461 lines
   [src/sources/inventories/pre-1955-rubrics-sources-v1.toml, `derivative_hazard`].
   The drift changes sign and grows through the book, so no constant converts the
@@ -259,41 +448,76 @@ sections:
       name: Dominica in Palmis
       registry: 1962-T-palm-sunday
       season: holy-week
-      departure: renamed
+      ordinary_frame:
+        applicability: unavailable
+        basis: >-
+          This row withholds the whole bundled Palm Sunday entry because its
+          blessing and procession are known to be the reformed service, while
+          the boundary around the following Mass has not been collated or
+          represented. Applying the ordinary frame to this unavailable bundle
+          would present the 1861 Ordinary as though the withheld pre-1955 bundle
+          had been established. The structural difference and its pre-1955 loci are
+          recorded at roman-holy-week-acts-v1.toml under
+          `palmis.benedictio.*` and `palmis.distributio.*`.
+      departure: replaced
+      act: maxima-redemptionis-1955
       basis: >-
-        The 1962 book heads the day Dominica II Passionis seu in Palmis, and that
-        title is the reform's own: Maxima Redemptionis fixes it in the sentence
-        that says when the new Order begins, `Novus hic Ordo servari debet a die
-        25 Martii, dominica II Passionis seu in palmis, anni 1956`
-        [roman-holy-week-acts-v1.toml, departure maxima-redemptionis-1955/renamed,
-        act cited at aas-47-1955 51853-51854]. The pre-1955 witnesses head it
-        Dominica in Palmis [same file, mass dominica-in-palmis, attested by
-        pustet-1862 28094 and missale-romanum-1920 31875-31877].
+        The inherited entry includes the reformed blessing and procession of
+        palms. The pre-1955 books instead print the fourteen-unit service
+        recorded under `palmis.benedictio.*` and `palmis.distributio.*`, while
+        eleven of those units are absent from the 1962 witness
+        [roman-holy-week-acts-v1.toml]. The Mass formulary after the procession
+        has not been collated separately. Because the base bundles the known-
+        different service with that Mass, serving the base entry would present
+        reformed Holy Week material under a pre-1955 heading; this row therefore
+        withholds the whole bundled entry until the boundary can be represented.
       also:
+      - departure: renamed
+        act: maxima-redemptionis-1955
+        basis: >-
+          The 1962 book heads the day Dominica II Passionis seu in Palmis, and
+          that title is the reform's own: Maxima Redemptionis fixes it in the
+          sentence that says when the new Order begins, `Novus hic Ordo servari
+          debet a die 25 Martii, dominica II Passionis seu in palmis, anni 1956`
+          [roman-holy-week-acts-v1.toml, departure
+          maxima-redemptionis-1955/renamed, act cited at aas-47-1955
+          51853-51854]. The pre-1955 witnesses head it Dominica in Palmis [same
+          file, mass dominica-in-palmis, attested by pustet-1862 28094 and
+          missale-romanum-later-composite-pre-1955-body 31875-31877].
       - departure: reslotted
+        act: maxima-redemptionis-1955
         basis: >-
           The Gospel of the entry into Jerusalem, Matthew 21, 1-9, is the same
           text in a different place in the service. The pre-1955 books read it
-          BEFORE the blessing prayers [missale-romanum-1920 32017-32022,
+          BEFORE the blessing prayers
+          [missale-romanum-later-composite-pre-1955-body 32017-32022,
           pustet-1862 28242-28247]; the 1962 book reads it AFTER the distribution
           of palms, under its own heading [roman-holy-week-acts-v1.toml, unit
           palmis.benedictio.evangelium]. Neither book is missing it, which is why
           this is `reslotted` and not `absent` — the case the vocabulary was
           extended to name.
-      propers:
-      - name: Placeholder
-        source: composed
-        text: |
-          The Mass of Palm Sunday is served from roman-1962 and is not restated
-          here. This entry states the day's pre-1955 heading and the placement of
-          its Gospel; it claims nothing about the Mass formulary, which no
-          departure has been established for.
+      text_status:
+        state: unavailable
+        scope: missal-formulary
+        reasons:
+        - kind: witness-gap
+          source_id: artifact.catholic-church.missale-romanum.vatican-typica-1920.missale-romanum-1920-text-aa646196
 
     - key: blessing-of-palms
       name: Benedictio Palmarum
       registry: pre-1955-T-blessing-of-palms
       season: holy-week
+      ordinary_frame:
+        applicability: none
+        basis: >-
+          This is the blessing and distribution of palms which precedes the
+          Mass, not a Mass formulary to be seated in the Ordo Missae. Its
+          fourteen units, including its own Preface and Sanctus, are recorded
+          from the 1862 witness and the later composite's 1951-1954 body at
+          roman-holy-week-acts-v1.toml under `palmis.benedictio.*` and
+          `palmis.distributio.*`.
       departure: added
+      act: maxima-redemptionis-1955
       basis: >-
         The pre-1955 blessing of palms is a service of fourteen units the 1962
         book does not print, and it is `added` rather than a difference within
@@ -301,23 +525,15 @@ sections:
         fourteen are recorded `absent` at the 1955 station with a per-unit basis
         [roman-holy-week-acts-v1.toml, units palmis.benedictio.* and
         palmis.distributio.*, each attested by pustet-1862 and
-        missale-romanum-1920 with loci]. Among them are a Lectio from Exodus, a
+        missale-romanum-later-composite-pre-1955-body with loci]. Among them are a Lectio from Exodus, a
         Graduale, a full Preface and Sanctus, and six orations; the 1962 blessing
         runs from the antiphon straight to a single blessing prayer.
-      propers:
-      - name: Placeholder
-        source: composed
-        text: |
-          Fourteen units, none transcribed. The unit-level record — each one's
-          slot, its printed name, its incipit and its lines in the 1920 and 1862
-          witnesses — lives in src/sources/inventories/roman-holy-week-acts-v1.toml
-          under the ids palmis.benedictio.* and palmis.distributio.*, and is
-          referenced rather than copied here.
-
-          The text is absent for the reason this file's `verification` gives: the
-          only pre-1955 readings this project holds are OCR, at a measured error
-          rate of 38 corrections in 99 orations, and are graded as a discovery
-          aid rather than a witness to wording.
+      text_status:
+        state: unavailable
+        scope: missal-formulary
+        reasons:
+        - kind: witness-gap
+          source_id: artifact.catholic-church.missale-romanum.vatican-typica-1920.missale-romanum-1920-text-aa646196
 
     - key: chrism-mass
       name: Missa Chrismatis
@@ -330,10 +546,11 @@ sections:
         pre-1955 witnesses were fetched whole and read locally, and each prints
         EXACTLY ONE MASS ON HOLY THURSDAY.
 
-        In the 1920 typical edition the day is headed `Feria V IN CCENA DOMINI`,
-        `Statio ad S. Joannem in Laterano - duplex I classis`, and the span from
-        that heading to the heading `FERIA VI IN PARASCEVE` contains ONE
-        `Introitus`, `Gal. 6, 14`, `Nos autem gloriari`
+        In the regenerated OCR of the later composite's 1951-1954 body the day
+        is headed `Feria V IN CCENA DOMINI`, `Statio ad S. Joannem in Laterano -
+        duplex I classis`, and the span from that heading to the heading `FERIA
+        VI IN PARASCEVE` contains ONE `Introitus`, `Gal. 6, 14`, `Nos autem
+        gloriari`
         [MissaleRomanum1920_djvu.txt 34612-35196, the single Introit at 34620,
         the next day's heading at 35197; sha256
         eaf3ba379d4d9c0227ce991ac34be66e5177ab52642a8e0376776be81fd0041a,
@@ -350,10 +567,11 @@ sections:
         sha256 that artifact record already carries, so this reading is against
         the exact object the source library registers].
 
-        Neither witness prints the string `Chrismatis` anywhere in Holy Week. The
-        eight occurrences of it in the 1920 witness and the eight in the 1942 one
-        are the infusion of chrism into the font at the Easter Vigil and the
-        appended rites of baptism and confirmation, and none is a Mass.
+        Neither witness body prints the string `Chrismatis` anywhere in Holy
+        Week. The eight occurrences of it in the later composite's pre-reform
+        body and the eight in the 1942 one are the infusion of chrism into the
+        font at the Easter Vigil and the appended rites of baptism and
+        confirmation, and none is a Mass.
 
         WHAT THIS DOES NOT SAY. It is a statement about THE MISSAL and about
         nothing else. In the pre-1955 rite the oils are blessed by a bishop
@@ -369,18 +587,19 @@ sections:
         fact that survives character-level OCR error; the 38-in-99 correction rate
         this file's `verification` records is a rate of WORD errors, and a second
         Mass formulary cannot be spelt away.
-      propers:
-      - name: Placeholder
-        source: composed
-        text: |
-          Nothing is served for this key under this recension. The base's Chrism
-          Mass is removed from the day, which is the whole content of the row.
+      text_status:
+        state: unavailable
+        scope: missal-formulary
+        reasons:
+        - kind: witness-gap
+          source_id: artifact.catholic-church.missale-romanum.vatican-typica-1920.missale-romanum-1920-text-aa646196
 
     - key: mass-of-the-lords-supper
       name: Feria V in Coena Domini
       registry: 1962-T-mass-of-the-lords-supper
       season: holy-week
       departure: moved
+      act: maxima-redemptionis-1955
       basis: >-
         Maxima Redemptionis moved the Mass of the Lord's Supper to the evening;
         section 7 of the decree carries the provision [aas-47-1955 51905-51908,
@@ -391,35 +610,58 @@ sections:
         hour for the other three. It is recorded moved because the decree says it
         moved, and the origin is left unstated rather than inferred from the
         general rubric on the hours of Mass.
-      propers:
-      - name: Placeholder
-        source: composed
-        text: |
-          The formulary is served from roman-1962. This entry states only that
-          the hour moved, and does not claim the pre-1955 hour, which no witness
-          read here fixes in words.
+      text_status:
+        state: unavailable
+        scope: missal-formulary
+        reasons:
+        - kind: witness-gap
+          source_id: artifact.catholic-church.missale-romanum.vatican-typica-1920.missale-romanum-1920-text-aa646196
 
     - key: good-friday
       name: Feria VI in Parasceve
       registry: 1962-T-good-friday
       season: triduum
-      departure: moved
+      ordinary_frame:
+        applicability: none
+        basis: >-
+          Feria VI in Parasceve is the exceptional Good Friday service, not a
+          Mass formulary to be seated in the Ordinary transcribed from the 1861
+          lay missal. Its pre-1955 identity and hour were read at
+          missale-romanum-later-composite-pre-1955-body 35401-35408 and
+          pustet-1862 31916, and its known
+          unit-level differences are recorded at roman-holy-week-acts-v1.toml
+          under `parasceve.*`.
+      departure: replaced
+      act: editio-typica-1962
       basis: >-
-        The pre-1955 books celebrate the liturgy of Good Friday in the morning,
-        in choir after None [roman-holy-week-acts-v1.toml, mass
-        feria-vi-in-parasceve, attested by pustet-1862 31916 and
-        missale-romanum-1920 35401-35403 with the hour at 35408]. Maxima
-        Redemptionis moved it to the afternoon in terms: `Feria VI in Passione et
-        Morte Domini solemnis actio liturgica celebratur horis postmeridianis`
-        [aas-47-1955 51910-51911].
+        The solemn prayer for the Jews differs in its invitatory, rubric and
+        oration between the pre-1955 witnesses and the inherited 1962 entry
+        [roman-holy-week-acts-v1.toml, units
+        parasceve.orationes.pro-iudaeis-*]. The correspondence of the complete
+        service has not been established. Serving the inherited formulary would
+        therefore present known-different words under the pre-1955 heading, so
+        this row serves no formulary wording.
       also:
+      - departure: moved
+        act: maxima-redemptionis-1955
+        basis: >-
+          The pre-1955 books celebrate the liturgy of Good Friday in the
+          morning, in choir after None [roman-holy-week-acts-v1.toml, mass
+          feria-vi-in-parasceve, attested by pustet-1862 31916 and
+          missale-romanum-later-composite-pre-1955-body 35401-35403 with the
+          hour at 35408]. Maxima
+          Redemptionis moved it to the afternoon in terms: `Feria VI in
+          Passione et Morte Domini solemnis actio liturgica celebratur horis
+          postmeridianis` [aas-47-1955 51910-51911].
       - departure: renamed
+        act: maxima-redemptionis-1955
         basis: >-
           The same sentence renames the day. The pre-1955 heading is Feria VI in
           Parasceve; the reformed books head it Feria VI in Passione et Morte
           Domini and print that title in their running heads
           [roman-holy-week-acts-v1.toml, departure maxima-redemptionis-1955/renamed].
       - departure: unrecorded
+        act: editio-typica-1962
         basis: >-
           The solemn prayer for the Jews differs between the witnesses in its
           invitatory, its rubric and its oration, and NO ACT FOR THE CHANGE WAS
@@ -429,50 +671,64 @@ sections:
           editio-typica-1962/unrecorded, units parasceve.orationes.pro-iudaeis-*].
           It is carried here rather than dropped so that a page serving pre-1955
           Good Friday cannot claim the base's text was checked for these units.
-      propers:
-      - name: Placeholder
-        source: composed
-        text: |
-          The formulary is served from roman-1962. This entry states the day's
-          pre-1955 heading and hour, and flags the solemn prayer for the Jews as
-          differing with no act established for the difference.
+      text_status:
+        state: unavailable
+        scope: missal-formulary
+        reasons:
+        - kind: witness-gap
+          source_id: artifact.catholic-church.missale-romanum.vatican-typica-1920.missale-romanum-1920-text-aa646196
 
     - key: easter-vigil
       name: 'Sabbato Sancto'
       registry: 1962-T-easter-vigil
       season: triduum
-      departure: moved
-      basis: >-
-        The largest single departure in this file. The pre-1955 service is held on
-        Saturday MORNING: it begins `Dicta Nona in Choro`, and the general rubric
-        De hora celebrandi Missam allows Mass only `ab aurora usque ad meridiem`
-        [missale-romanum-1920 37276 and 9614-9615, pustet-1862 33479 and
-        8151-8152; recorded at roman-holy-week-acts-v1.toml, mass sabbato-sancto,
-        with the reasoning for the hour set out in `hour_basis` because no rubric
-        in either witness fixes an hour in words]. Section 9 of Maxima
-        Redemptionis moved it to the night, and the act history calls the evidence
-        for this its strongest single piece: the decree's sentence at aas-47-1955
-        51915-51921 is reproduced WORD FOR WORD in the 1962 witness at
-        benziger-iuxta-typicam-1962 40203-40212.
-      also:
-      - departure: replaced
+      ordinary_frame:
+        applicability: unavailable
         basis: >-
-          The lessons are not the same set. The pre-1955 books print TWELVE
-          prophecies; the reformed book prints four, and says so: `Leguntur vero
-          quatuor sequentes lectiones, cum suis canticis, et orationibus`
-          [benziger-iuxta-typicam-1962 41350-41351]. Eight of the twelve are
-          recorded `absent` with a per-unit basis, four are `reslotted` under a new
-          name and in a new series, and the third of the four is additionally
-          `replaced`, being the same chapter shortened at the front — Is. 4, 1-6
-          against Is. 4, 2-6 [roman-holy-week-acts-v1.toml, units
-          sabbato.prophetiae.01 through .12].
+          The pre-1955 Holy Saturday bundle has twelve prophecies, a Mass with
+          no Postcommunion, and Vespers where the reformed entry has another
+          structure. None of that pre-1955 wording is transcribed here, and the
+          service has not been separated into a frame that can safely borrow the
+          1861 Ordinary. The established structure and witness loci are recorded
+          at roman-holy-week-acts-v1.toml under `sabbato.prophetiae.01` through
+          `.12`, `sabbato.missa.*`, and `sabbato.vesperae.*`.
+      departure: replaced
+      act: maxima-redemptionis-1955
+      basis: >-
+        The pre-1955 books print twelve prophecies where the reformed book
+        prints four lessons, suppress a Postcommunion, and follow the Mass with
+        Vespers rather than Lauds [roman-holy-week-acts-v1.toml, units
+        sabbato.prophetiae.01 through .12, sabbato.missa.* and
+        sabbato.vesperae.*]. Those are known structural and textual differences,
+        while no pre-1955 wording has been verified for service here. The
+        inherited reformed Vigil is therefore replaced by a typed unavailable
+        formulary state.
+      also:
+      - departure: moved
+        act: maxima-redemptionis-1955
+        basis: >-
+          The largest single departure in this file. The pre-1955 service is
+          held on Saturday MORNING: it begins `Dicta Nona in Choro`, and the
+          general rubric De hora celebrandi Missam allows Mass only `ab aurora
+          usque ad meridiem`
+          [missale-romanum-later-composite-pre-1955-body 37276 and 9614-9615,
+          pustet-1862 33479 and 8151-8152; recorded at
+          roman-holy-week-acts-v1.toml, mass sabbato-sancto, with the reasoning
+          for the hour set out in `hour_basis` because no rubric in either
+          witness fixes an hour in words]. Section 9 of Maxima Redemptionis
+          moved it to the night, and the act history calls the evidence for
+          this its strongest single piece: the decree's sentence at
+          aas-47-1955 51915-51921 is reproduced WORD FOR WORD in the 1962
+          witness at benziger-iuxta-typicam-1962 40203-40212.
       - departure: renamed
+        act: maxima-redemptionis-1955
         basis: >-
           The day keeps its name and the liturgy within it is renamed: the decree
           speaks of the `solemnis paschalis vigilia` [aas-47-1955 51915] and the
           reformed book prints SABBATO SANCTO with DE VIGILIA PASCHALI beneath it
           [benziger-iuxta-typicam-1962 40187, 40195].
       - departure: reslotted
+        act: maxima-redemptionis-1955
         basis: >-
           The case this repository's recension model was built to carry, and the
           one that generated false absences before it existed. The pre-1955 Mass
@@ -486,16 +742,64 @@ sections:
           keyed on (mass, proper-name) asked the pre-1955 book for a slot the
           reform created, got nothing, and wrote down an absence; the words were
           on the page the whole time, in another slot.
-      propers:
-      - name: Placeholder
-        source: composed
-        text: |
-          Twelve prophecies against four lessons, a Mass without a Postcommunion,
-          and Vespers rather than Lauds — none of it transcribed. The unit-level
-          record lives in src/sources/inventories/roman-holy-week-acts-v1.toml
-          under the ids sabbato.prophetiae.01 through .12, sabbato.missa.* and
-          sabbato.vesperae.*, and is referenced rather than copied.
+      text_status:
+        state: unavailable
+        scope: missal-formulary
+        reasons:
+        - kind: witness-gap
+          source_id: artifact.catholic-church.missale-romanum.vatican-typica-1920.missale-romanum-1920-text-aa646196
 
-          A page serving this day from the base is serving the REFORMED Easter
-          Vigil under a pre-1955 heading. The `also` rows above are what stop that
-          being claimed as checked.
+  marian:
+    kind: marian
+    masses:
+
+    - key: beatae-mariae-virginis-reginae
+      name: Beatae Mariae Virginis Reginae
+      registry: '1962-05-31'
+      date: 05-31
+      rank: II
+      kind: marian
+      departure: absent
+      basis: >-
+        The inherited `roman-1962` entry is absent from the registered
+        pre-reform witness body. In
+        `missale-romanum-1962-facsimile-rights-v1.toml`,
+        `[the_1920_substitution.where_it_cannot]`, item 3, records the Queenship
+        of the Blessed Virgin Mary as absent `[verified]`, and
+        `[the_1920_substitution.a_defect_in_the_1920_artifact_itself].finding`
+        independently repeats that negative. The artifact record's
+        `rights_basis` bounds the witness body to 1951-1954 and records
+        `Reginae` only in old `pro aliquibus locis` indults at physical lines
+        117131 and 117423, not as this feast; the measurements were reverified
+        on 2026-08-02 against its recorded SHA-256. The same inventory item's
+        St Pius X negative was corrected as false, so this row relies only on
+        the separately retained Queenship result and makes no inference about
+        St Pius X. No institution act is established in the acts inventory, so
+        `act` is intentionally unset.
+
+  sanctoral:
+    kind: sanctoral
+    masses:
+
+    - key: s-ioseph-opificis-sponsi-beatae-mariae
+      name: S. Ioseph Opificis, Sponsi Beatae Mariae Virginis, Confessoris
+      registry: '1962-05-01'
+      date: 05-01
+      rank: I
+      kind: sanctoral
+      departure: absent
+      basis: >-
+        The inherited `roman-1962` entry is absent from the registered
+        pre-reform witness body. In
+        `missale-romanum-1962-facsimile-rights-v1.toml`,
+        `[the_1920_substitution.where_it_cannot]`, item 3, records St Joseph the
+        Worker as absent `[verified]`, and
+        `[the_1920_substitution.a_defect_in_the_1920_artifact_itself].finding`
+        independently repeats that negative. The artifact record's
+        `rights_basis` bounds the witness body to 1951-1954 and records
+        `Opific` as returning zero hits; the measurement was reverified on
+        2026-08-02 against its recorded SHA-256. The same inventory item's St
+        Pius X negative was corrected as false, so this row relies only on the
+        separately retained St Joseph result and makes no inference about St
+        Pius X. No institution act is established in the acts inventory, so
+        `act` is intentionally unset.

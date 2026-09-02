@@ -1,0 +1,497 @@
+# Exact inherited-ledger accounting for the historical pre-1955 recension.
+#
+# This sidecar carries no English text and does not restate the parent ledger.
+# The effective pre-1955 calendar replaces the restored Palm Sunday, Good
+# Friday, and Easter Vigil formularies source-side, and removes the later
+# Chrism Mass, St Joseph the Worker, and the Queenship entirely. (The parent
+# English ledger carries no Queenship row.) Each row below suppresses one exact inherited
+# roman-1962 ledger record that therefore cannot answer a source slot in this
+# child recension.
+
+translations_schema = 1
+record_type = "calendar-proper-translations"
+calendar = "roman-pre-1955"
+target = "src/sources/calendars/roman-pre-1955/propers.yaml"
+recorded_on = "2026-08-27"
+merge = "Inherit the roman-1962 translation ledger, then suppress only the exact parent records listed as inherited_inapplicable."
+verification = "Text-free recension accounting. Every target is an inherited parent record, its raw child mass is a source-authored departure whose exact type is named by reason, and its exact identity is absent from the effective child source slots."
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "chrism-mass"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+reason = "recension-absent"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "s-ioseph-opificis-sponsi-beatae-mariae"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+reason = "recension-absent"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "s-ioseph-opificis-sponsi-beatae-mariae"
+form_id = "main"
+proper = "Secret"
+cycle = "all"
+occurrence = 1
+reason = "recension-absent"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "s-ioseph-opificis-sponsi-beatae-mariae"
+form_id = "main"
+proper = "Postcommunion"
+cycle = "all"
+occurrence = 1
+reason = "recension-absent"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "chrism-mass"
+form_id = "main"
+proper = "Secret"
+cycle = "all"
+occurrence = 1
+reason = "recension-absent"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "chrism-mass"
+form_id = "main"
+proper = "Postcommunion"
+cycle = "all"
+occurrence = 1
+reason = "recension-absent"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "palm-sunday"
+form_id = "main"
+proper = "Blessing of the Palms"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "palm-sunday"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "palm-sunday"
+form_id = "main"
+proper = "First Antiphon at the Distribution of Palms"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "palm-sunday"
+form_id = "main"
+proper = "Postcommunion"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "palm-sunday"
+form_id = "main"
+proper = "Responsory at the Entrance into the Church"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "palm-sunday"
+form_id = "main"
+proper = "Second Antiphon at the Distribution of Palms"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "palm-sunday"
+form_id = "main"
+proper = "Secret"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "palm-sunday"
+form_id = "main"
+proper = "Versicle at the Beginning of the Procession"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "good-friday"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "good-friday"
+form_id = "main"
+proper = "Improperia"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "good-friday"
+form_id = "main"
+proper = "Showing of the Cross"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "easter-vigil"
+form_id = "main"
+proper = "Blessing of the Baptismal Water"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "easter-vigil"
+form_id = "main"
+proper = "Blessing of the New Fire"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "easter-vigil"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "easter-vigil"
+form_id = "main"
+proper = "Lumen Christi"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "easter-vigil"
+form_id = "main"
+proper = "Oration after the First Prophecy"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "easter-vigil"
+form_id = "main"
+proper = "Oration after the Fourth Prophecy"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "easter-vigil"
+form_id = "main"
+proper = "Oration after the Second Prophecy"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "easter-vigil"
+form_id = "main"
+proper = "Oration after the Third Prophecy"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "easter-vigil"
+form_id = "main"
+proper = "Postcommunion"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "easter-vigil"
+form_id = "main"
+proper = "Secret"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "palm-sunday"
+form_id = "main"
+proper = "Procession Antiphon"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "palm-sunday"
+form_id = "main"
+proper = "Procession Antiphon"
+cycle = "all"
+occurrence = 2
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "entry"
+mass = "palm-sunday"
+form_id = "main"
+proper = "Procession Antiphon"
+cycle = "all"
+occurrence = 3
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "palm-sunday"
+form_id = "main"
+proper = "Procession Antiphon"
+cycle = "all"
+occurrence = 5
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "palm-sunday"
+form_id = "main"
+proper = "Procession Antiphon"
+cycle = "all"
+occurrence = 6
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "palm-sunday"
+form_id = "main"
+proper = "Procession Antiphon"
+cycle = "all"
+occurrence = 7
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "palm-sunday"
+form_id = "main"
+proper = "Hymn to Christ the King"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "palm-sunday"
+form_id = "main"
+proper = "Oration to Conclude the Procession"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "good-friday"
+form_id = "main"
+proper = "Antiphons at the Translation of the Blessed Sacrament"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "good-friday"
+form_id = "main"
+proper = "First Prayer after Communion"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "good-friday"
+form_id = "main"
+proper = "Prayer after the Prostration"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "good-friday"
+form_id = "main"
+proper = "Second Prayer after Communion"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "good-friday"
+form_id = "main"
+proper = "Solemn Intercessions"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "good-friday"
+form_id = "main"
+proper = "Third Prayer after Communion"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "easter-vigil"
+form_id = "main"
+proper = "Blessing of the Lighted Candle"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "easter-vigil"
+form_id = "main"
+proper = "Blessing of the Paschal Candle"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "easter-vigil"
+form_id = "main"
+proper = "Exsultet (Praeconium paschale)"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "easter-vigil"
+form_id = "main"
+proper = "Litany of the Saints, first part"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "easter-vigil"
+form_id = "main"
+proper = "Litany of the Saints, second part"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "easter-vigil"
+form_id = "main"
+proper = "Prayer at the Font"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"
+
+[[inherited_inapplicable]]
+record = "untranslated"
+mass = "easter-vigil"
+form_id = "main"
+proper = "Renewal of Baptismal Promises"
+cycle = "all"
+occurrence = 1
+reason = "recension-replaced"
+basis = "calendar-departure"

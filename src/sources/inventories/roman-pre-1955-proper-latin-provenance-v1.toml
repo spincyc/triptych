@@ -1,0 +1,12 @@
+schema = "triptych-proper-latin-provenance/v1"
+calendar = "roman-pre-1955"
+language = "la"
+policy = "guidance/liturgical-text-publication-policy.md"
+scope = "Each direct text node is hash-bound here. Defaults are deliberately unresolved; witness identity never supplies publication permission."
+entries = []
+
+[defaults]
+provenance_status = "unresolved"
+publication_status = "unresolved"
+publication_basis = "unresolved"
+surfaces = []

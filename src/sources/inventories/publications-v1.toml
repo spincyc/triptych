@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gpt"
-audited_on = "2026-08-28"
+audited_on = "2026-08-27"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 138
-source_surface_file_count = 2074
-snapshot = "sha256:51136390c887b954c20d6fc6b4930061de7fb28711fd1b2fb5df6c5191731c8b"
+source_surface_file_count = 2075
+snapshot = "sha256:e8f2ee47f60adc2f460650fbe33950489ca39c14992e548cf41c2cd91c2a8e72"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -3031,7 +3031,7 @@ owners = ["articles/faith/last-supper-calvary-and-the-mass"]
 
 [[files]]
 path = "src/gpt/articles/faith/last-supper-calvary-and-the-mass/research/source-bindings.toml"
-sha256 = "d6c34500709cea0580761b2947e8712ba060bcfdb22445a2ee298c1e49c36804"
+sha256 = "9b2d9869db7cbf00246c8e50b6afaba2770ba9ecddfbd0e6f17e33e8aa167bca"
 kind = "source-binding"
 owners = ["articles/faith/last-supper-calvary-and-the-mass"]
 
@@ -5766,8 +5766,14 @@ kind = "research-record"
 owners = ["owner.curriculums.ecclesiastical-latin"]
 
 [[files]]
+path = "src/gpt/curriculums/ecclesiastical-latin/research/liturgical-rights-allowlist-v1.toml"
+sha256 = "7e68a7c72c53435c23a3646d27b02e6e6be442cfca841bd58415d5144d951d77"
+kind = "research-record"
+owners = ["owner.curriculums.ecclesiastical-latin"]
+
+[[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/research/passage-inventory.md"
-sha256 = "f7a18da4e0489ca9aaf067fc86ac4b318e890d19835d1fcb118ce57dcb8edbf3"
+sha256 = "e8ad2eb410120971ae808cf220f235cf4e6a38276c0746a12e84f9354a500a2a"
 kind = "research-record"
 owners = ["owner.curriculums.ecclesiastical-latin"]
 
@@ -5779,7 +5785,7 @@ owners = ["owner.curriculums.ecclesiastical-latin"]
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/research/production-manifest.md"
-sha256 = "dd11c1a86c8b6db53d8e8b958778336a4db2dd6aaa694ed65d55fdb085d389bf"
+sha256 = "d155c6d36402c9236955b2b5dc4bf38a0ee5afe7493da45ec13a78a60afa6e1f"
 kind = "research-record"
 owners = ["owner.curriculums.ecclesiastical-latin"]
 
@@ -5899,7 +5905,7 @@ owners = ["owner.curriculums.ecclesiastical-latin"]
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/shared/content/readers/ordinary-latin.tex"
-sha256 = "362985722f6acb5a2870009f85a2902d6bcb3ac95e0c074f56dc0c1171dca3d5"
+sha256 = "4c5d6db3b7c82b6cd8f91abbf128b5faa28aa85378a5f9b10699c95cc7593dca"
 kind = "shared-source-or-render"
 owners = ["owner.curriculums.ecclesiastical-latin"]
 
@@ -5929,13 +5935,13 @@ owners = ["owner.curriculums.ecclesiastical-latin"]
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/shared/content/volume1/all.tex"
-sha256 = "69818e9172922754c22f17f7d32d35cab6ee5172e9c07137dae0715afbaa461a"
+sha256 = "3ae536efbbaf94b8d578630236bffc1c67adba6e52715a3a6220d5e12b00e436"
 kind = "shared-source-or-render"
 owners = ["owner.curriculums.ecclesiastical-latin"]
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/shared/content/volume2/all.tex"
-sha256 = "1c5c028b09c9c0a822402ad45941a8351567a0138193efb378a76e111b77b710"
+sha256 = "d39afef812a1bd32978f72fd3a6f600f3ea3769962feba6f61e1f13c441c6d39"
 kind = "shared-source-or-render"
 owners = ["owner.curriculums.ecclesiastical-latin"]
 
@@ -5965,13 +5971,13 @@ owners = ["owner.curriculums.ecclesiastical-latin"]
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume1/all.tex"
-sha256 = "aa7d8998f2d0af7d3fe6281b0078b6570a8ebd965b2b031b7b81b8d2e078c993"
+sha256 = "95b1ce554ad91a37de3342fb32f2b20bea31a020b747820128157a1056858a28"
 kind = "shared-source-or-render"
 owners = ["owner.curriculums.ecclesiastical-latin"]
 
 [[files]]
 path = "src/gpt/curriculums/ecclesiastical-latin/shared/exercises/volume2/all.tex"
-sha256 = "5e33ab1f1fefda98fb4a3cd690951d01b040273cca2f45993bfea60a25bba340"
+sha256 = "d63a7924562975b98ea18e1fbcfb29f17038b3895a771c6dbaeb5620d35a2013"
 kind = "shared-source-or-render"
 owners = ["owner.curriculums.ecclesiastical-latin"]
 
@@ -6985,7 +6991,7 @@ owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
 [[files]]
 path = "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/source-bindings.toml"
-sha256 = "dd1e132664b74f7f4eabd710df2f1983809a10c6813cb3a2a5272be0d9a5c242"
+sha256 = "3aa5cd8c8166ec5906fe9320d02346460e4eb942069fc2b677c79625d91034a8"
 kind = "source-binding"
 owners = ["history/catholic-exorcism/01-history-and-current-practice"]
 
@@ -8413,7 +8419,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost/research/scope.md"
-sha256 = "7c2c341de6f5c27c1a829a577cbedd14df82c80b7fcd0cf84f067594f6b76297"
+sha256 = "00796e98b650e380d3549d8140d89e5c392619db9bbaf8fae85af6f59bfd57ea"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost"]
 
@@ -8485,7 +8491,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost/propers/verified.md"
-sha256 = "85fd6828196729234ba78d81e87222cffbc3b41d50fb21883eadaf0e36b5a8e1"
+sha256 = "7607fb4ad2c366f5100b9f7e052500ce7dc9dab7624edc52c54ea94fec66d4b7"
 kind = "proper-verification"
 owners = ["liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost"]
 
@@ -8575,7 +8581,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost/research/source-bindings.toml"
-sha256 = "88f07bcf08ae227a03d353b65b7c660d075be5d45a43c8b53f18b05cab653fb7"
+sha256 = "7e9af0fe1b244e45eaa957ab19711999e280d2eebfe3b295294cda5a0612a41d"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost"]
 
@@ -8743,7 +8749,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost"
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost/research/source-bindings.toml"
-sha256 = "60ac7734924ed225928e787098937399d1cc706fd275a15c39d077eaceb22a00"
+sha256 = "7cf9ae0e1e539ca6b7d1e2e48d8b3628844b22a67193a0ec42951afa93e73c41"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost"]
 
@@ -8857,7 +8863,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost/research/source-bindings.toml"
-sha256 = "f86ba76b722e4539e2d4a9a48793dd0b35ff7755e0217892d9a716609af4f567"
+sha256 = "74635b338529a738092079512da66408648344eafe6fd731012c467706d04153"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost"]
 
@@ -8971,7 +8977,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecos
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost/research/source-bindings.toml"
-sha256 = "c48129760170d9ff6fc2416bb61127e0357200f9453a9779a1b1cf0a9df2f927"
+sha256 = "1eadf5bba6c72dc2cb4a155645e65d22a9188bb611cf9c69c240d83e55296b79"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost"]
 
@@ -9091,7 +9097,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecos
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/research/source-bindings.toml"
-sha256 = "faef3ce568f928f23ee5ce5b8252db701bef4661c1f3247ed2e28c3720529ca7"
+sha256 = "e7c9243ba34ef18d229ccf21753c0bb0c61e218169500e9534aedbbad9e4720b"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"]
 
@@ -12223,13 +12229,13 @@ owners = ["owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/main.tex"
-sha256 = "09c050a88f412d556e5cd110c48c2b98d70d6692f645c63732873180b168b4e4"
+sha256 = "5bca8730ae5cb7c47b174ad4728353927dceed7972d35e20d82bec258f833931"
 kind = "publication-main"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/research/calendar-inventory.md"
-sha256 = "4025cb493bcafa813e8b7f9901065a934a2992cbf4674f93d7271042f633b5d3"
+sha256 = "0f4b9a8113aa0e7e6df683461ab4df8ae448c004b6065d85d08afc74849e5647"
 kind = "research-record"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
 
@@ -12247,7 +12253,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/research/scope.md"
-sha256 = "922e5ded483ef8ab46f187b1aed1fa529a89a693a18bc29be729c511320a65fe"
+sha256 = "2b7966fe0df6f3bfcdaaba26d4025b9f15a6ff71edd45bf24fbcc20031e84230"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
 
@@ -12259,7 +12265,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/research/source-bindings.toml"
-sha256 = "ec9d156bb33eca497747638c3db3d4160b04e2de0ee17ade1c6d6679d3663c1e"
+sha256 = "8b3a251dcd288c3228660d7c5a02ffa0ed444516dac0e4fe0170de8afbb5da7d"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
 
@@ -12301,7 +12307,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar/sections/50-general-calendar.tex"
-sha256 = "572c3f86fa3dc4044310076229179ec188c22bf968e43c169fefb13b00ce43d5"
+sha256 = "83831533498b446959d4cc775247a180d54d112cb0217d60e8b0aafebc67305f"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"]
 

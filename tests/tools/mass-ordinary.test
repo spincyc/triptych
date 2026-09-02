@@ -5,10 +5,12 @@
 #
 # TWO KINDS OF ASSERTION MATTER HERE, and neither is about a crash.
 #
-# The first is rights. Thirty-nine of the postconciliar frame's forty-eight
-# elements are withheld under a recorded reason, and an element that shows
-# nothing where a prayer belongs has told the reader that the Mass omits it. So
-# every silence must name its reason, in every form this tool prints.
+# The first is absence. Every postconciliar element missing one of this layer's
+# two languages names a precise reason; acquisition, rights, modelling,
+# outside-layer, and non-textual states must not collapse into one claim. An
+# element that shows nothing where a prayer belongs would otherwise tell the
+# reader that the Mass omits it. Every silence therefore names its reason in
+# every form this tool prints.
 #
 # The second is the seats. The slots are the missal's own statement of where a
 # proper stands, they anchor to the frame's own elements — including its
@@ -33,7 +35,7 @@ trap 'rm -rf "$sandbox"' EXIT INT TERM
 # current. It writes nothing.
 summary="$(run_tool check --calendar roman-1962 | head -1)"
 case "$summary" in
-*" sections, "*" elements, "*" witness"*" slots; "*" elements translated, "*" absent") ;;
+*"roman-1962: 6 sections, 189 elements, 2 witnesses, 0 variants, 9 slots; en 189 held/0 missing, la 112 held/77 missing; relations en antecedent/uncollated 189, la antecedent/uncollated 112; 6 target-recension exclusions"*) ;;
 *)
 	echo "unexpected summary line: $summary" >&2
 	exit 1
@@ -61,6 +63,19 @@ for path in files:
     payload = json.loads(path.read_text(encoding="utf-8"))
     assert payload["schema"] == "triptych-ordinary-structure/v1", payload["schema"]
     assert payload["advisory"], f"{path.name}: no caution about itself"
+    serialized = json.dumps(payload, ensure_ascii=False).lower()
+    for forbidden in (
+        "english-language-liturgical", "english language liturgical",
+        "international-commission-on-english", "international commission on english",
+        "licensed-free", "icel", "ellc",
+    ):
+        assert forbidden not in serialized, (path.name, forbidden)
+
+    for absence in payload["absences"]:
+        assert set(absence) == {"key", "count", "state", "kind"}, absence
+        wanted = ("rights-restricted"
+                  if absence["kind"] == "rights-withheld" else "unavailable")
+        assert absence["state"] == wanted, absence
 
     elements = {
         element["key"]: element
@@ -68,6 +83,196 @@ for path in files:
         for element in section["elements"]
     }
     assert elements, path.name
+    if payload["calendar"] == "postconciliar":
+        assert len(elements) == 59, len(elements)
+        absence_counts = {one["key"]: one["count"] for one in payload["absences"]}
+        assert absence_counts["approved-english-publication-restriction"] == 25, absence_counts
+        assert absence_counts["antecedent-held-not-carried"] == 1, absence_counts
+        assert absence_counts["antecedent-diverges-at-named-words"] == 3, absence_counts
+
+        # Independent choices remain independent. A reader selects exactly one
+        # option from each group; it must never concatenate three Penitential
+        # Acts, two Creeds, or four Eucharistic Prayers into one rite.
+        groups = {one["group"]: one for one in payload["variants"]}
+        assert set(groups) == {"penitential-act", "creed", "eucharistic-prayer"}, groups
+        assert all(one["mode"] == "one-of" for one in groups.values()), groups
+        assert [one["id"] for one in groups["penitential-act"]["options"]] == [
+            "pa-i", "pa-ii", "pa-iii",
+        ]
+        assert [one["id"] for one in groups["creed"]["options"]] == [
+            "creed-nicene", "creed-apostles",
+        ]
+        memberships = {
+            key: element["alternatives"]
+            for key, element in elements.items()
+            if element["alternatives"]
+        }
+        assert memberships["ritus-initiales/actus-paenitentialis-i"] == [
+            {"group": "penitential-act", "option": "pa-i"},
+        ]
+        assert memberships["ritus-initiales/actus-paenitentialis-ii"] == [
+            {"group": "penitential-act", "option": "pa-ii"},
+        ]
+        assert memberships["ritus-initiales/actus-paenitentialis-iii"] == [
+            {"group": "penitential-act", "option": "pa-iii"},
+        ]
+        assert memberships["symbolum/symbolum-nicaenum"] == [
+            {"group": "creed", "option": "creed-nicene"},
+        ]
+        assert memberships["symbolum/symbolum-apostolicum"] == [
+            {"group": "creed", "option": "creed-apostles"},
+        ]
+
+        # Applicability is structured as a bounded disjunction. In particular,
+        # the Gloria's Sunday branch excludes Advent and Lent without falsely
+        # suppressing a solemnity or feast that occurs in those seasons.
+        gloria = elements["ritus-initiales/gloria-in-excelsis"]
+        assert gloria["conditions"][0]["kind"] == "include-when-any", gloria
+        assert gloria["conditions"][0]["unknown"] == "unresolved", gloria
+        assert gloria["conditions"][0]["predicates"] == [
+            "sunday-outside-advent-and-lent",
+            "solemnity-or-feast",
+            "particular-celebration-of-more-solemn-character",
+        ], gloria
+        kyrie = elements["ritus-initiales/kyrie"]
+        assert kyrie["conditions"][0]["kind"] == "omit-when-option", kyrie
+        assert kyrie["conditions"][0]["unknown"] == "unresolved", kyrie
+        assert kyrie["conditions"][0]["group"] == "penitential-act", kyrie
+        assert kyrie["conditions"][0]["options"] == ["pa-iii"], kyrie
+        for key in ("symbolum/symbolum-nicaenum", "symbolum/symbolum-apostolicum"):
+            condition = elements[key]["conditions"][0]
+            assert condition["kind"] == "include-when-any", (key, condition)
+            assert condition["unknown"] == "unresolved", (key, condition)
+            assert condition["predicates"] == [
+                "sunday-or-solemnity",
+                "particular-celebration-of-more-solemn-character",
+            ], (key, condition)
+
+        second_reading = elements["liturgia-verbi/lectio-secunda"]["conditions"][0]
+        assert second_reading["kind"] == "include-when-any", second_reading
+        assert second_reading["predicates"] == ["second-reading-appointed"], second_reading
+        assert second_reading["unknown"] == "unresolved", second_reading
+        prayer_four = elements["prex-eucharistica/prex-eucharistica-iv"]["conditions"][0]
+        assert prayer_four["kind"] == "include-when-any", prayer_four
+        assert prayer_four["predicates"] == ["mass-has-no-proper-preface"], prayer_four
+        assert prayer_four["unknown"] == "unresolved", prayer_four
+
+    elif payload["calendar"] == "roman-1962":
+        assert len(elements) == 189, len(elements)
+        languages = {one["lang"]: one for one in payload["languages"]}
+        assert (languages["en"]["held"], languages["en"]["missing"]) == (189, 0), languages
+        assert (languages["la"]["held"], languages["la"]["missing"]) == (112, 77), languages
+        expected = {
+            "oblatio/a-cunctis",
+            "oblatio/nota-incarnationis",
+            "oblatio/rubrica-collecta-concede",
+            "oblatio/rubrica-secreta",
+            "oblatio/rubrica-secreta-concede",
+            "oblatio/secreta-ii",
+        }
+        exclusions = {one["key"]: one for one in payload["exclusions"]}
+        assert set(exclusions) == expected, exclusions
+        assert not (set(elements) & expected), set(elements) & expected
+        for key, exclusion in exclusions.items():
+            assert exclusion["state"] == "not-in-target-recension", (key, exclusion)
+            assert exclusion["basis"], (key, exclusion)
+            assert exclusion["sources"], (key, exclusion)
+            assert exclusion["sources"] == sorted(set(exclusion["sources"])), exclusion
+            assert all(isinstance(source, str) and source for source in exclusion["sources"]), exclusion
+            assert exclusion["evidence"], (key, exclusion)
+            assert all(row["source_id"] in exclusion["sources"] for row in exclusion["evidence"]), exclusion
+            assert all(row["lang"] == "en" for row in exclusion["evidence"]), exclusion
+            assert all(row["relation"] == "antecedent" for row in exclusion["evidence"]), exclusion
+            assert all("text" not in row for row in exclusion["evidence"]), exclusion
+        absence_counts = {one["key"]: one["count"] for one in payload["absences"]}
+        assert absence_counts == {
+            "no-facing-latin": 8,
+            "not-in-the-1962-ordo": 2,
+            "witness-own-english": 67,
+        }, absence_counts
+        assert sum(absence_counts.values()) == 77, absence_counts
+
+    elif payload["calendar"] == "roman-pre-1955":
+        # No 1920 exclusion is inferred from notes that speak only about 1962.
+        assert len(elements) == 195, len(elements)
+        assert payload["exclusions"] == [], payload["exclusions"]
+        for key in (
+            "oblatio/a-cunctis",
+            "oblatio/nota-incarnationis",
+            "oblatio/rubrica-collecta-concede",
+            "oblatio/rubrica-secreta",
+            "oblatio/rubrica-secreta-concede",
+            "oblatio/secreta-ii",
+        ):
+            assert key in elements, key
+
+    if payload["calendar"] in ("roman-1962", "roman-pre-1955"):
+        # Only five printed blocks are source-owned as single-speaker rows. Each
+        # language partitions that exact row once and reconstructs its text;
+        # no dialogue role is inferred from an R. or P. glyph.
+        partitioned = {
+            "praeparatio/confiteor-sacerdotis": "priest",
+            "praeparatio/confiteor-ministrorum": "server",
+            "oblatio/laus-tibi-christe": "server",
+            "oblatio/suscipiat-dominus": "server",
+            "conclusio/deo-gratias": "server",
+        }
+        reached = set()
+        for key, speaker in partitioned.items():
+            rows = elements[key]["translations"]
+            assert {row["lang"] for row in rows} == {"en", "la"}, (key, rows)
+            for row in rows:
+                assert len(row["turns"]) == 1, (key, row["lang"], row["turns"])
+                turn = row["turns"][0]
+                assert turn["key"] == key.rsplit("/", 1)[1], (key, turn)
+                assert turn["speaker"] == speaker, (key, turn)
+                assert turn["dialogue_role"] is None and turn["action"] is None, (key, turn)
+                assert turn["text"] == row["text"], (key, row["lang"])
+                reached.add((key, row["lang"]))
+        assert reached == {
+            (key, lang) for key in partitioned for lang in ("en", "la")
+        }, reached
+
+        # These 30 blocks contain internal speaker changes but each language's
+        # artifact still stores the whole printed block in one row. They stay
+        # opaque until reviewed child rows exist; punctuation is not a boundary.
+        opaque = {
+            "praeparatio/introibo-ad-altare-dei",
+            "praeparatio/judica-me-deus",
+            "praeparatio/emitte-lucem-tuam",
+            "praeparatio/confitebor-tibi-in-cithara",
+            "praeparatio/gloria-patri",
+            "praeparatio/introibo-ad-altare-dei-repetitio",
+            "praeparatio/adjutorium-nostrum",
+            "praeparatio/misereatur-tui",
+            "praeparatio/misereatur-vestri",
+            "praeparatio/indulgentiam",
+            "praeparatio/deus-tu-conversus",
+            "praeparatio/ostende-nobis",
+            "praeparatio/domine-exaudi",
+            "praeparatio/dominus-vobiscum",
+            "praeparatio/kyrie-eleison",
+            "praeparatio/christe-eleison",
+            "praeparatio/kyrie-eleison-repetitio",
+            "praeparatio/dominus-vobiscum-post-gloriam",
+            "oblatio/dominus-vobiscum-ante-evangelium",
+            "oblatio/dominus-vobiscum-ante-offertorium",
+            "oblatio/per-omnia-saecula",
+            "oblatio/sursum-corda",
+            "canon/per-omnia-saecula",
+            "communio/pater-noster",
+            "communio/per-omnia-saecula-post-libera-nos",
+            "communio/pax-domini",
+            "conclusio/dominus-vobiscum-ante-postcommunionem",
+            "conclusio/dominus-vobiscum-ite-missa-est",
+            "conclusio/requiescant-in-pace",
+            "conclusio/initium-sancti-evangelii",
+        }
+        assert len(opaque) == 30 and opaque <= set(elements), opaque - set(elements)
+        for key in opaque:
+            rows = elements[key]["translations"]
+            assert {row["lang"] for row in rows} == {"en", "la"}, (key, rows)
+            assert all("turns" not in row for row in rows), (key, rows)
 
     # ---- Absence, with its reason, everywhere ----------------------------
     #
@@ -129,6 +334,45 @@ if ! diff -r "$root" "$sandbox/again/structure/ordinary" >/dev/null; then
 	exit 1
 fi
 
+# Coverage keeps target-recension exclusions visible. Reducing the element and
+# absence totals without these six records would make the false 1861 additions
+# disappear from the audit instead of recording why they are not 1962 members.
+run_tool coverage --json >"$sandbox/coverage.json"
+python3 - "$sandbox/coverage.json" "$root" <<'PY'
+import json, pathlib, sys
+
+coverage = {
+    row["calendar"]: row
+    for row in json.loads(pathlib.Path(sys.argv[1]).read_text(encoding="utf-8"))["coverage"]
+}
+structures = pathlib.Path(sys.argv[2])
+old = coverage["roman-1962"]
+pre = coverage["roman-pre-1955"]
+expected = {
+    "oblatio/a-cunctis",
+    "oblatio/nota-incarnationis",
+    "oblatio/rubrica-collecta-concede",
+    "oblatio/rubrica-secreta",
+    "oblatio/rubrica-secreta-concede",
+    "oblatio/secreta-ii",
+}
+assert old["elements"] == 189, old
+assert {row["key"] for row in old["exclusions"]} == expected, old["exclusions"]
+assert all(row["state"] == "not-in-target-recension" for row in old["exclusions"])
+assert old["exclusions"] == json.loads(
+    (structures / "roman-1962.json").read_text(encoding="utf-8")
+)["exclusions"]
+languages = {row["lang"]: row for row in old["language_coverage"]}
+assert languages["en"] == {
+    "lang": "en", "elements": 189, "held": 189, "missing": 0, "absent": 0,
+}, languages
+assert languages["la"] == {
+    "lang": "la", "elements": 189, "held": 112, "missing": 77, "absent": 77,
+}, languages
+assert pre["elements"] == 195 and pre["exclusions"] == [], pre
+assert coverage["postconciliar"]["exclusions"] == [], coverage["postconciliar"]
+PY
+
 # ---- What `show` prints ---------------------------------------------------
 #
 # A rubric is an instruction and not a prayer. It was set at the same indent in
@@ -165,29 +409,46 @@ case "$hidden" in
 	;;
 esac
 
-# A withheld text says why, at the place it falls due, rather than showing a
-# blank where a prayer belongs.
-withheld="$(run_tool show --calendar postconciliar)"
-case "$withheld" in
-*"[absent: icel]"*) ;;
+# A missing text says why, at the place it falls due, rather than showing a
+# blank where a prayer belongs. This one has a registered official exemplar but
+# no tracked payload that may be joined to the element.
+missing="$(run_tool show --calendar postconciliar)"
+case "$missing" in
+*"[absent: official-exemplar-not-carried]"*) ;;
 *)
-	echo "a withheld element does not name its reason" >&2
+	echo "a missing element does not name its reason" >&2
 	exit 1
 	;;
 esac
 
 # `--lang la` prints the Latin, and where the witness has none it reports the
 # LATIN's own reason. Reading the block by ISO code once found nothing and fell
-# through to the English one, which reported the postconciliar Latin withheld
-# under ICEL: a real reason, for the other text. Since the 1861 printing's
-# facing column was transcribed, 112 of the 195 elements carry Latin and the
-# remaining 83 are blocks the book sets across the full measure with no facing
-# Latin at all, so the reason names that and not a transcription gap.
+# through to the English one, which reported the postconciliar Latin restricted:
+# a real reason, for the other text. Since the 1861 printing's
+# facing column was transcribed. The pre-1955 projection carries Latin for 112
+# of 195 elements and names the other 83 source blocks. The 1962 projection
+# carries the same 112 Latin blocks among 189 target members; its remaining 77
+# are the witness's English-only blocks, after six explicit nonmembers are
+# accounted separately as recension exclusions rather than false target text.
 latin="$(run_tool show --calendar roman-1962 --lang la)"
 case "$latin" in
 *"[absent: no-facing-latin]"*) ;;
 *)
 	echo "--lang la does not report the Latin's own reason" >&2
+	exit 1
+	;;
+esac
+case "$latin" in
+*"[absent: not-in-the-1962-ordo]"*) ;;
+*)
+	echo "--lang la does not report the abolished-regime classification" >&2
+	exit 1
+	;;
+esac
+case "$latin" in
+*"[absent: witness-own-english]"*) ;;
+*)
+	echo "--lang la does not report the witness-owned classification" >&2
 	exit 1
 	;;
 esac
@@ -199,27 +460,22 @@ case "$latin" in
 	;;
 esac
 
-# Every absence states its KIND, and the three are not interchangeable. The
-# postconciliar Latin is withheld because a rightsholder reserved the use; its
-# English is not withheld at all -- the permission is granted and no exact copy
-# of the words is reachable -- and the 1962's missing Latin is neither, being a
-# block the witness prints in English only. This inventory asserted for a year
-# that ICEL's licence forbade the use, which was false, so the discriminator is
-# checked here rather than left to prose.
+# Every absence states its KIND, and the six kinds are not interchangeable.
+# A source or payload gap, a rights restriction, no known exemplar, a model
+# span, material owned by another layer, and a structural non-text are different
+# facts. The discriminator is checked here rather than left to prose.
 kinds="$(run_tool structure --out "$sandbox/kinds" >/dev/null 2>&1; \
 	python3 -c "import json,sys,pathlib
 seen={}
 for path in sorted(pathlib.Path(sys.argv[1]).rglob('*.json')):
     if path.name == 'index.json': continue
     for row in (json.loads(path.read_text()).get('absences') or []):
-        seen[row['key']]=row.get('kind')
+        seen[row['key']]=row['kind']
 print(' '.join(k+'='+str(v) for k,v in sorted(seen.items())))" "$sandbox/kinds")"
 # The rights refusal is now scoped to the reform's OWN new matter. The single
-# `editio-typica` key it replaced asserted that refusal over all 48 elements,
-# which was true of twelve and false of thirty-six -- twelve slots holding no
-# words, eight modelled too coarsely to source, and sixteen ancient texts that
-# no rightsholder has refused. A key that says "rights-withheld" must name only
-# what is actually withheld, which is what this asserts.
+# `editio-typica` key it replaced asserted that refusal over the whole frame.
+# A key that says "rights-withheld" must name only what is actually withheld,
+# which is what this asserts.
 case "$kinds" in
 *"editio-typica-new-matter=rights-withheld"*) ;;
 *)
@@ -234,18 +490,53 @@ case "$kinds" in
 	exit 1
 	;;
 esac
-# The ICEL absence is a witness gap and not an exemplar one. It was
-# `no-exemplar` while this project held no copy of the words; the ICEL chant
-# library and the England-and-Wales leaflets have since been registered and
-# twenty-three elements of the frame carry that English, so what remains empty
-# is text no tracked payload prints yet -- the Eucharistic Prayers, the
-# Confiteor, the Apostles' Creed, the ecumenical elements carrying ELLC text,
-# and the elements that are not texts at all. Nobody has refused anything, so it
-# is not `rights-withheld` either. The inventory's own `what` says as much.
+# Registered official exemplars with no joined payload are witness gaps.
 case "$kinds" in
-*"icel=witness-gap"*) ;;
+*"official-exemplar-not-carried=witness-gap"*) ;;
 *)
-	echo "the ICEL absence is not typed as a witness gap: $kinds" >&2
+	echo "an official exemplar without a payload is not typed as a witness gap: $kinds" >&2
+	exit 1
+	;;
+esac
+# Variable texts assigned by the calendar/Propers layer are outside this layer,
+# not missing Ordinary witnesses.
+case "$kinds" in
+*"proper-text-outside-ordinary=outside-layer"*) ;;
+*)
+	echo "a Proper text is not typed as outside the Ordinary layer: $kinds" >&2
+	exit 1
+	;;
+esac
+# Actions and locally supplied matter with no invariant words are not textual
+# acquisition failures.
+case "$kinds" in
+*"no-fixed-text=not-applicable"*"not-a-text=not-applicable"*) ;;
+*)
+	echo "a non-textual element is not typed as not applicable: $kinds" >&2
+	exit 1
+	;;
+esac
+# An element that spans independently sourceable parts is a model gap on either
+# language side; acquiring one more excerpt would not make the composite whole.
+case "$kinds" in
+*"element-spans-mixed-availability=model-gap"*"element-spans-mixed-matter=model-gap"*) ;;
+*)
+	echo "a composite element is not typed as a model gap: $kinds" >&2
+	exit 1
+	;;
+esac
+case "$kinds" in
+*"canon-not-split="*)
+	echo "the retired whole-Canon model gap still reaches output: $kinds" >&2
+	exit 1
+	;;
+esac
+# Quiet priest prayers have no exact exemplar in the registered official
+# excerpts. Nobody has refused their use.
+case "$kinds" in
+*"priest-prayer-said-quietly=no-exemplar"*) ;;
+*)
+	echo "a quiet prayer without an exemplar is mistyped: $kinds" >&2
 	exit 1
 	;;
 esac
@@ -256,10 +547,24 @@ case "$kinds" in
 	exit 1
 	;;
 esac
+case "$kinds" in
+*"not-in-the-1962-ordo=witness-gap"*) ;;
+*)
+	echo "the abolished-regime absence is not typed as a witness gap: $kinds" >&2
+	exit 1
+	;;
+esac
+case "$kinds" in
+*"witness-own-english=witness-gap"*) ;;
+*)
+	echo "the witness-owned absence is not typed as a witness gap: $kinds" >&2
+	exit 1
+	;;
+esac
 
 # ---- The antecedent Latin, and the claim it must never make ---------------
 #
-# Ten elements of the postconciliar frame now carry Latin, and NOT ONE OF THEM
+# Twenty elements of the postconciliar frame now carry Latin, and NOT ONE OF THEM
 # IS THE LATIN OF THE BOOK THAT PAGE IS HEADED WITH. Every one is the facing
 # column of an 1861 Philadelphia lay hand missal, printing the ancient prayer
 # the postconciliar Order received; the editio typica is in copyright and is
@@ -285,6 +590,7 @@ import json, pathlib, sys
 root = pathlib.Path(sys.argv[1])
 pc = json.loads((root / "postconciliar.json").read_text(encoding="utf-8"))
 old = json.loads((root / "roman-1962.json").read_text(encoding="utf-8"))
+pre = json.loads((root / "roman-pre-1955.json").read_text(encoding="utf-8"))
 
 def by_key(payload):
     return {element["key"]: element
@@ -297,18 +603,17 @@ def side(element, lang):
 elements = by_key(pc)
 latin = {key: side(element, "la")[0]
          for key, element in elements.items() if side(element, "la")}
-assert len(latin) == 10, sorted(latin)
+assert len(latin) == 20, sorted(latin)
+latin_absent = [element["absent"]["latin"] for element in elements.values()
+                if not side(element, "la")]
+assert len(latin_absent) == 39, latin_absent
+assert latin_absent.count("editio-typica-new-matter") == 13, latin_absent
+assert len(latin_absent) - latin_absent.count("editio-typica-new-matter") == 26
 
-# The English side is untouched by the Latin landing: no English row carries a
-# relation, which is the claim, whatever the count happens to be. Counting nine
-# encoded the state before the ICEL chant library was spliced in, so splicing
-# it -- twenty-five elements now -- read here as a regression, and the property
-# that actually matters was never asserted at all.
+# The English side is quarantined on this assembled surface. No English row or
+# source attribution may survive, while the Latin landing remains independent.
 english = [key for key, element in elements.items() if side(element, "en")]
-assert english, sorted(elements)
-for key in english:
-    for row in side(elements[key], "en"):
-        assert "relation" not in row, (key, row.get("relation"))
+assert english == [], english
 
 for key, row in latin.items():
     # The relation is on the row, not on the witness: a book cannot be an
@@ -318,44 +623,75 @@ for key, row in latin.items():
     assert row["rights"] == "public-domain", (key, row["rights"])
     note = row.get("note") or ""
     assert "NOT THE CONTROLLING EDITION" in note, key
-    assert "not held by this project" in note, key
+    assert "not served here" in note or "target" in note.lower(), key
     # The grade, and what each grade costs.
     if row["collation"] == "collated":
         assert (row.get("collation_finding") or "").strip(), key
     elif row["collation"] == "uncollated":
         assert not row.get("collation_finding"), key
-        assert "UNCOLLATED" in note, key
+        assert "uncollated" in note.lower(), key
     else:
         raise AssertionError((key, row["collation"]))
 
 graded = sorted(row["collation"] for row in latin.values())
-assert graded.count("collated") == 4, graded
-assert graded.count("uncollated") == 6, graded
+assert graded.count("collated") == 5, graded
+assert graded.count("uncollated") == 15, graded
 
-# The 1962 frame joins two facing columns of ONE printing, so its Latin is that
-# frame's own book and declares no relation. If this ever grew one, the two
-# calendars would have been conflated.
-for element in by_key(old).values():
-    for row in side(element, "la"):
-        assert "relation" not in row, element["key"]
+# Both Roman frames are headed by a target typical edition later than the 1861
+# hand missal whose two columns supply their words. Every artifact-backed row is
+# therefore an explicitly uncollated antecedent, in both languages. The
+# section-level declaration is deliberately uniform: it makes no invented
+# element-level finding.
+for payload in (old, pre):
+    for element in by_key(payload).values():
+        for lang in ("en", "la"):
+            for row in side(element, lang):
+                assert row["relation"] == "antecedent", (payload["calendar"], element["key"], lang)
+                assert row["collation"] == "uncollated", (payload["calendar"], element["key"], lang)
+                assert not row.get("collation_finding"), (payload["calendar"], element["key"], lang)
+                note = row.get("note") or ""
+                assert "ANTECEDENT, NOT THE TARGET EDITION" in note, (payload["calendar"], element["key"], lang)
+                assert "UNCOLLATED" in note, (payload["calendar"], element["key"], lang)
 
 # Where a comparison of the two Latins found a divergence, NOTHING is carried,
 # and the file still says why. These are the elements the summary would have
 # waved through.
-for key in ("ritus-communionis/domine-iesu-christe-qui-dixisti",
-            "ritus-communionis/praeparatio-sacerdotis",
-            "ritus-initiales/kyrie",
-            "ritus-communionis/agnus-dei-forma-altera"):
+for key in ("ritus-communionis/libera-nos",
+            "ritus-communionis/domine-iesu-christe-qui-dixisti",
+            "ritus-communionis/praeparatio-sacerdotis"):
     assert not side(elements[key], "la"), key
-    assert elements[key]["absent"]["latin"] == "antecedent-held-not-carried", key
+    assert elements[key]["absent"]["latin"] == "antecedent-diverges-at-named-words", key
+assert not side(elements["ritus-initiales/kyrie"], "la")
+assert elements["ritus-initiales/kyrie"]["absent"]["latin"] == \
+    "antecedent-held-not-carried"
 
-# The Roman Canon is modelled as one span and every place the reform changed it
-# falls inside that span, so Prayer I carries nothing in either language. The
-# doxology is a separate element of the Missal's own numbering and does carry
-# Latin; the two must not be confused.
-prayer_one = [one for one in elements.values() if one["variant"] == "ep-i"]
-assert len(prayer_one) == 1 and prayer_one[0]["translations"] is None
-assert prayer_one[0]["absent"]["latin"] == "canon-not-split"
+# Prayer I is split only at the twelve bounded children the source establishes.
+# Nine carry antecedent Latin; the three unsafe children remain explicitly
+# absent, and only Quam oblationem has a whole-element collation finding.
+prayer_one = [
+    one for one in elements.values()
+    if {"group": "eucharistic-prayer", "option": "ep-i"}
+    in one["alternatives"]
+]
+assert len(prayer_one) == 12, [one["key"] for one in prayer_one]
+prayer_one_latin = {
+    one["key"]: side(one, "la")[0]
+    for one in prayer_one if side(one, "la")
+}
+assert len(prayer_one_latin) == 9, sorted(prayer_one_latin)
+assert [key for key, row in prayer_one_latin.items() if row["collation"] == "collated"] == [
+    "prex-eucharistica/quam-oblationem"
+], prayer_one_latin
+assert sum(row["collation"] == "uncollated" for row in prayer_one_latin.values()) == 8
+prayer_one_absent = {
+    one["key"]: one["absent"]["latin"]
+    for one in prayer_one if not side(one, "la")
+}
+assert prayer_one_absent == {
+    "prex-eucharistica/communicantes": "element-spans-mixed-matter",
+    "prex-eucharistica/qui-pridie": "editio-typica-new-matter",
+    "prex-eucharistica/supplices": "element-spans-mixed-matter",
+}, prayer_one_absent
 
 # The witness's own accidents are carried and never smoothed toward the target's
 # orthography. Normalising them would manufacture a witness to a book nobody
@@ -372,7 +708,7 @@ assert "nodie" in humility["note"], "the misprint is carried and not explained"
 manifest = {(one["source_id"], one["lang"]): one for one in pc["translations"]}
 witness = manifest[
     ("edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", "la")]
-assert witness["held"] == 10, witness
+assert witness["held"] == 20, witness
 assert witness["label"].startswith("Antecedent Latin (NOT"), witness["label"]
 assert witness["caution"].startswith("NOT the Latin of the Missale Romanum"), witness
 PY
@@ -412,8 +748,8 @@ assert refused({"relation": "antecedent", "collation": "collated", "note": "n"})
 assert refused(ok | {"collation_finding": "somewhere.tex:1"})
 # And an unknown relation is refused rather than passed through.
 assert refused({"relation": "descendant"})
-# No relation at all is the 1962 case and stays silent.
-assert tool.relation_of({}, "k", "la", "f") == {}
+# Inline text without an antecedent declaration is the target edition's own.
+assert tool.relation_of({}, "k", "la", "f") == {"relation": "own"}
 PY
 
 # ---- The tiers ------------------------------------------------------------

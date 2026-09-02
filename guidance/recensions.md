@@ -383,8 +383,10 @@ which is the right way round.
 
 ## 8.5 One label, four acts
 
-`roman-pre-1955` declares `stands_before: maxima-redemptionis-1955`, and the
-distance it holds was not made by that act alone. Four made it: the
+`roman-pre-1955` now declares a `stands_before` list containing both
+`de-rubricis-simpliciorem-1955` and `maxima-redemptionis-1955`, because the
+1920 state stands before both 1955 acts. The distance it holds to 1962 was not
+made by those acts alone. Four made it: the
 simplification of the rubrics of March 1955, which owns the octaves, the vigils
 and the `semiduplex` vocabulary and is answerable for none of the file's rows;
 *Maxima Redemptionis* of November 1955, which owns the Holy Week order and most
@@ -392,12 +394,14 @@ of what is recorded; the 1960 code; and the 1962 typical edition.
 
 So a reader who takes the file as the 1962 book minus one reform charges the
 1960 code's work to Pius XII, which is the blending of states this document
-exists to prevent. The apportionment is written in that file's own
-`open_collation_items`, and two mechanical fixes stay open because both are
-schema decisions: whether `stands_before` should name the EARLIEST act a state
-stands before or admit a list of act ids, and whether a departure row should
-carry an optional `act` so each row says which act made it rather than the file
-attributing all of them to one.
+exists to prevent. The mechanical ambiguity is closed: `stands_before` is a
+nonempty unique list of act ids, and the primary departure and every `also` row
+may carry an optional `act`, each resolved against the same act inventory. That
+row field names the act-history station or attribution record for the claim. It
+does not turn an `unrecorded` difference into a proved causal instrument:
+`editio-typica-1962` may be the station at which a difference is inventoried
+while the basis still says that no promulgating act was found. An unset `act`
+is the honest representation when no station has been established.
 
 There are also at least two states here worth carrying and not one. The state
 this file targets stands before both acts of 1955; the 1956–1960 middle state,
@@ -414,10 +418,13 @@ built turned out to be built in four places out of five.
 
 A recension calendar is a `propers.yaml` like any other, distinguished by two
 header fields and by the fact that its `masses` are **departures** rather than
-entries. `text_from` names the calendar it inherits from; `stands_before` names
-the act it stands before. Every row states one primary `departure` from the
-closed vocabulary of §3, may carry further kinds under `also`, and must state a
-`basis`.
+entries. `text_from` names the calendar it inherits from; `stands_before` is a
+nonempty, unique list naming the acts explicitly used to bound the state.
+Every id resolves against the act inventory. Every row states one primary
+`departure` from the closed vocabulary of §3, may carry further kinds under
+`also`, and must state a `basis`. The primary claim and each additional claim
+may carry an optional inventory-resolved `act`; absence records that no honest
+act-history station has been established.
 
 Everything downstream then reads **one function**:
 
@@ -624,3 +631,131 @@ criteria list as a second kind of precedence; `check_bases`, whose competing
 bases name a row; and the winner comparison in `assembly-model.js`. That is a
 design change and should be argued before it is written, which is why it is
 recorded here and not attempted.
+
+## 10. Coverage is part of the recension, not commentary about it
+
+Added 2026-08-26. Sections 8 and 9 record the state of the work on 2026-08-01;
+this section records the next change without editing that history to predict it.
+
+### 10.1 The ambiguity a six-row file cannot resolve
+
+`roman-pre-1955/propers.yaml` still holds a small number of departures and
+mechanically inherits the rest from `roman-1962`. The mechanism can say where a
+Mass came from and whether a departure was stated. It could not answer the
+larger question: whether an unstated domain had been collated and found equal,
+had never been examined, was outside the recension's declared scope, or was
+blocked by a source or by the model.
+
+Those are materially different states. In particular, a Common inherited from
+1962 is available to the projection and is **not thereby attested in the 1920
+typical edition**. A short delta measures established difference, not established
+agreement.
+
+Every recension calendar therefore carries a top-level `recension_coverage`
+record, schema `triptych-recension-coverage/v1`. It has exactly these fields:
+
+| Field | Meaning |
+| --- | --- |
+| `schema` | the closed coverage schema |
+| `as_of` | a quoted ISO date for the mutable finding |
+| `status` | `structural-only`, `partial`, or `complete` |
+| `domains` | one row each for `calendar`, `precedence`, `propers`, `commons`, `ordinary`, and `ceremonies` |
+| `inheritance` | the mechanical source calendar, its collation status, and the basis for that status |
+| `evidence` | identified evidence records, the domains they bear on, their reading grade, and their witnesses |
+| `blockers` | every open acquisition, collation, provenance, modeling, transcription, rights, or scope boundary |
+
+Each domain row has exactly `state` and `basis`. The closed states are
+`unexamined`, `none`, `structural-only`, `partial`, `complete`,
+`inherited-uncollated`, `blocked-by-model`, and `out-of-scope`. The basis is
+required even for `none`: absence with no reason is only silence under another
+name.
+
+Inheritance names the same calendar as `text_from`, and its status is
+`uncollated`, `partial`, or `complete`. This deliberately repeats the base id
+inside the coverage record: `text_from` controls assembly, while
+`inheritance.source_calendar` qualifies the coverage claim. The validator
+requires them to agree, so the qualification cannot drift onto another base.
+
+The evidence grades are local and deliberately do not reuse the source
+library's evidence vocabulary:
+
+| Grade | Ceiling of the claim |
+| --- | --- |
+| `located-only` | an identified lead, not read |
+| `ocr-structure-read` | enough to establish large-scale structure, never wording |
+| `source-read` | the cited source was read at the basis the evidence row states |
+| `page-image-collated` | the stated witness text was checked against its page image |
+
+`source-read` is not a synonym for the source-library state `verified`, and
+`page-image-collated` identifies the witness it applies to; neither may migrate
+from one edition to another. A page-collated 1861 lay missal is still not a
+collation of the 1920 altar book.
+
+Blocker kinds are likewise closed:
+`missing-witness`, `unregistered-artifact`, `page-image-collation`,
+`rights-restriction`, `schema-gap`, `unmodeled-recension`, `provenance-gap`,
+`data-transcription`, and `scope-exclusion`. A blocker is `open` where work can
+proceed from what is held and `blocked` where the named source or access is not
+available. Resolved work leaves the blocker list rather than acquiring a third
+state that can be mistaken for work remaining.
+
+`scripts/_calendars.recension_problems` enforces the exact fields and domain set,
+the closed states and grades, nonempty bases and witness lists, unique evidence
+and blocker ids, the inheritance/base join, and status consistency. `complete`
+is refused while any blocker remains, any domain is not complete, or inheritance
+is not completely collated.
+
+> **Rule 9.** A recension accounts for every domain it could otherwise inherit
+> silently. Inheritance proves where the projection obtained material; it never
+> proves that the target recension was checked. `complete` is a mechanically
+> defended claim and not a description supplied by a page.
+
+### 10.2 The rubrics source that now ships
+
+A `roman-pre-1955/rubrics.yaml` now ships and makes the recension available as
+an explicitly approximate finding aid. It does not overturn §9.7's evidence:
+the source remains five criteria, and the current assembly model remains a
+comparison of numbered rows. The companion therefore calls itself a
+**linearization and not the rule itself**, carries the source-shaped occurrence
+and concurrence distinction in its advisory, records its divergences, and
+leaves cases unsettled where the reduction cannot answer honestly.
+
+The sourcing record preserves two counts because collapsing them would recreate
+the defect:
+
+- `rubrics_sources_this_record_makes_writable = 0` — no faithful implementation
+  of the five criteria exists;
+- `linearized_finding_aids_shipped = 1` — one bounded numbered approximation is
+  tracked and disclosed.
+
+Accordingly the coverage record marks `precedence: partial`, not
+`blocked-by-model`, `none`, or `complete`. The source was found; a bounded model
+is running; source-shaped criteria evaluation remains open. Rule 6's safety
+purpose still controls: this surface may identify itself only as an approximate
+finding aid and may not represent a resolved day as the unqualified pre-1955
+answer.
+
+### 10.3 What the current pre-1955 record actually claims
+
+The canonical current statement is the coverage header itself, not a count in
+this prose. Its boundaries are:
+
+- partial calendar structure: six stated Holy Week deltas plus the exact,
+  source-recorded absence of St Joseph the Worker and the Queenship of the
+  Blessed Virgin Mary from the registered pre-reform witness body;
+- partial precedence through the disclosed linearization;
+- no Proper wording independently transcribed for the target recension;
+- uncollated Commons inherited from `roman-1962`;
+- a partial Ordinary from an identified 1861 lay witness, not the 1920 typical
+  edition;
+- structural-only ceremonial evidence; and
+- uncollated mechanical inheritance for the remainder.
+
+The open records name the work required for a true corpus rather than allowing
+the phrase *pre-1955* to imply it: register and page-collate the whole 1920
+typical edition; attach per-Proper witness attestations; transcribe the target
+kalendarium from page images; implement the criteria directly; locate the 1900
+typical edition; distinguish the restricted 1956–1960 Holy Week state; and keep
+the Pontifical's oil blessing outside the Missal claim until an identified
+edition is read. No one of those tasks authorizes text to be synthesized from
+the current projection.

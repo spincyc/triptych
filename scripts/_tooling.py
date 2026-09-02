@@ -131,6 +131,7 @@ GROUPS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
             "check-generation-metadata",
             "check-promised-deliverables",
             "check-web-edition",
+            "complete-missal",
             "document-library",
             "pdf-review",
             "public-alpha",
@@ -194,6 +195,7 @@ REACHES: dict[str, str] = {
     "check-web-edition": NOTHING,
     "citations": NOTHING,
     "commentary-work-index": NOTHING,
+    "complete-missal": NOTHING,
     "document-library": NOTHING,
     "harvest": MODEL,
     "index-bible": NOTHING,
@@ -618,8 +620,8 @@ def print_json(payload: dict[str, object], *, stream=sys.stdout) -> None:
     print(text, file=stream)
 
 
-def fail(message: str, code: str, as_json: bool, status: int, prefix: str) -> int:
-    if as_json:
+def fail(message: str, code: str, machine: bool, status: int, prefix: str) -> int:
+    if machine:
         print_json(
             {
                 "code": code,
@@ -665,11 +667,22 @@ def run_verb_cli(
 
     try:
         payload = handler(arguments)
+        if machine or not arguments.style_resolved.plain:
+            return renderer(payload, arguments)
+        # The plain tier holds for every one of the thirty-four tools,
+        # including the thirty-three that have never heard of it, which is
+        # what a fold around the renderer buys and a per-tool rule does not.
+        held = sys.stdout
+        sys.stdout = _Folded(held)  # type: ignore[assignment]
+        try:
+            return renderer(payload, arguments)
+        finally:
+            sys.stdout = held
     except ModuleNotFoundError as error:
         message = str(error)
         if dependency_message:
             message = f"{message}; {dependency_message}"
-        return fail(message, "dependency", as_json, 69, prefix)
+        return fail(message, "dependency", machine, 69, prefix)
     except Exception as error:
         if mapped_errors:
             for exc_type, (code, status) in mapped_errors.items():
@@ -677,7 +690,7 @@ def run_verb_cli(
                     return fail(
                         str(error) or error.__class__.__name__,
                         code,
-                        as_json,
+                        machine,
                         status,
                         prefix,
                     )
@@ -689,18 +702,7 @@ def run_verb_cli(
         return fail(
             str(error) or error.__class__.__name__,
             "internal",
-            as_json,
+            machine,
             70,
             prefix,
         )
-    if machine or not arguments.style_resolved.plain:
-        return renderer(payload, arguments)
-    # The plain tier holds for every one of the thirty-four tools, including
-    # the thirty-three that have never heard of it, which is what a fold around
-    # the renderer buys and a per-tool rule does not.
-    held = sys.stdout
-    sys.stdout = _Folded(held)  # type: ignore[assignment]
-    try:
-        return renderer(payload, arguments)
-    finally:
-        sys.stdout = held

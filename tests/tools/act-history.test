@@ -588,7 +588,8 @@ done
 # Asserted on the RENDERED text of a slice that withholds and one that does not,
 # because the two must differ: a withholding paragraph printed where nothing is
 # withheld would be a rights position the slice does not hold, which is worse
-# than saying nothing.
+# than saying nothing. Its unresolved composite witness remains an independent
+# publication boundary even though no unit wording is withheld from this slice.
 python3 - "$repo" "$holy_week" "$law" <<'PY'
 import importlib.machinery
 import importlib.util
@@ -682,12 +683,15 @@ for phrase in (
     "the record holds none: nobody has read them",
     "[incipit withheld: <the reason>]",
     "No file in this repository carries that banner",
-    "No witness here records anything but `public-domain`",
-    "public-domain  9",
+    "The readings this project has NOT established a right to redistribute are",
+    "Recorded `unresolved`, each with the act it attests",
+    "missale-romanum-later-composite-pre-1955-body",
+    "public-domain  8",
+    "unresolved     1",
 ):
     assert phrase in open_slice, f"roman-holy-week: the README does not say {phrase!r}"
 for phrase in ("WORDS ARE MISSING FROM THIS HISTORY", "text established by",
-               "NOT established a right to redistribute"):
+               "No witness here records anything but `public-domain`"):
     assert phrase not in open_slice, f"roman-holy-week: the README claims {phrase!r}"
 PY
 

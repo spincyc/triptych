@@ -1,0 +1,51 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.gloria-pdf"
+edition_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
+artifact_type = "publisher-issued-pdf"
+media_type = "application/pdf"
+storage = "remote"
+rights_status = "restricted"
+rights_basis = """
+CURRENT DISPOSITION. This artifact record does not clear any liturgical text or
+publisher file for publication from the current tree. No payload belonging to
+this record is cleared for the public Git repository, source browser, static
+data bundle, CLI, PDF, or download surface. `rights_status = "restricted"`
+records a conditional lead; it is not an outbound licence or a completed
+per-artifact publication decision.
+
+CONDITIONAL LIVE-SITE LEAD. ICEL's Publication Policies record a standing
+Internet-site clause for an ICEL text that has been approved by the Conferences
+of Bishops, recognised by the Holy See, and promulgated for use. The clause is
+evidence of a possible future qualifying non-bundled live-site display route
+only. This artifact does not by itself establish, for each contained text, ICEL
+ownership; approval; recognition; promulgation and currentness in the relevant
+territory; exactness after transcription, de-syllabification, or later
+emendment; the appropriate current excerpt notice and its required placement;
+actual no-fee and non-commercial site conditions; or the absence of material
+owned by another party. Every applicable fact and condition remains to be
+verified before such a route could be used. The controlling clause is passage
+passage.international-commission-on-english-in-the-liturgy.publication-policies.2013-amended-booklet.global-computer-networks.
+
+PUBLISHER FILE. The Music for the Roman Missal index separately describes a
+narrow free-of-charge printed-form use for non-commercial parish, diocesan,
+school, and religious-community publications not for sale. This record does not
+establish that this project is within that named class, and neither that printed
+use nor the Internet-site clause clears redistribution of ICEL's PDF bytes. The
+`storage` and `provenance` fields say whether the recorded digest and size
+identify the remote publisher PDF or a quarantined normalized transcription;
+neither identity is a permission to republish those bytes.
+
+The audit trail and surface-by-surface disposition are recorded in
+src/sources/inventories/icel-web-permission-rights-v1.toml.
+"""
+source_url = "https://www.icelweb.org/musicfolder/Gloria.pdf"
+provenance = "Exact whole HTTPS response fetched with curl on 2026-08-27 from the URL published on ICEL's own Music for the Roman Missal index page. The response reports a 2023-03-27 Last-Modified date, predating the 2026-08-21 transcription retrieval; its hash, byte size, and page count were recomputed locally. Nothing in the retrieval path passed through a model."
+retrieved = "2026-08-27"
+sha256 = "cce8536f2d8d60e59ae03bddf09cc38a2d2260d65b6a70e5d35060f5a5e30de8"
+byte_size = 60037
+page_count = 2
+indexable = false
+notes = """
+File Gloria.pdf in ICEL's Music for the Roman Missal library, 2 pp. The index page lists it as "Gloria".
+"""

@@ -59,6 +59,18 @@ class MakefileBuildGraphTests(unittest.TestCase):
         library = self.root / "tools"
         library.mkdir(parents=True)
         (self.root / "tools" / "tests").mkdir()
+        (self.root / "tools/tests/test_curriculum_liturgical_rights.py").write_text(
+            """import os
+import unittest
+
+
+class CurriculumLiturgicalRightsTests(unittest.TestCase):
+    def test_gate_was_invoked(self):
+        with open(os.environ["MAKE_TEST_CURRICULUM_RIGHTS_LOG"], "a", encoding="utf-8") as log:
+            log.write("check\\n")
+""",
+            encoding="utf-8",
+        )
         launcher = self.root / "tools" / "tpt"
         launcher.write_text(
             """#!/usr/bin/env python3
@@ -139,6 +151,35 @@ with open(os.environ["MAKE_TEST_SOURCE_GATE_ORDER_LOG"], "a", encoding="utf-8") 
         )
         self.source_library.chmod(0o755)
 
+        self.source_reader = library / "source-reader"
+        self.source_reader.write_text(
+            """#!/usr/bin/env python3
+import os
+import sys
+
+with open(os.environ["MAKE_TEST_SOURCE_READER_LOG"], "a", encoding="utf-8") as log:
+    log.write(" ".join(sys.argv[1:]) + "\\n")
+""",
+            encoding="utf-8",
+        )
+        self.source_reader.chmod(0o755)
+
+        # The deployment-source gate composes these read-only validators.  This
+        # build-graph test exercises their ordering and arguments, not their
+        # domain implementations, so deterministic no-op stubs are sufficient.
+        for tool_name in (
+            "act-history",
+            "document-library",
+            "calendar-days",
+            "check-calendar-masses",
+            "mass-propers",
+            "calendar-rubrics",
+            "mass-ordinary",
+        ):
+            fake = library / tool_name
+            fake.write_text("#!/bin/sh\nexit 0\n", encoding="utf-8")
+            fake.chmod(0o755)
+
         self.source_inventory = library / "source-inventory"
         self.source_inventory.write_text(
             """#!/usr/bin/env python3
@@ -197,9 +238,11 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.flags_log = self.root / "flags.log"
         self.review_log = self.root / "review.log"
         self.source_library_log = self.root / "source-library.log"
+        self.source_reader_log = self.root / "source-reader.log"
         self.source_inventory_log = self.root / "source-inventory.log"
         self.source_family_migration_log = self.root / "source-family-migration.log"
         self.source_gate_order_log = self.root / "source-gate-order.log"
+        self.curriculum_rights_log = self.root / "curriculum-rights.log"
         self.pacman_log = self.root / "pacman.log"
         self.codex_log = self.root / "codex.log"
         self.environment = os.environ.copy()
@@ -211,11 +254,15 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
                 "MAKE_TEST_FLAGS_LOG": str(self.flags_log),
                 "MAKE_TEST_REVIEW_LOG": str(self.review_log),
                 "MAKE_TEST_SOURCE_LIBRARY_LOG": str(self.source_library_log),
+                "MAKE_TEST_SOURCE_READER_LOG": str(self.source_reader_log),
                 "MAKE_TEST_SOURCE_INVENTORY_LOG": str(self.source_inventory_log),
                 "MAKE_TEST_SOURCE_FAMILY_MIGRATION_LOG": str(
                     self.source_family_migration_log
                 ),
                 "MAKE_TEST_SOURCE_GATE_ORDER_LOG": str(self.source_gate_order_log),
+                "MAKE_TEST_CURRICULUM_RIGHTS_LOG": str(
+                    self.curriculum_rights_log
+                ),
                 "MAKE_TEST_PACMAN_LOG": str(self.pacman_log),
                 "MAKE_TEST_CODEX_LOG": str(self.codex_log),
                 "PATH": f"{scripts}:{self.environment['PATH']}",
@@ -255,9 +302,11 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.flags_log.write_text("", encoding="utf-8")
         self.review_log.write_text("", encoding="utf-8")
         self.source_library_log.write_text("", encoding="utf-8")
+        self.source_reader_log.write_text("", encoding="utf-8")
         self.source_inventory_log.write_text("", encoding="utf-8")
         self.source_family_migration_log.write_text("", encoding="utf-8")
         self.source_gate_order_log.write_text("", encoding="utf-8")
+        self.curriculum_rights_log.write_text("", encoding="utf-8")
 
     @staticmethod
     def sha256(path: Path) -> str:
@@ -311,7 +360,9 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         inventory.parent.mkdir(parents=True, exist_ok=True)
         inventory.write_text("")
         self.run_make("check-sources")
+        self.assertEqual(self.lines(self.curriculum_rights_log), ["check"])
         self.assertEqual(self.lines(self.source_library_log), ["validate"])
+        self.assertEqual(self.lines(self.source_reader_log), ["check", "structure --check"])
         self.assertEqual(
             self.lines(self.source_inventory_log),
             [

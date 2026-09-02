@@ -3,6 +3,7 @@
   {
    "artifact_type": "web-transcription",
    "byte_size": 226980,
+   "edition_owned": true,
    "id": "artifact.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.eustathius-latin-text-67be97c6",
    "media_type": "text/plain; charset=utf-8",
    "notes": "Keyed text, not OCR. guidance/catena.md recorded that \"the unencumbered Latin is OCR wreckage and the clean Latin is encumbered\", measuring Migne PL 34's Internet Archive text layer at roughly one corrupted word in eight. That holds of the scan and not of this corpus: Latin Wikisource carries the University of Zurich's Corpus Corporum TEI encodings of Migne, keyed rather than scanned, under a stated CC BY-SA 4.0 markup licence over a public-domain printing. This is a transcription of a web witness of the 1847 printing and not a collation against the printed column, so no passage taken from it rises above inspected.",
@@ -17,6 +18,7 @@
   {
    "artifact_type": "wiki-export-xml",
    "byte_size": 230983,
+   "edition_owned": true,
    "id": "artifact.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.eustathius-wikisource-export-25821064",
    "media_type": "application/xml",
    "notes": "The page carries the Corpus Corporum encoding note, which records that the file was encoded in TEI XML for the University of Zurich's Corpus Corporum project by Ph. Roelli in 2013 from Migne's Patrologia Latina tomus 53. That is the encoder's statement about the file and is not part of Migne; the transformation below removes it.",
@@ -36,7 +38,6 @@
   "id": "edition.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53",
   "jurisdiction": null,
   "language": "la",
-  "notes": "The ancient Latin version of Basil's nine Hexaemeron homilies, made by Eustathius at the request of the deaconess Syncletica about 440, and the form in which the work reached the Latin West: Bede's own preface names Basil \"quem Eustathius interpres de Graeco fecit esse Latinum\" among the three fathers he follows. It is a separate EDITION of Basil's work and not a separate work, and not a second text on one edition. Nine books answering the nine homilies, preceded by Eustathius's dedicatory letter, which is part of the version and not of Basil. The printing is Migne's of 1847; the translation is of the fifth century and its translator died in antiquity, so nothing here is in copyright anywhere.",
   "publication": "Patrologia Latina, tomus 53, Paris: J.-P. Migne, 1847, coll. 867-966",
   "title": "Metaphrasis Latina Hexaemeri, the Latin version of Eustathius",
   "translators": [

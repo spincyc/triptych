@@ -119,7 +119,7 @@ class TrackedIndexTests(unittest.TestCase):
 
     def test_isaiah_eight_twenty_three_crosses_into_the_vulgate_chapter(self) -> None:
         self.assertTrue(
-            self.douay["Isaiah 8:23-9:3"].startswith("At the first time the land of Zabulon")
+            self.douay["Isaiah 8:23b-9:3"].startswith("At the first time the land of Zabulon")
         )
 
     def test_advent_isaiah_rends_the_heavens_and_ends_in_the_potters_hands(self) -> None:
@@ -263,7 +263,9 @@ class ConfirmationTests(unittest.TestCase):
         entries = [
             found
             for _, mass in propers.masses_of(document)
-            for found in propers.scripture_entries(mass)
+            for found, _numbering in propers.numbered_entries(
+                mass, document.get("psalm_numbering")
+            )
         ]
         table = Divergences("postconciliar", document, entries, canon)
         table.confirm(self.bible)
@@ -554,7 +556,7 @@ class CorrectedReadingTests(unittest.TestCase):
         cls.douay = passages(DOUAY)
 
     def test_the_fifth_sunday_of_easter_acts_opens_at_the_preaching(self) -> None:
-        text = self.douay["Acts 14:21-27"]
+        text = self.douay["Acts 14:21b-27"]
         self.assertTrue(text.startswith("And when they had preached the gospel"))
 
     def test_stephens_martyrdom_keeps_its_last_verse(self) -> None:
@@ -564,8 +566,8 @@ class CorrectedReadingTests(unittest.TestCase):
     def test_the_transfiguration_in_mark_opens_after_six_days(self) -> None:
         self.assertTrue(self.douay["Mark 9:2-10"].startswith("And after six days"))
 
-    def test_the_cloud_at_the_baptism_acclamation_is_the_voice_from_it(self) -> None:
-        self.assertIn("This is my most beloved Son", self.douay["Mark 9:7"])
+    def test_the_cloud_acclamation_is_the_voice_from_it(self) -> None:
+        self.assertIn("This is my most beloved Son", self.douay["Mark 9:6"])
 
     def test_the_bread_of_life_discourse_keeps_the_flesh_given_for_the_world(self) -> None:
         self.assertIn("for the life of the world", self.douay["John 6:41-51"])
@@ -603,12 +605,13 @@ class CorrectedReadingTests(unittest.TestCase):
 
     def test_the_holy_family_sirach_opens_at_the_fathers_honour(self) -> None:
         self.assertTrue(
-            self.douay["Sirach 3:2-6, 12-14"].startswith("For God hath made the father")
+            self.douay["Sirach 3:3-7, 14-17a"].startswith("For God hath made the father")
         )
 
     def test_sirach_thirty_five_opens_at_the_judge_who_knows_no_favourites(self) -> None:
         self.assertIn(
-            "there is not with him respect of person", self.douay["Sirach 35:12-14, 16-18"]
+            "there is not with him respect of person",
+            self.douay["Sirach 35:15b-17, 20-22a"],
         )
 
     def test_a_sirach_citation_already_in_the_vulgates_numbering_is_untouched(self) -> None:

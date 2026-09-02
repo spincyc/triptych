@@ -375,10 +375,21 @@ under two names, the two copies drift, and nothing compares them — which has
 already happened here, where four Sundays' orations were held a second time and
 the copies had silently diverged in five ways before anything noticed.
 
-The aliases a retrieval used are part of how it was made, so record them with
-the artifact. A later reader must be able to see which names were tried, because
-that is the only way to tell a work that is genuinely unreachable from one that
-was looked for under the wrong name.
+Put each durable alias at the identity level it describes. Record alternate
+work titles and incipits in `work.alternate_titles`; record edition-specific
+titles, editors, publishers, series, volumes, and catalogue forms in the
+edition's identity fields or `notes`. Those declarations establish known
+identity; they do not assert that a retrieval actually tried the names.
+
+The aliases actually tried are acquisition provenance. When an artifact was
+identified, record the exact query strings, repository or endpoint, material
+hits or misses, and search bound in that artifact's `provenance`; lengthy
+supporting detail may remain in `notes`. When no artifact was identified, or
+one campaign covered multiple candidates, record the same evidence in the
+owning acquisition audit or inventory. Do not invent a placeholder artifact to
+hold a negative search. A later reader must be able to distinguish a work that
+is genuinely unreachable within the recorded bound from one sought under the
+wrong name.
 
 **Source text must never route through a model.** Retrieval fetches and retains
 whole byte streams, hashes them, and seeks within them locally. A model in the
@@ -472,10 +483,11 @@ question governs a whole body of material and keeps being reopened, the answer
 belongs in one file under `src/sources/inventories/`, with its citations, the
 routes examined and refused, and what would change if the position changed. A
 rights position stated only in prose, in three places, in three wordings, is
-three positions. `liturgical-english-rights-v1.toml` is the first of these: it
-settles whether the English of the postconciliar Roman Missal may be published
-here, and it exists because that question had been answered independently at
-least three times and the reasons had been kept nowhere. A rights record is not
+three positions. `liturgical-english-rights-v1.toml` records the material facts
+for the English of the postconciliar Roman Missal; the governing presumption and
+per-surface procedure are in `liturgical-text-publication-policy.md`. The record
+exists because the question had been answered independently at least three
+times and the reasons had been kept nowhere. A rights record is not
 legal advice and states its jurisdiction; it is the project's own reading, held
 to the same standard as any other claim, and citable so that the next reader
 inherits the reasoning instead of the conclusion.

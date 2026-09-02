@@ -170,6 +170,37 @@ class ProseRuleTests(unittest.TestCase):
         self.assertFalse(reading["readable"])
         self.assertEqual(reading["withheld"], "no-transcription")
 
+    def test_withheld_projection_omits_prose_bearing_metadata(self) -> None:
+        one = passage(
+            context="Protected context must not become a quotation channel.",
+            notes="Protected notes must not become a quotation channel.",
+        )
+        held = library_with(rights_status="unresolved", storage="remote")
+        work = {
+            "id": "work.test", "title": "W", "author": None,
+            "category": None, "languages": [], "alternate_titles": [],
+            "description": None,
+        }
+        edition = {
+            "id": "edition.test", "title": "E", "language": "en",
+            "date": "2026", "year": 2026, "publication": None,
+            "editors": [], "translators": [], "authority": None,
+            "jurisdiction": None, "notes": "Protected edition quotation.",
+            "artifacts": [{
+                **next(iter(held.records.values())).data,
+                "notes": "Protected artifact quotation.",
+            }],
+            "passages": [{**one, "reading": reader.reading_of(held, one)}],
+        }
+        payload = reader.edition_payload(work, edition)
+        row = payload["passages"][0]
+        self.assertFalse(row["readable"])
+        for field in ("context", "notes", "rights_basis"):
+            self.assertNotIn(field, row)
+        self.assertNotIn("notes", payload["edition"])
+        self.assertNotIn("notes", payload["artifacts"][0])
+        self.assertNotIn("rights_basis", payload["artifacts"][0])
+
     def test_a_transcription_wins_over_line_bounds(self) -> None:
         """The checked transcription is the reading; the bounds are its evidence."""
         reading = reader.reading_of(
@@ -225,6 +256,65 @@ class AcknowledgementTests(unittest.TestCase):
         self.assertNotIn("restricted", reader.DISTRIBUTABLE_RIGHTS)
         self.assertNotIn("unresolved", reader.DISTRIBUTABLE_RIGHTS)
         self.assertIn("licensed", reader.ATTRIBUTION_REQUIRED)
+
+
+class IndexProjectionTests(unittest.TestCase):
+    """The finder preserves edition identity and controller relationships."""
+
+    @staticmethod
+    def fixture() -> tuple[dict, dict]:
+        work = {
+            "id": "work.test", "title": "Work", "author": "Author",
+            "category": "treatise", "languages": ["en"],
+            "alternate_titles": [], "description": None,
+        }
+        edition = {
+            "id": "edition.test", "title": "The Recorded Edition",
+            "language": "en", "date": "1900", "year": 1900,
+            "publication": None, "editors": [], "translators": [],
+            "authority": None, "jurisdiction": None, "notes": None,
+            "directory": "editions/test/", "file": "1900-test.json",
+            "artifacts": [{
+                **artifact(id="artifact.owned", rights_status="restricted"),
+                "rights_basis": "Private basis must not cross the boundary.",
+            }],
+            "passages": [{
+                "id": "passage.test", "locus": "1", "reading": {
+                    "readable": True,
+                    "artifact_id": "artifact.container",
+                    "artifact_type": "transcribed-text",
+                    "media_type": "text/plain; charset=utf-8",
+                    "rights": "public-domain",
+                    "rights_basis": "Published in 1887 and out of copyright.",
+                    "rights_jurisdiction": "US",
+                    "storage": "tracked",
+                    "source_url": "https://example.invalid/container",
+                    "segment_id": "segment.test",
+                    "source": "transcription", "text": "Words.",
+                },
+            }],
+        }
+        return work, edition
+
+    def test_spine_names_the_edition_and_unions_segment_controller_rights(self) -> None:
+        work, edition = self.fixture()
+        work["editions"] = [edition]
+        built = reader.spine([work], reader.tally([work]))
+        row = built["works"][0]["editions"][0]
+        self.assertEqual(row["title"], "The Recorded Edition")
+        self.assertEqual(row["rights"], ["public-domain", "restricted"])
+        facets = {one["id"]: one for one in built["facets"]["rights"]}
+        self.assertEqual(facets["public-domain"]["artifacts"], 0)
+        self.assertEqual(facets["public-domain"]["editions"], 1)
+
+    def test_external_controller_is_shown_without_becoming_edition_owned(self) -> None:
+        work, edition = self.fixture()
+        payload = reader.edition_payload(work, edition)
+        artifacts = {one["id"]: one for one in payload["artifacts"]}
+        self.assertTrue(artifacts["artifact.owned"]["edition_owned"])
+        self.assertFalse(artifacts["artifact.container"]["edition_owned"])
+        self.assertNotIn("rights_basis", artifacts["artifact.owned"])
+        self.assertIn("rights_basis", artifacts["artifact.container"])
 
 
 class PathConventionTests(unittest.TestCase):
@@ -312,6 +402,38 @@ class TrackedProjectionTests(unittest.TestCase):
                 with self.subTest(edition=edition["id"]):
                     self.assertTrue(where.is_file(), f"{where} is missing")
 
+    def test_every_edition_keeps_its_recorded_title_in_the_spine(self) -> None:
+        for work in self.spine["works"]:
+            for edition in work["editions"]:
+                with self.subTest(edition=edition["id"]):
+                    self.assertTrue(str(edition.get("title") or "").strip())
+
+    def test_every_passage_controller_is_in_the_displayed_source_set(self) -> None:
+        for path in (TRACKED / "editions").rglob("*.json"):
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            artifacts = {one["id"] for one in payload["artifacts"]}
+            for passage in payload["passages"]:
+                controller = passage.get("artifact_id")
+                if not controller:
+                    continue
+                with self.subTest(passage=passage["id"]):
+                    self.assertIn(controller, artifacts)
+
+    def test_every_edition_rights_row_includes_its_passage_controllers(self) -> None:
+        indexed = {
+            edition["id"]: set(edition["rights"])
+            for work in self.spine["works"]
+            for edition in work["editions"]
+        }
+        for path in (TRACKED / "editions").rglob("*.json"):
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            rights = indexed[payload["edition"]["id"]]
+            for passage in payload["passages"]:
+                if not passage.get("rights"):
+                    continue
+                with self.subTest(passage=passage["id"]):
+                    self.assertIn(passage["rights"], rights)
+
     def test_every_text_payload_names_the_edition_it_belongs_to(self) -> None:
         """The route Catena Omnia follows, written by the generator."""
         directory = TRACKED / "text"
@@ -336,6 +458,10 @@ class PageTests(unittest.TestCase):
         markup = PAGE.read_text(encoding="utf-8")
         self.assertIn("reader-model.js", markup)
         self.assertIn("sources.js", markup)
+
+    def test_the_public_layout_owns_the_one_main_element(self) -> None:
+        markup = PAGE.read_text(encoding="utf-8")
+        self.assertNotIn("<main", markup)
 
     def test_the_model_loads_under_node_and_narrows_nothing_away(self) -> None:
         harness = (

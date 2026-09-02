@@ -1,10 +1,24 @@
 import datetime as dt
+import json
 from pathlib import Path
 import re
+import shutil
+import subprocess
 import unittest
 
 
 ROOT = Path(__file__).resolve().parents[2]
+
+
+def tool_json(*arguments: str) -> dict:
+  completed = subprocess.run(
+    [str(ROOT / "tools/tpt"), *arguments, "--format", "json"],
+    cwd=ROOT,
+    check=True,
+    capture_output=True,
+    text=True,
+  )
+  return json.loads(completed.stdout)
 
 
 def nominal_resumed_slots(pentecost_sundays: int) -> dict[int, str]:
@@ -229,6 +243,79 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
       self.assertIn("../pdf/gpt/", row.group())
       if name == "Sixteenth Sunday in Ordinary Time":
         self.assertIn("../pdf/claude/", row.group())
+
+
+@unittest.skipUnless(shutil.which("node"), "node is required by calendar-rubrics")
+class CalendarSelectionSemanticsTest(unittest.TestCase):
+  def rubric_day(self, date: str) -> dict:
+    payload = tool_json(
+      "calendar-rubrics", "day", "--date", date, "--calendar", "postconciliar"
+    )
+    self.assertEqual(payload["status"], "ok")
+    self.assertEqual(payload["problems"], [])
+    self.assertEqual(len(payload["days"]), 1)
+    return payload["days"][0]
+
+  def proper_forms(self, key: str) -> list[str | None]:
+    payload = tool_json(
+      "mass-propers", "show", "--calendar", "postconciliar", "--mass", key
+    )
+    forms = []
+    for row in payload["appointed"]:
+      form = row.get("form")
+      if form not in forms:
+        forms.append(form)
+    return forms
+
+  def test_territorial_alternatives_remain_separate_tagged_branches(self):
+    branches = self.rubric_day("2026-01-04")["options"]
+    self.assertEqual(
+      [branch["option"] for branch in branches],
+      ["epiphany-january-6", "epiphany-transferred-to-sunday"],
+    )
+    self.assertEqual(
+      [branch["winner"]["key"] for branch in branches],
+      ["second-sunday-after-nativity", "epiphany"],
+    )
+    self.assertTrue(all(branch["settled"] for branch in branches))
+    self.assertTrue(all(not branch["choiceRequired"] for branch in branches))
+
+  def test_optional_memorial_is_a_settled_choice_not_an_unresolved_day(self):
+    branch = self.rubric_day("2026-09-12")["options"][0]
+    self.assertTrue(branch["settled"])
+    self.assertEqual(branch["unsettled"], [])
+    self.assertIsNone(branch["winner"])
+    self.assertTrue(branch["choiceRequired"])
+    self.assertEqual(branch["choice"]["id"], "calendar-formulary")
+    self.assertEqual(
+      [row["key"] for row in branch["choice"]["among"]],
+      ["most-holy-name-mary", "ot-23-saturday"],
+    )
+    self.assertEqual(
+      [(row["key"], row["state"], row["choice"]) for row in branch["readable"]],
+      [
+        ("most-holy-name-mary", "option", "calendar-formulary"),
+        ("ot-23-saturday", "option", "calendar-formulary"),
+      ],
+    )
+
+  def test_calendar_selection_does_not_invent_one_nativity_form(self):
+    branch = self.rubric_day("2026-12-25")["options"][0]
+    self.assertEqual(branch["winner"]["key"], "nativity")
+    self.assertIsNone(branch["winner"]["formulary"])
+    self.assertEqual(
+      self.proper_forms("nativity"),
+      ["Vigil Mass", "Mass during the Night", "Mass at Dawn", "Mass during the Day"],
+    )
+
+  def test_plural_optional_memorials_keep_distinct_mass_identities(self):
+    branch = self.rubric_day("2026-01-20")["options"][0]
+    self.assertEqual(
+      [row["key"] for row in branch["choice"]["among"]],
+      ["saint-fabian-pope-martyr", "saint-sebastian-martyr", "ot-2-tuesday"],
+    )
+    self.assertEqual(self.proper_forms("saint-fabian-pope-martyr"), [None])
+    self.assertEqual(self.proper_forms("saint-sebastian-martyr"), [None])
 
 
 if __name__ == "__main__":

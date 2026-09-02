@@ -486,7 +486,8 @@ Until separately changed and tested:
 - no webfont dependency;
 - no icon library;
 - no framework migration;
-- no root-relative link that breaks the /triptych/ project path;
+- no root-relative link that breaks custom-domain-root or `/triptych/`
+  project-path portability;
 - no new asset type outside the generator allowlist;
 - no violation of the HTML payload ceiling or static/no-server deployment
   model.

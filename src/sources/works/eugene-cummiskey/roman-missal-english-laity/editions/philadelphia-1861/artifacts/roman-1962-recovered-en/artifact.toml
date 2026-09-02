@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-recovered-en"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The 106 rows reproduce only historical English wording printed in an 1861 Philadelphia edition, which is in the United States public domain by publication date. They contain no Google or Internet Archive header, watermark, page image, OCR, markup or annotation. A faithful project transcription of public-domain wording creates no new copyright. The exact Google-digitized PDF remains remote and unresolved; it is visual verification evidence, not this publication payload."
+rights_jurisdiction = "United States"
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+transformation = "Human page-image transcriptions made 2026-08-01 through 2026-08-20 and recovered on 2026-08-27 from bounded scratch harvests. Only historical English bodies were retained. Headings, Latin, page furniture, Google matter and line-break hyphenation were omitted; internal line and paragraph breaks were normalized to single spaces and one terminal newline was omitted. Diplomatic spelling and punctuation were otherwise retained except where a row's source audit explicitly records a damaged-type normalization. The target identity columns are cataloguing candidates; alignment_status distinguishes exact, candidate, superseded and rejected identities, and no candidate row alone authorizes a Roman-1962 overlay attachment."
+retrieved = "2026-08-27"
+sha256 = "c61752839c8b04282bac27592749d63a4f0227d3fa051e62418f609c562eb54a"
+byte_size = 42700
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/roman-1962-recovered-en/roman-1962-recovered-en.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "One header and 106 historical-English rows: 101 deduplicated recovery candidates (55 Collects, 34 newly-landed rows including the nine ledgered-rest overlaps once, and 12 non-Distribution-antiphon Holy Week rows), one superseded Dedication-Extra retarget, and four exact Common/Peter-Nolasco antecedent rows. Rejected or still-unconfirmed target identities remain evidence only; only separately bound exact overlay entries may publish as Roman-1962 translations."

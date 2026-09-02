@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 1920,
-  "editions": 722,
-  "passages": 2873,
-  "readable": 1635,
-  "works": 540
+  "artifacts": 1839,
+  "editions": 723,
+  "passages": 3302,
+  "readable": 1648,
+  "works": 537
  },
  "facets": {
   "authors": [
@@ -163,7 +163,7 @@
    },
    {
     "id": "Augustine of Hippo",
-    "works": 7
+    "works": 6
    },
    {
     "id": "Bahya ben Asher ibn Halawa",
@@ -259,7 +259,7 @@
    },
    {
     "id": "Charles G. Herbermann and others",
-    "works": 8
+    "works": 3
    },
    {
     "id": "Charles G. Herbermann and the Catholic Encyclopedia editorial board",
@@ -287,7 +287,7 @@
    },
    {
     "id": "Congregation for Divine Worship and the Discipline of the Sacraments",
-    "works": 14
+    "works": 15
    },
    {
     "id": "Congregation for the Doctrine of the Faith",
@@ -1146,6 +1146,10 @@
     "works": 1
    },
    {
+    "id": "Triptych contributors",
+    "works": 1
+   },
+   {
     "id": "United Grand Lodge of England",
     "works": 1
    },
@@ -1159,6 +1163,10 @@
    },
    {
     "id": "United States Conference of Catholic Bishops",
+    "works": 1
+   },
+   {
+    "id": "United States Conference of Catholic Bishops, Committee on Divine Worship",
     "works": 1
    },
    {
@@ -1248,19 +1256,11 @@
     "works": 8
    },
    {
-    "id": "reference-encyclopedia",
-    "works": 8
-   },
-   {
     "id": "encyclical",
     "works": 7
    },
    {
     "id": "papal-letter",
-    "works": 7
-   },
-   {
-    "id": "patristic-treatise",
     "works": 7
    },
    {
@@ -1273,6 +1273,10 @@
    },
    {
     "id": "patristic-homily-series",
+    "works": 6
+   },
+   {
+    "id": "patristic-treatise",
     "works": 6
    },
    {
@@ -1400,6 +1404,10 @@
     "works": 3
    },
    {
+    "id": "reference-encyclopedia",
+    "works": 3
+   },
+   {
     "id": "spiritual-treatise",
     "works": 3
    },
@@ -1481,6 +1489,10 @@
    },
    {
     "id": "novel",
+    "works": 2
+   },
+   {
+    "id": "official-liturgical-notification",
     "works": 2
    },
    {
@@ -1768,6 +1780,10 @@
     "works": 1
    },
    {
+    "id": "editorial-source-projection",
+    "works": 1
+   },
+   {
     "id": "encyclical-letter",
     "works": 1
    },
@@ -1908,6 +1924,10 @@
     "works": 1
    },
    {
+    "id": "liturgical-publication-guidelines",
+    "works": 1
+   },
+   {
     "id": "liturgical-rescript",
     "works": 1
    },
@@ -1985,10 +2005,6 @@
    },
    {
     "id": "official-liturgical-notice",
-    "works": 1
-   },
-   {
-    "id": "official-liturgical-notification",
     "works": 1
    },
    {
@@ -2290,11 +2306,11 @@
   ],
   "languages": [
    {
-    "editions": 358,
+    "editions": 354,
     "id": "en"
    },
    {
-    "editions": 227,
+    "editions": 232,
     "id": "la"
    },
    {
@@ -2421,39 +2437,40 @@
     "label": "19th century"
    },
    {
-    "editions": 170,
+    "editions": 168,
     "id": "1900",
     "label": "20th century"
    },
    {
-    "editions": 384,
+    "editions": 387,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 1004,
+    "artifacts": 1030,
+    "editions": 187,
     "id": "public-domain"
    },
    {
-    "artifacts": 530,
+    "artifacts": 628,
+    "editions": 326,
     "id": "restricted"
    },
    {
-    "artifacts": 216,
-    "id": "permission"
-   },
-   {
-    "artifacts": 95,
+    "artifacts": 104,
+    "editions": 55,
     "id": "unresolved"
    },
    {
     "artifacts": 57,
+    "editions": 23,
     "id": "licensed"
    },
    {
-    "artifacts": 18,
+    "artifacts": 20,
+    "editions": 10,
     "id": "project-created"
    }
   ]
@@ -2479,6 +2496,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Perush ha-Torah le-Rabbenu Avraham ibn Ezra, Piotrkow printing",
      "year": 1907
     }
    ],
@@ -2505,6 +2523,7 @@
       "public-domain",
       "unresolved"
      ],
+     "title": "The Mass: A Study of the Roman Liturgy",
      "year": 1922
     }
    ],
@@ -2533,6 +2552,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "The Ceremonies of the Roman Rite Described",
      "year": 1917
     },
     {
@@ -2545,6 +2565,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Ceremonies of the Roman Rite Described, seventh edition",
      "year": 1943
     },
     {
@@ -2557,6 +2578,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "The Ceremonies of the Roman Rite Described, twelfth revised edition",
      "year": 1962
     }
    ],
@@ -2585,6 +2607,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Interrogationes et responsiones in Genesin, Patrologia Latina tomus 100",
      "year": 1851
     }
    ],
@@ -2613,6 +2636,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Ante-Nicene Fathers, Volume I: The Apostolic Fathers, Justin Martyr, and Irenaeus",
      "year": 1887
     }
    ],
@@ -2639,6 +2663,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The Ante-Nicene Fathers, Volume III: Latin Christianity: Its Founder, Tertullian",
      "year": 1885
     }
    ],
@@ -2665,6 +2690,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The Ante-Nicene Fathers, Volume IV: Fathers of the Third Century: Tertullian, Part Fourth; Minucius Felix; Commodian; Origen, Parts First and Second",
      "year": 1885
     }
    ],
@@ -2691,6 +2717,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The Ante-Nicene Fathers, Volume V: Fathers of the Third Century",
      "year": 1886
     }
    ],
@@ -2717,6 +2744,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The Ante-Nicene Fathers, Volume VI: Fathers of the Third Century: Gregory Thaumaturgus, Dionysius the Great, Julius Africanus, Anatolius and Minor Writers, Methodius, Arnobius",
      "year": 1886
     }
    ],
@@ -2743,6 +2771,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The Ante-Nicene Fathers, Volume IX: Recently Discovered Additions to Early Christian Literature; Commentaries of Origen",
      "year": 1896
     }
    ],
@@ -2770,6 +2799,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "On the Mysteries",
      "year": 1896
     }
    ],
@@ -2798,6 +2828,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Expositio evangelii secundum Lucam, Migne's Latin as transcribed by Corpus Corporum",
      "year": 2026
     }
    ],
@@ -2828,6 +2859,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Hexameron, Patrologia Latina tomus 14",
      "year": 1845
     }
    ],
@@ -2856,6 +2888,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Letter LXX",
      "year": 1881
     }
    ],
@@ -2881,6 +2914,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Dominica I post Epiphaniam, Latin–Italian handout",
      "year": 2021
     }
    ],
@@ -2909,6 +2943,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Commentaria in Epistolam ad Corinthios Primam, Migne transcription",
      "year": 2026
     }
    ],
@@ -2934,6 +2969,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Les euchologes du fonds Barberini grec",
      "year": 1974
     }
    ],
@@ -2963,6 +2999,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Commentarius in Genesin, Patrologia Latina tomus 115",
      "year": 1852
     }
    ],
@@ -2988,6 +3025,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Mary: Grace and Hope in Christ — Holy See Christian-unity web state",
      "year": 2026
     }
    ],
@@ -3017,6 +3055,7 @@
      "rights": [
       "licensed"
      ],
+     "title": "11Q11 transcription",
      "year": 2024
     },
     {
@@ -3029,6 +3068,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "11Q11 manuscript catalog record",
      "year": 2026
     }
    ],
@@ -3058,6 +3098,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "4Q560 (Aramaic Magic Book)",
      "year": 2026
     }
    ],
@@ -3085,6 +3126,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Apostolic Tradition of Hippolytus",
      "year": 1934
     },
     {
@@ -3097,6 +3139,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Apostolic Tradition: A New Commentary",
      "year": 2023
     }
    ],
@@ -3125,6 +3168,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Jubilees, English, trans. R. H. Charles (Oxford, 1913) — CCEL web state",
      "year": 2026
     }
    ],
@@ -3157,6 +3201,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Old Testament in Greek according to the Septuagint, volume 2: Tobit",
      "year": 1896
     }
    ],
@@ -3186,6 +3231,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The First Homily: On the Annunciation to the Holy Virgin Mary",
      "year": 1886
     }
    ],
@@ -3215,6 +3261,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "1QapGen Column 20",
      "year": 2026
     }
    ],
@@ -3240,6 +3287,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Relation de la sortie du demon Balam",
      "year": 1635
     }
    ],
@@ -3265,6 +3313,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Récit veritable de ce qui s'est passé à Loudun contre maistre Urbain Grandier",
      "year": 1634
     }
    ],
@@ -3294,6 +3343,7 @@
      "rights": [
       "licensed"
      ],
+     "title": "4Q510 and 4Q511 transcriptions",
      "year": 2025
     },
     {
@@ -3306,6 +3356,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "4Q510 and 4Q511 manuscript catalog records",
      "year": 2026
     }
    ],
@@ -3337,6 +3388,7 @@
       "public-domain",
       "restricted"
      ],
+     "title": "Liber de vera et falsa poenitentia — Patrologia Latina 40",
      "year": 1845
     }
    ],
@@ -3365,6 +3417,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Genuine Works of Hippocrates, volume 2",
      "year": 1849
     }
    ],
@@ -3393,6 +3446,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Genesis 15, Syriac — peshitta.eu web state",
      "year": 2026
     }
    ],
@@ -3420,6 +3474,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Die Bussordnungen der abendländischen Kirche",
      "year": 1851
     }
    ],
@@ -3445,6 +3500,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Message of 21 May 2007 in the RecipesAndMore list archive at mail-archive.com",
      "year": 2007
     }
    ],
@@ -3473,6 +3529,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Constitutions of the Holy Apostles in The Ante-Nicene Fathers, volume VII",
      "year": 1886
     },
     {
@@ -3485,6 +3542,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Didascalia et Constitutiones Apostolorum, volume I",
      "year": 1905
     },
     {
@@ -3497,6 +3555,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Apostolic Constitutions, Book VIII",
      "year": 2026
     }
    ],
@@ -3525,6 +3584,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Pontificale, Kraków, Biblioteka Jagiellońska, MS 2057",
      "year": 1000
     }
    ],
@@ -3553,6 +3613,7 @@
      "rights": [
       "licensed"
      ],
+     "title": "Pontificale Salisburgense, Vendôme, Bibliothèque municipale, MS 14",
      "year": 1000
     }
    ],
@@ -3581,6 +3642,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Papyri Graecae Magicae: Die griechischen Zauberpapyri, volume 1",
      "year": 1928
     }
    ],
@@ -3610,6 +3672,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Gelasian Sacramentary: Liber Sacramentorum Romanae Ecclesiae",
      "year": 1894
     },
     {
@@ -3622,6 +3685,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Liber sacramentorum Romanae aeclesiae ordinis anni circuli (Sacramentarium Gelasianum)",
      "year": 1960
     }
    ],
@@ -3649,6 +3713,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Le Pontifical romano-germanique du dixième siècle",
      "year": 1963
     }
    ],
@@ -3676,6 +3741,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Sacramentarium Gellonense, Paris, BnF, Latin 12048",
      "year": 780
     }
    ],
@@ -3720,6 +3786,7 @@
       "public-domain",
       "unresolved"
      ],
+     "title": "Supplementum Tertiae Partis, in Sancti Thomae Aquinatis Opera omnia, tomus duodecimus",
      "year": 1906
     },
     {
@@ -3732,6 +3799,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Supplement to the Third Part, English (Fathers of the English Dominican Province) — New Advent web state",
      "year": 2026
     }
    ],
@@ -3759,6 +3827,7 @@
      "rights": [
       "licensed"
      ],
+     "title": "English Pontifical, Cambridge, Corpus Christi College, Parker Library MS 79",
      "year": 1400
     }
    ],
@@ -3784,7 +3853,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Ballerini editorial text reprinted in Patrologia Latina 56",
      "year": 1850
     },
     {
@@ -3795,6 +3867,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Statuta ecclesiae antiqua",
      "year": 1963
     }
    ],
@@ -3820,6 +3893,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "British Museum object 1868,0808.4955",
      "year": 2026
     }
    ],
@@ -3863,6 +3937,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The Targums of Onkelos and Jonathan Ben Uzziel on the Pentateuch, translated by J. W. Etheridge",
      "year": 1862
     }
    ],
@@ -3888,6 +3963,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The Patriarchal Encyclical of 1895 — English web state",
      "year": 2026
     }
    ],
@@ -3915,6 +3991,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Dominica XIV post Pentecosten — Latin text with critical and source apparatus",
      "year": 2021
     }
    ],
@@ -3940,6 +4017,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Dominica XII post Pentecosten — Latin text with critical and source apparatus",
      "year": 2021
     },
     {
@@ -3952,6 +4030,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Eleventh Sunday after Pentecost",
      "year": 2026
     }
    ],
@@ -3978,6 +4057,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Enchiridion Indulgentiarum, editio quarta — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -4007,6 +4087,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Missale Bracarense, the typical edition of 1924",
      "year": 1924
     }
    ],
@@ -4036,6 +4117,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Missale Ambrosianum, Milan: Leonhard Pachel, 27 August 1499",
      "year": 1499
     },
     {
@@ -4048,6 +4130,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Missale Ambrosianum, Milan: Io. Ambrosius Sirturus and the heirs of Ponzio and Piccaglia, 1640",
      "year": 1640
     },
     {
@@ -4060,6 +4143,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Missale Ambrosianum, Milan: Beniamin and the brothers de Sirturis, 1712, with Masses printed at Milan in 1733 bound in",
      "year": 1712
     }
    ],
@@ -4090,6 +4174,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Missale mixtum ... ab Alexandro Lesleo ornatum, Rome: Venantius Monaldini, 1755",
      "year": 1755
     },
     {
@@ -4102,6 +4187,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Liturgia Mozarabica secundum regulam beati Isidori, tomus prior: Missale mixtum, Paris: J.-P. Migne, 1862 (Patrologia Latina 85)",
      "year": 1862
     }
    ],
@@ -4130,6 +4216,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Nicomachean Ethics, English, trans. W. D. Ross (Oxford, 1925) — Internet Classics Archive web state",
      "year": 2026
     },
     {
@@ -4142,6 +4229,7 @@
      "rights": [
       "licensed"
      ],
+     "title": "Ethica Nicomachea, Greek, ed. Ingram Bywater (Oxford, 1894) — Perseus Digital Library web state",
      "year": 2026
     }
    ],
@@ -4169,6 +4257,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Rhetoric, English, trans. J. H. Freese (Loeb, 1926) — Perseus Digital Library web state",
      "year": 2026
     },
     {
@@ -4179,6 +4268,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Ars Rhetorica, Greek, ed. W. D. Ross (Oxford, 1959) — Perseus Digital Library web state",
      "year": 2026
     }
    ],
@@ -4204,6 +4294,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Rituale Armenorum",
      "year": 1905
     }
    ],
@@ -4235,6 +4326,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Life of Antony",
      "year": 2026
     }
    ],
@@ -4261,6 +4353,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Targum Onkelos, Aramaic text as served in the Sefaria digital library",
      "year": 2026
     }
    ],
@@ -4289,6 +4382,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Sancti Aureli Augustini Confessionum libri tredecim",
      "year": 1896
     }
    ],
@@ -4319,6 +4413,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "De Genesi ad litteram, Patrologia Latina tomus 34",
      "year": 1841
     }
    ],
@@ -4348,6 +4443,7 @@
       "licensed",
       "public-domain"
      ],
+     "title": "The City of God, volumes I-II",
      "year": 1871
     },
     {
@@ -4361,6 +4457,7 @@
       "licensed",
       "public-domain"
      ],
+     "title": "Sancti Aurelii Augustini De civitate Dei libri XXII",
      "year": 1899
     }
    ],
@@ -4369,34 +4466,6 @@
     "la"
    ],
    "title": "De civitate Dei"
-  },
-  {
-   "alternate_titles": [
-    "Harmony of the Gospels",
-    "On the Harmony of the Evangelists"
-   ],
-   "author": "Augustine of Hippo",
-   "category": "patristic-treatise",
-   "directory": "editions/augustine/de-consensu-evangelistarum/",
-   "editions": [
-    {
-     "date": "2026-08-26",
-     "file": "2026-english-salmond-npnf1-6-newadvent-web-2026-08-26.json",
-     "id": "edition.augustine.de-consensu-evangelistarum.english-salmond-npnf1-6-newadvent-web-2026-08-26",
-     "language": "en",
-     "passages": 0,
-     "readable": 0,
-     "rights": [
-      "restricted"
-     ],
-     "year": 2026
-    }
-   ],
-   "id": "work.augustine.de-consensu-evangelistarum",
-   "languages": [
-    "la"
-   ],
-   "title": "De consensu evangelistarum"
   },
   {
    "alternate_titles": [
@@ -4413,7 +4482,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Enarrationes in Psalmos, Psalms 80-150, Benedictine text reprinted in Patrologia Latina 37",
      "year": 1845
     },
     {
@@ -4424,9 +4496,9 @@
      "passages": 5,
      "readable": 0,
      "rights": [
-      "restricted",
       "unresolved"
      ],
+     "title": "Expositions on the Psalms, English NPNF text as delivered by New Advent",
      "year": 2026
     },
     {
@@ -4439,6 +4511,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Expositions on the Psalms, English NPNF text as delivered by New Advent",
      "year": 2026
     }
    ],
@@ -4467,6 +4540,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Tractates on the Gospel of John, English NPNF text as delivered by New Advent",
      "year": 2026
     },
     {
@@ -4480,6 +4554,7 @@
       "public-domain",
       "unresolved"
      ],
+     "title": "In Iohannis Evangelium Tractatus, Latin text as delivered by augustinus.it",
      "year": 2026
     }
    ],
@@ -4508,6 +4583,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Sermo CXV, Latin text as delivered by augustinus.it",
      "year": 2026
     }
    ],
@@ -4534,6 +4610,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Midrash Rabbeinu Bachya, Warsaw 1878 printing",
      "year": 1878
     }
    ],
@@ -4561,6 +4638,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "On the Holy Spirit, NPNF Second Series, Volume VIII, dated New Advent delivery",
      "year": 1895
     }
    ],
@@ -4590,6 +4668,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Metaphrasis Latina Hexaemeri, the Latin version of Eustathius",
      "year": 1847
     }
    ],
@@ -4620,6 +4699,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Hexaemeron, Patrologia Latina tomus 91",
      "year": 1850
     }
    ],
@@ -4648,6 +4728,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "In Lucae evangelium expositio, Migne's Latin as transcribed by Corpus Corporum",
      "year": 2026
     }
    ],
@@ -4674,6 +4755,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Benedictus Deus — Latin text as received in Denzinger's Enchiridion symbolorum",
      "year": 1336
     }
    ],
@@ -4699,6 +4781,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Angelus, 14 October 2007, official English Holy See web edition",
      "year": 2026
     }
    ],
@@ -4724,6 +4807,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Anglicanorum coetibus - Vatican English web state",
      "year": 2026
     },
     {
@@ -4736,6 +4820,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Anglicanorum coetibus - Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -4761,6 +4846,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Homily, 10 October 2010, official English Holy See web edition",
      "year": 2026
     }
    ],
@@ -4786,6 +4872,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Spe salvi, English — Holy See web state",
      "year": 2026
     }
    ],
@@ -4815,6 +4902,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Rule of St. Benedict",
      "year": 1910
     }
    ],
@@ -4842,6 +4930,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Catalogue of Vestments, Banners and Regalia: Our Own Manufacture and Imported",
      "year": 1893
     }
    ],
@@ -4867,6 +4956,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Church Goods Catalogue",
      "year": 1927
     }
    ],
@@ -4892,6 +4982,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Some Letters of Saint Bernard, Abbot of Clairvaux",
      "year": 1904
     }
    ],
@@ -4917,6 +5008,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Mandement of 18 January 1862 as reproduced in Lasserre, Notre-Dame de Lourdes (1870)",
      "year": 1870
     }
    ],
@@ -4942,7 +5034,10 @@
      "language": "la",
      "passages": 1,
      "readable": 1,
-     "rights": [],
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Commentarius in librum Sapientiae — Quaracchi edition",
      "year": 1893
     }
    ],
@@ -4968,6 +5063,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Opera omnia, volume 6",
      "year": 1893
     }
    ],
@@ -4995,6 +5091,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Gospel according to St. John: The Greek Text with Introduction and Notes, volume 2",
      "year": 1908
     }
    ],
@@ -5024,6 +5121,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The New Testament in the Original Greek: Introduction and Appendix",
      "year": 1882
     }
    ],
@@ -5052,6 +5150,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Caesarii Heisterbacensis Dialogus miraculorum, volume 2",
      "year": 1851
     }
    ],
@@ -5079,6 +5178,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Epistle 16",
      "year": 2026
     }
    ],
@@ -5107,6 +5207,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Magni Aurelii Cassiodori Expositio Psalmorum LXXI-CL, CCSL 98",
      "year": 1958
     },
     {
@@ -5119,6 +5220,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Expositio in Psalterium, Corpus Corporum presentation",
      "year": 2026
     },
     {
@@ -5131,6 +5233,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Expositio in Psalterium, Migne transcription",
      "year": 2026
     }
    ],
@@ -5158,6 +5261,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Caeremoniale Episcoporum, editio tertia post typicam",
      "year": 1948
     }
    ],
@@ -5182,7 +5286,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Calendarium Romanum generale",
      "year": 2002
     }
    ],
@@ -5208,6 +5315,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Catechismus Catholicae Ecclesiae, editio typica",
      "year": 1997
     },
     {
@@ -5220,6 +5328,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Catechism of the Catholic Church — archived English IntraText state",
      "year": 2003
     },
     {
@@ -5232,6 +5341,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Catechism of the Catholic Church, Second Edition",
      "year": 2019
     },
     {
@@ -5244,6 +5354,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Catechism of the Catholic Church — Vatican English web state",
      "year": 2026
     },
     {
@@ -5256,6 +5367,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Catechism of the Catholic Church — Vatican English web state (natural moral law page)",
      "year": 2026
     },
     {
@@ -5268,6 +5380,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Catechismus Catholicae Ecclesiae — Vatican Latin web state",
      "year": 2026
     },
     {
@@ -5280,6 +5393,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Catechismus Catholicae Ecclesiae — Vatican Latin web state (moral law article page)",
      "year": 2026
     },
     {
@@ -5292,6 +5406,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Catechismus Catholicae Ecclesiae - Vatican Latin web state (sixth-commandment article page)",
      "year": 2026
     }
    ],
@@ -5318,7 +5433,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "De Exorcismis et Supplicationibus Quibusdam, editio typica",
      "year": 1998
     },
     {
@@ -5329,6 +5447,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "De Exorcismis et Supplicationibus Quibusdam, editio typica emendata",
      "year": 2004
     }
    ],
@@ -5355,7 +5474,10 @@
      "language": "la",
      "passages": 36,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Institutio Generalis Missalis Romani — Latin text in the editio typica tertia",
      "year": 2002
     },
     {
@@ -5368,6 +5490,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "General Instruction of the Roman Missal, United States English state emended through 2021",
      "year": 2011
     }
    ],
@@ -5397,6 +5520,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Le Liber mozarabicus sacramentorum et les manuscrits mozarabes, ed. Marius Ferotin",
      "year": 1912
     }
    ],
@@ -5427,6 +5551,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "The Gelasian Sacramentary: Liber sacramentorum Romanae ecclesiae, edited with introduction, critical notes and appendix by H. A. Wilson",
      "year": 1894
     }
    ],
@@ -5455,6 +5580,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "\"Missale Gothicum\", a Gallican sacramentary, MS. Vatican. Regin. lat. 317, ed. H. M. Bannister",
      "year": 1917
     }
    ],
@@ -5482,6 +5608,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Missale Romanum ex decreto sacrosancti Concilii Tridentini restitutum, Pii V Pont. Max. iussu editum: the 1570 Venice issue",
      "year": 1570
     },
     {
@@ -5494,6 +5621,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Missale Romanum ex decreto sacrosancti Concilii Tridentini restitutum, Pii V Pont. Max. iussu editum et Clementis VIII auctoritate recognitum: the typical edition of 1604",
      "year": 1604
     },
     {
@@ -5501,11 +5629,12 @@
      "file": "1862-pustet-ratisbon-1862.json",
      "id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
      "language": "la",
-     "passages": 0,
+     "passages": 23,
      "readable": 0,
      "rights": [
       "public-domain"
      ],
+     "title": "Missale Romanum, the Pustet printing of Ratisbon, 1862: a commercial hand-format printing conformed to the Roman text, NOT a typical edition",
      "year": 1862
     },
     {
@@ -5518,7 +5647,21 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Missale Romanum, editio typica Vaticana of 1920",
      "year": 1920
+    },
+    {
+     "date": "1922",
+     "file": "1922-1922-tours-mame-editio-quarta-iuxta-typicam.json",
+     "id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+     "language": "la",
+     "passages": 5,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Missale Romanum, Tours: Alfred Mame, 1922, editio quarta iuxta typicam Vaticanam",
+     "year": 1922
     },
     {
      "date": "1942",
@@ -5530,6 +5673,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Missale Romanum, editio IV iuxta typicam Vaticanam (Benziger Brothers), pre-1955 witness of unestablished printing year",
      "year": 1942
     },
     {
@@ -5542,6 +5686,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Missale Romanum, editio iuxta typicam",
      "year": 1962
     },
     {
@@ -5549,11 +5694,12 @@
      "file": "1962-vatican-typica-1962.json",
      "id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
      "language": "la",
-     "passages": 41,
+     "passages": 59,
      "readable": 0,
      "rights": [
       "unresolved"
      ],
+     "title": "Missale Romanum, editio typica",
      "year": 1962
     },
     {
@@ -5566,6 +5712,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Missale Romanum, editio typica tertia",
      "year": 2002
     },
     {
@@ -5576,6 +5723,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Missale Romanum, editio typica tertia, reimpressio emendata",
      "year": 2008
     },
     {
@@ -5586,8 +5734,9 @@
      "passages": 5,
      "readable": 0,
      "rights": [
-      "permission"
+      "restricted"
      ],
+     "title": "Antiphonary excerpted from The Roman Missal — English translation according to the third typical edition, 2010 (the ICEL Antiphonary)",
      "year": 2010
     },
     {
@@ -5598,9 +5747,10 @@
      "passages": 1,
      "readable": 0,
      "rights": [
-      "permission",
+      "restricted",
       "unresolved"
      ],
+     "title": "The Roman Missal, third edition — English excerpts published by the Liturgy Office of the Bishops' Conference of England and Wales",
      "year": 2011
     }
    ],
@@ -5625,7 +5775,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Normae universales de anno liturgico et de calendario",
      "year": 2002
     }
    ],
@@ -5654,6 +5807,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Ordo lectionum Missae, editio typica altera",
      "year": 1981
     },
     {
@@ -5666,6 +5820,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "General Introduction to the Lectionary — approved English translation, Liturgy Office web state",
      "year": 2026
     }
    ],
@@ -5693,6 +5848,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Pontificale Romanum, jussu editum a Benedicto XIV et Leone XIII recognitum et castigatum",
      "year": 1895
     }
    ],
@@ -5720,6 +5876,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Rituale Romanum Pauli V Pontificis Maximi iussu editum",
      "year": 1614
     },
     {
@@ -5732,6 +5889,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Rituale Romanum Pauli V Pontificis Maximi jussu editum et a Benedicto XIV auctum et castigatum",
      "year": 1872
     },
     {
@@ -5744,6 +5902,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Rituale Romanum, editio typica 1925",
      "year": 1925
     },
     {
@@ -5754,6 +5913,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Rituale Romanum, editio typica 1952",
      "year": 1952
     }
    ],
@@ -5781,6 +5941,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Rubricae Breviarii et Missalis Romani",
      "year": 1960
     },
     {
@@ -5791,6 +5952,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Rubricae generales; Rubricae generales Missalis Romani",
      "year": 1962
     }
    ],
@@ -5821,6 +5983,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "The Gregorian Sacramentary under Charles the Great, edited from three MSS. of the ninth century by H. A. Wilson",
      "year": 1915
     }
    ],
@@ -5851,6 +6014,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Sacramentarium Leonianum, edited with introduction, notes and three photographs by C. L. Feltoe",
      "year": 1896
     }
    ],
@@ -5879,6 +6043,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "The Bobbio Missal, a Gallican Mass-book (MS. Paris. lat. 13246), ed. E. A. Lowe",
      "year": 1917
     }
    ],
@@ -5908,6 +6073,7 @@
       "project-created",
       "public-domain"
      ],
+     "title": "Biblia Sacra Vulgatae Editionis Clementina, eBible.org latVUC",
      "year": 1592
     },
     {
@@ -5920,6 +6086,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Biblia Sacra Vulgatae Editionis, Sixti V Pont. Max. iussu recognita et Clementis VIII auctoritate edita",
      "year": 1914
     },
     {
@@ -5932,6 +6099,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Clementine Vulgate, Latin — SacredBible.org transcribed web state",
      "year": 2026
     }
    ],
@@ -5960,6 +6128,7 @@
       "public-domain",
       "unresolved"
      ],
+     "title": "The Roman Missal translated into the English language for the use of the laity, Philadelphia printing of 1843",
      "year": 1843
     },
     {
@@ -5967,12 +6136,13 @@
      "file": "1861-philadelphia-1861.json",
      "id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
      "language": "en",
-     "passages": 85,
+     "passages": 411,
      "readable": 18,
      "rights": [
       "public-domain",
       "unresolved"
      ],
+     "title": "The Roman Missal translated into the English language for the use of the laity, first revised edition",
      "year": 1861
     }
    ],
@@ -6001,6 +6171,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Roman Missal for the use of the laity, London printing of 1806",
      "year": 1806
     }
    ],
@@ -6027,6 +6198,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Ritus Pontificalis Ordinis Hebdomadae Sanctae Instaurati, editio typica",
      "year": 1957
     }
    ],
@@ -6056,6 +6228,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Codex Iuris Canonici — Typis Polyglottis Vaticanis printing, 1918",
      "year": 1918
     }
    ],
@@ -6081,7 +6254,10 @@
      "language": "la",
      "passages": 19,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Codex Canonum Ecclesiarum Orientalium - Acta Apostolicae Sedis promulgation text",
      "year": 1990
     },
     {
@@ -6094,6 +6270,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Codex Canonum Ecclesiarum Orientalium - Vatican Latin web state (part 1)",
      "year": 2026
     },
     {
@@ -6106,6 +6283,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Codex Canonum Ecclesiarum Orientalium - Vatican Latin web state (part 2)",
      "year": 2026
     }
    ],
@@ -6134,6 +6312,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Code of Canon Law, Book VI (revised) — Vatican English web state",
      "year": 2026
     },
     {
@@ -6144,6 +6323,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Code of Canon Law, Book IV, cann. 1205-1243 - Vatican English web state",
      "year": 2026
     },
     {
@@ -6154,6 +6334,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Code of Canon Law, cann. 879-958 and 998-1165 pages — Vatican English web state",
      "year": 2026
     },
     {
@@ -6166,6 +6347,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Code of Canon Law, selected canon-range pages — Vatican English web state",
      "year": 2026
     },
     {
@@ -6178,6 +6360,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Codex Iuris Canonici, Liber VI (revised) — Vatican Latin web state",
      "year": 2026
     },
     {
@@ -6190,6 +6373,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Codex Iuris Canonici, Books I-V and VII — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -6215,6 +6399,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "CenterBLC LXX RLXX1935 snapshot 4829f37",
      "year": 2022
     }
    ],
@@ -6223,87 +6408,6 @@
     "grc"
    ],
    "title": "CenterBLC LXX Text-Fabric Dataset"
-  },
-  {
-   "alternate_titles": [
-    "CE 10"
-   ],
-   "author": "Charles G. Herbermann and others",
-   "category": "reference-encyclopedia",
-   "directory": "editions/catholic-encyclopedia/volume-10/",
-   "editions": [
-    {
-     "date": "1911",
-     "file": "1911-new-york-1911.json",
-     "id": "edition.catholic-encyclopedia.volume-10.new-york-1911",
-     "language": "en",
-     "passages": 0,
-     "readable": 0,
-     "rights": [
-      "restricted"
-     ],
-     "year": 1911
-    }
-   ],
-   "id": "work.catholic-encyclopedia.volume-10",
-   "languages": [
-    "en"
-   ],
-   "title": "The Catholic Encyclopedia, Volume 10"
-  },
-  {
-   "alternate_titles": [
-    "CE 12"
-   ],
-   "author": "Charles G. Herbermann and others",
-   "category": "reference-encyclopedia",
-   "directory": "editions/catholic-encyclopedia/volume-12/",
-   "editions": [
-    {
-     "date": "1911",
-     "file": "1911-new-york-1911.json",
-     "id": "edition.catholic-encyclopedia.volume-12.new-york-1911",
-     "language": "en",
-     "passages": 0,
-     "readable": 0,
-     "rights": [
-      "restricted"
-     ],
-     "year": 1911
-    }
-   ],
-   "id": "work.catholic-encyclopedia.volume-12",
-   "languages": [
-    "en"
-   ],
-   "title": "The Catholic Encyclopedia, Volume 12"
-  },
-  {
-   "alternate_titles": [
-    "CE 15"
-   ],
-   "author": "Charles G. Herbermann and others",
-   "category": "reference-encyclopedia",
-   "directory": "editions/catholic-encyclopedia/volume-15/",
-   "editions": [
-    {
-     "date": "1912",
-     "file": "1912-new-york-1912.json",
-     "id": "edition.catholic-encyclopedia.volume-15.new-york-1912",
-     "language": "en",
-     "passages": 0,
-     "readable": 0,
-     "rights": [
-      "restricted"
-     ],
-     "year": 1912
-    }
-   ],
-   "id": "work.catholic-encyclopedia.volume-15",
-   "languages": [
-    "en"
-   ],
-   "title": "The Catholic Encyclopedia, Volume 15"
   },
   {
    "alternate_titles": [
@@ -6320,9 +6424,8 @@
      "language": "en",
      "passages": 0,
      "readable": 0,
-     "rights": [
-      "restricted"
-     ],
+     "rights": [],
+     "title": "The Catholic Encyclopedia, Volume 3 (New York, 1908)",
      "year": 1908
     }
    ],
@@ -6351,6 +6454,7 @@
       "public-domain",
       "restricted"
      ],
+     "title": "The Catholic Encyclopedia, Volume 4 (New York, 1908)",
      "year": 1908
     }
    ],
@@ -6359,33 +6463,6 @@
     "en"
    ],
    "title": "The Catholic Encyclopedia, Volume 4"
-  },
-  {
-   "alternate_titles": [
-    "CE 6"
-   ],
-   "author": "Charles G. Herbermann and others",
-   "category": "reference-encyclopedia",
-   "directory": "editions/catholic-encyclopedia/volume-6/",
-   "editions": [
-    {
-     "date": "1909",
-     "file": "1909-new-york-1909.json",
-     "id": "edition.catholic-encyclopedia.volume-6.new-york-1909",
-     "language": "en",
-     "passages": 0,
-     "readable": 0,
-     "rights": [
-      "restricted"
-     ],
-     "year": 1909
-    }
-   ],
-   "id": "work.catholic-encyclopedia.volume-6",
-   "languages": [
-    "en"
-   ],
-   "title": "The Catholic Encyclopedia, Volume 6"
   },
   {
    "alternate_titles": [
@@ -6405,6 +6482,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "The Catholic Encyclopedia, Volume 9",
      "year": 1910
     }
    ],
@@ -6413,31 +6491,6 @@
     "en"
    ],
    "title": "The Catholic Encyclopedia, Volume 9"
-  },
-  {
-   "alternate_titles": [],
-   "author": "Charles G. Herbermann and others",
-   "category": "reference-encyclopedia",
-   "directory": "editions/catholic-encyclopedia/alphabetical-index/",
-   "editions": [
-    {
-     "date": "2026",
-     "file": "2026-newadvent-web-2026-08-27.json",
-     "id": "edition.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27",
-     "language": "en",
-     "passages": 4,
-     "readable": 0,
-     "rights": [
-      "restricted"
-     ],
-     "year": 2026
-    }
-   ],
-   "id": "work.catholic-encyclopedia.alphabetical-index",
-   "languages": [
-    "en"
-   ],
-   "title": "The Catholic Encyclopedia, alphabetical index"
   },
   {
    "alternate_titles": [
@@ -6454,9 +6507,8 @@
      "language": "en",
      "passages": 0,
      "readable": 0,
-     "rights": [
-      "restricted"
-     ],
+     "rights": [],
+     "title": "The Catholic Encyclopedia, Volume 1 (New York, 1907)",
      "year": 1907
     }
    ],
@@ -6481,9 +6533,8 @@
      "language": "en",
      "passages": 0,
      "readable": 0,
-     "rights": [
-      "restricted"
-     ],
+     "rights": [],
+     "title": "The Catholic Encyclopedia, Volume 11 (New York, 1911)",
      "year": 1911
     }
    ],
@@ -6511,6 +6562,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "The Catholic Encyclopedia, Volume 13 (New York, 1912)",
      "year": 1912
     }
    ],
@@ -6535,9 +6587,8 @@
      "language": "en",
      "passages": 0,
      "readable": 0,
-     "rights": [
-      "restricted"
-     ],
+     "rights": [],
+     "title": "The Catholic Encyclopedia, Volume 14 (New York, 1912)",
      "year": 1912
     }
    ],
@@ -6562,9 +6613,8 @@
      "language": "en",
      "passages": 0,
      "readable": 0,
-     "rights": [
-      "restricted"
-     ],
+     "rights": [],
+     "title": "The Catholic Encyclopedia, Volume 2 (New York, 1907)",
      "year": 1907
     }
    ],
@@ -6589,9 +6639,8 @@
      "language": "en",
      "passages": 0,
      "readable": 0,
-     "rights": [
-      "restricted"
-     ],
+     "rights": [],
+     "title": "The Catholic Encyclopedia, Volume 5 (New York, 1909)",
      "year": 1909
     }
    ],
@@ -6616,9 +6665,8 @@
      "language": "en",
      "passages": 0,
      "readable": 0,
-     "rights": [
-      "restricted"
-     ],
+     "rights": [],
+     "title": "The Catholic Encyclopedia, Volume 7 (New York, 1910)",
      "year": 1910
     }
    ],
@@ -6644,9 +6692,9 @@
      "passages": 1,
      "readable": 0,
      "rights": [
-      "public-domain",
-      "restricted"
+      "public-domain"
      ],
+     "title": "The Catholic Encyclopedia, Volume 8 (New York, 1910)",
      "year": 1910
     }
    ],
@@ -6670,6 +6718,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Fight Club — first edition",
      "year": 1996
     }
    ],
@@ -6700,6 +6749,7 @@
       "project-created",
       "public-domain"
      ],
+     "title": "The Holy Bible, King James Version with the Apocrypha, eBible.org eng-kjv",
      "year": 1769
     }
    ],
@@ -6743,6 +6793,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "LXXM Unicode repository snapshot fddec9b",
      "year": 2025
     }
    ],
@@ -6768,6 +6819,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Basic Norms and Directory - Vatican English web state",
      "year": 2026
     }
    ],
@@ -6778,11 +6830,27 @@
    "title": "Basic Norms for the Formation of Permanent Deacons; Directory for the Ministry and Life of Permanent Deacons"
   },
   {
-   "alternate_titles": [],
+   "alternate_titles": [
+    "Postquam Summus Pontifex",
+    "PSP"
+   ],
    "author": "Congregation for Divine Worship and the Discipline of the Sacraments",
    "category": "general-executory-decree",
    "directory": "editions/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/decree-implementing-canon-838-2021/",
    "editions": [
+    {
+     "date": "2021-10-22",
+     "file": "2021-2021-english-press-office-bulletin.json",
+     "id": "edition.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.decree-implementing-canon-838-2021.english-press-office-bulletin-2021-10-22",
+     "language": "en",
+     "passages": 3,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Postquam Summus Pontifex — English Holy See Press Office bulletin PDF",
+     "year": 2021
+    },
     {
      "date": "2026-07-27",
      "file": "2026-english-vatican-web-2026-07-27.json",
@@ -6793,6 +6861,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Decree giving effect to the dispositions of canon 838 — Vatican English web state",
      "year": 2026
     },
     {
@@ -6805,6 +6874,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Decretum ad dispositiones can. 838 Codicis Iuris Canonici efficiendas — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -6831,7 +6901,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Decretum de editione typica tertia Missalis Romani",
      "year": 2002
     }
    ],
@@ -6856,7 +6929,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Decretum, Prot. n. 1280/98/L",
      "year": 1998
     }
    ],
@@ -6882,6 +6958,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Homiletic Directory, official English Holy See web edition",
      "year": 2026
     }
    ],
@@ -6907,6 +6984,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Circular letter of 20 June 2020, Latin original with official Italian and English translations, Holy See Press Office bulletin B0350",
      "year": 2020
     }
    ],
@@ -6932,7 +7010,10 @@
      "language": "it",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Circular letter of 17 October 2006 as published in Notitiae 42 (2006) 441-443",
      "year": 2006
     }
    ],
@@ -6962,6 +7043,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Liturgiam authenticam — Vatican English web state",
      "year": 2026
     }
    ],
@@ -6971,6 +7053,47 @@
     "en"
    ],
    "title": "Liturgiam authenticam"
+  },
+  {
+   "alternate_titles": [
+    "Notification Prot. n. 2671/98/L"
+   ],
+   "author": "Congregation for Divine Worship and the Discipline of the Sacraments",
+   "category": "official-liturgical-notification",
+   "directory": "editions/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/notificatio-de-occurrentia-memoriae-immaculati-cordis-1998/",
+   "editions": [
+    {
+     "date": "1999",
+     "file": "1999-1999-latin-notitiae-392-393.json",
+     "id": "edition.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.notificatio-de-occurrentia-memoriae-immaculati-cordis-1998.latin-notitiae-392-393",
+     "language": "la",
+     "passages": 1,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Notificatio de occurrentia memoriae obligatoriae Immaculati Cordis Beatae Mariae Virginis una cum altera memoria eiusdem gradus",
+     "year": 1999
+    },
+    {
+     "date": "2026-08-26",
+     "file": "2026-2026-latin-vatican-web-2026-08-26.json",
+     "id": "edition.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.notificatio-de-occurrentia-memoriae-immaculati-cordis-1998.latin-vatican-web-2026-08-26",
+     "language": "la",
+     "passages": 1,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Notificatio de occurrentia memoriae obligatoriae Immaculati Cordis Beatae Mariae Virginis una cum altera memoria eiusdem gradus — Vatican Latin web state",
+     "year": 2026
+    }
+   ],
+   "id": "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.notificatio-de-occurrentia-memoriae-immaculati-cordis-1998",
+   "languages": [
+    "la"
+   ],
+   "title": "Notificatio de occurrentia memoriae obligatoriae Immaculati Cordis Beatae Mariae Virginis una cum altera memoria eiusdem gradus"
   },
   {
    "alternate_titles": [
@@ -6987,7 +7110,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Notificatio de ritu Exorcismi",
      "year": 1999
     }
    ],
@@ -7015,6 +7141,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Presentation of the New Rite of Exorcisms — Holy See Spanish web presentation",
      "year": 2026
     }
    ],
@@ -7040,7 +7167,10 @@
      "language": "it",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Reimpressio emendata 'Missalis Romani'",
      "year": 2008
     }
    ],
@@ -7065,7 +7195,10 @@
      "language": "it",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "De Exorcismis et Supplicationibus quibusdam, editio typica emendata 2004",
      "year": 2005
     }
    ],
@@ -7093,6 +7226,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Responsa ad dubia on Traditionis custodes — Vatican English web state",
      "year": 2026
     }
    ],
@@ -7118,6 +7252,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Responses Prot. 1411/99 - unofficial French rendering on a third-party archive",
      "year": 2026
     }
    ],
@@ -7142,7 +7277,10 @@
      "language": "la",
      "passages": 3,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Variationes et additiones in reimpressione emendata 'Missalis Romani', editionis typicae tertiae",
      "year": 2008
     }
    ],
@@ -7170,6 +7308,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Instruction on Prayers for Healing — Holy See English web presentation",
      "year": 2026
     }
    ],
@@ -7196,6 +7335,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Complementary Norms - Vatican English web state",
      "year": 2026
     }
    ],
@@ -7222,6 +7362,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Dominus Iesus — Vatican English web state",
      "year": 2026
     }
    ],
@@ -7249,6 +7390,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Professio fidei Doctrinal Commentary — Vatican English web edition",
      "year": 1998
     }
    ],
@@ -7276,6 +7418,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Donum veritatis — Vatican English web edition",
      "year": 1990
     }
    ],
@@ -7304,6 +7447,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Inde ab aliquot annis — Holy See Latin web presentation",
      "year": 2026
     }
    ],
@@ -7331,6 +7475,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Rescriptum ex Audientia SS.mi — English",
      "year": 2018
     },
     {
@@ -7343,6 +7488,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Rescriptum ex Audientia SS.mi — Latin",
      "year": 2018
     }
    ],
@@ -7370,6 +7516,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The Message of Fatima — Vatican English web state",
      "year": 2026
     }
    ],
@@ -7399,6 +7546,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "1985 reflections — Vatican English web state",
      "year": 2026
     }
    ],
@@ -7424,6 +7572,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Universae Ecclesiae - Vatican English web state",
      "year": 2026
     }
    ],
@@ -7446,7 +7595,10 @@
      "language": "it",
      "passages": 2,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Pontificia Praecepta de clero uxorato orientali - Acta Apostolicae Sedis text",
      "year": 2014
     }
    ],
@@ -7475,6 +7627,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Commentaria in Pentateuchum Mosis, a 1700 folio printing",
      "year": 1700
     }
    ],
@@ -7503,6 +7656,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Commentaria in omnes D. Pauli epistolas",
      "year": 1614
     }
    ],
@@ -7529,6 +7683,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Laetentur caeli — Latin text as received in Denzinger's Enchiridion symbolorum",
      "year": 1439
     }
    ],
@@ -7557,6 +7712,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Canons and Decrees of the Sacred and Oecumenical Council of Trent, trans. J. Waterworth",
      "year": 1848
     },
     {
@@ -7569,6 +7725,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Canones et decreta sacrosancti oecumenici Concilii Tridentini, editio stereotypa undecima",
      "year": 1887
     }
    ],
@@ -7595,6 +7752,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Ad nostrum qui — Latin text as received in Denzinger's Enchiridion symbolorum",
      "year": 1312
     }
    ],
@@ -7620,6 +7778,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "CPS spiritual-abuse guidance update — English web state",
      "year": 2026
     }
    ],
@@ -7648,6 +7807,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "On the Lord's Prayer — New Advent English web presentation",
      "year": 2026
     }
    ],
@@ -7676,6 +7836,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Commentary on the Gospel according to S. John, English translation in the Library of Fathers",
      "year": 1885
     }
    ],
@@ -7704,6 +7865,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "A Commentary upon the Gospel according to S. Luke, by S. Cyril, Patriarch of Alexandria, translated from a Syriac manuscript",
      "year": 1859
     }
    ],
@@ -7730,6 +7892,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Catechetical Lectures — New Advent English web presentation",
      "year": 2026
     }
    ],
@@ -7755,6 +7918,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "JerusalemPerspective.com article page, first published 7 October 2006, as captured by the Internet Archive on 7 March 2013",
      "year": 2006
     }
    ],
@@ -7781,6 +7945,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Radak on the Torah, in Eliyahu Munk, HaChut Hameshulash",
      "year": 2003
     }
    ],
@@ -7804,6 +7969,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Decree of 8 December 2010 - four-page signed PDF published by the National Shrine",
      "year": 2010
     }
    ],
@@ -7829,6 +7995,7 @@
      "rights": [
       "licensed"
      ],
+     "title": "Prawo Kanoniczne 69/1 (2026) 165-186",
      "year": 2026
     }
    ],
@@ -7856,6 +8023,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Rescriptum ex audientia on Traditionis custodes — Vatican English web state",
      "year": 2026
     }
    ],
@@ -7881,6 +8049,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Decree of 2 July 2026 - Holy See Press Office bulletin state",
      "year": 2026
     }
    ],
@@ -7906,6 +8075,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Explanatory note of 2 July 2026 - Holy See Press Office bulletin state",
      "year": 2026
     }
    ],
@@ -7931,6 +8101,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Mater Populi Fidelis — Vatican English web state",
      "year": 2026
     }
    ],
@@ -7957,6 +8128,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Norms of 17 May 2024 — Vatican English web state",
      "year": 2026
     }
    ],
@@ -7985,6 +8157,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "2023 DDF note — Vatican English web state",
      "year": 2026
     }
    ],
@@ -8011,6 +8184,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "The Boundaries between Possession and Disease: Medical Concepts in Byzantine and Post-Byzantine Exorcisms",
      "year": 2019
     }
    ],
@@ -8038,6 +8212,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Hauler, Didascaliae apostolorum fragmenta Veronensia Latina, fasciculus prior",
      "year": 1900
     }
    ],
@@ -8061,6 +8236,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Destierro de sombras — UNAM-IIH open-access digital edition of the second edition",
      "year": 2019
     }
    ],
@@ -8083,11 +8259,12 @@
      "file": "1849-london-1849.json",
      "id": "edition.edward-caswall.lyra-catholica.london-1849",
      "language": "en",
-     "passages": 0,
+     "passages": 6,
      "readable": 0,
      "rights": [
       "public-domain"
      ],
+     "title": "Lyra Catholica, London printing of 1849",
      "year": 1849
     }
    ],
@@ -8114,6 +8291,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "LXX-Rahlfs-1935 repository snapshot a1b5ff1",
      "year": 2020
     }
    ],
@@ -8137,6 +8315,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Patron Saints (Baltimore: John B. Piet & Co., 1883) - Internet Archive scan of the New York Public Library copy",
      "year": 1883
     },
     {
@@ -8147,6 +8326,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Patron Saints, First Series (Chicago: Eliza Allen Starr, 1896) - Google scan on the Internet Archive",
      "year": 1896
     }
    ],
@@ -8176,6 +8356,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The Nevv Testament of Iesvs Christ, translated faithfully into English out of the authentical Latin",
      "year": 1582
     },
     {
@@ -8188,6 +8369,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Holie Bible faithfully translated into English out of the authentical Latin, the first tome",
      "year": 1609
     },
     {
@@ -8198,6 +8380,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The Holie Bible faithfully translated into English out of the authentical Latin, the second tome",
      "year": 1610
     },
     {
@@ -8211,6 +8394,7 @@
       "project-created",
       "public-domain"
      ],
+     "title": "The Bible, Douay-Rheims, Complete: the Challoner revision, Project Gutenberg eBook 1581",
      "year": 1749
     },
     {
@@ -8224,6 +8408,7 @@
       "project-created",
       "public-domain"
      ],
+     "title": "The Holy Bible in English, Douay-Rheims American Edition of 1899 (eBible.org engDRA)",
      "year": 1899
     },
     {
@@ -8236,6 +8421,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Holy Bible translated from the Latin Vulgate ... with annotations, references, and an historical and chronological table",
      "year": 1914
     }
    ],
@@ -8266,6 +8452,7 @@
       "licensed",
       "unresolved"
      ],
+     "title": "Praying Together, the 1998 revision of the ELLC common liturgical texts",
      "year": 1998
     }
    ],
@@ -8291,6 +8478,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Eusebius Werke, volume 2, part 2: Die Kirchengeschichte, Bücher VI–X",
      "year": 1908
     },
     {
@@ -8303,6 +8491,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Church History, Book VI — New Advent English web presentation",
      "year": 2026
     }
    ],
@@ -8330,6 +8519,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Fede Cristiana e Demonologia — Holy See Italian web state",
      "year": 2026
     }
    ],
@@ -8355,7 +8545,10 @@
      "language": "en",
      "passages": 0,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "unresolved"
+     ],
+     "title": "Mystagogical Reflections on the Collects of the Roman Missal, Advent through Easter (FDLC, 2012-2013 series)",
      "year": 2012
     },
     {
@@ -8365,7 +8558,10 @@
      "language": "en",
      "passages": 0,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "unresolved"
+     ],
+     "title": "Mystagogical Reflections on the Collects and Prayers after Communion of the Sundays and Solemnities of the Roman Missal (FDLC, 2016 series)",
      "year": 2016
     }
    ],
@@ -8394,6 +8590,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Dei Filius — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -8422,6 +8619,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Pastor aeternus — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -8448,6 +8646,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The Antiquities of the Jews (Whiston translation)",
      "year": 1737
     },
     {
@@ -8460,6 +8659,7 @@
      "rights": [
       "licensed"
      ],
+     "title": "Antiquitates Judaicae — Niese Greek, Perseus canonical XML state",
      "year": 2026
     },
     {
@@ -8472,6 +8672,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "The Antiquities of the Jews, Book I, Whiston translation — Penelope web state",
      "year": 2026
     },
     {
@@ -8484,6 +8685,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "The Antiquities of the Jews, Book VIII, Whiston translation — Penelope web state",
      "year": 2026
     }
    ],
@@ -8512,6 +8714,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Life of Apollonius of Tyana, volume 1",
      "year": 1912
     }
    ],
@@ -8538,6 +8741,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Firmiter credimus — Latin text as received in Denzinger's Enchiridion symbolorum",
      "year": 1215
     }
    ],
@@ -8566,6 +8770,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Book of the Craft of Dying, and Other Early English Tracts Concerning Death, ed. Frances M. M. Comper",
      "year": 1917
     }
    ],
@@ -8591,6 +8796,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Angelus, 4 August 2019, official English Holy See web edition",
      "year": 2026
     }
    ],
@@ -8616,6 +8822,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Canonization homily, 13 October 2019, official English Holy See web edition",
      "year": 2026
     }
    ],
@@ -8643,6 +8850,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "General Audience, 30 December 2020, official English Holy See web edition",
      "year": 2026
     }
    ],
@@ -8668,6 +8876,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Homily, 9 October 2016, official English Holy See web edition",
      "year": 2026
     }
    ],
@@ -8690,7 +8899,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "In Erythraea nova constituitur Ecclesia Metropolitana Asmarensis - Acta text",
      "year": 2015
     }
    ],
@@ -8716,6 +8928,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Querida Amazonia - Vatican English web state",
      "year": 2026
     }
    ],
@@ -8739,12 +8952,13 @@
      "file": "1945-benziger-revised-1945.json",
      "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
      "language": "en",
-     "passages": 0,
+     "passages": 32,
      "readable": 0,
      "rights": [
       "public-domain",
       "unresolved"
      ],
+     "title": "The New Roman Missal in Latin and English, revised edition",
      "year": 1945
     }
    ],
@@ -8784,6 +8998,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Sketch of the Great Fires in Wisconsin - modern reset reproduction digitized on the Internet Archive",
      "year": 2022
     }
    ],
@@ -8809,6 +9024,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "The Missal for the use of the laity, new edition improved",
      "year": 1853
     }
    ],
@@ -8835,6 +9051,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Geschichte der Quellen und der Literatur des canonischen Rechts im Abendlande bis zum Ausgange des Mittelalters, erster Band",
      "year": 1870
     }
    ],
@@ -8863,6 +9080,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Die Bussordnungen der abendländischen Kirche — Halle, 1851",
      "year": 1851
     }
    ],
@@ -8889,6 +9107,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Rijksmuseum object RP-F-1997-29-26",
      "year": 2026
     }
    ],
@@ -8915,6 +9134,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Le Opere di Galileo Galilei, Edizione Nazionale, volume XI (Carteggio 1611-1613)",
      "year": 1890
     },
     {
@@ -8925,6 +9145,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Le Opere di Galileo Galilei, Edizione Nazionale, volume XII (Carteggio 1614-1619)",
      "year": 1890
     },
     {
@@ -8935,6 +9156,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Le Opere di Galileo Galilei, Edizione Nazionale, volume XIX (documents, including the trial dossier)",
      "year": 1907
     }
    ],
@@ -8963,6 +9185,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Daily Missal with Vespers for Sundays and Feasts",
      "year": 1925
     }
    ],
@@ -8987,6 +9210,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The Devil in a Forest — first Orb edition",
      "year": 1996
     }
    ],
@@ -9015,6 +9239,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Douay-Rheims Bible with Haydock's commentary, the printing digitized as Internet Archive item haydock-douay-rheims-catholic-bible",
      "year": 1859
     },
     {
@@ -9027,6 +9252,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Douay Rheims Edition of the Holy Catholic Bible with a Comprehensive Catholic Commentary, William Peter Feeney 2014 Memorial Edition",
      "year": 2014
     }
    ],
@@ -9054,6 +9280,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Sacrorum conciliorum collectio, tomus II (annis 305-346)",
      "year": 1759
     },
     {
@@ -9066,6 +9293,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Sacrorum conciliorum collectio, tomus XXI (annis 1109-1166)",
      "year": 1776
     }
    ],
@@ -9091,6 +9319,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Ecclesiastical Department",
      "year": 1914
     }
    ],
@@ -9116,6 +9345,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "GotQuestions.org answer page",
      "year": 2026
     }
    ],
@@ -9145,6 +9375,7 @@
       "public-domain",
       "restricted"
      ],
+     "title": "Decretum Gratiani, ed. Friedberg (Corpus iuris canonici I, Leipzig 1879) — MDZ online transcription, dated web state",
      "year": 2026
     }
    ],
@@ -9172,6 +9403,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Gregory Palamas: The Triads — Meyendorff and Gendle selection",
      "year": 1983
     }
    ],
@@ -9200,6 +9432,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Oration 40",
      "year": 2026
     }
    ],
@@ -9243,6 +9476,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The Great Catechism, English (William Moore and Henry Austin Wilson, NPNF second series vol. 5) — Christian Classics Ethereal Library web state",
      "year": 2026
     }
    ],
@@ -9271,6 +9505,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Homiliae in Evangelia, Migne's Latin as transcribed by Corpus Corporum",
      "year": 2026
     }
    ],
@@ -9301,6 +9536,7 @@
       "public-domain",
       "restricted"
      ],
+     "title": "Homiliae in Hiezechihelem prophetam — Patrologia Latina 76",
      "year": 1849
     }
    ],
@@ -9327,6 +9563,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The Sources of Catholic Dogma (Deferrari) — patristica.net web state",
      "year": 2026
     },
     {
@@ -9339,6 +9576,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Enchiridion symbolorum, Latin with dual numbering — patristica.net web state",
      "year": 2026
     }
    ],
@@ -9364,6 +9602,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Ritus Orientalium, volume I",
      "year": 1863
     }
    ],
@@ -9389,6 +9628,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Notre-Dame de Lourdes (Paris: Palme, 1870) - Internet Archive scan",
      "year": 1870
     }
    ],
@@ -9417,6 +9657,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Old Testament in Greek according to the Septuagint, volume I: Genesis-IV Kings, fourth edition",
      "year": 1909
     }
    ],
@@ -9444,6 +9685,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Risen Master: A Sequel to Pastor Pastorum, sixth thousand",
      "year": 1905
     }
    ],
@@ -9470,6 +9712,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Chizkuni, Hebrew text with Eliyahu Munk's English translation",
      "year": 2013
     }
    ],
@@ -9497,6 +9740,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Hildegardis Causae et curae",
      "year": 1903
     }
    ],
@@ -9522,6 +9766,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "HABS MD,4-BALT,41--4",
      "year": 1958
     }
    ],
@@ -9550,6 +9795,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Acta Apostolicae Sedis, volume 2",
      "year": 1910
     },
     {
@@ -9562,6 +9808,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Acta Apostolicae Sedis, volume 4",
      "year": 1912
     },
     {
@@ -9572,6 +9819,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Acta Apostolicae Sedis, volume 22",
      "year": 1930
     },
     {
@@ -9582,6 +9830,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Acta Apostolicae Sedis, volume 23",
      "year": 1931
     },
     {
@@ -9594,6 +9843,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Acta Apostolicae Sedis, volume 39",
      "year": 1947
     },
     {
@@ -9606,6 +9856,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Acta Apostolicae Sedis, volume 40",
      "year": 1948
     },
     {
@@ -9618,6 +9869,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Acta Apostolicae Sedis, volume 49",
      "year": 1957
     },
     {
@@ -9630,6 +9882,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Acta Apostolicae Sedis, volume 52",
      "year": 1960
     },
     {
@@ -9642,6 +9895,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Acta Apostolicae Sedis, volume 54",
      "year": 1962
     },
     {
@@ -9654,6 +9908,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Acta Apostolicae Sedis, volume 56",
      "year": 1964
     },
     {
@@ -9666,6 +9921,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Acta Apostolicae Sedis, volume 57",
      "year": 1965
     },
     {
@@ -9678,6 +9934,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Acta Apostolicae Sedis, volume 58",
      "year": 1966
     },
     {
@@ -9690,6 +9947,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Acta Apostolicae Sedis, volume 59",
      "year": 1967
     },
     {
@@ -9700,6 +9958,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Acta Apostolicae Sedis, volume 60",
      "year": 1968
     },
     {
@@ -9712,6 +9971,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Acta Apostolicae Sedis, volume 62",
      "year": 1970
     },
     {
@@ -9724,6 +9984,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Acta Apostolicae Sedis, volume 66",
      "year": 1974
     },
     {
@@ -9736,6 +9997,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Acta Apostolicae Sedis, volume 67",
      "year": 1975
     },
     {
@@ -9748,6 +10010,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Acta Apostolicae Sedis, volume 68",
      "year": 1976
     },
     {
@@ -9760,6 +10023,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Acta Apostolicae Sedis, volume 76",
      "year": 1984
     },
     {
@@ -9772,6 +10036,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Acta Apostolicae Sedis, volume 80",
      "year": 1988
     },
     {
@@ -9784,6 +10049,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Acta Apostolicae Sedis, volume 82",
      "year": 1990
     },
     {
@@ -9796,6 +10062,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Acta Apostolicae Sedis, volume 101, fascicle 2 (February 2009)",
      "year": 2009
     },
     {
@@ -9808,6 +10075,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Acta Apostolicae Sedis, volume 101, fascicle 4 (April 2009)",
      "year": 2009
     },
     {
@@ -9820,6 +10088,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Acta Apostolicae Sedis, volume 101, fascicle 8 (August 2009)",
      "year": 2009
     },
     {
@@ -9832,6 +10101,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Acta Apostolicae Sedis, volume 106, fascicle 6 (June 2014)",
      "year": 2014
     },
     {
@@ -9844,6 +10114,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Acta Apostolicae Sedis, volume 107, fascicle 10 (October 2015)",
      "year": 2015
     },
     {
@@ -9856,6 +10127,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Acta Apostolicae Sedis, volume 107, fascicle 3 (March 2015)",
      "year": 2015
     },
     {
@@ -9868,6 +10140,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Acta Apostolicae Sedis, volume 107, fascicle 9 (September 2015)",
      "year": 2015
     },
     {
@@ -9880,6 +10153,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Acta Apostolicae Sedis, volume 108, fascicle 12 (December 2016)",
      "year": 2016
     },
     {
@@ -9892,6 +10166,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Acta Apostolicae Sedis, volume 109, fascicle 4 (April 2017)",
      "year": 2017
     }
    ],
@@ -9918,6 +10193,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Acta Sanctae Sedis, volume 6",
      "year": 1870
     },
     {
@@ -9930,6 +10206,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Acta Sanctae Sedis, volume 39",
      "year": 1906
     }
    ],
@@ -9955,6 +10232,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Codes of Canon Law - Holy See Archive Index, dated English web state",
      "year": 2026
     }
    ],
@@ -9980,6 +10258,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Communique of 21 May 2016 — press.vatican.va English bulletin state",
      "year": 2026
     }
    ],
@@ -10006,6 +10285,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Scheda informativa - Holy See Press Office bulletin text",
      "year": 2010
     }
    ],
@@ -10033,6 +10313,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Notitiae, volume 35, numbers 392-393",
      "year": 1999
     },
     {
@@ -10045,6 +10326,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Notitiae, volume 41, numbers 463-464",
      "year": 2005
     },
     {
@@ -10057,6 +10339,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Notitiae, volume 42 (2006), numbers 481-482",
      "year": 2006
     },
     {
@@ -10069,6 +10352,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Notitiae, volume 44, numbers 503-504",
      "year": 2008
     }
    ],
@@ -10096,6 +10380,7 @@
       "public-domain",
       "restricted"
      ],
+     "title": "Gemma animae — Patrologia Latina 172",
      "year": 1854
     }
    ],
@@ -10121,6 +10406,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "La verite sur le secret de Melanie ex-bergere de La Salette, 2nd edition (Louvain: Imprimerie de J. Lefever, 1882) - Internet Archive scan",
      "year": 1882
     }
    ],
@@ -10146,7 +10432,10 @@
      "language": "en",
      "passages": 1,
      "readable": 1,
-     "rights": [],
+     "rights": [
+      "public-domain"
+     ],
+     "title": "The Epistle of Ignatius to the Smyrnaeans",
      "year": 1887
     }
    ],
@@ -10174,6 +10463,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Sacramentary (Liber Sacramentorum): Historical and Liturgical Notes on the Roman Missal",
      "year": 1927
     }
    ],
@@ -10203,6 +10493,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "ECM Mark digital edition and text-critical commentary",
      "year": 2021
     }
    ],
@@ -10233,6 +10524,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Publication Policies of the International Commission on English in the Liturgy, Inc. — effective December 1995, amended 2008, 2010, 2013",
      "year": 2013
     },
     {
@@ -10245,6 +10537,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "ICEL copyright policies, web state of 1 August 2026",
      "year": 2026
     }
    ],
@@ -10272,9 +10565,10 @@
      "passages": 1,
      "readable": 0,
      "rights": [
-      "permission",
+      "restricted",
       "unresolved"
      ],
+     "title": "Music for the Roman Missal — ICEL's free chant library, web state of 21 August 2026",
      "year": 2026
     }
    ],
@@ -10301,7 +10595,10 @@
      "language": "en",
      "passages": 18,
      "readable": 11,
-     "rights": [],
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Against Heresies",
      "year": 1887
     }
    ],
@@ -10331,6 +10628,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Perush al ha-Torah, Warsaw 1862 printing",
      "year": 1862
     }
    ],
@@ -10360,6 +10658,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Etymologiarum sive Originum libri XX, tomus I (libri I-X), ed. W. M. Lindsay, Oxford 1911",
      "year": 2026
     }
    ],
@@ -10386,6 +10685,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Perush al ha-Torah, Hanover 1838 printing",
      "year": 1838
     }
    ],
@@ -10413,6 +10713,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Euchologion sive rituale Graecorum",
      "year": 1647
     }
    ],
@@ -10441,6 +10742,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Patrologia Latina tomus XIII",
      "year": 1845
     }
    ],
@@ -10468,6 +10770,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Patrologia Latina tomus XVI, S. Ambrosius",
      "year": 1880
     }
    ],
@@ -10493,6 +10796,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Patrologiae cursus completus, Series Latina, Tomus XXVI",
      "year": 1845
     }
    ],
@@ -10518,6 +10822,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Patrologiae cursus completus, Series Latina, Tomus XXXVII",
      "year": 1845
     }
    ],
@@ -10543,6 +10848,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Patrologiae cursus completus, Series Latina, Tomus LVI",
      "year": 1850
     }
    ],
@@ -10571,6 +10877,7 @@
      "rights": [
       "licensed"
      ],
+     "title": "MorphGNT SBLGNT version 6.12 lineage, commit aaed91e",
      "year": 2024
     }
    ],
@@ -10612,7 +10919,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Commentariorum in Evangelium Matthaei ad Eusebium libri quattuor, Vallarsi text reprinted in Patrologia Latina 26",
      "year": 1845
     }
    ],
@@ -10641,6 +10951,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Lives of Illustrious Men, English translation in the Nicene and Post-Nicene Fathers",
      "year": 1892
     }
    ],
@@ -10669,6 +10980,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Letter 106 to Sunnia and Frithila",
      "year": 1937
     }
    ],
@@ -10697,6 +11009,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Letter CVIII. To Eustochium",
      "year": 1893
     }
    ],
@@ -10726,6 +11039,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Liber Hebraicarum quaestionum in Genesim, Patrologia Latina tomus 23",
      "year": 1845
     }
    ],
@@ -10749,6 +11063,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Fight Club — produced screenplay",
      "year": 1999
     }
    ],
@@ -10772,6 +11087,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Carta acerca del origen de la imagen — first printed edition, Mexico, 1896",
      "year": 1896
     }
    ],
@@ -10797,6 +11113,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Ancient Jewish Tombs and Burial Customs (to 70 C.E.)",
      "year": 2012
     }
    ],
@@ -10822,6 +11139,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Institutes of the Christian Religion, translated by Henry Beveridge",
      "year": 1845
     }
    ],
@@ -10850,6 +11168,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Homilies on the Gospel of John, English NPNF text as delivered by New Advent",
      "year": 2026
     }
    ],
@@ -10879,6 +11198,7 @@
       "restricted",
       "unresolved"
      ],
+     "title": "Homilies on the Gospel of Saint Matthew, English (George Prevost, revised by M. B. Riddle, NPNF first series vol. 10) — New Advent web state",
      "year": 2026
     }
    ],
@@ -10906,6 +11226,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Homilies on Colossians, English NPNF text as delivered by New Advent",
      "year": 2026
     }
    ],
@@ -10933,6 +11254,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Homilies on Ephesians, English NPNF text as delivered by New Advent",
      "year": 2026
     }
    ],
@@ -10960,6 +11282,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Homilies on Romans, English NPNF text as delivered by New Advent",
      "year": 2026
     }
    ],
@@ -10987,6 +11310,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Homilies on First Corinthians, NPNF First Series, Volume XII, dated New Advent delivery",
      "year": 1889
     }
    ],
@@ -11014,6 +11338,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Homilies on the Statues, NPNF First Series, Volume IX, dated New Advent delivery",
      "year": 1889
     }
    ],
@@ -11041,6 +11366,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Horae Hebraicae et Talmudicae: Hebrew and Talmudical Exercitations upon the Gospels, the Acts, some chapters of St. Paul's Epistle to the Romans, and the First Epistle to the Corinthians",
      "year": 1859
     }
    ],
@@ -11069,6 +11395,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Ad tuendam fidem — Vatican English web edition",
      "year": 1998
     }
    ],
@@ -11097,6 +11424,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "General Audience, 25 October 2000, official English Holy See web edition",
      "year": 2026
     }
    ],
@@ -11122,6 +11450,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "General Audience, Wednesday 28 July 1999, English — Holy See web state",
      "year": 2026
     }
    ],
@@ -11147,6 +11476,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Letter of 6 May 1996 - Holy See French web state",
      "year": 2026
     }
    ],
@@ -11172,6 +11502,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Pastores dabo vobis - Vatican English web state",
      "year": 2026
     }
    ],
@@ -11196,7 +11527,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Sacri canones - Acta Apostolicae Sedis text",
      "year": 1990
     }
    ],
@@ -11224,6 +11558,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Veritatis splendor — Vatican English web state",
      "year": 2026
     }
    ],
@@ -11249,6 +11584,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Ne super his — Latin text as received in Denzinger's Enchiridion symbolorum",
      "year": 1334
     }
    ],
@@ -11275,6 +11611,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "St. John Damascene on Holy Images, Followed by Three Sermons on the Assumption",
      "year": 1898
     }
    ],
@@ -11300,6 +11637,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Carta Pastoral of 13 October 1930 as critically printed in the DCF Selecao (2013)",
      "year": 2013
     }
    ],
@@ -11325,6 +11663,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Act of Foundation of 18 July 1988 - FSSP English web state",
      "year": 2026
     }
    ],
@@ -11351,6 +11690,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Declaration of 2 July 1988 - FSSP English web state",
      "year": 2026
     }
    ],
@@ -11377,6 +11717,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Handbuch der Paramentik",
      "year": 1912
     }
    ],
@@ -11404,6 +11745,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Die liturgische Gewandung im Occident und Orient: nach Ursprung und Entwicklung, Verwendung und Symbolik",
      "year": 1907
     }
    ],
@@ -11432,6 +11774,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "A Greek-English Lexicon of the New Testament, corrected edition",
      "year": null
     }
    ],
@@ -11458,7 +11801,10 @@
      "language": "en",
      "passages": 1,
      "readable": 1,
-     "rights": [],
+     "rights": [
+      "public-domain"
+     ],
+     "title": "The Second Apology of Justin",
      "year": 1887
     },
     {
@@ -11469,6 +11815,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The Second Apology, English (Ante-Nicene Fathers vol. 1) — New Advent web state",
      "year": 2026
     }
    ],
@@ -11495,7 +11842,10 @@
      "language": "en",
      "passages": 8,
      "readable": 4,
-     "rights": [],
+     "rights": [
+      "public-domain"
+     ],
+     "title": "The First Apology of Justin",
      "year": 1887
     }
    ],
@@ -11518,7 +11868,10 @@
      "language": "it",
      "passages": 2,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "unresolved"
+     ],
+     "title": "Frammenti di libri manoscritti della tradizione liturgica savonese",
      "year": 2001
     }
    ],
@@ -11545,6 +11898,7 @@
      "rights": [
       "licensed"
      ],
+     "title": "The Historical Deveopment of the Postcommunion Collects for the Sundays and Some Feast Days of the Church Year",
      "year": 1967
     }
    ],
@@ -11571,6 +11925,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Homily, 12 October 2025, official English Holy See web edition",
      "year": 2026
     }
    ],
@@ -11600,6 +11955,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Works of Lucian of Samosata, volume 3",
      "year": 1905
     }
    ],
@@ -11627,6 +11983,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Huei tlamahuiçoltica — Mexico, Juan Ruiz, 1649 (first edition)",
      "year": 1649
     }
    ],
@@ -11653,6 +12010,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Esorcismi",
      "year": 2017
     }
    ],
@@ -11678,6 +12036,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Rituale Romanum: Editio typica 1952 — Introduzione",
      "year": 2008
     }
    ],
@@ -11706,6 +12065,7 @@
      "rights": [
       "licensed"
      ],
+     "title": "Mapzen Terrain Tiles documentation at Tilezen joerd commit 0b86765156d0612d837548c2cf70376c43b3405c",
      "year": 2017
     },
     {
@@ -11718,6 +12078,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Terrain Tiles, AWS Registry of Open Data web state of 16 August 2026",
      "year": 2026
     }
    ],
@@ -11744,6 +12105,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Monumenta veteris liturgiae Alemannicae",
      "year": 1777
     }
    ],
@@ -11776,6 +12138,7 @@
       "public-domain",
       "unresolved"
      ],
+     "title": "Commentary on Genesis, translated by John Nicholas Lenker",
      "year": 1904
     }
    ],
@@ -11803,6 +12166,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The Smalcald Articles, in Triglot Concordia: The Symbolical Books of the Ev. Lutheran Church",
      "year": 1921
     }
    ],
@@ -11829,6 +12193,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Pride Versus Humility: The Parable of the Pharisee and the Publican, Sermon at Dexter Avenue Baptist Church",
      "year": 1955
     }
    ],
@@ -11857,6 +12222,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Biblia Hebraica, Pars I",
      "year": 1909
     }
    ],
@@ -11883,6 +12249,7 @@
      "rights": [
       "licensed"
      ],
+     "title": "Dover Beach in New Poems, first edition, as transcribed by Literature in Context",
      "year": 1867
     }
    ],
@@ -11911,6 +12278,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "RP2018 Byzantine Textform, byztxt Unicode CSV form of Robinson's CCAT files, with variant apparatus",
      "year": 2018
     }
    ],
@@ -11936,6 +12304,7 @@
      "rights": [
       "licensed"
      ],
+     "title": "Bishop Watterson Bugia 1 Museum of Catholic Art and History.jpg",
      "year": 2025
     }
    ],
@@ -11962,6 +12331,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Malbim al Bereshit, Hebrew Wikisource text",
      "year": 2026
     }
    ],
@@ -11987,6 +12357,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Le secret complet de la Salette (Louvain: Imprimerie de J. Lefever, 1881) - Internet Archive scan",
      "year": 1881
     }
    ],
@@ -12012,6 +12383,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "An Explanation of the Ceremonies of Christian Initiation",
      "year": 2013
     }
    ],
@@ -12037,6 +12409,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "The Exorcisms Before Baptism",
      "year": 2026
     }
    ],
@@ -12062,6 +12435,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "The Mystery of Baptism",
      "year": 2012
     }
    ],
@@ -12087,6 +12461,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "La comunión y la vida de la gracia",
      "year": 1958
     }
    ],
@@ -12113,6 +12488,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "El Sacramentari de Santa Maria de Vilabertran (París, BnF, lat. 1102)",
      "year": 2011
     }
    ],
@@ -12139,6 +12515,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "El Sacramentari II de Gellona (Montpellier, Bib. Mun., ms. 18)",
      "year": 2012
     }
    ],
@@ -12165,6 +12542,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Statuta ecclesiae antiqua",
      "year": 2026
     }
    ],
@@ -12192,6 +12570,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The Guide for the Perplexed, translated by M. Friedlander, second edition",
      "year": 1903
     }
    ],
@@ -12219,6 +12598,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Commentary on the Torah, translated and annotated by Charles B. Chavel",
      "year": 1971
     }
    ],
@@ -12244,6 +12624,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Nestroy-Gespräche 2006 program, German Nestroy-Archiv web presentation archived 12 April 2026",
      "year": 2026
     }
    ],
@@ -12270,6 +12651,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Nestroy-Gespräche 2006 abstracts, German Nestroy-Archiv web presentation archived 9 February 2026",
      "year": 2026
     }
    ],
@@ -12297,6 +12679,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Haamek Davar, in Sefer Torat Elohim, Vilna 1879",
      "year": 1879
     }
    ],
@@ -12320,6 +12703,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Champion Shrine narrative, timeline, and solemnity pages - web state of 2026-07-25",
      "year": 2026
     }
    ],
@@ -12345,6 +12729,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Natural Earth Terms of Use, web state of 16 August 2026",
      "year": 2026
     }
    ],
@@ -12372,6 +12757,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Natural Earth Vector release 5.1.2, commit f1890d9f152c896d250a77557a5751a93d494776",
      "year": 2022
     }
    ],
@@ -12397,6 +12783,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "NOS liberation-year web dossier, dated delivery",
      "year": 2026
     }
    ],
@@ -12422,6 +12809,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Holy Sacrifice of the Mass: Dogmatically, Liturgically, and Ascetically Explained",
      "year": 1902
     }
    ],
@@ -12451,6 +12839,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "United States Letters Patent No. 717,186",
      "year": 1902
     }
    ],
@@ -12476,6 +12865,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Origenes Werke, volumes 1–2",
      "year": 1899
     },
     {
@@ -12488,6 +12878,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Contra Celsum — New Advent English web presentation",
      "year": 2026
     }
    ],
@@ -12515,6 +12906,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "De Principiis, English (Frederick Crombie, Ante-Nicene Fathers vol. 4), with the Prologue of Rufinus — Christian Classics Ethereal Library web state",
      "year": 2026
     },
     {
@@ -12525,6 +12917,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "De Principiis, English (Frederick Crombie, Ante-Nicene Fathers vol. 4) — New Advent web state",
      "year": 2026
     }
    ],
@@ -12553,6 +12946,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "The Gospel of Luke, Catholic Commentary on Sacred Scripture",
      "year": 2018
     }
    ],
@@ -12577,7 +12971,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Sacerdotalis caelibatus - Acta Apostolicae Sedis text",
      "year": 1967
     },
     {
@@ -12590,6 +12987,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Sacerdotalis caelibatus - Vatican English web state",
      "year": 2026
     },
     {
@@ -12602,6 +13000,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Sacerdotalis caelibatus - Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -12628,6 +13027,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Solemni hac liturgia (Credo of the People of God), English — Holy See web state",
      "year": 2026
     }
    ],
@@ -12654,6 +13054,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Koji je bio latinski predložak Kašićeva Rituala rimskoga (1640.)?",
      "year": 2014
     }
    ],
@@ -12680,6 +13081,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The Finger of God Is There! (Montreal: printed by John Lovell, 1874) - CIHM microform scan",
      "year": 1874
     },
     {
@@ -12690,6 +13092,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Le doigt de Dieu est la! (Montreal: Eusebe Senecal, 1874) - CIHM microform scan",
      "year": 1874
     }
    ],
@@ -12716,6 +13119,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Diversities of Gifts, but the Same Spirit",
      "year": 2003
     }
    ],
@@ -12745,6 +13149,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Sententiae in IV libris distinctae, third edition, volume 2: Books III-IV",
      "year": 1981
     }
    ],
@@ -12770,6 +13175,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Founding passage as published among the institute's founding texts - web state",
      "year": 2026
     }
    ],
@@ -12796,6 +13202,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The mandement's considerations and eight articles in the Italian of the 1854 pilgrim's manual",
      "year": 1854
     },
     {
@@ -12806,6 +13213,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The mandement's declaration in the English of Ullathorne 1854",
      "year": 1854
     },
     {
@@ -12816,6 +13224,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Article 1 in French as transcribed by the Sanctuary of Notre-Dame de La Salette - web state",
      "year": 2026
     }
    ],
@@ -12842,6 +13251,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "NPNF First Series, Volume I: The Confessions and Letters of St. Augustin",
      "year": 1886
     }
    ],
@@ -12870,6 +13280,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "NPNF First Series, Volume VII: St. Augustin: Homilies on the Gospel of John, Homilies on the First Epistle of John, Soliloquies",
      "year": 1888
     }
    ],
@@ -12898,6 +13309,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "NPNF First Series, Volume XII: Saint Chrysostom, Homilies on the Epistles of Paul to the Corinthians",
      "year": 1889
     }
    ],
@@ -12926,6 +13338,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "NPNF First Series, Volume XIV: Saint Chrysostom, Homilies on the Gospel of St. John and the Epistle to the Hebrews",
      "year": 1889
     }
    ],
@@ -12952,6 +13365,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "NPNF Second Series, Volume I: Eusebius Pamphilus: Church History, Life of Constantine, Oration in Praise of Constantine",
      "year": 1890
     }
    ],
@@ -12980,6 +13394,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Socrates, Sozomenus: Church Histories",
      "year": 1890
     }
    ],
@@ -13006,6 +13421,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "NPNF Second Series, Volume III: Theodoret, Jerome, Gennadius, Rufinus",
      "year": 1892
     }
    ],
@@ -13032,6 +13448,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "NPNF Second Series, Volume IX: Hilary of Poitiers, John of Damascus",
      "year": 1899
     }
    ],
@@ -13060,6 +13477,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "NPNF Second Series, Volume V: Gregory of Nyssa, Dogmatic Treatises, etc.",
      "year": 1893
     }
    ],
@@ -13086,6 +13504,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "NPNF Second Series, Volume VI: St. Jerome: Letters and Select Works",
      "year": 1893
     }
    ],
@@ -13112,6 +13531,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "NPNF Second Series, Volume VII: Cyril of Jerusalem, Gregory Nazianzen",
      "year": 1894
     }
    ],
@@ -13140,6 +13560,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "NPNF Second Series, Volume VIII: Basil, Letters and Select Works",
      "year": 1895
     }
    ],
@@ -13166,6 +13587,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "NPNF Second Series, Volume XI: Sulpitius Severus, Vincent of Lerins, John Cassian",
      "year": 1894
     }
    ],
@@ -13192,6 +13614,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "NPNF Second Series, Volume XII: Leo the Great, Gregory the Great",
      "year": 1895
     }
    ],
@@ -13220,6 +13643,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "NPNF Second Series, Volume XIV: The Seven Ecumenical Councils",
      "year": 1900
     }
    ],
@@ -13246,6 +13670,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "On the Life of Moses (Yonge translation)",
      "year": 1855
     }
    ],
@@ -13274,6 +13699,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "On the question, Who is the Heir of Divine Things (Yonge translation)",
      "year": 1854
     }
    ],
@@ -13299,6 +13725,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Letter of 8 October 1945 as published in Acta Apostolicae Sedis 38 (1946) - Vatican archive text",
      "year": 1946
     }
    ],
@@ -13326,6 +13753,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Plato in Twelve Volumes, volume 9: Symposium",
      "year": 2026
     }
    ],
@@ -13348,7 +13776,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "public-domain"
+     ],
+     "title": "De Mosaica authentia Pentateuchi",
      "year": 1906
     }
    ],
@@ -13371,7 +13802,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "public-domain"
+     ],
+     "title": "De auctore, de tempore compositionis et de historica veritate Evangeliorum secundum Marcum et secundum Lucam",
      "year": 1912
     }
    ],
@@ -13394,7 +13828,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "public-domain"
+     ],
+     "title": "De auctoribus et de tempore compositionis Psalmorum",
      "year": 1910
     }
    ],
@@ -13420,6 +13857,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Declaration of 22 July 1988 - FSSP English web state",
      "year": 2026
     }
    ],
@@ -13446,6 +13884,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Decree of erection of 18 October 1988 - FSSP English web state",
      "year": 2026
     }
    ],
@@ -13472,6 +13911,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Decree of 10 September 1988 - FSSP English web state",
      "year": 2026
     }
    ],
@@ -13498,6 +13938,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Decree 823/2000 - French text on a third-party archive",
      "year": 2026
     }
    ],
@@ -13523,6 +13964,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Letter Prot. N. 748/2000 - German text with Italian and French renderings on a third-party site",
      "year": 2026
     }
    ],
@@ -13548,6 +13990,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Interpretationes authenticae - Vatican web state",
      "year": 2026
     }
    ],
@@ -13573,6 +14016,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "1996 explanatory note - Vatican Italian web state",
      "year": 2026
     }
    ],
@@ -13614,6 +14058,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Address to the Roman Curia, 22 December 2005 — Vatican English web state",
      "year": 2026
     }
    ],
@@ -13639,6 +14084,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Interview during the flight to Portugal, 11 May 2010 — Vatican English web state",
      "year": 2026
     }
    ],
@@ -13667,6 +14113,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Letter to the Bishops on the Occasion of the Publication of Summorum Pontificum — Vatican English web state",
      "year": 2026
     }
    ],
@@ -13692,6 +14139,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Sacramentum Caritatis",
      "year": 2026
     }
    ],
@@ -13719,6 +14167,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Summorum Pontificum — Vatican English web state",
      "year": 2026
     }
    ],
@@ -13747,6 +14196,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "In eminenti — papalencyclicals.net English web state",
      "year": 2026
     }
    ],
@@ -13772,6 +14222,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Act of Consecration of 25 March 2022 — Vatican English web state",
      "year": 2026
     }
    ],
@@ -13798,6 +14249,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Motu proprio of 17 January 2019 - Vatican English web state",
      "year": 2026
     }
    ],
@@ -13823,6 +14275,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Decree of 11 February 2022 - Latin text on the FSSP North American Province site",
      "year": 2026
     }
    ],
@@ -13848,6 +14301,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Canonization homily of 13 May 2017 — Vatican English web state",
      "year": 2026
     }
    ],
@@ -13876,6 +14330,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Letter to the Bishops Accompanying Traditionis custodes — Vatican English web state",
      "year": 2026
     }
    ],
@@ -13903,6 +14358,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Misericordiae vultus — Vatican English web state",
      "year": 2026
     }
    ],
@@ -13930,6 +14386,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Pascite gregem Dei — Vatican English web state",
      "year": 2026
     }
    ],
@@ -13957,6 +14414,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Praedicate Evangelium — Vatican English web state",
      "year": 2026
     },
     {
@@ -13969,6 +14427,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Praedicate Evangelium — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -13996,6 +14455,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Spiritus Domini — Vatican English web state",
      "year": 2026
     },
     {
@@ -14008,6 +14468,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Spiritus Domini — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -14035,6 +14496,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Traditionis custodes — Vatican English web state",
      "year": 2026
     }
    ],
@@ -14062,6 +14524,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Ecclesia Dei — Vatican English web state",
      "year": 2026
     }
    ],
@@ -14087,6 +14550,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Ecclesia de Eucharistia",
      "year": 2026
     }
    ],
@@ -14112,6 +14576,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Ecclesia in America — Vatican English web state",
      "year": 2026
     }
    ],
@@ -14140,6 +14605,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Rosarium Virginis Mariae — Vatican English web state",
      "year": 2026
     }
    ],
@@ -14167,6 +14633,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Sacrae disciplinae leges — Vatican English web state",
      "year": 2026
     }
    ],
@@ -14194,6 +14661,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Council announcement of 25 January 1959 — Vatican Italian web state",
      "year": 2026
     }
    ],
@@ -14222,6 +14690,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Gaudet Mater Ecclesia — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -14247,6 +14716,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Litterae Apostolicae motu proprio datae: Novum rubricarum Breviarii et Missalis Romani corpus approbatur",
      "year": 1960
     }
    ],
@@ -14274,6 +14744,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Humanum genus — Vatican English web state",
      "year": 2026
     },
     {
@@ -14286,6 +14757,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Humanum genus — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -14312,6 +14784,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Salutaris ille, in Acta Sanctae Sedis 16 (1883-84), 209-211",
      "year": 1883
     }
    ],
@@ -14337,6 +14810,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Supremi apostolatus officio — Vatican English web state",
      "year": 2026
     }
    ],
@@ -14363,6 +14837,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Vi è ben noto, Vatican English web text",
      "year": 2026
     }
    ],
@@ -14388,6 +14863,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Letter of 29 June 2026 - Vatican English web state",
      "year": 2026
     },
     {
@@ -14400,6 +14876,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Letter of 29 June 2026 - Vatican French web state (original language)",
      "year": 2026
     }
    ],
@@ -14429,6 +14906,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Address at the Last General Meeting of the Second Vatican Council — Vatican English web state",
      "year": 2026
     }
    ],
@@ -14454,7 +14932,10 @@
      "language": "la",
      "passages": 2,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Litterae apostolicae motu proprio datae Ecclesiae Sanctae",
      "year": 1966
     },
     {
@@ -14467,6 +14948,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Ecclesiae Sanctae — Vatican English web state",
      "year": 2026
     },
     {
@@ -14479,6 +14961,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Ecclesiae Sanctae — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -14507,6 +14990,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Udienza generale, 12 gennaio 1966 — Vatican Italian web state",
      "year": 2026
     }
    ],
@@ -14532,6 +15016,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Letter of 11 October 1976 - Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -14557,6 +15042,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Letter of 15 August 1976 - Vatican French web state",
      "year": 2026
     }
    ],
@@ -14582,6 +15068,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Marialis cultus — Vatican English web state",
      "year": 2026
     }
    ],
@@ -14609,6 +15096,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Ministeria quaedam — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -14634,7 +15122,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Missale Romanum (Apostolic Constitution) — Latin text in the editio typica tertia",
      "year": 2002
     },
     {
@@ -14647,6 +15138,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Missale Romanum (Apostolic Constitution) — Vatican English web state",
      "year": 2026
     }
    ],
@@ -14671,7 +15163,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Mysterii Paschalis",
      "year": 2002
     }
    ],
@@ -14697,6 +15192,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Mysterium Fidei",
      "year": 2026
     }
    ],
@@ -14724,6 +15220,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Aeterni Patris — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -14749,6 +15246,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Ineffabilis Deus — Papal Encyclicals Online English web state",
      "year": 2026
     }
    ],
@@ -14773,7 +15271,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Postquam Dei munere",
      "year": 1870
     }
    ],
@@ -14799,6 +15300,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Consueverunt Romani Pontifices — Papal Encyclicals Online English web state",
      "year": 2026
     }
    ],
@@ -14825,6 +15327,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Canonization acts as published in Acta Apostolicae Sedis 26 (1934) - Vatican OCR scan",
      "year": 1934
     }
    ],
@@ -14850,6 +15353,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Deiparae Virginis Mariae — Vatican English web state",
      "year": 2026
     }
    ],
@@ -14876,6 +15380,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Ingruentium malorum — Vatican English web state",
      "year": 2026
     }
    ],
@@ -14901,6 +15406,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Le pelerinage de Lourdes - Vatican English web state",
      "year": 2026
     }
    ],
@@ -14927,6 +15433,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Munificentissimus Deus — Vatican English web state",
      "year": 2026
     },
     {
@@ -14937,6 +15444,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Munificentissimus Deus — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -14963,6 +15471,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Sancti Augustini Vita Scripta a Possidio Episcopo: Revised Text and Translation",
      "year": 1919
     }
    ],
@@ -14988,6 +15497,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Constitutions, Part I articles 1-15 as definitively approved 29 June 2003 - FSSP English web state",
      "year": 2026
     }
    ],
@@ -15016,6 +15526,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Liturgical Year: Time after Pentecost, Volume II",
      "year": 1900
     }
    ],
@@ -15043,6 +15554,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The Letter of Aristeas (Oxford 1913 English translation)",
      "year": 1913
     }
    ],
@@ -15070,6 +15582,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Discipline générale antique, volume I.2: Les canons des synodes particuliers",
      "year": 1962
     }
    ],
@@ -15097,6 +15610,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Catholic Picture Dictionary (Pfeiffer) - Buskins.jpg",
      "year": 1948
     }
    ],
@@ -15125,6 +15639,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Tractate Berakot, A. Cohen's 1921 Cambridge English translation as delivered by Sefaria",
      "year": 2026
     }
    ],
@@ -15152,6 +15667,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The William Davidson Talmud, Tractate Megillah (Sefaria digital edition)",
      "year": 2026
     }
    ],
@@ -15179,6 +15695,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The William Davidson Talmud, Tractate Pesachim (Sefaria digital edition)",
      "year": 2026
     }
    ],
@@ -15206,6 +15723,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The William Davidson Talmud, Tractate Shabbat (Sefaria digital edition)",
      "year": 2026
     }
    ],
@@ -15233,6 +15751,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The Sefaria Midrash Rabbah, Bereshit Rabbah",
      "year": 2022
     }
    ],
@@ -15262,6 +15781,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Mishnah Berakhot, Torat Emet 357 Hebrew text as delivered by Sefaria",
      "year": 2026
     }
    ],
@@ -15289,6 +15809,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Mishnah Sanhedrin, Sefaria Community Translation",
      "year": 2026
     }
    ],
@@ -15316,6 +15837,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Reginonis abbatis Prumiensis Libri duo de synodalibus causis",
      "year": 1840
     }
    ],
@@ -15345,6 +15867,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Commentarius in Genesim, Patrologia Latina tomus 131",
      "year": 1853
     }
    ],
@@ -15368,6 +15891,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Antiphonale Missarum Sextuplex",
      "year": 1935
     }
    ],
@@ -15393,6 +15917,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "TruthOrFiction article page",
      "year": 2026
     }
    ],
@@ -15420,6 +15945,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Richard de Saint-Victor: Liber exceptionum: texte critique avec introduction, notes et tables",
      "year": 1958
     },
     {
@@ -15432,6 +15958,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Posteriorum excerptionum libri tredecim continentes utriusque Testamenti allegorias, secunda pars: Allegoriae in Novum Testamentum libros novem complectentes",
      "year": 2020
     }
    ],
@@ -15458,6 +15985,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Disputationes de controversiis, quatuor tomis comprehensae (Venice: Societas Minima, 1599)",
      "year": 1599
     },
     {
@@ -15468,6 +15996,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Disputationum de controversiis tomus primus (Venice: Malachinus, 1721)",
      "year": 1721
     }
    ],
@@ -15495,6 +16024,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Commentary on the Book of Psalms, translated by John O'Sullivan",
      "year": 1866
     }
    ],
@@ -15521,6 +16051,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Die Selbstbiographie des Cardinals Bellarmin, lateinisch und deutsch, mit geschichtlichen Erlaeuterungen (Bonn, 1887)",
      "year": 1887
     }
    ],
@@ -15548,6 +16079,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Complete Works of Robert Burns: Containing his Poems, Songs, and Correspondence",
      "year": 2017
     }
    ],
@@ -15579,6 +16111,7 @@
       "project-created",
       "public-domain"
      ],
+     "title": "The Sacred Bible, Catholic Public Domain Version, Original Edition, sacredbible.org web state of 31 July 2026",
      "year": 2009
     }
    ],
@@ -15604,6 +16137,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Extraict des registres de la commission ordonnée par le Roy pour le jugement du procez criminel",
      "year": 1634
     }
    ],
@@ -15629,6 +16163,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Arest de condemnation de mort contre maistre Urbain Grandier",
      "year": 1634
     }
    ],
@@ -15654,6 +16189,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Rescript of 12 May 1877 as published in Acta Sanctae Sedis 11 (1878) - Vatican archive text",
      "year": 1878
     }
    ],
@@ -15678,7 +16214,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "De editione typica altera — text in the editio typica tertia",
      "year": 2002
     }
    ],
@@ -15703,7 +16242,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Decretum 'Celebrationis eucharisticae' — text in the editio typica tertia",
      "year": 2002
     }
    ],
@@ -15728,7 +16270,10 @@
      "language": "la",
      "passages": 3,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Instructio Calendaria particularia",
      "year": 1970
     }
    ],
@@ -15757,6 +16302,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Declaration on Masonic Associations — Vatican English web state",
      "year": 2026
     },
     {
@@ -15769,6 +16315,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Quaesitum est — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -15796,6 +16343,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "1981 CDF declaration — Vatican English web state",
      "year": 2026
     }
    ],
@@ -15823,6 +16371,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Mysterium Ecclesiae — Vatican English web edition",
      "year": 1973
     }
    ],
@@ -15847,6 +16396,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "CDF Norms of 25 February 1978 - Vatican English web state",
      "year": 2026
     }
    ],
@@ -15873,7 +16423,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Notificatio concerning the Index of Prohibited Books",
      "year": 1966
     }
    ],
@@ -15900,6 +16453,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Letter on Certain Questions Concerning Eschatology — Vatican English web state",
      "year": 2026
     }
    ],
@@ -15926,6 +16480,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Recentiores episcoporum Synodi — Holy See English web state",
      "year": 2026
     }
    ],
@@ -15953,6 +16508,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Decretum generale quo novus rubricarum Breviarii ac Missalis Romani codex promulgatur",
      "year": 1960
     }
    ],
@@ -15978,6 +16534,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Decree of 13 November 1907 as published in Acta Sanctae Sedis 40 (1907) - Vatican OCR scan",
      "year": 1907
     }
    ],
@@ -16001,6 +16558,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Decretum: Novus index statuitur dierum festorum, quibus inest obligatio litandi Sacrum pro populo",
      "year": 1960
     }
    ],
@@ -16026,6 +16584,7 @@
      "rights": [
       "licensed"
      ],
+     "title": "Manifattura italiana, sandali pontificali, in pelle rivestita di taffetas, 1900-50 ca., dal duomo di Pisa",
      "year": 2021
     }
    ],
@@ -16051,6 +16610,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Mummification",
      "year": 2010
     }
    ],
@@ -16076,6 +16636,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "DCF Selecao (Fatima 2013) — Sanctuary web PDF",
      "year": 2013
     }
    ],
@@ -16101,7 +16662,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Decretum de activitate missionali Ecclesiae Ad gentes",
      "year": 1965
     },
     {
@@ -16114,6 +16678,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Ad gentes — Vatican English web state",
      "year": 2026
     },
     {
@@ -16126,6 +16691,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Ad gentes — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -16151,7 +16717,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Decretum de apostolatu laicorum Apostolicam actuositatem",
      "year": 1965
     },
     {
@@ -16164,6 +16733,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Apostolicam actuositatem — Vatican English web state",
      "year": 2026
     },
     {
@@ -16176,6 +16746,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Apostolicam actuositatem — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -16201,7 +16772,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Decretum de pastorali Episcoporum munere in Ecclesia Christus Dominus",
      "year": 1965
     },
     {
@@ -16214,6 +16788,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Christus Dominus — Vatican English web state",
      "year": 2026
     },
     {
@@ -16226,6 +16801,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Christus Dominus — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -16251,7 +16827,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Constitutio dogmatica de divina revelatione Dei Verbum",
      "year": 1965
     },
     {
@@ -16264,6 +16843,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Dei Verbum — Vatican English web state",
      "year": 2026
     },
     {
@@ -16276,6 +16856,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Dei Verbum — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -16301,7 +16882,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Declaratio de libertate religiosa Dignitatis humanae",
      "year": 1965
     },
     {
@@ -16314,6 +16898,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Dignitatis humanae — Vatican English web state",
      "year": 2026
     },
     {
@@ -16326,6 +16911,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Dignitatis humanae — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -16351,7 +16937,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Constitutio pastoralis de Ecclesia in mundo huius temporis Gaudium et spes",
      "year": 1965
     },
     {
@@ -16364,6 +16953,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Gaudium et spes — Vatican English web state",
      "year": 2026
     },
     {
@@ -16376,6 +16966,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Gaudium et spes — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -16401,7 +16992,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Declaratio de educatione christiana Gravissimum educationis",
      "year": 1965
     },
     {
@@ -16414,6 +17008,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Gravissimum educationis — Vatican English web state",
      "year": 2026
     },
     {
@@ -16426,6 +17021,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Gravissimum educationis — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -16451,7 +17047,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Decretum de instrumentis communicationis socialis Inter mirifica",
      "year": 1963
     },
     {
@@ -16464,6 +17063,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Inter mirifica — Vatican English web state",
      "year": 2026
     },
     {
@@ -16476,6 +17076,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Inter mirifica — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -16501,7 +17102,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Constitutio dogmatica de Ecclesia Lumen gentium",
      "year": 1964
     },
     {
@@ -16514,6 +17118,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Lumen gentium — Vatican English web state",
      "year": 2026
     },
     {
@@ -16526,6 +17131,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Lumen gentium — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -16551,7 +17157,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Declaratio de Ecclesiae Habitudine ad Religiones Non-Christianas Nostra aetate",
      "year": 1965
     },
     {
@@ -16564,6 +17173,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Nostra aetate — Vatican English web state",
      "year": 2026
     },
     {
@@ -16576,6 +17186,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Nostra aetate — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -16600,7 +17211,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Notificatio concerning the schema De Divina Revelatione",
      "year": 1965
     }
    ],
@@ -16625,7 +17239,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Notificatio concerning the vacatio legis of Orientalium Ecclesiarum",
      "year": 1964
     },
     {
@@ -16636,6 +17253,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Vacatio legis notice concerning Orientalium Ecclesiarum — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -16660,7 +17278,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Notificationes",
      "year": 1964
     },
     {
@@ -16671,6 +17292,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Notificationes — Vatican English web state",
      "year": 2026
     }
    ],
@@ -16696,7 +17318,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Decretum de institutione sacerdotali Optatam totius",
      "year": 1965
     },
     {
@@ -16709,6 +17334,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Optatam totius — Vatican English web state",
      "year": 2026
     },
     {
@@ -16721,6 +17347,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Optatam totius — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -16746,7 +17373,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Decretum de Ecclesiis Orientalibus Catholicis Orientalium Ecclesiarum",
      "year": 1964
     },
     {
@@ -16759,6 +17389,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Orientalium Ecclesiarum — Vatican English web state",
      "year": 2026
     },
     {
@@ -16771,6 +17402,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Orientalium Ecclesiarum — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -16796,7 +17428,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Decretum de accommodata renovatione vitae religiosae Perfectae caritatis",
      "year": 1965
     },
     {
@@ -16809,6 +17444,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Perfectae caritatis — Vatican English web state",
      "year": 2026
     },
     {
@@ -16821,6 +17457,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Perfectae caritatis — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -16846,7 +17483,10 @@
      "language": "la",
      "passages": 2,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Decretum de presbyterorum ministerio et vita Presbyterorum ordinis",
      "year": 1965
     },
     {
@@ -16859,6 +17499,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Presbyterorum ordinis — Vatican English web state",
      "year": 2026
     },
     {
@@ -16871,6 +17512,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Presbyterorum ordinis — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -16896,7 +17538,10 @@
      "language": "la",
      "passages": 3,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Constitutio de Sacra Liturgia Sacrosanctum Concilium",
      "year": 1963
     },
     {
@@ -16909,6 +17554,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Sacrosanctum Concilium — Vatican English web state",
      "year": 2026
     },
     {
@@ -16921,6 +17567,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Sacrosanctum Concilium — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -16946,7 +17593,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Decretum de Oecumenismo Unitatis Redintegratio",
      "year": 1964
     },
     {
@@ -16959,6 +17609,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Unitatis Redintegratio — Vatican English web state",
      "year": 2026
     },
     {
@@ -16971,6 +17622,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Unitatis Redintegratio — Vatican Latin web state",
      "year": 2026
     }
    ],
@@ -16995,7 +17647,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Doctrinal Commission declaration of 6 March 1964 — AAS 57 reproduction",
      "year": 1964
     },
     {
@@ -17005,7 +17660,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Doctrinal Commission declaration of 6 March 1964 — AAS 58 reproduction",
      "year": 1964
     }
    ],
@@ -17032,6 +17690,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Preliminary Note of Explanation — Vatican English web state",
      "year": 2026
     },
     {
@@ -17041,7 +17700,10 @@
      "language": "la",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Nota explicativa praevia",
      "year": null
     }
    ],
@@ -17073,6 +17735,7 @@
      "rights": [
       "licensed"
      ],
+     "title": "In cosmogoniam homiliae 1-6, Patristic Text Archive edition pta-grc1",
      "year": 2018
     }
    ],
@@ -17103,6 +17766,7 @@
       "project-created",
       "public-domain"
      ],
+     "title": "Brenton Septuagint Translation (1851), eBible.org eng-Brenton",
      "year": 1851
     }
    ],
@@ -17132,6 +17796,7 @@
      "rights": [
       "licensed"
      ],
+     "title": "SBLGNT v1.2 electronic text and apparatus",
      "year": 2023
     },
     {
@@ -17144,6 +17809,7 @@
      "rights": [
       "licensed"
      ],
+     "title": "SBLGNT v1.2 Faithlife repository snapshot c4d241a",
      "year": 2025
     }
    ],
@@ -17171,6 +17837,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Atti e Memorie, nuova serie, volume XXXVII",
      "year": 2001
     }
    ],
@@ -17198,6 +17865,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Pentateuch with Targum Onkelos, Haphtaroth and Rashi's Commentary, translated and annotated by M. Rosenbaum and A. M. Silbermann",
      "year": 1929
     }
    ],
@@ -17226,6 +17894,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Lives of the Caesars, Rolfe's Loeb English, LacusCurtius transcription",
      "year": 2026
     }
    ],
@@ -17251,6 +17920,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Decree of 21 December 1915 as published in Acta Apostolicae Sedis 7 (1915) - Vatican archive text",
      "year": 1915
     }
    ],
@@ -17276,6 +17946,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Decree of 9 May 1923 as published in Acta Apostolicae Sedis 15 (1923) - Vatican archive text",
      "year": 1923
     }
    ],
@@ -17302,6 +17973,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The 1916 acts as published in Acta Apostolicae Sedis 8 (1916) - Vatican archive text",
      "year": 1916
     }
    ],
@@ -17327,6 +17999,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Documento final - Holy See Press Office bulletin text",
      "year": 2019
     }
    ],
@@ -17354,6 +18027,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Canons of the Synod Held in the City of Laodicea, in Phrygia Pacatiana",
      "year": 1900
     },
     {
@@ -17363,7 +18037,10 @@
      "language": "mul",
      "passages": 1,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "restricted"
+     ],
+     "title": "Les canons des synodes particuliers",
      "year": 1962
     }
    ],
@@ -17391,6 +18068,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Against Marcion, Book IV",
      "year": 1885
     }
    ],
@@ -17416,6 +18094,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Q. Septimi Florentis Tertulliani Apologeticus",
      "year": 1917
     },
     {
@@ -17428,6 +18107,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Apology — New Advent English web presentation",
      "year": 2026
     }
    ],
@@ -17460,6 +18140,7 @@
       "project-created",
       "public-domain"
      ],
+     "title": "The Revised Version of the Holy Bible with Apocrypha (1895), eBible.org eng-rv",
      "year": 1895
     }
    ],
@@ -17485,6 +18166,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Metropolitan Museum of Art collection record for Censer, object 464340",
      "year": 2026
     }
    ],
@@ -17510,6 +18192,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Metropolitan Museum of Art collection record for Chalice and Paten, object 463080",
      "year": 2026
     }
    ],
@@ -17535,6 +18218,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Metropolitan Museum of Art collection record for Crozier with Lamb of God, object 471458",
      "year": 2025
     }
    ],
@@ -17560,6 +18244,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Metropolitan Museum of Art collection record for Crucifix, object 469881",
      "year": 2025
     }
    ],
@@ -17585,6 +18270,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Metropolitan Museum of Art collection record for Cruet, object 467483",
      "year": 2026
     }
    ],
@@ -17610,6 +18296,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Metropolitan Museum of Art collection record for Faldstool, object 193332",
      "year": 2024
     }
    ],
@@ -17635,6 +18322,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Metropolitan Museum of Art collection record for Incense boat and spoon, object 236950",
      "year": 2025
     }
    ],
@@ -17660,6 +18348,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Metropolitan Museum of Art collection record for object 188520",
      "year": 2022
     }
    ],
@@ -17685,6 +18374,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Metropolitan Museum of Art collection record for Mitre, object 227306",
      "year": 2021
     }
    ],
@@ -17710,6 +18400,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Metropolitan Museum of Art collection record for Pair of altar candlesticks, object 200660",
      "year": 2025
     }
    ],
@@ -17735,6 +18426,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Metropolitan Museum of Art collection record for Pair of altar cruets, object 200141",
      "year": 2021
     }
    ],
@@ -17760,6 +18452,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Metropolitan Museum of Art collection record for Pectoral cross, object 810813",
      "year": 2025
     }
    ],
@@ -17785,6 +18478,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The Metropolitan Museum of Art collection record for Tabernacle, object 467756",
      "year": 2026
     }
    ],
@@ -17813,6 +18507,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Hymns Ancient and Modern, Complete Edition with accompanying tunes, London printing catalogued as 1890",
      "year": 1890
     }
    ],
@@ -17842,6 +18537,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "The King James Version of the Bible, Project Gutenberg eBook 10",
      "year": 2026
     }
    ],
@@ -17869,6 +18565,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Theodori Episcopi Mopsuesteni in Epistolas B. Pauli Commentarii: The Latin Version with the Greek Fragments, Volume I: Introduction; Galatians-Colossians",
      "year": 1880
     }
    ],
@@ -17898,6 +18595,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Theodoreti Cyrensis Episcopi Opera Omnia, tomus III (Patrologia Graeca 82)",
      "year": 1864
     }
    ],
@@ -17925,6 +18623,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Theodoreti Cyrensis Episcopi Opera Omnia, tomus I (Patrologia Graeca 80)",
      "year": 1860
     }
    ],
@@ -17953,6 +18652,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Enarratio in Evangelium Ioannis, Migne's facing Latin column in Patrologia Graeca 124",
      "year": 1864
     }
    ],
@@ -17979,6 +18679,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "Baltimore Catechism No. 3 (New York: Benziger Brothers, 1921)",
      "year": 1921
     }
    ],
@@ -18005,6 +18706,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "A Manual of Prayers for the Use of the Catholic Laity (New York: The Catholic Publication Society Co.; London: Burns & Oates, 1889)",
      "year": 1889
     }
    ],
@@ -18035,6 +18737,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Scriptum super Sententiis, liber IV dd. 47-48 — Corpus Thomisticum Latin web state",
      "year": 2026
     },
     {
@@ -18047,6 +18750,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Scriptum super Sententiis, liber IV dd. 45-46 — Corpus Thomisticum Latin web state",
      "year": 2026
     }
    ],
@@ -18076,6 +18780,7 @@
       "public-domain",
       "unresolved"
      ],
+     "title": "Sancti Thomae Aquinatis Opera omnia, tomus quartus: Pars prima Summae theologiae",
      "year": 1888
     },
     {
@@ -18088,6 +18793,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Summa theologica, I-II qq. 90-97, English (Fathers of the English Dominican Province) — New Advent web state",
      "year": 2026
     },
     {
@@ -18100,6 +18806,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Summa theologica, I qq. 57, 111, and 114, English — New Advent web state",
      "year": 2026
     },
     {
@@ -18112,6 +18819,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Summa theologica, II-II qq. 138 and 154, English (Fathers of the English Dominican Province) — New Advent web state",
      "year": 2026
     },
     {
@@ -18124,6 +18832,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Summa theologiae, Tertia Pars q. 59 — New Advent English web state",
      "year": 2026
     },
     {
@@ -18136,6 +18845,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Summa Theologiae III, question 71 — New Advent English web presentation",
      "year": 2026
     },
     {
@@ -18148,6 +18858,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Summa Theologiae III, questions 73-80 — New Advent English web presentation",
      "year": 2026
     },
     {
@@ -18160,6 +18871,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Summa Theologiae III, questions 81-83 — New Advent English web presentation",
      "year": 2026
     },
     {
@@ -18172,6 +18884,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Summa theologiae, Prima Secundae qq. 90-97 — Corpus Thomisticum Latin web state",
      "year": 2026
     },
     {
@@ -18184,6 +18897,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Summa theologiae, Prima Secundae qq. 55-70 and 109-114 — Corpus Thomisticum Latin web state",
      "year": 2026
     },
     {
@@ -18196,6 +18910,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Summa theologiae, Secunda Secundae qq. 123-140 and 146-154 — Corpus Thomisticum Latin web state",
      "year": 2026
     },
     {
@@ -18208,6 +18923,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Summa theologiae, Secunda Secundae qq. 23-24 — Corpus Thomisticum Latin web state",
      "year": 2026
     },
     {
@@ -18220,6 +18936,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Summa theologiae, Secunda Secundae qq. 27-33 — Corpus Thomisticum Latin web state",
      "year": 2026
     },
     {
@@ -18232,6 +18949,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Summa theologiae, Tertia Pars qq. 53-59 — Corpus Thomisticum Latin web state",
      "year": 2026
     },
     {
@@ -18244,6 +18962,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Summa theologiae, Tertia Pars qq. 73-80 — Corpus Thomisticum Latin web state",
      "year": 2026
     }
    ],
@@ -18273,6 +18992,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Super Epistolam B. Pauli ad Galatas lectura — Corpus Thomisticum Latin web state",
      "year": 2026
     }
    ],
@@ -18302,6 +19022,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Super Epistolam B. Pauli ad Hebraeos lectura, chapters 7-10 — Corpus Thomisticum Latin web state",
      "year": 2026
     }
    ],
@@ -18331,6 +19052,7 @@
       "public-domain",
       "restricted"
      ],
+     "title": "Super Evangelium S. Ioannis lectura, Busa and Alarcon Latin text at the Corpus Thomisticum",
      "year": 2026
     }
    ],
@@ -18359,6 +19081,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Super I ad Corinthios, Latin — Corpus Thomisticum web state",
      "year": 2026
     }
    ],
@@ -18387,6 +19110,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "Super Psalmos — Corpus Thomisticum Latin web state",
      "year": 2026
     }
    ],
@@ -18412,6 +19136,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Véritable relation des justes procédures",
      "year": 1634
     }
    ],
@@ -18420,6 +19145,45 @@
     "fr"
    ],
    "title": "Véritable relation des justes procédures observées au fait de la possession des Ursulines de Loudun et au procès de Grandier"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Triptych contributors",
+   "category": "editorial-source-projection",
+   "directory": "editions/triptych/roman-1962-latin-proper-editorial-projection/",
+   "editions": [
+    {
+     "date": "2026-08-27",
+     "file": "2026-2026-08-27-editorial-projection.json",
+     "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-08-27",
+     "language": "la",
+     "passages": 10,
+     "readable": 10,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Roman 1962 Latin Proper Editorial Projection, 27 August 2026",
+     "year": 2026
+    },
+    {
+     "date": "2026-08-28",
+     "file": "2026-2026-08-28-editorial-projection.json",
+     "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-08-28",
+     "language": "la",
+     "passages": 3,
+     "readable": 3,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Roman 1962 Latin Proper Editorial Projection, 28 August 2026",
+     "year": 2026
+    }
+   ],
+   "id": "work.triptych.roman-1962-latin-proper-editorial-projection",
+   "languages": [
+    "la"
+   ],
+   "title": "Roman 1962 Latin Proper Editorial Projection"
   },
   {
    "alternate_titles": [
@@ -18439,6 +19203,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "UGLE FAQ — web state of 2026-07-25",
      "year": 2026
     }
    ],
@@ -18464,6 +19229,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "National action plan to tackle child abuse linked to faith or belief — GOV.UK web presentation",
      "year": 2026
     }
    ],
@@ -18489,6 +19255,7 @@
      "rights": [
       "licensed"
      ],
+     "title": "Domestic Abuse statutory guidance — accessible English web state",
      "year": 2022
     }
    ],
@@ -18516,6 +19283,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "New American Bible, Revised Edition — USCCB web state",
      "year": 2026
     },
     {
@@ -18528,6 +19296,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "New American Bible, Revised Edition — USCCB web state",
      "year": 2026
     },
     {
@@ -18540,6 +19309,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "New American Bible, Revised Edition — USCCB web state",
      "year": 2026
     }
    ],
@@ -18548,6 +19318,35 @@
     "en"
    ],
    "title": "New American Bible, Revised Edition"
+  },
+  {
+   "alternate_titles": [
+    "USCCB Guidelines for the Publication of Liturgical Books",
+    "2025 USCCB publication guidelines"
+   ],
+   "author": "United States Conference of Catholic Bishops, Committee on Divine Worship",
+   "category": "liturgical-publication-guidelines",
+   "directory": "editions/united-states-conference-of-catholic-bishops/guidelines-publication-liturgical-books/",
+   "editions": [
+    {
+     "date": "2025",
+     "file": "2025-2025-first-printing.json",
+     "id": "edition.united-states-conference-of-catholic-bishops.guidelines-publication-liturgical-books.2025-first-printing",
+     "language": "en",
+     "passages": 5,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Guidelines for the Publication of Liturgical Books — first printing",
+     "year": 2025
+    }
+   ],
+   "id": "work.united-states-conference-of-catholic-bishops.guidelines-publication-liturgical-books",
+   "languages": [
+    "en"
+   ],
+   "title": "Guidelines for the Publication of Liturgical Books"
   },
   {
    "alternate_titles": [
@@ -18567,6 +19366,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Exorcism — USCCB English web presentation",
      "year": 2026
     },
     {
@@ -18579,6 +19379,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Exorcism — USCCB English web presentation",
      "year": 2026
     }
    ],
@@ -18606,6 +19407,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Liturgical Calendar for the Dioceses of the United States of America - 2026",
      "year": 2026
     },
     {
@@ -18618,6 +19420,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Liturgical Calendar for the Dioceses of the United States of America - 2027",
      "year": 2027
     },
     {
@@ -18630,6 +19433,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Liturgical Calendar for the Dioceses of the United States of America - 2028",
      "year": 2028
     }
    ],
@@ -18656,6 +19460,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "RTL Words: LEHEM — dated web state",
      "year": 2026
     }
    ],
@@ -18682,6 +19487,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Factum pour maistre Urbain Grandier",
      "year": 1634
     }
    ],
@@ -18707,6 +19513,7 @@
      "rights": [
       "restricted"
      ],
+     "title": "Corpus Orationum, Usuarium web state",
      "year": 2026
     }
    ],
@@ -18730,6 +19537,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "History of Northern Wisconsin (Chicago: Western Historical Company, 1881) - Internet Archive OCR text",
      "year": 1881
     }
    ],
@@ -18755,6 +19563,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "The Holy Mountain of La Salette (London: Richardson, 1854) - Internet Archive scan",
      "year": 1854
     }
    ],
@@ -18778,6 +19587,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [],
+     "title": "British Museum object record 1868,0808.5356",
      "year": 2026
     }
    ],
@@ -18803,6 +19613,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "Hirten Church Goods 1952",
      "year": 1952
     }
    ],
@@ -18828,6 +19639,7 @@
      "rights": [
       "public-domain"
      ],
+     "title": "A Dictionary of Greek and Roman Antiquities, 1875 edition, LacusCurtius transcription",
      "year": 2026
     }
    ],
@@ -18855,6 +19667,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "The Hymnal of Praise (1913), no. 265, as cataloged by Hymnary",
      "year": 2026
     }
    ],
@@ -18881,6 +19694,7 @@
      "rights": [
       "licensed"
      ],
+     "title": "Clinical Descriptions and Diagnostic Requirements for ICD-11 Mental, Behavioural and Neurodevelopmental Disorders",
      "year": 2024
     }
    ],
@@ -18906,6 +19720,7 @@
      "rights": [
       "unresolved"
      ],
+     "title": "WIPO Lex Berne contracting-parties table, web state of 1 August 2026",
      "year": 2026
     }
    ],
@@ -18939,6 +19754,7 @@
       "project-created",
       "public-domain"
      ],
+     "title": "The World English Bible, Catholic Edition (eBible.org eng-web-c)",
      "year": 2020
     }
    ],

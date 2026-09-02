@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-08-20.
+Last reconciled: 2026-08-28.
 
 ## Standing public-alpha authority
 
@@ -328,16 +328,14 @@ on top of `main`'s current hashes, so no old signature resurrected.
 - `impl/didach-domain` and `ux/didach-identity`: the abandoned `didach.ai`
   direction; not part of this program.
 
-**Domain state, recorded so nobody manufactures a fix.** The public origin
-moved to `https://mystago.gy/` entirely through GitHub Pages settings and
-DNS; no repository change accomplished it and none was made by this
-integration. The old origin 301-redirects. `tools/public-alpha` still
-declares `SITE_ORIGIN = "https://spincyc.github.io/triptych"`, so `og:url`
-and `og:image` metadata name the old origin (reachable via the redirect), and
-`tools/tests/liturgy_reader_visual_reset_browser.mjs` baselines against the
-old URL. Correcting the canonical origin is product/domain-architecture work
-under the master plan, not a bug fix to smuggle in; Triptych remains the
-product and repository identity.
+**Domain state.** The public origin moved to `https://mystago.gy/` through
+GitHub Pages settings and DNS; the old project-path origin 301-redirects.
+`tools/public-alpha` now declares the custom-domain origin, constructs and
+verifies canonical `og:url` and `og:image` metadata there, and keeps all
+in-artifact navigation relative so the same static artifact remains portable
+under a GitHub Pages project-path preview. Triptych remains the product and
+repository identity; this repository change corrects metadata and does not
+perform or imply a deployment.
 
 **Gate baseline for this tree.** `check-browser-gate` over the built site:
 2,290 assertions, **228** failures — 117 single-`main`, 82 target-size, 27
@@ -706,19 +704,19 @@ keeping the first-visit URL empty. The obsolete first patch was superseded
 after gate repair by the accepted 19-path patch. Its prospective 230/230 focused
 Python, 40/40 Day, 32/32 Propers, 18/18 shared-shell, and 24/24 governed
 Instrument gates were repeated successfully in the promoted real tree before
-commit. Planning and compatibility packages remain at
+commit. The planning package remains at
 `build/agent-handoffs/20260806T212148Z-liturgy-reader-instrument-public-cutover-plan/`
-and
-`build/agent-handoffs/20260807T052836Z-liturgy-reader-public-cutover-compatibility/`.
+and the removed compatibility package remains recoverable from its historical
+introduction commit `e69d91ffff5823dc2970f867f1be8c9eb5b6363b`.
 
 Independent post-deployment review passed all nine final questions and accepts
 the public cutover as complete. Exact cutover SHA
 `9b5f21c0ca26bf02af03d207ddd2617021e16fb3` owns qualifying successful Pages
 run `31175722949`. Immediate live verification passed 936/936 across 36
 original-pixel states; ordinary-cache verification passed 216/216 after 613
-seconds without mixed-generation behavior. The immutable execution handoff is
-`build/agent-handoffs/20260807T115341Z-liturgy-reader-instrument-public-cutover-execution/`;
-its ZIP SHA-256 is
+seconds without mixed-generation behavior. The removed immutable execution
+handoff remains recoverable from historical introduction commit
+`1d60b49bcf2a46e5ee43d6326af3e13a43265b72`; its ZIP SHA-256 was
 `06752126a3a3235a342f54ec08811faaf4fc2622924008c4362dda519624c410`.
 Canonical Day and Propers now serve the accepted Instrument without redirects.
 Public navigation was not redesigned; retained candidate and oracle routes
@@ -731,8 +729,9 @@ transcript replay; no transcript was recaptured or blessed.
 <!-- promised-deliverable: liturgy-reader-instrument-production-integration-2026-08-06 -->
 
 **Complete; production integration is independently accepted and its exact
-reviewed handoff is durably archived. The separately reviewed public cutover is
-also complete; public-navigation redesign remains outside both phases.**
+reviewed handoff is durably archived in Git history rather than the current
+tree. The separately reviewed public cutover is also complete;
+public-navigation redesign remains outside both phases.**
 Independent Round 1 accepted the
 Liturgical Instrument visual foundation and all seven correction dispositions.
 Production integration begins from `b3ae6bddaab631661d342380f61365d851be160c`
@@ -842,8 +841,9 @@ bounded visual corrections: one 39.75rem Read axis, earlier Missal action,
 integrated rail/dock, authored masthead, consolidated warnings, tighter ritual
 rhythm, and deliberate 320-pixel wrapping. Work unit D now supplies the full
 matrix, measured before/after package, honest governed-check record, verified
-Pages deployment, and immutable tracked handoff at
-`build/agent-handoffs/20260806T112813Z-liturgy-reader-instrument-correction/`.
+Pages deployment, and an immutable tracked handoff now retained only in
+historical introduction commit
+`50288ddf9759f56e8a25e4907d8de25e27e25e8f`.
 Independent review round 1 passed six of seven original findings and confirmed
 the direction, typography, ritual grid, warnings, masthead, and Ordinary/Proper
 composition. It retained the original shell blocker only at 1024×768 and added
@@ -862,9 +862,9 @@ continuity record owns both exact stops. A third automatic run again passed all
 repository-owned build/upload work and was canceled only when the job reached
 its 15-minute ceiling during deploy polling. The following immutable-handoff
 push succeeded as Pages run `31109086658`; direct Day/Propers routes are HTTP
-200/noindex and deployed CSS/JS byte-match source. The final narrow immutable
-re-review handoff is
-`build/agent-handoffs/20260806T141831Z-liturgy-reader-instrument-correction/`.
+200/noindex and deployed CSS/JS byte-match source. The removed final narrow
+immutable re-review handoff remains recoverable from historical introduction
+commit `4daf7d8a1e1c509edb81a738cc71223170bbbd2d`.
 Independent Round 1 acceptance passed shell continuity, 200% labeled reflow,
 and absence of accepted-geometry regressions. It independently verified the
 ZIP, all 109 manifest entries, candidate/source CSS parity, and all corrected
@@ -2115,3 +2115,495 @@ reopening sources, and instructed to distrust the ledgers and the tests,
 including the ones this lane wrote. No same-session subagent arrangement
 satisfies it. Until that review returns PASS and a maintainer accepts, nothing
 merges and propers integration does not begin.
+
+## Complete Missal corpus remediation
+
+<!-- promised-deliverable: complete-missal-remediation-2026-08-26 -->
+
+**Completed and deployed on 2026-08-28.** Work began on
+`feature/complete-missal` from synchronized base
+`2778285849f2973ea89d1cfd5b2751ed4ae58e54`. The maintainer requested one
+source-honest program that audits and remediates the postconciliar, Roman 1962,
+and Roman pre-1955 Missal data in English and Latin; corrects calendar,
+recension, Common, Proper, Ordinary, dialogue, presentation, provenance, and
+publication-boundary defects; verifies the complete one-year matrix; commits
+and pushes coherent feature work; receives a cold review; then reconciles with
+current `main` and advances `origin/main` without rewriting history.
+
+The audit baseline covers every civil date from 2026-08-26 through 2027-08-25:
+three calendars by two requested languages by 365 dates, with 2,190 successful
+JSON renders and 2,190 successful text renders, no invocation or JSON-parse
+failure, and empty standard error. It found ten whole-Mass postconciliar
+placeholders and four historical placeholders; seven placeholder
+postconciliar Commons and seven structurally incomplete Roman Commons; 89
+explicit postconciliar English Proper gaps and 166 historical English Proper
+gaps; 391 unselected postconciliar weekday reading or psalm slots; incomplete
+postconciliar Eucharistic Prayers; and a historical Ordinary witness that does
+not by itself establish a target 1962 or 1920 recension. Roman pre-1955 remains
+primarily inherited 1962 material with six Holy Week deltas, and the 1956-1960
+middle recension is not held as a complete source-grounded corpus.
+
+The same baseline records the historical January 4 no-Mass result, the
+postconciliar 2027-06-05 equal-rank conflict, ambiguous Common selection,
+Roman calendar-spine identity failures, scoped-rubric/global-index drift, and
+language, territorial, option, weekday-cycle, diagnostic, and generated-data
+freshness weaknesses. Rights review found tracked ICEL-facing material without
+an adequate per-text/per-surface publication filter, provenance mismatches,
+misclassified Gospel Acclamations, missing FDLC artifact records, and Latin
+surfaces without sufficient per-text rights evidence. No unavailable or
+uncleared text may be filled by reconstruction, an unofficial copy, or silent
+cross-recension fallback; an unresolved or withheld state is the correct
+result until an exact permitted witness exists.
+
+The visual baseline and browser evidence under the ignored review tree already
+establish a calmer 39.75rem reading measure, a readable three-rem cue axis,
+cross-browser serif fallback, print/reflow/accessibility coverage, and event,
+text, Proper, Ordinary, state, source, seat, and rubric parity for representative
+Roman 1962 and postconciliar states. Structured dialogue work may add only
+source-owned turns and semantically honest role or versicle/response cues; it
+may not split opaque prose by string matching or equate Priest/Server with
+versicle/response.
+
+**Exact successor snapshot internally accepted for deployment on independent
+AI cold-review evidence; production integration is verified below.** Feature
+commit
+`a1a7ab774a7318cb0b66d74462090856347d5915` (tree
+`b70bdf637387ba552d66d6f7e38704a5ed116f19`) was pushed exactly to
+`origin/feature/complete-missal` at that stage before the later
+deployment-record and workflow commits, descends without a rewrite from the
+then-current `origin/main` base
+`2778285849f2973ea89d1cfd5b2751ed4ae58e54`, and its tracked worktree and index
+were clean at the exact Firefox capture and handoff assembly. Independent
+semantic, source-identity,
+rights, generated-freshness, path-integrity, deployment-artifact, commit-scope,
+and exact-handoff reviews found no successor blocker.
+
+The accepted source tree carries 619 postconciliar Mass identities, 491 Roman
+1962 identities, 489 effective Roman pre-1955 identities, and eight explicit
+pre-1955 departure records. The source library validates at 537 works, 722
+editions, 1,837 artifacts, 3,295 passages, 72 segments, and 2,167 bindings.
+The registered `complete-missal` audit measures all fifteen completion
+dimensions over 2020--2120 and reports 39 typed unresolved audit-dimension
+cells instead of inventing text or silently borrowing a recension: 8/492/619
+represented celebrations and at least 5,158/5,247/3,056 modeled text slots for
+pre-1955/Roman 1962/postconciliar respectively. Its source-honest `--check`
+passes; its stricter `--require-resolved` mode intentionally refuses while
+those explicit cells remain. They are completion-dimension findings, not a
+claim that 39 whole texts are absent.
+
+The authoritative full Python run passes 2,302 tests with no failure or error
+and ten intentional skips. `make check` replays 203 of 212 captured examples
+with no divergence, stale capture, or tracked write; six are policy-exempt or
+never-run and three have unavailable fixtures. The annual gate passes all six
+tests over 365 days, three calendars, and two languages: 2,190 cases and 4,380
+successful JSON/text renders. Five focused Chromium production harness
+contracts pass all 134 assertions within six passing unittest gate tests.
+Fresh Firefox 154.0.1 evidence is intrinsically bound to the exact clean
+feature commit; automated metrics plus AI visual inspection of the canonical
+full-Mass desktop 1440x900 and mobile 393x852 states found no horizontal
+overflow, duplicate IDs, or failed page requests. The broad Chromium
+accessibility run retains exit 1 at the exact inherited baseline rather than a
+green gate: 2,290 assertions, 1,850 passes, 212 failures,
+and 228 skips, comprising 108 duplicate-main, 77 target-size, and 27 modal
+skip-link findings. The other long-running FINAL5 gates ran on the frozen
+precommit candidate subsequently committed unchanged; their logs do not embed
+a commit or tree identifier and are forensic workflow evidence rather than
+intrinsically commit-bound records.
+
+The final deployment-source, public-site, and GitHub-Pages-target verification
+gates pass on the frozen successor. The resulting local artifact contains
+20,549 regular files and 1,978 directories totaling 436,003,351 bytes, with
+20,548 matching checksum entries and no symlink, special file, unsafe link,
+forbidden path, residue name, or quarantined-body match. Act-history projects
+all 505 canonical files and rejects replaced or linked projection roots;
+public-alpha uses descriptor-rooted, no-follow creation and an immutable
+verification snapshot with identity-bound cleanup. All generator, Act-history,
+release-binding, calendar, and source-reader freshness gates and the tmt
+registry check pass.
+
+Rights-withheld bodies are absent from current public structures; formerly
+composite celebration identities are split; calendar and option ambiguity
+fails closed; and Ordinary and Proper consumers share typed availability,
+source, and dialogue semantics. Ten Roman 1962 Latin Proper prayer bodies,
+each byte-identical to its selected passage in a Triptych-created editorial-
+projection artifact, are published under a record that attributes only the
+bounded selection, transcription layout, normalization decisions, and
+collation record to Triptych. The underlying prayer wording remains public
+domain in the United States; the Lasance antecedent supplies that basis and the
+restricted 1962 facsimile remains a separate comparison witness. No new human
+collation or approval is claimed. Current-tree
+ICEL payloads, quarantined Roman 1962 Latin Proper bodies, and the superseded
+Lasance OCR artifact with the excluded 1302a--1302d insert are absent from the
+tracked tree, generated surfaces, deployment artifact, and current review
+handoff. Reachable earlier Git history still contains protected or superseded
+objects. Whether that history requires rewriting, replacement, access
+restriction, or another remedy remains a maintainer/counsel release-policy
+decision; the required fast-forward workflow deliberately does not rewrite it.
+
+The exact successor review handoff is
+`build/agent-handoffs/20260828T172422Z-complete-missal-final-review/`, with a
+verified one-root ZIP beside it. Its 15-entry manifest has SHA-256
+`9e53c26fd3588f009c770f22a6cf4a7bb3ad8acd48f8c85919e69a88f4d4bd03`;
+the ZIP has SHA-256
+`e0d42528ccabb6889f8dadd771a6f94b1c068e6744c76e52b1fbf51c17075907`.
+It supersedes the preserved `20260828T170544Z` package, which superseded
+`20260828T164734Z`; that package superseded the earlier `20260828T045009`
+recovery package. This is
+AI-assisted and automated review evidence, not human, priestly, specialist,
+intended-reader, physical-use, ecclesiastical, or new exact-snapshot human
+approval.
+
+**Production integration and live verification complete.** `origin/main` first
+advanced by genuine fast-forward from
+`2778285849f2973ea89d1cfd5b2751ed4ae58e54` to
+`de7c78334d2f7418c20c7a595e6aae9ce45f39c9` after all three local deployment
+gates passed on that exact clean tree. Exact Pages run
+[`33196238024`](https://github.com/spincyc/triptych/actions/runs/33196238024)
+then reached artifact verification only after checkout, dependency
+installation, source verification, and the public build had passed; GitHub
+cancelled the job at its configured 15-minute ceiling before verification,
+upload, or deployment could complete. That is infrastructure-timeout evidence,
+not a successful or failed content gate, and no production deployment is
+claimed from it.
+
+The narrowly scoped timeout correction raised the workflow ceiling to 30
+minutes without changing the gate sequence. `origin/feature/complete-missal`
+first advanced by genuine fast-forward to exact commit
+`0817b42b500a35002ceb892ade89832093b93522`; the three local deployment gates
+then passed on that exact clean correction tree; and `origin/main` then
+advanced by genuine fast-forward to the same commit. Pages run
+[`33197920174`](https://github.com/spincyc/triptych/actions/runs/33197920174)
+and its sole deploy job
+[`98939717180`](https://github.com/spincyc/triptych/actions/runs/33197920174/job/98939717180)
+completed successfully for that exact `main` head; all source verification,
+public build, artifact verification, configuration, upload, and deployment
+steps passed. GitHub deployment `6146198392`, final status `17472596177`, binds
+that exact commit and `main` ref to the `github-pages` environment and
+<https://mystago.gy/>.
+
+A fresh production verification parsed the served checksum inventory and
+proved it byte-identical to the local 20,548-entry `SHA256SUMS` artifact, whose
+SHA-256 is
+`f192be2f12357e141c83f6b2338a9b2ead9e6f221848c26567d8332f25e59bf2`.
+All 20,548 inventoried local files were independently authenticated against
+that target inventory. Against the captured pre-integration inventory the
+verifier identified 16 added, 1,249 modified, and zero deleted paths, then
+fetched and matched all 1,265 affected live routes byte for byte with no HTTP,
+redirect, truncation, or checksum failure. This closes the promised production
+requirement for the deployed content while retaining every audit-dimension,
+broad-browser, review-authority, and reachable-history qualification above; it
+is not a global legal clearance or human,
+specialist, priestly, intended-reader, physical-use, or ecclesiastical
+approval.
+
+## E1 Catena integration candidate
+
+The convergence review (branch `review/catena-e1-convergence`, commit
+`f1a5bbad763b847ded8799748223898de6ad4de9`) classified the remaining Catena E1
+state with zero `MERGE_BLOCKER` and zero `INTEGRATION_BLOCKER` findings,
+cancelled the V17 semantic lane as `CANCEL_V17_SEMANTIC`, left the inherited
+chapter-root getter, hostile-thenable, and body-write retry findings as
+`HARDENING_BACKLOG`, left the eight package/history/replay/scanner defects as
+`EVIDENCE_TOOLING_BACKLOG`, left twenty release, shell, data, validation,
+Liturgy, PDF, and final-integration concerns `SEPARATELY_OWNED`, and
+dispositioned the line **`READY_FOR_INTEGRATION_BRANCH`**.
+
+Acting on that disposition and its exact bring-across manifest,
+`integration/catena-e1` was created from the exact authorized main base
+`2778285849f2973ea89d1cfd5b2751ed4ae58e54` (origin `main` had not moved past
+it), with the reviewed V16 implementation `cc1f2fb8625f044558c26edd358b99cd7dcc7646`
+used as final implementation truth rather than merged. The candidate integrates
+exactly:
+
+- the final production Catena route, model, page, and stylesheet
+  (`src/web/browser/catena/catena-model.js`, `catena.js`, `catena.css`,
+  `index.html`), which main had not independently changed since the reviewed
+  fork point, so no current-main work was displaced;
+- the `scripts/_catena.py` voice-authority change and its deterministic
+  regeneration of `src/web/data/structure/catena/index.json`, which now
+  publishes the held voice set `original`, `translation:en`,
+  `translation:la`, plus the Isaiah 8 chapter file `27-is/008.json`
+  regenerated from main's own source records and byte-identical to the
+  reviewed V16 generated output;
+- the 78-line fail-closed generator-contract expansion of
+  `tools/tests/test_catena.py` (56 tests total); and
+- `tools/tests/test_catena_production.py`, 419 production-policy regressions
+  curated verbatim from the V16 wave-1 suite for publication atomicity,
+  owner/completion identity, same-path/late isolation, exact voices with
+  `translation:grc` refused, refusal/absence/provenance truthfulness, path
+  namespace closure, cache completion isolation, malformed canonical data,
+  and the governed budget assertions.
+
+The 17,315-line synthetic wave-1 harness, the hostile
+prototype/getter/thenable classes, evidence tooling, attempt history,
+packages, correction-lane bookkeeping, and V16-side release or shared-shell
+changes were not brought across. The three hardening findings and eight
+evidence-tooling findings remain backlog; the twenty separately owned concerns
+were not touched; the four Catena release bindings were not refreshed (they
+belong to the release owner after accepted integration bytes).
+
+Fresh validation on the integrated tree: the generator contract reports
+1,351 fragments / 1 book / 73 canon entries; the focused Catena suites pass
+56/56 and 419/419 under node; static browser checks pass 5/5; real-Chromium
+route-only runs over `/catena/index.html` produce the same 121 assertion
+identities with the same 95 pass / 14 inherited shared-shell fail / 12 skip
+statuses at the exact base and at the candidate, with zero status changes;
+full discovery runs 1,736 tests at the base (46 failures, 13 errors, 11 skips)
+and 2,159 tests at the candidate with identical failure and error identities,
+zero new integration-caused failure identities, and zero Catena failures; the
+governed gzip-9 budgets measure CSS 7,629/8,000 whole and JS 12,965/13,000
+whole with the suite's stripped-ceiling assertions (2,700 and 8,800) passing
+and `catena-model.js` uncapped.
+
+Status: **awaiting independent integration review** under the fixed loop of
+one independent Codex integration review, at most one bounded correction pass,
+one confirmation review, then merge. E1 is not accepted and not integrated; no
+merge to `main`, deployment, or release signing has occurred. The candidate
+head is the commit carrying this record.
+
+## E1 Catena bounded integration correction
+
+<!-- promised-deliverable: corpus-browser-catena-e1-integration-candidate-2026-08-28 -->
+
+The independent integration review (branch `review/catena-e1-integration`,
+commit `c3698563e3b45e35a672db37616e39ef27eb3d08`) returned **CHANGES
+REQUIRED** against the candidate head
+`9810a29c38f6138069d11cb7c735d8bb8b190326`, with exactly two `MERGE_BLOCKER`
+findings and exactly two `BOUNDED_INTEGRATION_CORRECTION` findings, ratifying
+`GenuinelyLateStaleWorkTest` and adding one new `HARDENING_BACKLOG` finding
+(the empty no-JavaScript `h2`, untouched here). This is the one authorized
+bounded correction pass over those four items and nothing else. The V17
+semantic lane stays cancelled, the hardening and evidence-tooling backlogs stay
+backlog, the twenty separately owned concerns stay untouched, and the four
+Catena release bindings stay unrefreshed.
+
+**Merge blocker 1 — translation-absence identities were flattened together.**
+`renderAbsences` appended `.absence-author` and `.absence-work` as adjacent
+element children with nothing between them, so a row's flattened text — what a
+screen reader announces, what a copy takes, what a text-only rendering shows —
+read `Ambrose of MilanHexameron`. Corrected with a semantic DOM delimiter (a
+`' — '` text node, written only where both halves are present, matching the
+`renderLeads` convention the page already keeps), not with CSS: a margin, a
+`gap` or a `::before` would move the spans apart on screen and leave the
+flattened text exactly as it was. Reproduced first in real Chromium against the
+built artifact, then pinned by `AbsenceRowFlatteningTest` (7 tests) on the real
+production route, which reads each row's recursive `textContent` and its
+child-node sequence, names the reviewed string as absent and its replacement as
+present, and carries an adjacent-identity control over two further real rows
+(`Jerome — Liber quaestionum hebraicarum in Genesim`, `Remigius of Auxerre —
+Commentarius in Genesim`) so a fix written for one row cannot pass. The
+disclosure state, its open-on-arrival contract, the eight reasons and the two
+partial offers are asserted unchanged.
+
+**Merge blocker 2 — keyboard recovery focus was invisible.** Recovery moves
+focus to `#reading`, and the shared shell's `.reading:focus { outline: none }`
+out-ranked the universal `:focus-visible` rule, so the browser drew nothing: a
+keyboard reader was moved somewhere the page would not show them. The replay
+suite could not see it and both existing recovery-focus classes passed
+throughout — the shim has no cascade and no computed style, so `activeElement`
+was all it could report. Corrected with one rule,
+`.catena-page .reading:focus-visible { outline: 3px solid var(--focus); }`:
+higher specificity than the shared suppression, `:focus-visible` only so a
+mouse press is left undecorated, `var(--focus)` resolving to the section's own
+violet ink so the Catena style is preserved, and `outline-offset: 2px`
+inherited from the universal rule because it is not part of the `outline`
+shorthand. The shared shell is unchanged and the focus-management behaviour is
+not removed. Proved by `tools/tests/catena_recovery_focus_gate.mjs`, a
+dependency-free CDP gate over the BUILT artifact, run and asserted by
+`RecoveryFocusVisibilityTest` (6 tests): on the success path and on the
+reviewed failure/recovery path it reads `getComputedStyle` on the element the
+browser reports as active and requires `outline-style: solid`,
+`outline-width: 3px`, a ring distinguishable from the same element at rest, and
+a computed WCAG contrast ratio at or above 3:1 (measured 10.95:1 against the
+region's resolved surface); it also requires a mouse press on a document of its
+own to draw no ring, and the next keyboard stop after that press to draw one.
+Its falsifiability is not assumed: reverting the two product edits in a copy of
+the build fails exactly `absence-rows-read-apart-when-flattened`,
+`recovery-focus-is-visible-in-real-chromium` and
+`failed-recovery-focus-is-visible-in-real-chromium` with `outline-style is
+none — this is the reviewed defect` and `flattened together: Ambrose of
+MilanHexameron…`, and nothing else moves. The gate reports nothing rather than
+reporting a pass it did not observe: with no Chromium or no built site it exits
+3, and the Python test skips with the reason and the variable that would enable
+it.
+
+**Bounded correction 1 — curated-suite cleanup, with a measured inventory.**
+The forbidden candidate SHA pin (`MODEL_SHA256` and
+`test_the_model_is_byte_identical`) is removed and not replaced by another
+commit or version pin. Twelve synthetic hostile/evidence-only classes and one
+hostile method are removed, and with them the harness machinery that existed
+only to serve them: the `Map.prototype` publication probe, the failing-body-write
+seam, the prototype-contamination and inherited-accessor transport seams, the
+drifting-descriptor and walking-inventory `Proxy` builders, the six-bucket
+observation counters, the realm-pollution hook, the projected-row override, the
+mutation-attempt authority probe, and the eight journal channels that only they
+wrote to. `GenuinelyLateStaleWorkTest` is retained as ratified, with its
+`GUARDED` dependency. The 2026-08-11 print pin `test_the_focus_overrides_are_gone`
+asserted that no focus rule of any kind lives in `catena.css`, which is wider
+than the finding it encoded; it is replaced by
+`test_the_only_focus_rule_defers_to_the_shared_role`, which pins exactly one
+focus rule, its exact selector and body, the absence of any bare `:focus`, and
+its absence from the print block.
+
+The ordinary coverage the first curation lost along with its hostile classes is
+restored rather than argued away: chronology grouping, absence counts,
+paragraph counts, author-filter recovery, leads copy, shared-field generator
+drift, null and list bootstrap truth, visible failure text, and unregressed
+Scripture (nine classes, 35 tests, with the seven plain scenarios they read).
+The disproved `8 hostile + 40 non-manifest` split is not retained. Counted the
+same way for both files — a class is runnable if it defines at least one
+`test_` method — the truthful inventory is:
+
+| | runnable classes | tests | dependency-only bases |
+| --- | --- | --- | --- |
+| corrected candidate suite | 71 | 394 | 3 |
+| V16 wave-1 source | 105 | 604 | 3 |
+| omitted | 36 | 221 | 0 |
+| added by this correction | 2 | 13 | 0 |
+
+Two retained classes are one test lighter than in wave-1 (`FrozenContractTest`
+lost the SHA pin; `V15TransportOwnershipTest` lost the write-break probe). All
+nine required coverage categories are represented: exact voices, refusal /
+absence / provenance, namespace closure, projection and transport ownership,
+same-path and late isolation, cache isolation, malformed production data,
+governed budgets (`PayloadTest`), and the generator contract
+(`V7SharedFieldDriftTest`, which reads `scripts/_catena.py` itself, with
+`tools/tests/test_catena.py`). The file is 9,797 lines, down from 12,836.
+
+**Bounded correction 2 — record integrity.** The candidate ledger entry
+`corpus-browser-catena-e1-integration-candidate-2026-08-28` had no
+`<!-- promised-deliverable: ID -->` marker, which is the one work-register
+marker the register requires and the cause of the
+`test_promised_deliverables.PromisedDeliverableTests.test_repository_ledger_is_valid`
+failure; the marker above is it. The recorded generator command
+`scripts/_catena.py check` is not executable as written — the file is mode 644
+and a bare invocation returns `Permission denied` — and is corrected to
+`python3 scripts/_catena.py check`, which is the command actually run. Full
+discovery is rerun at the exact base and the exact corrected head.
+
+Fresh validation at the corrected head: `python3 scripts/_catena.py check`
+reports 1,351 fragments / 1 book / 73 canon entries; `python3 scripts/_catena.py
+structure` and `paragraphs` regenerate `src/web/data` byte-identically (zero
+changed paths); `test_catena.py` passes 56/56 and the corrected curated suite
+394/394 including the live Chromium gate; static browser checks pass 5/5;
+governed gzip-9 budgets measure CSS 7,921/8,000 whole and 2,698/2,700 stripped,
+JS 12,992/13,000 whole and 7,843/8,800 stripped, with no ceiling raised and
+`catena-model.js` uncapped; real-Chromium route-only runs over
+`/catena/index.html` produce the same 121 assertion identities with the same
+95 pass / 14 inherited shared-shell fail / 12 skip statuses at the exact base
+`2778285849f2973ea89d1cfd5b2751ed4ae58e54` and at the corrected head, with zero
+status changes and zero identity changes; full discovery runs 1,736 tests at the
+base and 2,134 tests at the corrected head, both reporting 46 failures, 13
+errors and 11 skips over the identical 24 failure identities and 13 error
+identities, so there are **zero new integration-caused failure or error
+identities** and zero Catena failures.
+
+Status: **awaiting one confirmation Codex review**, scoped to these four
+corrections and a regression check. E1 is not accepted and not integrated; no
+merge to `main`, deployment, release signing, or self-acceptance has occurred,
+and no new hardening lane was opened.
+
+## E1 Catena integration merged to main
+
+The confirmation review (branch `review/catena-e1-integration-confirmation`,
+durable review commit `7dfd944494a8d9355264579156214f16d3722a9f`) examined the
+corrected candidate against the pre-correction head
+`9810a29c38f6138069d11cb7c735d8bb8b190326` and the integration base, and
+dispositioned the line **`CONFIRMED — CATENA E1 INTEGRATION READY TO MERGE`**.
+Acting only on that disposition, the exact confirmed candidate
+`b832cdc5bc01391cea67c01437318d25e0c7c315` was merged into the exact reviewed
+`main` head `004615faf506eb4083d484d41b18ee1c61f0aa7f` as a true merge
+commit, preserving both parents rather than squashing or rewriting either lane.
+
+The merge-tree rehearsal and the merge itself found exactly the two textual
+conflicts the confirmation review predicted, both append-only records, and no
+production, source, test, data, configuration, shared-shell, Liturgy, or PDF
+conflict. `PROJECT-WORK.md` kept both lanes whole: every current-main Missal
+remediation and post-base record, and every Catena E1 integration,
+bounded-correction, and confirmation record, with nothing deleted and nothing
+duplicated. `promised-deliverables.toml` needed the structural care the
+confirmation reviewer flagged — the shared `[[deliverables]]` header sat above
+the hunk and a single array terminator below it, so concatenation would have
+nested one deliverable inside another — and was resolved into two complete
+independent entries, each with its own header and every array closed:
+`complete-missal-remediation-2026-08-26` unchanged at `complete`, and
+`corpus-browser-catena-e1-integration-candidate-2026-08-28` moved from
+`candidate` to `complete` with one added requirement recording the confirmation
+review and this merge. The ledger validates at 32 tracked and 24 complete with
+no duplicate identifier, and `test_repository_ledger_is_valid` passes.
+
+The merge introduces exactly thirteen paths against current `main`: the twelve
+tracked manifest paths and the one authorized new gate
+`tools/tests/catena_recovery_focus_gate.mjs`. The merged index carries no
+content delta from the confirmed candidate across
+`src/web/browser/catena`, `scripts/_catena.py`,
+`src/web/data/structure/catena`, `tools/tests/test_catena.py`,
+`tools/tests/test_catena_production.py`, and that gate, so no Catena
+production, test, or generated byte was altered by conflict resolution. No
+shared shell, Liturgy, PDF, release-binding, deployment-configuration, or
+unrelated data or CLI path was touched.
+
+Minimal post-merge validation on the merged tree: `python3 scripts/_catena.py
+check` reports 1,351 fragments / 1 book / 73 canon entries;
+`tools/tests/test_catena.py` passes 56/56; the curated production suite passes
+394/394 with zero skips, the real-Chromium recovery-focus gate executing rather
+than skipping and reporting a measured focus-ring contrast of 10.95:1 with no
+failed assertion; the static browser checks pass 6/6, which is current `main`'s
+own count after it added a sixth check above the integration base and therefore
+supersedes the candidate-era 5/5; and the real-Chromium route-only run over
+`/catena/index.html` reproduces the confirmed status universe exactly at 121
+assertion identities, 95 passing, 14 failing and 12 skipped, with the fourteen
+failures being only the inherited shared-shell identities
+`single-main-element` (9) and `primary-controls-meet-target-size` (5), which
+are separately owned baseline rather than merge blockers.
+
+Nothing beyond the merge was reopened. The three hardening findings remain
+`HARDENING_BACKLOG`, the eight package/history/replay/scanner defects remain
+`EVIDENCE_TOOLING_BACKLOG`, the twenty release, shell, data, validation,
+Liturgy, PDF, and final-integration concerns remain `SEPARATELY_OWNED` and
+untouched, and the V17 semantic lane stays cancelled. At the merge commit the
+Catena release bindings were still unrefreshed and no release record had been
+re-signed; the section below records why that could not stand and what was
+authorized instead. The push that advances `main` authorizes only the
+repository's automatic GitHub Pages attempt that any `main` push triggers,
+which is not itself evidence of a verified live snapshot.
+
+## E1 Catena release bindings refreshed so the merged bytes can publish
+
+The merge commit `85f41e4e467d5f4b4331ee71da0666a1c0ebddf9` reached `origin/main`
+with the confirmed Catena bytes and the Catena release bindings deliberately
+left as the integration lane had them. Pages run
+[`33265104292`](https://github.com/spincyc/triptych/actions/runs/33265104292)
+therefore failed at `public-alpha verify --deployment-target github-pages`, the
+gate that refuses when a site source no longer matches its approved SHA-256:
+authorization `perpetual-public-repository-2026` still recorded the
+pre-integration hashes for `catena-model.js`, `catena.css`, `catena.js`,
+`index.html`, and `src/web/data/structure/catena/index.json`, and had no record
+at all for the newly generated `src/web/data/structure/catena/27-is/008.json`.
+The run stopped before Configure Pages, Upload, and Deploy, so nothing was
+published and deployment `6158143411` ended `failure`; the live site continued
+to serve the previous `004615faf` snapshot throughout. This was the predicted
+consequence of landing accepted integration bytes while their approved record
+still described the superseded ones, not a defect in the merge: the merged tree
+carries no content delta from the confirmed candidate.
+
+Refreshing that record is release-owned re-signing, which the merge lane
+explicitly withheld, so it was not done as part of the merge. The maintainer
+then authorized it directly. `make refresh-release-bindings ADOPT=1` was run
+under `ONLY=` naming exactly the six affected paths, so the authorization
+carries only the reviewed Catena bytes forward and could not sign for any other
+entry; it re-recorded the five changed site sources, adopted the one new
+generated file, and updated the rights table and its `rights_record_sha256`,
+which are mechanically derived from those same paths. No hash was hand-edited
+and no approval note was invented. `make check-release-bindings` then reports
+`exact: 0 stale binding(s)`, and every re-recorded value equals the hash of the
+file as merged.
+
+All three gates the Pages workflow itself runs then passed locally on the exact
+refreshed tree: `make check-deployment-sources`, `make public-site`, and
+`python3 tools/tpt public-alpha verify --deployment-target github-pages`, the
+last reporting `verified build/public-alpha/site`. The Catena integration
+validation above was not rerun and is unchanged; this work touched only
+`release/public-alpha.json` and `release/rights/public-alpha-2026-07-15.md`. The
+hardening and evidence-tooling backlogs, the twenty separately owned concerns,
+and the V17 cancellation all remain exactly as the merge left them.

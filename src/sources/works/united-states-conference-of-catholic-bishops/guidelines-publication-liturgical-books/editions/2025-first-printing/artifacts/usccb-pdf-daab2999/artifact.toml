@@ -1,0 +1,17 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.united-states-conference-of-catholic-bishops.guidelines-publication-liturgical-books.2025-first-printing.usccb-pdf-daab2999"
+edition_id = "edition.united-states-conference-of-catholic-bishops.guidelines-publication-liturgical-books.2025-first-printing"
+artifact_type = "publisher-issued-pdf"
+media_type = "application/pdf"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "The artifact's copyright page states © 2025 United States Conference of Catholic Bishops and reserves all rights. Public delivery from the publisher establishes access to the official document but supplies no affirmative basis for redistributing the complete PDF from this repository. The exact hash and metadata are retained; the PDF payload is not."
+source_url = "https://www.usccb.org/resources/guidelines-publication-liturgical-books.pdf"
+provenance = "Exact PDF acquired whole over HTTPS from the USCCB resource URL on 2026-08-26 and hashed before local inspection. Identity was rechecked against the recovered complete PDF by SHA-256, PDF metadata, page count, title and copyright pages, and the extractable text layer; no source text passed through a model."
+retrieved = "2026-08-26"
+sha256 = "daab29993c7764b9f5a8972629a9ee87e45a6fa0b62c9fe0318e85eca8ee4512"
+byte_size = 638112
+page_count = 51
+indexable = false
+notes = "PDF 1.7, 51 pages, 468 × 792 points, tagged and unencrypted. The metadata names Fr. Daniel Merz as author, Microsoft Word for Microsoft 365 as creator and producer, and creation/modification times on 25 July 2025. Its text layer extracts cleanly enough for location, but exact wording and layout were checked against the pages and no transcription is retained."
