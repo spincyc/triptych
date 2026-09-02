@@ -249,6 +249,30 @@ PRODUCTION_FIELD_PATTERNS = tuple(
     )
 )
 
+# The production fields a rendered page can be scanned for, and the reason the
+# other two are not on this list.
+#
+# Scanning is a substring search over the extracted text of a document, so it
+# can only be run against a value that would not occur in prose by accident.
+# The digest, the run id and the two commits are 16- to 64-character hex
+# strings: one of those in the rendered text is a leak and nothing else.
+#
+# `workflow_id` and `workflow_version` are an ordinary lowercase word and a
+# small integer. The propers workflow's id is literally `proper`, which appears
+# on nearly every page of a document about the Propers, and every version this
+# repository has issued is a one- or two-digit number that occurs in a psalm
+# number, a chapter reference, a page number or a year. Scanning for them
+# failed every propers document in the corpus while proving nothing: a match
+# was never evidence that the record had reached the page. They are omitted
+# deliberately, and the honest statement of the gate is that the four
+# high-entropy fields may not reach the rendered page.
+SCANNED_PRODUCTION_FIELDS = (
+    "workflow_digest",
+    "run_id",
+    "seed_commit",
+    "install_commit",
+)
+
 
 def validate_production(production: Production) -> None:
     """Hold the production record to its own shape, and to its own honesty.
@@ -367,8 +391,10 @@ def validate_rendered_record(
     # The production record is tracked and never printed. Backfilling it into
     # 188 leaves had to leave every accepted PDF byte-identical, and the macro
     # that carries it renders nothing precisely so that it does; this is the
-    # check that would notice if that ever stopped being true.
-    for field, _ in PRODUCTION_FIELD_PATTERNS:
+    # check that would notice if that ever stopped being true. Only the four
+    # fields that cannot occur in prose are scanned; see
+    # SCANNED_PRODUCTION_FIELDS for why the other two cannot be.
+    for field in SCANNED_PRODUCTION_FIELDS:
         value = getattr(record.production, field, None)
         if value and normalize(value) in rendered:
             raise ValueError(

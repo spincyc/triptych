@@ -170,6 +170,11 @@ state.
 3. **Build header**: a deterministic preamble containing:
    - `WORKFLOW`: workflow id and version
    - `WORKFLOW_DIGEST`: digest of the workflow source (below)
+   - `RUN_ID`: the run's deterministic identifier. It is derived from the
+     workflow, version, seed commit and normalized arguments the header
+     already states, so it restates hashed bytes rather than adding an input,
+     and a worker required to record what produced the document it is writing
+     can read the whole of it off the packet
    - `COMMIT`: repository commit
    - `STAGE`: stage id
    - `ITERATION`: iteration number for this stage
@@ -239,7 +244,7 @@ A run records the digest at seed time, in both the manifest and the state, and
 every `advance` and `replay` recomputes it. If the workflow source has changed
 since the run was seeded, the run fails closed rather than continuing under
 guidance it never started with. A changed workflow means a new run. The
-`proper` workflow is at version 14: version 10 gave `content-evaluation` a
+`proper` workflow is at version 15: version 10 gave `content-evaluation` a
 third repair owner and inserted the `content-preflight` gate between
 `author-proper` and `content-evaluation`, version 11 made the iteration
 budget charge repetition rather than failure, carried a blocking finding to its
@@ -251,8 +256,12 @@ further checks so that the terminal gate verifies the publication rather than
 its shape, taking the installed-PDF byte comparison and the four site checks
 back from the workers that had been attesting to them, and version 14 gave
 `document_discovery` a `validator` so an unregistered identity is refused at
-`seed`, before the stage that writes the scope ledger can run. A run seeded
-against version 13 or earlier fails closed and is seeded again.
+`seed`, before the stage that writes the scope ledger can run, and version 15
+gave the required `\AIGenerationProvenance` record a producer: the packet
+header carries `RUN_ID` beside the workflow, digest and seed commit it already
+carried, and `author-proper` names those header fields as the only source for
+the record it writes. A run seeded against version 14 or earlier fails closed
+and is seeded again.
 `workflows/OPERATOR.md` carries the version history in full.
 
 ### Iteration budgets

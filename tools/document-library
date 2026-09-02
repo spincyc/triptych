@@ -152,6 +152,15 @@ EXAMPLES = {
     ),
 }
 
+# Still v1, and deliberately. `guidance/sources.md` states this repository's
+# only written rule for moving a schema id: a new version is for a change that
+# old and new meanings cannot both be applied to without ambiguity, and an
+# addition that leaves every existing field meaning what it meant stays where
+# it is. `produced`, `workflows`, and the `digest` beside a declared version
+# are optional keys a v1 consumer that does not know them ignores, and no key
+# this catalogue already published changed its meaning. Every other schema in
+# this repository — twenty of them — is at v1 for the same reason, and none
+# has ever been bumped for an addition.
 SCHEMA = "triptych-document-catalogue/v1"
 STRUCTURE_RELATIVE = Path("structure") / "documents" / "corpus.json"
 DEFAULT_OUT = "src/web/data"
@@ -329,6 +338,9 @@ def run_check(arguments: argparse.Namespace) -> dict:
         # Counted by the page's own model, never a second time here.
         "production_unrecorded": drift.get("silent"),
         "produced_under_a_superseded_workflow": drift.get("behind"),
+        "produced_under_a_later_workflow": drift.get("ahead"),
+        "produced_under_revised_workflow_guidance": drift.get("revised"),
+        "workflows_declared": drift.get("declared"),
         "status": "ok",
     }
 
@@ -347,7 +359,7 @@ def _and_more(items: list[str], shown: int) -> str:
 # and compares. A control that offers a model no document will match, or a total
 # that disagrees with the rows under it, fails here instead of on the site.
 
-HARNESS = """
+HARNESS = r"""
 const fs = require('fs');
 const source = fs.readFileSync(process.argv[1], 'utf8');
 const holder = { exports: {} };
@@ -396,16 +408,20 @@ for (const sort of ['section', 'title', 'revised', 'pages']) {
 // catalogue does not carry, and it never stays silent about one it does.
 const workflows = catalogue.workflows || [];
 const declared = {};
-for (const workflow of workflows) declared[workflow.id] = String(workflow.version);
-answer.drift = { editions: 0, silent: 0, behind: 0, current: 0, wrong: [] };
+for (const workflow of workflows) declared[workflow.id] = workflow;
+answer.drift = {
+  editions: 0, silent: 0, behind: 0, ahead: 0, revised: 0, current: 0,
+  declared: workflows.length, wrong: []
+};
 for (const work of works) {
   for (const edition of work.editions || []) {
     answer.drift.editions += 1;
     const produced = edition.produced || {};
+    const right = Object.prototype.hasOwnProperty.call(declared, produced.workflow_id)
+      ? declared[produced.workflow_id]
+      : null;
     const comparable = Boolean(
-      produced.workflow_id &&
-      produced.workflow_version &&
-      Object.prototype.hasOwnProperty.call(declared, produced.workflow_id)
+      produced.workflow_id && produced.workflow_version && right
     );
     const verdict = model.driftOf(edition, workflows);
     const where = edition.provider + ' ' + work.leaf;
@@ -420,13 +436,38 @@ for (const work of works) {
       answer.drift.wrong.push(where + ': a drift verdict was given from an origin the catalogue does not carry');
       continue;
     }
-    if (verdict.current !== declared[verdict.workflow]) {
+    if (verdict.current !== String(right.version)) {
       answer.drift.wrong.push(where + ': the verdict names a version no pipeline declares');
     }
-    if (verdict.behind !== (String(produced.workflow_version) !== declared[produced.workflow_id])) {
+    // Recomputed here from the two raw values, in the harness rather than in
+    // Python, so what is checked is the model's ordering and not a second copy
+    // of it: a whole-number comparison where both sides are whole numbers, and
+    // plain inequality where they are not.
+    const a = String(produced.workflow_version);
+    const b = String(right.version);
+    const numeric = /^\d+$/.test(a) && /^\d+$/.test(b);
+    const behind = numeric ? parseInt(a, 10) < parseInt(b, 10) : a !== b;
+    const ahead = numeric ? parseInt(a, 10) > parseInt(b, 10) : false;
+    if (verdict.behind !== behind || verdict.ahead !== ahead) {
       answer.drift.wrong.push(where + ': the verdict disagrees with the two versions it compared');
     }
+    if (verdict.behind && verdict.ahead) {
+      answer.drift.wrong.push(where + ': the verdict is both behind and ahead of the same version');
+    }
+    // The digest half. A verdict may claim guidance was revised only when both
+    // digests are present, and must claim it whenever they are present and
+    // differ; anything else is a claim from an absence.
+    const recordedDigest = produced.workflow_digest || null;
+    const currentDigest = right.digest || null;
+    const revised = (recordedDigest && currentDigest)
+      ? recordedDigest !== currentDigest
+      : null;
+    if (verdict.revised !== revised) {
+      answer.drift.wrong.push(where + ': the verdict disagrees with the two workflow digests it compared');
+    }
     if (verdict.behind) answer.drift.behind += 1;
+    else if (verdict.ahead) answer.drift.ahead += 1;
+    else if (verdict.revised) answer.drift.revised += 1;
     else answer.drift.current += 1;
   }
 }
@@ -493,8 +534,31 @@ def replay_browser_model(built: dict) -> tuple[list[str], str, dict]:
             f"the page saw {drift['editions']} editions where the catalogue "
             f"carries {editions}"
         )
-    if drift["silent"] + drift["behind"] + drift["current"] != editions:
+    accounted = (
+        drift["silent"] + drift["behind"] + drift["ahead"]
+        + drift["revised"] + drift["current"]
+    )
+    if accounted != editions:
         problems.append("the page's drift verdicts do not account for every edition")
+    # The feature going dark looks exactly like a corpus that records no
+    # origin: every verdict null, no problems, a green check. It went dark for
+    # one reason — no right-hand side — and that is a state this check can see
+    # directly, so it says so instead of reporting silence as health.
+    if not drift["declared"]:
+        problems.append(
+            "the catalogue declares no workflows, so every drift verdict is "
+            "silent for want of anything to compare against; that is not the "
+            "same as a corpus that records no origin and must not read as it"
+        )
+    elif drift["silent"] == editions and any(
+        (edition.get("produced") or {}).get("workflow_id")
+        for work in built["works"]
+        for edition in work["editions"]
+    ):
+        problems.append(
+            "every drift verdict is silent although a document records the "
+            "workflow that produced it; the comparison has lost one of its sides"
+        )
     return (problems, "", drift)
 
 
@@ -660,22 +724,52 @@ def edition_record(document: Document, by_key: dict[tuple[str, str], Document]) 
     return record
 
 
+def work_catalog(editions: tuple[Document, ...]) -> str | None:
+    """Where a work is catalogued, taken from whichever edition states it.
+
+    A work is catalogued once; the statement of it lives in each edition's own
+    release record, and an edition that has not been published yet has no
+    release record and therefore states nothing. Taking the first edition's
+    answer meant that an unpublished edition — `catalog: None`, because there
+    is no record to read it from — erased the catalog its published sibling
+    does state, and the published edition silently lost its "Catalogued in"
+    link. Absence is not a competing answer, so it does not get a vote: the
+    first edition that states a catalog is the one that is believed, and where
+    two state different ones the disagreement is raised rather than resolved by
+    provider order.
+    """
+    stated = [document.catalog for document in editions if document.catalog]
+    if not stated:
+        return None
+    if len(set(stated)) > 1:
+        raise CorpusError(
+            f"{editions[0].leaf}: its editions are catalogued in different "
+            f"places ({', '.join(sorted(set(stated)))}); a work is catalogued once"
+        )
+    return stated[0]
+
+
 def catalogue(rows: tuple[Document, ...], by_key: dict[tuple[str, str], Document]) -> dict:
     """The whole corpus, keyed by work, as one object the page fetches once."""
+    editions_of: dict[str, list[Document]] = {}
+    for document in rows:
+        editions_of.setdefault(document.leaf, []).append(document)
+
     works: dict[str, dict] = {}
     for document in rows:
+        catalog = work_catalog(tuple(editions_of[document.leaf]))
         work = works.setdefault(
             document.leaf,
             {
                 "leaf": document.leaf,
                 "section": document.section,
-                "catalog": document.catalog,
+                "catalog": catalog,
                 # The site path of the collection page that carries this work.
                 # Computed here so the page does not have to know how a
                 # repository markdown path becomes a rendered one.
                 "catalog_page": (
-                    document.catalog[: -len(".md")] + ".html"
-                    if document.catalog and document.catalog.endswith(".md")
+                    catalog[: -len(".md")] + ".html"
+                    if catalog and catalog.endswith(".md")
                     else None
                 ),
                 "editions": [],
@@ -716,8 +810,22 @@ def catalogue(rows: tuple[Document, ...], by_key: dict[tuple[str, str], Document
         # nothing that moves on its own — a HEAD or a build clock in here would
         # make `structure --check` fail on the next commit that touched neither
         # a document nor a workflow.
+        # Two facts, because the version is typed by hand and the digest is
+        # not. The digest covers the pipeline, every stage and lane fragment,
+        # and every schema, so it moves when guidance is edited whether or not
+        # the version was bumped; without it "which documents were produced
+        # under guidance that has since changed" had no answer. A pipeline
+        # whose fragments cannot be read carries no digest, and that absence is
+        # written as null rather than filled in. It moves only when a workflow
+        # does, so `structure --check` still passes over any commit that
+        # touched neither a document nor a workflow — and a commit that edits a
+        # fragment now has to regenerate this file, which is the point.
         "workflows": [
-            {"id": workflow.identifier, "version": workflow.version}
+            {
+                "id": workflow.identifier,
+                "version": workflow.version,
+                "digest": workflow.digest,
+            }
             for workflow in declared_workflows()
         ],
         "providers": [
@@ -883,6 +991,18 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
                 "  editions produced under a workflow version since superseded: "
                 f"{payload['produced_under_a_superseded_workflow']} (advisory; "
                 "nothing gates on it)"
+            )
+            print(
+                "  editions produced under a workflow version later than the "
+                f"one declared: {payload['produced_under_a_later_workflow']}"
+            )
+            print(
+                "  editions whose workflow source has been revised since they "
+                f"were produced: {payload['produced_under_revised_workflow_guidance']}"
+            )
+            print(
+                "  workflows the comparison is measured against: "
+                f"{payload['workflows_declared']}"
             )
     if payload.get("written"):
         print(f"  -> {payload['written']}")

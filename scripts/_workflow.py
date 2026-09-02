@@ -1724,9 +1724,9 @@ class WorkflowEngine:
         packet it is checking without destroying it.
 
         The packet bytes are assembled from:
-        - A deterministic header (workflow, workflow-source digest, commit,
-          stage, iteration, execution policy, lane identity, args, prior
-          findings)
+        - A deterministic header (workflow, workflow-source digest, run id,
+          commit, stage, iteration, execution policy, lane identity, args,
+          prior findings)
         - Fragment contents in the declared order, with argument placeholders
           substituted
 
@@ -1737,8 +1737,16 @@ class WorkflowEngine:
         scheduled. No worker process id, launch or completion timestamp,
         scheduler slot, or completion order reaches these bytes.
 
-        No timestamps, no run_id, no filesystem paths appear in the hashed
-        bytes. The hash is SHA-256 of the exact UTF-8 encoded packet text.
+        No timestamps and no filesystem paths appear in the hashed bytes. The
+        run id does: it is the engine's own hash of workflow, version, seed
+        commit and normalized arguments, every one of which the header already
+        carries, so it is a restatement of those bytes and not a new input, and
+        the same run state still yields the same packet byte for byte. It is
+        here because a worker that must record what produced the document it is
+        writing cannot record the run it is part of unless the packet says
+        which run that is; the packet is the whole instruction, and before this
+        the four fields the header did carry were readable while the fifth was
+        not. The hash is SHA-256 of the exact UTF-8 encoded packet text.
         """
         stage_iteration = (
             state["stage_iterations"].get(stage["id"], 0)
@@ -1750,6 +1758,7 @@ class WorkflowEngine:
         header_lines = [
             f"WORKFLOW: {workflow['id']} v{workflow['version']}",
             f"WORKFLOW_DIGEST: {state['workflow_digest']}",
+            f"RUN_ID: {state['run_id']}",
             f"COMMIT: {state['repo_commit']}",
             f"STAGE: {stage['id']}",
             f"ITERATION: {stage_iteration}",

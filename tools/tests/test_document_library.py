@@ -319,6 +319,87 @@ class ProductionProvenanceTests(unittest.TestCase):
                 )
                 self.assertEqual(row["version"], str(definition["version"]))
 
+    def test_the_declared_digest_is_the_engine_s_own_and_not_a_second_recipe(
+        self,
+    ) -> None:
+        """The digest a run binds itself to is the digest the catalogue compares.
+
+        Two derivations of one value is the pairing this repository keeps being
+        bitten by. The catalogue asks the engine rather than recomputing, so a
+        change to the digest recipe cannot leave the page comparing against a
+        number no run would ever record.
+        """
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from _workflow import WorkflowEngine  # noqa: PLC0415
+
+        engine = WorkflowEngine(ROOT, ROOT / "workflows")
+        for row in self.catalogue["workflows"]:
+            with self.subTest(workflow=row["id"]):
+                definition = json.loads(
+                    (_corpus.PIPELINE_ROOT / f"{row['id']}.json").read_text("utf-8")
+                )
+                self.assertEqual(
+                    row["digest"], engine.workflow_source_digest(definition)
+                )
+
+    def test_a_rewritten_fragment_moves_the_declared_digest(self) -> None:
+        """The property the whole comparison rests on, demonstrated."""
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from _workflow import WorkflowEngine  # noqa: PLC0415
+
+        definition = json.loads(
+            (_corpus.PIPELINE_ROOT / "proper.json").read_text("utf-8")
+        )
+        engine = WorkflowEngine(ROOT, ROOT / "workflows")
+        before = engine.workflow_source_digest(definition)
+        fragment = "propers/author-proper.md"
+        original = engine.load_fragment(fragment)
+        try:
+            (ROOT / "workflows" / "fragments" / fragment).write_text(
+                original + "\nOne further sentence.\n", encoding="utf-8"
+            )
+            after = engine.workflow_source_digest(definition)
+        finally:
+            (ROOT / "workflows" / "fragments" / fragment).write_text(
+                original, encoding="utf-8"
+            )
+        self.assertNotEqual(before, after)
+        self.assertEqual(engine.workflow_source_digest(definition), before)
+
+    def test_an_unpublished_edition_does_not_erase_a_published_catalog(self) -> None:
+        """Where a work is catalogued is stated by whichever edition states it.
+
+        The catalog is read from each edition's own release record, and an
+        edition with no release record states nothing rather than states None.
+        Taking the first edition's answer let an unpublished Claude edition
+        blank the catalog its published GPT sibling declares, and the published
+        edition silently lost its "Catalogued in" link.
+        """
+        tool = _load_tool()
+        by_leaf: dict[str, list] = {}
+        for document in _corpus.documents(extents=False):
+            by_leaf.setdefault(document.leaf, []).append(document)
+        catalogued = {
+            work["leaf"]: work["catalog"] for work in self.catalogue["works"]
+        }
+        mixed = 0
+        for leaf, editions in by_leaf.items():
+            stated = {document.catalog for document in editions if document.catalog}
+            with self.subTest(leaf=leaf):
+                self.assertEqual(catalogued[leaf], stated.pop() if stated else None)
+            if stated is not None and any(
+                document.catalog is None for document in editions
+            ) and catalogued[leaf]:
+                mixed += 1
+        self.assertGreater(
+            mixed,
+            0,
+            "no work in this corpus pairs a catalogued edition with an "
+            "uncatalogued one, so this test proves nothing; find one or "
+            "construct it",
+        )
+        self.assertIsNone(tool.work_catalog(()))
+
     def test_the_catalogue_carries_the_caution_that_belongs_with_it(self) -> None:
         self.assertIn("never an authority", self.catalogue["advisory"])
         self.assertIn("nothing in this repository gates on it", self.catalogue["advisory"])
@@ -383,22 +464,134 @@ process.stdout.write(JSON.stringify(
         self.assertEqual(self.verdicts(editions[:1], []), [None])
 
     def test_a_recorded_origin_names_both_sides_of_the_comparison(self) -> None:
-        workflows = [{"id": "proper", "version": "14"}]
+        workflows = [{"id": "proper", "version": "14", "digest": "a" * 64}]
         behind, level = self.verdicts(
             [
-                {"produced": {"workflow_id": "proper", "workflow_version": "10"}},
-                {"produced": {"workflow_id": "proper", "workflow_version": "14"}},
+                {
+                    "produced": {
+                        "workflow_id": "proper",
+                        "workflow_version": "10",
+                        "workflow_digest": "b" * 64,
+                    }
+                },
+                {
+                    "produced": {
+                        "workflow_id": "proper",
+                        "workflow_version": "14",
+                        "workflow_digest": "a" * 64,
+                    }
+                },
             ],
             workflows,
         )
         self.assertEqual(
             behind,
-            {"workflow": "proper", "recorded": "10", "current": "14", "behind": True},
+            {
+                "workflow": "proper",
+                "recorded": "10",
+                "current": "14",
+                "recordedDigest": "b" * 64,
+                "currentDigest": "a" * 64,
+                "behind": True,
+                "ahead": False,
+                "revised": True,
+            },
         )
         self.assertEqual(
             level,
-            {"workflow": "proper", "recorded": "14", "current": "14", "behind": False},
+            {
+                "workflow": "proper",
+                "recorded": "14",
+                "current": "14",
+                "recordedDigest": "a" * 64,
+                "currentDigest": "a" * 64,
+                "behind": False,
+                "ahead": False,
+                "revised": False,
+            },
         )
+
+    def test_a_rewritten_fragment_is_visible_though_the_version_did_not_move(
+        self,
+    ) -> None:
+        """The requirement this comparison exists to meet.
+
+        The version is an integer somebody types and nothing forces them to.
+        The workflow-source digest covers the pipeline, every stage and lane
+        fragment and every schema, so it moves the moment guidance is edited.
+        Carrying only the version meant a fragment could be rewritten under a
+        whole corpus and every document still read as current — which is to say
+        the stated purpose, knowing which documents are behind the guidance as
+        it evolves, was not being served at all.
+        """
+        (verdict,) = self.verdicts(
+            [
+                {
+                    "produced": {
+                        "workflow_id": "proper",
+                        "workflow_version": "14",
+                        "workflow_digest": "b" * 64,
+                    }
+                }
+            ],
+            [{"id": "proper", "version": "14", "digest": "a" * 64}],
+        )
+        self.assertFalse(verdict["behind"])
+        self.assertFalse(verdict["ahead"])
+        self.assertTrue(verdict["revised"])
+
+    def test_a_missing_digest_on_either_side_makes_no_claim_about_revision(
+        self,
+    ) -> None:
+        """An absence is not a comparison, and never resolves to False."""
+        for produced_digest, declared_digest in (
+            (None, "a" * 64),
+            ("a" * 64, None),
+            (None, None),
+        ):
+            produced = {"workflow_id": "proper", "workflow_version": "14"}
+            if produced_digest:
+                produced["workflow_digest"] = produced_digest
+            declared = {"id": "proper", "version": "14"}
+            if declared_digest:
+                declared["digest"] = declared_digest
+            with self.subTest(produced=bool(produced_digest), declared=bool(declared_digest)):
+                (verdict,) = self.verdicts([{"produced": produced}], [declared])
+                self.assertIsNone(verdict["revised"])
+
+    def test_a_document_ahead_of_the_declared_version_is_not_called_behind(
+        self,
+    ) -> None:
+        """String inequality answered "behind" to a document recorded ahead.
+
+        v9 against v14 and v20 against v14 are different situations and only
+        one of them is the document trailing the repository. Versions are whole
+        numbers, so they are compared as whole numbers; where either side is
+        not a whole number the model falls back to plain inequality rather than
+        inventing an order over strings.
+        """
+        workflows = [{"id": "proper", "version": "14"}]
+        nine, twenty, same = self.verdicts(
+            [
+                {"produced": {"workflow_id": "proper", "workflow_version": "9"}},
+                {"produced": {"workflow_id": "proper", "workflow_version": "20"}},
+                {"produced": {"workflow_id": "proper", "workflow_version": "14"}},
+            ],
+            workflows,
+        )
+        self.assertEqual((nine["behind"], nine["ahead"]), (True, False))
+        self.assertEqual((twenty["behind"], twenty["ahead"]), (False, True))
+        self.assertEqual((same["behind"], same["ahead"]), (False, False))
+
+    def test_a_version_that_is_not_a_whole_number_falls_back_to_inequality(
+        self,
+    ) -> None:
+        (verdict,) = self.verdicts(
+            [{"produced": {"workflow_id": "proper", "workflow_version": "2026.1"}}],
+            [{"id": "proper", "version": "14"}],
+        )
+        self.assertTrue(verdict["behind"])
+        self.assertFalse(verdict["ahead"])
 
     def test_the_real_catalogue_claims_nothing_it_cannot_support(self) -> None:
         catalogue = json.loads(TRACKED.read_text(encoding="utf-8"))
@@ -438,9 +631,36 @@ class DriftIsAdvisoryTests(unittest.TestCase):
         self.assertEqual(drift["behind"], drift["editions"])
         self.assertEqual(drift["silent"], 0)
 
+    #: Every name by which the verdict, or a count derived from it, can be
+    #: referred to. Derived from the model and the tool rather than written
+    #: down, so a new verdict field cannot be added without this list growing
+    #: with it — a two-literal list was the whole evidence for "nothing gates
+    #: on it", and it would not have noticed a third name being introduced.
+    def verdict_names(self) -> set[str]:
+        model = MODEL.read_text(encoding="utf-8")
+        names = set(re.findall(r"\b(drift[A-Z][A-Za-z]*|compareVersions)\b", model))
+        tool = TOOL.read_text(encoding="utf-8")
+        names |= {
+            name
+            for name in re.findall(r'"([a-z_]*(?:drift|workflow|produced)[a-z_]*)"', tool)
+            if name.startswith(("produced_under", "production_", "workflows_"))
+        }
+        names |= {"driftOf", "produced_under_a_superseded_workflow"}
+        return {name for name in names if len(name) > 4}
+
     def test_no_gate_command_and_no_make_recipe_reads_the_verdict(self) -> None:
-        """The comparison exists in one file and is consumed by one page."""
-        watched = ("driftOf", "produced_under_a_superseded_workflow")
+        """The comparison exists in one file and is consumed by one page.
+
+        Two things are checked and the second is the one that matters. First,
+        that no pipeline command and no Make recipe names the verdict or any
+        count derived from it — the names being derived from the model and the
+        tool, so a field added later is covered without anyone remembering to
+        add it here. Second, that the tool that computes the verdict still
+        exits zero when every edition in the corpus is behind: a grep proves a
+        name is absent, and only running the check proves nothing acts on it.
+        """
+        watched = self.verdict_names()
+        self.assertGreaterEqual(len(watched), 3, watched)
         pipelines = sorted(_corpus.PIPELINE_ROOT.glob("*.json"))
         self.assertTrue(pipelines)
         for path in pipelines + [ROOT / "Makefile"]:
@@ -448,6 +668,56 @@ class DriftIsAdvisoryTests(unittest.TestCase):
             for needle in watched:
                 with self.subTest(path=path.name, needle=needle):
                     self.assertNotIn(needle, text)
+
+    def test_the_gate_commands_that_do_run_still_pass_over_a_drifted_corpus(
+        self,
+    ) -> None:
+        """Absence of a name proves nothing; running the checks proves it.
+
+        `document-library check` and `check-generation-metadata` are the two
+        commands a pipeline actually runs over these records. Neither may
+        change its verdict because a document is behind its workflow.
+        """
+        library = run("check")
+        self.assertEqual(library.returncode, 0, library.stderr)
+        self.assertIn("advisory; nothing gates on it", library.stdout)
+        metadata = subprocess.run(
+            [sys.executable, str(ROOT / "tools" / "check-generation-metadata"),
+             "--provider", "claude"],
+            capture_output=True, text=True, cwd=ROOT,
+        )
+        self.assertEqual(metadata.returncode, 0, metadata.stderr)
+
+    def test_the_comparison_cannot_go_dark_with_the_check_still_green(self) -> None:
+        """Silence for want of a right-hand side is not silence for want of a claim.
+
+        Emptying the declared-workflow list made every verdict null, every
+        edition "silent", and the check green — indistinguishable from a corpus
+        that records no origin, which is what "silent" is supposed to mean. The
+        feature could be switched off and nothing would say so.
+        """
+        tool = _load_tool()
+        built = json.loads(TRACKED.read_text(encoding="utf-8"))
+        built["workflows"] = []
+        problems, _, drift = tool.replay_browser_model(built)
+        self.assertTrue(problems, "an empty declared-workflow list passed silently")
+        self.assertTrue(
+            any("no workflows" in problem for problem in problems), problems
+        )
+        self.assertEqual(drift["silent"], drift["editions"])
+
+    def test_a_pipeline_that_declares_no_identity_is_refused_not_skipped(self) -> None:
+        """Skipping it removed one side of every comparison without saying so."""
+        with tempfile.TemporaryDirectory(dir=ROOT / "build") as scratch:
+            pipelines = Path(scratch) / "pipelines"
+            pipelines.mkdir()
+            (pipelines / "nameless.json").write_text('{"stages": []}\n', "utf-8")
+            with self.assertRaises(_corpus.CorpusError):
+                _corpus.declared_workflows(pipelines)
+            empty = Path(scratch) / "empty" / "pipelines"
+            empty.mkdir(parents=True)
+            with self.assertRaises(_corpus.CorpusError):
+                _corpus.declared_workflows(empty)
 
     def test_the_verdict_borrows_no_vocabulary_from_the_staleness_ledger(self) -> None:
         """A different question of different inputs keeps its own words.

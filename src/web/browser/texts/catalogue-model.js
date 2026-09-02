@@ -30,7 +30,10 @@
  *   AN UNKNOWN ORIGIN MAKES NO CLAIM. `driftOf` compares the state a document
  *   records as having produced it against the state declared now, and returns
  *   null the moment either side is missing. It is advisory and nothing gates
- *   on it.
+ *   on it. It compares two things, because the question has two halves: the
+ *   workflow version, which somebody types, and the workflow-source digest,
+ *   which moves the instant a fragment is edited. Comparing only the version
+ *   answered the question nobody asked.
  *
  * It loads both as a browser global and as a node module, because the harness
  * needs the second and the page needs the first.
@@ -63,7 +66,23 @@
   }
 
   /**
-   * How far the state that produced a document sits behind the state now.
+   * Whole-number version ordering, or null where either side is not a number.
+   *
+   * String inequality said "behind" of a document recorded AHEAD of what the
+   * repository declares, which is a different situation and sometimes the more
+   * interesting one. Where a version is not a whole number this returns null
+   * and the caller falls back to plain inequality rather than inventing an
+   * order over strings it does not understand.
+   */
+  function compareVersions(recorded, current) {
+    if (!/^\d+$/.test(recorded) || !/^\d+$/.test(current)) return null;
+    const a = parseInt(recorded, 10);
+    const b = parseInt(current, 10);
+    return a < b ? -1 : (a > b ? 1 : 0);
+  }
+
+  /**
+   * How the state that produced a document differs from the state now.
    *
    * ADVISORY, AND ONLY ADVISORY. Nothing gates on this. It is a finding aid,
    * the catalogue says so in its own advisory, and it grants no authority to
@@ -80,21 +99,41 @@
    * the six fields were never recorded, or they were recorded as unrecoverable.
    * A workflow the repository no longer declares also returns null, because
    * the comparison has no right-hand side and inventing one would be a claim.
+   *
+   * TWO COMPARISONS, NOT ONE. `behind` compares versions, which move when an
+   * operator decides they should. `revised` compares workflow-source digests,
+   * which move whenever any fragment, schema or pipeline byte the workflow is
+   * built from is edited. A document produced under the current version out of
+   * guidance that has since been rewritten is `behind: false, revised: true`,
+   * and before the digest travelled with the version that document was
+   * reported as current — which was the one thing this comparison existed to
+   * notice. A digest missing from either side is an absence: `revised` is then
+   * null and no claim is made about it.
    */
   function driftOf(edition, workflows) {
     const produced = edition.produced;
     if (!produced || !produced.workflow_id || !produced.workflow_version) return null;
-    let current = null;
+    let declared = null;
     for (const workflow of workflows || []) {
-      if (workflow.id === produced.workflow_id) current = String(workflow.version);
+      if (workflow.id === produced.workflow_id) declared = workflow;
     }
-    if (current === null) return null;
+    if (declared === null) return null;
     const recorded = String(produced.workflow_version);
+    const current = String(declared.version);
+    const order = compareVersions(recorded, current);
+    const recordedDigest = produced.workflow_digest || null;
+    const currentDigest = declared.digest || null;
     return {
       workflow: produced.workflow_id,
       recorded: recorded,
       current: current,
-      behind: recorded !== current
+      recordedDigest: recordedDigest,
+      currentDigest: currentDigest,
+      behind: order === null ? recorded !== current : order < 0,
+      ahead: order === null ? false : order > 0,
+      revised: (recordedDigest && currentDigest)
+        ? recordedDigest !== currentDigest
+        : null
     };
   }
 
@@ -207,6 +246,7 @@
     DOWNLOAD: DOWNLOAD,
     nameOf: nameOf,
     pagesOf: pagesOf,
+    compareVersions: compareVersions,
     driftOf: driftOf,
     matches: matches,
     narrow: narrow,

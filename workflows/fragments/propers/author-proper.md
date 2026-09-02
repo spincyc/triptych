@@ -45,8 +45,37 @@ learns belongs in the files this stage owns, listed below.
    `\TriptychSynthesisEdition` and inputs `main.tex`.
 3. Create or update `proper-components.toml` with the component manifest.
 4. Create or update `format.tex` with leaf-local LaTeX macros.
-5. Create or update `generation-metadata.tex` with AI model contribution
-   records.
+5. Create or update `generation-metadata.tex`. It carries three kinds of
+   declaration and `check-generation-metadata` requires all of them:
+   - `\AIDocumentRevisionTimestamp{...}` first, once.
+   - `\AIGenerationProvenance{workflow_id}{workflow_version}{workflow_digest}{run_id}{seed_commit}{install_commit}`
+     second, once. Read the first four straight off this packet's own header
+     and copy them exactly:
+     - `workflow_id` and `workflow_version` are the two halves of the header's
+       `WORKFLOW:` line — a header reading `WORKFLOW: proper v9` gives
+       `{proper}{9}`. Read the number from your own packet; do not carry over
+       the one in this example.
+     - `workflow_digest` is the header's `WORKFLOW_DIGEST:` value in full, all
+       64 hex characters.
+     - `run_id` is the header's `RUN_ID:` value.
+     - `seed_commit` is the header's `COMMIT:` value — the commit this run was
+       pinned to when it was seeded, which is not necessarily HEAD now, so take
+       it from the header and never from `git`.
+     - `install_commit` is `unknown`. It states the commit where the produced
+       artifact entered the tree, and that commit does not exist yet while you
+       are writing this file; whoever installs the publication records it, and
+       inventing one now would be a claim nobody could check.
+     Write the word `unknown` for any field you genuinely cannot read, and for
+     that field only. Do not guess a digest, a run id, or a commit, and do not
+     copy any of these six values out of the leaf's existing record or out of
+     the prose of an `\AIModelContribution` — that prose was written by an
+     earlier pass and states an earlier run. This packet's header is the only
+     source for them.
+   - `\AIModelContribution{model}{qualifiers}{runtime}` records after it, one
+     per model contribution.
+   None of this renders: the macro typesets nothing, so the record leaves the
+   built PDF byte-identical, and the gate refuses any digest, run id or commit
+   from it that reaches the rendered page.
 6. Create or update `web-edition.toml` with web edition eligibility.
 7. Create or update `propers/verified.md` and `propers/retrieved.txt`.
 8. Leave `research/scope.md` exactly as you found it. Authoring adds no

@@ -58,6 +58,7 @@ from __future__ import annotations
 import json
 import re
 import subprocess
+import sys
 import tomllib
 from dataclasses import dataclass
 from pathlib import Path
@@ -158,6 +159,27 @@ class Production:
     and the engine never rechecks it against HEAD, so it states the repository
     the run was bound to. ``install_commit`` states where the produced artifact
     actually entered the tree, which for a run of any length is a later commit.
+
+    The 187 install commits already in the corpus were backfilled from history
+    rather than recorded by the run that installed them, so the derivation is
+    written here in full and is reproducible from any checkout of this history:
+
+        git log --follow --diff-filter=AM --format=%H -1 -- pdf/<leaf>.pdf
+
+    where `<leaf>` is `<provider>/<leaf>.pdf` under `pdf/`.
+
+    Three clauses and each is load-bearing. ``--follow`` crosses the renames
+    the installed PDFs have been through — `185fb2324` renamed `doc/` to
+    `pdf/`, and `6d9b74ad9` and `d7fe32ba2` renumbered the propers registries.
+    ``--diff-filter=AM`` is what keeps those three commits from being the
+    answer: a pure rename touches the path without installing anything, and the
+    commit that installed a PDF is the last one that added or modified its
+    bytes. ``-1`` takes that latest install. Run against every document in the
+    corpus this reproduces all 187 recorded values and no other rule tried
+    reproduces any of them.
+
+    A leaf whose PDF is not installed has no install commit and records
+    `unknown`; there is nothing to derive and nothing is invented.
     """
 
     workflow_id: str | None
@@ -242,21 +264,77 @@ def read_provenance(path: Path) -> Provenance:
 # else — not from a run, and not from HEAD — because the catalogue it lands in
 # must be byte-reproducible from the tree, and a commit-derived value would
 # make `document-library structure --check` fail on every commit that followed.
+#
+# Two facts travel, not one, because they answer two different questions and
+# only one of them is maintained by hand.
+#
+#   `version` is an integer somebody types. It moves when an operator decides a
+#   run bound to the old number must be seeded again. Nothing forces it.
+#
+#   `digest` is `WorkflowEngine.workflow_source_digest`: the pipeline JSON plus
+#   the bytes of every fragment and every schema the pipeline references. It
+#   moves the instant any of that guidance is edited, whether or not anyone
+#   remembered the version.
+#
+# Carrying only the version meant that the stated purpose of this comparison —
+# knowing which documents were produced under guidance that has since changed —
+# was not met: a fragment could be rewritten and every document still read as
+# current. The digest is the fact that actually answers it. It is a pure
+# function of tracked bytes, so it keeps this catalogue byte-reproducible.
 
 PIPELINE_ROOT = ROOT / "workflows" / "pipelines"
+WORKFLOW_ROOT = ROOT / "workflows"
 
 
 @dataclass(frozen=True)
 class Workflow:
     identifier: str
     version: str
+    digest: str | None
+
+
+def _source_digest(definition: dict, workflow_root: Path) -> str | None:
+    """The workflow-source digest of one pipeline, or None where it cannot be had.
+
+    The engine owns the recipe. Recomputing it here would be a second
+    derivation of the value a run binds itself to, and the two would differ the
+    first time the recipe changed.
+    """
+    scripts = str(Path(__file__).resolve().parent)
+    if scripts not in sys.path:
+        sys.path.insert(0, scripts)
+    try:
+        from _workflow import WorkflowEngine, WorkflowError
+    except ImportError:  # pragma: no cover - the engine is part of this repo
+        return None
+    engine = WorkflowEngine(ROOT, workflow_root)
+    try:
+        return engine.workflow_source_digest(definition)
+    except (WorkflowError, KeyError, OSError):
+        # A pipeline whose fragments or schemas cannot be read has no digest.
+        # That is an absence and is written as one; it is never filled in, and
+        # `declared_workflows` refuses a pipeline that states no identity at
+        # all, so a missing digest cannot be mistaken for a missing workflow.
+        return None
 
 
 def declared_workflows(root: Path | None = None) -> tuple[Workflow, ...]:
-    """Every pipeline this repository currently declares, with its version."""
+    """Every pipeline this repository currently declares, with version and digest.
+
+    A pipeline that states no `id` or no `version` is refused rather than
+    skipped. Skipping it was how the whole comparison could go dark with every
+    check green: an unreadable or malformed definition removed the right-hand
+    side, every verdict fell silent, and silence is what this file says a
+    document with no recorded origin looks like. The two are not the same, so
+    they may not produce the same output.
+    """
     where = PIPELINE_ROOT if root is None else root
+    workflow_root = WORKFLOW_ROOT if root is None else where.parent
     if not where.is_dir():
-        return ()
+        raise CorpusError(
+            f"no workflow pipelines beneath {where}; the drift comparison has "
+            f"no right-hand side and cannot be made"
+        )
     found: list[Workflow] = []
     for path in sorted(where.glob("*.json")):
         try:
@@ -266,8 +344,24 @@ def declared_workflows(root: Path | None = None) -> tuple[Workflow, ...]:
         identifier = definition.get("id")
         version = definition.get("version")
         if identifier is None or version is None:
-            continue
-        found.append(Workflow(identifier=str(identifier), version=str(version)))
+            raise CorpusError(
+                f"{path.relative_to(ROOT) if path.is_relative_to(ROOT) else path}: "
+                f"a pipeline must declare both `id` and `version`; a definition "
+                f"missing either would silently remove one side of every "
+                f"drift comparison"
+            )
+        found.append(
+            Workflow(
+                identifier=str(identifier),
+                version=str(version),
+                digest=_source_digest(definition, workflow_root),
+            )
+        )
+    if not found:
+        raise CorpusError(
+            f"no workflow pipeline in {where} declares an identity; the drift "
+            f"comparison has no right-hand side and cannot be made"
+        )
     return tuple(found)
 
 

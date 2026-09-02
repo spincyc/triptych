@@ -101,16 +101,35 @@
    * gates nothing: no check, no build and no release reads it. */
   function driftPill(edition) {
     const drift = M.driftOf(edition, catalogue.workflows || []);
-    if (!drift || !drift.behind) return null;
-    const node = pill(
-      'produced under ' + drift.workflow + ' v' + drift.recorded +
-      ', now v' + drift.current
-    );
-    node.setAttribute('data-state', 'produced-under-an-earlier-workflow');
+    if (!drift) return null;
+    /* Three things can be said and they are said in one place, in priority
+       order, so a card never carries two of these at once. A version behind is
+       the loudest; a version ahead of what the repository declares is the
+       rarer case that string comparison used to report as "behind"; and a
+       matching version whose workflow source has since been rewritten is the
+       case that carrying only the version could not see at all. */
+    let words = null;
+    let state = null;
+    if (drift.behind) {
+      words = 'produced under ' + drift.workflow + ' v' + drift.recorded +
+        ', now v' + drift.current;
+      state = 'produced-under-an-earlier-workflow';
+    } else if (drift.ahead) {
+      words = 'produced under ' + drift.workflow + ' v' + drift.recorded +
+        ', declared v' + drift.current;
+      state = 'produced-under-a-later-workflow';
+    } else if (drift.revised) {
+      words = 'produced under ' + drift.workflow + ' v' + drift.recorded +
+        ', guidance revised since';
+      state = 'produced-under-revised-workflow-guidance';
+    }
+    if (words === null) return null;
+    const node = pill(words);
+    node.setAttribute('data-state', state);
     node.title =
-      'Advisory only. The workflow that produced this document has been ' +
-      'revised since. It is not a statement that the document is wrong, and ' +
-      'nothing in the project gates on it.';
+      'Advisory only. The workflow that produced this document is not the ' +
+      'workflow this repository declares today. It is not a statement that ' +
+      'the document is wrong, and nothing in the project gates on it.';
     return node;
   }
 

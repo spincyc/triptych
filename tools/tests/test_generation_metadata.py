@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import importlib.machinery
 import importlib.util
+import json
 import os
 import re
 import shutil
@@ -625,6 +626,330 @@ class ProductionRecordTests(unittest.TestCase):
         for document in _corpus.documents(extents=False):
             with self.subTest(document=f"{document.provider}/{document.leaf}"):
                 self.assertIsNotNone(document.provenance.produced)
+
+
+class ScannedProductionFieldsTests(unittest.TestCase):
+    """Which production fields a rendered page can honestly be scanned for.
+
+    Scanning is a substring search over extracted text. It is evidence only
+    where a match cannot happen by accident, and two of the six fields are an
+    ordinary lowercase word and a small integer. The propers workflow's id is
+    `proper`; the word appears on nearly every page of a document about the
+    Propers, and scanning for it failed every propers document in the corpus
+    while proving nothing. These tests hold the gate to the four fields that
+    are evidence and to the two that are not.
+    """
+
+    def rendered(self, text: str, record) -> None:
+        with (
+            mock.patch.object(CHECKER, "validate_pdf_info"),
+            mock.patch.object(CHECKER, "pdf_text", return_value=CHECKER.normalize(text)),
+        ):
+            CHECKER.validate_rendered_record(Path("unused.pdf"), record)
+
+    def test_the_scanned_fields_are_the_high_entropy_ones_and_only_those(self) -> None:
+        self.assertEqual(
+            CHECKER.SCANNED_PRODUCTION_FIELDS,
+            ("workflow_digest", "run_id", "seed_commit", "install_commit"),
+        )
+        for field in CHECKER.SCANNED_PRODUCTION_FIELDS:
+            self.assertIn(field, CHECKER.PRODUCTION_FIELDS)
+        for field in ("workflow_id", "workflow_version"):
+            self.assertNotIn(field, CHECKER.SCANNED_PRODUCTION_FIELDS)
+
+    def test_an_ordinary_word_workflow_id_on_the_page_is_not_a_leak(self) -> None:
+        """`proper` is the workflow's id and also the subject of the document.
+
+        This is the shape of the defect exactly: every value in the record was
+        substring-matched against the extracted text, so a document about the
+        Propers, produced by the `proper` workflow at version 11, failed its
+        own publication gate on the word "proper" and on the number 11.
+        """
+        record = CHECKER.Record(
+            TIMESTAMP,
+            (CHECKER.Contribution("test-model", "effort=high", CLAUDE_RUNTIME),),
+            None,
+            CHECKER.Production("proper", "11", "a" * 64, "b" * 16, "c" * 40, "d" * 40),
+        )
+        self.rendered(
+            f"Last revised (UTC): {TIMESTAMP} The proper of the Mass, in its "
+            f"proper order, at Psalm 11 and page 11.",
+            record,
+        )
+
+    def test_every_scanned_field_is_still_refused_when_it_reaches_the_page(self) -> None:
+        values = {
+            "workflow_digest": "a" * 64,
+            "run_id": "b" * 16,
+            "seed_commit": "c" * 40,
+            "install_commit": "d" * 40,
+        }
+        record = CHECKER.Record(
+            TIMESTAMP,
+            (CHECKER.Contribution("test-model", "effort=high", CLAUDE_RUNTIME),),
+            None,
+            CHECKER.Production("proper", "11", *values.values()),
+        )
+        for field, leaked in values.items():
+            with (
+                self.subTest(field=field),
+                self.assertRaisesRegex(ValueError, f"generation-provenance {field}"),
+            ):
+                self.rendered(f"Last revised (UTC): {TIMESTAMP} Run {leaked}", record)
+
+
+@unittest.skipUnless(
+    all(shutil.which(tool) for tool in ("pdfinfo", "pdftotext")),
+    "Poppler tools are required",
+)
+class TheGateOnRealDocumentsTests(unittest.TestCase):
+    """Run the gate the pipeline runs, on the documents it runs it against.
+
+    Nothing did this. Every rendered-record test in this file was built from a
+    fabricated `Record` and a fabricated page, and each of them passed while
+    the real command failed on all thirty-four installed propers documents. A
+    gate whose only evidence is a fixture is a gate nobody has run.
+    """
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import _corpus  # noqa: PLC0415
+
+        cls.propers = [
+            (document.provider, document.leaf, issue.pdf)
+            for document in _corpus.documents(extents=False)
+            for issue in document.issues
+            if "/propers/" in document.leaf
+            and issue.kind == _corpus.FULL
+            and issue.pdf
+        ]
+
+    def test_the_pdf_gate_passes_on_every_installed_propers_document(self) -> None:
+        self.assertTrue(self.propers, "no propers document has an installed PDF")
+        for provider, leaf, pdf in self.propers:
+            with self.subTest(document=f"{provider}/{leaf}"):
+                CHECKER.audit_document(ROOT / "src" / provider, leaf, ROOT / pdf)
+
+    def test_the_command_the_pipeline_runs_exits_zero(self) -> None:
+        """The gate as `workflows/pipelines/proper.json` and the Makefile spell it."""
+        seen = set()
+        for provider, leaf, pdf in self.propers:
+            if provider in seen:
+                continue
+            seen.add(provider)
+            with self.subTest(provider=provider):
+                result = subprocess.run(
+                    [
+                        sys.executable,
+                        str(CHECKER_PATH),
+                        "--provider",
+                        provider,
+                        "--pdf",
+                        leaf,
+                        pdf,
+                    ],
+                    cwd=ROOT,
+                    capture_output=True,
+                    text=True,
+                    check=False,
+                )
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertIn("Generation metadata valid", result.stdout)
+        self.assertTrue(seen)
+
+
+class RecordedOriginAgainstRunEvidenceTests(unittest.TestCase):
+    """A recorded origin may not be contradicted by the run that produced it.
+
+    `build/tpt-runs/<run-id>/manifest.json` is what the engine wrote when the
+    run was seeded: the workflow, its version, its source digest, the seed
+    commit, and the arguments naming the document. It is untracked and
+    therefore not always present, so this skips rather than fails when it is
+    gone — but where it is present it is the primary evidence, and a document's
+    own record may not disagree with it.
+
+    This is the check that was missing. One leaf recorded `proper v10` with
+    every other field `unknown` while a manifest in the tree named the run that
+    produced it at v11, and the version was promoted into a structured fact out
+    of prose an earlier pass had written.
+    """
+
+    RUNS = ROOT / "build" / "tpt-runs"
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import _corpus  # noqa: PLC0415
+
+        cls.corpus = _corpus
+        cls.manifests = []
+        if cls.RUNS.is_dir():
+            for path in sorted(cls.RUNS.glob("*/manifest.json")):
+                try:
+                    cls.manifests.append(json.loads(path.read_text(encoding="utf-8")))
+                except (OSError, ValueError):
+                    continue
+
+    def setUp(self) -> None:
+        if not self.manifests:
+            self.skipTest("no run manifests are present under build/tpt-runs")
+
+    def test_a_recorded_run_agrees_with_its_manifest_in_every_field(self) -> None:
+        by_run = {row["run_id"]: row for row in self.manifests}
+        compared = 0
+        for document in self.corpus.documents(extents=False):
+            produced = document.provenance.produced
+            if produced is None or not produced.run_id:
+                continue
+            manifest = by_run.get(produced.run_id)
+            if manifest is None:
+                continue
+            compared += 1
+            with self.subTest(document=f"{document.provider}/{document.leaf}"):
+                self.assertEqual(produced.workflow_id, manifest["workflow_id"])
+                self.assertEqual(
+                    produced.workflow_version, str(manifest["workflow_version"])
+                )
+                if produced.workflow_digest:
+                    self.assertEqual(
+                        produced.workflow_digest, manifest["workflow_digest"]
+                    )
+                if produced.seed_commit:
+                    self.assertEqual(produced.seed_commit, manifest["repo_commit"])
+                args = manifest.get("normalized_args", {})
+                self.assertEqual(args.get("provider"), document.provider)
+                self.assertIn(document.leaf, args.values())
+        if not compared:
+            self.skipTest("no document records a run this tree still holds")
+
+    def test_a_stated_workflow_is_grounded_where_the_run_evidence_exists(self) -> None:
+        """Naming a workflow while the tree holds the runs is half an answer.
+
+        A record that states which workflow produced a document, in a tree that
+        holds manifests for runs of that workflow against that very document,
+        must say which of them it was. Otherwise the version is an assertion
+        with evidence sitting beside it that nobody checked it against — which
+        is exactly how `v10` came to be recorded for a document a v11 run wrote.
+        """
+        for document in self.corpus.documents(extents=False):
+            produced = document.provenance.produced
+            if produced is None or not produced.workflow_id:
+                continue
+            candidates = [
+                row
+                for row in self.manifests
+                if row.get("workflow_id") == produced.workflow_id
+                and row.get("normalized_args", {}).get("provider") == document.provider
+                and document.leaf in row.get("normalized_args", {}).values()
+            ]
+            if not candidates:
+                continue
+            with self.subTest(document=f"{document.provider}/{document.leaf}"):
+                self.assertTrue(
+                    produced.run_id,
+                    "this tree holds run manifests for this document, so the "
+                    "record must name which run produced it rather than "
+                    "stating a bare workflow version",
+                )
+                self.assertIn(
+                    produced.run_id,
+                    [row["run_id"] for row in candidates],
+                    "the recorded run is not one of the runs this tree holds "
+                    "for this document",
+                )
+
+
+@unittest.skipUnless(shutil.which("git"), "git is required")
+class InstallCommitDerivationTests(unittest.TestCase):
+    """The backfilled install commits, and the rule that produced them.
+
+    187 of them were derived from history rather than recorded by the run that
+    installed the artifact, and a derivation nobody can rerun is a derivation
+    nobody can check. The rule is written out in `scripts/_corpus.py` beside
+    the field it produces:
+
+        git log --follow --diff-filter=AM --format=%H -1 -- pdf/<...>.pdf
+
+    which this replays in a single pass over the history of `pdf/` and `doc/`,
+    resolving renames itself, so that holding 187 records to it costs one `git
+    log` rather than 187 of them.
+    """
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import _corpus  # noqa: PLC0415
+
+        cls.corpus = _corpus
+        cls.installs = cls._installs()
+
+    @classmethod
+    def _installs(cls) -> dict[str, list[str]]:
+        """Every commit that added or modified each installed PDF, latest first.
+
+        `--diff-filter=AMR` keeps renames in the stream so the walk can follow
+        a path back through them, and only `A` and `M` entries are recorded as
+        installs: a pure rename moves a path without installing anything, which
+        is exactly the distinction that decides this derivation. Three commits
+        in this history are pure renames of the whole tree — `doc/` to `pdf/`,
+        and two renumberings of the propers registries — and without it every
+        document in the corpus would name one of them.
+        """
+        result = subprocess.run(
+            ["git", "log", "--format=C %H", "--name-status",
+             "--diff-filter=AMR", "-M", "--", "pdf/", "doc/"],
+            cwd=ROOT, capture_output=True, text=True, check=False,
+        )
+        if result.returncode:
+            raise unittest.SkipTest(f"git log failed: {result.stderr.strip()}")
+        # Walked newest first, so `alias` maps the name a path had at this
+        # point in history to the name it has today.
+        alias: dict[str, str] = {}
+        installs: dict[str, list[str]] = {}
+        commit = None
+        for line in result.stdout.splitlines():
+            if line.startswith("C "):
+                commit = line[2:].strip()
+                continue
+            if not line.strip():
+                continue
+            parts = line.split("\t")
+            if parts[0].startswith("R"):
+                old, new = parts[1], parts[2]
+                alias[old] = alias.pop(new, new)
+            else:
+                path = parts[1]
+                installs.setdefault(alias.get(path, path), []).append(commit)
+        return installs
+
+    def test_the_rule_is_written_where_the_field_is_defined(self) -> None:
+        rule = (ROOT / "scripts" / "_corpus.py").read_text(encoding="utf-8")
+        self.assertIn("--diff-filter=AM", rule)
+        self.assertIn("--follow", rule)
+
+    def test_every_recorded_install_commit_is_that_pdf_s_latest_install(self) -> None:
+        checked = 0
+        for document in self.corpus.documents(extents=False):
+            produced = document.provenance.produced
+            if produced is None or not produced.install_commit:
+                continue
+            pdf = next(
+                (issue.pdf for issue in document.issues
+                 if issue.kind == self.corpus.FULL and issue.pdf),
+                None,
+            )
+            with self.subTest(document=f"{document.provider}/{document.leaf}"):
+                self.assertIsNotNone(
+                    pdf,
+                    "an install commit states where an installed artifact "
+                    "entered the tree, so there must be one",
+                )
+                history = self.installs.get(pdf, [])
+                self.assertTrue(history, f"no install of {pdf} is in history")
+                self.assertEqual(produced.install_commit, history[0])
+            checked += 1
+        self.assertEqual(checked, 187)
 
 
 @unittest.skipUnless(

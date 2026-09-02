@@ -70,8 +70,9 @@
  ],
  "workflows": [
   {
+   "digest": "9e65d6d0b44c40670366f93126503e5d1bd806547ff123fae8b332df108c190b",
    "id": "proper",
-   "version": "14"
+   "version": "15"
   }
  ],
  "works": [
@@ -5468,8 +5469,8 @@
    "section": "liturgy"
   },
   {
-   "catalog": null,
-   "catalog_page": null,
+   "catalog": "library/traditional-latin-mass.md",
+   "catalog_page": "library/traditional-latin-mass.html",
    "editions": [
     {
      "also": [
@@ -5513,8 +5514,11 @@
      "pdf": null,
      "pdf_absent": "no PDF is installed for this issue",
      "produced": {
+      "run_id": "6b83fad5ae2ed53e",
+      "seed_commit": "f4534e4cd3d9c2b43a7a571fb859040c8554de17",
+      "workflow_digest": "a6c2358f6630d98e0b8985399dc98ec1f83d1e4305d8c0706b790fbc54a528bb",
       "workflow_id": "proper",
-      "workflow_version": "10"
+      "workflow_version": "11"
      },
      "provider": "claude",
      "reviewed": "2026-08-27",

@@ -789,7 +789,25 @@ a re-entry, whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
-The `proper` workflow is at version 14. Version 14 made `seed` refuse an
+The `proper` workflow is at version 15. Version 15 gave the workflow a
+producer for the record every document is required to carry. The
+`\AIGenerationProvenance` record states which workflow, at which version and
+which source digest, under which run and from which seed commit, produced a
+document; `check-generation-metadata` requires exactly one of them in every
+leaf; and nothing wrote it. The engine held all five facts from the moment a
+run was seeded and handed the worker four of them in the packet header, so
+`author-proper` — and `content-revision`, which quotes the same fragment — now
+names the header fields to copy and forbids taking any of them from the leaf's
+existing record or from the prose of an earlier contribution, which is how the
+one leaf that had a record came to state the version of the run before the one
+that wrote it. The fifth fact, the run id, was the one the header did not
+carry, so the packet header now carries `RUN_ID`; it is the engine's own hash
+of the workflow, version, seed commit and arguments the header already states,
+so it adds no input and no packet's determinism changes. `install_commit`
+stays `unknown` at authoring time: the commit an artifact enters the tree on
+does not exist while the artifact is being written.
+
+The `proper` workflow was at version 14. Version 14 made `seed` refuse an
 identity the 1962 calendar does not register, by giving `document_discovery` a
 `validator` the engine runs before a run exists. Discovery answers which
 documents are authored; it cannot answer whether an unauthored identity is
