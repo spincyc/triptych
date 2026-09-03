@@ -55,9 +55,15 @@ TOOL = "check-content-preflight"
 # identity from the engine, and no published leaf can satisfy it outside the
 # run that wrote its provenance record.
 RUN_CHECK = "provenance-matches-run"
-LEAF_CHECKS = ("references-used", "identifiers-resolve",
+LEAF_CHECKS = ("references-used", "identifiers-resolve", "bindings-valid",
                "restricted-not-reproduced", "relation-coverage",
                "unquoted-not-quoted")
+# The one check that reads more than the leaf: `bindings-valid` runs the
+# source library's own validator over `research/source-bindings.toml`. The
+# probe tree below is a synthetic leaf with no binding record and no
+# `src/sources/` beside it, so the probe is driven without this one; the
+# published leaf and the real gate below run it like any other.
+PROBE_ONLY_ABSENT = ("bindings-valid",)
 # The two that hold the leaf against the Scripture chronology corpus. They
 # read only the tree, like LEAF_CHECKS, but they are named apart because what
 # they do over a leaf depends on the workflow version that leaf states: the
@@ -68,6 +74,8 @@ LEAF_CHECKS = ("references-used", "identifiers-resolve",
 CHRONOLOGY_CHECKS = ("chronology-record-current",
                      "chronology-claims-supported")
 TREE_CHECKS = LEAF_CHECKS + CHRONOLOGY_CHECKS
+PROBE_CHECKS = tuple(check for check in TREE_CHECKS
+                     if check not in PROBE_ONLY_ABSENT)
 CHECKS = LEAF_CHECKS + (RUN_CHECK,) + CHRONOLOGY_CHECKS
 # The five names a gate command may substitute from the run itself, and the
 # option each is handed to the tool as.
@@ -140,7 +148,7 @@ class TopologyTests(unittest.TestCase):
     def test_every_check_is_one_command_over_the_run_s_own_arguments(self):
         commands = check_commands()
         self.assertEqual(list(commands), list(CHECKS),
-                         "the eight checks the design names, in order")
+                         "the nine checks the design names, in order")
         registry = json.loads(
             (ROOT / "tmt.json").read_text(encoding="utf-8"))["tools"]
         for check_id, command in commands.items():
@@ -408,7 +416,7 @@ evidence = ["source-grounded-synthesis"]
         self.assertGreater(checked, 0, "no published leaf was checked")
 
     def test_the_probe_leaf_passes_before_anything_is_broken(self):
-        for check in TREE_CHECKS:
+        for check in PROBE_CHECKS:
             with self.subTest(check=check):
                 self.assertEqual(self.probe(check).returncode, 0,
                                  self.probe(check).stderr)

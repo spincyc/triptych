@@ -61,7 +61,24 @@ Integrate the joined research into one research brief that the
    machinery out of reader-facing prose, so do not phrase a brief entry as a
    sentence the guide could paste.
 6. Name the missing evidence that should block or constrain authoring,
-   drawing on the `source-citation-coverage` lane's findings.
+   drawing on the `source-citation-coverage` lane's findings. Name evidence:
+   a witness no lane reached, a locus nobody opened, a claim standing on a
+   catena, an anthology, or an aggregator. A source the repository's library
+   has not registered is not that. Where a lane checked the work, the
+   edition, and the locus, the claim is publishable on that citation —
+   `guidance/sources.md` requires no machine ID for every sentence and holds
+   that stable ids do not replace intelligible ones — so an absent library
+   record is a provenance note the brief carries, never a control the author
+   must obtain before publishing. Nothing in this workflow registers a source
+   or writes `src/sources/`, so "register and bind before publishing" asks
+   the one stage forbidden to retrieve anything for the one thing no stage
+   may do: the author blocks, correctly, and a run ends over evidence the
+   lanes had already gathered. It is not a `CHANGES_REQUIRED` either, because
+   no lane may write what it asks for. Where a registration genuinely
+   controls what may be said — a rights basis only an artifact record can
+   settle — record it against the claim it reaches as an unresolved control
+   the maintainer owns, and still say what the evidence in hand supports
+   meanwhile; `content-evaluation` is the stage that can escalate it.
 7. Settle 3-6 cross-proper claims for the synthesis commentary, and 4-6
    exploratory proposals for the Interpretive Possibilities section, each
    joining at least 2 appointed elements. Select the proposals from the
@@ -207,7 +224,9 @@ of this target or stating in one line that there was none.
 
 `BLOCKED` — genuinely unrecoverable within this workflow: another pass
 through the same lanes cannot reasonably solve it. A required source is
-unavailable under current repository or source policy; identity or formulary
+unavailable under current repository or source policy — unavailable, not
+merely unregistered, which step 6 disposes of and which is no ground to end a
+run; identity or formulary
 uncertainty is irreconcilable and belongs outside this workflow; a required
 authoritative witness cannot be obtained; the workflow or a source is
 corrupt; current Triptych guidance declares the condition terminal. This

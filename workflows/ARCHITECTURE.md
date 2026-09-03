@@ -244,7 +244,7 @@ A run records the digest at seed time, in both the manifest and the state, and
 every `advance` and `replay` recomputes it. If the workflow source has changed
 since the run was seeded, the run fails closed rather than continuing under
 guidance it never started with. A changed workflow means a new run. The
-`proper` workflow is at version 17: version 10 gave `content-evaluation` a
+`proper` workflow is at version 18: version 10 gave `content-evaluation` a
 third repair owner and inserted the `content-preflight` gate between
 `author-proper` and `content-evaluation`, version 11 made the iteration
 budget charge repetition rather than failure, carried a blocking finding to its
@@ -270,8 +270,13 @@ appointed loci to the leaf's `research/chronology.toml`, the research lane
 and the brief carry its stable ids rather than researching a date, and
 `content-preflight` gained a seventh and eighth check that regenerate the
 record from the corpus and refuse any printed figure with no corpus assertion
-behind it. A run seeded against version 16 or earlier fails closed and is
-seeded again.
+behind it, and version 18 settled who owes a source record: an unregistered
+source is a provenance note the coverage lane, the brief and the author each
+carry as one, never a condition of publishing, since no stage of a run writes
+`src/sources/`, and `author-proper` now produces the leaf's
+`research/source-bindings.toml`, which `content-preflight` had read from
+every leaf while nothing was told to write one. A run seeded against version
+17 or earlier fails closed and is seeded again.
 `workflows/OPERATOR.md` carries the version history in full.
 
 ### Iteration budgets
@@ -520,7 +525,10 @@ never smuggle a placeholder into what a later name expands to.
 document is written.
 
 Since version 17 there are eight, and the last two hold the leaf against the
-Scripture chronology corpus. `guidance/scripture-chronology.md` §14 forbids a
+Scripture chronology corpus. Version 18 makes nine: `bindings-valid` holds
+the leaf's `research/source-bindings.toml` against the source library's own
+schema, because that version is where an authoring stage started writing the
+file and nothing else in a run reads more of it than two fields. `guidance/scripture-chronology.md` §14 forbids a
 proper to infer, research, harmonize or recall a biblical date, and until
 that version nothing in this workflow carried the rule.
 `chronology-record-current` regenerates `research/chronology.toml` from the

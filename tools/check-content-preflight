@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import re
+import subprocess
 import sys
 import tomllib
 import unicodedata
@@ -32,6 +33,7 @@ EXAMPLES = {
             "liturgy/roman-rite/1962/propers/temporal/"
             "49-ninth-after-pentecost",
             (
+                "bindings-valid: 18 bindings, every id registered and every reviewed state fingerprinted as the library computes it",
                 "chronology-claims-supported: no chronology claim printed (the leaf states no proper provenance record and carries no research/chronology.toml, so it predates the chronology contract, which binds from proper v17)",
                 "chronology-record-current: not in scope: the leaf states no proper provenance record and carries no research/chronology.toml, so it predates the chronology contract, which binds from proper v17",
                 "identifiers-resolve: 2 source identifiers, every one registered",
@@ -53,6 +55,17 @@ EXAMPLES = {
             "the rights of every bound artifact, read against the leaf's own "
             "text; forty-five restricted sources are lawfully cited here and "
             "none of them reproduced",
+        ),
+        Example(
+            "tools/check-content-preflight --provider gpt --document "
+            "liturgy/roman-rite/1962/propers/temporal/"
+            "53-thirteenth-after-pentecost --check bindings-valid",
+            (
+                "bindings-valid: 98 bindings, every id registered and every reviewed state fingerprinted as the library computes it",
+            ),
+            "the leaf's own binding record against the library's schema; an "
+            "error in another publication's file is counted and left to it, "
+            "never charged to this leaf",
         ),
         Example(
             "tools/check-content-preflight --provider gpt --document "
@@ -108,6 +121,7 @@ EXAMPLES = {
         Example(
             "tools/check-content-preflight --list",
             (
+                "bindings-valid",
                 "chronology-claims-supported",
                 "chronology-record-current",
                 "identifiers-resolve",
@@ -736,6 +750,60 @@ RUN_FIELDS = (
 RUN_CHECK = "provenance-matches-run"
 
 
+def check_bindings_valid(leaf: Path, root: Path) -> tuple[list[str], str]:
+    """The leaf's own binding record, held to the library's own schema.
+
+    `author-proper` writes this file, and until this check the only thing in a
+    run that read it was `restricted-not-reproduced`, which reads two of its
+    fields. Everything else the record asserts — that an id names a source the
+    library registers, that a role and a state are words the schema knows,
+    that a fingerprint is the one the bound record actually computes to — was
+    checked only by `tools/source-library validate`, which no stage of any
+    workflow runs. A published leaf carried a stale binding fingerprint for a
+    month under that gap, unnoticed by every gate the workflow has; this check
+    named it on its first run, and re-reading what the leaf rested on the
+    moved record for is what closed it.
+
+    The validator is the whole library or nothing, so this reports only the
+    lines naming this leaf's file. Another publication's error is that
+    publication's to review, and failing a production over one would stop it
+    for a defect it did not write and may not repair. Their number is still
+    reported, because a clean line here means nothing if the library never
+    got as far as this file.
+
+    A changed fingerprint is not a value to paste back. It says the bound
+    record moved, so what the leaf rests on it for is re-read first; the
+    library states that obligation and this check only makes it arrive.
+    """
+    path = leaf / BINDINGS
+    if not path.is_file():
+        return ([f"the leaf records no {BINDINGS}"], "")
+    proc = subprocess.run(
+        [sys.executable, str(root / "tools" / "source-library"),
+         "--root", str(root), "validate"],
+        capture_output=True, text=True)
+    prefix = f"{path.relative_to(root).as_posix()}: "
+    problems, elsewhere = [], 0
+    for line in (proc.stdout + proc.stderr).splitlines():
+        message = line.split("source-library error: ", 1)[-1]
+        if message.startswith(prefix):
+            problems.append(message[len(prefix):])
+        elif message != line:
+            elsewhere += 1
+    if proc.returncode not in (0, 1):
+        problems.append(
+            f"tools/source-library validate did not run: exit "
+            f"{proc.returncode}")
+    others = ""
+    if elsewhere:
+        plural = "" if elsewhere == 1 else "s"
+        others = (f", and {elsewhere} error{plural} in other publications' "
+                  f"files, left to them")
+    return sorted(set(problems)), (
+        f"{len(bound_sources(leaf))} bindings, every id registered and every "
+        f"reviewed state fingerprinted as the library computes it{others}")
+
+
 def check_provenance_matches_run(
     leaf: Path, root: Path, run: dict[str, str]
 ) -> tuple[list[str], str]:
@@ -1291,6 +1359,7 @@ def check_chronology_claims_supported(leaf: Path, root: Path) -> tuple[list[str]
 
 
 CHECKS = {
+    "bindings-valid": check_bindings_valid,
     "chronology-claims-supported": check_chronology_claims_supported,
     "chronology-record-current": check_chronology_record_current,
     "identifiers-resolve": check_identifiers_resolve,

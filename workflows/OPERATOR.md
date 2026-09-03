@@ -789,7 +789,72 @@ a re-entry, whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
-The `proper` workflow is at version 17. Version 17 wired the propers to the
+The `proper` workflow is at version 18. Version 18 settled who owes a source
+record, because a run had just ended over one nobody owed. Run
+`5f2d2447ee8d4445` reached `author-proper` with a complete brief — five
+audited gallery entries carrying both texts, exact loci, wording checks and
+rights status, and a page-2 dossier resting on witnesses the lanes had
+opened — and blocked, correctly under the instructions it had, because the
+brief told it to register and bind those witnesses before publishing them.
+Nothing in this workflow may register a source: `src/sources/` is written
+outside a run, the research lanes are read-only, and the author may not
+retrieve. Another pass through the lanes could not have met the request
+either, so the run had one disposition available and took it.
+
+The demand starts in `source-citation-coverage`, a diagnostic lane, so the
+correction is in what that lane may call a defect. A witness no lane reached
+is missing evidence, and the lanes can be sent back for it. A witness a lane
+checked, whose work, edition and locus are known, is a claim the guide may
+print on that citation, and that the library holds no record for it is a
+provenance note rather than a bar. `guidance/sources.md` had said so all along
+— a schema version 1 binding file requires no machine ID for every sentence,
+and stable ids do not replace intelligible citations — and this Sunday's own
+published gallery was printed on exactly such citations: its three entries
+name Milton, Burnett and Keynes by work and locus, while the leaf's binding
+file holds thirteen entries, not one of them a cultural witness. The lane, the
+brief and the author now each carry that distinction in those words, so a
+coverage finding can no longer reach the author as a bar it is forbidden to
+clear.
+
+Version 18 also gives `research/source-bindings.toml` a producer. The source
+system requires the file of a publication and `content-preflight`'s
+`restricted-not-reproduced` reads it to hold the guide's own text against the
+rights recorded in `src/sources/`, but no stage was told to write it and no
+fragment has ever named the file. Every leaf that carries one got it beside
+the run rather than from it, and a leaf this workflow produced from scratch
+would have failed that check with no repair target able to fix it.
+`author-proper` now owns the file, bound twice over. It binds only ids
+`tools/source-library fingerprint` resolves, taking the fingerprint from the
+tool rather than typing one, and its `states` and `verified_on` may go no
+further than the brief and the leaf's own `propers/verified.md` provenance
+support. Registering a source stays outside the run.
+
+`content-preflight` carries a ninth check for the same reason.
+`bindings-valid` runs the source library's own validator and reports the lines
+naming this leaf's file: every id one the library registers, every role and
+state a word the schema knows, every reviewed state carrying the fingerprint
+its bound record computes to now. Until this version the only thing in a run
+that read the file was `restricted-not-reproduced`, which reads two of its
+fields, and the tree shows what that costs — a published leaf carries a
+binding whose fingerprint moved with its source and which no gate saw. An
+error in another publication's file is counted and left to it, because failing
+a production over a defect it did not write and may not repair is not a check;
+and a fingerprint the validator refuses is not a value to paste back, since it
+says the bound record moved and what the leaf rests on it for is read again.
+
+Two things stay outside the run, and the second is worth saying because the
+file is new to it. Registering a source in `src/sources/` is one. The
+inventory sequence `guidance/sources.md` prescribes for a source-bearing
+change is the other — `tools/tpt source-inventory refresh`, the provider's
+classification review, `source-family-migration refresh`, then `make
+check-sources` — and no stage runs any of it. That was already true of every
+source surface a run writes, `main.tex` included; the binding record joins
+them, and the refresh is the maintainer's after a production, not the
+production's.
+
+A run seeded against version 17 or earlier fails closed; seed it again.
+
+The `proper` workflow was at version 17. Version 17 wired the propers to the
 Scripture chronology corpus, which is now the only place a proper guide may
 get a biblical date from. `guidance/scripture-chronology.md` §14 states the
 rule — a publication that needs biblical chronology MUST read the corpus and

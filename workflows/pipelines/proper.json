@@ -1,6 +1,6 @@
 {
   "id": "proper",
-  "version": 17,
+  "version": 18,
   "description": "1962 propers synthesis production workflow",
   "document_argument": "proper",
   "document_discovery": {
@@ -221,6 +221,11 @@
           "id": "identifiers-resolve",
           "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check identifiers-resolve",
           "required_result": "every source identifier the leaf prints must name a record the source library registers; an identifier that resolves to nothing reads exactly like one that resolves"
+        },
+        {
+          "id": "bindings-valid",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check bindings-valid",
+          "required_result": "the leaf's own research/source-bindings.toml must validate against the source library: every id one the library registers, every role and state a word the schema knows, and every reviewed state carrying the fingerprint the bound record computes to now. Authoring writes that file, so without this check nothing in the run holds it to the schema it is written against, and a fingerprint that has moved says the bound record moved: what rests on it is read again, never the new value pasted back"
         },
         {
           "id": "restricted-not-reproduced",

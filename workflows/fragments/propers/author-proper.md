@@ -81,67 +81,140 @@ learns belongs in the files this stage owns, listed below.
    from it that reaches the rendered page.
 6. Create or update `web-edition.toml` with web edition eligibility.
 7. Create or update `propers/verified.md` and `propers/retrieved.txt`.
-8. Leave `research/scope.md` exactly as you found it. Authoring adds no
+8. Create or update `research/source-bindings.toml`, this publication's
+   binding record. Read `guidance/sources.md` first: it asks the file of
+   every publication that enters the source system and owns its shape, from
+   the `schema`, `record_type` and `document` header down to which schema
+   version a binding may name. `content-preflight` reads the file twice over,
+   once to hold the guide's own text against the rights recorded in
+   `src/sources/` and once to hold the file against the library's own schema,
+   and a leaf that carries none fails the first of those before it is read at
+   all. Bind every source that controls published bytes — the textual control
+   behind the Latin, the translation control behind the English, the witness
+   a set passage is attributed to — and any further registered source this
+   leaf uses, each with its `loci` and the `context` that says what this
+   publication did with it.
+
+   Three rules keep the record honest, and they matter more than its length:
+
+   - **Bind only what the library already registers.**
+     `tools/source-library fingerprint <source_id>` prints the fingerprint
+     the binding must carry and refuses an id no record backs. Take the
+     fingerprint from it and from nowhere else: never type one by hand and
+     never copy one out of another leaf's binding file, where it is a
+     well-formed answer to a different question. That command loads the
+     whole library, so an error in any binding file — this one included —
+     makes it print errors instead of a fingerprint; repair what it names in
+     this leaf's file, and where the fault is another publication's, bind
+     with no `source_fingerprint` and a state no stronger than `cataloged`,
+     which is what a binding carries before a witness has been reviewed, and
+     say so in your summary. Look before concluding the library holds
+     nothing: `tools/source-reader list --find <term>` prints the registered
+     works and editions that match, and a witness called unregistered
+     because nobody looked is the same defect as one cited from memory. What
+     the library genuinely does not hold is cited in `References` in the
+     ordinary way and stays out of this file; registering it is not yours to
+     do, because no stage of this workflow writes `src/sources/`.
+   - **The role is load-bearing, and `translation-control` most of all.** It
+     says of the source it is given to that the published English *is* that
+     source's words, and it is the one role `restricted-not-reproduced` reads
+     as a declaration. The profile leaves no other reading — the guide never
+     composes, translates, adapts or paraphrases its English but quotes a
+     registered public-domain witness — so the witness behind any published
+     English is bound that way and no other. `textual-control`,
+     `official-control` and `direct-witness` say that a source governs or
+     attests a claim, not that its words were set in type; reaching for one
+     of them to keep a rights check quiet writes a false record rather than a
+     lighter one.
+   - **Claim no more than was done.** `role`, `states`, and `verified_on` say
+     what this publication did with the source, and they may go no further
+     than the brief and this leaf's own `propers/verified.md` provenance
+     support. An inspected witness is not a verified one, and
+     `tools/source-library impact` reports these states as fact to whoever
+     reviews a changed source: a verification nobody performed makes every
+     reader of it wrong.
+
+   `role` and `states` come from closed sets the binding validator enforces,
+   and a word that reads right is not one of them until it validates. Run
+   `tools/source-library validate` and clear what it reports against this
+   leaf's file; an error it reports against another publication is that
+   publication's to review and not this run's to repair.
+
+   Within a run the file only grows. Add what this authoring needs, correct
+   an entry whose role or state no longer describes what the leaf does with
+   that source, and remove nothing. A dropped binding is not a tidier record:
+   `restricted-not-reproduced` can read only the sources the leaf binds, so
+   an unbound restricted artifact is invisible to it and the check passes
+   while printing a count as its proof, and `research-staleness` watches
+   exactly the library records these ids name, so dropping one silently stops
+   a corrected source from ever reaching this leaf again. Where an entry
+   looks wrong or spent, say so in your summary and leave it for the
+   maintainer. Where a rights record makes a source unusable, what goes is
+   the text resting on it.
+9. Leave `research/scope.md` exactly as you found it. Authoring adds no
    audit record to it: the profile keeps operational audit in that record and
    has the Scope and Qualifications appendix point at it rather than repeat
    it. Publish only what the brief's audits cover. If an audit is missing, if
    it covers entries you cannot publish, or if the gallery or the proposals
    you would publish differ from the audited ones, block rather than publish
-   an unaudited entry or amend the audit yourself.
-9. Print every biblical date through the chronology macros, and print no
-   other. `guidance/scripture-chronology.md` §14 forbids this guide to infer,
-   research, harmonize or recall a biblical date; the corpus's answer for this
-   formulary is in `src/{provider}/{proper}/research/chronology.toml` and
-   restated in the brief's `Scriptural chronology audit`, and those are the
-   only dates that may reach the page.
+   an unaudited entry or amend the audit yourself. An audited entry whose
+   witness the library has not registered is not an entry you cannot publish:
+   the `Result` section below says what it is and what to do with it.
+10. Print every biblical date through the chronology macros, and print no
+    other. `guidance/scripture-chronology.md` §14 forbids this guide to
+    infer, research, harmonize or recall a biblical date; the corpus's answer
+    for this formulary is in
+    `src/{provider}/{proper}/research/chronology.toml` and restated in the
+    brief's `Scriptural chronology audit`, and those are the only dates that
+    may reach the page.
 
-   Define two macros in `format.tex` and use them on page 2:
+    Define two macros in `format.tex` and use them on page 2:
 
-   ```latex
-   % \chronology{subject}{relation}{label} -- one assertion of the corpus.
-   % Typesets the label; the first two arguments are the corpus's own ids and
-   % render nothing.
-   \newcommand{\chronology}[3]{#3}
-   % \chronodate{element-keys}{content} -- one dossier row's Date cell.
-   % Typesets the content; the keys render nothing.
-   \newcommand{\chronodate}[2]{#2}
-   ```
+    ```latex
+    % \chronology{subject}{relation}{label} -- one assertion of the corpus.
+    % Typesets the label; the first two arguments are the corpus's own ids and
+    % render nothing.
+    \newcommand{\chronology}[3]{#3}
+    % \chronodate{element-keys}{content} -- one dossier row's Date cell.
+    % Typesets the content; the keys render nothing.
+    \newcommand{\chronodate}[2]{#2}
+    ```
 
-   - `subject` and `relation` are copied from the record, exactly. `label` is
-     the record's `label` — the source's own words — and never its `date`,
-     which is the normalized form and is not for the page.
-   - `element-keys` is the comma-separated list of appointed elements the row
-     covers, in the manifest's spelling: `\chronodate{gospel,communion}{...}`
-     for a row that carries both.
-   - **Every appointed Scripture gets a cell**, including the ones the corpus
-     dates nowhere. Where the status is `undated-in-tradition` or
-     `research-pending`, or the element carries no assertion, the cell states
-     that absence in the guide's own voice — a fact about the sources, in the
-     register the house voice requires — and carries no figure at all.
-   - **A Date cell may hold no figure outside a `\chronology` claim.** Not a
-     year, not a reign, not a range, not an Anno Mundi number, whatever
-     source you met it in. A well-formed year reads exactly like a right one,
-     which is why this is the one place in the guide where a fact may not be
-     stated without naming the assertion behind it.
+    - `subject` and `relation` are copied from the record, exactly. `label` is
+      the record's `label` — the source's own words — and never its `date`,
+      which is the normalized form and is not for the page.
+    - `element-keys` is the comma-separated list of appointed elements the row
+      covers, in the manifest's spelling: `\chronodate{gospel,communion}{...}`
+      for a row that carries both.
+    - **Every appointed Scripture gets a cell**, including the ones the corpus
+      dates nowhere. Where the status is `undated-in-tradition` or
+      `research-pending`, or the element carries no assertion, the cell states
+      that absence in the guide's own voice — a fact about the sources, in the
+      register the house voice requires — and carries no figure at all.
+    - **A Date cell may hold no figure outside a `\chronology` claim.** Not a
+      year, not a reign, not a range, not an Anno Mundi number, whatever
+      source you met it in. A well-formed year reads exactly like a right one,
+      which is why this is the one place in the guide where a fact may not be
+      stated without naming the assertion behind it.
 
-   `content-preflight` runs `chronology-record-current` and
-   `chronology-claims-supported` over what you write: a claim the corpus does
-   not make at that element's own verses, a figure with no claim behind it,
-   an appointed Scripture with no cell, or a record that has drifted from the
-   corpus all fail the gate to `content-revision` with the defect named. A
-   date you remember is not evidence, and a date a commentary prints is that
-   commentary's reception, reported as such and never as the date of the
-   passage.
-10. Ensure the brief synthesis markers
+    `content-preflight` runs `chronology-record-current` and
+    `chronology-claims-supported` over what you write: a claim the corpus does
+    not make at that element's own verses, a figure with no claim behind it,
+    an appointed Scripture with no cell, or a record that has drifted from the
+    corpus all fail the gate to `content-revision` with the defect named. A
+    date you remember is not evidence, and a date a commentary prints is that
+    commentary's reception, reported as such and never as the date of the
+    passage.
+11. Ensure the brief synthesis markers
    (`triptych:brief-synthesis:start`, `:end`, `:next`) are placed correctly
    for the two-page gate.
-11. Follow `guidance/editorial.md` for evidence states, attribution,
+12. Follow `guidance/editorial.md` for evidence states, attribution,
     metadata, review, publication standards, and the house voice below.
-12. Follow `guidance/liturgy/roman-1962-propers.md`, the profile that governs
+13. Follow `guidance/liturgy/roman-1962-propers.md`, the profile that governs
     this genre: the fixed reader order, the five claim classes, the reception
     sweep, the gallery and proposal contracts, the terminal apparatus, and
     this genre's deltas against the house voice.
-13. Follow `guidance/repository.md` for source ownership, target paths, and
+14. Follow `guidance/repository.md` for source ownership, target paths, and
     build rules.
 
 ## House voice
@@ -268,6 +341,29 @@ in for a date, a place, a genre, a locus, or an attribution. Ease is not
 permission. A source one command away is as far out of scope as one nobody
 holds, because evidence gathered here is evidence no research lane swept, no
 coverage audit saw, and no rights check cleared.
+
+A source the repository's library has not registered is not that
+insufficiency, and neither is a binding this leaf does not yet carry. Where
+the brief gives a claim's work, edition and locus, that citation is what the
+guide prints: `guidance/sources.md` requires no machine ID for every sentence
+and states that stable ids do not replace intelligible citations, and the
+profile's gallery asks for the later user, work, context and exact locus
+rather than a source id. A brief that tells you to register or bind a witness
+before publishing it has named work no stage of this workflow may do — the
+library is written outside this run — and the answer is to publish what the
+brief evidences, bind what the library already holds, and say in your summary
+which registrations are outstanding. One run stopped here holding five
+audited gallery entries, complete with both texts and exact loci, for want of
+records nothing in the pipeline could have written.
+
+Two cases are not that relaxation, and both block. Published English is
+quoted from a registered public-domain witness — the profile allows the guide
+no composing, translating, adapting or paraphrasing of its own — so English
+whose witness the library does not register has no publishable form here at
+all. And where a rights basis is the thing only an artifact record can
+settle, an unrecorded artifact is not a note to carry forward: nothing
+downstream will stop over it, because an escalation is a `PASS` and the run
+goes on to the build. In both, block and name the element and the witness.
 
 The brief states, section by section, whether it supplies that section's
 evidence. Where it says a section's evidence is not there, that is not a gap
