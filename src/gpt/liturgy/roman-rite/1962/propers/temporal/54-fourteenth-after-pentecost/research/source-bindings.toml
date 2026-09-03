@@ -29,6 +29,15 @@ source_fingerprint = "sha256:5c2d162e9079b438862a80692742bb1e85a16c60e9730040aee
 context = "The uncorrected OCR excerpt in propers/retrieved.txt is only a locator and intentionally preserves recognition errors."
 
 [[bindings]]
+source_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.dominica-xiv-post-pentecosten"
+loci = ["Dominica XIV post Pentecosten; printed pp. 444-446; PDF artifact pp. 558-560; Internet Archive viewer leaves n557-n559"]
+role = "rights-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-03"
+source_fingerprint = "sha256:e2cf539120ec4901022afaab3038f7f483328d528a44f4792a86a0dc34fa6b4a"
+context = "Publication-local public-domain antecedent for the complete appointed Latin. The whole PDF was reacquired and hash-matched before the three page images were visually collated. All ten elements, their order, scriptural references, and the Communion's distinctive recasting predate 1962. The 1922 Gospel's caelestis is omitted in 1962; older i/j orthography, punctuation, abbreviated conclusions, optional seasonal orations, headings, and rank apparatus were not blended into the controlling 1962 transcription."
+
+[[bindings]]
 source_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.post-pentecosten-14"
 loci = ["post-pentecosten-14", "post-pentecosten-14/collect", "post-pentecosten-14/secret", "post-pentecosten-14/postcommunion"]
 role = "translation-control"

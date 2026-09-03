@@ -22,6 +22,12 @@
   `MissaleRomanum1962RomanMissalColorLatin`, printed pp. 389–391, leaves
   n465–n467. It is a separate publisher edition. OCR in `retrieved.txt` is a
   locator only and controls no reading.
+- **Public-domain antecedent:** *Missale Romanum*, Tours: Alfred Mame, 1922,
+  *editio quarta iuxta typicam Vaticanam*, printed pp. 444–446, PDF artifact
+  pp. 558–560, Internet Archive leaves n557–n559. The whole 51,720,493-byte
+  PDF was reacquired on 2026-09-03 and matched registered SHA-256
+  `9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005`
+  before the three page images were read.
 - **Occurrence boundary:** the reusable temporal formulary only. Civil dates,
   commemorations, and particular-calendar precedence belong to assembly.
 ## Complete appointed Latin
@@ -111,7 +117,7 @@ The antiphon stops before the final beatitude of v. 9.
 ### 8. Secret — no. 1579
 
 Concéde nobis, Dómine, quǽsumus, ut hæc hóstia salutáris, et nostrórum fiat
-purgátio delictórum, et tuæ propitiátio potestátis. Per Dóminum nostrum.
+purgátio delictórum, et tuæ propitiátio potestátis. Per Dóminum.
 
 Præfatio de Ssma Trinitate.
 
@@ -139,6 +145,15 @@ Postcommunion renders `ducant` as “procure.” Those translations are publishe
 as historical witnesses; the Latin controls every grammatical claim.
 
 No protected modern liturgical translation or chant translation is retained.
-The controlling Latin and each historical English source remain
-edition-identified. Research notes and synthesis are original editorial
-material and do not become source text.
+The appointed Latin is preexisting material witnessed in the registered
+public-domain 1922 Mame edition. Its printed pp. 444–446 carry all ten elements
+in the same order and at the same scriptural references, including the
+Communion's distinctive recasting with `dicit Dominus`. The 1922 Gospel retains
+`cæléstis` after `Pater vester`, which the 1962 edition omits; Mame also uses
+older i/j orthography, abbreviated conclusions, and pre-1960 additional
+orations. Those differences are recorded and not blended into the controlling
+1962 reading. The source-library artifact is public domain in the United
+States because the book was published in 1922; the project relies on that
+antecedent for republication and not on any rights in the 1962 facsimile.
+Each historical English source remains edition-identified. Research notes and
+synthesis are original editorial material and do not become source text.
