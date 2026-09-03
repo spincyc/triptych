@@ -800,7 +800,23 @@ a re-entry, whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
-The `proper` workflow is at version 19. Version 19 told the content evaluation
+The `proper` workflow is at version 20. Version 20 closes the fresh-leaf gap in
+`resolve-context`. That stage runs before `source-audit`, which is ordinarily
+the first stage to create a new provider leaf. Version 19 invoked
+`proper-chronology record --write` while the leaf did not exist, treated the
+writer's refusal as an answer, and could report `PASS`; `source-audit` then
+created the leaf, leaving `research/chronology.toml` absent until
+`research-synthesis` correctly stopped the run.
+
+`resolve-context` now creates `src/<provider>/<proper>/research/` before
+invoking the chronology writer and verifies that the generated record exists.
+Directory creation, writer refusal, and a missing record are required-work
+failures: the stage returns `BLOCKED`, never `PASS`. The regression starts
+with no provider leaf, materializes only that directory, runs the real writer,
+and proves the record can be created. A run seeded against version 19 or
+earlier fails closed; seed it again.
+
+The `proper` workflow was at version 19. Version 19 told the content evaluation
 that the leaf builds two documents. It always had: `main.tex` builds the
 canonical guide, `synthesis.tex` builds the synthesis edition beside it, and
 which prose reaches which reader is decided by `\ifdefined` branches and by

@@ -18,11 +18,15 @@ calendrical context that governs it.
 5. Record the proper's rank, occurrence rule, and place in the 1962 Missal.
 6. Use `tools/tpt calendar-rubrics assign --calendar roman-1962 --date <date>`
    if a specific date context is needed.
-7. Write the proper's chronology record:
+7. Materialize the chronology record's owning directory, then write and verify
+   the record:
 
    ```
+   research_dir="src/{provider}/{proper}/research"
+   mkdir -p "$research_dir"
    tools/tpt proper-chronology record --provider {provider} \
        --document {proper} --write
+   test -f "$research_dir/chronology.toml"
    ```
 
    This resolves the formulary's appointed verses through the same calendar
@@ -49,11 +53,15 @@ fills it with a figure from a commentary, a chronological table, or its own
 recollection has broken the contract however good the source looked.
 
 The record is generated. Do not edit it, and do not compose one by hand. If
-the command refuses, report the refusal; a refusal is an answer.
+the directory creation, chronology writer, or required-file check fails,
+report the refusal and return `disposition: "BLOCKED"`. A corpus status such
+as `undated-in-tradition` is an answer; a failed required write is not.
 
 ## Result
 
-Return a worker result with `disposition: "PASS"` and a summary of the
-resolved context, including the mass key, appointed elements, rank, any
-applicable substitutions, and the chronology status of each appointed
-Scripture.
+Return a worker result with `disposition: "PASS"` only after
+`src/{provider}/{proper}/research/chronology.toml` exists and you have read it.
+Summarize the resolved context, including the mass key, appointed elements,
+rank, any applicable substitutions, and the chronology status of each
+appointed Scripture. Return `disposition: "BLOCKED"`, never `PASS`, if any
+required directory creation, chronology write, or file verification failed.
