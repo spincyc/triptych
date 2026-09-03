@@ -1,0 +1,239 @@
+# Generated. Do not edit.
+#
+# What the Scripture chronology corpus answers about this proper's appointed
+# loci, written by `tools/tpt proper-chronology record` and held
+# against the corpus by `check-content-preflight`. Every field
+# here is the corpus's, carried so that the guide's prose can be regenerated
+# without re-researching the fact: `guidance/scripture-chronology.md` §14.
+#
+# `formulary` is `appointed` when the calendar appoints this identity a Mass
+# formulary, and `no-calendar-formulary` when it does not — a ritual Mass,
+# appointed by a rite rather than by a day, which the calendar sources here do
+# not encode. In that state the record lists no element, `formulary_reason`
+# says why, and no date may be supplied from anywhere else to fill the gap.
+#
+# `label` is the source's own words and the only field a guide may display.
+# `date` is the normalized form, for comparison and never for the page. An
+# element with no `status` cites no Scripture; an element whose status is
+# `undated-in-tradition` or `research-pending` has no date to print, and the
+# guide states that absence rather than filling it.
+
+
+schema = 1
+record_type = "proper-chronology"
+document = "liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost"
+calendar = "roman-1962"
+mass = "pentecost-15"
+system = "vulgate"
+profile = ""
+formulary = "appointed"
+formulary_reason = ""
+generated_by = "tools/tpt proper-chronology record"
+
+[[elements]]
+key = "introit"
+name = "Introit"
+refs = ["Psalm 85:1-3", "Psalm 85:4"]
+loci = ["Ps.85.1", "Ps.85.2", "Ps.85.3", "Ps.85.4"]
+status = "undated-in-tradition"
+reason = "Drum's \"Psalms\" in the Catholic Encyclopedia was read in full for this corpus and dates the writing of no psalm except three cases authored separately in composition.yaml: Ps.73 and Ps.82 in this vulgate numbering, and the psalms of the sons of Korah as a group. Of those three, two are still answered with and one is not, so this row now reaches Ps.73 as well and the reader is owed the reason. Ps.73 is the one the article does not date on its own authority: it gives the date \"as Briggs surmises\", adopting the surmise of the modern critical commentary it cites by page in the same treatment of the Asaph psalms - Briggs's \"Psalms\", New York, 1906 - and this profile admits no such adoption - its one narrow lift is named for Ussher and says in terms that it extends to no one else. That figure is therefore held in composition.yaml as preserved evidence, legible under --evidence, and is not a candidate answer; a reader who reaches this row at Ps.73 is being told that the tradition this profile answers under dates the psalm nowhere, not that nobody looked at it. Ps.82 is different and is untouched: there the article names Briggs's dating and rejects it, asserting its own reading, so that claim stands and this row never reaches Ps.82 at all. Everywhere else it settles authorship and refuses date. Of David, its strongest sentence is the Biblical Commission's of 1 May 1910, that \"It cannot be prudently denied that David is the chief author of the songs of the Psalter\" - an author, not a year, a reign or a period, and the same decree adds that neither the councils nor the Fathers \"have such weight as to determine that David is sole author of the whole Psalter\". Of the Asaph psalms it says they \"pertain to widely-separated periods of Jewish history\"; of Moses and Solomon in the titles it offers imitation rather than date, \"this imitation may be the reason of the title\"; of the Machabean question it says \"There are no certain proofs that these or any psalms are Machabean\" and \"leaves that question still open\". The historical superscriptions are occasions and not compositions: thirteen Davidic psalms are merely \"referred to the time of David's persecution by Saul\", to his sin, or to his flight from Absalom, and the article expressly denies that the titles settle even authorship - \"Does this preposition mean authorship? No in every title\" - so none of them may be promoted to a date. The one dated thing the article does offer about the collection is the closing of the canon, not the writing of the text: the Palestinian canon \"was practically closed during the time of Esdras\", and at the latest the Jewish canon of the Psalms \"was undoubtedly closed before the date of the Septuagint translation. This date is 285 B.C. ... or, at the very latest 132 B.C.\" A canon closing is not a text being written, and this corpus will not borrow it. The Psalter is an anthology and is given no book-wide composition date here; psalms that carry a superscription-setting, a historical setting or a prophetic referent are asserted individually and those assertions stand over this row."
+
+[[elements]]
+key = "collect"
+name = "Collect"
+refs = []
+loci = []
+status = ""
+reason = ""
+
+[[elements]]
+key = "epistle"
+name = "Epistle"
+refs = ["Galatians 5:25-6:10"]
+loci = ["Gal.5.25", "Gal.5.26", "Gal.6.1", "Gal.6.2", "Gal.6.3", "Gal.6.4", "Gal.6.5", "Gal.6.6", "Gal.6.7", "Gal.6.8", "Gal.6.9", "Gal.6.10"]
+status = "composition-only"
+reason = ""
+
+[[elements.claims]]
+locus = "Gal.5.25"
+relation = "composition"
+subject = "composition.epistle-to-the-galatians"
+title = "The Epistle to the Galatians"
+label = "A.D. 49-50"
+date = "49 A.D. to 50 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+inherited = true
+scope = "Gal"
+sources = ["artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06336a-508d2398"]
+
+[[elements.claims]]
+locus = "Gal.5.25"
+relation = "composition"
+subject = "composition.epistle-to-the-galatians"
+title = "The Epistle to the Galatians"
+label = "about A.D. 53, 54"
+date = "53 A.D. to 54 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+inherited = true
+scope = "Gal"
+sources = ["artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06336a-508d2398"]
+
+[[elements.claims]]
+locus = "Gal.5.25"
+relation = "composition"
+subject = "composition.epistle-to-the-galatians"
+title = "The Epistle to the Galatians"
+label = "(1 and 2 Corinthians; Galatians), 56"
+date = "56 A.D."
+precision = "year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+inherited = true
+scope = "Gal"
+sources = ["artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8"]
+
+[[elements.claims]]
+locus = "Gal.5.25"
+relation = "composition"
+subject = "composition.epistle-to-the-galatians"
+title = "The Epistle to the Galatians"
+label = "A.D. 57 or 58"
+date = "57 A.D. to 58 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+inherited = true
+scope = "Gal"
+sources = ["artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06336a-508d2398"]
+
+[[elements]]
+key = "gradual"
+name = "Gradual"
+refs = ["Psalm 91:2-3"]
+loci = ["Ps.91.2", "Ps.91.3"]
+status = "undated-in-tradition"
+reason = "Drum's \"Psalms\" in the Catholic Encyclopedia was read in full for this corpus and dates the writing of no psalm except three cases authored separately in composition.yaml: Ps.73 and Ps.82 in this vulgate numbering, and the psalms of the sons of Korah as a group. Of those three, two are still answered with and one is not, so this row now reaches Ps.73 as well and the reader is owed the reason. Ps.73 is the one the article does not date on its own authority: it gives the date \"as Briggs surmises\", adopting the surmise of the modern critical commentary it cites by page in the same treatment of the Asaph psalms - Briggs's \"Psalms\", New York, 1906 - and this profile admits no such adoption - its one narrow lift is named for Ussher and says in terms that it extends to no one else. That figure is therefore held in composition.yaml as preserved evidence, legible under --evidence, and is not a candidate answer; a reader who reaches this row at Ps.73 is being told that the tradition this profile answers under dates the psalm nowhere, not that nobody looked at it. Ps.82 is different and is untouched: there the article names Briggs's dating and rejects it, asserting its own reading, so that claim stands and this row never reaches Ps.82 at all. Everywhere else it settles authorship and refuses date. Of David, its strongest sentence is the Biblical Commission's of 1 May 1910, that \"It cannot be prudently denied that David is the chief author of the songs of the Psalter\" - an author, not a year, a reign or a period, and the same decree adds that neither the councils nor the Fathers \"have such weight as to determine that David is sole author of the whole Psalter\". Of the Asaph psalms it says they \"pertain to widely-separated periods of Jewish history\"; of Moses and Solomon in the titles it offers imitation rather than date, \"this imitation may be the reason of the title\"; of the Machabean question it says \"There are no certain proofs that these or any psalms are Machabean\" and \"leaves that question still open\". The historical superscriptions are occasions and not compositions: thirteen Davidic psalms are merely \"referred to the time of David's persecution by Saul\", to his sin, or to his flight from Absalom, and the article expressly denies that the titles settle even authorship - \"Does this preposition mean authorship? No in every title\" - so none of them may be promoted to a date. The one dated thing the article does offer about the collection is the closing of the canon, not the writing of the text: the Palestinian canon \"was practically closed during the time of Esdras\", and at the latest the Jewish canon of the Psalms \"was undoubtedly closed before the date of the Septuagint translation. This date is 285 B.C. ... or, at the very latest 132 B.C.\" A canon closing is not a text being written, and this corpus will not borrow it. The Psalter is an anthology and is given no book-wide composition date here; psalms that carry a superscription-setting, a historical setting or a prophetic referent are asserted individually and those assertions stand over this row."
+
+[[elements]]
+key = "alleluia"
+name = "Alleluia"
+refs = ["Psalm 94:3"]
+loci = ["Ps.94.3"]
+status = "undated-in-tradition"
+reason = "Drum's \"Psalms\" in the Catholic Encyclopedia was read in full for this corpus and dates the writing of no psalm except three cases authored separately in composition.yaml: Ps.73 and Ps.82 in this vulgate numbering, and the psalms of the sons of Korah as a group. Of those three, two are still answered with and one is not, so this row now reaches Ps.73 as well and the reader is owed the reason. Ps.73 is the one the article does not date on its own authority: it gives the date \"as Briggs surmises\", adopting the surmise of the modern critical commentary it cites by page in the same treatment of the Asaph psalms - Briggs's \"Psalms\", New York, 1906 - and this profile admits no such adoption - its one narrow lift is named for Ussher and says in terms that it extends to no one else. That figure is therefore held in composition.yaml as preserved evidence, legible under --evidence, and is not a candidate answer; a reader who reaches this row at Ps.73 is being told that the tradition this profile answers under dates the psalm nowhere, not that nobody looked at it. Ps.82 is different and is untouched: there the article names Briggs's dating and rejects it, asserting its own reading, so that claim stands and this row never reaches Ps.82 at all. Everywhere else it settles authorship and refuses date. Of David, its strongest sentence is the Biblical Commission's of 1 May 1910, that \"It cannot be prudently denied that David is the chief author of the songs of the Psalter\" - an author, not a year, a reign or a period, and the same decree adds that neither the councils nor the Fathers \"have such weight as to determine that David is sole author of the whole Psalter\". Of the Asaph psalms it says they \"pertain to widely-separated periods of Jewish history\"; of Moses and Solomon in the titles it offers imitation rather than date, \"this imitation may be the reason of the title\"; of the Machabean question it says \"There are no certain proofs that these or any psalms are Machabean\" and \"leaves that question still open\". The historical superscriptions are occasions and not compositions: thirteen Davidic psalms are merely \"referred to the time of David's persecution by Saul\", to his sin, or to his flight from Absalom, and the article expressly denies that the titles settle even authorship - \"Does this preposition mean authorship? No in every title\" - so none of them may be promoted to a date. The one dated thing the article does offer about the collection is the closing of the canon, not the writing of the text: the Palestinian canon \"was practically closed during the time of Esdras\", and at the latest the Jewish canon of the Psalms \"was undoubtedly closed before the date of the Septuagint translation. This date is 285 B.C. ... or, at the very latest 132 B.C.\" A canon closing is not a text being written, and this corpus will not borrow it. The Psalter is an anthology and is given no book-wide composition date here; psalms that carry a superscription-setting, a historical setting or a prophetic referent are asserted individually and those assertions stand over this row."
+
+[[elements]]
+key = "gospel"
+name = "Gospel"
+refs = ["Luke 7:11-16"]
+loci = ["Luke.7.11", "Luke.7.12", "Luke.7.13", "Luke.7.14", "Luke.7.15", "Luke.7.16"]
+status = "composition-only"
+reason = ""
+
+[[elements.claims]]
+locus = "Luke.7.11"
+relation = "composition"
+subject = "composition.gospel-of-luke"
+title = "The Gospel of St Luke"
+label = "About the year 70"
+date = "about 70 A.D."
+precision = "approximate-year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+inherited = true
+scope = "Luke"
+sources = ["artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"]
+
+[[elements.claims]]
+locus = "Luke.7.11"
+relation = "composition"
+subject = "composition.gospel-of-luke"
+title = "The Gospel of St Luke"
+label = "before the end of the Roman imprisonment, when the Acts was finished"
+date = "before the Acts of the Apostles, and therefore before the end of the Roman imprisonment, and not as late as the destruction of Jerusalem"
+precision = "relative"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+inherited = true
+scope = "Luke"
+sources = ["artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09420a-9b79d2a9"]
+
+[[elements]]
+key = "offertory"
+name = "Offertory"
+refs = ["Psalm 39:2-4"]
+loci = ["Ps.39.2", "Ps.39.3", "Ps.39.4"]
+status = "undated-in-tradition"
+reason = "Drum's \"Psalms\" in the Catholic Encyclopedia was read in full for this corpus and dates the writing of no psalm except three cases authored separately in composition.yaml: Ps.73 and Ps.82 in this vulgate numbering, and the psalms of the sons of Korah as a group. Of those three, two are still answered with and one is not, so this row now reaches Ps.73 as well and the reader is owed the reason. Ps.73 is the one the article does not date on its own authority: it gives the date \"as Briggs surmises\", adopting the surmise of the modern critical commentary it cites by page in the same treatment of the Asaph psalms - Briggs's \"Psalms\", New York, 1906 - and this profile admits no such adoption - its one narrow lift is named for Ussher and says in terms that it extends to no one else. That figure is therefore held in composition.yaml as preserved evidence, legible under --evidence, and is not a candidate answer; a reader who reaches this row at Ps.73 is being told that the tradition this profile answers under dates the psalm nowhere, not that nobody looked at it. Ps.82 is different and is untouched: there the article names Briggs's dating and rejects it, asserting its own reading, so that claim stands and this row never reaches Ps.82 at all. Everywhere else it settles authorship and refuses date. Of David, its strongest sentence is the Biblical Commission's of 1 May 1910, that \"It cannot be prudently denied that David is the chief author of the songs of the Psalter\" - an author, not a year, a reign or a period, and the same decree adds that neither the councils nor the Fathers \"have such weight as to determine that David is sole author of the whole Psalter\". Of the Asaph psalms it says they \"pertain to widely-separated periods of Jewish history\"; of Moses and Solomon in the titles it offers imitation rather than date, \"this imitation may be the reason of the title\"; of the Machabean question it says \"There are no certain proofs that these or any psalms are Machabean\" and \"leaves that question still open\". The historical superscriptions are occasions and not compositions: thirteen Davidic psalms are merely \"referred to the time of David's persecution by Saul\", to his sin, or to his flight from Absalom, and the article expressly denies that the titles settle even authorship - \"Does this preposition mean authorship? No in every title\" - so none of them may be promoted to a date. The one dated thing the article does offer about the collection is the closing of the canon, not the writing of the text: the Palestinian canon \"was practically closed during the time of Esdras\", and at the latest the Jewish canon of the Psalms \"was undoubtedly closed before the date of the Septuagint translation. This date is 285 B.C. ... or, at the very latest 132 B.C.\" A canon closing is not a text being written, and this corpus will not borrow it. The Psalter is an anthology and is given no book-wide composition date here; psalms that carry a superscription-setting, a historical setting or a prophetic referent are asserted individually and those assertions stand over this row."
+
+[[elements]]
+key = "secret"
+name = "Secret"
+refs = []
+loci = []
+status = ""
+reason = ""
+
+[[elements]]
+key = "communion"
+name = "Communion"
+refs = ["John 6:52"]
+loci = ["John.6.52"]
+status = "composition-only"
+reason = ""
+
+[[elements.claims]]
+locus = "John.6.52"
+relation = "composition"
+subject = "composition.gospel-of-john"
+title = "The Gospel of St John"
+label = "from the year 90 to 100 (approximately)"
+date = "90 A.D. to 100 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+inherited = true
+scope = "John"
+sources = ["artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"]
+
+[[elements.claims]]
+locus = "John.6.52"
+relation = "composition"
+subject = "composition.gospel-of-john"
+title = "The Gospel of St John"
+label = "96 or one of the succeeding years"
+date = "96 A.D. to 100 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+inherited = true
+scope = "John"
+sources = ["artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08438a-7620a92c"]
+
+[[elements]]
+key = "postcommunion"
+name = "Postcommunion"
+refs = []
+loci = []
+status = ""
+reason = ""
