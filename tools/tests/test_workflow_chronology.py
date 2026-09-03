@@ -43,6 +43,7 @@ Neither correction changes what the checks do. Both change what a reader would
 otherwise believe the corpus says.
 """
 import json
+import re
 import shutil
 import subprocess
 import sys
@@ -64,10 +65,32 @@ RECORD = "research/chronology.toml"
 RECORD_CHECK = "chronology-record-current"
 CLAIMS_CHECK = "chronology-claims-supported"
 BINDS_FROM = 17
+# Any version below BINDS_FROM. The fixture states it itself rather than
+# borrowing whichever version the tree happens to publish: this leaf is a
+# production target, and a later run rewriting it to v17 would silently turn
+# the out-of-scope case into the bound one and the bind into a no-op.
+PRE_CONTRACT = 11
 
 DOCUMENT = ("liturgy/roman-rite/1962/propers/temporal/"
             "54-fourteenth-after-pentecost")
 DOSSIER = "sections/10-date-location.tex"
+
+
+def _at_version(metadata: str, version: int) -> str:
+    """The same provenance record, stating a given workflow version.
+
+    The record's second field is the version; nothing else in the file is
+    allowed to move, because the checks under test read the rest of it.
+    """
+    pattern = re.compile(
+        r"(\\AIGenerationProvenance\{[^{}]*\}\{)[^{}]*(\})")
+    text, count = pattern.subn(
+        lambda m: f"{m.group(1)}{version}{m.group(2)}", metadata, count=1)
+    if count != 1:
+        raise AssertionError(
+            "the fixture leaf carries no AIGenerationProvenance record to "
+            "set a version on")
+    return text
 
 # What the corpus answers for this formulary, in its own words. Every string
 # here was read out of `tools/tpt scripture-chronology query` and is asserted
@@ -328,7 +351,9 @@ class BoundLeafTests(unittest.TestCase):
         (cls.root / "src" / "sources").symlink_to(ROOT / "src" / "sources")
         cls.leaf = leaf
         cls.metadata = leaf / "generation-metadata.tex"
-        cls.published_metadata = cls.metadata.read_text(encoding="utf-8")
+        published = cls.metadata.read_text(encoding="utf-8")
+        cls.unbound_metadata = _at_version(published, PRE_CONTRACT)
+        cls.bound_metadata = _at_version(published, BINDS_FROM)
         cls.published_dossier = (leaf / DOSSIER).read_text(encoding="utf-8")
 
     @classmethod
@@ -336,7 +361,7 @@ class BoundLeafTests(unittest.TestCase):
         cls.tmp.cleanup()
 
     def setUp(self):
-        self.metadata.write_text(self.published_metadata, encoding="utf-8")
+        self.metadata.write_text(self.unbound_metadata, encoding="utf-8")
         (self.leaf / DOSSIER).write_text(self.published_dossier,
                                          encoding="utf-8")
         (self.leaf / RECORD).unlink(missing_ok=True)
@@ -345,10 +370,10 @@ class BoundLeafTests(unittest.TestCase):
 
     def bind(self):
         """State the version the chronology contract binds from."""
-        text = self.published_metadata.replace(
-            "{proper}{11}", "{proper}{%d}" % BINDS_FROM)
-        self.assertNotEqual(text, self.published_metadata)
-        self.metadata.write_text(text, encoding="utf-8")
+        self.assertNotEqual(self.bound_metadata, self.unbound_metadata,
+                            "the bind must change the recorded version, or "
+                            "every test below is testing the same state twice")
+        self.metadata.write_text(self.bound_metadata, encoding="utf-8")
 
     def write_record(self):
         done = subprocess.run(
@@ -381,9 +406,9 @@ class BoundLeafTests(unittest.TestCase):
     def test_a_leaf_published_before_the_contract_is_out_of_scope(self):
         """Correct work is not retrospectively refused.
 
-        The leaf as published states `proper` v11. Refusing it would say the
-        production that made it was wrong, which it was not: there was no
-        corpus to read.
+        The fixture states a `proper` version below the one the contract
+        binds from. Refusing such a leaf would say the production that made
+        it was wrong, which it was not: there was no corpus to read.
         """
         for name in (RECORD_CHECK, CLAIMS_CHECK):
             with self.subTest(check=name):
@@ -417,7 +442,7 @@ class BoundLeafTests(unittest.TestCase):
         """A leaf that once carried one is held to it whatever it states."""
         self.bind()
         self.write_record()
-        self.metadata.write_text(self.published_metadata, encoding="utf-8")
+        self.metadata.write_text(self.unbound_metadata, encoding="utf-8")
         self.assertAccepted(RECORD_CHECK)
         path = self.leaf / RECORD
         path.write_text(path.read_text(encoding="utf-8").replace(
