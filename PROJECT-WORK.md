@@ -2728,3 +2728,64 @@ Owed to this repository, and not yet done:
 Unlike the fan-out policy text, `research-synthesis.md` is a fragment, and
 `workflow_source_digest` covers every fragment's bytes. Amending step 11
 invalidates every run in flight, so it is done between runs, never during one.
+
+## Run ca03f1b357e7ec25 blocked with eight findings outstanding, 2026-09-03
+
+The `proper` v17 run against
+`liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost`,
+provider `claude`, reached BLOCKED at the `content-evaluation` iteration bound:
+three of three iterations ended with a finding the stage had already raised
+still unrepaired. Nothing was built into `pdf/` or `web/`, nothing was
+installed, and no release binding moved. The leaf as the run left it is
+committed as work in progress, and this section is where its outstanding
+findings live: the run's own results are under `build/tpt-runs/`, which is
+ignored output that `make clean` and `wt tidy` delete without asking, and a
+`content-evaluation` result reaches nothing tracked on its own.
+
+### The eight outstanding findings
+
+Every one is `repair_target: authoring`, and every one is unrepaired.
+
+| id | lane | where | what it requires |
+| --- | --- | --- | --- |
+| `CON-REC-002` | reception-sweep | `sections/90-scope.tex` 146–150 | The appendix says Theodoret was read in Greek at Pss. 33, 83, 94 and 117. `research/scope.md` §4.2 records Ps. 33 as **deliberately not fetched** (the acquired volumes are Tomus 2, Pss. 71–87, and Tomus 3, Pss. 87–150). Correct the reach to Pss. 83, 94 and 117 and state the negative it conceals: no Greek witness in this sweep expounds the Offertory's Ps. 33 at the appointed verses. Make the item count agree with the list it heads. |
+| `CON-REC-003` | reception-sweep | synthesis edition; dangling back-reference at `sections/90-scope.tex` 267 | The Secret's and Postcommunion's reception negative is printed only in the canonical edition, while the shared appendix bounds a negative the synthesis reader is never given. Carry it to that reader with its bound — no patristic or medieval exegetical reception located for either prayer, bounded over a Patrologia Latina exact-phrase index, the Collect expressly outside it — without creating a second authority. |
+| `CON-SYN-002` | synthesis-argument | `sections/synthesis/20-integrated-commentary.tex` 26–30 | The one unit treating the orations partitions the formulary on an element set the appointed Latin does not bear: the `salut-` root stands four times and the fourth is the Alleluia's `salutári`, a sung element. Restate it as C6, the brief synthesis and P3 already do — `salut-` once each in Collect, Alleluia, Secret and Postcommunion; `propitia-` in Collect and Secret only; `semper` and `perpetu-` in Collect and Postcommunion only. |
+| `CON-CIT-004` | citation-integrity | `sections/99-references.tex` 5–9 | The References explain that Papias and Eusebius are "named on page 2" as bounded negatives. Page 2 was rebuilt this run and names neither; that sentence is the only occurrence of either name in the leaf. Delete the sentence or restore the page-2 negatives it answers. The standing bound — this repository holds no record of either and nothing is asserted from them — survives either way, and the Jerome and Hesbert narrowings beside it are accurate and stay. |
+| `CON-CIT-020` | citation-integrity | `sections/35-source-grounded-synthesis.tex` 249–254 **and** `sections/synthesis/20-integrated-commentary.tex` 223–226 | Both assert a uniform two-Sunday Gelasian offset "with no exception". The leaf's own commentary and `research/scope.md` §6.1(a) give N+2 across Book III sects. I–XI and N+4 across XII–XVI, with Pamelius at N+1 unbroken. Report the split; "uniformly" and "with no exception" go, or attach only to Pamelius, of whom they are true. |
+| `CON-CIT-021` | citation-integrity | `sections/50-interpretive.tex` 140–149 (P4), `sections/20-themes.tex` 86–90, `sections/synthesis/20-integrated-commentary.tex` 212–218 | The hope-formula P4 rests on is printed as `beatus … qui sperat in eo` "at the close of Ps. 33 (v. 23)". Ps. 33:23 has no `beatus` and a plural verb; Ps. 83:13 reads `in te`; the Gradual contains neither word. Give the loci as Ps. 33:9b and Ps. 83:13, differing in the prepositional object, and describe the Gradual as singing the hope *vocabulary*, not the formula. |
+| `CON-CIT-022` | citation-integrity | `sections/99-references.tex` 24 | The `Rubricae generales` entry lists RG 77 and RG 465, cited nowhere in the guide or its records, and omits RG 18, which is cited. List the numbers the guide actually cites — RG 18, 117, 127 b, 434 b, 435. The facsimile identity, page range and artifact id are correct and stay. |
+| `CON-PRO-003` | profile-conformance | `sections/30-commentary.tex` (~40 sites) **and** `sections/synthesis/20-integrated-commentary.tex` | **This is the finding that hit the bound.** Reader-facing prose still takes the guide, its sweep, or the repository's holdings as its grammatical subject, and each edition still prints a disclaimer `guidance/editorial.md` forbids outright: `the disagreement is preserved rather than adjudicated` (`30-commentary.tex` 1296) and `that displacement is not smoothed over here` (`synthesis/20-integrated-commentary.tex` 210). It was repaired in the canonical edition at iterations 1 and 2 and **survived both times in the synthesis file**, which neither repair reached. |
+
+### Two facts about this run's provenance
+
+**The run is not replayable and must not be advanced.** From iteration 2 the
+coordinator added to each lane brief an instruction that was not in that lane's
+packet: that the leaf builds two editions from one source tree and a repair to
+one is not a repair to the other. The fan-out execution policy directs a driver
+to give each lane its packet "and nothing else" and not to supplement a lane's
+work. Iteration 2's lane results are therefore not a function of their packets
+alone, a replay of `ca03f1b357e7ec25` would not reproduce them, and the run is
+to be read as a record and not resumed.
+
+**Two findings cite that out-of-packet instruction.** `CON-REC-003` and
+`CON-CIT-020` name it in their own text as what prompted them. Both were
+checked against the leaf when this entry was written and both are real, but a
+reader should verify them against the leaf rather than treat them as
+packet-derived evidence.
+
+Both facts cut the other way as well, and the entry above is the place to say
+so: the same blind spot the hint named is why `CON-PRO-003` survived three
+rounds in a file no reviser was told to open, and it is what ended the run.
+
+### Finding ids were not stable across iterations
+
+Twenty distinct ids were raised across the three rounds and twelve cleared.
+That is a count of ids, not of defects: the citation-integrity lane reused
+`CON-CIT-001` and `CON-CIT-003` at iteration 1 for defects unrelated to those
+it gave the same ids at iteration 0 — the first pair concerned the Cummiskey
+translation-ledger citations and the barred Migne columns, the second the
+unnamed translators of Guéranger and Schuster and an invented two-century
+interval between Honorius and Godfrey. `common/result-format.md` requires that
+an id name the same issue every time it appears. A carry-forward that reads
+these results by id will conflate them unless it reads each finding's text.
