@@ -1,0 +1,41 @@
+schema = 2
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.post-pentecosten-14-orations"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+artifact_sha256 = "f34bc7cf9293ffb353159e94118f4316bb4cc0a60230b315904dc77ba2502162"
+locus = "Dominica XIV. post Pentecosten, printed pp. 337-338; Collect at text-layer lines 50165-50176, Secret at 50294-50299, Postcommunion at 50311-50316"
+physical_line_ranges = [[50165, 50176], [50294, 50299], [50311, 50316]]
+states = ["cataloged", "acquired", "inspected"]
+context = "The three proper orations of the Fourteenth Sunday after Pentecost as the 1862 Pustet prints them: the Oratio `Custodi, Domine quaesumus, Ecclesiam tuam propitiatione perpetua`, the Secreta `Concede nobis Domine quaesumus, ut haec hostia salutaris`, and the Postcommunio `Purificent semper et muniant tua sacramenta nos, Deus`. The formulary runs from the heading at line 50147 to line 50323, where Dominica XV begins. This passage exists so that the wording of these three prayers is addressable by identity over these exact bytes, which the artifact record says is the only way to cite it; until such a passage existed the artifact was a finding aid alone."
+notes = """
+WHAT THIS PASSAGE IS FOR. It is the public-domain antecedent witness for three
+orations the 1962 typical edition reprints, and it is cited to show that their
+wording is preexisting material of that edition under 17 U.S.C. 103(b), per
+src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml. It is
+not a claim that the 1862 Pustet is a typical edition, and nothing about the
+history of the rite is inferred from it here.
+
+TWO LIMITS OF THE TEXT LAYER, RECORDED RATHER THAN PAPERED OVER. First, the
+`Secreta.` heading is absent: this book sets an ornamental initial on each
+oration and the recogniser drops it, so the Secret opens as `/>|Onc6de` at line
+50294 with its heading gone, and the Collect as `QUstridi.` at 50167. The
+Secret is therefore identified by its position -- after the Offertory of this
+formulary and before the `Alia Secrcta` pointer at line 50301 -- and by its
+incipit, not by a printed heading in these bytes. Second, the printed stress
+accents recognise as digits and punctuation throughout (`D6minum`, `perp6tua`,
+`qusesumus`), which is the characteristic damage the artifact record describes;
+the letters are legible through it and the accents are not evidence here.
+
+A RUNNING HEAD FALLS INSIDE THE RANGE. Line 50236 reads `Dominica XV. post
+Pentecosten.` and is a running head fused into the body text, not the start of
+the next formulary, which begins at line 50324. The artifact record names that
+fusion as a known behaviour of this scan. It sits between the Epistle and the
+Gospel of the Fourteenth Sunday and touches none of the three orations.
+
+WHAT IS NOT CLAIMED. No page image of this book was read for this passage; the
+loci are over the retained text layer. The three prayers are recorded as being
+in print in 1862 in this wording, which is what the 103(b) argument needs. The
+1962 edition's own readings, its pointing and its accents were established
+separately on that edition's page images and are not taken from here.
+"""

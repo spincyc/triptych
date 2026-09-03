@@ -128,7 +128,19 @@ Apply the current publication policy separately from textual coverage. The
 target facsimile is a collation witness, not a general publication licence;
 preexisting wording needs its recorded public-domain antecedent, and the 1955
 Holy Week, 1960 revisions, post-1920 additions, and 1962 front matter need
-their own lawful basis. ICEL's postconciliar permission and exemplar analysis
+their own lawful basis. That antecedent is a route and not a barrier:
+`src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml` settles
+the question once for the repository, and its holding is that the Latin travels
+on 17 U.S.C. 103(b) plus a public-domain witness. The seasonal orations are
+named there as preexisting material the 1962 book inherited verbatim, and the
+repository tracks the witnesses to prove it: `pustet-ratisbon-1862` first, then
+`vatican-typica-1604` and `venice-1570`. An appointed oration whose wording
+stands in one of them is publishable; read it on the page images at 200 and 400
+dpi, corroborate it word for word in the tracked witness, and record that
+locus. Do not type `rights-withheld` against the 1962 typica for a text you
+have not looked for in those witnesses, and see
+`guidance/propers-for-agents.md` for the full procedure and its known failure
+mode. ICEL's postconciliar permission and exemplar analysis
 does not supply English for this historical Missal. Historical English remains
 attached to the edition that actually prints it and never becomes an approved
 1962 liturgical translation by being aligned to a slot.

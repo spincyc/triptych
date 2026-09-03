@@ -141,7 +141,7 @@ class ProductionLedgerTests(unittest.TestCase):
             self.assertEqual([], problems)
             self.assertEqual(total, len(records))
             self.assertEqual(
-                {"postconciliar": 329, "roman-1962": 519}.get(calendar, 0),
+                {"postconciliar": 329, "roman-1962": 516}.get(calendar, 0),
                 sum(row.get("body_status") == "removed" for row in records.values()),
             )
             # Four duplicate-name pairs and one six-item procession are all
@@ -191,12 +191,23 @@ class ProductionLedgerTests(unittest.TestCase):
                 occurrence=1,
             )
             for proper in ("Collect", "Secret", "Postcommunion")
+        } | {
+            # The first seasonal orations to travel on 17 U.S.C. 103(b) plus a
+            # public-domain witness.  The 1962 readings were established on that
+            # edition's own page images at 500 dpi and corroborated word for word
+            # in the tracked public-domain 1862 Pustet, passage
+            # post-pentecosten-14-orations, printed pp. 337-338.  Every other
+            # seasonal oration is still a removed body: see
+            # guidance/propers-for-agents.md, "The 1962 Latin: what you may
+            # publish, and on what basis".
+            LatinKey("pentecost-14", "", proper, occurrence=1)
+            for proper in ("Collect", "Secret", "Postcommunion")
         }
         self.assertEqual(
             expected_permitted,
             {key for calendar, key, _ in permitted if calendar == "roman-1962"},
         )
-        self.assertEqual(13, len(permitted))
+        self.assertEqual(16, len(permitted))
         target_artifact = (
             "artifact.catholic-church.missale-romanum."
             "vatican-typica-1962.cmaa-facsimile-pdf"
@@ -236,6 +247,25 @@ class ProductionLedgerTests(unittest.TestCase):
                     target_artifact,
                 },
             },
+            # The first seasonal projection, and the first whose public-domain
+            # antecedent is the tracked 1862 Pustet text layer rather than a
+            # page-image witness.
+            "editorial-projection-2026-09-03": {
+                "artifact_id": (
+                    "artifact.triptych.roman-1962-latin-proper-editorial-projection."
+                    "editorial-projection-2026-09-03."
+                    "post-pentecosten-14-orations-8ad972fc"
+                ),
+                "publication_source_id": (
+                    "artifact.catholic-church.missale-romanum."
+                    "pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+                ),
+                "projected_from": {
+                    "artifact.catholic-church.missale-romanum."
+                    "pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf",
+                    target_artifact,
+                },
+            },
         }
 
         used_projection_editions = set()
@@ -263,10 +293,12 @@ class ProductionLedgerTests(unittest.TestCase):
                     [spec["artifact_id"], spec["publication_source_id"]],
                     row["publication_source_ids"],
                 )
+                # Sanctoral recoveries came first; the seasonal ones name a
+                # temporal- passage of the same target edition.
                 self.assertTrue(
                     row["verification_source_id"].startswith(
                         "passage.catholic-church.missale-romanum."
-                        "vatican-typica-1962.sanctoral-"
+                        "vatican-typica-1962."
                     )
                 )
         self.assertEqual(set(projection_specs), used_projection_editions)
@@ -305,7 +337,7 @@ class ProductionLedgerTests(unittest.TestCase):
                 for line in payload[start - 1 : end]
             )
             self.assertEqual(row["text_sha256"], text_sha256(projected_body))
-        self.assertEqual(848, len(nonpermitted))
+        self.assertEqual(845, len(nonpermitted))
         collated = [
             item for item in nonpermitted if item[2]["provenance_status"] == "collated"
         ]
@@ -372,7 +404,7 @@ class ProductionLedgerTests(unittest.TestCase):
         unresolved = [
             row for _, _, row in nonpermitted if row["provenance_status"] == "unresolved"
         ]
-        self.assertEqual(827, len(unresolved))
+        self.assertEqual(824, len(unresolved))
         self.assertTrue(all(row["publication_basis"] == "unresolved" for row in unresolved))
         postconciliar = [
             row for calendar, _, row in nonpermitted if calendar == "postconciliar"

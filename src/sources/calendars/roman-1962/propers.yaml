@@ -12881,12 +12881,14 @@ sections:
       - name: Collect
         incipit: Custodi, Domine
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: Printed p. 395, no. 1573, read on the typical edition's page image at 500 dpi.
+          Preexisting material under 17 U.S.C. 103(b), corroborated word for word in
+          the tracked public-domain Pustet Ratisbon 1862 at printed pp. 337-338,
+          text-layer lines 50147-50323.
+        text: |
+          Custodi, Domine, quaesumus, Ecclesiam tuam propitiatione perpetua: et quia
+          sine te labitur humana mortalitas; tuis semper auxiliis et abstrahatur a
+          noxiis, et ad salutaria dirigatur. Per Dominum.
       - name: Epistle
         source: scripture
         verses:
@@ -12933,12 +12935,13 @@ sections:
       - name: Secret
         incipit: Concede nobis, Domine
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: Printed p. 396, no. 1579, read on the typical edition's page image at 500 dpi.
+          Preexisting material under 17 U.S.C. 103(b), corroborated word for word in
+          the tracked public-domain Pustet Ratisbon 1862 at printed pp. 337-338,
+          text-layer lines 50147-50323.
+        text: |
+          Concede nobis, Domine, quaesumus, ut haec hostia salutaris, et nostrorum
+          fiat purgatio delictorum, et tuae propitiatio potestatis. Per Dominum.
       - name: Communion
         incipit: Primum quaerite
         source: scripture
@@ -12951,12 +12954,13 @@ sections:
       - name: Postcommunion
         incipit: Purificent semper
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: Printed p. 396, no. 1581, read on the typical edition's page image at 500 dpi.
+          Preexisting material under 17 U.S.C. 103(b), corroborated word for word in
+          the tracked public-domain Pustet Ratisbon 1862 at printed pp. 337-338,
+          text-layer lines 50147-50323.
+        text: |
+          Purificent semper et muniant tua sacramenta nos, Deus: et ad perpetuae
+          ducant salvationis effectum. Per Dominum nostrum.
     - key: pentecost-15
       name: Fifteenth Sunday after Pentecost
       registry: '55'

@@ -295,6 +295,88 @@ library already tracks). Leaf n498 gives Frances of Rome's Collect entire and
 without damage. This is the route, and it is the same one the 1861 English was
 collated by at 200 and 400 dpi.
 
+## The 1962 Latin: what you may publish, and on what basis
+
+Read this before typing `rights-withheld` on any oration. The disposition is a
+claim that the text is the 1962 edition's own new matter, and for a seasonal
+oration that claim is almost always false.
+
+`src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml` settles
+this question for the whole repository, and it is the only place it is settled.
+Do not re-derive it, and do not restate it in a third wording somewhere else.
+Its holding, in one line: **the route to the Latin is 17 U.S.C. 103(b) plus a
+public-domain witness — never an assertion about the 1962 book.**
+
+The reasoning it forecloses, in both directions:
+
+- The 1962 Vatican *editio typica* is probably protected in the United States
+  to the end of 2057 by URAA restoration. That is true, it is recorded, and it
+  is **not** the question. `rights_status = "unresolved"` stands on the
+  facsimile artifact and stands correctly.
+- "The prayers are ancient" is likewise **not** a basis. It answers a question
+  about the text and not about the edition, and on its own it licenses nothing.
+
+What 103(b) frees is everything the 1962 book reprints from typical editions
+already in the public domain: the Canon, the Ordo Missae prayers, and **the
+seasonal orations**. A new edition's copyright "extends only to the material
+contributed by the author of such work" and gives no exclusive right in the
+preexisting material.
+
+What it does not free, and what must not be published from the facsimile:
+
+- the restored Holy Week of 1955, as a body of new composition and arrangement;
+- the 1960 Code of Rubrics as printed there;
+- sanctoral formularies first published between the 1920 printing and 1962;
+- the edition's front matter, including the Decretum of 23 June 1962;
+- its pagination, marginal numbering and arrangement. Numbers and page
+  locations are facts and may be cited freely; the selection and arrangement
+  may not be reproduced.
+
+Holy Week is a boundary drawn around new matter, not around a season. 103(b)
+runs per text: an oration printed inside the 1955 rite whose wording stands
+verbatim in a pre-1931 witness is preexisting and free, whatever 1955 did with
+its placement. Collate it and decide on the evidence rather than on the
+calendar.
+
+### The witnesses, and the procedure that has already been run
+
+Tracked, public domain, and held locally as full text:
+`venice-1570`, `vatican-typica-1604`, and `pustet-ratisbon-1862`, all under
+`src/sources/works/catholic-church/missale-romanum/editions/`. The 1862 is the
+one to reach for first: `scripts/_ocr_quality.py` classes it `prose-latin`,
+where the 1570 and 1604 are `degraded-latin` and carry an explicit instruction
+to quote only through a checked passage. `1922-tours-mame-editio-quarta-iuxta-typicam`
+is public domain too and closest to the 1962 wording, but its scan is remote.
+
+The 1962 sanctoral was landed this way in the runs of 2026-08-02, and the same
+procedure is what a seasonal oration needs:
+
+1. Read the oration on the facsimile **page images**, at 200 dpi and again at
+   400 dpi. No OCR text layer is allowed to supply a reading.
+2. Corroborate it **word for word** in a tracked public-domain witness.
+3. Land it only then, so that the Latin rests on 103(b) and on that witness and
+   on no property of the 1962 edition. Record the witness locus.
+
+Half a prayer corroborated is not a prayer corroborated. S. Petri Canisii was
+held back at the April pass for exactly that: the 1862 printed its opening
+clause and a different petition after it, and the entry stayed a placeholder
+rather than take the rest from the target edition.
+
+### The seasonal orations are a known open defect, not a precedent
+
+At the time of writing, 220 orations in the seasonal section of
+`roman-1962/propers.yaml` carry `text_status.state = unavailable` with a
+`rights-withheld` reason naming the 1962 typica, and not one seasonal oration
+carries a body. That disposition contradicts the rights record above, which
+names the seasonal orations as preexisting material. It records that nobody has
+run the collation, not that the text may not be published.
+
+Do not read the existing rows as authority for typing another one, and do not
+copy their shape onto a new entry. Where the collation has not been run, the
+honest gap is a `witness-gap` against the witness actually consulted;
+`rights-withheld` asserts something about the 1962 edition that the repository's
+own rights record denies.
+
 ## What a public-domain printing can and cannot supply
 
 Sixteen agents read the 1862 page images on 2026-08-08 and settled the ceiling
