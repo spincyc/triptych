@@ -232,7 +232,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 .PHONY: all pdf review-pdfs review-all-pdfs install list help clean \
 	distclean check-tools check-tool-registry check-calendar-days \
 	check-calendar-masses check-act-history \
-	check-propers-census \
+	check-propers-census check-propers-structure \
 	check-metadata check-web-editions \
 	check-proper-components \
 	web-editions install-web-editions check-web-editions-current \
@@ -505,6 +505,7 @@ help:
 		'make check-calendar-days  Refuse stale generated calendar-day structures' \
 		'make check-calendar-rubrics  Validate the rubrical precedence sources and their solved cases' \
 		'make check-propers-census  Refuse a document whose derived count table has gone stale' \
+		'make check-propers-structure  Refuse a reader projection the calendar has outgrown' \
 		'make check-tests  Run the complete script unit-test suite' \
 		'make check-staleness  Suspended 2026-07-31; reports the suspension and exits clean' \
 		'make measure-staleness  Run the suspended signal anyway, without acting on it' \
@@ -761,7 +762,7 @@ check: check-metadata check-web-editions check-web-editions-current \
 	check-public-alpha check-release-bindings check-tool-registry \
 	check-browser-static \
 	check-calendar-days check-calendar-masses check-calendar-rubrics \
-	check-propers-census \
+	check-propers-census check-propers-structure \
 	check-mass-ordinary check-bible-indexes check-catena \
 	check-commentary-coverage check-scripture-chronology check-examples
 
@@ -866,6 +867,20 @@ check-propers-census:
 	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
 		$(PYTHON) tools/tpt mass-propers census --check; \
 	else echo "PyYAML missing; skipping propers-census check"; fi
+
+# The browser and the day reader do not read propers.yaml. They read the derived
+# JSON under src/web/data/structure/propers/, which is tracked, and which goes
+# stale the moment a calendar gains a body. `mass-propers structure --check` has
+# always known that, but it lived only in `check-deployment-sources`, which
+# `check` does not reach -- so on 2026-09-03 the seasonal backfill landed 198
+# Latin bodies with `check-calendar-masses`, `check-propers-census` and 175
+# rights tests all passing while every reader still showed the old
+# rights-withheld shape. Nothing reported it. `mass-propers structure` writes
+# the fix; this only refuses the drift.
+check-propers-structure:
+	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
+		$(PYTHON) tools/tpt mass-propers structure --check; \
+	else echo "PyYAML missing; skipping propers-structure check"; fi
 
 # The Ordinary of the Mass: validates the two ordo-missae inventories against
 # the artifacts they draw on and against the source library's own rights record,
