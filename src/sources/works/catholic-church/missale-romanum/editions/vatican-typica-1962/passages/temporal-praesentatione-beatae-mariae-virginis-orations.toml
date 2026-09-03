@@ -1,0 +1,11 @@
+schema = 1
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-praesentatione-beatae-mariae-virginis-orations"
+edition_id = "edition.catholic-church.missale-romanum.vatican-typica-1962"
+artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+artifact_sha256 = "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+locus = "Collect at printed p. 722, no. 4131; artifact PDF p. 803, foot of the left column (lines 37-40) running into the head of the right column (lines 1-4 plus one further printed line the text layer omits entirely). Under the heading Oratio, beneath the day heading at left column lines 29-35: Die 21 novembris / In Praesentatione beatae Mariae Virginis / III classis, and the rubric Missa Salve, de Communi festorum B. Mariae Virg. [41], praeter orationem sequentem; et non dicitur Credo - SINGULAR, so the 1962 too makes only this oration proper to the day. Printed folio 722 and the marginal number 4131 both read off the page image; pdf page = printed page + 81.; Secret at printed p. 722, no. 4132; artifact PDF p. 803, right column lines 6-12, under the heading Secreta at line 5 (which carries a marginal capital C - see notes)."
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The proper orations of praesentatione-beatae-mariae-virginis in the controlling 1962 typical edition. This is the target transcription witness for their wording, pointing and conclusion length; it is not the rights authority for publishing them."
+verified_on = "2026-09-03"
+notes = "Read on page images rendered from the exact identified CMAA facsimile, not through its embedded text layer, which drops ornamental initials and misreads marginal numbers. An independent machine reading of the Benziger 1962 conformed printing was taken alongside; where the two parted the page image settled it, and the page image agreed with the facsimile's own layer in every recorded case. Publication rights come from a separately registered public-domain witness and from 17 U.S.C. 103(b); see src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml."

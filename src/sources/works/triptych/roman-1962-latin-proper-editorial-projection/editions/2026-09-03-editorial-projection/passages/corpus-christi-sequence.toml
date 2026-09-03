@@ -1,0 +1,12 @@
+schema = 1
+record_type = "passage"
+id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.corpus-christi-sequence"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+artifact_id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.lauda-sion-orations-c28eb776"
+artifact_sha256 = "c28eb776b1408e69a3257a839b9a2724a1234127f3bf03a3efc95c375a26947b"
+locus = "corpus-christi, Sequence; editorial-projection artifact physical lines 1-27; antecedent PRIMARY, 1922 Mame: printed pp. 422-423, artifact PDF pp. 536-537, read on the 400 dpi page image and on its text layer (see antecedent_locus_1922_mame). SECONDARY, 1862 Pustet: printed pp. 318-319, text-layer lines 47879-47981 and 47991-47999, re-extracted and re-aligned by this lane (305 raw tokens, 209 exact); line 47982 excluded as a running head; the 1862's page images remain unavailable so every 1862 reading here rests on its text layer alone.; target printed p. 376, no. 1436; artifact PDF p. 457. Left column from its row 18 through the right column, 60 printed lines ending 'Amen. Alleluia.' The printed folio 376 and the marginal number 1436 were both read off the 400 dpi page image, not taken from the text layer."
+physical_line_ranges = [[1, 27]]
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Exact project-created editorial-projection passage for the Roman-1962 corpus-christi Sequence."
+verified_on = "2026-09-03"
+notes = "The selected lines hash as the retained calendar body 6f62481edb546542b79dbaa8d0d9187d2a2a599f4870bec78489ba632670f276. The artifact manifest owns every 1862-to-target transformation; the separate historical and target passages remain the witnesses."

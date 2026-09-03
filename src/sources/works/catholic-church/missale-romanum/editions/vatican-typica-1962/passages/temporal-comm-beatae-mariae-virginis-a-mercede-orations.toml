@@ -1,0 +1,11 @@
+schema = 1
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-comm-beatae-mariae-virginis-a-mercede-orations"
+edition_id = "edition.catholic-church.missale-romanum.vatican-typica-1962"
+artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+artifact_sha256 = "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+locus = "Collect at printed p. 668, no. 3707; artifact PDF p. 749, left column lines 2-11, under the heading Oratio. The day's own heading stands on the facing column, artifact PDF p. 748 right column lines 33-39: Die 24 septembris / Beatae Mariae Virginis a Mercede / Commemoratio, and beneath it the rubric Missa Salve, de Communi festorum beatae Mariae Virginis [41], praeter orationem sequentem; et non dicitur Credo - SINGULAR, one proper oration. Printed folios 667 and 668 read off the 400 dpi page images of PDF pp. 748 and 749; pdf page = printed page + 81."
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The proper orations of comm-beatae-mariae-virginis-a-mercede in the controlling 1962 typical edition. This is the target transcription witness for their wording, pointing and conclusion length; it is not the rights authority for publishing them."
+verified_on = "2026-09-03"
+notes = "Read on page images rendered from the exact identified CMAA facsimile, not through its embedded text layer, which drops ornamental initials and misreads marginal numbers. An independent machine reading of the Benziger 1962 conformed printing was taken alongside; where the two parted the page image settled it, and the page image agreed with the facsimile's own layer in every recorded case. Publication rights come from a separately registered public-domain witness and from 17 U.S.C. 103(b); see src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml."

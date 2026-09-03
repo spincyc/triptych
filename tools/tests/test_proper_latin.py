@@ -131,7 +131,7 @@ class ProductionLedgerTests(unittest.TestCase):
         )
         expected = {
             "postconciliar": (329, 4),
-            "roman-1962": (526, 5),
+            "roman-1962": (515, 5),
             "roman-pre-1955": (0, 0),
         }
         for calendar, (total, repeated) in expected.items():
@@ -141,7 +141,7 @@ class ProductionLedgerTests(unittest.TestCase):
             self.assertEqual([], problems)
             self.assertEqual(total, len(records))
             self.assertEqual(
-                {"postconciliar": 329, "roman-1962": 315}.get(calendar, 0),
+                {"postconciliar": 329, "roman-1962": 225}.get(calendar, 0),
                 sum(row.get("body_status") == "removed" for row in records.values()),
             )
             # Four duplicate-name pairs and one six-item procession are all
@@ -149,7 +149,7 @@ class ProductionLedgerTests(unittest.TestCase):
             self.assertEqual(repeated, sum(key.occurrence > 1 for key in records))
 
     def test_publication_loader_validates_production_source_metadata(self) -> None:
-        expected = {"postconciliar": 329, "roman-1962": 526, "roman-pre-1955": 526}
+        expected = {"postconciliar": 329, "roman-1962": 515, "roman-pre-1955": 515}
         for calendar, count in expected.items():
             records, problems = publication_records(CALENDARS, calendar, INVENTORIES)
             self.assertEqual([], problems)
@@ -164,59 +164,29 @@ class ProductionLedgerTests(unittest.TestCase):
                 (permitted if row["publication_status"] == "permitted" else nonpermitted).append(
                     (calendar, key, row)
                 )
-        expected_permitted = {
-            LatinKey(
-                "s-cyrilli-episcopi-alexandrini-confessoris-ecclesiae",
-                "",
-                proper,
-                occurrence=1,
-            )
-            for proper in ("Collect", "Secret", "Postcommunion")
-        } | {
-            LatinKey(mass, "", "Collect", occurrence=1)
-            for mass in (
-                "s-petri-canisii-confessoris-ecclesiae-doctoris",
-                "s-ephraem-syri-diaconi-confessoris-ecclesiae",
-                "s-ioannis-eudes-confessoris",
-                "s-damasi-i-papae-confessoris",
-            )
-        } | {
-            LatinKey("s-silvestri-abbatis", "", proper, occurrence=1)
-            for proper in ("Collect", "Secret", "Postcommunion")
-        } | {
-            LatinKey(
-                "s-augustini-episcopi-confessoris-ecclesiae-doctoris",
-                "",
-                proper,
-                occurrence=1,
-            )
-            for proper in ("Collect", "Secret", "Postcommunion")
-        }
         roman = {key for calendar, key, _ in permitted if calendar == "roman-1962"}
-        # The sanctoral recoveries stay pinned key by key: nothing may join them
-        # without an explicit edit here.
-        self.assertEqual(expected_permitted, {k for k in roman if k.mass.startswith("s-")})
-        # The seasonal orations travel on 17 U.S.C. 103(b) plus a public-domain
-        # witness, established page by page against the tracked 1862 Pustet in
-        # the 2026-09-03 backfill.  They are guarded structurally rather than key
-        # by key -- there are too many to list, and the shape is the real
-        # invariant: every one belongs to the seasonal section of the 1962
-        # calendar, and the count moves only by a visible edit to this number.
-        # See guidance/propers-for-agents.md, "The 1962 Latin: what you may
-        # publish, and on what basis".
-        seasonal_masses = {
+        # Every permitted body is pinned by SHAPE rather than by key. Pinning
+        # keys stopped scaling when the 2026-09-03 backfill took the publishable
+        # set from 13 to 290 across all five sections of the calendar, and a
+        # list nobody can read is not a guard. What actually protects the set is
+        # below and per row: each must name an editorial-projection passage of a
+        # known edition, carry a collated provenance, a public-domain basis, an
+        # independent public-domain artifact beside the projection, and a
+        # verification passage in the 1962 target. The count here is the
+        # tripwire: it moves only by a visible edit to this number.
+        calendar_masses = {
             mass["key"]
-            for mass in yaml.safe_load(
+            for section in yaml.safe_load(
                 (CALENDARS / "roman-1962/propers.yaml").read_text(encoding="utf-8")
-            )["sections"]["seasonal"]["masses"]
+            )["sections"].values()
+            for mass in section["masses"]
         }
-        seasonal_permitted = {k for k in roman if not k.mass.startswith("s-")}
         self.assertTrue(
-            {k.mass for k in seasonal_permitted} <= seasonal_masses,
-            sorted({k.mass for k in seasonal_permitted} - seasonal_masses),
+            {k.mass for k in roman} <= calendar_masses,
+            sorted({k.mass for k in roman} - calendar_masses),
         )
-        self.assertEqual(198, len(seasonal_permitted))
-        self.assertEqual(211, len(permitted))
+        self.assertEqual(290, len(permitted))
+        self.assertEqual(290, len(roman))
         target_artifact = (
             "artifact.catholic-church.missale-romanum."
             "vatican-typica-1962.cmaa-facsimile-pdf"
@@ -361,7 +331,7 @@ class ProductionLedgerTests(unittest.TestCase):
                 for line in payload[start - 1 : end]
             )
             self.assertEqual(row["text_sha256"], text_sha256(projected_body))
-        self.assertEqual(644, len(nonpermitted))
+        self.assertEqual(554, len(nonpermitted))
         collated = [
             item for item in nonpermitted if item[2]["provenance_status"] == "collated"
         ]
@@ -371,6 +341,13 @@ class ProductionLedgerTests(unittest.TestCase):
             for item in collated
             if item[1].mass == "s-alberti-magni-episcopi-confessoris-ecclesiae"
         ]
+        # These three stay rights-withheld deliberately. A 2026-09-03 sanctoral
+        # lane found no public-domain witness for them, which is right for a
+        # saint canonised in 1931, but retyping them to witness-gap would have
+        # destroyed ledger rows carrying a collated-exact reading of the 1962
+        # facsimile and its Lasance 1945 evidence: a witness-gap proper owns no
+        # removed body, so its row goes with it. An absent verdict is about
+        # public-domain witnesses, not about whether an exemplar is held.
         self.assertEqual(3, len(st_albert))
         self.assertTrue(
             all(
@@ -428,7 +405,7 @@ class ProductionLedgerTests(unittest.TestCase):
         unresolved = [
             row for _, _, row in nonpermitted if row["provenance_status"] == "unresolved"
         ]
-        self.assertEqual(623, len(unresolved))
+        self.assertEqual(533, len(unresolved))
         self.assertTrue(all(row["publication_basis"] == "unresolved" for row in unresolved))
         postconciliar = [
             row for calendar, _, row in nonpermitted if calendar == "postconciliar"
