@@ -124,3 +124,51 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-21"
 source_fingerprint = "sha256:bf374774bd9a6b72a26514ac40268186b7bdacd7ba036c7e267ee15e2eb95cdb"
 context = "The checked Argumentum reports Syriac and Greek subscriptions and named patristic witnesses for Rome, the contrary Chrysostom-Baronius preference for Ephesus or another Greek city, and a Lapide's express uncertainty. It does not establish unanimity or a certain place or time."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25"
+loci = ["Psalms; chronological notices governing the sons-of-Korah composition assertion"]
+role = "context"
+states = ["cataloged", "acquired"]
+source_fingerprint = "sha256:a45edaa02c597859c21897168d5ad908a5553f79b45d2ae027503d3af827ea8b"
+context = "The generated proper chronology record carries this registered artifact as the source of the Introit's answerable composition label. Authoring reproduces the corpus label and does not independently revise the chronology."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06336a-508d2398"
+loci = ["Epistle to the Galatians; chronological notices represented in the corpus"]
+role = "context"
+states = ["cataloged", "acquired"]
+source_fingerprint = "sha256:919c514f7c0c90bc8caf2e98a45dd3bef170b448f396528491d4371cd0506ac0"
+context = "The generated proper chronology record carries this registered artifact among the sources of the Epistle's disputed composition labels. Authoring reproduces the corpus labels without choosing among them."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8"
+loci = ["St. Paul; chronological notices represented in the corpus"]
+role = "context"
+states = ["cataloged", "acquired"]
+source_fingerprint = "sha256:8cfc6ed92e4e3a2b5adfde15bf732276a529799b74311cdd8aaef65ea407f469"
+context = "The generated proper chronology record carries this registered artifact among the sources of the Epistle's disputed composition labels. Authoring reproduces the corpus labels without choosing among them."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef"
+loci = ["Gospel of St. Matthew; date and place of composition"]
+role = "context"
+states = ["cataloged", "acquired"]
+source_fingerprint = "sha256:a480e2a9f2c43852006e36dbc35e9f5002542e4c25ec662cbfb854e10e8f34ed"
+context = "The generated proper chronology record carries this registered artifact among the sources of the Gospel and Communion's disputed composition labels. Authoring reproduces the corpus labels without harmonizing them."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"
+loci = ["The New Testament; chronological notices represented in the corpus"]
+role = "context"
+states = ["cataloged", "acquired"]
+source_fingerprint = "sha256:72ff1c7fff77b396328a616ee182353295403d927a4943dea9aae7de2863a792"
+context = "The generated proper chronology record carries this registered artifact among the sources of the Gospel and Communion's disputed composition labels. Authoring reproduces the corpus labels without harmonizing them."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.super-galatas.latin-corpusthomisticum-web-2026-08-21.cgl-html-bbaaf5bd"
+loci = ["5.l6"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5f6829f4470b577188c5abaf483a4dfebfb8bccb3ae580cb8745ae983f8e699b"
+context = "The registered primary Latin controls the guide's paraphrase of spiritual fruit as grace-produced virtuous action with the sweetness proper to its good end. No restricted derivative English is reproduced."

@@ -72,7 +72,7 @@ key = "exploratory-synthesis"
 kind = "exploratory-synthesis"
 path = "sections/50-interpretive.tex"
 modes = ["research", "synthesis"]
-depends_on = ["source-grounded-synthesis"]
+depends_on = ["notable-and-quotable"]
 element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
 references = ["sections/99-references.tex"]
 
@@ -81,8 +81,8 @@ key = "notable-and-quotable"
 kind = "notable-quotable"
 path = "sections/40-notable.tex"
 modes = ["research", "synthesis"]
-depends_on = ["exploratory-synthesis"]
-element_keys = ["gospel"]
+depends_on = ["source-grounded-synthesis"]
+element_keys = ["gospel", "offertory"]
 references = ["sections/99-references.tex"]
 
 [[components]]
@@ -90,31 +90,31 @@ key = "terminal-apparatus"
 kind = "terminal-apparatus"
 path = "sections/90-scope.tex"
 modes = ["research", "synthesis"]
-depends_on = ["notable-and-quotable"]
+depends_on = ["exploratory-synthesis"]
 element_keys = []
 references = ["sections/99-references.tex"]
 
 [[relations]]
-key = "one-allegiance-one-direction"
-element_keys = ["collect", "epistle", "gospel", "communion"]
+key = "kingdom-excluded-sought-received"
+element_keys = ["introit", "epistle", "gospel", "communion", "postcommunion"]
 evidence = ["documented-reception", "source-grounded-synthesis"]
 
 [[relations]]
-key = "mediated-help-final-trust"
-element_keys = ["collect", "gradual", "gospel", "offertory"]
+key = "grace-and-commanded-action"
+element_keys = ["collect", "epistle", "gospel", "postcommunion"]
 evidence = ["documented-reception", "source-grounded-synthesis"]
 
 [[relations]]
-key = "courts-kingdom-and-altar"
-element_keys = ["introit", "alleluia", "gospel", "offertory", "postcommunion"]
+key = "mediation-beneath-final-reliance"
+element_keys = ["gradual", "gospel", "offertory"]
 evidence = ["documented-reception", "source-grounded-synthesis"]
 
 [[relations]]
-key = "spirit-bearing-and-sacramental-fruit"
-element_keys = ["epistle", "secret", "postcommunion"]
+key = "providence-against-anti-bodily-reading"
+element_keys = ["epistle", "gradual", "alleluia", "gospel", "offertory", "communion"]
 evidence = ["documented-reception", "source-grounded-synthesis"]
 
 [[relations]]
-key = "anxiety-praise-and-trust"
-element_keys = ["introit", "gradual", "alleluia", "gospel", "offertory"]
-evidence = ["textual-observation", "exploratory-proposal"]
+key = "ecclesial-sacramental-fruit"
+element_keys = ["collect", "epistle", "gospel", "offertory", "secret", "communion", "postcommunion"]
+evidence = ["documented-reception", "source-grounded-synthesis"]

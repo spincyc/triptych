@@ -18,6 +18,12 @@
 {\bottomrule\end{longtable}}
 \newcommand{\dossierprose}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash}p{0.92\linewidth}@{}}{#1}\\[0.1em]}
 \newcommand{\dossierevent}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash}p{0.92\linewidth}@{}}{\textit{#1}}\\}
+% \chronology{subject}{relation}{label} -- one assertion of the corpus.
+% The stable ids render nothing; only the source's own label is printed.
+\newcommand{\chronology}[3]{#3}
+% \chronodate{element-keys}{content} -- one dossier row's Date cell.
+% The manifest keys render nothing.
+\newcommand{\chronodate}[2]{#2}
 \ifdefined\TriptychSynthesisEdition
   \providecommand{\TriptychReferenceFont}{\footnotesize}
   \providecommand{\TriptychColophonFont}{\footnotesize}
