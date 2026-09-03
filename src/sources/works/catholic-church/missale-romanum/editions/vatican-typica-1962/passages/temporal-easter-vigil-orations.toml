@@ -1,0 +1,11 @@
+schema = 1
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-easter-vigil-orations"
+edition_id = "edition.catholic-church.missale-romanum.vatican-typica-1962"
+artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+artifact_sha256 = "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+locus = "Blessing of the New Fire at printed p. 182, no. 971; artifact PDF p. 263; Lumen Christi at printed p. 184, nos. 976, 977, 978 (sung three times); artifact PDF p. 265; Oration after the First Prophecy at printed p. 196, no. 981; artifact PDF p. 277; Oration after the Second Prophecy at printed p. 197, no. 984; artifact PDF p. 278; Oration after the Third Prophecy at printed p. 197, no. 987; artifact PDF p. 278; Oration after the Fourth Prophecy at printed p. 198, no. 990; artifact PDF p. 279; Blessing of the Baptismal Water at printed p. 200, no. 992; artifact PDF p. 281; Prayer at the Font at printed p. 208, no. 998; artifact PDF p. 289; Collect at printed p. 212, no. 1001; artifact PDF p. 293; Secret at printed p. 212, no. 1006; artifact PDF p. 293; Postcommunion at printed p. 215, no. 1011; artifact PDF p. 296 (the oration runs across the column break and resumes in the right column)"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The proper orations of easter-vigil in the controlling 1962 typical edition. This is the target transcription witness for their wording, pointing and conclusion length; it is not the rights authority for publishing them."
+verified_on = "2026-09-03"
+notes = "Read on page images rendered from the exact identified CMAA facsimile, not through its embedded text layer, which drops ornamental initials and misreads marginal numbers. An independent machine reading of the Benziger 1962 conformed printing was taken alongside; where the two parted the page image settled it, and the page image agreed with the facsimile's own layer in every recorded case. Publication rights come from a separately registered public-domain witness and from 17 U.S.C. 103(b); see src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml."

@@ -131,7 +131,7 @@ class ProductionLedgerTests(unittest.TestCase):
         )
         expected = {
             "postconciliar": (329, 4),
-            "roman-1962": (529, 5),
+            "roman-1962": (526, 5),
             "roman-pre-1955": (0, 0),
         }
         for calendar, (total, repeated) in expected.items():
@@ -141,7 +141,7 @@ class ProductionLedgerTests(unittest.TestCase):
             self.assertEqual([], problems)
             self.assertEqual(total, len(records))
             self.assertEqual(
-                {"postconciliar": 329, "roman-1962": 337}.get(calendar, 0),
+                {"postconciliar": 329, "roman-1962": 315}.get(calendar, 0),
                 sum(row.get("body_status") == "removed" for row in records.values()),
             )
             # Four duplicate-name pairs and one six-item procession are all
@@ -149,7 +149,7 @@ class ProductionLedgerTests(unittest.TestCase):
             self.assertEqual(repeated, sum(key.occurrence > 1 for key in records))
 
     def test_publication_loader_validates_production_source_metadata(self) -> None:
-        expected = {"postconciliar": 329, "roman-1962": 529, "roman-pre-1955": 529}
+        expected = {"postconciliar": 329, "roman-1962": 526, "roman-pre-1955": 526}
         for calendar, count in expected.items():
             records, problems = publication_records(CALENDARS, calendar, INVENTORIES)
             self.assertEqual([], problems)
@@ -215,8 +215,8 @@ class ProductionLedgerTests(unittest.TestCase):
             {k.mass for k in seasonal_permitted} <= seasonal_masses,
             sorted({k.mass for k in seasonal_permitted} - seasonal_masses),
         )
-        self.assertEqual(179, len(seasonal_permitted))
-        self.assertEqual(192, len(permitted))
+        self.assertEqual(198, len(seasonal_permitted))
+        self.assertEqual(211, len(permitted))
         target_artifact = (
             "artifact.catholic-church.missale-romanum."
             "vatican-typica-1962.cmaa-facsimile-pdf"
@@ -361,7 +361,7 @@ class ProductionLedgerTests(unittest.TestCase):
                 for line in payload[start - 1 : end]
             )
             self.assertEqual(row["text_sha256"], text_sha256(projected_body))
-        self.assertEqual(666, len(nonpermitted))
+        self.assertEqual(644, len(nonpermitted))
         collated = [
             item for item in nonpermitted if item[2]["provenance_status"] == "collated"
         ]
@@ -428,7 +428,7 @@ class ProductionLedgerTests(unittest.TestCase):
         unresolved = [
             row for _, _, row in nonpermitted if row["provenance_status"] == "unresolved"
         ]
-        self.assertEqual(645, len(unresolved))
+        self.assertEqual(623, len(unresolved))
         self.assertTrue(all(row["publication_basis"] == "unresolved" for row in unresolved))
         postconciliar = [
             row for calendar, _, row in nonpermitted if calendar == "postconciliar"
