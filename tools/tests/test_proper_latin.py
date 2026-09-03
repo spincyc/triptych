@@ -131,7 +131,7 @@ class ProductionLedgerTests(unittest.TestCase):
         )
         expected = {
             "postconciliar": (329, 4),
-            "roman-1962": (532, 5),
+            "roman-1962": (529, 5),
             "roman-pre-1955": (0, 0),
         }
         for calendar, (total, repeated) in expected.items():
@@ -141,7 +141,7 @@ class ProductionLedgerTests(unittest.TestCase):
             self.assertEqual([], problems)
             self.assertEqual(total, len(records))
             self.assertEqual(
-                {"postconciliar": 329, "roman-1962": 516}.get(calendar, 0),
+                {"postconciliar": 329, "roman-1962": 363}.get(calendar, 0),
                 sum(row.get("body_status") == "removed" for row in records.values()),
             )
             # Four duplicate-name pairs and one six-item procession are all
@@ -149,7 +149,7 @@ class ProductionLedgerTests(unittest.TestCase):
             self.assertEqual(repeated, sum(key.occurrence > 1 for key in records))
 
     def test_publication_loader_validates_production_source_metadata(self) -> None:
-        expected = {"postconciliar": 329, "roman-1962": 532, "roman-pre-1955": 532}
+        expected = {"postconciliar": 329, "roman-1962": 529, "roman-pre-1955": 529}
         for calendar, count in expected.items():
             records, problems = publication_records(CALENDARS, calendar, INVENTORIES)
             self.assertEqual([], problems)
@@ -191,23 +191,32 @@ class ProductionLedgerTests(unittest.TestCase):
                 occurrence=1,
             )
             for proper in ("Collect", "Secret", "Postcommunion")
-        } | {
-            # The first seasonal orations to travel on 17 U.S.C. 103(b) plus a
-            # public-domain witness.  The 1962 readings were established on that
-            # edition's own page images at 500 dpi and corroborated word for word
-            # in the tracked public-domain 1862 Pustet, passage
-            # post-pentecosten-14-orations, printed pp. 337-338.  Every other
-            # seasonal oration is still a removed body: see
-            # guidance/propers-for-agents.md, "The 1962 Latin: what you may
-            # publish, and on what basis".
-            LatinKey("pentecost-14", "", proper, occurrence=1)
-            for proper in ("Collect", "Secret", "Postcommunion")
         }
-        self.assertEqual(
-            expected_permitted,
-            {key for calendar, key, _ in permitted if calendar == "roman-1962"},
+        roman = {key for calendar, key, _ in permitted if calendar == "roman-1962"}
+        # The sanctoral recoveries stay pinned key by key: nothing may join them
+        # without an explicit edit here.
+        self.assertEqual(expected_permitted, {k for k in roman if k.mass.startswith("s-")})
+        # The seasonal orations travel on 17 U.S.C. 103(b) plus a public-domain
+        # witness, established page by page against the tracked 1862 Pustet in
+        # the 2026-09-03 backfill.  They are guarded structurally rather than key
+        # by key -- there are too many to list, and the shape is the real
+        # invariant: every one belongs to the seasonal section of the 1962
+        # calendar, and the count moves only by a visible edit to this number.
+        # See guidance/propers-for-agents.md, "The 1962 Latin: what you may
+        # publish, and on what basis".
+        seasonal_masses = {
+            mass["key"]
+            for mass in yaml.safe_load(
+                (CALENDARS / "roman-1962/propers.yaml").read_text(encoding="utf-8")
+            )["sections"]["seasonal"]["masses"]
+        }
+        seasonal_permitted = {k for k in roman if not k.mass.startswith("s-")}
+        self.assertTrue(
+            {k.mass for k in seasonal_permitted} <= seasonal_masses,
+            sorted({k.mass for k in seasonal_permitted} - seasonal_masses),
         )
-        self.assertEqual(16, len(permitted))
+        self.assertEqual(153, len(seasonal_permitted))
+        self.assertEqual(166, len(permitted))
         target_artifact = (
             "artifact.catholic-church.missale-romanum."
             "vatican-typica-1962.cmaa-facsimile-pdf"
@@ -289,10 +298,20 @@ class ProductionLedgerTests(unittest.TestCase):
                 self.assertTrue(row["transformations"])
                 self.assertEqual("public-domain", row["publication_basis"])
                 self.assertEqual(set(SURFACES), set(row["surfaces"]))
-                self.assertEqual(
-                    [spec["artifact_id"], spec["publication_source_id"]],
-                    row["publication_source_ids"],
+                # The 2026-09-03 edition carries one projection artifact per
+                # backfill lane, so a row names an artifact *of* that edition
+                # rather than one fixed id; the public-domain witness beside it
+                # is still pinned exactly.
+                ids = row["publication_source_ids"]
+                self.assertEqual(2, len(ids), ids)
+                self.assertTrue(
+                    ids[0].startswith(
+                        "artifact.triptych.roman-1962-latin-proper-editorial-"
+                        f"projection.{edition}."
+                    ),
+                    ids[0],
                 )
+                self.assertEqual(spec["publication_source_id"], ids[1])
                 # Sanctoral recoveries came first; the seasonal ones name a
                 # temporal- passage of the same target edition.
                 self.assertTrue(
@@ -319,12 +338,17 @@ class ProductionLedgerTests(unittest.TestCase):
         }
         for edition, spec in projection_specs.items():
             with self.subTest(edition=edition):
-                artifact = artifacts[spec["artifact_id"]]
-                self.assertEqual("project-created", artifact["rights_status"])
-                self.assertTrue(artifact["transformation"].strip())
-                self.assertEqual(
-                    spec["projected_from"], set(artifact["projected_from"])
-                )
+                # An edition may carry several projection artifacts -- the
+                # 2026-09-03 backfill emits one per lane -- and every one of
+                # them must stand on the same two witnesses.
+                own = [a for i, a in artifacts.items() if f".{edition}." in i]
+                self.assertTrue(own, edition)
+                for artifact in own:
+                    self.assertEqual("project-created", artifact["rights_status"])
+                    self.assertTrue(artifact["transformation"].strip())
+                    self.assertEqual(
+                        spec["projected_from"], set(artifact["projected_from"])
+                    )
         for _, _, row in permitted:
             passage = passages[row["source_id"]]
             artifact = artifacts[passage["artifact_id"]]
@@ -337,7 +361,7 @@ class ProductionLedgerTests(unittest.TestCase):
                 for line in payload[start - 1 : end]
             )
             self.assertEqual(row["text_sha256"], text_sha256(projected_body))
-        self.assertEqual(845, len(nonpermitted))
+        self.assertEqual(692, len(nonpermitted))
         collated = [
             item for item in nonpermitted if item[2]["provenance_status"] == "collated"
         ]
@@ -404,7 +428,7 @@ class ProductionLedgerTests(unittest.TestCase):
         unresolved = [
             row for _, _, row in nonpermitted if row["provenance_status"] == "unresolved"
         ]
-        self.assertEqual(824, len(unresolved))
+        self.assertEqual(671, len(unresolved))
         self.assertTrue(all(row["publication_basis"] == "unresolved" for row in unresolved))
         postconciliar = [
             row for calendar, _, row in nonpermitted if calendar == "postconciliar"

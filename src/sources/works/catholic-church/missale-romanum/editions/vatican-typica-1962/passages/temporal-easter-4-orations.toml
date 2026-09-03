@@ -1,0 +1,11 @@
+schema = 1
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-easter-4-orations"
+edition_id = "edition.catholic-church.missale-romanum.vatican-typica-1962"
+artifact_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+artifact_sha256 = "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+locus = "Collect at printed pp. 345-346, no. 1244; artifact PDF p. 426 (the prayer begins at the foot of the left column and ends at the head of the right column of the same page); Secret at printed p. 346, no. 1249; artifact PDF p. 427; Postcommunion at printed p. 346, no. 1251; artifact PDF p. 427"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "The proper orations of easter-4 in the controlling 1962 typical edition. This is the target transcription witness for their wording, pointing and conclusion length; it is not the rights authority for publishing them."
+verified_on = "2026-09-03"
+notes = "Read on page images rendered from the exact identified CMAA facsimile, not through its embedded text layer, which drops ornamental initials and misreads marginal numbers. An independent machine reading of the Benziger 1962 conformed printing was taken alongside; where the two parted the page image settled it, and the page image agreed with the facsimile's own layer in every recorded case. Publication rights come from a separately registered public-domain witness and from 17 U.S.C. 103(b); see src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml."
