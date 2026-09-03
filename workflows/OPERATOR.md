@@ -387,6 +387,15 @@ Finding IDs must be stable across iterations. Use `CON-` prefix for content
 evaluation and `VIS-` for visual evaluation; `research-synthesis` is an
 evaluator too and has its own prefix, below.
 
+Every evaluator packet carries `PREVIOUS_FINDINGS`. It is the run-lifetime
+registry of ids this evaluator has already spent, including resolved findings;
+on a fan-out evaluator each lane packet carries only that lane's entries. This
+is identity context, not a repair request, so it remains separate from
+`PRIOR_FINDINGS` and survives the reviser and gate between evaluations. `tpt`
+refuses a reused id if its lane, problem, or required result has changed. A
+location or repair owner may move without changing the defect; owner movement
+is recorded separately for the version 23 repeat-accounting rule.
+
 `content-evaluation` also names who repairs each defect. Every blocking finding
 it returns carries `repair_target`, validated against
 `workflows/schema/content-evaluation-result.json`, and it names one of three
@@ -465,11 +474,11 @@ uncertainty, an authoritative witness that cannot be obtained, corruption.
 first sweep is not that, and asking for what no lane can supply is not
 `CHANGES_REQUIRED`.
 
-The retry loop is bounded by this stage's own `max_iterations`, counted
-consecutively: two retries are granted, and the third `CHANGES_REQUIRED` in a
-row from this stage blocks the run, which `advance` reports as `iteration limit
-exceeded for research-synthesis: 3/3 consecutive failures`. A `PASS` resets the
-count. The budget is this stage's alone: `content-evaluation` has its own, and
+The retry loop is bounded by this stage's own `max_iterations`, which charges
+the first failure of a streak and a later failure that repeats a still-standing
+id. A failure naming only new work does not spend that repeat budget, but six
+consecutive failures reach the default absolute ceiling. A `PASS` resets both
+counts. The budget is this stage's alone: `content-evaluation` has its own, and
 a run that evaluator sends back to `research` spends nothing here.
 
 ### Gate stages
@@ -546,11 +555,11 @@ workflow state, and prior structured results, `tpt` emits the same next
 guidance packet byte-for-byte. The packet SHA-256 is recorded in the run
 state and can be verified with `replay`.
 
-No timestamps, run IDs, or filesystem paths appear in the hashed packet
-material. Only the workflow source (definition, fragments, schemas), the
-repository commit, the stage, the iteration, the stage's execution policy and
-lane identity, the normalized arguments, and the forwarded findings determine
-the packet bytes.
+No timestamps or filesystem paths appear in the hashed packet material. Only
+the workflow source (definition, fragments, schemas), the repository commit,
+the derived run id, the stage, the iteration, the stage's execution policy and
+lane identity, the normalized arguments, the forwarded findings, and an
+evaluator's recorded finding-id history determine the packet bytes.
 
 Nothing about how your host scheduled a fan-out stage reaches those bytes: no
 worker process id, launch or completion timestamp, scheduler slot, or
@@ -804,7 +813,31 @@ whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
-The `proper` workflow is at version 24. Version 24 closes the structural-label
+The `proper` workflow is at version 25. Version 25 binds evaluator finding ids
+to one defect for the life of a run without undoing version 23's multi-owner
+repair routing. Every evaluator packet carries `PREVIOUS_FINDINGS`, derived
+from that evaluator's complete recorded history; a fan-out lane sees only its
+own lane's history. The engine refuses an old id if its lane, problem, or
+required result changed, while allowing its location or `repair_target` to
+move. Owner movement remains separate repeat-accounting state, so a defect
+that progresses from research to brief or authoring is not charged as an
+unrepaired repeat. A genuinely changed problem or required result takes a new
+id, and a compound evidence-and-prose defect is split rather than renamed in
+place.
+
+Version 25 also restores the passage-by-passage reception sufficiency check:
+every appointed Scripture or material adaptation has either a checked
+medieval, Doctoral, or later saintly witness with work and locus, or a bounded
+negative naming the later corpora, languages, and loci searched. Patristic
+material alone does not fill that field. `research-synthesis` returns a
+targeted `SYN-` finding to `patristic-reception` instead of filling the row
+from memory or passing a brief that cannot support the profile.
+
+Because `proper-finish` compiles the same common agent and result fragments,
+it is version 3. A run seeded against `proper` version 24 or earlier, or
+`proper-finish` version 2 or earlier, fails closed; seed it again.
+
+The `proper` workflow was at version 24. Version 24 closes the structural-label
 gap in the reader-first and declarative-discipline contracts. A thesis may
 open a thematic section directly as prose, but a reader-facing `Governing
 thesis`, `Thesis`, `Key takeaway`, `Argument map`, or `Reading order` heading,
@@ -825,7 +858,7 @@ the check by carrying an older version in the leaf. Historical publications
 remain out of scope until substantive revision. A run seeded against `proper`
 version 23 or earlier or `proper-finish` version 1 fails closed; seed it again.
 
-The `proper-finish` workflow is at version 2. Version 1 remains the historical
+The `proper-finish` workflow was at version 2. Version 1 remains the historical
 authoring-to-publication rescue contract; version 2 changes no topology or
 repair ownership, but adopts the same authoring fragment, structural preflight,
 profile evaluator, and fail-closed version interlock as `proper` v24.

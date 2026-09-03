@@ -316,3 +316,13 @@ different ids has found different work and costs the run nothing but its place
 against the absolute ceiling. So reuse an id for the same unrepaired defect,
 never for a different one, and never mint a new id for a defect you are
 restating.
+
+Read `PREVIOUS_FINDINGS` before numbering. It contains every id your lane has
+already used in this run, including findings repaired since then and findings
+from an iteration your lane passed after. Re-raise an id only when its lane,
+problem, and required result are unchanged. Its repair owner may move when one
+phase has supplied the evidence and another now owns the remaining repair; the
+engine accounts for that movement separately. The engine refuses a changed
+identity; assign the next unused id to genuinely new work, and split a compound
+evidence-and-prose defect into separate ids rather than changing what one id
+means.

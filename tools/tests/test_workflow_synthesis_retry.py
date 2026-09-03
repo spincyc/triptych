@@ -51,8 +51,9 @@ REG = "source-registration"
 SYNTHESIS = "research-synthesis"
 RESEARCH = "research"
 
-# `max_iterations` counts consecutive CHANGES_REQUIRED and blocks when the
-# count reaches it, so a limit of 3 grants two retries and refuses the third.
+# `max_iterations` charges the first CHANGES_REQUIRED of a streak and any
+# later one that repeats a standing id, so a limit of 3 grants two retries to
+# an unchanged deficiency and refuses its third report.
 RETRY_LIMIT = 3
 RETRIES_GRANTED = RETRY_LIMIT - 1
 
@@ -250,13 +251,22 @@ class RetryLoopTests(RetryCase):
         self.assertEqual(out["stage"], SYNTHESIS, "the loop closes")
 
         # The second synthesis packet is a fresh seven-lane join, not a diff:
-        # the lanes' own findings, and none of the request that sent them back.
+        # the request that sent the lanes back is no longer an instruction,
+        # but it remains in the separate run-lifetime identity history.
         packet = Path(out["packet_abs_path"]).read_text(encoding="utf-8")
         rejoined = self.forwarded(packet)
         self.assertEqual([f["lane"] for f in rejoined], RESEARCH_LANES)
-        self.assertNotIn("SYN-001", packet,
-                         "the request is answered by the resweep, not "
-                         "carried alongside it")
+        self.assertNotIn("SYN-001", json.dumps(rejoined),
+                         "the request is answered by the resweep, not carried "
+                         "alongside it as current research")
+        previous_line = next(
+            line for line in packet.splitlines()
+            if line.startswith("PREVIOUS_FINDINGS: ")
+        )
+        previous = json.loads(
+            previous_line[len("PREVIOUS_FINDINGS: "):]
+        )
+        self.assertEqual([finding["id"] for finding in previous], ["SYN-001"])
 
         out = self.engine.advance(
             run_id, result_path=self.synthesis(run_id, PASS))

@@ -19,8 +19,11 @@ all of that.
    no owner then because a different owner was repaired first. They still
    stand and they are addressed to you. Treat them exactly as PRIOR_FINDINGS,
    and say in your summary what you did with each.
-5. If you are an evaluator, return structured findings with stable IDs. Do
-   not rediscover what mechanical gates already checked.
+5. If you are an evaluator, return structured findings with stable IDs. Your
+   packet's PREVIOUS_FINDINGS header is the run-lifetime identity history for
+   this evaluator; in a lane packet it contains only that lane's history. Use
+   it before assigning an id. Do not rediscover what mechanical gates already
+   checked.
 6. Your prose, layout, and scholarly choices may vary. The guidance sequence
    itself is deterministic; your output is not required to be.
 7. Preserve the existing repository model: the canonical proper leaf owns the

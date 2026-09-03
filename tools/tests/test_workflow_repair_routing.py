@@ -236,6 +236,21 @@ class PureSynthesisTests(RoutingCase):
         self.assertEqual(self.engine.load_state(run_id)["disposition"],
                          BLOCKED)
 
+    def test_synthesis_refuses_a_row_with_no_later_reception_or_negative(self):
+        text = (FRAGMENTS / "propers" / f"{SYNTHESIS}.md").read_text(
+            encoding="utf-8")
+        flat = " ".join(text.split())
+        for phrase in (
+            "Every distinct appointed passage or material scriptural "
+            "adaptation",
+            "medieval, Doctoral, or later saintly witness",
+            "documented bounded negative",
+            "Patristic material alone does not satisfy this field",
+            "`location` is `patristic-reception`",
+        ):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, flat)
+
 
 # ---------------------------------------------------------------------------
 # 15-23. Repair ownership and routing
@@ -486,11 +501,20 @@ class RepairOwnershipTests(RoutingCase):
             "the research correction path is fixed by the workflow, and from "
             "v22 it passes through registration on its way back")
 
-        # Test 23: the second evaluation starts clean. Nothing carries the
-        # first one's findings across, and no controller composed a summary.
+        # Test 23: the second evaluation gets no repair instruction. Its
+        # separate identity history does carry the first finding, so a fresh
+        # lane cannot recycle that id for unrelated work.
         packet = Path(out["packet_abs_path"]).read_text(encoding="utf-8")
         self.assertIn("PRIOR_FINDINGS: []", packet)
-        self.assertNotIn("CON-EVI-001", packet)
+        previous_line = next(
+            line for line in packet.splitlines()
+            if line.startswith("PREVIOUS_FINDINGS: ")
+        )
+        previous = json.loads(
+            previous_line[len("PREVIOUS_FINDINGS: "):]
+        )
+        self.assertEqual([finding["id"] for finding in previous],
+                         ["CON-EVI-001"])
         state = self.engine.load_state(run_id)
         self.assertEqual(state["stage_iterations"]["content-evaluation"], 2)
         self.assertEqual(state["stage_iterations"][RESEARCH], 2)

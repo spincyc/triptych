@@ -127,6 +127,27 @@ same issue every time it appears). Use the prefix your own stage fragment
 gives you; `CON-` for content evaluation and `VIS-` for visual evaluation are
 two of them, and a stage that names another means it.
 
+Stability binds both ways. An id belongs to one defect for the life of the
+run, so a defect you have not raised before takes the next unused number and
+never a number already spent on a different one. The engine cannot read your
+prose semantically to decide that two differently stated defects are really
+the same, so a stage's budget remains a count of repeated ids rather than a
+comparison invented by the engine. Recycling an id would spend a failure the
+run did not earn, and enough of them would block a run that was converging.
+
+Every evaluator packet carries `PREVIOUS_FINDINGS`, the distinct finding ids
+this evaluator has already used during the run. A fan-out lane packet carries
+only that lane's previous findings; the parent packet carries the union. Read
+the header before assigning a number. The engine also enforces the identity:
+if an old id returns with a different lane, problem, or required result, the
+engine refuses the submission without advancing the run. A moved location is
+permitted, because repairing or repaginating the artifact can move the same
+defect without changing what it is. A moved repair owner is permitted too:
+one defect can progress from research to brief or authoring, and the engine
+tracks that owner movement separately so it is not charged as an unrepaired
+repeat. If the work actually contains two defects with different problems or
+required results, split them and give each its own id.
+
 Only `blocking` severity findings trigger revision. `advisory` findings are
 recorded but do not block.
 

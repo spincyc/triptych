@@ -195,6 +195,12 @@ state.
      findings into its successor's packet, and empty otherwise — serialized as
      sorted JSON on one line. A fan-out successor carries the same line on
      every one of its lane packets.
+   - `PREVIOUS_FINDINGS`: on evaluator packets only, every distinct finding
+     id that evaluator has already used during this run. The parent packet
+     carries the full stage history; each lane packet carries only that lane's
+     history. It is separate from `PRIOR_FINDINGS` because identity context is
+     not a repair instruction and survives intervening revision and gate
+     stages.
 4. **Assemble**: join header and fragments with a fixed separator.
 5. **Encode**: UTF-8, no BOM, LF line endings.
 6. **Hash**: SHA-256 of the exact bytes.
@@ -247,7 +253,7 @@ A run records the digest at seed time, in both the manifest and the state, and
 every `advance` and `replay` recomputes it. If the workflow source has changed
 since the run was seeded, the run fails closed rather than continuing under
 guidance it never started with. A changed workflow means a new run. The
-`proper` workflow is at version 24: version 10 gave `content-evaluation` a
+`proper` workflow is at version 25: version 10 gave `content-evaluation` a
 third repair owner and inserted the `content-preflight` gate between
 `author-proper` and `content-evaluation`, version 11 made the iteration
 budget charge repetition rather than failure, carried a blocking finding to its
@@ -335,6 +341,17 @@ substantive revision binds them to one of those versions. A run seeded against
 `proper` version 23 or earlier, or `proper-finish` version 1, fails closed and
 is seeded again.
 
+Version 25 gives every evaluator packet its run-lifetime `PREVIOUS_FINDINGS`
+history and makes stable identity enforceable: one id remains bound to its
+lane, problem, and required result. Location and repair owner may move; the
+version 23 `stage_blocking_targets` history remains the separate authority for
+whether an owner change spends a repeat. The same version restores the
+research-synthesis check that every appointed Scripture or material adaptation
+has either checked later reception or a corpus-, language-, and locus-bounded
+negative. `proper-finish` is version 3 because it compiles the changed common
+packet/result fragments. Runs seeded against `proper` v24 or earlier or
+`proper-finish` v2 or earlier fail closed and are seeded again.
+
 `workflows/OPERATOR.md` carries the version history in full.
 
 ### Iteration budgets
@@ -361,6 +378,16 @@ the stage passes. All three live in the run state (`stage_failures`,
 `stage_repeats`, `stage_blocking_ids`) and the run audit replays them through
 the engine's own function rather than recomputing them, because two
 implementations of one rule are two rules.
+
+The repeat counter's standing set is not the finding-identity registry. A pass
+resets the former because a later failure starts a new convergence streak; it
+does not free an id for another defect. For evaluator findings, `tpt` derives
+the run-lifetime registry from recorded results and refuses a reused id if its
+`lane`, `problem`, or `required_result` differs. `location` and
+`repair_target` may move without changing identity; target movement is assessed
+separately through `stage_blocking_targets`. The same derived history is emitted
+as `PREVIOUS_FINDINGS`, lane-filtered on lane packets, so a fresh worker can
+choose the next unused id before the engine has to reject it.
 
 ### Repair ownership and carried findings
 
@@ -428,6 +455,7 @@ The hash DOES cover:
 - normalized arguments
 - forwarded findings, for a revision packet and for the successor of a linear
   fan-out stage
+- evaluator finding-id history, emitted as `PREVIOUS_FINDINGS`
 - all fragment contents in declared order, with arguments substituted
 
 Gate findings quote what a check printed, so that output is hashed guidance.

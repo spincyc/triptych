@@ -1139,6 +1139,7 @@ class WorkflowEngine:
             "stage_blocking_ids": {}, "stage_blocking_targets": {},
             "escalations": [],
         }
+        finding_identities: dict[str, dict[str, dict[str, Any]]] = {}
         for index, (result, transition) in enumerate(zip(results, transitions)):
             packet = packets[index]
             if not isinstance(result, dict) or not isinstance(transition, dict) \
@@ -1183,6 +1184,11 @@ class WorkflowEngine:
                 body, self.load_schema(self.schema_name_for(stage)),
                 stage["type"],
             )
+            if stage["type"] == EVALUATOR:
+                _record_finding_identities(
+                    stage["id"], body,
+                    finding_identities.setdefault(stage["id"], {}),
+                )
             self._record_escalations(
                 audit_state, stage, body, packet["iteration"]
             )
@@ -1352,6 +1358,11 @@ class WorkflowEngine:
                     f"stage {stage['id']} requires --result <path>"
                 )
             result = self._load_and_validate_result(result_path, stage, state)
+
+        if stage["type"] == EVALUATOR:
+            self._validate_evaluator_finding_identities(
+                run_id, state, stage, result
+            )
 
         # Everything below builds a candidate successor against a copy of the
         # state. Nothing durable changes until it is complete.
@@ -1815,6 +1826,16 @@ class WorkflowEngine:
             )
         else:
             header_lines.append("PRIOR_FINDINGS: []")
+
+        if stage["type"] == EVALUATOR:
+            previous_findings = self._previous_evaluator_findings(
+                state, stage, lane["id"] if lane is not None else None
+            )
+            header_lines.append(
+                "PREVIOUS_FINDINGS: " + json.dumps(
+                    previous_findings, sort_keys=True, separators=(",", ":")
+                )
+            )
 
         # Two fields, because they are two different things and a worker acts
         # on them differently. PRIOR_FINDINGS came from the transition that
@@ -2787,6 +2808,66 @@ class WorkflowEngine:
             )
         return json.loads(recorded.decode("utf-8"))
 
+    def _previous_evaluator_findings(
+        self,
+        state: dict[str, Any],
+        stage: dict[str, Any],
+        lane: str | None,
+    ) -> list[dict[str, Any]]:
+        """Return this evaluator's run-lifetime finding-id history.
+
+        `PRIOR_FINDINGS` belongs to the transition that emitted a packet. An
+        evaluator normally re-enters through a revision and a gate, so that
+        header is correctly empty just where a fresh lane needs its own old
+        ids in order not to recycle one. `PREVIOUS_FINDINGS` is different:
+        every id this evaluator has used in the run remains visible even
+        after the defect was repaired or the evaluator passed.
+
+        The parent packet receives the whole evaluator history. A lane packet
+        receives only findings that lane raised, which gives a fresh worker
+        the numbering context it owns without asking it to judge a sibling's
+        criteria. Repeated statements of one identity occupy one slot; the
+        latest copy is carried so a moved location is not left stale.
+        """
+        if stage["type"] != EVALUATOR:
+            return []
+        order: list[str] = []
+        findings: dict[str, dict[str, Any]] = {}
+        identities: dict[str, dict[str, Any]] = {}
+        for entry in state.get("result_hashes") or []:
+            if entry.get("stage") != stage["id"]:
+                continue
+            result = self._read_recorded_result(
+                state["run_id"], entry, stage["id"]
+            )
+            _record_finding_identities(stage["id"], result, identities)
+            for finding in result.get("findings", []) or []:
+                if lane is not None and finding.get("lane") != lane:
+                    continue
+                finding_id = str(finding.get("id", "(unidentified)"))
+                if finding_id not in findings:
+                    order.append(finding_id)
+                findings[finding_id] = finding
+        return [findings[finding_id] for finding_id in order]
+
+    def _validate_evaluator_finding_identities(
+        self,
+        run_id: str,
+        state: dict[str, Any],
+        stage: dict[str, Any],
+        result: dict[str, Any],
+    ) -> None:
+        """Refuse an old finding id attached to a different defect."""
+        identities: dict[str, dict[str, Any]] = {}
+        for entry in state.get("result_hashes") or []:
+            if entry.get("stage") != stage["id"]:
+                continue
+            previous = self._read_recorded_result(
+                run_id, entry, stage["id"]
+            )
+            _record_finding_identities(stage["id"], previous, identities)
+        _record_finding_identities(stage["id"], result, identities)
+
     # --- Internal: gates ---
 
     def _run_gate(
@@ -3501,6 +3582,53 @@ def _blocking_targets(result: dict[str, Any]) -> dict[str, str]:
             continue
         targets[str(finding.get("id", "(unidentified)"))] = str(target)
     return targets
+
+
+_FINDING_IDENTITY_FIELDS = (
+    "lane", "problem", "required_result",
+)
+
+
+def _record_finding_identities(
+    stage_id: str,
+    result: dict[str, Any],
+    identities: dict[str, dict[str, Any]],
+) -> None:
+    """Add finding identities to a run-lifetime registry, refusing reuse.
+
+    The repetition budget deliberately compares ids rather than prose. That is
+    sound only while an evaluator cannot attach an old id to a new defect.
+    Lane, problem, and required result are the defect identity. Location may
+    move as pagination or source layout changes, and the repair owner may move
+    as a multi-phase defect progresses, without turning an otherwise unchanged
+    defect into new work. Owner history is tracked separately by the repeat
+    budget.
+    """
+    for finding in result.get("findings", []) or []:
+        finding_id = str(finding.get("id", "(unidentified)"))
+        identity = {
+            field: finding.get(field) for field in _FINDING_IDENTITY_FIELDS
+        }
+        previous = identities.get(finding_id)
+        if previous is None:
+            identities[finding_id] = identity
+            continue
+        changed = [
+            field for field in _FINDING_IDENTITY_FIELDS
+            if previous[field] != identity[field]
+        ]
+        if not changed:
+            continue
+        details = "; ".join(
+            f"{field} was {previous[field]!r}, now {identity[field]!r}"
+            for field in changed
+        )
+        raise WorkflowError(
+            f"evaluator {stage_id} reused finding id {finding_id!r} for a "
+            f"different defect: {details}. Use a new finding id; an id is "
+            f"bound to one lane, problem, and required result "
+            f"for the life of the run."
+        )
 
 
 def _repair_route(

@@ -44,6 +44,7 @@ from _workflow import (  # noqa: E402
     REPAIRS,
     WorkflowEngine,
     WorkflowError,
+    _record_finding_identities,
     _validate_workflow,
 )
 from test_workflow_repair_routing import (  # noqa: E402
@@ -187,8 +188,8 @@ class CarriedFindingTests(SynthesisToAuthorMixin, RoutingCase):
             self.ids_at(run_id, "CARRIED_FINDINGS"), [],
             "a gate owns no repair target, so nothing is carried to it")
 
-    def test_the_fresh_evaluation_still_starts_clean(self):
-        """Carrying findings forward must not leak into the evaluator."""
+    def test_the_fresh_evaluation_receives_each_lane_s_id_history(self):
+        """A fresh worker is not a worker with no numbering context."""
         run_id = self.drive_the_b68_shape()
         self.pass_synthesis_to_author(run_id)
         self.engine.advance(
@@ -198,8 +199,29 @@ class CarriedFindingTests(SynthesisToAuthorMixin, RoutingCase):
                          EVALUATION)
         self.assertEqual(self.ids_at(run_id, "PRIOR_FINDINGS"), [])
         self.assertEqual(
+            self.ids_at(run_id, "PREVIOUS_FINDINGS"),
+            ["CON-CIT-016", "CON-EVI-001", "CON-EVI-002", "CON-SYN-001"],
+            "the parent evaluator packet records every id already spent")
+        self.assertEqual(
             self.ids_at(run_id, "CARRIED_FINDINGS"), [],
             "an evaluator repairs nothing, so it is told nothing")
+
+        packet = self.engine.load_state(run_id)["packet_hashes"][-1]
+        lane_history = {}
+        for lane in packet["lanes"]:
+            text = (ROOT / lane["path"]).read_text(encoding="utf-8")
+            lane_history[lane["lane"]] = sorted(
+                finding["id"]
+                for finding in headers(text, "PREVIOUS_FINDINGS")
+            )
+        self.assertEqual(lane_history, {
+            "evidence-discipline": ["CON-EVI-001", "CON-EVI-002"],
+            "reception-sweep": [],
+            "synthesis-argument": ["CON-SYN-001"],
+            "citation-integrity": ["CON-CIT-016"],
+            "profile-conformance": [],
+        })
+        self.assertTrue(self.engine.replay(run_id)["deterministic"])
 
     def test_a_later_evaluation_supersedes_an_earlier_one_entirely(self):
         """Only the most recent result of an evaluator can still be owed."""
@@ -712,6 +734,254 @@ class CarriedFindingFragmentTests(unittest.TestCase):
         self.assertIn("reuse an id for the same unrepaired defect", text)
 
 
+class FindingIdentityEnforcementTests(RoutingCase):
+    """The engine, not only a sentence in the packet, binds an id."""
+
+    FINDING_ID = "CON-EVI-001"
+
+    def reach_second_evaluation(self) -> str:
+        run_id = self.drive_to(EVALUATION)
+        self.engine.advance(
+            run_id,
+            lane_results=self.content_submissions(run_id, {
+                "evidence-discipline": [blocking(
+                    self.FINDING_ID, AUTHORING, "the original defect"
+                )],
+            }),
+        )
+        self.engine.advance(
+            run_id, result_path=self.worker_pass(run_id, REVISION)
+        )
+        self.engine.advance(run_id, run_gate=True)
+        self.assertEqual(
+            self.engine.load_state(run_id)["current_stage"], EVALUATION
+        )
+        return run_id
+
+    def assert_reuse_refused(self, run_id: str, lane: str,
+                             finding: dict, changed: str) -> None:
+        submissions = self.content_submissions(run_id, {lane: [finding]})
+        before = self.authoritative(run_id)
+        replay_before = self.engine.replay(run_id)
+        with self.assertRaises(WorkflowError) as caught:
+            self.engine.advance(run_id, lane_results=submissions)
+        message = str(caught.exception)
+        self.assertIn(f"reused finding id {self.FINDING_ID!r}", message)
+        self.assertIn(changed, message)
+        self.assertEqual(self.authoritative(run_id), before)
+        self.assertEqual(self.engine.replay(run_id), replay_before)
+
+    def test_changed_problem_is_refused(self):
+        run_id = self.reach_second_evaluation()
+        self.assert_reuse_refused(
+            run_id, "evidence-discipline",
+            blocking(self.FINDING_ID, AUTHORING, "a different defect"),
+            "problem was",
+        )
+
+    def test_changed_required_result_is_refused(self):
+        run_id = self.reach_second_evaluation()
+        finding = blocking(
+            self.FINDING_ID, AUTHORING, "the original defect"
+        )
+        finding["required_result"] = "make a different repair"
+        self.assert_reuse_refused(
+            run_id, "evidence-discipline", finding, "required_result was"
+        )
+
+    def test_changed_repair_owner_is_admitted_without_repeat_charge(self):
+        run_id = self.reach_second_evaluation()
+        out = self.engine.advance(
+            run_id,
+            lane_results=self.content_submissions(run_id, {
+                "evidence-discipline": [blocking(
+                    self.FINDING_ID, BRIEF, "the original defect"
+                )],
+            }),
+        )
+        self.assertEqual(out["stage"], SYNTHESIS)
+        state = self.engine.load_state(run_id)
+        self.assertEqual(state["stage_repeats"][EVALUATION], 1)
+
+    def test_changed_lane_is_refused(self):
+        run_id = self.reach_second_evaluation()
+        self.assert_reuse_refused(
+            run_id, "reception-sweep",
+            blocking(self.FINDING_ID, AUTHORING, "the original defect"),
+            "lane was",
+        )
+
+    def test_identical_restatement_is_still_admitted(self):
+        run_id = self.reach_second_evaluation()
+        out = self.engine.advance(
+            run_id,
+            lane_results=self.content_submissions(run_id, {
+                "evidence-discipline": [blocking(
+                    self.FINDING_ID, AUTHORING, "the original defect"
+                )],
+            }),
+        )
+        self.assertEqual(out["stage"], REVISION)
+        state = self.engine.load_state(run_id)
+        self.assertEqual(state["stage_repeats"][EVALUATION], 2)
+
+    def test_four_distinct_reception_defects_reach_the_research_route(self):
+        """The proper-54 history continues when each defect gets a new id."""
+        run_id = self.drive_to(EVALUATION)
+        rounds = (
+            ("CON-REC-001", "missing Communion bounded negative"),
+            ("CON-REC-002", "omitted Honorius and Anthony disagreement"),
+            ("CON-EVI-001", "another lane fails while reception passes"),
+            ("CON-REC-003", "Achimelech and Achis are misattributed"),
+        )
+        for finding_id, problem in rounds:
+            lane = (
+                "evidence-discipline" if finding_id.startswith("CON-EVI-")
+                else "reception-sweep"
+            )
+            out = self.engine.advance(
+                run_id,
+                lane_results=self.content_submissions(run_id, {
+                    lane: [blocking(finding_id, AUTHORING, problem)],
+                }),
+            )
+            self.assertEqual(out["stage"], REVISION)
+            self.engine.advance(
+                run_id, result_path=self.worker_pass(run_id, REVISION)
+            )
+            self.engine.advance(run_id, run_gate=True)
+
+        out = self.engine.advance(
+            run_id,
+            lane_results=self.content_submissions(run_id, {
+                "reception-sweep": [blocking(
+                    "CON-REC-004", RESEARCH,
+                    "Psalms 83 and 94 have no later reception or bounded "
+                    "negative",
+                )],
+            }),
+        )
+        self.assertEqual(out["stage"], RESEARCH)
+        self.assertIsNone(out["disposition"])
+        state = self.engine.load_state(run_id)
+        self.assertEqual(state["stage_failures"][EVALUATION], 5)
+        self.assertEqual(
+            state["stage_repeats"][EVALUATION], 1,
+            "only the first failure is charged; every later id is new work",
+        )
+
+    def test_a_collision_between_lanes_is_refused_on_the_first_iteration(self):
+        run_id = self.drive_to(EVALUATION)
+        same = blocking(self.FINDING_ID, AUTHORING, "the same words")
+        submissions = self.content_submissions(run_id, {
+            "evidence-discipline": [same],
+            "reception-sweep": [same],
+        })
+        with self.assertRaises(WorkflowError) as caught:
+            self.engine.advance(run_id, lane_results=submissions)
+        self.assertIn("lane was", str(caught.exception))
+
+    def test_the_identity_function_names_exactly_the_three_bound_fields(self):
+        known = {}
+        original = blocking("CON-X-001", AUTHORING, "one problem")
+        original["lane"] = "one-lane"
+        _record_finding_identities(
+            EVALUATION, {"findings": [original]}, known
+        )
+        moved = dict(original, location="another page")
+        _record_finding_identities(
+            EVALUATION, {"findings": [moved]}, known
+        )
+        moved_owner = dict(original, repair_target=BRIEF)
+        _record_finding_identities(
+            EVALUATION, {"findings": [moved_owner]}, known
+        )
+        for field, value in (
+            ("lane", "another-lane"),
+            ("problem", "another problem"),
+            ("required_result", "another result"),
+        ):
+            with self.subTest(field=field):
+                changed = dict(original, **{field: value})
+                with self.assertRaises(WorkflowError):
+                    _record_finding_identities(
+                        EVALUATION, {"findings": [changed]}, dict(known)
+                    )
+
+
+class RecycledFindingIdTests(unittest.TestCase):
+    """A budget that charges repetition can only count ids, so ids must mean it.
+
+    Version 11 made a stage's budget a count of repeats rather than of
+    failures, so that an evaluation finding genuinely new work costs nothing.
+    That trade is only sound while an id names one defect. Run
+    `0c31a52a51e6f34d` blocked at `visual-evaluation` 3/3 without a single
+    unrepaired finding: `page-rhythm` re-used `VIS-RHY-001` and `VIS-RHY-002`
+    at iteration 1 for defects on canonical pages 5-7 and 7-8 after the
+    revision had repaired the pages 10-12 and 16-17 those ids named at
+    iteration 0, and `clipping-and-apparatus` re-used `VIS-APP-001` at
+    iteration 3 for the page folios after it had named an open callout frame
+    on canonical page 8 at iteration 2.
+
+    The engine holds ids because it cannot hold prose. The instruction that
+    every finding-returning stage reads therefore has to bind in both
+    directions, and it lives once, in the shared fragment, rather than in each
+    of the twenty places a prefix is named.
+    """
+
+    SHARED = "common/result-format.md"
+
+    def setUp(self):
+        self.workflow = workflow_json()
+        self.shared = " ".join(
+            (ROOT / "workflows" / "fragments" / self.SHARED)
+            .read_text(encoding="utf-8").split())
+
+    def test_the_shared_fragment_binds_an_id_to_one_defect(self):
+        for phrase in (
+                "Stability binds both ways",
+                "An id belongs to one defect for the life of the run",
+                "takes the next unused number",
+                "never a number already spent on a different one"):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, self.shared)
+
+    def test_the_shared_fragment_says_what_recycling_an_id_costs(self):
+        """A rule without its consequence is one an evaluator may weigh away."""
+        self.assertIn("a stage's budget remains a count of repeated ids "
+                      "rather than a comparison", self.shared)
+        self.assertIn("would spend a failure the run did not earn", self.shared)
+
+    def test_the_shared_fragment_names_the_engine_enforced_identity(self):
+        for phrase in ("PREVIOUS_FINDINGS", "different lane", "problem",
+                       "required result", "engine refuses"):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, self.shared)
+
+    def test_the_shared_fragment_separates_owner_movement_from_identity(self):
+        self.assertIn("A moved repair owner is permitted", self.shared)
+        self.assertIn("tracks that owner movement separately", self.shared)
+
+    def test_every_stage_that_returns_findings_is_told(self):
+        """The rule reaches the workers only through the compiled packet."""
+        carrying = [stage for stage in self.workflow["stages"]
+                    if self.SHARED in stage.get("fragments", [])]
+        self.assertTrue(carrying, "no stage compiles the shared result format")
+        evaluators = [stage["id"] for stage in carrying
+                      if stage["type"] == "evaluator"]
+        self.assertIn("visual-evaluation", evaluators)
+        self.assertIn("content-evaluation", evaluators)
+
+    def test_the_lane_fragments_do_not_restate_the_rule(self):
+        """One rule, one owner; the lanes name their prefix and stop."""
+        lanes = sorted((ROOT / "workflows" / "fragments" / "propers" / "lanes")
+                       .glob("*.md"))
+        self.assertTrue(lanes)
+        for lane in lanes:
+            with self.subTest(lane=lane.name):
+                self.assertNotIn("Stability binds both ways",
+                                 lane.read_text(encoding="utf-8"))
+
 class PriorProductionCarryForwardTests(unittest.TestCase):
     """Re-seeding starts an empty run; one stage is placed to remember."""
 
@@ -742,10 +1012,6 @@ class PriorProductionCarryForwardTests(unittest.TestCase):
         self.assertIn("`Prior-production carry-forward`", writes[1][:600])
 
 
-if __name__ == "__main__":
-    unittest.main()
-
-
 class OwnerChangeIsNotARepeatTests(RoutingCase):
     """A defect that changes hands is converging, and must not be charged.
 
@@ -758,11 +1024,11 @@ class OwnerChangeIsNotARepeatTests(RoutingCase):
     requested for this standing defect is now complete in research/scope.md,
     but the leaf has not carried it into References." It named `authoring`.
 
-    That was the run converging. The defect had moved from the brief to the
-    leaf, which is what a repair looks like when the evidence lands first and
-    the citation follows. The budget read it as the same id coming back and
-    charged the third of three, and the run ended holding a document whose
-    every other lane passed.
+    That was the run converging. The repair owner had moved from research to
+    the leaf, which is what a multi-phase repair looks like when the evidence
+    lands first and the citation follows. Version 25 keeps one stable problem
+    and required result under that id while recording the owner separately;
+    phase-specific problems are split into separate ids.
 
     The rule is not that a repeated id is free. CON-PRO-001 repeated in the
     same run, to the same owner, unrepaired, and was charged exactly as before.
@@ -799,14 +1065,14 @@ class OwnerChangeIsNotARepeatTests(RoutingCase):
 
         out = self.evaluate(
             run_id, {self.CITATION: [blocking("CON-CIT-007", RESEARCH,
-                                              "the brief lacks the loci")]})
+                                              "the citation bundle is incomplete")]})
         self.assertEqual(out["stage"], RESEARCH,
                          "a research-owned finding routes to research")
         self.round_trip_through_research(run_id)
 
         out = self.evaluate(
             run_id, {self.CITATION: [blocking("CON-CIT-007", AUTHORING,
-                                              "the leaf has not cited them")]})
+                                              "the citation bundle is incomplete")]})
         self.assertEqual(
             out["stage"], REVISION,
             "the same defect, now the leaf's, goes to the leaf's reviser "
@@ -821,6 +1087,7 @@ class OwnerChangeIsNotARepeatTests(RoutingCase):
             state["stage_failures"][EVALUATION], 2,
             "both rounds are still consecutive failures, and still bounded "
             "by max_total_iterations")
+        self.assertTrue(self.engine.replay(run_id)["deterministic"])
 
     def test_the_same_id_to_the_same_owner_is_still_charged(self):
         run_id = self.drive_to(EVALUATION)
@@ -914,3 +1181,7 @@ class CompoundRequiredResultTests(unittest.TestCase):
         self.assertIn("CARRIED_FINDINGS", self.text,
                       "the lane has to know the second half is delivered, or "
                       "splitting looks like extra work for nothing")
+
+
+if __name__ == "__main__":
+    unittest.main()

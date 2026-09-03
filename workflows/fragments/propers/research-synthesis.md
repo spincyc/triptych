@@ -117,7 +117,17 @@ Integrate the joined research into one research brief that the
    the brief: on `CHANGES_REQUIRED` or `BLOCKED`, leave `research/scope.md`
    exactly as you found it rather than leaving a partial brief behind for a
    later pass to mistake for a finished one.
-10. Certify the brief's evidence coverage, section by section. The
+10. Refuse an incomplete later-reception field in the passage-by-passage
+    reception matrix. Every distinct appointed passage or material scriptural
+    adaptation must carry either a checked medieval, Doctoral, or later
+    saintly witness, with its work and locus, or a documented bounded negative
+    naming the later corpora, languages, and loci searched. Patristic material
+    alone does not satisfy this field. If the joined findings supply neither,
+    return `CHANGES_REQUIRED` with a `SYN-` blocking finding whose `location`
+    is `patristic-reception` and whose `required_result` names the passage and
+    the targeted later-reception sweep owed. Do not pass and do not fill the
+    row from memory.
+11. Certify the brief's evidence coverage, section by section. The
    `Reader-Facing Order` in `guidance/liturgy/roman-1962-propers.md` fixes
    the sections a reader is given; for each one that carries reader-facing
    content, state in the brief whether the brief supplies the evidence that
@@ -130,7 +140,7 @@ Integrate the joined research into one research brief that the
    brief, so a section whose evidence position goes unstated is found only
    when the author needs the evidence and blocks, and the run has then spent
    a stage discovering what one line here would have said.
-11. Carry forward what an earlier production of this same target already
+12. Carry forward what an earlier production of this same target already
    found. Re-seeding produces a new run with an empty history — the run id is
    derived from the workflow version, the commit and the arguments, so a bump
    in any of them starts a run that knows nothing — and one real re-seed
@@ -165,7 +175,7 @@ Integrate the joined research into one research brief that the
    Where there is no prior run for this target, say so in one line under that
    heading. An absent statement and an empty history are not distinguishable
    afterwards, and the next stage must be able to tell them apart.
-12. Assemble the `Scriptural chronology audit` from
+13. Assemble the `Scriptural chronology audit` from
    `src/{provider}/{proper}/research/chronology.toml`, which `resolve-context`
    wrote from the Scripture chronology corpus and which nothing in this
    workflow may edit. One entry per appointed Scripture, naming the element,
@@ -186,7 +196,7 @@ Integrate the joined research into one research brief that the
    the corpus yourself and you do not add to this audit from any other
    source: the record is the whole of what this brief may say about when a
    passage was written or when what it tells of happened.
-13. Write into `research/scope.md`: the passage-by-passage reception matrix,
+14. Write into `research/scope.md`: the passage-by-passage reception matrix,
    the corpora and languages searched, material negative results, rejected
    and unresolved leads, competing historical judgments, the
    `Notable-and-quotable audit`, the `Interpretive-proposal audit`, the
