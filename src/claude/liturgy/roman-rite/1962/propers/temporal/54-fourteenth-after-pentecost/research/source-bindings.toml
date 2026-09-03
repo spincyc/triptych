@@ -23,33 +23,44 @@ document = "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-penteco
 # 3.2, 3.3, 4.2, 4.3 and 11.6, which is this publication's record of what was
 # actually reached.
 #
-# REACHED at an exact locus and read directly this run, unbound only for want of
-# a passage record, and cited in the guide's References with their own loci and
+# REACHED at an exact locus and read directly, unbound only for want of a
+# passage record, and cited in the guide's References with their own loci and
 # evidence states: Augustine's Enarrationes in Psalmos on Psalms 33, 83, 94 and
-# 117; Augustine's De sermone Domini in monte and De opere monachorum;
-# Chrysostom on Matthew and on Galatians; Cyril of Jerusalem; Ambrose; Aquinas
-# on Galatians and the Catena aurea in Matthaeum; and Anthony of Padua. Reached
-# and read directly, and cited in the guide but outside that References
-# subsection: Gueranger, Wilson's two sacramentary editions, and Honorius. Not
-# one of these is verified in the source-library sense, because Migne was opened
-# for none of them; the References state the route, the evidence state and the
-# translation for each.
+# 117; Augustine's De sermone Domini in monte, De opere monachorum and
+# Retractationes; Chrysostom on Matthew and on Galatians; the spurious In
+# Psalmum 94 of the Chrysostomic corpus; Cyril of Jerusalem; Ambrose; Aquinas
+# on Galatians and the Catena aurea in Matthaeum; Anthony of Padua; Jerome on
+# Matthew and, at lib. III on the appointed verses, on Galatians; Cassiodorus
+# on Psalms 33, 83, 94 and 117; Theodoret on Psalms 33, 83, 94 and 117;
+# Ambrosiaster and Marius Victorinus on Galatians; the Glossa ordinaria,
+# Prosper, Arnobius the Younger, Rabanus, Paschasius Radbertus, Christian of
+# Stavelot, the Matthew exposition printed under Bede's name, Bruno of Segni,
+# Bruno the Carthusian, Peter Lombard and Godfrey of Admont. Reached and read
+# directly, and cited in the guide but outside that References subsection:
+# Gueranger; Schuster's Liber Sacramentorum vol. 3, read on page images of the
+# registered artifact with its digest matched before reading; Feltoe's 1896
+# Sacramentarium Leonianum, over whose two registered optical artifacts the
+# seventeen-string Veronense search was run; Wilson's two sacramentary
+# editions; and Honorius. Not one of these is verified in the source-library
+# sense, because Migne was opened for none of them; the References state the
+# route, the evidence state and the translation for each, and the medieval
+# Latin layer stands throughout at inspected on one optical transcription of
+# Patrologia Latina.
+#
+# Two of them carry a further restriction the References repeat: the passages
+# at PL 152:1250 (Bruno the Carthusian) and PL 174:583 (Godfrey of Admont)
+# must be checked at a page image before any word of them is quoted, and the
+# guide quotes neither, reporting both witnesses in its own words instead.
 #
 # NOT REACHED. These are named here rather than left to be inferred, because
 # this file is what a later run reads to decide what still needs retrieving, and
 # a record asserting direct reading of a witness the same publication declares
 # unretrieved is worse than one that says nothing:
-#   - Cassiodorus on Psalms 33, 83, 94 and 117: registered with no payload; the
-#     probe of the host that carries him failed on certificate verification.
 #   - Chrysostom, Expositio in Psalmum CXVII: not retrieved.
-#   - Theodoret on Psalms 83 and 94: PG 80 is held public-domain, there is no
-#     passage record, and the volume was not opened at these psalms. (Theodoret
-#     on Psalm 33 is a separate matter and IS bound below.)
 #   - Theodoret on Galatians: registered only at 3:16-22, so it reaches no verse
-#     of the appointed pericope.
-#   - Jerome on Galatians, Comm. in Gal. lib. II prol.: held in this repository
-#     in no form -- no work, edition, artifact, segment or passage record.
-#   - Ambrosiaster, Cassian and Marius Victorinus on Galatians: not swept.
+#     of the appointed pericope, and no Pauline commentary of his was found in
+#     either Greek collection reached.
+#   - Cassian on Galatians: not swept.
 #   - Papias, and Eusebius Historia ecclesiastica III.24.6 and III.39.16: held
 #     in no form; only Book VI of the Historia ecclesiastica is held here.
 #   - Irenaeus, Adversus haereses III.1.1: held as tracked, public-domain,
@@ -58,17 +69,22 @@ document = "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-penteco
 #     in an English edition registered against a claim of Latin reading, and the
 #     artifact is no longer byte-reproducible.
 #   - Gregory on Ezekiel: not retrieved, and not cited anywhere in this guide.
-#   - Schuster, Liber Sacramentorum vol. 3: registered here and deliberately not
-#     retrieved.
-#   - No Veronense edition is registered at all, Feltoe included.
+#   - Nine Greek authors swept for no appointed passage: Origen, Basil, Gregory
+#     of Nyssa, Gregory of Nazianzus, Cyril of Alexandria, Theophylact,
+#     Euthymius Zigabenus, Didymus and Athanasius.
 # Nothing in this second list is used as a source in the guide's References,
 # which carries used sources only. Where the guide names one of them at all --
-# Theodoret on Psalms 83 and 94 and on Galatians, Cassiodorus, Ambrosiaster,
-# Cassian, Marius Victorinus, Chrysostom on Psalm 117, Papias, Eusebius,
+# Theodoret on Galatians, Cassian, Chrysostom on Psalm 117, Papias, Eusebius,
 # Irenaeus, Jerome De viris illustribus -- it names it inside a bounded negative
 # on page 2, in the commentary, or in the scope appendix, and quotes it nowhere.
-# Theodoret's exposition of Psalm 33 is the single exception in his case and it
-# is not in this list: it is bound below, is used, and is in the References.
+#
+# Holdings, stated because an earlier form of this comment stated one of them
+# wrongly: the Sacramentarium Veronense IS registered here, as
+# work.catholic-church.sacramentarium-veronense with the Feltoe 1896 edition and
+# two Internet Archive optical artifacts
+# (ia-djvu-ocr-sacramentariuml00feltgoog, ia-djvu-ocr-sacramentariumle00cath),
+# which is what makes the Veronense negative replayable; and Schuster's vol. 3
+# is registered and was retrieved and read. The earlier comment denied both.
 #
 # Cited without a binding and outside the patristic layer: the AAS 1960 page
 # images, the newspaper and parliamentary material of the gallery, and the four
@@ -189,7 +205,7 @@ role = "translation-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-26"
 source_fingerprint = "sha256:a1efe8229a91e2597d292512ca377023fe19534de9b93b39fc8e965f61c39a79"
-context = "The registered public-domain English for the three orations, reproduced with the book's own nineteenth-century spelling and its abbreviated conclusion. The book's own heading agrees with the 1962 formulary's number, and the correspondence was confirmed on the heading and on the Latin incipits rather than assumed from the number. Three places where this English does not answer the Latin are stated at their elements and left open rather than filled: propitiatio and semper vanish from the Collect, tuae propitiatio potestatis becomes a verb in the Secret, and perpetuae salvationis effectum collapses in the Postcommunion. The repository's translation ledger records the Secret and the Postcommunion as page-image collated at printed p. 427, the Secret corrected in that collation, and the Collect as resting on an agreement-between-two-scans detector with no printed page recorded; the guide states that at the Collect, correcting its own earlier record, which had it the other way round."
+context = "The registered public-domain English for the three orations, reproduced with the book's own nineteenth-century spelling and its abbreviated conclusion. The book's own heading agrees with the 1962 formulary's number, and the correspondence was confirmed on the heading and on the Latin incipits rather than assumed from the number. Three places where this English does not answer the Latin are stated at their elements and left open rather than filled: propitiatio and semper vanish from the Collect, tuae propitiatio potestatis becomes a verb in the Secret, and perpetuae salvationis effectum collapses in the Postcommunion. The repository's translation ledger records the Secret and the Postcommunion as page-image collated at printed p. 427, the Secret corrected in that collation, and the Collect as resting on an agreement-between-two-scans detector with no printed page recorded; the guide states that at the Collect, correcting its own earlier record, which had it the other way round. REPINNED 2026-09-02 by the source-audit stage, after the review the changed fingerprint obliges and not as a mechanical copy. The controlling artifact was rewritten by commit a8d1720b2 on 2026-08-27, so the pin recorded here (sha256:473570a7...) no longer reproduced and source-library validate failed on this file. The review: the two versions of temporal-orations-en.tsv differ in four rows only -- three printed_page values at epiph-06 and septuagesima and one truncated conclusion at ssmi-corporis-christi -- and physical lines 152-154, which are this formulary's three orations, are byte-identical across the change. Nothing this guide prints moves, and the pin is raised to the reviewed value. The ledger statement above is also now stale in a way this binding cannot repair: the 2026-08-28 disposition of roman-1962-proper-translations-v1.toml replaced the pentecost-14 rows with text-free untranslated records, so the collated and detector fields it cites no longer exist there. It no longer matters for the Collect, because this run collated all three orations against page images of the registered 1861 scan (artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf, sha256 85034c90..., printed pp. 425 and 427), and each is exactly the English the guide prints."
 
 # --- Comparison text for the appointed Latin ---
 

@@ -152,12 +152,64 @@ omits the appointed-text component.
   Fifteenth Sunday's all-capital heading, and it fixes IA leaf `n466` at printed
   p. 390 and `n467` at p. 391 — from which `n465` is p. 389 by adjacency, as this
   record had inferred. And one apparatus tension between this record and
-  `retrieved.txt` is **unresolved**: this record puts the bracketing page-number
-  marks at OCR lines 59,325 and 59,445, while `retrieved.txt` states its extract
-  runs 59,360–59,545 and opens on Benziger printed p. 388. The artifact is
-  `storage = "remote"` with no payload in the tree and nothing was refetched, so
-  the line arithmetic could not be settled here. Nothing in the appointed text
-  depends on it.
+  `retrieved.txt` was left **unresolved**: this record puts the bracketing
+  page-number marks at OCR lines 59,325 and 59,445, while `retrieved.txt` states
+  its extract runs 59,360–59,545 and opens on Benziger printed p. 388. The
+  artifact is `storage = "remote"` with no payload in the tree and nothing was
+  refetched, so the line arithmetic could not be settled then. **Settled
+  2026-09-02 by the source-audit stage, in this record's favour**, and the entry
+  for it is under that run's bullet below.
+- **Third independent re-confirmation, 2026-09-02, by the source-audit stage,
+  and what it closed.** The controlling witness was authenticated before any
+  reading: the retained copy hashed to `648fdb8f…` at 82,815,941 bytes, matching
+  this record and the artifact manifest, and `pdfimages -list` reports PDF
+  pp. 475–477 as 1-bit CCITT images at 500 ppi (2,583 × 3,814; 2,570 × 3,806;
+  2,577 × 3,811). The three pages were extracted as their own embedded images
+  and read as images, never through a text layer. All ten elements, their
+  headings and references, the printed heading and `II classis`, the `Credo`
+  and Preface rubrics, both boundaries and the marginal series 1571–1582 stand
+  as recorded; re-read at native resolution and confirmed a third time are the
+  unaccented `veneficia` (the `fi` is a plain ligature and carries no acute),
+  `adícere` and `adiciéntur` with a single `i`, the absence of a comma after
+  `gustáte`, the Secret's short `Per Dóminum.` against the Postcommunion's long
+  `Per Dóminum nostrum.`, the absence of a repetition cue after
+  `℣. Glória Patri.`, and the damaged Gospel marginal number, `157` firm with
+  the fourth digit surviving as two disconnected fragments. The colour and
+  oration-count inferences were re-read on their own page images: RG 127 b at
+  printed p. XX (PDF p. 18) under `D) De colore viridi`, and RG 434 b with
+  RG 435 at printed p. XXXI (PDF p. 29), both worded exactly as quoted in this
+  record. The same opening also carries **RG 427**, `Ad Introitum dicitur
+  antiphona cum versu psalmi et Glória Patri; atque, his expletis, repetitur
+  antiphona`, which is the general rule the typical edition leaves the
+  repetition cue to and Benziger prints out.
+  **Four things this run closed, none of them by inference.** (1) The Benziger
+  OCR derivative was read at last: a byte-exact copy of the registered remote
+  artifact was located outside the tree and hashed to `2a2da44d…` at 2,788,999
+  bytes before it was opened, `retrieved.txt`'s body was shown to be a faithful
+  extract of its lines 59,360–59,545, and **all thirteen** rows of the
+  discrepancy table below were confirmed against those bytes rather than against
+  an excerpt. (2) The line-arithmetic tension that stood between this record and
+  `retrieved.txt` is resolved in this record's favour: the folio marks stand
+  alone on lines 59,209 (`388`), 59,325 (`389`), 59,445 (`390`) and 59,568
+  (`391`), each beside the running head of the page it opens, so the bracketing
+  at 59,325/59,445 is exact, while `retrieved.txt`'s extract opens thirty-five
+  lines *inside* printed p. 389 and never shows p. 388; its header has been
+  corrected. (3) The 1861 Cummiskey English was collated on page images of the
+  registered scan for the first time — see the Rights section — which closes both
+  the Collect's unseen-on-a-page attestation and the unmade boundary comparison
+  against that book. (4) One divergence from the Bible text that this record did
+  not carry was found and is row 21 below.
+  **Three limits, declared rather than papered over.** The registered Benziger
+  **page-image** artifact (`…benziger-iuxta-typicam-1962.ia-djvu`, hashed this
+  run to `c66aaa37…` at 24,084,354 bytes, matching its manifest) is present in
+  this session's cache and remains unread: no DjVu decoder exists in this
+  environment, so every Benziger reading below is still a reading of an
+  uncorrected optical text layer and not a collation of the Benziger book.
+  Nothing was refetched over the network; every witness read this run was read
+  from bytes already held and hashed against its manifest first. And two source
+  records this leaf argues from moved under it since 2026-08-27 — the Cummiskey
+  transcription artifact and the repository's translation ledger — which is
+  recorded at each place below rather than smoothed over.
 - **Formulary boundary.** The formulary begins immediately after the
   Postcommunion of the Thirteenth Sunday after Pentecost (marginal no. 1571,
   `Sumptis, Dómine, cæléstibus sacraméntis…`) and ends immediately before the
@@ -527,6 +579,7 @@ is **not** asserted here, no *Psalterium Romanum* witness having been collated.
 | 18 | Comm., Mt. 6:33 | `Primum quǽrite regnum Dei, et ómnia adiciéntur vobis, dicit Dóminus.` | `Quærite ergo primum regnum Dei, et justitiam ejus: et hæc omnia adjicientur vobis` — `ergo` dropped, `Primum` promoted, `et iustítiam eius` omitted, `hæc` dropped, and `dicit Dóminus` added from nowhere in the text |
 | 19 | Ep., Gal. 5:18 | `Quod si spíritu ducímini` | `Quod si Spiritu ducimini` — the tracked Clementine capitalises the noun here and the missal does not. **Added 2026-08-31 by the source-audit stage**, out of element order so that the references to rows 8–11 and 13–17 above and elsewhere keep their meaning |
 | 20 | Gosp., Mt. 6:30 | `fænum agri` | `fœnum agri` — æ for œ. **Added 2026-08-31 by the source-audit stage**, same reason |
+| 21 | All., Ps. 94:1 | `iubilémus Deo salutári nostro` | `jubilemus Deo salutari nostro` — i/j orthography, the same class as rows 11 and 15. **Added 2026-09-02 by the source-audit stage**, out of element order for the same reason as rows 19 and 20 |
 
 **Three negative results belong with the table, and their exception classes are
 wider than this record first stated.** The Gradual (Ps. 117:8–9) is
@@ -540,6 +593,26 @@ row 20, the one capital at row 17, and the pointing in rows 13–17.
 The only appointed element of this formulary that departs from its Bible text
 substantively is the Communion.
 
+**Corrected 2026-09-02 by the source-audit stage: the exception classes named
+just above do not reach the Alleluia, and one divergence fell through the
+gap.** Row 4 and the note at element 5 state the Alleluia's departures as the
+dropped psalm title and the comma for the Clementine's semicolon. There is a
+third, and it is row 21: the chant prints `iubilémus` where the tracked
+Clementine prints `jubilemus`. It is the same i/j orthography as rows 11 and 15,
+but those rows and the negative results above name that class for the Epistle
+and the Gospel only, so nothing in this record covered it, and the 2026-08-31
+sweep, which reports its counts by element, did not surface it either. Nothing
+in the appointed Latin changes. **Three further sentence-boundary differences
+are declared here as a class rather than tabled as rows**, because
+each is the arithmetic of quoting two Clementine verses continuously rather than
+a departure the missal makes: at Ps. 83:10–11 the antiphon runs `Christi tui:
+quia mélior` where the Clementine ends a sentence and capitalises `Quia`, at
+Ps. 83:2–3 it runs `virtútum! concupíscit` for the Clementine's `virtutum !
+Concupiscit`, and at Ps. 33:8–9 the Offertory runs `eos: gustáte` for the
+Clementine's `eos. Gustate`. The joins are already described at each element as
+cuts and continuations; they are named here so that the exhaustiveness claim
+below covers them explicitly.
+
 **Corrected 2026-08-31 by the source-audit stage: the capitalisation count is
 three, not two.** This record listed two capital-for-lowercase divergences
 (rows 1 and 5) and the research brief built a sentence on their being exactly
@@ -551,10 +624,30 @@ case and punctuation and normalised nothing but accents — 5 difference-runs in
 the Epistle, 8 in the Gospel, 0 in the Gradual, and every one of the rest
 already in the table above. **Nothing in the appointed Latin changes**: rows 19
 and 20 are divergences of this formulary from its Bible text that this record
-had not recorded, not corrections to what the missal prints. The caveat at row
+had not recorded, not corrections to what the missal prints. The 2026-09-02
+audit re-ran that comparison on the same terms and reproduces those counts
+exactly — 5 difference-runs in the Epistle, 8 in the Gospel and 0 in the
+Gradual, once the two liturgical incipits are set aside — and found the one
+further run, row 21, that the per-element counts had not surfaced. The caveat at row
 1's kind governs row 19 as well: capitalisation in a modern electronic
 Clementine is that e-text's convention and capitalisation in the 1962 missal is
 that book's, and neither is evidence of what the Latin intends.
+
+**Standing gap between this record and the guide, recorded 2026-09-02 for the
+authoring stage, and closed 2026-09-03 by that stage.** The commentary's own
+divergence table (`sections/30-commentary.tex`) was headed *Eighteen places
+where the appointed text is not the Bible's text* and printed eighteen rows,
+carrying neither row 19 nor row 20, which this record added on 2026-08-31, nor
+row 21, added 2026-09-02; and its two negative-result sentences — that the
+Epistle and the Gospel after their incipits match "apart from the orthography
+and pointing above" — were therefore inexact as printed, because the capital at
+Gal. 5:18 and the æ/œ at Mt. 6:30 were not above. The guide now prints
+twenty-one rows in element order, names the i/j orthography, the Gal. 5:18
+capital, the Mt. 6:30 æ/œ and the Mt. 6:32 sentence capital in the exception
+classes of the Epistle and Gospel negatives, and declares the three
+sentence-boundary differences as the class this record declares them. Nothing
+in the appointed Latin changed at any point: the guide printed it then, and
+prints it now, exactly as this record has it.
 
 ## Rights
 
@@ -674,22 +767,35 @@ two registered public-domain witnesses, named at the point of use:
   `edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861`,
   passage `post-pentecosten-14` (artifact
   `…philadelphia-1861.temporal-orations-en`, SHA-256
-  `13c2ad6d4a2cc7b579fa3c9bdd56719ba3933db7a9ae87728d63e0f1ddf389c9`, verified
-  2026-08-26). It is cited by formulary, not by page; the printed location
-  (pp. 425–427) is recorded only so the passage can be found again.
+  `c79e9500b1b3a50f4ed3f6096b9bf89012f16bf79a8d24c1ed365b295ec1bae0`, verified
+  2026-09-02). **Corrected 2026-09-02 by the source-audit stage:** this record
+  gave `13c2ad6d…`, which was that artifact's digest until commit `a8d1720b2`
+  (*Complete recovered Missal remediation*, 2026-08-27) rewrote four of its rows.
+  None of them is in this formulary — the review is under the re-verification
+  below — but the digest here, and the binding pin in
+  `research/source-bindings.toml`, were both stale against the tree and the
+  second of them was failing `tools/tpt source-library validate`. It is cited by
+  formulary, not by page; the printed location (pp. 425–427) is recorded so the
+  passage can be found again, and as of this run it has been read there.
 
   **Numbering, resolved and disclosed.** The 1861 book's own heading is
   `XIV. SUNDAY AFTER PENTECOST`, so its Sunday number agrees with the 1962
   formulary's `DOMINICA DECIMA QUARTA` and no renumbering is needed —
   correspondence is confirmed on the heading and on the Latin incipits, not
-  assumed from the number. **What was not checked:** whether the 1861 printing,
-  being pre-1955, also sets a second and third oration in each slot the way the
-  Pustet and Venice witnesses above do. Its OCR derivative is `storage =
-  "remote"` with no payload installed, so its formulary boundary was not read.
-  This costs the guide nothing, because the registered transcription supplies
-  exactly the three principal orations and nothing else is taken from the book;
-  but it is a boundary comparison this record did not make, and it is not
-  reported as one that came out clean.
+  assumed from the number. **Checked 2026-09-02 by the source-audit stage, and
+  it comes out clean.** This record previously reported, as a boundary
+  comparison it had not made, whether the 1861 printing — being pre-1955 — also
+  sets a second and third oration in each slot the way the Pustet and Venice
+  witnesses above do. It does not. The 1861 formulary was read on page images of
+  the registered Internet Archive scan (artifact
+  `…philadelphia-1861.ia-scan-pdf`, SHA-256 `85034c90…`, the retained copy
+  hashed and matched before any page was opened), printed pp. 425–427 = PDF
+  pp. 434–436: under the heading `XIV. SUNDAY after PENTECOST.` it prints ten
+  elements in the 1962 order and exactly one oration in each of the three
+  oration slots — `COLLECT. Custodi.`, `SECRET.`, `P. COMM. Purificent.` — with
+  no `2nd Collect`, no `Alia Secreta` and no `Alia Postcommunio`. So the 1861
+  hand missal agrees with the 1962 formulary's boundary and not with the two
+  older witnesses', and the fact is now read rather than assumed.
 
   It supplies all three orations — Collect,
   Secret and Postcommunion — and the correspondence was confirmed clause for
@@ -704,7 +810,38 @@ two registered public-domain witnesses, named at the point of use:
   **Corrected 2026-08-27 by the authoring stage: that empty incipit field is
   not a weakness in the Secret's attestation, and this record previously read
   it as one.** The empty field is a systematic column gap shared by the
-  neighbouring Sundays, not a local defect. The repository's translation ledger
+  neighbouring Sundays, not a local defect. **Settled further 2026-09-02 by the
+  source-audit stage:** it is not merely systematic in the transcription, it is
+  the book's own practice on the page. At printed p. 427 the 1861 printing sets
+  `SECRET.—Grant, we beseech thee…` with no Latin cue at all, where the same
+  page gives `P. COMM. *Purificent.*—` and p. 425 gives `COLLECT. *Custodi.*—`.
+  The transcription's empty cell reproduces a blank the printer left.
+
+  **The paragraph that follows describes a ledger state that no longer exists,
+  and is kept because the guide's terminal appendix still argues from it.** As
+  of the ledger's own disposition of 2026-08-28, the three `pentecost-14` rows
+  of `src/sources/inventories/roman-1962-proper-translations-v1.toml` are
+  text-free `[[untranslated]]` records carrying `availability = "unavailable"`
+  and `reason = { kind = "rights-withheld", … }`; not one of the `printed_page`,
+  `collated`, `collation_result` or `detector` fields described below is in the
+  file any more. The three `pentecost-13` rows read the same way, so this is a
+  repository-wide re-disposition by the lane that owns that inventory and not
+  something local to this leaf, and it does not withdraw this publication's own
+  basis, which is the tracked transcription artifact and the registered passage
+  binding named above. It does mean two things. First, the sentence in the
+  guide's References — that the Secret and Postcommunion are recorded as
+  collated against a page image while the Collect carries only a
+  detector — now cites a record the tree does not hold. Second, and this is what
+  makes the first repairable, **the Collect is no longer the soft spot: it was
+  collated on the page image this run**, at printed p. 425 of the registered
+  1861 scan, and reads exactly as the guide prints it. **The repair was made by
+  the authoring stage on 2026-09-03:** the guide's References, its Collect
+  treatment, its terminal appendix and its third interpretive proposal now
+  state that all three orations were read on page images of the registered
+  1861 scan at printed pp. 425 and 427, with the one-digitisation bound and
+  the unestablished translator carried, and no passage of the guide cites the
+  translation ledger's `printed_page`, `collated`, `collation_result` or
+  `detector` fields. The repository's translation ledger
   (`src/sources/inventories/roman-1962-proper-translations-v1.toml`, entries
   keyed `pentecost-14`) records the **Secret** as `collated = "page-image,
   2026-07-31"` with `collation_result = "corrected"` at printed p. 427, and the
@@ -715,7 +852,11 @@ two registered public-domain witnesses, named at the point of use:
   the guide says so at the Collect and in its terminal appendix.
 
   **Re-verified 2026-08-31 by the source-audit stage, at the byte level.** The
-  Cummiskey transcription was rehashed and matched `13c2ad6d…`; the passage
+  Cummiskey transcription was rehashed and matched `13c2ad6d…` — **which the
+  2026-09-02 audit could not reproduce**, the tracked artifact having been
+  `c79e9500…` since 2026-08-27; whatever that run hashed, it was not the file
+  standing in the tree, and the three orations are byte-identical across the
+  change either way; the passage
   record's `physical_line_ranges = [[152, 154]]` are exactly this formulary's
   Collect, Secret and Postcommunion in liturgical order; the `latin_incipit`
   column holds `Custodi`, empty, `Purificent`, and is empty at the Secret of the
@@ -734,6 +875,40 @@ two registered public-domain witnesses, named at the point of use:
   tracked concordance rather than computed: Pss. 33 and 83 at
   `english_offset = 1` with the inscription mapped to English `title`, Pss. 94
   and 117 at `0`, all four `english_offset_uniform = yes`.
+
+  **Collated on the page image 2026-09-02 by the source-audit stage, and this is
+  the first time this leaf has read the 1861 book rather than a transcription of
+  it.** The registered Internet Archive scan
+  (`artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf`,
+  `storage = "remote"`) was found in this session's cache, hashed to the
+  registered `85034c90d5cbfe891f4359fb2faff907d217dbd11a30458b55e4c48eae028898`
+  before anything was read from it, and its printed pp. 425 and 427 — PDF
+  pp. 434 and 436 — were extracted as their own embedded images and read as
+  images; the file carries no text layer at all, so nothing else was available
+  to be read. All three orations stand there, word for word and point for point
+  as this guide prints them:
+
+  - **Collect**, p. 425, `COLLECT.  *Custodi.*—Preserve, O Lord, we beseech
+    thee, thy Church by thy constant mercy: and since our weak mortality is
+    continually falling without thy assistance, may thy grace withdraw it from
+    what is hurtful, and direct it in the ways of salvation.  Thro'.`
+  - **Secret**, p. 427, `SECRET.—Grant, we beseech thee, O Lord, that this
+    victim of salvation may both cleanse us from our sins, and render thy
+    Majesty propitious to us.  Thro'.`
+  - **Postcommunion**, p. 427, `P. COMM.  *Purificent.*—May these thy
+    mysteries, O God, continually purify us and strengthen us: and procure us
+    eternal salvation.  Thro'.`
+
+  **What that closes.** The Collect had never been seen on a page in this
+  repository, which is why this record and the guide both call it the soft spot
+  of the three; it has been seen now, on the registered scan, and it is exact.
+  The claim is no longer that a detector matched two scans: it is a reading. The
+  same opening also settles the boundary comparison recorded above as unmade,
+  and shows the Secret's empty Latin-incipit cell to be the printer's blank
+  rather than the transcriber's. **What it does not close:** this is the 1861
+  book read in one digitisation, not a collation of two copies, and it says
+  nothing about who made the translation — no lane has established that, and the
+  guide names the edition and no translator.
 
 **Declared places where the registered English does not answer the Latin
 above.** They are declared in the guide and are not filled in by the project.

@@ -116,10 +116,15 @@ evidence = ["textual-observation", "exploratory-proposal"]
 
 [[relations]]
 key = "sunday-number-not-the-mass-own"
-element_keys = ["collect", "secret", "postcommunion", "introit", "gradual", "offertory", "communion"]
+element_keys = ["collect", "secret", "postcommunion", "introit", "gradual", "alleluia", "offertory", "communion", "epistle", "gospel"]
 evidence = ["documented-historical-orientation", "source-grounded-synthesis"]
 
 [[relations]]
 key = "fathers-divided-on-angel-and-comparison"
 element_keys = ["offertory", "gradual"]
 evidence = ["documented-reception", "exploratory-proposal"]
+
+[[relations]]
+key = "one-verb-object-reversed"
+element_keys = ["introit", "epistle"]
+evidence = ["textual-observation", "exploratory-proposal"]

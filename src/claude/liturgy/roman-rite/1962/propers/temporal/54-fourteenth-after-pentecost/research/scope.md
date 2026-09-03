@@ -24,6 +24,38 @@ rewritten except where the fresh join corrects it. The two joins share the id
 space and are not continuous; fresh finding ids are cited as `[fresh:ID]`
 and bare ids keep their first-join meaning.
 
+**Amended in place a second time by the same stage at workflow `proper v17`,
+run `ca03f1b357e7ec25`, iteration 0 (2026-09-02)**, which integrates a third
+seven-lane join of **140 findings** (28 `scripture-context`, 30
+`patristic-reception`, 22 `liturgical-history`, 15 `theological-synthesis`,
+8 `source-citation-coverage`, 17 `cultural-afterlife`, 20 `precedent-search`),
+run against the leaf at commit `22ba03d94`. `CARRIED_FINDINGS` was empty on
+this iteration also. **This amendment is again an amendment and not a
+replacement.** The 203 findings of the first integration and the 69 of the
+second remain this brief's evidentiary base; the third join's lanes cite this
+file's sections throughout as their evidence of record, and several of them
+correct it. **Every such correction is settled at §0.5 and carried into the
+section it corrects; none is left as a note.**
+
+**Repaired in place by the same stage at iteration 1 of the same run
+(2026-09-02)**, answering one blocking finding of this run's
+`content-evaluation` stage, `CON-EVI-024`, routed to this brief as the owner of
+the defect. The repair is confined to §1.2's capitalisation enumeration and the
+one restatement of it at §10; it is settled at §0.6 and carried into both
+places. No lane ran again for it and nothing was retrieved: the finding turned
+on evidence the leaf's text control already held.
+
+**Third-join ids are cited as `[v17:ID]`.** The three joins share an id space
+that is not continuous: `[v17:SCR-001]` and `SCR-001` are different findings by
+different lanes in different runs, and so are `[v17:PRE-001]` and `PRE-001`.
+Where the third join's `source-citation-coverage` lane deliberately **reused**
+an earlier id because it was restating and extending the leaf's own finding
+rather than raising a new one — `COV-004`, `COV-010`, `COV-016` — the reuse is
+declared inside the finding itself, and `[v17:COV-004]` means this run's
+restatement of it. `[v17:PAT-5xx]`, `[v17:LIT-2xx]`, `[v17:THE-2xx]` and
+`[v17:CUL-2xx]` occupy blocks disjoint from both earlier joins by their lanes'
+own design.
+
 **This brief replaces the file of the same name written by the `proper v10`
 production, run `b68cca80edb75854`, entirely.** That file's finding ids belong
 to a different run and are not continuous with the ids used here; where this
@@ -483,6 +515,213 @@ fresh:THE-108's fear-and-trust conjunction was reached by no precedent
 search: it is a lead under §9.7's discipline, and it may not be published as
 a proposal unless a later authorised sweep reaches its conjunction.
 
+### 0.5 The third join, run `ca03f1b357e7ec25` (workflow `proper v17`, 2026-09-02), and what it changes
+
+**Fifteen adjudications. Each names the finding that forces it and the section
+where it is applied.** Where a lane and this brief disagreed, the lane finding
+is what was established and this brief has erred; where two lanes of this join
+disagree with each other, the disagreement is preserved and said to be one.
+
+**(a) §6.8's live disagreement is RESOLVED, and it resolves in favour of the
+prior production's reading.** The Ottobonianus chant-cue block whose Introit is
+`Protector noster` attaches to Wilson's section **XXXI**, `DOMINICA .XIII. POST
+PENTECOSTEN`, whose Collect is the 1962 **Twelfth** Sunday's — an offset of
+**+2** and not zero. This is read on a 300 dpi page image of Wilson 1915 p. 173,
+where the superscript reference letters `a`, `b`, `c` stand immediately before
+the section numbers and the three lettered footnotes stand at the foot of the
+same page [v17:LIT-208]. **The optical-text lane's zero-offset placement was an
+artefact and the reason is now named:** an OCR layer fuses the reference letter
+with the numeral. §6.8 is rewritten as settled at §6.14(a).
+
+**(b) §6.1(c)'s section number `CXXXIII` is an OCR artefact and must be cited as
+section `XXXIII`.** The printed heading reads `cXXXIII.` with `c` as a small
+raised footnote letter; the running section series XXVIIII–XLI across pp.
+172–176 leaves no room for a section CXXXIII [v17:LIT-209]. **Prose citing
+"section CXXXIII" is citing a number the book does not print.**
+
+**(c) §7.4's summary sentence is contradicted by this brief's own §6.3, and
+§6.3 is right.** §7.4 states "In Honorius the whole chant set of this Mass is
+what 1962 sings on the following Sunday, +1". On the page image of PL 172 cols.
+717–718, Honorius's Introit (`Protector noster`) and Offertory (Ps. 33:8) are
+the 1962 Fourteenth Sunday's, while his Gradual, Alleluia and Communion are the
+Fifteenth's. **The displaced set is three chants of five, not five**
+[v17:LIT-214]. A synthesis worker taking the sentence from §7.4 will assert
+something the evidence contradicts; the correct statement is carried at
+§6.14(b) and at §7.7 C4.
+
+**(d) §4.1's bounded negative on the three orations no longer holds for the
+COLLECT, and it now holds harder for the other two.** The Collect has four
+documented receptions, of four different kinds: Alcuin recasts it as a private
+prayer in *De usu Psalmorum* VII; Honorius cites it by incipit in *Gemma
+animae* IV; Wibald of Corvey applies its double petition to Pope Eugenius III;
+Godfrey of Admont glosses it word by word inside a homily on this Mass
+[v17:PAT-522, v17:LIT-212, v17:LIT-213]. Schuster comments on all three
+orations in 1927 [v17:LIT-206]. **For the Secret and the Postcommunion the
+negative stands and is now bounded over a whole-corpus phrase index rather than
+over a reading list:** exact-phrase queries for `propitiatio potestatis` and
+`purificent semper et muniant` across Corpus Corporum's Patrologia Latina
+return five hits between them and every one is a sacramentary printing the
+prayer [v17:PAT-523]. §4.1 and matrix row §2.8 are corrected at §2.9 and
+§4.15(a).
+
+**(e) §4.2's advice that the three unreached Greek works are "one curl away" is
+WRONG for all three, and the correction is the useful kind.** Documenta
+Catholica Omnia's MGR *Expositiones in Psalmos* is a fragment ending at PG
+55:194 that covers Pss. 4–12 and 43–44 only, so Chrysostom on Ps. 117 is not in
+it; the site holds no Greek *Homiliae in Matthaeum* at all; and neither DCO nor
+the khazarzar PG mirror holds any Pauline commentary of Theodoret
+[v17:PAT-524]. **A partial file that looks complete is the same failure mode
+§11.3 item 7 records for Cassiodorus on Latin Wikisource, met again in a
+different corpus.** What that route *did* yield this run is Chrysostom's
+Galatians commentary in Greek at PG 61:670–674 and a spurious Ps. 94 homily at
+PG 55:615–618.
+
+**(f) §8.2's bold universal is FALSE and is withdrawn.** The prior audit asserts
+that every legal use of Mt. 6:24 "stops before `Non potestis Deo servire, et
+mammonae`, so the second master is never named". At least eighteen American
+opinions quote the mammon clause and at least six print `Matthew 6:24`
+expressly [v17:CUL-202]. **The narrower true claim, and it is the one the
+gallery may print:** the Everhart/Mississippi Valley conflict-of-interest line
+stops at the general maxim, while a separate and larger body of state and
+bankruptcy decisions quotes the mammon clause and names Matthew. **The published
+guide prints the false universal at `sections/40-notable.tex` as well as here;
+both must be repaired.**
+
+**(g) §7.6's single strongest UNRUN limit is now RUN, and it forecloses one
+half of C6 while relocating the other.** Across all 21 collated 1962
+`verified.md` records covering 15 distinct identities, **no Collect, Secret or
+Postcommunion asks for food, drink or clothing** [v17:THE-202] — so this
+Sunday's silence about the three goods its Gospel names is a genre fact and not
+a distinctive of this formulary. **But Roman orations of this season are not
+uniformly non-temporal:** four of the fifteen identities petition peace, bodily
+health, or the ordering of the world [v17:THE-203]. **And the singularity, in
+this sample, lies on the reading side:** the Fourteenth Sunday is the only one
+of the fifteen whose appointed texts name eating, drinking *and* clothing
+together [v17:THE-204]. C6 is restated at §7.7 in that form.
+
+**(h) A defect the last join withdrew is still printed in the leaf.** A fresh
+imperative probe finds **four** God-directed imperatives (`aspice`, `respice`,
+`Custodi`, `Concede`) and **eight** assembly-directed ones (`ambulate`,
+`Venite`, `Respicite`, `Considerate`, `Nolite … esse`, `Quaerite`, `gustate`,
+`videte`, with `Quaerite` again at the Communion), against
+`sections/20-themes.tex` ll. 126–128, which still reads "The imperatives
+addressed to God are aspice, respice and Custodi; the only imperative addressed
+to the assembly is Quaerite" [v17:THE-211]. **The authoring stage owns this
+repair and the brief that authorises it is now two runs old.** The narrower
+contrast that survives is at §7.7 C6.
+
+**(i) The References' repository-wide negative over-reaches for one witness.**
+`sections/99-references.tex` states that this repository holds "no record of
+any of them in any form" of Papias, Eusebius *HE* III and Jerome's *Comm. in
+Gal.* **For Jerome on Galatians that is wider than the evidence supports:** PL
+26 is registered complete, hashed, public-domain, 695 pages, with a verified
+cross-work segment precedent already built on the same bytes; what is missing
+is the constituent work and segment records [v17:COV-020]. **The exact claim —
+`src/sources/works/jerome/` carries no Galatians work record — is true, and it
+is the claim the guide should print.** Papias and Eusebius *HE* III are
+unaffected and their negatives stand [v17:COV-010].
+
+**(j) The Communion antiphon is secondary in this slot only, and the
+substitution broke a pair.** `Primum quaerite` is an ancient Roman antiphon
+standing at the **Ninth** Sunday in four ninth-century antiphonaries; the
+Fourteenth Sunday's Communion in those books is `Panis quem ego dedero`, which
+travels with the Offertory `Immittet Angelus` at **both** its occurrences —
+the Lenten Thursday (AMS 44) and this Sunday (AMS 186) [v17:LIT-215,
+v17:LIT-217]. §7.5's four witnesses become five, and the shape of the claim
+changes: **the antiphon is not secondary in the repertory, only in this slot.**
+
+**(k) The lectionary strand, never swept by any lane before, is the most stable
+of the three.** The *Liber Comitis* as Migne prints it pairs `Fratres, spiritu
+ambulate, usque concupiscentiis` with `Nemo potest duobus dominis servire,
+usque adiicientur vobis` under `Dominica v post sancti Laurentii` — the same
+incipits and the same termini the 1962 book prints [v17:LIT-219]. **So the
+Epistle–Gospel pair is not among the things that moved**, and C4 acquires a
+third strand it did not have (§7.7).
+
+**(l) The sentence the Latin tradition repeats most often at the appointed
+Gospel's first verse was withdrawn by its author and denied by a later Latin
+exegete.** Augustine retracts `Nullius enim fere conscientia Deum potest odisse`
+at *Retractationes* I.19, naming *De sermone Domini in monte* II.14.48 and
+giving Ps. 73:23 as his reason [v17:PAT-518]; Rabanus, the Glossa, Christian of
+Stavelot, Paschasius and the exposition printed under Bede's name all repeat it
+without his qualifier `fere`; and Bruno of Segni contradicts it outright — the
+covetous man *does* hate God, because he serves idols (Eph. 5:5)
+[v17:PAT-528]. **A guide that reports "no one can hate God" as the tradition's
+reading at Mt. 6:24 will have got it wrong twice over.**
+
+**(m) Two em-dashes in the reception matrix are filled.** The **Gradual** now
+has Prosper of Aquitaine, Bruno the Carthusian, Peter Lombard and Godfrey of
+Admont beyond Augustine, Cassiodorus and Theodoret; the **Alleluia**, which had
+no medieval or later witness of any kind, now has Arnobius the Younger, Bruno
+the Carthusian, Peter Lombard and a Greek homily of the Chrysostomic corpus
+[v17:PAT-501, v17:PAT-509, v17:PAT-511, v17:PAT-512, v17:PAT-514, v17:PAT-515,
+v17:PAT-519, v17:PAT-526, v17:PAT-527]. **The bound that travels with the
+Alleluia's four is the same in all four cases and must be printed with them:
+every one reads the psalm penitentially and every one gets there through v. 2,
+`Praeoccupemus faciem eius in confessione`, which the Alleluia does not
+appoint.**
+
+**(n) The repair this brief has named three times as the cheapest unmade one is
+made.** Schuster's *Liber Sacramentorum* vol. III pp. 136–138 was read on page
+images of the exact registered artifact, hashed and matched before reading
+[v17:LIT-201]. It yields an ancient title for the formulary (`Quarta post
+Sancti Laurentii`), a documented mechanism for the unstable numbering, a
+progressive Introit-psalm series, two Lenten cross-references for the chants,
+and continuous comment on all three orations [v17:LIT-202 – v17:LIT-206]. **It
+also yields four bounded negatives on those pages: no station, no sacramentary
+siglum, no manuscript citation, and no note that the Communion is secondary**
+[v17:LIT-207] — so the hope that Schuster would corroborate the
+Gelasian/Gregorian displacement independently is disappointed, and the
+displacement still rests on Wilson's apparatus plus Gerbert.
+
+**(o) Two conjunctions this join reached are LEADS and may not be published as
+proposals, and the reason is not their quality.** The `respice` / `Respicite`
+tie between Introit and Gospel [v17:THE-205] and the `anima` tie between the
+Introit's psalm verse and the Gospel [v17:THE-206] both clear the two-element
+floor, and the first has documented reception on one half. **Neither was reached
+by the `precedent-search` lane, and that lane's coverage is the only targeted
+precedent search this workflow performs**, so the profile forbids retaining
+either as a proposal [v17:PRE-016]. Both are recorded at §9.11 among the
+conjunctions reached and not retained, so that a later authorised sweep can
+reach them and a later worker does not rediscover them as new.
+
+### 0.6 Repaired at iteration 1 of run `ca03f1b357e7ec25`: §1.2's capitalisation enumeration
+
+**One blocking finding of this run's `content-evaluation` stage,
+`CON-EVI-024`, named this brief as the owner of the defect, and it is repaired
+here.** It found that §1.2 stated an exhaustive negative — that apart from the
+Communion the departures across every appointed block "are exhausted by
+orthography, pointing, the two capitals below, the supplied incipits, and the
+clean cuts" — which the leaf's own text control had already corrected, and
+which the comparison behind it could not have established, that comparison
+normalising case and so being blind to the very class the sentence claimed to
+exhaust. `propers/verified.md` records the correction and names this brief in
+making it: **the capitalisation count is three, not two**, the third being the
+reverse-direction `spíritu` for the tracked Clementine's `Spiritu` at Gal. 5:18,
+row 19, added by the `source-audit` stage on 2026-08-31. §1.2 is the brief's
+declared whole contribution to the appointed-text position (§10, position 4),
+which is why a miscount inside it blocks.
+
+**What changed, and nothing else did.** §1.2's enumeration now names the three
+capitalisation rows, and the sentence-boundary joins the record declares as a
+class, in place of "the two capitals below"; and it now carries the bound that
+the normalised comparison is blind by construction to orthography, pointing and
+case, those three classes being exhausted instead by the case- and
+punctuation-preserving collation held in `propers/verified.md`, so that the
+negative is stated as resting on two comparisons rather than one. §1.2's
+capitalisation paragraph now states three differences, keeps the two
+typologically weighted ones distinct from the reverse-direction third, and uses
+the third as evidence for the caveat it already carried. §10's reader-order
+table, position 4, no longer restates "the two capitalisation differences".
+**§0.5(f) already stated the looser and correct "the capitalisation rows" and is
+unchanged**, as is every other section of this brief.
+
+**No research was done for this repair and no new claim entered the brief.** The
+evidence is the leaf's text control, which this stage may read and may not
+write, and the finding said as much: no retrieval was needed. What the author
+inherits from this repair is one corrected count and one added bound, and no new
+witness.
+
 ---
 
 ## 1. The formulary, its appointed text, and what was verified about it
@@ -552,24 +791,59 @@ claim about what produced the antiphon [SCR-003].
 
 **No second substantive recasting exists** [SCR-033(a)]. Apart from the
 Communion, the departures found across every appointed block are exhausted by
-orthography, pointing, the two capitals below, the supplied incipits, and the
-clean cuts at Ps. 83:11a, Ps. 83:3a and Ps. 33:9a. **No centonisation,
-transposition or interpolation was found in any element.** This is the
-strongest of the run's negatives because it rests on an exhaustive mechanical
-comparison rather than on a failure to find.
+orthography, pointing, the **three** capitalisation rows below, the supplied
+incipits, the clean cuts at Ps. 83:11a, Ps. 83:3a and Ps. 33:9a, and the three
+sentence-boundary differences at the internal joins that quoting two Clementine
+verses continuously produces (Ps. 83:10–11, Ps. 83:2–3, Ps. 33:8–9), which
+`propers/verified.md` declares as a class rather than tabling as rows. **No
+centonisation, transposition or interpolation was found in any element.**
 
-**Two capitalisation differences fall exactly on the words that would carry
-typological weight** [SCR-020]: the missal prints `faciem Christi tui` where the
-tracked Clementine prints lower-case `christi`, and `Immittet Angelus Domini`
-where the Clementine prints lower-case `angelus`. **Firm caveat that must
-travel with any use of this:** capitalisation in a modern electronic Clementine
+**The bound on that enumeration, dropped when it was first written, is that no
+single comparison establishes it.** The comparison reported above normalises
+accents, i/j, u/v, ae/oe, ii/i, ll/l, punctuation **and case**: it is exhaustive
+for substitution, omission, addition and transposition of words, and **blind by
+construction to the three classes it normalises away** — orthography, pointing
+and capitalisation. Those three are exhausted instead by a second exhaustive
+comparison, the case- and punctuation-preserving collation of all eight
+appointed biblical blocks held in the leaf's text control,
+`propers/verified.md`, which normalises nothing but accents and reports 5
+difference-runs in the Epistle, 8 in the Gospel and 0 in the Gradual once the
+two liturgical incipits are set aside, every one of them tabled there. **The
+negative remains the strongest of the run's, because it rests on two exhaustive
+mechanical comparisons and not on a failure to find** — but it is the pair that
+carries it, and no statement about capitalisation, orthography or pointing may
+be sourced to the normalised comparison alone. That is how the count below came
+to be stated as two when the record holds three.
+
+**There are three capitalisation differences between the missal and the tracked
+Clementine, and two of them — not all three — fall on words that would carry
+typological weight** [SCR-020, corrected against `propers/verified.md` rows 1, 5
+and 19]. The missal prints `faciem Christi tui` where the tracked Clementine
+prints lower-case `christi` (row 1), and `Immittet Angelus Domini` where the
+Clementine prints lower-case `angelus` (row 5). **The third runs in the opposite
+direction and falls nowhere near them:** at Gal. 5:18 the missal prints
+`spíritu` where the tracked Clementine prints `Spiritu` (row 19). The text
+control added it on 2026-08-31 and named this brief in doing so — this brief had
+"built a sentence on their being exactly two and falling exactly on the words
+that carry typological weight" — and the sentence is corrected here rather than
+defended. **A fourth capitalisation fact is not a divergence and must not be
+counted as one:** the three sentence-boundary capitals at the internal joins
+(`quia` for `Quia`, `concupíscit` for `Concupiscit`, `gustáte` for `Gustate`)
+are the arithmetic of quoting two verses continuously, and `verified.md`
+declares them as such.
+
+**Firm caveat that must travel with any use of this, and the third row is now
+the best evidence for it:** capitalisation in a modern electronic Clementine
 is that e-text's editorial convention and capitalisation in the 1962 missal is
 that book's; neither is evidence of what the Latin intends, and in the psalm's
 own sense `christus` is the anointed king. It would be easy to build a
 typological claim on the missal's capital C or a christological one on its
-capital A, as though the psalm supplied them. It does not. **Cassiodorus is
-positive evidence that a Latin reader could take the Offertory's angel
-otherwise** (§2.6) [PAT-203].
+capital A, as though the psalm supplied them. It does not — and a formulary
+whose third capitalisation difference is a **lower**-case `spíritu`, at the one
+verse where a Father says in terms that the Latin cannot make the distinction
+the case would encode (§2.2 [PAT-158]), is a formulary whose case is the
+printers' and not the doctrine's. **Cassiodorus is positive evidence that a
+Latin reader could take the Offertory's angel otherwise** (§2.6) [PAT-203].
 
 ### 1.3 Psalm numbering, read from the concordance and not restated from memory
 
@@ -1628,6 +1902,423 @@ orations abolished by *Variationes* cap. IV n. 18, AAS 52 (1960) p. 709, are
 Frankish Gelasian, the others are seasonal orations appointed by rubric across
 many Masses. **The continuity is a continuity of shape, not of text** [LIT-012].
 
+### 2.9 Matrix rows extended at run `ca03f1b357e7ec25` — eleven new Latin witnesses, one new Greek one, and two filled em-dashes
+
+**Every witness below was read in Latin from the Corpus Corporum Patrologia
+Latina TEI text at `mlat.uzh.ch`, or in Greek from a Documenta Catholica Omnia
+text layer carrying a TLG transcription, at the exact Migne column its own
+inline `pb` markers give.** The evidence state of the whole layer is stated once
+and governs every row: **INSPECTED, not verified.** Corpus Corporum's own cover
+page warns of OCR error, and the lane observed four instances — a duplicated
+line in Godfrey at PL 174:583A, transposed lines in Bruno the Carthusian at PL
+152:1250, `wercede` for `mercede` in Bruno of Segni at PL 165:123A, and
+`(Psal. III)` for Ps. LXXIII in the Glossa at PL 114:105B [v17:PAT-530].
+**Nothing below may be printed as a quotation until it is checked at a page
+image**, and the two passages the lane flags specifically — PL 152:1250 and PL
+174:583 — must be checked before any word of them is quoted.
+
+**A retrieval route established this run and recorded as method, not as
+evidence** [v17:PAT-530]: `navigate.php?load=/38` lists 1,528 authors;
+`navigate.php?load=/38/<author>/<work>` yields the text idno;
+`download.php?type=file-xml&idno=<text>` returns the TEI; and
+`fulltext_search.php?&query="<phrase>"&index_type=s` runs an exact-phrase query
+across the whole Patrologia Latina and returns author, work, decisive year,
+section heading and the matching sentence. **The second of these is what found
+the Collect's reception and what bounds the Secret's and Postcommunion's
+negative.** Its limit is the same one §11.3 item 4 records for every literal
+search: it can only find Migne's orthography, and only where the phrase is not
+broken across the indexed unit.
+
+#### 2.9.1 Introit — Ps. 83:10–11a with Ps. 83:2–3a
+
+- **Arnobius the Younger**, *Commentarii in Psalmos*, in Ps. LXXXIII, PL
+  53:446C–447D. **A fifth reading of `respice in faciem Christi tui`, and it is
+  none of the four at §6.4:** God looking on the face of his Christ is God
+  seeing the man seated at his own right hand — `Cum respicit in faciem
+  Christi, et hominem viderit sedentem ad dexteram suam` — and the day better
+  than thousands follows from that man, `per quem melior dies una, quia aeterna
+  erit, et noctem non habebit`, with `millia` glossed as years consumed on
+  earth. He also reads the psalm's opening allegorically: the sparrow is
+  Christ, the turtle-dove the Church, the altars `mysteria tua`, and the house
+  of God `non cemento constat et calce, sed in homine credente` [v17:PAT-510].
+  **His agreement with Augustine and Cassiodorus about the eternal day is
+  reached by a different route — through Christ rather than through the day's
+  own properties — and his `millia` differs from Cassiodorus's. Do not stack
+  him onto them.** The ascription of these commentaries to Arnobius the Younger
+  is the traditional one and Corpus Corporum also carries `Auctor incertus
+  (Arnobius junior?)`; report it as **attributed**.
+- **Godfrey of Admont**, *Homilia* LXXXII, `In Dominicam XIV post Pentecosten
+  prima`, PL 174:575A–580C. **A sixth reading, and the only one that makes the
+  anointed the congregation:** `Petimus itaque in Introitu missae ut ille, qui
+  protector noster est, Christum suum nobis dando, semper nos unctos suos
+  respiciat`; the courts are `in corporibus et in animabus nostris, quae per
+  atria Domini possunt intelligi`; and `melior est una dies cognitionis et
+  illuminationis ejus super millia, id est antecellit et superexcellit universa
+  opera et merita nostra` [v17:PAT-519]. **He quotes the Introit as sung — `Sic
+  enim cantamus` — and he quotes the psalm verse too.**
+- **THE BOUND ON GODFREY, AND IT TRAVELS WITH EVERY ROW HE APPEARS IN.**
+  Godfrey's Fourteenth Sunday is not the 1962 Fourteenth Sunday. His Gospel is
+  the ten lepers of Luke 17 and his Communion is `Panis, quem ego dedero`; the
+  1962 Gospel is his **Fifteenth** [v17:PAT-520]. **So the chants and the
+  Collect he expounds are this formulary's and the Mass he expounds them in is
+  not.** That is the same displacement §6.1 and §6.3 track for Honorius, met
+  independently in a different author, and it is independent corroboration that
+  the displacement is real.
+- **CORRECTION, AND IT IS MANDATORY — NO INTERVAL BETWEEN HONORIUS AND GODFREY
+  MAY BE PRINTED, AND THE PRIOR BRIEF'S WAS WRONG** [content-evaluation
+  `CON-CIT-003`, this run]. The prior text of this entry made Godfrey **"two
+  centuries later"** than Honorius and cited nothing for it. **No lane
+  established Godfrey's dates and no lane established any interval.** What this
+  brief's own evidence carries points the other way: §6.3 puts Honorius in the
+  **early twelfth century**, this brief cites Honorius at **PL 172** and Godfrey
+  at **PL 174** — adjacent Migne volumes — and the *Gemma animae* and the Admont
+  homiliary are both twelfth-century books. **Taken with §6.3's own century
+  label, "two centuries later" places Godfrey in the fourteenth century, which
+  nothing in this brief, in the source library or in the lane findings supports;
+  and it inflates the corroboration the passage rests on, because two witnesses
+  two centuries apart is a materially stronger claim than two twelfth-century
+  witnesses.**
+- **What survives the correction, whole and unweakened:** Godfrey meets the same
+  displacement **independently, in a different author**, under the bound stated
+  immediately above — that his Fourteenth Sunday is not the 1962 Fourteenth
+  Sunday. **That is the substantive finding and the correction does not touch
+  it.** **Authoring instruction: delete the interval wherever the guide prints
+  it and put no replacement interval in its place**, unless and until a later
+  sweep establishes Godfrey's dates from a source this brief can name; the
+  reader-facing loci are itemised at §11.8.
+
+#### 2.9.2 Epistle — Gal. 5:16–24
+
+- **John Chrysostom**, *In epistulam ad Galatas commentarius* cap. V, PG
+  61:670–673, **read in Greek across the first half of the pericope, which the
+  prior sweep had not reached** (it had 673–674 only). `sarka gar entautha, ou
+  to soma kalei`: flesh here is the earthbound, slothful, neglected reasoning;
+  desire belongs to the soul, not to flesh, so a flesh that *desires* cannot be
+  the body; the body is an instrument, `organon gar estin he sarx`, and `we
+  hate and punish not the iron but the murderer`; the conflict is between two
+  reasonings, virtue and vice, `ouch he psyche kai to soma`. At Gal. 5:18 he
+  calls the dismissal of the law **`a great and wonderful praise of the law`**,
+  set aside `not as bad but as less than the philosophy given by the Spirit`
+  [v17:PAT-502]. **The opponents he answers are unnamed in the text; identifying
+  them as Manichees is an inference the lane declines to make and this brief
+  does not make either.**
+- **Chrysostom on the second half**, PG 61:673–674, **declared as partly
+  overlapping what the prior sweep already holds** [v17:PAT-503]: the vice-list
+  itself disproves a bodily reading, because enmities, strifes and heresies
+  `belong only to a corrupted choice`; Paul writes that men *do* these things
+  and not that they *suffer* them, so crowns and punishments attach to choice;
+  `fruit` and not `work` of the Spirit because good works need God's kindness
+  besides our diligence; and `against such there is no law` because love needs
+  no command, as a well-reined horse needs no whip.
+- **Ambrosiaster**, *Commentaria in Epistolam ad Galatas*, PL 17:367D–368D. **A
+  reading governed by two laws rather than by two parts of man:** at 5:17,
+  `Duas leges proponit … unam Dei, alteram peccati`, with `medius homo`
+  standing between them; at 5:19–21 the works are called the flesh's by origin,
+  `quia errores isti ex mundo sunt, ex quo et caro`; at 5:24 `qui sunt Christi`
+  is glossed `christos, id est, unctos` and the crucified flesh is the world,
+  `Hi carnem, id est, mundum crucifigunt`, proved from 1 John 2:15
+  [v17:PAT-504]. **A TEXTUAL WARNING THAT MUST TRAVEL WITH HIM:** his lemma is
+  not the missal's Vulgate. His fruit-list has **ten** members and carries
+  `spes` and `castitas` while lacking `fides` and `patientia`; his vice-list
+  opens `adulterium, fornicatio, impuritas, obscenitas` where the missal opens
+  `fornicatio, immunditia, impudicitia, luxuria`. **Any use of him bearing on
+  the count or the asymmetry of the two lists must say he is commenting on a
+  different Latin text.**
+- **Marius Victorinus**, *In epistolam Pauli ad Galatas*, PL 8:1192B–D, **and he
+  is half a negative.** His text as Migne prints it passes straight from 5:17 to
+  6:1, so he comments on **none** of vv. 18–24. What he does say at v. 17 is the
+  exact contrary of Chrysostom's move: `Habet enim motus suos caro, habetque
+  sensus, neque tantum ab anima suscitantur`, argued from water, fire, earth and
+  the other elements, which have their own impulses and have no soul at all
+  [v17:PAT-505]. **The lacuna is a fact about the transmitted commentary as
+  Migne prints it, not about the search: the lane read continuously across the
+  join. Whether CSEL 83/2 shows the same gap is NOT checked and should be
+  before the gap is called Victorinus's own.**
+- **Glossa ordinaria on Galatians**, PL 114:584B–585B. **A third position on the
+  clause Chrysostom and Victorinus divide over:** the flesh is *said* to desire
+  by the same idiom that says the ear hears and the eye sees, `Caro dicta est
+  concupiscere, quia hoc secundum ipsam agit anima`, and the cause is in neither
+  alone, `ex utroque enim fit, quia sine utroque delectatio nulla sentitur`. It
+  reads `non perficietis` precisely (`non ait non feceritis … sed non
+  perficietis, id est non opera eorum consensu voluntatis implebitis`), defines
+  being under the law by fear rather than love, and **organises the fruit-list
+  by making charity its head from which the members follow** — `Caput praemisit,
+  unde membra sequuntur` [v17:PAT-516]. **It is a compilation and Corpus
+  Corporum files it under `Anselmus Laudunensis et schola`, which is the modern
+  attribution of the redaction and not a claim that Anselm wrote these
+  sentences. Nothing in it may be attributed to a named Father on this
+  evidence.**
+
+#### 2.9.3 Gradual — Ps. 117:8–9 (an em-dash filled)
+
+- **Prosper of Aquitaine**, *Expositio Psalmorum*, PL 51:333B–C: `Etiam si bonus
+  homo, aut bonus angelus adjuvet, non in eis, inquit, confidam; sed in Domino,
+  qui me per illos juvat`, and at v. 9 `Principes et homines et angeli possunt
+  intelligi: sed in neutris spes collocanda est; quia potestas non est nisi a
+  Deo` (Rom. 13:1). His frame for the passage is Eph. 6:12, read three verses
+  earlier, **which is what licenses the angelic sense: a guide quoting v. 9
+  alone loses his reason** [v17:PAT-509]. **Three verses later he quotes the
+  Offertory's own words** — `ut gustemus et videamus quam suavis est Dominus
+  (Psal. XXXIII, 8)` — **so a Father joins the Gradual's psalm to the
+  Offertory's verse in one sentence.** *Not established:* whether this Expositio
+  is Prosper's own throughout; it is largely an epitome of Augustine's
+  *Enarrationes*.
+- **Arnobius the Younger**, in Ps. CXVII, PL 53:505A–C: the man not to be
+  trusted is oneself, and the confidence forbidden is confidence in free choice
+  — `Habes quidem liberum arbitrium, sed noli de eo praesumere; de Deo
+  praesume, quia vinci non potest, nam liberum arbitrium vinci potest` — with
+  the predestinarian objection raised and answered in the same passage
+  [v17:PAT-512]. **This does NOT close §4.3's lead, Augustine's anti-Pelagian
+  books named by Cassiodorus at this verse; it shows that the grace-and-free-will
+  reading of Ps. 117:8 is attested in a fifth-century Latin psalm commentary in
+  its own right, so a guide need no longer report it only as a cross-reference
+  somebody else made.**
+- **Bruno the Carthusian** (*attributed*), *Expositio in Psalmos*, PL
+  152:1249D–1250B. **The first witness this sweep found who asks whether the
+  Gradual's `quam` is comparative at all, and he answers twice.** First it is
+  not: `Istud magis comparative non est positum`, so the verse means that
+  trusting the Lord by enduring tribulation is useful and looking to the
+  persecutor for bodily safety is not, with Jer. 17:5 as proof. Second it is,
+  **but only if `principes` are heavenly spirits and spiritual men** — `Deus
+  enim sine ipsis adjuvare potest, ipsi vero sine Deo minime` [v17:PAT-515].
+  **This is a grammatical judgement made about the appointed words themselves,
+  and it bears directly on P1's controlling limit (§9.11).** *OCR warning:* the
+  Ps. 117 passage arrived with line-order damage and was reconstructed from the
+  surrounding column; verify at a page image of PL 152:1250 before quoting.
+- **Peter Lombard**, *Commentaria in Psalmos*, PL 191:1035B–C: v. 8's man is
+  `homo carnalis, cui salus vana est`; v. 9's princes are, under the siglum
+  `[Aug.]`, `angelis qui dicuntur principes. Unde in Daniele legitur Michael
+  princeps (Dan. XII)`, with the reason that the helper who seems to help
+  through men or angels is he who made them good in their measure
+  [v17:PAT-527]. **He is the *Magna glosatura*, a sigla-marked compilation:
+  cite him for the compilation and its arrangement, never as a vote.**
+- **Godfrey of Admont**, PL 174:579D–580A: `melius est, imo optimum confidere in
+  virtute Dei, quam praesumere in suis meritis`, and the princes and servants
+  are the interior and exterior senses — `Interiores sensus nostri sunt
+  principes, exteriores sensus servi nostri` [v17:PAT-519]. **Under the bound at
+  §2.9.1.**
+
+#### 2.9.4 Alleluia — Ps. 94:1 (an em-dash filled, and one bound governs all four)
+
+- **Pseudo-Chrysostom**, *In Psalmum 94*, PG 55:615–618, read in Greek from a
+  TLG text layer. The psalm is a summons to repentance and confession, not to
+  festal praise: `Metanoias gar ho paron bios, apeiles de kai kriseos he
+  mellousa parousia`, proved from Hezekiah turning to the wall and from the
+  Ninevites, whose sackcloth prevailed where purple, diadem and throne did not
+  [v17:PAT-501]. **The TLG/PG apparatus marks this homily `[Sp.]` and the
+  digitisation carries the tag: it is a Greek witness of the Chrysostomic
+  corpus, not securely Chrysostom, and must be cited as such.**
+- **Arnobius the Younger**, in Ps. XCIV, PL 53:462D–463C: `exsultemus non in
+  delectationibus vanis, sed in Domino; antequam praeoccupemur, nos
+  praeoccupemus faciem ejus in confessione peccatorum nostrorum`, with a warning
+  against a merely human adoration of the adored — `non in forma servi eum
+  attendentes, putemus eum hominem purum` [v17:PAT-511].
+- **Bruno the Carthusian** (*attributed*), PL 152:1142A–1143A: the title is `non
+  est David, sed Christi`; the `Venite` addresses unbelieving Jews of the sixth
+  age; `jubilo, id est nimia et intensa interiori laetitia exsulto`; and two
+  readings of the following half-verse, one from court manners and one
+  eschatological — `Secundus autem adventus recte facies dicitur, eo quod tunc
+  cunctis Christus manifestabitur` [v17:PAT-514].
+- **Peter Lombard**, PL 191:875A–876A: `Venite, fide et exsultemus mente,
+  Domino, non in saeculo, Jubilemus voce, Deo salutari nostro Jesu` — **the
+  three verbs of the appointed verse allotted to three faculties, which is his
+  own arrangement and is a reading of the chant's own words** — carrying the
+  classical jubilus at exactly the appointed word, `Gaudium sit tantum, quod
+  verbis dici non possit, quod tamen intus conceptum, vox extra testetur`
+  [v17:PAT-526]. **His sigla attribute the surrounding material to Augustine,
+  Cassiodorus, Haymo and Alcuin, so the jubilus formula is almost certainly one
+  of the two accounts already at §6.7 and not a third.**
+- **THE BOUND ON ALL FOUR, AND IT IS SHARP.** Every one of them reads the
+  psalm penitentially, and every one reaches that reading **through v. 2,
+  `Praeoccupemus faciem eius in confessione`, which the Alleluia does not
+  appoint** [v17:PAT-501, v17:PAT-511, v17:PAT-514, v17:PAT-526]. Bruno's is
+  sharper still, turning on the word `faciem` the chant never sings. **The
+  convergence is real about the psalm and cannot be transferred to the chant
+  without saying that the chant stops at v. 1.** That is the same limit §2.1
+  records for Augustine and Cassiodorus at the Introit. **No dependence between
+  the Greek homily and Arnobius was looked for and none is asserted.**
+
+#### 2.9.5 Gospel — Mt. 6:24–33
+
+- **Christian of Stavelot (Druthmarus)**, *Expositio in Matthaeum* cap. XIII,
+  PL 106:1316C–1319A, **the most literal-minded of the Latin witnesses read
+  here.** He answers the objection that Paul commands `serve one another` by the
+  Greek distinction of `latreusis` and `douleusis`, quoting both words in Greek
+  characters; identifies the two masters as the devil and God and explains
+  `contemnet` for `odiet` by `nullus potest odire Deum`; glosses mammon as
+  Syriac for riches with `Aliud est habere divitias, aliud servire divitiis`;
+  **reads the lilies with no allegory at all, on the bare ground that no linen
+  matches the lily's whiteness, no dye the rose, no purple the violet**;
+  explains Solomon as the example because the Jews knew no richer king though
+  richer men existed — Nebuchadnezzar, Ahasuerus, Octavian; and supplies the
+  elided noun at Mt. 6:33 with its limit, `haec, subauditur NECESSARIA,
+  adjicientur … Ad necessitatem, non ad superfluitatem` [v17:PAT-506]. **His
+  Solomon note is a historical claim and not exegesis: report it as his opinion
+  about what the Jews knew, never as a fact about first-century wealth.**
+- **Paschasius Radbertus**, *Expositio in Matthaeum*, PL 120:306B–307A and
+  312C–313A. He grounds the impossibility of two masters in **the baptismal
+  renunciation** — no one enters the font until he renounces the devil, all his
+  works and all his pomps — and calls the relapsed Christian a foolish soldier
+  throwing away immortal arms; he **excepts the Trinity from the rule**, `Pater,
+  et Filius, et Spiritus sanctus, non tres Domini`, because service fails only
+  where a discordant will intervenes; and at Mt. 6:33 he **denies that `primum`
+  marks order at all**, `Primum autem, non ad ordinem referendum puto … magis ad
+  quantitatem referendum est, ut extra hoc nihil quaerendum sit`, reading the
+  promise through use and enjoyment, `his utamur in via, quatenus illo fruamur
+  in patria` [v17:PAT-507].
+- **Rabanus Maurus**, PL 107:836B–839A, **and the finding is mostly a
+  negative of the useful kind:** at these verses he compiles rather than
+  composes. The material runs `(Hier.)` for the mammon gloss and the flowers and
+  `(Aug.)` for the two masters and for `Quaerite primum`, with **one** sentence
+  of his own marked `(MAUR.)` [v17:PAT-508]. **A guide must not cite Rabanus as
+  a further vote for a reading that is Jerome's or Augustine's.** The Augustine
+  he transmits supplies the sharpest surviving formula for the Communion's word:
+  `Cum enim dicit illud primum, significavit quod hoc posterius quaerendum est,
+  non tempore, sed dignitate`. **NOT VERIFIED AT SOURCE:** that sentence was read
+  inside Rabanus's compilation and Migne's sigla are editorial; **this brief
+  already holds *De sermone Domini in monte*, so the check at II.16.53 is cheap
+  and must be made before it is printed as Augustine's.**
+- **Glossa ordinaria on Matthew**, PL 114:105A–107A: mammon reported as also the
+  name of a demon set over riches — **and reported by the Gloss itself as
+  hearsay, `Dicitur hoc nomen esse daemonis`, which is how it must be passed
+  on**; the two masters grounded in baptism exactly as in Paschasius; a variant
+  note at Mt. 6:30, `Alii libri habent: in ignem vel in acervum qui habet speciem
+  clibani`; and, alone among the compilations, **a flag that Augustine withdrew
+  the sentence about hating God** [v17:PAT-517]. **The v. 30 variant is a fact
+  about the Gospel text and belongs to whoever owns the appointed-text record;
+  no Latin witness was checked for whether any actually prints `in ignem`.**
+- **The exposition printed under Bede's name**, PL 92:34D–36A: a raised question
+  whether bodily food belongs to the soul, answered by taking `anima` in Mt.
+  6:25 as this present life, `cujus retinaculum est alimentum istud corporeum`;
+  the anti-allegorical line `Ista vero documenta de avibus et liliis non
+  allegorice ponuntur`; and **a precise reading of the Communion's own verb**,
+  `Non dixit nobis dari, sed adjici, quia nobis in intentione aeternitas, in usu
+  vero debet esse temporalitas` [v17:PAT-525]. **Report it as "the Matthew
+  exposition printed under Bede's name", never as Bede.**
+- **Bruno of Segni**, *Commentaria in Matthaeum*, PL 165:121B–123C, **the most
+  useful counter-witness the sweep produced.** `Quis enim servit mammonae, nisi
+  avarus? Avarus igitur Deum contemnit et odio habet. Unde hoc? Quia idolis
+  servit`, from Eph. 5:5. He also raises a literal objection nobody else here
+  raises — a man plainly *can* serve many masters, `non solum duobus dominis,
+  sed et multis dominis servire non est impossibile`, which is why the verse
+  must be read of these two in particular; defines serving riches as fearing to
+  spend them; restricts the whole prohibition of anxiety to apostles, their
+  successors and those aiming at perfection; and reads the lilies literally
+  [v17:PAT-528]. **Not read, and named as the cheapest remaining repair on this
+  side: his own *Expositio in Psalmos*, Corpus Corporum work idno 5768, which
+  reaches all four appointed psalms** [v17:PAT-529].
+- **Godfrey of Admont**, *Homilia* LXXXIII, PL 174:580C–583D — **his Fifteenth
+  Sunday, and the far end of the division at §6.6.** He takes the whole
+  prohibition of anxiety as concerning **spiritual** food and clothing, `non de
+  visibili esca et potu sive vestitu … sed potius pro invisibili esca et potu ac
+  spiritali vestitu animae et spiritus`, so `quid manducetis` means what taste of
+  contemplation one may have; widens mammon past riches to `quidquid illud est,
+  quod homo intenderit et plus quam Deum dilexerit`; makes the kingdom to be
+  sought first the heart, `cor suum, quod regnum Dei semper esse debet`; makes
+  **the birds the good angels**, who neither sow by reading nor reap by taking
+  the fruit of reading nor gather into barns by recollecting it into memory; and
+  makes **the lilies the evil spirits** — `neque nent` because a spinner draws
+  the thread from left to right and they draw everything they do the other way
+  — and **Solomon Christ**, `Per Salomonem, qui interpretatur pacificus, Christus
+  accipitur` [v17:PAT-520, v17:PAT-521]. **He raises the objection his own
+  allegory creates and answers it, so he is not a naive instance of the
+  allegorising side but a self-aware one.** *Two bounds:* his spiritual-food
+  reading depends on the pericope running past Mt. 6:33, and he is preaching to
+  a monastic audience about *lectio*, so it may not be transferred to a Mass
+  congregation without saying so.
+- **Augustine, *Retractationes* I.19**, PL 32:617, **read at source**: `Item quod
+  dixi, Nullius enim fere conscientia Deum potest odisse (Lib. 2, c. 14, n. 48),
+  non video fuisse dicendum. Multi enim sunt de quibus scriptum est: Superbia
+  eorum qui oderunt te (Psal. LXXIII, 23).` The self-citation fixes the work as
+  *De sermone Domini in monte* II.14.48, Augustine's exposition of the appointed
+  Gospel's first verse [v17:PAT-518]. **The transmission is recorded as
+  transmission and no author is accused of hardening Augustine on purpose:
+  Rabanus prints `ferre` for `fere` and pseudo-Bede prints `Nullius enim
+  SCIENTIA Deum odisse FERRE potest`, and `scientia` for `conscientia` cannot be
+  anyone's theology.** *De serm. Dom.* II.14.48 itself was not opened this run.
+
+#### 2.9.6 Offertory — Ps. 33:8–9a
+
+- **Arnobius the Younger**, in Ps. XXXIII, PL 53:368C–369B, **and two things in
+  him are load-bearing and must not be merged.** The **Eucharistic** gloss:
+  `Gustate corpus vitae, et videte quam suavis est Dominus: Vitam enim habet in
+  semetipso, qui manducaverit carnem ejus, et biberit sanguinem ejus (Joan. VI)`
+  — a Latin witness beside the two this brief already holds (Cyril of Jerusalem,
+  authorship disputed, and Ambrose), and **unlike them a psalm commentary
+  reading the appointed verse in place rather than a mystagogical reuse.** The
+  **paschal** identification of the angel: `misit angelum suum in circuitu
+  timentium corpus ejus, et revolvit lapidem a monumento (Matth. 28), et eripuit
+  eum`, with the poor man who cried read as Christ on the cross [v17:PAT-513].
+  **A REAL LIMIT ON THE SECOND:** it depends on repointing `timentium eum` as
+  those fearing *for* his body, which is not what the missal's Latin says.
+  **Report it as his reading of the verse, never as the verse's sense.**
+- **Godfrey of Admont**, PL 174:580A–B: the angel is the gift of grace itself,
+  `Angelus iste, quem Deus in circuitu timentium se immittit, donum gratiae
+  illius est, sine cujus munere homo nunquam videre et gustare valet quoniam
+  suavis est Dominus` [v17:PAT-519]. **Under the bound at §2.9.1.**
+- **Prosper of Aquitaine** quotes this verse inside his exposition of Ps. 117:12
+  [v17:PAT-509]; see §2.9.3.
+
+#### 2.9.7 Communion — Mt. 6:33 recast
+
+- **The standing negative is unchanged in its own terms and changed in its
+  surroundings.** §2.7 records that no witness comments on the Communion
+  *antiphon* as such and that the observation about the promoted `Primum` is
+  editorial and not patristic. **The first half still holds** — every witness
+  below comments on Mt. 6:33 in its Gospel place, not on the antiphon. **The
+  second half does not:** the word `primum` now has a documented and
+  **contested** reading, Paschasius denying that it marks order at all against
+  the Augustine the compilations transmit, `non tempore, sed dignitate`, an
+  order of dignity [v17:PAT-507, v17:PAT-508]. **Report the disagreement; do not
+  merge them.**
+- **The verb the antiphon keeps when it drops everything else now has a witness
+  reading it:** pseudo-Bede's `Non dixit nobis dari, sed adjici` [v17:PAT-525],
+  beside Christian of Stavelot's `subauditur NECESSARIA … Ad necessitatem, non
+  ad superfluitatem` [v17:PAT-506] and Paschasius's `his utamur in via,
+  quatenus illo fruamur in patria` [v17:PAT-507].
+- **Godfrey reads `regnum Dei` here as the heart** [v17:PAT-520], which is a
+  fourth thing done with the phrase the Communion sings.
+
+#### 2.9.8 The three composed orations
+
+- **Collect — the negative is withdrawn; see §0.5(d).** Four receptions of four
+  different kinds, and **they must not be counted as four votes on a meaning**
+  [v17:PAT-522]: **Alcuin**, *De usu Psalmorum* VII, PL 101, recasting it as a
+  private prayer — `Deus, quia tibi de omnibus cura est, noli me derelinquere in
+  manu consilii mei … et quia sine te labitur humana mortalitas, tuis semper
+  auxiliis, et abstrahatur a noxiis omnibus fragilitas mea, et ad salutaria
+  dirigatur`, the whole causal clause and both limbs of the double petition
+  being the Collect's, with `fragilitas mea` for `Ecclesiam tuam`;
+  **Wibald of Corvey**, *Epistola* CCCLXXV to Eugenius III, PL 189, applying both
+  limbs to the papacy — `ut humana defensione non egeat, sed tuo tantum
+  adjutorio et abstrahatur a noxiis et ad salutaria dirigatur`;
+  **Honorius**, *Gemma animae* IV, citing it by incipit; and **Godfrey of
+  Admont**, PL 174:580B, glossing it by interpolation — `quia sine te labitur
+  humana mortalitas IN ELATIONE, tuis semper auxiliis abstrahatur a noxiis
+  SUPERBIAE ET EXTOLLENTIAE MENTIS, et ad salutaria, VERE HUMILITATIS BONA, te
+  ducente dirigatur`. **NOT SETTLED: the direction of dependence between
+  Alcuin's prayer and the Gelasian Collect.** Alcuin is later as Corpus Corporum
+  dates him, which makes borrowing the natural reading, but both could draw on
+  common euchological stock and the lane did not test it. **EVIDENCE STATE: the
+  Alcuin and Wibald texts were read in the search index's returned sentence
+  context and NOT in the full downloaded work; both must be re-read in place
+  before publication.**
+- **Secret and Postcommunion — the negative stands, and it is now correctable in
+  a specific way rather than in principle** [v17:PAT-523]. What would overturn
+  it: a phrase index not dependent on Migne's orthography, since a witness
+  writing `propiciatio` or breaking the phrase across a line would be invisible;
+  a search of Greek and vernacular corpora, not attempted; and the two repairs
+  §4.1 names, of which **Schuster vol. 3 is now made** [v17:LIT-206] **and the
+  Usuarium *Corpus Orationum* concordance is not.**
+- **Schuster comments on all three, at more length than Guéranger**
+  [v17:LIT-206], and two convergences in him are worth keeping: he reads the
+  Secret's `tuae propitiatio potestatis` as the appeasing of the divine
+  omnipotence, which `verified.md` and Guéranger independently reach; and **his
+  Communion paragraph supplies the `et iustitiam eius` the antiphon drops**,
+  glossing "justice" from the Gospel verse rather than from the antiphon —
+  **evidence that a commentator reading the antiphon reaches back for the clause
+  the recasting removed.** *Schuster's paraphrases are English and are not text
+  witnesses: the appointed Latin must not be quoted from him.*
 ---
 
 ## 3. Corpora, languages and works searched
@@ -1864,6 +2555,32 @@ searched, because both book corpora refused.** Parliament: the UK only. **Every
 exact-phrase count reported is the API's own and was not audited item by item.**
 Quote aggregators and attribution sites were not used as evidence anywhere.
 
+### 3.7 Corpora, languages and instruments searched at run `ca03f1b357e7ec25`
+
+**Recorded per lane, because the bounds differ per lane.** A bound stated once
+for this run as a whole would be false.
+
+| Lane | Corpora and instruments reached | Languages | Bound of the sweep |
+|---|---|---|---|
+| `scripture-context` | The tracked Clementine Vulgate (`edition.catholic-church.vulgata-clementina.ebible-latvuc`); the tracked Douay–Rheims Challoner; the tracked Robinson-Pierpont Byzantine Textform 2018 (Matthew, Galatians, Luke, John, Acts, Mark, 1–2 Peter, 1 Corinthians, 2 Thessalonians, Jude, Revelation); the leaf's `propers/verified.md` and `research/chronology.toml`; `tools/tpt proper-chronology loci` | Latin, Greek, English | **No Hebrew text of Pss. 33, 83, 94 or 117 is held here, and the registered LXX Rahlfs artifact has no text bytes**, so nothing said about the psalms was checked in Hebrew or Greek. **Ephesians, Colossians and Hebrews are not among the tracked Greek artifacts**, so SCR-015's Eph. 5:5 / Col. 3:5 and SCR-007's Hebrews were read in Latin only. **No Psalterium Romanum, Vetus Latina, iuxta Hebraeos, Weber/Stuttgart or Nova Vulgata witness is held**, so which psalter the chants descend from was not reachable. **Direct quotation only: the three orations were not searched for loose verbal echo** [v17:SCR-028] |
+| `patristic-reception` | Corpus Corporum Patrologia Latina (`mlat.uzh.ch`), whole-collection TEI download and whole-collection exact-phrase Sphinx index — its own navigation summary reports 5,277 texts, 5,204 works, 1,528 authors, 85,539,587 words; Documenta Catholica Omnia MGR text-layer PDFs (TLG transcriptions); the khazarzar.skeptik.net PG mirror, Theodoret directory enumerated in full | Latin, Greek | **Every Latin quotation is from an OCR transcription of Migne and is INSPECTED, not verified** [v17:PAT-530]. The phrase index reaches Migne's orthography only, and only where the phrase is unbroken in the indexed unit. **Whether the index searches beyond the Patrologia Latina when no corpus filter is passed was NOT established**; every hit seen came from a PL text and no wider bound is claimed [v17:PAT-523] |
+| `liturgical-history` | Schuster, *Liber Sacramentorum* vol. III, page images of the registered artifact (sha256 `410f6d11…`, 462 pp.), pp. 117–118 and 132–139; Wilson, *The Gregorian Sacramentary under Charles the Great* (HBS XLIX, 1915), page images at printed pp. 172–176; Honorius, *Gemma animae* IV, page image of PL 172 cols. 717–718; the *Liber Comitis* in PL 30 cols. 519–522, page images; `gregorien.info` as an index of Hesbert's *Antiphonale Missarum Sextuplex*; `src/sources/calendars/roman-1962/propers.yaml` | Latin, English | **Two of the four page-image sources are UNREGISTERED derivatives of Internet Archive items** (the Wilson PDF, sha256 `96fd93c7…`, and the two Migne volume scans): their digests are recorded for replay and not as repository fingerprints, and they are the same digitisations as the registered OCR layers, **not independent second witnesses** [v17:LIT-208, v17:LIT-212, v17:LIT-219]. **All 1962-side identifications are against the tracked registry, which is a repository derivative and not a facsimile collation** [v17:LIT-210]. **The AMS side is a modern database and not Hesbert's pages** [v17:LIT-215] |
+| `theological-synthesis` | The leaf's own `propers/verified.md`; the 21 collated 1962 `propers/verified.md` records under `src/claude` and `src/gpt` covering **15 distinct formulary identities**; the leaf's `sections/20-themes.tex`; this file | Latin | **This lane retrieved NO new source, opened NO patristic, liturgical or historical work, and consulted NO page image.** Every finding is a mechanical distribution over audit records. **Nothing in it establishes anything in claim class 3** [v17:THE-215]. The denominator is 21 records / 15 identities as of this run; a later run with a different denominator will not reproduce THE-202, THE-203, THE-204 or THE-207 |
+| `source-citation-coverage` | `src/sources/` at commit `22ba03d94`, read as records by directory enumeration and grep over all **543** work records and their edition, artifact, segment and passage manifests; the four Claude- and GPT-side inventories; the roman-1962 translation ledger and Latin-provenance ledger; the leaf's `sections/99-references.tex` and `research/source-bindings.toml` | n/a (records) | **No external source was opened and no retrieval was made**, so nothing here bears on whether a witness is obtainable — only on what this repository presently holds. **A literal record sweep cannot exclude a witness registered under an alias not tried; enumerating all 543 work records bounds that risk without eliminating it for constituents held inside container volumes** [v17:COV-010] |
+| `cultural-afterlife` | CourtListener v4 search API (exact-phrase, `type=o`); Caselaw Access Project static transcriptions of the printed reporters; Library of Congress Chronicling America, with **two items collated against IIIF page images**; the UK Hansard search API and official digitisation; Internet Archive metadata | English | **The case-law corpus is overwhelmingly American: no English or Commonwealth sweep was run** [v17:CUL-201]. **Chronicling America degrades a stopword-heavy phrase to an AND of terms and cannot answer an exact-phrase question** [v17:CUL-214]. **No non-English, book, periodical or musical-repertory corpus was searched for any element** [v17:CUL-214]. KJV wordings are as reproduced in the sources cited and **no separate KJV witness was collated** [v17:CUL-216] |
+| `precedent-search` | Nine full-text missal payloads in eight editions (Pustet Ratisbon 1862, Vatican typica 1604, Venice 1570, three Ambrosian, three Mozarabic); **2,865** `.tex`/`.md` files under `src/claude` and `src/gpt` carrying **188** published `main.tex` documents and **92** interpretive-proposal files; the tracked 1962 registry | Latin, English | **The OCR bound is worse than a phrase search suggests and is now demonstrated on this formulary's own text:** all four appointed phrases tested return zero across all nine payloads while the same books demonstrably print them — the Pustet prints the Gradual three times as `est confidere in domino, quam / confidere in h6mine` [v17:PRE-002]. **Single-word and fragment searches carry weight; multi-word phrase searches carry almost none; no whole-phrase negative over these artifacts may be reported as absence.** **Not reached for any conjunction:** any printed chant repertory (*Graduale*, *Antiphonale*, Hesbert *CAO*), any pre-Tridentine Latin commentary tradition, the medieval Ambrosian and Mozarabic manuscript traditions, and PL 37, which the repository holds and this lane did not open [v17:PRE-001] |
+
+**Two corpus statements in this brief are corrected by the fresh sweep.** §3.5's
+count of published Triptych documents was **182** and is now **188**
+[v17:PRE-001]; §3.5(c)'s "any sanctoral or votive Triptych leaf, because none
+exists" is inaccurate as written, **a ritual leaf now existing** (GPT
+`m01-nuptial-mass`), and the full census of propers leaves is **35** — 6 Claude
+1962 temporal, 14 GPT 1962 temporal, 1 GPT 1962 ritual, 2 Claude postconciliar,
+12 GPT postconciliar [v17:PRE-027]. **Sanctoral and votive leaves still do not
+exist, so the substance of the negative survives for those two kinds.** The
+correction matters because the corpus statement is what bounds every "not
+located" classification, and **a bound that names a class as empty when it is
+not is a bound that cannot be replayed.**
 ---
 
 ## 4. Material negative results
@@ -2248,6 +2965,159 @@ over the orations of the whole missal; any non-Roman rite. **The records swept
 are themselves audit records, not page images, so a sweep over them is evidence
 about those records and not about the missal.**
 
+### 4.15 Material negative results of run `ca03f1b357e7ec25`
+
+**Each is bounded, each names what would overturn it, and none is offered as
+silence.**
+
+**(a) The Secret and the Postcommunion still have no located reception of any
+kind — and the negative is now of a different order than it was.** It is bounded
+over a whole-corpus exact-phrase index rather than over a reading list:
+`"propitiatio potestatis"` returns 3 and `"purificent semper et muniant"`
+returns 2 across Corpus Corporum's Patrologia Latina, and every one of the five
+is a sacramentary printing the prayer — Gelasian XLI and X, Gregorian
+`DOMINICA I ANTE NATALEM DOMINI` (reading `purgatio PECCATORUM` for
+`delictorum`), Gelasian XVI, and the saint-adapted Gelasian LXVIII for St
+Andrew's vigil (reading `nos, DOMINE`). **The same index queried for the
+Collect's phrases DOES return non-liturgical hits, which shows the negative is a
+property of these two prayers and not of the method** [v17:PAT-523].
+Independently, exact-phrase greps for four continuations of the two prayers
+across every Latin work the lane downloaded returned nothing. **What would
+overturn it:** an index not tied to Migne's orthography; a Greek or vernacular
+sweep, not attempted; and the Usuarium *Corpus Orationum* concordance, still
+unconsulted.
+
+**(b) The Greek side is still the weak one, and this run made the imbalance
+worse rather than better.** It added **one** Greek work and **one** spurious
+Greek homily — Chrysostom on Galatians at PG 61:670–674 and pseudo-Chrysostom
+on Ps. 94 — while adding **eleven** Latin witnesses, and it swept **none** of
+the nine Greek authors §4.2 lists as untouched [v17:PAT-529]. **The standing
+instruction at §4.2 therefore holds unchanged and is strengthened: a guide must
+not present a Greek–Latin comparison as evenly grounded.** Two of §4.2's three
+named works are unreachable on the routes it recommends, and a third is behind a
+file that looks complete and is not [v17:PAT-524]; see §0.5(e).
+
+**(c) The unswept list, restated so an unreachable work can be told from one
+merely not looked for** [v17:PAT-529]. **Swept this run:** Ambrosiaster, Marius
+Victorinus and the Glossa on Galatians; pseudo-Bede, Rabanus, Paschasius,
+Christian of Stavelot, Bruno of Segni and the Glossa on Matthew; Prosper,
+Arnobius the Younger, Peter Lombard and Bruno the Carthusian on the Psalms.
+**Still unswept, and named:** Pelagius's *Expositio*, Nicholas of Lyra, Denis the
+Carthusian and Cornelius a Lapide on Galatians; Remigius of Auxerre in his own
+person, Albert the Great, Nicholas of Lyra, Maldonado and the *Opus imperfectum*
+on Matthew; Bellarmine's Latin *Explanatio* and pseudo-Jerome's *Breviarium* on
+the Psalms; **Bruno of Segni's own *Expositio in Psalmos*, work idno 5768, which
+is registered, reachable, reaches all four appointed psalms, and is the cheapest
+remaining repair**; and, for any appointed passage whatever, Origen, Basil,
+Gregory of Nyssa, Gregory of Nazianzus, Cyril of Alexandria, Theophylact,
+Euthymius Zigabenus, Didymus and Athanasius. **Registered and reachable but not
+opened:** the Glossa on the Psalms (idno 3944) and Remigius of Auxerre's
+*Enarrationes in Psalmos* (idno 4321/9349), whose ids the lane resolved and
+whose texts it never downloaded. **Not in that corpus at all:** the *Opus
+imperfectum in Matthaeum*, which is a Patrologia **Graeca** text (PG 56).
+
+**(d) Schuster's three pages carry four absences** [v17:LIT-207]: no station
+church for this Sunday (where p. 139 does name one for the Fifteenth), no
+sacramentary siglum, no manuscript citation, and no note that the Communion
+antiphon is secondary. **Bounded to pp. 136–138 of vol. III and correctable by
+anyone who reads the volume's introduction and its index of sacramentary
+references.** It matters because the brief hoped Schuster would corroborate the
+Gelasian/Gregorian displacement independently: **on these pages he does not.**
+
+**(e) Two liturgical instruments remain out of reach, one for a rights reason
+recorded in this repository and one because it is not digitised where the lane
+could look** [v17:LIT-222]. **Hesbert's *Antiphonale Missarum Sextuplex*:** the
+edition record is catalog-level, no book artifact was inspected or registered,
+and **no affirmative United States redistribution basis for exact edition bytes
+was established** — Hesbert died in 1983 — so the printed pages could not be
+opened here and §3.7's `gregorien.info` substitute is a **declared and material
+downgrade in evidence state.** **Pamelius's *Liturgica Latinorum* tomus II:** four
+Internet Archive searches return exactly two items, both Tomus I, and the
+companion-volume identifiers return empty objects. **The Pamelius search was of
+the Internet Archive only** — not Google Books, e-rara, MDZ, Gallica or any
+library's own digitisation — so this repeats the prior sweep's negative on the
+same instrument rather than extending it.
+
+**(f) No oration of any of the fifteen collated 1962 identities asks for food,
+drink or clothing.** Forty-five orations, probed for `esca-`, `cib-`, `pan-`,
+`potu-`, `bib-`, `manduc-`, `sitim`, `vestim-`, `vesti[rt]-`, `induv-`,
+`operi-`; zero true hits, the only regex hits being `famulis`/`famulorum` and
+`operis` from *opus* [v17:THE-202]. **Bounded: 15 identities out of the missal's
+whole universe, and the records swept are audit records and not page images, so
+this is evidence about those records and not about the *Missale Romanum*.**
+**What would defeat it: a page-image collation of any further 1962 oration that
+does ask for one of the three.**
+
+**(g) The Introit and the Alleluia produce no qualifying cultural afterlife, in
+two corpora, at stated bounds** [v17:CUL-214]. Six distinctive strings returned
+**zero** from the American case-law corpus: `"how amiable are thy tabernacles"`,
+`"a day in thy courts"`, `"a doorkeeper in the house of my God"`, `"O God our
+shield"`, `"let us sing unto the Lord"`, `"O come let us sing unto the Lord"`.
+The one newspaper string tested returned an AND-count of 364 dominated by
+standing church notices, and **a representative hit was checked on the page**
+rather than by title: *The Nome Nugget*, 22 Nov 1957 p. 3, sets the phrase as a
+devotional tag at the foot of a service listing, **which the gallery rule
+excludes outright.** **And the Alleluia carries an identity hazard rather than a
+scarcity of hits:** `make a joyful noise` stands at Pss. 66:1, 81:1, 95:1–2,
+98:4, 98:6 and 100:1, **so no use of it can be tied to the appointed Ps. 94:1 on
+wording at all** [v17:CUL-216].
+
+**(h) Psalm 94 and Ps. 117:8–9 have no Triptych precedent of any kind.**
+Psalm 94 returns **zero** hits across all 2,865 files under `src/claude` and
+`src/gpt` outside the two Fourteenth-Sunday leaves; Ps. 117:8–9 returns none
+either, the only other Triptych occurrence of Ps. 117 being v. 26 in the
+Ordinary's Preface [v17:PRE-003, v17:PRE-024]. **The Gradual and the Alleluia
+are the two appointed elements with no Triptych precedent whatever.**
+
+**(i) The repository's own dedicated providence article does not treat this
+Sunday's Gospel.** `src/claude/articles/faith/trustful-surrender-to-divine-providence`
+lists Mt. 6:25–34 in its reference list and expounds Mt. 10:29–31 in the body
+[v17:PRE-003]. **Recorded as a negative rather than as a lead: it supplies no
+treatment of the appointed text.**
+
+**(j) Every absence the leaf declares at the appointed loci was re-checked
+against the working tree and all of them stand, with the single exception at
+§0.5(i)** [v17:COV-010]. **This is recorded as a positive verification, because
+an audit that reports only defects cannot establish that the negatives it leaves
+alone are sound.** The re-checked list: Chrysostom on Galatians (no identity in
+the library at all; NPNF1-13 absent); Chrysostom on the appointed Gospel (the
+only two registered *Hom. in Matt.* passages are 23 and 49, on Mt. 7 and Mt.
+14); Augustine's *Enarrationes* at Pss. 33, 83, 94, 117 (registered passages
+reach none of them; all ten New Advent artifacts are remote with rights
+`unresolved` or `restricted`); Cyril of Jerusalem; Ambrose *De mysteriis*;
+Ambrosiaster (only 1 Corinthians registered; no Marius Victorinus namespace);
+Cassiodorus (passages at Pss. 16, 24, 64, 88 only; the CCSL 98 scan is
+restricted and covers printed Pss. 71–150, so it reaches Pss. 83, 94 and 117 and
+not Ps. 33); Theodoret on Galatians (one registered passage, at Gal. 3:16–22);
+Hesbert (work and edition records, no artifacts directory — **and it is the only
+chant book registered anywhere in `src/sources/works`**); Anthony of Padua
+(three verified passages over a restricted artifact, none of them bound in
+`research/source-bindings.toml`). **The seasonal citation-collation inventory
+correctly carries no `pentecost-14` row: its own declared scope covers no Sunday
+after Pentecost.**
+
+**(k) Two false cognates the stem sweep manufactures, recorded so nobody
+publishes them** [v17:THE-214]: `conte-` joins the Epistle's `contentiones`
+(*contendere*) to the Gospel's `contemnet` (*contemnere*), and `oper-` joins the
+Epistle's `opera carnis` (*opus*) to the Gospel's `quo operiemur` (*operire*).
+**Neither is a tie.** Also disposed of: `gloria` joins Introit to Gospel only
+because the Introit's occurrence is the doxology cue `Gloria Patri` and not the
+psalm's words, so it is apparatus and not text. **And one weak candidate the
+lane itself refuses:** `potes-` joining the Gospel's `Nemo potest` / `Non
+potestis` to the Secret's `tuae propitiatio potestatis` — cognate at the root
+but distinct lexemes, *posse* against *potestas*, **a prefix coincidence dressed
+as a theme** [v17:THE-213]. It is recorded because the semantic pairing is
+genuinely suggestive and someone will reach it again; **if anyone wants it, it
+must be argued from the doctrine and never from the word.**
+
+**(l) An exhaustive token-level join over the ten appointed elements finds no
+substantive cross-element tie beyond those already accounted for** — `regnum`,
+`salut-`/`salv-`, `propitia-`, `semper`/`perpetu-`, `concupi-`, `servi-`,
+`christi`, `adici-`, `primum`/`quaerite`/`omnia`, `anima` and `respi-`
+[v17:THE-214]. **This confirms and extends the last join's bound, which was
+stated about probed stems where this join is exhaustive over every token.** The
+Epistle's law-inclusio and its fourfold `adversus` remain single-element
+readings and still may not be published as cross-proper claims.
 ---
 
 ## 5. Rejected and unresolved leads
@@ -2300,6 +3170,31 @@ about those records and not about the missal.**
 | `serve God and mammon` (22 opinions), the five later Wallingford citations, and the variants `a cubit to his stature`, `one cubit to his stature`, singular `fowl of the air` | **Unexhausted, and said to be so** | Each is a cheap and bounded piece of work for a later sweep [CUL-023] |
 | The pin cite of *McLean v. Arkansas* | **Not settled** | The Caselaw Access Project record is internally inconsistent — official citation 529 F. Supp. 1255, first page recorded as 1249, the lilies passage at page label 1265. **The star page must be checked against a reliable reporter before a pin cite is printed**; the structural locus is safe meanwhile [CUL-016] |
 
+### 5.1 Leads and rejections added at run `ca03f1b357e7ec25`
+
+| Lead | Status | Why, and what would close it |
+|---|---|---|
+| **Denise Levertov, "O Taste and See" (New Directions, 1964)** — the Offertory's `Gustate et videte` named as scriptural, its received sense stated, and then redirected onto grief, mercy, language, tangerine and weather | **QUALIFYING CANDIDATE, NOT PUBLISHABLE. Secondary sources only** | It qualifies squarely under the gallery rule — it is not a setting, a quotation or a devotional reuse — and its identity is unusually clean, `O taste and see` occurring once in the whole Bible. **But no reliable edition was collated, no page in any edition was settled, and every wording rests on aggregator-level pages, which the profile treats as leads only.** The Internet Archive first edition is locatable and closed. **It is IN COPYRIGHT** (New Directions 1964; Levertov d. 1997), unlike every other item in the lane's return. **What would close it is one page-turn:** read the poem in *O Taste and See* (1964) or *Poems 1960–1967* (1983), record the page, collate the opening lines. **Until then the Offertory's negative result stands as recorded** [v17:CUL-213] |
+| **Ralph Vaughan Williams, motet "O taste and see" (1953)** | **REFUSED ON THE RULE, not on the evidence** | A psalm verse set to music and sung at a coronation and a funeral is the verse being used for what it says; nothing in it is redirected, and the rule excludes a bare musical setting. **The single source consulted is an encyclopaedia article and is a lead only, so the 1953/2022 facts must not be printed anywhere in the guide on this authority** [v17:CUL-215] |
+| ***Laws v. Laws*, 164 Colo. 80 (1967) — "a veritable army of alimony drones, who neither toil nor spin"** | **ECHO. Publishable only as an echo, and only after one retrieval** | The compression is not the KJV wording of Mt. 6:28, no locus is given, and the court attributes the phrase to counsel and to *Doyle v. Doyle*, 158 N.Y.S.2d 909, **which was not retrieved.** Without *Doyle* it is not established whether the phrase reached counsel from Matthew or from a circulating divorce-bar idiom. **The shape is nonetheless unique in the family: the appointed clause used as an insult and the insult refused by the bench in the same paragraph** [v17:CUL-208] |
+| **"J. Rufus Wallingford" as a pulp-fiction confidence man**, the identification on which *State v. Whiteaker*'s sentence turns | **STILL UNVERIFIED IN A PRIMARY SOURCE** | Carried from the prior run and not closed this run. **Must be checked or dropped before publication** [v17:CUL-204] |
+| ***Marriott v. Ramada* (1993)**, carried by the prior audit inside the cubit family | **NOT REPRODUCED; must be re-found or dropped** | None of this run's four variant queries returned it and its citation could not be confirmed [v17:CUL-207] |
+| **The star page of *McLean v. Arkansas Board of Education*** at the lilies quotation | **UNSETTLED, and the pin cite is as settled as the surrogate allows** | The opinion's own reference is `Px 129 at page 363` — trial exhibit 129 at its p. 363 — and the passage sits in the discussion of the textbook committee. **CAP's casebody text carries no star pagination, so the *Federal Supplement* star page was not recovered and must be before a page-and-line cite is printed** [v17:CUL-205] |
+| **`Non tempore, sed dignitate`** as Augustine's | **LEAD until checked at source** | Read inside Rabanus's compilation, where Migne's sigla are editorial. **This brief already holds *De sermone Domini in monte*, so the check at II.16.53 is cheap and must be made before the sentence is printed as Augustine's** [v17:PAT-508] |
+| ***De sermone Domini in monte* II.14.48 itself**, the place Augustine retracts | **NOT OPENED this run** | The retraction is verified at source in the *Retractationes*; **the original sentence in its own context is not, and any claim about what Augustine originally meant by `fere` needs it** [v17:PAT-518] |
+| **Whether the angelic reading of `principes` is one position with three carriers or three positions** | **OPEN, and cheap to settle** | Lombard's siglum puts it under Augustine's name and Prosper's *Expositio* is largely an epitome of Augustine, whose own *Enarratio in Ps. 117* this brief already holds. **That check must be made before anyone counts votes at §6.12** [v17:PAT-527, v17:PAT-509] |
+| **Whether Christian of Stavelot's `latreia`/`douleia` distinction is his own or Augustine's** (*De civ. Dei* X.1) | **OPEN; no dependence asserted either way** | The place was not opened [v17:PAT-506] |
+| **Whether Marius Victorinus's lacuna at Gal. 5:18–24 is his or Migne's** | **OPEN** | CSEL 83/2 (Locher) and Cooper's edition were not checked [v17:PAT-505] |
+| **Whether the Roman Frankish five-Sunday reckoning after St Lawrence is arithmetically the +2 Wilson collates in R and S** | **NOT ESTABLISHED and must not be asserted** | Schuster names the mechanism and names no source for the "Calendar of Fronteau"; the arithmetic linking his mechanism to Wilson's offsets was not done [v17:LIT-203, v17:LIT-220] |
+| **Wilson's square brackets around the Ottobonianus Alleluia cues** | **MEANING NOT ESTABLISHED** | The bracketed cues match the Senlis alleluia series of the AMS at five of five Masses, **but what the brackets assert about the manuscript is unknown**, so the Alleluia mismatch against 1962 may not be treated as evidence of anything [v17:LIT-210, v17:LIT-216] |
+| **Why the Ottobonianus +2 offset breaks at Dominica XXII and XXIII** | **OBSERVED AND NOT EXPLAINED** | The lane did not establish whether the Gregorian Sunday series runs out there or whether the manuscript's margin changes hand or exemplar [v17:LIT-210] |
+| **The date and provenance of the *Liber Comitis* list Migne prints among the spuria of Jerome** | **NOT ESTABLISHED and must not be asserted** | The page images establish what Migne prints and nothing about the underlying list; only cols. 519–522 were read, and the `Dominica IV` row rests on OCR alone [v17:LIT-219, v17:LIT-220] |
+| **Schuster's `Quarta post Sancti Laurentii`** | **LEAD** | He prints the Latin title without naming, at that page, the manuscript or edition he takes it from. **It is not a reading of the 1962 book and must not be presented as an alternative 1962 heading** [v17:LIT-202] |
+| **Schuster's progressive Introit-psalm series from Pentecost to the autumn Ember Days** | **LEAD, and it will not bear weight** | It is his own reconstruction and he says in the same breath that its lacunae make the primitive order untraceable; the list as printed duplicates two members. **The lane did NOT verify it member by member against the 1962 Introits of Pentecost 1–17, and prose must not assert that alignment** [v17:LIT-204] |
+| **Schuster's two Lenten cross-references for the Gradual and the Offertory** | **UPGRADED from lead to corroborated, and still not collated** | Schuster's own words are "similar to" and "like"; the AMS index treats the chants as the same item under one entry, which is the stronger claim. **Neither Lenten Mass was collated in the 1962 book** [v17:LIT-205, v17:LIT-218] |
+| **Whether Alcuin's private prayer borrows the Gelasian Collect or both draw on common euchological stock** | **NOT TESTED** | Alcuin is later as Corpus Corporum dates him, which makes borrowing the natural reading; the lane did not test the alternative [v17:PAT-522] |
+| **Jerome's *Commentarii in epistolam ad Galatas* at PL 26 cols. 307–438** | **REACHABLE INSIDE HELD BYTES; not opened** | The container volume is registered complete, hashed, public-domain, with a verified cross-work segment precedent on the same artifact. **The column-to-page correspondence is a bounded projection from the Matthew segment's own mapping and would need one page render to fix.** Closable by one segment record plus one passage record; **no retrieval budget beyond re-fetching a remote artifact the repository has already identified** [v17:COV-020] |
+| **Thomas Aquinas, *Super Psalmos*, Psalms 31–40** | **NEITHER SWEPT NOR DECLARED UNSWEPT — the gap is currently invisible** | Three artifacts are registered at Pss. 11–20, 21–30 and 41–50; **the decade containing the Offertory's Ps. 33 is not among them**, and Aquinas appears on none of §4.3's not-swept lists. **The value is capped: *Super Psalmos* stops at Ps. 54, so the gap can only ever reach one of the four appointed psalms.** Two limits travel with it — the registered delivery is a restricted Corpus Thomisticum HTML response with unresolved rights and no retained bytes, and the edition's own records label the text Reginald of Piperno's *reportatio* [v17:COV-021] |
 ---
 
 ## 6. Competing historical judgments preserved
@@ -2647,6 +3542,186 @@ the moral sense** [PAT-203]. **A material disagreement to preserve rather than
 stack**, and positive evidence that a Latin reader could take the verse
 otherwise. See §2.6.
 
+### 6.14 Competing judgments settled, extended and newly opened at run `ca03f1b357e7ec25`
+
+**(a) §6.8 is SETTLED and is no longer a live disagreement.** The Ottobonianus
+cue block whose Introit is `Protector noster` attaches to Wilson's section
+**XXXI**, `DOMINICA .XIII.`, whose Collect is the 1962 **Twelfth** Sunday's:
+**+2, not zero.** The reference letters `a`, `b`, `c` stand before the section
+numbers and the lettered footnotes stand at the foot of the same page, both
+plainly legible at 300 dpi [v17:LIT-208]. **The prior run's reading stands; the
+optical-text lane's placement was an artefact of an OCR layer fusing the
+reference letter with the numeral** [v17:LIT-209]. **The evidence state is what
+§6.8 itself said must control — a page image — but of an UNREGISTERED derivative
+of the same Internet Archive item as the registered OCR layer, so it is the same
+digitisation and not an independent second witness to the printed book.**
+
+**(b) §7.4's Honorius sentence against §6.3's, and §6.3 wins.** Three chants of
+five are displaced, not five: Gradual, Alleluia and Communion run one Sunday
+later than 1962's, while Introit and Offertory do not [v17:LIT-214]. **This is an
+internal inconsistency in this brief, reported as such and corrected here.**
+
+**(c) The +2 offset is not a local coincidence, and where it breaks is
+recorded.** It holds uniformly across **eleven** consecutive masses on Wilson's
+page images, `Dominica XI` through `Dominica XXI post Pentecosten`, and then
+breaks at the last two: Dominica XXII cues the 1962 **Seventh** Sunday's set and
+Dominica XXIII cues the received Twenty-third's, an offset of +1 [v17:LIT-210].
+**Two systematic qualifications:** the match is on Introit, Gradual, Offertory
+and Communion, the bracketed Alleluia cues matching the 1962 assignment at none
+of the eleven; and where the count is three or two of four, the odd element is
+always a Communion or Gradual displaced by one Sunday inside the same stretch,
+which is the rotation §7.4 already describes.
+
+**(d) Two different mechanisms are offered for the unstable numbering, and they
+must not be merged** [v17:LIT-203]. **Wilson's** is a numeration base — `post
+Pentecosten` against `post Octavas Pentecostes`. **Schuster's is a different base
+again:** the post-Pentecost series was interrupted at Rome by a cycle built
+around the feast of St Lawrence, and "the sequence of these Sundays after St
+Lawrence was not everywhere the same, for, whilst the Roman documents of the
+Frankish period usually reckon five Sundays after the natalis of the
+Staurophoros, the Calendar of Fronteau has only four"; the Lawrence cycle was
+succeeded at Rome by cycles around St Cyprian and then St Michael, these feasts
+serving "as so many milestones … and had no special connection with the saint
+whose name they bore". **Preserve both. Neither has been shown to be the origin
+of the +1 or +2 offsets Wilson collates, and the arithmetic linking them was not
+done.**
+
+**(e) A fourth numbering series, and it is the one that shows what the others
+count from** [v17:LIT-220]. The *Liber Comitis* calls this Sunday the **Fifth**
+after St Lawrence; Schuster's title for it is the **Fourth**. **Prose must not
+say that one is wrong: Schuster states in terms that the count varied between
+books, and this is an instance of it.** The arithmetic: the Comes's Nth Sunday
+after St Lawrence is the 1962 Sunday N+9, Schuster's is N+10. **The series now
+tracked is four deep** — 1962's `post Pentecosten`; the Gregorian
+sacramentary's `post Pentecosten` at 1962+1; the Frankish Gelasian's at 1962+2;
+and the two `post sancti Laurentii` reckonings, which disagree with each other
+by one.
+
+**(f) Six readings now stand at `respice in faciem Christi tui`, and they still
+do not stack.** To §6.4's four — Augustine christological-missionary,
+Cassiodorus the same formalised as hypallage, Theodoret ecclesial, Guéranger
+inward and nuptial — add **Arnobius the Younger**, for whom God looking on the
+face of his Christ is God seeing the man seated at his own right hand, with no
+figure of speech invoked [v17:PAT-510]; and **Godfrey of Admont**, for whom the
+anointed are the Christians themselves, `Christum suum nobis dando, semper nos
+unctos suos respiciat` [v17:PAT-519]. **Preserve all six.**
+
+**(g) Four positions now stand at Gal. 5:17 on what `caro` is, and they are
+genuinely four.** **Chrysostom** denies desire to the flesh — desire belongs to
+the soul, so flesh here is the earthbound reasoning [v17:PAT-502]. **Marius
+Victorinus** grants the flesh motions and senses of its own, argued from the
+elements, which have impulses and no soul [v17:PAT-505]. **The Glossa
+ordinaria** makes it a manner of speaking about a joint act — the ear is said to
+hear, the eye to see — with the cause in neither alone [v17:PAT-516].
+**Ambrosiaster** shifts the ground entirely: the conflict is between two laws,
+`unam Dei, alteram peccati`, with `medius homo` between them, and the flesh's
+works are so named by origin — `quia errores isti ex mundo sunt, ex quo et caro`
+— so that at 5:24 the crucified flesh is the world [v17:PAT-504].
+**Chrysostom and Victorinus are commenting on the same appointed verse and
+cannot both be right; preserve the disagreement rather than harmonising it.**
+
+**(h) A fifth and structural account of the two lists' asymmetry, and a sixth
+that carries a textual warning.** **The Glossa** makes charity the head from
+which the members follow — `Caput praemisit, unde membra sequuntur` — so the
+fruit-list is not a list of coordinates at all [v17:PAT-516]: **the only
+structural account the sweep found, and a candidate answer to the question §6.5
+keeps open.** **Ambrosiaster** grounds `fructus` rather than `opera` in the law
+of the spirit that fructifies them, which is a different reason from
+Chrysostom's and from Jerome's [v17:PAT-504] — **but his fruit-list has ten
+members and his vice-list opens differently, so he may not be used on the count
+or the asymmetry without saying he reads another Latin text.**
+
+**(i) A third account of `iubilare`, probably, and a compilation carrying one of
+the two already held.** **Bruno the Carthusian** glosses it `nimia et intensa
+interiori laetitia exsulto` [v17:PAT-514]; **Peter Lombard** carries the
+classical jubilus formula at exactly the appointed word — joy too great for
+words, conceived within and testified by the voice outside — **under sigla
+naming Augustine, Cassiodorus, Haymo and Alcuin, so it is almost certainly
+Cassiodorus's wordless jubilus at §6.7 rather than a third** [v17:PAT-526].
+**What is Lombard's own is the distribution `fide … mente … voce`, which allots
+the three verbs of the appointed verse to three faculties.**
+
+**(j) The Latin division at the Gospel's images is sharper than a two-way
+split** [v17:PAT-521]. On one side: the Augustine the compilations transmit —
+`ista documenta non sicut allegorica discutienda sunt` — with pseudo-Bede
+repeating it, **Christian of Stavelot** refusing allegory at the lilies on
+frankly aesthetic grounds (no linen matches the lily, no dye the rose, no purple
+the violet) [v17:PAT-506], and **Bruno of Segni** reading them literally
+[v17:PAT-528]. On the other: **Godfrey of Admont**, who makes the birds the good
+angels and the lilies the evil spirits and Solomon Christ, and who then raises
+the objection his own allegory creates and answers it [v17:PAT-520,
+v17:PAT-521]. **That is not a difference of emphasis and a guide should not
+soften it.** *A coincidence worth flagging and not pressing:* Godfrey's proof
+text for the pride of the fallen angels is Ps. 73:23, `Superbia eorum qui te
+oderunt`, **which is the same verse Augustine gives in the *Retractationes* as
+his reason for withdrawing the sentence about no one hating God.** No evidence
+that Godfrey knew the retraction; no connection asserted.
+
+**(k) The Latin tradition at Mt. 6:24 is NOT unanimous, and the sentence it
+repeats most was withdrawn by its author** [v17:PAT-518, v17:PAT-528]. Augustine
+retracts `Nullius enim fere conscientia Deum potest odisse` at *Retractationes*
+I.19; five later witnesses repeat it **without his qualifier `fere`**, in one
+case (`Nullius enim SCIENTIA Deum odisse FERRE potest`) so damaged that it can
+only be transmission; the Glossa alone flags the retraction; and **Bruno of
+Segni denies the proposition outright from Scripture** — the covetous man serves
+idols, therefore hates God (Eph. 5:5). **Report the pattern as transmission and
+the contradiction as a contradiction.**
+
+**(l) `Primum` is contested** [v17:PAT-507, v17:PAT-508]. **Paschasius** denies
+that it marks order at all — `non ad ordinem referendum puto … magis ad
+quantitatem referendum est, ut extra hoc nihil quaerendum sit`. **The Augustine
+the compilations transmit** makes it an order of dignity — `non tempore, sed
+dignitate`. **Paschasius elsewhere in the same place calls the order
+`praeposterus` and explains that the kingdom was put first to soothe the hearing
+before justice was brought in as the laborious thing.** **Report the
+disagreement; do not merge them.** This is the first documented reading of the
+word the recasting promotes to the head of the Communion antiphon.
+
+**(m) The Gradual's princes: four positions and a suspicion of dependence.**
+§6.12's three — Augustine's good angels, Cassiodorus's devil-and-good-angel,
+Theodoret's temporary earthly rulers — are joined by **Godfrey's interior and
+exterior senses**, which is genuinely new [v17:PAT-519], and by **Bruno the
+Carthusian's grammatical question**, which is new in kind: whether the verse is
+comparative at all [v17:PAT-515]. **Prosper and Peter Lombard are probably not
+new positions:** Lombard's siglum puts the angelic reading under Augustine's
+name with Dan. 12 as warrant, Prosper's *Expositio* is largely an epitome of
+Augustine, and Prosper's reason (`in Domino, qui me per illos juvat`) is
+Lombard's reason [v17:PAT-509, v17:PAT-527]. **The angelic reading may therefore
+be ONE position with three carriers, and the check that settles it — Augustine's
+own *Enarratio in Ps. 117*, already held here — has not been made.**
+
+**(n) The Offertory's angel: four accounts.** §6.13's two — Augustine
+identifying him as Christ, Cassiodorus turning instead to the moral sense — are
+joined by **Arnobius's angel of the sepulchre**, whose reading turns on
+repointing `timentium eum` [v17:PAT-513], and by **Godfrey's angel as the gift
+of grace itself** [v17:PAT-519]. **A material disagreement to preserve rather
+than stack, and it is now four deep.**
+
+**(o) Honorius is not one chapter but three, and the two the brief has never
+seen carry the substance** [v17:LIT-213]. *Gemma animae* IV.LXXII reads the
+formulary **`sub lege`** under the type of Ezechias sick to death; IV.LXXIII
+reads it a second time **`sub gratia`** under the type of Theodosius the Great,
+the council of his reign standing in the Epistle's catalogue of vices and
+virtues and Ambrose's penance behind the Communion; and IV.LXXIV is not a
+typology at all but **a liturgical-calendar explanation**, tying the Offertory to
+the September night office's *historia* of Tobias and Raphael and to Michaelmas,
+and then explaining the autumn Ember ordinations. **The paired `sub lege` /
+`sub gratia` structure is the book's method and not a one-off** — cap. LXX and
+LXXI do the same at the Thirteenth Sunday. **Bounds:** Honorius's `sub lege`
+reading is coherent only with the Gospel he has, the grateful leper, so it
+cannot be transferred to the 1962 formulary without saying so; and Migne prints
+`plusquam octoginta millia` for the number the angel slew where 4 Kings 19:35
+has 185,000 — read on the page image, not an OCR artefact, recorded and not
+explained.
+
+**(p) Migne's reference transposition in Honorius is worse than "two
+transposed"** [v17:LIT-212]. `(Luc. XVII)` stands against the Gradual and
+`(Psal. XCI, 2)` against the Gospel — and Ps. 91:2 is precisely `Bonum est
+confiteri Domino`, so the two are each other's — while a third reference,
+`(Psal. LXXXIII, 10)`, stands against the Collect sentence where it belongs to
+the Introit words quoted just before it. **§6.3's inherited-error caveat is
+discharged: every element-by-element statement the prior run took from this
+chapter is confirmed on the page image.**
 ---
 
 ## 7. Cross-proper claims settled for the synthesis commentary
@@ -3038,6 +4113,234 @@ reach this claim's oration members**, which is one of its quiet strengths: the
 Collect, Secret and Postcommunion are not texts a medieval preacher expounded
 beside a different Gospel.
 
+### 7.7 The six cross-proper claims as the third join settles them
+
+**These six supersede §7.1–§7.6 where they differ and confirm them where they do
+not.** Each joins at least two precisely named appointed elements; each draws
+together several ritual moments, the scriptural context of at least one
+appointed passage, and named reception witnesses; and each carries the class of
+every limb and its strongest defeater. **They are the material for
+`Source-Grounded Synthesis Across the Propers` and for the synthesis companion's
+integrated commentary, and they are not an abridged procession through the
+propers: no unit below is organised by a single element.**
+
+#### The strongest argument, and its shape
+
+**The Fourteenth Sunday is a Mass whose three strands were assembled on
+different schedules and counted from different feasts, in which exactly one
+element was exchanged rather than inherited — the Communion — and that one
+exchanged element is where the formulary's single repeated substantive word, its
+single dropped word, and its single contested adverb all stand.** C4 and C5
+supply the historical half of that argument and C1 the textual half; C2, C3 and
+C6 are the three units that show what the assembled formulary then says.
+**A signpost-only scan of the six headings below recovers the thesis, its
+movement and its decisive evidence.**
+
+#### C1 — One phrase carries the Mass, and the element that repeats it is the element that cuts it
+
+- **Elements:** Epistle, Gospel, Communion; the Collect and the Alleluia enter
+  through the counter-distribution at C6.
+- **Class 1, re-verified exhaustively this run.** `regnum` stands in exactly
+  three appointed elements, and **every other exact form reaching three or more
+  is a divine name or a function word** [v17:THE-208]. **The formulation
+  survives only because it is about EXACT forms: at stem level `salut-`/`salv-`
+  also reaches three elements and is substantive, and prose that drops the words
+  "exact form" will be false** [v17:THE-210].
+- **Class 1, scriptural context.** In Matthew `regnum Dei` is the rarer of his
+  two formulae — four verses against `regnum caelorum` at twenty-four
+  [v17:SCR-016] — and **the tie survives into the Greek**, both texts having
+  βασιλεία θεοῦ, which the Epistle-to-Gospel `servitus`/`servire` bridge does not
+  [v17:SCR-015]. `Iustitia` stands **once** in the whole appointed Latin, in the
+  Gospel's last verse, and **the Communion, quoting that very verse, drops it**
+  [v17:SCR-019]; in Matthew that word closes an arc the chapter opens with, at
+  6:1 — **but that arc is a property of the Vulgate's reading there, the tracked
+  Byzantine text reading "alms"** [v17:SCR-019].
+- **Class 3, and it is new.** The word the recasting promotes to the head of the
+  antiphon is **contested**: Paschasius denies `primum` marks order at all, the
+  Augustine the compilations transmit makes it an order of dignity
+  [v17:PAT-507, v17:PAT-508]. The verb the antiphon keeps has a witness reading
+  it — pseudo-Bede's `Non dixit nobis dari, sed adjici` [v17:PAT-525] — and two
+  more supplying its object and its limit [v17:PAT-506, v17:PAT-507]. Godfrey
+  reads `regnum Dei` here as the heart [v17:PAT-520]. **Schuster, reading the
+  antiphon, reaches back for the clause the recasting removed and glosses
+  "justice" from the Gospel verse** [v17:LIT-206].
+- **Defeater.** That the omission is deliberate — that the antiphon drops
+  `iustitiam` *because* the word carries that weight — is established by nothing
+  here. **What is established is that the omission removes the formulary's only
+  occurrence of the word** [v17:SCR-019].
+
+#### C2 — The flesh that is crucified is not the body that is fed, and the tradition now says so four ways in two languages
+
+- **Elements:** Epistle, Gospel, Introit psalm verse; the claim is made at a
+  Mass whose Communion is the reception of a body.
+- **Class 1.** `caro`/`carn-` occurs five times, all in the Epistle; `corp-`
+  twice, both in the Gospel; **neither root crosses** [v17:THE-209]. **And the
+  Introit's cut is what keeps it clean:** the psalm verse stops at `in atria
+  Domini`, one clause before the Clementine's `cor meum et caro mea exsultaverunt
+  in Deum vivum` — **the one appointed element that would have given `caro` a
+  positive sense is severed exactly before it** [v17:SCR-003, v17:THE-209].
+- **Class 3, and this is where the run's largest gain falls.** Four positions
+  now stand on what `caro` is at Gal. 5:17 and they are genuinely four:
+  Chrysostom in Greek (flesh cannot desire; it is the earthbound reasoning; the
+  body is an instrument, and we punish the murderer and not the iron)
+  [v17:PAT-502]; Marius Victorinus (the flesh has motions of its own, argued
+  from the soulless elements) [v17:PAT-505]; the Glossa (a manner of speaking
+  about a joint act, `ex utroque enim fit`) [v17:PAT-516]; Ambrosiaster (not two
+  parts of man at all but two laws, and the crucified flesh is the world)
+  [v17:PAT-504]. **Chrysostom and Victorinus comment on the same appointed verse
+  and cannot both be right.** Chrysostom adds that those of Christ `did not
+  destroy the flesh — for how were they to live?` and that the desires, though
+  they trouble, `rage in vain` [v17:PAT-503].
+- **Defeaters.** The disjunction is a fact about these two pericopes as printed
+  and not a lexical law [v17:THE-209]; Gal. 5:24's `carnem suam crucifixerunt`
+  is read by some as including the body proper; **and Ambrosiaster may not be
+  used on the fruit-list's count or asymmetry, his Latin lemma being a different
+  text** [v17:PAT-504].
+
+#### C3 — The tradition is namedly divided about the Gospel's images, and its most-repeated sentence at the Gospel's first verse was withdrawn by the man who wrote it
+
+- **Elements:** Gospel, Communion, Epistle (the `idolorum servitus` bridge);
+  the division is displayed at a Mass that appoints the pericope whole.
+- **Class 3, sharpened.** The anti-allegorical side: the Augustine the
+  compilations transmit — `ista documenta non sicut allegorica discutienda sunt`
+  — repeated by the exposition printed under Bede's name [v17:PAT-508,
+  v17:PAT-525]; **Christian of Stavelot refusing allegory at the lilies on
+  frankly aesthetic grounds** [v17:PAT-506]; Bruno of Segni reading them
+  literally [v17:PAT-528]. The allegorical side, at its far end: **Godfrey of
+  Admont making the birds the good angels, the lilies the evil spirits and
+  Solomon Christ, and then raising and answering the objection his own allegory
+  creates** [v17:PAT-520, v17:PAT-521]. **This is not a difference of emphasis.**
+- **Class 3, and it is the run's sharpest single reception fact.** `Nullius enim
+  fere conscientia Deum potest odisse` was **withdrawn by Augustine** at
+  *Retractationes* I.19, naming *De serm. Dom.* II.14.48 and giving Ps. 73:23 as
+  his reason [v17:PAT-518]; **five later Latin witnesses repeat it without his
+  qualifier**, one of them so damaged that the corruption cannot be anyone's
+  theology; the Glossa alone flags the retraction [v17:PAT-517]; and **Bruno of
+  Segni denies the proposition outright from Eph. 5:5** [v17:PAT-528]. **A guide
+  that prints "no one can hate God" as the tradition's reading will have got it
+  wrong twice over.**
+- **Class 1 beneath it.** The Gospel opens on a conclusion whose premises are not
+  read — the treasure and the eye at Mt. 6:19–23 — and closes one verse before
+  Matthew's own close at v. 34; the incipit is supplied entirely by the missal
+  and **narrows the audience to the disciples where Mt. 5:1 has the crowds
+  present** [v17:SCR-017].
+- **Defeater.** Bruno of Segni restricts the whole prohibition of anxiety to
+  apostles, their successors and those aiming at perfection [v17:PAT-528], and
+  Godfrey preaches it to monks about *lectio* [v17:PAT-520]: **two of the run's
+  witnesses read the pericope as addressed to a narrower audience than the
+  Sunday congregation, and a guide using them must say so.**
+
+#### C4 — Three strands, three schedules, four reckonings — and the strand that never moved is the one this brief has treated least
+
+- **Elements:** all ten, by strand — the three orations, the four chants, the two
+  readings, and the Communion which belongs to neither settlement.
+- **Class 2, now on page images.** **Orations:** the Gregorian Hadrianum heads
+  this Mass `DOMINICA .XV. POST PENTECOSTEN`, 1962+1, confirmed across eleven
+  consecutive Masses [v17:LIT-210, v17:LIT-211]; the Frankish Gelasian stands at
+  1962+2. **Chants:** the AMS formulary carrying this Introit, Gradual and
+  Offertory is numbered *Dominica XIV*, **the same number 1962 gives it**, and
+  the Ottobonianus margin reproduces the AMS formularies one number above the
+  sacramentary headings they stand against — **twenty-five of twenty-five slots
+  over five consecutive Masses, including the bracketed Alleluias that match
+  nothing in 1962** [v17:LIT-215, v17:LIT-216]. **Readings:** the *Liber Comitis*
+  pairs Gal. 5:16–24 with Mt. 6:24–33, **cut at exactly the verses 1962 cuts**,
+  under `Dominica v post sancti Laurentii` [v17:LIT-219].
+- **Class 2, the mechanism, and it is two-fold and unmerged.** Wilson's
+  explanation is a numeration base; **Schuster's is a Roman cycle built around
+  the feast of St Lawrence, whose count "was not everywhere the same"**
+  [v17:LIT-203]. **Four series are now tracked and two of them disagree with
+  each other by one** [v17:LIT-220]; see §6.14(d)–(e).
+- **Class 3.** Honorius reads the whole formulary twice, `sub lege` under
+  Ezechias and `sub gratia` under Theodosius, and a third time as calendar —
+  Tobias's angel in the September night office, Michaelmas, the Ember
+  ordinations [v17:LIT-213]. **Godfrey of Admont expounds this formulary's
+  Introit, Gradual, Alleluia psalm and Offertory in order and closes by praying
+  its Collect — and his Gospel is the ten lepers** [v17:PAT-519], **which is the
+  Honorius displacement met independently in a different author.**
+- **CORRECTION, and it is mandatory.** §7.4's sentence that "the whole chant set
+  of this Mass is what 1962 sings on the following Sunday, +1" is false. **Three
+  chants of five are displaced in Honorius; the Introit and Offertory are not**
+  [v17:LIT-214].
+- **Defeaters.** The AMS side is a modern database and not Hesbert's pages, which
+  are unreachable here for a rights reason [v17:LIT-215, v17:LIT-222]; the
+  1962-side identifications are against a repository derivative and not a
+  facsimile collation [v17:LIT-210]; the Comes's own date and provenance are
+  **not established** [v17:LIT-219]; and the +2 run breaks at Dominica XXII and
+  XXIII for a reason nobody established [v17:LIT-210].
+
+#### C5 — The formulary makes exactly one substantive exchange, it is at the Communion, it is older than this book, and it broke a pair
+
+- **Elements:** Communion, Gospel, Offertory; the Introit and Gradual enter as
+  the chants that did not move.
+- **Class 2, and the shape of the claim changes this run.** `Primum quaerite` is
+  **not a late composition**: it is an ancient Roman antiphon standing at the
+  **Ninth** Sunday in four ninth-century antiphonaries (AMS 181, witnesses R B K
+  S), while the Fourteenth Sunday's Communion in those books is `Panis quem ego
+  dedero` [v17:LIT-215, v17:LIT-217]. **So the antiphon is secondary in this
+  slot only, and not in the repertory.** Guéranger's reported claim that the
+  Communion "was not the one primitively used" is confirmed in substance from a
+  source he did not have; §7.5's four witnesses become five.
+- **Class 2, and it is new.** In the AMS the Offertory `Immittet Angelus` and the
+  Communion `Panis quem ego dedero` **travel together at both their occurrences**
+  — the Lenten Thursday (AMS 44) and this Sunday (AMS 186) — **so substituting
+  `Primum quaerite` here broke a pair the older books kept** [v17:LIT-217].
+- **Class 1.** The exchange is the formulary's only substantive recasting: the
+  antiphon fronts `Primum`, drops `ergo`, drops `et iustitiam eius`, and adds
+  `dicit Dominus` [v17:SCR-001, v17:SCR-019]. **The Lucan parallel does not
+  supply the fronted `primum` either: the tracked Byzantine Luke 12:31 carries
+  neither πρῶτον nor καὶ τὴν δικαιοσύνην αὐτοῦ, so any comparison with Luke
+  stands on the Clementine's Latin alone and must be attributed to it**
+  [v17:SCR-021].
+- **Defeater, and it is complete.** **No witness anywhere in this sweep explains
+  why the exchange was made, and WHEN it was made is still not dated.** What is
+  now fixed is that it is later than the AMS witnesses, later than the
+  Ottobonianus margin and later than Honorius, and earlier than Pustet Ratisbon
+  1862 [v17:LIT-217].
+
+#### C6 — Two vocabularies partition the Mass, and the silence they produce is a genre fact everywhere but in the readings
+
+- **Elements:** Collect, Secret, Postcommunion and Alleluia on one side; Epistle,
+  Gospel and Communion on the other.
+- **Class 1, confirmed and sharpened.** `salut-`/`salv-` occurs four times, once
+  each in Collect (`salutaria`), Alleluia (`salutari`), Secret (`salutaris`) and
+  Postcommunion (`salvationis`), **and in none of the six other elements**;
+  `propitia-` twice, Collect and Secret only; `semper` and `perpetu-` twice each,
+  Collect and Postcommunion only. **At stem level `salut-` and `regnum` are the
+  only substantive ties reaching three or more elements, and the two partition
+  the formulary cleanly: `regnum` in the read and sung word, `salut-` in the
+  three orations plus the one chant, and in no reading at all** [v17:THE-210].
+- **THE COUNTER-TEST §7.6 NAMED AS UNRUN IS NOW RUN, AND IT FORECLOSES THE
+  DISTINCTIVENESS CLAIM ON THE ORATION SIDE.** No Collect, Secret or
+  Postcommunion of any of the fifteen collated 1962 identities asks for food,
+  drink or clothing [v17:THE-202]. **The silence is a genre fact.**
+- **AND THE SINGULARITY RELOCATES TO THE READINGS.** Among the same fifteen, the
+  Fourteenth Sunday is the **only** one whose appointed texts name eating,
+  drinking **and** clothing together — `manducetis`, `manducabimus`, `esca`,
+  `bibemus`, `induamini`, `operiemur`, `vestimento`, all in the Gospel
+  [v17:THE-204]. **C6's substance survives — the objects of petition and the
+  objects of promise differ — and the claim of distinctiveness moves from the
+  orations to what is read.**
+- **A second bound in the other direction.** Roman orations of this season are
+  **not** uniformly non-temporal: the Fourth Sunday's Collect asks that `mundi
+  cursus pacifice nobis tuo ordine dirigatur`, the Nuptial Mass's Postcommunion
+  asks `longaeva pace`, Trinity Sunday's asks `ad salutem corporis et animae`,
+  and the Eleventh Sunday's asks `subsidium mentis et corporis` [v17:THE-203].
+  **So this Sunday's orations are silent about temporal goods generally and not
+  only about the Gospel's three — and "temporal" against "spiritual" is a
+  judgment and not a measurement, which is why that finding names loci and
+  reports no count.**
+- **Class 1, the address.** The three orations never command the assembly and
+  their material addressed to God is otherwise subjunctival; **the command the
+  Mass repeats at the moment of reception is the promise's own `Quaerite`**
+  [v17:THE-211]. **This is the narrow contrast that survives the withdrawn
+  imperative sentence, and it is the publishable one.**
+- **Defeaters.** The sample is 15 identities out of the missal's whole universe
+  and is not random, being what this repository happens to have collated; the
+  records swept are audit records and not page images; and `salutaris` of a
+  victim, `salutari` of God, `salutaria` of things that save and `salvationis` of
+  a state are **one root and four senses**, so the four-fold count is a fact
+  about the root and not about a single idea [v17:THE-202, v17:THE-210,
+  v17:THE-215].
 ---
 
 ## 8. Notable-and-quotable audit
@@ -3237,6 +4540,65 @@ where the first join had match-window citations only.** If the author
 substitutes it, the Tracy independence datum and the four limits above travel
 with it.
 
+### 8.8 The gallery as the third join settles it — five entries, and what changes in each
+
+**The `cultural-afterlife` lane returned ten qualifying candidates against a
+floor of five, with no shortfall, plus one marginal echo and one candidate that
+qualifies on the rule and not on its evidence state** [v17:CUL-217]. **This
+stage selects; it sought no candidate and may seek none.** **The five selected
+are the five already at §8.1–§8.5**, each materially corrected or upgraded this
+run, and the reasons for not selecting the other five are at §8.9.
+
+**THE PUBLISHED GALLERY'S HEAD-NOTE IS OUT OF DATE AND MUST BE REVISED**
+[v17:CUL-217]. It states that every entry was read only in a digital surrogate
+and that nothing is described as verified. **That is false for two entries**,
+which are collated against page images for the named crop regions and no
+further; §8's own head-note above already records the change and the guide's
+does not.
+
+| # | Element and locus | What the third join establishes, and what it corrects |
+|---|---|---|
+| **§8.1** | **Communion + Gospel**, Mt. 6:33 — Nkrumah's "Seek ye first the political kingdom" | **RE-ESTABLISHED from the official report, read continuously** [v17:CUL-209]. The Hansard index returns `TotalContributions = 2` and no others: Commons, 3 Dec 1962 (Berkeley, reporting a statue inscription outside the Parliament building in Accra) and Lords, 19 Dec 1962 (Milverton, "a famous place in Accra"). **The two speakers are independent — different Houses, sixteen days apart — and agree on "all things will be added unto you", which is NOT the KJV's own "all these things shall be added"**. Berkeley reports it approvingly; Milverton lists it among the causes of the Federation's failure. **NOT RE-RETRIEVED THIS RUN: the third attestation, *The Spark* (Accra) no. 159, 5 Nov 1965, so that variant rests on the prior run's record and not on this one.** The coincidence that the antiphon also drops `et iustitiam eius` **must be presented as a coincidence or not at all.** **Bounded to circulation and reception: never stated as coinage or dated to a first utterance.** Identity anchor: `first`, which Luke 12:31 lacks [v17:CUL-216]. **EVIDENCE STATE: retrieved and read in a digital surrogate. Not verified** |
+| **§8.2** | **Gospel**, Mt. 6:24 — the rule against divided loyalty in American law | **RE-ESTABLISHED from continuous reporter text, AND ONE PUBLISHED UNIVERSAL IS WITHDRAWN** [v17:CUL-201, v17:CUL-202]. *Everhart v. Searle*, 71 Pa. 256, 258 (1872) opens on "the authority of Holy Writ"; *United States v. Mississippi Valley Generating Co.*, 364 U.S. 520, 549–550 (1961) grounds 18 U.S.C. §434 in "the Biblical admonition that no man may serve two masters, Matt. 6:24, a maxim which is especially pertinent if one of the masters happens to be economic self-interest". **Two attributions are corrected on the page: the "not intended to be remedial of actual wrong, but preventive of the possibility of it" sentence is the court QUOTING Hare and Wallace, and "the authoritative declaration" is the Court of Claims', quoted by the Supreme Court, and not the Supreme Court's own.** **THE WITHDRAWAL: the claim that every legal use stops before the mammon clause "so the second master is never named" is FALSE — eighteen opinions quote it and at least six print `Matthew 6:24`.** The true narrower claim is that the Everhart/Mississippi Valley conflict-of-interest line stops at the general maxim while a separate body of state and bankruptcy decisions names Matthew. **IDENTITY: the KJV antithesis and the mammon clause are word-identical at Lk. 16:13, so only an express Matthean locus saves a candidate — *Bizik v. Bizik* prints "Luke 16, 13" instead** [v17:CUL-216]. **EVIDENCE STATE: Everhart and Mississippi Valley read whole in CAP transcriptions; the eighteen mammon opinions INSPECTED VIA SEARCH SNIPPET ONLY and none may be quoted at length until read in full** |
+| **§8.3** | **Epistle**, Gal. 5:23b — "against such there is no law", by pun | **RE-ESTABLISHED, both members read whole** [v17:CUL-203]. The corpus contains **exactly two**: *Johnston v. Commonwealth*, 22 Pa. 102, 111 (1853), construing a Sunday-observance act — "visiting and administering to the sick and destitute … Certain it is, that against such there is no law, and they may be performed on any day"; and *Sullens v. State*, 191 Miss. 856 (1941), on criminal contempt of a newspaper editor — "the brambles of bad taste which fringe the border lines of discretion. Against such there is no law." **Strong verbal dependence but UNDECLARED: neither court names Galatians, so this is unattributed borrowing and never a citation.** The pivot is the word *law*: Paul's is the condemning reach of the Mosaic law over twelve virtues; Johnston's a Pennsylvania penal statute; Sullens's conduct improper but legally uncompellable. **Whether either court intended the allusion is not established and is not asserted.** **Bounded negative: no claim either way about this clause in the American newspaper corpus, which cannot answer a stopword-heavy phrase.** **EVIDENCE STATE: retrieved and read in a digital surrogate; not verified** |
+| **§8.4** | **Gospel**, Mt. 6:29 — "Solomon was not arrayed" | **COLLATED AGAINST THE PAGE IMAGES, AND THE 1889 PAYOFF IS SHARPER THAN THE PUBLISHED ENTRY REPORTS** [v17:CUL-211]. *The Progressive Farmer*, 15 Jan 1889 p. 8, and *The Spanish American* (Roy, N.M.), 11 Apr 1908 p. 9, both read on LoC IIIF images at the named crops. **What the collation adds:** the 1889 joke does not end with the choir being mistaken for "these" — it ends by asking whether Solomon wore "a Prince Albert or cutaway coat … an eye-glass and mustache, his hair cut Pompadour", and answering "No, most decidedly", **so the appointed verse finishes as a satire on the tailoring of an aesthetic congregation.** The printed pointing is now settled and no longer a reconstruction; the 1908 item prints **em-dashes** inside the singer's quotation, which is the typographic mark of the interruption the joke turns on, and its setting is "Hayville", not the OCR's "llayvillo". **IDENTITY: "Solomon in all his glory was not arrayed like one of these" is word-identical at Lk. 12:27; the only anchor is the 1889 piece's "the lilies of the field", which is Matthew's phrase and not Luke's, and the 1908 item is identity-neutral on its own.** **BOTH ITEMS ARE REPRINTS and neither original was retrieved: they are two attestations of a joke-type, not two inventions.** **EVIDENCE STATE: VERIFIED BY COLLATION AGAINST THE PAGE IMAGE for the named crop regions; the surrounding narrative in each is LoC OCR and is not verified** |
+| **§8.5** | **Gradual**, Ps. 117:9 — "princes, or railroads" | **COLLATED AGAINST THE PAGE IMAGE, AND THE PUBLISHED QUOTATION IS WRONG IN THREE PLACES** [v17:CUL-210]. *Semi-weekly interior journal* (Stanford, Ky.), 19 Nov 1895 p. 2, read on the LoC IIIF image at the named crops: "ATLANTA, Nov. 16.—It is better to serve the Lord than to put confidence in prin-ces or railroads, especially the latter. I thought when I got on the 'Exposition Flyer,' my trials were ended, but alas for human hopes." **(1) There is NO dash before "or railroads"; the published entry inserts one the printer did not set. (2) The sentence ENDS at "especially the latter."; the published entry's comma-splice joins two printed sentences. (3) "but alas for human hopes." ends with a period, not an exclamation mark.** **"serve" for the KJV's "trust" is CONFIRMED AS PRINTED and is the writer's or compositor's substitution, not an OCR artefact: it must not be silently corrected.** **IDENTITY clean: Ps. 118:9 KJV = the appointed Ps. 117:9; the near-twin "Put not your trust in princes" is Ps. 145(146):3 and reads differently.** **"W. P. WALTON" stands in the masthead block a few lines above the dateline and was NOT established to be the author: no byline may be printed.** **EVIDENCE STATE: VERIFIED BY COLLATION AGAINST THE PAGE IMAGE, for the two crop regions named and no further** |
+
+**Element coverage of the gallery: Communion, Gospel, Epistle and Gradual.** The
+**Introit** and the **Alleluia** produce nothing qualifying, swept now three
+times in two corpora at the bounds stated at §4.15(g); the **Offertory**'s
+negative stands and is conditional on one candidate that is not publishable
+(§8.9); and the **three orations are outside the rule**, which is confined to
+wording from the scriptural propers [v17:CUL-214, v17:CUL-217].
+
+**The identity discriminators, fixed once so no later worker re-derives them**
+[v17:CUL-216]. Mt. 6:24 // Lk. 16:13 — word-identical; only an express `Matt.
+6:24` saves a candidate. Mt. 6:26 // Gen. 1:26 and Acts 10:12 — "the fowls of
+the air" is not Matthew's alone. Mt. 6:27 // Lk. 12:25 — Luke's KJV order is
+"add to his stature one cubit", Matthew's "add one cubit unto his stature", **so
+the word order itself discriminates.** Mt. 6:28 // Lk. 12:27 — Luke reads "they
+toil not, they spin not", Matthew "they toil not, **neither do** they spin";
+**the word "neither" is the cleanest discriminator in the whole formulary.** Mt.
+6:29 // Lk. 12:27 — **no discriminator in the clause itself**; only an
+accompanying "lilies of the field" or an express citation. Mt. 6:33 // Lk. 12:31
+— "first". Ps. 33:9 — "O taste and see" occurs once in the whole Bible. Ps. 94:1
+— **no discriminator exists, which is why the Alleluia yields nothing.** **All
+KJV wordings above are as reproduced in the sources cited; no separate KJV
+witness was collated this run.**
+
+### 8.9 Candidates returned this run and NOT selected, with the reason
+
+| Candidate | Element | Why not selected |
+|---|---|---|
+| **"They toil not, neither do they spin" as an indictment** — the 1891–1982 American judicial family, thirteen opinions with citations and match text, **four independent stems** (Miller v. Mann 1891; Tracy 1922; Whiteaker 1926, the securities line quoted forward by seven; Hudson 1946, a dissent with no Wallingford), and **one express Matthean locus**, *State ex rel. Garrett v. McPeters* (1951, dissent), printing "(Matthew 6: 28)" [v17:CUL-204] | Gospel, Mt. 6:28 | **The strongest unselected candidate, and it is unselected only because the gallery is capped at five and it works the same two-verse lilies unit as §8.4, which is collated against page images where this is not.** Six of the thirteen were read whole and six inspected via snippet only; the population is larger than thirteen because further variants were not swept and **no exhaustiveness may be claimed**; the Whiteaker date differs between CAP (1926-07-20) and CourtListener (1926-07-02) and the official reporter should settle it; **and the Wallingford identification remains unverified in a primary source.** **If the author prefers a broader reversal to a second newspaper joke, this is the substitution to make, and §8.4 is the entry it replaces** |
+| **The creationist biology textbook and the Establishment Clause** — *McLean v. Arkansas Board of Education*, 529 F. Supp. 1255 (E.D. Ark. 1982), reproducing "Consider the lilies of the field, how they grow; they toil not, neither do they spin …" from *Biology, A Search For Order in Complexity* at `Px 129 at page 363` as documentary proof that the textbook was religious [v17:CUL-205] | Gospel, Mt. 6:28–29 | **The most distinctive register in the whole return — scientific, then judicial, a double turn — and identity is safe on two independent grounds.** Not selected because **the *Federal Supplement* star page was not recovered** (CAP's casebody carries no star pagination) and a page-and-line cite cannot yet be printed, and because the textbook itself was not retrieved, so nothing may be asserted about the book's own printing. **One retrieval closes it** |
+| **"Behold the fowls of the air" as a dictionary entry** — *State v. Davis*, 72 N.J.L. 345 (1905), setting Mt. 6:26 beside Gen. 1:26 and Shakespeare as three witnesses to the ordinary meaning of "fowl", to defeat a single-object challenge to a pigeon-shooting statute [v17:CUL-206] | Gospel, Mt. 6:26 | Qualifying and identity-clean **for Davis and only for Davis** — the court prints "Matthew 6:26" itself. Not selected on variety: it is a fourth Gospel entry. **A wording check would have to travel with it if it were used: the court quotes the KJV "fowls", where the guide's registered Douay prints "birds of the air", so an entry that does not say so will look like a misquotation of its own facing page.** The prior audit's second remove (*Pacific Trading Co.*, on whether frogs' legs are fowl) was not re-retrieved and **must not be published** |
+| **"Add one cubit unto his stature" as a maxim of institutional incapacity** — six opinions 1906–1978 across four wording variants, one of them printing "Matt. 6:27 (King James version)" [v17:CUL-207] | Gospel, Mt. 6:27 | Qualifying; the prior audit's open variant-sweep gap is now closed for four wordings. **Not selected because EVERY member was seen in a search-match window only and none was read whole**, so none may be quoted at length; and because *Marriott v. Ramada* could not be reproduced and must be re-found or dropped |
+| **"Solomon in all his glory" drifting from raiment to wisdom** — four opinions, of which *Carlton v. Carlton* (Utah App. 1988, dissent) exploits the collision knowingly against a majority that had "clothed this case in the raiment of complexity" [v17:CUL-212] | Gospel, Mt. 6:29 | Not selected: **it duplicates §8.4's element and verse**, three of its four members were snippet-only, and **two attestations of the wisdom sense 89 years and two states apart are two attestations of a usage and not a tradition.** *Wagner v. Sanders* (1901), the 1866 letter applying the verse to a rice crop "in their present gorgeous costume", is **refused on identity**: word-identical at Lk. 12:27, no locus, nothing discriminating |
+| **"A veritable army of alimony drones, who neither toil nor spin"** — *Laws v. Laws*, 164 Colo. 80 (1967) [v17:CUL-208] | Gospel, Mt. 6:28, adapted | **Echo, and the weakest of the Gospel candidates on relationship strength.** Publishable only as an echo and only after *Doyle v. Doyle*, 158 N.Y.S.2d 909, is retrieved; see §5.1 |
+| **Denise Levertov, "O Taste and See" (1964)** [v17:CUL-213] | **Offertory**, Ps. 33:9 | **Qualifies squarely on the rule and would be the Offertory's only entry. NOT PUBLISHABLE on its evidence state — secondary sources only, no edition collated, no page settled — and it is in copyright.** See §5.1. **Until it is closed the Offertory's negative result stands** |
+| **Vaughan Williams's motet "O taste and see" (1953)** [v17:CUL-215] | Offertory, Ps. 33:9 | **Refused on the rule**, not on the evidence: a bare musical setting, the verse used for what it says |
+| **The "O ye of little faith" e-mail tease** in *United States v. Greve*, 490 F.3d 566 (7th Cir. 2007) [v17:CUL-217] | Gospel, Mt. 6:30 | **Refused as an echo**: the same five KJV words render Mt. 8:26, 14:31 and 16:8, and the e-mail attributes nothing |
 ---
 
 ## 9. Interpretive-proposal audit
@@ -3429,6 +4791,82 @@ fresh:PRE-002, P6's by the first join's [PRE-011 in the first join's
 numbering, at §9.6], re-verified textually this run by fresh:THE-102 and
 fresh:SCR-014.
 
+### 9.11 The proposal set as the third join settles it — six proposals, each grounded in a conjunction the `precedent-search` lane reached
+
+**The lane reached thirteen distinct conjunctions of the appointed elements
+against a floor of six, so there is no shortfall** [v17:PRE-016]. **Every
+proposal retained below is selected from that set and grounded in it, and its
+classification is carried through unchanged.** **No proposal is retained whose
+distinctive conjunction that lane did not reach** — and two conjunctions this
+run's other lanes reached are therefore refused, at §9.12.
+
+**The ordering honesty the lane requires be stated** [v17:PRE-016]: the lane ran
+**before** this stage settled which proposals are retained, so its thirteen are
+searches of the precedent field the appointed elements invite, not searches per
+retained proposal. **That is why coverage is stated as a set.** What the lane
+expressly did **not** reach, and what may therefore not be retained: any
+conjunction resting on **the Secret alone with the Epistle**, on **the
+Postcommunion with the Gospel**, or on **the Credo and Trinity-Preface rubrics
+with any appointed text.**
+
+**The search boundary for every classification below** is §3.7's
+`precedent-search` row — nine missal payloads in eight editions, 2,865 files,
+188 published documents, 92 interpretive-proposal files, and the tracked 1962
+registry — **under the OCR bound at [v17:PRE-002], which is severe: four
+appointed phrases tested return zero from all nine payloads while the same books
+demonstrably print them, so single-word and fragment searches carry weight and
+multi-word phrase searches carry almost none.** **No classification asserts that
+a connection is unknown, unprecedented, first, or authored by the model.**
+
+| Proposal | Anchors | Mechanism | Classification, carried unchanged | Nearest located precedent or analogue | Controlling limit |
+|---|---|---|---|---|---|
+| **P1. Goods are ordered, not refused** | Introit, Gradual, Gospel, Communion, Collect | Six comparatives of degree in four Latin constructions stand in exactly **three** of the ten elements — Introit `melior … super millia`, Gradual `Bonum est … quam` twice, Gospel `plus quam` twice, `Nonne … magis pluris`, `quanto magis` — while the Epistle, the three orations, the Alleluia, the Offertory and the Communion carry none; and **the Gospel sits on both sides of the register split, the word `Ideo` making the exclusive premise the ground of the comparative argument** [v17:PRE-004, v17:THE-212] | **NEAR ANALOGUE LOCATED** for the doctrinal move and for the "one claim in several grammars" method; **the specific comparative distribution is NOT LOCATED IN THE CHECKED CORPUS** [v17:PRE-004] | GPT leaf 43, "Temporal goods become a road only by changing grammar", on `sic transeamus per bona temporalia`; methodologically, Claude leaf 52's "three elements therefore make one claim in three grammars" and Claude leaf 49's "The Gospel's last clause and the Secret's *quoties* share one grammar". **`melior est` and `super milia` return zero anywhere in either provider's propers trees outside leaf 54, and no proposal in the 92 proposal-bearing files is built on comparative construction** | **The defeater is undiminished and it now has a NAMED MEDIEVAL EXPOSITOR ON BOTH SIDES OF IT.** The `quam` of Ps. 117:8–9 may render a Hebrew idiom of exclusion rather than of degree, and `super millia` is a Hebraism too, so two of the six comparatives may not be comparatives at all; only the Gospel's four are Greek-derived and immune [v17:PRE-004, v17:THE-212]. **Bruno the Carthusian asks exactly this question about exactly these words and answers it twice** — first `Istud magis comparative non est positum`, so the verse is exclusive; then comparatively, **but only if `principes` are heavenly spirits and spiritual men** [v17:PAT-515]. **The proposal must either address him or be stated as contingent on the comparative reading of the Latin `quam`, and it may no longer present the question as a modern philological worry.** Nothing in a Latin distribution can settle it |
+| **P2. What man cannot add** | Gospel, Communion, Collect, Epistle | `Adicere` carries the exchange: the Gospel denies that any man can **add** a cubit to his stature and then promises that all things **shall be added**; the Communion repeats the promise alone; the Collect and Epistle supply the same incapacity in other words | **NOT LOCATED IN THE CHECKED CORPUS** as a Triptych treatment, re-run against the tree as it now stands and still holding [v17:PRE-005] | Same-identity: GPT leaf 54's proposal 3, "What is added does not become what leads", **whose mechanism is the three-verb distinction `adicientur`/`ad salutaria dirigatur`/`ducant`, not the incapacity.** `adicere`, `adicientur`, `cubitum` and `staturam` occur in **no** interpretive-proposal file of either provider outside the two Fourteenth-Sunday leaves | **The reduction §9.2 forced is confirmed and now has a second and third witness.** Aquinas already reads the cubit as an argument from providence at the same verse, so the core move is attributed teaching and not exploratory [v17:PRE-005]; **and this run adds two more readings of the Communion's own verb** — pseudo-Bede's `Non dixit nobis dari, sed adjici` [v17:PAT-525] and Christian of Stavelot's `subauditur NECESSARIA … Ad necessitatem, non ad superfluitatem` [v17:PAT-506]. **More of P2 is now documented reception than was, and the proposal is retained only in the reduced cross-element form: the join of the incapacity to the promise two verses later, to the Communion's repetition of the promise alone, and to the Collect's `sine te labitur humana mortalitas`.** Neither the Collect nor the Epistle uses the verb, **so two of the four members join doctrinally and not lexically** |
+| **P3. Propitiation and salvation saturate the prayers the people do not sing** | Collect, Secret, Postcommunion, Alleluia | `salut-`/`salv-` four times, once each in the three orations and the Alleluia and in no other element; `propitia-` twice, Collect and Secret; `semper` and `perpetu-` twice each, Collect and Postcommunion, the Secret carrying neither [v17:THE-210, v17:PRE-006] | **NEAR ANALOGUE LOCATED** [v17:PRE-006] | Claude leaf 53's published proposal "The two askings of *augmentum* bracket the nine who stopped" — the same move of reading one repeated Latin word as a bracket across a formulary's orations. **`propitiatio` as a substantive appears in no interpretive proposal of either provider's 1962 collection outside leaf 54** | **Severe and unchanged: this is the ordinary vocabulary of Roman collects, so the saturation may be a fact about the genre and not about this Mass.** **The counter-test that would settle it CANNOT be run here** — a lexical concordance over the orations of the whole missal would have to run against the OCR layer of [v17:PRE-002], which undercounts, so a concordance result would not be evidence [v17:PRE-006]. **What can be said is bounded to the 21 collated records / 15 identities.** And the four-fold count is a fact about one root in four senses [v17:THE-210]. **A related genre observation belongs at the Collect in the commentary and NOT here**: the away-from/toward figure `abstrahatur a noxiis … ad salutaria dirigatur` has exactly one twin among the fifteen collated identities, the Seventh Sunday's `ut noxia cuncta submoveas, et omnia nobis profutura concedas` — **which strengthens any reading of the `et … et` pair as deliberate construction and weakens any claim that the figure is distinctive** [v17:THE-207]. **It is a cross-FORMULARY observation and clears no two-element floor inside this Mass** |
+| **P4. The hope-formula lies past the cut, and is handed on at another Mass** | Introit, Offertory, Gradual | Each of the two psalm-chants stops one clause before a beatitude on the man who hopes: the Offertory cuts at `suavis est Dominus`, leaving `beatus vir qui sperat in eo` **in the second half of the very verse it ends on**; the Introit's antiphon stops at `super millia`, and its psalm's own last words are `beatus homo qui sperat in te`; **and the Gradual, alone of the three, is uncut** [v17:SCR-003, v17:SCR-009, v17:PRE-007] | **PRECEDENT LOCATED**, and the nearest precedent is one leaf nearer than the prior audit recorded [v17:PRE-007] | Claude leaf 48's proposal 5, "A withheld condition and a partial mode of knowing", **anchored on the same Ps. 33 verse**. **The control from a primary printing:** Ps. 33:9 whole, hope-clause included, is the **Eighth** Sunday's Communion, six Sundays before this one. **Two further appointments of the Gradual's verses were located this run in the Pustet's text layer:** the Friday after the Fourth Sunday in Lent, and the Communio of the Cajetan Mass in *Missae pro aliquibus locis* [v17:PRE-020, v17:PRE-021] | **The strongest limit in the set: the extents of antiphons are inherited chant tradition, the cuts have duller explanations available — metrical length, ordinary antiphon bounds — and NOTHING establishes that anything was cut in order to suppress it** [v17:PRE-007]. **The chant repertories that would show whether the extents are stable across the tradition were not reached, and this repository holds none.** The Pustet readings are searched and not inspected |
+| **P5. Two chants, two divisions: the Fathers disagree at the Offertory and at the Gradual, and the formulary resolves neither** | Offertory, Gradual | Each chant carries an independently documented patristic division, and the formulary prints both without adjudicating either | **NEAR ANALOGUE LOCATED** [v17:PRE-009] | Claude leaf 51's "The tradition genuinely disagrees at four points, and the formulary resolves none of them"; Claude leaf 53 on Gal. 3:19. Same-identity: GPT leaf 54's proposal 1, "The angel and the princes distinguish mediation from mastery", **which joins the same two chants by a doctrinal distinction and not by a documented division** | **Both divisions are DEEPER than when the proposal was drafted, and one of them may be shallower than it looks.** The Offertory's angel now has **four** accounts — Augustine's Christ, Cassiodorus's moral sense, Arnobius's angel of the sepulchre and Godfrey's gift of grace [v17:PAT-513, v17:PAT-519] — **and Arnobius's depends on repointing `timentium eum`, which is not what the missal's Latin says.** The Gradual's princes have **four positions and a suspicion**: Lombard's siglum puts the angelic reading under Augustine's name and Prosper is largely an Augustine epitome, **so what looks like three witnesses may be one position with three carriers** [v17:PAT-509, v17:PAT-527]. **The check that settles it — Augustine's own *Enarratio in Ps. 117*, already held here — has not been made, and until it is, the proposal must not count votes.** Bruno the Carthusian's question is a fifth thing and is grammatical rather than doctrinal [v17:PAT-515] |
+| **P6. The one verb the Mass appoints twice, with its object reversed** | Introit psalm verse, Epistle | `Concupiscere` is appointed three times in two elements with the object reversed: the soul longing toward the courts (`concupiscit, et deficit anima mea in atria Domini`) against the flesh desiring against the spirit and the crucified `vitiis et concupiscentiis` | **NOT LOCATED IN THE CHECKED CORPUS** as a treatment; **NEAR ANALOGUE LOCATED** for the method [v17:PRE-011] | Claude leaf 49's published proposal "The granted prayer is the danger the Collect is built against", **built on this very root and joining an oration to a reading.** Cross-proper control re-run: `concupisc` outside leaf 54 returns leaf 49's commentary (1 Cor. 10:6, negative valence only) and the GPT nuptial Mass, **and nothing else in any 1962 appointed text** | **Two limits, both real.** The two senses are the ordinary Latin senses of an ordinary verb, **so the opposition may be a coincidence of the Vulgate's vocabulary before it is a compositional choice, and no compiler's intent is claimed.** And the Introit's occurrence is in the **psalm verse** and not the antiphon, so it is liable to the objection that a psalm verse is not appointed in the same sense the antiphon is. **A THIRD LIMIT ADDED THIS RUN: the second lexical leg that would strengthen it may not be used.** `Anima` stands in the same Introit clause, three words from `concupiscit`, and in the Gospel with the valuation reversed [v17:THE-206] — **but that is an Introit–Gospel conjunction, which `precedent-search` did not reach, so it may not enter P6's anchors.** It is recorded at §9.12 |
+
+**Element coverage of the six proposals:** Introit (P1, P4, P6), Collect (P2,
+P3), Epistle (P2, P6), Gradual (P1, P4, P5), Alleluia (P3), Gospel (P1, P2),
+Offertory (P4, P5), Secret (P3), Communion (P1, P2), Postcommunion (P3).
+**Every appointed element is anchored in at least one proposal.**
+
+### 9.12 Conjunctions reached this run and NOT retained as proposals
+
+| Conjunction | Reached by | Why not retained |
+|---|---|---|
+| **`Respice` / `Respicite` — the Introit asks God to look, the Gospel commands the assembly to look** | `theological-synthesis` [v17:THE-205] | **It clears the two-element floor and has documented reception on one half** — Cassiodorus names the figure at exactly the Introit clause, `Haec figura dicitur hypallage … quoties dicitur respici magis ille qui respicit` — **and it is invisible to an exact-form lexical map, the two forms being `respice` and `respicite`, which is why no earlier lane reached it.** **IT IS A LEAD AND MAY NOT BE PUBLISHED AS A PROPOSAL: `precedent-search` did not reach this conjunction, and that lane's coverage is the only targeted precedent search this workflow performs** [v17:PRE-016]. **Three defeaters travel with it if a later authorised sweep reaches it:** the Introit already pairs `aspice` and `respice` of its own, so the Gospel is not the only place the Mass doubles the act; `Respicite` is Matthew's own Vulgate word and `respicere` is stock psalm and collect vocabulary; and **no checked witness reads the two clauses together.** The tie is verified in the Latin only — Matt. 6:26's Greek is a βλέπω compound and no Greek psalter is held here [v17:SCR-020] |
+| **`Anima` — the soul fainting toward the courts against the soul forbidden anxiety and rated above food** | `theological-synthesis` [v17:THE-206] | **Same refusal and the same reason.** It is the more interesting for sitting in the *same Introit clause* as P6's `concupiscit`, which would make the psalm verse the one element sharing substantive vocabulary with **both** readings. **But `anima` is among the commonest nouns in both psalter and Gospels; the occurrence is in the psalm verse and not the antiphon; and `precedent-search` did not reach the conjunction.** **If a later authorised sweep reaches it, its honest home is a second lexical leg inside P6 and not a seventh proposal** |
+| **Gradual with Gospel — trust in the Lord rather than in man against the impossibility of serving two masters** | `precedent-search` [v17:PRE-020] — **PRECEDENT LOCATED, and located as liturgical fact rather than as commentary** | **Available and deliberately not retained as a proposal, because the precedent is so strong that the join is no longer the guide's to make.** The Pustet 1862's *Missae pro aliquibus locis* Mass of S. Cajetan (7 Aug) **appoints Mt. 6:24–33 by cross-reference to this very Sunday and takes Ps. 117:8–9 as its Communio**, with a Collect asking `in te semper CONFIDERE` and a Gradual (Ps. 124) carrying both `confidunt` and `in circuitu`. **Two limits if anyone uses it:** the 1862 pro-aliquibus-locis Mass is a LOCAL formulary and is **not** the 1962 book, whose S. Caietani has a different Introit, Gradual and Communion; and the identification rests on an OCR layer in which the Communio heading survives only as `iminuiio`, the surrounding Cajetan orations being what is legible. **What it establishes is that a Roman compiler treated Ps. 117:8–9 and Mt. 6:24 as belonging together, so a treatment must present the join as attested and not as its own — which is a commentary observation, not a class-5 proposal** |
+| **Gradual with Collect — the Church that cannot stand alone and the trust not placed in man** | `precedent-search` [v17:PRE-021] — **NEAR ANALOGUE LOCATED** | Not retained. The Lenten Friday that is the only other temporal Mass in the checked corpus appointing this Gradual has a Collect sharing this Sunday's two distinctive features — `Ecclesia tua` and a two-limbed `et … et` petition. **But `Ecclesia tua`, an ablative `auxiliis` and a two-limbed petition are common furniture of Roman collects, so the shared grammar may be genre and not design**; the Lenten Collect is **single-witness on one printing's text layer**; and no concordance of Roman collects was reached |
+| **Introit with Gradual with Offertory — three of the Mass's four chants carry a text standing under a different liturgical genre elsewhere in the same rite** | `precedent-search` [v17:PRE-022] — **each displacement separately PRECEDENT LOCATED; the three joined as one observation NOT LOCATED** | **Not retained as a proposal because this run moved it out of the exploratory register.** The individual displacements are ordinary liturgical fact and none may be presented as a discovery; and **the liturgical-history lane now supplies the same shape as documented history rather than as proposal** — the Gradual and Offertory each stand at a named Lenten feria in the ninth-century antiphonaries, corroborated independently by Schuster [v17:LIT-205, v17:LIT-218], and C4 and C5 carry the result. **A further limit that cuts both ways:** Psalm 33 supplies three different genres on three Sundays within six weeks, **which makes the mobility demonstrable and makes it look like the ordinary condition of the psalter in the Roman chant books rather than anything about this Mass.** The Introit case is an **adaptation** and not the same text |
+| **Offertory with Gospel — the Gospel names no agent of provision, the Offertory names the Angel of the Lord** | `precedent-search` [v17:PRE-023] — **NEAR ANALOGUE LOCATED, and the lane records it as the conjunction with the strongest precedent AGAINST it** | Not retained. **The identical form of argument is already published in this repository over the identical Gospel image, one collection away** — Claude postconciliar pc-s42's "The psalm names the birds the Gospel leaves unnamed". **And the Gospel's agent is not in fact unnamed: `Pater vester caelestis` names him**, so the claim would have to be about the *mode* of provision. **Naming the Offertory's Angel as the Gospel's agent also presupposes one side of the division at P5** |
+| **Alleluia with Introit — the Mass's least integrated chant is the psalm the Office says every morning as its Invitatory** | `precedent-search` [v17:PRE-024] — **NOT LOCATED IN THE CHECKED CORPUS, and unusually cleanly, Ps. 94 having no Triptych treatment at all** | **Not retained, and the lane names the reason as possibly fatal: the repository holds no Breviary, no Antiphonale and no Office payload of any kind, so the premise that Ps. 94 is the daily Invitatory is not verifiable from anything searchable here.** A proposal resting on it would need a source this repository does not hold. Second limit: Ps. 94:1 is a common chant text and its appearance here may carry no relation to the Introit at all |
+| **Epistle with Gospel by the bridge word `idolorum servitus` to `mammonae`** | `precedent-search` [v17:PRE-012] — **NOT LOCATED as a Triptych treatment** | Not retained, at the prior audit's disposition: **the bridge is a Father's moralising gloss and not the plain sense of either lesson, and this brief already holds it as documented reception in the element-by-element commentary.** This run bounds it further: **the shared root is the Vulgate's and not the Greek's** — Gal. 5:20 is a λατρεία compound and Mt. 6:24's verb is δουλεύειν — **and where the Greek does supply δουλ- in Galatians 5 it stands at v. 13, one clause outside the appointed lesson** [v17:SCR-015]. **The Latin tie is grammatically unequal even so: a genitive noun-phrase in a list against a finite complement.** Bruno of Segni reaches Eph. 5:5 by the same route to a different conclusion [v17:PAT-528] |
+| **Epistle with Gospel by their supplied incipits** | `precedent-search` [v17:PRE-013] — **NEAR ANALOGUE LOCATED** | Not retained on the lane's own limit: **liturgical incipits are near-universal formulae of the Roman lectionary, so a conjunction built on them risks being a fact about the lectionary's conventions rather than about this Mass**, and the incipits of the other twenty collated formularies were not sampled. **The one peculiar thing is a textual observation the commentary already carries:** the supplied `Dixit Iesus discipulis suis` narrows Mt. 5:1's own setting, and `Fratres:` **replaces** rather than supplements Paul's `Dico autem:` — **while `fratres` does stand in Galatians 5, at v. 13, in the sentence the lesson drops** [v17:SCR-013] |
+
+### 9.13 Two observations for the stages that own the manifest and the reader-facing form
+
+**Neither is this stage's to decide, and both are recorded because a later stage
+will otherwise re-derive them.**
+
+- **The declared-relation ratio.** Claude leaves 49, 51, 52 and 53 each declare
+  exactly four cross-element relations of which exactly **one** carries
+  `exploratory-proposal`; **leaf 54 declares six of which five do**
+  [v17:PRE-025]. **This is a report of what the neighbouring guides did and not
+  a judgment on what this one should do.** `proper-components.toml` records the
+  relations a leaf *declares* and not the register in which the finished prose
+  treats them, so the ratio is evidence about the manifest and only indirect
+  evidence about the guide. **Leaf 48 declares nothing at all and is not a
+  counter-example: it predates the manifest.**
+- **Where the precedent audit is printed.** Leaf 54 is **the only Claude leaf
+  that prints `Precedent` and `Search boundary` fields in the reader-facing
+  proposal environments**; the four leaves that passed evaluation keep that
+  material in `research/scope.md` [v17:PRE-026]. **`guidance/editorial.md`
+  forbids moving the audit into the body, and §9.9 already flags the reverse
+  question.** **Whether the fielded audit belongs on the page is an authoring
+  and evaluation decision, not a research one.**
 ---
 
 ## 10. Section-by-section evidence coverage
@@ -3453,7 +4891,7 @@ text**, or **position 6, `Source-Grounded Synthesis Across the Propers`**.
 | 1 | **Page 1: Propers map and four senses** | **YES — and the one named constraint the prior brief carried is now RELIEVED** | The complete element inventory with incipits, scriptural axes and demonstrable connections (§1.1, §1.2, §1.4); the appointed Latin as `verified.md` settled it. **Four-senses grounding: Literal** from §2.1–§2.7 throughout; **Allegorical** — **and this is the change** — from a **named, checked, patristic allegorical reading of the pericope's own images**, Hilary of Poitiers reading birds, cubit, lilies and hay [PAT-111, PAT-112], **printed beside Jerome's and Augustine's refusals**, so the row rests on the tradition's own division and not on the guide's invention (§0.3(c), §7.3); also available, Augustine's christological reading of `faciem Christi tui`, Cassiodorus's naming of it as hypallage [PAT-206] and Theodoret's ecclesial third reading [PAT-301], and **Cassiodorus's eucharistic reading of `Gustate` anchored in the appointed verbs** [PAT-202]. **Moral** from Jerome's Greek-anchored philology of the vice-list [PAT-159], Chrysostom and Aquinas on both lists, and the **three** independent Fathers setting the limit against over-reading the Gospel, of whom **Jerome's is anchored inside the appointed bounds and is the one to prefer** [PAT-124]. **Anagogical** from Augustine's and Cassiodorus's "one day, an everlasting day" [PAT-207], **with Theodoret's contrary argument-from-profit printed beside it** [PAT-302]. **The constraint that remains, and it is Hilary's own:** his hay-as-gentiles reading carries a doctrine of the bodily eternity of the damned, and his birds-as-unclean-spirits reading works against the pericope's consoling sense; **report the reading and do not use it to soften the doctrine it carries** |
 | 2 | **Page 2: `Scriptural Date and Location`** | **PARTIALLY — and this remains the one section for which the brief does not supply part of the evidence. One item is newly relieved and one statement is corrected** | **SUPPLIED in full for the traditional attribution and chronology in every one of the six rows**: superscription and authorship evidence [SCR-012, SCR-013, SCR-015, SCR-019]; the PBC responsa I–VIII, AAS 2 (1910) 354–355, verified, public-domain; Corbett, CE IV, verified, matching the registered passage exactly; Maas, CE VIII, verified; Cornelius a Lapide, Antwerp 1614, verified; the Douay 1 Kings 21 = 1 Samuel 21 correspondence **with the Achimelech/Achis divergence inside the narrative now recorded and unexplained** [SCR-015]; the Vulgate/English/Hebrew numbering read from the tracked concordance. **NEWLY AVAILABLE, and it relieves one of the seven bounded negatives:** the **acrostic structure of Ps. 33/34** may now be carried **as documented reception** — Cassiodorus states it and tags the appointed verses HETH and TETH [PAT-204] — **but NOT as a fact about the Hebrew, no Hebrew being held** (§2.6, §4.5). **Also newly available for the Alleluia row:** Theodoret's report that Ps. 94 is **untitled among the Hebrews** and his Josiah setting, both **his own reconstruction and not what the psalm states** [PAT-304]; and for the Gradual row, Theodoret's psalm heading Ἀλληλούϊα agreeing with the tracked Clementine [PAT-306]. **STILL NOT SUPPLIED, each with its bound:** (i) **a modern critical horizon for Mt. 6 and for Pss. 33, 83, 94 and 117** — no registered NABRE artifact for Matthew or for NABRE Pss. 34, 84, 95, 118, **so there is nothing here to cite or to summarise from**, and no lane retrieved a substitute; (ii) **the content of the Catholic Encyclopedia articles "Gospel of St. Matthew" (`cathen/10057a.htm`) and "Epistle to the Galatians" (`cathen/06336a.htm`)** — citable in form at an exact article locus, **retrieved by no lane in either run**, so the guide may not assert what either says; (iii) **Papias, Eusebius *HE* III.24.6 and III.39.16, and Jerome *Comm. in Gal.* lib. II prol.** — **not held in this repository in any form**, re-confirmed this run [COV-010]; (iv) **Theodoret on Ps. 83 and Ps. 94, and Irenaeus *Adv. haer.* III.1.1** — **Theodoret is now READ IN GREEK at both psalms** [PAT-300], so the dossier may cite him at PG 80 with the route and state stated, **but there is still no registered passage record**, and Irenaeus is still held as searchable bytes with no passage record [COV-010]; (v) **Jerome *De vir. ill.* 3** — registered at ch. 2, an English edition against a claim of Latin reading, artifact no longer byte-reproducible; (vi) **Haydock's A.M. 2944** — `rights_status='unresolved'`, summarise-only. **CORRECTED:** the References' flat statement that "no critical edition is registered here" is imprecise — **two are, and neither reaches an appointed passage**, which is what should be said [COV-009]. **The disposition for every unsupplied item is a bounded negative printed on the page. The author does not retrieve.** **And the structural warning stands:** the sheet must occupy exactly one page, and these bounded negatives can be stated briefly and should not become another layer of argument on the page |
 | 3 | **`The Propers: Themes and Movement`** (pages 3–4) | **YES** | **Six cross-proper claims at §7**, each joining at least two precisely named appointed elements of this formulary and each drawing multiple ritual moments, scriptural contexts and reception witnesses, with class, limits and defeaters. **Three to five developed functional units can be built from them, and §7's preamble names the strongest argument and its shape.** Every appointed element is accounted for: Introit (C4 second remove, P4, P6), Collect (C4, C6, P2, P3), Epistle (C1, C2, P6), Gradual (P4, P5), Alleluia (P3, and §2.4's negative), Gospel (C1, C2, C3, C5, C6), Offertory (P4, P5), Secret (C4, C6, P3), Communion (C1, C3, C5, C6), Postcommunion (C4, C6, P3). **A signpost-only scan can recover thesis, movement, decisive evidence and principal limits from §7's preamble plus the six claim headings** |
-| 4 | **The complete appointed text** (research edition only, opening page 5) | **YES — and it needs nothing from this brief beyond what is already fixed** | **This position is textual, not evidential.** Its control is `propers/verified.md`, the facsimile-collated appointed text in liturgical order with its provenance, **not this file** — and §1.1's inventory, §1.2's collation results and §1.3's numbering are the brief's complete contribution to it. **The one thing the brief must supply and does: the divergence apparatus.** The four Communion departures [SCR-003], the two capitalisation differences and their firm caveat [SCR-020], the orthographic normalisations absorbed [SCR-033(a)], **and the finding that there is no second substantive recasting anywhere in the formulary** [SCR-033(a)] are all at §1.2. **NOT SUPPLIED and not needed here:** nothing. **The English is fixed by the profile and not by research** — Douay–Rheims Challoner for the scriptural elements and the registered Cummiskey 1861 for the orations — and §11.1 carries the rights posture |
+| 4 | **The complete appointed text** (research edition only, opening page 5) | **YES — and it needs nothing from this brief beyond what is already fixed** | **This position is textual, not evidential.** Its control is `propers/verified.md`, the facsimile-collated appointed text in liturgical order with its provenance, **not this file** — and §1.1's inventory, §1.2's collation results and §1.3's numbering are the brief's complete contribution to it. **The one thing the brief must supply and does: the divergence apparatus.** The four Communion departures [SCR-003], the **three** capitalisation differences — the two typologically weighted ones and the reverse-direction lower-case `spíritu` at Gal. 5:18 — with their firm caveat and the bound that the normalised comparison could not see case [SCR-020, corrected against `propers/verified.md` rows 1, 5 and 19; §0.6], the orthographic normalisations absorbed [SCR-033(a)], **and the finding that there is no second substantive recasting anywhere in the formulary** [SCR-033(a)] are all at §1.2. **NOT SUPPLIED and not needed here:** nothing. **The English is fixed by the profile and not by research** — Douay–Rheims Challoner for the scriptural elements and the registered Cummiskey 1861 for the orations — and §11.1 carries the rights posture |
 | 5 | **`The Propers: Detailed Commentary`** | **YES for the seven scriptural elements; NOT for the exegetical reception of the three orations** | **Every appointed scriptural passage now has complete-context research and at least one direct witness checked at its work and locus** (§2.1–§2.7), with direct exegesis distinguished from illuminating reuse, real differences preserved (§6.4–§6.13), and the composed texts' verbal echo, doctrinal illumination and documented liturgical reception kept apart. **Six of the ten elements gained a witness this run**, and the Alleluia and the Gradual — the two thinnest — gained two and two. **NOT SUPPLIED:** any patristic or medieval commentary on the Collect, Secret or Postcommunion. Corpora and search terms are itemised at §2.8 and §4.1; **the languages searched were Latin and Greek and English**; the limit reached is that the genres swept do not take liturgical orations as their object; **and two named repairs remain unmade — Schuster vol. 3, registered complete and already inspected at p. 123, and the Usuarium Corpus Orationum concordance, registered with a proven route and never consulted** [COV-011, COV-002]. **The orations' history is supplied in full** (§6.1–§6.3, §7.4, §2.8's Gerbert material), **and the guide should carry the bounded negative on reception beside it.** Three bounds carry into this section: the Greek side is better and still bounded (§4.2); **no Greek witness may speak on `luxuria`, `modestia` or `castitas`** (§0.3(a)); and **no witness anywhere comments on the Communion antiphon as such** [PAT-135] |
 | 6 | **`Source-Grounded Synthesis Across the Propers`** | **YES** | **This position is what §7's six claims exist for**, and the brief supplies each with its class mixture stated rather than averaged, its reception witnesses named individually, and its defeaters printed. **The unbounded source-grounded section may draw on classes 1–4 only**, and §7 marks the class of every limb. **Two things the brief supplies that this position specifically needs:** the **competing historical judgments** at §6, which are what keep the synthesis from manufacturing consensus — ten of them, of which one (§6.8) is a live disagreement with the prior production that must be printed as unresolved; and the **bounded negatives** at §4, which are what keep an unbounded section from overreaching. **NOT SUPPLIED, and named:** C6's genre counter-test was not run (§7.6), so **that claim may not be stated as distinctive**; and the missal-wide oration concordance behind P3's counter-test was not run either (§9.3) |
 | 7 | **`The Propers: Notable and Quotable`** | **YES** | **Five source- and locus-identified non-obvious afterlives at §8**, spanning political, legal-institutional, legal-punning, humorous and humorous-idiomatic registers across **Communion, Gospel, Epistle and Gradual**, with five further qualifying candidates and their reasons for non-selection at §8.6 and the refusals at §5. **Two bounds are part of the supply and not exceptions to it:** **two entries are VERIFIED by page-image collation and three are not, and the three may not be called verified** (§8); and **no qualifying candidate exists for the Introit, the Alleluia, the Offertory or any of the three orations** — swept twice now, in two different corpora, with the counts at §4.9. **Two attributions in the prior gallery are corrected at §0.3(e) and must be corrected in the guide** |
@@ -3546,6 +4984,40 @@ the other ten as stated above.**
 this subsection adds defects and bounds to positions 2, 11 and 12 and to the
 patristic-layer evidence state that several positions share.**
 
+### 10.2 Coverage statement as the third join settles it, run `ca03f1b357e7ec25`
+
+**All twelve positions of the `Reader-Facing Order` are stated again below,
+whole rather than as a delta, because a coverage statement assembled from three
+layers is not a coverage statement.** **This is a statement of fact and not a
+bar to clear. A `PASS` asserts that every one of these positions has its
+evidence position stated; it does not assert that every one of them has
+evidence.** Where evidence is not supplied, the entry names the corpora,
+languages and loci checked and the limit reached, **and the guide carries that
+bound in place of the claim.**
+
+| # | Reader-order position | Supplied? | What is supplied, or the bound that stands in its place |
+|---|---|---|---|
+| 1 | **Page 1: Propers map and four senses** | **YES** | The complete element inventory, incipits, scriptural axes and demonstrable connections at §1.1–§1.4, on the appointed Latin as `verified.md` settled it and as [v17:SCR-001] independently replays it. **Four senses: Literal** from §2.1–§2.7 and §2.9 throughout; **Allegorical** from named checked readings and their named refusals — Hilary, and now **Godfrey of Admont at the far end (birds = good angels, lilies = evil spirits, Solomon = Christ) against Christian of Stavelot's aesthetic refusal, Bruno of Segni's literal reading and the Augustine the compilations transmit** [v17:PAT-506, v17:PAT-520, v17:PAT-521, v17:PAT-528], so the row rests on the tradition's own division; **Moral** from the Epistle's witnesses, now four-deep at Gal. 5:17 [v17:PAT-502, v17:PAT-504, v17:PAT-505, v17:PAT-516]; **Anagogical** from Augustine's and Cassiodorus's everlasting day, **with Arnobius's christological route to the same conclusion beside them** [v17:PAT-510]. **The constraint that remains is Hilary's own**, as §10 states it |
+| 2 | **Page 2: `Scriptural Date and Location`** | **PARTIALLY, AND THE PARTIALITY HAS MOVED.** Every biblical **date** is now supplied, from the corpus and from nowhere else; what remains unsupplied is the modern critical horizon and four named apparatus items | **DATES: SUPPLIED IN FULL AND EXCLUSIVELY BY §14, the `Scriptural chronology audit`.** Six appointed passages: the Introit a composition claim inherited over the Korahite group; the Epistle four disputed dates for Galatians; the Gospel and the Communion the same six disputed dates for Matthew; the Offertory one `dated` superscription-setting; **the Gradual and the Alleluia `undated-in-tradition`, which is the corpus's answer and is what the Date cell states.** **Traditional attribution, superscription and location evidence** remain as §10 records them, with the **Achimelech/Achis divergence recorded and unresolved** [v17:SCR-009, v17:SCR-025] and the Vulgate/modern/Masoretic numbering as §1.3 settled it [v17:SCR-001, v17:SCR-008]. **STILL NOT SUPPLIED, each with its bound:** (i) **a modern critical horizon for Mt. 6 and for Pss. 33, 83, 94 and 117** — no registered NABRE artifact for Matthew or for NABRE Pss. 34, 84, 95, 118, and **no lane of any of the three runs retrieved a substitute**; (ii) **the content of the Catholic Encyclopedia articles "Gospel of St. Matthew" and "Epistle to the Galatians"** — citable in form, **retrieved by no lane**, so the guide may not assert what either says, **though the chronology corpus does carry labelled claims sourced to those very artifacts and those labels ARE printable through §14**; (iii) **Papias and Eusebius *HE* Book III — not held in this repository in any form**, re-verified this run [v17:COV-010]; (iv) **Jerome's *Comm. in Gal.* — the container volume PL 26 IS held, complete, hashed and public-domain, and the negative must be narrowed to the work record** [v17:COV-020], see §0.5(i); (v) Theodoret at Pss. 83 and 94 read in Greek with **no registered passage record**, and Irenaeus III.1.1 as searchable bytes with none; (vi) Haydock's `A. M. 2944`, `rights_status='unresolved'`, **summarise-only — and it is the source of the one `dated` answer on the page** [v17:SCR-025]. **The disposition for every unsupplied item is a bounded negative printed on the page; the author does not retrieve. And the structural warning stands: the sheet must occupy exactly one page** |
+| 3 | **`The Propers: Themes and Movement`** (pages 3–4) | **YES** | **Six cross-proper claims at §7.7**, each joining at least two precisely named appointed elements and each drawing several ritual moments, at least one passage's scriptural context, and named reception witnesses. **The strongest argument and its shape are named at the head of §7.7**, and three to five developed functional units can be built from the six. **Every appointed element is accounted for**, as §7.7's own coverage line and §9.11's show. **Two mandatory corrections travel into this section: §7.4's Honorius sentence (§0.5(c)) and the withdrawn imperative sentence still printed at `sections/20-themes.tex` ll. 126–128 (§0.5(h))** |
+| 4 | **The complete appointed text** (research edition only, opening page 5) | **YES, and it needs nothing further from this brief** | **The position is textual, not evidential**; its control is `propers/verified.md`. §1.1–§1.3 and the divergence apparatus at §1.2 are the brief's whole contribution. **One item this run adds to that apparatus as a lead and not as a reading:** the Glossa ordinaria records a variant at Mt. 6:30, `Alii libri habent: in ignem vel in acervum qui habet speciem clibani` — **a fact about the Gospel text belonging to whoever owns the appointed-text record, and no Latin witness was checked for whether any actually prints it** [v17:PAT-517]. The English is fixed by the profile and not by research |
+| 5 | **`The Propers: Detailed Commentary`** | **YES for the seven scriptural elements; YES-IN-PART, NEWLY, for the Collect; NOT for the Secret and the Postcommunion** | **Every appointed scriptural passage has complete-context research and direct witnesses checked at work and locus** (§2.1–§2.7, extended at §2.9), with direct exegesis distinguished from illuminating reuse and real differences preserved (§6.4–§6.14). **This run adds eleven Latin witnesses and one Greek work, and fills the two em-dashes at the Gradual and the Alleluia** (§0.5(m)). **THE COLLECT'S NEGATIVE IS WITHDRAWN**: Alcuin, Honorius, Wibald, Godfrey and Schuster [v17:PAT-522, v17:LIT-206, v17:LIT-213] — **four kinds of reception, not four votes on a meaning.** **NOT SUPPLIED: any commentary of any period on the Secret or the Postcommunion**, the negative now bounded over a whole-corpus phrase index with what would overturn it named (§4.15(a)). **Three bounds carry into this section:** the Greek side is worse-balanced than before, not better (§4.15(b)); **every witness added this run is INSPECTED and none is verified**, on an OCR transcription of Migne with four observed errors (§2.9); **and the two flagged passages, PL 152:1250 and PL 174:583, must be checked at a page image before a word of them is quoted** |
+| 6 | **`Source-Grounded Synthesis Across the Propers`** | **YES** | **This position is what §7.7's six claims exist for**, each with its class mixture stated rather than averaged, its witnesses named individually and its defeaters printed. **Two things this position specifically needs and the brief supplies:** the **competing historical judgments** at §6 and §6.14 — now sixteen of them, of which **§6.8 is no longer live and is settled** (§0.5(a)) — and the **bounded negatives** at §4 and §4.15, which are what keep an unbounded section from overreaching. **NOT SUPPLIED, and named:** the missal-wide oration concordance behind P3's counter-test cannot be run against the OCR layer this repository holds, so **P3's genre defeater cannot be closed here** (§9.11); and **the check that would tell whether the Gradual's angelic reading is one position or three has not been made** (§6.14(m)) |
+| 7 | **`The Propers: Notable and Quotable`** | **YES** | **Five source- and locus-identified non-obvious afterlives at §8.8**, spanning political, legal-institutional, legal-punning and two humorous registers across **Communion, Gospel, Epistle and Gradual**, with nine further candidates and their reasons for non-selection at §8.9 and the identity discriminators fixed at §8.8. **Three bounds are part of the supply and not exceptions to it:** **two entries are VERIFIED by page-image collation and three are not, and the head-note saying none is must be revised** [v17:CUL-217]; **one published universal is withdrawn** (§0.5(f)) **and one published quotation is wrong in three places** (§8.8 §8.5); and **no qualifying candidate exists for the Introit, the Alleluia or any of the three orations**, while **the Offertory has one that qualifies on the rule and is not publishable on its evidence state** (§5.1) |
+| 8 | **`The Propers: Interpretive Possibilities`** | **YES** | **Six proposals at §9.11**, within the profile's range of four to six, each joining at least two precisely named appointed elements, **each selected from and grounded in the `precedent-search` lane's thirteen conjunctions and carrying that lane's classification unchanged**, with anchors, mechanism, nearest located precedent or analogue, search boundary and controlling limit. **Nine conjunctions reached and not retained are recorded at §9.12 with the reason for each**, including **the two this run's other lanes reached and which may NOT be published as proposals because the precedent lane did not reach them** (§0.5(o)). **P2's reduction is now larger than §9.2 recorded** and is mandatory; **P1's controlling limit now has a named medieval expositor on both sides of it** and must be addressed rather than gestured at |
+| 9 | **`Sacramental Appendix`** | **NOT REQUIRED — no evidence needed** | An ordinary Sunday of the temporal cycle. The formulary appoints no ritual text, no blessing and no sacramental rite [v17:SCR-001]; the profile requires the imported summary only when a ritual Mass is celebrated with or for a non-Eucharistic sacrament. **The section is omitted and its omission needs no evidence** |
+| 10 | **`Appendix: Scope and Qualifications`** | **YES** | Edition and formulary identity from the `source-audit` stage; text-verification state from `verified.md`; source scope and languages at §3 and §3.7; search limits and material negatives at §4 and §4.15; competing judgments at §6 and §6.14; rights boundary at §11.1 and §11.7; evidence-state discipline at §11.2. **The global bounds that must reach this appendix rather than the body:** the Greek/Latin imbalance, **now worse and not better** (§4.15(b)); the whole new Latin layer standing at *inspected* with four observed OCR errors (§2.9); **Hesbert unreachable for a recorded rights reason, with a modern database substituted under a declared downgrade** (§4.15(e)); the loc.gov AND-count calibration (§4.15(g)); the absence of any Hebrew or Greek psalter, Vetus Latina or critical Greek New Testament (§3.7); **the 15-identity denominator behind every cross-formulary result** (§3.7, §4.15(f)); **the OCR bound that makes a phrase-negative over the missal payloads worthless** (§3.7); and **the fact that no mechanical gate in this repository can check a rights claim against the prose** (§11.4) |
+| 11 | **`References`** | **YES, with an exclusion rule and three corrections** | Every retained witness in §2, §2.9 and §7–§9 carries author, work, exact locus, edition or stable link and source role sufficient to verify its claims, **and every witness added this run must be cited with its route and state** (§2.9, §11.7). **Exclusion rule:** Papias and Eusebius *HE* Book III are held in no form and must not appear as used sources. **Correction 1 (new this run): the exclusion sentence's "no record of any of them in any form" must be narrowed for Jerome's *Comm. in Gal.*, PL 26 being held complete and hashed** [v17:COV-020]. **Correction 2:** "no critical edition is registered here" should read "no critical edition **reaching an appointed passage** is registered here". **Correction 3:** the sentence asserting a restricted New Advent registration of the *Enarrationes* asserts a registration that exists at none of the four appointed psalms. **And the defects §10.1 recorded against the re-authored References — the apparatus contradicting the body — were raised against the leaf at `7c2aaafce` and were NOT re-checked by this run's coverage lane, which audited different questions: they stand as recorded until someone checks them** |
+| 12 | **`Generation Metadata`** | **NOT APPLICABLE for research evidence — and three record-level defects are named for the stage that owns them** | Terminal and mechanically imported. **The named defects, none of which this stage may repair:** `research/source-bindings.toml` is stale against the re-authored leaf (§10.1) **and this run's own additions are not in it either**; **this leaf is absent from both Claude-side source inventories** — `claude-publications-v1.toml` (49 publications, audited 2026-08-27, discovery rule `src/claude/**/main.tex`) and `claude-classification-review-v1.toml` — **while the GPT sibling of the same proper is fully represented, so the inventory-replay half of `make check-sources` cannot see this publication and its source-family ledger review has never been performed** [v17:COV-022]; and **the roman-1962 translation ledger records this Mass's three orations as `rights-withheld` and `unavailable` on the stated ground that no tracked artifact and passage binding exists, while both exist, are public-domain and tracked, and the guide prints that English** [v17:COV-024]. **This lane makes no rights determination and neither does this stage: the correct disposition may be to fix the ledger's note rather than its availability. What is checkable is that two repository surfaces disagree about whether a binding exists and that the guide relies on the affirmative answer** |
+
+**Summary of the statement.** **Twelve positions. Nine are supplied.** Position 5
+is supplied for its scriptural elements and **newly for the Collect**, and
+carries a named bounded negative for the Secret and Postcommunion. Position 9 is
+not required. Position 12 requires no research evidence and carries three
+record-level defects named for other stages. **One — page 2 — is partially
+supplied: its DATES are now supplied in full and exclusively by §14, and its six
+remaining unsupplied items are named individually with the corpora, loci and
+limits behind each.** **No position's evidence position is left unstated.**
 ---
 
 ## 11. Operational qualifications displaced from the PDF
@@ -3610,9 +5082,59 @@ and no more precisely than that: NPNF first series** for Augustine's
 *Enarrationes*, *De sermone Domini in monte* and *De opere monachorum*, and for
 Chrysostom's *Commentary on Galatians* and *Homilies on Matthew*; **NPNF second
 series vol. 7** for Cyril of Jerusalem; **NPNF second series vol. 10** for
-Ambrose; and for Guéranger the **Duffy 1900 English edition**. **No lane
-established who translated the Guéranger volume, so name the edition and never a
-translator.**
+Ambrose; and for Guéranger the **Duffy 1900 English edition**, and for Schuster
+the **Burns Oates & Washbourne 1927 English edition** of *The Sacramentary
+(Liber Sacramentorum)*, vol. III.
+
+**CORRECTION, AND IT IS MANDATORY — THE PRIOR BRIEF'S TRANSLATOR NEGATIVE FOR
+GUÉRANGER AND SCHUSTER WAS FALSE, AND THE LEAF PRINTED IT THREE TIMES**
+[content-evaluation `CON-CIT-001`, this run]. This section previously instructed
+that no lane established who translated the Guéranger volume, and that the
+edition be named and never a translator. **The registered edition records in
+this repository name both translators, and they are the records for the exact
+editions these witnesses were read in and hash-matched against:**
+
+- `src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1900-volume-11/edition.toml`
+  carries `translators = ["Dom Laurence Shepherd"]`, `publication = "Dublin:
+  James Duffy and Co., 1900"`, second edition, *Time after Pentecost* vol. II =
+  vol. XI of the complete English series.
+- `src/sources/works/ildefonso-schuster/the-sacramentary/editions/burns-oates-washbourne-english-1927/edition.toml`
+  carries `translators = ["Arthur Levelis-Marke"]`, `publication = "London:
+  Burns Oates & Washbourne, 1927, in five volumes"`.
+
+**So the English of every Guéranger sentence this guide quotes is Dom Laurence
+Shepherd's, and the English of Schuster's *Liber Sacramentorum* vol. III is
+Arthur Levelis-Marke's.** **The guide may attribute each quoted English
+rendering to its named translator; what it may NOT do, anywhere, is repeat that
+no lane established who translated either volume.** That statement is refuted by
+the registered records and must go — replaced by the translator's name or simply
+deleted — at every occurrence; the reader-facing loci are itemised at §11.8.
+
+**THE CONTRASTING TRUE NEGATIVE STANDS AND MUST NOT BE TOUCHED.**
+`src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/edition.toml`
+records in terms that **"The translator is not named"**, **so the identical
+sentence the guide prints about the 1861 Philadelphia hand missal is true and is
+to be left exactly as it stands.** The contrast inside one library is the whole
+point: the same sentence is correct about the 1861 English and false about
+Guéranger and Schuster, and a house convention cannot be read off the true case.
+
+**Two bounds survive this correction unchanged, and naming a translator raises
+nothing.** (i) **Guéranger and Schuster remain reception-only witnesses** —
+nineteenth- and twentieth-century commentary, not sources for this formulary's
+text or history — under every limit already placed on them elsewhere in this
+brief, including the Schuster items that stand as **leads** and the ones marked
+corroborated-but-not-collated in the rejected-and-unresolved-leads tables at §5,
+and Guéranger's place on the better-attested list earlier in this section, which
+is a statement about artifact fidelity and not about authority. (ii) **The NPNF instruction above is untouched: for the
+patristic translations the rule is still the edition and no translator**, because
+for those volumes no registered record names one — which is what standing finding
+`CON-EVI-008` (§12.2) required, and this correction does not disturb it.
+
+**Ancillary, and it belongs to the authoring stage rather than to this section:**
+the leaf's References entry for Schuster gives no publisher, date or edition at
+all, so the 1927 English is identified only in the scope appendix and nowhere in
+References. **The publication line to use is the registered record's, quoted
+above.**
 
 **A new instance of exactly why that rule exists** [PAT-311]. Chrysostom's
 sentence "by the flesh, he does not mean the body", on which cross-proper claim
@@ -3724,6 +5246,118 @@ possible:** bind Anthony, **so that the restricted-not-reproduced check can
 finally see the one restricted artifact the guide quotes at length** (§4.11);
 and register the Feltoe and Wilson OCR layers' findings **so the Veronense
 negative never has to be carried unreplayable again** (§4.6, §4.7).
+
+### 11.7 Operational qualifications added at run `ca03f1b357e7ec25`
+
+**(a) Rights posture, three classes added.** **Corpus Corporum Patrologia Latina
+TEI** — an OCR transcription of public-domain Migne; quotable, **inspected and
+not verified**, and its own cover page warns that "in case of doubt, users
+should consult the original books or image scans thereof" [v17:PAT-530].
+**Documenta Catholica Omnia MGR Greek text layers** — the digitisation is the
+Thesaurus Linguae Graecae's and carries TLG copyright; **the ancient Greek is
+public domain by age and is what may be quoted; no bytes were written into the
+repository** [v17:PAT-501, v17:PAT-502]. **Caselaw Access Project static
+transcriptions, Library of Congress Chronicling America page images and IIIF
+service, and the UK official parliamentary report** — public-domain or official
+material throughout; **no protected text is reproduced by any gallery entry**,
+and quoted extracts should stay brief [v17:CUL-217]. **The one copyright
+exception in the whole return is the Levertov poem, which is why it is not
+publishable on rights grounds as well as on evidence grounds** [v17:CUL-213].
+
+**(b) Evidence-state discipline, extended to the new layer.** **Every Latin
+witness added this run is INSPECTED, not verified**, and the distance between the
+two states is a page image. Four OCR errors were observed and are listed at §2.9;
+**two passages must be checked at a page image before any word of them is
+quoted** (PL 152:1250, PL 174:583). **The Alcuin and Wibald texts were read in a
+search index's returned sentence context and NOT in the downloaded work, and
+must be re-read in place before publication** [v17:PAT-522]. **Two page-image
+readings this run are of UNREGISTERED derivatives of Internet Archive items —
+the Wilson PDF and the two Migne volume scans — and their digests are recorded
+for replay and not as repository fingerprints; being the same digitisations as
+the registered layers, they are not independent second witnesses**
+[v17:LIT-208, v17:LIT-212, v17:LIT-219]. **The rule CON-EVI-008 enforces — every
+English patristic quotation names its translation on the page — reaches every
+witness added this run** (§12.2).
+
+**(c) Retrieval traps, three added to the catalogue at §11.3.**
+**(i) A partial file that looks complete.** DCO's MGR *Expositiones in Psalmos*
+is a fragment ending at PG 55:194 covering Pss. 4–12 and 43–44 only, under a
+title that promises the whole [v17:PAT-524]. **This is the same species as
+§11.3's item 7 (Cassiodorus on Latin Wikisource), met in a different corpus.**
+**(ii) An OCR layer destroying the mark that carries a relation.** Wilson's
+superscript footnote reference letters fuse with the section numerals, which is
+exactly how `CXXXIII` was manufactured out of `cXXXIII.` [v17:LIT-209] —
+**a hazard of the same family as §11.3's item 2, the running head that names the
+wrong section.** **(iii) A phrase index that can only find one orthography.**
+The Corpus Corporum Sphinx index makes a whole new class of negative statable —
+that a phrase does not occur in the Patrologia Latina — **but only under the
+orthography Migne prints and only where the phrase is not broken across the
+indexed unit** [v17:PAT-530, v17:PAT-523]. **And a fourth, already catalogued
+and demonstrated again on this formulary's own text:** all four appointed
+phrases tested return zero from all nine missal payloads while the same books
+print them [v17:PRE-002].
+
+**(d) An addition to §11.6, for whoever owns `research/source-bindings.toml`.**
+Beyond the staleness §10.1 records, **none of the twelve witnesses added this
+run has any binding, and none has a source-library record of any kind at the
+loci used** — Ambrosiaster, Marius Victorinus, the Glossa on Galatians and on
+Matthew, Rabanus, Paschasius, Christian of Stavelot, Bruno of Segni, pseudo-Bede,
+Prosper, Arnobius the Younger, Peter Lombard, Bruno the Carthusian, Godfrey of
+Admont, Augustine's *Retractationes*, and the two Greek Chrysostomic texts.
+**So none of these citations can acquire a fingerprint, a passage record or a
+rights disposition from the library as it stands. That is the bound the guide
+carries in place of a stronger claim; registering them is later-stage work and
+not this workflow's.**
+
+**(e) A rights-argument bound that no section of this brief has carried, and it
+belongs in the scope appendix** [v17:COV-026]. The 17 U.S.C. 103(b)
+preexisting-material check that grounds publication of this formulary's Latin
+**attests the three composed orations at incipit and first-clause level only**:
+`verified.md`'s check quotes `Custodi, Domine quaesumus, Ecclesiam tuam
+propitiatione perpetua`, `Concede nobis Domine quaesumus, ut haec hostia
+salutaris` and `Purificent semper et muniant tua sacramenta nos, Deus` — in each
+case the opening clause and no more — **and the continuations occur nowhere in
+`verified.md`.** Both witness layers are classified **degraded**, and the Venice
+1570 record **expressly forbids resting a negative search on it.** The
+repository's Latin-provenance ledger leaves the same three texts at
+`provenance_status`, `publication_status` and `publication_basis` all
+`unresolved`. **Seven of the ten elements are Scripture and reach a
+public-domain antecedent through the tracked Clementine and Douay artifacts
+independently of any missal; the three orations do not, so the 103(b) argument
+carries them alone.** **The record shows those three attested in 1862 and 1570 by
+heading, order, reference and opening clause — strong evidence that the formulary
+is preexisting material and weaker evidence that the exact printed wording is.**
+**This stage makes no rights determination.** The leaf states its reasoning
+plainly and calls it "the project's own reading of the statute … not a clearance
+anyone granted", so nothing is concealed; **the defect is that neither §11.1 nor
+any other part of this brief carried the class at all, and a later reader would
+have had to reconstruct it from `verified.md` and a binding's context field.**
+**Closable within held bytes:** both witness layers are tracked, public-domain
+and indexable, so a word-level comparison of the three orations is a local read
+and not a retrieval.
+
+### 11.8 Brief repairs made at content-evaluation iteration 2 of run `ca03f1b357e7ec25`, and the reader-facing strings they oblige
+
+**Two blocking findings were routed to this brief with `repair_target: "brief"`.
+Both are repaired above, in place, at the entries that carried the defect.** This
+section exists so the authoring stage has the reader-facing loci in one place;
+**it adds no evidence and states no new claim.** Line numbers are as the
+evaluation reported them and will move once the first edit lands, so each locus
+carries the string to search for as well.
+
+| Finding | Repaired in this brief at | Reader-facing occurrences the guide must change | What must NOT change |
+| --- | --- | --- | --- |
+| **`CON-CIT-001`** — the guide states three times that no lane established who translated the Guéranger and Schuster volumes, while the registered edition records name **Dom Laurence Shepherd** and **Arthur Levelis-Marke** | **§11.2**, whose instruction "name the edition and never a translator" for Guéranger is withdrawn and replaced by the two registered `translators` values, with the Schuster edition added to the list of translations to name | `sections/99-references.tex` **lines 118–120** (“this Duffy 1900 edition's English; no lane established who translated the volume”) **and lines 134–135** (the Schuster entry, which also lacks publisher, date and edition); `sections/30-commentary.tex` **lines 626–628** (“whose translator no lane established”, in the Introit commentary); `sections/90-scope.tex` **lines 55–58** (“no lane established who translated either volume”). **Search for `no lane established who translated` and `whose translator no lane established`.** Each occurrence is to be replaced by the named translator or deleted | **The 1861 Cummiskey sentence** — the same claim about the anonymous Philadelphia hand missal is **true** and stays verbatim. **Every reception-only bound on Guéranger and Schuster.** **The NPNF rule** — edition named, translator not — which `CON-EVI-008` requires |
+| **`CON-CIT-003`** — the guide asserts four times that Godfrey of Admont wrote **two centuries after** Honorius; no source supports it and the two are near-contemporaries on the brief's own PL volumes | **§2.9.1**, at the bound on Godfrey, where the interval is struck and the reason recorded | `sections/30-commentary.tex` **line 680** (“met independently in a different author two centuries later”); `sections/20-themes.tex` **subsection 5** (“the displacement Godfrey meets independently two centuries later”); `sections/35-source-grounded-synthesis.tex` **line 317** (“Godfrey of Admont, two centuries later, expounds this formulary's Introit…”); `sections/synthesis/20-integrated-commentary.tex` **section 6** (“expounds this formulary's chants and Collect two centuries later”). **Search for `two centuries`.** The interval is deleted at each and **no replacement interval is written in** | **The substantive claim** — that Godfrey meets the same displacement **independently, in a different author** — and **the bound that his Fourteenth Sunday is not the 1962 Fourteenth Sunday**, which travels with every row he appears in |
+
+**Neither repair required new evidence and neither was permitted to fetch any.**
+Both were settled against records already registered in this repository and
+against dates this brief already carried: **the two `edition.toml` files quoted
+at §11.2, and §6.3's own "early twelfth century" for Honorius beside the adjacent
+Migne volumes PL 172 and PL 174.** **No lane finding changed, no evidence state
+moved, and no claim in this brief was strengthened by either repair** — in
+`CON-CIT-003`'s case the correction removes a claim the brief was making too
+strongly, which is the direction a correction of this kind should run.
 
 ---
 
@@ -3868,6 +5502,76 @@ both directions:**
 join, and none is left unresolved.** The count for this target now stands at
 fifteen blocking findings across three prior runs, all accounted for above.
 
+### 12.6 Carry-forward at run `ca03f1b357e7ec25` — what the mechanical search returns, and why that is not the whole answer
+
+**The search the fragment prescribes was run, exactly as written:**
+
+```sh
+grep -l '"proper": "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"' build/tpt-runs/*/state.json
+```
+
+**It returns exactly one path: `build/tpt-runs/ca03f1b357e7ec25/state.json`,
+which is this run.** `build/tpt-runs/` contains that one directory and no other.
+**So the mechanical procedure yields no prior run, and if this section stopped
+there it would be saying that this target has no production history — which is
+false.**
+
+**What is actually the case, stated so that an absent statement and an empty
+history are not confused** [the whole of §12.1–§12.5, which this run re-reads
+rather than re-derives]. **Six prior runs against this target are recorded in
+this file by earlier integrations of this same stage, each of which read the
+`state.json` and the named result files while those directories still existed.
+Those directories are gone from this workspace; their accounting is not, because
+it was written here.** **This is precisely the failure mode the fragment's step
+11 warns about, arriving in its other form: not a re-seed that loses the
+findings, but a pruned build tree that loses the runs. The findings survive only
+because a previous integration wrote them into the artifact rather than leaving
+them in `build/`.**
+
+| Prior run | Workflow | What it left standing | Status now |
+|---|---|---|---|
+| `bd3b8b31e16d9214` | v8, terminal BLOCKED | Nothing; only a BLOCKED `seed-0000.json`, no evaluation, no escalation | **Nothing to carry** (§12.1) |
+| `d17e882ad8f6e774` | v8, stalled at `seed` | Nothing; `result_hashes` empty, no escalation | **Nothing to carry** (§12.1) |
+| `7521f033d37e8997` | v8, abandoned mid-`research` | **Fourteen blocking content-evaluation findings that reached no owner** | **All fourteen accounted for at §12.3: twelve no longer apply because the leaf was completely re-authored, one (CON-CIT-011) was answered by the v11 join, and one (the Brenton half of CON-CIT-005) likewise. None unresolved. No escalation** |
+| `b68cca80edb75854` | v10, terminal BLOCKED | **One blocking finding, CON-EVI-008**, plus twenty advisory | **RESOLVED at commit `f4534e4cd` and verified against the finding rather than taken on trust** (§12.2). **No escalation** |
+| `6b83fad5ae2ed53e` | v11 | Its `research-synthesis` PASSed with no findings; **its `content-evaluation` returned BLOCKED across all five lanes with an EMPTY findings array** | **Contributes no standing finding** (§12.5). Recorded so that a later reader does not mistake an empty blocked evaluation for a silent one |
+| `e5b24f405bde9691` | v11 | Its `research-synthesis` wrote the second layer of this file | **UNRECOVERABLE IN THIS WORKSPACE, and named as such.** Its run directory no longer exists, so **this run could not read its `content-evaluation` results or its `escalations`**. §12.5, written by that run's own integration, records the state of every finding *it* carried forward and records no escalation of its own; **what it cannot tell us is whether a content-evaluation ran against the leaf after it and raised anything. That is a genuine hole and it is stated rather than papered over** |
+
+**Three standing consequences of the earlier productions are re-checked against
+this run's join, because the fragment asks whether the current research answers
+them:**
+
+- **`b68cca80edb75854`'s CON-EVI-008 is closed, and the rule it enforces has a
+  new and much larger instance.** Every English patristic quotation must name its
+  translation on the page. **This run adds twelve Latin witnesses and two Greek
+  texts, all read in the original and none quoted from an English translation**
+  — so the rule's ordinary form does not bite on them. **What bites instead is
+  the state rule: every one of them is INSPECTED on an OCR transcription of
+  Migne, and the page must say so wherever a quotation from them stands**
+  (§2.9, §11.7(b)).
+- **Finding #3's underlying fact is revised again.** §12.3 records that the
+  Gelasian/Gregorian distribution had already to be restated once. **This run
+  restates it a third time and this time on page images:** the Hadrianum's +1 is
+  confirmed across eleven consecutive Masses, the Ottobonianus margin's +2 is
+  settled, **and the section number the brief has been citing does not exist**
+  (§0.5(a)–(b), §6.14(a)–(c)).
+- **Finding #5's Cassiodorus dependence caveat has a structural sibling this
+  run.** §12.3 required that Cassiodorus at the Introit be marked as probable
+  dependence on Augustine. **The same question now arises at the Gradual, where
+  Prosper and Peter Lombard may both be carrying Augustine rather than judging**
+  (§6.14(m)) — **and the same discipline applies: mark the dependence, do not
+  count the votes.**
+
+**What this run adds to the carry-forward ledger.** **Fifteen blocking findings
+across two prior productions remain accounted for; none is reopened and none is
+left unresolved.** **One new item enters the ledger, and it is a hole rather
+than a finding: the content-evaluation record of run `e5b24f405bde9691` is not
+recoverable in this workspace.** **And one operational fact is recorded for
+whoever prunes `build/`:** the prescribed carry-forward search is only as good as
+the run directories that survive, **and on this target it now returns nothing at
+all** — so an integration that trusted it alone would have reported an empty
+history for a document with six prior runs and fifteen accounted-for blocking
+findings.
 ---
 
 ## 13. Lane finding concordance
@@ -3905,9 +5609,245 @@ accounted for:**
 
 ---
 
+## 14. Scriptural chronology audit
+
+**Assembled from
+`src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/research/chronology.toml`,
+which the `resolve-context` stage wrote from the Scripture chronology corpus and
+which nothing in this workflow may edit.** The record's own header states the
+rule and this audit repeats it: **`label` is the source's own words and the only
+field a guide may display; `date` is the normalized form, for comparison and
+never for the page.**
+
+**THE RECORD IS THE WHOLE OF WHAT THIS BRIEF MAY SAY ABOUT WHEN A PASSAGE WAS
+WRITTEN OR WHEN WHAT IT TELLS OF HAPPENED.** This stage did not read the corpus
+and adds nothing to this audit from any other source. **A lane that reported a
+date the record does not carry reported reception**: it is recorded as what that
+source says, attributed to it, and never as the date of the passage. **No
+commentary, chronological table, superscription read as a date, or recollection
+may fill a gap here**, and no gap below is a coverage gap for this brief to
+close.
+
+**The ids are carried because `guidance/scripture-chronology.md` §14 asks a
+consumer to hold them "so prose can be regenerated without re-researching the
+fact", and because the author prints a date by naming the `subject` and
+`relation` recorded here inside `\chronology{subject}{relation}{label}`, in a
+`\chronodate{element-keys}{content}` cell.**
+
+Record-level fields: `schema = 1`, `record_type = "proper-chronology"`,
+`calendar = "roman-1962"`, `mass = "pentecost-14"`, `system = "vulgate"`,
+`formulary = "appointed"`, `generated_by = "tools/tpt proper-chronology record"`.
+**Every claim below carries `profile = "catholic-traditional-v1"`,
+`answerability = "answerable"` and `inherited = true`.**
+
+### 14.1 Introit — `introit`
+
+- **Loci:** `Ps.83.10`, `Ps.83.11`, `Ps.83.2`, `Ps.83.3`
+  (refs `Psalm 83:10-11`, `Psalm 83:2-3`).
+- **Status: `composition-only`.**
+- **One claim, at locus `Ps.83.10`.** `relation = "composition"`;
+  `subject = "composition.psalms-of-the-sons-of-korah"`;
+  `title = "The Psalms of the Sons of Korah"`;
+  **`label = "between the days of Isaias and the return from exile"`**;
+  `precision = "relative"`; `disposition = "preferred"`;
+  `basis_class = "traditional-catholic"`;
+  `scope = "Ps.41 Ps.42 Ps.43 Ps.44 Ps.45 Ps.46 Ps.47 Ps.48 Ps.83 Ps.84 Ps.86 Ps.87"`;
+  `sources = ["artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25"]`.
+- **What the author may print:** the label above, through `\chronology` naming
+  that subject and relation. **The claim is inherited from a group scope
+  covering twelve psalms and is a relative and not a numeric date.** **No second
+  composition claim is offered at this element, and no event or
+  superscription-setting claim is offered for Ps. 83 at all** [v17:SCR-022].
+
+### 14.2 Epistle — `epistle`
+
+- **Loci:** `Gal.5.16` through `Gal.5.24` (ref `Galatians 5:16-24`).
+- **Status: `composition-only`.**
+- **Four claims, all at locus `Gal.5.16`, all `relation = "composition"`,
+  `subject = "composition.epistle-to-the-galatians"`,
+  `title = "The Epistle to the Galatians"`, `scope = "Gal"`, and every one
+  `disposition = "disputed"`:**
+
+  | `label` (the source's own words) | `precision` | `basis_class` | `sources` |
+  |---|---|---|---|
+  | **`A.D. 49-50`** | interval | `reported-traditional` | `artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06336a-508d2398` |
+  | **`about A.D. 53, 54`** | interval | `traditional-catholic` | same volume-6 artifact |
+  | **`(1 and 2 Corinthians; Galatians), 56`** | year | `traditional-catholic` | `artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8` |
+  | **`A.D. 57 or 58`** | interval | `traditional-catholic` | same volume-6 artifact |
+
+- **What the author may print:** the labels above, and **the alternatives rather
+  than a choice among them — every one is marked `disputed`, so the corpus
+  asserts no preferred date for Galatians** [v17:SCR-023]. **The third label
+  carries the awkward printed form exactly as shown: that is the source's own
+  words and this brief does not tidy it. An author who wants a cleaner form must
+  get it from the corpus and not from here.**
+
+### 14.3 Gradual — `gradual`
+
+- **Loci:** `Ps.117.8`, `Ps.117.9` (ref `Psalm 117:8-9`).
+- **Status: `undated-in-tradition`. THE ELEMENT CARRIES NO CLAIMS BLOCK.**
+- **This is the corpus's answer and the guide states it: the Date cell states
+  that absence, in the guide's ordinary register, and carries no figure.** The
+  record's own `reason` field states the ground at length: the corpus's psalms
+  authority "settles authorship and refuses date" everywhere except three
+  separately authored cases (Ps. 73 and Ps. 82 in this Vulgate numbering, and
+  the psalms of the sons of Korah as a group); **the historical superscriptions
+  are occasions and not compositions**, and the article "expressly denies that
+  the titles settle even authorship"; and **the closing of the canon is not the
+  writing of the text** — "A canon closing is not a text being written, and this
+  corpus will not borrow it."
+- **Two traps recorded so nobody closes the gap by accident** [v17:SCR-026]:
+  **Ps. 117 carries no superscription at all**, only the liturgical word
+  `Alleluja` at the head of v. 1, which is not an ascription; and **no
+  commentary, table or recollection may supply a date here.**
+
+### 14.4 Alleluia — `alleluia`
+
+- **Locus:** `Ps.94.1` (ref `Psalm 94:1`).
+- **Status: `undated-in-tradition`. THE ELEMENT CARRIES NO CLAIMS BLOCK.**
+- **Same answer, same words, same `reason` field as §14.3.** The Date cell
+  states the absence and carries no figure.
+- **The trap here is specific and this run met it** [v17:SCR-008,
+  v17:SCR-026]: **Heb. 4:7's `in David dicendo` is a New Testament attribution
+  of Ps. 94 to David and is not a date**, and Hebrews is quoting vv. 8–11, which
+  the Alleluia does not appoint. **Do not convert it into a date or into an
+  authorship claim on the page.**
+
+### 14.5 Gospel — `gospel`
+
+- **Loci:** `Matt.6.24` through `Matt.6.33` (ref `Matthew 6:24-33`).
+- **Status: `composition-only`.**
+- **Six claims, all at locus `Matt.6.24`, all `relation = "composition"`,
+  `subject = "composition.gospel-of-matthew"`,
+  `title = "The Gospel of St Matthew"`, `scope = "Matt"`, and every one
+  `disposition = "disputed"`:**
+
+  | `label` (the source's own words) | `precision` | `basis_class` | `sources` |
+  |---|---|---|---|
+  | **`about A.D. 38-45`** | interval | `reported-traditional` | volume-10 `newadvent-10057a-e7b6ccef` **and** volume-14 `newadvent-14530a-0a19aa2c` |
+  | **`about the year 40-42`** | interval | `traditional-catholic` | volume-10 |
+  | **`the years 40-45`** | interval | `reported-traditional` | volume-10 |
+  | **`about the year 60-68`** | interval | `traditional-catholic` | volume-10 |
+  | **`about the years 64-67`** | interval | `reported-traditional` | volume-10 |
+  | **`about the year 50`** | approximate-year | `traditional-catholic` | volume-14 |
+
+- **What the author may print:** the labels above, as alternatives. **All six are
+  disputed and the spread is wide — the earliest begins in the 30s and the latest
+  ends in 68 — so no single figure may be printed as the date** [v17:SCR-024].
+- **THE NARRATED EVENT: THE CORPUS ASSERTS NO EVENT DATE, AND THE ELEMENT
+  CARRIES NO EVENT ASSERTION.** The status name `composition-only` states it:
+  every Matthew claim the record holds is a composition claim about the book, and
+  **across all ten elements the only non-composition relation anywhere in the
+  record is the Offertory's `superscription-setting`** [v17:SCR-027]. **The
+  profile asks a Gospel dossier to give the narrated event's chronology
+  separately from the book's; for Mt. 6:24–33, a passage of the Sermon on the
+  Mount which the Gospel does not itself locate by any datable occasion, the
+  corpus supplies nothing to put in that cell. The absence is stated in the
+  guide's ordinary register, carries no figure, and may not be filled from a
+  harmony, a life of Christ or a chronological table.** The event's *place* is a
+  different question from its date and is not governed by this audit.
+
+### 14.6 Offertory — `offertory`
+
+- **Loci:** `Ps.33.8`, `Ps.33.9` (ref `Psalm 33:8-9`).
+- **Status: `dated`. THIS IS THE ONLY ELEMENT OF THE FORMULARY THE CORPUS
+  ANSWERS `dated`.**
+- **One claim, at locus `Ps.33.8`.**
+  **`relation = "superscription-setting"` — not `composition`**;
+  `subject = "israel.monarchy.david-at-geth"`;
+  `title = "David's flight to Achis, king of Geth"`;
+  **`label = "A. M. 2944, A. C. 1060"`**; `precision = "year"`;
+  `disposition = "preferred"`; **`basis_class = "reported-excluded"`**;
+  `scope = "Ps.33 Ps.55"`; `sources = [`
+  `"passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.first-kings-21-achis-geth-chronology",`
+  `"passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology"]`.
+- **What the author may print, and the relation is the whole point:** the label
+  above, **as the date of the occasion the superscription names and not of the
+  writing of the psalm** [v17:SCR-025]. **Two qualifications travel with it:**
+  `basis_class` is `reported-excluded`, and **this brief records the Haydock
+  source as `rights_status='unresolved'` and summarise-only** (§10.2 position 2).
+- **A divergence recorded and not resolved:** the corpus's subject names
+  **Achis**, where the psalm's own superscription names **Achimelech** — and the
+  narrative the superscription points to, 1 Kings 21:10–15, names Achis
+  [v17:SCR-009, v17:SCR-025]. **No attempt is made to harmonise it.**
+
+### 14.7 Communion — `communion`
+
+- **Locus:** `Matt.6.33` (ref `Matthew 6:33`).
+- **Status: `composition-only`.**
+- **Six claims, at locus `Matt.6.33`, IDENTICAL in every field to §14.5's six** —
+  same subject `composition.gospel-of-matthew`, same title, same six labels, same
+  precisions, basis classes, sources, `scope = "Matt"`, and all `disputed`.
+- **Why the two elements are answered identically, and what follows for the
+  page:** the Communion's locus lies **inside** the Gospel's, so one date serves
+  both. **The profile's rule that a `\chronodate` cell naming several elements
+  must state a claim the corpus makes at every element it names is therefore
+  satisfied for the Gospel-and-Communion pair, and for that pair only**
+  [v17:SCR-024]. **Each appointed Scripture still gets exactly one cell, never
+  two.**
+
+### 14.8 The three composed orations — `collect`, `secret`, `postcommunion`
+
+- **Each carries `refs = []`, `loci = []`, and no `status`.** **An element with
+  no status cites no Scripture**, and the record says so by carrying nothing.
+  `tools/tpt proper-chronology loci` prints `(no scripture)` at all three
+  [v17:SCR-001]. **They appear on page 2 not at all, and no date of any kind may
+  be attached to them.**
+- **This is a fact about direct quotation only.** No lane of this run searched a
+  composed oration for loose verbal echo of Scripture, and **nothing here asserts
+  anything either way about echo in them** [v17:SCR-028].
+
+### 14.9 What this audit does and does not settle
+
+**Six appointed Scriptures across seven scriptural elements** — the Communion
+standing on the Gospel's own locus [v17:SCR-001]. **Two are `undated-in-tradition`
+and carry no assertion; four are `composition-only`, of which one carries a
+single relative claim and three carry disputed alternatives; one is `dated`, and
+its single claim is a superscription-setting and not a composition.** **The
+Gospel's narrated event carries no assertion at all.** **Every one of those
+positions is the corpus's, is printable only in the corpus's own words, and is
+not a gap for the author to fill.**
+
+---
+
+## 15. Lane finding concordance — run `ca03f1b357e7ec25` (workflow `proper v17`)
+
+**140 findings, and every one is accounted for. A finding not listed at a
+section was read and judged not to bear on a published claim there; none was
+discarded as wrong.** **Ids of this join are cited throughout as `[v17:ID]`;
+see the header note on the three id spaces.**
+
+| Lane | Findings | Count | Principally at |
+|---|---|---|---|
+| `scripture-context` | `SCR-001` – `SCR-028` | 28 | §0.5(o), §2.9 (all rows), §4.15(k)(l), §7.7 C1, C2, C3, C5, §9.11 P4, P6, §9.12, §10.2 positions 2 and 9, **§14 (all entries)** |
+| `patristic-reception` | `PAT-501` – `PAT-530` | 30 | §0.5(d)(e)(l)(m), §2.9.1 – §2.9.8, §3.7, §4.15(a)(b)(c), §5.1, §6.14(f)(g)(h)(i)(j)(k)(l)(m)(n), §7.7 C1, C2, C3, §9.11 P1, P2, P5, §10.2 positions 1, 5, 7, §11.7(a)(b)(c)(d) |
+| `liturgical-history` | `LIT-201` – `LIT-222` | 22 | §0.5(a)(b)(c)(j)(k)(n), §2.9.8, §3.7, §4.15(d)(e), §5.1, §6.14(a)(b)(c)(d)(e)(o)(p), §7.7 C1, C4, C5, §9.12, §10.2 positions 5 and 10, §11.7(b)(c), §12.6 |
+| `theological-synthesis` | `THE-201` – `THE-215` | 15 | §0.5(g)(h)(o), §3.7, §4.15(f)(k)(l), §7.7 C1, C2, C6, §9.11 P1, P3, P6, §9.12, §10.2 positions 3 and 10 |
+| `source-citation-coverage` | `COV-004`, `COV-010`, `COV-016`, `COV-020`, `COV-021`, `COV-022`, `COV-024`, `COV-026` | 8 | §0.5(i), §3.7, §4.15(j), §5.1, §10.2 positions 2, 11, 12, §11.7(e) |
+| `cultural-afterlife` | `CUL-201` – `CUL-217` | 17 | §0.5(f), §3.7, §4.15(g), §5.1, **§8.8 and §8.9 (all)**, §10.2 position 7, §11.7(a) |
+| `precedent-search` | `PRE-001` – `PRE-007`, `PRE-009`, `PRE-011` – `PRE-013`, `PRE-016`, `PRE-020` – `PRE-027` | 20 | §0.5(f)(o), §3.7, §4.15(h)(i), **§9.11, §9.12 and §9.13 (all)**, §10.2 position 8 |
+
+**Total this join: 140.** **Total across the three joins: 412** — 203 at run
+`6b83fad5ae2ed53e`, 69 at run `e5b24f405bde9691`, 140 here — **and every one is
+accounted for in this file.**
+
+**Three id-space notes a fourth production will need.** (1) The three joins are
+**not** continuous: `SCR-001` and `[v17:SCR-001]` are different findings, and so
+are `PRE-001` and `[v17:PRE-001]`. (2) The `source-citation-coverage` lane of
+this join **deliberately reused** `COV-004`, `COV-010` and `COV-016` because it
+was restating and extending the leaf's own findings rather than raising new
+ones, and each says so inside itself. (3) The `patristic-reception`,
+`liturgical-history`, `theological-synthesis` and `cultural-afterlife` lanes of
+this join chose blocks (`5xx`, `2xx`, `2xx`, `2xx`) disjoint from both earlier
+joins **by their own design, and stated that they did so.**
+
+---
+
 **End of brief.** Written by one stage, which is the only stage that may write
 it. **It replaced the `proper v10` brief of the same name in its entirety and
-was then amended in place once, by the same stage at run
-`e5b24f405bde9691`; no later stage may add to this brief or amend it**, and
-every gap it leaves is named as a gap rather than left for the author to
-discover.
+was then amended in place twice by the same stage — at run `e5b24f405bde9691`
+under workflow `proper v11`, and at run `ca03f1b357e7ec25` under workflow
+`proper v17`, which added §0.5, §2.9, §3.7, §4.15, §5.1, §6.14, §7.7, §8.8–§8.9,
+§9.11–§9.13, §10.2, §11.7, §12.6, §14 and §15 and corrected the sections those
+name. No later stage may add to this brief or amend it**, and every gap it
+leaves is named as a gap rather than left for the author to discover.

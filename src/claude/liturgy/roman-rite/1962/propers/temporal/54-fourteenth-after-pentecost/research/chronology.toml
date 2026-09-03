@@ -1,0 +1,399 @@
+# Generated. Do not edit.
+#
+# What the Scripture chronology corpus answers about this proper's appointed
+# loci, written by `tools/tpt proper-chronology record` and held
+# against the corpus by `check-content-preflight`. Every field
+# here is the corpus's, carried so that the guide's prose can be regenerated
+# without re-researching the fact: `guidance/scripture-chronology.md` §14.
+#
+# `formulary` is `appointed` when the calendar appoints this identity a Mass
+# formulary, and `no-calendar-formulary` when it does not — a ritual Mass,
+# appointed by a rite rather than by a day, which the calendar sources here do
+# not encode. In that state the record lists no element, `formulary_reason`
+# says why, and no date may be supplied from anywhere else to fill the gap.
+#
+# `label` is the source's own words and the only field a guide may display.
+# `date` is the normalized form, for comparison and never for the page. An
+# element with no `status` cites no Scripture; an element whose status is
+# `undated-in-tradition` or `research-pending` has no date to print, and the
+# guide states that absence rather than filling it.
+
+
+schema = 1
+record_type = "proper-chronology"
+document = "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"
+calendar = "roman-1962"
+mass = "pentecost-14"
+system = "vulgate"
+profile = ""
+formulary = "appointed"
+formulary_reason = ""
+generated_by = "tools/tpt proper-chronology record"
+
+[[elements]]
+key = "introit"
+name = "Introit"
+refs = ["Psalm 83:10-11", "Psalm 83:2-3"]
+loci = ["Ps.83.10", "Ps.83.11", "Ps.83.2", "Ps.83.3"]
+status = "composition-only"
+reason = ""
+
+[[elements.claims]]
+locus = "Ps.83.10"
+relation = "composition"
+subject = "composition.psalms-of-the-sons-of-korah"
+title = "The Psalms of the Sons of Korah"
+label = "between the days of Isaias and the return from exile"
+date = "between the days of Isaias and the return from exile"
+precision = "relative"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+inherited = true
+scope = "Ps.41 Ps.42 Ps.43 Ps.44 Ps.45 Ps.46 Ps.47 Ps.48 Ps.83 Ps.84 Ps.86 Ps.87"
+sources = ["artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25"]
+
+[[elements]]
+key = "collect"
+name = "Collect"
+refs = []
+loci = []
+status = ""
+reason = ""
+
+[[elements]]
+key = "epistle"
+name = "Epistle"
+refs = ["Galatians 5:16-24"]
+loci = ["Gal.5.16", "Gal.5.17", "Gal.5.18", "Gal.5.19", "Gal.5.20", "Gal.5.21", "Gal.5.22", "Gal.5.23", "Gal.5.24"]
+status = "composition-only"
+reason = ""
+
+[[elements.claims]]
+locus = "Gal.5.16"
+relation = "composition"
+subject = "composition.epistle-to-the-galatians"
+title = "The Epistle to the Galatians"
+label = "A.D. 49-50"
+date = "49 A.D. to 50 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+inherited = true
+scope = "Gal"
+sources = ["artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06336a-508d2398"]
+
+[[elements.claims]]
+locus = "Gal.5.16"
+relation = "composition"
+subject = "composition.epistle-to-the-galatians"
+title = "The Epistle to the Galatians"
+label = "about A.D. 53, 54"
+date = "53 A.D. to 54 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+inherited = true
+scope = "Gal"
+sources = ["artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06336a-508d2398"]
+
+[[elements.claims]]
+locus = "Gal.5.16"
+relation = "composition"
+subject = "composition.epistle-to-the-galatians"
+title = "The Epistle to the Galatians"
+label = "(1 and 2 Corinthians; Galatians), 56"
+date = "56 A.D."
+precision = "year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+inherited = true
+scope = "Gal"
+sources = ["artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8"]
+
+[[elements.claims]]
+locus = "Gal.5.16"
+relation = "composition"
+subject = "composition.epistle-to-the-galatians"
+title = "The Epistle to the Galatians"
+label = "A.D. 57 or 58"
+date = "57 A.D. to 58 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+inherited = true
+scope = "Gal"
+sources = ["artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06336a-508d2398"]
+
+[[elements]]
+key = "gradual"
+name = "Gradual"
+refs = ["Psalm 117:8-9"]
+loci = ["Ps.117.8", "Ps.117.9"]
+status = "undated-in-tradition"
+reason = "Drum's \"Psalms\" in the Catholic Encyclopedia was read in full for this corpus and dates the writing of no psalm except three cases authored separately in composition.yaml: Ps.73 and Ps.82 in this vulgate numbering, and the psalms of the sons of Korah as a group. Of those three, two are still answered with and one is not, so this row now reaches Ps.73 as well and the reader is owed the reason. Ps.73 is the one the article does not date on its own authority: it gives the date \"as Briggs surmises\", adopting the surmise of the modern critical commentary it cites by page in the same treatment of the Asaph psalms - Briggs's \"Psalms\", New York, 1906 - and this profile admits no such adoption - its one narrow lift is named for Ussher and says in terms that it extends to no one else. That figure is therefore held in composition.yaml as preserved evidence, legible under --evidence, and is not a candidate answer; a reader who reaches this row at Ps.73 is being told that the tradition this profile answers under dates the psalm nowhere, not that nobody looked at it. Ps.82 is different and is untouched: there the article names Briggs's dating and rejects it, asserting its own reading, so that claim stands and this row never reaches Ps.82 at all. Everywhere else it settles authorship and refuses date. Of David, its strongest sentence is the Biblical Commission's of 1 May 1910, that \"It cannot be prudently denied that David is the chief author of the songs of the Psalter\" - an author, not a year, a reign or a period, and the same decree adds that neither the councils nor the Fathers \"have such weight as to determine that David is sole author of the whole Psalter\". Of the Asaph psalms it says they \"pertain to widely-separated periods of Jewish history\"; of Moses and Solomon in the titles it offers imitation rather than date, \"this imitation may be the reason of the title\"; of the Machabean question it says \"There are no certain proofs that these or any psalms are Machabean\" and \"leaves that question still open\". The historical superscriptions are occasions and not compositions: thirteen Davidic psalms are merely \"referred to the time of David's persecution by Saul\", to his sin, or to his flight from Absalom, and the article expressly denies that the titles settle even authorship - \"Does this preposition mean authorship? No in every title\" - so none of them may be promoted to a date. The one dated thing the article does offer about the collection is the closing of the canon, not the writing of the text: the Palestinian canon \"was practically closed during the time of Esdras\", and at the latest the Jewish canon of the Psalms \"was undoubtedly closed before the date of the Septuagint translation. This date is 285 B.C. ... or, at the very latest 132 B.C.\" A canon closing is not a text being written, and this corpus will not borrow it. The Psalter is an anthology and is given no book-wide composition date here; psalms that carry a superscription-setting, a historical setting or a prophetic referent are asserted individually and those assertions stand over this row."
+
+[[elements]]
+key = "alleluia"
+name = "Alleluia"
+refs = ["Psalm 94:1"]
+loci = ["Ps.94.1"]
+status = "undated-in-tradition"
+reason = "Drum's \"Psalms\" in the Catholic Encyclopedia was read in full for this corpus and dates the writing of no psalm except three cases authored separately in composition.yaml: Ps.73 and Ps.82 in this vulgate numbering, and the psalms of the sons of Korah as a group. Of those three, two are still answered with and one is not, so this row now reaches Ps.73 as well and the reader is owed the reason. Ps.73 is the one the article does not date on its own authority: it gives the date \"as Briggs surmises\", adopting the surmise of the modern critical commentary it cites by page in the same treatment of the Asaph psalms - Briggs's \"Psalms\", New York, 1906 - and this profile admits no such adoption - its one narrow lift is named for Ussher and says in terms that it extends to no one else. That figure is therefore held in composition.yaml as preserved evidence, legible under --evidence, and is not a candidate answer; a reader who reaches this row at Ps.73 is being told that the tradition this profile answers under dates the psalm nowhere, not that nobody looked at it. Ps.82 is different and is untouched: there the article names Briggs's dating and rejects it, asserting its own reading, so that claim stands and this row never reaches Ps.82 at all. Everywhere else it settles authorship and refuses date. Of David, its strongest sentence is the Biblical Commission's of 1 May 1910, that \"It cannot be prudently denied that David is the chief author of the songs of the Psalter\" - an author, not a year, a reign or a period, and the same decree adds that neither the councils nor the Fathers \"have such weight as to determine that David is sole author of the whole Psalter\". Of the Asaph psalms it says they \"pertain to widely-separated periods of Jewish history\"; of Moses and Solomon in the titles it offers imitation rather than date, \"this imitation may be the reason of the title\"; of the Machabean question it says \"There are no certain proofs that these or any psalms are Machabean\" and \"leaves that question still open\". The historical superscriptions are occasions and not compositions: thirteen Davidic psalms are merely \"referred to the time of David's persecution by Saul\", to his sin, or to his flight from Absalom, and the article expressly denies that the titles settle even authorship - \"Does this preposition mean authorship? No in every title\" - so none of them may be promoted to a date. The one dated thing the article does offer about the collection is the closing of the canon, not the writing of the text: the Palestinian canon \"was practically closed during the time of Esdras\", and at the latest the Jewish canon of the Psalms \"was undoubtedly closed before the date of the Septuagint translation. This date is 285 B.C. ... or, at the very latest 132 B.C.\" A canon closing is not a text being written, and this corpus will not borrow it. The Psalter is an anthology and is given no book-wide composition date here; psalms that carry a superscription-setting, a historical setting or a prophetic referent are asserted individually and those assertions stand over this row."
+
+[[elements]]
+key = "gospel"
+name = "Gospel"
+refs = ["Matthew 6:24-33"]
+loci = ["Matt.6.24", "Matt.6.25", "Matt.6.26", "Matt.6.27", "Matt.6.28", "Matt.6.29", "Matt.6.30", "Matt.6.31", "Matt.6.32", "Matt.6.33"]
+status = "composition-only"
+reason = ""
+
+[[elements.claims]]
+locus = "Matt.6.24"
+relation = "composition"
+subject = "composition.gospel-of-matthew"
+title = "The Gospel of St Matthew"
+label = "about A.D. 38-45"
+date = "38 A.D. to 45 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+inherited = true
+scope = "Matt"
+sources = ["artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef", "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"]
+
+[[elements.claims]]
+locus = "Matt.6.24"
+relation = "composition"
+subject = "composition.gospel-of-matthew"
+title = "The Gospel of St Matthew"
+label = "about the year 40-42"
+date = "40 A.D. to 42 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+inherited = true
+scope = "Matt"
+sources = ["artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef"]
+
+[[elements.claims]]
+locus = "Matt.6.24"
+relation = "composition"
+subject = "composition.gospel-of-matthew"
+title = "The Gospel of St Matthew"
+label = "the years 40-45"
+date = "40 A.D. to 45 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+inherited = true
+scope = "Matt"
+sources = ["artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef"]
+
+[[elements.claims]]
+locus = "Matt.6.24"
+relation = "composition"
+subject = "composition.gospel-of-matthew"
+title = "The Gospel of St Matthew"
+label = "about the year 60-68"
+date = "60 A.D. to 68 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+inherited = true
+scope = "Matt"
+sources = ["artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef"]
+
+[[elements.claims]]
+locus = "Matt.6.24"
+relation = "composition"
+subject = "composition.gospel-of-matthew"
+title = "The Gospel of St Matthew"
+label = "about the years 64-67"
+date = "64 A.D. to 67 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+inherited = true
+scope = "Matt"
+sources = ["artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef"]
+
+[[elements.claims]]
+locus = "Matt.6.24"
+relation = "composition"
+subject = "composition.gospel-of-matthew"
+title = "The Gospel of St Matthew"
+label = "about the year 50"
+date = "about 50 A.D."
+precision = "approximate-year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+inherited = true
+scope = "Matt"
+sources = ["artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"]
+
+[[elements]]
+key = "offertory"
+name = "Offertory"
+refs = ["Psalm 33:8-9"]
+loci = ["Ps.33.8", "Ps.33.9"]
+status = "dated"
+reason = ""
+
+[[elements.claims]]
+locus = "Ps.33.8"
+relation = "superscription-setting"
+subject = "israel.monarchy.david-at-geth"
+title = "David's flight to Achis, king of Geth"
+label = "A. M. 2944, A. C. 1060"
+date = "2944 A.M."
+precision = "year"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "reported-excluded"
+profile = "catholic-traditional-v1"
+inherited = true
+scope = "Ps.33 Ps.55"
+sources = ["passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.first-kings-21-achis-geth-chronology", "passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology"]
+
+[[elements]]
+key = "secret"
+name = "Secret"
+refs = []
+loci = []
+status = ""
+reason = ""
+
+[[elements]]
+key = "communion"
+name = "Communion"
+refs = ["Matthew 6:33"]
+loci = ["Matt.6.33"]
+status = "composition-only"
+reason = ""
+
+[[elements.claims]]
+locus = "Matt.6.33"
+relation = "composition"
+subject = "composition.gospel-of-matthew"
+title = "The Gospel of St Matthew"
+label = "about A.D. 38-45"
+date = "38 A.D. to 45 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+inherited = true
+scope = "Matt"
+sources = ["artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef", "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"]
+
+[[elements.claims]]
+locus = "Matt.6.33"
+relation = "composition"
+subject = "composition.gospel-of-matthew"
+title = "The Gospel of St Matthew"
+label = "about the year 40-42"
+date = "40 A.D. to 42 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+inherited = true
+scope = "Matt"
+sources = ["artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef"]
+
+[[elements.claims]]
+locus = "Matt.6.33"
+relation = "composition"
+subject = "composition.gospel-of-matthew"
+title = "The Gospel of St Matthew"
+label = "the years 40-45"
+date = "40 A.D. to 45 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+inherited = true
+scope = "Matt"
+sources = ["artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef"]
+
+[[elements.claims]]
+locus = "Matt.6.33"
+relation = "composition"
+subject = "composition.gospel-of-matthew"
+title = "The Gospel of St Matthew"
+label = "about the year 60-68"
+date = "60 A.D. to 68 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+inherited = true
+scope = "Matt"
+sources = ["artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef"]
+
+[[elements.claims]]
+locus = "Matt.6.33"
+relation = "composition"
+subject = "composition.gospel-of-matthew"
+title = "The Gospel of St Matthew"
+label = "about the years 64-67"
+date = "64 A.D. to 67 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+inherited = true
+scope = "Matt"
+sources = ["artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef"]
+
+[[elements.claims]]
+locus = "Matt.6.33"
+relation = "composition"
+subject = "composition.gospel-of-matthew"
+title = "The Gospel of St Matthew"
+label = "about the year 50"
+date = "about 50 A.D."
+precision = "approximate-year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+inherited = true
+scope = "Matt"
+sources = ["artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"]
+
+[[elements]]
+key = "postcommunion"
+name = "Postcommunion"
+refs = []
+loci = []
+status = ""
+reason = ""
