@@ -362,20 +362,44 @@ held back at the April pass for exactly that: the 1862 printed its opening
 clause and a different petition after it, and the entry stayed a placeholder
 rather than take the rest from the target edition.
 
-### The seasonal orations are a known open defect, not a precedent
+### What the seasonal collation found, and what a remaining row means
 
-At the time of writing, 220 orations in the seasonal section of
-`roman-1962/propers.yaml` carry `text_status.state = unavailable` with a
-`rights-withheld` reason naming the 1962 typica, and not one seasonal oration
-carries a body. That disposition contradicts the rights record above, which
-names the seasonal orations as preexisting material. It records that nobody has
-run the collation, not that the text may not be published.
+Before 2026-09-03 the seasonal section carried 220 orations typed
+`text_status.state = unavailable` with a `rights-withheld` reason naming the
+1962 typica, and not one seasonal body. That disposition contradicted the
+rights record above: it recorded that nobody had run the collation, not that
+the text could not be published. The collation has now been run against the
+tracked public-domain Pustet Ratisbon 1862, with the 1962 read on its own page
+images, and the section stands as follows.
 
-Do not read the existing rows as authority for typing another one, and do not
-copy their shape onto a new entry. Where the collation has not been run, the
-honest gap is a `witness-gap` against the witness actually consulted;
-`rights-withheld` asserts something about the 1962 edition that the repository's
-own rights record denies.
+| | |
+| --- | --- |
+| bodies published on 103(b) plus a public-domain witness | 176 |
+| typed `witness-gap` against the witness actually consulted | 177 |
+| still `rights-withheld` against the 1962 typica | 41 |
+
+The 41 are not leftovers. They are the texts the collation found to be the
+1962 edition's own, and for them the disposition is now the correct one rather
+than the default one: the 1955 additions to the Palm Sunday procession
+(`Omnes collaudant`, `Fulgentibus palmis`, `Ave, Rex noster`, and the oration
+concluding the procession), the blessing `Benedic, quaesumus, Domine`, whose
+1962 text inserts `(seu olivarum aut aliarum arborum)` and reads `hodierno die`
+where every public-domain witness reads `hodierna die`, and the Triduum and
+Corpus Christi material still outstanding.
+
+So a `rights-withheld` row is now a claim someone checked, and typing a new one
+means asserting the same. Do not copy the shape onto an unexamined entry. Where
+the collation has not been run, the honest gap is a `witness-gap` naming the
+witness you actually consulted; `rights-withheld` asserts something about the
+1962 edition that the repository's own rights record denies.
+
+Two working rules the collation established, worth having before you start.
+The 1862 abbreviates conclusions far more often than the 1962 does, and that
+difference changes no verdict — reproduce the conclusion the target prints, at
+the length it prints it. And the Benziger conformed printing, cross-read on
+every oration, disagreed with the facsimile on pointing or conclusion length in
+roughly half of them and lost to the page image every single time; it is a
+word-level check and not a pointing witness.
 
 ## What a public-domain printing can and cannot supply
 
