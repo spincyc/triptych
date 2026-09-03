@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-09-04"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 139
-source_surface_file_count = 2095
-snapshot = "sha256:46a74148956fa0949585e2ba7413ca4d22aba82d3128003cdf62847193ba0871"
+source_surface_file_count = 2096
+snapshot = "sha256:5ecb6dfeac0dd762ad60ecd08f0b1f86d70e81fd4333a20978769430a39bf465"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -9096,8 +9096,14 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecos
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/propers/verified.md"
-sha256 = "d230e5a439ebef87d333ac19495bad077fc89b1e50eb33474e306776646d10cb"
+sha256 = "36ca224b0cfb48769aa0823af556869c17f8e20ab424d2e8d8339ead861f526b"
 kind = "proper-verification"
+owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/research/chronology.toml"
+sha256 = "f271a985c838b189c49833633de36119235d61e5d076c042458e912501a1f300"
+kind = "research-record"
 owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"]
 
 [[files]]
@@ -9108,7 +9114,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecos
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/research/source-bindings.toml"
-sha256 = "d9db49f881214ce6d4944c9878fd70f4bfef82a92cbfc670258f80bfdb8913da"
+sha256 = "fbb950382448026b20799fdc39a5cc5eb544f78074e5f6b94db78424881b2127"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"]
 

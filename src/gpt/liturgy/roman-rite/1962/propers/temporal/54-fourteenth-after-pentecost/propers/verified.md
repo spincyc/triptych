@@ -16,7 +16,8 @@
   when counted from one.
 - **Image verification:** headings, references, wording, accents,
   punctuation, rank, Creed, Trinity Preface, and both boundaries were read
-  from page images on 2026-08-26. No unresolved reading remains.
+  from page images on 2026-08-26 and rechecked on 2026-09-03. No unresolved
+  reading remains.
 - **Independent edition:** Benziger Brothers, New York, 1962, *editio iuxta
   typicam*, Internet Archive item
   `MissaleRomanum1962RomanMissalColorLatin`, printed pp. 389–391, leaves
@@ -148,12 +149,12 @@ No protected modern liturgical translation or chant translation is retained.
 The appointed Latin is preexisting material witnessed in the registered
 public-domain 1922 Mame edition. Its printed pp. 444–446 carry all ten elements
 in the same order and at the same scriptural references, including the
-Communion's distinctive recasting with `dicit Dominus`. The 1922 Gospel retains
-`cæléstis` after `Pater vester`, which the 1962 edition omits; Mame also uses
-older i/j orthography, abbreviated conclusions, and pre-1960 additional
-orations. Those differences are recorded and not blended into the controlling
-1962 reading. The source-library artifact is public domain in the United
-States because the book was published in 1922; the project relies on that
-antecedent for republication and not on any rights in the 1962 facsimile.
+Communion's distinctive recasting with `dicit Dominus`. Both editions print
+`cæléstis` after `Pater vester`; Mame's differences are older i/j orthography,
+punctuation, abbreviated conclusions, and pre-1960 additional orations. Those
+differences are recorded and not blended into the controlling 1962 reading.
+The source-library artifact is public domain in the United States because the
+book was published in 1922; the project relies on that antecedent for
+republication and not on any rights in the 1962 facsimile.
 Each historical English source remains edition-identified. Research notes and
 synthesis are original editorial material and do not become source text.
