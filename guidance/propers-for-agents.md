@@ -338,6 +338,25 @@ verbatim in a pre-1931 witness is preexisting and free, whatever 1955 did with
 its placement. Collate it and decide on the evidence rather than on the
 calendar.
 
+**An order is not a contribution, and this governs the whole work.** What the
+1955 reform mostly did was select, cut, restore and reorder; what 103(b) reaches
+is the prayer it composed, never the position it gave an old one. A sequence of
+preexisting texts is not itself authorship anyone may withhold. So the question
+for every text is only whether its words stand in a public-domain witness
+*anywhere* -- in the old Holy Saturday morning rite, under another day, in
+another season, in an appendix, in a votive Mass -- and not whether it stands in
+the same place. Search each witness whole, by incipit, and never by ordinal.
+Withhold only what no pre-1931 book carries in any place at all, and say which
+books you swept and how when you do.
+
+The trap this closes is real and cost a lane its whole result: the 1962 Easter
+Vigil follows four prophecies where the pre-1955 book has twelve, and its parts
+sit in a different order in a rite moved from morning to night, so a positional
+reading of that book reports absence everywhere while the texts are all present
+a few hundred leaves away. The Most Holy Name of Jesus is the same lesson in
+miniature -- the 1862 prints it complete, but under Dominica II post Epiphaniam,
+because the feast moved in 1913 and the words did not.
+
 ### The witnesses, and the procedure that has already been run
 
 Tracked, public domain, and held locally as full text:
