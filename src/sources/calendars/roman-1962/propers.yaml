@@ -11480,12 +11480,18 @@ sections:
       - name: Collect
         incipit: Omnipotens sempiterne Deus
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 372, no. 1412; artifact PDF p. 453. Heading IN
+          FESTO SANCTISSIMAE TRINITATIS, I classis, at the head of TEMPUS PER ANNUM
+          POST PENTECOSTEN. Preexisting material under 17 U.S.C. 103(b), corroborated
+          in the tracked public-domain Pustet Ratisbon 1862 at printed p. 313;
+          text-layer lines 47386-47398 (heading IN FESTO SS. TRINITATIS. at 47359;
+          heading Oratio. at 47386).
+        text: |
+          Omnipotens sempiterne Deus, qui dedisti famulis tuis, in confessione verae
+          fidei, aeternae Trinitatis gloriam agnoscere, et in potentia majestatis
+          adorare Unitatem: quaesumus; ut, ejusdem fidei firmitate, ab omnibus semper
+          muniamur adversis. Per Dominum.
       - name: Epistle
         source: scripture
         verses:
@@ -11532,12 +11538,15 @@ sections:
       - name: Secret
         incipit: Sanctifica, quaesumus, Domine
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 372, no. 1418; artifact PDF p. 453. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at printed p. 314; text-layer lines 47482-47490
+          (heading Secreta. at 47482).
+        text: |
+          Sanctifica, quaesumus, Domine Deus noster, per tui sancti nominis
+          invocationem, hujus oblationis hostiam: et per eam nosmetipsos tibi perfice
+          munus aeternum. Per Dominum.
       - name: Communion
         incipit: Benedicimus Deum coeli
         source: scripture
@@ -11550,12 +11559,15 @@ sections:
       - name: Postcommunion
         incipit: Proficiat nobis ad salutem
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 373, no. 1420; artifact PDF p. 454. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at printed p. 314; text-layer lines 47512-47520
+          (heading Postcommimio. [Postcommunio.] at 47512).
+        text: |
+          Proficiat nobis ad salutem corporis et animae, Domine Deus noster, hujus
+          sacramenti susceptio: et sempiternae sanctae Trinitatis ejusdemque
+          individuae Unitatis confessio. Per Dominum.
     - key: mass-of-the-first-sunday-after-pentecost
       name: Mass of the First Sunday after Pentecost
       registry: '1962-T-mass-of-the-first-sunday-after-pentecost'
@@ -14314,22 +14326,28 @@ sections:
           - begin: {chapter: 77, verse: 1}
             end: {chapter: 77, verse: 1}
           ref: Psalm 77:1
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 411, no. 1679; artifact PDF p. 492. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at printed p. 351; text-layer lines 51818-51830
+          (heading Dominica XIX. post Pentecosten at 51814-51816).
+        text: |
+          Salus populi ego sum, dicit Dominus: de quacumque tribulatione clamaverint
+          ad me, exaudiam eos: et ero illorum Dominus in perpetuum. Ps. 77, 1
+          Attendite, popule meus, legem meam: inclinate aurem vestram in verba oris
+          mei. V. Gloria Patri.
         notes: The antiphon is a composed text; only the psalm verse is scriptural.
       - name: Collect
         incipit: Omnipotens et misericors Deus
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 411, no. 1680; artifact PDF p. 492. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at printed p. 351; text-layer lines 51832-51840.
+        text: |
+          Omnipotens et misericors Deus, universa nobis adversantia propitiatus
+          exclude: ut mente et corpore pariter expediti, quae tua sunt, liberis
+          mentibus exsequamur. Per Dominum.
       - name: Epistle
         source: scripture
         verses:
@@ -14376,12 +14394,15 @@ sections:
       - name: Secret
         incipit: Haec munera, quaesumus
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 412, no. 1686; artifact PDF p. 493. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at printed p. 352; text-layer lines 51954-51960
+          (heading Secreta. at 51954).
+        text: |
+          Haec munera, quaesumus, Domine, quae oculis tuae majestatis offerimus,
+          salutaria nobis esse concede. Per Dominum nostrum Jesum Christum, Filium
+          tuum: Qui tecum vivit et regnat in unitate.
       - name: Communion
         incipit: Tu mandasti
         source: scripture
@@ -14394,12 +14415,14 @@ sections:
       - name: Postcommunion
         incipit: Tua nos, Domine
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 412, no. 1688; artifact PDF p. 493. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at printed p. 352; text-layer lines 51972-51979
+          (heading Postcommunio. at 51972).
+        text: |
+          Tua nos, Domine, medicinalis operatio, et a nostris perversitatibus
+          clementer expediat, et tuis semper faciat inhaerere mandatis. Per Dominum.
     - key: pentecost-20
       name: Twentieth Sunday after Pentecost
       registry: '60'
@@ -14432,12 +14455,16 @@ sections:
       - name: Collect
         incipit: Largire, quaesumus, Domine
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 412, no. 1690; artifact PDF p. 493. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at printed p. 353; text-layer lines 52013-52020
+          (heading Dominica XX. post Pentecosten at 51986-51988; heading Oratio. at
+          52013).
+        text: |
+          Largire, quaesumus, Domine, fidelibus tuis indulgentiam placatus et pacem:
+          ut pariter ab omnibus mundentur offensis, et secura tibi mente deserviant.
+          Per Dominum.
       - name: Epistle
         source: scripture
         verses:
@@ -14484,12 +14511,14 @@ sections:
       - name: Secret
         incipit: Coelestem nobis praebeant
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 413, no. 1696; artifact PDF p. 494. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at printed p. 353; text-layer lines 52106-52112
+          (heading Seereta. [Secreta.] at 52106).
+        text: |
+          Caelestem nobis praebeant haec mysteria, quaesumus, Domine, medicinam: et
+          vitia nostri cordis expurgent. Per Dominum.
       - name: Communion
         incipit: Memento verbi tui
         source: scripture
@@ -14502,12 +14531,14 @@ sections:
       - name: Postcommunion
         incipit: Ut sacris, Domine
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 413, no. 1698; artifact PDF p. 494. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at printed p. 354; text-layer lines 52132-52138
+          (heading Postcommunio. at 52132).
+        text: |
+          Ut sacris, Domine, reddamur digni muneribus: fac nos, quaesumus, tuis semper
+          oboedire mandatis. Per Dominum nostrum.
     - key: pentecost-21
       name: Twenty-first Sunday after Pentecost
       registry: '61'
@@ -14530,12 +14561,18 @@ sections:
       - name: Collect
         incipit: Familiam tuam, quaesumus
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 414, no. 1700; artifact PDF p. 495. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at printed p. 354; text-layer lines 52167-52175
+          (heading Dominica XXI. post Pentecosten at 52146-52148; heading Oratio. at
+          52167).
+        text: |
+          Familiam tuam, quaesumus, Domine, continua pietate custodi: ut a cunctis
+          adversitatibus, te protegente, sit libera; et in bonis actibus tuo nomini
+          sit devota. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit
+          et regnat in unitate Spiritus Sancti, Deus: per omnia saecula saeculorum. R.
+          Amen.
       - name: Epistle
         source: scripture
         verses:
@@ -14589,21 +14626,27 @@ sections:
           - begin: {chapter: 2, verse: 6}
             end: {chapter: 2, verse: 7}
           ref: Job 2:6-7
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 415, no. 1705; artifact PDF p. 496. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at printed p. 355; text-layer lines 52292-52303
+          (heading Oflertorium. [Offertorium.] Job 1. at 52292).
+        text: |
+          Vir erat in terra Hus, nomine Job: simplex et rectus, ac timens Deum: quem
+          Satan petiit, ut tentaret: et data est ei potestas a Domino in facultates et
+          in carnem ejus: perdiditque omnem substantiam ipsius et filios: carnem
+          quoque ejus gravi ulcere vulneravit.
       - name: Secret
         incipit: Suscipe, Domine, propitius hostias
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 415, no. 1706; artifact PDF p. 496. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at printed p. 355; text-layer lines 52305-52311
+          (heading Seereta. [Secreta.] at 52305).
+        text: |
+          Suscipe, Domine, propitius hostias: quibus et te placari voluisti, et nobis
+          salutem potenti pietate restitui. Per Dominum nostrum.
       - name: Communion
         incipit: In salutari tuo
         source: scripture
@@ -14620,12 +14663,14 @@ sections:
       - name: Postcommunion
         incipit: Immortalitatis alimoniam
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 415, no. 1708; artifact PDF p. 496. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at printed p. 355; text-layer lines 52325-52330
+          (heading Postcommunio. at 52325).
+        text: |
+          Immortalitatis alimoniam consecuti, quaesumus, Domine: ut, quod ore
+          percepimus, pura mente sectemur. Per Dominum nostrum.
     - key: pentecost-22
       name: Twenty-second Sunday after Pentecost
       registry: '62'
@@ -14648,12 +14693,17 @@ sections:
       - name: Collect
         incipit: Deus, refugium nostrum
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 415, no. 1710; artifact PDF p. 496. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at printed p. 356; text-layer lines 52363-52370
+          (heading Dominica XXII. post Pentecosten at 52338-52340; heading Oratio. at
+          52363).
+        text: |
+          Deus, refugium nostrum et virtus: adesto piis Ecclesiae tuae precibus,
+          auctor ipse pietatis, et praesta: ut, quod fideliter petimus, efficaciter
+          consequamur. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum
+          vivit et regnat in unitate.
       - name: Epistle
         source: scripture
         verses:
@@ -14700,12 +14750,15 @@ sections:
       - name: Secret
         incipit: Da, misericors Deus
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 416, no. 1716; artifact PDF p. 497. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at printed p. 356; text-layer lines 52452-52459
+          (heading Secreta. at 52452).
+        text: |
+          Da, misericors Deus: ut haec salutaris oblatio, et a propriis nos reatibus
+          indesinenter expediat, et ab omnibus tueatur adversis. Per Dominum nostrum
+          Jesum Christum, Filium tuum: Qui tecum vivit.
       - name: Communion
         incipit: Ego clamavi
         source: scripture
@@ -14718,12 +14771,15 @@ sections:
       - name: Postcommunion
         incipit: Sumpsimus, Domine
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 416, no. 1718; artifact PDF p. 497. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at printed p. 357; text-layer lines 52479-52487
+          (heading Postcommunio. at 52479).
+        text: |
+          Sumpsimus, Domine, sacri dona mysterii, humiliter deprecantes: ut, quae in
+          tui commemorationem nos facere praecepisti, in nostrae proficiant
+          infirmitatis auxilium: Qui vivis et regnas cum Deo Patre in unitate.
     - key: pentecost-23
       name: Twenty-third Sunday after Pentecost
       registry: '63'
@@ -14748,12 +14804,18 @@ sections:
       - name: Collect
         incipit: Absolve, quaesumus
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 416, no. 1720; artifact PDF p. 497. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at printed p. 357; text-layer lines 52526-52533
+          (heading Dominica XXIII. post Pentecosten at 52494-52496, with its long
+          rubric on the XXIII/XXIV transposition at 52498-52509; heading Oratio. at
+          52526).
+        text: |
+          Absolve, quaesumus, Domine, tuorum delicta populorum: ut a peccatorum
+          nexibus, quae pro nostra fragilitate contraximus, tua benignitate liberemur.
+          Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat
+          in unitate.
       - name: Epistle
         source: scripture
         verses:
@@ -14800,12 +14862,15 @@ sections:
       - name: Secret
         incipit: Pro nostrae servitutis augmento
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 417, no. 1726; artifact PDF p. 498. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at printed p. 358; text-layer lines 52640-52649
+          (heading Sccrcta. [Secreta.] at 52640).
+        text: |
+          Pro nostrae servitutis augmento sacrificium tibi, Domine, laudis offerimus:
+          ut, quod immeritis contulisti, propitius exsequaris. Per Dominum nostrum
+          Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
       - name: Communion
         incipit: Amen dico vobis, quidquid
         source: scripture
@@ -14818,12 +14883,15 @@ sections:
       - name: Postcommunion
         incipit: Quaesumus, omnipotens Deus
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 417, no. 1728; artifact PDF p. 498. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at printed p. 358; text-layer lines 52660-52666
+          (heading Postcommunio. at 52660).
+        text: |
+          Quaesumus, omnipotens Deus: ut, quos divina tribuis participatione gaudere,
+          humanis non sinas subjacere periculis. Per Dominum nostrum Jesum Christum,
+          Filium tuum: Qui tecum vivit et regnat in unitate.
     - key: christ-the-king
       name: D. N. Iesu Christi Regis
       registry: 'F01'
@@ -15090,12 +15158,18 @@ sections:
       - name: Collect
         incipit: Excita, quaesumus
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 423, no. 1770; artifact PDF p. 504. The 1962 prints
+          this formulary under the heading DOMINICA XXIV ET ULTIMA POST PENTECOSTEN,
+          which is also its running head on printed pp. 422-424. Preexisting material
+          under 17 U.S.C. 103(b), corroborated in the tracked public-domain Pustet
+          Ratisbon 1862 at printed p. 359; text-layer lines 52746-52753 (heading
+          Dominica XXIV. et ultima post Pentecosten at 52730-52732; heading Oratio. at
+          52746).
+        text: |
+          Excita, quaesumus, Domine, tuorum fidelium voluntates: ut, divini operis
+          fructum propensius exsequentes; pietatis tuae remedia majora percipiant. Per
+          Dominum.
       - name: Epistle
         source: scripture
         verses:
@@ -15142,12 +15216,16 @@ sections:
       - name: Secret
         incipit: Propitius esto, Domine
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 424, no. 1776; artifact PDF p. 505. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at printed p. 360; text-layer lines 52893-52901
+          (heading Secreta. at 52893).
+        text: |
+          Propitius esto, Domine, supplicationibus nostris: et, populi tui
+          oblationibus precibusque susceptis, omnium nostrum ad te corda converte; ut,
+          a terrenis cupiditatibus liberati, ad caelestia desideria transeamus. Per
+          Dominum nostrum.
       - name: Communion
         incipit: Amen dico vobis, quidquid
         source: scripture
@@ -15160,12 +15238,15 @@ sections:
       - name: Postcommunion
         incipit: Concede nobis, quaesumus
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        notes: >-
+          Printed locus printed p. 424, no. 1778; artifact PDF p. 505. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at printed p. 360; text-layer lines 52913-52921
+          (heading Postcommunio. at 52913).
+        text: |
+          Concede nobis, quaesumus, Domine: ut per haec sacramenta quae sumpsimus,
+          quidquid in nostra mente vitiosum est, ipsorum medicationis dono curetur.
+          Per Dominum.
   common:
     kind: common
     label: Commune Sanctorum
