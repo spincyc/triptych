@@ -205,10 +205,19 @@ Every stage declares how its work is dispatched, and `tpt` states that policy at
 the top of the `instructions` it prints with each packet. The only thing you
 choose is how many lanes of a fan-out stage run at once.
 
+The reasoning effort is declared too, and is not one of your choices. Each
+agent stage or lane resolves to a level — `low`, `medium`, `high`, `xhigh` or
+`max` — which `tpt` prints in the instructions and carries in the packet's
+`EFFORT` header line. Dispatch each agent at the level named for it, and change
+a level by changing the workflow rather than the invocation: the level is
+hashed into the packet, so a run answered at some other level is not the run
+its record describes. A program gate names none, because no agent runs it.
+
 ### Single
 
-`EXECUTION POLICY: SINGLE`. Start exactly one fresh subagent, give it exactly
-the packet contents, and advance with the result it returns:
+`EXECUTION POLICY: SINGLE`. Start exactly one fresh subagent at the reasoning
+effort the instructions name, give it exactly the packet contents, and advance
+with the result it returns:
 
 ```bash
 tools/tpt proper <proper-id> advance <run-id> --result <path-to-json>
@@ -229,10 +238,12 @@ tools/tpt proper <proper-id> advance <run-id> --run-gate
 ### Fanout / host-max
 
 `EXECUTION POLICY: FANOUT / HOST-MAX`. The instructions list every lane in
-canonical order with its own packet path and `lane_packet_hash`. Start one
-fresh subagent per listed lane and none besides, give each exactly the contents
-of its own lane packet, and require one structured JSON result per lane. Then
-advance with one `--lane-result` flag per lane:
+canonical order with its own packet path, `lane_packet_hash`, and reasoning
+effort. Start one fresh subagent per listed lane and none besides, each at its
+own lane's effort — lanes of one stage need not share a level, and running them
+together is no reason to level them — give each exactly the contents of its own
+lane packet, and require one structured JSON result per lane. Then advance with
+one `--lane-result` flag per lane:
 
 ```bash
 tools/tpt proper <proper-id> advance <run-id> \
@@ -789,7 +800,94 @@ a re-entry, whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
-The `proper` workflow is at version 18. Version 18 settled who owes a source
+The `proper` workflow is at version 19. Version 19 told the content evaluation
+that the leaf builds two documents. It always had: `main.tex` builds the
+canonical guide, `synthesis.tex` builds the synthesis edition beside it, and
+which prose reaches which reader is decided by `\ifdefined` branches and by
+section files only one of them inputs. The visual evaluator was told this from
+the beginning — its inspection method says in as many words to inspect both the
+canonical and synthesis PDFs — and the content evaluator was told the opposite
+by omission, being sent to read "the canonical proper leaf".
+
+Run `ca03f1b357e7ec25` shows the cost. Three content evaluations across five
+lanes read the canonical build, raised findings against sections by name, and a
+reviser repaired the file each finding could be read as naming. The same claims
+stood uncorrected in the synthesis edition's own section files, which no lane
+had opened, and nothing downstream would have caught it: the mechanical gates
+measure rendered pages, and both editions render.
+
+Two rules answer it, and neither is a hint. `content-evaluation` now opens with
+how to find out what a leaf builds — list the top-level `.tex` files, follow the
+inputs and the branches both ways, and write down what each document puts in
+front of a reader — and requires every finding to name the file the defect is
+in rather than the section it belongs to, because two files answer to "the
+detailed commentary" and a reviser told only the section repairs one of them.
+Each of the five content lanes carries what its own criteria must do with that:
+a rendering composed in the edition nobody opened is still composed, a short
+form reaching only the synthesis can stand flat a lead the canonical prose
+bounded, reader order is a property of a built document so a second edition has
+its own, voice and disagreement live in prose written at two lengths on two
+passes, and the synthesis lane can leave the very synthesis it judges unread.
+`content-revision` is told that a repair to one edition's prose is not a repair
+to the other and that it re-reads both after every edit, and `author-proper` no
+longer describes the synthesis as mechanically derived — it is the same build,
+and the prose that reaches one edition alone is prose the author wrote for that
+edition and must keep true.
+
+Version 19 also owns the process fact behind that repair, since the fragments
+are where a rule has to go. During the run a lane needed the two-editions rule,
+and it reached the lane as an instruction added to a brief at the console
+rather than as a fragment. Nothing in the packet carried it, the digest did not
+move, and the run cannot be replayed into the state it actually ran in. A lane
+that needs something its packet does not carry has found a fragment defect, and
+it is repaired here, at a version, or escalated — never supplied beside the
+packet.
+
+The same version closes the last input a console still owned: how hard the
+dispatched model thinks. Every other dispatch decision was already declared and
+hashed — which stage runs, by one agent or by five lanes, on which fragments,
+against which schema — while the reasoning effort was whatever the driver
+picked. Two hosts could answer identical packet bytes at two levels and the run
+recorded neither.
+
+Stages now declare `effort`, resolved most specific first: the lane's own, then
+the stage's, then the workflow's `default_effort`. It rides in the packet
+header, where the packet hash covers it, and it is printed in the driver
+instructions beside the lane it belongs to. A gate declares none and is
+refused if it tries: tpt runs a gate, no agent does. The levels are `low`,
+`medium`, `high`, `xhigh` and `max`, and a word outside that set fails the
+workflow at load rather than reaching a host that would ignore or guess at it.
+
+What `proper` declares, and why:
+
+- `xhigh` is the default, and what the long-horizon stages run at: seed
+  through the brief, the authoring, and every revision. It is the level tuned
+  for work that has to hold a whole document in view.
+- `max` is paid for at one judgment, in the two places that judgment is made:
+  deciding what this repository does not hold. `source-audit` collates the
+  appointed text against the controlling witness, and the research lane
+  `source-citation-coverage` decides what is attested and what is still a
+  lead; `content-evaluation` is then the pass that gates publication on the
+  scholarship, and all five of its lanes run there. This is where the corpus
+  actually fails — the Fourteenth Sunday spent three revision rounds stripping
+  claims resting on witnesses the repository does not hold — and it is the
+  only place the extra cost buys anything.
+- `high` covers the mechanical stretch, where the answer is checkable rather
+  than judged: `build-artifacts` and `artifact-revision`, the page-by-page
+  `visual-evaluation` and its revision, `publish-artifacts`, the web
+  conversion, evaluation and revision, and `install-publication`.
+- `low` is declared by no stage. It is the level for a single locus or a
+  single hash check, and no stage of this workflow is one; a driver's own
+  narrow lookups are not stages and are not governed here.
+
+Raising a level is a version bump like any other, because it moves the digest
+and invalidates every run in flight. That is the intended cost: an effort
+level chosen per run, at the console, is exactly the unrecorded input this
+version exists to remove.
+
+A run seeded against version 18 or earlier fails closed; seed it again.
+
+The `proper` workflow was at version 18. Version 18 settled who owes a source
 record, because a run had just ended over one nobody owed. Run
 `5f2d2447ee8d4445` reached `author-proper` with a complete brief — five
 audited gallery entries carrying both texts, exact loci, wording checks and

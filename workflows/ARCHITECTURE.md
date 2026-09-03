@@ -180,6 +180,9 @@ state.
    - `ITERATION`: iteration number for this stage
    - `EXECUTION`: the stage's execution policy — `single`, `program`, or
      `fanout/host-max`
+   - `EFFORT`: the reasoning effort the dispatched agent runs at, resolved
+     lane before stage before the workflow's `default_effort`, and absent from
+     a gate's packet because tpt runs a gate itself
    - `LANES`: the stage's lane ids in canonical order as compact JSON, on a
      fan-out stage's packets only
    - `LANE`, `LANE_INDEX`: the lane's own id and canonical index, on a lane
@@ -244,7 +247,7 @@ A run records the digest at seed time, in both the manifest and the state, and
 every `advance` and `replay` recomputes it. If the workflow source has changed
 since the run was seeded, the run fails closed rather than continuing under
 guidance it never started with. A changed workflow means a new run. The
-`proper` workflow is at version 18: version 10 gave `content-evaluation` a
+`proper` workflow is at version 19: version 10 gave `content-evaluation` a
 third repair owner and inserted the `content-preflight` gate between
 `author-proper` and `content-evaluation`, version 11 made the iteration
 budget charge repetition rather than failure, carried a blocking finding to its
@@ -275,8 +278,22 @@ source is a provenance note the coverage lane, the brief and the author each
 carry as one, never a condition of publishing, since no stage of a run writes
 `src/sources/`, and `author-proper` now produces the leaf's
 `research/source-bindings.toml`, which `content-preflight` had read from
-every leaf while nothing was told to write one. A run seeded against version
-17 or earlier fails closed and is seeded again.
+every leaf while nothing was told to write one, and version 19 told the
+content evaluation that the leaf builds two documents rather than one:
+`content-evaluation` now derives from the leaf's own `.tex` files and
+`\ifdefined` branches what each edition renders, each content lane says what
+its criteria owe the edition the canonical build does not show, every finding
+names the file it is in rather than the section, and `content-revision`
+re-reads both editions after each edit — the visual evaluator had inspected
+both PDFs since it existed, while the content evaluator was sent to "the
+canonical proper leaf" and repaired one edition of a claim stated in two — and
+version 19 also gave the reasoning effort of a dispatched agent the same
+standing every other dispatch decision has: a stage or a lane declares
+`effort`, resolved lane before stage before the workflow's `default_effort`,
+carried in the packet header where the hash covers it and printed in the
+driver instructions beside the lane it belongs to, so that the one input a
+console still owned is recorded like the rest. A run seeded against version 18
+or earlier fails closed and is seeded again.
 `workflows/OPERATOR.md` carries the version history in full.
 
 ### Iteration budgets
@@ -363,6 +380,9 @@ The hash DOES cover:
 - stage id and iteration
 - the stage's execution policy, and a fan-out stage's lane roster in
   canonical order
+- the reasoning effort the packet's agent is dispatched at, so that raising or
+  lowering a level invalidates the runs it would otherwise have changed
+  silently
 - a lane packet's own lane id and canonical index
 - normalized arguments
 - forwarded findings, for a revision packet and for the successor of a linear
@@ -802,6 +822,12 @@ as it supports, up to all of them; where host capacity is lower than the lane
 count, the lanes are taken in canonical order, one batch at the host maximum at
 a time. Batching changes no lane id, no lane order, and no lane packet byte.
 
+Every dispatch line names the reasoning effort the agent runs at: the single
+form states it once, the fan-out form states it inside each lane's own roster
+entry, and both say the level is workflow data rather than a host choice. A
+fan-out stage whose lanes declare different levels must not be levelled to one
+because the lanes run together.
+
 The same instructions forbid inventing, omitting, combining, or subdividing
 lanes, and forbid the controller summarizing, merging, reordering, editing, or
 supplementing any lane's work. A lane that cannot do its work returns `BLOCKED`
@@ -903,7 +929,9 @@ produces a structured result with blocking findings for each failed check.
 Findings are forwarded verbatim into the revision packet. A gate declares
 execution mode `program` and may declare no agent mode, and no other stage
 type may declare `program` — the stage type and its execution policy have to
-agree about who runs the work.
+agree about who runs the work. For the same reason a gate declares no
+`effort`: there is no agent for a reasoning level to describe, and one written
+there would be refused at load.
 
 ### Terminal states
 

@@ -38,6 +38,16 @@ Read the leaf's structure and its source records against the profile in
     entry. A criterion 12 finding is `authoring`, and it is repaired by
     rewriting the sentence, never by deleting what it was about.
 
+## Both editions are yours
+
+The leaf builds more than one reader-facing document out of one source tree,
+as the shared fragment above explains. Reader order and page assignment are
+properties of a built document, so a second edition has its own and is judged
+against the profile on its own; and a register that has moved into the body
+may have moved into one edition's prose and not the other's, because the two
+were written at different lengths. Read what every document renders, and name
+in each finding the file the defect is in.
+
 Criteria 9 and 10 are judged from the leaf's structure and its source
 records. Criterion 12 is judged by reading the reader-facing prose itself:
 open the sources that carry the sections named above and read what they

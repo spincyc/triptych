@@ -3,9 +3,43 @@
 ## Your task
 
 You are a fresh evaluator. Evaluate the content and evidence quality of the
-canonical proper leaf. Do not rediscover what mechanical gates will check
+proper leaf — every reader-facing document it builds, which the next section
+tells you how to find. Do not rediscover what mechanical gates will check
 later (build success, PDF existence, undefined references). Focus on
 scholarly content.
+
+## What the leaf builds
+
+A leaf is one source tree, and it may build more than one reader-facing
+document out of it. Establish which before you read anything, because "the
+proper leaf" names that source tree and not a single document.
+
+List the leaf's top-level `.tex` files. `main.tex` builds the canonical
+guide. A `synthesis.tex` beside it builds a second published document, and
+what that document contains is read out of the files rather than inferred
+from the name:
+
+- Where `synthesis.tex` is a two-line stub that defines
+  `\TriptychSynthesisEdition` and inputs `main.tex`, `main.tex`'s own
+  `\ifdefined\TriptychSynthesisEdition` branches decide what each edition
+  carries. A branch may swap one `\input` for another, or fence off prose
+  written inline.
+- Where `synthesis.tex` is a document in its own right, its `\input` list
+  decides, and it may share some section files with `main.tex` and not
+  others.
+
+Follow the inputs both ways and write down what each document puts in front
+of a reader. Prose that reaches only one of them is parallel prose: the same
+claim is made twice, in two places, and a lane that read only the canonical
+build has not read the document. Read both editions.
+
+Then name in every finding the file the defect is in, and the line or the
+sentence within it, never only the section it belongs to.
+`sections/30-commentary.tex` and
+`sections/synthesis/20-integrated-commentary.tex` are two files that both
+answer to "the detailed commentary", and a finding naming only "the detailed
+commentary" leaves the reviser to guess which to open — where a claim is
+stated in both, guessing repairs one edition and publishes the other.
 
 ## Evaluation criteria
 

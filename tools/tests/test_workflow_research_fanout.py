@@ -707,7 +707,7 @@ class ResearchGuidanceTests(PropersCase):
         """Test 17."""
         count = len(RESEARCH_LANES)
         self.assertIn(f"Start exactly {count} fresh subagents, one per lane "
-                      f"listed above and none besides.", self.instructions)
+                      f"listed above and none besides", self.instructions)
         self.assertIn(f"LANES ({count}, in canonical order):",
                       self.instructions)
         for index, lane in enumerate(RESEARCH_LANES):

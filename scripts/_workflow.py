@@ -49,6 +49,13 @@ FANOUT = "fanout"
 PROGRAM = "program"
 AGENT_MODES = (SINGLE, FANOUT)
 
+# How hard the model dispatched to a stage is told to think, weakest first.
+# This is workflow data for the same reason the execution mode is: an effort
+# level chosen at the console is an input to the run that nothing records,
+# and the same packet answered at two levels is two different runs wearing
+# one id. A gate runs no agent and declares none.
+EFFORT_LEVELS = ("low", "medium", "high", "xhigh", "max")
+
 # The only parallelism a fan-out stage may request. The workflow owns the lane
 # set; the host owns only how many of those lanes run at once.
 HOST_MAX = "host-max"
@@ -1780,6 +1787,10 @@ class WorkflowEngine:
             f"EXECUTION: {_execution_label(stage)}",
         ]
 
+        effort = _stage_effort(workflow, stage, lane)
+        if effort:
+            header_lines.append(f"EFFORT: {effort}")
+
         lanes = _stage_lanes(stage)
         if lanes:
             header_lines.append(
@@ -2887,16 +2898,25 @@ class WorkflowEngine:
                 f"4. Stop only at ACCEPTED or BLOCKED."
             )
 
+        effort = _stage_effort(workflow, stage)
+        at_effort = f" at reasoning effort {effort}" if effort else ""
+        effort_rule = (
+            f"Run it at reasoning effort {effort}. That level is workflow "
+            f"data, not a host choice: do not raise or lower it.\n"
+            if effort else ""
+        )
+
         lanes = packet.get("lanes") or []
         if not lanes:
             return (
                 f"EXECUTION POLICY: SINGLE\n"
                 f"\n"
                 f"Start exactly one fresh subagent.\n"
+                f"{effort_rule}"
                 f"Give it exactly the packet specified below.\n"
                 f"Do not launch additional agents for this stage.\n"
                 f"\n"
-                f"1. Start exactly one fresh subagent.\n"
+                f"1. Start exactly one fresh subagent{at_effort}.\n"
                 f"2. Give it exactly the contents of {packet_path}.\n"
                 f"3. Require its structured result as JSON at a path you "
                 f"choose. The result must carry \"stage\": \"{stage['id']}\" "
@@ -2907,9 +2927,15 @@ class WorkflowEngine:
             )
 
         count = len(lanes)
+        lane_effort = {
+            entry["id"]: _stage_effort(workflow, stage, entry)
+            for entry in _stage_lanes(stage)
+        }
         roster = "\n".join(
             f"  {lane['lane_index']}. {lane['lane']}\n"
-            f"     packet: {self._packet_display_path(lane, portable_path)}\n"
+            + (f"     effort: {lane_effort[lane['lane']]}\n"
+               if lane_effort.get(lane["lane"]) else "")
+            + f"     packet: {self._packet_display_path(lane, portable_path)}\n"
             f"     lane_packet_hash: {lane['hash']}"
             for lane in lanes
         )
@@ -2920,6 +2946,10 @@ class WorkflowEngine:
             f"EXECUTION POLICY: FANOUT / HOST-MAX\n"
             f"\n"
             f"Launch one fresh subagent for each workflow-defined lane.\n"
+            f"Run each lane at the reasoning effort its roster entry names. "
+            f"That level is workflow data, not a host choice: do not raise or "
+            f"lower it, and do not level the lanes to one effort because they "
+            f"run together.\n"
             f"Use the maximum concurrent subagent capacity supported by this "
             f"host.\n"
             f"If all lanes cannot run simultaneously, execute them in "
@@ -2933,8 +2963,9 @@ class WorkflowEngine:
             f"{roster}\n"
             f"\n"
             f"1. Start exactly {count} fresh subagents, one per lane listed "
-            f"above and none besides. Give each one exactly the contents of "
-            f"its own lane packet, and nothing else.\n"
+            f"above and none besides, each at the reasoning effort its roster "
+            f"entry names. Give each one exactly the contents of its own lane "
+            f"packet, and nothing else.\n"
             f"2. Run as many of those lanes at once as this host supports, up "
             f"to all {count} simultaneously. If this host supports fewer "
             f"concurrent subagents than there are lanes, take the lanes in the "
@@ -2994,6 +3025,9 @@ def _validate_workflow(data: dict[str, Any], path: Path) -> None:
     if not isinstance(data["stages"], list) or not data["stages"]:
         raise WorkflowError(f"{path}: stages must be a nonempty list")
 
+    _validate_effort(path, data["id"], "default_effort",
+                     data.get("default_effort"))
+
     for arg_name in data.get("argument_schema", {}):
         if str(arg_name).startswith(RUN_IDENTITY_PREFIX):
             raise WorkflowError(
@@ -3037,6 +3071,8 @@ def _validate_workflow(data: dict[str, Any], path: Path) -> None:
             raise WorkflowError(f"{path}: duplicate stage id: {sid}")
         stage_ids.add(sid)
 
+        _validate_effort(path, sid, "effort", stage.get("effort"))
+
         stype = stage.get("type")
         if stype not in (LINEAR, EVALUATOR, BOUNDED_REVISION, GATE):
             raise WorkflowError(
@@ -3060,6 +3096,11 @@ def _validate_workflow(data: dict[str, Any], path: Path) -> None:
                         f"{path}: {sid}: bounded-revision stage requires '{key}'"
                     )
         elif stype == GATE:
+            if "effort" in stage:
+                raise WorkflowError(
+                    f"{path}: {sid}: a gate runs no agent, so it declares no "
+                    f"reasoning 'effort'"
+                )
             for key in ("pass_transition", "fail_transition", "max_iterations"):
                 if key not in stage:
                     raise WorkflowError(
@@ -3164,6 +3205,24 @@ def _validate_iteration_bounds(
         )
 
 
+def _validate_effort(
+    path: Path, sid: str, field: str, value: Any
+) -> None:
+    """A declared reasoning effort is one of the levels, or is not declared.
+
+    A level the engine does not know reaches a host as a word it will either
+    ignore or guess at, and a stage silently run at the host's own default is
+    the ungoverned dispatch this file exists to prevent.
+    """
+    if value is None:
+        return
+    if not isinstance(value, str) or value not in EFFORT_LEVELS:
+        raise WorkflowError(
+            f"{path}: {sid}: {field} must be one of: "
+            f"{', '.join(EFFORT_LEVELS)}"
+        )
+
+
 def _validate_execution(
     path: Path, sid: str, stype: str, stage: dict[str, Any]
 ) -> None:
@@ -3237,11 +3296,12 @@ def _validate_execution(
         )
     seen: set[str] = set()
     for index, lane in enumerate(lanes):
-        if not isinstance(lane, dict) or set(lane) - {"id", "fragments"} \
+        if not isinstance(lane, dict) \
+                or set(lane) - {"id", "fragments", "effort"} \
                 or "id" not in lane:
             raise WorkflowError(
                 f"{path}: {sid}: lanes[{index}] declares an 'id' and "
-                f"optionally 'fragments', and nothing else"
+                f"optionally 'fragments' and 'effort', and nothing else"
             )
         lane_id = lane["id"]
         if not isinstance(lane_id, str) or not lane_id \
@@ -3255,6 +3315,9 @@ def _validate_execution(
                 f"{path}: {sid}: duplicate lane id: {lane_id}"
             )
         seen.add(lane_id)
+        _validate_effort(
+            path, sid, f"lanes[{index}].effort", lane.get("effort")
+        )
         fragments = lane.get("fragments", [])
         if not isinstance(fragments, list) or not all(
             isinstance(name, str) and name for name in fragments
@@ -3434,6 +3497,25 @@ def _stage_lanes(stage: dict[str, Any]) -> list[dict[str, Any]]:
     if execution.get("mode") != FANOUT:
         return []
     return list(execution["lanes"])
+
+
+def _stage_effort(
+    workflow: dict[str, Any], stage: dict[str, Any],
+    lane: dict[str, Any] | None = None,
+) -> str | None:
+    """The reasoning effort the agent for this packet is dispatched at.
+
+    Most specific wins: the lane's own declaration, then the stage's, then
+    the workflow default. A gate is run by tpt and has no effort at all.
+    """
+    if stage.get("type") == GATE:
+        return None
+    if lane is not None and lane.get("effort"):
+        return str(lane["effort"])
+    if stage.get("effort"):
+        return str(stage["effort"])
+    default = workflow.get("default_effort")
+    return str(default) if default else None
 
 
 def _execution_label(stage: dict[str, Any]) -> str:

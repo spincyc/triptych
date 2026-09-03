@@ -22,7 +22,16 @@ accepted work. Focus on the specific findings forwarded to you.
    new violations of the evaluation criteria.
 5. Follow the same authoring rules as the author-proper stage, including the
    house voice: this packet carries `author-proper.md` in full.
-6. A house-voice finding is repaired by rewriting the sentence, never by
+6. A repair to one edition's prose is not a repair to the other. The leaf
+   builds more than one reader-facing document out of one source tree — a
+   `synthesis.tex` beside `main.tex`, an `\ifdefined\TriptychSynthesisEdition`
+   branch inside it, a `sections/synthesis/` file the canonical build never
+   inputs — and the same claim is routinely stated in both, at different
+   lengths. A finding names the file it was found in; the defect is not
+   confined to that file because the finding is. After every edit, re-read
+   what each document renders and correct each instance you find there, or
+   the run publishes one corrected edition and one uncorrected one.
+7. A house-voice finding is repaired by rewriting the sentence, never by
    deleting what the sentence was about. Excessive methodological narration,
    editorial self-justification, secular skeptical framing, unnecessary
    distancing from patristic interpretation, and modern-critical framing that

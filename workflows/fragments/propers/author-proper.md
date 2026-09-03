@@ -2,9 +2,13 @@
 
 ## Your task
 
-Author or revise the canonical proper leaf. The canonical leaf owns the
-prose, research, and audit records. The synthesis artifact is mechanically
-derived from it.
+Author or revise the proper leaf. The leaf owns the prose, research, and
+audit records, and it builds more than one reader-facing document out of
+them: the canonical guide from `main.tex` and a synthesis edition from
+`synthesis.tex`. The second is derived mechanically only in the sense that
+one build produces both. What each edition puts in front of a reader is
+decided by branches and inputs you write, so prose reaching one and not the
+other is prose you authored for that edition alone and must keep true.
 
 Where the packet's CARRIED_FINDINGS header is not empty, read it before you
 begin. It holds blocking findings a content evaluation raised against the leaf
@@ -42,7 +46,15 @@ learns belongs in the files this stage owns, listed below.
    - References
    - Generation Metadata
 2. Create or update `synthesis.tex` as a 2-line stub that defines
-   `\TriptychSynthesisEdition` and inputs `main.tex`.
+   `\TriptychSynthesisEdition` and inputs `main.tex`. The stub is two lines;
+   what it produces is a second reader-facing document, published beside the
+   canonical guide. `main.tex` branches on
+   `\ifdefined\TriptychSynthesisEdition`, and every branch splits the prose:
+   an `\input` or a passage inside one arm reaches one edition's readers and
+   not the other's. Both arms are yours to write and yours to keep true to
+   each other. A claim carried in `sections/` and restated in
+   `sections/synthesis/` is two files, and correcting one leaves the other
+   published and wrong.
 3. Create or update `proper-components.toml` with the component manifest.
 4. Create or update `format.tex` with leaf-local LaTeX macros.
 5. Create or update `generation-metadata.tex`. It carries three kinds of

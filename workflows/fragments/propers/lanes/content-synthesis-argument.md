@@ -15,6 +15,16 @@ Read the synthesis and the interpretive possibilities, and answer only:
 5. Is every exploratory proposal labeled as exploratory, and does each join
    at least two appointed elements?
 
+## Both editions are yours
+
+This lane meets that fact most directly. The leaf builds more than one
+reader-facing document out of one source tree, as the shared fragment above
+explains, and the second is commonly the synthesis itself — rendered from
+section files the canonical build never inputs, or from prose a
+`\ifdefined\TriptychSynthesisEdition` branch fences off. Reading `main.tex`
+alone can leave the very synthesis you are judging unread. Read what every
+document renders, and name in each finding the file the defect is in.
+
 ## Result
 
 Return an evaluator result for this lane. `PASS` when neither criterion is

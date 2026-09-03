@@ -15,6 +15,16 @@ Read every citation and every English rendering, and answer only:
    Challoner for scripture, a registered public-domain hand missal for the
    orations? Is any English composed, translated, or adapted here?
 
+## Both editions are yours
+
+The leaf builds more than one reader-facing document out of one source tree,
+as the shared fragment above explains. A citation or an English rendering
+carried in each is two published instances of it: an invented attribution
+corrected in one edition and left standing in the other is still published,
+and a rendering composed rather than quoted is still composed in the edition
+nobody opened. Read what every document renders, and name in each finding the
+file the citation is in.
+
 ## Result
 
 Return an evaluator result for this lane. `PASS` when neither criterion is

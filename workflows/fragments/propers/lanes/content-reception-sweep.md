@@ -36,6 +36,15 @@ criterion 11 is about the second. Answer only:
     the defect is that the evidence itself carries no Catholic reception for
     the passage, the finding is `research`; otherwise it is `authoring`.
 
+## Both editions are yours
+
+The leaf builds more than one reader-facing document out of one source tree,
+as the shared fragment above explains. Voice and disagreement live in prose,
+and the two editions' prose was written at different lengths and on different
+passes: one may harmonise what the other attributes, or narrate an inherited
+reading from outside where the other inhabits it. Read each document's own
+commentary, and name in each finding the file the sentence is in.
+
 ## Result
 
 Return an evaluator result for this lane. `PASS` when none of the three is

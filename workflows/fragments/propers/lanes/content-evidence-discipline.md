@@ -17,6 +17,15 @@ Read the canonical leaf and its research records, and answer only:
    Are OCR text and secondary citations treated as leads until checked
    against the edition itself?
 
+## Both editions are yours
+
+The leaf builds more than one reader-facing document out of one source tree,
+as the shared fragment above explains. A claim restated in a second edition
+carries its own evidence state, and the short form that reaches only the
+synthesis edition can stand a lead flat where the canonical prose bounded it.
+Reading the canonical build alone would never show that. Read what every
+document renders, and name in each finding the file the claim is in.
+
 ## Result
 
 Return an evaluator result for this lane. `PASS` when neither criterion is

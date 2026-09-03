@@ -1,7 +1,8 @@
 {
   "id": "proper",
-  "version": 18,
+  "version": 19,
   "description": "1962 propers synthesis production workflow",
+  "default_effort": "xhigh",
   "document_argument": "proper",
   "document_discovery": {
     "search": "src/*/liturgy/roman-rite/1962/propers/*/*",
@@ -95,6 +96,7 @@
     {
       "id": "source-audit",
       "type": "linear",
+      "effort": "max",
       "execution": {
         "mode": "single"
       },
@@ -142,7 +144,8 @@
             "id": "source-citation-coverage",
             "fragments": [
               "propers/lanes/research-source-citation-coverage.md"
-            ]
+            ],
+            "effort": "max"
           },
           {
             "id": "cultural-afterlife",
@@ -265,6 +268,7 @@
     {
       "id": "content-evaluation",
       "type": "evaluator",
+      "effort": "max",
       "execution": {
         "mode": "fanout",
         "parallelism": "host-max",
@@ -348,6 +352,7 @@
     {
       "id": "build-artifacts",
       "type": "linear",
+      "effort": "high",
       "execution": {
         "mode": "single"
       },
@@ -389,6 +394,7 @@
     {
       "id": "artifact-revision",
       "type": "bounded-revision",
+      "effort": "high",
       "execution": {
         "mode": "single"
       },
@@ -405,6 +411,7 @@
     {
       "id": "visual-evaluation",
       "type": "evaluator",
+      "effort": "high",
       "execution": {
         "mode": "fanout",
         "parallelism": "host-max",
@@ -449,6 +456,7 @@
     {
       "id": "visual-revision",
       "type": "bounded-revision",
+      "effort": "high",
       "execution": {
         "mode": "single"
       },
@@ -497,6 +505,7 @@
     {
       "id": "publish-artifacts",
       "type": "linear",
+      "effort": "high",
       "execution": {
         "mode": "single"
       },
@@ -511,6 +520,7 @@
     {
       "id": "generate-web",
       "type": "linear",
+      "effort": "high",
       "execution": {
         "mode": "single"
       },
@@ -525,6 +535,7 @@
     {
       "id": "web-evaluation",
       "type": "evaluator",
+      "effort": "high",
       "execution": {
         "mode": "single"
       },
@@ -541,6 +552,7 @@
     {
       "id": "web-revision",
       "type": "bounded-revision",
+      "effort": "high",
       "execution": {
         "mode": "single"
       },
@@ -557,6 +569,7 @@
     {
       "id": "install-publication",
       "type": "linear",
+      "effort": "high",
       "execution": {
         "mode": "single"
       },
