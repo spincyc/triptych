@@ -46,6 +46,24 @@ GOLD_THRESHOLD = 3
 # so a rare word is not "corrected" into a common one.
 TARGET_THRESHOLD = 5
 SHORTEST = 4
+# Words the audit proposes a correction for and should not: each was opened on
+# the 1962 page image and prints exactly as stored. `per maris undas
+# mirabiliter traduxisti` is the sea St Raymund crossed, not a damaged Mariae;
+# `imitatores effecti` is an ordinary participle, not a damaged effectu. Keyed
+# by the body so a genuine damage of the same form elsewhere still reports.
+READ_ON_THE_PAGE = {
+    ("s-raymundi-penafort-confessoris", "Collect", "maris"),
+    ("s-silvestri-abbatis", "Secret", "effecti"),
+}
+# Settled on grammar rather than on the page, which is weaker and is recorded as
+# such: `beatae Monicae pias lacrimas` is an accusative plural agreeing with its
+# own noun, and `nos in tua simus voluntate concordes` is a present subjunctive.
+# Either would be worth a page reading if it ever mattered to a publication
+# decision; neither is a substitution the corpus supports.
+SETTLED_ON_GRAMMAR = {
+    ("s-monicae-viduae", "Collect", "pias"),
+    ("s-augustini-episcopi-confessoris", "Collect", "simus"),
+}
 
 
 def tokens(text: str) -> list[str]:
@@ -88,8 +106,11 @@ def main() -> int:
                         if maybe in gold and frequency[maybe] >= TARGET_THRESHOLD:
                             candidate = maybe
                             break
-                if candidate:
+                known = READ_ON_THE_PAGE | SETTLED_ON_GRAMMAR
+                if candidate and (mass, proper, word) not in known:
                     hits.append((mass, proper, word, candidate))
+                    break
+                if candidate:
                     break
 
     for mass, proper, word, candidate in sorted(hits):
