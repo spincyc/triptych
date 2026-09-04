@@ -494,6 +494,15 @@ Ephraem. Others need no Collect at all -- Evaristus, the Lateran Dedication and
 Cornelius & Cyprian take their whole Mass from a Common and print no proper
 oration, so the right entry there is the pointer alone.
 
+**The ceiling is a text's first publication, not the saint's canonisation, and
+the difference is worth six orations.** A saint canonised in the 1930s may
+already have had a Mass as a Blessed, and that Mass is in the older book. St
+John Leonardi was canonised in 1938 and his whole formulary stands in the 1922
+Mame's `Missae pro aliquibus locis` under `B. Joannis Leonardi`; Margaret Mary
+Alacoque, canonised 1920, is there at printed p. [74]. So a canonisation date
+tells you where to look, never what to conclude: test the TEXT, and check the
+appendices before reporting a whole-book absence. Found 2026-09-03.
+
 **Postconciliar: 31 of 53 now have a located public-domain historical source,
 22 have none, and 0 remain undecided as acquisition questions.** Target-edition
 collation is a separate gate and remains open for all 31. The negatives are one
