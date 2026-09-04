@@ -5,7 +5,173 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-08-28.
+Last reconciled: 2026-09-04.
+
+## The 1962 Latin backfill, 2026-09-03/04
+
+The 1962 calendar published three Latin oration bodies on the morning of
+2026-09-03 and 1,034 by the end of 2026-09-04. Every composed oration in it has
+now been decided one way or the other. What follows is the state, the rules that
+produced it, and what is left.
+
+### Why it had been stuck
+
+522 elements carried `text_status.state = unavailable` with a `rights-withheld`
+reason naming the 1962 Vatican typical edition, 220 of them seasonal. That was
+never a rights finding. `missale-romanum-1962-facsimile-rights-v1.toml`, recorded
+2026-08-01, already held that the Latin travels on 17 U.S.C. 103(b) plus a
+public-domain witness and names the seasonal orations as preexisting material.
+The rows recorded that nobody had run the collation.
+
+Two further causes emerged as the work went on, and both were mechanical rather
+than legal. Most `witness-gap` rows had been typed against the CMAA FACSIMILE
+ITSELF — an earlier pass could not get a readable target out of a layer that
+wrecks ornamental initials and welds marginal numbers to words. And
+`pdftotext -layout` interleaves the two columns of both PDF witnesses, so every
+absence reached over it was worthless.
+
+### The state
+
+| | published | rights-withheld | witness-gap | scripture, citation only |
+| --- | --- | --- | --- | --- |
+| roman-1962 | 1,034 | 77 | 84 | 2,176 |
+| postconciliar | 0 | 326 | 1 | 2,620 |
+
+Of the 161 unpublished 1962 orations, 41 are `absent` from every pre-1931
+witness, 16 are `variant` where 1955 or 1960 revised the wording, 10 are genuine
+1955 composition, and **33 are `blocked` on a string that needs reading on a
+page image**. Only that last group is likely to become publishable.
+
+### The witnesses
+
+Four public-domain books, all registered:
+
+  * `pustet-ratisbon-1862` — tracked text layer, `prose-latin`, no page images
+    for the temporal or sanctoral runs;
+  * `1922-tours-mame-editio-quarta-iuxta-typicam` — **the only one whose page
+    images render**, and the one that carries the nineteenth- and
+    twentieth-century feasts the 1862 cannot. It supplied more antecedents than
+    the 1862 in every sanctoral lane;
+  * `venice-1570` and `vatican-typica-1604` — `degraded-latin`, corroboration
+    only.
+
+Both 1962 witnesses (the CMAA facsimile and the Benziger conformed printing) are
+`storage = "remote"` by rights design; they were fetched once against their
+registered hashes into session scratch and are not retained.
+
+### The rules the maintainer settled, all in guidance/propers-for-agents.md
+
+  * **A transformation changes how a word is spelled; a variant changes which
+    word is said.** The repository publishes its own declared orthography and
+    has never served an exact 1962 string: it prints `justitiae` with a j where
+    the facsimile prints 231 i-forms and none the other way, and `Alleluia`
+    where the Mame prints 797 `Alleluja`. An exact-string rule applied honestly
+    would withhold every body in the calendar.
+  * **An order is not a contribution.** 1955 mostly selected, cut, restored and
+    reordered; 103(b) reaches the prayer a reform composed, never the new
+    position it gave an old one. This recovered eleven Easter Vigil texts that
+    a lane had reported wholly absent — three of the four prophecy collects sit
+    at the 1862's 4th, 8th and 12th ordinals.
+  * **Filling a rubrical blank is not authorship**, where the 1962 writes the
+    day's saint into a Common's slot.
+  * **Reproduce the conclusion the target prints, at the length it prints it.**
+    This closed an `open_collation_items` entry.
+  * **A chant body carries the sung words, not the printed citation**, which the
+    `verses` field already holds.
+  * **The ceiling is a text's first publication, not the saint's canonisation.**
+    St John Leonardi was canonised in 1938 and his whole formulary is in the
+    1922 Mame under `B. Joannis Leonardi`.
+
+### Two guards, and why a screen is not enough
+
+`scripts/_latin_body_damage.py`, run by `check-calendar-masses`, refuses a body
+that is a recogniser reading rather than a page reading: accents read as digits,
+the ae ligature read as se or x or a question mark, u read as ii, welded words,
+characters no prayer carries. 133 bodies were quarantined by it. Its tests carry
+the false positives that shaped it — `praesidiis`, `audisset`, `cor`, `ego`,
+`da`, `Ps. 77, 1`, `«Hosanna»`, the `/` of Gloria laus — because a length rule
+tried and removed had refused all of them, and one lane's finalizer had already
+DELETED `es`, `Da`, `O` and `qui` from a body on that reasoning.
+
+`tools/audit-latin-body-substitutions` finds what no pattern can: a token that
+becomes a word the corpus already uses under exactly one substitution.
+`seterna`, `quassumus`, `animas`, `lsetificas` all damage into ordinary-looking
+Latin and passed every screen. It found eleven in already-committed bodies; a
+repair lane read all eleven on page images and **none read as stored**. It
+reports and never edits, and its two page-confirmed false positives are recorded
+in it: `per maris undas` is the sea St Raymund crossed.
+
+The lesson behind both: a cross-witness check cannot see damage two witnesses
+share. The 1862 layer has 306 instances of `qusesumus` and the Benziger 397.
+
+### The toolkit
+
+`scripts/latin_backfill/` — apply, land, reconcile, and the j-orthography map,
+with a README recording what each guard is for and what it cost to learn. Not
+registered tools: each is a step in a human-driven sequence, not one question
+with a byte-stable answer.
+
+A lane brief lives at `.scratch/backfill/LANE-BRIEF.md` while a session runs and
+does not survive it. Its durable content is in guidance; its operational content
+— the page mappings, the traps — is reproduced below.
+
+### Traps a future lane will hit
+
+  * `pdftotext -layout` interleaves two-column pages; use `-raw` for searching.
+    `-bbox` interleaves the same way.
+  * A page with a mid-page full-width feast title has two STACKED column blocks,
+    which `-raw` does not fix. Split horizontally at the heading first.
+  * The Mame's recogniser prints `æ` as `z` or drops it to `e`; the literal
+    string `ae` occurs 279 times in 2.27 MB of that layer, so any Mame negative
+    reached over `ae` is worthless.
+  * A body can lose its OPENING WORD entirely to a dropped ornamental initial
+    and still be well-formed Latin. Check each against the calendar's `incipit`.
+  * Page mappings, each to be verified against the page's own printed folio:
+    1962 temporal and sanctoral PDF = printed + 81; the 1962 Commune is
+    separately paginated at PDF = printed bracketed + 808; the Mame at
+    PDF = printed + 114, and its Commune at PDF = printed starred + 878.
+  * A day's Mass usually begins at the foot of the preceding folio, so the
+    running head lags the formulary. The FORMA MISSAE BREVIOR between Ember
+    Saturday of Lent I and Dominica II puts every later day one off if you count
+    Introits.
+
+### Outstanding, in the order I would take it
+
+  1. **The 33 blocked bodies** — one repair lane. The only category likely to
+     become publishable. Includes the four whose stored target was truncated
+     mid-prayer (`s-hilarii` Secret, `comm-s-petri-apostoli` Secret,
+     `comm-s-pauli-apostoli` Postcommunion, `s-gregorii-i` Postcommunion),
+     which need a collation lane rather than a repair lane, since a repair lane
+     may not manufacture the rest of a prayer.
+  2. **The 2,176 sung propers of the 1962 calendar.** The reader currently
+     prints a Bible wherever the Missal recasts: for the Fourteenth Sunday's
+     Communion it shows `Quaerite ergo primum regnum Dei, et justitiam ejus`
+     where the Missal prints `Primum quaerite regnum Dei, et omnia adjicientur
+     vobis, dicit Dominus`. A recast antiphon is `mixed`, not `scripture`, so
+     each needs its `source` changed as well as a body.
+  3. **The postconciliar calendar**, 327 composed and 2,620 sung. Its rights
+     position is genuinely different — ICEL English, a 2002 typical edition in
+     copyright, its own settled records — and the 1962 rules do not carry over
+     unexamined.
+
+### Things left in a state a reader should know about
+
+  * The Exsultet stays `variant` and the question is closed on a decree, not a
+    failed search: the SRC's *Urbis et Orbis* of 23 September 1860 ordered that
+    the imperial commemoration no longer be RECITED but still be PRINTED in new
+    Missals, which is why a republican printing still prints an emperor. A
+    Baltimore 1835 and a Tours Mame 1882 were read on page images to confirm it.
+    The one unopened route: no pre-1931 Pustet New York or Benziger New York
+    altar Missal is scanned anywhere reachable.
+  * The seventeen Common and Saturday-BVM chants that
+    `roman-1962-pustet-common-collation-v1.toml` withheld on 2026-08-26 are now
+    published on the Mame. That record is superseded for publication and says so
+    in its own words; every finding it makes about the Pustet stands.
+  * 35 release bindings were stale before this work began and were adopted with
+    the rest. Nobody has investigated why those web editions changed.
+  * The Fourteenth Sunday leaf is held out of `main` until its production
+    finishes: all 49 entries in `claude-publications-v1.toml` have a shipped PDF
+    behind them, and that leaf has none. It is on `impl/proper-54-production`.
 
 ## Standing public-alpha authority
 
