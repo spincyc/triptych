@@ -68,8 +68,8 @@ Advérsus huiúsmodi non est lex. Qui autem sunt Christi, carnem suam
 crucifixérunt cum vítiis et concupiscéntiis.
 
 `Fratres` is the liturgical address. The Vulgate/Missal list has twelve fruit
-terms; the common Greek critical text has nine. No numerical interpretation
-controls a published reading.
+terms; SBLGNT v1.2 at Galatians 5:22–23 has nine, corroborated by RP2018 at the
+same locus. No numerical interpretation controls a published reading.
 
 ### 4. Gradual — Ps. 117:8–9 — no. 1575
 

@@ -74,6 +74,22 @@ source_fingerprint = "sha256:d1becf65404d8b685106f60ada2ee449c6fc70f69fdb1e90b6e
 context = "The appointed verses control Epistle English; chapters 4-6 control the explicitly identified argumentative context and pericope boundary."
 
 [[bindings]]
+source_id = "artifact.society-of-biblical-literature.sbl-greek-new-testament.faithlife-v1.2-c4d241a.github-archive-c4d241a-cc1715f3"
+loci = ["Galatians 5:22-23"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:e428f0640a557bb0e2cb915b4b2a2eb072846ca98dbe9fdbc11407bca9f53ee8"
+context = "The edition-identified SBLGNT v1.2 Greek text controls the guide's statement that the Greek fruit list contains nine terms. No Greek text is reproduced."
+
+[[bindings]]
+source_id = "artifact.robinson-pierpont.greek-new-testament-byzantine-textform.rp2018-byztxt-unicode-csv.ccat-csv-gal-69a5ca3f"
+loci = ["Galatians 5:22-23"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:ffc631b534871e5687e67389768fe4f331cda205f22a6ea3ea7ee9e9a7bc3344"
+context = "The RP2018 Galatians witness independently corroborates the nine-term Greek fruit list without controlling the edition cited in the guide."
+
+[[bindings]]
 source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.psalm-numbering-ee3c7757"
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
@@ -82,12 +98,20 @@ context = "The registered concordance supplies the published Vulgate-to-modern P
 
 [[bindings]]
 source_id = "artifact.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.wikimedia-pdf-72ee8714"
-loci = ["Psalm 83, PG 80 cols. 1537-1544, artifact PDF pp. 817-820", "Psalm 94:1, PG 80 cols. 1639-1640, artifact PDF p. 868", "Psalm 117:8-9, PG 80 cols. 1811-1812, artifact PDF p. 956"]
+loci = ["Psalm 33:8-11, PG 80 cols. 1103-1106", "Psalm 83, PG 80 cols. 1537-1544, artifact PDF pp. 817-820", "Psalm 94:1, PG 80 cols. 1639-1640, artifact PDF p. 868", "Psalm 117:8-9, PG 80 cols. 1811-1812, artifact PDF p. 956"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-26"
 source_fingerprint = "sha256:f431d1af4d23e9bc63a710fdaa7d8198d2aba0ac1853cde486c5307cbc031b66"
-context = "The complete registered Greek-Latin facsimile was reacquired and matched to SHA-256 72ee87148ebda475ceea8b46b4325358dd20b07562ba0072b6fe06554eacbdd8. Exact page images were visually inspected for Theodoret's church-and-altar and corporate anointed-face reading of Psalm 83, his Josianic and christological reception of Psalm 94:1, and his sharp divine-versus-mortal-helper contrast at Psalm 117:8-9."
+context = "The complete registered Greek-Latin facsimile was reacquired and matched to SHA-256 72ee87148ebda475ceea8b46b4325358dd20b07562ba0072b6fe06554eacbdd8. Exact page images were visually inspected for Theodoret's literal-angelic, experiential, baptismal, and Eucharistic movement at Psalm 33; his church-and-altar and corporate anointed-face reading of Psalm 83; his Josianic and christological reception of Psalm 94:1; and his sharp divine-versus-mortal-helper contrast at Psalm 117:8-9."
+
+[[bindings]]
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.commons-ia-facsimile-78b290d4"
+loci = ["Psalm 83:1-3, 9-10", "Psalm 117:8-9", "Psalm 94:1"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:6221c39e003611f5ca8e53a39ee29224a806934ad8bbe85d5bf3d122911a1ac6"
+context = "O'Sullivan's 1866 abridged English witness supports the guide's attributed Bellarmine reception of pilgrim longing and Christ's merits in Psalm 83, subordinate creaturely trust in Psalm 117, and interior joy preceding voiced praise in Psalm 94. Its abridgment is stated in the guide and no omitted matter is attributed to Bellarmine."
 
 [[bindings]]
 source_id = "segment.jerome.commentariorum-in-evangelium-matthaei.vallarsi-migne-pl26-1845.pl26-columns-15-218"
