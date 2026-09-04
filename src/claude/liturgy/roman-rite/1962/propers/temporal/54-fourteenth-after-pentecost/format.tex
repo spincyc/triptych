@@ -140,7 +140,8 @@ answer the Latin.} #1\par}
   fonttitle=\small\bfseries
 }
 \newenvironment{proposal}[1]{%
-  \par\begin{proposalbox}{Editorial proposal --- #1}\small}{%
+  \par\Needspace{16\baselineskip}\null
+  \begin{proposalbox}{Editorial proposal --- #1}\small}{%
   \end{proposalbox}\par}
 \else
 \newenvironment{proposal}[1]{%
@@ -155,9 +156,8 @@ answer the Latin.} #1\par}
 \newenvironment{afterlife}[1]{%
   \begin{massbox}{#1}\small}{\end{massbox}}
 
-% The short Bosch entry must remain one visual unit. Keep this targeted rather
-% than making the whole gallery unbreakable, since longer entries should still
-% reflow instead of producing sparse pages.
+% A targeted whole-entry variant remains available for short gallery entries;
+% longer entries use the breakable environment above.
 \ifdefined\TriptychPrintEdition
 \newenvironment{afterlifewhole}[1]{%
   \par\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}%

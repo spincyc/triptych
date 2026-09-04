@@ -17,12 +17,16 @@ document = "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-penteco
 # The v20 research reached and directly inspected the registered Theodoret
 # PG 80 page-image artifact at the four appointed psalm loci, the registered
 # Theodoret Galatians artifact at 5:16--24, and Schuster at the cited Sunday;
-# their current bindings below record those states. Bellarmine, Guéranger,
-# Aquinas on Galatians, and Ambrose likewise have current inspected or verified
-# bindings below. Cassiodorus was inspected through the cited Corpus Corporum
+# their current bindings below record those states. Bellarmine, Aquinas on
+# Galatians, and Ambrose likewise have current inspected or verified bindings
+# below. The registered Guéranger artifact is retained only as a bibliographic
+# lead because its 1900 Duffy identity conflicts with the inspected volume's
+# visible 1909 Stanbrook Abbey/London title page. Cassiodorus was inspected
+# through the cited Corpus Corporum
 # transcription, while the library's Cassiodorus edition remains cataloged-only.
-# Wilson's sacramentary editions remain cataloged-only because the library has
-# no exact passage control for the loci used. Exact but unregistered
+# The Old Gelasian edition remains cataloged-only because the library has no
+# exact passage control for the loci used; the Hadrianum pages now also have
+# an exact artifact binding. Exact but unregistered
 # patristic and medieval witnesses are intelligibly cited in References without
 # invented source-library identifiers. No `negative-search` binding is asserted.
 
@@ -78,10 +82,10 @@ context = "Degraded, uncorrected OCR derivative consulted only as a finding aid.
 [[bindings]]
 source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.post-pentecosten-14-orations"
 loci = ["Dominica XIV. post Pentecosten, printed pp. 337-338; Collect at text-layer lines 50165-50176, Secret at 50294-50299, Postcommunion at 50311-50316"]
-role = "rights-control"
+role = "lead"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:3cfdf46179ee53b9c596bd95f11329d445d46566f19bfa8d0dbf420e7e1122dc"
-context = "Exact public-domain antecedent for the words of the three orations under 17 U.S.C. 103(b); it does not control target typography, accents, pointing, or conclusion length."
+context = "Damaged-OCR passage retained as a finding aid only. No Pustet page image was read, so this record supports no Pustet-specific wording, antecedence, preexisting-material, or rights conclusion. The verified public-domain Mame 1922 page-image passage supplies the guide's supported preexisting-material basis for the three orations."
 
 [[bindings]]
 source_id = "artifact.catholic-church.missale-romanum.venice-1570.missale-romanum-1570-text-563f4dd2"
@@ -314,11 +318,10 @@ context = "Later historical-liturgical reception of this Sunday's prayers and le
 [[bindings]]
 source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-pdf-95ba98e2"
 loci = ["vol-xi-p-341", "vol-xi-p-342", "vol-xi-p-343"]
-role = "reception"
-states = ["cataloged", "acquired", "inspected", "verified"]
-verified_on = "2026-09-04"
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:0c284a75a9d4ba61141e669e20bac150113946f19b1240b58607e61bec7164ad"
-context = "Later liturgical reception of the Sunday and the witness that describes Primum quaerite as the later Communion at this position."
+context = "Bibliographic lead retained because this run's binding file only grows. Its registered Dublin/Duffy/1900 edition identity conflicts with the inspected artifact's visible 1909 Stanbrook Abbey/London title page, so it does not bind or verify the reader-facing Guéranger use. The guide cites the inspected 1909 witness human-readably at pp. 341-343 pending correction of the reusable source registration."
 
 [[bindings]]
 source_id = "artifact.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.wikimedia-pdf-72ee8714"
@@ -406,3 +409,101 @@ role = "official-control"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:c40ff5823bf507bb1b1c3da6c3462cd41308ad1a1ddff3b85831e607901f2e18"
 context = "Rubricae generales Missalis Romani 434 b with 435 yields the same absence of additional seasonal orations for this II-class Sunday, but these code provisions did not abolish the orationes pro diversitate Temporum. They neither replace the separate official control for that abolition nor redefine the principal proper's ten-element boundary."
+
+# --- Additions from workflow proper v25 ---
+
+[[bindings]]
+source_id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-scan-pdf-96fd93c7"
+loci = ["section CXXXIII, Sunday XV, printed pp. 173-174"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:947c17554ee950a6fe5977828c76e9d3603b4eb958fa843bc6178765c10ea3b7"
+context = "Direct page-image witness for the exact Collect, Secret, and Postcommunion standing consecutively at Sunday XV in Wilson's Gregorian supplement. It establishes this particular sequence and ordinal, not a universal rule for the sequence's movement."
+
+[[bindings]]
+source_id = "artifact.rene-jean-hesbert.antiphonale-missarum-sextuplex.herder-reprint-1967.google-drive-scan-pdf-1d984d23"
+loci = ["no. 186, comparative table at printed pp. 186-187"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:7bbeb17f6880b238f12ef8610d6f7ab27349c267a74cad298753b241b2765128"
+context = "Direct inspection of Hesbert's six-antiphoner comparison for the early Sunday-XIV nucleus Protector, Immittet, and Panis, its variable Gradual and Alleluia states, and its manuscript lacunae. It does not establish Venite or Primum in the surviving early state."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.lippe-milan-1474-reprint-1899.ia-scan-pdf-c6e1420d"
+loci = ["Dominica XIIII post Pentecosten, printed pp. 276-277"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:4e6aba2a82e6e67eed97a6e9b5cfdc0b596a236a0f4574b8ee5d615e72052e99"
+context = "Direct page-image witness for the complete ten-element core in the later order in Lippe's edition of the 1474 Milan Roman-Curia Missal. It bounds continuity but proves neither first appearance nor universal Roman use."
+
+[[bindings]]
+source_id = "artifact.johannes-of-valkenburg.graduale-cologne-codex-1001b.manuscript-cologne-codex-1001b.koeln-catalog-html-bdb1c19d"
+loci = ["Cod. 1001b catalogue description and manuscript metadata"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:e03a5afa27b041778e60ffc28f5fd894d14c154ea6eb3b0e0a2f092d347f0293"
+context = "Holding-library control for the identity, extent, authorship, completion date, and digital foliation of Johannes of Valkenburg's 1299 Gradual. The leaf images, not the catalogue description, control the chant sequence."
+
+[[bindings]]
+source_id = "artifact.johannes-of-valkenburg.graduale-cologne-codex-1001b.manuscript-cologne-codex-1001b.koeln-folio-184v-79310ba6"
+loci = ["Cod. 1001b, fol. 184v"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:bab3647aa114b1a6eaff6d7f1bbaf4532f4018a8c7a90b4ccd2ec576f71949c7"
+context = "Direct manuscript image for the beginning of the Sunday-XIV chant sequence, read together with fols. 185r-185v."
+
+[[bindings]]
+source_id = "artifact.johannes-of-valkenburg.graduale-cologne-codex-1001b.manuscript-cologne-codex-1001b.koeln-folio-185r-81718dd9"
+loci = ["Cod. 1001b, fol. 185r"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:3558231043e02f70aa56ee36f50743d8cae3db09c45c3dd47144c1240b2d3ac5"
+context = "Direct manuscript image for the middle of the Sunday-XIV chant sequence, read together with fols. 184v and 185v."
+
+[[bindings]]
+source_id = "artifact.johannes-of-valkenburg.graduale-cologne-codex-1001b.manuscript-cologne-codex-1001b.koeln-folio-185v-71b014ff"
+loci = ["Cod. 1001b, fol. 185v"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:8677415a046349264d01bd4bbad39b87ff5ac2d1aab123d548ba5e5af6a38eb9"
+context = "Direct manuscript image for the end of the Sunday-XIV chant sequence, read together with fols. 184v-185r. The three images establish all five later chants together and in order in this witness, not universal Roman use."
+
+[[bindings]]
+source_id = "artifact.frederick-douglass.baptists-congregationalists-free-church-and-slavery.yale-glc-web-2026-09-04.yale-glc-html-284ba652"
+loci = ["address transcript, paragraph 7"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:57c0470a3bed116e71578821ceaa0630ead55f44f9b5b3e3978340c8d4755790"
+context = "Exact Yale presentation inspected for Douglass's direct use of Matthew 6:24 in an abolitionist and ecclesial contrast. The guide quotes only the short public-domain biblical clause and makes no dependence claim about the Douay or this proper."
+
+[[bindings]]
+source_id = "artifact.samuel-butler.erewhon.gutenberg-ebook-1906-2025-08-05.gutenberg-pg1906-9b034d09"
+loci = ["chapter XXVII, The Views of an Erewhonian Philosopher Concerning the Rights of Vegetables"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:7386d6d883c40940f97494e31c6839bdc70a508468a0ff9cd971c1969717bd17"
+context = "Complete Gutenberg text inspected for Butler's direct comic reversal of Matthew 6:28-29. The guide identifies the revised edition and does not attribute its wording to the 1872 first edition."
+
+[[bindings]]
+source_id = "artifact.john-oliver-hand-and-martha-wolff.early-netherlandish-painting.nga-cambridge-1986.nga-pdf-9d612519"
+loci = ["Bosch catalogue entry, printed pp. 17-22, especially p. 18"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:3f532b0a5284727228abac84023ac4b581e92ec67b3ce06f420d5e7cc57546df"
+context = "Exact National Gallery catalogue inspected for the moderate visual relation between Death and the Miser and Matthew 6:24. The protected catalogue is paraphrased; the painting contains no quotation, and no Bosch dependence claim is made."
+
+[[bindings]]
+source_id = "artifact.supreme-court-of-the-united-states.united-states-v-mississippi-valley-generating-company.united-states-reports-364-1961.gpo-authenticated-pdf-66ac7ad0"
+loci = ["364 U.S. 520, official reporter pp. 548-550, especially p. 549"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:df426f1082c703cd72908637302976b047e0702d46b43b7802efdbd995c9faab"
+context = "Authenticated official opinion inspected for the Court's direct citation of Matthew 6:24 when explaining the conflict between public duty and economic self-interest. No Douay or proper dependence is asserted."
+
+[[bindings]]
+source_id = "artifact.upton-sinclair.the-profits-of-religion.gutenberg-ebook-1558-2015-04-02.gutenberg-pg1558-543d31a9"
+loci = ["section Spiritual Interpretation"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5a99ebd73bd1102f573e14dcc3d76cc16a34c8bf0b7f37dda5a8fd137a42fe72"
+context = "Complete Gutenberg text inspected for Sinclair's direct parody of Matthew 6:33. Its resemblance to the Communion's shortening does not establish dependence on this proper or its English witness."

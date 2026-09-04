@@ -82,7 +82,7 @@ kind = "notable-quotable"
 path = "sections/40-notable.tex"
 modes = ["research", "synthesis"]
 depends_on = ["source-grounded-synthesis"]
-element_keys = ["gospel", "offertory"]
+element_keys = ["gospel", "communion"]
 references = ["sections/99-references.tex"]
 
 [[components]]
@@ -125,13 +125,18 @@ element_keys = ["introit", "gradual", "epistle", "gospel", "communion"]
 evidence = ["textual-observation", "exploratory-proposal"]
 
 [[relations]]
-key = "addition-subordinate-to-direction"
-element_keys = ["gospel", "collect", "postcommunion"]
+key = "human-inability-and-divine-addition"
+element_keys = ["gospel", "communion"]
 evidence = ["textual-observation", "exploratory-proposal"]
 
 [[relations]]
 key = "saving-grammar-changes-role"
 element_keys = ["collect", "alleluia", "secret", "postcommunion"]
+evidence = ["textual-observation", "exploratory-proposal"]
+
+[[relations]]
+key = "trust-spoken-where-clauses-withheld"
+element_keys = ["introit", "gradual", "offertory"]
 evidence = ["textual-observation", "exploratory-proposal"]
 
 [[relations]]
@@ -141,10 +146,5 @@ evidence = ["documented-reception", "exploratory-proposal"]
 
 [[relations]]
 key = "one-desire-root-opposed-objects"
-element_keys = ["introit", "epistle", "gospel"]
+element_keys = ["introit", "epistle"]
 evidence = ["textual-observation", "exploratory-proposal"]
-
-[[relations]]
-key = "tasting-discloses-the-master"
-element_keys = ["gospel", "offertory", "secret", "communion"]
-evidence = ["textual-observation", "documented-reception", "exploratory-proposal"]
