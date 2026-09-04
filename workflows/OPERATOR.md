@@ -792,15 +792,64 @@ lane alone owns and mandates its distinct finding-ID prefix, so the joined
 findings keep stable, non-colliding ids. For the two evaluators the fragments
 partition the numbered criteria of the shared stage fragment, with no criterion
 invented or dropped; for `research` they partition the questions asked, and each
-lane is told which questions belong to the other six. Both evaluators still
-bound their revision loops at three consecutive `CHANGES_REQUIRED` joins, as
-before, whichever route those joins took, and `research` has no revision loop
-of its own — a lane that cannot sweep returns `BLOCKED` and the run stops, and
-a re-entry, whether routed from `content-evaluation` or sent back by
+lane is told which questions belong to the other six. `research-synthesis`
+bounds its repeat loop at three; `content-evaluation` bounds its three-owner
+repair loop at four from version 22. `research` has no revision loop of its own
+— a lane that cannot sweep returns `BLOCKED` and the run stops, and a re-entry,
+whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
-The `proper` workflow is at version 19. Version 19 told the content evaluation
+The `proper` workflow is at version 22. Version 22 gives
+`content-evaluation` four repeat-budget slots for its three ordered repair
+owners. The first failed evaluation spends one slot before any repair owner has
+run, so the former ceiling of three could stop a defect before its third owner
+was dispatched. Run `ce4ecd514b64d2f9` demonstrated the failure: its fourth
+content evaluation found that research had supplied the evidence requested by
+`CON-CIT-007` and assigned the remaining bibliography correction to
+`authoring`, but the evaluator reached 3/3 repeats before `tpt` could take the
+declared route to `content-revision`. Four retains a hard repeat bound while
+admitting the initial finding and one visit to each declared owner. The
+regression replays that run's four evaluation results and requires the fourth
+to emit the authoring packet rather than `BLOCKED`. A run seeded against
+version 21 or earlier fails closed; seed it again.
+
+The `proper` workflow was at version 21. Version 21 closes the citation-handoff
+gap proved by run `dae51f4a7715c7f9`. The cultural-afterlife lane had gathered
+exact titles, institutions, stable URLs and loci for the retained online
+witnesses. Synthesis reduced those records to generic labels in the immutable
+brief while directing the author to carry stable links "from this brief". The
+citation evaluator then combined leaf omissions with those absent brief values
+in one `authoring` finding and said the brief held details it did not hold. The
+author correctly refused to retrieve around its immutable input and the run
+ended `BLOCKED`.
+
+The cultural lane now returns a complete citation bundle for every retained
+online witness and corroborant; synthesis must preserve each bundle in
+`research/scope.md` and compare it with the lane finding before `PASS`;
+content evaluation must find every requested value in the brief before naming
+`authoring`, and must split a mixed evidence-and-leaf defect by repair owner.
+The regression checks both the source fragments and the packets workers
+receive. A run seeded against version 20 or earlier fails closed; seed it
+again. A terminal v20 run is evidence, not a resumable v21 run.
+
+The `proper` workflow was at version 20. Version 20 closes the fresh-leaf gap in
+`resolve-context`. That stage runs before `source-audit`, which is ordinarily
+the first stage to create a new provider leaf. Version 19 invoked
+`proper-chronology record --write` while the leaf did not exist, treated the
+writer's refusal as an answer, and could report `PASS`; `source-audit` then
+created the leaf, leaving `research/chronology.toml` absent until
+`research-synthesis` correctly stopped the run.
+
+`resolve-context` now creates `src/<provider>/<proper>/research/` before
+invoking the chronology writer and verifies that the generated record exists.
+Directory creation, writer refusal, and a missing record are required-work
+failures: the stage returns `BLOCKED`, never `PASS`. The regression starts
+with no provider leaf, materializes only that directory, runs the real writer,
+and proves the record can be created. A run seeded against version 19 or
+earlier fails closed; seed it again.
+
+The `proper` workflow was at version 19. Version 19 told the content evaluation
 that the leaf builds two documents. It always had: `main.tex` builds the
 canonical guide, `synthesis.tex` builds the synthesis edition beside it, and
 which prose reaches which reader is decided by `\ifdefined` branches and by

@@ -1,6 +1,6 @@
 {
-  "id": "proper",
-  "version": 22,
+  "id": "proper-finish",
+  "version": 1,
   "description": "1962 propers synthesis production workflow",
   "default_effort": "xhigh",
   "document_argument": "proper",
@@ -24,173 +24,6 @@
     }
   },
   "stages": [
-    {
-      "id": "seed",
-      "type": "linear",
-      "execution": {
-        "mode": "single"
-      },
-      "fragments": [
-        "common/agent-brief.md",
-        "common/result-format.md",
-        "propers/seed.md"
-      ],
-      "result_schema": "worker-result.json",
-      "next": "authorize-target"
-    },
-    {
-      "id": "authorize-target",
-      "type": "linear",
-      "execution": {
-        "mode": "single"
-      },
-      "fragments": [
-        "common/agent-brief.md",
-        "common/result-format.md",
-        "propers/authorize-target.md"
-      ],
-      "result_schema": "worker-result.json",
-      "next": "scope-gate"
-    },
-    {
-      "id": "scope-gate",
-      "type": "gate",
-      "execution": {
-        "mode": "program"
-      },
-      "checks": [
-        {
-          "id": "registered-identity",
-          "command": "tools/check-proper-identity --document {proper}",
-          "required_result": "the leaf id must carry a permanent proper identity the 1962 calendar registers; an unregistered identity names no proper to produce"
-        },
-        {
-          "id": "known-provider",
-          "command": "case {provider} in claude|gpt) ;; *) exit 1 ;; esac; test -d src/{provider}",
-          "required_result": "the provider must be one this repository publishes for, claude or gpt, and must have a source root"
-        },
-        {
-          "id": "authorized-scope",
-          "command": "awk -v p={provider} -v d={proper} 'index($0, \"- Authorized \") == 1 && index($0, \"provider `\" p \"`, identity `\" d \"`.\") > 0 { found = 1 } END { exit !found }' guidance/liturgy/propers-production-plan.md",
-          "required_result": "the production plan must record a maintainer authorization for exactly this provider and this identity; the propers collections are closed, and a registered permanent identity is not itself authorization to produce one"
-        }
-      ],
-      "pass_transition": "resolve-context",
-      "fail_transition": "BLOCKED",
-      "max_iterations": 3
-    },
-    {
-      "id": "resolve-context",
-      "type": "linear",
-      "execution": {
-        "mode": "single"
-      },
-      "fragments": [
-        "common/agent-brief.md",
-        "common/result-format.md",
-        "propers/resolve-context.md"
-      ],
-      "result_schema": "worker-result.json",
-      "next": "source-audit"
-    },
-    {
-      "id": "source-audit",
-      "type": "linear",
-      "effort": "max",
-      "execution": {
-        "mode": "single"
-      },
-      "fragments": [
-        "common/agent-brief.md",
-        "common/result-format.md",
-        "propers/source-audit.md"
-      ],
-      "result_schema": "worker-result.json",
-      "next": "research"
-    },
-    {
-      "id": "research",
-      "type": "linear",
-      "execution": {
-        "mode": "fanout",
-        "parallelism": "host-max",
-        "join": "strict-union",
-        "lanes": [
-          {
-            "id": "scripture-context",
-            "fragments": [
-              "propers/lanes/research-scripture-context.md"
-            ]
-          },
-          {
-            "id": "patristic-reception",
-            "fragments": [
-              "propers/lanes/research-patristic-reception.md"
-            ]
-          },
-          {
-            "id": "liturgical-history",
-            "fragments": [
-              "propers/lanes/research-liturgical-history.md"
-            ]
-          },
-          {
-            "id": "theological-synthesis",
-            "fragments": [
-              "propers/lanes/research-theological-synthesis.md"
-            ]
-          },
-          {
-            "id": "source-citation-coverage",
-            "fragments": [
-              "propers/lanes/research-source-citation-coverage.md"
-            ],
-            "effort": "max"
-          },
-          {
-            "id": "cultural-afterlife",
-            "fragments": [
-              "propers/lanes/research-cultural-afterlife.md"
-            ]
-          },
-          {
-            "id": "precedent-search",
-            "fragments": [
-              "propers/lanes/research-precedent-search.md"
-            ]
-          }
-        ]
-      },
-      "fragments": [
-        "common/agent-brief.md",
-        "common/result-format.md",
-        "propers/research.md"
-      ],
-      "repairs": [
-        "research"
-      ],
-      "result_schema": "research-result.json",
-      "next": "research-synthesis"
-    },
-    {
-      "id": "research-synthesis",
-      "type": "evaluator",
-      "execution": {
-        "mode": "single"
-      },
-      "fragments": [
-        "common/agent-brief.md",
-        "common/result-format.md",
-        "propers/research-synthesis.md"
-      ],
-      "repairs": [
-        "brief"
-      ],
-      "result_schema": "research-synthesis-result.json",
-      "pass_transition": "author-proper",
-      "fail_transition": "research",
-      "max_iterations": 3
-    },
     {
       "id": "author-proper",
       "type": "linear",
@@ -311,24 +144,16 @@
         "common/result-format.md",
         "propers/content-evaluation.md"
       ],
-      "result_schema": "content-evaluation-result.json",
+      "result_schema": "content-evaluation-finish-result.json",
       "pass_transition": "build-artifacts",
       "fail_transition": "content-revision",
       "repair_routes": [
-        {
-          "repair_target": "research",
-          "transition": "research"
-        },
-        {
-          "repair_target": "brief",
-          "transition": "research-synthesis"
-        },
         {
           "repair_target": "authoring",
           "transition": "content-revision"
         }
       ],
-      "max_iterations": 4
+      "max_iterations": 3
     },
     {
       "id": "content-revision",

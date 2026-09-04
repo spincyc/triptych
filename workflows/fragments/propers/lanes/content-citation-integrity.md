@@ -25,6 +25,16 @@ and a rendering composed rather than quoted is still composed in the edition
 nobody opened. Read what every document renders, and name in each finding the
 file the citation is in.
 
+For an online citation defect, compare the leaf with the read-only
+`research/scope.md` before assigning its repair. An exact title, responsible
+creator or institution, edition or datestamp, stable URL, access date, or locus
+that the repair requires must actually be present in the read-only brief before
+the finding may name `authoring`. If a required value is absent, report that
+evidence defect separately as `research`; if the brief holds the correct value
+elsewhere but states it wrongly in its audit, report it separately as `brief`.
+Keep a leaf-only omission in its own `authoring` finding rather than combining
+different owners into one citation finding.
+
 ## Result
 
 Return an evaluator result for this lane. `PASS` when neither criterion is

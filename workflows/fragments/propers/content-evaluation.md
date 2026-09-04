@@ -150,6 +150,24 @@ Ask the three questions in this order and stop at the first yes.
   prose, the structure, or the use of citations in the canonical leaf is
   defective while the brief it was written from is right.
 
+Before naming `authoring`, inspect the finding's `required_result` against the
+read-only `research/scope.md` and verify that every fact and citation detail it
+requires is explicitly present there. Never say that the brief holds a title,
+creator or institution, edition or date, stable URL, access date, or locus
+without locating that value in the brief. A prior lane result or run artifact
+does not make evidence available to the author: the immutable brief is its
+whole research input. If a necessary online citation value is missing from the
+brief, the evidence-retrieval defect is `research`; if the correct value is
+present elsewhere in the brief but its audit states it wrongly, the defect is
+`brief`.
+
+One blocking finding names one defect and one repair owner. When a passage of
+the leaf needs revision but the revision also depends on evidence the brief
+does not contain, split the compound report into separate findings: the
+missing-evidence finding goes to `research` or `brief` under the rules above,
+and the leaf-only finding goes to `authoring`. Do not hide two owners behind a
+single `required_result`; only the owner named on that finding will receive it.
+
 `brief` exists because `research/scope.md` has exactly one writer,
 `research-synthesis`, and so a defect in the brief can be repaired in no other
 stage. Naming such a defect `research` does not reach that writer any sooner:

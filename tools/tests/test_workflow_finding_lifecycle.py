@@ -282,11 +282,15 @@ class TheRunThatShouldNotHaveBlockedTests(RoutingCase):
         production run six hours in.
         """
         consecutive = len(self.HISTORY)
+        legacy_limit = 3
+        self.assertGreaterEqual(
+            consecutive, legacy_limit,
+            "counting failures, this history reached the limit exactly")
         declared = {s["id"]: s for s in workflow_json()["stages"]}[
             EVALUATION]["max_iterations"]
-        self.assertGreaterEqual(
-            consecutive, declared,
-            "counting failures, this history reached the limit exactly")
+        self.assertGreater(
+            declared, legacy_limit,
+            "v22 separately widens the three-owner evaluation route")
 
     def test_the_authoring_findings_reach_an_author_at_the_first_round(self):
         """The other half: iteration 0's brief defect no longer loses them."""
@@ -306,6 +310,99 @@ class TheRunThatShouldNotHaveBlockedTests(RoutingCase):
             ["CON-CIT-016", "CON-CIT-017", "CON-EVI-001", "CON-EVI-002",
              "CON-EVI-003", "CON-EVI-004", "CON-PRO-001"],
             "all seven, to the author that re-authored blind")
+
+
+class MixedOwnerCitationBudgetTests(RoutingCase):
+    """The three-owner route has room to dispatch its final owner.
+
+    Run ce4ecd514b64d2f9 used two repeat-budget slots before a new citation
+    finding entered the loop. Research supplied that finding's missing
+    evidence; the next evaluation then assigned the remaining leaf repair to
+    authoring under the same stable id. That fourth evaluation selected the
+    right route, but v21's 3/3 ceiling blocked before emitting its packet.
+    """
+
+    def evaluate(self, run_id: str, findings_by_lane: dict) -> dict:
+        return self.engine.advance(
+            run_id,
+            lane_results=self.content_submissions(run_id, findings_by_lane),
+        )
+
+    def return_from_research(self, run_id: str) -> None:
+        self.engine.advance(
+            run_id, lane_results=self.research_submissions(run_id))
+        self.engine.advance(
+            run_id, result_path=self.worker_pass(run_id, SYNTHESIS))
+        self.engine.advance(
+            run_id, result_path=self.worker_pass(run_id, AUTHOR))
+        self.engine.advance(run_id, run_gate=True)
+        self.assertEqual(
+            self.engine.load_state(run_id)["current_stage"], EVALUATION)
+
+    def return_from_authoring(self, run_id: str) -> None:
+        self.engine.advance(
+            run_id, result_path=self.worker_pass(run_id, REVISION))
+        self.engine.advance(run_id, run_gate=True)
+        self.assertEqual(
+            self.engine.load_state(run_id)["current_stage"], EVALUATION)
+
+    def test_ce4_history_reaches_authoring_on_the_fourth_evaluation(self):
+        run_id = self.drive_to(EVALUATION)
+
+        # Evaluation 0: the initial failure spends the first repeat slot and
+        # research wins over the authoring findings beside it.
+        out = self.evaluate(run_id, {
+            CONTENT_LANES[0]: [blocking("CON-EVI-001", RESEARCH)],
+            CONTENT_LANES[3]: [blocking("CON-CIT-001", AUTHORING)],
+            CONTENT_LANES[4]: [blocking("CON-PRO-001", AUTHORING)],
+        })
+        self.assertEqual(out["stage"], RESEARCH)
+        self.return_from_research(run_id)
+
+        # Evaluation 1: one standing authoring defect repeats, spending the
+        # second slot, while the other findings are new work.
+        out = self.evaluate(run_id, {
+            CONTENT_LANES[0]: [blocking("CON-EVI-002", AUTHORING)],
+            CONTENT_LANES[3]: [blocking("CON-CIT-002", AUTHORING)],
+            CONTENT_LANES[4]: [blocking("CON-PRO-001", AUTHORING)],
+        })
+        self.assertEqual(out["stage"], REVISION)
+        self.return_from_authoring(run_id)
+
+        # Evaluation 2: CON-CIT-007 is new and correctly routes the missing
+        # evidence to research; no previous id repeats in this round.
+        out = self.evaluate(run_id, {
+            CONTENT_LANES[3]: [
+                blocking("CON-CIT-007", RESEARCH),
+                blocking("CON-CIT-008", AUTHORING),
+            ],
+            CONTENT_LANES[4]: [blocking("CON-PRO-002", AUTHORING)],
+        })
+        self.assertEqual(out["stage"], RESEARCH)
+        self.return_from_research(run_id)
+
+        # Evaluation 3: the evidence now exists and the same citation defect
+        # has progressed to its leaf repair. V21 blocked at this point. V22
+        # must honor the newly selected route and give the finding to the
+        # authoring owner.
+        out = self.evaluate(run_id, {
+            CONTENT_LANES[3]: [blocking("CON-CIT-007", AUTHORING)],
+        })
+        self.assertEqual(out["stage"], REVISION)
+        self.assertIsNone(out["disposition"])
+        packet = Path(out["packet_abs_path"]).read_text(encoding="utf-8")
+        self.assertEqual(
+            [f["id"] for f in headers(packet, "PRIOR_FINDINGS")],
+            ["CON-CIT-007"],
+        )
+        state = self.engine.load_state(run_id)
+        self.assertEqual(state["stage_failures"][EVALUATION], 4)
+        self.assertEqual(state["stage_repeats"][EVALUATION], 3)
+        self.assertEqual(
+            {s["id"]: s for s in workflow_json()["stages"]}
+            [EVALUATION]["max_iterations"],
+            4,
+        )
 
 
 class RepairOwnershipDeclarationTests(unittest.TestCase):

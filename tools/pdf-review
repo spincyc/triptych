@@ -60,7 +60,16 @@ GIB = 1024 * MIB
 RESERVE_BYTES = GIB
 CHILD_ADDRESS_SPACE_BYTES = GIB
 WORKER_BYTES = CHILD_ADDRESS_SPACE_BYTES
-FULL_PAGE_MAX_DIMENSION = 1600
+# The house hairline is the 0.4pt `boxrule`/`titlerule` of `src/common/preamble.tex`.
+# A raster that gives it less than one whole pixel can drop it entirely, and a
+# reviewer reading that raster sees a callout with no bottom rule that the PDF
+# closes correctly. Run 0c31a52a51e6f34d's second visual evaluation reported
+# exactly that against canonical page 8 of proper 54, and the revision it
+# produced hand-drew an \hrule into a document that needed none. At the former
+# 1600 (145 dpi on a 792pt page) that page rendered 17 of its 18 full-width
+# rules; from 160 dpi up it renders all 18. 0.4pt reaches a whole pixel at
+# 180 dpi, and 2200 on a 792pt page is 200 dpi, which clears it with margin.
+FULL_PAGE_MAX_DIMENSION = 2200
 THUMBNAIL_MAX_DIMENSION = 420
 CONTACT_BATCH_SIZE = 20
 CONTACT_COLUMNS = 4

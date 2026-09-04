@@ -70,22 +70,25 @@ BINDS_FROM = 17
 # production target, and a later run rewriting it to v17 would silently turn
 # the out-of-scope case into the bound one and the bind into a no-op.
 PRE_CONTRACT = 11
+RESOLVE_CONTEXT = (ROOT / "workflows" / "fragments" / "propers" /
+                   "resolve-context.md")
 
 DOCUMENT = ("liturgy/roman-rite/1962/propers/temporal/"
             "54-fourteenth-after-pentecost")
-DOSSIER = "sections/10-date-location.tex"
+DOSSIER = "sections/redevelopment/02-scriptural-date-location.tex"
 
 
 def _at_version(metadata: str, version: int) -> str:
-    """The same provenance record, stating a given workflow version.
+    """The same provenance record, bound to a given proper version.
 
-    The record's second field is the version; nothing else in the file is
-    allowed to move, because the checks under test read the rest of it.
+    The surviving GPT fixture predates recorded workflow identity. Set its
+    first two fields explicitly; nothing else in the file is allowed to move,
+    because the checks under test read the rest of it.
     """
     pattern = re.compile(
-        r"(\\AIGenerationProvenance\{[^{}]*\}\{)[^{}]*(\})")
+        r"(\\AIGenerationProvenance)\{[^{}]*\}\{[^{}]*\}")
     text, count = pattern.subn(
-        lambda m: f"{m.group(1)}{version}{m.group(2)}", metadata, count=1)
+        lambda m: f"{m.group(1)}{{proper}}{{{version}}}", metadata, count=1)
     if count != 1:
         raise AssertionError(
             "the fixture leaf carries no AIGenerationProvenance record to "
@@ -164,30 +167,25 @@ class WiringTests(unittest.TestCase):
     def test_every_published_leaf_resolves(self):
         """A formulary this cannot address is one the contract cannot bind.
 
-        ENUMERATED FROM THE LEAF DIRECTORIES THEMSELVES, not from a file some
-        leaves happen to carry. This globbed `*/*/proper-components.toml` and
-        so silently skipped `ritual/m01-nuptial-mass`, which has no manifest —
-        the one published leaf the wiring could not answer for at all. A
-        skipped leaf and a passing leaf were indistinguishable, and
-        `assertGreater(checked, 0)` cannot tell a shrinking glob from a
-        shrinking tree. Every directory under `propers/<class>/` is a leaf, so
-        every one of them is asked, and the count is compared against the
-        directories rather than against zero.
+        ENUMERATED FROM EVERY DIRECTORY WITH THE PUBLICATION MARKER, not from
+        a component manifest some leaves happen to carry. This once globbed
+        `*/*/proper-components.toml` and silently skipped
+        `ritual/m01-nuptial-mass`, which has no manifest — the one published
+        leaf the wiring could not answer for at all. `main.tex` is the
+        workflow's publication marker; a pre-authoring checkpoint may already
+        own `propers/` and `research/` without being a published leaf yet.
+        The count is compared against the complete marked set rather than
+        against zero.
         """
         checked: set[str] = set()
         expected: set[str] = set()
         for provider in ("claude", "gpt"):
             root = ROOT / "src" / provider / "liturgy/roman-rite/1962/propers"
             for leaf in sorted(root.glob("*/*")):
-                if not leaf.is_dir():
+                if not leaf.is_dir() or not (leaf / "main.tex").is_file():
                     continue
                 document = leaf.relative_to(ROOT / "src" / provider).as_posix()
                 expected.add(f"{provider}/{document}")
-                # `main.tex` is what makes a directory a published document;
-                # asserted below rather than used to filter, so that a leaf
-                # cannot be skipped into passing by lacking one.
-                self.assertTrue((leaf / "main.tex").is_file(),
-                                f"{provider}/{document} has no main.tex")
                 with self.subTest(leaf=f"{provider}/{document}"):
                     done = self.run_tool("loci", "--provider", provider,
                                          "--document", document)
@@ -315,6 +313,44 @@ class WiringTests(unittest.TestCase):
         self.assertTrue(callable(_proper_chronology._claims_at))
 
 
+class ResolveContextFreshLeafTests(unittest.TestCase):
+    """The workflow can materialize chronology before source audit runs."""
+
+    def test_resolve_context_creates_research_before_the_required_write(self):
+        text = RESOLVE_CONTEXT.read_text(encoding="utf-8")
+        create = 'mkdir -p "$research_dir"'
+        write = "tools/tpt proper-chronology record"
+        verify = 'test -f "$research_dir/chronology.toml"'
+        for command in (create, write, verify):
+            self.assertIn(command, text)
+        self.assertLess(text.index(create), text.index(write))
+        self.assertLess(text.index(write), text.index(verify))
+
+    def test_the_materialized_directory_makes_a_fresh_leaf_writable(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary) / "tree"
+            (root / "src").mkdir(parents=True)
+            (root / "src" / "sources").symlink_to(ROOT / "src" / "sources")
+            leaf = root / "src" / "gpt" / DOCUMENT
+            self.assertFalse(leaf.exists(), "the regression needs a fresh leaf")
+
+            research = leaf / "research"
+            research.mkdir(parents=True)
+            done = subprocess.run(
+                [str(LAUNCHER), WIRING, "record", "--root", str(root),
+                 "--provider", "gpt", "--document", DOCUMENT, "--write"],
+                capture_output=True, text=True, cwd=ROOT)
+
+            self.assertEqual(done.returncode, 0, done.stderr)
+            self.assertTrue((research / "chronology.toml").is_file())
+
+    def test_resolve_context_blocks_if_the_required_write_fails(self):
+        text = RESOLVE_CONTEXT.read_text(encoding="utf-8")
+        self.assertIn('return `disposition: "BLOCKED"`', text)
+        self.assertIn('never `PASS`', text)
+        self.assertIn("failed required write is not", text)
+
+
 class GateCommandTests(unittest.TestCase):
     """The gate must actually invoke the checks. Text, because that is the fact."""
 
@@ -345,9 +381,9 @@ class BoundLeafTests(unittest.TestCase):
     def setUpClass(cls):
         cls.tmp = tempfile.TemporaryDirectory()
         cls.root = Path(cls.tmp.name) / "tree"
-        leaf = cls.root / "src" / "claude" / DOCUMENT
+        leaf = cls.root / "src" / "gpt" / DOCUMENT
         leaf.parent.mkdir(parents=True)
-        shutil.copytree(ROOT / "src" / "claude" / DOCUMENT, leaf)
+        shutil.copytree(ROOT / "src" / "gpt" / DOCUMENT, leaf)
         (cls.root / "src" / "sources").symlink_to(ROOT / "src" / "sources")
         cls.leaf = leaf
         cls.metadata = leaf / "generation-metadata.tex"
@@ -378,7 +414,7 @@ class BoundLeafTests(unittest.TestCase):
     def write_record(self):
         done = subprocess.run(
             [str(LAUNCHER), WIRING, "record", "--root", str(self.root),
-             "--provider", "claude", "--document", DOCUMENT, "--write"],
+             "--provider", "gpt", "--document", DOCUMENT, "--write"],
             capture_output=True, text=True, cwd=ROOT)
         self.assertEqual(done.returncode, 0, done.stderr)
 
@@ -388,7 +424,7 @@ class BoundLeafTests(unittest.TestCase):
     def check(self, name: str) -> subprocess.CompletedProcess:
         return subprocess.run(
             [str(ROOT / "tools" / TOOL), "--root", str(self.root),
-             "--provider", "claude", "--document", DOCUMENT, "--check", name],
+             "--provider", "gpt", "--document", DOCUMENT, "--check", name],
             capture_output=True, text=True, cwd=ROOT)
 
     def assertRefused(self, name: str, because: str):
