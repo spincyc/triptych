@@ -234,6 +234,16 @@ class TheRunThatShouldNotHaveBlockedTests(RoutingCase):
     raised it wrote into the finding that it was "my lane's miss at iterations
     0 and 1 and not a defect introduced by the CON-EVI-002 repair". The old
     budget counted three failures and blocked, with four of five lanes passing.
+
+    That fix charged repetition and read repetition off finding ids, and run
+    `90dcdddcb6780e60` then showed why an id cannot carry that weight: a lane
+    is given an empty `PRIOR_FINDINGS` and told not to read earlier results,
+    so it cannot know which ids an earlier iteration used, and collision is
+    guaranteed. The budget now charges what a reviser reports it could not
+    repair. This history repairs everything it is given every time, so it
+    charges only its first failure and reaches a fourth evaluation — the same
+    conclusion the id rule reached here, by a route that does not depend on
+    lanes minting ids they have no way to coordinate.
     """
 
     HISTORY = (
@@ -270,9 +280,10 @@ class TheRunThatShouldNotHaveBlockedTests(RoutingCase):
         self.assertEqual(state["stage_failures"][EVALUATION], 3,
                          "three consecutive failures, as before")
         self.assertEqual(
-            state["stage_repeats"][EVALUATION], 2,
-            "the first, and the one repeating CON-EVI-002; the round that "
-            "moved from CON-EVI-002 to CON-EVI-008 was new work")
+            state["stage_repeats"][EVALUATION], 1,
+            "only the first failure, which has no repair report behind it; "
+            "every revision in this history reported the findings it was "
+            "given as repaired, and a repair that worked is progress")
 
     def test_the_same_history_would_have_blocked_before(self):
         """The old rule, stated as arithmetic, against the same three rounds.

@@ -1158,6 +1158,7 @@ class PreservedGuaranteeTests(unittest.TestCase):
         self.addCleanup(shutil.rmtree, runs, ignore_errors=True)
         engine = WorkflowEngine(ROOT, ROOT / "workflows")
         engine.runs_dir = runs
+        engine.standing_findings_root = runs / "standing"
 
         args = {"proper": DOC, "provider": "gpt"}
         first = engine.seed_bytes("proper", args)

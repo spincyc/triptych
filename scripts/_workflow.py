@@ -28,6 +28,7 @@ import shlex
 import shutil
 import subprocess
 import time
+import tomllib
 from pathlib import Path
 from typing import Any
 
@@ -111,6 +112,29 @@ FAIL = "FAIL"
 # never enters this: the reduction reads only dispositions, in lane order.
 _DISPOSITION_RANK = {PASS: 0, CHANGES_REQUIRED: 1, FAIL: 1, BLOCKED: 2}
 
+# Repair outcomes a reviser reports, per finding it was given.
+#
+# These exist because convergence is a fact only the reviser holds. An
+# evaluator re-reading a document cannot tell a defect that resisted repair
+# from a different defect that happens to carry the same finding id, and for
+# three iterations of one production it did not: every id the iteration bound
+# named as still unrepaired named a different defect in a different file each
+# time, and the earlier ones had in fact been repaired.
+REPAIRED = "repaired"
+NOT_REPAIRED = "not-repaired"
+
+# Where an evaluation's standing blocking findings are kept so that something
+# outside the run holds them.
+#
+# `build/tpt-runs/<run-id>/` is ignored output: `.gitignore` line 1 is
+# `/build/`, `make clean` is `rm -rf build`, and `wt tidy` deletes it without
+# asking. A `content-evaluation` result therefore reached nothing tracked at
+# all, which is why a rescue pipeline that starts after research has no
+# carry-forward and why one authoring worker went and read a dead run's result
+# directory to find out what was standing against the leaf it was rewriting.
+# This is the tracked home those findings did not have.
+STANDING_FINDINGS_PATH = "evaluations/blocking-findings-v1.toml"
+
 # Schema names
 SCHEMA_WORKER = "worker-result.json"
 SCHEMA_EVALUATOR = "evaluator-result.json"
@@ -156,6 +180,14 @@ class WorkflowEngine:
         self.fragments_dir = self.workflows_dir / "fragments"
         self.schemas_dir = self.workflows_dir / "schema"
         self.runs_dir = self.repo_root / "build" / "tpt-runs"
+        # Where the tracked standing-findings record for a document is read
+        # and written. Its own attribute rather than `repo_root` because this
+        # is the engine's one write outside `build/`, into the working tree a
+        # person is editing: a harness driving runs over published leaves
+        # points it somewhere disposable so that exercising the behaviour does
+        # not dirty the repository, and setting it to None turns the record
+        # off entirely.
+        self.standing_findings_root: Path | None = self.repo_root
 
     # --- Workflow definitions ---
 
@@ -192,7 +224,34 @@ class WorkflowEngine:
             raise WorkflowError(f"{path}: invalid JSON: {error}") from error
         _validate_workflow(data, path)
         self._validate_repair_route_coverage(data, path)
+        self._validate_repair_reporting(data, path)
         return data
+
+    def _validate_repair_reporting(
+        self, workflow: dict[str, Any], path: Path
+    ) -> None:
+        """A stage cannot be required to report what its schema forbids.
+
+        `reports_repairs` on a stage whose result schema defines no
+        `finding_disposition_fields` is a deadlock nothing else catches:
+        `_record_repair_outcomes` demands the report once findings are
+        forwarded there, and `_validate_result` refuses a result carrying it
+        because the schema does not define it. The run seeds, advances to that
+        stage, and then cannot move in either direction. Caught at load, it is
+        a typo in a pipeline; caught at run time it is a wedged production.
+        """
+        for stage in workflow["stages"]:
+            if not stage.get("reports_repairs"):
+                continue
+            schema = self.load_schema(self.schema_name_for(stage))
+            if "finding_disposition_fields" not in schema:
+                raise WorkflowError(
+                    f"{path}: {stage['id']}: declares 'reports_repairs' but "
+                    f"its result schema {self.schema_name_for(stage)} defines "
+                    f"no 'finding_disposition_fields', so a result carrying "
+                    f"the report is refused and a result without one is "
+                    f"refused too; the stage could never advance"
+                )
 
     def _validate_repair_route_coverage(
         self, workflow: dict[str, Any], path: Path
@@ -682,6 +741,16 @@ class WorkflowEngine:
             "stage_failures": {},
             "stage_repeats": {},
             "stage_blocking_ids": {},
+            "findings_forwarded_by": {},
+            "findings_forwarded_ids": {},
+            "unrepaired_for": {},
+            "unrepaired_notes": {},
+            # Resolved once, from values the run id already covers. Held in
+            # state so that reading it never needs the workflow: `status` is
+            # the one command that must keep working after the workflow on
+            # disk has moved past the version this run is bound to, which is
+            # exactly when an operator reaches for it.
+            "document_root": _document_root(workflow, args),
             "escalations": [],
             "packet_hashes": [],
             "result_hashes": [],
@@ -1135,7 +1204,9 @@ class WorkflowEngine:
         # this one only has to agree with the other forever.
         audit_state: dict[str, Any] = {
             "stage_failures": {}, "stage_repeats": {},
-            "stage_blocking_ids": {}, "escalations": [],
+            "stage_blocking_ids": {},
+            "findings_forwarded_by": {}, "findings_forwarded_ids": {},
+            "unrepaired_for": {}, "unrepaired_notes": {}, "escalations": [],
         }
         for index, (result, transition) in enumerate(zip(results, transitions)):
             packet = packets[index]
@@ -1194,6 +1265,12 @@ class WorkflowEngine:
                     f"recorded JSON"
                 )
             if stage["type"] in (LINEAR, BOUNDED_REVISION):
+                if disposition == PASS:
+                    # Replayed for the same reason the live path runs it: the
+                    # repeat budget below is charged from what a reviser
+                    # reported, so an audit that skipped the report would
+                    # re-derive different counters and refuse a sound run.
+                    self._record_repair_outcomes(audit_state, stage, body)
                 expected_target = (
                     stage["next"] if disposition == PASS else BLOCKED
                 )
@@ -1227,6 +1304,27 @@ class WorkflowEngine:
                     f"run {run_id}: transition target disagrees with its "
                     f"recorded result"
                 )
+            # The same forwarding record the live path keeps, so the next
+            # revision result replayed here is charged to the same owner.
+            audit_prior = self._extract_prior_findings(body, stage)
+            audit_blocking = [
+                str(f.get("id", "(unidentified)")) for f in audit_prior
+                if f.get("severity") == "blocking"
+            ]
+            if audit_blocking:
+                audit_state.setdefault(
+                    "findings_forwarded_by", {}
+                )[target] = stage["id"]
+                audit_state.setdefault(
+                    "findings_forwarded_ids", {}
+                )[target] = sorted(set(audit_blocking))
+            else:
+                audit_state.setdefault(
+                    "findings_forwarded_by", {}
+                ).pop(target, None)
+                audit_state.setdefault(
+                    "findings_forwarded_ids", {}
+                ).pop(target, None)
             if target not in (ACCEPTED, BLOCKED):
                 if index + 1 >= len(packets) \
                         or packets[index + 1]["stage"] != target:
@@ -1374,6 +1472,18 @@ class WorkflowEngine:
                 "to": transition,
                 "disposition": result["disposition"],
             })
+            # Before the commit, not after. This write is outside the run's
+            # transaction either way, and raising after the commit reported
+            # failure on a run that had already advanced: the packet was on
+            # disk and the state named the next stage, so the obvious retry
+            # then failed on a stage mismatch. Failing first leaves nothing
+            # recorded and a retry that works.
+            #
+            # The terminal transition is the case the record exists for: a run
+            # that blocks is a run whose findings have nowhere else to go.
+            # Writing only on transitions that continue left the last
+            # evaluation -- the one that spent the budget -- unrecorded.
+            self._record_standing_findings(workflow, pending, stage, result)
             self._commit(run_id, pending, [result_write] + lane_writes)
             self._emit_result_event(run_id, stage, result, transition)
             if transition == ACCEPTED:
@@ -1414,6 +1524,23 @@ class WorkflowEngine:
             "disposition": result["disposition"],
         })
         prior_findings = self._extract_prior_findings(result, stage)
+        # Remember who owns the findings this transition hands on, so that the
+        # receiving stage's repair report can be charged back to the stage that
+        # raised them. Without this the reviser's account of what it could not
+        # fix would have nowhere to land, and the budget would be back to
+        # guessing from ids.
+        blocking_forwarded = [
+            str(f.get("id", "(unidentified)")) for f in prior_findings
+            if f.get("severity") == "blocking"
+        ]
+        forwarded_by = pending.setdefault("findings_forwarded_by", {})
+        forwarded_ids = pending.setdefault("findings_forwarded_ids", {})
+        if blocking_forwarded:
+            forwarded_by[transition] = stage["id"]
+            forwarded_ids[transition] = sorted(set(blocking_forwarded))
+        else:
+            forwarded_by.pop(transition, None)
+            forwarded_ids.pop(transition, None)
         carried_findings = self._carried_findings(
             run_id, workflow, pending, next_stage, prior_findings, fresh=result
         )
@@ -1425,6 +1552,7 @@ class WorkflowEngine:
         # The packet is written before the result that produced it, so that a
         # commit which cannot store the successor leaves no record of the
         # submission either.
+        self._record_standing_findings(workflow, pending, stage, result)
         self._commit(
             run_id, pending,
             self._packet_writes(packet) + [result_write] + lane_writes,
@@ -1478,6 +1606,15 @@ class WorkflowEngine:
             "stage_failures": state["stage_failures"],
             "stage_repeats": state.get("stage_repeats", {}),
             "escalations": state.get("escalations", []),
+            # What the tracked record says stands against this document. Read
+            # here and nowhere else: it reaches no packet, so an operator can
+            # see it without a run depending on it.
+            "standing_findings": [
+                finding.get("id") for finding in _standing_findings(
+                    self.standing_findings_root,
+                    state.get("document_root"),
+                )
+            ],
             "packets_emitted": len(state["packet_hashes"]),
             "results_received": len(state["result_hashes"]),
             "transitions": state["transitions"],
@@ -1759,8 +1896,13 @@ class WorkflowEngine:
         scheduled. No worker process id, launch or completion timestamp,
         scheduler slot, or completion order reaches these bytes.
 
-        No timestamps and no filesystem paths appear in the hashed bytes. The
-        run id does: it is the engine's own hash of workflow, version, seed
+        No timestamps appear in the hashed bytes. Two things that look like
+        exceptions are not: `DOCUMENT_ROOT` is a repository-relative path built
+        from the workflow's own template and the normalized arguments, both
+        already hashed, so it is a restatement of them and not a machine fact;
+        and the run id does too, for the reason below. Nothing
+        machine-specific — no absolute path, no scheduler state — reaches
+        them. The run id: it is the engine's own hash of workflow, version, seed
         commit and normalized arguments, every one of which the header already
         carries, so it is a restatement of those bytes and not a new input, and
         the same run state still yields the same packet byte for byte. It is
@@ -1806,6 +1948,37 @@ class WorkflowEngine:
         header_lines.append(
             f"ARGS: {json.dumps(args, sort_keys=True, separators=(',', ':'))}"
         )
+
+        # The resolved path of the thing under work, when the workflow declares
+        # how to build it. `ARGS` carries the arguments and a worker is left to
+        # assemble the path from them, which is one inference too many where a
+        # leaf of the same name exists under more than one provider: a lane of
+        # this pipeline swept `src/gpt/...` to completion, caught it only from
+        # an unrelated `git status`, and discarded a finished max-effort sweep.
+        # The arguments already decide the answer, so the engine states it.
+        document_root = _document_root(workflow, args)
+        if document_root:
+            header_lines.append(f"DOCUMENT_ROOT: {document_root}")
+
+        # The repair owners this stage's own schema admits. A shared fragment
+        # names all three that exist, and a pipeline may admit fewer:
+        # `proper-finish` begins after research and owns only `authoring`, so a
+        # lane following the shared fragment and naming `brief` had its finding
+        # refused -- and on a fan-out stage one refused finding fails the whole
+        # five-lane submission. The packet states what this run will accept
+        # rather than leaving a worker to infer it from a route table it cannot
+        # see.
+        admitted = (
+            self.load_schema(self.schema_name_for(stage))
+            .get("finding_enums", {})
+            .get(REPAIR_TARGET)
+        )
+        if admitted:
+            header_lines.append(
+                "REPAIR_TARGETS: " + json.dumps(
+                    list(admitted), separators=(",", ":")
+                )
+            )
 
         if prior_findings:
             header_lines.append(
@@ -2098,6 +2271,7 @@ class WorkflowEngine:
         packet = _current_packet(state, stage["id"])
         emitted = {entry["lane"]: entry for entry in packet.get("lanes", [])}
         findings: list[dict[str, Any]] = []
+        observations: list[dict[str, Any]] = []
         records: list[dict[str, Any]] = []
         parts: list[str] = []
         worst = PASS
@@ -2112,6 +2286,10 @@ class WorkflowEngine:
                 tagged = dict(finding)
                 tagged["lane"] = lane["id"]
                 findings.append(tagged)
+            for observation in body.get("observations", []) or []:
+                noted = dict(observation)
+                noted["lane"] = lane["id"]
+                observations.append(noted)
             records.append({
                 "lane": lane["id"],
                 "index": index,
@@ -2131,6 +2309,7 @@ class WorkflowEngine:
                 f"lanes: " + ", ".join(parts)
             ),
             "findings": findings,
+            "observations": observations,
             "lanes": records,
         }
 
@@ -2286,6 +2465,7 @@ class WorkflowEngine:
                     f"{kind} stage {stage['id']} requires disposition PASS or "
                     f"BLOCKED, got {disposition}"
                 )
+            self._record_repair_outcomes(state, stage, result)
             return stage["next"], None
 
         if stage["type"] == EVALUATOR:
@@ -2472,13 +2652,225 @@ class WorkflowEngine:
         state.setdefault("stage_failures", {})[stage["id"]] = 0
         state.setdefault("stage_repeats", {})[stage["id"]] = 0
         state.setdefault("stage_blocking_ids", {}).pop(stage["id"], None)
+        state.setdefault("unrepaired_for", {}).pop(stage["id"], None)
+        state.setdefault("unrepaired_notes", {}).pop(stage["id"], None)
+
+    def _record_standing_findings(
+        self, workflow: dict[str, Any], state: dict[str, Any],
+        stage: dict[str, Any], result: dict[str, Any],
+    ) -> None:
+        """Write the evaluation's standing blocking findings to a tracked file.
+
+        Written before the run's own commit, and outside it either way. After
+        was the obvious order — a run that could not store its own result has
+        no business publishing a claim about the leaf — and it was wrong: a
+        failure here then reported failure on a run that had already advanced,
+        leaving the packet on disk and the state naming the next stage, so the
+        obvious retry failed on a stage mismatch. Failing first leaves nothing
+        recorded and a retry that works.
+
+        The file is rewritten whole on every evaluation, so it always states
+        what stands now rather than accumulating history. A PASS writes an
+        empty list rather than deleting the file, because "this leaf was
+        evaluated and nothing stands" and "nobody has looked" are different
+        facts and a later production reads them differently.
+        """
+        if self.standing_findings_root is None:
+            return
+        # Declared per stage. Every evaluator wrote this path, so a
+        # `web-evaluation` that wanted changes replaced the leaf's content
+        # findings with findings about generated HTML, and a
+        # `research-synthesis` running before the author overwrote the previous
+        # production's record with brief defects. The file says "standing
+        # against this document"; only the stage that evaluates the document's
+        # own prose may write it.
+        if not stage.get("records_standing_findings"):
+            return
+        document_root = state.get("document_root") or _document_root(
+            workflow, state["normalized_args"]
+        )
+        if not document_root:
+            return
+        root = self.standing_findings_root.resolve()
+        target = root / document_root / STANDING_FINDINGS_PATH
+        # `document_root` is a template filled from command-line arguments, and
+        # `provider` is free text no validator constrains. A typo made a whole
+        # `src/gtp/...` tree appear in the working copy; `..` in an argument
+        # put it anywhere the user could write. Nothing here may leave the root
+        # or pass through a symlink, which is the rule every other path this
+        # engine trusts already follows.
+        try:
+            resolved = target.resolve()
+            resolved.relative_to(root)
+        except (OSError, ValueError):
+            raise WorkflowError(
+                f"run {state['run_id']}: the standing findings record for "
+                f"{document_root} resolves outside {root}; refusing to write "
+                f"it"
+            ) from None
+        if any(part.is_symlink() for part in
+               (target, target.parent, target.parent.parent)):
+            raise WorkflowError(
+                f"run {state['run_id']}: the standing findings path for "
+                f"{document_root} passes through a symlink; refusing to write "
+                f"it"
+            )
+        findings = [
+            f for f in result.get("findings", []) or []
+            if f.get("severity") == "blocking"
+        ]
+        observations = list(result.get("observations", []) or [])
+
+        lines = [
+            "# Blocking findings standing against this publication, and the",
+            "# observations its evaluation lanes recorded outside their own",
+            "# criteria. Written by tpt after each evaluation of this leaf and",
+            "# rewritten whole, so it states what stands now.",
+            "#",
+            "# It exists because a run's own results live under build/, which",
+            "# is ignored, which `make clean` and `wt tidy` delete without",
+            "# asking, and which nothing preserves between productions.",
+            "#",
+            "# Nothing reads this back into a run. Carrying findings from one",
+            "# production into the next wants doing where the run's identity",
+            "# can cover it -- a committed record, or this file's hash in the",
+            "# run id and the acceptance audit -- and until then this is a",
+            "# record for people.",
+            "",
+            "standing_findings_schema = 1",
+            'record_type = "standing-blocking-findings"',
+            f"document = {_toml_string(state['normalized_args'].get('proper', ''))}",
+            f"provider = {_toml_string(state['normalized_args'].get('provider', ''))}",
+            f"run_id = {_toml_string(state['run_id'])}",
+            f"workflow = {_toml_string(str(workflow['id']))}",
+            f"workflow_version = {int(workflow['version'])}",
+            f"stage = {_toml_string(stage['id'])}",
+            f"iteration = {int(result.get('iteration', 0))}",
+            f"disposition = {_toml_string(str(result.get('disposition', '')))}",
+            f"standing = {len(findings)}",
+            "",
+        ]
+        for finding in findings:
+            lines.append("[[findings]]")
+            for key in (
+                "id", "lane", "severity", "location", "problem",
+                "required_result", "repair_target",
+            ):
+                if key in finding:
+                    lines.append(f"{key} = {_toml_string(str(finding[key]))}")
+            lines.append("")
+        for observation in observations:
+            lines.append("[[observations]]")
+            for key in ("lane", "location", "note"):
+                if key in observation:
+                    lines.append(
+                        f"{key} = {_toml_string(str(observation[key]))}"
+                    )
+            lines.append("")
+
+        try:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text("\n".join(lines), encoding="utf-8")
+        except (OSError, ValueError, UnicodeError) as error:
+            # Reported, never guessed at. `ValueError` and `UnicodeError` are
+            # here because they are reachable from a worker's own result: a
+            # lone surrogate in a finding's text is valid JSON and cannot be
+            # encoded, and it escaped an `OSError`-only guard as a traceback.
+            raise WorkflowError(
+                f"run {state['run_id']}: could not write standing findings to "
+                f"{document_root}/{STANDING_FINDINGS_PATH}: {error}"
+            ) from error
+
+    @staticmethod
+    def _record_repair_outcomes(
+        state: dict[str, Any], stage: dict[str, Any],
+        result: dict[str, Any],
+    ) -> None:
+        """Record what a reviser says it attempted and could not repair.
+
+        This is the only place the engine learns whether a repair worked. The
+        evaluator that raised the finding cannot tell it: re-reading a changed
+        document, it sees defects, not the history of attempts on them. The
+        reviser holds that fact and nothing else does, which is why the
+        convergence budget in `_failure_budget_spent` reads what this writes.
+
+        The report is charged back to the stage whose findings were routed
+        here, recorded at the transition that forwarded them. A stage that
+        received no blocking findings has nothing to report on and is skipped:
+        a first authoring pass is not a failed repair.
+
+        Every forwarded finding must be accounted for exactly once. A reviser
+        that silently drops one is the failure this cannot afford to accept,
+        because a dropped finding reads exactly like a repaired one and the
+        budget would then treat an abandoned defect as progress.
+
+        Only a stage that declares `reports_repairs` is held to this, and the
+        declaration is in the pipeline because not every repairing stage can
+        make the report. A fan-out `research` re-entry receives blocking
+        findings and produces a result the engine composed by joining its
+        lanes: no agent wrote it, and no lane can speak for the whole. Demanding
+        the report there failed every research re-entry unconditionally. Where
+        a stage cannot report, the repeat budget gets no signal from that route
+        and `max_total_iterations` is what bounds it, which is the honest
+        outcome rather than a guessed one.
+        """
+        if not stage.get("reports_repairs"):
+            return
+        owner = state.get("findings_forwarded_by", {}).get(stage["id"])
+        if owner is None:
+            return
+        expected = set(state.get("findings_forwarded_ids", {}).get(
+            stage["id"], []
+        ))
+        if not expected:
+            return
+
+        entries = result.get("finding_dispositions") or []
+        seen: dict[str, dict[str, Any]] = {}
+        for entry in entries:
+            if not isinstance(entry, dict):
+                continue
+            fid = str(entry.get("id", ""))
+            if fid in seen:
+                raise WorkflowError(
+                    f"stage {stage['id']} reports finding {fid} twice in "
+                    f"finding_dispositions; each finding is accounted for "
+                    f"exactly once"
+                )
+            seen[fid] = entry
+
+        missing = sorted(expected - set(seen))
+        if missing:
+            raise WorkflowError(
+                f"stage {stage['id']} returned {PASS} without accounting for "
+                f"every finding it was given: {', '.join(missing)}. Report "
+                f"each one in finding_dispositions as {REPAIRED!r} or "
+                f"{NOT_REPAIRED!r}. A finding left out reads exactly like a "
+                f"repaired one, and the iteration budget would score an "
+                f"abandoned defect as progress."
+            )
+        unknown = sorted(set(seen) - expected)
+        if unknown:
+            raise WorkflowError(
+                f"stage {stage['id']} reports on findings it was not given: "
+                f"{', '.join(unknown)}"
+            )
+
+        unrepaired = sorted(
+            fid for fid, entry in seen.items()
+            if entry.get("outcome") == NOT_REPAIRED
+        )
+        state.setdefault("unrepaired_for", {})[owner] = unrepaired
+        state.setdefault("unrepaired_notes", {})[owner] = {
+            fid: str(seen[fid].get("note", "")) for fid in unrepaired
+        }
 
     @staticmethod
     def _failure_budget_spent(
         state: dict[str, Any], stage: dict[str, Any],
         result: dict[str, Any],
     ) -> str | None:
-        """Charge `max_iterations` for repetition, not for failing.
+        """Charge `max_iterations` for repair that was tried and failed.
 
         Returns the block reason once a budget is spent, otherwise None.
 
@@ -2489,31 +2881,80 @@ class WorkflowEngine:
         second confusion in place: it could not tell a loop from progress. A
         real run repaired nine of ten findings, raised different ones against a
         substantially rewritten document, and was scored exactly as if it had
-        raised the same ten again. It blocked with four of five lanes passing
-        and one finding standing, which the lane that raised it said in as many
-        words was its own miss at the earlier iterations.
+        raised the same ten again.
 
-        So two counters, both consecutive and both cleared by a pass:
+        Charging repetition instead was the next attempt, and it read the
+        repetition off finding ids. That is the version this replaces, and it
+        was wrong in a way that looked exactly like a verdict on the document.
+        Run `90dcdddcb6780e60` converged the whole way -- seven blocking
+        findings, then eleven, then seven, each iteration clearing the set
+        before it and reaching further into the leaf -- and blocked at 3/3 with
+        four ids named as still unrepaired. Every one of those four named a
+        different defect in a different file each iteration, and the earlier
+        ones were gone from the document. It was stopped at half the
+        allowance its own ceiling granted it.
+
+        Nothing the lanes did caused that and nothing they could have done
+        would have prevented it. A fan-out evaluator's lane packets carry an
+        empty `PRIOR_FINDINGS` by design, and lanes are told not to read
+        earlier results, so **no lane can know which ids an earlier iteration
+        used**. Id collision across iterations is guaranteed by the
+        architecture. An id is a handle a lane minted for its own report; it
+        is not an identity for a defect, and comparing ids across iterations
+        compares nothing.
+
+        So the signal moves to the only actor that can hold it. An evaluator
+        re-reading a document cannot distinguish a defect that resisted repair
+        from a different defect wearing the same id. The reviser can: it was
+        given the findings, it attempted them, and it knows which it could not
+        clear. `finding_dispositions` on a revision result carries that per
+        finding, `_record_repair_outcomes` records it against the stage whose
+        findings were routed there, and this reads it back.
+
+        Two counters, both consecutive and both cleared by a pass:
 
         `stage_repeats` is what `max_iterations` bounds. An iteration charges
-        it only when it carries a blocking finding this stage already had
-        standing — the same id, unrepaired. Different ids are different work
-        and cost nothing. The first failure of a streak is charged, because it
-        has no predecessor to repeat and because leaving it free would quietly
-        loosen every `max_iterations` in every workflow by one iteration; a
-        stage that never converges therefore still blocks on exactly the
-        failure it always did.
+        it when the reviser reported at least one finding it attempted and
+        could not repair. Findings that were repaired, and fresh findings
+        raised against a changed document, cost nothing -- that is progress,
+        and progress is what the budget exists to permit. The first failure of
+        a streak is charged, because it has no repair report behind it and
+        because leaving it free would quietly loosen every `max_iterations` in
+        every workflow by one iteration.
+
+        Where no report exists the id comparison stays, because it is the only
+        signal there is and removing it would bound such a stage by
+        `max_total_iterations` alone -- silently doubling every limit an
+        operator declared. Ground truth displaces the heuristic exactly where
+        it exists and nowhere else. `content-revision` reports, so the stage
+        this was all about no longer reads ids; a fan-out `research` re-entry
+        does not, so it still does, with the same unreliability it always had.
+        The way to retire the heuristic for a route is to make its repairing
+        stage able to report, not to delete the only bound it has.
+
+        A gate keeps the id comparison whatever a reviser says, and here the
+        heuristic is not a heuristic. What makes an id untrustworthy is that an
+        AI evaluator mints it for its own report and cannot know what an
+        earlier iteration used. A gate's findings are a program's: the id is a
+        check id, the same check refusing the same leaf produces it again, and
+        a repeat is the tool re-running and refusing again after a repair was
+        claimed. That is better evidence of a loop than the claim is of
+        progress, and it is the one place where the reviser's word should not
+        displace a measurement.
 
         `stage_failures` counts every consecutive failure and is bounded by
         `max_total_iterations`, default twice `max_iterations`. Without it a
-        stage that invents new findings forever never terminates. Twice is
-        chosen because the repeat budget already ends any stage that stops
-        converging, so this ceiling is reached only by a stage doing genuine
+        stage whose reviser reports total success forever never terminates,
+        and an optimistic reviser is now the failure mode this has to catch.
+        Twice is chosen because the repeat budget ends any stage whose repairs
+        are failing, so this ceiling is reached only by a stage doing genuine
         new work every time; doubling grants that stage as many iterations
         again as the operator already declared, and no more. For
-        `content-evaluation` at three that is six — around nine hours and some
-        fifteen million subagent tokens for one document, which is a real
-        bound; three was demonstrably too few and unbounded is not a bound.
+        `content-evaluation` that is six under `proper-finish`, which declares
+        three, and eight under `proper`, which declares four — around nine to
+        twelve hours and some fifteen to twenty million subagent tokens for one
+        document, which is a real bound; three was demonstrably too few and
+        unbounded is not a bound.
         """
         stage_id = stage["id"]
         standing = state.setdefault("stage_blocking_ids", {})
@@ -2525,33 +2966,98 @@ class WorkflowEngine:
         count = failures.get(stage_id, 0) + 1
         failures[stage_id] = count
 
+        # What charges the repeat budget is a repair that was attempted and
+        # reported failed, by the reviser this stage's findings were routed to.
+        #
+        # Where no such report exists the old comparison of finding ids is
+        # still the only signal there is, and it stays. Removing it everywhere
+        # was wrong in the other direction: a stage whose repairs are invisible
+        # would then be bounded only by `max_total_iterations`, silently
+        # doubling every limit an operator had declared. So ground truth
+        # displaces the heuristic exactly where it exists, and nowhere else --
+        # and for the case that prompted all this, `content-revision` reports,
+        # so `content-evaluation` no longer reads ids at all.
+        unrepaired_map = state.get("unrepaired_for", {})
+        reported = stage_id in unrepaired_map and stage["type"] != GATE
+        unrepaired = sorted(unrepaired_map.get(stage_id) or [])
+        notes = state.get("unrepaired_notes", {}).get(stage_id) or {}
         repeated = sorted(set(current) & set(previous or []))
+        looping = unrepaired if reported else repeated
         repeats = state.setdefault("stage_repeats", {})
         spent = repeats.get(stage_id, 0)
-        if previous is None or repeated:
+        if previous is None or looping:
             spent += 1
         repeats[stage_id] = spent
+        # Consumed. A reviser's report charges the budget once; leaving it in
+        # place would charge every later failure for one stale admission.
+        state.setdefault("unrepaired_for", {}).pop(stage_id, None)
+        state.setdefault("unrepaired_notes", {}).pop(stage_id, None)
 
         max_iter = stage.get("max_iterations", 3)
         ceiling = stage.get("max_total_iterations", 2 * max_iter)
         label = "gate " if stage["type"] == GATE else ""
         if spent >= max_iter:
-            unrepaired = (
-                f" still unrepaired: {', '.join(repeated)}" if repeated
-                else " with nothing repaired between them"
-            )
+            if reported and unrepaired:
+                detail = "; ".join(
+                    f"{fid}: {notes[fid]}" if notes.get(fid) else fid
+                    for fid in unrepaired
+                )
+                why = (
+                    f" The reviser reported these findings attempted and not "
+                    f"repaired: {detail}"
+                )
+            elif repeated and stage["type"] == GATE:
+                why = (
+                    f" The same checks refused again after a repair was "
+                    f"reported: {', '.join(repeated)}. These ids are the "
+                    f"gate's own check ids, so this is the check re-running "
+                    f"and refusing, not two workers colliding on a name"
+                )
+            elif repeated:
+                why = (
+                    f" No stage on this route reports what it repaired, so "
+                    f"this counts findings raised again by id: "
+                    f"{', '.join(repeated)}. An id is a handle a worker minted "
+                    f"for its own report and two iterations can put different "
+                    f"defects behind the same one, so read the findings "
+                    f"themselves before treating this as a loop"
+                )
+            else:
+                why = (
+                    " The first failure of a stage charges the budget, and "
+                    "nothing since has reported a repair"
+                )
             return (
                 f"iteration limit exceeded for {label}{stage_id}: "
-                f"{spent}/{max_iter} failures repeating a finding this stage "
-                f"had already raised{unrepaired}"
+                f"{spent}/{max_iter} failures that did not converge." + why
             )
         if count >= ceiling:
+            if not repeated:
+                seen = ""
+            elif stage["type"] == GATE:
+                seen = (
+                    f" Checks refused in consecutive rounds: "
+                    f"{', '.join(repeated)}."
+                )
+            else:
+                seen = (
+                    f" Finding ids seen in consecutive iterations: "
+                    f"{', '.join(repeated)} -- diagnostic only, and not "
+                    f"evidence of a repeat: lanes cannot know which ids an "
+                    f"earlier iteration used, so an id says nothing about "
+                    f"which defect wears it."
+                )
+            budget = (
+                "no round reported a repair it could not make"
+                if reported else
+                "no round raised what the round before it raised"
+            )
             return (
                 f"iteration limit exceeded for {label}{stage_id}: "
-                f"{count}/{ceiling} consecutive failures. Each raised work "
-                f"the one before it did not, so the repeat budget "
-                f"({spent}/{max_iter}) never ran out; the absolute ceiling "
-                f"stops a stage that finds something new forever"
+                f"{count}/{ceiling} consecutive failures. The repeat budget "
+                f"({spent}/{max_iter}) never ran out because {budget}; the "
+                f"absolute ceiling stops a stage that finds something new "
+                f"forever." + seen
             )
         return None
 
@@ -3113,6 +3619,7 @@ def _validate_workflow(data: dict[str, Any], path: Path) -> None:
         _validate_repair_routes(path, sid, stype, stage)
         _validate_repairs(path, sid, stage)
         _validate_iteration_bounds(path, sid, stage)
+        _validate_stage_flags(path, sid, stage)
 
     # Validate transitions point to valid stages or terminal states
     accepting = []
@@ -3175,6 +3682,17 @@ def _validate_repairs(
                 f"{path}: {sid}: duplicate repair ownership: {target}"
             )
         seen.add(target)
+
+
+def _validate_stage_flags(
+    path: Path, sid: str, stage: dict[str, Any]
+) -> None:
+    """The two per-stage declarations this engine reads are booleans."""
+    for key in ("reports_repairs", "records_standing_findings"):
+        if key in stage and not isinstance(stage[key], bool):
+            raise WorkflowError(
+                f"{path}: {sid}: '{key}' must be true or false"
+            )
 
 
 def _validate_iteration_bounds(
@@ -3396,6 +3914,111 @@ def _escalation_note(state: dict[str, Any]) -> str:
     )
 
 
+def _document_root(
+    workflow: dict[str, Any], args: dict[str, Any]
+) -> str | None:
+    """The repo-relative root of the thing under work, or None.
+
+    Built from the workflow's own `document_root` template, so the engine
+    states a path without knowing anything about what a proper leaf is. A
+    workflow that declares no template gets no header line rather than a
+    guessed one.
+    """
+    template = workflow.get("document_root")
+    if not template:
+        return None
+    try:
+        return template.format(**args)
+    except (KeyError, IndexError):
+        return None
+
+
+def _standing_findings(
+    repo_root: Path | None, document_root: str | None
+) -> list[dict[str, Any]]:
+    """Blocking findings a previous production left standing, or [].
+
+    An absent file means no previous production recorded anything, and is not
+    an error: it is the ordinary state of a leaf nobody has evaluated.
+
+    **Nothing in the engine reads this into a packet, deliberately.** It was
+    briefly read at seed, to give a pipeline beginning after research the
+    carry-forward it has no stage for. That was wrong three ways at once and a
+    cold review found all three: the pristine recompile in
+    `_load_verified_bootstrap` did not know about the argument, so a run seeded
+    against a non-empty record could never be seeded again -- breaking the
+    idempotency `OPERATOR.md` promises and a whole suite tests; the file is
+    untracked working-tree state that no `repo_commit` moves with and no
+    `workflow_source_digest` covers, so the same run id could produce different
+    bootstrap bytes; and on the full pipeline the findings reached only the
+    `seed` stage's packet, unfiltered by `repair_target`.
+
+    Carrying findings between productions still wants doing. It wants doing
+    where the run's identity can cover it: either an operator subcommand whose
+    output is committed, so `repo_commit` moves with it, or the record's own
+    hash in `compute_run_id` and in the acceptance audit. Until then this is a
+    record for people to read, and the format it defines.
+    """
+    if not document_root or repo_root is None:
+        return []
+    path = repo_root / document_root / STANDING_FINDINGS_PATH
+    if not path.is_file():
+        return []
+    try:
+        data = tomllib.loads(path.read_text(encoding="utf-8"))
+    except (OSError, tomllib.TOMLDecodeError):
+        # A record this run cannot read is a record it must not guess at. The
+        # run proceeds with nothing carried, which is the state it would have
+        # been in without the file at all.
+        return []
+    standing = []
+    for entry in data.get("findings", []) or []:
+        if not isinstance(entry, dict):
+            continue
+        standing.append({
+            key: entry[key] for key in (
+                "id", "lane", "severity", "location", "problem",
+                "required_result", "repair_target",
+            ) if key in entry
+        })
+    return standing
+
+
+def _toml_string(value: str) -> str:
+    """One TOML basic string, for prose nobody sanitized on the way in.
+
+    The values here are a lane's own finding text. It quotes the document, so
+    it arrives carrying quotation marks, backslashes out of LaTeX, and
+    newlines, and it is written to a file another run has to parse. An escaper
+    that is merely usually right produces a record that parses as something
+    else, or not at all.
+
+    Every quote is escaped in both forms, so the closing delimiter can never be
+    read out of the content. That is more escaping than a multi-line string
+    strictly needs and it is the reason this is short enough to be obviously
+    correct: the earlier version tried to escape only `\"\"\"` and mangled a
+    value ending in one.
+    """
+    text = str(value).replace("\r\n", "\n").replace("\r", "\n")
+    # Control characters other than tab and newline are not permitted raw, and
+    # `>= 0x20` is not that test: U+007F (DEL) satisfies it and TOML refuses it
+    # anyway, so one stray byte in a quoted source made the whole record
+    # unparseable -- and the reader, catching the parse error, discarded every
+    # well-formed finding in it without a word. A lone surrogate is excluded
+    # for the same reason one layer down: it is `str` that cannot be encoded.
+    text = "".join(
+        ch if ch in "\t\n" or (0x20 <= ord(ch) < 0x7F) or (
+            0xA0 <= ord(ch) and not 0xD800 <= ord(ch) <= 0xDFFF
+        )
+        else "\\u%04x" % ord(ch)
+        for ch in text
+    )
+    escaped = text.replace("\\", "\\\\").replace('"', '\\"')
+    if "\n" not in text:
+        return '"' + escaped + '"'
+    return '"""\n' + escaped + '"""'
+
+
 def _blocking_ids(result: dict[str, Any]) -> list[str]:
     """Every blocking finding id in a result, sorted and unique.
 
@@ -3600,6 +4223,66 @@ def _validate_result(
                         f"findings[{i}].{field} is {finding[field]!r}; "
                         f"expected one of: "
                         f"{', '.join(finding_enums[field])}"
+                    )
+
+    # An observation is a lane's record of something real it saw and its own
+    # criteria do not reach. It carries no severity and routes no repair: it
+    # exists so that such a sighting reaches the run at all. Before it, the
+    # only route from a lane to the record was the driver writing a finding of
+    # its own, which the fan-out policy forbids and which is what made an
+    # earlier run unreplayable — so four defects that four max-effort sweeps
+    # located were seen, correctly declined, and lost.
+    if "observations" in result:
+        observations = result["observations"]
+        if not isinstance(observations, list):
+            raise WorkflowError("result.observations must be a list")
+        observation_fields = schema.get("observation_fields", [])
+        if not observation_fields and observations:
+            raise WorkflowError(
+                "result carries observations, which this stage's schema does "
+                "not define"
+            )
+        for i, observation in enumerate(observations):
+            if not isinstance(observation, dict):
+                raise WorkflowError(f"observations[{i}] must be an object")
+            for field in observation_fields:
+                if field not in observation:
+                    raise WorkflowError(
+                        f"observations[{i}] missing required field: {field}"
+                    )
+
+    # A reviser's account of what it did with each finding it was given. The
+    # engine's convergence budget is charged from this and from nothing else,
+    # so a malformed report is refused rather than read past.
+    if "finding_dispositions" in result:
+        dispositions = result["finding_dispositions"]
+        if not isinstance(dispositions, list):
+            raise WorkflowError("result.finding_dispositions must be a list")
+        disposition_fields = schema.get("finding_disposition_fields", [])
+        if not disposition_fields and dispositions:
+            raise WorkflowError(
+                "result carries finding_dispositions, which this stage's "
+                "schema does not define"
+            )
+        disposition_enums = schema.get("finding_disposition_enums", {})
+        for i, entry in enumerate(dispositions):
+            if not isinstance(entry, dict):
+                raise WorkflowError(
+                    f"finding_dispositions[{i}] must be an object"
+                )
+            for field in disposition_fields:
+                if field not in entry:
+                    raise WorkflowError(
+                        f"finding_dispositions[{i}] missing required field: "
+                        f"{field}"
+                    )
+            for field in sorted(disposition_enums):
+                if field in entry \
+                        and entry[field] not in disposition_enums[field]:
+                    raise WorkflowError(
+                        f"finding_dispositions[{i}].{field} is "
+                        f"{entry[field]!r}; expected one of: "
+                        f"{', '.join(disposition_enums[field])}"
                     )
 
     # Malformed results fail closed: if we got here without raising,

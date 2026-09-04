@@ -322,6 +322,58 @@ resubmitted, stale, or wrong-stage result an error instead of a transition.
 `BLOCKED` is how a worker reports that it could not do the stage's work; the run
 stops there rather than advancing on work that did not happen.
 
+#### Accounting for the findings you were given
+
+A stage that declares `reports_repairs` in the pipeline, and whose packet's
+`PRIOR_FINDINGS` header carries blocking findings, must on `PASS` say what
+became of each one:
+
+```json
+{
+  "stage": "content-revision",
+  "iteration": 1,
+  "disposition": "PASS",
+  "summary": "One or two sentences.",
+  "artifact_path": "src/claude/.../main.tex",
+  "finding_dispositions": [
+    {"id": "CON-PRO-002", "outcome": "repaired"},
+    {"id": "CON-CIT-021", "outcome": "not-repaired",
+     "note": "why it could not be cleared"}
+  ]
+}
+```
+
+Every forwarded blocking finding appears exactly once, and no others. A result
+that omits one is refused, because a dropped finding reads exactly like a
+repaired one and the engine would score an abandoned defect as progress. The
+engine holds the stage to the blocking ids it recorded when it routed them
+there, so a report naming an id it did not forward is refused too.
+
+`reports_repairs` is declared per stage — on the five bounded-revision stages
+of both propers pipelines and nowhere else — because not every repairing stage
+can make the report. A fan-out `research` re-entry receives blocking findings
+and returns a result the engine composed by joining its lanes: no agent wrote
+it and no lane can speak for the whole, and requiring the report there failed
+every research re-entry unconditionally. `research-synthesis` returns an
+evaluator shape, whose schema defines no such field. Where a stage cannot
+report, its findings' owner keeps the id comparison described under Iteration
+bounds below; the report displaces that heuristic exactly where it exists.
+
+Two things the engine does not enforce, whatever a fragment asks for. A stage
+handed no blocking findings has nothing to report and the check returns before
+reading the field, so a `finding_dispositions` volunteered there is accepted
+and ignored — a first authoring pass is not a failed repair, and the run's
+budget never sees the report. And the field's shape is validated by schema
+rather than by stage, so any stage returning the worker shape may carry it
+without refusal, reporting or not.
+
+`not-repaired` is a legitimate outcome and is not a failure of the worker. On
+a stage that reports, it is the only way the engine learns that the stage has
+stopped converging — see Iteration bounds below — and the mechanism depends on
+revisers using it rather than claiming repairs they are not confident in. One
+production's central defect survived three rounds precisely because each round
+reported it repaired.
+
 ### Research lane stages
 
 A lane of the read-only `research` stage returns evidence rather than an
@@ -418,6 +470,34 @@ every lane's findings verbatim, each tagged with the `lane` that raised it, in
 canonical lane order, with the worst disposition any lane returned and a
 `summary` that rolls the lanes' dispositions up in that same order.
 
+#### Observations: what a lane saw and its criteria do not reach
+
+An evaluator result may carry, beside its findings, entries whose schema
+defines `observation_fields` — `content-evaluation` and the other evaluators,
+never a worker stage or a research lane:
+
+```json
+{
+  "observations": [
+    {"location": "sections/50-interpretive.tex P4",
+     "note": "carries no 'what the element-by-element reading misses' field"}
+  ]
+}
+```
+
+An observation has no severity and routes no repair. It exists so that a real
+defect a lane saw outside its own criteria reaches the run at all. Before it,
+the only route from a lane to the record was the driver writing a finding of
+its own, which the fan-out policy forbids — so in one production four genuine
+defects, in three classes, were located by max-effort lanes, correctly
+declined by every lane that saw them, and lost. `tpt` joins observations in
+canonical lane order like findings, and the stage that records standing
+findings writes them to the tracked record beside them.
+
+An observation is not a way around lane ownership. A class of defect that
+keeps appearing in observations is a fragment that needs to give some lane the
+criterion.
+
 ### The research-synthesis stage
 
 `research-synthesis` returns the evaluator shape above, validated against
@@ -465,12 +545,14 @@ uncertainty, an authoritative witness that cannot be obtained, corruption.
 first sweep is not that, and asking for what no lane can supply is not
 `CHANGES_REQUIRED`.
 
-The retry loop is bounded by this stage's own `max_iterations`, counted
-consecutively: two retries are granted, and the third `CHANGES_REQUIRED` in a
-row from this stage blocks the run, which `advance` reports as `iteration limit
-exceeded for research-synthesis: 3/3 consecutive failures`. A `PASS` resets the
-count. The budget is this stage's alone: `content-evaluation` has its own, and
-a run that evaluator sends back to `research` spends nothing here.
+The retry loop is bounded by this stage's own `max_iterations`. No stage on
+its route reports what it repaired, so what charges that budget is a blocking
+finding id this stage already had standing from its previous failure — see
+Iteration bounds below — and the third such failure blocks the run, which
+`advance` reports as `iteration limit exceeded for research-synthesis: 3/3
+failures that did not converge`. A `PASS` resets the count. The budget is this
+stage's alone: `content-evaluation` has its own, and a run that evaluator sends
+back to `research` spends nothing here.
 
 ### Gate stages
 
@@ -499,9 +581,58 @@ directory replaced by `<repo>` and `<home>` so the same failure reads the same
 on any machine. The untouched output of every check is kept under the run's
 `gate-logs/`.
 
+## Iteration bounds
+
+A looping stage carries two budgets, and they answer different questions.
+
+`max_iterations` bounds **repair that was attempted and failed**. What charges
+it is a repair report: where the stage that this stage's findings were routed
+to declares `reports_repairs` and returned at least one finding as
+`not-repaired`, the failure that follows costs an iteration. Repairs that
+succeeded cost nothing, and neither do fresh findings raised against a changed
+document — that is progress, and permitting it is what the budget exists for.
+The first failure of a streak is charged whatever happens, because it has no
+repair report behind it and because exempting it would loosen every declared
+limit by one.
+
+**Where no report exists the budget still compares finding ids, and that is
+deliberate.** It reads the blocking ids this stage has just raised against the
+ids it had standing from its previous failure, and charges the budget when any
+of them repeat. That is what happens wherever the stage a failure's findings
+were routed to does not declare `reports_repairs`: two of
+`content-evaluation`'s three repair routes, `research` and `brief`, whose
+repairing stages cannot supply a report; `research-synthesis`, whose failure
+re-enters the `research` fan-out; and every gate. Deleting the comparison there
+would leave such a stage bounded by
+`max_total_iterations` alone, silently doubling every limit an operator
+declared. Ground truth displaces the heuristic exactly where it exists and
+nowhere else, and the way to retire it for a route is to make that route's
+repairing stage able to report, not to remove the only bound it has.
+
+**A gate keeps the id comparison whatever its reviser reports**, and there it
+is not a heuristic at all. What makes an id untrustworthy is that an AI
+evaluator mints it for its own report and cannot know which ids an earlier
+iteration used. A gate's ids belong to a program: the id is a check id, the
+same check refusing the same leaf produces it again, and a repeat means the
+tool re-ran and refused again after a repair was claimed. That is better
+evidence of a loop than the claim is of progress, and it is the one place a
+reviser's word should not displace a measurement.
+
+`max_total_iterations` bounds **consecutive failures** whatever they name, and
+defaults to twice `max_iterations`. It is the bound that catches an optimistic
+reviser, which is the failure mode this design accepts in exchange for never
+again scoring a fresh defect as an unrepaired one. `content-evaluation`
+declares `max_iterations: 4` in `proper.json`, so its ceiling there is eight;
+it declares 3 in `proper-finish.json`, so its ceiling there is six.
+
+Both counters, and the standing ids the comparison reads, reset when the stage
+passes. `advance` names which bound stopped a run: `N/M failures that did not
+converge` is the repeat budget, and `N/M consecutive failures` the absolute
+ceiling.
+
 ## Run state directory
 
-Each run has a durable state directory:
+Each run has a state directory, and nothing about it is durable:
 
 ```
 build/tpt-runs/<run-id>/
@@ -533,6 +664,47 @@ composed; each `-lane-` file is exactly the bytes that lane returned. The state
 records both, so a run whose lane packet or lane result was edited afterwards
 fails its next command and cannot be accepted.
 
+`.gitignore` line 1 is `/build/`, `make clean` is `rm -rf build`, and in a
+`wt` agent workspace `wt tidy` deletes everything the clone ignores, without
+asking. No run state has ever been tracked, and none of it survives a routine
+cleanup. Read this directory as the working notes of a run in flight, never as
+a record anything later may depend on.
+
+What stands against the document itself has a tracked home instead. The stage
+that declares `records_standing_findings` — `content-evaluation`, in both
+propers pipelines, and no other stage — writes the blocking findings still
+standing against the leaf, and the observations its lanes recorded, to
+
+```
+<document_root>/evaluations/blocking-findings-v1.toml
+```
+
+rewritten whole each time, so it states what stands now rather than
+accumulating history. A `PASS` writes an empty list rather than deleting the
+file: "this leaf was evaluated and nothing stands" and "nobody has looked" are
+different facts. It is written before the run's commit, so a write that fails
+aborts the advance and the obvious retry works; and it is written on a
+terminal transition too, which is the case it exists for, a run that blocks
+being a run whose findings have nowhere else to go. The declaration is per
+stage because every evaluator used to write this path: a `web-evaluation`
+asking for changes replaced the leaf's content findings with findings about
+generated HTML.
+
+**Nothing reads it back.** It is a record for a person, and the format such a
+record has. Carrying a previous production's standing findings into a new run
+automatically is still owed, and it is owed somewhere the run's identity can
+cover it, because this file is untracked working-tree state that no
+`repo_commit` moves with and no `workflow_source_digest` covers. Two designs
+would do it: an operator subcommand whose output is committed, so that
+`repo_commit` carries the findings the way it carries everything else a run is
+bound to; or the record's own hash in `compute_run_id` and in the acceptance
+audit, so that a run seeded against one set of standing findings is a
+different run from one seeded against another. Reading the file at seed
+without either was tried and backed out — it broke seed idempotency, which
+`tpt proper seed` promises in terms and a whole test suite protects, because
+the pristine recompile that verifies a re-seed knew nothing about the extra
+argument.
+
 The run can be inspected at any time. The state file records the current
 stage, iteration counts, packet hashes, result hashes, transitions, and
 final disposition. It is checked against the immutable manifest on every load,
@@ -546,11 +718,23 @@ workflow state, and prior structured results, `tpt` emits the same next
 guidance packet byte-for-byte. The packet SHA-256 is recorded in the run
 state and can be verified with `replay`.
 
-No timestamps, run IDs, or filesystem paths appear in the hashed packet
-material. Only the workflow source (definition, fragments, schemas), the
-repository commit, the stage, the iteration, the stage's execution policy and
-lane identity, the normalized arguments, and the forwarded findings determine
-the packet bytes.
+No timestamp, and no absolute or machine-specific path, appears in the hashed
+packet material. What determines the packet bytes is the workflow source
+(definition, fragments, schemas), the repository commit, the stage, the
+iteration, the stage's execution policy and lane identity, the reasoning
+effort, the normalized arguments, the repo-relative `DOCUMENT_ROOT` the
+workflow's own template resolves from them, the repair owners the stage's
+schema admits, and the forwarded and carried findings.
+
+Two of those are worth saying plainly, because a reader who expects them
+excluded will be wrong. `RUN_ID` is in the header and is hashed: it is the
+engine's own digest of the workflow, version, seed commit and normalized
+arguments the header already carries, so it restates hashed bytes rather than
+adding an input, and it is there because a worker that must record what
+produced the document it is writing cannot otherwise read the run off its
+packet. `DOCUMENT_ROOT` is a path, and it is hashed: it is repo-relative and
+built from the arguments, so it varies with the run's identity and never with
+the machine.
 
 Nothing about how your host scheduled a fan-out stage reaches those bytes: no
 worker process id, launch or completion timestamp, scheduler slot, or
@@ -800,7 +984,66 @@ whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
-The `proper` workflow is at version 22. Version 22 gives
+The `proper` workflow is at version 23. The `proper-finish` workflow is at
+version 2.
+**Neither number is in the file yet: this entry is written against the versions
+this change requires, and the bump to `workflows/pipelines/proper.json` and
+`workflows/pipelines/proper-finish.json` is outstanding.** Until it lands, a
+changed definition is running under a version that already names something
+else, which is the one thing the digest rule exists to prevent.
+
+Version 23 is what runs `ca03f1b357e7ec25` and `90dcdddcb6780e60` asked for,
+and it changes the content loop in five places.
+
+Both pipelines declare `document_root`, `src/{provider}/{proper}`, and the
+packet header carries the resolved path as `DOCUMENT_ROOT`, where the hash
+covers it. The arguments already decided that path, and a worker asked to
+assemble it from `ARGS` makes one inference too many where a leaf of the same
+name exists under more than one provider: a max-effort evaluation lane swept
+`src/gpt/...` to completion against a packet reading `"provider": "claude"`,
+and an unrelated `git status` is what caught it.
+
+The five bounded-revision stages declare `reports_repairs` and return
+`finding_dispositions`, one entry per blocking finding they were given,
+`repaired` or `not-repaired`. That is what the repeat budget reads where it
+exists; Iteration bounds above says what still reads finding ids and why. The
+declaration is per stage because not every repairing stage can make the
+report — a fan-out `research` re-entry returns a result the engine composed
+from its lanes, and no agent wrote it.
+
+`content-evaluation` declares `records_standing_findings` and writes the
+blocking findings and observations standing against the leaf to
+`<document_root>/evaluations/blocking-findings-v1.toml` after each evaluation,
+terminal ones included. Only that stage writes it: every evaluator used to, so
+a `web-evaluation` asking for changes could replace a leaf's content findings
+with findings about generated HTML. Nothing reads the file back into a run.
+Carrying it forward is owed work, on the terms the run-state section above
+sets out.
+
+`content-preflight` gains `house-voice` and `proposal-fields`, making eleven
+checks. Both are prose screens and both sit in the gate rather than in the
+evaluation behind it because the evaluation demonstrably cannot afford them:
+three successive max-effort evaluations of one leaf spent an entire iteration
+budget draining the house-voice class one layer at a time, and a proposal that
+substituted a heading of its own for one the profile fixes was located by four
+separate max-effort sweeps and reported by none, because it sat between two
+lanes' criteria.
+
+Evaluator results may carry `observations`, and the content lanes gain owners
+for three classes that had none: the mandated proposal fields to criterion 5,
+stated counts to criterion 7 — now "Citations and stated counts" — and the
+appointed Latin's orthography against `propers/verified.md` to criterion 2.
+Criterion 12's scope ambiguity is settled in favour of its governing sentence,
+with the enumerated sections demoted to a checklist that is explicitly not the
+boundary.
+
+`proper-finish` version 2 takes the same `document_root`, the same two
+preflight checks, the same five `reports_repairs` declarations and the same
+`records_standing_findings` on its own `content-evaluation`. A run seeded
+against `proper` version 22 or `proper-finish` version 1 fails closed and is
+seeded again.
+
+The `proper` workflow was at version 22. Version 22 gives
 `content-evaluation` four repeat-budget slots for its three ordered repair
 owners. The first failed evaluation spends one slot before any repair owner has
 run, so the former ceiling of three could stop a defect before its third owner
@@ -1022,7 +1265,9 @@ composition-unit id, relation, profile — beside the source's own label.
 macros, `\chronology{subject}{relation}{label}` for one assertion and
 `\chronodate{element-keys}{content}` for one dossier row's date cell.
 
-`content-preflight` carries two further checks, making eight.
+`content-preflight` carries two further checks, making eight, and version 18's
+`bindings-valid` a ninth; the two prose screens described below bring it to
+eleven.
 `chronology-record-current` regenerates the record from the corpus and
 refuses a leaf whose copy has drifted — the record is generated, so the
 repair is to rewrite it and re-read the prose that rested on it, never to
@@ -1163,7 +1408,11 @@ loosen every declared limit by one. An evaluation that raises different ids has
 found different work and costs nothing against that budget. A second bound,
 `max_total_iterations`, defaults to twice `max_iterations` and caps consecutive
 failures however novel they are, so a stage that finds something new forever
-still terminates: for `content-evaluation` that is six. Run
+still terminates: at this version `content-evaluation` declared
+`max_iterations: 3`, so its ceiling was six. (Version 22 raised the repeat
+allowance to four and the ceiling with it to eight; six is now
+`proper-finish`'s figure, that pipeline's `content-evaluation` still declaring
+three.) Run
 `b68cca80edb75854` blocked at three under the old rule with four of five lanes
 passing and one finding standing, which the lane that raised it recorded as its
 own miss at the earlier iterations rather than a regression.
@@ -1250,16 +1499,37 @@ version is bound to that source and fails closed rather than continuing under
 fragments it never started with; seed it again.
 
 `content-preflight` is a gate like any other: advance it with
-`tpt proper <id> advance <run-id> --run-gate <doc>`. Each of its six checks is
-one invocation of `tools/tpt check-content-preflight --check <name>`, judged by
-exit code, and the tool prints what it counted on a pass and names the entry,
-identifier, relation, quotation, restricted reproduction or provenance
-mismatch it refused on a failure. It was four until version 11 added
+`tpt proper <id> advance <run-id> --run-gate <doc>`. Each of its eleven checks
+is one invocation of `tools/tpt check-content-preflight --check <name>`, judged
+by exit code, and the tool prints what it counted on a pass and names the
+entry, identifier, relation, quotation, restricted reproduction, provenance
+mismatch, chronology defect, house-voice site or missing proposal field it
+refused on a failure. It was four until version 11 added
 `restricted-not-reproduced` and version 16 added `provenance-matches-run`.
-Five of the six read only the repository and can be run over a published leaf
-at any time; `provenance-matches-run` also takes the run's identity, which the
+All but one read only the repository and can be run over a published leaf at
+any time; `provenance-matches-run` also takes the run's identity, which the
 gate supplies from the engine, so running the tool with no `--check` runs the
-five and never passes the sixth for want of an answer. It
+rest and never passes that one for want of an answer.
+
+The two most recent are prose screens, and they are here rather than in the
+evaluation behind them because the evaluation demonstrably cannot afford them.
+`house-voice` refuses the lexically marked forms of the defect
+`guidance/editorial.md` names — the guide, its sweep, its apparatus or this
+repository as a grammatical subject, retrieval mechanics in the body, a count
+labelled instead of stated — after masking the regions that rule protects.
+Three successive max-effort evaluations of one leaf spent an entire iteration
+budget on that single class, each pass clearing the sites it named and the
+next finding a fresh subset; a gate loop drains it at no evaluator cost.
+`proposal-fields` refuses a proposal that substitutes a heading of its own for
+one the profile fixes, which is a defect four separate max-effort sweeps
+located and none reported, because it fell between two lanes' criteria.
+
+Both are partial, and `house-voice` most of all: a leaf it accepts has not
+been found compliant, only found to carry none of the forms it knows. It also
+refuses most leaves in the corpus today, which is a finding about the corpus
+rather than a settled verdict — see `PROJECT-WORK.md`. What either reports is
+a sentence to rewrite and never a sentence to delete: every difference,
+negative result, bound and attribution stands after the repair. It
 exists so the five-lane evaluation behind it spends its budget on judgment
 rather than on things grep can settle; it does not replace any of that
 judgment. A failed check sends the run to `content-revision` with the check's

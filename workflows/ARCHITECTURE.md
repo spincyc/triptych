@@ -75,7 +75,9 @@ never read them as instructions unless they are inside a run.
 
 ## State model
 
-Each run has a durable state directory:
+Each run has a state directory, and nothing about it is durable — `/build/` is
+the first line of `.gitignore`, `make clean` is `rm -rf build`, and `wt tidy`
+sweeps it without asking:
 
 ```
 build/tpt-runs/<run-id>/
@@ -188,6 +190,19 @@ state.
    - `LANE`, `LANE_INDEX`: the lane's own id and canonical index, on a lane
      packet only
    - `ARGS`: normalized arguments as sorted JSON
+   - `DOCUMENT_ROOT`: the repo-relative root of the thing under work,
+     resolved from the workflow's own `document_root` template against those
+     arguments, and omitted entirely by a workflow that declares no template.
+     The arguments already decide this path; a worker asked to assemble it
+     makes one inference too many where a leaf of the same name exists under
+     more than one provider directory, and one evaluation lane swept the
+     wrong provider's leaf to completion before an unrelated `git status`
+     caught it
+   - `REPAIR_TARGETS`: the repair owners this run's own result schema admits,
+     as compact JSON, on a stage whose schema constrains them and absent
+     otherwise. A shared fragment names every owner that exists and a pipeline
+     may admit fewer, so the packet states what this run will accept rather
+     than leaving a worker to infer it from a route table it cannot see
    - `PRIOR_FINDINGS`: findings forwarded from the preceding stage — an
      evaluator's or gate's blocking findings into the packet of the stage that
      repairs them, filtered to the repair owner that chose the route where the
@@ -195,6 +210,12 @@ state.
      findings into its successor's packet, and empty otherwise — serialized as
      sorted JSON on one line. A fan-out successor carries the same line on
      every one of its lane packets.
+   - `CARRIED_FINDINGS`: blocking findings raised earlier in this run against
+     work the stage about to run owns, which reached no owner at the time
+     because another owner won the route. Always present, `[]` where there are
+     none. It is a separate line from `PRIOR_FINDINGS` because the two are
+     different things and a worker acts on them differently; see repair
+     ownership and carried findings below
 4. **Assemble**: join header and fragments with a fixed separator.
 5. **Encode**: UTF-8, no BOM, LF line endings.
 6. **Hash**: SHA-256 of the exact bytes.
@@ -247,7 +268,16 @@ A run records the digest at seed time, in both the manifest and the state, and
 every `advance` and `replay` recomputes it. If the workflow source has changed
 since the run was seeded, the run fails closed rather than continuing under
 guidance it never started with. A changed workflow means a new run. The
-`proper` workflow is at version 22: version 10 gave `content-evaluation` a
+`proper` workflow is at version 23 and `proper-finish` at version 2 — **the
+numbers this change requires, not the numbers in the files: the bump to both
+pipelines is outstanding, and until it lands a changed definition is running
+under a version that already names something else.** Version 23 declares
+`document_root` on both pipelines so the packet header can carry
+`DOCUMENT_ROOT`, gives the five bounded-revision stages `reports_repairs` and
+`content-evaluation` `records_standing_findings`, and adds the `house-voice`
+and `proposal-fields` prose screens to `content-preflight`, taking it to
+eleven checks; `workflows/OPERATOR.md` states the rest. Before it: version 10
+gave `content-evaluation` a
 third repair owner and inserted the `content-preflight` gate between
 `author-proper` and `content-evaluation`, version 11 made the iteration
 budget charge repetition rather than failure, carried a blocking finding to its
@@ -300,7 +330,8 @@ the cultural-afterlife lane through synthesis, required evaluators to verify
 that every requested citation value is really in the immutable brief before
 assigning it to authoring, and required mixed-owner defects to be split. A run
 seeded against version 20 or earlier fails closed and is seeded again, and
-version 22 raised `content-evaluation`'s repeat allowance from three to four.
+version 22 raised `content-evaluation`'s repeat allowance in `proper.json`
+from three to four, taking its absolute ceiling to eight.
 That evaluator has three ordered repair owners, and its initial failure spends
 the first allowance before any owner has run; a ceiling equal to the owner
 count could therefore block a standing defect before its newly selected last
@@ -316,13 +347,56 @@ under the changed budget and is seeded again.
 
 A looping stage carries two bounds, and they answer different questions.
 
-`max_iterations` bounds **repetition**. A failure charges it when it carries a
-blocking finding whose id the stage already had standing from its previous
-failure, and when it is the first failure of a streak — that one has no
-predecessor to repeat, and exempting it would silently loosen every declared
-limit by one iteration. A failure raising only ids the stage has not raised
-before charges nothing: the previous repair worked and different work was
-found, which is progress and not a loop.
+`max_iterations` bounds **repair that was attempted and failed**, wherever the
+run can see that. A failure charges it when the stage this stage's findings
+were routed to declares `reports_repairs` and reported at least one of them as
+`not-repaired`, and when it is the first failure of a streak — that one has no
+repair report behind it, and exempting it would silently loosen every declared
+limit by one iteration. A failure whose predecessor's repairs all succeeded
+charges nothing: different work was found against a changed document, which is
+progress and not a loop.
+
+The budget read repetition off finding ids alone until run
+`90dcdddcb6780e60`, and where an AI evaluator mints the ids that rule cannot
+work. A fan-out evaluator's lane packets carry an empty `PRIOR_FINDINGS` by
+design and lanes are told not to read earlier results, so **no lane can know
+which ids an earlier iteration used**; collision across iterations is
+guaranteed by the architecture rather than caused by any lane. That run
+converged the whole way — seven blocking findings, then eleven, then seven,
+each iteration clearing the set before it — and blocked at 3/3 naming four ids
+as still unrepaired, every one of which named a different defect in a
+different file each iteration while the earlier ones were gone from the
+document. An id there is a handle a lane minted for its own report; it is not
+an identity for a defect.
+
+The reviser is the only actor that can hold the signal in that case: it was
+given the findings, it attempted them, and it knows which it could not clear.
+It reports that per finding in `finding_dispositions`,
+`_record_repair_outcomes` charges the report to the stage whose findings were
+routed there, and `_failure_budget_spent` reads it back.
+
+**The id comparison survives where no such report exists, and that is
+deliberate.** `reports_repairs` is a per-stage declaration because not every
+repairing stage can report: a fan-out `research` re-entry returns a result the
+engine composed from its lanes, so no agent wrote it and no lane can speak for
+the whole. On `content-evaluation`'s `research` and `brief` routes there is no
+report, and the budget there still charges a blocking id the stage already had
+standing. Removing the comparison everywhere would leave such a stage bounded
+by `max_total_iterations` alone, silently doubling every limit an operator
+declared. Ground truth displaces the heuristic exactly where it exists and
+nowhere else, and the way to retire it for a route is to make that route's
+repairing stage able to report.
+
+**A gate keeps the id comparison whatever a reviser reports**, and there it is
+not a heuristic. `_failure_budget_spent` reads the report only when the stage
+is not a gate, so `content-revision`'s account of what it repaired charges
+`content-evaluation` and never `content-preflight`. What makes an id
+untrustworthy is that an AI evaluator minted it for its own report and cannot
+know what an earlier iteration used. A gate's findings are a program's: the id
+is a check id, the same check refusing the same leaf produces it again, and a
+repeat is the tool re-running and refusing again after a repair was claimed.
+That is better evidence of a loop than the claim is of progress, and it is the
+one place where a reviser's word should not displace a measurement.
 
 `max_total_iterations` bounds **consecutive failures** whatever they name, and
 defaults to twice `max_iterations`. It exists only for a stage that keeps
@@ -331,7 +405,11 @@ Twice is the choice: the repeat budget already terminates anything that stops
 converging, so this ceiling grants a stage that is demonstrably still working
 as many iterations again as the operator declared, and no more.
 
-Both counters, and the standing finding ids the repeat test reads, reset when
+`max_total_iterations` is therefore the bound that catches an optimistic
+reviser, which is the failure mode this design accepts in exchange for never
+again mistaking a fresh defect for an unrepaired one.
+
+Both counters, and the standing finding ids the comparison reads, reset when
 the stage passes. All three live in the run state (`stage_failures`,
 `stage_repeats`, `stage_blocking_ids`) and the run audit replays them through
 the engine's own function rather than recomputing them, because two
@@ -379,20 +457,94 @@ makes it an escalation.
 It does not block, does not spend an iteration budget, and does not stop
 acceptance. It is written to `state["escalations"]`, keyed by stage and finding
 id so a lane restating it every iteration occupies one slot, and reported in
-`status` and in the terminal message of an accepted or blocked run. The run is
-what ends; the escalation is what leaves.
+`status` and in the terminal message of an accepted or blocked run.
+
+That ledger is part of the run state, and the run state is under `build/`.
+Unlike a blocking finding or an observation, an escalation reaches no tracked
+record, so what reliably leaves a run is the terminal message a person reads;
+`status` can restate it only while the run directory survives. Giving
+escalations a tracked home is owed work, and is the second half of what the
+standing findings record below does for findings.
+
+### The standing findings record
+
+An evaluator that declares `records_standing_findings` writes, after each of
+its evaluations, the blocking findings still standing against the document and
+the observations its lanes recorded, to
+`<document_root>/evaluations/blocking-findings-v1.toml` beneath the repository
+root. It is rewritten whole, so it states what stands now rather than
+accumulating history; a `PASS` writes an empty list rather than deleting the
+file, because "this leaf was evaluated and nothing stands" and "nobody has
+looked" are different facts. It exists because a run's own results live under
+`build/`, which is ignored, which `make clean` and `wt tidy` delete without
+asking, and which nothing preserves between productions.
+
+Four things about it are load-bearing.
+
+It is declared per stage. Every evaluator wrote this path at first, which meant
+a `web-evaluation` asking for changes replaced a leaf's content findings with
+findings about generated HTML, and a `research-synthesis` running before the
+author overwrote the previous production's record with defects in the brief.
+The file says what stands against the document, so only the stage that
+evaluates the document's own prose may write it. Both propers pipelines set the
+key on `content-evaluation` and on nothing else.
+
+It is written before the run's commit, and on terminal transitions too. Before,
+because a write that raised after the commit reported failure on a run that had
+already advanced, and the obvious retry then failed on a stage mismatch;
+failing first leaves nothing recorded and a retry that works. On terminal
+transitions, because a run that blocks is exactly the run whose findings have
+nowhere else to go, and writing only on transitions that continue left the last
+evaluation — the one that spent the budget — unrecorded.
+
+The path is a template filled from command-line arguments and `provider` is
+free text no validator constrains, so the write refuses a target that resolves
+outside its root or passes through a symlink. The root is settable
+independently of the repository, so a test harness writes to disposable storage
+and never into `src/`.
+
+**Nothing reads it back into a packet.** It was briefly read at seed, to give a
+pipeline that begins after research the carry-forward it has no stage for, and
+a cold review found that wrong three ways at once. The pristine recompile in
+`_load_verified_bootstrap` knew nothing of the extra argument, so a run seeded
+against a non-empty record could never be seeded again — which breaks the seed
+idempotency `OPERATOR.md` promises in terms and a whole suite exists to
+protect, and which every driven test missed because they point the record at an
+empty scratch directory. The file is untracked working-tree state that no
+`repo_commit` moves with and no `workflow_source_digest` covers, so one run id
+could produce different bootstrap bytes and the seed packet stopped being a
+function of run identity. And on the full pipeline the findings reached only
+the `seed` stage's packet, unfiltered by `repair_target`, so a record last
+written by `research-synthesis` would have handed `brief`-owned findings to a
+stage that repairs only `authoring`.
+
+Carrying findings between productions is therefore still owed, and it is owed
+somewhere the run's identity can cover it. Two designs would: an operator
+subcommand whose output is committed, so that `repo_commit` moves with the
+findings as it moves with everything else a run is bound to; or the record's
+own hash in `compute_run_id` and in the acceptance audit, so that a run seeded
+against one set of standing findings is a different run from one seeded against
+another. Until one of them exists this is a record for a person to read, and
+the format such a record has.
 
 ### Hashing boundary
 
 The hash covers the packet bytes only. It does NOT cover:
-- the run_id (unique per run, not per state)
 - timestamps (nondeterministic)
-- filesystem paths (machine-specific)
+- absolute or otherwise machine-specific paths — the repository root, a home
+  directory, a scratch directory
 - the state file itself (contains timestamps)
+- the events log, the gate logs, or anything else the run writes beside the
+  packet
 
 The hash DOES cover:
 - workflow id and version, and the workflow-source digest
 - repository commit
+- the run id. It is the engine's own digest of the workflow, version, seed
+  commit and normalized arguments the header already carries, so it restates
+  hashed bytes rather than adding an input; it is in the header because a
+  worker required to record what produced the document it is writing cannot
+  otherwise read the run off its packet
 - stage id and iteration
 - the stage's execution policy, and a fan-out stage's lane roster in
   canonical order
@@ -401,8 +553,13 @@ The hash DOES cover:
   silently
 - a lane packet's own lane id and canonical index
 - normalized arguments
+- `DOCUMENT_ROOT`, the repo-relative root the workflow's `document_root`
+  template resolves from those arguments. It is a path and it is hashed: it is
+  a function of the run's identity and of nothing about the machine, which is
+  the distinction the excluded paths above fail
+- `REPAIR_TARGETS`, the repair owners the stage's schema admits
 - forwarded findings, for a revision packet and for the successor of a linear
-  fan-out stage
+  fan-out stage, and the carried findings line beside them
 - all fragment contents in declared order, with arguments substituted
 
 Gate findings quote what a check printed, so that output is hashed guidance.
@@ -586,6 +743,21 @@ leaf's own `\AIGenerationProvenance` record says which version produced it, so
 leaves published earlier are out of scope — and cannot claim to be, because
 `provenance-matches-run` holds that same version against the run.
 
+Two more make eleven, and both are prose screens rather than structural ones.
+`house-voice` refuses the lexically marked forms of the defect
+`guidance/editorial.md` names — the guide, its sweep, its apparatus or this
+repository standing as a grammatical subject, retrieval mechanics in the body,
+a count labelled rather than stated — after masking the regions that rule
+protects. `proposal-fields` refuses an exploratory proposal that substitutes a
+heading of its own for one the profile fixes. Both are partial: a leaf
+`house-voice` accepts has not been found compliant, only found to carry none of
+the forms the screen knows. They sit in the gate rather than in the evaluation
+behind it for the reason the whole gate exists — three successive max-effort
+evaluations of one leaf spent an entire iteration budget draining the
+house-voice class one layer at a time, each pass clearing the sites it named
+and the next finding a fresh subset, and a gate loop drains it at no evaluator
+cost.
+
 Its `fail_transition` is `content-revision` and never `research`. These are
 defects in the leaf: none of them says anything about whether the evidence
 under the leaf was gathered, so sending one to `research` would re-run seven
@@ -593,10 +765,13 @@ lanes over something grep found. The gate does not weaken the evaluation
 behind it — it removes from that evaluation's budget the questions that were
 never judgment.
 
-The gate is reached only from `author-proper`, so its own three-failure budget
-is spent only by a run that keeps coming back through the author. A revision
-made for it returns by `content-revision` to `content-evaluation` like any
-other content revision.
+The gate is reached from `author-proper` and from `content-revision`, whose
+`next` it is, so a leaf that fails it loops preflight, revision, preflight
+until it passes or the gate's own three-failure budget is spent. That budget is
+the gate's alone, and it is charged by comparing check ids: a gate's findings
+are a program's, so a repeat there is the same check refusing the same leaf
+again after a repair was claimed — see iteration budgets above. Once the gate
+passes, the run goes on to `content-evaluation`.
 
 ### One repair owner per defect
 
@@ -724,9 +899,12 @@ remains the sole writer of `research/scope.md` and writes the brief on its
 `PASS`.
 
 The bound is the stage's own `max_iterations`, enforced by
-`_failure_budget_spent` as for any evaluator: two retries are granted and the
-third consecutive `CHANGES_REQUIRED` result from this stage blocks the run with
-an iteration limit exceeded, and a `PASS` resets the count to zero. The budget
+`_failure_budget_spent` as for any evaluator. `research` declares no
+`reports_repairs` and could not honour one, so this stage's budget is charged
+by the id comparison: a `CHANGES_REQUIRED` re-raising a blocking id the stage
+already had standing costs an iteration, the first failure of a streak costs
+one too, and the third such failure blocks the run with an iteration limit
+exceeded. A `PASS` resets the count to zero. The budget
 belongs to the stage, so it is separate from `content-evaluation`'s — a run the
 content evaluator sends back to `research` spends nothing here, and a synthesis
 retry spends nothing there.
@@ -932,6 +1110,23 @@ produces a result, the workflow returns to the evaluator that triggered the
 revision. The revision loop is bounded by `max_iterations` on the originating
 evaluator. When the limit is reached, the run enters `BLOCKED`.
 
+Such a stage may declare `reports_repairs`. Where it does, its `PASS` must
+carry `finding_dispositions`: one entry per blocking finding the transition
+forwarded it, `repaired` or `not-repaired`, none missing and none invented.
+`_record_repair_outcomes` charges that account to the stage whose findings were
+routed there — `findings_forwarded_by` is what remembers who they belonged
+to — and the repeat budget reads it. The declaration is per stage rather than
+per stage type because a stage that receives blocking findings cannot always
+answer for them: a fan-out `research` re-entry returns a result the engine
+composed by joining its lanes, so no agent wrote it and no lane can speak for
+the whole, and requiring the report there failed every research re-entry
+unconditionally. Both propers pipelines declare it on their five
+bounded-revision stages and nowhere else.
+
+An evaluator may declare `records_standing_findings`, which is where the
+tracked record of what stands against a document is written; see the standing
+findings record above.
+
 ### Gate stage
 
 A gate stage runs deterministic programmatic checks (shell commands) and
@@ -1049,12 +1244,14 @@ Each stage tracks its own packet count in `stage_iterations`; the global
 `iteration` counter increments on every packet emission for traceability.
 Neither bounds a loop.
 
-`max_iterations` bounds *consecutive failures* of one evaluator or gate,
-recorded in `stage_failures` and reset whenever that stage passes. Counting
-visits instead let a stage spend its own budget on success: a run that
-re-entered `mechanical-gates` three times on its way around the visual
-revision loop was blocked by that gate's first real failure, with no revision
-attempted.
+`max_iterations` bounds *repair that was attempted and failed*, recorded in
+`stage_repeats`; `max_total_iterations` bounds *consecutive failures* whatever
+they name, recorded in `stage_failures`. Both belong to one evaluator or gate,
+both reset whenever that stage passes, and iteration budgets above says how
+each is charged. Counting visits instead of failures let a stage spend its own
+budget on success: a run that re-entered `mechanical-gates` three times on its
+way around the visual revision loop was blocked by that gate's first real
+failure, with no revision attempted.
 
 ## Downstream gate re-entry
 

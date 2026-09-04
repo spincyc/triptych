@@ -14,6 +14,17 @@ Its failures go to `content-revision` and never to research. A mechanical
 defect in the leaf is repaired in the leaf; nothing about it says the evidence
 under the leaf is wrong, and routing it to `research` would re-run seven lanes
 over a defect grep found.
+
+A third round did it again, over one leaf and one class of defect. Three
+successive max-effort evaluations found about 96 sentences whose grammatical
+subject was the guide, its sweep, its apparatus or the repository, then about
+10, then 22; each pass repaired the ones it named and the next found a fresh
+subset of the same forms, and the run terminated BLOCKED with its whole
+evaluation budget spent on them. The same run lost a real defect in the
+opposite way: one exploratory proposal of six had replaced a required field
+with a heading of the author's own, and it fell between two lanes' criteria
+with no lane owning it. `house-voice` and `proposal-fields` are those two,
+made mechanical.
 """
 import json
 import shlex
@@ -49,6 +60,7 @@ from test_workflow_repair_routing import (  # noqa: E402
 
 STAGE = "content-preflight"
 TOOL = "check-content-preflight"
+ERROR = f"{TOOL} error: "
 # The check that holds the leaf against the run producing it, and the five
 # that read only the tree. It is kept apart because everything about how it is
 # run is different: it takes the run's own identity, the gate supplies that
@@ -73,10 +85,17 @@ PROBE_ONLY_ABSENT = ("bindings-valid",)
 # over a leaf that IS bound.
 CHRONOLOGY_CHECKS = ("chronology-record-current",
                      "chronology-claims-supported")
-TREE_CHECKS = LEAF_CHECKS + CHRONOLOGY_CHECKS
+# The two that read the reader-facing prose rather than the records under it.
+# They are named apart because they were written after this corpus was, and
+# what they find in it is a fact about the corpus rather than about them:
+# `house-voice` refuses eight of the twelve leaves that carry a manifest,
+# every refusal a form `guidance/editorial.md` names, and `proposal-fields`
+# refuses two. `ProseCheckTests` below records exactly which and at what.
+PROSE_CHECKS = ("house-voice", "proposal-fields")
+TREE_CHECKS = LEAF_CHECKS + CHRONOLOGY_CHECKS + PROSE_CHECKS
 PROBE_CHECKS = tuple(check for check in TREE_CHECKS
                      if check not in PROBE_ONLY_ABSENT)
-CHECKS = LEAF_CHECKS + (RUN_CHECK,) + CHRONOLOGY_CHECKS
+CHECKS = LEAF_CHECKS + (RUN_CHECK,) + CHRONOLOGY_CHECKS + PROSE_CHECKS
 # The five names a gate command may substitute from the run itself, and the
 # option each is handed to the tool as.
 RUN_PLACEHOLDERS = {
@@ -86,9 +105,27 @@ RUN_PLACEHOLDERS = {
     "{run.run_id}": "--run-id",
     "{run.repo_commit}": "--run-seed-commit",
 }
-# A leaf the whole evaluation loop has already accepted, in the provider the
-# rest of the workflow suite drives runs against.
-PUBLISHED = ("gpt", DOC)
+# A leaf the whole evaluation loop has already accepted and every check still
+# passes, in the provider the rest of the workflow suite drives runs against.
+# Found by suffix rather than written down, for the reason `DOC` gives: the
+# corpus renumbers. It is NOT `DOC`, which is the ninth Sunday: that leaf
+# carries two real `house-voice` loci -- "Their architecture is this guide's
+# source-grounded synthesis" and "Complete English verses are shown so the
+# project does not manufacture its own stitched translation" -- and a test may
+# not rewrite a published leaf to get a check past it.
+PROVIDER_ROOT = ROOT / "src" / "gpt"
+
+
+def _leaf_every_check_passes() -> str:
+    """The thirteenth Sunday, found the way `DOC` finds the ninth."""
+    for manifest in sorted(PROVIDER_ROOT.glob(
+            "liturgy/roman-rite/1962/propers/*/*/proper-components.toml")):
+        if manifest.parent.name.endswith("-thirteenth-after-pentecost"):
+            return manifest.parent.relative_to(PROVIDER_ROOT).as_posix()
+    raise AssertionError("no thirteenth-after-pentecost leaf under src/gpt")
+
+
+PUBLISHED = ("gpt", _leaf_every_check_passes())
 
 
 def stage() -> dict:
@@ -145,10 +182,27 @@ class TopologyTests(unittest.TestCase):
             self.assertNotEqual(revision.get(key), "research")
             self.assertNotEqual(revision.get(key), "research-synthesis")
 
+    def test_the_gate_declares_every_check_the_tool_implements(self):
+        """The tool is the authority on what checks there are.
+
+        Written against `--list` rather than against a tuple here, because a
+        check the tool implements and no gate runs is the defect the gate
+        exists to catch: it reads exactly like a check that passes.
+        """
+        listed = subprocess.run(
+            [str(ROOT / "tools" / TOOL), "--list"],
+            capture_output=True, text=True, cwd=ROOT).stdout.split()
+        self.assertEqual(sorted(listed), sorted(CHECKS),
+                         "the tool's own listing and this suite disagree "
+                         "about which checks exist")
+        self.assertEqual(
+            sorted(check_commands()), sorted(listed),
+            "the content-preflight gate and the tool disagree about which "
+            "checks run; a check the tool implements and the pipeline does "
+            "not declare never runs at all")
+
     def test_every_check_is_one_command_over_the_run_s_own_arguments(self):
         commands = check_commands()
-        self.assertEqual(list(commands), list(CHECKS),
-                         "the nine checks the design names, in order")
         registry = json.loads(
             (ROOT / "tmt.json").read_text(encoding="utf-8"))["tools"]
         for check_id, command in commands.items():
@@ -398,8 +452,15 @@ evidence = ["source-grounded-synthesis"]
                 self.assertTrue(result.stdout.startswith(f"{check}: "),
                                 "a passing check says what it counted")
 
-    def test_the_whole_preflight_passes_on_every_leaf_with_a_manifest(self):
-        """Not one leaf: every published one the manifest era produced."""
+    def test_the_whole_preflight_over_every_leaf_with_a_manifest(self):
+        """Not one leaf: every published one the manifest era produced.
+
+        The record era's checks pass on all of them, which is the property
+        this test has always held. The two prose checks are newer than the
+        corpus and refuse some of it, so what is held about them here is
+        narrower and exact: a refusal may come only from one of those two,
+        and never from a check these leaves were written against.
+        """
         checked = 0
         for provider in ("claude", "gpt"):
             root = ROOT / "src" / provider / "liturgy/roman-rite/1962/propers"
@@ -411,7 +472,16 @@ evidence = ["source-grounded-synthesis"]
                         [str(ROOT / "tools" / TOOL), "--provider", provider,
                          "--document", document],
                         capture_output=True, text=True, cwd=ROOT)
-                    self.assertEqual(result.returncode, 0, result.stderr)
+                    older = [line for line in result.stderr.splitlines()
+                             if line.startswith(ERROR)
+                             and not any(line.startswith(f"{ERROR}{check}: ")
+                                         for check in PROSE_CHECKS)]
+                    self.assertEqual(older, [], "\n".join(older))
+                    for check in TREE_CHECKS:
+                        if check in PROSE_CHECKS:
+                            continue
+                        self.assertIn(f"{check}: ", result.stdout,
+                                      f"{check} did not report on this leaf")
                 checked += 1
         self.assertGreater(checked, 0, "no published leaf was checked")
 
@@ -573,6 +643,213 @@ evidence = ["source-grounded-synthesis"]
         result = self.probe("relation-coverage")
         self.assertEqual(result.returncode, 1)
         self.assertIn("no proper-components.toml", result.stderr)
+
+
+class ProseCheckTests(unittest.TestCase):
+    """The two checks over reader-facing prose, against the real corpus.
+
+    What each rule sees and what it deliberately refuses to see is held in
+    tools/tests/test_house_voice.py, string by string, against the loci an
+    evaluation lane actually reported and the prose the same lanes read and
+    left standing. What is held here is the tool: which published leaves it
+    refuses, which it passes, and what it says when it cannot read a leaf at
+    all.
+    """
+
+    SPECIMEN = ("claude", "liturgy/roman-rite/1962/propers/temporal/"
+                          "54-fourteenth-after-pentecost")
+
+    def run_check(self, provider, document, check):
+        return subprocess.run(
+            [str(ROOT / "tools" / TOOL), "--provider", provider,
+             "--document", document, "--check", check],
+            capture_output=True, text=True, cwd=ROOT)
+
+    def leaves(self):
+        for provider in ("claude", "gpt"):
+            root = ROOT / "src" / provider / "liturgy/roman-rite/1962/propers"
+            for manifest in sorted(root.glob("*/*/proper-components.toml")):
+                yield provider, manifest.parent.relative_to(
+                    ROOT / "src" / provider).as_posix()
+
+    def test_house_voice_passes_a_leaf_that_keeps_the_voice(self):
+        provider, document = PUBLISHED
+        result = self.run_check(provider, document, "house-voice")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("no sentence taking the guide", result.stdout)
+
+    def test_house_voice_refuses_the_corpus_it_was_written_against(self):
+        """Which published leaves carry it, recorded rather than assumed.
+
+        A check written from one leaf's defects could be measuring that leaf.
+        Seven of the eight leaves refused here are not the specimen and three
+        are in the other provider, and every refusal is a form the guidance
+        names, so the habit is the corpus's and not the specimen's.
+        """
+        refused = sorted(
+            f"{provider}/{document.rsplit('/', 1)[-1]}"
+            for provider, document in self.leaves()
+            if self.run_check(provider, document, "house-voice").returncode)
+        self.assertEqual(len(refused), 8, refused)
+        self.assertIn("claude/54-fourteenth-after-pentecost", refused)
+        self.assertEqual(
+            [one for one in refused if one.startswith("gpt/")],
+            ["gpt/49-ninth-after-pentecost",
+             "gpt/51-eleventh-after-pentecost",
+             "gpt/54-fourteenth-after-pentecost"])
+
+    @unittest.skipUnless(
+        (ROOT / "src/claude/liturgy/roman-rite/1962/propers/temporal"
+                "/54-fourteenth-after-pentecost").is_dir(),
+        "the specimen leaf is not in the tree")
+    def test_house_voice_names_the_file_and_the_line_and_the_repair(self):
+        """The refusal a reviser is handed, over the leaf it was built from."""
+        result = self.run_check(*self.SPECIMEN, "house-voice")
+        self.assertEqual(result.returncode, 1)
+        lines = [line for line in result.stderr.splitlines()
+                 if line.startswith(f"{ERROR}house-voice: ")
+                 and "not screened:" not in line]
+        self.assertEqual(len(lines), 20)
+        self.assertTrue(
+            any("sections/35-source-grounded-synthesis.tex:491" in line
+                and "the source library is the subject" in line
+                for line in lines),
+            "the refusal locates the sentence in the file and on the line")
+        for line in lines:
+            self.assertIn("delete nothing it was about", line,
+                          "a refusal a worker acts on says what the repair "
+                          "is, or the worker deletes the clause")
+            self.assertNotIn("which already carries it", line,
+                             "the screen never opens the appendix and cannot "
+                             "say what is in it")
+
+    @unittest.skipUnless(
+        (ROOT / "src/claude/liturgy/roman-rite/1962/propers/temporal"
+                "/54-fourteenth-after-pentecost").is_dir(),
+        "the specimen leaf is not in the tree")
+    def test_house_voice_quotes_a_string_that_is_in_the_file(self):
+        """A refusal a worker cannot search for is a refusal it guesses at.
+
+        The quotation used to be cut out of the masked text at fifty
+        characters either side of the match, so it began and ended mid-word
+        and carried spaces where the markup had been.
+        """
+        result = self.run_check(*self.SPECIMEN, "house-voice")
+        leaf = ROOT / "src" / self.SPECIMEN[0] / self.SPECIMEN[1]
+        for line in result.stderr.splitlines():
+            if (not line.startswith(f"{ERROR}house-voice: ")
+                    or "not screened:" in line):
+                continue
+            body = line.split(f"{ERROR}house-voice: ", 1)[1]
+            where = body.split(":", 1)[0]
+            quotation = body.split(': "', 1)[1].rsplit(
+                '". Rewrite the sentence', 1)[0]
+            source = " ".join(
+                (leaf / where).read_text(encoding="utf-8").split())
+            with self.subTest(locus=where):
+                self.assertIn(quotation, source)
+
+    def test_house_voice_says_which_sections_it_could_not_read(self):
+        """Six of the twelve leaves drop the field markup entirely.
+
+        Nothing else marks where the protected exploratory notice ends and
+        the proposals begin, so the section is cut whole and no rule runs over
+        it. Reported rather than passed over in silence, or dropping the
+        markup would take half a leaf's discovery prose out of the reach of
+        this check and of `proposal-fields` at once.
+        """
+        provider, document = PUBLISHED
+        result = self.run_check(provider, document, "house-voice")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("not screened", result.stdout)
+        self.assertIn("The Propers: Interpretive Possibilities",
+                      result.stdout)
+        self.assertIn("marks no \\pfield", result.stdout)
+
+    def test_house_voice_says_it_on_a_leaf_it_is_refusing_too(self):
+        """A summary is printed on a pass, and never on a refusal.
+
+        Three of the six leaves with an unread section are leaves this check
+        refuses, so a scope statement carried only by the summary would be
+        invisible on exactly the leaves a reviser is reading. It is added to a
+        refusal that already exists and never makes one.
+        """
+        result = self.run_check(
+            "gpt", "liturgy/roman-rite/1962/propers/temporal/"
+                   "54-fourteenth-after-pentecost", "house-voice")
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("not screened", result.stderr)
+        self.assertIn("still has to be read by hand", result.stderr)
+
+    def test_proposal_fields_reads_a_proposal_whose_title_has_a_macro(self):
+        """What a check cannot read it must not report as read.
+
+        The title group was `[^{}]*`, so a proposal titled `The Gospel's last
+        clause and the Secret's \\latin{quóties} share one grammar` was not
+        seen at all: a leaf carrying five proposals was reported as "4
+        exploratory proposals, every one stating the five fields".
+        """
+        for document in ("liturgy/roman-rite/1962/propers/temporal/"
+                         "49-ninth-after-pentecost",
+                         "liturgy/roman-rite/1962/propers/temporal/"
+                         "53-thirteenth-after-pentecost"):
+            with self.subTest(document=document):
+                result = self.run_check("claude", document,
+                                        "proposal-fields")
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertIn("5 exploratory proposals", result.stdout)
+
+    @unittest.skipUnless(
+        (ROOT / "src/claude/liturgy/roman-rite/1962/propers/temporal"
+                "/54-fourteenth-after-pentecost").is_dir(),
+        "the specimen leaf is not in the tree")
+    def test_proposal_fields_catches_the_field_four_sweeps_missed(self):
+        """One proposal of six, and no lane owned it."""
+        result = self.run_check(*self.SPECIMEN, "proposal-fields")
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("P4. The hope-formula lies past the cut",
+                      result.stderr)
+        self.assertIn("what the ordinary element-by-element reading misses",
+                      result.stderr)
+        self.assertIn("The control the corpus supplies", result.stderr,
+                      "the refusal prints the headings the proposal does "
+                      "carry, so the substitution is visible")
+        self.assertEqual(
+            len([line for line in result.stderr.splitlines()
+                 if line.startswith(ERROR)]), 1,
+            "the other five proposals carry all five fields")
+
+    def test_proposal_fields_reads_the_field_by_role_not_by_string(self):
+        """Three headings for one field across the published leaves.
+
+        `What the ordinary reading misses`, `What the ordinary
+        element-by-element reading misses` and `What the element-by-element
+        reading misses` are all the profile's fourth field, and `Strongest
+        limit`, `Controlling limit` and `Limit` are all its fifth. A check
+        matching strings would refuse most of the corpus.
+        """
+        passed = [f"{provider}/{document.rsplit('/', 1)[-1]}"
+                  for provider, document in self.leaves()
+                  if not self.run_check(
+                      provider, document, "proposal-fields").returncode]
+        for leaf in ("claude/49-ninth-after-pentecost",
+                     "claude/51-eleventh-after-pentecost",
+                     "claude/52-twelfth-after-pentecost",
+                     "claude/53-thirteenth-after-pentecost"):
+            self.assertIn(leaf, passed)
+
+    def test_proposal_fields_says_when_it_cannot_read_the_fields(self):
+        """Out of scope, said outright, rather than passed in silence.
+
+        Five published leaves write their proposals as running prose with no
+        field markup, and the profile does not require the markup. What a
+        check cannot read it must not report as read.
+        """
+        provider, document = PUBLISHED
+        result = self.run_check(provider, document, "proposal-fields")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("not in scope", result.stdout)
+        self.assertIn("marks no proposal", result.stdout)
 
 
 class ProvenanceCheckTests(unittest.TestCase):
@@ -753,6 +1030,16 @@ class ProvenanceCheckTests(unittest.TestCase):
 class DrivenRunTests(RoutingCase):
     """The gate as a run actually meets it."""
 
+    # `house-voice` is the second check this harness cannot honestly satisfy,
+    # and `PropersCase` filters it for the same reason it filters
+    # `provenance-matches-run`: these runs drive over a published leaf, the
+    # ninth Sunday carries two real `house-voice` loci, and a test may not
+    # rewrite a published leaf to get a check past it. The filter is stated
+    # there and not repeated here, so that a harness which stopped filtering
+    # it would surface as a failure rather than be masked by this subclass.
+    # What the check decides is held in `ProseCheckTests` above, by running
+    # the tool over that leaf and every other leaf in the corpus.
+
     def drive_to_preflight(self, run_id: str | None = None) -> str:
         """Seed if needed, then advance until the run is waiting at the gate."""
         if run_id is None:
@@ -807,9 +1094,13 @@ class DrivenRunTests(RoutingCase):
         logs = sorted(
             path.name for path in
             (self.engine.run_dir(run_id) / "gate-logs").glob(f"{STAGE}-*"))
+        # Read off the pipeline rather than a tuple here: the harness filters
+        # two checks out of this run, and a hand-kept list would have to be
+        # edited every time the gate gains one.
         self.assertEqual(
             [name.split("-", 3)[-1] for name in logs],
-            sorted(f"{check}.log" for check in TREE_CHECKS),
+            sorted(f"{check['id']}.log" for check in stage()["checks"]
+                   if check["id"] not in self.unsatisfiable_checks),
             "every declared check ran and left its untouched log")
         for name in logs:
             text = (self.engine.run_dir(run_id) / "gate-logs" / name
@@ -829,7 +1120,12 @@ class DrivenRunTests(RoutingCase):
         against it, and the mismatch came back as a blocking finding routed to
         the reviser.
         """
-        self.unsatisfiable_checks.clear()
+        # Only this one comes back. `house-voice` stays filtered because it
+        # is unsatisfiable over the same leaf for an unrelated reason, and
+        # letting it in would put a second finding beside the one this test
+        # is about -- and then the assertion below would no longer be able to
+        # say that the run check is what refused the leaf.
+        self.unsatisfiable_checks.discard(RUN_CHECK)
         run_id = self.drive_to_preflight()
         out = self.engine.advance(run_id, run_gate=True)
         self.assertEqual(out["stage"], "content-revision",

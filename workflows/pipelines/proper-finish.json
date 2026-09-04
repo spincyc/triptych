@@ -1,9 +1,10 @@
 {
   "id": "proper-finish",
-  "version": 1,
+  "version": 2,
   "description": "1962 propers synthesis production workflow",
   "default_effort": "xhigh",
   "document_argument": "proper",
+  "document_root": "src/{provider}/{proper}",
   "document_discovery": {
     "search": "src/*/liturgy/roman-rite/1962/propers/*/*",
     "marker": "main.tex",
@@ -92,6 +93,16 @@
           "id": "chronology-claims-supported",
           "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check chronology-claims-supported",
           "required_result": "every biblical date the leaf prints must be an assertion the chronology corpus makes at the verses the element appoints, printed in the source's own label and carrying the corpus's subject and relation; and from this version the date cell of the scriptural dossier may hold no figure that is not inside such a claim, with one cell for every appointed Scripture including the ones the corpus dates nowhere. A well-formed year reads exactly like a right one, so a date recalled or researched into place is invisible to every other gate and to the leaf's own self-consistency"
+        },
+        {
+          "id": "house-voice",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check house-voice",
+          "required_result": "reader-facing prose must state the finding rather than narrate the guide, its sweep, its apparatus or this repository; guidance/editorial.md forbids the grammatical subject being the work, and three successive max-effort evaluations of one leaf spent an entire iteration budget draining this one layer at a time, each pass clearing the sites it named and the next finding a fresh subset. A mechanical screen exhausts it in a gate loop that costs no evaluator iteration"
+        },
+        {
+          "id": "proposal-fields",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check proposal-fields",
+          "required_result": "every exploratory proposal must carry the fields the profile fixes for it; a proposal that substitutes a field of its own is a defect four separate max-effort sweeps located and none reported, because it sat between two evaluation lanes' criteria"
         }
       ],
       "pass_transition": "content-evaluation",
@@ -153,7 +164,8 @@
           "transition": "content-revision"
         }
       ],
-      "max_iterations": 3
+      "max_iterations": 3,
+      "records_standing_findings": true
     },
     {
       "id": "content-revision",
@@ -172,7 +184,8 @@
         "authoring"
       ],
       "result_schema": "worker-result.json",
-      "next": "content-preflight"
+      "next": "content-preflight",
+      "reports_repairs": true
     },
     {
       "id": "build-artifacts",
@@ -231,7 +244,8 @@
         "propers/build-artifacts.md"
       ],
       "result_schema": "worker-result.json",
-      "next": "mechanical-gates"
+      "next": "mechanical-gates",
+      "reports_repairs": true
     },
     {
       "id": "visual-evaluation",
@@ -293,7 +307,8 @@
         "propers/build-artifacts.md"
       ],
       "result_schema": "worker-result.json",
-      "next": "mechanical-gates"
+      "next": "mechanical-gates",
+      "reports_repairs": true
     },
     {
       "id": "final-acceptance",
@@ -389,7 +404,8 @@
         "propers/generate-web.md"
       ],
       "result_schema": "worker-result.json",
-      "next": "web-evaluation"
+      "next": "web-evaluation",
+      "reports_repairs": true
     },
     {
       "id": "install-publication",
@@ -537,7 +553,8 @@
         "propers/install-publication.md"
       ],
       "result_schema": "worker-result.json",
-      "next": "publication-gates"
+      "next": "publication-gates",
+      "reports_repairs": true
     }
   ]
 }

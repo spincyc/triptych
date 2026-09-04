@@ -95,7 +95,7 @@ class DefinitionTests(unittest.TestCase):
     def test_finish_pipeline_loads_end_to_end(self) -> None:
         loaded = self.engine.load_workflow("proper-finish")
         self.assertEqual(loaded["id"], "proper-finish")
-        self.assertEqual(loaded["version"], 1)
+        self.assertEqual(loaded["version"], 2)
         self.assertEqual([stage["id"] for stage in loaded["stages"]], STAGES)
 
     def test_document_contract_is_copied_verbatim(self) -> None:
@@ -171,19 +171,20 @@ class DefinitionTests(unittest.TestCase):
         ))
         self.addCleanup(shutil.rmtree, runs, ignore_errors=True)
         self.engine.runs_dir = runs
+        self.engine.standing_findings_root = runs / "standing"
         try:
             seeded = self.engine.seed("proper-finish", {
                 "proper": DOC,
                 "provider": "gpt",
             })
             self.assertEqual(seeded["workflow_id"], "proper-finish")
-            self.assertEqual(seeded["workflow_version"], 1)
+            self.assertEqual(seeded["workflow_version"], 2)
             self.assertEqual(seeded["stage"], "author-proper")
             packet = (
                 self.engine.run_dir(seeded["run_id"])
                 / "packets" / "author-proper-0000.txt"
             ).read_text(encoding="utf-8")
-            self.assertIn("WORKFLOW: proper-finish v1", packet)
+            self.assertIn("WORKFLOW: proper-finish v2", packet)
             self.assertIn("STAGE: author-proper", packet)
 
             commit = self.engine.load_state(seeded["run_id"])["repo_commit"]
@@ -227,6 +228,9 @@ class ProvenanceTests(unittest.TestCase):
                 cwd=ROOT, capture_output=True, text=True, check=False,
             )
             self.assertEqual(result.returncode, 0, result.stderr)
+            # The "1" here is this fixture's own synthetic run, not the
+            # pipeline's version: the check echoes what the record and the run
+            # both state, and the point is that they agree.
             self.assertIn("proper-finish v1", result.stdout)
 
     def test_generation_metadata_accepts_the_finish_workflow_id(self) -> None:

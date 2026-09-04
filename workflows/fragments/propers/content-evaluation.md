@@ -48,7 +48,15 @@ stated in both, guessing repairs one edition and publishes the other.
    synthesis, editorial/AI proposal, unverified lead)?
 2. **Source verification**: Are claims verified from primary, official,
    edition-identified sources? Are OCR and secondary citations treated as
-   leads until checked?
+   leads until checked? This criterion reaches the appointed Latin as the
+   leaf prints it. `propers/verified.md` records what the typical edition
+   actually prints, accent by accent, and the leaf must print that: an acute
+   the edition does not carry, a spelling, or a word division the record does
+   not hold is a criterion 2 defect wherever in the leaf it stands. That is
+   this criterion and no other — transcription fidelity to the identified
+   edition is what "verified from the edition itself" means, and a lane that
+   files it under citations or under provenance files it where nobody owns
+   it.
 3. **Reception sweep**: Was a broad and deep patristic/saintly reception
    sweep conducted for each appointed passage? Are direct witnesses retained
    where found?
@@ -56,7 +64,16 @@ stated in both, guessing repairs one edition and publishes the other.
    argument (not an abridged procession)? Does each unit draw from multiple
    elements and witnesses?
 5. **Exploratory proposals**: Are proposals labeled as exploratory? Does each
-   join at least 2 elements?
+   join at least 2 elements? And does each carry every field the profile
+   mandates for a proposal — the connecting mechanism, the theological,
+   intellectual, spiritual or pastoral fruit, what the ordinary
+   element-by-element reading misses, and the strongest material limit,
+   alternative, or disconfirming condition — each under a heading that states
+   the field the profile asks for? A proposal that prints some other field in
+   place of one of these has dropped the field, however good the substitute
+   is on its own. The mandated fields of a proposal are criterion 5 and not
+   criterion 9: reader order and page assignment are properties of the
+   document, and the fields inside a proposal are properties of the proposal.
 6. **Material disagreement**: Where the sources disagree, is the
    disagreement present in the prose and attributed to the sources that hold
    it? Is uncertainty carried where it bears on a claim, and currentness
@@ -65,9 +82,18 @@ stated in both, guessing repairs one edition and publishes the other.
    was retained rather than silently harmonized is not evidence of compliance,
    it is a criterion 12 defect, and asking for it is how a criterion produces
    the fault it meant to prevent.
-7. **Citations**: Are only sources actually used cited? No invented searches,
-   verifications, quotations, attributions, doctrines, laws, or historical
-   facts?
+7. **Citations and stated counts**: Are only sources actually used cited? No
+   invented searches, verifications, quotations, attributions, doctrines,
+   laws, or historical facts? A number the prose states about its own
+   material is such a fact, and it is checked by counting what follows it:
+   `Five independent witnesses` heading four, `Six comparatives of degree in
+   four Latin constructions` enumerating seven, a total that does not add up
+   to the rows above it, a `three` that introduces two. Every stated count in
+   reader-facing prose is this criterion's, in every section and in both
+   editions, whatever the material being counted is — witnesses, textual
+   features, manuscripts, elements, proposals. It is not divided by subject
+   matter: the arithmetic belongs here even when the things counted are
+   evidence, or Latin constructions, or the appointed elements themselves.
 8. **English rule**: Is English quoted from registered public-domain
    witnesses (Douay-Rheims for scripture, public-domain hand missal for
    orations)? No composed/translated/adapted English?
@@ -96,18 +122,25 @@ stated in both, guessing repairs one edition and publishes the other.
     giving the conclusion? A few necessary claim-local qualifications are not
     a defect; the defect is a recurring rhetorical habit, and it counts the
     same whether it is written as a sentence, a run-in label, a standing
-    per-entry field, or a table column. Every reader-facing section is in
-    scope: the page-1 four senses, `Scriptural Date and Location`, `The
-    Propers: Themes and Movement`, `The Propers: Detailed Commentary`, the
-    integrated commentary, the source-grounded synthesis, `The Propers:
-    Notable and Quotable`, and the proposals of `The Propers: Interpretive
-    Possibilities`. Out of scope, as qualification by design, are `Appendix:
-    Scope and Qualifications`, `References`, and — within `The Propers:
-    Interpretive Possibilities` — the exploratory notice, the novelty
-    classification, and the controlling-limit field the profile mandates for
-    each proposal, however that field is labelled. Two sections are in scope
-    for their register and not for their required content. Page 2 must carry
-    the traditional attribution, the modern critical horizon, the
+    per-entry field, or a table column. **Every reader-facing section is in
+    scope** — every section either edition puts in front of a reader, with no
+    exception but the ones named next. The out-of-scope list below is the
+    entire boundary; nothing else narrows it. Out of scope, as qualification
+    by design, are `Appendix: Scope and Qualifications`, `References`, and —
+    within `The Propers: Interpretive Possibilities` — the exploratory
+    notice, the novelty classification, and the controlling-limit field the
+    profile mandates for each proposal, however that field is labelled.
+    Where to look, which is a reading checklist and not the boundary: the
+    page-1 four senses, `Scriptural Date and Location`, `The Propers: Themes
+    and Movement`, the complete appointed text, `The Propers: Detailed
+    Commentary`, the integrated commentary, the source-grounded synthesis,
+    `The Propers: Notable and Quotable`, and the proposals of `The Propers:
+    Interpretive Possibilities`. A reader-facing section this checklist does
+    not happen to name is in scope all the same, and the checklist being
+    short of one is never a reason to leave a section unread: read what the
+    leaf actually builds. Three sections are in scope for their register and
+    not for their required content. Page 2 must carry the traditional
+    attribution, the modern critical horizon, the
     uncertainty, and the claim-local sources, and none of those is ever a
     finding; what is a finding is a dossier that turns to narrating the
     sheet's own conduct, as `this sheet reports it unresolved` does where the
@@ -116,7 +149,22 @@ stated in both, guessing repairs one edition and publishes the other.
     and none of those is ever a finding; what is a finding is the
     `Notable-and-quotable audit` printed for the reader as a standing
     `Control` or `Rights and limit` block under every entry, where the
-    profile keeps that material in `research/scope.md`.
+    profile keeps that material in `research/scope.md`. The complete
+    appointed text is the third. What the profile requires of it is narrow —
+    where no public-domain English exists for an element, say so, give the
+    Latin incipit, describe what the prayer asks, and supply no rendering of
+    the project's own — and a leaf that goes further and states what the
+    registered English leaves of the Latin unanswered is stating a fact about
+    the two texts, which is never a finding. What is a finding is the same
+    block turning from the two texts to the guide's handling of them — `so
+    they are printed whole with the sung portion marked`, `it stands
+    bracketed above in the missal's own Latin and untranslated`, `the
+    doxology cue is not translated here` — where saying what the Latin has
+    and the English has not would do the work. That section is named here
+    because an earlier checklist left it out, and a lane had to decide for
+    itself both that it was in scope and which half of an English-gap block
+    the profile asks for. It is in scope, on the same terms as the other
+    two.
 
 ## Lane scope
 
@@ -126,6 +174,32 @@ exactly which of them you own. Report findings for your own criteria only.
 Another lane owns each of the others, and tpt joins every lane's findings
 itself.
 
+## When you see something real and your criteria do not reach it
+
+Record it under `observations`, whose shape and limits the result-format
+fragment above states. It exists because the alternative was that such a
+sighting died in a lane's hand-back prose: four real defects, falling into
+three classes, were once located by max-effort lanes and reported by none,
+each sitting between adjacent lanes' criteria, and the only route from a lane
+into the run record was the driver writing a finding of its own, which the
+fan-out policy forbids and which is what made an earlier run unreplayable.
+
+Two things it is not, on this stage in particular.
+
+- **It is not a way around the partition.** Where this fragment or your lane
+  fragment names a class as another lane's, leave it to that lane: do not
+  report it and do not observe it either. Duplicating an owned class into
+  observations is how a partition rots, and the owner has been told in terms
+  that the class is theirs.
+- **It is not the place for a class that keeps recurring.** The same kind of
+  thing arriving run after run means a lane is missing a criterion, and the
+  repair is to the fragments and not to the lane's diligence. The three
+  classes those four defects fell into — the mandated proposal fields, a
+  stated count its own list contradicts, and the appointed Latin's orthography
+  against `propers/verified.md` — now have owners in criteria 5, 7 and 2
+  respectively. Say so plainly in the `note` if you think you have found a
+  fourth class.
+
 ## Repair ownership
 
 Every **blocking** finding must name who has to repair it:
@@ -134,7 +208,18 @@ Every **blocking** finding must name who has to repair it:
 "repair_target": "research" | "brief" | "authoring"
 ```
 
-Ask the three questions in this order and stop at the first yes.
+**Your packet's `REPAIR_TARGETS` header names the values this run admits, and
+it is the authority — not the three above.** A pipeline that begins after
+research owns no research and no brief, so it admits `authoring` alone, and a
+finding naming an owner the run does not have is refused. On a fan-out stage
+that refusal costs every lane's result, not only yours. Where the header names
+one value, every blocking finding you raise carries that value; where the
+defect genuinely needs an owner the run does not have, it is not a blocking
+finding of yours at all but an escalation, which carries no `repair_target` —
+see *When no stage owns the repair* below.
+
+Where the header names all three, ask the three questions in this order and
+stop at the first yes.
 
 - `research` — **does the repair need retrieval that has not happened?** No
   record in the brief supports the claim and none could without a fresh sweep:
@@ -262,9 +347,17 @@ An escalation carries **no** `repair_target` — having no owner in this run is
 what makes it one, and the engine refuses a finding that claims both. It does
 not block the run, does not spend the iteration budget, and does not stop
 acceptance. It is written into the run's escalation ledger under its finding
-id, restated into the same slot if you raise it again, and reported in the
-terminal message and in `tpt proper status`, so it survives the run and reaches
-the maintainer.
+id, restated into the same slot if you raise it again, and reported in
+`tpt proper status` and in the terminal message of an accepted or blocked run.
+
+Be exact about how far that carries. The ledger is part of the run state
+under `build/`, which is ignored, which `make clean` removes and `wt tidy`
+sweeps, and which nothing preserves between productions. A blocking finding
+and an observation reach a tracked record beside the document; an escalation
+does not, and the only part of it that reliably leaves is the terminal
+message a person reads. Write it so that message is enough on its own: name
+the file and the lines, state the contradiction, and say in `required_result`
+what the maintainer is being asked to decide.
 
 An escalation does not change your lane's disposition. Your criteria are met —
 the leaf conforms as well as anything could — so the lane returns `PASS` and
@@ -280,6 +373,15 @@ The test is ownership, not gravity. Escalation is for a defect in an artifact
 is, one of the three repair targets is true and you must use it. Do not reach
 for an escalation to avoid naming an owner, and say in `required_result` what
 the maintainer is being asked to decide.
+
+An escalation is not an observation, and the two answer different questions.
+An escalation is a finding of yours, under your own criteria, about a defect
+this run cannot repair because the file belongs to nobody in it; it carries a
+severity and a `required_result` and it reaches the maintainer. An
+observation is about your criteria and not about the file: you saw something
+real in a document this run can perfectly well repair, and no criterion you
+own reaches it. Ask which of the two is true — is the defect outside the
+run's reach, or outside your lane's — and the answer picks the shape.
 
 ## Result
 

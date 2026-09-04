@@ -193,6 +193,36 @@ state the resulting conclusion directly. It is never research less and assert
 more: this rule governs how a finding is written, and weakens no requirement
 about how it was found.
 
+### A screen finds some of this, and judgement is still yours
+
+`tools/tpt check-content-preflight --check house-voice` reads a proper leaf's
+reader-facing sections and refuses the forms of this defect that are lexically
+marked: retrieval mechanics and checksums in the body, the guide's own pages
+and apparatus as a grammatical subject, the source library or this repository
+as one, a count labelled rather than stated, and the harmonisation and
+evidence-class disclaimers this section names. It masks what the rule protects
+— `References`, `Appendix: Scope and Qualifications`, the page-2 sheet, and the
+exploratory notice and limit fields of the proposals — because a screen that
+refuses those would be enforcing the opposite of the rule.
+
+Two things follow, and the second matters more.
+
+It is partial by construction. A sentence whose subject is the guide without
+naming it, an instruction addressed to a future writer, and the hypothetical
+guide of "a guide reporting only that would have flattened" all pass it. A
+leaf the screen accepts has not been found compliant; it has been found to
+carry none of the forms the screen knows.
+
+And what it reports is a sentence to rewrite, never a sentence to delete. Every
+difference, negative result, bound and attribution stands after the repair —
+this rule is satisfied by changing the grammatical subject, and is never
+satisfied by dropping what the sentence was about. A length heuristic tried
+against the Latin bodies once ended with a worker deleting `es`, `Da`, `O` and
+`qui` from a prayer, which is why `scripts/_latin_body_damage.py` carries its
+false positives in its tests and why this screen carries a negative corpus in
+`tools/tests/test_house_voice.py`. Add a rule to it only with the prose it must
+not refuse.
+
 ## Illustration and page composition
 
 When a publication uses illustrations, compose each page or spread as one
