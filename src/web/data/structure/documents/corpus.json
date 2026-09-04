@@ -1,15 +1,15 @@
 {
  "advisory": "Derived from each document's own sources and from the PDF it builds. Titles are evaluated out of the preamble and confirmed against the built PDF; a document whose sources state no title is carried with the reason in place of one and is never given an invented name. Production provenance is what each document records about itself, field by field, omitting any field its record says was not recoverable; comparing it against the workflows declared below is a finding aid and never an authority, and nothing in this repository gates on it.",
  "counted": {
-  "documents": 187,
-  "issues": 202,
-  "pages": 5979,
+  "documents": 188,
+  "issues": 204,
+  "pages": 5993,
   "titles_unrecorded": 0,
-  "works": 138
+  "works": 139
  },
  "models": [
   {
-   "documents": 135,
+   "documents": 136,
    "id": "GPT-5-based Codex agent"
   },
   {
@@ -32,7 +32,7 @@
    "label": "Claude"
   },
   {
-   "documents": 138,
+   "documents": 139,
    "id": "gpt",
    "label": "GPT"
   }
@@ -61,7 +61,7 @@
   },
   {
    "id": "liturgy",
-   "works": 46
+   "works": 47
   },
   {
    "id": "theology",
@@ -70,9 +70,14 @@
  ],
  "workflows": [
   {
-   "digest": "761fbf8d7beb1227c1d22de7eaaf622d72ef9a14e0dfc97675a73c9364f001b4",
+   "digest": "a5519d26728d8692cb76889847e856635cc0b89b958faa72fd321287419b559d",
+   "id": "proper-finish",
+   "version": "1"
+  },
+  {
+   "digest": "41c2bab2a06c4faeb7f5921730578e41dde8289b04603cc1554d883022278d96",
    "id": "proper",
-   "version": "19"
+   "version": "21"
   }
  ],
  "works": [
@@ -5520,6 +5525,74 @@
     }
    ],
    "leaf": "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost",
+   "section": "liturgy"
+  },
+  {
+   "catalog": "library/traditional-latin-mass.md",
+   "catalog_page": "library/traditional-latin-mass.html",
+   "editions": [
+    {
+     "also": [
+      {
+       "kind": "synthesis",
+       "pages": 11,
+       "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.pdf",
+       "subject": "Research synthesis of the 1962 Roman Missal propers; complete appointed texts are reserved to the full edition",
+       "title": "Fifteenth Sunday after Pentecost (Synthesis Edition)"
+      }
+     ],
+     "authorization": "perpetual-public-repository-2026",
+     "contributions": [
+      {
+       "model": "GPT-5-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier and model qualifiers",
+       "runtime": "OpenAI Codex agent (proper authoring from the version 20 research brief; canonical and synthesis construction; source-binding maintenance; and focused validation); API workspace; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-5-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier and model qualifiers",
+       "runtime": "OpenAI Codex agent (proper authoring from the version 21 research brief; canonical and synthesis revision; source-binding validation; and focused verification); API workspace; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-5-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier and model qualifiers",
+       "runtime": "OpenAI Codex agent (proper version 21 authoring revision; citation-integrity and terminal-apparatus corrections; focused validation); API workspace; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-5-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier and model qualifiers",
+       "runtime": "OpenAI Codex agent (proper-finish version 1 authoring revision; audited-proposal alignment; dossier-layout conformance; source-binding maintenance; and focused validation); API workspace; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-5-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier and model qualifiers",
+       "runtime": "OpenAI Codex agent (proper-finish version 1 content revision; citation-locus repair; historical-dossier completion; pagination correction; and focused validation); API workspace; unexposed: client version and server revision"
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "GPT-5-based Codex agent"
+     ],
+     "pages": 14,
+     "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.pdf",
+     "produced": {
+      "run_id": "2a2429d1427f5163",
+      "seed_commit": "724063c3639cb49774a14026d6b189b2736c5a3a",
+      "workflow_digest": "3db5c0e084089defe50a5428649a147e628b3c757f1e972db39c72faa64d1a67",
+      "workflow_id": "proper-finish",
+      "workflow_version": "1"
+     },
+     "provider": "gpt",
+     "reviewed": "2026-09-04",
+     "revised": "2026-09-04T05:46:13Z",
+     "status": "alpha",
+     "subject": "Full source-audited guide to the 1962 Roman Missal propers",
+     "title": "Fifteenth Sunday after Pentecost (Full Edition)",
+     "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost/main.tex",
+     "web": "web/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.html"
+    }
+   ],
+   "leaf": "liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost",
    "section": "liturgy"
   },
   {

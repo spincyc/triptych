@@ -162,3 +162,56 @@ role = "context"
 states = ["cataloged", "acquired"]
 source_fingerprint = "sha256:021baa30acc40003aec2a4bd26be0e9829cfe5ca1e98ccf774f4159d915d4e48"
 context = "The generated chronology record carries this artifact among the sources of John's disputed composition labels; the guide supplies no event date."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-21-psalms-d20e21f8"
+loci = ["Ps.39.1-18", "Ps.46.1-10", "Ps.85.1-17", "Ps.91.1-16", "Ps.94.1-11"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-04"
+source_fingerprint = "sha256:befd68fb907291197b2b4a154a7c6b67bb22eb634b78aaeef0b8c3a956575620"
+context = "The registered public-domain verse text controls the Clementine Latin comparisons and the distinct Psalm 94:3 and Psalm 46:3 forms described in the guide; it does not control the appointed Missal adaptations."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-49-luke-28ae5d9a"
+loci = ["Luke.7.1-23"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-04"
+source_fingerprint = "sha256:feb2853dceaaad6876320c359115735221cd3bf742d0dff8d0940a9c27feefa7"
+context = "The registered public-domain verse text controls the Latin canonical context and the distinction between Luke's opening and the Missal's liturgical frame."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-50-john-1542486b"
+loci = ["John.6.1-72"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-04"
+source_fingerprint = "sha256:32bbaa24dc2d6cbc5629949b3fc3b2b0325d634666e6b1fdbb47b410df1675b4"
+context = "The registered public-domain verse text controls the Latin canonical context and the comparison between the Clementine and appointed Communion forms."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-55-galatians-000c0a2a"
+loci = ["Gal.5.13-26", "Gal.6.1-10"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-04"
+source_fingerprint = "sha256:0dbb250e3eea16a973a72227bf7101a6a071409d724c179659eab75581b26402"
+context = "The registered public-domain verse text controls the Latin canonical context behind the Epistle's flesh-Spirit, burden, and sowing vocabulary."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.venice-1570.missale-romanum-1570-text-563f4dd2"
+loci = ["Dominica XV post Pentecosten, OCR lines 53284-53522"]
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:e76b722596e6d4f31cf9ec2c7d4af5d34cbac1377e03b6926b67866f545a32d4"
+context = "The degraded OCR locates the 1570 target sequence cited in References; the directly checked page images, not these text-layer words, control the historical continuity claim."
+
+[[bindings]]
+source_id = "passage.pablo-t-gadenz.the-gospel-of-luke.2018-baker-academic.introduction-pages-16-19"
+loci = ["introduction-pages-16-19"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:affe2df9233d309155619a8517923536063ef7f6dfd5be19cb5f397fb3d9c0ac"
+context = "The restricted publisher excerpt controls the page-2 account of qualified traditional authorship, modern date proposals, and uncertain composition place; the guide paraphrases it and reproduces no excerpt text."

@@ -7,17 +7,34 @@
 \midrule
 \endhead}
 {\bottomrule\end{longtable}}
-\newcommand{\fulltextelement}[2]{\Needspace{6\baselineskip}\subsection*{#1}\begin{massbox}{#2}\itshape}
+\ifdefined\TriptychPrintEdition
+\newcommand{\fulltextheading}[1]{\Needspace{6\baselineskip}\subsection*{#1}}
+\newcommand{\fulltextcueelement}[4]{\begin{massbox}{#1}\itshape #2 \textnormal{#3} #4\end{massbox}}
+\else
+\newcommand{\fulltextheading}[1]{\subsubsection*{#1}}
+\newcommand{\fulltextcueelement}[4]{\begin{massbox}{#1}\textit{#2} #3 \textit{#4}\end{massbox}}
+\fi
+\newcommand{\fulltextelement}[1]{\begin{massbox}{#1}\itshape}
 \newcommand{\finishfulltextelement}{\end{massbox}}
 \newenvironment{fulltextenglish}[1]{\begin{sourcecard}{#1}\small}{\end{sourcecard}}
 \newcommand{\fulltextgap}[1]{\par\smallskip\textbf{Witness boundary.} #1\par}
+\ifdefined\TriptychPrintEdition
 \newenvironment{dossiertable}
-{\scriptsize\renewcommand{\arraystretch}{0.94}\setlength{\LTpre}{0.1em}\setlength{\LTpost}{0pt}%
+{\footnotesize\renewcommand{\arraystretch}{1.02}\setlength{\LTpre}{0.15em}\setlength{\LTpost}{0pt}%
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.14\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.35\linewidth}>{\raggedright\arraybackslash}p{0.16\linewidth}@{}}
 \toprule\textbf{Proper} & \textbf{Citation} & \textbf{Location} & \textbf{Date}\\\midrule\endhead}
 {\bottomrule\end{longtable}}
 \newcommand{\dossierprose}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash}p{0.92\linewidth}@{}}{#1}\\[0.1em]}
 \newcommand{\dossierevent}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash}p{0.92\linewidth}@{}}{\textit{#1}}\\}
+\newcommand{\dossierentry}[6]{#1#2 & #3 & #4 & #5\\\cmidrule(lr){1-4}\dossierprose{#6}}
+\newcommand{\dossierevententry}[7]{#1#2 & #3 & #4 & #5\\\cmidrule(lr){1-4}\dossierevent{#6}\cmidrule(lr){1-4}\dossierprose{#7}}
+\newcommand{\dossierseparator}{\midrule}
+\else
+\newenvironment{dossiertable}{}{}
+\newcommand{\dossierentry}[6]{\subsection*{#1}#2\textbf{Citation:} #3\par\textbf{Location:} #4\par\textbf{Date:} #5\par #6\par}
+\newcommand{\dossierevententry}[7]{\subsection*{#1}#2\textbf{Citation:} #3\par\textbf{Location:} #4\par\textbf{Date:} #5\par\textit{#6}\par #7\par}
+\newcommand{\dossierseparator}{}
+\fi
 % \chronology{subject}{relation}{label} -- one assertion of the corpus.
 % The stable ids render nothing; only the source's own label is printed.
 \newcommand{\chronology}[3]{#3}

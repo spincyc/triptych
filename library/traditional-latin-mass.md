@@ -70,6 +70,7 @@ editions are shown as `Planned`.
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost -->
 <!-- triptych-publication-id: claude:liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost -->
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost -->
+<!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost -->
 
 | ID | Sunday | ChatGPT | Claude |
 | ---: | --- | --- | --- |
@@ -127,7 +128,7 @@ editions are shown as `Planned`.
 | 52 | **Twelfth Sunday after Pentecost** | [Full PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.pdf) · [Synthesis PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost-synthesis.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.html) | [Full PDF](../pdf/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.pdf) · [Synthesis PDF](../pdf/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost-synthesis.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.html) |
 | 53 | **Thirteenth Sunday after Pentecost** | [Full PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf) · [Synthesis PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost-synthesis.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.html) | [Full PDF](../pdf/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf) · [Synthesis PDF](../pdf/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost-synthesis.pdf) · [Read](../web/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.html) |
 | 54 | **Fourteenth Sunday after Pentecost** | [Full PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost.pdf) · [Synthesis PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost-synthesis.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost.html) | Planned |
-| 55 | **Fifteenth Sunday after Pentecost** | Planned | Planned |
+| 55 | **Fifteenth Sunday after Pentecost** | [Full PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.pdf) · [Synthesis PDF](../pdf/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.pdf) · [Read](../web/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.html) | Planned |
 | 56 | **Sixteenth Sunday after Pentecost** | Planned | Planned |
 | 57 | **Seventeenth Sunday after Pentecost** | Planned | Planned |
 | 58 | **Eighteenth Sunday after Pentecost** | Planned | Planned |
