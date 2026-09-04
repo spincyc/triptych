@@ -834,17 +834,35 @@ class OwnerChangeIsNotARepeatTests(RoutingCase):
             "by max_total_iterations")
 
     def test_the_same_id_to_the_same_owner_is_still_charged(self):
+        """Unrepaired means the reviser said so.
+
+        This test predates `finding_dispositions` and said "unrepaired" of a
+        revision that reported nothing, because at the time an id returning to
+        the same owner was the only way to say it. It now says it in the
+        vocabulary the engine reads: the reviser attempted the finding and
+        could not clear it.
+
+        The change matters, and it is a decision rather than a rename. Where a
+        reviser reports every finding repaired and the same id comes back to
+        the same owner anyway, the report wins and the budget is not charged.
+        That is deliberate: run `90dcdddcb6780e60` blocked at 3/3 on exactly
+        that shape, four ids returning under `authoring` every time, each one a
+        different defect in a different file, because a lane cannot know which
+        ids an earlier iteration used. Reading a repeat there charged a run for
+        converging. The cost is that a reviser which wrongly reports success
+        is caught by `max_total_iterations` rather than here.
+        """
         run_id = self.drive_to(EVALUATION)
         for _ in range(2):
             out = self.evaluate(
                 run_id, {self.PROFILE: [blocking("CON-PRO-001", AUTHORING)]})
             self.assertEqual(out["stage"], REVISION)
-            self.engine.advance(
-                run_id, result_path=self.worker_pass(run_id, REVISION))
+            self.engine.advance(run_id, result_path=self.worker_result(
+                run_id, REVISION, not_repaired=["CON-PRO-001"]))
             self.engine.advance(run_id, run_gate=True)
         self.assertEqual(
             self.engine.load_state(run_id)["stage_repeats"][EVALUATION], 2,
-            "unrepaired, to the same owner, twice: that is the repetition the "
+            "attempted and not cleared, twice: that is the repetition the "
             "budget exists to stop")
 
     def test_the_engine_records_the_owner_each_standing_id_named(self):
@@ -882,8 +900,13 @@ class OwnerChangeIsNotARepeatTests(RoutingCase):
                 run_id, {self.PROFILE: [dict(
                     blocking("CON-PRO-009", AUTHORING),
                     repair_target=AUTHORING)]}))
-            self.engine.advance(
-                run_id, result_path=self.worker_pass(run_id, REVISION))
+            # Stated in the vocabulary the engine now reads, for the reason
+            # given on `test_the_same_id_to_the_same_owner_is_still_charged`:
+            # where the reviser reports success, its report displaces the id
+            # comparison, so a test about the comparison has to model a
+            # repair that failed.
+            self.engine.advance(run_id, result_path=self.worker_result(
+                run_id, REVISION, not_repaired=["CON-PRO-009"]))
             self.engine.advance(run_id, run_gate=True)
         self.assertEqual(
             self.engine.load_state(run_id)["stage_repeats"][EVALUATION], 2)

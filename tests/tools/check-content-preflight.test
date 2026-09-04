@@ -36,8 +36,7 @@ trap 'rm -rf "$sandbox"' EXIT INT TERM
 # --list is the enumeration every other assertion is written against.
 run_tool --list >"$sandbox/first.txt"
 listed="$(wc -l <"$sandbox/first.txt" | tr -d ' ')"
-[ "$listed" = 11 ] || fail "--list named $listed checks, expected 11"
-[ "$listed" = 10 ] || fail "--list named $listed checks, expected 10"
+[ "$listed" = 12 ] || fail "--list named $listed checks, expected 12"
 run_tool --list >"$sandbox/second.txt"
 cmp -s "$sandbox/first.txt" "$sandbox/second.txt" || fail "--list is not byte-stable"
 sort -c "$sandbox/first.txt" || fail "--list is not in sorted order"
@@ -584,9 +583,6 @@ mkdir -p "$chrono/src/gpt/$(dirname "$fourteenth")"
 cp -R "$repo/src/gpt/$fourteenth" "$chrono/src/gpt/$fourteenth"
 ln -s "$repo/src/sources" "$chrono/src/sources"
 rm -f "$chrono/src/gpt/$fourteenth/research/chronology.toml"
-sed -i.bak 's/{unknown}{unknown}/{proper}{16}/' \
-	"$chrono/src/gpt/$fourteenth/generation-metadata.tex"
-rm -f "$chrono/src/gpt/$fourteenth/generation-metadata.tex.bak"
 
 bound() {
 	run_tool --root "$chrono" --provider gpt --document "$fourteenth" "$@"
@@ -604,7 +600,7 @@ reject_bound() {
 # greps for one version silently stops testing anything when that changes.
 
 state_production() {
-	metadata="$chrono/src/claude/$fourteenth/generation-metadata.tex"
+	metadata="$chrono/src/gpt/$fourteenth/generation-metadata.tex"
 	rest="$(grep -v AIGenerationProvenance "$metadata")"
 	{
 		printf '%s\n' "\\AIGenerationProvenance{$1}{$2}{unknown}{unknown}{unknown}{unknown}"
@@ -615,10 +611,9 @@ state_production() {
 
 # A leaf produced before the contract binds is reported out of scope rather
 # than refused: the work was correct when it was done.
-state_production proper 11
-# The copied leaf is made to state `proper` v16, immediately before the
-# chronology contract binds, so both checks report it out of scope rather
-# than refusing work that predates the rule.
+# Immediately before the chronology contract binds, so both checks report the
+# leaf out of scope rather than refusing work that predates the rule.
+state_production proper 16
 bound --check chronology-record-current >/dev/null ||
 	fail "a leaf published before the contract was refused"
 bound --check chronology-claims-supported >/dev/null ||
@@ -633,11 +628,9 @@ reject_bound --check chronology-record-current
 
 # Bind it as the full pipeline too: the leaf now says a version that carries
 # the contract.
+# Bind it as the full pipeline too: the leaf now says a version that carries
+# the contract.
 state_production proper 17
-# Bind it: the leaf now says the version that carries the contract.
-sed -i.bak 's/{proper}{16}/{proper}{17}/' \
-	"$chrono/src/gpt/$fourteenth/generation-metadata.tex"
-rm -f "$chrono/src/gpt/$fourteenth/generation-metadata.tex.bak"
 
 # A bound leaf with no chronology record cannot have carried the corpus's ids.
 reject_bound --check chronology-record-current

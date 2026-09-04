@@ -93,18 +93,15 @@ CHRONOLOGY_CHECKS = ("chronology-record-current",
 # every refusal a form `guidance/editorial.md` names, and `proposal-fields`
 # refuses two. `ProseCheckTests` below records exactly which and at what.
 PROSE_CHECKS = ("house-voice", "proposal-fields")
-TREE_CHECKS = LEAF_CHECKS + CHRONOLOGY_CHECKS + PROSE_CHECKS
-PROBE_CHECKS = tuple(check for check in TREE_CHECKS
-                     if check not in PROBE_ONLY_ABSENT)
-CHECKS = LEAF_CHECKS + (RUN_CHECK,) + CHRONOLOGY_CHECKS + PROSE_CHECKS
-# This check is also tree-only and version-bound. It is named separately
-# because it binds at two production entry points: `proper` v24 and
-# `proper-finish` v2.
+# Also tree-only and version-bound, and named separately because it binds at
+# two production entry points rather than one.
 STRUCTURAL_CHECKS = ("structural-meta-labels",)
-TREE_CHECKS = LEAF_CHECKS + STRUCTURAL_CHECKS + CHRONOLOGY_CHECKS
+TREE_CHECKS = (LEAF_CHECKS + STRUCTURAL_CHECKS + CHRONOLOGY_CHECKS
+               + PROSE_CHECKS)
 PROBE_CHECKS = tuple(check for check in TREE_CHECKS
                      if check not in PROBE_ONLY_ABSENT)
-CHECKS = LEAF_CHECKS + STRUCTURAL_CHECKS + (RUN_CHECK,) + CHRONOLOGY_CHECKS
+CHECKS = (LEAF_CHECKS + STRUCTURAL_CHECKS + (RUN_CHECK,) + CHRONOLOGY_CHECKS
+          + PROSE_CHECKS)
 # The five names a gate command may substitute from the run itself, and the
 # option each is handed to the tool as.
 RUN_PLACEHOLDERS = {

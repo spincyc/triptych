@@ -29,6 +29,7 @@ from _workflow import (  # noqa: E402
     FANOUT,
     HOST_MAX,
     PASS,
+    NOT_REPAIRED,
     PROGRAM,
     REPAIRED,
     SINGLE,
@@ -287,6 +288,31 @@ class PropersCase(unittest.TestCase):
                 {"id": fid, "outcome": REPAIRED} for fid in owed
             ]
         return self.write(name, body)
+
+    def worker_result(self, run_id: str, name: str, *,
+                      not_repaired: list[str] | None = None) -> str:
+        """A passing worker result that reports some repairs as failed.
+
+        `worker_pass` reports every finding repaired, which is what most of
+        these tests model. A test about the iteration budget's fallback has to
+        say the other thing, because a reported success displaces the id
+        comparison the fallback is made of.
+        """
+        state = self.engine.load_state(run_id)
+        packet = state["packet_hashes"][-1]
+        owed = state.get("findings_forwarded_ids", {}).get(packet["stage"], [])
+        failed = set(not_repaired or [])
+        return self.write(name, {
+            "stage": packet["stage"], "iteration": packet["iteration"],
+            "disposition": PASS, "summary": "probe", "findings": [],
+            "artifact_path": "main.tex",
+            "finding_dispositions": [
+                {"id": fid,
+                 "outcome": NOT_REPAIRED if fid in failed else REPAIRED,
+                 "note": "probe"}
+                for fid in owed
+            ],
+        })
 
     def stage_type(self, stage_id: str) -> str:
         return {stage["id"]: stage["type"] for stage in

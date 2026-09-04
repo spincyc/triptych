@@ -20,26 +20,40 @@ next session should do in what order.
 `origin/main` is **not** touched. The leaf is still held out of it, per the
 decision recorded in PROJECT-WORK.md, because its production has not finished.
 
-## What is verified and what is not
+## What is verified
 
-Verified before the merge, on the pre-merge tree: **746 workflow tests, 53
-house-voice tests, 14 latin-body-damage tests, and the
-`check-content-preflight` shell smoke test, all passing.**
-
-**Not verified: the merge itself.** `python3 -m unittest discover -s
-tools/tests -p 'test_workflow_*.py'` was still running when the session
-ended. Both pipelines load, `--list` prints twelve checks, and every
-conflicted file parses, but no suite has run against the merged tree. **Run
-it first.** It takes about fourteen minutes.
+**On the merged tree: 767 workflow tests pass, and the
+`check-content-preflight` shell smoke test passes.** Before the merge, on the
+pre-merge tree: 746 workflow tests, 53 house-voice tests and 14
+latin-body-damage tests.
 
 `test_generation_metadata` fails 11 on ecclesiastical-latin curriculum
 documents. That is pre-existing — verified against a clean `HEAD` worktree —
 and is nothing to do with this work.
 
-## The first thing to do
+The merge itself produced seven failures on the first run and four on the
+second, every one of them worth knowing about because they are the shape of
+this kind of merge:
 
-Run the workflow suite against the merged tree. The merge combined two
-independent rewrites of `_failure_budget_spent`, and the combined rule is:
+- **Two were a real semantic collision.** Main's `OwnerChangeIsNotARepeatTests`
+  asserted that an id returning to the same owner is charged; under the merged
+  rule it is not, when the reviser reported success. Resolved toward the
+  report, because run `90dcdddcb6780e60` blocked at 3/3 on exactly that shape
+  and main's owner refinement does not separate those cases — all four of its
+  ids named `authoring`. Main's tests keep their meaning, restated to say
+  `not-repaired` explicitly, and the argument is in the test's docstring. **If
+  the author of `2b9ed3c8a` disagrees, that is the place to argue it.**
+- **The rest were bad conflict resolution of mine.** Resolving "keep both
+  sides" is right for additive blocks and wrong for definitions: main's second
+  copy of the check-list constants silently overwrote mine, dropping
+  `house-voice` and `proposal-fields` out of the suite entirely, and the shell
+  test ended up with two contradictory count assertions and two chronology
+  fixtures on different providers. None of that is visible in the conflict
+  markers.
+
+## The combined budget rule
+
+The merge combined two independent rewrites of `_failure_budget_spent`:
 
 - a reviser's `finding_dispositions` displaces the id comparison wherever the
   receiving stage declares `reports_repairs`;
