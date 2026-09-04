@@ -4,11 +4,12 @@
 Usage: scripture-chronology {validate,query,coverage,build,check} [--json]
 
 The corpus under src/sources/chronology holds typed temporal assertions keyed
-to canonical Scripture loci: composition, narrated event, utterance, historical
-and superscription setting, retrospective event, prophecy given, and prophetic
-referent. One event is dated once and bound from every locus that needs it, so
-parallel passages cannot acquire parallel dates. guidance/scripture-chronology.md
-owns the contract and scripts/_chronology.py is the whole seam.
+to Scripture loci: composition, final formation, textual attestation, narrated
+event, utterance, historical and superscription setting, retrospective event,
+prophecy given, and prophetic referent. One event is dated once and bound from
+every locus that needs it, so parallel passages cannot acquire parallel dates.
+guidance/scripture-chronology.md owns the contract and scripts/_chronology.py is
+the whole seam.
 
 This is its own tool rather than a verb on an existing one because its question
 is its own. Every neighbouring tool answers where a text is, how it is numbered,
@@ -21,6 +22,11 @@ the source library, with its own guidance and its own registered tool.
 author fixing authored data wants the list. `check` refuses a stale generated
 table instead of rebuilding it, because a verification that repairs what it was
 meant to detect reports success either way.
+
+Coverage is exhaustive only over loci the repository can enumerate from its
+tracked witnesses and concordances. Its JSON and plain output name systems that
+the repository recognises but cannot enumerate, so zero missing dates is never
+silently presented as a claim about those systems.
 
 Requires PyYAML (requirements-tools.txt).
 """
@@ -73,17 +79,18 @@ EXAMPLES = {
                 "# no binding reaches event apostolic-age.second-arrest-of-saint-paul",
                 "# no binding reaches event apostolic-age.siege-of-jerusalem-begun",
                 "# no binding reaches event apostolic-age.vespasian-invades-galilee",
+                "# no binding reaches event chronology.maas-auc-782-ad-29-calibration",
                 "# no binding reaches event israel.exile.nabuchodonosor-accession",
                 "# no binding reaches event israel.exodus.passage-of-the-red-sea",
                 "# no binding reaches event israel.judges.ark-comes-to-cariathiarim",
                 "# no binding reaches event israel.maccabees.seleucid-era",
                 "# no binding reaches event israel.restoration.reign-of-artaxerxes-i",
-                "chronology corpus valid: 1 profiles, 279 events, 62 composition_units, 375 bindings, 23 gaps, 73 books",
+                "chronology corpus valid: 3 profiles, 284 events, 77 composition_units, 379 bindings, 23 gaps, 73 books",
             ),
         ),
         Example("tools/scripture-chronology validate --json",
             (
-                "{\"answerability\":{\"by_basis\":{\"derived\":2,\"modern-critical\":10,\"patristic\":4,\"profane-harmonisation\":6,\"refusa... [+1169 chars]",
+                "{\"answerability\":{\"by_basis\":{\"catholic-critical\":16,\"derived\":4,\"modern-critical\":10,\"patristic\":4,\"primary-t... [+1303 chars]",
             ),
         ),
     ),
@@ -91,12 +98,12 @@ EXAMPLES = {
         Example("tools/scripture-chronology query Ps.21.19",
             (
                 "Ps.21.19\tdated",
+                "composition\tbefore the Maccabean period, around 165 B.C.; no individual psalm can be dated securely\tpreferred\tinherited\tcritical.psalms.latest-composition-boundary\tThe latest composition boundary shared by the Psalms",
                 "prophetic-referent\tthe 14th of Nisan, on a Friday\tdisputed\tinherited\tlife-of-christ.crucifixion\tThe Crucifixion of Our Lord",
                 "prophetic-referent\tFriday, the fifteenth day of Nisan\tdisputed\tinherited\tlife-of-christ.crucifixion\tThe Crucifixion of Our Lord",
                 "prophetic-referent\tA.U.C. 772-90, or A.D. 18-36\tdisputed\tinherited\tlife-of-christ.crucifixion\tThe Crucifixion of Our Lord",
                 "prophetic-referent\tbetween A.D. 26 and 36\tdisputed\tinherited\tlife-of-christ.crucifixion\tThe Crucifixion of Our Lord",
-                "prophetic-referent\tA.D. 29, or A.U.C. 782\tdisputed\tinherited\tlife-of-christ.crucifixion\tThe Crucifixion of Our Lord",
-                "... 4 more lines",
+                "... 5 more lines",
             ),
         ),
         Example(
@@ -113,37 +120,69 @@ EXAMPLES = {
                 "axes; --json shows the refusal beside the answer"
             ),
         ),
+        Example(
+            "tools/scripture-chronology query Lev.1.1 --profile catholic-comprehensive-v1",
+            (
+                "Lev.1.1\tattestation-only",
+                "textual-attestation\ttext attested in the 1598 Clementine Vulgate edition\tpreferred\tinherited\tattestation.vulgata-clementina-1598\tScripture text attested in the 1598 Clementine Vulgate",
+            ),
+            note=(
+                "a verse with no stronger positional chronology resolves only "
+                "to a dated textual witness; the relation and attestation-only "
+                "status prevent that date from being called composition"
+            ),
+        ),
         Example("tools/scripture-chronology query Sus.1.1 --system greek --json",
             (
-                "{\"asked\":\"Sus.1.1\",\"assertions\":[{\"answerability\":\"answerable\",\"basis\":\"Gigot's \\\"Book of Daniel\\\" states of t... [+2938 chars]",
+                "{\"asked\":\"Sus.1.1\",\"assertions\":[{\"answerability\":\"answerable\",\"basis\":\"Gigot's \\\"Book of Daniel\\\" states of t... [+3095 chars]",
             ),
         ),
     ),
     "coverage": (
         Example("tools/scripture-chronology coverage",
             (
-                "verses\t35809",
-                "runs\t1876",
-                "status\tcomposition-only\t16405",
-                "status\tdated\t12491",
+                "profile\tcatholic-comprehensive-v1",
+                "universe\tdistinct-scripture-content",
+                "verses\t37171",
+                "runs\t1964",
+                "status\tattestation-only\t1792",
+                "status\tcomposition-only\t22692",
+                "status\tdated\t12687",
                 "status\tnot-alignable\t0",
-                "status\tresearch-pending\t0",
-                "status\ttextually-distinct\t0",
-                "status\tundated-in-tradition\t6913",
-                "... 11 more lines",
+                "... 25 more lines",
             ),
         ),
         Example("tools/scripture-chronology coverage --json",
             (
-                "{\"by_relation\":{\"composition\":22019,\"historical-setting\":2934,\"narrated-event\":7970,\"prophecy-given\":1612,\"pro... [+1764 chars]",
+                "{\"by_relation\":{\"composition\":27692,\"final-formation\":1249,\"historical-setting\":2934,\"narrated-event\":7977,\"pr... [+1519 chars]",
             ),
+        ),
+        Example(
+            "tools/scripture-chronology coverage --profile "
+            "catholic-comprehensive-v1 --universe distinct-content "
+            "--require-date --json",
+            (
+                "{\"by_relation\":{\"composition\":27692,\"final-formation\":1249,\"historical-setting\":2934,\"narrated-event\":7977,\"prophecy-given\":1801,\"prophetic-referent\":297,\"retrospective-event\":413,\"superscription-setting\":277,\"textual-attestation\":2489,\"utterance\":1476},\"by_status\":{\"attestation-only\":1792,\"composition-only\":22692,\"dated\":12687,\"not-alignable\":0,\"research-pending\":0,\"textually-distinct\":0,\"undated-in-tradition\":0},\"by_system\":{\"greek\":1356,\"vulgate\":35809,\"world-english-catholic\":6},\"missing_dates\":0,\"profile\":\"catholic-comprehensive-v1\",\"require_date\":true,\"runs\":1964,\"status\":\"ok\",\"substantive_by_provenance\":{\"both\":1402,\"direct_only\":3577,\"inherited_only\":7708},\"total_verses\":37171,\"unenumerable_systems\":{\"nab\":\"this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it\",\"nova-vulgata\":\"this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it\",\"septuagint\":\"this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it\"},\"universe\":\"distinct-scripture-content\",\"universe_limitations\":{\"date_completeness_scope\":\"enumerated-loci-only\",\"note\":\"missing_dates and --require-date apply only to loci enumerated by tracked witnesses and concordances\"},\"v\":1,\"verses_with_alternative_traditional_claims\":14309,\"verses_with_multiple_relations\":8841,\"verses_with_substantive_event_assertions\":12687}",
+            ),
+            "the strict publication invariant over each distinct enumerable "
+            "textual locus; exits nonzero if any positional date is missing",
+        ),
+        Example(
+            "tools/scripture-chronology coverage --profile "
+            "catholic-comprehensive-v1 --universe addresses "
+            "--require-date --json",
+            (
+                "{\"by_relation\":{\"composition\":33104,\"final-formation\":1249,\"historical-setting\":4191,\"narrated-event\":7991,\"prophecy-given\":1801,\"prophetic-referent\":532,\"retrospective-event\":488,\"superscription-setting\":553,\"textual-attestation\":2493,\"utterance\":1528},\"by_status\":{\"attestation-only\":1796,\"composition-only\":26418,\"dated\":14373,\"not-alignable\":0,\"research-pending\":0,\"textually-distinct\":0,\"undated-in-tradition\":0},\"by_system\":{\"greek\":2156,\"hebrew\":2528,\"vulgate\":35809,\"world-english-catholic\":2094},\"missing_dates\":0,\"profile\":\"catholic-comprehensive-v1\",\"require_date\":true,\"runs\":2308,\"status\":\"ok\",\"substantive_by_provenance\":{\"both\":1479,\"direct_only\":3653,\"inherited_only\":9241},\"total_verses\":42587,\"unenumerable_systems\":{\"nab\":\"this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it\",\"nova-vulgata\":\"this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it\",\"septuagint\":\"this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it\"},\"universe\":\"supported-scripture-addresses\",\"universe_limitations\":{\"date_completeness_scope\":\"enumerated-loci-only\",\"note\":\"missing_dates and --require-date apply only to loci enumerated by tracked witnesses and concordances\"},\"v\":1,\"verses_with_alternative_traditional_claims\":14696,\"verses_with_multiple_relations\":10527,\"verses_with_substantive_event_assertions\":14373}",
+            ),
+            "the same invariant over every enumerable printed address, "
+            "including alternate numbering systems",
         ),
     ),
     "build": (
         Example(
             "tools/scripture-chronology build --dry-run",
             (
-                "dry-run\tsrc/sources/chronology/coverage.tsv\t1876 rows\tunchanged",
+                "dry-run\tsrc/sources/chronology/coverage.tsv\t1883 rows\tunchanged",
             ),
             note=(
                 "reads and reports only. Without --dry-run this rewrites the "
@@ -154,7 +193,7 @@ EXAMPLES = {
         Example(
             "tools/scripture-chronology build --dry-run --json",
             (
-                "{\"changed\":false,\"path\":\"src/sources/chronology/coverage.tsv\",\"rows\":1876,\"status\":\"dry-run\",\"v\":1}",
+                "{\"changed\":false,\"path\":\"src/sources/chronology/coverage.tsv\",\"rows\":1883,\"status\":\"dry-run\",\"v\":1}",
             ),
             note="the same, as the machine contract",
         ),
@@ -162,12 +201,12 @@ EXAMPLES = {
     "check": (
         Example("tools/scripture-chronology check",
             (
-                "chronology coverage table current: 1876 rows",
+                "chronology coverage table current: 1883 rows",
             ),
         ),
         Example("tools/scripture-chronology check --json",
             (
-                "{\"problems\":[],\"rows\":1876,\"status\":\"ok\",\"v\":1}",
+                "{\"problems\":[],\"rows\":1883,\"status\":\"ok\",\"v\":1}",
             ),
         ),
     ),
@@ -295,6 +334,12 @@ def query(arguments: argparse.Namespace) -> dict[str, object]:
         "locus": str(answer.locus),
         "chronology_status": answer.status,
         "reason": answer.note,
+        # Always expose the policy context. A gap has no resolved leaf claim,
+        # but the empty mapping is still meaningful: it distinguishes "this
+        # explicit profile says nothing dated" from an answer whose policy was
+        # silently omitted by the serializer.
+        "requested_profile": answer.requested_profile,
+        "resolved_profiles": dict(answer.resolved_profiles),
         # A SEPARATE AXIS. `chronology_status` says what this locus has;
         # `mapping` says whether it may be asserted equivalent to a locus in
         # the preferred shared system. A textually distinct text can be dated
@@ -321,6 +366,17 @@ def query(arguments: argparse.Namespace) -> dict[str, object]:
                 "title": item.title,
                 "date": str(item.claim.date),
                 "precision": item.claim.date.precision,
+                **(
+                    {
+                        "boundary": {
+                            key: (
+                                str(value) if key == "endpoint" else value
+                            )
+                            for key, value in item.claim.date.boundary.items()
+                        }
+                    }
+                    if item.claim.date.boundary else {}
+                ),
                 "label": item.claim.date.label,
                 "disposition": item.claim.disposition,
                 # WHAT THIS IS TO A CONSUMER, and the field that stops a
@@ -345,7 +401,11 @@ def query(arguments: argparse.Namespace) -> dict[str, object]:
 
 def coverage(arguments: argparse.Namespace) -> dict[str, object]:
     """Counts by category. Never one number: see the guidance, §9.1."""
-    return _chronology.coverage(_corpus_root(arguments), arguments.profile)
+    return _chronology.coverage(
+        _corpus_root(arguments), arguments.profile,
+        getattr(arguments, "universe", "distinct-content"),
+        getattr(arguments, "require_date", False),
+    )
 
 
 def build(arguments: argparse.Namespace) -> dict[str, object]:
@@ -460,6 +520,8 @@ def _render_query(payload: dict) -> int:
 
 def _render_coverage(payload: dict) -> int:
     total = payload["total_verses"]
+    print(f"profile\t{payload['profile']}")
+    print(f"universe\t{payload['universe']}")
     print(f"verses\t{total}")
     print(f"runs\t{payload['runs']}")
     for status, count in payload["by_status"].items():
@@ -467,6 +529,14 @@ def _render_coverage(payload: dict) -> int:
     for relation, count in payload["by_relation"].items():
         if count:
             print(f"relation\t{relation}\t{count}")
+    for system, count in payload.get("by_system", {}).items():
+        print(f"system\t{system}\t{count}")
+    if "missing_dates" in payload:
+        print(f"missing-dates\t{payload['missing_dates']}")
+    for name, value in payload.get("universe_limitations", {}).items():
+        print(f"universe-limitation\t{name}\t{value}")
+    for system, note in payload.get("unenumerable_systems", {}).items():
+        print(f"unenumerable-system\t{system}\t{note}")
     print(f"multiple-relations\t{payload['verses_with_multiple_relations']}")
     print(f"event-assertions\t{payload['verses_with_substantive_event_assertions']}")
     print(f"alternatives\t{payload['verses_with_alternative_traditional_claims']}")
@@ -491,14 +561,27 @@ def _render_problems(payload: dict, verb: str) -> int:
 
 def main(argv: list[str] | None = None) -> int:
     shared = argparse.ArgumentParser(add_help=False)
-    shared.add_argument("--root", help="a checkout to read instead of this one")
+    shared.add_argument(
+        "--root",
+        help=(
+            "a chronology-corpus fixture root for tests; canon, witnesses, and "
+            "concordances still come from this installed checkout (not an "
+            "alternate-checkout isolation boundary)"
+        ),
+    )
     shared.add_argument(
         "--json",
         action="store_true",
         help="emit one compact key-sorted JSON object (cli-v1)",
     )
     profiled = argparse.ArgumentParser(add_help=False, parents=[shared])
-    profiled.add_argument("--profile", help="answer under one chronology profile only")
+    profiled.add_argument(
+        "--profile",
+        help=(
+            "answer under a named evidence or cascade profile; defaults to "
+            "profiles.yaml default_profile"
+        ),
+    )
 
     parser = argparse.ArgumentParser(
         prog="scripture-chronology",
@@ -541,12 +624,30 @@ def main(argv: list[str] | None = None) -> int:
         ),
     )
     with_examples(ask, EXAMPLES["query"])
-    with_examples(
-        sub.add_parser(
-            "coverage", help="what is covered, by category", parents=[profiled]
-        ),
-        EXAMPLES["coverage"],
+    coverage_parser = sub.add_parser(
+        "coverage", help="what is covered, by category", parents=[profiled]
     )
+    coverage_parser.add_argument(
+        "--universe",
+        choices=("distinct-content", "addresses"),
+        default="distinct-content",
+        help=(
+            "count each distinct enumerable text once (default), or every "
+            "printed address the resolver can enumerate; output names known "
+            "systems excluded because no tracked concordance enumerates them"
+        ),
+    )
+    coverage_parser.add_argument(
+        "--require-date",
+        action="store_true",
+        help=(
+            "fail if any valid locus in the selected universe has no "
+            "answerable positional or bounded Date; a duration, recurring "
+            "month-day, or authored undated status does not satisfy it; zero "
+            "applies only to the enumerated loci in that universe"
+        ),
+    )
+    with_examples(coverage_parser, EXAMPLES["coverage"])
     writer = sub.add_parser(
         "build", help="rewrite the derived coverage table", parents=[shared]
     )

@@ -168,18 +168,26 @@ locus at exactly the places where the true answer is that two traditions carry
 different text. Native chronology is not a reverse projection; it is a fact
 authored at the locus it is true of.
 
-### 3.1 Why there is no translation-specific chronology
+### 3.1 Why substantive chronology is not translation-specific
 
-Because chronology is not a fact about a translation. When Matthew was written
-is the same fact whether it is read in the Douay, the Knox or the King James,
-and three copies of it would be three chances to drift. `the-shape.md` §3:
-reference, do not copy.
+Composition and event chronology are not facts about a translation. When
+Matthew was written is the same fact whether it is read in the Douay, the Knox
+or the King James, and three copies of it would be three chances to drift.
+`the-shape.md` §3: reference, do not copy.
 
 The tracked editions differ in *numbering*, and that difference is already
-solved, once, by the projection layer. A chronology keyed to canonical loci and
-reached through that layer needs no per-edition data at all — and the size of
+solved, once, by the projection layer. Substantive chronology keyed to canonical
+loci and reached through that layer needs no per-edition copy — and the size of
 the thing that would otherwise be duplicated is worth stating: seven editions ×
 35 809 verses.
+
+`textual-attestation` is the narrow exception because it asks about the witness
+itself: an identified dated manuscript or edition proves only that the text it
+prints existed by that date. It is authored once over the witness's real extent
+and reached through safe mapping where possible; native authorship is used
+where a distinct text cannot map. It never becomes the composition date of the
+work, and §4.8 makes it a last resort rather than a second date displayed beside
+better evidence.
 
 ### 3.2 Why there is no universal verse space
 
@@ -224,13 +232,28 @@ returns both.
 
 ---
 
-## 4. The profile
+## 4. Profiles
 
-A date in this corpus is a date **under a profile**. The profile is the policy;
-the assertions are the facts; each fact names the profile it was authored
-under. `src/sources/chronology/profiles.yaml` holds them.
+A date in this corpus is a date **under a profile**. An **evidence profile** is
+the authority and admissibility policy under which claims are authored. A
+**cascade profile** owns no claims; it selects among evidence profiles by a
+declared rule. `src/sources/chronology/profiles.yaml` holds both kinds, and
+every returned assertion still names the evidence profile under which its
+claim was authored.
 
-There is one: **`catholic-traditional-v1`**.
+There are two evidence profiles and one cascade:
+
+- **`catholic-traditional-v1`** — the received traditional Catholic apparatus;
+- **`catholic-critical-v1`** — source-backed Catholic critical chronology and
+  broad textual-history horizons;
+- **`catholic-comprehensive-v1`** — the default cascade, traditional first and
+  critical second for each relation independently.
+
+The top-level `default_profile` declaration is semantic state. Omitting a
+profile resolves through that one declared cascade; it never unions all known
+evidence profiles. An explicit `catholic-traditional-v1` query has exactly its
+former meaning. Sections 4.1–4.7 specify that traditional evidence profile;
+§4.8 specifies the other two.
 
 ### 4.1 What it asserts, and what it does not
 
@@ -257,6 +280,16 @@ Read in order. A lower rank is consulted only where every higher rank is
 silent, and a higher rank never yields to a lower one because the lower one is
 more precise. **Precision is not authority** — the date model keeps `precision`
 apart from the claim's `basis` and its sources for the same reason.
+
+This is an **authoring and review hierarchy**, not a rank guessed by the query
+engine from a source id. Source-library records do not presently carry a
+chronology authority rank: the researcher applies the hierarchy, records the
+reviewed result as `preferred`, `alternate`, or `disputed`, and explains any
+non-obvious settlement in the claim note. The loader proves that every source
+exists and that the disposition set is structurally coherent; it does not
+prove that a human assigned the right rank. Deterministic resolution begins
+from that reviewed corpus decision. Automating the earlier judgment would
+require a separately reviewed source-to-rank registry, not a filename rule.
 
 | Rank | Authority | What this repository holds |
 | --- | --- | --- |
@@ -300,10 +333,11 @@ provenance and a disposition:
 | `alternate` | a sourced claim not displayed first, kept queryable with its provenance |
 | `disputed` | a sourced claim in unsettled disagreement; **no claim on that subject is preferred while any is disputed** |
 
-The loader enforces all three: more than one `preferred` under one profile is a
-load error, `preferred` beside `disputed` is a load error, and two claims with
-neither is a load error, because silence about which is which is the thing that
-later reads as a decision nobody made.
+The loader enforces the structural consequences of all three: more than one
+`preferred` under one profile is a load error, `preferred` beside `disputed` is
+a load error, and two claims with neither is a load error, because silence
+about which is which is the thing that later reads as a decision nobody made.
+The rank judgment itself remains reviewed authored data, as §4.2 states.
 
 Forbidden: numeric confidence, model scores, and harmonising two claims into a
 third nobody asserted.
@@ -316,8 +350,7 @@ at all**, and reading it as though it could is how a modern-critical figure
 reprinted in a Catholic reference work arrived as traditional chronology: the
 work sits at a rank, so everything it printed was treated as ranked testimony.
 
-The governing rule, held in machine form in `profiles.yaml` under
-`admissibility` and enforced by `scripts/_chronology.py`:
+The governing rule spans reviewed authorship and machine enforcement:
 
 > A chronology value may be returned as a candidate answer under
 > `catholic-traditional-v1` only when **both the source and the basis of that
@@ -326,6 +359,12 @@ The governing rule, held in machine form in `profiles.yaml` under
 > the value is refused where the work carrying it *presents* it as resting on a
 > method the profile excludes — naming the warrant, adopting another's
 > reckoning, or declaring the method of the table it prints.
+
+Source admissibility and rank are reviewed at authoring time and encoded in
+`answerability`, `disposition`, and the explanatory note (§4.2). The
+machine-enforced portion in `profiles.yaml` and `_chronology.py` validates the
+disclosed `basis_class`, answerability state, provenance existence, and
+disposition coherence. It does not infer source eligibility from an id.
 
 **It is a disclosure test, and it is not a provenance audit.** Where a ranked
 Catholic work prints a conventional year as settled and states no method for it,
@@ -383,12 +422,13 @@ Three consequences, each of which the corpus has actually been got wrong by:
   refused on it; the same article's dating of Psalm 82, which names no method and
   rejects Briggs rather than adopting him, is answered with. The difference is in
   the two sentences, not in this corpus's opinion of the two psalms.
-- **Admissibility is determined before rank.** Rank orders admissible evidence;
+- **Admissibility is determined before rank.** Rank governs the reviewed
+  disposition of admissible evidence;
   rank never makes an inadmissible methodology admissible. There is no rank at
   which an excluded basis becomes answerable, no rank-6 exception, and no
   rank-6-only rule: the rule reads identically at rank 1 and at rank 6. In code
-  this is literal — `_candidates` gates every claim before `sort_key` orders
-  anything, and ordering is the whole of what rank does.
+  `_candidates` gates every claim before `sort_key` orders the already-reviewed
+  dispositions; `sort_key` does not compute an authority rank.
 
 `unreviewed` was the transitional class. It is what a claim authored before
 this contract carried, and it was admissible while the debt was being worked
@@ -524,9 +564,70 @@ Both are computed by the diff tool from the dumped structure rather than by
 either revision's loader, for the reason that tool's docstring already gives:
 a base revision that predates the axis has no code to ask.
 
+### 4.8 Critical evidence and comprehensive fallback
+
+`catholic-critical-v1` is a **separate evidence profile**, not a correction to
+`catholic-traditional-v1`. It admits Scripture's own statements, direct
+historical or textual anchors, current edition-identified Catholic biblical
+apparatus, and identified critical scholarship, in that order. Official
+Catholic introductions are the stable reader-facing baseline, but their
+editorial judgments are not thereby magisterial definitions. More specific
+source evidence outranks a broader survey, and every hedge, competing range,
+conditional date, and open horizon remains visible.
+
+Its broad coverage claims are still positive, sourced temporal assertions.
+Silence, a refusal to date, an author's presumed lifetime, narrative setting,
+canon closure, earliest attestation, and a containing anthology do not become
+composition dates because a consumer needs one. A source may support
+`final-formation` where it dates the editorial assembly or received form of a
+work. As a last resort, an identified dated witness may support
+`textual-attestation`, saying only that the text is attested by then. Neither
+relation may be relabelled `composition`, `narrated-event`, or any other
+question.
+
+`catholic-comprehensive-v1` is a **cascade profile**. For each relation
+independently, it takes the first evidence profile in
+`fallback_profiles` that supplies at least one answerable assertion at the
+locus. All answerable alternatives from that selected leaf remain candidates;
+the cascade does not choose one claim, combine ranges, or mix evidence profiles
+within the same relation. A gap or preserved non-answerable claim in an earlier
+profile does not stop fallback. A traditional gap therefore can never be
+reinterpreted as a critical event date; the critical profile must supply an
+answer under the relation its source actually supports.
+
+After that per-relation selection, `textual-attestation` is a **global last
+resort**. If any selected answerable assertion under another relation actually
+positions or bounds its subject in time, the query omits every attestation
+assertion and its `resolved_profiles` entry. A duration says how long and a
+month-day with no year says where in a recurring year; neither suppresses the
+fallback because neither locates the subject on a chronology. Attestation
+therefore remains beside those useful but non-positional assertions. This
+precedence applies to explicit evidence-profile queries as well as cascades; a
+preserved claim never suppresses the fallback. It makes the source hierarchy
+deterministic without pretending that a late edition date is better evidence
+of composition than a sourced composition, formation, or event date.
+
+Every returned assertion retains its leaf `claim.profile`. The answer also
+exposes the requested cascade as `requested_profile` and the evidence profile
+selected for each returned relation as `resolved_profiles`. A claim naming a
+cascade id is invalid: a cascade owns selection policy and no evidence.
+
+Gap rows are **evidence-profile-scoped**. The current traditional gap corpus
+belongs to `catholic-traditional-v1`; its silence neither leaks into
+`catholic-critical-v1` nor blocks the comprehensive cascade. Adding a critical
+gap is negative evidence within the critical profile only, never a substitute
+for the positive assertion the comprehensive coverage contract requires.
+
+Every enumerable system must therefore be able to reach an explicit sourced
+attestation extent for each of its loci: through safe sharing where the
+concordance establishes it, and through a native extent for text the concordance
+correctly refuses to identify. The fallback names the dated witness and its
+source record. A system name with no enumerable witness remains outside this
+promise rather than receiving a fabricated universal scope.
+
 ---
 
-## 5. The eight relations
+## 5. The ten relations
 
 The vocabulary is closed. `_chronology.RELATIONS` holds it and an unrecognised
 relation is a load error.
@@ -534,6 +635,8 @@ relation is a load error.
 | Relation | What it answers |
 | --- | --- |
 | `composition` | when the text was written |
+| `final-formation` | when a composite or anthology reached the editorial form the source dates |
+| `textual-attestation` | when an identified witness establishes that the text existed, without asserting when it was written |
 | `narrated-event` | when the event the passage narrates happened |
 | `utterance` | when the words the passage quotes were spoken |
 | `historical-setting` | the occasion tradition associates with the text |
@@ -551,6 +654,14 @@ prohibitions:
   false.
 - **`composition` is not `historical-setting`.** When a text was written and
   what occasion it is about are different events, frequently centuries apart.
+- **`final-formation` is not `composition`, canon closure, or earliest
+  attestation.** A source dating assembly of the received work says when that
+  form came together, not when every constituent was written; closure and
+  attestation support only the bound their source actually states.
+- **`textual-attestation` is not `composition` or `final-formation`.** It is a
+  terminus supplied by an identified witness: the text existed by the attested
+  date. It does not say when the verse was written, assembled, or first
+  circulated, and every display must name this relation explicitly.
 - **`superscription-setting` is not `composition`.** A title is *evidence*
   about a setting. It is not proof of a year, and it settles no editorial
   question about authorship.
@@ -621,9 +732,9 @@ accession verses answer `composition-only` from their book's composition unit.
 **[verified]** `validate` remarks on such an event exactly as it does on any
 event no binding reaches (§16) — a remark, and not an error.
 
-**A composition unit still requires a claim**, and the loader refuses one
-without. A unit exists only to carry a composition date over an extent, so a
-dateless unit would be a scope asserting nothing about the text it names.
+**A textual unit still requires a claim**, and the loader refuses one without.
+A unit exists only to carry a textual-history date over an extent, so a dateless
+unit would be a scope asserting nothing about the text it names.
 
 **This is not `research-pending`.** That is a status a *locus* has when no
 ranked source has been inspected for it (§9); a claimless event is a *subject*
@@ -633,32 +744,43 @@ on the verse.
 
 ---
 
-## 7. Composition, and how it inherits
+## 7. Textual units, and how they inherit
 
-A **composition unit** is a textual unit with its own writing chronology and an
-explicit extent. `src/sources/chronology/composition.yaml`. A scope may be a
-whole book, a chapter, a run of chapters, or a verse range.
+A **textual unit** has an explicit extent and one textual-history relation:
+`composition`, `final-formation`, or `textual-attestation`.
+`src/sources/chronology/composition.yaml` retains its legacy filename. A scope
+may be a whole book, a chapter, a run of chapters, or a verse range.
 
 A unit reaches **every verse inside its scope**, so a book-level claim needs no
 row per verse: one unit for the Gospel of St Matthew covers 1 071 verses
 without 1 071 rows. **[verified]** That is `the-shape.md` §3 — reference, do
 not copy — and it is also the only way this corpus stays reviewable.
 
-**The narrowest unit covering a verse wins.** Two units of *equal* width over
-one verse is a **load error, not a tie**: nothing here may pick between them,
-because choosing the first, or the most recently edited, would be a date
-resolving successfully and wrongly with no signal at all. The author says which
-unit owns the text.
+**The narrowest answering unit covering a verse wins within one relation and
+evidence profile.** Units under different relations may coexist; a cascade
+selects profiles only after candidates are gathered. Two units of *equal* width
+under the same relation and profile over one verse are a **load error, not a
+tie**: nothing here may pick between them, because choosing the first, or the
+most recently edited, would be a date resolving successfully and wrongly with
+no signal at all. The author says which unit owns the text.
 
-**Inheritance must be semantically honest.** It exists because a book written
-once was written once — not to make a coverage number look better. Two
-consequences, both binding:
+**Inheritance must be semantically honest.** It exists because a textual claim
+applies across the extent its source dates — not to make a coverage number look
+better. Three consequences are binding:
 
-- **An anthology gets no single date.** The Psalter in particular is not one
-  book written at one time, and giving it one composition unit in order to
-  reach every verse would be exactly the abuse this paragraph forbids. §8.
+- **An anthology gets no single composition date.** The Psalter in particular
+  is not one book written at one time, and giving it one composition unit in
+  order to reach every verse would be exactly the abuse this paragraph forbids.
+  A source may date the anthology's editorial assembly as `final-formation`,
+  which reaches the extent only under that relation. §8.
 - A composite work whose tradition distinguishes its parts gets units at the
   size tradition distinguishes, not at the size that is convenient.
+- A formation horizon does not propagate backward into the writing dates of
+  the constituent units. If the source does not date the constituents, their
+  composition remains unstated.
+- An attestation extent is the text an identified dated witness actually
+  contains. It establishes “exists by,” not a start date, and does not propagate
+  beyond that witness through an unsafe correspondence.
 
 A query reports whether an assertion reached the locus **directly or by
 inheritance**, so a consumer can tell a statement about this verse from a
@@ -691,8 +813,10 @@ withdrawn on 2026-08-27. Removing a `historical-setting` does not disturb a
 
 **It is an anthology.** It has no single composition date and this corpus will
 not give it one. Composition units are authored per psalm, or per group where
-tradition groups them, and psalms nobody has researched stay
-`research-pending` — which is the honest report and is not a defect.
+tradition groups them. A profile may assert a `final-formation` horizon over the
+collection only where an inspected source actually dates that assembly; a
+source saying merely that the psalms span pre-exilic and post-exilic periods
+does not supply one.
 
 **Its numbering is already solved and must not be re-solved.** The Miserere is
 Psalm 50 in the Vulgate system and Psalm 51 in the Hebrew, and it is **one
@@ -733,8 +857,9 @@ would have reported event chronology nobody had researched.
 
 | Status | Meaning | Authored? |
 | --- | --- | --- |
-| `dated` | at least one substantive (non-composition) assertion applies, direct or inherited | earned |
-| `composition-only` | a composition assertion applies and no substantive one does, at any scope | earned |
+| `dated` | at least one non-textual-history assertion applies, direct or inherited | earned |
+| `composition-only` | only `composition` and/or `final-formation` assertions apply, at any scope | earned |
+| `attestation-only` | only `textual-attestation` assertions apply, at any scope | earned |
 | `research-pending` | nothing has been inspected for it yet | the default |
 | `undated-in-tradition` | ranked sources inspected; tradition dates nothing | `gaps.yaml` |
 | `not-alignable` | the locus cannot be safely addressed from the asking system | `gaps.yaml`, or returned live by the concordance |
@@ -746,9 +871,14 @@ the mapping axis (§3.0.1), not to the chronology axis. Do not read
 projection refused".
 
 `composition-only` was called `inherited` until 2026-08-27 — a directness word
-doing a scope job, and the same word the per-assertion provenance flag uses.
-Coverage reports the provenance split (`substantive_by_provenance`: direct-only,
-inherited-only, both) beside the statuses rather than inside them.
+doing a scope job, and the same word the per-assertion provenance flag uses. It
+is now a legacy status name for composition-history-only: it includes
+`final-formation` as well as `composition`, without pretending that final
+formation is first composition. `attestation-only` is deliberately separate:
+it makes the comprehensive profile's exact-witness last resort visible rather
+than making a printing date look like textual production. Coverage reports the
+provenance split (`substantive_by_provenance`: direct-only, inherited-only,
+both) beside the statuses rather than inside them.
 
 `research-pending` is **the honest default and is not authored**. A corpus that
 had to write a row for every unresearched verse would be 35 809 rows asserting
@@ -789,44 +919,48 @@ At the time of writing the corrected universe is 35 809 + 1 356 (`greek`) + 6
 as `enumerable: false` and is a reason the coverage requirement stays open, not
 a thing to leave out quietly.
 
-### 9.2 `research-pending` is empty in the primary universe, and what that does and does not mean
+The comprehensive profile's exhaustive-resolution contract is restricted to
+those **37 171 unique, enumerated loci**: each valid locus must receive at least
+one answerable `Date` that positions or bounds its subject in time — a dated
+day, year, approximate year, range, interval, relative position, one-sided
+boundary, or broad sourced textual-history horizon. `month-day` without a year
+and `duration` remain useful temporal assertions but do not satisfy this gate.
+`textual-attestation` may satisfy the invariant as a last resort, but its answer
+must say that the date is evidence of existence and not the date the verse was
+written. The contract makes no completeness claim for named but unenumerable
+systems, and an invalid or out-of-canon citation remains `Unresolved`. If an
+enumerated witness changes, the count and the invariant's tested universe
+change with it; neither is silently extrapolated to “the Bible.”
 
-Every locus of the **Vulgate/Clementine primary universe** reaches a
-substantive assertion, a composition assertion, or an authored gap row.
-**[verified]** No verse of it is `research-pending`.
+### 9.2 Every enumerable locus now has a positive temporal answer
 
-That is a statement about that universe and no other. It must never be reported
-as "the Bible is dated" or "Scripture chronology is complete": 1 362 native
-loci sit outside it — 1 356 `greek` and 6 `world-english-catholic`, counted
-from the verses those witnesses actually print — and seven of them answer
-`research-pending` on the chronology axis, beside a mapping refusal on the
-mapping axis. The figures were 1 400 and ten until 2026-08-27, when
-`_system_loci` stopped filling each chapter from its first printed verse to its
-last; three of the ten were invented verse numbers and were never text.
+Under `catholic-comprehensive-v1`, every locus in the 37 171-locus distinct
+content universe has at least one answerable positional date or bound.
+**[verified]** That includes 1 356 Greek-native loci and six
+World-English-Catholic-native loci outside the 35 809-locus Vulgate primary
+universe. The broader address universe likewise resolves all 42 587 supported
+printed addresses. `--require-date` enforces both statements from the tracked
+witnesses rather than from a presumed dense chapter range.
 
-That is a real result and a small one. It means a ranked source was inspected
-for every verse and its answer recorded — including where the answer was that
-tradition dates nothing, which is most of `undated-in-tradition`'s share. It
-does **not** mean the chronology is finished, and it must never be reported as
-"the Bible is dated". Two thirds of the canon is `inherited` — a book-level
-composition claim reaching its verses — and a book whose composition tradition
-declines to date has no chronology of its own at all.
+The result does **not** mean every verse has a known composition or narrated
+event date. Where stronger evidence is silent, the final assertion is
+`textual-attestation`: an exact tracked witness proves that this text existed
+at that witness's date. The `attestation-only` status keeps that modest result
+visibly separate. Traditional-only queries also retain their sourced gaps;
+the comprehensive cascade does not rewrite them.
 
-While the corpus was incomplete, the presence of `research-pending` was itself
-the guard: a coverage number could not run ahead of the research, because the
-unresearched share was printed beside it. That guard is now gone, and the job
-falls to two others, both in `tools/tests/test_chronology.py`:
+Nor does it mean “every Bible” or every numbering system. `nab`,
+`nova-vulgata`, and `septuagint` are named but not enumerable from a tracked
+witness/concordance here, so both coverage formats disclose them and the
+exhaustive contract excludes them. Adding or changing a witness changes the
+tested universe.
 
-- **every gap row names a source record.** A row that names none is the exact
-  shape a fabricated coverage number would take — a verse leaves
-  `research-pending` for an authored status and no other way, so an unsourced
-  row is coverage asserted on nobody's authority.
-- **no status reaches a verse unless an author asserted it**, checked against
-  `AUTHORED_STATUSES`, which `_chronology` names once so the loader and the
-  test cannot drift apart.
-
-A lane that closes the last of a book's gaps should expect to add to those
-guards rather than to delete them.
+The guards live in `tools/tests/test_chronology.py`: every gap row names a
+source record; exact-witness assertions are checked against loci the witness
+actually prints; invalid query addresses cannot inherit a containing scope;
+and both universes must pass `--require-date`. A positive count cannot be
+manufactured by a duration, recurring month-day, dangling relative/boundary
+anchor, or non-answerable preserved evidence.
 
 ---
 
@@ -859,6 +993,7 @@ date:
 | `interval` | the subject **falls somewhere within** from..to |
 | `relative` | an **offset**: N units after/before a named anchor event |
 | `duration` | a **length**: the subject lasted N units, measured from nothing |
+| `boundary` | a one-sided before/after limit, by endpoint or named anchor |
 
 `range` and `interval` are different claims and the corpus keeps them apart: a
 Gospel written over five years and a Gospel written at an unknown point in a
@@ -1005,6 +1140,13 @@ An **`Answer`** — the resolved locus, an ordered tuple of assertions, a status
 and a note — or an **`Unresolved`**, which is returned, never raised, so a
 caller can print the reason.
 
+The caller may request an evidence or cascade profile. If it omits one, the
+top-level `default_profile` from `profiles.yaml` is used. The answer records
+that choice as `requested_profile`; for a cascade it also records
+`resolved_profiles`, mapping each returned relation to the evidence profile
+that supplied it. Every assertion retains that leaf profile in
+`claim.profile`. No unfiltered union of evidence profiles is a query mode.
+
 What comes back is the **candidate set**, not everything stored: a claim
 reaches it only where the profile it was authored under answers with it (§4.5),
 and `chronology(..., evidence=True)` is the separate ask that returns preserved
@@ -1019,10 +1161,12 @@ Ordering is stable and defined: relation in the order of §5, then disposition
 (`preferred`, `alternate`, `disputed`), then subject id, then the date's
 rendering. A diff of two queries is a diff of the answers, not of the sorting.
 
-**The query never picks.** Where a subject carries alternatives, every
-alternative is returned. `the-shape.md` §5: a tool that always answers is a
-tool that lies when it does not know, and silently choosing between two
-traditional dates is that lie with better manners.
+**The query never picks among claims in the selected evidence profile.** Where
+a subject carries alternatives, every alternative is returned. A cascade may
+select a leaf by its declared per-relation rule; it may not settle that leaf's
+disagreement. `the-shape.md` §5: a tool that always answers is a tool that lies
+when it does not know, and silently choosing between two sourced dates is that
+lie with better manners.
 
 ---
 
@@ -1056,6 +1200,19 @@ non-answerable evidence is not part of what the corpus asserts about a locus,
 and a consumer that reaches for it through `evidence=True` is asking a
 different question — what a source printed — and must present it as that.
 
+An answer containing only `textual-attestation` still satisfies the
+comprehensive profile's “has a date” requirement, but a consumer must render
+the relation explicitly and may never summarize it as when the passage was
+written. Deterministic presence is not permission to erase the question the
+date answers.
+
+Unless it explicitly asks for another profile, a consumer resolves through
+the declared `catholic-comprehensive-v1` default cascade. It must retain the
+answer's `requested_profile`, each relation's `resolved_profiles` entry, and
+each assertion's leaf profile. It may not implement another fallback order or
+merge claims from leaf profiles itself. Explicit
+`catholic-traditional-v1` queries retain traditional-only semantics.
+
 If the corpus returns no substantive assertion, or a typed unresolved state,
 the consumer **preserves that state or omits the date** according to its own
 profile. It does not invent one. It does not fall back to a model's
@@ -1065,9 +1222,9 @@ This is not a style preference. A consumer that re-derives is a second source
 of truth for a fact that has one, and every such pair in this repository's
 history has already diverged.
 
-Consumers should carry the stable chronology ids — event id, unit id, profile,
-relation — in their research or audit payload, so prose can be regenerated
-without re-researching the fact.
+Consumers should carry the stable chronology ids — event id, unit id, requested
+profile, resolved evidence profile, relation — in their research or audit
+payload, so prose can be regenerated without re-researching the fact.
 
 ### 14.1 The propers, wired
 
@@ -1084,21 +1241,35 @@ run, and the rule above binds their production workflow from `proper` v17.
   wiring asserts that agreement and refuses rather than converting. **[verified]**
 - `tools/tpt proper-chronology` is the command. `loci` prints the appointed
   loci and their statuses; `record` renders the answer as the leaf's
-  `research/chronology.toml` and writes or verifies it.
+  `research/chronology.toml` and writes or verifies it; `annotations` projects
+  that record into compact text, JSON, or the generated
+  `research/chronology-annotations.tex` publication interface.
 - The record is where the stable ids are carried, as §14 asks. It holds, per
-  appointed element, the loci, the corpus's `status` and `reason`, and for
-  each assertion the `subject`, `relation`, `profile`, `disposition`,
-  `answerability`, `basis_class`, `scope`, `sources`, the normalized `date`
-  and the source's own `label`. It carries no `basis` and no `note`: those are
-  the corpus's prose, they run to thousands of characters, and a copy of them
-  in a leaf would be a second place they could be edited. A reader who wants
-  them runs `scripture-chronology query <locus> --evidence`.
+  appointed element, every locus-specific answer for audit and a separate
+  `publication_claims` intersection containing only assertions true at every
+  cited locus. Each assertion records every reach (`locus`, `scope`, and
+  inherited/direct provenance) plus its `subject`, `relation`, `profile`,
+  `disposition`, `answerability`, `basis_class`, `sources`, normalized `date`,
+  and source `label`. A nonuniform element therefore loses no audit evidence
+  while the page is forbidden to present a partial-locus date as common to the
+  whole cell. The record carries no `basis` and no `note`: those are the
+  corpus's prose, they run to thousands of characters, and a copy in a leaf
+  would be a second place they could be edited. A reader who wants them runs
+  `scripture-chronology query <locus> --evidence`.
+- Manual consumers may display only the source's raw `label`; they may not
+  mint, shorten, or edit a normalized date label. The sole exception is the
+  deterministic `annotations` projection: its generated TeX may render the
+  tool's concise `display_label` because the same sealed macro invocation also
+  retains the subject, relation, leaf profile, disposition, and raw label for
+  audit. That display is regenerated from the corpus, never hand-authored.
 - `content-preflight` enforces it. `chronology-record-current` regenerates the
   record and refuses a leaf whose copy has drifted — it is generated, so it is
   rewritten from the corpus and never reconciled toward the guide.
+  `chronology-annotations-current` checks the generated TeX byte for byte.
   `chronology-claims-supported` refuses a claim the corpus does not assert at
-  the verses that element appoints, and refuses a date cell that prints any
-  figure with no claim behind it, or an appointed Scripture with no cell.
+  the verses that element appoints, and refuses a Date cell that bypasses its
+  matching `\chronologyannotation{element-key}`, prints any figure with no
+  claim behind it, or omits an appointed Scripture.
 
 The second refusal is the one that answers "it does not invent one". A date is
 a well-formed integer, so a wrong one reads exactly like a right one, and no
@@ -1226,11 +1397,15 @@ source. Check for them by name.
 | Command | Question |
 | --- | --- |
 | `tools/tpt scripture-chronology validate` | is the authored corpus well-formed and internally consistent? |
-| `tools/tpt scripture-chronology query <locus>` | what does the corpus answer with about this verse? |
+| `tools/tpt scripture-chronology query <locus> [--profile <id>]` | what does the selected profile (or declared default) answer with about this verse? |
 | `tools/tpt scripture-chronology query <locus> --evidence` | …and what does it preserve about it without answering with it? (§4.6.2) |
-| `tools/tpt scripture-chronology coverage` | what is covered, by category? |
+| `tools/tpt scripture-chronology coverage [--profile <id>] [--universe distinct-content\|addresses]` | what is covered, by category, in the selected profile and universe? |
+| `tools/tpt scripture-chronology coverage --profile catholic-comprehensive-v1 --universe distinct-content --require-date` | does every distinct enumerated textual locus have an answerable positional date or bound? |
+| `tools/tpt scripture-chronology coverage --profile catholic-comprehensive-v1 --universe addresses --require-date` | does every supported printed address resolve to a positional date or bound? |
 | `tools/tpt scripture-chronology build` | rewrite the generated view |
 | `tools/tpt scripture-chronology check` | is the generated view current? |
+| `tools/tpt proper-chronology annotations --document <id> --provider <provider> --profile <id> --format text\|json\|tex` | project one proper's relation-aware chronology deterministically? |
+| `tools/tpt proper-chronology annotations --document <id> --provider <provider> [--profile <default-id>] --write\|--check` | write or verify that proper's generated TeX annotations under the declared publication profile? |
 
 `make check-scripture-chronology` runs `validate` and `check`, and is part of
 `make check`. The focused tests are `tools/tests/test_chronology.py`.
@@ -1254,6 +1429,12 @@ the canonical edition's book index, the psalm concordance or the deuterocanon
 concordance can change chronology's answers. Run the chronology check after
 touching any of them.
 
+`proper-chronology record` and `proper-chronology annotations` permit
+nondefault profiles for stdout inspection, but `--write` and `--check` accept
+only the corpus's declared default publication profile (whether omitted or
+named explicitly). That keeps one tracked artifact from changing meaning with
+an unrecorded command-line choice.
+
 ---
 
 ## 17. What this corpus is not
@@ -1265,5 +1446,9 @@ touching any of them.
   edition's is when it was printed, and **a composition date is never inferred
   from a printing date.**
 - Not a claim of doctrinal certainty. §4.1.
-- Not a modern chronology, and not a place to smuggle one in. §4.1.
-- Not complete. It says which parts are not.
+- Not one chronology that silently flattens traditional and critical systems.
+  Evidence profiles keep their authority boundaries, and the default cascade
+  exposes which one supplied each relation. §4.8.
+- Not a claim of completeness beyond the unique loci the repository can
+  enumerate. Named but unenumerable witnesses remain outside the exhaustive
+  contract. §9.3.

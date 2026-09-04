@@ -341,7 +341,7 @@
         "tpt"
       ],
       "stage": "draft",
-      "usage": "proper-chronology {loci,record} --document ID [--provider P] [--json]"
+      "usage": "proper-chronology {loci,record,annotations} --document ID [--provider P] [--profile PROFILE] [--json]"
     },
     "public-alpha": {
       "idempotent": true,
@@ -412,10 +412,10 @@
       "lang": "python",
       "mutates": true,
       "origin": "local",
-      "purpose": "Answer when a Scripture locus was written and when what it tells of happened.",
+      "purpose": "Resolve Scripture loci to sourced chronology under an explicit profile.",
       "requires": [],
       "stage": "draft",
-      "usage": "scripture-chronology {validate,query,coverage,build,check} [--json]"
+      "usage": "scripture-chronology {validate,query,coverage,build,check} [--profile PROFILE] [--universe distinct-content|addresses] [--require-date] [--json]"
     },
     "source-family-migration": {
       "idempotent": true,

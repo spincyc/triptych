@@ -1,10 +1,10 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 2131,
-  "editions": 730,
-  "passages": 5108,
-  "readable": 3033,
+  "artifacts": 2150,
+  "editions": 731,
+  "passages": 5127,
+  "readable": 3034,
   "works": 543
  },
  "facets": {
@@ -2306,7 +2306,7 @@
   ],
   "languages": [
    {
-    "editions": 360,
+    "editions": 361,
     "id": "en"
    },
    {
@@ -2442,20 +2442,20 @@
     "label": "20th century"
    },
    {
-    "editions": 390,
+    "editions": 391,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 1254,
+    "artifacts": 1256,
     "editions": 200,
     "id": "public-domain"
    },
    {
-    "artifacts": 652,
-    "editions": 329,
+    "artifacts": 669,
+    "editions": 330,
     "id": "restricted"
    },
    {
@@ -6093,8 +6093,8 @@
    "directory": "editions/catholic-church/vulgata-clementina/",
    "editions": [
     {
-     "date": "1592",
-     "file": "1592-ebible-latvuc.json",
+     "date": "1598",
+     "file": "1598-ebible-latvuc.json",
      "id": "edition.catholic-church.vulgata-clementina.ebible-latvuc",
      "language": "la",
      "passages": 0,
@@ -6103,8 +6103,8 @@
       "project-created",
       "public-domain"
      ],
-     "title": "Biblia Sacra Vulgatae Editionis Clementina, eBible.org latVUC",
-     "year": 1592
+     "title": "Clementine Vulgate 1598, eBible.org latVUC",
+     "year": 1598
     },
     {
      "date": "1914",
@@ -6732,8 +6732,8 @@
      "file": "1912-new-york-1912.json",
      "id": "edition.catholic-encyclopedia.volume-13.new-york-1912",
      "language": "en",
-     "passages": 2,
-     "readable": 0,
+     "passages": 3,
+     "readable": 1,
      "rights": [
       "public-domain",
       "restricted"
@@ -6873,7 +6873,7 @@
      "file": "1910-new-york-1910.json",
      "id": "edition.catholic-encyclopedia.volume-8.new-york-1910",
      "language": "en",
-     "passages": 1,
+     "passages": 2,
      "readable": 0,
      "rights": [
       "public-domain"
@@ -19502,6 +19502,19 @@
      "id": "edition.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-08-21",
      "language": "en",
      "passages": 8,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "New American Bible, Revised Edition — USCCB web state",
+     "year": 2026
+    },
+    {
+     "date": "2026-09-04",
+     "file": "2026-2026-09-04-english-usccb-web.json",
+     "id": "edition.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-04",
+     "language": "en",
+     "passages": 17,
      "readable": 0,
      "rights": [
       "restricted"

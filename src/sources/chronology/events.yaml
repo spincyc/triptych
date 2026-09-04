@@ -374,6 +374,115 @@ events:
           precision: year
           from: {year: 27, era: ad}
           label: "A.D. 27"
+  - id: chronology.maas-auc-782-ad-29-calibration
+    title: Maas's A.U.C. 782 = A.D. 29 chronology calibration
+    note: >-
+      A technical source-internal chronology anchor, not a narrated historical
+      event and not a claim that every chronology equates the two eras this
+      way. It is deliberately unbound from Scripture. Its single claim isolates
+      the exact Maas equivalence used by later derivations, so a derivation
+      cannot accidentally select one of the several disputed Crucifixion dates.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis_class: traditional-catholic
+        basis: >-
+          Maas's article "Jesus Christ" in the Catholic Encyclopedia (vol. 8,
+          New York 1910), in its chronological discussion of the Crucifixion,
+          identifies the forty-second year before Jerusalem's destruction as
+          "A.D. 29, or A.U.C. 782" and repeats the same equivalence when it
+          counts twelve years back from the preaching to the Gentiles.
+        sources:
+          - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-three-five
+          - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text
+        note: >-
+          The claim records only the era equivalence Maas prints. Keeping it in
+          a dedicated single-claim anchor makes its identity machine-checkable;
+          it does not choose among, inherit, or rest on the other dates held on
+          the historical Crucifixion event.
+        date:
+          precision: year
+          from: {year: 29, era: ad}
+          label: "A.U.C. 782 = A.D. 29"
+  - id: life-of-christ.raising-of-the-widows-son-at-naim
+    title: The raising of the widow's son at Naim
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis_class: derived
+        basis: >-
+          Maas's article "Jesus Christ" in the Catholic Encyclopedia (vol. 8,
+          New York 1910) places the Third Journey "About Pentecost, A.U.C.
+          780- Autumn, 780" and within it says that Jesus "resuscitates the son
+          of the widow at Naim". The same article expressly equates A.U.C. 782
+          with A.D. 29; applying that source-internal reckoning gives A.D. 27
+          for both bounds of the seasonal interval.
+        sources:
+          - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-three-five
+          - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text
+        note: >-
+          The source prints the Third Journey's interval only in Anno Urbis
+          Conditae. This corpus has no A.U.C. era and does not silently convert
+          it. The structured A.D. value is an explicit rank-7 derivation from
+          the dedicated single-claim Maas calibration anchor: 782 A.U.C. =
+          A.D. 29, hence A.U.C. 780 = A.D. 27. The source's seasonal limits
+          remain verbatim in the label and basis. Equal year endpoints mean the
+          event falls somewhere within the stated part of A.D. 27; they do not
+          turn the seasonal interval into an exact day.
+        date:
+          precision: interval
+          from: {year: 27, era: ad}
+          to: {year: 27, era: ad}
+          label: >-
+            derived A.D. 27 from About Pentecost, A.U.C. 780- Autumn, 780
+          derivation:
+            rule: >-
+              Use Maas's express equivalence A.U.C. 782 = A.D. 29 as the
+              source-internal epoch and subtract 753 from each A.U.C. year;
+              preserve the source's seasonal bounds without converting them
+              into unsupported months or days.
+            inputs: [chronology.maas-auc-782-ad-29-calibration]
+            note: >-
+              The named input has exactly one claim: Maas's A.U.C. 782 = A.D.
+              29 equivalence. It is separate from the historical Crucifixion
+              event and its several disputed dates.
+  - id: life-of-christ.bread-of-life-discourse-at-capharnaum
+    title: The Bread of Life discourse at Capharnaum
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis_class: derived
+        basis: >-
+          Maas's article "Jesus Christ" in the Catholic Encyclopedia (vol. 8,
+          New York 1910) places the Fifth Journey in "Spring, A.U.C. 781" and
+          says that on the day after the crossing and multiplication Jesus
+          came to Capharnaum, "where He speaks to the assembly about the Bread
+          of Life and promises the Holy Eucharist". The same article expressly
+          equates A.U.C. 782 with A.D. 29; its source-internal reckoning
+          therefore places this spring in A.D. 28.
+        sources:
+          - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-three-five
+          - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text
+        note: >-
+          The source prints the Fifth Journey's year only in Anno Urbis
+          Conditae. This corpus has no A.U.C. era, so the A.D. year is visibly
+          derived from the dedicated single-claim Maas calibration anchor
+          rather than silently converted. The structured year does not claim a
+          month or day; "Spring" remains verbatim in the label and basis.
+        date:
+          precision: year
+          from: {year: 28, era: ad}
+          label: "derived Spring A.D. 28 from Spring, A.U.C. 781"
+          derivation:
+            rule: >-
+              Use Maas's express equivalence A.U.C. 782 = A.D. 29 as the
+              source-internal epoch and subtract 753 from A.U.C. 781, retaining
+              Spring as the source's own unresolved seasonal precision.
+            inputs: [chronology.maas-auc-782-ad-29-calibration]
+            note: >-
+              The named input has exactly one claim: Maas's A.U.C. 782 = A.D.
+              29 equivalence. It is separate from the historical Crucifixion
+              event and its several disputed dates.
   - id: life-of-christ.last-supper
     title: The Last Supper
     dates:
@@ -10868,3 +10977,53 @@ events:
           precision: year
           from: {year: 2946, era: am}
           label: "A. M. 2946, A. C. 1058"
+
+  # === current Catholic critical prophetic horizons ========================
+  # These events carry only catholic-critical-v1 claims. Their bindings can
+  # therefore add critical fallback without changing what an explicit
+  # catholic-traditional-v1 query answers.
+
+  - id: israel.divided-kingdom.amos-oracles-under-jeroboam-ii
+    title: Amos's delivery of his oracles under Jeroboam II
+    dates:
+      - profile: catholic-critical-v1
+        disposition: preferred
+        basis_class: catholic-critical
+        basis: >-
+          The New American Bible, Revised Edition introduction places Amos's
+          delivery of his oracles in the Northern Kingdom during the reign of
+          Jeroboam II, which it dates 786-746 B.C.
+        sources:
+          - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-04.amos-introduction
+        note: >-
+          This interval dates prophetic activity and utterance. It is not the
+          date at which the anthology was compiled, and the later appendix at
+          Amos 9:11-15 is deliberately outside the corresponding binding.
+        date:
+          precision: interval
+          from: {year: 786, era: bc}
+          to: {year: 746, era: bc}
+          label: "oracles delivered under Jeroboam II, 786-746 B.C."
+
+  - id: israel.divided-kingdom.nahum-prophecy-before-nineveh
+    title: Nahum's prophecy shortly before the fall of Nineveh
+    dates:
+      - profile: catholic-critical-v1
+        disposition: preferred
+        basis_class: catholic-critical
+        basis: >-
+          The New American Bible, Revised Edition introduction says Nahum
+          uttered his prophecy shortly before Nineveh fell in 612 B.C.
+        sources:
+          - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-04.nahum-introduction
+        note: >-
+          The source dates the utterance, not a separately demonstrated later
+          compilation. "Shortly before" remains a one-sided boundary rather
+          than an invented numerical interval.
+        date:
+          precision: boundary
+          boundary:
+            direction: before
+            endpoint: {year: 612, era: bc}
+            statement: shortly before Nineveh fell in 612 B.C.
+          label: "uttered shortly before Nineveh fell in 612 B.C."

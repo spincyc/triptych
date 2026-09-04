@@ -78,7 +78,7 @@ EXAMPLES = {
         Example(
             "tools/tpt --list --json",
             (
-                "[{\"group\": \"calendar\", \"mutates\": true, \"nam... [+11174 chars]",
+                "[{\"group\": \"calendar\", \"mutates\": true, \"nam... [+11277 chars]",
             ),
             "one object a tool, each carrying the group its listing section came from",
         ),
@@ -99,7 +99,7 @@ EXAMPLES = {
         Example(
             "tools/tpt --info tpt --json",
             (
-                "{\"idempotent\": true, \"json\": true, \"lang\": \"python\", \"mutates\": false, \"name\": \"tpt\", \"origin\": \"local\", \"path... [+435 chars]",
+                "{\"idempotent\": true, \"json\": true, \"lang\": \"python\", \"mutates\": false, \"name\": \"tpt\", \"origin\": \"local\", \"path... [+444 chars]",
             ),
         ),
     ),

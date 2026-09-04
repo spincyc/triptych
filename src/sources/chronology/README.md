@@ -1,9 +1,10 @@
 # Scripture chronology
 
-When a biblical text was written, when the event it narrates happened, when
-the words it quotes were spoken, and what later event tradition reads it as
-prophesying — held once, keyed to canonical Scripture loci, so that no
-publication has to find out for itself.
+When a biblical text was written or finally formed, when the event it narrates
+happened, when the words it quotes were spoken, what later event tradition
+reads it as prophesying, and (only as a last resort) when an exact textual
+witness attests it — held once, keyed to Scripture loci, so that no publication
+has to find out for itself.
 
 `guidance/scripture-chronology.md` owns the contract. This file is the layout
 only; where the two appear to disagree, the guidance is right.
@@ -12,11 +13,11 @@ only; where the two appear to disagree, the guidance is right.
 
 | File | Holds |
 | --- | --- |
-| `profiles.yaml` | whose testimony wins, and what the profile refuses |
+| `profiles.yaml` | evidence policies, the declared default, and deterministic cascade order |
 | `events.yaml` | reusable temporal subjects, each dated once |
 | `composition.yaml` | composition chronology by textual unit, which inherits |
 | `bindings.yaml` | locus ranges joined to events by a relation; **no dates** |
-| `gaps.yaml` | where the corpus knowingly says nothing dated, and why |
+| `gaps.yaml` | where one evidence profile knowingly says nothing dated, and why |
 | `coverage.tsv` | **derived** — one row a run of verses answering alike |
 
 The review record, which asserts nothing about Scripture and is read by no tool:
@@ -58,7 +59,7 @@ in both directions and proves that no prior review id was dropped.
 | --- | --- | --- | --- |
 | Validate | `tools/tpt scripture-chronology validate` | the five authored files | nothing |
 | Ask | `tools/tpt scripture-chronology query <locus>` | the corpus | nothing |
-| Count | `tools/tpt scripture-chronology coverage` | the corpus | nothing |
+| Count | `tools/tpt scripture-chronology coverage [--universe distinct-content\|addresses] [--require-date]` | the corpus and tracked enumerable witnesses | nothing |
 | Derive | `tools/tpt scripture-chronology build` | the corpus | `coverage.tsv` |
 | Gate | `tools/tpt scripture-chronology check` | both | nothing |
 
@@ -67,10 +68,12 @@ in both directions and proves that no prior review id was dropped.
 
 ## The three rules a new row must obey
 
-**One system.** Every locus is numbered in `vulgate`, the system
-`scripts/_projection.py` projects into, and each locus-bearing file declares it
-at the top. A locus in another system reaches the corpus through the psalm or
-deuterocanon concordance, or is refused.
+**One declared system per row.** Shared chronology is authored in `vulgate`,
+the system `scripts/_projection.py` projects into. A locus in another system
+reaches it through the psalm or deuterocanon concordance. Text that genuinely
+exists only in another tracked witness may carry a native-system row instead;
+the file declares that system, and the loader proves the address is present in
+that witness rather than pretending it maps to the Vulgate.
 
 **One date, many loci.** An event is dated in `events.yaml` and bound from
 `bindings.yaml`. A binding carries no date, and the loader refuses one that
@@ -79,6 +82,12 @@ tries to. Four Gospels narrating one Crucifixion is four bindings and one date.
 **Every claim says what grounds it.** A `basis` line, in prose, on every claim,
 plus the source-library record ids it rests on. A basis that merely restates
 this repository's own prose is not a basis.
+
+**Every enumerable locus has a positional answer in the default cascade.** Run
+both `coverage --profile catholic-comprehensive-v1 --universe distinct-content
+--require-date` and its `--universe addresses` counterpart. Named systems for
+which the repository has no enumerable witness are disclosed in the report and
+are outside that exhaustive claim.
 
 ## What does not live here
 

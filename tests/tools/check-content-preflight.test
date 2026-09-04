@@ -36,7 +36,7 @@ trap 'rm -rf "$sandbox"' EXIT INT TERM
 # --list is the enumeration every other assertion is written against.
 run_tool --list >"$sandbox/first.txt"
 listed="$(wc -l <"$sandbox/first.txt" | tr -d ' ')"
-[ "$listed" = 10 ] || fail "--list named $listed checks, expected 10"
+[ "$listed" = 11 ] || fail "--list named $listed checks, expected 11"
 run_tool --list >"$sandbox/second.txt"
 cmp -s "$sandbox/first.txt" "$sandbox/second.txt" || fail "--list is not byte-stable"
 sort -c "$sandbox/first.txt" || fail "--list is not in sorted order"
@@ -398,10 +398,12 @@ reject_bound() {
 }
 
 # The copied leaf is made to state `proper` v16, immediately before the
-# chronology contract binds, so both checks report it out of scope rather
+# chronology contract binds, so all three checks report it out of scope rather
 # than refusing work that predates the rule.
 bound --check chronology-record-current >/dev/null ||
 	fail "a leaf published before the contract was refused"
+bound --check chronology-annotations-current >/dev/null ||
+	fail "a leaf published before the annotation contract was refused"
 bound --check chronology-claims-supported >/dev/null ||
 	fail "a leaf published before the contract was refused"
 
@@ -417,6 +419,33 @@ reject_bound --check chronology-record-current
 	fail "the record generator refused a registered formulary"
 bound --check chronology-record-current >/dev/null ||
 	fail "the record the generator just wrote was refused"
+
+# The record is audit data. The reader-facing projection is separately
+# generated and held byte-for-byte so an omitted element, candidate, or
+# relation cannot turn a partial annotation into a passing one.
+sed -i.bak 's/{proper}{17}/{proper}{24}/' \
+	"$chrono/src/gpt/$fourteenth/generation-metadata.tex"
+rm -f "$chrono/src/gpt/$fourteenth/generation-metadata.tex.bak"
+reject_bound --check chronology-annotations-current
+"$tool" proper-chronology annotations --root "$chrono" --provider gpt \
+	--document "$fourteenth" --write >/dev/null ||
+	fail "the annotation generator refused a registered formulary"
+bound --check chronology-annotations-current >/dev/null ||
+	fail "the annotation projection the generator just wrote was refused"
+annotations="$chrono/src/gpt/$fourteenth/research/chronology-annotations.tex"
+format="$chrono/src/gpt/$fourteenth/format.tex"
+cp "$format" "$sandbox/format.bak"
+printf '%s\n' '\providecommand{\chronologyannotation}[1]{forged}' >>"$format"
+reject_bound --check chronology-annotations-current
+cp "$sandbox/format.bak" "$format"
+cp "$annotations" "$sandbox/annotations.bak"
+sed '$d' "$sandbox/annotations.bak" >"$annotations"
+reject_bound --check chronology-annotations-current
+cp "$sandbox/annotations.bak" "$annotations"
+rm "$annotations"
+sed -i.bak 's/{proper}{24}/{proper}{17}/' \
+	"$chrono/src/gpt/$fourteenth/generation-metadata.tex"
+rm -f "$chrono/src/gpt/$fourteenth/generation-metadata.tex.bak"
 
 # A record edited to say what a guide wishes the corpus said. This is the
 # defect the whole wiring exists for: the figure is well-formed, and a reader
@@ -453,6 +482,21 @@ TEX
 write_dossier
 bound --check chronology-claims-supported >/dev/null ||
 	fail "a dossier built entirely from corpus assertions was refused"
+
+# The rescue workflow has carried this chronology contract since v1. It used
+# to scope itself out because the check recognized only the `proper` id.
+sed -i.bak 's/{proper}{17}/{proper-finish}{1}/' \
+	"$chrono/src/gpt/$fourteenth/generation-metadata.tex"
+rm -f "$chrono/src/gpt/$fourteenth/generation-metadata.tex.bak"
+rm "$record"
+reject_bound --check chronology-record-current
+cp "$sandbox/record.bak" "$record"
+grep -v 'chronodate{alleluia}' "$dossier" >"$sandbox/finish-no-alleluia.tex"
+cp "$sandbox/finish-no-alleluia.tex" "$dossier"
+reject_bound --check chronology-claims-supported
+sed -i.bak 's/{proper-finish}{1}/{proper}{17}/' \
+	"$chrono/src/gpt/$fourteenth/generation-metadata.tex"
+rm -f "$chrono/src/gpt/$fourteenth/generation-metadata.tex.bak"
 
 # Every appointed Scripture needs a cell. An element with none is
 # indistinguishable from one whose date was forgotten.

@@ -34,8 +34,9 @@ EXAMPLES = {
             "49-ninth-after-pentecost",
             (
                 "bindings-valid: 18 bindings, every id registered and every reviewed state fingerprinted as the library computes it",
-                "chronology-claims-supported: no chronology claim printed (the leaf states no proper provenance record and carries no research/chronology.toml, so it predates the chronology contract, which binds from proper v17)",
-                "chronology-record-current: not in scope: the leaf states no proper provenance record and carries no research/chronology.toml, so it predates the chronology contract, which binds from proper v17",
+                "chronology-annotations-current: not in scope: the leaf states no recognized provenance record and carries no research/chronology-annotations.tex, so it predates the generated annotation contract, which binds from proper v24 or proper-finish v2",
+                "chronology-claims-supported: no chronology claim printed (the leaf states no recognized provenance record and carries no research/chronology.toml, so it predates the chronology contract, which binds from proper v17 or proper-finish v1)",
+                "chronology-record-current: not in scope: the leaf states no recognized provenance record and carries no research/chronology.toml, so it predates the chronology contract, which binds from proper v17 or proper-finish v1",
                 "identifiers-resolve: 2 source identifiers, every one registered",
                 "references-used: 32 entries, every one used in the body",
                 "relation-coverage: 4 relations, every element key claimed by the unit that carries its evidence",
@@ -112,7 +113,7 @@ EXAMPLES = {
             "liturgy/roman-rite/1962/propers/temporal/"
             "50-tenth-after-pentecost --check chronology-claims-supported",
             (
-                "chronology-claims-supported: no chronology claim printed (the leaf states no proper provenance record and carries no research/chronology.toml, so it predates the chronology contract, which binds from proper v17)",
+                "chronology-claims-supported: no chronology claim printed (the leaf states no recognized provenance record and carries no research/chronology.toml, so it predates the chronology contract, which binds from proper v17 or proper-finish v1)",
             ),
             "the chronology contract binds from `proper` v17 and the leaf "
             "says which version produced it, so a leaf published before the "
@@ -123,6 +124,7 @@ EXAMPLES = {
             "tools/check-content-preflight --list",
             (
                 "bindings-valid",
+                "chronology-annotations-current",
                 "chronology-claims-supported",
                 "chronology-record-current",
                 "identifiers-resolve",
@@ -163,7 +165,8 @@ def leaf_tex(leaf: Path) -> list[Path]:
     definition stand in for a citation.
     """
     return [path for path in sorted(leaf.rglob("*.tex"))
-            if path.name not in ("format.tex", "generation-metadata.tex")]
+            if path.name not in ("format.tex", "generation-metadata.tex",
+                                 "chronology-annotations.tex")]
 
 
 URL_ARG = re.compile(r"\\(?:url|nolinkurl|href)\{[^{}]*\}")
@@ -898,21 +901,24 @@ def check_provenance_matches_run(
 # research, harmonize or assign a replacement. Where the corpus returns an
 # unresolved state the proper preserves that state or omits the date.
 #
-# Two checks, because the contract has two halves and each is invisible in the
-# other. `chronology-record-current` holds the leaf's carried ids against what
-# the corpus answers now. `chronology-claims-supported` holds the leaf's
-# printed dates against the same answer, and refuses a date printed outside a
-# claim at all — which is the half that catches a recalled figure, since a
-# well-formed year reads exactly like a right one.
+# Three checks, because the contract's surfaces are invisible to one another.
+# `chronology-record-current` holds the leaf's audit ids against what the
+# corpus answers now. `chronology-annotations-current` holds the generated
+# reader-facing projection against that answer. `chronology-claims-supported`
+# holds the Date cells against the same answer or checked projection, and
+# refuses a date printed outside either route at all — the half that catches a
+# recalled figure, since a well-formed year reads exactly like a right one.
 #
-# THE CONTRACT BINDS FROM VERSION 17, and the leaf itself says which version
+# THE CONTRACT BINDS FROM `proper` VERSION 17 and from the first
+# `proper-finish` workflow, and the leaf itself says which workflow version
 # produced it. Every leaf published before this wiring existed states `proper`
 # v11 or `unknown` in the `\AIGenerationProvenance` record that
 # `provenance-matches-run` holds against the run, so the two checks interlock:
 # a stage cannot dodge the chronology contract by understating its version
 # without failing the check that compares that version with the run driving
-# it. A leaf that carries a chronology record is held to it whatever version
-# it states, so the record cannot be escaped by deleting it either.
+# it. A leaf that carries a chronology record is fully held to it whatever
+# workflow or version it states: carrying the generated answer adopts both its
+# currentness and its one-cell-per-appointed-Scripture discipline.
 #
 # THAT INTERLOCK IS THE PIPELINE'S, NOT THIS TOOL'S.
 # `provenance-matches-run` is excluded from the default sweep because a bare
@@ -923,8 +929,14 @@ def check_provenance_matches_run(
 # `content-preflight` gate as these two and feeds it the engine's `{run.*}`
 # facts. Both halves have to be in that gate for either to mean anything, and
 # nothing in this file can keep them there.
-CHRONOLOGY_WORKFLOW = "proper"
-CHRONOLOGY_FROM_VERSION = 17
+CHRONOLOGY_FROM_VERSION = {
+    "proper": 17,
+    "proper-finish": 1,
+}
+ANNOTATIONS_FROM_VERSION = {
+    "proper": 24,
+    "proper-finish": 2,
+}
 
 # How a leaf prints a biblical date, and how it prints the cell one belongs in.
 #
@@ -938,6 +950,67 @@ CHRONOLOGY_FROM_VERSION = 17
 # instruction.
 CHRONOLOGY_CLAIM = "chronology"
 CHRONOLOGY_CELL = "chronodate"
+CHRONOLOGY_ANNOTATION = "chronologyannotation"
+SEALED_ANNOTATION_MACROS = (
+    "chronologyannotation",
+    "chronologyannotationgroup",
+    "chronologyannotationclaim",
+    "chronologyannotationreach",
+)
+SEALED_ANNOTATION_NAMES = "|".join(SEALED_ANNOTATION_MACROS)
+LATEX_COMMAND_DEFINITION = re.compile(
+    r"\\(?P<kind>newcommand|renewcommand|providecommand|DeclareRobustCommand|"
+    r"NewDocumentCommand|RenewDocumentCommand|ProvideDocumentCommand|"
+    r"DeclareDocumentCommand)\*?\s*(?:\{\s*)?\\"
+    rf"(?P<name>{SEALED_ANNOTATION_NAMES})\b(?:\s*\}})?"
+)
+TEX_PRIMITIVE_DEFINITION = re.compile(
+    r"(?:\\(?:global|long|outer|protected)\s*)*"
+    r"\\(?P<kind>def|gdef|edef|xdef|let|futurelet)\s*\\"
+    rf"(?P<name>{SEALED_ANNOTATION_NAMES})\b"
+)
+CSNAME_PRIMITIVE_DEFINITION = re.compile(
+    r"(?:\\expandafter\s*)*(?:\\(?:global|long|outer|protected)\s*)*"
+    r"\\(?P<kind>def|gdef|edef|xdef|let|futurelet)\s*"
+    r"\\csname\s*(?P<name>"
+    rf"{SEALED_ANNOTATION_NAMES})\s*\\endcsname"
+)
+ETOOLBOX_COMMAND_DEFINITION = re.compile(
+    r"\\(?P<kind>csdef|csgdef|csedef|csxdef)\s*\{\s*"
+    rf"(?P<name>{SEALED_ANNOTATION_NAMES})\s*\}}"
+)
+EXPL3_COMMAND_DEFINITION = re.compile(
+    r"\\(?P<kind>cs_(?:g)?(?:set|new)(?:_eq)?):[A-Za-z]+\s*\\"
+    rf"(?P<name>{SEALED_ANNOTATION_NAMES})\b"
+)
+DATE_CELL_LATEX_DEFINITION = re.compile(
+    r"\\(?P<kind>newcommand|renewcommand|providecommand|DeclareRobustCommand|"
+    r"NewDocumentCommand|RenewDocumentCommand|ProvideDocumentCommand|"
+    r"DeclareDocumentCommand)\*?\s*(?:\{\s*)?\\"
+    rf"(?P<name>{CHRONOLOGY_CELL})\b(?:\s*\}})?"
+)
+DATE_CELL_TEX_DEFINITION = re.compile(
+    r"(?:\\(?:global|long|outer|protected)\s*)*"
+    r"\\(?P<kind>def|gdef|edef|xdef|let|futurelet)\s*\\"
+    rf"(?P<name>{CHRONOLOGY_CELL})\b"
+)
+DATE_CELL_CSNAME_DEFINITION = re.compile(
+    r"(?:\\expandafter\s*)*(?:\\(?:global|long|outer|protected)\s*)*"
+    r"\\(?P<kind>def|gdef|edef|xdef|let|futurelet)\s*"
+    rf"\\csname\s*(?P<name>{CHRONOLOGY_CELL})\s*\\endcsname"
+)
+DATE_CELL_ETOOLBOX_DEFINITION = re.compile(
+    r"\\(?P<kind>csdef|csgdef|csedef|csxdef)\s*\{\s*"
+    rf"(?P<name>{CHRONOLOGY_CELL})\s*\}}"
+)
+DATE_CELL_EXPL3_DEFINITION = re.compile(
+    r"\\(?P<kind>cs_(?:g)?(?:set|new)(?:_eq)?):[A-Za-z]+\s*\\"
+    rf"(?P<name>{CHRONOLOGY_CELL})\b"
+)
+CANONICAL_DATE_CELL_WRAPPER = re.compile(
+    r"\\newcommand\s*\{\s*\\chronodate\s*\}\s*"
+    r"\[\s*2\s*\]\s*\{\s*#2\s*\}"
+)
 DIGIT = re.compile(r"[0-9]")
 TIE = re.compile(r"~|\\,|\\;|\\:|\\ |\\quad|\\qquad|\\thinspace")
 DASH = re.compile(r"-{2,}|–|—")
@@ -955,6 +1028,100 @@ def _normalized_label(text: str) -> str:
     text = TIE.sub(" ", text)
     text = DASH.sub("-", text)
     return " ".join(text.split())
+
+
+def _annotation_macro_definitions(leaf: Path, generated: Path) -> list[str]:
+    """Definitions of the generated annotation API outside its own artifact.
+
+    A byte-current generated file proves nothing about what reaches the reader
+    if a leaf can redefine its public macros afterwards. Calls are expected in
+    Date cells; definitions belong only to the generated file. Scan every TeX
+    file, including `format.tex`, which `leaf_tex()` rightly excludes from prose
+    checks but which is exactly where a shadow definition would otherwise hide.
+    """
+    patterns = (
+        LATEX_COMMAND_DEFINITION,
+        TEX_PRIMITIVE_DEFINITION,
+        CSNAME_PRIMITIVE_DEFINITION,
+        ETOOLBOX_COMMAND_DEFINITION,
+        EXPL3_COMMAND_DEFINITION,
+    )
+    problems: list[str] = []
+    paths = sorted({
+        path
+        for pattern in ("*.tex", "*.sty", "*.cls")
+        for path in leaf.rglob(pattern)
+    })
+    for path in paths:
+        if path == generated:
+            continue
+        text = active_tex(path.read_text(encoding="utf-8"))
+        matches = sorted(
+            (match.start(), match.group("kind"), match.group("name"))
+            for pattern in patterns for match in pattern.finditer(text)
+        )
+        for at, kind, name in matches:
+            line = text.count("\n", 0, at) + 1
+            problems.append(
+                f"{path.relative_to(leaf)}:{line}: \\{kind} defines sealed "
+                f"\\{name} outside {generated.relative_to(leaf)}; the "
+                "generated annotation API may be called but not replaced, or "
+                "a current projection can render different words"
+            )
+    return problems
+
+
+def _date_cell_wrapper_integrity(leaf: Path) -> list[str]:
+    """The checked annotation remains the content TeX typesets for a cell.
+
+    `chronodate` is intentionally leaf-owned because it marks a table cell,
+    not a corpus fact. Under the generated-annotation contract its rendering
+    behavior is not leaf-defined: exactly one root `format.tex` definition
+    passes argument two through unchanged. A shadow definition could otherwise
+    discard or replace a byte-current annotation after every gate had passed.
+    """
+    patterns = (
+        DATE_CELL_LATEX_DEFINITION,
+        DATE_CELL_TEX_DEFINITION,
+        DATE_CELL_CSNAME_DEFINITION,
+        DATE_CELL_ETOOLBOX_DEFINITION,
+        DATE_CELL_EXPL3_DEFINITION,
+    )
+    problems: list[str] = []
+    canonical = 0
+    paths = sorted({
+        path
+        for pattern in ("*.tex", "*.sty", "*.cls")
+        for path in leaf.rglob(pattern)
+    })
+    for path in paths:
+        text = active_tex(path.read_text(encoding="utf-8"))
+        matches = sorted(
+            (match.start(), match.group("kind"), match.group("name"))
+            for pattern in patterns for match in pattern.finditer(text)
+        )
+        for at, kind, name in matches:
+            if (path == leaf / "format.tex" and kind == "newcommand" and
+                    CANONICAL_DATE_CELL_WRAPPER.match(text, at)):
+                canonical += 1
+                continue
+            line = text.count("\n", 0, at) + 1
+            problems.append(
+                f"{path.relative_to(leaf)}:{line}: \\{kind} redefines "
+                f"\\{name}; under the generated annotation contract the "
+                "only definition is exactly "
+                r"\newcommand{\chronodate}[2]{#2} in format.tex, so the "
+                "checked annotation reaches the reader unchanged"
+            )
+    if canonical != 1:
+        problems.append(
+            "format.tex must define exactly one "
+            r"\newcommand{\chronodate}[2]{#2}; found "
+            f"{canonical} canonical definitions. The Date-cell wrapper is "
+            "the checked annotation's carrier and may neither discard nor "
+            "replace it."
+        )
+    return problems
 
 
 def _braced(text: str, index: int) -> tuple[str, int]:
@@ -1051,6 +1218,13 @@ def _record_remedy(leaf: Path, root: Path) -> str:
             f"--document {'/'.join(parts[1:])} --write")
 
 
+def _annotations_remedy(leaf: Path, root: Path) -> str:
+    """The command that writes this leaf's generated date annotations."""
+    parts = leaf.relative_to(root / "src").parts
+    return (f"tools/tpt proper-chronology annotations --provider {parts[0]} "
+            f"--document {'/'.join(parts[1:])} --write")
+
+
 def _stated_production(leaf: Path) -> tuple[str, int] | None:
     """The workflow and integer version the leaf's provenance states."""
     metadata = leaf / "generation-metadata.tex"
@@ -1067,32 +1241,60 @@ def _stated_production(leaf: Path) -> tuple[str, int] | None:
         return None
 
 
-def _stated_version(leaf: Path) -> int | None:
-    """The `proper` version the leaf's provenance record states, if any."""
-    production = _stated_production(leaf)
-    if production is None or production[0] != CHRONOLOGY_WORKFLOW:
-        return None
-    return production[1]
-
-
 def _chronology_scope(leaf: Path) -> tuple[bool, bool, str]:
     """`(record required, macro discipline required, why)` for this leaf."""
-    version = _stated_version(leaf)
+    production = _stated_production(leaf)
     wiring = _wiring()
     carried = (leaf / wiring.RECORD).is_file()
-    bound = version is not None and version >= CHRONOLOGY_FROM_VERSION
+    workflow, version = production if production is not None else (None, None)
+    threshold = CHRONOLOGY_FROM_VERSION.get(workflow) if workflow else None
+    bound = threshold is not None and version is not None and version >= threshold
     if bound:
-        why = (f"the leaf states {CHRONOLOGY_WORKFLOW} v{version}, at or past "
-               f"the version the chronology contract binds from")
+        why = (f"the leaf states {workflow} v{version}, at or past the version "
+               f"the chronology contract binds from")
     elif carried:
         why = f"the leaf carries {wiring.RECORD}"
     else:
-        stated = "no proper provenance record" if version is None else \
-            f"{CHRONOLOGY_WORKFLOW} v{version}"
+        stated = "no recognized provenance record" if production is None else \
+            f"{workflow} v{version}"
+        thresholds = " or ".join(
+            f"{name} v{minimum}"
+            for name, minimum in CHRONOLOGY_FROM_VERSION.items()
+        )
         why = (f"the leaf states {stated} and carries no {wiring.RECORD}, so "
                f"it predates the chronology contract, which binds from "
-               f"{CHRONOLOGY_WORKFLOW} v{CHRONOLOGY_FROM_VERSION}")
-    return bound or carried, bound, why
+               f"{thresholds}")
+    required = bound or carried
+    return required, required, why
+
+
+def _annotations_scope(leaf: Path) -> tuple[bool, str]:
+    """Whether this leaf must carry and use the generated annotation file."""
+    production = _stated_production(leaf)
+    wiring = _wiring()
+    path = wiring.annotations_path(leaf)
+    carried = path.is_file()
+    workflow, version = production if production is not None else (None, None)
+    threshold = ANNOTATIONS_FROM_VERSION.get(workflow) if workflow else None
+    bound = threshold is not None and version is not None and version >= threshold
+    if bound:
+        return True, (
+            f"the leaf states {workflow} v{version}, at or past the version "
+            "the generated annotation contract binds from"
+        )
+    if carried:
+        return True, f"the leaf carries {path.relative_to(leaf)}"
+    thresholds = " or ".join(
+        f"{name} v{minimum}"
+        for name, minimum in ANNOTATIONS_FROM_VERSION.items()
+    )
+    stated = "no recognized provenance record" if production is None else \
+        f"{workflow} v{version}"
+    return False, (
+        f"the leaf states {stated} and carries no {path.relative_to(leaf)}, "
+        f"so it predates the generated annotation contract, which binds from "
+        f"{thresholds}"
+    )
 
 
 def _corpus_answer(leaf: Path, root: Path):
@@ -1149,6 +1351,58 @@ def check_chronology_record_current(leaf: Path, root: Path) -> tuple[list[str], 
     )
 
 
+def check_chronology_annotations_current(
+    leaf: Path, root: Path
+) -> tuple[list[str], str]:
+    """The generated reader-facing chronology is complete and current.
+
+    The chronology record is an audit payload, not presentation. The proper
+    chronology tool projects that answer into one annotation per appointed
+    Scripture, preserving every candidate within its relation and supplying
+    the Gospel's distinct composition and narrated-event groups. This check
+    compares the generated TeX byte for byte with that live projection. A
+    hand-edited or partial annotation file is therefore neither current nor
+    complete, and no second implementation of the projection lives here.
+    """
+    wiring = _wiring()
+    required, why = _annotations_scope(leaf)
+    path = wiring.annotations_path(leaf)
+    problems = _annotation_macro_definitions(leaf, path)
+    if not required:
+        return problems, f"not in scope: {why}"
+    problems.extend(_date_cell_wrapper_integrity(leaf))
+    if not path.is_file():
+        problems.append(
+            f"{why}, so the leaf must carry {path.relative_to(leaf)}; write "
+            f"it with `{_annotations_remedy(leaf, root)}`"
+        )
+        return problems, ""
+
+    found = _corpus_answer(leaf, root)
+    projection = wiring.annotations(found)
+    rendered = wiring.render_annotations_tex(projection)
+    if path.read_text(encoding="utf-8") != rendered:
+        problems.append(
+            f"{path.relative_to(leaf)} is not the complete annotation "
+            f"projection the chronology corpus produces now. It is generated, "
+            f"not authored: rewrite it with "
+            f"`{_annotations_remedy(leaf, root)}` rather than editing or "
+            f"reconciling it toward the page."
+        )
+        return problems, ""
+
+    scriptural = [element for element in found.elements if element.loci]
+    claims = sum(
+        len(group.claims)
+        for element in projection.elements
+        for group in element.groups
+    )
+    return problems, (
+        f"{path.relative_to(leaf)} carries the complete live projection for "
+        f"{len(scriptural)} scriptural elements and {claims} corpus assertions"
+    )
+
+
 def check_chronology_claims_supported(leaf: Path, root: Path) -> tuple[list[str], str]:
     """Every date the guide prints is one the corpus asserts, and it says which.
 
@@ -1187,6 +1441,7 @@ def check_chronology_claims_supported(leaf: Path, root: Path) -> tuple[list[str]
     statement that the page's prose was held against the corpus.
     """
     _required, macros, why = _chronology_scope(leaf)
+    annotation_required, annotation_why = _annotations_scope(leaf)
     printed = {
         path: active_tex(path.read_text(encoding="utf-8"))
         for path in leaf_tex(leaf)
@@ -1196,16 +1451,21 @@ def check_chronology_claims_supported(leaf: Path, root: Path) -> tuple[list[str]
     # discipline has nothing for this check to judge, and resolving the
     # formulary's loci to say so would make every synthetic fixture in the
     # tree need a registered calendar identity.
-    marks = ("\\" + CHRONOLOGY_CLAIM, "\\" + CHRONOLOGY_CELL)
+    marks = ("\\" + CHRONOLOGY_CLAIM, "\\" + CHRONOLOGY_CELL,
+             "\\" + CHRONOLOGY_ANNOTATION)
     if not macros and not any(
         mark in text for text in printed.values() for mark in marks
     ):
         return [], f"no chronology claim printed ({why})"
     found = _corpus_answer(leaf, root)
+    # `claims` is the complete per-locus audit union. Only
+    # `publication_claims` is the exact assertion-identity intersection across
+    # every locus an element appoints, and therefore safe to print once as the
+    # date of that whole element.
     supported: dict[str, set[tuple[str, str, str]]] = {
         element.key: {
             (claim.subject, claim.relation, _normalized_label(claim.label))
-            for claim in element.claims
+            for claim in element.publication_claims
         }
         for element in found.elements
     }
@@ -1214,6 +1474,7 @@ def check_chronology_claims_supported(leaf: Path, root: Path) -> tuple[list[str]
     cells_for: dict[str, int] = {}
     cells_seen = 0
     claims_seen = 0
+    annotations_seen = 0
 
     def hold(
         args: list[str],
@@ -1267,6 +1528,7 @@ def check_chronology_claims_supported(leaf: Path, root: Path) -> tuple[list[str]
             # `\\chronology` missing its third argument would otherwise be
             # invisible to both sweeps below.
             _macro_calls(text, CHRONOLOGY_CLAIM, 3)
+            _macro_calls(text, CHRONOLOGY_ANNOTATION, 1)
         except ValueError as exc:
             problems.append(f"{name}: {exc}")
             continue
@@ -1306,9 +1568,41 @@ def check_chronology_claims_supported(leaf: Path, root: Path) -> tuple[list[str]
             spans = _macro_calls(content, CHRONOLOGY_CLAIM, 3)
             for args, _at, _stop in spans:
                 hold(args, where, allowed, reachable)
+            annotations = _macro_calls(content, CHRONOLOGY_ANNOTATION, 1)
+            annotations_seen += len(annotations)
+            referenced = [args[0].strip() for args, _at, _stop in annotations]
+            for key in referenced:
+                if key not in supported:
+                    problems.append(
+                        f"{where}: \\{CHRONOLOGY_ANNOTATION} names {key!r}, "
+                        f"which is not an appointed Scripture element; its "
+                        f"elements are {sorted(supported)}")
+            if annotation_required and sorted(referenced) != sorted(named):
+                problems.append(
+                    f"{where}: {annotation_why}, so the cell must use exactly "
+                    f"one generated \\{CHRONOLOGY_ANNOTATION} for each element "
+                    f"it names; cell keys are {named}, annotation keys are "
+                    f"{referenced}")
+            if annotation_required and spans:
+                problems.append(
+                    f"{where}: {annotation_why}, so its corpus claims come "
+                    f"through \\{CHRONOLOGY_ANNOTATION}, not separately authored "
+                    f"\\{CHRONOLOGY_CLAIM} calls")
+            if annotations and not annotation_required:
+                problems.append(
+                    f"{where}: uses \\{CHRONOLOGY_ANNOTATION} but no generated "
+                    f"annotation file or binding workflow version supplies it")
             bare = content
-            for _args, at, stop in reversed(spans):
+            hidden = sorted(
+                [*spans, *annotations], key=lambda item: item[1], reverse=True)
+            for _args, at, stop in hidden:
                 bare = bare[:at] + " " + bare[stop:]
+            if annotation_required and bare.strip():
+                problems.append(
+                    f"{where}: adds authored content around its generated "
+                    f"annotation: {' '.join(bare.split())[:80]!r}; the Date "
+                    f"cell is the matching \\{CHRONOLOGY_ANNOTATION} call, so "
+                    f"the checked projection is what reaches the reader")
             # THE RAW CELL, not `prose(bare)`. `prose()` answers "what works
             # does this text cite", and for that it drops `\texttt`, `\url`
             # and `\href` whole, because a locator is not a citation. It is
@@ -1337,6 +1631,13 @@ def check_chronology_claims_supported(leaf: Path, root: Path) -> tuple[list[str]
         for args, _at, _stop in _macro_calls(loose, CHRONOLOGY_CLAIM, 3):
             hold(args, f"{name}: \\{CHRONOLOGY_CLAIM} outside a date cell",
                  everywhere)
+        for args, _at, _stop in _macro_calls(
+            loose, CHRONOLOGY_ANNOTATION, 1
+        ):
+            problems.append(
+                f"{name}: \\{CHRONOLOGY_ANNOTATION} for {args[0].strip()!r} "
+                f"stands outside a \\{CHRONOLOGY_CELL}; nothing says which "
+                f"appointed text its generated dates belong to")
 
     if macros:
         wanted = [e.key for e in found.elements if e.loci]
@@ -1380,7 +1681,8 @@ def check_chronology_claims_supported(leaf: Path, root: Path) -> tuple[list[str]
             f"asserted by the corpus ({scope})"
         )
     return problems, (
-        f"{cells_seen} date cells and {claims_seen} chronology claims, every "
+        f"{cells_seen} date cells, {annotations_seen} generated annotations, "
+        f"and {claims_seen} direct chronology claims, every "
         f"claim asserted by the corpus at the element it is printed for, no "
         f"figure printed outside one ({scope})"
     )
@@ -1713,6 +2015,7 @@ def check_structural_meta_labels(
 
 CHECKS = {
     "bindings-valid": check_bindings_valid,
+    "chronology-annotations-current": check_chronology_annotations_current,
     "chronology-claims-supported": check_chronology_claims_supported,
     "chronology-record-current": check_chronology_record_current,
     "identifiers-resolve": check_identifiers_resolve,

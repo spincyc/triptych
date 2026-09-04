@@ -5,7 +5,7 @@ schema: triptych-chronology-bindings/v1
 # scripts/_projection.py projects into. Declared here so that no row's
 # numbering is a thing the reader assumed.
 numbering: vulgate
-updated: '2026-08-26'
+updated: '2026-09-04'
 
 bindings:
   # === bind-passion ====================================================
@@ -4986,6 +4986,37 @@ bindings:
     sources:
       - artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04
       - bible:douay-rheims:Luke.3.23
+  - relation: narrated-event
+    event: life-of-christ.raising-of-the-widows-son-at-naim
+    scope:
+      - {book: Luke, chapter: 7, first: 11, last: 16}
+    note: >-
+      Luke 7:11-16 is the complete narrated episode, from Jesus going "into a
+      city that is called Naim" and meeting the widow's only son's bier through
+      the restored youth speaking and the crowd glorifying God. Maas names the
+      same event within his Third Journey: Jesus "resuscitates the son of the
+      widow at Naim". The derived date is held once on the event, not repeated
+      in this binding.
+    sources:
+      - bible:douay-rheims:Luke.7.11
+      - bible:douay-rheims:Luke.7.12
+      - bible:douay-rheims:Luke.7.15
+      - bible:douay-rheims:Luke.7.16
+      - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-three-five
+  - relation: narrated-event
+    event: life-of-christ.bread-of-life-discourse-at-capharnaum
+    scope:
+      - {book: John, chapter: 6, first: 52, last: 52}
+    note: >-
+      John 6:52 is the Communion's appointed locus within the Bread of Life
+      discourse: "the bread that I will give is my flesh, for the life of the
+      world." Maas places the discourse on the day after the crossing and
+      multiplication, at Capharnaum, within his Fifth Journey. Only the
+      appointed verse is bound here; no wider John 6 scope is implied. The
+      derived date is held once on the event, not repeated in this binding.
+    sources:
+      - bible:douay-rheims:John.6.52
+      - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-three-five
   # === lane osee ===
   # Two relations over one book, and one event holding the dates once. These rows
   # replace a whole-book composition unit that carried the ministry's range as a
@@ -5016,3 +5047,27 @@ bindings:
     sources:
       - bible:douay-rheims:Os.1.1
       - artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11337a-2a862b12
+
+  # === current Catholic critical prophetic horizons ========================
+  - relation: prophecy-given
+    event: israel.divided-kingdom.amos-oracles-under-jeroboam-ii
+    scope:
+      - {book: Amos, chapter: 1, through: 9, last: 10}
+    note: >-
+      The NABRE introduction applies the reign interval to Amos's delivered
+      oracles and separately identifies 9:11-15 as a later, undated appendix.
+      The binding therefore stops at 9:10 and does not turn the oracle horizon
+      into a compilation date.
+    sources:
+      - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-04.amos-introduction
+
+  - relation: prophecy-given
+    event: israel.divided-kingdom.nahum-prophecy-before-nineveh
+    scope:
+      - {book: Nah}
+    note: >-
+      The NABRE introduction expressly applies the shortly-before-612-B.C.
+      horizon to Nahum's utterance of his prophecy. The event holds that bound
+      once; this binding supplies no independent composition date.
+    sources:
+      - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-04.nahum-introduction

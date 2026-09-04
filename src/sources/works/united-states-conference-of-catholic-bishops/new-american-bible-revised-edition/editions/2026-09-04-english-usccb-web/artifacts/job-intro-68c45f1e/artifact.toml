@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-04.job-intro-68c45f1e"
+edition_id = "edition.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-04"
+artifact_type = "official-html"
+media_type = "text/html; charset=utf-8"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "The USCCB page presents protected modern NABRE introductory prose and related biblical text. Public web access does not establish permission for repository redistribution, so the exact response is identified but not retained and consumers must summarize rather than reproduce it."
+rights_jurisdiction = "United States"
+source_url = "https://bible.usccb.org/bible/job/0"
+provenance = "Complete official Job introduction HTML response acquired directly over HTTPS from the USCCB Bible site in one request, hashed locally, and inspected from those exact bytes on 2026-09-04. No model mediated retrieval or extraction."
+retrieved = "2026-09-04"
+sha256 = "68c45f1eeb0fa6226f8b0c2bb2c131205d1bc76342cf6f6d1b1c84aa4d0a5b5d"
+byte_size = 54744
+indexable = false
+notes = "Exact protected bytes are identified but not retained. The adjacent verified passage record preserves a bounded summary for readers without network access; reinspection of the page itself requires retrieving the official route and matching this hash."

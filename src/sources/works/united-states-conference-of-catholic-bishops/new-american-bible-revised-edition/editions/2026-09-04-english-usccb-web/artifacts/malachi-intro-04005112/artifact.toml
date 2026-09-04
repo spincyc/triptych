@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-04.malachi-intro-04005112"
+edition_id = "edition.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-04"
+artifact_type = "official-html"
+media_type = "text/html; charset=utf-8"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "The USCCB page presents protected modern NABRE introductory prose and related biblical text. Public web access does not establish permission for repository redistribution, so the exact response is identified but not retained and consumers must summarize rather than reproduce it."
+rights_jurisdiction = "United States"
+source_url = "https://bible.usccb.org/bible/malachi/0"
+provenance = "Complete official Malachi introduction HTML response acquired directly over HTTPS from the USCCB Bible site in one request, hashed locally, and inspected from those exact bytes on 2026-09-04. No model mediated retrieval or extraction."
+retrieved = "2026-09-04"
+sha256 = "040051124cf6ef376337a29c9cdaf85fc9b75c78c82ec8e54d7aebce969e2bb9"
+byte_size = 48690
+indexable = false
+notes = "Exact protected bytes are identified but not retained. The adjacent verified passage record preserves a bounded summary for readers without network access; reinspection of the page itself requires retrieving the official route and matching this hash."

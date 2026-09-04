@@ -15,14 +15,17 @@ would go green against the wrong file.
 """
 from __future__ import annotations
 
+import io
 import re
 import subprocess
 import sys
 import tempfile
 import unittest
+from contextlib import redirect_stdout
 from importlib.machinery import SourceFileLoader
 from importlib.util import module_from_spec, spec_from_loader
 from pathlib import Path
+from unittest.mock import patch
 
 REPOSITORY_ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(REPOSITORY_ROOT / "scripts"))
@@ -118,6 +121,51 @@ profiles:
 """
 )
 
+
+def evidence_profile(identifier: str) -> str:
+    return (
+        f"""\
+  - id: {identifier}
+    kind: evidence
+    title: Test {identifier}
+    intent: A leaf evidence profile used by the cascade fixtures.
+    authority:
+      - rank: 1
+        name: Scripture
+"""
+        + ADMISSIBILITY
+        + """\
+    conflict:
+      rule: Preserve the disagreement.
+    non_goals:
+      - Being real.
+"""
+    )
+
+
+CASCADE = "catholic-comprehensive-v1"
+CRITICAL = "catholic-critical-v1"
+CASCADE_PROFILES = (
+    """\
+schema: triptych-chronology-profiles/v1
+default_profile: catholic-comprehensive-v1
+profiles:
+"""
+    + evidence_profile(PROFILE)
+    + evidence_profile(CRITICAL)
+    + """\
+  - id: catholic-comprehensive-v1
+    kind: cascade
+    title: Test cascade
+    intent: Prefer traditional evidence and fall back relation by relation.
+    fallback_profiles: [catholic-traditional-v1, catholic-critical-v1]
+    selection: first-with-answerable-assertion-per-relation
+    non_goals:
+      - Owning claims.
+    versioning: Changing the fallback order creates a new profile id.
+"""
+)
+
 HEAD = {
     "events": "schema: triptych-chronology-events/v1\n",
     "composition": (
@@ -151,15 +199,20 @@ class Corpus:
             raise AssertionError(f"unused fixture bodies: {sorted(bodies)}")
         _chronology.load.cache_clear()
         _chronology._by_book.cache_clear()
+        _chronology.native_coverage.cache_clear()
         # Loading here is what makes a fixture a test of the loader: a corpus
         # written and never read refuses nothing.
         _chronology.load(self.root)
 
-    def ask(self, locus: str, system: str = "vulgate", evidence: bool = False):
+    def ask(
+        self, locus: str, system: str = "vulgate", evidence: bool = False,
+        profile: str | None = None,
+    ):
         return _chronology.chronology(
             _chronology.parse_locus(locus, "test", system),
             root=self.root,
             evidence=evidence,
+            profile=profile,
         )
 
 
@@ -168,6 +221,7 @@ def corpus(case: unittest.TestCase, **bodies: str) -> Corpus:
     case.addCleanup(stack.cleanup)
     case.addCleanup(_chronology.load.cache_clear)
     case.addCleanup(_chronology._by_book.cache_clear)
+    case.addCleanup(_chronology.native_coverage.cache_clear)
     return Corpus(stack, **bodies)
 
 
@@ -290,6 +344,79 @@ class DateTests(unittest.TestCase):
             relative={"of": "x"},
             **{"from": {"year": 33, "era": "ad"}},
         )
+
+    def test_a_boundary_preserves_one_sided_bc_wording_without_inverting_it(self) -> None:
+        before = self.date(
+            precision="boundary",
+            boundary={
+                "direction": "before",
+                "endpoint": {"year": 132, "era": "bc"},
+            },
+        )
+        no_later = self.date(
+            precision="boundary",
+            boundary={
+                "direction": "no-later-than",
+                "endpoint": {"year": 132, "era": "bc"},
+            },
+        )
+        self.assertEqual(str(before), "before 132 B.C.")
+        self.assertEqual(str(no_later), "no later than 132 B.C.")
+        self.assertEqual(before.boundary["direction"], "before")
+        self.assertEqual(before.boundary["endpoint"].era, "bc")
+
+    def test_a_boundary_is_exactly_one_endpoint_or_one_named_anchor(self) -> None:
+        anchored = self.date(
+            precision="boundary",
+            boundary={
+                "direction": "after",
+                "anchor": "israel.exile.babylonian",
+                "statement": "after the Babylonian exile",
+            },
+        )
+        self.assertEqual(str(anchored), "after the Babylonian exile")
+        self.assertEqual(anchored.anchor, "israel.exile.babylonian")
+        self.refuse(
+            "exactly one",
+            precision="boundary",
+            boundary={
+                "direction": "after",
+                "endpoint": {"year": 500, "era": "bc"},
+                "anchor": "israel.exile.babylonian",
+                "statement": "after the Babylonian exile",
+            },
+        )
+        self.refuse(
+            "needs the source's statement",
+            precision="boundary",
+            boundary={
+                "direction": "after", "anchor": "israel.exile.babylonian",
+            },
+        )
+
+    def test_position_is_distinct_from_duration_and_a_recurring_day(self) -> None:
+        duration = self.date(
+            precision="duration", duration={"years": 7}
+        )
+        recurring = self.date(
+            precision="month-day", **{"from": {"month": 3, "day": 25}}
+        )
+        day_without_year = self.date(
+            precision="day", **{"from": {"month": 10, "day": 30}}
+        )
+        day_with_year = self.date(
+            precision="day",
+            **{"from": {"year": 66, "era": "ad", "month": 10, "day": 30}},
+        )
+        relative = self.date(
+            precision="relative",
+            relative={"of": "e.anchor", "statement": "after the exile"},
+        )
+        self.assertFalse(_chronology.is_positional_date(duration))
+        self.assertFalse(_chronology.is_positional_date(recurring))
+        self.assertFalse(_chronology.is_positional_date(day_without_year))
+        self.assertTrue(_chronology.is_positional_date(day_with_year))
+        self.assertTrue(_chronology.is_positional_date(relative))
 
     def test_precision_is_not_authority(self) -> None:
         # Two claims, one approximate and one exact, are equally admissible;
@@ -771,6 +898,31 @@ events:
 """,
         )
 
+    def test_an_anchor_backed_boundary_anchored_to_nothing_is_refused(self) -> None:
+        # An anchored boundary qualifies as a positional Date for strict
+        # coverage, so accepting a nonexistent subject here would turn a
+        # well-formed phrase into a false completeness proof.
+        refuses(
+            self,
+            "a one-sided position bounded by nothing states nothing",
+            composition="""\
+units:
+  - id: composition.jude
+    title: Jude after an anchor the corpus does not hold
+    scope: {book: Jude}
+    dates:
+      - profile: catholic-traditional-v1
+        basis: fixture
+        sources: [bible.douay-rheims]
+        date:
+          precision: boundary
+          boundary:
+            direction: after
+            anchor: e.no-such-anchor
+            statement: after an event that does not exist
+""",
+        )
+
     def test_a_relative_date_must_say_what_the_interval_is(self) -> None:
         refuses(
             self,
@@ -1008,6 +1160,447 @@ bindings:
         self.assertEqual(len({a.claim.basis for a in answer.assertions}), 2)
 
 
+class CascadeProfileTests(unittest.TestCase):
+    TEXTUAL_HISTORY = """\
+units:
+  - id: composition.jude
+    title: Jude
+    scope: {book: Jude}
+    dates:
+      - profile: catholic-traditional-v1
+        basis: fixture
+        sources: [bible.douay-rheims]
+        date: {precision: year, from: {year: 60, era: ad}}
+      - profile: catholic-critical-v1
+        basis: fixture
+        sources: [bible.king-james-version]
+        date: {precision: year, from: {year: 80, era: ad}}
+  - id: final-formation.jude
+    title: Jude in its final form
+    relation: final-formation
+    scope: {book: Jude}
+    dates:
+      - profile: catholic-critical-v1
+        basis: fixture
+        sources: [bible.king-james-version]
+        date: {precision: year, from: {year: 90, era: ad}}
+  - id: textual-attestation.jude
+    title: Jude in a dated witness
+    relation: textual-attestation
+    scope: {book: Jude}
+    dates:
+      - profile: catholic-critical-v1
+        basis: fixture
+        sources: [bible.king-james-version]
+        date: {precision: year, from: {year: 1899, era: ad}}
+"""
+
+    def test_omitted_profile_is_the_declared_default_not_a_union(self) -> None:
+        book = corpus(
+            self, profiles=CASCADE_PROFILES, composition=self.TEXTUAL_HISTORY
+        )
+        implicit = book.ask("Jude.1.1")
+        explicit = book.ask("Jude.1.1", profile=CASCADE)
+        self.assertEqual(implicit, explicit)
+        self.assertEqual(implicit.requested_profile, CASCADE)
+        self.assertEqual(
+            implicit.resolved_profiles,
+            (("composition", PROFILE), ("final-formation", CRITICAL)),
+        )
+        self.assertEqual(
+            [(item.relation, str(item.claim.date)) for item in implicit.assertions],
+            [("composition", "60 A.D."), ("final-formation", "90 A.D.")],
+        )
+
+    def test_cascade_falls_back_independently_for_each_relation(self) -> None:
+        book = corpus(
+            self, profiles=CASCADE_PROFILES, composition=self.TEXTUAL_HISTORY
+        )
+        critical = book.ask("Jude.1.1", profile=CRITICAL)
+        self.assertEqual(
+            [(item.relation, str(item.claim.date)) for item in critical.assertions],
+            [("composition", "80 A.D."), ("final-formation", "90 A.D.")],
+        )
+        self.assertEqual(
+            critical.resolved_profiles,
+            (("composition", CRITICAL), ("final-formation", CRITICAL)),
+        )
+
+    def test_narrowing_is_independent_inside_each_evidence_profile(self) -> None:
+        book = corpus(
+            self,
+            profiles=CASCADE_PROFILES,
+            composition="""\
+units:
+  - id: composition.matthew-critical
+    title: Matthew under the critical profile
+    scope: {book: Matt}
+    dates:
+      - profile: catholic-critical-v1
+        basis: fixture
+        sources: [bible.king-james-version]
+        date: {precision: year, from: {year: 80, era: ad}}
+  - id: composition.matthew-one-traditional
+    title: Matthew 1 under the traditional profile
+    scope: {book: Matt, chapter: 1}
+    dates:
+      - profile: catholic-traditional-v1
+        basis: fixture
+        sources: [bible.douay-rheims]
+        date: {precision: year, from: {year: 42, era: ad}}
+  - id: textual-attestation.matthew
+    title: Matthew in a dated witness
+    relation: textual-attestation
+    scope: {book: Matt}
+    dates:
+      - profile: catholic-critical-v1
+        basis: fixture
+        sources: [bible.king-james-version]
+        date: {precision: year, from: {year: 1899, era: ad}}
+""",
+        )
+        critical = book.ask("Matt.1.1", profile=CRITICAL)
+        self.assertEqual(
+            [(item.subject, item.claim.profile) for item in critical.assertions],
+            [("composition.matthew-critical", CRITICAL)],
+        )
+        comprehensive = book.ask("Matt.1.1", profile=CASCADE)
+        self.assertEqual(
+            [(item.subject, item.claim.profile) for item in comprehensive.assertions],
+            [("composition.matthew-one-traditional", PROFILE)],
+        )
+
+    def test_native_narrowing_is_also_independent_by_profile(self) -> None:
+        book = corpus(
+            self,
+            profiles=CASCADE_PROFILES,
+            composition="""\
+units:
+  - id: composition.ecclesiasticus-greek-critical
+    title: Greek Ecclesiasticus under the critical profile
+    scope: {system: greek, book: Ecclus}
+    dates:
+      - profile: catholic-critical-v1
+        basis: fixture
+        sources: [bible.king-james-version]
+        date: {precision: year, from: {year: 132, era: bc}}
+  - id: composition.ecclesiasticus-one-greek-traditional
+    title: Greek Ecclesiasticus 1 under the traditional profile
+    scope: {system: greek, book: Ecclus, chapter: 1}
+    dates:
+      - profile: catholic-traditional-v1
+        basis: fixture
+        sources: [bible.douay-rheims]
+        date: {precision: year, from: {year: 100, era: bc}}
+""",
+        )
+        critical = book.ask("Ecclus.1.1", system="greek", profile=CRITICAL)
+        self.assertEqual(
+            [(item.subject, item.claim.profile) for item in critical.assertions],
+            [("composition.ecclesiasticus-greek-critical", CRITICAL)],
+        )
+
+    def test_tracked_psalm_41_keeps_the_broad_critical_boundary(self) -> None:
+        answer = _chronology.chronology("Ps.41.1", profile=CRITICAL)
+        self.assertIsInstance(answer, _chronology.Answer)
+        self.assertEqual(
+            [item.subject for item in answer.assertions],
+            ["critical.psalms.latest-composition-boundary"],
+        )
+        self.assertEqual(answer.assertions[0].claim.date.precision, "boundary")
+
+    def test_equal_scopes_in_disjoint_profiles_are_not_an_ambiguity(self) -> None:
+        book = corpus(
+            self,
+            profiles=CASCADE_PROFILES,
+            composition="""\
+units:
+  - id: composition.jude-traditional
+    title: Jude under the traditional profile
+    scope: {book: Jude}
+    dates:
+      - profile: catholic-traditional-v1
+        basis: fixture
+        sources: [bible.douay-rheims]
+        date: {precision: year, from: {year: 60, era: ad}}
+  - id: composition.jude-critical
+    title: Jude under the critical profile
+    scope: {book: Jude}
+    dates:
+      - profile: catholic-critical-v1
+        basis: fixture
+        sources: [bible.king-james-version]
+        date: {precision: year, from: {year: 80, era: ad}}
+""",
+        )
+        self.assertEqual(
+            book.ask("Jude.1.1", profile=PROFILE).assertions[0].subject,
+            "composition.jude-traditional",
+        )
+        self.assertEqual(
+            book.ask("Jude.1.1", profile=CRITICAL).assertions[0].subject,
+            "composition.jude-critical",
+        )
+
+    def test_textual_attestation_is_positive_but_only_a_last_resort(self) -> None:
+        only_attestation = corpus(
+            self,
+            profiles=CASCADE_PROFILES,
+            composition="""\
+units:
+  - id: textual-attestation.jude
+    title: Jude in a dated witness
+    relation: textual-attestation
+    scope: {book: Jude}
+    dates:
+      - profile: catholic-critical-v1
+        basis: fixture
+        sources: [bible.king-james-version]
+        date: {precision: year, from: {year: 1899, era: ad}}
+""",
+        )
+        answer = only_attestation.ask("Jude.1.1")
+        self.assertEqual(answer.status, "attestation-only")
+        self.assertEqual(
+            [item.relation for item in answer.assertions], ["textual-attestation"]
+        )
+        self.assertEqual(
+            answer.resolved_profiles, (("textual-attestation", CRITICAL),)
+        )
+
+    def test_nonpositional_assertions_do_not_suppress_attestation(self) -> None:
+        book = corpus(
+            self,
+            profiles=CASCADE_PROFILES,
+            events="""\
+events:
+  - id: e.duration-only
+    title: An event with a duration but no position
+    dates:
+      - profile: catholic-traditional-v1
+        basis: fixture
+        sources: [bible.douay-rheims]
+        date: {precision: duration, duration: {years: 7}}
+  - id: e.recurring-day-only
+    title: An observance with no year
+    dates:
+      - profile: catholic-traditional-v1
+        basis: fixture
+        sources: [bible.douay-rheims]
+        date: {precision: month-day, from: {month: 3, day: 25}}
+""",
+            bindings="""\
+bindings:
+  - relation: narrated-event
+    event: e.duration-only
+    scope: {book: Jude, chapter: 1, first: 1, last: 1}
+  - relation: utterance
+    event: e.recurring-day-only
+    scope: {book: Jude, chapter: 1, first: 1, last: 1}
+""",
+            composition="""\
+units:
+  - id: textual-attestation.jude
+    title: Jude in a dated witness
+    relation: textual-attestation
+    scope: {book: Jude}
+    dates:
+      - profile: catholic-critical-v1
+        basis: fixture
+        sources: [bible.king-james-version]
+        date: {precision: year, from: {year: 1899, era: ad}}
+""",
+        )
+        answer = book.ask("Jude.1.1")
+        self.assertEqual(
+            [item.claim.date.precision for item in answer.assertions],
+            ["year", "duration", "month-day"],
+        )
+        self.assertEqual(
+            {item.relation for item in answer.assertions},
+            {"textual-attestation", "narrated-event", "utterance"},
+        )
+        self.assertTrue(
+            any(_chronology.is_positional_date(item.claim.date) for item in answer.assertions)
+        )
+
+    def test_tracked_genesis_duration_keeps_the_dated_witness(self) -> None:
+        answer = _chronology.chronology("Gen.29.1", profile=CASCADE)
+        self.assertIsInstance(answer, _chronology.Answer)
+        self.assertIn(
+            "duration", {item.claim.date.precision for item in answer.assertions}
+        )
+        self.assertIn(
+            "textual-attestation",
+            {item.relation for item in answer.assertions},
+        )
+        self.assertTrue(
+            any(_chronology.is_positional_date(item.claim.date) for item in answer.assertions)
+        )
+
+    def test_tracked_leviticus_fallback_is_attestation_not_composition(self) -> None:
+        answer = _chronology.chronology("Lev.1.1", profile=CASCADE)
+        self.assertIsInstance(answer, _chronology.Answer)
+        self.assertEqual(answer.status, "attestation-only")
+        self.assertEqual(
+            {item.relation for item in answer.assertions},
+            {"textual-attestation"},
+        )
+
+    def test_preserved_evidence_cannot_upgrade_attestation_only_status(self) -> None:
+        book = corpus(
+            self,
+            profiles=CASCADE_PROFILES,
+            events="""\
+events:
+  - id: e.preserved
+    title: A preserved event claim
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: alternate
+        answerability: preserved
+        basis_class: modern-critical
+        basis: fixture evidence excluded from the answer
+        sources: [bible.douay-rheims]
+        date: {precision: year, from: {year: 33, era: ad}}
+""",
+            bindings="""\
+bindings:
+  - relation: narrated-event
+    event: e.preserved
+    scope: {book: Jude, chapter: 1, first: 1, last: 1}
+""",
+            composition="""\
+units:
+  - id: textual-attestation.jude
+    title: Jude in a dated witness
+    relation: textual-attestation
+    scope: {book: Jude}
+    dates:
+      - profile: catholic-critical-v1
+        basis: fixture
+        sources: [bible.king-james-version]
+        date: {precision: year, from: {year: 1899, era: ad}}
+""",
+        )
+        normal = book.ask("Jude.1.1")
+        evidence = book.ask("Jude.1.1", evidence=True)
+        self.assertEqual(normal.status, "attestation-only")
+        self.assertEqual(evidence.status, normal.status)
+        self.assertEqual(
+            {item.relation for item in evidence.assertions},
+            {"textual-attestation", "narrated-event"},
+        )
+
+    def test_evidence_never_changes_status_for_any_enumerable_locus_or_profile(self) -> None:
+        corpus_data = _chronology.load()
+        loci = _chronology._coverage_loci("addresses")
+        checked = 0
+        for profile in sorted(corpus_data.profiles):
+            for locus in loci:
+                normal = _chronology.chronology(locus, profile=profile)
+                evidence = _chronology.chronology(
+                    locus, profile=profile, evidence=True
+                )
+                self.assertEqual(
+                    evidence.status,
+                    normal.status,
+                    f"{profile} {locus.system} {locus}",
+                )
+                checked += 1
+        self.assertEqual(checked, len(loci) * len(corpus_data.profiles))
+
+    def test_an_earlier_gap_does_not_stop_a_later_profile_answer(self) -> None:
+        book = corpus(
+            self,
+            profiles=CASCADE_PROFILES,
+            composition="""\
+units:
+  - id: composition.jude
+    title: Jude
+    scope: {book: Jude}
+    dates:
+      - profile: catholic-critical-v1
+        basis: fixture
+        sources: [bible.king-james-version]
+        date: {precision: year, from: {year: 80, era: ad}}
+""",
+            gaps="""\
+gaps:
+  - profile: catholic-traditional-v1
+    status: undated-in-tradition
+    scope: {book: Jude}
+    reason: The traditional fixture states no date.
+""",
+        )
+        answer = book.ask("Jude.1.1")
+        self.assertEqual(answer.status, "composition-only")
+        self.assertEqual(str(answer.assertions[0].claim.date), "80 A.D.")
+        self.assertEqual(answer.resolved_profiles, (("composition", CRITICAL),))
+        self.assertFalse(
+            [
+                problem
+                for problem in _chronology.audit(book.root)
+                if "a gap says the corpus has nothing" in problem
+            ]
+        )
+
+    def test_a_cascade_cannot_own_a_claim(self) -> None:
+        refuses(
+            self,
+            "is not declared in profiles.yaml",
+            profiles=CASCADE_PROFILES,
+            composition="""\
+units:
+  - id: composition.jude
+    title: Jude
+    scope: {book: Jude}
+    dates:
+      - profile: catholic-comprehensive-v1
+        basis: fixture
+        sources: [bible.douay-rheims]
+        date: {precision: year, from: {year: 60, era: ad}}
+""",
+        )
+
+    def test_multiple_profiles_need_an_explicit_default(self) -> None:
+        refuses(
+            self,
+            "multiple profiles require one explicit top-level default_profile",
+            profiles=(
+                "schema: triptych-chronology-profiles/v1\nprofiles:\n"
+                + evidence_profile(PROFILE)
+                + evidence_profile(CRITICAL)
+            ),
+        )
+
+    def test_wec_same_text_inherits_a_greek_textual_history_claim(self) -> None:
+        book = corpus(
+            self,
+            profiles=CASCADE_PROFILES,
+            composition="""\
+units:
+  - id: final-formation.ecclesiasticus-greek
+    title: Greek Ecclesiasticus in its final form
+    relation: final-formation
+    scope: {system: greek, book: Ecclus}
+    dates:
+      - profile: catholic-critical-v1
+        basis: fixture
+        sources: [bible.king-james-version]
+        date: {precision: year, from: {year: 132, era: bc}}
+""",
+        )
+        answer = book.ask(
+            "Ecclus.1.1", system="world-english-catholic", profile=CASCADE
+        )
+        self.assertEqual(
+            [item.relation for item in answer.assertions], ["final-formation"]
+        )
+        self.assertEqual(answer.assertions[0].claim.profile, CRITICAL)
+        self.assertEqual(answer.mapping.status, "textually-distinct")
+
+
 # --- Reaching the corpus from another numbering -----------------------------
 
 
@@ -1025,6 +1618,125 @@ units:
         sources: [bible.douay-rheims]
         date: {precision: approximate-year, from: {year: 1000, era: bc}}
 """
+
+    def test_preferred_queries_refuse_zero_and_verses_past_the_chapter(self) -> None:
+        dated = corpus(
+            self,
+            composition="""\
+units:
+  - id: composition.query-boundary-fixture
+    title: Whole books that must not date nonexistent loci
+    scope: [{book: Gen}, {book: Luke}, {book: Ps}]
+    dates:
+      - profile: catholic-traditional-v1
+        basis: fixture
+        sources: [bible.douay-rheims]
+        date: {precision: year, from: {year: 42, era: ad}}
+""",
+        )
+        for locus in ("Gen.1.0", "Gen.1.32", "Gen.1.999", "Luke.7.99", "Ps.150.99"):
+            with self.subTest(locus=locus):
+                answer = dated.ask(locus)
+                self.assertIsInstance(answer, _chronology.Unresolved)
+                self.assertEqual(answer.status, "not-alignable")
+        counts = _chronology.verse_counts()
+        for token, chapter in (("Gen", 1), ("Luke", 7), ("Ps", 150)):
+            for verse in (1, counts[(token, chapter)]):
+                with self.subTest(valid=f"{token}.{chapter}.{verse}"):
+                    answer = dated.ask(f"{token}.{chapter}.{verse}")
+                    self.assertIsInstance(answer, _chronology.Answer)
+                    self.assertTrue(answer.assertions)
+
+    def test_native_queries_require_exact_membership_in_the_printed_witness(self) -> None:
+        for system, locus in (
+            ("greek", "Sus.1.999"),
+            ("greek", "Ecclus.1.0"),
+            ("greek", "Ecclus.1.999"),
+            ("world-english-catholic", "Dan.1.999"),
+        ):
+            with self.subTest(system=system, locus=locus):
+                answer = _chronology.chronology(
+                    _chronology.parse_locus(locus, "test", system)
+                )
+                self.assertIsInstance(answer, _chronology.Unresolved)
+                self.assertEqual(answer.status, "not-alignable")
+
+        for system, locus in (
+            ("greek", "Sus.1.1"),
+            ("greek", "Ecclus.1.1"),
+            ("world-english-catholic", "Dan.1.1"),
+        ):
+            with self.subTest(valid=(system, locus)):
+                answer = _chronology.chronology(
+                    _chronology.parse_locus(locus, "test", system)
+                )
+                self.assertIsInstance(answer, _chronology.Answer)
+
+    def test_a_skipped_native_verse_number_is_not_invented_back(self) -> None:
+        checked = 0
+        for system in ("greek", "world-english-catholic"):
+            printed = _chronology._system_locus_membership(system)
+            self.assertIsNotNone(printed)
+            chapters: dict[tuple[str, int], set[int]] = {}
+            for token, chapter, verse in printed:
+                chapters.setdefault((token, chapter), set()).add(verse)
+            skipped = next(
+                (
+                    (token, chapter, verse)
+                    for (token, chapter), verses in sorted(chapters.items())
+                    for verse in range(min(verses), max(verses) + 1)
+                    if verse not in verses
+                ),
+                None,
+            )
+            self.assertIsNotNone(skipped, system)
+            token, chapter, verse = skipped
+            answer = _chronology.chronology(
+                _chronology.Locus(system, token, chapter, verse)
+            )
+            self.assertIsInstance(answer, _chronology.Unresolved)
+            checked += 1
+        self.assertEqual(checked, 2)
+
+    def test_valid_hebrew_psalm_addresses_survive_an_unprinted_vulgate_target(self) -> None:
+        # These are real Hebrew addresses. The Psalm concordance carries each
+        # to the right Vulgate Psalm, but its Douay-derived verse number is not
+        # printed by the tracked Clementine witness. That point correspondence
+        # must refuse without erasing the asked identity or the whole-Psalm
+        # chronology that remains safe.
+        affected = {
+            16: (11,),
+            43: (6,),
+            116: tuple(range(11, 20)),
+            126: (7,),
+            136: (27,),
+            147: tuple(range(12, 21)),
+        }
+        checked = 0
+        for chapter, verses in affected.items():
+            for verse in verses:
+                asked = _chronology.Locus("hebrew", "Ps", chapter, verse)
+                converted = _chronology.to_canonical(
+                    asked.system, asked.token, asked.chapter, asked.verse
+                )
+                self.assertIsInstance(converted, _chronology.Locus)
+                answer = _chronology.chronology(asked)
+                self.assertIsInstance(answer, _chronology.Answer)
+                self.assertEqual(answer.locus, asked)
+                self.assertEqual(answer.asked, str(asked))
+                self.assertEqual(answer.mapping.status, "not-alignable")
+                self.assertIsNone(answer.mapping.reached)
+                self.assertIn(str(converted), answer.mapping.note)
+                self.assertIn("whole-Psalm chronology", answer.mapping.note)
+                self.assertTrue(
+                    any(
+                        _chronology.is_positional_date(item.claim.date)
+                        for item in answer.assertions
+                    ),
+                    str(asked),
+                )
+                checked += 1
+        self.assertEqual(checked, 22)
 
     def test_the_miserere_is_one_psalm_with_one_chronology(self) -> None:
         # Vulgate 50 and Hebrew 51 are the same psalm. Authoring both would be
@@ -1110,12 +1822,48 @@ units:
         self.assertEqual(str(ask("Dan.4.1", "greek").locus), "Dan.3.98")
         self.assertEqual(str(ask("Dan.1.1", "greek").locus), "Dan.1.1")
 
+    def test_a_native_only_book_is_not_indexed_as_a_canonical_book(self) -> None:
+        # Susanna is a standalone book token in the Greek witness and Daniel
+        # 13 in the preferred Vulgate arrangement. `_by_book` accelerates only
+        # the latter walk; attempting to index `Sus` into its canonical-book
+        # dictionary crashed validation as soon as universal native witness
+        # attestation was authored.
+        book = corpus(
+            self,
+            composition="""\
+units:
+  - id: textual-attestation.susanna-greek
+    title: Susanna in the dated Greek witness
+    relation: textual-attestation
+    scope: {system: greek, book: Sus}
+    dates:
+      - profile: catholic-traditional-v1
+        basis: fixture
+        sources: [bible.douay-rheims]
+        date: {precision: year, from: {year: 1899, era: ad}}
+""",
+        )
+        index = _chronology._by_book(book.root)
+        self.assertNotIn("Sus", index)
+        self.assertFalse(
+            [problem for problem in _chronology.audit(book.root) if "Sus" in problem]
+        )
+        answer = book.ask("Sus.1.1", system="greek")
+        self.assertEqual(
+            [item.relation for item in answer.assertions],
+            ["textual-attestation"],
+        )
+        self.assertEqual(str(answer.locus), "Dan.13.1")
+
     def test_an_arrangement_with_no_recorded_row_refuses_with_its_reason(self) -> None:
-        # EsthGr, where the concordance genuinely records no row between this
-        # edition and the Greek it re-divides.
+        # Greek Ecclesiasticus 1:1 is an address that witness actually prints,
+        # but the corpus has established no verse-level correspondence to the
+        # differently divided Vulgate text. (The former WEC EsthGr 1:1 fixture
+        # was not an address in that witness at all, so exact-witness validation
+        # correctly refuses it earlier.)
         book = corpus(self)
         answer = _chronology.chronology(
-            _chronology.parse_locus("EsthGr.1.1", "test", "world-english-catholic"),
+            _chronology.parse_locus("Ecclus.1.1", "test", "greek"),
             root=book.root,
         )
         # BOTH AXES, which is what this used to get wrong. The mapping refuses
@@ -1124,7 +1872,7 @@ units:
         # the defect the cold audit found on ten native loci.
         self.assertIsInstance(answer, _chronology.Answer)
         self.assertEqual(answer.mapping.status, "textually-distinct")
-        self.assertIn("no correspondence is recorded", answer.mapping.note)
+        self.assertIn("no verse-level correspondence", answer.mapping.note)
         self.assertEqual(answer.status, "research-pending")
         self.assertEqual(answer.assertions, ())
 
@@ -1206,6 +1954,64 @@ gaps:
 
 
 class CoverageTests(unittest.TestCase):
+    def test_omitted_profile_coverage_equals_the_explicit_default_cascade(self) -> None:
+        _chronology.load.cache_clear()
+        _chronology._by_book.cache_clear()
+        _chronology.native_coverage.cache_clear()
+        self.addCleanup(_chronology.load.cache_clear)
+        self.addCleanup(_chronology._by_book.cache_clear)
+        self.addCleanup(_chronology.native_coverage.cache_clear)
+        default = _chronology.load().default_profile
+        implicit = _chronology.coverage()
+        explicit = _chronology.coverage(profile=default)
+        self.assertEqual(implicit, explicit)
+        self.assertGreater(
+            implicit["verses_with_alternative_traditional_claims"], 0
+        )
+
+    def test_strict_coverage_cannot_count_a_dangling_boundary_as_position(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary) / "chronology"
+            root.mkdir()
+            (root / "profiles.yaml").write_text(PROFILES, encoding="utf-8")
+            bodies = {
+                "composition": """\
+units:
+  - id: composition.jude
+    title: Jude after an anchor the corpus does not hold
+    scope: {book: Jude}
+    dates:
+      - profile: catholic-traditional-v1
+        basis: fixture
+        sources: [bible.douay-rheims]
+        date:
+          precision: boundary
+          boundary:
+            direction: after
+            anchor: e.no-such-anchor
+            statement: after an event that does not exist
+""",
+            }
+            for name, head in HEAD.items():
+                key = {"composition": "units"}.get(name, name)
+                body = bodies.get(name, f"{key}: []\n")
+                (root / f"{name}.yaml").write_text(
+                    head + body, encoding="utf-8"
+                )
+            _chronology.load.cache_clear()
+            self.addCleanup(_chronology.load.cache_clear)
+            with self.assertRaises(_chronology.ChronologyError) as caught:
+                _chronology.coverage(
+                    root,
+                    PROFILE,
+                    universe="addresses",
+                    require_date=True,
+                )
+        self.assertIn(
+            "a one-sided position bounded by nothing states nothing",
+            str(caught.exception),
+        )
+
     def test_every_verse_reaches_exactly_one_status(self) -> None:
         book = corpus(self, composition=InheritanceTests.BOOK_AND_CHAPTER)
         counts = _chronology.coverage(book.root)
@@ -1233,6 +2039,8 @@ class CoverageTests(unittest.TestCase):
     def test_coverage_reports_categories_and_no_single_percentage(self) -> None:
         book = corpus(self, events=EVENT, bindings=FOUR_GOSPELS, composition=PSALM_21)
         counts = _chronology.coverage(book.root)
+        self.assertEqual(counts["profile"], "catholic-traditional-v1")
+        self.assertEqual(counts["universe"], "vulgate-clementine-primary")
         for key in (
             "by_status",
             "by_relation",
@@ -1247,6 +2055,161 @@ class CoverageTests(unittest.TestCase):
         book = corpus(self, events=EVENT, bindings=FOUR_GOSPELS, composition=PSALM_21)
         counts = _chronology.coverage(book.root)
         self.assertEqual(counts["verses_with_multiple_relations"], 3)
+
+    def test_require_date_checks_assertions_not_an_authored_gap(self) -> None:
+        gap = corpus(
+            self,
+            profiles=CASCADE_PROFILES,
+            gaps="""\
+gaps:
+  - profile: catholic-traditional-v1
+    status: undated-in-tradition
+    scope: {book: Jude}
+    reason: The fixture states no date.
+""",
+        )
+        locus = _chronology.Locus("vulgate", "Jude", 1, 1)
+        with patch.object(_chronology, "_coverage_loci", return_value=[locus]):
+            with self.assertRaises(_chronology.ChronologyError) as caught:
+                _chronology.coverage(
+                    gap.root, CASCADE, universe="addresses", require_date=True
+                )
+        self.assertIn(
+            "1 valid addresses loci with no answerable positional Date",
+            str(caught.exception),
+        )
+
+    def test_require_date_accepts_attestation_as_a_positive_date(self) -> None:
+        dated = corpus(
+            self,
+            profiles=CASCADE_PROFILES,
+            composition="""\
+units:
+  - id: textual-attestation.jude
+    title: Jude in a dated witness
+    relation: textual-attestation
+    scope: {book: Jude}
+    dates:
+      - profile: catholic-critical-v1
+        basis: fixture
+        sources: [bible.king-james-version]
+        date: {precision: year, from: {year: 1899, era: ad}}
+""",
+        )
+        locus = _chronology.Locus("vulgate", "Jude", 1, 1)
+        with patch.object(_chronology, "_coverage_loci", return_value=[locus]):
+            counts = _chronology.coverage(
+                dated.root, CASCADE, universe="addresses", require_date=True
+            )
+        self.assertEqual(counts["missing_dates"], 0)
+        self.assertEqual(counts["by_status"]["attestation-only"], 1)
+        self.assertEqual(counts["by_status"]["composition-only"], 0)
+        self.assertEqual(counts["profile"], CASCADE)
+        self.assertEqual(counts["universe"], "supported-scripture-addresses")
+        self.assertEqual(counts["by_relation"]["textual-attestation"], 1)
+        primary = _chronology.coverage(dated.root, CASCADE)
+        self.assertEqual(primary["verses_with_substantive_event_assertions"], 0)
+
+    def test_expanded_universes_disclose_unenumerable_named_systems(self) -> None:
+        dated = corpus(
+            self,
+            profiles=CASCADE_PROFILES,
+            composition="""\
+units:
+  - id: textual-attestation.jude
+    title: Jude in a dated witness
+    relation: textual-attestation
+    scope: {book: Jude}
+    dates:
+      - profile: catholic-critical-v1
+        basis: fixture
+        sources: [bible.king-james-version]
+        date: {precision: year, from: {year: 1899, era: ad}}
+""",
+        )
+        locus = _chronology.Locus("vulgate", "Jude", 1, 1)
+        native = {
+            "hebrew": {"enumerable": True, "printed_loci": 1},
+            "nab": {"enumerable": False, "note": "no NAB concordance"},
+            "nova-vulgata": {
+                "enumerable": False,
+                "note": "no Nova Vulgata concordance",
+            },
+            "septuagint": {
+                "enumerable": False,
+                "note": "no Septuagint concordance",
+            },
+        }
+        payload = None
+        for universe in ("distinct-content", "addresses"):
+            with self.subTest(universe=universe), patch.object(
+                _chronology, "_coverage_loci", return_value=[locus]
+            ), patch.object(_chronology, "native_coverage", return_value=native):
+                payload = _chronology.coverage(
+                    dated.root, CASCADE, universe=universe, require_date=True
+                )
+                self.assertEqual(payload["missing_dates"], 0)
+                self.assertEqual(
+                    payload["universe_limitations"]["date_completeness_scope"],
+                    "enumerated-loci-only",
+                )
+                self.assertEqual(
+                    payload["unenumerable_systems"],
+                    {
+                        "nab": "no NAB concordance",
+                        "nova-vulgata": "no Nova Vulgata concordance",
+                        "septuagint": "no Septuagint concordance",
+                    },
+                )
+
+        output = io.StringIO()
+        with redirect_stdout(output):
+            tool._render_coverage(payload)
+        rendered = output.getvalue()
+        self.assertIn(
+            "universe-limitation\tdate_completeness_scope\t"
+            "enumerated-loci-only\n",
+            rendered,
+        )
+        self.assertIn(
+            "unenumerable-system\tnab\tno NAB concordance\n", rendered
+        )
+
+    def test_require_date_rejects_a_duration_without_a_position(self) -> None:
+        duration_only = corpus(
+            self,
+            profiles=CASCADE_PROFILES,
+            events="""\
+events:
+  - id: e.duration-only
+    title: An event with a duration but no position
+    dates:
+      - profile: catholic-traditional-v1
+        basis: fixture
+        sources: [bible.douay-rheims]
+        date: {precision: duration, duration: {years: 7}}
+""",
+            bindings="""\
+bindings:
+  - relation: narrated-event
+    event: e.duration-only
+    scope: {book: Jude, chapter: 1, first: 1, last: 1}
+""",
+        )
+        locus = _chronology.Locus("vulgate", "Jude", 1, 1)
+        with patch.object(_chronology, "_coverage_loci", return_value=[locus]):
+            counts = _chronology.coverage(
+                duration_only.root, CASCADE, universe="addresses"
+            )
+            self.assertEqual(counts["missing_dates"], 1)
+            with self.assertRaises(_chronology.ChronologyError) as caught:
+                _chronology.coverage(
+                    duration_only.root,
+                    CASCADE,
+                    universe="addresses",
+                    require_date=True,
+                )
+        self.assertIn("no answerable positional Date", str(caught.exception))
 
 
 # --- Audit ------------------------------------------------------------------
@@ -1269,6 +2232,69 @@ events:
         )
         problems = _chronology.audit(book.root)
         self.assertTrue(any("is not a record this repository holds" in p for p in problems))
+
+    def test_a_bible_source_must_name_a_verse_its_exact_edition_prints(self) -> None:
+        typo = corpus(
+            self,
+            events="""\
+events:
+  - id: e.one
+    title: One
+    dates:
+      - profile: catholic-traditional-v1
+        basis: fixture
+        sources: ["bible:douay-rheims:Gen.1.999"]
+        date: {precision: year, from: {year: 33, era: ad}}
+""",
+        )
+        problems = _chronology.audit(typo.root)
+        self.assertTrue(
+            any("does not print that verse" in problem for problem in problems),
+            problems,
+        )
+
+        valid = corpus(
+            self,
+            events="""\
+events:
+  - id: e.one
+    title: One
+    dates:
+      - profile: catholic-traditional-v1
+        basis: fixture
+        sources: ["bible:douay-rheims:Gen.1.31"]
+        date: {precision: year, from: {year: 33, era: ad}}
+""",
+        )
+        self.assertFalse(
+            [
+                problem
+                for problem in _chronology.audit(valid.root)
+                if "bible:douay-rheims:Gen.1.31" in problem
+            ]
+        )
+
+    def test_binding_bible_sources_receive_the_same_exact_locus_audit(self) -> None:
+        book = corpus(
+            self,
+            events=EVENT,
+            bindings="""\
+bindings:
+  - relation: narrated-event
+    event: life-of-christ.crucifixion
+    scope: {book: Jude, chapter: 1, first: 1, last: 1}
+    sources: ["bible:douay-rheims:Gen.1.999"]
+""",
+        )
+        problems = _chronology.audit(book.root)
+        self.assertTrue(
+            any(
+                problem.startswith("binding narrated-event")
+                and "does not print that verse" in problem
+                for problem in problems
+            ),
+            problems,
+        )
 
     def test_a_scope_past_a_chapters_last_verse_is_named_with_the_ceiling(self) -> None:
         # Never clamp. guidance/versification.md §8.5 rule 1.
@@ -1332,8 +2358,16 @@ class ToolTests(unittest.TestCase):
         # An empty answer is the "no", whatever produced it: this locus refuses
         # the mapping AND has no chronology, so the caller gets a non-zero exit
         # and the reason on stderr, while a locus that answers exits zero.
-        self.assertEqual(tool.main(["query", "EsthGr.1.1", "--system", "greek"]), 1)
-        self.assertEqual(tool.main(["query", "Gen.1.1"]), 0)
+        self.assertEqual(
+            tool.main([
+                "query", "EsthGr.1.1", "--system", "greek",
+                "--profile", PROFILE,
+            ]),
+            1,
+        )
+        self.assertEqual(
+            tool.main(["query", "Gen.1.1", "--profile", PROFILE]), 0
+        )
 
     def test_a_mapping_refusal_is_not_a_chronology_refusal(self) -> None:
         """The hard case Correction A was written for, both halves at once.
@@ -1348,7 +2382,7 @@ class ToolTests(unittest.TestCase):
         _chronology.load.cache_clear()
         self.addCleanup(_chronology.load.cache_clear)
         answer = _chronology.chronology(
-            _chronology.Locus("greek", "Ecclus", 44, 1)
+            _chronology.Locus("greek", "Ecclus", 44, 1), profile=PROFILE
         )
         self.assertIsInstance(answer, _chronology.Answer)
         # Native chronology, reached without inventing a Vulgate locus.
@@ -1367,7 +2401,7 @@ class ToolTests(unittest.TestCase):
         # Two texts, two units, and neither leaks into the other's query.
         _chronology.load.cache_clear()
         self.addCleanup(_chronology.load.cache_clear)
-        latin = _chronology.chronology("Ecclus.44.1")
+        latin = _chronology.chronology("Ecclus.44.1", profile=PROFILE)
         self.assertEqual(
             {item.subject for item in latin.assertions},
             {"composition.book-of-ecclesiasticus"},
@@ -1377,6 +2411,91 @@ class ToolTests(unittest.TestCase):
         # Two names for one choice is one way of finding out later that they
         # had stopped agreeing.
         self.assertEqual(_chronology.PREFERRED_SYSTEM, _projection.CANONICAL)
+
+    def test_boundary_json_keeps_direction_and_endpoint_structured(self) -> None:
+        book = corpus(
+            self,
+            composition="""\
+units:
+  - id: final-formation.jude
+    title: Jude in its final form
+    relation: final-formation
+    scope: {book: Jude}
+    dates:
+      - profile: catholic-traditional-v1
+        basis: fixture
+        sources: [bible.douay-rheims]
+        date:
+          precision: boundary
+          boundary:
+            direction: before
+            endpoint: {year: 132, era: bc}
+""",
+        )
+        checkout = book.root.parent
+        chronology_link = checkout / "src" / "sources" / "chronology"
+        chronology_link.parent.mkdir(parents=True)
+        chronology_link.symlink_to(book.root, target_is_directory=True)
+        import argparse
+
+        payload = tool.query(
+            argparse.Namespace(
+                root=str(checkout), locus="Jude.1.1", system=None,
+                profile=PROFILE, evidence=False,
+            )
+        )
+        assertion = payload["assertions"][0]
+        self.assertEqual(payload["chronology_status"], "composition-only")
+        self.assertEqual(assertion["date"], "before 132 B.C.")
+        self.assertEqual(assertion["precision"], "boundary")
+        self.assertEqual(
+            assertion["boundary"],
+            {"direction": "before", "endpoint": "132 B.C."},
+        )
+
+    def test_explicit_leaf_gap_json_still_names_its_requested_policy(self) -> None:
+        book = corpus(
+            self,
+            gaps="""\
+gaps:
+  - profile: catholic-traditional-v1
+    status: undated-in-tradition
+    scope: {book: Jude}
+    reason: The traditional fixture states no position in time.
+""",
+        )
+        checkout = book.root.parent
+        chronology_link = checkout / "src" / "sources" / "chronology"
+        chronology_link.parent.mkdir(parents=True)
+        chronology_link.symlink_to(book.root, target_is_directory=True)
+        import argparse
+
+        payload = tool.query(
+            argparse.Namespace(
+                root=str(checkout), locus="Jude.1.1", system=None,
+                profile=PROFILE, evidence=False,
+            )
+        )
+        self.assertEqual(payload["chronology_status"], "undated-in-tradition")
+        self.assertEqual(payload["requested_profile"], PROFILE)
+        self.assertEqual(payload["resolved_profiles"], {})
+        self.assertEqual(payload["assertions"], [])
+
+    def test_failed_converted_target_json_keeps_the_original_asked_address(self) -> None:
+        import argparse
+
+        payload = tool.query(
+            argparse.Namespace(
+                root=None, locus="Ps.16.11", system="hebrew",
+                profile=None, evidence=False,
+            )
+        )
+        self.assertEqual(payload["status"], "ok")
+        self.assertEqual(payload["locus"], "Ps.16.11")
+        self.assertEqual(payload["asked"], "Ps.16.11")
+        self.assertEqual(payload["mapping"]["status"], "not-alignable")
+        self.assertIsNone(payload["mapping"]["reached"])
+        self.assertIn("Ps.15.11", payload["mapping"]["note"])
 
     def test_the_derived_table_is_byte_identical_on_a_second_derivation(self) -> None:
         tracked = (
@@ -1407,7 +2526,7 @@ class TrackedHardCaseTests(unittest.TestCase):
 
     def ask(self, locus: str, system: str = "vulgate"):
         answer = _chronology.chronology(
-            _chronology.parse_locus(locus, "test", system)
+            _chronology.parse_locus(locus, "test", system), profile=PROFILE
         )
         self.assertIsInstance(answer, _chronology.Answer, locus)
         return answer
@@ -1691,7 +2810,7 @@ class TrackedHardCaseTests(unittest.TestCase):
             self.assertNotIn("B.C.", claim.date.label, identifier)
 
     def test_every_verse_of_the_canon_reaches_exactly_one_status(self) -> None:
-        counts = _chronology.coverage()
+        counts = _chronology.coverage(profile=PROFILE)
         self.assertEqual(counts["total_verses"], 35809)
         self.assertEqual(sum(counts["by_status"].values()), counts["total_verses"])
 
@@ -1722,7 +2841,7 @@ class TrackedHardCaseTests(unittest.TestCase):
         # mean the loader had invented a status, so sweep the whole canon.
         authored = {gap.status for gap in _chronology.load().gaps}
         self.assertTrue(authored <= set(_chronology.AUTHORED_STATUSES))
-        counts = _chronology.coverage()["by_status"]
+        counts = _chronology.coverage(profile=PROFILE)["by_status"]
         for status, total in counts.items():
             if status in _chronology.EARNED_STATUSES or status == "research-pending":
                 continue
@@ -2350,7 +3469,9 @@ class CorrectedBlockerTests(unittest.TestCase):
     """
 
     def ask(self, locus: str, *, evidence: bool = False):
-        answer = _chronology.chronology(locus, evidence=evidence)
+        answer = _chronology.chronology(
+            locus, evidence=evidence, profile=PROFILE
+        )
         self.assertIsInstance(answer, _chronology.Answer, locus)
         return answer
 
@@ -2617,7 +3738,7 @@ class CorrectedBlockerTests(unittest.TestCase):
                 for verse in range(1, counts[(token, chapter)] + 1):
                     swept += 1
                     locus = f"{token}.{chapter}.{verse}"
-                    answer = _chronology.chronology(locus)
+                    answer = _chronology.chronology(locus, profile=PROFILE)
                     if not isinstance(answer, _chronology.Answer):
                         empty.append((locus, "unresolved"))
                     elif not answer.status:
@@ -2661,7 +3782,9 @@ class LastUnreviewedClaimsTests(unittest.TestCase):
     }
 
     def ask(self, locus: str, *, evidence: bool = False):
-        answer = _chronology.chronology(locus, evidence=evidence)
+        answer = _chronology.chronology(
+            locus, evidence=evidence, profile=PROFILE
+        )
         self.assertIsInstance(answer, _chronology.Answer, locus)
         return answer
 
@@ -2708,7 +3831,9 @@ class LastUnreviewedClaimsTests(unittest.TestCase):
         for token, chapters in corpus.books.items():
             for chapter in range(1, chapters + 1):
                 for verse in range(1, counts[(token, chapter)] + 1):
-                    answer = _chronology.chronology(f"{token}.{chapter}.{verse}")
+                    answer = _chronology.chronology(
+                        f"{token}.{chapter}.{verse}", profile=PROFILE
+                    )
                     if getattr(answer, "status", None) == "research-pending":
                         pending.append(f"{token}.{chapter}.{verse}")
         self.assertEqual(pending[:20], [])
@@ -2892,7 +4017,7 @@ class RemediationTests(unittest.TestCase):
                 self.assertFalse(corpus.answers_with(claim))
 
     def test_apocalypse_1_9_still_answers_with_the_reign_of_domitian(self) -> None:
-        answer = _chronology.chronology("Apoc.1.9")
+        answer = _chronology.chronology("Apoc.1.9", profile=PROFILE)
         labels = [item.claim.date.label for item in answer.assertions]
         self.assertIn("the reign of the Emperor Domitian (81-96)", labels)
         self.assertNotIn("the reign of Claudius, A.D. 41-54", labels)
@@ -2900,7 +4025,9 @@ class RemediationTests(unittest.TestCase):
     def test_the_rejected_figure_is_still_inspectable(self) -> None:
         labels = [
             item.claim.date.label
-            for item in _chronology.chronology("Apoc.1.9", evidence=True).assertions
+            for item in _chronology.chronology(
+                "Apoc.1.9", evidence=True, profile=PROFILE
+            ).assertions
         ]
         self.assertIn("the reign of Claudius, A.D. 41-54", labels)
 
@@ -3110,7 +4237,7 @@ class RemediationTests(unittest.TestCase):
         for locus in ("Ex.12.41", "3Kings.6.1"):
             labels = [
                 item.claim.date.label
-                for item in _chronology.chronology(locus).assertions
+                for item in _chronology.chronology(locus, profile=PROFILE).assertions
             ]
             for label in self.WITHDRAWN.values():
                 self.assertNotIn(label, labels, locus)
@@ -3119,7 +4246,7 @@ class RemediationTests(unittest.TestCase):
 
     def test_malachias_falls_to_a_row_that_says_a_source_was_read(self) -> None:
         for locus in ("Mal.1.1", "Mal.4.6"):
-            answer = _chronology.chronology(locus)
+            answer = _chronology.chronology(locus, profile=PROFILE)
             self.assertEqual(answer.status, "undated-in-tradition", locus)
             self.assertIn("Van Hoonacker", answer.note, locus)
             self.assertNotIn("no ranked source has been inspected", answer.note, locus)
@@ -3127,13 +4254,15 @@ class RemediationTests(unittest.TestCase):
     def test_the_malachias_figure_is_preserved_and_not_deleted(self) -> None:
         labels = [
             item.claim.date.label
-            for item in _chronology.chronology("Mal.1.1", evidence=True).assertions
+            for item in _chronology.chronology(
+                "Mal.1.1", evidence=True, profile=PROFILE
+            ).assertions
         ]
         self.assertIn("about the middle of the fifth century B.C.", labels)
 
     def test_the_baptism_verses_keep_their_gospel_and_lose_the_year(self) -> None:
         for locus in ("Matt.3.13", "Mark.1.9", "Luke.3.21"):
-            answer = _chronology.chronology(locus)
+            answer = _chronology.chronology(locus, profile=PROFILE)
             self.assertEqual(answer.status, "composition-only", locus)
             self.assertTrue(
                 all(item.relation == "composition" for item in answer.assertions),
@@ -4195,16 +5324,15 @@ class CenturyNotationTests(unittest.TestCase):
     """A source that names a century and no year is stored as an interval, and
     the interval is the century entire even where the source narrows inside it.
 
-    Six claims did that while the rule for it lived only inside their own six
-    notes, so a cold reviewer met the convention six times and the convention
-    nowhere, and read the widened bounds as an undeclared project computation
-    sitting on a `traditional-catholic` or `reported-traditional` basis --
-    which rank 7 permits only as `derived`, with a named rule and every input
-    identified. The rule is now `display.century_notation` in profiles.yaml.
-    These tests hold the data and the written rule to each other.
+    Six traditional claims did that while the rule for it lived only inside
+    their own notes. Four critical claims now use the same normalization. The
+    rule is declared independently as `display.century_notation` by both leaf
+    profiles, while each profile retains its own evidence and derivation-rank
+    policy. These tests hold both sets of data to that shared normalization.
     """
 
     RULE = "century_notation"
+    PROFILE_COUNTS = {PROFILE: 6, CRITICAL: 4}
 
     @staticmethod
     def _century_notated():
@@ -4222,22 +5350,47 @@ class CenturyNotationTests(unittest.TestCase):
                     found[f"{unit.id}#{index}"] = claim
         return found
 
-    def test_the_profile_states_the_rule_these_claims_run_on(self) -> None:
-        profile = _chronology.load().profiles["catholic-traditional-v1"]
-        display = profile.get("display", {})
-        self.assertIn(self.RULE, display,
-                      "the notation rule is not written down in the profile")
-        stated = display[self.RULE]
-        # the two things the rule has to settle, and did not before.
-        self.assertIn("entire", stated.lower())
-        self.assertIn("derived", stated.lower())
+    @staticmethod
+    def _normalization(stated: str) -> str:
+        """The common normalization, before profile-specific rank rationale."""
+        return stated.partition("\nThis is NOTATION")[0]
 
-    def test_every_century_notated_claim_cites_the_rule(self) -> None:
+    def test_both_profiles_state_the_identical_normalization(self) -> None:
+        profiles = _chronology.load().profiles
+        stated = {}
+        for identifier in self.PROFILE_COUNTS:
+            display = profiles[identifier].get("display", {})
+            self.assertIn(
+                self.RULE,
+                display,
+                f"the notation rule is not written down in {identifier}",
+            )
+            stated[identifier] = display[self.RULE]
+            self.assertIn("entire", stated[identifier].lower())
+            self.assertIn("derived", stated[identifier].lower())
+        self.assertEqual(
+            self._normalization(stated[PROFILE]),
+            self._normalization(stated[CRITICAL]),
+        )
+
+    def test_every_century_notated_claim_is_governed_by_that_rule(self) -> None:
         claims = self._century_notated()
-        self.assertEqual(len(claims), 6, sorted(claims))
+        counts = {identifier: 0 for identifier in self.PROFILE_COUNTS}
         for identifier, claim in claims.items():
-            self.assertIsNotNone(claim.note, identifier)
-            self.assertIn(self.RULE, claim.note, identifier)
+            self.assertIn(claim.profile, counts, identifier)
+            counts[claim.profile] += 1
+            self.assertIn(
+                self.RULE,
+                _chronology.load().profiles[claim.profile].get("display", {}),
+                identifier,
+            )
+            # The traditional remediation made each of its six claims point
+            # back to the newly centralized rule. Critical claims are covered
+            # by their profile declaration and need not repeat policy prose.
+            if claim.profile == PROFILE:
+                self.assertIsNotNone(claim.note, identifier)
+                self.assertIn(self.RULE, claim.note, identifier)
+        self.assertEqual(counts, self.PROFILE_COUNTS, sorted(claims))
 
     def test_no_century_notated_claim_pretends_to_be_a_derivation(self) -> None:
         """The alternative settlement was to re-author these as rank-7

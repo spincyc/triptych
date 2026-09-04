@@ -14082,7 +14082,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-4.json` | `7f1956b102a7b765dc36210f5557ad25f07d075c8edcc87a3acc85cd3a03473d` |
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-5.json` | `61abb15daa555ada778b2eeb6137cbc6114102586c9cc2a27d5e4863521de0e3` |
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-6.json` | `54408d9f5e1c8b684850b05976d6e3ac9ee3b88b6194c37c7e1cf83d52256d28` |
-| `src/web/data/structure/documents/corpus.json` | `dcbce7e24c44a629e7961b2b662c5d0ba1935c809fe3d0e78ea5bb1d0ccfb643` |
+| `src/web/data/structure/documents/corpus.json` | `5806761da3fe8f85e8f7b87fd4cb6125106e2544c4e918b5a0dee6d233f28535` |
 | `src/web/data/structure/ordinary/index.json` | `b248eefcc0b073e43dd4c0d168007cd8d09fc5f28bd2fc633d98e2f4ba9e4846` |
 | `src/web/data/structure/ordinary/postconciliar.json` | `7714e4f1c328e4adad95afb3387e81b0cc44731977bfe5866a2ae2a2a597c2b6` |
 | `src/web/data/structure/ordinary/roman-1962.json` | `2c707b7d0ac3b61602533a57a26989042af43358e1d1dc7ca58aee286b827341` |
@@ -19810,7 +19810,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/catholic-church/sacramentarium-gelasianum-vetus/1894-wilson-1894.json` | `cd9f4d96e81df221878f6c7a05d1226f0f6ca6ad9a8d8c40b61e22772d8499a8` |
 | `src/web/data/structure/sources/editions/catholic-church/sacramentarium-gregorianum-hadrianum/1915-wilson-1915.json` | `da0ea561b2645309e4615a8ff38700ac5bb09757349eaa88a5c2e8827dedb926` |
 | `src/web/data/structure/sources/editions/catholic-church/sacramentarium-veronense/1896-feltoe-1896.json` | `69c746ff7e20560b98f43fe5d50472d46aaddf99107078d177e59af67596ebe5` |
-| `src/web/data/structure/sources/editions/catholic-church/vulgata-clementina/1592-ebible-latvuc.json` | `4426c364737e81612e652298e6691a12a2771d9ea170e38954413771fbe0e2ac` |
+| `src/web/data/structure/sources/editions/catholic-church/vulgata-clementina/1598-ebible-latvuc.json` | `c66930e948e53362ade1e3bd5956ac6ab1f84b96361bcdb8d60238b9d7e4852b` |
 | `src/web/data/structure/sources/editions/catholic-church/vulgata-clementina/1914-hetzenauer-1914.json` | `121e4e8f8217d7d303b2c469c2ff158751f6ae68aebf81f08f4406c30d985c3c` |
 | `src/web/data/structure/sources/editions/catholic-church/vulgata-clementina/2026-latin-sacredbible-web-2026-07-26.json` | `71dda57325ad4a8a82e7c02e22fca5212ddfb94831a9408cecf8927886dc2d6c` |
 | `src/web/data/structure/sources/editions/catholic-encyclopedia/alphabetical-index/2026-newadvent-web-2026-08-27.json` | `c00c7557f0476b67b1be64fa4ee5c0ce6724bf3149cdd8b223f215b0d9769daa` |
@@ -19818,7 +19818,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/catholic-encyclopedia/volume-10/1911-new-york-1911.json` | `4f9aea771c1e0548766e96a4df79754b6af4e89d233326ebc650d844c82992d8` |
 | `src/web/data/structure/sources/editions/catholic-encyclopedia/volume-11/1911-new-york-1911.json` | `cc0a8624ffdeb00e5576bf2babe09453b0163167cded38e86e2f1949c92fc6fe` |
 | `src/web/data/structure/sources/editions/catholic-encyclopedia/volume-12/1911-new-york-1911.json` | `b5b9ad969de8bb349c28b323f94c6ab69aa6e3bc314ca9a06a822598a4236f48` |
-| `src/web/data/structure/sources/editions/catholic-encyclopedia/volume-13/1912-new-york-1912.json` | `6f7491a6c7b1b9a606ca6529b4fa517dbb45418cb35c7d19e69a11d9b94bfc41` |
+| `src/web/data/structure/sources/editions/catholic-encyclopedia/volume-13/1912-new-york-1912.json` | `b77437acacf8a736699d06b5f45188e04f377c486c5d986f167838557f7d8fc3` |
 | `src/web/data/structure/sources/editions/catholic-encyclopedia/volume-14/1912-new-york-1912.json` | `8d06c4d1fbfd920bbac39e8e92a16154a844df8b178eb2b49a1a0e79bcd14f86` |
 | `src/web/data/structure/sources/editions/catholic-encyclopedia/volume-15/1912-new-york-1912.json` | `3cb998d0b1684a08bd028a7e9e5326ea5f04b1c8f07a327f94cf3606b7330fd1` |
 | `src/web/data/structure/sources/editions/catholic-encyclopedia/volume-2/1907-new-york-1907.json` | `2da940b5290bc398ea423811fe06d456ea076806ffc3eb1eb52542a2c5bf0896` |
@@ -19827,7 +19827,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/catholic-encyclopedia/volume-5/1909-new-york-1909.json` | `b885a8db4ef7791d127b49fb88cce6044a8fa27d708a7e6ff344d7dcdbbdb52c` |
 | `src/web/data/structure/sources/editions/catholic-encyclopedia/volume-6/1909-new-york-1909.json` | `4a1fe4095fcce8b3cac131d88b91da491156fd1b50f5c4779556058b7857d582` |
 | `src/web/data/structure/sources/editions/catholic-encyclopedia/volume-7/1910-new-york-1910.json` | `479fd57405ffe4b8b2f093e0804b70aed16c6f44126f12a4275b2ae9d91887bd` |
-| `src/web/data/structure/sources/editions/catholic-encyclopedia/volume-8/1910-new-york-1910.json` | `b15c73030315b8d8d701d4169bbbeafe42f6cf1e3af120c93dcdcdbc5fd65ac2` |
+| `src/web/data/structure/sources/editions/catholic-encyclopedia/volume-8/1910-new-york-1910.json` | `f30083977cf1658b33ec33602dd62831f17cf8ed51e5e3a4284958c754820273` |
 | `src/web/data/structure/sources/editions/catholic-encyclopedia/volume-9/1910-new-york-1910.json` | `21361a884ab3faa40ea2a8685f38193f9161a0b7fc890f5bc788bf88b0f90e26` |
 | `src/web/data/structure/sources/editions/catss/lxxm-morphology/2025-2025-unicode-fddec9b.json` | `3c425b3acf5349691e4329bea5be0aa48493c7653b6dac9b62d02f4efd2b4f10` |
 | `src/web/data/structure/sources/editions/centerblc/lxx-text-fabric/2022-2022-rlxx1935-4829f37.json` | `b31eb12a6b869de0c72b67c9b7ad9a9cd9148074c440c5b3cdcf722c51f6a003` |
@@ -20360,6 +20360,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/liturgical-calendar-dioceses-united-states/2027-2027.json` | `f6a25b48dca644c2bb742b73714f002f5f00b0fd239b3cebc1268847d36231df` |
 | `src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/liturgical-calendar-dioceses-united-states/2028-2028.json` | `79b708c14f17e6acc90eea15a92cceb911dfc670a93ffd1dedc923f4a9326781` |
 | `src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/2026-2026-08-21-english-usccb-web.json` | `e6b77c124ffbfbdeabbeea1bb51e930198d199c28e8c0bb89ddf17b9bd9a4f39` |
+| `src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/2026-2026-09-04-english-usccb-web.json` | `194c536ff3123e0e608f6b0dec3cb9cf7fbc9cb6dbf849d85e6625f5fb9d77bf` |
 | `src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/2026-english-usccb-web-2026-07-28.json` | `526d91a5c0019ab04fa64e49aeaa5d28de0d064ec8a6db3e1abf4ba3a00867d2` |
 | `src/web/data/structure/sources/editions/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/2026-english-usccb-web-2026-08-20.json` | `4235515d574a25cbfa46069eae3784838a9c01967dd482e13724730c1bf8ad1c` |
 | `src/web/data/structure/sources/editions/united-states-patent-office/patent-717186/1902-letters-patent-1902.json` | `f276f3fc433907d32176add44ce8d9442c055bb45634a71ca205fffed143994b` |
@@ -20374,7 +20375,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/william-williams/guide-me-o-thou-great-jehovah/2026-hymnal-of-praise-1913-hymnary-web-2026-07-29.json` | `0c387edabb7fcde38b30186316a98931754e5184bea07b1c3f437c3192f8e195` |
 | `src/web/data/structure/sources/editions/world-health-organization/icd-11-clinical-descriptions-and-diagnostic-requirements/2024-english-who-2024.json` | `97b5a08dc7e0a83a6c4da5990e21e8fcc2e4356d569903f09b8b97d34f1672aa` |
 | `src/web/data/structure/sources/editions/world-intellectual-property-organization/wipo-lex-berne-contracting-parties/2026-web-2026-08-01.json` | `ffaf08c0f47cd6ab1d4761546a9e290ce69420b185c891d67395fcc17d5d9d5e` |
-| `src/web/data/structure/sources/index.json` | `a3bea10079995105e85aeb1b4a7f287ecc7789464d29cf7a5a86d5945360aaf5` |
+| `src/web/data/structure/sources/index.json` | `638c6a6bd4278ff488ba464d29a875cfab7e9dc13d75bb30d12ebfcef9843dd5` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.1.json` | `bf80df77e273500e8769a0a0613d4bb907a736fafce970a0e62804eda1219c58` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.10.json` | `14700390dab93606af7e6e934d457e2ed524f13977f64bb6ede3f04daea4521d` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.100.json` | `c9b31161f4c7f56ea4c89bfaa550e47bc6327f5b8db9f685dc5bf2a4d73d1de2` |
@@ -21635,6 +21636,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/text/passage.catholic-church.vulgata-clementina.hetzenauer-1914.lk-23.53.json` | `3649b4d9031f626365cea4acad7629d1357427e61438d962d3a94d980d829191` |
 | `src/web/data/structure/sources/text/passage.catholic-church.vulgata-clementina.hetzenauer-1914.lk-24.12.json` | `63282907b4973c9e027b4cb966a8781930e938e886f2f4bb09a6b08a727c719a` |
 | `src/web/data/structure/sources/text/passage.catholic-church.vulgata-clementina.hetzenauer-1914.mt-8.23-27.json` | `ebaf53ae2c4a9aa76f178e6d2e07781eba50c2546dc18b11072bf8c8dcd340bb` |
+| `src/web/data/structure/sources/text/passage.catholic-encyclopedia.volume-13.new-york-1912.pentateuch-mid-third-century-bc.json` | `438b94b3c128ada546991728b6e99421371553920856d9e4ea360248d86c0f6d` |
 | `src/web/data/structure/sources/text/passage.church-of-england.authorized-version-of-the-bible.gutenberg-ebook-10.jn-20.7.json` | `2df4cbe321aeba78aebd0cb54ea6a6c56397efc46c531020336bc901dcd89ccd` |
 | `src/web/data/structure/sources/text/passage.cyril-of-alexandria.commentary-on-john.english-pusey-randell-lfc-1874-1885.book-12-jn-20.1-9.json` | `4a110b81becea574dada26e79a37a77c00be2fb83df4c10026432821f0bb21bc` |
 | `src/web/data/structure/sources/text/passage.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.1cor-10.6-13.json` | `f0a475fef42b47d8287eaab357f1c8c847d710a82bc3d3201f92ba23520b10bc` |
@@ -23408,7 +23410,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.visitatione-beatae-mariae-virginis-secret.json` | `8d37bcfd80e14d1980f3ff2d4b3f20e519da9e5c72783ce07ce5125b17247739` |
 | `src/web/data/structure/sources/text/passage.westcott-and-hort.the-new-testament-in-the-original-greek.introduction-and-appendix-1882.appendix-p71-lk-24.12.json` | `199d42eced334a709244d53f41cafdd57ee93cd352aad1273287b48ce5ba6bf7` |
 | `src/web/data/structure/sources/text/passage.william-smith.dictionary-of-greek-and-roman-antiquities.1875-lacuscurtius-web-2026-07-25.sv-mantele.json` | `5e9590fc1d25d8018dc0fc12d78e539d017b66527b2857a5ba554aa026979736` |
-| `tools/public-alpha` | `7034a2680060b42f918d94b7ecc7c01d566e8c74103b12dcb16e43457671188e` |
+| `tools/public-alpha` | `b525f09a8e56a47f4750be931963290639e75e563e5c61a8122f2a34069baab5` |
 | `web/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.md` | `6349355c26491b0292f854a8ac2da3fceba601432e92770d3db57c3821bca039` |
 | `web/claude/articles/canon-law/natural-positive-divine-human-law.md` | `7a82d2ac4232a176381d488d0be7c8a23a15b860428025236b495322ac55281b` |
 | `web/claude/articles/faith/against-the-instrumentalists.md` | `309ab5bf2c00ce7ad98bec3200025af2bb88f5a0717e353e89547ef88a3e4be1` |
@@ -23495,7 +23497,7 @@ release attachment, announcement, or promotion.
 | `web/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.md` | `3c1c238aa85baafb41ead62e17e3b0b81ef8e3394cfe295b8a7efe895c6f0cd2` |
 | `web/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.md` | `7882b9cba8b4a4bf56030fae3b1455fd67139deb9fa93aa1b7189ec585acf634` |
 | `web/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost.md` | `bd9b89b40585328138ef99d943d771afc1fac1e871465e966e38c7f21cf4d9f1` |
-| `web/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.md` | `e671fe4ac6ae9a0f63c3780c26413ca6249e6ba9fc07fdc04f20da0247cf1a76` |
+| `web/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.md` | `fdcbe25c604413421eaa4f2239453fbeb8582023d1e3a16d477565992b02dc4b` |
 | `web/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.md` | `9bf454cbd3fffc4a9bdde169605db7a3a2dd4427930a6e92f4604ddb4b6b4dfa` |
 | `web/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.md` | `4240b54f3f6e373af7f2b3c1df91bfde7516232ecf3ed75525bd8dc77425a967` |
 | `web/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.md` | `57316bdff52931f6edc3eb600850ee6c9cc516f8a5975df754ac97e1e2abec3e` |

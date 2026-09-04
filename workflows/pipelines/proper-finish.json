@@ -94,9 +94,14 @@
           "required_result": "the leaf must carry the chronology corpus's own answer for its appointed loci in research/chronology.toml, and it must be the answer the corpus gives now; guidance/scripture-chronology.md section 14 requires a consumer to carry the stable ids -- event id, unit id, profile, relation -- so that prose can be regenerated without re-researching the fact, and a carried id that no longer names what the corpus holds is the second source of truth the corpus exists to prevent. The record is generated, so a leaf whose copy has drifted is rewritten from the corpus and never reconciled toward the guide"
         },
         {
+          "id": "chronology-annotations-current",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check chronology-annotations-current",
+          "required_result": "the leaf must carry research/chronology-annotations.tex exactly as proper-chronology projects the live dossier: one annotation for every appointed Scripture, every candidate preserved under its own relation, and the Gospel's composition and narrated-event chronology kept distinct even where one relation has only a typed absence. This file is generated presentation data, so a missing, hand-edited, partial, or stale projection is rewritten from the corpus and never reconciled toward the page"
+        },
+        {
           "id": "chronology-claims-supported",
           "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check chronology-claims-supported",
-          "required_result": "every biblical date the leaf prints must be an assertion the chronology corpus makes at the verses the element appoints, printed in the source's own label and carrying the corpus's subject and relation; and from this version the date cell of the scriptural dossier may hold no figure that is not inside such a claim, with one cell for every appointed Scripture including the ones the corpus dates nowhere. A well-formed year reads exactly like a right one, so a date recalled or researched into place is invisible to every other gate and to the leaf's own self-consistency"
+          "required_result": "every biblical date the leaf prints must come from the generated research/chronology-annotations.tex projection and the matching element's \\chronologyannotation call: the generated claim retains the corpus subject, relation, profile, disposition and raw source label for audit, while only that generated claim may display its deterministic lossless concise projection of the structured date. A Date cell may hold no hand-authored normalized date, copied display label, surrounding authored content or mismatched annotation, and every appointed Scripture has exactly one cell including those for which a required relation has only a typed absence. A well-formed year reads exactly like a right one, so a date recalled or researched into place is invisible to every other gate and to the leaf's own self-consistency"
         }
       ],
       "pass_transition": "content-evaluation",

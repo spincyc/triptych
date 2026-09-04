@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Answer a proper's appointed loci from the Scripture chronology corpus.
 
-Usage: proper-chronology {loci,record} --document ID [--provider P] [--json]
+Usage: proper-chronology {loci,record,annotations} --document ID [--provider P]
 
 `guidance/scripture-chronology.md` §14 says a proper that needs a biblical
 date MUST read `src/sources/chronology/` and may not infer, research,
@@ -16,6 +16,11 @@ composition-unit id, profile, relation, and the source's own label. It is
 generated, never authored; the content preflight's `chronology-record-current`
 check regenerates it and refuses a leaf whose copy has drifted, so the ids a
 guide prints are the corpus's and stay the corpus's.
+
+`annotations` projects that answer into compact text, JSON, or TeX without
+choosing among disputed candidates.  Its generated TeX defines one lookup per
+appointed scriptural element and keeps the source label beside the concise
+display label, so abbreviation is reviewable rather than a new authored date.
 """
 
 from __future__ import annotations
@@ -51,13 +56,14 @@ EXAMPLES = {
             "liturgy/roman-rite/1962/propers/temporal/"
             "49-ninth-after-pentecost",
             (
+                "profile: catholic-comprehensive-v1",
                 "introit        dated                Ps.53.6 Ps.53.7 Ps.53.3",
                 "collect        (no scripture)",
                 "epistle        composition-only     1Cor.10.6 1Cor.10.7 1Cor.10.8 1Cor.10.9 1Cor.10.10 1Cor.10.11 1Cor.10.12 1Cor.10.13",
-                "gradual        undated-in-tradition Ps.8.2",
+                "gradual        composition-only     Ps.8.2",
                 "alleluia       dated                Ps.58.2",
                 "gospel         dated                Luke.19.41 Luke.19.42 Luke.19.43 Luke.19.44 Luke.19.45 Luke.19.46 Luke.19.47",
-                "offertory      undated-in-tradition Ps.18.9 Ps.18.10 Ps.18.11 Ps.18.12",
+                "offertory      composition-only     Ps.18.9 Ps.18.10 Ps.18.11 Ps.18.12",
                 "secret         (no scripture)",
                 "communion      composition-only     John.6.57",
                 "postcommunion  (no scripture)",
@@ -70,7 +76,7 @@ EXAMPLES = {
             "liturgy/roman-rite/1962/propers/temporal/"
             "49-ninth-after-pentecost --json",
             (
-                "{\"document\":\"liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost\",\"elements\":[{\"key\":\"introit\",\"loci\":[\"Ps.53.6\",\"Ps.53.7\",\"Ps.53.3\"],\"n... [+1226 chars]",
+                "{\"document\":\"liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost\",\"elements\":[{\"key\":\"introit\",\"loci\":[\"Ps.53.6\",\"Ps.53.7\",\"Ps.53.3\"],\"n... [+1256 chars]",
             ),
             "the same, as the machine contract a stage reads",
         ),
@@ -81,20 +87,19 @@ EXAMPLES = {
             "liturgy/roman-rite/1962/propers/temporal/"
             "49-ninth-after-pentecost --summary",
             (
-                "introit        dated                1 claim",
+                "introit        dated                2 claims",
                 "collect        -                    0 claims",
                 "epistle        composition-only     2 claims",
-                "gradual        undated-in-tradition 0 claims",
-                "alleluia       dated                1 claim",
+                "gradual        composition-only     1 claim",
+                "alleluia       dated                2 claims",
                 "gospel         dated                3 claims",
-                "offertory      undated-in-tradition 0 claims",
+                "offertory      composition-only     1 claim",
                 "secret         -                    0 claims",
                 "communion      composition-only     2 claims",
                 "postcommunion  -                    0 claims",
             ),
-            "what the record holds, without printing the record; the two "
-            "psalms the corpus dates nowhere are named as undated rather "
-            "than left blank",
+            "what the full audit record holds, without printing it; the "
+            "publication intersection remains separately machine-readable",
         ),
         Example(
             "tools/proper-chronology record --document "
@@ -108,6 +113,54 @@ EXAMPLES = {
             "gate is built on",
         ),
     ),
+    "annotations": (
+        Example(
+            "tools/proper-chronology annotations --document "
+            "liturgy/roman-rite/1962/propers/temporal/"
+            "55-fifteenth-after-pentecost --format text",
+            (
+                "introit",
+                "  Composition: Before c. 165 B.C.",
+                "epistle",
+                "  Composition: Preferred A.D. 58; alternatives A.D. 49–50, c. A.D. 53–54, A.D. 56, A.D. 57–58.",
+                "gradual",
+                "  Composition: Before c. 165 B.C.",
+                "alleluia",
+                "  Composition: Before c. 165 B.C.",
+                "gospel",
+                "  Composition -- disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished.",
+                "  Event: A.D. 27.",
+                "offertory",
+                "  Composition: Before c. 165 B.C.",
+                "communion",
+                "  Composition -- disputed: c. A.D. 90–100; A.D. 96–100.",
+                "  Event: A.D. 28.",
+            ),
+            "the compact display preserves every dated alternative, labels "
+            "relation and uncertainty, and keeps Gospel composition separate "
+            "from the narrated event",
+        ),
+        Example(
+            "tools/proper-chronology annotations --document "
+            "liturgy/roman-rite/1962/propers/temporal/"
+            "55-fifteenth-after-pentecost --format tex",
+            (
+                "% Generated. Do not edit.",
+                "% Deterministic projection of research/chronology.toml.",
+                "% schema: 2",
+                "% document: liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost",
+                "% generated-by: tools/tpt proper-chronology annotations",
+                "\\newcommand{\\chronologyannotationclaim}[6]{#6}",
+                "\\newcommand{\\chronologyannotationreach}[3]{}",
+                "\\newcommand{\\chronologyannotationgroup}[3]{#3}",
+                "\\newcommand{\\chronologyannotation}[1]{%",
+                "... 35 more lines",
+            ),
+            "the generated definitions retain each raw source label in a "
+            "non-displaying macro argument, carry its evidence profile, and "
+            "print its concise projection",
+        ),
+    ),
 }
 
 
@@ -117,8 +170,28 @@ def _dossier(arguments: argparse.Namespace) -> _wiring.Dossier:
         arguments.document,
         root=root,
         profile=arguments.profile,
-        corpus_root=(root / "src/sources/chronology") if arguments.root else None,
+        corpus_root=_corpus_root(arguments),
     )
+
+
+def _corpus_root(arguments: argparse.Namespace) -> Path | None:
+    root = Path(arguments.root).resolve() if arguments.root else ROOT
+    return (root / "src/sources/chronology") if arguments.root else None
+
+
+def _require_publication_profile(
+    arguments: argparse.Namespace, found: _wiring.Dossier
+) -> None:
+    """Tracked artifacts always represent the corpus's publication default."""
+    if not (arguments.write or arguments.check):
+        return
+    default = _chronology.load(_corpus_root(arguments)).default_profile
+    if found.profile != default:
+        raise ValueError(
+            f"profile {found.profile!r} is inspection-only; --write and --check "
+            f"publish the corpus default profile {default!r}. Omit the action "
+            f"to inspect this profile on stdout, or use --profile {default}"
+        )
 
 
 def _leaf(arguments: argparse.Namespace) -> Path:
@@ -143,6 +216,7 @@ def loci(arguments: argparse.Namespace) -> dict[str, object]:
         "document": found.document,
         "mass": found.mass,
         "system": found.system,
+        "profile": found.profile,
         # Not `status`: that key is the CLI envelope's. `formulary` is the
         # calendar's answer to whether this identity is appointed one at all.
         "formulary": found.state,
@@ -163,11 +237,13 @@ def loci(arguments: argparse.Namespace) -> dict[str, object]:
 def record(arguments: argparse.Namespace) -> dict[str, object]:
     """Render the leaf's chronology record, and optionally write or check it."""
     found = _dossier(arguments)
+    _require_publication_profile(arguments, found)
     rendered = _wiring.render(found)
     payload: dict[str, object] = {
         "status": "ok",
         "document": found.document,
         "mass": found.mass,
+        "profile": found.profile,
         "formulary": found.state,
         "formulary_reason": found.reason,
         "path": _wiring.RECORD,
@@ -177,6 +253,8 @@ def record(arguments: argparse.Namespace) -> dict[str, object]:
                 "status": element.status,
                 "claims": len(element.claims),
                 "subjects": sorted({claim.subject for claim in element.claims}),
+                "publication_status": element.publication_status,
+                "publication_claims": len(element.publication_claims),
             }
             for element in found.elements
         ],
@@ -213,6 +291,61 @@ def record(arguments: argparse.Namespace) -> dict[str, object]:
     return payload
 
 
+def annotations(arguments: argparse.Namespace) -> dict[str, object]:
+    """Project the dossier into compact, grouped publication annotations."""
+    dossier = _dossier(arguments)
+    _require_publication_profile(arguments, dossier)
+    found = _wiring.annotations(dossier)
+
+    requested = arguments.format
+    if arguments.json:
+        if requested and requested != "json":
+            raise ValueError("--json and --format disagree")
+        requested = "json"
+    if arguments.write or arguments.check:
+        if requested and requested != "tex":
+            raise ValueError("--write and --check only apply to --format tex")
+        requested = "tex"
+    output_format = requested or "text"
+
+    payload = _wiring.annotation_payload(found)
+    payload["format"] = output_format
+    payload["path"] = _wiring.ANNOTATIONS_RECORD
+    if not (arguments.write or arguments.check):
+        if output_format == "text":
+            payload["output"] = _wiring.render_annotations_text(found)
+        elif output_format == "tex":
+            payload["output"] = _wiring.render_annotations_tex(found)
+        return payload
+
+    rendered = _wiring.render_annotations_tex(found)
+    path = _wiring.annotations_path(_leaf(arguments))
+    root = Path(arguments.root).resolve() if arguments.root else ROOT
+    shown = path.relative_to(root)
+    if arguments.check:
+        if not path.is_file():
+            raise ValueError(
+                f"{shown} does not exist; write it with "
+                f"`tools/tpt proper-chronology annotations --document "
+                f"{found.document} --provider {arguments.provider} --write`"
+            )
+        if path.read_text(encoding="utf-8") != rendered:
+            raise ValueError(
+                f"{shown} is not the current chronology annotation projection; "
+                f"it is generated, so rewrite it with --write rather than editing it"
+            )
+        payload["checked"] = str(shown)
+        return payload
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    changed = not path.is_file() or path.read_text(encoding="utf-8") != rendered
+    if changed:
+        path.write_text(rendered, encoding="utf-8")
+    payload["written"] = str(shown)
+    payload["changed"] = changed
+    return payload
+
+
 STATUS_WIDTH = 21
 
 
@@ -239,11 +372,25 @@ def _render_elements(payload: dict, counts: bool) -> int:
 def _render(payload: object, arguments: argparse.Namespace) -> int:
     if not isinstance(payload, dict):
         return 0
+    verb = arguments.command
+    if verb == "annotations":
+        if "checked" in payload:
+            print(f"{payload['checked']}: current with the chronology corpus")
+            return 0
+        if "written" in payload:
+            state = "rewritten" if payload["changed"] else "already current"
+            print(f"{payload['written']}: {state}")
+            return 0
+        if payload["format"] == "json":
+            print_json(payload)
+            return 0
+        sys.stdout.write(str(payload["output"]))
+        return 0
     if getattr(arguments, "json", False):
         print_json(payload)
         return 0
-    verb = arguments.command
     if verb == "loci":
+        print(f"profile: {payload['profile']}")
         return _render_elements(payload, counts=False)
     if "checked" in payload:
         print(f"{payload['checked']}: current with the chronology corpus")
@@ -270,9 +417,20 @@ def main(argv: list[str] | None = None) -> int:
         default="claude",
         help="provider directory under src/ (default: claude)",
     )
-    shared.add_argument("--root", help="a checkout to read instead of this one")
     shared.add_argument(
-        "--profile", help="answer under one chronology profile only"
+        "--root",
+        help=(
+            "a document/corpus fixture root for tests; canon, witnesses, and "
+            "concordances still come from this installed checkout (not an "
+            "alternate-checkout isolation boundary)"
+        ),
+    )
+    shared.add_argument(
+        "--profile",
+        help=(
+            "answer under one chronology profile; non-default profiles are "
+            "inspection-only and cannot be written or checked"
+        ),
     )
     shared.add_argument(
         "--json",
@@ -307,12 +465,12 @@ def main(argv: list[str] | None = None) -> int:
     writer.add_argument(
         "--write",
         action="store_true",
-        help="write the record into the leaf instead of printing it",
+        help="write the default-profile record into the leaf instead of printing it",
     )
     writer.add_argument(
         "--check",
         action="store_true",
-        help="refuse a leaf whose record is missing or has drifted",
+        help="refuse a leaf whose default-profile record is missing or has drifted",
     )
     writer.add_argument(
         "--summary",
@@ -321,9 +479,35 @@ def main(argv: list[str] | None = None) -> int:
     )
     with_examples(writer, EXAMPLES["record"])
 
+    annotation_writer = sub.add_parser(
+        "annotations",
+        help=(
+            "project every scriptural element into compact grouped date "
+            "annotations"
+        ),
+        parents=[shared],
+    )
+    annotation_writer.add_argument(
+        "--format",
+        choices=("text", "json", "tex"),
+        help="projection format (default: text; write/check imply tex)",
+    )
+    annotation_action = annotation_writer.add_mutually_exclusive_group()
+    annotation_action.add_argument(
+        "--write",
+        action="store_true",
+        help="write default-profile chronology-annotations.tex into the leaf",
+    )
+    annotation_action.add_argument(
+        "--check",
+        action="store_true",
+        help="refuse a missing or drifted default-profile annotation file",
+    )
+    with_examples(annotation_writer, EXAMPLES["annotations"])
+
     return run_verb_cli(
         parser=parser,
-        handlers={"loci": loci, "record": record},
+        handlers={"loci": loci, "record": record, "annotations": annotations},
         renderer=_render,
         prefix=PREFIX,
         argv=argv,

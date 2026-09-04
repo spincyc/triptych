@@ -129,7 +129,25 @@ loci = ["Epistle to the Galatians; chronological notices represented in the corp
 role = "context"
 states = ["cataloged", "acquired"]
 source_fingerprint = "sha256:919c514f7c0c90bc8caf2e98a45dd3bef170b448f396528491d4371cd0506ac0"
-context = "The generated chronology record carries this artifact among the sources of the Epistle's disputed composition labels; the guide reproduces the corpus labels without choosing among them."
+context = "The generated chronology annotation carries this artifact among the alternate Galatians composition labels; the preferred Baronius-based year comes from the separately bound a-Lapide passage."
+
+[[bindings]]
+source_id = "passage.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.antwerp-1614.prooemium-galatians-ad-58"
+loci = ["prooemium"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-04"
+source_fingerprint = "sha256:6c0b0df6d6eae8ff00af9b926c3c4e4b0792429a501688689e3778989d573ab5"
+context = "The generated chronology annotation takes its preferred Galatians composition year from the Baronius-based chronology reproduced here by a Lapide."
+
+[[bindings]]
+source_id = "passage.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.antwerp-1614.epistola-ad-galatas-argumentum"
+loci = ["epistola-ad-galatas-argumentum"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-04"
+source_fingerprint = "sha256:bf374774bd9a6b72a26514ac40268186b7bdacd7ba036c7e267ee15e2eb95cdb"
+context = "This locus preserves the competing Roman and Greek-city traditions and a Lapide's explicit uncertainty about Galatians' time and place."
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8"
@@ -137,7 +155,7 @@ loci = ["St. Paul; chronological notices represented in the corpus"]
 role = "context"
 states = ["cataloged", "acquired"]
 source_fingerprint = "sha256:8cfc6ed92e4e3a2b5adfde15bf732276a529799b74311cdd8aaef65ea407f469"
-context = "The generated chronology record carries this artifact among the sources of the Epistle's disputed composition labels; authoring adds no independent date."
+context = "The generated chronology annotation carries this artifact as the source of one alternate Galatians composition label; authoring adds no independent date."
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"
@@ -145,7 +163,16 @@ loci = ["The New Testament; chronological notices represented in the corpus"]
 role = "context"
 states = ["cataloged", "acquired"]
 source_fingerprint = "sha256:72ff1c7fff77b396328a616ee182353295403d927a4943dea9aae7de2863a792"
-context = "The generated chronology record carries this artifact among the sources of Luke's and John's disputed composition labels; the guide reproduces the corpus labels without harmonizing them."
+context = "The generated chronology annotation carries this artifact among the sources of Luke's and John's disputed composition labels; the guide reproduces the corpus labels without harmonizing them."
+
+[[bindings]]
+source_id = "passage.pontifical-biblical-commission.de-auctore-tempore-et-veritate-evangeliorum-marci-et-lucae.latin-aas-4-1912.responsa-i-ix"
+loci = ["responsa-i-ix"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-04"
+source_fingerprint = "sha256:bfd0d8ccb0b19b093c81145ef7a767e5ceca93476dff495d146e0d8c0672631f"
+context = "The generated chronology annotation carries the Commission's composition bound for Luke directly from its official-gazette text."
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09420a-9b79d2a9"
@@ -153,7 +180,7 @@ loci = ["Gospel of St. Luke; chronological notices represented in the corpus"]
 role = "context"
 states = ["cataloged", "acquired"]
 source_fingerprint = "sha256:170b7fb37da38c8cad5072c51f8126a67c9ed50e20ac89ca91e261ac986a28be"
-context = "The generated chronology record carries this artifact as the source of Luke's relative disputed composition label; the guide supplies no event date."
+context = "The guide uses this article for Luke's traditional authorship and composition-place orientation; the generated chronology now takes its relative composition bound from the direct Pontifical Biblical Commission record."
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08438a-7620a92c"
@@ -161,7 +188,25 @@ loci = ["Gospel of St. John; chronological notices represented in the corpus"]
 role = "context"
 states = ["cataloged", "acquired"]
 source_fingerprint = "sha256:021baa30acc40003aec2a4bd26be0e9829cfe5ca1e98ccf774f4159d915d4e48"
-context = "The generated chronology record carries this artifact among the sources of John's disputed composition labels; the guide supplies no event date."
+context = "The generated chronology annotation carries this artifact among the sources of John's disputed composition labels; the event date comes separately from Maas's Jesus chronology."
+
+[[bindings]]
+source_id = "passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-three-five"
+loci = ["article 'Jesus Christ,' III.B.3, printed pp. 378 and 380: chronological calibration and Third and Fifth Journeys"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-04"
+source_fingerprint = "sha256:8e714d5f9db2e08f54da02b78a55723bf92afcbc30370a1d564e5a055158c41b"
+context = "The generated chronology annotation derives the Naim and Capharnaum event years from Maas's journey headings and his own A.U.C.-to-A.D. calibration; the page preserves the events' separate relation."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"
+loci = ["Psalms introduction"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-04"
+source_fingerprint = "sha256:9d846d7a068a2f4ff21fbe83aa4460c0a7c96864afb26ad6692af23b96ab63df"
+context = "The generated chronology annotation uses the official Catholic introduction's one-sided latest composition boundary for each appointed psalm while preserving its refusal to assign a secure individual date."
 
 [[bindings]]
 source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-21-psalms-d20e21f8"
@@ -169,7 +214,7 @@ loci = ["Ps.39.1-18", "Ps.46.1-10", "Ps.85.1-17", "Ps.91.1-16", "Ps.94.1-11"]
 role = "context"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-09-04"
-source_fingerprint = "sha256:befd68fb907291197b2b4a154a7c6b67bb22eb634b78aaeef0b8c3a956575620"
+source_fingerprint = "sha256:1481d71b5253d2bf9644408f82c40a7cd90fce2191d6586d9fa24b0f62d49130"
 context = "The registered public-domain verse text controls the Clementine Latin comparisons and the distinct Psalm 94:3 and Psalm 46:3 forms described in the guide; it does not control the appointed Missal adaptations."
 
 [[bindings]]
@@ -178,7 +223,7 @@ loci = ["Luke.7.1-23"]
 role = "context"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-09-04"
-source_fingerprint = "sha256:feb2853dceaaad6876320c359115735221cd3bf742d0dff8d0940a9c27feefa7"
+source_fingerprint = "sha256:c5eb7131bf4e265eeb034ea4bcbceb09f8cddff2c696746f2b4545321b823993"
 context = "The registered public-domain verse text controls the Latin canonical context and the distinction between Luke's opening and the Missal's liturgical frame."
 
 [[bindings]]
@@ -187,7 +232,7 @@ loci = ["John.6.1-72"]
 role = "context"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-09-04"
-source_fingerprint = "sha256:32bbaa24dc2d6cbc5629949b3fc3b2b0325d634666e6b1fdbb47b410df1675b4"
+source_fingerprint = "sha256:c270c6a7cd8dcc3b81e1a00becf4d7749677c846e7c0f8abfa315e1b11bf210d"
 context = "The registered public-domain verse text controls the Latin canonical context and the comparison between the Clementine and appointed Communion forms."
 
 [[bindings]]
@@ -196,7 +241,7 @@ loci = ["Gal.5.13-26", "Gal.6.1-10"]
 role = "context"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-09-04"
-source_fingerprint = "sha256:0dbb250e3eea16a973a72227bf7101a6a071409d724c179659eab75581b26402"
+source_fingerprint = "sha256:d677aa095affc31965ecdb46671bfe93f29d1fad8e9648ac1346f560d0ccaae5"
 context = "The registered public-domain verse text controls the Latin canonical context behind the Epistle's flesh-Spirit, burden, and sowing vocabulary."
 
 [[bindings]]

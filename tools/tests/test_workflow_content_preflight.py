@@ -64,7 +64,7 @@ LEAF_CHECKS = ("references-used", "identifiers-resolve", "bindings-valid",
 # `src/sources/` beside it, so the probe is driven without this one; the
 # published leaf and the real gate below run it like any other.
 PROBE_ONLY_ABSENT = ("bindings-valid",)
-# The two that hold the leaf against the Scripture chronology corpus. They
+# The three that hold the leaf against the Scripture chronology corpus. They
 # read only the tree, like LEAF_CHECKS, but they are named apart because what
 # they do over a leaf depends on the workflow version that leaf states: the
 # contract binds from `proper` v17, and every leaf published before it is
@@ -72,6 +72,7 @@ PROBE_ONLY_ABSENT = ("bindings-valid",)
 # was done. See tools/tests/test_workflow_chronology.py, which drives them
 # over a leaf that IS bound.
 CHRONOLOGY_CHECKS = ("chronology-record-current",
+                     "chronology-annotations-current",
                      "chronology-claims-supported")
 # This check is also tree-only and version-bound. It is named separately
 # because it binds at two production entry points: `proper` v24 and

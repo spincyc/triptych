@@ -70,12 +70,12 @@
  ],
  "workflows": [
   {
-   "digest": "ebfca31900151b6dce5249360b34dd64d489a3861e4d6cc952b4be241a48020b",
+   "digest": "7e357d6b78f3291b987d335c633961f33dc6910e4c87f7c5e13ef11b9ac39147",
    "id": "proper-finish",
    "version": "2"
   },
   {
-   "digest": "cd3b73ec8562484e16c40b94b1a0898c7ce608412cf1897fbefe1ad3f90b230c",
+   "digest": "b35d7264c5a94fad534512376c1f71eb31fcff17f7fd12adc69e0eb1723cf8fa",
    "id": "proper",
    "version": "24"
   }
@@ -5567,6 +5567,21 @@
        "model": "GPT-5-based Codex agent",
        "qualifiers": "unexposed: exact model identifier and model qualifiers",
        "runtime": "OpenAI Codex agent (proper-finish version 1 content revision; citation-locus repair; historical-dossier completion; pagination correction; and focused validation); API workspace; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-5-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier and model qualifiers",
+       "runtime": "OpenAI Codex agent (proper-finish version 2 authoring completion; generated chronology integration; thematic-opening correction; and focused validation); API workspace; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-5-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier and model qualifiers",
+       "runtime": "OpenAI Codex agent (proper-finish version 2 content revision; page-2 canonical-order correction; and focused validation); API workspace; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-5-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier and model qualifiers",
+       "runtime": "OpenAI Codex agent (proper-finish version 2 blocking visual layout revision and production review); API workspace; unexposed: client version and server revision"
       }
      ],
      "eligibility": "eligible",
@@ -5576,15 +5591,15 @@
      "pages": 14,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.pdf",
      "produced": {
-      "run_id": "2a2429d1427f5163",
-      "seed_commit": "724063c3639cb49774a14026d6b189b2736c5a3a",
-      "workflow_digest": "3db5c0e084089defe50a5428649a147e628b3c757f1e972db39c72faa64d1a67",
+      "run_id": "e0fc63e64fc66336",
+      "seed_commit": "c59d42a85932ff5bdb3236e154c5db796aea8017",
+      "workflow_digest": "7e357d6b78f3291b987d335c633961f33dc6910e4c87f7c5e13ef11b9ac39147",
       "workflow_id": "proper-finish",
-      "workflow_version": "1"
+      "workflow_version": "2"
      },
      "provider": "gpt",
      "reviewed": "2026-09-04",
-     "revised": "2026-09-04T05:46:13Z",
+     "revised": "2026-09-04T17:56:18Z",
      "status": "alpha",
      "subject": "Full source-audited guide to the 1962 Roman Missal propers",
      "title": "Fifteenth Sunday after Pentecost (Full Edition)",

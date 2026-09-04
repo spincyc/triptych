@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-04.numbers-intro-4c68d736"
+edition_id = "edition.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-04"
+artifact_type = "official-html"
+media_type = "text/html; charset=utf-8"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "The USCCB page presents protected modern NABRE introductory prose and related biblical text. Public web access does not establish permission for repository redistribution, so the exact response is identified but not retained and consumers must summarize rather than reproduce it."
+rights_jurisdiction = "United States"
+source_url = "https://bible.usccb.org/bible/numbers/0"
+provenance = "Complete official Numbers introduction HTML response acquired directly over HTTPS from the USCCB Bible site in one request, hashed locally, and inspected from those exact bytes on 2026-09-04. No model mediated retrieval or extraction."
+retrieved = "2026-09-04"
+sha256 = "4c68d736cdb02bf37393ad48a6f4c07d1a2abbea098f5230d4bb8f62b16be917"
+byte_size = 53104
+indexable = false
+notes = "Exact protected bytes are identified but not retained. The adjacent verified passage record preserves a bounded summary for readers without network access; reinspection of the page itself requires retrieving the official route and matching this hash."
