@@ -247,7 +247,7 @@ A run records the digest at seed time, in both the manifest and the state, and
 every `advance` and `replay` recomputes it. If the workflow source has changed
 since the run was seeded, the run fails closed rather than continuing under
 guidance it never started with. A changed workflow means a new run. The
-`proper` workflow is at version 23: version 10 gave `content-evaluation` a
+`proper` workflow is at version 24: version 10 gave `content-evaluation` a
 third repair owner and inserted the `content-preflight` gate between
 `author-proper` and `content-evaluation`, version 11 made the iteration
 budget charge repetition rather than failure, carried a blocking finding to its
@@ -320,6 +320,21 @@ bought that run its fourth allowance, and this stops the second phase of a
 two-owner repair spending an allowance at all. The same id to the same owner is
 charged exactly as before. A run seeded against version 22 or earlier fails
 closed and is seeded again.
+
+Version 24 makes reader-facing rhetorical meta-labels a categorical structural
+contract instead of leaving them inside the recurrence judgment for process
+prose. The author audits both editions; the profile-conformance lane treats one
+forbidden heading, box title, run-in label, or table heading as blocking
+authoring work; precedent search cannot promote an inherited scaffold into a
+current recommendation; and `content-preflight` mechanically refuses the five
+exact labels the guidance names only on those structural surfaces. The check is
+bound from `proper` v24 and from the parallel `proper-finish` v2 contract, with
+`provenance-matches-run` in both gates so a live run cannot escape it by
+understating the leaf's version. Earlier published leaves remain valid until a
+substantive revision binds them to one of those versions. A run seeded against
+`proper` version 23 or earlier, or `proper-finish` version 1, fails closed and
+is seeded again.
+
 `workflows/OPERATOR.md` carries the version history in full.
 
 ### Iteration budgets
@@ -586,6 +601,16 @@ copy has drifted from what the corpus answers now.
 the corpus does not assert at the verses that element appoints, and refuses a
 date cell holding any figure that is not inside such a claim, or an appointed
 Scripture with no cell at all.
+
+Since `proper` version 24 and `proper-finish` version 2 there is a tenth check.
+`structural-meta-labels` inspects section headings, the titles of known boxes,
+paragraph-opening run-in labels, and table headings for the exact rhetorical
+meta-labels the editorial guidance names. It is not a blanket word scan: the
+same words in ordinary prose are outside its scope, and equivalent scaffolding
+still requires the author's and evaluator's semantic audit. One exact label on
+one structural surface fails. Like chronology, the check is version-bound for
+historical-leaf compatibility and relies on `provenance-matches-run` in the
+same gate to make the live contract fail closed.
 
 The second half is the one that catches recall, and it needs the macro
 discipline because a well-formed year is indistinguishable on the page from a

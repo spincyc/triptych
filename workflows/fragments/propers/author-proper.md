@@ -228,7 +228,17 @@ learns belongs in the files this stage owns, listed below.
     this genre: the fixed reader order, the five claim classes, the reception
     sweep, the gallery and proposal contracts, the terminal apparatus, and
     this genre's deltas against the house voice.
-14. Follow `guidance/repository.md` for source ownership, target paths, and
+14. Audit the reader-facing structural labels in both editions before
+    returning: every heading, box title, paragraph-opening run-in label, and
+    table heading in every `\ifdefined\TriptychSynthesisEdition` branch and
+    edition-specific input. A thesis may open directly as prose; it may not be
+    wrapped in `Governing thesis`, `Thesis`, `Key takeaway`, `Argument map`,
+    `Reading order`, or an equivalent rhetorical or editorial label. One such
+    structural meta-label is a defect even once. This is separate from the
+    recurrence threshold for process prose below. The
+    `structural-meta-labels` content-preflight check enforces the mechanically
+    identifiable forms, but its narrow pass does not replace this audit.
+15. Follow `guidance/repository.md` for source ownership, target paths, and
     build rules.
 
 ## House voice
@@ -253,6 +263,15 @@ letting it become the section's organizing voice. Method, search bounds,
 corpora checked, evidence classes, and negative results already have their
 homes: the audit records the profile names, and the terminal `Appendix: Scope
 and Qualifications`. The body is not one of them.
+
+**Open with the substance, not a label for the substance.** A thesis may be
+the first sentence of a section. Do not turn it into a reader-facing
+`Governing thesis`, `Thesis`, `Key takeaway`, `Argument map`, or `Reading
+order` heading, box title, run-in label, or table heading. This is a
+categorical structural defect on its first occurrence, not the recurring
+prose habit governed by the paragraph above. Preserve legitimate authority,
+attribution, safety, contrast, accessibility, and profile-mandated semantic
+labels.
 
 **Speak from within the tradition.** The governing voice is Catholic,
 affirmative, tradition-inhabiting, source-disciplined, and historically

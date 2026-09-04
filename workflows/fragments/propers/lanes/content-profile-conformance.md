@@ -38,6 +38,18 @@ Read the leaf's structure and its source records against the profile in
     entry. A criterion 12 finding is `authoring`, and it is repaired by
     rewriting the sentence, never by deleting what it was about.
 
+    Audit the structural labels separately from that recurrence judgment. A
+    thesis may open directly as prose, but a reader-facing heading, box title,
+    run-in label, or table heading called `Governing thesis`, `Thesis`, `Key
+    takeaway`, `Argument map`, `Reading order`, or an equivalent rhetorical or
+    editorial wrapper is categorically forbidden. One occurrence is a
+    blocking criterion 12 finding with `repair_target: "authoring"`; do not
+    wait for it to recur, count it as process prose, or excuse it because a
+    prior leaf uses the same scaffold. Name the file and the structural
+    surface in the finding. Legitimate authority, attribution, safety,
+    contrast, accessibility, and profile-mandated semantic fields are not
+    rhetorical meta-labels.
+
 ## Both editions are yours
 
 The leaf builds more than one reader-facing document out of one source tree,

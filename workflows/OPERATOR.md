@@ -804,10 +804,36 @@ whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
-The `proper` workflow is at version 23. Version 23 does two things, and both
-are about what a run leaves behind rather than how far it gets.
+The `proper` workflow is at version 24. Version 24 closes the structural-label
+gap in the reader-first and declarative-discipline contracts. A thesis may
+open a thematic section directly as prose, but a reader-facing `Governing
+thesis`, `Thesis`, `Key takeaway`, `Argument map`, or `Reading order` heading,
+box title, run-in label, or table heading is editorial scaffolding rather than
+substance. One is a categorical defect; it does not inherit the recurrence
+threshold that distinguishes a process-prose habit from a necessary local
+qualification.
 
-The first is the source library. Research lanes retrieved whole works and left
+The author now audits every structural label in both editions, the
+profile-conformance lane routes one forbidden structural label to authoring as
+a blocking finding, and precedent search may reuse a prior leaf's substantive
+movement only after current guidance permits its scaffold. The tenth
+`content-preflight` check, `structural-meta-labels`, enforces the five named
+forms on structural surfaces without treating their appearance in ordinary
+prose as a hit. The contract binds from `proper` v24 and `proper-finish` v2;
+both gates also run `provenance-matches-run`, so a current run cannot escape
+the check by carrying an older version in the leaf. Historical publications
+remain out of scope until substantive revision. A run seeded against `proper`
+version 23 or earlier or `proper-finish` version 1 fails closed; seed it again.
+
+The `proper-finish` workflow is at version 2. Version 1 remains the historical
+authoring-to-publication rescue contract; version 2 changes no topology or
+repair ownership, but adopts the same authoring fragment, structural preflight,
+profile evaluator, and fail-closed version interlock as `proper` v24.
+
+The `proper` workflow was at version 23. Version 23 did two things, and both
+were about what a run leaves behind rather than how far it gets.
+
+The first was the source library. Research lanes retrieved whole works and left
 them in scratch with nothing recording where they came from, so a source the
 run had read in full could not afterwards be registered: the bytes survived and
 the URL did not. Every research finding now carries a `retrievals` list — url,
@@ -818,7 +844,7 @@ only stage of a run that may write the library, and it exists so that the
 author binds records that are there rather than reporting registrations nobody
 in the run could perform.
 
-The second is the same budget version 22 widened, read from the other side.
+The second was the same budget version 22 widened, read from the other side.
 `CON-CIT-007` was raised naming `research`, research recorded the evidence it
 asked for, and the next evaluation raised the same id naming `authoring`
 because the leaf had still not cited it. Version 22 bought that run a fourth
@@ -829,7 +855,7 @@ same owner still is, so an evaluation that keeps failing still blocks on
 exactly the failure it always did. A run seeded against version 22 or earlier
 fails closed; seed it again.
 
-The `proper` workflow was at version 22. Version 22 gives
+The `proper` workflow was at version 22. Version 22 gave
 `content-evaluation` four repeat-budget slots for its three ordered repair
 owners. The first failed evaluation spends one slot before any repair owner has
 run, so the former ceiling of three could stop a defect before its third owner
@@ -1281,16 +1307,19 @@ version is bound to that source and fails closed rather than continuing under
 fragments it never started with; seed it again.
 
 `content-preflight` is a gate like any other: advance it with
-`tpt proper <id> advance <run-id> --run-gate <doc>`. Each of its six checks is
+`tpt proper <id> advance <run-id> --run-gate <doc>`. Each of its ten checks is
 one invocation of `tools/tpt check-content-preflight --check <name>`, judged by
 exit code, and the tool prints what it counted on a pass and names the entry,
-identifier, relation, quotation, restricted reproduction or provenance
-mismatch it refused on a failure. It was four until version 11 added
-`restricted-not-reproduced` and version 16 added `provenance-matches-run`.
-Five of the six read only the repository and can be run over a published leaf
+identifier, relation, quotation, restricted reproduction, invalid binding,
+provenance or chronology mismatch, or structural meta-label it refused on a
+failure. It was four until version 11 added `restricted-not-reproduced`,
+version 16 added `provenance-matches-run`, version 17 added the two chronology
+checks, version 18 added `bindings-valid`, and version 24 added
+`structural-meta-labels`. Nine of the ten read only the repository and can be
+run over a published leaf
 at any time; `provenance-matches-run` also takes the run's identity, which the
 gate supplies from the engine, so running the tool with no `--check` runs the
-five and never passes the sixth for want of an answer. It
+nine and never passes the tenth for want of an answer. It
 exists so the five-lane evaluation behind it spends its budget on judgment
 rather than on things grep can settle; it does not replace any of that
 judgment. A failed check sends the run to `content-revision` with the check's

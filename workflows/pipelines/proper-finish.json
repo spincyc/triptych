@@ -1,6 +1,6 @@
 {
   "id": "proper-finish",
-  "version": 1,
+  "version": 2,
   "description": "1962 propers synthesis production workflow",
   "default_effort": "xhigh",
   "document_argument": "proper",
@@ -77,6 +77,11 @@
           "id": "unquoted-not-quoted",
           "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check unquoted-not-quoted",
           "required_result": "no source the References declare the guide does not quote may be credited with a printed quotation; the contradiction shows in neither statement alone"
+        },
+        {
+          "id": "structural-meta-labels",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check structural-meta-labels",
+          "required_result": "from proper v24 and proper-finish v2, one forbidden reader-facing rhetorical or editorial meta-label in a heading, known box title, paragraph-opening run-in label, or table heading is an authoring defect: a thesis opens as prose rather than under Governing thesis, Thesis, Key takeaway, Argument map, or Reading order. This exact structural check is deliberately narrower than the evaluator's semantic audit and is categorical rather than recurrence-based"
         },
         {
           "id": "provenance-matches-run",

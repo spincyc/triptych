@@ -149,7 +149,25 @@ pages, in running matter, in explanatory prose, in catalogs, or in web-edition
 banners. Production review uses the same reader-facing composition intended
 for publication, without a temporary status mark that must later be removed.
 
-A thesis or governing question is substantive and may open the body. Operational facts needed at the point of use—such as the selected liturgical branch, recitation order, or applicable rule—stay there. Safety warnings and legally necessary notices remain immediately visible wherever delayed notice could expose a reader to harm or materially misstate the law; this terminal-apparatus rule never displaces them. A one-line title-page non-authority warning is permitted only for immediate reliance risk and must point to the terminal appendix rather than repeat it.
+A thesis or governing question is substantive and may open the body directly as
+prose. Its substance does not authorize a reader-facing rhetorical or editorial
+wrapper around it. Do not title a heading or box, introduce a run-in label, or
+name a table heading `Governing thesis`, `Thesis`, `Key takeaway`, `Argument
+map`, `Reading order`, or an equivalent description of the writing's own
+rhetorical machinery. Begin with the thesis, argument, or sequence itself.
+This is a categorical structural rule: one such meta-label is a defect. It is
+not the recurrence test for process narration below. Labels that convey
+authority, attribution, safety, contrast, accessibility, or a profile-mandated
+stable semantic field remain permitted because they tell the reader what the
+material is, not how the editor has packaged the argument.
+
+Operational facts needed at the point of use—such as the selected liturgical
+branch, recitation order, or applicable rule—stay there. Safety warnings and
+legally necessary notices remain immediately visible wherever delayed notice
+could expose a reader to harm or materially misstate the law; this
+terminal-apparatus rule never displaces them. A one-line title-page
+non-authority warning is permitted only for immediate reliance risk and must
+point to the terminal appendix rather than repeat it.
 
 The appendix never absorbs a qualification that changes a particular claim. Keep disputed attribution, material uncertainty, branch dependence, jurisdictional difference, source status, and other local limits beside the affected claim.
 
@@ -177,6 +195,12 @@ and the reasoning that produced an editorial judgement — belongs in the
 terminal apparatus and in the profile's audit records. A work whose prose
 repeatedly explains its own caution machinery has moved the appendix into the
 body.
+
+That recurrence threshold judges process prose: an evaluator distinguishes a
+habit of self-narration from a necessary claim-local qualification in context.
+It does not soften the categorical structural rule above. A single forbidden
+rhetorical meta-label in a heading, box title, run-in label, or table heading
+is enough to fail the work even when no process sentence recurs.
 
 Naming the discipline is itself the defect. Prose that says a difference was
 retained rather than silently harmonised, that a negative result is bounded
@@ -315,7 +339,13 @@ official, or approved by an external authority. `Published` describes
 deployment of a verified alpha artifact, not promotion to a higher editorial or
 ecclesiastical state.
 
-Typography serves navigation and meaning. Remove wrapper labels already supplied by the surrounding heading, but retain labels that convey authority, attribution, safety, contrast, accessibility, or stable semantic fields. Give repeated multi-field forms consistent visible field names. Do not use typography to imply doctrinal or juridical force.
+Typography serves navigation and meaning. Remove rhetorical or editorial
+wrapper labels, including those already supplied by a surrounding heading;
+the reader-first rule above forbids its named structural meta-labels even when
+they occur only once. Retain labels that convey authority, attribution,
+safety, contrast, accessibility, or stable semantic fields. Give repeated
+multi-field forms consistent visible field names. Do not use typography to
+imply doctrinal or juridical force.
 
 Where a profile separates source-grounded and exploratory synthesis, that
 boundary is structural. A relation record names at least two stable

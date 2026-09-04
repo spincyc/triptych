@@ -36,7 +36,7 @@ trap 'rm -rf "$sandbox"' EXIT INT TERM
 # --list is the enumeration every other assertion is written against.
 run_tool --list >"$sandbox/first.txt"
 listed="$(wc -l <"$sandbox/first.txt" | tr -d ' ')"
-[ "$listed" = 8 ] || fail "--list named $listed checks, expected 8"
+[ "$listed" = 10 ] || fail "--list named $listed checks, expected 10"
 run_tool --list >"$sandbox/second.txt"
 cmp -s "$sandbox/first.txt" "$sandbox/second.txt" || fail "--list is not byte-stable"
 sort -c "$sandbox/first.txt" || fail "--list is not in sorted order"
@@ -68,7 +68,7 @@ while read -r check; do
 		fail "$check refused a published leaf when run alone"
 done <"$sandbox/first.txt"
 
-# The whole preflight, with no check named, runs the five the tree can answer
+# The whole preflight, with no check named, runs the nine the tree can answer
 # and leaves that one out rather than passing it for want of an answer.
 run_tool --provider claude --document "$ninth" >"$sandbox/sweep.txt" ||
 	fail "the whole preflight refused a published leaf"
@@ -184,11 +184,20 @@ reject_probe() {
 	fi
 }
 
-# The whole preflight, green, so every refusal below is one thing changing.
+# Every tree-local fixture check is green, so each refusal below changes one
+# thing. `bindings-valid` runs the complete source-library validator and is
+# exercised over every real published leaf above; this intentionally minimal
+# synthetic tree cannot answer it, just as it cannot answer the run check.
 write_leaf "$good_translation" "$good_id"
 write_manifest "$good_relation"
 write_bindings
-probe >/dev/null || fail "the synthetic leaf does not pass as written"
+while read -r check; do
+	case "$check" in
+		bindings-valid|provenance-matches-run) continue ;;
+	esac
+	probe --check "$check" >/dev/null ||
+		fail "the synthetic leaf does not pass $check as written"
+done <"$sandbox/first.txt"
 
 # references-used: an entry nothing in the body names.
 write_leaf "$good_translation" "$good_id"
@@ -326,6 +335,39 @@ reject_probe --check provenance-matches-run
 reject_probe --check provenance-matches-run --run-workflow proper
 rm "$tree/src/claude/probe/generation-metadata.tex"
 
+# --- Categorical structural meta-labels -----------------------------------
+#
+# The tool reads structural surfaces only. It must refuse the exact Proper 55
+# shape that exposed the gap without turning an ordinary-word search into an
+# editorial oracle, and both production entry points bind the same rule.
+
+write_provenance proper 24
+cat >"$tree/src/claude/probe/main.tex" <<'TEX'
+\section*{The Propers: Themes and Movement}
+The Introit gathers exile into the Church's petition, and the Gospel answers
+it with restored life. Augustine's thesis supplies the next step; the phrase
+argument map occurs here as ordinary prose.
+TEX
+probe --check structural-meta-labels >/dev/null ||
+	fail "direct unlabelled thesis prose was refused"
+
+cat >"$tree/src/claude/probe/main.tex" <<'TEX'
+\section*{The Propers: Themes and Movement}
+\begin{studybox}{Governing thesis}
+The Introit gathers exile into the Church's petition.
+\end{studybox}
+TEX
+reject_probe --check structural-meta-labels
+
+write_provenance proper-finish 2
+reject_probe --check structural-meta-labels
+
+# Historical leaves stay valid until a new authoring contract binds them.
+write_provenance proper 23
+probe --check structural-meta-labels >/dev/null ||
+	fail "the structural rule was applied before its binding version"
+rm "$tree/src/claude/probe/generation-metadata.tex"
+
 # --- The chronology contract, over a real formulary ------------------------
 #
 # `guidance/scripture-chronology.md` section 14: a proper that needs a
@@ -337,13 +379,16 @@ rm "$tree/src/claude/probe/generation-metadata.tex"
 
 chrono="$sandbox/chrono"
 fourteenth="liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"
-mkdir -p "$chrono/src/claude/$(dirname "$fourteenth")"
-cp -R "$repo/src/claude/$fourteenth" "$chrono/src/claude/$fourteenth"
+mkdir -p "$chrono/src/gpt/$(dirname "$fourteenth")"
+cp -R "$repo/src/gpt/$fourteenth" "$chrono/src/gpt/$fourteenth"
 ln -s "$repo/src/sources" "$chrono/src/sources"
-rm -f "$chrono/src/claude/$fourteenth/research/chronology.toml"
+rm -f "$chrono/src/gpt/$fourteenth/research/chronology.toml"
+sed -i.bak 's/{unknown}{unknown}/{proper}{16}/' \
+	"$chrono/src/gpt/$fourteenth/generation-metadata.tex"
+rm -f "$chrono/src/gpt/$fourteenth/generation-metadata.tex.bak"
 
 bound() {
-	run_tool --root "$chrono" --provider claude --document "$fourteenth" "$@"
+	run_tool --root "$chrono" --provider gpt --document "$fourteenth" "$@"
 }
 
 reject_bound() {
@@ -352,22 +397,22 @@ reject_bound() {
 	fi
 }
 
-# As published the leaf states `proper` v11, which is before the contract
-# binds, so both checks report it out of scope rather than refusing work that
-# was correct when it was done.
+# The copied leaf is made to state `proper` v16, immediately before the
+# chronology contract binds, so both checks report it out of scope rather
+# than refusing work that predates the rule.
 bound --check chronology-record-current >/dev/null ||
 	fail "a leaf published before the contract was refused"
 bound --check chronology-claims-supported >/dev/null ||
 	fail "a leaf published before the contract was refused"
 
 # Bind it: the leaf now says the version that carries the contract.
-sed -i.bak 's/{proper}{11}/{proper}{17}/' \
-	"$chrono/src/claude/$fourteenth/generation-metadata.tex"
-rm -f "$chrono/src/claude/$fourteenth/generation-metadata.tex.bak"
+sed -i.bak 's/{proper}{16}/{proper}{17}/' \
+	"$chrono/src/gpt/$fourteenth/generation-metadata.tex"
+rm -f "$chrono/src/gpt/$fourteenth/generation-metadata.tex.bak"
 
 # A bound leaf with no chronology record cannot have carried the corpus's ids.
 reject_bound --check chronology-record-current
-"$tool" proper-chronology record --root "$chrono" --provider claude \
+"$tool" proper-chronology record --root "$chrono" --provider gpt \
 	--document "$fourteenth" --write >/dev/null ||
 	fail "the record generator refused a registered formulary"
 bound --check chronology-record-current >/dev/null ||
@@ -376,7 +421,7 @@ bound --check chronology-record-current >/dev/null ||
 # A record edited to say what a guide wishes the corpus said. This is the
 # defect the whole wiring exists for: the figure is well-formed, and a reader
 # cannot tell it from the corpus's own.
-record="$chrono/src/claude/$fourteenth/research/chronology.toml"
+record="$chrono/src/gpt/$fourteenth/research/chronology.toml"
 cp "$record" "$sandbox/record.bak"
 sed 's/^label = "A. M. 2944, A. C. 1060"$/label = "1055-1015 B.C."/' \
 	"$sandbox/record.bak" >"$record"
@@ -388,7 +433,7 @@ cp "$sandbox/record.bak" "$record"
 bound --check chronology-record-current >/dev/null ||
 	fail "the restored record was refused"
 
-dossier="$chrono/src/claude/$fourteenth/sections/10-date-location.tex"
+dossier="$chrono/src/gpt/$fourteenth/sections/redevelopment/02-scriptural-date-location.tex"
 
 write_dossier() {
 	cat >"$dossier" <<TEX
@@ -468,7 +513,7 @@ write_dossier
 printf '%s\n' '\\chronology{composition.gospel-of-matthew}{composition}{about the year 51}' >>"$dossier"
 reject_bound --check chronology-claims-supported
 
-# The other six checks must be unaffected by any of it.
+# An unrelated check must be unaffected by any of it.
 write_dossier
 bound --check references-used >/dev/null ||
 	fail "the chronology fixture broke a check that is not about chronology"

@@ -40,6 +40,7 @@ EXAMPLES = {
                 "references-used: 32 entries, every one used in the body",
                 "relation-coverage: 4 relations, every element key claimed by the unit that carries its evidence",
                 "restricted-not-reproduced: 18 bound sources, 3 of them restricted, none reproduced",
+                "structural-meta-labels: not in scope: the leaf does not state proper v24 or later or proper-finish v2 or later",
                 "unquoted-not-quoted: 2 sources declared unquoted, none attributed a quotation",
             ),
             "the whole preflight over a published leaf; exits 0",
@@ -129,6 +130,7 @@ EXAMPLES = {
                 "references-used",
                 "relation-coverage",
                 "restricted-not-reproduced",
+                "structural-meta-labels",
                 "unquoted-not-quoted",
             ),
             "prints every check id, one a line",
@@ -999,11 +1001,31 @@ def _macro_calls(text: str, name: str, arity: int) -> list[tuple[list[str], int,
     return found
 
 
+def _arguments_after(
+    text: str, index: int, arity: int, description: str
+) -> tuple[list[str], int]:
+    """Read `arity` braced arguments after a structural command."""
+    args = []
+    try:
+        while len(args) < arity:
+            while index < len(text) and text[index] in " \t\r\n":
+                index += 1
+            arg, index = _braced(text, index)
+            args.append(arg)
+    except ValueError as exc:
+        raise ValueError(
+            f"{description} takes {arity} braced argument"
+            f"{'s' if arity != 1 else ''} and this one does not have them: "
+            f"{exc}"
+        ) from None
+    return args, index
+
+
 def _wiring():
     """`scripts/_proper_chronology`, imported only when a check needs it.
 
     It pulls in the chronology corpus's reader, which wants PyYAML. The other
-    five checks read nothing but the tree and must keep working in a checkout
+    other checks read nothing but the tree and must keep working in a checkout
     that has not installed the tool requirements.
     """
     import _proper_chronology  # noqa: PLC0415
@@ -1029,8 +1051,8 @@ def _record_remedy(leaf: Path, root: Path) -> str:
             f"--document {'/'.join(parts[1:])} --write")
 
 
-def _stated_version(leaf: Path) -> int | None:
-    """The workflow version the leaf's provenance record states, if any."""
+def _stated_production(leaf: Path) -> tuple[str, int] | None:
+    """The workflow and integer version the leaf's provenance states."""
     metadata = leaf / "generation-metadata.tex"
     if not metadata.is_file():
         return None
@@ -1039,12 +1061,18 @@ def _stated_version(leaf: Path) -> int | None:
     if len(found) != 1:
         return None
     recorded = dict(zip(PRODUCTION_FIELDS, (v.strip() for v in found[0])))
-    if recorded["workflow_id"] != CHRONOLOGY_WORKFLOW:
-        return None
     try:
-        return int(recorded["workflow_version"])
+        return recorded["workflow_id"], int(recorded["workflow_version"])
     except ValueError:
         return None
+
+
+def _stated_version(leaf: Path) -> int | None:
+    """The `proper` version the leaf's provenance record states, if any."""
+    production = _stated_production(leaf)
+    if production is None or production[0] != CHRONOLOGY_WORKFLOW:
+        return None
+    return production[1]
 
 
 def _chronology_scope(leaf: Path) -> tuple[bool, bool, str]:
@@ -1358,6 +1386,331 @@ def check_chronology_claims_supported(leaf: Path, root: Path) -> tuple[list[str]
     )
 
 
+# --- Reader-facing structural meta-labels ---------------------------------
+#
+# A thesis is substantive and may open a section directly. The editorial
+# standard separately forbids a small class of labels that tell the reader
+# how the argument has been packaged instead of giving the argument. That is
+# a categorical structural rule: one label is enough. It is not the broader,
+# judgment-dependent question whether process narration has become a
+# recurring prose habit, and this check does not pretend to answer that one.
+#
+# The contract is version-bound for the same reason the chronology contract
+# is. Published leaves completed before the rule existed remain valid until a
+# substantive revision binds them to the new workflow. In a live gate,
+# `provenance-matches-run` holds this version claim against the run itself, so
+# understating it cannot turn the rule off. Both production entry points are
+# named because `proper-finish` begins at the same author and retains the same
+# preflight gate.
+STRUCTURAL_FROM_VERSION = {
+    "proper": 24,
+    "proper-finish": 2,
+}
+FORBIDDEN_STRUCTURAL_LABELS = frozenset({
+    "argument map",
+    "governing thesis",
+    "key takeaway",
+    "reading order",
+    "thesis",
+})
+HEADING = re.compile(
+    r"\\(?P<name>chapter|section|subsection|subsubsection|paragraph|"
+    r"subparagraph)\*?(?![A-Za-z@])"
+)
+BASE_TITLED_BOXES = frozenset({
+    "massbox",
+    "namedtranslation",
+    "sourcecard",
+    "studybox",
+})
+STANDARD_TABLES = frozenset({"longtable", "tabular", "tabularx", "tabulary"})
+STANDARD_TABLE_ARITY = {
+    "longtable": 1,
+    "tabular": 1,
+    "tabular*": 2,
+    "tabularx": 2,
+    "tabulary": 2,
+}
+CUSTOM_TABLE_ARITY = {"fourstable": 4, "threestable": 3}
+RUN_IN_STYLE = ("emph", "textbf", "textit", "textsc")
+RUN_IN_LEAD = re.compile(
+    r"[ \t]*(?:\\(?:noindent|item|small|footnotesize|scriptsize)"
+    r"(?:\[[^\]]*\])?[ \t]*)*\Z"
+)
+PLAIN_RUN_IN = re.compile(
+    r"(?im)^(?:[ \t]*\\(?:noindent|item)(?:\[[^\]]*\])?[ \t]*)*"
+    r"(?P<label>governing[ ~\t]+thesis|thesis|key[ ~\t]+takeaway|"
+    r"argument[ ~\t]+map|reading[ ~\t]+order)[ \t]*"
+    r"(?P<separator>:|\.|--|[\u2013\u2014])(?=[ \t]+\S)"
+)
+TABLE_BLOCK = re.compile(
+    r"\\begin\{(?P<environment>longtable|tabularx|tabulary|tabular\*?)\}"
+    r"(?P<body>.*?)"
+    r"\\end\{(?P=environment)\}",
+    re.S,
+)
+ROW_END = re.compile(r"(?<!\\)\\\\(?!\\)")
+
+
+def _structural_label(text: str) -> str | None:
+    """Return the canonical forbidden label, but only for an exact label."""
+    visible = COMMAND.sub(" ", text).replace("{", " ").replace("}", " ")
+    visible = " ".join(visible.replace("~", " ").split())
+    visible = visible.strip(" \t\r\n:.;\u2013\u2014-")
+    normalized = fold(visible)
+    return normalized if normalized in FORBIDDEN_STRUCTURAL_LABELS else None
+
+
+def _heading_calls(text: str) -> list[tuple[str, str, int]]:
+    """Every sectioning argument, accepting starred and short-title forms."""
+    found = []
+    for match in HEADING.finditer(text):
+        index = match.end()
+        while index < len(text) and text[index] in " \t\r\n":
+            index += 1
+        # An optional short title is structural too. Its bracket grammar is
+        # intentionally narrow and fail-closed: nested optional-title brackets
+        # are not a form the proper sources use.
+        if index < len(text) and text[index] == "[":
+            stop = text.find("]", index + 1)
+            if stop == -1:
+                raise ValueError(
+                    f"\\{match.group('name')} at character {match.start()} "
+                    "has an unclosed optional title"
+                )
+            short = text[index + 1:stop]
+            found.append(("heading short title", short, match.start()))
+            index = stop + 1
+        (title,), _stop = _arguments_after(
+            text, index, 1,
+            f"\\{match.group('name')} at character {match.start()}",
+        )
+        found.append(("heading", title, match.start()))
+    return found
+
+
+def _titled_box_names(leaf: Path) -> set[str]:
+    """Known title-bearing boxes plus direct leaf-local wrappers around them."""
+    names = set(BASE_TITLED_BOXES)
+    format_tex = leaf / "format.tex"
+    if not format_tex.is_file():
+        return names
+    source = active_tex(format_tex.read_text(encoding="utf-8"))
+    # Resolve one wrapper layer at a time so an alias of an alias remains a
+    # title-bearing box. Requiring the forwarding `#1` keeps this from treating
+    # an arbitrary environment argument as a displayed title.
+    while True:
+        bases = "|".join(re.escape(name) for name in sorted(names))
+        wrapper = re.compile(
+            r"\\newenvironment\{([A-Za-z@]+)\}(?:\[\d+\])?"
+            r"\{[^\n]*?\\begin\{(?:" + bases + r")\}\{#1\}"
+        )
+        added = set(wrapper.findall(source)) - names
+        if not added:
+            return names
+        names.update(added)
+
+
+def _begin_calls(text: str) -> list[tuple[str, int, int]]:
+    """Every environment opening, failing rather than skipping malformed TeX."""
+    return [(args[0].strip(), start, stop)
+            for args, start, stop in _macro_calls(text, "begin", 1)]
+
+
+def _box_and_custom_table_calls(
+    text: str, titled_boxes: set[str]
+) -> list[tuple[str, str, int]]:
+    """Title arguments of known boxes and heading arguments of house tables."""
+    found = []
+    for environment, start, stop in _begin_calls(text):
+        if environment in titled_boxes:
+            (title,), _end = _arguments_after(
+                text, stop, 1,
+                f"{environment} box at character {start}",
+            )
+            found.append((f"{environment} box title", title, start))
+        if environment in CUSTOM_TABLE_ARITY:
+            headings, _end = _arguments_after(
+                text, stop, CUSTOM_TABLE_ARITY[environment],
+                f"{environment} table at character {start}",
+            )
+            found.extend(
+                (f"{environment} table heading", heading, start)
+                for heading in headings
+            )
+    return found
+
+
+def _table_blocks(text: str) -> list[tuple[str, str, int, int, int]]:
+    """Standard table bodies and their source extents, refusing open tables."""
+    found = [
+        (match.group("environment"), match.group("body"), match.start(),
+         match.start("body"), match.end())
+        for match in TABLE_BLOCK.finditer(text)
+    ]
+    starts = [
+        (environment, start)
+        for environment, start, _stop in _begin_calls(text)
+        if environment.rstrip("*") in STANDARD_TABLES
+    ]
+    if len(starts) != len(found):
+        covered = [(start, stop)
+                   for _env, _body, start, _body_start, stop in found]
+        unclosed = [
+            (environment, start) for environment, start in starts
+            if not any(begin <= start < end for begin, end in covered)
+        ]
+        if unclosed:
+            environment, start = unclosed[0]
+            raise ValueError(
+                f"{environment} table at character {start} has no matching "
+                "\\end"
+            )
+    return found
+
+
+def _table_heading_calls(
+    text: str,
+) -> tuple[list[tuple[str, str, int]], list[tuple[int, int]]]:
+    """Cells in the header region of ordinary TeX tables, never body prose."""
+    found = []
+    ranges = []
+    for environment, body, start, body_start, stop in _table_blocks(text):
+        ranges.append((start, stop))
+        index = 0
+        while index < len(body) and body[index] in " \t\r\n":
+            index += 1
+        if index < len(body) and body[index] == "[":
+            option_end = body.find("]", index + 1)
+            if option_end == -1:
+                raise ValueError(
+                    f"{environment} table at character {start} has an "
+                    "unclosed position option"
+                )
+            index = option_end + 1
+        _args, content_at = _arguments_after(
+            body, index, STANDARD_TABLE_ARITY[environment],
+            f"{environment} table at character {start}",
+        )
+        content = body[content_at:]
+        if "\\toprule" in content:
+            header_at = content_at + content.index("\\toprule") \
+                + len("\\toprule")
+            header = body[header_at:]
+            if "\\midrule" in header:
+                header = header[:header.index("\\midrule")]
+        else:
+            # A table without booktabs still has a first row. Restrict the
+            # scan to that row rather than searching the whole table.
+            header_at = content_at
+            row_end = ROW_END.search(content)
+            header = content[:row_end.start()] if row_end else content
+        for cell in re.split(r"(?<!\\)&", header):
+            candidates = [cell]
+            for args, _at, _end in _macro_calls(cell, "multicolumn", 3):
+                candidates.append(args[2])
+            for args, _at, _end in _macro_calls(cell, "multirow", 3):
+                candidates.append(args[2])
+            for candidate in candidates:
+                found.append((f"{environment} table heading", candidate,
+                              body_start + header_at))
+    return found, ranges
+
+
+def _run_in_calls(
+    text: str, table_ranges: list[tuple[int, int]]
+) -> list[tuple[str, str, int]]:
+    """Styled or punctuated labels at a source-line opening, not word hits."""
+    found = []
+    for style in RUN_IN_STYLE:
+        for (argument,), start, _stop in _macro_calls(text, style, 1):
+            if any(begin <= start < end for begin, end in table_ranges):
+                continue
+            line_start = text.rfind("\n", 0, start) + 1
+            if RUN_IN_LEAD.fullmatch(text[line_start:start]):
+                found.append(("run-in label", argument, start))
+    for match in PLAIN_RUN_IN.finditer(text):
+        if any(begin <= match.start() < end for begin, end in table_ranges):
+            continue
+        found.append(("run-in label", match.group("label"), match.start()))
+    return found
+
+
+def _structural_scope(leaf: Path) -> tuple[bool, str]:
+    """Whether this leaf states a production contract carrying the rule."""
+    production = _stated_production(leaf)
+    if production is None:
+        return False, (
+            "the leaf does not state proper v24 or later or proper-finish v2 "
+            "or later"
+        )
+    workflow, version = production
+    required = STRUCTURAL_FROM_VERSION.get(workflow)
+    if required is None or version < required:
+        return False, (
+            "the leaf does not state proper v24 or later or proper-finish v2 "
+            "or later"
+        )
+    return True, f"the leaf states {workflow} v{version}"
+
+
+def check_structural_meta_labels(
+    leaf: Path, root: Path
+) -> tuple[list[str], str]:
+    """No rhetorical wrapper occupies a reader-facing structural surface.
+
+    This is deliberately not a word search. The same words may occur in
+    ordinary prose, a citation, or a discussion of somebody else's thesis.
+    Only sectioning arguments, known box titles, paragraph-opening run-ins,
+    and table header cells are inspected, and only an exact normalized label
+    is mechanically refused. Equivalents remain part of the author and
+    profile evaluator's semantic audit.
+    """
+    bound, why = _structural_scope(leaf)
+    if not bound:
+        return [], f"not in scope: {why}"
+
+    problems = []
+    surfaces = 0
+    titled_boxes = _titled_box_names(leaf)
+    for path in leaf_tex(leaf):
+        text = active_tex(path.read_text(encoding="utf-8"))
+        relative = path.relative_to(leaf)
+        try:
+            table_calls, table_ranges = _table_heading_calls(text)
+            calls = (
+                _heading_calls(text)
+                + _box_and_custom_table_calls(text, titled_boxes)
+                + table_calls
+                + _run_in_calls(text, table_ranges)
+            )
+        except ValueError as exc:
+            problems.append(
+                f"{relative}: could not parse a structural surface: {exc}"
+            )
+            continue
+        surfaces += len(calls)
+        seen = set()
+        for kind, value, start in calls:
+            label = _structural_label(value)
+            if label is None:
+                continue
+            line = text.count("\n", 0, start) + 1
+            key = (kind, line, label)
+            if key in seen:
+                continue
+            seen.add(key)
+            problems.append(
+                f"{relative}:{line}: forbidden reader-facing structural "
+                f"meta-label {label!r} in {kind}; open with the thesis, "
+                "argument, or sequence itself, without an editorial wrapper"
+            )
+    return problems, (
+        f"{surfaces} headings, box titles, run-in labels, and table headings "
+        f"inspected, with no forbidden structural meta-label ({why})"
+    )
+
+
 CHECKS = {
     "bindings-valid": check_bindings_valid,
     "chronology-claims-supported": check_chronology_claims_supported,
@@ -1366,6 +1719,7 @@ CHECKS = {
     "references-used": check_references_used,
     "relation-coverage": check_relation_coverage,
     "restricted-not-reproduced": check_restricted_not_reproduced,
+    "structural-meta-labels": check_structural_meta_labels,
     "unquoted-not-quoted": check_unquoted_not_quoted,
 }
 
