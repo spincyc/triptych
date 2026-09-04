@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 2131,
-  "editions": 730,
+  "artifacts": 2145,
+  "editions": 739,
   "passages": 5109,
   "readable": 3033,
-  "works": 543
+  "works": 550
  },
  "facets": {
   "authors": [
@@ -450,6 +450,10 @@
     "works": 1
    },
    {
+    "id": "Frederick Douglass",
+    "works": 1
+   },
+   {
     "id": "Friedrich Maassen",
     "works": 1
    },
@@ -630,6 +634,10 @@
     "works": 1
    },
    {
+    "id": "Johannes of Valkenburg",
+    "works": 1
+   },
+   {
     "id": "John Calvin",
     "works": 1
    },
@@ -639,6 +647,10 @@
    },
    {
     "id": "John Lightfoot",
+    "works": 1
+   },
+   {
+    "id": "John Oliver Hand and Martha Wolff",
     "works": 1
    },
    {
@@ -1046,6 +1058,10 @@
     "works": 1
    },
    {
+    "id": "Samuel Butler",
+    "works": 1
+   },
+   {
     "id": "Santuario de Fatima",
     "works": 1
    },
@@ -1091,6 +1107,10 @@
    },
    {
     "id": "Suprema Sacra Congregatio Sancti Officii; Sacra Congregatio Indicis",
+    "works": 1
+   },
+   {
+    "id": "Supreme Court of the United States",
     "works": 1
    },
    {
@@ -1162,6 +1182,10 @@
     "works": 1
    },
    {
+    "id": "United Kingdom Parliament",
+    "works": 1
+   },
+   {
     "id": "United States Conference of Catholic Bishops",
     "works": 1
    },
@@ -1175,6 +1199,10 @@
    },
    {
     "id": "University of Iowa Bible and Archaeology",
+    "works": 1
+   },
+   {
+    "id": "Upton Sinclair",
     "works": 1
    },
    {
@@ -1548,6 +1576,10 @@
     "works": 1
    },
    {
+    "id": "address",
+    "works": 1
+   },
+   {
     "id": "ancient-biography",
     "works": 1
    },
@@ -1868,6 +1900,10 @@
     "works": 1
    },
    {
+    "id": "judicial-opinion",
+    "works": 1
+   },
+   {
     "id": "late-antique-church-order",
     "works": 1
    },
@@ -1921,6 +1957,10 @@
    },
    {
     "id": "liturgical-instruction",
+    "works": 1
+   },
+   {
+    "id": "liturgical-manuscript",
     "works": 1
    },
    {
@@ -2053,6 +2093,10 @@
    },
    {
     "id": "papyrus-codex",
+    "works": 1
+   },
+   {
+    "id": "parliamentary-debate-section",
     "works": 1
    },
    {
@@ -2212,6 +2256,10 @@
     "works": 1
    },
    {
+    "id": "satirical-novel",
+    "works": 1
+   },
+   {
     "id": "satirical-poem",
     "works": 1
    },
@@ -2288,11 +2336,19 @@
     "works": 1
    },
    {
+    "id": "social-criticism",
+    "works": 1
+   },
+   {
     "id": "synodal-document",
     "works": 1
    },
    {
     "id": "synodal-encyclical",
+    "works": 1
+   },
+   {
+    "id": "systematic-catalogue",
     "works": 1
    },
    {
@@ -2306,11 +2362,11 @@
   ],
   "languages": [
    {
-    "editions": 360,
+    "editions": 366,
     "id": "en"
    },
    {
-    "editions": 233,
+    "editions": 235,
     "id": "la"
    },
    {
@@ -2318,7 +2374,7 @@
     "id": "mul"
    },
    {
-    "editions": 20,
+    "editions": 21,
     "id": "fr"
    },
    {
@@ -2402,7 +2458,7 @@
     "label": "11th century"
    },
    {
-    "editions": 1,
+    "editions": 2,
     "id": "1200",
     "label": "13th century"
    },
@@ -2432,30 +2488,30 @@
     "label": "18th century"
    },
    {
-    "editions": 128,
+    "editions": 129,
     "id": "1800",
     "label": "19th century"
    },
    {
-    "editions": 172,
+    "editions": 175,
     "id": "1900",
     "label": "20th century"
    },
    {
-    "editions": 390,
+    "editions": 394,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 1254,
-    "editions": 200,
+    "artifacts": 1257,
+    "editions": 203,
     "id": "public-domain"
    },
    {
-    "artifacts": 652,
-    "editions": 329,
+    "artifacts": 656,
+    "editions": 333,
     "id": "restricted"
    },
    {
@@ -2465,13 +2521,13 @@
    },
    {
     "artifacts": 64,
-    "editions": 11,
-    "id": "project-created"
+    "editions": 26,
+    "id": "licensed"
    },
    {
-    "artifacts": 57,
-    "editions": 23,
-    "id": "licensed"
+    "artifacts": 64,
+    "editions": 11,
+    "id": "project-created"
    }
   ]
  },
@@ -5668,6 +5724,19 @@
      "year": 1862
     },
     {
+     "date": "1899",
+     "file": "1899-1899-lippe-milan-1474-reprint.json",
+     "id": "edition.catholic-church.missale-romanum.lippe-milan-1474-reprint-1899",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Missale Romanum Mediolani, 1474",
+     "year": 1899
+    },
+    {
      "date": "1920",
      "file": "1920-vatican-typica-1920.json",
      "id": "edition.catholic-church.missale-romanum.vatican-typica-1920",
@@ -6011,6 +6080,7 @@
      "passages": 1,
      "readable": 0,
      "rights": [
+      "public-domain",
       "unresolved"
      ],
      "title": "The Gregorian Sacramentary under Charles the Great, edited from three MSS. of the ninth century by H. A. Wilson",
@@ -9220,6 +9290,34 @@
    "title": "The Missal for the use of the laity, with the Masses for all days throughout the year, according to the Roman Missal"
   },
   {
+   "alternate_titles": [
+    "An Address Delivered in Belfast, Ireland, on December 23, 1845"
+   ],
+   "author": "Frederick Douglass",
+   "category": "address",
+   "directory": "editions/frederick-douglass/baptists-congregationalists-free-church-and-slavery/",
+   "editions": [
+    {
+     "date": "2026-09-04",
+     "file": "2026-2026-yale-glc-web.json",
+     "id": "edition.frederick-douglass.baptists-congregationalists-free-church-and-slavery.yale-glc-web-2026-09-04",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Baptists, Congregationalists, the Free Church, and Slavery: An Address Delivered in Belfast, Ireland, on December 23, 1845",
+     "year": 2026
+    }
+   ],
+   "id": "work.frederick-douglass.baptists-congregationalists-free-church-and-slavery",
+   "languages": [
+    "en"
+   ],
+   "title": "Baptists, Congregationalists, the Free Church, and Slavery"
+  },
+  {
    "alternate_titles": [],
    "author": "Friedrich Maassen",
    "category": "scholarly-monograph",
@@ -11309,6 +11407,35 @@
   },
   {
    "alternate_titles": [
+    "Graduale des Johannes von Valkenburg",
+    "Cologne, Erzbischöfliche Diözesan- und Dombibliothek, Cod. 1001b"
+   ],
+   "author": "Johannes of Valkenburg",
+   "category": "liturgical-manuscript",
+   "directory": "editions/johannes-of-valkenburg/graduale-cologne-codex-1001b/",
+   "editions": [
+    {
+     "date": "1299",
+     "file": "1299-1299-cologne-codex-1001b.json",
+     "id": "edition.johannes-of-valkenburg.graduale-cologne-codex-1001b.manuscript-cologne-codex-1001b",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed"
+     ],
+     "title": "Graduale des Johannes von Valkenburg, Köln Dombibliothek Cod. 1001b",
+     "year": 1299
+    }
+   ],
+   "id": "work.johannes-of-valkenburg.graduale-cologne-codex-1001b",
+   "languages": [
+    "la"
+   ],
+   "title": "Graduale of Johannes of Valkenburg, Cologne Cod. 1001b"
+  },
+  {
+   "alternate_titles": [
     "Institutes of the Christian Religion"
    ],
    "author": "John Calvin",
@@ -11560,6 +11687,32 @@
     "la"
    ],
    "title": "Horae Hebraicae et Talmudicae"
+  },
+  {
+   "alternate_titles": [],
+   "author": "John Oliver Hand and Martha Wolff",
+   "category": "systematic-catalogue",
+   "directory": "editions/john-oliver-hand-and-martha-wolff/early-netherlandish-painting/",
+   "editions": [
+    {
+     "date": "1986",
+     "file": "1986-1986-nga-cambridge.json",
+     "id": "edition.john-oliver-hand-and-martha-wolff.early-netherlandish-painting.nga-cambridge-1986",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Early Netherlandish Painting",
+     "year": 1986
+    }
+   ],
+   "id": "work.john-oliver-hand-and-martha-wolff.early-netherlandish-painting",
+   "languages": [
+    "en"
+   ],
+   "title": "Early Netherlandish Painting"
   },
   {
    "alternate_titles": [
@@ -16077,10 +16230,24 @@
      "rights": [],
      "title": "Antiphonale Missarum Sextuplex",
      "year": 1935
+    },
+    {
+     "date": "1967",
+     "file": "1967-1967-herder-reprint.json",
+     "id": "edition.rene-jean-hesbert.antiphonale-missarum-sextuplex.herder-reprint-1967",
+     "language": "fr",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Antiphonale Missarum Sextuplex",
+     "year": 1967
     }
    ],
    "id": "work.rene-jean-hesbert.antiphonale-missarum-sextuplex",
    "languages": [
+    "fr",
     "la"
    ],
    "title": "Antiphonale Missarum Sextuplex"
@@ -16803,6 +16970,34 @@
     "en"
    ],
    "title": "Mummification"
+  },
+  {
+   "alternate_titles": [
+    "Erewhon; or, Over the Range"
+   ],
+   "author": "Samuel Butler",
+   "category": "satirical-novel",
+   "directory": "editions/samuel-butler/erewhon/",
+   "editions": [
+    {
+     "date": "2025-08-05",
+     "file": "2025-2025-gutenberg-ebook-1906.json",
+     "id": "edition.samuel-butler.erewhon.gutenberg-ebook-1906-2025-08-05",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed"
+     ],
+     "title": "Erewhon; Or, Over the Range",
+     "year": 2025
+    }
+   ],
+   "id": "work.samuel-butler.erewhon",
+   "languages": [
+    "en"
+   ],
+   "title": "Erewhon"
   },
   {
    "alternate_titles": [
@@ -18168,6 +18363,34 @@
    "title": "Acts of 1916 against an exegesis of the Secret of La Salette"
   },
   {
+   "alternate_titles": [
+    "United States v. Mississippi Valley Generating Co., 364 U.S. 520"
+   ],
+   "author": "Supreme Court of the United States",
+   "category": "judicial-opinion",
+   "directory": "editions/supreme-court-of-the-united-states/united-states-v-mississippi-valley-generating-company/",
+   "editions": [
+    {
+     "date": "1961",
+     "file": "1961-1961-united-states-reports-364.json",
+     "id": "edition.supreme-court-of-the-united-states.united-states-v-mississippi-valley-generating-company.united-states-reports-364-1961",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "United States v. Mississippi Valley Generating Company, 364 U.S. 520",
+     "year": 1961
+    }
+   ],
+   "id": "work.supreme-court-of-the-united-states.united-states-v-mississippi-valley-generating-company",
+   "languages": [
+    "en"
+   ],
+   "title": "United States v. Mississippi Valley Generating Company"
+  },
+  {
    "alternate_titles": [],
    "author": "Synod of Bishops, Special Assembly for the Pan-Amazon Region",
    "category": "synodal-document",
@@ -19464,6 +19687,34 @@
   },
   {
    "alternate_titles": [
+    "HC Deb 7 July 1930 vol. 241 col. 28, Wages"
+   ],
+   "author": "United Kingdom Parliament",
+   "category": "parliamentary-debate-section",
+   "directory": "editions/united-kingdom-parliament/wages-house-of-commons-1930-07-07/",
+   "editions": [
+    {
+     "date": "2026-09-04",
+     "file": "2026-2026-historic-hansard-web.json",
+     "id": "edition.united-kingdom-parliament.wages-house-of-commons-1930-07-07.historic-hansard-web-2026-09-04",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Wages",
+     "year": 2026
+    }
+   ],
+   "id": "work.united-kingdom-parliament.wages-house-of-commons-1930-07-07",
+   "languages": [
+    "en"
+   ],
+   "title": "Wages (House of Commons, 7 July 1930)"
+  },
+  {
+   "alternate_titles": [
     "NABRE"
    ],
    "author": "United States Conference of Catholic Bishops",
@@ -19667,6 +19918,34 @@
     "he"
    ],
    "title": "RTL Words: LEHEM"
+  },
+  {
+   "alternate_titles": [
+    "The Profits of Religion: An Essay in Economic Interpretation"
+   ],
+   "author": "Upton Sinclair",
+   "category": "social-criticism",
+   "directory": "editions/upton-sinclair/the-profits-of-religion/",
+   "editions": [
+    {
+     "date": "2015-04-02",
+     "file": "2015-2015-gutenberg-ebook-1558.json",
+     "id": "edition.upton-sinclair.the-profits-of-religion.gutenberg-ebook-1558-2015-04-02",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed"
+     ],
+     "title": "The Profits of Religion: An Essay in Economic Interpretation",
+     "year": 2015
+    }
+   ],
+   "id": "work.upton-sinclair.the-profits-of-religion",
+   "languages": [
+    "en"
+   ],
+   "title": "The Profits of Religion"
   },
   {
    "alternate_titles": [],
