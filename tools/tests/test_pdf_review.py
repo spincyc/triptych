@@ -7,6 +7,7 @@ import importlib.util
 import json
 import os
 from pathlib import Path
+import re
 import signal
 import shutil
 import subprocess
@@ -319,6 +320,64 @@ os.execv(
             (leaf / "cpu.max").write_text("150000 100000", encoding="utf-8")
             self.assertEqual(review.cgroup_memory_headroom(mount, leaf), review.GIB)
             self.assertEqual(review.cgroup_cpu_quota(mount, leaf), 2)
+
+
+class RasterFidelityTests(unittest.TestCase):
+    """The review raster is the artifact a visual evaluator actually judges.
+
+    Every visual evaluation in the `proper` workflow is performed against
+    these page rasters, so a mark the raster drops is a mark no reviewer can
+    see. Run `0c31a52a51e6f34d` found that out the expensive way. At the
+    former 1600px page height — 145 dpi on a 792pt page — canonical page 8 of
+    proper 54 rendered seventeen of its eighteen full-width rules: the 0.4pt
+    bottom rule of the last witness callout vanished into white, while the
+    same box's title rule, drawn at the same width, stayed solid black. The
+    evaluator correctly reported an open callout, the reviser hand-drew an
+    `\\hrule` into a document whose box was already closed, and the run spent
+    a repair iteration correcting the renderer rather than the guide.
+
+    A rule cannot disappear once it is guaranteed a whole pixel, so that is
+    what this holds: the thinnest rule the house style draws must survive the
+    raster on the tallest page the corpus typesets.
+    """
+
+    PREAMBLE = ROOT / "src/common/preamble.tex"
+    TALLEST_PAGE_PT = 792.0
+
+    def house_hairline_pt(self) -> float:
+        """The thinnest rule the shared callout boxes actually draw.
+
+        Read rather than written down, so that a box declared thinner than
+        today's 0.4pt fails here instead of quietly becoming invisible. A
+        `0pt` rule is a box that draws none and is not a hairline.
+        """
+        widths = {
+            float(width)
+            for width in re.findall(
+                r"(?:box|title)rule=([0-9.]+)pt",
+                self.PREAMBLE.read_text(encoding="utf-8"))
+        }
+        drawn = {width for width in widths if width > 0}
+        self.assertTrue(drawn, f"no drawn box rule found in {self.PREAMBLE}")
+        return min(drawn)
+
+    def dpi(self, dimension: int) -> float:
+        return dimension / self.TALLEST_PAGE_PT * 72.0
+
+    def test_the_house_hairline_survives_a_full_page_raster(self) -> None:
+        hairline = self.house_hairline_pt()
+        dpi = self.dpi(review.FULL_PAGE_MAX_DIMENSION)
+        pixels = hairline * dpi / 72.0
+        self.assertGreaterEqual(
+            pixels, 1.0,
+            f"a {hairline}pt rule renders {pixels:.2f}px at {dpi:.0f} dpi, so "
+            "the raster may drop it and a reviewer will report a defect the "
+            "PDF does not have")
+
+    def test_thumbnails_are_not_offered_as_evidence_of_a_hairline(self) -> None:
+        """Thumbnails cannot carry it, which is why the lanes forbid them."""
+        dpi = self.dpi(review.THUMBNAIL_MAX_DIMENSION)
+        self.assertLess(self.house_hairline_pt() * dpi / 72.0, 1.0)
 
 
 class ArtifactPathTests(unittest.TestCase):
