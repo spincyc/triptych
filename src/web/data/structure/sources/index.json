@@ -1,10 +1,10 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 2115,
+  "artifacts": 2131,
   "editions": 730,
-  "passages": 3902,
-  "readable": 2104,
+  "passages": 5108,
+  "readable": 3033,
   "works": 543
  },
  "facets": {
@@ -2464,14 +2464,14 @@
     "id": "unresolved"
    },
    {
+    "artifacts": 64,
+    "editions": 11,
+    "id": "project-created"
+   },
+   {
     "artifacts": 57,
     "editions": 23,
     "id": "licensed"
-   },
-   {
-    "artifacts": 48,
-    "editions": 11,
-    "id": "project-created"
    }
   ]
  },
@@ -5659,8 +5659,8 @@
      "file": "1862-pustet-ratisbon-1862.json",
      "id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
      "language": "la",
-     "passages": 163,
-     "readable": 140,
+     "passages": 366,
+     "readable": 343,
      "rights": [
       "public-domain"
      ],
@@ -5685,7 +5685,7 @@
      "file": "1922-1922-tours-mame-editio-quarta-iuxta-typicam.json",
      "id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
      "language": "la",
-     "passages": 5,
+     "passages": 45,
      "readable": 0,
      "rights": [
       "public-domain"
@@ -5724,7 +5724,7 @@
      "file": "1962-vatican-typica-1962.json",
      "id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
      "language": "la",
-     "passages": 199,
+     "passages": 436,
      "readable": 0,
      "rights": [
       "unresolved"
@@ -19367,8 +19367,8 @@
      "file": "2026-2026-09-03-editorial-projection.json",
      "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03",
      "language": "la",
-     "passages": 316,
-     "readable": 316,
+     "passages": 1042,
+     "readable": 1042,
      "rights": [
       "project-created"
      ],
