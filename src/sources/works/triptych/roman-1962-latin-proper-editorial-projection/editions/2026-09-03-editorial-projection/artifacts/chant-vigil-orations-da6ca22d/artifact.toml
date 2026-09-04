@@ -1,0 +1,23 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.chant-vigil-orations-da6ca22d"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych created the bounded selection, transcription layout, normalization decisions, and collation record and offers those editorial contributions under CC BY 4.0. The underlying Latin prayers are public domain in the United States because the separately registered Pustet printing was published at Ratisbon in 1862. Triptych claims no exclusive right in those underlying words. The target-edition comparison selects only mechanical punctuation, project orthography, and the conclusion as printed, within the preexisting formulas; no page image, layout, rubric, marginal number, or other 1962-only matter is reproduced."
+rights_jurisdiction = "United States"
+provenance = "Created by Triptych on 2026-09-03 for the triduum lane of the seasonal-oration backfill, from the registered Pustet 1862 passages named below and the exact 1962 facsimile passages, the latter read as page images rather than through a text layer. This artifact is a project editorial projection over those witnesses, not an edition of either Missal."
+retrieved = "2026-09-03"
+sha256 = "da6ca22d1df3cb6c735978f9bce42e4196582adbc40b64f631ae8bcb9ad06e4c"
+byte_size = 2875
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/chant-vigil-orations-da6ca22d/chant-vigil-orations-da6ca22d.txt"
+projected_from = [
+  "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf",
+  "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+]
+transformation = "Select only the proper orations of easter-vigil as the 1862 Pustet prints them; join printed line wraps; remove stress accents; expand printed ae/oe ligatures to ae/oe; normalise the target's consonantal i to the calendar's declared j orthography; omit headings, rubrics, marginal numbers, layout, and the 1862's own pre-1955 Secunda Oratio, Alia Secreta, Alia Postcommunio and Tertia ad libitum; and apply the controlling 1962 printing's punctuation and its conclusion at the length that printing sets it. No lexical petition, proper name or clause is supplied from the later witness."
+indexable = true
+encoding = "utf-8"
+notes = "Scope is closed at the 2 orations listed in the passages of this edition bearing the chant-vigil prefix. The separate Pustet 1862 and 1962 passages remain the historical and target witnesses; this project-created artifact owns only the editorial projection. The 1862's ornamental drop capitals are destroyed by that scan's recogniser, so the opening word of many antecedent readings is reconstructed from the visible tail and from the 1570 or 1604 at the same place; every such reconstruction is named in its own ledger row and is never absorbed silently into a reading."

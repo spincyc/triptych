@@ -72,6 +72,11 @@ SETTLED_ON_GRAMMAR = {
     # subjunctive, both ordinary.
     ("s-ioannis-cantii-confessoris", "Postcommunion", "effecti"),
     ("s-ioannis-cantii-confessoris", "Postcommunion", "simus"),
+    # "Sancte Dominice, ora" -- St Dominic in the vocative, not a damaged
+    # dominicae.
+    ("easter-vigil", "Litany of the Saints, first part", "dominice"),
+    # "Ecclesiae tuae filiis" -- ablative plural, not a damaged filius.
+    ("easter-vigil", "Oration after the Third Prophecy", "filiis"),
 }
 
 
