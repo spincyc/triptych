@@ -131,7 +131,7 @@ class ProductionLedgerTests(unittest.TestCase):
         )
         expected = {
             "postconciliar": (329, 4),
-            "roman-1962": (515, 5),
+            "roman-1962": (530, 5),
             "roman-pre-1955": (0, 0),
         }
         for calendar, (total, repeated) in expected.items():
@@ -141,7 +141,7 @@ class ProductionLedgerTests(unittest.TestCase):
             self.assertEqual([], problems)
             self.assertEqual(total, len(records))
             self.assertEqual(
-                {"postconciliar": 329, "roman-1962": 225}.get(calendar, 0),
+                {"postconciliar": 329, "roman-1962": 94}.get(calendar, 0),
                 sum(row.get("body_status") == "removed" for row in records.values()),
             )
             # Four duplicate-name pairs and one six-item procession are all
@@ -149,7 +149,7 @@ class ProductionLedgerTests(unittest.TestCase):
             self.assertEqual(repeated, sum(key.occurrence > 1 for key in records))
 
     def test_publication_loader_validates_production_source_metadata(self) -> None:
-        expected = {"postconciliar": 329, "roman-1962": 515, "roman-pre-1955": 515}
+        expected = {"postconciliar": 329, "roman-1962": 530, "roman-pre-1955": 530}
         for calendar, count in expected.items():
             records, problems = publication_records(CALENDARS, calendar, INVENTORIES)
             self.assertEqual([], problems)
@@ -185,8 +185,8 @@ class ProductionLedgerTests(unittest.TestCase):
             {k.mass for k in roman} <= calendar_masses,
             sorted({k.mass for k in roman} - calendar_masses),
         )
-        self.assertEqual(290, len(permitted))
-        self.assertEqual(290, len(roman))
+        self.assertEqual(436, len(permitted))
+        self.assertEqual(436, len(roman))
         target_artifact = (
             "artifact.catholic-church.missale-romanum."
             "vatican-typica-1962.cmaa-facsimile-pdf"
@@ -331,7 +331,7 @@ class ProductionLedgerTests(unittest.TestCase):
                 for line in payload[start - 1 : end]
             )
             self.assertEqual(row["text_sha256"], text_sha256(projected_body))
-        self.assertEqual(554, len(nonpermitted))
+        self.assertEqual(423, len(nonpermitted))
         collated = [
             item for item in nonpermitted if item[2]["provenance_status"] == "collated"
         ]
@@ -374,6 +374,16 @@ class ProductionLedgerTests(unittest.TestCase):
         )
         self.assertEqual([], vianney_row["surfaces"])
 
+        # Seventeen rows collated against the Pustet by a human page-image
+        # review on 2026-08-26 and withheld there: sixteen collated-non-exact,
+        # and one -- missa-de-s-maria-in-sabbato-2's Communion -- exact but
+        # unresolved. The 2026-09-03 Commons backfill read all seventeen and
+        # called them matched, but sixteen of those rested on the Pustet alone,
+        # which is the very witness the human collation found non-exact, and
+        # roman-1962-pustet-common-collation-v1.toml holds that a public-domain
+        # page does not authorize a non-exact 1962 target string. An agent
+        # verdict does not overturn a human collation, so they stay withheld
+        # until a person reconciles the two.
         pustet = [
             item
             for item in collated
@@ -392,20 +402,10 @@ class ProductionLedgerTests(unittest.TestCase):
                 for _, _, row in nonexact
             )
         )
-        exact = [item for item in pustet if item not in nonexact]
-        self.assertEqual(1, len(exact))
-        _, exact_key, exact_row = exact[0]
-        self.assertEqual(
-            ("missa-de-s-maria-in-sabbato-2", "Communion"),
-            (exact_key.mass, exact_key.proper),
-        )
-        self.assertEqual("unresolved", exact_row["publication_status"])
-        self.assertEqual("unresolved", exact_row["publication_basis"])
-        self.assertEqual([], exact_row["surfaces"])
         unresolved = [
             row for _, _, row in nonpermitted if row["provenance_status"] == "unresolved"
         ]
-        self.assertEqual(533, len(unresolved))
+        self.assertEqual(402, len(unresolved))
         self.assertTrue(all(row["publication_basis"] == "unresolved" for row in unresolved))
         postconciliar = [
             row for calendar, _, row in nonpermitted if calendar == "postconciliar"
