@@ -13,9 +13,9 @@ Nothing here parses a citation and nothing here reads the corpus YAML.
 `record` renders the answer as the leaf's `research/chronology.toml`, which is
 the audit payload §14 asks a consumer to carry the stable ids in: event or
 composition-unit id, profile, relation, and the source's own label. It is
-generated, never authored; `check-content-preflight --check
-chronology-record-current` regenerates it and refuses a leaf whose copy has
-drifted, so the ids a guide prints are the corpus's and stay the corpus's.
+generated, never authored; the content preflight's `chronology-record-current`
+check regenerates it and refuses a leaf whose copy has drifted, so the ids a
+guide prints are the corpus's and stay the corpus's.
 """
 
 from __future__ import annotations
@@ -41,7 +41,7 @@ from _tooling import (  # noqa: E402
 ROOT = Path(__file__).resolve().parents[1]
 PREFIX = "proper-chronology error"
 NINTH = "liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost"
-FOURTEENTH = "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"
+FOURTEENTH = "liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost"
 
 # Captured transcripts, never composed; see scripts/_tooling.py.
 EXAMPLES = {
@@ -49,17 +49,17 @@ EXAMPLES = {
         Example(
             "tools/proper-chronology loci --document "
             "liturgy/roman-rite/1962/propers/temporal/"
-            "54-fourteenth-after-pentecost",
+            "49-ninth-after-pentecost",
             (
-                "introit        composition-only     Ps.83.10 Ps.83.11 Ps.83.2 Ps.83.3",
+                "introit        dated                Ps.53.6 Ps.53.7 Ps.53.3",
                 "collect        (no scripture)",
-                "epistle        composition-only     Gal.5.16 Gal.5.17 Gal.5.18 Gal.5.19 Gal.5.20 Gal.5.21 Gal.5.22 Gal.5.23 Gal.5.24",
-                "gradual        undated-in-tradition Ps.117.8 Ps.117.9",
-                "alleluia       undated-in-tradition Ps.94.1",
-                "gospel         composition-only     Matt.6.24 Matt.6.25 Matt.6.26 Matt.6.27 Matt.6.28 Matt.6.29 Matt.6.30 Matt.6.31 Matt.6.32 Matt.6.33",
-                "offertory      dated                Ps.33.8 Ps.33.9",
+                "epistle        composition-only     1Cor.10.6 1Cor.10.7 1Cor.10.8 1Cor.10.9 1Cor.10.10 1Cor.10.11 1Cor.10.12 1Cor.10.13",
+                "gradual        undated-in-tradition Ps.8.2",
+                "alleluia       dated                Ps.58.2",
+                "gospel         dated                Luke.19.41 Luke.19.42 Luke.19.43 Luke.19.44 Luke.19.45 Luke.19.46 Luke.19.47",
+                "offertory      undated-in-tradition Ps.18.9 Ps.18.10 Ps.18.11 Ps.18.12",
                 "secret         (no scripture)",
-                "communion      composition-only     Matt.6.33",
+                "communion      composition-only     John.6.57",
                 "postcommunion  (no scripture)",
             ),
             "which verses the formulary appoints, in the corpus's own "
@@ -70,7 +70,7 @@ EXAMPLES = {
             "liturgy/roman-rite/1962/propers/temporal/"
             "49-ninth-after-pentecost --json",
             (
-                "{\"document\":\"liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost\",\"elements\":[{\"key\":\"introit\",\"loci\":[\"Ps.53.6\",\"Ps.53.7\",\"Ps.53.3\"],\"n... [+1180 chars]",
+                "{\"document\":\"liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost\",\"elements\":[{\"key\":\"introit\",\"loci\":[\"Ps.53.6\",\"Ps.53.7\",\"Ps.53.3\"],\"n... [+1226 chars]",
             ),
             "the same, as the machine contract a stage reads",
         ),
@@ -79,17 +79,17 @@ EXAMPLES = {
         Example(
             "tools/proper-chronology record --document "
             "liturgy/roman-rite/1962/propers/temporal/"
-            "54-fourteenth-after-pentecost --summary",
+            "49-ninth-after-pentecost --summary",
             (
-                "introit        composition-only     1 claim",
+                "introit        dated                1 claim",
                 "collect        -                    0 claims",
-                "epistle        composition-only     4 claims",
+                "epistle        composition-only     2 claims",
                 "gradual        undated-in-tradition 0 claims",
-                "alleluia       undated-in-tradition 0 claims",
-                "gospel         composition-only     6 claims",
-                "offertory      dated                1 claim",
+                "alleluia       dated                1 claim",
+                "gospel         dated                3 claims",
+                "offertory      undated-in-tradition 0 claims",
                 "secret         -                    0 claims",
-                "communion      composition-only     6 claims",
+                "communion      composition-only     2 claims",
                 "postcommunion  -                    0 claims",
             ),
             "what the record holds, without printing the record; the two "
@@ -99,9 +99,9 @@ EXAMPLES = {
         Example(
             "tools/proper-chronology record --document "
             "liturgy/roman-rite/1962/propers/temporal/"
-            "54-fourteenth-after-pentecost --provider claude --check",
+            "49-ninth-after-pentecost --provider claude --check",
             (
-                "proper-chronology error: src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/research/chronology.toml does not exist; write it with `tools/tpt proper-chronology record --document liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost --provider claude --write`",
+                "proper-chronology error: src/claude/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost/research/chronology.toml does not exist; write it with `tools/tpt proper-chronology record --document liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost --provider claude --write`",
             ),
             "exits 1; this leaf was authored before the wiring existed and "
             "carries no record, which is the refusal the content-preflight "

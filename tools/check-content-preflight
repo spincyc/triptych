@@ -93,7 +93,7 @@ EXAMPLES = {
         Example(
             "tools/check-content-preflight --provider claude --document "
             "liturgy/roman-rite/1962/propers/temporal/"
-            "54-fourteenth-after-pentecost --check provenance-matches-run",
+            "49-ninth-after-pentecost --check provenance-matches-run",
             (
                 "check-content-preflight error: provenance-matches-run: this "
                 "check holds the leaf's provenance record against the run "
@@ -445,7 +445,7 @@ BASE_ATTRIBUTED = ("namedtranslation", "sourcecard")
 # twenty published propers wrap the base environment in one of their own —
 # `\fulltextenglish`, `\witnesscard` — passing the attribution straight
 # through as `#1`. A check that matched only the base names saw *zero*
-# attributed passages in those six, `54-fourteenth-after-pentecost` among them,
+# attributed passages in those six, `49-ninth-after-pentecost` among them,
 # which is the leaf both production runs were producing. It was not passing
 # them; it was not reading them.
 WRAPPER = re.compile(

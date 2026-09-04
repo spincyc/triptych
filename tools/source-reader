@@ -1335,8 +1335,8 @@ EXAMPLES = {
         Example(
             "tools/source-reader check",
             (
-                "543 works, 729 editions, 2087 artifacts, 3306 passages; 1648 readable here.",
-                "  passages the rights records withhold: 1658",
+                "543 works, 730 editions, 2131 artifacts, 5108 passages; 3033 readable here.",
+                "  passages the rights records withhold: 2075",
                 "  every one of them listed with its reason: yes",
                 "  the page's own derivation, replayed: src/web/browser/sources/reader-model.js",
             ),
@@ -1384,15 +1384,16 @@ EXAMPLES = {
         Example(
             "tools/source-reader structure --out build/example-sources",
             (
-                "543 works, 729 editions, 2087 artifacts, 3306 passages; 1648 readable here.",
-                "  -> build/example-sources/structure/sources (2378 files)",
+                "543 works, 730 editions, 2131 artifacts, 5108 passages; 3033 readable here.",
+                "  -> build/example-sources/structure/sources (3764 files)",
             ),
             "WRITES. --out here is untracked; the default writes the tracked src/web/data",
         ),
         Example(
             "tools/source-reader structure --check",
             (
-                "source-reader: src/web/data/structure/sources has drifted from the sources at editions/augustine/de-consensu-evangelistarum/2026-english-salmond-npnf1-6-newadvent-web-2026-08-26.json, editions/augustine/enarrationes-in-psalmos/2026-english-npnf-new-advent-web-2026-07-28.json, editions/catholic-encyclopedia/alphabetical-index/2026-newadvent-web-2026-08-27.json (and 17 more); run `source-reader structure` and commit the result",
+                "543 works, 730 editions, 2131 artifacts, 5108 passages; 3033 readable here.",
+                "  src/web/data/structure/sources is current (3764 files)",
             ),
             "writes nothing; refuses when the tracked projection has drifted from the records",
         ),

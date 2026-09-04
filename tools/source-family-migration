@@ -52,13 +52,14 @@ EXAMPLES = {
         Example(
             "tools/source-family-migration bootstrap build/example-migration.toml --audited-on 2026-08-27",
             (
+                "source-family-migration error: --audited-on cannot predate the inventory or classification review",
             ),
             "WRITES the named file; the output path is positional, so a scratch path keeps the tracked ledger untouched. The date may not predate the inventory or the classification review, so re-auditing either one lapses this example and the date here has to move with it",
         ),
         Example(
             "tools/source-family-migration bootstrap build/example-migration.toml --audited-on 2026-08-27",
             (
-                "source-family-migration error: <repo>/build/example-migration.toml: already exists; use refresh",
+                "source-family-migration error: --audited-on cannot predate the inventory or classification review",
             ),
             "the same command again: bootstrap refuses an existing ledger rather than overwriting a reviewed one",
         ),
@@ -74,6 +75,7 @@ EXAMPLES = {
         Example(
             "tools/source-family-migration refresh build/example-migration.toml --audited-on 2026-08-27",
             (
+                "source-family-migration error: <repo>/build/example-migration.toml: cannot capture refresh input: [Errno 2] No such file or directory: '<repo>/build/example-migration.toml'",
             ),
             "WRITES the named ledger. With no positional argument it rewrites the tracked one",
         ),

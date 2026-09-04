@@ -1,14 +1,14 @@
 migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
-audited_on = "2026-08-28"
+audited_on = "2026-09-04"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:e8f2ee47f60adc2f460650fbe33950489ca39c14992e548cf41c2cd91c2a8e72"
+inventory_snapshot = "sha256:0737c8f661ae3ccb1aeea763fb5becf2c7ceefa737ef07bbab25daaaa302cc00"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:e4a03dfd81742336c82c5f8f543988e1263451fe28426f6622b54be993ba813e"
-canonical_catalog_snapshot = "sha256:d2e0b1b687ad0c9c4c3ee2522bf699a06a625b7a72a54f7e4d4a96f9553bdbe3"
+canonical_catalog_snapshot = "sha256:ce900b37c33e295c11e6cb35200a055317038d61cb0edf26092ec9570bf8354e"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:ee8335a7b6852636783d470c2d23f747e2e06b5c6ded7061750ef59cde00368a"
+snapshot = "sha256:773da31e677cf6059335043054354e2ca8d3a6ba1274da2b31093be055f07d65"
 families = []
 
 [[review_units]]
@@ -443,7 +443,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost"
-surface_snapshot = "sha256:3ace44b7677f9c33d8b7182d5f7e89cd758e6ef16320ed8f717b9ad9127e23b8"
+surface_snapshot = "sha256:3d6924c4dec0421ca0bf96474c0b4e30844981b534a52b77100ca4d37db7ab3a"
 review_state = "pending"
 
 [[review_units]]

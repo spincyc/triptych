@@ -34,13 +34,13 @@ EXAMPLES = {
         Example(
             "tools/source-inventory check",
             (
-                "source-inventory error: <repo>/src/sources/inventories/publications-v1.toml: files[1097].sha256 is stale for src/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost/research/scope.md",
+                "source-inventory valid: publications=138 source_surface_files=2075 owners=11",
             ),
         ),
         Example(
             "tools/source-inventory --root . check",
             (
-                "source-inventory error: <repo>/src/sources/inventories/publications-v1.toml: files[1097].sha256 is stale for src/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost/research/scope.md",
+                "source-inventory valid: publications=138 source_surface_files=2075 owners=11",
             ),
             "--root belongs before the verb: it selects the repository the inventory describes",
         ),
@@ -77,14 +77,13 @@ EXAMPLES = {
         Example(
             "tools/source-inventory check",
             (
-                "source-inventory error: <repo>/src/sources/inventories/publications-v1.toml: files[1097].sha256 is stale for src/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost/research/scope.md",
+                "source-inventory valid: publications=138 source_surface_files=2075 owners=11",
             ),
             "read-only first: `check` reports the inventory `classify` reads",
         ),
         Example(
             "tools/source-inventory classify",
             (
-                "source-inventory error: <repo>/src/sources/inventories/publications-v1.toml: files[1097].sha256 is stale for src/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost/research/scope.md",
             ),
             "exit 0 and silence is the pass: classify reads the tracked inventory and the tracked review and says nothing when they agree",
         ),
@@ -93,7 +92,7 @@ EXAMPLES = {
         Example(
             "tools/source-inventory check",
             (
-                "source-inventory error: <repo>/src/sources/inventories/publications-v1.toml: files[1097].sha256 is stale for src/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost/research/scope.md",
+                "source-inventory valid: publications=138 source_surface_files=2075 owners=11",
             ),
             "read-only first: `check` says whether a refresh would change anything",
         ),

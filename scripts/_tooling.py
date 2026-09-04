@@ -87,6 +87,7 @@ GROUPS: tuple[tuple[str, str, tuple[str, ...]], ...] = (
         "they carry.",
         (
             "act-history",
+            "audit-latin-body-substitutions",
             "calendar-days",
             "calendar-rubrics",
             "calendar-spine",
@@ -181,6 +182,7 @@ NOTHING = "nothing"
 REACHES: dict[str, str] = {
     "act-history": NOTHING,
     "artwork-library": NOTHING,
+    "audit-latin-body-substitutions": NOTHING,
     "calendar-days": NOTHING,
     "calendar-rubrics": NOTHING,
     "calendar-spine": NOTHING,

@@ -95,7 +95,13 @@
       "mutates": false,
       "origin": "local",
       "purpose": "Decide a proper leaf's mechanical content defects by exit code.",
-      "requires": [],
+      "requires": [
+        "check-generation-metadata",
+        "proper-chronology",
+        "scripture-chronology",
+        "source-library",
+        "tpt"
+      ],
       "stage": "draft",
       "usage": "check-content-preflight [--root DIR] [--provider NAME] [--document ID] [--check NAME] [--list]"
     },
@@ -330,7 +336,10 @@
       "mutates": true,
       "origin": "local",
       "purpose": "Answer a proper's appointed loci from the Scripture chronology corpus.",
-      "requires": [],
+      "requires": [
+        "scripture-chronology",
+        "tpt"
+      ],
       "stage": "draft",
       "usage": "proper-chronology {loci,record} --document ID [--provider P] [--json]"
     },

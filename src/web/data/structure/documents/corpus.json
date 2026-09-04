@@ -1,8 +1,8 @@
 {
  "advisory": "Derived from each document's own sources and from the PDF it builds. Titles are evaluated out of the preamble and confirmed against the built PDF; a document whose sources state no title is carried with the reason in place of one and is never given an invented name. Production provenance is what each document records about itself, field by field, omitting any field its record says was not recoverable; comparing it against the workflows declared below is a finding aid and never an authority, and nothing in this repository gates on it.",
  "counted": {
-  "documents": 188,
-  "issues": 204,
+  "documents": 187,
+  "issues": 202,
   "pages": 5979,
   "titles_unrecorded": 0,
   "works": 138
@@ -17,17 +17,17 @@
    "id": "gpt-5.6-sol"
   },
   {
-   "documents": 28,
-   "id": "claude-opus-5[1m]"
+   "documents": 27,
+   "id": "claude-fable-5"
   },
   {
    "documents": 27,
-   "id": "claude-fable-5"
+   "id": "claude-opus-5[1m]"
   }
  ],
  "providers": [
   {
-   "documents": 50,
+   "documents": 49,
    "id": "claude",
    "label": "Claude"
   },
@@ -5472,78 +5472,6 @@
    "catalog": "library/traditional-latin-mass.md",
    "catalog_page": "library/traditional-latin-mass.html",
    "editions": [
-    {
-     "also": [
-      {
-       "kind": "synthesis",
-       "pages": null,
-       "pdf": null,
-       "pdf_absent": "no PDF is installed for this issue",
-       "subject": "Synthesis companion to the 1962 Roman Missal propers; complete appointed texts and the per-element reception sweep are omitted",
-       "title": "Fourteenth Sunday after Pentecost (Synthesis Edition)"
-      }
-     ],
-     "authorization": null,
-     "contributions": [
-      {
-       "model": "claude-opus-5[1m]",
-       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
-       "runtime": "Anthropic Claude Code agent (authoring of the canonical leaf from the research-synthesis brief: the propers map and four senses, the page-2 dossier sheet with its composition and event research, the complete appointed-text component against the collated source record, the two-page thematic movement, the element-by-element detailed commentary with its reception dossiers and evidence states, the source-grounded synthesis, the integrated synthesis commentary, the notable-and-quotable gallery, the interpretive proposals, the terminal scope appendix and references, the component manifest and leaf-local format, and the correction of the psalm-numbering glosses and rubrical attributions in the leaf's source records); Claude Code CLI 2.1.246; unexposed: server revision"
-      },
-      {
-       "model": "claude-opus-5[1m]",
-       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
-       "runtime": "Anthropic Claude Code agent (revision of the canonical leaf against the rebuilt research brief: rebuilding the page-2 dossier sheet on held and registered evidence, removing the verbatim and unregistered restricted-translation attributions and the citations to encyclopedia volumes this repository does not hold, re-sourcing the Offertory and Gospel chronologies, restating the Gradual's date as a bounded negative, adding the preserved disagreements at the Introit, Alleluia, Epistle, Gradual and Offertory, restoring and expanding the Sunday-number transmission finding with its evidence-state floor, correcting the Gelasian section number and the Augustine provenance sentence, rebuilding the notable-and-quotable gallery on the audited entries at their true evidence state, replacing one interpretive proposal with the two audited ones it displaced, removing the project-composed English renderings and the inserted bracket in a quoted Douay verse, rewriting the terminal scope appendix and references, and creating the leaf's source-bindings record); Claude Code CLI 2.1.246; unexposed: server revision"
-      },
-      {
-       "model": "claude-opus-5[1m]",
-       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
-       "runtime": "Anthropic Claude Code agent (revision of the canonical leaf against the rewritten research brief of workflow proper v10, which integrates seven research lanes and replaces the brief the earlier production worked from: rebuilding the page-2 dossier so that every row prints the bounded negative the brief records --- Papias, Eusebius Historia ecclesiastica Book III and Jerome on Galatians as held in no form, Theodoret on Psalms 83 and 94 and Irenaeus as held bytes with no registered passage locus, Jerome De viris illustribus registered at the wrong chapter, Haydock as summarise-only on unresolved rights, the Psalm 33 acrostic as unassertable, and no modern critical horizon for any row --- and distinguishing summary by choice from summary compelled by rights; correcting the saint-adapted Postcommunion locus to Gelasianum Book II sect. LXVIII with the running-head hazard recorded; restating the Collect-and-Secret displacement as eleven consecutive Masses covering two of the formulary's ten elements, with Gerbert's Gregorian lean and the non-independence of Pamelius; removing every claim resting on witnesses the brief does not carry (Theodoret at Psalms 83, 94 and Galatians, Cassiodorus, Ambrosiaster, Cassian, Jerome on Galatians, Chrysostom on Psalm 117, Gregory, Schuster) and rebuilding the detailed commentary on the witnesses it does; barring any Greek witness from commenting on homicidia or castitas; rewriting the two-page thematic movement, the source-grounded synthesis and the synthesis companion's integrated commentary on the brief's five cross-proper claims; replacing the notable-and-quotable gallery with exactly the five audited afterlives at their true inspected state; replacing the six interpretive proposals with exactly the five the precedent audit covers, and dropping the fruit-count relation from the manifest; and rewriting the terminal scope appendix and references, excluding from references the three witnesses this repository does not hold); Claude Code CLI 2.1.246; unexposed: server revision"
-      },
-      {
-       "model": "claude-opus-5[1m]",
-       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
-       "runtime": "Anthropic Claude Code agent (gating revision of the canonical leaf: restating the source-grounded synthesis's five cross-proper claims on the rebuilt research brief of workflow proper v10; rebuilding the detailed commentary's treatment of the flesh and the body on Chrysostom read in Greek, Aquinas's three members and Jerome's philology of the missal's own word; closing the Communion's third rotation leg and bounding the Communion against a Eucharistic reading of its own wording; adding the two Communion negatives; restating the Alleluia joint as left open; running the full gate suite --- zero LaTeX errors, zero overfull boxes, proper-component manifest valid, pagination profile verified at pages 1, 2, 3--4 and 5; and recording the session timestamp); Claude Code CLI 2.1.246; unexposed: server revision"
-      },
-      {
-       "model": "claude-opus-5[1m]",
-       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
-       "runtime": "Anthropic Claude Code agent (revision of the canonical leaf against the research brief as amended by the third seven-lane join of workflow proper v17: adopting the Scripture chronology contract --- the two leaf-local macros, a date cell for every appointed Scripture, and a rebuilt page-2 Date column printing only the corpus's own labels, with the Achis/Achimelech divergence, the reported-excluded basis and the summarise-only rights carried beside the one dated answer; settling the Ottobonianus chant-cue offset at two and correcting the Hadrianum section number from CXXXIII to XXXIII, both fusions of a superscript reference letter with a numeral; correcting the Honorius displacement to three chants of five; adding Schuster's pages with the ancient title, the St Lawrence cycle, and their four absences, and the Liber Comitis and the ninth-century antiphonary evidence with the Hesbert downgrade declared; withdrawing the Collect's bounded negative on Alcuin, Wibald, Honorius, Godfrey and Schuster and rebounding the Secret's and Postcommunion's over a whole-corpus phrase index; adding thirteen medieval Latin witnesses and two Greek texts at their inspected state with the four observed transcription errors and the two passages barred from quotation; printing Augustine's withdrawal of Nullius enim fere conscientia Deum potest odisse with its five transmitters and Bruno of Segni's denial; restating the six cross-proper claims and rewriting the two-page thematic movement and the synthesis companion's integrated commentary on them; withdrawing the false universal in the gallery's Mt. 6:24 entry, correcting the Gradual entry's quotation at three points and declaring the two page-image collations; replacing the five interpretive proposals with the six the precedent audit covers and removing the audit fields from the reader-facing proposals; and rebuilding the terminal scope appendix and the References, which now carry every witness the body uses); Claude Code CLI 2.1.246; unexposed: server revision"
-      },
-      {
-       "model": "claude-opus-5[1m]",
-       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
-       "runtime": "Anthropic Claude Code agent (revision of the canonical leaf against the ten blocking findings a content evaluation carried into this authoring stage: bringing the commentary's divergence apparatus back into step with the leaf's text control at twenty-one rows, restating the two exhaustiveness sentences and declaring the three sentence-boundary differences as a class; restating the Cummiskey attestation in the commentary, the scope appendix, the References and the third interpretive proposal as the page-image reading of all three orations at printed pp. 425 and 427, with the one-digitisation bound and the unestablished translator carried, and withdrawing every citation of the translation ledger's collation fields; giving Gerbert one evidence state throughout as two unregistered Internet Archive optical layers agreeing verbatim at printed p. 173 with no page image collated, and correcting the two passages that said none of the five books was opened; withdrawing every quotation from PL 152:1250 and from Godfrey's Homilia LXXXIII and reporting both witnesses in the guide's own words, with the standing bar restated to match the body in the commentary, the scope appendix and the References; rewriting the leaf's source-bindings header so the reached-and-used half carries Schuster, Feltoe, Cassiodorus, Theodoret, Ambrosiaster, Marius Victorinus and Jerome on Galatians and the false Veronense holdings statement is withdrawn; removing the standing Bounds, Limits, Negative results and Elements labels from the thematic movement, the detailed commentary, the source-grounded synthesis and the integrated commentary and writing each surviving limit into the claim it qualifies; stripping the relationship, wording-check, limiting-qualification, rights and material-negative fields from the five gallery entries and carrying the swept-and-empty elements into the scope appendix; deleting the method, evidence-state and source-survey preambles from page 2, the thematic movement, the detailed commentary, the source-grounded synthesis, the gallery and the integrated commentary and carrying the translations, the chronology rule and the companion's omissions into the scope appendix; and rewriting the page-2 dossiers, the page-1 anagogical row and two subsection titles so their subject is a source, a text or a fact rather than the guide or its records); Claude Code CLI 2.1.246; unexposed: server revision"
-      },
-      {
-       "model": "claude-opus-5[1m]",
-       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
-       "runtime": "Anthropic Claude Code agent (revision of the canonical leaf against the six blocking findings a content evaluation carried into this authoring stage, and against the research brief's own itemised list of the reader-facing strings two brief-owned corrections oblige: giving Gerbert one evidence state in the synthesis edition as well as the canonical one, four of the five Gelasian books unopened and the fifth open only in two unregistered optical layers of his printed p. 173; withdrawing Alcuin's De usu Psalmorum VII and Wibald's Epistola CCCLXXV from published reception, dropping both Latin quotations and reporting them as the unverified leads an exact-phrase index over the Patrologia Latina returned, and restating the Collect's reception and the withdrawal from the no-exegetical-reception negative on Honorius, Godfrey and Schuster; restating the fourth interpretive proposal's evidence base at twenty-one collated records over fifteen 1962 identities and its Eighth Sunday control at the Pustet Ratisbon 1862 and Venice 1570 text layers, searched and not inspected; re-attributing the six disputed Matthaean composition labels on page 2 to the Catholic Encyclopedia volumes X and XIV the chronology corpus names for them, and confining Maas's volume VIII to the ministry chronology; deleting the standing evidence-state, rights-posture and lead-status fields from all thirty-eight witness notes of the detailed commentary and carrying their claim-bearing content --- the translation named at each English quotation, the reportatio, the Sermo II locus, the Latin corroboration at primum --- into the sentences that make the claims, with the work-wide translation and rights bounds standing in the scope appendix; and rewriting the reader-facing sentences whose subject was the guide, its apparatus, its earlier drafts or the repository's records into statements about sources, texts and witnesses, on page 2, in the commentary, in the source-grounded synthesis and in the synthesis edition's integrated commentary; with the two brief-obliged corrections carried to every reader-facing occurrence --- Dom Laurence Shepherd and Arthur Levelis-Marke named as the translators of Guéranger and Schuster, and the unsupported two-century interval between Honorius and Godfrey of Admont struck at all four places without replacement); Claude Code CLI 2.1.246; unexposed: server revision"
-      }
-     ],
-     "eligibility": "eligible",
-     "models": [
-      "claude-opus-5[1m]"
-     ],
-     "pages": null,
-     "pdf": null,
-     "pdf_absent": "no PDF is installed for this issue",
-     "produced": {
-      "run_id": "ca03f1b357e7ec25",
-      "seed_commit": "22ba03d94062ced13af40883d83f3a04bdeca22a",
-      "workflow_digest": "3a91248cf04031f48a93d5b2ca338b89558720ea94d3b9408dcddb5e1959cb7f",
-      "workflow_id": "proper",
-      "workflow_version": "17"
-     },
-     "provider": "claude",
-     "reviewed": "2026-09-02",
-     "revised": "2026-09-03T05:45:26Z",
-     "status": null,
-     "subject": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
-     "title": "Fourteenth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)",
-     "title_source": "src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/main.tex",
-     "web": "web/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost.html"
-    },
     {
      "also": [
       {

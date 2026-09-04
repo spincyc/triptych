@@ -32,6 +32,19 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import yaml  # noqa: E402
+from _tooling import Example, with_examples  # noqa: E402
+
+EXAMPLES = {
+    "": (
+        Example(
+            "tools/audit-latin-body-substitutions",
+            (
+                "1034 bodies, 3940 distinct tokens, 1264 known forms, "
+                "0 to read on a page image",
+            ),
+        ),
+    ),
+}
 
 # Each pair is a substitution this corpus's recognisers actually make, written
 # damaged-form first.
@@ -95,6 +108,7 @@ def bodies(document: dict):
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--calendar", default="roman-1962")
+    with_examples(parser, EXAMPLES[""])
     arguments = parser.parse_args()
     path = ROOT / f"src/sources/calendars/{arguments.calendar}/propers.yaml"
     document = yaml.safe_load(path.read_text(encoding="utf-8"))
