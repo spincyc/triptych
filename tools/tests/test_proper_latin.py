@@ -131,7 +131,7 @@ class ProductionLedgerTests(unittest.TestCase):
         )
         expected = {
             "postconciliar": (329, 4),
-            "roman-1962": (530, 5),
+            "roman-1962": (620, 5),
             "roman-pre-1955": (0, 0),
         }
         for calendar, (total, repeated) in expected.items():
@@ -149,7 +149,7 @@ class ProductionLedgerTests(unittest.TestCase):
             self.assertEqual(repeated, sum(key.occurrence > 1 for key in records))
 
     def test_publication_loader_validates_production_source_metadata(self) -> None:
-        expected = {"postconciliar": 329, "roman-1962": 530, "roman-pre-1955": 530}
+        expected = {"postconciliar": 329, "roman-1962": 620, "roman-pre-1955": 620}
         for calendar, count in expected.items():
             records, problems = publication_records(CALENDARS, calendar, INVENTORIES)
             self.assertEqual([], problems)
@@ -185,8 +185,8 @@ class ProductionLedgerTests(unittest.TestCase):
             {k.mass for k in roman} <= calendar_masses,
             sorted({k.mass for k in roman} - calendar_masses),
         )
-        self.assertEqual(436, len(permitted))
-        self.assertEqual(436, len(roman))
+        self.assertEqual(526, len(permitted))
+        self.assertEqual(526, len(roman))
         target_artifact = (
             "artifact.catholic-church.missale-romanum."
             "vatican-typica-1962.cmaa-facsimile-pdf"
@@ -198,10 +198,10 @@ class ProductionLedgerTests(unittest.TestCase):
                     "editorial-projection-2026-08-27."
                     "normalized-latin-propers-0bf4adcc"
                 ),
-                "publication_source_id": (
+                "publication_source_ids": {
                     "artifact.francis-xavier-lasance.the-new-roman-missal."
                     "benziger-revised-1945.new-roman-missal-text-80b34759"
-                ),
+                },
                 "projected_from": {
                     "artifact.francis-xavier-lasance.the-new-roman-missal."
                     "benziger-revised-1945."
@@ -214,11 +214,11 @@ class ProductionLedgerTests(unittest.TestCase):
                     "artifact.triptych.roman-1962-latin-proper-editorial-projection."
                     "editorial-projection-2026-08-28.augustine-orations-8a2a938d"
                 ),
-                "publication_source_id": (
+                "publication_source_ids": {
                     "artifact.catholic-church.missale-romanum."
                     "1922-tours-mame-editio-quarta-iuxta-typicam."
                     "ia-scan-pdf-9873693a"
-                ),
+                },
                 "projected_from": {
                     "artifact.catholic-church.missale-romanum."
                     "1922-tours-mame-editio-quarta-iuxta-typicam."
@@ -235,13 +235,17 @@ class ProductionLedgerTests(unittest.TestCase):
                     "editorial-projection-2026-09-03."
                     "post-pentecosten-14-orations-8ad972fc"
                 ),
-                "publication_source_id": (
+                "publication_source_ids": {
                     "artifact.catholic-church.missale-romanum."
-                    "pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
-                ),
+                    "pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf",
+                    "artifact.catholic-church.missale-romanum."
+                    "1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+                },
                 "projected_from": {
                     "artifact.catholic-church.missale-romanum."
                     "pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf",
+                    "artifact.catholic-church.missale-romanum."
+                    "1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
                     target_artifact,
                 },
             },
@@ -281,7 +285,11 @@ class ProductionLedgerTests(unittest.TestCase):
                     ),
                     ids[0],
                 )
-                self.assertEqual(spec["publication_source_id"], ids[1])
+                # A projection edition may rest on more than one public-domain
+                # witness, because a formulary the 1862 does not carry has the
+                # 1922 Mame as its antecedent rather than as corroboration --
+                # Holy Family, granted 1893 and universal 1921, is the case.
+                self.assertIn(ids[1], spec["publication_source_ids"], ids[1])
                 # Sanctoral recoveries came first; the seasonal ones name a
                 # temporal- passage of the same target edition.
                 self.assertTrue(
@@ -316,9 +324,16 @@ class ProductionLedgerTests(unittest.TestCase):
                 for artifact in own:
                     self.assertEqual("project-created", artifact["rights_status"])
                     self.assertTrue(artifact["transformation"].strip())
-                    self.assertEqual(
-                        spec["projected_from"], set(artifact["projected_from"])
+                    # An artifact stands on the witnesses its own masses used,
+                    # which is a subset of what the edition may rest on: within
+                    # one lane most formularies take the Pustet and a few take
+                    # the Mame. The target must always be there.
+                    stands_on = set(artifact["projected_from"])
+                    self.assertTrue(
+                        stands_on <= spec["projected_from"],
+                        sorted(stands_on - spec["projected_from"]),
                     )
+                    self.assertIn(target_artifact, stands_on)
         for _, _, row in permitted:
             passage = passages[row["source_id"]]
             artifact = artifacts[passage["artifact_id"]]

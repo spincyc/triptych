@@ -965,12 +965,15 @@ sections:
           ref: Psalm 18:2
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 6, no. 32; artifact PDF p. 87. Preexisting material
+          under 17 U.S.C. 103(b), corroborated in the tracked public-domain Pustet
+          Ratisbon 1862 at 1862 text-layer lines 13862-13867; 1922 Mame printed p. 8,
+          artifact PDF p. 122.
+        text: |
+          Praesta, quaesumus, omnipotens Deus: ut redemptionis nostrae ventura
+          solemnitas, et praesentis nobis vitae subsidia conferat, et aeternae
+          beatitudinis praemia largiatur. Per Dominum.
       - name: First Lesson
         source: scripture
         verses:
@@ -1028,12 +1031,15 @@ sections:
           ref: Isaiah 35:4
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 7, no. 40; artifact PDF p. 88. Preexisting material
+          under 17 U.S.C. 103(b), corroborated in the tracked public-domain Pustet
+          Ratisbon 1862 at 1862 text-layer lines 14009-14017; 1922 Mame printed p. 9,
+          artifact PDF p. 123.
+        text: |
+          Accepta tibi sint, quaesumus, Domine, nostra jejunia: quae et expiando nos
+          tua gratia dignos efficiant, et ad sempiterna promissa perducant. Per
+          Dominum nostrum.
       - name: Communion
         incipit: Ecce virgo concipiet
         source: scripture
@@ -1045,12 +1051,14 @@ sections:
           ref: Isaiah 7:14
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 7, no. 42; artifact PDF p. 88. Preexisting material
+          under 17 U.S.C. 103(b), corroborated in the tracked public-domain Pustet
+          Ratisbon 1862 at 1862 text-layer lines 14029-14032; 1922 Mame printed p. 10,
+          artifact PDF p. 124.
+        text: |
+          Salutaris tui, Domine, munere satiati, supplices deprecamur: ut, cujus
+          laetamur gustu, renovemur effectu. Per Dominum nostrum.
     - key: advent-ember-friday
       name: Ember Friday of Advent
       registry: '1962-T-advent-ember-friday'
@@ -1075,12 +1083,15 @@ sections:
           ref: Psalm 118:1
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 7, no. 44; artifact PDF p. 88. Preexisting material
+          under 17 U.S.C. 103(b), corroborated in the tracked public-domain Pustet
+          Ratisbon 1862 at 1862 text-layer lines 14062-14066; 1922 Mame printed p. 10,
+          artifact PDF p. 124.
+        text: |
+          Excita, quaesumus, Domine, potentiam tuam, et veni: ut hi, qui in tua
+          pietate confidunt, ab omni citius adversitate liberentur: Qui vivis et
+          regnas cum Deo Patre in unitate.
       - name: Lesson
         source: scripture
         verses:
@@ -1119,12 +1130,14 @@ sections:
           ref: Psalm 84:7-8
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 8, no. 49; artifact PDF p. 89. Preexisting material
+          under 17 U.S.C. 103(b), corroborated in the tracked public-domain Pustet
+          Ratisbon 1862 at 1862 text-layer lines 14145-14149; 1922 Mame printed p. 11,
+          artifact PDF p. 125.
+        text: |
+          Muneribus nostris, quaesumus, Domine, precibusque susceptis: et caelestibus
+          nos munda mysteriis, et clementer exaudi. Per Dominum.
       - name: Communion
         incipit: Ecce Dominus veniet
         source: scripture
@@ -1136,12 +1149,14 @@ sections:
           ref: Zechariah 14:5-6
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 8, no. 51; artifact PDF p. 89. Preexisting material
+          under 17 U.S.C. 103(b), corroborated in the tracked public-domain Pustet
+          Ratisbon 1862 at 1862 text-layer lines 14161-14165; 1922 Mame printed p. 11,
+          artifact PDF p. 125.
+        text: |
+          Tui nos, Domine, sacramenti libatio sancta restauret: et a vetustate
+          purgatos, in mysterii salutaris faciat transire consortium. Per Dominum.
     - key: advent-ember-saturday
       name: Ember Saturday of Advent
       registry: '1962-T-advent-ember-saturday'
@@ -1940,12 +1955,20 @@ sections:
       - name: Collect
         incipit: Domine Jesu Christe, qui, Mariae
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf
+        notes: >-
+          Printed locus printed p. 39, no. 262; artifact PDF p. 120. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 Pustet: absent, so no line range - I swept its
+          whole 108,905-line text layer by incipit and by interior words and it is not
+          there, and the feast postdates that book by sixty years; 1922 Mame printed
+          p. 500 (artifact PDF p. 614), running head 'Sanctae Familiae Jesu, Mariae,
+          Joseph', read on the page image rendered at 220 dpi and confirmed against
+          that book's text layer.
+        text: |
+          Domine Jesu Christe, qui, Mariae et Joseph subditus, domesticam vitam
+          ineffabilibus virtutibus consecrasti: fac nos, utriusque auxilio, Familiae
+          sanctae tuae exemplis instrui; et consortium consequi sempiternum: Qui vivis
+          et regnas cum Deo Patre in unitate.
       - name: Epistle
         source: scripture
         verses:
@@ -1997,12 +2020,20 @@ sections:
       - name: Secret
         incipit: Placationis hostiam
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf
+        notes: >-
+          Printed locus printed p. 40, no. 270; artifact PDF p. 121. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 Pustet: absent, so no line range - I swept its
+          whole 108,905-line text layer by incipit and by interior words and it is not
+          there, and the feast postdates that book by sixty years; 1922 Mame printed
+          p. 502 (artifact PDF p. 616), running head 'Sanctae Familiae Jesu, Mariae,
+          Joseph', read on the page image rendered at 220 dpi and confirmed against
+          that book's text layer.
+        text: |
+          Placationis hostiam offerimus tibi, Domine, suppliciter deprecantes: ut, per
+          intercessionem Deiparae Virginis cum beato Joseph, familias nostras in pace
+          et gratia tua firmiter constituas. Per eundem Dominum nostrum Jesum
+          Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
       - name: Communion
         incipit: Descendit Jesus cum eis
         source: scripture
@@ -2015,12 +2046,20 @@ sections:
       - name: Postcommunion
         incipit: Quos coelestibus reficis
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf
+        notes: >-
+          Printed locus printed p. 40, no. 272; artifact PDF p. 121. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 Pustet: absent, so no line range - I swept its
+          whole 108,905-line text layer by incipit and by interior words and it is not
+          there, and the feast postdates that book by sixty years; 1922 Mame printed
+          p. 502 (artifact PDF p. 616), running head 'Sanctae Familiae Jesu, Mariae,
+          Joseph', read on the page image rendered at 220 dpi and confirmed against
+          that book's text layer.
+        text: |
+          Quos caelestibus reficis sacramentis, fac, Domine Jesu, sanctae Familiae
+          tuae exempla jugiter imitari: ut, in hora mortis nostrae, occurrente
+          gloriosa Virgine Matre tua cum beato Joseph; per te in aeterna tabernacula
+          recipi mereamur: Qui vivis et regnas cum Deo Patre in unitate.
     - key: mass-of-the-first-sunday-after-epiphany
       name: Mass of the First Sunday after the Epiphany
       registry: '1962-T-mass-of-the-first-sunday-after-epiphany'
@@ -3145,12 +3184,14 @@ sections:
           ref: Psalm 56:2
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 57, no. 387; artifact PDF p. 138. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 19330-19334; 1922 Mame printed
+          p. 71, artifact PDF p. 185.
+        text: |
+          Praesta, Domine, fidelibus tuis: ut jejuniorum veneranda solemnia, et
+          congrua pietate suscipiant, et secura devotione percurrant. Per Dominum.
       - name: Lesson
         source: scripture
         verses:
@@ -3203,12 +3244,15 @@ sections:
           ref: Psalm 29:2-3
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 58, no. 393; artifact PDF p. 139. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 19510-19514; 1922 Mame printed
+          p. 73, artifact PDF p. 187.
+        text: |
+          Fac nos, quaesumus, Domine, his muneribus offerendis convenienter aptari:
+          quibus ipsius venerabilis sacramenti celebramus exordium. Per Dominum
+          nostrum.
       - name: Communion
         incipit: Qui meditabitur in lege Domini
         source: scripture
@@ -3220,12 +3264,14 @@ sections:
           ref: Psalm 1:2-3
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 58, no. 395; artifact PDF p. 139. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 19559-19566; 1922 Mame printed
+          p. 73, artifact PDF p. 187.
+        text: |
+          Percepta nobis, Domine, praebeant sacramenta subsidium: ut tibi grata sint
+          nostra jejunia, et nobis proficiant ad medelam. Per Dominum.
     - key: thursday-after-ash-wednesday
       name: Thursday after Ash Wednesday
       registry: '1962-T-thursday-after-ash-wednesday'
@@ -3254,12 +3300,15 @@ sections:
           ref: Psalm 54:2-3
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 59, no. 398; artifact PDF p. 140. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 19659-19664; 1922 Mame printed
+          p. 75, artifact PDF p. 189.
+        text: |
+          Deus, qui culpa offenderis, paenitentia placaris: preces populi tui
+          supplicantis propitius respice; et flagella tuae iracundiae, quae pro
+          peccatis nostris meremur, averte. Per Dominum.
       - name: Lesson
         source: scripture
         verses:
@@ -3298,12 +3347,14 @@ sections:
           ref: Psalm 24:1-3
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 60, no. 403; artifact PDF p. 141. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 19766-19774; 1922 Mame printed
+          p. 76, artifact PDF p. 190.
+        text: |
+          Sacrificiis praesentibus, Domine, quaesumus, intende placatus: ut et
+          devotioni nostrae proficiant, et saluti. Per Dominum nostrum.
       - name: Communion
         incipit: Acceptabis sacrificium justitiae
         source: scripture
@@ -3315,12 +3366,15 @@ sections:
           ref: Psalm 50:21
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 60, no. 405; artifact PDF p. 141. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 19783-19787; 1922 Mame printed
+          p. 76, artifact PDF p. 190.
+        text: |
+          Caelestis doni benedictione percepta: supplices te, Deus omnipotens,
+          deprecamur; ut hoc idem nobis et sacramenti causa sit, et salutis. Per
+          Dominum.
     - key: friday-after-ash-wednesday
       name: Friday after Ash Wednesday
       registry: '1962-T-friday-after-ash-wednesday'
@@ -3345,12 +3399,15 @@ sections:
           ref: Psalm 29:2
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 60, no. 408; artifact PDF p. 141. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 19820-19825; 1922 Mame printed
+          p. 76, artifact PDF p. 190.
+        text: |
+          Inchoata jejunia, quaesumus, Domine, benigno favore prosequere: ut
+          observantiam, quam corporaliter exhibemus, mentibus etiam sinceris exercere
+          valeamus. Per Dominum.
       - name: Lesson
         source: scripture
         verses:
@@ -3405,12 +3462,15 @@ sections:
           ref: Psalm 118:154, 125
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 61, no. 414; artifact PDF p. 142. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 19970-19976; 1922 Mame printed
+          p. 78, artifact PDF p. 192.
+        text: |
+          Sacrificium, Domine, observantiae quadragesimalis, quod offerimus, praesta,
+          quaesumus: ut tibi et mentes nostras reddat acceptas, et continentiae
+          promptioris nobis tribuat facultatem. Per Dominum.
       - name: Communion
         incipit: Servite Domino in timore
         source: scripture
@@ -3422,12 +3482,15 @@ sections:
           ref: Psalm 2:11-12
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 61, no. 416; artifact PDF p. 142. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 19987-19991; 1922 Mame printed
+          p. 78, artifact PDF p. 192.
+        text: |
+          Spiritum nobis, Domine, tuae caritatis infunde: ut, quos uno pane caelesti
+          satiasti, tua facias pietate Concordes. Per Dominum nostrum Jesum Christum,
+          Filium tuum: Qui tecum vivit et regnat in unitate ejusdem Spiritus Sancti.
     - key: saturday-after-ash-wednesday
       name: Saturday after Ash Wednesday
       registry: '1962-T-saturday-after-ash-wednesday'
@@ -3452,12 +3515,15 @@ sections:
           ref: Psalm 29:2
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 62, no. 419; artifact PDF p. 143. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 20022-20028; 1922 Mame printed
+          p. 79, artifact PDF p. 193.
+        text: |
+          Adesto, Domine, supplicationibus nostris: et concede; ut hoc solemne
+          jejunium, quod animabus corporibusque curandis salubriter institutum est,
+          devoto servitio celebremus. Per Dominum nostrum.
       - name: Lesson
         source: scripture
         verses:
@@ -3496,12 +3562,16 @@ sections:
           ref: Psalm 118:154, 125
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 63, no. 424; artifact PDF p. 144. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 20137-20144; 1922 Mame printed
+          p. 80, artifact PDF p. 194.
+        text: |
+          Suscipe, Domine, sacrificium, cujus te voluisti dignanter immolatione
+          placari: praesta, quaesumus; ut, hujus operatione mundati, beneplacitum tibi
+          nostrae mentis offeramus affectum. Per Dominum nostrum Jesum Christum,
+          Filium tuum: Qui tecum vivit et regnat in unitate.
       - name: Communion
         incipit: Servite Domino in timore
         source: scripture
@@ -3513,12 +3583,14 @@ sections:
           ref: Psalm 2:11-12
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 63, no. 426; artifact PDF p. 144. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 20154-20159; 1922 Mame printed
+          p. 80, artifact PDF p. 194.
+        text: |
+          Caelestis vitae munere vegetati, quaesumus, Domine: ut, quod est nobis in
+          praesenti vita mysterium, fiat aeternitatis auxilium. Per Dominum.
     - key: lent-1
       name: First Sunday of Lent
       registry: '21'
@@ -3650,12 +3722,15 @@ sections:
           ref: Psalm 122:1
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 65, no. 439; artifact PDF p. 146. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 20401-20418; 1922 Mame printed
+          p. 83, artifact PDF p. 197.
+        text: |
+          Converte nos, Deus salutaris noster: et, ut nobis jejunium quadragesimale
+          proficiat, mentes nostras caelestibus instrue disciplinis. Per Dominum
+          nostrum Jesum Christum.
       - name: Lesson
         source: scripture
         verses:
@@ -3712,12 +3787,14 @@ sections:
           ref: Psalm 118:18, 26, 73
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 66, no. 445; artifact PDF p. 147. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 20551-20554; 1922 Mame printed
+          p. 84, artifact PDF p. 198.
+        text: |
+          Munera tibi, Domine, oblata sanctifica: nosque a peccatorum nostrorum
+          maculis emunda. Per Dominum nostrum Jesum Christum.
       - name: Communion
         incipit: Amen dico vobis
         source: scripture
@@ -3731,12 +3808,14 @@ sections:
           ref: Matthew 25:40, 34
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 66, no. 447; artifact PDF p. 147. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 20568-20571; 1922 Mame printed
+          p. 85, artifact PDF p. 199.
+        text: |
+          Salutaris tui, Domine, munere satiati supplices exoramus: ut, cujus laetamur
+          gustu, renovemur effectu. Per Dominum nostrum.
     - key: lent-1-tuesday
       name: Tuesday of the First Week of Lent
       registry: '1962-T-lent-1-tuesday'
@@ -3761,12 +3840,14 @@ sections:
           ref: Psalm 89:2
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 67, no. 450; artifact PDF p. 148. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 20612-20616; 1922 Mame printed
+          p. 85, artifact PDF p. 199.
+        text: |
+          Respice, Domine, familiam tuam: et praesta; ut apud te mens nostra tuo
+          desiderio fulgeat, quae se carnis maceratione castigat. Per Dominum.
       - name: Lesson
         source: scripture
         verses:
@@ -3803,12 +3884,14 @@ sections:
           ref: Psalm 30:15-16
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 67, no. 455; artifact PDF p. 148. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 20718-20720; 1922 Mame printed
+          p. 86, artifact PDF p. 200.
+        text: |
+          Oblatis, quaesumus, Domine, placare muneribus: et a cunctis nos defende
+          periculis. Per Dominum.
       - name: Communion
         incipit: Cum invocarem te, exaudisti me
         source: scripture
@@ -3820,12 +3903,14 @@ sections:
           ref: Psalm 4:2
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 68, no. 457; artifact PDF p. 149. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 20733-20736; 1922 Mame printed
+          p. 86, artifact PDF p. 200.
+        text: |
+          Quaesumus, omnipotens Deus: ut illius salutaris capiamus effectum, cujus per
+          haec mysteria pignus accepimus. Per Dominum.
     - key: lent-1-ember-wednesday
       name: Ember Wednesday of Lent
       registry: '1962-T-lent-1-ember-wednesday'
@@ -3857,12 +3942,14 @@ sections:
           ref: Psalm 24:6, 3, 22
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 68, no. 460; artifact PDF p. 149. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 20788-20792; 1922 Mame printed
+          p. 87, artifact PDF p. 201.
+        text: |
+          Preces nostras, quaesumus, Domine, clementer exaudi: et contra cuncta nobis
+          adversantia, dexteram tuae majestatis extende. Per Dominum.
       - name: First Lesson
         source: scripture
         verses:
@@ -3918,12 +4005,14 @@ sections:
           ref: Psalm 118:47-48
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 70, no. 468; artifact PDF p. 151. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 20974-20978; 1922 Mame printed
+          p. 89, artifact PDF p. 203.
+        text: |
+          Hostias tibi, Domine, placationis offerimus: ut et delicta nostra miseratus
+          absolvas, et nutantia corda tu dirigas. Per Dominum.
       - name: Communion
         incipit: Intellege clamorem meum
         source: scripture
@@ -3935,12 +4024,14 @@ sections:
           ref: Psalm 5:2-4
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 70, no. 470; artifact PDF p. 151. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 20989-20992; 1922 Mame printed
+          p. 89, artifact PDF p. 203.
+        text: |
+          Tui, Domine, perceptione sacramenti, et a nostris mundemur occultis, et ab
+          hostium liberemur insidiis. Per Dominum nostrum.
     - key: lent-1-thursday
       name: Thursday of the First Week of Lent
       registry: '1962-T-lent-1-thursday'
@@ -3960,12 +4051,16 @@ sections:
           ref: Psalm 95:6
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 70, no. 473; artifact PDF p. 151. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 21033-21038; 1922 Mame printed
+          p. 89, artifact PDF p. 203.
+        text: |
+          Devotionem populi tui, quaesumus, Domine, benignus intende: ut, qui per
+          abstinentiam macerantur in corpore, per fructum boni operis reficiantur in
+          mente. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et
+          regnat in unitate.
       - name: Lesson
         source: scripture
         verses:
@@ -4004,12 +4099,14 @@ sections:
           ref: Psalm 33:8-9
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 71, no. 478; artifact PDF p. 152. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 21143-21146; 1922 Mame printed
+          p. 90, artifact PDF p. 204.
+        text: |
+          Sacrificia, Domine, quaesumus, propensius ista nos salvent, quae
+          medicinalibus sunt instituta jejuniis. Per Dominum nostrum.
       - name: Communion
         incipit: Panis, quem ego dedero
         source: scripture
@@ -4021,12 +4118,15 @@ sections:
           ref: John 6:52
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 71, no. 480; artifact PDF p. 152. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 21157-21160; 1922 Mame printed
+          p. 91, artifact PDF p. 205.
+        text: |
+          Tuorum nos, Domine, largitate donorum, et temporalibus attolle praesidiis,
+          et renova sempiternis. Per Dominum nostrum Jesum Christum, Filium tuum: Qui
+          tecum vivit et regnat in unitate.
     - key: lent-1-ember-friday
       name: Ember Friday of Lent
       registry: '1962-T-lent-1-ember-friday'
@@ -4051,12 +4151,14 @@ sections:
           ref: Psalm 24:1-2
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 71, no. 483; artifact PDF p. 152. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 21209-21215; 1922 Mame printed
+          p. 91, artifact PDF p. 205.
+        text: |
+          Esto, Domine, propitius plebi tuae: et, quam tibi facis esse devotam,
+          benigno refove miseratus auxilio. Per Dominum nostrum.
       - name: Lesson
         source: scripture
         verses:
@@ -4111,12 +4213,14 @@ sections:
           ref: Psalm 102:2, 5
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 73, no. 489; artifact PDF p. 154. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 21368-21371; 1922 Mame printed
+          p. 93, artifact PDF p. 207.
+        text: |
+          Suscipe, quaesumus, Domine, munera nostris oblata servitiis: et tua
+          propitius dona sanctifica. Per Dominum.
       - name: Communion
         incipit: Erubescant et conturbentur
         source: scripture
@@ -4128,12 +4232,14 @@ sections:
           ref: Psalm 6:11
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 73, no. 491; artifact PDF p. 154. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 21383-21389; 1922 Mame printed
+          p. 93, artifact PDF p. 207.
+        text: |
+          Per hujus, Domine, operationem mysterii, et vitia nostra purgentur, et justa
+          desideria compleantur. Per Dominum nostrum.
     - key: lent-1-ember-saturday
       name: Ember Saturday of Lent
       registry: '1962-T-lent-1-ember-saturday'
@@ -4562,12 +4668,15 @@ sections:
           ref: Psalm 25:11-12
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 80, no. 542; artifact PDF p. 161. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 21955-21959; 1922 Mame printed
+          p. 100, artifact PDF p. 214.
+        text: |
+          Praesta, quaesumus, omnipotens Deus: ut familia tua, quae se, affligendo
+          carnem, ab alimentis abstinet; sectando justitiam, a culpa jejunet. Per
+          Dominum nostrum.
       - name: Lesson
         source: scripture
         verses:
@@ -4620,12 +4729,14 @@ sections:
           ref: Psalm 15:7-8
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 81, no. 548; artifact PDF p. 162. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 22074-22076; 1922 Mame printed
+          p. 101, artifact PDF p. 215.
+        text: |
+          Haec hostia, Domine, placationis et laudis tua nos protectione dignos
+          efficiat. Per Dominum.
       - name: Communion
         incipit: Domine, Dominus noster
         source: scripture
@@ -4637,12 +4748,14 @@ sections:
           ref: Psalm 8:2
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 82, no. 550; artifact PDF p. 163. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 22086-22089; 1922 Mame printed
+          p. 102, artifact PDF p. 216.
+        text: |
+          Haec nos communio, Domine, purget a crimine: et caelestis remedii faciat
+          esse consortes. Per Dominum.
     - key: lent-2-tuesday
       name: Tuesday of the Second Week of Lent
       registry: '1962-T-lent-2-tuesday'
@@ -4662,12 +4775,15 @@ sections:
           ref: Psalm 26:8-9
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 82, no. 553; artifact PDF p. 163. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 22126-22131; 1922 Mame printed
+          p. 102, artifact PDF p. 216.
+        text: |
+          Perfice, quaesumus, Domine, benignus in nobis observantiae sanctae
+          subsidium: ut, quae te auctore facienda cognovimus, te operante impleamus.
+          Per Dominum.
       - name: Lesson
         source: scripture
         verses:
@@ -4706,12 +4822,15 @@ sections:
           ref: Psalm 50:3
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 83, no. 558; artifact PDF p. 164. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 22250-22257; 1922 Mame printed
+          p. 103, artifact PDF p. 217.
+        text: |
+          Sanctificationem tuam nobis, Domine, his mysteriis operare placatus: quae
+          nos et a terrenis purget vitiis, et ad caelestia dona perducat. Per Dominum
+          nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
       - name: Communion
         incipit: Narrabo omnia mirabilia tua
         source: scripture
@@ -4723,12 +4842,14 @@ sections:
           ref: Psalm 9:2-3
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 83, no. 560; artifact PDF p. 164. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 22267-22270; 1922 Mame printed
+          p. 103, artifact PDF p. 217.
+        text: |
+          Ut sacris, Domine, reddamur digni muneribus: fac nos tuis, quaesumus, semper
+          oboedire mandatis. Per Dominum nostrum.
     - key: lent-2-wednesday
       name: Wednesday of the Second Week of Lent
       registry: '1962-T-lent-2-wednesday'
@@ -4753,12 +4874,15 @@ sections:
           ref: Psalm 37:2
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 83, no. 563; artifact PDF p. 164. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 22313-22320; 1922 Mame printed
+          p. 104, artifact PDF p. 218.
+        text: |
+          Populum tuum, quaesumus, Domine, propitius respice: et, quos ab escis
+          carnalibus praecipis abstinere, a noxiis quoque vitiis cessare concede. Per
+          Dominum nostrum.
       - name: Lesson
         source: scripture
         verses:
@@ -4813,12 +4937,15 @@ sections:
           ref: Psalm 24:1-3
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 84, no. 569; artifact PDF p. 165. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 22430-22434; 1922 Mame printed
+          p. 105, artifact PDF p. 219.
+        text: |
+          Hostias, Domine, quas tibi offerimus, propitius respice: et per haec sancta
+          commercia, vincula peccatorum nostrorum absolve. Per Dominum nostrum Jesum
+          Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
       - name: Communion
         incipit: Justus Dominus, et justitiam dilexit
         source: scripture
@@ -4830,12 +4957,14 @@ sections:
           ref: Psalm 10:8
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 85, no. 571; artifact PDF p. 166. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 22446-22451; 1922 Mame printed
+          p. 105, artifact PDF p. 219.
+        text: |
+          Sumptis, Domine, sacramentis: ad redemptionis aeternae, quaesumus,
+          proficiamus augmentum. Per Dominum.
     - key: lent-2-thursday
       name: Thursday of the Second Week of Lent
       registry: '1962-T-lent-2-thursday'
@@ -4855,12 +4984,15 @@ sections:
           ref: Psalm 69:2-3
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 85, no. 574; artifact PDF p. 166. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 22484-22491; 1922 Mame printed
+          p. 106, artifact PDF p. 220.
+        text: |
+          Praesta nobis, quaesumus, Domine, auxilium gratiae tuae: ut, jejuniis et
+          orationibus convenienter intenti, liberemur ab hostibus mentis et corporis.
+          Per Dominum.
       - name: Lesson
         source: scripture
         verses:
@@ -4899,12 +5031,16 @@ sections:
           ref: Exodus 32:11, 13-14
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 86, no. 579; artifact PDF p. 167. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 22618-22625; 1922 Mame printed
+          p. 107, artifact PDF p. 221.
+        text: |
+          Praesenti sacrificio, nomini tuo nos, Domine, jejunia dicata sanctificent:
+          ut, quod observantia nostra profitetur exterius, interius operetur effectu.
+          Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat
+          in unitate.
       - name: Communion
         incipit: Qui manducat meam carnem
         source: scripture
@@ -4916,12 +5052,14 @@ sections:
           ref: John 6:57
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 86, no. 581; artifact PDF p. 167. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 22636-22651; 1922 Mame printed
+          p. 107, artifact PDF p. 221.
+        text: |
+          Gratia tua nos, quaesumus, Domine, non derelinquat: quae et sacrae nos
+          deditos faciat servituti, et tuam nobis opem semper acquirat. Per Dominum.
     - key: lent-2-friday
       name: Friday of the Second Week of Lent
       registry: '1962-T-lent-2-friday'
@@ -4946,12 +5084,14 @@ sections:
           ref: Psalm 16:1
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 86, no. 584; artifact PDF p. 167. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 22687-22692; 1922 Mame printed
+          p. 108, artifact PDF p. 222.
+        text: |
+          Da, quaesumus, omnipotens Deus: ut, sacro nos purificante jejunio, sinceris
+          mentibus ad sancta ventura facias pervenire. Per Dominum.
       - name: Lesson
         source: scripture
         verses:
@@ -5002,12 +5142,14 @@ sections:
           ref: Psalm 39:14-15
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 88, no. 590; artifact PDF p. 169. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 22856-22860; 1922 Mame printed
+          p. 110, artifact PDF p. 224.
+        text: |
+          Haec in nobis sacrificia, Deus, et actione permaneant, et operatione
+          firmentur. Per Dominum.
       - name: Communion
         incipit: Tu, Domine, servabis nos
         source: scripture
@@ -5019,12 +5161,14 @@ sections:
           ref: Psalm 11:8
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 88, no. 592; artifact PDF p. 169. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 22867-22878; 1922 Mame printed
+          p. 110, artifact PDF p. 224.
+        text: |
+          Fac nos, quaesumus, Domine: accepto pignore salutis aeternae, sic tendere
+          congruenter; ut ad eam pervenire possimus. Per Dominum.
     - key: lent-2-saturday
       name: Saturday of the Second Week of Lent
       registry: '1962-T-lent-2-saturday'
@@ -5044,12 +5188,14 @@ sections:
           ref: Psalm 18:8
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 88, no. 595; artifact PDF p. 169. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 22916-22920; 1922 Mame printed
+          p. 111, artifact PDF p. 225.
+        text: |
+          Da, quaesumus, Domine, nostris effectum jejuniis salutarem: ut castigatio
+          carnis assumpta, ad nostrarum vegetationem transeat animarum. Per Dominum.
       - name: Lesson
         source: scripture
         verses:
@@ -5086,12 +5232,15 @@ sections:
           ref: Psalm 12:4-5
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 91, no. 600; artifact PDF p. 172. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 23193-23199; 1922 Mame printed
+          p. 114, artifact PDF p. 228.
+        text: |
+          His sacrificiis, Domine, concede placatus: ut, qui propriis oramus absolvi
+          delictis, non gravemur externis. Per Dominum nostrum Jesum Christum, Filium
+          tuum: Qui tecum vivit et regnat in unitate.
       - name: Communion
         incipit: Oportet te, fili, gaudere
         source: scripture
@@ -5103,12 +5252,14 @@ sections:
           ref: Luke 15:32
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 91, no. 602; artifact PDF p. 172. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 23220-23226; 1922 Mame printed
+          p. 114, artifact PDF p. 228.
+        text: |
+          Sacramenti tui, Domine, divina libatio penetralia nostri cordis infundat: et
+          sui nos participes potenter efficiat. Per Dominum.
     - key: lent-3
       name: Third Sunday of Lent
       registry: '23'
@@ -5239,12 +5390,16 @@ sections:
           ref: Psalm 55:5
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 93, no. 615; artifact PDF p. 174. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 23455-23460; 1922 Mame printed
+          p. 116, artifact PDF p. 230.
+        text: |
+          Cordibus nostris, quaesumus, Domine, gratiam tuam benignus infunde: ut,
+          sicut ab escis carnalibus abstinemus; ita sensus quoque nostros a noxiis
+          retrahamus excessibus. Per Dominum nostrum Jesum Christum, Filium tuum: Qui
+          tecum vivit et regnat in unitate.
       - name: Lesson
         source: scripture
         verses:
@@ -5297,12 +5452,15 @@ sections:
           ref: Psalm 54:2-3
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 94, no. 621; artifact PDF p. 175. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 23616-23620; 1922 Mame printed
+          p. 118, artifact PDF p. 232.
+        text: |
+          Munus, quod tibi, Domine, nostrae servitutis offerimus, tu salutare nobis
+          perfice sacramentum. Per Dominum nostrum Jesum Christum, Filium tuum: Qui
+          tecum vivit et regnat in unitate.
       - name: Communion
         incipit: Quis dabit ex Sion salutare Israel
         source: scripture
@@ -5314,12 +5472,15 @@ sections:
           ref: Psalm 13:7
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 94, no. 623; artifact PDF p. 175. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 23629-23635; 1922 Mame printed
+          p. 118, artifact PDF p. 232.
+        text: |
+          Praesta, quaesumus, omnipotens et misericors Deus: ut, quod ore contingimus,
+          pura mente capiamus. Per Dominum nostrum Jesum Christum, Filium tuum: Qui
+          tecum vivit et regnat in unitate.
     - key: lent-3-tuesday
       name: Tuesday of the Third Week of Lent
       registry: '1962-T-lent-3-tuesday'
@@ -5341,12 +5502,14 @@ sections:
           ref: Psalm 16:6, 8
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 95, no. 626; artifact PDF p. 176. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 23685-23689; 1922 Mame printed
+          p. 119, artifact PDF p. 233.
+        text: |
+          Exaudi nos, omnipotens et misericors Deus: et continentiae salutaris
+          propitius nobis dona concede. Per Dominum nostrum.
       - name: Lesson
         source: scripture
         verses:
@@ -5383,12 +5546,15 @@ sections:
           ref: Psalm 117:16-17
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 96, no. 631; artifact PDF p. 177. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 23793-23799; 1922 Mame printed
+          p. 120, artifact PDF p. 234.
+        text: |
+          Per haec veniat, quaesumus, Domine, sacramenta nostrae redemptionis
+          effectus: qui nos et ab humanis retrahat semper excessibus, et ad salutaria
+          dona perducat. Per Dominum.
       - name: Communion
         incipit: Domine, quis habitabit in tabernaculo tuo
         source: scripture
@@ -5400,12 +5566,14 @@ sections:
           ref: Psalm 14:1-2
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 96, no. 633; artifact PDF p. 177. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 23811-23815; 1922 Mame printed
+          p. 120, artifact PDF p. 234.
+        text: |
+          Sacris, Domine, mysteriis expiati: et veniam, quaesumus, consequamur, et
+          gratiam. Per Dominum.
     - key: lent-3-wednesday
       name: Wednesday of the Third Week of Lent
       registry: '1962-T-lent-3-wednesday'
@@ -5425,12 +5593,15 @@ sections:
           ref: Psalm 30:7-8
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 96, no. 636; artifact PDF p. 177. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 23844-23850; 1922 Mame printed
+          p. 121, artifact PDF p. 235.
+        text: |
+          Praesta nobis, quaesumus, Domine: ut salutaribus jejuniis eruditi, a noxiis
+          quoque vitiis abstinentes, propitiationem tuam facilius impetremus. Per
+          Dominum nostrum.
       - name: Lesson
         source: scripture
         verses:
@@ -5481,12 +5652,15 @@ sections:
           ref: Psalm 108:21
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 97, no. 642; artifact PDF p. 178. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 23989-23994; 1922 Mame printed
+          p. 122, artifact PDF p. 236.
+        text: |
+          Suscipe, quaesumus, Domine, preces populi tui cum oblationibus hostiarum:
+          et, tua mysteria celebrantes, ab omnibus nos defende periculis. Per Dominum
+          nostrum.
       - name: Communion
         incipit: Notas mihi fecisti vias vitae
         source: scripture
@@ -5498,12 +5672,14 @@ sections:
           ref: Psalm 15:11
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 97, no. 644; artifact PDF p. 178. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 24006-24014; 1922 Mame printed
+          p. 123, artifact PDF p. 237.
+        text: |
+          Sanctificet nos, Domine, qua pasti sumus, mensa caelestis: et, a cunctis
+          erroribus expiatos, supernis promissionibus reddat acceptos. Per Dominum.
     - key: lent-3-thursday
       name: Thursday of the Third Week of Lent
       registry: '1962-T-lent-3-thursday'
@@ -5524,12 +5700,15 @@ sections:
           ref: Psalm 77:1
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 98, no. 647; artifact PDF p. 179. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 24056-24064; 1922 Mame printed
+          p. 123, artifact PDF p. 237.
+        text: |
+          Magnificet te, Domine, sanctorum tuorum Cosmae et Damiani beata solemnitas:
+          qua et illis gloriam sempiternam, et opem nobis ineffabili providentia
+          contulisti. Per Dominum.
       - name: Lesson
         source: scripture
         verses:
@@ -5566,12 +5745,14 @@ sections:
           ref: Psalm 137:7
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 99, no. 652; artifact PDF p. 180. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 24156-24161; 1922 Mame printed
+          p. 124, artifact PDF p. 238.
+        text: |
+          In tuorum, Domine, pretiosa morte justorum sacrificium illud offerimus, de
+          quo martyrium sumpsit omne principium. Per Dominum.
       - name: Communion
         incipit: Tu mandasti mandata tua
         source: scripture
@@ -5583,12 +5764,14 @@ sections:
           ref: Psalm 118:4-5
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 99, no. 654; artifact PDF p. 180. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 24171-24175; 1922 Mame printed
+          p. 124, artifact PDF p. 238.
+        text: |
+          Sit nobis, Domine, sacramenti tui certa salvatio: quae cum beatorum Martyrum
+          tuorum Cosmae et Damiani meritis imploratur. Per Dominum.
     - key: lent-3-friday
       name: Friday of the Third Week of Lent
       registry: '1962-T-lent-3-friday'
@@ -5608,12 +5791,15 @@ sections:
           ref: Psalm 85:17
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 99, no. 657; artifact PDF p. 180. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 24214-24218; 1922 Mame printed
+          p. 125, artifact PDF p. 239.
+        text: |
+          Jejunia nostra, quaesumus, Domine, benigno favore prosequere: ut, sicut ab
+          alimentis abstinemus in corpore; ita a vitiis jejunemus in mente. Per
+          Dominum nostrum.
       - name: Lesson
         source: scripture
         verses:
@@ -5670,12 +5856,14 @@ sections:
           ref: Psalm 5:3-4
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 101, no. 663; artifact PDF p. 182. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 24446-24452; 1922 Mame printed
+          p. 127, artifact PDF p. 241.
+        text: |
+          Respice, quaesumus, Domine, propitius ad munera, quae sacramus: ut tibi
+          grata sint, et nobis salutaria semper exsistant. Per Dominum.
       - name: Communion
         incipit: Qui biberit aquam
         source: scripture
@@ -5687,12 +5875,14 @@ sections:
           ref: John 4:13-14
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 101, no. 665; artifact PDF p. 182. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 24470-24473; 1922 Mame printed
+          p. 128, artifact PDF p. 242.
+        text: |
+          Hujus nos, Domine, perceptio sacramenti mundet a crimine: et ad caelestia
+          regna perducat. Per Dominum.
     - key: lent-3-saturday
       name: Saturday of the Third Week of Lent
       registry: '1962-T-lent-3-saturday'
@@ -5712,12 +5902,14 @@ sections:
           ref: Psalm 5:2-3
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 101, no. 668; artifact PDF p. 182. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 24505-24509; 1922 Mame printed
+          p. 128, artifact PDF p. 242.
+        text: |
+          Praesta, quaesumus, omnipotens Deus: ut, qui se, affligendo carnem, ab
+          alimentis abstinent; sectando justitiam, a culpa jejunent. Per Dominum.
       - name: Lesson
         source: scripture
         verses:
@@ -5760,12 +5952,15 @@ sections:
           ref: Psalm 118:133
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 104, no. 673; artifact PDF p. 185. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 24812-24819; 1922 Mame printed
+          p. 131, artifact PDF p. 245.
+        text: |
+          Concede, quaesumus, omnipotens Deus: ut hujus sacrificii munus oblatum,
+          fragilitatem nostram ab omni malo purget semper et muniat. Per Dominum
+          nostrum.
       - name: Communion
         incipit: Nemo te condemnavit, mulier
         source: scripture
@@ -5777,12 +5972,14 @@ sections:
           ref: John 8:10-11
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 104, no. 675; artifact PDF p. 185. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 24829-24833; 1922 Mame printed
+          p. 131, artifact PDF p. 245.
+        text: |
+          Quaesumus, omnipotens Deus: ut inter ejus membra numeremur, cujus corpori
+          communicamus, et sanguini: Qui tecum vivit et regnat in unitate.
     - key: lent-4
       name: Fourth Sunday of Lent
       registry: '24'
@@ -5915,12 +6112,14 @@ sections:
           ref: Psalm 53:5
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 106, no. 688; artifact PDF p. 187. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 25072-25076; 1922 Mame printed
+          p. 134, artifact PDF p. 248.
+        text: |
+          Praesta, quaesumus, omnipotens Deus: ut, observationes sacras annua
+          devotione recolentes, et corpore tibi placeamus, et mente. Per Dominum.
       - name: Lesson
         source: scripture
         verses:
@@ -5976,12 +6175,14 @@ sections:
           ref: Psalm 99:1-2
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 107, no. 694; artifact PDF p. 188. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 25233-25235; 1922 Mame printed
+          p. 136, artifact PDF p. 250.
+        text: |
+          Oblatum tibi, Domine, sacrificium vivificet nos semper et muniat. Per
+          Dominum.
       - name: Communion
         incipit: Ab occultis meis munda me, Domine
         source: scripture
@@ -5993,12 +6194,14 @@ sections:
           ref: Psalm 18:13-14
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 107, no. 696; artifact PDF p. 188. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 25244-25247; 1922 Mame printed
+          p. 136, artifact PDF p. 250.
+        text: |
+          Sumptis, Domine, salutaribus sacramentis: ad redemptionis aeternae,
+          quaesumus, proficiamus augmentum. Per Dominum.
     - key: lent-4-tuesday
       name: Tuesday of the Fourth Week of Lent
       registry: '1962-T-lent-4-tuesday'
@@ -6018,12 +6221,15 @@ sections:
           ref: Psalm 54:2-3
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 108, no. 699; artifact PDF p. 189. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 25293-25299; 1922 Mame printed
+          p. 136, artifact PDF p. 250.
+        text: |
+          Sacrae nobis, quaesumus, Domine, observationis jejunia: et piae
+          conversationis augmentum, et tuae propitiationis continuum praestent
+          auxilium. Per Dominum nostrum.
       - name: Lesson
         source: scripture
         verses:
@@ -6062,12 +6268,15 @@ sections:
           ref: Psalm 39:2-4
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 109, no. 704; artifact PDF p. 190. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 25442-25446; 1922 Mame printed
+          p. 138, artifact PDF p. 252.
+        text: |
+          Haec hostia, Domine, quaesumus, emundet nostra delicta: et, ad sacrificium
+          celebrandum, subditorum tibi corpora mentesque sanctificet. Per Dominum
+          nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
       - name: Communion
         incipit: Laetabimur in salutari tuo
         source: scripture
@@ -6079,12 +6288,14 @@ sections:
           ref: Psalm 19:6
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 109, no. 706; artifact PDF p. 190. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 25458-25461; 1922 Mame printed
+          p. 138, artifact PDF p. 252.
+        text: |
+          Hujus nos, Domine, perceptio sacramenti mundet a crimine: et ad caelestia
+          regna perducat. Per Dominum.
     - key: lent-4-wednesday
       name: Wednesday of the Fourth Week of Lent
       registry: '1962-T-lent-4-wednesday'
@@ -6117,12 +6328,15 @@ sections:
           ref: Psalm 33:2
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 109, no. 709; artifact PDF p. 190. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 25513-25519; 1922 Mame printed
+          p. 139, artifact PDF p. 253.
+        text: |
+          Deus, qui et justis praemia meritorum, et peccatoribus per jejunium veniam
+          praebes: miserere supplicibus tuis; ut reatus nostri confessio indulgentiam
+          valeat percipere delictorum. Per Dominum.
       - name: First Lesson
         source: scripture
         verses:
@@ -6196,12 +6410,16 @@ sections:
           ref: Psalm 65:8-9, 20
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 112, no. 718; artifact PDF p. 193. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 25778-25783; 1922 Mame printed
+          p. 142, artifact PDF p. 256.
+        text: |
+          Supplices te rogamus, omnipotens Deus: ut his sacrificiis peccata nostra
+          mundentur; quia tunc veram nobis tribuis et mentis et corporis sanitatem.
+          Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat
+          in unitate.
       - name: Communion
         incipit: Lutum fecit ex sputo Dominus
         source: scripture
@@ -6213,12 +6431,15 @@ sections:
           ref: John 9:11
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 112, no. 720; artifact PDF p. 193. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 25794-25799; 1922 Mame printed
+          p. 142, artifact PDF p. 256.
+        text: |
+          Sacramenta, quae sumpsimus, Domine Deus noster: et spiritualibus nos
+          repleant alimentis, et corporalibus tueantur auxiliis. Per Dominum nostrum
+          Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
     - key: lent-4-thursday
       name: Thursday of the Fourth Week of Lent
       registry: '1962-T-lent-4-thursday'
@@ -6238,12 +6459,15 @@ sections:
           ref: Psalm 104:3-4
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 112, no. 723; artifact PDF p. 193. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 25839-25847; 1922 Mame printed
+          p. 139, artifact PDF p. 253.
+        text: |
+          Praesta, quaesumus, omnipotens Deus: ut, quos jejunia votiva castigant, ipsa
+          quoque devotio sancta laetificet; ut, terrenis affectibus mitigatis,
+          facilius caelestia capiamus. Per Dominum.
       - name: Lesson
         source: scripture
         verses:
@@ -6284,12 +6508,15 @@ sections:
           ref: Psalm 69:2-4
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 113, no. 728; artifact PDF p. 194. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 25969-25973; 1922 Mame printed
+          p. 144, artifact PDF p. 258.
+        text: |
+          Purifica nos, misericors Deus: ut Ecclesiae tuae preces, quae tibi gratae
+          sunt, pia munera deferentes, fiant expiatis mentibus gratiores. Per Dominum
+          nostrum.
       - name: Communion
         incipit: Domine, memorabor justitiae tuae solius
         source: scripture
@@ -6301,12 +6528,15 @@ sections:
           ref: Psalm 70:16-18
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 113, no. 730; artifact PDF p. 194. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 25986-25993; 1922 Mame printed
+          p. 144, artifact PDF p. 258.
+        text: |
+          Caelestia dona capientibus, quaesumus, Domine: non ad judicium provenire
+          patiaris, quae fidelibus tuis ad remedium providisti. Per Dominum nostrum
+          Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
     - key: lent-4-friday
       name: Friday of the Fourth Week of Lent
       registry: '1962-T-lent-4-friday'
@@ -6326,12 +6556,15 @@ sections:
           ref: Psalm 18:15
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 114, no. 733; artifact PDF p. 195. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 26027-26032; 1922 Mame printed
+          p. 144, artifact PDF p. 258.
+        text: |
+          Deus, qui ineffabilibus mundum renovas sacramentis: praesta, quaesumus; ut
+          Ecclesia tua et aeternis proficiat institutis, et temporalibus non
+          destituatur auxiliis. Per Dominum.
       - name: Lesson
         source: scripture
         verses:
@@ -6384,12 +6617,14 @@ sections:
           ref: Psalm 17:28, 32
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 116, no. 739; artifact PDF p. 197. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 26264-26268; 1922 Mame printed
+          p. 147, artifact PDF p. 261.
+        text: |
+          Munera nos, Domine, quaesumus, oblata purificent: et te nobis jugiter
+          faciant esse placatum. Per Dominum.
       - name: Communion
         incipit: Videns Dominus flentes sorores Lazari
         source: scripture
@@ -6407,12 +6642,14 @@ sections:
           ref: John 11:33, 35, 43-44, 39
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 116, no. 741; artifact PDF p. 197. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 26292-26299; 1922 Mame printed
+          p. 147, artifact PDF p. 261.
+        text: |
+          Haec nos, quaesumus, Domine, participatio sacramenti: et a propriis reatibus
+          indesinenter expediat, et ab omnibus tueatur adversis. Per Dominum.
     - key: lent-4-saturday
       name: Saturday of the Fourth Week of Lent
       registry: '1962-T-lent-4-saturday'
@@ -6437,12 +6674,15 @@ sections:
           ref: Psalm 77:1
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 116, no. 744; artifact PDF p. 197. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 26331-26336; 1922 Mame printed
+          p. 148, artifact PDF p. 262.
+        text: |
+          Fiat, Domine, quaesumus, per gratiam tuam fructuosus nostrae devotionis
+          affectus: quia tune nobis proderunt suscepta jejunia, si tuae sint placita
+          pietati. Per Dominum.
       - name: Lesson
         source: scripture
         verses:
@@ -6481,12 +6721,14 @@ sections:
           ref: Psalm 17:3
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 117, no. 749; artifact PDF p. 198. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 26447-26456; 1922 Mame printed
+          p. 149, artifact PDF p. 263.
+        text: |
+          Oblationibus nostris, quaesumus, Domine, placare susceptis: et ad te nostras
+          etiam rebelles compelle propitius voluntates. Per Dominum.
       - name: Communion
         incipit: Dominus regit me
         source: scripture
@@ -6498,12 +6740,14 @@ sections:
           ref: Psalm 22:1-2
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        notes: >-
+          Printed locus printed p. 117, no. 751; artifact PDF p. 198. Preexisting
+          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
+          Pustet Ratisbon 1862 at 1862 text-layer lines 26467-26470; 1922 Mame printed
+          p. 149, artifact PDF p. 263.
+        text: |
+          Tua nos, quaesumus, Domine, sancta purificent: et operatione sua tibi
+          placitos esse perficiant. Per Dominum.
     - key: passion-sunday
       name: First Sunday of the Passion
       registry: '25'
