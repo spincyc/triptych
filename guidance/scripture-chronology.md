@@ -1407,6 +1407,115 @@ source. Check for them by name.
 | `tools/tpt proper-chronology annotations --document <id> --provider <provider> --profile <id> --format text\|json\|tex` | project one proper's relation-aware chronology deterministically? |
 | `tools/tpt proper-chronology annotations --document <id> --provider <provider> [--profile <default-id>] --write\|--check` | write or verify that proper's generated TeX annotations under the declared publication profile? |
 
+### 16.1 Complete operational examples
+
+The proper projection is one full command, not an editorial reconstruction.
+For Proper 55 its complete plain-text output is:
+
+```console
+$ ./tools/tpt proper-chronology annotations --document liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost --provider gpt --profile catholic-comprehensive-v1 --format text --plain
+introit
+  Composition: Before c. 165 B.C.
+epistle
+  Composition: Preferred A.D. 58; alternatives A.D. 49-50, c. A.D. 53-54, A.D. 56, A.D. 57-58.
+gradual
+  Composition: Before c. 165 B.C.
+alleluia
+  Composition: Before c. 165 B.C.
+gospel
+  Composition -- disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished.
+  Event: A.D. 27.
+offertory
+  Composition: Before c. 165 B.C.
+communion
+  Composition -- disputed: c. A.D. 90-100; A.D. 96-100.
+  Event: A.D. 28.
+```
+
+The strict distinct-content gate proves that every textual locus the tracked
+witnesses and concordances can enumerate has a positional date or bound. This
+is the complete output; the named unenumerable systems are part of the result,
+not a footnote hidden by the tool. In both coverage blocks the tab-delimited
+fields are shown with tabs expanded to spaces for readability:
+
+```console
+$ ./tools/tpt scripture-chronology coverage --profile catholic-comprehensive-v1 --universe distinct-content --require-date --plain
+profile catholic-comprehensive-v1
+universe distinct-scripture-content
+verses 37171
+runs 1964
+status attestation-only 1792
+status composition-only 22692
+status dated 12687
+status not-alignable 0
+status research-pending 0
+status textually-distinct 0
+status undated-in-tradition 0
+relation composition 27692
+relation final-formation 1249
+relation historical-setting 2934
+relation narrated-event 7977
+relation prophecy-given 1801
+relation prophetic-referent 297
+relation retrospective-event 413
+relation superscription-setting 277
+relation textual-attestation 2489
+relation utterance 1476
+system greek 1356
+system vulgate 35809
+system world-english-catholic 6
+missing-dates 0
+universe-limitation date_completeness_scope enumerated-loci-only
+universe-limitation note missing_dates and --require-date apply only to loci enumerated by tracked witnesses and concordances
+unenumerable-system nab this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
+unenumerable-system nova-vulgata this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
+unenumerable-system septuagint this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
+multiple-relations 8841
+event-assertions 12687
+alternatives 14309
+```
+
+The address-universe companion checks alternate printed numberings as separate
+addresses. Its complete output is:
+
+```console
+$ ./tools/tpt scripture-chronology coverage --profile catholic-comprehensive-v1 --universe addresses --require-date --plain
+profile catholic-comprehensive-v1
+universe supported-scripture-addresses
+verses 42587
+runs 2308
+status attestation-only 1796
+status composition-only 26418
+status dated 14373
+status not-alignable 0
+status research-pending 0
+status textually-distinct 0
+status undated-in-tradition 0
+relation composition 33104
+relation final-formation 1249
+relation historical-setting 4191
+relation narrated-event 7991
+relation prophecy-given 1801
+relation prophetic-referent 532
+relation retrospective-event 488
+relation superscription-setting 553
+relation textual-attestation 2493
+relation utterance 1528
+system greek 2156
+system hebrew 2528
+system vulgate 35809
+system world-english-catholic 2094
+missing-dates 0
+universe-limitation date_completeness_scope enumerated-loci-only
+universe-limitation note missing_dates and --require-date apply only to loci enumerated by tracked witnesses and concordances
+unenumerable-system nab this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
+unenumerable-system nova-vulgata this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
+unenumerable-system septuagint this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
+multiple-relations 10527
+event-assertions 14373
+alternatives 14696
+```
+
 `make check-scripture-chronology` runs `validate` and `check`, and is part of
 `make check`. The focused tests are `tools/tests/test_chronology.py`.
 

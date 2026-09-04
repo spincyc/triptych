@@ -1,8 +1,30 @@
 {
   "name": "worker-result",
   "description": "Structured result from a linear or revision worker stage",
-  "required_fields": ["stage", "iteration", "disposition", "summary"],
-  "valid_dispositions": ["PASS", "BLOCKED"],
+  "required_fields": [
+    "stage",
+    "iteration",
+    "disposition",
+    "summary"
+  ],
+  "valid_dispositions": [
+    "PASS",
+    "BLOCKED"
+  ],
   "finding_fields": [],
-  "optional_fields": ["artifact_path", "notes"]
+  "optional_fields": [
+    "artifact_path",
+    "notes",
+    "finding_dispositions"
+  ],
+  "finding_disposition_fields": [
+    "id",
+    "outcome"
+  ],
+  "finding_disposition_enums": {
+    "outcome": [
+      "repaired",
+      "not-repaired"
+    ]
+  }
 }

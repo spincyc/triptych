@@ -46,8 +46,64 @@ accepted work. Focus on the specific findings forwarded to you.
 
 ## Result
 
-Return a worker result with `disposition: "PASS"`, the artifact path, and a
-summary listing each finding addressed and what was changed.
+Return a worker result with `disposition: "PASS"`, the artifact path, a
+summary listing each finding addressed and what was changed, and
+`finding_dispositions` accounting for every blocking finding in
+`PRIOR_FINDINGS`.
+
+### `finding_dispositions`: one entry per finding you were given
+
+```json
+{
+  "finding_dispositions": [
+    {"id": "CON-CIT-003", "outcome": "repaired"},
+    {"id": "CON-PRO-001", "outcome": "not-repaired",
+     "note": "Rewritten in main.tex; the synthesis edition says it again."}
+  ]
+}
+```
+
+This stage is one that reports repairs, so the contract in the result-format
+fragment above is yours: every blocking id of `PRIOR_FINDINGS` exactly once,
+with a `note` on each `not-repaired`, and nothing that was not forwarded. The
+report is required and checked whichever stage sent you the findings — the
+`content-preflight` gate as well as `content-evaluation`.
+
+**Report `not-repaired` when you did not clear it.** This is the part of the
+result that most needs your honesty, and it is the part it is easiest to
+round upward on. You have just spent a stage inside the leaf, you made
+changes for the finding, the passage reads better than it did — and you are
+still not sure the defect is gone. That is `not-repaired`, and saying so
+costs the run nothing it should not cost. Repaired findings cost nothing,
+fresh findings raised against your changed document cost nothing, and a
+finding you attempted and could not clear is the one thing that tells the
+engine the loop is not converging. An optimistic report does not buy the
+document more iterations; it buys a run that cannot tell repair from
+repetition, and it has already cost one production its central defect,
+reported repaired in three consecutive rounds and present in the leaf at the
+end of all three.
+
+Where the findings came from the `content-preflight` gate, the gate's own
+budget does not read your report — it counts the check ids that refuse the
+leaf again, because a check is a program and a repeat there is a measurement.
+Report honestly there all the same: the report is validated either way, and a
+gate finding you could not clear is exactly what the next reader needs.
+
+Two cases to name plainly, because both are `not-repaired` and both look like
+something else:
+
+- You repaired the canonical prose and could not find, or could not fix, the
+  parallel sentence in the other edition. The finding is not cleared: one
+  edition still publishes it.
+- You made a change that satisfies the letter of `required_result` and you do
+  not believe it removed the defect the finding describes. Say so in the
+  note. A reviser's doubt about its own repair is evidence, and this field is
+  the only place it survives the stage.
+
+Where a finding was out of reach altogether — a finding against
+`research/scope.md`, which this stage may not touch — return `BLOCKED` as
+below rather than reporting it `not-repaired` and passing: blocking says at
+once that revision is the wrong stage for it.
 
 Return `disposition: "BLOCKED"` instead when a finding cannot be addressed
 from this stage: a finding against `research/scope.md` is the standing case,

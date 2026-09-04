@@ -241,6 +241,34 @@ class CarriedFindingTests(SynthesisToAuthorMixin, RoutingCase):
         self.assertEqual(len(self.ids_at(run_id, "CARRIED_FINDINGS")), 3)
 
 
+class FindingIdentityJoinTests(RoutingCase):
+    """Lane-local validity cannot permit an ambiguous joined identity."""
+
+    def test_fanout_join_rejects_a_cross_lane_id_collision(self) -> None:
+        run_id = self.drive_to(EVALUATION)
+        before = copy.deepcopy(self.engine.load_state(run_id))
+        submissions = self.content_submissions(run_id, {
+            CONTENT_LANES[0]: [
+                blocking("CON-DUP-001", RESEARCH, "research owns this")
+            ],
+            CONTENT_LANES[1]: [
+                blocking("CON-DUP-001", AUTHORING, "authoring owns this")
+            ],
+        })
+
+        with self.assertRaisesRegex(
+            WorkflowError,
+            r"findings\[1\]\.id duplicates findings\[0\]\.id",
+        ):
+            self.engine.advance(run_id, lane_results=submissions)
+
+        self.assertEqual(
+            self.engine.load_state(run_id),
+            before,
+            "a refused joined result must leave run state untouched",
+        )
+
+
 class TheRunThatShouldNotHaveBlockedTests(SynthesisToAuthorMixin, RoutingCase):
     """Run b68cca80edb75854's own blocking-finding history, replayed.
 
@@ -257,6 +285,16 @@ class TheRunThatShouldNotHaveBlockedTests(SynthesisToAuthorMixin, RoutingCase):
     raised it wrote into the finding that it was "my lane's miss at iterations
     0 and 1 and not a defect introduced by the CON-EVI-002 repair". The old
     budget counted three failures and blocked, with four of five lanes passing.
+
+    That fix charged repetition and read repetition off finding ids, and run
+    `90dcdddcb6780e60` then showed why an id cannot carry that weight: a lane
+    is given an empty `PRIOR_FINDINGS` and told not to read earlier results,
+    so it cannot know which ids an earlier iteration used, and collision is
+    guaranteed. The budget now charges what a reviser reports it could not
+    repair. This history repairs everything it is given every time, so it
+    charges only its first failure and reaches a fourth evaluation — the same
+    conclusion the id rule reached here, by a route that does not depend on
+    lanes minting ids they have no way to coordinate.
     """
 
     HISTORY = (
@@ -293,9 +331,10 @@ class TheRunThatShouldNotHaveBlockedTests(SynthesisToAuthorMixin, RoutingCase):
         self.assertEqual(state["stage_failures"][EVALUATION], 3,
                          "three consecutive failures, as before")
         self.assertEqual(
-            state["stage_repeats"][EVALUATION], 2,
-            "the first, and the one repeating CON-EVI-002; the round that "
-            "moved from CON-EVI-002 to CON-EVI-008 was new work")
+            state["stage_repeats"][EVALUATION], 1,
+            "only the first failure, which has no repair report behind it; "
+            "every revision in this history reported the findings it was "
+            "given as repaired, and a repair that worked is progress")
 
     def test_the_same_history_would_have_blocked_before(self):
         """The old rule, stated as arithmetic, against the same three rounds.
@@ -822,15 +861,14 @@ class OwnerChangeIsNotARepeatTests(RoutingCase):
             "both rounds are still consecutive failures, and still bounded "
             "by max_total_iterations")
 
-    def test_the_same_id_to_the_same_owner_is_still_charged(self):
+    def test_the_same_id_to_the_same_owner_is_still_charged_without_a_report(self):
+        """The owner-aware fallback still bounds a non-reporting route."""
         run_id = self.drive_to(EVALUATION)
         for _ in range(2):
             out = self.evaluate(
-                run_id, {self.PROFILE: [blocking("CON-PRO-001", AUTHORING)]})
-            self.assertEqual(out["stage"], REVISION)
-            self.engine.advance(
-                run_id, result_path=self.worker_pass(run_id, REVISION))
-            self.engine.advance(run_id, run_gate=True)
+                run_id, {self.CITATION: [blocking("CON-CIT-007", RESEARCH)]})
+            self.assertEqual(out["stage"], RESEARCH)
+            self.round_trip_through_research(run_id)
         self.assertEqual(
             self.engine.load_state(run_id)["stage_repeats"][EVALUATION], 2,
             "unrepaired, to the same owner, twice: that is the repetition the "
@@ -865,17 +903,16 @@ class OwnerChangeIsNotARepeatTests(RoutingCase):
         same owner rather than as a change, or every such stage would have
         quietly lost its budget.
         """
-        run_id = self.drive_to(EVALUATION)
+        state = {}
+        stage = {"id": "probe-gate", "type": "gate", "max_iterations": 3}
+        result = {"findings": [{
+            "id": "probe-check", "severity": "blocking",
+            "location": "probe", "problem": "still broken",
+            "required_result": "fix it",
+        }]}
         for _ in range(2):
-            self.engine.advance(run_id, lane_results=self.content_submissions(
-                run_id, {self.PROFILE: [dict(
-                    blocking("CON-PRO-009", AUTHORING),
-                    repair_target=AUTHORING)]}))
-            self.engine.advance(
-                run_id, result_path=self.worker_pass(run_id, REVISION))
-            self.engine.advance(run_id, run_gate=True)
-        self.assertEqual(
-            self.engine.load_state(run_id)["stage_repeats"][EVALUATION], 2)
+            self.engine._failure_budget_spent(state, stage, result)
+        self.assertEqual(state["stage_repeats"]["probe-gate"], 2)
 
 
 class CompoundRequiredResultTests(unittest.TestCase):

@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
-audited_on = "2026-08-27"
-publication_snapshot = "sha256:a7cd8d54b3022268f03db4ec28ed47b3abc896769b134e7fec8066ed3350531e"
-classification_snapshot = "sha256:947741b21e9ef91a2686af27406dceff40aa9ad8362d467423fd5e5053401dba"
+audited_on = "2026-09-04"
+publication_snapshot = "sha256:168fef2b2f57e2096153dc9e900e08f9abbbbcb91c7222e146085a20513ae021"
+classification_snapshot = "sha256:f2671a96f8df33ecc908a5c6d28a79cfbb073ba8ca13b89a8675ce984eea19a0"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -139,6 +139,10 @@ source_categories = ["finding-aid", "historical-primary", "liturgical", "magiste
 [[classifications]]
 document = "liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost"
 source_categories = ["finding-aid", "historical-primary", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
 
 [[classifications]]
 document = "liturgy/roman-rite/1962/reference/assembling-the-mass"

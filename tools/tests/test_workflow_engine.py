@@ -169,6 +169,7 @@ class PropersWorkflowTests(unittest.TestCase):
         # test run of the suite would delete it.
         self.runs = _private_runs_dir(self)
         self.engine.runs_dir = self.runs
+        self.engine.standing_findings_root = self.runs / "standing"
 
     def tearDown(self):
         shutil.rmtree(self.runs, ignore_errors=True)

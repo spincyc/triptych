@@ -19,6 +19,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -376,29 +377,43 @@ class ProductionProvenanceTests(unittest.TestCase):
         edition silently lost its "Catalogued in" link.
         """
         tool = _load_tool()
-        by_leaf: dict[str, list] = {}
-        for document in _corpus.documents(extents=False):
-            by_leaf.setdefault(document.leaf, []).append(document)
-        catalogued = {
-            work["leaf"]: work["catalog"] for work in self.catalogue["works"]
-        }
-        mixed = 0
-        for leaf, editions in by_leaf.items():
-            stated = {document.catalog for document in editions if document.catalog}
-            with self.subTest(leaf=leaf):
-                self.assertEqual(catalogued[leaf], stated.pop() if stated else None)
-            if stated is not None and any(
-                document.catalog is None for document in editions
-            ) and catalogued[leaf]:
-                mixed += 1
-        self.assertGreater(
-            mixed,
-            0,
-            "no work in this corpus pairs a catalogued edition with an "
-            "uncatalogued one, so this test proves nothing; find one or "
-            "construct it",
+        catalog = "articles/faith/README.md"
+        unpublished = SimpleNamespace(
+            leaf="articles/faith/a-work-with-two-editions", catalog=None
         )
+        published = SimpleNamespace(leaf=unpublished.leaf, catalog=catalog)
+
+        self.assertEqual(
+            tool.work_catalog((unpublished, published)),
+            catalog,
+            "an earlier unpublished edition must not erase its published sibling",
+        )
+        self.assertEqual(
+            tool.work_catalog((published, unpublished)),
+            catalog,
+            "provider order must not decide whether the work is catalogued",
+        )
+        self.assertIsNone(tool.work_catalog((unpublished,)))
         self.assertIsNone(tool.work_catalog(()))
+
+    def test_a_held_edition_advertises_no_unpublished_web_route(self) -> None:
+        held = [
+            edition
+            for work in self.catalogue["works"]
+            for edition in work["editions"]
+            if edition.get("status") == "hold"
+        ]
+        self.assertTrue(
+            held,
+            "the corpus has no held edition, so this regression proves nothing",
+        )
+        for edition in held:
+            with self.subTest(provider=edition["provider"], title=edition["title"]):
+                self.assertNotIn(
+                    "web",
+                    edition,
+                    "a held page is not copied into the public artifact",
+                )
 
     def test_the_catalogue_carries_the_caution_that_belongs_with_it(self) -> None:
         self.assertIn("never an authority", self.catalogue["advisory"])

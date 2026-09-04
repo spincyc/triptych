@@ -1727,7 +1727,7 @@ release attachment, announcement, or promotion.
 | `library/novus-ordo-liturgy.md` | `7815a99b97a19541247e0b9ca4c32443e13cc3c98a5ee2a23dd29666d9f77c7f` |
 | `library/prayer.md` | `052c883da951a6089c0f1da44b9554653adcb440ead314cc36c350297d7ddb20` |
 | `library/scripture.md` | `739ced41934e834916f3c33e831c616708eaa4f7ba7f863e2ec9299cc4878570` |
-| `library/traditional-latin-mass.md` | `2b8169c28722bb0a716803e6344b909236238dcdf72ca32e91ad3872387e1b81` |
+| `library/traditional-latin-mass.md` | `1a87e7e859aead6cbfafba9dc4daca1527099cf69174c65437721af8be5de9f3` |
 | `pdf/reading-plans/narrative-spine-full-account-douay-rheims.pdf` | `cfd84b8ea305e3e4d033209964f982720e853b9419604c6a9f12770d53e7d117` |
 | `pdf/reading-plans/narrative-spine-full-account-king-james-version.pdf` | `746e90d1e15ed79f31eaf2283461bcd7007a0513faae2501522dcf914bbe31d4` |
 | `pdf/reading-plans/narrative-spine-landmarks-douay-rheims.pdf` | `f63fdea277cf4a259885ab174520264b80e685d4d647a24ff27591ef8a008259` |
@@ -14082,7 +14082,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-4.json` | `7f1956b102a7b765dc36210f5557ad25f07d075c8edcc87a3acc85cd3a03473d` |
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-5.json` | `61abb15daa555ada778b2eeb6137cbc6114102586c9cc2a27d5e4863521de0e3` |
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-6.json` | `54408d9f5e1c8b684850b05976d6e3ac9ee3b88b6194c37c7e1cf83d52256d28` |
-| `src/web/data/structure/documents/corpus.json` | `5806761da3fe8f85e8f7b87fd4cb6125106e2544c4e918b5a0dee6d233f28535` |
+| `src/web/data/structure/documents/corpus.json` | `fc703a1bc6d39dd8c143e6578162d87411108ac46c73f3e974cf7a299edd8f56` |
 | `src/web/data/structure/ordinary/index.json` | `b248eefcc0b073e43dd4c0d168007cd8d09fc5f28bd2fc633d98e2f4ba9e4846` |
 | `src/web/data/structure/ordinary/postconciliar.json` | `7714e4f1c328e4adad95afb3387e81b0cc44731977bfe5866a2ae2a2a597c2b6` |
 | `src/web/data/structure/ordinary/roman-1962.json` | `2c707b7d0ac3b61602533a57a26989042af43358e1d1dc7ca58aee286b827341` |
@@ -23410,7 +23410,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/text/passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.visitatione-beatae-mariae-virginis-secret.json` | `8d37bcfd80e14d1980f3ff2d4b3f20e519da9e5c72783ce07ce5125b17247739` |
 | `src/web/data/structure/sources/text/passage.westcott-and-hort.the-new-testament-in-the-original-greek.introduction-and-appendix-1882.appendix-p71-lk-24.12.json` | `199d42eced334a709244d53f41cafdd57ee93cd352aad1273287b48ce5ba6bf7` |
 | `src/web/data/structure/sources/text/passage.william-smith.dictionary-of-greek-and-roman-antiquities.1875-lacuscurtius-web-2026-07-25.sv-mantele.json` | `5e9590fc1d25d8018dc0fc12d78e539d017b66527b2857a5ba554aa026979736` |
-| `tools/public-alpha` | `b525f09a8e56a47f4750be931963290639e75e563e5c61a8122f2a34069baab5` |
+| `tools/public-alpha` | `804f228b7199f965019eba1f6ee3b6eb009661cc613d4167a397563826048a65` |
 | `web/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.md` | `6349355c26491b0292f854a8ac2da3fceba601432e92770d3db57c3821bca039` |
 | `web/claude/articles/canon-law/natural-positive-divine-human-law.md` | `7a82d2ac4232a176381d488d0be7c8a23a15b860428025236b495322ac55281b` |
 | `web/claude/articles/faith/against-the-instrumentalists.md` | `309ab5bf2c00ce7ad98bec3200025af2bb88f5a0717e353e89547ef88a3e4be1` |
@@ -23445,6 +23445,7 @@ release attachment, announcement, or promotion.
 | `web/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.md` | `bbbfb7e9b74bfa789026a7905c2a10f63ca1d4696456d1226873fe9c987fa33d` |
 | `web/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.md` | `55f7946e62097218b53b5509de4d16e863d539493f263e596a1eb6b98f4abb6b` |
 | `web/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.md` | `22e3c49ef99e58b056efc49cb1b5b470308754445905fc027261fbecbae44e48` |
+| `web/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost.md` | `5890bfc402fd5bb3dfc6429cad037ae6a8ded0a66a8fcbae4709940382224d9d` |
 | `web/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.md` | `1f66021138967318b2574c636b0486a15af13cc32b77bb7eaf0459f44f5d7f37` |
 | `web/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.md` | `04dc4a29dc8e4edb554aaefb017bf6f01b0d3602749d6b9e1ee2c5d788d6b4a0` |
 | `web/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice.md` | `1c657ac2ad531ce52d4e33816a9052820916f30158442d5af885e8d0668ce351` |

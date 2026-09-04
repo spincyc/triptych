@@ -36,22 +36,55 @@ trap 'rm -rf "$sandbox"' EXIT INT TERM
 # --list is the enumeration every other assertion is written against.
 run_tool --list >"$sandbox/first.txt"
 listed="$(wc -l <"$sandbox/first.txt" | tr -d ' ')"
-[ "$listed" = 11 ] || fail "--list named $listed checks, expected 11"
+[ "$listed" = 13 ] || fail "--list named $listed checks, expected 13"
 run_tool --list >"$sandbox/second.txt"
 cmp -s "$sandbox/first.txt" "$sandbox/second.txt" || fail "--list is not byte-stable"
 sort -c "$sandbox/first.txt" || fail "--list is not in sorted order"
 
 # Every published 1962 proper leaf that carries a component manifest. These
-# are documents the whole evaluation loop has already accepted, so a check
-# that refuses one is refusing correct work.
+# are documents the whole evaluation loop has already accepted, so a structural
+# check that refuses one is refusing correct work.
+#
+# Two checks are held out of this loop, and the reason is a finding rather than
+# an exemption. `house-voice` and `proposal-fields` screen reader-facing prose
+# against `guidance/editorial.md` and the profile, and the corpus does not
+# currently satisfy either: house-voice refuses eight of the twelve leaves and
+# proposal-fields two, published ones among them. Every refusal inspected is a
+# form the guidance names by example -- retrieval mechanics printed in the body
+# of published leaf 52, five proposals in gpt leaf 52 that state no "what the
+# element-by-element reading misses" field at all -- so the honest reading is
+# that these checks found a habit the evaluation loop never screened for, not
+# that they are wrong. Which way that gets settled is the maintainer's, and
+# recorded in PROJECT-WORK.md. Until it is, asserting that they pass the corpus
+# would assert something false, and dropping them from the tool would lose what
+# they found.
+#
+# Being held out of the corpus loop is exactly why each of them gets the pair
+# this file promises, over the synthetic probe leaf further down: a corpus
+# count moves whenever a leaf is edited, and a rule change has to face a test.
+prose_checks="house-voice proposal-fields"
+
+structural_checks() {
+	while read -r check; do
+		case " $prose_checks " in
+		*" $check "*) continue ;;
+		esac
+		printf '%s\n' "$check"
+	done <"$sandbox/first.txt"
+}
+
 leaves=0
 for provider in claude gpt; do
 	for leaf in "$repo/src/$provider"/liturgy/roman-rite/1962/propers/*/*/; do
 		[ -f "$leaf/proper-components.toml" ] || continue
 		slug="${leaf#"$repo/src/$provider/"}"
 		slug="${slug%/}"
-		run_tool --provider "$provider" --document "$slug" >/dev/null ||
-			fail "published leaf refused: src/$provider/$slug"
+		structural_checks | while read -r check; do
+			[ "$check" = provenance-matches-run ] && continue
+			run_tool --provider "$provider" --document "$slug" \
+				--check "$check" >/dev/null ||
+				fail "published leaf refused by $check: src/$provider/$slug"
+		done
 		leaves=$((leaves + 1))
 	done
 done
@@ -62,31 +95,74 @@ done
 # holds the leaf's provenance record against the run producing it, and the run
 # that produced a published leaf is over. It is exercised below, over a
 # synthetic leaf whose record can be written to state a run.
-while read -r check; do
+structural_checks | while read -r check; do
 	[ "$check" = provenance-matches-run ] && continue
 	run_tool --provider claude --document "$ninth" --check "$check" >/dev/null ||
 		fail "$check refused a published leaf when run alone"
-done <"$sandbox/first.txt"
+done
 
-# The whole preflight, with no check named, runs the nine the tree can answer
-# and leaves that one out rather than passing it for want of an answer.
-run_tool --provider claude --document "$ninth" >"$sandbox/sweep.txt" ||
-	fail "the whole preflight refused a published leaf"
+# The whole preflight, with no check named, runs everything the tree can answer
+# and leaves that one out rather than passing it for want of an answer. Run
+# over a leaf that satisfies the prose checks as well, since the sweep names no
+# check and so runs them too.
+clean="liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost"
+run_tool --provider gpt --document "$clean" >"$sandbox/sweep.txt" ||
+		fail "the whole preflight refused a published leaf"
 if grep -q provenance-matches-run "$sandbox/sweep.txt"; then
 	fail "the sweep reported a check it cannot answer"
 fi
 
+# Both prose checks refuse a real leaf and accept another, which is the pair
+# this file asserts of every other check. A screen that accepted everything
+# would satisfy every "does it pass" assertion above and gate nothing.
+for check in $prose_checks; do
+	run_tool --provider gpt --document "$clean" --check "$check" >/dev/null ||
+		fail "$check refused the leaf it is supposed to accept"
+done
+reject --provider claude \
+	--document liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost \
+	--check house-voice
+reject --provider gpt \
+	--document liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost \
+	--check proposal-fields
+
 # --- A synthetic leaf, so each refusal can be produced one at a time -------
 
 tree="$sandbox/tree"
+# The library validates every record it loads and refuses one that is not at
+# a canonical manifest path, so these fixtures live where a real record lives:
+# works/<responsible>/<work>/, editions/<edition>/, and artifacts/passages
+# below that.
+probe_work="$tree/src/sources/works/catholic-church/missale-romanum"
+probe_edition="$probe_work/editions/probe-edition"
 mkdir -p "$tree/src/claude/probe/research" \
-	"$tree/src/sources/works/catholic-church/missale-romanum" \
-	"$tree/src/sources/works/probe-rights" \
+	"$probe_edition/artifacts/douay" \
+	"$probe_edition/artifacts/nabre" \
+	"$probe_edition/passages" \
 	"$tree/src/sources/corpora"
 
-cat >"$tree/src/sources/works/catholic-church/missale-romanum/work.toml" <<'TOML'
-id = "work.catholic-church.missale-romanum"
+# The source library validates every record it loads, so these fixtures have
+# to satisfy its current required-field sets, not the ones they were written
+# against. They fell behind a schema change and `bindings-valid` had been
+# refusing this synthetic leaf outright since -- masked, because the stale
+# check count above failed first.
+cat >"$probe_work/work.toml" <<'TOML'
+schema = 1
 record_type = "work"
+id = "work.catholic-church.missale-romanum"
+title = "Missale Romanum"
+responsible = "Catholic Church"
+work_type = "liturgical-book"
+TOML
+
+cat >"$probe_edition/edition.toml" <<'TOML'
+schema = 1
+record_type = "edition"
+id = "edition.probe.probe-edition.1749"
+work_id = "work.catholic-church.missale-romanum"
+title = "A probe edition"
+language = "en"
+publication = "1749"
 TOML
 
 # One public-domain artifact and one restricted one, the restricted one
@@ -95,38 +171,71 @@ public_artifact="artifact.english-college-of-douay.douay-rheims-bible.challoner-
 restricted_passage="passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.usccb-web.galatians"
 restricted_artifact="artifact.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.usccb-web.galatians"
 
-cat >"$tree/src/sources/works/probe-rights/douay.toml" <<TOML
+printf 'O Lord our Lord, how admirable is thy name.\n' \
+	>"$probe_edition/artifacts/douay/text.txt"
+douay_sha="$(python3 -c 'import hashlib,sys;print(hashlib.sha256(open(sys.argv[1],"rb").read()).hexdigest())' "$probe_edition/artifacts/douay/text.txt")"
+douay_size="$(wc -c <"$probe_edition/artifacts/douay/text.txt" | tr -d ' ')"
+cat >"$probe_edition/artifacts/douay/artifact.toml" <<TOML
+schema = 1
 record_type = "artifact"
 id = "$public_artifact"
+edition_id = "edition.probe.probe-edition.1749"
+artifact_type = "text"
+media_type = "text/plain"
 storage = "tracked"
+path = "src/sources/works/catholic-church/missale-romanum/editions/probe-edition/artifacts/douay/text.txt"
+sha256 = "$douay_sha"
+byte_size = $douay_size
+retrieved = "2026-09-04"
+provenance = "Written by this smoke test as a probe."
 rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "published 1749, public domain in the United States"
 TOML
 
-cat >"$tree/src/sources/works/probe-rights/nabre-artifact.toml" <<TOML
+cat >"$probe_edition/artifacts/nabre/artifact.toml" <<TOML
+schema = 1
 record_type = "artifact"
 id = "$restricted_artifact"
+edition_id = "edition.probe.probe-edition.1749"
+artifact_type = "text"
+media_type = "text/plain"
 storage = "restricted"
 rights_status = "restricted"
+rights_jurisdiction = "United States"
+rights_basis = "in copyright; reproduced nowhere in this repository"
 TOML
 
-cat >"$tree/src/sources/works/probe-rights/nabre-passage.toml" <<TOML
+cat >"$probe_edition/passages/galatians.toml" <<TOML
+schema = 1
 record_type = "passage"
 id = "$restricted_passage"
+edition_id = "edition.probe.probe-edition.1749"
 artifact_id = "$restricted_artifact"
+locus = "Gal. 5:16-24"
+states = ["cataloged"]
+context = "A probe passage, reproduced nowhere."
 TOML
 
 write_bindings() {
 	cat >"$tree/src/claude/probe/research/source-bindings.toml" <<TOML
 schema = 1
 record_type = "bindings"
+document = "probe"
 
 [[bindings]]
 source_id = "$public_artifact"
 role = "translation-control"
+loci = ["Ps. 8:2"]
+states = ["cataloged"]
+context = "The English printed in this probe is this witness's words."
 
 [[bindings]]
 source_id = "$restricted_passage"
 role = "${1:-context}"
+loci = ["Gal. 5:16-24"]
+states = ["cataloged"]
+context = "Named as context only; no bytes of it are reproduced here."
 TOML
 }
 
@@ -269,6 +378,94 @@ reject_probe --check restricted-not-reproduced
 rm "$tree/src/claude/probe/format.tex"
 write_leaf "$good_translation" "$good_id"
 
+# --- The two prose checks, one rule at a time ------------------------------
+#
+# The corpus loop above holds these two out, so until now nothing isolated a
+# single rule: a rule change could only be judged against a corpus statistic,
+# and the statistic moves whenever a leaf is edited. Below, each of them
+# accepts the probe and then refuses it for exactly one thing.
+
+# house-voice: the work in the subject position of its own sentence. The
+# appended section is what ends the exempt References region above it; a
+# sentence appended INSIDE References would prove nothing, that section being
+# qualification by design.
+write_leaf "$good_translation" "$good_id"
+probe --check house-voice >/dev/null ||
+	fail "the synthetic leaf does not keep the house voice as written"
+cat >>"$tree/src/claude/probe/main.tex" <<'TEX'
+
+\section*{Reception}
+Augustine reads the psalm as the cry of the pilgrim Church. This guide has
+composed, translated, adapted and paraphrased nothing.
+TEX
+reject_probe --check house-voice
+probe --check references-used >/dev/null ||
+	fail "a house-voice defect broke a check that is not about the voice"
+
+# And the same words in a relative clause hanging off a source, which is a
+# denominator and a rights basis and not a subject. A screen that refuses this
+# tells a reviser to delete the ground of the publication's own lawfulness;
+# `guidance/editorial.md` says this check "reports a sentence to rewrite,
+# never a sentence to delete".
+write_leaf "$good_translation" "$good_id"
+cat >>"$tree/src/claude/probe/main.tex" <<'TEX'
+
+\section*{Reception}
+The Introit is printed in the Pustet Missal of Ratisbon, 1862, which this
+repository tracks as public-domain text, and no Collect of any of the fifteen
+identities this repository has collated asks for food or clothing.
+TEX
+probe --check house-voice >/dev/null ||
+	fail "house-voice refused a denominator and a rights basis"
+write_leaf "$good_translation" "$good_id"
+
+# proposal-fields: the profile requires anchors plus four fields for every
+# exploratory proposal. The title carries a macro and the last field is headed
+# `Disconfirming condition`, because both are forms the published leaves use
+# and both were unreadable to an earlier version of this check.
+add_proposal() {
+	fourth="${1:-What the ordinary reading misses}"
+	closing='\end{proposal}'
+	if [ "${2:-closed}" = open ]; then
+		closing=''
+	fi
+	cat >>"$tree/src/claude/probe/main.tex" <<TEX
+
+\\section*{The Propers: Interpretive Possibilities}
+Everything below is exploratory editorial and AI proposal.
+
+\\begin{proposal}{The Introit's \\latin{Deus} and the Collect's petition}
+\\pfield{Anchors}{Introit \\cue{Intr.} and Collect \\cue{Coll.}}
+\\pfield{Mechanism}{One address, made twice in two grammatical registers.}
+\\pfield{Fruit}{The day's prayer is read as a single act.}
+\\pfield{$fourth}{Element by element they are two prayers and not one.}
+\\pfield{Disconfirming condition}{The Collect is older than this formulary's
+use of it.}
+$closing
+TEX
+}
+
+write_leaf "$good_translation" "$good_id"
+add_proposal
+probe --check proposal-fields >/dev/null ||
+	fail "a proposal stating its anchors and all four fields was refused"
+
+# Exactly one thing broken: a heading of the author's own devising in place of
+# the fourth field. It reads on the page exactly like the field it replaced.
+write_leaf "$good_translation" "$good_id"
+add_proposal "What this proposal adds"
+reject_probe --check proposal-fields
+probe --check references-used >/dev/null ||
+	fail "a missing proposal field broke a check that is not about proposals"
+
+# A proposal the check cannot read is an error and not a skip: the count it
+# prints says of every proposal it managed to parse that it states the five
+# fields, and a proposal walked past would be reported as read.
+write_leaf "$good_translation" "$good_id"
+add_proposal "What the ordinary reading misses" open
+reject_probe --check proposal-fields
+write_leaf "$good_translation" "$good_id"
+
 # A leaf with no manifest at all cannot have its relations checked, and says
 # so rather than passing over nothing.
 write_leaf "$good_translation" "$good_id"
@@ -397,6 +594,24 @@ reject_bound() {
 	fi
 }
 
+# The provenance record is written here rather than edited in place, because
+# what the copied leaf happens to state is whatever production last ran over
+# it -- it has since been re-authored by `proper-finish` -- and a fixture that
+# greps for one version silently stops testing anything when that changes.
+
+state_production() {
+	metadata="$chrono/src/gpt/$fourteenth/generation-metadata.tex"
+	rest="$(grep -v AIGenerationProvenance "$metadata")"
+	{
+		printf '%s\n' "\\AIGenerationProvenance{$1}{$2}{unknown}{unknown}{unknown}{unknown}"
+		printf '%s\n' "$rest"
+	} >"$metadata.new"
+	mv "$metadata.new" "$metadata"
+}
+
+# A leaf produced before the contract binds is reported out of scope rather
+# than refused: the work was correct when it was done.
+state_production proper 16
 # The copied leaf is made to state `proper` v16, immediately before the
 # chronology contract binds, so all three checks report it out of scope rather
 # than refusing work that predates the rule.
@@ -407,10 +622,16 @@ bound --check chronology-annotations-current >/dev/null ||
 bound --check chronology-claims-supported >/dev/null ||
 	fail "a leaf published before the contract was refused"
 
-# Bind it: the leaf now says the version that carries the contract.
-sed -i.bak 's/{proper}{16}/{proper}{17}/' \
-	"$chrono/src/gpt/$fourteenth/generation-metadata.tex"
-rm -f "$chrono/src/gpt/$fourteenth/generation-metadata.tex.bak"
+# The rescue pipeline binds at every version of itself, because it was written
+# after the contract and runs the same gate. A rule keyed on `proper` alone
+# read its provenance as no record at all and passed the leaf for want of an
+# answer.
+state_production proper-finish 1
+reject_bound --check chronology-record-current
+
+# Bind it as the full pipeline too: the leaf now says a version that carries
+# the contract.
+state_production proper 17
 
 # A bound leaf with no chronology record cannot have carried the corpus's ids.
 reject_bound --check chronology-record-current
@@ -426,6 +647,8 @@ bound --check chronology-record-current >/dev/null ||
 sed -i.bak 's/{proper}{17}/{proper}{24}/' \
 	"$chrono/src/gpt/$fourteenth/generation-metadata.tex"
 rm -f "$chrono/src/gpt/$fourteenth/generation-metadata.tex.bak"
+printf '%s\n' '\newcommand{\chronodate}[2]{#2}' >> \
+	"$chrono/src/gpt/$fourteenth/format.tex"
 reject_bound --check chronology-annotations-current
 "$tool" proper-chronology annotations --root "$chrono" --provider gpt \
 	--document "$fourteenth" --write >/dev/null ||

@@ -1804,6 +1804,33 @@ class PublicAlphaTest(unittest.TestCase):
         )
         self.assertNotIn("held-work", entries)
 
+    def test_verifier_rejects_an_excluded_web_route_in_copied_json(self) -> None:
+        self.add_unapproved_publication("held-work", "hold")
+        self.authorize_current_inputs()
+        publications = self.tool.validate_manifest(self.manifest)
+        output = self.tool.build_site(self.manifest, publications, preview=False)
+        leaked = output / "data/structure/documents/corpus.json"
+        leaked.parent.mkdir(parents=True)
+        leaked.write_text(
+            json.dumps({
+                "web": "web/gpt/held-work.html",
+                "status": "hold",
+            }) + "\n",
+            encoding="utf-8",
+        )
+        self.tool.write_checksums(output)
+
+        with self.assertRaises(self.tool.ReleaseError) as failure:
+            self.tool.verify_output(
+                self.manifest, publications, output, preview=False
+            )
+
+        self.assertIn(
+            "data/structure/documents/corpus.json: advertises excluded "
+            "publication held-work",
+            str(failure.exception),
+        )
+
     def test_alpha_does_not_require_unresolved_maturity_gate(self) -> None:
         self.add_unapproved_publication(
             "review-work",

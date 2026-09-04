@@ -17,26 +17,60 @@ Read the leaf's structure and its source records against the profile in
 12. Does the reader-facing prose state its findings, or does it repeatedly
     narrate how the editors reasoned, what principles guided inclusion, why
     caution was necessary, what methodology governs the section, or why an
-    interpretation is being presented at all? Weigh recurrence rather than a
-    single sentence: a claim-local qualification that keeps a claim accurate
-    is required by the profile, and so is the terminal apparatus. The habit
-    counts the same whether it is written as a sentence, a run-in label, a
-    standing per-entry field, or a table column. Read every reader-facing
-    section: the four senses, `Scriptural Date and Location`, `Themes and
-    Movement`, `Detailed Commentary`, the integrated commentary, the
-    source-grounded synthesis, `Notable and Quotable`, and the proposals of
-    `Interpretive Possibilities`. Out of scope, as qualification by design,
-    are `Appendix: Scope and Qualifications`, `References`, and — within
-    `Interpretive Possibilities` — the exploratory notice, the novelty
-    classification, and the mandated controlling-limit field, however it is
-    labelled. Page 2's required attribution, modern critical horizon,
-    uncertainty and claim-local sources are never a finding, and neither are
-    a gallery entry's required phrase, later user or work, exact locus and
-    turn in meaning; what is a finding in those two sections is the audit's
-    own apparatus printed for the reader — a dossier narrating the sheet's
-    conduct, or a standing `Control` or `Rights and limit` block under every
-    entry. A criterion 12 finding is `authoring`, and it is repaired by
-    rewriting the sentence, never by deleting what it was about.
+    interpretation is being presented at all? Criterion 12 above states the
+    boundary in full, and it is the boundary: the out-of-scope list is the
+    whole of it, recurrence rather than a single sentence is the test, and the
+    habit counts the same written as a sentence, a run-in label, a standing
+    per-entry field or a table column. A criterion 12 finding is `authoring`,
+    and it is repaired by rewriting the sentence, never by deleting what the
+    sentence was about.
+
+## Criterion 12's scope, and why this lane is told twice
+
+The sections criterion 12 names are where to start reading and not where to
+stop: a reader-facing section that list does not happen to name is in scope all
+the same. List the leaf's own inputs and read what it actually builds.
+
+The complete appointed text is spelled out there because a checklist like it
+once left that section out, and the omission put a real defect at the mercy of
+how one lane read a list. In run `90dcdddcb6780e60` this lane raised the
+section's English-gap blocks under criterion 12 while the fragment's list of
+sections did not name it and its never-a-finding exceptions did not cover it.
+The lane had to settle two questions the fragment left open — whether the
+section was in scope at all, and which half of an English-gap block the profile
+asks for — and it settled both correctly; the leaf was repaired. Nothing made
+that the only available reading. The same list read as a boundary excludes the
+section outright, a lane that read it that way would have been just as
+defensible, and the defect would have stood. The fragment was at fault, and it
+says one thing now.
+
+The terms are the terms of page 2 and the gallery. What the profile requires is
+narrow — `guidance/liturgy/roman-1962-propers.md` lines 225-227: where no
+public-domain English exists for an element, say so, give the Latin incipit,
+describe what the prayer asks, and supply no rendering of the project's own.
+Where a leaf goes further and states what the registered English leaves of the
+Latin unanswered, that is a fact about the two texts and never a finding. What
+is a finding is the block turning from the two texts to the guide's handling of
+them: `so they are printed whole with the sung portion marked`, `it stands
+bracketed above in the missal's own Latin and untranslated`, `the doxology cue
+is not translated here`. Say what the Latin has and the English has not, and
+the handling follows without narration. One such clause is not the defect; a
+block that narrates its own procedure at every element is.
+
+## Not yours: whether a proposal carries its mandated fields
+
+Whether a proposal carries the fields the profile mandates is criterion 5 and
+the synthesis-argument lane's. Your interest in those fields is register
+alone — the notice, the novelty classification and the controlling-limit field
+are out of scope for criterion 12 as qualification by design, and the
+mechanism, the fruit and the `misses` field are in scope for their register
+like any other prose. So a proposal printing `The control the corpus supplies`
+where the profile asks for `What the element-by-element reading misses` is that
+lane's finding and not yours, however plainly it reads as a departure from the
+profile you have open. Reading the profile more closely than the other lanes do
+is what this lane is for, which is exactly why this has to be said: the defect
+was reported to nobody for three iterations because that lane called it profile
+conformance and this lane called it criterion 5.
 
     Audit the structural labels separately from that recurrence judgment. A
     thesis may open directly as prose, but a reader-facing heading, box title,
@@ -62,11 +96,11 @@ in each finding the file the defect is in.
 
 Criteria 9 and 10 are judged from the leaf's structure and its source
 records. Criterion 12 is judged by reading the reader-facing prose itself:
-open the sources that carry the sections named above and read what they
-say, because a register that has moved into the body is visible nowhere
-else. The mechanical gates measure the rendered pages — build success,
-page counts, ordering, required blocks, undefined references — and you do
-not rediscover what they check.
+open every source either document inputs and read what it says, because a
+register that has moved into the body is visible nowhere else. The checklist
+above says where to start, not where to stop. The mechanical gates measure
+the rendered pages — build success, page counts, ordering, required blocks,
+undefined references — and you do not rediscover what they check.
 
 This lane reads the profile more closely than any other, so it is the lane
 most likely to find that the profile itself is at fault rather than the leaf.
@@ -86,5 +120,8 @@ rides alongside that pass.
 Return an evaluator result for this lane. `PASS` when none of the three is
 violated, `CHANGES_REQUIRED` with blocking findings when any is, `BLOCKED`
 when a finding cannot be resolved by revision.
+
+Record under `observations` anything real you saw that your own criteria do
+not reach, on the terms the fragments above set out.
 
 Finding IDs must use the `CON-PRO-` prefix and be stable across iterations.

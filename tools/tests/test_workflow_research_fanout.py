@@ -30,6 +30,7 @@ from _workflow import (  # noqa: E402
     HOST_MAX,
     PASS,
     PROGRAM,
+    REPAIRED,
     SINGLE,
     STRICT_UNION,
     WorkflowEngine,
@@ -187,6 +188,12 @@ class PropersCase(unittest.TestCase):
         self.addCleanup(shutil.rmtree, self.runs, ignore_errors=True)
         self.engine = WorkflowEngine(ROOT, ROOT / "workflows")
         self.engine.runs_dir = self.runs
+        # These runs drive published leaves in the real tree. The standing
+        # findings record is the engine's one write outside build/, so it is
+        # pointed somewhere disposable: a test suite must not leave a file in
+        # src/ for a leaf it only borrowed.
+        self.standing = self.runs / "standing"
+        self.engine.standing_findings_root = self.standing
         self.answers = self.runs / "answers"
         self.answers.mkdir(parents=True, exist_ok=True)
         # A gate check this harness cannot honestly satisfy, filtered out of
@@ -199,7 +206,7 @@ class PropersCase(unittest.TestCase):
         # test_workflow_content_preflight.py, over fixtures and over a real
         # run whose leaf does state another run. A test about the check
         # itself clears this set.
-        self.unsatisfiable_checks = {"provenance-matches-run"}
+        self.unsatisfiable_checks = {"provenance-matches-run", "house-voice"}
         self._pass_the_scope_gate()
 
     def _pass_the_scope_gate(self):
@@ -260,12 +267,26 @@ class PropersCase(unittest.TestCase):
         evaluator schema requires it. `research-synthesis` is an evaluator
         that also writes an artifact, so one shape answers both.
         """
-        packet = self.engine.load_state(run_id)["packet_hashes"][-1]
-        return self.write(name, {
+        state = self.engine.load_state(run_id)
+        packet = state["packet_hashes"][-1]
+        body = {
             "stage": packet["stage"], "iteration": packet["iteration"],
             "disposition": PASS, "summary": "probe", "findings": [],
             "artifact_path": "research/scope.md",
-        })
+        }
+        # A stage handed blocking findings must account for every one of them.
+        # The default probe repairs them all, which is what these tests model;
+        # a test about a repair that failed says so for itself.
+        declares = {
+            stage["id"]: stage.get("reports_repairs", False)
+            for stage in self.engine.load_workflow("proper")["stages"]
+        }.get(packet["stage"], False)
+        owed = state.get("findings_forwarded_ids", {}).get(packet["stage"], [])
+        if owed and declares:
+            body["finding_dispositions"] = [
+                {"id": fid, "outcome": REPAIRED} for fid in owed
+            ]
+        return self.write(name, body)
 
     def stage_type(self, stage_id: str) -> str:
         return {stage["id"]: stage["type"] for stage in
@@ -461,13 +482,35 @@ class TopologyTests(unittest.TestCase):
             version, RESEARCH_STAGE_VERSION,
             "a run bound to a version before `research` existed must fail "
             "closed, so the pipeline may never go back below that bump")
-        stated = re.search(
-            r"The `proper` workflow is at version (\d+)\.",
-            (ROOT / "workflows" / "OPERATOR.md").read_text(encoding="utf-8"))
-        self.assertIsNotNone(stated,
-                             "OPERATOR.md must state the workflow version")
-        self.assertEqual(int(stated.group(1)), version,
-                         "OPERATOR.md states a version the pipeline does not")
+        manual = (ROOT / "workflows" / "OPERATOR.md").read_text(
+            encoding="utf-8")
+        # Both pipelines, and anchored on the first statement in the file:
+        # the changelog below it repeats this sentence for every historical
+        # version, so a current-version sentence that stops matching does not
+        # fail here -- it silently starts reading an old entry. It did: a
+        # rewording to "at version 23, and `proper-finish` at version 2."
+        # dropped the period this pattern needs and the test read 12 out of
+        # the version-12 changelog entry.
+        for workflow_id in ("proper", "proper-finish"):
+            declared = json.loads(
+                (ROOT / "workflows" / "pipelines"
+                 / f"{workflow_id}.json").read_text(encoding="utf-8")
+            )["version"]
+            # Whitespace-tolerant: these manuals wrap at 79 columns, so the
+            # sentence splits wherever it happens to fall, and a pattern that
+            # cannot cross a newline fails for a reason that is not the one
+            # this test is about.
+            stated = re.search(
+                rf"The\s+`{workflow_id}`\s+workflow\s+is\s+at\s+version"
+                rf"\s+(\d+)\.", manual)
+            self.assertIsNotNone(
+                stated,
+                f"OPERATOR.md must state {workflow_id}'s version, in the form "
+                f"'The `{workflow_id}` workflow is at version N.'")
+            self.assertEqual(
+                int(stated.group(1)), declared,
+                f"OPERATOR.md states a {workflow_id} version the pipeline "
+                f"does not")
 
     def test_content_evaluation_fanout_is_unchanged(self):
         """Test 24."""

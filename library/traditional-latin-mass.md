@@ -70,6 +70,8 @@ editions are shown as `Planned`.
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost -->
 <!-- triptych-publication-id: claude:liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost -->
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost -->
+<!-- triptych-publication-id: claude:liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost -->
+<!-- triptych-publication-id: claude:liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost-synthesis -->
 <!-- triptych-publication-id: liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost -->
 
 | ID | Sunday | ChatGPT | Claude |

@@ -1,0 +1,45 @@
+\input{common/preamble}
+\input{liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/format}
+\input{liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/research/chronology-annotations}
+
+\ifdefined\TriptychSynthesisEdition
+  \hypersetup{
+    pdftitle={Fourteenth Sunday after Pentecost (Synthesis Edition)},
+    pdfsubject={Synthesis companion to the 1962 Roman Missal propers; complete appointed texts and the per-element reception sweep are omitted}
+  }
+\else
+  \hypersetup{
+    pdftitle={Fourteenth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)},
+    pdfsubject={Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives}
+  }
+\fi
+
+\begin{document}
+\hypersetup{pageanchor=true}
+
+\begin{deepstudy}
+\input{liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/00-map}
+\input{liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/10-date-location}
+\input{liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/20-themes}
+\label{triptych:brief-synthesis:next}%
+\ifdefined\TriptychSynthesisEdition
+\input{liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/synthesis/20-integrated-commentary}
+\else
+\input{liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/05-appointed-text}
+\input{liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/30-commentary}
+\fi
+\input{liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/35-source-grounded-synthesis}
+\input{liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/40-notable}
+\input{liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/50-interpretive}
+\input{liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/90-scope}
+\input{liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/99-references}
+% No \sectionguard here: the terminal colophon is an unbreakable minipage, and
+% demanding seven further baselines ahead of it pushes the whole block --- and
+% therefore the rights notice --- onto a page of its own, which the rights rule
+% forbids. The notice enlarges its own page and guards its own break.
+
+\input{liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/generation-metadata}
+\TriptychRightsNotice
+\end{deepstudy}
+
+\end{document}

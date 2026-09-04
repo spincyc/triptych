@@ -748,6 +748,15 @@ class BoundLeafTests(unittest.TestCase):
             r"\chronodate{gradual}{\chronologyannotation{epistle}}"))
         self.assertRefused(CLAIMS_CHECK, "annotation keys are ['epistle']")
 
+    def test_an_answerable_element_cannot_be_rendered_as_no_date(self):
+        """A carried current record makes stale negative prose a failure."""
+        self.bind()
+        self.write_annotations()
+        self.write_dossier(ANNOTATED.replace(
+            r"\chronodate{gradual}{\chronologyannotation{gradual}}",
+            r"\chronodate{gradual}{No date is available.}"))
+        self.assertRefused(CLAIMS_CHECK, "must use exactly one generated")
+
     def test_generated_annotations_replace_separately_authored_date_claims(self):
         self.bind()
         self.write_annotations()
