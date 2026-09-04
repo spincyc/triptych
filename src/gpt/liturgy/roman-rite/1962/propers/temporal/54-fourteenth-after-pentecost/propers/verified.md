@@ -16,8 +16,15 @@
   when counted from one.
 - **Image verification:** headings, references, wording, accents,
   punctuation, rank, Creed, Trinity Preface, and both boundaries were read
-  from page images on 2026-08-26 and rechecked on 2026-09-03. No unresolved
-  reading remains.
+  from page images on 2026-08-26 and rechecked on 2026-09-03. The source audit
+  corrected inherited `venefícia`, both Gradual occurrences of `confídere`,
+  Gospel `fœnum` and `fídei`, and Offertory `gustáte, et` to the facsimile's
+  `veneficia`, `confidere`, `fænum`, `fidei`, and `gustáte et`. The bare `fi`
+  forms follow the 500-ppi typical-edition image's ligature, with same-line
+  accented words as controls; `fænum` preserves the printed ligature and the
+  Offertory preserves the absence of a comma. These are glyph and punctuation
+  corrections to the transcription, not changes to the underlying appointed
+  words. No unresolved reading remains.
 - **Independent edition:** Benziger Brothers, New York, 1962, *editio iuxta
   typicam*, Internet Archive item
   `MissaleRomanum1962RomanMissalColorLatin`, printed pp. 389–391, leaves
@@ -44,6 +51,12 @@ The antiphon stops in v. 11 before the lowest-place comparison. The psalm
 verse stops in v. 3 before `cor meum et caro mea`; the published English
 preserves both boundaries.
 
+The Benziger OCR's `mfllia` corresponds to `míllia`, with double `l`, while
+the Vatican typical edition controls this guide's `mília`. The derivative's
+consistent distinction between `mfllia` for “thousands” and one-`l` `lília`
+makes the observation probably real, but the exact Benziger glyph was not
+settled by a targeted page-image audit and does not displace the typical text.
+
 ### 2. Collect — no. 1573
 
 Custódi, Dómine, quǽsumus, Ecclésiam tuam propitiatióne perpétua: et quia
@@ -58,7 +71,7 @@ Fratres: Spíritu ambuláte, et desidéria carnis non perficiétis. Caro enim
 concupíscit advérsus spíritum, spíritus autem advérsus carnem: hæc enim sibi
 ínvicem adversántur, ut non quæcúmque vultis, illa faciátis. Quod si spíritu
 ducímini, non estis sub lege. Manifésta sunt autem ópera carnis, quæ sunt
-fornicátio, immundítia, impudicítia, luxúria, idolórum sérvitus, venefícia,
+fornicátio, immundítia, impudicítia, luxúria, idolórum sérvitus, veneficia,
 inimicítiæ, contentiónes, æmulatiónes, iræ, rixæ, dissensiónes, sectæ,
 invídiæ, homicídia, ebrietátes, comessatiónes, et his simília: quæ prædíco
 vobis, sicut prædíxi: quóniam, qui tália agunt, regnum Dei non consequéntur.
@@ -71,10 +84,18 @@ crucifixérunt cum vítiis et concupiscéntiis.
 terms; SBLGNT v1.2 at Galatians 5:22–23 has nine, corroborated by RP2018 at the
 same locus. No numerical interpretation controls a published reading.
 
+The typical edition's `fi` ligature carries no acute over its `i` at the
+checked loci. Consequently `veneficia`, both occurrences of `confidere`, and
+`fidei` are deliberately bare. Same-line accented words remain the controls;
+this observation is limited to this face and these loci.
+
 ### 4. Gradual — Ps. 117:8–9 — no. 1575
 
-Bonum est confídere in Dómino, quam confídere in hómine. ℣. Bonum est speráre
+Bonum est confidere in Dómino, quam confidere in hómine. ℣. Bonum est speráre
 in Dómino, quam speráre in princípibus.
+
+Both occurrences of `confidere` are deliberately bare, as confirmed in the
+focused 500-ppi re-read.
 
 ### 5. Alleluia — Ps. 94:1 — no. 1576
 
@@ -95,12 +116,15 @@ in hórrea: et Pater vester cæléstis pascit illa. Nonne vos magis pluris estis
 illis? Quis autem vestrum cógitans potest adícere ad statúram suam cúbitum
 unum? Et de vestiménto quid sollíciti estis? Consideráte lília agri quómodo
 crescunt: non labórant, neque nent. Dico autem vobis, quóniam nec Sálomon in
-omni glória sua coopértus est sicut unum ex istis. Si autem fœnum agri, quod
+omni glória sua coopértus est sicut unum ex istis. Si autem fænum agri, quod
 hódie est, et cras in clíbanum míttitur, Deus sic vestit: quanto magis vos
-módicæ fídei? Nolíte ergo sollíciti esse, dicéntes: Quid manducábimus, aut
+módicæ fidei? Nolíte ergo sollíciti esse, dicéntes: Quid manducábimus, aut
 quid bibémus, aut quo operiémur? Hæc enim ómnia gentes inquírunt. Scit enim
 Pater vester, quia his ómnibus indigétis. Quǽrite ergo primum regnum Dei, et
 iustítiam eius: et hæc ómnia adiciéntur vobis.
+
+The `fi` ligature in `fidei` is deliberately bare, as confirmed in the focused
+500-ppi re-read.
 
 Credo.
 
@@ -110,10 +134,14 @@ Creed belongs to the Ordinary.
 
 ### 7. Offertory — Ps. 33:8–9 — no. 1578
 
-Immíttet Angelus Dómini in circúitu timéntium eum, et erípiet eos: gustáte,
-et vidéte, quóniam suávis est Dóminus.
+Immíttet Angelus Dómini in circúitu timéntium eum, et erípiet eos: gustáte et
+vidéte, quóniam suávis est Dóminus.
 
 The antiphon stops before the final beatitude of v. 9.
+
+`Angelus` is deliberately unaccented: this face sets no acute on the capital
+initial, while `Immíttet` and `Dómini` on the same line retain visible acutes.
+It must not be normalized to `Ángelus`.
 
 ### 8. Secret — no. 1579
 

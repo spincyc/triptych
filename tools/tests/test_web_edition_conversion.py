@@ -36,19 +36,36 @@ OTHER_CONTRIBUTION = (
 
 @unittest.skipUnless(HAS_PANDOC, "pandoc is not installed")
 class WebEditionConversionTests(unittest.TestCase):
-    def convert(self, body: str, metadata: str = CONTRIBUTION) -> str:
+    def convert(
+        self,
+        body: str,
+        metadata: str = CONTRIBUTION,
+        *,
+        nested_preamble: str | None = None,
+        componentized: bool = False,
+    ) -> str:
         """Convert a synthetic single-section leaf and return its Markdown."""
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             leaf = root / "src" / "test" / "studies" / "subject"
             leaf.mkdir(parents=True)
+            nested_input = ""
+            if nested_preamble is not None:
+                (leaf / "format.tex").write_text(nested_preamble, encoding="utf-8")
+                nested_input = "\\input{studies/subject/format}\n"
+            if componentized:
+                (leaf / "proper-components.toml").write_text(
+                    'schema = 1\nrecord_type = "proper-components"\n',
+                    encoding="utf-8",
+                )
             (leaf / "generation-metadata.tex").write_text(
                 rf"\AIDocumentRevisionTimestamp{{{TIMESTAMP}}}" + "\n" + metadata + "\n",
                 encoding="utf-8",
             )
             (leaf / "main.tex").write_text(
                 "\\input{common/preamble}\n"
-                r"\hypersetup{pdftitle={Subject},pdfsubject={A synthetic leaf}}"
+                + nested_input
+                + r"\hypersetup{pdftitle={Subject},pdfsubject={A synthetic leaf}}"
                 "\n\\begin{document}\n"
                 "\\begin{titlepage}\nDropped title page\n\\end{titlepage}\n"
                 "\\section{Body}\n" + body + "\n"
@@ -88,6 +105,21 @@ class WebEditionConversionTests(unittest.TestCase):
         )
         self.assertIn("Web alternative.", markdown)
         self.assertNotIn("Print-only wording.", markdown)
+
+    def test_componentized_web_selects_canonical_branch_in_nested_input(self) -> None:
+        markdown = self.convert(
+            r"\editionnote",
+            nested_preamble=(
+                "\\ifdefined\\TriptychSynthesisEdition\n"
+                "\\newcommand{\\editionnote}{Synthesis companion.}\n"
+                "\\else\n"
+                "\\newcommand{\\editionnote}{Canonical research edition.}\n"
+                "\\fi\n"
+            ),
+            componentized=True,
+        )
+        self.assertIn("Canonical research edition.", markdown)
+        self.assertNotIn("Synthesis companion.", markdown)
 
     def test_named_table_environment_keeps_its_header_and_every_row(self) -> None:
         markdown = self.convert(

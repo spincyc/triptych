@@ -12,6 +12,15 @@ source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b2219
 context = "The checksum-matched page images control the complete Latin formulary, rank, headings, references, Creed, Trinity Preface, and both occurrence boundaries."
 
 [[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-post-pentecosten-14-orations"
+loci = ["Dominica Decima Quarta post Pentecosten, Oratio no. 1573 at printed p. 395, Secreta no. 1579 and Postcommunio no. 1581 at printed p. 396; artifact PDF pp. 476-477"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-03"
+source_fingerprint = "sha256:82081bd46ca0b7660a8a769426a84a781ca54e099f68e09f33c5a6e9bb9d1f3b"
+context = "Exact target-edition passage controlling the three orations' accents, pointing, and conclusions."
+
+[[bindings]]
 source_id = "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu"
 loci = ["printed pp. 389-391, leaves n465-n467"]
 role = "direct-witness"
@@ -36,6 +45,14 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-09-03"
 source_fingerprint = "sha256:9ca7ab5661e37c9284364c248a4655dd4533897d30a32f5c7f9a39949e2284d6"
 context = "Publication-local public-domain antecedent for the complete appointed Latin. The whole PDF was reacquired and hash-matched before the three page images were visually collated. All ten elements, their order, scriptural references, the Gospel's caelestis after Pater vester, and the Communion's distinctive recasting predate 1962. Older i/j orthography, punctuation, abbreviated conclusions, optional seasonal orations, headings, and rank apparatus were not blended into the controlling 1962 transcription."
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.post-pentecosten-14-orations"
+loci = ["Dominica XIV. post Pentecosten, printed pp. 337-338; Collect at text-layer lines 50165-50176, Secret at 50294-50299, Postcommunion at 50311-50316"]
+role = "rights-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:3cfdf46179ee53b9c596bd95f11329d445d46566f19bfa8d0dbf420e7e1122dc"
+context = "Exact public-domain antecedent for the words of the three orations under 17 U.S.C. 103(b); it does not control target typography, accents, pointing, or conclusion length."
 
 [[bindings]]
 source_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.post-pentecosten-14"

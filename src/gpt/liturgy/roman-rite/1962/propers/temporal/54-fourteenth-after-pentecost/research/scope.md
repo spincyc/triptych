@@ -11,8 +11,10 @@ compiler.
 
 The appointed Latin and the historical English used by the publication have
 complete edition-identified controls and a recorded rights basis. The 1962
-facsimile controls the Latin wording and boundaries; the 1922 Mame Missal is
-the checked United States public-domain Latin antecedent; the 1861 Cummiskey
+facsimile controls the Latin wording and boundaries, with an exact registered
+passage for the three orations; the Pustet 1862 passage is their exact
+public-domain antecedent, and the 1922 Mame Missal is the checked United States
+public-domain antecedent for the complete formulary; the 1861 Cummiskey
 hand missal controls the English orations; and the registered
 Douay--Rheims/Challoner artifacts control the English scriptural passages.
 Historical English remains the wording of its own witness and is not described
@@ -33,8 +35,9 @@ The material below is ordered and used under the profile's evidence states.
 1. **Verified source text and textual observation.** The 1962 Missal and the
    registered Douay--Rheims/Challoner artifacts control the appointed wording,
    boundaries, complete scriptural contexts, and the Gospel-to-Communion
-   adaptation. The 1922 Mame and 1861 Cummiskey witnesses provide the recorded
-   publication and historical-English controls. (SCR-001--SCR-010, COV-001)
+   adaptation. The exact Pustet oration passage, the complete-formulary 1922
+   Mame witness, and the 1861 Cummiskey witness provide the recorded rights and
+   historical-English controls. (SCR-001--SCR-010, COV-001)
 2. **Checked quotation or paraphrase and documented historical orientation.**
    The patristic, medieval, Doctoral, liturgical-transmission, and Matthew
    testimony entries below are tied to identified works and exact loci. Their
@@ -611,10 +614,10 @@ is not manuscript evidence by itself. (LIT-008--LIT-010, COV-007)
   sourceable by exact editions and loci. Publication-local artifact bindings
   now cover both SBLGNT v1.2 and RP2018 at Galatians 5:22--23; no asymmetric
   binding gap remains. (COV-009)
-- The source graph validates, while the publication inventory snapshot is
-  stale against in-progress workflow edits and the source-family migration
-  unit remains pending. That state is operational provenance maintenance and
-  does not diminish a checked citation. (COV-010)
+- After the 2026-09-04 upstream reconciliation, the source graph validates and
+  the publication inventories and source-family migration ledger are refreshed
+  from the current corpus. The registered exact Pustet and 1962 oration passages
+  are represented in the publication-local source-use graph. (COV-010)
 - The Papias/Eusebius and Irenaeus paraphrases have direct Greek and
   Greek/ancient-Latin controls plus identified English witnesses at exact
   loci. Their absent exact local passage records are maintenance rather than
@@ -1208,9 +1211,8 @@ does not add a chronology assertion to the generated record.
   provenance-maintenance notes, not publication conditions. The SBLGNT and
   RP2018 Galatians 5:22--23 artifact bindings themselves are complete.
   (COV-002--COV-005, COV-009, COV-011)
-- The current source-inventory snapshot is stale against workflow edits and
-  its source-family review is pending. This is operational state only.
-  (COV-010)
+- The 2026-09-04 publication-inventory and source-family snapshots are current
+  with the reconciled corpus and workflow state. (COV-010)
 - The Introit and Alleluia cultural sweep returned the bounded negative in
   CUL-010. The Gradual railroad item remains a translation-variant reserve.
 - The Gospel/Communion's textual relation is source-grounded correspondence,
@@ -1326,11 +1328,9 @@ an escalation.
   exact loci and stated witness limits.
 - **Run `64a3442b73becfa5`, finding `CON-CIT-006`:** required narrowing the
   USCCB/NABRE reference to the actually used Galatians introduction and
-  removing unused Psalm, Matthew, and chapter-text loci. **Unresolved as an
-  authoring obligation:** COV-008 confirms the Galatians introduction as the
-  sole named limited USCCB dossier witness, and the section-coverage statement
-  carries the required narrowing forward. The present research does not turn
-  unused loci into used sources.
+  removing unused Psalm, Matthew, and chapter-text loci. **Resolved:** the
+  publication binding and reference list retain only the Galatians introduction;
+  no unused USCCB Psalm, Matthew, or chapter-text locus remains.
 - **Run `e44a018f52d39b23` (proper v18), finding `SYN-INFRA-001`:** required
   restoration of the research-synthesis worker after repeated HTTP 404
   failures and a fresh workflow run. **No longer applicable:** this fresh v20

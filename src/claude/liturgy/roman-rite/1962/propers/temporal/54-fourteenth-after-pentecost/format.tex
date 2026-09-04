@@ -18,7 +18,9 @@
 \newcommand{\work}[1]{\textit{#1}}
 
 % Sustained exposition uses a book-like measure within the shared page frame.
-% Tables and the fixed page-2 dossier keep their own declared widths.
+% Tables and the fixed page-2 dossier keep their own declared widths. The web
+% arm preserves the same text without emitting Pandoc fenced-div wrappers.
+\ifdefined\TriptychPrintEdition
 \newenvironment{readingmeasure}{%
   \begin{list}{}{%
     \setlength{\leftmargin}{1in}%
@@ -45,6 +47,10 @@
   }\item\relax
   \setlist[enumerate]{itemsep=0pt,topsep=0.3em,parsep=0pt}%
 }{\end{list}}
+\else
+\newenvironment{readingmeasure}{}{}
+\newenvironment{referencemeasure}{}{}
+\fi
 
 % The missal's versicle sign is not in the T1 encoding. It is reproduced as a
 % slashed V so the appointed text can be transcribed as printed rather than
@@ -106,16 +112,12 @@ answer the Latin.} #1\par}
 \newcommand{\correction}[2]{%
   \begin{studybox}{Correction --- #1}#2\end{studybox}}
 
-% Governing thesis for the thematic movement. Substantive content, permitted to
-% open the body of its own section.
-\newcommand{\movementthesis}[1]{%
-  \begin{studybox}{Governing thesis}#1\end{studybox}}
-
 % The exploratory-proposal notice and the proposals themselves. Every proposal
 % renders its anchors, mechanism, fruit and controlling limit as labelled
 % fields so no reader can mistake a proposal for a sourced finding. The box is
 % itself indivisible: an outer top-aligned minipage can put the title above the
 % physical page edge when TeX moves the unit to a fresh page.
+\ifdefined\TriptychPrintEdition
 \newtcolorbox{proposalbox}[1]{
   enhanced,
   breakable=false,
@@ -140,6 +142,11 @@ answer the Latin.} #1\par}
 \newenvironment{proposal}[1]{%
   \par\begin{proposalbox}{Editorial proposal --- #1}\small}{%
   \end{proposalbox}\par}
+\else
+\newenvironment{proposal}[1]{%
+  \begin{studybox}{Editorial proposal --- #1}\small}{%
+  \end{studybox}}
+\fi
 \newcommand{\pfield}[2]{\par\textbf{#1:} #2}
 
 % Notable-and-quotable gallery entry: appointed phrase, later user, locus and
@@ -151,10 +158,15 @@ answer the Latin.} #1\par}
 % The short Bosch entry must remain one visual unit. Keep this targeted rather
 % than making the whole gallery unbreakable, since longer entries should still
 % reflow instead of producing sparse pages.
+\ifdefined\TriptychPrintEdition
 \newenvironment{afterlifewhole}[1]{%
   \par\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}%
   \begin{massbox}{#1}\small}{%
   \end{massbox}\end{minipage}\par}
+\else
+\newenvironment{afterlifewhole}[1]{%
+  \begin{massbox}{#1}\small}{\end{massbox}}
+\fi
 
 % Two-tier page-2 dossier table at the profile's fixed measurements.
 \newenvironment{dossiertable}

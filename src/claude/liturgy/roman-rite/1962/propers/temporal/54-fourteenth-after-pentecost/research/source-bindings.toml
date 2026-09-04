@@ -43,6 +43,15 @@ source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b2219
 context = "The exact remote facsimile controls every Latin form, heading, scriptural reference, accent, punctuation mark, marginal number, rank and rubric published in this guide, and both formulary boundaries. The three PDF pages were rendered from the PDF's own embedded page images and read at 300 dpi for the whole page and at 500 dpi, the scan's native resolution, for every disputed letter, accent and point; no transcription, embedded text layer or web text was allowed to supply a reading. The retained copy used for the collation was hashed and matched this artifact's registered digest before any reading was taken from it. One mark on these pages is damaged and it is apparatus rather than text: the Gospel's marginal number, resolved to 1577 by the unbroken series 1572-1581 and not by a second witness. Green is not printed at this Mass and is recorded in verified.md as following RG 127 b, not as a reading of pp. 394-396."
 
 [[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-post-pentecosten-14-orations"
+loci = ["Dominica Decima Quarta post Pentecosten, Oratio no. 1573 at printed p. 395, Secreta no. 1579 and Postcommunio no. 1581 at printed p. 396; artifact PDF pp. 476-477"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-03"
+source_fingerprint = "sha256:82081bd46ca0b7660a8a769426a84a781ca54e099f68e09f33c5a6e9bb9d1f3b"
+context = "Exact target-edition passage controlling the three orations' accents, pointing, and conclusions."
+
+[[bindings]]
 source_id = "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu-ocr"
 loci = [
   "focused OCR text-layer block identified with Dominica XIV post Pentecosten and its surrounding Sunday boundaries; exact physical-line and page-to-line bounds remain unresolved",
@@ -50,7 +59,7 @@ loci = [
 role = "lead"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:5c2d162e9079b438862a80692742bb1e85a16c60e9730040aeef4a0275a32144"
-context = "An uncorrected optical text derivative of a second, independently published 1962 edition. It is the only Benziger witness read for this formulary: the sibling page-image artifact was not opened, which is weaker than the Thirteenth Sunday's record and is declared as such in the guide. All thirteen recorded Benziger divergences are therefore evidence about this text layer and not collated readings of the Benziger book; nothing was blended, and no Benziger form was substituted for a Vatican typical form. A focused excerpt of it is kept as propers/retrieved.txt as an unedited finding aid. Earlier audit notes assign conflicting physical-line and page-to-line bounds, so the exact locator remains unresolved and is not asserted here."
+context = "An uncorrected optical text derivative of a second, independently published 1962 edition. It is the only Benziger witness read for this formulary: the sibling page-image artifact was not opened, which is weaker than the Thirteenth Sunday's record and is declared as such in the guide. All fourteen recorded Benziger divergences are therefore evidence about this text layer and not collated readings of the Benziger book; nothing was blended, and no Benziger form was substituted for a Vatican typical form. A focused excerpt of it is kept as propers/retrieved.txt as an unedited finding aid. Earlier audit notes assign conflicting physical-line and page-to-line bounds, so the exact locator remains unresolved and is not asserted here."
 
 # --- Historical OCR leads and verified preexisting-material witness ---
 
@@ -65,6 +74,14 @@ role = "lead"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:efd4426beabe5385be4e5df4542255c488fe460dee069ab999231255702d5b0f"
 context = "Degraded, uncorrected OCR derivative consulted only as a finding aid. Its text layer appears to contain the target sequence and several other liturgical loci, but no page images were obtained or collated. These remain observations of the derivative, not assertions about the printed Pustet edition, and they support no textual, transmission, preexisting-material, or rights conclusion in the guide. No wording from this artifact is quoted."
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.post-pentecosten-14-orations"
+loci = ["Dominica XIV. post Pentecosten, printed pp. 337-338; Collect at text-layer lines 50165-50176, Secret at 50294-50299, Postcommunion at 50311-50316"]
+role = "rights-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:3cfdf46179ee53b9c596bd95f11329d445d46566f19bfa8d0dbf420e7e1122dc"
+context = "Exact public-domain antecedent for the words of the three orations under 17 U.S.C. 103(b); it does not control target typography, accents, pointing, or conclusion length."
 
 [[bindings]]
 source_id = "artifact.catholic-church.missale-romanum.venice-1570.missale-romanum-1570-text-563f4dd2"

@@ -161,6 +161,10 @@ omits the appointed-text component.
   for a particular civil year, commemorations, particular calendars, and
   celebration-mode branches are not verified here and are not part of this
   leaf.
+- **Focused accent recheck, 2026-09-03.** The 500-ppi typical-edition page
+  images confirm that this face leaves the `fi` ligature bare in `veneficia`,
+  both occurrences of `confidere`, and `fidei`. Same-line accented words were
+  used as controls. These corrections change no word, letter, or punctuation.
 
 ## Comparison with the Benziger 1962 OCR derivative
 
@@ -173,6 +177,7 @@ of here.
 
 | Element | Vatican editio typica, pp. 394–396 | Benziger editio iuxta typicam, apparent OCR-layer form | Character of the observation |
 | --- | --- | --- | --- |
+| Introit, Ps. 83:11 | `super mília` | OCR appears as `super mfllia` = `míllia` | Probably real: the same layer renders `lília` with one `l` and uses `mfllia` for “thousands” at all sixteen occurrences. It remains an OCR-layer observation, not a collated Benziger reading, because the registered page image was not opened. |
 | Introit close | `℣. Glória Patri.` and stop | OCR appears to append `℣. Glória Patri. Protéctor.` | The derivative appears to add an antiphon-repetition cue. Whether the printed edition carries it is unverified; if it does, the difference affects a singer's cue rather than the antiphon text. |
 | Collect | `mortálitas; tuis semper auxíliis` | OCR appears as `mortalitas; tuis semper auxiliis` | After the derivative's expected loss of accents, it appears to agree in wording and to retain the semicolon. No printed Benziger reading is established. |
 | Epistle, Gal. 5:21 | `invídiæ, homicídia, ebrietátes` | OCR appears as `invidiee, homicidia,ebrietates` | Recognition noise is sufficient to explain the form; no printed difference can be inferred. |
@@ -269,9 +274,10 @@ Gálatas.` · `Gal. 5, 16-24`.
 **Checked:** 2026-08-26, the vice-list and the fruit-list re-read at 500 dpi
 word by word, since both are long strings of near-identical endings.
 
-**Notes.** `veneficia` is printed **without** an accent, alone among the
-polysyllables in the vice-list; read at 500 dpi, the `fi` is a plain ligature
-and carries no acute. It is reproduced unaccented, as printed.
+**Notes.** The typical edition's `fi` ligature carries no acute over its `i`.
+Consequently `veneficia`, both occurrences of `confidere` in the Gradual, and
+`fidei` at Mt. 6:30 are deliberately bare. Same-line accented words remain the
+controls; no word or letter changes.
 
 The liturgical incipit `Fratres:` does more work here than the same word does
 on the Thirteenth Sunday. There it was prefixed to a verse that began
@@ -298,11 +304,12 @@ and so does the Catholic Public Domain Version; the two tracked Douay texts drop
 even that. `Alleluja` is a liturgical rubric-word rather than an ascription and
 is not numbered separately, so the inference about the numbering is unchanged.
 
-> Bonum est confídere in Dómino, quam confídere in hómine. ℣. Bonum est speráre
+> Bonum est confidere in Dómino, quam confidere in hómine. ℣. Bonum est speráre
 > in Dómino, quam speráre in princípibus.
 
 **Witness:** Vatican typical edition, printed p. 395, left column, below the
-Epistle; PDF p. 476. **Checked:** 2026-08-26 at 500 dpi.
+Epistle; PDF p. 476. **Checked:** 2026-08-26 and focused 2026-09-03 re-read at
+500 dpi, confirming both occurrences of bare `confidere`.
 
 **Note.** Both verses are the Clementine's exactly, word for word and in order,
 with nothing added, dropped, or transposed — an unusually clean case, and one
@@ -346,7 +353,7 @@ Matthǽum.` · `Mt. 6, 24-33`.
 > crescunt: non labórant, neque nent. Dico autem vobis, quóniam nec Sálomon in
 > omni glória sua coopértus est sicut unum ex istis. Si autem fænum agri, quod
 > hódie est, et cras in clíbanum míttitur, Deus sic vestit: quanto magis vos
-> módicæ fídei? Nolíte ergo sollíciti esse, dicéntes: Quid manducábimus, aut
+> módicæ fidei? Nolíte ergo sollíciti esse, dicéntes: Quid manducábimus, aut
 > quid bibémus, aut quo operiémur? Hæc enim ómnia gentes inquírunt. Scit enim
 > Pater vester, quia his ómnibus indigétis. Quǽrite ergo primum regnum Dei, et
 > iustítiam eius: et hæc ómnia adiciéntur vobis.
@@ -357,7 +364,8 @@ the last Gospel line).
 **Witness:** Vatican typical edition, printed p. 395, right column; PDF p. 476.
 **Checked:** 2026-08-26 at 500 dpi for `nec Sálomon` (the PDF's own OCR layer
 misreads it `nee`), `adícere`, `fænum`, and every question mark in the
-passage — there are six, and they carry the argument.
+passage — there are six, and they carry the argument. A focused 2026-09-03
+re-read confirms that `fidei` is deliberately bare.
 
 **Notes.** The pericope is the second half of the Sermon's treatment of
 mammon and anxiety: v. 24 states the alternative, and v. 33 resolves it. The
@@ -398,6 +406,10 @@ to differ.
 lowercase `angelus`; the antiphon adds a comma before `quóniam`; and it stops
 at `Dóminus`, leaving off v. 9b, `beátus vir qui sperat in eo`. Nothing else
 departs from the Clementine.
+
+`Angelus` is also deliberately unaccented. This face does not set an acute on
+the capital initial; `Immíttet` and `Dómini` on the same line retain their
+visible acutes. It must not be normalized to `Ángelus`.
 
 **Verification result:** collated; no unresolved issue.
 
@@ -549,9 +561,11 @@ exists and falls nowhere near them: `spíritu` for the tracked Clementine's
 eight appointed biblical blocks against the tracked Clementine that preserved
 case and punctuation and normalised nothing but accents — 5 difference-runs in
 the Epistle, 8 in the Gospel, 0 in the Gradual, and every one of the rest
-already in the table above. **Nothing in the appointed Latin changes**: rows 19
-and 20 are divergences of this formulary from its Bible text that this record
-had not recorded, not corrections to what the missal prints. The caveat at row
+already in the table above. **At that 2026-08-31 audit, nothing in the
+appointed Latin changed**: rows 19 and 20 are divergences of this formulary
+from its Bible text that this record had not recorded, not corrections to what
+the missal prints. The later 2026-09-03 accent correction is recorded above.
+The caveat at row
 1's kind governs row 19 as well: capitalisation in a modern electronic
 Clementine is that e-text's convention and capitalisation in the 1962 missal is
 that book's, and neither is evidence of what the Latin intends.
@@ -587,8 +601,17 @@ transmission history, or that the typical edition's own contribution is public
 domain. Its historical orthography, punctuation, conclusions, rank, and
 optional seasonal orations are not blended into the controlled 1962 text.
 
-Two earlier OCR observations remain recorded as leads, not as support for this
-rights conclusion:
+The current source library now distinguishes the degraded whole-book OCR from
+the exact Pustet oration passage over retained bytes. Passage
+`passage.catholic-church.missale-romanum.pustet-ratisbon-1862.post-pentecosten-14-orations`
+supplies a public-domain antecedent for the words of the Collect, Secret, and
+Postcommunion under the same §103(b) policy. It does not control the target
+edition's accents, pointing, or conclusions. The Mame page images remain the
+broader verified witness for the complete ten-element formulary and recast
+Communion.
+
+Two earlier whole-book OCR observations remain recorded as leads, not as
+support for claims outside checked passages:
 
 **Separate historical page-image check.** The current research brief records
 direct inspection of Venice 1570 at printed pp. 161--162, Internet Archive
@@ -605,9 +628,9 @@ guide's preexisting-material and rights control.
   `Dominica XIV. post Pentecosten` at text-layer lines 50147–50323, the
   uncorrected derivative appears to contain the ten element incipits and
   references, including the Communion recasting. No page images were obtained
-  or collated. These are observations of a degraded optical layer, not
-  assertions about the printed book, and establish no textual, transmission,
-  preexisting-material, or rights conclusion.
+  or collated. Outside the separately registered exact oration passage, these
+  remain observations of a degraded optical layer and establish no textual,
+  transmission, preexisting-material, or rights conclusion.
 - **Venice, 1570** — artifact
   `artifact.catholic-church.missale-romanum.venice-1570.missale-romanum-1570-text-563f4dd2`,
   `storage = "tracked"`, `rights_status = "public-domain"`. In the Sunday
