@@ -99,7 +99,17 @@ Integrate the joined research into one research brief that the
    each selected candidate's evidence through as that lane recorded it: both
    texts and loci, relationship strength, wording check, context, translation
    and rights status, cultural payoff, limiting qualification, and material
-   negative results. You select; you do not go looking.
+   negative results. For every online witness or corroborant, the evidence you
+   carry through includes the exact page or work title, responsible creator or
+   institution, edition or datestamp where one exists, stable public URL,
+   access date, and exact usable locus. Write those values into
+   `research/scope.md` itself; a generic source label or a direction to "carry
+   the link from the brief" does not supply a title or link that the brief does
+   not actually contain. Before `PASS`, compare every selected audit entry
+   against its lane finding and account for the complete citation bundle. If a
+   necessary field is absent from the lane result, return `CHANGES_REQUIRED`
+   against `cultural-afterlife`; if the lane supplied it, preserve it in the
+   brief. You select; you do not go looking.
 9. Settle your disposition before you write anything. Only a `PASS` writes
    the brief: on `CHANGES_REQUIRED` or `BLOCKED`, leave `research/scope.md`
    exactly as you found it rather than leaving a partial brief behind for a

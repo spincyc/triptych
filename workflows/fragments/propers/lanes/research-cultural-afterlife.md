@@ -28,6 +28,15 @@ edition. Describe an echo as an echo unless dependence is documented, keep
 protected excerpts brief, and treat quote aggregators and attribution sites
 as leads only.
 
+For every online witness or corroborant you retain, put the complete citation
+bundle in the finding's `evidence`: exact page or work title, responsible
+creator or institution, edition or datestamp where one exists, stable public
+URL, access date, and exact page, time, section, entry, or other usable locus.
+Do not reduce one of those records to a generic label such as "official lyric
+page", "concert account", "film synopsis", or "catalog record". If a field
+cannot be established, name the missing field and limit or block the candidate
+accordingly; a later worker may not retrieve it for you.
+
 Carry in each finding what the later `Notable-and-quotable audit` will
 need: both texts and loci, relationship strength, wording check, context,
 translation and rights status, cultural payoff, and limiting qualification.

@@ -28,6 +28,10 @@ from test_workflow_adversarial import (  # noqa: E402
 from test_workflow_research_fanout import DOC  # noqa: E402
 
 TAIL = DOC.rsplit("/", 1)[-1]
+NEW_TAIL = "68-workflow-document-probe"
+NEW_DOCUMENT = (
+    "liturgy/roman-rite/1962/propers/temporal/" + NEW_TAIL
+)
 
 ACTIONS = ("seed", "advance", "status", "replay", "intervene", "debt")
 
@@ -184,15 +188,13 @@ class ShorthandTests(unittest.TestCase):
         what does not.
         """
         with self.assertRaises(WorkflowError) as caught:
-            self.resolve("55-fifteenth-after-pentecost")
+            self.resolve(NEW_TAIL)
         message = str(caught.exception)
         self.assertIn("does not exist yet is named in full", message)
-        self.assertIn(
-            "liturgy/roman-rite/1962/propers/temporal/"
-            "55-fifteenth-after-pentecost", message,
+        self.assertIn(NEW_DOCUMENT, message,
             "the full id is shown ready to copy")
         for parent in sorted({d.rsplit("/", 1)[0] for d in self.documents}):
-            self.assertIn(f"{parent}/55-fifteenth-after-pentecost", message)
+            self.assertIn(f"{parent}/{NEW_TAIL}", message)
 
     def test_a_full_id_that_does_not_exist_yet_still_seeds(self):
         """And the path it points at really works."""
@@ -201,13 +203,14 @@ class ShorthandTests(unittest.TestCase):
         self.addCleanup(shutil.rmtree, runs, ignore_errors=True)
         engine = WorkflowEngine(ROOT, ROOT / "workflows")
         engine.runs_dir = runs
-        new = ("liturgy/roman-rite/1962/propers/temporal/"
-               "55-fifteenth-after-pentecost")
-        self.assertNotIn(new, self.documents)
-        self.assertEqual(engine.resolve_document(self.workflow, new), new)
+        self.assertNotIn(NEW_DOCUMENT, self.documents)
+        self.assertEqual(
+            engine.resolve_document(self.workflow, NEW_DOCUMENT),
+            NEW_DOCUMENT)
         seeded = json.loads(
-            engine.seed_bytes("proper", {"proper": new, "provider": "gpt"}))
-        self.assertEqual(seeded["normalized_args"]["proper"], new)
+            engine.seed_bytes(
+                "proper", {"proper": NEW_DOCUMENT, "provider": "gpt"}))
+        self.assertEqual(seeded["normalized_args"]["proper"], NEW_DOCUMENT)
         self.assertEqual(seeded["stage"], "seed")
 
     def test_an_unregistered_id_is_refused_before_a_run_exists(self):
@@ -287,16 +290,16 @@ class ShorthandTests(unittest.TestCase):
         self.assertIn("did you mean:", message)
         self.assertIn(DOC, message)
 
-    def test_a_new_name_from_the_same_family_suggests_nothing(self):
-        """These ids share most of their text, so similarity alone is noise.
+    def test_a_new_well_formed_name_suggests_nothing(self):
+        """A registered prefix and similar grammar do not imply a typo.
 
-        A new ordinal in an existing series can score highly against its
-        neighbours; a real typo leads by substantially more. Suggesting on
-        similarity alone offered wrong answers to someone naming a document
-        that simply did not exist yet.
+        A new well-formed name can score highly against existing ids; a real
+        typo leads by substantially more. Suggesting on similarity alone
+        offered wrong answers to someone naming a document that simply did
+        not exist yet.
         """
-        for token in ("55-fifteenth-after-pentecost",
-                      "55-fifteenth-after-penecost",
+        for token in (NEW_TAIL,
+                      NEW_TAIL.replace("document", "docment"),
                       "99-something-entirely-else"):
             with self.subTest(token=token):
                 with self.assertRaises(WorkflowError) as caught:

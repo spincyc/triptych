@@ -800,7 +800,26 @@ a re-entry, whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
-The `proper` workflow is at version 20. Version 20 closes the fresh-leaf gap in
+The `proper` workflow is at version 21. Version 21 closes the citation-handoff
+gap proved by run `dae51f4a7715c7f9`. The cultural-afterlife lane had gathered
+exact titles, institutions, stable URLs and loci for the retained online
+witnesses. Synthesis reduced those records to generic labels in the immutable
+brief while directing the author to carry stable links "from this brief". The
+citation evaluator then combined leaf omissions with those absent brief values
+in one `authoring` finding and said the brief held details it did not hold. The
+author correctly refused to retrieve around its immutable input and the run
+ended `BLOCKED`.
+
+The cultural lane now returns a complete citation bundle for every retained
+online witness and corroborant; synthesis must preserve each bundle in
+`research/scope.md` and compare it with the lane finding before `PASS`;
+content evaluation must find every requested value in the brief before naming
+`authoring`, and must split a mixed evidence-and-leaf defect by repair owner.
+The regression checks both the source fragments and the packets workers
+receive. A run seeded against version 20 or earlier fails closed; seed it
+again. A terminal v20 run is evidence, not a resumable v21 run.
+
+The `proper` workflow was at version 20. Version 20 closes the fresh-leaf gap in
 `resolve-context`. That stage runs before `source-audit`, which is ordinarily
 the first stage to create a new provider leaf. Version 19 invoked
 `proper-chronology record --write` while the leaf did not exist, treated the

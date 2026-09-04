@@ -247,7 +247,7 @@ A run records the digest at seed time, in both the manifest and the state, and
 every `advance` and `replay` recomputes it. If the workflow source has changed
 since the run was seeded, the run fails closed rather than continuing under
 guidance it never started with. A changed workflow means a new run. The
-`proper` workflow is at version 20: version 10 gave `content-evaluation` a
+`proper` workflow is at version 21: version 10 gave `content-evaluation` a
 third repair owner and inserted the `content-preflight` gate between
 `author-proper` and `content-evaluation`, version 11 made the iteration
 budget charge repetition rather than failure, carried a blocking finding to its
@@ -295,8 +295,11 @@ driver instructions beside the lane it belongs to, so that the one input a
 console still owned is recorded like the rest, and version 20 made
 `resolve-context` materialize the new leaf's `research/` directory before its
 required chronology write and fail closed if that write does not produce the
-record. A run seeded against version 19 or earlier fails closed and is seeded
-again.
+record, and version 21 made the online-citation evidence handoff lossless from
+the cultural-afterlife lane through synthesis, required evaluators to verify
+that every requested citation value is really in the immutable brief before
+assigning it to authoring, and required mixed-owner defects to be split. A run
+seeded against version 20 or earlier fails closed and is seeded again.
 `workflows/OPERATOR.md` carries the version history in full.
 
 ### Iteration budgets
