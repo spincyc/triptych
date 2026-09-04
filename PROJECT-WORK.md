@@ -423,6 +423,45 @@ not a finding against the repaired publication; the run directory remains
 untouched. A new seed must follow this audit-record commit so deterministic
 run identity cannot resolve to the terminal run.
 
+Fresh Claude run `aec04caee5ca1f29`, seeded from audit checkpoint
+`f7555d24093e8c1b6c62de6c0426e3fcefb24984`, is preserved as a fourth
+terminal `BLOCKED` audit. All 38 emitted packets have matching recorded
+results. The run passed authorization, context and source audit, its seven-lane
+research sweep and synthesis, six content evaluations with every intervening
+preflight, authoring and revision stage, the artifact build, and every
+mechanical gate. It then exhausted the visual repeat budget at the fourth
+evaluation with `VIS-RHY-001` still standing and the new `VIS-APP-001`; the
+terminal state and event files had SHA-256 values
+`660990c73944614dab14e42f2fbf1edbf251a42c066469d9bc193c870460ffb8` and
+`fa765ace9039087cdfd56a28f437c8b18e52e1a677a6f8e80403225f7a4c9c91`
+when recorded. Its ignored run directory remains immutable audit evidence.
+
+The separately authorized post-terminal repair removed the outer minipage that
+split proposal callouts, removed two synthesis-only forced page breaks, and
+gave `research/source-bindings.toml` a semantic break after `research/`.
+The rebuilt canonical artifact is 21 pages with SHA-256
+`64353d006951332c9dd1f5165cd42e35e135a62e9e835d0be47628d2fea65420`;
+the synthesis is 13 pages with SHA-256
+`1ecf06902922c4779d7ca83ce42042c002c89bf4fb2043f32d2443e2eedcc657`.
+A fresh reviewer inspected all 34 full-size pages and the focused content,
+component, metadata, PDF-determinism and whitespace checks passed. This repair
+does not convert the terminal run into an acceptance and is not installed or
+released; a new current-workflow run must evaluate the exact reconciled tree.
+
+Before that new run, this branch must be reconciled with both current
+`origin/main` and `origin/impl/proper-54-production`. The audited tips are
+`c59d42a85932ff5bdb3236e154c5db796aea8017` and
+`d4f16219fd1916eaec447fde659547048bf5b830`; both must remain exact ancestors.
+The integration keeps current main's corpus, Proper 55 publication, release
+projection, and proper v21--v24 process, while preserving the remote Proper 54
+restoration and Latin-backfill audit. The local evaluator-identity repair is
+forward-ported on top of main's owner-aware repair accounting: lane, problem,
+and required result stay bound to one finding id, while a legitimate change of
+repair owner remains possible. The post-integration run, not any terminal v20
+record, is where the current Latin oration corpus, retrieval receipts,
+source-registration stage, reasoning-effort declarations, and structural-label
+gate can govern this production.
+
 The Claude prerequisite is not complete merely because its repaired source
 leaf and generated `research/chronology.toml` now exist. It still lacks both
 installed PDFs, the tracked web edition, and both release records. It must
@@ -432,7 +471,8 @@ installation, catalogue, and release gates. Repository-wide release bindings
 are refreshed only after their actual source changes and publication states
 have been reviewed; no artifact is marked reviewed merely to clear the gate.
 
-After that prerequisite is committed on `impl/proper-54-production`, HEAD has a
+After that prerequisite is accepted and committed on
+`impl/proper-54-production`, HEAD has a
 new legitimate identity for a fresh GPT seed. The terminal run is never deleted
 or edited. The fresh GPT run must preserve the corrected Psalm reception, CCC
 citation through §1397, unused-reference result, web conversion, installed/build

@@ -82,7 +82,7 @@ kind = "notable-quotable"
 path = "sections/40-notable.tex"
 modes = ["research", "synthesis"]
 depends_on = ["source-grounded-synthesis"]
-element_keys = ["epistle", "gospel"]
+element_keys = ["gospel", "offertory"]
 references = ["sections/99-references.tex"]
 
 [[components]]
@@ -125,8 +125,8 @@ element_keys = ["introit", "gradual", "epistle", "gospel", "communion"]
 evidence = ["textual-observation", "exploratory-proposal"]
 
 [[relations]]
-key = "human-inability-divine-addition"
-element_keys = ["gospel", "communion", "collect", "postcommunion"]
+key = "addition-subordinate-to-direction"
+element_keys = ["gospel", "collect", "postcommunion"]
 evidence = ["textual-observation", "exploratory-proposal"]
 
 [[relations]]
@@ -145,6 +145,6 @@ element_keys = ["introit", "epistle", "gospel"]
 evidence = ["textual-observation", "exploratory-proposal"]
 
 [[relations]]
-key = "idolatrous-service-and-mammon"
-element_keys = ["epistle", "gospel", "communion"]
+key = "tasting-discloses-the-master"
+element_keys = ["gospel", "offertory", "secret", "communion"]
 evidence = ["textual-observation", "documented-reception", "exploratory-proposal"]

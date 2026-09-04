@@ -479,9 +479,11 @@ set — the derivative identified with Pustet 1862 appears to carry
 `Secunda Oratio. A cunctis nos`, `Alia Secreta. Exaudi nos Deus`, and
 `Alia Postcommunio. Mundet et muniat`, each with a `Tertia ad libitum`, and
 the derivative identified with Venice 1570 appears to carry the same three by
-incipit. No page images of either book were obtained or collated, so these are
-observations of their uncorrected text layers rather than readings established
-for the printed editions. Those seasonal orations are
+incipit. No Pustet page image was obtained, and the registered Venice artifact
+remains only an OCR lead. Separate direct inspection of the Venice 1570 page
+images at printed pp. 161--162, Internet Archive leaves n409--n410, confirmed
+the additional seasonal orations in that printing; those image bytes do not yet
+have an exact reusable source-library registration. Those seasonal orations are
 pre-1960 matter, and they are no part of the 1962 formulary and are not printed
 by this guide. **Corrected 2026-08-27 by the authoring stage:** this record
 previously named the *Rubricae generales* of 1960 as the instrument that removed
@@ -588,6 +590,15 @@ optional seasonal orations are not blended into the controlled 1962 text.
 Two earlier OCR observations remain recorded as leads, not as support for this
 rights conclusion:
 
+**Separate historical page-image check.** The current research brief records
+direct inspection of Venice 1570 at printed pp. 161--162, Internet Archive
+leaves n409--n410, and Vatican 1604 at printed pp. 320--321, leaves n415--n416.
+Those images support only the guide's bounded claims about the complete later
+sequence, the Galatians fruit-order recension, and supplementary seasonal
+orations. Their exact image records are not yet registered in the reusable
+source library, and they do not replace the verified Mame 1922 witness as the
+guide's preexisting-material and rights control.
+
 - **Pustet, Ratisbon, 1862** — artifact
   `artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf`,
   `storage = "tracked"`, `rights_status = "public-domain"`. Under the heading
@@ -610,8 +621,9 @@ rights conclusion:
   … vt hec hoſtia ſalutaris`), Communion (`Primum querite regnuʒ dei: ⁊ omnia
   adijcientur vobis dicit dominus`), and Postcommunion (`Purificent ſemper ⁊
   muniant tua ſacramenta`). Four possible wording differences visible in that
-  degraded text layer are recorded rather than harmonised and are **not**
-  claimed as 1570 readings without a page-image collation nobody has made here:
+  degraded text layer are recorded rather than harmonised. Of these, only the
+  Galatians fruit order was independently confirmed in the separate page-image
+  inspection and is used as a printed-edition reading in the historical guide:
   the Collect appears as `Custodi, quæsumus, domine, ecclesiam tuam` (`quæsumus`
   and `domine` transposed against the 1962 order); the Epistle appears as
   `Manifesta autem sunt opera carnis` (against `Manifésta sunt autem`) and lists
@@ -621,8 +633,9 @@ rights conclusion:
   the 1962 book nor the Clementine has; and the Secret appears with the long
   conclusion `Per dominum nostrum Jesum Christum filium tuum, qui.` The
   artifact's own source record classifies its optical character recognition as
-  degraded; an apparent reading in it is evidence about the text layer, not a
-  collated reading of the 1570 book.
+  degraded; apart from the separately confirmed fruit order, an apparent
+  reading in it is evidence about the text layer, not a collated reading of the
+  1570 book.
 
 **Re-executed 2026-08-31 by the source-audit stage against the tracked OCR
 bytes.** Both payloads were reopened at the stated ranges — Pustet at
@@ -668,7 +681,9 @@ registered public-domain Douay--Rheims witness, named at the point of use:
   tracked at `src/sources/bibles/douay-rheims` with `rights: public-domain` and
   `publishable: true`, which is the English of the Clementine Vulgate this
   missal prints. Loci quoted: Ps. 33:8–9; 83:2–3, 10–11; 94:1; 117:8–9;
-  Gal. 5:16–24; Mt. 6:24–33.
+  Gal. 5:16–24; Mt. 6:24–33. At Ps. 94:1 the guide quotes only the exact Douay
+  verse; the surrounding `Allelúia` frame remains in the controlled,
+  untranslated Latin.
 - **Orations omitted** — the historical-English lead is the 1861 Philadelphia
   Cummiskey *Roman Missal … for the use of the laity*, edition
   `edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861`,
@@ -698,22 +713,26 @@ above.** They are declared in the guide and are not filled in by the project.
    but not verified, and the translation inventory marks all three unavailable
    for reason `rights-withheld`. The guide prints the controlled Latin with a
    description of each petition and supplies no English wording.
-2. The Communion antiphon. It is an adaptation, not a quotation: the Douay at
+2. The Alleluia frame. The Douay at Ps. 94:1 contains only "Come let us praise
+   the Lord with joy: let us joyfully sing to God our saviour." The surrounding
+   `Allelúia, allelúia` and final `Allelúia` are printed only in the controlled,
+   untranslated Latin.
+3. The Communion antiphon. It is an adaptation, not a quotation: the Douay at
    Mt. 6:33 reads "Seek ye therefore first the kingdom of God, and his justice,
    and all these things shall be added unto you," which carries a "therefore"
    the antiphon drops, a clause ("and his justice") the antiphon omits, and no
    equivalent at all of the antiphon's closing `dicit Dóminus`. The guide
    prints the Douay verse whole with the reused phrases marked, rather than
    joining a new English antiphon the project would itself have composed.
-3. The Introit's `super mília` and the psalm verse's `in átria Dómini`. The
+4. The Introit's `super mília` and the psalm verse's `in átria Dómini`. The
    Douay renders both verses whole; the antiphon sings only their first halves.
    The guide prints the Douay verses whole with the sung portion marked, and
    supplies no separately trimmed English.
-4. The Offertory's stop at `Dóminus`. Same case: the Douay's Ps. 33:9 continues
+5. The Offertory's stop at `Dóminus`. Same case: the Douay's Ps. 33:9 continues
    "blessed is the man that hopeth in him," which the antiphon does not sing.
-5. The Epistle's incipit `Fratres:`. Here it replaces Paul's `Dico autem:`,
+6. The Epistle's incipit `Fratres:`. Here it replaces Paul's `Dico autem:`,
    which the Douay renders "I say then:". The missal's address is the missal's
    own and is not translated.
-6. The Gospel's incipit `In illo témpore: Dixit Iesus discípulis suis:`. It
+7. The Gospel's incipit `In illo témpore: Dixit Iesus discípulis suis:`. It
    corresponds to nothing in Matthew and so to nothing in the Douay, and is
    likewise not translated.

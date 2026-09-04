@@ -1,876 +1,454 @@
-# Research scope: Fourteenth Sunday after Pentecost
+# Research Scope: Fourteenth Sunday after Pentecost
 
-This audit governs the Claude guide to *Dominica Decima Quarta post
-Pentecosten* in the 1962 *Missale Romanum*. It integrates the seven research
-lanes of workflow `proper` v20 at seed commit
-`2b1d0044c8438dfff619a8671492a7e131a51fba`. It is the authoring brief, not
-reader-facing prose.
+## Identity and purpose
 
-## Formulary identity and text control
+- **Publication:** Claude guide to the Fourteenth Sunday after Pentecost.
+- **Rite and edition:** Roman Rite, *Missale Romanum*, editio typica 1962.
+- **Printed identity:** *Dominica decima quarta post Pentecosten*, printed pp. 394--396, marginal nos. 1572--1581.
+- **Calendar identity:** temporal proper 54; calendar mass key `pentecost-14`.
+- **Appointed elements:** Introit, Collect, Epistle, Gradual, Alleluia, Gospel, Offertory, Secret, Communion, and Postcommunion.
+- **Role of this file:** audit record for the authoring stage. It distinguishes textual observation, historical orientation, documented reception, source-grounded synthesis, exploratory proposals, and unverified or bounded leads. Its prose is not intended for direct transfer to the reader-facing guide.
 
-The controlling formulary is the Vatican 1962 typical edition, printed
-pp. 394--396, marginal nos. 1572--1581. Its ten appointed elements are:
+The joined research supports authoring. The strongest account is not a ten-stop procession but a set of intersecting movements: allegiance orders desire; trust in providence permits responsible agency and subordinate mediation; praise and tasting lead into sacramental purification; the kingdom is both present priority and final inheritance; and the received formulary is historically stable in its later form while retaining evidence of earlier mixed constellations. Those conclusions are stated below with the limits that authoring must inherit without importing this audit register into reader-facing prose.
 
-1. Introit, Psalm 83:10--11a with Psalm 83:2--3a as the verse;
-2. Collect, *Custodi, Domine, quaesumus, Ecclesiam tuam*;
-3. Epistle, Galatians 5:16--24;
-4. Gradual, Psalm 117:8--9;
-5. Alleluia, Psalm 94:1;
-6. Gospel, Matthew 6:24--33;
-7. Offertory, Psalm 33:8--9a;
-8. Secret, *Concede nobis, Domine, quaesumus, ut haec hostia salutaris*;
-9. Communion, an adaptation of Matthew 6:33; and
-10. Postcommunion, *Purificent semper et muniant tua sacramenta nos*.
+## Evidence-state and source-control summary
 
-The appointed Latin and formulary boundaries are controlled by the 1962
-facsimile and the image-collation record in `propers/verified.md`. The
-Clementine Vulgate controls comparison of the scriptural Latin. The registered
-Douay--Rheims/Challoner verse artifacts control scriptural English. These
-controls are sufficient for authoring the Latin and the scriptural English
-(SCR-001; COV-001).
+### Strong controls
 
-No English text of the Collect, Secret, or Postcommunion is available for
-publication from the present verified source state. The Cummiskey passage is
-currently `cataloged`, `acquired`, and `inspected`, not `verified`, and the
-source-audited translation inventory marks the three renderings unavailable
-for reason `rights-withheld`. The guide must therefore give each Latin incipit
-and describe its petition without composing, translating, adapting, or
-paraphrasing a prayer for recitation (COV-002; COV-010).
+1. The Latin, boundaries, rank, references, and order of all ten elements were visually collated against the Vatican 1962 facsimile at printed pp. 394--396. The same ten-element order and recast Communion were checked in the public-domain Mame 1922 page images at printed pp. 444--446. These are the controlling textual and bounded-continuity witnesses. The 1962 facsimile is a collation witness, not a redistribution license. (source-citation-coverage COV-001, COV-003; scripture-context SCR-006, SCR-008, SCR-010, SCR-012, SCR-014, SCR-016, SCR-019)
+2. The appointed Scripture in English is controlled by the Douay--Rheims Bible, Challoner revision, at Psalms 33, 83, 94, and 117; Galatians 5; and Matthew 6. The immediate Latin comparisons are controlled by the Clementine Vulgate. The publication-local bindings identify those artifacts and loci. (COV-001)
+3. A liturgical-history worker directly checked the Venice 1570 page images at printed pp. 161--162, Internet Archive leaves n409--n410, and the Vatican 1604 page images at printed pp. 320--321, leaves n415--n416. Those direct inspection events support bounded historical claims about those printings even though the existing publication-local Venice text-layer binding remains only a degraded OCR lead. The direct page-image citation and the OCR binding must not be conflated. (liturgical-history LIT-008, LIT-009, LIT-010; COV-004)
+4. Wilson's editions of the Old Gelasian and Hadrianum material, Honorius, Guéranger, Schuster, the 1960 *Variationes*, and the principal patristic, medieval, and later reception witnesses were checked at the work and locus stated below. Several are not represented by exact publication bindings, but an absent machine id is provenance debt rather than a publication bar when the work, edition, and locus were actually checked. (COV-007, COV-008)
+5. The generated `research/chronology.toml` is the sole control for biblical dates. Its statuses and assertions are transcribed in the chronology audit below. Commentary dates and historical reconstructions may be reported only as reception, never substituted for the corpus answer. (SCR-001--SCR-005)
 
-The Communion is not a verbatim quotation of Matthew 6:33. It reads *Primum
-quaerite regnum Dei, et omnia adicientur vobis, dicit Dominus*: it omits
-*ergo*, *et iustitiam eius*, and *haec*, promotes *Primum* to the beginning,
-and adds *dicit Dominus*. The omission of justice may be observed, but no
-reason for any change is established (SCR-001; SCR-010).
+### Controls and ceilings that constrain authoring
 
-## Evidence-state inventory
-
-| State under the proper profile | Material available | Authoring consequence |
-| --- | --- | --- |
-| Textual observation | Facsimile-collated 1962 Latin; Clementine Vulgate; Douay--Rheims/Challoner; complete biblical contexts; exact Gospel-to-Communion comparison (SCR-001--SCR-011; COV-001) | May support direct description of the appointed wording, boundaries, grammar, and canonical contexts. |
-| Documented historical orientation | Old Gelasian and Hadrianum Gregorian sacramentaries; Honorius; the checked Vatican 1604, verified Mame 1922, and Vatican 1962 missal witnesses; Guéranger and Schuster (LIT-001--LIT-013) | May support bounded transmission and later liturgical-reception claims, not first-compiler, causal-redaction, or universal-transmission claims. |
-| Documented reception | Direct Greek and Latin exegesis, medieval and Doctoral commentary, later Bellarmine reception, monastic reuse, and later liturgical interpretation (PAT-001--PAT-022) | May support attributed interpretations and real disagreements. Textual forms and translation limits remain attached to each witness. |
-| Source-grounded synthesis | Seventeen screened candidates, of which five cross-proper units are settled below (THE-001--THE-014, THE-017) | May support themes, detailed synthesis, and the integrated synthesis commentary if written as conclusions rather than audit narration. |
-| Exploratory proposal | Six targeted, precedent-tested conjunctions are settled in the Interpretive-proposal audit (PRE-001--PRE-012) | Belongs only in `The Propers: Interpretive Possibilities`, under its exploratory notice and with the stated strongest limit. |
-| Unverified or incomplete lead | Degraded, uncorrected OCR derivatives identified with the Venice 1570 and Pustet 1862 missals; Benziger OCR; uninspected Tommasi and Deshusses evidence; unbound Greek New Testament artifacts; absent Hebrew/Greek psalter controls; catalog-only transmission records (COV-004--COV-009; LIT-008--LIT-009, LIT-013) | Supports no stronger claim. OCR-layer observations may be reported only as observations of those derivatives; omit, qualify, or identify the unresolved witness in terminal scope, and do not fill from memory. |
-
-Source-library registration is not an independent evidence class. Several
-patristic and medieval works lack exact matching library passages, but their
-work, edition, and loci were checked and remain human-usable citations. That
-is reproducibility debt, not a publication bar (COV-007). Conversely, a
-library identity does not turn an uninspected artifact into evidence.
-
-## Governing cross-proper argument
-
-The strongest argument is that the formulary orders desire, action, and
-created goods beneath the kingdom of God and carries that order through an
-enacted movement of divine aid, human walking and seeking, sacrificial
-purification, and sacramental strengthening. It neither condemns the body and
-its needs nor makes providence an excuse for passivity. Five functional units
-develop that thesis; together they materially use all ten appointed elements.
-
-### 1. The kingdom names the end and distinguishes service from use
-
-The Epistle warns that the works of the flesh exclude from the kingdom. The
-Gospel makes two masters impossible, affirms that the Father knows temporal
-needs, and commands that the kingdom and its justice be sought first. The
-Communion renews the kingdom command while shortening the Gospel wording.
-The Gradual's preference for confidence in God and the Introit's better day in
-God's courts supply the same order of final allegiance without condemning
-subordinate human or created goods (SCR-003, SCR-008, SCR-010--SCR-011;
-THE-001--THE-002, THE-006, THE-011).
-
-Aquinas distinguishes wealth used as a servant from wealth made a master and
-reads the two masters as rival final ends (PAT-013). Benedict applies the full
-Matthew verse to the abbot whose concern for material scarcity threatens the
-care of souls (PAT-014). Bellarmine allows reliance on angels and holy persons
-only as help referred to God (PAT-019). The Communion does not repeat the
-Gospel's justice clause, and none of these witnesses explains its recasting.
-
-### 2. Desire is ordered, while creaturely embodiment remains good
-
-The Introit verse's *concupiscit anima mea* longs for the courts of the Lord;
-the Epistle's *caro concupiscit adversus spiritum* names desire turned against
-the Spirit; the Gospel redirects anxious seeking to the kingdom. The
-Offertory's invitation to taste and see adds an experiential image of desire
-disciplined by encounter with the Lord (SCR-002--SCR-004, SCR-008--SCR-009,
-SCR-011; THE-003, THE-005).
-
-Jerome, Chrysostom, Theodoret, and Ambrosiaster refuse to identify Paul's
-`flesh` with bodily nature as such (PAT-006--PAT-008). Augustine, Jerome, and
-Chrysostom read Matthew as permitting necessary temporal use, ordinary work,
-and prudent action while rejecting anxious mastery (PAT-010--PAT-012). The
-shared Latin desire-root is a real lexical relation, not evidence of common
-human authorship or deliberate compilation.
-
-### 3. Divine aid and commanded action belong to one economy
-
-The Collect says mortal humanity slips without God and asks that the Church be
-drawn away from harmful things and directed toward saving ones. The Epistle
-commands walking by the Spirit and crucifying vice-governed desire. The Gospel
-commands seeking. The Secret asks that the saving victim purify offenses and
-propitiate divine power; the Postcommunion asks the sacraments to purify,
-fortify, and lead their recipients to perpetual salvation (THE-004, THE-009,
-THE-010, THE-013).
-
-Augustine's Galatians commentary holds grace-assisted freedom, continuing
-conflict, humility, and meekness together; Chrysostom and Theodoret join the
-Spirit's grace to real diligence (PAT-005, PAT-007). The prayers do not name a
-complete causal sequence, and the appointed texts do not say that Communion
-in this Mass automatically produces the Epistle's listed fruit. The unit must
-preserve both divine causality and conversion rather than turn either into
-passivity or autonomous self-salvation.
-
-### 4. Protection distinguishes ultimate trust from subordinate mediation
-
-The Introit names God the protector; the Collect asks perpetual guardianship;
-the Gradual refuses final confidence in man or princes; the Gospel names the
-Father's provision; the Offertory speaks of the Lord's encircling angel; and
-the Postcommunion asks sacramental fortification (THE-007, THE-011).
-
-Reception preserves two disagreements. Augustine and Cassiodorus take the
-Gradual's princes as angelic powers, while Theodoret takes mutable earthly
-rulers (PAT-003); Bellarmine permits subordinate creaturely help referred to
-God (PAT-019). Augustine identifies the Offertory's Angel with Christ, while
-Cassiodorus, Theodoret, and Bellarmine identify created angelic ministers
-(PAT-015, PAT-021). The missal's capitalization settles neither question.
-Creaturely mediation is not the rival mastery prohibited by the Gospel, and
-the protection imagery promises no physical immunity.
-
-### 5. Saving grammar carries entrance toward sacramental effect
-
-The Introit's one better day opens an eschatological horizon. The Collect asks
-direction toward *salutaria*; the Alleluia acclaims God as *salutaris*; the
-Secret names the offered victim *salutaris* and asks propitiation; the
-Postcommunion asks that the sacraments lead to the effect of perpetual
-salvation (THE-008, THE-014). Augustine reads the one day as the unending day,
-while Theodoret reads incomparable spiritual gain; Cassiodorus reads the
-Alleluia's saving title christologically, and Bellarmine orders inward joy
-before vocal praise (PAT-001--PAT-002, PAT-004, PAT-018, PAT-020).
-
-Guéranger and Schuster read the Mass as an enacted movement from entrance and
-petition through proclamation and oblation to Communion and continuing
-sacramental effect (LIT-011). Historical transmission prevents converting
-that liturgical coherence into a claim that the whole constellation descended
-as one unit: the early prayer set and the later chant set circulated in
-different assemblies (LIT-001--LIT-003).
-
-## Appointed Scripture in canonical context
-
-| Element and locus | Complete-context finding | Canonical relations and controlling qualification |
-| --- | --- | --- |
-| Introit: Psalm 83:10--11; 2--3 | Psalm 83 moves through longing for the courts, blessed dwelling and ascent, prayer for the anointed, the better day, and final trust. The liturgy places vv. 10--11a before returning to vv. 2--3a as its verse (SCR-002). | Psalm 42:3--4 is a material sanctuary-and-altar parallel. The psalm's anointed figure is not, at the literal level, an immediate identification with Jesus; Theodoret's corporate Christological reading is reception (PAT-002). |
-| Epistle: Galatians 5:16--24 | The passage belongs to the closing exhortation on Christian freedom: liberty serves through charity; walking by the Spirit opposes the works of the flesh; belonging to Christ entails crucifying vice-governed desire; 5:25--6:10 continues with walking, restoration, burdens, and sowing for eternal life (SCR-003). | Romans 8:1--17 and 1 Corinthians 6:9--11 repeat Spirit/flesh, mortification, sonship, and kingdom-exclusion patterns (SCR-004). These are canonical parallels, not proof of literary dependence. The appointed Latin has one `fructus` and a twelve-item list; ancient textual forms vary (PAT-005--PAT-009). |
-| Gradual: Psalm 117:8--9 | Trust in God rather than man or princes stands within corporate thanksgiving for rescue, followed by the gates of justice, rejected stone, day of the Lord, plea for salvation, and blessing of the one who comes (SCR-005). | Matthew 21:42, Acts 4:11--12, and 1 Peter 2:4--7 give the wider psalm a controlled Christological relation through the rejected stone (SCR-006). The appointed verses themselves do not name the stone, and the speaker's historical identity is not supplied. |
-| Alleluia: Psalm 94:1 | The opening summons belongs to a single psalm that moves from praise of God as savior, king, creator, and shepherd to the urgent `today` warning from wilderness rebellion and exclusion from rest (SCR-007). | Hebrews 3:7--4:11 quotes the warning and extends `today` and `rest` into Christian perseverance. The Alleluia appoints only the opening summons; its text does not itself voice the warning. |
-| Gospel: Matthew 6:24--33 | The passage culminates the Sermon on the Mount movement from heavenly treasure and the heart, through the sound or evil eye, to undivided service and freedom from anxiety grounded in the Father's providence, resolving in the priority of kingdom and justice (SCR-008). | Matthew's `therefore` at 6:25 joins anxiety to the two-master saying, while 6:8--13 already joins the Father's knowledge of need, prayer for the kingdom, and daily bread. Luke 12:22--34 and 16:13 are close parallels; the appointed Gospel stops before Matthew 6:34. |
-| Offertory: Psalm 33:8--9a | Angelic deliverance and the invitation to taste stand between a poor man's cry and rescue and instruction in fear, seeking, truthful speech, peace, and the Lord's care (SCR-009). | The title names Achimelech while 1 Kings 21 names Achis; the texts are not harmonized. The Offertory stops before the beatitude in Psalm 33:9b. First Peter 2:3 reuses tasting and immediately turns to the rejected stone, placing Psalms 33 and 117 in one canonical exhortation. Scripture does not name a particular angel. |
-| Communion: adapted Matthew 6:33 | The antiphon retains the command to seek God's kingdom first and the promise that needed things will be added, but not the Gospel's command to seek God's justice (SCR-010). | It is a material scriptural adaptation and receives its own reception-matrix and chronology-audit entry. No purpose for its omissions, rearrangement, or addition is known. |
+1. No verified publishable English witness is available for the Collect, Secret, or Postcommunion. Authoring may print the controlled Latin and describe the petition in prose, but may not supply a translation, a recitation paraphrase, or machine-generated English. The inspected Cummiskey passage is not a verified publication witness for these prayers, and the translation inventory records them as rights-withheld. (COV-002)
+2. The Pustet 1862, Benziger 1962, and publication-bound Venice 1570 text layers are degraded or derivative evidence. Pustet and Benziger support only explicitly labeled observations about their OCR layers. They do not control wording, typography, punctuation, recension, first appearance, or rights. Venice edition facts used here rest on the separately checked page images in LIT-008--LIT-010, not on the degraded local OCR binding. (COV-004)
+3. Passage-specific modern Catholic historical-critical orientation was reached for Galatians through the verified USCCB/NABRE Galatians introduction, but not for Matthew 6 or Psalms 33, 83, 94, and 117. Detailed modern authorship, audience, place, or composition claims for those passages are outside the evidence. A general Psalms introduction cannot answer four distinct psalm histories. (COV-005)
+4. No Hebrew or Greek Psalter locus and no target Greek New Testament locus was inspected or bound for this production. Claims remain confined to the Missal, Clementine Vulgate, Douay--Rheims, and identified reception witnesses. No Hebrew acrostic, original-Greek, source-text, Psalter-recension, or broad textual-history claim is available. Registered Greek and Hebrew artifacts are possible future routes, not evidence this brief may use. (COV-006)
+5. Some patristic, medieval, and liturgical-history witnesses have exact human citations but uneven reusable-source bindings. This is moderate reproducibility debt. Protected or restricted modern deliveries must be paraphrased and precisely attributed; Bellarmine must be identified as the abridged O'Sullivan English edition and not as a Latin check. (COV-007, COV-008, COV-011)
+6. No primary source checked here identifies the first compiler, first appearance, date or cause of the full assembly, or the date, agent, and cause of the Communion substitution. Tommasi's underlying manuscripts, Deshusses's critical Gregorian edition, a broader antiphoner and lectionary stemma, and specialist chant-cycle studies were not reached. (COV-009; LIT-014)
+7. This publication has no machine-replayable negative-search binding. Every absence below is limited to the named works, corpora, languages, queries, and delivery conditions. No absence may be enlarged into a universal claim. (COV-010)
+8. Anthony of Padua's verified Sunday sermon is a useful medieval reuse of Galatians 5:22--23, but its Gospel is Luke 17:11--19 rather than Matthew 6. It cannot witness the later target formulary or its compiler's intention. Its modern critical apparatus is restricted and may be paraphrased but not reproduced. (COV-012)
 
 ## Passage-by-passage reception matrix
 
-The matrix treats each appointed element, including the three composed
-orations and the materially adapted Communion, as its own row. `Later
-reception checked` always names a medieval, Doctoral, or later saintly witness
-or a bounded negative. Patristic evidence alone is not used to fill that
-field.
+Every distinct directly appointed biblical passage and the materially adapted Communion form has a later-reception field. “Uses” names the use in this proper; neighboring or historical reuse appears only where a joined finding supplied it.
 
-| Appointed element | Direct ancient exegesis checked | Medieval, Doctoral, or later reception checked | Use, disagreement, and bounded result |
-| --- | --- | --- | --- |
-| Introit, Psalm 83:10--11 and 2--3 | Augustine, *Enarratio in Ps. LXXXIII* §§6, 13--15 (Latin tradition; historical English); Cassiodorus, *Expositio Psalmorum* on vv. 2--3, 10--11 (Latin); Theodoret, *Interpretatio in Psalmos*, PG 80:1537--1545 (Greek with Latin translation) (PAT-001--PAT-002). | Robert Bellarmine, *Commentary on the Book of Psalms*, Psalm 83, O'Sullivan vv. 1--2, 9--10, printed pp. 253--255 / artifact pp. 263--265 (PAT-018). | Augustine and Cassiodorus read ecclesial pilgrimage and the unending day; Theodoret adds exilic and corporate-Christological readings; Bellarmine reads heavenly pilgrimage and Christ's merits. Theodoret's exilic setting is reception, not the corpus's date. Bellarmine's 1866 English is abridged and was not checked against the Latin. |
-| Collect, *Custodi, Domine* | No direct ancient exposition of this exact prayer was located. Old Gelasian and Hadrianum transmission controls were inspected, but transmission is not exegesis (PAT-022; LIT-001--LIT-002). | Exact-incipit searches across the named Latin patristic and medieval corpora, Corpus Thomisticum, New Advent/NPNF, and exact-phrase web indexing located no direct medieval, Doctoral, or later saintly exposition (PAT-022). Guéranger and Schuster provide later liturgical interpretation (LIT-011--LIT-012). | Bounded negative across the Latin and Greek/Latin corpora listed under `Corpora and languages searched`; modern non-authoritative commentary was rejected. The prayer may be described from its verified Latin and transmission, not placed in a Father or Doctor's mouth. |
-| Epistle, Galatians 5:16--24 | Augustine, *Expositio ad Galatas* §§45--53; Jerome, *Commentaria in Galatas* III; Chrysostom, *Homily 5 on Galatians*; Theodoret, *Interpretatio ad Galatas*, PG 82:495--498; Ambrosiaster on Galatians 5:16--24 (PAT-005--PAT-008). | Aquinas, *Super Epistolam B. Pauli ad Galatas* 5, lectio 6, nos. 320--331 (PAT-009). The repository also holds Anthony of Padua, *Sermo Dominica XIV post Pentecosten* §§15--18, a verified restricted modern critical delivery permitting paraphrase; Anthony relates return, humility, thanksgiving, and faith to Galatians 5:22--23, while his Gospel is Luke 17 (COV-012). | The witnesses agree that `flesh` is not bodily nature as such and that grace does not abolish human diligence. Their lists differ: Augustine has thirteen works/nine fruits; Jerome a shorter vice list/nine fruits; Theodoret nine; Ambrosiaster ten; Aquinas orders the expanded Latin twelve. Do not project Aquinas's arrangement onto Greek witnesses. Anthony is illuminating reuse, not interpretation of this Matthew formulary. |
-| Gradual, Psalm 117:8--9 | Augustine, *Enarratio in Ps. CXVII* §4; Cassiodorus on vv. 8--9; Theodoret, PG 80:1811--1812 (PAT-003). | Bellarmine, *Commentary on the Book of Psalms*, Psalm 117:8--9, printed p. 370 / artifact p. 380 (PAT-019). | Augustine and Cassiodorus take `princes` as angelic powers; Theodoret takes earthly rulers. Bellarmine permits reliance on angels and holy persons as subordinate help referred to God. His English is abridged. The disagreement remains material. |
-| Alleluia, Psalm 94:1 | Augustine, *Enarratio in Ps. XCIV* §§2--3; Cassiodorus on v. 1; Theodoret, PG 80:1639--1642 (PAT-004). | Bellarmine, *Commentary on the Book of Psalms*, Psalm 94:1, printed pp. 298--299 / artifact pp. 308--309 (PAT-020). | Augustine and Cassiodorus read jubilation as righteous joy beyond articulate speech; Theodoret hears a victor's cry and gives a Josian setting; Bellarmine orders interior joy and admiration before vocal praise. Bellarmine's later direct psalm exposition satisfies the later-reception field. His English is abridged. |
-| Gospel, Matthew 6:24--33 | Augustine, *De sermone Domini in monte* II.47--58; Hilary, *In Matthaeum* V.7--13; Jerome on Matthew 6:24--34; Chrysostom, *Homilies 21--22 on Matthew* (PAT-010--PAT-012). | Aquinas, *Super Evangelium S. Matthaei* 6, lectio 5; Benedict, *Regula* 2.35--36 (PAT-013--PAT-014). | Augustine and Aquinas order necessities beneath the final good; Chrysostom and Jerome retain ordinary creatures, work, and the Gospel's lesser-to-greater reasoning; Hilary allegorizes the images. Benedict applies the full verse, including justice, to material scarcity and care of souls. |
-| Offertory, Psalm 33:8--9a | Augustine, *Enarratio in Ps. XXXIII*, sermo II.10--13; Cassiodorus on vv. 7--9; Theodoret, PG 80:1103--1106; Cyril of Jerusalem, *Mystagogical Catechesis* V.20, and Ambrose, *De mysteriis* IX.58 as sacramental reuses (PAT-015--PAT-016). | Aquinas, *In Psalmos Davidis Expositio*, Psalm 33, nn. 8--9; Bellarmine, *Commentary on the Book of Psalms*, Psalm 33, O'Sullivan vv. 7--8, printed pp. 91--92 / artifact pp. 101--102 (PAT-016, PAT-021). | Augustine's Angel is Christ; Cassiodorus, Theodoret, and Bellarmine give created angelic ministry. Tasting receives experiential and sacramental readings; Cyril and Ambrose reuse it in Communion mystagogy, not as commentary on this Offertory position. The attribution of the Mystagogical Catecheses is disputed. Bellarmine's English is abridged and numbers the verses one lower. |
-| Secret, *Concede nobis, Domine* | No direct ancient exposition of this exact prayer was located. Old Gelasian and Gregorian transmission was inspected (PAT-022; LIT-001--LIT-002). | The same bounded Latin/Greek, patristic, medieval, Doctoral, saintly, and exact-phrase sweep as for the Collect found no direct witness (PAT-022). Guéranger and Schuster provide later liturgical interpretation of the saving Host and propitiation (LIT-011). | Transmission and later liturgical reading support description of ritual function; no patristic or saintly author may be cited as directly explaining this formula. |
-| Communion, adapted Matthew 6:33 | Augustine, Hilary, Jerome, and Chrysostom comment on the full Gospel verse; none treats the exact shortened antiphon (PAT-010--PAT-012, PAT-017). | Aquinas, *Super Matthaeum* 6, lectio 5, and Benedict, *Regula* 2.35--36 treat the full verse. A targeted later-reception sweep also checked those loci and the exact antiphon phrase; no witness to the exact recasting was located (PAT-013--PAT-014, PAT-017). | Bounded negative across Latin patristic/medieval/Doctoral works, historical English versions, and targeted Latin exact-phrase web searches. Cantus Database 004377 preserves a fuller chant form. Full-verse reception cannot explain the omission of justice or addition of *dicit Dominus*. |
-| Postcommunion, *Purificent semper* | No direct ancient exposition of this exact prayer was located. Its Old Gelasian mobility and Gregorian grouping were inspected (PAT-022; LIT-001--LIT-002). | The same bounded exact-incipit sweep found no direct medieval, Doctoral, or later saintly exposition (PAT-022). Guéranger and Schuster read it as continuing sacramental purification, protection, perseverance, and salvation (LIT-011--LIT-012). | The formula's transmission elsewhere, including a Saint Andrew adaptation, proves mobility but not borrowing direction or authorship. Later liturgical interpretation is attributed as such. |
+| Passage or adaptation | Use in this proper | Direct ancient exegesis checked | Medieval, Doctoral, or later reception checked | Retained use, disagreement, and bounded negative |
+| --- | --- | --- | --- | --- |
+| Psalm 83:10--11a and 2--3a | Introit antiphon and verse | Augustine, *Enarratio in Psalmum* 83 §§13--15; Cassiodorus, *Expositio Psalmorum* 83 at vv. 2 and 9--11; Theodoret, *Interpretatio in Psalmos* 83, PG 80:1537--1545 | Bellarmine, *Commentary on the Book of Psalms*, O'Sullivan trans., Psalm 83, printed pp. 253--255 | Augustine and Cassiodorus direct the preferred day toward eternity and the Church; Theodoret retains Israel's displacement and bodily rescue; Bellarmine gathers the longing into pilgrimage toward the heavenly dwelling. These emphases are related but not interchangeable. Theodoret is checked in Migne Greek/Latin, not a critical Greek edition; Bellarmine is an abridged historical English witness. Psalm 131:7--17 and Hebrews 12:22--24 provide canonical Sion/anointed/Church relations without making Hebrews a quotation of Psalm 83 or a statement of the human author's intention. (patristic-reception PAT-001; SCR-006, SCR-007) |
+| Galatians 5:16--24 | Epistle | Augustine, *Expositio Epistolae ad Galatas* §§45--53, PL 35:2138--2144; Chrysostom, Homily 5 on Galatians; Jerome, *Commentaria in Epistolam ad Galatas* III at PL 26:500--501, 514--515; Theodoret, *Interpretatio ad Galatas*, PG 82:495--498 | Aquinas, *Super Galatas* 5, lect. 6 no. 330 and lect. 7 no. 331; Anthony of Padua, *Dominica XIV post Pentecosten* §§15--18 | The witnesses agree that “flesh” does not condemn created bodily nature, but they use distinct accounts of consent, will, orientation, vice, grace, and cooperation. Augustine pairs virtues with the vices they heal; Chrysostom joins diligence and divine kindness; Aquinas explains acts as fruits through spiritually delightful grace and anticipated beatitude; Anthony reuses the fruits in a different Sunday constellation. Aquinas comments on an expanded Latin list of twelve; other Latin and Greek lists differ, so no numerology or backward projection is allowed. Romans 8:1--17 and 1 Corinthians 6:9--11 are canonical Pauline parallels, not claims of literary copying. (PAT-004, PAT-005; SCR-008, SCR-009) |
+| Psalm 117:8--9 | Gradual | Augustine, *Enarratio in Psalmum* 117 §4; Cassiodorus, *Expositio Psalmorum* 117 at vv. 8--9; Theodoret, *Interpretatio in Psalmos* 117, PG 80:1811--1812 | Bellarmine, *Commentary on the Book of Psalms*, Psalm 117:8--9, printed p. 370 | Augustine and Cassiodorus include angelic powers among the “princes”; Theodoret reads mutable earthly rulers; Bellarmine allows human or angelic aid only when confidence passes through the creature to God. Ultimate hope in God is common; the referent of princes is disputed. Psalm 117's larger thanksgiving and temple movement and its cornerstone reception in Matthew 21:42 and Acts 4:10--12 inform the selected trust verses without making vv. 8--9 themselves the New Testament's quoted cornerstone saying. Schuster notes the Gradual's reuse on Friday after the Fourth Sunday of Lent. (PAT-002; SCR-010, SCR-011; LIT-012) |
+| Psalm 94:1 | Alleluia | Augustine, *Enarratio in Psalmum* 94 §§2--3; Cassiodorus, *Expositio Psalmorum* 94 at v. 1; Theodoret, *Interpretatio in Psalmos* 94, PG 80:1639--1642 | Bellarmine, *Commentary on the Book of Psalms*, Psalm 94:1, printed pp. 298--299 | Augustine and Cassiodorus understand jubilation as inward joy exceeding articulate speech; Theodoret hears a victor's cry within his proposed Josian setting; Bellarmine moves from inward gladness to vocal praise of God the Savior. Theodoret's setting is his reconstruction, not a chronology-corpus date. Hebrews 3:7--4:11 explicitly receives the unsung warning half of Psalm 94 as the Holy Ghost's “today” and the promise of rest. (PAT-003; SCR-012, SCR-013) |
+| Matthew 6:24--33 | Gospel | Augustine, *De sermone Domini in monte* II.47--58; Chrysostom, Homilies 21--22 on Matthew; Jerome, *Commentaria in Matthaeum* I at PL 26:44--46 | Benedict, *Rule* 2.35--36; Aquinas, *Super Matthaeum* 6, lect. 5, nos. 610--619 | Augustine, Chrysostom, and Jerome construe the masters as contrary final allegiances, distinguish release from anxious servitude from abolition of work, and reason from the Father's greater care to lesser needs. Jerome rejects an angelological reading of the birds. Benedict applies kingdom-first order to a superior's care of souls amid scarcity; Aquinas orders temporal necessities beneath the final end while requiring responsible action. Luke 12:22--40 and 16:1--15 provide distinct synoptic placements around covetousness, almsgiving, watchfulness, stewardship, and mammon; those Lucan details may clarify but not be silently inserted into Matthew. (PAT-006, PAT-007; SCR-014, SCR-015) |
+| Psalm 33:8--9a | Offertory | Augustine, *Enarratio in Psalmum* 33, sermo II §§10--13; Cassiodorus, *Expositio Psalmorum* 33 at vv. 8--9; Theodoret, *Interpretatio in Psalmos* 33, PG 80:1103--1106; Cyril of Jerusalem (traditional attribution), *Mystagogical Catechesis* V.20; Ambrose, *De mysteriis* IX.58 | Aquinas, *In Psalmos* at Psalm 33 nos. 8--9; Bellarmine, *Commentary on the Book of Psalms*, Psalm 33:7--9, printed pp. 91--92 | The Angel is Christ for Augustine, a created minister for Cassiodorus and Bellarmine, angelic ministers for Theodoret, and created, Christological, or ecclesial in Aquinas's alternatives. Capitalization cannot decide the dispute. “Taste and see” develops from experiential knowledge into explicit Eucharistic reception in Augustine, Cassiodorus, Cyril, and Ambrose; Aquinas and Bellarmine retain experiential sweetness. Cyril's attribution remains disputed. First Peter 2:3--10 explicitly reuses the tasting wording and continues into living-stone, spiritual-house, and priestly imagery. Psalm 33's superscription names Achimelech, whereas 1 Kings 21:10--15 names Achis at Geth; neither name-level tension nor the corpus's superscription-setting date may be turned into a composition date. Schuster notes the Offertory's reuse on Thursday after the First Sunday of Lent. (PAT-008, PAT-009; SCR-005, SCR-016--SCR-018; LIT-012) |
+| Contracted Matthew 6:33 | Communion | Augustine, *De sermone Domini in monte* II.53 and other direct exegetes receive the complete biblical sentence, not the contracted chant | Aquinas, *Super Matthaeum* 6, lect. 5 nos. 614--619, receives the complete verse; Cantus records 643078 and 668777 attest the chant form in the Bellelay Gradual and Einsiedeln Codex 121 | The antiphon promotes *Primum*, omits *ergo*, *et iustitiam eius*, and *haec*, and adds *dicit Dominus*. No independent patristic or medieval prose exposition of that exact contraction was located in the named Latin inventory, Cantus, Usuarium, Corpus Thomisticum, the inspected Migne Latin pages, Corpus Corporum/monumenta.ch, or the New Advent English patristic corpus. The chant records establish the form, not its interpretation; full-verse exegesis cannot explain the omissions or added attribution. The Gospel has already proclaimed the justice clause in full, so the Communion's silence neither repeats nor negates it. (PAT-010; SCR-019; precedent-search PRE-012) |
+
+### Composed-proper reception and transmission
+
+The reception-matrix requirement applies most directly to appointed Scripture and its material adaptation, but the composed prayers also received a targeted exact-form sweep:
+
+- **Collect, *Custodi, Domine*.** The Old Gelasian, Hadrianum, Gellone, and later Missal witnesses establish transmission. William Estius, *Commentarius in Libros Sententiarum* II, dist. 26, ch. 43, directly reuses the paired petitions for perpetual protection, withdrawal from harms, and direction toward saving things as evidence that perseverance in grace is a special gift for which the Church prays. No earlier direct patristic or medieval prose exposition of the complete oration was located in the named Latin and English corpora. Estius is early modern and historically important, not a Father or medieval commentator. (PAT-011; LIT-001, LIT-002)
+- **Secret, *Concede nobis, Domine*.** Miquel dels Sants Gros i Pujol, *El Sacramentari II de Gellona*, item 1122 (SupG 1172), p. 155, and Usuarium Corpus Orationum CO 675a establish wording and transmission, not interpretation. Exact and deaccented searches of Corpus Thomisticum, the inspected Migne Latin pages, Corpus Corporum/monumenta.ch, LombardPress, the repository's Latin source inventory, and English conceptual combinations in New Advent found no direct patristic, medieval Doctoral, or canonized-writer prose exposition of the complete formula. Guéranger and Schuster may be used only as later liturgical readings of the Sunday's Eucharistic movement. (PAT-012; LIT-013)
+- **Postcommunion, *Purificent semper*.** Miquel dels Sants Gros i Pujol, *El Sacramentari II de Gellona*, item 1123 (SupG 1173), p. 155, and Usuarium Corpus Orationum CO 4791 establish wording and transmission. The same named Latin and English corpora yielded no direct patristic, medieval Doctoral, or canonized-writer prose exposition of the complete formula. Schuster and Guéranger are later liturgical reception, not direct ancient exposition. (PAT-013; LIT-013)
 
 ## Corpora and languages searched
 
-| Research field | Corpora, languages, and extent |
-| --- | --- |
-| Appointed Scripture | Clementine Vulgate in Latin and Douay--Rheims/Challoner in English for Psalms 33, 83, 94, 117, Galatians 5, and Matthew 6, with the complete literary units and named canonical parallels inspected (SCR-001--SCR-011). No Hebrew or Greek Psalter witness was checked; no exact Greek New Testament artifact was bound or inspected for this target (COV-006). |
-| Patristic and early reception | Latin or Latin-tradition loci in Augustine, Jerome, Ambrosiaster, Hilary, Cassiodorus, and Ambrose; Greek with Latin Migne translations for Theodoret; historical English NPNF for Augustine, Chrysostom, Cyril, and Ambrose. Direct commentaries, homilies, psalm expositions, and sacramental reuses were distinguished (PAT-001--PAT-017). |
-| Medieval, Doctoral, and later saintly reception | Latin Corpus Thomisticum loci for Aquinas on Galatians, Matthew, and Psalm 33; Benedict's Latin conventional locus with Henderson's historical English; Bellarmine's Psalm commentary in O'Sullivan's abridged 1866 English; exact-incipit and phrase searches over those named corpora and web indexes; optional restricted Anthony of Padua evidence in Latin (PAT-009, PAT-013--PAT-014, PAT-016--PAT-022; COV-012). |
-| Liturgical history | Latin page images or checked transcriptions of the Old Gelasian, Hadrianum Gregorian, Honorius in PL 172, the Vatican 1604 typical edition, the verified Mame 1922 printing, and Vatican 1962; historical English Guéranger and Schuster. The degraded, uncorrected OCR derivatives identified with the Venice 1570 and Pustet 1862 missals were consulted only as finding aids and were not collated against page images. Tommasi's underlying manuscripts, Deshusses's critical Gregorian edition, and a broader stemmatic antiphoner/lectionary comparison were not inspected (LIT-001--LIT-013). |
-| Cultural afterlife | English-language bounded searches across Project Gutenberg, Internet Archive-derived indexed full text, CCEL, Adventist periodical scans, Google Books snippets, Hymnary, legal-text indexes, museum and parliamentary records, and general web indexes, using exact Douay phrases and common King James variants (CUL-001--CUL-013). Other languages, unindexed print, non-indexed images, paraphrase-only uses, inaccessible databases, and damaged OCR remain outside the sweep. |
-| Interpretive precedent | At commit `2b1d0044c8438dfff619a8671492a7e131a51fba`, both providers' 188 `main.tex` documents and 2,865 TeX/Markdown files, plus nine locally retained OCR payloads representing eight historical Roman, Ambrosian, and Mozarabic missal editions (PRE-001). Searches used Latin spelling variants and phrase/fragment combinations; OCR supplied leads only. General sermon literature, printed chant repertories, subscription corpora, and untracked web corpora were not searched. |
-| Source and citation coverage | The source library's registered work, edition, artifact, passage, and binding records, validated at the lane's snapshot, together with the publication's collation and binding audits (COV-001--COV-012). Library absence was treated as provenance debt, not as absence of the intelligibly cited source. |
+### Scripture and chronology
 
-## Liturgical history and transmission
+- Latin: the 1962 Missal and Clementine Vulgate at the appointed loci.
+- English: Douay--Rheims, Challoner revision, for the complete appointed psalms, Galatians context, Matthew's Sermon on the Mount, relevant Pauline and synoptic parallels, First Peter 2, Hebrews 3--4 and 12, Psalm 131, and the Psalm 117 cornerstone parallels.
+- Chronology: the generated Catholic-traditional-v1 proper record only. No independent chronology source was used to fill its absences.
+- Not searched or inspected for this target: Hebrew and Greek Psalter loci and exact Greek New Testament loci. Their registered existence does not make them inspected evidence. (COV-006)
 
-### Prayer set and chant constellation
+### Patristic, medieval, saintly, and later Catholic reception
 
-- In the Old Gelasian witness, the target Collect and Secret stand together in
-  Book III, *alia Missa* X, Wilson pp. 229--230, but the Mass has different
-  postcommunions. *Purificent semper* circulates elsewhere in the appended
-  postcommunion series at p. 237 and in a Saint Andrew adaptation at
-  pp. 206--207. This proves separate antecedents and formula mobility, not
-  authorship or borrowing direction (LIT-001).
-- In the Hadrianum Gregorian, Wilson section CXXXIII, pp. 173--174, the three
-  target orations stand together under *Dominica XV* with their later ritual
-  functions. The chant cues attached there are not the later target
-  constellation. Wilson's CXXXI instead has *Protector noster*, *Bonum est
-  confidere*, *Inmittit angelum*, *Panis quem ego*, and *Iubilate Deo*.
-  Thus the prayer set and the later chants were not inherited in this witness
-  as one indivisible formulary (LIT-002--LIT-003).
-- Wilson's Gelasian comparisons assign the Collect and Secret variously to
-  the fifteenth or sixteenth Sunday, and his introduction records different
-  series beginnings and September Ember interruptions. Ordinal disagreement
-  cannot be normalized into a simple transfer between later Sunday numbers
-  (LIT-004).
+- Greek with Migne Latin facing text: Theodoret on Psalms 33, 83, 94, and 117 and on Galatians 5. These are Migne facsimiles rather than critical Greek editions.
+- Latin or Latin transcriptions: Augustine on Galatians; Jerome on Galatians and Matthew; Cassiodorus on the four psalms; Aquinas on Psalms, Galatians, and Matthew; Anthony of Padua's Sunday sermon; Estius on perseverance.
+- Historical English: NPNF translations of Augustine, Chrysostom, Cyril, and Ambrose; Bellarmine in the abridged O'Sullivan translation; Benedict in the identified OSB delivery. Translation-level claims are attached to those witnesses and are not represented as checks of the original language.
+- Exact-form negative sweeps: Corpus Thomisticum, the inspected Migne Latin pages, Corpus Corporum/monumenta.ch, LombardPress, the local Latin source inventory, and New Advent's English patristic texts. The contracted Communion sweep additionally used Cantus and Usuarium. Results are limited by indexing, OCR, literal phrasing, and the named languages.
 
-### Medieval mixed constellations
+### Liturgical history and transmission
 
-Honorius, *Gemma animae* IV.72--73, PL 172:717--718, knows a fourteenth Sunday
-that combines *Protector noster*, *Custodi Domine*, Galatians 5, *Bonum est
-confidere*, the ten lepers, *Immittet angelus*, and *Panis quem ego*. His
-fifteenth Sunday in IV.78--79, cols. 719--720, combines later fourteenth- and
-fifteenth-Sunday material, including *Bonum est confidere* and Matthew 6, and
-ends with a different Johannine Communion (LIT-005--LIT-006). These records
-show medieval crossover, not the moment or reason of later redistribution.
+- Wilson, ed., *The Gelasian Sacramentary* (1894), printed pp. 207, 229--230, 237, 355.
+- Wilson, ed., *The Gregorian Sacramentary under Charles the Great* (1915), no. CXXXIII, printed pp. 173--174.
+- Miquel dels Sants Gros i Pujol, *El Sacramentari II de Gellona*, *Miscel·lània Litúrgica Catalana* 20 (2012), p. 155, items 1122--1123 (SupG 1172--1173).
+- Honorius Augustodunensis, *Gemma animae* IV.72--79, PL 172:717--720.
+- Medieval Music Manuscripts Online source F-AI Ms 44, Albi MS 44, source 8386, structured index/CSV. The source record and index were checked; manuscript images were blocked by a human-verification gate.
+- Venice 1570 Missal, printed pp. 161--162, leaves n409--n410; Vatican 1604 Missal, printed pp. 320--321, leaves n415--n416; Mame 1922, printed pp. 444--446; Vatican 1962, printed pp. 394--396.
+- Sacred Congregation of Rites, *Variationes in Breviario et Missali Romano* IV.18, *AAS* 52 (1960), p. 709.
+- Guéranger, *The Liturgical Year: Time after Pentecost* II (1900), pp. 341--343; Schuster, *The Sacramentary* III (1927), pp. 136--138.
+- Not reached: a full manuscript recensio, Deshusses, Tommasi's underlying antiphonary manuscripts, and specialist temporal-chant studies.
 
-Honorius IV.74 gives a specifically medieval reception of the angel
-Offertory, relating it to Tobias, Saint Michael's nearby feast, and September
-Ember ordinations. It does not prove an invariant calendrical coincidence or
-the cause of the 1962 placement (LIT-007).
+### Cultural afterlife
 
-### Later Roman continuity and small recension
+The English-language sweep used exact Douay phrases and common King James/Prayer Book variants across the general web index, Project Gutenberg full text, Historic Hansard, OpenJurist and Justia case texts, museum catalogues, and Hymnary. It did not cover non-English reworkings, unindexed print, paraphrase without indexed wording, images without catalogue text, or OCR-defeated material. The five selected items are audited below; nine additional candidates or negatives remain recorded as alternatives. (cultural-afterlife CUL-001--CUL-014)
 
-The verified Mame 1922 page-image witness and the Vatican 1962 facsimile carry
-the same ten-element placement and order under *Dominica XIV post
-Pentecosten* (LIT-008). They support a checked 1922--1962 continuity claim,
-not a first appearance or a universal transmission history. The verified
-Mame witness, rather than an OCR derivative, is also the available
-pre-1962 page-image basis for treating this formulary's received wording as
-preexisting material.
+### Precedent
 
-The degraded, uncorrected OCR derivative identified with the Venice 1570
-consortium issue appears at fols. 161v--162r to display the ten-element
-sequence, and its Galatians list appears to order *longanimitas, bonitas,
-benignitas* (LIT-008--LIT-009). No page images were obtained or collated, so
-these remain observations of the OCR layer, not assertions about the printed
-edition; they establish neither a lower bound for the complete constellation
-nor a checked recension against the 1604 and 1962 witnesses.
+The targeted precedent sweep covered all 2,865 TeX and Markdown files under `src/claude` and `src/gpt` at seed commit `f7555d24093e8c1b6c62de6c0426e3fcefb24984`, plus nine retained OCR/plain-text missal payloads representing eight Roman, Ambrosian, and Mozarabic editions dated 1499, 1570, 1604, 1640, 1712, 1755, 1862, and 1862. Searches used exact and accent-tolerant Latin/English term families, intersected files, and manual comparison of neighboring temporal guides 41, 43, 48, 49, and 51--54. The target Claude leaf was excluded as self-precedent; the independently authored GPT sibling was read at the pinned seed commit. The sweep did not include the general web, subscription corpora, untracked material, general sermon literature, printed-only chant repertories, or semantic matches defeated by OCR. (PRE-001)
 
-The degraded, uncorrected OCR derivative identified with the Pustet 1862
-missal likewise appears to contain all ten elements. No page images were
-obtained or collated. It is a finding aid only and cannot support an assertion
-about the printed book or serve as the sole basis for textual, transmission,
-preexisting-material, or rights conclusions.
+## Historical and liturgical findings
 
-### Later historical and liturgical judgments
+### Prayer transmission before the later Sunday placement
 
-Guéranger reports that *Primum quaerite* was not the primitive Communion for
-this Sunday and that the manuscripts consulted by Tommasi did not place it
-here. The Gregorian cue gives *Panis quem ego* as a positive earlier
-alternative, but Tommasi's underlying manuscripts were not inspected and no
-source fixes the time, place, or cause of replacement (LIT-010).
+The Old Gelasian witness preserves parts of the later prayer triad in separate settings. *Alia missa* X carries *Custodi* and *Concede* with another collect and two different postcommunions; the exact generic *Purificent semper et muniant tua sacramenta nos, Deus* appears in an appended postcommunion series; and an expanded Saint Andrew form occurs elsewhere. This establishes separate circulation and adaptation, not authorship or a causal assembly history. (LIT-001)
 
-Guéranger and Schuster read the proper as enacted entrance, petition,
-proclamation, oblation, Communion, and continuing sacramental effect
-(LIT-011). Schuster additionally reconstructs *Quarta post Sancti Laurentii*
-in a late-summer Roman harvest horizon and reads providence as ordering labor,
-not abolishing it (LIT-012). That is Schuster's twentieth-century historical
-reconstruction, not an ancient rubric, fixed civil date, or proof of a Saint
-Lawrence compositional setting.
+The full *Custodi--Concede--Purificent* sequence is joined as collect, *Super oblata*, and *Ad complendum* in Wilson's Hadrianum tradition, no. CXXXIII, but the heading there is the Fifteenth Sunday after Pentecost. Across Wilson's evidence, the associated Sunday number varies: the Old Gelasian note reports the sixteenth Sunday in R, S, and Gerbert, the fifteenth in Pamelius, and the sixteenth in Menard; Wilson's appendix lists the triad under *Hebdomada XVI*; the Hadrianum text labels it *Dominica XV*. These are witness-specific ordinal and placement differences, not a simple conversion table. (LIT-002, LIT-004)
 
-No checked source identifies the first assembler of the later reading, chant,
-and prayer constellation or the precise date and reason for replacing *Panis
-quem ego* with *Primum quaerite*. Deshusses, Tommasi's manuscript work, and a
-broader stemmatic antiphoner/lectionary comparison remain uninspected
-(LIT-013; COV-009).
+### Mixed medieval constellations
 
-## Competing judgments and textual differences to preserve
+Honorius's *Dominica XIV* joins the later target Introit, Collect, Galatians lesson, and Offertory with the later Fifteenth Sunday's Gradual, Alleluia, and Communion and the later Thirteenth Sunday's Gospel of the ten lepers. His *Dominica XV* retains the later Fourteenth Sunday's *Bonum est confidere* Gradual and Matthew 6 Gospel amid elements otherwise associated with the later Fifteenth Sunday. The crossing is bidirectional and witnesses a mixed medieval sequence rather than a one-number displacement or a single linear stage. (LIT-005, LIT-006)
 
-- Psalm 83: Theodoret gives an exilic setting and an ecclesial identification
-  of the Anointed's face; Augustine and Cassiodorus develop ecclesial and
-  eschatological readings differently. The chronology corpus's composition
-  label is a separate traditional chronology assertion (PAT-001--PAT-002;
-  SCR-012).
-- Psalm 117: Augustine and Cassiodorus read `princes` as angelic powers;
-  Theodoret reads earthly rulers; Bellarmine permits subordinate reliance on
-  angels or holy persons only as referred to God (PAT-003, PAT-019).
-- Psalm 94: Augustine and Cassiodorus treat jubilation as joy beyond speech;
-  Theodoret hears a victor's cry and supplies a Josian setting; Bellarmine
-  makes inward joy prior to vocal praise. The corpus nevertheless records the
-  psalm as `undated-in-tradition` (PAT-004, PAT-020; SCR-012).
-- Galatians: Augustine, Jerome, Chrysostom, Theodoret, Ambrosiaster, and
-  Aquinas work from different vice/fruit list forms. Their moral and doctrinal
-  conclusions must remain attached to their text forms (PAT-005--PAT-009).
-  The chronology corpus preserves four disputed composition labels rather
-  than one harmonized date (SCR-013).
-- Matthew: Hilary allegorizes birds, stature, lilies, and grass; Jerome and
-  Chrysostom retain ordinary creatures and the lesser-to-greater argument.
-  The chronology corpus preserves six disputed composition labels (PAT-011--
-  PAT-013; SCR-013).
-- Psalm 33: Augustine identifies the Angel as Christ; Cassiodorus, Theodoret,
-  and Bellarmine read created ministers. The psalm title's Achimelech and
-  1 Kings 21's Achis remain different names in the checked texts (PAT-015,
-  PAT-021; SCR-009).
-- Sunday ordinal and assembly: Old Gelasian, Gregorian, Honorius, and the later
-  Roman Missal do not preserve one stable ordinal or indivisible constellation
-  (LIT-001--LIT-006).
-- Communion: full-verse exegesis and a fuller Cantus form do not settle the
-  exact antiphon's omissions, promoted *Primum*, or added *dicit Dominus*
-  (SCR-010; PAT-017).
+Honorius interprets his Fourteenth Sunday within a September complex: Tobias, angelic rescue, Saint Michael, clerical ordinations, Isaiah's seven gifts, and the biblical feast of Tabernacles. This is his twelfth-century account of the received grouping, not proof of the formulary's origin. (LIT-007)
 
-## Scriptural chronology audit
+### Chant continuity and change
 
-This section reproduces only `research/chronology.toml`. Dates from reception
-sources are not substituted for a missing corpus assertion. Each status and
-label below is the chronology record's answer.
+Wilson's cue apparatus groups *Protector*, *Bonum est confidere*, *Inmittit angelum*, and *Panis quem ego* with Alleluia *Iubilate Deo*. The circa-900 Albi structured index assigns *Protector*, *Bonum*, *Immittit*, and *Panis* to *Dom. 14 p. Pent.* but assigns Alleluia *Confitemini*, not *Venite*. Wilson's printed evidence was checked directly; the Albi detail is index-attested because its manuscript viewer stopped at a human-verification gate. This supports partial early continuity, not an unchanged ninth-century ten-element sequence. (LIT-003)
 
-| Element | Loci | Corpus status | Assertions and stable identity |
-| --- | --- | --- | --- |
-| Introit | `Ps.83.10`, `Ps.83.11`, `Ps.83.2`, `Ps.83.3` | `composition-only` | Subject `composition.psalms-of-the-sons-of-korah`; relation `composition`; profile `catholic-traditional-v1`; label **“between the days of Isaias and the return from exile”**; disposition `preferred`; inherited scope `Ps.41 Ps.42 Ps.43 Ps.44 Ps.45 Ps.46 Ps.47 Ps.48 Ps.83 Ps.84 Ps.86 Ps.87`; source `artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25`. |
-| Epistle | `Gal.5.16`--`Gal.5.24` | `composition-only` | Subject `composition.epistle-to-the-galatians`; relation `composition`; profile `catholic-traditional-v1`; four `disputed` labels: **“A.D. 49-50”**, **“about A.D. 53, 54”**, and **“A.D. 57 or 58”** from `artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06336a-508d2398`, and **“(1 and 2 Corinthians; Galatians), 56”** from `artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8`; inherited scope `Gal`. None is preferred. |
-| Gradual | `Ps.117.8`, `Ps.117.9` | `undated-in-tradition` | No assertion. The corpus records **undated-in-tradition**; no date may be supplied from another chronology or from reception. |
-| Alleluia | `Ps.94.1` | `undated-in-tradition` | No assertion. The corpus records **undated-in-tradition**; Theodoret's Josian setting remains attributed reception rather than a date for the passage. |
-| Gospel | `Matt.6.24`--`Matt.6.33` | `composition-only` | Subject `composition.gospel-of-matthew`; relation `composition`; profile `catholic-traditional-v1`; six `disputed` labels: **“about A.D. 38-45”** from both `artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef` and `artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c`; **“about the year 40-42”**, **“the years 40-45”**, **“about the year 60-68”**, and **“about the years 64-67”** from the volume-10 artifact; and **“about the year 50”** from the volume-14 artifact; inherited scope `Matt`. None is preferred. The record carries no narrated-event assertion for the Sermon. |
-| Offertory | `Ps.33.8`, `Ps.33.9` | `dated` | Subject `israel.monarchy.david-at-geth`; relation `superscription-setting`; profile `catholic-traditional-v1`; label **“A. M. 2944, A. C. 1060”**; disposition `preferred`; inherited scope `Ps.33 Ps.55`; sources `passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.first-kings-21-achis-geth-chronology` and `passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology`. The relation dates the received superscription setting, not composition. |
-| Communion | `Matt.6.33` | `composition-only` | The same subject, relation, profile, six disputed labels, dispositions, inherited scope, and volume-10/volume-14 sources as the Gospel. The adaptation carries no separate composition or narrated-event assertion. |
+The Communion has a documented earlier alternative. Wilson and Albi give *Panis quem ego*; Venice 1570 already gives *Primum quaerite*. Guéranger says *Primum* was not the primitive antiphon and was absent from manuscripts consulted by Tommasi. His statement is secondary; those underlying manuscripts were not reached, and no source in this sweep dates or explains the substitution. (LIT-011)
 
-The page-2 author must print the source's `label`, never the normalized `date`,
-and must name subject and relation in the chronology macros. Galatians and
-Matthew alternatives must remain attributed to the Catholic Encyclopedia
-artifacts that report them. The Gospel has no event assertion; the author must
-state that absence rather than import a remembered date for the Sermon.
+### Later bounded continuity and small recension changes
 
-## Notable-and-quotable audit
+Among the checked witnesses, the complete later ten-element sequence appears under the Fourteenth Sunday in Venice 1570 and remains stable at element-and-order level in Vatican 1604, Mame 1922, and Vatican 1962. Venice 1570 is a secure terminus ante quem among these witnesses, not the first appearance of the sequence. Orthography, punctuation, rubrics, and supplementary prayer apparatus vary. (LIT-008; COV-003)
 
-The five selections below satisfy the gallery rule. Protected later works are
-paraphrased; only short public-domain biblical wording is proposed for exact
-quotation.
+Within the same Galatians pericope, Venice 1570 orders the v. 22 terms *patientia, longanimitas, bonitas, benignitas, mansuetudo*; Vatican 1604 and 1962 give *patientia, benignitas, bonitas, longanimitas, mansuetudo*. This is a word-order recension, not a different lesson. (LIT-009)
 
-### NQ-1. Frederick Douglass: “You cannot serve God and Mammon”
+Venice 1570 and Vatican 1604 place additional seasonal orations around the principal triad. The 1960 *Variationes* IV.18 abolished the *orationes pro diversitate Temporum*, accounting for their absence from the 1962 use. This is a documented change in celebration practice, not a redefinition of the target proper's boundaries. (LIT-010)
 
-- **Appointed text and locus:** Douay--Rheims/Challoner, Matthew 6:24,
-  controlled by the registered Matthew verse artifact.
-- **Later text and locus:** Frederick Douglass, “Baptists,
-  Congregationalists, the Free Church, and Slavery,” Belfast, 23 December
-  1845, paragraph 7; contemporary reports identified in the Douglass Papers
-  transcript (CUL-001).
-- **Relationship and wording:** explicit verbatim quotation within a chain of
-  paired contraries; the six-word clause matches the appointed Douay apart
-  from capitalization of `Mammon`.
-- **Context and payoff:** Douglass turns the Gospel's divided-service warning
-  into an abolitionist test of church fellowship with slaveholders, expanding
-  God/Mammon into justice/injustice and liberty/slavery.
-- **Translation and rights:** the appointed phrase and underlying 1845 reports
-  are public domain. Do not reproduce Yale's protected modern editorial layer;
-  cite it and quote only the biblical clause.
-- **Limit:** dependence on Matthew is explicit; dependence on this proper or
-  specifically on the Douay translation is not.
+Schuster situates the Sunday in the older seasonal idiom *Quarta post Sancti Laurentii* and harvest time and notes the Lenten reuse of the Gradual and Offertory. Guéranger and Schuster both receive the appointed positions as enacted movement from protection through choice and providence, angelic guard and tasting, the saving Host, kingdom-first reception, and sacramental purification and strengthening. Their readings are historically situated reception and do not identify an ancient compiler's design. (LIT-012, LIT-013)
 
-### NQ-2. Samuel Butler: lilies answer with “Solomons”
+### Historical negative
 
-- **Appointed text and locus:** Douay--Rheims/Challoner, Matthew 6:28--29,
-  especially “Consider the lilies of the field” and “neither do they spin.”
-- **Later text and locus:** Samuel Butler, *Erewhon*, revised edition,
-  chapter XXVII, “The Views of an Erewhonian Philosopher Concerning the
-  Rights of Vegetables,” Project Gutenberg eBook 1906 (CUL-002).
-- **Relationship and wording:** documented direct allusion followed by
-  syntactic parody. Butler names Jesus' saying; `Consider the lilies of the
-  field` and `neither do they spin` match the Douay, while `toil` follows King
-  James diction.
-- **Context and payoff:** the philosopher reverses lilies and Solomon,
-  pluralizes Solomon, and makes plants argue back at the human speaker in a
-  deliberately absurd case for vegetable intelligence and rights.
-- **Translation and rights:** Butler and the Gutenberg US text are public
-  domain.
-- **Limit:** this is dependence on Matthew, not on the Roman proper. The
-  checked electronic text identifies the revised edition, so do not assign
-  the wording to the 1872 first edition.
+The checked sacramentaries, medieval commentary, missals, and preconciliar studies do not identify the first compiler, exact date, or motive for the complete later sequence, or the precise date and cause of the Communion substitution. The negative is limited to Wilson's Old Gelasian and Hadrianum editions; Honorius IV.72--79; the Venice 1570, Vatican 1604, Mame 1922, and Vatican 1962 missals; Guéranger pp. 341--343; and Schuster III, pp. 136--138. (LIT-014; COV-009)
 
-### NQ-3. Ray Bradbury: lilies against commercial noise
+## Organized brief for authoring
 
-- **Appointed text and locus:** Douay--Rheims/Challoner, Matthew 6:28,
-  “Consider the lilies of the field.”
-- **Later text and locus:** Ray Bradbury, *Fahrenheit 451*, 50th Anniversary
-  edition (Simon & Schuster, 2003), part 2, “The Sieve and the Sand,” p. 78
-  (CUL-004).
-- **Relationship and wording:** direct biblical quotation; the six-word phrase
-  matches the appointed Douay, while the continuation uses King James diction.
-- **Context and payoff:** Montag attempts to remember the verse while a subway
-  advertisement repeatedly overwhelms it. Serene attention to providence
-  becomes fragile resistance to consumer conditioning.
-- **Translation and rights:** Bradbury's novel remains protected. Quote only
-  the short public-domain biblical phrase and paraphrase the scene, citing the
-  2003 edition and page.
-- **Limit:** no dependence on this proper or specifically on the Douay is
-  established.
+### Appointed-text contexts
 
-### NQ-4. *Johnston v. Commonwealth*: “Against such there is no law”
+- **Introit.** Psalm 83 moves from longing for the courts (vv. 2--5), through pilgrimage in the vale of tears and ascent to Sion (vv. 6--8), to prayer before the God of hosts and for the anointed (vv. 9--10), and concludes with preference for the courts, God's gifts, and blessed trust (vv. 11--13). The Missal places vv. 10--11a before vv. 2--3a and omits the latter parts of vv. 3 and 11. The arrangement carries sanctuary, pilgrimage, anointed-one, valuation, and trust contexts without proving an arranger's motive. Psalm 131 and Hebrews 12 provide distinct canonical extensions. (SCR-006, SCR-007)
+- **Collect.** The Church, whose mortal condition slips, asks continual divine propitiation and protection: withdrawal from harms and direction toward saving things. The verified text is Latin only. Its historical circulation and Estius's perseverance use are available; no earlier direct prose exposition of the full formula was located. (LIT-001, LIT-002, PAT-011, COV-002)
+- **Epistle.** Galatians 5:16--24 is the ethical center of Paul's freedom argument: bondage and circumcision give way to service through charity and fulfilment of the law (4:21--5:15); walking and being led by the Spirit oppose the works and desire of the flesh (5:16--24); v. 25 repeats the walking command; 6:1--10 develops meek restoration, burden-bearing, and sowing to the Spirit. The Missal replaces Paul's “I say then” with *Fratres* and stops before v. 25. The selected patristic and later witnesses prevent bodily denigration and explain grace-enabled action and transformation. (SCR-008, SCR-009, PAT-004, PAT-005)
+- **Gradual.** Psalm 117 is framed by the enduring-mercy refrain. Distress and deliverance occupy vv. 5--18; the Lord's help in vv. 6--7 grounds vv. 8--9's preference for divine trust; gates of justice and temple procession fill vv. 19--27. The cornerstone's explicit Christological reception belongs to the wider psalm at v. 22, not specifically to the selected vv. 8--9. The reception disagreement over “princes” should remain attributed. (SCR-010, SCR-011, PAT-002)
+- **Alleluia.** Psalm 94 opens in joyful praise of creator, king, shepherd, and maker (vv. 1--7a), then turns on “today” to the wilderness warning and refused rest (vv. 7b--11). The chant appoints the invitation while the whole summons-and-warning unit remains its context. Hebrews 3--4 explicitly receives the warning as the Holy Ghost's speech to Christian hearers. (SCR-012, SCR-013, PAT-003)
+- **Gospel.** Matthew 6:24--33 belongs to the Sermon on the Mount and to the unit 6:19--34: treasure and heart, the eye, two masters, and therefore release from solicitude through the Father's care and kingdom-first justice. The Father's prior knowledge recalls 6:8; kingdom, daily bread, and divine will recall 6:10--11; the Sermon's earlier justice sayings condition v. 33. The Missal supplies its incipit and ends at v. 33, before the counsel about tomorrow. Patristic and medieval reception preserve ordinary work and responsible agency. (SCR-014, SCR-015, PAT-006, PAT-007)
+- **Offertory.** Psalm 33 moves from deliverance and praise (vv. 2--7), through angelic protection, tasting, fear, trust, and provision (vv. 8--11), to instruction of children in fear, righteous conduct, and confidence amid affliction (vv. 12--23). The Offertory appoints the hinge at vv. 8--9a, stopping before the blessing of one who hopes in the Lord. The Angel's identity remains disputed across reception; the Eucharistic reading of tasting is explicit in several witnesses without exhausting the psalm's literal sense. (SCR-016--SCR-018, PAT-008, PAT-009)
+- **Secret.** The controlled Latin asks that the saving Host purify sins and propitiate divine majesty or power. It belongs within the historically transmitted prayer triad and within Guéranger's and Schuster's later reading of the Eucharistic movement. No verified English prayer or direct ancient/Doctoral exposition is available. (PAT-012, LIT-002, LIT-013, COV-002)
+- **Communion.** This is a liturgical recasting, not a verbatim repetition of Matthew 6:33. Its initial *Primum*, omissions, and added *dicit Dominus* must remain visible. Full-verse Gospel exegesis illuminates kingdom-first order but does not explain the contracted chant. (SCR-019, PAT-010, PRE-012)
+- **Postcommunion.** The controlled Latin asks the sacraments to purify and fortify their recipients and lead them to the effect of everlasting salvation. It closes the transmitted triad and the ritual movement. No verified English prayer or direct ancient/Doctoral exposition is available. (PAT-013, LIT-002, LIT-013, COV-002)
 
-- **Appointed text and locus:** Douay--Rheims/Challoner, Galatians 5:22--23.
-- **Later text and locus:** *Johnston v. Commonwealth*, 22 Pa. 102, 108--109
-  (Supreme Court of Pennsylvania, 1853), in the discussion of charitable and
-  necessary Sunday activity (CUL-006).
-- **Relationship and wording:** strong exact verbal echo; the six words match
-  both Douay and King James, but the opinion supplies no biblical citation, so
-  translation-level dependence is unproved.
-- **Context and payoff:** the court makes Paul's `such` refer to charitable and
-  necessary works potentially outside a Sunday statute, before holding that
-  the driver's ordinary paid employment did not qualify. Spiritual fruit is
-  made to sound like a proposition about positive law's reach.
-- **Translation and rights:** the 1853 judicial opinion and biblical wording
-  are public domain.
-- **Limit:** identify the relation as an echo, not as a proved quotation from
-  Galatians, the Douay, or this proper.
+### Five settled cross-proper claims
 
-### NQ-5. Bosch's *Death and the Miser*: rival service becomes spatial
+#### 1. Allegiance orders desire and goods
 
-- **Appointed text and locus:** Douay--Rheims/Challoner, Matthew 6:24, the
-  phrase `serve God and mammon`.
-- **Later work and locus:** Hieronymus Bosch, *Death and the Miser*,
-  c. 1485/1490, National Gallery of Art accession 1952.5.33; NGA object record
-  and essay (CUL-008).
-- **Relationship and wording:** museum-documented visual relation, not a
-  verbal quotation in the painting. The NGA's wording matches the appointed
-  phrase apart from capitalization.
-- **Context and payoff:** angel and crucifix claim the dying man's gaze while a
-  demon and money claim his hand; sequential verbal alternatives become
-  simultaneous bodily and spatial pressure.
-- **Translation and rights:** the NGA identifies the image media as free and
-  the painting as public domain; the Douay phrase is public domain.
-- **Limit:** Bosch left no checked statement of dependence on Matthew, a
-  translation, or the proper. The NGA itself qualifies the middle-ground
-  figure's identity and the panel's original setting.
+**Evidence class:** source-grounded synthesis. **Contributing lanes:** scripture-context, patristic-reception, theological-synthesis, precedent-search.
 
-### Cultural-afterlife negatives and unselected candidates
+Psalm 83 prefers one day in God's courts to thousands; Psalm 117 prefers trust in the Lord to trust in people or princes; Galatians opposes the regimes of flesh and Spirit and warns about kingdom inheritance; Matthew makes service of God and mammon mutually exclusive; the Communion returns with *Primum*. Together these texts move from comparison toward governing allegiance without condemning created goods. Augustine, Chrysostom, Jerome, Benedict, and Aquinas keep temporal necessities within responsible action and beneath the final end. Galatians' *idolorum servitus* and kingdom warning can stand beside Matthew's service language as a textual axis, but not as a claim that mammon exhausts or equals every work of the flesh. (SCR-014, SCR-020, SCR-021; PAT-006, PAT-007; theological-synthesis THE-001, THE-002, THE-007)
 
-- No qualifying register-changing afterlife was verified for the Introit's
-  `better is one day` or `How lovely are thy tabernacles` phrases in the
-  bounded English sweep. Devotional exposition, worship songs, and titles did
-  not qualify (CUL-009).
-- No qualifying afterlife was verified for the Alleluia's opening; located
-  uses remained liturgical recitation or hymnody (CUL-010).
-- No qualifying non-devotional afterlife was verified for the Offertory's
-  angelic encampment or tasting clauses. Maclaren and Spurgeon were direct
-  exposition or devotion (CUL-011).
-- The remaining Communion wording yielded only hymns, mottos, titles,
-  unverified aggregations, and direct exhortation. No later source made
-  unexpected use of the antiphon's exact adaptation features (CUL-012).
-- Beyond the two judicial echoes of `Against such there is no law`, no further
-  qualifying afterlife of the Epistle's lists was verified; sermons and
-  catechetical lists remained direct application (CUL-013).
-- David Kirkwood's 1928 parliamentary lilies quotation (CUL-003), the US
-  Supreme Court's explicit Matthew 6:24 conflict-of-interest application in
-  *United States v. Mississippi Valley Generating Co.* (CUL-005), and
-  *Sullens v. State*'s exact Galatians echo (CUL-007) qualify but are not
-  selected because the five-entry gallery already supplies literary,
-  abolitionist, judicial, and visual turns without overloading it with legal
-  examples.
+#### 2. Providence orders rather than cancels agency
 
-All cultural negatives are limited to the named English literal variants and
-indexed sources. Other languages, paraphrases, non-indexed print and images,
-inaccessible databases, and damaged OCR remain open.
+**Evidence class:** source-grounded synthesis. **Contributing lanes:** patristic-reception, theological-synthesis, scripture-context.
+
+The Collect asks continual help, the Epistle commands walking and crucifixion of vice-governed desire, the Gospel releases the disciple from anxious mastery of necessities, and the Postcommunion asks the sacraments to purify and fortify. Chrysostom preserves work within the Father's care; Theodoret joins indwelling grace and the soul's response; Benedict and Aquinas preserve practical responsibility. Providence and moral agency therefore answer one another. The claim excludes both quietism and self-sufficient moralism and promises no immunity from deprivation. (PAT-004, PAT-006, PAT-007; THE-003)
+
+#### 3. Subordinate mediation does not rival divine mastery
+
+**Evidence class:** source-grounded synthesis with a retained reception disagreement. **Contributing lanes:** patristic-reception, theological-synthesis, scripture-context.
+
+The Introit calls God protector, the Gradual reserves final trust to him, and the Offertory welcomes the Lord's encircling Angel. Bellarmine understands created assistance as ordered through God; Augustine identifies the Angel christologically; Aquinas preserves created, Christological, and ecclesial possibilities. Those readings disagree about the Angel's identity while converging against autonomous creaturely mastery. Ordinary human authority and expertise are not excluded by the Gradual. (PAT-002, PAT-008; THE-004)
+
+#### 4. Grace transforms appetite into praise and sacramental participation
+
+**Evidence class:** source-grounded synthesis. **Contributing lanes:** scripture-context, patristic-reception, theological-synthesis.
+
+Longing for the courts, Spirit-given joy and peace, jubilation to the Savior, release from anxious solicitude, and tasting divine sweetness describe transformed affect rather than stoic detachment. Augustine and Cassiodorus treat jubilation as joy exceeding speech; Cyril and Ambrose receive tasting eucharistically; Aquinas and Bellarmine retain experiential divine sweetness. The Secret's saving Host and the Postcommunion's purification carry this affective movement into sacramental action. The terms *concupiscere*, fruit, jubilation, solicitude, and tasting retain distinct senses; grief, prudence, and concrete care remain possible. (PAT-003, PAT-005, PAT-009; THE-006)
+
+#### 5. The prayer triad and kingdom sayings open toward everlasting salvation
+
+**Evidence class:** source-grounded synthesis and documented liturgical reception. **Contributing lanes:** liturgical-history, patristic-reception, theological-synthesis, source-citation-coverage.
+
+The Collect seeks perpetual protection and saving direction for the Church; the Secret places the saving Host at purification and propitiation; the Communion gives the kingdom present priority; the Postcommunion asks the sacraments to lead to everlasting salvation. Galatians gives the kingdom an inheritance horizon as well as a present moral warning. Guéranger and Schuster read the ritual positions as an enacted movement, while the sacramentary evidence shows that the prayers circulated and were placed differently before the later sequence. The theological arc belongs to reception of the received formulary, not to proof that the three prayers were composed together. Neither reception nor sacramental participation makes final salvation automatic or bypasses conversion and perseverance. (LIT-001, LIT-002, LIT-013; THE-005, THE-007, THE-008)
+
+### Four-senses and page-one evidence
+
+- **Literal:** the complete scriptural contexts and controlled oration descriptions support a map from sanctuary longing, through Spirit-led conduct and undivided service, to tasting, saving oblation, kingdom-first Communion, and sacramental strengthening. (SCR-006, SCR-008, SCR-010, SCR-012, SCR-014, SCR-016, SCR-019)
+- **Allegorical:** Augustine's Christological Angel, Psalm 131's anointed/Sion cluster, Hebrews 12's heavenly Sion and mediator, and Theodoret and Bellarmine on Psalm 83 support Christ-and-Church readings with attributed differences. (SCR-007; PAT-001, PAT-008; THE-008)
+- **Moral:** Galatians' Spirit/flesh conflict, Matthew's two masters, and Augustine, Chrysostom, Jerome, Benedict, Aquinas, and Theodoret support grace-enabled undivided service rather than bodily contempt, idleness, or anxiety-governed action. (PAT-004--PAT-007; THE-002, THE-003)
+- **Anagogical:** Psalm 83's desired courts, Matthew's kingdom-first priority, Galatians' kingdom inheritance, and the Postcommunion's everlasting salvation support the final horizon without collapsing present priority into automatic possession. (PAT-001, PAT-007; THE-007)
 
 ## Interpretive-proposal audit
 
-Every proposal below joins at least two appointed elements and preserves the
-precedent-search classification verbatim. The common search boundary is the
-pinned corpus in PRE-001: 188 provider documents, 2,865 TeX/Markdown files,
-and nine OCR payloads for eight historical missal editions. The OCR was a lead
-only. General sermon literature, printed chant repertories, subscription
-corpora, and untracked web corpora were not searched.
+The formal precedent is recent Triptych practice: mechanism-first cross-element units, separately audited by anchors, mechanism, fruit, ordinary-reading omission, targeted precedent classification, and strongest limit. That is precedent for form, not proof of any proposal's truth. New prose must be written for this guide. (PRE-002)
 
-### IP-1. Comparative preference becomes exclusive allegiance
+### Proposal 1: Comparative preference becomes governing allegiance
 
-- **Classification:** `near analogue located` (PRE-002).
-- **Anchors:** Introit `melior ... super millia`; Gradual `bonum ... quam`;
-  Epistle's opposed Spirit and flesh and kingdom exclusion; Gospel's two
-  masters; Communion's `Primum`.
-- **Mechanism:** comparative ordering in the chants sharpens into exclusive
-  allegiance and first priority in the reading, Gospel, and Communion.
-- **Fruit:** created goods and creaturely assistance can be valued
-  subordinately without becoming rival ends.
-- **What the ordinary reading misses:** the change in grammatical pressure
-  from `better than` to `cannot serve both` and `first` across ritual moments.
-- **Nearest precedent or analogue:** GPT Second Sunday after Pentecost, “A good
-  becomes dangerous when it becomes an exemption”; GPT Third Sunday after
-  Pentecost, “Temporal goods become a road only by changing grammar”; the GPT
-  sibling's appetite/mastery proposal.
-- **Search boundary:** targeted Latin searches for *melior*, *super millia*,
-  *confidere/sperare*, *adversus*, *duobus dominis*, *mammon*, and *Primum*
-  across the pinned provider corpus.
-- **Strongest limit:** Psalm 117's comparative may function idiomatically as
-  exclusion; no sequence or selection intent follows, and comparison cannot
-  become contempt for creation or lawful authority.
+- **Anchors:** Introit *melior ... super millia*; Gradual *bonum ... quam*; Epistle's opposed flesh/Spirit regimes and kingdom exclusion; Gospel's two masters; Communion's promoted *Primum*.
+- **Mechanism:** repeated comparisons of better trust and better dwelling become an account of which good finally orders all others when the Gospel makes divided mastery impossible.
+- **Fruit:** helps distinguish ordered use of created goods from their elevation into a rival final end.
+- **What an element-by-element reading misses:** the shift from comparative grammar in the psalms to exclusive service and first priority in Matthew.
+- **Nearest precedent or analogue:** GPT proper 41, “A good becomes dangerous when it becomes an exemption,” and GPT proper 43, “Temporal goods become a road only by changing grammar.”
+- **Search boundary:** PRE-001's pinned Triptych and retained-missal corpus; no non-target guide in that corpus joined this exact five-part sequence.
+- **Classification:** **near analogue located**.
+- **Strongest limit:** the sequence may describe reception of the assembled formulary but cannot prove compiler design, condemn created goods, or turn comparative words into formal stages of one original argument. (PRE-003)
 
-### IP-2. What anxiety cannot add, God adds and grace directs
+### Proposal 2: What is added is not what directs or leads
 
-- **Classification:** `near analogue located` (PRE-003).
-- **Anchors:** Gospel inability to add one cubit; Gospel and Communion promise
-  that necessities will be added; Collect direction toward saving things;
-  Postcommunion leading toward perpetual salvation.
-- **Mechanism:** the Gospel reverses human anxious `adding` into divine
-  addition, while the orations distinguish what is added from the grace that
-  directs and leads.
-- **Fruit:** providence frees action from anxious mastery and orders temporal
-  provision toward salvation rather than passivity.
-- **What the ordinary reading misses:** the cubit-incapacity hinge between two
-  uses of addition and the directional verbs of the prayers.
-- **Nearest precedent or analogue:** the GPT sibling's “What is added does not
-  become what directs or leads”; Claude Eleventh Sunday after Pentecost's
-  divine-addition treatment.
-- **Search boundary:** spelling variants of *cubitum/staturam* with
-  *adicere/adjicere* and *adicientur/adjicientur* in the pinned corpus.
-- **Strongest limit:** the orations do not share the *adicere* root. The
-  proposal cannot authorize passivity, prosperity teaching, or a claim of
-  compiler design.
+- **Anchors:** the Gospel's inability to add a cubit and promise that necessities will be added; the Collect's direction toward saving things; the Postcommunion's leading to everlasting salvation's effect.
+- **Mechanism:** added temporal provision is grammatically and theologically subordinated to the divine actions that direct and lead.
+- **Fruit:** makes room for trust in provision without making provision the goal of prayer or sacrament.
+- **What an element-by-element reading misses:** the distinct agencies and ends carried by “add,” “direct,” and “lead” across Gospel and orations.
+- **Nearest precedent or analogue:** the seed-pinned GPT sibling, “What is added does not become what directs or leads”; Claude proper 51 is a lexical and agency analogue concerning what God adds.
+- **Search boundary:** PRE-001; searches included *adicere/adicientur*, spelling variants, *cubitum*, *ad salutaria dirigatur*, and *ducant ad perpetuae salvationis effectum*.
+- **Classification:** **precedent located**.
+- **Strongest limit:** the orations do not use Matthew's lexical root; grammar proves no common authorship and supports neither passivity nor prosperity. (PRE-004)
 
-### IP-3. Saving grammar changes role across the liturgical action
+### Proposal 3: Saving language changes ritual role
 
-- **Classification:** `near analogue located` (PRE-004).
-- **Anchors:** Collect *propitiatione perpetua* and *salutaria*; Alleluia *Deo
-  salutari nostro*; Secret *hostia salutaris* and *propitiatio potestatis*;
-  Postcommunion *perpetuae salvationis effectum*.
-- **Mechanism:** related salvation and propitiation forms move from the object
-  of direction, to God's title, to the victim's character and effect, and
-  finally to sacramental consummation.
-- **Fruit:** salvation appears as divine identity, moral direction,
-  sacrificial remedy, and enduring sacramental end rather than as a single
-  abstract noun.
-- **What the ordinary reading misses:** the same semantic field performs
-  different grammatical and ritual work across one chant and three orations.
-- **Nearest precedent or analogue:** Claude Thirteenth Sunday after
-  Pentecost's *augmentum* bracket around the Gospel.
-- **Search boundary:** *propitiatio/propitiation*, *salutari/salvation*,
-  repeated nouns, and oration-bracket searches across the pinned corpus.
-- **Strongest limit:** no whole-Missal concordance establishes rarity, and the
-  related forms are not grammatically interchangeable; early transmission of
-  the prayers does not prove the later four-element design.
+- **Anchors:** Collect *salutaria* and rescue from harms; Alleluia *Deo salutari*; Secret *hostia salutaris* and *propitiatio*; Postcommunion *salvationis effectum*.
+- **Mechanism:** a saving word-family moves from direction, to the God praised, to the offered Host, to the sacramental effect toward which recipients are led.
+- **Fruit:** gives the formulary a four-position account of salvation without reducing salvation to one grammatical form or ritual moment.
+- **What an element-by-element reading misses:** the way cognate language changes subject, object, and function across prayer, chant, oblation, and post-Communion petition.
+- **Nearest precedent or analogue:** Claude proper 53's repeated *augmentum* changing role and Claude proper 52's mechanism-based synthesis; no non-target guide treated this exact four-element sequence.
+- **Search boundary:** PRE-001; searches covered *salutaria, salutari, salutaris, salvationis*, and *propitiatio*.
+- **Classification:** **near analogue located**.
+- **Strongest limit:** morphology and genres differ; early circulation of individual prayers does not establish design of their later Sunday sequence, and no whole-Missal concordance was attempted. (PRE-005)
 
-### IP-4. One desire-root turns toward opposed ends
+### Proposal 4: One desire-root turns toward opposite objects
 
-- **Classification:** `precedent located` (PRE-007).
-- **Anchors:** Introit verse *concupiscit anima mea*; Epistle *caro concupiscit
-  adversus spiritum* and the crucifixion of fleshly desires; Gospel's first
-  seeking as a possible extension.
-- **Mechanism:** the shared Latin root marks desire for God's courts and desire
-  resisting the Spirit, so the issue becomes the object and order of desire,
-  not desire's extinction.
-- **Fruit:** the moral conflict can be presented positively as reorientation
-  toward God rather than hatred of the body.
-- **What the ordinary reading misses:** the same root changes moral force
-  between psalm verse and Epistle and can be redirected by the Gospel's
-  kingdom priority.
-- **Nearest precedent or analogue:** the GPT sibling's exact two-element
-  proposal “One desire-root turns toward opposite objects”; a more distant
-  Ninth-Sunday *concupiscentes* proposal.
-- **Search boundary:** spelling-variant *concupisc-* searches across all 2,865
-  pinned Triptych TeX/Markdown files.
-- **Strongest limit:** lexical coincidence is possible; the Introit occurrence
-  is in the psalm verse, not antiphon, and Psalm 83's *cor meum et caro mea* is
-  outside the appointed cut. `Caro` must not be equated with bodily nature.
+- **Anchors:** the Introit verse's *concupiscit* toward God's courts; Galatians' *concupiscit adversus spiritum* and *concupiscentiis*; the Gospel and Communion's kingdom-seeking.
+- **Mechanism:** the same Latin desire-root can name longing directed toward God and desire opposed to the Spirit, with kingdom-seeking supplying the ordering end.
+- **Fruit:** reframes conversion as the redirection and healing of desire rather than the extinction of creaturely affect.
+- **What an element-by-element reading misses:** the lexical reversal between the psalm verse and Pauline lesson.
+- **Nearest precedent or analogue:** the seed GPT sibling's exact proposal; GPT proper 49's “Appetite retrained” is a near analogue.
+- **Search boundary:** PRE-001; targeted at the *concupisc-* root in the Introit and Galatians, with Matthew as a directional anchor.
+- **Classification:** **precedent located**.
+- **Strongest limit:** the shared root may be coincidence; the positive occurrence is in the Introit's psalm verse; flesh cannot be equated with bodily nature; no compiler intent follows. (PRE-006)
 
-### IP-5. Mediators are not masters
+### Proposal 5: Mediation is not mastery
 
-- **Classification:** `near analogue located` (PRE-006).
-- **Anchors:** Gradual's disputed `princes`; Offertory's disputed Angel;
-  Gospel's two masters and providential Father.
-- **Mechanism:** two reception disputes about creaturely agents are placed
-  under the Gospel's distinction between subordinate mediation and final
-  mastery.
-- **Fruit:** the proposal can affirm angelic and human assistance without
-  confusing either with ultimate reliance or divided allegiance.
-- **What the ordinary reading misses:** disagreement over each creaturely
-  referent becomes one theological distinction without forcing either
-  dispute to consensus.
-- **Nearest precedent or analogue:** the GPT sibling's exact three-element
-  “The angel and the princes distinguish mediation from mastery”; Claude
-  Eleventh Sunday after Pentecost's use of unresolved reception disagreement
-  as a cross-proper unit.
-- **Search boundary:** *prince/princip-*, *angel/angelus*, trust,
-  *confidere*, master, *dominus*, mediation, and disagreement combinations.
-- **Strongest limit:** the Gospel bridge is editorial; capitalization cannot
-  settle the Angel's identity, and legitimate creaturely aid must not be
-  confused with final allegiance.
+- **Anchors:** Gradual refusal of final trust in human beings or princes; Offertory's encircling Angel; Gospel's exclusive service of one master.
+- **Mechanism:** created help can mediate the Lord's protection without becoming the final object of confidence or a rival lord.
+- **Fruit:** preserves legitimate authority, expertise, and angelic ministry while sharpening the Gospel's demand for undivided allegiance.
+- **What an element-by-element reading misses:** the distinction between receiving a minister and submitting to a master.
+- **Nearest precedent or analogue:** the seed GPT sibling's “The angel and the princes distinguish mediation from mastery”; Claude proper 53 supplies a structural analogue for preserving an unresolved mediator identity.
+- **Search boundary:** PRE-001; searches joined *confidere/sperare*, *Angelus Domini in circuitu*, and *non potestis duobus dominis servire*.
+- **Classification:** **precedent located**.
+- **Strongest limit:** Matthew is an editorial bridge, not a citation in the psalm commentators; capitalization does not identify the Angel; created mediation is not rival lordship, and ordinary authority remains legitimate. (PRE-007)
 
-### IP-6. Idolatrous service meets mammon's mastery
+### Proposal 6: Tasting discloses the master that orders desire
 
-- **Classification:** `not located in the checked corpus` (PRE-008).
-- **Anchors:** Epistle *idolorum servitus*; Gospel *duobus dominis*, *servire*,
-  and *mammon*; Communion kingdom priority.
-- **Mechanism:** the service vocabulary permits an exploratory movement from
-  overt idol-service to wealth treated as a rival master, resolved by seeking
-  the kingdom first.
-- **Fruit:** idolatry can be examined as the transfer of final allegiance,
-  while ordinary property and prudent provision remain subordinate goods.
-- **What the ordinary reading misses:** Paul's catalogue and Christ's master
-  saying become a shared diagnostic of rival lordship rather than separate
-  warnings.
-- **Nearest precedent or analogue:** no non-target Triptych proposal located;
-  the GPT sibling's appetite proposal does not anchor *idolorum servitus*.
-- **Search boundary:** spelling variants of *idolorum servitus*, *duobus
-  dominis*, *servire*, *mammona*, and *regnum* across the pinned corpus and
-  co-occurrence leads in the nine OCR payloads.
-- **Strongest limit:** the grammar is uneven. A bridge from idolatry to
-  avarice or mammon is reception or exploratory synthesis, not the Epistle's
-  plain wording, and the negative is only corpus-bounded.
+- **Anchors:** Gospel's two masters and mammon; Offertory *gustate et videte*; Secret's saving Host; Communion's kingdom-first return.
+- **Mechanism:** received Eucharistic interpretation of tasting places embodied reception inside the question of what governs desire and which kingdom is first.
+- **Fruit:** joins moral allegiance to sacramental participation without treating bodily life as the enemy.
+- **What an element-by-element reading misses:** the path from the Gospel's exclusive service, through tasting and oblation, to kingdom-first reception.
+- **Nearest precedent or analogue:** the seed GPT sibling's exact proposal; GPT proper 48 is a strong analogue joining Luke 16's mammon/mastery with the same Psalm 33 tasting text at Communion.
+- **Search boundary:** PRE-001; searches joined *duobus dominis/mammona*, *gustate et videte*, *hostia salutaris*, and *Primum quaerite regnum Dei*.
+- **Classification:** **precedent located**.
+- **Strongest limit:** Eucharistic reception is a received reading and does not exhaust Psalm 33; felt sweetness is not the measure of sacramental fruit; the relation proves no compiler intent. (PRE-010)
 
-Other valid precedent-lane conjunctions were not selected: the appointed-cut
-mechanism (PRE-005), protective circuit and courts (PRE-009), tasting and
-allegiance (PRE-010), and the slipping Church with the Spirit's fruit
-(PRE-011). They overlap the six chosen units and may not be added as extra
-reader-facing proposals without reducing the section to the profile's maximum
-of six. THE-017's law/*adversus* pattern remains pericope-level exegesis; no
-other appointed element supplies a demonstrated cross-proper bridge.
+### Proposals considered but not selected
 
-## Source and citation controls for authoring
+- The Galatians-idolatry/mammon/kingdom conjunction was **not located in the checked corpus**. Neighboring proper 48 treats mammon without Galatians 5, and proper 49 treats idolatrous craving without mammon. It remains possible as exploratory reception but risks equating mammon with every vice and adds less than Proposal 1. (PRE-008)
+- The six-element protective circuit is a **near analogue located** and is substantially absorbed by the settled providence and mediation units. Its different spatial images cannot promise physical immunity or prove complete-formulary design. (PRE-009)
+- The singular-fruit/plural-Church proposal has **precedent located** but is comparatively fragile. Grammatical number cannot establish an ecclesiological theory; the Latin and common Greek lists differ, and personal responsibility remains. It is rejected for this production. (PRE-011; THE-009)
+- The Gospel-to-Communion adaptation has **precedent located** and is retained as textual and reception control, but omission alone is too weak to form a separate proposal. The Gospel already proclaims justice in full; the contracted chant's silence cannot negate it. (PRE-012)
 
-### Evidence sufficient now
+## Notable-and-quotable audit
 
-- The 1962 Latin, direct scriptural loci, and Douay--Rheims/Challoner English
-  are sufficient and directly controlled (COV-001).
-- The checked patristic, medieval, Doctoral, and later witnesses may be cited
-  by intelligible work, edition, and locus even where no exact source-library
-  passage exists. Missing machine IDs do not require source registration
-  before publication (COV-007).
-- The checked early sacramentary, Honorius, Vatican 1604, verified Mame 1922,
-  Vatican 1962, Guéranger, and Schuster loci support bounded placement and
-  reception statements as recorded by LIT-001--LIT-012. The Venice 1570 and
-  Pustet 1862 derivatives remain degraded OCR leads only; none of this
-  evidence supports universal wording or causal history (COV-008--COV-009).
-- The verified Anthony of Padua source is an optional restricted-source
-  paraphrase for medieval use of Galatians 5:22--23. Its Luke 17 Gospel and
-  modern restricted apparatus must remain explicit (COV-012).
+Five candidates are selected for variety of register: abolitionist speech, comic fiction, visual art, public law, and modern poetry. Only the short appointed biblical wording may be quoted where later material is protected.
 
-### Authoring constraints and unresolved controls
+### 1. Frederick Douglass: “You cannot serve God and mammon”
 
-- Do not print English for the Collect, Secret, or Postcommunion. Controlled
-  Latin plus prose description is the supported route (COV-002).
-- If the 1922-to-1962 sequence-continuity claim is retained, add the existing
-  verified Mame passage to `research/source-bindings.toml`; the witness is
-  already registered, so this is publication-local binding work, not new
-  research or source registration (COV-003).
-- Ground any reader-facing preexisting-material or rights conclusion in the
-  verified Mame 1922 page-image passage, not in the Venice 1570 or Pustet 1862
-  OCR derivatives. If either OCR observation is mentioned, identify it as an
-  observation of a degraded, uncorrected derivative and state that no page
-  images were obtained or collated (LIT-008--LIT-009; COV-003).
-- Benziger evidence remains an uncorrected OCR lead. It cannot control Vatican
-  wording or an unqualified claim about typography, orthography, punctuation,
-  page arithmetic, or cue differences (COV-004).
-- The only passage-specific modern Catholic dossier is the official USCCB
-  Galatians introduction. It supports the northern-audience judgment while
-  preserving a less likely southern alternative and identifying Gentile
-  converts pressed toward Mosaic observance (SCR-003; COV-005). No registered
-  modern passage dossier exists for Matthew 6 or Psalms 33, 83, 94, or 117.
-  Omit modern-critical specifics there and state the source boundary.
-- No Hebrew or Greek Psalter witness and no exact bound Greek New Testament
-  target locus was checked. Do not make Hebrew-acrostic, original-Greek,
-  chant-psalter-recension, or broad textual-history claims (COV-006).
-- The early sacramentary and chant bindings are catalog-only at their exact
-  loci, although the lanes directly inspected the cited page images. Keep
-  exact human-usable citations and bounded placement language; do not claim a
-  universal text or transmission stemma (COV-008).
-- No primary witness establishes the first compiler, first appearance, cause
-  of assembly, or reason for the exact Communion adaptation. Supported claims
-  stop at bounded antecedence and continuity (COV-009).
-- No negative-search binding exists. Every absence statement must name the
-  works, corpora, languages, queries, and limitations checked (COV-011).
+- **Proper text and locus:** Matthew 6:24, Douay--Rheims/Challoner, appointed Gospel.
+- **Later use and locus:** Frederick Douglass, “Baptists, Congregationalists, the Free Church, and Slavery,” Belfast address, 23 December 1845, paragraph 7; modern transcript at Yale's Gilder Lehrman Center identifies the contemporary newspaper reports and *Frederick Douglass Papers*, Series One, vol. 1.
+- **Relationship strength and wording:** explicit biblical quotation; the six-word clause differs from the appointed Douay only in capitalization of Mammon. Dependence on Matthew is direct; dependence on this proper or the Douay is not established.
+- **Context and payoff:** Douglass expands the God/Mammon contrast into light/darkness, justice/injustice, and liberty/slavery and uses it to test church fellowship with slaveholders. A devotional allegiance saying becomes political and ecclesial indictment.
+- **Translation and rights:** appointed wording and 1845 reports are public domain; Yale's editorial presentation is modern and should be cited, not reproduced.
+- **Limit:** quote only the short biblical clause and paraphrase the surrounding speech. (CUL-001)
 
-The present brief corrects the stale prior statement about the Cummiskey
-passage by using its current `cataloged`, `acquired`, and `inspected` state
-(COV-010). It imposes no “register and bind before publishing” requirement on
-intelligibly cited witnesses; source registration is outside this workflow.
+### 2. Samuel Butler: the lilies answer Solomon
 
-## Material negative results, rejected leads, and unresolved research
+- **Proper text and locus:** Matthew 6:28--29, “Consider the lilies of the field” and “neither do they spin.”
+- **Later use and locus:** Samuel Butler, *Erewhon*, revised and enlarged edition, ch. XXVII, “The Views of an Erewhonian Philosopher Concerning the Rights of Vegetables,” Project Gutenberg eBook 1906.
+- **Relationship strength and wording:** documented direct allusion and syntactic parody. Butler names Christ's saying, repeats the opening, disputes the spinning clause, and reverses the comparison toward “Solomons.” Some diction follows the King James tradition rather than the Douay.
+- **Context and payoff:** intelligent lilies reject their supposed passivity and accuse idle, splendidly dressed human Solomons. The natural example becomes comic quasi-scientific counterargument.
+- **Translation and rights:** Butler and the checked Gutenberg United States text are public domain.
+- **Limit:** the wording belongs to the revised edition and must not be assigned to the 1872 first edition; dependence is on Matthew, not on the Roman proper. (CUL-002)
 
-1. **Exact Communion adaptation:** no ancient, medieval, Doctoral, or later
-   saintly witness was found interpreting the precise shortened form. The
-   named direct commentaries treat the full verse; Cantus 004377 preserves a
-   fuller chant form (PAT-017).
-2. **Exact orations:** no direct ancient, medieval, Doctoral, or saintly
-   exposition of the exact Collect, Secret, or Postcommunion was located in
-   the named Greek/Latin, Latin, historical-English, Corpus Thomisticum,
-   New Advent/NPNF, and exact-phrase web loci. Transmission controls and later
-   Guéranger/Schuster readings remain usable under their actual roles
-   (PAT-022).
-3. **Redactional origin:** no source in the checked transmission corpus names
-   the first assembler or explains when and why *Primum quaerite* replaced
-   *Panis quem ego*. Deshusses, Tommasi's manuscripts, and a broader
-   antiphoner/lectionary stemma were not reached (LIT-013).
-4. **Modern critical dossiers:** no passage-specific modern Catholic dossier
-   was registered for Matthew 6 or the four psalms; the general Psalms
-   introduction cannot supply four composition histories (COV-005).
-5. **Original-language checks:** no Hebrew or Greek Psalter locus and no bound
-   target Greek New Testament locus was inspected (COV-006).
-6. **Historical-missal OCR:** the Venice 1570 and Pustet 1862 observations
-   stand only on degraded, uncorrected OCR derivatives without page-image
-   collation; they cannot establish facts about either printed edition or
-   ground a stronger transmission, preexisting-material, or rights conclusion
-   (LIT-008--LIT-009; COV-003). The Benziger comparison likewise has unresolved
-   OCR/page arithmetic and unopened registered page images, leaving typography
-   and cue differences as leads only (COV-004).
-7. **Cultural negatives:** straight exposition, devotional reuse, hymns,
-   titles, mottos, and unverified snippets were rejected under the gallery
-   rule. The exact English-language search bounds are stated above
-   (CUL-009--CUL-013).
-8. **Cross-proper law pattern:** the Epistle's `law` and fourfold `adversus`
-   pattern remains internal to Galatians 5:16--24; it is not promoted to a
-   cross-proper argument (THE-017).
-9. **Compiler intention and novelty:** neither textual recurrence nor a
-   negative precedent search supports an intention, originality, universal
-   absence, or first-in-history claim (SCR-011; PRE-001--PRE-012; COV-009,
-   COV-011).
+### 3. Hieronymus Bosch: divided service made spatial
 
-These gaps constrain authoring but do not make the brief incomplete. Each has
-an explicit supported branch: omit unsupported specifics, state the bounded
-negative, or attribute the historical judgment actually checked.
+- **Proper text and locus:** Matthew 6:24, God and mammon.
+- **Later use and locus:** Hieronymus Bosch, *Death and the Miser*, c. 1485/1490, National Gallery of Art accession 1952.5.33; NGA object essay.
+- **Relationship strength and wording:** museum-documented visual relation. The painting itself contains no verbal quotation; the NGA essay explicitly describes the middle-ground figure as attempting to serve God and Mammon at once.
+- **Context and payoff:** crucifix and angel draw the dying man's attention upward while money and demons pull elsewhere, spatializing simultaneous rival claims on body and sight.
+- **Translation and rights:** NGA marks the object media free and public domain; the biblical phrase is public domain.
+- **Limit:** no statement by Bosch proves dependence on Matthew, a translation, or this proper; the figure's identity and original panel setting remain uncertain. (CUL-003)
+
+### 4. United States Supreme Court: public duty and economic self-interest
+
+- **Proper text and locus:** Matthew 6:24, “No man can serve two masters” and “You cannot serve God and mammon.”
+- **Later use and locus:** *United States v. Mississippi Valley Generating Co.*, 364 U.S. 520, 548--550, especially 549 (1961), opinion of the Court.
+- **Relationship strength and wording:** explicit citation of Matthew 6:24 as a biblical admonition. The opening substantially follows the appointed wording, with a modal variation.
+- **Context and payoff:** the Court makes the two masters a government agent's public duty and economic self-interest, using divided service to explain an objective prophylactic conflict-of-interest rule without proof of corruption or financial loss.
+- **Translation and rights:** United States judicial opinion and biblical wording are public domain.
+- **Limit:** dependence on Matthew is proved; dependence on the Douay or the Roman proper is not. (CUL-006)
+
+### 5. Denise Levertov: “O Taste and See” in the subway and the world
+
+- **Proper text and locus:** Psalm 33:9, appointed Offertory.
+- **Later use and locus:** Denise Levertov, “O Taste and See,” in *O Taste and See: New Poems* (New Directions, 1964), reprinted in *Poems 1960--1967*, p. 125; subway-poster context discussed by Albert Gelpi, *American Poetry after Modernism*, pp. 177--178.
+- **Relationship strength and wording:** documented quotation of the short psalm phrase from a subway Bible poster. No dependence on the Douay continuation or the Roman proper is established.
+- **Context and payoff:** the imperative is extended from divine sweetness into sensuous and mortal experience--grief, mercy, language, weather, fruit, death, and ordinary movement through the city. Advertising space becomes a threshold for ingesting concrete life.
+- **Translation and rights:** Levertov's poem is protected; only the short public-domain biblical phrase may be quoted, and the poem must otherwise be paraphrased.
+- **Limit:** keep the gallery entry to the documented phrase, locus, subway setting, and turn of force. (CUL-010)
+
+### Unselected qualifying candidates and material negative
+
+- Ray Bradbury makes “Consider the lilies of the field” a fragile act of memory against a subway toothpaste advertisement in *Fahrenheit 451*, part 2, p. 78; protected text, direct biblical phrase, King James continuation, no proper-specific dependence. (CUL-004)
+- *Johnston v. Commonwealth*, 22 Pa. 102, 108--109 (1853), uses “Against such there is no law” as an exact six-word echo in reasoning about charitable and necessary Sunday work; dependence on Galatians is not documented. (CUL-005)
+- David Kirkwood uses the lilies and Solomon as a 1927 class-struggle taunt in Commons debate, with King James diction; a separate 1930 occurrence must not be misdated. (CUL-007)
+- *Sullens v. State*, 191 Miss. 856, 5 So. 2d 340, 342--343 (1941), uses the same exact six-word echo as an epigram limiting contempt power; scriptural dependence is not documented. (CUL-008)
+- George Gissing's *Denzil Quarrier* XVIII makes the “added” clause part of a partisan sermon that spiritualizes the poor's material claims; the opening follows Luke 12:31 more closely than Matthew 6:33. (CUL-009)
+- Upton Sinclair, *The Profits of Religion*, “Spiritual Interpretation,” p. 102, substitutes jeweled vestments for what is added to the kingdom and turns reassurance into class-hypocrisy satire. (CUL-011)
+- Carlton, *Twenty Years of Spoof and Bluff* XIII, pp. 190--194, answers the impossible cubit with a painful stage technique that temporarily increases apparent height; Matthew dependence is explicit, speaker identification is wrong, and diction is mixed. (CUL-012)
+- Elizabeth von Arnim, *Love* I.XVI, pp. 155--157, places an Anglican Prayer Book form of Psalm 118:8 in comic tension with a woman's immediate turn toward the man she loves. Dependence is on Anglican psalmody, not this proper. (CUL-013)
+- Exact-phrase searches found no qualifying register-changing afterlife for the Introit or Alleluia beyond direct psalmody, hymnody, liturgical use, exposition, and bare titles. Milton's metrical Psalm 84, Matt Redman's protected worship song, and Timothy Dudley-Smith's Psalm 95 hymn remain direct devotional reuse. The negative is limited to the English corpora named above and does not cover non-English, paraphrastic, unindexed, image-only, or OCR-defeated material. (CUL-014)
+
+## Scriptural chronology audit
+
+This section transcribes `research/chronology.toml`; it does not add a date from any other source. `label` values are the source's own words. Normalized dates are intentionally omitted.
+
+### Introit
+
+- **Element and loci:** Introit; Psalm 83:10--11 and 2--3; `Ps.83.10`, `Ps.83.11`, `Ps.83.2`, `Ps.83.3`.
+- **Corpus status:** `composition-only`.
+- **Assertion:** subject `composition.psalms-of-the-sons-of-korah`; relation `composition`; profile `catholic-traditional-v1`; disposition `preferred`; answerability `answerable`; inherited scope `Ps.41 Ps.42 Ps.43 Ps.44 Ps.45 Ps.46 Ps.47 Ps.48 Ps.83 Ps.84 Ps.86 Ps.87`; label **“between the days of Isaias and the return from exile”**; source `artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25`.
+- **Bound:** there is no narrated-event, utterance, or historical-setting assertion for these verses. (SCR-001)
+
+### Epistle
+
+- **Element and loci:** Epistle; Galatians 5:16--24; `Gal.5.16` through `Gal.5.24`.
+- **Corpus status:** `composition-only`.
+- **Subject/relation/profile for every assertion:** `composition.epistle-to-the-galatians`; `composition`; `catholic-traditional-v1`. All four are `disputed`, `answerable`, and inherited over `Gal`; none is selected or harmonized.
+- **Labels and sources:** **“A.D. 49-50”**, CE vol. 6 artifact `artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06336a-508d2398`; **“about A.D. 53, 54”**, the same artifact; **“(1 and 2 Corinthians; Galatians), 56”**, CE vol. 11 artifact `artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8`; **“A.D. 57 or 58”**, CE vol. 6 artifact.
+- **Bound:** no event date applies to this argumentative passage. (SCR-002)
+
+### Gradual
+
+- **Element and loci:** Gradual; Psalm 117:8--9; `Ps.117.8`, `Ps.117.9`.
+- **Corpus status:** `undated-in-tradition`.
+- **Assertion:** none. No superscription, attribution, commentary date, or Psalter-wide estimate may fill the absence. (SCR-003)
+
+### Alleluia
+
+- **Element and loci:** Alleluia; Psalm 94:1; `Ps.94.1`.
+- **Corpus status:** `undated-in-tradition`.
+- **Assertion:** none. Hebrews 4:7's canonical “in David” attribution is reception, not permission to add a composition date. (SCR-003, SCR-013)
+
+### Gospel
+
+- **Element and loci:** Gospel; Matthew 6:24--33; `Matt.6.24` through `Matt.6.33`.
+- **Corpus status:** `composition-only`.
+- **Subject/relation/profile for every assertion:** `composition.gospel-of-matthew`; `composition`; `catholic-traditional-v1`. All six are `disputed`, `answerable`, and inherited over `Matt`; none is selected or harmonized.
+- **Labels and sources:** **“about A.D. 38-45”**, CE vols. 10 and 14 artifacts `artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef` and `artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c`; **“about the year 40-42”**, CE vol. 10; **“the years 40-45”**, CE vol. 10; **“about the year 60-68”**, CE vol. 10; **“about the years 64-67”**, CE vol. 10; **“about the year 50”**, CE vol. 14.
+- **Bound:** the record gives no narrated-event date for the Sermon on the Mount. (SCR-004)
+
+### Offertory
+
+- **Element and loci:** Offertory; Psalm 33:8--9; `Ps.33.8`, `Ps.33.9`.
+- **Corpus status:** `dated`.
+- **Assertion:** subject `israel.monarchy.david-at-geth`; relation `superscription-setting`; profile `catholic-traditional-v1`; disposition `preferred`; answerability `answerable`; basis class `reported-excluded` under the profile's named reporting exception; inherited scope `Ps.33 Ps.55`; label **“A. M. 2944, A. C. 1060”**; sources `passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.first-kings-21-achis-geth-chronology` and `passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology`.
+- **Bound:** the two era figures remain verbatim and unconverted. This dates the received superscription setting, not Psalm 33's composition, and does not erase the Achimelech/Achis name-level tension. (SCR-005, SCR-017)
+
+### Communion
+
+- **Element and loci:** Communion; contracted Matthew 6:33; `Matt.6.33`.
+- **Corpus status:** `composition-only`.
+- **Assertions:** the same subject `composition.gospel-of-matthew`, relation `composition`, profile `catholic-traditional-v1`, six disputed answerable labels, inherited scope, and sources listed for the Gospel apply here because the appointed locus lies within Matthew. The element receives one chronology cell; its textual contraction supplies no separate date.
+- **Bound:** the corpus asserts no date for the liturgical act of adapting the verse and no narrated-event date. (SCR-004, SCR-019)
+
+The Collect, Secret, and Postcommunion cite no Scripture directly in the generated record and therefore carry no chronology status or assertion.
+
+## Material negative results, rejected leads, and unresolved questions
+
+1. **No universal origin claim.** The complete later sequence is directly visible by Venice 1570 among checked witnesses, but no first compiler, first appearance, causal redaction, or original intent is identified. (LIT-008, LIT-014, COV-009)
+2. **No date or cause for the Communion substitution.** *Panis quem ego* is earlier in checked chant evidence and *Primum quaerite* appears by Venice 1570; the intervening agent, date, and cause remain unknown. Guéranger's report about Tommasi's manuscripts is secondary and its underlying witnesses were not reached. (LIT-011, LIT-014)
+3. **No direct prose exposition of the contracted Communion.** The exact-form search found chant attestations and full-verse exegesis only. The absence is limited to the Latin source inventory, Cantus, Usuarium, Corpus Thomisticum, inspected Migne pages, Corpus Corporum/monumenta.ch, and New Advent English patristic texts. (PAT-010)
+4. **No direct early exposition of the full orations.** The Collect has Estius's later theological reuse; the Secret and Postcommunion have transmission and later liturgical synthesis. The exact-form negatives are limited to the named Latin and English corpora. (PAT-011--PAT-013)
+5. **No publishable English for the three orations.** The Cummiskey item is not verified for publication and the translation inventory is rights-withheld. This blocks English prayer text, not the guide. (COV-002)
+6. **Modern dossier gap.** Modern Catholic historical-critical orientation is limited to the Galatians introduction. Matthew and the four psalms have no passage-specific modern dossier in the join. (COV-005)
+7. **Original-language gap.** No Hebrew or Greek Psalter locus and no target Greek New Testament locus was inspected. (COV-006)
+8. **Provenance debt without a publication bar.** Several checked patristic, medieval, and liturgical-history sources lack exact reusable passage bindings. Human-usable author, work, edition, and locus citations remain required. (COV-007, COV-008)
+9. **OCR leads rejected as controls.** Pustet and Benziger observations remain text-layer leads. The publication-bound Venice OCR is likewise not a control; the separate directly inspected Venice page images support only the exact LIT-008--LIT-010 claims. (COV-004)
+10. **No universal negative-search claim.** No machine-replayable negative binding exists, and literal/indexed searches cannot exclude inflection, translation, paraphrase, damaged OCR, unindexed material, or unsearched languages. (COV-010)
+11. **Cultural negative.** No qualifying register-changing Introit or Alleluia afterlife was found within the named English sweep. (CUL-014)
+12. **Rejected interpretive shortcuts.** Do not treat the created body as flesh's sinful regime; do not treat provision as prosperity; do not make subordinate mediation rival mastery; do not make sacramental participation automatic final salvation; do not make grammatical number or fruit-list counts carry ecclesiology; and do not infer compiler design from cross-element resonance. (THE-001--THE-009; PRE-003--PRE-012)
+
+## Competing judgments that must remain visible
+
+- **Psalm 83:** Augustine and Cassiodorus's ecclesial/eternal readings, Theodoret's historical and bodily-rescue emphasis, and Bellarmine's heavenly-pilgrimage synthesis remain distinct. (PAT-001)
+- **Princes in Psalm 117:** angelic powers for Augustine and Cassiodorus; earthly rulers for Theodoret; subordinate human or angelic aid for Bellarmine. (PAT-002)
+- **Psalm 94 jubilation and setting:** ineffable inward joy for Augustine and Cassiodorus; a victor's cry within Theodoret's proposed Josian setting; inward-to-vocal praise for Bellarmine. (PAT-003)
+- **Galatians anthropology:** non-consent under grace, depraved choice, opposed soul orientations, and indwelling grace with cooperation are compatible against body-denigration but not identical systems. (PAT-004)
+- **Fruit lists:** Aquinas's expanded Latin list and other Latin/Greek enumerations differ. The difference controls any number-based proposal and forbids numerology. (PAT-005, PRE-011)
+- **Matthew's birds:** Jerome reads them within ordinary providence and rejects an angelological allegory. (PAT-006)
+- **Angel of Psalm 33:** Christological, created-minister, plural-ministerial, and ecclesial readings remain attributed; capitalization settles none. (PAT-008)
+- **Cyril's mystagogical witness:** Eucharistic reception is strong, but authorship of the Mystagogical Catecheses is disputed. (PAT-009)
+- **Psalm 33 superscription:** Achimelech in the psalm title and Achis at Geth in 1 Kings 21 are not silently harmonized. (SCR-017)
+- **Sunday placement:** Old Gelasian, Hadrianum, Wilson's comparative apparatus, Honorius, Albi, and the later Missals preserve different ordinals and constellations. Variation precedes the later stable sequence; it is not reducible to one ordinal conversion. (LIT-001--LIT-006)
+- **Galatians composition and Matthew composition:** the chronology corpus preserves four and six disputed labels respectively. None is privileged. (SCR-002, SCR-004)
 
 ## Section-by-section evidence coverage
 
-This statement follows the profile's complete Reader-Facing Order. `Supported`
-means the brief states the evidence needed; `bounded` means the section must
-carry the recorded absence rather than invent the missing evidence.
+This inventory follows the profile's reader-facing order. “Supplied” means this brief states the evidence position, not that every imaginable claim has evidence.
 
 | Reader-facing position | Evidence position |
 | --- | --- |
-| 1. Page 1: Propers map and four senses | **Supported.** The ten-element identity, controlled incipits/loci, five cross-proper units, canonical contexts, and documented reception support the map and Literal/Allegorical/Moral/Anagogical rows. No English rendering of an oration may be used. |
-| 2. Page 2: Scriptural Date and Location | **Supported with bounded gaps.** The chronology audit inventories all seven distinct appointed Scripture uses, their statuses, labels, subjects, relations, profiles, and sources. Galatians has a limited modern audience dossier. No passage-specific modern dossier exists for Matthew or the psalms, no original-language target locus was checked, and the chronology record gives Matthew no narrated-event assertion. Those absences must be stated; they are not filled from reception. |
-| 3. `The Propers: Themes and Movement` | **Supported.** The governing thesis and five functional units use all ten elements and distinguish strong synthesis from exploratory proposals. |
-| 4. Complete appointed text, research edition only | **Supported in Latin and for scriptural English.** The 1962 facsimile and `verified.md` control the Latin; registered Douay--Rheims/Challoner controls scriptural English. The orations have no publishable verified English and remain Latin plus description. |
-| 5. `The Propers: Detailed Commentary` | **Supported.** Every scriptural element has complete context, ancient exegesis, later reception or a bounded negative, disagreements, and claim-local limits. Each oration has text control, transmission, later liturgical reading, and a bounded negative for direct ancient/saintly exposition. |
-| 5, synthesis companion: integrated `Detailed Commentary` | **Supported.** The five cross-proper units provide three-to-six mechanism-first claims, use all elements collectively, and draw on multiple scriptural contexts and reception witnesses rather than recapping liturgical order. |
-| 6. `Source-Grounded Synthesis Across the Propers` | **Supported.** THE-001--THE-014 and the settled five-unit argument support an unbounded source-grounded section, provided no compiler intent, exact Communion motive, automatic sacramental effect, or bodily contempt is asserted. |
-| 7. `The Propers: Notable and Quotable` | **Supported.** Five selected entries carry text and later loci, relationship, wording, context, rights, payoff, and limits; material negative searches and qualifying unselected candidates are recorded. |
-| 8. `The Propers: Interpretive Possibilities` | **Supported.** Six multi-element proposals carry exact precedent classification, anchors, mechanism, fruit, ordinary-reading delta, search boundary, and strongest limit. |
-| 9. Sacramental Appendix, when required | **Not applicable.** This Sunday proper is not a ritual Mass celebrated with or specifically for a non-Eucharistic sacrament. |
-| 10. `Appendix: Scope and Qualifications` | **Supported.** This brief states the edition, formulary, source, language, chronology, rights, search, reception, transmission, and unresolved-evidence bounds that belong in terse terminal apparatus. |
-| 11. `References` | **Supported, with authoring reconciliation required.** Exact human-usable works and loci are named throughout. References must include only sources actually used, including the Catholic Encyclopedia and Haydock chronology sources when their labels print. Bind the verified Mame passage if continuity or a preexisting-material conclusion remains; neither Venice 1570 nor Pustet 1862 may be cited as a checked printed witness without page-image collation. Do not pad the bibliography with unused NABRE Psalm, Matthew, or chapter-text loci. |
-| 12. `Generation Metadata` | **Supported by the workflow packet.** Workflow id `proper`, version `20`, digest `2e7eddadb790784848a79f3e9fd310866197dbb1619a38d60221576cfde8ea56`, run id `0ba05a97460d46c1`, and seed commit `2b1d0044c8438dfff619a8671492a7e131a51fba` are known. Model/runtime contribution fields and the final revision/install facts remain for the authoring and installation stages to record without guessing. |
-
-No reader-facing section has a silent evidence position.
+| Page 1: Propers map and four senses | **Supplied.** All ten elements have controlled text or a controlled Latin-description route; the four senses have textual and attributed reception anchors. No work-wide apparatus belongs on the page. |
+| Page 2: Scriptural Date and Location | **Partially supplied with explicit bounds.** The chronology audit fully controls every Date cell. Scripture context supplies canonical setting; only Galatians has a passage-specific modern Catholic dossier. No independent event date for the Sermon on the Mount, no modern dossier for Matthew or the psalms, and no original-language check are available. These are bounded absences, not invitations to fill dates from memory. |
+| Pages 3--4: The Propers: Themes and Movement | **Supplied.** Five settled cross-proper claims and the page-one four-senses material provide three to five functional units covering all ten elements. Historical and evidentiary apparatus stays out of the reader-facing section. |
+| Complete appointed text, research edition | **Supplied under rights bounds.** Latin and scriptural English are controlled. The three orations have no verified English and must appear in Latin with separate prose description only. |
+| Detailed Commentary, research edition | **Supplied.** Every scriptural passage has context, ancient exegesis, later reception or a bounded later negative, and material disagreements. Every composed prayer has transmission and an explicitly bounded reception position. The author should state findings declaratively and leave search narration here. |
+| Integrated Detailed Commentary, synthesis companion | **Supplied.** The five settled claims are cross-proper, multi-witness units rather than an abridged element procession. All ten elements materially inform the whole. |
+| Source-Grounded Synthesis Across the Propers | **Supplied.** Claims 1--5 draw on text, history, reception, and doctrine while preserving compiler, prosperity, quietism, mediation, and automatic-salvation limits. |
+| The Propers: Notable and Quotable | **Supplied.** Five selected, audited, varied afterlives qualify; the exact Introit/Alleluia negative is recorded. Protected material must be paraphrased except for short public-domain biblical phrases. |
+| The Propers: Interpretive Possibilities | **Supplied.** Six multi-element proposals carry anchors, mechanism, fruit, missed relation, search boundary, unchanged novelty classification, precedent or analogue, and strongest limit. |
+| Sacramental Appendix | **Not applicable.** This Sunday proper is not a ritual Mass celebrated with or specifically for a non-Eucharistic sacrament. |
+| Appendix: Scope and Qualifications | **Supplied.** Edition, formulary, source, language, rights, search, chronology, and review bounds are recorded above for later compression into the terminal appendix. |
+| References | **Supplied as a source requirement.** The brief identifies every retained work and exact locus. The author must include only sources actually used, attach Bellarmine to the abridged English edition, and avoid presenting unbound provenance as missing evidence. |
+| Generation Metadata | **Structurally supplied by the workflow, not a research claim.** The authoring stage must use the run's exact workflow provenance and current contribution declaration without exposing internal production detail in the reader-facing work. |
 
 ## Prior-production carry-forward
 
-The required search found eight earlier runs for this proper in addition to
-the current run. Every earlier run's last `research-synthesis` and
-`content-evaluation` result, where present, was read. All recorded run-level
-and result-level escalation lists were empty.
+The required state sweep found ten prior runs for this document in addition to the current run. None recorded an escalation. Runs `2c971a5a603ca6c2` and `3676bb36608b6b09` had no `research-synthesis` or `content-evaluation` result. Runs `5f2d2447ee8d4445` and `618fa3260f8b4269` ended their relevant history with passing research-synthesis results and no blocking findings. Runs `0c31a52a51e6f34d` and `8502fbf9a22d6e39` ended their content-evaluation history with `PASS` and no standing blocking findings.
 
-### Run `0c31a52a51e6f34d` (GPT)
+The following are the blocking findings in each other run's last relevant result:
 
-The last research-synthesis result (`iteration 0`) passed with no blocking
-finding. The last content-evaluation result (`iteration 1`) passed with no
-blocking finding. Nothing stands to carry.
+1. **Run `0ba05a97460d46c1`, content-evaluation `CON-PRO-002`.** It required the Collect, Secret, and Postcommunion commentary to remove corpus, language, query, search-result, and bounded-negative narration while retaining transmission facts and attributed Guéranger/Schuster readings. **Status:** unresolved authoring constraint, not a research deficiency. This brief carries the full operational negatives in the audit and separately states the declarative substance the later author may use. Nothing in the current research warrants moving the audit register into reader-facing prose.
+2. **Run `24c1679ac9905ac8`, content-evaluation `CON-REC-001`.** It required attribution of the competing Galatians and Matthew chronology labels to their source witnesses. **Status:** answered by current SCR-002, SCR-004, and the generated chronology record, which identify each Catholic Encyclopedia artifact and preserve every label as disputed. Authoring must carry intelligible source attribution.
+3. **Run `24c1679ac9905ac8`, content-evaluation `CON-CIT-004`.** It required exact References and source-use records for Catholic Encyclopedia, Haydock, and other page-two sources, and removal of obsolete bindings. **Status:** the current research resolves the evidence side: the chronology audit identifies the exact Catholic Encyclopedia artifacts and Haydock passages; COV-007--COV-010 state the binding and citation rules. The later author still owns exact used-only References and truthful publication-local bindings.
+4. **Run `24c1679ac9905ac8`, content-evaluation `CON-PRO-001`.** It required declarative reader-facing prose in place of narration about what sources or the guide supplied, harmonized, presented, or declined to claim. **Status:** unresolved authoring constraint. This audit intentionally holds that process material so the authored guide can state only the resulting disagreement, uncertainty, text, or interpretation.
+5. **Run `64a3442b73becfa5`, content-evaluation `CON-EVI-004`.** It required removal of “concern for the poor” from a claim attributed only to CCC §§1391--1396 unless research first reached §1397. **Status:** no longer applicable to the present research argument. The current join supplies no CCC locus and this brief retains no such attributed claim; authoring must not import it.
+6. **Run `64a3442b73becfa5`, content-evaluation `CON-REC-001`.** It required medieval, Doctoral, or later saintly coverage or a bounded negative for Psalm 83 and Psalm 94. **Status:** answered by PAT-001 and PAT-003 through Bellarmine's identified Psalm 83 and Psalm 94 loci, with the edition limit retained in the reception matrix.
+7. **Run `64a3442b73becfa5`, content-evaluation `CON-CIT-006`.** It required narrowing a USCCB reference to the actually used Galatians introduction. **Status:** answered as a research constraint by COV-005: the Galatians introduction is the only verified modern dossier and may not be enlarged to the psalms or Matthew. Exact used-only bibliography remains authoring work.
+8. **Run `e44a018f52d39b23`, research-synthesis `SYN-INFRA-001`.** It required restoration of the worker backend after repeated HTTP 404 failures and a fresh workflow run. **Status:** no longer applicable. The current run has a complete seven-lane join and this research-synthesis stage executed successfully.
 
-### Run `24c1679ac9905ac8` (Claude)
+No standing prior-run escalation was found.
 
-The last research-synthesis result (`iteration 2`) passed with no blocking
-finding. The last content-evaluation result (`iteration 2`) carried three
-blocking findings:
+## Finding-integration index
 
-- **CON-REC-001:** required attribution of the four Galatians and six Matthew
-  chronology alternatives to the witnesses that hold or report them.
-  **Answered in the current research:** SCR-013 and the current generated
-  chronology record supply the exact volume-6, volume-10, volume-11, and
-  volume-14 Catholic Encyclopedia artifact attribution. The chronology audit
-  above carries it. The author still must print those attributions if the
-  labels appear.
-- **CON-CIT-004:** required exact References and source-binding reconciliation
-  for Catholic Encyclopedia, Haydock, Cornelius a Lapide, and the Mame witness,
-  and removal or supersession of obsolete page-2 bindings. **Partly answered
-  and converted to an authoring control:** SCR-012--SCR-013 provide the actual
-  Catholic Encyclopedia and Haydock chronology sources, and COV-003 identifies
-  the registered verified Mame passage that should be bound if used. The
-  current join supplies no Cornelius a Lapide orientation claim, so the new
-  guide should omit that prior Rome/eastern-city orientation unless it uses
-  and cites its earlier bound locus. Binding and bibliography reconciliation
-  remain authoring work, not a research gap.
-- **CON-PRO-001:** required declarative reader-facing prose in place of
-  narration about what the guide, editors, searches, or checked corpus did.
-  **No longer a defect in a present authored leaf at this stage.** It remains
-  a direct authoring guard from `guidance/editorial.md`: state disagreements,
-  limits, and historical indeterminacy as findings; keep process narration in
-  this audit and terminal scope.
+This index makes the disposition of the entire seven-lane join explicit.
 
-### Run `3676bb36608b6b09` (Codex)
-
-This state contains no research-synthesis or content-evaluation result. It
-therefore contributes no blocking finding or escalation.
-
-### Run `5f2d2447ee8d4445` (GPT)
-
-The last research-synthesis result (`iteration 0`) passed with no blocking
-finding. No content-evaluation result or escalation was recorded.
-
-### Run `618fa3260f8b4269` (GPT)
-
-The last research-synthesis result (`iteration 0`) passed with no blocking
-finding. No content-evaluation result or escalation was recorded.
-
-### Run `64a3442b73becfa5` (GPT)
-
-The last research-synthesis result (`iteration 0`) passed with no blocking
-finding. The last content-evaluation result (`iteration 4`) carried three
-blocking findings:
-
-- **CON-EVI-004:** required removal of `concern for the poor` from a list
-  attributed to CCC §§1391--1396, because that claim belongs to §1397.
-  **Does not apply to the current evidence brief:** no Catechism claim or locus
-  appears in the joined research. The author may not reintroduce that item
-  under §§1391--1396; no current lane finding authorizes it.
-- **CON-REC-001:** required a targeted medieval, Doctoral, and later saintly
-  reception sweep for Psalm 83 and Psalm 94. **Resolved by current findings:**
-  PAT-018 supplies Bellarmine's direct later Doctoral reception of Psalm 83,
-  and PAT-020 supplies his direct later Doctoral reception of Psalm 94, with
-  exact printed and artifact pages, language/translation state, and limits.
-  The reception matrix carries both.
-- **CON-CIT-006:** required narrowing the USCCB reference to the actually used
-  Galatians introduction and removing unused NABRE Psalm, Matthew,
-  Galatians-chapter, and Matthew-chapter loci. **Resolved as a brief rule:**
-  COV-005 confirms that the official Galatians introduction is the sole
-  passage-specific modern Catholic dossier used. The author should cite only
-  that locus and must not add claims merely to retain the unused references.
-
-### Run `8502fbf9a22d6e39` (GPT)
-
-The last research-synthesis result (`iteration 3`) passed after repairing its
-gallery's six-word count and carried no blocking finding. The last
-content-evaluation result (`iteration 3`) passed with no blocking finding.
-Nothing stands to carry.
-
-### Run `e44a018f52d39b23` (GPT)
-
-The last research-synthesis result (`iteration 0`) was blocked by
-**SYN-INFRA-001**, which required restoration of a subagent response service
-after repeated HTTP 404 failures. **No longer applicable:** the current
-research-synthesis worker received and integrated the complete seven-lane join
-without relying on that failed run. No content-evaluation result or escalation
-was recorded.
+- **Scripture-context:** SCR-001--SCR-005 are in the chronology audit; SCR-006--SCR-019 are in the reception matrix and appointed-text contexts; SCR-020--SCR-021 are in settled claim 1 and the textual-control limits.
+- **Patristic-reception:** PAT-001--PAT-010 are in the reception matrix and settled claims; PAT-011--PAT-013 are in the composed-proper reception section and material negatives.
+- **Liturgical-history:** LIT-001--LIT-014 are in Historical and liturgical findings, with LIT-012--LIT-013 also supporting the reception matrix and settled synthesis.
+- **Theological-synthesis:** THE-001--THE-008 are distributed across the five settled claims and their limits; THE-009 is rejected with the fragile singular/plural proposal.
+- **Source-citation-coverage:** COV-001--COV-012 are integrated in Evidence-state and source-control summary, the corpus account, negatives, authoring bounds, and Anthony of Padua qualification.
+- **Cultural-afterlife:** CUL-001, CUL-002, CUL-003, CUL-006, and CUL-010 are selected; CUL-004, CUL-005, CUL-007--CUL-009, and CUL-011--CUL-013 remain qualifying alternatives; CUL-014 is the material negative.
+- **Precedent-search:** PRE-001--PRE-002 define search and form; PRE-003--PRE-007 and PRE-010 ground the six retained proposals; PRE-008, PRE-009, PRE-011, and PRE-012 are disposed under considered-but-not-selected proposals, with PRE-012 also controlling the Communion adaptation.
 
 ## Authoring handoff
 
-The author can proceed from this brief without further research. The durable
-controls are:
-
-1. organize the source-grounded work around the five functional units rather
-   than a recap of liturgical order;
-2. treat the Communion as a distinct adaptation and never infer why it was
-   recast;
-3. preserve the actual reception disagreements and textual forms;
-4. give each chronology label only under its recorded subject, relation,
-   profile, and source attribution, and state the two `undated-in-tradition`
-   answers and Matthew's absent event assertion;
-5. use Latin plus description for the three orations, never new English prayer
-   text;
-6. keep the six audited proposals solely in the exploratory section;
-7. keep the five afterlives in their gallery, observing the protected-work and
-   echo/dependence limits;
-8. bind the verified Mame page-image passage if a continuity or
-   preexisting-material claim remains; treat Venice 1570 and Pustet 1862 only
-   as degraded, uncorrected OCR observations unless their page images are
-   obtained and checked; reconcile all source bindings and References to
-   actual use; and cite intelligible unregistered patristic witnesses without
-   making registration a publication condition; and
-9. carry the global search, rights, modern-dossier, original-language,
-   redaction-history, and review limits to terminal apparatus while keeping
-   claim-changing qualifications beside their claims.
+The guide may now be authored from this brief. It should preserve the attributed reception differences, the generated chronology statuses and exact labels, the verified-Latin-only state of the orations, the distinction between page-image claims and OCR leads, the historical variation preceding later continuity, and the absence of evidence for compiler intent or the Communion substitution's cause. It has enough evidence for every reader-facing section, but not for unsupported original-language, universal-origin, prosperity, automatic-salvation, or complete-modern-dossier claims. Operational search narration, evidence classes, source-binding debt, and the machinery of this audit belong here and in the terminal scope appendix, not in the substantive reader-facing voice.

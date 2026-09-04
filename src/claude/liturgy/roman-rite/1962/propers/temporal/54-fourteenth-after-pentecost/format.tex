@@ -17,6 +17,35 @@
 
 \newcommand{\work}[1]{\textit{#1}}
 
+% Sustained exposition uses a book-like measure within the shared page frame.
+% Tables and the fixed page-2 dossier keep their own declared widths.
+\newenvironment{readingmeasure}{%
+  \begin{list}{}{%
+    \setlength{\leftmargin}{1in}%
+    \setlength{\rightmargin}{1in}%
+    \setlength{\topsep}{0pt}%
+    \setlength{\partopsep}{0pt}%
+    \setlength{\itemsep}{0pt}%
+    \setlength{\parsep}{0pt}%
+  }\item\relax
+  \setlength{\emergencystretch}{4em}%
+}{\end{list}}
+
+% Bibliographic entries need less narrowing than discursive prose to avoid a
+% sparse terminal spill page; compact list spacing keeps the apparatus together
+% without reducing its type size.
+\newenvironment{referencemeasure}{%
+  \begin{list}{}{%
+    \setlength{\leftmargin}{0.75in}%
+    \setlength{\rightmargin}{0.75in}%
+    \setlength{\topsep}{0pt}%
+    \setlength{\partopsep}{0pt}%
+    \setlength{\itemsep}{0pt}%
+    \setlength{\parsep}{0pt}%
+  }\item\relax
+  \setlist[enumerate]{itemsep=0pt,topsep=0.3em,parsep=0pt}%
+}{\end{list}}
+
 % The missal's versicle sign is not in the T1 encoding. It is reproduced as a
 % slashed V so the appointed text can be transcribed as printed rather than
 % silently normalised to "V.". This formulary prints no response sign.
@@ -84,10 +113,33 @@ answer the Latin.} #1\par}
 
 % The exploratory-proposal notice and the proposals themselves. Every proposal
 % renders its anchors, mechanism, fruit and controlling limit as labelled
-% fields so no reader can mistake a proposal for a sourced finding.
+% fields so no reader can mistake a proposal for a sourced finding. The box is
+% itself indivisible: an outer top-aligned minipage can put the title above the
+% physical page edge when TeX moves the unit to a fresh page.
+\newtcolorbox{proposalbox}[1]{
+  enhanced,
+  breakable=false,
+  colback=white,
+  colframe=black,
+  colbacktitle=white,
+  coltitle=black,
+  boxrule=0.55pt,
+  sharp corners,
+  left=7pt,
+  right=7pt,
+  top=4pt,
+  bottom=4pt,
+  toptitle=3pt,
+  bottomtitle=3pt,
+  titlerule=0.45pt,
+  before skip=10pt,
+  after skip=10pt,
+  title={#1},
+  fonttitle=\small\bfseries
+}
 \newenvironment{proposal}[1]{%
-  \Needspace{18\baselineskip}%
-  \begin{massbox}{Editorial proposal --- #1}\small}{\end{massbox}}
+  \par\begin{proposalbox}{Editorial proposal --- #1}\small}{%
+  \end{proposalbox}\par}
 \newcommand{\pfield}[2]{\par\textbf{#1:} #2}
 
 % Notable-and-quotable gallery entry: appointed phrase, later user, locus and
@@ -95,6 +147,14 @@ answer the Latin.} #1\par}
 % whole to the next page and leaving a sparse one behind.
 \newenvironment{afterlife}[1]{%
   \begin{massbox}{#1}\small}{\end{massbox}}
+
+% The short Bosch entry must remain one visual unit. Keep this targeted rather
+% than making the whole gallery unbreakable, since longer entries should still
+% reflow instead of producing sparse pages.
+\newenvironment{afterlifewhole}[1]{%
+  \par\noindent\begin{minipage}[t]{\linewidth}\vspace{0pt}%
+  \begin{massbox}{#1}\small}{%
+  \end{massbox}\end{minipage}\par}
 
 % Two-tier page-2 dossier table at the profile's fixed measurements.
 \newenvironment{dossiertable}

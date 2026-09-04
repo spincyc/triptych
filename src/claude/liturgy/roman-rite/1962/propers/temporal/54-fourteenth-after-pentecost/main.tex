@@ -19,25 +19,44 @@
 \begin{deepstudy}
 \input{liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/00-map}
 \input{liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/10-date-location}
+\begin{readingmeasure}
 \input{liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/20-themes}
+\end{readingmeasure}
 \label{triptych:brief-synthesis:next}%
 \ifdefined\TriptychSynthesisEdition
+\begin{readingmeasure}
 \input{liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/synthesis/20-integrated-commentary}
+\end{readingmeasure}
 \else
 \input{liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/05-appointed-text}
+\begin{readingmeasure}
 \input{liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/30-commentary}
+\end{readingmeasure}
 \fi
+\begin{readingmeasure}
 \input{liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/35-source-grounded-synthesis}
+\end{readingmeasure}
 \input{liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/40-notable}
 \input{liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/50-interpretive}
+\begin{readingmeasure}
 \input{liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/90-scope}
+\end{readingmeasure}
+\begin{referencemeasure}
 \input{liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/99-references}
+\end{referencemeasure}
 % No \sectionguard here: the terminal colophon is an unbreakable minipage, and
 % demanding seven further baselines ahead of it pushes the whole block --- and
 % therefore the rights notice --- onto a page of its own, which the rights rule
 % forbids. The notice enlarges its own page and guards its own break.
 
+% The metadata deliberately renders one short timestamp line with a forced
+% break; silence that intentional underfull line without masking document-body
+% layout diagnostics.
+\begingroup
+\hbadness=10000
 \input{liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/generation-metadata}
+\par
+\endgroup
 \TriptychRightsNotice
 \end{deepstudy}
 

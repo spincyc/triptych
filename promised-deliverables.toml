@@ -1851,7 +1851,7 @@ state = "complete"
 [[deliverables]]
 id = "proper-54-production-recovery-2026-09-03"
 owner = "PROJECT-WORK.md"
-promise = "Recover the completed but uncommitted GPT 1962 Fourteenth Sunday after Pentecost publication; prove the repository-wide publication failures are inherited; legitimately repair, fully review, publish, and integrate the separately authorized Claude Proper 54 prerequisite; seed a fresh GPT proper workflow on the changed HEAD and carry it to ACCEPTED; then verify and commit the coherent GPT publication and required audit, catalogue, web, release, and installed-artifact changes without pushing."
+promise = "Recover the completed but uncommitted GPT 1962 Fourteenth Sunday after Pentecost publication; prove the repository-wide publication failures are inherited; reconcile both remote lines with current origin/main while preserving their exact ancestry and forward-porting applicable process and corpus changes; legitimately repair, fully review, publish, and integrate the separately authorized Claude Proper 54 prerequisite; seed a fresh GPT proper workflow on the changed HEAD and carry it to ACCEPTED; then verify and commit the coherent GPT publication and required audit, catalogue, web, release, and installed-artifact changes without pushing."
 state = "in_progress"
 
   [[deliverables.requirements]]
@@ -1862,6 +1862,12 @@ state = "in_progress"
   check = "contains"
   path = "PROJECT-WORK.md"
   needle = "The clean seed reports one additional stale"
+
+  [[deliverables.requirements]]
+  id = "upstream-process-and-corpus-reconciliation"
+  criterion = "The branch is reconciled with current origin/main and origin/impl/proper-54-production without stash, reset, clean, restore, discard, or lost ancestry; main's current corpus and proper workflow are retained; the evaluator finding-identity repair is forward-ported compatibly with owner-aware routing; and the fresh runs, rather than any terminal v20 run, are governed by the integrated process and corpus."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
   id = "claude-provider-prerequisite"

@@ -21,8 +21,8 @@ document = "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-penteco
 # Aquinas on Galatians, and Ambrose likewise have current inspected or verified
 # bindings below. Cassiodorus was inspected through the cited Corpus Corporum
 # transcription, while the library's Cassiodorus edition remains cataloged-only.
-# Wilson's sacramentary editions and Hesbert remain cataloged-only because the
-# library has no exact passage control for the loci used. Exact but unregistered
+# Wilson's sacramentary editions remain cataloged-only because the library has
+# no exact passage control for the loci used. Exact but unregistered
 # patristic and medieval witnesses are intelligibly cited in References without
 # invented source-library identifiers. No `negative-search` binding is asserted.
 
@@ -72,7 +72,7 @@ loci = ["the Sunday series, Dominica XIV post Pentecosten"]
 role = "lead"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:e76b722596e6d4f31cf9ec2c7d4af5d34cbac1377e03b6926b67866f545a32d4"
-context = "Degraded, uncorrected OCR derivative consulted only as a finding aid. Its text layer appears to contain the target sequence and possible wording variants, but no page images were obtained or collated. These remain observations of the derivative, not assertions about the printed Venice edition, and they establish neither a lower bound for the constellation nor any textual, transmission, preexisting-material, or rights conclusion. The possible variants remain leads only."
+context = "Degraded, uncorrected OCR derivative consulted only as a finding aid. Its text layer appears to contain the target sequence and possible wording variants, but this artifact remains an OCR lead and does not control the printed edition. Separate direct inspection of the Venice 1570 page images at printed pp. 161-162, Internet Archive leaves n409-n410, supports the guide's bounded sequence and recension claims; those image bytes do not yet have an exact reusable source-library registration and are cited human-readably. This binding does not upgrade the OCR derivative, establish a first appearance, or support the guide's preexisting-material and rights conclusions."
 
 [[bindings]]
 source_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.dominica-xiv-post-pentecosten"
@@ -87,30 +87,39 @@ context = "Verified public-domain page-image witness for the guide's bounded con
 
 [[bindings]]
 source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
-loci = ["Ps.33.8-9", "Ps.33.1", "Ps.33.11", "Ps.83.2-3", "Ps.83.10-11", "Ps.83.13", "Ps.94.1", "Ps.117.8-9", "Ps.117.6", "Ps.131.10"]
+loci = ["Ps.33.1-23", "Ps.83.1-13", "Ps.94.1-11", "Ps.117.1-29", "Ps.131.7-17"]
 role = "translation-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-26"
 source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
-context = "The registered public-domain English of the four appointed psalms. Where a chant cuts a verse in half the Douay verse is printed whole with the sung portion marked, rather than trimmed into an English antiphon the project would itself have composed. This artifact is also the witness for the absence of a title at Ps. 94 in this Douay text and for the bracketed cross-reference the Douay prints inside the title of Ps. 33."
+context = "The registered public-domain English of the four appointed psalms and the Psalm 131 Sion-and-anointed context used in the page-one allegorical synthesis. Where a chant cuts a verse in half the Douay verse is printed whole with the sung portion marked, rather than trimmed into an English antiphon the project would itself have composed. At Ps. 94:1 the Douay supplies only the biblical verse; the surrounding Alleluia frame belongs to the controlled Missal Latin and remains untranslated. This artifact is also the witness for the absence of a title at Ps. 94 in this Douay text and for the bracketed cross-reference the Douay prints inside the title of Ps. 33."
 
 [[bindings]]
 source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-55-galatians-e95d4a59"
-loci = ["Gal.5.16-24", "Gal.5.13-15", "Gal.5.25", "Gal.1.1-2", "Gal.4.13-15", "Gal.6.11"]
+loci = ["Gal.5.16-24", "Gal.5.13-15", "Gal.5.25"]
 role = "translation-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-26"
 source_fingerprint = "sha256:d1becf65404d8b685106f60ada2ee449c6fc70f69fdb1e90b6eb4712794c0a17"
-context = "The registered public-domain English of the appointed Epistle, and the whole-artifact witness for the gallery's identity check at Gal. 5:23: the string 'Against such there is no law' occurs exactly once in this text, at the appointed verse, counted by flattening whitespace across the artifact. The missal's Fratres: displaces Paul's Dico autem: rather than supplementing it, and is shown bracketed rather than translated as though it were Paul's."
+context = "The registered public-domain English of the appointed Epistle and its immediate literary context. The missal's Fratres: displaces Paul's Dico autem: rather than supplementing it, and is shown bracketed rather than translated as though it were Paul's."
 
 [[bindings]]
 source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-47-matthew-dd0ba183"
-loci = ["Matt.6.24-33", "Matt.6.8", "Matt.6.34", "Matt.5.1", "Matt.21.42"]
+loci = ["Matt.4.12-25", "Matt.5.1", "Matt.6.1-34", "Matt.21.42"]
 role = "translation-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-26"
 source_fingerprint = "sha256:ed47ecb092ecb6256fb84450e8ad39d0debf2efe6c65442199a76a7fb1a8b98b"
 context = "The registered public-domain English of the appointed Gospel and of the verse the Communion recasts. The Douay verse at Mt. 6:33 is printed whole and unaltered, with the phrases the antiphon reuses marked, because the antiphon is an adaptation and not a quotation; nothing is inserted into the quoted verse. The missal's incipit corresponds to nothing in Matthew and is shown bracketed rather than translated."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-51-acts-73f7a420"
+loci = ["Acts.4.10-12"]
+role = "context"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-04"
+source_fingerprint = "sha256:dd87be0f13bd98112feedd55e3532a9a4dcbbfe28dee45371197dbc842acd2da"
+context = "The registered public-domain English inspected for Acts 4:10-12, which identifies Jesus Christ as the rejected stone and joins that identification to salvation. The guide paraphrases this reception of Psalm 117:22 and quotes no wording from the artifact."
 
 [[bindings]]
 source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-09-1-kings-7f8a0c63"
@@ -123,12 +132,12 @@ context = "The narrative the Offertory psalm's title points at, and the held bas
 
 [[bindings]]
 source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-65-hebrews-78520956"
-loci = ["Heb.4.7", "Heb.3.7-11", "Heb.13.6"]
+loci = ["Heb.3.7-4.11", "Heb.12.22-24"]
 role = "context"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-26"
 source_fingerprint = "sha256:0c686e9320485622fa117ab272c9fdd8858abc5e2473747a5b8ee6557bd89d3b"
-context = "Load-bearing at two page-2 dossiers in opposite directions. Heb. 4:7 attributes the Alleluia's psalm to David by name, which is why that attribution does not rest on the Latin title alone; and the contrast with it is what makes the Gradual's Date cell a stated negative, since the New Testament quotes Ps. 117 as Scripture and never as David's. Heb. 3:7-11 is where the Alleluia psalm's whole New Testament reception falls, on the half the chant does not sing."
+context = "The complete Douay context for two uses in the guide. Heb. 3:7-4:11 receives the Alleluia psalm's unsung warning as the Holy Ghost's present summons and promise of rest, with Heb. 4:7 attributing the psalm to David by name; the contrast with it makes the Gradual's Date cell a stated negative, since the New Testament quotes Ps. 117 as Scripture and never as David's. Heb. 12:22-24 supplies the heavenly Sion and mediator relation used in the page-one allegorical synthesis."
 
 [[bindings]]
 source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.psalm-numbering-ee3c7757"
@@ -149,7 +158,7 @@ context = "Historical-English lead for the three orations. The registered artifa
 
 [[bindings]]
 source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-21-psalms-d20e21f8"
-loci = ["Ps.33.1-23", "Ps.83.1-13", "Ps.94.1-11", "Ps.117.1-29", "Ps.131.10"]
+loci = ["Ps.33.1-23", "Ps.83.1-13", "Ps.94.1-11", "Ps.117.1-29"]
 role = "textual-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-26"
@@ -158,7 +167,7 @@ context = "The Bible text the four appointed psalm chants are collated against, 
 
 [[bindings]]
 source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-55-galatians-000c0a2a"
-loci = ["Gal.5.13-25", "Gal.1.1-2", "Gal.4.13-15", "Gal.6.11"]
+loci = ["Gal.5.13-25"]
 role = "textual-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-26"
@@ -167,7 +176,7 @@ context = "The comparison text for the Epistle. It establishes that the appointe
 
 [[bindings]]
 source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-47-matthew-2d02758d"
-loci = ["Matt.6.1-34", "Matt.5.1", "Matt.4.12-25", "Matt.24.15"]
+loci = ["Matt.6.1-34", "Matt.5.1", "Matt.4.12-25"]
 role = "textual-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-26"
@@ -176,12 +185,20 @@ context = "The comparison text for the Gospel and for the verse the Communion re
 
 [[bindings]]
 source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-49-luke-28ae5d9a"
-loci = ["Luke.12.22-31", "Luke.16.13"]
+loci = ["Luke.12.31"]
 role = "context"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-26"
 source_fingerprint = "sha256:feb2853dceaaad6876320c359115735221cd3bf742d0dff8d0940a9c27feefa7"
-context = "The Lucan parallels that bear on the appointed wording: Lk. 12:22 for the audience the missal's Gospel incipit names, and Lk. 12:31 for the one locus besides Mt. 6:33 that could have produced the Communion antiphon. The Clementine's Luke 12:31 is verbatim identical to Matthew from quaerite primum onward and omits nothing the antiphon omits, which is why no single witness produces the antiphon."
+context = "The Latin parallel to the Communion's biblical source. Clementine Luke 12:31 is verbatim identical to Matthew from quaerite primum onward and omits nothing the antiphon omits, so neither biblical locus supplies the exact antiphon."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33"
+loci = ["Luke.12.13-40"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:b6acab91674d3bbe04726da30c835175a133104d3db53fcf3f8e45b1d5b4ba6e"
+context = "The registered public-domain English context for the Lucan parallel: the discourse on solicitude at Luke 12:22-31 stands between the rich fool at 12:13-21 and the continuation into almsgiving and watchfulness at 12:32-40."
 
 # --- Historical orientation and generated chronology used on page 2 ---
 #
@@ -249,15 +266,6 @@ source_fingerprint = "sha256:72ff1c7fff77b396328a616ee182353295403d927a4943dea9a
 context = "Source carried by the generated chronology record for the about-A.D.-50 Matthew alternative. The leaf states that Durand applies it to the lost Aramaic original and leaves the Greek rendering undated."
 
 [[bindings]]
-source_id = "passage.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.antwerp-1614.epistola-ad-galatas-argumentum"
-loci = ["epistola-ad-galatas-argumentum"]
-role = "context"
-states = ["cataloged", "acquired", "inspected", "verified"]
-verified_on = "2026-08-21"
-source_fingerprint = "sha256:bf374774bd9a6b72a26514ac40268186b7bdacd7ba036c7e267ee15e2eb95cdb"
-context = "At printed p. 457 (artifact PDF p. 514), the Argumentum reports Syriac and Greek end-subscriptions and Jerome, Athanasius, and Theodoret for Rome; it then reports Chrysostom and Baronius for Ephesus or another Greek city and concludes that neither time nor place is certain. The page-2 dossier preserves both alternatives and the uncertainty. This source supports the location tradition only, not any date-cell figure."
-
-[[bindings]]
 source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-08-21.galatians-introduction"
 loci = ["Galatians introduction"]
 role = "context"
@@ -279,7 +287,7 @@ context = "The complete public-domain facsimile inspected for Bellarmine's later
 
 [[bindings]]
 source_id = "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-scan-volume-3-410f6d11"
-loci = ["volume III, printed pp. 136-139, Fourteenth Sunday after Pentecost"]
+loci = ["volume III, printed pp. 136-138, Fourteenth Sunday after Pentecost"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-09-04"
@@ -288,7 +296,7 @@ context = "Later historical-liturgical reception of this Sunday's prayers and le
 
 [[bindings]]
 source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-pdf-95ba98e2"
-loci = ["vol-xi-p-326", "vol-xi-p-327", "vol-xi-p-328", "vol-xi-p-341", "vol-xi-p-342", "vol-xi-p-343"]
+loci = ["vol-xi-p-341", "vol-xi-p-342", "vol-xi-p-343"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-09-04"
@@ -315,12 +323,12 @@ context = "Greek page-image control for Theodoret's direct exposition of the app
 
 [[bindings]]
 source_id = "artifact.thomas-aquinas.super-galatas.latin-corpusthomisticum-web-2026-08-21.cgl-html-bbaaf5bd"
-loci = ["5.l6"]
+loci = ["5.l6", "5.l7"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-09-04"
 source_fingerprint = "sha256:5f6829f4470b577188c5abaf483a4dfebfb8bccb3ae580cb8745ae983f8e699b"
-context = "Restricted exact Corpus Thomisticum artifact inspected for Aquinas's direct exposition of Galatians 5:16-24 and his ordering of the expanded Latin list of twelve fruits. No artifact wording is reproduced."
+context = "Restricted exact Corpus Thomisticum artifact inspected at Super Galatas 5, lecture 6 no. 330 and lecture 7 no. 331 for Aquinas's ordering of the expanded Latin list of twelve fruits. No artifact wording is reproduced."
 
 [[bindings]]
 source_id = "artifact.ambrose.de-mysteriis.english-npnf2-10-1896.newadvent-3405-d02cdd8b"
@@ -339,10 +347,10 @@ context = "The library registers this edition, but it does not register exact ar
 
 [[bindings]]
 source_id = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894"
-loci = ["printed pp. 207, 229-230, 237, lxxi-lxxiii"]
+loci = ["printed pp. 207, 229-230, 237, 355"]
 role = "direct-witness"
 states = ["cataloged"]
-context = "Registered edition identity for the prayer transmission cited in the guide. The binding remains cataloged because the library does not identify which registered OCR artifact controlled the v20 inspection at these exact pages."
+context = "Registered edition identity for the prayer transmission and early Sunday-numbering evidence cited in the guide. The binding remains cataloged because the library does not identify which registered OCR artifact controlled the v20 inspection at these exact pages."
 
 [[bindings]]
 source_id = "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915"
@@ -352,8 +360,32 @@ states = ["cataloged"]
 context = "Registered edition identity for the consecutive Collect, Secret, and Postcommunion at Sunday XV. No stronger library state is claimed for these exact pages."
 
 [[bindings]]
-source_id = "edition.rene-jean-hesbert.antiphonale-missarum-sextuplex.vromant-1935"
-loci = ["entry 186, printed pp. 186-187"]
-role = "direct-witness"
+source_id = "passage.anthony-of-padua.sermo-dominica-xiv-post-pentecosten.2021-centro-studi-latin-critical-apparatus.sections-15-18"
+loci = ["sections-15-18"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-08-21"
+source_fingerprint = "sha256:cf0ab3785161c42f7066a57f5741ffa91cc9d910cbfb0867e63227a25179b751"
+context = "Anthony's verified Sunday sermon reuses the fruits of Galatians 5:22-23 in a constellation whose Gospel is Luke 17:11-19 rather than Matthew 6. It witnesses medieval reception of the Epistle, not this later formulary or a compiler's intention. The modern critical apparatus is restricted and is paraphrased rather than quoted."
+
+[[bindings]]
+source_id = "edition.honorius-augustodunensis.gemma-animae.1854-migne-pl-172"
+role = "reception"
 states = ["cataloged"]
-context = "Catalog-level binding for the antiphoner constellation cited in the guide. The library registers no exact artifact and the scan's rights status remains unresolved, so the guide uses concise paraphrase and this binding claims no acquisition or inspection state."
+context = "The registered edition identity for Honorius's mixed Fourteenth- and Fifteenth-Sunday constellations and his September interpretation. The library does not register exact passage control for IV.72-79, so this binding claims only cataloged state and the guide supplies the human-readable locus."
+
+[[bindings]]
+source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.vatican-ocr-pdf-c734079d"
+loci = ["printed p. 709, Variationes in Breviario et Missali Romano, cap. IV, n. 18"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:d6cc31a9118749cbdd62dfe22342b3fe8a2deb99d91cb93500bae423c481f5d8"
+context = "The exact official control for the abolition of the orationes pro diversitate Temporum: Variationes in Breviario et Missali Romano, cap. IV, n. 18, Orationes pro diversitate Temporum abolentur, AAS 52 (1960), p. 709. The binding is to the promulgating Acta artifact because the Variationes provision lies outside the code's own locus numbering."
+
+[[bindings]]
+source_id = "segment.catholic-church.rubricae-breviarii-et-missalis-romani.latin-aas-52-1960.aas-52-1960-pages-597-740"
+loci = ["434", "435"]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c40ff5823bf507bb1b1c3da6c3462cd41308ad1a1ddff3b85831e607901f2e18"
+context = "Rubricae generales Missalis Romani 434 b with 435 yields the same absence of additional seasonal orations for this II-class Sunday, but these code provisions did not abolish the orationes pro diversitate Temporum. They neither replace the separate official control for that abolition nor redefine the principal proper's ten-element boundary."
