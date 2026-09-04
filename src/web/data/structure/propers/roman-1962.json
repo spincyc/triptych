@@ -5,29 +5,29 @@
  "languages": [
   {
    "absent": 0,
-   "available": 979,
+   "available": 1012,
    "fallback_latin": 0,
-   "full_text": 979,
-   "held": 979,
+   "full_text": 1012,
+   "held": 1012,
    "incipit_only": 0,
    "lang": "la",
    "rights_withheld": 0,
    "scripture_delegated": 3474,
-   "unavailable": 607,
+   "unavailable": 574,
    "units": 5060,
    "withheld": 0
   },
   {
    "absent": 0,
    "available": 194,
-   "fallback_latin": 313,
+   "fallback_latin": 346,
    "full_text": 194,
    "held": 194,
    "incipit_only": 0,
    "lang": "en",
    "rights_withheld": 625,
    "scripture_delegated": 3474,
-   "unavailable": 454,
+   "unavailable": 421,
    "units": 5060,
    "withheld": 0
   }
@@ -36377,11 +36377,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -36404,18 +36404,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 1-4; antecedent 1922 Tours Mame, printed p. 526; artifact PDF p. 640; text-layer lines 25-34 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Omnipotens\"; 1922 Tours Mame reads \"MNIPOTENS\" (edit distance 1); token 22: 1922 Tours Mame adds \";\"; the 1962 has nothing there; token 30: 1962 prints \"eundem Dominum.\"; 1922 Tours Mame reads \"etimdem Déminum.\" (edit distance 3, conclusion); 1922 Mame prints majestatem where the 1962 prints maiestatem; 1922 Mame sets a space before the colon after exoramus and before the semicolon after praesentatus; the 1962 does not; 1922 Mame ends Per eumdem Dominum., the 1962 Per eundem Dominum. (m for n, and the same short cue). Corroboration: 1862 Pustet Ratisbon text-layer lines 57847-57873: 19 of 32 tokens identical after normalisation (n-gram similarity 0.65); 1604 Vatican typical text-layer lines 44102-44114: 20 of 32 tokens identical after normalisation (n-gram similarity 0.68); 1570 Venice: swept end to end, no matching text (best window n-gram similarity 0.42, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.purificatione-beatae-mariae-virginis-collect",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 467, no. 2108; artifact PDF p. 548",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-purificatione-beatae-mariae-virginis-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 526; artifact PDF p. 640; text-layer lines 25-34 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "8e2fea8ead7915e530e1e7ce331174fa76d8f91fc82c531f00a6c7065032aab4",
+      "withheld": false
+     },
      "name": "Collect",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Omnipotens sempiterne Deus, majestatem tuam supplices exoramus: ut, sicut\nunigenitus Filius tuus hodierna die cum nostrae carnis substantia in templo\nest praesentatus; ita nos facias purificatis tibi mentibus praesentari. Per\neundem Dominum.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -36726,11 +36765,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -36753,18 +36792,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 6-8; antecedent 1922 Tours Mame, printed p. 527; artifact PDF p. 641; text-layer lines 52-59 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Exaudi,\"; 1922 Tours Mame reads \"xAup1,\" (edit distance 3); token 4: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 10: 1962 prints \"oculis tuae\"; 1922 Tours Mame reads \"dculis tuze\" (edit distance 2); token 16: 1962 prints \"tuae\"; 1922 Tours Mame reads \"tuz\" (edit distance 1); token 21: 1962 prints \"nostrum.\"; 1922 Tours Mame reads \"Przefatio\" (edit distance 7, conclusion); 1922 Mame prints majestatis where the 1962 prints maiestatis; 1922 Mame sets a space before the colon after nostras; the 1962 does not; 1922 Mame ends at the short cue Per Dominum., the 1962 at Per Dominum nostrum.. Corroboration: 1862 Pustet Ratisbon text-layer lines 57980-57985: 15 of 22 tokens identical after normalisation (n-gram similarity 0.76); 1604 Vatican typical text-layer lines 44221-44226: 13 of 22 tokens identical after normalisation (n-gram similarity 0.64); 1570 Venice: swept end to end, no matching text (best window n-gram similarity 0.46, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.purificatione-beatae-mariae-virginis-secret",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 468, no. 2115; artifact PDF p. 549",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-purificatione-beatae-mariae-virginis-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 527; artifact PDF p. 641; text-layer lines 52-59 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "826e296a92a4fc0e1881b39c25d9d2990c683b6e02e26646947d8ad515ba38e2",
+      "withheld": false
+     },
      "name": "Secret",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Exaudi, Domine, preces nostras: et, ut digna sint munera, quae oculis tuae\nmajestatis offerimus, subsidium nobis tuae pietatis impende. Per Dominum\nnostrum.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -36845,11 +36923,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -36872,18 +36950,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 10-12; antecedent 1922 Tours Mame, printed p. 527; artifact PDF p. 641; text-layer lines 66-74 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Quaesumus,\"; 1922 Tours Mame reads \"uz#sumMus,\" (edit distance 3); token 3: 1922 Tours Mame adds \"Q)\"; the 1962 has nothing there; token 9: 1962 prints \"reparationis\"; 1922 Tours Mame reads \"reparatidnis\" (edit distance 1); token 27: 1962 prints \"Dominum.\"; 1922 Tours Mame reads \"Déminum\" (edit distance 1, conclusion); 1922 Mame writes the conclusion out (Per Dominum nostrum Jesum...) where the 1962 prints the short cue Per Dominum.. Corroboration: 1862 Pustet Ratisbon text-layer lines 57998-58005: 20 of 28 tokens identical after normalisation (n-gram similarity 0.77); 1604 Vatican typical: swept end to end, no matching text (best window n-gram similarity 0.23, which is noise); 1570 Venice text-layer lines 59287-59293: 9 of 28 tokens identical after normalisation (n-gram similarity 0.57).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.purificatione-beatae-mariae-virginis-postcommunion",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 468, no. 2117; artifact PDF p. 549",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-purificatione-beatae-mariae-virginis-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 527; artifact PDF p. 641; text-layer lines 66-74 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "6bc65b66ba020daa9c44152b8ccee508deeee2466c21083af74787164e4b066a",
+      "withheld": false
+     },
      "name": "Postcommunion",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Quaesumus, Domine Deus noster: ut sacrosancta mysteria, quae pro\nreparationis nostrae munimine contulisti, intercedente beata Maria semper\nVirgine, et praesens nobis remedium esse facias, et futurum. Per Dominum.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -37000,11 +37117,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -37027,18 +37144,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 14-16; antecedent 1922 Tours Mame, printed p. 533; artifact PDF p. 647; text-layer lines 16-24 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Deus,\"; 1922 Tours Mame reads \"Pea:\" (edit distance 3); token 5: 1962 prints \"Conceptionem\"; 1922 Tours Mame reads \"Conceptidnem\" (edit distance 1); token 14: 1962 prints \"quaesumus;\"; 1922 Tours Mame reads \"quzsumus;\" (edit distance 1); token 18: 1962 prints \"Apparitionem\"; 1922 Tours Mame reads \"Apparitidnem\" (edit distance 1); token 26: 1962 prints \"eundem\"; 1922 Tours Mame reads \"eumdem\" (edit distance 1, conclusion); 1922 Mame prints ejusdem where the 1962 prints eiusdem; 1922 Mame sets a space before the colon after praeparasti; 1922 Mame reads ut ejusdem where the 1962 reads ut, eiusdem (the 1962 sets a comma after ut); 1922 Mame ends Per eumdem Dominum., the 1962 Per eundem Dominum.. Corroboration: 1862 Pustet Ratisbon: swept end to end, no matching text (best window n-gram similarity 0.19, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.apparitione-beatae-mariae-virginis-immaculatae-collect",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 473, no. 2165; artifact PDF p. 554",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-apparitione-beatae-mariae-virginis-immaculatae-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 533; artifact PDF p. 647; text-layer lines 16-24 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "6ee41d8065bf62d6bdb9cb9ecbc1847b2fd44904f6e3372d08b627df7e7eec7e",
+      "withheld": false
+     },
      "name": "Collect",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Deus, qui per immaculatam Virginis Conceptionem dignum Filio tuo habitaculum\npraeparasti: supplices a te quaesumus; ut, ejusdem Virginis Apparitionem\ncelebrantes, salutem mentis et corporis consequamur. Per eundem Dominum.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -37359,11 +37515,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -37386,18 +37542,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 18-20; antecedent 1922 Tours Mame, printed p. 534; artifact PDF p. 648; text-layer lines 22-29 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Hostia\"; 1922 Tours Mame reads \"Ostia\" (edit distance 1); token 4: 1922 Tours Mame adds \"if\"; the 1962 has nothing there; token 7: 1962 prints \"gloriosae\"; 1922 Tours Mame reads \"gloridse\" (edit distance 1); token 15: 1962 prints \"odorem\"; 1922 Tours Mame reads \"oddrem\" (edit distance 1); token 20: 1962 prints \"conferat corporis\"; 1922 Tours Mame reads \"cénferat céorporis\" (edit distance 2); 1922 Mame and the 1962 agree word for word here; the differences are the Mame ligature ae and its spacing before punctuation. Corroboration: 1862 Pustet Ratisbon: swept end to end, no matching text (best window n-gram similarity 0.20, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.apparitione-beatae-mariae-virginis-immaculatae-secret",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 474, no. 2173; artifact PDF p. 555",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-apparitione-beatae-mariae-virginis-immaculatae-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 534; artifact PDF p. 648; text-layer lines 22-29 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "962082fc0df7d2e5655ce79f737d221d1c2fd7b72f03d99e10959686041b02d5",
+      "withheld": false
+     },
      "name": "Secret",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Hostia laudis, quam tibi, Domine, per merita gloriosae et immaculatae\nVirginis offerimus, sit tibi in odorem suavitatis, et nobis optatam conferat\ncorporis et animae sanitatem. Per Dominum.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -37478,11 +37673,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -37505,18 +37700,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 22-24; antecedent 1922 Tours Mame, printed p. 534; artifact PDF p. 648; text-layer lines 41-49 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Quos\"; 1922 Tours Mame reads \"Oh\" (edit distance 3); token 2: 1962 prints \"Domine,\"; 1922 Tours Mame reads \"Démine,\" (edit distance 1); token 5: 1962 prints \"sublevet\"; 1922 Tours Mame reads \"stiblevet\" (edit distance 1); token 7: 1962 prints \"Genetricis\"; 1922 Tours Mame reads \"Genitricis\" (edit distance 1); token 10: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 12: 1962 prints \"aeternam\"; 1922 Tours Mame reads \"Die Febr. — Ss. septem Fundatorum zetérnam\" (edit distance 31); token 21: 1962 prints \"regnas cum Deo Patre\"; 1922 Tours Mame has nothing at that point (conclusion); token 26: 1962 prints \"unitate.\"; 1922 Tours Mame reads \"Quadragesima,\" (edit distance 9, conclusion); 1922 Mame prints Genitricis where the 1962 prints Genetricis; 1922 Mame prints adjuvante where the 1962 prints adiuvante; 1922 Mame ends at the short cue Qui vivis.; the 1962 writes the conclusion out as Qui vivis et regnas cum Deo Patre in unitate.. Corroboration: 1862 Pustet Ratisbon: swept end to end, no matching text (best window n-gram similarity 0.22, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.apparitione-beatae-mariae-virginis-immaculatae-postcommunion",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 474, no. 2175; artifact PDF p. 555",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-apparitione-beatae-mariae-virginis-immaculatae-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 534; artifact PDF p. 648; text-layer lines 41-49 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "1cd943e0f6ec2671931376bd9d5e6e005fee3db064442e7f1774f32678415c52",
+      "withheld": false
+     },
      "name": "Postcommunion",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Quos caelesti, Domine, alimento satiasti, sublevet dextera Genetricis tuae\nimmaculatae: ut ad aeternam patriam, ipsa adjuvante, pervenire mereamur: Qui\nvivis et regnas cum Deo Patre in unitate.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -37633,11 +37867,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -37660,18 +37894,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 26-29; antecedent 1922 Tours Mame, printed p. 555; artifact PDF p. 669; text-layer lines 24-34 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Deus,\"; 1922 Tours Mame reads \"EUS,\" (edit distance 1); token 4: 1962 prints \"Mariae\"; 1922 Tours Mame reads \"MaD riz\" (edit distance 3); token 14: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 21: 1962 prints \"Genetricem\"; 1922 Tours Mame reads \"Genitricem\" (edit distance 1); token 30: 1962 prints \"eundem\"; 1922 Tours Mame reads \"eumdem\" (edit distance 1); token 32: 1962 prints \"nostrum Iesum Christum, Filium tuum: Qui tecum.\"; 1922 Tours Mame reads \"Et, in Quadragesima, ft\" (edit distance 29); 1922 Mame prints Genitricem where the 1962 prints Genetricem; 1922 Mame prints ejus and adjuvemur where the 1962 prints eius and adiuvemur; 1922 Mame sets the conclusion in parentheses and abbreviates it to Qui., the 1962 writes Qui tecum.. Corroboration: 1862 Pustet Ratisbon text-layer lines 85381-85406: 24 of 39 tokens identical after normalisation (n-gram similarity 0.63); 1604 Vatican typical: swept end to end, no matching text (best window n-gram similarity 0.47, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.annuntiatio-beatae-mariae-virginis-collect",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 495, no. 2324; artifact PDF p. 576",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-annuntiatio-beatae-mariae-virginis-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 555; artifact PDF p. 669; text-layer lines 24-34 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "e46b176fb609f02f81e7d0df9443c4141e2faf8ebddb011a269ee2c0212fe682",
+      "withheld": false
+     },
      "name": "Collect",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Deus, qui de beatae Mariae Virginis utero Verbum tuum, Angelo nuntiante,\ncarnem suscipere voluisti: praesta supplicibus tuis; ut, qui vere eam\nGenetricem Dei credimus, ejus apud te intercessionibus adjuvemur. Per eundem\nDominum nostrum Jesum Christum, Filium tuum: Qui tecum.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -37937,11 +38210,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -37964,18 +38237,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 31-35; antecedent 1922 Tours Mame, printed p. 557; artifact PDF p. 671; text-layer lines 12-27 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 1: 1922 Tours Mame adds \"muliéribus, et benedictus fructus ventris tui (T. P. alleluja). Secreta N\"; the 1962 has nothing there; token 3: 1962 prints \"quaesumus,\"; 1922 Tours Mame reads \"que[ sumus,\" (edit distance 1); token 21: 1962 prints \"salutiferae resurrectionis\"; 1922 Tours Mame reads \"salutiferzeresurrectionis\" (edit distance 2); token 30: 1962 prints \"eundem\"; 1922 Tours Mame reads \"eimdem\" (edit distance 1); token 32: 1962 prints \"nostrum Iesum Christum, Filium tuum: Qui tecum\"; 1922 Tours Mame reads \"Et, in Quadragesima, fit Commemoratio Feriz,\" (edit distance 29); token 40: 1962 prints \"et regnat.\"; 1922 Tours Mame reads \"su\" (edit distance 9, conclusion); 1922 Tours Mame: 11 tokens at layer lines 12-16 align with nothing in the 1962 and are page furniture or scanner debris, excluded from the reading above; 1922 Mame prints ejus where the 1962 prints eius; 1922 Mame ends at Per eumdem Dominum., the 1962 writes the conclusion out as Per eundem Dominum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat.. Corroboration: 1862 Pustet Ratisbon text-layer lines 85493-85514: 24 of 42 tokens identical after normalisation (n-gram similarity 0.63); 1604 Vatican typical: swept end to end, no matching text (best window n-gram similarity 0.43, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.annuntiatio-beatae-mariae-virginis-secret",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 496, no. 2331; artifact PDF p. 577",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-annuntiatio-beatae-mariae-virginis-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 557; artifact PDF p. 671; text-layer lines 12-27 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "08edcc358b1044be71fdb15a70049d3c1aa3bd3189d93c15615b5c5193002aa9",
+      "withheld": false
+     },
      "name": "Secret",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "In mentibus nostris, quaesumus, Domine, verae fidei sacramenta confirma: ut,\nqui conceptum de Virgine Deum verum et hominem confitemur; per ejus\nsalutiferae resurrectionis potentiam, ad aeternam mereamur pervenire\nlaetitiam. Per eundem Dominum nostrum Jesum Christum, Filium tuum: Qui tecum\nvivit et regnat.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -38056,11 +38368,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -38083,18 +38395,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 37-39; antecedent 1922 Tours Mame, printed p. 557; artifact PDF p. 671; text-layer lines 37-49 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Gratiam\"; 1922 Tours Mame reads \"RATIAM\" (edit distance 1); token 7: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 22: 1962 prints \"resurrectionis\"; 1922 Tours Mame reads \"resurrectidnis\" (edit distance 1); token 24: 1962 prints \"perducamur.\"; 1922 Tours Mame reads \"perducaS. Joannis Damasceni Conf. mur,\" (edit distance 24); token 26: 1962 prints \"eundem\"; 1922 Tours Mame reads \"eumdem\" (edit distance 1, conclusion); token 28: 1962 prints \"nostrum.\"; 1922 Tours Mame reads \"Et,-1n\" (edit distance 6, conclusion); 1922 Mame prints ejus where the 1962 prints eius; 1922 Mame sets a space before the colon after infunde. Corroboration: 1862 Pustet Ratisbon text-layer lines 85528-85536: 19 of 29 tokens identical after normalisation (n-gram similarity 0.74); 1604 Vatican typical text-layer lines 9761-9768: 16 of 29 tokens identical after normalisation (n-gram similarity 0.85).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.annuntiatio-beatae-mariae-virginis-postcommunion",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 496, no. 2333; artifact PDF p. 577",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-annuntiatio-beatae-mariae-virginis-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 557; artifact PDF p. 671; text-layer lines 37-49 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "e03f3ce10b9ef9debfb8ccf901912dcfab6c63173ebe46fffb287cf5315ff071",
+      "withheld": false
+     },
      "name": "Postcommunion",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Gratiam tuam, quaesumus, Domine, mentibus nostris infunde: ut qui, Angelo\nnuntiante, Christi Filii tui incarnationem cognovimus; per passionem ejus et\ncrucem, ad resurrectionis gloriam perducamur. Per eundem Dominum nostrum.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -39356,11 +39707,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -39383,18 +39734,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 41-43; antecedent 1922 Tours Mame, printed p. 644; artifact PDF p. 758; text-layer lines 65-72 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Famulis\"; 1922 Tours Mame reads \"AMULIS\" (edit distance 1); token 3: 1962 prints \"Domine,\"; 1922 Tours Mame reads \"F’pomine.\" (edit distance 3); token 8: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 24: 1962 prints \"Dominum.\"; 1922 Tours Mame reads \"Déminum.\" (edit distance 1, conclusion); 1922 Mame prints ejus where the 1962 prints eius; 1922 Mame sets a space before the colon after impertire. Corroboration: 1862 Pustet Ratisbon text-layer lines 66999-67005: 18 of 25 tokens identical after normalisation (n-gram similarity 0.77); 1604 Vatican typical: swept end to end, no matching text (best window n-gram similarity 0.17, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.visitatione-beatae-mariae-virginis-collect",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 575, no. 2950; artifact PDF p. 656",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-visitatione-beatae-mariae-virginis-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 644; artifact PDF p. 758; text-layer lines 65-72 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "3eb4ba042b9b66601a32afb081a07ad9c40264d89c8f28244b312fe183c2891c",
+      "withheld": false
+     },
      "name": "Collect",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Famulis tuis, quaesumus, Domine, caelestis gratiae munus impertire: ut,\nquibus beatae Virginis partus exstitit salutis exordium; Visitationis ejus\nvotiva solemnitas pacis tribuat incrementum. Per Dominum.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -39530,11 +39920,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -39557,18 +39947,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 45-49; antecedent 1922 Tours Mame, printed p. 645,646; artifact PDF p. 759,760; text-layer lines 2-88 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Unigeniti\"; 1922 Tours Mame reads \"NIGENITI\" (edit distance 1); token 3: 1922 Tours Mame adds \"U\"; the 1962 has nothing there; token 6: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 25: 1962 prints \"oblationem\"; 1922 Tours Mame reads \"oblatidnem\" (edit distance 1); token 34: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 36: 1962 prints \"vivit\"; 1922 Tours Mame has nothing at that point (conclusion); token 38: 1962 prints \"regnat\"; 1922 Tours Mame reads \"fit Commemoratio Ss. Processi et Martiniani, utinfra Preefatio de B. Maria Virg. Et te\" (edit distance 72, conclusion); token 40: 1962 prints \"unitate.\"; 1922 Tours Mame reads \"Visitatione.\" (edit distance 4, conclusion); 1922 Mame prints ejus where the 1962 prints eius; 1922 Mame reads ut, qui natus de Virgine where the 1962 reads ut, qui, natus de Virgine (the 1962 sets a second comma); 1922 Mame ends at the short cue Qui tecum., the 1962 writes it out as Qui tecum vivit et regnat in unitate.. Corroboration: 1862 Pustet Ratisbon text-layer lines 67117-67127: 30 of 41 tokens identical after normalisation (n-gram similarity 0.78); 1604 Vatican typical text-layer lines 41441-41461: 18 of 41 tokens identical after normalisation (n-gram similarity 0.68).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.visitatione-beatae-mariae-virginis-secret",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 575, no. 2957; artifact PDF p. 656",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-visitatione-beatae-mariae-virginis-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 645,646; artifact PDF p. 759,760; text-layer lines 2-88 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "d365248613127376887f50a5dfa60ee4f5de5a8f0174c3ceae61d95925765b7b",
+      "withheld": false
+     },
      "name": "Secret",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Unigeniti tui, Domine, nobis succurrat humanitas: ut, qui, natus de Virgine,\nmatris integritatem non minuit, sed sacravit; in Visitationis ejus\nsolemniis, nostris nos piaculis exuens, oblationem nostram tibi faciat\nacceptam Jesus Christus Dominus noster: Qui tecum vivit et regnat in\nunitate.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -39594,11 +40023,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -39621,18 +40050,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 51-53; antecedent 1922 Tours Mame, printed p. 646; artifact PDF p. 760; text-layer lines 9-16 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Sumpsimus,\"; 1922 Tours Mame reads \"UMPSsIMuS,\" (edit distance 1); token 3: 1962 prints \"annuae\"; 1922 Tours Mame reads \"annuz\" (edit distance 1); token 6: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 18: 1962 prints \"Dominum nostrum.\"; 1922 Tours Mame reads \"D6ominum. Et.fit\" (edit distance 7, conclusion); 1922 Mame ends at the short cue Per Dominum., the 1962 at Per Dominum nostrum.. Corroboration: 1862 Pustet Ratisbon text-layer lines 67151-67156: 13 of 20 tokens identical after normalisation (n-gram similarity 0.68); 1604 Vatican typical: swept end to end, no matching text (best window n-gram similarity 0.41, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.visitatione-beatae-mariae-virginis-postcommunion",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 576, no. 2960; artifact PDF p. 657",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-visitatione-beatae-mariae-virginis-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 646; artifact PDF p. 760; text-layer lines 9-16 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "b52413e81b61f51b6f07c10de7c612399adf54ef40e6a55abb8907974651e670",
+      "withheld": false
+     },
      "name": "Postcommunion",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Sumpsimus, Domine, celebritatis annuae votiva sacramenta: praesta,\nquaesumus; ut et temporalis vitae nobis remedia praebeant et aeternae. Per\nDominum nostrum.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -39727,11 +40195,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -39754,18 +40222,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 55-59; antecedent 1922 Tours Mame, printed p. 656; artifact PDF p. 770; text-layer lines 56-69 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Deus,\"; 1922 Tours Mame reads \"EUS,\" (edit distance 1); token 3: 1922 Tours Mame adds \"D\"; the 1962 has nothing there; token 6: 1962 prints \"Genetricis tuae\"; 1922 Tours Mame reads \"Genitricis tuz\" (edit distance 2); token 12: 1962 prints \"Ordinem\"; 1922 Tours Mame reads \"érdinem\" (edit distance 1); token 15: 1962 prints \"propitius; ut,\"; 1922 Tours Mame reads \"propitius;ut,\" (edit distance 0); token 18: 1962 prints \"hodie Commemorationem\"; 1922 Tours Mame reads \"hédie Commemoratidnem\" (edit distance 2); token 31: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 33: 1962 prints \"et regnas cum Deo Patre in unitate.\"; 1922 Tours Mame reads \"Léctio libri Sapiéntix Eecli. 24, © quasi\" (edit distance 28, conclusion); 1922 Mame prints Genitricis where the 1962 prints Genetricis; 1922 Mame prints cujus and ejus where the 1962 prints cuius and eius; 1922 Mame prints ordinem in lower case, the 1962 Ordinem; 1922 Mame ends at the short cue Qui vivis., the 1962 writes it out as Qui vivis et regnas cum Deo Patre in unitate.. Corroboration: 1862 Pustet Ratisbon text-layer lines 68020-68037: 20 of 40 tokens identical after normalisation (n-gram similarity 0.59); 1604 Vatican typical: swept end to end, no matching text (best window n-gram similarity 0.14, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-beatae-mariae-virginis-monte-carmelo-collect",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 587, no. 3056; artifact PDF p. 668",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-comm-beatae-mariae-virginis-monte-carmelo-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 656; artifact PDF p. 770; text-layer lines 56-69 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "924126e5788c73c2e4169b17da5a4b9e40d20d15c1bc57c737cc64f60c29cc1e",
+      "withheld": false
+     },
      "name": "Collect",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Deus, qui beatissimae semper Virginis et Genetricis tuae Mariae singulari\ntitulo Carmeli Ordinem decorasti: concede propitius; ut, cujus hodie\nCommemorationem solemni celebramus officio, ejus muniti praesidiis, ad\ngaudia sempiterna pervenire mereamur: Qui vivis et regnas cum Deo Patre in\nunitate.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -39956,11 +40463,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -39983,18 +40490,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 61-63; antecedent 1922 Tours Mame, printed p. 657; artifact PDF p. 771; text-layer lines 57-63 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Sanctifica,\"; 1922 Tours Mame reads \"Qe\" (edit distance 10); token 8: 1962 prints \"Genetricis\"; 1922 Tours Mame reads \"Genitricis\" (edit distance 1); token 11: 1962 prints \"intercessione,\"; 1922 Tours Mame reads \"intercessiéne,\" (edit distance 1); token 17: 1962 prints \"eundem\"; 1922 Tours Mame reads \"etmdem\" (edit distance 2, conclusion); 1922 Mame prints Genitricis where the 1962 prints Genetricis; 1922 Mame ends Per eumdem Dominum nostrum., the 1962 Per eundem Dominum.. Corroboration: 1862 Pustet Ratisbon: swept end to end, no matching text (best window n-gram similarity 0.53, which is noise); 1604 Vatican typical: swept end to end, no matching text (best window n-gram similarity 0.15, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-beatae-mariae-virginis-monte-carmelo-secret",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 588, no. 3064; artifact PDF p. 669",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-comm-beatae-mariae-virginis-monte-carmelo-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 657; artifact PDF p. 771; text-layer lines 57-63 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "dc37899e719f19619dcab0e1e4cf7b939e5ad7fe6337b169ffcc66f1764c3825",
+      "withheld": false
+     },
      "name": "Secret",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Sanctifica, Domine, quaesumus, oblata libamina: et, beatae Dei Genetricis\nMariae saluberrima intercessione, nobis salutaria fore concede. Per eundem\nDominum.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -40020,11 +40566,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -40047,18 +40593,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 65-68; antecedent 1922 Tours Mame, printed p. 657; artifact PDF p. 771; text-layer lines 73-85 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Adiuvet\"; 1922 Tours Mame reads \"DJUVET\" (edit distance 1); token 2: 1962 prints \"quaesumus,\"; 1922 Tours Mame reads \"quzsumus,\" (edit distance 1); token 5: 1962 prints \"tuae Genetricis\"; 1922 Tours Mame reads \"tuz Genitricis,\" (edit distance 2); token 12: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 25: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 27: 1962 prints \"et regnas cum Deo Patre in unitate.\"; 1922 Tours Mame reads \"SANCTI ALEXII CONFESSORIS MissaOs justi, de Communi\" (edit distance 34, conclusion); 1922 Mame prints Adjuvet and Genitricis where the 1962 prints Adiuvet and Genetricis; 1922 Mame ends at the short cue Qui vivis., the 1962 writes it out as Qui vivis et regnas cum Deo Patre in unitate.. Corroboration: 1862 Pustet Ratisbon text-layer lines 68124-68142: 18 of 34 tokens identical after normalisation (n-gram similarity 0.57); 1604 Vatican typical: swept end to end, no matching text (best window n-gram similarity 0.14, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-beatae-mariae-virginis-monte-carmelo-postcommunion",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 588, no. 3066; artifact PDF p. 669",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-comm-beatae-mariae-virginis-monte-carmelo-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 657; artifact PDF p. 771; text-layer lines 73-85 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "d9674f3c5e762421f51021f092b2fa89b37ae1b5d7c18578005b0e44a8e1d6e9",
+      "withheld": false
+     },
      "name": "Postcommunion",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Adjuvet nos, quaesumus, Domine, gloriosae tuae Genetricis semperque Virginis\nMariae intercessio veneranda: ut, quos perpetuis cumulavit beneficiis, a\ncunctis periculis absolutos, sua faciat pietate Concordes: Qui vivis et\nregnas cum Deo Patre in unitate.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -40185,11 +40770,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -40212,18 +40797,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 70-72; antecedent 1922 Tours Mame, printed p. 689; artifact PDF p. 803; text-layer lines 40-50 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Deus,\"; 1922 Tours Mame reads \"EUS,\" (edit distance 1); token 10: 1962 prints \"dignatus\"; 1922 Tours Mame reads \"di-! gnatus\" (edit distance 1); token 12: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 17: 1962 prints \"defensione\"; 1922 Tours Mame reads \"defensidne\" (edit distance 1); token 21: 1962 prints \"suse\"; 1922 Tours Mame reads \"suze\" (edit distance 1); token 27: 1962 prints \"regnas cum Deo Patre\"; 1922 Tours Mame reads \"fit Commemoratio S. Eusebii Conf., ut\" (edit distance 27, conclusion); token 32: 1962 prints \"unitate.\"; 1922 Tours Mame has nothing at that point (conclusion); 1922 Mame prints jucundos where the 1962 prints iucundos; 1922 Mame sets a space before the colons after es and festivitati; 1922 Mame ends at the short cue Qui vivis., the 1962 writes it out as Qui vivis et regnas cum Deo Patre in unitate.. Corroboration: 1862 Pustet Ratisbon text-layer lines 71474-71481: 18 of 33 tokens identical after normalisation (n-gram similarity 0.55); 1604 Vatican typical: swept end to end, no matching text (best window n-gram similarity 0.12, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.vigil-assumption-collect",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 625, no. 3366; artifact PDF p. 706",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-vigil-assumption-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 689; artifact PDF p. 803; text-layer lines 40-50 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "0bc988c952d1e00c6475126970e6a70699e7b65b97b77a4a8d1cae1c89776b7d",
+      "withheld": false
+     },
      "name": "Collect",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Deus, qui virginalem aulam beatae Mariae, in qua habitares, eligere dignatus\nes: da, quaesumus; ut, sua nos defensione munitos, jucundos facias suse\ninteresse festivitati: Qui vivis et regnas cum Deo Patre in unitate.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -40359,11 +40983,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -40386,18 +41010,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 74-77; antecedent 1922 Tours Mame, printed p. 689,690; artifact PDF p. 803,804; text-layer lines 2-84 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Munera\"; 1922 Tours Mame reads \"bane\" (edit distance 4); token 7: 1962 prints \"Genetricis\"; 1922 Tours Mame reads \"Genitricis\" (edit distance 1); token 10: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 14: 1962 prints \"saeculo\"; 1922 Tours Mame reads \"szculo\" (edit distance 1); token 24: 1962 prints \"Per eundem Dominum nostrum Iesum Christum,\"; 1922 Tours Mame reads \"Pereumdem Déminum. Et fit Commemoratio S. Eusebii ; deinde Secreta de Spiritu Sancto Preefatio communis. Communio. Beata viscera Marie Virginis, que portaverunt etérni Patris\" (edit distance 129); token 31: 1962 prints \"tuum: Qui tecum vivit et regnat in unitate.\"; 1922 Tours Mame has nothing at that point; 1922 Mame prints Genitricis where the 1962 prints Genetricis; 1922 Mame ends at a short cue; the 1962 writes the conclusion out as Per eundem Dominum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.. Corroboration: 1862 Pustet Ratisbon: swept end to end, no matching text (best window n-gram similarity 0.50, which is noise); 1604 Vatican typical: swept end to end, no matching text (best window n-gram similarity 0.24, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.vigil-assumption-secret",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 625, no. 3372; artifact PDF p. 706",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-vigil-assumption-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 689,690; artifact PDF p. 803,804; text-layer lines 2-84 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "840f408adc48651dfca76b8a27f9aadf233f23c21509025d33282729fd467aa2",
+      "withheld": false
+     },
      "name": "Secret",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Munera nostra, Domine, apud clementiam tuam Dei Genetricis commendet oratio:\nquam idcirco de praesenti saeculo transtulisti; ut pro peccatis nostris apud\nte fiducialiter intercedat. Per eundem Dominum nostrum Jesum Christum,\nFilium tuum: Qui tecum vivit et regnat in unitate.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -40423,11 +41086,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -40450,18 +41113,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 79-81; antecedent 1922 Tours Mame, printed p. 690; artifact PDF p. 804; text-layer lines 15-22 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Concede,\"; 1922 Tours Mame reads \"ONCEDE,\" (edit distance 1); token 3: 1922 Tours Mame adds \"C\"; the 1962 has nothing there; token 6: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 10: 1962 prints \"Genetricis\"; 1922 Tours Mame reads \"Genitricis\" (edit distance 1); token 12: 1962 prints \"praevenimus;\"; 1922 Tours Mame reads \"przvenimus;\" (edit distance 1); token 21: 1962 prints \"eundem Dominum.\"; 1922 Tours Mame reads \"eumdem Déminum.\" (edit distance 2, conclusion); 1922 Mame prints Genitricis and ejus where the 1962 prints Genetricis and eius; 1922 Mame ends Per eumdem Dominum., the 1962 Per eundem Dominum.. Corroboration: 1862 Pustet Ratisbon text-layer lines 71585-71591: 13 of 23 tokens identical after normalisation (n-gram similarity 0.65); 1604 Vatican typical: swept end to end, no matching text (best window n-gram similarity 0.18, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.vigil-assumption-postcommunion",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 626, no. 3375; artifact PDF p. 707",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-vigil-assumption-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 690; artifact PDF p. 804; text-layer lines 15-22 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "7e2eced416486fc392b0bebaffaea3c3fd78addc9bef8cbcd314bb15c70e9c34",
+      "withheld": false
+     },
      "name": "Postcommunion",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Concede, misericors Deus, fragilitati nostrae praesidium: ut, qui sanctae\nDei Genetricis festivitatem praevenimus; intercessionis ejus auxilio, a\nnostris iniquitatibus resurgamus. Per eundem Dominum.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -41495,11 +42197,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -41522,18 +42224,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 83-85; antecedent 1922 Tours Mame, printed p. 935; artifact PDF p. 1049; text-layer lines 50-58 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Maiestati tuae,\"; 1922 Tours Mame reads \"pean tuz,\" (edit distance 8); token 6: 1962 prints \"quaesumus:\"; 1922 Tours Mame reads \"quzsumus :\" (edit distance 2); token 16: 1962 prints \"beatae\"; 1922 Tours Mame reads \"beatze\" (edit distance 1); token 22: 1962 prints \"eundem\"; 1922 Tours Mame reads \"eumdem\" (edit distance 1, conclusion); token 24: 1962 prints \"nostrum.\"; 1922 Tours Mame reads \"Przfatio\" (edit distance 6, conclusion); 1922 Mame prints Majestati where the 1962 prints Maiestati; 1922 Mame sets a semicolon after accendat where the 1962 sets a comma; 1922 Mame ends Per eumdem Dominum., the 1962 Per eundem Dominum nostrum.. Corroboration: 1862 Pustet Ratisbon text-layer lines 96784-96791: 14 of 25 tokens identical after normalisation (n-gram similarity 0.60); 1604 Vatican typical: swept end to end, no matching text (best window n-gram similarity 0.14, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.immaculati-cordis-beatae-mariae-virginis-secret",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 634, no. 3433; artifact PDF p. 715",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-immaculati-cordis-beatae-mariae-virginis-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 935; artifact PDF p. 1049; text-layer lines 50-58 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "7f5b044d27f4c84141bb492ef88677e94c98dd3e279f4cdba95fd58615a032eb",
+      "withheld": false
+     },
      "name": "Secret",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Majestati tuae, Domine, Agnum immaculatum offerentes, quaesumus: ut corda\nnostra ignis ille divinus accendat, qui Cor beatae Mariae Virginis\nineffabiliter inflammavit. Per eundem Dominum nostrum.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -41747,11 +42488,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -41774,18 +42515,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 87-89; antecedent 1922 Tours Mame, printed p. 708; artifact PDF p. 822; text-layer lines 59-66 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Famulis\"; 1922 Tours Mame reads \"AMULIS\" (edit distance 1); token 3: 1922 Tours Mame adds \"F\"; the 1962 has nothing there; token 5: 1962 prints \"gratiae\"; 1922 Tours Mame reads \"gratiz\" (edit distance 1); token 8: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 10: 1962 prints \"beatae\"; 1922 Tours Mame reads \"beat\" (edit distance 1); 1922 Mame prints ejus where the 1962 prints eius; 1922 Mame sets a space before the colon after impertire. Corroboration: 1862 Pustet Ratisbon text-layer lines 54101-54109: 17 of 25 tokens identical after normalisation (n-gram similarity 0.69); 1604 Vatican typical: swept end to end, no matching text (best window n-gram similarity 0.16, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.nativitate-beatae-mariae-virginis-collect",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 650, no. 3571; artifact PDF p. 731",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-nativitate-beatae-mariae-virginis-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 708; artifact PDF p. 822; text-layer lines 59-66 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "1e66be7b434829397a35a1688dd548bad2f2077adbfcc1ad140f689ab258c98f",
+      "withheld": false
+     },
      "name": "Collect",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Famulis tuis, quaesumus, Domine, caelestis gratiae munus impertire: ut,\nquibus beatae Virginis partus exstitit salutis exordium; Nativitatis ejus\nvotiva solemnitas pacis tribuat incrementum. Per Dominum.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -41866,11 +42646,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -41893,18 +42673,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 91-94; antecedent 1922 Tours Mame, printed p. 710; artifact PDF p. 824; text-layer lines 29-44 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Unigeniti\"; 1922 Tours Mame reads \"NIGENITI\" (edit distance 1); token 2: 1962 prints \"Domine,\"; 1922 Tours Mame reads \"Dédmine, )\" (edit distance 3); token 4: 1962 prints \"succurrat\"; 1922 Tours Mame reads \"succtrrat\" (edit distance 1); token 6: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 25: 1962 prints \"oblationem\"; 1922 Tours Mame reads \"obaltidnem\" (edit distance 3); token 32: 1962 prints \"Dominus\"; 1922 Tours Mame reads \"Déminus\" (edit distance 1); token 34: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 36: 1962 prints \"vivit\"; 1922 Tours Mame reads \"Pro S. Hadriano Secreta UNBRIBUS nostris, queI sumus, Domine, precibisque suscéptis :\" (edit distance 78, conclusion); token 38: 1962 prints \"regnat in unitate.\"; 1922 Tours Mame reads \"czeléEadem\" (edit distance 15, conclusion); 1922 Mame prints ejus where the 1962 prints eius; 1922 Mame ends at Qui tecum., the 1962 writes it out as Qui tecum vivit et regnat in unitate.. Corroboration: 1862 Pustet Ratisbon text-layer lines 105432-105443: 27 of 41 tokens identical after normalisation (n-gram similarity 0.62); 1604 Vatican typical text-layer lines 41441-41457: 14 of 41 tokens identical after normalisation (n-gram similarity 0.67).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.nativitate-beatae-mariae-virginis-secret",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 651, no. 3578; artifact PDF p. 732",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-nativitate-beatae-mariae-virginis-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 710; artifact PDF p. 824; text-layer lines 29-44 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "f5a44beaf03daa19a63cf286a2980d772fa6bb1b9544d22949cc0dd83e9b1945",
+      "withheld": false
+     },
      "name": "Secret",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Unigeniti tui, Domine, nobis succurrat humanitas: ut, qui natus de Virgine,\nmatris integritatem non minuit, sed sacravit; in Nativitatis ejus solemniis,\nnostris nos piaculis exuens, oblationem nostram tibi faciat acceptam Jesus\nChristus Dominus noster; Qui tecum vivit et regnat in unitate.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -41930,11 +42749,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -41957,18 +42776,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 96-98; antecedent 1922 Tours Mame, printed p. 710; artifact PDF p. 824; text-layer lines 55-60 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Sumpsimus,\"; 1922 Tours Mame reads \"UMPSIMUS,\" (edit distance 1); token 3: 1962 prints \"annuae\"; 1922 Tours Mame reads \"annuz\" (edit distance 1); token 6: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 7: 1962 prints \"quaesumus; ut\"; 1922 Tours Mame reads \"que-. sumus;ut\" (edit distance 1); token 11: 1962 prints \"vitae\"; 1922 Tours Mame reads \"vitz\" (edit distance 1); token 14: 1962 prints \"praebeant\"; 1922 Tours Mame reads \"pr&beant,\" (edit distance 1); token 19: 1962 prints \"nostrum.\"; 1922 Tours Mame has nothing at that point (conclusion); 1922 Mame ends at the short cue Per Dominum., the 1962 at Per Dominum nostrum.. Corroboration: 1862 Pustet Ratisbon text-layer lines 67151-67156: 13 of 20 tokens identical after normalisation (n-gram similarity 0.68); 1604 Vatican typical: swept end to end, no matching text (best window n-gram similarity 0.41, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.nativitate-beatae-mariae-virginis-postcommunion",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 651, no. 3581; artifact PDF p. 732",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-nativitate-beatae-mariae-virginis-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 710; artifact PDF p. 824; text-layer lines 55-60 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "b52413e81b61f51b6f07c10de7c612399adf54ef40e6a55abb8907974651e670",
+      "withheld": false
+     },
      "name": "Postcommunion",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Sumpsimus, Domine, celebritatis annuae votiva sacramenta: praesta,\nquaesumus; ut et temporalis vitae nobis remedia praebeant et aeternae. Per\nDominum nostrum.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -42105,11 +42963,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -42132,18 +42990,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 100-103; antecedent 1922 Tours Mame, printed p. 712; artifact PDF p. 826; text-layer lines 3-12 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Concede,\"; 1922 Tours Mame reads \"ONCEDE,\" (edit distance 1); token 4: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 18: 1962 prints \"intercessione,\"; 1922 Tours Mame reads \"intercessidne,\" (edit distance 1); token 32: 1962 prints \"caelis.\"; 1922 Tours Mame reads \"cxlis.\" (edit distance 1); 1922 Mame prints ejus where the 1962 prints eius. Corroboration: 1862 Pustet Ratisbon text-layer lines 73695-73703: 25 of 35 tokens identical after normalisation (n-gram similarity 0.76); 1604 Vatican typical: swept end to end, no matching text (best window n-gram similarity 0.20, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.sanctissimi-nominis-beatae-mariae-virginis-collect",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 653, no. 3593; artifact PDF p. 734",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-sanctissimi-nominis-beatae-mariae-virginis-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 712; artifact PDF p. 826; text-layer lines 3-12 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "fed60d2ab90097a00e036de689ed52691268187b138b648f8e05f3f0f8adcaed",
+      "withheld": false
+     },
      "name": "Collect",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Concede, quaesumus, omnipotens Deus: ut fideles tui, qui sub sanctissimae\nVirginis Mariae Nomine et protectione laetantur; ejus pia intercessione, a\ncunctis malis liberentur in terris, et ad gaudia aeterna pervenire mereantur\nin caelis. Per Dominum.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -42344,11 +43241,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -42371,18 +43268,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 105-108; antecedent 1922 Tours Mame, printed p. 712; artifact PDF p. 826; text-layer lines 64-83 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Tua,\"; 1922 Tours Mame reads \"uA,\" (edit distance 1); token 2: 1962 prints \"propitiatione,\"; 1922 Tours Mame reads \"propitiatioT ne,\" (edit distance 2); token 4: 1962 prints \"beatae Mariae\"; 1922 Tours Mame reads \"beatz Mariz\" (edit distance 2); token 8: 1962 prints \"intercessione,\"; 1922 Tours Mame reads \"intercessiéne,\" (edit distance 1); token 13: 1962 prints \"haec\"; 1922 Tours Mame reads \"hee\" (edit distance 1); token 23: 1962 prints \"Iesum Christum,\"; 1922 Tours Mame reads \"Prefatio de B. Maria Virg: Et tein Festivitate. Communio. Beata viscera Mariz Virginis, que portavérunt ztérni Patris\" (edit distance 94); token 26: 1962 prints \"tuum: Qui tecum vivit et regnat\"; 1922 Tours Mame reads \"Postcommunio umprTis, Domine, salutis S nostre subsidiis : da, quesumus, beate Marie semper Virginis patrociniis nos ubique protegi;\" (edit distance 100); token 33: 1962 prints \"unitate.\"; 1922 Tours Mame reads \"cujus\" (edit distance 6, conclusion); 1922 Mame ends Per Dominum nostrum., the 1962 writes the conclusion out as Per Dominum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.; the alignment window on the Mame includes the following Praefatio and Communio rubrics; they are not part of the prayer. Corroboration: 1862 Pustet Ratisbon text-layer lines 85971-85990: 18 of 34 tokens identical after normalisation (n-gram similarity 0.63); 1604 Vatican typical: swept end to end, no matching text (best window n-gram similarity 0.30, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.sanctissimi-nominis-beatae-mariae-virginis-secret",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 654, no. 3602; artifact PDF p. 735",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-sanctissimi-nominis-beatae-mariae-virginis-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 712; artifact PDF p. 826; text-layer lines 64-83 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "d3716a299d12e2a147f7bfbbb34f9fe6b79354fb20d65e1ccfcd4da998fa0ca5",
+      "withheld": false
+     },
      "name": "Secret",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Tua, Domine, propitiatione, et beatae Mariae semper Virginis intercessione,\nad perpetuam atque praesentem haec oblatio nobis proficiat prosperitatem et\npacem. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et\nregnat in unitate.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -42408,11 +43344,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -42435,18 +43371,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 110-113; antecedent 1922 Tours Mame, printed p. 712,713; artifact PDF p. 826,827; text-layer lines 1-87 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Sumptis,\"; 1922 Tours Mame reads \"umprTis,\" (edit distance 2); token 3: 1922 Tours Mame adds \"S\"; the 1962 has nothing there; token 5: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 17: 1962 prints \"veneratione\"; 1922 Tours Mame reads \"veneratidne\" (edit distance 1); token 27: 1962 prints \"Filium tuum: Qui tecum vivit et regnat\"; 1922 Tours Mame reads \"Die Sept. —\" (edit distance 24); token 35: 1962 prints \"unitate.\"; 1922 Tours Mame reads \"Exaltatione\" (edit distance 6, conclusion); 1922 Mame ends at a shorter cue than the 1962, which writes the conclusion out as Per Dominum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.. Corroboration: 1862 Pustet Ratisbon text-layer lines 85780-85795: 20 of 36 tokens identical after normalisation (n-gram similarity 0.62); 1604 Vatican typical: swept end to end, no matching text (best window n-gram similarity 0.28, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.sanctissimi-nominis-beatae-mariae-virginis-postcommunion",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 654, no. 3604; artifact PDF p. 735",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-sanctissimi-nominis-beatae-mariae-virginis-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 712,713; artifact PDF p. 826,827; text-layer lines 1-87 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "49c8bdb0217cd8c342ccea0f988346316b06ee99e5ba979d73ad9feb705e2350",
+      "withheld": false
+     },
      "name": "Postcommunion",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Sumptis, Domine, salutis nostrae subsidiis: da, quaesumus, beatae Mariae\nsemper Virginis patrociniis nos ubique protegi; in cujus veneratione haec\ntuae obtulimus majestati. Per Dominum nostrum Jesum Christum, Filium tuum:\nQui tecum vivit et regnat in unitate.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -43763,11 +44738,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -43790,18 +44765,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 115-118; antecedent 1922 Tours Mame, printed p. 731; artifact PDF p. 845; text-layer lines 67-78 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Deus,\"; 1922 Tours Mame reads \"EUs,\" (edit distance 1); token 3: 1922 Tours Mame adds \"D\"; the 1962 has nothing there; token 14: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 15: 1962 prints \"quaesumus;\"; 1922 Tours Mame reads \"qusumus;\" (edit distance 1); token 21: 1962 prints \"Mariae\"; 1922 Tours Mame reads \"Mariz\" (edit distance 1); token 34: 1962 prints \"eundem\"; 1922 Tours Mame reads \"eiumdem\" (edit distance 1, conclusion); 1922 Mame ends Per eumdem Dominum nostrum Jesum..., the 1962 Per eundem Dominum.. Corroboration: 1862 Pustet Ratisbon text-layer lines 75606-75617: 22 of 36 tokens identical after normalisation (n-gram similarity 0.70); 1604 Vatican typical: swept end to end, no matching text (best window n-gram similarity 0.13, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.beatae-mariae-virginis-a-rosario-collect",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 677, no. 3788; artifact PDF p. 758",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-beatae-mariae-virginis-a-rosario-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 731; artifact PDF p. 845; text-layer lines 67-78 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "e1181b3b428cc4d74b431ba38cbbbe9c0d59ca11cce04cf579fbd67ab0a0de52",
+      "withheld": false
+     },
      "name": "Collect",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Deus, cujus Unigenitus per vitam, mortem et resurrectionem suam nobis\nsalutis aeternae praemia comparavit: concede, quaesumus; ut, haec mysteria\nsacratissimo beatae Mariae Virginis Rosario recolentes, et imitemur quod\ncontinent, et quod promittunt, assequamur. Per eundem Dominum.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -44022,11 +45036,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -44049,18 +45063,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 120-123; antecedent 1922 Tours Mame, printed p. 733; artifact PDF p. 847; text-layer lines 8-18 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Fac nos,\"; 1922 Tours Mame reads \"AC hos,\" (edit distance 2); token 3: 1962 prints \"Domine,\"; 1922 Tours Mame reads \"D6omine,\" (edit distance 1); token 9: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 18: 1962 prints \"gloriam\"; 1922 Tours Mame reads \"gloériam\" (edit distance 1); token 21: 1962 prints \"recolere;\"; 1922 Tours Mame reads \"recdlere;\" (edit distance 1); token 25: 1962 prints \"promissionibus\"; 1922 Tours Mame reads \"promissiénibus\" (edit distance 1); token 27: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 32: 1962 prints \"in unitate.\"; 1922 Tours Mame reads \"Et fit\" (edit distance 7, conclusion); 1922 Mame prints ejus where the 1962 prints eius; 1922 Mame ends Qui tecum vivit et regnat., the 1962 Qui tecum vivit et regnat in unitate.. Corroboration: 1862 Pustet Ratisbon text-layer lines 75671-75675: 11 of 34 tokens identical after normalisation (n-gram similarity 0.56); 1604 Vatican typical: swept end to end, no matching text (best window n-gram similarity 0.18, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.beatae-mariae-virginis-a-rosario-secret",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 679, no. 3797; artifact PDF p. 760",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-beatae-mariae-virginis-a-rosario-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 733; artifact PDF p. 847; text-layer lines 8-18 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "529d27b6649a045fbdfe0c8e002f518a6f47f20faca56703f62eb8e0d45da3c8",
+      "withheld": false
+     },
      "name": "Secret",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Fac nos, quaesumus, Domine, his muneribus offerendis convenienter aptari: et\nper sacratissimi Rosarii mysteria sic vitam, passionem et gloriam Unigeniti\ntui recolere; ut ejus digni promissionibus efficiamur: Qui tecum vivit et\nregnat in unitate.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -44141,11 +45194,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -44168,18 +45221,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 125-128; antecedent 1922 Tours Mame, printed p. 733; artifact PDF p. 847; text-layer lines 31-40 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Sanctissimae Genetricis\"; 1922 Tours Mame reads \"Genitricis .)\" (edit distance 13); token 6: 1962 prints \"quaesumus, Domine,\"; 1922 Tours Mame reads \"qusumus, D6omine,\" (edit distance 2); token 10: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 12: 1962 prints \"mysteriorum,\"; 1922 Tours Mame reads \"mysteridrum,\" (edit distance 1); token 23: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 26: 1962 prints \"regnas cum Deo Patre in unitate.\"; 1922 Tours Mame reads \"fit\" (edit distance 28, conclusion); 1922 Mame prints Genitricis and adjuvemur where the 1962 prints Genetricis and adiuvemur; 1922 Mame ends at the short cue Qui vivis., the 1962 writes it out as Qui vivis et regnas cum Deo Patre in unitate.. Corroboration: 1862 Pustet Ratisbon text-layer lines 75692-75704: 15 of 32 tokens identical after normalisation (n-gram similarity 0.58); 1604 Vatican typical: swept end to end, no matching text (best window n-gram similarity 0.16, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.beatae-mariae-virginis-a-rosario-postcommunion",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 679, no. 3800; artifact PDF p. 760",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-beatae-mariae-virginis-a-rosario-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 733; artifact PDF p. 847; text-layer lines 31-40 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "cbf847be295d419274bb665ad284c14f1021ca49fed8be632dddb9b421a00fa5",
+      "withheld": false
+     },
      "name": "Postcommunion",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Sanctissimae Genetricis tuae, cujus Rosarium celebramus, quaesumus, Domine,\nprecibus adjuvemur: ut et mysteriorum, quae colimus, virtus percipiatur; et\nsacramentorum, quae sumpsimus, obtineatur effectus: Qui vivis et regnas cum\nDeo Patre in unitate.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -44296,11 +45388,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -44323,18 +45415,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 130-134; antecedent 1922 Tours Mame, printed p. 3; artifact PDF p. 117; text-layer lines 50-65 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Deus,\"; 1922 Tours Mame reads \"Ds:\" (edit distance 2); token 3: 1962 prints \"beatae Mariae\"; 1922 Tours Mame reads \"beatz Mariz\" (edit distance 2); token 14: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 20: 1962 prints \"earn Genetricem\"; 1922 Tours Mame reads \"eam Genitricem\" (edit distance 3); token 27: 1962 prints \"intercessionibus\"; 1922 Tours Mame reads \"intercessidnibus\" (edit distance 1); token 30: 1962 prints \"eundem\"; 1922 Tours Mame reads \"eumdem\" (edit distance 1); token 37: 1922 Tours Mame adds \":\"; the 1962 has nothing there; token 38: 1962 prints \"tecum\"; 1922 Tours Mame reads \"3 contra persecutores Eeclesiv Oratio CCLESLE tue, quésumus, 4 Domine, preces placatus admitte :\" (edit distance 83, conclusion); token 40: 1962 prints \"et regnat in unitate.\"; 1922 Tours Mame reads \"destrictis\" (edit distance 16, conclusion); 1922 Mame prints Genitricem, ejus and adjuvemur where the 1962 prints Genetricem, eius and adiuvemur; 1922 Mame sets the conclusion in parentheses and abbreviates it to Qui.; the 1962 writes Qui tecum vivit et regnat in unitate.; the 1962 prints Christum Filium tuum without the comma that it sets at the Annunciation. Corroboration: 1862 Pustet Ratisbon text-layer lines 13256-13280: 34 of 44 tokens identical after normalisation (n-gram similarity 0.76); 1604 Vatican typical: swept end to end, no matching text (best window n-gram similarity 0.41, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.maternitatis-beatae-mariae-virginis-collect",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 685, no. 3847; artifact PDF p. 766",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-maternitatis-beatae-mariae-virginis-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 3; artifact PDF p. 117; text-layer lines 50-65 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "4bd3a9b8846364a56e7f9fad937462e7886d509f57b26e4f39241b8e656937d0",
+      "withheld": false
+     },
      "name": "Collect",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Deus, qui de beatae Mariae Virginis utero Verbum tuum, Angelo nuntiante,\ncarnem suscipere voluisti: praesta supplicibus tuis; ut, qui vere earn\nGenetricem Dei credimus, ejus apud te intercessionibus adjuvemur. Per eundem\nDominum nostrum Jesum Christum Filium tuum: Qui tecum vivit et regnat in\nunitate.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -44525,11 +45656,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -44552,18 +45683,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 136-138; antecedent 1922 Tours Mame, printed p. 937; artifact PDF p. 1051; text-layer lines 34-41 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Tua,\"; 1922 Tours Mame reads \"uA,\" (edit distance 1); token 2: 1962 prints \"propitiatione,\"; 1922 Tours Mame reads \"propitiatioibne,\" (edit distance 2); token 5: 1962 prints \"Marias\"; 1922 Tours Mame reads \"Mariz\" (edit distance 2); token 15: 1962 prints \"praesentem hsec\"; 1922 Tours Mame reads \"przséntem hee\" (edit distance 3); token 20: 1962 prints \"prosperitatem et\"; 1922 Tours Mame reads \"prosperitatem,et\" (edit distance 0); token 24: 1962 prints \"eundem Dominum.\"; 1922 Tours Mame reads \"eiumdem Dnum.\" (edit distance 4, conclusion); 1922 Mame sets Virginis Unigeniti tui Matris intercessione without the commas the 1962 sets after Virginis and Matris; 1922 Mame sets a comma in prosperitatem, et pacem where the 1962 has none; 1922 Mame ends Per eumdem Dnum., the 1962 Per eundem Dominum.. Corroboration: 1862 Pustet Ratisbon text-layer lines 85971-85978: 16 of 26 tokens identical after normalisation (n-gram similarity 0.67); 1604 Vatican typical: swept end to end, no matching text (best window n-gram similarity 0.50, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.maternitatis-beatae-mariae-virginis-secret",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 686, no. 3855; artifact PDF p. 767",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-maternitatis-beatae-mariae-virginis-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 937; artifact PDF p. 1051; text-layer lines 34-41 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "5ab3ccab42514ccdb2edca22eae3dc0abb2b94fdbb1249eb527db84ae7f46d34",
+      "withheld": false
+     },
      "name": "Secret",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Tua, Domine, propitiatione, et beatae Marias semper Virginis, Unigeniti tui\nMatris, intercessione, ad perpetuam atque praesentem hsec oblatio nobis\nproficiat prosperitatem et pacem. Per eundem Dominum.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -44589,11 +45759,11 @@
      "incipit": null,
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -44616,18 +45786,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 140-142; antecedent 1922 Tours Mame, printed p. 36; artifact PDF p. 150; text-layer lines 64-69 of that page",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: token 0: 1962 prints \"Haec\"; 1922 Tours Mame reads \"Zc\" (edit distance 2); token 12: 1962 prints \"Genetrice\"; 1922 Tours Mame reads \"Genitrice\" (edit distance 1); token 20: 1962 prints \"eundem\"; 1922 Tours Mame reads \"eumdem\" (edit distance 1, conclusion); 1922 Mame prints Genitrice where the 1962 prints Genetrice; 1922 Mame sets the conclusion in parentheses. Corroboration: 1862 Pustet Ratisbon text-layer lines 16671-16684: 15 of 22 tokens identical after normalisation (n-gram similarity 0.68); 1604 Vatican typical: swept end to end, no matching text (best window n-gram similarity 0.44, which is noise).",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.maternitatis-beatae-mariae-virginis-postcommunion",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed p. 686, no. 3857; artifact PDF p. 767",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-maternitatis-beatae-mariae-virginis-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed p. 36; artifact PDF p. 150; text-layer lines 64-69 of that page; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-marian-orations-94a91c93",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "72e13d8a2be0ec58b499d88d06ab51ca6b076746a23046e29f06d6913044a229",
+      "withheld": false
+     },
      "name": "Postcommunion",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Haec nos communio, Domine, purget a crimine: et, intercedente beata Virgine\nDei Genetrice Maria, caelestis remedii faciat esse consortes. Per eundem\nDominum.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -324695,11 +325904,11 @@
      "incipit": "Kyrie, eleison",
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -324722,18 +325931,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 1-19; antecedent 1922 Tours Mame, printed pp. 264-266 (running head Sabbato Sancto), artifact PDF pp. 378-380, READ ON THE PAGE IMAGES at 400 dpi. The Mame prints the litany undivided; its first 45 printed lines carry exactly the 48 invocations of the 1962's first part, and the invocation that follows them on printed p. 266 is Propitius esto - the very point at which the 1962 divides. Corroborated in the tracked 1862 text layer, printed pp. 208-210 (folio markers 208 at line 36441, 209 at 36552, 210 at 36698), litany running lines 36464-36746, where Genitrix stands at 36504, 18 Sancte lines at 36506-36557 and 12 Omnes lines at 36509-36574.",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: COLLATED INVOCATION BY INVOCATION, mechanically, after normalising case, pointing, i/j and ae/oe. The 1962's two parts together and the Mame's single undivided litany both yield EXACTLY 79 invocations, and they align one to one, in the same order, with no insertion, deletion or transposition anywhere. 66 of the 79 are identical after that normalisation; 12 differ only in how long the response cue is written out; 1 differs in a single letter.; THE ONE WORD: 1962 Sancta Dei Genetrix against Mame Sancta Dei Genitrix. The same word at the same place, e against i - the orthography tolerance, like coelestia/caelestia. The 1862 text layer also reads Genitrix, at line 36504.; Response cue length: the Mame writes the response out in full where the 1962 abbreviates it. This is the same tolerance the pilot settled for oration conclusions and it changes nothing.; Orthography: 1962 Ioannes/Ioseph/ieiunium/iudicii against Mame Joannes/Joseph/jejunium/judicii.; Pointing: the 1962 sets commas inside the four opening invocations (Pater de caelis, Deus / Fili, Redemptor mundi, Deus / Spiritus Sancte, Deus / Sancta Trinitas, unus Deus) where the Mame sets none; the Mame sets a comma after apostolicum where the 1962 does not.; Within THIS part the response-length rows are 2 of 48 (invocations 18 and 42, Sancte Ioannes Baptista and Sancta Maria Magdalena, where the Mame writes ora pro nobis and the 1962 abbreviates ora).; The 1962 prints the italic repetition mark ij after each of the five opening invocations (Kyrie, eleison ij / Christe, eleison ij / Kyrie, eleison ij / Christe, audi nos ij / Christe, exaudi nos ij); the Mame prints none, its rubric instead saying Chorus idem simul repetit. I reproduced the mark as printed - see notes.. Corroboration: 1862 text layer, lines 36464-36746, printed pp. 208-210: same litany, same shape, Kyrie at 36464 and 36746, Agnus at 36714, domnum at 36650, nosmetipsos at 36674. Read as a text layer only, since this repository holds no 1862 page images for the temporal run. The 1604 and 1570 were not opened for this text; two independent public-domain witnesses already carry it whole..",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-vigil-litany-of-the-saints-first-part",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed pp. 198-199, no. 991; artifact PDF pp. 279-280. The part ends where the rubric at no. 18 says it does, usque ad invocationem Propitius esto: its last invocation is Omnes Sancti et Sanctae Dei, intercedite pro nobis, and printed p. 200 begins DE BENEDICTIONE AQUAE BAPTISMALIS. (Both earlier lanes gave the range as printed pp. 198-205; that is wrong - 200 onward is the blessing of the font.)",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-easter-vigil-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed pp. 264-266 (running head Sabbato Sancto), artifact PDF pp. 378-380, READ ON THE PAGE IMAGES at 400 dpi. The Mame prints the litany undivided; its first 45 printed lines carry exactly the 48 invocations of the 1962's first part, and the invocation that follows them on printed p. 266 is Propitius esto - the very point at which the 1962 divides. Corroborated in the tracked 1862 text layer, printed pp. 208-210 (folio markers 208 at line 36441, 209 at 36552, 210 at 36698), litany running lines 36464-36746, where Genitrix stands at 36504, 18 Sancte lines at 36506-36557 and 12 Omnes lines at 36509-36574.; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.chant-vigil-orations-445a0e86",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "7d67cb3e0cbc20c37f17f2d0af5127859e76aff6455a5f9b976c027dcf9ec39e",
+      "withheld": false
+     },
      "name": "Litany of the Saints, first part",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Kyrie, eleison ij Christe, eleison ij Kyrie, eleison ij Christe, audi nos ij\nChriste, exaudi nos ij Pater de caelis, Deus, miserere nobis. Fili,\nRedemptor mundi, Deus, miserere nobis. Spiritus Sancte, Deus, miserere\nnobis. Sancta Trinitas, unus Deus, miserere nobis. Sancta Maria, ora pro\nnobis. Sancta Dei Genetrix, ora. Sancta Virgo virginum, ora. Sancte Michael,\nora. Sancte Gabriel, ora. Sancte Raphael, ora. Omnes sancti Angeli et\nArchangeli, orate pro nobis. Omnes sancti beatorum Spirituum ordines, orate.\nSancte Joannes Baptista, ora. Sancte Joseph, ora. Omnes sancti Patriarchae\net Prophetae, orate. Sancte Petre, ora. Sancte Paule, ora. Sancte Andrea,\nora. Sancte Joannes, ora. Omnes sancti Apostoli et Evangelistae, orate.\nOmnes sancti Discipuli Domini, orate. Sancte Stephane, ora. Sancte Laurenti,\nora. Sancte Vincenti, ora. Omnes sancti Martyres, orate. Sancte Silvester,\nora. Sancte Gregori, ora. Sancte Augustine, ora. Omnes sancti Pontifices et\nConfessores, orate. Omnes sancti Doctores, orate. Sancte Antoni, ora. Sancte\nBenedicte, ora. Sancte Dominice, ora. Sancte Francisce, ora. Omnes sancti\nSacerdotes et Levitae, orate. Omnes sancti Monachi et Eremitae, orate.\nSancta Maria Magdalena, ora. Sancta Agnes, ora. Sancta Caecilia, ora. Sancta\nAgatha, ora. Sancta Anastasia, ora. Omnes sanctae Virgines et Viduae, orate.\nOmnes Sancti et Sanctae Dei, intercedite pro nobis.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -325070,11 +326318,11 @@
      "incipit": "Propitius esto",
      "languages": [
       {
-       "available": false,
-       "held": false,
+       "available": true,
+       "held": true,
        "lang": "la",
        "reason": null,
-       "status": "unavailable"
+       "status": "full-text"
       },
       {
        "available": false,
@@ -325097,18 +326345,57 @@
          }
         ]
        },
-       "status": "unavailable"
+       "status": "fallback-latin"
       }
      ],
-     "latin": null,
+     "latin": {
+      "provenance": {
+       "locator": "editorial-projection artifact physical lines 21-41; antecedent 1922 Tours Mame, printed pp. 266-267 (running head Sabbato Sancto), artifact PDF pp. 380-381, READ ON THE PAGE IMAGES at 400 dpi. Its Propitius esto follows Omnes Sancti et Sanctae Dei with no break at all, and its litany ends with the same three Agnus Dei, the same Christe audi nos / Christe exaudi nos, and the same rubric handing over to the Mass's Kyrie. Corroborated in the tracked 1862 text layer, printed pp. 208-210, lines 36585-36746 (libera lines 36601-36625, domnum 36650, nosmetipsos 36674, Agnus 36714, closing Kyrie 36746).",
+       "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+       "provenance_confidence": "high",
+       "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: COLLATED INVOCATION BY INVOCATION, mechanically, after normalising case, pointing, i/j and ae/oe. The 1962's two parts together and the Mame's single undivided litany both yield EXACTLY 79 invocations, and they align one to one, in the same order, with no insertion, deletion or transposition anywhere. 66 of the 79 are identical after that normalisation; 12 differ only in how long the response cue is written out; 1 differs in a single letter.; THE ONE WORD: 1962 Sancta Dei Genetrix against Mame Sancta Dei Genitrix. The same word at the same place, e against i - the orthography tolerance, like coelestia/caelestia. The 1862 text layer also reads Genitrix, at line 36504.; Response cue length: the Mame writes the response out in full where the 1962 abbreviates it. This is the same tolerance the pilot settled for oration conclusions and it changes nothing.; Orthography: 1962 Ioannes/Ioseph/ieiunium/iudicii against Mame Joannes/Joseph/jejunium/judicii.; Pointing: the 1962 sets commas inside the four opening invocations (Pater de caelis, Deus / Fili, Redemptor mundi, Deus / Spiritus Sancte, Deus / Sancta Trinitas, unus Deus) where the Mame sets none; the Mame sets a comma after apostolicum where the 1962 does not.; Within THIS part the response-length rows are 10 of 31: invocations 6, 7 and 8 (Per mysterium / Per adventum tuum / Per nativitatem, where the Mame writes libera nos, Domine and the 1962 abbreviates libera) and invocations 19, 20, 22, 23, 24, 25 and 26 (where the Mame writes te rogamus, audi nos and the 1962 abbreviates te rogamus).; The 1962 prints no repetition marks in this part.. Corroboration: 1862 text layer, lines 36585-36746, printed pp. 209-210. The 1604 and 1570 were not opened; two independent public-domain witnesses already carry the text whole..",
+       "relationship": "editorial-projection-exact-to-target",
+       "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+       "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-vigil-litany-of-the-saints-second-part",
+       "status": "collated",
+       "transformations": [
+        "join printed line wraps",
+        "remove stress accents",
+        "expand printed ae/oe ligatures to ae/oe",
+        "normalise consonantal i to the calendar's j orthography",
+        "apply the target printing's punctuation",
+        "carry the target's conclusion at its printed length"
+       ],
+       "verification_locator": "printed pp. 210-211, no. 1000; artifact PDF pp. 291-292. The rubric that introduces it, DE ALTERA PARTE LITANIARUM no. 27, stands on printed p. 209 (PDF p. 290), but no invocation does; the part itself begins at no. 1000 on printed p. 210 and ends with Christe, exaudi nos on printed p. 211, immediately before the heading TEMPUS PASCHATIS. The Kyrie that follows belongs to the Mass, not to the litany (rubric 1 on printed p. 211).",
+       "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-easter-vigil-orations"
+      },
+      "publication": {
+       "basis": "public-domain",
+       "evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness.",
+       "locator": "Pustet Ratisbon 1862, 1922 Tours Mame, printed pp. 266-267 (running head Sabbato Sancto), artifact PDF pp. 380-381, READ ON THE PAGE IMAGES at 400 dpi. Its Propitius esto follows Omnes Sancti et Sanctae Dei with no break at all, and its litany ends with the same three Agnus Dei, the same Christe audi nos / Christe exaudi nos, and the same rubric handing over to the Mass's Kyrie. Corroborated in the tracked 1862 text layer, printed pp. 208-210, lines 36585-36746 (libera lines 36601-36625, domnum 36650, nosmetipsos 36674, Agnus 36714, closing Kyrie 36746).; artifact rights_status public-domain",
+       "source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.chant-vigil-orations-445a0e86",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+       ],
+       "status": "permitted",
+       "surfaces": [
+        "cli",
+        "corpus-data",
+        "download",
+        "print",
+        "public-git",
+        "web"
+       ]
+      },
+      "reason": null,
+      "text_sha256": "85892ee559b2b905765fe535493694c66ded107a240cf2ea72217fbf84882159",
+      "withheld": false
+     },
      "name": "Litany of the Saints, second part",
      "source": "composed",
      "taken_from": null,
-     "text": null,
-     "text_status": {
-      "scope": "proper-body",
-      "state": "unavailable"
-     },
+     "text": "Propitius esto, parce nobis, Domine. Propitius esto, exaudi nos, Domine. Ab\nomni malo, libera nos, Domine. Ab omni peccato, libera. A morte perpetua,\nlibera. Per mysterium sanctae incarnationis tuae, libera. Per adventum tuum,\nlibera. Per nativitatem tuam, libera. Per baptismum et sanctum jejunium\ntuum, libera. Per crucem et passionem tuam, libera. Per mortem et sepulturam\ntuam, libera. Per sanctam resurrectionem tuam, libera. Per admirabilem\nascensionem tuam, libera. Per adventum Spiritus Sancti Paracliti, libera. In\ndie judicii, libera. Peccatores, te rogamus, audi nos. Ut nobis parcas, te\nrogamus, audi nos. Ut Ecclesiam tuam sanctam regere et conservare digneris,\nte rogamus, audi nos. Ut domnum apostolicum et omnes ecclesiasticos ordines\nin sancta religione conservare digneris, te rogamus. Ut inimicos sanctae\nEcclesiae humiliare digneris, te rogamus. Ut regibus et principibus\nchristianis pacem et veram concordiam donare digneris, te rogamus. Ut\nnosmetipsos in tuo sancto servitio confortare et conservare digneris, te\nrogamus. Ut omnibus benefactoribus nostris sempiterna bona retribuas, te\nrogamus. Ut fructus terrae dare et conservare digneris, te rogamus. Ut\nomnibus fidelibus defunctis requiem aeternam donare digneris, te rogamus. Ut\nnos exaudire digneris, te rogamus. Agnus Dei, qui tollis peccata mundi,\nparce nobis, Domine. Agnus Dei, qui tollis peccata mundi, exaudi nos,\nDomine. Agnus Dei, qui tollis peccata mundi, miserere nobis. Christe, audi\nnos. Christe, exaudi nos.\n",
+     "text_status": null,
      "translations": null,
      "unavailable_translations": null,
      "untranslated": [
@@ -376449,7 +377736,7 @@
   {
    "acknowledgement": null,
    "caution": "A pre-1955 lay hand missal, not an approved liturgical translation and never an altar book. Its rubrics, its seasonal second and third orations, its Holy Week and its sanctoral are not those of 1962. It is carried only where a 1962 formulary is the same prayer, and nothing here may be used for recitation.",
-   "composed": 1110,
+   "composed": 1143,
    "held": 107,
    "label": "The Roman Missal translated into the English language for the use of the laity, first revised edition (Philadelphia: Eugene Cummiskey, 1861)",
    "lang": "en",
@@ -376459,7 +377746,7 @@
   {
    "acknowledgement": null,
    "caution": "A lay hand missal of the 1945 revision, printed about 1955-56, not an approved liturgical translation and never an altar book. Its Holy Week is the pre-1955 rite, its sanctoral is not the 1962 sanctoral, and its second and third orations are not those of 1962. It is carried only where a 1962 formulary is the same prayer, and nothing here may be used for recitation.",
-   "composed": 1110,
+   "composed": 1143,
    "held": 66,
    "label": "The New Roman Missal in Latin and English, revised edition, by F. X. Lasance and Francis Augustine Walsh (New York: Benziger Brothers, 1945), ca. 1955-56 printing (Internet Archive delivery locator fr-lasance-missal-1937; locator mislabelled)",
    "lang": "en",
@@ -376469,7 +377756,7 @@
   {
    "acknowledgement": null,
    "caution": "A LITERARY TRANSLATION, CHOSEN AS A VOICE. Caswall, Neale, Aylward and Bute\ndiffer materially over these five texts. The active overlay records the\nmaintainer's choice of Caswall as the through-line across all five and Irons as\nan alternative for the Dies irae; it does not argue that either voice is right.\n\nThe English is metrical verse and is not a clause-for-clause rendering. Where the\nLatin sets a short strophe Caswall may fold two into one six-line stanza, and the\nstanza divisions in the text recorded here are his and not the Missal's. He\nrenders no Amen and no Alleluia anywhere: every one of these five propers ends in\nthe Latin with an acclamation that the English simply does not have.",
-   "composed": 1110,
+   "composed": 1143,
    "held": 21,
    "label": "Lyra Catholica: containing all the Breviary and Missal hymns, with others from various sources, translated by Edward Caswall (London: James Burns, 1849)",
    "lang": "en",
@@ -376479,7 +377766,7 @@
   {
    "acknowledgement": null,
    "caution": "A LITERARY TRANSLATION, CHOSEN AS A VOICE. Caswall, Neale, Aylward and Bute\ndiffer materially over these five texts. The active overlay records the\nmaintainer's choice of Caswall as the through-line across all five and Irons as\nan alternative for the Dies irae; it does not argue that either voice is right.\n\nThe English is metrical verse and is not a clause-for-clause rendering. Where the\nLatin sets a short strophe Caswall may fold two into one six-line stanza, and the\nstanza divisions in the text recorded here are his and not the Missal's. He\nrenders no Amen and no Alleluia anywhere: every one of these five propers ends in\nthe Latin with an acclamation that the English simply does not have.",
-   "composed": 1110,
+   "composed": 1143,
    "held": 21,
    "label": "Lyra Catholica: containing all the Breviary and Missal hymns, with others from various sources, translated by Edward Caswall (London: James Burns, 1849)",
    "lang": "en",
@@ -376489,7 +377776,7 @@
   {
    "acknowledgement": null,
    "caution": "THIS IS HYMNS ANCIENT AND MODERN'S TEXT OF IRONS AND NOT DEMONSTRABLY IRONS'S\nOWN. That book's compilers are widely said to have altered what they received;\nthis lane established no instance of alteration in this hymn and ran no collation\nagainst a printing of Irons's own, because none was located. The claim that this\nis Irons's translation rests on the 1889 Historical Companion's attribution, read\non its page image; the claim that it is UNALTERED rests on nothing and is not\nmade.\n\nMost of the hymn is set under vocal score in this printing, so 22 of its 58 lines\nwere read syllable by syllable from under the staves. That is the weakest point\nof the transcription.",
-   "composed": 1110,
+   "composed": 1143,
    "held": 3,
    "label": "Hymns Ancient and Modern, Complete Edition with accompanying tunes (London: printed for the proprietors by William Clowes and Sons), hymn 398, W. J. Irons's English of the Dies irae",
    "lang": "en",
@@ -376499,7 +377786,7 @@
   {
    "acknowledgement": null,
    "caution": "THIS IS HYMNS ANCIENT AND MODERN'S TEXT OF IRONS AND NOT DEMONSTRABLY IRONS'S\nOWN. That book's compilers are widely said to have altered what they received;\nthis lane established no instance of alteration in this hymn and ran no collation\nagainst a printing of Irons's own, because none was located. The claim that this\nis Irons's translation rests on the 1889 Historical Companion's attribution, read\non its page image; the claim that it is UNALTERED rests on nothing and is not\nmade.\n\nMost of the hymn is set under vocal score in this printing, so 22 of its 58 lines\nwere read syllable by syllable from under the staves. That is the weakest point\nof the transcription.",
-   "composed": 1110,
+   "composed": 1143,
    "held": 3,
    "label": "Hymns Ancient and Modern, Complete Edition with accompanying tunes (London: printed for the proprietors by William Clowes and Sons), hymn 398, W. J. Irons's English of the Dies irae",
    "lang": "en",
