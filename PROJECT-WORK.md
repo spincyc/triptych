@@ -104,6 +104,21 @@ in it: `per maris undas` is the sea St Raymund crossed.
 The lesson behind both: a cross-witness check cannot see damage two witnesses
 share. The 1862 layer has 306 instances of `qusesumus` and the Benziger 397.
 
+### Where the unpublished 100 are recorded
+
+`src/sources/inventories/roman-1962-latin-backfill-findings-v1.toml` carries one
+entry per appointed oration the backfill did not publish: the verdict, the
+confidence, the lane that reached it, the target and antecedent loci, every
+recorded difference, and the evidence sentence the lane wrote. It exists because
+the reasoning cost more than the reading did — each absence rests on an
+end-to-end sweep of the four public-domain witnesses with a positive control,
+and without the record a later pass re-derives an answer this one already has.
+
+Read it before re-testing anything in the `absent`, `variant` or `new-matter`
+classes. The 32 `blocked` are the ones worth another lane: their collation
+stands and only the stored 1962 string was recogniser damage, so what they need
+is eyes on a page image, not another sweep.
+
 ### The toolkit
 
 `scripts/latin_backfill/` — apply, land, reconcile, and the j-orthography map,
