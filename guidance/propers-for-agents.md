@@ -349,6 +349,54 @@ the same place. Search each witness whole, by incipit, and never by ordinal.
 Withhold only what no pre-1931 book carries in any place at all, and say which
 books you swept and how when you do.
 
+### A transformation changes how a word is spelled; a variant changes which word is said
+
+Ruled 2026-09-03, and it is the rule the other two are instances of. It governs
+every verdict in this work and it decides the sung propers.
+
+**The calendar publishes its declared orthography, not any one witness's
+spelling, so the test for `matched` is that the WORDS agree — never that the
+strings do.** This is not a concession: the repository has never published an
+exact 1962 string anywhere. It prints `justitiae` with a j where the facsimile
+prints 231 i-forms and no j, and `Alleluia` where the 1922 Mame prints 797
+`Alleluja` and none the other way. An exact-string rule applied honestly would
+withhold every body in the calendar, including the 832 already published.
+
+These are transformations. Record each on the projection artifact, note it in
+`differences`, and do not let any of them change a verdict:
+
+| | |
+| --- | --- |
+| consonantal i against j | `iustitia` / `justitia`, `Iesu` / `Jesu`, `cuius` / `cujus` |
+| the ae and oe ligatures, however printed | `hæc` / `haec`, `cœli` / `coeli` |
+| oe against ae where witnesses differ | `coelestis` / `caelestis` |
+| stress accents, present or absent | `Dóminum` / `Dominum` |
+| two received spellings of one word | `Genetrix` / `Genitrix`, `adstat` / `astat` |
+| capitalisation | `Sacramentis` / `sacramentis` |
+| pointing | a comma, a colon, a semicolon |
+| the conclusion, at whatever length the target prints it | `Per Dominum.` / the written-out form |
+| a rubrical blank filled with the day's saint | `N.` / `Petro` |
+
+These are variants. The body is not published on that witness:
+
+| | |
+| --- | --- |
+| a different word | a substituted noun, verb or epithet |
+| an added or dropped clause | the 1962's `(seu olivarum aut aliarum arborum)` |
+| a different petition | the Praeconium's Emperor against those who govern |
+
+The line is whether a reader saying the prayer aloud would say something else. A
+spelling does not change that; a word does.
+
+The worked case is the seventeen Common and Saturday-BVM chants that a human
+page-image collation withheld on 2026-08-26 as `collated-non-exact`. A later
+collation against the 1922 Mame found it carries all seventeen word for word,
+nothing added, dropped or replaced, and that its disagreements with the 1962 are
+j-for-i and the like — the Mame agreeing with the Pustet against the target on
+spelling alone. Under this rule they publish, and the human review is not
+overturned by it: that review was right that the Pustet's STRING is not the
+1962's, and this rule says a string was never what had to match.
+
 **Filling a rubrical blank is not authorship either**, ruled 2026-09-03 on the
 same reasoning. Where the 1962 prints a Common's formulary with the day's saint
 written into the slot and the public-domain witness prints `N.`, `X.` or another

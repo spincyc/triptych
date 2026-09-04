@@ -2669,23 +2669,24 @@ proper = "Alleluia (Tempore paschali)"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "5ef24d03c642b1cd15fa9747ad0075cd7030305f06c4e876897d24c6836e4ffb"
-body_status = "removed"
+text_sha256 = "47f8f71de3136e030ee4e591abda6acbc042a30bd480e2dc2b21a75d0ca4487d"
 provenance_status = "collated"
-source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-source_date = "1962"
-locator = "1962 printed p. [39], chant no. 4467; artifact PDF p. 847"
-relationship = "collated-non-exact"
-verification_source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-706"
-verification_locator = "Pustet printed p. [37]; Internet Archive leaf n706"
-transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
-provenance_evidence = "src/sources/inventories/roman-1962-pustet-common-collation-v1.toml comparison_sha256=7ef60b2d98c6fa3e1f5520ab10400d9a51a1fb58d7893deeca68b806c6d5e74c"
-provenance_authority = "Human page-image collation"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commune-dedicationis-ecclesiae-alleluia-tempore-paschali"
+source_date = "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862"
+locator = "editorial-projection artifact physical lines 10-12; antecedent 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 47*, artifact PDF p. 925; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet."
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-commune-dedicationis-ecclesiae-orations"
+verification_locator = "1962 printed p. [39], chant no. 4467; artifact PDF p. 847"
+transformations = ["join printed line wraps", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's j orthography", "apply the target printing's punctuation", "carry the target's conclusion at its printed length"]
+provenance_evidence = "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: Mame prints Alleluja / alleluja with j where the 1962 prints Alleluia / alleluia with i (four occurrences); no other letter differs.. Corroboration: 1862 Pustet page-image collation of 2026-08-26, Pustet printed p. [37]; Internet Archive leaf n706 (Pustet Alleluja uses j; target Alleluia uses i.), outcome collated-non-exact. The Pustet's single recorded non-exactness here is the j of Alleluja. THE MAME SHARES IT. The Mame is a French printing that uses j for consonantal i throughout its body text, so its j-forms here are systematic house orthography, not a local variant. On this point the Mame AGREES WITH THE 1862 PUSTET AGAINST THE 1962, so the human review's observation stands on two independent public-domain witnesses, and no public-domain page yet seen authorises the 1962's i-spelling of this word as an exact string.."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
 provenance_confidence = "high"
-publication_status = "withheld"
-publication_basis = "non-exact-historical-witness"
-surfaces = []
-note = "HOLD: Pustet Alleluja uses j; target Alleluia uses i."
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.mame-seventeen-orations-fb21bf16", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Tours Mame 1922, 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 47*, artifact PDF p. 925; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet.; artifact rights_status public-domain"
+publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
 mass = "commune-dedicationis-ecclesiae"
@@ -2746,23 +2747,24 @@ proper = "Gradual"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "7ae3d255917a093daa92a2e3e1b27e227a47e5d54f85a6a47e7b5b5d4396de41"
-body_status = "removed"
+text_sha256 = "fe06c9b07c3ae726576aadcb1bf67643f86e3f4d9cf16005ba1af6f1c23ba5b6"
 provenance_status = "collated"
-source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-source_date = "1962"
-locator = "1962 printed p. [39], chant no. 4464; artifact PDF p. 847"
-relationship = "collated-non-exact"
-verification_source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-706"
-verification_locator = "Pustet printed p. [37]; Internet Archive leaf n706"
-transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
-provenance_evidence = "src/sources/inventories/roman-1962-pustet-common-collation-v1.toml comparison_sha256=045e8cb14ad078660ea87675c08b18428622a8ef2414be7a1726dac173035f6f"
-provenance_authority = "Human page-image collation"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commune-dedicationis-ecclesiae-gradual"
+source_date = "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862"
+locator = "editorial-projection artifact physical lines 7-8; antecedent 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 46*, artifact PDF p. 924; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet."
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-commune-dedicationis-ecclesiae-orations"
+verification_locator = "1962 printed p. [39], chant no. 4464; artifact PDF p. 847"
+transformations = ["join printed line wraps", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's j orthography", "apply the target printing's punctuation", "carry the target's conclusion at its printed length"]
+provenance_evidence = "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: none: the Mame is exact to the 1962 after the collation's declared mechanical transformations (stress accents, ae ligature, line-wrap joining, spaced colon).. Corroboration: 1862 Pustet page-image collation of 2026-08-26, Pustet printed p. [37]; Internet Archive leaf n706 (Pustet adstat contains d; target astat omits it.), outcome collated-non-exact. THE PUSTET'S RECORDED NON-EXACTNESS (adstat for astat) IS NOT SHARED BY THE MAME. The Mame agrees with the 1962. Both records are true at once: the review was right about the Pustet, and this text is exactly attested on a different public-domain page.."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
 provenance_confidence = "high"
-publication_status = "withheld"
-publication_basis = "non-exact-historical-witness"
-surfaces = []
-note = "HOLD: Pustet adstat contains d; target astat omits it."
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.mame-seventeen-orations-fb21bf16", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Tours Mame 1922, 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 46*, artifact PDF p. 924; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet.; artifact rights_status public-domain"
+publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
 mass = "commune-dedicationis-ecclesiae"
@@ -3031,23 +3033,24 @@ proper = "Alleluia"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "8d0f55c250e0434c6aaa2bdb15e98c339f7723f3997a56b35b52573991844cf1"
-body_status = "removed"
+text_sha256 = "7ec77678445d8ca2faddf02d10b16bcc99875e6d065e9980738116888154ba44"
 provenance_status = "collated"
-source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-source_date = "1962"
-locator = "1962 printed p. [41], chant no. 4480; artifact PDF p. 849"
-relationship = "collated-non-exact"
-verification_source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-721"
-verification_locator = "Pustet printed pp. [52] and [55]; Internet Archive leaves n721 and n724"
-transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
-provenance_evidence = "src/sources/inventories/roman-1962-pustet-common-collation-v1.toml comparison_sha256=0b022140fd3540a89c7480a5fd673614551540f1cb4329331f2b1ca62b0b0daf"
-provenance_authority = "Human page-image collation"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commune-festorum-bmv-alleluia"
+source_date = "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862"
+locator = "editorial-projection artifact physical lines 22-23; antecedent 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 49*, artifact PDF p. 927; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet."
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-commune-festorum-bmv-orations"
+verification_locator = "1962 printed p. [41], chant no. 4480; artifact PDF p. 849"
+transformations = ["join printed line wraps", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's j orthography", "apply the target printing's punctuation", "carry the target's conclusion at its printed length"]
+provenance_evidence = "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: Mame prints Alleluja / alleluja with j where the 1962 prints Alleluia / alleluia with i (three occurrences).; Mame prints Genitrix with i where the 1962 prints Genetrix with e; both capitalise the G.; no other difference: the words, their order and the pointing are identical. Corroboration: 1862 Pustet page-image collation of 2026-08-26, Pustet printed pp. [52] and [55]; Internet Archive leaves n721 and n724 (Pustet Alleluja uses j; target Alleluia uses i.; Pustet genitrix uses i and lower-case g; target Genetrix uses e and upper-case G.), outcome collated-non-exact. Two non-exactnesses were recorded against the Pustet: the j of Alleluja, and 'genitrix uses i and lower-case g'. THE MAME SHARES THE j AND THE i, BUT NOT THE LOWER-CASE g. The Mame is a French printing that uses j for consonantal i throughout its body text, so its j-forms here are systematic house orthography, not a local variant. On this point the Mame AGREES WITH THE 1862 PUSTET AGAINST THE 1962, so the human review's observation stands on two independent public-domain witnesses, and no public-domain page yet seen authorises the 1962's i-spelling of this word as an exact string.."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
 provenance_confidence = "high"
-publication_status = "withheld"
-publication_basis = "non-exact-historical-witness"
-surfaces = []
-note = "HOLD: Pustet Alleluja uses j; target Alleluia uses i. Pustet genitrix uses i and lower-case g; target Genetrix uses e and upper-case G."
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.mame-seventeen-orations-fb21bf16", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Tours Mame 1922, 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 49*, artifact PDF p. 927; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet.; artifact rights_status public-domain"
+publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
 mass = "commune-festorum-bmv"
@@ -3056,23 +3059,24 @@ proper = "Alleluia (Tempore paschali)"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "43c97f9fd0c1807141866186ba3401e10aaf8cf2c5e1266d446f89b7eb4d275b"
-body_status = "removed"
+text_sha256 = "50b7b5bc2f51bd449661eaa1630bad9781657067782b66544ff03ec7a61ba60d"
 provenance_status = "collated"
-source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-source_date = "1962"
-locator = "1962 printed p. [42], chant no. 4483; artifact PDF p. 850"
-relationship = "collated-non-exact"
-verification_source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-723"
-verification_locator = "Pustet printed p. [54]; Internet Archive leaf n723"
-transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
-provenance_evidence = "src/sources/inventories/roman-1962-pustet-common-collation-v1.toml comparison_sha256=0857899123a827459498211973bfc80de1471407bee88fc0f64219d08e10ec4b"
-provenance_authority = "Human page-image collation"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commune-festorum-bmv-alleluia-tempore-paschali"
+source_date = "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862"
+locator = "editorial-projection artifact physical lines 29-31; antecedent 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 50*, artifact PDF p. 928; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet."
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-commune-festorum-bmv-orations"
+verification_locator = "1962 printed p. [42], chant no. 4483; artifact PDF p. 850"
+transformations = ["join printed line wraps", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's j orthography", "apply the target printing's punctuation", "carry the target's conclusion at its printed length"]
+provenance_evidence = "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: Mame prints Alleluja / alleluja with j where the 1962 prints Alleluia / alleluia with i (four occurrences).; Mame prints Jesse with J where the 1962 prints Iesse with I.; no other difference: the words, their order and the pointing are identical. Corroboration: 1862 Pustet page-image collation of 2026-08-26, Pustet printed p. [54]; Internet Archive leaf n723 (Pustet Alleluja uses j; target Alleluia uses i.; Pustet Jesse uses J; target Iesse uses I.; Pustet omits the target comma after Ave.), outcome collated-non-exact. Three non-exactnesses were recorded against the Pustet: the j of Alleluja, the J of Jesse, and an omitted comma after Ave. THE MAME SHARES THE FIRST TWO. IT DOES NOT SHARE THE THIRD: the Mame prints 'Ave, Maria' with the comma, as the 1962 does. The Mame is a French printing that uses j for consonantal i throughout its body text, so its j-forms here are systematic house orthography, not a local variant. On this point the Mame AGREES WITH THE 1862 PUSTET AGAINST THE 1962, so the human review's observation stands on two independent public-domain witnesses, and no public-domain page yet seen authorises the 1962's i-spelling of this word as an exact string.."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
 provenance_confidence = "high"
-publication_status = "withheld"
-publication_basis = "non-exact-historical-witness"
-surfaces = []
-note = "HOLD: Pustet Alleluja uses j; target Alleluia uses i. Pustet Jesse uses J; target Iesse uses I. Pustet omits the target comma after Ave."
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.mame-seventeen-orations-fb21bf16", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Tours Mame 1922, 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 50*, artifact PDF p. 928; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet.; artifact rights_status public-domain"
+publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
 mass = "commune-festorum-bmv"
@@ -3107,23 +3111,24 @@ proper = "Communion"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "fe1fa6143557e9615918ca09ea6921bf6f42903e1a647ed5066477019c5ff82c"
-body_status = "removed"
+text_sha256 = "b111855a2db7bae2bbae457e6c447a8c18a3d2226e8b07d5ce232ab3d4c2cd62"
 provenance_status = "collated"
-source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-source_date = "1962"
-locator = "1962 printed p. [42], chant no. 4487; artifact PDF p. 850"
-relationship = "collated-non-exact"
-verification_source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-722"
-verification_locator = "Pustet printed pp. [53] and [55]; Internet Archive leaves n722 and n724"
-transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
-provenance_evidence = "src/sources/inventories/roman-1962-pustet-common-collation-v1.toml comparison_sha256=9cce6676690aae7c3931b03496ee01c46154bc54d8dde05b5a79d6701a939c15"
-provenance_authority = "Human page-image collation"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commune-festorum-bmv-communion"
+source_date = "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862"
+locator = "editorial-projection artifact physical lines 33-34; antecedent 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 50*, artifact PDF p. 928; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet."
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-commune-festorum-bmv-orations"
+verification_locator = "1962 printed p. [42], chant no. 4487; artifact PDF p. 850"
+transformations = ["join printed line wraps", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's j orthography", "apply the target printing's punctuation", "carry the target's conclusion at its printed length"]
+provenance_evidence = "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: Mame prints alleluja with j and in lower case where the 1962 prints Alleluia with i and a capital A.; Mame closes the Tempore paschali parenthesis before the full stop (... Filium (T. P. alleluja).); the 1962 sets the stop inside (... Filium. (T. P. Alleluia.)).. Corroboration: 1862 Pustet page-image collation of 2026-08-26, Pustet printed pp. [53] and [55]; Internet Archive leaves n722 and n724 (Pustet Alleluja uses j; target Alleluia uses i.), outcome collated-non-exact. The Pustet's single recorded non-exactness here is the j of Alleluja. THE MAME SHARES IT. The Mame is a French printing that uses j for consonantal i throughout its body text, so its j-forms here are systematic house orthography, not a local variant. On this point the Mame AGREES WITH THE 1862 PUSTET AGAINST THE 1962, so the human review's observation stands on two independent public-domain witnesses, and no public-domain page yet seen authorises the 1962's i-spelling of this word as an exact string.."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
 provenance_confidence = "high"
-publication_status = "withheld"
-publication_basis = "non-exact-historical-witness"
-surfaces = []
-note = "HOLD: Pustet Alleluja uses j; target Alleluia uses i."
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.mame-seventeen-orations-fb21bf16", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Tours Mame 1922, 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 50*, artifact PDF p. 928; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet.; artifact rights_status public-domain"
+publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
 mass = "commune-festorum-bmv"
@@ -3132,23 +3137,24 @@ proper = "Gradual"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "c85d0caa27c76deefc3723a38ca022507769c187824fc7db3dd31156c2445c60"
-body_status = "removed"
+text_sha256 = "57141c8798dea2909608485d6c1188c58d570e62113006fe091a9527ee9c857d"
 provenance_status = "collated"
-source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-source_date = "1962"
-locator = "1962 printed p. [41], chant no. 4479; artifact PDF p. 849"
-relationship = "collated-non-exact"
-verification_source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-722"
-verification_locator = "Pustet printed pp. [53] and [55]; Internet Archive leaves n722 and n724"
-transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
-provenance_evidence = "src/sources/inventories/roman-1962-pustet-common-collation-v1.toml comparison_sha256=0e65220c8d4a3b95d6b7ceb85042375c7b2ce2e008ba677c1057582fa71bf7c0"
-provenance_authority = "Human page-image collation"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commune-festorum-bmv-gradual"
+source_date = "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862"
+locator = "editorial-projection artifact physical lines 18-20; antecedent 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 49*, artifact PDF p. 927; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet."
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-commune-festorum-bmv-orations"
+verification_locator = "1962 printed p. [41], chant no. 4479; artifact PDF p. 849"
+transformations = ["join printed line wraps", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's j orthography", "apply the target printing's punctuation", "carry the target's conclusion at its printed length"]
+provenance_evidence = "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: Mame prints Genitrix with i where the 1962 prints Genetrix with e; both capitalise the G.; no other difference: the words, their order and the pointing are identical. Corroboration: 1862 Pustet page-image collation of 2026-08-26, Pustet printed pp. [53] and [55]; Internet Archive leaves n722 and n724 (Pustet genitrix uses i and lower-case g; target Genetrix uses e and upper-case G.), outcome collated-non-exact. The Pustet's recorded non-exactness is 'genitrix uses i and lower-case g'. THE MAME SHARES THE i BUT NOT THE LOWER-CASE g: it prints Genitrix with a capital G. So the Mame is one letter from the 1962 where the Pustet is two.."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
 provenance_confidence = "high"
-publication_status = "withheld"
-publication_basis = "non-exact-historical-witness"
-surfaces = []
-note = "HOLD: Pustet genitrix uses i and lower-case g; target Genetrix uses e and upper-case G."
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.mame-seventeen-orations-fb21bf16", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Tours Mame 1922, 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 49*, artifact PDF p. 927; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet.; artifact rights_status public-domain"
+publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
 mass = "commune-festorum-bmv"
@@ -3157,23 +3163,24 @@ proper = "Introit"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "376fee906f7664dd8cd9d22b939bed6134e4a9c128004ddf3f20e524b162e755"
-body_status = "removed"
+text_sha256 = "d2fa9bc4414b267332986e65a093696c0e303e3ede4f9c51cc6fd727722ef6a1"
 provenance_status = "collated"
-source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-source_date = "1962"
-locator = "1962 printed p. [41], chant no. 4476; artifact PDF p. 849"
-relationship = "collated-non-exact"
-verification_source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-722"
-verification_locator = "Pustet printed pp. [53]-[54]; Internet Archive leaves n722-n723"
-transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
-provenance_evidence = "src/sources/inventories/roman-1962-pustet-common-collation-v1.toml comparison_sha256=61092f6a154a1e95e59f020647bd14f7e5dccb4fe6c31e8390ebe9f6f6d49b14"
-provenance_authority = "Human page-image collation"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commune-festorum-bmv-introit"
+source_date = "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862"
+locator = "editorial-projection artifact physical lines 14-16; antecedent 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 49*, artifact PDF p. 927; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet."
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-commune-festorum-bmv-orations"
+verification_locator = "1962 printed p. [41], chant no. 4476; artifact PDF p. 849"
+transformations = ["join printed line wraps", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's j orthography", "apply the target printing's punctuation", "carry the target's conclusion at its printed length"]
+provenance_evidence = "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: Mame prints alleluja with j where the 1962 prints Alleluia / alleluia with i, and lower-cases the first of the pair inside the parenthesis.; Mame lower-cases regem and regi where the 1962 capitalises Regem and Regi.; Mame closes the Tempore paschali parenthesis before the full stop (... saeculorum (T. P. alleluja, alleluja).); the 1962 sets the stop inside (... saeculorum. (T. P. Alleluia, alleluia.)).. Corroboration: 1862 Pustet page-image collation of 2026-08-26, Pustet printed pp. [53]-[54]; Internet Archive leaves n722-n723 (Pustet coelum retains oe; target caelum uses ae.; Pustet Alleluja uses j; target Alleluia uses i.), outcome collated-non-exact. Two non-exactnesses were recorded against the Pustet: coelum with oe, and the j of Alleluja. THE MAME PRINTS caelum WITH THE AE LIGATURE and so does NOT share the first; it does share the second. The Mame is a French printing that uses j for consonantal i throughout its body text, so its j-forms here are systematic house orthography, not a local variant. On this point the Mame AGREES WITH THE 1862 PUSTET AGAINST THE 1962, so the human review's observation stands on two independent public-domain witnesses, and no public-domain page yet seen authorises the 1962's i-spelling of this word as an exact string.."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
 provenance_confidence = "high"
-publication_status = "withheld"
-publication_basis = "non-exact-historical-witness"
-surfaces = []
-note = "HOLD: Pustet coelum retains oe; target caelum uses ae. Pustet Alleluja uses j; target Alleluia uses i."
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.mame-seventeen-orations-fb21bf16", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Tours Mame 1922, 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 49*, artifact PDF p. 927; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet.; artifact rights_status public-domain"
+publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
 mass = "commune-festorum-bmv"
@@ -3234,23 +3241,24 @@ proper = "Tract"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "f995601b4da2150a387f571a1f5050098ac4dee94e92a36be440057fa7d1ded7"
-body_status = "removed"
+text_sha256 = "a3dfc27da4c353c5a7bb4fa3144b97696dc140e0d850f8034212c61bb66d44e8"
 provenance_status = "collated"
-source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-source_date = "1962"
-locator = "1962 printed p. [42], chant no. 4482; artifact PDF p. 850"
-relationship = "collated-non-exact"
-verification_source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-723"
-verification_locator = "Pustet printed p. [54]; Internet Archive leaf n723"
-transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
-provenance_evidence = "src/sources/inventories/roman-1962-pustet-common-collation-v1.toml comparison_sha256=32c6d1473ecb49d89d61443b04fb4fa46bfca843a5ec150db0f113181ea4a650"
-provenance_authority = "Human page-image collation"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commune-festorum-bmv-tract"
+source_date = "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862"
+locator = "editorial-projection artifact physical lines 25-27; antecedent 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 49*-50*, artifact PDF p. 927; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet."
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-commune-festorum-bmv-orations"
+verification_locator = "1962 printed p. [42], chant no. 4482; artifact PDF p. 850"
+transformations = ["join printed line wraps", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's j orthography", "apply the target printing's punctuation", "carry the target's conclusion at its printed length"]
+provenance_evidence = "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: Mame prints Genitrix with i where the 1962 prints Genetrix with e; both capitalise the G.; Mame sets no comma either side of Virgo in the third versicle (post partum Virgo inviolata permansisti); the 1962 sets both (post partum, Virgo, inviolata permansisti).; no word differs, and the three versicle marks fall at the same places. Corroboration: 1862 Pustet page-image collation of 2026-08-26, Pustet printed p. [54]; Internet Archive leaf n723 (Pustet genitrix uses i and lower-case g; target Genetrix uses e and upper-case G.), outcome collated-non-exact. The Pustet's recorded non-exactness is 'genitrix uses i and lower-case g'. THE MAME SHARES THE i BUT NOT THE LOWER-CASE g.."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
 provenance_confidence = "high"
-publication_status = "withheld"
-publication_basis = "non-exact-historical-witness"
-surfaces = []
-note = "HOLD: Pustet genitrix uses i and lower-case g; target Genetrix uses e and upper-case G."
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.mame-seventeen-orations-fb21bf16", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Tours Mame 1922, 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 49*-50*, artifact PDF p. 927; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet.; artifact rights_status public-domain"
+publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
 mass = "commune-martyrum-tempore-paschali-1"
@@ -4585,23 +4593,24 @@ proper = "Alleluia"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "7ff557ab764b5f30d8fc4b3e78ce694986e2ede51737aa6f8ece4c3b08e0da0f"
-body_status = "removed"
+text_sha256 = "4cc633900b1daf81a812e1809d9a15e9f2f43b4297793e2ad12223a989d4f3ae"
 provenance_status = "collated"
-source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-source_date = "1962"
-locator = "1962 printed p. [34], chant no. 4425; artifact PDF p. 842"
-relationship = "collated-non-exact"
-verification_source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-701"
-verification_locator = "Pustet printed p. [32]; Internet Archive leaf n701"
-transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
-provenance_evidence = "src/sources/inventories/roman-1962-pustet-common-collation-v1.toml comparison_sha256=4afb12ef713601891ddbab83f5eb8b7b899444b3c89e087ca60e07f2d4664480"
-provenance_authority = "Human page-image collation"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commune-virginum-4-alleluia"
+source_date = "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862"
+locator = "editorial-projection artifact physical lines 1-2; antecedent 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 40*, artifact PDF p. 918; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet."
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-commune-virginum-4-orations"
+verification_locator = "1962 printed p. [34], chant no. 4425; artifact PDF p. 842"
+transformations = ["join printed line wraps", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's j orthography", "apply the target printing's punctuation", "carry the target's conclusion at its printed length"]
+provenance_evidence = "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: Mame prints Alleluja / alleluja with j where the 1962 prints Alleluia / alleluia with i (three occurrences); no other letter differs.; no other difference: the words, their order and the pointing are identical. Corroboration: 1862 Pustet page-image collation of 2026-08-26, Pustet printed p. [32]; Internet Archive leaf n701 (Pustet Alleluja uses j; target Alleluia uses i.), outcome collated-non-exact. The Pustet's single recorded non-exactness here is the j of Alleluja. THE MAME SHARES IT. The Mame is a French printing that uses j for consonantal i throughout its body text, so its j-forms here are systematic house orthography, not a local variant. On this point the Mame AGREES WITH THE 1862 PUSTET AGAINST THE 1962, so the human review's observation stands on two independent public-domain witnesses, and no public-domain page yet seen authorises the 1962's i-spelling of this word as an exact string.."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
 provenance_confidence = "high"
-publication_status = "withheld"
-publication_basis = "non-exact-historical-witness"
-surfaces = []
-note = "HOLD: Pustet Alleluja uses j; target Alleluia uses i."
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.mame-seventeen-orations-fb21bf16", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Tours Mame 1922, 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 40*, artifact PDF p. 918; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet.; artifact rights_status public-domain"
+publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
 mass = "commune-virginum-4"
@@ -4610,23 +4619,24 @@ proper = "Alleluia (Tempore paschali)"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "6cf265b1c393bb123cf07ae980c56b4abd475076e8d9fe435f6e819b39d3277a"
-body_status = "removed"
+text_sha256 = "80159a6116925c92337fdc5c9a2b4724245221c0fcb8e2276b099e66278e31bf"
 provenance_status = "collated"
-source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-source_date = "1962"
-locator = "1962 printed p. [34], chant no. 4427; artifact PDF p. 842"
-relationship = "collated-non-exact"
-verification_source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-701"
-verification_locator = "Pustet printed p. [32]; Internet Archive leaf n701"
-transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
-provenance_evidence = "src/sources/inventories/roman-1962-pustet-common-collation-v1.toml comparison_sha256=b415760efcec8b6a9957ca4603735392c8130b9c4069ca8aecb651e4b41ae4f8"
-provenance_authority = "Human page-image collation"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commune-virginum-4-alleluia-tempore-paschali"
+source_date = "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862"
+locator = "editorial-projection artifact physical lines 4-5; antecedent 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 35*, artifact PDF p. 913; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet."
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-commune-virginum-4-orations"
+verification_locator = "1962 printed p. [34], chant no. 4427; artifact PDF p. 842"
+transformations = ["join printed line wraps", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's j orthography", "apply the target printing's punctuation", "carry the target's conclusion at its printed length"]
+provenance_evidence = "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: Mame prints Alleluja / alleluja with j where the 1962 prints Alleluia / alleluia with i (four occurrences); no other letter differs.; no other difference: the words, their order and the pointing are identical. Corroboration: 1862 Pustet page-image collation of 2026-08-26, Pustet printed p. [32]; Internet Archive leaf n701 (Pustet Alleluja uses j; target Alleluia uses i.), outcome collated-non-exact. The Pustet's single recorded non-exactness here is the j of Alleluja. THE MAME SHARES IT. The Mame is a French printing that uses j for consonantal i throughout its body text, so its j-forms here are systematic house orthography, not a local variant. On this point the Mame AGREES WITH THE 1862 PUSTET AGAINST THE 1962, so the human review's observation stands on two independent public-domain witnesses, and no public-domain page yet seen authorises the 1962's i-spelling of this word as an exact string.."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
 provenance_confidence = "high"
-publication_status = "withheld"
-publication_basis = "non-exact-historical-witness"
-surfaces = []
-note = "HOLD: Pustet Alleluja uses j; target Alleluia uses i."
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.mame-seventeen-orations-fb21bf16", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Tours Mame 1922, 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 35*, artifact PDF p. 913; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet.; artifact rights_status public-domain"
+publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
 mass = "commune-virginum-4"
@@ -6050,8 +6060,8 @@ provenance_confidence = "medium"
 publication_status = "permitted"
 publication_basis = "public-domain"
 surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
-publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-2dcfe70a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-publication_locator = "Pustet Ratisbon 1862, printed p. 359; text-layer lines 52746-52753 (heading Dominica XXIV. et ultima post Pentecosten at 52730-52732; heading Oratio. at 52746); artifact rights_status public-domain on a book first published in 1862"
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-186645e7", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+publication_locator = "Pustet Ratisbon 1862, printed p. 359; text-layer lines 52746-52753 (heading Dominica XXIV. et ultima post Pentecosten at 52730-52732; heading Oratio. at 52746); artifact rights_status public-domain"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
@@ -6076,8 +6086,8 @@ provenance_confidence = "high"
 publication_status = "permitted"
 publication_basis = "public-domain"
 surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
-publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-2dcfe70a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-publication_locator = "Pustet Ratisbon 1862, printed p. 360; text-layer lines 52913-52921 (heading Postcommunio. at 52913); artifact rights_status public-domain on a book first published in 1862"
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-186645e7", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+publication_locator = "Pustet Ratisbon 1862, printed p. 360; text-layer lines 52913-52921 (heading Postcommunio. at 52913); artifact rights_status public-domain"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
@@ -6102,8 +6112,8 @@ provenance_confidence = "medium"
 publication_status = "permitted"
 publication_basis = "public-domain"
 surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
-publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-2dcfe70a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-publication_locator = "Pustet Ratisbon 1862, printed p. 360; text-layer lines 52893-52901 (heading Secreta. at 52893); artifact rights_status public-domain on a book first published in 1862"
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-186645e7", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+publication_locator = "Pustet Ratisbon 1862, printed p. 360; text-layer lines 52893-52901 (heading Secreta. at 52893); artifact rights_status public-domain"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
@@ -6841,23 +6851,24 @@ proper = "Communion"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "e0b41d65ea8e97fc21d3f9b40f4d8e2d7d209819022cd99ee5bdddcdd90fb056"
-body_status = "removed"
+text_sha256 = "7083e0d7d8b0fcfa0708cfb40cfab85450b47d45cd1eb029bc930197e49ec979"
 provenance_status = "collated"
-source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-source_date = "1962"
-locator = "1962 printed p. [45], chant no. 4508; artifact PDF p. 853"
-relationship = "collated-exact-after-mechanical-normalization"
-verification_source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-722"
-verification_locator = "Pustet printed p. [53]; Internet Archive leaf n722"
-transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks"]
-provenance_evidence = "src/sources/inventories/roman-1962-pustet-common-collation-v1.toml comparison_sha256=1a5e6bab6b438e81326bf547aec657b1202ce3e5a4ca5fa4326b44565d7a24c0"
-provenance_authority = "Human page-image collation"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.missa-de-s-maria-in-sabbato-2-communion"
+source_date = "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862"
+locator = "editorial-projection artifact physical lines 52-52; antecedent 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 54*, artifact PDF p. 932; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet."
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-missa-de-s-maria-in-sabbato-2-orations"
+verification_locator = "1962 printed p. [45], chant no. 4508; artifact PDF p. 853"
+transformations = ["join printed line wraps", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's j orthography", "apply the target printing's punctuation", "carry the target's conclusion at its printed length"]
+provenance_evidence = "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: none: the Mame is exact to the 1962 after the collation's declared mechanical transformations (stress accents, ae ligature, line-wrap joining).. Corroboration: 1862 Pustet page-image collation of 2026-08-26, Pustet printed p. [53]; Internet Archive leaf n722 (no differences recorded), outcome collated-exact-after-mechanical-normalization. The Pustet was already collated-exact-after-mechanical-normalization here, with publication left unresolved. THE MAME IS EXACT TOO, so this body now stands on two independent public-domain page images.."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
 provenance_confidence = "high"
-publication_status = "unresolved"
-publication_basis = "unresolved"
-surfaces = []
-note = "Exact after the recorded mechanical normalization; publication remains unresolved pending an independent per-text decision."
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.mame-seventeen-orations-fb21bf16", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Tours Mame 1922, 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 54*, artifact PDF p. 932; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet.; artifact rights_status public-domain"
+publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
 mass = "missa-de-s-maria-in-sabbato-2"
@@ -6866,23 +6877,24 @@ proper = "Offertory"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "878e82b79b6e40334e6d491a5f41f76a563a4aeb07ee90dd8e965bde9b3b12f0"
-body_status = "removed"
+text_sha256 = "734c9a736d71f8a3b4531cbf9605752ab568d9b0e221bf9e3634276c0e2aa6b4"
 provenance_status = "collated"
-source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-source_date = "1962"
-locator = "1962 printed p. [45], chant no. 4506; artifact PDF p. 853"
-relationship = "collated-non-exact"
-verification_source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-722"
-verification_locator = "Pustet printed p. [53]; Internet Archive leaf n722"
-transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
-provenance_evidence = "src/sources/inventories/roman-1962-pustet-common-collation-v1.toml comparison_sha256=3f28b2bad1a488e76f1192e655fb37711f233fcd9167d75e2b949063f8668897"
-provenance_authority = "Human page-image collation"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.missa-de-s-maria-in-sabbato-2-offertory"
+source_date = "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862"
+locator = "editorial-projection artifact physical lines 36-37; antecedent 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 54*, artifact PDF p. 932; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet."
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-missa-de-s-maria-in-sabbato-2-orations"
+verification_locator = "1962 printed p. [45], chant no. 4506; artifact PDF p. 853"
+transformations = ["join printed line wraps", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's j orthography", "apply the target printing's punctuation", "carry the target's conclusion at its printed length"]
+provenance_evidence = "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: Mame prints justitiae with j where the 1962 prints iustitiae with i.; no other difference: the words, their order and the pointing are identical. Corroboration: 1862 Pustet page-image collation of 2026-08-26, Pustet printed p. [53]; Internet Archive leaf n722 (Pustet justitiae uses j; target iustitiae uses i.), outcome collated-non-exact. The Pustet's single recorded non-exactness here is the j of justitiae. THE MAME SHARES IT. The Mame is a French printing that uses j for consonantal i throughout its body text, so its j-forms here are systematic house orthography, not a local variant. On this point the Mame AGREES WITH THE 1862 PUSTET AGAINST THE 1962, so the human review's observation stands on two independent public-domain witnesses, and no public-domain page yet seen authorises the 1962's i-spelling of this word as an exact string.."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
 provenance_confidence = "high"
-publication_status = "withheld"
-publication_basis = "non-exact-historical-witness"
-surfaces = []
-note = "HOLD: Pustet justitiae uses j; target iustitiae uses i."
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.mame-seventeen-orations-fb21bf16", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Tours Mame 1922, 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 54*, artifact PDF p. 932; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet.; artifact rights_status public-domain"
+publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
 mass = "missa-de-s-maria-in-sabbato-2"
@@ -6943,23 +6955,24 @@ proper = "Alleluia"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "49dc2daa979296444ae52090673591d5c1de2e65ab81f121ee70def60bf96c4a"
-body_status = "removed"
+text_sha256 = "4640638e4e7b9321f1124c5bc76989fc1da15fd29c5b02368473583ecb0a9043"
 provenance_status = "collated"
-source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-source_date = "1962"
-locator = "1962 printed p. [46], chant no. 4514; artifact PDF p. 854"
-relationship = "collated-non-exact"
-verification_source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-722"
-verification_locator = "Pustet printed p. [53]; Internet Archive leaf n722"
-transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
-provenance_evidence = "src/sources/inventories/roman-1962-pustet-common-collation-v1.toml comparison_sha256=1e2fda106f1586e2c17c56778514c0b7eb5f1512326feb989195935ed4c65c31"
-provenance_authority = "Human page-image collation"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.missa-de-s-maria-in-sabbato-3-alleluia"
+source_date = "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862"
+locator = "editorial-projection artifact physical lines 39-40; antecedent 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 55*-56*, artifact PDF p. 933; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet."
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-missa-de-s-maria-in-sabbato-3-orations"
+verification_locator = "1962 printed p. [46], chant no. 4514; artifact PDF p. 854"
+transformations = ["join printed line wraps", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's j orthography", "apply the target printing's punctuation", "carry the target's conclusion at its printed length"]
+provenance_evidence = "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: Mame prints Alleluja / alleluja with j where the 1962 prints Alleluia / alleluia with i (three occurrences).; Mame prints Jesse with J where the 1962 prints Iesse with I.; no other difference: the words, their order and the pointing are identical. Corroboration: 1862 Pustet page-image collation of 2026-08-26, Pustet printed p. [53]; Internet Archive leaf n722 (Pustet Alleluja uses j; target Alleluia uses i.; Pustet Jesse uses J; target Iesse uses I.), outcome collated-non-exact. Two non-exactnesses were recorded against the Pustet: the j of Alleluja and the J of Jesse. THE MAME SHARES BOTH. The Mame is a French printing that uses j for consonantal i throughout its body text, so its j-forms here are systematic house orthography, not a local variant. On this point the Mame AGREES WITH THE 1862 PUSTET AGAINST THE 1962, so the human review's observation stands on two independent public-domain witnesses, and no public-domain page yet seen authorises the 1962's i-spelling of this word as an exact string.."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
 provenance_confidence = "high"
-publication_status = "withheld"
-publication_basis = "non-exact-historical-witness"
-surfaces = []
-note = "HOLD: Pustet Alleluja uses j; target Alleluia uses i. Pustet Jesse uses J; target Iesse uses I."
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.mame-seventeen-orations-fb21bf16", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Tours Mame 1922, 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 55*-56*, artifact PDF p. 933; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet.; artifact rights_status public-domain"
+publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
 mass = "missa-de-s-maria-in-sabbato-3"
@@ -6968,23 +6981,24 @@ proper = "Introit"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "068c500553e972c24432b6d824efb6c3b3efc81fbddd0d2cc142549ae998a1ba"
-body_status = "removed"
+text_sha256 = "6c394f85766647736e6d2295645895012310f5263d2f7b71d6d2e15994e40dce"
 provenance_status = "collated"
-source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-source_date = "1962"
-locator = "1962 printed p. [45], chant no. 4510; artifact PDF p. 853"
-relationship = "collated-non-exact"
-verification_source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-722"
-verification_locator = "Pustet printed p. [53]; Internet Archive leaf n722"
-transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
-provenance_evidence = "src/sources/inventories/roman-1962-pustet-common-collation-v1.toml comparison_sha256=a6530ddf42123fdd56f97dcdf9b1bc585785727f24ade71598466a6d8b9a9461"
-provenance_authority = "Human page-image collation"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.missa-de-s-maria-in-sabbato-3-introit"
+source_date = "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862"
+locator = "editorial-projection artifact physical lines 54-56; antecedent 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 58*, artifact PDF p. 936; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet."
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-missa-de-s-maria-in-sabbato-3-orations"
+verification_locator = "1962 printed p. [45], chant no. 4510; artifact PDF p. 853"
+transformations = ["join printed line wraps", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's j orthography", "apply the target printing's punctuation", "carry the target's conclusion at its printed length"]
+provenance_evidence = "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: Mame lower-cases regem and regi where the 1962 capitalises Regem and Regi.; Mame sets a comma after caelum (qui caelum, terramque regit); the 1962 sets none.; no letter inside any word differs, and no word is added or dropped. Corroboration: 1862 Pustet page-image collation of 2026-08-26, Pustet printed p. [53]; Internet Archive leaf n722 (Pustet coelum retains oe; target caelum uses ae.), outcome collated-non-exact. The Pustet's single recorded non-exactness here is coelum with oe. THE MAME PRINTS caelum WITH THE AE LIGATURE and so does NOT share it. After the declared mechanical transformations the Mame differs from the 1962 only in the capitalisation of two words and in one comma; no letter inside a word differs.."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
 provenance_confidence = "high"
-publication_status = "withheld"
-publication_basis = "non-exact-historical-witness"
-surfaces = []
-note = "HOLD: Pustet coelum retains oe; target caelum uses ae."
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.mame-seventeen-orations-fb21bf16", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Tours Mame 1922, 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 58*, artifact PDF p. 936; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet.; artifact rights_status public-domain"
+publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
 mass = "missa-de-s-maria-in-sabbato-3"
@@ -7045,23 +7059,24 @@ proper = "Communion"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "dbe3eb2664b957d8ab91e1480cc7a4231ce59e55e8fb063c1cfaec2ad9fd334d"
-body_status = "removed"
+text_sha256 = "c23ff184fe80655f5c6ad5dfce4da35ba62cd05776f4553079aab0d2766d04e4"
 provenance_status = "collated"
-source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-source_date = "1962"
-locator = "1962 printed p. [47], chant no. 4528; artifact PDF p. 855"
-relationship = "collated-non-exact"
-verification_source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-724"
-verification_locator = "Pustet printed p. [55]; Internet Archive leaf n724"
-transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
-provenance_evidence = "src/sources/inventories/roman-1962-pustet-common-collation-v1.toml comparison_sha256=5cf48e0a2d5f980f0e51e33dc101afbcf59c4ebe9d419bc0929e07b2712eaaec"
-provenance_authority = "Human page-image collation"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.missa-de-s-maria-in-sabbato-4-communion"
+source_date = "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862"
+locator = "editorial-projection artifact physical lines 49-50; antecedent 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 57*, artifact PDF p. 935; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet."
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-missa-de-s-maria-in-sabbato-4-orations"
+verification_locator = "1962 printed p. [47], chant no. 4528; artifact PDF p. 855"
+transformations = ["join printed line wraps", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's j orthography", "apply the target printing's punctuation", "carry the target's conclusion at its printed length"]
+provenance_evidence = "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: Mame prints alleluja with j where the 1962 prints alleluia with i.; no other difference: the words, their order and the pointing are identical. Corroboration: 1862 Pustet page-image collation of 2026-08-26, Pustet printed p. [55]; Internet Archive leaf n724 (Pustet alleluja uses j; target alleluia uses i.), outcome collated-non-exact. The Pustet's single recorded non-exactness here is the j of alleluja. THE MAME SHARES IT. The Mame is a French printing that uses j for consonantal i throughout its body text, so its j-forms here are systematic house orthography, not a local variant. On this point the Mame AGREES WITH THE 1862 PUSTET AGAINST THE 1962, so the human review's observation stands on two independent public-domain witnesses, and no public-domain page yet seen authorises the 1962's i-spelling of this word as an exact string.."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
 provenance_confidence = "high"
-publication_status = "withheld"
-publication_basis = "non-exact-historical-witness"
-surfaces = []
-note = "HOLD: Pustet alleluja uses j; target alleluia uses i."
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.mame-seventeen-orations-fb21bf16", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Tours Mame 1922, 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 57*, artifact PDF p. 935; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet.; artifact rights_status public-domain"
+publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
 mass = "missa-de-s-maria-in-sabbato-4"
@@ -7070,23 +7085,24 @@ proper = "Introit"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "eeecebef9dd444b54a3fe45f5d00a304f7cf7cef59c4522c7587d678d289bea1"
-body_status = "removed"
+text_sha256 = "453bdfb331b795e7445e62ee7214af18e292b1e35ea800295dee42770a329461"
 provenance_status = "collated"
-source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-source_date = "1962"
-locator = "1962 printed p. [46], chant no. 4521; artifact PDF p. 854"
-relationship = "collated-non-exact"
-verification_source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-723"
-verification_locator = "Pustet printed p. [54]; Internet Archive leaf n723"
-transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
-provenance_evidence = "src/sources/inventories/roman-1962-pustet-common-collation-v1.toml comparison_sha256=fc51cf34ca0842a515a7da80890d100b91666c31d10e50647e25ad4da55b85d3"
-provenance_authority = "Human page-image collation"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.missa-de-s-maria-in-sabbato-4-introit"
+source_date = "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862"
+locator = "editorial-projection artifact physical lines 42-44; antecedent 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 56*, artifact PDF p. 934; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet."
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-missa-de-s-maria-in-sabbato-4-orations"
+verification_locator = "1962 printed p. [46], chant no. 4521; artifact PDF p. 854"
+transformations = ["join printed line wraps", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's j orthography", "apply the target printing's punctuation", "carry the target's conclusion at its printed length"]
+provenance_evidence = "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: Mame prints alleluja with j where the 1962 prints alleluia with i (two occurrences).; Mame lower-cases regem and regi where the 1962 capitalises Regem and Regi.; Mame sets a comma after caelum (qui caelum, terramque regit); the 1962 sets none.. Corroboration: 1862 Pustet page-image collation of 2026-08-26, Pustet printed p. [54]; Internet Archive leaf n723 (Pustet coelum retains oe; target caelum uses ae.; Pustet alleluja uses j; target alleluia uses i.), outcome collated-non-exact. Two non-exactnesses were recorded against the Pustet: coelum with oe, and the j of alleluja. THE MAME PRINTS caelum WITH THE AE LIGATURE and so does NOT share the first; it does share the second. The Mame is a French printing that uses j for consonantal i throughout its body text, so its j-forms here are systematic house orthography, not a local variant. On this point the Mame AGREES WITH THE 1862 PUSTET AGAINST THE 1962, so the human review's observation stands on two independent public-domain witnesses, and no public-domain page yet seen authorises the 1962's i-spelling of this word as an exact string.."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
 provenance_confidence = "high"
-publication_status = "withheld"
-publication_basis = "non-exact-historical-witness"
-surfaces = []
-note = "HOLD: Pustet coelum retains oe; target caelum uses ae. Pustet alleluja uses j; target alleluia uses i."
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.mame-seventeen-orations-fb21bf16", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Tours Mame 1922, 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 56*, artifact PDF p. 934; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet.; artifact rights_status public-domain"
+publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
 mass = "missa-de-s-maria-in-sabbato-4"
@@ -7095,23 +7111,24 @@ proper = "Offertory"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "5632ca76d59acdf5f953057a63ac9ff241e1e844dbf59a5d8d2ef0c308edd169"
-body_status = "removed"
+text_sha256 = "65793b664459b223a64d1c7edba1ab848f967e6e14efa6d1963a94409df3bfd2"
 provenance_status = "collated"
-source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-source_date = "1962"
-locator = "1962 printed p. [47], chant no. 4526; artifact PDF p. 855"
-relationship = "collated-non-exact"
-verification_source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.commune-leaf-724"
-verification_locator = "Pustet printed p. [55]; Internet Archive leaf n724"
-transformations = ["strip-stress-accents", "expand-print-ligatures", "join-line-breaks", "map-liturgical-layout"]
-provenance_evidence = "src/sources/inventories/roman-1962-pustet-common-collation-v1.toml comparison_sha256=9e64a97e7d2887271b377c56302357272c23136090a977bd7544978c026f224f"
-provenance_authority = "Human page-image collation"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.missa-de-s-maria-in-sabbato-4-offertory"
+source_date = "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862"
+locator = "editorial-projection artifact physical lines 46-47; antecedent 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 57*, artifact PDF p. 935; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet."
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-missa-de-s-maria-in-sabbato-4-orations"
+verification_locator = "1962 printed p. [47], chant no. 4526; artifact PDF p. 855"
+transformations = ["join printed line wraps", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's j orthography", "apply the target printing's punctuation", "carry the target's conclusion at its printed length"]
+provenance_evidence = "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: Mame prints alleluja with j where the 1962 prints alleluia with i.; no other difference: the words, their order and the pointing are identical. Corroboration: 1862 Pustet page-image collation of 2026-08-26, Pustet printed p. [55]; Internet Archive leaf n724 (Pustet alleluja uses j; target alleluia uses i.), outcome collated-non-exact. The Pustet's single recorded non-exactness here is the j of alleluja. THE MAME SHARES IT. The Mame is a French printing that uses j for consonantal i throughout its body text, so its j-forms here are systematic house orthography, not a local variant. On this point the Mame AGREES WITH THE 1862 PUSTET AGAINST THE 1962, so the human review's observation stands on two independent public-domain witnesses, and no public-domain page yet seen authorises the 1962's i-spelling of this word as an exact string.."
+provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
 provenance_confidence = "high"
-publication_status = "withheld"
-publication_basis = "non-exact-historical-witness"
-surfaces = []
-note = "HOLD: Pustet alleluja uses j; target alleluia uses i."
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.mame-seventeen-orations-fb21bf16", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Tours Mame 1922, 1922 Tours Mame, editio quarta iuxta typicam Vaticanam: Commune Sanctorum printed p. 57*, artifact PDF p. 935; read on a 360 dpi render of that page (the scan's native resolution). NOT the 1862 Pustet.; artifact rights_status public-domain"
+publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
 mass = "missa-de-s-maria-in-sabbato-4"
@@ -8537,8 +8554,8 @@ provenance_confidence = "high"
 publication_status = "permitted"
 publication_basis = "public-domain"
 surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
-publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-2dcfe70a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-publication_locator = "Pustet Ratisbon 1862, printed p. 351; text-layer lines 51832-51840; artifact rights_status public-domain on a book first published in 1862"
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-186645e7", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+publication_locator = "Pustet Ratisbon 1862, printed p. 351; text-layer lines 51832-51840; artifact rights_status public-domain"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
@@ -8548,7 +8565,7 @@ proper = "Introit"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "db22c4cb3ab28193445ad4dabe44b961633fcc4a65cdc615330d901fb6e8db68"
+text_sha256 = "2385911d3d3d119249d531fe7d9187a518cbda63801bc5d5f24e0d6089ef4ca3"
 provenance_status = "collated"
 source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.pentecost-19-introit"
 source_date = "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862"
@@ -8557,14 +8574,14 @@ relationship = "editorial-projection-exact-to-target"
 verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-pentecost-19-orations"
 verification_locator = "printed p. 411, no. 1679; artifact PDF p. 492"
 transformations = ["join printed line wraps", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's j orthography", "apply the target printing's punctuation", "carry the target's conclusion at its printed length"]
-provenance_evidence = "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: 1862 sets no commas around popule meus (Attendite popule meus legem meam); 1862 cites the psalm as Ps. 77. where the 1962 cites Ps. 77, 1; 1862 sets the ornamental S so the incipit reads Slnlroilus / Alus populi in the text layer. Corroboration: none attempted; the antiphon is a plain Ps. 80/77 centonisation and the 1862 reading is undamaged."
+provenance_evidence = "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: 1862 sets no commas around popule meus (Attendite popule meus legem meam); 1862 cites the psalm as Ps. 77. where the 1962 cites Ps. 77, 1; 1862 sets the ornamental S so the incipit reads Slnlroilus / Alus populi in the text layer; the Missal prints the citation Ps. 77, 1 between the antiphon and its verse; the body carries the sung words only. Corroboration: none attempted; the antiphon is a plain Ps. 80/77 centonisation and the 1862 reading is undamaged."
 provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
 provenance_confidence = "high"
 publication_status = "permitted"
 publication_basis = "public-domain"
 surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
-publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-2dcfe70a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-publication_locator = "Pustet Ratisbon 1862, printed p. 351; text-layer lines 51818-51830 (heading Dominica XIX. post Pentecosten at 51814-51816); artifact rights_status public-domain on a book first published in 1862"
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-186645e7", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+publication_locator = "Pustet Ratisbon 1862, printed p. 351; text-layer lines 51818-51830 (heading Dominica XIX. post Pentecosten at 51814-51816); artifact rights_status public-domain"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
@@ -8589,8 +8606,8 @@ provenance_confidence = "medium"
 publication_status = "permitted"
 publication_basis = "public-domain"
 surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
-publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-2dcfe70a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-publication_locator = "Pustet Ratisbon 1862, printed p. 352; text-layer lines 51972-51979 (heading Postcommunio. at 51972); artifact rights_status public-domain on a book first published in 1862"
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-186645e7", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+publication_locator = "Pustet Ratisbon 1862, printed p. 352; text-layer lines 51972-51979 (heading Postcommunio. at 51972); artifact rights_status public-domain"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
@@ -8615,8 +8632,8 @@ provenance_confidence = "high"
 publication_status = "permitted"
 publication_basis = "public-domain"
 surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
-publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-2dcfe70a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-publication_locator = "Pustet Ratisbon 1862, printed p. 352; text-layer lines 51954-51960 (heading Secreta. at 51954); artifact rights_status public-domain on a book first published in 1862"
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-186645e7", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+publication_locator = "Pustet Ratisbon 1862, printed p. 352; text-layer lines 51954-51960 (heading Secreta. at 51954); artifact rights_status public-domain"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
@@ -8719,8 +8736,8 @@ provenance_confidence = "high"
 publication_status = "permitted"
 publication_basis = "public-domain"
 surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
-publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-2dcfe70a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-publication_locator = "Pustet Ratisbon 1862, printed p. 353; text-layer lines 52013-52020 (heading Dominica XX. post Pentecosten at 51986-51988; heading Oratio. at 52013); artifact rights_status public-domain on a book first published in 1862"
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-186645e7", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+publication_locator = "Pustet Ratisbon 1862, printed p. 353; text-layer lines 52013-52020 (heading Dominica XX. post Pentecosten at 51986-51988; heading Oratio. at 52013); artifact rights_status public-domain"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
@@ -8745,8 +8762,8 @@ provenance_confidence = "high"
 publication_status = "permitted"
 publication_basis = "public-domain"
 surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
-publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-2dcfe70a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-publication_locator = "Pustet Ratisbon 1862, printed p. 354; text-layer lines 52132-52138 (heading Postcommunio. at 52132); artifact rights_status public-domain on a book first published in 1862"
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-186645e7", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+publication_locator = "Pustet Ratisbon 1862, printed p. 354; text-layer lines 52132-52138 (heading Postcommunio. at 52132); artifact rights_status public-domain"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
@@ -8771,8 +8788,8 @@ provenance_confidence = "high"
 publication_status = "permitted"
 publication_basis = "public-domain"
 surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
-publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-2dcfe70a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-publication_locator = "Pustet Ratisbon 1862, printed p. 353; text-layer lines 52106-52112 (heading Seereta. [Secreta.] at 52106); artifact rights_status public-domain on a book first published in 1862"
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-186645e7", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+publication_locator = "Pustet Ratisbon 1862, printed p. 353; text-layer lines 52106-52112 (heading Seereta. [Secreta.] at 52106); artifact rights_status public-domain"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
@@ -8797,8 +8814,8 @@ provenance_confidence = "high"
 publication_status = "permitted"
 publication_basis = "public-domain"
 surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
-publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-2dcfe70a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-publication_locator = "Pustet Ratisbon 1862, printed p. 354; text-layer lines 52167-52175 (heading Dominica XXI. post Pentecosten at 52146-52148; heading Oratio. at 52167); artifact rights_status public-domain on a book first published in 1862"
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-186645e7", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+publication_locator = "Pustet Ratisbon 1862, printed p. 354; text-layer lines 52167-52175 (heading Dominica XXI. post Pentecosten at 52146-52148; heading Oratio. at 52167); artifact rights_status public-domain"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
@@ -8823,8 +8840,8 @@ provenance_confidence = "high"
 publication_status = "permitted"
 publication_basis = "public-domain"
 surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
-publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-2dcfe70a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-publication_locator = "Pustet Ratisbon 1862, printed p. 355; text-layer lines 52292-52303 (heading Oflertorium. [Offertorium.] Job 1. at 52292); artifact rights_status public-domain on a book first published in 1862"
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-186645e7", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+publication_locator = "Pustet Ratisbon 1862, printed p. 355; text-layer lines 52292-52303 (heading Oflertorium. [Offertorium.] Job 1. at 52292); artifact rights_status public-domain"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
@@ -8849,8 +8866,8 @@ provenance_confidence = "high"
 publication_status = "permitted"
 publication_basis = "public-domain"
 surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
-publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-2dcfe70a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-publication_locator = "Pustet Ratisbon 1862, printed p. 355; text-layer lines 52325-52330 (heading Postcommunio. at 52325); artifact rights_status public-domain on a book first published in 1862"
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-186645e7", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+publication_locator = "Pustet Ratisbon 1862, printed p. 355; text-layer lines 52325-52330 (heading Postcommunio. at 52325); artifact rights_status public-domain"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
@@ -8875,8 +8892,8 @@ provenance_confidence = "high"
 publication_status = "permitted"
 publication_basis = "public-domain"
 surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
-publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-2dcfe70a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-publication_locator = "Pustet Ratisbon 1862, printed p. 355; text-layer lines 52305-52311 (heading Seereta. [Secreta.] at 52305); artifact rights_status public-domain on a book first published in 1862"
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-186645e7", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+publication_locator = "Pustet Ratisbon 1862, printed p. 355; text-layer lines 52305-52311 (heading Seereta. [Secreta.] at 52305); artifact rights_status public-domain"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
@@ -8901,8 +8918,8 @@ provenance_confidence = "high"
 publication_status = "permitted"
 publication_basis = "public-domain"
 surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
-publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-2dcfe70a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-publication_locator = "Pustet Ratisbon 1862, printed p. 356; text-layer lines 52363-52370 (heading Dominica XXII. post Pentecosten at 52338-52340; heading Oratio. at 52363); artifact rights_status public-domain on a book first published in 1862"
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-186645e7", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+publication_locator = "Pustet Ratisbon 1862, printed p. 356; text-layer lines 52363-52370 (heading Dominica XXII. post Pentecosten at 52338-52340; heading Oratio. at 52363); artifact rights_status public-domain"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
@@ -8927,8 +8944,8 @@ provenance_confidence = "medium"
 publication_status = "permitted"
 publication_basis = "public-domain"
 surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
-publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-2dcfe70a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-publication_locator = "Pustet Ratisbon 1862, printed p. 357; text-layer lines 52479-52487 (heading Postcommunio. at 52479); artifact rights_status public-domain on a book first published in 1862"
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-186645e7", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+publication_locator = "Pustet Ratisbon 1862, printed p. 357; text-layer lines 52479-52487 (heading Postcommunio. at 52479); artifact rights_status public-domain"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
@@ -8953,8 +8970,8 @@ provenance_confidence = "high"
 publication_status = "permitted"
 publication_basis = "public-domain"
 surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
-publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-2dcfe70a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-publication_locator = "Pustet Ratisbon 1862, printed p. 356; text-layer lines 52452-52459 (heading Secreta. at 52452); artifact rights_status public-domain on a book first published in 1862"
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-186645e7", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+publication_locator = "Pustet Ratisbon 1862, printed p. 356; text-layer lines 52452-52459 (heading Secreta. at 52452); artifact rights_status public-domain"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
@@ -8979,8 +8996,8 @@ provenance_confidence = "high"
 publication_status = "permitted"
 publication_basis = "public-domain"
 surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
-publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-2dcfe70a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-publication_locator = "Pustet Ratisbon 1862, printed p. 357; text-layer lines 52526-52533 (heading Dominica XXIII. post Pentecosten at 52494-52496, with its long rubric on the XXIII/XXIV transposition at 52498-52509; heading Oratio. at 52526); artifact rights_status public-domain on a book first published in 1862"
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-186645e7", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+publication_locator = "Pustet Ratisbon 1862, printed p. 357; text-layer lines 52526-52533 (heading Dominica XXIII. post Pentecosten at 52494-52496, with its long rubric on the XXIII/XXIV transposition at 52498-52509; heading Oratio. at 52526); artifact rights_status public-domain"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
@@ -9005,8 +9022,8 @@ provenance_confidence = "high"
 publication_status = "permitted"
 publication_basis = "public-domain"
 surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
-publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-2dcfe70a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-publication_locator = "Pustet Ratisbon 1862, printed p. 358; text-layer lines 52660-52666 (heading Postcommunio. at 52660); artifact rights_status public-domain on a book first published in 1862"
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-186645e7", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+publication_locator = "Pustet Ratisbon 1862, printed p. 358; text-layer lines 52660-52666 (heading Postcommunio. at 52660); artifact rights_status public-domain"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
@@ -9031,8 +9048,8 @@ provenance_confidence = "high"
 publication_status = "permitted"
 publication_basis = "public-domain"
 surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
-publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-2dcfe70a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-publication_locator = "Pustet Ratisbon 1862, printed p. 358; text-layer lines 52640-52649 (heading Sccrcta. [Secreta.] at 52640); artifact rights_status public-domain on a book first published in 1862"
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-186645e7", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+publication_locator = "Pustet Ratisbon 1862, printed p. 358; text-layer lines 52640-52649 (heading Sccrcta. [Secreta.] at 52640); artifact rights_status public-domain"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
@@ -12012,8 +12029,8 @@ provenance_confidence = "medium"
 publication_status = "permitted"
 publication_basis = "public-domain"
 surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
-publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-2dcfe70a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-publication_locator = "Pustet Ratisbon 1862, printed p. 313; text-layer lines 47386-47398 (heading IN FESTO SS. TRINITATIS. at 47359; heading Oratio. at 47386); artifact rights_status public-domain on a book first published in 1862"
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-186645e7", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+publication_locator = "Pustet Ratisbon 1862, printed p. 313; text-layer lines 47386-47398 (heading IN FESTO SS. TRINITATIS. at 47359; heading Oratio. at 47386); artifact rights_status public-domain"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
@@ -12038,8 +12055,8 @@ provenance_confidence = "high"
 publication_status = "permitted"
 publication_basis = "public-domain"
 surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
-publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-2dcfe70a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-publication_locator = "Pustet Ratisbon 1862, printed p. 314; text-layer lines 47512-47520 (heading Postcommimio. [Postcommunio.] at 47512); artifact rights_status public-domain on a book first published in 1862"
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-186645e7", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+publication_locator = "Pustet Ratisbon 1862, printed p. 314; text-layer lines 47512-47520 (heading Postcommimio. [Postcommunio.] at 47512); artifact rights_status public-domain"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]
@@ -12064,8 +12081,8 @@ provenance_confidence = "high"
 publication_status = "permitted"
 publication_basis = "public-domain"
 surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
-publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-2dcfe70a", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-publication_locator = "Pustet Ratisbon 1862, printed p. 314; text-layer lines 47482-47490 (heading Secreta. at 47482); artifact rights_status public-domain on a book first published in 1862"
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.after-pentecost-3-orations-186645e7", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
+publication_locator = "Pustet Ratisbon 1862, printed p. 314; text-layer lines 47482-47490 (heading Secreta. at 47482); artifact rights_status public-domain"
 publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
 
 [[entries]]

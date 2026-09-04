@@ -10,7 +10,38 @@ policy = "guidance/liturgical-text-publication-policy.md"
 scope = "Seventeen newly transcribed Roman Common and Saturday Blessed Virgin Mary chant bodies compared visually between the controlling 1962 CMAA facsimile and exact retained page images of the public-domain 1862 Pustet printing."
 method = "Read each target and verification locus on its exact page image. Transcribe the Pustet wording after only the controlled mechanical transformations below, hash both the live YAML text field and that transformed Pustet transcription, and record every remaining Unicode difference. A public-domain page does not authorize a non-exact 1962 target string."
 comparison_preimage = "UTF-8 fields joined by TAB in this order: mass, form, proper, course, cycle, decimal occurrence, target_text_sha256, verification_text_sha256, outcome; followed by LF."
-result = "1 collated-exact-after-mechanical-normalization with publication unresolved; 16 collated-non-exact and explicitly withheld; all 17 have empty serving surfaces."
+result = "1 collated-exact-after-mechanical-normalization with publication unresolved; 16 collated-non-exact and explicitly withheld; all 17 had empty serving surfaces. SUPERSEDED FOR PUBLICATION on 2026-09-03, and not corrected: every finding below still stands as a statement about the Pustet."
+superseded_on = "2026-09-03"
+superseded_by = "guidance/propers-for-agents.md, `A transformation changes how a word is spelled; a variant changes which word is said`"
+supersession = """
+This record asked whether the Pustet's page authorizes the 1962's exact string
+and answered no for sixteen of the seventeen. That answer is correct and is left
+untouched. What changed is the question the project asks of a witness.
+
+A collation of the same seventeen against the 1922 Tours Mame, which was not
+available when this record was made, found that the Mame carries all seventeen
+WORD FOR WORD -- nothing added, dropped or replaced anywhere -- and that its
+disagreements with the 1962 are j-for-consonantal-i and the like, the Mame being
+a French printing. On twelve of the seventeen it therefore agrees with the
+Pustet against the 1962, which strengthens this record rather than weakening it:
+the non-exactness is real and now rests on two independent public-domain
+witnesses.
+
+The maintainer ruled on 2026-09-03 that a witness must carry the same WORDS, not
+the same string. The repository publishes its own declared orthography and has
+never published an exact 1962 string anywhere -- it prints justitiae with a j
+where the facsimile prints 231 i-forms and none the other way, and Alleluia
+where the Mame prints 797 Alleluja -- so an exact-string rule applied honestly
+would withhold every body in the calendar. All seventeen are published under
+that rule, on the Mame, with the orthographic differences recorded as
+transformations on their projection.
+
+Two findings here were contradicted by the Mame and are worth keeping visible:
+its Gradual reads `astat` exactly as the 1962 does where the Pustet reads
+`adstat`, and it prints `caelum`, `Genitrix` and the comma after `Ave` where the
+Pustet does not. Where the Pustet is two letters from the target the Mame is
+often none.
+"""
 
 [[mechanical_transformations]]
 id = "strip-stress-accents"

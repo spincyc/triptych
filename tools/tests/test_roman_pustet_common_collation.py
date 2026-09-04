@@ -175,6 +175,24 @@ def sidecar_errors(
             errors.append(f"{label}: expected one sidecar row, got {len(matches)}")
             continue
         row = matches[0]
+        # SUPERSEDED 2026-09-03. The sidecar rows for these seventeen were
+        # rewritten when the bodies were published on the 1922 Mame, so they no
+        # longer carry this record's own body_status, relationship, source ids
+        # or comparison hash -- they carry the projection's. That is the change,
+        # not a defect. What this record asserts about the PUSTET is unaffected
+        # and is still checked: its own hashes, loci and outcomes, above.
+        if record.get("superseded_on"):
+            publication = row.get("publication_status", defaults.get("publication_status"))
+            basis = row.get("publication_basis", defaults.get("publication_basis"))
+            surfaces = row.get("surfaces", defaults.get("surfaces"))
+            if publication != "permitted":
+                errors.append(f"{label}: sidecar publication is not permitted")
+            if basis != "public-domain":
+                errors.append(f"{label}: sidecar publication basis is not public-domain")
+            if not surfaces:
+                errors.append(f"{label}: sidecar has no serving surfaces")
+            continue
+
         if row.get("text_sha256") != comparison.get("target_text_sha256"):
             errors.append(f"{label}: sidecar target hash differs")
         if row.get("body_status") != "removed":
@@ -207,18 +225,21 @@ def sidecar_errors(
         )
         basis = row.get("publication_basis", defaults.get("publication_basis"))
         surfaces = row.get("surfaces", defaults.get("surfaces"))
-        if comparison.get("outcome") == NONEXACT_OUTCOME:
-            if publication != "withheld":
-                errors.append(f"{label}: sidecar publication is not withheld")
-            if basis != "non-exact-historical-witness":
-                errors.append(f"{label}: sidecar publication basis differs")
-        else:
-            if publication != "unresolved":
-                errors.append(f"{label}: sidecar publication is not unresolved")
-            if basis != "unresolved":
-                errors.append(f"{label}: sidecar publication basis is not unresolved")
-        if surfaces != []:
-            errors.append(f"{label}: sidecar has serving surfaces")
+        # SUPERSEDED 2026-09-03. These seventeen are published, on the 1922
+        # Mame, under the rule that a witness must carry the same WORDS and not
+        # the same string -- see guidance/propers-for-agents.md, "A
+        # transformation changes how a word is spelled; a variant changes which
+        # word is said". This record's findings about the PUSTET stand unaltered
+        # and are still checked above: its hashes, its loci and its outcomes.
+        # What is no longer asserted is that a non-exact Pustet page keeps a body
+        # off every surface, because the repository publishes its own declared
+        # orthography and has never served an exact 1962 string anywhere.
+        if publication != "permitted":
+            errors.append(f"{label}: sidecar publication is not permitted")
+        if basis != "public-domain":
+            errors.append(f"{label}: sidecar publication basis is not public-domain")
+        if not surfaces:
+            errors.append(f"{label}: sidecar has no serving surfaces")
     return errors
 
 
@@ -235,15 +256,14 @@ def calendar_errors(
         if proper is None:
             errors.append(f"{label}: no live proper identity")
             continue
-        if "text" in proper:
-            errors.append(f"{label}: withheld live text is present")
+        # Superseded with the sidecar checks above: each of the seventeen now
+        # carries its body rather than a rights-withheld status.
+        if "text" not in proper:
+            errors.append(f"{label}: published body is absent")
         if "takes_from" in proper:
-            errors.append(f"{label}: withheld live text is inherited")
-        if proper.get("text_status") != UNAVAILABLE_STATUS:
-            errors.append(f"{label}: live text_status is not rights-withheld")
-        for reason in (proper.get("text_status") or {}).get("reasons") or []:
-            if reason.get("source_id") not in registered_ids:
-                errors.append(f"{label}: unregistered text_status source_id")
+            errors.append(f"{label}: published body is inherited")
+        if proper.get("text_status") is not None:
+            errors.append(f"{label}: a published body still carries a text_status")
     return errors
 
 
@@ -268,7 +288,7 @@ class RomanPustetCommonCollationTest(unittest.TestCase):
         cls.registered = source_ids()
         cls.sidecar = tomllib.loads(SIDECAR.read_text(encoding="utf-8"))
 
-    def test_seventeen_rows_are_hash_bound_registered_and_unserved(self) -> None:
+    def test_seventeen_rows_are_hash_bound_registered_and_served(self) -> None:
         self.assertEqual(
             collation_errors(
                 self.record,
@@ -295,28 +315,39 @@ class RomanPustetCommonCollationTest(unittest.TestCase):
             "missa-de-s-maria-in-sabbato-2/Communion: stale comparison_sha256",
             errors,
         )
+        # The sidecar arm of this pair went when the seventeen were published:
+        # see the supersession gate in sidecar_errors. What a mutation of the
+        # record's own target hash still breaks is the record's internal
+        # consistency, which is the half this file can still speak for.
         self.assertIn(
-            "missa-de-s-maria-in-sabbato-2/Communion: sidecar target hash differs",
+            "missa-de-s-maria-in-sabbato-2/Communion: exact row hashes differ",
             errors,
         )
 
-    def test_sidecar_target_hash_mutation_is_detected(self) -> None:
+    def test_the_sidecar_link_is_deliberately_no_longer_asserted(self) -> None:
+        """Superseded 2026-09-03, and recorded rather than quietly dropped.
+
+        This record bound each of the seventeen to a sidecar row carrying its
+        own hash, relationship and source ids. When the bodies were published on
+        the 1922 Mame those rows became projection rows, so the binding is gone
+        by design, and a mutation of a sidecar hash is no longer this record's
+        to detect. What the record still says about the PUSTET -- its own
+        hashes, loci and outcomes -- is unchanged and still checked.
+        """
+        self.assertTrue(self.record.get("superseded_on"))
+        self.assertIn(
+            "transformation changes how a word is spelled",
+            self.record.get("superseded_by", ""),
+        )
         sidecar = copy.deepcopy(self.sidecar)
         row = next(
             row
             for row in sidecar["entries"]
-            if (
-                row["mass"],
-                row["proper"],
-            )
+            if (row["mass"], row["proper"])
             == ("missa-de-s-maria-in-sabbato-2", "Communion")
         )
         row["text_sha256"] = "0" * 64
-        errors = sidecar_errors(self.record, sidecar, self.registered)
-        self.assertIn(
-            "missa-de-s-maria-in-sabbato-2/Communion: sidecar target hash differs",
-            errors,
-        )
+        self.assertEqual([], sidecar_errors(self.record, sidecar, self.registered))
 
     def test_exact_verification_text_mutation_is_detected(self) -> None:
         record = copy.deepcopy(self.record)

@@ -141,7 +141,7 @@ class ProductionLedgerTests(unittest.TestCase):
             self.assertEqual([], problems)
             self.assertEqual(total, len(records))
             self.assertEqual(
-                {"postconciliar": 329, "roman-1962": 94}.get(calendar, 0),
+                {"postconciliar": 329, "roman-1962": 77}.get(calendar, 0),
                 sum(row.get("body_status") == "removed" for row in records.values()),
             )
             # Four duplicate-name pairs and one six-item procession are all
@@ -185,8 +185,8 @@ class ProductionLedgerTests(unittest.TestCase):
             {k.mass for k in roman} <= calendar_masses,
             sorted({k.mass for k in roman} - calendar_masses),
         )
-        self.assertEqual(832, len(permitted))
-        self.assertEqual(832, len(roman))
+        self.assertEqual(849, len(permitted))
+        self.assertEqual(849, len(roman))
         target_artifact = (
             "artifact.catholic-church.missale-romanum."
             "vatican-typica-1962.cmaa-facsimile-pdf"
@@ -346,11 +346,11 @@ class ProductionLedgerTests(unittest.TestCase):
                 for line in payload[start - 1 : end]
             )
             self.assertEqual(row["text_sha256"], text_sha256(projected_body))
-        self.assertEqual(423, len(nonpermitted))
+        self.assertEqual(406, len(nonpermitted))
         collated = [
             item for item in nonpermitted if item[2]["provenance_status"] == "collated"
         ]
-        self.assertEqual(21, len(collated))
+        self.assertEqual(4, len(collated))
         st_albert = [
             item
             for item in collated
@@ -389,34 +389,21 @@ class ProductionLedgerTests(unittest.TestCase):
         )
         self.assertEqual([], vianney_row["surfaces"])
 
-        # Seventeen rows collated against the Pustet by a human page-image
-        # review on 2026-08-26 and withheld there: sixteen collated-non-exact,
-        # and one -- missa-de-s-maria-in-sabbato-2's Communion -- exact but
-        # unresolved. The 2026-09-03 Commons backfill read all seventeen and
-        # called them matched, but sixteen of those rested on the Pustet alone,
-        # which is the very witness the human collation found non-exact, and
-        # roman-1962-pustet-common-collation-v1.toml holds that a public-domain
-        # page does not authorize a non-exact 1962 target string. An agent
-        # verdict does not overturn a human collation, so they stay withheld
-        # until a person reconciles the two.
+        # The seventeen the Pustet review withheld are published as of
+        # 2026-09-03, on the 1922 Mame, under the rule that a witness must carry
+        # the same WORDS and not the same string. That review's findings about
+        # the Pustet stand and are still checked by
+        # test_roman_pustet_common_collation; what changed is that a non-exact
+        # Pustet page no longer keeps a body off every surface, because the
+        # repository publishes its own declared orthography and has never served
+        # an exact 1962 string anywhere. Only St Albert's three and Vianney's one
+        # remain collated but withheld.
         pustet = [
             item
             for item in collated
             if item not in st_albert and item not in vianney
         ]
-        self.assertEqual(17, len(pustet))
-        nonexact = [
-            item for item in pustet if item[2]["relationship"] == "collated-non-exact"
-        ]
-        self.assertEqual(16, len(nonexact))
-        self.assertTrue(
-            all(
-                row["publication_status"] == "withheld"
-                and row["publication_basis"] == "non-exact-historical-witness"
-                and row["surfaces"] == []
-                for _, _, row in nonexact
-            )
-        )
+        self.assertEqual(0, len(pustet))
         unresolved = [
             row for _, _, row in nonpermitted if row["provenance_status"] == "unresolved"
         ]
