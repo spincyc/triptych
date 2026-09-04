@@ -188,6 +188,56 @@ does not survive it. Its durable content is in guidance; its operational content
     finishes: all 49 entries in `claude-publications-v1.toml` have a shipped PDF
     behind them, and that leaf has none. It is on `impl/proper-54-production`.
 
+### Resuming the Fourteenth Sunday: both runs are dead, 2026-09-04
+
+Neither existing run can be advanced, and a driver should not try.
+
+  * `ca03f1b357e7ec25` (`proper` v17) is BLOCKED and recorded above as not
+    replayable, because from its iteration 2 the coordinator supplemented each
+    lane brief out of packet.
+  * `416bacef11b97508` (`proper` v19) stopped awaiting a `source-audit` result.
+    The `proper` pipeline on disk is now v22 and its source digest has moved, so
+    `load_bound_workflow` fails closed: *"Seed a new run against the new
+    version."* A run is bound to the pipeline, fragment and schema bytes it
+    started with. `status` still reports on it; nothing else will.
+
+So the next production seeds. Two routes:
+
+  * `tools/tpt proper-finish 54-fourteenth-after-pentecost seed --provider
+    claude` — v1, the rescue pipeline that starts at `author-proper` and skips
+    seed, authorize-target, scope-gate, resolve-context and the seven research
+    lanes. It is the shape that fits: the leaf is fully authored, all five
+    profile-required records are present, and what remains is a revision
+    clearing the eight findings, then build and publish. Proper 55 was finished
+    this way. Its cost is that it has no `research-synthesis` stage and so no
+    `Prior-production carry-forward`; the eight findings reach it only through
+    `intervene`, which OPERATOR.md counts as workflow debt. All eight are real
+    defects still standing in the committed leaf, so a fresh
+    `content-evaluation` should raise them on its own — but that is to be
+    verified, not assumed.
+  * `tools/tpt proper 54-fourteenth-after-pentecost seed --provider claude` —
+    v22, the full pipeline, whose `research-synthesis` carries prior findings
+    forward by design and which re-runs the seven research lanes against a
+    corpus that has moved a long way. Much more expensive.
+
+Whichever is taken: the rights wall the earlier runs stopped at is largely gone.
+The three orations that carried `text_status` rights-withheld — Collect *Custodi
+Domine*, Secret *Concede nobis*, Postcommunion *Purificent semper* — have
+published Latin bodies as of 2026-09-04. Anything either run concluded about
+Latin availability is stale.
+
+### `main` is red on arrival, 2026-09-04
+
+`make check` fails on `origin/main` at `check-deployment-sources`, and did
+before this work landed. `1ed7fd9a4 Checkpoint Proper 55 rescue leaf` put
+`src/gpt/.../55-fifteenth-after-pentecost/` on `main` without registering it in
+`publications-v1.toml`, so `source-inventory` reports the publication and its
+twenty source-bearing files as missing from the inventory. It is the same
+situation the Fourteenth Sunday was in, and it was settled there the other way,
+by holding the leaf out of `main` until its production finished. Left for
+whoever owns that run: registering an unfinished publication would be the wrong
+repair.
+
 ## Standing public-alpha authority
 
 On 27 July 2026 the maintainer approved every Triptych document for
