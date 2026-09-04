@@ -51,6 +51,7 @@ from _tooling import (
     run_verb_cli,
     with_examples,
 )
+from _latin_body_damage import body_damage
 from _proper_latin import sidecar_problems as latin_sidecar_problems
 
 # Captured transcripts, never composed; see scripts/_tooling.py.
@@ -1768,6 +1769,13 @@ def check_duplicate_proper_bodies(
             text = proper.get("text")
             if not isinstance(name, str) or not isinstance(text, str):
                 continue
+            damage = body_damage(text)
+            if damage:
+                problems.append(
+                    f"{where}/{form_id}/{name}: the body reads as recogniser damage "
+                    f"rather than a page reading ({'; '.join(damage[:6])}); transcribe "
+                    "it from the page image rather than from a text layer"
+                )
             identity = (name, normalized_proper_body(text))
             if not identity[1]:
                 continue
