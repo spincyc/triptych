@@ -92,7 +92,7 @@ discípuli eius, et turba copiósa. Cum autem appropinquáret portæ civitátis,
 ecce defúnctus efferebátur fílius únicus matris suæ: et hæc vídua erat: et
 turba civitátis multa cum illa. Quam cum vidísset Dóminus, misericórdia motus
 super eam, dixit illi: Noli flere. Et accéssit, et tétigit lóculum. (Hi
-autem, qui portábant, stetérunt.) Et ait: Aduléscens, tibi dico, surge. Et
+autem, qui portábant, stetérunt). Et ait: Aduléscens, tibi dico, surge. Et
 resédit qui erat mórtuus, et cœpit loqui. Et dedit illum matri suæ. Accépit
 autem omnes timor: et magnificábant Deum, dicéntes: Quia prophéta magnus
 surréxit in nobis: et quia Deus visitávit plebem suam.

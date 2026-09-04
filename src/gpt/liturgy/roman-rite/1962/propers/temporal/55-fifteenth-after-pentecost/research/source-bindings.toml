@@ -1,0 +1,164 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = ["Dominica Decima Quinta post Pentecosten, printed pp. 396-397, marginal nos. 1582-1591"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-03"
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
+context = "The checksum-matched page images control the complete Latin formulary, rank, heading, references, Creed, Trinity Preface, and both boundaries."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu"
+loci = ["Dominica XV post Pentecosten, printed pp. 390-392, leaves n466-n468"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-03"
+source_fingerprint = "sha256:8f68b01f48faa23fbd6fb830e8e7e5008a5e7aec2289ee37506b617d02cd515a"
+context = "The independent 1962 publisher edition corroborates the formulary and exposes the Secret-conclusion and Postcommunion-punctuation differences without displacing the Vatican typical reading."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu-ocr"
+loci = ["Dominica XV post Pentecosten text-layer block"]
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5c2d162e9079b438862a80692742bb1e85a16c60e9730040aeef4a0275a32144"
+context = "The uncorrected OCR excerpt in propers/retrieved.txt is a locating aid and intentionally preserves recognition errors."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+loci = ["Dominica XV post Pentecosten, printed pp. 446-448, PDF artifact pp. 560-562, Internet Archive leaves n559-n561"]
+role = "rights-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-03"
+source_fingerprint = "sha256:2aeeef19bd9fd55efb91a84ab940dd7be0abed5af53bc5d1d63517fb364b7661"
+context = "The complete public-domain sequence is the publication-local United States rights antecedent for all ten appointed Latin elements. Its older orthography, punctuation, conclusions, and additional-oration apparatus are not blended into the controlling 1962 text."
+
+[[bindings]]
+source_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.post-pentecosten-15"
+loci = ["post-pentecosten-15"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5458eb825700249c95620bb64736fb0d3e5a1c592f2281935a740b0593bb7849"
+context = "The aggregate passage witnesses the public-domain historical English of the three orations. The guide identifies the witness and reproduces no complete English oration from it."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+loci = ["Ps.39.1-18", "Ps.85.1-17", "Ps.91.1-16", "Ps.94.1-11"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-03"
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+context = "The public-domain witness controls the brief English psalm phrases quoted in the guide as well as the complete appointed contexts and their modern-numbering correspondences; the Missal's three adaptations remain separately identified."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33"
+loci = ["Luke.7.1-23"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-03"
+source_fingerprint = "sha256:b6acab91674d3bbe04726da30c835175a133104d3db53fcf3f8e45b1d5b4ba6e"
+context = "The public-domain witness controls the guide's brief quoted English phrases and its account of the complete Nain context; the liturgical incipit and pericope boundaries remain separately identified."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-50-john-27b8f3ed"
+loci = ["John.6.1-72"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-03"
+source_fingerprint = "sha256:4498ea55e49e3577649969ed0bcf456423b8aec2f9edda55586c37190dfe77a4"
+context = "The public-domain witness controls the guide's brief quoted English phrases and the complete bread-of-life, abiding, hard-saying, and last-day-resurrection context; the Missal's adapted final clause remains separately identified."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-55-galatians-e95d4a59"
+loci = ["Gal.5.13-6.10", "Gal.6.2", "Gal.6.7-8"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-03"
+source_fingerprint = "sha256:d1becf65404d8b685106f60ada2ee449c6fc70f69fdb1e90b6eb4712794c0a17"
+context = "The complete context controls the Epistle's argumentative boundaries. The public-domain wording controls the brief Galatians phrases quoted in the cultural gallery."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.psalm-numbering-ee3c7757"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c3702f219d6641eb66186bd7d3d557375aec2843467d0d54aabe3397ec7e8fb7"
+context = "The registered concordance controls the published Vulgate-to-modern Psalm 39/40, 85/86, 91/92, and 94/95 mappings."
+
+[[bindings]]
+source_id = "artifact.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.wikimedia-pdf-72ee8714"
+loci = ["Psalm 39, PG 80:1151-1154", "Psalm 85, PG 80:1553-1556", "Psalm 91, PG 80:1615-1618", "Psalm 94, PG 80:1639-1642"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-03"
+source_fingerprint = "sha256:f431d1af4d23e9bc63a710fdaa7d8198d2aba0ac1853cde486c5307cbc031b66"
+context = "The checked Greek-Latin facsimile controls the four attributed psalm readings, including the Psalm 94 lemma super omnem terram."
+
+[[bindings]]
+source_id = "passage.cyril-of-alexandria.commentary-on-john.english-pusey-randell-lfc-1874-1885.book-4-jn-6.51-58"
+loci = ["4"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-07-27"
+source_fingerprint = "sha256:273d8fd61dbf70e919349f7d0d35457802a83306c4d76804658fda1c062e13d8"
+context = "The registered passage controls Cyril's life-giving Word-flesh, sacrifice, participation, and resurrection reading. The guide paraphrases it."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.super-galatas.latin-corpusthomisticum-web-2026-08-21.cgl-html-bbaaf5bd"
+loci = ["6.l1"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5f6829f4470b577188c5abaf483a4dfebfb8bccb3ae580cb8745ae983f8e699b"
+context = "The checked primary Latin controls Aquinas's treatment of gentle restoration, patience, aid, prayer, and charity. No derivative English is reproduced."
+
+[[bindings]]
+source_id = "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-scan-volume-3-410f6d11"
+loci = ["Volume III, printed pp. 139-142"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-03"
+source_fingerprint = "sha256:765e56515c01f4983b213615c6241c91fdb853e38d082a70ca61373369b43f6c"
+context = "The inspected pages control the attributed seasonal reconstruction, Lenten reuse observations, and liturgical reading of patient petition, defense, Eucharistic nourishment, and mind-body governance."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06336a-508d2398"
+loci = ["Epistle to the Galatians; chronological notices represented in the corpus"]
+role = "context"
+states = ["cataloged", "acquired"]
+source_fingerprint = "sha256:919c514f7c0c90bc8caf2e98a45dd3bef170b448f396528491d4371cd0506ac0"
+context = "The generated chronology record carries this artifact among the sources of the Epistle's disputed composition labels; the guide reproduces the corpus labels without choosing among them."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8"
+loci = ["St. Paul; chronological notices represented in the corpus"]
+role = "context"
+states = ["cataloged", "acquired"]
+source_fingerprint = "sha256:8cfc6ed92e4e3a2b5adfde15bf732276a529799b74311cdd8aaef65ea407f469"
+context = "The generated chronology record carries this artifact among the sources of the Epistle's disputed composition labels; authoring adds no independent date."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"
+loci = ["The New Testament; chronological notices represented in the corpus"]
+role = "context"
+states = ["cataloged", "acquired"]
+source_fingerprint = "sha256:72ff1c7fff77b396328a616ee182353295403d927a4943dea9aae7de2863a792"
+context = "The generated chronology record carries this artifact among the sources of Luke's and John's disputed composition labels; the guide reproduces the corpus labels without harmonizing them."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09420a-9b79d2a9"
+loci = ["Gospel of St. Luke; chronological notices represented in the corpus"]
+role = "context"
+states = ["cataloged", "acquired"]
+source_fingerprint = "sha256:170b7fb37da38c8cad5072c51f8126a67c9ed50e20ac89ca91e261ac986a28be"
+context = "The generated chronology record carries this artifact as the source of Luke's relative disputed composition label; the guide supplies no event date."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08438a-7620a92c"
+loci = ["Gospel of St. John; chronological notices represented in the corpus"]
+role = "context"
+states = ["cataloged", "acquired"]
+source_fingerprint = "sha256:021baa30acc40003aec2a4bd26be0e9829cfe5ca1e98ccf774f4159d915d4e48"
+context = "The generated chronology record carries this artifact among the sources of John's disputed composition labels; the guide supplies no event date."
