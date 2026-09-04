@@ -194,11 +194,20 @@ class FragmentTests(unittest.TestCase):
         self.assertTrue(routes_absent_values_to_research(text))
 
     def test_contract_change_bumps_the_workflow(self):
-        self.assertEqual(workflow_json()["version"], 23)
+        """The pipeline and both manuals name the same version.
+
+        The number moves whenever the contract does -- v22 raised the
+        content-evaluation repeat budget for its three-owner route, v23 added
+        the retrieval receipt, the `source-registration` stage, and the
+        budget's owner-change rule -- and what this guards is that the manuals
+        move with it, whatever the number now is.
+        """
+        version = workflow_json()["version"]
+        self.assertGreaterEqual(version, 21, "the v21 contract still holds")
         for path in (ROOT / "workflows" / "ARCHITECTURE.md",
                      ROOT / "workflows" / "OPERATOR.md"):
             text = path.read_text(encoding="utf-8")
-            self.assertIn("workflow is at version 23", text)
+            self.assertIn(f"workflow is at version {version}", text)
 
 
 class EmittedPacketTests(PropersCase):

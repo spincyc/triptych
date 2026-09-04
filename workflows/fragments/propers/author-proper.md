@@ -126,7 +126,9 @@ learns belongs in the files this stage owns, listed below.
      because nobody looked is the same defect as one cited from memory. What
      the library genuinely does not hold is cited in `References` in the
      ordinary way and stays out of this file; registering it is not yours to
-     do, because no stage of this workflow writes `src/sources/`.
+     do. `source-registration` is the only stage that may write
+     `src/sources/`, and in a run that has no such stage — a `proper-finish`
+     run resumes at you — nothing in the run writes it at all.
    - **The role is load-bearing, and `translation-control` most of all.** It
      says of the source it is given to that the published English *is* that
      source's words, and it is the one role `restricted-not-reproduced` reads
@@ -226,7 +228,17 @@ learns belongs in the files this stage owns, listed below.
     this genre: the fixed reader order, the five claim classes, the reception
     sweep, the gallery and proposal contracts, the terminal apparatus, and
     this genre's deltas against the house voice.
-14. Follow `guidance/repository.md` for source ownership, target paths, and
+14. Audit the reader-facing structural labels in both editions before
+    returning: every heading, box title, paragraph-opening run-in label, and
+    table heading in every `\ifdefined\TriptychSynthesisEdition` branch and
+    edition-specific input. A thesis may open directly as prose; it may not be
+    wrapped in `Governing thesis`, `Thesis`, `Key takeaway`, `Argument map`,
+    `Reading order`, or an equivalent rhetorical or editorial label. One such
+    structural meta-label is a defect even once. This is separate from the
+    recurrence threshold for process prose below. The
+    `structural-meta-labels` content-preflight check enforces the mechanically
+    identifiable forms, but its narrow pass does not replace this audit.
+15. Follow `guidance/repository.md` for source ownership, target paths, and
     build rules.
 
 ## House voice
@@ -251,6 +263,15 @@ letting it become the section's organizing voice. Method, search bounds,
 corpora checked, evidence classes, and negative results already have their
 homes: the audit records the profile names, and the terminal `Appendix: Scope
 and Qualifications`. The body is not one of them.
+
+**Open with the substance, not a label for the substance.** A thesis may be
+the first sentence of a section. Do not turn it into a reader-facing
+`Governing thesis`, `Thesis`, `Key takeaway`, `Argument map`, or `Reading
+order` heading, box title, run-in label, or table heading. This is a
+categorical structural defect on its first occurrence, not the recurring
+prose habit governed by the paragraph above. Preserve legitimate authority,
+attribution, safety, contrast, accessibility, and profile-mandated semantic
+labels.
 
 **Speak from within the tradition.** The governing voice is Catholic,
 affirmative, tradition-inhabiting, source-disciplined, and historically
@@ -361,10 +382,10 @@ guide prints: `guidance/sources.md` requires no machine ID for every sentence
 and states that stable ids do not replace intelligible citations, and the
 profile's gallery asks for the later user, work, context and exact locus
 rather than a source id. A brief that tells you to register or bind a witness
-before publishing it has named work no stage of this workflow may do — the
-library is written outside this run — and the answer is to publish what the
-brief evidences, bind what the library already holds, and say in your summary
-which registrations are outstanding. One run stopped here holding five
+before publishing it has named work you may not do — `source-registration` is
+the only stage that writes the library, and a finish run has none — and the
+answer is to publish what the brief evidences, bind what the library already
+holds, and say in your summary which registrations are outstanding. One run stopped here holding five
 audited gallery entries, complete with both texts and exact loci, for want of
 records nothing in the pipeline could have written.
 

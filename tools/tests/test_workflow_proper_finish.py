@@ -103,7 +103,7 @@ class DefinitionTests(unittest.TestCase):
             with self.subTest(field=field):
                 self.assertEqual(self.finish[field], self.full[field])
 
-    def test_retained_stage_objects_preserve_the_v21_finish_contract(self) -> None:
+    def test_retained_stage_objects_preserve_the_shared_finish_contract(self) -> None:
         original = raw_stages("proper")
         finish = raw_stages("proper-finish")
         self.assertEqual(list(finish), STAGES)
@@ -131,6 +131,23 @@ class DefinitionTests(unittest.TestCase):
             '"max_iterations": 3',
         )
         self.assertEqual(finish["content-evaluation"], expected)
+
+    def test_structural_preflight_is_shared_and_fails_to_authoring(self) -> None:
+        for workflow in (self.full, self.finish):
+            with self.subTest(workflow=workflow["id"]):
+                stages = {stage["id"]: stage for stage in workflow["stages"]}
+                preflight = stages["content-preflight"]
+                checks = [check["id"] for check in preflight["checks"]]
+                self.assertIn("structural-meta-labels", checks)
+                self.assertIn("provenance-matches-run", checks,
+                              "the version-bound check needs the live-run "
+                              "interlock in the same gate")
+                self.assertEqual(preflight["fail_transition"],
+                                 "content-revision")
+                self.assertEqual(
+                    stages["content-revision"]["revision_target"],
+                    "author-proper",
+                )
 
     def test_content_findings_are_authoring_only_and_fail_closed(self) -> None:
         stage = next(
@@ -202,7 +219,7 @@ class ProvenanceTests(unittest.TestCase):
     RUN_ID = "b" * 16
     COMMIT = "c" * 40
     PROVENANCE = (
-        rf"\AIGenerationProvenance{{proper-finish}}{{1}}"
+        rf"\AIGenerationProvenance{{proper-finish}}{{2}}"
         rf"{{{DIGEST}}}{{{RUN_ID}}}{{{COMMIT}}}{{unknown}}"
     )
 
@@ -220,7 +237,7 @@ class ProvenanceTests(unittest.TestCase):
                     "--provider", "gpt", "--document", DOC,
                     "--check", "provenance-matches-run",
                     "--run-workflow", "proper-finish",
-                    "--run-workflow-version", "1",
+                    "--run-workflow-version", "2",
                     "--run-workflow-digest", self.DIGEST,
                     "--run-id", self.RUN_ID,
                     "--run-seed-commit", self.COMMIT,
@@ -228,10 +245,7 @@ class ProvenanceTests(unittest.TestCase):
                 cwd=ROOT, capture_output=True, text=True, check=False,
             )
             self.assertEqual(result.returncode, 0, result.stderr)
-            # The "1" here is this fixture's own synthetic run, not the
-            # pipeline's version: the check echoes what the record and the run
-            # both state, and the point is that they agree.
-            self.assertIn("proper-finish v1", result.stdout)
+            self.assertIn("proper-finish v2", result.stdout)
 
     def test_generation_metadata_accepts_the_finish_workflow_id(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
@@ -256,7 +270,7 @@ class ProvenanceTests(unittest.TestCase):
             )
             record = CHECKER.audit_document(source_root, DOC)
             self.assertEqual(record.production.workflow_id, "proper-finish")
-            self.assertEqual(record.production.workflow_version, "1")
+            self.assertEqual(record.production.workflow_version, "2")
 
     def test_promised_deliverables_has_no_workflow_id_special_case(self) -> None:
         source = (ROOT / "tools" / "check-promised-deliverables").read_text(

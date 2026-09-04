@@ -35,6 +35,11 @@ always a sentence, the plainest instance in the corpus being a table column
 header. Enforcement is criteria 11 and 12 read by an evaluator that can see
 which section it is reading, and the deterministic bytes that carry those
 criteria to it are what is tested here.
+
+A later contract adds a deliberately narrower mechanical check for five exact
+rhetorical meta-labels on four structural surfaces. It does not classify
+process sentences and does not turn the illustrative phrase list into a
+detector; the evaluator still owns equivalents and every semantic judgment.
 """
 import json
 import re
@@ -563,6 +568,15 @@ class AuthorPacketTests(PacketCase):
         self.assertIn("the guide, the reading, or an evidence class",
                       self.author)
 
+    def test_the_author_audits_structural_labels_as_a_categorical_rule(self):
+        self.assertIn("Audit the reader-facing structural labels in both "
+                      "editions", self.author)
+        self.assertIn("A thesis may open directly as prose", self.author)
+        self.assertIn("One such structural meta-label is a defect even once",
+                      self.author)
+        self.assertIn("separate from the recurrence threshold for process "
+                      "prose", self.author)
+
 
 # ---------------------------------------------------------------------------
 # 3. Content revision repairs both defects, and deletes nothing
@@ -717,6 +731,22 @@ class ContentEvaluationTests(PacketCase):
                 self.assertIn(permitted, self.shared)
         self.assertIn("a finding that would delete one is wrong",
                       self.shared.lower())
+
+    def test_profile_conformance_blocks_one_structural_meta_label(self):
+        lane = flat(
+            self.packets[f"content-evaluation/{DECLARATIVE_LANE}"]
+        )
+        self.assertIn("Audit the structural labels separately from that "
+                      "recurrence judgment", lane)
+        self.assertIn("One occurrence is a blocking criterion 12 finding "
+                      "with `repair_target: \"authoring\"`", lane)
+        self.assertIn("do not wait for it to recur", lane)
+
+    def test_precedent_search_cannot_inherit_nonconforming_scaffolding(self):
+        lane = flat(self.packets["research/precedent-search"])
+        self.assertIn("repetition across prior leaves does not make it "
+                      "conforming", lane)
+        self.assertIn("never list it as a pattern worth adopting", lane)
 
 
 # ---------------------------------------------------------------------------
@@ -1144,6 +1174,18 @@ class GuidanceOwnershipTests(unittest.TestCase):
                       "the guide, the reading, or an evidence class",
                       self.editorial)
 
+    def test_editorial_separates_one_structural_label_from_prose_recurrence(
+            self):
+        self.assertIn("may open the body directly as prose", self.editorial)
+        self.assertIn("This is a categorical structural rule: one such "
+                      "meta-label is a defect", self.editorial)
+        self.assertIn("That recurrence threshold judges process prose",
+                      self.editorial)
+        for label in ("Governing thesis", "Thesis", "Key takeaway",
+                      "Argument map", "Reading order"):
+            with self.subTest(label=label):
+                self.assertIn(label, self.editorial)
+
     def test_the_profile_points_at_the_owner_and_states_only_deltas(self):
         """One owner, a bold pointer, deltas only - the house pattern."""
         self.assertIn("**The house voice is owned by "
@@ -1202,6 +1244,13 @@ class GuidanceOwnershipTests(unittest.TestCase):
         self.assertIn("the reader-facing body states its findings rather than "
                       "the editorial process behind them and speaks from "
                       "within the Catholic tradition", self.profile)
+
+    def test_the_profile_requires_direct_unlabelled_thesis_prose(self):
+        self.assertIn("thesis stated directly as prose", self.profile)
+        self.assertIn("One such structural meta-label is a defect even when "
+                      "it appears once", self.profile)
+        self.assertIn("distinct from the recurrence threshold for process "
+                      "narration", self.profile)
 
     def test_the_profile_keeps_the_secular_gallery(self):
         self.assertIn("A secular, ironic, political, or hostile afterlife is "

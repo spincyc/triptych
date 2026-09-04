@@ -471,14 +471,20 @@ class RepairOwnershipTests(RoutingCase):
             run_id, result_path=self.worker_pass(run_id, SYNTHESIS))
         visited.append(out["stage"])
         out = self.engine.advance(
+            run_id,
+            result_path=self.worker_pass(run_id, "source-registration"))
+        visited.append(out["stage"])
+        out = self.engine.advance(
             run_id, result_path=self.worker_pass(run_id, "author-proper"))
         visited.append(out["stage"])
         out = self.pass_stage(run_id, "content-preflight")
         visited.append(out["stage"])
         self.assertEqual(
-            visited, [RESEARCH, SYNTHESIS, "author-proper",
-                      "content-preflight", "content-evaluation"],
-            "the research correction path is fixed by the workflow")
+            visited, [RESEARCH, SYNTHESIS, "source-registration",
+                      "author-proper", "content-preflight",
+                      "content-evaluation"],
+            "the research correction path is fixed by the workflow, and from "
+            "v22 it passes through registration on its way back")
 
         # Test 23: the second evaluation starts clean. Nothing carries the
         # first one's findings across, and no controller composed a summary.
@@ -529,6 +535,9 @@ class RepairOwnershipTests(RoutingCase):
                 run_id, lane_results=self.research_submissions(run_id))
             self.engine.advance(
                 run_id, result_path=self.worker_pass(run_id, SYNTHESIS))
+            self.engine.advance(
+                run_id,
+                result_path=self.worker_pass(run_id, "source-registration"))
             self.engine.advance(
                 run_id, result_path=self.worker_pass(run_id, "author-proper"))
             self.pass_stage(run_id, "content-preflight")

@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-09-04"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:0737c8f661ae3ccb1aeea763fb5becf2c7ceefa737ef07bbab25daaaa302cc00"
+inventory_snapshot = "sha256:f7465cad2c2edea3719f280a0dc0a04a751dfdfc2f5389a35250552c3ec51843"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
-classification_snapshot = "sha256:e4a03dfd81742336c82c5f8f543988e1263451fe28426f6622b54be993ba813e"
+classification_snapshot = "sha256:8f03f110c31160d5fc82f0e03f1e6aef6e22128b9065953ea9f837042ce3134c"
 canonical_catalog_snapshot = "sha256:ce900b37c33e295c11e6cb35200a055317038d61cb0edf26092ec9570bf8354e"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:773da31e677cf6059335043054354e2ca8d3a6ba1274da2b31093be055f07d65"
+snapshot = "sha256:dff1a201de231155c6e6b245219f0dd5cd162b4e9505e4c14891253eedd61b3a"
 families = []
 
 [[review_units]]
@@ -469,6 +469,11 @@ review_state = "pending"
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"
 surface_snapshot = "sha256:1117b8c72b5a9c7096b0a6e8a020655695f8e1629ea075aa545faa46646334bf"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost"
+surface_snapshot = "sha256:7a6e6d58cfc565e9739ec6b10ef83f28ba770bb688671559c2c57d67591b9adb"
 review_state = "pending"
 
 [[review_units]]

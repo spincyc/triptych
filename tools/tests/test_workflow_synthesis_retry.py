@@ -47,6 +47,7 @@ from test_workflow_research_fanout import (  # noqa: E402
     workflow_json,
 )
 
+REG = "source-registration"
 SYNTHESIS = "research-synthesis"
 RESEARCH = "research"
 
@@ -114,10 +115,12 @@ class SynthesisDispositionTests(RetryCase):
         run_id = self.drive_to_synthesis()
         out = self.engine.advance(
             run_id, result_path=self.synthesis(run_id, PASS))
-        self.assertEqual(out["stage"], "author-proper")
+        self.assertEqual(out["stage"], "source-registration",
+                         "v22 registers the lanes' retrievals before the "
+                         "author binds them")
         self.assertIsNone(out["disposition"])
         self.assertEqual(self.engine.load_state(run_id)["transitions"][-1],
-                         {"from": SYNTHESIS, "to": "author-proper",
+                         {"from": SYNTHESIS, "to": "source-registration",
                           "disposition": PASS})
 
     def test_changes_required_is_accepted_and_re_enters_research(self):
@@ -257,8 +260,8 @@ class RetryLoopTests(RetryCase):
 
         out = self.engine.advance(
             run_id, result_path=self.synthesis(run_id, PASS))
-        self.assertEqual(out["stage"], "author-proper",
-                         "a satisfied retry continues to authoring")
+        self.assertEqual(out["stage"], "source-registration",
+                         "a satisfied retry continues, by way of registration")
 
         state = self.engine.load_state(run_id)
         self.assertEqual(state["stage_iterations"][RESEARCH], 2)
@@ -401,6 +404,8 @@ class RetryLoopTests(RetryCase):
                 self.assertEqual(
                     self.engine.load_state(run_id)["stage_failures"][SYNTHESIS],
                     0)
+                self.engine.advance(
+                    run_id, result_path=self.worker_pass(run_id, REG))
                 self.engine.advance(
                     run_id, result_path=self.worker_pass(run_id,
                                                          "author-proper"))
@@ -672,7 +677,7 @@ class LauncherTests(unittest.TestCase):
         stage = {s["id"]: s for s in json.loads(shown.stdout)["stages"]}[
             SYNTHESIS]
         self.assertEqual(stage["type"], "evaluator")
-        self.assertEqual(stage["pass_transition"], "author-proper")
+        self.assertEqual(stage["pass_transition"], "source-registration")
         self.assertEqual(stage["fail_transition"], RESEARCH)
         self.assertEqual(stage["max_iterations"], RETRY_LIMIT)
         self.assertEqual(stage["result_schema"],

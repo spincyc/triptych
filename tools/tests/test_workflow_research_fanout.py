@@ -103,7 +103,8 @@ PROGRAM_STAGES = {"scope-gate", "content-preflight", "mechanical-gates",
 # the artifacts, publish, wire the catalog, accept the publication.
 STAGE_ORDER = [
     "seed", "authorize-target", "scope-gate", "resolve-context",
-    "source-audit", "research", "research-synthesis", "author-proper",
+    "source-audit", "research", "research-synthesis", "source-registration",
+    "author-proper",
     "content-preflight", "content-evaluation", "content-revision",
     "build-artifacts",
     "mechanical-gates", "artifact-revision", "visual-evaluation",
@@ -333,6 +334,10 @@ class PropersCase(unittest.TestCase):
                 "claim": f"a claim from {lane}",
                 "evidence": [f"a source {lane} checked"],
                 "notes": f"what {lane} is unsure of",
+                # A lane that reached only sources the library already holds
+                # retrieved nothing, and says so. The empty list is the
+                # receipt; omitting the field is what the schema refuses.
+                "retrievals": [],
             }],
         }
         body.update(overrides)
@@ -439,6 +444,8 @@ class TopologyTests(unittest.TestCase):
         # research-synthesis is an evaluator now: passing goes on to
         # authoring, asking for more goes back to research.
         self.assertEqual(self.stages["research-synthesis"]["pass_transition"],
+                         "source-registration")
+        self.assertEqual(self.stages["source-registration"]["next"],
                          "author-proper")
         self.assertEqual(self.stages["research-synthesis"]["fail_transition"],
                          "research")
@@ -458,7 +465,7 @@ class TopologyTests(unittest.TestCase):
         self.assertEqual(schema["valid_dispositions"], [PASS, BLOCKED],
                          "a research lane either swept or could not")
         self.assertEqual(schema["finding_fields"],
-                         ["id", "claim", "evidence", "notes"])
+                         ["id", "claim", "evidence", "notes", "retrievals"])
 
     def test_the_workflow_version_matches_the_operator_manual(self):
         """A run is bound to a version, so the manual must state the real one.
@@ -636,6 +643,7 @@ class ResearchLaneTests(PropersCase):
         run_id, _ = self.advance_to("research")
         finding = {
             "id": "PAT-042", "claim": "a claim worth keeping",
+            "retrievals": [],
             "evidence": ["Ambrose, Expositio in Ps. 118 (CSEL 62)"],
             "notes": "the attribution is contested",
         }
@@ -853,7 +861,8 @@ class SynthesisBoundaryTests(PropersCase):
                          "canonical order, in its own packet")
         for finding in forwarded:
             self.assertEqual(
-                sorted(finding), ["claim", "evidence", "id", "lane", "notes"])
+                sorted(finding),
+            ["claim", "evidence", "id", "lane", "notes", "retrievals"])
         replay = self.engine.replay(run_id)
         self.assertTrue(replay["deterministic"],
                         "a forwarded join must replay from the record alone")
@@ -866,6 +875,8 @@ class SynthesisBoundaryTests(PropersCase):
             run_id, lane_results=self.lane_submissions(run_id))
         out = self.engine.advance(
             run_id, result_path=self.worker_pass(run_id, "research-synthesis"))
+        self.assertEqual(out["stage"], "source-registration")
+        out = self.pass_stage(run_id, "source-registration")
         self.assertEqual(out["stage"], "author-proper")
         packet = Path(out["packet_abs_path"]).read_text(encoding="utf-8")
         self.assertIn("PRIOR_FINDINGS: []", packet,

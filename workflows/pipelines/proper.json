@@ -1,6 +1,6 @@
 {
   "id": "proper",
-  "version": 23,
+  "version": 25,
   "description": "1962 propers synthesis production workflow",
   "default_effort": "xhigh",
   "document_argument": "proper",
@@ -188,9 +188,23 @@
         "brief"
       ],
       "result_schema": "research-synthesis-result.json",
-      "pass_transition": "author-proper",
+      "pass_transition": "source-registration",
       "fail_transition": "research",
       "max_iterations": 3
+    },
+    {
+      "id": "source-registration",
+      "type": "linear",
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "propers/source-registration.md"
+      ],
+      "result_schema": "worker-result.json",
+      "next": "author-proper"
     },
     {
       "id": "author-proper",
@@ -245,6 +259,11 @@
           "id": "unquoted-not-quoted",
           "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check unquoted-not-quoted",
           "required_result": "no source the References declare the guide does not quote may be credited with a printed quotation; the contradiction shows in neither statement alone"
+        },
+        {
+          "id": "structural-meta-labels",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check structural-meta-labels",
+          "required_result": "from proper v24 and proper-finish v2, one forbidden reader-facing rhetorical or editorial meta-label in a heading, known box title, paragraph-opening run-in label, or table heading is an authoring defect: a thesis opens as prose rather than under Governing thesis, Thesis, Key takeaway, Argument map, or Reading order. This exact structural check is deliberately narrower than the evaluator's semantic audit and is categorical rather than recurrence-based"
         },
         {
           "id": "provenance-matches-run",

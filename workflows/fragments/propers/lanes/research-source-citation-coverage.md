@@ -38,9 +38,13 @@ defect, and which one you have decides whether the run can continue.
   its work, edition, and locus are known, but `src/sources/` holds no record
   for it and the publication's `research/source-bindings.toml` binds nothing
   to it. Report it as the provenance risk it is, and say whose work it is:
-  registering a source is maintainer work that no stage of this workflow may
-  perform. Nothing here writes `src/sources/`, and a further pass through
-  these lanes cannot produce what the lanes are forbidden to write.
+  *this lane* may not register it and neither may any other research lane —
+  nothing here writes `src/sources/`. The `source-registration` stage that
+  runs after `research-synthesis` does, from the `retrievals` receipts the
+  lanes return, so a witness a lane actually retrieved and receipted is on
+  its way to the library already. A witness nobody retrieved is not: name it,
+  because the receipt is what registration is built from and a citation
+  without one reaches that stage as nothing to register.
 
 Never phrase the second as a condition of publishing. "Register and bind
 before publishing" and "publication waits on these controls" name work no

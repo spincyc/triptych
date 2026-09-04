@@ -62,6 +62,7 @@ STAGE = "content-preflight"
 TOOL = "check-content-preflight"
 ERROR = f"{TOOL} error: "
 # The check that holds the leaf against the run producing it, and the five
+# The check that holds the leaf against the run producing it, and the six
 # that read only the tree. It is kept apart because everything about how it is
 # run is different: it takes the run's own identity, the gate supplies that
 # identity from the engine, and no published leaf can satisfy it outside the
@@ -96,6 +97,14 @@ TREE_CHECKS = LEAF_CHECKS + CHRONOLOGY_CHECKS + PROSE_CHECKS
 PROBE_CHECKS = tuple(check for check in TREE_CHECKS
                      if check not in PROBE_ONLY_ABSENT)
 CHECKS = LEAF_CHECKS + (RUN_CHECK,) + CHRONOLOGY_CHECKS + PROSE_CHECKS
+# This check is also tree-only and version-bound. It is named separately
+# because it binds at two production entry points: `proper` v24 and
+# `proper-finish` v2.
+STRUCTURAL_CHECKS = ("structural-meta-labels",)
+TREE_CHECKS = LEAF_CHECKS + STRUCTURAL_CHECKS + CHRONOLOGY_CHECKS
+PROBE_CHECKS = tuple(check for check in TREE_CHECKS
+                     if check not in PROBE_ONLY_ABSENT)
+CHECKS = LEAF_CHECKS + STRUCTURAL_CHECKS + (RUN_CHECK,) + CHRONOLOGY_CHECKS
 # The five names a gate command may substitute from the run itself, and the
 # option each is handed to the tool as.
 RUN_PLACEHOLDERS = {
@@ -203,6 +212,9 @@ class TopologyTests(unittest.TestCase):
 
     def test_every_check_is_one_command_over_the_run_s_own_arguments(self):
         commands = check_commands()
+
+        self.assertEqual(list(commands), list(CHECKS),
+                         "the ten checks the design names, in order")
         registry = json.loads(
             (ROOT / "tmt.json").read_text(encoding="utf-8"))["tools"]
         for check_id, command in commands.items():
@@ -410,6 +422,13 @@ repository's source library as \\texttt{{{identifier or self.GOOD_ID}}}.
 English printed in this guide.}}
 {extra}\\end{{itemize}}
 """, encoding="utf-8")
+
+    def write_production(self, workflow="proper", version=24):
+        (self.leaf / "generation-metadata.tex").write_text(
+            f"\\AIGenerationProvenance{{{workflow}}}{{{version}}}"
+            "{digest}{run}{commit}{unknown}\n",
+            encoding="utf-8",
+        )
 
     def write_manifest(self, relation_keys):
         (self.leaf / "proper-components.toml").write_text(f"""schema = 1
@@ -643,6 +662,88 @@ evidence = ["source-grounded-synthesis"]
         result = self.probe("relation-coverage")
         self.assertEqual(result.returncode, 1)
         self.assertIn("no proper-components.toml", result.stderr)
+
+    def test_current_proper_shape_is_refused_as_a_box_title(self):
+        """The Proper 55 regression shape, copied into a synthetic leaf."""
+        self.write_production()
+        (self.leaf / "main.tex").write_text(
+            "\\sectionguard\n"
+            "\\section*{The Propers: Themes and Movement}\n"
+            "\\begin{studybox}{Governing thesis}\n"
+            "The Introit gathers exile into the Church's petition.\n"
+            "\\end{studybox}\n",
+            encoding="utf-8",
+        )
+        result = self.probe("structural-meta-labels")
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("'governing thesis'", result.stderr)
+        self.assertIn("studybox box title", result.stderr)
+
+    def test_a_direct_unlabelled_thesis_is_accepted(self):
+        self.write_production()
+        (self.leaf / "main.tex").write_text(
+            "\\section*{The Propers: Themes and Movement}\n"
+            "The Introit gathers exile into the Church's petition, and the "
+            "Gospel answers it with restored life.\n\n"
+            "Augustine's thesis about pilgrimage supplies the next step; "
+            "the phrase argument map occurs here as ordinary prose.\n",
+            encoding="utf-8",
+        )
+        result = self.probe("structural-meta-labels")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("with no forbidden structural meta-label", result.stdout)
+
+    def test_each_narrow_structural_surface_is_refused(self):
+        self.write_production()
+        fixtures = {
+            "heading": "\\subsection*{Thesis}\nThe Introit opens.\n",
+            "run-in": "\\textbf{Key takeaway.} The Introit opens.\n",
+            "plain run-in": "Reading order: Introit, Collect, Gospel.\n",
+            "table heading": (
+                "\\begin{longtable}{ll}\n\\toprule\n"
+                "\\textbf{Argument map} & \\textbf{Evidence}\\\\\n"
+                "\\midrule\nIntroit & Psalm\\\\\n\\end{longtable}\n"
+            ),
+            "plain table heading": (
+                "\\begin{tabular}{ll}\n"
+                "Reading order & Evidence\\\\\n"
+                "Introit & Psalm\\\\\n\\end{tabular}\n"
+            ),
+            "house table heading": (
+                "\\begin{threestable}{Proper}{Reading order}{Evidence}\n"
+                "Introit & first & Psalm\\\\\n\\end{threestable}\n"
+            ),
+        }
+        for surface, source in fixtures.items():
+            with self.subTest(surface=surface):
+                (self.leaf / "main.tex").write_text(source, encoding="utf-8")
+                result = self.probe("structural-meta-labels")
+                self.assertEqual(result.returncode, 1, result.stderr)
+                self.assertIn("forbidden reader-facing structural meta-label",
+                              result.stderr)
+
+    def test_the_structural_contract_binds_at_both_entry_points(self):
+        (self.leaf / "main.tex").write_text(
+            "\\section*{Thesis}\nThe Introit opens.\n", encoding="utf-8"
+        )
+        for workflow, version, expected in (
+                ("proper", 23, 0), ("proper", 24, 1),
+                ("proper-finish", 1, 0), ("proper-finish", 2, 1)):
+            with self.subTest(workflow=workflow, version=version):
+                self.write_production(workflow, version)
+                self.assertEqual(
+                    self.probe("structural-meta-labels").returncode, expected
+                )
+
+    def test_malformed_structural_tex_fails_closed_when_bound(self):
+        self.write_production()
+        (self.leaf / "main.tex").write_text(
+            "\\begin{studybox}{Governing thesis\nThe Introit opens.\n",
+            encoding="utf-8",
+        )
+        result = self.probe("structural-meta-labels")
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("could not parse a structural surface", result.stderr)
 
 
 class ProseCheckTests(unittest.TestCase):
@@ -1049,6 +1150,10 @@ class DrivenRunTests(RoutingCase):
             self.assertEqual(out["stage"], "research-synthesis")
         out = self.engine.advance(
             run_id, result_path=self.worker_pass(run_id, "research-synthesis"))
+        self.assertEqual(out["stage"], "source-registration")
+        out = self.engine.advance(
+            run_id,
+            result_path=self.worker_pass(run_id, "source-registration"))
         self.assertEqual(out["stage"], "author-proper")
         out = self.engine.advance(
             run_id, result_path=self.worker_pass(run_id, "author-proper"))
@@ -1076,9 +1181,9 @@ class DrivenRunTests(RoutingCase):
         self.engine._run_gate = run_gate
 
     def test_the_gate_runs_for_real_and_passes_the_published_leaf(self):
-        """The seven checks the tree can answer, over a real published leaf.
+        """The nine checks the tree can answer, over a real published leaf.
 
-        The eighth is filtered out by the harness, for the reason
+        The tenth is filtered out by the harness, for the reason
         `PropersCase` gives: these runs submit a synthetic `author-proper`
         result, so no author writes the provenance record, and the leaf they
         drive over states the run that really did write it. What the gate does

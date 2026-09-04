@@ -741,6 +741,7 @@ class WorkflowEngine:
             "stage_failures": {},
             "stage_repeats": {},
             "stage_blocking_ids": {},
+            "stage_blocking_targets": {},
             "findings_forwarded_by": {},
             "findings_forwarded_ids": {},
             "unrepaired_for": {},
@@ -1204,7 +1205,7 @@ class WorkflowEngine:
         # this one only has to agree with the other forever.
         audit_state: dict[str, Any] = {
             "stage_failures": {}, "stage_repeats": {},
-            "stage_blocking_ids": {},
+            "stage_blocking_ids": {}, "stage_blocking_targets": {},
             "findings_forwarded_by": {}, "findings_forwarded_ids": {},
             "unrepaired_for": {}, "unrepaired_notes": {}, "escalations": [],
         }
@@ -2652,6 +2653,7 @@ class WorkflowEngine:
         state.setdefault("stage_failures", {})[stage["id"]] = 0
         state.setdefault("stage_repeats", {})[stage["id"]] = 0
         state.setdefault("stage_blocking_ids", {}).pop(stage["id"], None)
+        state.setdefault("stage_blocking_targets", {}).pop(stage["id"], None)
         state.setdefault("unrepaired_for", {}).pop(stage["id"], None)
         state.setdefault("unrepaired_notes", {}).pop(stage["id"], None)
 
@@ -2962,26 +2964,60 @@ class WorkflowEngine:
         current = _blocking_ids(result)
         standing[stage_id] = current
 
+        # The owner each standing id named last time, so that an id which came
+        # back naming a different one can be told from an id that simply came
+        # back. Kept beside the id list rather than folded into it: the list is
+        # what the block message prints and what older runs recorded, and a
+        # finding with no `repair_target` at all -- every gate result, every
+        # evaluator that does not route by owner -- must keep charging exactly
+        # as it did, which it does because both sides are then None.
+        owners = state.setdefault("stage_blocking_targets", {})
+        previous_owners = owners.get(stage_id) or {}
+        current_owners = _blocking_targets(result)
+        owners[stage_id] = current_owners
+
         failures = state.setdefault("stage_failures", {})
         count = failures.get(stage_id, 0) + 1
         failures[stage_id] = count
 
-        # What charges the repeat budget is a repair that was attempted and
-        # reported failed, by the reviser this stage's findings were routed to.
+        # Two rules, from two runs that each blocked while converging, and
+        # they compose.
         #
-        # Where no such report exists the old comparison of finding ids is
-        # still the only signal there is, and it stays. Removing it everywhere
-        # was wrong in the other direction: a stage whose repairs are invisible
-        # would then be bounded only by `max_total_iterations`, silently
-        # doubling every limit an operator had declared. So ground truth
-        # displaces the heuristic exactly where it exists, and nowhere else --
-        # and for the case that prompted all this, `content-revision` reports,
-        # so `content-evaluation` no longer reads ids at all.
+        # What charges the budget is a repair that was attempted and reported
+        # failed, by the reviser this stage's findings were routed to. Where
+        # no such report exists the comparison of finding ids is still the only
+        # signal there is, and it stays: removing it everywhere would bound
+        # such a stage by `max_total_iterations` alone and silently double
+        # every limit an operator declared. Ground truth displaces the
+        # heuristic exactly where it exists and nowhere else, and for the case
+        # that prompted it -- `content-evaluation` routing to
+        # `content-revision`, which reports -- ids are not read at all.
+        #
+        # And where ids are read, a repeat is the same defect coming back to
+        # the *same owner*. An id that returns naming a different owner is the
+        # second phase of a repair that is working: the first owner did its
+        # half and the defect moved to whoever owns the rest. Run
+        # ce4ecd514b64d2f9 died on exactly that -- CON-CIT-007 went to
+        # `research`, research recorded the evidence, and the finding came back
+        # as `authoring` because the leaf had still not cited it. Both sides of
+        # that comparison are None for a finding with no owner, so a gate and
+        # an evaluator that does not route by owner charge exactly as before.
+        #
+        # A gate keeps the comparison whatever a reviser reports. What makes an
+        # id untrustworthy is that an AI lane mints it and cannot know what an
+        # earlier iteration used; a gate's ids are its own check ids, so the
+        # same check refusing again is the tool re-running, which is a
+        # measurement and not a guess.
         unrepaired_map = state.get("unrepaired_for", {})
         reported = stage_id in unrepaired_map and stage["type"] != GATE
         unrepaired = sorted(unrepaired_map.get(stage_id) or [])
         notes = state.get("unrepaired_notes", {}).get(stage_id) or {}
-        repeated = sorted(set(current) & set(previous or []))
+        repeated = sorted(
+            finding_id
+            for finding_id in set(current) & set(previous or [])
+            if current_owners.get(finding_id)
+            == previous_owners.get(finding_id)
+        )
         looping = unrepaired if reported else repeated
         repeats = state.setdefault("stage_repeats", {})
         spent = repeats.get(stage_id, 0)
@@ -4032,6 +4068,71 @@ def _blocking_ids(result: dict[str, Any]) -> list[str]:
     })
 
 
+def _validate_retrievals(
+    schema: dict[str, Any], finding: dict[str, Any], index: int
+) -> None:
+    """Every retrieval receipt names the bytes, not the source.
+
+    A finding's `evidence` is prose a later reader checks by hand. A receipt is
+    what a machine registers: the exact URL fetched, the digest of what came
+    back, its size, and where the lane left it. The library cannot be written
+    from prose -- `guidance/sources.md` requires an artifact record to carry
+    the bytes' own identity -- and a receipt reconstructed after the lane has
+    exited is a guess at a source URL, which is the one thing that must never
+    be guessed.
+
+    An empty list is a legitimate receipt: a lane that swept and found nothing,
+    or that read only sources the library already registers, retrieved nothing.
+    Absence of the field is not, because it cannot be told from either.
+    """
+    fields = schema.get("retrieval_fields")
+    if not fields or "retrievals" not in schema.get("finding_fields", []):
+        return
+    receipts = finding.get("retrievals")
+    if not isinstance(receipts, list):
+        raise WorkflowError(
+            f"findings[{index}].retrievals must be a list; a finding that "
+            f"retrieved nothing carries an empty one"
+        )
+    for position, receipt in enumerate(receipts):
+        if not isinstance(receipt, dict):
+            raise WorkflowError(
+                f"findings[{index}].retrievals[{position}] must be an object"
+            )
+        for field in fields:
+            if field not in receipt:
+                raise WorkflowError(
+                    f"findings[{index}].retrievals[{position}] missing "
+                    f"required field: {field}"
+                )
+        digest = receipt.get("sha256")
+        if not _is_sha256(digest):
+            raise WorkflowError(
+                f"findings[{index}].retrievals[{position}].sha256 must be a "
+                f"sha256 digest of the bytes actually retrieved"
+            )
+
+
+def _blocking_targets(result: dict[str, Any]) -> dict[str, str]:
+    """The repair owner each blocking finding named, by finding id.
+
+    Only the ids `_blocking_ids` reports, so the two always describe the same
+    findings. A blocking finding with no `repair_target` -- which is every one
+    an evaluator that does not route by owner raises -- is absent here rather
+    than present with a placeholder, so that comparing two runs of such a stage
+    compares None with None and charges exactly as it always did.
+    """
+    targets: dict[str, str] = {}
+    for finding in result.get("findings", []) or []:
+        if finding.get("severity") != "blocking":
+            continue
+        target = finding.get(REPAIR_TARGET)
+        if target is None:
+            continue
+        targets[str(finding.get("id", "(unidentified)"))] = str(target)
+    return targets
+
+
 def _repair_route(
     stage: dict[str, Any], result: dict[str, Any]
 ) -> dict[str, Any] | None:
@@ -4191,6 +4292,7 @@ def _validate_result(
                     raise WorkflowError(
                         f"findings[{i}] missing required field: {field}"
                     )
+            _validate_retrievals(schema, finding, i)
             if finding.get("severity") == "blocking":
                 for field in blocking_fields:
                     if field not in finding:

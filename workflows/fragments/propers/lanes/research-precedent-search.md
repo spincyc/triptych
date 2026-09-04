@@ -44,6 +44,16 @@ This is research into precedent, not authority to copy prior prose. Name in
 `evidence` what a prior guide did and where; leave to a later worker what
 this proper will do with it.
 
+The same boundary governs scaffolding. A structure is reusable only when the
+current editorial guidance and profile permit it; repetition across prior
+leaves does not make it conforming. Separate a precedent's substantive
+movement—the claims, relations, evidence sequence, or useful grouping—from
+its reader-facing rhetorical wrappers. Do not recommend or carry forward a
+`Governing thesis`, `Thesis`, `Key takeaway`, `Argument map`, `Reading order`,
+or equivalent heading, box title, run-in label, or table heading merely
+because earlier leaves use it. You may report such a scaffold as an observed
+nonconforming precedent, but never list it as a pattern worth adopting.
+
 ## Result
 
 Return a research result for this lane, per the shared contract above,

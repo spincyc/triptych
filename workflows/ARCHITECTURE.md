@@ -268,16 +268,14 @@ A run records the digest at seed time, in both the manifest and the state, and
 every `advance` and `replay` recomputes it. If the workflow source has changed
 since the run was seeded, the run fails closed rather than continuing under
 guidance it never started with. A changed workflow means a new run. The
-`proper` workflow is at version 23 and `proper-finish` at version 2 — **the
-numbers this change requires, not the numbers in the files: the bump to both
-pipelines is outstanding, and until it lands a changed definition is running
-under a version that already names something else.** Version 23 declares
-`document_root` on both pipelines so the packet header can carry
-`DOCUMENT_ROOT`, gives the five bounded-revision stages `reports_repairs` and
-`content-evaluation` `records_standing_findings`, and adds the `house-voice`
-and `proposal-fields` prose screens to `content-preflight`, taking it to
-eleven checks; `workflows/OPERATOR.md` states the rest. Before it: version 10
-gave `content-evaluation` a
+`proper` workflow is at version 25 and `proper-finish` at version 3. Version
+25 moves the repeat budget onto the reviser's own report where one exists,
+declares `document_root` on both pipelines so the packet header can carry
+`DOCUMENT_ROOT` and `REPAIR_TARGETS`, gives the five bounded-revision stages
+`reports_repairs` and `content-evaluation` `records_standing_findings`, and
+adds the `house-voice` and `proposal-fields` prose screens to
+`content-preflight`, taking it to twelve checks; `workflows/OPERATOR.md`
+states the rest. Before it: version 10 gave `content-evaluation` a
 third repair owner and inserted the `content-preflight` gate between
 `author-proper` and `content-evaluation`, version 11 made the iteration
 budget charge repetition rather than failure, carried a blocking finding to its
@@ -341,6 +339,31 @@ made possible by the retrieved evidence: the fourth evaluation selected
 `authoring`, but the three-repeat ceiling stopped the transition to
 `content-revision`. A run seeded against version 21 or earlier cannot continue
 under the changed budget and is seeded again.
+
+Version 23 gave the research lanes a retrieval receipt -- url, digest, size,
+media type, path, date and measured extent on every finding -- and added the
+`source-registration` stage between `research-synthesis` and `author-proper`,
+the only stage of a run that writes `src/sources/`. It also stopped the budget
+charging a standing id that comes back naming a *different* repair owner: v22
+bought that run its fourth allowance, and this stops the second phase of a
+two-owner repair spending an allowance at all. The same id to the same owner is
+charged exactly as before. A run seeded against version 22 or earlier fails
+closed and is seeded again.
+
+Version 24 makes reader-facing rhetorical meta-labels a categorical structural
+contract instead of leaving them inside the recurrence judgment for process
+prose. The author audits both editions; the profile-conformance lane treats one
+forbidden heading, box title, run-in label, or table heading as blocking
+authoring work; precedent search cannot promote an inherited scaffold into a
+current recommendation; and `content-preflight` mechanically refuses the five
+exact labels the guidance names only on those structural surfaces. The check is
+bound from `proper` v24 and from the parallel `proper-finish` v2 contract, with
+`provenance-matches-run` in both gates so a live run cannot escape it by
+understating the leaf's version. Earlier published leaves remain valid until a
+substantive revision binds them to one of those versions. A run seeded against
+`proper` version 23 or earlier, or `proper-finish` version 1, fails closed and
+is seeded again.
+
 `workflows/OPERATOR.md` carries the version history in full.
 
 ### Iteration budgets
@@ -733,6 +756,16 @@ copy has drifted from what the corpus answers now.
 the corpus does not assert at the verses that element appoints, and refuses a
 date cell holding any figure that is not inside such a claim, or an appointed
 Scripture with no cell at all.
+
+Since `proper` version 24 and `proper-finish` version 2 there is a tenth check.
+`structural-meta-labels` inspects section headings, the titles of known boxes,
+paragraph-opening run-in labels, and table headings for the exact rhetorical
+meta-labels the editorial guidance names. It is not a blanket word scan: the
+same words in ordinary prose are outside its scope, and equivalent scaffolding
+still requires the author's and evaluator's semantic audit. One exact label on
+one structural surface fails. Like chronology, the check is version-bound for
+historical-leaf compatibility and relies on `provenance-matches-run` in the
+same gate to make the live contract fail closed.
 
 The second half is the one that catches recall, and it needs the macro
 discipline because a well-formed year is indistinguishable on the page from a

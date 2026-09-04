@@ -810,14 +810,16 @@ research-synthesis
   ├─ CHANGES_REQUIRED → research → the seven lanes resweep → resynthesize
   ├─ BLOCKED → run ends
   ├─ PASS ↓
+source-registration
+  ↓ the lanes' retrievals become records in src/sources/
 author-proper
   ↓
 content-preflight (programmatic)
   ├─ FAIL → content-revision → reevaluate (never research: these are leaf defects)
   ├─ PASS ↓
 content-evaluation
-  ├─ CHANGES_REQUIRED, a research defect → research → synthesis → author → reevaluate
-  ├─ CHANGES_REQUIRED, a brief defect → research-synthesis → author → reevaluate
+  ├─ CHANGES_REQUIRED, a research defect → research → synthesis → registration → author → reevaluate
+  ├─ CHANGES_REQUIRED, a brief defect → research-synthesis → registration → author → reevaluate
   ├─ CHANGES_REQUIRED, authoring defects only → content-revision → reevaluate
   ├─ PASS ↓
 build-artifacts
@@ -890,15 +892,17 @@ page rasters produced by `tools/tpt pdf-review`.
 Each stage declares how it is run:
 
 - `single`, one fresh subagent: `seed`, `authorize-target`,
-  `resolve-context`, `source-audit`, `research-synthesis`, `author-proper`,
+  `resolve-context`, `source-audit`, `research-synthesis`,
+  `source-registration`, `author-proper`,
   `content-revision`, `build-artifacts`, `artifact-revision`,
   `visual-revision`, `publish-artifacts`, `generate-web`, `web-evaluation`,
   `web-revision`, `install-publication`, `publication-revision`. Every
   authoring and revision stage mutates the canonical leaf, `source-audit` may
-  retrieve and write the provenance files, and `research-synthesis` is the sole
+  retrieve and write the provenance files, `research-synthesis` is the sole
   owner of `research/scope.md` and the only place the seven lanes' findings are
-  reconciled, so each of them owns an authoritative artifact that exactly one
-  agent may hold. The publication stages own authoritative artifacts too — the
+  reconciled, and `source-registration` is the sole writer of `src/sources/`,
+  so each of them owns an authoritative artifact that exactly one agent may
+  hold. The publication stages own authoritative artifacts too — the
   scope entry, the installed PDFs, the generated and the tracked web edition,
   the release records, and the catalog cell — one owner each.
   `web-evaluation` is `single` rather than a fan-out because there is one
@@ -984,13 +988,27 @@ whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
-The `proper` workflow is at version 23. The `proper-finish` workflow is at
-version 2.
-**Neither number is in the file yet: this entry is written against the versions
-this change requires, and the bump to `workflows/pipelines/proper.json` and
-`workflows/pipelines/proper-finish.json` is outstanding.** Until it lands, a
-changed definition is running under a version that already names something
-else, which is the one thing the digest rule exists to prevent.
+The `proper` workflow is at version 25. The `proper-finish` workflow is at
+version 3.
+
+Version 25 moves the iteration budget onto the reviser's own report. A stage
+declaring `reports_repairs` returns `finding_dispositions`, one entry per
+blocking finding it was given; where such a report exists it displaces the
+comparison of finding ids, and where none does -- a fan-out `research`
+re-entry has no author to speak for it -- the comparison stays, now refined
+by version 24's rule that an id returning under a different owner is
+progress. A gate keeps the comparison whatever a reviser says, because a
+gate's ids are its own check ids and a repeat there is the tool re-running.
+
+It also declares `document_root` on both pipelines, so the packet header
+carries `DOCUMENT_ROOT` and `REPAIR_TARGETS`; gives `content-evaluation`
+`records_standing_findings`, so an evaluation's blocking findings and its
+lanes' observations reach a tracked file instead of only ignored output; and
+adds the `house-voice` and `proposal-fields` prose screens to
+`content-preflight`, taking it to twelve checks.
+
+A run seeded against `proper` 24 or `proper-finish` 2 fails closed and is
+seeded again.
 
 Version 23 is what runs `ca03f1b357e7ec25` and `90dcdddcb6780e60` asked for,
 and it changes the content loop in five places.
@@ -1044,6 +1062,59 @@ against `proper` version 22 or `proper-finish` version 1 fails closed and is
 seeded again.
 
 The `proper` workflow was at version 22. Version 22 gives
+
+The `proper` workflow is at version 24. Version 24 closes the structural-label
+gap in the reader-first and declarative-discipline contracts. A thesis may
+open a thematic section directly as prose, but a reader-facing `Governing
+thesis`, `Thesis`, `Key takeaway`, `Argument map`, or `Reading order` heading,
+box title, run-in label, or table heading is editorial scaffolding rather than
+substance. One is a categorical defect; it does not inherit the recurrence
+threshold that distinguishes a process-prose habit from a necessary local
+qualification.
+
+The author now audits every structural label in both editions, the
+profile-conformance lane routes one forbidden structural label to authoring as
+a blocking finding, and precedent search may reuse a prior leaf's substantive
+movement only after current guidance permits its scaffold. The tenth
+`content-preflight` check, `structural-meta-labels`, enforces the five named
+forms on structural surfaces without treating their appearance in ordinary
+prose as a hit. The contract binds from `proper` v24 and `proper-finish` v2;
+both gates also run `provenance-matches-run`, so a current run cannot escape
+the check by carrying an older version in the leaf. Historical publications
+remain out of scope until substantive revision. A run seeded against `proper`
+version 23 or earlier or `proper-finish` version 1 fails closed; seed it again.
+
+The `proper-finish` workflow is at version 3. Version 1 remains the historical
+authoring-to-publication rescue contract; version 2 changes no topology or
+repair ownership, but adopts the same authoring fragment, structural preflight,
+profile evaluator, and fail-closed version interlock as `proper` v24.
+
+The `proper` workflow was at version 23. Version 23 did two things, and both
+were about what a run leaves behind rather than how far it gets.
+
+The first was the source library. Research lanes retrieved whole works and left
+them in scratch with nothing recording where they came from, so a source the
+run had read in full could not afterwards be registered: the bytes survived and
+the URL did not. Every research finding now carries a `retrievals` list — url,
+sha256, byte size, media type, path, date and measured extent — and a new
+`source-registration` stage runs between `research-synthesis` and
+`author-proper`, reading those receipts and writing `src/sources/`. It is the
+only stage of a run that may write the library, and it exists so that the
+author binds records that are there rather than reporting registrations nobody
+in the run could perform.
+
+The second was the same budget version 22 widened, read from the other side.
+`CON-CIT-007` was raised naming `research`, research recorded the evidence it
+asked for, and the next evaluation raised the same id naming `authoring`
+because the leaf had still not cited it. Version 22 bought that run a fourth
+allowance so the route could be taken. Version 23 stops the charge being made
+at all: a standing id that comes back naming a *different* repair owner is not
+a repeat, because the defect moved rather than survived. The same id to the
+same owner still is, so an evaluation that keeps failing still blocks on
+exactly the failure it always did. A run seeded against version 22 or earlier
+fails closed; seed it again.
+
+The `proper` workflow was at version 22. Version 22 gave
 `content-evaluation` four repeat-budget slots for its three ordered repair
 owners. The first failed evaluation spends one slot before any repair owner has
 run, so the former ceiling of three could stop a defect before its third owner
@@ -1058,7 +1129,8 @@ to emit the authoring packet rather than `BLOCKED`. A run seeded against
 version 21 or earlier fails closed; seed it again.
 
 The `proper` workflow was at version 21. Version 21 closes the citation-handoff
-gap proved by run `dae51f4a7715c7f9`. The cultural-afterlife lane had gathered
+
+Version 21 closes the citation-handoffgap proved by run `dae51f4a7715c7f9`. The cultural-afterlife lane had gathered
 exact titles, institutions, stable URLs and loci for the retained online
 witnesses. Synthesis reduced those records to generic labels in the immutable
 brief while directing the author to carry stable links "from this brief". The
@@ -1074,7 +1146,8 @@ content evaluation must find every requested value in the brief before naming
 `authoring`, and must split a mixed evidence-and-leaf defect by repair owner.
 The regression checks both the source fragments and the packets workers
 receive. A run seeded against version 20 or earlier fails closed; seed it
-again. A terminal v20 run is evidence, not a resumable v21 run.
+again. A terminal v20 run is evidence, not a resumable v21 run, and a terminal
+v21 run is evidence, not a resumable v22 one.
 
 The `proper` workflow was at version 20. Version 20 closes the fresh-leaf gap in
 `resolve-context`. That stage runs before `source-audit`, which is ordinarily
@@ -1499,17 +1572,20 @@ version is bound to that source and fails closed rather than continuing under
 fragments it never started with; seed it again.
 
 `content-preflight` is a gate like any other: advance it with
-`tpt proper <id> advance <run-id> --run-gate <doc>`. Each of its eleven checks
+`tpt proper <id> advance <run-id> --run-gate <doc>`. Each of its twelve checks
 is one invocation of `tools/tpt check-content-preflight --check <name>`, judged
 by exit code, and the tool prints what it counted on a pass and names the
-entry, identifier, relation, quotation, restricted reproduction, provenance
-mismatch, chronology defect, house-voice site or missing proposal field it
-refused on a failure. It was four until version 11 added
-`restricted-not-reproduced` and version 16 added `provenance-matches-run`.
-All but one read only the repository and can be run over a published leaf at
-any time; `provenance-matches-run` also takes the run's identity, which the
-gate supplies from the engine, so running the tool with no `--check` runs the
-rest and never passes that one for want of an answer.
+entry, identifier, relation, quotation, restricted reproduction, invalid
+binding, provenance or chronology mismatch, structural meta-label, house-voice
+site, or missing proposal field it refused on a failure. It was four until
+version 11 added `restricted-not-reproduced`, version 16 added
+`provenance-matches-run`, version 17 added the two chronology checks, version
+18 added `bindings-valid`, version 24 added `structural-meta-labels`, and
+version 25 added `house-voice` and `proposal-fields`. Eleven of the twelve read
+only the repository and can be run over a published leaf at any time;
+`provenance-matches-run` also takes the run's identity, which the gate supplies
+from the engine, so running the tool with no `--check` runs the eleven and
+never passes the twelfth for want of an answer.
 
 The two most recent are prose screens, and they are here rather than in the
 evaluation behind them because the evaluation demonstrably cannot afford them.
@@ -1529,7 +1605,7 @@ been found compliant, only found to carry none of the forms it knows. It also
 refuses most leaves in the corpus today, which is a finding about the corpus
 rather than a settled verdict — see `PROJECT-WORK.md`. What either reports is
 a sentence to rewrite and never a sentence to delete: every difference,
-negative result, bound and attribution stands after the repair. It
+negative result, bound and attribution stands after the repair. It It
 exists so the five-lane evaluation behind it spends its budget on judgment
 rather than on things grep can settle; it does not replace any of that
 judgment. A failed check sends the run to `content-revision` with the check's
