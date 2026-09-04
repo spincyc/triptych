@@ -14082,7 +14082,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-4.json` | `7f1956b102a7b765dc36210f5557ad25f07d075c8edcc87a3acc85cd3a03473d` |
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-5.json` | `61abb15daa555ada778b2eeb6137cbc6114102586c9cc2a27d5e4863521de0e3` |
 | `src/web/data/structure/catena/text/passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.homilia-6.json` | `54408d9f5e1c8b684850b05976d6e3ac9ee3b88b6194c37c7e1cf83d52256d28` |
-| `src/web/data/structure/documents/corpus.json` | `dcbce7e24c44a629e7961b2b662c5d0ba1935c809fe3d0e78ea5bb1d0ccfb643` |
+| `src/web/data/structure/documents/corpus.json` | `d3d0410a4a76eaeb87d7a0c740382d3669d7adb8f0cf616bb25d03730b2532be` |
 | `src/web/data/structure/ordinary/index.json` | `b248eefcc0b073e43dd4c0d168007cd8d09fc5f28bd2fc633d98e2f4ba9e4846` |
 | `src/web/data/structure/ordinary/postconciliar.json` | `7714e4f1c328e4adad95afb3387e81b0cc44731977bfe5866a2ae2a2a597c2b6` |
 | `src/web/data/structure/ordinary/roman-1962.json` | `2c707b7d0ac3b61602533a57a26989042af43358e1d1dc7ca58aee286b827341` |
@@ -19788,7 +19788,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/catholic-church/missale-romanum/1604-vatican-typica-1604.json` | `4547cf0afe95d8296fad55bb0be008eaa57cf709585308216360c0906d726265` |
 | `src/web/data/structure/sources/editions/catholic-church/missale-romanum/1862-pustet-ratisbon-1862.json` | `7cf3951a6cd40b603b2b793532bb3ed249a5f0dbc67de3704c735d1589718a43` |
 | `src/web/data/structure/sources/editions/catholic-church/missale-romanum/1920-vatican-typica-1920.json` | `a7fc47516338793f660690321d2a29737c165d6273c024cf4785591f9fbfbd19` |
-| `src/web/data/structure/sources/editions/catholic-church/missale-romanum/1922-1922-tours-mame-editio-quarta-iuxta-typicam.json` | `3772d27daaaf1cc63586f36027b2f094681d004dd1f361ec113ce64d82042d97` |
+| `src/web/data/structure/sources/editions/catholic-church/missale-romanum/1922-1922-tours-mame-editio-quarta-iuxta-typicam.json` | `a9800b37c33937b40e8bab16565d50e33f375f159662107d21558d79404551c9` |
 | `src/web/data/structure/sources/editions/catholic-church/missale-romanum/1942-unidentified-pre-1955-witness-ia-1947.json` | `786b2e8e49d706fcf413e75d42d33bc4f446b3fef47c2a09b712e986d2b3be32` |
 | `src/web/data/structure/sources/editions/catholic-church/missale-romanum/1962-benziger-iuxta-typicam-1962.json` | `bbb24b1f1fd9b5ab014d3d990a0dcce789e0cdb3ce2468a6c6137f9a8239b1a7` |
 | `src/web/data/structure/sources/editions/catholic-church/missale-romanum/1962-vatican-typica-1962.json` | `6bde91a1d7a245e99bc0c0973877017a5f86acbf06c65d0715e02b30aea3ecbe` |
@@ -20374,7 +20374,7 @@ release attachment, announcement, or promotion.
 | `src/web/data/structure/sources/editions/william-williams/guide-me-o-thou-great-jehovah/2026-hymnal-of-praise-1913-hymnary-web-2026-07-29.json` | `0c387edabb7fcde38b30186316a98931754e5184bea07b1c3f437c3192f8e195` |
 | `src/web/data/structure/sources/editions/world-health-organization/icd-11-clinical-descriptions-and-diagnostic-requirements/2024-english-who-2024.json` | `97b5a08dc7e0a83a6c4da5990e21e8fcc2e4356d569903f09b8b97d34f1672aa` |
 | `src/web/data/structure/sources/editions/world-intellectual-property-organization/wipo-lex-berne-contracting-parties/2026-web-2026-08-01.json` | `ffaf08c0f47cd6ab1d4761546a9e290ce69420b185c891d67395fcc17d5d9d5e` |
-| `src/web/data/structure/sources/index.json` | `a3bea10079995105e85aeb1b4a7f287ecc7789464d29cf7a5a86d5945360aaf5` |
+| `src/web/data/structure/sources/index.json` | `92326c7e10d2763966e58b5b360362cb1caf346b6201a7db00693f3539440578` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.1.json` | `bf80df77e273500e8769a0a0613d4bb907a736fafce970a0e62804eda1219c58` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.10.json` | `14700390dab93606af7e6e934d457e2ed524f13977f64bb6ede3f04daea4521d` |
 | `src/web/data/structure/sources/text/passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.100.json` | `c9b31161f4c7f56ea4c89bfaa550e47bc6327f5b8db9f685dc5bf2a4d73d1de2` |
@@ -23494,7 +23494,7 @@ release attachment, announcement, or promotion.
 | `web/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.md` | `e23b51a6dcde80f49d53317762fd79284d52e4d87d93c24b1bd624056a6cc72c` |
 | `web/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.md` | `3c1c238aa85baafb41ead62e17e3b0b81ef8e3394cfe295b8a7efe895c6f0cd2` |
 | `web/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.md` | `7882b9cba8b4a4bf56030fae3b1455fd67139deb9fa93aa1b7189ec585acf634` |
-| `web/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost.md` | `bd9b89b40585328138ef99d943d771afc1fac1e871465e966e38c7f21cf4d9f1` |
+| `web/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost.md` | `d68d26ecb14f3c2192fcfab52ba54c012a5cf1b6c7b013a35329c06661715453` |
 | `web/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.md` | `e671fe4ac6ae9a0f63c3780c26413ca6249e6ba9fc07fdc04f20da0247cf1a76` |
 | `web/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.md` | `9bf454cbd3fffc4a9bdde169605db7a3a2dd4427930a6e92f4604ddb4b6b4dfa` |
 | `web/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.md` | `4240b54f3f6e373af7f2b3c1df91bfde7516232ecf3ed75525bd8dc77425a967` |

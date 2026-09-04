@@ -6,6 +6,14 @@ FULL OCR BYTES: 2788999
 FULL OCR SHA-256: 2a2da44d4f2054ffd9fa5a0fa87ec427fe2a99410f438112282eed82254585ce
 PURPOSE: Unedited focused OCR locator. Recognition errors are preserved.
 
+AUDIT NOTE (2026-09-03): Raw line 22 `mfllia` corresponds to Benziger
+`míllia`/millia with double l, while the Vatican typical edition has `mília`.
+This is not treated as normalizer noise: the same derivative renders `lília`
+with one l and has sixteen `mfllia` = thousands forms versus sixty-four
+`mflia` = familia-family forms. The observation is probably real unless a
+targeted Benziger page-image check of this glyph records otherwise. It does
+not control the Vatican transcription below.
+
 DOMINICA DECIMA QUARTA 
 POST PENTECOSTEN 
 

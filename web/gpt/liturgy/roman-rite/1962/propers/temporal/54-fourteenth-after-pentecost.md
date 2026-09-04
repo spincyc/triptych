@@ -23,80 +23,120 @@
 
 | **Sense** | **Synthesis** |
 |:-----------|:------------------------------------------------------|
-| Literal | Pilgrims desire God’s courts; Paul describes moral conflict and Spirit-given fruit; Christ orders food and clothing beneath the Father’s kingdom; the Church asks mercy, purification, and perseverance. |
-| Allegorical | The Father beholds the face of his Christ; those who belong to Christ crucify disordered desire, receive the saving victim, taste the Lord’s goodness, and are led by the sacraments toward salvation. |
-| Moral | Refuse divided mastery, walk by the Spirit, accept creaturely help without making it ultimate, work without anxious servitude, and seek God’s reign and justice before every subordinate good. |
-| Anagogical | The single better day in God’s courts opens toward the kingdom inherited by Spirit-led persons, where perpetual salvation reaches its effect and nothing needed can compete with God. |
+| Literal | Pilgrims desire God’s courts; Paul contrasts works of the flesh with the Spirit’s fruit; Christ orders food and clothing beneath the Father’s kingdom; the Church asks preservation, purification, and final direction. |
+| Allegorical | Eusebius and Augustine receive the anointed face christologically; Augustine names Christ as the encircling Angel and reads tasting Eucharistically; the Secret names the saving victim. |
+| Moral | Walk by the Spirit, refuse mammon’s mastery, rely finally on God while receiving created help, work without anxious servitude, and seek the kingdom before every subordinate good. |
+| Anagogical | Augustine’s everlasting day, Matthew’s kingdom sought first, the Spirit’s first fruits of glory, and the Postcommunion’s perpetual salvation join present worship to the final end. |
 
 ## Scriptural Date and Location
 
-| **Proper** | **Citation** | **Location** | **Date** |
-|:----------|:-------------|:------------------------|:-----------|
-| Offertory | Ps. 33:8–9 (modern 34:8–9) | Gath in the superscription’s episode; later refuge near Adullam | Traditional Davidic flight; no absolute year established |
-| The received title places David before Abimelech; 1 Samuel 21 names Achis of Gath and continues into the flight to Adullam. This is a conventional life setting, not a demonstrable composition notice. Modern Catholic orientation calls the psalm acrostic thanksgiving and wisdom invitation but leaves its date unsettled (1 Sam. 21:11–22:2; Ps. 33 title; NABRE Ps. 34 note). |  |  |  |
-| Introit | Ps. 83:10–11, 2–3 (modern 84) | Temple pilgrimage toward Zion/Jerusalem; no composition site named | Korahite Temple horizon; undated |
-| The title assigns the song to the sons of Core and the winepresses; its tabernacles, altars, courts, and anointed face point to Zion. The Korahite guild belongs to received Temple memory, but the poem fixes neither reign nor exile/return: this is a horizon, not a dated autograph (1 Chr. 9:19; 26:1; Ps. 83 title; NABRE Ps. 84). |  |  |  |
-| Alleluia | Ps. 94:1 (modern 95:1) | Israel’s worshipping assembly; Jerusalem is probable but unstated | Davidic reception; undated |
-| The Vulgate title names David, and Hebrews 4:7 receives the warning as spoken “in David.” The summoned covenant assembly moves from joy to prostration and warning against Meribah’s hardness. Modern judgment treats it as a Temple entrance hymn but cannot securely assign place or year (Ps. 94 in full; Heb. 4:7; NABRE Ps. 95 note). |  |  |  |
-| Gradual | Ps. 117:8–9 (modern 118:8–9) | Procession to the Temple gates and altar in Jerusalem | Davidic reception; modern postexilic horizon |
-| Christian reception often speaks in David’s person, though the poem names no author. Gates, festal procession, and altar suit thanksgiving at Zion. Modern Catholic orientation places the hymn among postexilic procession psalms without fixing feast or date; these horizons remain distinct (Ps. 117 in full; Acts 4:11; NABRE Ps. 118 note). |  |  |  |
-| Gospel; Communion | Matt. 6:24–33 | Received Palestine/Judea; modern Syria/Antioch proposal | Received AD 38–45 or AD 64–67; modern after AD 70, probably after AD 80 |
-| *Narrated event: the Sermon on an unnamed mountain in Galilee; a received Catholic harmonization places it c. AD 26–27, while Luke’s Tiberian synchronism supports a broader c. AD 27–30 range.* |  |  |  |
-| Received tradition identifies Matthew the apostle and former tax collector, writing in his missionary life for Hebrews or Jewish converts: Papias reports Hebrew-language “oracles,” and Irenaeus places the Gospel during Peter’s and Paul’s Roman preaching. Hence the received AD 38–45 and AD 64–67 horizons. The NABRE judges the final Greek Gospel anonymous, dependent on Mark, and probably from the 80s for a formerly Jewish-Christian church now predominantly Gentile; Antioch remains a proposal. Matthew 4:23–5:1 places the sermon in early Galilean ministry, not the composition setting (Eusebius, *Hist. eccl.* III.39.16; Irenaeus, *Adv. haer.* III.1.1; *Catholic Encyclopedia*, “Gospel of St. Matthew” and “Chronology of the Life of Jesus Christ”; NABRE Matthew introduction and Luke 3:1 note). |  |  |  |
-| Epistle | Gal. 5:16–24 | To churches in Galatia; Rome in one received tradition, Ephesus or another Greek city in the contrary tradition | Baronius/a Lapide: AD 58; modern north AD 54–55, south possibly AD 48–50 |
-| Paul addresses Gentile converts pressed toward circumcision. A Lapide reports subscriptions and earlier witnesses for Rome, but Chrysostom and Baronius for Ephesus or another Greek city; he leaves place and time uncertain, while his Baronius-based chronology gives AD 58. The NABRE favors a northern audience near Ancyra, from Ephesus about AD 54–55, while preserving a less likely southern audience and possible AD 48–50 date (a Lapide, *Argumentum* and proemium; NABRE Galatians introduction). |  |  |  |
+### Proper: Offertory
+
+**Citation:** Ps. 33:8–9 (modern 34:8–9)
+
+**Location:** Geth in the superscription’s episode of David before Achis
+
+**Date:** A. M. 2944, A. C. 1060
+
+The superscription names Achimelech, while 1 Kings 21:10–15 names Achis of Geth. This dates the received superscription setting, not composition; composition place, first audience, life stage, and the principal modern critical horizon remain unresolved.
+
+### Proper: Introit
+
+**Citation:** Ps. 83:10–11, 2–3 (modern 84)
+
+**Location:** Pilgrimage toward the Jerusalem sanctuary; no composition place supplied
+
+**Date:** between the days of Isaias and the return from exile
+
+Longing for the courts passes through pilgrim blessing to the anointed-face petition and the one better day. The corpus gives only the collection horizon above; particular first audience, life stage, composition place, and principal modern critical judgment remain unresolved.
+
+### Proper: Alleluia
+
+**Citation:** Ps. 94:1 (modern 95:1)
+
+**Location:** Israel’s worshipping assembly approaches the Lord; no composition place supplied
+
+**Date:** No date is supplied by the traditional chronology corpus.
+
+The complete psalm joins joyful approach and adoration to the Meribah warning; Hebrews 3–4 receives its “today” as the Spirit’s summons toward rest. Authorship, first audience, life stage, composition place, and principal modern critical horizon remain unresolved.
+
+### Proper: Gradual
+
+**Citation:** Ps. 117:8–9 (modern 118:8–9)
+
+**Location:** Thanksgiving procession through the gates toward the altar at Jerusalem
+
+**Date:** No date is supplied by the traditional chronology corpus.
+
+The trust maxim follows rescue and stands within thanksgiving moving through gates, festal acclamation, and altar. Authorship, first audience, life stage, composition place, and principal modern critical horizon remain unresolved.
+
+### Proper: Gospel; Communion
+
+**Citation:** Matt. 6:24–33
+
+**Location:** The discourse is set on a mountain in Galilee; composition place and first audience unresolved
+
+**Date:** Disputed. Jacquier: about A.D. 38-45; about the year 40-42; the years 40-45; about the year 60-68; about the years 64-67. Durand: about the year 50, for a lost Aramaic original, not the Greek rendering.
+
+*Narrated event: Matthew places the teaching within the Galilean ministry on the mountain; the chronology corpus supplies no narrated-event date.*
+
+Papias (Eusebius, *Historia ecclesiastica* III.39.16) reports Matthew’s Hebrew-language oracles; Irenaeus (*Adversus haereses* III.1.1) places him writing among the Hebrews while Peter and Paul preached at Rome. Jacquier dates the Greek Gospel; Durand distinguishes the lost Aramaic original. Dependence, place, audience, life stage, and a fuller modern-critical horizon remain unsettled. The Communion is one ritual reprise, not a second composition event.
+
+### Proper: Epistle
+
+**Citation:** Gal. 5:16–24
+
+**Location:** Churches of Galatia; a Lapide reports Rome and Ephesus or another Greek city as received composition-place alternatives
+
+**Date:** Disputed. Aherne: A.D. 49-50; about A.D. 53, 54; A.D. 57 or 58. Prat: (1 and 2 Corinthians; Galatians), 56.
+
+The USCCB introduction identifies Gentile converts pressed toward circumcision. Aherne records the northern and southern reconstructions; Cornelius a Lapide, *Epistola ad Galatas: Argumentum*, reports rival subscriptions and Rome versus Ephesus or another Greek city as received alternatives. Prat supplies another Pauline sequence. Complete audience, life stage, composition place, and a fuller modern-critical horizon remain unsettled.
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
 > **Governing thesis**
 >
-> The formulary opposes not matter to spirit but divided mastery to grace-given direction. Mortal life slips unless God draws it from harms; the Spirit forms one fruitful life; the Father frees his children from anxious servitude; and the saving victim purifies and strengthens them. Every created help remains a gift, never a master, while desire moves from the courts, through the altar, toward the kingdom sought first and salvation made perpetual.
+> The formulary moves from divided and anxious service to the kingdom of God sought first, and from that first allegiance into Spirit-led, ecclesial, and sacramental life. Desire for God’s courts, trust, praise, tasting, sacrifice, and Communion enact the movement that the Epistle and Gospel proclaim.
 
-### 1. Grace gives mortal life one allegiance and one direction (*Coll., Ep., Gosp., Comm.*)
+### 1. The kingdom is excluded, sought, and received as first (*Int., Ep., Gosp., Comm., Postcomm.*)
 
-The Gospel’s opening alternative is more exacting than a contest between two hours in a schedule. A servant belongs under one master’s claim; love and hatred, adherence and contempt disclose a governing allegiance. Augustine therefore reads the “single eye” immediately before this passage as an undivided intention that orders every work to God. Jerome distinguishes possessing necessary goods from serving them: the problem is not that food, clothing, money, and human labor exist, but that a subordinate good becomes the measure of the person who should use it (Augustine, *De sermone Domini in monte* II.15–16; Jerome, *In Matt.* I, PL 26:45).
+The words *regnum Dei* bind the Epistle, Gospel, and Communion with an unusually exact verbal spine. Paul first gives the kingdom a negative boundary: the works of the flesh cannot inherit it. Christ then gives the positive command: seek the kingdom and its justice first. At Communion the same command returns in a shortened ritual form. The sequence moves from the allegiance that bars entry, through the priority that orders action, to the word heard again at sacramental reception.
 
-The Collect gives the same decision a grammar of grace. The Church asks to be preserved by perpetual favor because *sine te labitur humana mortalitas*; she then asks that divine aids both withdraw her from harms and direct her *ad salutaria*. Mortal instability is neither excused nor left to cure itself. The one who acts is genuinely drawn and directed, yet the help is asked from God. The prayer therefore excludes two opposite reductions: anxious self-salvation, as though the creature could stabilize itself, and passive fatalism, as though assistance erased obedient movement.
+Paul’s warning makes the Gospel’s “first” morally concrete. The kingdom is not first only in sentiment; fornication, idolatry, enmity, drunkenness, and their like are rival forms of service. Matthew’s two masters name the same division at its root. A person may possess and use material goods, but mammon becomes master when wealth, security, or status dictates the governing love. The Communion therefore does not promise that reception will procure every desired possession. It repeats the Lord’s hierarchy: necessities are added, while the kingdom remains the end.
 
-Paul describes that movement as walking and being led by the Spirit. The opposition between flesh and spirit is not a contempt for the body. Chrysostom expressly refuses to identify flesh with bodily substance; Augustine and Ambrosiaster likewise locate the conflict in disordered desire and the will’s wounded resistance to grace. Paul can thus command *Spíritu ambuláte* and, within the same lesson, call the result *fructus Spiritus*. Grace originates the fruit without making the person inert. Those who “are Christ’s” have crucified vices and concupiscences: belonging becomes an enacted allegiance (Chrysostom, *Hom. in Gal.* 5; Augustine, *Exp. Gal.* 47–51; Ambrosiaster on Gal. 5:16–26).
+The Introit and Postcommunion widen that hierarchy from present conduct to final beatitude. Psalm 83 desires the Lord’s courts and judges one day there better than thousands. Augustine reads that better day as the everlasting day in which the pilgrim Church comes home. The Postcommunion asks that the sacraments lead to the perpetual effect of salvation. The kingdom sought now is thus neither an abstraction nor a temporary religious interest; it is the present rule of life and the everlasting good toward which worship tends (Augustine, *Exposition on Psalm 84* §§13–15).
 
-The Communion repeats only the decisive priority: *Primum quǽrite regnum Dei*. It does not repeat the birds, lilies, barns, or clothing. After the sacramental action, the command remains: seek first. What is received at the altar does not suspend moral movement; it reorders it. The kingdom is not one additional item to be added to the necessities. It is the first good under which every added necessity can be received without becoming master.
+### 2. Grace and commanded action are ordered together (*Coll., Ep., Gosp., Postcomm.*)
 
-### 2. Created help mediates providence, but trust terminates in God (*Coll., Grad., Gosp., Off.*)
+The Collect begins with dependence: without God human mortality slips. Yet the prayer does not end in immobility. Divine helps withdraw mortality from harms and direct it *ad salutaria*. Paul commands the faithful to walk by the Spirit and to crucify disordered desires; Christ commands them to seek; the Postcommunion asks the sacraments to lead. Divine initiative and human action appear as one ordered movement rather than competing explanations.
 
-The Gradual can sound, in isolation, like distrust of every human bond: “better to confide in the Lord than in man; better to hope in the Lord than in princes.” The complete psalm refuses that flattening. Its speaker has been surrounded, delivered, and led toward the gates and altar; human and public action remain within the story. Augustine says good people assist only through the God who made them good. Hugh of Saint-Cher extends *principes* to good angels: even their ministry has power from God and cannot receive the worshipper’s final confidence (Augustine, *Enarr. in Ps.* 117.3–5; Hugh, *Postilla* on Ps. 117:8–9).
+Augustine describes this order in his treatment of nature and grace. Grace heals the wounded will so that commanded obedience becomes truly possible; the command neither proves self-sufficiency nor makes the will inert (*On Nature and Grace* 67 \[57\]). In the Sermon on the Mount he reads “first” as an order of intention: temporal necessities serve the work of the kingdom rather than making the kingdom serve them (*On the Sermon on the Mount* II.14–16 §§47–53). The liturgy accordingly asks for aid and then speaks in imperatives—walk, come, seek, taste—because grace restores agency toward its saving end.
 
-The Offertory makes the distinction visible. Psalm 33 does not offer an unmediated solitude; an angel of the Lord encamps around those who fear him. Basil reads the image as protection on every side; Augustine and Aquinas allow christological as well as angelic reception. Yet the invitation ends not at the camp or messenger but at the Lord’s goodness: *Gustáte et vidéte, quóniam suávis est Dóminus*. The angel protects as minister; the Lord is tasted, known, feared, and hoped in (Basil, *Hom. in Ps.* 33; Augustine, *Enarr. in Ps.* 33.9–13; Aquinas, *In Ps.* 33).
+This coordination also protects bodily need. Christ says that life is more than food and the body more than clothing; the comparison gives created life greater dignity, not less. The Father knows the disciples need these things. Prudence, labor, and provision remain duties, while anxiety loses the right to rule them. The promised help is not passivity, and the commanded action is not self-salvation.
 
-The Gospel supplies ordinary created means even while rebuking anxious mastery. Chrysostom points to Paul’s manual work and denies that the birds prohibit sowing. Augustine distinguishes necessary provision undertaken for service from solicitude that turns necessity into the work’s final end. The Father feeds birds through the order of creation and clothes lilies through growth; the disciples remain workers, householders, neighbors, and almsgivers. Providence is not competition with creaturely causality. It is the reason created action can be received as gift without being made absolute (Chrysostom, *Hom. in Matt.* 22; Augustine, *De sermone* II.16–17).
+### 3. Created help serves without becoming master (*Grad., Gosp., Off.*)
 
-The Collect’s plural *auxiliis* therefore belongs beside the Gradual and Offertory. Divine helps may include grace acting inwardly, sacraments, angels, neighbors, lawful authority, skill, work, and material provision. Their multiplicity does not divide mastery because every good instrument depends upon the one source. The formulary teaches neither isolation nor credulity: use created aid gratefully, test it truthfully, and let confidence rest finally in God.
+The Gradual prefers confidence in the Lord to confidence in man or princes, while the Offertory promises that the Lord’s angel will encamp around those who fear him. These chants do not place trust and mediation in opposition. They distinguish the final object of hope from the creature through whom help may come. The Gospel sharpens the distinction: only one master can govern, but a servant of God may still receive created assistance as gift.
 
-### 3. Desire moves from the courts toward the kingdom and the altar (*Int., All., Gosp., Off., Postcomm.*)
+Augustine says at Psalm 117 that human and angelic help is good through the God who makes the helper good; confidence passes through the instrument to its source (*Exposition on Psalm 118* §4). Hugh of Saint-Cher develops the same instrumental line at Psalm 117:8–9. Theodoret stresses the other side of the relation: mortal and princely power changes, fails, and passes, whereas divine help endures (*Interpretatio in Psalmos*, PG 80: 1811–1812). His sharper contrast stands beside Augustine’s and Hugh’s account of real but dependent assistance.
 
-The Introit begins with sight and desire. “Behold, O God our protector, and look on the face of thy Christ” is followed by the judgment that one day in God’s courts is better than thousands and by the psalm verse’s longing that almost fails for those courts. Augustine hears the anointed face christologically and the one day as eternity; Hugh places the petition under the Son’s Passion. Their reception does not erase the psalm’s Temple pilgrimage. It shows why Christian desire can pass through the visible courts toward Christ and the heavenly Jerusalem without despising embodied worship (Augustine, *Enarr. in Ps.* 83.7–8, 12–15; Hugh, *Postilla* on Ps. 83:10–11).
+The Offertory then supplies a positive created minister. The angel encamps; the Lord delivers and is tasted. Basil presents the angelic camp as protection on every side, while Augustine reads the Angel christologically and carries “taste and see” into Eucharistic reception. The verse itself does not name each worshipper’s guardian angel, and its promise supplies no guarantee of physical immunity. It does show why the Gradual cannot be made into contempt for authority, friendship, expertise, or angelic ministry: created aid serves well when it does not receive the mastery or final confidence due to God.
 
-The Alleluia answers longing with an imperative: *Veníte, exsultémus*. Augustine says the approach is not movement through space but restoration to the likeness of God; Hugh joins approach to faith and active praise. Yet the whole psalm turns joyful invitation into prostration and then into a warning: “today if you shall hear his voice, harden not your hearts.” The assembly moves toward the Gospel and altar with joy that must become obedient hearing, not mood alone (Augustine, *Enarr. in Ps.* 94.1–2; Hugh, *Postilla* on Ps. 94:1; Ps. 94 in full).
+### 4. Providence affirms creation while freeing it from anxious rule (*Ep., Grad., All., Gosp., Off., Comm.*)
 
-Christ then names the destination: the kingdom of God and his justice. Food and clothing are not denied; they cease to dictate the route. The Communion’s repetition makes this word the rule of sacramental reception, while the Offertory’s *gustáte* introduces experiential language without reducing faith to sensation. Basil calls the true bread spiritually apprehended; Augustine gives the verse an explicit Eucharistic reception. The literal psalm still invites experience of divine goodness, and neither Father makes felt sweetness a test of sacramental fruit. Desire is trained by promise, worship, word, oblation, and reception, including seasons of dryness.
+Paul’s opposition of flesh and Spirit concerns disordered allegiance, not a war between grace and bodily substance. Chrysostom explicitly rejects an evil-body reading of Galatians 5 and locates the conflict in contrary moral choices (*Homily 5 on Galatians*). Matthew gives the same distinction an ordinary field: food, clothing, bodily stature, birds, grass, work, and daily need remain creatures known to the Father. Mammon is not matter; it is wealth served as lord.
 
-The Postcommunion provides the far horizon. The sacraments are asked to purify, strengthen, and lead the recipients *ad perpétuæ ... salvatiónis efféctum*. The liturgical movement does not close in private consolation. It proceeds from desired courts through joyful approach, the kingdom’s priority, and the tasted gift toward salvation’s perpetual effect. No checked source proves that one compiler designed every stage of this sequence; the relation is warranted by the appointed verbs and their checked reception.
+Chrysostom likewise refuses to turn the birds into a prohibition on sowing. They expose the impotence of anxiety, not the wrongness of labor (*Homilies 21–22 on Matthew*). Aquinas distinguishes necessary prudent care from solicitude disordered by fear or by a false final end (*Summa Theologiae* II-II q. 55 aa. 6–7; q. 83 a. 6). The Gospel therefore promises neither prosperity nor exemption from hunger and suffering. It places real need within filial confidence and makes the kingdom, rather than the management of insecurity, the rule of action.
 
-### 4. Spirit-bearing fruit and sacramental fruit form one grace-enabled life (*Ep., Sec., Postcomm.*)
+The surrounding chants turn this freedom into practices. The Gradual teaches final trust; the Alleluia summons praise under Psalm 94’s warning to hear today; the Offertory joins reverent fear, protection, tasting, and hope; the Communion renews the kingdom’s priority. These acts do not suppress the body or its needs. They train created life to receive provision without serving it, to accept uncertainty without enthroning it, and to act beneath the Father’s knowledge.
 
-Paul writes of the Spirit’s singular *fructus* and names many perfections. Augustine treats the list as non-exhaustive and gives charity a governing role; Aquinas describes spiritual fruit as grace-enabled virtuous action that bears a fitting delight. The Vulgate’s twelve terms and the common Greek nine-term list are a textual-history difference, not a hidden numerical program. What matters here is coherence: love, joy, peace, patience, goodness, fidelity, gentleness, and self-control are not unrelated awards but the Spirit’s form in an integrated life (Augustine, *Exp. Gal.* 49–51; Aquinas, *Super Gal.* V, lect. 6; CCC 1830–1832).
+### 5. The Spirit’s fruit and sacramental fruit belong to the Church (*Coll., Ep., Off., Sec., Gosp., Comm., Postcomm.*)
 
-The Secret and Postcommunion bring sacramental verbs beside that moral fruit. The saving victim purifies sins and is propitiation; the sacraments purify, strengthen, and lead. These claims do not describe a second mechanism beside Christ. The Eucharist makes sacramentally present his one sacrifice and applies its fruit; Communion deepens union with Christ, strengthens charity, cleanses venial sin, and preserves the life of grace. Proper disposition remains real, and sacramental fruit is never a mechanical guarantee of subjective consolation (CCC 1362–1367, 1391–1396).
+The Epistle’s singular *fructus Spiritus* gathers many virtues into one grace-formed life. Aquinas describes fruit as virtuous action proceeding from grace and bearing the sweetness proper to its good end (*Super Galatas* 5, lect. 6, \[87779\]). Augustine carries the Offertory’s “taste and see” into Eucharistic reception, while the Secret names the *hostia salutaris* and the Postcommunion asks for purification, strengthening, and perseverance toward salvation.
 
-The relation therefore runs in both directions without confusion. Spirit-led life disposes the communicant to receive worthily; sacramental grace nourishes the charity in which virtue becomes fruitful. The Epistle prevents ritualism, because those who are Christ’s crucify disordered passions. The orations prevent moralism, because purification and strength are received from Christ’s sacrifice and sacraments. Neither moral achievement nor reception treated as automatic can occupy the place of living communion.
+These texts belong to an ecclesial grammar. The Collect names the Church; Paul addresses brethren who are Christ’s; Christ says “your Father”; the Secret speaks of our sins; the Postcommunion asks that the sacraments purify and strengthen us. Eucharistic Communion deepens union with Christ and with his body, while the Spirit’s fruit gives that union moral form in charity, peace, patience, goodness, fidelity, gentleness, and chastity (CCC §§1362–1368, 1391–1396, 1830–1832).
 
-### 5. Anxiety is displaced by practiced praise, fear, and trust (*Int., Grad., All., Gosp., Off.*)
-
-Matthew’s *sollicitudo* is an attempted mastery of the future. It cannot add a cubit, secure tomorrow, or create life, yet it makes food and clothing behave as lords. Christ answers with the Father’s knowledge, not with a promise that disciples will never hunger, suffer injustice, or need prudent action. The Lord’s Prayer has already taught them to ask for daily bread in the plural; the command to seek first orders dependence and solidarity together (Matt. 6:9–13, 24–34; CCC 2828–2834).
-
-The chants enact alternatives to anxious control. The Introit names God protector and desires his courts; the Gradual confesses final trust; the Alleluia summons joyful praise; the Offertory joins fear of the Lord, encircling protection, tasting, and hope. None is a technique for abolishing uncertainty. They are practices that relocate the self within covenant, worship, providence, and gift. Anxiety looks forward and tries to carry the future alone; praise remembers the Giver, fear receives creaturely limits, and hope entrusts what cannot yet be seen.
-
-The answer is active and ecclesial: walk by the Spirit, refuse disordered mastery, receive aid without enthroning the helper, seek the kingdom first, and let the sacraments strengthen the journey. The one better day is not purchased by successful control. It gathers mortal life under one Lord and leads it by grace toward perpetual salvation.
+The Spirit’s fruit is not self-improvement isolated from the Church, and sacramental fruit is not automatic effect detached from repentance and charity. Christ’s one sacrifice applies grace that renews conduct; Spirit-led conduct disposes the faithful to receive worthily. From the desired courts to the saving victim, and from the kingdom sought first to salvation’s perpetual effect, the formulary gathers personal responsibility into the common life of those who belong to Christ.
 
 <span id="triptych:brief-synthesis:end" data-label="triptych:brief-synthesis:end"></span>
 
@@ -104,11 +144,11 @@ The answer is active and ecclesial: walk by the Spirit, refuse disordered master
 
 ## The Propers: Detailed Commentary
 
-## The Appointed Propers in Full
+### The Appointed Propers in Full
 
-The Latin below is the complete recurring formulary between marginal nos. 1572 and 1581 in the 1962 Vatican typical Missal, printed pp. 394–396. It was visually checked against the identified CMAA facsimile. Scriptural English is the public-domain Douay–Rheims/Challoner; the Collect, Secret, and Postcommunion are the public-domain English of the Cummiskey hand missal (Philadelphia, 1861). Neither historical English witness is official 1962 liturgical text. Where a chant adapts or truncates its biblical source, the boundary is disclosed rather than repaired by an editorial translation.
+The Latin below is the complete recurring formulary between marginal nos. 1572 and 1581 in the 1962 Vatican typical Missal, printed pp. 394–396. Scriptural English is the public-domain Douay–Rheims/Challoner; the Collect, Secret, and Postcommunion are the public-domain English of the Cummiskey hand missal (Philadelphia, 1861). Neither historical English witness is official 1962 liturgical text. Where a chant adapts or truncates its biblical source, the boundary is disclosed rather than repaired by an editorial translation.
 
-### Introit (*Int.*)
+#### Introit (*Int.*) {#introit}
 
 > ***Psalmus 83:10–11, 2–3*; no. 1572**
 >
@@ -120,7 +160,7 @@ The Latin below is the complete recurring formulary between marginal nos. 1572 
 
 **Witness boundary.** The antiphon stops partway through v. 11 and the psalm verse partway through v. 3. The Douay clauses are stopped at the same boundaries; neither the house-of-God comparison nor “my heart and my flesh” is appointed here.
 
-### Collect (*Coll.*)
+#### Collect (*Coll.*) {#collect}
 
 > ***Oratio*; no. 1573**
 >
@@ -132,7 +172,7 @@ The Latin below is the complete recurring formulary between marginal nos. 1572 
 
 **Witness boundary.** Cummiskey supplies “grace” as the subject of the final English clause; the Latin has the singular *humána mortálitas* drawn and directed by God’s plural *auxíliis*. Commentary on the grammar therefore follows the Latin.
 
-### Epistle (*Ep.*)
+#### Epistle (*Ep.*) {#epistle}
 
 > ***Ad Galatas 5:16–24*; no. 1574**
 >
@@ -144,9 +184,9 @@ The Latin below is the complete recurring formulary between marginal nos. 1572 
 >
 > I say then: Walk in the spirit: and you shall not fulfill the lusts of the flesh. For the flesh lusteth against the spirit: and the spirit against the flesh: For these are contrary one to another: so that you do not the things that you would. But if you are led by the spirit, you are not under the law. Now the works of the flesh are manifest: which are fornication, uncleanness, immodesty, luxury, Idolatry, witchcrafts, enmities, contentions, emulations, wraths, quarrels, dissensions, sects, Envies, murders, drunkenness, revellings, and such like. Of the which I foretell you, as I have foretold to you, that they who do such things shall not obtain the kingdom of God. But the fruit of the Spirit is, charity, joy, peace, patience, benignity, goodness, longanimity, Mildness, faith, modesty, continency, chastity. Against such there is no law. And they that are Christ’s have crucified their flesh, with the vices and concupiscences.
 
-**Witness boundary.** The address *Fratres* is a liturgical incipit and is not part of the translated verses. The Vulgate/Douay list has twelve fruit terms; the common Greek text has nine. The guide preserves the Missal’s appointed witness and draws no numerical conclusion from the difference.
+**Witness boundary.** The address *Fratres* is a liturgical incipit and is not part of the translated verses. The Vulgate/Douay list has twelve fruit terms; SBLGNT v1.2 at Galatians 5:22–23 has nine. The Missal’s appointed witness remains the textual basis, and the numerical difference establishes no symbolic program.
 
-### Gradual (*Grad.*)
+#### Gradual (*Grad.*) {#gradual}
 
 > ***Psalmus 117:8–9*; no. 1575**
 >
@@ -156,7 +196,7 @@ The Latin below is the complete recurring formulary between marginal nos. 1572 
 >
 > It is good to confide in the Lord, rather than to have confidence in man. ℣. It is good to trust in the Lord, rather than to trust in princes.
 
-### Alleluia (*All.*)
+#### Alleluia (*All.*) {#alleluia}
 
 > ***Psalmus 94:1*; no. 1576**
 >
@@ -166,7 +206,7 @@ The Latin below is the complete recurring formulary between marginal nos. 1572 
 >
 > Alleluia, alleluia. ℣. Come let us praise the Lord with joy: let us joyfully sing to God our saviour. Alleluia.
 
-### Gospel (*Gosp.*)
+#### Gospel (*Gosp.*) {#gospel}
 
 > ***Matthæus 6:24–33*; no. 1577**
 >
@@ -182,7 +222,7 @@ The Latin below is the complete recurring formulary between marginal nos. 1572 
 
 **Witness boundary.** The Missal supplies the liturgical frame *In illo témpore: Dixit Iesus discípulis suis*; the Douay begins with Matthew’s verse. The Creed itself belongs to the Ordinary.
 
-### Offertory (*Off.*)
+#### Offertory (*Off.*) {#offertory}
 
 > ***Psalmus 33:8–9*; no. 1578**
 >
@@ -194,11 +234,11 @@ The Latin below is the complete recurring formulary between marginal nos. 1572 
 
 **Witness boundary.** The antiphon stops before the verse’s final beatitude, “blessed is the man that hopeth in him.” The commentary uses that conclusion only as complete-scriptural context, not as appointed wording.
 
-### Secret (*Sec.*)
+#### Secret (*Sec.*) {#secret}
 
 > ***Secreta; Præfatio de Sanctissima Trinitate*; no. 1579**
 >
-> *Concéde nobis, Dómine, quǽsumus, ut hæc hóstia salutáris, et nostrórum fiat purgátio delictórum, et tuæ propitiátio potestátis. Per Dóminum nostrum.*
+> *Concéde nobis, Dómine, quǽsumus, ut hæc hóstia salutáris, et nostrórum fiat purgátio delictórum, et tuæ propitiátio potestátis. Per Dóminum.*
 >
 > Præfatio de Ssma Trinitate.
 
@@ -208,7 +248,7 @@ The Latin below is the complete recurring formulary between marginal nos. 1572 
 
 **Witness boundary.** The historical English makes the worshippers the object of “cleanse”; the Latin says that the victim become *purgátio* of sins and *propitiátio* of divine power. The doctrinal exposition follows the Latin under the Church’s teaching on Christ’s one sacrifice.
 
-### Communion (*Comm.*)
+#### Communion (*Comm.*) {#communion}
 
 > ***Matthæus 6:33*; no. 1580**
 >
@@ -220,7 +260,7 @@ The Latin below is the complete recurring formulary between marginal nos. 1572 
 
 **Witness boundary.** The antiphon omits Matthew’s *ergo* and *et iustítiam eius*, compresses “all these things” to *ómnia*, and adds *dicit Dóminus*. The complete Douay verse is printed so that the liturgical adaptation remains visible; no composite English antiphon is supplied.
 
-### Postcommunion (*Postcomm.*)
+#### Postcommunion (*Postcomm.*) {#postcommunion}
 
 > ***Postcommunio*; no. 1581**
 >
@@ -234,17 +274,15 @@ The Latin below is the complete recurring formulary between marginal nos. 1572 
 
 ### Introit — the protector, the anointed face, and the better day (*Int.*)
 
-Psalm 83 is first a song of desired worship. The speaker loves the Lord’s tabernacles, faints for the courts, sees birds nesting by the altars, blesses those who dwell and praise, and imagines a pilgrimage through the vale of tears from strength to strength. The petition “behold, O God our protector” therefore does not ask for protection as an end detached from presence. It asks that the protector look upon the face of his anointed, because the worshipper judges one day in the courts better than thousands elsewhere. The appointed verses make desire itself an act of right valuation.
+Psalm 83 is a song of desired worship. The speaker loves the Lord’s tabernacles, faints for the courts, sees birds nesting by the altars, blesses those who dwell and praise, and follows pilgrims through the vale of tears from strength to strength. The petition “behold, O God our protector” asks for more than escape from danger: the protector is asked to look upon the face of his anointed because the worshipper judges one day in God’s courts better than thousands elsewhere. Desire itself makes a judgment about the highest good.
 
-The Missal stops the antiphon after “above thousands.” The biblical verse continues by preferring the lowest place in God’s house to dwelling in the tents of sinners; the psalm later names grace and glory and blesses the person who trusts in the Lord. Those continuations control the sense without becoming appointed words. Protection is bound to pilgrimage, worship, moral choice, and trust, not simply to escape from hardship.
+The Missal stops the antiphon after “above thousands.” The biblical verse continues by preferring the lowest place in God’s house to dwelling in the tents of sinners; the psalm later names grace and glory and blesses the one who trusts in the Lord. Protection, worship, moral choice, and confidence therefore belong to the same pilgrimage, even though the continuation is not appointed text.
 
-Augustine reads the “face of thy Christ” through the Incarnation. God looks upon the face in which the Son has been manifested and in which the Church learns to see her head. He also expands the single better day toward the eternal day that has no yesterday or tomorrow. The courts become the earthly Church in pilgrimage and the heavenly Jerusalem in fulfilment; the one day does not cancel created time but supplies its measure (*Enarr. in Ps.* 83.7–8, 12–15).
+In the immediate literary setting, “thy Christ” is the Lord’s anointed king. Eusebius reads the petition christologically as the manifestation of the Word in David’s Christ and gives it an advent horizon (*Commentary on Psalms*, Ps. 83:8–10, PG 23:1012–1013). Augustine follows a different course: the anointed face opens into Christ’s missionary manifestation, while the pilgrim’s humility and present affliction prepare the everlasting day in God’s courts (*Exposition on Psalm 84* §§3–8, 13–15). The two Fathers share the christological reception without reducing advent manifestation and missionary manifestation to one interpretation.
 
-Hugh of Saint-Cher likewise reads the anointed face christologically and places the petition beneath the Passion: the Father regards the Son and, in him, those joined to him. That is documented medieval reception, not proof that the psalm’s Korahite composer spoke with the Missal’s later Christian application already explicit. The literal Temple longing and the ecclesial, christological, and anagogical receptions remain distinguishable and mutually illuminating.
+Theodoret first retains the psalm’s return from Babylon and Israel’s worship, then extends its courts and altar toward Christian worship and resurrection hope (*Interpretatio in Psalmos*, Ps. 83:2–3, 10–11, PG 80:1537–1546). Bellarmine’s later reading follows the pilgrim soul toward heaven: the earthly altar is a temporary nest and pledge, Christ’s merits are the worshipper’s protection, and the heavenly day surpasses temporal good (*Explanatio in Psalmos*, Ps. 83:1–3, 9–10). John O’Sullivan’s abridged 1866 English witness transmits this trajectory without claiming to preserve everything in Bellarmine’s Latin exposition.
 
-Theodoret supplies a distinct Greek reception. He hears the winepresses as churches and divine altars and applies the exiles’ longing for lawful worship also to Christians. At the appointed petition, however, he reads the anointed face corporately as the saved people, Christ’s body, rather than as Christ the head. The difference from Augustine is retained instead of being silently harmonized (*Interpretatio in Psalmos*, Ps. 83, PG 80: 1537–1544, especially 1543–1544).
-
-At the entrance, this Introit gives the rest of the formulary its positive good. The Epistle and Gospel will refuse fleshly works and mammon not because Christian life is defined by refusal, but because desire already has a better object: the living God, the face of Christ, and the courts in which one day outweighs thousands.
+At the entrance this Introit supplies the formulary’s positive good before the Epistle and Gospel name its rivals. Christian life is not defined by refusal alone. The works of the flesh and mammon are rejected because desire already has a better object: the living God, the face of Christ, and the courts in which one day outweighs thousands.
 
 ### Collect — mortal instability directed by perpetual favor (*Coll.*)
 
@@ -252,31 +290,33 @@ The Collect’s two halves are joined by *et quia*: preserve the Church by perpe
 
 The paired destinations are unequal. *A noxiis* names what damages; *ad salutaria* names goods ordered to salvation. Withdrawal is not the whole Christian life. Grace creates a positive direction. That syntax prepares Paul’s command to walk by the Spirit and Christ’s command to seek the kingdom first: the creature is not only restrained but led toward an end.
 
-The prayer has no responsibly identified personal author. The Gellone sacramentary transmits it as no. 1121 under Sunday XV after the Pentecost octave and maps it to the Gregorian Supplement’s no. 1171. Sant Ruf and Vilabertran preserve the same three-prayer set at their Sunday XV. These witnesses establish medieval transmission and mobility in Sunday numbering; they do not establish an original compiler’s intention or the antiquity of the prayer’s 1962 Sunday XIV placement.
+The prayer’s personal author and original purpose are unknown. The Gellone sacramentary transmits it as no. 1121 under Sunday XV after the Pentecost octave and maps it to the Gregorian Supplement’s no. 1171. Sant Ruf and Vilabertran preserve the same three-prayer set at their Sunday XV. The 1570 Roman Missal places the trio within the complete Sunday XIV formulary; the compiler and intervening stages of that change remain unknown.
 
-The prayer also controls the use of “help” throughout the Mass. Divine aids may operate through word, sacrament, angel, neighbor, work, authority, and prudence. Because the prayer asks God for them, their instrumentality does not compete with providence. Because it asks that mortal humanity actually be drawn and directed, help does not abolish agency. The Collect is therefore a brief anti-fatalist and anti-Pelagian grammar without needing to name either controversy.
+The prayer also orders the use of “help” throughout the Mass. Divine aid can reach the faithful through word, sacrament, angel, neighbor, work, authority, and prudence without any creature becoming a rival master. Because mortal humanity is truly drawn and directed, help does not abolish agency; because the Church asks it from God, agency does not become self-salvation.
 
 ### Epistle — the Spirit’s fruit in embodied, cruciform freedom (*Ep.*)
 
 Galatians 5 is the moral center of a longer argument about adoption and freedom. Paul has opposed circumcision imposed as a condition of justification, then insists that freedom must serve through charity: “all the law is fulfilled in one word: Thou shalt love thy neighbour as thyself” (Gal. 5:13–15). The appointed lesson follows with walking, conflict, works, fruit, kingdom, and crucifixion. Chapter 6 will apply the same Spirit-led life to gentle restoration, burden-bearing, sowing, perseverance, the Cross, and new creation. The pericope is not an isolated vice-and-virtue inventory.
 
-The first contrast is often misheard. *Caro* here does not mean that material creation or the human body is evil, nor does *spiritus* make ordinary embodied obligation irrelevant. Chrysostom argues directly that if Paul blamed bodily substance, he could not praise embodied saints or command the body in the service of virtue. The target is the mind’s lax rule and desire’s disorder; the Spirit restores order (*Hom. in Gal.* 5). Augustine describes a real conflict in the justified person under grace, a struggle that will reach complete healing only beyond this life. Ambrosiaster also refuses to make the body the culprit (*Comm. in Gal.* 5:16–24, PL 17:367D–368D). The Catechism retains this anti-dualist boundary (CCC 2515–2516).
+The first contrast is often misheard. *Caro* here does not mean that material creation or the human body is evil, nor does *spiritus* make ordinary embodied obligation irrelevant. Chrysostom argues directly that if Paul blamed bodily substance, he could not praise embodied saints or command the body in the service of virtue. The target is the mind’s lax rule and desire’s disorder; the Spirit restores order (*Homily 5 on Galatians*). Augustine describes a real conflict in the baptized person under grace, a struggle in which charity is commanded because grace heals rather than abolishes nature (*On Nature and Grace* 67 \[57\]). The Catechism retains this anti-dualist boundary (CCC 2516).
 
-Paul writes plural *opera* and singular *fructus*. Chrysostom notes that sinful actions arise in fragmentation while virtue has the coherence of a living fruit. Augustine treats both lists as representative rather than exhaustive and gives charity primacy: the named qualities hang together in rightly ordered love. Aquinas defines fruit as a virtuous act proceeding from grace that has the character of spiritual delight; delight is not mere pleasant feeling, but the fitting ripeness of action ordered to its end (Aquinas, *Super Gal.* V, lect. 6).
+In his direct exposition of Galatians, Augustine places the conflict within grace-enabled combat. The movement of concupiscence is not yet consent to it, and delighted justice differs from mere legal compulsion (*Expositio Epistolae ad Galatas* §§46–53, PL 35:2138–2143). His distinction makes Paul’s crucifixion language morally serious without treating the body as the enemy.
 
-The Vulgate and Douay list twelve terms; the common Greek critical text lists nine, joining or distributing several qualities differently. Ambrosiaster’s number symbolism belongs to his reception history, but the textual difference prevents the guide from treating twelve as a hidden program controlling the Mass. The literary evidence lies instead in the singular fruit, Paul’s open “and such like” for vices, and the movement from Spirit to kingdom and belonging to Christ.
+Paul writes plural *opera* and singular *fructus*. The vices issue in fragmentation, while the virtues belong together as the life of charity. Ambrosiaster independently rejects an anti-bodily construal and relates the singular fruit to the kingdom (*Commentaria in Epistolam ad Galatas*, Gal. 5:16–24, PL 17:367D–368D). Aquinas defines fruit as a virtuous act proceeding from grace and bearing the spiritual sweetness of action ordered to its true end (*Super Galatas* 5, lect. 6, \[87779\]). That sweetness is the goodness of fulfilled action, not the measure of a passing emotion.
+
+The Vulgate and Douay list twelve terms; SBLGNT v1.2 at Galatians 5:22–23 lists nine, as does the corroborating RP2018 witness. The textual difference gives no stable ground for numerical symbolism. The appointed form instead presses the singular fruit, Paul’s open “and such like” for vices, and the movement from Spirit to kingdom and belonging to Christ.
 
 “Against such there is no law” does not declare a private inspiration above ecclesial or civil order. It means that the law does not condemn the virtues the Spirit forms; those virtues fulfil the charity toward which God’s command is ordered. Nor does being “led by the Spirit” make conduct unaccountable. Paul immediately names acts that exclude from the kingdom and says that those who belong to Christ have crucified flesh with vices and concupiscences.
-
-Anthony of Padua’s sermon labelled for Sunday XIV directly receives this lesson but belongs to an older arrangement whose Gospel is Luke 17, not Matthew 6. His treatment of the Spirit’s fruit and humble thanksgiving is useful later saintly reception of Galatians; it is not evidence about the complete 1962 formulary or the intention joining this Epistle to this Gospel.
 
 ### Gradual — good helpers beneath the good in whom confidence rests (*Grad.*)
 
 Psalm 117 is a procession of thanksgiving. The speaker calls Israel and those who fear the Lord to confess enduring mercy, remembers distress and deliverance, survives encircling nations, enters the gates of justice, names the rejected stone, blesses the coming one, and moves with festal branches toward the altar. Verses 8–9 are therefore not abstract maxims dropped into the poem. They identify the source of deliverance while the worshipper moves among a people, through gates, and toward sacrifice.
 
-Augustine distinguishes ultimate confidence from instrumentality. A good human being may help, but the goodness and effective power of that help come from God; one therefore receives the helper without transferring to the helper the hope due to God. Hugh of Saint-Cher makes the same move and reads “princes” broadly enough to include good angels. They too serve through power received, not as autonomous rivals to God (Augustine, *Enarr. in Ps.* 117.3–5; Hugh, *Postilla* on Ps. 117:8–9).
+Augustine distinguishes ultimate confidence from instrumentality. A good human being or angel may help, but the goodness and effective power of that help come from God; the helper is received without receiving the hope due to God (*Exposition on Psalm 118* §4). Hugh of Saint-Cher develops the same instrumental trajectory at Psalm 117:8–9.
 
-Theodoret presses the verse-level contrast more sharply: God wills and can accomplish the good, whereas humans are mortal, changeable, and sometimes unwilling or unable to help; princely authority is brief. That direct Greek witness strengthens the refusal of final creaturely confidence, while the psalm’s procession and Augustine’s and Hugh’s accounts keep the guide from turning the contrast into a denial of all created instruments (*Interpretatio in Psalmos*, Ps. 117:8–9, PG 80:1811–1812).
+Theodoret presses the verse-level contrast more sharply: God wills and can accomplish the good, whereas humans are mortal, changeable, and sometimes unwilling or unable to help; princely authority is brief (*Interpretatio in Psalmos*, Ps. 117:8–9, PG 80:1811–1812). His contrast remains sharper than Augustine’s and Hugh’s account of instrumental aid, but it does not erase the psalm’s human procession or the Offertory’s angelic ministry.
+
+Bellarmine states the qualification in a later register: trust in angels or pious people remains subordinate when it passes through them to God (*Explanatio in Psalmos*, Ps. 117:8–9). Augustine’s instrumentality, Theodoret’s sharper contrast, and Bellarmine’s referred trust agree on the final object of hope while preserving distinct accounts of created help.
 
 This reception matters because the Offertory soon invokes an angelic camp and the Collect asks continual aids. The chants do not contradict one another. The Gradual refuses final confidence in a creature; the Offertory welcomes a created minister of divine protection. The same distinction applies to friendship, professional judgment, public authority, and ecclesial ministry. The verse cannot support an isolation that refuses all help or a polemic that treats every prince as intrinsically untrustworthy. It asks where hope comes to rest.
 
@@ -284,9 +324,11 @@ This reception matters because the Offertory soon invokes an angelic camp and th
 
 The Alleluia appoints only Psalm 94:1: come, exult in the Lord, rejoice in God our savior. The full psalm explains what coming means. The assembly enters with praise and thanksgiving, confesses the Creator who holds sea and dry land, bows before the maker and shepherd, and then hears the urgent “today.” Meribah and the denied rest warn that liturgical approach without obedient hearing can harden rather than heal.
 
-Augustine asks how one comes to the God who is everywhere. His answer is not movement in place but movement by likeness: sin has made the heart unlike God, and grace draws it toward the divine image. Hugh emphasizes faith and active praise. Both readings keep the invitation dynamic. The worshipper is not summoned merely to attend a location or manufacture an emotion, but to enter restored relation (Augustine, *Enarr. in Ps.* 94.1–2; Hugh, *Postilla* on Ps. 94:1).
+Augustine asks how one comes to the God who is everywhere. His answer is not movement in place but movement by likeness: sin has made the heart unlike God, and grace draws it toward the divine image. The worshipper is summoned not merely to attend a location or manufacture an emotion, but to enter restored relation (*Exposition on Psalm 95* §2).
 
-Theodoret records a different received historical hypothesis: he places the psalm in the mouths of Josiah and the priests after the purging of idols, with Huldah’s prophecy calling the people to repentance. He then extends the opening triumphal hymn to apostles, martyrs, and all saved through Christ’s sufferings. The Josianic setting is reception rather than a recovered date, and its penitential horizon complements without replacing Augustine’s likeness-reading (*Interpretatio in Psalmos*, Ps. 94:1, PG 80: 1639–1640).
+Theodoret distinguishes a Josianic victory setting from the psalm’s christological and ecclesial appropriation by apostles, martyrs, and their imitators (*Interpretatio in Psalmos*, Ps. 94:1, PG 80:1639–1642). Bellarmine orders the same opening summons inwardly: admiration and joy in the heart precede praise on the lips (*Explanatio in Psalmos*, Ps. 94:1). Historical setting, christological fulfillment, and interior worship remain related without becoming interchangeable.
+
+Gregory Nazianzen takes the verse into baptismal preaching. His urgent call to come, adore, and fall down before the Lord makes the psalm a summons to salvation now, not later (*Oration 40, On Holy Baptism* §25, PG 36:393). Gregory reuses the verse homiletically rather than commenting on the whole psalm, while Augustine explains its moral motion toward likeness.
 
 The complete context also protects the following Gospel. Birds and lilies do not authorize inattentiveness; the psalm’s saved and joyful people must hear today. Trust in providence is covenant obedience freed from anxious mastery, not the absence of moral response.
 
@@ -294,25 +336,27 @@ The complete context also protects the following Gospel. Birds and lilies do not
 
 Matthew 6:24–33 stands inside the Sermon on the Mount. Hidden almsgiving, prayer, and fasting; the Lord’s Prayer; forgiveness; heavenly treasure; and the sound eye precede it. Asking, discernment of fruits, doing the Father’s will, and building on rock follow in chapter 7. The question is not whether disciples act, but what intention and allegiance order their action.
 
-“No man can serve two masters” names an impossibility of divided lordship. Augustine links it to the single eye: works may involve temporal goods, but their final intention must be God. Mammon names wealth treated as master, not every material possession. Jerome accordingly distinguishes having riches from serving them. A Christian can administer goods, provide for dependents, pay debts, plan, and give alms; the same goods become mammonic when accumulation, fear of loss, status, or control dictates obedience (Augustine, *De sermone* II.15; Jerome, *In Matt.* I, PL 26:45).
+“No man can serve two masters” names an impossibility of divided lordship. Augustine links it to the single eye: works may involve temporal goods, but their final intention must be God. Mammon names wealth treated as master, not every material possession. A Christian can administer goods, provide for dependents, plan, and give alms; the same goods become mammonic when accumulation, fear of loss, status, or control dictates obedience (*On the Sermon on the Mount* II.14–16 §§47–53).
 
-The repeated command not to be *solliciti* targets anxious care, not labor. Chrysostom explicitly rejects the inference that birds prohibit sowing: Paul worked with his hands, and Christ’s point is that anxious thought cannot create life or secure the future. Augustine distinguishes provision undertaken as service from making necessities the final purpose of service. The birds neither control harvest nor cease living according to their nature; the lilies receive beauty without calculating it. Their dependence exposes the disciple’s illusion of mastery.
+The repeated command not to be *solliciti* targets anxious care, not labor. Chrysostom explicitly rejects the inference that birds prohibit sowing: Paul worked with his hands, and Christ’s point is that anxious thought cannot create life or secure the future (*Homilies 21–22 on Matthew*). Augustine distinguishes provision undertaken as service from making necessities the final purpose of service. Aquinas likewise separates prudent care from inordinate solicitude (*Summa Theologiae* II-II q. 55 aa. 6–7; q. 83 a. 6). In his continuous Matthew commentary Aquinas also reads the two masters as rival final ends, preserves necessary labor, and places kingdom and justice beneath divine rule (*Super Evangelium S. Matthaei lectura*, cap. 6, lect. 5, §\[87342\]). The birds neither control harvest nor cease living according to their nature; the lilies receive beauty without calculating it. Their dependence exposes the disciple’s illusion of mastery.
 
 The Father’s knowledge is the positive ground. The passage does not promise that the faithful will never suffer hunger, nakedness, persecution, war, economic collapse, or unjust deprivation. Matthew’s Jesus has already blessed the poor in spirit and the persecuted and has taught the community to ask daily bread in the plural. Filial confidence therefore supports solidarity, almsgiving, work, and action against injustice. It does not turn another person’s need into a test they failed by lacking faith (Matt. 5:3–12; 6:9–13; CCC 2828–2834).
 
-“Seek first the kingdom of God and his justice” supplies order rather than neglect. The necessities are *added*; they are neither the kingdom nor a reward proportioned to visible righteousness. The object of seeking is God’s reign and justice. The word cannot bear a prosperity promise in which the kingdom becomes a technique for acquiring what anxiety wanted.
+The command to seek the kingdom of God and his justice first supplies order rather than neglect. The necessities are *added*; they are neither the kingdom nor a reward proportioned to visible righteousness. The object of seeking is God’s reign and justice. A prosperity promise would reverse the sentence by making the kingdom a technique for acquiring what anxiety wanted.
 
-The Communion omits “and his justice” in its compressed antiphon, but the Gospel has proclaimed it in full minutes earlier. Commentary must not turn the liturgical abbreviation into a theological deletion. The Eucharistic repeat preserves the command’s priority while the complete Gospel supplies its content.
+The Communion omits “and his justice” in its compressed antiphon, but the Gospel has proclaimed it in full minutes earlier. The Eucharistic repeat preserves the command’s priority while the complete Gospel supplies its content.
 
 ### Offertory — encircled by the angel and invited to taste (*Off.*)
 
 Psalm 33 begins in David’s danger and becomes an acrostic school of praise. The poor man cries and is heard; faces approach and are enlightened; the angel encamps; the hearer tastes divine goodness; children learn fear of the Lord through guarded speech, departure from evil, positive good, and pursued peace. The appointed antiphon stops before the beatitude of the one who hopes in God, but that hope completes its immediate scriptural unit.
 
-Basil reads the angel’s camp as protection surrounding the faithful on every side and moves from tasting toward spiritual apprehension of the true bread. Augustine offers a christological reading of the angel and an expressly Eucharistic reception of “taste and see.” Aquinas allows the protector to be understood angelically or christologically. Their diversity should remain visible: no one reading cancels the psalm’s literal testimony to divine deliverance or permits the guide to identify the angel as each worshipper’s personal guardian by the verse alone (Basil, *Hom. in Ps.* 33; Augustine, *Enarr. in Ps.* 33.9–13; Aquinas, *In Ps.* 33).
+Basil reads the angel’s camp as protection surrounding the faithful on every side and moves from tasting toward an experiential pledge of divine goodness (*Homily on Psalm 33*, PG 29:364–365). Augustine offers a christological reading of the Angel and an expressly Eucharistic reception of “taste and see” (*Exposition on Psalm 34* §§10–11). Aquinas develops tasting as inward experiential knowledge (*Commentary on the Psalms*, Ps. 33, division \[9\]). The trajectories differ without cancelling the psalm’s literal testimony to deliverance, and the verse alone does not identify the angel as each worshipper’s personal guardian.
 
-The Offertory’s ritual position gives the tasting invitation a forward direction. Bread and wine are prepared; the Secret will name the saving victim; sacramental reception follows. That sequence warrants Eucharistic application together with the documented Fathers. It does not make bodily sensation the measure of grace. Felt sweetness may accompany devotion, but spiritual dryness does not prove absence of sacramental fruit, and emotional intensity does not prove worthy reception.
+Theodoret moves from literal angelic guardianship to experiential knowledge, then reads tasting in baptismal and Eucharistic mystery while joining fear to love (*Interpretatio in Psalmos*, Ps. 33:8–11, PG 80:1103–1106). Augustine’s explicit Eucharistic emphasis, Theodoret’s broader sacramental movement, and Aquinas’ account of inward knowledge are complementary receptions rather than one exclusive literal sense.
 
-The Gradual’s “not in princes” remains beside the angelic camp. Mediation is received; mastery is refused. The angel encamps by God’s command, while the Lord himself is tasted and hoped in.
+The Offertory’s ritual position gives the tasting invitation a forward direction. Bread and wine are prepared; the Secret will name the saving victim; sacramental reception follows. Augustine’s Eucharistic reading belongs naturally to that action, while Basil’s experiential reading remains wider than sacramental sensation. Felt sweetness does not measure grace: dryness is not proof of its absence, and emotional intensity is not proof of worthy reception.
+
+The Gradual’s preference for trust in the Lord over trust in princes remains beside the angelic camp. Mediation is received; mastery is refused. The angel encamps by God’s command, while the Lord himself is tasted and hoped in.
 
 ### Secret — the saving victim, purification, and propitiation (*Sec.*)
 
@@ -320,17 +364,21 @@ The Secret asks that *hæc hostia salutaris* become both purification of the wor
 
 Propitiation therefore does not describe a change from divine hostility to love, as though mercy had to be purchased from outside God. The Father gives the Son; the Son offers himself in love; the Spirit forms the Church’s participation. Sin is truly judged and forgiven, and Christ’s obedient self-offering truly reconciles. The prayer holds divine initiative and real atonement together.
 
-The Gellone sacramentary transmits this prayer as no. 1122, mapped by its editor to Gregorian Supplement no. 1172. Sant Ruf and Vilabertran keep it in the same trio. That history warrants speaking of a received oration set while forbidding personal authorship claims. The older Sunday XV placement also prevents treating every aspect of the 1962 ordering as immemorial.
+The Gellone sacramentary transmits this prayer as no. 1122, mapped by its editor to Gregorian Supplement no. 1172. Sant Ruf and Vilabertran keep it in the same trio. These witnesses establish a received oration set but name no personal author. Their older Sunday XV placement also shows that the 1962 ordering is not immemorial in every detail.
 
 The Epistle and Secret illuminate one another without collapsing moral and sacramental causality. Those who belong to Christ crucify vices and concupiscences; the saving victim purifies sins. Conversion is not self-purging, and sacramental purification does not license unrepented grave sin. The one Christ both claims the moral life and gives the sacrifice by which it is healed.
 
 ### Communion — the kingdom’s priority carried into reception (*Comm.*)
 
-The Communion compresses Matthew 6:33 to “seek first the kingdom of God, and all things shall be added unto you, saith the Lord.” Its source verse has also “therefore” and “and his justice”; the antiphon adds the dominical attribution. The adaptation is textually visible and should not be silently translated as though identical with the full biblical verse.
+The Communion’s ritual form is *Primum quǽrite regnum Dei, et ómnia adiciéntur vobis, dicit Dóminus*. Relative to the complete Matthew 6:33 in the registered Douay–Rheims/Challoner, the antiphon omits “therefore” and “and his justice,” contracts “all these things” to “all,” and adds the dominical attribution. It is a distinct liturgical adaptation rather than a verbatim repetition of the full biblical verse.
 
 Ritually, the repetition matters. The Gospel’s long treatment of birds, lilies, food, clothing, and the Father’s knowledge is reduced to the ordering imperative at Communion. Receipt of the sacrament does not promise wealth or immunity from deprivation. It locates the communicant beneath the kingdom’s priority. Everything added remains added—a necessity, gift, responsibility, or aid—and cannot become the end that governs worship.
 
-Augustine makes this order an order of intention: necessities are sought for the work of the kingdom, never the kingdom for necessities. Chrysostom makes it an order of confidence and action: work can continue once anxious slavery has been refused. Jerome makes it an order of use: a person can possess a thing without being possessed by its mastery. The antiphon’s brevity gathers these direct Gospel receptions without authorizing a prosperity reading.
+Chrysostom and Augustine address Matthew’s full saying rather than the contracted liturgical antiphon. Augustine makes the order one of intention: necessities are sought for the work of the kingdom, never the kingdom for necessities. Chrysostom makes it an order of confidence and action: work can continue once anxious slavery has been refused. Their exegesis illuminates the Communion reprise at the level of the Gospel, as does Aquinas’ treatment of Matthew 6:33 in the same Gospel sequence (*Super Evangelium S. Matthaei lectura*, cap. 6, lect. 5, §\[87342\]). The antiphon’s brevity does not turn the command into a prosperity promise.
+
+Cantus Database ID 004377 attests the contracted wording as a chant formula rather than an independent commentary. Chrysostom, Augustine, and Aquinas address Matthew’s complete saying; their identified commentaries do not treat the Communion adaptation as an independent scriptural unit.
+
+Schuster reads the Communion as the Gospel’s enacted return within the Mass: after oblation and sacrifice, the communicant receives under the word that the kingdom remains first (*The Sacramentary*, III, pp. 136–138). His harvest-season treatment joins providence, sacrifice, purification, and strengthening as one historical-liturgical interpretation of the Sunday.
 
 The missing phrase “and his justice” remains active because the Gospel has just proclaimed it and Paul has described its Spirit-bearing form. Charity, peace, patience, goodness, fidelity, gentleness, and chastity are not optional after Communion. They are among the living ways in which the kingdom’s priority becomes visible.
 
@@ -338,148 +386,158 @@ The missing phrase “and his justice” remains active because the Gospel has j
 
 The final prayer gives the sacraments three verbs. May they always purify and strengthen *nos*; may they lead to the effect of perpetual salvation. Purification removes what conflicts with communion; strengthening builds the life of charity; leading keeps the recipient in pilgrimage. The Mass ends not with achieved self-sufficiency but with a request for continuing sacramental agency.
 
-The Catechism names Communion’s fruits with similar distinctions: deeper union with Christ, preservation and growth of grace, cleansing from venial sin, protection through strengthened charity, concern for the poor, and ecclesial unity (CCC 1391–1396). These fruits presuppose living relation and proper disposition. The prayer cannot support a mechanical view in which mere external reception guarantees subjective consolation or forgives unrepented mortal sin apart from the sacrament of Reconciliation.
+The Catechism names Communion’s fruits with similar distinctions: deeper union with Christ, preservation and growth of grace, cleansing from venial sin, protection through strengthened charity, concern for the poor, and ecclesial unity (CCC 1391–1397). These fruits presuppose living relation and proper disposition. The prayer cannot support a mechanical view in which mere external reception guarantees subjective consolation or forgives unrepented mortal sin apart from the sacrament of Reconciliation.
 
-The same oration appears as Gellone no. 1123 and Gregorian Supplement no. 1173, with corresponding forms at Sant Ruf and Vilabertran. Vilabertran’s edition reads *Purificent semper te et muniant*, addressing “thee,” where the received Roman form has *nos, Deus*. The variant is a real transmission datum and is not harmonized into the 1962 text.
+The same oration appears as Gellone no. 1123 and Gregorian Supplement no. 1173, with corresponding forms at Sant Ruf and Vilabertran. Vilabertran’s edition reads *Purificent semper te et muniant*, addressing “thee,” where the received Roman form has *nos, Deus*. The two forms preserve a material difference in the prayer’s addressee and object.
 
-The final *ducant* completes the Collect’s *dirigatur*. At the opening, mortal humanity asks to be directed toward saving things; after Communion, the recipients ask to be led to salvation’s perpetual effect. The Spirit’s walk, the Gospel’s seeking, the Alleluia’s coming, and the Postcommunion’s leading name one grace-enabled movement without proving a single historical compiler’s design.
+The final *ducant* completes the Collect’s *dirigatur*. At the opening, mortal humanity asks to be directed toward saving things; after Communion, the recipients ask to be led to salvation’s perpetual effect. The Spirit’s walking, the Gospel’s seeking, the Alleluia’s coming, and the Postcommunion’s leading name one grace-enabled movement.
 
 ## Source-Grounded Synthesis Across the Propers
 
-| **Five relations established by the appointed texts and checked reception** |  |  |
-|:---------------|:----------------------|:-------------------------|
-| **Relation** | **Decisive evidence** | **What the evidence does and does not establish** |
-| *Source-Grounded Synthesis relations (continued)* |  |  |
-| **Relation** | **Decisive evidence** | **What the evidence does and does not establish** |
-| *Continued on next page* |  |  |
-| One allegiance and direction | Collect’s *abstrahatur*/*dirigatur*; Spirit-led walking; two masters; kingdom first | Grace redirects active mortal life, rejecting bodily dualism, quietism, and self-salvation. It does not turn every prudent choice into a direct command. |
-| Mediation beneath final trust | Gradual’s man/princes; angelic camp; plural divine aids; Father’s providence | Augustine and Hugh permit human and angelic instruments under God. The relation neither rejects authority and expertise nor makes a mediator infallible. |
-| Courts, kingdom, altar, final end | Introit’s desired courts; joyful approach; kingdom first; tasting; sacraments leading | Documented reception carries the psalms christologically and Eucharistically. This theological movement does not prove a compiler’s symbolic plan. |
-| Spirit-bearing and sacramental fruit | Galatians’ singular fruit; saving victim; sacraments purifying and strengthening | Catholic teaching joins moral transformation and Eucharistic grace in Christ. Neither achievement nor mechanical reception substitutes for living charity. |
-| Practiced trust against anxiety | Protector; confiding; praising; angelic protection; Gospel solicitude; Communion priority | Repeated worship forms dependence. It promises neither calm on demand nor immunity from deprivation, injustice, or suffering. |
+### The kingdom supplies the formulary’s verbal center
 
-### The governing action is reordering, not subtraction
+Three ritual moments repeat the same governing noun. The Epistle warns that the works of the flesh exclude from the *regnum Dei*; the Gospel commands that the *regnum Dei* and its justice be sought first; and the Communion gives the command again as the faithful receive. Exclusion, seeking, and reception thus form a single movement. The kingdom is not merely the reward mentioned after a moral list or the theme of one dominical saying. It is the good before which rival allegiances are exposed and under which sacramental life is ordered.
 
-Across the formulary, grace acts through verbs of movement: withdraw, direct, walk, be led, come, seek, purify, strengthen, lead. Even crucifixion of the passions is attached to belonging to Christ rather than to the destruction of embodied life. The Gospel’s food, clothing, birds, grass, work, and household need remain within the Father’s knowledge. The object removed is not creation but its disordered rule.
+The Introit and Postcommunion extend this center in opposite temporal directions. Psalm 83 supplies longing before the lessons: God’s courts are already desired as the place where one day exceeds thousands. The final prayer asks that the sacraments lead onward to salvation’s perpetual effect. The formulary therefore moves from desire, through the word that separates one master from another, toward an end that Communion begins to taste but does not exhaust.
 
-This is why the two-master saying and the flesh-Spirit contrast illuminate one another only under a limit. They share a question of governing love. They do not share a metaphysical division between the material and immaterial. Chrysostom makes the limit explicit in both commentaries: the body is not evil, and the birds do not prohibit labor. The Collect’s positive destination *ad salutaria* supplies the same control in prayer.
+### The biblical contexts converge in the spiritual house
 
-The Communion’s abbreviated command then becomes more than a verbal refrain. At the point of reception, the worshipper is placed again under an order of ends. “First” does not mean that the kingdom is one early task after which attention returns to autonomous accumulation. It names the norm under which every necessity, gift, and labor remains subordinate.
+First Peter 2 gives the appointed passages a canonical meeting place. Its invitation to taste that the Lord is sweet takes up Psalm 33; its living stone, rejected by men and chosen by God, receives Psalm 117; and its call to abstain from fleshly desires while living as free servants parallels Galatians’ moral struggle. The psalmic links are direct quotation and allusion, while the Galatians relation is thematic and lexical rather than a demonstrated quotation.
 
-### Dependence has a creaturely form
+The Petrine sequence makes the relations christological and ecclesial. Those who have tasted approach Christ the living stone and are built as a spiritual house for sacrifice; the rejected stone of Psalm 117 and the tasting of Psalm 33 no longer stand as isolated chant images. The Epistle’s freedom and struggle against disordered desire describe the conduct of this priestly people. The Collect’s Church and the Secret’s saving victim fit the same economy: grace gathers persons into Christ and gives their moral life a corporate and sacrificial form.
 
-The Gradual could be treated as the formulary’s only statement about help, but the Collect and Offertory prevent that. The Church explicitly asks for helps, and the psalm explicitly promises an angelic camp. Augustine and Hugh supply the necessary account: God alone is the terminus of trust, while people and angels can be real instruments because their goodness and power are received.
+This moral struggle is embodied without being anti-bodily. Paul opposes desire disordered against the Spirit, not material creation as such; Christ’s sacrifice and sacramental body would make contempt for bodily nature foreign to the formulary itself. Birds, lilies, an angelic camp, bread, wine, and the communicants’ common life all place dependence and obedience within created existence rather than beyond it.
 
-The Gospel extends the account from personal ministers to the created order. The Father feeds and clothes through creaturely patterns that the disciple can observe but not master. Prudence, labor, institutions, and material provision therefore need not be rivals to providence. They become rivals when their security is served as a lord or when their authority is treated as final.
+### The orations carry one movement through changing placements
 
-The saving victim is the decisive case. Eucharistic mediation is not an independent layer placed between God and the worshipper. It is Christ’s own self-offering made sacramentally present. This is why the Secret can speak of propitiation without imagining that a creature changes a hostile divine will. Mercy gives the sacrifice through which sin is truly judged, forgiven, and healed.
+The Collect, Secret, and Postcommunion travel together long before their place in the 1962 formulary. Gellone II transmits them at nos. 1121–1123 under Sunday XV after the Pentecost octave and relates them to Gregorian Supplement nos. 1171–1173. Sant Ruf preserves the trio at nos. 427–429, and Vilabertran at nos. 488–490. Vilabertran’s Postcommunion addresses *te* where Gellone and the received Roman form carry *nos, Deus*. The witnesses establish the durability of the prayer group while preserving a material textual difference.
 
-### The appointed psalms form a school of desire
+The three prayers also share a clear theological motion. The Collect asks that mortality be withdrawn from harms and directed toward saving things. The Secret places that direction under the saving victim who purifies sins and is propitiation. The Postcommunion asks that the sacraments continue to purify, strengthen, and lead. Direction, sacrifice, and lasting effect belong together even where the surrounding Sunday constellation differs.
 
-Each psalm contributes more than a slogan. Psalm 83 orders desire toward the courts and the anointed face. Psalm 117 places final trust inside a communal procession of distress, deliverance, gates, stone, and altar. Psalm 94 joins joyful approach to prostration and warns against hardness. Psalm 33 joins deliverance and angelic protection to tasting, moral instruction, and pursued peace.
+Medieval Sunday XIV witnesses preserve different constellations. Honorius’s *Gemma animae* IV.72 (PL 172:717–718) joins the present Introit, Collect, Galatians lesson, and Offertory to material placed on adjacent Sundays in the 1962 Missal. Anthony of Padua’s *Sermo Dominica XIV post Pentecosten* §§1–2 instead names the Introit *Inclina*, appoints Galatians 5:16–24, and expounds the ten lepers from Luke 17. Their disagreement witnesses medieval variation rather than a single linear step. The 1570 Roman Missal has the complete later ten-element Sunday XIV sequence, which the Mame 1922 and Vatican 1962 witnesses preserve; its first compiler and intervening redactional stages remain unknown.
 
-Together they answer the Gospel’s anxious imagination. Anxiety pictures a future whose necessities must be secured by present control. The psalms train memory, praise, fear, hope, and approach. Their answer is not denial of danger: vales of tears, enemies, hard hearts, and David’s flight remain. They relocate danger within covenant and worship so that action can proceed without the future becoming a master.
+### The liturgical action gives trust an embodied grammar
 
-The Introit’s “one day” supplies the furthest horizon. Augustine’s anagogical reception does not make time worthless; it makes eternal communion the measure of time. Thousands of days organized by mammon cannot outweigh the one day received in God’s courts. The Postcommunion’s perpetual salvation closes the same arc in sacramental language.
+Within the 1962 Order of Mass, the chants, lessons, and orations do more than stand beside one another. The Introit places the assembly under God’s protecting gaze and awakens longing for his courts. The Epistle and Gospel then identify contrary masters and the Spirit-led life. At the offering, Psalm 33 moves from encircling protection to tasting; the Secret names the saving victim. Communion returns to the Gospel’s command, and the final prayer asks for sacramental fruit that endures.
 
-### The fruit is ecclesial and Eucharistic without losing moral specificity
+Schuster reads this enacted sequence in a harvest-season horizon: providence, oblation, sacrifice, Communion, purification, and strengthening answer the anxiety of the Gospel (*The Sacramentary*, III, pp. 136–139). His historical-liturgical interpretation gives the Communion’s return a precise place in the action. What Christ commanded in the proclamation governs what the Church receives at the altar.
 
-Paul’s singular fruit has many names because charity takes determinate forms. Peace is not patience, patience is not faith, and chastity is not goodness; yet none flourishes as an autonomous possession. Augustine and Aquinas locate their coherence in grace-formed love and action ordered to God.
+The Gradual and Offertory make that embodiment especially clear. Final trust rests in the Lord rather than men or princes, yet the Lord’s angel encamps as a real minister. The communicant does not secure salvation by refusing every created means; neither may any means receive the heart’s final confidence. The saving victim is the center because sacramental mediation is Christ’s own self-offering, not a rival power placed between the Church and God.
 
-The orations speak in the plural and corporate singular: the Church, human mortality, our sins, us. The saving victim and sacraments act upon a people, not merely upon a collection of private spiritual experiences. Communion deepens union with Christ and therefore the unity of his body. That unity is tested and expressed in the Epistle’s charity, peace, patience, goodness, fidelity, and gentleness.
+### Moral and sacramental fruit arise from the same grace
 
-The synthesis must retain the two-sided Catholic control. Moral seriousness is real: Paul warns that specified actions exclude from the kingdom and calls for the crucifixion of vices. Sacramental initiative is also real: purification, strength, and leading are prayed for as effects of Christ’s sacrifice and sacraments. The former is not self-merit detached from grace; the latter is not automatic benefit detached from repentance and charity.
+Paul’s singular fruit and the Postcommunion’s sacramental effects answer the same mortal instability named by the Collect. Charity, joy, peace, patience, goodness, fidelity, gentleness, continence, and chastity are acts of persons led by the Spirit. Purification, strengthening, and perseverance are gifts asked from the sacraments. Neither side can be made self-sufficient: moral achievement cannot generate grace, and external reception cannot replace conversion.
 
-### What remains historically unclaimed
+The Church’s Eucharistic teaching names their union in Christ. The Mass makes present the one sacrifice of the Cross; Communion deepens union with Christ, strengthens charity, cleanses venial sin, and incorporates the faithful more deeply into his body and binds concern for the poor to Eucharistic truth (CCC §§1362–1368, 1391–1397). Augustine’s Eucharistic reading of “taste and see” joins the Offertory to this sacramental fruit, while Aquinas’ account of the Spirit’s fruit joins delight to grace-formed virtue. Tasting and fruit are not measures of passing sweetness. They name the goodness of communion and action when desire has been ordered beneath one Lord.
 
-The Gellone, Sant Ruf, and Vilabertran witnesses establish transmission of the three orations as a set, commonly under Sunday XV in their arrangements. They do not explain why the 1962 Missal places those prayers beside these particular chants and readings. No checked Father comments on the complete present formulary as a unit, and Anthony of Padua’s Sunday XIV sermon uses an older Gospel assignment.
-
-The relations above are therefore source-grounded synthesis in the precise sense used by this guide: appointed textual observations, complete canonical contexts, documented reception, and official doctrinal controls warrant them. They are not recovered redaction history. The distinction allows the formulary’s real theological coherence to be described without inventing an anonymous compiler’s intention.
+The corporate pronouns keep this economy ecclesial: the Church asks, the brethren walk, the Father knows their needs, the victim purifies their sins, and the sacraments lead them. Personal responsibility remains exact, for Paul names works that exclude from the kingdom. Yet the answer is never an isolated program of self-improvement. The Spirit forms Christ’s members, and the Eucharist nourishes the charity by which their common life bears fruit.
 
 ## The Propers: Notable and Quotable
 
-> These three cases passed a bounded afterlife audit. Each places appointed biblical language in a later imaginative or social register and changes what the language is doing. Straight commentary, homiletic repetition, devotional reuse, and bare mottoes were excluded. None proves dependence on this particular Missal formulary.
+### “No man can serve two masters” as conflict-of-interest law (*Gosp.*)
 
-### Mammon becomes the downward-looking miner of Hell (*Gosp.*)
+In *United States v. Mississippi Valley Generating Co.*, 364 U.S. 520, 549–550 and n. 14 (1961), the Supreme Court invokes Matthew 6:24 while applying the federal conflict-of-interest statute. The opinion first changes “can” to “may,” then its footnote reproduces the appointed phrase “No man can serve two masters.” The Gospel’s undivided service becomes an institutional rule against divided economic loyalty in federal contracting, without requiring proof of actual corruption or financial loss. The verse supplies moral foundation and analogy; the statute and the Court’s reasoning, not the citation alone, supply positive law.
 
-In Book I of John Milton’s *Paradise Lost*, Mammon is no longer only the wealth that can become a master in Matthew 6. He is personified as the fallen spirit whose gaze was already bent downward in heaven toward its golden pavement. He leads the digging of ore from Hell and teaches human beings to rifle the earth for treasure (Book I, lines 678–690 in both the checked 1667 ten-book and 1674 twelve-book editions). The dominical alternative is turned into character: servitude to riches appears as a settled direction of vision before it appears as mining or possession.
+### “Seek ye first the political kingdom” (*Gosp., Comm.*)
 
-**Control.** Milton draws on the wider biblical and postbiblical figure of Mammon, not demonstrably on this Sunday. The poem’s mythic personification is literary theology, not an additional biblical claim about the identity of a named fallen angel.
+Two parliamentary debates record an Accra statue’s adaptation of Matthew 6:33: “Seek ye first the political kingdom and all things will be added unto you.” The House of Commons heard it on 3 December 1962 (vol. 668, cols. 1036–1037), and the House of Lords on 19 December (vol. 245, col. 1203). “Political kingdom” replaces “kingdom of God,” while the justice clause and Gospel connective disappear and the seek-first/addition form remains. Providential priority becomes an anticolonial claim that political independence precedes material improvement; the two speakers give that claim opposed evaluations. The records neither name the coiner nor show dependence on the liturgical Communion rather than a familiar English Bible.
 
-### The lily becomes a class position in *Vagabondia* (*Gosp.*)
+### “Against such there is no law” made literal (*Ep.*)
 
-Frances Hodgson Burnett titles chapter IV of *Vagabondia* “A Lily of the Field.” Dolly Crewe applies the image to Ralph Gowan, a twenty-seven-year- old heir whose inherited fortune has kept his life in “pleasant places.” She cites the lilies’ failure to toil or spin and Solomon’s unequal splendor, then names Gowan one of their class. Christ’s comparison, which exposes the limits of anxious provision by pointing to a creature dependent on the Father, becomes an affectionate but pointed social description of inherited ease among artists who work hard and remain poor.
+Two state courts independently make the Epistle’s closing phrase do positive-law work. *Johnston v. Commonwealth*, 22 Pa. 102, 108–109 (1853), applies “against such there is no law” to acts of charity and necessity excepted from a Sunday law. *Sullens v. State*, 191 Miss. 856, 872–873, 4 So. 2d 356 (1941), uses the same words at the boundary between bad taste and punishable abuse of press freedom. Neither opinion cites Paul, yet each exact six-word echo turns his statement about the Spirit’s fruit into a boundary between moral judgment and legal prohibition. The separate uses do not establish influence between the courts.
 
-**Control.** Burnett’s wording is recognizably Matthean, but her scene adapts the lilies to a wealthy man rather than merely repeating the Gospel’s argument. It does not make the Gospel praise idleness or treat poverty as a lack of providence.
+### The lilies answer back in *Erewhon* (*Gosp.*)
 
-### Keynes postpones the lilies for a century (*Gosp.*)
+Samuel Butler’s revised and enlarged *Erewhon*, chapter XXVII, “The Views of an Erewhonian Philosopher Concerning the Rights of Vegetables,” gives Matthew’s lilies a comic answer. In the paragraphs beginning “Some of the passages” and “They toil not,” Butler uses the Authorized Version’s “toil,” retains “neither do they spin,” treats a leaf as textile fabric, and reverses “Consider the lilies” into “Consider the Solomons.” The emblem of uncalculated divine provision becomes an argument about vegetable consciousness, evolutionary labor, food ethics, and the limits of human knowledge. The dependence is on the wider Gospel tradition, not on this Mass or on the Douay wording; the passage’s presence in the 1872 first edition was not established.
 
-In “Economic Possibilities for our Grandchildren” (1930), John Maynard Keynes imagines a future beyond economic necessity in which society may again honor ends above means. He calls those able to enjoy things directly “the lilies of the field who toil not, neither do they spin.” He then abruptly warns that the time is not yet: for another hundred years, he argues, avarice, usury, and precaution must still be treated as instrumental gods. The Gospel image becomes both a name for post-scarcity leisure and an ironic measure of an economic order still serving what it knows is not the final good.
+### “O Taste and See” as an urban poetics of incorporation (*Off.*)
 
-**Control.** Keynes proposes an economic forecast and strategy, not an exegesis of Matthew 6. His hundred-year horizon runs to 2030 and remains a historical prediction, not a liturgical timetable or a theological promise.
+Denise Levertov’s “O Taste and See,” in the 1964 collection of that name, begins from a subway Bible poster and redirects the four-word biblical phrase into a sensory poetics of incorporation, grief, mercy, language, weather, fruit, embodiment, and mortality. *The Norton Anthology of Poetry*, 5th ed., p. 1678, poem and notes 1–2, identifies Psalm 34:8 in Hebrew numbering. The widening broadens the phrase’s object without plainly rejecting or secularizing God. The poem is protected; only its four-word biblical overlap is reproduced here and the surrounding movement is paraphrased.
 
 ## The Propers: Interpretive Possibilities
 
-*These proposals arise from AI-assisted editorial comparison. They are attributed to none of the cited witnesses and make no claim about a compiler’s intention. Each names its evidence class and strongest limit.*
+*The following six connections are exploratory editorial and AI-assisted proposals. They are not sourced historical intent or teaching attributed to the witnesses cited elsewhere.*
 
-**The angel and the princes distinguish mediation from mastery. (*Grad., Gosp., Off.*)** *Classification: near analogue located.* Psalm 117 places final confidence in God rather than in humans or princes; Psalm 33 welcomes the Lord’s angel as a protecting minister; the Gospel refuses two masters. Augustine and Hugh explicitly allow good human and angelic helpers while locating their goodness and power in God. The adjacent chants can therefore distinguish receiving mediation from transferring allegiance. No checked witness joins both chants to Matthew’s master saying. The proposal abolishes neither authority, friendship, expertise, nor angelic ministry.
+**The angel and the princes distinguish mediation from mastery. (*Grad., Gosp., Off.*)** *Precedent result: near analogue located.* The Gradual denies final trust to men and princes, the Offertory receives an angelic protector, and the Gospel makes mastery exclusive. Their mechanism is a distinction between an instrument through which God helps and a lord to whom allegiance terminates. Matthew’s two masters orders the apparent opposition between refusing princes and receiving an angel, so that created aid can be welcomed without becoming the final object of trust. **Strongest limit.** Augustine does not cite Matthew here; the relation neither forbids ordinary authority and expertise nor identifies every created aid with a rival master.
 
-**The protective camp opens toward the desired courts. (*Int., Gosp., Off.*)** *Classification: near analogue located.* The Offertory’s angel encamps around those who fear God, while the Introit desires the courts and the face of Christ. Read beside the Gospel’s release from anxious self-protection, enclosure changes meaning: safety is received within God’s ordering and directs desire toward his dwelling instead of being manufactured by possession. Augustine and Hugh support the court reading, and Basil supports all-around angelic defense, but no inspected source makes this cross-psalm join. It promises neither physical immunity nor a personal guardian angel identified by this verse.
+**The protective camp opens toward the desired courts. (*Int., Gosp., Off.*)** *Precedent result: near analogue located.* The Offertory’s encircling camp, the Introit’s desired courts, and the Gospel’s refusal of anxious mastery can recast self-enclosure as safety received from God and open toward worship and pilgrimage. Camp and court name opposite spatial motions—enclosure and approach—that the Gospel orders without collapsing; security thereby becomes belonging and direction rather than possession of an invulnerable boundary. **Strongest limit.** The psalms use different spatial genres, the Offertory names no personal guardian angel, and the connection promises no physical immunity.
 
-**What is added does not become what leads. (*Coll., Gosp., Comm., Postcomm.*)** *Classification: not located in the checked corpus.* The Gospel and Communion say necessities will be *added*; the Collect asks that mortality be *directed* toward saving things; the Postcommunion asks that sacraments *lead* to perpetual salvation’s effect. The different verbs allow a disciplined distinction between goods received along the way and the grace that orders the journey’s end. Exact Latin searches found the texts together in missals, not this three-verb interpretation. The verbs come from different genres and establish no hidden redactional scheme or prosperity promise.
+**What is added does not become what directs or leads. (*Coll., Gosp., Comm., Postcomm.*)** *Precedent result: near analogue located.* Material necessities are *adicientur*; divine helps direct mortality *ad salutaria*; and the sacraments *ducant* toward salvation’s perpetual effect. The mechanism is grammatical agency: added goods accompany the journey, while grace gives it direction and end. The Collect’s beginning and the Postcommunion’s ending frame the Gospel and Communion with verbs of finality, so provision can be received without being mistaken for the good that orders life. **Strongest limit.** The verbs belong to different genres, establish no hidden compositional plan, and support no prosperity promise.
 
-**Taste can expose which master orders desire. (*Gosp., Off., Sec., Comm.*)** *Classification: near analogue located.* The Gospel’s God–mammon alternative concerns allegiance; the Offertory invites tasting; the Secret names the saving victim; the Communion restores the kingdom’s priority. Basil and Augustine receive “taste” spiritually and Eucharistically, while Augustine and Jerome distinguish using possessions from serving them. Their witness permits an examination of appetite: what one seeks, consumes, and shares can disclose the good under which desire is being trained. No checked source makes the complete join. Psalm 33 retains a sense beyond the Eucharist, and felt sweetness is never a test of sacramental fruit.
+**Tasting can expose which master orders desire. (*Gosp., Off., Sec., Comm.*)** *Precedent result: near analogue located.* The Gospel’s mutually exclusive service can be read through appetite: tasting the Lord, approaching the saving victim, and receiving again the kingdom’s priority place desire away from mammon’s mastery. The Offertory’s sensory verb bridges the Gospel’s lordship and the sacramental action of Secret and Communion; what one seeks, consumes, and shares can disclose the allegiance under which desire is being trained. **Strongest limit.** Augustine’s Eucharistic tasting does not exhaust Psalm 33’s literal sense, felt sweetness does not measure sacramental fruit, and the relation proves no compiler’s intent.
 
-**One fruit answers a Church liable to slide. (*Coll., Ep., Postcomm.*)** *Classification: near analogue located.* Paul names one Spirit-given fruit through many qualities; the Collect names one Church and a mortal humanity that slips; the Postcommunion asks purification and strengthening for “us.” Augustine and Aquinas relate the fruit through charity and ordered delight, while the Catechism relates Eucharistic fruit to ecclesial unity. The juxtaposition can invite coherent, grace-formed character rather than a checklist of isolated virtues. No witness joins the grammatical numbers to this Collect. Singular and plural forms prove no ecclesiological theory, and the Greek/Vulgate list difference forbids numerology.
+**One fruit answers a Church liable to slide. (*Coll., Ep., Postcomm.*)** *Precedent result: near analogue located.* The Collect’s Church and mortal humanity, the Epistle’s singular fruit, and the Postcommunion’s corporate purification and strengthening can place personal transformation inside an ecclesial reception of grace. Singular fruit and plural sacramental recipients disclose one grace taking distinct moral forms within one body, freeing virtue and sacrament from an isolated self-improvement model. **Strongest limit.** Grammatical number proves no ecclesiological theory, personal responsibility remains, and the difference between the Vulgate list and SBLGNT v1.2 at Galatians 5:22–23 forbids numerology.
+
+**One desire-root turns toward opposite objects. (*Int., Ep.*)** *Precedent result: near analogue located.* The Introit’s *concupiscit anima mea in atria Domini* and the Epistle’s *caro concupiscit adversus spiritum*, together with *concupiscentiis* in the immediate Pauline context, let one desire-root stage not desire’s extinction but its redirection. The same verbal root can carry desire toward worship or against the Spirit, so moral struggle receives a positive object of longing in God’s courts and turns on desire’s object and order rather than mere intensity. **Strongest limit.** The common root may be ordinary coincidence. Both Pauline anchors lie within the appointed Epistle, whereas the Psalm’s *cor meum et caro mea* begins in unappointed Psalm 83:3b, just beyond the Introit’s cutoff at 3a. No compiler’s intention follows.
 
 ## Appendix: Scope and Qualifications
 
-> **Edition and use.** This companion studies the recurring *Dominica Decima Quarta post Pentecosten*, II class, in the 1962 Vatican typical Roman Missal. It is not an official liturgical book, homily, civil-date assembly sheet, or ruling on present authorization. Occurrence, precedence, commemorations, and particular calendars belong to assembly.
+> **Edition and formulary.** This companion studies the recurring *Dominica Decima Quarta post Pentecosten*, II classis, in the 1962 Vatican typical Roman Missal: the ten elements at printed pp. 394–396, nos. 1572–1581. It is not an official liturgical book, homily, civil-date assembly sheet, or ruling on present authorization. Occurrence, precedence, commemorations, and particular calendars lie outside its scope.
 >
-> **Text and translation.** All ten Latin elements, headings, boundaries, references, rank, Creed, and Trinity Preface were visually collated against the identified typical-edition facsimile, with an independent Benziger image as corroboration. Complete Scripture English is the registered public-domain Douay–Rheims/Challoner; oration English is Cummiskey’s anonymous 1861 witness. Witness-boundary notes expose places where those versions do not translate the appointed Latin form.
+> **Text and translation.** The Latin headings, boundaries, references, rank, Creed, Trinity Preface, and all ten proper texts were visually collated against the Vatican/CMAA facsimile and an independent Benziger 1962 witness; the Mame 1922 antecedent controls the recorded United States public-domain basis for the Latin. Scripture English is the public-domain Douay–Rheims/Challoner, and oration English is Cummiskey’s anonymous 1861 hand-missal witness. Neither historical English source is an approved 1962 liturgical translation.
 >
-> **Research and rights.** Biblical contexts and the named ancient, medieval, saintly, official, transmission, and cultural witnesses were checked at the editions and loci recorded in `research/scope.md`. The matrix is claim-driven and non-exhaustive. Protected modern texts are paraphrased or quoted only in short, necessary compass; the repository does not relicense third-party works.
+> **Research extent.** Complete scriptural contexts and the cited Greek, Latin, medieval, saintly, doctrinal, liturgical, and cultural loci were examined within the bounds recorded in `research/scope.md`. The passage-by-passage reception sweep includes each biblical appointment; the three orations have medieval transmission witnesses but no located ancient commentary as a set. Direct inspection of Deshusses and a broader antiphoner–lectionary stemmatic study were not reached. The supplied sources do not settle a complete composition-place, first-audience, life-stage, and modern-critical dossier for every psalm, Galatians, and Matthew row; page 2 states those unresolved facets locally.
 >
-> **Global limits.** Pauline “flesh” is not the material body or a second evil nature. Providence abolishes neither work nor prudent provision and promises neither prosperity nor exemption from deprivation. Creaturely help remains real while final confidence rests in God. Eucharistic fruit is not measured by felt sweetness, and the sacraments are not mechanical. No checked witness proves one compiler’s design for the complete formulary, and no universal novelty is claimed for an editorial proposal.
+> **Chronology and historical limits.** Biblical dates are only the answerable assertions carried by the repository’s Catholic-traditional chronology corpus, including its disputed alternatives and typed absences. The medieval prayer witnesses place the oration trio under Sunday XV, Anthony of Padua attests a different Sunday-XIV constellation, and the 1570, 1922, and 1962 Missals attest the later sequence. None of the examined witnesses names the first compiler, the date or stages of rearrangement, or a single symbolic plan for all ten elements.
 >
-> **Review.** The source leaf records redevelopment audits. Acceptance requires current mechanical and page-by-page visual gates; installation and publication remain separate. Records: `propers/verified.md` and `research/scope.md`.
+> **Rights and use.** The protected Levertov poem in the cultural gallery is represented only by the brief biblical phrase it reuses; its surrounding context is paraphrased. The repository does not relicense Scripture, liturgical texts, historical translations, or other third-party works. This guide aids study and does not substitute for the Missal, ecclesiastical authority, or competent pastoral counsel.
+>
+> **Review record.** Source-text collation and research verification are documented in `propers/verified.md` and `research/scope.md`. The composition is AI-assisted and claims no imprimatur, ecclesiastical approval, or exhaustive coverage.
 
 ## References
 
-- *Missale Romanum*, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962), *Dominica Decima Quarta post Pentecosten*, printed pp. 394–396, marginal nos. 1572–1581, [facsimile](https://media.churchmusicassociation.org/pdf/missale62.pdf); and *Missale Romanum*, editio iuxta typicam (New York: Benziger, 1962), pp. 389–391, Internet Archive item `MissaleRomanum1962RomanMissalColorLatin`.
+- *Missale Romanum*, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962), *Dominica Decima Quarta post Pentecosten*, printed pp. 394–396, nos. 1572–1581, [facsimile](https://media.churchmusicassociation.org/pdf/missale62.pdf); and *Missale Romanum*, editio iuxta typicam (New York: Benziger, 1962), printed pp. 389–391, Internet Archive item `MissaleRomanum1962RomanMissalColorLatin`.
 
-- *The Roman Missal, Translated into the English Language for the Use of the Laity* (Philadelphia: Eugene Cummiskey, 1861), Sunday XIV after Pentecost; Douay–Rheims/Challoner Bible, Pss. 33, 83, 94, 117; Gal. 4–6; Matt. 5–7, registered repository verse files. Cummiskey controls the published oration English; Douay controls Scripture English.
+- *Missale Romanum* (Venice: Ioannes Variscus and heirs of Bartholomaeus Falettus, 1570), Additional Text PDF pp. 409–412, [facsimile](https://archive.org/details/messale-tridentino-di-san-pio-v-1570); and *Missale Romanum*, editio quarta iuxta typicam Vaticanam (Tours: Alfred Mame, 1922), printed pp. 444–446.
 
-- United States Conference of Catholic Bishops, *New American Bible, Revised Edition*: [Psalm 34](https://bible.usccb.org/bible/psalms/34), [Psalm 84](https://bible.usccb.org/bible/psalms/84), [Psalm 95](https://bible.usccb.org/bible/psalms/95), [Psalm 118](https://bible.usccb.org/bible/psalms/118), [Matthew introduction](https://bible.usccb.org/bible/matthew/0), [Matthew 6](https://bible.usccb.org/bible/matthew/6), and [Galatians introduction](https://bible.usccb.org/bible/galatians/0); [Luke 3:1 note](https://bible.usccb.org/bible/luke/3) (AD 27–29 range for the Tiberian synchronism).
+- *The Roman Missal, Translated into the English Language for the Use of the Laity* (Philadelphia: Eugene Cummiskey, 1861), Sunday XIV after Pentecost, Collect at p. 425 and Secret and Postcommunion at p. 427; Douay–Rheims/Challoner Bible, Pss. 33, 83, 94, 117; Gal. 4–6; Matt. 5–7; Heb. 3–4; 1 Pet. 2; 1 Kgs. 21.
 
-- Cornelius a Lapide, *Commentaria in omnes divi Pauli epistolas* (Antwerp: Martin Nutius, 1614), general proemium, printed p. 19 (Baronius-based AD 58 chronology), and *Epistola ad Galatas: Argumentum*, printed p. 457 (Roman subscription tradition, contrary Ephesus/Greek-city tradition, and express uncertainty about time and place), checked facsimile PDF pp. 31 and 514, [facsimile](https://archive.org/download/bub_gb_Ts9M-QntZYgC/bub_gb_Ts9M-QntZYgC.pdf).
+- Michael W. Holmes, ed., *The Greek New Testament: SBL Edition*, SBLGNT v1.2, Gal. 5:22–23; RP2018, Gal. 5:22–23, as corroboration of the nine-term Greek fruit list.
 
-- Eusebius, *Historia ecclesiastica* III.39.16, Papias on Matthew’s Hebrew-language oracles, trans. Arthur Cushman McGiffert, in *Nicene and Post-Nicene Fathers*, 2nd ser., vol. 1 (Buffalo: Christian Literature Publishing, 1890), [stable edition witness](https://www.newadvent.org/fathers/250103.htm); Irenaeus, *Adversus haereses* III.1.1, Matthew writing among the Hebrews while Peter and Paul preached at Rome, trans. Alexander Roberts and William Rambaut, in *Ante-Nicene Fathers*, vol. 1 (Buffalo: Christian Literature Publishing, 1885), [stable edition witness](https://www.newadvent.org/fathers/0103301.htm).
+- Walter Drum, “Psalms,” *The Catholic Encyclopedia*, vol. 12 (New York: Robert Appleton, 1911), [article](https://www.newadvent.org/cathen/12533a.htm); Cornelius Aherne, “Epistle to the Galatians,” vol. 6 (1909), [article](https://www.newadvent.org/cathen/06336a.htm); Ferdinand Prat, “St. Paul,” vol. 11 (1911), [article](https://www.newadvent.org/cathen/11567b.htm); Jacque Eugène Jacquier, “Gospel of St. Matthew,” vol. 10 (1911), [article](https://www.newadvent.org/cathen/10057a.htm); and Alfred Durand, “The New Testament,” vol. 14 (1912), [article](https://www.newadvent.org/cathen/14530a.htm), the chronological notices represented in the generated Scripture chronology record.
 
-- Jacque Eugène Jacquier, “Gospel of St. Matthew,” especially “Date and place of composition” (received AD 38–45 and Irenaean AD 64–67 alternatives), *The Catholic Encyclopedia*, vol. 10 (New York: Robert Appleton, 1911); Anthony Maas, “Chronology of the Life of Jesus Christ,” especially “Second journey” (the Sermon within a received Galilean chronology), vol. 8 (New York: Robert Appleton, 1910), [Matthew](https://www.newadvent.org/cathen/10057a.htm), [chronology](https://www.newadvent.org/cathen/08377a.htm).
+- George Leo Haydock, ed., *Douay–Rheims Bible with Haydock Commentary*, Loreto/Feeney memorial facsimile (2014), 1 Kings 21 within the chronological frame at printed pp. 366, 368–369, and the Ussher-attributed chronological note at Ps. 70:1, printed p. 740.
 
-- Augustine, [*Enarrationes in Psalmos* 33.9–13](https://www.newadvent.org/fathers/1801034.htm), [83.7–8, 12–15](https://www.newadvent.org/fathers/1801084.htm), [94.1–2](https://www.newadvent.org/fathers/1801095.htm), and [117.3–5](https://www.newadvent.org/fathers/1801118.htm), public-domain NPNF English pages (whose Psalm numbers are 34, 84, 95, and 118).
+- United States Conference of Catholic Bishops, *New American Bible, Revised Edition*, [Introduction to Galatians](https://bible.usccb.org/bible/galatians/0), the northern and southern composition hypotheses represented in the page-two dossier.
 
-- Hugh of Saint-Cher, *Postilla super Psalterium*, [Ps. 83:10–11](https://gloss-e.irht.cnrs.fr/php/editions_chapitre.php?chapitre=26_83&id=hug&numLivre=26), [Ps. 94:1](https://gloss-e.irht.cnrs.fr/php/editions_chapitre.php?chapitre=26_94&id=hug&numLivre=26), and [Ps. 117:8–9](https://gloss-e.irht.cnrs.fr/php/editions_chapitre.php?chapitre=26_117&id=hug&numLivre=26), Gloss-e manuscript-linked Latin edition.
+- Eusebius, *Historia ecclesiastica* III.39.16, Papias on Matthew’s Hebrew-language oracles; Irenaeus, *Adversus haereses* III.1.1, Matthew writing among the Hebrews while Peter and Paul preached at Rome.
 
-- Theodoret of Cyrus, *Interpretatio in Psalmos*, PG 80 (Paris: Migne, 1860), Ps. 83 at cols. 1537–1544, Ps. 94 at cols. 1639–1640, and Ps. 117:8–9 at cols. 1811–1812, [Greek–Latin facsimile](https://upload.wikimedia.org/wikipedia/commons/f/fd/Patrologia_Graeca_Vol._080.pdf).
+- Cornelius a Lapide, *Commentaria in omnes divi Pauli epistolas* (Antwerp: Martin Nutius, 1614), *Epistola ad Galatas: Argumentum*, printed p. 457.
 
-- Basil of Caesarea, *Homilia in Psalmum* 33, at the angel-and- taste verses, PG 29, 364–365; Augustine, *Enarr. in Ps.* 33.9–13; Thomas Aquinas, [*In Psalmos Davidis expositio*, Ps. 33](https://www.corpusthomisticum.org/cps31.html), at *Immittet Angelus* and *Gustate*.
+- Eusebius of Caesarea, *Commentary on Psalms*, Ps. 83:8–10, PG 23:1012–1013.
 
-- John Chrysostom, [*Homilia in Galatas* 5](https://www.newadvent.org/fathers/23105.htm), at Gal. 5:16–24; Augustine, *Expositio epistolae ad Galatas* 47–51; Ambrosiaster, *Commentarius in Galatas*, at Gal. 5:16–24, PL 17:367D–368D (Paris: Migne, 1845), [facsimile](https://books.google.com/books?id=QLBsdouNYpgC), with the modern work attribution and critical-edition identity checked against H. J. Vogels, ed., CSEL 81.3 (Vienna, 1969), [BiblIndex work-edition record](https://www.biblindex.org/en/work-edition/5179); Thomas Aquinas, [*Super Galatas* V, lects. 5–6](https://isidore.co/aquinas/english/SSGalatians.htm); Anthony of Padua, *Sermo Dominica XIV post Pentecosten* 15–18 (older Sunday arrangement with Luke 17).
+- Augustine, [*Exposition on Psalm 84* §§3–8, 13–15](https://www.newadvent.org/fathers/1801084.htm), [*Exposition on Psalm 118* §4](https://www.newadvent.org/fathers/1801118.htm), [*Exposition on Psalm 95* §2](https://www.newadvent.org/fathers/1801095.htm), [*Exposition on Psalm 34* §§10–11](https://www.newadvent.org/fathers/1801034.htm), *Expositio Epistolae ad Galatas* §§46–53, PL 35:2138–2143, [*On Nature and Grace* 67 \[57\]](https://www.newadvent.org/fathers/1503.htm), and [*On the Sermon on the Mount* II.14–17 §§47–58](https://www.newadvent.org/fathers/16012.htm).
 
-- John Chrysostom, [*Homilia in Matthaeum* 22](https://www.newadvent.org/fathers/200122.htm); Augustine, [*De sermone Domini in monte* II.15–17, 49–59](https://www.newadvent.org/fathers/16012.htm); Jerome, [*Commentaria in Matthaeum* I](https://la.wikisource.org/wiki/Commentaria_in_Matthaeum_(Hieronymus)), at Matt. 6:24, PL 26:45; Rabanus Maurus, [*Commentarium in Matthaeum* VI](https://la.wikisource.org/wiki/Commentarium_in_Matthaeum_(Rabanus_Maurus)), PL 107:836B–C, transmitting the same gloss under the *Hier.* siglum; Thomas Aquinas, *Catena aurea in Matthaeum*, at the same verses.
+- John Chrysostom, [*Homily 5 on Galatians*](https://www.newadvent.org/fathers/23105.htm) and [*Homily 21*](https://www.newadvent.org/fathers/200121.htm) and [*Homily 22 on Matthew*](https://www.newadvent.org/fathers/200122.htm).
 
-- *Catechism of the Catholic Church* 1362–1367, 1391–1396, 1830–1832, 2515–2516, and [2828–2834](https://www.vatican.va/content/catechism/en/part_four/section_two/article_3/iv_give_us_this_day_our_daily_bread.html), official Holy See English edition.
+- Ambrosiaster, *Commentaria in Epistolam ad Galatas*, at Gal. 5:16–24, PL 17:367D–368D.
 
-- Miquel dels Sants Gros i Pujol, “El Sacramentari II de Gellona (Montpellier, Bib. Mun., ms. 18),” *Miscellània Litúrgica Catalana* 20 (2012), nos. 1121–1123, with Gregorian Supplement 1171–1173; *Sacramentari de Sant Ruf*, nos. 427–429; and *Sacramentari de Santa Maria de Vilabertran*, nos. 488–490. All three place the received oration trio at Sunday XV in their arrangements.
+- Gregory Nazianzen, *Oration 40, On Holy Baptism* §25, PG 36:393; Basil of Caesarea, *Homily on Psalm 33*, PG 29:364–365.
 
-- John Milton, *Paradise Lost*, Book I, lines 678–690 in both checked editions: the [1667 ten-book first-edition facsimile](https://archive.org/details/bim_early-english-books-1641-1700_paradise-lost-_milton-john_1667), PDF pp. 24–25, and the [1674 twelve-book, facsimile-based RPO transcription](https://rpo.library.utoronto.ca/content/paradise-lost-book-i-1674), Mammon leading the mining of Hell.
+- Thomas Aquinas, *Super Galatas* 5, lect. 5–7, Corpus Thomisticum paragraphs \[87778\]–\[87780\]; *Summa Theologiae* II-II q. 55 aa. 6–7 and q. 83 a. 6; *In psalmos Davidis expositio*, Ps. 33 nn. 8–9, §§\[87112\]–\[87113\]; and *Super Evangelium S. Matthaei lectura*, cap. 6, lect. 5, §\[87342\].
 
-- Frances Hodgson Burnett, [*Vagabondia*](https://www.gutenberg.org/ebooks/25727) (1879), ch. IV, “A Lily of the Field,” Dolly Crewe’s description of Ralph Gowan.
+- Theodoret of Cyrus, *Interpretatio in Psalmos*, Ps. 83:2–3, 10–11, PG 80:1537–1546; Ps. 94:1, PG 80:1639–1642; Ps. 117:8–9, PG 80:1811–1812; and Ps. 33:8–11, PG 80:1103–1106; Hugh of Saint-Cher, *Postilla super Psalterium*, [Ps. 117:8–9](https://gloss-e.irht.cnrs.fr/php/editions_chapitre.php?chapitre=26_117&id=hug&numLivre=26).
 
-- John Maynard Keynes, [“Economic Possibilities for our Grandchildren,”](https://hetwebsite.net/het/texts/keynes/keynes1930grandchildren.htm) *Nation and Athenaeum*, 11 and 18 October 1930, Part II, printed pp. 96–98, at p. 97 in the first printing and pp. 371–372 in the checked 1932 reprint.
+- Robert Bellarmine, *Explanatio in Psalmos*, in *A Commentary on the Book of Psalms*, trans. John O’Sullivan (Dublin: James Duffy, 1866), Ps. 83:1–3, 9–10; Ps. 117:8–9; and Ps. 94:1. The English witness is abridged according to its preface.
 
-**Last revised (UTC):** 2026-08-26T19:06:19Z
+- Cantus Database, Cantus ID 004377, *Primum quaerite regnum dei et*, Einsiedeln, Stiftsbibliothek 611, fol. 145r, [record](https://cantusdatabase.org/chant/230904/).
+
+- *Catechism of the Catholic Church* §§1362–1368, 1391–1397, 1830–1832, 2516, and 2828–2834, official Holy See English edition.
+
+- Miquel dels Sants Gros i Pujol, “El Sacramentari II de Gellona,” *Miscellània Litúrgica Catalana* 20 (2012), nos. 1121–1123; “El missal de Sant Ruf,” *MLC* 9 (1999), nos. 427–429; and “El Sacramentari de Santa Maria de Vilabertran,” *MLC* 19 (2011), nos. 488–490.
+
+- Honorius of Autun, *Gemma animae* IV.72, PL 172:717–718; Anthony of Padua, *Sermo Dominica XIV post Pentecosten* §§1–2, Centro Studi Antoniani 2021 file, [edition](https://www.centrostudiantoniani.it/sites/default/files/sd43_dom_xiv_post_pentecosten.pdf); Ildefonso Schuster, *The Sacramentary*, trans. Arthur Levelis-Marke, vol. III (1927), pp. 136–139.
+
+- *United States v. Mississippi Valley Generating Co.*, 364 U.S. 520, 549–550 and n. 14 (1961), [official report](https://www.govinfo.gov/content/pkg/USREPORTS-364/pdf/USREPORTS-364-520.pdf).
+
+- UK House of Commons Hansard, 3 December 1962, vol. 668, cols. 1036–1037, [Central Africa debate](https://api.parliament.uk/historic-hansard/commons/1962/dec/03/central-africal); House of Lords Hansard, 19 December 1962, vol. 245, col. 1203, [British Policy in Central Africa debate](https://api.parliament.uk/historic-hansard/lords/1962/dec/19/british-policy-in-central-africa).
+
+- *Johnston v. Commonwealth*, 22 Pa. 102, 108–109 (1853), [opinion](https://openjurist.org/22/pa/102/johnston-v-commonwealth-6360752); *Sullens v. State*, 191 Miss. 856, 872–873, 4 So. 2d 356 (1941), [opinion](https://law.justia.com/cases/mississippi/supreme-court/1941/191-miss-856.html).
+
+- Samuel Butler, *Erewhon*, revised and enlarged edition, ch. XXVII, “The Views of an Erewhonian Philosopher Concerning the Rights of Vegetables,” paragraphs beginning “Some of the passages” and “They toil not,” Project Gutenberg eBook 1906.
+
+- Denise Levertov, “O Taste and See,” in *O Taste and See: New Poems* (New Directions, 1964), also in *Poems 1960–1967* (1983); *The Norton Anthology of Poetry*, 5th ed., p. 1678, notes 1–2.
+
+**Last revised (UTC):** 2026-09-04T00:56:06Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
