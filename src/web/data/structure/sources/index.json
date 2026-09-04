@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 1839,
-  "editions": 723,
-  "passages": 3302,
-  "readable": 1648,
-  "works": 537
+  "artifacts": 2115,
+  "editions": 730,
+  "passages": 3902,
+  "readable": 2104,
+  "works": 543
  },
  "facets": {
   "authors": [
@@ -163,7 +163,7 @@
    },
    {
     "id": "Augustine of Hippo",
-    "works": 6
+    "works": 7
    },
    {
     "id": "Bahya ben Asher ibn Halawa",
@@ -259,7 +259,7 @@
    },
    {
     "id": "Charles G. Herbermann and others",
-    "works": 3
+    "works": 8
    },
    {
     "id": "Charles G. Herbermann and the Catholic Encyclopedia editorial board",
@@ -1256,11 +1256,19 @@
     "works": 8
    },
    {
+    "id": "reference-encyclopedia",
+    "works": 8
+   },
+   {
     "id": "encyclical",
     "works": 7
    },
    {
     "id": "papal-letter",
+    "works": 7
+   },
+   {
+    "id": "patristic-treatise",
     "works": 7
    },
    {
@@ -1273,10 +1281,6 @@
    },
    {
     "id": "patristic-homily-series",
-    "works": 6
-   },
-   {
-    "id": "patristic-treatise",
     "works": 6
    },
    {
@@ -1401,10 +1405,6 @@
    },
    {
     "id": "philosophical-treatise",
-    "works": 3
-   },
-   {
-    "id": "reference-encyclopedia",
     "works": 3
    },
    {
@@ -2306,11 +2306,11 @@
   ],
   "languages": [
    {
-    "editions": 354,
+    "editions": 360,
     "id": "en"
    },
    {
-    "editions": 232,
+    "editions": 233,
     "id": "la"
    },
    {
@@ -2437,25 +2437,25 @@
     "label": "19th century"
    },
    {
-    "editions": 168,
+    "editions": 172,
     "id": "1900",
     "label": "20th century"
    },
    {
-    "editions": 387,
+    "editions": 390,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 1030,
-    "editions": 187,
+    "artifacts": 1254,
+    "editions": 200,
     "id": "public-domain"
    },
    {
-    "artifacts": 628,
-    "editions": 326,
+    "artifacts": 652,
+    "editions": 329,
     "id": "restricted"
    },
    {
@@ -2469,8 +2469,8 @@
     "id": "licensed"
    },
    {
-    "artifacts": 20,
-    "editions": 10,
+    "artifacts": 48,
+    "editions": 11,
     "id": "project-created"
    }
   ]
@@ -4469,6 +4469,35 @@
   },
   {
    "alternate_titles": [
+    "Harmony of the Gospels",
+    "On the Harmony of the Evangelists"
+   ],
+   "author": "Augustine of Hippo",
+   "category": "patristic-treatise",
+   "directory": "editions/augustine/de-consensu-evangelistarum/",
+   "editions": [
+    {
+     "date": "2026-08-26",
+     "file": "2026-english-salmond-npnf1-6-newadvent-web-2026-08-26.json",
+     "id": "edition.augustine.de-consensu-evangelistarum.english-salmond-npnf1-6-newadvent-web-2026-08-26",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "The Harmony of the Gospels — New Advent English web presentation",
+     "year": 2026
+    }
+   ],
+   "id": "work.augustine.de-consensu-evangelistarum",
+   "languages": [
+    "la"
+   ],
+   "title": "De consensu evangelistarum"
+  },
+  {
+   "alternate_titles": [
     "Expositions on the Psalms"
    ],
    "author": "Augustine of Hippo",
@@ -4496,6 +4525,7 @@
      "passages": 5,
      "readable": 0,
      "rights": [
+      "restricted",
       "unresolved"
      ],
      "title": "Expositions on the Psalms, English NPNF text as delivered by New Advent",
@@ -5629,8 +5659,8 @@
      "file": "1862-pustet-ratisbon-1862.json",
      "id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
      "language": "la",
-     "passages": 23,
-     "readable": 0,
+     "passages": 163,
+     "readable": 140,
      "rights": [
       "public-domain"
      ],
@@ -5694,7 +5724,7 @@
      "file": "1962-vatican-typica-1962.json",
      "id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
      "language": "la",
-     "passages": 59,
+     "passages": 199,
      "readable": 0,
      "rights": [
       "unresolved"
@@ -6411,6 +6441,90 @@
   },
   {
    "alternate_titles": [
+    "CE 10"
+   ],
+   "author": "Charles G. Herbermann and others",
+   "category": "reference-encyclopedia",
+   "directory": "editions/catholic-encyclopedia/volume-10/",
+   "editions": [
+    {
+     "date": "1911",
+     "file": "1911-new-york-1911.json",
+     "id": "edition.catholic-encyclopedia.volume-10.new-york-1911",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "The Catholic Encyclopedia, Volume 10",
+     "year": 1911
+    }
+   ],
+   "id": "work.catholic-encyclopedia.volume-10",
+   "languages": [
+    "en"
+   ],
+   "title": "The Catholic Encyclopedia, Volume 10"
+  },
+  {
+   "alternate_titles": [
+    "CE 12"
+   ],
+   "author": "Charles G. Herbermann and others",
+   "category": "reference-encyclopedia",
+   "directory": "editions/catholic-encyclopedia/volume-12/",
+   "editions": [
+    {
+     "date": "1911",
+     "file": "1911-new-york-1911.json",
+     "id": "edition.catholic-encyclopedia.volume-12.new-york-1911",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "The Catholic Encyclopedia, Volume 12",
+     "year": 1911
+    }
+   ],
+   "id": "work.catholic-encyclopedia.volume-12",
+   "languages": [
+    "en"
+   ],
+   "title": "The Catholic Encyclopedia, Volume 12"
+  },
+  {
+   "alternate_titles": [
+    "CE 15"
+   ],
+   "author": "Charles G. Herbermann and others",
+   "category": "reference-encyclopedia",
+   "directory": "editions/catholic-encyclopedia/volume-15/",
+   "editions": [
+    {
+     "date": "1912",
+     "file": "1912-new-york-1912.json",
+     "id": "edition.catholic-encyclopedia.volume-15.new-york-1912",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "The Catholic Encyclopedia, Volume 15",
+     "year": 1912
+    }
+   ],
+   "id": "work.catholic-encyclopedia.volume-15",
+   "languages": [
+    "en"
+   ],
+   "title": "The Catholic Encyclopedia, Volume 15"
+  },
+  {
+   "alternate_titles": [
     "CE 3"
    ],
    "author": "Charles G. Herbermann and others",
@@ -6424,7 +6538,9 @@
      "language": "en",
      "passages": 0,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "public-domain"
+     ],
      "title": "The Catholic Encyclopedia, Volume 3 (New York, 1908)",
      "year": 1908
     }
@@ -6466,6 +6582,34 @@
   },
   {
    "alternate_titles": [
+    "CE 6"
+   ],
+   "author": "Charles G. Herbermann and others",
+   "category": "reference-encyclopedia",
+   "directory": "editions/catholic-encyclopedia/volume-6/",
+   "editions": [
+    {
+     "date": "1909",
+     "file": "1909-new-york-1909.json",
+     "id": "edition.catholic-encyclopedia.volume-6.new-york-1909",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "The Catholic Encyclopedia, Volume 6",
+     "year": 1909
+    }
+   ],
+   "id": "work.catholic-encyclopedia.volume-6",
+   "languages": [
+    "en"
+   ],
+   "title": "The Catholic Encyclopedia, Volume 6"
+  },
+  {
+   "alternate_titles": [
     "CE 9"
    ],
    "author": "Charles G. Herbermann and others",
@@ -6480,6 +6624,7 @@
      "passages": 1,
      "readable": 0,
      "rights": [
+      "public-domain",
       "restricted"
      ],
      "title": "The Catholic Encyclopedia, Volume 9",
@@ -6491,6 +6636,32 @@
     "en"
    ],
    "title": "The Catholic Encyclopedia, Volume 9"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Charles G. Herbermann and others",
+   "category": "reference-encyclopedia",
+   "directory": "editions/catholic-encyclopedia/alphabetical-index/",
+   "editions": [
+    {
+     "date": "2026",
+     "file": "2026-newadvent-web-2026-08-27.json",
+     "id": "edition.catholic-encyclopedia.alphabetical-index.newadvent-web-2026-08-27",
+     "language": "en",
+     "passages": 4,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "The Catholic Encyclopedia alphabetical index, New Advent web delivery",
+     "year": 2026
+    }
+   ],
+   "id": "work.catholic-encyclopedia.alphabetical-index",
+   "languages": [
+    "en"
+   ],
+   "title": "The Catholic Encyclopedia, alphabetical index"
   },
   {
    "alternate_titles": [
@@ -6507,7 +6678,9 @@
      "language": "en",
      "passages": 0,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "public-domain"
+     ],
      "title": "The Catholic Encyclopedia, Volume 1 (New York, 1907)",
      "year": 1907
     }
@@ -6533,7 +6706,9 @@
      "language": "en",
      "passages": 0,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "public-domain"
+     ],
      "title": "The Catholic Encyclopedia, Volume 11 (New York, 1911)",
      "year": 1911
     }
@@ -6560,6 +6735,7 @@
      "passages": 2,
      "readable": 0,
      "rights": [
+      "public-domain",
       "restricted"
      ],
      "title": "The Catholic Encyclopedia, Volume 13 (New York, 1912)",
@@ -6587,7 +6763,9 @@
      "language": "en",
      "passages": 0,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "public-domain"
+     ],
      "title": "The Catholic Encyclopedia, Volume 14 (New York, 1912)",
      "year": 1912
     }
@@ -6613,7 +6791,9 @@
      "language": "en",
      "passages": 0,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "public-domain"
+     ],
      "title": "The Catholic Encyclopedia, Volume 2 (New York, 1907)",
      "year": 1907
     }
@@ -6639,7 +6819,9 @@
      "language": "en",
      "passages": 0,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "public-domain"
+     ],
      "title": "The Catholic Encyclopedia, Volume 5 (New York, 1909)",
      "year": 1909
     }
@@ -6665,7 +6847,9 @@
      "language": "en",
      "passages": 0,
      "readable": 0,
-     "rights": [],
+     "rights": [
+      "public-domain"
+     ],
      "title": "The Catholic Encyclopedia, Volume 7 (New York, 1910)",
      "year": 1910
     }
@@ -19176,6 +19360,19 @@
       "project-created"
      ],
      "title": "Roman 1962 Latin Proper Editorial Projection, 28 August 2026",
+     "year": 2026
+    },
+    {
+     "date": "2026-09-03",
+     "file": "2026-2026-09-03-editorial-projection.json",
+     "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03",
+     "language": "la",
+     "passages": 316,
+     "readable": 316,
+     "rights": [
+      "project-created"
+     ],
+     "title": "Roman 1962 Latin Proper Editorial Projection, 3 September 2026",
      "year": 2026
     }
    ],

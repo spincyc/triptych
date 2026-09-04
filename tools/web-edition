@@ -379,6 +379,22 @@ def table_count(body: str, definitions: str) -> int:
     )
 
 
+# Pure line-breaking hints. They carry no content, so pandoc is free to leave
+# them in place -- and does, inside \url and \texttt, where it copies its
+# argument verbatim. In a URL that is not merely untidy: it publishes a broken
+# link, because the reader's browser gets the macro as part of the address.
+# Stripping them from the markdown is lossless, and it is the only place the
+# fix belongs, since the LaTeX needs the hints to break a long URL on paper.
+CONTENTLESS_BREAKS_RE = re.compile(
+    r"\\{1,2}(?:allowbreak|nobreak|linebreak|newline|-|/)(?![A-Za-z])\s*"
+)
+
+
+def strip_contentless_breaks(markdown: str) -> str:
+    """Remove break hints pandoc passed through verbatim."""
+    return CONTENTLESS_BREAKS_RE.sub("", markdown)
+
+
 def audit_output(body: str, markdown: str, tables: int = 0) -> list[str]:
     """Compare critical macro payloads in the LaTeX body against the Markdown."""
     failures = []
@@ -520,8 +536,10 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         raise ConversionError(f"pandoc failed:\n{result.stderr.strip()}")
     if MATH_WARNING_RE.search(result.stderr):
         raise ConversionError(f"math left as raw TeX:\n{result.stderr.strip()}")
-    markdown = normalize_unnumbered_headings(
-        resolve_anchors(result.stdout), set(LABEL_RE.findall(body))
+    markdown = strip_contentless_breaks(
+        normalize_unnumbered_headings(
+            resolve_anchors(result.stdout), set(LABEL_RE.findall(body))
+        )
     )
     failures = audit_output(body, markdown, table_count(body, shim_text + locals_text))
     if failures:
