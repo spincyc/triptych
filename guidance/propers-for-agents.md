@@ -349,6 +349,17 @@ the same place. Search each witness whole, by incipit, and never by ordinal.
 Withhold only what no pre-1931 book carries in any place at all, and say which
 books you swept and how when you do.
 
+**Filling a rubrical blank is not authorship either**, ruled 2026-09-03 on the
+same reasoning. Where the 1962 prints a Common's formulary with the day's saint
+written into the slot and the public-domain witness prints `N.`, `X.` or another
+saint's name at that one place, the text is preexisting and travels: the
+Missal's own rubric directs the name into the blank, so the later edition
+contributed nothing the earlier one did not already carry. Record the
+substitution in the entry's `differences` so a reviewer can see it, and do not
+downgrade the verdict for it. The worked cases are Gregory Nazianzen's three
+orations, the Antoninus Postcommunion, the John Gualbert Collect and the
+Gervasius and Protasius Secret.
+
 The trap this closes is real and cost a lane its whole result: the 1962 Easter
 Vigil follows four prophecies where the pre-1955 book has twelve, and its parts
 sit in a different order in a rite moved from morning to night, so a positional
