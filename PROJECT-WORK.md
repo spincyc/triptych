@@ -411,6 +411,18 @@ The 36-binding content preflight, component, provenance, web-declaration,
 source-library, promised-deliverable, and whitespace gates pass after that
 repair.
 
+Fresh Claude run `2c971a5a603ca6c2`, seeded from the integrated repair
+checkpoint `c55802796ebb5c1c37719486d097a15c83830c4a`, is preserved as a
+third terminal `BLOCKED` audit. Seed, authorization, the program scope gate,
+context resolution, and source audit passed. At the seven-lane research join,
+six immutable lane results passed, but the liturgical-history worker returned
+a provisional `BLOCKED` result with no findings and the explanation that its
+research sweep was still in progress before source verification. The strict
+union therefore terminated the run. This records an incomplete worker result,
+not a finding against the repaired publication; the run directory remains
+untouched. A new seed must follow this audit-record commit so deterministic
+run identity cannot resolve to the terminal run.
+
 The Claude prerequisite is not complete merely because its repaired source
 leaf and generated `research/chronology.toml` now exist. It still lacks both
 installed PDFs, the tracked web edition, and both release records. It must
