@@ -1,6 +1,6 @@
 {
   "id": "proper",
-  "version": 21,
+  "version": 22,
   "description": "1962 propers synthesis production workflow",
   "default_effort": "xhigh",
   "document_argument": "proper",
@@ -328,7 +328,7 @@
           "transition": "content-revision"
         }
       ],
-      "max_iterations": 3
+      "max_iterations": 4
     },
     {
       "id": "content-revision",

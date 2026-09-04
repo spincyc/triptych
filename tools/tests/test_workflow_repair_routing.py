@@ -517,10 +517,10 @@ class RepairOwnershipTests(RoutingCase):
                                   "reorder, or edit any lane result", lowered)
 
     def test_the_loop_is_bounded_by_the_evaluators_own_budget(self):
-        """Three consecutive research routes exhaust content-evaluation."""
+        """Four repeated research routes exhaust content-evaluation."""
         run_id = self.drive_to("content-evaluation")
         research = {"evidence-discipline": [blocking("CON-EVI-001", RESEARCH)]}
-        for expected in (RESEARCH, RESEARCH):
+        for expected in (RESEARCH, RESEARCH, RESEARCH):
             out = self.engine.advance(
                 run_id,
                 lane_results=self.content_submissions(run_id, research))

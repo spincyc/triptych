@@ -194,11 +194,11 @@ class FragmentTests(unittest.TestCase):
         self.assertTrue(routes_absent_values_to_research(text))
 
     def test_contract_change_bumps_the_workflow(self):
-        self.assertEqual(workflow_json()["version"], 21)
+        self.assertEqual(workflow_json()["version"], 22)
         for path in (ROOT / "workflows" / "ARCHITECTURE.md",
                      ROOT / "workflows" / "OPERATOR.md"):
             text = path.read_text(encoding="utf-8")
-            self.assertIn("workflow is at version 21", text)
+            self.assertIn("workflow is at version 22", text)
 
 
 class EmittedPacketTests(PropersCase):

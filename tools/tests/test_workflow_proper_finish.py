@@ -103,7 +103,7 @@ class DefinitionTests(unittest.TestCase):
             with self.subTest(field=field):
                 self.assertEqual(self.finish[field], self.full[field])
 
-    def test_retained_stage_objects_are_unchanged_except_the_finish_route(self) -> None:
+    def test_retained_stage_objects_preserve_the_v21_finish_contract(self) -> None:
         original = raw_stages("proper")
         finish = raw_stages("proper-finish")
         self.assertEqual(list(finish), STAGES)
@@ -126,6 +126,9 @@ class DefinitionTests(unittest.TestCase):
             '          "transition": "research-synthesis"\n'
             '        },\n',
             "",
+        ).replace(
+            '"max_iterations": 4',
+            '"max_iterations": 3',
         )
         self.assertEqual(finish["content-evaluation"], expected)
 

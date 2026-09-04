@@ -792,15 +792,29 @@ lane alone owns and mandates its distinct finding-ID prefix, so the joined
 findings keep stable, non-colliding ids. For the two evaluators the fragments
 partition the numbered criteria of the shared stage fragment, with no criterion
 invented or dropped; for `research` they partition the questions asked, and each
-lane is told which questions belong to the other six. Both evaluators still
-bound their revision loops at three consecutive `CHANGES_REQUIRED` joins, as
-before, whichever route those joins took, and `research` has no revision loop
-of its own — a lane that cannot sweep returns `BLOCKED` and the run stops, and
-a re-entry, whether routed from `content-evaluation` or sent back by
+lane is told which questions belong to the other six. `research-synthesis`
+bounds its repeat loop at three; `content-evaluation` bounds its three-owner
+repair loop at four from version 22. `research` has no revision loop of its own
+— a lane that cannot sweep returns `BLOCKED` and the run stops, and a re-entry,
+whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
-The `proper` workflow is at version 21. Version 21 closes the citation-handoff
+The `proper` workflow is at version 22. Version 22 gives
+`content-evaluation` four repeat-budget slots for its three ordered repair
+owners. The first failed evaluation spends one slot before any repair owner has
+run, so the former ceiling of three could stop a defect before its third owner
+was dispatched. Run `ce4ecd514b64d2f9` demonstrated the failure: its fourth
+content evaluation found that research had supplied the evidence requested by
+`CON-CIT-007` and assigned the remaining bibliography correction to
+`authoring`, but the evaluator reached 3/3 repeats before `tpt` could take the
+declared route to `content-revision`. Four retains a hard repeat bound while
+admitting the initial finding and one visit to each declared owner. The
+regression replays that run's four evaluation results and requires the fourth
+to emit the authoring packet rather than `BLOCKED`. A run seeded against
+version 21 or earlier fails closed; seed it again.
+
+The `proper` workflow was at version 21. Version 21 closes the citation-handoff
 gap proved by run `dae51f4a7715c7f9`. The cultural-afterlife lane had gathered
 exact titles, institutions, stable URLs and loci for the retained online
 witnesses. Synthesis reduced those records to generic labels in the immutable
