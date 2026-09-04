@@ -82,7 +82,7 @@ kind = "notable-quotable"
 path = "sections/40-notable.tex"
 modes = ["research", "synthesis"]
 depends_on = ["source-grounded-synthesis"]
-element_keys = ["epistle", "gradual", "gospel", "communion"]
+element_keys = ["epistle", "gospel"]
 references = ["sections/99-references.tex"]
 
 [[components]]
@@ -96,12 +96,17 @@ references = ["sections/99-references.tex"]
 
 [[relations]]
 key = "desire-ordered-by-allegiance"
-element_keys = ["introit", "epistle", "gospel", "communion"]
+element_keys = ["introit", "epistle", "gospel", "offertory"]
+evidence = ["textual-observation", "documented-reception", "source-grounded-synthesis"]
+
+[[relations]]
+key = "kingdom-governs-service-and-use"
+element_keys = ["introit", "epistle", "gradual", "gospel", "communion"]
 evidence = ["textual-observation", "documented-reception", "source-grounded-synthesis"]
 
 [[relations]]
 key = "grace-enables-embodied-action"
-element_keys = ["collect", "epistle", "gospel", "postcommunion"]
+element_keys = ["collect", "epistle", "gospel", "secret", "postcommunion"]
 evidence = ["textual-observation", "documented-reception", "source-grounded-synthesis"]
 
 [[relations]]
@@ -111,13 +116,8 @@ evidence = ["textual-observation", "documented-reception", "source-grounded-synt
 
 [[relations]]
 key = "salvation-becomes-liturgical-action"
-element_keys = ["collect", "alleluia", "offertory", "secret", "postcommunion"]
+element_keys = ["collect", "alleluia", "secret", "postcommunion"]
 evidence = ["textual-observation", "documented-reception", "source-grounded-synthesis"]
-
-[[relations]]
-key = "inherited-continuity-and-selective-change"
-element_keys = ["collect", "secret", "postcommunion", "introit", "gradual", "offertory", "communion"]
-evidence = ["documented-historical-orientation", "source-grounded-synthesis"]
 
 [[relations]]
 key = "comparison-prepares-exclusive-choice"
@@ -130,8 +130,8 @@ element_keys = ["gospel", "communion", "collect", "postcommunion"]
 evidence = ["textual-observation", "exploratory-proposal"]
 
 [[relations]]
-key = "hope-audible-by-absence"
-element_keys = ["introit", "gradual", "offertory"]
+key = "saving-grammar-changes-role"
+element_keys = ["collect", "alleluia", "secret", "postcommunion"]
 evidence = ["textual-observation", "exploratory-proposal"]
 
 [[relations]]

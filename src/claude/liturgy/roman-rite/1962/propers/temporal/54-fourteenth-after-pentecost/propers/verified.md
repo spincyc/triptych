@@ -47,7 +47,7 @@ omits the appointed-text component.
   interpolates and adds no evidence). No transcription, no OCR layer — neither
   the PDF's own ABBYY layer nor any other — and no web text was allowed to
   supply a reading.
-- **Second witness, and how far it goes here.** *Missale Romanum*, editio iuxta
+- **Second comparison source, and how far it goes here.** *Missale Romanum*, editio iuxta
   typicam (New York: Benziger Brothers, Inc., 1962), edition
   `edition.catholic-church.missale-romanum.benziger-iuxta-typicam-1962`, as
   digitised in Internet Archive item `MissaleRomanum1962RomanMissalColorLatin`
@@ -60,19 +60,18 @@ omits the appointed-text component.
   sibling **page-image** artifact (`…benziger-iuxta-typicam-1962.ia-djvu`,
   `storage = "remote"`, no payload installed) was **not** read for this
   formulary. This is weaker than the Thirteenth Sunday's record, whose Benziger
-  readings were taken from page images, and the difference is declared rather
-  than papered over: every Benziger reading below is a reading of an
-  uncorrected OCR text layer and is evidence about that text layer, not a
-  collated reading of the Benziger book. The formulary stands at Benziger
-  printed pp. 389–390 (page-number marks at OCR lines 59,325 and 59,445 bracket
-  it), which by the leaf-to-page offset recorded for the Thirteenth Sunday
-  (leaf `n464` = printed p. 388) are leaves `n465`–`n466`; the leaves themselves
-  were not opened, so that mapping is an inference from the earlier record.
-- **Status of the second witness.** Benziger 1962 is a *different edition* of
+  readings were taken from page images: every Benziger observation below is an
+  apparent feature of this uncorrected OCR derivative, not a collated reading of
+  the Benziger book. The derivative contains the formulary between the
+  surrounding Sunday blocks, but its physical-line boundaries, printed-page
+  correspondence, and page-to-leaf mapping remain unresolved, as the later
+  re-confirmation note records.
+- **Status of the second comparison source.** Benziger 1962 is a *different edition* of
   the same 1962 revision, not an independent image of the Vatican typical
-  edition. Where the two disagree, the difference is an **edition difference or
-  an OCR artifact**, not an uncertain reading in the typical edition. Nothing
-  is blended, and no Benziger form is substituted for a Vatican typical form.
+  edition. A mismatch between the Vatican facsimile and the derivative may be
+  an edition difference or an OCR artifact; without a registered page-image
+  collation, the two cannot be separated. Nothing is blended, and no form from
+  the Benziger OCR derivative is substituted for a Vatican typical form.
 - **One damaged reading, and it is not text.** Every word, accent and
   punctuation mark of all ten elements was read cleanly off the typical
   edition's page images; the scan carries no ink loss in the appointed text of
@@ -82,9 +81,9 @@ omits the appointed-text component.
   the fourth digit survives only as two disconnected fragments. It is **1577**,
   because 1576 (Alleluia) and 1578 (Offertory) are both legible and the series
   1572–1581 is unbroken, so no other value is available. This is resolved by
-  sequence and **not** by the second witness: the Benziger edition prints no
-  marginal numbers at all and cannot speak to it. Nothing in the appointed text
-  depends on it.
+  sequence and **not** by the second comparison source: the Benziger OCR
+  derivative appears to carry no marginal numbers and cannot resolve it.
+  Nothing in the appointed text depends on it.
 - **Verification status and date.** All ten elements, their headings,
   scriptural references, wording, accentuation, punctuation, the printed rank,
   the `Credo` rubric, the Preface rubric, and both formulary boundaries were
@@ -138,26 +137,20 @@ omits the appointed-text component.
   (3) Two divergences from the Bible text that this record did not carry were
   found and are rows 19 and 20 below.
   **Three limits, declared rather than papered over.** The Benziger comparison
-  was not lifted off the OCR layer for the whole formulary: the exact bytes of
+  was not lifted off the OCR layer: the exact bytes of
   the registered page-image artifact (`…benziger-iuxta-typicam-1962.ia-djvu`,
   hashed this run to `c66aaa37…` at 24,084,354 bytes, matching its manifest) are
   present in this session's cache, but no DjVu decoder exists in this
   environment, so no page of that registered artifact was opened. Two cached
-  JPEG page images of unregistered provenance, carrying a third-party watermark
-  and matched to nothing this repository records, show Benziger printed pp. 390
-  and 391; read as **corroboration of uncertain provenance and not as a
-  collation**, p. 390 agrees with the OCR layer at the Alleluia, the Gospel
-  heading, the doubled `-ii-`, the run-on `Credo.`, the comma in `gustáte, et
-  vidéte`, the Secret's long conclusion, the Postcommunion's short one and the
-  Fifteenth Sunday's all-capital heading, and it fixes IA leaf `n466` at printed
-  p. 390 and `n467` at p. 391 — from which `n465` is p. 389 by adjacency, as this
-  record had inferred. And one apparatus tension between this record and
-  `retrieved.txt` is **unresolved**: this record puts the bracketing page-number
-  marks at OCR lines 59,325 and 59,445, while `retrieved.txt` states its extract
-  runs 59,360–59,545 and opens on Benziger printed p. 388. The artifact is
-  `storage = "remote"` with no payload in the tree and nothing was refetched, so
-  the line arithmetic could not be settled here. Nothing in the appointed text
-  depends on it.
+  JPEGs claimed to depict Benziger pp. 390–391 carry a third-party watermark,
+  have unregistered provenance, and match nothing this repository records.
+  They are excluded from this verification: no content, printed reading, or
+  page-to-leaf mapping is asserted from them. One apparatus tension remains
+  **unresolved**: earlier audit notes assign incompatible physical-line and
+  page-to-line bounds to the retained block. With no registered page image
+  opened and no fresh retrieval, that arithmetic cannot be settled. No
+  disputed exact range is used as a publication locator, and nothing in the
+  appointed text depends on it.
 - **Formulary boundary.** The formulary begins immediately after the
   Postcommunion of the Thirteenth Sunday after Pentecost (marginal no. 1571,
   `Sumptis, Dómine, cæléstibus sacraméntis…`) and ends immediately before the
@@ -169,33 +162,34 @@ omits the appointed-text component.
   celebration-mode branches are not verified here and are not part of this
   leaf.
 
-## Discrepancies between the two 1962 witnesses
+## Comparison with the Benziger 1962 OCR derivative
 
 Recorded, not harmonised. Every Vatican typical reading below is what this
-guide prints. The Benziger column is read off an uncorrected OCR text layer,
-so each row states whether the difference is **probably a real edition
-difference** or **cannot be separated from OCR noise**; forms that are plainly
-recognition failures are listed in `retrieved.txt` instead of here.
+guide prints. No registered Benziger page image was opened or collated. Every
+entry in the Benziger column is therefore only a feature that the identified
+uncorrected OCR derivative appears to show; none establishes what the printed
+book carries. Plain recognition failures are listed in `retrieved.txt` instead
+of here.
 
-| Element | Vatican editio typica, pp. 394–396 | Benziger editio iuxta typicam, pp. 389–390 (OCR layer) | Character of the difference |
+| Element | Vatican editio typica, pp. 394–396 | Benziger editio iuxta typicam, apparent OCR-layer form | Character of the observation |
 | --- | --- | --- | --- |
-| Introit close | `℣. Glória Patri.` and stop | `℣. Glória Patri. Protéctor.` | Real. Benziger prints the antiphon-repetition cue; the typical edition leaves it to the general rubrics. Substantive for the singer, not for the text. The Thirteenth Sunday's record shows the same habit in both books. |
-| Collect | `mortálitas; tuis semper auxíliis` | `mortalitas; tuis semper auxiliis` | No difference. The semicolon stands in both, and the whole Collect agrees word for word. |
-| Epistle, Gal. 5:21 | `invídiæ, homicídia, ebrietátes` | `invidiee, homicidia,ebrietates` | OCR noise only; no edition difference can be read out of it. |
-| Gospel, Mt. 6:27 and 33; Communion | `adícere`, `adiciéntur`, `adiciéntur` | `adiicere`, `adiiciéntur`, `adiiciéntur` | Probably real, and consistent across all three places: Benziger spells the doubled `-ii-` (the Clementine's `adjicere`/`adjicientur` with `j` resolved as `i`), the typical edition the single `-i-`. Orthography, not a different word. |
-| Gospel reference | `Mt. 6, 24-33` | `Matth. 6, 24-33` | Real. Abbreviation policy only. |
-| Communion reference | `Mt. 6, 33` | `Matth. 6, 33` | Real. Abbreviation policy only. |
-| Offertory | `gustáte et vidéte` | `gustáte, et vidéte` | Probably real. Benziger adds a comma. Punctuation only. |
-| Secret conclusion | `Per Dóminum.` | `Per Dóminum nostrum.` | Real, and note the direction: here it is Benziger that prints the longer cue. Neither is a different prayer. |
-| Postcommunion conclusion | `Per Dóminum nostrum.` | `Per Dóminum.` | Real, and the direction is **reversed** from the Secret one row above: within the same formulary the two books swap which conclusion they print at length. Cue length only. |
-| Gospel heading | `✠ Sequéntia sancti Evangélii secúndum Matthǽum.` with `Mt. 6, 24-33` on the same lines | `Sequéntia sancti Evangélii secúndum Matthæum` with the reference on its own line and no closing point | Real. Layout and abbreviation policy only. |
-| Epistle heading | `Léctio Epístolæ beáti Pauli Apóstoli ad Gálatas.` with `Gal. 5, 16-24` on the same lines | `…ad Gálatas` with the reference on its own line and no closing point | Real. Layout and abbreviation policy only. |
-| `Credo` rubric | `Credo.` on a line of its own after the Gospel | `Credo.` run on at the end of the Gospel's last line | Real. Typography only. |
-| Heading style | `Ant. ad Introitum`, `Ant. ad Offertorium`, `Ant. ad Communionem` throughout; title `DOMINICA / DECIMA QUARTA / post Pentecosten` | `Antiphona ad …` throughout; title `DOMINICA DECIMA QUARTA / POST PENTECOSTEN` in capitals | Real. Abbreviation and typography policy only. Note that the typical edition abbreviates the Introit heading here, where on the Thirteenth Sunday it spelled `Antiphona ad Introitum` in full. |
+| Introit close | `℣. Glória Patri.` and stop | OCR appears to append `℣. Glória Patri. Protéctor.` | The derivative appears to add an antiphon-repetition cue. Whether the printed edition carries it is unverified; if it does, the difference affects a singer's cue rather than the antiphon text. |
+| Collect | `mortálitas; tuis semper auxíliis` | OCR appears as `mortalitas; tuis semper auxiliis` | After the derivative's expected loss of accents, it appears to agree in wording and to retain the semicolon. No printed Benziger reading is established. |
+| Epistle, Gal. 5:21 | `invídiæ, homicídia, ebrietátes` | OCR appears as `invidiee, homicidia,ebrietates` | Recognition noise is sufficient to explain the form; no printed difference can be inferred. |
+| Gospel, Mt. 6:27 and 33; Communion | `adícere`, `adiciéntur`, `adiciéntur` | OCR appears as `adiicere`, `adiiciéntur`, `adiiciéntur` | The derivative consistently appears to show doubled `-ii-` at all three places. It may reflect an orthographic difference, but no printed Benziger reading is established. |
+| Gospel reference | `Mt. 6, 24-33` | OCR appears as `Matth. 6, 24-33` | The derivative appears to use the longer abbreviation; no printed abbreviation policy is established. |
+| Communion reference | `Mt. 6, 33` | OCR appears as `Matth. 6, 33` | The derivative appears to use the longer abbreviation; no printed abbreviation policy is established. |
+| Offertory | `gustáte et vidéte` | OCR appears as `gustáte, et vidéte` | The derivative appears to add a comma. Whether the printed edition carries it is unverified. |
+| Secret conclusion | `Per Dóminum.` | OCR appears as `Per Dóminum nostrum.` | The derivative appears to give the longer cue; no printed conclusion is established. |
+| Postcommunion conclusion | `Per Dóminum nostrum.` | OCR appears as `Per Dóminum.` | The derivative appears to give the shorter cue, reversing its apparent relation to the Vatican form in the Secret row. No printed conclusion is established. |
+| Gospel heading | `✠ Sequéntia sancti Evangélii secúndum Matthǽum.` with `Mt. 6, 24-33` on the same lines | OCR appears as `Sequéntia sancti Evangélii secúndum Matthæum` with the reference on its own line and no closing point | The derivative appears to differ in layout, abbreviation, and pointing; no printed form is established. |
+| Epistle heading | `Léctio Epístolæ beáti Pauli Apóstoli ad Gálatas.` with `Gal. 5, 16-24` on the same lines | OCR appears as `…ad Gálatas` with the reference on its own line and no closing point | The derivative appears to differ in layout and pointing; no printed form is established. |
+| `Credo` rubric | `Credo.` on a line of its own after the Gospel | OCR appears to run `Credo.` onto the Gospel's last line | The derivative appears to differ typographically; no printed layout is established. |
+| Heading style | `Ant. ad Introitum`, `Ant. ad Offertorium`, `Ant. ad Communionem` throughout; title `DOMINICA / DECIMA QUARTA / post Pentecosten` | OCR appears to use `Antiphona ad …` throughout and `DOMINICA DECIMA QUARTA / POST PENTECOSTEN` | The derivative appears to differ in abbreviation and capitalization; no printed heading policy is established. |
 
-No reading in the typical edition was unclear enough to need a second witness,
+No reading in the typical edition was unclear enough to need the OCR derivative,
 and the one illegible mark that exists — the Gospel's marginal number — is one
-the second witness could not have resolved. No substitution was made in either
+the derivative could not have resolved. No substitution was made in either
 direction.
 
 ---
@@ -397,7 +391,8 @@ right as Masoretic and wrong as the common modern number.
 
 **Witness:** Vatican typical edition, printed p. 395, right column, below the
 `Credo` rubric; PDF p. 476. **Checked:** 2026-08-26 at 500 dpi, including the
-absence of a comma after `gustáte`, which is where Benziger differs.
+absence of a comma after `gustáte`, where the Benziger OCR derivative appears
+to differ.
 
 **Note.** `Angelus` is printed with a capital where the Clementine has
 lowercase `angelus`; the antiphon adds a comma before `quóniam`; and it stops
@@ -458,7 +453,7 @@ English gaps that follow it.
 
 **Witness:** Vatican typical edition, printed p. 396, left column; PDF p. 477.
 **Checked:** 2026-08-26 at 500 dpi, including the longer conclusion `Per
-Dóminum nostrum.`, which is where Benziger differs.
+Dóminum nostrum.`, where the Benziger OCR derivative appears to differ.
 
 **Note.** `ad perpétuæ … salvatiónis efféctum` splits the genitive around the
 verb exactly as the Thirteenth Sunday's Postcommunion split `redemptiónis
@@ -479,11 +474,14 @@ in both cases the noun the prayer is reaching for is held to the end.
 
 No Tract, Sequence, additional oration, blessing, or ritual text is appointed
 in this formulary. There is no printed second Collect, Secret, or
-Postcommunion. This is worth stating because both older witnesses used for the
-rights check below *do* print a second and third set — Pustet 1862 has
+Postcommunion. Two degraded OCR finding aids appear to carry a second and third
+set — the derivative identified with Pustet 1862 appears to carry
 `Secunda Oratio. A cunctis nos`, `Alia Secreta. Exaudi nos Deus`, and
 `Alia Postcommunio. Mundet et muniat`, each with a `Tertia ad libitum`, and
-Venice 1570 prints the same three by incipit. Those seasonal orations are
+the derivative identified with Venice 1570 appears to carry the same three by
+incipit. No page images of either book were obtained or collated, so these are
+observations of their uncorrected text layers rather than readings established
+for the printed editions. Those seasonal orations are
 pre-1960 matter, and they are no part of the 1962 formulary and are not printed
 by this guide. **Corrected 2026-08-27 by the authoring stage:** this record
 previously named the *Rubricae generales* of 1960 as the instrument that removed
@@ -572,45 +570,46 @@ material of the 1962 edition. This is the project's own reading of the statute
 and of the evidence, not a clearance anyone granted, and it is not legal
 advice.
 
-**Preexisting-material check, 2026-08-26.** All ten appointed elements above
-are printed, in the same order and at the same scriptural references, in two
-Missals this repository tracks as public-domain text:
+**Preexisting-material check, 2026-09-03.** The public-domain Mame 1922
+page-image witness, passage
+`passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.dominica-xiv-post-pentecosten`,
+was verified at printed pp. 444–446, PDF artifact pp. 558–560, and Internet
+Archive viewer leaves n557–n559. All ten appointed elements stand there in the
+same placement and order and at the same scriptural references as in the 1962
+typical edition, including the Communion's recasting: `Primum` is promoted,
+`et justitiam ejus` is absent, and `dicit Dominus` is present. This verified
+witness supplies the pre-1962 page-image basis for treating the received
+wording as preexisting material and supports a bounded 1922–1962 continuity
+claim. It does not establish the constellation's first appearance, a universal
+transmission history, or that the typical edition's own contribution is public
+domain. Its historical orthography, punctuation, conclusions, rank, and
+optional seasonal orations are not blended into the controlled 1962 text.
+
+Two earlier OCR observations remain recorded as leads, not as support for this
+rights conclusion:
 
 - **Pustet, Ratisbon, 1862** — artifact
   `artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf`,
   `storage = "tracked"`, `rights_status = "public-domain"`. Under the heading
-  `Dominica XIV. post Pentecosten` at printed pp. 337–338 (text-layer lines
-  50147–50323): Introit `Protector noster aspice, Deus, et respice in faciem
-  Christi tui: quia melior est dies una in atriis tuis super millia` with the
-  verse at `Ps. ib. Quam dilecta tabernacula tua Domine virtutum!`; Collect
-  `Custodi, Domine quaesumus, Ecclesiam tuam propitiatione perpetua`; Epistle
-  `ad Galatas. c. 5`; Gradual `Ps. 117. Bonum est confidere in Domino`;
-  Alleluia `Ps. 94. Venite, exultemus Domino`; Gospel `secundum Matthaeum.
-  c. 6`; Offertory `Ps. 33. Immittet Angelus Domini in circuitu timentium eum`;
-  Secret `Concede nobis Domine quaesumus, ut haec hostia salutaris`; Communion
-  `Matth. 6. Primum quaerite regnum Dei, et omnia adjicientur vobis, dicit
-  Dominus`; Postcommunion `Purificent semper et muniant tua sacramenta nos,
-  Deus`. The 1862 printing therefore carries not only the ten elements but the
-  Communion's recasting itself — `Primum` promoted, `et justitiam ejus` absent,
-  and `dicit Dominus` present — which is the one substantive divergence from
-  the Bible text this formulary contains. This printing is a commercial
-  hand-format Missal conformed to the Roman text and **not** a typical edition;
-  nothing about the history of the rite is inferred from it here, only that
-  these texts were in print in 1862.
+  `Dominica XIV. post Pentecosten` at text-layer lines 50147–50323, the
+  uncorrected derivative appears to contain the ten element incipits and
+  references, including the Communion recasting. No page images were obtained
+  or collated. These are observations of a degraded optical layer, not
+  assertions about the printed book, and establish no textual, transmission,
+  preexisting-material, or rights conclusion.
 - **Venice, 1570** — artifact
   `artifact.catholic-church.missale-romanum.venice-1570.missale-romanum-1570-text-563f4dd2`,
   `storage = "tracked"`, `rights_status = "public-domain"`. In the Sunday
   series at text-layer lines 53170–53351 (the heading reads `iommica xiiij.
   poft Pente⸗coſten`, an OCR corruption of `Dominica xiiij. post Pentecosten`):
-  all ten elements were identified by incipit and order — Introit (`Protectoꝛ
+  the derivative appears to contain ten elements in order — Introit (`Protectoꝛ
   noſter aſpice … quia melioꝛ eſt dies vna in atrijs tuis ſup millia`), Collect,
   Epistle, Gradual (`Bonum eſt confidere in domino`), Alleluia (`Venite
   exultemus domino`), Gospel (`Nemo poteſt duobus dominis ſeruire`), Offertory
   (`Immittit angelus domini in circuitu timentiũ eum`), Secret (`Concede nobis
   … vt hec hoſtia ſalutaris`), Communion (`Primum querite regnuʒ dei: ⁊ omnia
   adijcientur vobis dicit dominus`), and Postcommunion (`Purificent ſemper ⁊
-  muniant tua ſacramenta`). The 1570 printing likewise carries the Communion's
-  recasting, `dicit dominus` included. Four wording differences visible in that
+  muniant tua ſacramenta`). Four possible wording differences visible in that
   degraded text layer are recorded rather than harmonised and are **not**
   claimed as 1570 readings without a page-image collation nobody has made here:
   the Collect appears as `Custodi, quæsumus, domine, ecclesiam tuam` (`quæsumus`
@@ -619,14 +618,14 @@ Missals this repository tracks as public-domain text:
   the fruits as `longanimitas, bonitas, benignitas` (against the 1962
   `benígnitas, bónitas, longanímitas`); the Gospel appears as `Scit enim pater
   vester celestis, quia his omnibus indigetis`, with a `celestis` that neither
-  the 1962 book nor the Clementine has; and the Secret prints the long
+  the 1962 book nor the Clementine has; and the Secret appears with the long
   conclusion `Per dominum nostrum Jesum Christum filium tuum, qui.` The
   artifact's own source record classifies its optical character recognition as
   degraded; an apparent reading in it is evidence about the text layer, not a
   collated reading of the 1570 book.
 
-**Re-executed 2026-08-31 by the source-audit stage, against the tracked bytes,
-and it holds.** Both payloads were reopened at the stated ranges — Pustet at
+**Re-executed 2026-08-31 by the source-audit stage against the tracked OCR
+bytes.** Both payloads were reopened at the stated ranges — Pustet at
 lines 50147–50322, Venice at 53170–53351 — and every substantive reading above
 is in the bytes: the Pustet's `Secunda Oratio. A cunctis nos`, `Alia Secrcta.
 Kxaudi nos Deus` and `Alia Postcommunio. Mundet et mtiniat`, each with its
@@ -634,24 +633,25 @@ Kxaudi nos Deus` and `Alia Postcommunio. Mundet et mtiniat`, each with its
 Collect's `queſumus domi⸗ne` transposition, its `Manifeſta autem fünt opcra
 cariij`, its fruit order `longa:nimitas,bonita; bcniamnitas`, its Gospel's
 `patcr vc»fcr celeſtis`, its Secret's `Per dominum noſtrum Jeſum Chꝛiſtuʒ filinm
-tuũ, qui.`, and both books' Communion carrying `dicit Dominus` with `et justitiam
-ejus` absent. **One presentational bound is added at the same time.** The strings
+tuũ, qui.`, and both OCR derivatives appearing to carry `dicit Dominus` with
+`et justitiam ejus` absent. **One presentational bound is added at the same time.** The strings
 set in backticks above are lightly normalised renderings of degraded optical
 layers — dropped ornamental initials supplied, digit-for-accent and
 consonant-collapse noise cleaned — and not literal bytes: the Pustet's Introit
 begins `Rottctor noster dspice` in the file and the Venice's `Rotectoꝛ noſter`.
-Read them as this audit's transcriptions of what the layer shows, which is what
-the surrounding sentences already say they are, and not as quotations. Nothing
-is quoted from either witness into the guide.
+Read them as this audit's transcriptions of what the layers appear to show, not
+as quotations or collated readings of either printed edition. Nothing is quoted
+from either witness into the guide.
 
 **Bounds of this check.** It was made at the level of element, printed
 reference and incipit against uncorrected OCR text layers, and it is not a
-word-level collation. Both witnesses print the older orthography and element
-headings rather than the 1962 book's, both print the pre-1960 second and third
-orations the 1962 formulary does not, and neither carries the 1962 rank or
-marginal numbering: those are edition-specific matter and are no part of this
-finding. Nothing is quoted from either witness into the guide's text; they are
-read as finding aids for the presence of the texts.
+word-level collation. Both derivatives appear to show older orthography and
+element headings, and both appear to show the pre-1960 second and third
+orations that the 1962 formulary lacks; neither derivative appears to carry the
+1962 rank or marginal numbering. None of these OCR observations establishes a
+feature of either printed book. Nothing is quoted from either derivative into
+the guide's text; they are retained as finding aids only and do not support the
+guide's continuity or rights conclusions.
 
 The project claims no rights in the received liturgical text and has not
 composed, translated, modernised, conflated, or adapted any of it. The two 1962

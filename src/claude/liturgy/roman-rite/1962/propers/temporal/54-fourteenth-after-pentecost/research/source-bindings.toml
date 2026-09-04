@@ -45,14 +45,14 @@ context = "The exact remote facsimile controls every Latin form, heading, script
 [[bindings]]
 source_id = "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu-ocr"
 loci = [
-  "the formulary's own text-layer block for Dominica XIV post Pentecosten, between the page-number marks at OCR lines 59,325 and 59,445, corresponding to printed pp. 389-390",
+  "focused OCR text-layer block identified with Dominica XIV post Pentecosten and its surrounding Sunday boundaries; exact physical-line and page-to-line bounds remain unresolved",
 ]
 role = "lead"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:5c2d162e9079b438862a80692742bb1e85a16c60e9730040aeef4a0275a32144"
-context = "An uncorrected optical text derivative of a second, independently published 1962 edition. It is the only Benziger witness read for this formulary: the sibling page-image artifact was not opened, which is weaker than the Thirteenth Sunday's record and is declared as such in the guide. All thirteen recorded Benziger divergences are therefore evidence about this text layer and not collated readings of the Benziger book; nothing was blended, and no Benziger form was substituted for a Vatican typical form. A focused excerpt of it is kept as propers/retrieved.txt as an unedited finding aid."
+context = "An uncorrected optical text derivative of a second, independently published 1962 edition. It is the only Benziger witness read for this formulary: the sibling page-image artifact was not opened, which is weaker than the Thirteenth Sunday's record and is declared as such in the guide. All thirteen recorded Benziger divergences are therefore evidence about this text layer and not collated readings of the Benziger book; nothing was blended, and no Benziger form was substituted for a Vatican typical form. A focused excerpt of it is kept as propers/retrieved.txt as an unedited finding aid. Earlier audit notes assign conflicting physical-line and page-to-line bounds, so the exact locator remains unresolved and is not asserted here."
 
-# --- Rights: the preexisting-material check under 17 U.S.C. 103(b) ---
+# --- Historical OCR leads and verified preexisting-material witness ---
 
 [[bindings]]
 source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
@@ -61,18 +61,27 @@ loci = [
   "Feria V post Dominicam I Quadragesimae, the Offertory Immittet Angelus Domini, normalized lines 21125-21165",
   "the seasonal Alia Postcommunio Mundet et muniat, counted at sixteen places across this stretch of the year",
 ]
-role = "rights-control"
+role = "lead"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:efd4426beabe5385be4e5df4542255c488fe460dee069ab999231255702d5b0f"
-context = "Read as a finding aid for the preexisting-material check that grounds this guide's 17 U.S.C. 103(b) basis for printing the appointed Latin. All ten elements of the 1962 formulary appear here in the same order at the same scriptural references, including the Communion's recasting with dicit Dominus, which is the one substantive departure this formulary makes from its Bible text. The check was made at the level of element, printed reference and incipit against an uncorrected text layer and is not a word-level collation; nothing is quoted from this artifact anywhere in the guide. The same layer supplies the second Roman appointment of this Offertory and the count behind the disconfirming limit on the fifth interpretive proposal. The record classifies this layer as degraded, and no absence in it is reported by this guide as absence from the book: an earlier research pass took a false negative here from a line-break splitting Immit-tet, and the guide publishes that as a standing warning."
+context = "Degraded, uncorrected OCR derivative consulted only as a finding aid. Its text layer appears to contain the target sequence and several other liturgical loci, but no page images were obtained or collated. These remain observations of the derivative, not assertions about the printed Pustet edition, and they support no textual, transmission, preexisting-material, or rights conclusion in the guide. No wording from this artifact is quoted."
 
 [[bindings]]
 source_id = "artifact.catholic-church.missale-romanum.venice-1570.missale-romanum-1570-text-563f4dd2"
 loci = ["the Sunday series, Dominica XIV post Pentecosten"]
-role = "rights-control"
+role = "lead"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:e76b722596e6d4f31cf9ec2c7d4af5d34cbac1377e03b6926b67866f545a32d4"
-context = "Second finding aid for the same preexisting-material check, and the earlier of the two witnesses to the Communion's recasting, which is therefore at least as old as 1570. It is also the witness for three of the four wording changes that settled at the Clementine revision. The layer is classified degraded-latin and its record expressly forbids resting a negative search on it, so every claim the guide makes from it is a positive reading of quoted bytes; the 1570 Postcommunion's address cannot be settled from it at all, and the fruit-order difference is carried as a lead rather than as a 1570 reading, because no page-image collation of the 1570 book was made."
+context = "Degraded, uncorrected OCR derivative consulted only as a finding aid. Its text layer appears to contain the target sequence and possible wording variants, but no page images were obtained or collated. These remain observations of the derivative, not assertions about the printed Venice edition, and they establish neither a lower bound for the constellation nor any textual, transmission, preexisting-material, or rights conclusion. The possible variants remain leads only."
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.dominica-xiv-post-pentecosten"
+loci = ["Dominica XIV post Pentecosten; printed pp. 444-446; PDF artifact pp. 558-560; Internet Archive viewer leaves n557-n559"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-03"
+source_fingerprint = "sha256:9ca7ab5661e37c9284364c248a4655dd4533897d30a32f5c7f9a39949e2284d6"
+context = "Verified public-domain page-image witness for the guide's bounded continuity and preexisting-material claims: all ten appointed elements stand in the same placement and order and at the same scriptural references as in the 1962 typical edition, including the Communion's recasting. It supports continuity from 1922 to 1962, not a first appearance or universal transmission history. Its historical orthography, punctuation, conclusions, rank, and optional seasonal orations remain properties of the 1922 printing and are not blended into the controlled 1962 text."
 
 # --- Translation control and historical-English lead ---
 

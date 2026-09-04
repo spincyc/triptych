@@ -390,6 +390,27 @@ review the repaired source but do not install or claim release of the Claude
 publication; a fresh workflow must still evaluate and install its exact final
 artifacts.
 
+Fresh Claude run `0ba05a97460d46c1`, seeded from source checkpoint
+`2b1d0044c8438dfff619a8671492a7e131a51fba`, is preserved as a second
+terminal `BLOCKED` audit. Its source audit re-collated the complete appointed
+Latin and rubrics; seven fresh research lanes, synthesis, authoring, and every
+program preflight completed; and its content revisions cleared
+`CON-EVI-001`, `CON-EVI-002`, `CON-REC-001`, `CON-CIT-001`, and
+`CON-PRO-001`. The last content pass cleared evidence discipline, reception,
+synthesis argument, and citation integrity, but `CON-PRO-002` repeated for a
+third failure because the three exact-oration reception qualifications still
+narrated their search boundary in reader-facing prose. The run directory is
+untouched. The authorized post-run repair now states declaratively that no
+direct ancient, medieval, Doctoral, or later saintly exposition of each exact
+formula is presently attested, while identifying sacramentary transmission
+and Guéranger and Schuster's later liturgical interpretation; detailed corpus
+and query bounds remain only in `research/scope.md`. Independent profile and
+reception audits both pass the exact repaired commentary source at SHA-256
+`26cdf68ea53ab265a8e2b347dfa7d7c2a2685da63981263528253110f39a44f5`.
+The 36-binding content preflight, component, provenance, web-declaration,
+source-library, promised-deliverable, and whitespace gates pass after that
+repair.
+
 The Claude prerequisite is not complete merely because its repaired source
 leaf and generated `research/chronology.toml` now exist. It still lacks both
 installed PDFs, the tracked web edition, and both release records. It must

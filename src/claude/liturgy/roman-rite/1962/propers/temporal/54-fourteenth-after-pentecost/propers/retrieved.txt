@@ -12,19 +12,9 @@ Whole-file SHA-256  : 2a2da44d4f2054ffd9fa5a0fa87ec427fe2a99410f438112282eed8225
                       artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu-ocr;
                       the whole file was hashed before this excerpt was cut)
 Retrieved           : 2026-08-26
-Extract             : physical lines 59,360-59,545 of the whole file
-Printed pages shown : Benziger 389 (from the Communion of the Thirteenth Sunday, which
-                      stands on that page) through 390 (head of the Fifteenth Sunday).
-                      The Fourteenth Sunday's formulary occupies printed pp. 389-390.
-                      CORRECTED 2026-09-02 by the source-audit stage: this line read
-                      "Benziger 388 ... through 390". Printed p. 388 is not in the
-                      extract. In the derivative the folio marks stand alone on lines
-                      59,209 (388), 59,325 (389), 59,445 (390) and 59,568 (391), each
-                      beside the running head of the page it opens, so p. 389 begins at
-                      about line 59,326 and this extract opens thirty-five lines inside
-                      it. The line range above is exact and was replayed against a
-                      byte-exact copy of the registered derivative (whole-file SHA-256
-                      matched before reading); the body below is unchanged.
+Extract             : focused OCR block from the preceding Sunday's closing matter through
+                      the following Sunday's heading. Earlier audit notes assign conflicting
+                      physical-line and page-to-line bounds, so no exact locator is asserted.
 Role                : locating and comparison aid only. Published wording is controlled by
                       the CMAA facsimile of the Vatican editio typica, printed pp. 394-396.
 
@@ -32,7 +22,8 @@ Standing limit on this pull. Only the OCR text layer of the Benziger item was av
 to this audit; the sibling DjVu page images (artifact ...benziger-iuxta-typicam-1962.ia-djvu,
 storage "remote", no payload installed) were NOT read. An apparent Benziger reading below
 is therefore evidence about an uncorrected text layer, not a collated reading of the
-Benziger book. verified.md says so again where it matters.
+Benziger book. The exact physical-line and page-to-line arithmetic remains unresolved;
+verified.md says so again where it matters.
 
 Known OCR corruptions in this excerpt, retained on purpose:
   digit-for-accent substitutions ("6" for o-acute, "f" for i-acute, "£" for e-acute,
@@ -245,4 +236,3 @@ ctum. Per D6minum.
 
 DOMINICA DECIMA QUINTA 
 POST PENTECOSTEN 
-
