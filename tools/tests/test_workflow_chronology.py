@@ -75,19 +75,20 @@ RESOLVE_CONTEXT = (ROOT / "workflows" / "fragments" / "propers" /
 
 DOCUMENT = ("liturgy/roman-rite/1962/propers/temporal/"
             "54-fourteenth-after-pentecost")
-DOSSIER = "sections/10-date-location.tex"
+DOSSIER = "sections/redevelopment/02-scriptural-date-location.tex"
 
 
 def _at_version(metadata: str, version: int) -> str:
-    """The same provenance record, stating a given workflow version.
+    """The same provenance record, bound to a given proper version.
 
-    The record's second field is the version; nothing else in the file is
-    allowed to move, because the checks under test read the rest of it.
+    The surviving GPT fixture predates recorded workflow identity. Set its
+    first two fields explicitly; nothing else in the file is allowed to move,
+    because the checks under test read the rest of it.
     """
     pattern = re.compile(
-        r"(\\AIGenerationProvenance\{[^{}]*\}\{)[^{}]*(\})")
+        r"(\\AIGenerationProvenance)\{[^{}]*\}\{[^{}]*\}")
     text, count = pattern.subn(
-        lambda m: f"{m.group(1)}{version}{m.group(2)}", metadata, count=1)
+        lambda m: f"{m.group(1)}{{proper}}{{{version}}}", metadata, count=1)
     if count != 1:
         raise AssertionError(
             "the fixture leaf carries no AIGenerationProvenance record to "
@@ -380,9 +381,9 @@ class BoundLeafTests(unittest.TestCase):
     def setUpClass(cls):
         cls.tmp = tempfile.TemporaryDirectory()
         cls.root = Path(cls.tmp.name) / "tree"
-        leaf = cls.root / "src" / "claude" / DOCUMENT
+        leaf = cls.root / "src" / "gpt" / DOCUMENT
         leaf.parent.mkdir(parents=True)
-        shutil.copytree(ROOT / "src" / "claude" / DOCUMENT, leaf)
+        shutil.copytree(ROOT / "src" / "gpt" / DOCUMENT, leaf)
         (cls.root / "src" / "sources").symlink_to(ROOT / "src" / "sources")
         cls.leaf = leaf
         cls.metadata = leaf / "generation-metadata.tex"
@@ -413,7 +414,7 @@ class BoundLeafTests(unittest.TestCase):
     def write_record(self):
         done = subprocess.run(
             [str(LAUNCHER), WIRING, "record", "--root", str(self.root),
-             "--provider", "claude", "--document", DOCUMENT, "--write"],
+             "--provider", "gpt", "--document", DOCUMENT, "--write"],
             capture_output=True, text=True, cwd=ROOT)
         self.assertEqual(done.returncode, 0, done.stderr)
 
@@ -423,7 +424,7 @@ class BoundLeafTests(unittest.TestCase):
     def check(self, name: str) -> subprocess.CompletedProcess:
         return subprocess.run(
             [str(ROOT / "tools" / TOOL), "--root", str(self.root),
-             "--provider", "claude", "--document", DOCUMENT, "--check", name],
+             "--provider", "gpt", "--document", DOCUMENT, "--check", name],
             capture_output=True, text=True, cwd=ROOT)
 
     def assertRefused(self, name: str, because: str):
