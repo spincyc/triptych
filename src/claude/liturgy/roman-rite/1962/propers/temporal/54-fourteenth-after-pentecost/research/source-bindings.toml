@@ -31,7 +31,9 @@ document = "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-penteco
 # Psalmum 94 of the Chrysostomic corpus; Cyril of Jerusalem; Ambrose; Aquinas
 # on Galatians and the Catena aurea in Matthaeum; Anthony of Padua; Jerome on
 # Matthew and, at lib. III on the appointed verses, on Galatians; Cassiodorus
-# on Psalms 33, 83, 94 and 117; Theodoret on Psalms 33, 83, 94 and 117;
+# on Psalms 33, 83, 94 and 117; Theodoret on Psalms 83, 94 and 117, read in
+# Greek, his Psalm 33 exposition standing outside the volumes retrieved for that
+# reading and bound below from a held passage record instead;
 # Ambrosiaster and Marius Victorinus on Galatians; the Glossa ordinaria,
 # Prosper, Arnobius the Younger, Rabanus, Paschasius Radbertus, Christian of
 # Stavelot, the Matthew exposition printed under Bede's name, Bruno of Segni,
@@ -61,8 +63,9 @@ document = "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-penteco
 #     of the appointed pericope, and no Pauline commentary of his was found in
 #     either Greek collection reached.
 #   - Cassian on Galatians: not swept.
-#   - Papias, and Eusebius Historia ecclesiastica III.24.6 and III.39.16: held
-#     in no form; only Book VI of the Historia ecclesiastica is held here.
+#   - Papias, and Eusebius Historia ecclesiastica III.24.6 and III.39.16: Papias
+#     is held in no form, and of the Historia ecclesiastica only Books VI-X in
+#     Greek and Book VI in English are held here, so Book III is out of reach.
 #   - Irenaeus, Adversus haereses III.1.1: held as tracked, public-domain,
 #     searchable bytes, but with no registered passage record for that locus.
 #   - Jerome, De viris illustribus: registered at ch. 2 and not the ch. 3 cited,
@@ -257,7 +260,7 @@ role = "context"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-19"
 source_fingerprint = "sha256:faaad75cf19941bb403d171762a9ee4adb2b150a997efee3e746166ac003eac7"
-context = "The held substitute for the modern annotated gloss an earlier form of this leaf used at the Offertory psalm's title. Theodoret retells the Nobe episode, identifies Abimelech with Abiathar as a man of two names, and reports but rejects the setting before Achis at Geth as not fitting the psalm's words. He and the modern gloss do not agree, and the guide's page 2 records a divergence among the tracked witnesses rather than an error in either. Bytes not retained: summarised, not quoted. This is the guide's only Theodoret binding and the guide quotes Theodoret nowhere: the detailed commentary's three mentions of him -- at the Introit psalm, at the Epistle and at the Alleluia psalm -- are bounded negatives recording that Theodoret on Psalm 83 and on Psalm 94 was not retrieved and that his Galatians commentary is registered only at 3:16-22 and so reaches no appointed verse. Theodoret on Psalms 83 and 94 is not bound here and was not reached; see the second limit in the header."
+context = "Theodoret's exposition of the Offertory psalm, and the one registered passage of this commentator that reaches an appointed psalm. He retells the Nobe episode, identifies Abimelech with Abiathar as a man of two names, and reports but rejects the setting before Achis at Geth as not fitting the psalm's words. Bytes not retained: summarised and nowhere quoted, and the page-2 Offertory dossier states the same divergence between the psalm's title and 1 Kings 21 from the title and the chapter themselves, without naming him. This is the guide's only Theodoret binding. His expositions of Psalms 83, 94 and 117 stand behind the Introit, Gradual and Alleluia treatments, read in Greek from an unregistered transcription and quoted there only in short transliterated phrases, and they carry no passage record here; his Psalm 33 exposition was not among the volumes retrieved for that reading; and his Galatians commentary is registered only at 3:16-22, so it reaches no appointed verse."
 
 [[bindings]]
 source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.psalm-33"
