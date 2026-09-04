@@ -626,14 +626,16 @@ research-synthesis
   ├─ CHANGES_REQUIRED → research → the seven lanes resweep → resynthesize
   ├─ BLOCKED → run ends
   ├─ PASS ↓
+source-registration
+  ↓ the lanes' retrievals become records in src/sources/
 author-proper
   ↓
 content-preflight (programmatic)
   ├─ FAIL → content-revision → reevaluate (never research: these are leaf defects)
   ├─ PASS ↓
 content-evaluation
-  ├─ CHANGES_REQUIRED, a research defect → research → synthesis → author → reevaluate
-  ├─ CHANGES_REQUIRED, a brief defect → research-synthesis → author → reevaluate
+  ├─ CHANGES_REQUIRED, a research defect → research → synthesis → registration → author → reevaluate
+  ├─ CHANGES_REQUIRED, a brief defect → research-synthesis → registration → author → reevaluate
   ├─ CHANGES_REQUIRED, authoring defects only → content-revision → reevaluate
   ├─ PASS ↓
 build-artifacts
@@ -706,15 +708,17 @@ page rasters produced by `tools/tpt pdf-review`.
 Each stage declares how it is run:
 
 - `single`, one fresh subagent: `seed`, `authorize-target`,
-  `resolve-context`, `source-audit`, `research-synthesis`, `author-proper`,
+  `resolve-context`, `source-audit`, `research-synthesis`,
+  `source-registration`, `author-proper`,
   `content-revision`, `build-artifacts`, `artifact-revision`,
   `visual-revision`, `publish-artifacts`, `generate-web`, `web-evaluation`,
   `web-revision`, `install-publication`, `publication-revision`. Every
   authoring and revision stage mutates the canonical leaf, `source-audit` may
-  retrieve and write the provenance files, and `research-synthesis` is the sole
+  retrieve and write the provenance files, `research-synthesis` is the sole
   owner of `research/scope.md` and the only place the seven lanes' findings are
-  reconciled, so each of them owns an authoritative artifact that exactly one
-  agent may hold. The publication stages own authoritative artifacts too — the
+  reconciled, and `source-registration` is the sole writer of `src/sources/`,
+  so each of them owns an authoritative artifact that exactly one agent may
+  hold. The publication stages own authoritative artifacts too — the
   scope entry, the installed PDFs, the generated and the tracked web edition,
   the release records, and the catalog cell — one owner each.
   `web-evaluation` is `single` rather than a fan-out because there is one
@@ -800,7 +804,32 @@ whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
-The `proper` workflow is at version 22. Version 22 gives
+The `proper` workflow is at version 23. Version 23 does two things, and both
+are about what a run leaves behind rather than how far it gets.
+
+The first is the source library. Research lanes retrieved whole works and left
+them in scratch with nothing recording where they came from, so a source the
+run had read in full could not afterwards be registered: the bytes survived and
+the URL did not. Every research finding now carries a `retrievals` list — url,
+sha256, byte size, media type, path, date and measured extent — and a new
+`source-registration` stage runs between `research-synthesis` and
+`author-proper`, reading those receipts and writing `src/sources/`. It is the
+only stage of a run that may write the library, and it exists so that the
+author binds records that are there rather than reporting registrations nobody
+in the run could perform.
+
+The second is the same budget version 22 widened, read from the other side.
+`CON-CIT-007` was raised naming `research`, research recorded the evidence it
+asked for, and the next evaluation raised the same id naming `authoring`
+because the leaf had still not cited it. Version 22 bought that run a fourth
+allowance so the route could be taken. Version 23 stops the charge being made
+at all: a standing id that comes back naming a *different* repair owner is not
+a repeat, because the defect moved rather than survived. The same id to the
+same owner still is, so an evaluation that keeps failing still blocks on
+exactly the failure it always did. A run seeded against version 22 or earlier
+fails closed; seed it again.
+
+The `proper` workflow was at version 22. Version 22 gives
 `content-evaluation` four repeat-budget slots for its three ordered repair
 owners. The first failed evaluation spends one slot before any repair owner has
 run, so the former ceiling of three could stop a defect before its third owner
@@ -815,7 +844,8 @@ to emit the authoring packet rather than `BLOCKED`. A run seeded against
 version 21 or earlier fails closed; seed it again.
 
 The `proper` workflow was at version 21. Version 21 closes the citation-handoff
-gap proved by run `dae51f4a7715c7f9`. The cultural-afterlife lane had gathered
+
+Version 21 closes the citation-handoffgap proved by run `dae51f4a7715c7f9`. The cultural-afterlife lane had gathered
 exact titles, institutions, stable URLs and loci for the retained online
 witnesses. Synthesis reduced those records to generic labels in the immutable
 brief while directing the author to carry stable links "from this brief". The
@@ -831,7 +861,8 @@ content evaluation must find every requested value in the brief before naming
 `authoring`, and must split a mixed evidence-and-leaf defect by repair owner.
 The regression checks both the source fragments and the packets workers
 receive. A run seeded against version 20 or earlier fails closed; seed it
-again. A terminal v20 run is evidence, not a resumable v21 run.
+again. A terminal v20 run is evidence, not a resumable v21 run, and a terminal
+v21 run is evidence, not a resumable v22 one.
 
 The `proper` workflow was at version 20. Version 20 closes the fresh-leaf gap in
 `resolve-context`. That stage runs before `source-audit`, which is ordinarily

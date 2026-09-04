@@ -69,11 +69,14 @@ Integrate the joined research into one research brief that the
    `guidance/sources.md` requires no machine ID for every sentence and holds
    that stable ids do not replace intelligible ones — so an absent library
    record is a provenance note the brief carries, never a control the author
-   must obtain before publishing. Nothing in this workflow registers a source
-   or writes `src/sources/`, so "register and bind before publishing" asks
-   the one stage forbidden to retrieve anything for the one thing no stage
-   may do: the author blocks, correctly, and a run ends over evidence the
-   lanes had already gathered. It is not a `CHANGES_REQUIRED` either, because
+   must obtain before publishing. The `source-registration` stage runs
+   between you and the author and registers what the lanes receipted, so a
+   retrieved witness may well be in the library by the time the author reads
+   your brief — but you do not know which, and "register and bind before
+   publishing" still asks the one stage forbidden to retrieve anything to
+   wait on something it cannot cause: the author blocks, correctly, and a run
+   ends over evidence the lanes had already gathered. It is not a
+   `CHANGES_REQUIRED` either, because
    no lane may write what it asks for. Where a registration genuinely
    controls what may be said — a rights basis only an artifact record can
    settle — record it against the claim it reaches as an unresolved control

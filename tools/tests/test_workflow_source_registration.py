@@ -47,6 +47,8 @@ AUTHOR = "author-proper"
 SYNTHESIS = "research-synthesis"
 REVISER = "content-revision"
 COVERAGE_LANE = "source-citation-coverage"
+COVERAGE_LANE_FRAGMENT = "research-source-citation-coverage"
+REGISTRATION = "source-registration"
 BINDINGS = "research/source-bindings.toml"
 
 # ---------------------------------------------------------------------------
@@ -383,13 +385,32 @@ class FragmentTests(unittest.TestCase):
             owners, [f"propers/{AUTHOR}.md"],
             f"exactly one fragment may write {BINDINGS}")
 
-    def test_no_fragment_tells_a_worker_to_write_the_library(self):
-        for name, text in propers_fragments().items():
+    def test_exactly_one_fragment_tells_a_worker_to_write_the_library(self):
+        """v22 gave the library a writer, and it must stay the only one.
+
+        Until v22 the answer was nobody, and this test said so. The rule it
+        was protecting was never "the library is not written during a run" --
+        it was that a stage which cannot write `src/sources/` must not be told
+        to, because a demand no stage can meet is what ended run
+        5f2d2447ee8d4445. `source-registration` can meet it. Every other
+        fragment still may not, and the author, the synthesis and the seven
+        research lanes least of all.
+        """
+        writers = sorted(
+            name for name, text in propers_fragments().items()
+            if tells_a_worker_to_write_the_library(text))
+        self.assertEqual(
+            writers, [f"propers/{REGISTRATION}.md"],
+            "exactly one fragment may direct a worker at `src/sources/`")
+
+    def test_the_stages_that_may_not_write_the_library_are_not_told_to(self):
+        for name in (AUTHOR, SYNTHESIS, "research",
+                     f"lanes/{COVERAGE_LANE_FRAGMENT}"):
             with self.subTest(fragment=name):
                 self.assertEqual(
-                    tells_a_worker_to_write_the_library(text), [],
-                    f"{name} directs a worker at `src/sources/`, which no "
-                    f"stage of a run may write")
+                    tells_a_worker_to_write_the_library(fragment(name)), [],
+                    f"{name} cannot write `src/sources/` and must not be "
+                    f"told to")
 
     def test_the_phrasings_that_ended_the_run_are_not_instructions(self):
         """The wording that turned a provenance note into a bar.

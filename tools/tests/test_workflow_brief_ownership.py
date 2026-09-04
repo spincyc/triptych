@@ -311,6 +311,10 @@ class BlockedAuthoringTests(PropersCase):
         self.assertEqual(out["stage"], OWNER)
         out = self.engine.advance(
             run_id, result_path=self.worker_pass(run_id, OWNER))
+        self.assertEqual(out["stage"], "source-registration")
+        out = self.engine.advance(
+            run_id,
+            result_path=self.worker_pass(run_id, "source-registration"))
         self.assertEqual(out["stage"], "author-proper")
         return run_id, out
 

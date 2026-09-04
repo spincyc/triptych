@@ -126,7 +126,9 @@ learns belongs in the files this stage owns, listed below.
      because nobody looked is the same defect as one cited from memory. What
      the library genuinely does not hold is cited in `References` in the
      ordinary way and stays out of this file; registering it is not yours to
-     do, because no stage of this workflow writes `src/sources/`.
+     do. `source-registration` is the only stage that may write
+     `src/sources/`, and in a run that has no such stage — a `proper-finish`
+     run resumes at you — nothing in the run writes it at all.
    - **The role is load-bearing, and `translation-control` most of all.** It
      says of the source it is given to that the published English *is* that
      source's words, and it is the one role `restricted-not-reproduced` reads
@@ -361,10 +363,10 @@ guide prints: `guidance/sources.md` requires no machine ID for every sentence
 and states that stable ids do not replace intelligible citations, and the
 profile's gallery asks for the later user, work, context and exact locus
 rather than a source id. A brief that tells you to register or bind a witness
-before publishing it has named work no stage of this workflow may do — the
-library is written outside this run — and the answer is to publish what the
-brief evidences, bind what the library already holds, and say in your summary
-which registrations are outstanding. One run stopped here holding five
+before publishing it has named work you may not do — `source-registration` is
+the only stage that writes the library, and a finish run has none — and the
+answer is to publish what the brief evidences, bind what the library already
+holds, and say in your summary which registrations are outstanding. One run stopped here holding five
 audited gallery entries, complete with both texts and exact loci, for want of
 records nothing in the pipeline could have written.
 

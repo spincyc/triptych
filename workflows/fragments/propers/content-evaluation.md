@@ -168,6 +168,26 @@ missing-evidence finding goes to `research` or `brief` under the rules above,
 and the leaf-only finding goes to `authoring`. Do not hide two owners behind a
 single `required_result`; only the owner named on that finding will receive it.
 
+**The word that gives a compound away is `then`.** A `required_result` reading
+"retrieve X and record it in the brief, *then* make the leaf cite it" is two
+findings wearing one id, and the second half reaches nobody: the route carries
+the finding to the owner it named, that owner does the half it can, and the
+half it may not touch is not owed to anyone. Run ce4ecd514b64d2f9 ended that
+way. CON-CIT-007 asked `research` to record the NABRE target routes and the
+Gadenz edition and *then* asked for References to reproduce them. Research
+recorded them; `research/scope.md` was complete; `author-proper` was never told,
+because the finding it needed had been addressed to a stage that cannot write
+`sections/99-references.tex`. The next evaluation raised the same defect against
+the leaf and the run ended one repair short of a document whose other four
+lanes had passed.
+
+Written as the rule requires — `CON-CIT-007a` naming `research` for the missing
+loci, `CON-CIT-007b` naming `authoring` for the citation that must carry them —
+the route takes the first to research and `CARRIED_FINDINGS` holds the second
+until the author runs. Both get done, in the order the evidence requires, and
+neither is rediscovered. Splitting is not bookkeeping: it is the only way the
+second half is delivered at all.
+
 `brief` exists because `research/scope.md` has exactly one writer,
 `research-synthesis`, and so a defect in the brief can be repaired in no other
 stage. Naming such a defect `research` does not reach that writer any sooner:

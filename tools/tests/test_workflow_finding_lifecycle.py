@@ -60,6 +60,7 @@ from test_workflow_research_fanout import (  # noqa: E402
 )
 
 EVALUATION = "content-evaluation"
+REGISTRATION = "source-registration"
 AUTHOR = "author-proper"
 REVISION = "content-revision"
 PREFLIGHT = "content-preflight"
@@ -90,7 +91,37 @@ def headers(packet_text: str, field: str) -> list[dict]:
     return json.loads(line[len(prefix):])
 
 
-class CarriedFindingTests(RoutingCase):
+class SynthesisToAuthorMixin:
+    """Both classes below drive the brief's writer through to the author.
+
+    v22 put `source-registration` between the two, so the step that used to be
+    one advance is two. Shared here rather than repeated, because the next
+    stage inserted into that chain should break one helper and not eleven
+    call sites.
+    """
+
+    def pass_synthesis_to_author(self, run_id: str) -> None:
+        """Advance the brief's writer and stop with the author waiting.
+
+        v22 put `source-registration` between the two. It owns no repair
+        target, so it is carried nothing and it answers nothing: the findings
+        the route passed over are still owed to the author, and are computed
+        when the author's packet is compiled.
+        """
+        self.engine.advance(
+            run_id, result_path=self.worker_pass(run_id, SYNTHESIS))
+        if self.engine.load_state(run_id)["current_stage"] == REGISTRATION:
+            packet = self.engine.load_state(run_id)["packet_hashes"][-1]
+            text = (ROOT / packet["path"]).read_text(encoding="utf-8")
+            self.assertEqual(
+                headers(text, "CARRIED_FINDINGS"), [],
+                "registration repairs nothing, so it is told nothing")
+            self.engine.advance(
+                run_id, result_path=self.worker_pass(run_id, REGISTRATION))
+
+
+
+class CarriedFindingTests(SynthesisToAuthorMixin, RoutingCase):
     """A finding reaches its owner, whoever won the route."""
 
     def ids_at(self, run_id: str, field: str) -> list[str]:
@@ -119,8 +150,7 @@ class CarriedFindingTests(RoutingCase):
     def test_the_author_hears_the_findings_the_route_passed_over(self):
         """The packet that was empty in b68cca80edb75854."""
         run_id = self.drive_the_b68_shape()
-        self.engine.advance(
-            run_id, result_path=self.worker_pass(run_id, SYNTHESIS))
+        self.pass_synthesis_to_author(run_id)
         self.assertEqual(self.engine.load_state(run_id)["current_stage"],
                          AUTHOR)
         self.assertEqual(
@@ -133,8 +163,7 @@ class CarriedFindingTests(RoutingCase):
 
     def test_a_carried_finding_is_the_evaluator_s_own_bytes(self):
         run_id = self.drive_the_b68_shape()
-        self.engine.advance(
-            run_id, result_path=self.worker_pass(run_id, SYNTHESIS))
+        self.pass_synthesis_to_author(run_id)
         packet = self.engine.load_state(run_id)["packet_hashes"][-1]
         text = (ROOT / packet["path"]).read_text(encoding="utf-8")
         carried = {f["id"]: f for f in headers(text, "CARRIED_FINDINGS")}
@@ -147,8 +176,7 @@ class CarriedFindingTests(RoutingCase):
     def test_delivery_is_once_and_to_whichever_owner_runs_first(self):
         """`author-proper` and `content-revision` both own `authoring`."""
         run_id = self.drive_the_b68_shape()
-        self.engine.advance(
-            run_id, result_path=self.worker_pass(run_id, SYNTHESIS))
+        self.pass_synthesis_to_author(run_id)
         self.assertEqual(len(self.ids_at(run_id, "CARRIED_FINDINGS")), 3)
         # The author answers. Its result is recorded, so the debt is paid.
         self.engine.advance(
@@ -162,8 +190,7 @@ class CarriedFindingTests(RoutingCase):
     def test_the_fresh_evaluation_still_starts_clean(self):
         """Carrying findings forward must not leak into the evaluator."""
         run_id = self.drive_the_b68_shape()
-        self.engine.advance(
-            run_id, result_path=self.worker_pass(run_id, SYNTHESIS))
+        self.pass_synthesis_to_author(run_id)
         self.engine.advance(
             run_id, result_path=self.worker_pass(run_id, AUTHOR))
         self.engine.advance(run_id, run_gate=True)
@@ -177,8 +204,7 @@ class CarriedFindingTests(RoutingCase):
     def test_a_later_evaluation_supersedes_an_earlier_one_entirely(self):
         """Only the most recent result of an evaluator can still be owed."""
         run_id = self.drive_the_b68_shape()
-        self.engine.advance(
-            run_id, result_path=self.worker_pass(run_id, SYNTHESIS))
+        self.pass_synthesis_to_author(run_id)
         self.engine.advance(
             run_id, result_path=self.worker_pass(run_id, AUTHOR))
         self.engine.advance(run_id, run_gate=True)
@@ -189,8 +215,7 @@ class CarriedFindingTests(RoutingCase):
                 CONTENT_LANES[0]: [blocking("CON-EVI-050", AUTHORING, "new")],
             }))
         self.assertEqual(out["stage"], SYNTHESIS)
-        self.engine.advance(
-            run_id, result_path=self.worker_pass(run_id, SYNTHESIS))
+        self.pass_synthesis_to_author(run_id)
         self.assertEqual(
             self.ids_at(run_id, "CARRIED_FINDINGS"), ["CON-EVI-050"],
             "the first evaluation's findings are gone: the document was "
@@ -200,8 +225,7 @@ class CarriedFindingTests(RoutingCase):
     def test_replay_recompiles_a_carried_packet_byte_for_byte(self):
         """Derived from the record, never consumed, or replay would drift."""
         run_id = self.drive_the_b68_shape()
-        self.engine.advance(
-            run_id, result_path=self.worker_pass(run_id, SYNTHESIS))
+        self.pass_synthesis_to_author(run_id)
         report = self.engine.replay(run_id)
         self.assertTrue(report["deterministic"],
                         f"replay diverged: {report}")
@@ -211,14 +235,13 @@ class CarriedFindingTests(RoutingCase):
     def test_a_carried_finding_survives_a_second_replay(self):
         """Idempotent: reading it does not spend it."""
         run_id = self.drive_the_b68_shape()
-        self.engine.advance(
-            run_id, result_path=self.worker_pass(run_id, SYNTHESIS))
+        self.pass_synthesis_to_author(run_id)
         first = self.engine.replay(run_id)
         self.assertEqual(self.engine.replay(run_id), first)
         self.assertEqual(len(self.ids_at(run_id, "CARRIED_FINDINGS")), 3)
 
 
-class TheRunThatShouldNotHaveBlockedTests(RoutingCase):
+class TheRunThatShouldNotHaveBlockedTests(SynthesisToAuthorMixin, RoutingCase):
     """Run b68cca80edb75854's own blocking-finding history, replayed.
 
     Taken from that run's three `content-evaluation` results, by finding id:
@@ -301,8 +324,7 @@ class TheRunThatShouldNotHaveBlockedTests(RoutingCase):
         out = self.engine.advance(
             run_id, lane_results=self.content_submissions(run_id, by_lane))
         self.assertEqual(out["stage"], SYNTHESIS)
-        self.engine.advance(
-            run_id, result_path=self.worker_pass(run_id, SYNTHESIS))
+        self.pass_synthesis_to_author(run_id)
         packet = self.engine.load_state(run_id)["packet_hashes"][-1]
         text = (ROOT / packet["path"]).read_text(encoding="utf-8")
         self.assertEqual(
@@ -329,15 +351,21 @@ class MixedOwnerCitationBudgetTests(RoutingCase):
         )
 
     def return_from_research(self, run_id: str) -> None:
+        """Drive the research route back to the evaluation.
+
+        Driven by the workflow's own topology rather than a fixed list, so that
+        a stage inserted into the chain -- as v23 inserted
+        `source-registration` between the brief and the author -- does not stop
+        this test exercising the round trip it is about.
+        """
         self.engine.advance(
             run_id, lane_results=self.research_submissions(run_id))
-        self.engine.advance(
-            run_id, result_path=self.worker_pass(run_id, SYNTHESIS))
-        self.engine.advance(
-            run_id, result_path=self.worker_pass(run_id, AUTHOR))
-        self.engine.advance(run_id, run_gate=True)
-        self.assertEqual(
-            self.engine.load_state(run_id)["current_stage"], EVALUATION)
+        for _ in range(12):
+            stage_id = self.engine.load_state(run_id)["current_stage"]
+            if stage_id == EVALUATION:
+                return
+            self.pass_stage(run_id, stage_id)
+        self.fail("the run never came back to the evaluation")
 
     def return_from_authoring(self, run_id: str) -> None:
         self.engine.advance(
@@ -384,7 +412,8 @@ class MixedOwnerCitationBudgetTests(RoutingCase):
         # Evaluation 3: the evidence now exists and the same citation defect
         # has progressed to its leaf repair. V21 blocked at this point. V22
         # must honor the newly selected route and give the finding to the
-        # authoring owner.
+        # authoring owner, and does so by two independent margins since v23:
+        # the widened budget, and the charge that is no longer made.
         out = self.evaluate(run_id, {
             CONTENT_LANES[3]: [blocking("CON-CIT-007", AUTHORING)],
         })
@@ -397,12 +426,18 @@ class MixedOwnerCitationBudgetTests(RoutingCase):
         )
         state = self.engine.load_state(run_id)
         self.assertEqual(state["stage_failures"][EVALUATION], 4)
-        self.assertEqual(state["stage_repeats"][EVALUATION], 3)
+        self.assertEqual(
+            state["stage_repeats"][EVALUATION], 2,
+            "three under v22, which charged CON-CIT-007's return even though "
+            "it came back naming a different owner. v23 does not charge that, "
+            "so this history spends the first failure of the streak and "
+            "CON-PRO-001's genuine repeat, and nothing else")
         self.assertEqual(
             {s["id"]: s for s in workflow_json()["stages"]}
             [EVALUATION]["max_iterations"],
             4,
-        )
+            "v22's widened ceiling is kept: the two fixes are independent, "
+            "and a run that really does stop converging still has a bound")
 
 
 class RepairOwnershipDeclarationTests(unittest.TestCase):
@@ -709,3 +744,173 @@ class PriorProductionCarryForwardTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class OwnerChangeIsNotARepeatTests(RoutingCase):
+    """A defect that changes hands is converging, and must not be charged.
+
+    Run ce4ecd514b64d2f9 (Proper 55, v21) blocked with four of five evaluation
+    lanes passing and one finding standing. CON-CIT-007 was raised against the
+    NABRE and Gadenz citations naming `research`, because the brief carried
+    neither the target URLs nor the edition. Research retrieved them and wrote
+    them into `research/scope.md`. The next evaluation raised CON-CIT-007
+    again — correctly, and saying so in its own prose: "The evidence retrieval
+    requested for this standing defect is now complete in research/scope.md,
+    but the leaf has not carried it into References." It named `authoring`.
+
+    That was the run converging. The defect had moved from the brief to the
+    leaf, which is what a repair looks like when the evidence lands first and
+    the citation follows. The budget read it as the same id coming back and
+    charged the third of three, and the run ended holding a document whose
+    every other lane passed.
+
+    The rule is not that a repeated id is free. CON-PRO-001 repeated in the
+    same run, to the same owner, unrepaired, and was charged exactly as before.
+    """
+
+    CITATION = CONTENT_LANES[3]
+    PROFILE = CONTENT_LANES[4]
+
+    def evaluate(self, run_id: str, by_lane: dict) -> dict:
+        return self.engine.advance(
+            run_id, lane_results=self.content_submissions(run_id, by_lane))
+
+    def round_trip_through_research(self, run_id: str) -> None:
+        """Everything the run does between one evaluation and the next.
+
+        Driven by the workflow's own topology rather than a list written here,
+        so that inserting a stage into the chain -- as v22 inserted
+        `source-registration` -- does not silently stop this test exercising
+        the round trip it is about.
+        """
+        for _ in range(12):
+            stage_id = self.engine.load_state(run_id)["current_stage"]
+            if stage_id == EVALUATION:
+                return
+            if stage_id == RESEARCH:
+                self.engine.advance(
+                    run_id, lane_results=self.research_submissions(run_id))
+            else:
+                self.pass_stage(run_id, stage_id)
+        self.fail("the run never came back to the evaluation")
+
+    def test_a_finding_that_changes_owner_does_not_spend_the_budget(self):
+        run_id = self.drive_to(EVALUATION)
+
+        out = self.evaluate(
+            run_id, {self.CITATION: [blocking("CON-CIT-007", RESEARCH,
+                                              "the brief lacks the loci")]})
+        self.assertEqual(out["stage"], RESEARCH,
+                         "a research-owned finding routes to research")
+        self.round_trip_through_research(run_id)
+
+        out = self.evaluate(
+            run_id, {self.CITATION: [blocking("CON-CIT-007", AUTHORING,
+                                              "the leaf has not cited them")]})
+        self.assertEqual(
+            out["stage"], REVISION,
+            "the same defect, now the leaf's, goes to the leaf's reviser "
+            "instead of ending the run")
+        state = self.engine.load_state(run_id)
+        self.assertIsNone(state["disposition"])
+        self.assertEqual(
+            state["stage_repeats"][EVALUATION], 1,
+            "only the first failure of the streak; the owner change is the "
+            "repair working, not the repair failing")
+        self.assertEqual(
+            state["stage_failures"][EVALUATION], 2,
+            "both rounds are still consecutive failures, and still bounded "
+            "by max_total_iterations")
+
+    def test_the_same_id_to_the_same_owner_is_still_charged(self):
+        run_id = self.drive_to(EVALUATION)
+        for _ in range(2):
+            out = self.evaluate(
+                run_id, {self.PROFILE: [blocking("CON-PRO-001", AUTHORING)]})
+            self.assertEqual(out["stage"], REVISION)
+            self.engine.advance(
+                run_id, result_path=self.worker_pass(run_id, REVISION))
+            self.engine.advance(run_id, run_gate=True)
+        self.assertEqual(
+            self.engine.load_state(run_id)["stage_repeats"][EVALUATION], 2,
+            "unrepaired, to the same owner, twice: that is the repetition the "
+            "budget exists to stop")
+
+    def test_the_engine_records_the_owner_each_standing_id_named(self):
+        run_id = self.drive_to(EVALUATION)
+        self.evaluate(
+            run_id, {self.CITATION: [blocking("CON-CIT-007", RESEARCH)]})
+        self.assertEqual(
+            self.engine.load_state(run_id)["stage_blocking_targets"][EVALUATION],
+            {"CON-CIT-007": RESEARCH},
+            "the comparison the charge makes has to be recorded to be replayed")
+
+    def test_a_pass_clears_the_recorded_owners_with_the_ids(self):
+        run_id = self.drive_to(EVALUATION)
+        self.evaluate(
+            run_id, {self.CITATION: [blocking("CON-CIT-007", AUTHORING)]})
+        self.engine.advance(
+            run_id, result_path=self.worker_pass(run_id, REVISION))
+        self.engine.advance(run_id, run_gate=True)
+        self.evaluate(run_id, {})
+        state = self.engine.load_state(run_id)
+        self.assertNotIn(EVALUATION, state["stage_blocking_targets"],
+                         "cleared with the ids, or a later run of the stage "
+                         "would compare against a document that passed")
+
+    def test_a_finding_with_no_owner_charges_exactly_as_before(self):
+        """Gates and unrouted evaluators raise findings with no owner at all.
+
+        Both sides of the comparison are then absent, which must read as the
+        same owner rather than as a change, or every such stage would have
+        quietly lost its budget.
+        """
+        run_id = self.drive_to(EVALUATION)
+        for _ in range(2):
+            self.engine.advance(run_id, lane_results=self.content_submissions(
+                run_id, {self.PROFILE: [dict(
+                    blocking("CON-PRO-009", AUTHORING),
+                    repair_target=AUTHORING)]}))
+            self.engine.advance(
+                run_id, result_path=self.worker_pass(run_id, REVISION))
+            self.engine.advance(run_id, run_gate=True)
+        self.assertEqual(
+            self.engine.load_state(run_id)["stage_repeats"][EVALUATION], 2)
+
+
+class CompoundRequiredResultTests(unittest.TestCase):
+    """The rule the citation lane broke, and the incident that shows the cost.
+
+    The split rule predates run ce4ecd514b64d2f9 and would have saved it. What
+    the fragment lacked was the shape of the violation: a `required_result`
+    joined by `then`, which reads like one instruction and is two.
+    """
+
+    FRAGMENT = (ROOT / "workflows" / "fragments" / "propers"
+                / "content-evaluation.md")
+
+    def setUp(self):
+        self.text = self.FRAGMENT.read_text(encoding="utf-8")
+        # The fragment is hard-wrapped, so every rule in it spans line breaks.
+        self.flat = " ".join(self.text.split())
+
+    def test_the_rule_still_binds_one_finding_to_one_owner(self):
+        self.assertIn(
+            "One blocking finding names one defect and one repair owner.",
+            self.flat)
+        self.assertIn("Do not hide two owners behind a single "
+                      "`required_result`", self.flat)
+
+    def test_the_fragment_names_the_word_that_gives_a_compound_away(self):
+        self.assertIn("The word that gives a compound away is `then`.",
+                      self.flat)
+
+    def test_the_fragment_carries_the_run_that_paid_for_the_rule(self):
+        self.assertIn("ce4ecd514b64d2f9", self.text,
+                      "a rule with no incident behind it is the one that gets "
+                      "reasoned away at three in the morning")
+
+    def test_the_fragment_says_what_the_split_would_have_done(self):
+        self.assertIn("CARRIED_FINDINGS", self.text,
+                      "the lane has to know the second half is delivered, or "
+                      "splitting looks like extra work for nothing")

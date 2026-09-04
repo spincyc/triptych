@@ -70,6 +70,54 @@ often, and an interrupted lane leaves partial evidence on disk that a later
 attempt can resume from instead of leaving nothing at all. Your result file
 is not repository content: the read-only rule above stands untouched.
 
+## Keep the bytes, and write the receipt with them
+
+Retrieval and registration are two acts, and only the first one is yours. But
+the second cannot happen at all unless you do the first completely, because a
+source's identity is the bytes that came back and the URL they came back from,
+and both are gone the moment you exit.
+
+Fetch to a file, never through a summarizer. `curl -sSL <url> -o <path>` and
+its like put the exact response on disk; a model in the retrieval path does not
+merely risk truncating a document, it will silently rewrite one, and
+`guidance/sources.md` records the day one route returned Gregory of Nyssa as a
+paraphrase under his own name. Retrieve the fullest view the source offers: if
+it publishes a complete download beside a paginated view, take the complete
+one, and where the whole genuinely cannot be had, record the exact bound you
+reached in `extent` rather than letting a partial retrieval pass for a short
+document.
+
+Leave the bytes in the scratch directory the parent driver named for you,
+beside your result file, and record one receipt per file in the `retrievals`
+list of the finding whose evidence it supports:
+
+```json
+"retrievals": [
+  {
+    "url": "https://example.org/exact/thing/you/fetched",
+    "sha256": "<sha256sum of the file, all 64 hex characters>",
+    "byte_size": 123456,
+    "media_type": "application/pdf",
+    "path": "<the file, inside your own scratch directory>",
+    "retrieved": "YYYY-MM-DD",
+    "extent": "what these bytes hold, measured, and against what"
+  }
+]
+```
+
+`extent` is where a bound is declared: "complete work, 412 pp., matching the
+publisher's stated pagination" and "pp. 1-64 only; the host refused beyond
+that" are both usable receipts. "Downloaded successfully" is not one.
+
+A finding that retrieved nothing carries `"retrievals": []`, and that is a
+real answer -- a negative sweep retrieves nothing, and so does a claim read
+from a source `src/sources/` already holds. Omitting the field is not, because
+nothing afterwards can tell those apart from a lane that simply forgot.
+
+You still write nothing in the repository. Your scratch directory is not
+repository content, and the read-only rule above stands untouched: a later
+`source-registration` stage is what moves anything into `src/sources/`.
+
 ## Result
 
 Return a research result validated against `research-result.json`, carrying
@@ -78,7 +126,8 @@ Return a research result validated against `research-result.json`, carrying
 `PASS` when your sweep completed and `BLOCKED` when something stopped it; a
 research lane has no `CHANGES_REQUIRED`.
 
-Every finding carries exactly `id`, `claim`, `evidence`, and `notes`.
+Every finding carries exactly `id`, `claim`, `evidence`, `notes`, and
+`retrievals`.
 `evidence` is a list of strings, each naming a source precisely enough to be
 checked — author, work, locus, and edition where the profile requires it.
 `notes` holds uncertainty, disagreement, negative results, and

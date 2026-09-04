@@ -762,6 +762,10 @@ class DrivenRunTests(RoutingCase):
             self.assertEqual(out["stage"], "research-synthesis")
         out = self.engine.advance(
             run_id, result_path=self.worker_pass(run_id, "research-synthesis"))
+        self.assertEqual(out["stage"], "source-registration")
+        out = self.engine.advance(
+            run_id,
+            result_path=self.worker_pass(run_id, "source-registration"))
         self.assertEqual(out["stage"], "author-proper")
         out = self.engine.advance(
             run_id, result_path=self.worker_pass(run_id, "author-proper"))

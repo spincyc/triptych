@@ -247,7 +247,7 @@ A run records the digest at seed time, in both the manifest and the state, and
 every `advance` and `replay` recomputes it. If the workflow source has changed
 since the run was seeded, the run fails closed rather than continuing under
 guidance it never started with. A changed workflow means a new run. The
-`proper` workflow is at version 22: version 10 gave `content-evaluation` a
+`proper` workflow is at version 23: version 10 gave `content-evaluation` a
 third repair owner and inserted the `content-preflight` gate between
 `author-proper` and `content-evaluation`, version 11 made the iteration
 budget charge repetition rather than failure, carried a blocking finding to its
@@ -310,6 +310,16 @@ made possible by the retrieved evidence: the fourth evaluation selected
 `authoring`, but the three-repeat ceiling stopped the transition to
 `content-revision`. A run seeded against version 21 or earlier cannot continue
 under the changed budget and is seeded again.
+
+Version 23 gave the research lanes a retrieval receipt -- url, digest, size,
+media type, path, date and measured extent on every finding -- and added the
+`source-registration` stage between `research-synthesis` and `author-proper`,
+the only stage of a run that writes `src/sources/`. It also stopped the budget
+charging a standing id that comes back naming a *different* repair owner: v22
+bought that run its fourth allowance, and this stops the second phase of a
+two-owner repair spending an allowance at all. The same id to the same owner is
+charged exactly as before. A run seeded against version 22 or earlier fails
+closed and is seeded again.
 `workflows/OPERATOR.md` carries the version history in full.
 
 ### Iteration budgets

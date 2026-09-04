@@ -924,7 +924,8 @@ class LauncherTests(unittest.TestCase):
                   if stage["execution"]["mode"] == SINGLE}
         self.assertEqual(single, {
             "seed", "authorize-target", "resolve-context", "source-audit",
-            "research-synthesis", "author-proper", "content-revision",
+            "research-synthesis", "source-registration", "author-proper",
+            "content-revision",
             "build-artifacts", "artifact-revision", "visual-revision",
             "publish-artifacts", "generate-web", "web-evaluation",
             "web-revision", "install-publication", "publication-revision",

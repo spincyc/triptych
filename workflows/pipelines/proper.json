@@ -1,6 +1,6 @@
 {
   "id": "proper",
-  "version": 22,
+  "version": 23,
   "description": "1962 propers synthesis production workflow",
   "default_effort": "xhigh",
   "document_argument": "proper",
@@ -187,9 +187,23 @@
         "brief"
       ],
       "result_schema": "research-synthesis-result.json",
-      "pass_transition": "author-proper",
+      "pass_transition": "source-registration",
       "fail_transition": "research",
       "max_iterations": 3
+    },
+    {
+      "id": "source-registration",
+      "type": "linear",
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "propers/source-registration.md"
+      ],
+      "result_schema": "worker-result.json",
+      "next": "author-proper"
     },
     {
       "id": "author-proper",
