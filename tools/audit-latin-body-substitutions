@@ -1,0 +1,106 @@
+#!/usr/bin/env python3
+"""Report Latin bodies whose tokens read as a known word, damaged.
+
+The pattern screen in `scripts/_latin_body_damage.py` refuses damage it can
+describe: an accent read as a digit, the ae ligature read as se or x, u read as
+ii. It cannot catch damage that produces a real Latin-looking word -- `seterna`
+for `aeterna`, `quassumus` for `quaesumus`, `animas` for `animae` -- and neither
+can agreement between witnesses, because the SAME recogniser error recurs across
+independent scans of different books. A lane that compared four witnesses and an
+8,536-form consensus lexicon still shipped five such tokens.
+
+What does catch them is asking a different question: does this token become a
+word the corpus already uses, under exactly one substitution from the damage
+families? A token that does is almost certainly that word, damaged. On 2026-09-03
+this found six in bodies already committed, against two false positives it
+reported honestly -- `per maris undas`, the sea St Raymund crossed, and
+`imitatores effecti`, an ordinary participle.
+
+It reports; it does not decide, and it never edits. Every hit is a candidate for
+someone to read on a page image, which is the only thing that settles one.
+"""
+
+from __future__ import annotations
+
+import argparse
+import collections
+import re
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+import yaml  # noqa: E402
+
+# Each pair is a substitution this corpus's recognisers actually make, written
+# damaged-form first.
+SUBSTITUTIONS = (
+    ("se", "ae"), ("s", "ae"), ("e", "ae"), ("as", "ae"), ("es", "ae"),
+    ("ii", "u"), ("i", "u"), ("rn", "m"), ("m", "rn"),
+    ("l", "ll"), ("ll", "l"), ("c", "e"), ("e", "c"), ("t", "f"), ("f", "t"),
+)
+# A form the corpus uses this often, across bodies, is treated as known-good.
+GOLD_THRESHOLD = 3
+# Only propose a correction toward a form the corpus uses at least this often,
+# so a rare word is not "corrected" into a common one.
+TARGET_THRESHOLD = 5
+SHORTEST = 4
+
+
+def tokens(text: str) -> list[str]:
+    return [word.strip(".,:;!?'’()-").lower() for word in re.findall(r"[^\s]+", text)]
+
+
+def bodies(document: dict):
+    for section in document["sections"].values():
+        for mass in section.get("masses") or []:
+            for proper in mass.get("propers") or []:
+                if isinstance(proper, dict) and proper.get("text"):
+                    yield mass["key"], proper["name"], proper["text"]
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--calendar", default="roman-1962")
+    arguments = parser.parse_args()
+    path = ROOT / f"src/sources/calendars/{arguments.calendar}/propers.yaml"
+    document = yaml.safe_load(path.read_text(encoding="utf-8"))
+
+    every = list(bodies(document))
+    frequency = collections.Counter(
+        word for _, _, text in every for word in tokens(text) if word
+    )
+    gold = {word for word, count in frequency.items() if count >= GOLD_THRESHOLD}
+
+    hits: list[tuple[str, str, str, str]] = []
+    for mass, proper, text in every:
+        for word in tokens(text):
+            if not word or word in gold or len(word) < SHORTEST:
+                continue
+            for damaged, true in SUBSTITUTIONS:
+                if damaged not in word:
+                    continue
+                candidate = None
+                for index in range(len(word)):
+                    if word.startswith(damaged, index):
+                        maybe = word[:index] + true + word[index + len(damaged):]
+                        if maybe in gold and frequency[maybe] >= TARGET_THRESHOLD:
+                            candidate = maybe
+                            break
+                if candidate:
+                    hits.append((mass, proper, word, candidate))
+                    break
+
+    for mass, proper, word, candidate in sorted(hits):
+        print(f"{mass}/{proper}\t{word}\treads as\t{candidate}")
+    print(
+        f"{len(every)} bodies, {len(frequency)} distinct tokens, "
+        f"{len(gold)} known forms, {len(hits)} to read on a page image",
+        file=sys.stderr,
+    )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

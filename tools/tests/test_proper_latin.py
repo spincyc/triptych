@@ -131,7 +131,7 @@ class ProductionLedgerTests(unittest.TestCase):
         )
         expected = {
             "postconciliar": (329, 4),
-            "roman-1962": (702, 5),
+            "roman-1962": (797, 5),
             "roman-pre-1955": (0, 0),
         }
         for calendar, (total, repeated) in expected.items():
@@ -149,7 +149,7 @@ class ProductionLedgerTests(unittest.TestCase):
             self.assertEqual(repeated, sum(key.occurrence > 1 for key in records))
 
     def test_publication_loader_validates_production_source_metadata(self) -> None:
-        expected = {"postconciliar": 329, "roman-1962": 702, "roman-pre-1955": 702}
+        expected = {"postconciliar": 329, "roman-1962": 797, "roman-pre-1955": 797}
         for calendar, count in expected.items():
             records, problems = publication_records(CALENDARS, calendar, INVENTORIES)
             self.assertEqual([], problems)
@@ -185,8 +185,8 @@ class ProductionLedgerTests(unittest.TestCase):
             {k.mass for k in roman} <= calendar_masses,
             sorted({k.mass for k in roman} - calendar_masses),
         )
-        self.assertEqual(608, len(permitted))
-        self.assertEqual(608, len(roman))
+        self.assertEqual(703, len(permitted))
+        self.assertEqual(703, len(roman))
         target_artifact = (
             "artifact.catholic-church.missale-romanum."
             "vatican-typica-1962.cmaa-facsimile-pdf"

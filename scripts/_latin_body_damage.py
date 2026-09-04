@@ -57,6 +57,13 @@ DAMAGED_SEQUENCE = re.compile(
     re.I,
 )
 WELDED_WORDS = re.compile(r"^[A-Za-zÆæ]+[a-zæ][A-ZÆ][A-Za-zÆæ]*$")
+# The recogniser also prints the ae ligature as a question mark, so "quae et"
+# becomes "qua? et". A real question ends a sentence and the next word is
+# capitalised or the text stops; damage sits mid-clause and is followed by a
+# lower-case word. That distinction is what lets the mark stay allowed at all:
+# "Quare, Domine, irasceris in populo tuo? Parce irae animae tuae" is a genuine
+# question the Missal asks, and refusing every ? cost five false positives.
+QUESTION_MARK_MID_CLAUSE = re.compile(r"\S\?\s+[a-zæ]")
 KNOWN_GOOD = frozenset(
     {
         "remedii", "mysteriis", "gaudii", "auxilii", "ministerii", "sacrificii",
@@ -78,6 +85,8 @@ def body_damage(text: str) -> list[str]:
     control = sorted({character for character in text if CONTROL_CHARACTERS.match(character)})
     if control:
         found.append("control characters: " + " ".join(repr(one) for one in control))
+    for hit in QUESTION_MARK_MID_CLAUSE.finditer(text):
+        found.append(f"ae read as a question mark: {hit.group(0).strip()!r}")
     impossible = sorted({character for character in text if IMPOSSIBLE_CHARACTERS.match(character)})
     if impossible:
         found.append("characters no prayer carries: " + " ".join(repr(one) for one in impossible))

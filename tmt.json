@@ -25,6 +25,17 @@
       "stage": "draft",
       "usage": "artwork-library {check,normalize,identify,check-pdf} --help"
     },
+    "audit-latin-body-substitutions": {
+      "idempotent": true,
+      "json": false,
+      "lang": "python",
+      "mutates": false,
+      "origin": "local",
+      "purpose": "Report Latin bodies whose tokens read as a known word, damaged.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "audit-latin-body-substitutions [--calendar roman-1962]"
+    },
     "calendar-days": {
       "idempotent": true,
       "json": true,
@@ -77,6 +88,17 @@
       "stage": "draft",
       "usage": "check-calendar-masses [check] [--root DIR] [--calendar NAME]"
     },
+    "check-content-preflight": {
+      "idempotent": true,
+      "json": false,
+      "lang": "python",
+      "mutates": false,
+      "origin": "local",
+      "purpose": "Decide a proper leaf's mechanical content defects by exit code.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "check-content-preflight [--root DIR] [--provider NAME] [--document ID] [--check NAME] [--list]"
+    },
     "check-curriculum-structure": {
       "idempotent": true,
       "json": false,
@@ -109,17 +131,6 @@
       "requires": [],
       "stage": "draft",
       "usage": "check-promised-deliverables [--ledger PATH]"
-    },
-    "check-content-preflight": {
-      "idempotent": true,
-      "json": false,
-      "lang": "python",
-      "mutates": false,
-      "origin": "local",
-      "purpose": "Decide a proper leaf's mechanical content defects by exit code.",
-      "requires": [],
-      "stage": "draft",
-      "usage": "check-content-preflight [--root DIR] [--provider NAME] [--document ID] [--check NAME] [--list]"
     },
     "check-proper-components": {
       "idempotent": true,

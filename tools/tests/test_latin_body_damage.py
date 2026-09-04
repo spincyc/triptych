@@ -34,6 +34,12 @@ class DamageIsRefused(unittest.TestCase):
         found = body_damage("eus > *l u keato Petro Apostolo tuo")
         self.assertTrue(found)
 
+    def test_ae_read_as_a_question_mark_mid_clause(self):
+        # "quae et" printed as "qua? et". A real question ends a sentence, so
+        # the mark is judged by what follows it rather than refused outright.
+        found = body_damage("benedictio copiosa descendat: qua? et sanctificationem")
+        self.assertTrue(any("question mark" in one for one in found), found)
+
     def test_a_control_character_is_refused(self):
         # A page separator carried into a provenance note once made the whole
         # TOML ledger unreadable, surfacing as one proper's "missing entry".
@@ -78,7 +84,9 @@ class LegitimateTextSurvives(unittest.TestCase):
         )
 
     def test_the_missal_asks_and_exclaims(self):
-        self.assertEqual([], body_damage("Quare, Domine, irasceris in populo tuo?"))
+        self.assertEqual(
+            [], body_damage("Quare, Domine, irasceris in populo tuo? Parce irae animae tuae.")
+        )
         self.assertEqual([], body_damage("Quam dilecta tabernacula tua, Domine virtutum!"))
 
     def test_liturgical_marks_and_quotation(self):
