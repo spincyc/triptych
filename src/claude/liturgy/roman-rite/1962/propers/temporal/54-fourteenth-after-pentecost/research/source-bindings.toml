@@ -2,99 +2,29 @@ schema = 2
 record_type = "bindings"
 document = "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"
 
+# Current publication-local source-use graph for the Claude Proper 54 leaf.
+# It records only sources used by the present text. Deleted arguments are not
+# retained as bindings; their history remains recoverable from Git and prior run
+# artifacts. States report this publication's actual use, not the maximum state
+# a registered source could support.
+
 # Publication-local record of how this guide used the reusable source library.
-# It supplements and does not replace `propers/verified.md`, which is the text
-# control for every appointed form, or `research/scope.md`, which owns the
-# reception matrix, the audits and the material negative results.
+# It supplements `propers/verified.md`, which controls the appointed texts, and
+# `research/scope.md`, which owns the reception matrix and material negatives.
+# `states` report this publication's actual use of a record, not the maximum
+# state that a source could support.
 #
-# Three limits govern the whole file.
-#
-# First, `states` describe what this publication actually did with the record,
-# not what the record could support. Where a source was read in an electronic
-# transmission rather than collated against a page image, the context says so.
-#
-# Second, the patristic and medieval layer is bound here almost not at all,
-# because none of its witnesses has a passage record in this library at the loci
-# used. That much is uniform across the layer. What is NOT uniform is whether a
-# witness was reached at all, and an earlier form of this comment collapsed the
-# two into a single claim that all of them "were every one reached at an exact
-# locus and read directly". That claim was false of most of the list. The two
-# halves are stated separately below, on the authority of research/scope.md
-# 3.2, 3.3, 4.2, 4.3 and 11.6, which is this publication's record of what was
-# actually reached.
-#
-# REACHED at an exact locus and read directly, unbound only for want of a
-# passage record, and cited in the guide's References with their own loci and
-# evidence states: Augustine's Enarrationes in Psalmos on Psalms 33, 83, 94 and
-# 117; Augustine's De sermone Domini in monte, De opere monachorum and
-# Retractationes; Chrysostom on Matthew and on Galatians; the spurious In
-# Psalmum 94 of the Chrysostomic corpus; Cyril of Jerusalem; Ambrose; Aquinas
-# on Galatians and the Catena aurea in Matthaeum; Anthony of Padua; Jerome on
-# Matthew and, at lib. III on the appointed verses, on Galatians; Cassiodorus
-# on Psalms 33, 83, 94 and 117; Theodoret on Psalms 33, 83, 94 and 117;
-# Ambrosiaster and Marius Victorinus on Galatians; the Glossa ordinaria,
-# Prosper, Arnobius the Younger, Rabanus, Paschasius Radbertus, Christian of
-# Stavelot, the Matthew exposition printed under Bede's name, Bruno of Segni,
-# Bruno the Carthusian, Peter Lombard and Godfrey of Admont. Reached and read
-# directly, and cited in the guide but outside that References subsection:
-# Gueranger; Schuster's Liber Sacramentorum vol. 3, read on page images of the
-# registered artifact with its digest matched before reading; Feltoe's 1896
-# Sacramentarium Leonianum, over whose two registered optical artifacts the
-# seventeen-string Veronense search was run; Wilson's two sacramentary
-# editions; and Honorius. Not one of these is verified in the source-library
-# sense, because Migne was opened for none of them; the References state the
-# route, the evidence state and the translation for each, and the medieval
-# Latin layer stands throughout at inspected on one optical transcription of
-# Patrologia Latina.
-#
-# Two of them carry a further restriction the References repeat: the passages
-# at PL 152:1250 (Bruno the Carthusian) and PL 174:583 (Godfrey of Admont)
-# must be checked at a page image before any word of them is quoted, and the
-# guide quotes neither, reporting both witnesses in its own words instead.
-#
-# NOT REACHED. These are named here rather than left to be inferred, because
-# this file is what a later run reads to decide what still needs retrieving, and
-# a record asserting direct reading of a witness the same publication declares
-# unretrieved is worse than one that says nothing:
-#   - Chrysostom, Expositio in Psalmum CXVII: not retrieved.
-#   - Theodoret on Galatians: registered only at 3:16-22, so it reaches no verse
-#     of the appointed pericope, and no Pauline commentary of his was found in
-#     either Greek collection reached.
-#   - Cassian on Galatians: not swept.
-#   - Papias, and Eusebius Historia ecclesiastica III.24.6 and III.39.16: held
-#     in no form; only Book VI of the Historia ecclesiastica is held here.
-#   - Irenaeus, Adversus haereses III.1.1: held as tracked, public-domain,
-#     searchable bytes, but with no registered passage record for that locus.
-#   - Jerome, De viris illustribus: registered at ch. 2 and not the ch. 3 cited,
-#     in an English edition registered against a claim of Latin reading, and the
-#     artifact is no longer byte-reproducible.
-#   - Gregory on Ezekiel: not retrieved, and not cited anywhere in this guide.
-#   - Nine Greek authors swept for no appointed passage: Origen, Basil, Gregory
-#     of Nyssa, Gregory of Nazianzus, Cyril of Alexandria, Theophylact,
-#     Euthymius Zigabenus, Didymus and Athanasius.
-# Nothing in this second list is used as a source in the guide's References,
-# which carries used sources only. Where the guide names one of them at all --
-# Theodoret on Galatians, Cassian, Chrysostom on Psalm 117, Papias, Eusebius,
-# Irenaeus, Jerome De viris illustribus -- it names it inside a bounded negative
-# on page 2, in the commentary, or in the scope appendix, and quotes it nowhere.
-#
-# Holdings, stated because an earlier form of this comment stated one of them
-# wrongly: the Sacramentarium Veronense IS registered here, as
-# work.catholic-church.sacramentarium-veronense with the Feltoe 1896 edition and
-# two Internet Archive optical artifacts
-# (ia-djvu-ocr-sacramentariuml00feltgoog, ia-djvu-ocr-sacramentariumle00cath),
-# which is what makes the Veronense negative replayable; and Schuster's vol. 3
-# is registered and was retrieved and read. The earlier comment denied both.
-#
-# Cited without a binding and outside the patristic layer: the AAS 1960 page
-# images, the newspaper and parliamentary material of the gallery, and the four
-# printed missals of 1570, 1604, 1920 and 1947 other than the two bound below as
-# rights controls.
-#
-# Third, no `negative-search` binding appears. The bounded negatives this guide
-# publishes were established either by reading printed editions or by literal
-# search over optical layers that are not registered as indexable, so no
-# replayable search receipt exists for any of them.
+# The v20 research reached and directly inspected the registered Theodoret
+# PG 80 page-image artifact at the four appointed psalm loci, the registered
+# Theodoret Galatians artifact at 5:16--24, and Schuster at the cited Sunday;
+# their current bindings below record those states. Bellarmine, Guéranger,
+# Aquinas on Galatians, and Ambrose likewise have current inspected or verified
+# bindings below. Cassiodorus was inspected through the cited Corpus Corporum
+# transcription, while the library's Cassiodorus edition remains cataloged-only.
+# Wilson's sacramentary editions and Hesbert remain cataloged-only because the
+# library has no exact passage control for the loci used. Exact but unregistered
+# patristic and medieval witnesses are intelligibly cited in References without
+# invented source-library identifiers. No `negative-search` binding is asserted.
 
 # --- Text control: the appointed Latin ---
 
@@ -144,7 +74,7 @@ states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:e76b722596e6d4f31cf9ec2c7d4af5d34cbac1377e03b6926b67866f545a32d4"
 context = "Second finding aid for the same preexisting-material check, and the earlier of the two witnesses to the Communion's recasting, which is therefore at least as old as 1570. It is also the witness for three of the four wording changes that settled at the Clementine revision. The layer is classified degraded-latin and its record expressly forbids resting a negative search on it, so every claim the guide makes from it is a positive reading of quoted bytes; the 1570 Postcommunion's address cannot be settled from it at all, and the fruit-order difference is carried as a lead rather than as a 1570 reading, because no page-image collation of the 1570 book was made."
 
-# --- Translation control: the English this guide quotes ---
+# --- Translation control and historical-English lead ---
 
 [[bindings]]
 source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
@@ -201,11 +131,10 @@ context = "The control for every Vulgate-to-English psalm conversion printed in 
 [[bindings]]
 source_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.post-pentecosten-14"
 loci = ["post-pentecosten-14", "post-pentecosten-14/collect", "post-pentecosten-14/secret", "post-pentecosten-14/postcommunion"]
-role = "translation-control"
-states = ["cataloged", "acquired", "inspected", "verified"]
-verified_on = "2026-08-26"
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:a1efe8229a91e2597d292512ca377023fe19534de9b93b39fc8e965f61c39a79"
-context = "The registered public-domain English for the three orations, reproduced with the book's own nineteenth-century spelling and its abbreviated conclusion. The book's own heading agrees with the 1962 formulary's number, and the correspondence was confirmed on the heading and on the Latin incipits rather than assumed from the number. Three places where this English does not answer the Latin are stated at their elements and left open rather than filled: propitiatio and semper vanish from the Collect, tuae propitiatio potestatis becomes a verb in the Secret, and perpetuae salvationis effectum collapses in the Postcommunion. The repository's translation ledger records the Secret and the Postcommunion as page-image collated at printed p. 427, the Secret corrected in that collation, and the Collect as resting on an agreement-between-two-scans detector with no printed page recorded; the guide states that at the Collect, correcting its own earlier record, which had it the other way round. REPINNED 2026-09-02 by the source-audit stage, after the review the changed fingerprint obliges and not as a mechanical copy. The controlling artifact was rewritten by commit a8d1720b2 on 2026-08-27, so the pin recorded here (sha256:473570a7...) no longer reproduced and source-library validate failed on this file. The review: the two versions of temporal-orations-en.tsv differ in four rows only -- three printed_page values at epiph-06 and septuagesima and one truncated conclusion at ssmi-corporis-christi -- and physical lines 152-154, which are this formulary's three orations, are byte-identical across the change. Nothing this guide prints moves, and the pin is raised to the reviewed value. The ledger statement above is also now stale in a way this binding cannot repair: the 2026-08-28 disposition of roman-1962-proper-translations-v1.toml replaced the pentecost-14 rows with text-free untranslated records, so the collated and detector fields it cites no longer exist there. It no longer matters for the Collect, because this run collated all three orations against page images of the registered 1861 scan (artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf, sha256 85034c90..., printed pp. 425 and 427), and each is exactly the English the guide prints."
+context = "Historical-English lead for the three orations. The registered artifact digest is c79e9500b1b3a50f4ed3f6096b9bf89012f16bf79a8d24c1ed365b295ec1bae0 and the registered passage covers printed pp. 425-427, but the passage state stops at inspected. The translation inventory marks the Collect, Secret, and Postcommunion unavailable for reason rights-withheld. No Cummiskey English is reproduced; the controlled Latin is followed by descriptions rather than translations."
 
 # --- Comparison text for the appointed Latin ---
 
@@ -245,28 +174,12 @@ verified_on = "2026-08-26"
 source_fingerprint = "sha256:feb2853dceaaad6876320c359115735221cd3bf742d0dff8d0940a9c27feefa7"
 context = "The Lucan parallels that bear on the appointed wording: Lk. 12:22 for the audience the missal's Gospel incipit names, and Lk. 12:31 for the one locus besides Mt. 6:33 that could have produced the Communion antiphon. The Clementine's Luke 12:31 is verbatim identical to Matthew from quaerite primum onward and omits nothing the antiphon omits, which is why no single witness produces the antiphon."
 
-# --- Historical orientation for the page-2 dossiers ---
+# --- Historical orientation and generated chronology used on page 2 ---
 #
-# Every record below is verified but its bytes are not retained, so each is
-# summarised in the guide's own words at page 2 and none of them is quoted.
-
-[[bindings]]
-source_id = "passage.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.psalm-33-cols-1101-1109"
-loci = ["Psalm 33, PG 80, columns 1101-1109"]
-role = "context"
-states = ["cataloged", "acquired", "inspected", "verified"]
-verified_on = "2026-08-19"
-source_fingerprint = "sha256:faaad75cf19941bb403d171762a9ee4adb2b150a997efee3e746166ac003eac7"
-context = "The held substitute for the modern annotated gloss an earlier form of this leaf used at the Offertory psalm's title. Theodoret retells the Nobe episode, identifies Abimelech with Abiathar as a man of two names, and reports but rejects the setting before Achis at Geth as not fitting the psalm's words. He and the modern gloss do not agree, and the guide's page 2 records a divergence among the tracked witnesses rather than an error in either. Bytes not retained: summarised, not quoted. This is the guide's only Theodoret binding and the guide quotes Theodoret nowhere: the detailed commentary's three mentions of him -- at the Introit psalm, at the Epistle and at the Alleluia psalm -- are bounded negatives recording that Theodoret on Psalm 83 and on Psalm 94 was not retrieved and that his Galatians commentary is registered only at 3:16-22 and so reaches no appointed verse. Theodoret on Psalms 83 and 94 is not bound here and was not reached; see the second limit in the header."
-
-[[bindings]]
-source_id = "passage.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.psalm-33"
-loci = ["Psalm 33, especially verses 2-3"]
-role = "context"
-states = ["cataloged", "acquired", "inspected", "verified"]
-verified_on = "2026-08-19"
-source_fingerprint = "sha256:80cc5d6060493d0de21d28fdaef5a1bd3d2b8ea31ee16fcb86a0eb26d23b24f7"
-context = "Cited on page 2 for the psalm's alphabetical structure, which is the only held warrant for the acrostic description an earlier research pass had reported as unsourceable from this repository. Two limits travel with it and are stated at the dossier: the registered locus is vv. 2-3 and therefore reaches no appointed verse of this formulary, and the bytes are not retained, so this is summarised and not quoted."
+# Direct passage bindings state their inspected/verified level. The registered
+# Catholic Encyclopedia artifact bindings record cataloged/acquired use because
+# this leaf consumes their labels through the generated chronology record rather
+# than claiming an independent leaf-local inspection.
 
 [[bindings]]
 source_id = "passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.first-kings-21-achis-geth-chronology"
@@ -275,34 +188,56 @@ role = "context"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-21"
 source_fingerprint = "sha256:03f8280e24c117cf77439fcb27b944cda1e49ae923106239d959c815e1f3d7a0"
-context = "The held chronology that replaces the unsourced c. 1010 BC an earlier form of this leaf printed for David's pre-royal flight. The guide reports it as a frame standing at the head of the chapter and running unchanged across the flight, not as a date on the verse, because the record is careful to say so. The 2014 printing's rights status is recorded as unresolved and its bytes are not retained, so this is summary-only on both grounds."
+context = "The edition's continuous marginal frame places David's flight to Achis in A. M. 2944, A. C. 1060. The marker appears at printed p. 366 and remains in force through the narrated flight at printed pp. 368-369 (artifact PDF pp. 396, 398-399); it is not printed beside the Achis verse and dates the received superscription setting, not Psalm 33's composition."
 
 [[bindings]]
-source_id = "passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology"
-loci = ["article 'David, King,' printed p. 642, opening paragraph"]
+source_id = "passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology"
+loci = ["Ps.70.1"]
 role = "context"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-21"
-source_fingerprint = "sha256:30d1a361aacee847739689e156a7295bac16a72c00c0840ff4991950cd2a5af0"
-context = "Cited at the Offertory dossier for the received reign chronology of 1055-1015 BC, which places a pre-royal flight before 1055. It is cited for the encyclopedia's own editorial judgment at an exact article locus, with the article URL, volume and year in the guide's References. Bytes not retained: summarised. This and the Maas record below are the only two Catholic Encyclopedia articles the guide cites; an earlier form of the leaf cited 'Gospel of St. Matthew' and 'Epistle to the Galatians', which stand in volumes this repository does not hold, and both citations have been removed rather than reworded."
+source_fingerprint = "sha256:990320f2c5e36d93cd853a817851aaae26d68f0b2434706f3e5162f92f2c709f"
+context = "Companion source for the Offertory's generated superscription-setting label. At printed p. 740 (artifact PDF p. 776), this note identifies the edition's chronology as Ussher-attributed; it is not an independent date for Psalm 33 or for that psalm's composition."
 
 [[bindings]]
-source_id = "passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-six-seven-nine"
-loci = ["article 'Jesus Christ,' III.B.3, printed p. 378 and pp. 380-381: chronological calibration and Sixth, Seventh, and Ninth Journeys"]
+source_id = "artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25"
+loci = ["article 'Psalms,' section 'The sons of Korah,' final sentence"]
 role = "context"
-states = ["cataloged", "acquired", "inspected", "verified"]
-verified_on = "2026-08-21"
-source_fingerprint = "sha256:d97a818f54b8f1be9ace0133e4478d2ca1191097f40f0213dcbe7b8a0a851e9c"
-context = "The only ministry chronology held in this repository, cited in the Gospel dossier's event row. It equates A.U.C. 782 with AD 29 and covers the sixth, seventh and ninth journeys; it does not reach the Sermon on the Mount and does not extend to AD 33, so the guide gives no year for the narrated event and has dropped the unsourced 'commonly AD 28-33' an earlier form of the leaf printed. Bytes not retained: summarised."
+states = ["cataloged", "acquired"]
+source_fingerprint = "sha256:a45edaa02c597859c21897168d5ad908a5553f79b45d2ae027503d3af827ea8b"
+context = "Source carried by the generated chronology record for the Introit's answerable Korahite composition label. The leaf prints that label without independently revising the chronology."
 
 [[bindings]]
-source_id = "passage.pontifical-biblical-commission.de-auctoribus-et-de-tempore-compositionis-psalmorum.latin-aas-2-1910.responsa-i-viii"
-loci = ["responsa-i-viii"]
-role = "official-control"
-states = ["cataloged", "acquired", "inspected", "verified"]
-verified_on = "2026-08-21"
-source_fingerprint = "sha256:42e1707054a115ec2cb6b422ebe8096220fb02bf179cc8ef51654dc6877aab6a"
-context = "Cited in the Introit and Alleluia dossiers for the antiquity and ordinary evidentiary weight of the psalm titles and for David as principal author, and specifically for the category of psalms expressly attributed to David in Scripture, which is what carries the Alleluia's attribution beside Heb. 4:7. The guide states in terms that this is a criterion about titles in general and not a ruling on any psalm of this formulary. Bytes not retained: summarised. It supplies no basis for attributing an untitled psalm to David, which is part of why the Gradual's Date cell reports a negative."
+source_id = "artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06336a-508d2398"
+loci = ["article 'Epistle to the Galatians,' section 'Date of the epistle,' numbered opinions (1)-(3)"]
+role = "context"
+states = ["cataloged", "acquired"]
+source_fingerprint = "sha256:919c514f7c0c90bc8caf2e98a45dd3bef170b448f396528491d4371cd0506ac0"
+context = "Source carried by the generated chronology record for the A.D. 49-50, about A.D. 53-54, and A.D. 57-or-58 Galatians alternatives. The leaf reports Aherne's attributions and does not choose among them."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8"
+loci = ["article 'St. Paul,' section 'Chronology,' final date table immediately before 'Life and work of Paul'"]
+role = "context"
+states = ["cataloged", "acquired"]
+source_fingerprint = "sha256:8cfc6ed92e4e3a2b5adfde15bf732276a529799b74311cdd8aaef65ea407f469"
+context = "Source carried by the generated chronology record for Prat's A.D. 56 placement of Galatians with 1 and 2 Corinthians."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef"
+loci = ["article 'Gospel of St. Matthew,' section 'Date and place of composition,' first two paragraphs"]
+role = "context"
+states = ["cataloged", "acquired"]
+source_fingerprint = "sha256:a480e2a9f2c43852006e36dbc35e9f5002542e4c25ec662cbfb854e10e8f34ed"
+context = "Source carried by the generated chronology record for the five Jacquier alternatives printed for the Gospel and Communion. The leaf preserves the disagreement without harmonizing it."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"
+loci = ["article 'The New Testament,' section 'Origin,' concluding synoptic summary, Matthew paragraph"]
+role = "context"
+states = ["cataloged", "acquired"]
+source_fingerprint = "sha256:72ff1c7fff77b396328a616ee182353295403d927a4943dea9aae7de2863a792"
+context = "Source carried by the generated chronology record for the about-A.D.-50 Matthew alternative. The leaf states that Durand applies it to the lost Aramaic original and leaves the Greek rendering undated."
 
 [[bindings]]
 source_id = "passage.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.antwerp-1614.epistola-ad-galatas-argumentum"
@@ -311,16 +246,7 @@ role = "context"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-21"
 source_fingerprint = "sha256:bf374774bd9a6b72a26514ac40268186b7bdacd7ba036c7e267ee15e2eb95cdb"
-context = "The held public-domain authority carrying the traditional side of the Galatians dossier, on the form the published sibling leaf 53 uses. He reports the Syriac and Greek end-subscriptions and Jerome, Athanasius and Theodoret for Rome, then Chrysostom and Baronius for Ephesus or another Greek city, and concludes that neither the epistle nor other evidence permits a certain determination of its time or place. That refusal is preserved in the guide and not flattened. Bytes not retained: summarised. One asymmetry is kept in view: a Lapide is a witness to the received tradition and substitutes for the traditional side, not for the modern critical horizon."
-
-[[bindings]]
-source_id = "passage.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.antwerp-1614.prooemium-galatians-ad-58"
-loci = ["prooemium"]
-role = "context"
-states = ["cataloged", "acquired", "inspected", "verified"]
-verified_on = "2026-08-21"
-source_fingerprint = "sha256:6c0b0df6d6eae8ff00af9b926c3c4e4b0792429a501688689e3778989d573ab5"
-context = "The traditional date in the Galatians dossier's summary row: AD 58, on a chronological series that names Baronius as its source. It supplies no place, which is why the Location and Date cells of that dossier rest on different parts of a Lapide. Bytes not retained: summarised."
+context = "At printed p. 457 (artifact PDF p. 514), the Argumentum reports Syriac and Greek end-subscriptions and Jerome, Athanasius, and Theodoret for Rome; it then reports Chrysostom and Baronius for Ephesus or another Greek city and concludes that neither time nor place is certain. The page-2 dossier preserves both alternatives and the uncertainty. This source supports the location tradition only, not any date-cell figure."
 
 [[bindings]]
 source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-08-21.galatians-introduction"
@@ -330,3 +256,95 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-21"
 source_fingerprint = "sha256:91a4807a89663ad7fef6078f6593eaefaa756f66022ef0c3f2596f9c1725accd"
 context = "The only registered locus of this restricted edition that this guide uses, and the only modern critical horizon available to it for any appointed passage. Its rights basis requires consumers to summarise rather than reproduce it, so the Galatians dossier reports its north-Galatian audience near Ancyra, its Ephesus composition about AD 54-55, its less likely southern alternative in Pisidia, Lycaonia and Pamphylia at perhaps AD 48-50, and its identification of the recipients as pagan converts pressed to add Mosaic observances, all in the guide's own words, and quotes none of it. An earlier form of this leaf carried nine claims attributed to this edition, of which eight had no registered locus at all and five of them were quoted; the eight are gone, and this one is summarised. Note what the record positively refuses: it gives no southern-theory composition place, so the guide's earlier 'from Antioch on the southern theory' is not merely unsourced but contrary to the only record it had."
+
+# --- Additions from workflow proper v20 ---
+
+[[bindings]]
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.commons-ia-facsimile-78b290d4"
+loci = ["Psalm 33, printed pp. 91-92", "Psalm 83, printed pp. 253-255", "Psalm 94, printed pp. 298-299", "Psalm 117, printed p. 370"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-04"
+source_fingerprint = "sha256:6221c39e003611f5ca8e53a39ee29224a806934ad8bbe85d5bf3d122911a1ac6"
+context = "The complete public-domain facsimile inspected for Bellarmine's later reception of every appointed psalm: heavenly pilgrimage at Psalm 83, inward jubilation at Psalm 94, subordinate creaturely help at Psalm 117, and angelic protection and experiential sweetness at Psalm 33. The O'Sullivan English is abridged and was not compared with Bellarmine's Latin."
+
+[[bindings]]
+source_id = "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-scan-volume-3-410f6d11"
+loci = ["volume III, printed pp. 136-139, Fourteenth Sunday after Pentecost"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-04"
+source_fingerprint = "sha256:765e56515c01f4983b213615c6241c91fdb853e38d082a70ca61373369b43f6c"
+context = "Later historical-liturgical reception of this Sunday's prayers and lessons. The guide uses Schuster for the movement of the Eucharistic action, not as direct ancient prayer exegesis or evidence of a redactor's intention."
+
+[[bindings]]
+source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-pdf-95ba98e2"
+loci = ["vol-xi-p-326", "vol-xi-p-327", "vol-xi-p-328", "vol-xi-p-341", "vol-xi-p-342", "vol-xi-p-343"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-04"
+source_fingerprint = "sha256:0c284a75a9d4ba61141e669e20bac150113946f19b1240b58607e61bec7164ad"
+context = "Later liturgical reception of the Sunday and the witness that describes Primum quaerite as the later Communion at this position."
+
+[[bindings]]
+source_id = "artifact.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.wikimedia-pdf-72ee8714"
+loci = ["Psalm 33, PG 80:1103-1106", "Psalm 83, PG 80:1537-1545", "Psalm 94, PG 80:1639-1642", "Psalm 117, PG 80:1811-1812"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-04"
+source_fingerprint = "sha256:f431d1af4d23e9bc63a710fdaa7d8198d2aba0ac1853cde486c5307cbc031b66"
+context = "Greek page-image control for Theodoret's readings of the four appointed psalms. His Babylonian, Josian, earthly-ruler, and ministering-angels orientations are attributed to his exposition rather than presented as the plain historical settings of the psalms."
+
+[[bindings]]
+source_id = "artifact.theodoret-of-cyrus.interpretatio-epistolae-ad-galatas.1864-migne-pg82-paris.wikimedia-pdf-7d6dd76e"
+loci = ["Galatians 5:16-24"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-04"
+source_fingerprint = "sha256:110f83a88c7825fedf0269e12231766072980f6c038669589aa6f7015afbaa4e"
+context = "Greek page-image control for Theodoret's direct exposition of the appointed Epistle, especially the distinction between bodily nature and sinful orientation and the cooperation of indwelling grace with the soul."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.super-galatas.latin-corpusthomisticum-web-2026-08-21.cgl-html-bbaaf5bd"
+loci = ["5.l6"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-04"
+source_fingerprint = "sha256:5f6829f4470b577188c5abaf483a4dfebfb8bccb3ae580cb8745ae983f8e699b"
+context = "Restricted exact Corpus Thomisticum artifact inspected for Aquinas's direct exposition of Galatians 5:16-24 and his ordering of the expanded Latin list of twelve fruits. No artifact wording is reproduced."
+
+[[bindings]]
+source_id = "artifact.ambrose.de-mysteriis.english-npnf2-10-1896.newadvent-3405-d02cdd8b"
+loci = ["58"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-04"
+source_fingerprint = "sha256:2485435883a1de931cec0f4329a3b0bd8cd8b4b0c5540ab450e33367f29dcc09"
+context = "Historical English transmission inspected for Ambrose's sacramental use of Psalm 33:9. The guide paraphrases the interpretive move and does not treat it as commentary on this Sunday's Offertory placement."
+
+[[bindings]]
+source_id = "edition.cassiodorus.expositio-psalmorum.latin-corpus-corporum-monumenta-web-2026-07-28"
+role = "reception"
+states = ["cataloged"]
+context = "The library registers this edition, but it does not register exact artifacts or passages for the four loci used by this publication. The checked loci are cited intelligibly in References; no fingerprint or evidence state beyond cataloged is claimed here."
+
+[[bindings]]
+source_id = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894"
+loci = ["printed pp. 207, 229-230, 237, lxxi-lxxiii"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Registered edition identity for the prayer transmission cited in the guide. The binding remains cataloged because the library does not identify which registered OCR artifact controlled the v20 inspection at these exact pages."
+
+[[bindings]]
+source_id = "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915"
+loci = ["printed pp. 173-174"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Registered edition identity for the consecutive Collect, Secret, and Postcommunion at Sunday XV. No stronger library state is claimed for these exact pages."
+
+[[bindings]]
+source_id = "edition.rene-jean-hesbert.antiphonale-missarum-sextuplex.vromant-1935"
+loci = ["entry 186, printed pp. 186-187"]
+role = "direct-witness"
+states = ["cataloged"]
+context = "Catalog-level binding for the antiphoner constellation cited in the guide. The library registers no exact artifact and the scan's rights status remains unresolved, so the guide uses concise paraphrase and this binding claims no acquisition or inspection state."

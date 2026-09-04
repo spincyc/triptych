@@ -6,7 +6,6 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 “pushed,” “review copy,” and “complete” are different states.
 
 Last reconciled: 2026-09-04.
-
 ## The 1962 Latin backfill, 2026-09-03/04
 
 The 1962 calendar published three Latin oration bodies on the morning of
@@ -329,6 +328,86 @@ snapshot audit agree on a completed bounded study of 116 physical pages,
 including 103 substantive narrative pages. Each later `origin/main` checkpoint
 requires its own successful Pages run and verification of the affected
 production routes before it is represented as live.
+
+## Proper 54 production recovery
+
+<!-- promised-deliverable: proper-54-production-recovery-2026-09-03 -->
+
+The maintainer authorized recovery of the completed but uncommitted GPT
+Fourteenth Sunday after Pentecost production, repair and full review of the
+separately owned unfinished Claude publication that blocks the repository-wide
+gate, a fresh deterministic `proper` workflow run for GPT through `ACCEPTED`,
+and one coherent local commit without a push.
+
+The preserved GPT run `8502fbf9a22d6e39` is terminal `BLOCKED` at workflow
+`proper` v20, seed commit `2f04927c3ce517f4bac115818cda6f9c5cdaafee`.
+Before its publication gate, content evaluation, mechanical gates, four-lane
+visual evaluation, final acceptance, corrected web evaluation, and installation
+all passed. Its four publication failures were reproduced both in the preserved
+worktree and in an isolated clean checkout at the seed commit:
+
+- `check-public-alpha` is missing exactly the Claude 54 canonical and synthesis
+  publication identities in both trees;
+- `check-document-catalogue` reports exactly those two Claude issues without
+  installed PDFs and a drifted generated catalogue in both trees;
+- `check-web-editions-current` stops on raw `\\allowbreak` in the Claude 54
+  References conversion in both trees; and
+- `check-release-bindings` reports the same 36 stale or unrecorded site sources
+  in both trees. The clean seed reports one additional stale
+  `library/traditional-latin-mass.md` binding, which the preserved GPT
+  exact-snapshot diff already repairs; the GPT diff introduces no failure.
+
+The 21-file pre-mutation inventory is 19 GPT Proper 54 source, audit, PDF, and
+web files plus the two shared exact-snapshot release records. No current
+workflow file overlaps commit `2f04927c3`; no unrelated modified path was
+found. The ignored run directory remains untouched as audit evidence.
+
+The preserved Claude run `24c1679ac9905ac8` is independently terminal
+`BLOCKED` after exhausting all three content-evaluation iterations. Its last
+packet retained `CON-PRO-001` and added `CON-REC-001` and `CON-CIT-004`; the
+run directory remains immutable. Under the maintainer's separate Claude
+publication authorization, the source-level repair removed reader-facing
+process narration, gave every chronology figure claim-local attribution,
+reconciled the active reference and binding graph, and corrected the Introit's
+received `concupíscit et déficit ánima mea`. The current preflight reports 35
+valid bindings, 6 chronology cells with 12 supported claims, a current
+7-element chronology record, 34 used references, 11 covered relations, and no
+restricted reproduction or false unquoted-source quotation.
+
+Both Claude editions rebuild without overfull boxes: the full edition has 20
+pages and the synthesis has 12, with embedded subset fonts, extractable text,
+the declared titles and subjects, and no structural warning. Two fresh
+independent reviewers inspected every page of the exact final raster pair;
+both editions passed without clipping, overlap, overflow, sparse spills,
+broken boxes, typography or Latin-diacritic defects, bad URL wraps, or
+colophon collisions. A fresh scratch
+web conversion contains the corrected Introit, produces ordinary Markdown
+links for all shortened reference labels, and contains no raw `\\allowbreak`,
+`\\href`, or `\\url`. The focused identity, content-preflight, canonical and
+both AUX-backed component, generation-metadata, web-declaration,
+source-library, promised-deliverable, and whitespace gates pass. These checks
+review the repaired source but do not install or claim release of the Claude
+publication; a fresh workflow must still evaluate and install its exact final
+artifacts.
+
+The Claude prerequisite is not complete merely because its repaired source
+leaf and generated `research/chronology.toml` now exist. It still lacks both
+installed PDFs, the tracked web edition, and both release records. It must
+follow the same current source,
+rights, chronology, content, mechanical, every-page visual, web-fidelity,
+installation, catalogue, and release gates. Repository-wide release bindings
+are refreshed only after their actual source changes and publication states
+have been reviewed; no artifact is marked reviewed merely to clear the gate.
+
+After that prerequisite is committed on `impl/proper-54-production`, HEAD has a
+new legitimate identity for a fresh GPT seed. The terminal run is never deleted
+or edited. The fresh GPT run must preserve the corrected Psalm reception, CCC
+citation through §1397, unused-reference result, web conversion, installed/build
+PDF identity, and stable evaluator finding identities; it continues every
+`CHANGES_REQUIRED` route and stops only at `ACCEPTED` or genuine terminal
+`BLOCKED`. On acceptance, the exact coherent publication and required audit,
+catalogue, web, release, and installed-artifact files are verified and committed
+with the required `AI summary:` body. No push is authorized.
 
 ## Clean direct-main workflow
 

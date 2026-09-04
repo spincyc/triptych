@@ -1838,6 +1838,7 @@ state = "complete"
     "PROJECT-WORK.md",
     "guidance/corpus-browser-roadmap.md",
   ]
+
   [[deliverables.requirements]]
   id = "confirmation-review-and-merge-to-main"
   criterion = "Confirmation review 7dfd944494a8d9355264579156214f16d3722a9f dispositioned candidate b832cdc5bc01391cea67c01437318d25e0c7c315 as CONFIRMED - CATENA E1 INTEGRATION READY TO MERGE, and that exact candidate is merged into main with only the PROJECT-WORK.md and promised-deliverables.toml record conflicts reconciled, the minimal post-merge smoke passing, and the hardening backlog, evidence-tooling backlog, and separately owned concerns left open and untouched."
@@ -1846,3 +1847,42 @@ state = "complete"
     "PROJECT-WORK.md",
     "guidance/corpus-browser-roadmap.md",
   ]
+
+[[deliverables]]
+id = "proper-54-production-recovery-2026-09-03"
+owner = "PROJECT-WORK.md"
+promise = "Recover the completed but uncommitted GPT 1962 Fourteenth Sunday after Pentecost publication; prove the repository-wide publication failures are inherited; legitimately repair, fully review, publish, and integrate the separately authorized Claude Proper 54 prerequisite; seed a fresh GPT proper workflow on the changed HEAD and carry it to ACCEPTED; then verify and commit the coherent GPT publication and required audit, catalogue, web, release, and installed-artifact changes without pushing."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "inventory-and-inherited-failure-proof"
+  criterion = "The original 21 modified files are inventoried before mutation; run 8502fbf9a22d6e39 remains untouched; all four publication checks are reproduced in the preserved worktree and an isolated clean checkout at seed 2f04927c3; and the exact common and differing failure identities establish which failures exist independently of the GPT diff."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md"]
+  check = "contains"
+  path = "PROJECT-WORK.md"
+  needle = "The clean seed reports one additional stale"
+
+  [[deliverables.requirements]]
+  id = "claude-provider-prerequisite"
+  criterion = "The authorized Claude Proper 54 source and chronology records, canonical and synthesis PDFs, web edition, catalogue cell and marker, publication records, generated catalogue, and exact-snapshot release bindings are substantively repaired where needed, independently evaluated, mechanically checked, visually reviewed page by page, installed, committed, and integrated without fabricating review or modifying artifacts merely to silence a gate."
+  status = "open"
+  evidence = [
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost",
+    "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "fresh-gpt-workflow-accepted"
+  criterion = "After the prerequisite changes HEAD, a fresh provider-gpt proper v20-or-later run reaches ACCEPTED while preserving the corrected Psalm reception, CCC citation, unused-reference, web-conversion, PDF-identity, and evaluator-finding-ID results, with the prior terminal run retained unchanged."
+  status = "open"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/generation-metadata.tex",
+    "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "final-gates-coherent-commit-and-no-push"
+  criterion = "The complete final diff is reviewed; every required profile, source, build, metadata, PDF, web, catalogue, release, promised-deliverable, and repository gate passes or has an exact proved inherited disposition; only the coherent Proper 54 and required shared publication changes are committed on impl/proper-54-production with an AI summary body; no push occurs; and remaining worktree state is reported exactly."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]

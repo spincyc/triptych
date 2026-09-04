@@ -95,36 +95,56 @@ element_keys = []
 references = ["sections/99-references.tex"]
 
 [[relations]]
-key = "goods-ordered-not-refused"
-element_keys = ["introit", "gradual", "gospel", "communion", "collect"]
+key = "desire-ordered-by-allegiance"
+element_keys = ["introit", "epistle", "gospel", "communion"]
+evidence = ["textual-observation", "documented-reception", "source-grounded-synthesis"]
+
+[[relations]]
+key = "grace-enables-embodied-action"
+element_keys = ["collect", "epistle", "gospel", "postcommunion"]
+evidence = ["textual-observation", "documented-reception", "source-grounded-synthesis"]
+
+[[relations]]
+key = "trust-through-divine-protection"
+element_keys = ["introit", "collect", "gradual", "gospel", "offertory", "postcommunion"]
+evidence = ["textual-observation", "documented-reception", "source-grounded-synthesis"]
+
+[[relations]]
+key = "salvation-becomes-liturgical-action"
+element_keys = ["collect", "alleluia", "offertory", "secret", "postcommunion"]
+evidence = ["textual-observation", "documented-reception", "source-grounded-synthesis"]
+
+[[relations]]
+key = "inherited-continuity-and-selective-change"
+element_keys = ["collect", "secret", "postcommunion", "introit", "gradual", "offertory", "communion"]
+evidence = ["documented-historical-orientation", "source-grounded-synthesis"]
+
+[[relations]]
+key = "comparison-prepares-exclusive-choice"
+element_keys = ["introit", "gradual", "epistle", "gospel", "communion"]
 evidence = ["textual-observation", "exploratory-proposal"]
 
 [[relations]]
-key = "what-man-cannot-add"
-element_keys = ["gospel", "communion", "collect", "epistle"]
+key = "human-inability-divine-addition"
+element_keys = ["gospel", "communion", "collect", "postcommunion"]
 evidence = ["textual-observation", "exploratory-proposal"]
 
 [[relations]]
-key = "propitiation-and-salvation-saturated"
-element_keys = ["collect", "secret", "postcommunion", "alleluia"]
-evidence = ["textual-observation", "exploratory-proposal"]
-
-[[relations]]
-key = "hope-formula-past-the-cut"
+key = "hope-audible-by-absence"
 element_keys = ["introit", "gradual", "offertory"]
 evidence = ["textual-observation", "exploratory-proposal"]
 
 [[relations]]
-key = "sunday-number-not-the-mass-own"
-element_keys = ["collect", "secret", "postcommunion", "introit", "gradual", "alleluia", "offertory", "communion", "epistle", "gospel"]
-evidence = ["documented-historical-orientation", "source-grounded-synthesis"]
-
-[[relations]]
-key = "fathers-divided-on-angel-and-comparison"
-element_keys = ["offertory", "gradual"]
+key = "mediation-distinguished-from-mastery"
+element_keys = ["gradual", "offertory", "gospel"]
 evidence = ["documented-reception", "exploratory-proposal"]
 
 [[relations]]
-key = "one-verb-object-reversed"
-element_keys = ["introit", "epistle"]
+key = "one-desire-root-opposed-objects"
+element_keys = ["introit", "epistle", "gospel"]
 evidence = ["textual-observation", "exploratory-proposal"]
+
+[[relations]]
+key = "idolatrous-service-and-mammon"
+element_keys = ["epistle", "gospel", "communion"]
+evidence = ["textual-observation", "documented-reception", "exploratory-proposal"]

@@ -38,6 +38,11 @@
 % cross-references. Defined once so the abbreviations stay uniform.
 \newcommand{\cue}[1]{\textnormal{(\textit{#1})}}
 
+% Biblical chronology is printed only through the corpus-backed claims carried
+% by research/chronology.toml. Stable ids are audit data and do not render.
+\newcommand{\chronology}[3]{#3}
+\newcommand{\chronodate}[2]{#2}
+
 % Keeps an element's heading, identification line and text block together.
 \newcommand{\elementguard}{\Needspace{12\baselineskip}}
 
@@ -66,11 +71,11 @@ answer the Latin.} #1\par}
 \newenvironment{witnessnote}{\begin{studyframe}\small}{\end{studyframe}}
 \newcommand{\wlocus}[1]{\textbf{#1}\quad}
 
-% A settled point of apparatus the reader needs in order to use the citations
-% above: a numbering convention, a rubrical locus. The title names the subject,
-% not the guide's handling of it.
+% A correction this guide makes to a record it did not write. Used only where
+% the leaf's own source audit is amended, so the amendment is visible to the
+% reader rather than buried in a file beside the source.
 \newcommand{\correction}[2]{%
-  \begin{studybox}{#1}#2\end{studybox}}
+  \begin{studybox}{Correction --- #1}#2\end{studybox}}
 
 % Governing thesis for the thematic movement. Substantive content, permitted to
 % open the body of its own section.
@@ -81,6 +86,7 @@ answer the Latin.} #1\par}
 % renders its anchors, mechanism, fruit and controlling limit as labelled
 % fields so no reader can mistake a proposal for a sourced finding.
 \newenvironment{proposal}[1]{%
+  \Needspace{18\baselineskip}%
   \begin{massbox}{Editorial proposal --- #1}\small}{\end{massbox}}
 \newcommand{\pfield}[2]{\par\textbf{#1:} #2}
 
@@ -90,94 +96,21 @@ answer the Latin.} #1\par}
 \newenvironment{afterlife}[1]{%
   \begin{massbox}{#1}\small}{\end{massbox}}
 
-% Two-tier page-2 dossier table. This sheet makes three departures from the
-% profile's fixed page-2 measurements; the note below \dossierprose lists all
-% three together and states the escape clause that licenses them. The first of
-% the three is the column widths set here. The profile fixes them at
-% 0.14 / 0.18 / 0.35 / 0.16\linewidth; this table sets
-% 0.13 / 0.16 / 0.22 / 0.32\linewidth. All four are changed, and the four
-% widths still total 0.83 as the profile's do. The movement is into Date, and
-% the reason is the chronology contract: the corpus answers the Epistle with
-% four alternative labels and the Gospel and Communion with six, every one of
-% them printed in the source's own words, so the Date cell of two dossiers
-% carries several dates where the profile's measure assumes one. Proper,
-% Citation and Location each give up measure, their detail belonging to the
-% explanatory row beneath. The summary tier keeps \footnotesize, \arraystretch, \LTpre and \LTpost
-% exactly as the profile sets them.
+% Two-tier page-2 dossier table at the profile's fixed measurements.
 \newenvironment{dossiertable}
 {\footnotesize
  \renewcommand{\arraystretch}{1.02}%
  \setlength{\LTpre}{0.15em}\setlength{\LTpost}{0pt}%
- \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.13\linewidth}>{\raggedright\arraybackslash}p{0.16\linewidth}>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.32\linewidth}@{}}
+ \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.14\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.35\linewidth}>{\raggedright\arraybackslash}p{0.16\linewidth}@{}}
  \toprule
  \textbf{Proper} & \textbf{Citation} & \textbf{Location} & \textbf{Date}\\
  \midrule
  \endhead}
 {\bottomrule\end{longtable}}
 
-% The page-2 Date column. Every biblical date printed in this guide comes from
-% the Scripture chronology corpus, carried in research/chronology.toml, and
-% every one of them is printed through these two macros so that each figure
-% names the assertion it rests on.
-%
-% \chronology{subject}{relation}{label} -- one assertion of the corpus.
-% Typesets the label; the first two arguments are the corpus's own ids and
-% render nothing.
-\newcommand{\chronology}[3]{#3}
-% \chronodate{element-keys}{content} -- one dossier row's Date cell.
-% Typesets the content; the keys render nothing.
-\newcommand{\chronodate}[2]{#2}
-
 % Full-width explanatory and event rows inside a dossier.
-%
-% Measurement note. These are deliberate departures the profile provides for.
-% The profile says to change its fixed page-2 measurements only when the
-% complete inventory cannot remain legible after the hierarchy and the evidence
-% have been preserved. That is this sheet's case: six dossiers carrying the
-% evidence the research brief supplies for them will not stand on one physical
-% page at the profile's measurements, and the alternatives the profile forbids
-% are spilling, omitting evidence, or moving apparatus here from elsewhere.
-%
-% THREE of the profile's fixed measurements are varied on this sheet. These
-% are all three of them, and nothing else the profile fixes is changed:
-%
-%   D1. Summary-tier column widths, set above at \dossiertable. Profile
-%       0.14 / 0.18 / 0.35 / 0.16\linewidth; here
-%       0.13 / 0.16 / 0.22 / 0.32\linewidth. All four change: 0.16\linewidth
-%       moves into Date, donated by Proper, Citation and Location, because the
-%       corpus answers two of the six dossiers with four and six alternative
-%       labels respectively and every one of them is printed.
-%   D2. Spanning explanatory and event row width. Profile 0.92\linewidth;
-%       here 0.98\linewidth.
-%   D3. Spanning-row font size. The profile sets the table in \footnotesize and
-%       specifies no separate size for the spanning row, so the profile's value
-%       for that row is \footnotesize --- 9pt on 11pt leading under the 11pt
-%       base class in src/common/preamble.tex. Here it is \fontsize{6.4}{6.9}:
-%       a reduction of roughly 29 percent in glyph size and 37 percent in
-%       leading, below \scriptsize and nearer \tiny. This is a large departure
-%       and is recorded as one.
-%
-% What the profile fixes and this sheet leaves alone: the two-tier hierarchy,
-% the four summary fields, the \footnotesize summary tier, \arraystretch 1.02,
-% \LTpre 0.15em, \LTpost 0pt, the 0.1em breathing space ending ordinary dossier
-% rows, \cmidrule(lr){1-4} within a dossier with \midrule only between complete
-% dossiers, and the italic event row set between two \cmidrule(lr){1-4} rules
-% ahead of its explanation.
-%
-% D3 reached its present value in steps, and the history is recorded here so
-% the increments are not mistaken for the departure. Every row must print a
-% named bounded negative --- witnesses the repository does not hold in any
-% form, held volumes with no registered passage locus, an unresolved-rights
-% witness, and the absence of any modern critical horizon --- while the Date
-% column now carries ten separate corpus labels across two dossiers, and a
-% longtable row cannot break, so the sheet either fits whole or starts a second
-% page the profile forbids. Successive unpublished revisions set 7.0/7.9 and
-% then 6.9/7.5; this one sets 6.4/6.9. The departure that matters for review is
-% the one against the profile's own \footnotesize, stated at D3 above, and not
-% the last increment of it.
-\newcommand{\dossierrowsize}{\fontsize{6.4}{6.9}\selectfont}
-\newcommand{\dossierprose}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash\dossierrowsize}p{0.98\linewidth}@{}}{#1}\\[0.1em]}
-\newcommand{\dossierevent}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash\dossierrowsize}p{0.98\linewidth}@{}}{\textit{#1}}\\}
+\newcommand{\dossierprose}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash}p{0.92\linewidth}@{}}{#1}\\[0.1em]}
+\newcommand{\dossierevent}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash}p{0.92\linewidth}@{}}{\textit{#1}}\\}
 
 % Divergence table used in the commentary: appointed form against the Bible
 % text the guide's English is quoted from.
