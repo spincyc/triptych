@@ -188,6 +188,31 @@ does not survive it. Its durable content is in guidance; its operational content
     finishes: all 49 entries in `claude-publications-v1.toml` have a shipped PDF
     behind them, and that leaf has none. It is on `impl/proper-54-production`.
 
+### Resuming the Fourteenth Sunday: both runs are dead, 2026-09-04
+
+Neither existing run can be advanced, and a driver should not try.
+
+  * `ca03f1b357e7ec25` (`proper` v17) is BLOCKED and recorded above as not
+    replayable, because from its iteration 2 the coordinator supplemented each
+    lane brief out of packet.
+  * `416bacef11b97508` (`proper` v19) stopped awaiting a `source-audit` result.
+    The `proper` pipeline at the remote branch tip was v22 and its source digest
+    had moved, so
+    `load_bound_workflow` fails closed: *"Seed a new run against the new
+    version."* A run is bound to the pipeline, fragment and schema bytes it
+    started with. `status` still reports on it; nothing else will.
+
+The next production therefore seeds the current full `proper` workflow. It
+must re-run the seven research lanes against the integrated corpus and carry
+prior-production findings through the packet-owned handoff; no terminal run is
+resumed or supplemented out of packet.
+
+The rights wall the earlier runs stopped at is largely gone.
+The three orations that carried `text_status` rights-withheld — Collect *Custodi
+Domine*, Secret *Concede nobis*, Postcommunion *Purificent semper* — have
+published Latin bodies as of 2026-09-04. Anything either run concluded about
+Latin availability is stale.
+
 ## Standing public-alpha authority
 
 On 27 July 2026 the maintainer approved every Triptych document for
