@@ -3,7 +3,7 @@
  "counted": {
   "documents": 189,
   "issues": 206,
-  "pages": 5993,
+  "pages": 6056,
   "titles_unrecorded": 0,
   "works": 139
  },
@@ -4907,7 +4907,7 @@
      "models": [
       "claude-opus-5[1m]"
      ],
-     "pages": 25,
+     "pages": 26,
      "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost.pdf",
      "produced": {
       "install_commit": "698eeffaf148a283cd0f3c74640aa90a66e33f4d"
@@ -5481,9 +5481,8 @@
      "also": [
       {
        "kind": "synthesis",
-       "pages": null,
-       "pdf": null,
-       "pdf_absent": "no PDF is installed for this issue",
+       "pages": 34,
+       "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost-synthesis.pdf",
        "subject": "Synthesis companion to the 1962 Roman Missal propers; complete appointed texts and the per-element reception sweep are omitted",
        "title": "Fourteenth Sunday after Pentecost (Synthesis Edition)"
       }
@@ -5551,9 +5550,8 @@
       "claude-opus-5[1m]",
       "GPT-5-based Codex agent"
      ],
-     "pages": null,
-     "pdf": null,
-     "pdf_absent": "no PDF is installed for this issue",
+     "pages": 61,
+     "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost.pdf",
      "produced": {
       "run_id": "90dcdddcb6780e60",
       "seed_commit": "76b6e825276afc8ae6a4809108f4899d1deb0b33",
@@ -8640,7 +8638,7 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 18,
+     "pages": 19,
      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.pdf",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"

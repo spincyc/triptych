@@ -29,11 +29,12 @@ and exact Challoner and Cummiskey English controls; `propers/retrieved.txt`
 preserves the uncorrected finding-aid extract. Source-library validation
 passed. A successful `make -j4 install-all` restored the existing installed
 PDF tree required by checks in a fresh clone. The broader promised-deliverable
-check now passes. `make check-sources` reaches the document-catalogue drift
-check: rebuilding existing publications changes two page counts and supplies
-the Claude Fourteenth Sunday after Pentecost PDFs previously marked absent.
-A generated comparison is retained in the run's driver scratch directory;
-the tracked catalogue has not yet been refreshed.
+check now passes. Regenerating the document catalogue reconciled two rebuilt
+page counts and the Claude Fourteenth Sunday after Pentecost PDFs previously
+marked absent. `make check-sources` now passes those catalogue checks and
+reaches the publication source inventory: the target's new source-bearing
+files need inventory entries, and two pre-existing shared-source fingerprints
+are stale (the GPT altar-server format and sanctuary artwork manifest).
 
 The seven research lanes completed their sweeps, and the engine accepted their
 108 joined findings in declared lane order. Research synthesis is now in
