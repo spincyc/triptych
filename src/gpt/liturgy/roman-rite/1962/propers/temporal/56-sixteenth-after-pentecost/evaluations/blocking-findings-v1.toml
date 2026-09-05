@@ -21,60 +21,6 @@ run_id = "8c6ccce8314da5fa"
 workflow = "proper"
 workflow_version = 25
 stage = "content-evaluation"
-iteration = 0
-disposition = "CHANGES_REQUIRED"
-standing = 6
-
-[[findings]]
-id = "CON-EVI-001"
-lane = "evidence-discipline"
-severity = "blocking"
-location = "sections/05-appointed-text.tex:118; sections/30-commentary.tex:21,34,41"
-problem = "Four quotations explicitly describing the appointed Latin normalize away accents recorded in propers/verified.md: 'Dominus' at sections/05-appointed-text.tex:118 and sections/30-commentary.tex:41 should retain 'Dóminus' (verified.md:107); 'omnis paternitas' at sections/30-commentary.tex:21 should retain 'omnis patérnitas' (verified.md:88); and 'in maiestate sua' at sections/30-commentary.tex:34 should retain 'in maiestáte sua' (verified.md:102). This is a criterion 2 departure from the identified edition even though the complete appointed blocks reproduce all three forms correctly. The sweep covered the map, both commentary branches, themes, synthesis, gallery, proposals and terminal apparatus; the unaccented historical Purifica incipits are expressly attached to Wilson's different witnesses and are not part of this finding."
-required_result = "Restore the collated accents in all four specified quotations: Dóminus in the two Alleluia explanations, omnis patérnitas in the Epistle commentary, and in maiestáte sua in the Gradual commentary. Use the existing propers/verified.md control, which research/scope.md:29–30 expressly makes authoritative for the Latin forms; no retrieval or revision of the research brief is required."
-repair_target = "authoring"
-
-[[findings]]
-id = "CON-SYN-001"
-lane = "synthesis-argument"
-severity = "blocking"
-location = "src/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/sections/35-source-grounded-synthesis.tex:3, 'Fruitfulness remains dependent on its giver'; and :6, 'Humility permits the reception of good' (both editions)."
-problem = "Each of these two standalone synthesis units joins multiple appointed elements but develops only one reception witness: Augustine on Psalm 70 in the first and Francis de Sales III.5 in the second. Multiple appointed texts satisfy the element requirement, but they do not supply the multiple reception witnesses required of each synthesis unit. The additional witnesses developed in the thematic movement and integrated commentary do not enter these units' arguments."
-required_result = "Revise or consolidate these two units so that every resulting source-grounded synthesis unit develops a cross-proper argument using more than one checked reception witness. The existing brief supplies suitable material without retrieval: SG-1 and PAT-008 give Aquinas, Super Ephesios 3.4, on acknowledged weakness and perseverance as God's gift, alongside Augustine; SG-2 and PAT-011 give Cyril, Commentary on Luke, Sermon CII, Payne Smith 1859, pp. 476–479, on truthful self-knowledge and relinquished honor, alongside Francis de Sales. Make the additional witness's reasoning contribute to each unit's conclusion rather than merely appending a citation."
-repair_target = "authoring"
-
-[[findings]]
-id = "CON-CIT-001a"
-lane = "citation-integrity"
-severity = "blocking"
-location = "research/scope.md:473–481, Alleluia Assertion 2, and SCR-023 at lines 1324–1329"
-problem = "The brief supplies the Nativity assertion's label and artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03738a-5eb03e5b, but no intelligible citation bundle for that witness: its article title, responsible author, public route, access date, and exact section are absent. The registered artifact and its retained article identify John Gerard's 'General Chronology,' Catholic Encyclopedia III (1908), 'Christian era'; the same identification and the relevant 750/3 B.C. sentence are visible at https://www.newadvent.org/cathen/03738a.htm. This missing authoring input has resulted in a citation to a different article, 'Christmas.' The correct values are available in source-library records but are not present elsewhere in the immutable brief, so the packet's citation ownership rule requires a research repair."
-required_result = "Resolve the brief's 03738a source ID against its registered witness and record a checked citation bundle for the actual article, including author, exact title, volume/publication, stable URL, recorded access date, and the 'Christian era' locus supporting this specific assertion. Supply these as citation evidence while preserving the immutable chronology assertion and its reported-traditional qualification. This finding requires the research input only; CON-CIT-001b owns the published citation correction."
-repair_target = "research"
-
-[[findings]]
-id = "CON-CIT-001b"
-lane = "citation-integrity"
-severity = "blocking"
-location = "sections/02-scriptural-date-location.tex:9 and sections/99-references.tex:22, shared by the full and synthesis editions"
-problem = "Both published locations cite the Catholic Encyclopedia article 'Christmas' as one of the sources for the Alleluia's two Nativity alternatives. The brief actually identifies the 03738a corpus witness, whose article is 'General Chronology'; 'Christmas' is not a consulted source established by this brief. The inline attribution and bibliography therefore direct the reader to the wrong work, and the bibliography's generic 'the corpus's cited composition and Nativity passages' does not repair that false source identification."
-required_result = "Correct both shared citation locations so the Nativity alternative is attributed to the actual witness identified by the brief's 03738a source ID. Use the checked citation details supplied by CON-CIT-001a, remove the unsupported 'Christmas' reference, and give a usable article/section locator. Preserve the existing chronology values and the separately cited second alternative; this is a citation repair in the leaf."
-repair_target = "authoring"
-
-[[findings]]
-id = "CON-CIT-002a"
-lane = "citation-integrity"
-severity = "blocking"
-location = "research/scope.md:2092–2101 (PRE-005), with its reuse at lines 651 and 773"
-problem = "The Anthony evidence names two numbered sermons and an 'official Basilica Latin web text' but supplies no stable URL, named host institution, or available edition/access datestamp anywhere in the brief. These details matter to the cited witness: the ordinary Sunday XVII page serves Italian, while its Latin text is selected by ?latin=1, as confirmed at https://www.santantonio.org/en/sermons/sermoni-domenicali/domenica-xvii-dopo-pentecoste?latin=1. The body uses these sermons for an attributed near analogue and a bounded precedent result, so the digital source identity must be available to the author, not only in a prior lane's temporary retrieval files."
-required_result = "Retrieve and record the exact citation metadata for both checked Anthony sermon pages: author, sermon/page title, responsible institution, Latin-edition identification, stable routes preserving the language selector, access date, any available edition/datastamp or an explicit undated status, and the checked section loci. Preserve the distinct XVI and XVII reading pairings already established. This finding requires the evidence bundle only; CON-CIT-002b owns its use in References."
-repair_target = "research"
-
-[[findings]]
-id = "CON-CIT-002b"
-lane = "citation-integrity"
-severity = "blocking"
-location = "sections/99-references.tex:28, shared by both editions; Anthony citations in sections/50-interpretive.tex:9 and 54"
-problem = "The published Anthony entry identifies only 'Basilica's official Latin web text' and section numbers. It gives neither a stable route nor an identifiable digital edition, leaving the reader unable to reproduce the actual Latin witness used for the proposal's precedent claim. Referring readers to research/scope.md does not supply the missing citation, since that brief currently omits it too."
-required_result = "Give the two Anthony sermons reproducible reader-facing digital-source citations in the shared References, using the exact metadata supplied through CON-CIT-002a and retaining the sermon and section distinctions used by the proposals. Include the Latin-selecting stable routes and the source's edition/access information rather than relying on an unnamed Basilica or an internal audit pointer."
-repair_target = "authoring"
+iteration = 1
+disposition = "PASS"
+standing = 0

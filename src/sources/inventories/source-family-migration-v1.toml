@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-09-05"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:c8af7394737803a4e855ea575850c5ca885f8bb1f9a490a58700879204f513c2"
+inventory_snapshot = "sha256:f687e87ba1f03fae60e8eb12c1b40d5f8c03e406da28ad9f6183b6a00d889af9"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:21048643572a8265f73030712d09ba70de87a8cda712ddf5318caf62c3464801"
 canonical_catalog_snapshot = "sha256:2caa97e0847e9635413d2b14080ada52b61b8c232d5d25c7e2c34b421e36998a"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:01de31a5df6e2f344fc3254502a23d08fc147ad48369421acd48b5193d94adaa"
+snapshot = "sha256:6dd0914df6adf43145e817703fa9ec230cc89751f43b31379474e29f809005e7"
 families = []
 
 [[review_units]]
@@ -478,7 +478,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost"
-surface_snapshot = "sha256:e2ab67938e2f90bea5df24afc98d566c6c2cb87dd157dd6aedf154463a61307f"
+surface_snapshot = "sha256:1fa9b1c312ac7a243a3a06aa484dbd55113be0f60e8017cf05e6297cf2cfa389"
 review_state = "pending"
 
 [[review_units]]

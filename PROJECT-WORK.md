@@ -77,10 +77,14 @@ four carried leaf findings: the collated Latin accents, the two synthesis
 arguments and the Gerard and Anthony citations. Both builds retain 20 and
 14 pages and the required opening pagination; the author reviewed the rendered
 pages, and focused content, chronology, provenance, source and web checks
-passed. The workflow's program content-preflight gate passed, and all five
-fresh content-evaluation lanes are reviewing iteration 1 at the prescribed
-max effort. The standing findings remain open until that evaluation accepts
-their repairs.
+passed. The workflow's program content-preflight gate passed. All five fresh
+content-evaluation lanes returned PASS at the prescribed max effort, with no
+findings or observations, and the engine accepted their unchanged results.
+Its tracked evaluation record now reports iteration 1, PASS and zero standing
+findings. Artifact building passed with 20 full-edition and 14 synthesis pages,
+34 review rasters and both contact sheets. Each final build log has one empty
+underfull box after generation metadata; neither has fatal errors, undefined
+references or overfull boxes. The workflow is running its mechanical gates.
 
 The full `make check-sources` check now **passes**. The documented inventory
 refresh added the target's actual source surface and reconciled the two
@@ -92,8 +96,8 @@ review units, without claiming family screening or atomic citation coverage.
 The generated document catalogue now records both new editions as not
 installed. No placeholder publication owner or checker change was needed.
 
-Passing content evaluation, review of both PDFs, the canonical web edition
-and release records remain outstanding. No guide has
+The prescribed visual review of both PDFs, the canonical web edition and
+publication and release gates remain outstanding. No guide has
 been installed or accepted. Reconcile this entry to the engine's terminal
 disposition and preserve any unresolved findings before reporting the
 workflow finished; a `BLOCKED` run does not establish publication acceptance.
