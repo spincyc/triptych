@@ -111,14 +111,24 @@
 \setcounter{tocdepth}{2}
 \setlength{\emergencystretch}{3em}
 \raggedbottom
-% TeX Live 2026 longtable appends \vss before splitting a page box. Its
+% Some longtable releases append \vss before splitting a page box. Its
 % infinite shrink component triggers pdfTeX's split-box diagnostic. A
 % stretch-only tail has the same bottom-fill purpose without invalid shrink.
+%
+% The tails are corrected where they are found and nowhere else. The count is
+% not fixed at two: a release that appends \vss once, or that has already
+% dropped it, is as valid an input as the two-tail release this was written
+% against, and demanding two of them fails the build on a toolchain whose
+% longtable needs no correction at all. TeX Live 2026 as Arch packages it has
+% two; the pinned deployment container has none, and refusing to typeset there
+% was a defect in this patch rather than in that container.
 \makeatletter
-\patchcmd{\LT@output}{\vss}{\vfil}{}{\PackageError{server-guide-format}
-  {Could not patch first longtable tail}{Update the longtable compatibility patch.}}
-\patchcmd{\LT@output}{\vss}{\vfil}{}{\PackageError{server-guide-format}
-  {Could not patch second longtable tail}{Update the longtable compatibility patch.}}
+\ifpatchable{\LT@output}{\vss}{%
+  \patchcmd{\LT@output}{\vss}{\vfil}{}{}%
+  \ifpatchable{\LT@output}{\vss}{%
+    \patchcmd{\LT@output}{\vss}{\vfil}{}{}%
+  }{}%
+}{}%
 \makeatother
 \setlength{\parskip}{0.34em plus 0.06em minus 0.03em}
 \titleformat{\section}{\Large\mdseries\scshape}{\thesection}{0.55em}{}
