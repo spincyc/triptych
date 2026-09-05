@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.hugh-of-saint-cher.postilla-in-totam-bibliam.2026-09-05-morard-gloss-e.psalm-94-html-44af3f8d"
+edition_id = "edition.hugh-of-saint-cher.postilla-in-totam-bibliam.2026-09-05-morard-gloss-e"
+artifact_type = "web-response"
+media_type = "text/html"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "The medieval Latin is public domain; the supplied bytes contain the modern scholarly edition, apparatus and site presentation. No affirmative redistribution license for that exact edition was supplied, and deleting tags would retain its modern editorial contributions. Exact response and uncollated extraction are withheld. Offline readers have only this record for the supplied chapter."
+source_url = "https://gloss-e.irht.cnrs.fr/php/editions_chapitre.php?chapitre=26_94&id=hug&numLivre=26"
+provenance = "Whole response acquired directly by a research lane on 2026-09-05 and handed to source registration with URL, digest, byte size and extent. Registration independently ran sha256sum and checked the byte size. No source URL was reconstructed and no new source was fetched. Existing work aliases and sibling artifact provenance/transformation were checked before registration."
+retrieved = "2026-09-05"
+sha256 = "44af3f8d0adab474c6b117d88ad03beda483f9d4b13645c8f9ff0aa4829975e5"
+byte_size = 178124
+indexable = false
+notes = "Complete publicly served Psalm 94 chapter with biblical text, postilla, apparatus and edition citation. Whole-Psalter XML route /sources/editions/hug/GLOSS-hug26.xml returned HTTP 403; this file is one full chapter, not the entire Psalter commentary. The refused whole-Psalter route prevents a claim to complete Psalter acquisition."

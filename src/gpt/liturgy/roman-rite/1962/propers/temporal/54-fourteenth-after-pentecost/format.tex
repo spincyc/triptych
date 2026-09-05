@@ -2,22 +2,45 @@
 \DeclareUnicodeCharacter{2123}{V\kern-0.62em\raisebox{0.12ex}{\scriptsize/}\kern0.28em}
 \DeclareUnicodeCharacter{2720}{\ensuremath{\boldsymbol{+}}}
 \renewenvironment{properstable}
-{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}}
+{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{\dimexpr0.18\linewidth-6pt\relax}@{\hspace{12pt}}>{\raggedright\arraybackslash}p{0.34\linewidth}}
 \textbf{Proper} & \textbf{1962 Missal text / reference} & \textbf{Scriptural axis} & \textbf{Connection}\\
 \midrule
 \endhead}
 {\bottomrule\end{longtable}}
-\newcommand{\fulltextelement}[2]{\Needspace{6\baselineskip}\subsection*{#1}\begin{massbox}{#2}\itshape}
+% Shared row payloads retain the print tables and linearize on the web.
+\ifdefined\TriptychPrintEdition
+\newenvironment{properrecords}{\begin{properstable}}{\end{properstable}}
+\newcommand{\properrecord}[4]{\properrow{#1}{#2}{#3}{#4}}
+\newenvironment{senserecords}{\begin{sensestable}}{\end{sensestable}}
+\newcommand{\senserecord}[2]{#1 & #2\\}
+\else
+\newenvironment{properrecords}{\begin{enumerate}}{\end{enumerate}}
+\newcommand{\properrecord}[4]{\item\textbf{Proper: #1}\par\textbf{1962 Missal text / reference:} #2\par\textbf{Scriptural axis:} #3\par\textbf{Connection:} #4\par}
+\newenvironment{senserecords}{\begin{enumerate}}{\end{enumerate}}
+\newcommand{\senserecord}[2]{\item\textbf{Sense: #1}\par\textbf{Synthesis:} #2\par}
+\fi
+\newcommand{\fulltextelement}[1]{\Needspace{6\baselineskip}\subsection*{#1}}
 \newcommand{\finishfulltextelement}{\end{massbox}}
 \newenvironment{fulltextenglish}[1]{\begin{sourcecard}{#1}\small}{\end{sourcecard}}
 \newcommand{\fulltextgap}[1]{\par\smallskip\textbf{Witness boundary.} #1\par}
+\ifdefined\TriptychPrintEdition
 \newenvironment{dossiertable}
 {\footnotesize\renewcommand{\arraystretch}{1.02}\setlength{\LTpre}{0.15em}\setlength{\LTpost}{0pt}%
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.14\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.35\linewidth}>{\raggedright\arraybackslash}p{0.16\linewidth}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.10\linewidth}>{\raggedright\arraybackslash}p{0.13\linewidth}>{\raggedright\arraybackslash}p{0.19\linewidth}>{\raggedright\arraybackslash}p{0.49\linewidth}@{}}
 \toprule\textbf{Proper} & \textbf{Citation} & \textbf{Location} & \textbf{Date}\\\midrule\endhead}
 {\bottomrule\end{longtable}}
 \newcommand{\dossierprose}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash}p{0.92\linewidth}@{}}{#1}\\[0.1em]}
 \newcommand{\dossierevent}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash}p{0.92\linewidth}@{}}{\textit{#1}}\\}
+\newcommand{\dossierrow}[4]{#1 & #2 & #3 & #4\\}
+\else
+\newenvironment{dossiertable}{}{}
+\newcommand{\dossierrow}[4]{\subsection*{Proper: #1}\textbf{Citation:} #2\par\textbf{Location:} #3\par\textbf{Date:} #4\par}
+\newcommand{\dossierprose}[1]{\par#1\par}
+\newcommand{\dossierevent}[1]{\par\textit{#1}\par}
+\fi
+% \chronodate{element-key}{content} -- one dossier row's Date cell.
+% Typesets the content; the key renders nothing.
+\newcommand{\chronodate}[2]{#2}
 \ifdefined\TriptychSynthesisEdition
   \providecommand{\TriptychReferenceFont}{\footnotesize}
   \providecommand{\TriptychColophonFont}{\footnotesize}
@@ -30,3 +53,10 @@
     {}
     {\PackageError{triptych}{Unable to enlarge the terminal rights notice}{}}
 \fi
+
+% Semantic proposal fields support the content preflight.
+\newenvironment{proposal}[1]{\subsection*{#1}}{}
+\newcommand{\pfield}[2]{\par\textbf{#1.}\enspace#2\par}
+
+\clubpenalty=10000
+\widowpenalty=10000

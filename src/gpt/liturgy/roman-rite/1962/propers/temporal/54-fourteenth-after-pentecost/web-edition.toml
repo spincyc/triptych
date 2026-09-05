@@ -4,4 +4,10 @@ document = "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-penteco
 
 eligibility = "eligible"
 blocking_constructs = []
-reviewed = "2026-08-26"
+reviewed = "2026-09-05"
+
+# The canonical row arguments are shared by both presentations. Print retains
+# the accepted tables; web emits labeled linear records, attaching each dossier
+# note to its Proper heading. Appointed texts use the literal element-key
+# anchors; separate treatments use <element-key>-treatment.
+# The web commentary heading follows the appointed-text component.
