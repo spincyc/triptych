@@ -23,9 +23,18 @@ is recorded in `guidance/liturgy/propers-production-plan.md`.
 The target had no publication leaf when work began. Its appointed formulary
 is `pentecost-16`; the generated and checked chronology record is now at
 `src/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/research/chronology.toml`.
-Source collation, research, authoring, evaluation, both reviewed PDFs, the
-canonical web edition and release records remain outstanding. No guide has
-been installed or accepted. Reconcile this entry to the engine's terminal
+The source-audit stage passed: `propers/verified.md` records all ten elements
+collated against the CMAA 1962 pages, the page-checked 1862 Latin antecedent,
+and exact Challoner and Cummiskey English controls; `propers/retrieved.txt`
+preserves the uncorrected finding-aid extract. Source-library validation
+passed. `make check-sources` stopped at the existing curriculum-rights test,
+which expects 37 installed curriculum PDFs and finds none in a fresh clone.
+The broader promised-deliverable check likewise reports the same missing-PDF
+failures as the baseline; the new workflow entry validates independently.
+
+Research, authoring, evaluation, both reviewed PDFs, the canonical web edition
+and release records remain outstanding. No guide has been installed or
+accepted. Reconcile this entry to the engine's terminal
 disposition and preserve any unresolved findings before reporting the
 workflow finished; a `BLOCKED` run does not establish publication acceptance.
 
