@@ -37,8 +37,11 @@ files need inventory entries, and two pre-existing shared-source fingerprints
 are stale (the GPT altar-server format and sanctuary artwork manifest).
 
 The seven research lanes completed their sweeps, and the engine accepted their
-108 joined findings in declared lane order. Research synthesis is now in
-progress. Authoring, evaluation, both reviewed PDFs, the canonical web edition
+108 joined findings in declared lane order. Research synthesis passed and
+the complete `research/scope.md` now preserves those findings, five integrated
+claims, six precedent-covered proposals, five cultural entries, the immutable
+chronology audit and every reader-facing section's evidence position.
+Source registration is in progress. Authoring, evaluation, both reviewed PDFs, the canonical web edition
 and release records remain outstanding. No guide has been installed or
 accepted. Reconcile this entry to the engine's terminal
 disposition and preserve any unresolved findings before reporting the
