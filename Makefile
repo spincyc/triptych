@@ -11,8 +11,8 @@ INSTALL ?= install
 # through another package. This makes the project/tool boundary reviewable and
 # prevents a future dependency-graph change from silently removing a tool.
 #
-#   make, /bin/sh, /usr/bin/env, find, sort, cmp, id and core utilities
-#   (cat, install, mkdir, mv, rm and sha256sum):
+#   make, /bin/sh, /usr/bin/env, find, sort, comm, cmp, id and core utilities
+#   (cat, install, mkdir, mv, realpath, rm and sha256sum):
 #     make bash findutils coreutils diffutils
 #   Python >= 3.11, stdlib (including fcntl/tomllib/zoneinfo), IANA timezone data, and
 #   the public renderer's version-locked third-party module:
@@ -77,9 +77,9 @@ ARCH_DEPENDENCY_PACKAGES := $(ARCH_CORE_PACKAGES) $(ARCH_PYTHON_PACKAGES) \
 ARCH_BROWSER_PACKAGES := chromium
 ARCH_CANONICAL_COMMANDS := make:/usr/bin/make sh:/usr/bin/sh \
 	env:/usr/bin/env id:/usr/bin/id find:/usr/bin/find sort:/usr/bin/sort \
-	cmp:/usr/bin/cmp \
+	comm:/usr/bin/comm cmp:/usr/bin/cmp \
 	cat:/usr/bin/cat chmod:/usr/bin/chmod cp:/usr/bin/cp install:/usr/bin/install \
-	mkdir:/usr/bin/mkdir mv:/usr/bin/mv rm:/usr/bin/rm \
+	mkdir:/usr/bin/mkdir mv:/usr/bin/mv realpath:/usr/bin/realpath rm:/usr/bin/rm \
 	sha256sum:/usr/bin/sha256sum python3:/usr/bin/python3 \
 	pdflatex:/usr/bin/pdflatex kpsewhich:/usr/bin/kpsewhich \
 	pdfinfo:/usr/bin/pdfinfo pdftotext:/usr/bin/pdftotext \
@@ -1242,34 +1242,166 @@ $(foreach document,$(PROPER_SYNTHESIS_DOCUMENTS),\
 # which ARCH_TEX_PACKAGES deliberately does not name; this is that loop in
 # the shell the recipe already runs.
 #
+# The .fls is excluded for the same reason as the .log: `-recorder` writes it
+# on every pass and nothing ever reads it back, but unlike the .log it would
+# also differ between the first pass and the second --- the first opens no
+# .aux because none exists yet --- and so would cost an extra pass on every
+# document that settles in two.
+#
 # Argument 1 is the -jobname, argument 2 the TeX input relative to
 # $(SOURCE_ROOT), and argument 3 the build-tree prefix the job's auxiliary
 # files share.
 define PDFLATEX_TO_FIXED_POINT
 set -eu; \
+	rm -f -- '$(3).fls'; \
 	pass=0; \
 	fingerprint=''; \
+	settled=0; \
 	while [ "$$pass" -lt $(PDFLATEX_MAX_PASSES) ]; do \
 		pass=$$((pass + 1)); \
-		( cd $(SOURCE_ROOT) && TEXINPUTS=..: $(PDFLATEX) -interaction=nonstopmode \
+		( cd $(SOURCE_ROOT) && TEXINPUTS=..: $(PDFLATEX) -recorder \
+			-interaction=nonstopmode \
 			-halt-on-error -jobname='$(1)' \
 			-output-directory='$(abspath $(@D))' '$(2)' ); \
 		previous="$$fingerprint"; \
 		fingerprint=''; \
 		for auxiliary in '$(3).'*; do \
 			[ -f "$$auxiliary" ] || continue; \
-			case "$$auxiliary" in *.log|*.pdf|*.synctex.gz) continue ;; esac; \
+			case "$$auxiliary" in \
+				*.log|*.pdf|*.fls|*.fls-*|*.synctex.gz) continue ;; \
+			esac; \
 			fingerprint="$$fingerprint $$($(SHA256) -- "$$auxiliary")"; \
 		done; \
 		if [ "$$pass" -ge 2 ] && [ "$$fingerprint" = "$$previous" ]; then \
-			exit 0; \
+			settled=1; \
+			break; \
 		fi; \
 	done; \
-	echo 'References did not settle in $(PDFLATEX_MAX_PASSES) passes: $(3)' >&2; \
-	exit 1
+	if [ "$$settled" -eq 0 ]; then \
+		echo 'References did not settle in $(PDFLATEX_MAX_PASSES) passes: $(3)' >&2; \
+		exit 1; \
+	fi; \
+	$(call ASSERT_DECLARED_INPUTS,$(3))
 endef
 
-$(BUILD_ROOT)/%-synthesis.pdf:
+# Prove the declared graph complete, against what pdfTeX actually opened.
+#
+# The Pages deploy keys its PDF cache on the prerequisites this makefile
+# declares for a document: it asks `make -p -n install` for them, hashes each,
+# and restores the cached PDF when the hashes match. That key is only as good
+# as the graph, and the graph is written by hand. An \input that reaches a file
+# no prerequisite names leaves that file outside the key, so editing it would
+# score a cache hit and publish the old PDF --- and since a body-text edit need
+# not move a page count, neither `document-library structure --check` nor the
+# corpus digest binding would notice. Every other gate here fails closed. This
+# is the one that would not, made to.
+#
+# `-recorder` has each pass write a .fls beside the PDF naming every file it
+# opened. The settled pass is the one compared: it is the pass that produced
+# the PDF in hand, and an input reached only before the references converged is
+# not a case this corpus has. What the comparison excludes, and why none of the
+# exclusions is a hole:
+#
+#   Outside the repository. The format file, the font map, and the TeX
+#   distribution's own classes, packages, fonts and encodings. None is this
+#   project's to declare and none is a cache key input: the toolchain is keyed
+#   separately, by the container image digest and package snapshot.
+#
+#   The job's own auxiliary files --- the .aux, .toc, .out and the rest that
+#   share argument 1's prefix --- which every pass after the first reads back
+#   from the pass before. They are this
+#   build's output being re-read, never an input to it, and no source
+#   prerequisite could name them.
+#
+#   Rendered .tex under $(ROMAN_SANCTUARY_DICTIONARY_GENERATED), and only when
+#   the target declares a prerequisite that is not a file --- the phony that
+#   generates it. That tree is named rather than all of build/ because it is
+#   the one the deploy hashes wholesale into the affected cache keys, so it is
+#   the one whose contents are covered without being declared. A generated file
+#   anywhere else under build/ is undeclared like any other and is reported:
+#   the exemption is a statement about a tree the key already covers, not about
+#   the target having a generator.
+#
+# Everything else opened inside the repository must appear in $^. Paths are
+# compared through realpath because TEXINPUTS=..: makes the shared preamble
+# reachable as ../common/preamble.tex from the pdfTeX working directory and as
+# src/common/preamble.tex from here, and those are one file. Directory
+# prerequisites are expanded to their files so a declared tree covers what is
+# read out of it.
+#
+# A missing .fls beside a written .log means pdfTeX ran without `-recorder`,
+# which is a build defect and fails. Neither file means the run was not pdfTeX
+# at all --- the build-graph tests substitute a stub that writes only the PDF
+# --- and there is nothing recorded to check.
+#
+# Argument 1 is the build-tree prefix the job's auxiliary files share.
+define ASSERT_DECLARED_INPUTS
+recorded='$(1).fls'; \
+	if [ ! -f "$$recorded" ]; then \
+		if [ -f '$(1).log' ]; then \
+			echo 'pdfTeX wrote $(1).log but no $(1).fls: -recorder is not in effect, so declared inputs cannot be checked' >&2; \
+			exit 1; \
+		fi; \
+		exit 0; \
+	fi; \
+	declared='$(1).fls-declared'; \
+	opened='$(1).fls-opened'; \
+	undeclared='$(1).fls-undeclared'; \
+	trap 'rm -f -- "$$declared" "$$opened" "$$undeclared"' 0 1 2 15; \
+	set -f; \
+	set -- $^; \
+	generator=0; \
+	for prerequisite in "$$@"; do \
+		[ -e "$$prerequisite" ] || generator=1; \
+	done; \
+	for prerequisite in "$$@"; do \
+		if [ -d "$$prerequisite" ]; then \
+			find "$$prerequisite" -type f; \
+		else \
+			printf '%s\n' "$$prerequisite"; \
+		fi; \
+	done > "$$declared"; \
+	set -- $$(cat "$$declared"); \
+	{ [ "$$#" -eq 0 ] || realpath -m -- "$$@"; } | LC_ALL=C sort -u > "$$declared"; \
+	while read -r role path; do \
+		[ "$$role" = 'INPUT' ] || continue; \
+		case "$$path" in \
+			/*) printf '%s\n' "$$path" ;; \
+			*) printf '%s/%s\n' '$(abspath $(SOURCE_ROOT))' "$$path" ;; \
+		esac; \
+	done < "$$recorded" | LC_ALL=C sort -u > "$$opened"; \
+	set -- $$(cat "$$opened"); \
+	{ [ "$$#" -eq 0 ] || realpath -m -- "$$@"; } | LC_ALL=C sort -u > "$$opened"; \
+	own=$$(realpath -m -- '$(1)'); \
+	generated=$$(realpath -m -- '$(ROMAN_SANCTUARY_DICTIONARY_GENERATED)'); \
+	LC_ALL=C comm -23 -- "$$opened" "$$declared" | while read -r path; do \
+		case "$$path" in '$(CURDIR)'/*) ;; *) continue ;; esac; \
+		case "$$path" in "$$own".*) continue ;; esac; \
+		case "$$path" in \
+			"$$generated"/*) \
+				if [ "$$generator" -eq 1 ]; then continue; fi ;; \
+		esac; \
+		printf '%s\n' "$$path"; \
+	done > "$$undeclared"; \
+	if [ -s "$$undeclared" ]; then \
+		echo 'Undeclared input: $(1).pdf opened repository files that no' >&2; \
+		echo 'prerequisite of that target names, so the deploy PDF cache key' >&2; \
+		echo 'does not cover them and editing one could publish a stale PDF:' >&2; \
+		while read -r path; do echo "  $$path" >&2; done < "$$undeclared"; \
+		echo 'Declare each as a prerequisite of $(1).pdf in this makefile.' >&2; \
+		exit 1; \
+	fi
+endef
+
+# $(COMMON_SOURCES) because a synthesis is a document like any other and opens
+# the shared preamble. REGISTER_PROPER_SYNTHESIS_SOURCES already declares each
+# synthesis's own sources per target; what this pattern rule was missing was
+# the shared preamble alone, so a preamble edit rebuilt no synthesis at all.
+# ASSERT_DECLARED_INPUTS below found it. Note that synthesis PDFs are not
+# cached by the deploy -- its keyer skips a document with no
+# src/<provider>/<leaf>/main.tex -- so this was an incremental-build defect
+# here, not a stale-publish one.
+$(BUILD_ROOT)/%-synthesis.pdf: $(COMMON_SOURCES)
 	@mkdir -p $(@D) '$(BUILD_ROOT)/.metadata/$(dir $*)'
 	@rm -f -- '$(BUILD_ROOT)/.metadata/$*-synthesis.ok'
 	@$(call PDFLATEX_TO_FIXED_POINT,$(notdir $*)-synthesis,$*/synthesis.tex,$(BUILD_ROOT)/$*-synthesis)
@@ -1453,6 +1585,12 @@ $(BUILD_ROOT)/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-
 $(NOVENA_BUILD_PDFS): $(NOVENA_SHARED)
 $(BIOGRAPHY_BUILD_PDFS): $(BIOGRAPHY_SHARED)
 $(HISTORICAL_TRANSLATION_BUILD_PDFS): $(HISTORICAL_TRANSLATION_SHARED)
+# A history outside that collection imports its account format across leaves,
+# so REGISTER_DOCUMENT_SOURCES --- which sees only one leaf --- never named it.
+# Found by the recorder check in PDFLATEX_TO_FIXED_POINT, which is what that
+# check is for.
+$(BUILD_ROOT)/history/catholic-exorcism/01-history-and-current-practice.pdf: \
+	$(HISTORICAL_TRANSLATION_SHARED)
 $(PARISH_HISTORY_BUILD_PDFS): $(PARISH_HISTORY_SHARED)
 $(TRADITIONAL_INSTITUTE_BUILD_PDFS): $(TRADITIONAL_INSTITUTE_SHARED)
 $(BUILD_ROOT)/theology/mariology/angelus.pdf: \

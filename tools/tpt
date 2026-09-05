@@ -112,8 +112,11 @@ EXAMPLES = {
         Example(
             "tools/tpt --info tpt --json",
             (
-                "{\"idempotent\": true, \"json\": true, \"lang\": \"python\", \"mutates\": false, \"name\": \"tpt\", \"origin\": \"local\", \"path... [+444 chars]",
+                "{\"idempotent\": true, \"json\": true, \"lang\": \"python\", \"mutates\": false, \"name\": \"tpt\", \"origin\": \"local\", \"path\": \"<repo>/tools/tpt\", \"purpose\": \"Unified launcher for Triptych tools and tool discovery commands.\", \"requires\": [], \"stage\": \"draft\", \"usage\": \"tpt <tool> [<tool args>...] | tpt <workflow> --help | tpt <workflow> list [--json] | tpt <workflow> <doc> {seed,advance,status,replay,intervene,debt} [opts] | tpt workflow {list,show <id>} | tpt {--list,--info,--path,--check} [--json]\"}",
             ),
+            "recorded whole rather than cut: the JSON carries this checkout's own "
+            "path, so any \"... [+K chars]\" here counts the characters of the "
+            "directory the capture was taken in and diverges in every other one",
         ),
     ),
     "--path": (

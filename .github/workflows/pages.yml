@@ -68,7 +68,7 @@ env:
   # ARCH_SNAPSHOT or ARCH_PACKAGES without republishing leaves this pin naming
   # the *old* toolchain, which is why the deploy prints the resolved image and
   # the installed TeX Live versions on every run.
-  TEXLIVE_IMAGE: ""
+  TEXLIVE_IMAGE: ghcr.io/spincyc/triptych-texlive@sha256:fd64daf839c719eef559ca0c74b0b93fb3d6f710ce057561b76500adcd150617
   # Bump to discard every cached PDF: the cache key below is a claim about
   # which inputs can change a PDF's bytes, and this is how a correction to
   # that claim is applied to entries built under the old one.

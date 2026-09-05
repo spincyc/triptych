@@ -208,6 +208,101 @@ class MachineryTests(unittest.TestCase):
         )
 
 
+# --- Resolving a Make goal to the recipes it actually runs -----------------
+#
+# The deployment gate's coverage was once asserted against one recipe body,
+# read out of the Makefile with a regex. That pinned seven independent commands
+# into a single serial recipe: moving any of them into a member target the gate
+# depends on --- which is what makes them concurrent, and about six seconds of
+# the deploy's critical path --- would have turned the assertion red for a
+# change that left its property intact. What the gate owes is coverage, not the
+# shape of the recipe that delivers it.
+#
+# Searching the whole Makefile would buy that freedom too cheaply: a command
+# moved to a target nothing depends on would still be found, which is weaker
+# than what the recipe regex guaranteed. So the goal is resolved to its own
+# closure instead, and only the recipes inside it are searched.
+MAKE_CONTINUATION = re.compile(r"\\\n[ \t]*")
+MAKE_RULE = re.compile(
+    r"^([a-z][a-z0-9-]*)[ \t]*:(?!=)([^\n]*)\n((?:\t[^\n]*\n|\n(?=\t))*)",
+    re.MULTILINE,
+)
+MAKE_ASSIGNMENT = re.compile(
+    r"^([A-Za-z_][A-Za-z0-9_]*)[ \t]*:?=[ \t]*([^\n]*)$", re.MULTILINE
+)
+MAKE_WORD = re.compile(r"[a-z][a-z0-9-]*")
+
+
+def make_rules(text: str) -> tuple[dict[str, tuple[str, str]], dict[str, str]]:
+    """Every plainly named target with its prerequisites and recipe, and the
+    simple variables a prerequisite list or a recursive goal may name."""
+    joined = MAKE_CONTINUATION.sub(" ", text)
+    rules: dict[str, tuple[str, str]] = {}
+    for found in MAKE_RULE.finditer(joined):
+        rules.setdefault(found.group(1), (found.group(2), found.group(3)))
+    variables = {
+        found.group(1): found.group(2) for found in MAKE_ASSIGNMENT.finditer(joined)
+    }
+    return rules, variables
+
+
+def make_expanded(fragment: str, variables: dict[str, str]) -> str:
+    for _ in range(8):
+        grown = re.sub(
+            r"\$\(([A-Za-z_][A-Za-z0-9_]*)\)",
+            lambda found: variables.get(found.group(1), found.group(0)),
+            fragment,
+        )
+        if grown == fragment:
+            return grown
+        fragment = grown
+    return fragment
+
+
+def make_reached(goal: str, text: str) -> dict[str, str]:
+    """The recipe of every target `make <goal>` can reach, keyed by target.
+
+    An edge is a target's prerequisite list, or the goals of a recursive
+    `$(MAKE)` line in its recipe --- this Makefile bootstraps a jobserver that
+    way, so a member reached only through the recursion is still the gate's.
+    Both are expanded through simple variable references, and only words that
+    name a target here are followed, which is what stops `$(if $(strip ...))`
+    from contributing `if` and `strip`.
+    """
+    rules, variables = make_rules(text)
+    reached: dict[str, str] = {}
+    pending = [goal]
+    while pending:
+        name = pending.pop()
+        if name in reached or name not in rules:
+            continue
+        prerequisites, recipe = rules[name]
+        reached[name] = recipe
+        edges = [prerequisites]
+        edges += [line for line in recipe.splitlines() if "$(MAKE)" in line]
+        for edge in edges:
+            pending.extend(
+                word
+                for word in MAKE_WORD.findall(make_expanded(edge, variables))
+                if word in rules and word not in reached
+            )
+    return reached
+
+
+# Every generated missal layer, by the command that checks it. A layer that
+# leaves this tuple leaves the deployment gate with it, which is the whole
+# reason the tuple is written out rather than derived.
+MISSAL_LAYER_CHECKS = (
+    "$(SOURCE_READER_TOOL) check",
+    "$(SOURCE_READER_TOOL) structure --check",
+    "tools/tpt calendar-days check",
+    "tools/tpt check-calendar-masses",
+    "tools/tpt mass-propers structure --check",
+    "tools/tpt calendar-rubrics check",
+    "tools/tpt mass-ordinary check",
+)
+
+
 class GateTests(unittest.TestCase):
     """`make check` has to run the replay, or none of the above matters."""
 
@@ -237,6 +332,15 @@ class GateTests(unittest.TestCase):
         )
 
     def test_deployment_source_gate_checks_every_generated_missal_layer(self) -> None:
+        """Coverage, wherever the gate keeps it.
+
+        Each layer's check must be invoked by some recipe `make
+        check-deployment-sources` reaches --- the gate's own, a member target,
+        or a member of a member. What it no longer asserts is the order of the
+        seven, because targets the gate runs concurrently have none; ordering
+        only ever bought legible failure, and `check-act-history` still holds
+        that position as the gate's first plain prerequisite, asserted below.
+        """
         text = (ROOT / "Makefile").read_text(encoding="utf-8")
         heading = re.search(r"\ncheck-deployment-sources:([^\n]*)\n", text)
         self.assertIsNotNone(heading, "check-deployment-sources has no target")
@@ -245,27 +349,68 @@ class GateTests(unittest.TestCase):
             text,
             r"\ncheck-act-history:\n\t@\$\(PYTHON\) tools/tpt act-history structure --check\n",
         )
-        recipe = re.search(
-            r"\ncheck-deployment-sources:[^\n]*\n((?:\t.*\n)+)",
-            text,
+        reached = make_reached("check-deployment-sources", text)
+        self.assertIn(
+            "check-deployment-sources", reached, "the gate resolved to no rule at all"
         )
-        self.assertIsNotNone(recipe, "check-deployment-sources has no recipe")
-        body = recipe.group(1)
-        commands = (
-            "$(SOURCE_READER_TOOL) check",
-            "$(SOURCE_READER_TOOL) structure --check",
-            "tools/tpt calendar-days check",
-            "tools/tpt check-calendar-masses",
-            "tools/tpt mass-propers structure --check",
-            "tools/tpt calendar-rubrics check",
-            "tools/tpt mass-ordinary check",
+        self.assertIn(
+            "check-act-history",
+            reached,
+            "prerequisites did not resolve, so this searched the gate's own recipe "
+            "and nothing else",
         )
-        positions = []
-        for command in commands:
+        body = "\n".join(recipe for _, recipe in sorted(reached.items()))
+        for command in MISSAL_LAYER_CHECKS:
+            with self.subTest(command=command):
+                self.assertIn(
+                    command,
+                    body,
+                    "no recipe the deployment gate reaches invokes this; searched "
+                    f"{', '.join(sorted(reached))}",
+                )
+
+    def test_the_gate_resolution_follows_the_goal_and_not_the_whole_makefile(self) -> None:
+        """Both halves of what the assertion above rests on, on a fixture.
+
+        The freedom is worth nothing if the resolution cannot miss, and worth
+        less than the recipe regex it replaced if it cannot miss a command
+        parked where the gate never runs it.
+        """
+        fixture = (
+            "MEMBERS := gate-member\n"
+            "\n"
+            "gate: gate-first \\\n"
+            "\t\t$(if $(strip $(FLAGS)),$(MEMBERS))\n"
+            "\t$(if $(strip $(FLAGS)),,+@$(MAKE) $(MEMBERS))\n"
+            "\t@$(PYTHON) tools/tpt in-the-gates-own-recipe\n"
+            "\n"
+            "gate-first:\n"
+            "\t@$(PYTHON) tools/tpt in-a-plain-prerequisite\n"
+            "\n"
+            "gate-member: gate-deeper\n"
+            "\t@$(PYTHON) tools/tpt in-a-variable-named-member\n"
+            "\n"
+            "gate-deeper:\n"
+            "\t@$(PYTHON) tools/tpt in-a-member-of-a-member\n"
+            "\n"
+            "unrelated:\n"
+            "\t@$(PYTHON) tools/tpt where-the-gate-never-runs-it\n"
+        )
+        reached = make_reached("gate", fixture)
+        self.assertEqual(
+            sorted(reached), ["gate", "gate-deeper", "gate-first", "gate-member"]
+        )
+        body = "\n".join(reached.values())
+        for command in (
+            "in-the-gates-own-recipe",
+            "in-a-plain-prerequisite",
+            "in-a-variable-named-member",
+            "in-a-member-of-a-member",
+        ):
             with self.subTest(command=command):
                 self.assertIn(command, body)
-                positions.append(body.index(command))
-        self.assertEqual(sorted(positions), positions)
+        self.assertIn("where-the-gate-never-runs-it", fixture)
+        self.assertNotIn("where-the-gate-never-runs-it", body)
 
     def test_pages_installs_every_deployment_gate_python_dependency(self) -> None:
         """Trace the workflow's Python tool closure back to its exact locks.
@@ -277,6 +422,14 @@ class GateTests(unittest.TestCase):
         Derive the invoked tools from the workflow and Make recipes, walk their
         local imports, and require every external import to be owned by a lock
         that the workflow actually installs.
+
+        The derivation follows each invoked goal's whole closure, not the two
+        named recipes alone. Reading only those missed four tools the deploy
+        genuinely runs --- act-history, document-library, source-inventory and
+        source-library, all of them in member targets --- and would have gone
+        on missing whichever of the gate's own commands moved into a member
+        next. Where a command sits is a scheduling decision; what the deploy
+        imports is not.
         """
         workflow = (ROOT / ".github/workflows/pages.yml").read_text(
             encoding="utf-8"
@@ -330,17 +483,15 @@ class GateTests(unittest.TestCase):
             re.findall(r"tools/tpt\s+([a-z][a-z0-9-]*)", workflow)
         )
         for target in make_targets:
-            recipe = re.search(
-                rf"^{re.escape(target)}:[^\n]*\n((?:\t.*\n)+)",
-                makefile,
-                flags=re.MULTILINE,
+            reached = make_reached(target, makefile)
+            self.assertIn(
+                target, reached, f"workflow invokes missing target {target}"
             )
-            self.assertIsNotNone(recipe, f"workflow invokes missing target {target}")
-            body = recipe.group(1)
-            tool_ids.update(re.findall(r"tools/tpt\s+([a-z][a-z0-9-]*)", body))
-            for variable in re.findall(r"\$\(([A-Z_]+_TOOL)\)", body):
-                self.assertIn(variable, tool_variables)
-                tool_ids.add(tool_variables[variable])
+            for body in reached.values():
+                tool_ids.update(re.findall(r"tools/tpt\s+([a-z][a-z0-9-]*)", body))
+                for variable in re.findall(r"\$\(([A-Z_]+_TOOL)\)", body):
+                    self.assertIn(variable, tool_variables)
+                    tool_ids.add(tool_variables[variable])
 
         pending = [ROOT / "tools/tpt"] + [
             ROOT / "tools" / tool_id for tool_id in sorted(tool_ids)

@@ -169,6 +169,26 @@ REQUIRES: dict[str, tuple[str, str]] = {
     # 2026-09-04 and are built at deployment (guidance/repository.md). These
     # three read the installed tree, so a clone that has not been built has
     # nothing for them to report; `make check-installed` builds it first.
+    # These four read page counts out of the installed tree: `pages` comes from
+    # the built PDF and `unbuilt` from whether one exists. Their three siblings
+    # below were given this precondition when pdf/ stopped being tracked; these
+    # were missed, and diverge in any clone that has not been built.
+    "tools/document-library check": (
+        "path:pdf/claude",
+        "the installed tree; pdf/<provider>/ is built, not tracked",
+    ),
+    "tools/document-library check --provider claude": (
+        "path:pdf/claude",
+        "the installed tree; pdf/<provider>/ is built, not tracked",
+    ),
+    "tools/document-library structure --out build/example-catalogue": (
+        "path:pdf/claude",
+        "the installed tree; pdf/<provider>/ is built, not tracked",
+    ),
+    "tools/document-library structure --check": (
+        "path:pdf/claude",
+        "the installed tree; pdf/<provider>/ is built, not tracked",
+    ),
     "tools/document-library list --section biographies --provider claude": (
         "path:pdf/claude",
         "the installed tree; pdf/<provider>/ is built, not tracked",
