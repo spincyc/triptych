@@ -33,7 +33,7 @@ from pathlib import Path
 # which requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
-from _calendars import partition
+from _calendars import partition, read_yaml
 from _psalms import PSALMS, validate_psalm
 from _tooling import (
     Example,
@@ -838,7 +838,7 @@ def encode(root: Path) -> dict[str, object]:
     problems: list[str] = []
     for path in indexes(root):
         try:
-            document = yaml.safe_load(path.read_text(encoding="utf-8"))
+            document = read_yaml(path)
         except (OSError, yaml.YAMLError) as error:
             problems.append(f"{path}: unreadable: {error}")
             files[path.as_posix()] = {"encoded": 0, "already_encoded": 0}
@@ -884,7 +884,7 @@ def check(root: Path) -> dict[str, object]:
     excepted: list[str] = []
     for path in indexes(root):
         try:
-            document = yaml.safe_load(path.read_text(encoding="utf-8"))
+            document = read_yaml(path)
         except (OSError, yaml.YAMLError) as error:
             problems.append(f"{path}: unreadable: {error}")
             files[path.as_posix()] = {"passages": 0, "books": 0}

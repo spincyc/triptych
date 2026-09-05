@@ -22,7 +22,9 @@ refuses.
 """
 from __future__ import annotations
 
+import hashlib
 import json
+import os
 import re
 import tomllib
 from datetime import date as calendar_date
@@ -345,6 +347,51 @@ def restated_identity(root: Path, calendar: str | None = None) -> list[str]:
     return problems
 
 
+_YAML_CACHE = Path(__file__).resolve().parents[1] / "build" / "yaml-cache"
+_YAML_CACHE_VERSION = "1"
+_YAML_CACHE_FLOOR = 256 * 1024
+
+
+def _cache_entry(path: Path) -> Path | None:
+    """Where this file's parsed form is kept, or None where it is not cached."""
+    if os.environ.get("TRIPTYCH_YAML_CACHE") == "0":
+        return None
+    try:
+        stat = path.stat()
+    except OSError:
+        return None
+    if stat.st_size < _YAML_CACHE_FLOOR:
+        return None
+    key = "\0".join(
+        (_YAML_CACHE_VERSION, str(path.resolve()), str(stat.st_mtime_ns), str(stat.st_size))
+    )
+    digest = hashlib.sha256(key.encode("utf-8")).hexdigest()
+    return _YAML_CACHE / digest[:2] / f"{digest}.json"
+
+
+def _prune_yaml_cache(keep: int) -> None:
+    """Keep the newest *keep* entries and delete the rest.
+
+    Entries are keyed by mtime, so editing a megabyte calendar leaves the old
+    entry behind for nothing. About ten files clear the size floor, so this is
+    room for a couple of generations of each rather than a real limit; the
+    point is only that a month of editing cannot fill a disk.
+    """
+    try:
+        entries = sorted(
+            (path for path in _YAML_CACHE.rglob("*.json") if path.is_file()),
+            key=lambda path: path.stat().st_mtime,
+            reverse=True,
+        )
+    except OSError:
+        return
+    for stale in entries[keep:]:
+        try:
+            stale.unlink()
+        except OSError:
+            pass
+
+
 def read_yaml(path: Path):
     """Read a YAML file with the fastest SAFE loader this machine has.
 
@@ -361,11 +408,61 @@ def read_yaml(path: Path):
     objects, exactly as `safe_load` does not — and where libyaml is not
     installed this falls back to the pure-Python one and only the speed
     changes.
+
+    Above libyaml sits a parse cache, because the cost was never one parse.
+    `tests/tools/*.test` makes 421 tool invocations, each a cold interpreter,
+    and the tools compose each other as commands on purpose --- `mass-today`'s
+    `invoke` says why --- so a single `mass-today show` is four processes
+    re-scanning the same unchanged megabytes. A saving that does not outlive a
+    process is no saving here, so the cache is a file: the parsed document as
+    JSON under ignored `build/`, which `guidance/repository.md` already names
+    as where caches live. Loading it costs 0.010s against libyaml's 0.49s and
+    the pure-Python scanner's 2.09s for the 2.2 MB postconciliar propers.
+
+    It caches the derivation rather than adding a second one, and that is
+    checked per file every time an entry is written, not assumed once. A
+    document reaches the cache only if `json.loads(json.dumps(document))`
+    compares equal to it, so a file JSON cannot carry exactly is never cached
+    and is parsed as it always was --- two of this repository's 31 YAML files
+    today. The gate is that equality rather than a bare `try` because JSON
+    coerces silently: a mapping keyed by integers survives `json.dumps` and
+    returns keyed by strings, which is the reference that resolves
+    successfully and wrongly, and `guidance/the-shape.md` names that as the
+    one defect this repository exists to refuse.
+
+    The key is the file's path, mtime and size, so an edited calendar misses
+    rather than needing an invalidation anybody has to remember. Files below
+    `_YAML_CACHE_FLOOR` are parsed directly: they are already faster than the
+    round trip, and the suite writes thousands of small sandbox fixtures whose
+    entries would never be read twice. `TRIPTYCH_YAML_CACHE=0` disables it.
     """
     import yaml
 
+    entry = _cache_entry(path)
+    if entry is not None:
+        try:
+            return json.loads(entry.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            pass
+
     loader = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
-    return yaml.load(path.read_text(encoding="utf-8"), Loader=loader)
+    document = yaml.load(path.read_text(encoding="utf-8"), Loader=loader)
+
+    if entry is not None:
+        try:
+            encoded = json.dumps(document)
+            if json.loads(encoded) == document:
+                entry.parent.mkdir(parents=True, exist_ok=True)
+                # Written aside and renamed, because these run in parallel and
+                # a half-written entry read by a sibling is a wrong answer.
+                aside = entry.with_suffix(f".{os.getpid()}.tmp")
+                aside.write_text(encoded, encoding="utf-8")
+                os.replace(aside, entry)
+                _prune_yaml_cache(keep=24)
+        except (OSError, TypeError, ValueError, RecursionError):
+            pass
+
+    return document
 
 
 def _read(path: Path) -> dict:

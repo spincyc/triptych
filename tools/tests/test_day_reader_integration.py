@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import subprocess
 import tomllib
 import unittest
@@ -495,10 +496,21 @@ class DayReaderIntegrationTests(unittest.TestCase):
             payload = text(path)
             for sentinel in sentinels:
                 self.assertNotIn(sentinel, payload, path.as_posix())
-        for path in ROOT.rglob("*.html"):
-            if path == HTML or "build" in path.parts or ".git" in path.parts:
-                continue
-            self.assertNotIn("day-reader.html", text(path), path.as_posix())
+        # Pruned rather than filtered: `ROOT.rglob("*.html")` walks the whole
+        # repository including `.git`, whose object store is most of the files
+        # in it, and then discards those paths one at a time. Skipping the two
+        # directories during the walk visits the same HTML files.
+        for directory, dirnames, filenames in os.walk(ROOT):
+            dirnames[:] = [
+                name for name in dirnames if name not in {".git", "build"}
+            ]
+            for filename in filenames:
+                if not filename.endswith(".html"):
+                    continue
+                path = Path(directory) / filename
+                if path == HTML:
+                    continue
+                self.assertNotIn("day-reader.html", text(path), path.as_posix())
 
     def test_promised_deliverable_records_the_accepted_m3_day_slice(self) -> None:
         with (ROOT / "promised-deliverables.toml").open("rb") as handle:

@@ -28,6 +28,7 @@ import shlex
 import shutil
 import subprocess
 import time
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Any
 
@@ -2800,6 +2801,22 @@ class WorkflowEngine:
 
         Only the untouched per-check logs are written here. The result itself
         is persisted with the transition it produces, like any other result.
+
+        The checks are started together and judged in the order the stage
+        declares them, so the findings list, the disposition and every gate log
+        are exactly what running them one after another produced --- only the
+        waiting overlaps. A gate is the stage that spends the most time on the
+        least computation: `content-preflight` is fifteen commands, each a cold
+        `tpt` that exits in about a tenth of a second, and driving one run
+        through the propers workflow was 342 of them.
+
+        This is the one place that requires a gate check to be independent of
+        its siblings, and the requirement is met by what a gate check *is*:
+        `workflows/ARCHITECTURE.md` describes each as one command judged by its
+        exit code, and every check in this repository reads the tree and writes
+        nothing but its own log, whose name carries its own check id. A check
+        that mutated state another check reads would already have been an
+        ordering dependency nothing declared.
         """
         checks = stage.get("checks", [])
         # A gate command names the run's arguments and, under the reserved
@@ -2812,14 +2829,16 @@ class WorkflowEngine:
         stage_iter = _current_packet(state, stage["id"])["iteration"]
         log_dir = self.run_dir(run_id) / "gate-logs"
 
-        for check in checks:
-            check_id = check["id"]
-            command_template = check["command"]
-            # Arguments are shell-quoted: a document id is data, never a place
-            # to continue the command from.
-            command = _substitute_args(command_template, args, quote=True)
+        # Arguments are shell-quoted: a document id is data, never a place to
+        # continue the command from.
+        commands = [
+            _substitute_args(check["command"], args, quote=True) for check in checks
+        ]
+
+        def execute(command: str):
+            """Run one check, or return the exception that stopped it."""
             try:
-                proc = subprocess.run(
+                return subprocess.run(
                     command,
                     shell=True,
                     capture_output=True,
@@ -2827,6 +2846,21 @@ class WorkflowEngine:
                     cwd=self.repo_root,
                     timeout=300,
                 )
+            except (subprocess.TimeoutExpired, OSError) as error:
+                return error
+
+        if len(commands) > 1:
+            with ThreadPoolExecutor(max_workers=len(commands)) as pool:
+                outcomes = list(pool.map(execute, commands))
+        else:
+            outcomes = [execute(command) for command in commands]
+
+        for check, command, outcome in zip(checks, commands, outcomes):
+            check_id = check["id"]
+            try:
+                if isinstance(outcome, BaseException):
+                    raise outcome
+                proc = outcome
                 log_dir.mkdir(parents=True, exist_ok=True)
                 (log_dir / f"{stage['id']}-{stage_iter:04d}-{check_id}.log"
                  ).write_text(

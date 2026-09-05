@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import json
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -350,19 +351,24 @@ class ProductionProvenanceTests(unittest.TestCase):
         definition = json.loads(
             (_corpus.PIPELINE_ROOT / "proper.json").read_text("utf-8")
         )
-        engine = WorkflowEngine(ROOT, ROOT / "workflows")
+        # Against a copy of `workflows/`, because this edits a fragment to show
+        # the digest moves. Edited in place it was a tracked source file rewritten
+        # under every other test for the length of one write --- harmless while
+        # the suite ran one test at a time, and a wrong digest for whoever else
+        # was reading it once the suite ran tests at once. The engine takes its
+        # workflows directory as an argument, so the copy needs no other change.
+        workflows = Path(tempfile.mkdtemp(prefix="workflow-digest-"))
+        self.addCleanup(shutil.rmtree, workflows, ignore_errors=True)
+        shutil.copytree(ROOT / "workflows", workflows / "workflows",
+                        symlinks=True)
+        engine = WorkflowEngine(ROOT, workflows / "workflows")
         before = engine.workflow_source_digest(definition)
         fragment = "propers/author-proper.md"
         original = engine.load_fragment(fragment)
-        try:
-            (ROOT / "workflows" / "fragments" / fragment).write_text(
-                original + "\nOne further sentence.\n", encoding="utf-8"
-            )
-            after = engine.workflow_source_digest(definition)
-        finally:
-            (ROOT / "workflows" / "fragments" / fragment).write_text(
-                original, encoding="utf-8"
-            )
+        edited = workflows / "workflows" / "fragments" / fragment
+        edited.write_text(original + "\nOne further sentence.\n", encoding="utf-8")
+        after = engine.workflow_source_digest(definition)
+        edited.write_text(original, encoding="utf-8")
         self.assertNotEqual(before, after)
         self.assertEqual(engine.workflow_source_digest(definition), before)
 

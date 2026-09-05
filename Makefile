@@ -957,8 +957,14 @@ check-scripture-chronology:
 		$(PYTHON) tools/tpt scripture-chronology check; \
 	else echo "PyYAML missing; skipping scripture chronology check"; fi
 
+# One worker process per core, because the suite's time is overwhelmingly one
+# process waiting on another rather than arithmetic. `scripts/run_tests.py`
+# says how the work is divided and why the split is per module. It asserts
+# exactly what `python -m unittest discover -s tools/tests` asserts, and that
+# command still works unchanged --- use it, or `TEST_JOBS=-j1`, when a failure
+# wants a debugger and a single process.
 check-tests:
-	@$(PYTHON) -m unittest discover -s tools/tests
+	@$(PYTHON) scripts/run_tests.py $(TEST_JOBS)
 
 # Register only render-capable files owned by a document leaf. Research and
 # retrieval records remain authoritative tracked sources, but changing one does

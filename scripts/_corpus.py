@@ -55,6 +55,7 @@ filled the first time someone finds the blank inconvenient.
 """
 from __future__ import annotations
 
+import functools
 import json
 import re
 import subprocess
@@ -764,6 +765,7 @@ def _catalog_of(provider: str, leaf: str) -> str | None:
     return read_publication(record_path).get("catalog")
 
 
+@functools.lru_cache(maxsize=8)
 def documents(
     *, providers: tuple[str, ...] = PROVIDERS, extents: bool = True
 ) -> tuple[Document, ...]:
@@ -773,6 +775,15 @@ def documents(
     that shells out. A caller that wants names and authorship and not page
     counts should use it; a caller that wants to compare against the built PDF
     must not.
+
+    Memoized per argument pair. With ``extents=True`` this starts one `pdfinfo`
+    per document --- 188 processes, 1.37s --- and the test suite asks for the
+    same catalogue about eight times in a run. Both arguments are hashable and
+    `Document` is a frozen dataclass in a tuple, so the cached answer cannot be
+    edited by one caller under another. It caches for the life of a process: a
+    long-lived one that rebuilds a PDF and expects a new page count from the
+    same process must call `documents.cache_clear()`, which no caller does
+    today because every one of them is a short-lived command.
     """
     found: list[Document] = []
     for provider in providers:

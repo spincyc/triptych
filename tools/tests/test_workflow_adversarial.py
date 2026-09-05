@@ -1265,17 +1265,44 @@ class LauncherTests(unittest.TestCase):
         self.assertNotIn("{provider}", packet)
 
     def test_colliding_workflow_id_is_refused(self):
-        registry = json.loads((ROOT / "tmt.json").read_text(encoding="utf-8"))
+        """A workflow id that shadows a tool id is refused, in a copied repo.
+
+        The fixture plants a colliding pipeline and asks the launcher to refuse
+        it. It used to plant that file in *this* repository, and while it sat
+        there every `tpt` invocation anywhere refused with the same collision
+        --- invisible while the suite ran one test at a time, and, once the
+        suite ran tests concurrently, a failure landing on whichever unrelated
+        test happened to call a tool at that moment. It cost an afternoon to
+        find, because the test that fails is never the test that is wrong.
+
+        The launcher resolves its own root from its own path, not from the
+        working directory, so isolating it means running a copy: `tpt` reads
+        the `tmt.json` and `workflows/` that sit beside the file it was started
+        from. Copying `tools/`, `scripts/`, `workflows/` and the manifest is
+        about nine megabytes and a fraction of a second, and it is the whole
+        difference between a test that owns its fixture and one that edits the
+        repository other tests are reading.
+        """
+        sandbox = Path(tempfile.mkdtemp(prefix="tpt-collision-"))
+        self.addCleanup(shutil.rmtree, sandbox, ignore_errors=True)
+        for relative in ("tools", "scripts", "workflows"):
+            shutil.copytree(ROOT / relative, sandbox / relative,
+                            symlinks=True, ignore=shutil.ignore_patterns(
+                                "__pycache__", "tests"))
+        shutil.copy2(ROOT / "tmt.json", sandbox / "tmt.json")
+        launcher = sandbox / "tools" / "tpt"
+
+        registry = json.loads((sandbox / "tmt.json").read_text(encoding="utf-8"))
         victim = sorted(registry["tools"])[0]
-        pipeline = ROOT / "workflows" / "pipelines" / f"{victim}.json"
+        pipeline = sandbox / "workflows" / "pipelines" / f"{victim}.json"
         self.assertFalse(pipeline.exists(), "fixture would clobber a workflow")
         definition = json.loads(
-            (ROOT / "workflows" / "pipelines" / "proper.json").read_text())
+            (sandbox / "workflows" / "pipelines" / "proper.json").read_text())
         definition["id"] = victim
         pipeline.write_text(json.dumps(definition, indent=2), encoding="utf-8")
-        self.addCleanup(pipeline.unlink)
         for argv in ((victim, "--help"), ("--check",)):
-            done = self.tpt(*argv)
+            done = subprocess.run([str(launcher), *argv], capture_output=True,
+                                  text=True, cwd=sandbox)
             self.assertNotEqual(done.returncode, 0,
                                 f"tpt {' '.join(argv)} should refuse")
             self.assertIn("collides", done.stdout + done.stderr)

@@ -22,6 +22,7 @@ from pathlib import Path
 from typing import Iterable, Iterator, Mapping
 import copy
 import json
+import os
 import sys
 import tomllib
 
@@ -702,6 +703,75 @@ _SOURCE_LIBRARY_CACHE: dict[
 ] = {}
 
 
+SOURCE_LIBRARY_CACHE_DIR = TRUSTED_REPOSITORY / "build" / "source-library-cache"
+# A sandbox fixture is a handful of files; the real library is ~19,000. Below
+# this the load is already cheap and an entry would never be read twice, so the
+# suite's thousands of throwaway trees leave nothing behind.
+SOURCE_LIBRARY_CACHE_FLOOR = 1000
+
+
+def _source_tree_fingerprint(root: Path) -> tuple[str, int]:
+    """Identify the source tree by every file's path, mtime and size.
+
+    Stat-only, and it costs about 50ms over 19,000 files, against the three
+    seconds the load it guards takes. It covers payload bytes as well as the
+    TOML manifests deliberately: `_validate_passage_locators` reads the
+    artifact payloads, so its errors depend on them, and a fingerprint over
+    manifests alone would keep serving a verdict that an edited payload had
+    already falsified.
+    """
+    digest = sha256()
+    digest.update(str(root).encode("utf-8"))
+    counted = 0
+    for directory, subdirectories, names in os.walk(root):
+        # Sorted in place so `os.walk` descends in a fixed order: `os.scandir`
+        # returns directory entries in whatever order the filesystem gives, and
+        # this digest is order-dependent, so leaving it unsorted would compute a
+        # different fingerprint for an unchanged tree and never hit the cache.
+        subdirectories.sort()
+        for name in sorted(names):
+            entry = os.path.join(directory, name)
+            try:
+                stat = os.lstat(entry)
+            except OSError:
+                continue
+            digest.update(
+                f"{os.path.relpath(entry, root)}\0{stat.st_mtime_ns}\0{stat.st_size}\0".encode("utf-8")
+            )
+            counted += 1
+    return digest.hexdigest(), counted
+
+
+def _prune_source_library_cache(directory: Path, keep: int) -> None:
+    """Keep the newest *keep* entries; each is ~25MB and keyed by the tree."""
+    try:
+        entries = sorted(
+            (path for path in directory.glob("*.json") if path.is_file()),
+            key=lambda path: path.stat().st_mtime,
+            reverse=True,
+        )
+    except OSError:
+        return
+    for stale in entries[keep:]:
+        try:
+            stale.unlink()
+        except OSError:
+            pass
+
+
+def _source_library_cache_entry(root: Path) -> Path | None:
+    """Where this tree's parsed record projection is kept, or None."""
+    if os.environ.get("TRIPTYCH_SOURCE_LIBRARY_CACHE") == "0":
+        return None
+    sources = root / "src" / "sources"
+    if not sources.is_dir():
+        return None
+    fingerprint, counted = _source_tree_fingerprint(sources)
+    if counted < SOURCE_LIBRARY_CACHE_FLOOR:
+        return None
+    return SOURCE_LIBRARY_CACHE_DIR / f"{fingerprint}.json"
+
+
 def _source_library_records(
     calendar_root: Path,
 ) -> tuple[dict[str, dict[str, object]], list[str]]:
@@ -718,6 +788,23 @@ def _source_library_records(
     if cached is not None:
         records, problems = cached
         return records, list(problems)
+
+    # The in-process cache above answers a second call in one process. It never
+    # answers the first, and the first is what the suite pays: `tests/tools`
+    # starts hundreds of cold tools, and each of them loaded and validated the
+    # whole 19,000-file library from scratch to answer one question. So the
+    # projection is also kept on disk, keyed by the tree's own fingerprint.
+    entry = _source_library_cache_entry(root)
+    if entry is not None:
+        try:
+            held = json.loads(entry.read_text(encoding="utf-8"))
+            records = held["records"]
+            problems = tuple(held["problems"])
+            _SOURCE_LIBRARY_CACHE[root] = (records, problems)
+            return records, list(problems)
+        except (OSError, ValueError, KeyError, TypeError):
+            pass
+
     try:
         # ``calendar_root`` is a data location selected by ``mass-propers
         # --root``.  It must never become an executable-code search path: an
@@ -755,6 +842,23 @@ def _source_library_records(
     except Exception as error:  # the source tool is a sibling script, not an API
         records = {}
         problems = (f"cannot validate Latin provenance source records: {error}",)
+    if entry is not None:
+        # Written only when JSON carries it back unchanged, and compared rather
+        # than assumed: TOML has native dates and JSON has not, and a record
+        # that came back as a string where a date went in would be a source
+        # verdict that resolved successfully and wrongly.
+        try:
+            held = {"records": records, "problems": list(problems)}
+            encoded = json.dumps(held)
+            if json.loads(encoded) == held:
+                entry.parent.mkdir(parents=True, exist_ok=True)
+                aside = entry.with_suffix(f".{os.getpid()}.tmp")
+                aside.write_text(encoded, encoding="utf-8")
+                os.replace(aside, entry)
+                _prune_source_library_cache(entry.parent, keep=4)
+        except (OSError, TypeError, ValueError, RecursionError):
+            pass
+
     _SOURCE_LIBRARY_CACHE[root] = (records, problems)
     return records, list(problems)
 

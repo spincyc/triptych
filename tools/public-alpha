@@ -201,6 +201,9 @@ ORDINARY_LANGUAGE_ABSENCE_LOCATION_RE = re.compile(
     r"^\$\.language_absences\[[0-9]+\]$"
 )
 _PROTECTED_IDENTITY_PATTERNS: dict[str, re.Pattern[str] | None] = {}
+_PROTECTED_IDENTITY_MARKERS: dict[str, tuple[int, tuple[str, ...]]] = {}
+# Short enough that every identity has one, long enough to be rare in prose.
+MARKER_LENGTH = 8
 _POSTCONCILIAR_QUARANTINE_HASHES: dict[
     tuple[str, int, int], frozenset[str]
 ] = {}
@@ -1138,7 +1141,44 @@ def protected_source_identity_pattern() -> re.Pattern[str] | None:
         else None
     )
     _PROTECTED_IDENTITY_PATTERNS[cache_key] = pattern
+    _PROTECTED_IDENTITY_MARKERS[cache_key] = (
+        (
+            min(len(identity) for identity in protected),
+            tuple(sorted({identity[:MARKER_LENGTH] for identity in protected})),
+        )
+        if protected
+        else (0, ())
+    )
     return pattern
+
+
+def protected_source_identity_markers() -> tuple[int, tuple[str, ...]]:
+    """A sound, cheap pre-filter for the pattern above: (minimum, markers).
+
+    Searching the pattern is the most expensive thing `prepare` does --- 132 KB
+    of alternation over 1,146 identities, against every string in every
+    structure file. Both parts of this decide only where a match is
+    *impossible*, so neither can hide a match:
+
+    * `minimum` is the shortest identity. Every alternative in the pattern is a
+      `re.escape`d literal, so a string shorter than that cannot contain one.
+    * `markers` are the distinct leading `MARKER_LENGTH` characters of the
+      identities. If a string contains identity `I`, it contains `I[:n]`, so a
+      string containing no marker contains no identity. Today the 1,146
+      identities yield exactly two markers, `artifact` and `edition.`, and two
+      C-level substring checks cost a fraction of one 132 KB regex search.
+
+    The markers are DERIVED from the identities every time, never written down
+    here. That is the whole safety of it: an identity in some new shape extends
+    the marker set by itself, where a hardcoded `("artifact.", "edition.")`
+    would silently stop matching it and the gate would pass what it cannot see.
+    A positive result still comes from the pattern; these only skip strings the
+    pattern could not have matched.
+    """
+    cache_key = str(ROOT.resolve())
+    if cache_key not in _PROTECTED_IDENTITY_MARKERS:
+        protected_source_identity_pattern()
+    return _PROTECTED_IDENTITY_MARKERS.get(cache_key, (0, ()))
 
 
 def postconciliar_quarantined_text_hashes() -> frozenset[str]:
@@ -1249,6 +1289,7 @@ def validate_liturgical_public_data(path: Path) -> None:
     ):
         return
     protected_identity = protected_source_identity_pattern()
+    protected_minimum, protected_markers = protected_source_identity_markers()
 
     def visit(value: object, location: str = "$") -> None:
         if isinstance(value, list):
@@ -1256,7 +1297,15 @@ def validate_liturgical_public_data(path: Path) -> None:
                 visit(item, f"{location}[{index}]")
             return
         if isinstance(value, str):
-            match = protected_identity.search(value) if protected_identity is not None else None
+            # Skipped only where a match is impossible: too short to hold the
+            # shortest identity, or holding no identity's leading characters.
+            # See protected_source_identity_markers.
+            searchable = (
+                protected_identity is not None
+                and len(value) >= protected_minimum
+                and any(marker in value for marker in protected_markers)
+            )
+            match = protected_identity.search(value) if searchable else None
             if match is not None:
                 raise ReleaseError(
                     f"{label} {location}: protected source identity {match.group(0)!r} "

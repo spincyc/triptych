@@ -37,6 +37,7 @@ from _calendars import (
     mass_index,
     partition,
     proper_family,
+    read_yaml,
     recension_problems,
     resolve_propers,
     restated_identity,
@@ -2388,7 +2389,7 @@ def check_file(path: Path, problems: list[str]) -> dict[str, int]:
     import yaml
 
     try:
-        document = yaml.safe_load(path.read_text(encoding="utf-8"))
+        document = read_yaml(path)
     except (OSError, yaml.YAMLError) as error:
         problems.append(f"{path}: unreadable: {error}")
         return {"masses": 0, "propers": 0}
@@ -2803,7 +2804,7 @@ def spine_problems(paths: list[Path]) -> list[str]:
             problems.append(f"{path}: cannot derive the spine: {error}")
             continue
         try:
-            document = yaml.safe_load(path.read_text(encoding="utf-8"))
+            document = read_yaml(path)
         except (OSError, yaml.YAMLError):
             continue  # already reported by check_file
         if not isinstance(document, dict):
@@ -3016,8 +3017,8 @@ def span_problems(paths: list[Path]) -> list[str]:
         if not source.is_file():
             continue
         try:
-            rubrics = yaml.safe_load(source.read_text(encoding="utf-8"))
-            document = yaml.safe_load(path.read_text(encoding="utf-8"))
+            rubrics = read_yaml(source)
+            document = read_yaml(path)
         except (OSError, yaml.YAMLError) as error:
             problems.append(f"{source}: unreadable: {error}")
             continue
@@ -3097,7 +3098,7 @@ def order_problems(paths: list[Path]) -> list[str]:
         if not order:
             continue
         try:
-            document = yaml.safe_load(path.read_text(encoding="utf-8"))
+            document = read_yaml(path)
         except (OSError, yaml.YAMLError):
             continue
         if not isinstance(document, dict):
@@ -3407,7 +3408,7 @@ def overlay_problems(paths: list[Path]) -> tuple[list[str], list[dict]]:
         try:
             import yaml
 
-            calendar_document = yaml.safe_load(path.read_text(encoding="utf-8"))
+            calendar_document = read_yaml(path)
         except (OSError, yaml.YAMLError) as error:
             problems.append(f"{path}: cannot validate untranslated targets: {error}")
             calendar_document = {}

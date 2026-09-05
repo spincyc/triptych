@@ -15,10 +15,12 @@ by digest rather than copied or quoted.
 from __future__ import annotations
 
 import csv
+import functools
 import hashlib
 from html.parser import HTMLParser
 import io
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -666,12 +668,28 @@ def decoded_text(path: Path) -> str | None:
         return None
 
 
-def artifact_manifests(works_root: Path = WORKS_ROOT) -> list[tuple[Path, dict]]:
-    """Read the source library instead of maintaining a second protected list."""
-    return [
+@functools.lru_cache(maxsize=4)
+def _read_artifact_manifests(works_root: Path) -> tuple[tuple[Path, dict], ...]:
+    """Parse every artifact manifest once per run.
+
+    Eleven test methods below ask for the protected artifacts, and each ask
+    re-globbed `src/sources/works` and re-parsed all 2,131 manifests: a quarter
+    of a second each, three seconds across the class, to read a tree no test
+    writes to. The corpus cannot change while the suite runs, so it is read
+    once. This is the same thing `test_chronology.py` does with `setUpClass`,
+    at module scope because the callers are spread across several classes.
+
+    Treat the records as read-only; they are shared with every later caller.
+    """
+    return tuple(
         (path, tomllib.loads(path.read_text(encoding="utf-8")))
         for path in sorted(works_root.glob("**/artifact.toml"))
-    ]
+    )
+
+
+def artifact_manifests(works_root: Path = WORKS_ROOT) -> list[tuple[Path, dict]]:
+    """Read the source library instead of maintaining a second protected list."""
+    return list(_read_artifact_manifests(works_root))
 
 
 def protected_artifact_manifests(
@@ -1477,6 +1495,40 @@ def protected_digests(records: list[tuple[Path, dict]]) -> dict[str, str]:
     }
 
 
+PDF_TEXT_CACHE = ROOT / "build" / "pdf-text-cache"
+
+
+def extracted_pdf_text(pdftotext: str, path: Path, digest: str) -> tuple[int, bytes]:
+    """`pdftotext` over one PDF, remembered by the PDF's own sha256.
+
+    The rights gate below scans every published PDF --- 210 of them, a quarter
+    of a gigabyte --- and extracting their text was twenty seconds, the slowest
+    single test in the suite. The bytes are already hashed here to compare
+    against protected artifacts, so that hash is the cache key: an entry can
+    only be read back for a file with exactly the content that produced it, and
+    a changed PDF has a different name rather than a stale entry.
+
+    Only a successful extraction is stored. A `pdftotext` that failed must fail
+    again next time rather than be remembered as an empty scan, which would be
+    a rights gate reporting that it read a PDF it did not read.
+    """
+    entry = PDF_TEXT_CACHE / digest[:2] / f"{digest}.txt"
+    try:
+        return 0, entry.read_bytes()
+    except OSError:
+        pass
+    run = subprocess.run([pdftotext, str(path), "-"], capture_output=True, check=False)
+    if run.returncode == 0:
+        try:
+            entry.parent.mkdir(parents=True, exist_ok=True)
+            aside = entry.with_suffix(f".{os.getpid()}.tmp")
+            aside.write_bytes(run.stdout)
+            os.replace(aside, entry)
+        except OSError:
+            pass
+    return run.returncode, run.stdout
+
+
 def download_findings(
     paths: list[Path],
     digests: dict[str, str],
@@ -1516,10 +1568,9 @@ def download_findings(
                 )
             )
         elif path.suffix.lower() == ".pdf" and pdftotext:
-            run = subprocess.run(
-                [pdftotext, str(path), "-"],
-                capture_output=True,
-                check=False,
+            returncode, stdout = extracted_pdf_text(pdftotext, path, digest)
+            run = subprocess.CompletedProcess(
+                args=[pdftotext, str(path), "-"], returncode=returncode, stdout=stdout
             )
             if run.returncode:
                 findings.append(f"{path}: pdftotext failed; PDF content was not scanned")

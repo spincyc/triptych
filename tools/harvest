@@ -283,7 +283,7 @@ def _load(path: Path) -> dict:
 
     if not path.is_file():
         return {}
-    return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    return _calendars.read_yaml(path) or {}
 
 
 def _umask() -> int:

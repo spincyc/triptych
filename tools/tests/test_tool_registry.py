@@ -13,6 +13,7 @@ that no `--list` group claims disappears from the only listing a reader reads.
 
 from __future__ import annotations
 
+import functools
 import importlib.machinery
 import importlib.util
 import json
@@ -21,6 +22,7 @@ import re
 import subprocess
 import tempfile
 import unittest
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -45,7 +47,17 @@ def registry() -> dict[str, dict]:
     return json.loads(MANIFEST.read_text(encoding="utf-8"))["tools"]
 
 
+@functools.lru_cache(maxsize=None)
 def help_text(*argv: str) -> str:
+    """What `tpt <argv> --help` prints, asked of the launcher once.
+
+    Four tests in `WorkedExampleTests` each walk every registered tool and
+    every verb of it, and each walk asked the launcher again for help pages the
+    walk before had already read: 41 tools and their verbs, four times over,
+    around 40 seconds of launcher processes to read text that cannot change
+    while the suite runs. A failure still reports the same text, because it is
+    the same text.
+    """
     result = subprocess.run(
         [str(LAUNCHER), *argv, "--help"], capture_output=True, text=True, cwd=ROOT,
     )
@@ -80,18 +92,27 @@ class ToolRegistryTests(unittest.TestCase):
                 self.assertTrue(os.access(path, os.X_OK), f"{name}: {path} not executable")
 
     def test_every_implementation_is_registered(self) -> None:
+        """Every file under tools/ is the implementation of a registered id.
+
+        `resolved` does not depend on the file being checked, so it is built
+        once. It used to be built inside the loop, which asked the launcher to
+        resolve all 41 registered ids once per file on disk --- 1,681 launcher
+        processes to answer a question 41 answer, and 68 seconds, which was the
+        slowest single test in the suite. The set is the same set and the
+        assertion is the same assertion.
+        """
         registered = set(registry())
+        resolved = {
+            Path(subprocess.run(
+                [str(LAUNCHER), "--path", name],
+                capture_output=True, text=True, cwd=ROOT,
+            ).stdout.strip()).name
+            for name in registered
+        }
         for path in sorted(TOOLS.iterdir()):
             if not path.is_file() or path.name.endswith(COMPANION_SUFFIXES):
                 continue
             with self.subTest(tool=path.name):
-                resolved = {
-                    Path(subprocess.run(
-                        [str(LAUNCHER), "--path", name],
-                        capture_output=True, text=True, cwd=ROOT,
-                    ).stdout.strip()).name
-                    for name in registered
-                }
                 self.assertIn(path.name, resolved)
 
     def test_no_id_can_shadow_a_launcher_option(self) -> None:
@@ -513,13 +534,38 @@ class ToolSmokeTests(unittest.TestCase):
                 self.assertTrue(os.access(script, os.X_OK))
 
     def test_shell_smoke_tests_pass(self) -> None:
+        """Run all forty, concurrently, and assert each one exactly as before.
+
+        Between them these scripts start 421 cold tools, and a tool composes
+        others as further processes, so nearly all of the wall time is this
+        process waiting on another. Run one after another it was the longest
+        thing in the suite by a wide margin.
+
+        They are safe to overlap because each already builds its own sandbox:
+        thirty-nine call `mktemp -d` and write only inside it, and the fortieth
+        (`tpt.test`) only reads the registry. Nothing here writes into the
+        repository, which was checked rather than assumed --- and it is the
+        property to re-check before adding a script that wants a fixed path.
+
+        Threads rather than processes because `subprocess.run` waits with the
+        GIL released. Every assertion stays where it was: the scripts are run
+        concurrently, then judged one at a time, so a failure still names its
+        own script through `subTest` and reports that script's own output.
+        """
         suite = sorted((ROOT / "tests" / "tools").glob("*.test"))
         self.assertTrue(suite, "no shell smoke tests found")
-        for script in suite:
+
+        def run(script: Path) -> subprocess.CompletedProcess:
+            return subprocess.run(
+                ["sh", str(script)], capture_output=True, text=True, cwd=ROOT,
+            )
+
+        workers = min(len(suite), (os.cpu_count() or 1) * 2)
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            results = list(pool.map(run, suite))
+
+        for script, result in zip(suite, results):
             with self.subTest(test=script.name):
-                result = subprocess.run(
-                    ["sh", str(script)], capture_output=True, text=True, cwd=ROOT,
-                )
                 self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
 

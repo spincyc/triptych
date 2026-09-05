@@ -566,6 +566,18 @@ bytes the leaf reproduces. Each is one check, one command,
 `tools/tpt check-content-preflight --check <name>`, judged by exit code like
 every other gate check.
 
+A gate's checks must be independent of one another. The engine starts them
+together and judges them in the order the stage declares, so the findings, the
+disposition and the per-check logs are what running them one after another
+produced; what it no longer provides is an order for them to depend on. That
+was always the shape of the thing — one command, its own log, judged by its own
+exit code, reading the tree and writing nothing else — and it is now a
+requirement rather than an accident of how the loop happened to run. A check
+that must observe another check's effect belongs in a later stage, not beside
+it. The reason it is written down: fifteen cold `tpt` processes at about a
+tenth of a second each made a gate the slowest stage in the workflow, and
+driving one propers run through the test suite spent 342 of them waiting.
+
 Since version 16 there is a sixth, and it is the one check here that the tree
 cannot answer alone. `provenance-matches-run` holds the leaf's
 `\AIGenerationProvenance` record — the workflow, version, source digest, run

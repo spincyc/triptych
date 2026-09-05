@@ -355,6 +355,14 @@ class TrackedProjectionTests(unittest.TestCase):
         if not index.is_file():
             raise unittest.SkipTest("run `make source-projection` first")
         cls.spine = json.loads(index.read_text(encoding="utf-8"))
+        # Read once for the class. Four tests below walk the same 730 edition
+        # projections and parse every one of them again; the tree cannot change
+        # between them, and `setUpClass` is where this class already reads the
+        # spine for the same reason.
+        cls.editions = [
+            (path, json.loads(path.read_text(encoding="utf-8")))
+            for path in sorted((TRACKED / "editions").rglob("*.json"))
+        ]
 
     def test_the_spine_carries_no_prose(self) -> None:
         """A search index that shipped the corpus would be the whole failure."""
@@ -373,8 +381,7 @@ class TrackedProjectionTests(unittest.TestCase):
         """
         readable: set[str] = set()
         withheld: set[str] = set()
-        for path in (TRACKED / "editions").rglob("*.json"):
-            payload = json.loads(path.read_text(encoding="utf-8"))
+        for path, payload in self.editions:
             for row in payload["passages"]:
                 (readable if row["readable"] else withheld).add(row["id"])
         written = {
@@ -384,8 +391,7 @@ class TrackedProjectionTests(unittest.TestCase):
         self.assertEqual(written, readable)
 
     def test_every_withheld_passage_states_its_reason(self) -> None:
-        for path in (TRACKED / "editions").rglob("*.json"):
-            payload = json.loads(path.read_text(encoding="utf-8"))
+        for path, payload in self.editions:
             for row in payload["passages"]:
                 if row["readable"]:
                     continue
@@ -409,8 +415,7 @@ class TrackedProjectionTests(unittest.TestCase):
                     self.assertTrue(str(edition.get("title") or "").strip())
 
     def test_every_passage_controller_is_in_the_displayed_source_set(self) -> None:
-        for path in (TRACKED / "editions").rglob("*.json"):
-            payload = json.loads(path.read_text(encoding="utf-8"))
+        for path, payload in self.editions:
             artifacts = {one["id"] for one in payload["artifacts"]}
             for passage in payload["passages"]:
                 controller = passage.get("artifact_id")
@@ -425,8 +430,7 @@ class TrackedProjectionTests(unittest.TestCase):
             for work in self.spine["works"]
             for edition in work["editions"]
         }
-        for path in (TRACKED / "editions").rglob("*.json"):
-            payload = json.loads(path.read_text(encoding="utf-8"))
+        for path, payload in self.editions:
             rights = indexed[payload["edition"]["id"]]
             for passage in payload["passages"]:
                 if not passage.get("rights"):

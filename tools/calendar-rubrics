@@ -361,7 +361,7 @@ def load_source(root: Path, name: str) -> dict:
     import yaml
 
     path = root / name / SOURCE_NAME
-    document = yaml.safe_load(path.read_text(encoding="utf-8"))
+    document = _calendars.read_yaml(path)
     if not isinstance(document, dict):
         raise SourceError(f"{path}: top level must be a mapping")
     missing = [field for field in REQUIRED_TOP if field not in document]

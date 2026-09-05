@@ -15,6 +15,8 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Iterator
 
+from _calendars import read_yaml
+
 import yaml
 
 
@@ -161,7 +163,7 @@ def _document_at(path: Path, mtime_ns: int, size: int) -> object:
     if path.suffix == ".toml":
         return tomllib.loads(text)
     if path.suffix in {".yaml", ".yml"}:
-        return yaml.safe_load(text)
+        return read_yaml(path)
     return None
 
 
