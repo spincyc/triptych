@@ -49,7 +49,7 @@ The authored leaf now has the real `main.tex` owner, the full and synthesis
 branches, all ten received text pairs, the component manifest and 54 source
 bindings. The authoring reuse audit records exact Latin and English agreement
 with the accepted controls. The current builds contain 20 full-edition pages
-and 14 synthesis-edition pages. The prescribed authoring stage passed, including
+and 13 synthesis-edition pages. The prescribed authoring stage passed, including
 focused preflight, run provenance, component pagination and web eligibility.
 The workflow's program content-preflight gate passed. Its first content
 evaluation joined all five lane results and required changes. The engine's
@@ -84,7 +84,16 @@ Its tracked evaluation record now reports iteration 1, PASS and zero standing
 findings. Artifact building passed with 20 full-edition and 14 synthesis pages,
 34 review rasters and both contact sheets. Each final build log has one empty
 underfull box after generation metadata; neither has fatal errors, undefined
-references or overfull boxes. The workflow is running its mechanical gates.
+references or overfull boxes. Mechanical gates passed. All four fresh visual
+lanes completed at high effort: three returned PASS, while page rhythm raised
+`VIS-RHY-001` against the synthesis appendix spill on page 12. The engine
+joined their unchanged results and routed that finding to visual revision.
+The revision passed after replacing the synthesis-only forced References
+break with the existing section guard. The appendix tail and References now
+share page 12, and the synthesis ends on page 13 with all text and type sizes
+preserved. Both editions were rebuilt and their terminal pages inspected;
+source validation passed after inventory and catalogue refresh. The mechanical
+gates are running again, and renewed visual evaluation remains outstanding.
 
 The full `make check-sources` check now **passes**. The documented inventory
 refresh added the target's actual source surface and reconciled the two
