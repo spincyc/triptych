@@ -58,8 +58,13 @@ standing findings are `CON-EVI-001`, `CON-SYN-001`, `CON-CIT-001a`,
 research-owned citation findings to research iteration 1 and carried the four
 authoring findings forward. The complete findings are preserved unchanged in
 the leaf's engine-written `evaluations/blocking-findings-v1.toml`. All seven
-fresh research lanes are repeating their full prescribed sweeps at the
-packet-specified efforts.
+fresh research lanes completed their second full sweeps at the packet-specified
+efforts. The engine joined 116 findings and accepted research synthesis
+iteration 1. The revised brief preserves that complete evidence set and all
+fourteen chronology assertions, supplies the missing Gerard and Anthony
+citation bundles, and carries all six standing findings. Source registration
+iteration 1 is in progress. The standing findings remain open until the
+workflow's subsequent evaluation accepts their repairs.
 
 The full `make check-sources` check now **passes**. The documented inventory
 refresh added the target's actual source surface and reconciled the two
@@ -71,8 +76,8 @@ review units, without claiming family screening or atomic citation coverage.
 The generated document catalogue now records both new editions as not
 installed. No placeholder publication owner or checker change was needed.
 
-Passing content evaluation remains outstanding, together with both reviewed PDFs, the
-canonical web edition and release records remain outstanding. No guide has
+Passing content evaluation, review of both PDFs, the canonical web edition
+and release records remain outstanding. No guide has
 been installed or accepted. Reconcile this entry to the engine's terminal
 disposition and preserve any unresolved findings before reporting the
 workflow finished; a `BLOCKED` run does not establish publication acceptance.
