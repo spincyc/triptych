@@ -165,13 +165,29 @@ REQUIRES: dict[str, tuple[str, str]] = {
         "path:build/core-last-20.pdf",
         "a built PDF; no target produces this one, so a fresh clone has no copy",
     ),
+    # Reader-facing PDFs under pdf/<provider>/ stopped being tracked on
+    # 2026-09-04 and are built at deployment (guidance/repository.md). These
+    # three read the installed tree, so a clone that has not been built has
+    # nothing for them to report; `make check-installed` builds it first.
+    "tools/document-library list --section biographies --provider claude": (
+        "path:pdf/claude",
+        "the installed tree; pdf/<provider>/ is built, not tracked",
+    ),
+    "tools/document-library show --document articles/faith/ontological-vertigo --provider claude": (
+        "path:pdf/claude",
+        "the installed tree; pdf/<provider>/ is built, not tracked",
+    ),
+    "tools/public-alpha check --preview": (
+        "path:pdf/claude",
+        "the installed tree; pdf/<provider>/ is built, not tracked",
+    ),
     "tools/public-alpha build --preview": (
-        "pins:requirements-public-alpha.txt",
-        "the locked renderer; public-alpha refuses to build against any other version",
+        ("pins:requirements-public-alpha.txt", "path:pdf/claude"),
+        "the locked renderer and the installed tree it renders from",
     ),
     "tools/public-alpha verify --preview": (
-        "pins:requirements-public-alpha.txt",
-        "the locked renderer; the tree to verify is the one `build --preview` writes",
+        ("pins:requirements-public-alpha.txt", "path:pdf/claude"),
+        "the locked renderer and the tree `build --preview` writes from it",
     ),
     "tools/public-alpha verify --preview --deployment-target github-pages": (
         "pins:requirements-public-alpha.txt",
@@ -397,13 +413,25 @@ def compare(capture: Capture, actual: list[str]) -> list[str]:
     return problems
 
 
-def unmet(requirement: str) -> bool:
-    kind, _, value = requirement.partition(":")
-    if kind == "path":
-        return not (ROOT / value).exists()
-    if kind == "pins":
-        return not pins_installed(ROOT / value)
-    raise AssertionError(f"unknown requirement kind: {requirement}")
+def unmet(requirement: str | tuple[str, ...]) -> str | None:
+    """The first precondition this checkout does not hold, or None if it holds all.
+
+    An invocation can want more than one thing at once — the locked renderer
+    *and* an installed tree — and reporting the first missing one by name is
+    what keeps "not run here" from reading as "quietly skipped".
+    """
+    requirements = (requirement,) if isinstance(requirement, str) else requirement
+    for entry in requirements:
+        kind, _, value = entry.partition(":")
+        if kind == "path":
+            if not (ROOT / value).exists():
+                return entry
+        elif kind == "pins":
+            if not pins_installed(ROOT / value):
+                return entry
+        else:
+            raise AssertionError(f"unknown requirement kind: {entry}")
+    return None
 
 
 def pins_installed(requirements: Path) -> bool:
@@ -536,8 +564,10 @@ def replay_one(capture: Capture) -> Result:
     if exempt:
         return Result(capture, "exempt", reason=exempt)
     required = REQUIRES.get(capture.command)
-    if required and unmet(required[0]):
-        return Result(capture, "not-run", reason=f"{required[1]} ({required[0]})")
+    if required:
+        missing = unmet(required[0])
+        if missing:
+            return Result(capture, "not-run", reason=f"{required[1]} ({missing})")
     started = time.monotonic()
     try:
         actual, exit_status = run(capture.command)

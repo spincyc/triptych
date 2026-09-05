@@ -2,6 +2,7 @@ PDFLATEX ?= pdflatex
 PYTHON ?= python3
 PROVIDER ?= gpt
 PDF_JOBS ?= 4
+PDFLATEX_MAX_PASSES ?= 5
 SHA256 ?= sha256sum
 INSTALL ?= install
 
@@ -229,7 +230,7 @@ override _TRIPTYCH_PDF_JOBS_INVALID = $(strip \
 override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALLEL_FLAGS)),,\
 	$(if $(_TRIPTYCH_PDF_JOBS_INVALID),$(error PDF_JOBS requires a positive integer),--jobs=$(PDF_JOBS)))
 
-.PHONY: all pdf review-pdfs review-all-pdfs install list help clean \
+.PHONY: all pdf review-pdfs review-all-pdfs install install-all list help clean \
 	distclean check-tools check-tool-registry check-calendar-days \
 	check-calendar-masses check-act-history \
 	check-propers-census check-propers-structure \
@@ -250,7 +251,8 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	verify-public-site verify-public-preview \
 	check-mass-ordinary check-scripture-chronology \
 	check-release-bindings refresh-release-bindings approve-release \
-	add-publication doc review-doc install-doc check check-tests \
+	add-publication doc review-doc install-doc check check-installed \
+	check-all check-tests \
 	check-browser-static check-browser-gate check-browser-harnesses \
 	check-examples recapture-examples \
 	altar-server-guides review-altar-server-guides install-altar-server-guides \
@@ -307,6 +309,19 @@ install: check-metadata $(INSTALLED_PDFS)
 		[ "$$actual" = "$$expected" ] || { echo "Validation stamp does not match current PDF/checker: $$document" >&2; exit 1; }; \
 		cmp -s "$$pdf" "$(PDF_ROOT)/$$document.pdf" || { echo "Installed PDF differs from reviewed build: $$document"; exit 1; }; \
 	done
+
+# Every provider's installed tree, in one command.
+#
+# `install` publishes one provider because DOCUMENTS, BUILD_ROOT and PDF_ROOT
+# are all derived from PROVIDER while the makefile is read; a second provider
+# is therefore a second read of it rather than a second list of targets. The
+# gates below that read pdf/ read every provider's, so this is what they order
+# the build through.
+install-all:
+	@set -eu; \
+		for provider in $(PROVIDERS); do \
+			$(MAKE) --no-print-directory install PROVIDER="$$provider"; \
+		done
 
 list:
 	@printf '%s\n' $(DOCUMENTS)
@@ -452,7 +467,8 @@ help:
 		'make pdf      Build incrementally in the current Make jobserver' \
 		'make review-pdfs  Build with at most $(PDF_JOBS) jobs, then raster changed PDFs' \
 		'make review-all-pdfs  Build with at most $(PDF_JOBS) jobs, then raster every PDF' \
-		'make install  Publish built PDFs into the mirrored tracked pdf/ tree' \
+		'make install  Publish built PDFs into the mirrored pdf/ tree' \
+		'make install-all  Publish every provider, which is what the pdf/ gates read' \
 		'make doc DOC=<id>  Build one document below src/$$PROVIDER/' \
 		'make review-doc DOC=<id>  Build one document and raster it for page review' \
 		'make install-doc DOC=<id>  Build, gate, and install one document' \
@@ -499,9 +515,11 @@ help:
 		'make tracks [PLAN=<plan>]  Typeset and install every track of the abridged plan' \
 		'make track VOLUME=<id>  Typeset and install one track' \
 		'make review-track VOLUME=<id>  Typeset one track and raster it for page review' \
-		'make check-tracks [PLAN=<plan>]  Prove every track can be set and is installed current' \
+		'make check-tracks [PLAN=<plan>]  Rebuild every track and prove it reproduces the bytes release/public-alpha.json binds' \
 		'make reading-structure  Rewrite the browser structure of every abridged plan' \
-		'make check    Run every repository policy check' \
+		'make check    Run every policy check over tracked sources; names the ones it leaves' \
+		'make check-installed  Install every provider, then run the checks that read pdf/' \
+		'make check-all  Run check and check-installed' \
 		'make check-calendar-days  Refuse stale generated calendar-day structures' \
 		'make check-calendar-rubrics  Validate the rubrical precedence sources and their solved cases' \
 		'make check-propers-census  Refuse a document whose derived count table has gone stale' \
@@ -755,16 +773,65 @@ rebaseline-doc:
 	fi
 	@$(PYTHON) $(RESEARCH_STALENESS_TOOL) rebaseline --provider '$(PROVIDER)' --id '$(DOC)'
 
+# The gates that read the installed tree.
+#
+# Installed PDFs stopped being tracked on 2026-09-04 and are built during
+# deployment instead (guidance/repository.md). Everything named here therefore
+# reads build output, and on a checkout that has not been built it fails for
+# want of files rather than for want of correctness. Measured against a tree
+# holding the six tracked reading tracks and nothing else under pdf/:
+# `check-document-catalogue` reports 204 editions with no installed PDF and a
+# drifted corpus.json, `check-public-alpha` refuses 204 release entries,
+# `check-promised-deliverables` cannot find 23 pieces of evidence, and
+# `check-sources` stops at `check-curriculum-rights`, which counts 0 installed
+# curriculum PDFs against 37. The whole of `check-sources` is here rather than
+# that one census because the census is reached through it.
+#
+# `check-release-bindings` is deliberately absent: the six volumes under
+# pdf/reading-plans/ stay tracked, so its recorded site sources are still on
+# disk in a fresh checkout, and it was measured passing there. It belongs here
+# the day that exception ends.
+INSTALLED_TREE_CHECKS := check-sources check-document-catalogue \
+	check-promised-deliverables check-public-alpha
+
 # Staleness stays out of `check`: it flags re-evaluation work, not breakage.
+#
+# `check` is the gate over tracked sources, and it is kept cheap deliberately.
+# Nineteen of its twenty members have nothing to do with PDFs at all and the
+# twentieth reads only the six tracked reading tracks; not one of them runs
+# pdflatex, though `check-metadata` still asks `check-tools` that it is
+# installed. Putting the build in front of them would have made every source
+# edit pay for two providers' LaTeX runs to answer twenty questions, nineteen
+# of which are not about PDFs.
+#
+# The four that are about installed publications moved to `check-installed`,
+# which orders the build ahead of them, and `check-all` is both. A member that
+# quietly stopped running would be this project's governing defect, so `check`
+# ends by naming what it did not cover and the command that does: the boundary
+# is stated rather than discovered.
 check: check-metadata check-web-editions check-web-editions-current \
-	check-proper-components check-document-catalogue check-source-reader \
-	check-sources check-roman-sanctuary-artwork check-promised-deliverables \
-	check-public-alpha check-release-bindings check-tool-registry \
+	check-proper-components check-source-reader \
+	check-roman-sanctuary-artwork \
+	check-release-bindings check-tool-registry \
 	check-browser-static \
 	check-calendar-days check-calendar-masses check-calendar-rubrics \
 	check-propers-census check-propers-structure \
 	check-mass-ordinary check-bible-indexes check-catena \
 	check-commentary-coverage check-scripture-chronology check-examples
+	@printf '%s\n' \
+		'check covers tracked sources. It does not run: $(INSTALLED_TREE_CHECKS)' \
+		'Those read the installed tree; `make check-installed` builds it and runs them.' \
+		'`make check-all` runs both.'
+
+# The same gates, with the build that produces what they read ordered ahead of
+# them. From a clone that has never been built this is correct without a manual
+# step. Recursion rather than a prerequisite list: every one of them must see a
+# finished installed tree, and prerequisites of one target may run in any
+# order, including alongside the install.
+check-installed: install-all
+	@$(MAKE) --no-print-directory $(INSTALLED_TREE_CHECKS)
+
+check-all: check check-installed
 
 # Seven of the browser scripts are parsed by nothing: no Python test loads
 # them, no node harness runs them, and their only protection is a sha256 pin in
@@ -990,13 +1057,61 @@ $(foreach document,$(PROPER_SYNTHESIS_DOCUMENTS),\
 	$(eval $(BUILD_ROOT)/$(document).pdf: \
 		$(SOURCE_ROOT)/$(patsubst %-synthesis,%,$(document))/synthesis.tex))
 
+# Run pdfLaTeX until the document stops moving under it.
+#
+# Two passes settle most documents and settle none reliably. A table of
+# contents that grows a page moves the pages it is naming, so the pass that
+# writes a corrected contents entry is not the pass that typesets it, and a
+# third pass can still change the PDF. `assembling-the-mass` is the worked
+# case: from a clean tree its second pass emits no "Rerun to get
+# cross-references right" and still prints a contents page number one short.
+# Grepping the log is therefore not a test of convergence. The auxiliary
+# files are.
+#
+# Each pass reads the auxiliary files the pass before it wrote. When a pass
+# writes back exactly what it read, the next pass would be handed identical
+# input and the preamble's \pdfinfoomitdate and \pdftrailerid{} leave nothing
+# else to vary, so the fixed point is reached and the PDF in hand is final.
+# The .log is excluded because it carries the run's timestamp and is never
+# read back; the .pdf because it is the output rather than an input, and
+# waiting for two equal PDFs would only ever cost one pass more.
+#
+# Fail rather than publish a document whose contents point at the wrong
+# pages. latexmk would keep this loop for us, and lives in texlive-binextra,
+# which ARCH_TEX_PACKAGES deliberately does not name; this is that loop in
+# the shell the recipe already runs.
+#
+# Argument 1 is the -jobname, argument 2 the TeX input relative to
+# $(SOURCE_ROOT), and argument 3 the build-tree prefix the job's auxiliary
+# files share.
+define PDFLATEX_TO_FIXED_POINT
+set -eu; \
+	pass=0; \
+	fingerprint=''; \
+	while [ "$$pass" -lt $(PDFLATEX_MAX_PASSES) ]; do \
+		pass=$$((pass + 1)); \
+		( cd $(SOURCE_ROOT) && TEXINPUTS=..: $(PDFLATEX) -interaction=nonstopmode \
+			-halt-on-error -jobname='$(1)' \
+			-output-directory='$(abspath $(@D))' '$(2)' ); \
+		previous="$$fingerprint"; \
+		fingerprint=''; \
+		for auxiliary in '$(3).'*; do \
+			[ -f "$$auxiliary" ] || continue; \
+			case "$$auxiliary" in *.log|*.pdf|*.synctex.gz) continue ;; esac; \
+			fingerprint="$$fingerprint $$($(SHA256) -- "$$auxiliary")"; \
+		done; \
+		if [ "$$pass" -ge 2 ] && [ "$$fingerprint" = "$$previous" ]; then \
+			exit 0; \
+		fi; \
+	done; \
+	echo 'References did not settle in $(PDFLATEX_MAX_PASSES) passes: $(3)' >&2; \
+	exit 1
+endef
+
 $(BUILD_ROOT)/%-synthesis.pdf:
 	@mkdir -p $(@D) '$(BUILD_ROOT)/.metadata/$(dir $*)'
 	@rm -f -- '$(BUILD_ROOT)/.metadata/$*-synthesis.ok'
-	cd $(SOURCE_ROOT) && TEXINPUTS=..: $(PDFLATEX) -interaction=nonstopmode -halt-on-error \
-		-jobname=$(notdir $*)-synthesis -output-directory=$(abspath $(@D)) $*/synthesis.tex
-	cd $(SOURCE_ROOT) && TEXINPUTS=..: $(PDFLATEX) -interaction=nonstopmode -halt-on-error \
-		-jobname=$(notdir $*)-synthesis -output-directory=$(abspath $(@D)) $*/synthesis.tex
+	@$(call PDFLATEX_TO_FIXED_POINT,$(notdir $*)-synthesis,$*/synthesis.tex,$(BUILD_ROOT)/$*-synthesis)
 	@$(PROPER_COMPONENT_CHECKER) --provider '$(PROVIDER)' --document '$*' \
 		--aux '$(BUILD_ROOT)/$*-synthesis.aux'
 	@$(METADATA_CHECKER) --provider '$(PROVIDER)' --pdf '$*' '$@'
@@ -1012,8 +1127,7 @@ $(BUILD_ROOT)/%.pdf: $(SOURCE_ROOT)/%/main.tex $(COMMON_SOURCES) | check-metadat
 	@mkdir -p $(@D)
 	@mkdir -p '$(BUILD_ROOT)/.metadata/$(dir $*)'
 	@rm -f -- '$(BUILD_ROOT)/.metadata/$*.ok'
-	cd $(SOURCE_ROOT) && TEXINPUTS=..: $(PDFLATEX) -interaction=nonstopmode -halt-on-error -jobname=$(notdir $*) -output-directory=$(abspath $(@D)) $*/main.tex
-	cd $(SOURCE_ROOT) && TEXINPUTS=..: $(PDFLATEX) -interaction=nonstopmode -halt-on-error -jobname=$(notdir $*) -output-directory=$(abspath $(@D)) $*/main.tex
+	@$(call PDFLATEX_TO_FIXED_POINT,$(notdir $*),$*/main.tex,$(BUILD_ROOT)/$*)
 	@case '$*' in \
 		curriculums/ecclesiastical-latin/*) \
 			$(PYTHON) $(CURRICULUM_STRUCTURE_CHECKER) \
@@ -1305,19 +1419,59 @@ review-track: track
 # every volume still resolves against its edition, and that the installed PDF
 # is the one the current sources produce. The second is what stops a plan edit
 # from reaching the site through a stale artifact.
+#
+# It used to ask Git. `git diff --quiet -- pdf/reading-plans` was quiet when
+# the bytes matched and quiet again over a path Git does not track, so on the
+# day pdf/ stopped being tracked the question would have started returning the
+# same answer whatever the file held: a check that passes by no longer being
+# able to fail, which is this project's governing defect wearing the costume of
+# a green line. pdf/reading-plans/ is in fact the exception that stays tracked,
+# so the loss has not happened yet; asking a question that does not depend on
+# that exception is what keeps it from happening quietly later.
+#
+# What it asks instead is the assertion the release record already carries.
+# release/public-alpha.json binds each of the six volumes to an exact SHA-256
+# under the perpetual authorization's site_sources, and those digests are
+# unchanged by the tracking decision: the digest used to prove a tracked file
+# was unmodified and now proves the rebuild reproduced the reviewed bytes. So
+# rebuild, then require each installed volume to hash to what the record binds.
+# A mismatch is a build defect to diagnose, never a hash to refresh.
+#
+# The record is read as text rather than parsed because the question is a
+# yes/no about one path and one digest, and a second implementation of the
+# comparison `release-bindings status` already owns would be a second source of
+# truth. If the manifest is ever reformatted this fails loudly rather than
+# passing quietly, which is the right direction to fail in.
 check-tracks: check-plan-sources
 	@$(PYTHON) $(BIBLE_TYPESET_TOOL) check --plan '$(PLAN)' --verbose
+	@$(MAKE) --no-print-directory tracks
 	@set -eu; \
+		manifest='release/public-alpha.json'; \
 		volumes=$$($(PYTHON) $(BIBLE_TYPESET_TOOL) list --plan '$(PLAN)' --format ids); \
+		[ -n "$$volumes" ] || { echo 'No track is declared for plan $(PLAN)' >&2; exit 1; }; \
+		status=0; \
 		for volume in $$volumes; do \
 			installed='$(READING_PDF_ROOT)/'"$$volume"'.pdf'; \
-			[ -f "$$installed" ] || { echo "Track is not installed: $$volume; run make tracks" >&2; exit 1; }; \
+			if [ ! -f "$$installed" ]; then \
+				echo "Track is not installed: $$volume; run make tracks" >&2; \
+				status=1; continue; \
+			fi; \
+			line=$$($(SHA256) -- "$$installed"); \
+			actual=$${line%% *}; \
+			bound="\"$(READING_PDF_ROOT)/$$volume.pdf\":"; \
+			if ! grep -qF -- "$$bound" "$$manifest"; then \
+				echo "Track is not bound by $$manifest: $$volume" >&2; \
+				status=1; \
+			elif ! grep -qF -- "$$bound \"$$actual\"" "$$manifest"; then \
+				echo "Rebuilt track does not reproduce the authorized bytes: $$volume ($$actual)" >&2; \
+				status=1; \
+			fi; \
 		done; \
-		$(MAKE) --no-print-directory tracks; \
-		if ! git diff --quiet -- '$(READING_PDF_ROOT)'; then \
-			echo 'Installed tracks are stale; run make tracks and commit them' >&2; \
+		[ "$$status" -eq 0 ] || { \
+			echo 'A track the release record binds is not what the current sources build.' >&2; \
 			exit 1; \
-		fi
+		}; \
+		echo 'Every track reproduces the bytes release/public-alpha.json binds.'
 
 # The plan file is validated by the tool that owns it before a single verse of
 # it is set. A track built from a plan that does not validate would be a

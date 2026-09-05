@@ -1,0 +1,54 @@
+name: Repository hygiene
+
+# Deliberately not a step inside `pages.yml`. That workflow publishes, runs
+# only on `main` after a merge, and takes the better part of an hour; a
+# hygiene defect is introduced in a pull request, is cheap to detect, and
+# should not have to wait for a deployment to report it -- nor should it be
+# able to abort a deployment of content that is otherwise sound. Separate
+# workflows keep the two failure meanings apart: this one says the repository
+# contradicts itself, `pages.yml` says the site did not publish.
+on:
+  pull_request:
+  # `main` only: a pull request from a branch in this repository already runs
+  # the check above, and adding every branch here would run it twice per push.
+  # This arm is the post-merge net for a direct push to `main`.
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: repository-hygiene-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tracked-ignored-paths:
+    runs-on: ubuntu-latest
+    # A full checkout of this publication tree takes upwards of ten minutes;
+    # the check itself is a single `git ls-files`. The blobless, sparse
+    # checkout below is what keeps that ratio sane, and ten minutes is then a
+    # hang detector rather than a budget.
+    timeout-minutes: 10
+
+    steps:
+      # The check reads the index, not file contents, so no blob but the two
+      # named below needs to arrive. Cone mode stays off on purpose: it is the
+      # mode that can collapse directories into the index as single entries,
+      # and the index is the thing being interrogated. If a tracked
+      # `.gitignore` is ever added outside these patterns the check exits 2
+      # rather than passing, and the fix is to name it here.
+      - name: Check out the index and the ignore rules
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: |
+            /.gitignore
+            /scripts/check_tracked_ignored_paths.py
+          sparse-checkout-cone-mode: false
+
+      # Stdlib only, so the runner's own interpreter is enough and no
+      # setup-python step is warranted.
+      - name: Refuse tracked paths the ignore rules exclude
+        run: python3 scripts/check_tracked_ignored_paths.py

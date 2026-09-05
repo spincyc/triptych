@@ -15,11 +15,33 @@ Apply these rules in order:
 ## Ownership and paths
 
 - `src/` contains tracked authoring sources, focused evidence and research records, reusable fragments, and the provider-neutral reusable source library governed by `guidance/sources.md`.
-- `pdf/` contains tracked PDFs installed from reviewed builds.
+- `pdf/` contains PDFs installed from reviewed builds. They are built during deployment and are no longer tracked, except `pdf/reading-plans/`, which a release authorization binds by digest and which stays tracked; see the dated note below.
 - `web/` contains tracked reader-facing web editions installed from reviewed conversions of the same sources, governed by `guidance/web-editions.md`.
 - `build/` contains only ignored, reproducible intermediates, logs, caches, review rasters, and generated release artifacts.
 
-Anything required to understand, verify, or reproduce a publication belongs under `src/`, never `build/`. Reader-facing `pdf/` and `web/` outputs may summarize tracked generation and production metadata; they must not reproduce internal agent/runtime or process ledgers merely because those records remain auditable under `src/`. Neither `pdf/` nor `web/` is a build directory. Cleaning may remove `build/` but never `src/`, `pdf/`, or `web/`.
+Anything required to understand, verify, or reproduce a publication belongs under `src/`, never `build/`. Reader-facing `pdf/` and `web/` outputs may summarize tracked generation and production metadata; they must not reproduce internal agent/runtime or process ledgers merely because those records remain auditable under `src/`. Neither `pdf/` nor `web/` is a build directory; an installed output is a reviewed publication rather than a disposable intermediate, whether or not it is tracked. Cleaning may remove `build/` but never `src/`, `pdf/`, or `web/`.
+
+**Installed PDFs under `pdf/` stopped being tracked on 2026-09-04.** The
+maintainer decided that day that the GitHub Pages workflow builds them from
+`src/` during deployment, and that the repository carries the sources rather
+than a second copy of what the sources determine. The 210 installed PDFs were
+262 MB of an 803 MB working tree, a third of everything tracked, and every
+revision of a document added another copy. The build is deterministic on
+purpose — `\pdfinfoomitdate=1` and `\pdftrailerid{}` in
+`src/common/preamble.tex`, and a `/ModDate` taken from the document's declared
+revision rather than the build clock — so those bytes were reproducible from
+the tree that was keeping them.
+
+`pdf/reading-plans/` is the exception and stays tracked. Its six volumes are
+named in `release/public-alpha.json` under the perpetual authorization's
+`site_sources`, each bound to an exact SHA-256, and `tools/tpt public-alpha
+verify` reads them from the tree. An authorization that binds bytes has to be
+able to find them, so those six remain in the repository; the 204 other
+installed PDFs, which nothing binds, do not.
+
+The paragraph below states the position that decision reverses. It is kept
+rather than deleted because most of it is still in force; its first two
+sentences are the ones that have stopped being true.
 
 Installed PDFs under `pdf/` are tracked release artifacts retained through
 ordinary Git history. Their reproducibility does not make them disposable
@@ -27,6 +49,81 @@ intermediates or authorize rewriting history to remove prior releases. Moving
 release artifacts to external storage requires a separately designed and
 authorized migration of publication, catalog, verification, and deployment
 contracts.
+
+Its second sentence is superseded too, and deliberately. The maintainer
+authorized a history rewrite the same day: `pdf/` apart from
+`pdf/reading-plans/`, and the superseded `doc/` tree it was renamed from, were
+removed from every reachable commit with `git filter-repo`, the 25 duplicate
+handoff archives under
+`build/agent-handoffs/` were removed with them, and 79 superseded working
+branches were dropped. The pack fell from 1.14 GiB to 394 MiB and a fresh
+checkout from 2,093 MB to 1,067 MB. The fifteen `evidence/*` branches were
+deliberately kept: sixteen of the twenty-five archives existed nowhere else,
+and dropping those branches would have destroyed 803 files of review evidence.
+The 79 that went carried about 9 MiB of objects reachable from nowhere else,
+and the verified bundle of the pre-rewrite history, taken before any of this
+ran, is the record of them and of everything else the rewrite removed. This was
+a one-time, owner-authorized act recorded here so that it is not repeated
+casually: rewriting published history still requires an explicit decision of
+this kind, and nothing in this section authorizes a routine filter to reclaim
+space.
+
+The rest of the paragraph still governs. Reproducibility still does not make an
+installed PDF a disposable intermediate — `pdf/` is an install destination and
+not `build/`, `make clean` removes `build/` and never `pdf/`, and nothing may
+install a partial or unreviewed result there. And the migration the last
+sentence demanded is being performed rather than skipped; its four named
+contracts are disposed of as follows.
+
+**Publication.** Each publication's tracked record under
+`release/publications/<provider>/<leaf-id>.json` is unchanged; it never stored
+a PDF hash. `promised-deliverables.toml` keeps the installed-PDF paths its
+criteria are about, and names a tracked record beside them wherever a `pass`
+requirement would otherwise cite nothing that survives in the tree.
+
+**Catalog.** `library/` pages, the `web/` editions, and the tracked document
+catalogue `src/web/data/structure/documents/corpus.json` stay tracked, and that
+catalogue keeps the per-edition facts previously readable only from the
+installed file: page count, install commit, review and revision dates. Web
+editions are a separate reviewed conversion of the same sources, not a copy of
+the PDF, and this decision does not touch them.
+
+**Verification.** The `site_sources` hashes in `release/public-alpha.json` are
+unchanged, the six reading tracks under `pdf/reading-plans/` included. The
+recorded digest used to prove that a tracked file had not been modified; it now
+proves that the deployment rebuild reproduced the exact reviewed bytes. The
+assertion is the same one — someone read these bytes and approved them —
+held against a rebuild instead of against a checkout.
+`tools/tpt release-bindings status` and `tools/tpt public-alpha verify` are
+what compare them, and the renderer still decides the recorded set: an
+installed track the record does not mention, or a recorded entry nothing
+renders, is a divergence exactly as a changed byte is.
+
+**Deployment.** The Pages workflow must install every PDF the artifact serves
+before it builds the site, and must fail the deployment rather than publish an
+artifact missing one. `check-deployment-sources` re-derives page counts from
+the built PDFs, so the workflow typesets first and gates afterwards; the order
+is load-bearing and not an accident of listing.
+
+No check was left proving an installed PDF current by asking Git whether it
+differed. `check-tracks` did exactly that, over `pdf/reading-plans` — which
+stays tracked, so it had not silently stopped working — and it was replaced
+anyway with the stronger question: rebuild each track and compare its SHA-256
+against the digest `release/public-alpha.json` binds. Asking Git only proves a
+file matches the index. Asking the manifest proves the sources still build the
+bytes someone authorized. Were a reader-facing PDF ever untracked without that
+substitution, the `git diff` form would pass by no longer being able to fail.
+
+One consequence is settled and one is open. Settled: all six bound reading
+tracks were rebuilt on 2026-09-04 and reproduced their recorded digests
+exactly, so the verification above is known to hold and not merely hoped for.
+`make check` now covers tracked sources and names what it does not run;
+`make check-installed` builds the tree first and runs the four gates that read
+it; `make check-all` runs both. Open: a rebuild of the wider corpus that day
+reproduced 162 of 188 documents byte-identically and the other 26 are
+undiagnosed, most of them tracked PDFs that had drifted from their sources
+rather than builds that vary. A divergence in a bound track is a build defect
+to diagnose, never a hash to refresh.
 
 External source identities and lawful reusable artifacts live under
 `src/sources/`, not under a generated provider branch. Provider publications

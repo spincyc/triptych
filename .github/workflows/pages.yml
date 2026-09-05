@@ -14,6 +14,45 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
+env:
+  # The typesetting toolchain, pinned by content address rather than by a tag
+  # that moves. This is `docker.io/texlive/texlive:latest` as it stood on
+  # 2026-09-04: Island of TeX's scheme-full TeX Live 2026 on a Debian base,
+  # image built 2026-08-30. The multi-architecture index is named here; its
+  # linux/amd64 member, which is what a GitHub-hosted runner resolves, is
+  # sha256:c268e1c3611a6de0e1d2557db900aca726ffccc5ef2199a10db7c83ac7be751d.
+  #
+  # Why TeX Live 2026 and not the frozen `TL2025-historic` build. The frozen
+  # tag would be the more recoverable pin -- its TeX tree comes from a CTAN
+  # snapshot that is never republished, so it could be rebuilt from scratch --
+  # but the toolchain here is not free to be chosen on that ground alone.
+  # `make check-deployment-sources` runs `document-library structure --check`,
+  # which re-derives the tracked catalogue under src/web/data from the built
+  # PDFs, page counts included, and fails on any drift from the tracked bytes.
+  # That catalogue was produced under TeX Live 2026, and the catalogue file is
+  # itself bound by an exact SHA-256 in release/public-alpha.json, so a
+  # regenerated one needs the operator's re-approval. Matching the release the
+  # tracked artefacts were made under is therefore the low-risk pin, and 2025
+  # is the one that could quietly move a page break. When TeX Live 2026 is
+  # frozen and `TL2026-historic` exists, re-pin to it: same toolchain, better
+  # recoverability.
+  #
+  # scheme-full and not a smaller scheme: the Makefile's ARCH_TEX_PACKAGES ends
+  # at texlive-fontsextra, which is where Atkinson Hyperlegible lives, and no
+  # medium scheme carries collection-fontsextra.
+  #
+  # What this pin does and does not promise. It makes the PDFs reproducible
+  # run to run -- the shared preamble already suppresses the two fields that
+  # would otherwise vary, with \pdfinfoomitdate=1 and an emptied
+  # \pdftrailerid -- so repeated deploys of an unchanged tree produce identical
+  # bytes. It does not reproduce the Arch-built PDFs this repository used to
+  # track, and is not trying to: those bytes stop being tracked with this
+  # change, and the digest is the new baseline. The tag `latest` will move off
+  # this digest; the pull will keep working while the registry retains the
+  # manifest, and re-pinning later is a deliberate change of baseline, not a
+  # no-op.
+  TEXLIVE_IMAGE: texlive/texlive@sha256:4984977ccf5afe883cb382d0163f267de0d029d140bb7a9e8f4c19f0b781d57b
+
 jobs:
   deploy:
     environment:
@@ -21,9 +60,16 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     # Checkout of the large publication tree can itself take more than ten
-    # minutes on a cold runner. Preserve enough time for the source, build,
-    # verification, upload, and deployment steps that must follow it.
-    timeout-minutes: 30
+    # minutes on a cold runner, and the PDFs are now typeset here rather than
+    # read out of the tree: roughly two hundred documents, each compiled until
+    # its auxiliary files stop moving, on four vCPUs. Budget, worst case:
+    # ~10 checkout, ~5 image pull, ~30 typesetting, ~6 source gate, ~3 site,
+    # ~3 verification, ~5 upload and deploy -- about an hour. Ninety minutes
+    # leaves half again as much headroom for a cold runner or a slow registry
+    # while still killing a hung job far inside the six-hour default, which
+    # matters here because the `pages` concurrency group serialises deploys
+    # behind whatever is stuck.
+    timeout-minutes: 90
 
     steps:
       - name: Check out repository
@@ -45,6 +91,114 @@ jobs:
       - name: Install site and deployment-check dependencies
         run: python -m pip install --disable-pip-version-check -r requirements-public-alpha.txt -r requirements-tools.txt
 
+      # The six volumes under pdf/reading-plans/ are the one part of pdf/ this
+      # workflow does not build. release/public-alpha.json binds each of them
+      # to an exact SHA-256 as part of the operator's publication
+      # authorization, and `public-alpha verify` enforces those hashes;
+      # rebuilding them on any other toolchain would break the authorization
+      # rather than refresh it, and refreshing it is an operator's act. They
+      # stay tracked -- 7.4 MiB against the 244 MiB of per-provider
+      # publication PDFs that no longer are. Asked here, in seconds, rather
+      # than left to surface as a wall of hash mismatches an hour in.
+      - name: Confirm the release-bound reading-plan tracks are present
+        run: |
+          python3 - <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          manifest = json.loads(Path("release/public-alpha.json").read_text(encoding="utf-8"))
+          bound = sorted(
+              path
+              for authorization in manifest["authorizations"].values()
+              for path in authorization.get("site_sources", {})
+              if path.startswith("pdf/")
+          )
+          missing = [path for path in bound if not Path(path).is_file()]
+          if missing:
+              print("release/public-alpha.json binds PDFs this tree does not carry:", file=sys.stderr)
+              for path in missing:
+                  print(f"  {path}", file=sys.stderr)
+              print(
+                  "\nThese are published under an approved SHA-256 and are not built by "
+                  "this workflow. Restore them, or refresh and re-approve the release "
+                  "bindings before untracking them.",
+                  file=sys.stderr,
+              )
+              raise SystemExit(1)
+          print(f"{len(bound)} release-bound PDF(s) present")
+          PY
+
+      # Nothing here is cached, deliberately. There is no TeX package cache to
+      # keep: the toolchain arrives whole inside the pinned image, and staging
+      # its layers through actions/cache would replace one content-addressed
+      # copy with a mutable one for no gain. A build/ cache would be worse than
+      # useless -- Make decides staleness by mtime, every checkout stamps every
+      # source file with a fresh one, and a restored tree could carry a PDF
+      # built from an earlier commit's sources into the published artifact,
+      # which is exactly the reproducibility this pin exists to protect. The
+      # pip install is two version-locked wheels and is not worth a cache.
+      #
+      # Pulled as its own step so a registry failure reads as one, and so the
+      # 2.7 GiB this costs is visible in the timings rather than hidden inside
+      # the build.
+      - name: Pull the pinned TeX Live toolchain
+        run: docker pull "$TEXLIVE_IMAGE"
+
+      # Every provider, not the Makefile's PROVIDER default of gpt: the site's
+      # publication records span all of them. The Makefile computes PROVIDERS
+      # from src/*/**/main.tex but exposes no target that installs across them,
+      # so the same derivation is repeated here (Makefile ALL_MAIN_SOURCES /
+      # PROVIDERS) and the loop is this workflow's.
+      #
+      # `make install` and not a pdflatex loop, because the real pipeline is
+      # what has to run: check-metadata first, then per document the
+      # generate-roman-sanctuary-dictionary prerequisite that the six
+      # roman-sanctuary-dictionary leaves fail without, the compile to a fixed
+      # point, the curriculum-structure check, the generation-metadata
+      # validation, and finally the hash-checked staged install into pdf/.
+      #
+      # The container runs as root because poppler-utils has to be added to it:
+      # the generation-metadata validator shells out to pdftotext and pdfinfo,
+      # and the image ships neither. Only pdflatex's own inputs are pinned by
+      # the digest; poppler reads the PDFs and cannot change their bytes. The
+      # step after this one gives the workspace back to the runner user.
+      - name: Typeset every provider's PDFs in the pinned container
+        run: |
+          set -euo pipefail
+          providers="$(find src -mindepth 2 -type f -name main.tex -print | cut -d/ -f2 | sort -u | tr '\n' ' ')"
+          test -n "$providers"
+          printf 'providers: %s\n' "$providers"
+          docker run --rm \
+            --volume "${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE}" \
+            --workdir "${GITHUB_WORKSPACE}" \
+            --env "TRIPTYCH_PROVIDERS=${providers}" \
+            "$TEXLIVE_IMAGE" \
+            bash -euo pipefail -c '
+              pdflatex --version | sed -n 1,2p
+              python3 -c "import sys, tomllib; assert sys.version_info >= (3, 11), sys.version"
+              apt-get update
+              apt-get install --yes --no-install-recommends poppler-utils
+              for provider in ${TRIPTYCH_PROVIDERS}; do
+                echo "::group::make install PROVIDER=${provider}"
+                make --jobs="$(nproc)" install "PROVIDER=${provider}"
+                echo "::endgroup::"
+              done
+            '
+
+      # Everything the container wrote is root-owned, including the __pycache__
+      # directories Python leaves beside the imported modules under scripts/.
+      # The whole workspace is handed back rather than build/ and pdf/ alone,
+      # so nothing downstream discovers a directory it cannot write.
+      - name: Return the workspace to the runner user
+        run: sudo chown -R "$(id -u):$(id -g)" "$GITHUB_WORKSPACE"
+
+      # This gate used to run before anything was built, which was correct
+      # while the PDFs were tracked. It no longer is: `document-library check`
+      # reads the title and subject out of each built PDF, and
+      # `document-library structure --check` re-derives the tracked catalogue
+      # under src/web/data from those same PDFs, page counts included. Both
+      # need pdf/ populated, so the gate follows the typesetting.
       - name: Verify deployable sources and inventories
         run: make check-deployment-sources
 
