@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.library-of-congress.freedoms-gift-item-30020058.catalog-json.item-json-f5a72e3a"
+edition_id = "edition.library-of-congress.freedoms-gift-item-30020058.catalog-json"
+artifact_type = "electronic-text"
+media_type = "application/json"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The Library of Congress catalog record is United States federal bibliographic metadata and rights information. Its title/imprint facts and identification of an 1840 public-domain object carry no identified third-party protected text."
+source_url = "https://www.loc.gov/item/30020058/?fo=json"
+provenance = "Retrieved directly by the cultural-afterlife research lane on 2026-09-05; receipt(s) CUL-003 in run 9bf9d40d825f419f. Registration re-read the complete receipt, verified every supplied path against its SHA-256 and byte size, resolved catalog aliases before assigning the work, and checked existing editions for superseding derivations. No source was fetched by registration."
+retrieved = "2026-09-05"
+sha256 = "f5a72e3a1f29c1e67032ed0f0e0c4a67ba9b610a80b8011ec6ddf29f3fa11bb1"
+byte_size = 282279
+notes = "Complete LOC item JSON response, including item identity, physical description, rights, and resources; not the book itself. Full JSON response, including the item’s rights statement."
+rights_jurisdiction = "United States"
+path = "src/sources/works/library-of-congress/freedoms-gift-item-30020058/editions/2026-09-05-catalog-json/artifacts/item-json-f5a72e3a/garrison-catalog.json"

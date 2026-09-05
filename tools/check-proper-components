@@ -240,17 +240,20 @@ def audit_manifest(path: Path, provider_root: Path) -> None:
     ordered = [
         "brief-synthesis",
         "source-grounded-synthesis",
-        "exploratory-synthesis",
         "notable-quotable",
+        "exploratory-synthesis",
     ]
     if integrated:
         ordered.insert(1, "integrated-commentary")
     positions = [kinds.index(kind) for kind in ordered]
-    if positions != sorted(positions):
+    # The profile's Reader-Facing Order puts notable before exploratory.
+    # Legacy manifests retain the opposite tail order until substantive revision.
+    legacy_positions = positions[:-2] + positions[-2:][::-1]
+    if positions != sorted(positions) and legacy_positions != sorted(positions):
         raise ValueError(
             "component order must be brief synthesis, integrated commentary, "
-            "source-grounded synthesis, exploratory synthesis, then notable "
-            "and quotable"
+            "source-grounded synthesis, notable and quotable, then exploratory "
+            "synthesis (legacy manifests may reverse the final two)"
         )
 
     relations = data.get("relations")

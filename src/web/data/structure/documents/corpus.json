@@ -3,7 +3,7 @@
  "counted": {
   "documents": 189,
   "issues": 206,
-  "pages": 5993,
+  "pages": 6058,
   "titles_unrecorded": 0,
   "works": 139
  },
@@ -23,6 +23,10 @@
   {
    "documents": 27,
    "id": "claude-fable-5"
+  },
+  {
+   "documents": 1,
+   "id": "GPT-6-based Codex agent"
   }
  ],
  "providers": [
@@ -4907,7 +4911,7 @@
      "models": [
       "claude-opus-5[1m]"
      ],
-     "pages": 25,
+     "pages": 26,
      "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost.pdf",
      "produced": {
       "install_commit": "698eeffaf148a283cd0f3c74640aa90a66e33f4d"
@@ -5481,9 +5485,8 @@
      "also": [
       {
        "kind": "synthesis",
-       "pages": null,
-       "pdf": null,
-       "pdf_absent": "no PDF is installed for this issue",
+       "pages": 34,
+       "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost-synthesis.pdf",
        "subject": "Synthesis companion to the 1962 Roman Missal propers; complete appointed texts and the per-element reception sweep are omitted",
        "title": "Fourteenth Sunday after Pentecost (Synthesis Edition)"
       }
@@ -5551,9 +5554,8 @@
       "claude-opus-5[1m]",
       "GPT-5-based Codex agent"
      ],
-     "pages": null,
-     "pdf": null,
-     "pdf_absent": "no PDF is installed for this issue",
+     "pages": 61,
+     "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost.pdf",
      "produced": {
       "run_id": "90dcdddcb6780e60",
       "seed_commit": "76b6e825276afc8ae6a4809108f4899d1deb0b33",
@@ -5627,7 +5629,7 @@
      "also": [
       {
        "kind": "synthesis",
-       "pages": 11,
+       "pages": 12,
        "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.pdf",
        "subject": "Research synthesis of the 1962 Roman Missal propers; complete appointed texts are reserved to the full edition",
        "title": "Fifteenth Sunday after Pentecost (Synthesis Edition)"
@@ -5674,24 +5676,45 @@
        "model": "GPT-5-based Codex agent",
        "qualifiers": "unexposed: exact model identifier and model qualifiers",
        "runtime": "OpenAI Codex agent (proper-finish version 2 blocking visual layout revision and production review); API workspace; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6-based Codex agent",
+       "qualifiers": "effort=xhigh; unexposed: exact model identifier and other model qualifiers",
+       "runtime": "OpenAI Codex agent (proper version 25 canonical and synthesis authoring from the immutable research brief; citation, source-binding and pagination verification); API workspace; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6-based Codex agent",
+       "qualifiers": "effort=xhigh; unexposed: exact model identifier and other model qualifiers",
+       "runtime": "OpenAI Codex agent (proper version 25 iteration 1 authoring revision from the immutable brief; appointed Latin, chronology attribution, Dickens scene and Psalm 46 reception); API workspace; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6-based Codex agent",
+       "qualifiers": "effort=xhigh; unexposed: exact model identifier and other model qualifiers",
+       "runtime": "OpenAI Codex agent (proper version 25 content revision; Wilson's attributed supplement compiler and direct attributed findings in both editions); API workspace; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6-based Codex agent",
+       "qualifiers": "effort=high; unexposed: exact model identifier and other model qualifiers",
+       "runtime": "OpenAI Codex agent (proper version 25 visual revision; paragraph-opening pagination in both editions); API workspace; unexposed: client version and server revision"
       }
      ],
      "eligibility": "eligible",
      "models": [
-      "GPT-5-based Codex agent"
+      "GPT-5-based Codex agent",
+      "GPT-6-based Codex agent"
      ],
-     "pages": 14,
+     "pages": 16,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.pdf",
      "produced": {
-      "run_id": "e0fc63e64fc66336",
-      "seed_commit": "c59d42a85932ff5bdb3236e154c5db796aea8017",
-      "workflow_digest": "7e357d6b78f3291b987d335c633961f33dc6910e4c87f7c5e13ef11b9ac39147",
-      "workflow_id": "proper-finish",
-      "workflow_version": "2"
+      "run_id": "9bf9d40d825f419f",
+      "seed_commit": "b743814e521622eb8dbea56316e6138d45e8f7f3",
+      "workflow_digest": "ad4a5ea8193bdaf4b5f7a3f261fd5377fd49208f49b709cd794aeb635d20cd46",
+      "workflow_id": "proper",
+      "workflow_version": "25"
      },
      "provider": "gpt",
-     "reviewed": "2026-09-04",
-     "revised": "2026-09-04T17:56:18Z",
+     "reviewed": "2026-09-05",
+     "revised": "2026-09-05T23:15:36Z",
      "status": "alpha",
      "subject": "Full source-audited guide to the 1962 Roman Missal propers",
      "title": "Fifteenth Sunday after Pentecost (Full Edition)",
@@ -8640,7 +8663,7 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 18,
+     "pages": 19,
      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.pdf",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
