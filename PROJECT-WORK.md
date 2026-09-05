@@ -27,12 +27,17 @@ The source-audit stage passed: `propers/verified.md` records all ten elements
 collated against the CMAA 1962 pages, the page-checked 1862 Latin antecedent,
 and exact Challoner and Cummiskey English controls; `propers/retrieved.txt`
 preserves the uncorrected finding-aid extract. Source-library validation
-passed. `make check-sources` stopped at the existing curriculum-rights test,
-which expects 37 installed curriculum PDFs and finds none in a fresh clone.
-The broader promised-deliverable check likewise reports the same missing-PDF
-failures as the baseline; the new workflow entry validates independently.
+passed. A successful `make -j4 install-all` restored the existing installed
+PDF tree required by checks in a fresh clone. The broader promised-deliverable
+check now passes. `make check-sources` reaches the document-catalogue drift
+check: rebuilding existing publications changes two page counts and supplies
+the Claude Fourteenth Sunday after Pentecost PDFs previously marked absent.
+A generated comparison is retained in the run's driver scratch directory;
+the tracked catalogue has not yet been refreshed.
 
-Research, authoring, evaluation, both reviewed PDFs, the canonical web edition
+The seven research lanes completed their sweeps, and the engine accepted their
+108 joined findings in declared lane order. Research synthesis is now in
+progress. Authoring, evaluation, both reviewed PDFs, the canonical web edition
 and release records remain outstanding. No guide has been installed or
 accepted. Reconcile this entry to the engine's terminal
 disposition and preserve any unresolved findings before reporting the
