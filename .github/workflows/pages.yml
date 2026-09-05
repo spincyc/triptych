@@ -15,43 +15,29 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  # The typesetting toolchain, pinned by content address rather than by a tag
-  # that moves. This is `docker.io/texlive/texlive:latest` as it stood on
-  # 2026-09-04: Island of TeX's scheme-full TeX Live 2026 on a Debian base,
-  # image built 2026-08-30. The multi-architecture index is named here; its
-  # linux/amd64 member, which is what a GitHub-hosted runner resolves, is
-  # sha256:c268e1c3611a6de0e1d2557db900aca726ffccc5ef2199a10db7c83ac7be751d.
+  # The typesetting toolchain, pinned by content address, and pinned to the
+  # distribution this corpus was authored and reviewed under rather than to
+  # whichever TeX Live happens to be packaged elsewhere.
   #
-  # Why TeX Live 2026 and not the frozen `TL2025-historic` build. The frozen
-  # tag would be the more recoverable pin -- its TeX tree comes from a CTAN
-  # snapshot that is never republished, so it could be rebuilt from scratch --
-  # but the toolchain here is not free to be chosen on that ground alone.
-  # `make check-deployment-sources` runs `document-library structure --check`,
-  # which re-derives the tracked catalogue under src/web/data from the built
-  # PDFs, page counts included, and fails on any drift from the tracked bytes.
-  # That catalogue was produced under TeX Live 2026, and the catalogue file is
-  # itself bound by an exact SHA-256 in release/public-alpha.json, so a
-  # regenerated one needs the operator's re-approval. Matching the release the
-  # tracked artefacts were made under is therefore the low-risk pin, and 2025
-  # is the one that could quietly move a page break. When TeX Live 2026 is
-  # frozen and `TL2026-historic` exists, re-pin to it: same toolchain, better
-  # recoverability.
+  # The first attempt at this used Island of TeX's Debian-based scheme-full
+  # image. It was also TeX Live 2026, and it still could not typeset this
+  # corpus: its longtable had already dropped the \vss page-split tails the
+  # altar-server format corrects, and its xltabular overflowed a dimension in
+  # the ecclesiastical-latin reference lexicon. Both documents build here.
+  # Two unrelated incompatibilities in two runs is not a run of bad luck; it
+  # is the wrong toolchain. The Makefile names ARCH_TEX_PACKAGES, the recorded
+  # PDF digests were produced against those packages, and 162 of 188 documents
+  # were verified byte-identical against them. The build belongs there.
   #
-  # scheme-full and not a smaller scheme: the Makefile's ARCH_TEX_PACKAGES ends
-  # at texlive-fontsextra, which is where Atkinson Hyperlegible lives, and no
-  # medium scheme carries collection-fontsextra.
-  #
-  # What this pin does and does not promise. It makes the PDFs reproducible
-  # run to run -- the shared preamble already suppresses the two fields that
-  # would otherwise vary, with \pdfinfoomitdate=1 and an emptied
-  # \pdftrailerid -- so repeated deploys of an unchanged tree produce identical
-  # bytes. It does not reproduce the Arch-built PDFs this repository used to
-  # track, and is not trying to: those bytes stop being tracked with this
-  # change, and the digest is the new baseline. The tag `latest` will move off
-  # this digest; the pull will keep working while the registry retains the
-  # manifest, and re-pinning later is a deliberate change of baseline, not a
-  # no-op.
-  TEXLIVE_IMAGE: texlive/texlive@sha256:4984977ccf5afe883cb382d0163f267de0d029d140bb7a9e8f4c19f0b781d57b
+  # Reproducibility comes from two pins, not one. ARCH_IMAGE fixes the base by
+  # digest; ARCH_SNAPSHOT points pacman at the Arch Linux Archive, whose
+  # per-day trees are immutable, so the package set resolves identically on
+  # every run rather than following the rolling mirrors. The snapshot carries
+  # texlive-bin 2026.0-2 and texlive-* 2026.1-1, which is exactly the set that
+  # builds this corpus today. Moving either pin is a deliberate change of
+  # baseline and needs the corpus rebuilt against it, not a version bump.
+  ARCH_IMAGE: archlinux@sha256:82b1b08faae9d61e3e7e13d562f4d09114d939105b0d59ff34140f3bd418593a
+  ARCH_SNAPSHOT: "2026/09/04"
 
 jobs:
   deploy:
@@ -143,7 +129,7 @@ jobs:
       # 2.7 GiB this costs is visible in the timings rather than hidden inside
       # the build.
       - name: Pull the pinned TeX Live toolchain
-        run: docker pull "$TEXLIVE_IMAGE"
+        run: docker pull "$ARCH_IMAGE"
 
       # Every provider, not the Makefile's PROVIDER default of gpt: the site's
       # publication records span all of them. The Makefile computes PROVIDERS
@@ -173,12 +159,23 @@ jobs:
             --volume "${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE}" \
             --workdir "${GITHUB_WORKSPACE}" \
             --env "TRIPTYCH_PROVIDERS=${providers}" \
-            "$TEXLIVE_IMAGE" \
+            --env "TRIPTYCH_SNAPSHOT=${ARCH_SNAPSHOT}" \
+            "$ARCH_IMAGE" \
             bash -euo pipefail -c '
+              # One immutable archive tree, not the rolling mirrors: a rebuild
+              # has to resolve the same packages the reviewed run resolved.
+              printf "Server=https://archive.archlinux.org/repos/%s/\$repo/os/\$arch\n" \
+                "${TRIPTYCH_SNAPSHOT}" > /etc/pacman.d/mirrorlist
+              # -Syu, not -Sy then -S: the image base is older than the
+              # snapshot, and installing into a half-upgraded system is the
+              # one way to break an Arch container.
+              pacman -Sy --noconfirm --needed archlinux-keyring
+              pacman -Syu --noconfirm --needed \
+                texlive-bin texlive-basic texlive-latex texlive-latexrecommended \
+                texlive-latexextra texlive-pictures texlive-fontsrecommended \
+                texlive-fontsextra poppler python python-yaml make git diffutils
               pdflatex --version | sed -n 1,2p
               python3 -c "import sys, tomllib; assert sys.version_info >= (3, 11), sys.version"
-              apt-get update
-              apt-get install --yes --no-install-recommends poppler-utils
               for provider in ${TRIPTYCH_PROVIDERS}; do
                 echo "::group::make install PROVIDER=${provider}"
                 make --jobs="$(nproc)" install "PROVIDER=${provider}"
