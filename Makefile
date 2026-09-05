@@ -241,6 +241,10 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-source-inventory check-source-inventory-tool \
 	check-source-family-migration check-source-family-migration-tool \
 	check-source-family-screening \
+	check-source-graph check-publication-inventories \
+	check-artwork-manifests \
+	check-catena check-catena-structure check-catena-paragraphs \
+	check-expensive \
 	check-promised-deliverables \
 	check-public-alpha prepare-public-alpha \
 	check-pdf-review check-curriculum-rights check-curriculum-sources \
@@ -383,8 +387,13 @@ install-dependencies-arch:
 check-pdf-review:
 	@$(PYTHON) -m unittest discover -s tools/tests -p 'test_pdf_review.py' -v
 
+# `-v`, for the same reason `check-pdf-review` passes it: this suite skips its
+# installed-PDF assertions on a checkout that has not been built, and the skip
+# carries a reason naming what did not run and how to run it. Without `-v` an
+# unbuilt run prints `s` and `OK (skipped=1)` and the reason never reaches the
+# operator, which is the whole point of making the skip visible.
 check-curriculum-rights:
-	@$(PYTHON) -m unittest tools.tests.test_curriculum_liturgical_rights
+	@$(PYTHON) -m unittest tools.tests.test_curriculum_liturgical_rights -v
 
 # Pages runs this target under setup-python before it builds anything. Its
 # workflow must install both requirements-public-alpha.txt and
@@ -392,17 +401,16 @@ check-curriculum-rights:
 check-act-history:
 	@$(PYTHON) tools/tpt act-history structure --check
 
-check-deployment-sources: check-curriculum-rights check-act-history
+# The source graph, then the inventories measured against it.
+# `guidance/repository.md` states that order --- validate the reusable source
+# graph and publication bindings, then replay the exhaustive legacy-source
+# inventory --- so it is an edge in the graph rather than an accident of line
+# order inside one recipe, and it survives being run concurrently with
+# everything else.
+check-source-graph:
 	@$(PYTHON) $(SOURCE_LIBRARY_TOOL) validate
-	@$(PYTHON) $(SOURCE_READER_TOOL) check
-	@$(PYTHON) $(SOURCE_READER_TOOL) structure --check
-	@$(PYTHON) $(DOCUMENT_LIBRARY_TOOL) check
-	@$(PYTHON) $(DOCUMENT_LIBRARY_TOOL) structure --check
-	@$(PYTHON) tools/tpt calendar-days check
-	@$(PYTHON) tools/tpt check-calendar-masses
-	@$(PYTHON) tools/tpt mass-propers structure --check
-	@$(PYTHON) tools/tpt calendar-rubrics check
-	@$(PYTHON) tools/tpt mass-ordinary check
+
+check-publication-inventories: check-source-graph
 	@set -eu; for inventory in src/sources/inventories/*publications-v1.toml; do \
 		[ -e "$$inventory" ] || continue; \
 		case "$$inventory" in \
@@ -412,6 +420,57 @@ check-deployment-sources: check-curriculum-rights check-act-history
 		esac; \
 		$(PYTHON) $(SOURCE_INVENTORY_TOOL) check --review "$$review" "$$inventory"; \
 	done
+
+# The members of the deployment gate that are independent of one another. They
+# read different trees through different tools and share nothing but three
+# caches under ignored `build/` --- the loaded source library, the reader's
+# corpus projection, and the YAML/TOML parse cache --- every one of which is
+# written to a pid-suffixed file and renamed into place precisely so that
+# sibling processes may run at once (`cached_json` in `scripts/_tooling.py`,
+# `_cached_parse` in `scripts/_calendars.py`). Nothing here writes a tracked
+# path or a shared output path: the `--check` verbs derive into a temporary
+# root and compare.
+DEPLOYMENT_SOURCE_MEMBERS := check-curriculum-rights check-document-catalogue \
+	check-publication-inventories
+
+# The gate the Pages workflow runs before it builds anything, and the longest
+# single step on the deploy's critical path. It was one sequential recipe of
+# thirteen commands; the four independent members above now run concurrently.
+#
+# Concurrency uses the wrapper the aggregate PDF builds already use, and for
+# the reason stated where that wrapper is defined: a top-level
+# `make check-deployment-sources` --- which is exactly how the Pages workflow
+# invokes it --- has no jobserver to share, so it bootstraps a bounded
+# recursive Make; a caller who already supplied -j keeps the complete graph in
+# this process, where the members are ordinary prerequisites and cannot race a
+# sibling goal that also names one of them: `check-installed` names
+# `check-document-catalogue` alongside `check-sources`, and in one graph that
+# is one run rather than two.
+#
+# What did not become concurrent, and why:
+#   - `check-act-history` stays a plain prerequisite, ahead of everything. It
+#     is the cheapest member, and it is the one that fails first and most
+#     legibly on a host whose PyYAML the workflow forgot to install; four
+#     concurrent tracebacks say the same thing far worse.
+#   - `check-source-graph` before `check-publication-inventories`, as above.
+#   - the seven commands below stay in this recipe, in this order.
+#     `tools/tests/test_example_replay.py` asserts that the deployment gate
+#     names every generated missal layer, in order, in THIS recipe body, and
+#     that test is the only thing standing behind the claim that a layer cannot
+#     quietly leave the gate. They are independent of each other and of
+#     everything above, so roughly a third of this target's remaining wall time
+#     is still recoverable --- but only together with a change to that test's
+#     shape, which is not this file's to make.
+check-deployment-sources: check-act-history \
+		$(if $(strip $(_TRIPTYCH_MAKE_PARALLEL_FLAGS)),$(DEPLOYMENT_SOURCE_MEMBERS))
+	$(if $(strip $(_TRIPTYCH_MAKE_PARALLEL_FLAGS)),,+@$(MAKE) --no-print-directory $(_TRIPTYCH_BOUNDED_PDF_JOB_OPTION) $(DEPLOYMENT_SOURCE_MEMBERS))
+	@$(PYTHON) $(SOURCE_READER_TOOL) check
+	@$(PYTHON) $(SOURCE_READER_TOOL) structure --check
+	@$(PYTHON) tools/tpt calendar-days check
+	@$(PYTHON) tools/tpt check-calendar-masses
+	@$(PYTHON) tools/tpt mass-propers structure --check
+	@$(PYTHON) tools/tpt calendar-rubrics check
+	@$(PYTHON) tools/tpt mass-ordinary check
 
 check-sources: check-deployment-sources
 	@$(PYTHON) $(SOURCE_FAMILY_MIGRATION_TOOL) check
@@ -436,6 +495,43 @@ check-source-family-screening:
 
 check-roman-sanctuary-artwork:
 	@$(PYTHON) tools/tpt check-roman-sanctuary-artwork
+
+# The publication size policy in `guidance/repository.md` --- monochrome
+# publishing art as stripped 8-bit grayscale, no embedded colour profile, and
+# the recorded dimensions, mode, bytes and sha256 --- is implemented by
+# `artwork-library check`, and until this target existed nothing ran it:
+# `grep -c artwork-library Makefile` returned 0 while the tool was registered,
+# tested and passing. The manifest is what says which PNG is canonical and
+# what it is allowed to be, so an asset renormalized without amending it, or a
+# manifest amended without renormalizing the asset, reached the site with
+# nothing reporting it.
+#
+# Discovered rather than listed, so a publication that gains a manifest is
+# covered without anyone remembering this line. An empty discovery is a
+# failure and not a pass: a gate that validated nothing must not report
+# success. One manifest is found today. The altar-server guides keep their
+# artwork record as prose --- `altar-server-guides/research/artwork-manifest.md`,
+# 1,248 lines of provenance --- and there is no machine-readable manifest to
+# check there; none is invented here.
+#
+# In `check` and not `check-installed`: the manifests and every asset they
+# name are tracked under `src/`, and nothing here opens `pdf/` or `build/`.
+# `artwork-library check-pdf --strict-review-triggers` is the half that does
+# read a built PDF and it is deliberately absent. Measured on 2026-09-05
+# against the installed altar-server edition of the sanctuary dictionary it
+# reports 50 embedded images above the 450 dpi trigger and exits 1, and
+# `guidance/repository.md` calls those thresholds review triggers rather than
+# quotas. It belongs behind a review verb, not in front of a deploy.
+check-artwork-manifests:
+	@set -eu; \
+		manifests=$$(find src -type f -name artwork-manifest.toml | sort); \
+		if [ -z "$$manifests" ]; then \
+			echo 'No artwork manifest was discovered under src/' >&2; \
+			exit 1; \
+		fi; \
+		for manifest in $$manifests; do \
+			$(PYTHON) tools/tpt artwork-library check "$$manifest"; \
+		done
 
 check-curriculum-sources: check-tools
 	@$(PYTHON) $(CURRICULUM_STRUCTURE_CHECKER) \
@@ -783,9 +879,20 @@ rebaseline-doc:
 # `check-document-catalogue` reports 204 editions with no installed PDF and a
 # drifted corpus.json, `check-public-alpha` refuses 204 release entries,
 # `check-promised-deliverables` cannot find 23 pieces of evidence, and
-# `check-sources` stops at `check-curriculum-rights`, which counts 0 installed
-# curriculum PDFs against 37. The whole of `check-sources` is here rather than
-# that one census because the census is reached through it.
+# `check-sources` fails inside `check-deployment-sources`, at the
+# `document-library structure --check` it reaches through
+# `check-document-catalogue`. That is the same corpus.json comparison that
+# keeps `check-document-catalogue` itself here: the tracked projection records
+# an installed `pdf` for all 204 editions and no `pdf_absent`, so on an
+# unbuilt tree every one of them flips and the whole projection drifts. The
+# whole of `check-sources` is here rather than that one comparison because
+# the comparison is reached through it.
+#
+# It was `check-curriculum-rights` that stopped `check-sources` here until
+# 2026-09-05, counting 0 installed curriculum PDFs against 37. That suite now
+# skips its installed-PDF assertions with a reason naming what did not run,
+# so it is no longer the reason; the catalogue projection is, and
+# `check-sources` stays.
 #
 # `check-release-bindings` is deliberately absent: the six volumes under
 # pdf/reading-plans/ stay tracked, so its recorded site sources are still on
@@ -794,15 +901,38 @@ rebaseline-doc:
 INSTALLED_TREE_CHECKS := check-sources check-document-catalogue \
 	check-promised-deliverables check-public-alpha
 
+# The third list: gates over tracked sources that are cheap to state and
+# expensive to run. They belong in neither of the two above --- they read
+# `src/` and want no build, so `check-installed` would order a seven-minute
+# corpus build in front of a check that needs none --- but a member that turns
+# `make check` from seconds into minutes forfeits the property the next comment
+# says `check` is kept for, and a gate nobody can afford to run is not a gate.
+#
+# `check-catena-structure` is here on measurement, not principle: 348s on
+# 2026-09-05 against a warm tree, because `--check` regenerates the whole
+# catena to compare and spawns node once per book. Its sibling
+# `check-catena-paragraphs` answers the same kind of question over 5,548 files
+# in 0.8s and stays in `check`. If that derivation ever stops paying per book,
+# this member belongs back in `check` and this list can go with it.
+EXPENSIVE_SOURCE_CHECKS := check-catena-structure
+
+check-expensive: $(EXPENSIVE_SOURCE_CHECKS)
+
 # Staleness stays out of `check`: it flags re-evaluation work, not breakage.
 #
 # `check` is the gate over tracked sources, and it is kept cheap deliberately.
-# Nineteen of its twenty members have nothing to do with PDFs at all and the
-# twentieth reads only the six tracked reading tracks; not one of them runs
-# pdflatex, though `check-metadata` still asks `check-tools` that it is
+# Twenty-one of its twenty-two members have nothing to do with PDFs at all and
+# the twenty-second reads only the six tracked reading tracks; not one of them
+# runs pdflatex, though `check-metadata` still asks `check-tools` that it is
 # installed. Putting the build in front of them would have made every source
-# edit pay for two providers' LaTeX runs to answer twenty questions, nineteen
-# of which are not about PDFs.
+# edit pay for two providers' LaTeX runs to answer twenty-two questions,
+# twenty-one of which are not about PDFs.
+#
+# Cheap here means seconds a member, with `check-examples` at about two minutes
+# because replaying every captured invocation is the price of the claim that
+# they are real. A member that costs minutes for any other reason belongs in
+# $(EXPENSIVE_SOURCE_CHECKS) above, which is where `check-catena-structure`
+# went and why.
 #
 # The four that are about installed publications moved to `check-installed`,
 # which orders the build ahead of them, and `check-all` is both. A member that
@@ -811,17 +941,20 @@ INSTALLED_TREE_CHECKS := check-sources check-document-catalogue \
 # is stated rather than discovered.
 check: check-metadata check-web-editions check-web-editions-current \
 	check-proper-components check-source-reader \
-	check-roman-sanctuary-artwork \
+	check-roman-sanctuary-artwork check-artwork-manifests \
 	check-release-bindings check-tool-registry \
 	check-browser-static \
 	check-calendar-days check-calendar-masses check-calendar-rubrics \
 	check-propers-census check-propers-structure \
 	check-mass-ordinary check-bible-indexes check-catena \
+	check-catena-paragraphs \
 	check-commentary-coverage check-scripture-chronology check-examples
 	@printf '%s\n' \
 		'check covers tracked sources. It does not run: $(INSTALLED_TREE_CHECKS)' \
 		'Those read the installed tree; `make check-installed` builds it and runs them.' \
-		'`make check-all` runs both.'
+		'Nor: $(EXPENSIVE_SOURCE_CHECKS) --- tracked sources too, but minutes' \
+		'rather than seconds; `make check-expensive` runs those.' \
+		'`make check-all` runs all three.'
 
 # The same gates, with the build that produces what they read ordered ahead of
 # them. From a clone that has never been built this is correct without a manual
@@ -831,7 +964,7 @@ check: check-metadata check-web-editions check-web-editions-current \
 check-installed: install-all
 	@$(MAKE) --no-print-directory $(INSTALLED_TREE_CHECKS)
 
-check-all: check check-installed
+check-all: check check-expensive check-installed
 
 # Seven of the browser scripts are parsed by nothing: no Python test loads
 # them, no node harness runs them, and their only protection is a sha256 pin in
@@ -982,6 +1115,34 @@ check-catena:
 	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
 		$(PYTHON) scripts/_catena.py check; \
 	else echo "PyYAML missing; skipping catena check"; fi
+
+# `check-catena` proves the scripture edge; these two prove that what the
+# browser is served over it is what the generator produces NOW. `structure`
+# and `paragraphs` write 12,049 hash-bound files under
+# src/web/data/structure/, and nothing gated them: a change to the derivation
+# moved every one of them silently. That is the same defect
+# `check-propers-structure` was added for on 2026-09-03, at four orders of
+# magnitude more files. Both verbs write nothing under `--check`;
+# `scripts/_catena.py structure` and `... paragraphs` are what fix a failure.
+#
+# Both read and compare tracked files under `src/` and neither wants a build,
+# so neither belongs in `check-installed`. They part company on cost, which is
+# measured rather than assumed: `paragraphs --check` compares 5,548 files in
+# 0.8s and is a `check` member; `structure --check` takes 348s over 1,914,
+# because it regenerates the catena to compare and spawns node once per book,
+# so it is in $(EXPENSIVE_SOURCE_CHECKS) and `make check` names it as not run.
+# Guarded on PyYAML for the reason `check-catena` above them is --- the script
+# reads the calendars through it --- and the skip says so rather than
+# reporting a check that did not run.
+check-catena-structure:
+	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
+		$(PYTHON) scripts/_catena.py structure --check; \
+	else echo "PyYAML missing; skipping catena structure check"; fi
+
+check-catena-paragraphs:
+	@if $(PYTHON) -c 'import yaml' 2>/dev/null; then \
+		$(PYTHON) scripts/_catena.py paragraphs --check; \
+	else echo "PyYAML missing; skipping catena paragraph check"; fi
 
 # A GAP NEVER FAILS THIS. An unacquired work is not a defect, and a build that
 # refused to go green until someone had gone and got the rest of De civitate Dei

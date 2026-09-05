@@ -7,6 +7,11 @@ on:
 
 permissions:
   contents: read
+  # The typesetting toolchain is pulled from this repository's own package in
+  # GitHub Container Registry. Read, and only read: publishing that image is
+  # `texlive-image.yml`, a deliberate operator act, and a deploy must never be
+  # able to move the pin it consumes.
+  packages: read
   pages: write
   id-token: write
 
@@ -38,6 +43,36 @@ env:
   # baseline and needs the corpus rebuilt against it, not a version bump.
   ARCH_IMAGE: archlinux@sha256:82b1b08faae9d61e3e7e13d562f4d09114d939105b0d59ff34140f3bd418593a
   ARCH_SNAPSHOT: "2026/09/04"
+  # The package set those two pins resolve. It lives here, in one place, and
+  # `texlive-image.yml` reads it back out of this file rather than restating
+  # it: the image and the from-scratch fallback below have to be the same
+  # toolchain or the pin means nothing.
+  ARCH_PACKAGES: >-
+    texlive-bin texlive-basic texlive-latex texlive-latexrecommended
+    texlive-latexextra texlive-pictures texlive-fontsrecommended
+    texlive-fontsextra poppler python python-yaml make git diffutils
+  # The same toolchain, resolved once and published as an image, so that a
+  # deploy pulls it instead of spending three minutes running pacman against
+  # the archive on every run. Pinned by digest and never by tag: a tag is
+  # mutable and would give away exactly the property ARCH_IMAGE exists to
+  # provide.
+  #
+  # Empty means "not published yet, or deliberately bypassed", and the deploy
+  # then bootstraps the toolchain from ARCH_IMAGE and ARCH_SNAPSHOT exactly as
+  # it did before this line existed. That fallback is what keeps this workflow
+  # honest: the image is a cache of a computation this file can still perform
+  # from its two original pins, not a new source of truth.
+  #
+  # To publish or refresh it: run the `Publish the TeX Live toolchain image`
+  # workflow, then paste the digest it prints here. Changing ARCH_IMAGE,
+  # ARCH_SNAPSHOT or ARCH_PACKAGES without republishing leaves this pin naming
+  # the *old* toolchain, which is why the deploy prints the resolved image and
+  # the installed TeX Live versions on every run.
+  TEXLIVE_IMAGE: ""
+  # Bump to discard every cached PDF: the cache key below is a claim about
+  # which inputs can change a PDF's bytes, and this is how a correction to
+  # that claim is applied to entries built under the old one.
+  PDF_CACHE_SCHEMA: "1"
 
 jobs:
   deploy:
@@ -46,10 +81,12 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     # Checkout of the large publication tree can itself take more than ten
-    # minutes on a cold runner, and the PDFs are now typeset here rather than
-    # read out of the tree: roughly two hundred documents, each compiled until
-    # its auxiliary files stop moving, on four vCPUs. Budget, worst case:
-    # ~10 checkout, ~5 image pull, ~30 typesetting, ~6 source gate, ~3 site,
+    # minutes on a cold runner, and the PDFs are typeset here rather than read
+    # out of the tree. A deploy that hits the PDF cache typesets nothing and
+    # finishes in a couple of minutes; a deploy that misses it entirely
+    # typesets roughly two hundred documents, each compiled until its
+    # auxiliary files stop moving, on four vCPUs. Budget the miss, worst case:
+    # ~10 checkout, ~1 image pull, ~30 typesetting, ~6 source gate, ~3 site,
     # ~3 verification, ~5 upload and deploy -- about an hour. Ninety minutes
     # leaves half again as much headroom for a cold runner or a slow registry
     # while still killing a hung job far inside the six-hour default, which
@@ -115,73 +152,409 @@ jobs:
           print(f"{len(bound)} release-bound PDF(s) present")
           PY
 
-      # Nothing here is cached, deliberately. There is no TeX package cache to
-      # keep: the toolchain arrives whole inside the pinned image, and staging
-      # its layers through actions/cache would replace one content-addressed
-      # copy with a mutable one for no gain. A build/ cache would be worse than
-      # useless -- Make decides staleness by mtime, every checkout stamps every
-      # source file with a fresh one, and a restored tree could carry a PDF
-      # built from an earlier commit's sources into the published artifact,
-      # which is exactly the reproducibility this pin exists to protect. The
-      # pip install is two version-locked wheels and is not worth a cache.
+      # A store of previously typeset PDFs, one file per document, named by a
+      # hash of everything that can change that document's bytes. It lives
+      # outside the workspace so a restored entry can never be mistaken for a
+      # tracked file or reach the published artifact except through `make
+      # install`, which re-validates it.
       #
-      # Pulled as its own step so a registry failure reads as one, and so the
-      # 2.7 GiB this costs is visible in the timings rather than hidden inside
-      # the build.
+      # The key is per-run and never matches; the prefix always does, so every
+      # deploy restores the newest store, adds whatever it had to typeset, and
+      # saves the result. The store is pruned to the current corpus before it
+      # is saved, so it stays the size of the corpus (~250 MiB) rather than
+      # growing with history, and the save is skipped entirely when nothing
+      # changed -- one new entry per content change, not one per deploy, which
+      # is what keeps this workflow from evicting the rest of the repository's
+      # caches out of the shared 10 GiB. Only `main` runs this workflow, so
+      # every entry is written and read in the same cache scope; nothing here
+      # depends on a branch fallback.
+      - name: Restore the typeset-PDF store
+        uses: actions/cache/restore@v4
+        with:
+          path: ${{ runner.temp }}/triptych-pdf-store
+          key: triptych-pdfs-${{ env.PDF_CACHE_SCHEMA }}-${{ github.sha }}-${{ github.run_id }}
+          restore-keys: |
+            triptych-pdfs-${{ env.PDF_CACHE_SCHEMA }}-
+
+      # What a cache hit has to prove, and how this proves it.
+      #
+      # The Makefile already carries a curated, per-document statement of
+      # which files render into which PDF: REGISTER_DOCUMENT_SOURCES for a
+      # leaf's own render-capable sources, and explicit declarations beside it
+      # for every cross-leaf import -- the full-text propers reading their
+      # study edition, sacraments-at-a-glance reading the treatise fragments,
+      # the nuptial Mass reading the matrimony summary, the Angelus reading
+      # the Carmel novena's Hail Mary. That statement is asked of `make`
+      # itself here rather than restated, so it cannot drift from the graph the
+      # build actually uses.
+      #
+      # Sampled against `pdflatex -recorder` on five documents from five
+      # families, the declared set was a strict superset of the files pdfTeX
+      # actually opened -- it also carries research records and unused artwork,
+      # which costs rebuilds and cannot cause a stale hit. The one input pdfTeX
+      # reads that no source file names is the generated sanctuary dictionary,
+      # and that is handled below.
+      #
+      # The key therefore covers: every declared prerequisite's contents; the
+      # generated dictionary tree; the Makefile itself, because the recipe is
+      # an input to the bytes; and the toolchain pins. A prerequisite that is
+      # missing, or is a target this step does not understand, yields no key at
+      # all and the document is typeset -- unknown means build, never reuse.
+      #
+      # Restoring is not enough on its own. Make decides staleness by mtime and
+      # a checkout stamps every source with the checkout time, which is why
+      # this build currently recompiles a corpus it already has; a restored PDF
+      # would be overwritten rather than kept. Each restored PDF is therefore
+      # stamped later than every file in the workspace, which is what actually
+      # stops the rebuild.
+      - name: Plan the typesetting against the PDF cache
+        id: plan
+        run: |
+          set -euo pipefail
+          export PDF_STORE="${RUNNER_TEMP}/triptych-pdf-store"
+          export PDF_PLAN="${RUNNER_TEMP}/triptych-plan"
+          mkdir -p "$PDF_STORE" "$PDF_PLAN"
+          python3 - <<'PY'
+          import hashlib
+          import json
+          import os
+          import shutil
+          import subprocess
+          import time
+          from pathlib import Path
+
+          WORKSPACE = Path(os.environ["GITHUB_WORKSPACE"]).resolve()
+          STORE = Path(os.environ["PDF_STORE"])
+          PLAN = Path(os.environ["PDF_PLAN"])
+
+          # The one generated input in the PDF path. The Makefile expresses it
+          # as a phony prerequisite, which makes those six documents rebuild on
+          # every run whether or not anything changed -- about a minute of the
+          # deploy. Running the generator here and hashing its whole output
+          # tree into the affected keys is the same guarantee stated precisely
+          # instead of pessimistically, and lets `make --old-file` retire the
+          # phony. If the generator does not run, or leaves nothing behind, the
+          # phony is left alone and those documents rebuild as they do today.
+          GENERATOR = "generate-roman-sanctuary-dictionary"
+          GENERATED_VARIABLE = "ROMAN_SANCTUARY_DICTIONARY_GENERATED"
+
+          TOOLCHAIN = "\n".join(
+              "%s=%s" % (name, os.environ.get(name, ""))
+              for name in (
+                  "PDF_CACHE_SCHEMA",
+                  "TEXLIVE_IMAGE",
+                  "ARCH_IMAGE",
+                  "ARCH_SNAPSHOT",
+                  "ARCH_PACKAGES",
+              )
+          )
+
+
+          def make(*arguments, capture=True):
+              return subprocess.run(
+                  ["make", *arguments],
+                  cwd=WORKSPACE,
+                  check=True,
+                  text=True,
+                  stdout=subprocess.PIPE if capture else None,
+              ).stdout
+
+
+          DIGESTS = {}
+
+
+          def digest(path):
+              """Memoised: src/common/preamble.tex is a prerequisite of all 206."""
+              cached = DIGESTS.get(path)
+              if cached is not None:
+                  return cached
+              accumulator = hashlib.sha256()
+              with open(path, "rb") as handle:
+                  for block in iter(lambda: handle.read(1 << 20), b""):
+                      accumulator.update(block)
+              DIGESTS[path] = accumulator.hexdigest()
+              return DIGESTS[path]
+
+
+          def tree(root):
+              paths = sorted(p for p in root.rglob("*") if p.is_file() and not p.is_symlink())
+              return [(str(p.relative_to(WORKSPACE)), digest(p)) for p in paths]
+
+
+          def database(provider):
+              """Every declared file prerequisite of every build PDF, from make."""
+              text = make("-p", "-n", "install", "PROVIDER=%s" % provider)
+              prerequisites = {}
+              variables = {}
+              for line in text.splitlines():
+                  if not line or line[0] in " \t#":
+                      continue
+                  head, separator, tail = line.partition(" = ")
+                  if separator and " " not in head:
+                      variables.setdefault(head, tail.strip())
+                      continue
+                  head, separator, tail = line.partition(" := ")
+                  if separator and " " not in head:
+                      variables[head] = tail.strip()
+                      continue
+                  head, separator, tail = line.partition(":")
+                  if not separator or "=" in head or "%" in head:
+                      continue
+                  targets = [t for t in head.split() if t.endswith(".pdf")]
+                  if not targets:
+                      continue
+                  declared = tail.split("|")[0].split()
+                  for target in targets:
+                      prerequisites.setdefault(target, set()).update(declared)
+              return prerequisites, variables
+
+
+          providers = sorted(
+              {
+                  path.relative_to(WORKSPACE / "src").parts[0]
+                  for path in (WORKSPACE / "src").glob("*/**/main.tex")
+              }
+          )
+          if not providers:
+              raise SystemExit("no provider carries a src/<provider>/**/main.tex")
+
+          def discard(provider, document):
+              """Nothing that is not a proven hit may survive into the build.
+
+              A GitHub-hosted runner arrives with no build/ at all, so this is
+              a no-op there. It is not a no-op on a workspace that was reused,
+              and the failure it forecloses is the whole point of the exercise:
+              a PDF left from an earlier commit, newer than the sources by an
+              accident of mtime, quietly installed and published.
+              """
+              for path in (
+                  WORKSPACE / "build" / provider / ("%s.pdf" % document),
+                  WORKSPACE / "build" / provider / ".metadata" / ("%s.ok" % document),
+              ):
+                  path.unlink(missing_ok=True)
+
+
+          keys = {}
+          restorable = []
+          hits = 0
+          misses = 0
+          unkeyed = 0
+          uncacheable = 0
+          neutralise = True
+          for provider in providers:
+              documents = make("list", "PROVIDER=%s" % provider).split()
+              prerequisites, variables = database(provider)
+
+              wanted = any(
+                  GENERATOR in prerequisites.get("build/%s/%s.pdf" % (provider, document), ())
+                  for document in documents
+              )
+              generated = None
+              if wanted:
+                  make(GENERATOR, "PROVIDER=%s" % provider, capture=False)
+                  root = WORKSPACE / variables.get(GENERATED_VARIABLE, "")
+                  if variables.get(GENERATED_VARIABLE) and root.is_dir():
+                      generated = tree(root)
+                  if generated is None:
+                      print("::warning::%s left no generated tree; not retiring its phony" % GENERATOR)
+                      neutralise = False
+
+              for document in documents:
+                  target = "build/%s/%s.pdf" % (provider, document)
+                  # Cache only what the standalone validator can re-derive.
+                  # `check-generation-metadata --pdf <id>` resolves an id to
+                  # src/<provider>/<id>/main.tex, and the proper syntheses have
+                  # no such directory: their stamp is written by the recipe that
+                  # builds them and by nothing else, so a restored synthesis PDF
+                  # would reach a .metadata/%.ok rule that cannot succeed. They
+                  # are cheap -- under a second each -- and they are typeset
+                  # every deploy.
+                  if not (WORKSPACE / "src" / provider / document / "main.tex").is_file():
+                      discard(provider, document)
+                      uncacheable += 1
+                      continue
+                  declared = prerequisites.get(target)
+                  if declared is None:
+                      discard(provider, document)
+                      unkeyed += 1
+                      continue
+                  manifest = ["triptych-pdf-cache", TOOLCHAIN, "provider=%s" % provider,
+                              "document=%s" % document, "makefile=%s" % digest(WORKSPACE / "Makefile")]
+                  usable = True
+                  for name in sorted(declared):
+                      if name == GENERATOR:
+                          if generated is None:
+                              usable = False
+                              break
+                          manifest.extend("generated %s %s" % entry for entry in generated)
+                          continue
+                      path = WORKSPACE / name
+                      if path.is_file():
+                          manifest.append("input %s %s" % (name, digest(path)))
+                      elif path.is_dir():
+                          manifest.extend("input %s %s" % entry for entry in tree(path))
+                      else:
+                          usable = False
+                          break
+                  if not usable:
+                      discard(provider, document)
+                      unkeyed += 1
+                      continue
+                  key = hashlib.sha256("\n".join(manifest).encode("utf-8")).hexdigest()
+                  keys.setdefault(provider, {})[document] = key
+                  entry = STORE / ("%s.pdf" % key)
+                  if not entry.is_file():
+                      discard(provider, document)
+                      misses += 1
+                      continue
+                  restorable.append((entry, WORKSPACE / target))
+                  hits += 1
+
+          # Now, and not a moment in the future: every source was stamped by the
+          # checkout minutes ago, so the current time is already later than
+          # everything make will compare a restored PDF against, and a stamp
+          # ahead of the clock would have make announce clock skew and warn that
+          # the build may be incomplete on every single line it prints.
+          stamp = time.time()
+          for entry, built in restorable:
+              built.parent.mkdir(parents=True, exist_ok=True)
+              # Copied, never hard linked: a document this step judged a hit but
+              # make rebuilds anyway would have pdfTeX truncate the store entry
+              # in place and corrupt the cache for that key. A runner that kept
+              # its workspace can already hold the link this run's predecessor
+              # made; stamping it is then the whole job.
+              if not (built.is_file() and os.path.samefile(entry, built)):
+                  shutil.copyfile(entry, built)
+              os.utime(built, (stamp, stamp))
+
+          to_build = misses + unkeyed + uncacheable
+          PLAN.mkdir(parents=True, exist_ok=True)
+          (PLAN / "keys.json").write_text(json.dumps(keys, indent=1, sort_keys=True), encoding="utf-8")
+          (PLAN / "providers.txt").write_text(" ".join(providers) + "\n", encoding="utf-8")
+          (PLAN / "restored.txt").write_text(
+              "\n".join(sorted(p.name for p in STORE.glob("*.pdf"))) + "\n", encoding="utf-8"
+          )
+          (PLAN / "make-flags.txt").write_text(
+              ("--old-file=%s\n" % GENERATOR) if neutralise else "\n", encoding="utf-8"
+          )
+          print("providers: %s" % " ".join(providers))
+          print(
+              "cache hits: %d, misses: %d, unkeyable: %d, not cacheable: %d"
+              % (hits, misses, unkeyed, uncacheable)
+          )
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as handle:
+              handle.write("documents_to_build=%d\n" % to_build)
+              handle.write("cache_hits=%d\n" % hits)
+          PY
+
+      # Written to a file rather than passed as `bash -c '...'` so that the two
+      # levels of quoting stop fighting each other, and so the script can be
+      # read and syntax-checked on its own.
+      - name: Prepare the container build script
+        run: |
+          set -euo pipefail
+          mkdir -p "${RUNNER_TEMP}/triptych-toolchain"
+          cat > "${RUNNER_TEMP}/triptych-toolchain/build.sh" <<'SH'
+          set -euo pipefail
+
+          if [ -z "${TRIPTYCH_BAKED}" ]; then
+            # One immutable archive tree, not the rolling mirrors: a rebuild
+            # has to resolve the same packages the reviewed run resolved.
+            printf 'Server=https://archive.archlinux.org/repos/%s/$repo/os/$arch\n' \
+              "${TRIPTYCH_SNAPSHOT}" > /etc/pacman.d/mirrorlist
+            # -Syu, not -Sy then -S: the image base is older than the snapshot,
+            # and installing into a half-upgraded system is the one way to
+            # break an Arch container.
+            pacman -Sy --noconfirm --needed archlinux-keyring
+            # Deliberately unquoted: the package set is a word list.
+            # shellcheck disable=SC2086
+            pacman -Syu --noconfirm --needed ${TRIPTYCH_PACKAGES}
+          fi
+
+          # Printed on every run, hit or miss. The digest says which image was
+          # pulled; this says what is inside it, which is the claim that
+          # actually matters when the pin and the package set disagree.
+          pdflatex --version | sed -n 1,2p
+          pacman -Q texlive-bin texlive-basic texlive-latex texlive-latexextra
+          python3 -c "import sys, tomllib; assert sys.version_info >= (3, 11), sys.version"
+
+          for provider in ${TRIPTYCH_PROVIDERS}; do
+            echo "::group::make install PROVIDER=${provider}"
+            # shellcheck disable=SC2086
+            make --jobs="$(nproc)" ${TRIPTYCH_MAKE_FLAGS} install "PROVIDER=${provider}"
+            echo "::endgroup::"
+          done
+          SH
+
+      # Pulled as its own step so a registry failure reads as one, and so what
+      # it costs is visible in the timings rather than hidden inside the build.
+      # Unconditional even on a total cache hit: the proper syntheses are never
+      # cached, so pdfTeX is always wanted, and a branch that only ever runs on
+      # a corpus this repository does not have is a branch nothing would test.
       - name: Pull the pinned TeX Live toolchain
-        run: docker pull "$ARCH_IMAGE"
+        env:
+          # Through the environment rather than interpolated into the script:
+          # a token spliced into a shell command is a token in the run log's
+          # command trace and in every reader's copy-paste.
+          REGISTRY_USER: ${{ github.actor }}
+          REGISTRY_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if [ -n "${TEXLIVE_IMAGE}" ]; then
+            printf '%s' "${REGISTRY_TOKEN}" | docker login ghcr.io --username "${REGISTRY_USER}" --password-stdin
+            docker pull "${TEXLIVE_IMAGE}"
+          else
+            echo "::warning::TEXLIVE_IMAGE is unset; bootstrapping the toolchain from ARCH_IMAGE and ARCH_SNAPSHOT (about three minutes). Publish it with the texlive-image workflow and pin the digest."
+            docker pull "${ARCH_IMAGE}"
+          fi
 
       # Every provider, not the Makefile's PROVIDER default of gpt: the site's
       # publication records span all of them. The Makefile computes PROVIDERS
       # from src/*/**/main.tex but exposes no target that installs across them,
-      # so the same derivation is repeated here (Makefile ALL_MAIN_SOURCES /
-      # PROVIDERS) and the loop is this workflow's.
+      # so the planning step above derives the same list and this loop is this
+      # workflow's.
       #
       # `make install` and not a pdflatex loop, because the real pipeline is
       # what has to run: check-metadata first, then per document the
       # generate-roman-sanctuary-dictionary prerequisite that the six
       # roman-sanctuary-dictionary leaves fail without, the compile to a fixed
       # point, the curriculum-structure check, the generation-metadata
-      # validation, and finally the hash-checked staged install into pdf/.
+      # validation, and finally the hash-checked staged install into pdf/. A
+      # cached PDF skips only the compile: nothing but the PDF crosses runs,
+      # so it is re-validated here against the document's declared generation
+      # metadata and installed under the same hash checks. The cache is never
+      # the last word on a document.
       #
-      # The container runs as root because poppler-utils has to be added to it:
-      # the generation-metadata validator shells out to pdftotext and pdfinfo,
-      # and the image ships neither. Only pdflatex's own inputs are pinned by
-      # the digest; poppler reads the PDFs and cannot change their bytes. The
-      # step after this one gives the workspace back to the runner user.
-      - name: Typeset every provider's PDFs in the pinned container
+      # The container runs as root because poppler-utils has to be added to it
+      # on the fallback path: the generation-metadata validator shells out to
+      # pdftotext and pdfinfo. Only pdflatex's own inputs are pinned by the
+      # digest; poppler reads the PDFs and cannot change their bytes. The step
+      # after this one gives the workspace back to the runner user.
+      - name: Typeset the outstanding PDFs in the pinned container
         run: |
           set -euo pipefail
-          providers="$(find src -mindepth 2 -type f -name main.tex -print | cut -d/ -f2 | sort -u | tr '\n' ' ')"
+          providers="$(cat "${RUNNER_TEMP}/triptych-plan/providers.txt")"
           test -n "$providers"
-          printf 'providers: %s\n' "$providers"
+          make_flags="$(cat "${RUNNER_TEMP}/triptych-plan/make-flags.txt")"
+          if [ -n "${TEXLIVE_IMAGE}" ]; then
+            image="${TEXLIVE_IMAGE}"
+            baked=1
+          else
+            image="${ARCH_IMAGE}"
+            baked=""
+          fi
+          printf 'image: %s\nproviders: %s\nmake flags: %s\n' "$image" "$providers" "$make_flags"
           docker run --rm \
             --volume "${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE}" \
+            --volume "${RUNNER_TEMP}/triptych-toolchain:/triptych-toolchain:ro" \
             --workdir "${GITHUB_WORKSPACE}" \
             --env "TRIPTYCH_PROVIDERS=${providers}" \
             --env "TRIPTYCH_SNAPSHOT=${ARCH_SNAPSHOT}" \
-            "$ARCH_IMAGE" \
-            bash -euo pipefail -c '
-              # One immutable archive tree, not the rolling mirrors: a rebuild
-              # has to resolve the same packages the reviewed run resolved.
-              printf "Server=https://archive.archlinux.org/repos/%s/\$repo/os/\$arch\n" \
-                "${TRIPTYCH_SNAPSHOT}" > /etc/pacman.d/mirrorlist
-              # -Syu, not -Sy then -S: the image base is older than the
-              # snapshot, and installing into a half-upgraded system is the
-              # one way to break an Arch container.
-              pacman -Sy --noconfirm --needed archlinux-keyring
-              pacman -Syu --noconfirm --needed \
-                texlive-bin texlive-basic texlive-latex texlive-latexrecommended \
-                texlive-latexextra texlive-pictures texlive-fontsrecommended \
-                texlive-fontsextra poppler python python-yaml make git diffutils
-              pdflatex --version | sed -n 1,2p
-              python3 -c "import sys, tomllib; assert sys.version_info >= (3, 11), sys.version"
-              for provider in ${TRIPTYCH_PROVIDERS}; do
-                echo "::group::make install PROVIDER=${provider}"
-                make --jobs="$(nproc)" install "PROVIDER=${provider}"
-                echo "::endgroup::"
-              done
-            '
+            --env "TRIPTYCH_PACKAGES=${ARCH_PACKAGES}" \
+            --env "TRIPTYCH_MAKE_FLAGS=${make_flags}" \
+            --env "TRIPTYCH_BAKED=${baked}" \
+            "$image" \
+            bash /triptych-toolchain/build.sh
 
       # Everything the container wrote is root-owned, including the __pycache__
       # directories Python leaves beside the imported modules under scripts/.
@@ -190,12 +563,70 @@ jobs:
       - name: Return the workspace to the runner user
         run: sudo chown -R "$(id -u):$(id -g)" "$GITHUB_WORKSPACE"
 
+      # Saved from the built tree rather than from pdf/, because build/ is what
+      # the next run's make graph is keyed on. Hard linked where the filesystem
+      # allows it, so recording a 250 MiB corpus costs no second copy; the
+      # store is read back by copy, so nothing can write through the link.
+      - name: Record the typeset PDFs in the store
+        id: store
+        run: |
+          set -euo pipefail
+          export PDF_STORE="${RUNNER_TEMP}/triptych-pdf-store"
+          export PDF_PLAN="${RUNNER_TEMP}/triptych-plan"
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          WORKSPACE = Path(os.environ["GITHUB_WORKSPACE"]).resolve()
+          STORE = Path(os.environ["PDF_STORE"])
+          PLAN = Path(os.environ["PDF_PLAN"])
+
+          keys = json.loads((PLAN / "keys.json").read_text(encoding="utf-8"))
+          wanted = set()
+          for provider, documents in keys.items():
+              for document, key in documents.items():
+                  built = WORKSPACE / "build" / provider / ("%s.pdf" % document)
+                  if not built.is_file():
+                      continue
+                  wanted.add("%s.pdf" % key)
+                  entry = STORE / ("%s.pdf" % key)
+                  if entry.is_file():
+                      continue
+                  try:
+                      os.link(built, entry)
+                  except OSError:
+                      entry.write_bytes(built.read_bytes())
+
+          # Pruned to the corpus this deploy published. A document that was
+          # retitled, retired or rebuilt leaves an entry no future key can
+          # name, and keeping those is how a 250 MiB store becomes a 10 GiB one.
+          for entry in STORE.glob("*.pdf"):
+              if entry.name not in wanted:
+                  entry.unlink()
+
+          before = set((PLAN / "restored.txt").read_text(encoding="utf-8").split())
+          changed = before != wanted
+          print("store entries: %d (was %d), changed: %s" % (len(wanted), len(before), changed))
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as handle:
+              handle.write("changed=%s\n" % ("true" if changed else "false"))
+          PY
+
+      - name: Save the typeset-PDF store
+        if: steps.store.outputs.changed == 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: ${{ runner.temp }}/triptych-pdf-store
+          key: triptych-pdfs-${{ env.PDF_CACHE_SCHEMA }}-${{ github.sha }}-${{ github.run_id }}
+
       # This gate used to run before anything was built, which was correct
       # while the PDFs were tracked. It no longer is: `document-library check`
       # reads the title and subject out of each built PDF, and
       # `document-library structure --check` re-derives the tracked catalogue
       # under src/web/data from those same PDFs, page counts included. Both
-      # need pdf/ populated, so the gate follows the typesetting.
+      # need pdf/ populated, so the gate follows the typesetting. It is also
+      # the backstop on the cache: a restored PDF whose title, subject or page
+      # count does not match its sources fails here rather than publishing.
       - name: Verify deployable sources and inventories
         run: make check-deployment-sources
 

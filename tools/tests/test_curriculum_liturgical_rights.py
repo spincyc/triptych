@@ -199,15 +199,19 @@ class CurriculumLiturgicalRightsTests(unittest.TestCase):
             self.assertEqual(manifest["rights_status"], "restricted")
             self.assertEqual(manifest["sha256"], artifact["artifact_sha256"])
 
-    def test_allowlist_exactly_matches_current_public_surfaces(self) -> None:
-        _, window_artifacts = load_registry()
+    def allowlist_expectations(
+        self, window_artifacts: dict[str, tuple[str, ...]]
+    ) -> dict[str, list[tuple[object, ...]]]:
         allowlist = tomllib.loads(ALLOWLIST.read_text(encoding="utf-8"))
         self.assertEqual(
             allowlist["schema"],
             "triptych-curriculum-liturgical-rights-allowlist-v1",
         )
         self.assertIs(allowlist["contains_protected_wording"], False)
-        expected: list[tuple[object, ...]] = []
+        expected: dict[str, list[tuple[object, ...]]] = {
+            "tracked-source": [],
+            "installed-pdf": [],
+        }
         ids: set[str] = set()
         for item in allowlist["allowance"]:
             self.assertNotIn(item["id"], ids)
@@ -236,17 +240,55 @@ class CurriculumLiturgicalRightsTests(unittest.TestCase):
                     item["path"].startswith("pdf/gpt/curriculums/ecclesiastical-latin/")
                 )
                 self.assertNotIn("line_start", item)
-            expected.append(allowance_key(item))
-        self.assertEqual(len(expected), len(set(expected)), "duplicate allowance")
+            expected[item["surface"]].append(allowance_key(item))
+        keys = expected["tracked-source"] + expected["installed-pdf"]
+        self.assertEqual(len(keys), len(set(keys)), "duplicate allowance")
+        return expected
 
+    def test_allowlist_exactly_matches_tracked_curriculum_sources(self) -> None:
+        _, window_artifacts = load_registry()
+        expected = self.allowlist_expectations(window_artifacts)
         source, undecodable = source_findings(window_artifacts)
         self.assertEqual(undecodable, [], "tracked curriculum file is not UTF-8")
-        pdfs = sorted(PDF_ROOT.rglob("*.pdf"))
-        self.assertEqual(len(pdfs), 37, "installed curriculum PDF census changed")
-        actual = source + pdf_findings(window_artifacts)
         self.assertEqual(
-            sorted(actual),
-            sorted(expected),
+            sorted(source),
+            sorted(expected["tracked-source"]),
+            "hash-only rights finding differs from the exact location-scoped allowlist",
+        )
+
+    def test_allowlist_exactly_matches_installed_curriculum_pdfs(self) -> None:
+        # Installed PDFs stopped being tracked on 2026-09-04 and are built during
+        # deployment (guidance/repository.md), so a checkout that has never been
+        # built has nothing to scan. The skip names what did not run; a tree that
+        # has the directory is held to the whole gate below.
+        if not PDF_ROOT.is_dir():
+            self.skipTest(
+                f"{PDF_ROOT.relative_to(ROOT)} is not installed, so the "
+                "installed-PDF half of the curriculum rights gate did not run; "
+                "`make check-installed` builds the tree and runs it"
+            )
+        _, window_artifacts = load_registry()
+        expected = self.allowlist_expectations(window_artifacts)
+        # The allowlist names only the 13 PDFs that carry an allowance, so
+        # agreeing with it cannot show that the other 24 were scanned at all.
+        # The census is kept, and anchored to the publishable leaves that
+        # determine it rather than left as a bare number.
+        installed = sorted(
+            path.relative_to(PDF_ROOT).with_suffix("").as_posix()
+            for path in PDF_ROOT.rglob("*.pdf")
+        )
+        self.assertEqual(len(installed), 37, "installed curriculum PDF census changed")
+        self.assertEqual(
+            installed,
+            sorted(
+                path.parent.relative_to(CURRICULUM_ROOT).as_posix()
+                for path in CURRICULUM_ROOT.rglob("main.tex")
+            ),
+            "installed curriculum PDFs do not mirror the publishable leaves",
+        )
+        self.assertEqual(
+            sorted(pdf_findings(window_artifacts)),
+            sorted(expected["installed-pdf"]),
             "hash-only rights finding differs from the exact location-scoped allowlist",
         )
 
