@@ -41,8 +41,21 @@ The seven research lanes completed their sweeps, and the engine accepted their
 the complete `research/scope.md` now preserves those findings, five integrated
 claims, six precedent-covered proposals, five cultural entries, the immutable
 chronology audit and every reader-facing section's evidence position.
-Source registration is in progress. Authoring, evaluation, both reviewed PDFs, the canonical web edition
-and release records remain outstanding. No guide has been installed or
+Source registration passed over its outputs: 79 receipts resolved to 71
+distinct artifacts, with 60 new records, 11 already held, and one additional
+government-page derivative. The 38 retained payloads total 96,539,390 bytes;
+protected witnesses retain their identities and rights records without their
+payloads. The source-reader projection is current. The source-family catalogue
+checkpoint was reconciled while preserving all 150 pending review units.
+
+The full source check has **not** passed. Its remaining inventory failures
+concern four target audit files and the two inherited fingerprints above.
+The inventory generator refuses this pre-authoring leaf because it has no
+`main.tex` publication owner yet; no placeholder owner or checker change was
+introduced. Inventory integration awaits the real owner from authoring.
+
+Authoring is in progress. Evaluation, both reviewed PDFs, the canonical web
+edition and release records remain outstanding. No guide has been installed or
 accepted. Reconcile this entry to the engine's terminal
 disposition and preserve any unresolved findings before reporting the
 workflow finished; a `BLOCKED` run does not establish publication acceptance.

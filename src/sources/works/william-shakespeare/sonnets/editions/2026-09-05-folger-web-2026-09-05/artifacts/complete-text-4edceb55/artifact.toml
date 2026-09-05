@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.william-shakespeare.sonnets.folger-web-2026-09-05.complete-text-4edceb55"
+edition_id = "edition.william-shakespeare.sonnets.folger-web-2026-09-05"
+artifact_type = "digital-text"
+media_type = "text/plain"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "This is a modern protected text and its publisher presentation; the retrieved witness and research receipt establish public reading access, not permission to redistribute the complete response. Exact bytes are registered by digest and are not retained in Git. Shakespeare's underlying English is public domain, but the modern edited expression is not declared public domain."
+rights_jurisdiction = "United States"
+source_url = "https://folger-main-site-assets.s3.amazonaws.com/uploads/2022/11/shakespeares-sonnets_TXT_FolgerShakespeare.txt"
+provenance = "Exact complete response acquired directly by the cultural-afterlife research sweep on 2026-09-05, retained as bytes and hashed before registration. The recorded URL, size and SHA-256 were replayed against the saved file with sha256sum. Identity reconciliation used source-reader catalog queries Shakespeare; Sonnets, followed by inspection of the matching works, editions and aliases; existing artifact transformations and provenance were checked before adding this artifact. This records acquisition, not whole-work inspection or image collation."
+retrieved = "2026-09-05"
+sha256 = "4edceb55d15b87236a5e46069a1edf813864def60497b9fbd6afb0a6a47cdb6e"
+byte_size = 99272
+indexable = false
+notes = "Complete Folger text download, all 154 sonnets, with edition header; poem 57 at physical lines 964–979. Measured extent: 99272 bytes; 2675 physical lines.  Access limitation: the complete exact response is not retained because its redistribution rights are not established. An offline reader can inspect this identity, rights, digest and extent record; no exact offline substitute for this edition is claimed. Reopening the response requires public access to the source URL."
