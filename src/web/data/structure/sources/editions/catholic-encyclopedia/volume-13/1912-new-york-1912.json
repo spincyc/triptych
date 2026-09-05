@@ -121,6 +121,36 @@
    "storage": "tracked"
   },
   {
+   "artifact_type": "web-page",
+   "byte_size": 36077,
+   "edition_owned": true,
+   "id": "artifact.catholic-encyclopedia.volume-13.new-york-1912.newadvent-13722a-1a2aa30b",
+   "media_type": "text/html",
+   "notes": "Vander Heeren, Achille. \"Septuagint Version.\" The Catholic Encyclopedia. Vol. 13. New York: Robert Appleton Company, 1912. <https://www.newadvent.org/cathen/13722a.htm>. The exact delivery contains the complete signed article followed by New Advent's About-this-page and site apparatus. Those host-created bytes are not retained; the article itself is retained offline as artifact.catholic-encyclopedia.volume-13.new-york-1912.newadvent-13722a-1a2aa30b-article-text, whose derived_from field links back to this delivery.",
+   "page_count": null,
+   "retrieved": "2026-09-04",
+   "rights": "public-domain",
+   "rights_basis": "The Catholic Encyclopedia article is in the public domain in the United States: its volume was published between 1907 and 1912, so the longest term available to it under 17 U.S.C. 304 expired at the end of 2007 at the latest. What is not republished from this repository is New Advent's own layer of these exact bytes — the site's navigation, styling, advertising markup, support solicitation and \"About this page\" apparatus — which is why the delivery stays remote. That apparatus encumbers the page, not the article printed inside it. Settled once in src/sources/inventories/catholic-encyclopedia-rights-v1.toml.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://www.newadvent.org/cathen/13722a.htm",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 21298,
+   "edition_owned": true,
+   "id": "artifact.catholic-encyclopedia.volume-13.new-york-1912.newadvent-13722a-1a2aa30b-article-text",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Vander Heeren, Achille. \"Septuagint Version.\" The Catholic Encyclopedia. Vol. 13. New York: Robert Appleton Company, 1912. <https://www.newadvent.org/cathen/13722a.htm>. Article text only, extracted from the exact hashed New Advent delivery named in derived_from. A dated reference work, not a critical edition or a current statement of scholarship.",
+   "page_count": null,
+   "retrieved": "2026-09-04",
+   "rights": "public-domain",
+   "rights_basis": "The Catholic Encyclopedia article is in the public domain in the United States by date of publication (New York: Robert Appleton Company, volumes 1-15, 1907-1912; the longest term available under 17 U.S.C. 304 expired at the end of 2007 at the latest). This file carries the article text alone: New Advent's navigation, styling, advertising markup, support solicitation and \"About this page\" apparatus are excluded, and a faithful transcription of a public-domain text originates no separate copyright, originality being required by Feist Publications, Inc. v. Rural Telephone Service Co., 499 U.S. 340, 345 (1991). Settled once in src/sources/inventories/catholic-encyclopedia-rights-v1.toml.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://www.newadvent.org/cathen/13722a.htm",
+   "storage": "tracked"
+  },
+  {
    "artifact_type": "content-html",
    "byte_size": 10559,
    "edition_owned": true,
@@ -203,6 +233,32 @@
    "storage": "restricted",
    "verified_on": "2026-07-28",
    "withheld": "rights"
+  },
+  {
+   "artifact_id": "artifact.catholic-encyclopedia.volume-13.new-york-1912.newadvent-13722a-1a2aa30b-article-text",
+   "artifact_type": "normalized-text",
+   "context": "Under the heading 'Origin according to the commonly accepted view', Vander Heeren says that Alexandrian Jews undertook a Greek translation of the Pentateuch and states: 'This happened about the middle of the third century B.C.' He distinguishes this Pentateuch date from the gradual translation of the other Hebrew books and says only that the Law, Prophets, and at least part of the hagiographies existed in Greek before 130 B.C.",
+   "id": "passage.catholic-encyclopedia.volume-13.new-york-1912.pentateuch-mid-third-century-bc",
+   "locus": "article 'Septuagint Version,' II.B, 'Origin according to the commonly accepted view'",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The whole normalized article was read around this passage and checked against the complete exact HTML delivery. The passage supports a last-resort textual-attestation date for the Greek Pentateuch, not one date for every Septuagint book, and not a date for the Hebrew originals.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The Catholic Encyclopedia article is in the public domain in the United States by date of publication (New York: Robert Appleton Company, volumes 1-15, 1907-1912; the longest term available under 17 U.S.C. 304 expired at the end of 2007 at the latest). This file carries the article text alone: New Advent's navigation, styling, advertising markup, support solicitation and \"About this page\" apparatus are excluded, and a faithful transcription of a public-domain text originates no separate copyright, originality being required by Feist Publications, Inc. v. Rural Telephone Service Co., 499 U.S. 340, 345 (1991). Settled once in src/sources/inventories/catholic-encyclopedia-rights-v1.toml.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": "https://www.newadvent.org/cathen/13722a.htm",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected",
+    "verified"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.catholic-encyclopedia.volume-13.new-york-1912.pentateuch-mid-third-century-bc.json",
+   "verified_on": "2026-09-04",
+   "words": 464
   }
  ],
  "schema": "triptych-source-reader/v1",

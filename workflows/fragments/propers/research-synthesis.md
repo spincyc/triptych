@@ -140,7 +140,24 @@ Integrate the joined research into one research brief that the
    stage of a production that writes anything durable, and the only one
    positioned to carry them.
 
-   Look for prior runs against this same document before you write:
+   Look in two places before you write, in this order.
+
+   First, the leaf's own tracked record of what an evaluation left standing:
+
+   ```
+   src/{provider}/{proper}/evaluations/blocking-findings-v1.toml
+   ```
+
+   `tpt` rewrites that file after each content evaluation of this leaf, the
+   evaluation that blocks a run included. It holds the blocking findings
+   standing at that moment and the observations the lanes recorded beside
+   them. Nothing in the engine reads it into your packet — reading it is your
+   step. It is the more reliable of the two sources because it is tracked and
+   a run directory is not, and it is also the narrower: it holds only what the
+   last content evaluation recorded, so it carries no escalations and says
+   nothing about a production older than the record itself.
+
+   Second, any run directory still on this machine:
 
    ```sh
    grep -l '"proper": "{proper}"' build/tpt-runs/*/state.json
@@ -152,6 +169,18 @@ Integrate the joined research into one research brief that the
    of each stage's **last** result — earlier iterations were superseded — and
    its `escalations`, if it recorded any.
 
+   **An empty result from that grep means the run directories are gone, not
+   that this target has no prior production.** `build/` is ignored, `make
+   clean` deletes it, and in an agent workspace `wt tidy` sweeps it without
+   asking, so a finished run leaves nothing there once anyone has tidied. In
+   one real production the grep returned only the run performing it, while the
+   leaf's own `research/scope.md` named seven run ids of which six were prior
+   productions whose directories were gone. Read the tracked record above, and
+   read the `Prior-production carry-forward` section of the brief you are
+   rewriting, which is the previous integrator's copy of the same material.
+   Never write that there was no prior production on the strength of an empty
+   grep, and where the sources disagree, say which said what.
+
    Record in the brief, under a `Prior-production carry-forward` heading:
    every such finding's id, the run it came from, what it required, and
    whether the current research resolves it. A finding the current seven-lane
@@ -162,9 +191,12 @@ Integrate the joined research into one research brief that the
    not. What is not permitted is not looking, or looking and not saying: the
    whole cost of the earlier production's evaluation is otherwise spent twice.
 
-   Where there is no prior run for this target, say so in one line under that
-   heading. An absent statement and an empty history are not distinguishable
-   afterwards, and the next stage must be able to tell them apart.
+   Where every source is silent — no tracked record, no run directory, and no
+   carry-forward section in the brief you inherited — say so in one line under
+   that heading, and name the sources you checked. "Nothing stands", "nothing
+   was found", "nothing was looked for" and "the record was deleted" are four
+   different facts, and only the sources you name let the next stage tell them
+   apart.
 12. Assemble the `Scriptural chronology audit` from
    `src/{provider}/{proper}/research/chronology.toml`, which `resolve-context`
    wrote from the Scripture chronology corpus and which nothing in this

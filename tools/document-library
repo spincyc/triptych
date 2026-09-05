@@ -61,31 +61,35 @@ EXAMPLES = {
         Example(
             "tools/document-library check",
             (
-                "138 works, 187 documents, 202 issues, 5979 pages.",
-                "  titles derived from source and confirmed against the built PDF: 202",
+                "139 works, 189 documents, 206 issues, 5993 pages.",
+                "  titles derived from source and confirmed against the built PDF: 204",
                 "  titles the sources do not state: 0",
-                "  issues with no PDF installed: 0",
+                "  issues with no PDF installed: 2",
+                "    claude liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost: no PDF is installed for this issue",
+                "    claude liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost-synthesis: no PDF is installed for this issue",
                 "  the page's own derivation, replayed: src/web/browser/texts/catalogue-model.js",
                 "  editions whose production record makes no comparable claim: 187",
-                "  editions produced under a workflow version since superseded: 0 (advisory; nothing gates on it)",
+                "  editions produced under a workflow version since superseded: 2 (advisory; nothing gates on it)",
                 "  editions produced under a workflow version later than the one declared: 0",
                 "  editions whose workflow source has been revised since they were produced: 0",
-                "  workflows the comparison is measured against: 1",
+                "  workflows the comparison is measured against: 2",
             ),
         ),
         Example(
             "tools/document-library check --provider claude",
             (
-                "49 works, 49 documents, 54 issues, 1615 pages.",
+                "50 works, 50 documents, 56 issues, 1615 pages.",
                 "  titles derived from source and confirmed against the built PDF: 54",
                 "  titles the sources do not state: 0",
-                "  issues with no PDF installed: 0",
+                "  issues with no PDF installed: 2",
+                "    claude liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost: no PDF is installed for this issue",
+                "    claude liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost-synthesis: no PDF is installed for this issue",
                 "  the page's own derivation, replayed: src/web/browser/texts/catalogue-model.js",
                 "  editions whose production record makes no comparable claim: 49",
-                "  editions produced under a workflow version since superseded: 0 (advisory; nothing gates on it)",
+                "  editions produced under a workflow version since superseded: 1 (advisory; nothing gates on it)",
                 "  editions produced under a workflow version later than the one declared: 0",
                 "  editions whose workflow source has been revised since they were produced: 0",
-                "  workflows the comparison is measured against: 1",
+                "  workflows the comparison is measured against: 2",
             ),
             "one edition's leaves only",
         ),
@@ -148,7 +152,7 @@ EXAMPLES = {
         Example(
             "tools/document-library structure --out build/example-catalogue",
             (
-                "138 works, 187 documents, 202 issues, 5979 pages.",
+                "139 works, 189 documents, 206 issues, 5993 pages.",
                 "  -> build/example-catalogue/structure/documents/corpus.json",
             ),
             "WRITES. --out here is untracked; the default writes the tracked src/web/data",
@@ -156,7 +160,7 @@ EXAMPLES = {
         Example(
             "tools/document-library structure --check",
             (
-                "138 works, 187 documents, 202 issues, 5979 pages.",
+                "139 works, 189 documents, 206 issues, 5993 pages.",
                 "  src/web/data/structure/documents/corpus.json is current",
             ),
             "writes nothing; refuses when the tracked catalogue has drifted from the sources",
@@ -704,7 +708,13 @@ def edition_record(document: Document, by_key: dict[tuple[str, str], Document]) 
         record["title_template"] = whole.title.template
     if whole.pdf_absent:
         record["pdf_absent"] = whole.pdf_absent
-    if document.web_page:
+    # A web source may exist before publication finishes, but the public
+    # browser reads this projection inside an artifact that deliberately omits
+    # held pages.  Advertising that repository-relative route here would make
+    # the browser render a "Read here" link to a file the artifact cannot
+    # contain.  Keep the edition visible as held, with its explicit PDF
+    # absence, while withholding a route no reader can follow.
+    if document.web_page and whole.status != "hold":
         record["web"] = document.web_page
     if document.basis:
         record["basis"] = document.basis

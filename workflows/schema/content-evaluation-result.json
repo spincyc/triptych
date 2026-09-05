@@ -37,9 +37,14 @@
   "optional_fields": [
     "summary",
     "lane",
-    "lane_packet_hash"
+    "lane_packet_hash",
+    "observations"
   ],
   "escalation_finding_fields": [
     "escalated_to"
+  ],
+  "observation_fields": [
+    "location",
+    "note"
   ]
 }

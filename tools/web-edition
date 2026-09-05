@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 import re
 import subprocess
 import sys
@@ -150,6 +151,13 @@ OUTPUT_TABLE_RE = re.compile(r"^\|(?:[ :]*-+[ :]*\|)+\s*$", re.MULTILINE)
 EMPTY_ROW_RE = re.compile(r"^\|(?:\s*\|)+[ \t]*$", re.MULTILINE)
 MATH_WARNING_RE = re.compile(r"^\[WARNING\] Could not convert TeX math", re.MULTILINE)
 DEFINE_RE = re.compile(r"\\(?:new|renew|provide)command\*?|\\(?:new|renew)environment\*?")
+CHRONOLOGY_DEFINITION_RE = re.compile(
+    r"\\expandafter\s*\\def\s*\\csname\s*"
+    r"triptychchronologyannotation@([A-Za-z0-9._:-]+)\s*\\endcsname\s*\{"
+)
+RAW_CHRONOLOGY_TOKEN_RE = re.compile(
+    r"triptychchronologyannotation@[A-Za-z0-9._:-]+"
+)
 
 
 class ConversionError(RuntimeError):
@@ -241,6 +249,59 @@ def skip_gap(text: str, cursor: int) -> int:
             return cursor
         newline = text.find("\n", cursor)
         cursor = len(text) if newline < 0 else newline + 1
+
+
+def replace_grouped_macro(
+    text: str, name: str, argument_count: int, replacement
+) -> str:
+    """Replace calls to a known brace-argument macro without flattening nesting."""
+    pattern = re.compile(re.escape("\\" + name) + r"\s*\{")
+    out, index = [], 0
+    while (match := pattern.search(text, index)) is not None:
+        out.append(text[index : match.start()])
+        cursor, arguments = match.end() - 1, []
+        for _ in range(argument_count):
+            argument, cursor = brace_group(text, cursor)
+            arguments.append(argument)
+        out.append(replacement(arguments))
+        index = cursor
+    out.append(text[index:])
+    return "".join(out)
+
+
+def chronology_projection(body: str) -> str:
+    """Resolve the generated annotation helper macros to their visible payload."""
+    body = replace_grouped_macro(body, "chronologyannotationreach", 3, lambda _: "")
+    body = replace_grouped_macro(
+        body, "chronologyannotationclaim", 6, lambda arguments: arguments[5]
+    )
+    return replace_grouped_macro(
+        body, "chronologyannotationgroup", 3, lambda arguments: arguments[2]
+    )
+
+
+def expand_chronology_annotations(
+    body: str, definition_source: str
+) -> tuple[str, list[str]]:
+    """Expand deterministic generated chronology definitions before pandoc."""
+    definitions: dict[str, str] = {}
+    for match in CHRONOLOGY_DEFINITION_RE.finditer(definition_source):
+        key = match.group(1)
+        if key in definitions:
+            raise ConversionError(f"duplicate generated chronology annotation: {key}")
+        definitions[key] = brace_group(definition_source, match.end() - 1)[0]
+
+    expected = []
+
+    def resolve(arguments: list[str]) -> str:
+        key = arguments[0].strip()
+        if key not in definitions:
+            raise ConversionError(f"no generated chronology annotation for: {key}")
+        projected = chronology_projection(definitions[key])
+        expected.append(projected)
+        return projected
+
+    return replace_grouped_macro(body, "chronologyannotation", 1, resolve), expected
 
 
 def local_definitions(preamble: str) -> str:
@@ -395,7 +456,20 @@ def strip_contentless_breaks(markdown: str) -> str:
     return CONTENTLESS_BREAKS_RE.sub("", markdown)
 
 
-def audit_output(body: str, markdown: str, tables: int = 0) -> list[str]:
+def normalize_audit_text(text: str) -> str:
+    """Normalize TeX/Unicode spacing and dashes for payload comparisons."""
+    text = COMMENT_RE.sub("", text).replace(r"\space", " ").replace("~", " ")
+    text = text.replace("--", "-")
+    text = re.sub(r"[\N{EN DASH}\N{EM DASH}\N{MINUS SIGN}]", "-", text)
+    return re.sub(r"\s+", " ", text.replace("\\", "")).strip()
+
+
+def audit_output(
+    body: str,
+    markdown: str,
+    tables: int = 0,
+    chronology_annotations: list[str] | None = None,
+) -> list[str]:
     """Compare critical macro payloads in the LaTeX body against the Markdown."""
     failures = []
     # A table pandoc could not write as a pipe table becomes an HTML table; a
@@ -473,6 +547,22 @@ def audit_output(body: str, markdown: str, tables: int = 0) -> list[str]:
     residual = sorted(set(re.findall(r"\\[A-Za-z@]{2,}", MATH_RE.sub(" ", markdown))))
     if residual:
         failures.append("raw LaTeX left in output: " + " ".join(residual))
+    raw_chronology = sorted(set(RAW_CHRONOLOGY_TOKEN_RE.findall(markdown)))
+    if raw_chronology:
+        failures.append(
+            "raw generated chronology annotation token(s) left in output: "
+            + " ".join(raw_chronology)
+        )
+    normalized_markdown = normalize_audit_text(markdown)
+    for payload, expected_count in Counter(
+        normalize_audit_text(annotation) for annotation in chronology_annotations or []
+    ).items():
+        actual_count = normalized_markdown.count(payload)
+        if actual_count < expected_count:
+            failures.append(
+                "generated chronology annotation payload shortfall: "
+                f"expected {expected_count}, found {actual_count}: {payload}"
+            )
     if "Reuse and rights." not in markdown:
         failures.append("rights colophon missing from output")
     if "Last revised (UTC):" not in markdown:
@@ -502,6 +592,7 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
     preamble = assemble(head, provider, None)
     sources: dict[Path, str] = {main: tail}
     body = assemble(tail, provider, sources)
+    body, chronology_annotations = expand_chronology_annotations(body, preamble)
     title, subtitle = pdf_metadata(preamble)
     body = TITLEPAGE_RE.sub("", body).replace(r"\tableofcontents", "")
     body = REGISTER_ASSIGNMENT_RE.sub("", body)
@@ -541,7 +632,12 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
             resolve_anchors(result.stdout), set(LABEL_RE.findall(body))
         )
     )
-    failures = audit_output(body, markdown, table_count(body, shim_text + locals_text))
+    failures = audit_output(
+        body,
+        markdown,
+        table_count(body, shim_text + locals_text),
+        chronology_annotations,
+    )
     if failures:
         raise ConversionError("\n".join(failures))
     heading = f"# {title}\n"

@@ -21,7 +21,7 @@
 \ifdefined\TriptychPrintEdition
 \newenvironment{dossiertable}
 {\footnotesize\renewcommand{\arraystretch}{1.02}\setlength{\LTpre}{0.15em}\setlength{\LTpost}{0pt}%
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.14\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.35\linewidth}>{\raggedright\arraybackslash}p{0.16\linewidth}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.13\linewidth}>{\raggedright\arraybackslash}p{0.17\linewidth}>{\raggedright\arraybackslash}p{0.33\linewidth}>{\raggedright\arraybackslash}p{0.20\linewidth}@{}}
 \toprule\textbf{Proper} & \textbf{Citation} & \textbf{Location} & \textbf{Date}\\\midrule\endhead}
 {\bottomrule\end{longtable}}
 \newcommand{\dossierprose}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash}p{0.92\linewidth}@{}}{#1}\\[0.1em]}
@@ -35,9 +35,6 @@
 \newcommand{\dossierevententry}[7]{\subsection*{#1}#2\textbf{Citation:} #3\par\textbf{Location:} #4\par\textbf{Date:} #5\par\textit{#6}\par #7\par}
 \newcommand{\dossierseparator}{}
 \fi
-% \chronology{subject}{relation}{label} -- one assertion of the corpus.
-% The stable ids render nothing; only the source's own label is printed.
-\newcommand{\chronology}[3]{#3}
 % \chronodate{element-keys}{content} -- one dossier row's Date cell.
 % The manifest keys render nothing.
 \newcommand{\chronodate}[2]{#2}

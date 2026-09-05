@@ -203,6 +203,7 @@ class ShorthandTests(unittest.TestCase):
         self.addCleanup(shutil.rmtree, runs, ignore_errors=True)
         engine = WorkflowEngine(ROOT, ROOT / "workflows")
         engine.runs_dir = runs
+        engine.standing_findings_root = runs / "standing"
         self.assertNotIn(NEW_DOCUMENT, self.documents)
         self.assertEqual(
             engine.resolve_document(self.workflow, NEW_DOCUMENT),
@@ -225,6 +226,7 @@ class ShorthandTests(unittest.TestCase):
         self.addCleanup(shutil.rmtree, runs, ignore_errors=True)
         engine = WorkflowEngine(ROOT, ROOT / "workflows")
         engine.runs_dir = runs
+        engine.standing_findings_root = runs / "standing"
         bogus = ("liturgy/roman-rite/1962/propers/temporal/"
                  "99-nonexistent-sunday")
         with self.assertRaises(WorkflowError) as caught:
@@ -261,6 +263,7 @@ class ShorthandTests(unittest.TestCase):
         self.addCleanup(shutil.rmtree, runs, ignore_errors=True)
         engine = WorkflowEngine(ROOT, ROOT / "workflows")
         engine.runs_dir = runs
+        engine.standing_findings_root = runs / "standing"
         full = DOC
         by_full = engine.seed_bytes(
             "proper", {"proper": self.resolve(full), "provider": "gpt"})

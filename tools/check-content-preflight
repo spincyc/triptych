@@ -20,6 +20,7 @@ from _corpus import (  # noqa: E402
     PRODUCTION_RE,
     active_tex,
 )
+from _house_voice import house_voice, unscreened  # noqa: E402
 from _tooling import Example, with_examples  # noqa: E402
 
 DEFAULT_ROOT = Path(__file__).resolve().parents[1]
@@ -29,19 +30,22 @@ ERROR = "check-content-preflight error: "
 EXAMPLES = {
     "": (
         Example(
-            "tools/check-content-preflight --provider claude --document "
+            "tools/check-content-preflight --provider gpt --document "
             "liturgy/roman-rite/1962/propers/temporal/"
-            "49-ninth-after-pentecost",
+            "53-thirteenth-after-pentecost",
             (
-                "bindings-valid: 18 bindings, every id registered and every reviewed state fingerprinted as the library computes it",
-                "chronology-claims-supported: no chronology claim printed (the leaf states no proper provenance record and carries no research/chronology.toml, so it predates the chronology contract, which binds from proper v17)",
-                "chronology-record-current: not in scope: the leaf states no proper provenance record and carries no research/chronology.toml, so it predates the chronology contract, which binds from proper v17",
-                "identifiers-resolve: 2 source identifiers, every one registered",
-                "references-used: 32 entries, every one used in the body",
+                "bindings-valid: 98 bindings, every id registered and every reviewed state fingerprinted as the library computes it",
+                "chronology-annotations-current: not in scope: the leaf states no recognized provenance record and carries no research/chronology-annotations.tex, so it predates the generated annotation contract, which binds from proper v24 or proper-finish v2",
+                "chronology-claims-supported: no chronology claim printed (the leaf states no recognized provenance record and carries no research/chronology.toml, so it predates the chronology contract, which binds from proper v17 or proper-finish v1)",
+                "chronology-record-current: not in scope: the leaf states no recognized provenance record and carries no research/chronology.toml, so it predates the chronology contract, which binds from proper v17 or proper-finish v1",
+                "house-voice: 13 reader-facing files, no sentence taking the guide, its apparatus or the repository as its subject; not screened: sections/50-interpretive.tex:2 marks no \\pfield in 'The Propers: Interpretive Possibilities', so the protected exploratory notice cannot be told from the proposals and no rule ran over that section",
+                "identifiers-resolve: the leaf prints no source identifier",
+                "proposal-fields: not in scope: sections/50-interpretive.tex marks no proposal with \\begin{proposal}, so no proposal's fields can be read from the source",
+                "references-used: 29 entries, every one used in the body",
                 "relation-coverage: 4 relations, every element key claimed by the unit that carries its evidence",
-                "restricted-not-reproduced: 18 bound sources, 3 of them restricted, none reproduced",
+                "restricted-not-reproduced: 98 bound sources, 45 of them restricted, none reproduced",
                 "structural-meta-labels: not in scope: the leaf does not state proper v24 or later or proper-finish v2 or later",
-                "unquoted-not-quoted: 2 sources declared unquoted, none attributed a quotation",
+                "unquoted-not-quoted: 0 sources declared unquoted, none attributed a quotation",
             ),
             "the whole preflight over a published leaf; exits 0",
         ),
@@ -112,7 +116,7 @@ EXAMPLES = {
             "liturgy/roman-rite/1962/propers/temporal/"
             "50-tenth-after-pentecost --check chronology-claims-supported",
             (
-                "chronology-claims-supported: no chronology claim printed (the leaf states no proper provenance record and carries no research/chronology.toml, so it predates the chronology contract, which binds from proper v17)",
+                "chronology-claims-supported: no chronology claim printed (the leaf states no recognized provenance record and carries no research/chronology.toml, so it predates the chronology contract, which binds from proper v17 or proper-finish v1)",
             ),
             "the chronology contract binds from `proper` v17 and the leaf "
             "says which version produced it, so a leaf published before the "
@@ -120,12 +124,45 @@ EXAMPLES = {
             "silence",
         ),
         Example(
+            "tools/check-content-preflight --provider gpt --document "
+            "liturgy/roman-rite/1962/propers/temporal/"
+            "54-fourteenth-after-pentecost --check house-voice",
+            (
+                "check-content-preflight error: house-voice: sections/30-commentary.tex:40: the discipline is narrated instead of kept: \"The difference from Augustine is retained instead of being silently harmonized (\\emph{... [+298 chars]",
+                "check-content-preflight error: house-voice: not screened: sections/50-interpretive.tex:2 marks no \\pfield in 'The Propers: Interpretive Possibilities', so the protected exploratory notice cannot be told from the proposals and no rule ran over that section. Nothing in that section was read by this check; it still has to be read by hand",
+            ),
+            "exits 1; `guidance/editorial.md` names this exact form -- prose "
+            "saying that a difference was retained rather than silently "
+            "harmonised is narrating compliance where it should simply be "
+            "compliant. Carry the difference and attribute it. The second "
+            "line is not a defect but a scope statement: this leaf's "
+            "interpretive section marks no field, so the protected "
+            "exploratory notice cannot be told from the proposals and none "
+            "of it was read",
+        ),
+        Example(
+            "tools/check-content-preflight --provider gpt --document "
+            "liturgy/roman-rite/1962/propers/temporal/"
+            "52-twelfth-after-pentecost --check proposal-fields",
+            (
+                "check-content-preflight error: proposal-fields: sections/50-interpretive.tex: the proposal 'Ministry begins where the traveller leaves' states no field for what the ordinary element-by-element reading misses;... [+264 chars]",
+                "... 4 more lines",
+            ),
+            "exits 1; the profile requires anchors plus four fields for "
+            "every exploratory proposal and a substituted heading reads on the page exactly "
+            "like the field it replaced, which is how one such substitution "
+            "survived four AI sweeps of the same section",
+        ),
+        Example(
             "tools/check-content-preflight --list",
             (
                 "bindings-valid",
+                "chronology-annotations-current",
                 "chronology-claims-supported",
                 "chronology-record-current",
+                "house-voice",
                 "identifiers-resolve",
+                "proposal-fields",
                 "provenance-matches-run",
                 "references-used",
                 "relation-coverage",
@@ -163,7 +200,8 @@ def leaf_tex(leaf: Path) -> list[Path]:
     definition stand in for a citation.
     """
     return [path for path in sorted(leaf.rglob("*.tex"))
-            if path.name not in ("format.tex", "generation-metadata.tex")]
+            if path.name not in ("format.tex", "generation-metadata.tex",
+                                 "chronology-annotations.tex")]
 
 
 URL_ARG = re.compile(r"\\(?:url|nolinkurl|href)\{[^{}]*\}")
@@ -780,8 +818,15 @@ def check_bindings_valid(leaf: Path, root: Path) -> tuple[list[str], str]:
     path = leaf / BINDINGS
     if not path.is_file():
         return ([f"the leaf records no {BINDINGS}"], "")
+    # The tool lives beside this one in the repository, and `root` is the tree
+    # being judged, which is not always the same place: a synthetic tree has no
+    # `tools/` at all. Resolving the validator against `root` ran a script that
+    # was not there and reported its exit 2 as though the library had refused
+    # the leaf, so every `--root` invocation failed for a reason that had
+    # nothing to do with the bindings.
     proc = subprocess.run(
-        [sys.executable, str(root / "tools" / "source-library"),
+        [sys.executable, str(Path(__file__).resolve().parent
+                             / "source-library"),
          "--root", str(root), "validate"],
         capture_output=True, text=True)
     prefix = f"{path.relative_to(root).as_posix()}: "
@@ -898,21 +943,24 @@ def check_provenance_matches_run(
 # research, harmonize or assign a replacement. Where the corpus returns an
 # unresolved state the proper preserves that state or omits the date.
 #
-# Two checks, because the contract has two halves and each is invisible in the
-# other. `chronology-record-current` holds the leaf's carried ids against what
-# the corpus answers now. `chronology-claims-supported` holds the leaf's
-# printed dates against the same answer, and refuses a date printed outside a
-# claim at all — which is the half that catches a recalled figure, since a
-# well-formed year reads exactly like a right one.
+# Three checks, because the contract's surfaces are invisible to one another.
+# `chronology-record-current` holds the leaf's audit ids against what the
+# corpus answers now. `chronology-annotations-current` holds the generated
+# reader-facing projection against that answer. `chronology-claims-supported`
+# holds the Date cells against the same answer or checked projection, and
+# refuses a date printed outside either route at all — the half that catches a
+# recalled figure, since a well-formed year reads exactly like a right one.
 #
-# THE CONTRACT BINDS FROM VERSION 17, and the leaf itself says which version
+# THE CONTRACT BINDS FROM `proper` VERSION 17 and from the first
+# `proper-finish` workflow, and the leaf itself says which workflow version
 # produced it. Every leaf published before this wiring existed states `proper`
 # v11 or `unknown` in the `\AIGenerationProvenance` record that
 # `provenance-matches-run` holds against the run, so the two checks interlock:
 # a stage cannot dodge the chronology contract by understating its version
 # without failing the check that compares that version with the run driving
-# it. A leaf that carries a chronology record is held to it whatever version
-# it states, so the record cannot be escaped by deleting it either.
+# it. A leaf that carries a chronology record is fully held to it whatever
+# workflow or version it states: carrying the generated answer adopts both its
+# currentness and its one-cell-per-appointed-Scripture discipline.
 #
 # THAT INTERLOCK IS THE PIPELINE'S, NOT THIS TOOL'S.
 # `provenance-matches-run` is excluded from the default sweep because a bare
@@ -923,8 +971,18 @@ def check_provenance_matches_run(
 # `content-preflight` gate as these two and feeds it the engine's `{run.*}`
 # facts. Both halves have to be in that gate for either to mean anything, and
 # nothing in this file can keep them there.
-CHRONOLOGY_WORKFLOW = "proper"
-CHRONOLOGY_FROM_VERSION = 17
+# Which productions the chronology contracts bind, and from which version of
+# each. `proper-finish` begins at `author-proper` and runs the same preflight as
+# `proper`, but records its own workflow id; both tables therefore have to be
+# keyed by the workflow the leaf actually names.
+CHRONOLOGY_FROM_VERSION = {
+    "proper": 17,
+    "proper-finish": 1,
+}
+ANNOTATIONS_FROM_VERSION = {
+    "proper": 24,
+    "proper-finish": 2,
+}
 
 # How a leaf prints a biblical date, and how it prints the cell one belongs in.
 #
@@ -938,6 +996,67 @@ CHRONOLOGY_FROM_VERSION = 17
 # instruction.
 CHRONOLOGY_CLAIM = "chronology"
 CHRONOLOGY_CELL = "chronodate"
+CHRONOLOGY_ANNOTATION = "chronologyannotation"
+SEALED_ANNOTATION_MACROS = (
+    "chronologyannotation",
+    "chronologyannotationgroup",
+    "chronologyannotationclaim",
+    "chronologyannotationreach",
+)
+SEALED_ANNOTATION_NAMES = "|".join(SEALED_ANNOTATION_MACROS)
+LATEX_COMMAND_DEFINITION = re.compile(
+    r"\\(?P<kind>newcommand|renewcommand|providecommand|DeclareRobustCommand|"
+    r"NewDocumentCommand|RenewDocumentCommand|ProvideDocumentCommand|"
+    r"DeclareDocumentCommand)\*?\s*(?:\{\s*)?\\"
+    rf"(?P<name>{SEALED_ANNOTATION_NAMES})\b(?:\s*\}})?"
+)
+TEX_PRIMITIVE_DEFINITION = re.compile(
+    r"(?:\\(?:global|long|outer|protected)\s*)*"
+    r"\\(?P<kind>def|gdef|edef|xdef|let|futurelet)\s*\\"
+    rf"(?P<name>{SEALED_ANNOTATION_NAMES})\b"
+)
+CSNAME_PRIMITIVE_DEFINITION = re.compile(
+    r"(?:\\expandafter\s*)*(?:\\(?:global|long|outer|protected)\s*)*"
+    r"\\(?P<kind>def|gdef|edef|xdef|let|futurelet)\s*"
+    r"\\csname\s*(?P<name>"
+    rf"{SEALED_ANNOTATION_NAMES})\s*\\endcsname"
+)
+ETOOLBOX_COMMAND_DEFINITION = re.compile(
+    r"\\(?P<kind>csdef|csgdef|csedef|csxdef)\s*\{\s*"
+    rf"(?P<name>{SEALED_ANNOTATION_NAMES})\s*\}}"
+)
+EXPL3_COMMAND_DEFINITION = re.compile(
+    r"\\(?P<kind>cs_(?:g)?(?:set|new)(?:_eq)?):[A-Za-z]+\s*\\"
+    rf"(?P<name>{SEALED_ANNOTATION_NAMES})\b"
+)
+DATE_CELL_LATEX_DEFINITION = re.compile(
+    r"\\(?P<kind>newcommand|renewcommand|providecommand|DeclareRobustCommand|"
+    r"NewDocumentCommand|RenewDocumentCommand|ProvideDocumentCommand|"
+    r"DeclareDocumentCommand)\*?\s*(?:\{\s*)?\\"
+    rf"(?P<name>{CHRONOLOGY_CELL})\b(?:\s*\}})?"
+)
+DATE_CELL_TEX_DEFINITION = re.compile(
+    r"(?:\\(?:global|long|outer|protected)\s*)*"
+    r"\\(?P<kind>def|gdef|edef|xdef|let|futurelet)\s*\\"
+    rf"(?P<name>{CHRONOLOGY_CELL})\b"
+)
+DATE_CELL_CSNAME_DEFINITION = re.compile(
+    r"(?:\\expandafter\s*)*(?:\\(?:global|long|outer|protected)\s*)*"
+    r"\\(?P<kind>def|gdef|edef|xdef|let|futurelet)\s*"
+    rf"\\csname\s*(?P<name>{CHRONOLOGY_CELL})\s*\\endcsname"
+)
+DATE_CELL_ETOOLBOX_DEFINITION = re.compile(
+    r"\\(?P<kind>csdef|csgdef|csedef|csxdef)\s*\{\s*"
+    rf"(?P<name>{CHRONOLOGY_CELL})\s*\}}"
+)
+DATE_CELL_EXPL3_DEFINITION = re.compile(
+    r"\\(?P<kind>cs_(?:g)?(?:set|new)(?:_eq)?):[A-Za-z]+\s*\\"
+    rf"(?P<name>{CHRONOLOGY_CELL})\b"
+)
+CANONICAL_DATE_CELL_WRAPPER = re.compile(
+    r"\\newcommand\s*\{\s*\\chronodate\s*\}\s*"
+    r"\[\s*2\s*\]\s*\{\s*#2\s*\}"
+)
 DIGIT = re.compile(r"[0-9]")
 TIE = re.compile(r"~|\\,|\\;|\\:|\\ |\\quad|\\qquad|\\thinspace")
 DASH = re.compile(r"-{2,}|–|—")
@@ -955,6 +1074,100 @@ def _normalized_label(text: str) -> str:
     text = TIE.sub(" ", text)
     text = DASH.sub("-", text)
     return " ".join(text.split())
+
+
+def _annotation_macro_definitions(leaf: Path, generated: Path) -> list[str]:
+    """Definitions of the generated annotation API outside its own artifact.
+
+    A byte-current generated file proves nothing about what reaches the reader
+    if a leaf can redefine its public macros afterwards. Calls are expected in
+    Date cells; definitions belong only to the generated file. Scan every TeX
+    file, including `format.tex`, which `leaf_tex()` rightly excludes from prose
+    checks but which is exactly where a shadow definition would otherwise hide.
+    """
+    patterns = (
+        LATEX_COMMAND_DEFINITION,
+        TEX_PRIMITIVE_DEFINITION,
+        CSNAME_PRIMITIVE_DEFINITION,
+        ETOOLBOX_COMMAND_DEFINITION,
+        EXPL3_COMMAND_DEFINITION,
+    )
+    problems: list[str] = []
+    paths = sorted({
+        path
+        for pattern in ("*.tex", "*.sty", "*.cls")
+        for path in leaf.rglob(pattern)
+    })
+    for path in paths:
+        if path == generated:
+            continue
+        text = active_tex(path.read_text(encoding="utf-8"))
+        matches = sorted(
+            (match.start(), match.group("kind"), match.group("name"))
+            for pattern in patterns for match in pattern.finditer(text)
+        )
+        for at, kind, name in matches:
+            line = text.count("\n", 0, at) + 1
+            problems.append(
+                f"{path.relative_to(leaf)}:{line}: \\{kind} defines sealed "
+                f"\\{name} outside {generated.relative_to(leaf)}; the "
+                "generated annotation API may be called but not replaced, or "
+                "a current projection can render different words"
+            )
+    return problems
+
+
+def _date_cell_wrapper_integrity(leaf: Path) -> list[str]:
+    """The checked annotation remains the content TeX typesets for a cell.
+
+    `chronodate` is intentionally leaf-owned because it marks a table cell,
+    not a corpus fact. Under the generated-annotation contract its rendering
+    behavior is not leaf-defined: exactly one root `format.tex` definition
+    passes argument two through unchanged. A shadow definition could otherwise
+    discard or replace a byte-current annotation after every gate had passed.
+    """
+    patterns = (
+        DATE_CELL_LATEX_DEFINITION,
+        DATE_CELL_TEX_DEFINITION,
+        DATE_CELL_CSNAME_DEFINITION,
+        DATE_CELL_ETOOLBOX_DEFINITION,
+        DATE_CELL_EXPL3_DEFINITION,
+    )
+    problems: list[str] = []
+    canonical = 0
+    paths = sorted({
+        path
+        for pattern in ("*.tex", "*.sty", "*.cls")
+        for path in leaf.rglob(pattern)
+    })
+    for path in paths:
+        text = active_tex(path.read_text(encoding="utf-8"))
+        matches = sorted(
+            (match.start(), match.group("kind"), match.group("name"))
+            for pattern in patterns for match in pattern.finditer(text)
+        )
+        for at, kind, name in matches:
+            if (path == leaf / "format.tex" and kind == "newcommand" and
+                    CANONICAL_DATE_CELL_WRAPPER.match(text, at)):
+                canonical += 1
+                continue
+            line = text.count("\n", 0, at) + 1
+            problems.append(
+                f"{path.relative_to(leaf)}:{line}: \\{kind} redefines "
+                f"\\{name}; under the generated annotation contract the "
+                "only definition is exactly "
+                r"\newcommand{\chronodate}[2]{#2} in format.tex, so the "
+                "checked annotation reaches the reader unchanged"
+            )
+    if canonical != 1:
+        problems.append(
+            "format.tex must define exactly one "
+            r"\newcommand{\chronodate}[2]{#2}; found "
+            f"{canonical} canonical definitions. The Date-cell wrapper is "
+            "the checked annotation's carrier and may neither discard nor "
+            "replace it."
+        )
+    return problems
 
 
 def _braced(text: str, index: int) -> tuple[str, int]:
@@ -1051,8 +1264,21 @@ def _record_remedy(leaf: Path, root: Path) -> str:
             f"--document {'/'.join(parts[1:])} --write")
 
 
+def _annotations_remedy(leaf: Path, root: Path) -> str:
+    """The command that writes this leaf's generated date annotations."""
+    parts = leaf.relative_to(root / "src").parts
+    return (f"tools/tpt proper-chronology annotations --provider {parts[0]} "
+            f"--document {'/'.join(parts[1:])} --write")
+
+
 def _stated_production(leaf: Path) -> tuple[str, int] | None:
-    """The workflow and integer version the leaf's provenance states."""
+    """The workflow and integer version the leaf's provenance states.
+
+    General on purpose: two version-bound contracts read it now, and each
+    decides for itself which productions it binds. Filtering here made the
+    accessor answer one caller's question and silently gave the other the
+    wrong answer for a leaf produced by a workflow it did not name.
+    """
     metadata = leaf / "generation-metadata.tex"
     if not metadata.is_file():
         return None
@@ -1067,32 +1293,67 @@ def _stated_production(leaf: Path) -> tuple[str, int] | None:
         return None
 
 
-def _stated_version(leaf: Path) -> int | None:
-    """The `proper` version the leaf's provenance record states, if any."""
-    production = _stated_production(leaf)
-    if production is None or production[0] != CHRONOLOGY_WORKFLOW:
-        return None
-    return production[1]
-
-
 def _chronology_scope(leaf: Path) -> tuple[bool, bool, str]:
     """`(record required, macro discipline required, why)` for this leaf."""
-    version = _stated_version(leaf)
+    production = _stated_production(leaf)
     wiring = _wiring()
     carried = (leaf / wiring.RECORD).is_file()
-    bound = version is not None and version >= CHRONOLOGY_FROM_VERSION
+    workflow, version = production if production is not None else (None, None)
+    threshold = CHRONOLOGY_FROM_VERSION.get(workflow) if workflow else None
+    bound = threshold is not None and version is not None and version >= threshold
     if bound:
-        why = (f"the leaf states {CHRONOLOGY_WORKFLOW} v{version}, at or past "
-               f"the version the chronology contract binds from")
+        why = (f"the leaf states {workflow} v{version}, at or past the version "
+               f"the chronology contract binds from")
     elif carried:
         why = f"the leaf carries {wiring.RECORD}"
     else:
-        stated = "no proper provenance record" if version is None else \
-            f"{CHRONOLOGY_WORKFLOW} v{version}"
-        why = (f"the leaf states {stated} and carries no {wiring.RECORD}, so "
-               f"it predates the chronology contract, which binds from "
-               f"{CHRONOLOGY_WORKFLOW} v{CHRONOLOGY_FROM_VERSION}")
-    return bound or carried, bound, why
+        if production is None:
+            stated = "no recognized provenance record"
+            because = "so it predates the chronology contract, which binds"
+        elif workflow not in CHRONOLOGY_FROM_VERSION:
+            stated = f"{workflow} v{version}"
+            because = ("which is not a production this contract binds; the "
+                       "chronology contract binds")
+        else:
+            stated = f"{workflow} v{version}"
+            because = "so it predates the chronology contract, which binds"
+        thresholds = " or ".join(
+            f"{name} v{minimum}"
+            for name, minimum in CHRONOLOGY_FROM_VERSION.items()
+        )
+        why = (f"the leaf states {stated} and carries no {wiring.RECORD}, "
+               f"{because} from {thresholds}")
+    required = bound or carried
+    return required, required, why
+
+
+def _annotations_scope(leaf: Path) -> tuple[bool, str]:
+    """Whether this leaf must carry and use the generated annotation file."""
+    production = _stated_production(leaf)
+    wiring = _wiring()
+    path = wiring.annotations_path(leaf)
+    carried = path.is_file()
+    workflow, version = production if production is not None else (None, None)
+    threshold = ANNOTATIONS_FROM_VERSION.get(workflow) if workflow else None
+    bound = threshold is not None and version is not None and version >= threshold
+    if bound:
+        return True, (
+            f"the leaf states {workflow} v{version}, at or past the version "
+            "the generated annotation contract binds from"
+        )
+    if carried:
+        return True, f"the leaf carries {path.relative_to(leaf)}"
+    thresholds = " or ".join(
+        f"{name} v{minimum}"
+        for name, minimum in ANNOTATIONS_FROM_VERSION.items()
+    )
+    stated = "no recognized provenance record" if production is None else \
+        f"{workflow} v{version}"
+    return False, (
+        f"the leaf states {stated} and carries no {path.relative_to(leaf)}, "
+        f"so it predates the generated annotation contract, which binds from "
+        f"{thresholds}"
+    )
 
 
 def _corpus_answer(leaf: Path, root: Path):
@@ -1149,6 +1410,58 @@ def check_chronology_record_current(leaf: Path, root: Path) -> tuple[list[str], 
     )
 
 
+def check_chronology_annotations_current(
+    leaf: Path, root: Path
+) -> tuple[list[str], str]:
+    """The generated reader-facing chronology is complete and current.
+
+    The chronology record is an audit payload, not presentation. The proper
+    chronology tool projects that answer into one annotation per appointed
+    Scripture, preserving every candidate within its relation and supplying
+    the Gospel's distinct composition and narrated-event groups. This check
+    compares the generated TeX byte for byte with that live projection. A
+    hand-edited or partial annotation file is therefore neither current nor
+    complete, and no second implementation of the projection lives here.
+    """
+    wiring = _wiring()
+    required, why = _annotations_scope(leaf)
+    path = wiring.annotations_path(leaf)
+    problems = _annotation_macro_definitions(leaf, path)
+    if not required:
+        return problems, f"not in scope: {why}"
+    problems.extend(_date_cell_wrapper_integrity(leaf))
+    if not path.is_file():
+        problems.append(
+            f"{why}, so the leaf must carry {path.relative_to(leaf)}; write "
+            f"it with `{_annotations_remedy(leaf, root)}`"
+        )
+        return problems, ""
+
+    found = _corpus_answer(leaf, root)
+    projection = wiring.annotations(found)
+    rendered = wiring.render_annotations_tex(projection)
+    if path.read_text(encoding="utf-8") != rendered:
+        problems.append(
+            f"{path.relative_to(leaf)} is not the complete annotation "
+            f"projection the chronology corpus produces now. It is generated, "
+            f"not authored: rewrite it with "
+            f"`{_annotations_remedy(leaf, root)}` rather than editing or "
+            f"reconciling it toward the page."
+        )
+        return problems, ""
+
+    scriptural = [element for element in found.elements if element.loci]
+    claims = sum(
+        len(group.claims)
+        for element in projection.elements
+        for group in element.groups
+    )
+    return problems, (
+        f"{path.relative_to(leaf)} carries the complete live projection for "
+        f"{len(scriptural)} scriptural elements and {claims} corpus assertions"
+    )
+
+
 def check_chronology_claims_supported(leaf: Path, root: Path) -> tuple[list[str], str]:
     """Every date the guide prints is one the corpus asserts, and it says which.
 
@@ -1187,6 +1500,7 @@ def check_chronology_claims_supported(leaf: Path, root: Path) -> tuple[list[str]
     statement that the page's prose was held against the corpus.
     """
     _required, macros, why = _chronology_scope(leaf)
+    annotation_required, annotation_why = _annotations_scope(leaf)
     printed = {
         path: active_tex(path.read_text(encoding="utf-8"))
         for path in leaf_tex(leaf)
@@ -1196,16 +1510,21 @@ def check_chronology_claims_supported(leaf: Path, root: Path) -> tuple[list[str]
     # discipline has nothing for this check to judge, and resolving the
     # formulary's loci to say so would make every synthetic fixture in the
     # tree need a registered calendar identity.
-    marks = ("\\" + CHRONOLOGY_CLAIM, "\\" + CHRONOLOGY_CELL)
+    marks = ("\\" + CHRONOLOGY_CLAIM, "\\" + CHRONOLOGY_CELL,
+             "\\" + CHRONOLOGY_ANNOTATION)
     if not macros and not any(
         mark in text for text in printed.values() for mark in marks
     ):
         return [], f"no chronology claim printed ({why})"
     found = _corpus_answer(leaf, root)
+    # `claims` is the complete per-locus audit union. Only
+    # `publication_claims` is the exact assertion-identity intersection across
+    # every locus an element appoints, and therefore safe to print once as the
+    # date of that whole element.
     supported: dict[str, set[tuple[str, str, str]]] = {
         element.key: {
             (claim.subject, claim.relation, _normalized_label(claim.label))
-            for claim in element.claims
+            for claim in element.publication_claims
         }
         for element in found.elements
     }
@@ -1214,6 +1533,7 @@ def check_chronology_claims_supported(leaf: Path, root: Path) -> tuple[list[str]
     cells_for: dict[str, int] = {}
     cells_seen = 0
     claims_seen = 0
+    annotations_seen = 0
 
     def hold(
         args: list[str],
@@ -1267,6 +1587,7 @@ def check_chronology_claims_supported(leaf: Path, root: Path) -> tuple[list[str]
             # `\\chronology` missing its third argument would otherwise be
             # invisible to both sweeps below.
             _macro_calls(text, CHRONOLOGY_CLAIM, 3)
+            _macro_calls(text, CHRONOLOGY_ANNOTATION, 1)
         except ValueError as exc:
             problems.append(f"{name}: {exc}")
             continue
@@ -1306,9 +1627,41 @@ def check_chronology_claims_supported(leaf: Path, root: Path) -> tuple[list[str]
             spans = _macro_calls(content, CHRONOLOGY_CLAIM, 3)
             for args, _at, _stop in spans:
                 hold(args, where, allowed, reachable)
+            annotations = _macro_calls(content, CHRONOLOGY_ANNOTATION, 1)
+            annotations_seen += len(annotations)
+            referenced = [args[0].strip() for args, _at, _stop in annotations]
+            for key in referenced:
+                if key not in supported:
+                    problems.append(
+                        f"{where}: \\{CHRONOLOGY_ANNOTATION} names {key!r}, "
+                        f"which is not an appointed Scripture element; its "
+                        f"elements are {sorted(supported)}")
+            if annotation_required and sorted(referenced) != sorted(named):
+                problems.append(
+                    f"{where}: {annotation_why}, so the cell must use exactly "
+                    f"one generated \\{CHRONOLOGY_ANNOTATION} for each element "
+                    f"it names; cell keys are {named}, annotation keys are "
+                    f"{referenced}")
+            if annotation_required and spans:
+                problems.append(
+                    f"{where}: {annotation_why}, so its corpus claims come "
+                    f"through \\{CHRONOLOGY_ANNOTATION}, not separately authored "
+                    f"\\{CHRONOLOGY_CLAIM} calls")
+            if annotations and not annotation_required:
+                problems.append(
+                    f"{where}: uses \\{CHRONOLOGY_ANNOTATION} but no generated "
+                    f"annotation file or binding workflow version supplies it")
             bare = content
-            for _args, at, stop in reversed(spans):
+            hidden = sorted(
+                [*spans, *annotations], key=lambda item: item[1], reverse=True)
+            for _args, at, stop in hidden:
                 bare = bare[:at] + " " + bare[stop:]
+            if annotation_required and bare.strip():
+                problems.append(
+                    f"{where}: adds authored content around its generated "
+                    f"annotation: {' '.join(bare.split())[:80]!r}; the Date "
+                    f"cell is the matching \\{CHRONOLOGY_ANNOTATION} call, so "
+                    f"the checked projection is what reaches the reader")
             # THE RAW CELL, not `prose(bare)`. `prose()` answers "what works
             # does this text cite", and for that it drops `\texttt`, `\url`
             # and `\href` whole, because a locator is not a citation. It is
@@ -1337,6 +1690,13 @@ def check_chronology_claims_supported(leaf: Path, root: Path) -> tuple[list[str]
         for args, _at, _stop in _macro_calls(loose, CHRONOLOGY_CLAIM, 3):
             hold(args, f"{name}: \\{CHRONOLOGY_CLAIM} outside a date cell",
                  everywhere)
+        for args, _at, _stop in _macro_calls(
+            loose, CHRONOLOGY_ANNOTATION, 1
+        ):
+            problems.append(
+                f"{name}: \\{CHRONOLOGY_ANNOTATION} for {args[0].strip()!r} "
+                f"stands outside a \\{CHRONOLOGY_CELL}; nothing says which "
+                f"appointed text its generated dates belong to")
 
     if macros:
         wanted = [e.key for e in found.elements if e.loci]
@@ -1380,12 +1740,280 @@ def check_chronology_claims_supported(leaf: Path, root: Path) -> tuple[list[str]
             f"asserted by the corpus ({scope})"
         )
     return problems, (
-        f"{cells_seen} date cells and {claims_seen} chronology claims, every "
+        f"{cells_seen} date cells, {annotations_seen} generated annotations, "
+        f"and {claims_seen} direct chronology claims, every "
         f"claim asserted by the corpus at the element it is printed for, no "
         f"figure printed outside one ({scope})"
     )
 
 
+# --- The two checks over reader-facing prose -------------------------------
+
+# `leaf_tex` reads every .tex file under the leaf, which is right for a
+# citation sweep and wrong here: a section the editions do not typeset is not
+# reader-facing, and holding it to the house voice would refuse a leaf for
+# words no reader can reach. So the two checks below start at the editions
+# themselves and follow `\input` from there.
+TEX_INPUT = re.compile(r"\\input\{([^{}]*)\}")
+EDITIONS = ("main.tex", "synthesis.tex")
+NOT_PROSE = ("format.tex", "generation-metadata.tex")
+
+
+def reader_facing(leaf: Path) -> list[Path]:
+    """Every .tex file the leaf's editions typeset, in the order reached.
+
+    Both editions, deliberately: `synthesis.tex` sets a flag and inputs
+    `main.tex`, whose `\\ifdefined` branches decide which components each
+    edition prints, and a defect in a component only the research edition
+    carries is still a defect. Following the graph also settles the case the
+    filenames cannot: one published leaf inputs a further section from inside
+    its commentary rather than from `main.tex`.
+    """
+    seen: set[Path] = set()
+    order: list[Path] = []
+    root = leaf.resolve()
+    queue = [leaf / name for name in EDITIONS]
+    while queue:
+        path = queue.pop(0)
+        # A tracked `\input` argument is repository-relative and shared
+        # preambles resolve outside the leaf; those are common to every
+        # publication and are not this leaf's prose. Anything that leaves the
+        # leaf is dropped rather than followed.
+        if root not in path.resolve().parents:
+            continue
+        if path in seen or not path.is_file():
+            continue
+        seen.add(path)
+        if path.name not in NOT_PROSE:
+            order.append(path)
+        text = path.read_text(encoding="utf-8")
+        for hit in TEX_INPUT.finditer(text):
+            argument = hit.group(1)
+            tail = (argument.split(f"{leaf.name}/", 1)[-1]
+                    if f"{leaf.name}/" in argument else argument)
+            queue.append(leaf / f"{tail}.tex")
+    return order
+
+
+def check_house_voice(leaf: Path, root: Path) -> tuple[list[str], str]:
+    """No reader-facing sentence takes the guide or its apparatus as subject.
+
+    `guidance/editorial.md` gives the test -- a qualifying sentence is
+    legitimate when its subject is a source, a text, a witness or a fact, and
+    is the defect when its subject is the guide, the reading or an evidence
+    class -- and the profile carries it into every reader-facing word of a
+    proper guide. One production run's five-lane evaluation spent its whole
+    budget on this one habit over three iterations, each pass repairing what
+    it had named and the next finding a fresh subset of the same forms.
+
+    The screen is deliberately narrow. `scripts/_house_voice.py` says what it
+    does not look at and why; the short version is that a refused leaf costs a
+    rewrite and a wrongly refused sentence costs evidence.
+
+    The refusal names the sentence and says what the repair is, and it says
+    nothing else. It used to send the work-wide part of a qualification to
+    `Appendix: Scope and Qualifications`, "which already carries it": the
+    screen never opens the appendix and cannot know that, and it cannot tell a
+    claim-local bound from a work-wide one either -- while
+    `guidance/editorial.md` keeps "claim-local caveats beside their claims"
+    and forbids the appendix absorbing a qualification that changes the truth
+    of a particular claim. Advice a screen cannot ground is advice a worker
+    acts on anyway.
+
+    What the screen could not read it reports rather than passes over. Six of
+    the twelve leaves that carry a manifest write their interpretive section
+    with no `\\pfield`, and nothing else marks where the protected exploratory
+    notice ends; that section is cut whole, so a leaf can be accepted with
+    half its discovery prose unread, and dropping the markup would otherwise
+    silence this check and `proposal-fields` together in silence.
+    """
+    files = reader_facing(leaf)
+    if not files:
+        return (["the leaf typesets no reader-facing .tex file: neither "
+                 "main.tex nor synthesis.tex is there to say what it "
+                 "prints"], "")
+    problems = []
+    unread = []
+    for path in files:
+        where = path.relative_to(leaf).as_posix()
+        text = path.read_text(encoding="utf-8")
+        for line, saw, quotation in house_voice(text):
+            # Not `!r`: the quotation is the file's own bytes, backslashes and
+            # all, so that a worker can search for it. `repr` would double
+            # every backslash and hand back a string that is not in the file,
+            # which is the defect the quotation was rebuilt to fix. No
+            # reader-facing .tex in the corpus contains a `"`.
+            problems.append(
+                f'{where}:{line}: {saw}: "{quotation}". Rewrite the sentence '
+                f"so its subject is a source, a text, a witness or a fact, "
+                f"and delete nothing it was about: every difference, "
+                f"negative result, bound, denominator, rights basis and "
+                f"attribution stands after the repair")
+        for line, section in unscreened(text):
+            unread.append(f"{where}:{line} marks no \\pfield in "
+                          f"{section!r}, so the protected exploratory notice "
+                          f"cannot be told from the proposals and no rule "
+                          f"ran over that section")
+    if not unread:
+        return problems, (f"{len(files)} reader-facing files, no sentence "
+                          f"taking the guide, its apparatus or the repository "
+                          f"as its subject")
+    # The summary is printed on a pass and the problems on a refusal, so a
+    # scope statement carried only by the summary is invisible on exactly the
+    # leaves a reviser is reading. Said in both places, and never on its own:
+    # this is a statement of what was not read, not a defect, so it is added
+    # to a refusal that already exists and never makes one.
+    if problems:
+        problems.append(f"not screened: {'; '.join(unread)}. Nothing in "
+                        f"that section was read by this check; it still has "
+                        f"to be read by hand")
+    return problems, (f"{len(files)} reader-facing files, no sentence taking "
+                      f"the guide, its apparatus or the repository as its "
+                      f"subject; not screened: {'; '.join(unread)}")
+
+
+INTERPRETIVE = "The Propers: Interpretive Possibilities"
+INTERPRETIVE_SECTION = re.compile(
+    r"\\section\*\{" + re.escape(INTERPRETIVE) + r"\}")
+PROPOSAL_OPEN = re.compile(r"\\begin\{proposal\}[ \t\n]*")
+PROPOSAL_CLOSE = "\\end{proposal}"
+PROPOSAL_FIELD = re.compile(r"\\pfield\{([^{}]*)\}")
+LINE_COMMENT = re.compile(r"(?<!\\)%[^\n]*")
+# The five checkable parts `guidance/liturgy/roman-1962-propers.md` requires of
+# every proposal: its anchors and four further fields. Each is written under a
+# heading. The headings are matched by
+# role and not by string: the published leaves head the fourth field `What the
+# ordinary reading misses`, `What the ordinary element-by-element reading
+# misses` and `What the element-by-element reading misses`, and the fifth
+# `Strongest limit`, `Controlling limit` and `Limit`. All of those are the
+# field; a heading of the author's own devising is not, which is exactly how
+# one proposal came to carry no fourth field at all through four sweeps that
+# each read the section.
+#
+# The first three are matched as words rather than as whole strings, because
+# `Anchors in the appointed elements` and `The connecting mechanism` are the
+# field under a fuller name and refusing them would be enforcing a string. The
+# fifth carries the profile's own alternatives -- "the strongest material
+# limit, alternative, or disconfirming condition" -- so that a proposal
+# heading its field `Disconfirming condition` states the field the profile
+# fixes; `scripts/_house_voice.LIMIT_FIELD` reads the same three words, or the
+# house-voice screen would refuse the very field this one requires.
+PROPOSAL_FIELDS = (
+    ("the appointed elements it joins", re.compile(r"\banchors?\b", re.I)),
+    ("the connecting mechanism", re.compile(r"\bmechanisms?\b", re.I)),
+    ("the fruit", re.compile(r"\bfruits?\b", re.I)),
+    ("what the ordinary element-by-element reading misses",
+     re.compile(r"\bmisses\b", re.I)),
+    ("the strongest material limit, alternative or disconfirming condition",
+     re.compile(r"\b(?:limits?|alternatives?|disconfirming)\b", re.I)),
+)
+
+
+def _proposals(text: str) -> tuple[list[tuple[str, str]], list[int]]:
+    """Every `proposal` block, with the ones that could not be read named.
+
+    The title is read as a balanced brace group rather than as `[^{}]*`. Five
+    of the published proposals title themselves with a macro -- `The Gospel's
+    last clause and the Secret's \\latin{quóties} share one grammar` -- and a
+    pattern that cannot match a brace inside the title did not see the
+    proposal at all: one leaf carrying five proposals was reported as "4
+    exploratory proposals, every one stating the five required parts", which is the
+    thing this function's own docstring forbids, said by the check that
+    forbids it.
+    """
+    blocks: list[tuple[str, str]] = []
+    unreadable: list[int] = []
+    opens = [hit.start() for hit in PROPOSAL_OPEN.finditer(text)]
+    for index, hit in enumerate(PROPOSAL_OPEN.finditer(text)):
+        try:
+            title, after = _braced(text, hit.end())
+        except ValueError:
+            unreadable.append(hit.start())
+            continue
+        end = text.find(PROPOSAL_CLOSE, after)
+        # Bounded by the next `\begin{proposal}`, so that one block missing
+        # its `\end` swallows the block after it rather than reporting that
+        # block's fields under this block's title.
+        following = opens[index + 1] if index + 1 < len(opens) else len(text)
+        if end == -1 or end > following:
+            unreadable.append(hit.start())
+            continue
+        blocks.append((" ".join(title.split()), text[after:end]))
+    return blocks, unreadable
+
+
+def check_proposal_fields(leaf: Path, root: Path) -> tuple[list[str], str]:
+    """Every exploratory proposal carries its anchors and four required fields.
+
+    The profile: each proposal "must join at least two precisely named
+    appointed elements; state the connecting mechanism and the theological,
+    intellectual, spiritual, or pastoral fruit; identify what the ordinary
+    element-by-element reading misses; and end with the strongest material
+    limit, alternative, or disconfirming condition."
+
+    A missing field is invisible to a reader of one proposal and to an
+    evaluation lane reading for argument: a substituted heading looks like a
+    field, and the section still reads as complete. In the run this check was
+    written for, one proposal of six replaced the fourth field with a heading
+    of the author's own, four separate AI sweeps read the section, and none of
+    them reported it -- it fell between two lanes' criteria and no lane owned
+    it.
+    """
+    section = None
+    for path in reader_facing(leaf):
+        text = LINE_COMMENT.sub(
+            "", path.read_text(encoding="utf-8"))
+        found = INTERPRETIVE_SECTION.search(text)
+        if found:
+            # The comment stripper deletes a comment's characters and not its
+            # newline, so a line number here is still the line the editor
+            # shows; the section's own offset keeps it a line in the FILE and
+            # not a line in the section.
+            section = (path, text, found.end())
+            break
+    if section is None:
+        return [], (f"not in scope: the leaf typesets no "
+                    f"\\section*{{{INTERPRETIVE}}}, so it declares no "
+                    f"exploratory proposal to hold fields against")
+    path, whole, offset = section
+    text = whole[offset:]
+    where = path.relative_to(leaf).as_posix()
+    proposals, unreadable = _proposals(text)
+    if unreadable:
+        # An error, and not a skip. A proposal the parser walks past is a
+        # proposal reported as read: the count in the summary line below is
+        # the number it managed to parse, and it says of every one of them
+        # that it states the five required parts.
+        return ([f"{where}:{whole.count(chr(10), 0, offset + at) + 1}: this "
+                 f"\\begin{{proposal}} cannot be read: its title is not a "
+                 f"closed brace group, or no \\end{{proposal}} closes it "
+                 f"before the next one opens. What a check cannot read it "
+                 f"must not report as read, and the summary line would have "
+                 f"counted this proposal as stating all five required parts"
+                 for at in unreadable], "")
+    if not proposals:
+        # Said outright rather than passed in silence. Four published leaves
+        # write their proposals as running prose with no field markup at all,
+        # and the profile does not require the markup; what a check cannot
+        # read it must not report as read.
+        return [], (f"not in scope: {where} marks no proposal with "
+                    f"\\begin{{proposal}}, so no proposal's fields can be "
+                    f"read from the source")
+    problems = []
+    for title, body in proposals:
+        headings = [" ".join(name.split())
+                    for name in PROPOSAL_FIELD.findall(body)]
+        for role, heading in PROPOSAL_FIELDS:
+            if any(heading.search(one) for one in headings):
+                continue
+            problems.append(
+                f"{where}: the proposal {title!r} states no field for {role}; "
+                f"it carries {headings}. The profile fixes five things every "
+                f"proposal states, and a heading of the author's own devising "
+                f"is not one of them: a substituted field reads on the page "
+                f"exactly like the field it replaced")
+    return problems, (f"{len(proposals)} exploratory proposals, every one "
+                      f"stating its anchors and the four fields the profile fixes")
 # --- Reader-facing structural meta-labels ---------------------------------
 #
 # A thesis is substantive and may open a section directly. The editorial
@@ -1713,9 +2341,12 @@ def check_structural_meta_labels(
 
 CHECKS = {
     "bindings-valid": check_bindings_valid,
+    "chronology-annotations-current": check_chronology_annotations_current,
     "chronology-claims-supported": check_chronology_claims_supported,
     "chronology-record-current": check_chronology_record_current,
+    "house-voice": check_house_voice,
     "identifiers-resolve": check_identifiers_resolve,
+    "proposal-fields": check_proposal_fields,
     "references-used": check_references_used,
     "relation-coverage": check_relation_coverage,
     "restricted-not-reproduced": check_restricted_not_reproduced,

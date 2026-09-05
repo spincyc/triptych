@@ -184,9 +184,347 @@ does not survive it. Its durable content is in guidance; its operational content
     in its own words; every finding it makes about the Pustet stands.
   * 35 release bindings were stale before this work began and were adopted with
     the rest. Nobody has investigated why those web editions changed.
-  * The Fourteenth Sunday leaf is held out of `main` until its production
-    finishes: all 49 entries in `claude-publications-v1.toml` have a shipped PDF
-    behind them, and that leaf has none. It is on `impl/proper-54-production`.
+  * The Claude Fourteenth Sunday remains held: it has no installed PDF, and
+    both of its release records state `status: hold`. Its partial production is
+    being integrated on `feature/propers-chronology`, not promoted to `main`.
+
+### Superseded restart plan after the first two failed runs, 2026-09-04
+
+This section records the decision at that point; it is not a current runbook.
+Run `90dcdddcb6780e60` later blocked as well. Current restarts bind
+`proper-finish` v3 or `proper` v25; see "The Fourteenth Sunday blocked on an
+accounting defect" below.
+
+Neither of the two runs known at that point could be advanced.
+
+  * `ca03f1b357e7ec25` (`proper` v17) is BLOCKED and recorded above as not
+    replayable, because from its iteration 2 the coordinator supplemented each
+    lane brief out of packet.
+  * `416bacef11b97508` (`proper` v19) stopped awaiting a `source-audit` result.
+    The `proper` pipeline on disk was then v22 and its source digest had moved, so
+    `load_bound_workflow` fails closed: *"Seed a new run against the new
+    version."* A run is bound to the pipeline, fragment and schema bytes it
+    started with. `status` still reports on it; nothing else will.
+
+The plan at that point had two routes:
+
+  * `tools/tpt proper-finish 54-fourteenth-after-pentecost seed --provider
+    claude` — v1, the rescue pipeline that starts at `author-proper` and skips
+    seed, authorize-target, scope-gate, resolve-context and the seven research
+    lanes. It is the shape that fits: the leaf is fully authored, all five
+    profile-required records are present, and what remains is a revision
+    clearing the eight findings, then build and publish. Proper 55 was finished
+    this way. Its cost is that it has no `research-synthesis` stage and so no
+    `Prior-production carry-forward`; the eight findings reach it only through
+    `intervene`, which OPERATOR.md counts as workflow debt. All eight are real
+    defects still standing in the committed leaf, so a fresh
+    `content-evaluation` should raise them on its own — but that is to be
+    verified, not assumed.
+  * `tools/tpt proper 54-fourteenth-after-pentecost seed --provider claude` —
+    v22, the full pipeline, whose `research-synthesis` carries prior findings
+    forward by design and which re-runs the seven research lanes against a
+    corpus that has moved a long way. Much more expensive.
+
+Whichever is taken: the rights wall the earlier runs stopped at is largely gone.
+The three orations that carried `text_status` rights-withheld — Collect *Custodi
+Domine*, Secret *Concede nobis*, Postcommunion *Purificent semper* — have
+published Latin bodies as of 2026-09-04. Anything either run concluded about
+Latin availability is stale.
+
+### Historical deployment-inventory defect, resolved during integration, 2026-09-04
+
+At the time, `make check` failed on `origin/main` at
+`check-deployment-sources`, before this work landed. `1ed7fd9a4 Checkpoint
+Proper 55 rescue leaf` put
+`src/gpt/.../55-fifteenth-after-pentecost/` on `main` without registering it in
+`publications-v1.toml`, so `source-inventory` reports the publication and its
+twenty source-bearing files as missing from the inventory. The GPT Proper 55
+gap was repaired on main. Integrating the Claude Proper 54 source later exposed
+the same invariant; its source inventory and classification review were
+refreshed while its separate release records remained on hold.
+
+## The Fourteenth Sunday blocked on an accounting defect, 2026-09-04
+
+`proper-finish` v1 run `90dcdddcb6780e60` (Claude, Fourteenth Sunday after
+Pentecost) reached BLOCKED at the `content-evaluation` iteration bound. The
+leaf as it left it is committed at `9ca815a90`; nothing was built into `pdf/`
+or `web/`, nothing installed, no release binding moved.
+
+### The eight findings of `ca03f1b357e7ec25` are accounted for
+
+Seven closed and verified against the leaf: `CON-REC-002`, `CON-REC-003`,
+`CON-SYN-002`, `CON-CIT-004`, `CON-CIT-020`, `CON-CIT-021`, `CON-CIT-022`.
+`CON-PRO-003`, the register defect that ended that run, was not closed: it was
+raised again on its own evidence and worked for three more iterations without
+being exhausted. `build/tpt-runs/ca03f1b357e7ec25` holds nothing this entry
+does not account for and may be swept.
+
+The ignored run directory did not cross the Git handoff into this clone, and no
+`evaluations/blocking-findings-v1.toml` exists for this leaf. Its exact final
+joined result and sole second revision-pass result are now tracked under the
+leaf's `research/` directory, and its seven final blocking findings are
+enumerated in `HANDOFF-proper-54-convergence.md`, without falsely claiming that
+the old run wrote a formal standing-findings record. The originating
+`triptych/proper-54` workspace is therefore no longer the sole copy.
+
+The run repaired eighteen blocking findings in two revision passes, two of
+which the previous production never reached. A sentence stood in quotation
+marks in `40-notable.tex`, attributed to the *Semi-weekly interior journal* of
+19 November 1895 at a named page, that no research record of this leaf carries;
+`evidence-discipline` and `citation-integrity` found it independently of each
+other. And `Carter v. Harris` carried a two-century span claim while
+`research/scope.md` §12.5 records it "not opened and not relied on".
+
+The ignored run directory was not itself portable. Integration therefore
+preserves its final joined evaluation and its sole second revision-pass result
+verbatim in the leaf as `research/production-content-evaluation-0002.json` and
+`research/production-content-revision-0001.json`; the tracked handoff records
+their SHA-256 digests and enumerates the seven blocking findings still open.
+
+### Why it blocked, which was not the document
+
+The repeat budget compared blocking finding ids across iterations. It named
+`CON-CIT-020`, `CON-CIT-021`, `CON-PRO-001` and `CON-PRO-002` as still
+unrepaired at 3/3. Every one of those names a different defect in a different
+file each iteration, and the earlier ones were gone from the leaf.
+`stage_failures` stood at 3 against a ceiling of 6: the run converged the whole
+way -- seven blocking findings, then eleven, then seven, each iteration
+clearing the set before it, one lane clean from the second iteration on -- and
+was stopped at half the allowance the engine's own design granted it.
+
+No lane caused it and none could have prevented it. A fan-out evaluator's lane
+packets carry an empty `PRIOR_FINDINGS` by design and lanes are told not to
+read earlier results, so **no lane can know which ids an earlier iteration
+used**. One lane guessed at `010`/`011` to dodge a collision it could not see;
+another minted `020`/`021` to dodge ids recorded in the brief and landed on the
+previous iteration's. An id is a handle a lane minted for its own report, not
+an identity for a defect. This is the hazard the entry below on unstable ids
+records, arriving as a termination condition rather than a carry-forward
+nuisance.
+
+### What was built in answer, 2026-09-04
+
+- **The budget reads the reviser where a reviser can answer.** A stage that
+  declares `reports_repairs` returns `finding_dispositions`, one entry per
+  blocking finding it was given, `repaired` or `not-repaired`. Omitting one is
+  refused: a dropped finding reads exactly like a repaired one. The
+  declaration is per stage because a fan-out `research` re-entry produces a
+  result the engine composed from lanes, so no agent can speak for it.
+
+  **Where no report exists the id comparison stays, deliberately.** That is
+  wherever the stage a failure's findings were routed to does not declare the
+  key: two of `content-evaluation`'s three repair routes, `research` and
+  `brief`; `research-synthesis`, whose failure re-enters the `research`
+  fan-out; and every gate.
+  Deleting it there would leave such a stage bounded by `max_total_iterations`
+  alone, silently doubling every limit an operator declared. A gate keeps it
+  whatever its reviser reports, and there it is not a heuristic: a gate's ids
+  are a program's, so a repeat is the same check refusing the same leaf again
+  after a repair was claimed, which is better evidence of a loop than the
+  claim is of progress. Ground truth displaces the heuristic exactly where it
+  exists.
+- **`house-voice` and `proposal-fields`**, two new `content-preflight` checks.
+  The first is `scripts/_house_voice.py`, modelled on `_latin_body_damage.py`,
+  and it drains in a gate loop what cost two productions their whole evaluation
+  budget. It reports 28 loci on the Fourteenth Sunday leaf against 22 the lanes
+  found, 20 of the 22 recovered. **It refuses 8 of the 12 leaves carrying a
+  manifest, published ones included** -- the habit is the corpus's, not this
+  leaf's -- and it found a retrieval-mechanics defect in published leaf 52 that
+  no evaluation ever reported, and five proposals in gpt leaf 52 that state no
+  "what the element-by-element reading misses" field at all.
+- **Lane ownership for three ownerless classes.** Proposal fields to
+  `synthesis-argument`, stated counts to `citation-integrity` (criterion 7 is
+  now "Citations and stated counts"), Latin orthography against
+  `propers/verified.md` to `evidence-discipline`, each with a matching "not
+  yours" note in the lanes that declined it.
+- **Criterion 12's scope ambiguity resolved** in favour of the governing
+  sentence; the enumerated list is demoted to a checklist that is explicitly
+  not the boundary. The ambiguity is real and it is in the fragment: at
+  iteration 2 of `90dcdddcb6780e60` the lane raised the appointed text's
+  `\englishgap` blocks under criterion 12 while the fragment's list of
+  sections did not name that section and its never-a-finding exceptions did
+  not cover it, so the lane had to settle for itself both that the section was
+  in scope and which half of an English-gap block the profile asks for. It
+  settled both correctly and the leaf was repaired. Nothing made that the only
+  available reading — the same list read as a boundary excludes the section
+  outright, and a lane reading it that way would have left the defect
+  standing. The stronger claim this entry first made, that a later iteration
+  declined the section as out of scope, is **not supported by the run
+  record**: no `profile-conformance` result in any surviving run directory
+  contains the phrase, and iteration 3's silence about that file is explained
+  by `content-revision-0001.json`, which reports the blocks repaired.
+- **`observations`**, a non-blocking array on evaluator results, joined and
+  recorded, for what a lane saw outside its criteria. It is a backstop, not a
+  substitute for ownership.
+- **`DOCUMENT_ROOT`** in the packet header, from a `document_root` template.
+  A lane swept `src/gpt/...` to completion against a packet reading
+  `"provider":"claude"` and discarded a finished max-effort sweep.
+- **A tracked home for the findings standing against a leaf.** The stage
+  declaring `records_standing_findings` — `content-evaluation`, in both
+  pipelines, and no other stage — writes
+  `<document_root>/evaluations/blocking-findings-v1.toml` after each of its
+  evaluations, terminal ones included, rewritten whole. It is written before
+  the run's commit, so a failed write aborts the advance instead of leaving
+  the run advanced and the obvious retry failing on a stage mismatch. The key
+  is per stage because every evaluator wrote the path at first, which let a
+  `web-evaluation` replace a leaf's content findings with findings about
+  generated HTML. The engine's write has its own root so a test harness cannot
+  dirty `src/`; that defect was found and fixed during this work.
+
+  **Nothing reads it back into a run.** Reading it at seed was built and then
+  backed out, a third cold review having found it wrong three ways at once:
+  the pristine recompile in `_load_verified_bootstrap` knew nothing of the
+  extra argument, so a run seeded against a non-empty record could never be
+  seeded again — breaking the seed idempotency `OPERATOR.md` promises in terms
+  and a whole suite exists to protect, and invisible because every driven test
+  points the record at an empty scratch directory; the file is untracked
+  working-tree state that no `repo_commit` moves with and no
+  `workflow_source_digest` covers, so one run id could produce different
+  bootstrap bytes; and on `proper.json` the findings reached only the `seed`
+  stage's packet, unfiltered by `repair_target`, so a record last written by
+  `research-synthesis` would have handed `brief`-owned findings to a stage
+  that repairs only `authoring`. Automatic carry-forward is still owed, and
+  owed somewhere the run's identity can cover it: either an operator
+  subcommand whose output is committed, so `repo_commit` moves with the
+  record, or the record's own hash in `compute_run_id` and in the acceptance
+  audit.
+
+  Against the entry below on run state being called durable, this is progress
+  and not closure. That entry owes three things. `OPERATOR.md` no longer calls
+  the run directory durable: done. Step 11 of
+  `workflows/fragments/propers/research-synthesis.md` now says what an empty
+  `grep build/tpt-runs/*/state.json` means — the directories are gone, not
+  that there was no prior production — and names the tracked record and the
+  inherited brief as what to read instead: done. The tracked home itself is
+  half done. Blocking findings and observations have one; **escalations still
+  live only in `state["escalations"]` under `build/`**, and the only part of
+  an escalation that reliably leaves a run is the terminal console message.
+  And the thing that entry actually wanted — a later production reading a
+  committed record rather than an ignored directory — is not built, because
+  nothing reads the record.
+
+### Four defects found while building the answer
+
+Three were introduced by this work and caught before it landed; one was not
+this work's and had been hiding.
+
+  * The engine's tracked-record write went into the working tree, so running
+    the test suite left a real file under `src/gpt/`. It has its own root now:
+    production writes to the tree, every harness writes to disposable storage,
+    and `None` turns it off.
+  * The TOML writer special-cased `"""` and mangled a finding whose prose ended
+    in one. It escapes every quote in both string forms now, which is more than
+    TOML needs and short enough to be obviously correct; 20,000 fuzz cases
+    round-trip, 3,000 of them as a test.
+  * Requiring the repair report of every stage broke every `research`
+    re-entry: a fan-out result is composed by the engine from lane results, so
+    no agent wrote it and no lane can speak for the whole. The requirement is a
+    `reports_repairs` declaration in the pipeline now.
+  * `bindings-valid` resolved `tools/source-library` relative to `--root`, so
+    under any root but the repository it ran a script that was not there and
+    reported the interpreter's exit 2 as though the library had refused the
+    leaf. Every `--root` invocation had been failing for a reason with nothing
+    to do with bindings.
+
+**`proper-finish` leaves were escaping the chronology contract.** Its scope
+rule keyed on the workflow id `proper`, so a leaf whose provenance record says
+`proper-finish` read as "no proper provenance record" and was reported out of
+scope. A rescue run could have authored a leaf with no chronology record at
+all and been passed for want of an answer. The contract now binds `proper`
+from v17 and `proper-finish` from every version, it having been written after
+the contract. The Fourteenth Sunday leaf was in scope anyway, through the
+branch that catches a leaf carrying a record, so nothing was let through.
+
+`tests/tools/check-content-preflight.test` was red on `main` before any of
+this, in three independent ways: a stale check count, a synthetic fixture two
+`source-library` schema changes behind, and the tool-path defect above. It
+passes now. That was verified against a clean `HEAD` worktree rather than
+assumed.
+
+### What three cold reviews changed, and what they cost
+
+The work above was reviewed cold by three independent readers -- engine,
+prose checks, guidance -- each told the author's account was not evidence.
+They were right about a great deal, and the change is materially different for
+it. What they found, and what it means for anyone reading this later:
+
+**A feature was backed out rather than patched.** The tracked findings record
+was to be read at seed, giving a pipeline that begins after research the
+carry-forward it has no stage for. It was wrong three ways at once:
+`_load_verified_bootstrap` recompiles the seed packet from pristine state and
+did not know about the argument, so a run seeded against a non-empty record
+could never be seeded again -- breaking the idempotency OPERATOR.md promises
+and `test_workflow_seed_idempotency.py` protects, invisibly, because every
+driven test points the record at an empty directory; the file is untracked
+working-tree state that no `repo_commit` moves with and no
+`workflow_source_digest` covers, so one run id could yield different bootstrap
+bytes; and on `proper` the findings reached only the `seed` packet anyway,
+unfiltered by owner. **The write stays and nothing reads it.** Carrying
+findings between productions still wants doing, and wants doing where the run's
+identity can cover it: an operator subcommand whose output is committed, or the
+record's hash in `compute_run_id` and the acceptance audit.
+
+**Four more defects in the same write**, all found by review and all fixed: it
+skipped the terminal transition, so a run that blocked -- the case it exists
+for -- recorded nothing; a stray `U+007F` in quoted source made the file
+unparseable and the reader, catching that, discarded every well-formed finding
+in it; `provider` is free text no validator constrains, so a typo wrote a
+`src/gtp/...` tree and `..` wrote anywhere; and every evaluator wrote the same
+path, so a `web-evaluation` could replace a leaf's content findings with
+findings about generated HTML. It is now declared per stage
+(`records_standing_findings`), containment- and symlink-checked, written before
+the run's commit so a failure aborts cleanly, and `status` reports what it
+holds.
+
+**`house-voice` was unsafe and is now sound.** It tested the subject of a
+relative clause rather than the sentence's, so it refused bounds on negative
+results, denominators, and the 17 U.S.C. 103(b) rights clause -- six firings of
+that clause across five leaves. Its message told a reviser to move the material
+to an appendix "which already carries it", a fact it never checked. Fixed: a
+clause test, five topic rules deleted, quotations taken from the source and
+greppable, and the appendix advice gone. The cost is priced and real: 28 loci
+on the Fourteenth Sunday leaf became 20, all 20 genuine, and recall against the
+lanes fell from 20/22 to 17/22. Corpus-wide 119 firings became 88, the same
+eight leaves refused, and none of the 88 refuses a bound, a denominator or a
+rights basis.
+
+**A version test was reading a five-year-old line.** `OPERATOR.md` repeats "The
+`proper` workflow is at version N." for every historical version, so when a
+rewording dropped the period the pattern needed, the test did not fail for
+finding nothing -- it matched the version-12 changelog entry and asserted
+against that. It now checks both pipelines and tolerates line wrapping.
+
+Both pipelines are bumped: `proper` 22 to 23, `proper-finish` 1 to 2.
+
+### Left standing, and worth a maintainer's decision
+
+`house-voice` refuses 8 of 12 leaves, and that number did not move when the
+false positives were removed -- the eight are the same eight. Every remaining
+refusal was read against `guidance/editorial.md` and is a form it names, so the
+check is not obviously wrong and the corpus is not obviously right. Nothing was
+repaired in another leaf on the strength of it. Two it found that no evaluation
+ever reported: retrieval mechanics in the reader-facing body of published
+`claude/52`, and five proposals in `gpt/52` that state no "what the ordinary
+element-by-element reading misses" field at all.
+
+Two judgement calls in the screen fail toward silence rather than deletion, and
+are recorded in its tests: a real locus at `30-commentary.tex:1177` is
+suppressed because no rule distinguishes its form from a denominator, and the
+possessive rule carries no clause guard, so a codicological "The leaf's verso"
+would fire it. The corpus does not currently write that.
+
+`scripts/replay_examples.py`'s `TrackedGuard` snapshots the dirty set at start
+and reverts anything that changed during the run. Two concurrent workers hit
+it: it reported reverting `PROJECT-WORK.md` and a fragment another worker was
+editing. Nothing was lost here, but running it while anyone else writes can
+silently revert their work.
+
+The engine reviewer's design point stands unaddressed: `reports_repairs` on a
+stage and the gate carve-out in the budget are two special cases for one
+property -- who minted the id. An id from a program is an identity; an id from
+a lane that cannot see the previous iteration is a handle. That belongs on the
+stage as one declaration, and a deterministic evaluator or a fan-out gate will
+need a third carve-out before it is.
 
 ## Standing public-alpha authority
 

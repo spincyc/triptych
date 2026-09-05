@@ -1,0 +1,248 @@
+% Claude 1962 proper guide, Fourteenth Sunday after Pentecost: leaf-local
+% typesetting primitives, shared by the canonical full research edition and by
+% the mechanical synthesis companion compiled from the same source. This file
+% owns presentation only. Every textual, historical, exegetical and rights
+% judgment lives in the section files and in the leaf's research records.
+%
+% Web-edition constraint: this leaf declares itself web-eligible, so it uses no
+% landscape environment, no multicols and no TikZ. Any ordering a diagram might
+% have carried is expressed as an ordered list or a table.
+
+\usepackage{xurl}
+
+\setlength{\emergencystretch}{2.4em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\newcommand{\work}[1]{\textit{#1}}
+
+% The missal's versicle sign is not in the T1 encoding. It is reproduced as a
+% slashed V so the appointed text can be transcribed as printed rather than
+% silently normalised to "V.". This formulary prints no response sign.
+\usepackage{graphicx}
+\newcommand{\Vsign}{\leavevmode\hbox{\rlap{\kern0.16em\raisebox{0.12ex}{\scalebox{0.85}[1.0]{/}}}V}}
+\DeclareUnicodeCharacter{2123}{\Vsign}
+% The missal prints an acute over the ae-ligature in quǽsumus, Matthǽum and
+% quǽrite. T1 carries no precomposed glyph, so the accent is composed over the
+% ligature rather than the word being silently respelled.
+\DeclareUnicodeCharacter{01FD}{\'{\ae}}
+\DeclareUnicodeCharacter{01FC}{\'{\AE}}
+
+% The Gospel heading's Maltese cross, likewise outside T1.
+\usepackage{amsmath,amsbsy}
+\newcommand{\gospelcross}{\ensuremath{\boldsymbol{+}}}
+\DeclareUnicodeCharacter{2720}{\gospelcross}
+
+% Quiet parenthetical proper cues, in liturgical order, for later headings and
+% cross-references. Defined once so the abbreviations stay uniform.
+\newcommand{\cue}[1]{\textnormal{(\textit{#1})}}
+
+% Keeps an element's heading, identification line and text block together.
+\newcommand{\elementguard}{\Needspace{12\baselineskip}}
+
+% Element identification line: Latin incipit, printed heading and reference,
+% and the missal's marginal number.
+\newcommand{\elementid}[3]{%
+  \par{\small\latin{#1} \textperiodcentered{} #2 \textperiodcentered{} marginal no.~#3}\par}
+
+% The complete appointed Latin, inside the full edition only.
+\newenvironment{appointedlatin}[1]{%
+  \begin{massbox}{#1}\itshape}{\end{massbox}}
+
+% An identified public-domain English witness, never a project translation.
+% The title always names the witness and the exact locus it was taken from.
+\newenvironment{namedtranslation}[1]{%
+  \begin{sourcecard}{#1}\small}{\end{sourcecard}}
+
+% A place where the registered public-domain English does not answer the
+% appointed Latin. The gap is stated, never filled.
+\newcommand{\englishgap}[1]{\par\textbf{Where the registered English does not
+answer the Latin.} #1\par}
+
+% A witness dossier inside the detailed commentary: who, at what exact locus,
+% arguing what, and in what evidence state. The left rule keeps it distinct
+% from the surrounding synthesis without implying doctrinal weight.
+\newenvironment{witnessnote}{\begin{studyframe}\small}{\end{studyframe}}
+\newcommand{\wlocus}[1]{\textbf{#1}\quad}
+
+% A settled point of apparatus the reader needs in order to use the citations
+% above: a numbering convention, a rubrical locus. The title names the subject,
+% not the guide's handling of it.
+\newcommand{\correction}[2]{%
+  \begin{studybox}{#1}#2\end{studybox}}
+
+% Governing thesis for the thematic movement. Substantive content, permitted to
+% open the body of its own section.
+\newcommand{\movementthesis}[1]{%
+  \begin{studybox}{Governing thesis}#1\end{studybox}}
+
+% The exploratory-proposal notice and the proposals themselves. Every proposal
+% renders its anchors, mechanism, fruit and controlling limit as labelled
+% fields so no reader can mistake a proposal for a sourced finding.
+\newenvironment{proposal}[1]{%
+  \begin{massbox}{Editorial proposal --- #1}\small}{\end{massbox}}
+\newcommand{\pfield}[2]{\par\textbf{#1:} #2}
+
+% Notable-and-quotable gallery entry: appointed phrase, later user, locus and
+% the turn in register. Breakable, so a long entry splits rather than jumping
+% whole to the next page and leaving a sparse one behind.
+\newenvironment{afterlife}[1]{%
+  \begin{massbox}{#1}\small}{\end{massbox}}
+
+% Two-tier page-2 dossier table. This sheet makes three departures from the
+% profile's fixed page-2 measurements; the note below \dossierprose lists all
+% three together and states the escape clause that licenses them. The first of
+% the three is the column widths set here. The profile fixes them at
+% 0.14 / 0.18 / 0.35 / 0.16\linewidth; this table sets
+% 0.13 / 0.16 / 0.22 / 0.32\linewidth. All four are changed, and the four
+% widths still total 0.83 as the profile's do. The movement is into Date, and
+% the reason is the chronology contract: the corpus answers the Epistle with
+% four alternative labels and the Gospel and Communion with six, every one of
+% them printed in the source's own words, so the Date cell of two dossiers
+% carries several dates where the profile's measure assumes one. Proper,
+% Citation and Location each give up measure, their detail belonging to the
+% explanatory row beneath. The summary tier keeps \footnotesize, \arraystretch, \LTpre and \LTpost
+% exactly as the profile sets them.
+\newenvironment{dossiertable}
+{\footnotesize
+ \renewcommand{\arraystretch}{1.02}%
+ \setlength{\LTpre}{0.15em}\setlength{\LTpost}{0pt}%
+ \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.13\linewidth}>{\raggedright\arraybackslash}p{0.16\linewidth}>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.32\linewidth}@{}}
+ \toprule
+ \textbf{Proper} & \textbf{Citation} & \textbf{Location} & \textbf{Date}\\
+ \midrule
+ \endhead}
+{\bottomrule\end{longtable}}
+
+% The page-2 Date column. Every biblical date printed in this guide comes from
+% the Scripture chronology corpus, carried in research/chronology.toml, and
+% every one of them is printed through these two macros so that each figure
+% names the assertion it rests on.
+%
+% \chronology{subject}{relation}{label} -- one assertion of the corpus.
+% Typesets the label; the first two arguments are the corpus's own ids and
+% render nothing.
+\newcommand{\chronology}[3]{#3}
+% \chronodate{element-keys}{content} -- one dossier row's Date cell.
+% Typesets the content; the keys render nothing.
+\newcommand{\chronodate}[2]{#2}
+
+% Full-width explanatory and event rows inside a dossier.
+%
+% Measurement note. These are deliberate departures the profile provides for.
+% The profile says to change its fixed page-2 measurements only when the
+% complete inventory cannot remain legible after the hierarchy and the evidence
+% have been preserved. That is this sheet's case: six dossiers carrying the
+% evidence the research brief supplies for them will not stand on one physical
+% page at the profile's measurements, and the alternatives the profile forbids
+% are spilling, omitting evidence, or moving apparatus here from elsewhere.
+%
+% THREE of the profile's fixed measurements are varied on this sheet. These
+% are all three of them, and nothing else the profile fixes is changed:
+%
+%   D1. Summary-tier column widths, set above at \dossiertable. Profile
+%       0.14 / 0.18 / 0.35 / 0.16\linewidth; here
+%       0.13 / 0.16 / 0.22 / 0.32\linewidth. All four change: 0.16\linewidth
+%       moves into Date, donated by Proper, Citation and Location, because the
+%       corpus answers two of the six dossiers with four and six alternative
+%       labels respectively and every one of them is printed.
+%   D2. Spanning explanatory and event row width. Profile 0.92\linewidth;
+%       here 0.98\linewidth.
+%   D3. Spanning-row font size. The profile sets the table in \footnotesize and
+%       specifies no separate size for the spanning row, so the profile's value
+%       for that row is \footnotesize --- 9pt on 11pt leading under the 11pt
+%       base class in src/common/preamble.tex. Here it is \fontsize{6.4}{6.9}:
+%       a reduction of roughly 29 percent in glyph size and 37 percent in
+%       leading, below \scriptsize and nearer \tiny. This is a large departure
+%       and is recorded as one.
+%
+% What the profile fixes and this sheet leaves alone: the two-tier hierarchy,
+% the four summary fields, the \footnotesize summary tier, \arraystretch 1.02,
+% \LTpre 0.15em, \LTpost 0pt, the 0.1em breathing space ending ordinary dossier
+% rows, \cmidrule(lr){1-4} within a dossier with \midrule only between complete
+% dossiers, and the italic event row set between two \cmidrule(lr){1-4} rules
+% ahead of its explanation.
+%
+% D3 reached its present value in steps, and the history is recorded here so
+% the increments are not mistaken for the departure. Every row must print a
+% named bounded negative --- witnesses the repository does not hold in any
+% form, held volumes with no registered passage locus, an unresolved-rights
+% witness, and the absence of any modern critical horizon --- while the Date
+% column now carries ten separate corpus labels across two dossiers, and a
+% longtable row cannot break, so the sheet either fits whole or starts a second
+% page the profile forbids. Successive unpublished revisions set 7.0/7.9 and
+% then 6.9/7.5; this one sets 6.4/6.9. The departure that matters for review is
+% the one against the profile's own \footnotesize, stated at D3 above, and not
+% the last increment of it.
+\newcommand{\dossierrowsize}{\fontsize{6.4}{6.9}\selectfont}
+\newcommand{\dossierprose}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash\dossierrowsize}p{0.98\linewidth}@{}}{#1}\\[0.1em]}
+\newcommand{\dossierevent}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash\dossierrowsize}p{0.98\linewidth}@{}}{\textit{#1}}\\}
+
+% Divergence table used in the commentary: appointed form against the Bible
+% text the guide's English is quoted from.
+\newenvironment{divergencetable}
+{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.17\linewidth}>{\raggedright\arraybackslash}p{0.36\linewidth}>{\raggedright\arraybackslash}p{0.38\linewidth}}
+\toprule
+\textbf{Proper and locus} & \textbf{Appointed} & \textbf{Clementine}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+
+% A two-column comparison, for a matrix whose second column carries the whole
+% argument. The three-column form with an empty header would leave a third of
+% the measure blank and unlabelled.
+\newenvironment{pairtable}[2]
+{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.20\linewidth}>{\raggedright\arraybackslash}p{0.74\linewidth}}
+\toprule
+\textbf{#1} & \textbf{#2}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+
+% Reception and comparison tables used in the detailed commentary.
+\newenvironment{receptiontable}[3]
+{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.20\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}>{\raggedright\arraybackslash}p{0.38\linewidth}}
+\toprule
+\textbf{#1} & \textbf{#2} & \textbf{#3}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+
+% A four-column measurement table, for the oration word-counts, whose columns
+% are all short.
+\newenvironment{counttable}[3]
+{\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.26\linewidth}>{\raggedright\arraybackslash}p{0.14\linewidth}>{\raggedright\arraybackslash}p{0.52\linewidth}}
+\toprule
+\textbf{#1} & \textbf{#2} & \textbf{#3}\\
+\midrule
+\endhead}
+{\bottomrule\end{longtable}}
+
+% The two outputs share every section file except the appointed text and the
+% element-by-element sweep. This one sentence is the only reader-facing prose
+% that has to differ, so it is owned here rather than duplicated in a section.
+\ifdefined\TriptychSynthesisEdition
+  \newcommand{\editionnote}{\textbf{Which edition this is.} This is the
+  \textit{synthesis companion}. It carries the propers map, the
+  date-and-location sheet, the two-page thematic movement, an integrated
+  cross-proper commentary, the source-grounded and exploratory synthesis, the
+  notable-and-quotable gallery and this apparatus. It deliberately omits two
+  things the canonical full edition prints: the complete appointed Latin with
+  its English, and the element-by-element reception sweep. It is compiled
+  mechanically from the same source leaf and owns no prose, research record or
+  source audit of its own.}
+\else
+  \newcommand{\editionnote}{\textbf{Which edition this is.} This is the
+  \textit{canonical full edition}. After the map, the dossier sheet and the
+  thematic movement it prints the complete appointed formulary --- the Latin of
+  the 1962 Vatican \latin{editio typica} beside the English of the registered
+  public-domain witnesses --- and then the element-by-element commentary, the
+  synthesis sections and this apparatus, all from one source leaf. A mechanical
+  \textit{synthesis companion} is compiled from the same source at the same
+  identity with a \texttt{-synthesis} suffix; it omits the appointed texts and
+  the element-by-element sweep and adds nothing this edition does not contain.}
+\fi
+
+% \sectionguard and the deepstudy reading size come from the shared preamble
+% and are deliberately not redefined here.

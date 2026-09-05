@@ -36,7 +36,9 @@ OTHER_CONTRIBUTION = (
 
 @unittest.skipUnless(HAS_PANDOC, "pandoc is not installed")
 class WebEditionConversionTests(unittest.TestCase):
-    def convert(self, body: str, metadata: str = CONTRIBUTION) -> str:
+    def convert(
+        self, body: str, metadata: str = CONTRIBUTION, preamble: str = ""
+    ) -> str:
         """Convert a synthetic single-section leaf and return its Markdown."""
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
@@ -49,7 +51,7 @@ class WebEditionConversionTests(unittest.TestCase):
             (leaf / "main.tex").write_text(
                 "\\input{common/preamble}\n"
                 r"\hypersetup{pdftitle={Subject},pdfsubject={A synthetic leaf}}"
-                "\n\\begin{document}\n"
+                "\n" + preamble + "\n\\begin{document}\n"
                 "\\begin{titlepage}\nDropped title page\n\\end{titlepage}\n"
                 "\\section{Body}\n" + body + "\n"
                 r"\input{studies/subject/generation-metadata}"
@@ -173,6 +175,48 @@ class WebEditionConversionTests(unittest.TestCase):
         self.assertNotIn(":::", markdown)
         self.assertIn("Need (*Int.*)", markdown)
 
+    def test_generated_chronology_annotation_keeps_its_complete_payload(self) -> None:
+        definitions = (
+            r"\newcommand{\chronologyannotationclaim}[6]{#6}"
+            "\n"
+            r"\newcommand{\chronologyannotationreach}[3]{}"
+            "\n"
+            r"\newcommand{\chronologyannotationgroup}[3]{#3}"
+            "\n"
+            r"\newcommand{\chronologyannotation}[1]{%"
+            "\n"
+            r"  \ifcsname triptychchronologyannotation@#1\endcsname"
+            "\n"
+            r"    \csname triptychchronologyannotation@#1\endcsname"
+            "\n"
+            r"  \fi}"
+            "\n"
+            r"\expandafter\def\csname triptychchronologyannotation@gospel\endcsname{%"
+            "\n"
+            r"\chronologyannotationgroup{composition}{disputed}{Composition -- disputed: "
+            r"\chronologyannotationreach{Luke.7.11}{Luke}{true}"
+            r"\chronologyannotationclaim{composition.gospel-of-luke}{composition}"
+            r"{catholic-traditional-v1}{disputed}{About the year 70}{c. A.D. 70}; "
+            r"\chronologyannotationclaim{composition.gospel-of-luke}{composition}"
+            r"{catholic-traditional-v1}{disputed}{before Rome}{Before Rome}.}%"
+            "\n"
+            r"\space \chronologyannotationgroup{narrated-event}{preferred}{Event: "
+            r"\chronologyannotationclaim{life-of-christ.naim}{narrated-event}"
+            r"{catholic-traditional-v1}{preferred}{derived A.D. 27}{A.D. 27}.}%"
+            "\n}"
+        )
+        markdown = self.convert(r"\chronologyannotation{gospel}", preamble=definitions)
+        self.assertIn("Composition – disputed: c. A.D. 70; Before Rome.", markdown)
+        self.assertIn("Event: A.D. 27.", markdown)
+        self.assertNotIn("triptychchronologyannotation@", markdown)
+
+    def test_generated_chronology_annotation_without_definition_is_refused(self) -> None:
+        with self.assertRaises(DRIVER.ConversionError) as raised:
+            self.convert(r"\chronologyannotation{gospel}")
+        self.assertIn(
+            "no generated chronology annotation for: gospel", str(raised.exception)
+        )
+
     def test_unknown_macro_names_its_file_and_writes_nothing(self) -> None:
         with self.assertRaises(DRIVER.ConversionError) as raised:
             self.convert(r"Prose \dubiousclaim{silently deleted evidence}.")
@@ -224,6 +268,32 @@ class WebEditionAuditTests(unittest.TestCase):
         failures = DRIVER.audit_output("Prose.", self.minimal_markdown() + r"\rubric")
         self.assertTrue(
             any(failure.startswith("raw LaTeX left in output") for failure in failures)
+        )
+
+    def test_raw_generated_chronology_token_is_reported(self) -> None:
+        failures = DRIVER.audit_output(
+            "Prose.",
+            self.minimal_markdown()
+            + "\ntriptychchronologyannotation@gospel "
+            + "triptychchronologyannotation@gospel\n",
+        )
+        self.assertTrue(
+            any(
+                failure.startswith("raw generated chronology annotation token(s)")
+                for failure in failures
+            )
+        )
+
+    def test_missing_generated_chronology_payload_is_reported(self) -> None:
+        failures = DRIVER.audit_output(
+            "Prose.",
+            self.minimal_markdown(),
+            chronology_annotations=["Composition: Before c. 165 B.C."],
+        )
+        self.assertIn(
+            "generated chronology annotation payload shortfall: expected 1, found 0: "
+            "Composition: Before c. 165 B.C.",
+            failures,
         )
 
     def test_dropped_table_is_reported(self) -> None:

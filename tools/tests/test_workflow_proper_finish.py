@@ -95,7 +95,7 @@ class DefinitionTests(unittest.TestCase):
     def test_finish_pipeline_loads_end_to_end(self) -> None:
         loaded = self.engine.load_workflow("proper-finish")
         self.assertEqual(loaded["id"], "proper-finish")
-        self.assertEqual(loaded["version"], 2)
+        self.assertEqual(loaded["version"], 3)
         self.assertEqual([stage["id"] for stage in loaded["stages"]], STAGES)
 
     def test_document_contract_is_copied_verbatim(self) -> None:
@@ -182,25 +182,100 @@ class DefinitionTests(unittest.TestCase):
         ):
             _validate_result(research_owned, schema, EVALUATOR)
 
+    def test_duplicate_finding_ids_are_rejected_across_severities(self) -> None:
+        schema = self.engine.load_schema("content-evaluation-result.json")
+        result = {
+            "stage": "content-evaluation",
+            "iteration": 0,
+            "disposition": CHANGES_REQUIRED,
+            "findings": [
+                {
+                    "id": "CON-DUP-001",
+                    "severity": "advisory",
+                    "location": "one",
+                    "problem": "one view",
+                    "required_result": "inspect it",
+                },
+                {
+                    "id": "CON-DUP-001",
+                    "severity": "blocking",
+                    "location": "two",
+                    "problem": "another view",
+                    "required_result": "repair it",
+                    "repair_target": "authoring",
+                },
+            ],
+        }
+        with self.assertRaisesRegex(
+            WorkflowError,
+            r"findings\[1\]\.id duplicates findings\[0\]\.id",
+        ):
+            _validate_result(result, schema, EVALUATOR)
+
+    def test_research_findings_require_nonempty_unique_ids(self) -> None:
+        schema = self.engine.load_schema("research-result.json")
+
+        def finding(identity: str) -> dict:
+            return {
+                "id": identity,
+                "claim": "claim",
+                "evidence": "evidence",
+                "notes": "notes",
+                "retrievals": [],
+            }
+
+        result = {
+            "stage": "research",
+            "iteration": 0,
+            "disposition": "PASS",
+            "summary": "complete",
+            "findings": [finding("SCR-DUP-001"), finding("SCR-DUP-001")],
+        }
+        with self.assertRaisesRegex(WorkflowError, "duplicates"):
+            _validate_result(result, schema, EVALUATOR)
+        result["findings"] = [finding("")]
+        with self.assertRaisesRegex(WorkflowError, "nonempty string"):
+            _validate_result(result, schema, EVALUATOR)
+
+    def test_duplicate_finding_dispositions_are_rejected_structurally(self) -> None:
+        schema = self.engine.load_schema("worker-result.json")
+        result = {
+            "stage": "content-revision",
+            "iteration": 0,
+            "disposition": "PASS",
+            "summary": "complete",
+            "finding_dispositions": [
+                {"id": "CON-DUP-001", "outcome": "repaired"},
+                {"id": "CON-DUP-001", "outcome": "not-repaired"},
+            ],
+        }
+        with self.assertRaisesRegex(
+            WorkflowError,
+            r"finding_dispositions\[1\]\.id duplicates "
+            r"finding_dispositions\[0\]\.id",
+        ):
+            _validate_result(result, schema, EVALUATOR)
+
     def test_finish_seed_starts_at_authoring_and_has_a_distinct_run_id(self) -> None:
         runs = Path(tempfile.mkdtemp(
             prefix="tpt-runs-test-proper-finish-", dir=ROOT / "build"
         ))
         self.addCleanup(shutil.rmtree, runs, ignore_errors=True)
         self.engine.runs_dir = runs
+        self.engine.standing_findings_root = runs / "standing"
         try:
             seeded = self.engine.seed("proper-finish", {
                 "proper": DOC,
                 "provider": "gpt",
             })
             self.assertEqual(seeded["workflow_id"], "proper-finish")
-            self.assertEqual(seeded["workflow_version"], 2)
+            self.assertEqual(seeded["workflow_version"], 3)
             self.assertEqual(seeded["stage"], "author-proper")
             packet = (
                 self.engine.run_dir(seeded["run_id"])
                 / "packets" / "author-proper-0000.txt"
             ).read_text(encoding="utf-8")
-            self.assertIn("WORKFLOW: proper-finish v2", packet)
+            self.assertIn("WORKFLOW: proper-finish v3", packet)
             self.assertIn("STAGE: author-proper", packet)
 
             commit = self.engine.load_state(seeded["run_id"])["repo_commit"]

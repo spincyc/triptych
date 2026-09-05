@@ -33,10 +33,12 @@ one more costume.
 
 ## What a locus resolves to
 
-Zero or more TYPED TEMPORAL ASSERTIONS, never a scalar date. Eight relations,
+Zero or more TYPED TEMPORAL ASSERTIONS, never a scalar date. Ten relations,
 and the distinctions between them are the point:
 
     composition             when the text was written
+    final-formation         when a composite text reached its final form
+    textual-attestation     when this text is witnessed in a dated edition
     narrated-event          when the event the passage narrates happened
     utterance               when the words the passage quotes were spoken
     historical-setting      the occasion tradition associates with the text
@@ -49,6 +51,8 @@ and the distinctions between them are the point:
 Passion, and a corpus that could not say so would date David narrating Calvary.
 `superscription-setting` is not `composition`: a title is evidence about a
 setting and is not proof of a year. `composition` is not `historical-setting`.
+And `textual-attestation` is not either one: a dated witness proves that this
+text existed by then, never that it was written then.
 
 ## What is authored, and what is derived
 
@@ -72,12 +76,13 @@ tie to break, because nothing here may pick.
 
 ## Absence
 
-A locus with no assertion is not missing from this corpus; it has a status.
-`research-pending` is the honest default and the corpus says so rather than
-reporting coverage it does not have. `gaps.yaml` records the statuses that are
-KNOWN to be something else — a tradition that dates nothing, a text that cannot
-be aligned. `guidance/the-shape.md` §4: absence is data and must have somewhere
-to live, or it will be filled.
+A locus with no assertion still has a status. `research-pending` is the honest
+default and the corpus says so rather than reporting coverage it does not have.
+`gaps.yaml` records statuses known to be something else — for example, that a
+tradition assigns no date. A comprehensive profile may fall through such a gap
+to a source-backed claim in another leaf, with textual attestation as the last
+resort. `guidance/the-shape.md` §4 still governs the authored evidence: absence
+is data, and a gap never becomes a fabricated year merely to close coverage.
 """
 from __future__ import annotations
 
@@ -166,6 +171,8 @@ SCHEMAS = {
 
 RELATIONS = (
     "composition",
+    "final-formation",
+    "textual-attestation",
     "narrated-event",
     "utterance",
     "historical-setting",
@@ -174,6 +181,21 @@ RELATIONS = (
     "prophecy-given",
     "prophetic-referent",
 )
+
+# Textual history is temporal, but it is not an event narrated by the text.
+# `composition-only` is the established public status name, so final formation
+# joins composition on this side of the status boundary rather than making a
+# psalter whose final form is dated look as though every event it mentions had
+# been dated.
+TEXTUAL_RELATIONS = frozenset(
+    {"composition", "final-formation", "textual-attestation"}
+)
+
+# A cascade is deliberately one rule, not an open vocabulary a caller may
+# interpret. It chooses independently per relation so a traditional
+# composition claim cannot suppress a critical narrated-event or
+# final-formation claim.
+CASCADE_SELECTION = "first-with-answerable-assertion-per-relation"
 
 # The order a query returns assertions in, so a consumer's output is stable and
 # a diff of two queries is a diff of the answers rather than of the sorting.
@@ -218,6 +240,21 @@ PRECISIONS = (
     "interval",         # the subject falls somewhere within from..to
     "relative",         # no absolute endpoints; a stated interval FROM another event
     "duration",         # how long the subject itself lasted; measured from nothing
+    "boundary",         # one-sided before/after limit, by endpoint or named anchor
+)
+
+BOUNDARY_DIRECTIONS = (
+    "before", "after", "no-later-than", "no-earlier-than",
+)
+
+# A positive chronology guarantee needs a POSITION, not merely any temporal
+# fact. A duration says how long something lasted but not when; a month-day
+# recurs every year and therefore does not locate it on a chronology. Relative
+# and boundary values qualify because their named anchor or one-sided endpoint
+# deliberately preserves the source's open horizon rather than inventing a
+# closed interval.
+POSITIONAL_PRECISIONS = frozenset(
+    {"day", "year", "approximate-year", "range", "interval", "relative", "boundary"}
 )
 
 # The units a duration may be stated in, largest first, which is also the order
@@ -242,13 +279,14 @@ DURATION_UNITS = ("years", "months", "days")
 ERAS = ("bc", "ad", "am")
 CHRISTIAN_ERAS = ("bc", "ad")
 
-# Every status a locus can carry. `dated` and `composition-only` are earned
-# from the assertions that APPLY to a locus, at whatever scope they were
-# authored; the rest are authored in gaps.yaml, except `research-pending`,
-# which is what a locus has when nothing else applies.
+# Every status a locus can carry. The first three are earned from assertions
+# that APPLY to a locus, at whatever scope they were authored; the rest are
+# authored in gaps.yaml, except `research-pending`, which is what a locus has
+# when nothing else applies.
 STATUSES = (
     "dated",              # a substantive assertion applies, direct or inherited
-    "composition-only",   # only a composition assertion applies, at any scope
+    "composition-only",   # only composition/final-formation assertions apply
+    "attestation-only",   # only a dated textual witness reaches the locus
     "research-pending",   # not yet researched. The default, and honest.
     "undated-in-tradition",  # ranked sources inspected; tradition dates nothing
     "not-alignable",      # the locus cannot be safely addressed from the asking system
@@ -267,7 +305,7 @@ STATUS_ORDER = {status: index for index, status in enumerate(STATUSES)}
 # at the one place that enforces it, because the coverage guard in
 # `tools/tests/test_chronology.py` asks the same question and two spellings of
 # one set is how they stop agreeing.
-EARNED_STATUSES = ("dated", "composition-only")
+EARNED_STATUSES = ("dated", "composition-only", "attestation-only")
 
 AUTHORED_STATUSES = tuple(
     status
@@ -403,6 +441,7 @@ class Date(NamedTuple):
     label: str
     derivation: dict[str, Any] | None
     duration: dict[str, Any] | None = None
+    boundary: dict[str, Any] | None = None
 
     @property
     def derived(self) -> bool:
@@ -415,9 +454,21 @@ class Date(NamedTuple):
         A duration's `within` is not an anchor and is deliberately not returned
         here: it says where the span sits, not what it is counted from.
         """
-        return self.relative.get("of") if self.relative else None
+        if self.relative:
+            return self.relative.get("of")
+        return self.boundary.get("anchor") if self.boundary else None
 
     def __str__(self) -> str:
+        if self.precision == "boundary" and self.boundary:
+            if self.boundary.get("statement"):
+                return str(self.boundary["statement"])
+            direction = {
+                "before": "before",
+                "after": "after",
+                "no-later-than": "no later than",
+                "no-earlier-than": "no earlier than",
+            }[self.boundary["direction"]]
+            return f"{direction} {self.boundary['endpoint']}"
         if self.precision == "duration" and self.duration:
             return str(self.duration.get("statement") or _duration_text(self.duration))
         if self.precision == "relative" and self.relative:
@@ -429,6 +480,21 @@ class Date(NamedTuple):
             return f"about {head}" if self.precision == "approximate-year" else head
         joiner = "-" if self.precision == "range" else " to "
         return f"{self.begin}{joiner}{self.end}"
+
+
+def is_positional_date(date: Date) -> bool:
+    """Whether a date locates or bounds its subject in time.
+
+    `day` is structurally allowed to omit a year, so it qualifies only when it
+    carries one. `month-day` and `duration` never qualify: both may remain as
+    useful assertions beside a last-resort dated witness, but neither can make
+    the comprehensive coverage promise true by itself.
+    """
+    if date.precision not in POSITIONAL_PRECISIONS:
+        return False
+    if date.precision == "day":
+        return bool(date.begin and date.begin.year is not None)
+    return True
 
 
 def _duration_text(duration: dict[str, Any]) -> str:
@@ -523,7 +589,8 @@ def parse_date(raw: object, where: str) -> Date:
     if not isinstance(raw, dict):
         raise ChronologyError(f"{where}: a date must be a mapping, not {raw!r}")
     unknown = set(raw) - {
-        "precision", "from", "to", "relative", "duration", "label", "derivation",
+        "precision", "from", "to", "relative", "duration", "boundary", "label",
+        "derivation",
     }
     if unknown:
         raise ChronologyError(f"{where}: unknown date key(s) {sorted(unknown)}")
@@ -556,6 +623,76 @@ def parse_date(raw: object, where: str) -> Date:
 
     relative = raw.get("relative")
     duration = raw.get("duration")
+    boundary = raw.get("boundary")
+
+    if precision == "boundary":
+        if relative is not None or duration is not None:
+            raise ChronologyError(
+                f"{where}: a boundary carries its endpoint or anchor inside "
+                f"'boundary', not relative or duration"
+            )
+        if raw.get("from") or raw.get("to"):
+            raise ChronologyError(
+                f"{where}: a boundary carries one endpoint, not a from/to range"
+            )
+        if not isinstance(boundary, dict):
+            raise ChronologyError(f"{where}: precision 'boundary' needs a mapping")
+        unknown_boundary = set(boundary) - {
+            "direction", "endpoint", "anchor", "statement",
+        }
+        if unknown_boundary:
+            raise ChronologyError(
+                f"{where} boundary: unknown key(s) {sorted(unknown_boundary)}"
+            )
+        direction = boundary.get("direction")
+        if direction not in BOUNDARY_DIRECTIONS:
+            raise ChronologyError(
+                f"{where}: boundary direction {direction!r} is not one of "
+                f"{list(BOUNDARY_DIRECTIONS)}"
+            )
+        endpoint = boundary.get("endpoint")
+        anchor = boundary.get("anchor")
+        if (endpoint is None) == (anchor is None):
+            raise ChronologyError(
+                f"{where}: a boundary needs exactly one of endpoint or anchor"
+            )
+        if endpoint is not None:
+            parsed_endpoint = _endpoint(endpoint, f"{where} boundary endpoint")
+            if parsed_endpoint.year is None:
+                raise ChronologyError(
+                    f"{where}: a boundary endpoint needs a year"
+                )
+            if boundary.get("statement") is not None and not isinstance(
+                boundary.get("statement"), str
+            ):
+                raise ChronologyError(
+                    f"{where}: boundary statement must be text"
+                )
+            normalized = {
+                "direction": direction,
+                "endpoint": parsed_endpoint,
+                **(
+                    {"statement": boundary["statement"]}
+                    if boundary.get("statement") else {}
+                ),
+            }
+            return Date(
+                precision, parsed_endpoint, parsed_endpoint, None, label,
+                derivation, None, normalized,
+            )
+        if not isinstance(anchor, str) or not anchor.strip():
+            raise ChronologyError(f"{where}: boundary anchor must name one subject")
+        statement = boundary.get("statement")
+        if not isinstance(statement, str) or not statement.strip():
+            raise ChronologyError(
+                f"{where}: an anchor boundary needs the source's statement"
+            )
+        return Date(
+            precision, None, None, None, label, derivation, None,
+            {"direction": direction, "anchor": anchor, "statement": statement},
+        )
+    if boundary is not None:
+        raise ChronologyError(f"{where}: only precision 'boundary' carries 'boundary'")
 
     # The two are kept apart structurally, not by convention, because the whole
     # point of the distinction is that a consumer must never read one as the
@@ -679,10 +816,11 @@ class Event(NamedTuple):
 
 
 class Unit(NamedTuple):
-    """A textual unit with its own composition chronology, and its extent."""
+    """A textual unit with its own textual-history chronology and extent."""
 
     id: str
     title: str
+    relation: str
     scope: tuple[Span, ...]
     claims: tuple[Claim, ...]
     note: str
@@ -717,6 +855,7 @@ class Gap(NamedTuple):
     scope: tuple[Span, ...]
     reason: str
     sources: tuple[str, ...]
+    profile: str
 
 
 class Assertion(NamedTuple):
@@ -769,6 +908,11 @@ class Answer(NamedTuple):
     note: str
     mapping: Mapping | None = None
     asked: str | None = None
+    # The requested profile may be a cascade; every assertion still carries
+    # the leaf profile that owns the claim. This map makes the selection
+    # decision explicit without rewriting provenance onto the claim.
+    requested_profile: str | None = None
+    resolved_profiles: tuple[tuple[str, str], ...] = ()
 
     @property
     def resolved(self) -> bool:
@@ -1202,13 +1346,14 @@ class Policy(NamedTuple):
     chronology value is a candidate answer under a profile only when BOTH the
     source AND the basis for that particular value are admissible under it.
 
-    The source half is `authority`/`non_authorities` and is checked when a claim
-    is authored — provenance names a record this repository holds, and `audit()`
-    says so when it does not. The basis half is this: every claim carries the
-    class of the method its value came from, and the profile says which classes
-    it answers with. Neither half can be satisfied by the other, which is the
-    whole point. A Catholic author's own voice satisfies the first and settles
-    nothing about the second.
+    The source half is `authority`/`non_authorities` and is reviewed when a
+    claim is authored. `audit()` mechanically proves that named provenance is a
+    real repository record (and, for Scripture, a real edition locus); it does
+    not infer that source's authority rank from its id. The basis half is this:
+    every claim carries the class of the method its value came from, and the
+    profile says which classes it answers with. Neither half can be satisfied
+    by the other, which is the whole point. A Catholic author's own voice
+    satisfies the first and settles nothing about the second.
 
     `admissible` is deliberately a set of class names and NOT a rank threshold.
     Rank orders admissible evidence; there is no rank at which an excluded
@@ -1229,7 +1374,8 @@ class Policy(NamedTuple):
         Admissibility of the BASIS is decided here and nowhere else, and it is
         decided before rank: nothing in this function consults the authority
         hierarchy, the disposition, or the order assertions are returned in.
-        Rank sorts what survives this; it never rescues what does not.
+        Human review uses rank to author a disposition. Sorting reproduces that
+        disposition; this function neither computes nor infers source rank.
         """
         if claim.answerability != "answerable":
             return False
@@ -1237,6 +1383,19 @@ class Policy(NamedTuple):
             return True
         lifted = self.exceptions.get(claim.reporting_exception or "")
         return bool(lifted and lifted.get("basis") == claim.basis_class)
+
+
+class Cascade(NamedTuple):
+    """An ordered composition of leaf evidence profiles.
+
+    A cascade owns no claims and makes no new chronology assertion. For each
+    relation independently, it selects the first leaf with at least one
+    answerable candidate and returns that leaf's complete candidate set.
+    """
+
+    profile: str
+    fallback_profiles: tuple[str, ...]
+    selection: str
 
 
 class Corpus(NamedTuple):
@@ -1249,6 +1408,8 @@ class Corpus(NamedTuple):
     gaps: tuple[Gap, ...]
     books: dict[str, int]
     policies: dict[str, Policy]
+    cascades: dict[str, Cascade]
+    default_profile: str
 
     def answers_with(self, claim: Claim) -> bool:
         """Whether the profile the claim was authored under answers with it.
@@ -1394,19 +1555,76 @@ def _policy(entry: dict[str, Any], where: str) -> Policy:
     )
 
 
-def _load_profiles(root: Path) -> tuple[dict[str, dict[str, Any]], dict[str, Policy]]:
+def _load_profile_contract(
+    root: Path,
+) -> tuple[
+    dict[str, dict[str, Any]], dict[str, Policy], dict[str, Cascade], str
+]:
     document = _document("profiles", root)
     listed = document.get("profiles")
     if not isinstance(listed, list) or not listed:
         raise ChronologyError(f"{root}/profiles.yaml: needs a non-empty 'profiles' list")
     profiles: dict[str, dict[str, Any]] = {}
     policies: dict[str, Policy] = {}
+    cascades: dict[str, Cascade] = {}
     for entry in listed:
         if not isinstance(entry, dict):
             raise ChronologyError(f"{root}/profiles.yaml: a profile must be a mapping")
         identifier = check_id(entry.get("id"), "profile", f"{root}/profiles.yaml")
         if identifier in profiles:
             raise ChronologyError(f"{root}/profiles.yaml: duplicate profile {identifier}")
+        profiles[identifier] = entry
+
+    for identifier, entry in profiles.items():
+        kind = entry.get("kind", "evidence")
+        if kind == "cascade":
+            _keys(
+                entry,
+                {
+                    "id", "kind", "title", "intent", "fallback_profiles",
+                    "selection", "non_goals", "versioning",
+                },
+                f"{root}/profiles.yaml cascade {identifier!r}",
+            )
+            for required in (
+                "title", "intent", "fallback_profiles", "selection",
+                "non_goals", "versioning",
+            ):
+                if not entry.get(required):
+                    raise ChronologyError(
+                        f"{root}/profiles.yaml: cascade {identifier} states no "
+                        f"{required}"
+                    )
+            fallback = entry.get("fallback_profiles")
+            if (
+                not isinstance(fallback, list)
+                or not fallback
+                or not all(isinstance(item, str) for item in fallback)
+            ):
+                raise ChronologyError(
+                    f"{root}/profiles.yaml: cascade {identifier} needs a "
+                    f"non-empty fallback_profiles list"
+                )
+            if len(fallback) != len(set(fallback)):
+                raise ChronologyError(
+                    f"{root}/profiles.yaml: cascade {identifier} repeats a "
+                    f"fallback profile"
+                )
+            selection = entry.get("selection")
+            if selection != CASCADE_SELECTION:
+                raise ChronologyError(
+                    f"{root}/profiles.yaml: cascade {identifier} selection "
+                    f"{selection!r} is not {CASCADE_SELECTION!r}"
+                )
+            cascades[identifier] = Cascade(
+                identifier, tuple(fallback), str(selection)
+            )
+            continue
+        if kind != "evidence":
+            raise ChronologyError(
+                f"{root}/profiles.yaml: profile {identifier} kind {kind!r} is "
+                f"neither 'evidence' nor 'cascade'"
+            )
         for required in (
             "title", "intent", "authority", "admissibility", "answerability",
             "conflict", "non_goals",
@@ -1416,10 +1634,39 @@ def _load_profiles(root: Path) -> tuple[dict[str, dict[str, Any]], dict[str, Pol
                     f"{root}/profiles.yaml: profile {identifier} states no {required}; "
                     f"a profile that does not say what wins is not a policy"
                 )
-        profiles[identifier] = entry
         policies[identifier] = _policy(
             entry, f"{root}/profiles.yaml profile {identifier!r}"
         )
+
+    for identifier, cascade in cascades.items():
+        for fallback in cascade.fallback_profiles:
+            if fallback not in policies:
+                kind = "cascade" if fallback in cascades else "undeclared"
+                raise ChronologyError(
+                    f"{root}/profiles.yaml: cascade {identifier} fallback "
+                    f"{fallback!r} is {kind}; fallbacks must name declared leaf "
+                    f"evidence profiles"
+                )
+
+    default = document.get("default_profile")
+    if default is None:
+        if len(profiles) != 1:
+            raise ChronologyError(
+                f"{root}/profiles.yaml: multiple profiles require one explicit "
+                f"top-level default_profile; omitting --profile must never union "
+                f"claims silently"
+            )
+        default = next(iter(profiles))
+    if default not in profiles:
+        raise ChronologyError(
+            f"{root}/profiles.yaml: default_profile {default!r} is not declared"
+        )
+    return profiles, policies, cascades, str(default)
+
+
+def _load_profiles(root: Path) -> tuple[dict[str, dict[str, Any]], dict[str, Policy]]:
+    """Compatibility surface for callers inspecting leaf profile policy."""
+    profiles, policies, _cascades, _default = _load_profile_contract(root)
     return profiles, policies
 
 
@@ -1470,13 +1717,20 @@ def _load_units(
         if not isinstance(entry, dict):
             raise ChronologyError(f"{root}/composition.yaml: a unit must be a mapping")
         where = f"{root}/composition.yaml unit {entry.get('id')!r}"
-        _keys(entry, {"id", "title", "scope", "dates", "note"}, where)
+        _keys(entry, {"id", "title", "relation", "scope", "dates", "note"}, where)
         identifier = check_id(entry.get("id"), "composition unit", where)
         if identifier in units:
             raise ChronologyError(f"{where}: duplicate unit id")
+        relation = entry.get("relation", "composition")
+        if relation not in TEXTUAL_RELATIONS:
+            raise ChronologyError(
+                f"{where}: textual-unit relation {relation!r} is not one of "
+                f"{sorted(TEXTUAL_RELATIONS)}"
+            )
         units[identifier] = Unit(
             id=identifier,
             title=_text(entry, "title", where, required=True),
+            relation=relation,
             scope=_scope(entry.get("scope"), where, books),
             claims=_claims(entry, where, policies),
             note=_text(entry, "note", where),
@@ -1486,26 +1740,31 @@ def _load_units(
 
 
 def _refuse_ambiguous_inheritance(units: dict[str, Unit], root: Path) -> None:
-    """Two units of equal width over one verse is an error, not a tie.
+    """Two units of equal width over one verse and profile are an error.
 
-    Nothing here may pick between them: choosing the first, the narrowest by
-    accident of authoring order, or the more recently edited would all be a
-    date resolving successfully and wrongly. So the corpus refuses to load and
-    the author says which unit owns the text.
+    Narrowing is evaluated independently inside each evidence profile. Units
+    owned by disjoint profiles are not alternatives for one query and may
+    therefore overlap; units that share a profile still leave that profile a
+    tie nothing may break. The relation is independent for the same reason:
+    composition and final formation may describe the same textual extent.
     """
-    by_width: dict[int, dict[tuple[str, str, int, int], str]] = {}
+    by_width: dict[
+        tuple[str, str, int], dict[tuple[str, str, int, int], str]
+    ] = {}
     for unit in units.values():
         width = unit.width()
-        seen = by_width.setdefault(width, {})
-        for span in unit.scope:
-            for key in _span_keys(span, unit.scope):
-                if key in seen and seen[key] != unit.id:
-                    raise ChronologyError(
-                        f"{root}/composition.yaml: units {seen[key]} and "
-                        f"{unit.id} both claim {key[0]} {key[1]}.{key[2]}.{key[3]} "
-                        f"at the same width; narrow one of them"
-                    )
-                seen[key] = unit.id
+        for profile in {claim.profile for claim in unit.claims}:
+            seen = by_width.setdefault((unit.relation, profile, width), {})
+            for span in unit.scope:
+                for key in _span_keys(span, unit.scope):
+                    if key in seen and seen[key] != unit.id:
+                        raise ChronologyError(
+                            f"{root}/composition.yaml: units {seen[key]} and "
+                            f"{unit.id} both claim {key[0]} "
+                            f"{key[1]}.{key[2]}.{key[3]} under {profile} at "
+                            f"the same width; narrow one of them"
+                        )
+                    seen[key] = unit.id
 
 
 def _span_keys(
@@ -1552,9 +1811,9 @@ def _load_bindings(root: Path, events: dict[str, Event], books: dict[str, int]) 
             raise ChronologyError(
                 f"{where}: relation {relation!r} is not one of {list(RELATIONS)}"
             )
-        if relation == "composition":
+        if relation in TEXTUAL_RELATIONS:
             raise ChronologyError(
-                f"{where}: composition is not an event binding; it is a textual "
+                f"{where}: {relation} is not an event binding; it is a textual "
                 f"unit in composition.yaml, because it inherits and an event "
                 f"does not"
             )
@@ -1575,15 +1834,26 @@ def _load_bindings(root: Path, events: dict[str, Event], books: dict[str, int]) 
     return tuple(bindings)
 
 
-def _load_gaps(root: Path, books: dict[str, int]) -> tuple[Gap, ...]:
+def _load_gaps(
+    root: Path, books: dict[str, int], policies: dict[str, Policy]
+) -> tuple[Gap, ...]:
     document = _document("gaps", root)
     gaps: list[Gap] = []
     authored = set(AUTHORED_STATUSES)
+    default_profile = document.get("profile")
+    if default_profile is None:
+        # Compatibility for the established corpus and test fixtures. The
+        # status itself is explicitly traditional; once another evidence
+        # profile needs gaps, the document or row must name it.
+        if "catholic-traditional-v1" in policies:
+            default_profile = "catholic-traditional-v1"
+        elif len(policies) == 1:
+            default_profile = next(iter(policies))
     for entry in document.get("gaps") or []:
         if not isinstance(entry, dict):
             raise ChronologyError(f"{root}/gaps.yaml: a gap must be a mapping")
         where = f"{root}/gaps.yaml gap {entry.get('status')!r}"
-        _keys(entry, {"status", "scope", "reason", "sources"}, where)
+        _keys(entry, {"profile", "status", "scope", "reason", "sources"}, where)
         status = entry.get("status")
         if status not in authored:
             raise ChronologyError(
@@ -1592,12 +1862,19 @@ def _load_gaps(root: Path, books: dict[str, int]) -> tuple[Gap, ...]:
                 f"earned from the assertions that apply, and 'research-pending' "
                 f"is the default"
             )
+        profile = entry.get("profile", default_profile)
+        if profile not in policies:
+            raise ChronologyError(
+                f"{where}: profile {profile!r} is not a declared leaf evidence "
+                f"profile"
+            )
         gaps.append(
             Gap(
                 status=status,
                 scope=_scope(entry.get("scope"), where, books),
                 reason=_text(entry, "reason", where, required=True),
                 sources=_sources(entry, where, required=False),
+                profile=str(profile),
             )
         )
     return tuple(gaps)
@@ -1608,14 +1885,17 @@ def load(root: Path | None = None) -> Corpus:
     """Read and validate the whole corpus, or refuse with the reason."""
     where = Path(root) if root is not None else CORPUS_ROOT
     books = _canon_books()
-    profiles, policies = _load_profiles(where)
+    profiles, policies, cascades, default_profile = _load_profile_contract(where)
     events = _load_events(where, policies)
     units = _load_units(where, policies, books)
     bindings = _load_bindings(where, events, books)
-    gaps = _load_gaps(where, books)
+    gaps = _load_gaps(where, books, policies)
     _refuse_dangling_anchors(events, units, where)
     _refuse_duplicated_native_scopes(units, bindings, gaps, where)
-    return Corpus(profiles, events, units, bindings, gaps, books, policies)
+    return Corpus(
+        profiles, events, units, bindings, gaps, books, policies, cascades,
+        default_profile,
+    )
 
 
 def _refuse_duplicated_native_scopes(
@@ -1686,7 +1966,7 @@ def _refuse_duplicated_native_scopes(
         """Rendered claims of `relation` the preferred locus already carries."""
         held: set[str] = set()
         for unit in preferred_units:
-            if relation != "composition":
+            if unit.relation != relation:
                 continue
             if _scope_covers(
                 [s for s in unit.scope if s.system == PREFERRED_SYSTEM],
@@ -1705,7 +1985,7 @@ def _refuse_duplicated_native_scopes(
 
     scoped: list[tuple[str, str, str, tuple[Span, ...], tuple[str, ...]]] = [
         *(
-            ("composition unit", unit.id, "composition", unit.scope,
+            ("composition unit", unit.id, unit.relation, unit.scope,
              tuple(str(claim.date) for claim in unit.claims))
             for unit in units.values()
         ),
@@ -1791,9 +2071,12 @@ def _span_loci(span: Span) -> list[tuple[str, int, int]]:
 def _refuse_dangling_anchors(
     events: dict[str, Event], units: dict[str, Unit], where: Path
 ) -> None:
-    """A relative date's anchor must be something this corpus holds, and — where
-    the claim and the anchor's refused date come out of one source record — the
-    anchor must be something this profile actually answers with.
+    """Every named date anchor must be a chronology subject this corpus holds.
+
+    This applies both to relative offsets and to anchor-backed one-sided
+    boundaries. Where a relative claim and its anchor's refused date come out
+    of one source record, the anchor must additionally be something this
+    profile actually answers with.
 
     Found by an author, not by a test: a claim reading "forty years after
     <event>" loaded cleanly and audited cleanly while naming an event that did
@@ -1848,6 +2131,14 @@ def _refuse_dangling_anchors(
                     f"{containing!r}, which is neither an event nor a "
                     f"composition unit this corpus holds; a span contained by "
                     f"nothing is not contained"
+                )
+            boundary_anchor = (claim.date.boundary or {}).get("anchor")
+            if boundary_anchor is not None and boundary_anchor not in known:
+                raise ChronologyError(
+                    f"{where}: {kind} {holder.id} is bounded relative to "
+                    f"{boundary_anchor!r}, which is neither an event nor a "
+                    f"composition unit this corpus holds; a one-sided "
+                    f"position bounded by nothing states nothing"
                 )
             relative = claim.date.relative
             if not relative:
@@ -2023,13 +2314,21 @@ def _by_book(root: Path | None) -> dict[str, tuple[tuple, tuple, tuple]]:
         index[token] = [[], [], []]
     for unit in corpus.units.values():
         for token in {span.token for span in unit.scope}:
-            index[token][0].append(unit)
+            # This index serves the preferred canonical walk only. A native
+            # witness may have arrangement-only book tokens such as Greek
+            # `Sus` and `Bel`; those units are gathered by
+            # `_native_assertions()` before conversion and have no entry in
+            # the canonical book dictionary.
+            if token in index:
+                index[token][0].append(unit)
     for binding in corpus.bindings:
         for token in {span.token for span in binding.scope}:
-            index[token][1].append(binding)
+            if token in index:
+                index[token][1].append(binding)
     for gap in corpus.gaps:
         for token in {span.token for span in gap.scope}:
-            index[token][2].append(gap)
+            if token in index:
+                index[token][2].append(gap)
     return {
         token: (tuple(units), tuple(bindings), tuple(gaps))
         for token, (units, bindings, gaps) in index.items()
@@ -2047,10 +2346,146 @@ def _status_of(assertions: Iterable[Assertion]) -> str:
     looking undated though the oracle applies to every one of them, and a
     directly authored composition unit alone would have made a verse "dated"
     though nothing had dated an event it tells of.
+
+    Textual attestation is separated once more inside textual history: it
+    proves only that a dated witness contains the text. Calling that
+    `composition-only` would imply precisely the writing claim its relation was
+    introduced not to make.
     """
-    if any(item.relation != "composition" for item in assertions):
+    relations = {item.relation for item in assertions}
+    if any(relation not in TEXTUAL_RELATIONS for relation in relations):
         return "dated"
+    if relations == {"textual-attestation"}:
+        return "attestation-only"
     return "composition-only"
+
+
+def _profile_order(corpus: Corpus, requested: str) -> tuple[str, ...]:
+    """The leaf evidence profiles a request may consult, in order."""
+    if requested in corpus.policies:
+        return (requested,)
+    cascade = corpus.cascades.get(requested)
+    if cascade is not None:
+        return cascade.fallback_profiles
+    raise ChronologyError(
+        f"profile {requested!r} is not declared; choose from "
+        f"{sorted(corpus.profiles)}"
+    )
+
+
+def _select_assertions(
+    corpus: Corpus,
+    assertions: Iterable[Assertion],
+    requested: str,
+    evidence: bool,
+) -> tuple[tuple[Assertion, ...], tuple[tuple[str, str], ...]]:
+    """Apply one evidence profile or a relation-wise ordered cascade.
+
+    Only answerable candidates decide which cascade leaf wins. Preserved
+    evidence cannot block fallback. Once a leaf wins a relation, evidence mode
+    may show that leaf's preserved claims beside its answers, exactly as it
+    does for an explicit leaf-profile query; suppressed fallback profiles stay
+    available by querying them explicitly.
+    """
+    gathered = tuple(assertions)
+    order = _profile_order(corpus, requested)
+
+    def without_redundant_attestation(
+        selected: Iterable[Assertion], resolved: Iterable[tuple[str, str]]
+    ) -> tuple[tuple[Assertion, ...], tuple[tuple[str, str], ...]]:
+        selected_tuple = tuple(selected)
+        resolved_tuple = tuple(resolved)
+        if any(
+            item.relation != "textual-attestation"
+            and corpus.answers_with(item.claim)
+            and is_positional_date(item.claim.date)
+            for item in selected_tuple
+        ):
+            selected_tuple = tuple(
+                item for item in selected_tuple
+                if item.relation != "textual-attestation"
+            )
+            resolved_tuple = tuple(
+                item for item in resolved_tuple
+                if item[0] != "textual-attestation"
+            )
+        return (
+            tuple(sorted(selected_tuple, key=lambda item: item.sort_key())),
+            resolved_tuple,
+        )
+
+    if requested in corpus.policies:
+        answerable = tuple(
+            item for item in gathered
+            if item.claim.profile == requested and corpus.answers_with(item.claim)
+        )
+        selected = tuple(
+            item for item in gathered
+            if item.claim.profile == requested
+            and (evidence or corpus.answers_with(item.claim))
+        )
+        resolved = tuple(
+            (relation, requested)
+            for relation in RELATIONS
+            if any(item.relation == relation for item in answerable)
+        )
+        return without_redundant_attestation(selected, resolved)
+
+    selected: list[Assertion] = []
+    resolved: list[tuple[str, str]] = []
+    for relation in RELATIONS:
+        for leaf in order:
+            answerable = [
+                item for item in gathered
+                if item.relation == relation
+                and item.claim.profile == leaf
+                and corpus.answers_with(item.claim)
+            ]
+            if not answerable:
+                continue
+            resolved.append((relation, leaf))
+            if evidence:
+                selected.extend(
+                    item for item in gathered
+                    if item.relation == relation and item.claim.profile == leaf
+                )
+            else:
+                selected.extend(answerable)
+            break
+    if evidence:
+        # Evidence is an audit request, not a fallback vote. Preserved claims
+        # from an earlier leaf must remain inspectable even though they cannot
+        # stop the cascade from choosing a later answerable profile.
+        held = {
+            (item.relation, item.subject, item.claim.profile, str(item.claim.date))
+            for item in selected
+        }
+        selected.extend(
+            item for item in gathered
+            if item.claim.profile in order
+            and not corpus.answers_with(item.claim)
+            and (
+                item.relation, item.subject, item.claim.profile,
+                str(item.claim.date),
+            ) not in held
+        )
+    return without_redundant_attestation(selected, resolved)
+
+
+def _gap_for(
+    corpus: Corpus, locus: Locus, requested: str
+) -> Gap | None:
+    """The first leaf-profile gap after every cascade candidate was empty."""
+    for leaf in _profile_order(corpus, requested):
+        for gap in corpus.gaps:
+            if gap.profile != leaf:
+                continue
+            if _scope_covers(
+                [span for span in gap.scope if span.system == locus.system],
+                locus.token, locus.chapter, locus.verse,
+            ):
+                return gap
+    return None
 
 
 def _candidates(
@@ -2089,7 +2524,7 @@ def _candidates(
 
 
 def _native_assertions(
-    corpus: Corpus, locus: Locus, profile: str | None, evidence: bool = False
+    corpus: Corpus, locus: Locus, profiles: tuple[str, ...]
 ) -> tuple[Assertion, ...]:
     """What was authored in the asked locus's OWN system, at its own locus.
 
@@ -2099,6 +2534,8 @@ def _native_assertions(
     a fact about this text and about no other.
     """
     found: list[Assertion] = []
+    best: dict[tuple[str, str], tuple[Unit, Span]] = {}
+    requested_profiles = frozenset(profiles)
     for unit in corpus.units.values():
         span = _scope_covers(
             [s for s in unit.scope if s.system == locus.system],
@@ -2108,10 +2545,20 @@ def _native_assertions(
         )
         if span is None:
             continue
-        for claim in _candidates(corpus, unit.claims, profile, evidence):
+        for profile in (
+            {claim.profile for claim in unit.claims} & requested_profiles
+        ):
+            key = (unit.relation, profile)
+            held = best.get(key)
+            if held is None or unit.width() > held[0].width():
+                best[key] = (unit, span)
+    for (_relation, profile), (unit, span) in best.items():
+        for claim in unit.claims:
+            if claim.profile != profile:
+                continue
             found.append(
                 Assertion(
-                    relation="composition",
+                    relation=unit.relation,
                     subject=unit.id,
                     title=unit.title,
                     claim=claim,
@@ -2129,7 +2576,9 @@ def _native_assertions(
         if span is None:
             continue
         event = corpus.events[binding.event]
-        for claim in _candidates(corpus, event.claims, profile, evidence):
+        for claim in event.claims:
+            if claim.profile not in profiles:
+                continue
             found.append(
                 Assertion(
                     relation=binding.relation,
@@ -2142,6 +2591,72 @@ def _native_assertions(
             )
     found.sort(key=lambda item: item.sort_key())
     return tuple(found)
+
+
+def _broad_preferred_assertions(
+    corpus: Corpus, locus: Locus, profiles: tuple[str, ...], root: Path | None
+) -> tuple[Assertion, ...]:
+    """Claims safe at a Psalm whose exact preferred verse segmentation fails.
+
+    `_psalms` establishes the Psalm identity, but its point mapping was built
+    against Douay verse extents and a few targets are not verse addresses the
+    preferred latVUC witness prints. A whole-book or whole-chapter assertion is
+    still true of that Psalm; a verse-scoped assertion is not safe without an
+    exact text correspondence and is deliberately excluded here.
+    """
+    units, bindings, _gaps = _by_book(root)[locus.token]
+    requested_profiles = frozenset(profiles)
+    best: dict[tuple[str, str], tuple[Unit, Span]] = {}
+
+    def broad_span(scope: tuple[Span, ...]) -> Span | None:
+        for span in scope:
+            if span.system != PREFERRED_SYSTEM or span.token != locus.token:
+                continue
+            if span.chapter is None:
+                return span
+            if (
+                span.chapter == locus.chapter
+                and span.first is None
+                and span.last is None
+            ):
+                return span
+        return None
+
+    for unit in units:
+        span = broad_span(unit.scope)
+        if span is None:
+            continue
+        for leaf in {claim.profile for claim in unit.claims} & requested_profiles:
+            key = (unit.relation, leaf)
+            held = best.get(key)
+            if held is None or unit.width() > held[0].width():
+                best[key] = (unit, span)
+
+    found: list[Assertion] = []
+    for (_relation, leaf), (unit, _span) in best.items():
+        for claim in unit.claims:
+            if claim.profile != leaf:
+                continue
+            found.append(
+                Assertion(
+                    unit.relation, unit.id, unit.title, claim,
+                    inherited=True, scope=_scope_text(unit.scope),
+                )
+            )
+    for binding in bindings:
+        if broad_span(binding.scope) is None:
+            continue
+        event = corpus.events[binding.event]
+        for claim in event.claims:
+            if claim.profile not in requested_profiles:
+                continue
+            found.append(
+                Assertion(
+                    binding.relation, event.id, event.title, claim,
+                    inherited=True, scope=_scope_text(binding.scope),
+                )
+            )
+    return tuple(sorted(found, key=lambda item: item.sort_key()))
 
 
 def chronology(
@@ -2168,10 +2683,15 @@ def chronology(
     corpus = load(root)
     if isinstance(locus, str):
         locus = parse_locus(locus)
+    asked_locus = locus
+
+    requested_profile = profile or corpus.default_profile
+    profile_order = _profile_order(corpus, requested_profile)
 
     asked = str(locus)
     mapping: Mapping | None = None
     native: tuple[Assertion, ...] = ()
+    native_loci: list[Locus] = [locus]
     if locus.system != PREFERRED_SYSTEM:
         systems = scripture_systems()
         if locus.system not in systems:
@@ -2189,24 +2709,82 @@ def chronology(
                 f"addresses {sorted(addressable)}",
                 asked,
             )
+        printed = _system_locus_membership(locus.system)
+        if printed is None:
+            return Unresolved(
+                "not-alignable",
+                f"{locus.system!r} has no tracked witness or concordance that "
+                f"enumerates its loci",
+                asked,
+            )
+        if (locus.token, locus.chapter, locus.verse) not in printed:
+            return Unresolved(
+                "not-alignable",
+                f"{asked} is not a locus printed by the tracked "
+                f"{locus.system!r} witness",
+                asked,
+            )
 
         # NATIVE FIRST, and this ordering is the correction. What the corpus
         # authored AT this locus is true of this locus whatever the concordance
         # can or cannot carry, so it is gathered before the mapping is even
         # attempted. The old code asked the concordance first and returned its
         # refusal, which threw away chronology that was sitting right there.
-        native = _native_assertions(corpus, locus, profile, evidence)
+        # A WEC deuterocanonical locus may be the same text as a Greek locus
+        # even where that Greek locus cannot be carried onward to the Vulgate.
+        # Gather chronology at every exact hop reached, not only at the final
+        # preferred-system destination. Coverage already deduplicates those
+        # loci as one text; query must not call the address unresearched while
+        # the chronology is sitting at its safe intermediate counterpart.
+        if locus.system == "world-english-catholic":
+            import _deuterocanon  # noqa: PLC0415
+
+            if locus.token in _deuterocanon.BOOKS:
+                try:
+                    intermediate, intermediate_problem = _deuterocanon.convert_verse(
+                        locus.token, locus.chapter, locus.verse,
+                        "world-english-catholic", "greek",
+                    )
+                except _deuterocanon.NumberingError:
+                    intermediate = None
+                    intermediate_problem = ""
+                if (
+                    intermediate is not None
+                    and not intermediate_problem
+                    and intermediate.first == intermediate.last
+                ):
+                    native_loci.append(
+                        Locus(
+                            "greek", intermediate.book, intermediate.chapter,
+                            intermediate.first,
+                        )
+                    )
+        native = tuple(
+            item
+            for native_locus in native_loci
+            for item in _native_assertions(corpus, native_locus, profile_order)
+        )
 
         converted = to_canonical(locus.system, locus.token, locus.chapter, locus.verse)
         if isinstance(converted, Unresolved):
             mapping = Mapping(locus.system, converted.status, None, converted.reason)
-            if native:
+            selected, resolved_profiles = _select_assertions(
+                corpus, native, requested_profile, evidence
+            )
+            answerable_selected = tuple(
+                item for item in selected if corpus.answers_with(item.claim)
+            )
+            if answerable_selected:
                 # Both true at once: this text has chronology, and it may not
                 # be asserted equivalent to the Vulgate's. The status is
                 # computed by the same rule the shared path uses, so a native
-                # locus carrying only a composition claim is composition-only
-                # here exactly as it would be there.
-                return Answer(locus, native, _status_of(native), "", mapping, asked)
+                # locus carrying composition is composition-only and one
+                # carrying only a dated witness is attestation-only here
+                # exactly as either would be on the shared path.
+                return Answer(
+                    locus, selected, _status_of(answerable_selected), "", mapping, asked,
+                    requested_profile, resolved_profiles,
+                )
             # A MAPPING WORD IS NOT A CHRONOLOGY STATUS, and returning the
             # refusal here made it one. §3.0.1 separated the two axes for the
             # locus that HAS chronology and left the locus that has none still
@@ -2216,21 +2794,22 @@ def chronology(
             # chronology axis answers the way every other unresolved locus in
             # the corpus does — from an authored gap row if one reaches it, and
             # otherwise from the honest default, which §9 says is not authored.
-            for gap in corpus.gaps:
-                if _scope_covers(
-                    [s for s in gap.scope if s.system == locus.system],
-                    locus.token,
-                    locus.chapter,
-                    locus.verse,
-                ):
-                    return Answer(locus, (), gap.status, gap.reason, mapping, asked)
+            for native_locus in native_loci:
+                gap = _gap_for(corpus, native_locus, requested_profile)
+                if gap is not None:
+                    return Answer(
+                        locus, selected, gap.status, gap.reason, mapping, asked,
+                        requested_profile, resolved_profiles,
+                    )
             return Answer(
                 locus,
-                (),
+                selected,
                 "research-pending",
                 "no ranked source has been inspected for this locus yet",
                 mapping,
                 asked,
+                requested_profile,
+                resolved_profiles,
             )
         mapping = Mapping(locus.system, "shared", str(converted), "")
         locus = converted
@@ -2256,6 +2835,88 @@ def chronology(
             f"{locus.chapter} is not one",
             str(locus),
         )
+    ceiling = verse_counts()[(locus.token, locus.chapter)]
+    if not 1 <= locus.verse <= ceiling:
+        if asked_locus.system != PREFERRED_SYSTEM:
+            # The Psalm concordance establishes which Psalm this is, but its
+            # point rows were derived from Douay verse extents. At the handful
+            # of places where the tracked Clementine witness segments that
+            # Psalm differently, the converted number is not an address in
+            # the preferred witness. Keep the original address as the answer's
+            # identity and the failed target on the mapping axis. Whole-Psalm
+            # chronology remains safe; verse-scoped chronology does not.
+            mapping = Mapping(
+                asked_locus.system,
+                "not-alignable",
+                None,
+                f"{asked} converts to preferred {locus}, but "
+                f"{locus.token}.{locus.chapter} prints verses 1-{ceiling} in "
+                f"the tracked preferred witness; only whole-Psalm chronology "
+                f"is retained and no verse-scoped assertion is transferred",
+            )
+            broad = (
+                _broad_preferred_assertions(corpus, locus, profile_order, root)
+                if asked_locus.token == "Ps"
+                else ()
+            )
+            gathered = list(broad)
+            held = {
+                (item.relation, item.subject, item.claim.profile, str(item.claim.date))
+                for item in gathered
+            }
+            gathered.extend(
+                item for item in native
+                if (
+                    item.relation, item.subject, item.claim.profile,
+                    str(item.claim.date),
+                ) not in held
+            )
+            selected, resolved_profiles = _select_assertions(
+                corpus, gathered, requested_profile, evidence
+            )
+            answerable_selected = tuple(
+                item for item in selected if corpus.answers_with(item.claim)
+            )
+            if answerable_selected:
+                return Answer(
+                    asked_locus,
+                    selected,
+                    _status_of(answerable_selected),
+                    "",
+                    mapping,
+                    asked,
+                    requested_profile,
+                    resolved_profiles,
+                )
+            for candidate in (asked_locus, locus):
+                gap = _gap_for(corpus, candidate, requested_profile)
+                if gap is not None:
+                    return Answer(
+                        asked_locus,
+                        selected,
+                        gap.status,
+                        gap.reason,
+                        mapping,
+                        asked,
+                        requested_profile,
+                        resolved_profiles,
+                    )
+            return Answer(
+                asked_locus,
+                selected,
+                "research-pending",
+                "no ranked source has been inspected for this locus yet",
+                mapping,
+                asked,
+                requested_profile,
+                resolved_profiles,
+            )
+        return Unresolved(
+            "not-alignable",
+            f"{locus.token}.{locus.chapter} has verses 1-{ceiling} in the "
+            f"tracked preferred witness; {locus.verse} is not one",
+            asked,
+        )
 
     units, bindings, gaps = _by_book(root)[locus.token]
     assertions: list[Assertion] = []
@@ -2271,8 +2932,8 @@ def chronology(
     # date resolving successfully and wrongly. An author withdrawing a unit's
     # last answerable claim is saying the unit's own chronology is unsettled,
     # and `research-pending` is the honest answer to that.
-    best: Unit | None = None
-    best_span: Span | None = None
+    best: dict[tuple[str, str], tuple[Unit, Span]] = {}
+    requested_profiles = frozenset(profile_order)
     for unit in units:
         # Only scopes in the system being asked about. A native Greek scope is
         # a fact about the Greek text; letting it answer a Vulgate query would
@@ -2286,18 +2947,29 @@ def chronology(
         )
         if span is None:
             continue
-        if best is None or unit.width() > best.width():
-            best, best_span = unit, span
-    if best is not None and best_span is not None:
-        for claim in _candidates(corpus, best.claims, profile, evidence):
+        # Specificity is meaningful only within one leaf evidence profile.
+        # A narrower traditional unit says nothing about whether a broader
+        # critical unit applies, and must not erase it before the cascade gets
+        # the chance to choose between those profiles.
+        for profile in (
+            {claim.profile for claim in unit.claims} & requested_profiles
+        ):
+            key = (unit.relation, profile)
+            held = best.get(key)
+            if held is None or unit.width() > held[0].width():
+                best[key] = (unit, span)
+    for (_relation, profile), (unit, best_span) in best.items():
+        for claim in unit.claims:
+            if claim.profile != profile:
+                continue
             assertions.append(
                 Assertion(
-                    relation="composition",
-                    subject=best.id,
-                    title=best.title,
+                    relation=unit.relation,
+                    subject=unit.id,
+                    title=unit.title,
                     claim=claim,
                     inherited=best_span.first is None or best_span.chapter is None,
-                    scope=_scope_text(best.scope),
+                    scope=_scope_text(unit.scope),
                 )
             )
 
@@ -2313,7 +2985,9 @@ def chronology(
         if span is None:
             continue
         event = corpus.events[binding.event]
-        for claim in _candidates(corpus, event.claims, profile, evidence):
+        for claim in event.claims:
+            if claim.profile not in profile_order:
+                continue
             assertions.append(
                 Assertion(
                     relation=binding.relation,
@@ -2326,14 +3000,25 @@ def chronology(
             )
 
     if native:
-        held = {(item.relation, item.subject, str(item.claim.date)) for item in assertions}
+        held = {
+            (item.relation, item.subject, item.claim.profile, str(item.claim.date))
+            for item in assertions
+        }
         assertions.extend(
             item for item in native
-            if (item.relation, item.subject, str(item.claim.date)) not in held
+            if (
+                item.relation, item.subject, item.claim.profile,
+                str(item.claim.date),
+            ) not in held
         )
-    assertions.sort(key=lambda item: item.sort_key())
+    selected, resolved_profiles = _select_assertions(
+        corpus, assertions, requested_profile, evidence
+    )
+    answerable_selected = tuple(
+        item for item in selected if corpus.answers_with(item.claim)
+    )
 
-    if assertions:
+    if answerable_selected:
         # APPLICABILITY, NOT DIRECTNESS. Whether a substantive assertion reaches
         # this verse is one question; whether it was authored at this verse or
         # at a scope containing it is another, and the second is provenance that
@@ -2344,24 +3029,25 @@ def chronology(
         # its scope, and a directly authored composition unit alone made a verse
         # "dated" though nothing had dated an event it tells of.
         return Answer(
-            locus, tuple(assertions), _status_of(assertions), "", mapping, asked
+            locus, selected, _status_of(answerable_selected), "", mapping, asked,
+            requested_profile, resolved_profiles,
         )
 
-    for gap in gaps:
-        if _scope_covers(
-            [s for s in gap.scope if s.system == locus.system],
-            locus.token,
-            locus.chapter,
-            locus.verse,
-        ):
-            return Answer(locus, (), gap.status, gap.reason, mapping, asked)
+    gap = _gap_for(corpus, locus, requested_profile)
+    if gap is not None:
+        return Answer(
+            locus, selected, gap.status, gap.reason, mapping, asked,
+            requested_profile, resolved_profiles,
+        )
     return Answer(
         locus,
-        (),
+        selected,
         "research-pending",
         "no ranked source has been inspected for this locus yet",
         mapping,
         asked,
+        requested_profile,
+        resolved_profiles,
     )
 
 
@@ -2503,6 +3189,16 @@ def _system_loci(system: str) -> list[tuple[str, int, int]] | None:
     return None
 
 
+@lru_cache(maxsize=None)
+def _system_locus_membership(
+    system: str,
+) -> frozenset[tuple[str, int, int]] | None:
+    """Exact printed addresses for query validation, cached for verse walks."""
+    loci = _system_loci(system)
+    return frozenset(loci) if loci is not None else None
+
+
+@lru_cache(maxsize=4)
 def native_coverage(
     root: Path | None = None, profile: str | None = None
 ) -> dict[str, Any]:
@@ -2598,7 +3294,179 @@ def native_coverage(
     return out
 
 
-def coverage(root: Path | None = None, profile: str | None = None) -> dict[str, Any]:
+def _coverage_loci(universe: str, root: Path | None = None) -> list[Locus]:
+    """The actual loci counted by a requested coverage universe.
+
+    Both universes are necessarily limited to systems this repository can
+    enumerate from a tracked witness or concordance. `distinct-content` counts
+    each such text once: the preferred universe plus only native loci that
+    cannot be safely shared with it or a native system already counted.
+    `addresses` counts every printed address the resolver supports, including
+    alternate numberings and translations of the same text. The latter is the
+    stronger consumer guarantee inside that enumerable boundary: an address
+    must not return empty merely because coverage correctly deduplicates its
+    content.
+    """
+    if universe not in ("primary", "distinct-content", "addresses"):
+        raise ChronologyError(
+            f"coverage universe {universe!r} is not 'distinct-content' or "
+            f"'addresses'"
+        )
+    counts = verse_counts()
+    corpus = load(root)
+    loci = [
+        Locus(PREFERRED_SYSTEM, token, chapter, verse)
+        for token, chapters in corpus.books.items()
+        for chapter in range(1, chapters + 1)
+        for verse in range(1, counts[(token, chapter)] + 1)
+    ]
+    if universe == "primary":
+        return loci
+
+    import _deuterocanon  # noqa: PLC0415
+
+    counted: list[str] = []
+    for system in sorted(scripture_systems()):
+        if system == PREFERRED_SYSTEM:
+            continue
+        printed = _system_loci(system)
+        if printed is None:
+            continue
+        for token, chapter, verse in printed:
+            if universe == "addresses":
+                loci.append(Locus(system, token, chapter, verse))
+                continue
+            reached = to_canonical(system, token, chapter, verse)
+            if not isinstance(reached, Unresolved):
+                continue
+            elsewhere = False
+            for prior in counted:
+                if token not in (scripture_systems().get(prior) or ()):
+                    continue
+                try:
+                    moved, _ = _deuterocanon.convert_through(
+                        token, chapter, verse, (system, prior)
+                    )
+                except Exception:  # noqa: BLE001 - a refusal is a finding
+                    moved = None
+                if moved is not None:
+                    elsewhere = True
+                    break
+            if not elsewhere:
+                loci.append(Locus(system, token, chapter, verse))
+        counted.append(system)
+    return loci
+
+
+def _expanded_coverage(
+    root: Path | None, profile: str | None, universe: str, require_date: bool
+) -> dict[str, Any]:
+    requested_profile = profile or load(root).default_profile
+    loci = _coverage_loci(universe, root)
+    native = native_coverage(root, profile)
+    unenumerable = {
+        system: str(detail.get("note", ""))
+        for system, detail in sorted(native.items())
+        if not detail.get("enumerable")
+    }
+    by_status: dict[str, int] = {status: 0 for status in STATUSES}
+    by_relation: dict[str, int] = {relation: 0 for relation in RELATIONS}
+    by_system: dict[str, int] = {}
+    missing: list[str] = []
+    multiple = substantive = alternates = 0
+    direct = inherited = both = 0
+    run_count = 0
+    previous: tuple[str, str, int, int, tuple] | None = None
+    for locus in loci:
+        answer = chronology(locus, profile=profile, root=root)
+        by_system[locus.system] = by_system.get(locus.system, 0) + 1
+        if isinstance(answer, Unresolved):
+            status, assertions = answer.status, ()
+        else:
+            status, assertions = answer.status, answer.assertions
+        by_status[status] = by_status.get(status, 0) + 1
+        relations = {item.relation for item in assertions}
+        for relation in relations:
+            by_relation[relation] += 1
+        if len(relations) > 1:
+            multiple += 1
+        if relations - TEXTUAL_RELATIONS:
+            substantive += 1
+        if any(item.claim.disposition in ("alternate", "disputed") for item in assertions):
+            alternates += 1
+        substantive_items = [
+            item for item in assertions if item.relation not in TEXTUAL_RELATIONS
+        ]
+        if substantive_items:
+            has_direct = any(not item.inherited for item in substantive_items)
+            has_inherited = any(item.inherited for item in substantive_items)
+            if has_direct and has_inherited:
+                both += 1
+            elif has_direct:
+                direct += 1
+            else:
+                inherited += 1
+        if not any(is_positional_date(item.claim.date) for item in assertions):
+            missing.append(str(locus))
+        signature = _signature(answer)
+        marker = (locus.system, locus.token, locus.chapter, locus.verse, signature)
+        if (
+            previous is None
+            or previous[:3] != marker[:3]
+            or marker[3] != previous[3] + 1
+            or marker[4] != previous[4]
+        ):
+            run_count += 1
+        previous = marker
+    if require_date and missing:
+        sample = ", ".join(missing[:20])
+        more = f"; {len(missing) - 20} more" if len(missing) > 20 else ""
+        raise ChronologyError(
+            f"coverage --require-date found {len(missing)} valid {universe} "
+            f"loci with no answerable positional Date: {sample}{more}"
+        )
+    return {
+        "status": "ok",
+        "profile": requested_profile,
+        "universe": (
+            "distinct-scripture-content"
+            if universe == "distinct-content"
+            else "supported-scripture-addresses"
+        ),
+        "total_verses": len(loci),
+        "runs": run_count,
+        "by_status": dict(sorted(by_status.items())),
+        "by_relation": dict(sorted(by_relation.items())),
+        "by_system": dict(sorted(by_system.items())),
+        "verses_with_multiple_relations": multiple,
+        "verses_with_substantive_event_assertions": substantive,
+        "verses_with_alternative_traditional_claims": alternates,
+        "substantive_by_provenance": {
+            "direct_only": direct, "inherited_only": inherited, "both": both,
+        },
+        "missing_dates": len(missing),
+        "require_date": require_date,
+        # A ZERO INSIDE A NAMED DENOMINATOR, never a claim about systems the
+        # repository cannot enumerate. Keep both the stable machine category
+        # and each excluded system's native-coverage reason in the payload so
+        # a caller cannot turn `missing_dates: 0` into "all numbering systems".
+        "universe_limitations": {
+            "date_completeness_scope": "enumerated-loci-only",
+            "note": (
+                "missing_dates and --require-date apply only to loci enumerated "
+                "by tracked witnesses and concordances"
+            ),
+        },
+        "unenumerable_systems": unenumerable,
+    }
+
+
+def coverage(
+    root: Path | None = None,
+    profile: str | None = None,
+    universe: str = "primary",
+    require_date: bool = False,
+) -> dict[str, Any]:
     """The counts a headline may be built from, never a headline on its own.
 
     Every category is reported. A single percentage is forbidden by
@@ -2606,6 +3474,10 @@ def coverage(root: Path | None = None, profile: str | None = None) -> dict[str, 
     everywhere in this repository: "100% covered" is true of a corpus that has
     researched nothing, if the thing being counted is keys in a file.
     """
+    if universe != "primary":
+        return _expanded_coverage(root, profile, universe, require_date)
+
+    requested_profile = profile or load(root).default_profile
     table = runs(root, profile)
     counts = verse_counts()
     total = sum(counts.values())
@@ -2619,7 +3491,7 @@ def coverage(root: Path | None = None, profile: str | None = None) -> dict[str, 
             by_relation[relation] += run.verses
         if len(run.relations) > 1:
             multiple += run.verses
-        if run.relations and set(run.relations) != {"composition"}:
+        if any(relation not in TEXTUAL_RELATIONS for relation in run.relations):
             substantive += run.verses
     accounted = sum(by_status.values())
     if accounted != total:
@@ -2629,8 +3501,19 @@ def coverage(root: Path | None = None, profile: str | None = None) -> dict[str, 
         )
     alternates = _alternate_verses(table, root, profile)
     provenance = _provenance_verses(table, root, profile)
-    return {
+    missing: list[Run] = []
+    for run in table:
+        answer = chronology(
+            Locus(PREFERRED_SYSTEM, run.token, run.chapter, run.first),
+            profile=profile,
+            root=root,
+        )
+        assertions = answer.assertions if isinstance(answer, Answer) else ()
+        if not any(is_positional_date(item.claim.date) for item in assertions):
+            missing.append(run)
+    payload = {
         "status": "ok",
+        "profile": requested_profile,
         "universe": "vulgate-clementine-primary",
         "total_verses": total,
         "runs": len(table),
@@ -2641,7 +3524,17 @@ def coverage(root: Path | None = None, profile: str | None = None) -> dict[str, 
         "verses_with_alternative_traditional_claims": alternates,
         "substantive_by_provenance": provenance,
         "native_systems": native_coverage(root, profile),
+        "missing_dates": sum(run.verses for run in missing),
+        "require_date": require_date,
     }
+    if require_date and missing:
+        sample = [f"{run.token}.{run.chapter}.{run.first}" for run in missing[:20]]
+        if sample:
+            raise ChronologyError(
+                f"coverage --require-date found valid primary loci with no "
+                f"answerable positional Date: {', '.join(sample)}"
+            )
+    return payload
 
 
 def _provenance_verses(
@@ -2667,7 +3560,8 @@ def _provenance_verses(
         if not isinstance(answer, Answer):
             continue
         substantive = [
-            item for item in answer.assertions if item.relation != "composition"
+            item for item in answer.assertions
+            if item.relation not in TEXTUAL_RELATIONS
         ]
         if not substantive:
             continue
@@ -2687,27 +3581,33 @@ def _provenance_verses(
 
 
 def _alternate_verses(table: list[Run], root: Path | None, profile: str | None) -> int:
-    """Verses whose ANSWER preserves more than one traditional claim.
+    """Verses whose selected answer preserves alternatives for one subject.
 
-    Counted over the candidate set, not over what the subject stores. A subject
-    carrying one answerable figure beside a preserved one is not a subject the
-    profile holds two traditional claims about; it is one answer and one piece
-    of evidence, and counting it here would report the disagreements this corpus
-    keeps as larger than they are by exactly the number of figures it withdrew.
+    Count the query result, not claims stored on the holder. This is both the
+    semantic boundary and what makes an omitted profile observationally equal
+    to its declared default: a cascade id is not a leaf claim.profile, while
+    every selected assertion still carries the leaf that actually answered.
+    Group by relation and subject so two bindings of one event do not turn one
+    claim into a disagreement, and count claim identity so overlapping bindings
+    cannot duplicate the same claim into an apparent alternative.
     """
-    corpus = load(root)
-    contested = {
-        holder.id
-        for holder in (*corpus.events.values(), *corpus.units.values())
-        if len([
-            claim for claim in holder.claims
-            if corpus.answers_with(claim)
-            and (not profile or claim.profile == profile)
-        ]) > 1
-    }
-    return sum(
-        run.verses for run in table if contested.intersection(run.subjects)
-    )
+    total = 0
+    for run in table:
+        answer = chronology(
+            Locus(PREFERRED_SYSTEM, run.token, run.chapter, run.first),
+            profile=profile,
+            root=root,
+        )
+        if not isinstance(answer, Answer):
+            continue
+        groups: dict[tuple[str, str], set[int]] = {}
+        for item in answer.assertions:
+            groups.setdefault((item.relation, item.subject), set()).add(
+                id(item.claim)
+            )
+        if any(len(claims) > 1 for claims in groups.values()):
+            total += run.verses
+    return total
 
 
 def answerability(root: Path | None = None) -> dict[str, Any]:
@@ -2780,6 +3680,40 @@ def _bible_source_ids(repo: Path | None = None) -> set[str]:
     }
 
 
+def _bible_source_locus_problem(source: str, repo: Path | None = None) -> str | None:
+    """Why a `bible:<edition>:<locus>` source is not in that exact witness."""
+    import json as _json  # noqa: PLC0415
+
+    parts = source.split(":", 2)
+    if len(parts) != 3 or not parts[1] or not parts[2]:
+        return "is not a bible:<edition>:<book.chapter.verse> source"
+    edition, raw_locus = parts[1], parts[2]
+    try:
+        locus = parse_locus(raw_locus, f"source {source!r}")
+    except ChronologyError:
+        return "does not name a book.chapter.verse locus"
+    base = Path(repo) if repo is not None else ROOT
+    chapter = (
+        base / "src" / "sources" / "bibles" / edition / "chapters"
+        / locus.token / f"{locus.chapter}.json"
+    )
+    if not chapter.is_file():
+        return (
+            f"names {raw_locus}, but the tracked {edition!r} witness prints no "
+            f"{locus.token}.{locus.chapter} chapter"
+        )
+    try:
+        verses = _json.loads(chapter.read_text(encoding="utf-8")).get("verses")
+    except (OSError, ValueError, AttributeError) as error:
+        return f"cannot read the tracked {edition!r} chapter: {error}"
+    if not isinstance(verses, dict) or str(locus.verse) not in verses:
+        return (
+            f"names {raw_locus}, but the tracked {edition!r} witness does not "
+            f"print that verse"
+        )
+    return None
+
+
 def audit(root: Path | None = None, repo: Path | None = None) -> list[str]:
     """Every problem load-time validation cannot see, collected not raised.
 
@@ -2795,21 +3729,43 @@ def audit(root: Path | None = None, repo: Path | None = None) -> list[str]:
         *(("event", event.id, event.claims) for event in corpus.events.values()),
         *(("unit", unit.id, unit.claims) for unit in corpus.units.values()),
     ]
-    for kind, identifier, claims in holders:
-        for claim in claims:
-            for source in claim.sources:
-                if source in known:
+    source_holders: list[tuple[str, str, tuple[str, ...]]] = [
+        *(
+            (kind, identifier, claim.sources)
+            for kind, identifier, claims in holders
+            for claim in claims
+        ),
+        *(
+            ("binding", f"{binding.relation} -> {binding.event}", binding.sources)
+            for binding in corpus.bindings
+        ),
+        *(
+            ("gap", f"{gap.status} {_scope_text(gap.scope)}", gap.sources)
+            for gap in corpus.gaps
+        ),
+    ]
+    for kind, identifier, sources in source_holders:
+        for source in sources:
+            if source in known:
+                continue
+            if source.startswith("bible:"):
+                # `bible:<edition>:<locus>` — Scripture cited as its own
+                # rank-1 witness, at a stated locus in a tracked edition.
+                # The edition directory alone is not evidence that the cited
+                # verse exists in it: validate the exact chapter record before
+                # admitting the source.
+                parts = source.split(":", 2)
+                if len(parts) == 3 and f"bible.{parts[1]}" in known:
+                    problem = _bible_source_locus_problem(source, repo)
+                    if problem:
+                        problems.append(
+                            f"{kind} {identifier}: source {source!r} {problem}"
+                        )
                     continue
-                if source.startswith("bible:"):
-                    # `bible:<edition>:<locus>` — Scripture cited as its own
-                    # rank-1 witness, at a stated locus in a tracked edition.
-                    parts = source.split(":", 2)
-                    if len(parts) == 3 and f"bible.{parts[1]}" in known:
-                        continue
-                problems.append(
-                    f"{kind} {identifier}: source {source!r} is not a record "
-                    f"this repository holds"
-                )
+            problems.append(
+                f"{kind} {identifier}: source {source!r} is not a record "
+                f"this repository holds"
+            )
     for derivation_holder in holders:
         kind, identifier, claims = derivation_holder
         for claim in claims:
@@ -2862,7 +3818,9 @@ def audit(root: Path | None = None, repo: Path | None = None) -> list[str]:
                 continue
             for verse in range(span.first or 1, (span.last or ceiling) + 1):
                 answer = chronology(
-                    Locus(CANONICAL_SYSTEM, span.token, span.chapter, verse), root=root
+                    Locus(span.system, span.token, span.chapter, verse),
+                    profile=gap.profile,
+                    root=root,
                 )
                 if isinstance(answer, Answer) and answer.assertions:
                     problems.append(

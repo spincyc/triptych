@@ -174,51 +174,66 @@ learns belongs in the files this stage owns, listed below.
    an unaudited entry or amend the audit yourself. An audited entry whose
    witness the library has not registered is not an entry you cannot publish:
    the `Result` section below says what it is and what to do with it.
-10. Print every biblical date through the chronology macros, and print no
-    other. `guidance/scripture-chronology.md` §14 forbids this guide to
-    infer, research, harmonize or recall a biblical date; the corpus's answer
-    for this formulary is in
+10. Generate the page's biblical-date annotations from the chronology corpus,
+    and print no other biblical dates. `guidance/scripture-chronology.md` §14
+    forbids this guide to infer, research, harmonize or recall a biblical date;
+    the corpus's answer for this formulary is in
     `src/{provider}/{proper}/research/chronology.toml` and restated in the
     brief's `Scriptural chronology audit`, and those are the only dates that
     may reach the page.
 
-    Define two macros in `format.tex` and use them on page 2:
+    Generate the reader-facing projection; do not write or edit it:
+
+    ```sh
+    tools/tpt proper-chronology annotations --provider {provider} --document {proper} --write
+    ```
+
+    This writes `research/chronology-annotations.tex`. Input that file exactly
+    once from `main.tex`, after `format.tex` and before any page uses it. The
+    generated artifact owns `\chronologyannotation`,
+    `\chronologyannotationgroup`, and `\chronologyannotationclaim`; do not
+    define, provide, renew, replace or wrap any of those commands elsewhere.
+    Define only the Date-cell wrapper in `format.tex`:
 
     ```latex
-    % \chronology{subject}{relation}{label} -- one assertion of the corpus.
-    % Typesets the label; the first two arguments are the corpus's own ids and
-    % render nothing.
-    \newcommand{\chronology}[3]{#3}
-    % \chronodate{element-keys}{content} -- one dossier row's Date cell.
-    % Typesets the content; the keys render nothing.
+    % \chronodate{element-key}{content} -- one dossier row's Date cell.
+    % Typesets the content; the key renders nothing.
     \newcommand{\chronodate}[2]{#2}
     ```
 
-    - `subject` and `relation` are copied from the record, exactly. `label` is
-      the record's `label` — the source's own words — and never its `date`,
-      which is the normalized form and is not for the page.
-    - `element-keys` is the comma-separated list of appointed elements the row
-      covers, in the manifest's spelling: `\chronodate{gospel,communion}{...}`
-      for a row that carries both.
-    - **Every appointed Scripture gets a cell**, including the ones the corpus
-      dates nowhere. Where the status is `undated-in-tradition` or
-      `research-pending`, or the element carries no assertion, the cell states
-      that absence in the guide's own voice — a fact about the sources, in the
-      register the house voice requires — and carries no figure at all.
-    - **A Date cell may hold no figure outside a `\chronology` claim.** Not a
-      year, not a reign, not a range, not an Anno Mundi number, whatever
-      source you met it in. A well-formed year reads exactly like a right one,
-      which is why this is the one place in the guide where a fact may not be
-      stated without naming the assertion behind it.
+    Give every appointed Scripture its own generated annotation, using the
+    manifest's key exactly:
 
-    `content-preflight` runs `chronology-record-current` and
-    `chronology-claims-supported` over what you write: a claim the corpus does
-    not make at that element's own verses, a figure with no claim behind it,
-    an appointed Scripture with no cell, or a record that has drifted from the
-    corpus all fail the gate to `content-revision` with the defect named. A
-    date you remember is not evidence, and a date a commentary prints is that
-    commentary's reception, reported as such and never as the date of the
-    passage.
+    ```latex
+    \chronodate{gospel}{\chronologyannotation{gospel}}
+    ```
+
+    - **Every appointed Scripture gets exactly one cell**, including the ones
+      the corpus dates nowhere. `\chronologyannotation{element-key}` renders
+      the generated typed absence when a required relation has no assertion;
+      do not supply substitute prose or a figure.
+    - The generated file retains every assertion's `subject`, `relation`,
+      `profile`, `disposition`, and raw source `label` for audit in
+      `\chronologyannotationclaim{subject}{relation}{profile}{disposition}{raw-label}{display-label}`.
+      Only that generated claim may typeset `display-label`: it is the
+      deterministic, lossless concise projection of the corpus's structured
+      `date`, not a second chronology assertion.
+    - **Never hand-author a normalized or concise date.** Do not copy a
+      generated `display-label` into the page, put surrounding authored text
+      in a Date cell, or call the generated claim/group macros directly. The
+      complete Date-cell content is the matching
+      `\chronologyannotation{element-key}` call. Raw labels and profiles remain
+      present in the generated audit form even when the concise projection is
+      what the reader sees.
+
+    `content-preflight` runs `chronology-record-current`,
+    `chronology-annotations-current`, and `chronology-claims-supported` over
+    what you write: a stale record or projection, an annotation macro defined
+    outside its generated file, a missing or mismatched element cell, or a
+    hand-authored date all fail the gate to `content-revision` with the defect
+    named. A date you remember is not evidence, and a date a commentary prints
+    is that commentary's reception, reported as such and never as the date of
+    the passage.
 11. Ensure the brief synthesis markers
    (`triptych:brief-synthesis:start`, `:end`, `:next`) are placed correctly
    for the two-page gate.

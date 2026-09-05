@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-encyclopedia.volume-13.new-york-1912.newadvent-13722a-1a2aa30b"
+edition_id = "edition.catholic-encyclopedia.volume-13.new-york-1912"
+artifact_type = "web-page"
+media_type = "text/html"
+storage = "remote"
+rights_status = "public-domain"
+rights_basis = "The Catholic Encyclopedia article is in the public domain in the United States: its volume was published between 1907 and 1912, so the longest term available to it under 17 U.S.C. 304 expired at the end of 2007 at the latest. What is not republished from this repository is New Advent's own layer of these exact bytes — the site's navigation, styling, advertising markup, support solicitation and \"About this page\" apparatus — which is why the delivery stays remote. That apparatus encumbers the page, not the article printed inside it. Settled once in src/sources/inventories/catholic-encyclopedia-rights-v1.toml."
+rights_jurisdiction = "United States"
+source_url = "https://www.newadvent.org/cathen/13722a.htm"
+provenance = "The complete New Advent HTML response was acquired directly over HTTPS and hashed on 2026-09-04. The whole response, not a fragment or rendered excerpt, was measured before the public-domain article text was mechanically extracted."
+retrieved = "2026-09-04"
+sha256 = "1a2aa30b12dd2c990b5383cccb42c6d916c9e45a92bed50f490ec3b9f31f5c87"
+byte_size = 36077
+indexable = false
+notes = "Vander Heeren, Achille. \"Septuagint Version.\" The Catholic Encyclopedia. Vol. 13. New York: Robert Appleton Company, 1912. <https://www.newadvent.org/cathen/13722a.htm>. The exact delivery contains the complete signed article followed by New Advent's About-this-page and site apparatus. Those host-created bytes are not retained; the article itself is retained offline as artifact.catholic-encyclopedia.volume-13.new-york-1912.newadvent-13722a-1a2aa30b-article-text, whose derived_from field links back to this delivery."

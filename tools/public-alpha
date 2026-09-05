@@ -47,7 +47,7 @@ EXAMPLES = {
         Example(
             "tools/public-alpha check",
             (
-                "public-alpha policy valid: 202 publications (202 alpha, 0 hold)",
+                "public-alpha policy valid: 206 publications (204 alpha, 2 hold)",
                 "perpetual authorization active: no-project-initiated-promotion; effective from 2026-07-30T10:46:57-05:00 (America/Chicago)",
             ),
         ),
@@ -68,14 +68,14 @@ EXAMPLES = {
                 "  \"notice\": \"PREPARATION ONLY — NOT AN APPROVAL OR AUTHORIZATION. These hashes report current files and do not... [+281 chars]",
                 "  \"pdfs\": [",
                 "    {",
-                "... 88301 more lines",
+                "... 88327 more lines",
             ),
             "prepare prints a candidate hash inventory only; it records no approval and changes no release file",
         ),
         Example(
             "tools/public-alpha check",
             (
-                "public-alpha policy valid: 202 publications (202 alpha, 0 hold)",
+                "public-alpha policy valid: 206 publications (204 alpha, 2 hold)",
                 "perpetual authorization active: no-project-initiated-promotion; effective from 2026-07-30T10:46:57-05:00 (America/Chicago)",
             ),
             "read the policy first: `check` is the gate `prepare` reports against",
@@ -85,7 +85,7 @@ EXAMPLES = {
         Example(
             "tools/public-alpha check",
             (
-                "public-alpha policy valid: 202 publications (202 alpha, 0 hold)",
+                "public-alpha policy valid: 206 publications (204 alpha, 2 hold)",
                 "perpetual authorization active: no-project-initiated-promotion; effective from 2026-07-30T10:46:57-05:00 (America/Chicago)",
             ),
             "read-only first: `check` validates the policy `build` renders from",
@@ -4337,21 +4337,31 @@ def _verify_snapshot_contents(
         for pattern, label in privacy_patterns.items():
             if pattern.search(text):
                 errors.append(f"{relative}: contains {label}")
-        if path.suffix == ".html":
-            for href in parsed_html(path).links:
-                for excluded_key in disallowed_ids:
-                    excluded_provider, excluded_leaf = excluded_key
-                    # Every surface an excluded publication could reach the
-                    # reader through: its PDF and its web edition alike.
-                    excluded_targets = (
-                        f"pdf/{excluded_provider}/{excluded_leaf}.pdf",
-                        f"web/{excluded_provider}/{excluded_leaf}.html",
-                    )
+        for excluded_key in disallowed_ids:
+            excluded_provider, excluded_leaf = excluded_key
+            # Every surface an excluded publication could reach the reader
+            # through: its PDF and its web edition alike.  HTML must not link
+            # it, and copied browser JSON must not advertise the same route to
+            # client-side code.  The latter check is intentionally independent
+            # of the document-corpus generator so stale output fails closed.
+            excluded_targets = (
+                f"pdf/{excluded_provider}/{excluded_leaf}.pdf",
+                f"web/{excluded_provider}/{excluded_leaf}.html",
+            )
+            if path.suffix == ".html":
+                for href in parsed_html(path).links:
                     if any(target in unquote(href) for target in excluded_targets):
                         errors.append(
                             f"{relative}: links to excluded publication "
                             f"{publication_label(excluded_key, primary)}"
                         )
+            elif path.suffix == ".json" and any(
+                target in text for target in excluded_targets
+            ):
+                errors.append(
+                    f"{relative}: advertises excluded publication "
+                    f"{publication_label(excluded_key, primary)}"
+                )
 
     robots = (output / "robots.txt").read_text(encoding="utf-8", errors="replace") if (output / "robots.txt").is_file() else ""
     controlled_hosting = requires_unadvertised_controls(expected_authorization)

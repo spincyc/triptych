@@ -7,18 +7,22 @@
 #
 # guidance/scripture-chronology.md owns the semantics. Nothing here restates it.
 schema: triptych-chronology-profiles/v1
+default_profile: catholic-comprehensive-v1
 
 profiles:
   - id: catholic-traditional-v1
+    kind: evidence
     title: Traditional Catholic chronology, first profile
     intent: >-
       The chronology a traditional Catholic apparatus states about Scripture:
       what Scripture says about its own sequence, what the Roman liturgical
       books assert, what the received Catholic biblical apparatus prints, and
-      what the Fathers and traditional Catholic commentators transmit. It is
-      the default profile for every consumer in this repository.
+      what the Fathers and traditional Catholic commentators transmit. Its
+      evidence semantics remain available unchanged by explicit profile query;
+      repository-default selection is declared separately at the file root.
     authority:
-      # Read in order. A lower rank is consulted only where every higher rank
+      # Authoring/review policy, read in order. The resolver reproduces the
+      # reviewed dispositions; it does not infer rank from a source id. A lower rank
       # is silent, and a higher rank never yields to a lower one merely because
       # the lower one is more precise. Precision is not authority.
       - rank: 1
@@ -563,3 +567,260 @@ profiles:
       The id ends in a version because a change of authority policy is a new
       profile, not an edit of this one. Correcting a typo or adding a rank's
       repository instance is an edit; changing what wins is not.
+
+  - id: catholic-critical-v1
+    kind: evidence
+    title: Catholic critical chronology and broad textual horizons, first profile
+    intent: >-
+      Source-backed critical chronology read within Catholic biblical study. It
+      records exact dates where a source states them, ranges and relative periods
+      where those are all the evidence warrants, and a work's final formation
+      separately from the composition of its constituent text. An identified
+      dated witness may supply textual attestation as a last resort, without
+      being reported as the date of writing. Current official Catholic Bible
+      introductions are the stable reader-facing baseline; their historical and
+      literary judgments are editorial scholarship, not declarations that the
+      Church has defined a date.
+    authority:
+      # Human-reviewed rank applies only where two admissible claims answer the same temporal
+      # question. A direct terminus does not become a composition date, and an
+      # edition's currency never repairs a mismatch of relation or scope.
+      # Relation precedence is separate: textual attestation is omitted whenever
+      # any answerable composition, formation, or event relation exists.
+      - rank: 1
+        name: Scripture's own chronological and relational statements
+        what: >-
+          An interval, synchronism, age, or ordering the sacred text itself
+          states. It controls the claim it actually makes, not an unstated date
+          of composition or final formation.
+        holds_in_repository: src/sources/bibles
+      - rank: 2
+        name: Direct external chronological anchors and textual witnesses
+        what: >-
+          Dated manuscripts, inscriptions, documentary synchronisms, and other
+          primary evidence used only for the bound or attestation they directly
+          establish. Palaeographic or archaeological estimates retain their
+          stated uncertainty and do not silently become exact years.
+        holds_in_repository: src/sources/works
+      - rank: 3
+        name: Current official Catholic biblical apparatus, edition-identified
+        what: >-
+          Introductions and notes in a current Catholic episcopal or Holy See
+          publication, cited to a particular edition or stable official page.
+          This rank expresses the profile's publication preference; it does not
+          treat an editorial judgment as a magisterial definition.
+        holds_in_repository: src/sources/works
+      - rank: 4
+        name: Recent source-specific critical scholarship
+        what: >-
+          Peer-reviewed critical editions, commentaries, and monographs that
+          disclose the evidence and method for the particular book, textual
+          unit, event, or formation stage being dated.
+        holds_in_repository: src/sources/works
+      - rank: 5
+        name: Broader critical reference works and explicit consensus surveys
+        what: >-
+          Edition-identified scholarly reference works used where the ranks
+          above are silent, with alternatives and minority positions preserved
+          when the source preserves them.
+        holds_in_repository: src/sources/works
+      - rank: 6
+        name: Project derivation from admissible critical evidence
+        what: >-
+          A bound computed by an explicit rule from identified admissible claims.
+          It never widens a source's statement, turns an open horizon into a
+          closed range, or substitutes a nearby event for the question asked.
+        holds_in_repository: src/sources/chronology
+    non_authorities:
+      - name: Attribution, narrative setting, or an author's lifetime used as a proxy
+        rule: >-
+          None supplies a date for composition or final formation unless the
+          source itself makes and supports that temporal inference. A book set in
+          an eighth-century reign is not thereby an eighth-century composition.
+      - name: Canon closure, earliest attestation, or a containing anthology used as composition
+        rule: >-
+          These are different temporal questions. They may support their own
+          relation or a one-sided bound where a source states it, but never fill
+          a missing composition date under another name. An identified dated
+          witness is answerable only as `textual-attestation`, saying the text
+          existed by then.
+      - name: Any model's unsourced recollection or an unattributed web summary
+        rule: >-
+          Never an authority. A broad horizon is still a chronology claim and
+          requires an inspected, edition-identified source record.
+    admissibility:
+      rule: >-
+        A value is a candidate answer only when both its source and the disclosed
+        basis of that value are admissible here. Modern or Catholic-critical
+        scholarship is admitted with its own hedges; publication by a Catholic
+        body neither upgrades precision nor turns scholarship into doctrine.
+      own_voice: >-
+        A work's own grammatical voice is necessary but not sufficient. A value
+        the work reports only to reject, compare, or leave methodologically
+        unresolved is preserved and is not an answer.
+      before_rank: >-
+        Admissibility is decided before authority rank. A high-ranked publication
+        cannot rescue a rejected, comparison-only, refusal-to-date, superseded,
+        or unresolved value.
+      preservation: >-
+        Refusing a value as an answer is not permission to delete it. Preserved
+        evidence remains available to provenance and audit surfaces with its
+        answerability stated.
+      unstated: unresolved
+      bases:
+        - id: scripture
+          admissible: true
+          what: A chronological or relational statement made by Scripture itself.
+        - id: primary-textual-historical
+          admissible: true
+          what: A bound directly grounded in an identified manuscript, inscription, document, or synchronism.
+        - id: catholic-critical
+          admissible: true
+          what: A critical judgment adopted by an edition-identified official Catholic biblical apparatus.
+        - id: modern-critical
+          admissible: true
+          what: A critical-historical judgment an identified scholarly source states or adopts on disclosed grounds.
+        - id: derived
+          admissible: true
+          what: A value derived by an explicit rule from identified admissible inputs.
+        - id: liturgical
+          admissible: false
+          what: A Roman liturgical witness belongs to the traditional evidence profile unless it is independently used as direct textual evidence here.
+        - id: patristic
+          admissible: false
+          what: Patristic chronology belongs to the traditional evidence profile unless a critical claim separately evaluates it as evidence.
+        - id: traditional-catholic
+          admissible: false
+          what: A traditional Catholic chronology is answered by the traditional evidence profile, not silently reclassified here.
+        - id: reported-traditional
+          admissible: false
+          what: A reported traditional chronology remains assigned to the traditional evidence profile.
+        - id: unreviewed
+          admissible: false
+          what: A value whose basis has not been adjudicated under this profile.
+        - id: profane-harmonisation
+          admissible: false
+          what: The legacy traditional-profile class is not reused as a generic name for critical method.
+        - id: reported-excluded
+          admissible: false
+          what: A source reporting a value this profile excludes.
+        - id: rejected-by-source
+          admissible: false
+          what: A figure the citing source itself rejects.
+        - id: refusal-to-date
+          admissible: false
+          what: A source's refusal to assign a date; negative evidence, not a date assertion.
+        - id: comparison-only
+          admissible: false
+          what: A figure printed for comparison and not adopted by the source.
+        - id: superseded
+          admissible: false
+          what: A withdrawn value retained only for audit history.
+        - id: unresolved
+          admissible: false
+          what: A mixed or unclear basis not yet adjudicated under this profile.
+      reporting_exceptions: []
+    answerability:
+      unstated: answerable
+      states:
+        answerable: >-
+          May be returned as this evidence profile's candidate chronology, with
+          its relation, scope, profile, precision, disposition, and provenance.
+        preserved: >-
+          Retained for provenance, comparison, rejection, or audit history and
+          excluded from the default candidate set.
+      query: >-
+        The default candidate set is every answerable claim authored under this
+        profile, except that textual-attestation is returned only when no other
+        answerable assertion positions or bounds its subject in time at the
+        locus. A duration or month-day with an unknown year remains useful but
+        does not suppress that fallback. Preserved evidence appears only on an
+        explicitly requested evidence or audit surface and never suppresses it.
+      refusal: >-
+        A source's inability or refusal to date a subject is negative evidence,
+        not an infinitely broad range and not a positive temporal annotation.
+      dispositions: >-
+        Preferred, alternate, and disputed order only answerable candidates;
+        they never make preserved evidence answerable.
+    conflict:
+      rule: >-
+        Preserve material alternatives. Exactly one answerable claim per subject
+        may be preferred only when a higher authority rank or an explicit
+        source-grounded note settles the order; otherwise every live alternative
+        is disputed and returned.
+      dispositions:
+        preferred: The claim this profile displays first, justified by rank or an explicit note.
+        alternate: A sourced answerable claim retained behind a justified preferred claim.
+        disputed: A sourced answerable claim in an unsettled disagreement; no preferred claim may coexist with it.
+      forbidden: >-
+        No numeric confidence, silent midpoint, union of alternatives into a
+        source-less range, or conversion of an open horizon into invented bounds.
+    display:
+      rule: >-
+        Preserve the source's own label and hedge. A consumer may add a concise
+        relation label, but it may not make a broad or conditional horizon look
+        like an exact date. `textual-attestation` must always be labelled as
+        attestation and never described as when the passage was written.
+      century_notation: >-
+        A source that names a CENTURY and no year is notated as that century
+        ENTIRE: "the eighth century B.C." is the interval 800 B.C. to 701 B.C.,
+        and "the end of the fifth or at the beginning of the fourth century
+        B.C." is 500 B.C. to 301 B.C., both centuries. A phrase that narrows
+        within the century — "the early portion of", "about the middle of", "at
+        the turn of" — keeps its narrowing in the label and DOES NOT move the
+        bounds, because the narrowing names no year and the alternative is to
+        invent one the source never printed. The interval is therefore
+        deliberately wider than the claim, and neither of its endpoints is
+        asserted: a consumer reading 700 B.C. or 601 B.C. as a date this profile
+        holds has read the notation as a claim about its own limits, which it is
+        not, and the label is what the source said.
+
+        This is NOTATION, not derivation, and rank 6 `derived` neither applies
+        to it nor may be used for it. A derivation computes a date FROM ranked
+        claims by a rule and needs its inputs identified; a century phrase is
+        ONE claim, restated in the units the machine stores, with nothing
+        combined and nothing inferred. This is the same normalization rule as
+        `catholic-traditional-v1`; only the evidence policy and derivation rank
+        differ between the profiles.
+      profiles: >-
+        Every displayed assertion identifies catholic-critical-v1 as its source
+        profile, including when it is selected through a cascade.
+    non_goals:
+      - Supplying a positive date where inspected sources supply none.
+      - Turning composition or final formation into the date of a narrated event.
+      - Turning textual attestation into composition or final formation.
+      - Giving one composition date to an anthology whose source dates only constituent strata.
+      - Claiming exhaustiveness for a witness whose loci the repository cannot enumerate.
+      - Treating a critical editorial judgment as a date defined by the Church.
+    versioning: >-
+      A change to authority, admissibility, relation semantics, or conflict policy
+      creates a new profile id. Adding a source-backed claim under this policy
+      does not.
+
+  - id: catholic-comprehensive-v1
+    kind: cascade
+    title: Catholic comprehensive chronology, traditional then critical
+    intent: >-
+      The repository's default consumer policy. For each temporal relation
+      independently, return the first evidence profile in `fallback_profiles`
+      that has at least one answerable assertion at the requested locus. This
+      preserves received traditional chronology where it speaks and uses
+      Catholic critical source-backed composition, final-formation, or last-resort
+      textual-attestation horizons only where that relation has no traditional
+      answer. A traditional gap or preserved claim never stops fallback, and no
+      result loses the evidence profile that supplied it.
+    fallback_profiles:
+      - catholic-traditional-v1
+      - catholic-critical-v1
+    selection: first-with-answerable-assertion-per-relation
+    non_goals:
+      - Combining leaf-profile alternatives into a new date or range.
+      - Treating silence in one relation as permission to answer a different relation.
+      - Reinterpreting a traditional gap as a narrated-event date.
+      - Describing textual attestation as when a verse was written.
+      - Hiding the evidence profile that supplied any returned assertion.
+      - Claiming exhaustive resolution beyond the currently enumerated unique Scripture universe.
+    versioning: >-
+      Reordering, adding, or removing a fallback profile, or changing selection
+      granularity, creates a new cascade profile id. A cascade owns no claims;
+      claims naming this id are invalid.

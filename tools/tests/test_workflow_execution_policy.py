@@ -427,6 +427,7 @@ class ControllerGuidanceTests(FanoutCase):
         runs = ROOT / "build" / f"tpt-runs-policy-{os.getpid()}"
         shutil.rmtree(runs, ignore_errors=True)
         engine.runs_dir = runs
+        engine.standing_findings_root = runs / "standing"
         self.addCleanup(shutil.rmtree, runs, ignore_errors=True)
         doc = ("liturgy/roman-rite/1962/propers/temporal/"
                "49-ninth-after-pentecost")

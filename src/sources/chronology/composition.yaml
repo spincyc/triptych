@@ -7,7 +7,7 @@ schema: triptych-chronology-composition/v1
 # scripts/_projection.py projects into. Declared here so that no row's
 # numbering is a thing the reader assumed.
 numbering: vulgate
-updated: '2026-08-26'
+updated: '2026-09-04'
 
 units:
   # --- nt-composition ----------------------------------------------------
@@ -260,20 +260,22 @@ units:
         disposition: disputed
         basis_class: traditional-catholic
         basis: >-
-          The decisions of the Pontifical Biblical Commission of 26 June 1913,
-          printed in the appendix to Aherne's "Gospel of Saint Luke" (Catholic
-          Encyclopedia vol. 9, 1910), rule that "after Matthew, Mark wrote his
-          Gospel second and Luke third" and that "It is not lawful to put the
-          date of the Gospels of Mark and Luke as late as the destruction of
-          Jerusalem or after the siege had begun." The ruling gives an order
-          and an upper bound and no year.
-        sources: [artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09420a-9b79d2a9]
+          The Pontifical Biblical Commission's responsa of 26 June 1912, read
+          directly in Acta Apostolicae Sedis 4 (1912) 463-465, maintain the
+          traditional order after Matthew, with Mark second and Luke third
+          (responsum V), while allowing the second and third Gospels to precede
+          the Greek version of Matthew. Responsum VI rejects putting Mark and
+          Luke as late as Jerusalem's destruction or after its siege had begun.
+          The ruling gives an order and an upper bound but no year.
+        sources:
+          - passage.pontifical-biblical-commission.de-auctore-tempore-et-veritate-evangeliorum-marci-et-lucae.latin-aas-4-1912.responsa-i-ix
         note: >-
-          A binding ruling reported verbatim, not one contributor's survey, and
-          of a different order of authority from the dated opinions above; it
-          nevertheless fixes no year, and it is recorded here as the relative
-          statement it is. The same decision allows "that the second and third
-          Gospels were composed before the Greek version of the first Gospel".
+          This is the direct Latin official-gazette identity for the ruling,
+          not the contradictory New Advent appendix later attached beneath a
+          1910 encyclopedia imprint and there labelled 1913. It is of a
+          different order of authority from the dated opinions above, but it
+          fixes no year and therefore remains the relative disputed candidate
+          recorded here.
         date:
           precision: relative
           relative:
@@ -288,10 +290,12 @@ units:
     scope: {book: Luke}
     note: >-
       The Catholic Encyclopedia's own Luke article carries no date-of-
-      composition section; its dating material is the appended Biblical
-      Commission decisions, which give bounds and an order but no year. The
-      only year in the inspected sources comes from a different article and is
-      in tension with those bounds, so both claims are disputed.
+      composition section. A later New Advent state appends and misdates the
+      Pontifical Biblical Commission's responsa; that post-imprint appendix is
+      not used here. The responsa are instead read in their direct official-
+      gazette witness, AAS 4 (1912) 463-465. They give bounds and an order but
+      no year. The only year in the inspected sources comes from a different
+      article and is in tension with those bounds, so both claims are disputed.
     dates:
       - profile: catholic-traditional-v1
         disposition: disputed
@@ -303,9 +307,9 @@ units:
           from the ancients the precision of our modern chronology."
         sources: [artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c]
         note: >-
-          This sits against the 1913 Biblical Commission ruling recorded in the
-          next claim, which forbids dating Luke as late as the destruction of
-          Jerusalem.
+          This sits against the 1912 Pontifical Biblical Commission ruling
+          recorded in the next claim, which rejects dating Luke as late as the
+          destruction of Jerusalem.
         date:
           precision: approximate-year
           from: {year: 70, era: ad}
@@ -314,19 +318,21 @@ units:
         disposition: disputed
         basis_class: traditional-catholic
         basis: >-
-          The decisions of the Pontifical Biblical Commission of 26 June 1913,
-          printed in the appendix to Aherne's "Gospel of Saint Luke" (Catholic
-          Encyclopedia vol. 9, 1910): "It is not lawful to put the date of the
-          Gospels of Mark and Luke as late as the destruction of Jerusalem or
-          after the siege had begun. The Gospel of Luke preceded his Acts of
-          the Apostles, and was therefore composed before the end of the Roman
-          imprisonment, when the Acts was finished (Acts 28:30-31)."
-        sources: [artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09420a-9b79d2a9]
+          The Pontifical Biblical Commission's responsa of 26 June 1912, read
+          directly in Acta Apostolicae Sedis 4 (1912) 463-465, reject both
+          putting Mark and Luke as late as Jerusalem's destruction and holding
+          Luke to have been written after the siege began (responsum VI).
+          Responsum VII affirms that Luke preceded Acts and, since Acts was
+          completed at the end of Paul's Roman captivity, that the Gospel was
+          not composed after that time.
+        sources:
+          - passage.pontifical-biblical-commission.de-auctore-tempore-et-veritate-evangeliorum-marci-et-lucae.latin-aas-4-1912.responsa-i-ix
         note: >-
-          A binding ruling reported verbatim rather than a contributor's
-          opinion, and of a different order of authority from the survey dates;
-          it states bounds and an order and prints no year, so it is recorded
-          as a relative claim anchored to the composition of Acts.
+          This is the direct Latin official-gazette identity for the ruling,
+          not the contradictory New Advent appendix later attached beneath a
+          1910 encyclopedia imprint and there labelled 1913. The responsa state
+          bounds and an order and print no year, so the claim remains relative
+          to the composition of Acts.
         date:
           precision: relative
           relative:
@@ -549,13 +555,39 @@ units:
     title: The Epistle to the Galatians
     scope: {book: Gal}
     note: >-
-      Aherne's article sets out three datings, each resting on a different
-      answer to the North- versus South-Galatian question, which the same
-      article treats at length and does not close. It ranks them without
-      deciding, so all four claims here are disputed.
+      A Lapide's 1614 proemium reproduces Baronius's chronology and places
+      Galatians in A.D. 58. Under the profile's authority hierarchy, that
+      rank-5 witness is preferred to the four rank-6 Catholic Encyclopedia
+      dates retained below as alternatives. The preference reports the
+      hierarchy; it does not suppress a Lapide's separate Argumentum, where he
+      says the epistle's time and place cannot be determined with certainty.
     dates:
       - profile: catholic-traditional-v1
-        disposition: disputed
+        disposition: preferred
+        basis_class: reported-traditional
+        basis: >-
+          Cornelius a Lapide's general proemium orders the Pauline epistles and
+          says of the sixth that the Epistle to the Galatians was written anno
+          Christi 58. At the end of the chronological series he identifies
+          Baronius's ecclesiastical annals as its source. The year is therefore
+          Baronius's chronology as reproduced by a Lapide, not an independently
+          calculated date.
+        sources:
+          - passage.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.antwerp-1614.prooemium-galatians-ad-58
+          - passage.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.antwerp-1614.epistola-ad-galatas-argumentum
+        note: >-
+          The proemial series supplies the year but no place. A Lapide's later
+          Argumentum preserves competing place traditions and explicitly says
+          that neither the epistle nor other evidence permits a certain
+          determination of its time or place. Preference here is only the
+          profile's rank-5-over-rank-6 source rule; it does not turn the year
+          into a certainty a Lapide claims independently.
+        date:
+          precision: year
+          from: {year: 58, era: ad}
+          label: "anno Christi 58"
+      - profile: catholic-traditional-v1
+        disposition: alternate
         basis_class: reported-traditional
         basis: >-
           Aherne's article "Epistle to the Galatians" in the Catholic
@@ -580,8 +612,8 @@ units:
           the first of three, attributes it to two named men, and declines to be
           convinced by it. The class is now `reported-traditional`, which is
           what a ranked work reporting another chronology is; the value stays
-          answerable and stays `disputed`, and the answer set over Galatians
-          does not move.
+          answerable as an `alternate` beneath the higher-rank
+          a-Lapide/Baronius claim.
           WHY RAMSAY IS ANSWERED WITH HERE AND REFUSED ELSEWHERE, because this
           corpus refuses him twice and must say what the difference is. The
           basis test this profile runs is a DISCLOSURE test: it asks what the
@@ -607,7 +639,8 @@ units:
           NOT `rejected-by-source`. "Not quite convincing" is said of Weber's
           arguments and is a decline, not the source's rejection of the dating;
           the article prints it as opinion (1) of three in a section it does not
-          close, which is why every claim on this unit is `disputed`. Contrast
+          close, which is why it cannot displace the higher-ranked preferred
+          claim. Contrast
           event:apostolic-age.exile-of-saint-john-to-patmos#1, which is
           `rejected-by-source` on "appears exceedingly improbable".
         date:
@@ -616,7 +649,7 @@ units:
           to: {year: 50, era: ad}
           label: "A.D. 49-50"
       - profile: catholic-traditional-v1
-        disposition: disputed
+        disposition: alternate
         basis_class: traditional-catholic
         basis: >-
           The same article, second opinion: "Cornel and the majority of the
@@ -633,7 +666,7 @@ units:
           to: {year: 54, era: ad}
           label: "about A.D. 53, 54"
       - profile: catholic-traditional-v1
-        disposition: disputed
+        disposition: alternate
         basis_class: traditional-catholic
         basis: >-
           The same article, third opinion: "Those who defend the
@@ -645,7 +678,7 @@ units:
           to: {year: 58, era: ad}
           label: "A.D. 57 or 58"
       - profile: catholic-traditional-v1
-        disposition: disputed
+        disposition: alternate
         basis_class: traditional-catholic
         basis: >-
           Prat's article "St. Paul" in the same encyclopedia (vol. 11, 1911)
@@ -2284,6 +2317,30 @@ units:
           from: {year: 500, era: bc}
           to: {year: 401, era: bc}
           label: "about the middle of the fifth century B.C."
+      - profile: catholic-critical-v1
+        disposition: preferred
+        basis_class: catholic-critical
+        basis: >-
+          The New American Bible, Revised Edition introduction places the book
+          a few generations after the Babylonian exile. It leaves open whether
+          it was written before Nehemiah's first return to Jerusalem in 445
+          B.C., during Nehemiah's presence there, or later.
+        sources:
+          - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-04.malachi-introduction
+        note: >-
+          The boundary is the one horizon shared by all three alternatives in
+          the source. It does not choose among before, during, or after
+          Nehemiah's 445 B.C. return, and it does not turn that event into a
+          composition date.
+        date:
+          precision: boundary
+          boundary:
+            direction: after
+            anchor: israel.exile.seventy-years
+            statement: a few generations after the Babylonian exile
+          label: >-
+            a few generations after the Babylonian exile; possibly before,
+            during, or after Nehemiah's first return in 445 B.C.
 
   - id: composition.first-book-of-machabees
     title: The First Book of Machabees
@@ -2852,3 +2909,494 @@ units:
           precision: approximate-year
           from: {year: 722, era: bc}
           label: "shortly after the fall of Samaria in 722 B.C."
+
+  # === catholic critical textual history and dated-witness fallback ========
+  # These claims belong only to catholic-critical-v1. The traditional profile's
+  # claims and explicit silences above remain exactly as authored. A dated
+  # edition is positive evidence that its text existed by that edition, but is
+  # never evidence that any passage was composed in the edition's year.
+
+  - id: critical.psalms.latest-composition-boundary
+    title: The latest composition boundary shared by the Psalms
+    scope: {book: Ps}
+    note: >-
+      The Psalter is an anthology, so this is not one composition date for the
+      book. It is only the latest boundary the NABRE introduction states for
+      any individual psalm. Narrower psalm units remain the more specific
+      answers wherever they apply.
+    dates:
+      - profile: catholic-critical-v1
+        disposition: preferred
+        basis_class: catholic-critical
+        basis: >-
+          The New American Bible, Revised Edition introduction says that no
+          individual psalm can be dated securely and that none is as late as
+          the Maccabean period, around 165 B.C.
+        sources:
+          - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction
+        note: >-
+          The endpoint is the source's approximate historical horizon, not an
+          exact composition year. The claim says only "before" that horizon and
+          preserves the source's refusal to date an individual psalm securely.
+        date:
+          precision: boundary
+          boundary:
+            direction: before
+            endpoint: {year: 165, era: bc}
+            statement: before c. 165 B.C.
+          label: >-
+            before the Maccabean period, around 165 B.C.; no individual psalm
+            can be dated securely
+
+  - id: critical.book-of-job
+    title: The Book of Job
+    scope: {book: Job}
+    dates:
+      - profile: catholic-critical-v1
+        disposition: preferred
+        basis_class: catholic-critical
+        basis: >-
+          The New American Bible, Revised Edition introduction calls Job a
+          literary composition rather than a transcript of historical events
+          and places its probable composition sometime between the seventh and
+          fifth centuries B.C.
+        sources:
+          - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-04.job-introduction
+        note: >-
+          The interval is the full seventh-through-fifth-century envelope. It
+          dates the literary composition and no event narrated by it.
+        date:
+          precision: interval
+          from: {year: 700, era: bc}
+          to: {year: 401, era: bc}
+          label: "probably sometime between the seventh and fifth centuries B.C."
+
+  - id: critical.book-of-ecclesiastes
+    title: The Book of Ecclesiastes
+    scope: {book: Eccles}
+    dates:
+      - profile: catholic-critical-v1
+        disposition: preferred
+        basis_class: catholic-critical
+        basis: >-
+          The New American Bible, Revised Edition introduction says that many
+          would locate Ecclesiastes in the third century B.C., when Judea was
+          under Hellenistic kings from Egypt.
+        sources:
+          - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-04.ecclesiastes-introduction
+        note: >-
+          "Many would locate" is the source's qualification. The structured
+          interval is the full third century and does not claim an exact year
+          or unanimous judgment.
+        date:
+          precision: interval
+          from: {year: 300, era: bc}
+          to: {year: 201, era: bc}
+          label: "many would locate it in the third century B.C."
+
+  - id: critical.book-of-proverbs.final-formation
+    title: The final editorial formation of the Book of Proverbs
+    relation: final-formation
+    scope: {book: Prov}
+    dates:
+      - profile: catholic-critical-v1
+        disposition: preferred
+        basis_class: catholic-critical
+        basis: >-
+          The New American Bible, Revised Edition introduction describes
+          Proverbs as an anthology containing material from the monarchic
+          period but edited as a whole in the early postexilic period, with
+          chapters 1-9 serving as the resulting introduction.
+        sources:
+          - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-08-20.proverbs-introduction
+        note: >-
+          This dates the anthology's editing as a whole, not every constituent
+          proverb's composition. "Early postexilic" is left as the source's
+          open horizon instead of being converted into invented years.
+        date:
+          precision: boundary
+          boundary:
+            direction: after
+            anchor: israel.exile.seventy-years
+            statement: edited as a whole in the early postexilic period
+          label: "edited as a whole in the early postexilic period"
+
+  - id: critical.canticle-of-canticles.final-formation
+    title: The final formation of the Canticle of Canticles
+    relation: final-formation
+    scope: {book: Cant}
+    dates:
+      - profile: catholic-critical-v1
+        disposition: preferred
+        basis_class: catholic-critical
+        basis: >-
+          The New American Bible, Revised Edition introduction says the
+          language and style indicate a time after the Babylonian exile ended
+          in 538 B.C., when an unknown poet collected existing love poems,
+          perhaps composed new material, and arranged the whole.
+        sources:
+          - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-04.song-of-songs-introduction
+        note: >-
+          The endpoint is the source's stated terminus. The source supplies no
+          closing year and leaves collection and new composition side by side,
+          so this claim is only about the whole's final arrangement.
+        date:
+          precision: boundary
+          boundary:
+            direction: after
+            endpoint: {year: 538, era: bc}
+            statement: after the Babylonian exile ended in 538 B.C.
+          label: "after the Babylonian exile ended in 538 B.C."
+
+  - id: critical.book-of-judith
+    title: The Book of Judith
+    scope: {book: Jdt}
+    dates:
+      - profile: catholic-critical-v1
+        disposition: preferred
+        basis_class: catholic-critical
+        basis: >-
+          The New American Bible, Revised Edition introduction says Judith may
+          have been written around 100 B.C. and describes its narrative as
+          historical fiction telescoping five centuries of material.
+        sources:
+          - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-04.judith-introduction
+        note: >-
+          The approximate year dates composition. None of the historical years
+          telescoped inside the narrative is substituted for that date.
+        date:
+          precision: approximate-year
+          from: {year: 100, era: bc}
+          label: "may have been written around 100 B.C."
+
+  - id: critical.book-of-baruch.final-formation
+    title: The final formation of the Book of Baruch
+    relation: final-formation
+    scope: {book: Bar}
+    dates:
+      - profile: catholic-critical-v1
+        disposition: preferred
+        basis_class: catholic-critical
+        basis: >-
+          The New American Bible, Revised Edition introduction describes
+          Baruch as a collection of four different compositions and says that,
+          although no certain date can be given, the collection may have been
+          edited into final form during the last two centuries B.C.
+        sources:
+          - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-04.baruch-introduction
+        note: >-
+          The source's "may" is retained. The interval applies only to the
+          edited collection's final form, not to each constituent composition
+          or to the book's fictional Babylonian setting.
+        date:
+          precision: interval
+          from: {year: 200, era: bc}
+          to: {year: 1, era: bc}
+          label: "may have been edited into final form during the last two centuries B.C."
+
+  - id: critical.book-of-jonah
+    title: The Book of Jonah
+    scope: {book: Jon}
+    dates:
+      - profile: catholic-critical-v1
+        disposition: preferred
+        basis_class: catholic-critical
+        basis: >-
+          The New American Bible, Revised Edition introduction says the book is
+          difficult to date but almost certainly postexilic and may reflect
+          the reforms of Ezra and Nehemiah.
+        sources:
+          - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-04.jonah-introduction
+        note: >-
+          The source supplies no numerical beginning or ending year. The
+          postexilic relationship is therefore kept as an open boundary and
+          Nineveh's narrated Assyrian setting is not used as composition.
+        date:
+          precision: boundary
+          boundary:
+            direction: after
+            anchor: israel.exile.seventy-years
+            statement: difficult to date but almost certainly postexilic
+          label: "difficult to date but almost certainly postexilic"
+
+  - id: critical.lamentations.after-jerusalem-destruction
+    title: The poems of Lamentations after Jerusalem's destruction
+    scope: {book: Lam}
+    dates:
+      - profile: catholic-critical-v1
+        disposition: preferred
+        basis_class: catholic-critical
+        basis: >-
+          The New American Bible, Revised Edition introduction describes the
+          five poems as responses to Jerusalem's destruction in 587 B.C. and
+          as anonymous compositions probably used by survivors of that
+          catastrophe in communal mourning.
+        sources:
+          - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-04.lamentations-introduction
+        note: >-
+          The destruction supplies only a lower boundary for composition. The
+          source allows that the five poems were composed separately and
+          grouped later, and gives no date for that grouping; this claim does
+          not turn the historical catastrophe into an exact composition year.
+        date:
+          precision: boundary
+          boundary:
+            direction: after
+            endpoint: {year: 587, era: bc}
+            statement: responses to Jerusalem's destruction in 587 B.C.
+          label: "after Jerusalem's destruction in 587 B.C.; grouped later at an unknown date"
+
+  - id: critical.amos-later-appendix.final-formation
+    title: The later appendix to Amos
+    relation: final-formation
+    scope: {book: Amos, chapter: 9, first: 11, last: 15}
+    dates:
+      - profile: catholic-critical-v1
+        disposition: preferred
+        basis_class: catholic-critical
+        basis: >-
+          The New American Bible, Revised Edition introduction identifies Amos
+          9:11-15 as a later appendix, after describing the earlier oracles as
+          delivered during the reign of Jeroboam II.
+        sources:
+          - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-04.amos-introduction
+        note: >-
+          The source supplies no absolute date for the appendix. "Later" is
+          kept as a boundary relative to the dated oracle horizon and is not
+          converted into a year or a closed interval.
+        date:
+          precision: boundary
+          boundary:
+            direction: after
+            anchor: israel.divided-kingdom.amos-oracles-under-jeroboam-ii
+            statement: a later appendix
+          label: "a later appendix; no absolute date assigned"
+
+  - id: critical.book-of-ruth
+    title: The Book of Ruth
+    scope: {book: Ruth}
+    dates:
+      - profile: catholic-critical-v1
+        disposition: disputed
+        basis_class: catholic-critical
+        basis: >-
+          The New American Bible, Revised Edition introduction reports that
+          many authors place the composition of Ruth early in the monarchy.
+        sources:
+          - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-04.ruth-introduction
+        note: >-
+          The introduction supplies no exact year and does not choose this
+          proposal over the postexilic alternative. "Early in the monarchy" is
+          consequently retained as a relative statement.
+        date:
+          precision: relative
+          relative:
+            of: israel.monarchy.saul-accession
+            statement: early in the monarchy
+          label: "many authors place its composition early in the monarchy"
+      - profile: catholic-critical-v1
+        disposition: disputed
+        basis_class: catholic-critical
+        basis: >-
+          The New American Bible, Revised Edition introduction reports a rival
+          postexilic proposal, connected with the book's favorable presentation
+          of a Moabite woman against measures described in Ezra and Nehemiah.
+        sources:
+          - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-04.ruth-introduction
+        note: >-
+          The introduction supplies no exact year and chooses neither
+          proposal. This claim therefore remains disputed with the
+          early-monarchy claim rather than merging both into a false interval.
+        date:
+          precision: boundary
+          boundary:
+            direction: after
+            anchor: israel.exile.seventy-years
+            statement: a postexilic date
+          label: "others argue for a postexilic date"
+
+  - id: critical.nehemiah-high-priest-list
+    title: The high-priest succession in Nehemiah 12:10-11
+    scope: {book: 2Esd, chapter: 12, first: 10, last: 11}
+    dates:
+      - profile: catholic-critical-v1
+        disposition: preferred
+        basis_class: catholic-critical
+        basis: >-
+          The New American Bible, Revised Edition note at Nehemiah 12:10-11
+          says that, if the high-priest list through Johanan came from the
+          author rather than a later scribe, it is evidence for dating the
+          author's work to the first decades of the fourth century B.C.
+        sources:
+          - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-04.nehemiah-12.10-11-note
+        note: >-
+          The source's authorship condition is part of the claim. Consistent
+          with the profile's century-notation rule, the structured interval is
+          the full fourth-century envelope and the narrower "first decades"
+          remains visible in the label; no terminal decade is invented.
+        date:
+          precision: interval
+          from: {year: 400, era: bc}
+          to: {year: 301, era: bc}
+          label: >-
+            if the list is authorial, the author's work dates to the first
+            decades of the fourth century B.C.
+
+  - id: attestation.vulgata-clementina-1598
+    title: Scripture text attested in the 1598 Clementine Vulgate
+    relation: textual-attestation
+    scope:
+      - {book: Gen}
+      - {book: Ex}
+      - {book: Lev}
+      - {book: Num}
+      - {book: Deut}
+      - {book: Jos}
+      - {book: Judg}
+      - {book: Ruth}
+      - {book: 1Kings}
+      - {book: 2Kings}
+      - {book: 3Kings}
+      - {book: 4Kings}
+      - {book: 1Par}
+      - {book: 2Par}
+      - {book: 1Esd}
+      - {book: 2Esd}
+      - {book: Tob}
+      - {book: Jdt}
+      - {book: Esth}
+      - {book: Job}
+      - {book: Ps}
+      - {book: Prov}
+      - {book: Eccles}
+      - {book: Cant}
+      - {book: Wis}
+      - {book: Ecclus}
+      - {book: Is}
+      - {book: Jer}
+      - {book: Lam}
+      - {book: Bar}
+      - {book: Ezech}
+      - {book: Dan}
+      - {book: Os}
+      - {book: Joel}
+      - {book: Amos}
+      - {book: Abd}
+      - {book: Jon}
+      - {book: Mich}
+      - {book: Nah}
+      - {book: Hab}
+      - {book: Soph}
+      - {book: Agg}
+      - {book: Zach}
+      - {book: Mal}
+      - {book: 1Mach}
+      - {book: 2Mach}
+      - {book: Matt}
+      - {book: Mark}
+      - {book: Luke}
+      - {book: John}
+      - {book: Acts}
+      - {book: Rom}
+      - {book: 1Cor}
+      - {book: 2Cor}
+      - {book: Gal}
+      - {book: Eph}
+      - {book: Phil}
+      - {book: Col}
+      - {book: 1Thess}
+      - {book: 2Thess}
+      - {book: 1Tim}
+      - {book: 2Tim}
+      - {book: Tit}
+      - {book: Philem}
+      - {book: Heb}
+      - {book: James}
+      - {book: 1Pet}
+      - {book: 2Pet}
+      - {book: 1John}
+      - {book: 2John}
+      - {book: 3John}
+      - {book: Jude}
+      - {book: Apoc}
+    note: >-
+      This is a last-resort textual-attestation horizon only. It says that the
+      listed Vulgate text is witnessed in the dated Clementine edition; it does
+      not say that any book or verse was written, edited, or first witnessed in
+      1598. The resolver suppresses this relation whenever a more informative
+      answerable temporal relation applies.
+    dates:
+      - profile: catholic-critical-v1
+        disposition: preferred
+        basis_class: primary-textual-historical
+        basis: >-
+          The registered complete latVUC witness is the Clementine Vulgate of
+          1598, in the transcription eBible.org identifies with the Migne 1880
+          edition, and supplies verse-keyed text for every listed
+          primary-canon book.
+        sources:
+          - edition.catholic-church.vulgata-clementina.ebible-latvuc
+        date:
+          precision: year
+          from: {year: 1598, era: ad}
+          label: "text attested in the 1598 Clementine Vulgate edition"
+
+  - id: attestation.revised-version-greek-arrangement-1895
+    title: Greek-arrangement text attested in the 1895 Revised Version
+    relation: textual-attestation
+    scope:
+      - {system: greek, book: Bel}
+      - {system: greek, book: Dan}
+      - {system: greek, book: Ecclus}
+      - {system: greek, book: Esth}
+      - {system: greek, book: EsthGr}
+      - {system: greek, book: SgThree}
+      - {system: greek, book: Sus}
+    note: >-
+      This is a last-resort textual-attestation horizon for every native locus
+      the registered Greek-arrangement witness actually prints. It does not
+      assert equivalence to a Vulgate locus and never dates composition or
+      final formation. The resolver suppresses it whenever a more informative
+      answerable temporal relation applies.
+    dates:
+      - profile: catholic-critical-v1
+        disposition: preferred
+        basis_class: primary-textual-historical
+        basis: >-
+          The registered Revised Version with Apocrypha is dated 1895 and is
+          the repository's complete verse-keyed witness for the listed native
+          Greek-arrangement tokens.
+        sources:
+          - edition.convocation-of-canterbury.revised-version.ebible-eng-rv
+        date:
+          precision: year
+          from: {year: 1895, era: ad}
+          label: "text attested in the 1895 Revised Version with Apocrypha"
+
+  - id: attestation.world-english-bible-catholic-2020
+    title: World English Catholic text attested in the 2020 stable edition
+    relation: textual-attestation
+    scope:
+      - {system: world-english-catholic, book: Dan}
+      - {system: world-english-catholic, book: Ecclus}
+      - {system: world-english-catholic, book: Esth}
+    note: >-
+      This is a last-resort textual-attestation horizon for every native locus
+      the registered World English Catholic witness actually prints. It does
+      not assert equivalence to a Vulgate locus and never dates composition or
+      final formation. The resolver suppresses it whenever a more informative
+      answerable temporal relation applies.
+    dates:
+      - profile: catholic-critical-v1
+        disposition: preferred
+        basis_class: primary-textual-historical
+        basis: >-
+          The registered World English Bible, Catholic Edition identifies its
+          stable text edition as 2020 and supplies verse-keyed text for the
+          listed native arrangement tokens.
+        sources:
+          - edition.ebible-org.world-english-bible.catholic-eng-web-c
+        date:
+          precision: year
+          from: {year: 2020, era: ad}
+          label: "text attested in the 2020 World English Bible, Catholic Edition"

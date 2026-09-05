@@ -36,6 +36,18 @@ criterion 11 is about the second. Answer only:
     the defect is that the evidence itself carries no Catholic reception for
     the passage, the finding is `research`; otherwise it is `authoring`.
 
+## Not yours: a count the prose contradicts
+
+A number stated in reader-facing prose that the list under it does not bear
+out — `Five independent witnesses` heading four — is criterion 7 and belongs
+to the citation-integrity lane. The standing example counts witnesses, which
+is your subject and not your criterion: the class is divided by defect and
+not by subject matter, so the arithmetic is asked once, in one lane, across
+the whole guide. Do not report it, and do not observe it either. Where the
+witness is missing from the sweep rather than from the sentence, that is
+criterion 3 and it is yours — say that the witness is absent, not that the
+number is wrong.
+
 ## Both editions are yours
 
 The leaf builds more than one reader-facing document out of one source tree,
@@ -50,5 +62,8 @@ commentary, and name in each finding the file the sentence is in.
 Return an evaluator result for this lane. `PASS` when none of the three is
 violated, `CHANGES_REQUIRED` with blocking findings when any is, `BLOCKED`
 when a finding cannot be resolved by revision.
+
+Record under `observations` anything real you saw that your own criteria do
+not reach, on the terms the fragments above set out.
 
 Finding IDs must use the `CON-REC-` prefix and be stable across iterations.

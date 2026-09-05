@@ -36,9 +36,9 @@
 
 **Location:** Davidic title; Israel’s assembly
 
-**Date:** Undated in the traditional chronology corpus.
+**Date:** Composition: Before c. 165 B.C.
 
-Modern: thanksgiving–lament before Israel’s assembly (USCCB NABRE Ps. 40); first audience, composition place, and Davidic stage unrecovered (Clementine; Challoner; Catholic Encyclopedia, “Psalms”).
+Modern: thanksgiving–lament before Israel’s assembly; first audience, composition place, and Davidic stage uncertain (Clementine; Challoner; USCCB NABRE Ps. 40; Catholic Encyclopedia, “Psalms”).
 
 ### Introit {#chronology-introit}
 
@@ -46,9 +46,9 @@ Modern: thanksgiving–lament before Israel’s assembly (USCCB NABRE Ps. 40); 
 
 **Location:** Davidic prayer addressed to God
 
-**Date:** Undated in the traditional chronology corpus.
+**Date:** Composition: Before c. 165 B.C.
 
-Tradition: David, praying to God. Modern: Israelite lament; first audience, place, life-stage, and date unknown (Clementine; Challoner; USCCB NABRE Ps. 86; chronology record).
+Tradition: David praying to God. Modern: an Israelite lament; first audience, place, and Davidic life-stage uncertain (Clementine; Challoner; USCCB NABRE Ps. 86; Catholic Encyclopedia, “Psalms”).
 
 ### Gradual {#chronology-gradual}
 
@@ -56,9 +56,9 @@ Tradition: David, praying to God. Modern: Israelite lament; first audience, plac
 
 **Location:** Sabbath canticle; no human author
 
-**Date:** Undated in the traditional chronology corpus.
+**Date:** Composition: Before c. 165 B.C.
 
-Modern: a protected speaker’s praise in Israel’s Sabbath worship (USCCB NABRE Ps. 92); first congregation, composition place, and authorial stage unrecovered (Clementine; Catholic Encyclopedia, “Psalms”).
+Modern: a protected speaker’s praise in Israel’s Sabbath worship; first congregation, composition place, and authorial stage uncertain (Clementine; USCCB NABRE Ps. 92; Catholic Encyclopedia, “Psalms”).
 
 ### Alleluia {#chronology-alleluia}
 
@@ -66,9 +66,9 @@ Modern: a protected speaker’s praise in Israel’s Sabbath worship (USCCB NABR
 
 **Location:** Israel’s corporate worship and kingship
 
-**Date:** Undated in the traditional chronology corpus.
+**Date:** Composition: Before c. 165 B.C.
 
-Modern: distinct corporate worship and kingship hymns in Israel (USCCB NABRE Pss. 95, 47); first congregations, places, and stages uncertain (Clementine: Ps. 94 Davidic, Ps. 46 Core’s sons; Catholic Encyclopedia, “Psalms”).
+Modern: distinct corporate-worship and kingship hymns; first congregations, places, and stages uncertain (Clementine: Ps. 94 Davidic, Ps. 46 Core’s sons; USCCB NABRE Pss. 95, 47; Catholic Encyclopedia, “Psalms”).
 
 ### Gospel {#chronology-gospel}
 
@@ -76,11 +76,11 @@ Modern: distinct corporate worship and kingship hymns in Israel (USCCB NABRE Pss
 
 **Location:** Event: Naim, Galilee; tradition: Achaia or Boeotia; modern city uncertain
 
-**Date:** Disputed: About the year 70; before the end of the Roman imprisonment, when the Acts was finished.
+**Date:** Composition – disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished. Event: A.D. 27.
 
-*Event: Jesus raises the youth at Naim after Capharnaum; undated (USCCB NABRE Luke 7; Gadenz, 141–143; chronology record).*
+*Event: Christ raises the widow’s son at Naim during the third journey, after returning from Capharnaum (Catholic Encyclopedia, “Jesus Christ”; USCCB NABRE Luke 7; Gadenz, 141–143).*
 
-Tradition: Luke, Antiochene physician and Paul’s companion, in Achaia/Boeotia. Modern: after Jerusalem’s fall, a non-eyewitness apostolic Gospel for Theophilus and Gentiles outside Palestine; city uncertain (Catholic Encyclopedia; Luke 1:1–4; USCCB NABRE Luke introduction; Gadenz, 16–19).
+Tradition: Luke, Paul’s companion, in Achaia/Boeotia; the Pontifical Biblical Commission places composition before Acts and the close of Paul’s Roman imprisonment. Modern: an apostolic Gospel after Jerusalem’s fall, for Theophilus and Gentiles outside Palestine; city uncertain (Catholic Encyclopedia; Luke 1:1–4; USCCB NABRE Luke introduction; Gadenz, 16–19).
 
 ### Communion {#chronology-communion}
 
@@ -88,11 +88,11 @@ Tradition: Luke, Antiochene physician and Paul’s companion, in Achaia/Boeotia.
 
 **Location:** Event: Capharnaum; tradition: Ephesus; modern city uncertain
 
-**Date:** Disputed: from the year 90 to 100 (approximately); 96 or one of the succeeding years.
+**Date:** Composition – disputed: c. A.D. 90–100; A.D. 96–100. Event: A.D. 28.
 
-*Event: near Passover, from the Sea of Galilee to Capharnaum; undated (USCCB NABRE John 6; chronology record).*
+*Event: near Passover in the fifth journey, Christ delivers the Bread of Life discourse at Capharnaum (Catholic Encyclopedia, “Jesus Christ”; USCCB NABRE John 6).*
 
-Tradition: aged apostle John at Ephesus for later Asian Christians. Modern: an edited Gospel amid synagogue conflict, probably in the 90s but in an unknown city; apostolic witness to the incarnate Christ (Catholic Encyclopedia; USCCB NABRE John introduction).
+Tradition: aged apostle John at Ephesus for Asian Christians. Modern: an edited late-first-century Gospel amid synagogue conflict; city uncertain (Catholic Encyclopedia; USCCB NABRE John introduction).
 
 ### Epistle {#chronology-epistle}
 
@@ -100,15 +100,13 @@ Tradition: aged apostle John at Ephesus for later Asian Christians. Modern: an e
 
 **Location:** Galatian churches; north or south disputed
 
-**Date:** Disputed: A.D. 49-50; about A.D. 53, 54; (1 and 2 Corinthians; Galatians), 56; A.D. 57 or 58.
+**Date:** Composition: Preferred A.D. 58; alternatives A.D. 49–50, c. A.D. 53–54, A.D. 56, A.D. 57–58.
 
-Paul, during post-Paschal missionary apostleship, addresses Gentile Galatians. Modern: north/Ancyra, Ephesus, and the third journey favored; south and an earlier mission remain; place/date disputed (USCCB NABRE Galatians introduction; Catholic Encyclopedia; chronology record).
+Paul addresses Gentile Galatians during his missionary apostleship. Baronius, through a Lapide, supplies the preferred year; the Catholic Encyclopedia preserves four alternatives. Northern or southern addressees and the place remain disputed (a Lapide, *Prooemium* and *Argumentum*; USCCB NABRE Galatians introduction; Catholic Encyclopedia).
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
-> **Governing thesis**
->
-> Continuing divine mercy elicits, restores, and sustains a life that becomes ecclesial action and praise. The formulary moves from the servant’s lifted cry through Spirit-led responsibility and Christ’s life-giving word to sacramental protection, Communion, and the heavenly gift’s action upon mind and body.
+Continuing divine mercy elicits, restores, and sustains a life that becomes ecclesial action and praise. The formulary moves from the servant’s lifted cry through Spirit-led responsibility and Christ’s life-giving word to sacramental protection, Communion, and the heavenly gift’s action upon mind and body.
 
 ### 1. A heard cry becomes restored and communicated life (*Int., Gosp., Off., Comm.*)
 
@@ -384,7 +382,7 @@ Donal Hord’s 1950 bronze medal *To Reap Man Must Sow*, commissioned by the Soc
 >
 > **Research extent.** Complete scriptural contexts and the cited Greek, Latin, medieval, saintly, liturgical, and cultural loci were examined within the bounds recorded in `research/scope.md`. The reception matrix covers every biblical appointment. Theodoret was inspected in Greek with facing Latin; Cyril and Chrysostom are cited through identified historical English witnesses, and Cyril’s Luke text has a mixed Greek-catena and Syriac transmission history. No fresh Greek or Syriac collation of those witnesses was made. Theodoret on Galatians remains unopened and supports no claim.
 >
-> **History and chronology.** The Old Gelasian and Hadrianum witnesses establish the early prayer group under differing Sunday assignments; the Venice 1570, Mame 1922, and Vatican 1962 Missals establish the later complete sequence. Schuster’s feast-relative cadence and Lenten reuses remain his reconstruction and observations. Every biblical date is an answerable label from the repository’s Catholic-traditional chronology corpus. That corpus dates none of the four psalms and supplies no narrated-event date for Nain or the Capharnaum discourse; its competing composition labels remain disputed. The historical witnesses identify no first compiler or one originating plan for all ten elements.
+> **History and chronology.** The Old Gelasian and Hadrianum witnesses establish the early prayer group under differing Sunday assignments; the Venice 1570, Mame 1922, and Vatican 1962 Missals establish the later complete sequence. Schuster’s feast-relative cadence and Lenten reuses remain his reconstruction and observations. Every biblical date is an answerable label from the repository’s Catholic comprehensive chronology profile. Its ordered fallback preserves the evidence profile supplying each relation: traditional composition and event chronologies remain distinct, while the Psalm terminus comes from the critical profile because the traditional profile supplies no composition date there. Alternative composition labels remain visible rather than being harmonized. The historical witnesses identify no first compiler or one originating plan for all ten elements.
 >
 > **Search, registration, and rights.** The precedent search covered the recorded Triptych proper-guide corpus, the 1962 appointment registry, and the preceding Sunday; it did not cover the open web, external sermon databases, unregistered scholarship, or a universal literature corpus. Several sacramentary, patristic, modern orientation, and cultural witnesses cited here remain incompletely registered or bound in the reusable source library; their human-readable works, editions, and loci remain the publication record. Protected lyrics, films, translations, and institutional prose are represented only by a brief biblical overlap, title, or paraphrase. No image with unresolved rights is reproduced. The repository does not relicense Scripture, liturgical texts, historical translations, or other third-party works.
 >
@@ -420,7 +418,7 @@ Donal Hord’s 1950 bronze medal *To Reap Man Must Sow*, commissioned by the Soc
 
 - United States Conference of Catholic Bishops, *New American Bible, Revised Edition*, [Psalms introduction](https://bible.usccb.org/bible/psalms/0) and Psalms [40](https://bible.usccb.org/bible/psalms/40), [47](https://bible.usccb.org/bible/psalms/47), [86](https://bible.usccb.org/bible/psalms/86), [92](https://bible.usccb.org/bible/psalms/92), and [95](https://bible.usccb.org/bible/psalms/95); [Galatians introduction](https://bible.usccb.org/bible/galatians/0); [Luke introduction](https://bible.usccb.org/bible/luke/0) and [Luke 7](https://bible.usccb.org/bible/luke/7); and [John introduction](https://bible.usccb.org/bible/john/0) and [John 6](https://bible.usccb.org/bible/john/6), all accessed 4 September 2026. Pablo T. Gadenz, *The Gospel of Luke*, Catholic Commentary on Sacred Scripture, eds. Peter S. Williamson and Mary Healy (Grand Rapids, MI: Baker Academic, 2018), ISBN 978-0-8010-3700-9, introduction, pp. 16–19, for the page-2 orientation, and pp. 141–143 for the Nain commentary; [publisher metadata](https://www.bakerpublishinggroup.com/products/9780801037009_the-gospel-of-luke) and [publisher excerpt of the introduction](https://cdn-static.supadu.com/baker-academic-us/pdf/Excerpt_9780801037009.pdf), accessed 4 September 2026. The excerpt does not contain pp. 141–143, which were inspected separately.
 
-- Walter Drum, “Psalms,” *The Catholic Encyclopedia*, vol. 12 (New York: Robert Appleton, 1911); Cornelius Aherne, “Epistle to the Galatians,” vol. 6 (1909); Ferdinand Prat, “St. Paul,” vol. 11 (1911); Alfred Durand, “The New Testament,” vol. 14 (1912); and “Gospel of St. Luke” and “Gospel of St. John,” the chronological notices represented in the generated Scripture chronology record.
+- Walter Drum, “Psalms,” *The Catholic Encyclopedia*, vol. 12 (New York: Robert Appleton, 1911); Cornelius Aherne, “Epistle to the Galatians,” vol. 6 (1909); Ferdinand Prat, “St. Paul,” vol. 11 (1911); Alfred Durand, “The New Testament,” vol. 14 (1912); A. J. Maas, “Jesus Christ,” vol. 8 (1910), III.B.3, printed pp. 378 and 380; and “Gospel of St. Luke” and “Gospel of St. John,” the chronological notices represented in the generated Scripture chronology record. Cornelius a Lapide, *Commentaria in omnes divi Pauli epistolas* (Antwerp, 1614), general *Prooemium*, printed p. 19, and *Epistola ad Galatas*, *Argumentum*, printed p. 457. Pontifical Biblical Commission, *De auctore, de tempore compositionis et de historica veritate Evangeliorum secundum Marcum et secundum Lucam*, responsa I–IX, especially VI–VII, *Acta Apostolicae Sedis* 4 (1912), pp. 463–465.
 
 - William Lloyd Garrison, “Guilt of the North—The National Compact,” in Richard S. Rust, comp., *Freedom’s Gift: or, Sentiments of the Free* (Hartford: S. S. Cowles, 1840), pp. 34–40, especially p. 38, [Library of Congress page-image record](https://www.loc.gov/resource/gdcmassbookdig.freedomsgiftorse00rust/?sp=46), [direct page image](https://tile.loc.gov/image-services/iiif/public:gdcmassbookdig:freedomsgiftorse00rust:freedomsgiftorse00rust_0046/full/pct:100.0/0/default.jpg), [complete PDF](https://tile.loc.gov/storage-services/public/gdcmassbookdig/freedomsgiftorse00rust/freedomsgiftorse00rust.pdf), and [item and rights record](https://www.loc.gov/item/30020058/), accessed 4 September 2026.
 
@@ -432,6 +430,6 @@ Donal Hord’s 1950 bronze medal *To Reap Man Must Sow*, commissioned by the Soc
 
 - Donal Hord, *To Reap Man Must Sow*, bronze medal, Society of Medallic Arts and Medallic Art Company, 1950, Smithsonian American Art Museum object 1972.167.16, [object record](https://americanart.si.edu/artwork/reap-man-must-sow-10777/), accessed 4 September 2026.
 
-**Last revised (UTC):** 2026-09-04T05:46:13Z
+**Last revised (UTC):** 2026-09-04T17:56:18Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

@@ -205,10 +205,13 @@ explain that wording change. [PAT-021; patristic-reception]
   audience, or Davidic-life episode. [COV-015;
   source-citation-coverage]
 
-The chronology corpus's typed answer for all four appointed psalm groups is
-`undated-in-tradition`; none of these historical or critical orientations may
-be substituted for a chronology assertion. [SCR-015, COV-020;
-scripture-context, source-citation-coverage]
+Under the comprehensive profile, the traditional leaf still supplies no
+composition assertion for any of the four appointed psalm groups. The critical
+fallback supplies only the one-sided shared terminus stated by the NABRE
+introduction: before the Maccabean period around 165 B.C., while no individual
+psalm can be dated securely. It is a latest boundary, not an individual
+composition year. [SCR-015, COV-020; scripture-context,
+source-citation-coverage]
 
 ### Galatians
 
@@ -218,8 +221,9 @@ USCCB NABRE introduction favors northern Galatia around Ancyra and composition
 at Ephesus about A.D. 54--55 during Paul's third missionary journey; it
 preserves the less likely south-Galatian cities and A.D. 48--50 horizon. The
 Catholic Encyclopedia records northern and southern theories and several dates.
-The chronology corpus, which alone controls printed dates, carries four
-disputed source labels, reproduced exactly in the chronology audit below.
+The chronology corpus, which alone controls printed dates, prefers the A.D. 58
+Baronius chronology reproduced by a Lapide and preserves the former four
+labels as alternatives, reproduced exactly in the chronology audit below.
 [SCR-026, COV-016; scripture-context, source-citation-coverage]
 
 ### Luke 7
@@ -239,7 +243,8 @@ The narrated event belongs to Jesus' Galilean ministry, after activity at
 Capernaum, at Nain. The USCCB Luke 7 note and Gadenz's discussion of Luke
 7:11--17 support the narrative sequence, the widow, the death, Jesus'
 initiative and compassion, and the Elijah allusion. The chronology corpus
-supplies no narrated-event date. The scripture-context lane reports direct
+now binds the Naim pericope to Maas's Third Journey and derives A.D. 27 from
+his own A.U.C. calibration. The scripture-context lane reports direct
 inspection of Gadenz, printed pp. 141--143; the coverage lane independently
 verified the public publisher excerpt only through the introduction and does
 not use those later pages for the page-2 orientation. The guide must cite the
@@ -260,8 +265,9 @@ source-citation-coverage]
 The narrated sequence lies in Jesus' Galilean ministry near Passover and moves
 from the far shore of the Sea of Galilee/Tiberias to boats and a synagogue
 discourse at Capernaum. Capernaum is the narrative setting, not the composition
-place. The Passover notice is not an absolute date, and the chronology corpus
-supplies no narrated-event assertion. [SCR-030, COV-018;
+place. The Passover notice alone is not an absolute date; the chronology corpus
+binds the Communion locus to Maas's Fifth Journey and derives A.D. 28 from his
+own A.U.C. calibration. [SCR-030, COV-018;
 scripture-context, source-citation-coverage]
 
 ## Liturgical history and competing judgments
@@ -948,9 +954,12 @@ this brief may supply a replacement date.
 ### Introit
 
 - **Loci:** `Ps.85.1`, `Ps.85.2`, `Ps.85.3`, `Ps.85.4`.
-- **Status:** `undated-in-tradition`.
-- **Assertions:** none. The corpus inspected its ranked Psalter source and
-  carries no composition assertion for this appointed extent.
+- **Status:** `composition-only` under requested profile
+  `catholic-comprehensive-v1`.
+- **Assertion:** preferred, inherited from scope `Ps`, subject
+  `critical.psalms.latest-composition-boundary`, relation `composition`, leaf
+  profile `catholic-critical-v1`; label `before the Maccabean period, around
+  165 B.C.; no individual psalm can be dated securely`.
 
 ### Epistle
 
@@ -959,55 +968,72 @@ this brief may supply a replacement date.
   `Gal.6.10`.
 - **Status:** `composition-only`. No event assertion applies to the conduct or
   harvest imagery.
-- **Assertions:** all four are disputed, inherited from scope `Gal`, with
+- **Assertions:** five claims are inherited from scope `Gal`, with
   subject `composition.epistle-to-the-galatians`, relation `composition`, and
-  profile `catholic-traditional-v1`:
-  - label `A.D. 49-50`;
-  - label `about A.D. 53, 54`;
-  - label `(1 and 2 Corinthians; Galatians), 56`;
-  - label `A.D. 57 or 58`.
+  leaf profile `catholic-traditional-v1`:
+  - preferred label `anno Christi 58`, the Baronius chronology reproduced by
+    a Lapide;
+  - alternate label `A.D. 49-50`;
+  - alternate label `about A.D. 53, 54`;
+  - alternate label `(1 and 2 Corinthians; Galatians), 56`;
+  - alternate label `A.D. 57 or 58`.
 
 ### Gradual
 
 - **Loci:** `Ps.91.2`, `Ps.91.3`.
-- **Status:** `undated-in-tradition`.
-- **Assertions:** none.
+- **Status:** `composition-only` under requested profile
+  `catholic-comprehensive-v1`.
+- **Assertion:** the same preferred critical-profile Psalm composition
+  boundary as the Introit.
 
 ### Alleluia
 
 - **Locus:** `Ps.94.3`.
-- **Status:** `undated-in-tradition`.
-- **Assertions:** none. The material Ps. 46:3 wording is textual/reception
-  evidence, not a chronology assertion for this appointed locus.
+- **Status:** `composition-only` under requested profile
+  `catholic-comprehensive-v1`.
+- **Assertion:** the same preferred critical-profile Psalm composition
+  boundary as the Introit. The material Ps. 46:3 wording remains
+  textual/reception evidence rather than a second appointed chronology locus.
 
 ### Gospel
 
 - **Loci:** `Luke.7.11`, `Luke.7.12`, `Luke.7.13`, `Luke.7.14`,
   `Luke.7.15`, `Luke.7.16`.
-- **Status:** `composition-only`. There is no `narrated-event` assertion for
-  the raising at Nain.
-- **Assertions:** both are disputed, inherited from scope `Luke`, with subject
+- **Status:** `dated` under requested profile
+  `catholic-comprehensive-v1`.
+- **Composition assertions:** both are disputed, inherited from scope `Luke`,
+  with subject
   `composition.gospel-of-luke`, relation `composition`, and profile
   `catholic-traditional-v1`:
   - label `About the year 70`;
   - label `before the end of the Roman imprisonment, when the Acts was finished`.
+- **Narrated-event assertion:** preferred, direct at scope `Luke.7.11-16`,
+  subject `life-of-christ.raising-of-the-widows-son-at-naim`, relation
+  `narrated-event`, profile `catholic-traditional-v1`; label `derived A.D. 27
+  from About Pentecost, A.U.C. 780- Autumn, 780`.
 
 ### Offertory
 
 - **Loci:** `Ps.39.2`, `Ps.39.3`, `Ps.39.4`.
-- **Status:** `undated-in-tradition`.
-- **Assertions:** none.
+- **Status:** `composition-only` under requested profile
+  `catholic-comprehensive-v1`.
+- **Assertion:** the same preferred critical-profile Psalm composition
+  boundary as the Introit.
 
 ### Communion
 
 - **Locus:** `John.6.52`.
-- **Status:** `composition-only`. There is no `narrated-event` assertion for
-  the bread discourse.
-- **Assertions:** both are disputed, inherited from scope `John`, with subject
+- **Status:** `dated` under requested profile `catholic-comprehensive-v1`.
+- **Composition assertions:** both are disputed, inherited from scope `John`,
+  with subject
   `composition.gospel-of-john`, relation `composition`, and profile
   `catholic-traditional-v1`:
   - label `from the year 90 to 100 (approximately)`;
   - label `96 or one of the succeeding years`.
+- **Narrated-event assertion:** preferred, direct at scope `John.6.52`, subject
+  `life-of-christ.bread-of-life-discourse-at-capharnaum`, relation
+  `narrated-event`, profile `catholic-traditional-v1`; label `derived Spring
+  A.D. 28 from Spring, A.U.C. 781`.
 
 The Collect, Secret, and Postcommunion appoint no Scripture directly and carry
 no chronology entry. [SCR-015--SCR-018, COV-020; scripture-context,
@@ -1035,10 +1061,11 @@ source-citation-coverage]
   Chrysostom, and Aquinas on John 6 do not account for the Missal's material
   wording adaptations. Theodoret's Ps. 94 lemma is the sole material analogue
   found and proves no chant transmission. [PAT-021; patristic-reception]
-- The four psalm extents are `undated-in-tradition`; Luke 7 and John 6 have
-  Gospel-composition claims but no narrated-event claims. These are supported
-  typed absences, not prompts to fill a blank. [COV-020;
-  source-citation-coverage]
+- The four psalm extents have only a shared one-sided latest-composition
+  boundary; it does not recover their individual years, places, audiences, or
+  stages. Luke 7 and John 6 now carry narrated-event claims derived from Maas's
+  printed A.U.C. journey headings through his own express A.D. calibration;
+  they are not exact day claims. [COV-020; source-citation-coverage]
 
 ### Provenance debt that does not block publication on the checked citations
 
@@ -1099,11 +1126,12 @@ locus, and access date rather than the generic USCCB homepage:
    every element; the literal, allegorical, moral, and anagogical senses can be
    grounded in SCR-001--SCR-014 and PAT-001--PAT-020. The Alleluia adaptation
    must remain explicit.
-2. **Page 2: Scriptural Date and Location — supplied with typed absences.**
+2. **Page 2: Scriptural Date and Location — supplied.**
    COV-012--COV-018 and SCR-026--SCR-031 supply authorship, audience, location,
-   and competing modern orientation. The chronology audit supplies every
-   permitted date label and states the absence of psalm and narrated-event
-   dates.
+   and competing modern orientation. The generated chronology annotation
+   supplies every permitted label, including the Psalm terminus, the preferred
+   and alternate Galatians claims, and the distinct Naim and Capharnaum event
+   relations.
 3. **The Propers: Themes and Movement — supplied.** The five cross-proper claims
    above account for all ten elements and can support three to five developed
    functional units without becoming a serial procession.
@@ -1206,8 +1234,9 @@ finding. The last content-evaluation result (iteration 0) carried these eight:
 ## Authoring boundary
 
 The next stage may author from the settled claims and audits above. It must
-preserve disputed composition judgments, the chronology corpus's typed
-absences, the witnessed XV/XVI history without a fabricated transfer story,
+preserve disputed composition judgments, the one-sided Psalm boundary, the
+distinct composition and narrated-event relations, the witnessed XV/XVI
+history without a fabricated transfer story,
 the distinction among kinds of life, the exact English-source wording, and the
 limits on protected material. Exploratory claims belong only in *The Propers:
 Interpretive Possibilities*. The audit register, lane mechanics, source-library

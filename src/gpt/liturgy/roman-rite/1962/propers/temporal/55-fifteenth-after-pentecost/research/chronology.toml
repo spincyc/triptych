@@ -12,20 +12,33 @@
 # not encode. In that state the record lists no element, `formulary_reason`
 # says why, and no date may be supplied from anywhere else to fill the gap.
 #
-# `label` is the source's own words and the only field a guide may display.
-# `date` is the normalized form, for comparison and never for the page. An
-# element with no `status` cites no Scripture; an element whose status is
+# `label` is the source's own words and the only value a manually authored
+# guide may display. `date` is the normalized form, for comparison and never
+# for a manual page. The sole permitted display exception is the deterministic
+# `tools/tpt proper-chronology annotations` projection: it may render its
+# concise `display_label` because the same generated contract retains the raw
+# `label` and claim `profile`. No manual consumer may mint or edit one. An
+# element's `claims` are the full audit union of assertions resolved at any of
+# its appointed loci; each claim's nested `reaches` records every locus, corpus
+# scope, and inheritance route by which it was returned. `publication_claims`
+# is the exact across-all-loci intersection that the generated one-cell
+# annotation may display. `status` and `reason` summarize the audit answer;
+# `publication_status` and `publication_reason` describe that safe
+# intersection. An element with no `status` cites no Scripture; one whose
+# publication status is
 # `undated-in-tradition` or `research-pending` has no date to print, and the
-# guide states that absence rather than filling it.
+# guide states that absence rather than filling it. `nonuniform` means its loci
+# have chronology but share no one assertion an element-wide Date cell could
+# truthfully print.
 
 
-schema = 1
+schema = 2
 record_type = "proper-chronology"
 document = "liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost"
 calendar = "roman-1962"
 mass = "pentecost-15"
 system = "vulgate"
-profile = ""
+profile = "catholic-comprehensive-v1"
 formulary = "appointed"
 formulary_reason = ""
 generated_by = "tools/tpt proper-chronology record"
@@ -35,8 +48,76 @@ key = "introit"
 name = "Introit"
 refs = ["Psalm 85:1-3", "Psalm 85:4"]
 loci = ["Ps.85.1", "Ps.85.2", "Ps.85.3", "Ps.85.4"]
-status = "undated-in-tradition"
-reason = "Drum's \"Psalms\" in the Catholic Encyclopedia was read in full for this corpus and dates the writing of no psalm except three cases authored separately in composition.yaml: Ps.73 and Ps.82 in this vulgate numbering, and the psalms of the sons of Korah as a group. Of those three, two are still answered with and one is not, so this row now reaches Ps.73 as well and the reader is owed the reason. Ps.73 is the one the article does not date on its own authority: it gives the date \"as Briggs surmises\", adopting the surmise of the modern critical commentary it cites by page in the same treatment of the Asaph psalms - Briggs's \"Psalms\", New York, 1906 - and this profile admits no such adoption - its one narrow lift is named for Ussher and says in terms that it extends to no one else. That figure is therefore held in composition.yaml as preserved evidence, legible under --evidence, and is not a candidate answer; a reader who reaches this row at Ps.73 is being told that the tradition this profile answers under dates the psalm nowhere, not that nobody looked at it. Ps.82 is different and is untouched: there the article names Briggs's dating and rejects it, asserting its own reading, so that claim stands and this row never reaches Ps.82 at all. Everywhere else it settles authorship and refuses date. Of David, its strongest sentence is the Biblical Commission's of 1 May 1910, that \"It cannot be prudently denied that David is the chief author of the songs of the Psalter\" - an author, not a year, a reign or a period, and the same decree adds that neither the councils nor the Fathers \"have such weight as to determine that David is sole author of the whole Psalter\". Of the Asaph psalms it says they \"pertain to widely-separated periods of Jewish history\"; of Moses and Solomon in the titles it offers imitation rather than date, \"this imitation may be the reason of the title\"; of the Machabean question it says \"There are no certain proofs that these or any psalms are Machabean\" and \"leaves that question still open\". The historical superscriptions are occasions and not compositions: thirteen Davidic psalms are merely \"referred to the time of David's persecution by Saul\", to his sin, or to his flight from Absalom, and the article expressly denies that the titles settle even authorship - \"Does this preposition mean authorship? No in every title\" - so none of them may be promoted to a date. The one dated thing the article does offer about the collection is the closing of the canon, not the writing of the text: the Palestinian canon \"was practically closed during the time of Esdras\", and at the latest the Jewish canon of the Psalms \"was undoubtedly closed before the date of the Septuagint translation. This date is 285 B.C. ... or, at the very latest 132 B.C.\" A canon closing is not a text being written, and this corpus will not borrow it. The Psalter is an anthology and is given no book-wide composition date here; psalms that carry a superscription-setting, a historical setting or a prophetic referent are asserted individually and those assertions stand over this row."
+status = "composition-only"
+reason = ""
+publication_status = "composition-only"
+publication_reason = ""
+
+[[elements.claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.claims.reaches]]
+locus = "Ps.85.1"
+inherited = true
+scope = "Ps"
+
+[[elements.claims.reaches]]
+locus = "Ps.85.2"
+inherited = true
+scope = "Ps"
+
+[[elements.claims.reaches]]
+locus = "Ps.85.3"
+inherited = true
+scope = "Ps"
+
+[[elements.claims.reaches]]
+locus = "Ps.85.4"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.85.1"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.85.2"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.85.3"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.85.4"
+inherited = true
+scope = "Ps"
 
 [[elements]]
 key = "collect"
@@ -45,6 +126,8 @@ refs = []
 loci = []
 status = ""
 reason = ""
+publication_status = ""
+publication_reason = ""
 
 [[elements]]
 key = "epistle"
@@ -53,97 +136,852 @@ refs = ["Galatians 5:25-6:10"]
 loci = ["Gal.5.25", "Gal.5.26", "Gal.6.1", "Gal.6.2", "Gal.6.3", "Gal.6.4", "Gal.6.5", "Gal.6.6", "Gal.6.7", "Gal.6.8", "Gal.6.9", "Gal.6.10"]
 status = "composition-only"
 reason = ""
+publication_status = "composition-only"
+publication_reason = ""
 
 [[elements.claims]]
-locus = "Gal.5.25"
 relation = "composition"
 subject = "composition.epistle-to-the-galatians"
 title = "The Epistle to the Galatians"
 label = "A.D. 49-50"
 date = "49 A.D. to 50 A.D."
 precision = "interval"
-disposition = "disputed"
+disposition = "alternate"
 answerability = "answerable"
 basis_class = "reported-traditional"
 profile = "catholic-traditional-v1"
-inherited = true
-scope = "Gal"
 sources = ["artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06336a-508d2398"]
 
-[[elements.claims]]
+[[elements.claims.reaches]]
 locus = "Gal.5.25"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.5.26"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.1"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.10"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.2"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.3"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.4"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.5"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.6"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.7"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.8"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.9"
+inherited = true
+scope = "Gal"
+
+[[elements.claims]]
 relation = "composition"
 subject = "composition.epistle-to-the-galatians"
 title = "The Epistle to the Galatians"
 label = "about A.D. 53, 54"
 date = "53 A.D. to 54 A.D."
 precision = "interval"
-disposition = "disputed"
+disposition = "alternate"
 answerability = "answerable"
 basis_class = "traditional-catholic"
 profile = "catholic-traditional-v1"
-inherited = true
-scope = "Gal"
 sources = ["artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06336a-508d2398"]
 
-[[elements.claims]]
+[[elements.claims.reaches]]
 locus = "Gal.5.25"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.5.26"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.1"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.10"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.2"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.3"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.4"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.5"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.6"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.7"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.8"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.9"
+inherited = true
+scope = "Gal"
+
+[[elements.claims]]
 relation = "composition"
 subject = "composition.epistle-to-the-galatians"
 title = "The Epistle to the Galatians"
 label = "(1 and 2 Corinthians; Galatians), 56"
 date = "56 A.D."
 precision = "year"
-disposition = "disputed"
+disposition = "alternate"
 answerability = "answerable"
 basis_class = "traditional-catholic"
 profile = "catholic-traditional-v1"
-inherited = true
-scope = "Gal"
 sources = ["artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8"]
 
-[[elements.claims]]
+[[elements.claims.reaches]]
 locus = "Gal.5.25"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.5.26"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.1"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.10"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.2"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.3"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.4"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.5"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.6"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.7"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.8"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.9"
+inherited = true
+scope = "Gal"
+
+[[elements.claims]]
 relation = "composition"
 subject = "composition.epistle-to-the-galatians"
 title = "The Epistle to the Galatians"
 label = "A.D. 57 or 58"
 date = "57 A.D. to 58 A.D."
 precision = "interval"
-disposition = "disputed"
+disposition = "alternate"
 answerability = "answerable"
 basis_class = "traditional-catholic"
 profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06336a-508d2398"]
+
+[[elements.claims.reaches]]
+locus = "Gal.5.25"
 inherited = true
 scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.5.26"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.1"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.10"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.2"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.3"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.4"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.5"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.6"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.7"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.8"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.9"
+inherited = true
+scope = "Gal"
+
+[[elements.claims]]
+relation = "composition"
+subject = "composition.epistle-to-the-galatians"
+title = "The Epistle to the Galatians"
+label = "anno Christi 58"
+date = "58 A.D."
+precision = "year"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.antwerp-1614.prooemium-galatians-ad-58", "passage.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.antwerp-1614.epistola-ad-galatas-argumentum"]
+
+[[elements.claims.reaches]]
+locus = "Gal.5.25"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.5.26"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.1"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.10"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.2"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.3"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.4"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.5"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.6"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.7"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.8"
+inherited = true
+scope = "Gal"
+
+[[elements.claims.reaches]]
+locus = "Gal.6.9"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.epistle-to-the-galatians"
+title = "The Epistle to the Galatians"
+label = "A.D. 49-50"
+date = "49 A.D. to 50 A.D."
+precision = "interval"
+disposition = "alternate"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
 sources = ["artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06336a-508d2398"]
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.5.25"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.5.26"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.1"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.10"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.2"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.3"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.4"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.5"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.6"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.7"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.8"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.9"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.epistle-to-the-galatians"
+title = "The Epistle to the Galatians"
+label = "about A.D. 53, 54"
+date = "53 A.D. to 54 A.D."
+precision = "interval"
+disposition = "alternate"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06336a-508d2398"]
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.5.25"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.5.26"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.1"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.10"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.2"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.3"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.4"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.5"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.6"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.7"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.8"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.9"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.epistle-to-the-galatians"
+title = "The Epistle to the Galatians"
+label = "(1 and 2 Corinthians; Galatians), 56"
+date = "56 A.D."
+precision = "year"
+disposition = "alternate"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8"]
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.5.25"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.5.26"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.1"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.10"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.2"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.3"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.4"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.5"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.6"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.7"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.8"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.9"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.epistle-to-the-galatians"
+title = "The Epistle to the Galatians"
+label = "A.D. 57 or 58"
+date = "57 A.D. to 58 A.D."
+precision = "interval"
+disposition = "alternate"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06336a-508d2398"]
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.5.25"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.5.26"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.1"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.10"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.2"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.3"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.4"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.5"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.6"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.7"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.8"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.9"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.epistle-to-the-galatians"
+title = "The Epistle to the Galatians"
+label = "anno Christi 58"
+date = "58 A.D."
+precision = "year"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.antwerp-1614.prooemium-galatians-ad-58", "passage.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.antwerp-1614.epistola-ad-galatas-argumentum"]
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.5.25"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.5.26"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.1"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.10"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.2"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.3"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.4"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.5"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.6"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.7"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.8"
+inherited = true
+scope = "Gal"
+
+[[elements.publication_claims.reaches]]
+locus = "Gal.6.9"
+inherited = true
+scope = "Gal"
 
 [[elements]]
 key = "gradual"
 name = "Gradual"
 refs = ["Psalm 91:2-3"]
 loci = ["Ps.91.2", "Ps.91.3"]
-status = "undated-in-tradition"
-reason = "Drum's \"Psalms\" in the Catholic Encyclopedia was read in full for this corpus and dates the writing of no psalm except three cases authored separately in composition.yaml: Ps.73 and Ps.82 in this vulgate numbering, and the psalms of the sons of Korah as a group. Of those three, two are still answered with and one is not, so this row now reaches Ps.73 as well and the reader is owed the reason. Ps.73 is the one the article does not date on its own authority: it gives the date \"as Briggs surmises\", adopting the surmise of the modern critical commentary it cites by page in the same treatment of the Asaph psalms - Briggs's \"Psalms\", New York, 1906 - and this profile admits no such adoption - its one narrow lift is named for Ussher and says in terms that it extends to no one else. That figure is therefore held in composition.yaml as preserved evidence, legible under --evidence, and is not a candidate answer; a reader who reaches this row at Ps.73 is being told that the tradition this profile answers under dates the psalm nowhere, not that nobody looked at it. Ps.82 is different and is untouched: there the article names Briggs's dating and rejects it, asserting its own reading, so that claim stands and this row never reaches Ps.82 at all. Everywhere else it settles authorship and refuses date. Of David, its strongest sentence is the Biblical Commission's of 1 May 1910, that \"It cannot be prudently denied that David is the chief author of the songs of the Psalter\" - an author, not a year, a reign or a period, and the same decree adds that neither the councils nor the Fathers \"have such weight as to determine that David is sole author of the whole Psalter\". Of the Asaph psalms it says they \"pertain to widely-separated periods of Jewish history\"; of Moses and Solomon in the titles it offers imitation rather than date, \"this imitation may be the reason of the title\"; of the Machabean question it says \"There are no certain proofs that these or any psalms are Machabean\" and \"leaves that question still open\". The historical superscriptions are occasions and not compositions: thirteen Davidic psalms are merely \"referred to the time of David's persecution by Saul\", to his sin, or to his flight from Absalom, and the article expressly denies that the titles settle even authorship - \"Does this preposition mean authorship? No in every title\" - so none of them may be promoted to a date. The one dated thing the article does offer about the collection is the closing of the canon, not the writing of the text: the Palestinian canon \"was practically closed during the time of Esdras\", and at the latest the Jewish canon of the Psalms \"was undoubtedly closed before the date of the Septuagint translation. This date is 285 B.C. ... or, at the very latest 132 B.C.\" A canon closing is not a text being written, and this corpus will not borrow it. The Psalter is an anthology and is given no book-wide composition date here; psalms that carry a superscription-setting, a historical setting or a prophetic referent are asserted individually and those assertions stand over this row."
+status = "composition-only"
+reason = ""
+publication_status = "composition-only"
+publication_reason = ""
+
+[[elements.claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.claims.reaches]]
+locus = "Ps.91.2"
+inherited = true
+scope = "Ps"
+
+[[elements.claims.reaches]]
+locus = "Ps.91.3"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.91.2"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.91.3"
+inherited = true
+scope = "Ps"
 
 [[elements]]
 key = "alleluia"
 name = "Alleluia"
 refs = ["Psalm 94:3"]
 loci = ["Ps.94.3"]
-status = "undated-in-tradition"
-reason = "Drum's \"Psalms\" in the Catholic Encyclopedia was read in full for this corpus and dates the writing of no psalm except three cases authored separately in composition.yaml: Ps.73 and Ps.82 in this vulgate numbering, and the psalms of the sons of Korah as a group. Of those three, two are still answered with and one is not, so this row now reaches Ps.73 as well and the reader is owed the reason. Ps.73 is the one the article does not date on its own authority: it gives the date \"as Briggs surmises\", adopting the surmise of the modern critical commentary it cites by page in the same treatment of the Asaph psalms - Briggs's \"Psalms\", New York, 1906 - and this profile admits no such adoption - its one narrow lift is named for Ussher and says in terms that it extends to no one else. That figure is therefore held in composition.yaml as preserved evidence, legible under --evidence, and is not a candidate answer; a reader who reaches this row at Ps.73 is being told that the tradition this profile answers under dates the psalm nowhere, not that nobody looked at it. Ps.82 is different and is untouched: there the article names Briggs's dating and rejects it, asserting its own reading, so that claim stands and this row never reaches Ps.82 at all. Everywhere else it settles authorship and refuses date. Of David, its strongest sentence is the Biblical Commission's of 1 May 1910, that \"It cannot be prudently denied that David is the chief author of the songs of the Psalter\" - an author, not a year, a reign or a period, and the same decree adds that neither the councils nor the Fathers \"have such weight as to determine that David is sole author of the whole Psalter\". Of the Asaph psalms it says they \"pertain to widely-separated periods of Jewish history\"; of Moses and Solomon in the titles it offers imitation rather than date, \"this imitation may be the reason of the title\"; of the Machabean question it says \"There are no certain proofs that these or any psalms are Machabean\" and \"leaves that question still open\". The historical superscriptions are occasions and not compositions: thirteen Davidic psalms are merely \"referred to the time of David's persecution by Saul\", to his sin, or to his flight from Absalom, and the article expressly denies that the titles settle even authorship - \"Does this preposition mean authorship? No in every title\" - so none of them may be promoted to a date. The one dated thing the article does offer about the collection is the closing of the canon, not the writing of the text: the Palestinian canon \"was practically closed during the time of Esdras\", and at the latest the Jewish canon of the Psalms \"was undoubtedly closed before the date of the Septuagint translation. This date is 285 B.C. ... or, at the very latest 132 B.C.\" A canon closing is not a text being written, and this corpus will not borrow it. The Psalter is an anthology and is given no book-wide composition date here; psalms that carry a superscription-setting, a historical setting or a prophetic referent are asserted individually and those assertions stand over this row."
+status = "composition-only"
+reason = ""
+publication_status = "composition-only"
+publication_reason = ""
+
+[[elements.claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.claims.reaches]]
+locus = "Ps.94.3"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.94.3"
+inherited = true
+scope = "Ps"
 
 [[elements]]
 key = "gospel"
 name = "Gospel"
 refs = ["Luke 7:11-16"]
 loci = ["Luke.7.11", "Luke.7.12", "Luke.7.13", "Luke.7.14", "Luke.7.15", "Luke.7.16"]
-status = "composition-only"
+status = "dated"
 reason = ""
+publication_status = "dated"
+publication_reason = ""
 
 [[elements.claims]]
-locus = "Luke.7.11"
 relation = "composition"
 subject = "composition.gospel-of-luke"
 title = "The Gospel of St Luke"
@@ -154,12 +992,39 @@ disposition = "disputed"
 answerability = "answerable"
 basis_class = "traditional-catholic"
 profile = "catholic-traditional-v1"
-inherited = true
-scope = "Luke"
 sources = ["artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"]
 
-[[elements.claims]]
+[[elements.claims.reaches]]
 locus = "Luke.7.11"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.7.12"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.7.13"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.7.14"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.7.15"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.7.16"
+inherited = true
+scope = "Luke"
+
+[[elements.claims]]
 relation = "composition"
 subject = "composition.gospel-of-luke"
 title = "The Gospel of St Luke"
@@ -170,17 +1035,275 @@ disposition = "disputed"
 answerability = "answerable"
 basis_class = "traditional-catholic"
 profile = "catholic-traditional-v1"
+sources = ["passage.pontifical-biblical-commission.de-auctore-tempore-et-veritate-evangeliorum-marci-et-lucae.latin-aas-4-1912.responsa-i-ix"]
+
+[[elements.claims.reaches]]
+locus = "Luke.7.11"
 inherited = true
 scope = "Luke"
-sources = ["artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09420a-9b79d2a9"]
+
+[[elements.claims.reaches]]
+locus = "Luke.7.12"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.7.13"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.7.14"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.7.15"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.7.16"
+inherited = true
+scope = "Luke"
+
+[[elements.claims]]
+relation = "narrated-event"
+subject = "life-of-christ.raising-of-the-widows-son-at-naim"
+title = "The raising of the widow's son at Naim"
+label = "derived A.D. 27 from About Pentecost, A.U.C. 780- Autumn, 780"
+date = "27 A.D."
+precision = "interval"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "derived"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-three-five", "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text"]
+
+[[elements.claims.reaches]]
+locus = "Luke.7.11"
+inherited = false
+scope = "Luke.7.11-16"
+
+[[elements.claims.reaches]]
+locus = "Luke.7.12"
+inherited = false
+scope = "Luke.7.11-16"
+
+[[elements.claims.reaches]]
+locus = "Luke.7.13"
+inherited = false
+scope = "Luke.7.11-16"
+
+[[elements.claims.reaches]]
+locus = "Luke.7.14"
+inherited = false
+scope = "Luke.7.11-16"
+
+[[elements.claims.reaches]]
+locus = "Luke.7.15"
+inherited = false
+scope = "Luke.7.11-16"
+
+[[elements.claims.reaches]]
+locus = "Luke.7.16"
+inherited = false
+scope = "Luke.7.11-16"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.gospel-of-luke"
+title = "The Gospel of St Luke"
+label = "About the year 70"
+date = "about 70 A.D."
+precision = "approximate-year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"]
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.7.11"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.7.12"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.7.13"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.7.14"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.7.15"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.7.16"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.gospel-of-luke"
+title = "The Gospel of St Luke"
+label = "before the end of the Roman imprisonment, when the Acts was finished"
+date = "before the Acts of the Apostles, and therefore before the end of the Roman imprisonment, and not as late as the destruction of Jerusalem"
+precision = "relative"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["passage.pontifical-biblical-commission.de-auctore-tempore-et-veritate-evangeliorum-marci-et-lucae.latin-aas-4-1912.responsa-i-ix"]
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.7.11"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.7.12"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.7.13"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.7.14"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.7.15"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.7.16"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims]]
+relation = "narrated-event"
+subject = "life-of-christ.raising-of-the-widows-son-at-naim"
+title = "The raising of the widow's son at Naim"
+label = "derived A.D. 27 from About Pentecost, A.U.C. 780- Autumn, 780"
+date = "27 A.D."
+precision = "interval"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "derived"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-three-five", "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text"]
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.7.11"
+inherited = false
+scope = "Luke.7.11-16"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.7.12"
+inherited = false
+scope = "Luke.7.11-16"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.7.13"
+inherited = false
+scope = "Luke.7.11-16"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.7.14"
+inherited = false
+scope = "Luke.7.11-16"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.7.15"
+inherited = false
+scope = "Luke.7.11-16"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.7.16"
+inherited = false
+scope = "Luke.7.11-16"
 
 [[elements]]
 key = "offertory"
 name = "Offertory"
 refs = ["Psalm 39:2-4"]
 loci = ["Ps.39.2", "Ps.39.3", "Ps.39.4"]
-status = "undated-in-tradition"
-reason = "Drum's \"Psalms\" in the Catholic Encyclopedia was read in full for this corpus and dates the writing of no psalm except three cases authored separately in composition.yaml: Ps.73 and Ps.82 in this vulgate numbering, and the psalms of the sons of Korah as a group. Of those three, two are still answered with and one is not, so this row now reaches Ps.73 as well and the reader is owed the reason. Ps.73 is the one the article does not date on its own authority: it gives the date \"as Briggs surmises\", adopting the surmise of the modern critical commentary it cites by page in the same treatment of the Asaph psalms - Briggs's \"Psalms\", New York, 1906 - and this profile admits no such adoption - its one narrow lift is named for Ussher and says in terms that it extends to no one else. That figure is therefore held in composition.yaml as preserved evidence, legible under --evidence, and is not a candidate answer; a reader who reaches this row at Ps.73 is being told that the tradition this profile answers under dates the psalm nowhere, not that nobody looked at it. Ps.82 is different and is untouched: there the article names Briggs's dating and rejects it, asserting its own reading, so that claim stands and this row never reaches Ps.82 at all. Everywhere else it settles authorship and refuses date. Of David, its strongest sentence is the Biblical Commission's of 1 May 1910, that \"It cannot be prudently denied that David is the chief author of the songs of the Psalter\" - an author, not a year, a reign or a period, and the same decree adds that neither the councils nor the Fathers \"have such weight as to determine that David is sole author of the whole Psalter\". Of the Asaph psalms it says they \"pertain to widely-separated periods of Jewish history\"; of Moses and Solomon in the titles it offers imitation rather than date, \"this imitation may be the reason of the title\"; of the Machabean question it says \"There are no certain proofs that these or any psalms are Machabean\" and \"leaves that question still open\". The historical superscriptions are occasions and not compositions: thirteen Davidic psalms are merely \"referred to the time of David's persecution by Saul\", to his sin, or to his flight from Absalom, and the article expressly denies that the titles settle even authorship - \"Does this preposition mean authorship? No in every title\" - so none of them may be promoted to a date. The one dated thing the article does offer about the collection is the closing of the canon, not the writing of the text: the Palestinian canon \"was practically closed during the time of Esdras\", and at the latest the Jewish canon of the Psalms \"was undoubtedly closed before the date of the Septuagint translation. This date is 285 B.C. ... or, at the very latest 132 B.C.\" A canon closing is not a text being written, and this corpus will not borrow it. The Psalter is an anthology and is given no book-wide composition date here; psalms that carry a superscription-setting, a historical setting or a prophetic referent are asserted individually and those assertions stand over this row."
+status = "composition-only"
+reason = ""
+publication_status = "composition-only"
+publication_reason = ""
+
+[[elements.claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.claims.reaches]]
+locus = "Ps.39.2"
+inherited = true
+scope = "Ps"
+
+[[elements.claims.reaches]]
+locus = "Ps.39.3"
+inherited = true
+scope = "Ps"
+
+[[elements.claims.reaches]]
+locus = "Ps.39.4"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.39.2"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.39.3"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.39.4"
+inherited = true
+scope = "Ps"
 
 [[elements]]
 key = "secret"
@@ -189,17 +1312,20 @@ refs = []
 loci = []
 status = ""
 reason = ""
+publication_status = ""
+publication_reason = ""
 
 [[elements]]
 key = "communion"
 name = "Communion"
 refs = ["John 6:52"]
 loci = ["John.6.52"]
-status = "composition-only"
+status = "dated"
 reason = ""
+publication_status = "dated"
+publication_reason = ""
 
 [[elements.claims]]
-locus = "John.6.52"
 relation = "composition"
 subject = "composition.gospel-of-john"
 title = "The Gospel of St John"
@@ -210,12 +1336,14 @@ disposition = "disputed"
 answerability = "answerable"
 basis_class = "traditional-catholic"
 profile = "catholic-traditional-v1"
-inherited = true
-scope = "John"
 sources = ["artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"]
 
-[[elements.claims]]
+[[elements.claims.reaches]]
 locus = "John.6.52"
+inherited = true
+scope = "John"
+
+[[elements.claims]]
 relation = "composition"
 subject = "composition.gospel-of-john"
 title = "The Gospel of St John"
@@ -226,9 +1354,84 @@ disposition = "disputed"
 answerability = "answerable"
 basis_class = "traditional-catholic"
 profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08438a-7620a92c"]
+
+[[elements.claims.reaches]]
+locus = "John.6.52"
 inherited = true
 scope = "John"
+
+[[elements.claims]]
+relation = "narrated-event"
+subject = "life-of-christ.bread-of-life-discourse-at-capharnaum"
+title = "The Bread of Life discourse at Capharnaum"
+label = "derived Spring A.D. 28 from Spring, A.U.C. 781"
+date = "28 A.D."
+precision = "year"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "derived"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-three-five", "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text"]
+
+[[elements.claims.reaches]]
+locus = "John.6.52"
+inherited = false
+scope = "John.6.52"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.gospel-of-john"
+title = "The Gospel of St John"
+label = "from the year 90 to 100 (approximately)"
+date = "90 A.D. to 100 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"]
+
+[[elements.publication_claims.reaches]]
+locus = "John.6.52"
+inherited = true
+scope = "John"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.gospel-of-john"
+title = "The Gospel of St John"
+label = "96 or one of the succeeding years"
+date = "96 A.D. to 100 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
 sources = ["artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08438a-7620a92c"]
+
+[[elements.publication_claims.reaches]]
+locus = "John.6.52"
+inherited = true
+scope = "John"
+
+[[elements.publication_claims]]
+relation = "narrated-event"
+subject = "life-of-christ.bread-of-life-discourse-at-capharnaum"
+title = "The Bread of Life discourse at Capharnaum"
+label = "derived Spring A.D. 28 from Spring, A.U.C. 781"
+date = "28 A.D."
+precision = "year"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "derived"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-three-five", "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text"]
+
+[[elements.publication_claims.reaches]]
+locus = "John.6.52"
+inherited = false
+scope = "John.6.52"
 
 [[elements]]
 key = "postcommunion"
@@ -237,3 +1440,5 @@ refs = []
 loci = []
 status = ""
 reason = ""
+publication_status = ""
+publication_reason = ""
