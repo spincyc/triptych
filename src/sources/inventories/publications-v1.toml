@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gpt"
-audited_on = "2026-09-04"
+audited_on = "2026-09-05"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 139
 source_surface_file_count = 2096
-snapshot = "sha256:121f42757ee1efb3812062e117881b572a875217b331402433861f416dedd0f4"
+snapshot = "sha256:875c74bc292e3dd4beb60f549aa65483b1edcc13adac121d38dbdd31f760c91a"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -9600,7 +9600,7 @@ owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/server-guide-format.tex"
-sha256 = "16bf4a337f06ef238de4adb38b3462086a26716f167fd03c95165f18b481f1b5"
+sha256 = "0d4590b50292b80804f380ac572cfa6299b052e5d01a45abaad53e7fc3fce24d"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
@@ -10080,7 +10080,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/artwork-manifest.toml"
-sha256 = "77d170a850917063fcd3d51fea4727456497df494dedc7dd390f19972a2a7847"
+sha256 = "901834175d4ee543b15248928a473b96cff89d38ed1be74ed8be9d453daff4fe"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 

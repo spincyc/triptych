@@ -6,3 +6,10 @@ __pycache__/
 # unlocking: unlinking would let two processes create separate inodes and each
 # believe it holds the lock. `tools/harvest` makes one beside its ledger.
 *.lock
+
+# Installed PDFs are built during deployment and are not tracked, so a local
+# `make install` must not fill `git status` with two hundred untracked files.
+# The six reading-plan volumes are the exception: release/public-alpha.json
+# binds them by digest, so they stay tracked and stay visible here.
+/pdf/*
+!/pdf/reading-plans/
