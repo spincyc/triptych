@@ -1642,7 +1642,7 @@ def _decoded_physical_lines(path: Path, mtime_ns: int, size: int) -> tuple[str, 
     """Every physical line of one artifact, decoded, kept for the next record.
 
     `_validate_passage_locators` walks records, not artifacts, and many records
-    cite the same artifact: one `mass-propers show --bible` opened 934 files
+    cite the same artifact: one propers lookup against a bible opened 934 files
     4,227 times and decoded 1,623 MB to inspect 138 MB, because each record
     re-read and re-decoded the whole payload to learn its line count. The
     records arrive sorted by id, which groups an edition's passages together,
@@ -2417,7 +2417,7 @@ def load_library(
     fingerprint of the trees it reads. Loading parses 8,632 TOML manifests and
     validates the graph over them: three seconds, and every tool that answers
     any question about a source pays it in a fresh process. One workflow gate
-    runs `check-content-preflight` nine times, of which `bindings-valid` alone
+    runs the content preflight nine times, of which `bindings-valid` alone
     was 3.16s of the 3.6s; the shell suite runs hundreds of such tools. The
     fingerprint costs 60ms and the cached load about 50ms.
 
