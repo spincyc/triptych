@@ -2621,15 +2621,30 @@ class ParityTests(unittest.TestCase):
             request["form"] = form
             request["requestedMode"] = "missal"
             request["options"]["ordinary"] = True
-            payload = self.form_payload(date, form)
-            return node_call({
-                "op": "full-parity", "request": request, "payload": payload,
+            # The raw run, not `form_payload`: that helper asserts, and an
+            # assertion raised inside a worker is a failure attributed to the
+            # gather rather than to its own coordinate. Judged below instead.
+            run = subprocess.run(
+                [
+                    str(MASS_TODAY), "show", "--date", date,
+                    "--calendar", "roman-1962", "--bible", "douay-rheims",
+                    "--ordinary", "--expanded", "--why", "--form", form,
+                    "--format", "json",
+                ],
+                capture_output=True, text=True, cwd=ROOT, check=False,
+            )
+            if run.returncode != 0:
+                return run, None
+            return run, node_call({
+                "op": "full-parity", "request": request,
+                "payload": json.loads(run.stdout),
             })
 
-        parities = gather(resolve, cases)
+        resolved = gather(resolve, cases)
 
-        for (date, mass, form, proper_count), parity in zip(cases, parities):
+        for (date, mass, form, proper_count), (run, parity) in zip(cases, resolved):
             with self.subTest(date=date, mass=mass, form=form):
+                self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
                 self.assertEqual(parity["day"], parity["cli"])
                 self.assertEqual(parity["day"]["resolved"]["form"], form)
                 proper_events = [

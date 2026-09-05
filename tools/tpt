@@ -337,7 +337,7 @@ def _workflow_ids() -> set[str]:
 WORKFLOW_ACTIONS = ("seed", "advance", "status", "replay", "intervene", "debt")
 
 
-def workflow_help(engine: WorkflowEngine, workflow_id: str) -> str:
+def workflow_help(engine, workflow_id: str) -> str:
     """The help a workflow can give about itself, from its own definition."""
     workflow = engine.load_workflow(workflow_id)
     argument = workflow.get("document_argument") or "doc"
@@ -469,7 +469,7 @@ def dispatch_workflow(workflow_id: str, rest: list[str]) -> int:
 
 
 def _workflow_seed(
-    engine: WorkflowEngine, workflow_id: str, doc_id: str, opts: list[str]
+    engine, workflow_id: str, doc_id: str, opts: list[str]
 ) -> int:
     provider = None
     i = 0
@@ -495,7 +495,7 @@ def _workflow_seed(
     return 0
 
 
-def _workflow_advance(engine: WorkflowEngine, doc_id: str, opts: list[str]) -> int:
+def _workflow_advance(engine, doc_id: str, opts: list[str]) -> int:
     if not opts:
         raise ToolError("advance: missing run-id")
     run_id = opts[0]
@@ -533,7 +533,7 @@ def _workflow_advance(engine: WorkflowEngine, doc_id: str, opts: list[str]) -> i
     return 0
 
 
-def _workflow_status(engine: WorkflowEngine, doc_id: str, opts: list[str]) -> int:
+def _workflow_status(engine, doc_id: str, opts: list[str]) -> int:
     if not opts:
         raise ToolError("status: missing run-id")
     run_id = opts[0]
@@ -543,7 +543,7 @@ def _workflow_status(engine: WorkflowEngine, doc_id: str, opts: list[str]) -> in
     return 0
 
 
-def _workflow_replay(engine: WorkflowEngine, doc_id: str, opts: list[str]) -> int:
+def _workflow_replay(engine, doc_id: str, opts: list[str]) -> int:
     """Recompile the current packet from state and report whether it matches."""
     if not opts:
         raise ToolError("replay: missing run-id")
@@ -554,7 +554,7 @@ def _workflow_replay(engine: WorkflowEngine, doc_id: str, opts: list[str]) -> in
     return 0 if result.get("deterministic") is not False else 1
 
 
-def _workflow_intervene(engine: WorkflowEngine, doc_id: str, opts: list[str]) -> int:
+def _workflow_intervene(engine, doc_id: str, opts: list[str]) -> int:
     if not opts:
         raise ToolError("intervene: missing run-id")
     run_id = opts[0]
@@ -579,7 +579,7 @@ def _workflow_intervene(engine: WorkflowEngine, doc_id: str, opts: list[str]) ->
     return 0
 
 
-def _workflow_debt(engine: WorkflowEngine, doc_id: str, opts: list[str]) -> int:
+def _workflow_debt(engine, doc_id: str, opts: list[str]) -> int:
     if not opts:
         raise ToolError("debt: missing run-id")
     run_id = opts[0]
@@ -772,7 +772,18 @@ def main(argv: list[str] | None = None) -> int:
     raw = list(sys.argv[1:] if argv is None else argv)
     try:
         return dispatch(load_registry(), raw)
-    except (ToolError, _workflow_error()) as error:
+    except ToolError as error:
+        print(f"tpt: {error}", file=sys.stderr)
+        return 2
+    except Exception as error:  # noqa: BLE001 - narrowed on the next line
+        # A workflow error is reported the same way, but the class is only
+        # resolvable by importing the engine, and naming it in the `except`
+        # tuple above would import it while any exception at all propagates ---
+        # including the ones a tool dispatch raises, which is the path that
+        # never wants the engine. So the engine is asked for only once
+        # something has already gone wrong.
+        if "_workflow" not in sys.modules or not isinstance(error, _workflow_error()):
+            raise
         print(f"tpt: {error}", file=sys.stderr)
         return 2
 

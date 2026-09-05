@@ -353,6 +353,12 @@ def restated_identity(root: Path, calendar: str | None = None) -> list[str]:
 _YAML_CACHE = Path(__file__).resolve().parents[1] / "build" / "yaml-cache"
 _YAML_CACHE_VERSION = "1"
 _YAML_CACHE_FLOOR = 256 * 1024
+# Unlike the tree-fingerprinted caches, this one is keyed PER FILE, so every
+# eligible file is "current" at once and they do not take turns. There are 38
+# over the floor in this checkout; a retention below that number evicts a file
+# another tool is about to ask for and the cache thrashes instead of hitting.
+# Generous on purpose: an entry is a parsed copy of a file that already exists.
+_YAML_CACHE_KEEP = 128
 
 
 def _cache_entry(path: Path, kind: str = "yaml") -> Path | None:
@@ -473,7 +479,7 @@ def _cached_parse(path: Path, kind: str, parse):
                 aside = entry.with_suffix(f".{os.getpid()}.tmp")
                 aside.write_text(encoded, encoding="utf-8")
                 os.replace(aside, entry)
-                prune_cache(_YAML_CACHE, keep=16, pattern='**/*.json')
+                prune_cache(_YAML_CACHE, keep=_YAML_CACHE_KEEP, pattern='**/*.json')
         except (OSError, TypeError, ValueError, RecursionError):
             pass
 

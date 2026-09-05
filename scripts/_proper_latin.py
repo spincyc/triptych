@@ -27,7 +27,7 @@ import sys
 import tomllib
 
 import _calendars
-from _tooling import prune_cache, tree_fingerprint
+from _tooling import code_fingerprint, prune_cache, tree_fingerprint
 
 
 SCHEMA = "triptych-proper-latin-provenance/v1"
@@ -732,7 +732,8 @@ def _source_library_cache_entry(root: Path) -> Path | None:
     fingerprint, counted = tree_fingerprint([r for r in roots if r.is_dir()])
     if counted < SOURCE_LIBRARY_CACHE_FLOOR:
         return None
-    return SOURCE_LIBRARY_CACHE_DIR / f"{fingerprint}.json"
+    code = code_fingerprint(__file__, TRUSTED_REPOSITORY / "tools/source-library")
+    return SOURCE_LIBRARY_CACHE_DIR / f"{fingerprint}-{code}.json"
 
 
 def _source_library_records(

@@ -82,7 +82,11 @@ def present(
         return []
     if markers is None:
         markers = markers_for(needles)
-    if markers and not any(marker in haystack for marker in markers):
+    # An empty needle is a substring of everything, and `markers_for` drops it,
+    # so the marker filter cannot be trusted to skip the set when one is
+    # present. No caller passes one; this keeps the answer the documented
+    # comprehension's answer if any ever does.
+    if markers and all(needles) and not any(marker in haystack for marker in markers):
         return []
     if all(_TOKEN.fullmatch(needle) for needle in needles):
         haystack = _SEPARATOR.join(set(_TOKEN.findall(haystack)))

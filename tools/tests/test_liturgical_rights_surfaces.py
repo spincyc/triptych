@@ -41,6 +41,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from _scanning import markers_for, present  # noqa: E402
+from _tooling import code_fingerprint, prune_cache  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 TPT = ROOT / "tools" / "tpt"
@@ -1541,7 +1542,11 @@ def extracted_pdf_text(pdftotext: str, path: Path, digest: str) -> tuple[int, by
     again next time rather than be remembered as an empty scan, which would be
     a rights gate reporting that it read a PDF it did not read.
     """
-    entry = PDF_TEXT_CACHE / digest[:2] / f"{digest}.txt"
+    # The extractor is part of the identity: a different or upgraded
+    # `pdftotext` produces different text from the same bytes, and an entry
+    # that named only the PDF would serve the old extraction.
+    extractor = code_fingerprint(pdftotext)
+    entry = PDF_TEXT_CACHE / digest[:2] / f"{digest}-{extractor}.txt"
     try:
         return 0, entry.read_bytes()
     except OSError:
@@ -1553,6 +1558,7 @@ def extracted_pdf_text(pdftotext: str, path: Path, digest: str) -> tuple[int, by
             aside = entry.with_suffix(f".{os.getpid()}.tmp")
             aside.write_bytes(run.stdout)
             os.replace(aside, entry)
+            prune_cache(PDF_TEXT_CACHE, keep=512, pattern="**/*.txt")
         except OSError:
             pass
     return run.returncode, run.stdout

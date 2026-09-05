@@ -836,3 +836,26 @@ def prune_cache(directory, keep: int, pattern: str = "*.json") -> None:
             stale.unlink()
         except OSError:
             pass
+
+
+def code_fingerprint(*paths) -> str:
+    """Identify the code a cached derivation was produced by.
+
+    A cache keyed only on its data inputs answers from before the derivation
+    changed: edit the function that builds a projection and the previous
+    projection is served until somebody runs `make clean`. That is the same
+    stale answer the data key exists to prevent, one level up, and it bites
+    whoever is editing the code --- the person least able to see why.
+
+    The files' mtime and size rather than their bytes, because this runs on
+    every cache lookup and the question is only "is this the same code".
+    """
+    digest = hashlib.sha256()
+    for path in paths:
+        try:
+            stat = os.stat(path)
+        except OSError:
+            digest.update(f"\0absent:{path}\0".encode("utf-8"))
+            continue
+        digest.update(f"\0{path}\0{stat.st_mtime_ns}\0{stat.st_size}\0".encode("utf-8"))
+    return digest.hexdigest()[:16]

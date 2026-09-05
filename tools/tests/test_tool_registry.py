@@ -107,12 +107,21 @@ def setUpModule() -> None:
     names = sorted(registry())
     gather(resolved_path, names)
     gather(safely, [(name,) for name in names])
-    pairs = [
-        (name, verb)
-        for name in names
-        for verb in verbs_of(help_text(name))
-    ]
-    gather(safely, pairs)
+
+    def verbs(name: str) -> list[str]:
+        """The tool's verbs, or none where its help could not be read.
+
+        Guarded for the same reason `safely` is, and it was not: a tool whose
+        `--help` exits non-zero was swallowed above and then raised here,
+        erroring every test in the module at `setUpModule` instead of failing
+        the one test that asks about that tool, under its own subTest.
+        """
+        try:
+            return verbs_of(help_text(name))
+        except AssertionError:
+            return []
+
+    gather(safely, [(name, verb) for name in names for verb in verbs(name)])
 
 
 def verbs_of(text: str) -> list[str]:

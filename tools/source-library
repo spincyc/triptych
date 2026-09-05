@@ -2476,14 +2476,22 @@ def load_library(
     if entry is not None:
         try:
             held = _library_as_json(library)
-            if _library_from_json(held) == library:
+            encoded = json.dumps(held)
+            # Through the JSON TEXT, not the dict `_library_as_json` built:
+            # that dict shares `record.data` by reference, so comparing it back
+            # compared those dicts against themselves and proved nothing about
+            # the part of the library carrying arbitrary parsed TOML.
+            if _library_from_json(json.loads(encoded)) == library:
                 entry.parent.mkdir(parents=True, exist_ok=True)
                 # Written aside and renamed: these run in parallel, and a
                 # half-written entry read by a sibling is a wrong answer.
                 aside = entry.with_suffix(f".{os.getpid()}.tmp")
-                aside.write_text(json.dumps(held), encoding="utf-8")
+                aside.write_text(encoded, encoding="utf-8")
                 os.replace(aside, entry)
-                prune_cache(entry.parent, keep=2)
+                # Four, not two: this cache writes a `-fp` and a `-nofp` variant per
+                # tree, both in active use, so two leaves no spare at all and any
+                # third fingerprint evicts a live entry.
+                prune_cache(entry.parent, keep=4)
         except (OSError, TypeError, ValueError, RecursionError):
             pass
 

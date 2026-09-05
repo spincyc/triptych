@@ -2801,21 +2801,19 @@ class WorkflowEngine:
         Only the untouched per-check logs are written here. The result itself
         is persisted with the transition it produces, like any other result.
 
-        The checks are started together and judged in the order the stage
-        declares them, so the findings list, the disposition and every gate log
-        are exactly what running them one after another produced --- only the
-        waiting overlaps. A gate is the stage that spends the most time on the
-        least computation: `content-preflight` is fifteen commands, each a cold
-        `tpt` that exits in about a tenth of a second, and driving one run
-        through the propers workflow was 342 of them.
-
-        This is the one place that requires a gate check to be independent of
-        its siblings, and the requirement is met by what a gate check *is*:
-        `workflows/ARCHITECTURE.md` describes each as one command judged by its
-        exit code, and every check in this repository reads the tree and writes
-        nothing but its own log, whose name carries its own check id. A check
-        that mutated state another check reads would already have been an
-        ordering dependency nothing declared.
+        The checks run one after another, and must. Running them together was
+        tried, on the reasoning that a check is one command judged by its exit
+        code and so reads the tree and writes only its own log. That reasoning
+        does not survive reading the checks this repository actually declares:
+        `mechanical-gates` runs `make doc DOC={proper}` and `make doc
+        DOC={proper}-synthesis`, two `make` invocations into one
+        `build/{provider}/` tree with no lock between them, and
+        `publication-gates` includes `make check-web-editions-current`, which
+        begins by removing a fixed directory that its twenty siblings would
+        then be racing. The timeout is the other half of it: 300s is a
+        wall-clock budget, and a check that fits alone can miss it while
+        twenty siblings share the machine, surfacing as a blocking finding
+        rather than as the scheduling problem it is.
         """
         checks = stage.get("checks", [])
         # A gate command names the run's arguments and, under the reserved
@@ -2828,16 +2826,14 @@ class WorkflowEngine:
         stage_iter = _current_packet(state, stage["id"])["iteration"]
         log_dir = self.run_dir(run_id) / "gate-logs"
 
-        # Arguments are shell-quoted: a document id is data, never a place to
-        # continue the command from.
-        commands = [
-            _substitute_args(check["command"], args, quote=True) for check in checks
-        ]
-
-        def execute(command: str):
-            """Run one check, or return the exception that stopped it."""
+        for check in checks:
+            check_id = check["id"]
+            command_template = check["command"]
+            # Arguments are shell-quoted: a document id is data, never a place
+            # to continue the command from.
+            command = _substitute_args(command_template, args, quote=True)
             try:
-                return subprocess.run(
+                proc = subprocess.run(
                     command,
                     shell=True,
                     capture_output=True,
@@ -2845,25 +2841,6 @@ class WorkflowEngine:
                     cwd=self.repo_root,
                     timeout=300,
                 )
-            except (subprocess.TimeoutExpired, OSError) as error:
-                return error
-
-        if len(commands) > 1:
-            # Imported here: `concurrent.futures` pulls `logging`, and every `tpt`
-            # invocation would otherwise pay for it to reach a tool.
-            from concurrent.futures import ThreadPoolExecutor  # noqa: PLC0415
-
-            with ThreadPoolExecutor(max_workers=len(commands)) as pool:
-                outcomes = list(pool.map(execute, commands))
-        else:
-            outcomes = [execute(command) for command in commands]
-
-        for check, command, outcome in zip(checks, commands, outcomes):
-            check_id = check["id"]
-            try:
-                if isinstance(outcome, BaseException):
-                    raise outcome
-                proc = outcome
                 log_dir.mkdir(parents=True, exist_ok=True)
                 (log_dir / f"{stage['id']}-{stage_iter:04d}-{check_id}.log"
                  ).write_text(

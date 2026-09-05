@@ -69,6 +69,7 @@ import argparse
 import importlib.machinery
 import importlib.util
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -77,11 +78,13 @@ from pathlib import Path
 from typing import Any, Iterable
 
 ROOT = Path(__file__).resolve().parents[1]
+# Below this the derivation is cheap and the tree is a sandbox, not the corpus.
+CORPUS_CACHE_FLOOR = 1000
 # Shared CLI helpers live outside tools/ so that tmt's registry scan, which
 # requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from _tooling import cached_json, tree_fingerprint  # noqa: E402
+from _tooling import cached_json, code_fingerprint, tree_fingerprint  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
     examples_live_on_the_verbs,
@@ -427,12 +430,19 @@ def corpus(library) -> list[dict]:
     Basil filed under its container would be published with Philip Schaff's name
     on it.
     """
-    fingerprint, _counted = tree_fingerprint(
+    if os.environ.get("TRIPTYCH_CORPUS_CACHE") == "0":
+        return _corpus(library)
+    fingerprint, counted = tree_fingerprint(
         [path for path in (library.source_root, *library.publication_roots)
          if path.is_dir()]
     )
+    if counted < CORPUS_CACHE_FLOOR:
+        # A sandbox library is a handful of files; caching it would leave an
+        # entry in the real repository's build/ that nothing reads again.
+        return _corpus(library)
     return cached_json(
-        ROOT / "build" / "source-reader-corpus", fingerprint,
+        ROOT / "build" / "source-reader-corpus",
+        f"{fingerprint}-{code_fingerprint(__file__)}",
         lambda: _corpus(library),
     )
 

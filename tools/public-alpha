@@ -1317,7 +1317,18 @@ def validate_liturgical_public_data(path: Path) -> None:
     # alternation, asked of every string --- can be skipped entirely. Where a
     # file does carry one, nothing is skipped and the regex still names the
     # exact identity and location, which is what the error has to say.
-    file_carries_identity = bool(present(text, protected_ids, protected_markers))
+    #
+    # Scanned over the DECODED payload, never over the file's raw text. The
+    # walk below sees decoded string values, so `"artifact\u002eprobe"` reaches
+    # it as `artifact.probe` while the raw bytes hold no such substring; a
+    # pre-filter reading the raw text would answer "no identity here" and skip
+    # the whole file, which is a rights gate passing what it could not see.
+    # `ensure_ascii=False` keeps the decoded characters, and no character an
+    # identity is made of is one JSON escapes, so an identity in any string
+    # appears literally here.
+    file_carries_identity = bool(
+        present(json.dumps(payload, ensure_ascii=False), protected_ids, protected_markers)
+    )
 
     def visit(value: object, location: str = "$") -> None:
         if isinstance(value, list):
