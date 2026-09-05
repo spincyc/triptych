@@ -1,0 +1,73 @@
+#!/bin/sh
+# Test for `tools/tpt audit-latin-body-substitutions`: exit 0 = pass (the stable gate).
+set -eu
+
+repo="$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)"
+tool="$repo/tools/tpt"
+tool_id="audit-latin-body-substitutions"
+
+# The summary is written to stderr, not stdout: this tool reports rather than
+# emitting data, so its line is diagnostic. Captured accordingly.
+run_tool() {
+	"$tool" "$tool_id" "$@" 2>&1
+}
+
+run_tool --help >/dev/null
+
+# The tool reports and never edits: `mutates: false` in the registry is a
+# promise about the tree, so the gate holds it to that rather than to its word.
+before="$(cd "$repo" && git status --porcelain)"
+summary="$(run_tool)"
+after="$(cd "$repo" && git status --porcelain)"
+if [ "$before" != "$after" ]; then
+	echo "the audit changed the working tree; it is declared read-only" >&2
+	exit 1
+fi
+
+# The summary is the tool's whole contract: four counts, in one line.
+case "$summary" in
+*" bodies, "*" distinct tokens, "*" known forms, "*" to read on a page image")
+	;;
+*)
+	echo "unexpected summary line: $summary" >&2
+	exit 1
+	;;
+esac
+
+# The 1962 calendar carries the Latin bodies, so the audit has something to
+# read there. A zero-body answer would mean it stopped finding the corpus.
+bodies="$(printf '%s\n' "$summary" | sed 's/ bodies,.*//')"
+if [ "$bodies" -le 0 ]; then
+	echo "the 1962 audit found no bodies at all: $summary" >&2
+	exit 1
+fi
+
+# Deterministic: the same corpus answers the same way twice. The report is
+# built from a token frequency table, and an unstable one would put a different
+# set of candidates in front of a reader each run.
+if [ "$summary" != "$(run_tool)" ]; then
+	echo "two runs over an unchanged corpus disagreed" >&2
+	exit 1
+fi
+
+# Every calendar it accepts answers, including the ones that record no Latin
+# body at all. Those must say so with counts rather than fail.
+for calendar in postconciliar roman-pre-1955; do
+	line="$(run_tool --calendar "$calendar")"
+	case "$line" in
+	*" bodies, "*" distinct tokens, "*" known forms, "*" to read on a page image")
+		;;
+	*)
+		echo "$calendar: unexpected summary line: $line" >&2
+		exit 1
+		;;
+	esac
+done
+
+# A calendar that does not exist is refused, rather than reported as empty.
+# An audit that answers "0 bodies" for a misspelled calendar is an audit whose
+# clean result means nothing.
+if run_tool --calendar no-such-calendar >/dev/null 2>&1; then
+	echo "an unknown calendar was accepted" >&2
+	exit 1
+fi

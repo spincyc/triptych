@@ -43,6 +43,15 @@ EXAMPLES = {
                 "0 to read on a page image",
             ),
         ),
+        Example(
+            "tools/audit-latin-body-substitutions --calendar postconciliar",
+            (
+                "0 bodies, 0 distinct tokens, 0 known forms, "
+                "0 to read on a page image",
+            ),
+            "the second calendar, and the answer a calendar that records no "
+            "Latin body gives: nothing to read rather than nothing to say",
+        ),
     ),
 }
 
