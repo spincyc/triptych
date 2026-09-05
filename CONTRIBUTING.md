@@ -22,6 +22,10 @@ Name the document and page or section if you can, but a high-level concern is en
 Git keeps the project’s files and history. An AI coding agent can edit, check, and rebuild them.
 
 1. Clone the repository using the address shown by its hosting site. If you already have a copy, update it and begin from a clean `main`.
+   The project keeps a large illustrated corpus, so a plain clone fetches every
+   branch. Adding `--single-branch` fetches only `main` and is about 37 MB
+   smaller; nothing in an ordinary contribution needs the other branches, and
+   `git remote set-branches origin '*'` restores them if you later do.
 2. From the repository’s top-level folder, start Codex directly. The current checkout is the ordinary workspace; do not create, move, delete, or administer worktrees yourself.
 3. Give the agent an ordinary request, including any sources, concerns, emphases, or limits that matter.
    The agent must first read `PROJECT-WORK.md` and

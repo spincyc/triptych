@@ -571,6 +571,23 @@ Conditional authorization records its effective instant, timezone, duration, exc
 
 ## Version control and authority
 
+**Do not repack this repository with Git's defaults.** The pack was built by an
+aggressive repack and is held together by long delta chains; a plain
+`git repack -adf` recomputes them at the default window and depth and makes the
+pack *larger* — measured on 2026-09-05 at 399.78 MiB before and 413.49 MiB
+after, a 3.4% loss. Nothing in the repository records this, because pack
+settings live in `.git/config` and are not tracked, so the trap is invisible
+until it is sprung. Use `git gc --aggressive`, or pass `--window=250
+--depth=250`, and leave a repository alone that does not need one.
+
+The reason is structural rather than incidental: 72% of the pack is PNG, JPG
+and PDF, which zlib already compressed and which deltify only against earlier
+revisions of the same file. Tuning cannot recover it either — the best of eight
+measured configurations beat the current pack by 1.96 MiB, and marking those
+extensions `-delta` in `.gitattributes`, which looks like a free saving, costs
+**35 MiB** because 64 PNGs and 117 PDFs do get useful delta bases. The `binary`
+attributes already recorded there are correct and do not imply `-delta`.
+
 Preserve unrelated changes and stage only a coherent requested result.
 Editing, building, installing, committing, updating another local target,
 pushing another ref, and deploying outside the
