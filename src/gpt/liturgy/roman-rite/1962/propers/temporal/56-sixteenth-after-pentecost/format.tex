@@ -1,0 +1,26 @@
+\DeclareUnicodeCharacter{01FD}{\'{\ae}}
+\DeclareUnicodeCharacter{2123}{V\kern-0.62em\raisebox{0.12ex}{\scriptsize/}\kern0.28em}
+\DeclareUnicodeCharacter{2720}{\ensuremath{\boldsymbol{+}}}
+\newcommand{\chronodate}[2]{#2}
+\ifdefined\TriptychPrintEdition
+\newenvironment{dossiertable}
+{\footnotesize\renewcommand{\arraystretch}{1.02}\setlength{\LTpre}{0.15em}\setlength{\LTpost}{0pt}%
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.11\linewidth}>{\raggedright\arraybackslash}p{0.14\linewidth}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.40\linewidth}@{}}
+\toprule\textbf{Proper} & \textbf{Citation} & \textbf{Location} & \textbf{Date}\\\midrule\endhead}
+{\bottomrule\end{longtable}}
+\newcommand{\dossierentry}[6]{#1#2 & #3 & #4 & #5\\\cmidrule(lr){1-4}\multicolumn{4}{@{}>{\raggedright\arraybackslash}p{0.94\linewidth}@{}}{#6}\\[0.1em]}
+\newcommand{\dossierevententry}[7]{#1#2 & #3 & #4 & #5\\\cmidrule(lr){1-4}\multicolumn{4}{@{}>{\raggedright\arraybackslash}p{0.94\linewidth}@{}}{\textit{#6}}\\\cmidrule(lr){1-4}\multicolumn{4}{@{}>{\raggedright\arraybackslash}p{0.94\linewidth}@{}}{#7}\\[0.1em]}
+\newcommand{\dossierseparator}{\midrule}
+\else
+\newenvironment{dossiertable}{}{}
+\newcommand{\dossierentry}[6]{\subsection*{#1}#2\textbf{Citation:} #3\par\textbf{Location:} #4\par\textbf{Date:} #5\par #6\par}
+\newcommand{\dossierevententry}[7]{\subsection*{#1}#2\textbf{Citation:} #3\par\textbf{Location:} #4\par\textbf{Date:} #5\par\textit{#6}\par #7\par}
+\newcommand{\dossierseparator}{}
+\fi
+\newcommand{\fulltextheading}[1]{\Needspace{7\baselineskip}\subsection*{#1}}
+\newcommand{\fulltextelement}[1]{\begin{massbox}{#1}\itshape}
+\newcommand{\finishfulltextelement}{\end{massbox}}
+\newenvironment{fulltextenglish}[1]{\begin{massbox}{#1}}{\end{massbox}}
+\newcommand{\sourcecite}[1]{\textnormal{(#1)}}
+\newenvironment{proposal}[1]{\Needspace{9\baselineskip}\subsection*{#1}}{\par}
+\newcommand{\pfield}[1]{\par\textbf{#1.} }

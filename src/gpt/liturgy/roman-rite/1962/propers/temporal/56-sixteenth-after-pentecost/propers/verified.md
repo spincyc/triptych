@@ -296,3 +296,38 @@ missal for orations, and no newly authored translation. No `main.tex` or
 reader-facing English existed at this stage, so this records the verified
 source controls for later authoring rather than a check of an already
 rendered guide.
+
+
+## Authoring reuse audit — 2026-09-05
+
+The canonical guide now sets all ten accepted Latin blocks. A whitespace-only
+comparison of `sections/05-appointed-text.tex` with this record's ten numbered
+transcriptions found exact agreement, including the abbreviated conclusions,
+Gloria Patri, Creed and Trinity-Preface pointers. No additional facsimile
+inspection or new source collation is claimed by this authoring pass.
+
+The ten English blocks were compared programmatically with the registered
+Challoner verse TSVs and Cummiskey temporal-orations TSV. They match the
+source-audit selections without wording changes: the Introit excludes the
+Psalm 85 title, the Alleluia quotes Psalm 97's opening sentence without its
+title, and the Offertory and Communion quote their full biblical comparison
+verses, explicitly distinguished from the shorter Latin chants. The Gospel
+and Epistle preserve the registered biblical openings. Cummiskey's three
+orations use the `post-pentecosten-16` addressing key and retain `Thro’.`.
+
+The full edition and derived synthesis edition share the map, chronology,
+two-page themes, five source-grounded conclusions, five audited cultural
+entries, six audited proposals, qualifications and references. The full
+appointed-text input and element-by-element commentary reach the canonical
+guide; the synthesis branch gives the corresponding integrated commentary.
+Source qualifications, including the abridged NPNF psalm witness, the son/ox
+variant, the 1909 Liturgical Year continuation identity and the bounded
+precedent results, remain visible where the claims are restated.
+
+All source bindings name existing library records. The appointed English
+witnesses have `translation-control` roles; other bound receptions are
+paraphrased or supply the explicitly identified brief critical quotations.
+Chronology sources used only through the immutable corpus projection remain
+at catalogue strength. Inspected-source fingerprints were obtained from
+`tools/source-library fingerprint`; authoring adds no source registrations.
+The research brief and chronology assertion record were not changed.

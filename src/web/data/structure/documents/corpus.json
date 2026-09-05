@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from each document's own sources and from the PDF it builds. Titles are evaluated out of the preamble and confirmed against the built PDF; a document whose sources state no title is carried with the reason in place of one and is never given an invented name. Production provenance is what each document records about itself, field by field, omitting any field its record says was not recoverable; comparing it against the workflows declared below is a finding aid and never an authority, and nothing in this repository gates on it.",
  "counted": {
-  "documents": 189,
-  "issues": 206,
+  "documents": 190,
+  "issues": 208,
   "pages": 6056,
   "titles_unrecorded": 0,
-  "works": 139
+  "works": 140
  },
  "models": [
   {
@@ -23,6 +23,10 @@
   {
    "documents": 27,
    "id": "claude-fable-5"
+  },
+  {
+   "documents": 1,
+   "id": "GPT-6-based Codex agent"
   }
  ],
  "providers": [
@@ -32,7 +36,7 @@
    "label": "Claude"
   },
   {
-   "documents": 139,
+   "documents": 140,
    "id": "gpt",
    "label": "GPT"
   }
@@ -61,7 +65,7 @@
   },
   {
    "id": "liturgy",
-   "works": 47
+   "works": 48
   },
   {
    "id": "theology",
@@ -5698,6 +5702,55 @@
     }
    ],
    "leaf": "liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost",
+   "section": "liturgy"
+  },
+  {
+   "catalog": null,
+   "catalog_page": null,
+   "editions": [
+    {
+     "also": [
+      {
+       "kind": "synthesis",
+       "pages": null,
+       "pdf": null,
+       "pdf_absent": "no PDF is installed for this issue",
+       "subject": "Grace, humility, charity and lifelong divine help in the 1962 Roman Missal propers",
+       "title": "Sixteenth Sunday after Pentecost (Synthesis Edition)"
+      }
+     ],
+     "authorization": null,
+     "contributions": [
+      {
+       "model": "GPT-6-based Codex agent",
+       "qualifiers": "effort=xhigh; unexposed: exact model identifier and other model qualifiers",
+       "runtime": "OpenAI Codex API workspace; canonical and synthesis authoring from the proper version 25 research brief, source-binding maintenance and focused validation; unexposed: client version and server revision"
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "GPT-6-based Codex agent"
+     ],
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
+     "produced": {
+      "run_id": "8c6ccce8314da5fa",
+      "seed_commit": "b66eb4b44d8e76801a86275b19c3a2e45713b4ab",
+      "workflow_digest": "ad4a5ea8193bdaf4b5f7a3f261fd5377fd49208f49b709cd794aeb635d20cd46",
+      "workflow_id": "proper",
+      "workflow_version": "25"
+     },
+     "provider": "gpt",
+     "reviewed": "2026-09-05",
+     "revised": "2026-09-05T18:12:33Z",
+     "status": null,
+     "subject": "The complete appointed texts and commentary on the Sixteenth Sunday after Pentecost in the 1962 Roman Missal",
+     "title": "Sixteenth Sunday after Pentecost (Full Edition)",
+     "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/main.tex"
+    }
+   ],
+   "leaf": "liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost",
    "section": "liturgy"
   },
   {

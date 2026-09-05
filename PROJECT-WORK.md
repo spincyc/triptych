@@ -31,10 +31,7 @@ passed. A successful `make -j4 install-all` restored the existing installed
 PDF tree required by checks in a fresh clone. The broader promised-deliverable
 check now passes. Regenerating the document catalogue reconciled two rebuilt
 page counts and the Claude Fourteenth Sunday after Pentecost PDFs previously
-marked absent. `make check-sources` now passes those catalogue checks and
-reaches the publication source inventory: the target's new source-bearing
-files need inventory entries, and two pre-existing shared-source fingerprints
-are stale (the GPT altar-server format and sanctuary artwork manifest).
+marked absent.
 
 The seven research lanes completed their sweeps, and the engine accepted their
 108 joined findings in declared lane order. Research synthesis passed and
@@ -46,17 +43,30 @@ distinct artifacts, with 60 new records, 11 already held, and one additional
 government-page derivative. The 38 retained payloads total 96,539,390 bytes;
 protected witnesses retain their identities and rights records without their
 payloads. The source-reader projection is current. The source-family catalogue
-checkpoint was reconciled while preserving all 150 pending review units.
+checkpoint was reconciled while preserving all prior pending review units.
 
-The full source check has **not** passed. Its remaining inventory failures
-concern four target audit files and the two inherited fingerprints above.
-The inventory generator refuses this pre-authoring leaf because it has no
-`main.tex` publication owner yet; no placeholder owner or checker change was
-introduced. Inventory integration awaits the real owner from authoring.
+The authored leaf now has the real `main.tex` owner, the full and synthesis
+branches, all ten received text pairs, the component manifest and 54 source
+bindings. The authoring reuse audit records exact Latin and English agreement
+with the accepted controls. The current builds contain 20 full-edition pages
+and 14 synthesis-edition pages. The prescribed authoring stage passed, including
+focused preflight, run provenance, component pagination and web eligibility.
+The workflow's program content-preflight gate passed, and its five content
+evaluation lanes are running at the prescribed maximum reasoning effort.
 
-Authoring is in progress. Evaluation, both reviewed PDFs, the canonical web
-edition and release records remain outstanding. No guide has been installed or
-accepted. Reconcile this entry to the engine's terminal
+The full `make check-sources` check now **passes**. The documented inventory
+refresh added the target's actual source surface and reconciled the two
+inherited stale hashes for the GPT altar-server format and sanctuary artwork
+manifest. An actual source-record review classified the new publication's
+eleven broad source strata. The inventory covers 140 GPT publications and
+2,117 source-surface files; the family ledger retains 151 explicitly pending
+review units, without claiming family screening or atomic citation coverage.
+The generated document catalogue now records both new editions as not
+installed. No placeholder publication owner or checker change was needed.
+
+Content evaluation remains outstanding, together with both reviewed PDFs, the
+canonical web edition and release records remain outstanding. No guide has
+been installed or accepted. Reconcile this entry to the engine's terminal
 disposition and preserve any unresolved findings before reporting the
 workflow finished; a `BLOCKED` run does not establish publication acceptance.
 

@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-09-05"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:121f42757ee1efb3812062e117881b572a875217b331402433861f416dedd0f4"
+inventory_snapshot = "sha256:4b7cbbbeda100033a135395ec25346b24de347c288a6e1785d2bdc711cc06786"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
-classification_snapshot = "sha256:8f03f110c31160d5fc82f0e03f1e6aef6e22128b9065953ea9f837042ce3134c"
+classification_snapshot = "sha256:21048643572a8265f73030712d09ba70de87a8cda712ddf5318caf62c3464801"
 canonical_catalog_snapshot = "sha256:a619d6d697b3b378afef71dee5896bed9e9a49f5493a2113299496b822759ef5"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:c2c731f96f9e977ea44c86fe74411bec2164897da21fdce33b2bb53a5306c5d5"
+snapshot = "sha256:131225bc1bb0b72682fd0d5fe0d1c950aca8e56d022ada40107ce38ea101e631"
 families = []
 
 [[review_units]]
@@ -477,6 +477,11 @@ surface_snapshot = "sha256:aab1e419161fd0a972915f112b61aba5a0609be5c81f17ccd7fb0
 review_state = "pending"
 
 [[review_units]]
+owner_id = "liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost"
+surface_snapshot = "sha256:73e1ce6bf6039669a9f7c8912b28101bd6440ae324517970765ab87798b9567b"
+review_state = "pending"
+
+[[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"
 surface_snapshot = "sha256:9ec0f48e2abd49a11820dc231a3d71f1d83da915221cf98d8c9c38d1245c8fad"
 review_state = "pending"
@@ -658,12 +663,12 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.1962.altar-server-guides"
-surface_snapshot = "sha256:ad3638e19f00dd15ddcbb43c0fc5f840191a2fac40fd1115d662c8be45e53cf7"
+surface_snapshot = "sha256:520c6a65a764409683aec319a2acc24cb5f673292fced7173210a56f9ef4c49d"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"
-surface_snapshot = "sha256:b48568a904927c9847286f4c2e4e06ffab01eb8a18de3b8ba4e91c0502ed31fc"
+surface_snapshot = "sha256:cec0f2cb5aec1c03a05769ae08b7b0b171d6452b04e7fed9fb2360dcdcbcc9ee"
 review_state = "pending"
 
 [[review_units]]
