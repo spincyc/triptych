@@ -51,20 +51,27 @@ bindings. The authoring reuse audit records exact Latin and English agreement
 with the accepted controls. The current builds contain 20 full-edition pages
 and 14 synthesis-edition pages. The prescribed authoring stage passed, including
 focused preflight, run provenance, component pagination and web eligibility.
-The workflow's program content-preflight gate passed, and its five content
-evaluation lanes are running at the prescribed maximum reasoning effort.
+The workflow's program content-preflight gate passed. Its first content
+evaluation joined all five lane results and required changes. The engine's
+standing findings are `CON-EVI-001`, `CON-SYN-001`, `CON-CIT-001a`,
+`CON-CIT-001b`, `CON-CIT-002a` and `CON-CIT-002b`. It routed the two
+research-owned citation findings to research iteration 1 and carried the four
+authoring findings forward. The complete findings are preserved unchanged in
+the leaf's engine-written `evaluations/blocking-findings-v1.toml`. All seven
+fresh research lanes are repeating their full prescribed sweeps at the
+packet-specified efforts.
 
 The full `make check-sources` check now **passes**. The documented inventory
 refresh added the target's actual source surface and reconciled the two
 inherited stale hashes for the GPT altar-server format and sanctuary artwork
 manifest. An actual source-record review classified the new publication's
 eleven broad source strata. The inventory covers 140 GPT publications and
-2,117 source-surface files; the family ledger retains 151 explicitly pending
+2,118 source-surface files; the family ledger retains 151 explicitly pending
 review units, without claiming family screening or atomic citation coverage.
 The generated document catalogue now records both new editions as not
 installed. No placeholder publication owner or checker change was needed.
 
-Content evaluation remains outstanding, together with both reviewed PDFs, the
+Passing content evaluation remains outstanding, together with both reviewed PDFs, the
 canonical web edition and release records remain outstanding. No guide has
 been installed or accepted. Reconcile this entry to the engine's terminal
 disposition and preserve any unresolved findings before reporting the

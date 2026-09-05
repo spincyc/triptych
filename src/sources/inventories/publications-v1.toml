@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-09-05"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 140
-source_surface_file_count = 2117
-snapshot = "sha256:4b7cbbbeda100033a135395ec25346b24de347c288a6e1785d2bdc711cc06786"
+source_surface_file_count = 2118
+snapshot = "sha256:7a06a2304d28181b35ee1c0d0a909854c625faa6d43eddf4ca2f471cc9aee758"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -9320,6 +9320,12 @@ path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pent
 sha256 = "bddef0660961a8fd8ba25cdc1a8167e6d529ccc1ad652153b3c2420eae95c17b"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/evaluations/blocking-findings-v1.toml"
+sha256 = "9ea6106385c419a3b69c08aeaaee1c048efced2925c776fcb31072bf1796c51d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/format.tex"
