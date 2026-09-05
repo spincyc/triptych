@@ -72,9 +72,15 @@ The corrected printing and attribution metadata were reviewed in six consumer
 bindings across four publications, preserving their evidence states and prior
 verification dates. Both publication inventories, the family ledger and the
 source-reader projection were refreshed; source-library validation and the
-full source check passed. Authoring iteration 1 is addressing the four carried
-leaf findings. The standing findings remain open until the workflow's
-subsequent evaluation accepts their repairs.
+full source check passed. Authoring iteration 1 passed after repairing the
+four carried leaf findings: the collated Latin accents, the two synthesis
+arguments and the Gerard and Anthony citations. Both builds retain 20 and
+14 pages and the required opening pagination; the author reviewed the rendered
+pages, and focused content, chronology, provenance, source and web checks
+passed. The workflow's program content-preflight gate passed, and all five
+fresh content-evaluation lanes are reviewing iteration 1 at the prescribed
+max effort. The standing findings remain open until that evaluation accepts
+their repairs.
 
 The full `make check-sources` check now **passes**. The documented inventory
 refresh added the target's actual source surface and reconciled the two
