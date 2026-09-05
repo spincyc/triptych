@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "claude"
-audited_on = "2026-09-04"
+audited_on = "2026-09-05"
 discovery_rule = "src/claude/**/main.tex"
 publication_count = 50
 source_surface_file_count = 1080
-snapshot = "sha256:d6f9ff25dd8a6fc677b3c16d51770c0b0372a47f570269660465eebd06989d6e"
+snapshot = "sha256:f84add10714e6f1e0d872ae901b1c8150069d66e507d6c46c35ab1d2c4c684fa"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -4898,7 +4898,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecos
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost/research/source-bindings.toml"
-sha256 = "9ec37d35088949488072cc4ecfb5f217ccff3a3304316ce4b2567e310e762ba4"
+sha256 = "58622c2a9ed04bb118285b75135fdd7eb22ec5496b18e883b631c26dc15bb518"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost"]
 

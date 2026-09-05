@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 2211,
-  "editions": 761,
+  "artifacts": 2218,
+  "editions": 763,
   "passages": 5127,
   "readable": 3034,
-  "works": 564
+  "works": 566
  },
  "facets": {
   "authors": [
@@ -172,6 +172,10 @@
    {
     "id": "Basil of Caesarea",
     "works": 2
+   },
+   {
+    "id": "Basilica of Saint Anthony of Padua; PISAPFMC",
+    "works": 1
    },
    {
     "id": "Bede",
@@ -678,6 +682,10 @@
     "works": 1
    },
    {
+    "id": "Jon Edward Bullock",
+    "works": 1
+   },
+   {
     "id": "Jose Alves Correia da Silva, Bishop of Leiria",
     "works": 1
    },
@@ -982,7 +990,7 @@
     "works": 1
    },
    {
-    "id": "Prosper Guéranger",
+    "id": "Prosper Guéranger and continuators",
     "works": 1
    },
    {
@@ -1596,6 +1604,10 @@
     "works": 2
    },
    {
+    "id": "web-index",
+    "works": 2
+   },
+   {
     "id": "academic-course-notes",
     "works": 1
    },
@@ -2012,6 +2024,10 @@
     "works": 1
    },
    {
+    "id": "masters-thesis",
+    "works": 1
+   },
+   {
     "id": "material-culture-study",
     "works": 1
    },
@@ -2386,15 +2402,11 @@
    {
     "id": "treaty-status-table",
     "works": 1
-   },
-   {
-    "id": "web-index",
-    "works": 1
    }
   ],
   "languages": [
    {
-    "editions": 383,
+    "editions": 385,
     "id": "en"
    },
    {
@@ -2530,25 +2542,25 @@
     "label": "20th century"
    },
    {
-    "editions": 414,
+    "editions": 416,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 1282,
+    "artifacts": 1283,
     "editions": 211,
     "id": "public-domain"
    },
    {
-    "artifacts": 677,
-    "editions": 337,
+    "artifacts": 679,
+    "editions": 338,
     "id": "restricted"
    },
    {
-    "artifacts": 119,
-    "editions": 63,
+    "artifacts": 123,
+    "editions": 64,
     "id": "unresolved"
    },
    {
@@ -4911,6 +4923,35 @@
     "grc"
    ],
    "title": "Homiliae in Hexaemeron"
+  },
+  {
+   "alternate_titles": [
+    "Saint Anthony sermon index",
+    "Sermoni Domenicali index"
+   ],
+   "author": "Basilica of Saint Anthony of Padua; PISAPFMC",
+   "category": "web-index",
+   "directory": "editions/basilica-of-saint-anthony/sermons-index/",
+   "editions": [
+    {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-english-interface-web-2026-09-05.json",
+     "id": "edition.basilica-of-saint-anthony.sermons-index.english-interface-web-2026-09-05",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "unresolved"
+     ],
+     "title": "Sermons of Saint Anthony — English-interface index web state",
+     "year": 2026
+    }
+   ],
+   "id": "work.basilica-of-saint-anthony.sermons-index",
+   "languages": [
+    "en"
+   ],
+   "title": "Sermons of Saint Anthony"
   },
   {
    "alternate_titles": [
@@ -12325,6 +12366,35 @@
   },
   {
    "alternate_titles": [
+    "Music Censorship in Free Will Baptist Colleges",
+    "Liberty University Masters Theses 370"
+   ],
+   "author": "Jon Edward Bullock",
+   "category": "masters-thesis",
+   "directory": "editions/jon-edward-bullock/sing-unto-the-lord-a-new-song-just-not-that-one/",
+   "editions": [
+    {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-repository-web-2026-09-05.json",
+     "id": "edition.jon-edward-bullock.sing-unto-the-lord-a-new-song-just-not-that-one.repository-web-2026-09-05",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Masters Theses 370 — repository record and abstract",
+     "year": 2026
+    }
+   ],
+   "id": "work.jon-edward-bullock.sing-unto-the-lord-a-new-song-just-not-that-one",
+   "languages": [
+    "en"
+   ],
+   "title": "'Sing unto the Lord a New Song--Just Not That One!' A Case Study of Music Censorship in Free Will Baptist Colleges"
+  },
+  {
+   "alternate_titles": [
     "A Divina Providencia (pastoral letter of 13 October 1930)"
    ],
    "author": "Jose Alves Correia da Silva, Bishop of Leiria",
@@ -16297,13 +16367,13 @@
    "alternate_titles": [
     "L'Année liturgique"
    ],
-   "author": "Prosper Guéranger",
+   "author": "Prosper Guéranger and continuators",
    "category": "liturgical-commentary",
    "directory": "editions/prosper-gueranger/the-liturgical-year/",
    "editions": [
     {
-     "date": "1900",
-     "file": "1900-english-duffy-1900-volume-11.json",
+     "date": "1909",
+     "file": "1909-english-duffy-1900-volume-11.json",
      "id": "edition.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11",
      "language": "en",
      "passages": 1,
@@ -16312,7 +16382,7 @@
       "public-domain"
      ],
      "title": "The Liturgical Year: Time after Pentecost, Volume II",
-     "year": 1900
+     "year": 1909
     }
    ],
    "id": "work.prosper-gueranger.the-liturgical-year",

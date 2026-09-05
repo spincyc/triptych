@@ -63,8 +63,18 @@ efforts. The engine joined 116 findings and accepted research synthesis
 iteration 1. The revised brief preserves that complete evidence set and all
 fourteen chronology assertions, supplies the missing Gerard and Anthony
 citation bundles, and carries all six standing findings. Source registration
-iteration 1 is in progress. The standing findings remain open until the
-workflow's subsequent evaluation accepts their repairs.
+iteration 1 passed: all 38 receipts resolve to registered exact responses,
+including seven new artifact identities, two new works and two new editions.
+Six new artifacts are restricted modern pages; the new New Advent response
+points to the complete article already retained. The authenticated 1909
+Guéranger volume is now retained in full, with its original artifact identity.
+The corrected printing and attribution metadata were reviewed in six consumer
+bindings across four publications, preserving their evidence states and prior
+verification dates. Both publication inventories, the family ledger and the
+source-reader projection were refreshed; source-library validation and the
+full source check passed. Authoring iteration 1 is addressing the four carried
+leaf findings. The standing findings remain open until the workflow's
+subsequent evaluation accepts their repairs.
 
 The full `make check-sources` check now **passes**. The documented inventory
 refresh added the target's actual source surface and reconciled the two

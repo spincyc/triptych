@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-09-05"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:7a06a2304d28181b35ee1c0d0a909854c625faa6d43eddf4ca2f471cc9aee758"
+inventory_snapshot = "sha256:8a0f10ff83936d49aa3b510a325377c9fb403c595fdbcd09f67c45245da8770c"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:21048643572a8265f73030712d09ba70de87a8cda712ddf5318caf62c3464801"
-canonical_catalog_snapshot = "sha256:a619d6d697b3b378afef71dee5896bed9e9a49f5493a2113299496b822759ef5"
+canonical_catalog_snapshot = "sha256:2caa97e0847e9635413d2b14080ada52b61b8c232d5d25c7e2c34b421e36998a"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:c476f2b318733fbf775530041a3104e8424adf715765c64a86cd5dc45182a11e"
+snapshot = "sha256:1a7a138ef8cc47a75a254c141dfcc869d484c144c985098e59ccffa0c44b34f2"
 families = []
 
 [[review_units]]
@@ -448,7 +448,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost"
-surface_snapshot = "sha256:5cec4879d0fce1b4b1c68ce58328c6b84c96ec7c9f52728521196f8fafe7e514"
+surface_snapshot = "sha256:1790446f847cccfa147b3f4af50aa8f2efa5740c16cabe4f6557f08326eff5b9"
 review_state = "pending"
 
 [[review_units]]
@@ -463,7 +463,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost"
-surface_snapshot = "sha256:a7d23bf14aa9024c72d44a77f9ec58131e833593facc51e88dd740806d045561"
+surface_snapshot = "sha256:d49854ec52dfb245bf1b7cb04115c0a0029c2596082447d63af56900c9f5fe21"
 review_state = "pending"
 
 [[review_units]]
@@ -478,7 +478,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost"
-surface_snapshot = "sha256:32e741a84408ad29a1690236b398e395b5a750987841ccee797c40ff08afcf5f"
+surface_snapshot = "sha256:1effc0ae3fed631e9685c3aaa20698f503e9d02c625204512508711a52deb49b"
 review_state = "pending"
 
 [[review_units]]
