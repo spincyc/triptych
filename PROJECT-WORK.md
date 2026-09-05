@@ -5,7 +5,29 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-09-04.
+Last reconciled: 2026-09-05.
+
+## GPT Sixteenth Sunday after Pentecost workflow, 2026-09-05
+
+<!-- promised-deliverable: gpt-sixteenth-after-pentecost-workflow-2026-09-05 -->
+
+The maintainer requested execution of the prescribed `proper` v25 workflow
+for provider `gpt`, identity
+`liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost`,
+through its `ACCEPTED` or `BLOCKED` disposition. The workflow's own packets
+govern stage order, worker count, reasoning effort, findings and acceptance.
+This request opens this provider and identity alone; the dated authorization
+is recorded in `guidance/liturgy/propers-production-plan.md`.
+
+**In progress.** The registered-identity, provider and scope checks passed.
+The target had no publication leaf when work began. Its appointed formulary
+is `pentecost-16`; the generated and checked chronology record is now at
+`src/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/research/chronology.toml`.
+Source collation, research, authoring, evaluation, both reviewed PDFs, the
+canonical web edition and release records remain outstanding. No guide has
+been installed or accepted. Reconcile this entry to the engine's terminal
+disposition and preserve any unresolved findings before reporting the
+workflow finished; a `BLOCKED` run does not establish publication acceptance.
 
 ## The 1962 Latin backfill, 2026-09-03/04
 

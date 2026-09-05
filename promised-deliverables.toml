@@ -1,6 +1,30 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gpt-sixteenth-after-pentecost-workflow-2026-09-05"
+owner = "PROJECT-WORK.md"
+promise = "Execute the prescribed proper v25 workflow for the GPT Sixteenth Sunday after Pentecost through ACCEPTED or BLOCKED, preserving its completed work and accurately recording the publication disposition and unresolved findings."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "exact-production-target"
+  criterion = "The production plan records authorization for exactly provider gpt and identity liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost, and the workflow scope gate passes."
+  status = "pass"
+  evidence = ["guidance/liturgy/propers-production-plan.md", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "prescribed-terminal-disposition"
+  criterion = "The workflow reaches ACCEPTED or BLOCKED by executing its emitted packets and gates, with the resulting disposition preserved in the owning tracked record."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "publication-and-findings-reconciled"
+  criterion = "The owning tracked record accurately identifies the completed artifacts, actual publication state, validation and any unresolved findings; BLOCKED is never represented as publication acceptance."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "gpt-mary-new-ark-journey-2026-08-15"
 owner = "src/gpt/theology/mariology/ark-of-the-covenant/research/scope.md"
 promise = "Publish a source-audited Catholic Marian study that tells the Ark's scriptural journey, presents Mary as its living New-Covenant fulfillment in Christ, synthesizes authenticated patristic and saintly reception, relates the four Marian dogmas, gives Joseph and Mary's true virginal marriage a positive and proper place in the typology, applies the requested spiritual pedagogy, and includes a source-controlled detailed graphite map and Ark/sanctuary plates in the reviewed GPT PDF and web edition."
