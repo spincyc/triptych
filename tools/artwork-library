@@ -73,10 +73,9 @@ EXAMPLES = {
         Example(
             "tools/artwork-library check src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/artwork-manifest.toml",
             (
-                "ERROR: file-epistle-book-isolated-alpha: publishing PNG must not embed a color profile",
-                "ERROR: file-gospel-book-isolated-alpha: publishing PNG must not embed a color profile",
-                "ERROR: file-prepared-chalice-formation-alpha: publishing PNG must not embed a color profile",
+                "artwork manifest valid: src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/artwork-manifest.toml",
             ),
+            "the registered corpus, conforming: three cHRM chunks were stripped on 2026-09-05",
         ),
         Example(
             "tools/artwork-library check src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/schema/artwork-manifest.example.toml",

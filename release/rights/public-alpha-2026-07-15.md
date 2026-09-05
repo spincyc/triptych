@@ -1740,7 +1740,7 @@ release attachment, announcement, or promotion.
 | `release/public-alpha/assets/social-card.png` | `d0adf2056a5aa7d6e4fd240a324d76a654a904547908f77ad9d8f7fc8abc7278` |
 | `release/public-alpha/layout.html` | `141bac1edad42e3661b823c26fda76328ce07b74ff1db6df1f53bcf581284c88` |
 | `requirements-public-alpha.txt` | `59bd4c5252324612c6ce5a27f4a4ba4e62aa4cc76bc3d974a29b45491c97c762` |
-| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/artwork-manifest.toml` | `77d170a850917063fcd3d51fea4727456497df494dedc7dd390f19972a2a7847` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/artwork-manifest.toml` | `901834175d4ee543b15248928a473b96cff89d38ed1be74ed8be9d453daff4fe` |
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-altar-appointments-0102-iso-candle-v2-alpha.png` | `973f7cc89692ff07b3dd598d5c148eadcd72a1fe2e7f7206599f6953bee3088a` |
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-altar-appointments-0102-iso-sanctuary-lamp-v2-alpha.png` | `c30ac4b8b384ff1816043b48ddaea78cfb255a3791a3b7c13c55c7ce3ba191d4` |
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/RPD-FIG-altar-appointments-0103-iso-candlestick-v2-alpha.png` | `ddac26f56dac1d02eec78c0ce7c1103dbba89586e23f93d6370e7d2dc2d06250` |
@@ -1782,9 +1782,9 @@ release attachment, announcement, or promotion.
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0005-iso-missal-stand-v2.png` | `d0888c36ce240256b191aba3d5b253675108c5ac796692505fe8cf87cbb9b497` |
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0006-epistle-book-in-use-alpha.png` | `f40216aa7bd050f5824dd6fba4228589119c511a81347020be8b2668d92fef2c` |
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0007-gospel-book-in-use-v2-alpha.png` | `790c44bcee8c62d3f2f3862d343fa21ac6ed9b7ebe5a0797163f88c39a732a1c` |
-| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0008-epistle-book-isolated-alpha.png` | `8d09ded6ba7b243ad9f0317e397e2566f85f6ab6cfe6277c198034a05138d031` |
-| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0009-gospel-book-isolated-alpha.png` | `187e32ede4ad90db6c5a26aa2f23b67a05bfb48b32576b1528cecbafcaa8f72a` |
-| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/compositions/RPD-FIG-prepared-chalice-0001-formation-alpha.png` | `618894f99e7416e208ef88d1c8a2674be343b59040c6c96ab0440e66c0ef2a16` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0008-epistle-book-isolated-alpha.png` | `307029ebfb389be111f3a836ab9f36c5a03f8b64926fa7f5ce109470c5370dbb` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/books/RPD-FIG-books-0009-gospel-book-isolated-alpha.png` | `404ee72f120839c3db1195d950846c8a9e3a23e0d06886a26f858bbfde8a100b` |
+| `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/compositions/RPD-FIG-prepared-chalice-0001-formation-alpha.png` | `ceceb665c362d4471de16e4000f6bfb7c5511347937a6a18edec8a98414724d2` |
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/compositions/RPD-FIG-sanctuary-0001-ecce-homo-chapel-rijks-graphite.png` | `d58e4ccc76d96612af6e918e89bae19c81f8143876fb7e31b181a1d5518a8fd3` |
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/furnishings/RPD-FIG-furnishings-0001-credence-table-v2-alpha.png` | `842a1bfa769aa31d530c003ba5acefed62ba6d2a43ac0e56b716a37c07184bc2` |
 | `src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/artwork/pencil/furnishings/RPD-FIG-furnishings-0001-credence-table.png` | `30d8b2595769d96149ae6d6bf737085a07e6874c9b5ed457bc075bcc3b5d30d5` |
