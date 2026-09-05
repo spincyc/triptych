@@ -27,6 +27,7 @@ import sys
 import tomllib
 
 import _calendars
+from _tooling import tree_fingerprint
 
 
 SCHEMA = "triptych-proper-latin-provenance/v1"
@@ -639,7 +640,7 @@ def _row_problems(where: str, row: Mapping[str, object]) -> list[str]:
 def read_sidecar(path: Path) -> tuple[dict[LatinKey, dict], list[str]]:
     """Read one sidecar. Invalid rows remain unusable and therefore fail closed."""
     try:
-        document = tomllib.loads(path.read_text(encoding="utf-8"))
+        document = _calendars.read_toml(path)
     except (OSError, tomllib.TOMLDecodeError) as error:
         return {}, [f"{path}: unreadable: {error}"]
     problems: list[str] = []
@@ -710,38 +711,6 @@ SOURCE_LIBRARY_CACHE_DIR = TRUSTED_REPOSITORY / "build" / "source-library-cache"
 SOURCE_LIBRARY_CACHE_FLOOR = 1000
 
 
-def _source_tree_fingerprint(root: Path) -> tuple[str, int]:
-    """Identify the source tree by every file's path, mtime and size.
-
-    Stat-only, and it costs about 50ms over 19,000 files, against the three
-    seconds the load it guards takes. It covers payload bytes as well as the
-    TOML manifests deliberately: `_validate_passage_locators` reads the
-    artifact payloads, so its errors depend on them, and a fingerprint over
-    manifests alone would keep serving a verdict that an edited payload had
-    already falsified.
-    """
-    digest = sha256()
-    digest.update(str(root).encode("utf-8"))
-    counted = 0
-    for directory, subdirectories, names in os.walk(root):
-        # Sorted in place so `os.walk` descends in a fixed order: `os.scandir`
-        # returns directory entries in whatever order the filesystem gives, and
-        # this digest is order-dependent, so leaving it unsorted would compute a
-        # different fingerprint for an unchanged tree and never hit the cache.
-        subdirectories.sort()
-        for name in sorted(names):
-            entry = os.path.join(directory, name)
-            try:
-                stat = os.lstat(entry)
-            except OSError:
-                continue
-            digest.update(
-                f"{os.path.relpath(entry, root)}\0{stat.st_mtime_ns}\0{stat.st_size}\0".encode("utf-8")
-            )
-            counted += 1
-    return digest.hexdigest(), counted
-
-
 def _prune_source_library_cache(directory: Path, keep: int) -> None:
     """Keep the newest *keep* entries; each is ~25MB and keyed by the tree."""
     try:
@@ -766,7 +735,7 @@ def _source_library_cache_entry(root: Path) -> Path | None:
     sources = root / "src" / "sources"
     if not sources.is_dir():
         return None
-    fingerprint, counted = _source_tree_fingerprint(sources)
+    fingerprint, counted = tree_fingerprint([sources])
     if counted < SOURCE_LIBRARY_CACHE_FLOOR:
         return None
     return SOURCE_LIBRARY_CACHE_DIR / f"{fingerprint}.json"

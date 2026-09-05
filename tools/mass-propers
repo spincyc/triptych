@@ -1917,11 +1917,8 @@ def inherited_inapplicable_count(calendar: str, root: Path) -> int:
 
     return sum(
         len(
-            tomllib.loads(
-                (
-                    inventory_root(root)
-                    / f"{owner}-proper-translations-v1.toml"
-                ).read_text(encoding="utf-8")
+            _calendars.read_toml(
+                inventory_root(root) / f"{owner}-proper-translations-v1.toml"
             ).get("inherited_inapplicable")
             or []
         )
@@ -1980,7 +1977,7 @@ def translation_overlay(
     local_witness_ids: set[str] = set()
     for owner_index, owner in enumerate(owners):
         path = inventory_root(root) / f"{owner}-proper-translations-v1.toml"
-        document = tomllib.loads(path.read_text(encoding="utf-8"))
+        document = _calendars.read_toml(path)
         owner_document = _calendars.load_document(root, owner, effective=False)
 
         # A translation may cite either the conceptual edition or the exact

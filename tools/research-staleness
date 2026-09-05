@@ -20,6 +20,7 @@ from pathlib import Path
 # requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
+import _calendars  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
     examples_live_on_the_verbs,
@@ -199,7 +200,7 @@ def load_ledger() -> dict:
         raise StalenessError(
             f"ledger missing: {LEDGER.relative_to(ROOT)} (run bootstrap)"
         )
-    data = tomllib.loads(LEDGER.read_text(encoding="utf-8"))
+    data = _calendars.read_toml(LEDGER)
     if data.get("schema") != SCHEMA:
         raise StalenessError("unsupported ledger schema")
     return data

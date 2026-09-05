@@ -30,6 +30,8 @@ stage owns leaves the run as an escalation, and the budget charges repetition.
 import copy
 import json
 import sys
+import shutil
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -623,12 +625,25 @@ class LaneFragmentDigestTests(unittest.TestCase):
     """
 
     def setUp(self):
-        self.engine = WorkflowEngine(ROOT, ROOT / "workflows")
+        # Against a copy of `workflows/`. Both tests here prove the digest
+        # moves when guidance moves, which they do by editing that guidance ---
+        # sixteen tracked fragments, in the second one. Edited in place they
+        # were the repository's own files rewritten under every other test for
+        # the length of a write, and once the suite ran tests at once that was
+        # a wrong workflow digest for whoever else was reading them: the
+        # failure lands on an unrelated workflow test with "workflow source
+        # changed since run ... was seeded". The engine takes its workflows
+        # directory as an argument, so a copy needs no other change.
+        self.workflows = Path(tempfile.mkdtemp(prefix="lane-fragment-"))
+        self.addCleanup(shutil.rmtree, self.workflows, ignore_errors=True)
+        shutil.copytree(ROOT / "workflows", self.workflows / "workflows",
+                        symlinks=True)
+        self.engine = WorkflowEngine(ROOT, self.workflows / "workflows")
         self.workflow = self.engine.load_workflow("proper")
 
     def test_editing_a_lane_fragment_moves_the_digest(self):
         before = self.engine.workflow_source_digest(self.workflow)
-        path = (ROOT / "workflows" / "fragments" / "propers" / "lanes"
+        path = (self.workflows / "workflows" / "fragments" / "propers" / "lanes"
                 / "content-profile-conformance.md")
         original = path.read_bytes()
         try:
@@ -655,7 +670,7 @@ class LaneFragmentDigestTests(unittest.TestCase):
         base = self.engine.workflow_source_digest(self.workflow)
         for name in lane_fragments:
             with self.subTest(fragment=name):
-                path = ROOT / "workflows" / "fragments" / name
+                path = self.workflows / "workflows" / "fragments" / name
                 original = path.read_bytes()
                 try:
                     path.write_bytes(original + b"\n.\n")

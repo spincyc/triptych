@@ -20,10 +20,15 @@ import json
 import os
 import re
 import subprocess
+import sys
 import tempfile
 import unittest
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from _parallel import gather  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 MANIFEST = ROOT / "tmt.json"
@@ -66,6 +71,50 @@ def help_text(*argv: str) -> str:
     return result.stdout
 
 
+@functools.lru_cache(maxsize=None)
+def resolved_path(name: str) -> subprocess.CompletedProcess:
+    """What `tpt --path <name>` answers, asked of the launcher once.
+
+    Three tests below ask the launcher to resolve every registered id --- is it
+    executable, is it its own basename, is every implementation registered ---
+    and each asked again for all 41. The answer cannot differ between them.
+    """
+    return subprocess.run(
+        [str(LAUNCHER), "--path", name], capture_output=True, text=True, cwd=ROOT,
+    )
+
+
+def setUpModule() -> None:
+    """Fill the help-text cache once, in parallel, before anything reads it.
+
+    Six tests here walk every registered tool and every verb of it. With
+    `help_text` memoized they ask the launcher once rather than six times, but
+    that once was still 41 tools and their verbs one after another, and a cold
+    `tpt --help` is two interpreters. Nothing depends on the order they are
+    fetched in, so they are fetched together and every test after this reads
+    memory.
+
+    Failures are deliberately not raised here: a tool whose `--help` exits
+    non-zero must fail in the test that asks about that tool, naming it, not in
+    a module fixture that stops all six.
+    """
+    def safely(argv: tuple[str, ...]) -> None:
+        try:
+            help_text(*argv)
+        except AssertionError:
+            pass
+
+    names = sorted(registry())
+    gather(resolved_path, names)
+    gather(safely, [(name,) for name in names])
+    pairs = [
+        (name, verb)
+        for name in names
+        for verb in verbs_of(help_text(name))
+    ]
+    gather(safely, pairs)
+
+
 def verbs_of(text: str) -> list[str]:
     found = VERBS.search(text)
     return found.group(1).split(",") if found else []
@@ -82,10 +131,7 @@ class ToolRegistryTests(unittest.TestCase):
     def test_every_id_resolves_to_an_executable(self) -> None:
         for name in registry():
             with self.subTest(tool=name):
-                resolved = subprocess.run(
-                    [str(LAUNCHER), "--path", name],
-                    capture_output=True, text=True, cwd=ROOT,
-                )
+                resolved = resolved_path(name)
                 self.assertEqual(resolved.returncode, 0, resolved.stderr)
                 path = Path(resolved.stdout.strip())
                 self.assertTrue(path.is_file(), f"{name}: {path} is not a file")
@@ -103,11 +149,7 @@ class ToolRegistryTests(unittest.TestCase):
         """
         registered = set(registry())
         resolved = {
-            Path(subprocess.run(
-                [str(LAUNCHER), "--path", name],
-                capture_output=True, text=True, cwd=ROOT,
-            ).stdout.strip()).name
-            for name in registered
+            Path(resolved_path(name).stdout.strip()).name for name in registered
         }
         for path in sorted(TOOLS.iterdir()):
             if not path.is_file() or path.name.endswith(COMPANION_SUFFIXES):
@@ -188,9 +230,7 @@ class ToolRegistryTests(unittest.TestCase):
         """tmt resolves an entry only at tools/<id>; an alias would break it."""
         for name in registry():
             with self.subTest(tool=name):
-                result = subprocess.run(
-                    [str(LAUNCHER), "--path", name], capture_output=True, text=True, cwd=ROOT,
-                )
+                result = resolved_path(name)
                 self.assertEqual(result.returncode, 0, result.stderr)
                 self.assertEqual(Path(result.stdout.strip()), TOOLS / name)
 

@@ -14,11 +14,15 @@ import collections
 import hashlib
 import json
 import subprocess
+import sys
 import tempfile
 import time
 import unittest
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from _parallel import gather  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 TPT = ROOT / "tools" / "tpt"
@@ -155,23 +159,38 @@ class CompleteMissalDeterminismTests(unittest.TestCase):
         """Six coordinates run twice; the exhaustive year remains opt-in."""
 
         started = time.monotonic()
-        for calendar in CALENDARS:
-            for language in LANGUAGES:
-                with self.subTest(calendar=calendar, language=language):
-                    command = (
-                        "mass-today",
-                        "show",
-                        "--date",
-                        REPRESENTATIVE_DATE,
-                        "--calendar",
-                        calendar,
-                        "--lang",
-                        language,
-                        "--ordinary",
-                        "--json",
-                    )
-                    first = run_tpt(*command)
-                    second = run_tpt(*command)
+        coordinates = [
+            (calendar, language) for calendar in CALENDARS for language in LANGUAGES
+        ]
+
+        def command_for(calendar: str, language: str) -> tuple[str, ...]:
+            return (
+                "mass-today",
+                "show",
+                "--date",
+                REPRESENTATIVE_DATE,
+                "--calendar",
+                calendar,
+                "--lang",
+                language,
+                "--ordinary",
+                "--json",
+            )
+
+        # Twelve cold `mass-today` runs --- six coordinates, each run twice to
+        # prove the bytes repeat --- and no coordinate depends on another, so
+        # the waiting is shared. Both runs of a pair are still two separate
+        # processes over the same inputs, which is the whole of what the
+        # determinism claim needs; overlapping them exercises it under a
+        # different schedule rather than a weaker one.
+        outcomes = gather(
+            lambda pair: (run_tpt(*command_for(*pair)), run_tpt(*command_for(*pair))),
+            coordinates,
+        )
+
+        for (calendar, language), (first, second) in zip(coordinates, outcomes):
+            with self.subTest(calendar=calendar, language=language):
+                    command = command_for(calendar, language)
                     self.assertEqual(first.returncode, 0, command_summary(first))
                     self.assertEqual(second.returncode, 0, command_summary(second))
                     self.assertEqual(first.stderr, "")

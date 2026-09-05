@@ -24,6 +24,7 @@ import os
 import re
 import shutil
 import subprocess
+import sys
 import tempfile
 import textwrap
 import tomllib
@@ -35,6 +36,11 @@ from pathlib import Path
 
 import yaml
 
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from _scanning import markers_for, present  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 TPT = ROOT / "tools" / "tpt"
@@ -1134,12 +1140,35 @@ def protected_snippet_findings(value: str, label: str) -> list[str]:
     return findings
 
 
+# Cannot occur inside a JSON string value, so joining on it cannot create a
+# match that spans two of them. The exact re-check below does not rely on that,
+# but the separator keeps the pre-filter from being needlessly loose.
+_HAYSTACK_SEPARATOR = "\x00"
+
+
 def identities_in(value: object, identities: set[str]) -> list[str]:
+    """Which protected identities appear in any string under *value*.
+
+    Asked the obvious way --- for each identity, is it in any of these strings
+    --- this is 1,146 identities against roughly 350,000 strings, and it was
+    399 million Python-level substring tests and 46 seconds for one call.
+
+    So the strings are joined once and each identity is looked for in the join,
+    which is one C-level search per identity instead of one per string. That
+    alone would be a slightly different question, because a join can put two
+    strings end to end and manufacture a match across the seam; every identity
+    the join finds is therefore checked again against the individual strings,
+    which is the original question exactly. Nothing is normally found, so the
+    exact pass normally does no work at all, and when it does find something it
+    reports precisely what the loop reported before.
+    """
     strings = [text for _, text in walk_strings(value)]
+    haystack = _HAYSTACK_SEPARATOR.join(strings)
     return sorted(
         identity
         for identity in identities
-        if any(identity in text for text in strings)
+        if identity in haystack
+        and any(identity in text for text in strings)
     )
 
 
@@ -1540,6 +1569,9 @@ def download_findings(
 ) -> list[str]:
     findings = []
     text_suffixes = {".csv", ".html", ".json", ".tsv", ".txt", ".yaml", ".yml"}
+    # Derived once for the whole sweep rather than per file; see _scanning.
+    ordered_identities = sorted(identities)
+    identity_markers = markers_for(ordered_identities)
     exact_fingerprints = (
         postconciliar_quarantine_hashes()
         if exact_text_fingerprints is None
@@ -1554,9 +1586,8 @@ def download_findings(
             findings.append(f"{path}: duplicates protected artifact {digests[digest]}")
         if path.suffix.lower() in text_suffixes:
             decoded = content.decode("utf-8", errors="replace")
-            for identity in sorted(identities):
-                if identity in decoded:
-                    findings.append(f"{path}: exposes protected identity {identity}")
+            for identity in present(decoded, ordered_identities, identity_markers):
+                findings.append(f"{path}: exposes protected identity {identity}")
             findings.extend(
                 protected_text_findings(
                     decoded,

@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
+import pathlib
 import sys
 import unicodedata
 from typing import Callable, NamedTuple, Sequence
@@ -708,3 +710,114 @@ def run_verb_cli(
             70,
             prefix,
         )
+
+
+def tree_fingerprint(roots) -> tuple[str, int]:
+    """Identify these directory trees by every file's path, mtime and size.
+
+    The disk caches under `build/` are keyed by this, so it runs in every tool
+    process that reads a cached derivation and its cost is paid whether the
+    cache hits or not. That makes it worth doing properly: `os.scandir` carries
+    the directory entry's stat with it on the platforms that provide one, where
+    `os.walk` plus a separate `os.lstat` asks the kernel twice, and building a
+    relative path per file cost more than hashing the absolute one. Over the
+    19,092 files of `src/sources` that is 0.094s against 0.041s.
+
+    Deterministic by construction: entries are sorted by name at every level,
+    and directories are descended in that order. `os.scandir` returns whatever
+    order the filesystem keeps, and this digest is order-dependent, so an
+    unsorted walk would fingerprint an unchanged tree differently on each call
+    and never hit the cache it guards.
+
+    Symlinked directories are not followed --- a link out of the tree is not
+    part of the tree --- and an entry that disappears mid-walk is skipped
+    rather than raising, because a cache key is not the place to fail.
+    """
+    digest = hashlib.sha256()
+    counted = 0
+
+    def descend(directory: str) -> None:
+        nonlocal counted
+        try:
+            entries = sorted(os.scandir(directory), key=lambda entry: entry.name)
+        except OSError:
+            return
+        directories = []
+        for entry in entries:
+            try:
+                if entry.is_dir(follow_symlinks=False):
+                    directories.append(entry.path)
+                    continue
+                stat = entry.stat(follow_symlinks=False)
+            except OSError:
+                continue
+            digest.update(
+                f"{entry.path}\0{stat.st_mtime_ns}\0{stat.st_size}\0".encode("utf-8")
+            )
+            counted += 1
+        for path in directories:
+            descend(path)
+
+    for root in roots:
+        digest.update(f"\0root:{root}\0".encode("utf-8"))
+        descend(str(root))
+    return digest.hexdigest(), counted
+
+
+def cached_json(directory, key: str, build, *, keep: int = 4):
+    """`build()`, kept as JSON under *directory* and reused while *key* holds.
+
+    The pattern this repository now uses in four places, written once. A tool
+    answers one question in a fresh process and re-derives the whole corpus to
+    do it; the derivation depends on tracked inputs that a key --- normally a
+    `tree_fingerprint` --- identifies exactly. `build/` is where
+    `guidance/repository.md` says caches live, and `make clean` clears them.
+
+    Written only when it survives the round trip: a value reaches the cache
+    only if `json.loads(json.dumps(value)) == value`. That gate is not
+    ceremony. JSON has no dates and no integer keys, and a projection that came
+    back with a string where a date went in would be a derivation that resolved
+    successfully and wrongly, which is the one defect `guidance/the-shape.md`
+    says this repository exists to refuse. A value that cannot survive is
+    simply never cached and is rebuilt as it always was.
+
+    The entry is written aside and renamed, because the suite runs these in
+    parallel and a half-written entry read by a sibling is a wrong answer.
+    """
+    import json as _json
+
+    entry = pathlib.Path(directory) / f"{key}.json"
+    try:
+        return _json.loads(entry.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        pass
+
+    value = build()
+    try:
+        encoded = _json.dumps(value)
+        if _json.loads(encoded) == value:
+            entry.parent.mkdir(parents=True, exist_ok=True)
+            aside = entry.with_suffix(f".{os.getpid()}.tmp")
+            aside.write_text(encoded, encoding="utf-8")
+            os.replace(aside, entry)
+            _prune(entry.parent, keep)
+    except (OSError, TypeError, ValueError, RecursionError):
+        pass
+    return value
+
+
+def _prune(directory, keep: int) -> None:
+    """Keep the newest *keep* entries; only the current key is ever read again."""
+    try:
+        entries = sorted(
+            (path for path in directory.glob("*.json") if path.is_file()),
+            key=lambda path: path.stat().st_mtime,
+            reverse=True,
+        )
+    except OSError:
+        return
+    for stale in entries[keep:]:
+        try:
+            stale.unlink()
+        except OSError:
+            pass

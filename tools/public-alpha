@@ -34,6 +34,7 @@ from _corpus import (  # noqa: E402
     CorpusError,
     eligible_document_ids as corpus_eligible_document_ids,
 )
+from _scanning import markers_for, present  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
     examples_live_on_the_verbs,
@@ -201,7 +202,7 @@ ORDINARY_LANGUAGE_ABSENCE_LOCATION_RE = re.compile(
     r"^\$\.language_absences\[[0-9]+\]$"
 )
 _PROTECTED_IDENTITY_PATTERNS: dict[str, re.Pattern[str] | None] = {}
-_PROTECTED_IDENTITY_MARKERS: dict[str, tuple[int, tuple[str, ...]]] = {}
+_PROTECTED_IDENTITY_MARKERS: dict[str, tuple[int, tuple[str, ...], tuple[str, ...]]] = {}
 # Short enough that every identity has one, long enough to be rare in prose.
 MARKER_LENGTH = 8
 _POSTCONCILIAR_QUARANTINE_HASHES: dict[
@@ -1144,15 +1145,16 @@ def protected_source_identity_pattern() -> re.Pattern[str] | None:
     _PROTECTED_IDENTITY_MARKERS[cache_key] = (
         (
             min(len(identity) for identity in protected),
-            tuple(sorted({identity[:MARKER_LENGTH] for identity in protected})),
+            markers_for(protected),
+            tuple(sorted(protected)),
         )
         if protected
-        else (0, ())
+        else (0, (), ())
     )
     return pattern
 
 
-def protected_source_identity_markers() -> tuple[int, tuple[str, ...]]:
+def protected_source_identity_markers() -> tuple[int, tuple[str, ...], tuple[str, ...]]:
     """A sound, cheap pre-filter for the pattern above: (minimum, markers).
 
     Searching the pattern is the most expensive thing `prepare` does --- 132 KB
@@ -1178,7 +1180,7 @@ def protected_source_identity_markers() -> tuple[int, tuple[str, ...]]:
     cache_key = str(ROOT.resolve())
     if cache_key not in _PROTECTED_IDENTITY_MARKERS:
         protected_source_identity_pattern()
-    return _PROTECTED_IDENTITY_MARKERS.get(cache_key, (0, ()))
+    return _PROTECTED_IDENTITY_MARKERS.get(cache_key, (0, (), ()))
 
 
 def postconciliar_quarantined_text_hashes() -> frozenset[str]:
@@ -1246,7 +1248,8 @@ def validate_liturgical_public_data(path: Path) -> None:
     parts = relative.parts
     label = (WEB_DATA_ROOT_RELATIVE / relative).as_posix()
     try:
-        payload = json.loads(path.read_text(encoding="utf-8"))
+        text = path.read_text(encoding="utf-8")
+        payload = json.loads(text)
     except (OSError, UnicodeError, json.JSONDecodeError) as exc:
         raise ReleaseError(f"cannot read liturgical structure {label}: {exc}") from exc
     quarantined_text_hashes = postconciliar_quarantined_text_hashes()
@@ -1289,7 +1292,16 @@ def validate_liturgical_public_data(path: Path) -> None:
     ):
         return
     protected_identity = protected_source_identity_pattern()
-    protected_minimum, protected_markers = protected_source_identity_markers()
+    protected_minimum, protected_markers, protected_ids = (
+        protected_source_identity_markers()
+    )
+    # One reduced scan of the whole file decides whether any protected identity
+    # is in it at all; `_scanning.present` says why that is exact. Almost no
+    # file carries one, and for those the per-string regex below --- 132 KB of
+    # alternation, asked of every string --- can be skipped entirely. Where a
+    # file does carry one, nothing is skipped and the regex still names the
+    # exact identity and location, which is what the error has to say.
+    file_carries_identity = bool(present(text, protected_ids, protected_markers))
 
     def visit(value: object, location: str = "$") -> None:
         if isinstance(value, list):
@@ -1301,7 +1313,8 @@ def validate_liturgical_public_data(path: Path) -> None:
             # shortest identity, or holding no identity's leading characters.
             # See protected_source_identity_markers.
             searchable = (
-                protected_identity is not None
+                file_carries_identity
+                and protected_identity is not None
                 and len(value) >= protected_minimum
                 and any(marker in value for marker in protected_markers)
             )

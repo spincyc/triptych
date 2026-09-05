@@ -26,6 +26,7 @@ import tomllib
 # requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
+from _tooling import tree_fingerprint  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
     examples_live_on_the_verbs,
@@ -2327,63 +2328,6 @@ LIBRARY_CACHE_VERSION = "1"
 LIBRARY_CACHE_FLOOR = 1000
 
 
-def _tree_fingerprint(roots: Iterable[Path]) -> tuple[str, int]:
-    """Identify these trees by every file's path, mtime and size.
-
-    Stat-only: about 60ms over the 22,669 files of `src/sources`, `src/gpt` and
-    `src/claude`, against the three seconds the load it guards costs. It
-    fingerprints the artifact payloads too, not only the TOML manifests,
-    because `_validate_passage_locators` reads the payload bytes and its errors
-    depend on them; a fingerprint over manifests alone would keep serving a
-    verdict an edited payload had already falsified.
-
-    `dirnames` is sorted in place because `os.walk` yields whatever order the
-    filesystem gives and this digest is order-dependent: unsorted, an unchanged
-    tree would fingerprint differently on each call and never hit.
-    """
-    digest = hashlib.sha256()
-    counted = 0
-    for root in roots:
-        digest.update(f"\0root:{root}\0".encode("utf-8"))
-        for directory, dirnames, names in os.walk(root):
-            dirnames.sort()
-            for name in sorted(names):
-                entry = os.path.join(directory, name)
-                try:
-                    stat = os.lstat(entry)
-                except OSError:
-                    continue
-                digest.update(
-                    f"{entry}\0{stat.st_mtime_ns}\0{stat.st_size}\0".encode("utf-8")
-                )
-                counted += 1
-    return digest.hexdigest(), counted
-
-
-def _prune_cache(directory: Path, keep: int) -> None:
-    """Keep the newest *keep* entries and delete the rest.
-
-    Each entry is tens of megabytes and a new one appears for every distinct
-    state of the tree, so an unpruned cache would grow without limit across a
-    week of editing sources. Only the current tree's entry can ever be read
-    again --- the key is the tree --- so a handful is generous; the spare few
-    exist so that hopping between two branches does not rebuild every time.
-    """
-    try:
-        entries = sorted(
-            (path for path in directory.glob("*.json") if path.is_file()),
-            key=lambda path: path.stat().st_mtime,
-            reverse=True,
-        )
-    except OSError:
-        return
-    for stale in entries[keep:]:
-        try:
-            stale.unlink()
-        except OSError:
-            pass
-
-
 def _library_cache_entry(root: Path, check_binding_fingerprints: bool) -> Path | None:
     """Where this tree's loaded library is kept, or None where it is not cached."""
     if os.environ.get("TRIPTYCH_LIBRARY_CACHE") == "0":
@@ -2391,7 +2335,7 @@ def _library_cache_entry(root: Path, check_binding_fingerprints: bool) -> Path |
     roots = [root / "src/sources", root / "src/gpt", root / "src/claude"]
     if not (root / "src/sources").is_dir():
         return None
-    fingerprint, counted = _tree_fingerprint(r for r in roots if r.is_dir())
+    fingerprint, counted = tree_fingerprint([r for r in roots if r.is_dir()])
     if counted < LIBRARY_CACHE_FLOOR:
         return None
     # The flag changes which validations run, so it changes the errors and must

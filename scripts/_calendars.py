@@ -352,7 +352,7 @@ _YAML_CACHE_VERSION = "1"
 _YAML_CACHE_FLOOR = 256 * 1024
 
 
-def _cache_entry(path: Path) -> Path | None:
+def _cache_entry(path: Path, kind: str = "yaml") -> Path | None:
     """Where this file's parsed form is kept, or None where it is not cached."""
     if os.environ.get("TRIPTYCH_YAML_CACHE") == "0":
         return None
@@ -363,7 +363,8 @@ def _cache_entry(path: Path) -> Path | None:
     if stat.st_size < _YAML_CACHE_FLOOR:
         return None
     key = "\0".join(
-        (_YAML_CACHE_VERSION, str(path.resolve()), str(stat.st_mtime_ns), str(stat.st_size))
+        (_YAML_CACHE_VERSION, kind, str(path.resolve()),
+         str(stat.st_mtime_ns), str(stat.st_size))
     )
     digest = hashlib.sha256(key.encode("utf-8")).hexdigest()
     return _YAML_CACHE / digest[:2] / f"{digest}.json"
@@ -438,15 +439,42 @@ def read_yaml(path: Path):
     """
     import yaml
 
-    entry = _cache_entry(path)
+    loader = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
+    return _cached_parse(
+        path, "yaml", lambda text: yaml.load(text, Loader=loader)
+    )
+
+
+def read_toml(path: Path):
+    """Read a TOML file, with the same parse cache `read_yaml` uses.
+
+    `tomllib` is the pure-Python parser and there is no C one in the standard
+    library, so the repository's ledgers cost what they weigh: 0.196s for the
+    5.5 MB staleness inventory, 0.153s for the 4.2 MB Latin provenance. Every
+    tool that answers one question about one proper paid both, in a fresh
+    process, because the ledger is where the answer lives. Through the cache
+    they load in 0.006s and 0.005s.
+
+    The same round-trip gate applies and matters more here than for YAML: TOML
+    has native dates and times, and JSON has not. A ledger carrying one is
+    simply never cached and is parsed as it always was, rather than coming back
+    with a string where a date went in.
+    """
+    import tomllib
+
+    return _cached_parse(path, "toml", tomllib.loads)
+
+
+def _cached_parse(path: Path, kind: str, parse):
+    """Parse *path* with *parse*, through the JSON cache described above."""
+    entry = _cache_entry(path, kind)
     if entry is not None:
         try:
             return json.loads(entry.read_text(encoding="utf-8"))
         except (OSError, ValueError):
             pass
 
-    loader = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
-    document = yaml.load(path.read_text(encoding="utf-8"), Loader=loader)
+    document = parse(path.read_text(encoding="utf-8"))
 
     if entry is not None:
         try:

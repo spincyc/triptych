@@ -81,6 +81,7 @@ ROOT = Path(__file__).resolve().parents[1]
 # requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(ROOT / "scripts"))
 
+from _tooling import cached_json, tree_fingerprint  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
     examples_live_on_the_verbs,
@@ -412,6 +413,13 @@ def edition_stem(library, edition: dict) -> str:
 def corpus(library) -> list[dict]:
     """Every work, with its editions and their passages, in one pass.
 
+    Cached under `build/`, keyed by the trees it is derived from. Building it
+    counts the words of every readable passage, which means splitting the whole
+    retained corpus --- 1.57s, in every one of the twelve fresh processes
+    `tests/tools/source-reader.test` starts, for a projection that cannot
+    differ between them. Reloaded it costs 0.056s. `_tooling.cached_json` says
+    what makes that safe.
+
     Ownership is traversed the way `guidance/sources.md` requires: a passage
     belongs to the work reached through its EDITION, never through the artifact
     that controls it. The difference is not pedantic. The NPNF volumes are
@@ -419,6 +427,18 @@ def corpus(library) -> list[dict]:
     Basil filed under its container would be published with Philip Schaff's name
     on it.
     """
+    fingerprint, _counted = tree_fingerprint(
+        [path for path in (library.source_root, *library.publication_roots)
+         if path.is_dir()]
+    )
+    return cached_json(
+        ROOT / "build" / "source-reader-corpus", fingerprint,
+        lambda: _corpus(library),
+    )
+
+
+def _corpus(library) -> list[dict]:
+    """The uncached derivation `corpus` wraps."""
     records = library.records
     works: dict[str, dict] = {}
     for record in records.values():

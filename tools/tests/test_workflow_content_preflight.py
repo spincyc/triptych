@@ -28,6 +28,8 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from _parallel import gather  # noqa: E402
+
 from _workflow import (  # noqa: E402
     BLOCKED,
     FAIL,
@@ -411,26 +413,35 @@ evidence = ["source-grounded-synthesis"]
 
     def test_the_whole_preflight_passes_on_every_leaf_with_a_manifest(self):
         """Not one leaf: every published one the manifest era produced."""
-        checked = 0
-        for provider in ("claude", "gpt"):
-            root = ROOT / "src" / provider / "liturgy/roman-rite/1962/propers"
-            for manifest in sorted(root.glob("*/*/proper-components.toml")):
-                document = manifest.parent.relative_to(
-                    ROOT / "src" / provider).as_posix()
-                with self.subTest(leaf=f"{provider}/{document}"):
-                    result = subprocess.run(
-                        [str(ROOT / "tools" / TOOL), "--provider", provider,
-                         "--document", document],
-                        capture_output=True, text=True, cwd=ROOT)
-                    self.assertEqual(result.returncode, 0, result.stderr)
-                checked += 1
-        self.assertGreater(checked, 0, "no published leaf was checked")
+        leaves = [
+            (provider, manifest.parent.relative_to(ROOT / "src" / provider).as_posix())
+            for provider in ("claude", "gpt")
+            for manifest in sorted(
+                (ROOT / "src" / provider / "liturgy/roman-rite/1962/propers")
+                .glob("*/*/proper-components.toml")
+            )
+        ]
+        # One cold preflight per leaf, and no leaf's verdict depends on
+        # another's, so the waiting is shared and the judging is not.
+        results = gather(
+            lambda leaf: subprocess.run(
+                [str(ROOT / "tools" / TOOL), "--provider", leaf[0],
+                 "--document", leaf[1]],
+                capture_output=True, text=True, cwd=ROOT),
+            leaves,
+        )
+        for (provider, document), result in zip(leaves, results):
+            with self.subTest(leaf=f"{provider}/{document}"):
+                self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertGreater(len(leaves), 0, "no published leaf was checked")
 
     def test_the_probe_leaf_passes_before_anything_is_broken(self):
-        for check in PROBE_CHECKS:
+        # Probed once per check, not twice: the failure message used to re-run
+        # the whole command to have something to print.
+        probed = gather(self.probe, PROBE_CHECKS)
+        for check, result in zip(PROBE_CHECKS, probed):
             with self.subTest(check=check):
-                self.assertEqual(self.probe(check).returncode, 0,
-                                 self.probe(check).stderr)
+                self.assertEqual(result.returncode, 0, result.stderr)
 
     def test_references_used_refuses_an_entry_the_body_never_names(self):
         self.write_leaf(extra=(

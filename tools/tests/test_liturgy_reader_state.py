@@ -10,9 +10,12 @@ import importlib.util
 import json
 import shutil
 import subprocess
+import sys
 import unittest
 from pathlib import Path
 
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 ROOT = Path(__file__).resolve().parents[2]
 FIXTURES = ROOT / "tools/tests/fixtures/liturgy-reader-state/v1"
@@ -860,6 +863,9 @@ if (input.op === 'fixture-validate') {
 }
 process.stdout.write(JSON.stringify(output));
 """
+
+
+from _parallel import gather  # noqa: E402
 
 
 def node_call(payload: dict) -> object:
@@ -2602,18 +2608,28 @@ class ParityTests(unittest.TestCase):
             ("2026-11-02", "commemoratione-omnium-fidelium-defunctorum", "third", 11),
         )
         template = fixture_named("day-roman-1962-2026-08-02")["requested"]
-        for date, mass, form, proper_count in cases:
+
+        # Each case is a cold `mass-today` and then a node bridge over its
+        # output. The two are sequential within a case and independent across
+        # them, so the six cases overlap and the assertions still run one at a
+        # time below, in order, under their own subTest.
+        def resolve(case):
+            date, mass, form, _count = case
+            request = copy.deepcopy(template)
+            request["civilDate"] = date
+            request["selectedReadableFormulary"] = {"id": mass}
+            request["form"] = form
+            request["requestedMode"] = "missal"
+            request["options"]["ordinary"] = True
+            payload = self.form_payload(date, form)
+            return node_call({
+                "op": "full-parity", "request": request, "payload": payload,
+            })
+
+        parities = gather(resolve, cases)
+
+        for (date, mass, form, proper_count), parity in zip(cases, parities):
             with self.subTest(date=date, mass=mass, form=form):
-                request = copy.deepcopy(template)
-                request["civilDate"] = date
-                request["selectedReadableFormulary"] = {"id": mass}
-                request["form"] = form
-                request["requestedMode"] = "missal"
-                request["options"]["ordinary"] = True
-                parity = node_call({
-                    "op": "full-parity", "request": request,
-                    "payload": self.form_payload(date, form),
-                })
                 self.assertEqual(parity["day"], parity["cli"])
                 self.assertEqual(parity["day"]["resolved"]["form"], form)
                 proper_events = [

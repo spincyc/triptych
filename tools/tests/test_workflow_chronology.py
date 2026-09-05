@@ -56,6 +56,7 @@ LAUNCHER = ROOT / "tools" / "tpt"
 sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from _parallel import gather  # noqa: E402
 from test_workflow_research_fanout import workflow_json  # noqa: E402
 
 STAGE = "content-preflight"
@@ -177,20 +178,31 @@ class WiringTests(unittest.TestCase):
         The count is compared against the complete marked set rather than
         against zero.
         """
-        checked: set[str] = set()
-        expected: set[str] = set()
+        leaves: list[tuple[str, str]] = []
         for provider in ("claude", "gpt"):
             root = ROOT / "src" / provider / "liturgy/roman-rite/1962/propers"
             for leaf in sorted(root.glob("*/*")):
                 if not leaf.is_dir() or not (leaf / "main.tex").is_file():
                     continue
-                document = leaf.relative_to(ROOT / "src" / provider).as_posix()
-                expected.add(f"{provider}/{document}")
-                with self.subTest(leaf=f"{provider}/{document}"):
-                    done = self.run_tool("loci", "--provider", provider,
-                                         "--document", document)
-                    self.assertEqual(done.returncode, 0, done.stderr)
-                checked.add(f"{provider}/{document}")
+                leaves.append(
+                    (provider, leaf.relative_to(ROOT / "src" / provider).as_posix())
+                )
+
+        # One cold tool per published leaf, and no leaf's answer depends on
+        # another's, so the waiting is shared and the judging is not.
+        done = gather(
+            lambda pair: self.run_tool("loci", "--provider", pair[0],
+                                       "--document", pair[1]),
+            leaves,
+        )
+
+        checked: set[str] = set()
+        expected: set[str] = set()
+        for (provider, document), finished in zip(leaves, done):
+            expected.add(f"{provider}/{document}")
+            with self.subTest(leaf=f"{provider}/{document}"):
+                self.assertEqual(finished.returncode, 0, finished.stderr)
+            checked.add(f"{provider}/{document}")
         self.assertEqual(checked, expected)
         # The leaf the old glob dropped, named so the regression cannot come
         # back quietly.
