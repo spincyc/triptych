@@ -31,7 +31,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-import yaml  # noqa: E402
+import _calendars  # noqa: E402
 from _tooling import Example, with_examples  # noqa: E402
 
 EXAMPLES = {
@@ -111,7 +111,10 @@ def main() -> int:
     with_examples(parser, EXAMPLES[""])
     arguments = parser.parse_args()
     path = ROOT / f"src/sources/calendars/{arguments.calendar}/propers.yaml"
-    document = yaml.safe_load(path.read_text(encoding="utf-8"))
+    # Through the shared reader, which is where the parse cache lives. Read
+    # directly this re-scanned a 2 MB propers file with the pure-Python
+    # scanner on every run, which was almost the whole of this tool's time.
+    document = _calendars.read_yaml(path)
 
     every = list(bodies(document))
     frequency = collections.Counter(

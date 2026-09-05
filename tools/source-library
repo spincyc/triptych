@@ -26,7 +26,7 @@ import tomllib
 # requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
-from _tooling import tree_fingerprint  # noqa: E402
+from _tooling import prune_cache, tree_fingerprint  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
     examples_live_on_the_verbs,
@@ -2483,7 +2483,7 @@ def load_library(
                 aside = entry.with_suffix(f".{os.getpid()}.tmp")
                 aside.write_text(json.dumps(held), encoding="utf-8")
                 os.replace(aside, entry)
-                _prune_cache(entry.parent, keep=2)
+                prune_cache(entry.parent, keep=2)
         except (OSError, TypeError, ValueError, RecursionError):
             pass
 

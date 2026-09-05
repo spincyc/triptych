@@ -805,17 +805,27 @@ def cached_json(directory, key: str, build, *, keep: int = 2):
             aside = entry.with_suffix(f".{os.getpid()}.tmp")
             aside.write_text(encoded, encoding="utf-8")
             os.replace(aside, entry)
-            _prune(entry.parent, keep)
+            prune_cache(entry.parent, keep)
     except (OSError, TypeError, ValueError, RecursionError):
         pass
     return value
 
 
-def _prune(directory, keep: int) -> None:
-    """Keep the newest *keep* entries; only the current key is ever read again."""
+def prune_cache(directory, keep: int, pattern: str = "*.json") -> None:
+    """Keep the newest *keep* entries under *directory*, delete the rest.
+
+    Only the current key is ever read again --- the key is the inputs --- so a
+    handful is generous; the spares exist so that hopping between two branches
+    does not rebuild every time. `pattern` is `**/*.json` for the caches that
+    sha-shard their entries into subdirectories.
+
+    One implementation because there were three, and deleting one of them by
+    accident left `load_library` calling a name that no longer existed. That
+    only fired on the cache-write path, so a warm checkout never saw it.
+    """
     try:
         entries = sorted(
-            (path for path in directory.glob("*.json") if path.is_file()),
+            (path for path in pathlib.Path(directory).glob(pattern) if path.is_file()),
             key=lambda path: path.stat().st_mtime,
             reverse=True,
         )

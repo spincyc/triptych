@@ -27,6 +27,7 @@ import json
 import os
 import re
 import tomllib
+from _tooling import prune_cache
 from datetime import date as calendar_date
 from pathlib import Path
 
@@ -372,29 +373,6 @@ def _cache_entry(path: Path, kind: str = "yaml") -> Path | None:
     return _YAML_CACHE / digest[:2] / f"{digest}.json"
 
 
-def _prune_yaml_cache(keep: int) -> None:
-    """Keep the newest *keep* entries and delete the rest.
-
-    Entries are keyed by mtime, so editing a megabyte calendar leaves the old
-    entry behind for nothing. About ten files clear the size floor, so this is
-    room for a couple of generations of each rather than a real limit; the
-    point is only that a month of editing cannot fill a disk.
-    """
-    try:
-        entries = sorted(
-            (path for path in _YAML_CACHE.rglob("*.json") if path.is_file()),
-            key=lambda path: path.stat().st_mtime,
-            reverse=True,
-        )
-    except OSError:
-        return
-    for stale in entries[keep:]:
-        try:
-            stale.unlink()
-        except OSError:
-            pass
-
-
 def _yaml_error() -> type[BaseException]:
     """PyYAML's error base, resolved only when something has already failed."""
     import yaml  # noqa: PLC0415
@@ -495,7 +473,7 @@ def _cached_parse(path: Path, kind: str, parse):
                 aside = entry.with_suffix(f".{os.getpid()}.tmp")
                 aside.write_text(encoded, encoding="utf-8")
                 os.replace(aside, entry)
-                _prune_yaml_cache(keep=16)
+                prune_cache(_YAML_CACHE, keep=16, pattern='**/*.json')
         except (OSError, TypeError, ValueError, RecursionError):
             pass
 

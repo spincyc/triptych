@@ -1231,6 +1231,17 @@ def postconciliar_quarantined_text_hashes() -> frozenset[str]:
     return hashes
 
 
+def _address(trail: tuple) -> str:
+    """The `$.key[0]` breadcrumb a walk would have concatenated on the way down.
+
+    Rendered from the trail only where a finding is reported, so the walk
+    itself builds no strings.
+    """
+    return "$" + "".join(
+        f"[{step}]" if isinstance(step, int) else f".{step}" for step in trail
+    )
+
+
 def validate_liturgical_public_data(path: Path) -> None:
     """Refuse quarantined wording and restricted witnesses in public JSON.
 
@@ -1254,14 +1265,19 @@ def validate_liturgical_public_data(path: Path) -> None:
         raise ReleaseError(f"cannot read liturgical structure {label}: {exc}") from exc
     quarantined_text_hashes = postconciliar_quarantined_text_hashes()
 
-    def visit_quarantined(value: object, location: str = "$") -> None:
+    def visit_quarantined(value: object, trail: tuple = ()) -> None:
+        # The breadcrumb is carried as a tuple and rendered only if something
+        # is found. Built as a string on the way down it was an f-string per
+        # node --- 2.3 million of them over the 12,050 files here --- to name a
+        # location almost none of them ever reports. `_address` renders the
+        # same `$.key[0]` string the concatenation did.
         if isinstance(value, list):
             for index, item in enumerate(value):
-                visit_quarantined(item, f"{location}[{index}]")
+                visit_quarantined(item, trail + (index,))
             return
         if isinstance(value, dict):
             for key, item in value.items():
-                visit_quarantined(item, f"{location}.{key}")
+                visit_quarantined(item, trail + (key,))
             return
         if not isinstance(value, str):
             return
@@ -1280,7 +1296,7 @@ def validate_liturgical_public_data(path: Path) -> None:
         )
         if matched_hash is not None:
             raise ReleaseError(
-                f"{label} {location}: quarantined English body sha256 "
+                f"{label} {_address(trail)}: quarantined English body sha256 "
                 f"{matched_hash} reached public-alpha data"
             )
 

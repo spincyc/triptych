@@ -27,7 +27,7 @@ import sys
 import tomllib
 
 import _calendars
-from _tooling import tree_fingerprint
+from _tooling import prune_cache, tree_fingerprint
 
 
 SCHEMA = "triptych-proper-latin-provenance/v1"
@@ -711,23 +711,6 @@ SOURCE_LIBRARY_CACHE_DIR = TRUSTED_REPOSITORY / "build" / "source-library-cache"
 SOURCE_LIBRARY_CACHE_FLOOR = 1000
 
 
-def _prune_source_library_cache(directory: Path, keep: int) -> None:
-    """Keep the newest *keep* entries; each is ~25MB and keyed by the tree."""
-    try:
-        entries = sorted(
-            (path for path in directory.glob("*.json") if path.is_file()),
-            key=lambda path: path.stat().st_mtime,
-            reverse=True,
-        )
-    except OSError:
-        return
-    for stale in entries[keep:]:
-        try:
-            stale.unlink()
-        except OSError:
-            pass
-
-
 def _source_library_cache_entry(root: Path) -> Path | None:
     """Where this tree's parsed record projection is kept, or None.
 
@@ -835,7 +818,7 @@ def _source_library_records(
                 aside = entry.with_suffix(f".{os.getpid()}.tmp")
                 aside.write_text(encoded, encoding="utf-8")
                 os.replace(aside, entry)
-                _prune_source_library_cache(entry.parent, keep=2)
+                prune_cache(entry.parent, keep=2)
         except (OSError, TypeError, ValueError, RecursionError):
             pass
 

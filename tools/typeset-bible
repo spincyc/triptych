@@ -915,8 +915,39 @@ class Substitutions:
         ]
 
 
+# The characters `tex` below passes through or rewrites without needing to
+# decide anything: printable ASCII, the accented letters the fonts carry, and
+# the seventeen it maps. Anything else --- a Hebrew letter to substitute, or a
+# codepoint with no rule --- still goes through the loop, which is where the
+# recording and the refusals live.
+_TEX_TRANSLATION = str.maketrans({**TEX_PUNCTUATION, **TEX_SPECIALS})
+_TEX_HANDLED = (
+    frozenset(chr(code) for code in range(0x20, 0x7F))
+    | frozenset(TEX_LETTERS)
+    | frozenset(TEX_SPECIALS)
+    | frozenset(TEX_PUNCTUATION)
+)
+
+
 def tex(text: str, where: str, substitutions: Substitutions | None = None) -> str:
-    """One string of source text as TeX, refusing anything it cannot set."""
+    """One string of source text as TeX, refusing anything it cannot set.
+
+    Nearly every string is ordinary text, and for those the answer is one
+    C-level `str.translate`: the character loop below decided three dictionary
+    memberships per character and appended each one to a list, which over seven
+    bible editions was 33 million appends and 32 million `ord()` calls for a
+    `check` that writes nothing.
+
+    The fast path is taken only when every character is one the loop would have
+    passed through or rewritten unconditionally, so it produces the same string
+    the loop produces. A text holding anything else --- Hebrew to record, or a
+    codepoint with no rule --- takes the loop, and the recording and the
+    refusal happen exactly where they did.
+    """
+    if _TEX_HANDLED.issuperset(text):
+        rendered = text.translate(_TEX_TRANSLATION)
+        return "{[}" + rendered[1:] if rendered.startswith("[") else rendered
+
     out: list[str] = []
     for character in text:
         if character in TEX_SPECIALS:

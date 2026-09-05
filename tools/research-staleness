@@ -12,6 +12,7 @@ Ledger: src/sources/inventories/research-staleness-v1.toml.
 from __future__ import annotations
 
 import argparse
+import functools
 import hashlib
 import sys
 import tomllib
@@ -117,8 +118,42 @@ class StalenessError(Exception):
     pass
 
 
-def sha256_file(path: Path) -> str:
+@functools.lru_cache(maxsize=None)
+def _digest_at(path: Path, mtime_ns: int, size: int) -> str:
+    del mtime_ns, size  # cache keys: a rewritten file re-hashes
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def sha256_file(path: Path) -> str:
+    """The file's digest, taken once per version of the file.
+
+    Leaves share research inputs and cite the same source records, so the same
+    file is hashed again for every leaf that names it.
+
+    The mtime and size are part of the key, not decoration. Keyed on the path
+    alone this returned the digest from before a write, and a tool whose whole
+    job is noticing that a file changed reported that nothing had --- which the
+    staleness tests caught immediately, being the one suite that edits a file
+    and asks again in the same process.
+    """
+    stat = path.stat()
+    return _digest_at(path, stat.st_mtime_ns, stat.st_size)
+
+
+def work_records(work_dir: Path) -> tuple[Path, ...]:
+    """Every record file under one work.
+
+    Deliberately not memoized. A cheap key for "this directory tree is
+    unchanged" is the walk itself, and a stale answer here would be the same
+    defect as above: a record added under a work that the binder is not told
+    about. The repeated walking is instead avoided by the caller, which asks
+    once per work rather than once per binding.
+
+    Sorted by string rather than by `Path`, because comparing `Path` objects
+    normalises each one on every comparison and this sort was 2.4 million of
+    them.
+    """
+    return tuple(sorted(work_dir.rglob("*.toml"), key=str))
 
 
 def discover_editions() -> dict[tuple[str, str], Path]:
@@ -137,7 +172,7 @@ def research_files(leaf_dir: Path) -> list[Path]:
     research = leaf_dir / "research"
     if not research.is_dir():
         return []
-    return sorted(p for p in research.rglob("*") if p.is_file())
+    return sorted((p for p in research.rglob("*") if p.is_file()), key=str)
 
 
 def bound_source_records(leaf_dir: Path) -> list[Path]:
@@ -149,6 +184,7 @@ def bound_source_records(leaf_dir: Path) -> list[Path]:
     except (OSError, ValueError):
         return []
     records: set[Path] = set()
+    work_dirs: set[Path] = set()
     for binding in data.get("bindings", []):
         source_id = binding.get("source_id")
         if not isinstance(source_id, str) or "." not in source_id:
@@ -159,11 +195,11 @@ def bound_source_records(leaf_dir: Path) -> list[Path]:
         parts = source_id.split(".")
         if len(parts) < 3:
             continue
-        work_dir = ROOT / "src" / "sources" / "works" / parts[1] / parts[2]
+        work_dirs.add(ROOT / "src" / "sources" / "works" / parts[1] / parts[2])
+    for work_dir in work_dirs:
         if work_dir.is_dir():
-            for path in sorted(work_dir.rglob("*.toml")):
-                records.add(path)
-    return sorted(records)
+            records.update(work_records(work_dir))
+    return sorted(records, key=str)
 
 
 def edition_inputs(
