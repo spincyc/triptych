@@ -28,7 +28,6 @@ import shlex
 import shutil
 import subprocess
 import time
-from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Any
 
@@ -2850,6 +2849,10 @@ class WorkflowEngine:
                 return error
 
         if len(commands) > 1:
+            # Imported here: `concurrent.futures` pulls `logging`, and every `tpt`
+            # invocation would otherwise pay for it to reach a tool.
+            from concurrent.futures import ThreadPoolExecutor  # noqa: PLC0415
+
             with ThreadPoolExecutor(max_workers=len(commands)) as pool:
                 outcomes = list(pool.map(execute, commands))
         else:

@@ -51,7 +51,20 @@ from _tooling import (  # noqa: E402
     Example,
     with_examples,
 )
-from _workflow import WorkflowEngine, WorkflowError  # noqa: E402
+# `_workflow` is imported where it is used, not here. Every `tpt <tool>` pays
+# this module's import cost before it reaches the tool, and the engine costs
+# 18ms of it --- it pulls `concurrent.futures`, which pulls `logging` --- for a
+# dispatch that does not touch a workflow. Tool dispatch is the overwhelming
+# majority of invocations, and the suite makes hundreds of them.
+def _workflow_module():
+    """The workflow engine module, imported on first use."""
+    import _workflow  # noqa: PLC0415
+
+    return _workflow
+
+
+def _workflow_error() -> type[BaseException]:
+    return _workflow_module().WorkflowError
 
 WORKFLOWS_DIR = ROOT / "workflows"
 
@@ -307,9 +320,9 @@ def run_tool(registry: Registry, name: str, tool_args: list[str]) -> int:
 # Workflow dispatch
 # ---------------------------------------------------------------------------
 
-def _workflow_engine() -> WorkflowEngine:
+def _workflow_engine():
     """Build a workflow engine rooted at this repository."""
-    return WorkflowEngine(ROOT, WORKFLOWS_DIR)
+    return _workflow_module().WorkflowEngine(ROOT, WORKFLOWS_DIR)
 
 
 def _workflow_ids() -> set[str]:
@@ -376,7 +389,7 @@ def workflow_help(engine: WorkflowEngine, workflow_id: str) -> str:
     return "\n".join(lines)
 
 
-def _workflow_list(engine: WorkflowEngine, workflow_id: str,
+def _workflow_list(engine, workflow_id: str,
                    opts: list[str]) -> int:
     """Print the document ids this workflow can be seeded for."""
     as_json = False
@@ -598,7 +611,7 @@ def dispatch_workflow_meta(rest: list[str]) -> int:
             raise ToolError("workflow show: missing workflow id")
         try:
             data = engine.load_workflow(rest[1])
-        except WorkflowError as error:
+        except _workflow_error() as error:
             print(f"tpt: {error}", file=sys.stderr)
             return 2
         print(json.dumps(data, sort_keys=True, indent=2))
@@ -683,7 +696,7 @@ def check_registry(registry: Registry) -> int:
     problems.extend(check_groups(registry))
     try:
         _workflow_engine().check_collisions(set(registry))
-    except WorkflowError as error:
+    except _workflow_error() as error:
         problems.append(str(error))
     for problem in problems:
         print(f"tpt: {problem}", file=sys.stderr)
@@ -759,7 +772,7 @@ def main(argv: list[str] | None = None) -> int:
     raw = list(sys.argv[1:] if argv is None else argv)
     try:
         return dispatch(load_registry(), raw)
-    except (ToolError, WorkflowError) as error:
+    except (ToolError, _workflow_error()) as error:
         print(f"tpt: {error}", file=sys.stderr)
         return 2
 

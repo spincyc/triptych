@@ -729,13 +729,24 @@ def _prune_source_library_cache(directory: Path, keep: int) -> None:
 
 
 def _source_library_cache_entry(root: Path) -> Path | None:
-    """Where this tree's parsed record projection is kept, or None."""
+    """Where this tree's parsed record projection is kept, or None.
+
+    The key must cover every tree the projection is derived from, and that is
+    all three roots `load_library` reads --- `src/sources` for the records and
+    `src/gpt`/`src/claude` for the publication bindings --- not the sources
+    alone. Keyed on the sources only, a binding added under a publication root
+    left this serving the registry from before it, and a ledger row naming the
+    new artifact was reported as "not registered": a stale answer that looked
+    exactly like a real finding. It is the failure mode a cache has, and the
+    reason a key is written as the inputs rather than as the interesting input.
+    """
     if os.environ.get("TRIPTYCH_SOURCE_LIBRARY_CACHE") == "0":
         return None
     sources = root / "src" / "sources"
     if not sources.is_dir():
         return None
-    fingerprint, counted = tree_fingerprint([sources])
+    roots = [sources, root / "src" / "gpt", root / "src" / "claude"]
+    fingerprint, counted = tree_fingerprint([r for r in roots if r.is_dir()])
     if counted < SOURCE_LIBRARY_CACHE_FLOOR:
         return None
     return SOURCE_LIBRARY_CACHE_DIR / f"{fingerprint}.json"
@@ -824,7 +835,7 @@ def _source_library_records(
                 aside = entry.with_suffix(f".{os.getpid()}.tmp")
                 aside.write_text(encoded, encoding="utf-8")
                 os.replace(aside, entry)
-                _prune_source_library_cache(entry.parent, keep=4)
+                _prune_source_library_cache(entry.parent, keep=2)
         except (OSError, TypeError, ValueError, RecursionError):
             pass
 

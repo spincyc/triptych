@@ -2483,7 +2483,7 @@ def load_library(
                 aside = entry.with_suffix(f".{os.getpid()}.tmp")
                 aside.write_text(json.dumps(held), encoding="utf-8")
                 os.replace(aside, entry)
-                _prune_cache(entry.parent, keep=4)
+                _prune_cache(entry.parent, keep=2)
         except (OSError, TypeError, ValueError, RecursionError):
             pass
 

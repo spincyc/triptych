@@ -30,7 +30,9 @@ import tomllib
 from datetime import date as calendar_date
 from pathlib import Path
 
-import yaml
+# `yaml` is imported where it is parsed, not here. Every tool that touches a
+# calendar imports this module, and PyYAML costs 6.8ms to import --- for a
+# parse that, with the cache warm, usually never happens.
 
 MASS_INDEX_SCHEMA = "triptych-calendar-masses/v1"
 MASS_INDEX = "propers.yaml"
@@ -393,6 +395,13 @@ def _prune_yaml_cache(keep: int) -> None:
             pass
 
 
+def _yaml_error() -> type[BaseException]:
+    """PyYAML's error base, resolved only when something has already failed."""
+    import yaml  # noqa: PLC0415
+
+    return yaml.YAMLError
+
+
 def read_yaml(path: Path):
     """Read a YAML file with the fastest SAFE loader this machine has.
 
@@ -486,7 +495,7 @@ def _cached_parse(path: Path, kind: str, parse):
                 aside = entry.with_suffix(f".{os.getpid()}.tmp")
                 aside.write_text(encoded, encoding="utf-8")
                 os.replace(aside, entry)
-                _prune_yaml_cache(keep=24)
+                _prune_yaml_cache(keep=16)
         except (OSError, TypeError, ValueError, RecursionError):
             pass
 
@@ -813,7 +822,7 @@ def _coverage_record_problem(repository: Path, reference: object, where: str) ->
             held = read_yaml(source)
         else:
             return f"{where} cannot resolve a fragment in {raw_path!r}"
-    except (OSError, ValueError, tomllib.TOMLDecodeError, yaml.YAMLError) as error:
+    except (OSError, ValueError, tomllib.TOMLDecodeError, _yaml_error()) as error:
         return f"{where} cannot inspect {raw_path!r}: {error}"
     wanted = selector.removeprefix("id=")
     if isinstance(held, dict) and wanted in held:

@@ -764,7 +764,7 @@ def tree_fingerprint(roots) -> tuple[str, int]:
     return digest.hexdigest(), counted
 
 
-def cached_json(directory, key: str, build, *, keep: int = 4):
+def cached_json(directory, key: str, build, *, keep: int = 2):
     """`build()`, kept as JSON under *directory* and reused while *key* holds.
 
     The pattern this repository now uses in four places, written once. A tool
@@ -783,6 +783,11 @@ def cached_json(directory, key: str, build, *, keep: int = 4):
 
     The entry is written aside and renamed, because the suite runs these in
     parallel and a half-written entry read by a sibling is a wrong answer.
+
+    `keep` is two because only the current key is ever read again --- the key
+    IS the inputs --- and these entries are tens of megabytes each. The spare
+    one exists so that hopping between two branches does not rebuild every
+    time; a third would only be disk.
     """
     import json as _json
 
