@@ -68,7 +68,7 @@ EXAMPLES = {
                 "  \"notice\": \"PREPARATION ONLY — NOT AN APPROVAL OR AUTHORIZATION. These hashes report current files and do not... [+281 chars]",
                 "  \"pdfs\": [",
                 "    {",
-                "... 88327 more lines",
+                "... 88337 more lines",
             ),
             "prepare prints a candidate hash inventory only; it records no approval and changes no release file",
         ),
@@ -208,6 +208,10 @@ MARKER_LENGTH = 8
 _POSTCONCILIAR_QUARANTINE_HASHES: dict[
     tuple[str, int, int], frozenset[str]
 ] = {}
+# One command's held map of the copied browser/data inputs; see
+# `held_repository_inputs`. Empty outside a command, so a caller that is not
+# one --- a test, another tool --- always computes the map afresh.
+_HELD_WEB_DATA_FILES: list[dict[str, dict[str, Path]]] = []
 # Tracks of the abridged plans: one tier of one plan in one edition, typeset
 # from the tracked plan and the tracked verse text and installed as a reviewed
 # PDF. A track is not a publication record and deliberately has none: it has no
@@ -522,22 +526,43 @@ def _new_directory_entry(parent_fd: int, prefix: str) -> tuple[str, int]:
     raise ReleaseError(f"could not allocate a private {prefix} directory")
 
 
+def _inventory_children(
+    expected: dict[str, os.stat_result],
+) -> dict[PurePosixPath, list[tuple[PurePosixPath, os.stat_result]]]:
+    """Index one inventory by parent, in the order a purge walks each directory.
+
+    The purge below is a depth-first walk over this same inventory, so picking
+    each directory's children by re-reading every entry made the walk
+    quadratic: one artifact's 21,952 entries over 1,984 directories cost 43
+    million `PurePosixPath` constructions, which was 74 of the 84 seconds a
+    build took. Indexing costs one construction per entry and yields the same
+    lists, sorted by the same key, so every step of the walk still sees exactly
+    the children --- and the order --- it saw before.
+    """
+    children: dict[PurePosixPath, list[tuple[PurePosixPath, os.stat_result]]] = (
+        defaultdict(list)
+    )
+    for relative, entry in expected.items():
+        path = PurePosixPath(relative)
+        children[path.parent].append((path, entry))
+    for entries in children.values():
+        entries.sort(key=lambda item: item[0].name)
+    return children
+
+
 def _purge_directory_contents(
     directory_fd: int,
     label: str,
     expected: dict[str, os.stat_result],
     parent: PurePosixPath = PurePosixPath(),
+    children_by_parent: (
+        dict[PurePosixPath, list[tuple[PurePosixPath, os.stat_result]]] | None
+    ) = None,
 ) -> None:
     """Remove only inventoried children whose current identities still match."""
-    children = sorted(
-        (
-            (PurePosixPath(relative), entry)
-            for relative, entry in expected.items()
-            if PurePosixPath(relative).parent == parent
-        ),
-        key=lambda item: item[0].name,
-    )
-    for relative, entry in children:
+    if children_by_parent is None:
+        children_by_parent = _inventory_children(expected)
+    for relative, entry in children_by_parent.get(parent, ()):
         name = relative.name
         current = _entry_stat(directory_fd, name)
         matches = current is not None and (
@@ -557,7 +582,9 @@ def _purge_directory_contents(
             try:
                 if not _same_inode(entry, os.fstat(child_fd)):
                     continue
-                _purge_directory_contents(child_fd, label, expected, relative)
+                _purge_directory_contents(
+                    child_fd, label, expected, relative, children_by_parent
+                )
                 current = _entry_stat(directory_fd, name)
                 if current is not None and _same_inode(current, os.fstat(child_fd)):
                     try:
@@ -1540,6 +1567,35 @@ def is_bound_web_data_source(path: Path) -> bool:
     return path.suffix == ".json"
 
 
+@contextmanager
+def held_repository_inputs():
+    """Hold `web_data_files` for the length of exactly one command.
+
+    The map is a pure function of the repository tree, and building it walks,
+    reads, parses and rights-scans every one of the 12,050 generated JSON
+    files. One verification asks three separate questions that each need it ---
+    the approved site-source inventory, the expected artifact file set, and the
+    copied-byte parity check --- so the whole scan ran three times over an
+    unchanging tree, which was 10.7 of a verification's 22.6 seconds.
+
+    Scoped to one command rather than cached in the module: `main` enters it
+    around a single build or verification, and it is released when that
+    finishes. Nothing is remembered between commands, and a caller outside a
+    command --- a test, another tool --- computes the map afresh every time.
+
+    What this drops is a repeat of the same scan over the same bytes, not a
+    check. The scan is not a defence against the repository changing under a
+    running command: the artifact is verified from an immutable descriptor-held
+    snapshot, while every repository-side hash, render and byte-parity
+    comparison already reads its source exactly once.
+    """
+    _HELD_WEB_DATA_FILES.append({})
+    try:
+        yield
+    finally:
+        _HELD_WEB_DATA_FILES.pop()
+
+
 def web_data_files() -> dict[str, Path]:
     """Map every copied artifact data-root path to the repository file it copies.
 
@@ -1548,6 +1604,20 @@ def web_data_files() -> dict[str, Path]:
     pictorial gallery is absent without its manifest. The pages themselves are
     not here: they are rendered, and `web_browser_pages` maps those.
     """
+    if not _HELD_WEB_DATA_FILES:
+        return _scan_web_data_files()
+    held = _HELD_WEB_DATA_FILES[-1]
+    # Keyed by root because the tests repoint the module at a fixture tree, as
+    # the protected-identity cache above is.
+    key = str(ROOT.resolve())
+    if key not in held:
+        held[key] = _scan_web_data_files()
+    # A copy, so no caller can edit the map the rest of the command will read.
+    return dict(held[key])
+
+
+def _scan_web_data_files() -> dict[str, Path]:
+    """Walk the repository for the copied data inputs, validating every one."""
     if not web_data_manifest_path().is_file():
         return {}
     files: dict[str, Path] = {}
@@ -3731,6 +3801,10 @@ def verify_catalog_reachability(
     """Require every copied PDF to remain linked or marker-owned by its catalog."""
     errors: list[str] = []
     primary, _ = declared_providers(manifest)
+    # A catalog carries the rows of many publications, so its links are read
+    # once and asked of each in turn, rather than reparsing the same page for
+    # every publication it lists.
+    catalog_local_paths: dict[str, set[str]] = {}
     for key, publication in sorted(included.items()):
         provider, leaf = key
         catalog_source = publication["catalog"]
@@ -3745,11 +3819,14 @@ def verify_catalog_reachability(
             continue
         destination = f"pdf/{provider}/{leaf}.pdf"
         expected_href = relative_link(catalog_output, destination)
-        local_paths = {
-            unquote(urlsplit(href).path)
-            for href in parsed_html(catalog_path).links
-            if not urlsplit(href).scheme and not urlsplit(href).netloc
-        }
+        local_paths = catalog_local_paths.get(catalog_output)
+        if local_paths is None:
+            local_paths = set()
+            for href in parsed_html(catalog_path).links:
+                parts = urlsplit(href)
+                if not parts.scheme and not parts.netloc:
+                    local_paths.add(unquote(parts.path))
+            catalog_local_paths[catalog_output] = local_paths
         if expected_href not in local_paths:
             catalog_markers = {
                 (marked_provider or primary, marked_leaf)
@@ -4196,7 +4273,10 @@ def _verify_snapshot_contents(
     actual_pdf_paths: set[str] = set()
     unsafe_topology_errors: list[str] = []
     for path in output.rglob("*"):
-        relative = path.relative_to(output).as_posix()
+        # One `relative_to` per entry: it is the expensive part of this walk,
+        # and the forbidden-path test below wants the same answer's parts.
+        relative_path = path.relative_to(output)
+        relative = relative_path.as_posix()
         if path.is_symlink():
             error = f"artifact contains a symlink: {relative}"
             errors.append(error)
@@ -4212,7 +4292,7 @@ def _verify_snapshot_contents(
             error = f"artifact contains a special file: {relative}"
             errors.append(error)
             unsafe_topology_errors.append(error)
-        if any(part in {".git", "src", "guidance", "build", "__pycache__"} for part in path.relative_to(output).parts):
+        if any(part in {".git", "src", "guidance", "build", "__pycache__"} for part in relative_path.parts):
             errors.append(f"artifact contains a forbidden path: {relative}")
         if path.suffix in {".md", ".tex", ".log", ".aux"} or path.name == "retrieved.txt":
             errors.append(f"artifact contains a forbidden source/build file: {relative}")
@@ -4321,36 +4401,63 @@ def _verify_snapshot_contents(
         errors.append(".nojekyll must be empty")
 
     disallowed_ids = set(publications) - set(included)
-    privacy_patterns = {
+    # Every surface an excluded publication could reach the reader through: its
+    # PDF and its web edition alike.  HTML must not link it, and copied browser
+    # JSON must not advertise the same route to client-side code.  The latter
+    # check is intentionally independent of the document-corpus generator so
+    # stale output fails closed.  A route is a property of the publication, not
+    # of the file being scanned, so it is spelled once here rather than
+    # reformatted for each of the artifact's 21,639 text files.
+    excluded_routes = [
+        (
+            excluded_key,
+            (
+                f"pdf/{excluded_key[0]}/{excluded_key[1]}.pdf",
+                f"web/{excluded_key[0]}/{excluded_key[1]}.html",
+            ),
+        )
+        for excluded_key in disallowed_ids
+    ]
+    # Each scanner as (shortest literal it requires, pattern, what it names).
+    # The literal decides only where a match is impossible --- every pattern
+    # here can match only text that contains it, so a text without the literal
+    # cannot match and a positive still comes from the pattern itself. It is
+    # the same reduction `protected_source_identity_markers` documents, and it
+    # matters for the same reason: the home-path pattern's lookbehind defeats
+    # the literal prefix scan `re` would otherwise use, so it alone cost 1.20
+    # of the 1.32 seconds these five spent on the artifact's 141 MB of text,
+    # where the substring test that skips it costs 0.05.
+    privacy_patterns = (
         # A machine-local home path, not a /home/ segment in some host's URL.
-        re.compile(r"(?<![\w.-])/home/[A-Za-z0-9._-]+"): "home-directory path",
-        re.compile(r"file://"): "local file URL",
-        re.compile(r"github_pat_"): "GitHub token pattern",
-        re.compile(r"ghp_"): "GitHub token pattern",
-        re.compile(r"BEGIN PRIVATE KEY"): "private key marker",
-    }
+        (
+            "/home/",
+            re.compile(r"(?<![\w.-])/home/[A-Za-z0-9._-]+"),
+            "home-directory path",
+        ),
+        ("file://", re.compile(r"file://"), "local file URL"),
+        ("github_pat_", re.compile(r"github_pat_"), "GitHub token pattern"),
+        ("ghp_", re.compile(r"ghp_"), "GitHub token pattern"),
+        ("BEGIN PRIVATE KEY", re.compile(r"BEGIN PRIVATE KEY"), "private key marker"),
+    )
     for path in output.rglob("*"):
         if not path.is_file() or path.suffix not in TEXT_SUFFIXES and path.name not in {"robots.txt", "SHA256SUMS", "_headers"}:
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
         relative = path.relative_to(output).as_posix()
-        for pattern, label in privacy_patterns.items():
-            if pattern.search(text):
+        for literal, pattern, label in privacy_patterns:
+            if literal in text and pattern.search(text):
                 errors.append(f"{relative}: contains {label}")
-        for excluded_key in disallowed_ids:
-            excluded_provider, excluded_leaf = excluded_key
-            # Every surface an excluded publication could reach the reader
-            # through: its PDF and its web edition alike.  HTML must not link
-            # it, and copied browser JSON must not advertise the same route to
-            # client-side code.  The latter check is intentionally independent
-            # of the document-corpus generator so stale output fails closed.
-            excluded_targets = (
-                f"pdf/{excluded_provider}/{excluded_leaf}.pdf",
-                f"web/{excluded_provider}/{excluded_leaf}.html",
-            )
+        # The links a page carries are a property of the page, so it is parsed
+        # once here rather than once per excluded publication.
+        links = (
+            [unquote(href) for href in parsed_html(path).links]
+            if excluded_routes and path.suffix == ".html"
+            else ()
+        )
+        for excluded_key, excluded_targets in excluded_routes:
             if path.suffix == ".html":
-                for href in parsed_html(path).links:
-                    if any(target in unquote(href) for target in excluded_targets):
+                for href in links:
+                    if any(target in href for target in excluded_targets):
                         errors.append(
                             f"{relative}: links to excluded publication "
                             f"{publication_label(excluded_key, primary)}"
@@ -5016,40 +5123,47 @@ def main() -> int:
     with_examples(parser, tuple(e for verb in EXAMPLES for e in EXAMPLES[verb]))
     args = parser.parse_args()
     try:
-        manifest = load_manifest()
-        if args.deployment_target and (args.command != "verify" or args.preview):
-            raise ReleaseError(
-                "--deployment-target is valid only for public artifact verification"
-            )
-        if args.command == "prepare":
-            if args.preview:
-                raise ReleaseError("--preview is not meaningful with prepare")
-            inventory = prepare_candidate_inventory(manifest)
-            print(json.dumps(inventory, indent=2, sort_keys=True, ensure_ascii=False))
-            return 0
-        publications = validate_manifest(manifest, require_active_release=not args.preview)
-        if args.command == "check":
-            if args.preview:
-                raise ReleaseError("--preview is not meaningful with check")
-            print_policy_summary(manifest, publications)
-        elif args.command == "build":
-            output = build_site(manifest, publications, args.preview)
-            verify_command = "verify --preview" if args.preview else "verify"
-            print(
-                f"built {output.relative_to(ROOT)}; not verified — run "
-                f"tools/public-alpha {verify_command} before publication"
-            )
-        else:
-            output = OUTPUT_ROOT / ("preview" if args.preview else "site")
-            verify_output(manifest, publications, output, args.preview)
-            if args.deployment_target:
-                validate_deployment_target(
-                    artifact_authorization(
-                        manifest, included_publications(publications, False)
-                    ),
-                    args.deployment_target,
+        # One command, one scan of the copied browser/data inputs, released
+        # when this command ends. See `held_repository_inputs`.
+        with held_repository_inputs():
+            manifest = load_manifest()
+            if args.deployment_target and (args.command != "verify" or args.preview):
+                raise ReleaseError(
+                    "--deployment-target is valid only for public artifact verification"
                 )
-            print(f"verified {output.relative_to(ROOT)}")
+            if args.command == "prepare":
+                if args.preview:
+                    raise ReleaseError("--preview is not meaningful with prepare")
+                inventory = prepare_candidate_inventory(manifest)
+                print(
+                    json.dumps(inventory, indent=2, sort_keys=True, ensure_ascii=False)
+                )
+                return 0
+            publications = validate_manifest(
+                manifest, require_active_release=not args.preview
+            )
+            if args.command == "check":
+                if args.preview:
+                    raise ReleaseError("--preview is not meaningful with check")
+                print_policy_summary(manifest, publications)
+            elif args.command == "build":
+                output = build_site(manifest, publications, args.preview)
+                verify_command = "verify --preview" if args.preview else "verify"
+                print(
+                    f"built {output.relative_to(ROOT)}; not verified — run "
+                    f"tools/public-alpha {verify_command} before publication"
+                )
+            else:
+                output = OUTPUT_ROOT / ("preview" if args.preview else "site")
+                verify_output(manifest, publications, output, args.preview)
+                if args.deployment_target:
+                    validate_deployment_target(
+                        artifact_authorization(
+                            manifest, included_publications(publications, False)
+                        ),
+                        args.deployment_target,
+                    )
+                print(f"verified {output.relative_to(ROOT)}")
     except ReleaseError as exc:
         print(str(exc), file=sys.stderr)
         return 1

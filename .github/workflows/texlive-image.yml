@@ -1,0 +1,178 @@
+name: Publish the TeX Live toolchain image
+
+# Resolve the pins in `pages.yml` once and publish the result, so that a
+# deploy pulls a toolchain instead of building one. It changes nothing about
+# what the toolchain *is*: the same base image digest, the same immutable Arch
+# Linux Archive snapshot, the same package list, read out of `pages.yml` rather
+# than restated here so the two can never disagree. The image is a cache of a
+# computation `pages.yml` can still perform on its own; if this workflow has
+# never run, or its output is not pinned, the deploy bootstraps from the two
+# original pins exactly as it always did.
+#
+# Deliberately manual. `pages.yml` calls moving ARCH_IMAGE or ARCH_SNAPSHOT "a
+# deliberate change of baseline that needs the corpus rebuilt against it", and
+# republishing the toolchain is the same act: it belongs to an operator who is
+# about to watch a full rebuild, not to a push.
+#
+# After it runs, paste the digest it prints into TEXLIVE_IMAGE in
+# `.github/workflows/pages.yml`. The digest and not the tag: a tag is mutable
+# and would give away the reproducibility the pins exist to provide.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: texlive-image
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    # pacman against the archive is about three minutes and the push of a
+    # multi-gigabyte image is the rest. Thirty minutes is a hang detector.
+    timeout-minutes: 30
+
+    steps:
+      # Only the file that carries the pins. A full checkout of this
+      # publication tree takes upwards of ten minutes and nothing here reads
+      # it. Cone mode stays off so the single path means the single path.
+      - name: Check out the pinned toolchain declaration
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          filter: blob:none
+          sparse-checkout: |
+            /.github/workflows/pages.yml
+          sparse-checkout-cone-mode: false
+
+      - name: Install the YAML reader
+        run: python3 -m pip install --disable-pip-version-check --quiet pyyaml
+
+      # `pages.yml` owns the pins. Reading them back rather than repeating them
+      # is the whole point: an image built from a different base digest, a
+      # different snapshot or a different package list than the deploy's
+      # fallback would install is not the same toolchain, and nothing
+      # downstream could tell.
+      - name: Read the pins out of the deploy workflow
+        id: pins
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import os
+          import yaml
+
+          workflow = yaml.safe_load(open(".github/workflows/pages.yml", encoding="utf-8"))
+          environment = workflow["env"]
+          pins = {
+              "base": environment["ARCH_IMAGE"],
+              "snapshot": environment["ARCH_SNAPSHOT"],
+              "packages": " ".join(environment["ARCH_PACKAGES"].split()),
+          }
+          for name, value in pins.items():
+              if not value:
+                  raise SystemExit("pages.yml carries no value for %s" % name)
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as handle:
+              for name, value in pins.items():
+                  handle.write("%s=%s\n" % (name, value))
+          print("\n".join("%s: %s" % item for item in pins.items()))
+          PY
+
+      # Written here rather than tracked in the repository, because it has no
+      # content of its own: every line of it is one of the three pins above.
+      - name: Write the image definition
+        env:
+          BASE: ${{ steps.pins.outputs.base }}
+          SNAPSHOT: ${{ steps.pins.outputs.snapshot }}
+          PACKAGES: ${{ steps.pins.outputs.packages }}
+        run: |
+          set -euo pipefail
+          mkdir -p "${RUNNER_TEMP}/texlive-image"
+          # The heredoc is unquoted so the three pins land in the file; nothing
+          # else in it is shell-expandable. $repo and $arch are pacman's own
+          # placeholders and must survive into the mirrorlist, which is why
+          # they sit inside single quotes in a RUN instruction: Docker does not
+          # substitute variables in RUN, and the shell will not expand a
+          # single-quoted string. The step after this one proves that.
+          cat > "${RUNNER_TEMP}/texlive-image/Dockerfile" <<EOF
+          FROM ${BASE}
+
+          LABEL org.opencontainers.image.source="https://github.com/${GITHUB_REPOSITORY}"
+          LABEL org.opencontainers.image.description="TeX Live toolchain for the Triptych corpus, resolved from ${BASE} against the Arch Linux Archive snapshot ${SNAPSHOT}."
+          LABEL triptych.arch-image="${BASE}"
+          LABEL triptych.arch-snapshot="${SNAPSHOT}"
+          LABEL triptych.arch-packages="${PACKAGES}"
+
+          RUN printf 'Server=https://archive.archlinux.org/repos/${SNAPSHOT}/\$repo/os/\$arch\n' > /etc/pacman.d/mirrorlist \\
+           && pacman -Sy --noconfirm --needed archlinux-keyring \\
+           && pacman -Syu --noconfirm --needed ${PACKAGES} \\
+           && pacman -Scc --noconfirm
+          EOF
+          cat "${RUNNER_TEMP}/texlive-image/Dockerfile"
+
+      - name: Build the toolchain image
+        env:
+          SNAPSHOT: ${{ steps.pins.outputs.snapshot }}
+        run: |
+          set -euo pipefail
+          owner="$(printf '%s' "${GITHUB_REPOSITORY_OWNER}" | tr '[:upper:]' '[:lower:]')"
+          tag="ghcr.io/${owner}/triptych-texlive:${SNAPSHOT//\//-}"
+          printf '%s\n' "$tag" > "${RUNNER_TEMP}/texlive-image/tag"
+          docker build --tag "$tag" "${RUNNER_TEMP}/texlive-image"
+
+      # What the deploy will assert on every run, asserted once here where a
+      # failure costs a rebuild rather than a deployment. The mirrorlist check
+      # is the one that catches a silently substituted $repo: a mirrorlist
+      # naming a literal repository would still have installed *something*.
+      #
+      # The package list is the one read out of `pages.yml` above and not a
+      # second copy of it. A restated list is a list that can fall behind
+      # ARCH_PACKAGES, and it would fall behind silently: an image missing a
+      # package the deploy's fallback installs would pass a check that never
+      # asked about it, and fail hours later inside somebody's typesetting run.
+      - name: Verify what the image actually contains
+        env:
+          PACKAGES: ${{ steps.pins.outputs.packages }}
+        run: |
+          set -euo pipefail
+          tag="$(cat "${RUNNER_TEMP}/texlive-image/tag")"
+          docker run --rm --interactive --env "PACKAGES=${PACKAGES}" \
+            "$tag" bash -euo pipefail -s <<'SH'
+          grep -F -q '$repo/os/$arch' /etc/pacman.d/mirrorlist \
+            || { echo 'the mirrorlist lost pacman placeholders' >&2; exit 1; }
+          cat /etc/pacman.d/mirrorlist
+          pdflatex --version | sed -n 1,2p
+          test -n "${PACKAGES}"
+          # Deliberately unquoted: the package set is a word list.
+          # shellcheck disable=SC2086
+          pacman -Q ${PACKAGES}
+          command -v pdftotext pdfinfo make git
+          SH
+
+      - name: Publish the image and report its digest
+        env:
+          REGISTRY_USER: ${{ github.actor }}
+          REGISTRY_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          tag="$(cat "${RUNNER_TEMP}/texlive-image/tag")"
+          printf '%s' "${REGISTRY_TOKEN}" | docker login ghcr.io --username "${REGISTRY_USER}" --password-stdin
+          docker push "$tag"
+          digest="$(docker inspect --format='{{index .RepoDigests 0}}' "$tag")"
+          test -n "$digest"
+          # The deploy pulls this on every run that has anything to typeset, and
+          # the pull is the largest step of such a run. Reported here because it
+          # is the number a future change to ARCH_PACKAGES moves, and nothing
+          # else in either workflow says what the pin costs.
+          bytes="$(docker image inspect --format='{{.Size}}' "$tag")"
+          {
+            printf '## TeX Live toolchain published\n\n'
+            printf 'Tag (mutable, for browsing): `%s`\n\n' "$tag"
+            printf 'Uncompressed image size: %s bytes (%s MiB)\n\n' \
+              "$bytes" "$((bytes / 1048576))"
+            printf 'Pin this digest in `.github/workflows/pages.yml`:\n\n'
+            printf '```yaml\n  TEXLIVE_IMAGE: %s\n```\n' "$digest"
+          } >> "$GITHUB_STEP_SUMMARY"
+          printf 'TEXLIVE_IMAGE: %s\n' "$digest"

@@ -5486,7 +5486,6 @@
       {
        "kind": "synthesis",
        "pages": 34,
-       "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost-synthesis.pdf",
        "subject": "Synthesis companion to the 1962 Roman Missal propers; complete appointed texts and the per-element reception sweep are omitted",
        "title": "Fourteenth Sunday after Pentecost (Synthesis Edition)"
       }
@@ -5555,7 +5554,6 @@
       "GPT-5-based Codex agent"
      ],
      "pages": 61,
-     "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost.pdf",
      "produced": {
       "run_id": "90dcdddcb6780e60",
       "seed_commit": "76b6e825276afc8ae6a4809108f4899d1deb0b33",
@@ -5705,8 +5703,8 @@
    "section": "liturgy"
   },
   {
-   "catalog": null,
-   "catalog_page": null,
+   "catalog": "library/traditional-latin-mass.md",
+   "catalog_page": "library/traditional-latin-mass.html",
    "editions": [
     {
      "also": [
@@ -5718,7 +5716,7 @@
        "title": "Sixteenth Sunday after Pentecost (Synthesis Edition)"
       }
      ],
-     "authorization": null,
+     "authorization": "perpetual-public-repository-2026",
      "contributions": [
       {
        "model": "GPT-6-based Codex agent",
@@ -5747,10 +5745,11 @@
      "provider": "gpt",
      "reviewed": "2026-09-05",
      "revised": "2026-09-05T23:47:40Z",
-     "status": null,
+     "status": "alpha",
      "subject": "The complete appointed texts and commentary on the Sixteenth Sunday after Pentecost in the 1962 Roman Missal",
      "title": "Sixteenth Sunday after Pentecost (Full Edition)",
-     "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/main.tex"
+     "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/main.tex",
+     "web": "web/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.html"
     }
    ],
    "leaf": "liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost",

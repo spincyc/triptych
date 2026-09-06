@@ -1502,11 +1502,64 @@ SHARED_WITH_EDITION = (
 path_forms = _canon.path_forms
 
 
-def _write_json(path: Path, payload: Any) -> None:
-    path.write_text(
-        json.dumps(payload, ensure_ascii=False, indent=1, sort_keys=True) + "\n",
-        encoding="utf-8",
-    )
+def _serialise(payload: Any) -> str:
+    """The bytes one generated file holds.
+
+    ONE definition, shared by the write and by `--check`. Two serialisers that
+    agree today diverge the first time one gains a separator, an indent or a
+    sort, and the check that used the other then reports drift no generator
+    caused — or misses the drift a generator did.
+    """
+    return json.dumps(payload, ensure_ascii=False, indent=1, sort_keys=True) + "\n"
+
+
+def _orphans(directory: Path, files: dict[Path, str]) -> list[Path]:
+    """Tracked JSON under this directory that the pass did not produce.
+
+    An emit owns its whole directory. A file left behind after the record that
+    produced it stopped being derived is the failure that looks like success:
+    the page never asks for it, so nothing ever notices it is wrong. The write
+    deletes them; `--check` reports them, because a file the sources no longer
+    produce is drift whether or not any surviving file moved.
+    """
+    if not directory.is_dir():
+        return []
+    kept = {path.resolve() for path in files}
+    return [
+        path for path in sorted(directory.rglob("*.json")) if path.resolve() not in kept
+    ]
+
+
+def _emit(directory: Path, files: dict[Path, str]) -> None:
+    """Write what was built, then remove what this pass did not write."""
+    for path, body in files.items():
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(body, encoding="utf-8")
+    for stale in _orphans(directory, files):
+        stale.unlink()
+    for empty in sorted(directory.rglob("*"), reverse=True):
+        if empty.is_dir() and not any(empty.iterdir()):
+            empty.rmdir()
+
+
+def _drift(directory: Path, files: dict[Path, str]) -> tuple[list[Path], list[Path]]:
+    """What is tracked here, against what the sources produce NOW: (checked, drifted).
+
+    BYTES, NOT A SUMMARY, and nothing written — not even a directory, because a
+    check that writes is not a check. Every file under `src/web/data/structure/`
+    is bound by an exact SHA-256 in `release/public-alpha.json`; a change to a
+    generator, or to an input one reads, moves those bytes silently, and until
+    this existed nothing here compared them. `check` validates the edge and
+    replays the chapter derivation, which says nothing at all about whether the
+    tracked emit is the emit these sources produce.
+    """
+    drifted = [
+        path
+        for path, body in files.items()
+        if not path.is_file() or path.read_text(encoding="utf-8") != body
+    ]
+    orphans = _orphans(directory, files)
+    return (sorted({*files, *orphans}), sorted({*drifted, *orphans}))
 
 
 # The chapter derivation, run by THE MODEL rather than beside it. See
@@ -1612,8 +1665,10 @@ def _fold_shared(rows: list[dict[str, Any]]) -> tuple[dict[str, dict[str, Any]],
     return shared, slim
 
 
-def structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
-    """Write what the browser fetches: a spine per chapter, a payload per fragment.
+def _structure_files(
+    root: Path = ROOT, out: Path | None = None
+) -> tuple[Path, dict[Path, str], list[Path]]:
+    """Build what the browser fetches: a spine per chapter, a payload per fragment.
 
     YOU PAY FOR WHAT YOU READ. Two layers, addressed differently on purpose:
 
@@ -1648,12 +1703,17 @@ def structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
     stopped being derived is the failure that looks like success: the page would
     never ask for it and nothing would ever notice it was wrong. So this pass
     owns the whole directory and deletes what it did not write.
+
+    Every file is built in memory and none is written here, so `--check` can
+    hold the tracked bytes against what the sources produce now without writing
+    anything — and so the write cannot serialise by one rule and the check by
+    another.
     """
     out = out or (root / "src/web/data")
     written: list[Path] = []
+    files: dict[Path, str] = {}
     directory = out / "structure" / "catena"
     texts = directory / TEXT_DIRECTORY
-    texts.mkdir(parents=True, exist_ok=True)
     books = canon(root)
     folders = path_forms(root)
     width = _canon.chapter_width(root)
@@ -1691,7 +1751,7 @@ def structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
             if not SAFE_ID.fullmatch(identifier):
                 raise CatenaError(f"passage id is not safe as a filename: {identifier!r}")
             path = texts / f"{identifier}.json"
-            _write_json(path, {"id": identifier, **carried})
+            files[path] = _serialise({"id": identifier, **carried})
             written.append(path)
             # What the reader is about to fetch, said before they fetch it, and
             # in words rather than bytes: a reader chooses by length of reading.
@@ -1727,10 +1787,8 @@ def structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
                 continue
             present.append(chapter)
             path = directory / folder / _canon.chapter_name(chapter, width)
-            path.parent.mkdir(parents=True, exist_ok=True)
             shared, slim = _fold_shared(here)
-            _write_json(
-                path,
+            files[path] = _serialise(
                 {
                     "token": token,
                     "name": book["name"],
@@ -1778,8 +1836,7 @@ def structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
         )
 
     path = directory / "index.json"
-    _write_json(
-        path,
+    files[path] = _serialise(
         {
             "numbering": _projection.CANONICAL,
             # Every book of the canon, each carrying the path component derived
@@ -1810,18 +1867,25 @@ def structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
             # book of the canon and written down here so the page pads the way
             # the emit padded, rather than knowing the width by heart.
             "chapter_digits": width,
-        },
+        }
     )
     written.append(path)
+    return directory, files, written
 
-    kept = {one.resolve() for one in written}
-    for stale in sorted(directory.rglob("*.json")):
-        if stale.resolve() not in kept:
-            stale.unlink()
-    for empty in sorted(directory.rglob("*"), reverse=True):
-        if empty.is_dir() and not any(empty.iterdir()):
-            empty.rmdir()
+
+def structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
+    """Write what the browser fetches; `_structure_files` says what, and why."""
+    directory, files, written = _structure_files(root, out)
+    _emit(directory, files)
     return written
+
+
+def structure_drift(
+    root: Path = ROOT, out: Path | None = None
+) -> tuple[list[Path], list[Path]]:
+    """Is the tracked `structure/catena` what these sources produce? Writes nothing."""
+    directory, files, _written = _structure_files(root, out)
+    return _drift(directory, files)
 
 
 # ---------------------------------------------------------------------------
@@ -1863,7 +1927,9 @@ def _index_bible(root: Path) -> Any:
     return module
 
 
-def paragraph_structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
+def _paragraph_files(
+    root: Path = ROOT, out: Path | None = None
+) -> tuple[Path, dict[Path, str], list[Path]]:
     """One file per edition per chapter that opens a paragraph anywhere in it.
 
     `<edition>/<NN-book>/<chapter>.json`, carrying the verses at which a
@@ -1874,14 +1940,18 @@ def paragraph_structure(root: Path = ROOT, out: Path | None = None) -> list[Path
     Additive on the same terms as everything else: an edition adds its own
     chapters and rewrites nothing, and a corrected projection rewrites the
     chapters it touches and no page.
+
+    Built in memory and written by `paragraph_structure`, for the reason
+    `_structure_files` gives: one serialisation, shared by the write and the
+    check.
     """
     out = out or (root / "src/web/data")
     module = _index_bible(root)
     folders = path_forms(root)
     width = _canon.chapter_width(root)
     directory = out / "structure" / PARAGRAPHS_DIRECTORY
-    directory.mkdir(parents=True, exist_ok=True)
     written: list[Path] = []
+    files: dict[Path, str] = {}
     editions: dict[str, Any] = {}
     for identifier, record in module.EDITIONS.items():
         if not record.get("publishable"):
@@ -1898,9 +1968,7 @@ def paragraph_structure(root: Path = ROOT, out: Path | None = None) -> list[Path
             if folder is None:
                 continue
             path = directory / identifier / folder / _canon.chapter_name(chapter, width)
-            path.parent.mkdir(parents=True, exist_ok=True)
-            _write_json(
-                path,
+            files[path] = _serialise(
                 {
                     "edition": identifier,
                     "token": token,
@@ -1915,8 +1983,7 @@ def paragraph_structure(root: Path = ROOT, out: Path | None = None) -> list[Path
         )
     concurring, positions = _paragraphs.disagreement()
     path = directory / "index.json"
-    _write_json(
-        path,
+    files[path] = _serialise(
         {
             "editions": editions,
             "witnesses": _paragraphs.witnesses(),
@@ -1926,17 +1993,25 @@ def paragraph_structure(root: Path = ROOT, out: Path | None = None) -> list[Path
             "concurring": concurring,
             "positions": positions,
             "chapter_digits": width,
-        },
+        }
     )
     written.append(path)
-    kept = {one.resolve() for one in written}
-    for stale in sorted(directory.rglob("*.json")):
-        if stale.resolve() not in kept:
-            stale.unlink()
-    for empty in sorted(directory.rglob("*"), reverse=True):
-        if empty.is_dir() and not any(empty.iterdir()):
-            empty.rmdir()
+    return directory, files, written
+
+
+def paragraph_structure(root: Path = ROOT, out: Path | None = None) -> list[Path]:
+    """Write where each edition opens a paragraph; `_paragraph_files` builds it."""
+    directory, files, written = _paragraph_files(root, out)
+    _emit(directory, files)
     return written
+
+
+def paragraph_drift(
+    root: Path = ROOT, out: Path | None = None
+) -> tuple[list[Path], list[Path]]:
+    """Is the tracked `structure/paragraphs` what these editions produce? Writes nothing."""
+    directory, files, _written = _paragraph_files(root, out)
+    return _drift(directory, files)
 
 
 # ---------------------------------------------------------------------------
@@ -2032,6 +2107,33 @@ def _check(root: Path) -> int:
     return 0
 
 
+def _shown(path: Path, root: Path) -> str:
+    return str(path.relative_to(root) if path.is_relative_to(root) else path)
+
+
+def _drift_report(
+    verb: str, root: Path, checked: list[Path], drifted: list[Path]
+) -> int:
+    """Name the tracked file that is not what the sources produce, and the fix.
+
+    Named individually, not counted. "3 files have drifted" sends a reader off
+    to regenerate and diff the whole tree; a path sends them to the one file,
+    and the first line of its diff usually says which source moved.
+    """
+    for path in drifted:
+        print(f"  stale {_shown(path, root)}")
+    if drifted:
+        print(
+            f"catena {verb}: {len(drifted)} of {len(checked)} tracked file(s) are "
+            "not what the sources produce; rerun "
+            f"`python3 scripts/_catena.py {verb}` and commit the result",
+            file=sys.stderr,
+        )
+        return 1
+    print(f"catena {verb}: {len(checked)} tracked file(s) are current")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         prog="catena", description="Validate and derive the catena's scripture edge."
@@ -2043,10 +2145,24 @@ def main(argv: list[str] | None = None) -> int:
     verbs.add_parser("titles", help="print the alias groups failing the title check")
     emit = verbs.add_parser("structure", help="write what the browser fetches")
     emit.add_argument("--out", type=Path, default=None)
+    # The tracked emit is bound file by file to a SHA-256 in
+    # `release/public-alpha.json`, so it has to be possible to ASK whether it is
+    # still what the sources produce, rather than only to rewrite it and read a
+    # diff.
+    emit.add_argument(
+        "--check",
+        action="store_true",
+        help="exit 1 naming any tracked file the sources no longer produce, writing nothing",
+    )
     marks = verbs.add_parser(
         "paragraphs", help="write where each edition opens a paragraph"
     )
     marks.add_argument("--out", type=Path, default=None)
+    marks.add_argument(
+        "--check",
+        action="store_true",
+        help="exit 1 naming any tracked file the editions no longer produce, writing nothing",
+    )
     args = parser.parse_args(argv)
     root = args.root.resolve()
     try:
@@ -2060,11 +2176,17 @@ def main(argv: list[str] | None = None) -> int:
                 print(f"{author}\t{work}\t{reason}")
             return 0
         if args.verb == "paragraphs":
+            if args.check:
+                return _drift_report(
+                    "paragraphs", root, *paragraph_drift(root, args.out)
+                )
             for path in paragraph_structure(root, args.out):
-                print(path.relative_to(root) if path.is_relative_to(root) else path)
+                print(_shown(path, root))
             return 0
+        if args.check:
+            return _drift_report("structure", root, *structure_drift(root, args.out))
         for path in structure(root, args.out):
-            print(path.relative_to(root) if path.is_relative_to(root) else path)
+            print(_shown(path, root))
         return 0
     except CatenaError as error:
         print(f"catena: {error}", file=sys.stderr)

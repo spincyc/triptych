@@ -61,12 +61,10 @@ EXAMPLES = {
         Example(
             "tools/document-library check",
             (
-                "139 works, 189 documents, 206 issues, 5993 pages.",
-                "  titles derived from source and confirmed against the built PDF: 204",
+                "139 works, 189 documents, 206 issues, 6056 pages.",
+                "  titles derived from source and confirmed against the built PDF: 206",
                 "  titles the sources do not state: 0",
-                "  issues with no PDF installed: 2",
-                "    claude liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost: no PDF is installed for this issue",
-                "    claude liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost-synthesis: no PDF is installed for this issue",
+                "  issues with no PDF installed: 0",
                 "  the page's own derivation, replayed: src/web/browser/texts/catalogue-model.js",
                 "  editions whose production record makes no comparable claim: 187",
                 "  editions produced under a workflow version since superseded: 2 (advisory; nothing gates on it)",
@@ -78,12 +76,10 @@ EXAMPLES = {
         Example(
             "tools/document-library check --provider claude",
             (
-                "50 works, 50 documents, 56 issues, 1615 pages.",
-                "  titles derived from source and confirmed against the built PDF: 54",
+                "50 works, 50 documents, 56 issues, 1677 pages.",
+                "  titles derived from source and confirmed against the built PDF: 56",
                 "  titles the sources do not state: 0",
-                "  issues with no PDF installed: 2",
-                "    claude liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost: no PDF is installed for this issue",
-                "    claude liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost-synthesis: no PDF is installed for this issue",
+                "  issues with no PDF installed: 0",
                 "  the page's own derivation, replayed: src/web/browser/texts/catalogue-model.js",
                 "  editions whose production record makes no comparable claim: 49",
                 "  editions produced under a workflow version since superseded: 1 (advisory; nothing gates on it)",
@@ -152,7 +148,7 @@ EXAMPLES = {
         Example(
             "tools/document-library structure --out build/example-catalogue",
             (
-                "139 works, 189 documents, 206 issues, 5993 pages.",
+                "139 works, 189 documents, 206 issues, 6056 pages.",
                 "  -> build/example-catalogue/structure/documents/corpus.json",
             ),
             "WRITES. --out here is untracked; the default writes the tracked src/web/data",
@@ -160,7 +156,7 @@ EXAMPLES = {
         Example(
             "tools/document-library structure --check",
             (
-                "139 works, 189 documents, 206 issues, 5993 pages.",
+                "139 works, 189 documents, 206 issues, 6056 pages.",
                 "  src/web/data/structure/documents/corpus.json is current",
             ),
             "writes nothing; refuses when the tracked catalogue has drifted from the sources",
@@ -670,7 +666,10 @@ def edition_record(document: Document, by_key: dict[tuple[str, str], Document]) 
     for issue in document.issues:
         if issue.kind == FULL:
             continue
-        entry = {"kind": issue.kind, "pages": issue.pages, "pdf": issue.pdf}
+        entry = {"kind": issue.kind, "pages": issue.pages}
+        # A companion is a cut of this document, published or withheld with it.
+        if whole.status != "hold":
+            entry["pdf"] = issue.pdf
         if issue.pdf_absent:
             entry["pdf_absent"] = issue.pdf_absent
         for field, mine, theirs in (
@@ -689,7 +688,6 @@ def edition_record(document: Document, by_key: dict[tuple[str, str], Document]) 
         "subject": whole.title.subject,
         "title_source": whole.title.source,
         "pages": whole.pages,
-        "pdf": whole.pdf,
         "revised": document.provenance.revised,
         "eligibility": document.eligibility,
         "reviewed": document.reviewed,
@@ -714,6 +712,13 @@ def edition_record(document: Document, by_key: dict[tuple[str, str], Document]) 
     # the browser render a "Read here" link to a file the artifact cannot
     # contain.  Keep the edition visible as held, with its explicit PDF
     # absence, while withholding a route no reader can follow.
+    # The same reasoning as `web` below, and for the same artifact: a held
+    # edition's PDF is not published either, so naming its route here would
+    # advertise to the browser a file the artifact cannot contain, and would
+    # put an excluded publication into a projection the release copies
+    # verbatim. Held editions stay visible, and carry no route.
+    if whole.status != "hold":
+        record["pdf"] = whole.pdf
     if document.web_page and whole.status != "hold":
         record["web"] = document.web_page
     if document.basis:
