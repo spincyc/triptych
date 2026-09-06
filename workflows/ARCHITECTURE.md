@@ -268,8 +268,12 @@ A run records the digest at seed time, in both the manifest and the state, and
 every `advance` and `replay` recomputes it. If the workflow source has changed
 since the run was seeded, the run fails closed rather than continuing under
 guidance it never started with. A changed workflow means a new run. The
-`proper` workflow is at version 25 and `proper-finish` at version 3. Version
-25 moves the repeat budget onto the reviser's own report where one exists,
+`proper` workflow is at version 26 and `proper-finish` at version 4. Version
+26 reconciles criterion 12 with criteria 1 and 2, exempts the
+profile-mandated `Generation Metadata` from criterion 12, and reconciles the
+id-stability instruction with the fan-out design that makes a lane's own
+prior ids unrecoverable. Version 25 moves the repeat budget onto the
+reviser's own report where one exists,
 declares `document_root` on both pipelines so the packet header can carry
 `DOCUMENT_ROOT` and `REPAIR_TARGETS`, gives the five bounded-revision stages
 `reports_repairs` and `content-evaluation` `records_standing_findings`, and

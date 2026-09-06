@@ -988,8 +988,25 @@ whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
-The `proper` workflow is at version 25. The `proper-finish` workflow is at
-version 3.
+The `proper` workflow is at version 26. The `proper-finish` workflow is at
+version 4.
+
+Version 26 and `proper-finish` 4 encode two findings from run
+`efff3a6f73c1f451`, which blocked at `content-evaluation`'s absolute ceiling
+with four of five lanes passing. Criterion 12 now states the conforming form
+of an evidence bound — witness, text or reading as the subject, with a worked
+example — and says that a criterion 12 repair which removes such a bound, its
+qualifying adjective included, trades this criterion's defect for criteria 1
+and 2's; that oscillation cost that run three regressions, the last of which
+stopped it. Criterion 12's out-of-scope list gains `Generation Metadata`,
+which the profile mandates and whose content the metadata standard fixes, so
+a lane is no longer left to decide unaided whether a profile-mandated section
+is a defect from its first word. And the id-stability instruction is
+reconciled with the engine: a fan-out lane's packet carries an empty
+`PRIOR_FINDINGS` by design and it may not read earlier results, so it cannot
+recover the ids it minted before; the ids it can recover, and must reuse, are
+the standing blocking findings in the leaf's own
+`evaluations/blocking-findings-v1.toml`.
 
 Version 25 moves the iteration budget onto the reviser's own report. A stage
 declaring `reports_repairs` returns `finding_dispositions`, one entry per
@@ -1086,7 +1103,7 @@ the check by carrying an older version in the leaf. Historical publications
 remain out of scope until substantive revision. A run seeded against `proper`
 version 23 or earlier or `proper-finish` version 1 fails closed; seed it again.
 
-The `proper-finish` workflow is at version 3. Version 1 remains the historical
+The `proper-finish` workflow is at version 4. Version 1 remains the historical
 authoring-to-publication rescue contract; version 2 changes no topology or
 repair ownership, but adopts the same authoring fragment, structural preflight,
 profile evaluator, and fail-closed version interlock as `proper` v24.
