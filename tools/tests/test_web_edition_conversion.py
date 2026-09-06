@@ -37,13 +37,20 @@ OTHER_CONTRIBUTION = (
 @unittest.skipUnless(HAS_PANDOC, "pandoc is not installed")
 class WebEditionConversionTests(unittest.TestCase):
     def convert(
-        self, body: str, metadata: str = CONTRIBUTION, preamble: str = ""
+        self, body: str, metadata: str = CONTRIBUTION, preamble: str = "",
+        *, files: dict[str, str] | None = None, proper: bool = False,
     ) -> str:
         """Convert a synthetic single-section leaf and return its Markdown."""
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             leaf = root / "src" / "test" / "studies" / "subject"
             leaf.mkdir(parents=True)
+            if proper:
+                (leaf / "proper-components.toml").touch()
+            for name, text in (files or {}).items():
+                path = leaf / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(text, encoding="utf-8")
             (leaf / "generation-metadata.tex").write_text(
                 rf"\AIDocumentRevisionTimestamp{{{TIMESTAMP}}}" + "\n" + metadata + "\n",
                 encoding="utf-8",
@@ -61,7 +68,7 @@ class WebEditionConversionTests(unittest.TestCase):
             with mock.patch.object(DRIVER, "SRC", root / "src"), mock.patch.object(
                 DRIVER, "OUT", root / "build" / "web"
             ):
-                destination = DRIVER.convert("test", "studies/subject")
+                destination = DRIVER.convert("test", "studies/subject", root / "build" / "web")
             return destination.read_text(encoding="utf-8")
 
     def test_endnote_survives_as_a_footnote_with_its_body(self) -> None:
@@ -90,6 +97,54 @@ class WebEditionConversionTests(unittest.TestCase):
         )
         self.assertIn("Web alternative.", markdown)
         self.assertNotIn("Print-only wording.", markdown)
+
+    def test_proper_canonical_branch_survives_recursive_section_inputs(self) -> None:
+        markdown = self.convert(
+            r"\ifdefined\TriptychSynthesisEdition"
+            r"\input{studies/subject/missing-companion}"
+            r"\else\input{studies/subject/sections/outer}\fi",
+            proper=True,
+            files={
+                "sections/outer.tex": r"\input{studies/subject/sections/references}",
+                "sections/references.tex": (
+                    r"\ifdefined\TriptychSynthesisEdition"
+                    r"\unknowncompanion{Companion-only wording.}"
+                    r"\input{studies/subject/missing-references}"
+                    r"\else\clearpage\section*{References}\label{sec:references}"
+                    r"Canonical witness at \sourceurl{https://example.invalid/witness}{its locus}."
+                    r"\fi Shared terminal text."
+                ),
+            },
+        )
+        self.assertIn("## References {#sec:references}", markdown)
+        self.assertIn("Canonical witness", markdown)
+        self.assertIn("https://example.invalid/witness", markdown)
+        self.assertIn("Shared terminal text.", markdown)
+        self.assertNotIn("Companion-only", markdown)
+
+    def test_proper_active_included_macro_is_still_refused(self) -> None:
+        with self.assertRaises(DRIVER.ConversionError) as raised:
+            self.convert(
+                r"\input{studies/subject/sections/references}",
+                proper=True,
+                files={"sections/references.tex": (
+                    r"\ifdefined\TriptychSynthesisEdition Companion."
+                    r"\else\dubiousclaim{Canonical evidence.}\fi"
+                )},
+            )
+        self.assertIn(r"unknown macro \dubiousclaim", str(raised.exception))
+        self.assertIn("sections/references.tex", str(raised.exception))
+
+    def test_synthesis_branch_requires_a_componentized_proper(self) -> None:
+        with self.assertRaises(DRIVER.ConversionError) as raised:
+            self.convert(
+                r"\input{studies/subject/sections/references}",
+                files={"sections/references.tex": (
+                    r"\ifdefined\TriptychSynthesisEdition Companion."
+                    r"\else Canonical.\fi"
+                )},
+            )
+        self.assertIn(r"unknown macro \TriptychSynthesisEdition", str(raised.exception))
 
     def test_named_table_environment_keeps_its_header_and_every_row(self) -> None:
         markdown = self.convert(

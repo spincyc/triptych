@@ -5,7 +5,40 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-09-05.
+Last reconciled: 2026-09-06.
+
+## GPT propers 54–56 publication and integration, 2026-09-06
+
+<!-- promised-deliverable: gpt-propers-54-56-publication-integration-2026-09-06 -->
+
+The maintainer requested repair of the proper 56 web-converter defect,
+completion of its PDF generation and publication, reconciliation with
+`feature/codex/propers/tlm/54` and `feature/codex/propers/tlm/55`, reconciliation
+or rebase onto current `origin/main`, and a validated fast-forward push to
+`origin/main`. The workspace branch remains `feature/codex/propers/tlm/56`.
+
+**In progress.** The earlier proper workflow remains truthfully terminal
+`BLOCKED`; its engine has no resume operation, and its accepted PDF reviews and
+immutable run history will be preserved. This follow-up repairs the converter
+and completes the outstanding web review, installation and publication checks
+under the maintainer's new instruction. Both accepted PDF builds already exist
+at 20 and 13 pages. The converter currently selects the canonical synthesis
+alternative only in the entrypoint, before loading its included sections.
+The repair now applies the same selection to the complete included source
+closure without treating unsupported commands as safe to discard. The new
+regression failed against the old converter; all 56 converter tests pass with
+the fix, including active-command refusal and canonical citation preservation.
+The actual proper 56 conversion succeeds without warnings, and `tmt check`
+passes. Independent fidelity and narrow-viewport review is in progress.
+
+The two named branches and current main have been fetched for comparison.
+Integration must preserve each proper's authored content, source evidence and
+acceptance records, reconcile shared inventories and release bindings, and
+retain main's deployment and PDF-cache changes. The combined sources, installed
+PDFs, generated web editions and public artifact require validation before a
+fast-forward main push. That push authorizes the ordinary Pages workflow;
+deployment and affected public routes must be verified before claiming them
+live.
 
 ## GPT Sixteenth Sunday after Pentecost workflow, 2026-09-05
 

@@ -1,6 +1,36 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gpt-propers-54-56-publication-integration-2026-09-06"
+owner = "PROJECT-WORK.md"
+promise = "Repair the proper 56 web converter, complete its reviewed PDF and web publication, reconcile branches 54 and 55 with this work and current main, then validate and fast-forward origin/main and verify deployment."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "converter-regression"
+  criterion = "Canonical branch selection applies to included proper sections, a regression test proves retained content and excluded alternatives, unsupported active commands still fail, and the real proper 56 web conversion passes."
+  status = "pass"
+  evidence = ["tools/web-edition", "tools/tests/test_web_edition_conversion.py"]
+
+  [[deliverables.requirements]]
+  id = "reviewed-publication"
+  criterion = "Proper 56 full and synthesis PDFs are reviewed and installed, the canonical web edition passes fidelity and narrow-viewport review, and catalogue and alpha records discover the installed artifacts with publication checks passing."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "branches-reconciled"
+  criterion = "The integrated tree preserves the intended outcomes of branches 54, 55 and 56 and current origin/main, with shared source inventories, catalogue and release state reconciled and affected checks passing."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "validated-main-and-deployment"
+  criterion = "The reviewed outgoing history passes deployment-source, public-artifact and GitHub Pages compatibility gates, reaches origin/main by fast-forward, and the exact pushed snapshot's Pages run and affected public routes are verified."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml"]
+
+[[deliverables]]
 id = "gpt-sixteenth-after-pentecost-workflow-2026-09-05"
 owner = "PROJECT-WORK.md"
 promise = "Execute the prescribed proper v25 workflow for the GPT Sixteenth Sunday after Pentecost through ACCEPTED or BLOCKED, preserving its completed work and accurately recording the publication disposition and unresolved findings."
