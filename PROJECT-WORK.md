@@ -22,7 +22,7 @@ or rebase onto current `origin/main`, and a validated fast-forward push to
 immutable run history will be preserved. This follow-up repairs the converter
 and completes the outstanding web review, installation and publication checks
 under the maintainer's new instruction. Both accepted PDF builds already exist
-at 20 and 13 pages. The converter currently selects the canonical synthesis
+at 20 and 13 pages. The converter previously selected the canonical synthesis
 alternative only in the entrypoint, before loading its included sections.
 The repair now applies the same selection to the complete included source
 closure without treating unsupported commands as safe to discard. The new
@@ -34,9 +34,22 @@ passes. Independent review passed eight fidelity criteria and raised
 The converter now derives those anchors from the component manifest, retaining
 any explicit source labels. All 59 converter tests pass, including stable
 anchors across heading changes and refusal of undeclared elements; `tmt check`
-passes again. The regenerated edition is undergoing the reviewer's follow-up.
+passes again. The independent follow-up passed: all ten anchors reach their
+appointed texts without collisions, removing the new attributes reproduces
+the first-reviewed content exactly, and narrow reflow remains unchanged. The
+reviewed canonical Markdown is installed with SHA-256
+`b4e39538695c302a8b6c5ca30cd0f04391accbbe0fcbde70169566d4ae1bd706`.
+Both alpha release records now exist, and the GPT catalogue cell links the
+full PDF, synthesis PDF and canonical web edition. The earlier run's terminal
+`BLOCKED` history is retained; this new follow-up supplies the missing review.
 
 The two named branches and current main have been fetched for comparison.
+Their published histories will be retained through merge commits, followed by
+a genuine fast-forward of main; no remote history needs rewriting. Source
+identity collisions in Wilson, Schuster, Aquinas, Augustine, Chrysostom and
+Francis de Sales have been identified for explicit reconciliation. Site-wide
+bindings, catalogue regeneration and publication gates will be completed on
+the combined tree so that they validate all three intended editions together.
 Integration must preserve each proper's authored content, source evidence and
 acceptance records, reconcile shared inventories and release bindings, and
 retain main's deployment and PDF-cache changes. The combined sources, installed
