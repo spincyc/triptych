@@ -19,7 +19,10 @@ govern stage order, worker count, reasoning effort, findings and acceptance.
 This request opens this provider and identity alone; the dated authorization
 is recorded in `guidance/liturgy/propers-production-plan.md`.
 
-**In progress.** The registered-identity, provider and scope checks passed.
+**Workflow complete; terminal disposition BLOCKED at `generate-web`.**
+The full and synthesis PDFs passed their prescribed reviews and are installed,
+but web conversion failed and publication acceptance was not reached. The
+registered-identity, provider and scope checks passed.
 The target had no publication leaf when work began. Its appointed formulary
 is `pentecost-16`; the generated and checked chronology record is now at
 `src/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/research/chronology.toml`.
@@ -53,11 +56,12 @@ and 13 synthesis-edition pages. The prescribed authoring stage passed, including
 focused preflight, run provenance, component pagination and web eligibility.
 The workflow's program content-preflight gate passed. Its first content
 evaluation joined all five lane results and required changes. The engine's
-standing findings are `CON-EVI-001`, `CON-SYN-001`, `CON-CIT-001a`,
+initial standing findings were `CON-EVI-001`, `CON-SYN-001`, `CON-CIT-001a`,
 `CON-CIT-001b`, `CON-CIT-002a` and `CON-CIT-002b`. It routed the two
 research-owned citation findings to research iteration 1 and carried the four
-authoring findings forward. The complete findings are preserved unchanged in
-the leaf's engine-written `evaluations/blocking-findings-v1.toml`. All seven
+authoring findings forward. The leaf's engine-written
+`evaluations/blocking-findings-v1.toml` recorded them until the later successful
+content evaluation replaced that record with zero standing findings. All seven
 fresh research lanes completed their second full sweeps at the packet-specified
 efforts. The engine joined 116 findings and accepted research synthesis
 iteration 1. The revised brief preserves that complete evidence set and all
@@ -92,8 +96,13 @@ The revision passed after replacing the synthesis-only forced References
 break with the existing section guard. The appendix tail and References now
 share page 12, and the synthesis ends on page 13 with all text and type sizes
 preserved. Both editions were rebuilt and their terminal pages inspected;
-source validation passed after inventory and catalogue refresh. The mechanical
-gates are running again, and renewed visual evaluation remains outstanding.
+source validation passed after inventory and catalogue refresh. Mechanical
+gates passed again. All four fresh visual lanes returned PASS for iteration 1,
+with no findings or observations; the engine accepted their unchanged results.
+The artifact final-acceptance gate then passed, and the publication worker
+installed both accepted PDFs through the prescribed install commands. Both
+installed files match their reviewed build artifacts byte for byte. The
+canonical web declaration and eligibility checks passed, but generation failed.
 
 The full `make check-sources` check now **passes**. The documented inventory
 refresh added the target's actual source surface and reconciled the two
@@ -102,14 +111,30 @@ manifest. An actual source-record review classified the new publication's
 eleven broad source strata. The inventory covers 140 GPT publications and
 2,118 source-surface files; the family ledger retains 151 explicitly pending
 review units, without claiming family screening or atomic citation coverage.
-The generated document catalogue now records both new editions as not
-installed. No placeholder publication owner or checker change was needed.
+The generated document catalogue now records the installed full and synthesis
+PDFs at 20 and 13 pages. No placeholder publication owner or checker change
+was needed.
 
-The prescribed visual review of both PDFs, the canonical web edition and
-publication and release gates remain outstanding. No guide has
-been installed or accepted. Reconcile this entry to the engine's terminal
-disposition and preserve any unresolved findings before reporting the
-workflow finished; a `BLOCKED` run does not establish publication acceptance.
+The `generate-web` worker returned `BLOCKED`, and the engine accepted that
+unchanged result and entered terminal `BLOCKED`. The unresolved defect is in
+`sections/99-references.tex` under the target leaf: the web converter reports
+unknown macros `\TriptychSynthesisEdition`, `\else`, `\fi` and `\ifdefined`.
+These delimit the edition-specific pagination repair for `VIS-RHY-001`.
+Generation exited 1 and emitted no other warnings. No canonical web artifact
+was generated or installed. Accepted source and PDF bytes were preserved.
+
+The installed artifacts are
+`pdf/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.pdf`
+(20 pages) and its `-synthesis.pdf` companion (13 pages). The content evaluation
+has zero standing findings, and all visual lanes passed after the page-rhythm
+repair. Web evaluation, publication installation and final publication gates
+were not reached. Neither alpha release record exists; the owning catalogue's
+GPT cell remains `Planned`. Release bindings have not adopted the changed
+source projections and document catalogue; their outstanding reconciliation
+was not bypassed. Completing the requested execution through a terminal state
+does not establish publication acceptance. Further work must resolve the
+converter's conditional handling while preserving the accepted editions, then
+obtain the outstanding web and publication acceptance through the workflow.
 
 ## The 1962 Latin backfill, 2026-09-03/04
 
