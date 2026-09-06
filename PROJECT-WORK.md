@@ -29,7 +29,12 @@ closure without treating unsupported commands as safe to discard. The new
 regression failed against the old converter; all 56 converter tests pass with
 the fix, including active-command refusal and canonical citation preservation.
 The actual proper 56 conversion succeeds without warnings, and `tmt check`
-passes. Independent fidelity and narrow-viewport review is in progress.
+passes. Independent review passed eight fidelity criteria and raised
+`WEB-004`: all ten appointed-text boundaries needed explicit stable anchors.
+The converter now derives those anchors from the component manifest, retaining
+any explicit source labels. All 59 converter tests pass, including stable
+anchors across heading changes and refusal of undeclared elements; `tmt check`
+passes again. The regenerated edition is undergoing the reviewer's follow-up.
 
 The two named branches and current main have been fetched for comparison.
 Integration must preserve each proper's authored content, source evidence and

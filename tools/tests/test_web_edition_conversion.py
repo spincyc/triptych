@@ -39,6 +39,7 @@ class WebEditionConversionTests(unittest.TestCase):
     def convert(
         self, body: str, metadata: str = CONTRIBUTION, preamble: str = "",
         *, files: dict[str, str] | None = None, proper: bool = False,
+        element_keys: tuple[str, ...] = (),
     ) -> str:
         """Convert a synthetic single-section leaf and return its Markdown."""
         with tempfile.TemporaryDirectory() as temporary:
@@ -46,7 +47,9 @@ class WebEditionConversionTests(unittest.TestCase):
             leaf = root / "src" / "test" / "studies" / "subject"
             leaf.mkdir(parents=True)
             if proper:
-                (leaf / "proper-components.toml").touch()
+                (leaf / "proper-components.toml").write_text(
+                    f"element_keys = {list(element_keys)!r}\n", encoding="utf-8"
+                )
             for name, text in (files or {}).items():
                 path = leaf / name
                 path.parent.mkdir(parents=True, exist_ok=True)
@@ -145,6 +148,38 @@ class WebEditionConversionTests(unittest.TestCase):
                 )},
             )
         self.assertIn(r"unknown macro \TriptychSynthesisEdition", str(raised.exception))
+
+    def test_appointed_element_anchor_is_independent_of_heading_wording(self) -> None:
+        for heading in ("Collect --- no. 1593", "Collect: grace before and after"):
+            with self.subTest(heading=heading):
+                markdown = self.convert(
+                    r"\subsection*{Collect} Chronology context."
+                    rf"\fulltextheading{{{heading}}} Appointed prayer.",
+                    preamble=r"\newcommand{\fulltextheading}[1]{\subsection*{#1}}",
+                    proper=True, element_keys=("collect",),
+                )
+                self.assertIn("{#proper-collect}", markdown)
+                self.assertEqual(markdown.count("{#proper-collect}"), 1)
+                self.assertRegex(markdown, r"\{#proper-collect\}\s+Appointed prayer\.")
+                self.assertNotIn("### Collect {#proper-collect}", markdown)
+
+    def test_appointed_element_preserves_an_explicit_source_anchor(self) -> None:
+        markdown = self.convert(
+            r"\fulltextheading{Collect}\label{appointed:collect} Appointed prayer.",
+            preamble=r"\newcommand{\fulltextheading}[1]{\subsection*{#1}}",
+            proper=True, element_keys=("collect",),
+        )
+        self.assertIn("{#appointed:collect}", markdown)
+        self.assertNotIn("{#proper-collect}", markdown)
+
+    def test_appointed_element_must_be_declared_in_manifest(self) -> None:
+        with self.assertRaises(DRIVER.ConversionError) as raised:
+            self.convert(
+                r"\fulltextheading{Invented} Appointed prayer.",
+                preamble=r"\newcommand{\fulltextheading}[1]{\subsection*{#1}}",
+                proper=True, element_keys=("collect",),
+            )
+        self.assertIn("undeclared appointed element", str(raised.exception))
 
     def test_named_table_environment_keeps_its_header_and_every_row(self) -> None:
         markdown = self.convert(
