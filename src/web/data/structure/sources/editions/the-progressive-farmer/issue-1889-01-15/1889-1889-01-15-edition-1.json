@@ -1,0 +1,59 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "page-master-image",
+   "byte_size": 8046123,
+   "edition_owned": true,
+   "id": "artifact.the-progressive-farmer.issue-1889-01-15.1889-01-15-edition-1.loc-page-master-7681d163",
+   "media_type": "image/jp2",
+   "notes": "Extent as the retrieving lane measured it: Complete page master image, The Progressive Farmer 1889-01-15 ed-1 page 8, 6576x9787 px 8-bit greyscale; the highest resolution the Library of Congress publishes for this page. Whole page, not a crop. The soprano-bass-alto-tenor sequence the retrieving lane quotes from this page is Library of Congress optical recognition and is NOT collated; the lane says so. Nothing may be asserted about the printing in the Farm, Field and Stockman, which this page only credits.",
+   "page_count": 1,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "The issue was published in the United States before 1929 and is in the public domain there; the retrieving research lane of run efff3a6f73c1f451 recorded the same finding, in the form 'nineteenth-century American newspaper digitised by the Library of Congress; public domain'. The Library of Congress's mechanical digitisation and optical recognition of a public-domain page add no original authorship of their own. The bytes are not retained on the demonstrated-size ground guidance/sources.md allows: 8.05 MB of greyscale page master, above the 5.88 MB that is the largest payload this library retains across 10,461 files. What a reader with no network opens instead is the word-coordinate index of the same page, retained beside this record, which carries the page's words though not its letterform; and that shortfall is why nothing quoted from this page in this run rises above the lane's own uncollated optical reading.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://tile.loc.gov/storage-services/service/ndnp/ncu/batch_ncu_johns_ver01/data/sn92073049/00295879269/1889011501/0021.jp2",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "word-coordinate-index",
+   "byte_size": 223562,
+   "edition_owned": true,
+   "id": "artifact.the-progressive-farmer.issue-1889-01-15.1889-01-15-edition-1.loc-word-coordinates-9cccc518",
+   "media_type": "application/json",
+   "notes": "Extent as the retrieving lane measured it: Complete word-coordinate index for the whole of that page (declared page space 26304x39148, i.e. 4x the JP2 master), used to locate the two crop regions.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "The issue was published in the United States before 1929 and is in the public domain there; the retrieving research lane of run efff3a6f73c1f451 recorded the same finding, in the form 'nineteenth-century American newspaper digitised by the Library of Congress; public domain'. The Library of Congress's mechanical digitisation and optical recognition of a public-domain page add no original authorship of their own. The bytes are retained at 0.22 MB: they are the Library's optical reading of a public-domain page, they are what a reader with no network opens to find the page's words, and no exemption guidance/sources.md allows comes near a file this size.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://tile.loc.gov/text-services/word-coordinates-service?format=alto_xml&segment=%2Fservice%2Fndnp%2Fncu%2Fbatch_ncu_johns_ver01%2Fdata%2Fsn92073049%2F00295879269%2F1889011501%2F0021.xml",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1889-01-15",
+  "editors": [],
+  "id": "edition.the-progressive-farmer.issue-1889-01-15.1889-01-15-edition-1",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "The Progressive Farmer, 1889-01-15, edition 1, page 8, as digitised by the Library of Congress in the National Digital Newspaper Program under LCCN sn92073049 and served from tile.loc.gov.",
+  "title": "The Progressive Farmer, 1889-01-15, edition 1",
+  "translators": [],
+  "year": 1889
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "The Progressive Farmer",
+  "category": "newspaper-issue",
+  "description": "Page 8 of the issue of 15 January 1889, read in this run for a musical setting of a piece credited to the Farm, Field and Stockman. Registered as one issue rather than as the serial, because one page of one issue is what was retrieved and the narrowest truthful owner of these bytes is that issue.",
+  "id": "work.the-progressive-farmer.issue-1889-01-15",
+  "languages": [
+   "en"
+  ],
+  "title": "The Progressive Farmer, 1889-01-15"
+ }
+}

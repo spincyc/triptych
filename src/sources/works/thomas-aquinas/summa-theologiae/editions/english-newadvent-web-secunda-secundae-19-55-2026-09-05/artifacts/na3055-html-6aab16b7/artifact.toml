@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.thomas-aquinas.summa-theologiae.english-newadvent-web-secunda-secundae-19-55-2026-09-05.na3055-html-6aab16b7"
+edition_id = "edition.thomas-aquinas.summa-theologiae.english-newadvent-web-secunda-secundae-19-55-2026-09-05"
+artifact_type = "web-page"
+media_type = "text/html"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "The underlying English translation is in the public domain in the United States. What is not redistributed is the exact newadvent.org response, which is mostly not the translation: it carries the site's navigation, styling, advertising slots and 'About this page' apparatus under New Advent's own copyright footer, and no permission to republish those was sought or granted. So the exact bytes stay remote, hashed, with the limitation stated: what a reader with no network cannot presently open here is this page's English, and the reason is that nothing in this repository yet separates New Advent's Fathers text from New Advent's own matter. src/sources/inventories/catholic-encyclopedia-rights-v1.toml settles that separation for the encyclopedia and extracts its articles as tracked public-domain derivatives; the commit that made it recorded expressly that New Advent's Fathers deliveries 'carry a different underlying work with a different public-domain basis, which needs its own rights record instead of an extension of this one by assertion'. That record does not exist yet, this stage may not write one on assertion, and so the artifact stays remote and the gap is named rather than papered over."
+source_url = "https://www.newadvent.org/summa/3055.htm"
+provenance = "Exact HTML response acquired directly over HTTPS from newadvent.org by the research lane of run efff3a6f73c1f451 on 2026-09-05 and hashed."
+retrieved = "2026-09-05"
+sha256 = "6aab16b78ba7af495fd272cbb306b40085c4ab24b0fc066f2cd03c1862c1661e"
+byte_size = 50222
+indexable = false
+notes = "Extent as the retrieving lane measured it: Complete New Advent page for Summa theologiae II-II q. 55, on the vices opposed to prudence, all eight articles including a. 6 on solicitude about temporal things and a. 7 on solicitude about the future, same English translation; plus site chrome; Latin not retrieved. Complete page for II-II q. 55, on the vices opposed to prudence, all eight articles, including article 6 on solicitude about temporal things and article 7 on solicitude about the future, which are the articles this run reads against the Gospel of the Fourteenth Sunday."

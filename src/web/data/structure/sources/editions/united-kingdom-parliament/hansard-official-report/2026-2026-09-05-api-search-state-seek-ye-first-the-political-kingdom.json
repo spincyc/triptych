@@ -1,0 +1,48 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "search-response",
+   "byte_size": 29756,
+   "edition_owned": true,
+   "id": "artifact.united-kingdom-parliament.hansard-official-report.2026-09-05-api-search-state-seek-ye-first-the-political-kingdom.hansard-api-search-51df717f",
+   "media_type": "application/json",
+   "notes": "Extent as the retrieving lane measured it: Complete result set for the exact-phrase query across all Hansard dates: TotalResultCount = 2, both results present with full contribution text. Exhaustive for this phrase within Hansard's own digitised corpus; no truncation.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "licensed",
+   "rights_basis": "The retrieving research lane of run efff3a6f73c1f451 recorded that this is UK official parliamentary report material and that parliamentary material is published under the Open Parliament Licence. That is a real and affirmative licence, and it is recorded here as the lane found it. It is NOT relied on for retention, and the reason is stated rather than hidden: neither the retrieving lane nor this registration read the licence text or established which version governs this API's responses, so the affirmative recorded distribution basis that guidance/sources.md requires before `tracked` is asserted but not verified. What a reader with no network therefore cannot open here is the debate text itself; closing that needs a rights record for UK parliamentary material of the kind guidance/sources.md asks for when one question governs a whole body of material, and this stage may not write one on assertion.",
+   "rights_jurisdiction": null,
+   "source_url": "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=%22seek%20ye%20first%20the%20political%20kingdom%22&queryParameters.take=50",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": "Parliament of the United Kingdom",
+  "date": "2026-09-05",
+  "editors": [],
+  "id": "edition.united-kingdom-parliament.hansard-official-report.2026-09-05-api-search-state-seek-ye-first-the-political-kingdom",
+  "jurisdiction": "United Kingdom",
+  "language": "en",
+  "publication": "A dated state of the Hansard search API over spoken contributions, retrieved 5 September 2026.",
+  "title": "Hansard search API state, exact phrase 'seek ye first the political kingdom', 5 September 2026",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Hansard",
+   "The Official Report",
+   "Parliamentary Debates"
+  ],
+  "author": "Parliament of the United Kingdom",
+  "category": "official-report",
+  "description": "The official report of debates in both Houses of the United Kingdom Parliament, registered here as a container identity: an edition is one sitting's debate or one dated state of the Hansard search API, and the acts and speeches printed inside remain distinct from it.",
+  "id": "work.united-kingdom-parliament.hansard-official-report",
+  "languages": [
+   "en"
+  ],
+  "title": "Hansard, the Official Report of debates in Parliament"
+ }
+}

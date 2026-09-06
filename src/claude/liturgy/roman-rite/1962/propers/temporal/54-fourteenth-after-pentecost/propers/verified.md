@@ -59,15 +59,36 @@ omits the appointed-text component.
   `retrieved.txt`. The
   sibling **page-image** artifact (`…benziger-iuxta-typicam-1962.ia-djvu`,
   `storage = "remote"`, no payload installed) was **not** read for this
-  formulary. This is weaker than the Thirteenth Sunday's record, whose Benziger
-  readings were taken from page images, and the difference is declared rather
-  than papered over: every Benziger reading below is a reading of an
-  uncorrected OCR text layer and is evidence about that text layer, not a
-  collated reading of the Benziger book. The formulary stands at Benziger
-  printed pp. 389–390 (page-number marks at OCR lines 59,325 and 59,445 bracket
-  it), which by the leaf-to-page offset recorded for the Thirteenth Sunday
-  (leaf `n464` = printed p. 388) are leaves `n465`–`n466`; the leaves themselves
-  were not opened, so that mapping is an inference from the earlier record.
+  formulary. This was weaker than the Thirteenth Sunday's record, whose Benziger
+  readings were taken from page images, and the difference was declared rather
+  than papered over: every Benziger reading below that is not marked otherwise
+  is a reading of an uncorrected OCR text layer and is evidence about that text
+  layer, not a collated reading of the Benziger book. The formulary stands at
+  Benziger printed pp. 389–390 (page-number marks at OCR lines 59,325 and 59,445
+  bracket it), which by the leaf-to-page offset recorded for the Thirteenth
+  Sunday (leaf `n464` = printed p. 388) are leaves `n465`–`n466`.
+
+  **Amended 2026-09-05 by the source-audit stage: the leaves have now been
+  opened, and not by way of the registered artifact.** The registered
+  page-image artifact `…benziger-iuxta-typicam-1962.ia-djvu` was this run
+  retrieved whole from its own `source_url` and hashed to the registered
+  `c66aaa37b848112b03e2cb9b171c3a81c7364f4896825e565118173d3925874b` at
+  24,084,354 bytes, and **it is still unread**: no DjVu decoder exists in this
+  environment. What was read is the **same Internet Archive item's own
+  single-page JP2 derivative**,
+  `Missale-Romanum-1962-Roman-Missal-color-latin_jp2.zip` (retrieved whole
+  2026-09-05, 188,509,749 bytes, SHA-256
+  `bb6db2500c3164e3855b1e4d9d5d84e48c7c80a71f166d8d29c60119d6f48dfb`), **for
+  which this library holds no artifact record**; registering it is the
+  source-library lane's to do, and until it is, a reading taken from it is a
+  reading of an unregistered derivative of a registered item and is labelled so
+  wherever it is used. Its leaves `_0464`–`_0467` carry the running heads `388`,
+  `389`, `390` and `391`, so `_0465` is printed p. 389 and `_0466` printed
+  p. 390: the leaf mapping above is now **read** and no longer inferred. Three
+  readings of this formulary rest on those images and are marked in the table
+  below — the Introit's `míllia`, the `fi`-ligature accents, and the acute in
+  `adiícere` at Mt. 6:27 — and every other Benziger reading here is still the
+  text layer's.
 - **Status of the second witness.** Benziger 1962 is a *different edition* of
   the same 1962 revision, not an independent image of the Vatican typical
   edition. Where the two disagree, the difference is an **edition difference or
@@ -247,9 +268,14 @@ omits the appointed-text component.
   "alone among the polysyllables in the vice-list" — instead of asking what made
   it unaccented and looking for the same cause elsewhere. (2) A fourteenth
   Benziger difference, at the Introit's `mília`, which had stood outside the
-  table below; it is now the table's first row. **The count of that table is
-  therefore fourteen from this run onward**, and the 2026-09-02 bullet's "all
-  thirteen" is left standing because it was true of the table as it then was.
+  table below; it is now the table's first row. **The count of that table was
+  therefore fourteen from this run, and fifteen from 2026-09-05, which added
+  the `fi`-ligature accent row; it is sixteen from the 2026-09-05 authoring
+  pass, which split the `adiícere` entry into a Mt. 6:27 row read on the page
+  images and a Mt. 6:33-and-Communion row that is the text layer's, so that this
+  table can carry the distinction the guide prints.** The 2026-09-02 bullet's
+  "all thirteen" is left standing because it was true of the table as it then
+  was, and no reading changed at either of the two rows.
   **Three limits, declared rather than papered over.** The registered Benziger
   **page-image** artifact (`…benziger-iuxta-typicam-1962.ia-djvu`, hashed this
   run to `c66aaa37…` at 24,084,354 bytes, matching its manifest) is present in a
@@ -263,6 +289,86 @@ omits the appointed-text component.
   and its passage record, at the byte level. Nothing was refetched over the
   network; every witness read this run was read from bytes already held and
   hashed against its manifest first.
+- **Fifth independent re-confirmation, 2026-09-05, by the source-audit stage,
+  and the first one that read the second witness on page images.** Every witness
+  this record argues from was retrieved **whole** from its registered
+  `source_url` over the network this run and hashed before anything was read
+  from it; every one matched its manifest and this record: the CMAA facsimile at
+  `648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a`,
+  82,815,941 bytes; the Benziger DjVuTXT derivative at `2a2da44d…`, 2,788,999
+  bytes; the Benziger **page-image** artifact `…benziger-iuxta-typicam-1962.ia-djvu`
+  at `c66aaa37…`, 24,084,354 bytes — whose registered bytes this leaf now holds
+  whole for the first time, and which remain **unread**, there being still no
+  DjVu decoder in this environment; and the Cummiskey 1861 scan
+  `…philadelphia-1861.ia-scan-pdf` at `85034c90…`, 24,767,551 bytes. Nothing was
+  installed into the tree.
+  `pdfimages -list` reports PDF pp. 475–477 as 1-bit CCITT images at 500 ppi
+  (2,583 × 3,814; 2,570 × 3,806; 2,577 × 3,811). The three pages were extracted
+  as their own embedded images and read as images, never through a text layer.
+  All ten elements, their headings and references, the printed heading and
+  `II classis`, the `Credo` and Preface rubrics, both boundaries and the marginal
+  series 1571–1582 stand as recorded, and so do the unaccented `veneficia`,
+  `confidere` and `fidei`, `adícere` and `adiciéntur` with a single `i`, `mília`
+  with a single `l`, the absence of a comma after `gustáte`, the Secret's short
+  `Per Dóminum.` against the Postcommunion's long `Per Dóminum nostrum.`, the
+  absence of a repetition cue after `℣. Glória Patri.`, and the damaged Gospel
+  marginal number, `157` firm with the fourth digit surviving as two
+  disconnected fragments. RG 127 b was re-read on its own page image at printed
+  p. XX (PDF p. 18) under `D) De colore viridi` within title
+  `XVIII - De coloribus paramentorum`, and RG 427, RG 434 b and RG 435 at
+  printed p. XXXI (PDF p. 29), all four worded exactly as this record quotes
+  them. The 2026-09-02 page-image collation of the 1861 Cummiskey was
+  **replayed** on the freshly retrieved and digest-matched scan, at printed
+  pp. 425 and 427 (PDF pp. 434 and 436, extracted as their own 1-bit JBIG2
+  images at 600 ppi; the file still carries no text layer at all), and holds
+  word for word and point for point, the Secret's missing Latin cue included.
+  **What this run closed, and it is the limit that had stood since
+  2026-08-26.** The Benziger formulary was read on page images at last — not on
+  the registered `.djvu`, which nothing here can decode, but on the **Internet
+  Archive item's own single-page JP2 derivative**,
+  `Missale-Romanum-1962-Roman-Missal-color-latin_jp2.zip`, retrieved whole from
+  the same item `MissaleRomanum1962RomanMissalColorLatin` on 2026-09-05,
+  188,509,749 bytes, SHA-256
+  `bb6db2500c3164e3855b1e4d9d5d84e48c7c80a71f166d8d29c60119d6f48dfb`. **This
+  library registers no artifact for that zip**, and the fact is stated rather
+  than smoothed over: it is a derivative of the same scan as the registered
+  `.djvu`, served from that item's own download endpoint, but it is not one of
+  this repository's records, and registering it is the source-library lane's to
+  do. Leaves `_0464`–`_0467` carry the running heads `388`, `389`, `390` and
+  `391`, so `_0465` is printed p. 389 and `_0466` is printed p. 390: the leaf
+  mapping this record had inferred from the Thirteenth Sunday's offset is now
+  **read**. The pages are 800 × 1,158 and in colour with the rubrics in red, and
+  they carry a `FATIMAMOVEMENT.COM` watermark — **which is on the Internet
+  Archive item's own pages**, so the two watermarked JPEGs the 2026-08-31 run
+  could match "to nothing this repository records" were in all likelihood
+  derivatives of this same registered item, and that run's doubt about their
+  provenance was heavier than the facts required.
+  **Two things those page images settle, and the second is a correction to this
+  record.** (1) The Introit's `míllia` is **certain**, not "probably real": the
+  page prints `míllia` with two `l`s, plainly, against the typical edition's
+  `mília`. Row 1 of the table below is corrected. (2) **Benziger prints the
+  acute over its `fi` ligature and the typical edition does not, so this
+  record's Benziger corroboration for the three unaccented `fi` words was
+  false.** The Benziger page images print `venefícia` at Gal. 5:20, `confídere`
+  twice in the Gradual and `fídei` at Mt. 6:30, every one of them accented,
+  where the typical edition prints all four bare. The uncorrected optical layer
+  simply lost those accents, and the note under the Epistle read that loss as
+  independent testimony about the Benziger book. **Nothing about the controlling
+  reading changes**: the ground was always the page image of the typical
+  edition, which prints them bare, and the note said so. What changes is that
+  the corroborating sentence is withdrawn, and the difference is now a row of
+  the table below in its own right — the bare `fi` is this typical edition's
+  face, not the 1962 revision's orthography. A third, smaller refinement at the
+  same place: Benziger's Mt. 6:27 form is `adiícere`, with the acute on the
+  second `i`, which the text layer rendered accentless.
+  **Three limits, declared rather than papered over.** The registered Benziger
+  `.djvu` was fetched whole and authenticated and is still unread, so no reading
+  below is a collation of that registered artifact; the JP2 derivative that was
+  read is unregistered, as said above, and its readings are recorded here as
+  readings of the Internet Archive item's own page images and not of a record
+  this library holds. The 1861 reading is still one digitisation of one copy and
+  says nothing about who made the translation. And this run installed no payload
+  and wrote nothing outside this record and `retrieved.txt`.
 - **Formulary boundary.** The formulary begins immediately after the
   Postcommunion of the Thirteenth Sunday after Pentecost (marginal no. 1571,
   `Sumptis, Dómine, cæléstibus sacraméntis…`) and ends immediately before the
@@ -282,13 +388,15 @@ so each row states whether the difference is **probably a real edition
 difference** or **cannot be separated from OCR noise**; forms that are plainly
 recognition failures are listed in `retrieved.txt` instead of here.
 
-| Element | Vatican editio typica, pp. 394–396 | Benziger editio iuxta typicam, pp. 389–390 (OCR layer) | Character of the difference |
+| Element | Vatican editio typica, pp. 394–396 | Benziger editio iuxta typicam, pp. 389–390 (OCR layer, except the three rows marked as read on page images) | Character of the difference |
 | --- | --- | --- | --- |
 | Introit close | `℣. Glória Patri.` and stop | `℣. Glória Patri. Protéctor.` | Real. Benziger prints the antiphon-repetition cue; the typical edition leaves it to the general rubrics. Substantive for the singer, not for the text. The Thirteenth Sunday's record shows the same habit in both books. |
-| Introit, Ps. 83:11 | `super mília` | `super mfllia` = `míllia` | Probably real, and of the same class as the `adícere`/`adiicere` row below: Benziger keeps the older double `l` the typical edition drops. **Added 2026-09-03 by the source-audit stage**, having stood outside this table until then. The doubling is not recognition noise on the evidence available: the same text layer renders `lília` on the facing page as `lflia` with a single `l`, so it does not double `l` after this book's `f`-for-`í`; and `mfllia` is what the layer gives for *thousands* at all sixteen places it occurs across the whole derivative, against sixty-four `mflia` that are every one of them `família`, `paterfamílias` and the like. Both older witnesses used for the rights check below print `millia` too, as does the Clementine, so it is the typical edition's single `l` that is the departure. It stays "probably" and not "certainly" because the registered Benziger **page images** remain unread here for want of a decoder, and only they can settle a doubled letter. |
+| Introit, Ps. 83:11 | `super mília` | `super míllia` (text layer `mfllia`) | Real, and of the same class as the two `adícere`/`adiicere` rows below: Benziger keeps the older double `l` the typical edition drops. **Added 2026-09-03 by the source-audit stage**, having stood outside this table until then. The doubling is not recognition noise on the evidence available: the same text layer renders `lília` on the facing page as `lflia` with a single `l`, so it does not double `l` after this book's `f`-for-`í`; and `mfllia` is what the layer gives for *thousands* at all sixteen places it occurs across the whole derivative, against sixty-four `mflia` that are every one of them `família`, `paterfamílias` and the like. Both older witnesses used for the rights check below print `millia` too, as does the Clementine, and so does the 1861 Cummiskey read on its own page image, so it is the typical edition's single `l` that is the departure. **Settled 2026-09-05 by the source-audit stage, and the row now reads Real.** The Benziger page was read at last — on the Internet Archive item's own unregistered JP2 derivative, the registered `.djvu` being undecodable here — and printed p. 389 gives `míllia` with two `l`s plainly, at the head of its right column. The word is also accented there, which is the next row's business. |
 | Collect | `mortálitas; tuis semper auxíliis` | `mortalitas; tuis semper auxiliis` | No difference. The semicolon stands in both, and the whole Collect agrees word for word. |
 | Epistle, Gal. 5:21 | `invídiæ, homicídia, ebrietátes` | `invidiee, homicidia,ebrietates` | OCR noise only; no edition difference can be read out of it. |
-| Gospel, Mt. 6:27 and 33; Communion | `adícere`, `adiciéntur`, `adiciéntur` | `adiicere`, `adiiciéntur`, `adiiciéntur` | Probably real, and consistent across all three places: Benziger spells the doubled `-ii-` (the Clementine's `adjicere`/`adjicientur` with `j` resolved as `i`), the typical edition the single `-i-`. Orthography, not a different word. |
+| Gospel, Mt. 6:27 | `adícere` | `adiícere` | Real. Benziger spells the doubled `-ii-` (the Clementine's `adjicere` with `j` resolved as `i`) where the typical edition has the single `-i-`; orthography, not a different word. **The acute on the second `i` was read 2026-09-05 on the Benziger page images** — the Internet Archive item's own unregistered JP2 derivative, no page of the registered page-image artifact having been opened — where the uncorrected text layer had rendered the form accentless. |
+| Gospel, Mt. 6:33; Communion | `adiciéntur`, `adiciéntur` | `adiiciéntur`, `adiiciéntur` | Real, and of the same class as the row above: Benziger doubles the `-ii-` at both places where the typical edition prints the single `-i-`, consistently with Mt. 6:27. Orthography, not a different word. **Text layer only**: no page image was read at these two places. |
+| Epistle Gal. 5:20; Gradual, twice; Gospel Mt. 6:30 | `veneficia`, `confidere`, `confidere`, `fidei` — every one printed **bare** | `venefícia`, `confídere`, `confídere`, `fídei` — every one printed **accented** | Real, and it is a difference of type rather than of text. The typical edition's face sets `fi` as a ligature with no room for an acute above the `i`, so every word whose accent falls there is printed bare; Benziger's face accents the ligature and does. **Added 2026-09-05 by the source-audit stage, on the Benziger page images**, and it replaces a corroboration this record had drawn from the uncorrected text layer, which had simply lost the accents. Nothing about the appointed Latin changes: the typical edition prints these four bare and this record prints them bare. |
 | Gospel reference | `Mt. 6, 24-33` | `Matth. 6, 24-33` | Real. Abbreviation policy only. |
 | Communion reference | `Mt. 6, 33` | `Matth. 6, 33` | Real. Abbreviation policy only. |
 | Offertory | `gustáte et vidéte` | `gustáte, et vidéte` | Probably real. Benziger adds a comma. Punctuation only. |
@@ -403,11 +511,21 @@ and `sérvitus` on the same two lines, and
 same face does the same thing wherever it was looked at — `fidei` at Gal. 6:10
 in the Fifteenth Sunday's Epistle on p. 396, and `sacrificium`, `sacrificia`
 and `confido` on printed p. 390 (PDF p. 471) — so this is the book's habit and
-not damage to these three pages. The Benziger text layer independently shows no
-accent at `confidere` or `fidei` either, which is corroboration and not the
-ground: the ground is the page image of the controlling witness. Nothing about
-the *words* changes; what changes is that this record now prints the
-accentuation the typical edition prints.
+not damage to these three pages.
+
+**Corrected 2026-09-05 by the source-audit stage: the Benziger corroboration this
+note used to offer was false, and the ground is unaffected.** The sentence that
+stood here said the Benziger text layer independently shows no accent at
+`confidere` or `fidei` either. It does not show one, but that is the uncorrected
+optical layer losing an accent, not the Benziger book withholding it: read on the
+Internet Archive item's own page images of printed pp. 389–390, Benziger prints
+`venefícia`, `confídere` twice and `fídei`, every one of them accented. So the bare
+`fi` is **this typical edition's face and not the 1962 revision's orthography**, and
+the difference is now a row of the divergence table above. The ground was never the
+second witness and is unchanged: it is the page image of the controlling witness,
+which prints all four bare. Nothing about the *words* changes; what changes is that
+this record prints the accentuation the typical edition prints, and no longer
+claims a second witness for it.
 
 The liturgical incipit `Fratres:` does more work here than the same word does
 on the Thirteenth Sunday. There it was prefixed to a verse that began
@@ -753,7 +871,8 @@ in the appointed Latin changed at any point: the guide printed it then, and
 prints it now, exactly as this record has it.
 
 **Standing gap between this record and the guide, recorded 2026-09-03 for the
-authoring stage, and this one *is* a change to the appointed Latin.** The
+authoring stage, and this one *is* a change to the appointed Latin. Closed
+2026-09-06.** The
 sentence immediately above stopped being true on 2026-09-03. Two accents this
 record carried until that date are not in the controlling facsimile — the
 Gradual's `confídere`, twice, and the Gospel's `fídei` — and the guide took both
@@ -778,8 +897,81 @@ guide's own remarks on this formulary's accentuation must not be widened into a
 claim about the missal's practice generally — what is established here is this
 face's `fi` ligature at the places named, not a survey. And where the guide
 quotes another book's spelling rather than the typical edition's — the Pustet's
-`confidere`, the Ottobonianus cue, the Benziger text layer — those are that
-book's readings and are already unaccented; they are not touched by this.
+`confidere`, the Ottobonianus cue — those are that book's readings and are
+already unaccented; they are not touched by this. **Amended 2026-09-05:** this
+sentence used to name the Benziger text layer in that list, which is now wrong
+in a way worth stating. An accentless form in that layer is the layer losing an
+accent; the Benziger *book* accents all four `fi` words. The guide as it stands
+quotes no Benziger form of any of them, so nothing there needs changing — but
+nothing may be quoted from that layer as the Benziger book's accentuation
+either.
+
+**Still open on 2026-09-05, at commit `b743814e`, and checked mechanically
+rather than by eye.** The seven loci in the table above all still print the
+accented forms. A character comparison of the guide's ten `appointedlatin`
+blocks in `sections/05-appointed-text.tex` against the ten blockquotes of this
+record returns eight identical and two different: the Gradual at `confídere`
+twice, the Gospel at `fídei`, and nothing else anywhere in the appointed Latin.
+The repair remains the authoring stage's and remains unmade.
+
+**Closed 2026-09-06 by the content-revision stage of run `efff3a6f73c1f451`.**
+The accents are gone from all seven loci in the table above:
+`sections/05-appointed-text.tex` at the Gradual and at Mt. 6:30,
+`sections/00-map.tex` at the proper row, `sections/30-commentary.tex` at the
+Gradual's head and at the Mt. 6:30 quotation, `sections/40-notable.tex` at the
+Gradual quoted whole and `sections/50-interpretive.tex` at the Gradual in the
+vocabulary list all print `confidere` and `fidei` bare, and a grep over every
+section file returns no accented form at any of the seven. The guide's ten
+`appointedlatin` blocks and the ten blockquotes of this record now agree at all
+ten. The one accented `confídere` / `fídei` string left in the guide is in the
+Benziger column of the comparison table in `sections/30-commentary.tex`, which
+is that book's own reading and is correct. The paragraph immediately above is
+left standing as the record of the gap while it was open: its "remains unmade"
+was true on 2026-09-05 and is not true now, and the seven-row table above is
+the record of what was repaired and not of work outstanding. The three bounds
+above held: the change was accentuation only, no word, letter, point or
+reference moved, and every argument the guide builds on the Gradual's
+`confidere` and the Gospel's `fidei` stands untouched.
+
+**Second standing gap, recorded 2026-09-05 for the authoring stage, and this
+one is not a change to the appointed Latin. Closed 2026-09-06.** The guide's
+Benziger comparison was understated in two ways when this was recorded, because
+the page images had been read since the comparison was drafted.
+`sections/30-commentary.tex`, in *The typical edition against the Benziger
+printing*, stated of the Introit that the doubled `l` is "that layer's rendering
+of `míllia`" and reasoned from the layer's behaviour elsewhere; that argument
+was right and was superseded by a reading — the page prints `míllia`. And
+neither that section nor `sections/90-scope.tex` carried the `fi`-ligature accent
+difference at all, which is the sixteenth row of the table above and the only
+row of the sixteen that touches the accentuation the guide itself had to
+correct. `sections/90-scope.tex`'s declared limit — that every Benziger reading
+in the guide is evidence about a text layer and not a collated reading of the
+Benziger book — was exactly right when written and was by then too strong:
+three readings of this formulary have been taken from page images, the Introit's
+`míllia`, the `fi`-ligature accents and the acute in `adiícere` at Mt. 6:27,
+which is the number this record's own account of the second witness, the header
+of the table above and its three marked rows all give. What those page images
+are must be stated wherever the guide relies on them: the **Internet Archive
+item's own single-page JP2 derivative** of printed pp. 389–390, and not the
+registered `.djvu`, which remains undecodable here. Nothing in the appointed
+Latin changes, and the guide's own reading of the typical edition is untouched.
+
+**Closed 2026-09-06 by the content-revision stage of run `efff3a6f73c1f451`.**
+`sections/30-commentary.tex` no longer argues from the text layer's behaviour at
+the Introit: its comparison row reports `míllia` as printed with two `l`s at the
+head of the right column of p. 389 and read on that JP2 page image. Both that
+section — in the head paragraph of *The typical edition against the Benziger
+printing* and as a row of its comparison table — and `sections/90-scope.tex`, in
+its declaration of the second 1962 witness, now carry the `fi`-ligature accent
+difference and name the three page-image readings. Two counts in the paragraph
+above were corrected on this date and are marked here rather than silently:
+"the fifteenth row … the only one of the fifteen" now reads sixteenth and
+sixteen, and "two readings" now reads three. Both were the counts as they stood
+before the 2026-09-05 authoring pass split the `adiícere` entry into a Mt. 6:27
+row read on the page images and a Mt. 6:33-and-Communion row that is the text
+layer's; the bullet above that records the split states the same sixteen, and
+this record's account of the second witness has named three page-image readings
+since that pass. The paragraph above otherwise stands as it was recorded.
 
 ## Rights
 
@@ -1060,6 +1252,33 @@ two registered public-domain witnesses, named at the point of use:
   true account of how the shared record was established and is simply older than
   this leaf's 2026-09-02 reading. The shared record is the source library's to
   advance, not this formulary's.
+
+  **Replayed 2026-09-05 by the source-audit stage, on bytes fetched afresh.**
+  The registered 1861 scan is `storage = "remote"` and its bytes are held
+  nowhere in this tree, so they were retrieved whole from the artifact's own
+  `source_url` and hashed before a page was opened: 24,767,551 bytes,
+  SHA-256 `85034c90d5cbfe891f4359fb2faff907d217dbd11a30458b55e4c48eae028898`,
+  matching the artifact record exactly. Printed pp. 425 and 427 — PDF pp. 434
+  and 436 — were extracted as their own embedded images (1-bit JBIG2,
+  2,006 × 3,522 px at 600 ppi) and read as images; `pdftotext` over those pages
+  returns nothing at all, so this record's statement that the file carries no
+  text layer is confirmed and nothing else was available to be read. **The
+  2026-09-02 collation holds in every particular**: the heading
+  `XIV. SUNDAY after PENTECOST.`, exactly one oration in each of the three
+  slots with no `2nd Collect`, no `Alia Secreta` and no `Alia Postcommunio`,
+  `COLLECT.  *Custodi.*—`, a `SECRET.—` with no Latin cue at all where the same
+  page gives `P. COMM.  *Purificent.*—`, and all three orations word for word
+  and point for point as this guide prints them. The tracked side was rechecked
+  at the byte level at the same time: the transcription artifact hashes to the
+  registered `c79e9500…` at 38,946 bytes, its lines 152–154 are this formulary's
+  three orations in liturgical order, and each is character-identical to the
+  guide. Two further things this reading shows, neither of them a defect: the
+  1861 book prints the Introit's Latin as `super millia`, a third older witness
+  for the doubled `l`; and its own English of the Communion antiphon (`Seek
+  first the kingdom of God, and all these things shall be given to you over and
+  above, saith the Lord.`) is not the Douay's and is not used by this guide,
+  which takes scriptural English from the Douay and orations only from this
+  book, exactly as the repository rule requires.
 
 **Declared places where the registered English does not answer the Latin
 above.** They are declared in the guide and are not filled in by the project.

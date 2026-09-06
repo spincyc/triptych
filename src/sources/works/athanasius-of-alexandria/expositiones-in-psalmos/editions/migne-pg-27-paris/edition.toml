@@ -1,0 +1,9 @@
+schema = 1
+record_type = "edition"
+id = "edition.athanasius-of-alexandria.expositiones-in-psalmos.migne-pg-27-paris"
+work_id = "work.athanasius-of-alexandria.expositiones-in-psalmos"
+title = "Expositiones in Psalmos, in Migne's Patrologia Graeca volume 27"
+language = "grc"
+publication = "Paris: J.-P. Migne, Patrologiae Cursus Completus, Series Graeca, tomus 27, which prints the Expositiones in Psalmos and De titulis psalmorum among other works. Internet Archive item patrologiae_cursus_completus_gr_vol_027."
+editors = ["Jacques-Paul Migne"]
+notes = "Registered on the pattern this library already uses for a constituent of a Migne volume: the edition is the constituent as Migne prints it, and the artifacts are the Internet Archive's derivatives of the whole volume, which is the narrowest exact witness that was retrieved. Migne prints the Greek with a facing Latin translation; the edition language records the language of the text of record, which is the Greek. The printing year of the scanned copy is not established from these bytes and is therefore not asserted: the Patrologia Graeca volumes were reissued repeatedly and no legible year was found in the front matter of the retained or retrieved layers. The Psalm 83:6-11 exposition stands at columns 369-370 and the Psalm 94 exposition opens at 413-414. PAIRING: no English edition of this work was registered by this run. No lane of run efff3a6f73c1f451 retrieved one, and this stage does not retrieve, so what is recorded is the absence of a retrieval and not a finding that no lawful English translation exists. guidance/sources.md asks for the original and a translation together and this pair is half-filled; the half that is present is the original, which is the half that can settle a question about the work's own wording."

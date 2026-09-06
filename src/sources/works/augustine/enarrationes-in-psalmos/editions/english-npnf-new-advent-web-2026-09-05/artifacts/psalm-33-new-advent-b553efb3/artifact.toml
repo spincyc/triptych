@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-09-05.psalm-33-new-advent-b553efb3"
+edition_id = "edition.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-09-05"
+artifact_type = "web-page"
+media_type = "text/html"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "The underlying English translation is in the public domain in the United States. What is not redistributed is the exact newadvent.org response, which is mostly not the translation: it carries the site's navigation, styling, advertising slots and 'About this page' apparatus under New Advent's own copyright footer, and no permission to republish those was sought or granted. So the exact bytes stay remote, hashed, with the limitation stated: what a reader with no network cannot presently open here is this page's English, and the reason is that nothing in this repository yet separates New Advent's Fathers text from New Advent's own matter. src/sources/inventories/catholic-encyclopedia-rights-v1.toml settles that separation for the encyclopedia and extracts its articles as tracked public-domain derivatives; the commit that made it recorded expressly that New Advent's Fathers deliveries 'carry a different underlying work with a different public-domain basis, which needs its own rights record instead of an extension of this one by assertion'. That record does not exist yet, this stage may not write one on assertion, and so the artifact stays remote and the gap is named rather than papered over."
+source_url = "https://www.newadvent.org/fathers/1801034.htm"
+provenance = "Exact HTML response acquired directly over HTTPS from newadvent.org by the research lane of run efff3a6f73c1f451 on 2026-09-05 and hashed."
+retrieved = "2026-09-05"
+sha256 = "b553efb32c9a82c02c9929586807a6e9a179118e88835278d5a09a439d3d2c23"
+byte_size = 51410
+indexable = false
+notes = "Extent as the retrieving lane measured it: Complete New Advent page for Augustine's exposition of Psalm 33 (Vulg.) = 34 (Eng.), NPNF1 vol. 8 tr. J. E. Tweed, sections 1-25 entire, printed continuously without the Sermo I / Sermo II division the Latin editions carry; plus site chrome; one page, no fuller view offered; no Latin retrieved. New Advent's page title follows the modern and Hebrew numbering, Psalm 34; Augustine's psalm is Vulgate 33, which is the Offertory psalm of the Roman Fourteenth Sunday after Pentecost. The page prints the exposition continuously, without the Sermo I and Sermo II division the Latin editions carry, so a reference to a sermo cannot be resolved on this page."

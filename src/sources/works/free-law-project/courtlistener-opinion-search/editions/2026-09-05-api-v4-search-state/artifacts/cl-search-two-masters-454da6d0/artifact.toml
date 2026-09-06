@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.free-law-project.courtlistener-opinion-search.2026-09-05-api-v4-search-state.cl-search-two-masters-454da6d0"
+edition_id = "edition.free-law-project.courtlistener-opinion-search.2026-09-05-api-v4-search-state"
+artifact_type = "search-response"
+media_type = "application/json"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "Rights in these exact bytes are not established. The opinions the response describes are US judicial opinions and carry no copyright, but this file is not an opinion: it is the Free Law Project's search output over its own database -- its result ordering, its counts, its snippets and its metadata schema -- and neither the retrieving research lane nor this registration read CourtListener's terms for API responses. The retrieving lane recorded 'RIGHTS: not reached' for this class. `unresolved` is therefore the honest status, and it keeps the guard that matters, since TRACKABLE_RIGHTS excludes it and nothing may install the payload. THE COST IS REAL: these responses are the receipts for this run's bounded negatives about the American case law, and a reader with no network cannot replay them. What that reader can open instead is the eleven case transcriptions retained in this same run, which carry the positive findings but not the counts."
+source_url = "https://www.courtlistener.com/api/rest/v4/search/?q=%22no+man+can+serve+two+masters%22&type=o"
+provenance = "Exact JSON response acquired directly over HTTPS from courtlistener.com by the research lane of run efff3a6f73c1f451 on 2026-09-05 and hashed."
+retrieved = "2026-09-05"
+sha256 = "454da6d0cfcb2e8f14d2deaba335f1624abff0312e78b07ee441a47831ed0669"
+byte_size = 44018
+indexable = false
+notes = "Extent as the retrieving lane measured it: First result page only of the exact-phrase query; the count field (331) is for the whole corpus, the results array holds 20 of them. Not the full result set. FIRST RESULT PAGE ONLY: the count field reports 331 for the whole corpus and the results array holds 20 of them. No negative may be drawn from this file."

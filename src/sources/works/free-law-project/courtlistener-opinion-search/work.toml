@@ -1,0 +1,9 @@
+schema = 1
+record_type = "work"
+id = "work.free-law-project.courtlistener-opinion-search"
+title = "CourtListener opinion search"
+responsible = "Free Law Project"
+work_type = "search-index"
+alternate_titles = ["CourtListener", "CourtListener REST API opinion search", "Free Law Project CourtListener"]
+languages = ["en"]
+description = "The Free Law Project's search index over United States judicial opinions, registered here so that the exact search responses this run's bounded negatives rest on have an identity and a digest. An edition is a dated state of the API; an artifact is one exact response to one exact query. A search index is a mutable witness and a count read from it is a count on the day it was read."

@@ -1,0 +1,64 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "ocr-text",
+   "byte_size": 4071455,
+   "edition_owned": true,
+   "id": "artifact.amalarius-of-metz.liber-de-ordine-antiphonarii.latin-migne-pl-105.ia-djvu-ocr-f6438466",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Extent as the retrieving lane measured it: Complete uncorrected OCR of Migne, Patrologia Latina vol. 105 (Theodulf, Amalarius), whole volume; searched entire for the Offertory and the other appointed incipits. Uncorrected optical recognition: it is a locating and searching layer, not a text of record, and wording quoted from this volume was collated against page images rather than taken from here. The lane's bounded negative on Amalarius -- that a whole-volume search for 'Immittet', 'Immittit', 'circuitu timentium', 'Protector noster' and 'Bonum est confidere' returns two hits, both unrelated exegetical prose -- is a search of this file and is replayable against it.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "The printing reproduced here was published long before 1931 and is in the public domain in the United States: the repository's own rights reading, recorded at guidance/missals.md section 5 against Cornell's public-domain chart current at 1 January 2026, is that a work first published abroad before 1931 is in the public domain with no term running. The Internet Archive's optical character recognition of a public-domain printing is a mechanical transcription that adds no original authorship, is served without a copyright claim asserted over it, and carries none of the host's markup, navigation or apparatus. The bytes are retained here because guidance/sources.md makes retention the project-wide default and none of its three exemptions reaches this file: it may lawfully be republished, it is not restricted, and at 4.07 MB it is at or below the 5.88 MB that is the largest payload this library already retains.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/patrologiaecursu0105mign/patrologiaecursu0105mign_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "page-scan-image",
+   "byte_size": 957217,
+   "edition_owned": true,
+   "id": "artifact.amalarius-of-metz.liber-de-ordine-antiphonarii.latin-migne-pl-105.ia-leaf-n660-a28f5891",
+   "media_type": "image/jpeg",
+   "notes": "Extent as the retrieving lane measured it: One page image, leaf n660 = PL 105 cols. 1309/1310, Amalarius, Liber de ordine antiphonarii capp. LXXII-LXXIV. One leaf only.",
+   "page_count": 1,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "The printing reproduced here was published long before 1931 and is in the public domain in the United States: the repository's own rights reading, recorded at guidance/missals.md section 5 against Cornell's public-domain chart current at 1 January 2026, is that a work first published abroad before 1931 is in the public domain with no term running. A faithful photographic reproduction of one page of a public-domain printing adds no original authorship of its own. The bytes are not retained, on the duplication ground guidance/sources.md gives for `remote`: this 0.96 MB page image reproduces one leaf of the volume whose complete optical text layer is retained in this repository at artifact.amalarius-of-metz.liber-de-ordine-antiphonarii.latin-migne-pl-105.ia-djvu-ocr-f6438466, and that retained file is what a reader with no network opens to read the words cited from this leaf. The retained layer is uncorrected optical recognition, so a reader who needs the printed letterform rather than a transcription of it must re-fetch the image at the recorded URL, which is the one thing this record does not put in the reader's hands.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/patrologiaecursu0105mign/page/n660.jpg?fit=cover&quality=100",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": null,
+  "editors": [
+   "Jacques-Paul Migne"
+  ],
+  "id": "edition.amalarius-of-metz.liber-de-ordine-antiphonarii.latin-migne-pl-105",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Paris: J.-P. Migne, Patrologiae Cursus Completus, Series Latina, tomus 105, which prints the works of Theodulf of Orleans and Amalarius. Internet Archive item patrologiaecursu0105mign.",
+  "title": "Liber de ordine antiphonarii, in Migne's Patrologia Latina volume 105",
+  "translators": [],
+  "year": null
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "De ordine antiphonarii",
+   "Amalarii Liber de ordine antiphonarii"
+  ],
+  "author": "Amalarius of Metz",
+  "category": "liturgical-commentary",
+  "description": "Amalarius of Metz's account of the arrangement of the antiphoner, written after his consultation of the Roman books. Chapter LXXIII sets out the September reading and chant course: this run reads it for the assignment of the historiae, where Amalarius gives Job the first three weeks of the month and Tobias the fourth. The composition date is not established in this registration and is therefore not recorded.",
+  "id": "work.amalarius-of-metz.liber-de-ordine-antiphonarii",
+  "languages": [
+   "la"
+  ],
+  "title": "Liber de ordine antiphonarii"
+ }
+}

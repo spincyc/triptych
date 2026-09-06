@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.the-washington-times.issue-1938-05-06.1938-05-06-edition-1.loc-word-coordinates-5cc2d7dd"
+edition_id = "edition.the-washington-times.issue-1938-05-06.1938-05-06-edition-1"
+artifact_type = "word-coordinate-index"
+media_type = "application/json"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "Rights in this issue are not established and are not assumed. It was published in the United States in 1938, which is late enough that the term depends on facts about notice and renewal that neither the retrieving research lane nor this registration checked. What the lane did record is narrower and is recorded as what it is: that the Library of Congress digitised the title in the National Digital Newspaper Program, 'which selects titles it has cleared for open access', and that the Library asserts no rights restriction in its own record. A digitiser's selection policy and the absence of an asserted restriction are not a determination that the underlying issue is out of copyright, and this record does not treat them as one. `unresolved` keeps the guard that matters, since TRACKABLE_RIGHTS excludes it and nothing may install the payload. A reader with no network cannot presently reopen this page here, and closing that needs a rights check on this title rather than an assertion from this stage. The index is the Library's optical reading of this page and can carry no better right than the page it reads."
+rights_jurisdiction = "United States"
+source_url = "https://tile.loc.gov/text-services/word-coordinates-service?format=alto_xml&segment=%2Fservice%2Fndnp%2Fdlc%2Fbatch_dlc_ivycity_ver01%2Fdata%2Fsn84026749%2F00205696696%2F1938050601%2F1054.xml"
+provenance = "Complete word-coordinate index for the whole of that page, acquired directly over HTTPS from the Library of Congress text-services endpoint by the research lane of run efff3a6f73c1f451 on 2026-09-05 and hashed. Despite the alto_xml parameter in the request the service returns JSON, and the recorded media type is what it actually served."
+retrieved = "2026-09-05"
+sha256 = "5cc2d7ddfef146b0012f552f6b9bfcdd9d091f0d7c86e342e031dbd709d410cf"
+byte_size = 135545
+indexable = false
+notes = "Extent as the retrieving lane measured it: Complete word-coordinate index for the whole of that page (declared page space 19970x25947, i.e. about 3.87x the JP2 master), used to locate the crop region and to check the header band for a byline."

@@ -1,0 +1,17 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.holy-see.acta-apostolicae-sedis.volume-47-1955.vatican-ocr-pdf-87faf821"
+edition_id = "edition.holy-see.acta-apostolicae-sedis.volume-47-1955"
+artifact_type = "official-gazette-volume-pdf"
+media_type = "application/pdf"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "The Vatican portal Legal Notes, as this library recorded them on 2026-07-25 at https://www.vatican.va/content/vatican/en/legal-notes.html and as the sibling artifact for volume 52 states, limit portal content to personal and non-profit viewing and prohibit collection, reproduction, dissemination or transfer without prior written authorization from the Dicastery for Communication. No repository redistribution permission was established, so the exact bytes are identified and not retained. This is a statement about this exact PDF and about the Holy See's terms for its own portal, not about the age of the acts printed inside it. What a reader with no network can open instead is nothing, for this volume, and that is the limitation rather than a size or convenience judgment: the acts read from it are reachable only at the recorded URL or in another witness this library does not yet hold."
+source_url = "https://www.vatican.va/archive/aas/documents/AAS-47-1955-ocr.pdf"
+provenance = "Exact PDF acquired directly over HTTPS from the Holy See's Acta Apostolicae Sedis archive by the research lane of run efff3a6f73c1f451 on 2026-09-05 and hashed."
+retrieved = "2026-09-05"
+sha256 = "87faf82170a12abb564990fb189f289258327b1279469768be4af4883eb74d58"
+byte_size = 4272421
+page_count = 912
+indexable = false
+notes = "Extent as the retrieving lane measured it: Complete Acta Apostolicae Sedis vol. 47 (1955), 912 pages, with an OCR text layer; the decree Cum nostra hac aetate read end to end at pp. 218-224. Whole volume. This volume was already cited in this repository by digest, in src/sources/inventories/pre-1955-rubrics-sources-v1.toml, without ever being registered as an artifact; that inventory also records that the Internet Archive item AAS-47-1955 is byte-identical. The inventory's digest and byte size agree exactly with this receipt. The scan carries an optical text layer; readings taken from it are a discovery aid unless collated against a rendered page image, and this run read it as text."

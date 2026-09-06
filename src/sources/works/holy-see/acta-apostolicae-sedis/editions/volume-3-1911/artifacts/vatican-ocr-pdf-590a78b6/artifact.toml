@@ -1,0 +1,17 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.holy-see.acta-apostolicae-sedis.volume-3-1911.vatican-ocr-pdf-590a78b6"
+edition_id = "edition.holy-see.acta-apostolicae-sedis.volume-3-1911"
+artifact_type = "official-gazette-volume-pdf"
+media_type = "application/pdf"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "The Vatican portal Legal Notes, as this library recorded them on 2026-07-25 at https://www.vatican.va/content/vatican/en/legal-notes.html and as the sibling artifact for volume 52 states, limit portal content to personal and non-profit viewing and prohibit collection, reproduction, dissemination or transfer without prior written authorization from the Dicastery for Communication. No repository redistribution permission was established, so the exact bytes are identified and not retained. This is a statement about this exact PDF and about the Holy See's terms for its own portal, not about the age of the acts printed inside it. What a reader with no network can open instead is nothing, for this volume, and that is the limitation rather than a size or convenience judgment: the acts read from it are reachable only at the recorded URL or in another witness this library does not yet hold."
+source_url = "https://www.vatican.va/archive/aas/documents/AAS-03-1911-ocr.pdf"
+provenance = "Exact PDF acquired directly over HTTPS from the Holy See's Acta Apostolicae Sedis archive by the research lane of run efff3a6f73c1f451 on 2026-09-05 and hashed."
+retrieved = "2026-09-05"
+sha256 = "590a78b670da67f013ea6fc0b62bb7ed347dc89a9267fbb7ddc0380f1e872f7c"
+byte_size = 3418093
+page_count = 736
+indexable = false
+notes = "Extent as the retrieving lane measured it: Complete Acta Apostolicae Sedis vol. 3 (1911), 736 pages, with an OCR text layer; read as text at pp. 633-651, which carry Divino afflatu and the Rubricae annexed to it. Whole volume. This volume was already cited in this repository by digest, in src/sources/inventories/pre-1955-rubrics-sources-v1.toml, without ever being registered as an artifact. The inventory's recorded digest and byte size agree exactly with this receipt, so the identity this record mints is the same object that inventory has been citing. The scan carries an optical text layer; readings taken from it are a discovery aid unless collated against a rendered page image, and this run read it as text."

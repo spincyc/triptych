@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.united-kingdom-parliament.hansard-official-report.1962-12-19-lords-british-policy-in-central-africa.hansard-api-debate-33dd0f84"
+edition_id = "edition.united-kingdom-parliament.hansard-official-report.1962-12-19-lords-british-policy-in-central-africa"
+artifact_type = "api-response"
+media_type = "application/json"
+storage = "remote"
+rights_status = "licensed"
+rights_basis = "The retrieving research lane of run efff3a6f73c1f451 recorded that this is UK official parliamentary report material and that parliamentary material is published under the Open Parliament Licence. That is a real and affirmative licence, and it is recorded here as the lane found it. It is NOT relied on for retention, and the reason is stated rather than hidden: neither the retrieving lane nor this registration read the licence text or established which version governs this API's responses, so the affirmative recorded distribution basis that guidance/sources.md requires before `tracked` is asserted but not verified. What a reader with no network therefore cannot open here is the debate text itself; closing that needs a rights record for UK parliamentary material of the kind guidance/sources.md asks for when one question governs a whole body of material, and this stage may not write one on assertion."
+license = "Open Parliament Licence"
+source_url = "https://hansard-api.parliament.uk/debates/debate/24b84a7b-2577-4be7-afdf-1486f34c2ee2.json?house=Lords"
+provenance = "Exact JSON response acquired directly over HTTPS from hansard-api.parliament.uk by the research lane of run efff3a6f73c1f451 on 2026-09-05 and hashed."
+retrieved = "2026-09-05"
+sha256 = "33dd0f841d4a01dd03b1d204dc59dc92197c8e596e217aa988dac46b5c24cd15"
+byte_size = 211938
+indexable = false
+notes = "Extent as the retrieving lane measured it: Complete debate, HL 19 December 1962 vol. 245 'British Policy In Central Africa', all 67 contribution items including the printed time-markers; Milverton's whole speech present. Carries no printed column numbers."

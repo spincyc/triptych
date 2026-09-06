@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.diocese-of-salisbury.missale-ad-usum-sarum.1861-1883-burntisland-dickinson.ia-djvu-ocr-685c74b2"
+edition_id = "edition.diocese-of-salisbury.missale-ad-usum-sarum.1861-1883-burntisland-dickinson"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The printing reproduced here was published before 1931 and is in the public domain in the United States: the repository's own rights reading, recorded at guidance/missals.md section 5 against Cornell's public-domain chart current at 1 January 2026, is that a work first published abroad before 1931 is in the public domain with no term running. The Internet Archive's optical character recognition of a public-domain printing is a mechanical transcription that adds no original authorship, is served without a copyright claim asserted over it, and carries none of the host's markup, navigation or apparatus. The bytes are retained here because guidance/sources.md makes retention the project-wide default and none of its three exemptions reaches this file: it may lawfully be republished, it is not restricted, and at 2.86 MB it is below the 5.88 MB that is the largest payload this library already retains."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/dusumins00cath/dusumins00cath_djvu.txt"
+provenance = "Internet Archive optical character recognition text layer of the whole volume, fetched over HTTPS by the research lane of run efff3a6f73c1f451 on 2026-09-05, hashed, and moved here unaltered. No transformation of any kind was applied and no model stood anywhere between the server and the hash."
+retrieved = "2026-09-05"
+sha256 = "685c74b2325ae3bca9a7ac0f1394ad0c3e5f80e65d0ee697cd88d3ee4df5c20f"
+byte_size = 2856803
+path = "src/sources/works/diocese-of-salisbury/missale-ad-usum-sarum/editions/1861-1883-burntisland-dickinson/artifacts/ia-djvu-ocr-685c74b2/dusumins00cath_djvu.txt"
+encoding = "utf-8"
+indexable = true
+notes = "Extent as the retrieving lane measured it: Complete uncorrected OCR text layer of the Internet Archive scan of Dickinson's Burntisland Sarum Missal, 828 page images, whole volume. Uncorrected optical recognition: a locating and searching layer, not a text of record. The extent bound matters here: guidance/missals.md section 7 records that Internet Archive copies of Dickinson differ in how many fascicles they carry, and calls that the Psalm 27 truncation failure waiting in a new place. The measured 828 images are recorded on this artifact so a later reader can check the bound rather than assume it."

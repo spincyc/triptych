@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.free-law-project.courtlistener-opinion-search.2026-09-05-api-v4-search-state.cl-search-cubit-78fd4b4c"
+edition_id = "edition.free-law-project.courtlistener-opinion-search.2026-09-05-api-v4-search-state"
+artifact_type = "search-response"
+media_type = "application/json"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "Rights in these exact bytes are not established. The opinions the response describes are US judicial opinions and carry no copyright, but this file is not an opinion: it is the Free Law Project's search output over its own database -- its result ordering, its counts, its snippets and its metadata schema -- and neither the retrieving research lane nor this registration read CourtListener's terms for API responses. The retrieving lane recorded 'RIGHTS: not reached' for this class. `unresolved` is therefore the honest status, and it keeps the guard that matters, since TRACKABLE_RIGHTS excludes it and nothing may install the payload. THE COST IS REAL: these responses are the receipts for this run's bounded negatives about the American case law, and a reader with no network cannot replay them. What that reader can open instead is the eleven case transcriptions retained in this same run, which carry the positive findings but not the counts."
+source_url = "https://www.courtlistener.com/api/rest/v4/search/?q=%22add+one+cubit+unto+his+stature%22&type=o"
+provenance = "Exact JSON response acquired directly over HTTPS from courtlistener.com by the research lane of run efff3a6f73c1f451 on 2026-09-05 and hashed."
+retrieved = "2026-09-05"
+sha256 = "78fd4b4ceecf6234f25e90f35cf6534ca017a4002f7feaa650b50b75f6db75bd"
+byte_size = 5884
+indexable = false
+notes = "Extent as the retrieving lane measured it: Complete result set for the exact-phrase query: count = 3 and all three results present with case names, courts, dates and citations. COMPLETE RESULT SET: count = 3 and all three results are present. Exhaustive for this exact wording only."
