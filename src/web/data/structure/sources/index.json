@@ -10,6 +10,10 @@
  "facets": {
   "authors": [
    {
+    "id": "Abraham Lincoln",
+    "works": 1
+   },
+   {
     "id": "Abraham ibn Ezra",
     "works": 1
    },
@@ -171,7 +175,7 @@
    },
    {
     "id": "Basil of Caesarea",
-    "works": 2
+    "works": 3
    },
    {
     "id": "Basilica of Saint Anthony of Padua; PISAPFMC",
@@ -538,6 +542,10 @@
     "works": 2
    },
    {
+    "id": "H. G. Wells",
+    "works": 1
+   },
+   {
     "id": "Heinrich Denzinger and successive editors",
     "works": 1
    },
@@ -586,6 +594,10 @@
     "works": 1
    },
    {
+    "id": "Hugh of Saint-Cher",
+    "works": 1
+   },
+   {
     "id": "I. Roubaud, priest",
     "works": 1
    },
@@ -604,6 +616,10 @@
    {
     "id": "International Commission on English in the Liturgy Corporation",
     "works": 2
+   },
+   {
+    "id": "Internet Archive",
+    "works": 1
    },
    {
     "id": "Irenaeus of Lyons",
@@ -631,7 +647,7 @@
    },
    {
     "id": "Jacques-Paul Migne, publisher and series editor",
-    "works": 3
+    "works": 4
    },
    {
     "id": "James Tauber and MorphGNT contributors",
@@ -663,7 +679,11 @@
    },
    {
     "id": "John Chrysostom",
-    "works": 7
+    "works": 8
+   },
+   {
+    "id": "John Keats",
+    "works": 1
    },
    {
     "id": "John Lightfoot",
@@ -710,8 +730,16 @@
     "works": 1
    },
    {
+    "id": "Joseph L. Mankiewicz",
+    "works": 1
+   },
+   {
     "id": "Justin Martyr",
     "works": 2
+   },
+   {
+    "id": "Kwame Nkrumah",
+    "works": 1
    },
    {
     "id": "Leandra Scappaticci",
@@ -803,7 +831,7 @@
    },
    {
     "id": "Miquel dels Sants Gros i Pujol",
-    "works": 1
+    "works": 2
    },
    {
     "id": "Monumenta Germaniae Historica, Clavis Canonum; article by Linda Fowler-Magerl",
@@ -859,6 +887,10 @@
    },
    {
     "id": "Origen of Alexandria",
+    "works": 1
+   },
+   {
+    "id": "Oscar Wilde",
     "works": 1
    },
    {
@@ -1360,6 +1392,10 @@
     "works": 5
    },
    {
+    "id": "novel",
+    "works": 5
+   },
+   {
     "id": "papal-homily",
     "works": 5
    },
@@ -1376,6 +1412,10 @@
     "works": 4
    },
    {
+    "id": "collected-volume",
+    "works": 4
+   },
+   {
     "id": "dogmatic-constitution",
     "works": 4
    },
@@ -1385,6 +1425,10 @@
    },
    {
     "id": "patristic-apology",
+    "works": 4
+   },
+   {
+    "id": "spiritual-treatise",
     "works": 4
    },
    {
@@ -1405,10 +1449,6 @@
    },
    {
     "id": "code-of-canon-law",
-    "works": 3
-   },
-   {
-    "id": "collected-volume",
     "works": 3
    },
    {
@@ -1472,7 +1512,7 @@
     "works": 3
    },
    {
-    "id": "philosophical-treatise",
+    "id": "patristic-biblical-commentary",
     "works": 3
    },
    {
@@ -1596,6 +1636,10 @@
     "works": 2
    },
    {
+    "id": "screenplay",
+    "works": 2
+   },
+   {
     "id": "sermon-collection",
     "works": 2
    },
@@ -1661,6 +1705,10 @@
    },
    {
     "id": "canonization-acts",
+    "works": 1
+   },
+   {
+    "id": "catalog-search-response",
     "works": 1
    },
    {
@@ -2000,6 +2048,10 @@
     "works": 1
    },
    {
+    "id": "liturgical-manuscript-study",
+    "works": 1
+   },
+   {
     "id": "liturgical-publication-guidelines",
     "works": 1
    },
@@ -2033,6 +2085,10 @@
    },
    {
     "id": "medical-treatise",
+    "works": 1
+   },
+   {
+    "id": "medieval-biblical-commentary",
     "works": 1
    },
    {
@@ -2181,6 +2237,10 @@
    },
    {
     "id": "patristic-psalm-exposition-collection",
+    "works": 1
+   },
+   {
+    "id": "patristic-psalm-homily",
     "works": 1
    },
    {
@@ -2356,10 +2416,6 @@
     "works": 1
    },
    {
-    "id": "screenplay",
-    "works": 1
-   },
-   {
     "id": "second-temple-hymnic-composition",
     "works": 1
    },
@@ -2422,12 +2478,12 @@
     "id": "fr"
    },
    {
-    "editions": 17,
-    "id": "it"
+    "editions": 18,
+    "id": "grc"
    },
    {
-    "editions": 16,
-    "id": "grc"
+    "editions": 17,
+    "id": "it"
    },
    {
     "editions": 12,
@@ -2447,11 +2503,11 @@
    },
    {
     "editions": 3,
-    "id": "grc-la"
+    "id": "ca"
    },
    {
-    "editions": 2,
-    "id": "ca"
+    "editions": 3,
+    "id": "grc-la"
    },
    {
     "editions": 2,
@@ -2584,6 +2640,36 @@
  "schema": "triptych-source-reader/v1",
  "texts": "structure/sources/text/",
  "works": [
+  {
+   "alternate_titles": [
+    "Peoria address",
+    "Speech at Peoria"
+   ],
+   "author": "Abraham Lincoln",
+   "category": "political-speech",
+   "directory": "editions/abraham-lincoln/peoria-speech/",
+   "editions": [
+    {
+     "date": "2015-04-10",
+     "file": "2015-2015-04-10-nps.json",
+     "id": "edition.abraham-lincoln.peoria-speech.2015-04-10-nps",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain",
+      "unresolved"
+     ],
+     "title": "Peoria Speech, October 16, 1854 — National Park Service transcription",
+     "year": 2015
+    }
+   ],
+   "id": "work.abraham-lincoln.peoria-speech",
+   "languages": [
+    "en"
+   ],
+   "title": "Peoria Speech, October 16, 1854"
+  },
   {
    "alternate_titles": [
     "Ibn Ezra on the Torah",
@@ -4195,6 +4281,19 @@
      "year": 2021
     },
     {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-spilsbury-hosted-compilation.json",
+     "id": "edition.anthony-of-padua.sermons-for-sundays-and-festivals.2026-09-05-spilsbury-hosted-compilation",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "The Sermons of Saint Antony of Padua — Paul Spilsbury translation",
+     "year": 2026
+    },
+    {
      "date": "2026",
      "file": "2026-basilica-web-english-2026-07-28.json",
      "id": "edition.anthony-of-padua.sermons-for-sundays-and-festivals.basilica-web-english-2026-07-28",
@@ -4672,6 +4771,36 @@
   },
   {
    "alternate_titles": [
+    "On the Sermon on the Mount",
+    "De sermone Domini in monte libri duo",
+    "Augustinus Hipponensis"
+   ],
+   "author": "Augustine of Hippo",
+   "category": "patristic-biblical-commentary",
+   "directory": "editions/augustine/de-sermone-domini-in-monte/",
+   "editions": [
+    {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-findlay-npnf1-6-newadvent.json",
+     "id": "edition.augustine.de-sermone-domini-in-monte.2026-09-05-findlay-npnf1-6-newadvent",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "On the Sermon on the Mount — William Findlay, New Advent web state",
+     "year": 2026
+    }
+   ],
+   "id": "work.augustine.de-sermone-domini-in-monte",
+   "languages": [
+    "la"
+   ],
+   "title": "De sermone Domini in monte"
+  },
+  {
+   "alternate_titles": [
     "Expositions on the Psalms"
    ],
    "author": "Augustine of Hippo",
@@ -4690,6 +4819,19 @@
      ],
      "title": "Enarrationes in Psalmos, Psalms 80-150, Benedictine text reprinted in Patrologia Latina 37",
      "year": 1845
+    },
+    {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-tweed-npnf1-8-newadvent.json",
+     "id": "edition.augustine.enarrationes-in-psalmos.2026-09-05-tweed-npnf1-8-newadvent",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Expositions on the Psalms — J. E. Tweed, New Advent web state",
+     "year": 2026
     },
     {
      "date": "2026-07-28",
@@ -4893,6 +5035,34 @@
     "grc"
    ],
    "title": "De Spiritu Sancto"
+  },
+  {
+   "alternate_titles": [
+    "Homily on Psalm 33",
+    "Homily on Psalm 34",
+    "Basilius Magnus"
+   ],
+   "author": "Basil of Caesarea",
+   "category": "patristic-psalm-homily",
+   "directory": "editions/basil-of-caesarea/homilia-in-psalmum-33/",
+   "editions": [
+    {
+     "date": "1860",
+     "file": "1860-1860-migne-pg29.json",
+     "id": "edition.basil-of-caesarea.homilia-in-psalmum-33.1860-migne-pg29",
+     "language": "grc",
+     "passages": 0,
+     "readable": 0,
+     "rights": [],
+     "title": "Homilia in Psalmum XXXIII, Greek with facing Latin",
+     "year": 1860
+    }
+   ],
+   "id": "work.basil-of-caesarea.homilia-in-psalmum-33",
+   "languages": [
+    "grc"
+   ],
+   "title": "Homilia in Psalmum 33"
   },
   {
    "alternate_titles": [
@@ -6336,6 +6506,7 @@
      "passages": 1,
      "readable": 0,
      "rights": [
+      "public-domain",
       "unresolved"
      ],
      "title": "The Gregorian Sacramentary under Charles the Great, edited from three MSS. of the ninth century by H. A. Wilson",
@@ -8827,6 +8998,35 @@
   },
   {
    "alternate_titles": [
+    "Edith Wharton, The House of Mirth"
+   ],
+   "author": "Edith Wharton",
+   "category": "novel",
+   "directory": "editions/edith-wharton/the-house-of-mirth/",
+   "editions": [
+    {
+     "date": "2023-02-02",
+     "file": "2023-2023-02-02-gutenberg-284.json",
+     "id": "edition.edith-wharton.the-house-of-mirth.2023-02-02-gutenberg-284",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain",
+      "unresolved"
+     ],
+     "title": "The House of Mirth — Project Gutenberg eBook 284",
+     "year": 2023
+    }
+   ],
+   "id": "work.edith-wharton.the-house-of-mirth",
+   "languages": [
+    "en"
+   ],
+   "title": "The House of Mirth"
+  },
+  {
+   "alternate_titles": [
     "Hauler, Verona palimpsest fragments"
    ],
    "author": "Edmund Hauler",
@@ -10267,6 +10467,35 @@
   },
   {
    "alternate_titles": [
+    "H. G. Wells, The Time Machine"
+   ],
+   "author": "H. G. Wells",
+   "category": "novel",
+   "directory": "editions/h-g-wells/the-time-machine/",
+   "editions": [
+    {
+     "date": "2026-06-16",
+     "file": "2026-2026-06-16-gutenberg-35.json",
+     "id": "edition.h-g-wells.the-time-machine.2026-06-16-gutenberg-35",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain",
+      "unresolved"
+     ],
+     "title": "The Time Machine — Project Gutenberg eBook 35",
+     "year": 2026
+    }
+   ],
+   "id": "work.h-g-wells.the-time-machine",
+   "languages": [
+    "en"
+   ],
+   "title": "The Time Machine"
+  },
+  {
+   "alternate_titles": [
     "Denzinger",
     "The Sources of Catholic Dogma"
    ],
@@ -11111,6 +11340,36 @@
   },
   {
    "alternate_titles": [
+    "Hugo de Sancto Caro",
+    "Hugues de Saint-Cher",
+    "Postillae in universa Biblia"
+   ],
+   "author": "Hugh of Saint-Cher",
+   "category": "medieval-biblical-commentary",
+   "directory": "editions/hugh-of-saint-cher/postilla-in-totam-bibliam/",
+   "editions": [
+    {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-morard-gloss-e.json",
+     "id": "edition.hugh-of-saint-cher.postilla-in-totam-bibliam.2026-09-05-morard-gloss-e",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "unresolved"
+     ],
+     "title": "Postilla, Psalter chapters — Sacra Pagina / Gloss-e",
+     "year": 2026
+    }
+   ],
+   "id": "work.hugh-of-saint-cher.postilla-in-totam-bibliam",
+   "languages": [
+    "la"
+   ],
+   "title": "Postilla in totam Bibliam"
+  },
+  {
+   "alternate_titles": [
     "La verite, ou reponse a M. le redacteur du Dimanche"
    ],
    "author": "I. Roubaud, priest",
@@ -11313,6 +11572,34 @@
   },
   {
    "alternate_titles": [
+    "Internet Archive Gregorian Sacramentary title query"
+   ],
+   "author": "Internet Archive",
+   "category": "catalog-search-response",
+   "directory": "editions/internet-archive/gregorian-sacramentary-title-search/",
+   "editions": [
+    {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-json.json",
+     "id": "edition.internet-archive.gregorian-sacramentary-title-search.2026-09-05-json",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "unresolved"
+     ],
+     "title": "Gregorian Sacramentary title query — dated catalog response",
+     "year": 2026
+    }
+   ],
+   "id": "work.internet-archive.gregorian-sacramentary-title-search",
+   "languages": [
+    "en"
+   ],
+   "title": "Catalog title search: Gregorian Sacramentary"
+  },
+  {
+   "alternate_titles": [
     "Against Heresies",
     "A Refutation and Subversion of Knowledge Falsely So Called"
    ],
@@ -11511,6 +11798,37 @@
     "la"
    ],
    "title": "Patrologiae cursus completus, series Latina, tomus XVI"
+  },
+  {
+   "alternate_titles": [
+    "Patrologia Graeca 29",
+    "PG 29",
+    "Basil of Caesarea, Opera omnia, volume 1"
+   ],
+   "author": "Jacques-Paul Migne, publisher and series editor",
+   "category": "collected-volume",
+   "directory": "editions/jacques-paul-migne/patrologia-graeca-volume-29/",
+   "editions": [
+    {
+     "date": "1860",
+     "file": "1860-1860-paris.json",
+     "id": "edition.jacques-paul-migne.patrologia-graeca-volume-29.1860-paris",
+     "language": "grc",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Patrologiae cursus completus, Series Graeca, Tomus XXIX",
+     "year": 1860
+    }
+   ],
+   "id": "work.jacques-paul-migne.patrologia-graeca-volume-29",
+   "languages": [
+    "grc",
+    "la"
+   ],
+   "title": "Patrologiae cursus completus, Series Graeca, volume 29"
   },
   {
    "alternate_titles": [],
@@ -11920,6 +12238,19 @@
    "directory": "editions/john-chrysostom/homiliae-in-matthaeum/",
    "editions": [
     {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-prevost-riddle-npnf1-10-newadvent.json",
+     "id": "edition.john-chrysostom.homiliae-in-matthaeum.2026-09-05-prevost-riddle-npnf1-10-newadvent",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Homilies on Matthew — Prevost and Riddle, New Advent web state",
+     "year": 2026
+    },
+    {
      "date": "2026-07-25",
      "file": "2026-prevost-riddle-npnf1-10-newadvent-web-2026-07-25.json",
      "id": "edition.john-chrysostom.homiliae-in-matthaeum.prevost-riddle-npnf1-10-newadvent-web-2026-07-25",
@@ -12090,6 +12421,63 @@
     "grc"
    ],
    "title": "Homilies on the Statues"
+  },
+  {
+   "alternate_titles": [
+    "Homilies on Galatians",
+    "Commentary on Galatians",
+    "Joannes Chrysostomus"
+   ],
+   "author": "John Chrysostom",
+   "category": "patristic-biblical-commentary",
+   "directory": "editions/john-chrysostom/in-epistulam-ad-galatas-commentarius/",
+   "editions": [
+    {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-alexander-npnf1-13-newadvent.json",
+     "id": "edition.john-chrysostom.in-epistulam-ad-galatas-commentarius.2026-09-05-alexander-npnf1-13-newadvent",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Commentary on Galatians — Gross Alexander, New Advent web state",
+     "year": 2026
+    }
+   ],
+   "id": "work.john-chrysostom.in-epistulam-ad-galatas-commentarius",
+   "languages": [
+    "grc"
+   ],
+   "title": "In epistulam ad Galatas commentarius"
+  },
+  {
+   "alternate_titles": [],
+   "author": "John Keats",
+   "category": "poem",
+   "directory": "editions/john-keats/ode-on-indolence/",
+   "editions": [
+    {
+     "date": "2024-08-19",
+     "file": "2024-2024-08-19-blank-mapping-keats.json",
+     "id": "edition.john-keats.ode-on-indolence.2024-08-19-blank-mapping-keats",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed",
+      "public-domain"
+     ],
+     "title": "Ode on Indolence — Mapping Keats’s Progress, edition 3.27",
+     "year": 2024
+    }
+   ],
+   "id": "work.john-keats.ode-on-indolence",
+   "languages": [
+    "en"
+   ],
+   "title": "Ode on Indolence"
   },
   {
    "alternate_titles": [
@@ -12559,6 +12947,34 @@
   },
   {
    "alternate_titles": [
+    "All About Eve Revised Final"
+   ],
+   "author": "Joseph L. Mankiewicz",
+   "category": "screenplay",
+   "directory": "editions/joseph-l-mankiewicz/all-about-eve-screenplay/",
+   "editions": [
+    {
+     "date": "1950-04-05",
+     "file": "1950-1950-04-05-revised-final.json",
+     "id": "edition.joseph-l-mankiewicz.all-about-eve-screenplay.1950-04-05-revised-final",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "All About Eve — Revised Final screenplay",
+     "year": 1950
+    }
+   ],
+   "id": "work.joseph-l-mankiewicz.all-about-eve-screenplay",
+   "languages": [
+    "en"
+   ],
+   "title": "All About Eve, screenplay"
+  },
+  {
+   "alternate_titles": [
     "The Second Apology",
     "Second Apology of Justin for the Christians"
    ],
@@ -12626,6 +13042,32 @@
     "grc"
    ],
    "title": "First Apology"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Kwame Nkrumah",
+   "category": "political-monograph",
+   "directory": "editions/kwame-nkrumah/africa-must-unite/",
+   "editions": [
+    {
+     "date": "1963",
+     "file": "1963-1963-praeger.json",
+     "id": "edition.kwame-nkrumah.africa-must-unite.1963-praeger",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Africa Must Unite",
+     "year": 1963
+    }
+   ],
+   "id": "work.kwame-nkrumah.africa-must-unite",
+   "languages": [
+    "en"
+   ],
+   "title": "Africa Must Unite"
   },
   {
    "alternate_titles": [],
@@ -13327,6 +13769,35 @@
    "title": "El Sacramentari II de Gellona"
   },
   {
+   "alternate_titles": [
+    "El Missal de Sant Ruf",
+    "Tortosa Arxiu Capitular ms. 11"
+   ],
+   "author": "Miquel dels Sants Gros i Pujol",
+   "category": "liturgical-manuscript-study",
+   "directory": "editions/miquel-dels-sants-gros-i-pujol/el-missal-de-sant-ruf/",
+   "editions": [
+    {
+     "date": "1999",
+     "file": "1999-1999-mlc-9.json",
+     "id": "edition.miquel-dels-sants-gros-i-pujol.el-missal-de-sant-ruf.1999-mlc-9",
+     "language": "ca",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "unresolved"
+     ],
+     "title": "El missal de Sant Ruf — Tortosa, Arx. Cap., ms. 11",
+     "year": 1999
+    }
+   ],
+   "id": "work.miquel-dels-sants-gros-i-pujol.el-missal-de-sant-ruf",
+   "languages": [
+    "ca"
+   ],
+   "title": "El missal de Sant Ruf — Tortosa, Arx. Cap., ms. 11"
+  },
+  {
    "alternate_titles": [],
    "author": "Monumenta Germaniae Historica, Clavis Canonum; article by Linda Fowler-Magerl",
    "category": "scholarly-database-article",
@@ -13727,6 +14198,35 @@
     "la"
    ],
    "title": "De principiis"
+  },
+  {
+   "alternate_titles": [
+    "Oscar Wilde, The Picture of Dorian Gray"
+   ],
+   "author": "Oscar Wilde",
+   "category": "novel",
+   "directory": "editions/oscar-wilde/the-picture-of-dorian-gray/",
+   "editions": [
+    {
+     "date": "2025-09-17",
+     "file": "2025-2025-09-17-gutenberg-174.json",
+     "id": "edition.oscar-wilde.the-picture-of-dorian-gray.2025-09-17-gutenberg-174",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain",
+      "unresolved"
+     ],
+     "title": "The Picture of Dorian Gray — Project Gutenberg eBook 174",
+     "year": 2025
+    }
+   ],
+   "id": "work.oscar-wilde.the-picture-of-dorian-gray",
+   "languages": [
+    "en"
+   ],
+   "title": "The Picture of Dorian Gray"
   },
   {
    "alternate_titles": [
@@ -16881,6 +17381,20 @@
      ],
      "title": "Commentary on the Book of Psalms, translated by John O'Sullivan",
      "year": 1866
+    },
+    {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-osullivan-ecatholic2000.json",
+     "id": "edition.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain",
+      "unresolved"
+     ],
+     "title": "Commentary on the Book of Psalms — eCatholic2000 full-text presentation",
+     "year": 2026
     }
    ],
    "id": "work.robert-bellarmine.commentary-on-the-book-of-psalms",
@@ -20038,6 +20552,19 @@
    "category": "biblical-commentary",
    "directory": "editions/thomas-aquinas/super-psalmos/",
    "editions": [
+    {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-latin-corpusthomisticum.json",
+     "id": "edition.thomas-aquinas.super-psalmos.2026-09-05-latin-corpusthomisticum",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "In psalmos Davidis expositio, Psalms 31–40 — Corpus Thomisticum",
+     "year": 2026
+    },
     {
      "date": "2026-07-28",
      "file": "2026-latin-corpusthomisticum-web-2026-07-28.json",

@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.internet-archive.gregorian-sacramentary-title-search.2026-09-05-json.title-query-json-9188b7b1"
+edition_id = "edition.internet-archive.gregorian-sacramentary-title-search.2026-09-05-json"
+artifact_type = "catalog-response"
+media_type = "application/json"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "The acquired catalog response includes third-party catalog descriptions and user-associated archive metadata with no affirmative redistribution basis supplied. The exact response is hashed but withheld. Its useful bibliographic identity is recorded in the separately registered Wilson edition; no offline copy of this search response is promised."
+source_url = "https://archive.org/advancedsearch.php?q=title%3A%22gregorian+sacramentary%22&output=json"
+provenance = "Whole response acquired directly by a research lane on 2026-09-05 and handed to source registration with URL, digest, byte size and extent. Registration independently ran sha256sum and checked the byte size. No source URL was reconstructed and no new source was fetched. Existing work aliases and sibling artifact provenance/transformation were checked before registration."
+retrieved = "2026-09-05"
+sha256 = "9188b7b106d82502d67c220a307747421a0ab991e00687a9ae55426b6c848d5f"
+byte_size = 3814
+indexable = false
+notes = "Complete JSON response to the exact Internet Archive title query; two matching catalog records returned. Acquisition provenance only, not a historical text witness. "

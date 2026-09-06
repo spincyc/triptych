@@ -44,7 +44,12 @@ full PDF, synthesis PDF and canonical web edition. The earlier run's terminal
 `BLOCKED` history is retained; this new follow-up supplies the missing review.
 
 The two named branches and current main have been fetched for comparison.
-Their published histories will be retained through merge commits, followed by
+Current main is merged, preserving its deployment cache and held-edition route
+fixes. The Fourteenth Sunday branch's authored and source records are integrated;
+both its authorization and the Sixteenth Sunday's authorization are retained.
+The Fifteenth Sunday merge and combined source-identity reconciliation follow.
+Shared generated records are provisional until that reconciliation completes.
+The published histories are retained through merge commits, followed by
 a genuine fast-forward of main; no remote history needs rewriting. Source
 identity collisions in Wilson, Schuster, Aquinas, Augustine, Chrysostom and
 Francis de Sales have been identified for explicit reconciliation. Site-wide

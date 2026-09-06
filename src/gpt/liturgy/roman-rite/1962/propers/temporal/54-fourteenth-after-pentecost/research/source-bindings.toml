@@ -9,7 +9,7 @@ role = "textual-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-26"
 source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
-context = "The checksum-matched page images control the complete Latin formulary, rank, headings, references, Creed, Trinity Preface, and both occurrence boundaries."
+context = "The checksum-matched page images control the complete Latin formulary, rank, headings, references, Creed, Trinity Preface, and both occurrence boundaries. The date records the inherited image collation. On 2026-09-05 authoring applied the corrected Exact-Latin controls in research/scope.md, from that day's source-audit and CON-EVI-001 image checks; this authoring check was against the brief, not a fresh image collation."
 
 [[bindings]]
 source_id = "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu"
@@ -115,3 +115,338 @@ states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-21"
 source_fingerprint = "sha256:bf374774bd9a6b72a26514ac40268186b7bdacd7ba036c7e267ee15e2eb95cdb"
 context = "The checked Argumentum reports Syriac and Greek subscriptions and named patristic witnesses for Rome, the contrary Chrysostom-Baronius preference for Ephesus or another Greek city, and a Lapide's express uncertainty. It does not establish unanimity or a certain place or time."
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.2026-09-05-tweed-npnf1-8-newadvent.psalm-84-html-cb27202d"
+loci = ["83.3-15"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:46f908bf2198b537054f072bc9ab0a63ab1b5e04e05f95e9f46d8faadd56cf8f"
+context = "Inspected reception and bounded hosted-text extent inherited from research/scope.md; the HTML contains ellipses and is not the complete Latin work. Exact inspected locus: Psalm 83, sections 3-15; PAT-001 and PRE-003"
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.2026-09-05-tweed-npnf1-8-newadvent.psalm-118-html-b9b8069f"
+loci = ["117.4", "117.6"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:d73f8cc28d2a6dd8803c11cad324e6a2a1fd8f1a9b28177680351e56d9830599"
+context = "Inspected reception and bounded hosted-text extent inherited from research/scope.md; the HTML contains ellipses and is not the complete Latin work. Exact inspected locus: Psalm 117, sections 4 and 6; PAT-002 and PRE-005"
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.2026-09-05-tweed-npnf1-8-newadvent.psalm-95-html-c3e9ddc0"
+loci = ["94.1-4"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:989a76d3ee21c8d0baa99b737c64bf284b32db6c86594dc5e690f84865bf0344"
+context = "Inspected reception and bounded hosted-text extent inherited from research/scope.md; the HTML contains ellipses and is not the complete Latin work. Exact inspected locus: Psalm 94, sections 1-4; PAT-003"
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.2026-09-05-tweed-npnf1-8-newadvent.psalm-34-html-9c76e7c7"
+loci = ["33.8-14"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:4ccf17026206bcb5b529ab1e651f71e6463ec5cee975f961d706fcf5deeb8cd8"
+context = "Inspected reception and bounded hosted-text extent inherited from research/scope.md; the HTML contains ellipses and is not the complete Latin work. Exact inspected locus: Psalm 33, second exposition, sections 8-14; PAT-011 and PRE-005"
+
+[[bindings]]
+source_id = "artifact.augustine.de-sermone-domini-in-monte.2026-09-05-findlay-npnf1-6-newadvent.book-2-html-991f3062"
+loci = ["II.15-17, sections 49-58; PAT-008 and PRE-004, PRE-008"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:ce9cea089ddd58fef57840cff01cabdce64d9552039f73bab9556482c1c41cf2"
+context = "Inspection and exact locus inherited from the immutable research/scope.md; this authoring stage acquired no new evidence. Exact inspected locus: II.15-17, sections 49-58; PAT-008 and PRE-004, PRE-008"
+
+[[bindings]]
+source_id = "artifact.augustine.epistolae-ad-galatas-expositio.2026-09-05-augustinus-it-latin.full-text-html-92b0b0a5"
+loci = ["sections 47-51, PL 35:2139-2142; PAT-021"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:84bda4bcbb74a71418e4f9bb49d4c60ed04df522d44a5f118f304b6ea97e5332"
+context = "Direct Latin digital witness inherited from the brief; no original-page facsimile collation claimed. Exact inspected locus: sections 47-51, PL 35:2139-2142; PAT-021"
+
+[[bindings]]
+source_id = "artifact.john-chrysostom.in-epistulam-ad-galatas-commentarius.2026-09-05-alexander-npnf1-13-newadvent.galatians-5-html-36c9b32b"
+loci = ["chapter 5 at Galatians 5:16-24; PAT-007 and PRE-007"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:9002b05eb7ecfb07f77e7c1e1ef1014668eb73ad48b52ba2f2cdd4a08a35c5df"
+context = "Inspection and exact locus inherited from the immutable research/scope.md; this authoring stage acquired no new evidence. Exact inspected locus: chapter 5 at Galatians 5:16-24; PAT-007 and PRE-007"
+
+[[bindings]]
+source_id = "artifact.john-chrysostom.homiliae-in-matthaeum.2026-09-05-prevost-riddle-npnf1-10-newadvent.homily-21-html-bdbf8e67"
+loci = ["21.1", "21.2", "21.3", "21.4"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f0d8d0a3dbb6845b69decc30b931cf11d86be74f07d836aed46b6507dd54e2e2"
+context = "Inspection and exact locus inherited from the immutable research/scope.md; this authoring stage acquired no new evidence. Exact inspected locus: Homily 21, sections 1-4; PAT-010"
+
+[[bindings]]
+source_id = "artifact.john-chrysostom.homiliae-in-matthaeum.2026-09-05-prevost-riddle-npnf1-10-newadvent.homily-22-html-bcead49e"
+loci = ["22.1", "22.2", "22.3"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:77c1f41c7195ec3513561cc8213820e62131d858d857e4358b10fe3db590f1e3"
+context = "Inspection and exact locus inherited from the immutable research/scope.md; this authoring stage acquired no new evidence. Exact inspected locus: Homily 22, sections 1-3; PAT-010"
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-graeca-volume-29.1860-paris.commons-pdf-53d21baf"
+loci = ["Basil, Homily on Psalm 33, sections 5-6, columns 363-366, PDF pages 590-591; PAT-017"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:24aaac3c402397fc912193c4dc8d02d7aad8e8179daa0abe9b252304f0df716a"
+context = "Inspection and exact locus inherited from the immutable research/scope.md; this authoring stage acquired no new evidence. Exact inspected locus: Basil, Homily on Psalm 33, sections 5-6, columns 363-366, PDF pages 590-591; PAT-017"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.super-galatas.latin-corpusthomisticum-web-2026-08-21.cgl-html-bbaaf5bd"
+loci = ["5.l6", "5.l7"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5f6829f4470b577188c5abaf483a4dfebfb8bccb3ae580cb8745ae983f8e699b"
+context = "Inspection and exact locus inherited from the immutable research/scope.md; this authoring stage acquired no new evidence. Exact inspected locus: chapter V, lectures 6-7, numbers 87779-87780; PAT-009"
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.super-psalmos.2026-09-05-latin-corpusthomisticum.cps31-html-e2d50b43"
+loci = ["33.n8", "33.n9"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:d4014adf8ff3edaaaa1e55e1f0043e611a828535d95750007ef4081a474a2111"
+context = "Inspection and exact locus inherited from the immutable research/scope.md; this authoring stage acquired no new evidence. Exact inspected locus: Psalm 33, numbers 8-9, identifiers 87112-87113; PAT-012"
+
+[[bindings]]
+source_id = "artifact.hugh-of-saint-cher.postilla-in-totam-bibliam.2026-09-05-morard-gloss-e.psalm-83-html-70ffed39"
+loci = ["Psalm 83:10-11, f. 221rb, marginal units o-s; PAT-018"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:0fb7ca6b7d47b8efe9c503a640b06391efc5cbd2b9a123a83b46379fe21a3fcd"
+context = "Digital Latin edition inspected in the brief. Embedded patristic attributions remain mediated through Hugh. Exact inspected locus: Psalm 83:10-11, f. 221rb, marginal units o-s; PAT-018"
+
+[[bindings]]
+source_id = "artifact.hugh-of-saint-cher.postilla-in-totam-bibliam.2026-09-05-morard-gloss-e.psalm-94-html-44af3f8d"
+loci = ["Psalm 94:1, ff. 249rb-vb; PAT-019"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:e28e8b1e47e1258c3446c93ec50b48d91a7c102a123755df03d4d60366a105a4"
+context = "Digital Latin edition inspected in the brief. Embedded patristic attributions remain mediated through Hugh. Exact inspected locus: Psalm 94:1, ff. 249rb-vb; PAT-019"
+
+[[bindings]]
+source_id = "artifact.hugh-of-saint-cher.postilla-in-totam-bibliam.2026-09-05-morard-gloss-e.psalm-117-html-b5a8846b"
+loci = ["Psalm 117:8-9, units g-i; PAT-020"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1f9f550be79b08eccf5d552ea15e50b68f312d82cbc974fda6381418d0ec6243"
+context = "Digital Latin edition inspected in the brief. Embedded patristic attributions remain mediated through Hugh. Exact inspected locus: Psalm 117:8-9, units g-i; PAT-020"
+
+[[bindings]]
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.commons-ia-facsimile-78b290d4"
+loci = ["Psalm 33 pp. 91-92; Psalm 83 p. 255; Psalm 94 p. 298; Psalm 117 p. 370; PAT-013-016"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:6221c39e003611f5ca8e53a39ee29224a806934ad8bbe85d5bf3d122911a1ac6"
+context = "Inspection and exact locus inherited from the immutable research/scope.md; this authoring stage acquired no new evidence. Exact inspected locus: Psalm 33 pp. 91-92; Psalm 83 p. 255; Psalm 94 p. 298; Psalm 117 p. 370; PAT-013-016"
+
+[[bindings]]
+source_id = "artifact.anthony-of-padua.sermons-for-sundays-and-festivals.2026-09-05-spilsbury-hosted-compilation.compilation-pdf-3699ff43"
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:533c8a3b3ee1941ebfb0aeb49fce670f1f4920f455bfe2326f6fdb23ba7471e2"
+context = "Protected Spilsbury English is paraphrased. The medieval Sunday XIV Luke 17 formulary and Sunday XV Matthew 6/Galatians 5:25ff. formulary differ from the 1962 combination. Exact inspected locus: Sunday XIV sections 15-18, PDF pages 42-43; Sunday XV sections 2-3, 7, 12-17, PDF page 44; PAT-022-023"
+
+[[bindings]]
+source_id = "artifact.francis-de-sales.introduction-a-la-vie-devote.2026-09-05-ccel-english.full-html-d61a5a3d"
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f1ae211f3184687d7f27effb08ba1adb3f373eb6560ddbf16e102a27a0674ac8"
+context = "Related illumination only. The brief leaves this English translator unidentified and bounds the negative to literal searches in this English artifact. Exact inspected locus: Part III chapters 10 and 14; PAT-024"
+loci = ["Part III chapters 10 and 14; PAT-024"]
+
+[[bindings]]
+source_id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7"
+loci = ["supplement XXXIII pp. 173-174; p. 173 notes a-c; introduction xvii-xxii, xxx, xliv-xlv; LIT-003-004"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c189ad536b25c7d8f68ca0b40f14d0c0c075ab6d9699d1bd724b3c404abddb61"
+context = "Edition-mediated complete Latin prayer trio and marginal chant cues, with visual checks inherited from the brief; not new manuscript collation. Exact inspected locus: supplement XXXIII pp. 173-174; p. 173 notes a-c; introduction xvii-xxii, xxx, xliv-xlv; LIT-003-004"
+
+[[bindings]]
+source_id = "artifact.miquel-dels-sants-gros-i-pujol.el-sacramentari-ii-de-gellona.mlc-20-2012.iec-pdf"
+loci = ["no-1121", "no-1122", "no-1123"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:7e01134de4e9cd2e05beacb59ac243b0a59836cb50b6e33379a5fdca21d75a8b"
+context = "The brief establishes grouping through an incipit edition, not complete text collation; Montpellier ms. 18 differs from the earlier Paris Gellone manuscript. Exact inspected locus: pp. 53-55, 75-76, 155; nos. 1121-1123; LIT-001-002"
+
+[[bindings]]
+source_id = "artifact.miquel-dels-sants-gros-i-pujol.el-missal-de-sant-ruf.1999-mlc-9.iec-pdf-9262bb44"
+loci = ["p. 261, nos. 424-432, especially 427-429; LIT-002"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5a0da7463582f8d8f6a4ed7d32cac1c8bff45d7c48926c08fe512804760d12db"
+context = "Inspection and exact locus inherited from the immutable research/scope.md; this authoring stage acquired no new evidence. Exact inspected locus: p. 261, nos. 424-432, especially 427-429; LIT-002"
+
+[[bindings]]
+source_id = "artifact.miquel-dels-sants-gros-i-pujol.el-sacramentari-de-santa-maria-de-vilabertran.mlc-19-2011.iec-pdf"
+loci = ["no-488", "no-489", "no-490"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:27ab0e09ab55f739932aa18d5467cc212820921318a18efb922c8fff84344da1"
+context = "Inspection and exact locus inherited from the immutable research/scope.md; this authoring stage acquired no new evidence. Exact inspected locus: pp. 47, 109; nos. 488-490; LIT-002"
+
+[[bindings]]
+source_id = "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-scan-volume-3-410f6d11"
+loci = ["volume III, pp. 136-138; LIT-005-007"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:765e56515c01f4983b213615c6241c91fdb853e38d082a70ca61373369b43f6c"
+context = "Schuster provides direct liturgical reception. His English does not control the appointed texts, and his chant comparisons are not an independent musical collation. Exact inspected locus: volume III, pp. 136-138; LIT-005-007"
+
+[[bindings]]
+source_id = "artifact.catholic-church.catechism.english-vatican-web-2026-07-23.paschal-banquet-html-74a05632"
+loci = ["1391-1397"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:14df830204b83dbed4fd76c61f5a0f92f3d726cadf8d0cd348f40f2388d05970"
+context = "The brief inspected paragraphs 1391-1398 directly. Published discussion paraphrases the fruits of Communion, union, charity, ecclesial unity and the poor; no protected text is reproduced. Exact inspected locus: paragraphs 1391-1397; COV-007"
+
+[[bindings]]
+source_id = "artifact.society-of-biblical-literature.sbl-greek-new-testament.faithlife-v1.2-c4d241a.github-archive-c4d241a-cc1715f3"
+loci = ["SBLGNT v1.2 Galatians 5:13-26, especially 5:22-23; COV-003"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:e428f0640a557bb0e2cb915b4b2a2eb072846ca98dbe9fdbc11407bca9f53ee8"
+context = "Direct Greek comparison inherited from the brief; nine fruit terms in this named edition, without a reconstructed history of the Latin expansion. Exact inspected locus: SBLGNT v1.2 Galatians 5:13-26, especially 5:22-23; COV-003"
+
+[[bindings]]
+source_id = "artifact.kwame-nkrumah.africa-must-unite.1963-praeger.marxists-pdf-6735028a"
+loci = ["chapter 6 Freedom First, p. 50, second paragraph; CUL-001"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:67aef663c357d4ebd2ca4ad7a6b10cec80d5bd82a654b9f2a3053c40f641f1fc"
+context = "Protected text: brief biblical adaptation quoted for criticism, surrounding political argument paraphrased. Exact inspected locus: chapter 6 Freedom First, p. 50, second paragraph; CUL-001"
+
+[[bindings]]
+source_id = "artifact.joseph-l-mankiewicz.all-about-eve-screenplay.1950-04-05-revised-final.scriptslug-pdf-4b921e05"
+loci = ["p. 3, scene 5 CLOSE ADDISON, opening voice-over, PDF page 4; CUL-002"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:dc3019b0bc653e0b2272ab1093ec3c7c06be5fa36f902a4f33d300784cc90ca8"
+context = "Protected screenplay: brief biblical adaptation quoted for criticism and context paraphrased; no finished-film timestamp asserted. Exact inspected locus: p. 3, scene 5 CLOSE ADDISON, opening voice-over, PDF page 4; CUL-002"
+
+[[bindings]]
+source_id = "artifact.abraham-lincoln.peoria-speech.2015-04-10-nps.speech-text-b36fc5b8"
+loci = ["October 16, 1854 speech, paragraph beginning But NOW it is to be transformed into a sacred right; CUL-003"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:492a0150b7bf1c111c2f61ab948ba65a548be239f5f74477118e0b0e743a990a"
+context = "Only the underlying public-domain speech is quoted, not NPS hosting material. Exact inspected locus: October 16, 1854 speech, paragraph beginning But NOW it is to be transformed into a sacred right; CUL-003"
+
+[[bindings]]
+source_id = "artifact.john-keats.ode-on-indolence.2024-08-19-blank-mapping-keats.poem-text-47e6960e"
+loci = ["epigraph; stanzas III-IV lines 25-40 and VI lines 51-60; CUL-004"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:b2e6148e775665418ff75ca07c712a3b098ec62d798ce09cc302045996011e44"
+context = "Public-domain poem quotation, with independent host scholarship separately protected/licensed. Exact inspected locus: epigraph; stanzas III-IV lines 25-40 and VI lines 51-60; CUL-004"
+
+[[bindings]]
+source_id = "artifact.robert-fuller-murray.the-scarlet-gown.1891-holden-simpkin.ia-pdf-77656470"
+loci = ["The Waster's Presentiment p. 50 lines 1-11, especially 3-4; Notes p. 122; CUL-005"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:7f274630fbf6d2e38d07cad9fbd26af23f6d145bd46416e27b1ff753bb5eb878"
+context = "Public-domain 1891 poem and glossary; page images inspected in the brief. Exact inspected locus: The Waster's Presentiment p. 50 lines 1-11, especially 3-4; Notes p. 122; CUL-005"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-09-1-kings-7f8a0c63"
+loci = ["1Kings.21.1-15"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:2625f554ce298f823d5de124e8d5b3ba904cf57387e5ef8276199dd99d6513be"
+context = "Complete canonical context supplied in research/scope.md; not an extension of the appointed pericope. Exact inspected locus: 1 Kings 21"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-05-deuteronomy-c99711de"
+loci = ["Deut.8.1-20"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:0d26c51a579102bfca198ef65eb9bdf23f21f93834ddb3582b391fb0eacb8c98"
+context = "Complete canonical context supplied in research/scope.md; not an extension of the appointed pericope. Exact inspected locus: Deuteronomy 8"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-49-luke-d8269c33"
+loci = ["Luke.12.1-59"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:b6acab91674d3bbe04726da30c835175a133104d3db53fcf3f8e45b1d5b4ba6e"
+context = "Complete canonical context supplied in research/scope.md; not an extension of the appointed pericope. Exact inspected locus: Luke 12"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef"
+role = "context"
+states = ["cataloged"]
+context = "Named source of the generated Scripture chronology publication projection; this binding reports corpus provenance, not a new source inspection by the author. Exact inspected locus: "
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8"
+role = "context"
+states = ["cataloged"]
+context = "Named source of the generated Scripture chronology publication projection; this binding reports corpus provenance, not a new source inspection by the author."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25"
+role = "context"
+states = ["cataloged"]
+context = "Named source of the generated Scripture chronology publication projection; this binding reports corpus provenance, not a new source inspection by the author."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"
+role = "context"
+states = ["cataloged"]
+context = "Named source of the generated Scripture chronology publication projection; this binding reports corpus provenance, not a new source inspection by the author."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-6.new-york-1909.newadvent-06336a-508d2398"
+role = "context"
+states = ["cataloged"]
+context = "Named source of the generated Scripture chronology publication projection; this binding reports corpus provenance, not a new source inspection by the author."
+
+[[bindings]]
+source_id = "passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.first-kings-21-achis-geth-chronology"
+role = "context"
+states = ["cataloged"]
+context = "Named source of the generated Scripture chronology publication projection; this binding reports corpus provenance, not a new source inspection by the author."
+
+[[bindings]]
+source_id = "passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology"
+role = "context"
+states = ["cataloged"]
+context = "Named source of the generated Scripture chronology publication projection; this binding reports corpus provenance, not a new source inspection by the author."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"
+role = "context"
+states = ["cataloged"]
+context = "Named source of the generated Scripture chronology publication projection; this binding reports corpus provenance, not a new source inspection by the author."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-67-1-peter-a30ff490"
+loci = ["1Pet.2.1-3.22"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:2b6e35c6f13f72ccdbfa3235d5351e9369fbae3410b31aa3a338149fa6a8bc6a"
+context = "Complete canonical context directly inspected in the immutable brief; apostolic reception of the appointed psalm language, with quoted and unsung contexts distinguished."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-65-hebrews-78520956"
+loci = ["Heb.3.1-4.16"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:0c686e9320485622fa117ab272c9fdd8858abc5e2473747a5b8ee6557bd89d3b"
+context = "Complete canonical context directly inspected in the immutable brief; apostolic reception of the appointed psalm language, with quoted and unsung contexts distinguished."
+
+[[bindings]]
+source_id = "artifact.church-of-england.authorized-version-of-the-bible.gutenberg-ebook-10.gutenberg-pg10-0204adae"
+loci = ["Matt.6.24", "Matt.6.28", "Matt.6.33"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:d234a3883f3b9d8c924791aafe9775f81f1ad1de4115abbae0273f754bac4ec4"
+context = "English verbal comparator for CUL-001-005 only. The brief's September 5 acquisition has exactly the same SHA-256 and byte size as this previously registered complete Gutenberg artifact, despite its earlier acquisition URL and narrow original registration purpose. No appointed English is taken from it."

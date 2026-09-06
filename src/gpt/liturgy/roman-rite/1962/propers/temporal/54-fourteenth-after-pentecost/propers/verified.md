@@ -14,14 +14,30 @@
   SHA-256 `648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a`,
   82,815,941 bytes, 1,088 PDF pages. Printed pp. 394–396 are PDF pp. 475–477
   when counted from one.
-- **Image verification:** headings, references, wording, accents,
-  punctuation, rank, Creed, Trinity Preface, and both boundaries were read
-  from page images on 2026-08-26. No unresolved reading remains.
+- **Verification history:** the inherited record reports image collation of
+  headings, references, wording, accents, punctuation, rank, Creed, Trinity
+  Preface, and both boundaries on 2026-08-26. Its assertion that no unresolved
+  reading remained was contradicted by the 2026-09-05 source-audit and
+  evidence-discipline checks preserved in `research/scope.md`.
+- **Correction and check, 2026-09-05:** authoring applied the brief's
+  Exact-Latin control block to this transcription and the appointed quotations
+  in both editions: `confidere` twice in no. 1575; `fænum` and `fidei` in
+  no. 1577; `gustáte et vidéte` without a comma in no. 1578; and `Per
+  Dóminum.` without `nostrum` in no. 1579. No. 1581 retains `Per Dóminum
+  nostrum.`. Quoted appointed-word accents and ligatures were restored from
+  the same controls. This is a check against the corrected research brief,
+  not a new image collation. The image evidence belongs to the source-audit
+  and CON-EVI-001's inspection of the 400-dpi images of printed pp. 395–396.
 - **Independent edition:** Benziger Brothers, New York, 1962, *editio iuxta
   typicam*, Internet Archive item
   `MissaleRomanum1962RomanMissalColorLatin`, printed pp. 389–391, leaves
-  n465–n467. It is a separate publisher edition. OCR in `retrieved.txt` is a
-  locator only and controls no reading.
+  n465–n467. The 2026-09-05 source-audit inspected the item-provided JPEG at
+  <https://archive.org/download/MissaleRomanum1962RomanMissalColorLatin/page/n466.jpg>,
+  printed p. 390, accessed that day. It agrees on `fænum` but prints the
+  Offertory comma and the Secret's `nostrum`; those edition variants do not
+  govern this transcription. The audit asserts no Benziger comparison for
+  the two unaccented forms. OCR in `retrieved.txt` is a locator only and
+  controls no reading.
 - **Occurrence boundary:** the reusable temporal formulary only. Civil dates,
   commemorations, and particular-calendar precedence belong to assembly.
 ## Complete appointed Latin
@@ -61,12 +77,13 @@ Advérsus huiúsmodi non est lex. Qui autem sunt Christi, carnem suam
 crucifixérunt cum vítiis et concupiscéntiis.
 
 `Fratres` is the liturgical address. The Vulgate/Missal list has twelve fruit
-terms; the common Greek critical text has nine. No numerical interpretation
-controls a published reading.
+terms; SBLGNT v1.2 (Michael W. Holmes, 2023), Galatians 5:22–23,
+has nine, as directly inspected in research/scope.md, COV-003. This identifies
+the comparison witness without establishing the history of the Latin expansion.
 
 ### 4. Gradual — Ps. 117:8–9 — no. 1575
 
-Bonum est confídere in Dómino, quam confídere in hómine. ℣. Bonum est speráre
+Bonum est confidere in Dómino, quam confidere in hómine. ℣. Bonum est speráre
 in Dómino, quam speráre in princípibus.
 
 ### 5. Alleluia — Ps. 94:1 — no. 1576
@@ -88,22 +105,22 @@ in hórrea: et Pater vester cæléstis pascit illa. Nonne vos magis pluris estis
 illis? Quis autem vestrum cógitans potest adícere ad statúram suam cúbitum
 unum? Et de vestiménto quid sollíciti estis? Consideráte lília agri quómodo
 crescunt: non labórant, neque nent. Dico autem vobis, quóniam nec Sálomon in
-omni glória sua coopértus est sicut unum ex istis. Si autem fœnum agri, quod
+omni glória sua coopértus est sicut unum ex istis. Si autem fænum agri, quod
 hódie est, et cras in clíbanum míttitur, Deus sic vestit: quanto magis vos
-módicæ fídei? Nolíte ergo sollíciti esse, dicéntes: Quid manducábimus, aut
+módicæ fidei? Nolíte ergo sollíciti esse, dicéntes: Quid manducábimus, aut
 quid bibémus, aut quo operiémur? Hæc enim ómnia gentes inquírunt. Scit enim
 Pater vester, quia his ómnibus indigétis. Quǽrite ergo primum regnum Dei, et
 iustítiam eius: et hæc ómnia adiciéntur vobis.
 
 Credo.
 
-The Missal supplies the liturgical frame `In illo tempore: Dixit Iesus
-discipulis suis`; the Scripture translation begins with Matthew's verse. The
+The Missal supplies the liturgical frame `In illo témpore: Dixit Iesus
+discípulis suis`; the Scripture translation begins with Matthew's verse. The
 Creed belongs to the Ordinary.
 
 ### 7. Offertory — Ps. 33:8–9 — no. 1578
 
-Immíttet Angelus Dómini in circúitu timéntium eum, et erípiet eos: gustáte,
+Immíttet Angelus Dómini in circúitu timéntium eum, et erípiet eos: gustáte
 et vidéte, quóniam suávis est Dóminus.
 
 The antiphon stops before the final beatitude of v. 9.
@@ -111,7 +128,7 @@ The antiphon stops before the final beatitude of v. 9.
 ### 8. Secret — no. 1579
 
 Concéde nobis, Dómine, quǽsumus, ut hæc hóstia salutáris, et nostrórum fiat
-purgátio delictórum, et tuæ propitiátio potestátis. Per Dóminum nostrum.
+purgátio delictórum, et tuæ propitiátio potestátis. Per Dóminum.
 
 Præfatio de Ssma Trinitate.
 
@@ -119,8 +136,8 @@ Præfatio de Ssma Trinitate.
 
 Primum quǽrite regnum Dei, et ómnia adiciéntur vobis, dicit Dóminus.
 
-The antiphon omits Matthew's `ergo` and `et iustitiam eius`, compresses `haec
-omnia` to `omnia`, and adds `dicit Dominus`. These are liturgical adaptations,
+The antiphon omits Matthew's `ergo` and `et iustítiam eius`, compresses `hæc
+ómnia` to `ómnia`, and adds `dicit Dóminus`. These are liturgical adaptations,
 not defects to be silently repaired.
 
 ### 10. Postcommunion — no. 1581
@@ -134,7 +151,7 @@ Scriptural English is the registered public-domain Douay–Rheims/Challoner.
 The orations are the anonymous English in Cummiskey's 1861 *Roman Missal*:
 the Collect is printed on p. 425, while the Secret and Postcommunion begin on
 p. 427. Cummiskey's Collect supplies “grace” as the final-clause
-subject, the Secret turns `purgatio` into a transitive “cleanse us,” and the
+subject, the Secret turns `purgátio` into a transitive “cleanse us,” and the
 Postcommunion renders `ducant` as “procure.” Those translations are published
 as historical witnesses; the Latin controls every grammatical claim.
 
