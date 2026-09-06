@@ -4,7 +4,7 @@ schema_version = 1
 id = "gpt-propers-54-56-publication-integration-2026-09-06"
 owner = "PROJECT-WORK.md"
 promise = "Repair the proper 56 web converter, complete its reviewed PDF and web publication, reconcile branches 54 and 55 with this work and current main, then validate and fast-forward origin/main and verify deployment."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "converter-regression"
@@ -27,7 +27,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "validated-main-and-deployment"
   criterion = "The reviewed outgoing history passes deployment-source, public-artifact and GitHub Pages compatibility gates, reaches origin/main by fast-forward, and the exact pushed snapshot's Pages run and affected public routes are verified."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml"]
 
 [[deliverables]]

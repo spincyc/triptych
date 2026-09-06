@@ -17,10 +17,10 @@ completion of its PDF generation and publication, reconciliation with
 or rebase onto current `origin/main`, and a validated fast-forward push to
 `origin/main`. The workspace branch remains `feature/codex/propers/tlm/56`.
 
-**Publication ready; main push and deployment verification pending.** The earlier proper workflow remains truthfully terminal
+**Published and verified.** The earlier proper workflow remains truthfully terminal
 `BLOCKED`; its engine has no resume operation, and its accepted PDF reviews and
-immutable run history are preserved. This follow-up repairs the converter
-and completes the outstanding web review, installation and publication checks
+immutable run history are preserved. This follow-up repaired the converter
+and completed the outstanding web review, installation and publication checks
 under the maintainer's new instruction. Both accepted PDF builds already exist
 at 20 and 13 pages. The converter previously selected the canonical synthesis
 alternative only in the entrypoint, before loading its included sections.
@@ -102,8 +102,21 @@ the documented binding reconciliation. Current main's workflow, Makefile and
 deployment implementation are preserved; the renderer tool's only additional
 change is its captured examples. Both remote updates are proven fast-forwards,
 and the outgoing object review authenticates all thirteen retained binary
-objects and checks every newly reachable text object. Deployment and affected
-public routes still require verification after the push.
+objects and checks every newly reachable text object.
+
+The reviewed integration `bb03e71567015e57da029c47312a2b4f33a18f94` reached
+both the workspace feature branch and `origin/main` by ordinary fast-forward
+pushes on 2026-09-06. Its exact
+[GitHub Pages run](https://github.com/spincyc/triptych/actions/runs/34007696289)
+completed successfully. Twelve live routes at `https://mystago.gy/` returned
+HTTP 200 and matched the locally verified artifact bytes: all six GPT54/55/56
+PDFs, their three canonical web pages, the corrected Claude53 web page, the
+Traditional Latin Mass catalogue and the browser's document-corpus JSON.
+Downloaded PDF page counts are 20/14, 16/12 and 20/13 respectively. Both held
+Claude54 PDF routes still return HTTP 404. This completion record changes no
+publication source or rendered artifact. The original engine's `BLOCKED`
+disposition records its former converter failure; the follow-up publication
+and deployment are complete without altering that historical result.
 
 ## GPT Sixteenth Sunday after Pentecost workflow, 2026-09-05
 
@@ -119,7 +132,9 @@ is recorded in `guidance/liturgy/propers-production-plan.md`.
 
 **Workflow complete; terminal disposition BLOCKED at `generate-web`.**
 The full and synthesis PDFs passed their prescribed reviews and are installed,
-but web conversion failed and publication acceptance was not reached. The
+but at that original terminal checkpoint web conversion failed and publication
+acceptance was not reached. The 2026-09-06 follow-up above completed publication
+and verified deployment while preserving this engine result. The
 registered-identity, provider and scope checks passed.
 The target had no publication leaf when work began. Its appointed formulary
 is `pentecost-16`; the generated and checked chronology record is now at
