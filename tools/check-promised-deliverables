@@ -20,13 +20,13 @@ EXAMPLES = {
         Example(
             "tools/check-promised-deliverables",
             (
-                "Promised-deliverable ledger valid: 33 tracked, 24 complete.",
+                "Promised-deliverable ledger valid: 35 tracked, 25 complete.",
             ),
         ),
         Example(
             "tools/check-promised-deliverables --ledger promised-deliverables.toml",
             (
-                "Promised-deliverable ledger valid: 33 tracked, 24 complete.",
+                "Promised-deliverable ledger valid: 35 tracked, 25 complete.",
             ),
             "the same ledger named explicitly; --ledger is how a candidate file is checked before it replaces the tracked one",
         ),

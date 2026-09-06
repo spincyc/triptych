@@ -128,17 +128,10 @@ EXAMPLES = {
             "liturgy/roman-rite/1962/propers/temporal/"
             "54-fourteenth-after-pentecost --check house-voice",
             (
-                "check-content-preflight error: house-voice: sections/30-commentary.tex:40: the discipline is narrated instead of kept: \"The difference from Augustine is retained instead of being silently harmonized (\\emph{... [+298 chars]",
-                "check-content-preflight error: house-voice: not screened: sections/50-interpretive.tex:2 marks no \\pfield in 'The Propers: Interpretive Possibilities', so the protected exploratory notice cannot be told from the proposals and no rule ran over that section. Nothing in that section was read by this check; it still has to be read by hand",
+                "house-voice: 13 reader-facing files, no sentence taking the guide, its apparatus or the repository as its subject",
             ),
-            "exits 1; `guidance/editorial.md` names this exact form -- prose "
-            "saying that a difference was retained rather than silently "
-            "harmonised is narrating compliance where it should simply be "
-            "compliant. Carry the difference and attribute it. The second "
-            "line is not a defect but a scope statement: this leaf's "
-            "interpretive section marks no field, so the protected "
-            "exploratory notice cannot be told from the proposals and none "
-            "of it was read",
+            "exits 0; the revised Fourteenth Sunday source passes the "
+            "reader-facing voice check, including its marked exploratory proposals",
         ),
         Example(
             "tools/check-content-preflight --provider gpt --document "

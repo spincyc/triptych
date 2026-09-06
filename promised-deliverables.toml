@@ -15,13 +15,13 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "reviewed-publication"
   criterion = "Proper 56 full and synthesis PDFs are reviewed and installed, the canonical web edition passes fidelity and narrow-viewport review, and catalogue and alpha records discover the installed artifacts with publication checks passing."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
   id = "branches-reconciled"
   criterion = "The integrated tree preserves the intended outcomes of branches 54, 55 and 56 and current origin/main, with shared source inventories, catalogue and release state reconciled and affected checks passing."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
 
   [[deliverables.requirements]]

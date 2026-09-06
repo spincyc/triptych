@@ -1365,7 +1365,7 @@ EXAMPLES = {
         Example(
             "tools/source-reader check",
             (
-                "543 works, 731 editions, 2150 artifacts, 5127 passages; 3034 readable here.",
+                "600 works, 808 editions, 2302 artifacts, 5127 passages; 3034 readable here.",
                 "  passages the rights records withhold: 2093",
                 "  every one of them listed with its reason: yes",
                 "  the page's own derivation, replayed: src/web/browser/sources/reader-model.js",
@@ -1383,14 +1383,14 @@ EXAMPLES = {
         Example(
             "tools/source-reader list --author 'Augustine of Hippo'",
             (
-                "Augustine of Hippo       Confessiones                           1896       la         0/1  edition.augustine-of-hippo.confessiones.1896-knoll-csel-33",
-                "... 11 more lines",
+                "Augustine of Hippo       Confessiones                                 1896       la         0/1  edition.augustine-of-hippo.confessiones.1896-knoll-csel-33",
+                "... 20 more lines",
             ),
         ),
         Example(
             "tools/source-reader list --language grc --sort date",
             (
-                "... 17 more lines",
+                "... 19 more lines",
             ),
             "the Greek editions, earliest first",
         ),
@@ -1414,16 +1414,16 @@ EXAMPLES = {
         Example(
             "tools/source-reader structure --out build/example-sources",
             (
-                "543 works, 731 editions, 2150 artifacts, 5127 passages; 3034 readable here.",
-                "  -> build/example-sources/structure/sources (3766 files)",
+                "600 works, 808 editions, 2302 artifacts, 5127 passages; 3034 readable here.",
+                "  -> build/example-sources/structure/sources (3843 files)",
             ),
             "WRITES. --out here is untracked; the default writes the tracked src/web/data",
         ),
         Example(
             "tools/source-reader structure --check",
             (
-                "543 works, 731 editions, 2150 artifacts, 5127 passages; 3034 readable here.",
-                "  src/web/data/structure/sources is current (3766 files)",
+                "600 works, 808 editions, 2302 artifacts, 5127 passages; 3034 readable here.",
+                "  src/web/data/structure/sources is current (3843 files)",
             ),
             "writes nothing; refuses when the tracked projection has drifted from the records",
         ),

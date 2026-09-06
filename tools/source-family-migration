@@ -37,13 +37,13 @@ EXAMPLES = {
         Example(
             "tools/source-family-migration check",
             (
-                "source-family-migration valid: families=0 review_units=150 screened=0 pending=150 trace_records=0 atomic_citation_coverage=false",
+                "source-family-migration valid: families=0 review_units=151 screened=0 pending=151 trace_records=0 atomic_citation_coverage=false",
             ),
         ),
         Example(
             "tools/source-family-migration --root . check",
             (
-                "source-family-migration valid: families=0 review_units=150 screened=0 pending=150 trace_records=0 atomic_citation_coverage=false",
+                "source-family-migration valid: families=0 review_units=151 screened=0 pending=151 trace_records=0 atomic_citation_coverage=false",
             ),
             "--root belongs before the verb",
         ),
@@ -68,7 +68,7 @@ EXAMPLES = {
         Example(
             "tools/source-family-migration check",
             (
-                "source-family-migration valid: families=0 review_units=150 screened=0 pending=150 trace_records=0 atomic_citation_coverage=false",
+                "source-family-migration valid: families=0 review_units=151 screened=0 pending=151 trace_records=0 atomic_citation_coverage=false",
             ),
             "read-only first: `check` says what state a refresh would start from",
         ),

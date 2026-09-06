@@ -61,13 +61,13 @@ EXAMPLES = {
         Example(
             "tools/document-library check",
             (
-                "139 works, 189 documents, 206 issues, 6056 pages.",
-                "  titles derived from source and confirmed against the built PDF: 206",
+                "140 works, 190 documents, 208 issues, 6080 pages.",
+                "  titles derived from source and confirmed against the built PDF: 208",
                 "  titles the sources do not state: 0",
                 "  issues with no PDF installed: 0",
                 "  the page's own derivation, replayed: src/web/browser/texts/catalogue-model.js",
-                "  editions whose production record makes no comparable claim: 187",
-                "  editions produced under a workflow version since superseded: 2 (advisory; nothing gates on it)",
+                "  editions whose production record makes no comparable claim: 186",
+                "  editions produced under a workflow version since superseded: 1 (advisory; nothing gates on it)",
                 "  editions produced under a workflow version later than the one declared: 0",
                 "  editions whose workflow source has been revised since they were produced: 0",
                 "  workflows the comparison is measured against: 2",
@@ -148,7 +148,7 @@ EXAMPLES = {
         Example(
             "tools/document-library structure --out build/example-catalogue",
             (
-                "139 works, 189 documents, 206 issues, 6056 pages.",
+                "140 works, 190 documents, 208 issues, 6080 pages.",
                 "  -> build/example-catalogue/structure/documents/corpus.json",
             ),
             "WRITES. --out here is untracked; the default writes the tracked src/web/data",
@@ -156,7 +156,7 @@ EXAMPLES = {
         Example(
             "tools/document-library structure --check",
             (
-                "139 works, 189 documents, 206 issues, 6056 pages.",
+                "140 works, 190 documents, 208 issues, 6080 pages.",
                 "  src/web/data/structure/documents/corpus.json is current",
             ),
             "writes nothing; refuses when the tracked catalogue has drifted from the sources",

@@ -17,9 +17,9 @@ completion of its PDF generation and publication, reconciliation with
 or rebase onto current `origin/main`, and a validated fast-forward push to
 `origin/main`. The workspace branch remains `feature/codex/propers/tlm/56`.
 
-**In progress.** The earlier proper workflow remains truthfully terminal
+**Publication ready; main push and deployment verification pending.** The earlier proper workflow remains truthfully terminal
 `BLOCKED`; its engine has no resume operation, and its accepted PDF reviews and
-immutable run history will be preserved. This follow-up repairs the converter
+immutable run history are preserved. This follow-up repairs the converter
 and completes the outstanding web review, installation and publication checks
 under the maintainer's new instruction. Both accepted PDF builds already exist
 at 20 and 13 pages. The converter previously selected the canonical synthesis
@@ -51,7 +51,8 @@ The Fifteenth Sunday is incorporated in the integration. All six PDFs
 rebuild successfully with current main's dependency-aware recipes: full/synthesis
 page counts are 20/14 for 54, 16/12 for 55, and 20/13 for 56. Both 56 PDFs are
 byte-identical to the accepted builds; all 62 rebuilt 54/55 pages passed
-independent integration visual review and their PDFs are installed. Regenerated canonical web editions for all three
+independent integration visual review and their PDFs are installed. Regenerated
+canonical web editions for all three
 are byte-identical to their reviewed installed Markdown. The combined converter
 and component suite passes all 69 tests.
 The published histories are retained through merge commits, followed by
@@ -74,16 +75,35 @@ release-policy, binding and document-catalogue checks pass. The remaining
 web-current check exposed the same included-format branch defect in Claude53:
 its existing web edition incorrectly described itself as a synthesis companion.
 Regeneration changes only that paragraph to the canonical full-edition wording
-already in its source. That narrow derived-page correction is under fidelity
-review; no authored source or PDF for Claude53 changes. Final web-current,
-general source and public-site checks remain before publication.
-Integration must preserve each proper's authored content, source evidence and
-acceptance records, reconcile shared inventories and release bindings, and
-retain main's deployment and PDF-cache changes. The combined sources, installed
-PDFs, generated web editions and public artifact require validation before a
-fast-forward main push. That push authorizes the ordinary Pages workflow;
-deployment and affected public routes must be verified before claiming them
-live.
+already in its source. That narrow derived-page correction passed independent
+fidelity and narrow-viewport review and is installed with SHA-256
+`ecfa18bbde0f415cdcf0808a99dc4acd7e2b3a2972f63221d256b2d22751c233`;
+no authored source or PDF for Claude53 changes. The web-current check passes.
+The final deployment-source gate, public-site build and GitHub Pages compatibility
+verification pass. Browser checks of GPT54/55/56 and Claude53 at 1280 and 375
+pixels found no duplicate IDs, broken fragment links or page-level overflow;
+the corrected paragraph and the three new edition entrances were inspected.
+
+The general check's remaining failure was 30 stale captured example transcripts,
+principally corpus counts changed by this integration. They were recaptured
+from actual runs through the owning replay tool. The three research-staleness
+examples retain their intentional nonzero advisory status; no research ledger
+was rebaselined. Comparison of parsed Python confirms that all twelve changed
+tools are identical outside their `EXAMPLES` assignments. The updated
+public-alpha tool's exact site binding is refreshed after that review.
+`make check` passes: 239 captured examples replayed with zero divergences;
+the six intentionally unrun and three unavailable examples retain their declared
+limits, and no example writes tracked state. The combined source check,
+document catalogue, promised-deliverable check, public-alpha policy, rebuilt
+public site and GitHub Pages compatibility verification pass. The unrelated
+expensive catena rebuild is outside this integration's changed consumers.
+All three authored leaves differ from their accepted branch sources only in
+the documented binding reconciliation. Current main's workflow, Makefile and
+deployment implementation are preserved; the renderer tool's only additional
+change is its captured examples. Both remote updates are proven fast-forwards,
+and the outgoing object review authenticates all thirteen retained binary
+objects and checks every newly reachable text object. Deployment and affected
+public routes still require verification after the push.
 
 ## GPT Sixteenth Sunday after Pentecost workflow, 2026-09-05
 
