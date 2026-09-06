@@ -126,18 +126,28 @@ jobs:
       # failure costs a rebuild rather than a deployment. The mirrorlist check
       # is the one that catches a silently substituted $repo: a mirrorlist
       # naming a literal repository would still have installed *something*.
+      #
+      # The package list is the one read out of `pages.yml` above and not a
+      # second copy of it. A restated list is a list that can fall behind
+      # ARCH_PACKAGES, and it would fall behind silently: an image missing a
+      # package the deploy's fallback installs would pass a check that never
+      # asked about it, and fail hours later inside somebody's typesetting run.
       - name: Verify what the image actually contains
+        env:
+          PACKAGES: ${{ steps.pins.outputs.packages }}
         run: |
           set -euo pipefail
           tag="$(cat "${RUNNER_TEMP}/texlive-image/tag")"
-          docker run --rm --interactive "$tag" bash -euo pipefail -s <<'SH'
+          docker run --rm --interactive --env "PACKAGES=${PACKAGES}" \
+            "$tag" bash -euo pipefail -s <<'SH'
           grep -F -q '$repo/os/$arch' /etc/pacman.d/mirrorlist \
             || { echo 'the mirrorlist lost pacman placeholders' >&2; exit 1; }
           cat /etc/pacman.d/mirrorlist
           pdflatex --version | sed -n 1,2p
-          pacman -Q texlive-bin texlive-basic texlive-latex texlive-latexrecommended \
-            texlive-latexextra texlive-pictures texlive-fontsrecommended \
-            texlive-fontsextra poppler python python-yaml make git diffutils
+          test -n "${PACKAGES}"
+          # Deliberately unquoted: the package set is a word list.
+          # shellcheck disable=SC2086
+          pacman -Q ${PACKAGES}
           command -v pdftotext pdfinfo make git
           SH
 
@@ -152,9 +162,16 @@ jobs:
           docker push "$tag"
           digest="$(docker inspect --format='{{index .RepoDigests 0}}' "$tag")"
           test -n "$digest"
+          # The deploy pulls this on every run that has anything to typeset, and
+          # the pull is the largest step of such a run. Reported here because it
+          # is the number a future change to ARCH_PACKAGES moves, and nothing
+          # else in either workflow says what the pin costs.
+          bytes="$(docker image inspect --format='{{.Size}}' "$tag")"
           {
             printf '## TeX Live toolchain published\n\n'
             printf 'Tag (mutable, for browsing): `%s`\n\n' "$tag"
+            printf 'Uncompressed image size: %s bytes (%s MiB)\n\n' \
+              "$bytes" "$((bytes / 1048576))"
             printf 'Pin this digest in `.github/workflows/pages.yml`:\n\n'
             printf '```yaml\n  TEXLIVE_IMAGE: %s\n```\n' "$digest"
           } >> "$GITHUB_STEP_SUMMARY"

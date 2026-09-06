@@ -105,8 +105,24 @@ jobs:
         with:
           python-version: "3.13"
 
+      # pdftotext and pdfinfo, which every gate downstream of the typesetting
+      # reads PDFs through, and which the deploy now also validates restored
+      # PDFs with when it does not pull the container. Nine to sixteen seconds
+      # of apt when the runner image does not carry poppler; asked first,
+      # because an image that does carry it should not pay that on every deploy.
+      # The check is repeated after either branch: a probe that decided not to
+      # install is only as good as the assertion that follows it.
       - name: Install PDF text extraction dependency
-        run: sudo apt-get update && sudo apt-get install --yes poppler-utils
+        run: |
+          set -euo pipefail
+          if command -v pdftotext >/dev/null && command -v pdfinfo >/dev/null; then
+            echo "poppler is already installed; skipping apt"
+          else
+            sudo apt-get update && sudo apt-get install --yes poppler-utils
+          fi
+          command -v pdftotext >/dev/null || { echo 'pdftotext is missing' >&2; exit 1; }
+          command -v pdfinfo >/dev/null || { echo 'pdfinfo is missing' >&2; exit 1; }
+          pdftotext -v 2>&1 | sed -n 1p
 
       # The source gate runs the PyYAML-backed Missal generators before the
       # public renderer runs. Keep both exact locks here: setup-python provides
@@ -318,6 +334,29 @@ jobs:
           if not providers:
               raise SystemExit("no provider carries a src/<provider>/**/main.tex")
 
+          SYNTHESIS = "-synthesis"
+
+
+          def resolvable(provider, document):
+              """Whether `check-generation-metadata --pdf <id>` can find a source.
+
+              A restored PDF still has to pass `.metadata/%.ok`, whose recipe is
+              that validator, so a document whose id the validator cannot resolve
+              must be typeset rather than restored: its stamp would otherwise be
+              written by a recipe that never ran. Two shapes resolve. A leaf
+              carries its own src/<provider>/<id>/main.tex. A proper synthesis is
+              the leaf id with `-synthesis` appended and is typeset from the same
+              leaf directory's synthesis.tex -- there is no <leaf>-synthesis/
+              directory and there is not meant to be. Anything else is typeset.
+              """
+              if (WORKSPACE / "src" / provider / document / "main.tex").is_file():
+                  return True
+              if document.endswith(SYNTHESIS):
+                  leaf = document[: -len(SYNTHESIS)]
+                  return (WORKSPACE / "src" / provider / leaf / "synthesis.tex").is_file()
+              return False
+
+
           def discard(provider, document):
               """Nothing that is not a proven hit may survive into the build.
 
@@ -361,15 +400,12 @@ jobs:
 
               for document in documents:
                   target = "build/%s/%s.pdf" % (provider, document)
-                  # Cache only what the standalone validator can re-derive.
-                  # `check-generation-metadata --pdf <id>` resolves an id to
-                  # src/<provider>/<id>/main.tex, and the proper syntheses have
-                  # no such directory: their stamp is written by the recipe that
-                  # builds them and by nothing else, so a restored synthesis PDF
-                  # would reach a .metadata/%.ok rule that cannot succeed. They
-                  # are cheap -- under a second each -- and they are typeset
-                  # every deploy.
-                  if not (WORKSPACE / "src" / provider / document / "main.tex").is_file():
+                  # Cache only what the standalone validator can re-derive from
+                  # the id alone. Both shapes this corpus has now resolve, so
+                  # this counter is expected to stay at zero; it is kept because
+                  # a third shape would otherwise be restored on the strength of
+                  # a stamp nothing could write.
+                  if not resolvable(provider, document):
                       discard(provider, document)
                       uncacheable += 1
                       continue
@@ -442,15 +478,34 @@ jobs:
               "cache hits: %d, misses: %d, unkeyable: %d, not cacheable: %d"
               % (hits, misses, unkeyed, uncacheable)
           )
+          # `typesetting` and not the count, because the count is a number and
+          # the branch below must survive this output going missing. An `if:`
+          # comparing a step output against '0' is comparing two strings while
+          # the output exists, and a number against zero the moment it does not:
+          # GitHub coerces an absent output to null and null to 0, so `!= '0'`
+          # would read false -- skip the toolchain -- in exactly the case where
+          # nothing is known. Against a word, an absent output coerces to 0 and
+          # the word to NaN, which is equal to nothing, so the toolchain branch
+          # is taken and the no-toolchain branch is not. Unknown means typeset.
           with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as handle:
               handle.write("documents_to_build=%d\n" % to_build)
               handle.write("cache_hits=%d\n" % hits)
+              handle.write("typesetting=%s\n" % ("none" if to_build == 0 else "required"))
           PY
 
+      # The four steps that follow are the container path, and they run only
+      # when the planning step above found something it could not restore. That
+      # step says `typesetting: none` when, and only when, its count of misses,
+      # unkeyable documents and documents the metadata validator cannot resolve
+      # came to zero -- every document in the corpus already in hand, and proven
+      # so. Every other answer, an absent one included, comes here. The single
+      # step after them installs the restored corpus without a toolchain.
+      #
       # Written to a file rather than passed as `bash -c '...'` so that the two
       # levels of quoting stop fighting each other, and so the script can be
       # read and syntax-checked on its own.
       - name: Prepare the container build script
+        if: steps.plan.outputs.typesetting != 'none'
         run: |
           set -euo pipefail
           mkdir -p "${RUNNER_TEMP}/triptych-toolchain"
@@ -471,9 +526,9 @@ jobs:
             pacman -Syu --noconfirm --needed ${TRIPTYCH_PACKAGES}
           fi
 
-          # Printed on every run, hit or miss. The digest says which image was
-          # pulled; this says what is inside it, which is the claim that
-          # actually matters when the pin and the package set disagree.
+          # Printed on every run that reaches pdfTeX. The digest says which
+          # image was pulled; this says what is inside it, which is the claim
+          # that actually matters when the pin and the package set disagree.
           pdflatex --version | sed -n 1,2p
           pacman -Q texlive-bin texlive-basic texlive-latex texlive-latexextra
           python3 -c "import sys, tomllib; assert sys.version_info >= (3, 11), sys.version"
@@ -488,10 +543,11 @@ jobs:
 
       # Pulled as its own step so a registry failure reads as one, and so what
       # it costs is visible in the timings rather than hidden inside the build.
-      # Unconditional even on a total cache hit: the proper syntheses are never
-      # cached, so pdfTeX is always wanted, and a branch that only ever runs on
-      # a corpus this repository does not have is a branch nothing would test.
+      # It is the largest single step of a deploy that typesets nothing --- 82
+      # seconds against the 50 the typesetting itself took on the last cache
+      # hit --- which is why it is now asked for only when pdfTeX is.
       - name: Pull the pinned TeX Live toolchain
+        if: steps.plan.outputs.typesetting != 'none'
         env:
           # Through the environment rather than interpolated into the script:
           # a token spliced into a shell command is a token in the run log's
@@ -531,6 +587,7 @@ jobs:
       # digest; poppler reads the PDFs and cannot change their bytes. The step
       # after this one gives the workspace back to the runner user.
       - name: Typeset the outstanding PDFs in the pinned container
+        if: steps.plan.outputs.typesetting != 'none'
         run: |
           set -euo pipefail
           providers="$(cat "${RUNNER_TEMP}/triptych-plan/providers.txt")"
@@ -559,9 +616,70 @@ jobs:
       # Everything the container wrote is root-owned, including the __pycache__
       # directories Python leaves beside the imported modules under scripts/.
       # The whole workspace is handed back rather than build/ and pdf/ alone,
-      # so nothing downstream discovers a directory it cannot write.
+      # so nothing downstream discovers a directory it cannot write. Guarded by
+      # the same expression as the container run, and in the same direction: if
+      # that ran, this runs.
       - name: Return the workspace to the runner user
+        if: steps.plan.outputs.typesetting != 'none'
         run: sudo chown -R "$(id -u):$(id -g)" "$GITHUB_WORKSPACE"
+
+      # The other half of the branch, and the reason the pull above is worth
+      # making conditional at all.
+      #
+      # `make install` is not a typesetting command. It is check-metadata, then
+      # per document the generation-metadata validation of the PDF in hand, the
+      # curriculum-structure check, and the hash-checked staged install into
+      # pdf/ --- and only where a PDF is older than a declared prerequisite,
+      # pdfTeX. The planning step leaves a build tree in which no PDF is older
+      # than anything: it restores an entry only when every declared
+      # prerequisite hashes to what the entry was built from, and stamps each
+      # restored PDF later than every file in the workspace. So when it reports
+      # nothing to build, make has nothing to compile, and everything `install`
+      # does reach --- python, poppler, coreutils --- the runner already has.
+      # Pulling two gigabytes of TeX Live to run it is 82 seconds spent on a
+      # toolchain that is never invoked.
+      #
+      # Except by `check-tools`, which is the one thing in the way: `install`
+      # needs `check-metadata`, `check-metadata` needs `check-tools`, and
+      # `check-tools` refuses a host where `command -v pdflatex` finds nothing.
+      # That preflight is asking whether this host could typeset, and the honest
+      # answer here is that it must not. PDFLATEX is therefore pointed at a
+      # program that exists, satisfies the preflight, and cannot typeset: it
+      # prints what make asked it to compile and fails.
+      #
+      # Which makes the branch fail closed twice over. A document make wants to
+      # rebuild is one the planning step said it would not have to, and rather
+      # than publish anything the deploy stops on that document and names it.
+      # The container path has no equivalent: there, a mis-planned document is
+      # quietly typeset and nobody learns the plan was wrong.
+      - name: Install the restored corpus without the typesetting toolchain
+        if: steps.plan.outputs.typesetting == 'none'
+        run: |
+          set -euo pipefail
+          providers="$(cat "${RUNNER_TEMP}/triptych-plan/providers.txt")"
+          test -n "$providers"
+          make_flags="$(cat "${RUNNER_TEMP}/triptych-plan/make-flags.txt")"
+          guard="${RUNNER_TEMP}/triptych-plan/refuse-to-typeset"
+          cat > "$guard" <<'SH'
+          #!/bin/sh
+          echo 'This deploy restored every document from the PDF cache and planned no' >&2
+          echo 'typesetting, so it is running without a TeX Live toolchain. make asked' >&2
+          echo 'for pdflatex anyway:' >&2
+          echo "  $*" >&2
+          echo 'The cache plan and the build graph disagree. Refusing to publish.' >&2
+          exit 1
+          SH
+          chmod +x "$guard"
+          printf 'providers: %s\nmake flags: %s\n' "$providers" "$make_flags"
+          python3 -c "import sys, tomllib; assert sys.version_info >= (3, 11), sys.version"
+          for provider in $providers; do
+            echo "::group::make install PROVIDER=${provider}"
+            # Deliberately unquoted: the flags are a word list and are usually empty.
+            # shellcheck disable=SC2086
+            make --jobs="$(nproc)" ${make_flags} install \
+              "PROVIDER=${provider}" "PDFLATEX=${guard}"
+            echo "::endgroup::"
+          done
 
       # Saved from the built tree rather than from pdf/, because build/ is what
       # the next run's make graph is keyed on. Hard linked where the filesystem

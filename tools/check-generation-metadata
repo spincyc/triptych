@@ -21,10 +21,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 # about what a contribution record is.
 from _corpus import (  # noqa: E402
     CONTRIBUTION_RE,
+    GENERATION_METADATA,
     INHERITANCE_RE,
+    MAIN,
     PRODUCTION_FIELDS,
     PRODUCTION_RE,
     REVISION_RE,
+    SYNTHESIS,
+    SYNTHESIS_SUFFIX,
     UNKNOWN,
     Contribution,
     Production,
@@ -412,21 +416,117 @@ def validate_rendered_record(
         )
 
 
-def audit_document(source_root: Path, relative: str, pdf: Path | None = None) -> Record:
+# --- Which file the build actually typesets --------------------------------
+#
+# An id names a PDF, and one leaf can build two of them:
+#
+#     src/<provider>/<leaf>/main.tex       ->  <leaf>
+#     src/<provider>/<leaf>/synthesis.tex  ->  <leaf>-synthesis
+#
+# The second mapping is the Makefile's, not an invention here. The pattern rule
+# `$(BUILD_ROOT)/%-synthesis.pdf` typesets `$*/synthesis.tex`, and
+# REGISTER_PROPER_SYNTHESIS_SOURCES hangs that target's prerequisites off
+# `$(patsubst %-synthesis,%,$(1))` --- the leaf directory itself. There is no
+# `<leaf>-synthesis/` directory anywhere and there is not meant to be. The two
+# names below are imported from `scripts/_corpus.py`, which reads the corpus by
+# the same rule, so the gate and the catalogue cannot come to disagree about
+# what a synthesis id resolves to.
+#
+# A synthesis has no provenance record of its own, and should not have one: it
+# is a cut of the leaf, issued from the leaf's research, so the record it must
+# carry is `<leaf>/generation-metadata.tex` --- the same file the full edition
+# carries, with the same revision timestamp, contributions and production
+# fields. Every assertion below is therefore made for a synthesis exactly as it
+# is made for a `main.tex` document, against that record. Only the file that
+# has to reach the record differs, and that is what `validate_provenance_input`
+# takes over.
+#
+# `main.tex` wins when both could match, so an ordinary document whose own leaf
+# happens to be named `...-synthesis` keeps resolving exactly as it always did.
+
+
+@dataclass(frozen=True)
+class Source:
+    """One id resolved: the leaf that owns the record, and the file typeset."""
+
+    leaf: Path
+    relative: str
+    entry: Path
+
+
+def resolve_source(source_root: Path, relative: str) -> Source:
     leaf = source_root / relative
-    main = leaf / "main.tex"
-    metadata = leaf / "generation-metadata.tex"
+    if (leaf / MAIN).is_file():
+        return Source(leaf=leaf, relative=relative, entry=leaf / MAIN)
+    if relative.endswith(SYNTHESIS_SUFFIX):
+        directory = source_root / relative[: -len(SYNTHESIS_SUFFIX)]
+        if (directory / SYNTHESIS).is_file():
+            return Source(
+                leaf=directory,
+                relative=relative[: -len(SYNTHESIS_SUFFIX)],
+                entry=directory / SYNTHESIS,
+            )
+        raise ValueError(f"missing source document {directory / SYNTHESIS}")
+    raise ValueError(f"missing source document {leaf / MAIN}")
+
+
+def count_inputs(text: str, target: str) -> int:
+    """How often active TeX inputs `target`, written with or without `.tex`."""
+    return len(re.findall(rf"\\input\{{{re.escape(target)}(?:\.tex)?\}}", text))
+
+
+def validate_provenance_input(source: Source) -> None:
+    r"""The typeset file must reach the leaf's provenance record exactly once.
+
+    For a `main.tex` document that is one `\input`, and always was. A synthesis
+    reaches the same record by one of two shapes, both current in the corpus and
+    both checked here rather than assumed: fourteen `synthesis.tex` files set
+    `\TriptychSynthesisEdition` and input the leaf's `main.tex`, which inputs
+    the record; three are standalone preambles that input the record directly.
+
+    Requiring the two routes to sum to one is the same assertion the full
+    edition has always faced --- the record is included, and included once. A
+    synthesis that took both routes would typeset the record twice and fails
+    here; one that took neither would publish a page with no provenance on it
+    and fails here; and where the route is through `main.tex`, that file is held
+    to the identical single-input rule, so the indirection buys no slack.
+    """
+    record_stem = GENERATION_METADATA.removesuffix(".tex")
+    record_target = f"{source.relative}/{record_stem}"
+    entry_text = active_tex(source.entry.read_text(encoding="utf-8"))
+    direct = count_inputs(entry_text, record_target)
+
+    if source.entry.name == MAIN:
+        if direct != 1:
+            raise ValueError("main.tex must input its structured provenance exactly once")
+        return
+
+    main_stem = MAIN.removesuffix(".tex")
+    through_main = count_inputs(entry_text, f"{source.relative}/{main_stem}")
+    if direct + through_main != 1:
+        raise ValueError(
+            "synthesis.tex must reach its structured provenance exactly once, by "
+            "inputting it or by inputting the main.tex that does: found "
+            f"{direct} direct and {through_main} through main.tex"
+        )
+    if not through_main:
+        return
+    main = source.leaf / MAIN
     if not main.is_file():
         raise ValueError(f"missing source document {main}")
+    main_text = active_tex(main.read_text(encoding="utf-8"))
+    if count_inputs(main_text, record_target) != 1:
+        raise ValueError("main.tex must input its structured provenance exactly once")
+
+
+def audit_document(source_root: Path, relative: str, pdf: Path | None = None) -> Record:
+    source = resolve_source(source_root, relative)
+    leaf = source.leaf
+    metadata = leaf / GENERATION_METADATA
     if not metadata.is_file():
         raise ValueError(f"missing structured provenance record {metadata}")
 
-    main_text = active_tex(main.read_text(encoding="utf-8"))
-    expected_input = re.compile(
-        rf"\\input\{{{re.escape(relative)}/generation-metadata(?:\.tex)?\}}"
-    )
-    if len(expected_input.findall(main_text)) != 1:
-        raise ValueError("main.tex must input its structured provenance exactly once")
+    validate_provenance_input(source)
     for tex_source in leaf.rglob("*.tex"):
         if tex_source == metadata:
             continue

@@ -1397,10 +1397,12 @@ endef
 # the shared preamble. REGISTER_PROPER_SYNTHESIS_SOURCES already declares each
 # synthesis's own sources per target; what this pattern rule was missing was
 # the shared preamble alone, so a preamble edit rebuilt no synthesis at all.
-# ASSERT_DECLARED_INPUTS below found it. Note that synthesis PDFs are not
-# cached by the deploy -- its keyer skips a document with no
-# src/<provider>/<leaf>/main.tex -- so this was an incremental-build defect
-# here, not a stale-publish one.
+# ASSERT_DECLARED_INPUTS below found it. When it did, synthesis PDFs were not
+# cached by the deploy and this was an incremental-build defect rather than a
+# stale-publish one. They are cached now -- check-generation-metadata learned
+# to resolve a <leaf>-synthesis id to <leaf>/synthesis.tex, which is what had
+# excluded them -- so this rule's prerequisites are part of a cache key, and a
+# missing one would publish a stale PDF rather than merely fail to rebuild.
 $(BUILD_ROOT)/%-synthesis.pdf: $(COMMON_SOURCES)
 	@mkdir -p $(@D) '$(BUILD_ROOT)/.metadata/$(dir $*)'
 	@rm -f -- '$(BUILD_ROOT)/.metadata/$*-synthesis.ok'
