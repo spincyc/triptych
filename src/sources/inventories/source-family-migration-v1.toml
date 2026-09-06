@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-09-06"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:4990f2ef237fa6936b87dea6d77e22e47c36ec9b9952519fe87fc2d3cb304062"
+inventory_snapshot = "sha256:a02579ca3702a29120bd7d47dc6c80db0908c4d271b19bbd6af93dd47e43749c"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:21048643572a8265f73030712d09ba70de87a8cda712ddf5318caf62c3464801"
-canonical_catalog_snapshot = "sha256:2caa97e0847e9635413d2b14080ada52b61b8c232d5d25c7e2c34b421e36998a"
+canonical_catalog_snapshot = "sha256:7b3a805951013cc07a1addd2860654e7c60c64d201102e4e197662ba609f9cc7"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:82df02f29378b854ed3935653e2728ea957d5a56a0d9b3ddd7795fb8759836f0"
+snapshot = "sha256:4d0062b91fa9490a9b2e1bad0501be4470126675f8816135b7720ef356126402"
 families = []
 
 [[review_units]]
@@ -468,17 +468,17 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"
-surface_snapshot = "sha256:40f097ad9882359e9f5848ef975884e1bab94dec7cd846eb7d088e0bca92b74f"
+surface_snapshot = "sha256:afe309e37132629fc262912b0e1e160affb2c346e2365b30dabd7197e73bf125"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost"
-surface_snapshot = "sha256:aab1e419161fd0a972915f112b61aba5a0609be5c81f17ccd7fb0f2f5024a058"
+surface_snapshot = "sha256:bc2597877473955756a8186846358e5974876cba01c62c4b64bcf49edec29686"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost"
-surface_snapshot = "sha256:e53501b47b59fd1a5b5d8e251ae7e1d9f84b21160a42a9a102737f0d26286072"
+surface_snapshot = "sha256:56fcbd36101d70e514b8e01e5ca23dab553dd4e2516e97cebc6c2e0a613878b8"
 review_state = "pending"
 
 [[review_units]]

@@ -168,3 +168,14 @@ any rights in the 1962 facsimile.
 
 Each historical English source remains edition-identified. Research notes
 and synthesis are original editorial material and do not become source text.
+
+## Authoring reuse — 2026-09-05
+
+The proper v25 authoring pass retains the accepted source-audit text without a
+new image-collation claim. COV-001–COV-003 in the immutable research brief
+control its reuse. The new cultural gallery identifies its separately checked
+American 1899 Challoner comparisons at Psalm 39:4, Galatians 6:2,7–8 and
+Luke 7:12,14–15; those do not silently replace the Gutenberg witness behind
+brief scriptural English elsewhere. The Cummiskey aggregate passage remains
+the usable oration witness despite the erroneous individual Secret and
+Postcommunion cross-check metadata described in the brief.

@@ -47,14 +47,36 @@ The two named branches and current main have been fetched for comparison.
 Current main is merged, preserving its deployment cache and held-edition route
 fixes. The Fourteenth Sunday branch's authored and source records are integrated;
 both its authorization and the Sixteenth Sunday's authorization are retained.
-The Fifteenth Sunday merge and combined source-identity reconciliation follow.
-Shared generated records are provisional until that reconciliation completes.
+The Fifteenth Sunday is incorporated in the integration. All six PDFs
+rebuild successfully with current main's dependency-aware recipes: full/synthesis
+page counts are 20/14 for 54, 16/12 for 55, and 20/13 for 56. Both 56 PDFs are
+byte-identical to the accepted builds; all 62 rebuilt 54/55 pages passed
+independent integration visual review and their PDFs are installed. Regenerated canonical web editions for all three
+are byte-identical to their reviewed installed Markdown. The combined converter
+and component suite passes all 69 tests.
 The published histories are retained through merge commits, followed by
 a genuine fast-forward of main; no remote history needs rewriting. Source
 identity collisions in Wilson, Schuster, Aquinas, Augustine, Chrysostom and
-Francis de Sales have been identified for explicit reconciliation. Site-wide
-bindings, catalogue regeneration and publication gates will be completed on
-the combined tree so that they validate all three intended editions together.
+Francis de Sales are reconciled in the
+[dated migration audit](src/sources/inventories/propers-54-56-identity-reconciliation-2026-09-06.md).
+Three exact duplicate acquisitions are consolidated, eight distinct response
+artifacts retain their IDs and hashes under corrected owners, and 20 affected
+bindings carry narrow identity/evidence-record reviews without changing their
+original loci or evidence states. Source-library validation passes with 600
+works, 808 editions, 2302 artifacts and 2355 bindings. The audit preserves the
+limits of the earlier research snapshots; no new sweep or collation is claimed.
+Publication inventory, family ledger and source projection are regenerated
+against this combined tree, retaining all pending family-review states. Site-wide
+bindings and the document catalogue are regenerated. `make check-sources`
+passes, including the complete deployment-source gate and family ledger.
+All 17 per-publication checks pass for each of 54, 55 and 56; the shared
+release-policy, binding and document-catalogue checks pass. The remaining
+web-current check exposed the same included-format branch defect in Claude53:
+its existing web edition incorrectly described itself as a synthesis companion.
+Regeneration changes only that paragraph to the canonical full-edition wording
+already in its source. That narrow derived-page correction is under fidelity
+review; no authored source or PDF for Claude53 changes. Final web-current,
+general source and public-site checks remain before publication.
 Integration must preserve each proper's authored content, source evidence and
 acceptance records, reconcile shared inventories and release bindings, and
 retain main's deployment and PDF-cache changes. The combined sources, installed

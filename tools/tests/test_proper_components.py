@@ -37,9 +37,9 @@ class ProperComponentTests(unittest.TestCase):
              integrated_modes),
             ("grounded", "source-grounded-synthesis", "grounded.tex",
              '["research", "synthesis"]'),
-            ("exploratory", "exploratory-synthesis", "exploratory.tex",
-             '["research", "synthesis"]'),
             ("notable", "notable-quotable", "notable.tex",
+             '["research", "synthesis"]'),
+            ("exploratory", "exploratory-synthesis", "exploratory.tex",
              '["research", "synthesis"]'),
             ("terminal", "terminal-apparatus", "terminal.tex",
              '["research", "synthesis"]'),
@@ -99,11 +99,26 @@ class ProperComponentTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "integrated-commentary"):
                 module.audit_manifest(path, provider)
 
-    def test_exploratory_precedes_notable(self):
+    def test_profile_order_puts_notable_before_exploratory(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path, provider = self.component_tree(directory)
+            module.audit_manifest(path, provider)
+
+    def test_legacy_order_remains_valid(self):
         with tempfile.TemporaryDirectory() as directory:
             path, provider = self.component_tree(directory, swap_tail=True)
-            with self.assertRaisesRegex(ValueError, "component order"):
-                module.audit_manifest(path, provider)
+            module.audit_manifest(path, provider)
+
+    def test_tail_components_must_follow_grounded_synthesis(self):
+        for legacy in (False, True):
+            with self.subTest(legacy=legacy), tempfile.TemporaryDirectory() as directory:
+                path, provider = self.component_tree(directory, swap_tail=legacy)
+                text = path.read_text(encoding="utf-8")
+                blocks = text.split("[[components]]")
+                blocks[5], blocks[6] = blocks[6], blocks[5]
+                path.write_text("[[components]]".join(blocks), encoding="utf-8")
+                with self.assertRaisesRegex(ValueError, "component order"):
+                    module.audit_manifest(path, provider)
 
     def test_rights_limited_text_requires_research_label(self):
         with tempfile.TemporaryDirectory() as directory:

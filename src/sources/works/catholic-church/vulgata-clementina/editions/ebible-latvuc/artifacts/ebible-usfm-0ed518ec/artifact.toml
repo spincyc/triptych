@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.ebible-usfm-0ed518ec"
+edition_id = "edition.catholic-church.vulgata-clementina.ebible-latvuc"
+artifact_type = "electronic-text"
+media_type = "application/zip"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The package copyright page labels the Clementine Vulgate and its Migne 1880 apparatus Public Domain; both historical texts are public domain in the United States. Retained as the exact eBible distribution, including its copyright and delivery metadata."
+source_url = "https://eBible.org/Scriptures/latVUC_usfm.zip"
+provenance = "Retrieved directly by the scripture-context research lane on 2026-09-05; receipt(s) SCR-005, SCR-006, SCR-007, SCR-008, SCR-009, SCR-010, SCR-011, SCR-012, SCR-013, SCR-016, SCR-017, SCR-019, SCR-020, SCR-022 in run 9bf9d40d825f419f. Registration re-read the complete receipt, verified every supplied path against its SHA-256 and byte size, resolved catalog aliases before assigning the work, and checked existing editions for superseding derivations. No source was fetched by registration."
+retrieved = "2026-09-05"
+sha256 = "0ed518ec26617ff80e1d2d9c4562b5a6a0cc79613e72839aa96769453f13e79f"
+byte_size = 3549517
+notes = "Complete current eBible.org latVUC USFM download: 76 ZIP members, comprising 73 biblical-book USFM files plus copr.htm, keys.asc and gentium.css; ZIP central directory and all member CRCs verified. The host copyright page identifies “Clementine Vulgate of 1598 with Glossa Ordinaria Migne edition 1880 in Latin”. Scripture loci inspected are specified per finding; the Glossa apparatus was not a reception sweep. This is the 2026-09-05 acquired release, with generated metadata dated 2026-08-08 and source files dated 2025-12-12; it does not supersede or silently update consumers of ebible-usfm-d8c02326. Its footnotes are apparatus, not biblical verse text. The library separately holds the English Douay-Rheims work; Bible translations retain their separate work identities."
+rights_jurisdiction = "United States"
+path = "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/ebible-usfm-0ed518ec/latVUC_usfm.zip"

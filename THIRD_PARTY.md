@@ -109,6 +109,27 @@ licensed SBLGNT surface-text columns. Reusers must retain the MorphGNT
 attribution, this change notice, the license link, and ShareAlike treatment
 where the license requires them.
 
+The September 2026 proper-guide acquisitions also retain unchanged Wikisource
+and Wikimedia delivery files under their recorded
+[Creative Commons Attribution-ShareAlike 4.0 International
+License](https://creativecommons.org/licenses/by-sa/4.0/): the Latin Wikisource
+contributors' [Ambrose, *Expositio Evangelii secundum Lucam*, book V](https://la.wikisource.org/wiki/Expositio_Evangelii_secundum_Lucam_(Ambrosius)/5),
+whose raw text retains the Corpus Corporum source/attribution templates; and
+the English Wikisource and Wikimedia Commons contributors' Tressell chapter,
+scan-index and file-description pages. The latter HTML files retain their
+license notices and contributor/history links. Their source manifests record
+the exact page URLs, delivery hashes and bounded extents. These are retained
+deliveries, with no project alterations, and are not offered under Triptych's
+CC BY 4.0 license. Reusers must retain attribution and notices and satisfy
+ShareAlike where required. The historical texts and scan images remain
+separately identified rights objects.
+
+The complete Gutenberg deliveries of Dickens's *The Seven Poor Travellers*,
+Wilde's *The Importance of Being Earnest* and Tressell's *The Ragged Trousered
+Philanthropists* retain their supplied producer credits, wrappers and licenses.
+Those notices are part of the retained files; they are not replaced by
+Triptych's project license.
+
 ## Liturgical and Scriptural Texts
 
 Scripture, Missal formularies, Orders of Mass, rubrics, chants, and texts from

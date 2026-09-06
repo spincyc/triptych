@@ -181,8 +181,8 @@ source_id = "artifact.thomas-aquinas.super-psalmos.latin-corpusthomisticum-web-2
 loci = ["39.n6", "39.n7"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-context = "Direct Latin reportatio exposition inspected in context; the prayer for help and penitential or punitive shame are paraphrased. Citation detail: Psalm 39 nn.6-7, unit 87202."
-source_fingerprint = "sha256:65e3345fa7f02600df0265d3d9aaccf1cde1d79d8681c896030714e77162702c"
+context = "Direct Latin reportatio exposition inspected in context; the prayer for help and penitential or punitive shame are paraphrased. Citation detail: Psalm 39 nn.6-7, unit 87202. Metadata review 2026-09-06: Compared the identical 359759-byte cps31 response, SHA-256 e2d50b43f0036d33450b908632ba6d741277edb8ad9381c851eddeb005f90749, its Parma-based Corpus Thomisticum identity and the publication’s recorded numbered Psalm loci. Psalm 33 nn. 8–9 in GPT54 and Psalm 39 nn. 6–7 in GPT56 remain separate inspection claims within that same Psalms 31–40 response; restricted delivery bytes are not introduced. This reviews identity and the prior evidence record, not a new source retrieval, textual verification or image collation. Migration details: src/sources/inventories/propers-54-56-identity-reconciliation-2026-09-06.md."
+source_fingerprint = "sha256:11dc9cdea389b800174e01e20c09884009e778b75849f6accb566c6137d81489"
 
 [[bindings]]
 source_id = "artifact.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.wikimedia-pdf-72ee8714"
@@ -221,8 +221,8 @@ source_id = "artifact.francis-de-sales.introduction-a-la-vie-devote.perisse-frer
 loci = ["Introduction à la vie dévote III.5, full chapter and preceding IV ending"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-context = "French chapter inspected in research; the guide gives a commentary paraphrase, not a translated devotional text, and calls the seating language an echo."
-source_fingerprint = "sha256:55c6aaea597ec3e335fd6aded867cdccbfbb302f9e3a97ba99f5697a1d298b62"
+context = "French chapter inspected in research; the guide gives a commentary paraphrase, not a translated devotional text, and calls the seating language an echo. Metadata review 2026-09-06: Compared the author-name/title alias correction with this binding’s unchanged edition, exact artifact digest, chapter loci and stated role. François de Sales identifies the author; the independently acquired English and French witnesses remain separate, and neither their translator qualifications nor their inspected extent changes. This reviews identity and the prior evidence record, not a new source retrieval, textual verification or image collation. Migration details: src/sources/inventories/propers-54-56-identity-reconciliation-2026-09-06.md."
+source_fingerprint = "sha256:ee493f29c7284f8a952cf21e1a66a18caee81af7ef5c95b66364099de3e010cc"
 
 [[bindings]]
 source_id = "artifact.benedict-xvi.angelus-2010-08-29.official-english-web-2026-09-05.vatican-english-html-95070a43"
@@ -249,12 +249,12 @@ context = "The history lane visually checked the Secret/Postcommunion pair with 
 source_fingerprint = "sha256:0e245cf5ba8ba24a818cfccc7dc8ef91577ce1ef2d6af189794140efa2f20753"
 
 [[bindings]]
-source_id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915-facsimile-web-2026-09-05.ia-gregorian-pdf-96fd93c7"
+source_id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7"
 loci = ["pp.133-135,173 note c,174; introduction pp.xvii-xviii,xxx,xli,xliv-xlv"]
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected"]
-context = "The history lane checked the page images for the Collect’s alternate use, Sunday XVII triad and distinct four-chant group; historical ordinals and later additions remain distinct."
-source_fingerprint = "sha256:526b28124af7c546fcb1271db4c26676a08ecf5bde94ee2a97cf2bed6eec8762"
+context = "The history lane checked the page images for the Collect’s alternate use, Sunday XVII triad and distinct four-chant group; historical ordinals and later additions remain distinct. Metadata review 2026-09-06: Compared the three acquisition receipts to the retained complete 432-page Wilson 1915 facsimile: SHA-256 96fd93c73f8c9df47b6911981155b8b02cf2f2183ca6e87baad15128682d8681, 28655931 bytes. Reviewed this binding’s printed supplement/introduction loci and prayer-versus-marginal-chant qualifications against its recorded history findings; canonical ownership and the retained filename change no page, locus or evidence state. This reviews identity and the prior evidence record, not a new source retrieval, textual verification or image collation. Migration details: src/sources/inventories/propers-54-56-identity-reconciliation-2026-09-06.md."
+source_fingerprint = "sha256:b6b2f002fa1d0aecd709fb76d2379c4470e563def3d4c752cad2a2d1b1d6ffb0"
 
 [[bindings]]
 source_id = "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-scan-volume-3-410f6d11"

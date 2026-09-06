@@ -79,7 +79,7 @@ role = "translation-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-09-03"
 source_fingerprint = "sha256:d1becf65404d8b685106f60ada2ee449c6fc70f69fdb1e90b6eb4712794c0a17"
-context = "The complete context controls the Epistle's argumentative boundaries. The public-domain wording controls the brief Galatians phrases quoted in the cultural gallery."
+context = "The complete context controls the Epistle's argumentative boundaries. The public-domain wording controls the brief Galatians phrases quoted in Themes and Movement. The current gallery separately identifies American 1899 Challoner."
 
 [[bindings]]
 source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.psalm-numbering-ee3c7757"
@@ -90,12 +90,12 @@ context = "The registered concordance controls the published Vulgate-to-modern P
 
 [[bindings]]
 source_id = "artifact.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.wikimedia-pdf-72ee8714"
-loci = ["Psalm 39, PG 80:1151-1154", "Psalm 85, PG 80:1553-1556", "Psalm 91, PG 80:1615-1618", "Psalm 94, PG 80:1639-1642"]
+loci = ["Psalm 39, PG 80:1151-1154", "Psalm 46, PG 80:1205D-1208B", "Psalm 85, PG 80:1553-1556", "Psalm 91, PG 80:1615-1618", "Psalm 94, PG 80:1639-1642"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected", "verified"]
-verified_on = "2026-09-03"
+verified_on = "2026-09-05"
 source_fingerprint = "sha256:f431d1af4d23e9bc63a710fdaa7d8198d2aba0ac1853cde486c5307cbc031b66"
-context = "The checked Greek-Latin facsimile controls the four attributed psalm readings, including the Psalm 94 lemma super omnem terram."
+context = "The checked Greek-Latin facsimile controls the attributed psalm readings, including the Psalm 94 lemma super omnem terram. The immutable proper v25 iteration-1 brief PAT-029 records the separate 2026-09-05 image inspection of Psalm 46:2-3 at PG 80:1205D-1208B; authoring paraphrases its apostolic summons and universal kingship without claiming a new collation or chant-transmission history."
 
 [[bindings]]
 source_id = "passage.cyril-of-alexandria.commentary-on-john.english-pusey-randell-lfc-1874-1885.book-4-jn-6.51-58"
@@ -104,15 +104,15 @@ role = "reception"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-07-27"
 source_fingerprint = "sha256:273d8fd61dbf70e919349f7d0d35457802a83306c4d76804658fda1c062e13d8"
-context = "The registered passage controls Cyril's life-giving Word-flesh, sacrifice, participation, and resurrection reading. The guide paraphrases it."
+context = "The registered passage controls Cyril's life-giving Word-flesh, sacrifice, participation, and resurrection reading. PAT-010 in the current brief records direct reading of the continuous Book IV English at pp. 409-414 and the following-verse Naim comparison at pp. 418-419; the passage record covers pp. 408-425. This is Pusey's 1874 English, not Payne Smith or a new Greek collation. The guide paraphrases it."
 
 [[bindings]]
 source_id = "artifact.thomas-aquinas.super-galatas.latin-corpusthomisticum-web-2026-08-21.cgl-html-bbaaf5bd"
-loci = ["6.l1"]
+loci = ["6.l1", "6.l2", "5"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:5f6829f4470b577188c5abaf483a4dfebfb8bccb3ae580cb8745ae983f8e699b"
-context = "The checked primary Latin controls Aquinas's treatment of gentle restoration, patience, aid, prayer, and charity. No derivative English is reproduced."
+context = "PAT-007 and PRE-014 in the current brief check the Latin chapter-5 closing exposition and chapter 6 lectures 1-2, supporting gentle restoration, three modes of burden-bearing, personal account, perseverance and good to all. No derivative English is reproduced. Exact inspected extent: 6.l1; 6.l2; chapter 5 closing exposition."
 
 [[bindings]]
 source_id = "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-scan-volume-3-410f6d11"
@@ -177,10 +177,10 @@ context = "The generated chronology annotation carries the Commission's composit
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-9.new-york-1910.newadvent-09420a-9b79d2a9"
 loci = ["Gospel of St. Luke; chronological notices represented in the corpus"]
-role = "context"
+role = "lead"
 states = ["cataloged", "acquired"]
 source_fingerprint = "sha256:170b7fb37da38c8cad5072c51f8126a67c9ed50e20ac89ca91e261ac986a28be"
-context = "The guide uses this article for Luke's traditional authorship and composition-place orientation; the generated chronology now takes its relative composition bound from the direct Pontifical Biblical Commission record."
+context = "Historical binding retained without deletion. The current brief does not authorize a new reader-facing claim from this witness; earlier inspection states remain historical provenance, not current authoring verification."
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08438a-7620a92c"
@@ -250,13 +250,298 @@ loci = ["Dominica XV post Pentecosten, OCR lines 53284-53522"]
 role = "lead"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:e76b722596e6d4f31cf9ec2c7d4af5d34cbac1377e03b6926b67866f545a32d4"
-context = "The degraded OCR locates the 1570 target sequence cited in References; the directly checked page images, not these text-layer words, control the historical continuity claim."
+context = "Historical binding retained without deletion. The current brief does not authorize a new reader-facing claim from this witness; earlier inspection states remain historical provenance, not current authoring verification."
 
 [[bindings]]
 source_id = "passage.pablo-t-gadenz.the-gospel-of-luke.2018-baker-academic.introduction-pages-16-19"
 loci = ["introduction-pages-16-19"]
-role = "context"
+role = "lead"
 states = ["cataloged", "acquired", "inspected", "verified"]
 verified_on = "2026-08-21"
 source_fingerprint = "sha256:affe2df9233d309155619a8517923536063ef7f6dfd5be19cb5f397fb3d9c0ac"
-context = "The restricted publisher excerpt controls the page-2 account of qualified traditional authorship, modern date proposals, and uncertain composition place; the guide paraphrases it and reproduces no excerpt text."
+context = "Historical binding retained without deletion. The current brief does not authorize a new reader-facing claim from this witness; earlier inspection states remain historical provenance, not current authoring verification."
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf1-8-newadvent.psalm-40-html-3fab0826"
+loci = ["39.2-5"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:64ee785d0d9292b394b62845e0865ca0ad6b66af1de5bfc20d1e06c341244452"
+context = "The immutable proper v25 research brief records the named locus inspection; authoring paraphrases the historical argument and claims no new original-language or image check. Tweed historical English in New Advent presentation; Vulgate psalm numbering names the cited work. Exact inspected extent: Enarrationes in Psalmos 39.2-5. Metadata review 2026-09-06: Compared the bound Tweed/NPNF I.8 New Advent identity, exact response digest, host versus Vulgate psalm numbering, and the unchanged numbered loci against this publication’s recorded reception findings. The merged edition preserves each response separately; its broader acquired extent does not enlarge this binding’s inspected extent. This reviews identity and the prior evidence record, not a new source retrieval, textual verification or image collation. Migration details: src/sources/inventories/propers-54-56-identity-reconciliation-2026-09-06.md."
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf1-8-newadvent.psalm-47-html-8d6a5c65"
+loci = ["46.2-3"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:3226c2a21deb6bf718f9fe62289ffe6bab85788d5a3346b3e3f59c636b37b741"
+context = "The immutable proper v25 research brief records the named locus inspection; authoring paraphrases the historical argument and claims no new original-language or image check. Tweed historical English in New Advent presentation; Vulgate psalm numbering names the cited work. Exact inspected extent: Enarrationes in Psalmos 46.2-3. Metadata review 2026-09-06: Compared the bound Tweed/NPNF I.8 New Advent identity, exact response digest, host versus Vulgate psalm numbering, and the unchanged numbered loci against this publication’s recorded reception findings. The merged edition preserves each response separately; its broader acquired extent does not enlarge this binding’s inspected extent. This reviews identity and the prior evidence record, not a new source retrieval, textual verification or image collation. Migration details: src/sources/inventories/propers-54-56-identity-reconciliation-2026-09-06.md."
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf1-8-newadvent.psalm-86-html-4f242c3f"
+loci = ["85.1-6"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f7965f8ddf74c8d900bcf636caa4ea96bce275e439092d67a68773b179cae408"
+context = "The immutable proper v25 research brief records the named locus inspection; authoring paraphrases the historical argument and claims no new original-language or image check. Tweed historical English in New Advent presentation; Vulgate psalm numbering names the cited work. Exact inspected extent: Enarrationes in Psalmos 85.1-6. Metadata review 2026-09-06: Compared the bound Tweed/NPNF I.8 New Advent identity, exact response digest, host versus Vulgate psalm numbering, and the unchanged numbered loci against this publication’s recorded reception findings. The merged edition preserves each response separately; its broader acquired extent does not enlarge this binding’s inspected extent. This reviews identity and the prior evidence record, not a new source retrieval, textual verification or image collation. Migration details: src/sources/inventories/propers-54-56-identity-reconciliation-2026-09-06.md."
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf1-8-newadvent.psalm-92-html-c37b1ddb"
+loci = ["91.1-4"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5a76062880fc02f3360b68c3520bdf1d76bcc5e5c5ae091095f9e59f0c86139b"
+context = "The immutable proper v25 research brief records the named locus inspection; authoring paraphrases the historical argument and claims no new original-language or image check. Tweed historical English in New Advent presentation; Vulgate psalm numbering names the cited work. Exact inspected extent: Enarrationes in Psalmos 91.1-4. Metadata review 2026-09-06: Compared the bound Tweed/NPNF I.8 New Advent identity, exact response digest, host versus Vulgate psalm numbering, and the unchanged numbered loci against this publication’s recorded reception findings. The merged edition preserves each response separately; its broader acquired extent does not enlarge this binding’s inspected extent. This reviews identity and the prior evidence record, not a new source retrieval, textual verification or image collation. Migration details: src/sources/inventories/propers-54-56-identity-reconciliation-2026-09-06.md."
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf1-8-newadvent.psalm-95-html-e0350e93"
+loci = ["94.5-6,10"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:110dc074118a3357ca7390f69079ee9fbe97963ea053a4c1b9aa10c1b1529349"
+context = "The immutable proper v25 research brief records the named locus inspection; authoring paraphrases the historical argument and claims no new original-language or image check. Tweed historical English in New Advent presentation; Vulgate psalm numbering names the cited work. Exact inspected extent: Enarrationes in Psalmos 94.5-6,10. Metadata review 2026-09-06: Compared the bound Tweed/NPNF I.8 New Advent identity, exact response digest, host versus Vulgate psalm numbering, and the unchanged numbered loci against this publication’s recorded reception findings. The merged edition preserves each response separately; its broader acquired extent does not enlarge this binding’s inspected extent. This reviews identity and the prior evidence record, not a new source retrieval, textual verification or image collation. Migration details: src/sources/inventories/propers-54-56-identity-reconciliation-2026-09-06.md."
+
+[[bindings]]
+source_id = "artifact.augustine.sermo-98.english-macmullen-npnf1-6-newadvent.sermon-98-html-361b355c"
+loci = ["Sermo 98, sections 1-7, especially 4-5; NPNF New Testament Sermon 48"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:16569ec8ca08c6b8132b1a18b7eff2ff778d92daf8b7f909b69c3f63da15b5c8"
+context = "The immutable proper v25 research brief records the named locus inspection; authoring paraphrases the historical argument and claims no new original-language or image check. MacMullen historical English; the erroneous web heading Luke 7:2 is distinguished from the Naim narrative in section 4."
+
+[[bindings]]
+source_id = "artifact.augustine.in-iohannis-evangelium-tractatus.english-gibb-npnf1-7-newadvent.tractate-26-html-9ec265de"
+loci = ["26.10", "26.11", "26.12", "26.13", "26.14", "26.15", "26.16", "26.17", "26.18", "26.19", "26.20"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:cdda08cf2d4cc9f07392c4bbe4002635ab325f8bb80b9d9a99380e1089209590"
+context = "The immutable proper v25 research brief records the named locus inspection; authoring paraphrases the historical argument and claims no new original-language or image check. Gibb English controls unity, charity, outward reception, abiding and future bodily resurrection. Exact inspected extent: Tractate 26.10-20, especially 13,15-18."
+
+[[bindings]]
+source_id = "segment.augustine.sermo-frangipane-5.morin-miscellanea-agostiniana.opening-pp212-215"
+loci = ["Frangipane V, heading p. 212; sections 2-3 and section 4 opening, pp. 213-215"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:53f7cfffa6d244a508020b830b2e7039df1d6622df29bb64cff93fb3d9c96597"
+context = "The immutable proper v25 research brief records the named locus inspection; authoring paraphrases the historical argument and claims no new original-language or image check. PAT-006 records direct Latin page-image inspection. The possibly interpolated repeated charity formula and tentative sermon year remain qualified; no later sermon sections are claimed."
+
+[[bindings]]
+source_id = "artifact.ambrose.expositio-evangelii-secundum-lucam.latin-migne-wikisource-book-5.wikisource-book-5-fde2303a"
+loci = ["5.89", "5.90", "5.91", "5.92"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c2006d04da072c4dc606413e5328a3048b3f97d28e8b04c19278bcb743ebc4b4"
+context = "The immutable proper v25 research brief records the named locus inspection; authoring paraphrases the historical argument and claims no new original-language or image check. Continuous attributed Latin transcription, not fresh facsimile collation; no reliance on incidental punctuation or spelling. Exact inspected extent: V.89-92."
+
+[[bindings]]
+source_id = "artifact.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.wikisource-in-lucam-116db0ca"
+loci = ["2", "Lc.7.11", "Lc.7.12", "Lc.7.13", "Lc.7.14", "Lc.7.15", "Lc.7.16"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:a8214a57556d9412ed34e019cedb24cfaeaa8a7160276453c7b23875c0214805"
+context = "The immutable proper v25 research brief records the named locus inspection; authoring paraphrases the historical argument and claims no new original-language or image check. Continuous attributed Latin transcription of ecclesial restoration; not a fresh facsimile collation. Exact inspected extent: II.7, Luke 7:11-16, PL 92:417B-419A, especially 418A-D."
+
+[[bindings]]
+source_id = "artifact.cyril-of-alexandria.commentary-on-luke.english-payne-smith-oxford-1859.commons-volume-1-pdf-23d64163"
+loci = ["Sermon XXXVI, pp. 132-135"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:b49ea3c026672524f5ec1e307f0c2fa7ce856c97fd844cddd969448a8046bd83"
+context = "The immutable proper v25 research brief records the named locus inspection; authoring paraphrases the historical argument and claims no new original-language or image check. PAT-008 records visual inspection of Payne Smith English and notes; Greek-catena supplementation of the missing Syriac folio and further Greek fragments are preserved in both editions."
+
+[[bindings]]
+source_id = "artifact.john-chrysostom.commentary-on-galatians.english-alexander-npnf1-13-newadvent.chapter-5-html-2da003ae"
+loci = ["chapter 5, lemmata 5:25-26"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:469ea59ad627f93c0272e3b8fc59a74da9da4ceb7d1738fc9e7d3042ab992c1a"
+context = "The immutable proper v25 research brief records the named locus inspection; authoring paraphrases the historical argument and claims no new original-language or image check. Gross Alexander historical English; the two chapters together cover the full appointed extent. Metadata review 2026-09-06: Compared the Gross Alexander/NPNF I.13 identity, exact chapter-response digest and Galatians verse lemmata against the recorded reception finding. The Latin-title and English-title owners identify the same work; the distinct response ID, digest and inspected chapter/verse bounds remain unchanged. This reviews identity and the prior evidence record, not a new source retrieval, textual verification or image collation. Migration details: src/sources/inventories/propers-54-56-identity-reconciliation-2026-09-06.md."
+
+[[bindings]]
+source_id = "artifact.john-chrysostom.commentary-on-galatians.english-alexander-npnf1-13-newadvent.chapter-6-html-0c6d91cf"
+loci = ["chapter 6, lemmata 6:1-10"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:b2e9bd65aa94276a0cfe0eed983e7268248f5d5158ed18d87db6beb20a9977f7"
+context = "The immutable proper v25 research brief records the named locus inspection; authoring paraphrases the historical argument and claims no new original-language or image check. Gross Alexander historical English; the two chapters together cover the full appointed extent. Metadata review 2026-09-06: Compared the Gross Alexander/NPNF I.13 identity, exact chapter-response digest and Galatians verse lemmata against the recorded reception finding. The Latin-title and English-title owners identify the same work; the distinct response ID, digest and inspected chapter/verse bounds remain unchanged. This reviews identity and the prior evidence record, not a new source retrieval, textual verification or image collation. Migration details: src/sources/inventories/propers-54-56-identity-reconciliation-2026-09-06.md."
+
+[[bindings]]
+source_id = "artifact.john-chrysostom.homilies-on-john.english-marriott-npnf1-14-newadvent.homily-46-html-e7e5b6b1"
+loci = ["46"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:2fb6ab8d799452e5b19d3555d5a27b4704c9bc2f66919c41f1ce2ad20eb2bcdd"
+context = "The immutable proper v25 research brief records the named locus inspection; authoring paraphrases the historical argument and claims no new original-language or image check. Marriott historical English; earlier doctrine/faith alternatives and later sacramental participation belong to different lemmata. Exact inspected extent: Homily 46.1-4."
+
+[[bindings]]
+source_id = "artifact.theodoret-of-cyrus.interpretatio-epistolae-ad-galatas.1864-migne-pg82-paris.wikimedia-pdf-7d6dd76e"
+loci = ["Galatians 6:1-10, PG 82, columns 499A-502B"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:110f83a88c7825fedf0269e12231766072980f6c038669589aa6f7015afbaa4e"
+context = "The immutable proper v25 research brief records the named locus inspection; authoring paraphrases the historical argument and claims no new original-language or image check. PAT-022 directly checked the Greek and facing Latin target pages; no Theodoret coverage of 5:25-26 is asserted. Exact inspected extent: Galatians 6:1-10, PG 82:499A-502B."
+
+[[bindings]]
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.osullivan-duffy-1866.commons-ia-facsimile-78b290d4"
+loci = ["Psalm 39 pp. 118-119", "Psalm 46 pp. 143-145, especially p. 144 edition verse 2", "Psalm 85 pp. 259-260", "Psalm 91 pp. 289-290", "Psalm 94 pp. 298-299", "translator preface p. v"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:6221c39e003611f5ca8e53a39ee29224a806934ad8bbe85d5bf3d122911a1ac6"
+context = "The immutable proper v25 research brief records the named locus inspection; authoring paraphrases the historical argument and claims no new original-language or image check. Iteration-1 PAT-027 supplies the separate Psalm XLVI verse-2 exposition at p. 144, with pp. 143 and 145 context, on Christ's greatness and providential government. The page-image-checked O'Sullivan witness omits philology and replaces Bellarmine psalm prefaces with Douay headings; later p. 120 is not claimed."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.super-psalmos.latin-corpusthomisticum-web-2026-07-28.cps41-html-7879ef13"
+loci = ["46.n1", "46.n2", "46.n3", "46.n4"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:66f744004772a893ddc99e1fee0448e40bd7be7facf17846018a6edfdd0269e5"
+context = "The immutable proper v25 iteration-1 brief PAT-028 records the 2026-09-05 Latin electronic-text inspection of the complete Psalm 46 exposition. The guide paraphrases n. 2 on universal dominion, eternity, authority and providence; no source markup, original-manuscript or 1863 image collation, or independent verification of the embedded Glossa attribution is claimed."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.super-evangelium-ioannis-lectura.latin-corpusthomisticum-web-2026-07-25.corpusthomisticum-cih06-f285f01e"
+loci = ["6.6"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:d22ab63fe0b261c929b516db8af7756f598ea246edbdc133533311a4bfc3b717"
+context = "The immutable proper v25 research brief records the named locus inspection; authoring paraphrases the historical argument and claims no new original-language or image check. Direct Latin lecture supports the Eucharistic gift and unity; protected electronic presentation is paraphrased, never reproduced or passed off as an English translation. Exact inspected extent: chapter 6, lecture 6, electronic text unit 87463."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.english-dominican-newadvent-tertia-79.tertia-79-html-9ce608b2"
+loci = ["III.79.1.corpus", "III.79.1.reply-2", "III.79.1.reply-3", "III.79.2.corpus", "III.79.3.corpus", "III.79.4.corpus", "III.79.5.corpus", "III.79.6.corpus", "III.79.7.corpus", "III.79.8.corpus"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:888d43f19cf57cc0f8f09516045dc5135c22fd5532cbf0f85e6d58c4acaa5996"
+context = "The immutable proper v25 research brief records the named locus inspection; authoring paraphrases the historical argument and claims no new original-language or image check. Current 66922-byte response, not the older artifact. Historical Dominican English supplies doctrinal illumination, not Sunday selection history. Exact inspected extent: III.79.1-3,6; all eight articles inspected by theological-synthesis."
+
+[[bindings]]
+source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-pdf-95ba98e2"
+loci = ["vol-xi-p-348", "vol-xi-p-350", "vol-xi-p-351", "vol-xi-p-354", "vol-xi-p-355"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:41e33739805822d7fa17bd959aee1a9bc45e53b9142ac700e0871842608e5a50"
+context = "The immutable proper v25 research brief records the named locus inspection; authoring paraphrases the historical argument and claims no new original-language or image check. LIT-001 to LIT-003 and PRE-005 identify one exact PDF. Its image-checked title page is the second edition 1909 continuation under Guéranger's name, translated Shepherd, Stanbrook/London/Benziger; the inherited 1900/Duffy machine identity is not the cited imprint and does not establish personal authorship. Exact inspected extent: Fifteenth Sunday, pp. 348,350-351,354-355; title page and preface p. iii. Metadata review 2026-09-06: Reviewed the already applied source metadata correction against this binding’s explicit 1909 second-edition continuation attribution, named title page/preface and printed pp. 348, 350–351, 354–355. The retained 11026232-byte PDF remains SHA-256 95ba98e2d71e4374c4e5262935c71d5d2479b64b34dd3da290b60209ebd92690; improved offline retention and the corrected imprint agree with the binding’s existing qualification and do not alter its inspected loci or establish personal authorship. This reviews identity and the prior evidence record, not a new source retrieval, textual verification or image collation. Migration details: src/sources/inventories/propers-54-56-identity-reconciliation-2026-09-06.md."
+
+[[bindings]]
+source_id = "artifact.anonymous.gelasian-sacramentary.wilson-clarendon-1894.internet-archive-google-books-pdf"
+loci = ["book-3.11", "wilson-page-230"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:0e245cf5ba8ba24a818cfccc7dc8ef91577ce1ef2d6af189794140efa2f20753"
+context = "The immutable proper v25 research brief records the named locus inspection; authoring paraphrases the historical argument and claims no new original-language or image check. LIT-004 page images establish prayer grouping, extra collect and textual differences, not a composition date or the full later formulary. Exact inspected extent: Book III.xi, Item alia missa, p. 230."
+
+[[bindings]]
+source_id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7"
+loci = ["supplement XXXII-XXXIIII pp. 173-174", "introduction pp. xvii-xviii, xxi, xliv-xlv"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:b6b2f002fa1d0aecd709fb76d2379c4470e563def3d4c752cad2a2d1b1d6ffb0"
+context = "The immutable proper v25 research brief records the named locus inspection; authoring paraphrases the historical argument and claims no new original-language or image check. LIT-008 and LIT-009 distinguish prayer group, Sunday XVI, R/O manuscripts and O marginal chants. LIT-008 supplies both manuscript anonymity and Wilson's argued attribution of the supplement to Alcuin on Micrologus testimony at introduction p. xxi; the guide attributes that judgment to Wilson without identifying the prayers' composer or claiming a settled modern attribution. Metadata review 2026-09-06: Compared the three acquisition receipts to the retained complete 432-page Wilson 1915 facsimile: SHA-256 96fd93c73f8c9df47b6911981155b8b02cf2f2183ca6e87baad15128682d8681, 28655931 bytes. Reviewed this binding’s printed supplement/introduction loci and prayer-versus-marginal-chant qualifications against its recorded history findings; canonical ownership and the retained filename change no page, locus or evidence state. This reviews identity and the prior evidence record, not a new source retrieval, textual verification or image collation. Migration details: src/sources/inventories/propers-54-56-identity-reconciliation-2026-09-06.md."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.ebible-usfm-0ed518ec"
+loci = ["3Kings.17.17-24", "Gal.5.13-26", "Gal.6.1-10", "Heb.10.5-10", "John.6.49-60", "Luke.7.11-17", "Ps.39.1-18", "Ps.46.1-10", "Ps.85.1-17", "Ps.91.1-16", "Ps.94.1-11"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:93c7a51db9da7cfe38a11ec61eafc33ec082c6b53271bcb986178e986c8b9eb2"
+context = "SCR-005 to SCR-022 inspect the named biblical contexts in the new complete eBible latVUC archive. No Glossa reception sweep or fresh printed-edition collation is claimed. Exact inspected extent: Psalms 39,46,85,91,94; Galatians 5:13-6:10; Luke 7:11-17; John 6:49-60; 3 Kings 17:17-24; Hebrews 10:5-10."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.gutenberg-text-7d10da78"
+loci = ["3Kings.17.17-24", "4Kings.4.8-37", "Exod.4.29-31", "Exod.34.5-9", "Gal.5.13-6.10", "Heb.10.5-10", "John.6.1-72", "Luke.7.1-23", "Luke.1.68-79", "Ps.39.1-18", "Ps.46.1-10", "Ps.85.1-17", "Ps.91.1-16", "Ps.94.1-11"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:192362da4273317daa469770d5b137a16215f015fc72fae410c0ece2bf70e03f"
+context = "SCR-005 to SCR-022 record full literary-unit inspection and named canonical comparisons in the exact registered Gutenberg witness. Acquisition of the whole Bible is not a claim of whole-Bible inspection. Exact inspected extent: Psalms 39,46,85,91,94; Galatians 1-6; Luke 7 and 1:68-79; John 6; Exodus 4:29-31 and 34:5-9; 3 Kings 17:17-24; 4 Kings 4:8-37; Hebrews 3-4 and 10:5-10."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.verse-text-21-psalms-6d114c22"
+loci = ["Ps.39.4"]
+role = "translation-control"
+states = ["cataloged"]
+context = "The cultural lane's exact English comparisons cite this registered American 1899 Challoner edition through the repository chapter projection. The gallery identifies the edition and reproduces its words; this binding records catalog identity without claiming an independent inspection of the TSV artifact in authoring."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.verse-text-49-luke-734de028"
+loci = ["Luke.7.12", "Luke.7.14-15"]
+role = "translation-control"
+states = ["cataloged"]
+context = "The cultural lane's exact English comparisons cite this registered American 1899 Challoner edition through the repository chapter projection. The gallery identifies the edition and reproduces its words; this binding records catalog identity without claiming an independent inspection of the TSV artifact in authoring."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.verse-text-55-galatians-46d06cd6"
+loci = ["Gal.6.2", "Gal.6.7-8"]
+role = "translation-control"
+states = ["cataloged"]
+context = "The cultural lane's exact English comparisons cite this registered American 1899 Challoner edition through the repository chapter projection. The gallery identifies the edition and reproduces its words; this binding records catalog identity without claiming an independent inspection of the TSV artifact in authoring."
+
+[[bindings]]
+source_id = "artifact.oscar-wilde.the-importance-of-being-earnest.gutenberg-844.pg844-text-1b8a5809"
+loci = ["Act II, Miss Prism sow/reap speeches; physical lines 1471-1478 and 1856-1868"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f44c82cba1a5c0ab1c3670848c743f2b7a34e5316895446384c3a43ade3f1246"
+context = "CUL-001 checks both exchanges and context in the complete three-act Gutenberg witness. The gallery quotes the original English play and explains its comic refusal of charity; no unverified print page is assigned."
+
+[[bindings]]
+source_id = "segment.william-lloyd-garrison.guilt-of-the-north-the-national-compact.rust-freedoms-gift.pp34-40"
+loci = ["Guilt of the North—The National Compact, pp. 34-40, especially p. 38"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:9a9f91a01adae15cfb07d1cc430db14b1fc00e0c2a47a91c5db149d3792f0b12"
+context = "CUL-003 visually collates Garrison's deliberately altered English quotation on printed p. 38 and checks author and context. The segment truthfully locates the article in Rust's container volume."
+
+[[bindings]]
+source_id = "artifact.charles-dickens.the-seven-poor-travellers.gutenberg-1392.pg1392-text-5555647b"
+loci = ["chapter II, Frome visit physical lines 636-683; recovery lines 725-759"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:bd765b94e45e7bbc2bd9fc830a4ae4abb80efb7f8f084f39babc4d7bebfc2260"
+context = "CUL-007 checks the complete edition-identified Gutenberg text at the named before/after loci. Original English quotation and the replacement mother-son relation remain distinct from literal resuscitation and from Challoner wording."
+
+[[bindings]]
+source_id = "artifact.u2.40.official-web.html-f65a9c06"
+loci = ["first verse and recurring refrain"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1669793824fb8f996f4670b3562ec2b55ca845aa0e7bf91780841cd79bbb4d8e"
+context = "CUL-005 checks the full lyric page. The gallery quotes only eight protected lyric words in total as brief identification of the cultural turn; the exact modern HTML and complete lyric are not reproduced."
+
+[[bindings]]
+source_id = "artifact.u2.this-is-40.official-web.html-1c4ff94e"
+loci = ["5 March 2024 report of 2 March final show; opening and paragraph As the band left the stage one by one"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:4365fa003feedfea96f977c5000dc8c6c281238f77ed4fb19a2b0c3b3c714de6"
+context = "CUL-005 inspects the complete official report, including the Psalm identification and continued audience song; the guide paraphrases the performance account, with no audio/video claim."
+
+[[bindings]]
+source_id = "artifact.u2.war-official-album-page.official-web.html-b9557997"
+loci = ["War heading and ordered tracklist, track 10"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:03cfa553832ccc9c278540d49cb707640a01310a2df47db75402ab05d61a15f7"
+context = "CUL-005 inspects the complete official album page. The guide uses the uncontested release year 1983 rather than choosing between the page's conflicting month/day statements."
+
+[[bindings]]
+source_id = "artifact.philip-zengel.einer-trage-des-anderen-last.defa-web.html-678fb387"
+loci = ["Kurzinhalt", "Produktionsnotizen", "Gleichgewichtigkeit der Filmfiguren and following church-state parable discussion"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:3bf9001102712e8a961a22c458642f30f94b861fa0d951f1fac42b2e954885cf"
+context = "CUL-006 checks the complete custodial article. The film title and paraphrased coexistence argument are supported by this institutional account, not an unperformed film viewing."
+
+[[bindings]]
+source_id = "artifact.umass-defa-film-library.bear-ye-one-anothers-burden-film-3523.catalog-web.html-95b14c48"
+loci = ["catalog 3523, title, Synopsis and Commentary"]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c159874a6501f157c9aa994d1da525838653861ab01845a587db9e515616bc88"
+context = "CUL-006 checks title, production and contextual facts in the custodial record. The English catalog title has singular Burden, distinct from the appointed Challoner words; no timecode or dialogue quotation is claimed."
+
+[[bindings]]
+source_id = "artifact.deutsche-bibelgesellschaft.lutherbibel-2017.bibleserver-galater-6.galater-6-html-94cf06ae"
+loci = ["Galatians 6:2 and terminal translation credit"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:51a2600eeafcc78058bf5f3d6148dc37e59a28e75e6a184789493252a9e533ad"
+context = "CUL-006 checks the later German comparison and records andern versus the film title's anderen. The guide cites only that brief wording distinction; it identifies no filmmaker source edition and reproduces no substitute Bible text."

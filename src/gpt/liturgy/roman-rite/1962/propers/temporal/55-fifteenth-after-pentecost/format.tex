@@ -1,12 +1,19 @@
 \DeclareUnicodeCharacter{01FD}{\'{\ae}}
 \DeclareUnicodeCharacter{2123}{V\kern-0.62em\raisebox{0.12ex}{\scriptsize/}\kern0.28em}
 \DeclareUnicodeCharacter{2720}{\ensuremath{\boldsymbol{+}}}
-\renewenvironment{properstable}
+% Keep paragraph openings together in both print editions.
+\clubpenalty=10000
+\ifdefined\TriptychPrintEdition
+\newenvironment{synopsistable}
 {\footnotesize\begin{longtable}{>{\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.18\linewidth}>{\raggedright\arraybackslash}p{0.34\linewidth}}
 \textbf{Proper} & \textbf{1962 Missal text / reference} & \textbf{Scriptural axis} & \textbf{Connection}\\
 \midrule
 \endhead}
 {\bottomrule\end{longtable}}
+\else
+\newenvironment{synopsistable}{}{}
+\renewcommand{\properrow}[4]{\section*{Proper: #1}\textbf{1962 Missal text / reference:} #2\par\textbf{Scriptural axis:} #3\par\textbf{Connection:} #4\par}
+\fi
 \ifdefined\TriptychPrintEdition
 \newcommand{\fulltextheading}[1]{\Needspace{6\baselineskip}\subsection*{#1}}
 \newcommand{\fulltextcueelement}[4]{\begin{massbox}{#1}\itshape #2 \textnormal{#3} #4\end{massbox}}
@@ -17,7 +24,7 @@
 \newcommand{\fulltextelement}[1]{\begin{massbox}{#1}\itshape}
 \newcommand{\finishfulltextelement}{\end{massbox}}
 \newenvironment{fulltextenglish}[1]{\begin{sourcecard}{#1}\small}{\end{sourcecard}}
-\newcommand{\fulltextgap}[1]{\par\smallskip\textbf{Witness boundary.} #1\par}
+\newcommand{\fulltextgap}[1]{\par\smallskip #1\par}
 \ifdefined\TriptychPrintEdition
 \newenvironment{dossiertable}
 {\footnotesize\renewcommand{\arraystretch}{1.02}\setlength{\LTpre}{0.15em}\setlength{\LTpost}{0pt}%
@@ -50,3 +57,7 @@
     {}
     {\PackageError{triptych}{Unable to enlarge the terminal rights notice}{}}
 \fi
+
+% The field names remain visible and machine-readable in each proposal.
+\newenvironment{proposal}[1]{\subsection*{#1}}{\par}
+\newcommand{\pfield}[2]{\par\textbf{#1.} #2\par}

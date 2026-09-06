@@ -1,0 +1,15 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.smithsonian-american-art-museum.to-reap-man-must-sow-object-10777.museum-web.object-html-7c42e8ba"
+edition_id = "edition.smithsonian-american-art-museum.to-reap-man-must-sow-object-10777.museum-web"
+artifact_type = "electronic-text"
+media_type = "text/html"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "The acquired contemporary institutional webpage has no established redistribution license for its prose and presentation; public access permits the research check but supplies no affirmative basis to redistribute the exact HTML."
+source_url = "https://americanart.si.edu/artwork/reap-man-must-sow-10777"
+provenance = "Exact response retrieved by the cultural-afterlife lane, research iteration 1, finding CUL-002, run 9bf9d40d825f419f on 2026-09-05. Registration verified the receipt path with sha256sum and checked its byte size. Catalog alias queries through tools/source-reader list --find: 'As a Man Soweth', 'Hord', 'To Reap Man Must Sow'; the existing work and edition were found. The existing work's artifact transformation and provenance records show no superseding corrected derivation. The new response has the same non-script/style text-node sequence as the earlier response, compared after whitespace collapse with Python html.parser; this supports keeping the dated edition identity while distinguishing exact byte states. Earlier artifact retained: artifact.smithsonian-american-art-museum.to-reap-man-must-sow-object-10777.museum-web.object-html-dfd3e2d6. No retrieval or source-byte transformation was performed by registration."
+retrieved = "2026-09-05"
+sha256 = "7c42e8ba184d921724a8756049bf71b702edf2cd00efc8b2ff0454d13abad55d"
+byte_size = 180964
+notes = "Complete Smithsonian object-page HTML for accession 1972.167.16, including Artwork Details, Artwork Description and image-rights statement; image download and image bytes are separate and not acquired. Completeness describes the entire received page at the receipt URL, not any separately linked image, recording, film, book, or other external resource. The receipt supplies no express source-issued completeness guarantee. Access limitation: the exact HTML is not retained in the checkout because The acquired contemporary institutional webpage has no established redistribution license for its prose and presentation; public access permits the research check but supplies no affirmative basis to redistribute the exact HTML. Offline readers can inspect the identity, hash, extent and rights finding; the lanes supplied no lawfully redistributable full-text substitute for this exact presentation."

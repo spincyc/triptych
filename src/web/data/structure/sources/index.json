@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 2218,
-  "editions": 763,
+  "artifacts": 2302,
+  "editions": 808,
   "passages": 5127,
   "readable": 3034,
-  "works": 566
+  "works": 600
  },
  "facets": {
   "authors": [
@@ -167,7 +167,7 @@
    },
    {
     "id": "Augustine of Hippo",
-    "works": 8
+    "works": 12
    },
    {
     "id": "Bahya ben Asher ibn Halawa",
@@ -271,7 +271,7 @@
    },
    {
     "id": "Charles Dickens",
-    "works": 1
+    "works": 2
    },
    {
     "id": "Charles Dickens, conductor",
@@ -362,6 +362,10 @@
     "works": 1
    },
    {
+    "id": "DEFA Film Library, University of Massachusetts Amherst",
+    "works": 1
+   },
+   {
     "id": "David Bivin, answering a reader, for JerusalemPerspective.com",
     "works": 1
    },
@@ -378,6 +382,10 @@
     "works": 1
    },
    {
+    "id": "Deutsche Bibelgesellschaft",
+    "works": 1
+   },
+   {
     "id": "Dicastery for Divine Worship and the Discipline of the Sacraments",
     "works": 1
    },
@@ -391,6 +399,10 @@
    },
    {
     "id": "Doug Batchelor",
+    "works": 1
+   },
+   {
+    "id": "Edith Wharton",
     "works": 1
    },
    {
@@ -507,6 +519,10 @@
    },
    {
     "id": "George Leo Haydock, compiler",
+    "works": 1
+   },
+   {
+    "id": "Germain Morin, editor",
     "works": 1
    },
    {
@@ -754,6 +770,10 @@
     "works": 1
    },
    {
+    "id": "Library of Congress",
+    "works": 1
+   },
+   {
     "id": "Lucian of Samosata",
     "works": 1
    },
@@ -891,7 +911,7 @@
    },
    {
     "id": "Oscar Wilde",
-    "works": 1
+    "works": 2
    },
    {
     "id": "Pablo T. Gadenz",
@@ -932,6 +952,10 @@
    {
     "id": "Philip Schaff and Henry Wace",
     "works": 11
+   },
+   {
+    "id": "Philip Zengel",
+    "works": 1
    },
    {
     "id": "Philo of Alexandria",
@@ -1066,6 +1090,10 @@
     "works": 1
    },
    {
+    "id": "Richard Sutton Rust, compiler",
+    "works": 1
+   },
+   {
     "id": "Richard of Saint Victor",
     "works": 1
    },
@@ -1075,6 +1103,14 @@
    },
    {
     "id": "Robert Burns",
+    "works": 1
+   },
+   {
+    "id": "Robert Fuller Murray",
+    "works": 1
+   },
+   {
+    "id": "Robert Tressell",
     "works": 1
    },
    {
@@ -1147,6 +1183,10 @@
    },
    {
     "id": "Sir Lancelot Charles Lee Brenton",
+    "works": 1
+   },
+   {
+    "id": "Smithsonian American Art Museum",
     "works": 1
    },
    {
@@ -1230,6 +1270,10 @@
     "works": 1
    },
    {
+    "id": "U2 / U2.com",
+    "works": 3
+   },
+   {
     "id": "United Grand Lodge of England",
     "works": 1
    },
@@ -1274,6 +1318,14 @@
     "works": 1
    },
    {
+    "id": "Wikimedia Commons Contributors",
+    "works": 1
+   },
+   {
+    "id": "Wikisource Contributors",
+    "works": 1
+   },
+   {
     "id": "William Bernard Ullathorne, Bishop of Birmingham",
     "works": 1
    },
@@ -1283,6 +1335,10 @@
    },
    {
     "id": "William J. Hirten Company, Inc.",
+    "works": 1
+   },
+   {
+    "id": "William Lloyd Garrison",
     "works": 1
    },
    {
@@ -1356,6 +1412,10 @@
     "works": 7
    },
    {
+    "id": "novel",
+    "works": 7
+   },
+   {
     "id": "papal-letter",
     "works": 7
    },
@@ -1392,10 +1452,6 @@
     "works": 5
    },
    {
-    "id": "novel",
-    "works": 5
-   },
-   {
     "id": "papal-homily",
     "works": 5
    },
@@ -1425,10 +1481,6 @@
    },
    {
     "id": "patristic-apology",
-    "works": 4
-   },
-   {
-    "id": "spiritual-treatise",
     "works": 4
    },
    {
@@ -1500,10 +1552,6 @@
     "works": 3
    },
    {
-    "id": "novel",
-    "works": 3
-   },
-   {
     "id": "papal-catechesis",
     "works": 3
    },
@@ -1516,12 +1564,24 @@
     "works": 3
    },
    {
+    "id": "philosophical-treatise",
+    "works": 3
+   },
+   {
+    "id": "poetry-collection",
+    "works": 3
+   },
+   {
     "id": "theological-treatise",
     "works": 3
    },
    {
     "id": "web-article",
     "works": 3
+   },
+   {
+    "id": "bible-translation",
+    "works": 2
    },
    {
     "id": "canonical-collection",
@@ -1616,7 +1676,11 @@
     "works": 2
    },
    {
-    "id": "poetry-collection",
+    "id": "play",
+    "works": 2
+   },
+   {
+    "id": "poem",
     "works": 2
    },
    {
@@ -1632,11 +1696,19 @@
     "works": 2
    },
    {
+    "id": "scan-catalog-record",
+    "works": 2
+   },
+   {
     "id": "scholastic-commentary",
     "works": 2
    },
    {
     "id": "screenplay",
+    "works": 2
+   },
+   {
+    "id": "sermon",
     "works": 2
    },
    {
@@ -1664,6 +1736,10 @@
     "works": 1
    },
    {
+    "id": "album-documentation",
+    "works": 1
+   },
+   {
     "id": "ancient-biography",
     "works": 1
    },
@@ -1672,15 +1748,15 @@
     "works": 1
    },
    {
+    "id": "anthology",
+    "works": 1
+   },
+   {
     "id": "ascetical-biography",
     "works": 1
    },
    {
     "id": "autobiography",
-    "works": 1
-   },
-   {
-    "id": "bible-translation",
     "works": 1
    },
    {
@@ -1741,6 +1817,10 @@
    },
    {
     "id": "comparative-liturgical-edition",
+    "works": 1
+   },
+   {
+    "id": "concert-report",
     "works": 1
    },
    {
@@ -1896,6 +1976,10 @@
     "works": 1
    },
    {
+    "id": "edited-sermon-collection",
+    "works": 1
+   },
+   {
     "id": "edited-source-collection",
     "works": 1
    },
@@ -1917,6 +2001,14 @@
    },
    {
     "id": "eyewitness-memoir",
+    "works": 1
+   },
+   {
+    "id": "film-catalog-record",
+    "works": 1
+   },
+   {
+    "id": "film-essay",
     "works": 1
    },
    {
@@ -2009,6 +2101,10 @@
    },
    {
     "id": "lexicon",
+    "works": 1
+   },
+   {
+    "id": "library-catalog-record",
     "works": 1
    },
    {
@@ -2117,6 +2213,10 @@
    },
    {
     "id": "motu-proprio",
+    "works": 1
+   },
+   {
+    "id": "museum-object-record",
     "works": 1
    },
    {
@@ -2276,11 +2376,15 @@
     "works": 1
    },
    {
-    "id": "play",
+    "id": "political-essay",
     "works": 1
    },
    {
-    "id": "poem",
+    "id": "political-monograph",
+    "works": 1
+   },
+   {
+    "id": "political-speech",
     "works": 1
    },
    {
@@ -2444,6 +2548,14 @@
     "works": 1
    },
    {
+    "id": "song-lyrics",
+    "works": 1
+   },
+   {
+    "id": "story",
+    "works": 1
+   },
+   {
     "id": "synodal-document",
     "works": 1
    },
@@ -2462,11 +2574,11 @@
   ],
   "languages": [
    {
-    "editions": 385,
+    "editions": 420,
     "id": "en"
    },
    {
-    "editions": 240,
+    "editions": 245,
     "id": "la"
    },
    {
@@ -2490,7 +2602,7 @@
     "id": "he"
    },
    {
-    "editions": 6,
+    "editions": 8,
     "id": "de"
    },
    {
@@ -2588,40 +2700,40 @@
     "label": "18th century"
    },
    {
-    "editions": 132,
+    "editions": 137,
     "id": "1800",
     "label": "19th century"
    },
    {
-    "editions": 175,
+    "editions": 181,
     "id": "1900",
     "label": "20th century"
    },
    {
-    "editions": 416,
+    "editions": 450,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 1283,
-    "editions": 211,
+    "artifacts": 1302,
+    "editions": 225,
     "id": "public-domain"
    },
    {
-    "artifacts": 679,
-    "editions": 338,
+    "artifacts": 706,
+    "editions": 351,
     "id": "restricted"
    },
    {
-    "artifacts": 123,
-    "editions": 64,
+    "artifacts": 153,
+    "editions": 83,
     "id": "unresolved"
    },
    {
-    "artifacts": 68,
-    "editions": 25,
+    "artifacts": 76,
+    "editions": 33,
     "id": "licensed"
    },
    {
@@ -3020,6 +3132,19 @@
       "public-domain"
      ],
      "title": "Expositio evangelii secundum Lucam, Migne's Latin as transcribed by Corpus Corporum",
+     "year": 2026
+    },
+    {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-latin-migne-wikisource-book-5.json",
+     "id": "edition.ambrose.expositio-evangelii-secundum-lucam.latin-migne-wikisource-book-5",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed"
+     ],
+     "title": "Expositio Evangelii secundum Lucam, book V, raw Wikisource transcription",
      "year": 2026
     },
     {
@@ -4828,7 +4953,8 @@
      "passages": 0,
      "readable": 0,
      "rights": [
-      "restricted"
+      "restricted",
+      "unresolved"
      ],
      "title": "Expositions on the Psalms — J. E. Tweed, New Advent web state",
      "year": 2026
@@ -4911,6 +5037,50 @@
   },
   {
    "alternate_titles": [
+    "Expositio Epistolae ad Galatas",
+    "Exposition of Galatians",
+    "Augustinus Hipponensis"
+   ],
+   "author": "Augustine of Hippo",
+   "category": "patristic-biblical-commentary",
+   "directory": "editions/augustine/epistolae-ad-galatas-expositio/",
+   "editions": [
+    {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-augustinus-it-latin.json",
+     "id": "edition.augustine.epistolae-ad-galatas-expositio.2026-09-05-augustinus-it-latin",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "unresolved"
+     ],
+     "title": "Epistolae ad Galatas expositionis liber unus — Augustinus.it Latin",
+     "year": 2026
+    },
+    {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-wikisource-migne.json",
+     "id": "edition.augustine.epistolae-ad-galatas-expositio.2026-09-05-wikisource-migne",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain",
+      "unresolved"
+     ],
+     "title": "Expositio Epistolae ad Galatas (ed. Migne) — Wikisource",
+     "year": 2026
+    }
+   ],
+   "id": "work.augustine.epistolae-ad-galatas-expositio",
+   "languages": [
+    "la"
+   ],
+   "title": "Epistolae ad Galatas expositionis liber unus"
+  },
+  {
+   "alternate_titles": [
     "Tractates on the Gospel of John",
     "Homilies on the Gospel of John"
    ],
@@ -4918,6 +5088,19 @@
    "category": "patristic-homily-collection",
    "directory": "editions/augustine/in-iohannis-evangelium-tractatus/",
    "editions": [
+    {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-english-gibb-npnf1-7-newadvent.json",
+     "id": "edition.augustine.in-iohannis-evangelium-tractatus.english-gibb-npnf1-7-newadvent",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "unresolved"
+     ],
+     "title": "Tractate 26 on John, New Advent delivery",
+     "year": 2026
+    },
     {
      "date": "2026-07-29",
      "file": "2026-english-npnf1-7-new-advent-web-2026-07-29.json",
@@ -4980,6 +5163,63 @@
     "la"
    ],
    "title": "Sermo CXV"
+  },
+  {
+   "alternate_titles": [
+    "Sermo 163B",
+    "Sermon Frangipane 5"
+   ],
+   "author": "Augustine of Hippo",
+   "category": "sermon",
+   "directory": "editions/augustine/sermo-frangipane-5/",
+   "editions": [
+    {
+     "date": "1930",
+     "file": "1930-1930-morin-miscellanea-agostiniana.json",
+     "id": "edition.augustine.sermo-frangipane-5.morin-miscellanea-agostiniana",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [],
+     "title": "Sermo Frangipane V in Morin, Miscellanea Agostiniana I",
+     "year": 1930
+    }
+   ],
+   "id": "work.augustine.sermo-frangipane-5",
+   "languages": [
+    "la"
+   ],
+   "title": "Sermo Frangipane V"
+  },
+  {
+   "alternate_titles": [
+    "Sermon 98",
+    "Sermon 48 on the New Testament",
+    "Sermo 98"
+   ],
+   "author": "Augustine of Hippo",
+   "category": "sermon",
+   "directory": "editions/augustine/sermo-98/",
+   "editions": [
+    {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-english-macmullen-npnf1-6-newadvent.json",
+     "id": "edition.augustine.sermo-98.english-macmullen-npnf1-6-newadvent",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "unresolved"
+     ],
+     "title": "Sermon 48 [Benedictine 98], New Advent delivery",
+     "year": 2026
+    }
+   ],
+   "id": "work.augustine.sermo-98",
+   "languages": [
+    "la"
+   ],
+   "title": "Sermo XCVIII"
   },
   {
    "alternate_titles": [
@@ -6511,19 +6751,6 @@
      ],
      "title": "The Gregorian Sacramentary under Charles the Great, edited from three MSS. of the ninth century by H. A. Wilson",
      "year": 1915
-    },
-    {
-     "date": "2026-09-05",
-     "file": "2026-2026-09-05-wilson-1915-facsimile-web-2026-09-05.json",
-     "id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915-facsimile-web-2026-09-05",
-     "language": "la",
-     "passages": 0,
-     "readable": 0,
-     "rights": [
-      "public-domain"
-     ],
-     "title": "The Gregorian Sacramentary under Charles the Great: 1915 facsimile delivery",
-     "year": 2026
     }
    ],
    "id": "work.catholic-church.sacramentarium-gregorianum-hadrianum",
@@ -6975,6 +7202,34 @@
     "en"
    ],
    "title": "The Letters of Charles Dickens"
+  },
+  {
+   "alternate_titles": [
+    "The Story of Richard Doubledick"
+   ],
+   "author": "Charles Dickens",
+   "category": "story",
+   "directory": "editions/charles-dickens/the-seven-poor-travellers/",
+   "editions": [
+    {
+     "date": "2020-12-31",
+     "file": "2020-2020-12-31-gutenberg-1392.json",
+     "id": "edition.charles-dickens.the-seven-poor-travellers.gutenberg-1392",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed"
+     ],
+     "title": "The Seven Poor Travellers, Project Gutenberg eBook 1392",
+     "year": 2020
+    }
+   ],
+   "id": "work.charles-dickens.the-seven-poor-travellers",
+   "languages": [
+    "en"
+   ],
+   "title": "The Seven Poor Travellers"
   },
   {
    "alternate_titles": [
@@ -8626,6 +8881,7 @@
      "passages": 1,
      "readable": 0,
      "rights": [
+      "public-domain",
       "restricted"
      ],
      "title": "A Commentary upon the Gospel according to S. Luke, by S. Cyril, Patriarch of Alexandria, translated from a Syriac manuscript",
@@ -8677,6 +8933,35 @@
     "grc"
    ],
    "title": "Catechetical Lectures"
+  },
+  {
+   "alternate_titles": [
+    "Einer trage des anderen Last...",
+    "Bear Ye One Another’s Burden"
+   ],
+   "author": "DEFA Film Library, University of Massachusetts Amherst",
+   "category": "film-catalog-record",
+   "directory": "editions/umass-defa-film-library/bear-ye-one-anothers-burden-film-3523/",
+   "editions": [
+    {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-catalog-web.json",
+     "id": "edition.umass-defa-film-library.bear-ye-one-anothers-burden-film-3523.catalog-web",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Bear Ye One Another’s Burden..., catalog 3523",
+     "year": 2026
+    }
+   ],
+   "id": "work.umass-defa-film-library.bear-ye-one-anothers-burden-film-3523",
+   "languages": [
+    "en"
+   ],
+   "title": "Bear Ye One Another’s Burden...: film catalog 3523"
   },
   {
    "alternate_titles": [],
@@ -8780,6 +9065,35 @@
     "en"
    ],
    "title": "The Rightful Autonomy of the Priestly Fraternity of Saint Peter (can. 586, 732 CIC/83) (Part I)"
+  },
+  {
+   "alternate_titles": [
+    "Die Bibel nach Martin Luthers Übersetzung, revidiert 2017",
+    "Luther Bible 2017"
+   ],
+   "author": "Deutsche Bibelgesellschaft",
+   "category": "bible-translation",
+   "directory": "editions/deutsche-bibelgesellschaft/lutherbibel-2017/",
+   "editions": [
+    {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-bibleserver-galater-6.json",
+     "id": "edition.deutsche-bibelgesellschaft.lutherbibel-2017.bibleserver-galater-6",
+     "language": "de",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Galater 6, Lutherbibel 2017, Bibleserver delivery",
+     "year": 2026
+    }
+   ],
+   "id": "work.deutsche-bibelgesellschaft.lutherbibel-2017",
+   "languages": [
+    "de"
+   ],
+   "title": "Lutherbibel 2017"
   },
   {
    "alternate_titles": [
@@ -9851,6 +10165,19 @@
      ],
      "title": "Introduction à la vie dévote, édition corrigée",
      "year": 1832
+    },
+    {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-ccel-english.json",
+     "id": "edition.francis-de-sales.introduction-a-la-vie-devote.2026-09-05-ccel-english",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "unresolved"
+     ],
+     "title": "Introduction to the Devout Life — CCEL English web state",
+     "year": 2026
     }
    ],
    "id": "work.francis-de-sales.introduction-a-la-vie-devote",
@@ -10180,6 +10507,35 @@
     "en"
    ],
    "title": "The Douay-Rheims Bible with a Comprehensive Catholic Commentary"
+  },
+  {
+   "alternate_titles": [
+    "Miscellanea Agostiniana I",
+    "Sermones post Maurinos reperti"
+   ],
+   "author": "Germain Morin, editor",
+   "category": "edited-sermon-collection",
+   "directory": "editions/germain-morin/sancti-augustini-sermones-post-maurinos-reperti/",
+   "editions": [
+    {
+     "date": "1930",
+     "file": "1930-1930-vatican-miscellanea-agostiniana-volume-1.json",
+     "id": "edition.germain-morin.sancti-augustini-sermones-post-maurinos-reperti.vatican-miscellanea-agostiniana-volume-1",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Miscellanea Agostiniana I: Sancti Augustini Sermones post Maurinos reperti",
+     "year": 1930
+    }
+   ],
+   "id": "work.germain-morin.sancti-augustini-sermones-post-maurinos-reperti",
+   "languages": [
+    "la"
+   ],
+   "title": "Sancti Augustini Sermones post Maurinos reperti"
   },
   {
    "alternate_titles": [
@@ -11443,19 +11799,6 @@
      ],
      "title": "The Sacramentary (Liber Sacramentorum): Historical and Liturgical Notes on the Roman Missal",
      "year": 1927
-    },
-    {
-     "date": "2026-09-05",
-     "file": "2026-2026-09-05-english-volume-3-ia-ocr-web-2026-09-05.json",
-     "id": "edition.ildefonso-schuster.the-sacramentary.english-volume-3-ia-ocr-web-2026-09-05",
-     "language": "en",
-     "passages": 0,
-     "readable": 0,
-     "rights": [
-      "public-domain"
-     ],
-     "title": "The Sacramentary, volume III: 1927 English text in Internet Archive OCR",
-     "year": 2026
     }
    ],
    "id": "work.ildefonso-schuster.the-sacramentary",
@@ -12209,6 +12552,19 @@
    "directory": "editions/john-chrysostom/homilies-on-john/",
    "editions": [
     {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-english-marriott-npnf1-14-newadvent.json",
+     "id": "edition.john-chrysostom.homilies-on-john.english-marriott-npnf1-14-newadvent",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "unresolved"
+     ],
+     "title": "Homily 46 on John, New Advent delivery",
+     "year": 2026
+    },
+    {
      "date": "2026-07-29",
      "file": "2026-english-npnf1-14-new-advent-web-2026-07-29.json",
      "id": "edition.john-chrysostom.homilies-on-john.english-npnf1-14-new-advent-web-2026-07-29",
@@ -12426,7 +12782,8 @@
    "alternate_titles": [
     "Homilies on Galatians",
     "Commentary on Galatians",
-    "Joannes Chrysostomus"
+    "In epistolam ad Galatas",
+    "Ad Galatas"
    ],
    "author": "John Chrysostom",
    "category": "patristic-biblical-commentary",
@@ -12440,7 +12797,8 @@
      "passages": 0,
      "readable": 0,
      "rights": [
-      "restricted"
+      "restricted",
+      "unresolved"
      ],
      "title": "Commentary on Galatians — Gross Alexander, New Advent web state",
      "year": 2026
@@ -13148,6 +13506,34 @@
     "it"
    ],
    "title": "Homily for the Jubilee of Marian Spirituality, 12 October 2025"
+  },
+  {
+   "alternate_titles": [
+    "Freedom’s Gift catalog record"
+   ],
+   "author": "Library of Congress",
+   "category": "library-catalog-record",
+   "directory": "editions/library-of-congress/freedoms-gift-item-30020058/",
+   "editions": [
+    {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-catalog-json.json",
+     "id": "edition.library-of-congress.freedoms-gift-item-30020058.catalog-json",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Library of Congress item 30020058, JSON state",
+     "year": 2026
+    }
+   ],
+   "id": "work.library-of-congress.freedoms-gift-item-30020058",
+   "languages": [
+    "en"
+   ],
+   "title": "Freedom’s gift: or, Sentiments of the free — catalog item 30020058"
   },
   {
    "alternate_titles": [
@@ -14201,6 +14587,34 @@
   },
   {
    "alternate_titles": [
+    "A Trivial Comedy for Serious People"
+   ],
+   "author": "Oscar Wilde",
+   "category": "play",
+   "directory": "editions/oscar-wilde/the-importance-of-being-earnest/",
+   "editions": [
+    {
+     "date": "2025-11-10",
+     "file": "2025-2025-11-10-gutenberg-844.json",
+     "id": "edition.oscar-wilde.the-importance-of-being-earnest.gutenberg-844",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed"
+     ],
+     "title": "The Importance of Being Earnest, Project Gutenberg eBook 844",
+     "year": 2025
+    }
+   ],
+   "id": "work.oscar-wilde.the-importance-of-being-earnest",
+   "languages": [
+    "en"
+   ],
+   "title": "The Importance of Being Earnest"
+  },
+  {
+   "alternate_titles": [
     "Oscar Wilde, The Picture of Dorian Gray"
    ],
    "author": "Oscar Wilde",
@@ -15007,6 +15421,34 @@
     "en"
    ],
    "title": "A Select Library of Nicene and Post-Nicene Fathers, Second Series, Volume XIV"
+  },
+  {
+   "alternate_titles": [
+    "DEFA Film des Monats Oktober 2021"
+   ],
+   "author": "Philip Zengel",
+   "category": "film-essay",
+   "directory": "editions/philip-zengel/einer-trage-des-anderen-last/",
+   "editions": [
+    {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-defa-web.json",
+     "id": "edition.philip-zengel.einer-trage-des-anderen-last.defa-web",
+     "language": "de",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Einer trage des anderen Last..., Film des Monats",
+     "year": 2026
+    }
+   ],
+   "id": "work.philip-zengel.einer-trage-des-anderen-last",
+   "languages": [
+    "de"
+   ],
+   "title": "Einer trage des anderen Last..."
   },
   {
    "alternate_titles": [
@@ -17284,6 +17726,35 @@
   },
   {
    "alternate_titles": [
+    "Freedom's Gift",
+    "Sentiments of the Free"
+   ],
+   "author": "Richard Sutton Rust, compiler",
+   "category": "anthology",
+   "directory": "editions/richard-sutton-rust/freedoms-gift/",
+   "editions": [
+    {
+     "date": "1840",
+     "file": "1840-1840-cowles-hartford.json",
+     "id": "edition.richard-sutton-rust.freedoms-gift.cowles-hartford",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Freedom’s Gift: or, Sentiments of the Free",
+     "year": 1840
+    }
+   ],
+   "id": "work.richard-sutton-rust.freedoms-gift",
+   "languages": [
+    "en"
+   ],
+   "title": "Freedom’s Gift: or, Sentiments of the Free"
+  },
+  {
+   "alternate_titles": [
     "Allegoriae in Vetus et Novum Testamentum",
     "Liber excerptionum",
     "Posteriorum excerptionum libri tredecim continentes utriusque Testamenti allegorias"
@@ -17458,6 +17929,104 @@
     "en"
    ],
    "title": "Holy Willie's Prayer"
+  },
+  {
+   "alternate_titles": [
+    "R. F. Murray, The Scarlet Gown"
+   ],
+   "author": "Robert Fuller Murray",
+   "category": "poetry-collection",
+   "directory": "editions/robert-fuller-murray/the-scarlet-gown/",
+   "editions": [
+    {
+     "date": "1891",
+     "file": "1891-1891-holden-simpkin.json",
+     "id": "edition.robert-fuller-murray.the-scarlet-gown.1891-holden-simpkin",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "The Scarlet Gown: Being Verses by a St. Andrews Man",
+     "year": 1891
+    },
+    {
+     "date": "2020-12-12",
+     "file": "2020-2020-12-12-gutenberg-16821.json",
+     "id": "edition.robert-fuller-murray.the-scarlet-gown.2020-12-12-gutenberg-16821",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain",
+      "unresolved"
+     ],
+     "title": "The Scarlet Gown: Being Verses by a St. Andrews Man — Project Gutenberg eBook 16821",
+     "year": 2020
+    }
+   ],
+   "id": "work.robert-fuller-murray.the-scarlet-gown",
+   "languages": [
+    "en"
+   ],
+   "title": "The Scarlet Gown: Being Verses by a St. Andrews Man"
+  },
+  {
+   "alternate_titles": [
+    "Robert Tressall",
+    "Robert Noonan",
+    "Ragged Trousered Philanthropists"
+   ],
+   "author": "Robert Tressell",
+   "category": "novel",
+   "directory": "editions/robert-tressell/the-ragged-trousered-philanthropists/",
+   "editions": [
+    {
+     "date": "1914",
+     "file": "1914-1914-grant-richards.json",
+     "id": "edition.robert-tressell.the-ragged-trousered-philanthropists.grant-richards",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "The Ragged Trousered Philanthropists, 1914 abridgment",
+     "year": 1914
+    },
+    {
+     "date": "2023-05-05",
+     "file": "2023-2023-05-05-gutenberg-3608.json",
+     "id": "edition.robert-tressell.the-ragged-trousered-philanthropists.gutenberg-3608",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed"
+     ],
+     "title": "The Ragged Trousered Philanthropists, Project Gutenberg eBook 3608",
+     "year": 2023
+    },
+    {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-wikisource-chapter-17.json",
+     "id": "edition.robert-tressell.the-ragged-trousered-philanthropists.wikisource-chapter-17",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed"
+     ],
+     "title": "The Ragged Trousered Philanthropists, scan-backed chapter XVII transcription",
+     "year": 2026
+    }
+   ],
+   "id": "work.robert-tressell.the-ragged-trousered-philanthropists",
+   "languages": [
+    "en"
+   ],
+   "title": "The Ragged Trousered Philanthropists"
   },
   {
    "alternate_titles": [
@@ -19202,6 +19771,35 @@
   },
   {
    "alternate_titles": [
+    "Donal Hord",
+    "To Reap Man Must Sow"
+   ],
+   "author": "Smithsonian American Art Museum",
+   "category": "museum-object-record",
+   "directory": "editions/smithsonian-american-art-museum/to-reap-man-must-sow-object-10777/",
+   "editions": [
+    {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-museum-web.json",
+     "id": "edition.smithsonian-american-art-museum.to-reap-man-must-sow-object-10777.museum-web",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "unresolved"
+     ],
+     "title": "To Reap Man Must Sow, museum object record",
+     "year": 2026
+    }
+   ],
+   "id": "work.smithsonian-american-art-museum.to-reap-man-must-sow-object-10777",
+   "languages": [
+    "en"
+   ],
+   "title": "To Reap Man Must Sow: object record 1972.167.16"
+  },
+  {
+   "alternate_titles": [
     "SBL Greek New Testament",
     "SBLGNT"
    ],
@@ -20207,6 +20805,19 @@
      "year": 1888
     },
     {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-english-dominican-newadvent-tertia-79.json",
+     "id": "edition.thomas-aquinas.summa-theologiae.english-dominican-newadvent-tertia-79",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "unresolved"
+     ],
+     "title": "Summa theologiae III, question 79, New Advent delivery",
+     "year": 2026
+    },
+    {
      "date": "2026-07-25",
      "file": "2026-english-newadvent-web-2026-07-25.json",
      "id": "edition.thomas-aquinas.summa-theologiae.english-newadvent-web-2026-07-25",
@@ -20553,19 +21164,6 @@
    "directory": "editions/thomas-aquinas/super-psalmos/",
    "editions": [
     {
-     "date": "2026-09-05",
-     "file": "2026-2026-09-05-latin-corpusthomisticum.json",
-     "id": "edition.thomas-aquinas.super-psalmos.2026-09-05-latin-corpusthomisticum",
-     "language": "la",
-     "passages": 0,
-     "readable": 0,
-     "rights": [
-      "restricted"
-     ],
-     "title": "In psalmos Davidis expositio, Psalms 31–40 — Corpus Thomisticum",
-     "year": 2026
-    },
-    {
      "date": "2026-07-28",
      "file": "2026-latin-corpusthomisticum-web-2026-07-28.json",
      "id": "edition.thomas-aquinas.super-psalmos.latin-corpusthomisticum-web-2026-07-28",
@@ -20675,6 +21273,90 @@
     "la"
    ],
    "title": "Roman 1962 Latin Proper Editorial Projection"
+  },
+  {
+   "alternate_titles": [
+    "40"
+   ],
+   "author": "U2 / U2.com",
+   "category": "song-lyrics",
+   "directory": "editions/u2/40/",
+   "editions": [
+    {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-official-web.json",
+     "id": "edition.u2.40.official-web",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "40",
+     "year": 2026
+    }
+   ],
+   "id": "work.u2.40",
+   "languages": [
+    "en"
+   ],
+   "title": "40"
+  },
+  {
+   "alternate_titles": [
+    "This is 40"
+   ],
+   "author": "U2 / U2.com",
+   "category": "concert-report",
+   "directory": "editions/u2/this-is-40/",
+   "editions": [
+    {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-official-web.json",
+     "id": "edition.u2.this-is-40.official-web",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "This is 40",
+     "year": 2026
+    }
+   ],
+   "id": "work.u2.this-is-40",
+   "languages": [
+    "en"
+   ],
+   "title": "This is 40"
+  },
+  {
+   "alternate_titles": [
+    "War: official album page"
+   ],
+   "author": "U2 / U2.com",
+   "category": "album-documentation",
+   "directory": "editions/u2/war-official-album-page/",
+   "editions": [
+    {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-official-web.json",
+     "id": "edition.u2.war-official-album-page.official-web",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "War: official album page",
+     "year": 2026
+    }
+   ],
+   "id": "work.u2.war-official-album-page",
+   "languages": [
+    "en"
+   ],
+   "title": "War: official album page"
   },
   {
    "alternate_titles": [
@@ -21095,6 +21777,62 @@
   },
   {
    "alternate_titles": [
+    "File: Ragged Trousered Philanthropists.djvu"
+   ],
+   "author": "Wikimedia Commons Contributors",
+   "category": "scan-catalog-record",
+   "directory": "editions/wikimedia-commons-contributors/ragged-trousered-philanthropists-file-description/",
+   "editions": [
+    {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-web-record.json",
+     "id": "edition.wikimedia-commons-contributors.ragged-trousered-philanthropists-file-description.web-record",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed"
+     ],
+     "title": "File:Ragged Trousered Philanthropists.djvu",
+     "year": 2026
+    }
+   ],
+   "id": "work.wikimedia-commons-contributors.ragged-trousered-philanthropists-file-description",
+   "languages": [
+    "en"
+   ],
+   "title": "File:Ragged Trousered Philanthropists.djvu"
+  },
+  {
+   "alternate_titles": [
+    "Index: Ragged Trousered Philanthropists.djvu"
+   ],
+   "author": "Wikisource Contributors",
+   "category": "scan-catalog-record",
+   "directory": "editions/wikisource-contributors/ragged-trousered-philanthropists-scan-index/",
+   "editions": [
+    {
+     "date": "2026-09-05",
+     "file": "2026-2026-09-05-web-record.json",
+     "id": "edition.wikisource-contributors.ragged-trousered-philanthropists-scan-index.web-record",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "licensed"
+     ],
+     "title": "Index:Ragged Trousered Philanthropists.djvu",
+     "year": 2026
+    }
+   ],
+   "id": "work.wikisource-contributors.ragged-trousered-philanthropists-scan-index",
+   "languages": [
+    "en"
+   ],
+   "title": "Index:Ragged Trousered Philanthropists.djvu"
+  },
+  {
+   "alternate_titles": [
     "The Holy Mountain of La Salette"
    ],
    "author": "William Bernard Ullathorne, Bishop of Birmingham",
@@ -21168,6 +21906,33 @@
     "en"
    ],
    "title": "Hirten Church Goods"
+  },
+  {
+   "alternate_titles": [
+    "Guilt of the North",
+    "The National Compact"
+   ],
+   "author": "William Lloyd Garrison",
+   "category": "political-essay",
+   "directory": "editions/william-lloyd-garrison/guilt-of-the-north-the-national-compact/",
+   "editions": [
+    {
+     "date": "1840",
+     "file": "1840-1840-rust-freedoms-gift.json",
+     "id": "edition.william-lloyd-garrison.guilt-of-the-north-the-national-compact.rust-freedoms-gift",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [],
+     "title": "Guilt of the North—The National Compact, in Freedom’s Gift",
+     "year": 1840
+    }
+   ],
+   "id": "work.william-lloyd-garrison.guilt-of-the-north-the-national-compact",
+   "languages": [
+    "en"
+   ],
+   "title": "Guilt of the North—The National Compact"
   },
   {
    "alternate_titles": [

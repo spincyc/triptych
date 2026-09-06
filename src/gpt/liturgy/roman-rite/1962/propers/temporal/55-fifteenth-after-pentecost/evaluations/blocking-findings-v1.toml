@@ -1,0 +1,26 @@
+# Blocking findings standing against this publication, and the
+# observations its evaluation lanes recorded outside their own
+# criteria. Written by tpt after each evaluation of this leaf and
+# rewritten whole, so it states what stands now.
+#
+# It exists because a run's own results live under build/, which
+# is ignored, which `make clean` and `wt tidy` delete without
+# asking, and which nothing preserves between productions.
+#
+# Nothing reads this back into a run. Carrying findings from one
+# production into the next wants doing where the run's identity
+# can cover it -- a committed record, or this file's hash in the
+# run id and the acceptance audit -- and until then this is a
+# record for people.
+
+standing_findings_schema = 1
+record_type = "standing-blocking-findings"
+document = "liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost"
+provider = "gpt"
+run_id = "9bf9d40d825f419f"
+workflow = "proper"
+workflow_version = 25
+stage = "content-evaluation"
+iteration = 2
+disposition = "PASS"
+standing = 0
