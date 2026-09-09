@@ -942,9 +942,9 @@ printing*, stated of the Introit that the doubled `l` is "that layer's rendering
 of `míllia`" and reasoned from the layer's behaviour elsewhere; that argument
 was right and was superseded by a reading — the page prints `míllia`. And
 neither that section nor `sections/90-scope.tex` carried the `fi`-ligature accent
-difference at all, which is the sixteenth row of the table above and the only
-row of the sixteen that touches the accentuation the guide itself had to
-correct. `sections/90-scope.tex`'s declared limit — that every Benziger reading
+difference at all, which is the `fi`-ligature row of the table above, added
+2026-09-05, and the only row of the sixteen that touches the accentuation the
+guide itself had to correct. `sections/90-scope.tex`'s declared limit — that every Benziger reading
 in the guide is evidence about a text layer and not a collated reading of the
 Benziger book — was exactly right when written and was by then too strong:
 three readings of this formulary have been taken from page images, the Introit's

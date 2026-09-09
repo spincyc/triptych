@@ -208,29 +208,12 @@ answer the Latin.} #1\par}
 {\bottomrule\end{longtable}}
 
 % The two outputs share every section file except the appointed text and the
-% element-by-element sweep. This one sentence is the only reader-facing prose
-% that has to differ, so it is owned here rather than duplicated in a section.
-\ifdefined\TriptychSynthesisEdition
-  \newcommand{\editionnote}{\textbf{Which edition this is.} This is the
-  \textit{synthesis companion}. It carries the propers map, the
-  date-and-location sheet, the two-page thematic movement, an integrated
-  cross-proper commentary, the source-grounded and exploratory synthesis, the
-  notable-and-quotable gallery and this apparatus. It deliberately omits two
-  things the canonical full edition prints: the complete appointed Latin with
-  its English, and the element-by-element reception sweep. It is compiled
-  mechanically from the same source leaf and owns no prose, research record or
-  source audit of its own.}
-\else
-  \newcommand{\editionnote}{\textbf{Which edition this is.} This is the
-  \textit{canonical full edition}. After the map, the dossier sheet and the
-  thematic movement it prints the complete appointed formulary --- the Latin of
-  the 1962 Vatican \latin{editio typica} beside the English of the registered
-  public-domain witnesses --- and then the element-by-element commentary, the
-  synthesis sections and this apparatus, all from one source leaf. A mechanical
-  \textit{synthesis companion} is compiled from the same source at the same
-  identity with a \texttt{-synthesis} suffix; it omits the appointed texts and
-  the element-by-element sweep and adds nothing this edition does not contain.}
-\fi
+% element-by-element sweep, and no macro here states that difference to a
+% reader. What each edition carries and omits is said once, in the terminal
+% Appendix: Scope and Qualifications, which both editions print. An
+% \editionnote macro was defined in both arms of this branch and invoked
+% nowhere; it is withdrawn rather than left as a second, unpublished statement
+% of the same fact.
 
 % \sectionguard and the deepstudy reading size come from the shared preamble
 % and are deliberately not redefined here.
