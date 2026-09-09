@@ -103,9 +103,9 @@
 
 **Location:** Davidic prayer; public thanksgiving
 
-**Date:** Composition: Before c. 165 B.C.
+**Date:** **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Composition**: Before c. 165 B.C.
 
-Psalm 39 moves from rescue and public testimony to obedience and renewed petition (vv. 2–18). Davidic reception appears in Theodoret, PG 80:1151B–1154C. The critical date is a Psalter boundary, not this psalm’s individual date (USCCB, Psalms introduction); the text establishes no exact writing place, first audience, or Davidic life stage.
+Psalm 39 moves from rescue and public testimony to obedience and renewed petition (vv. 2–18). The Davidic title and Theodoret (PG 80:1151B–1154C) supply the attribution; Corbett’s “usual chronology” supplies its regnal frame (*Catholic Encyclopedia*, IV, p. 642). The critical date is a Psalter boundary, not this psalm’s individual date (USCCB, Psalms introduction); the text establishes no exact writing place, first audience, or Davidic life stage.
 
 ### Introit {#chronology-introit}
 
@@ -113,7 +113,7 @@ Psalm 39 moves from rescue and public testimony to obedience and renewed petiti
 
 **Location:** Davidic prayer addressed to God
 
-**Date:** Composition: Before c. 165 B.C.
+**Date:** **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Composition**: Before c. 165 B.C.
 
 The superscription names David; petition embraces the nations’ worship and returns to danger (Ps. 85:1–17). Theodoret reads David and Hezekiah here (PG 80:1553C–1556B). Those received allocations establish no precise writing place or first audience; the critical date bounds the Psalter, not an individual historical occasion.
 
@@ -123,7 +123,7 @@ The superscription names David; petition embraces the nations’ worship and ret
 
 **Location:** Sabbath canticle; praise of God
 
-**Date:** Composition: Before c. 165 B.C.
+**Date:** **Composition**: Before c. 165 B.C.
 
 The Sabbath heading frames praise and the contrast between passing wicked prosperity and lasting righteous fruitfulness (Ps. 91:1–16). Theodoret also receives its future rest (PG 80:1615C–1618A). The psalm supplies no named writer’s life stage, precise composition place, or first congregation; the critical boundary applies to the Psalter.
 
@@ -133,9 +133,9 @@ The Sabbath heading frames praise and the contrast between passing wicked prospe
 
 **Location:** Israel’s worship of the great King
 
-**Date:** Composition: Before c. 165 B.C.
+**Date:** **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Composition**: Before c. 165 B.C.
 
-Praise of the Creator and Shepherd leads to Israel’s wilderness warning (Ps. 94:1–11; Heb. 3–4). Theodoret’s Josiah allocation is his received interpretation (PG 80:1639B–1642A), not an established composition setting. The first congregation and writing place remain unestablished; the critical date is the Psalter boundary. Ps. 46:3 supplies a verbal parallel, not another appointed dossier.
+The Clementine title names David. Praise of the Creator and Shepherd leads to Israel’s wilderness warning (Ps. 94:1–11; Heb. 3–4). Theodoret’s Josiah allocation is his received interpretation (PG 80:1639B–1642A), not an established composition setting. The first congregation and writing place remain unestablished; the critical date is the Psalter boundary. Ps. 46:3 supplies a verbal parallel, not another appointed dossier.
 
 ### Gospel {#chronology-gospel}
 
@@ -143,7 +143,7 @@ Praise of the Creator and Shepherd leads to Israel’s wilderness warning (Ps. 
 
 **Location:** Naim’s gate; writing place unestablished
 
-**Date:** Composition – disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished. Event: A.D. 27.
+**Date:** **Event**: A.D. 27. **Composition** – disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished.
 
 *Event: Christ meets a widow’s funeral procession at Naim’s gate (Luke 7:11–12), between the centurion’s healing and John’s inquiry (7:1–23).*
 
@@ -155,7 +155,7 @@ Luke’s first composition position comes from the Catholic Encyclopedia XIV (19
 
 **Location:** Capharnaum synagogue; writing place unestablished
 
-**Date:** Composition – disputed: c. A.D. 90–100; A.D. 96–100. Event: A.D. 28.
+**Date:** **Event**: A.D. 28. **Composition** – disputed: c. A.D. 90–100; A.D. 96–100.
 
 *Event: the Bread of Life discourse follows feeding and travel around the Galilean/Tiberias sea; John 6:60 explicitly names the synagogue at Capharnaum.*
 
@@ -167,7 +167,7 @@ John 6 joins manna, flesh given for life, refusal and Peter’s confession. The
 
 **Location:** Paul to the Galatian churches
 
-**Date:** Composition: Preferred A.D. 58; alternatives A.D. 49–50, c. A.D. 53–54, A.D. 56, A.D. 57–58.
+**Date:** **Composition**: Preferred A.D. 58; alternatives A.D. 49–50, c. A.D. 53–54, A.D. 56, A.D. 57–58.
 
 Paul joins grace, faith, freedom and the Spirit to charity (Gal. 1–6). A Lapide (1614), Galatians proemium/argumentum, holds the preferred position. The Catholic Encyclopedia VI (1909), “Epistle to the Galatians,” supplies the first, second and fourth alternatives; XI (1911), “St. Paul,” the third. Northern/southern Galatia, writing city, modern recipient geography, missionary stage and an independent modern critical date remain unadjudicated.
 
@@ -503,6 +503,8 @@ The recorded source checks and this guide’s interpretation confer no imprimatu
 
 ## References
 
+- John Corbett, [“David, King,”](https://www.newadvent.org/cathen/04642b.htm) *Catholic Encyclopedia*, IV (1908), p. 642: the qualified “usual chronology.”
+
 - *Missale Romanum*, editio typica (Vatican: Typis Polyglottis Vaticanis, 1962), *Dominica Decima Quinta post Pentecosten*, pp. 396–397, nos. 1582–1591, [CMAA facsimile](https://media.churchmusicassociation.org/pdf/missale62.pdf); Benziger, New York, 1962, editio iuxta typicam, pp. 390–392, [independent edition](https://archive.org/details/MissaleRomanum1962RomanMissalColorLatin); Tours: Alfred Mame, 1922, editio quarta iuxta typicam Vaticanam, the same formulary, pp. 446–448. The Mame edition supplies the recorded United States public-domain antecedent; the Vatican edition controls the appointed text.
 
 - *The Roman Missal translated into the English language for the use of the laity* (Philadelphia: Eugene Cummiskey, 1861), Fifteenth Sunday after Pentecost, Collect, Secret and Postcommunion. The continuation’s XVI running head is erroneous; the three incipits and formulary sequence identify the correspondence. Historical English witness, not an approved 1962 translation.
@@ -549,6 +551,6 @@ The recorded source checks and this guide’s interpretation confer no imprimatu
 
 Web witnesses were accessed 5 September 2026; appointed-text and chronology checks retain their separate recorded dates.
 
-**Last revised (UTC):** 2026-09-05T23:15:36Z
+**Last revised (UTC):** 2026-09-09T14:39:24Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

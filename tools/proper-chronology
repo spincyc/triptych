@@ -119,21 +119,24 @@ EXAMPLES = {
             "55-fifteenth-after-pentecost --format text",
             (
                 "introit",
+                "  Traditional attribution -- disputed: David (reign in the usual chronology), B.C. 1055–1015.",
                 "  Composition: Before c. 165 B.C.",
                 "epistle",
                 "  Composition: Preferred A.D. 58; alternatives A.D. 49–50, c. A.D. 53–54, A.D. 56, A.D. 57–58.",
                 "gradual",
                 "  Composition: Before c. 165 B.C.",
                 "alleluia",
+                "  Traditional attribution -- disputed: David (reign in the usual chronology), B.C. 1055–1015.",
                 "  Composition: Before c. 165 B.C.",
                 "gospel",
-                "  Composition -- disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished.",
                 "  Event: A.D. 27.",
+                "  Composition -- disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished.",
                 "offertory",
+                "  Traditional attribution -- disputed: David (reign in the usual chronology), B.C. 1055–1015.",
                 "  Composition: Before c. 165 B.C.",
                 "communion",
-                "  Composition -- disputed: c. A.D. 90–100; A.D. 96–100.",
                 "  Event: A.D. 28.",
+                "  Composition -- disputed: c. A.D. 90–100; A.D. 96–100.",
             ),
             "the compact display preserves every dated alternative, labels "
             "relation and uncertainty, and keeps Gospel composition separate "
@@ -153,7 +156,7 @@ EXAMPLES = {
                 "\\newcommand{\\chronologyannotationreach}[3]{}",
                 "\\newcommand{\\chronologyannotationgroup}[3]{#3}",
                 "\\newcommand{\\chronologyannotation}[1]{%",
-                "... 35 more lines",
+                "... 38 more lines",
             ),
             "the generated definitions retain each raw source label in a "
             "non-displaying macro argument, carry its evidence profile, and "

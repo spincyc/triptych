@@ -5851,3 +5851,11 @@ under workflow `proper v11`, and at run `ca03f1b357e7ec25` under workflow
 §9.11–§9.13, §10.2, §11.7, §12.6, §14 and §15 and corrected the sections those
 name. No later stage may add to this brief or amend it**, and every gap it
 leaves is named as a gap rather than left for the author to discover.
+
+## Shared chronology refresh, 2026-09-09
+
+The generated chronology now carries the named Davidic attribution's regnal
+reference from Corbett's qualified usual chronology, in addition to the
+separate historical and textual assertions. The new contextual binding
+records that source. This shared-consumer refresh does not reopen or clear
+the publication's existing hold or its unrelated editorial findings.

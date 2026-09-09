@@ -214,7 +214,7 @@ class AnnotationClaim(NamedTuple):
 
 
 class AnnotationGroup(NamedTuple):
-    """All candidates for one relation, or one explicit relation gap."""
+    """All candidates for one relation and subject, or one relation gap."""
 
     relation: str
     status: str
@@ -724,6 +724,7 @@ def _is_century_notation(span: re.Match[str]) -> bool:
 
 
 RELATION_LABELS = {
+    "traditional-attribution": "Traditional attribution",
     "composition": "Composition",
     "final-formation": "Final formation",
     "textual-attestation": "Textual attestation",
@@ -734,6 +735,25 @@ RELATION_LABELS = {
     "retrospective-event": "Retrospective event",
     "prophecy-given": "Prophecy given",
     "prophetic-referent": "Prophetic referent",
+}
+
+# Publication orientation differs deliberately from the stable query order.
+# An author's era, a passage's setting, and its writing answer separate asks.
+ANNOTATION_RELATIONS = (
+    "traditional-attribution",
+    "superscription-setting",
+    "historical-setting",
+    "narrated-event",
+    "utterance",
+    "retrospective-event",
+    "composition",
+    "final-formation",
+    "prophecy-given",
+    "prophetic-referent",
+    "textual-attestation",
+)
+ANNOTATION_RELATION_ORDER = {
+    relation: index for index, relation in enumerate(ANNOTATION_RELATIONS)
 }
 
 GAP_DISPLAY = {
@@ -782,13 +802,16 @@ def concise_display_label(claim: Claim) -> str:
     return claim.date
 
 
-def _annotation_claim(claim: Claim) -> AnnotationClaim:
+def _annotation_claim(claim: Claim, *, name_subject: bool = False) -> AnnotationClaim:
+    display = concise_display_label(claim)
+    if name_subject or claim.relation == "traditional-attribution":
+        display = f"{claim.title}, {display}"
     return AnnotationClaim(
         subject=claim.subject,
         title=claim.title,
         relation=claim.relation,
         label=claim.label,
-        display_label=concise_display_label(claim),
+        display_label=display,
         date=claim.date,
         precision=claim.precision,
         disposition=claim.disposition,
@@ -799,7 +822,7 @@ def _annotation_claim(claim: Claim) -> AnnotationClaim:
 
 
 def _group_status(claims: tuple[AnnotationClaim, ...]) -> str:
-    """The most cautious disposition represented by a relation group."""
+    """The most cautious disposition on this subject under one relation."""
     dispositions = {claim.disposition for claim in claims}
     if "disputed" in dispositions:
         return "disputed"
@@ -822,7 +845,7 @@ def annotations(found: Dossier) -> AnnotationProjection:
 
     Only elements with appointed Scripture need a Date cell. Every candidate
     in the element-wide publication intersection occurs exactly once in its
-    relation group; locus-specific audit claims remain in ``Element.claims``
+    relation-and-subject group; locus-specific claims remain in ``Element.claims``
     and are never promoted to the whole Date cell. A Gospel also always carries
     a narrated-event group. When the corpus supplies only composition
     chronology, that empty group makes the missing event chronology explicit
@@ -834,33 +857,34 @@ def annotations(found: Dossier) -> AnnotationProjection:
         if not element.loci:
             continue
 
-        by_relation: dict[str, list[AnnotationClaim]] = {}
+        by_relation: dict[str, dict[str, list[Claim]]] = {}
         for claim in element.publication_claims:
-            by_relation.setdefault(claim.relation, []).append(
-                _annotation_claim(claim)
-            )
+            by_relation.setdefault(claim.relation, {}).setdefault(
+                claim.subject, []
+            ).append(claim)
 
         groups: list[AnnotationGroup] = []
-        for relation, claims in by_relation.items():
-            held = tuple(
-                sorted(
-                    claims,
-                    key=lambda claim: (
-                        _chronology.DISPOSITIONS.index(claim.disposition),
-                        claim.date,
-                        claim.label,
-                        claim.subject,
-                    ),
+        for relation, subjects in by_relation.items():
+            for subject in sorted(subjects):
+                held = tuple(
+                    _annotation_claim(claim, name_subject=len(subjects) > 1)
+                    for claim in sorted(
+                        subjects[subject],
+                        key=lambda claim: (
+                            _chronology.DISPOSITIONS.index(claim.disposition),
+                            claim.date,
+                            claim.label,
+                        ),
+                    )
                 )
-            )
-            groups.append(
-                AnnotationGroup(
-                    relation=relation,
-                    status=_group_status(held),
-                    reason="",
-                    claims=held,
+                groups.append(
+                    AnnotationGroup(
+                        relation=relation,
+                        status=_group_status(held),
+                        reason="",
+                        claims=held,
+                    )
                 )
-            )
 
         # A scriptural element with no assertions still needs a visible answer
         # in its Date cell.  Composition is the date of the text itself, and is
@@ -903,8 +927,9 @@ def annotations(found: Dossier) -> AnnotationProjection:
 
         groups.sort(
             key=lambda group: (
-                _chronology.RELATION_ORDER.get(group.relation, 999),
+                ANNOTATION_RELATION_ORDER.get(group.relation, 999),
                 group.relation,
+                group.claims[0].subject if group.claims else "",
             )
         )
         projected.append(
@@ -1092,7 +1117,7 @@ def _candidate_display(group: AnnotationGroup, render_claim) -> str:
 
 
 def _tex_group(group: AnnotationGroup) -> str:
-    relation = _relation_label(group.relation)
+    relation = r"\textbf{" + tex_escape(_relation_label(group.relation)) + "}"
     if not group.claims:
         visible = f"{relation} -- {_gap_display(group)}."
     else:

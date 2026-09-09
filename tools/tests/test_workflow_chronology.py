@@ -14,11 +14,11 @@ command text, because a check the workflow never invokes gates nothing however
 well it works from a shell.
 
 The fixture is the Fourteenth Sunday after Pentecost because its formulary
-covers all three answers at once: the Offertory's Ps. 33 is `dated` by a
-superscription-setting bound to an event, the Epistle and Gospel are
-`composition-only` with several disputed dates apiece, and the Gradual's
-Ps. 117 and the Alleluia's Ps. 94 are `undated-in-tradition` — the state a
-guide must preserve rather than fill.
+covers four answers under the traditional profile: the Offertory's Ps. 33 is
+`dated` by a superscription-setting bound to an event, the Epistle and Gospel are
+`composition-only` with their sourced alternatives, the Gradual's Ps. 117 is
+`undated-in-tradition`, and the Alleluia's Ps. 94 is `attribution-only`.
+The last names David's reference era without dating the text or an occasion.
 
 TWO CORRECTIONS TO THE RECORD, kept here because this is the file that names
 the same formulary and a reader chasing either claim arrives at it. The commit
@@ -39,8 +39,10 @@ that are not true of the corpus, and a pushed message cannot be reworded.
    Ps. 94, and the published leaf prints no figure in either row: it prints a
    stated absence, which is what §14 requires.
 
-Neither correction changes what the checks do. Both change what a reader would
-otherwise believe the corpus says.
+Those corrections describe the initial wiring. Since 2026-09-09, an inspected
+title supports a separate traditional-attribution for Ps. 33 and Ps. 94; the
+earlier superscription-setting remains and Ps. 117 remains undated under the
+traditional profile. The checks preserve each relation and its provenance.
 """
 import json
 import re
@@ -118,6 +120,7 @@ GALATIANS = "composition.epistle-to-the-galatians"
 MATTHEW = "composition.gospel-of-matthew"
 GETH = "israel.monarchy.david-at-geth"
 GETH_LABEL = "A. M. 2944, A. C. 1060"
+DAVID_ERA = "israel.monarchy.david-traditional-era"
 
 SUPPORTED = r"""\section*{Scriptural Date and Location}
 \chronodate{introit}{\chronology{%s}{composition}{between the days of Isaias
@@ -186,7 +189,7 @@ class WiringTests(unittest.TestCase):
         self.assertEqual(by_key["offertory"]["status"], "dated")
         self.assertEqual(by_key["epistle"]["status"], "composition-only")
         self.assertEqual(by_key["gradual"]["status"], "undated-in-tradition")
-        self.assertEqual(by_key["alleluia"]["status"], "undated-in-tradition")
+        self.assertEqual(by_key["alleluia"]["status"], "attribution-only")
         # An element the missal composes carries no Scripture and is still
         # listed: an absent row and a forgotten row look alike afterwards.
         self.assertEqual(by_key["collect"]["loci"], [])
@@ -302,14 +305,25 @@ class WiringTests(unittest.TestCase):
         self.assertEqual(record["document"], DOCUMENT)
         by_key = {e["key"]: e for e in record["elements"]}
         offertory = by_key["offertory"]["claims"]
-        self.assertEqual(len(offertory), 1)
-        claim = offertory[0]
+        self.assertEqual(
+            {(claim["subject"], claim["relation"]) for claim in offertory},
+            {(GETH, "superscription-setting"),
+             (DAVID_ERA, "traditional-attribution")},
+        )
+        self.assertEqual(len(offertory), 2)
+        claim = next(claim for claim in offertory if claim["subject"] == GETH)
         self.assertEqual(claim["subject"], GETH)
         self.assertEqual(claim["relation"], "superscription-setting")
         self.assertEqual(claim["label"], GETH_LABEL)
         self.assertEqual(claim["profile"], "catholic-traditional-v1")
         self.assertTrue(claim["sources"],
                         "a claim with nothing behind it is what §14 forbids")
+        attribution = next(claim for claim in offertory
+                           if claim["subject"] == DAVID_ERA)
+        self.assertEqual(attribution["profile"], "catholic-traditional-v1")
+        self.assertEqual(attribution["disposition"], "disputed")
+        self.assertEqual(attribution["label"], "reigned from 1055 to 1015 B.C.")
+        self.assertTrue(attribution["sources"])
         # The corpus's own reason for a negative travels with it, so that a
         # guide can state the absence at the extent that was actually
         # searched instead of as plain silence.
@@ -595,6 +609,13 @@ class BoundLeafTests(unittest.TestCase):
         binds from. Refusing such a leaf would say the production that made
         it was wrong, which it was not: there was no corpus to read.
         """
+        # The live leaf now adopts the annotation interface. Reset its prose
+        # as well as its metadata: removing the generated file while keeping
+        # calls to it tests a broken modern consumer, not a legacy document.
+        self.write_dossier(
+            "\\section*{Scriptural Date and Location}\n"
+            "Historical orientation before the chronology interface.\n"
+        )
         for name in (RECORD_CHECK, CLAIMS_CHECK):
             with self.subTest(check=name):
                 done = self.check(name)

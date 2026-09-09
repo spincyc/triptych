@@ -5,9 +5,50 @@ schema: triptych-chronology-bindings/v1
 # scripts/_projection.py projects into. Declared here so that no row's
 # numbering is a thing the reader assumed.
 numbering: vulgate
-updated: '2026-09-04'
+updated: '2026-09-09'
 
 bindings:
+  # An attribution identifies a figure; its reference era dates neither the
+  # writing nor an occasion. These scopes follow inspected titles, not a
+  # presumption that every psalm is Davidic.
+  - relation: traditional-attribution
+    event: israel.monarchy.david-traditional-era
+    scope:
+      - {book: Ps, chapter: 33}
+      - {book: Ps, chapter: 39}
+      - {book: Ps, chapter: 70}
+      - {book: Ps, chapter: 85}
+      - {book: Ps, chapter: 94}
+      - {book: Ps, chapter: 97}
+    note: >-
+      The tracked Douay-Rheims titles explicitly name David at Ps.33.1
+      ("For David, when he changed his countenance before Achimelech"),
+      Ps.39.1 ("a psalm for David himself"), Ps.70.1 ("A psalm for David"),
+      Ps.85.1 ("A prayer for David himself"), and Ps.97.1 ("A psalm for David
+      himself"). Psalm 70's same heading also names "the sons of Jonadab, and
+      the former captives"; its separately qualified captivity and Davidic
+      settings remain distinct and are not adjudicated by this attribution.
+      The tracked Clementine Vulgate explicitly heads Ps.94.1 "Laus cantici
+      ipsi David"; the tracked Douay-Rheims omits this heading, while Heb.4.7
+      receives the psalm's warning "in David". The Clementine heading supplies
+      this binding, with Hebrews corroborating reception rather than
+      independently proving individual authorship. These are traditional
+      attributions, not editorial findings that David wrote each whole psalm.
+      The shared regnal reference era identifies the attributed figure and
+      does not locate the poem within his reign: Ps.33's named episode occurs
+      before accession. Existing setting and prophetic-referent bindings stay
+      in force. Ps.83 names the sons of Core, Ps.91 the Sabbath, Ps.101 an
+      afflicted petitioner, and Ps.117 no author in their inspected Douay
+      headings; none is made Davidic by this row.
+    sources:
+      - bible:douay-rheims:Ps.33.1
+      - bible:douay-rheims:Ps.39.1
+      - bible:douay-rheims:Ps.70.1
+      - bible:douay-rheims:Ps.85.1
+      - bible:clementine-vulgate:Ps.94.1
+      - bible:douay-rheims:Heb.4.7
+      - bible:douay-rheims:Ps.97.1
+
   # === bind-passion ====================================================
   # --- The Passion, harmonised ------------------------------------------------
   # One binding per event, carrying one scope per Gospel, so that the harmony is

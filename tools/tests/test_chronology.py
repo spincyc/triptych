@@ -1036,6 +1036,109 @@ class ManyValuedTests(unittest.TestCase):
         self.assertEqual(first, sorted(first))
 
 
+class TraditionalAttributionTests(unittest.TestCase):
+    AUTHOR = """\
+events:
+  - id: traditional-author.era
+    title: A traditionally attributed author's era
+    dates:
+      - profile: catholic-traditional-v1
+        basis: fixture, dating the author rather than the writing
+        sources: [bible.douay-rheims]
+        date: {precision: approximate-year, from: {year: 1000, era: bc}}
+"""
+    BINDING = """\
+bindings:
+  - relation: traditional-attribution
+    event: traditional-author.era
+    scope: {book: Ps, chapter: 21}
+"""
+
+    def test_an_authors_era_does_not_earn_event_or_composition_chronology(self) -> None:
+        book = corpus(self, events=self.AUTHOR, bindings=self.BINDING)
+        answer = book.ask("Ps.21.2")
+        self.assertEqual(answer.status, "attribution-only")
+        self.assertEqual(
+            [(item.relation, item.subject) for item in answer.assertions],
+            [("traditional-attribution", "traditional-author.era")],
+        )
+        for universe in ("primary", "distinct-content"):
+            with self.subTest(universe=universe):
+                coverage = _chronology.coverage(book.root, universe=universe)
+                self.assertEqual(
+                    coverage["verses_with_substantive_event_assertions"], 0
+                )
+                self.assertGreater(coverage["by_status"]["attribution-only"], 0)
+                self.assertEqual(
+                    set(coverage["substantive_by_provenance"].values()), {0}
+                )
+
+    def test_attribution_keeps_composition_only_and_query_order_stable(self) -> None:
+        book = corpus(
+            self, events=self.AUTHOR, bindings=self.BINDING, composition=PSALM_21
+        )
+        answer = book.ask("Ps.21.2")
+        self.assertEqual(answer.status, "composition-only")
+        self.assertEqual(
+            [item.relation for item in answer.assertions],
+            ["composition", "traditional-attribution"],
+        )
+
+    def test_the_tracked_attribution_is_exactly_the_inspected_psalm_scope(self) -> None:
+        subject = "israel.monarchy.david-traditional-era"
+        held = _chronology.load()
+        bindings = [item for item in held.bindings if item.event == subject]
+        self.assertEqual({item.relation for item in bindings},
+                         {"traditional-attribution"})
+        self.assertEqual(
+            {str(span) for item in bindings for span in item.scope},
+            {f"Ps.{chapter}" for chapter in (33, 39, 70, 85, 94, 97)},
+        )
+        for chapter in (33, 39, 70, 85, 94, 97):
+            for verse in (1, _chronology.verse_counts()[("Ps", chapter)]):
+                with self.subTest(chapter=chapter, verse=verse):
+                    answer = _chronology.chronology(f"Ps.{chapter}.{verse}")
+                    attribution = [
+                        item for item in answer.assertions
+                        if item.relation == "traditional-attribution"
+                    ]
+                    self.assertEqual(len(attribution), 1)
+                    item = attribution[0]
+                    self.assertEqual(item.subject, subject)
+                    self.assertEqual(item.title, "David (reign in the usual chronology)")
+                    self.assertEqual(item.claim.disposition, "disputed")
+                    self.assertEqual(item.claim.profile, PROFILE)
+                    self.assertEqual(str(item.claim.date), "1055 B.C.-1015 B.C.")
+                    self.assertEqual(item.claim.date.label,
+                                     "reigned from 1055 to 1015 B.C.")
+                    self.assertIn(
+                        "passage.catholic-encyclopedia.volume-4.new-york-1908."
+                        "corbett-david-usual-chronology", item.claim.sources
+                    )
+                    self.assertIn("composition", {a.relation for a in answer.assertions})
+
+        # The title's author is distinct from an occasion; the older event
+        # evidence on these psalms must survive the new personal era.
+        for locus, relation, event in (
+            ("Ps.33.1", "superscription-setting", "israel.monarchy.david-at-geth"),
+            ("Ps.70.1", "historical-setting", "israel.monarchy.david-flight-from-absalom"),
+            ("Ps.70.1", "superscription-setting", "israel.exile.first-captivity"),
+            ("Ps.97.1", "prophetic-referent", "life-of-christ.nativity"),
+        ):
+            answer = _chronology.chronology(locus)
+            self.assertIn((relation, event),
+                          {(item.relation, item.subject) for item in answer.assertions})
+
+    def test_psalms_without_a_davidic_title_do_not_inherit_davids_era(self) -> None:
+        for chapter in (83, 91, 101, 117):
+            for verse in (1, _chronology.verse_counts()[("Ps", chapter)]):
+                with self.subTest(chapter=chapter, verse=verse):
+                    answer = _chronology.chronology(f"Ps.{chapter}.{verse}")
+                    relations = {a.relation for a in answer.assertions}
+                    self.assertNotIn("traditional-attribution", relations)
+                    self.assertIn("composition", relations)
+
+
 class InheritanceTests(unittest.TestCase):
     BOOK_AND_CHAPTER = """\
 units:

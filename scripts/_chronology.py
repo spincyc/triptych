@@ -33,7 +33,7 @@ one more costume.
 
 ## What a locus resolves to
 
-Zero or more TYPED TEMPORAL ASSERTIONS, never a scalar date. Ten relations,
+Zero or more TYPED TEMPORAL ASSERTIONS, never a scalar date. Eleven relations,
 and the distinctions between them are the point:
 
     composition             when the text was written
@@ -46,6 +46,7 @@ and the distinctions between them are the point:
     retrospective-event     an earlier event the passage explicitly recalls
     prophecy-given          when the oracle was uttered
     prophetic-referent      the later event tradition reads it as prophesying
+    traditional-attribution the era of the traditionally named author or figure
 
 `prophetic-referent` is not `narrated-event`: Psalm 21 is not a report of the
 Passion, and a corpus that could not say so would date David narrating Calvary.
@@ -53,6 +54,8 @@ Passion, and a corpus that could not say so would date David narrating Calvary.
 setting and is not proof of a year. `composition` is not `historical-setting`.
 And `textual-attestation` is not either one: a dated witness proves that this
 text existed by then, never that it was written then.
+`traditional-attribution` dates its named figure, never the text's writing or
+historical occasion.
 
 ## What is authored, and what is derived
 
@@ -180,6 +183,7 @@ RELATIONS = (
     "retrospective-event",
     "prophecy-given",
     "prophetic-referent",
+    "traditional-attribution",
 )
 
 # Textual history is temporal, but it is not an event narrated by the text.
@@ -190,6 +194,10 @@ RELATIONS = (
 TEXTUAL_RELATIONS = frozenset(
     {"composition", "final-formation", "textual-attestation"}
 )
+# Attribution supplies personal chronology, not an event of the passage.
+EVENT_RELATIONS = frozenset(RELATIONS) - TEXTUAL_RELATIONS - {
+    "traditional-attribution"
+}
 
 # A cascade is deliberately one rule, not an open vocabulary a caller may
 # interpret. It chooses independently per relation so a traditional
@@ -279,14 +287,15 @@ DURATION_UNITS = ("years", "months", "days")
 ERAS = ("bc", "ad", "am")
 CHRISTIAN_ERAS = ("bc", "ad")
 
-# Every status a locus can carry. The first three are earned from assertions
+# Every status a locus can carry. The first four are earned from assertions
 # that APPLY to a locus, at whatever scope they were authored; the rest are
 # authored in gaps.yaml, except `research-pending`, which is what a locus has
 # when nothing else applies.
 STATUSES = (
     "dated",              # a substantive assertion applies, direct or inherited
-    "composition-only",   # only composition/final-formation assertions apply
-    "attestation-only",   # only a dated textual witness reaches the locus
+    "composition-only",   # textual production, possibly with attribution
+    "attestation-only",   # textual witness, possibly with nonpositional attribution
+    "attribution-only",   # a named figure's era, without text or event dating
     "research-pending",   # not yet researched. The default, and honest.
     "undated-in-tradition",  # ranked sources inspected; tradition dates nothing
     "not-alignable",      # the locus cannot be safely addressed from the asking system
@@ -305,7 +314,9 @@ STATUS_ORDER = {status: index for index, status in enumerate(STATUSES)}
 # at the one place that enforces it, because the coverage guard in
 # `tools/tests/test_chronology.py` asks the same question and two spellings of
 # one set is how they stop agreeing.
-EARNED_STATUSES = ("dated", "composition-only", "attestation-only")
+EARNED_STATUSES = (
+    "dated", "composition-only", "attestation-only", "attribution-only"
+)
 
 AUTHORED_STATUSES = tuple(
     status
@@ -2351,12 +2362,20 @@ def _status_of(assertions: Iterable[Assertion]) -> str:
     proves only that a dated witness contains the text. Calling that
     `composition-only` would imply precisely the writing claim its relation was
     introduced not to make.
+
+    Traditional attribution dates a named figure, not a passage's event. It
+    leaves an existing textual-history status intact and earns its own status
+    when no textual history or event assertion applies.
     """
     relations = {item.relation for item in assertions}
-    if any(relation not in TEXTUAL_RELATIONS for relation in relations):
+    if relations & EVENT_RELATIONS:
         return "dated"
-    if relations == {"textual-attestation"}:
+    if relations & {"composition", "final-formation"}:
+        return "composition-only"
+    if "textual-attestation" in relations:
         return "attestation-only"
+    if "traditional-attribution" in relations:
+        return "attribution-only"
     return "composition-only"
 
 
@@ -3390,12 +3409,12 @@ def _expanded_coverage(
             by_relation[relation] += 1
         if len(relations) > 1:
             multiple += 1
-        if relations - TEXTUAL_RELATIONS:
+        if relations & EVENT_RELATIONS:
             substantive += 1
         if any(item.claim.disposition in ("alternate", "disputed") for item in assertions):
             alternates += 1
         substantive_items = [
-            item for item in assertions if item.relation not in TEXTUAL_RELATIONS
+            item for item in assertions if item.relation in EVENT_RELATIONS
         ]
         if substantive_items:
             has_direct = any(not item.inherited for item in substantive_items)
@@ -3491,7 +3510,7 @@ def coverage(
             by_relation[relation] += run.verses
         if len(run.relations) > 1:
             multiple += run.verses
-        if any(relation not in TEXTUAL_RELATIONS for relation in run.relations):
+        if any(relation in EVENT_RELATIONS for relation in run.relations):
             substantive += run.verses
     accounted = sum(by_status.values())
     if accounted != total:
@@ -3561,7 +3580,7 @@ def _provenance_verses(
             continue
         substantive = [
             item for item in answer.assertions
-            if item.relation not in TEXTUAL_RELATIONS
+            if item.relation in EVENT_RELATIONS
         ]
         if not substantive:
             continue

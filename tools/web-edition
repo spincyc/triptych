@@ -490,7 +490,9 @@ def strip_contentless_breaks(markdown: str) -> str:
 
 
 def normalize_audit_text(text: str) -> str:
-    """Normalize TeX/Unicode spacing and dashes for payload comparisons."""
+    """Normalize spacing, dashes and bold wrappers without dropping their text."""
+    text = replace_grouped_macro(text, "textbf", 1, lambda arguments: arguments[0])
+    text = text.replace("**", "")
     text = COMMENT_RE.sub("", text).replace(r"\space", " ").replace("~", " ")
     text = text.replace("--", "-")
     text = re.sub(r"[\N{EN DASH}\N{EM DASH}\N{MINUS SIGN}]", "-", text)

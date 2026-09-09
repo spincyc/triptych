@@ -25,7 +25,7 @@
    "id": "claude-fable-5"
   },
   {
-   "documents": 3,
+   "documents": 4,
    "id": "GPT-6-based Codex agent"
   }
  ],
@@ -5546,12 +5546,18 @@
        "model": "GPT-5-based Codex agent",
        "qualifiers": "unexposed: exact model identifier and model qualifiers",
        "runtime": "OpenAI Codex agent (integration of the deterministic Scripture chronology projection; correction of stale date claims and source attributions; and focused chronology validation); API workspace; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier, model qualifiers and reasoning effort",
+       "runtime": "OpenAI Codex API workspace; traditional-attribution chronology and date-dossier revision; unexposed: client version and server revision"
       }
      ],
      "eligibility": "eligible",
      "models": [
       "claude-opus-5[1m]",
-      "GPT-5-based Codex agent"
+      "GPT-5-based Codex agent",
+      "GPT-6-based Codex agent"
      ],
      "pages": 61,
      "produced": {
@@ -5562,8 +5568,8 @@
       "workflow_version": "1"
      },
      "provider": "claude",
-     "reviewed": "2026-09-04",
-     "revised": "2026-09-04T22:06:12Z",
+     "reviewed": "2026-09-09",
+     "revised": "2026-09-09T14:42:22Z",
      "status": "hold",
      "subject": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
      "title": "Fourteenth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)",
@@ -5610,6 +5616,11 @@
        "model": "GPT-6-based Codex agent",
        "qualifiers": "unexposed: exact model identifier and model qualifiers; reasoning-effort=high",
        "runtime": "OpenAI Codex agent (visual revision: summary-table column gutter, canonical and synthesis rebuilds, and visual inspection); API workspace; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier, model qualifiers and reasoning effort",
+       "runtime": "OpenAI Codex API workspace; traditional-attribution chronology and date-dossier revision; unexposed: client version and server revision"
       }
      ],
      "eligibility": "eligible",
@@ -5627,8 +5638,8 @@
       "workflow_version": "25"
      },
      "provider": "gpt",
-     "reviewed": "2026-09-05",
-     "revised": "2026-09-05T19:04:00Z",
+     "reviewed": "2026-09-09",
+     "revised": "2026-09-09T14:36:51Z",
      "status": "alpha",
      "subject": "Full source-audited guide to the 1962 Roman Missal propers",
      "title": "Fourteenth Sunday after Pentecost (Full Edition)",
@@ -5714,6 +5725,11 @@
        "model": "GPT-6-based Codex agent",
        "qualifiers": "effort=high; unexposed: exact model identifier and other model qualifiers",
        "runtime": "OpenAI Codex agent (proper version 25 visual revision; paragraph-opening pagination in both editions); API workspace; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier, model qualifiers and reasoning effort",
+       "runtime": "OpenAI Codex API workspace; traditional-attribution chronology and date-dossier revision; unexposed: client version and server revision"
       }
      ],
      "eligibility": "eligible",
@@ -5731,8 +5747,8 @@
       "workflow_version": "25"
      },
      "provider": "gpt",
-     "reviewed": "2026-09-05",
-     "revised": "2026-09-05T23:15:36Z",
+     "reviewed": "2026-09-09",
+     "revised": "2026-09-09T14:39:24Z",
      "status": "alpha",
      "subject": "Full source-audited guide to the 1962 Roman Missal propers",
      "title": "Fifteenth Sunday after Pentecost (Full Edition)",
@@ -5768,6 +5784,11 @@
        "model": "GPT-6-based Codex agent",
        "qualifiers": "effort=high; unexposed: exact model identifier and other model qualifiers",
        "runtime": "OpenAI Codex API workspace; visual pagination revision and canonical and synthesis PDF review; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier, model qualifiers and reasoning effort",
+       "runtime": "OpenAI Codex API workspace; traditional-attribution chronology and date-dossier revision; unexposed: client version and server revision"
       }
      ],
      "eligibility": "eligible",
@@ -5784,8 +5805,8 @@
       "workflow_version": "25"
      },
      "provider": "gpt",
-     "reviewed": "2026-09-05",
-     "revised": "2026-09-05T23:47:40Z",
+     "reviewed": "2026-09-09",
+     "revised": "2026-09-09T14:36:51Z",
      "status": "alpha",
      "subject": "The complete appointed texts and commentary on the Sixteenth Sunday after Pentecost in the 1962 Roman Missal",
      "title": "Sixteenth Sunday after Pentecost (Full Edition)",

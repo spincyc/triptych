@@ -803,6 +803,24 @@ locus = "Ps.94.1"
 inherited = true
 scope = "Ps"
 
+[[elements.claims]]
+relation = "traditional-attribution"
+subject = "israel.monarchy.david-traditional-era"
+title = "David (reign in the usual chronology)"
+label = "reigned from 1055 to 1015 B.C."
+date = "1055 B.C.-1015 B.C."
+precision = "range"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]
+
+[[elements.claims.reaches]]
+locus = "Ps.94.1"
+inherited = true
+scope = "Ps.33 Ps.39 Ps.70 Ps.85 Ps.94 Ps.97"
+
 [[elements.publication_claims]]
 relation = "composition"
 subject = "critical.psalms.latest-composition-boundary"
@@ -820,6 +838,24 @@ sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bi
 locus = "Ps.94.1"
 inherited = true
 scope = "Ps"
+
+[[elements.publication_claims]]
+relation = "traditional-attribution"
+subject = "israel.monarchy.david-traditional-era"
+title = "David (reign in the usual chronology)"
+label = "reigned from 1055 to 1015 B.C."
+date = "1055 B.C.-1015 B.C."
+precision = "range"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.94.1"
+inherited = true
+scope = "Ps.33 Ps.39 Ps.70 Ps.85 Ps.94 Ps.97"
 
 [[elements]]
 key = "gospel"
@@ -1643,6 +1679,29 @@ locus = "Ps.33.9"
 inherited = true
 scope = "Ps.33 Ps.55"
 
+[[elements.claims]]
+relation = "traditional-attribution"
+subject = "israel.monarchy.david-traditional-era"
+title = "David (reign in the usual chronology)"
+label = "reigned from 1055 to 1015 B.C."
+date = "1055 B.C.-1015 B.C."
+precision = "range"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]
+
+[[elements.claims.reaches]]
+locus = "Ps.33.8"
+inherited = true
+scope = "Ps.33 Ps.39 Ps.70 Ps.85 Ps.94 Ps.97"
+
+[[elements.claims.reaches]]
+locus = "Ps.33.9"
+inherited = true
+scope = "Ps.33 Ps.39 Ps.70 Ps.85 Ps.94 Ps.97"
+
 [[elements.publication_claims]]
 relation = "composition"
 subject = "critical.psalms.latest-composition-boundary"
@@ -1688,6 +1747,29 @@ scope = "Ps.33 Ps.55"
 locus = "Ps.33.9"
 inherited = true
 scope = "Ps.33 Ps.55"
+
+[[elements.publication_claims]]
+relation = "traditional-attribution"
+subject = "israel.monarchy.david-traditional-era"
+title = "David (reign in the usual chronology)"
+label = "reigned from 1055 to 1015 B.C."
+date = "1055 B.C.-1015 B.C."
+precision = "range"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.33.8"
+inherited = true
+scope = "Ps.33 Ps.39 Ps.70 Ps.85 Ps.94 Ps.97"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.33.9"
+inherited = true
+scope = "Ps.33 Ps.39 Ps.70 Ps.85 Ps.94 Ps.97"
 
 [[elements]]
 key = "secret"

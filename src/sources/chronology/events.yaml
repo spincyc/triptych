@@ -4086,6 +4086,47 @@ events:
           from: {year: 1058, era: bc}
           label: "about the year 1058 B.C."
 
+  - id: israel.monarchy.david-traditional-era
+    title: David (reign in the usual chronology)
+    note: >-
+      A reference era for an explicitly witnessed traditional attribution to
+      David. The regnal span orients the reader to the attributed figure; it
+      does not bound the composition of an attributed psalm within his reign,
+      supply a historical occasion, or replace a separately sourced setting.
+      Psalm 33 makes the distinction concrete: its title concerns David's
+      flight before his accession, while this subject identifies him by the
+      reign that Corbett dates. The existing israel.monarchy.david-reign holds
+      Scripture's forty-year duration and retains its own bindings unchanged.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: disputed
+        basis_class: reported-traditional
+        basis: >-
+          John Corbett's David article in The Catholic Encyclopedia, volume IV
+          (New York, 1908), printed p. 642, opens: "According to the usual
+          chronology, David was born in 1085 and reigned from 1055 to 1015 B.C."
+          The following sentence says that recent writers, induced by Assyrian
+          inscriptions, date his reign thirty to fifty years later. The
+          reference era is the reported conventional reign, not a calculation
+          from David's birth, age, accession, or death.
+        sources:
+          - passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology
+          - artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text
+        note: >-
+          Corbett's qualification "According to the usual chronology" is
+          carried by the subject's title and this claim's basis. Its
+          disposition follows the same reporting voice and competing reckoning
+          already recorded on israel.monarchy.birth-of-david: disputed, not an
+          independently established exact chronology. The alternative's shift
+          is not converted into new endpoints. Only an explicit
+          traditional-attribution binding may use this contextual subject;
+          the date is neither a composition interval nor a narrated event.
+        date:
+          precision: range
+          from: {year: 1055, era: bc}
+          to: {year: 1015, era: bc}
+          label: "reigned from 1055 to 1015 B.C."
+
   - id: israel.monarchy.david-reign
     title: The reign of David
     dates:
