@@ -78,8 +78,17 @@ and the source and rendered checks above apply to the unchanged implementation.
 `public-alpha verify --deployment-target github-pages` pass. The exact outgoing
 range contains the reviewed dating implementation and this scope/status
 checkpoint; its newly reachable content is intended for the public repository.
-A fast-forward push and production verification remain pending. The workspace
-branch remains `feature/codex/propers/dating`.
+Both remote branches were fast-forwarded to `d99085c23`. Its exact-snapshot
+[Pages run](https://github.com/spincyc/triptych/actions/runs/34368786259)
+succeeded, including fresh PDF installation, deployment-source checks, public
+artifact construction and GitHub Pages verification. The three GPT 54–56 web
+routes at `https://mystago.gy/` return byte-identical copies of the verified
+local HTML and display traditional attribution separately from composition.
+All six live full/synthesis PDFs match the reviewed SHA-256 digests in the
+source and rendered review. The main integration and publication requirement
+is met. This follow-up checkpoint records that observed deployment; it changes
+only the work register, promise status and recaptured ledger examples. The
+workspace branch remains `feature/codex/propers/dating`.
 
 ## GPT propers 54–56 publication and integration, 2026-09-06
 

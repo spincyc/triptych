@@ -4,7 +4,7 @@ schema_version = 1
 id = "proper-salient-dates-2026-09-09"
 owner = "PROJECT-WORK.md"
 promise = "Explain the missing traditional Psalm era, preserve distinct sourced chronology relations, and show salient traditional context and textual-history dates elegantly in the recent GPT proper guides, with the same distinction usable for earlier Old Testament passages; reconcile with main, push the validated result, and verify deployment."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "source-grounded-context"
@@ -27,7 +27,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "validated-main-and-deployment"
   criterion = "The dating change is reconciled with current main, passes the affected publication gates, reaches origin/main by fast-forward, and its Pages deployment and affected public routes are verified."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml"]
 
 [[deliverables]]
