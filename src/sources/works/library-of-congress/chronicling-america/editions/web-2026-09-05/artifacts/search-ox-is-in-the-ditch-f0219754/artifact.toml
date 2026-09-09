@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.library-of-congress.chronicling-america.web-2026-09-05.search-ox-is-in-the-ditch-f0219754"
+edition_id = "edition.library-of-congress.chronicling-america.web-2026-09-05"
+artifact_type = "search-response"
+media_type = "application/json"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The response is the Library of Congress's own compiled result set, served by www.loc.gov. A work of the United States Government is not subject to copyright protection in the United States (17 U.S.C. 105), and the response carries no licence statement, notice or condition anywhere in its bytes, which was checked rather than assumed. It carries catalogue metadata about newspaper issues and no newspaper text, so no question about the copyright of a post-1928 newspaper arises on these bytes. NOT RELIED ON: that the service is available or that the download succeeded."
+rights_jurisdiction = "United States"
+source_url = "https://www.loc.gov/collections/chronicling-america/?ops=PHRASE&qs=ox+is+in+the+ditch&searchType=advanced&fo=json&c=10"
+provenance = "Acquired over HTTPS by the cultural-afterlife research lane of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "f021975420094784481a4fa742eeab5af17a4e69509b7e0c4a5c20a5e25aef61"
+byte_size = 1976490
+path = "src/sources/works/library-of-congress/chronicling-america/editions/web-2026-09-05/artifacts/search-ox-is-in-the-ditch-f0219754/search-ox-is-in-the-ditch.json"
+indexable = false
+notes = "The first page of the Chronicling America advanced-search API response for the phrase query \"ox is in the ditch\". WHAT THE BYTES THEMSELVES REPORT, READ OFF THIS FILE: 10 result records are present; `pagination.of` is 324 and `pagination.total` is 33, so the service reported 324 matching pages over 33 pages of results and later pages were not retrieved. The response's top-level `total` field is 2,103,648, which is the size of the searched collection and NOT the hit count; reading it as the hit count would multiply the figure by six thousand. Extent as measured by the retrieving lane: first page of the Library of Congress search API response for the phrase query: ten result records of 324 reported hits; later pages not retrieved. A COUNT TAKEN ON A DATE: the collection grows, the index changes, and this figure is a fact about 2026-09-05 and about this query string. The service's phrase matching is its own and is not the repository's raw-line search, so a negative may not be read off it by this library's rules."

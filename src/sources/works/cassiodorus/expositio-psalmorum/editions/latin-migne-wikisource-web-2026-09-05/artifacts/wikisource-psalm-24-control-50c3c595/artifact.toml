@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.cassiodorus.expositio-psalmorum.latin-migne-wikisource-web-2026-09-05.wikisource-psalm-24-control-50c3c595"
+edition_id = "edition.cassiodorus.expositio-psalmorum.latin-migne-wikisource-web-2026-09-05"
+artifact_type = "web-page"
+media_type = "text/html"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "Two rights objects, and they are kept apart. The Latin that Latin Wikisource transcribes on this route is ancient and public domain, and Migne's printing of it is in the United States public domain by publication date. The wiki source of the page -- its templates, headers, navigation banners, links, categories and interface furniture -- is contributed matter licensed CC BY-SA 4.0, a condition on the contributors' markup rather than on the text beneath it. These exact bytes carry that markup, so they are hashed and recorded and not retained, which is the settled treatment of Latin Wikisource deliveries in this repository and is described in THIRD_PARTY.md."
+source_url = "https://la.wikisource.org/wiki/Expositio_in_Psalterium/24"
+provenance = "Acquired over HTTPS by the precedent-search research lane of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "50c3c595f2b121427585d0e663f1ca5a5d52d605108d9a1e042f0f05f14d7ea9"
+byte_size = 68011
+indexable = false
+notes = "The second HTTP 200 control, same purpose. It is 68,011 bytes against the 67,816 registered at artifact.cassiodorus.expositio-psalmorum.latin-migne-wikisource-web-2026-07-28.psalm-24-html, so that page has drifted too. Extent as measured by the retrieving lane: The second HTTP 200 control, same purpose as the Psalm 16 control. Content not read. ACCESS LIMITATION. What is not retained is a Latin Wikisource page carrying CC BY-SA 4.0 contributed markup; it is not retained because share-alike is a condition this repository does not accept over its own tree. What a reader without the network can open instead is the machine listing of this route's whole extent, retained at artifact.cassiodorus.expositio-psalmorum.latin-migne-wikisource-web-2026-09-05.wikisource-allpages-listing."

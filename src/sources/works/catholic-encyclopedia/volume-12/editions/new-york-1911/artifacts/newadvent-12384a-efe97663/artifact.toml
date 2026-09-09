@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12384a-efe97663"
+edition_id = "edition.catholic-encyclopedia.volume-12.new-york-1911"
+artifact_type = "web-page"
+media_type = "text/html"
+storage = "remote"
+rights_status = "public-domain"
+rights_basis = "The Catholic Encyclopedia article is in the public domain in the United States: its volume was published between 1907 and 1912, so the longest term available to it under 17 U.S.C. 304 expired at the end of 2007 at the latest. What is not republished from this repository is New Advent's own layer of these exact bytes -- the site's navigation, styling, advertising markup, support solicitation and \"About this page\" apparatus -- which is why the delivery stays remote. That apparatus encumbers the page, not the article printed inside it. Settled once in src/sources/inventories/catholic-encyclopedia-rights-v1.toml."
+rights_jurisdiction = "United States"
+source_url = "https://www.newadvent.org/cathen/12384a.htm"
+provenance = "Acquired over HTTPS by the liturgical-history research lane of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "efe976636fe20fbc460f21dc06804b65eb29f2987ee9778999e2920a079d071d"
+byte_size = 26802
+indexable = false
+notes = "Fortescue, Adrian. \"Preface.\" The Catholic Encyclopedia. Vol. 12. New York: Robert Appleton Company, 1911. Extent as measured by the retrieving lane: The complete New Advent HTML of the article 'Preface' (Adrian Fortescue), Catholic Encyclopedia vol. 12 (New York, 1911), as the site serves it, navigation chrome included. The article is not registered in this repository's Catholic Encyclopedia shelf; registering it would be source-registration's work.. The exact page is not retained: its navigation, styling, advertising markup, support solicitation and \"About this page\" apparatus are New Advent's and carry no republication permission. The encyclopedia article itself is retained and may be reopened offline, extracted from these exact bytes, at artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12384a-efe97663-article-text. A dated reference work of 1907-1912, not a magisterial or current one."

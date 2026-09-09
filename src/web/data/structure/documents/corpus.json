@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from each document's own sources and from the PDF it builds. Titles are evaluated out of the preamble and confirmed against the built PDF; a document whose sources state no title is carried with the reason in place of one and is never given an invented name. Production provenance is what each document records about itself, field by field, omitting any field its record says was not recoverable; comparing it against the workflows declared below is a finding aid and never an authority, and nothing in this repository gates on it.",
  "counted": {
-  "documents": 189,
-  "issues": 206,
-  "pages": 5993,
+  "documents": 190,
+  "issues": 208,
+  "pages": 0,
   "titles_unrecorded": 0,
-  "works": 139
+  "works": 140
  },
  "models": [
   {
@@ -17,7 +17,7 @@
    "id": "gpt-5.6-sol"
   },
   {
-   "documents": 28,
+   "documents": 29,
    "id": "claude-opus-5[1m]"
   },
   {
@@ -27,7 +27,7 @@
  ],
  "providers": [
   {
-   "documents": 50,
+   "documents": 51,
    "id": "claude",
    "label": "Claude"
   },
@@ -61,7 +61,7 @@
   },
   {
    "id": "liturgy",
-   "works": 47
+   "works": 48
   },
   {
    "id": "theology",
@@ -70,14 +70,14 @@
  ],
  "workflows": [
   {
-   "digest": "af557b7679a79fa1d621121c497545aa81edf1f0d43c8c2c59326f38c33cb2bb",
+   "digest": "f5a76fa052a32bd7438d36811cc4367290dcbd2bce770ea50c7ae12b085cc8f8",
    "id": "proper-finish",
-   "version": "3"
+   "version": "4"
   },
   {
-   "digest": "ad4a5ea8193bdaf4b5f7a3f261fd5377fd49208f49b709cd794aeb635d20cd46",
+   "digest": "f4ba688d251b0108e9d3ebdf624ff81e3d6f3ea0b458ed9120d4c9fbce710dd6",
    "id": "proper",
-   "version": "25"
+   "version": "26"
   }
  ],
  "works": [
@@ -98,8 +98,9 @@
      "models": [
       "claude-fable-5"
      ],
-     "pages": 43,
-     "pdf": "pdf/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -135,8 +136,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 31,
-     "pdf": "pdf/gpt/articles/canon-law/clerical-celibacy-chastity-and-continence.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -170,8 +172,9 @@
      "models": [
       "claude-fable-5"
      ],
-     "pages": 33,
-     "pdf": "pdf/claude/articles/canon-law/natural-positive-divine-human-law.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -197,8 +200,9 @@
      "models": [
       "gpt-5.6-sol"
      ],
-     "pages": 39,
-     "pdf": "pdf/gpt/articles/canon-law/natural-positive-divine-human-law.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -232,8 +236,9 @@
      "models": [
       "claude-fable-5"
      ],
-     "pages": 30,
-     "pdf": "pdf/claude/articles/faith/against-the-instrumentalists.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -264,8 +269,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 9,
-     "pdf": "pdf/gpt/articles/faith/against-the-instrumentalists.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -299,8 +305,9 @@
      "models": [
       "claude-fable-5"
      ],
-     "pages": 16,
-     "pdf": "pdf/claude/articles/faith/at-the-end-of-every-why.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -361,8 +368,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 14,
-     "pdf": "pdf/gpt/articles/faith/at-the-end-of-every-why.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -396,8 +404,9 @@
      "models": [
       "gpt-5.6-sol"
      ],
-     "pages": 7,
-     "pdf": "pdf/gpt/articles/faith/catholic-doctrinal-authority.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -431,8 +440,9 @@
      "models": [
       "claude-fable-5"
      ],
-     "pages": 18,
-     "pdf": "pdf/claude/articles/faith/council-missal-and-crisis.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -478,8 +488,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 51,
-     "pdf": "pdf/gpt/articles/faith/council-missal-and-crisis.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -513,8 +524,9 @@
      "models": [
       "claude-opus-5[1m]"
      ],
-     "pages": 36,
-     "pdf": "pdf/claude/articles/faith/four-last-things-01-death.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -540,8 +552,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 6,
-     "pdf": "pdf/gpt/articles/faith/four-last-things-01-death.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -575,8 +588,9 @@
      "models": [
       "claude-opus-5[1m]"
      ],
-     "pages": 37,
-     "pdf": "pdf/claude/articles/faith/four-last-things-02-judgment.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -602,8 +616,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 7,
-     "pdf": "pdf/gpt/articles/faith/four-last-things-02-judgment.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -637,8 +652,9 @@
      "models": [
       "claude-opus-5[1m]"
      ],
-     "pages": 38,
-     "pdf": "pdf/claude/articles/faith/four-last-things-03-hell.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -664,8 +680,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 7,
-     "pdf": "pdf/gpt/articles/faith/four-last-things-03-hell.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -699,8 +716,9 @@
      "models": [
       "claude-opus-5[1m]"
      ],
-     "pages": 39,
-     "pdf": "pdf/claude/articles/faith/four-last-things-04-heaven.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -726,8 +744,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 7,
-     "pdf": "pdf/gpt/articles/faith/four-last-things-04-heaven.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -761,8 +780,9 @@
      "models": [
       "claude-fable-5"
      ],
-     "pages": 15,
-     "pdf": "pdf/claude/articles/faith/freemasonry-and-the-catholic-church.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -804,8 +824,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 46,
-     "pdf": "pdf/gpt/articles/faith/freemasonry-and-the-catholic-church.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -850,8 +871,9 @@
       "claude-fable-5",
       "claude-opus-5[1m]"
      ],
-     "pages": 56,
-     "pdf": "pdf/claude/articles/faith/in-defense-of-the-particular.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -887,8 +909,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 12,
-     "pdf": "pdf/gpt/articles/faith/in-defense-of-the-particular.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -922,8 +945,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 10,
-     "pdf": "pdf/gpt/articles/faith/last-supper-calvary-and-the-mass.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -957,8 +981,9 @@
      "models": [
       "claude-opus-5[1m]"
      ],
-     "pages": 31,
-     "pdf": "pdf/claude/articles/faith/ontological-vertigo.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -1014,8 +1039,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 13,
-     "pdf": "pdf/gpt/articles/faith/ontological-vertigo.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -1049,8 +1075,9 @@
      "models": [
       "claude-fable-5"
      ],
-     "pages": 16,
-     "pdf": "pdf/claude/articles/faith/the-due-return.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "7ace8e2b38aaa230d0fdfbacf5fd235aa5fbb39d"
      },
@@ -1111,8 +1138,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 18,
-     "pdf": "pdf/gpt/articles/faith/the-due-return.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -1146,8 +1174,9 @@
      "models": [
       "claude-fable-5"
      ],
-     "pages": 33,
-     "pdf": "pdf/claude/articles/faith/trustful-surrender-to-divine-providence.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -1193,8 +1222,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 25,
-     "pdf": "pdf/gpt/articles/faith/trustful-surrender-to-divine-providence.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -1228,8 +1258,9 @@
      "models": [
       "claude-opus-5[1m]"
      ],
-     "pages": 38,
-     "pdf": "pdf/claude/articles/scripture/abraham-and-the-daylight-stars.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "7ace8e2b38aaa230d0fdfbacf5fd235aa5fbb39d"
      },
@@ -1260,8 +1291,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 8,
-     "pdf": "pdf/gpt/articles/scripture/abraham-and-the-daylight-stars.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
      },
@@ -1295,8 +1327,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 12,
-     "pdf": "pdf/gpt/articles/scripture/john-6-bread-from-heaven.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "3a90988fcd882bd784785396ee3b18dbe6517fc3"
      },
@@ -1330,8 +1363,9 @@
      "models": [
       "claude-opus-5[1m]"
      ],
-     "pages": 35,
-     "pdf": "pdf/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -1367,8 +1401,9 @@
      "models": [
       "gpt-5.6-sol"
      ],
-     "pages": 11,
-     "pdf": "pdf/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "3a90988fcd882bd784785396ee3b18dbe6517fc3"
      },
@@ -1402,8 +1437,9 @@
      "models": [
       "claude-fable-5"
      ],
-     "pages": 18,
-     "pdf": "pdf/claude/biographies/origen.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -1429,8 +1465,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 28,
-     "pdf": "pdf/gpt/biographies/origen.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -1464,8 +1501,9 @@
      "models": [
       "claude-fable-5"
      ],
-     "pages": 22,
-     "pdf": "pdf/claude/biographies/saint-augustine-of-hippo.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -1491,8 +1529,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 19,
-     "pdf": "pdf/gpt/biographies/saint-augustine-of-hippo.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -1526,8 +1565,9 @@
      "models": [
       "claude-fable-5"
      ],
-     "pages": 18,
-     "pdf": "pdf/claude/biographies/saint-jerome.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -1558,8 +1598,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 21,
-     "pdf": "pdf/gpt/biographies/saint-jerome.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -1593,8 +1634,9 @@
      "models": [
       "claude-fable-5"
      ],
-     "pages": 28,
-     "pdf": "pdf/claude/biographies/saint-paul.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -1625,8 +1667,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 27,
-     "pdf": "pdf/gpt/biographies/saint-paul.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -1660,8 +1703,9 @@
      "models": [
       "claude-opus-5[1m]"
      ],
-     "pages": 39,
-     "pdf": "pdf/claude/biographies/saint-peter.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "7ace8e2b38aaa230d0fdfbacf5fd235aa5fbb39d"
      },
@@ -1692,8 +1736,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 21,
-     "pdf": "pdf/gpt/biographies/saint-peter.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -1727,8 +1772,9 @@
      "models": [
       "claude-fable-5"
      ],
-     "pages": 29,
-     "pdf": "pdf/claude/biographies/saint-robert-bellarmine.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -1759,8 +1805,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 23,
-     "pdf": "pdf/gpt/biographies/saint-robert-bellarmine.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -1794,8 +1841,9 @@
      "models": [
       "claude-fable-5"
      ],
-     "pages": 18,
-     "pdf": "pdf/claude/biographies/saint-thomas-aquinas.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -1832,8 +1880,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 22,
-     "pdf": "pdf/gpt/biographies/saint-thomas-aquinas.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -1867,8 +1916,9 @@
      "models": [
       "claude-fable-5"
      ],
-     "pages": 28,
-     "pdf": "pdf/claude/biographies/tertullian.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -1894,8 +1944,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 30,
-     "pdf": "pdf/gpt/biographies/tertullian.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -1953,8 +2004,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 41,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/00-course-guide.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -1993,8 +2045,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 757,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/00-memory-workbook.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -2052,8 +2105,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 57,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/00-reference-grammar.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -2092,8 +2146,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 38,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/01-form-case-and-agreement.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -2133,8 +2188,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 37,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/02-noun-systems.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -2174,8 +2230,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 39,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/03-nouns-and-adjectives.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -2215,8 +2272,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 38,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/04-being-and-present-action.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -2256,8 +2314,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 38,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/05-perfect-passive-and-deponents.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -2297,8 +2356,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 47,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/01-foundations/06-pronouns-prepositions-and-reading.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -2338,8 +2398,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 42,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/07-reference-comparison-and-number.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -2379,8 +2440,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 41,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/08-infinitives-participles-and-absolutes.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -2420,8 +2482,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 53,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/09-subjunctive-system-purpose-result.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -2461,8 +2524,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 50,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/10-circumstance-conditions-characteristic.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -2502,8 +2566,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 41,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/11-commands-wishes-verbal-nouns.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -2543,8 +2608,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 41,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/02-core-grammar/12-adverbial-cases-order-compression.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -2584,8 +2650,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 40,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/03-missal-reading/13-reader-method-and-ordinary.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -2625,8 +2692,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 39,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/03-missal-reading/14-orations-and-petitions.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -2666,8 +2734,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 39,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/03-missal-reading/15-lessons-epistles-and-gospels.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -2707,8 +2776,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 41,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/03-missal-reading/16-chants-prefaces-and-canon.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -2748,8 +2818,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 41,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/03-missal-reading/17-temporal-sanctoral-and-commons.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -2789,8 +2860,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 55,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/03-missal-reading/18-holy-week-requiem-and-complete-mass.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -2830,8 +2902,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 39,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/19-register-and-biblical-texture.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -2871,8 +2944,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 41,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/20-allusion-rhetoric-and-periodic-prose.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -2912,8 +2986,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 43,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/21-collation-and-controlled-imitation.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -2953,8 +3028,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 47,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/22-guided-composition-and-independent-research.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -2994,8 +3070,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 24,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/01-textual-prosody.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -3035,8 +3112,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 22,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/02-hexameter.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -3076,8 +3154,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 22,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/03-elegiac-verse.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -3117,8 +3196,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 23,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/04-lyric-meters.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -3158,8 +3238,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 22,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/05-christian-poetics.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -3199,8 +3280,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 23,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/06-rhythmic-hymnody-and-sequences.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -3240,8 +3322,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 24,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/07-poetic-commentary.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -3281,8 +3364,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 25,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/04-advanced/poetry/08-verse-composition.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -3342,8 +3426,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 20,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/01-foundations.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -3403,8 +3488,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 20,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/02-core-grammar.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -3464,8 +3550,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 29,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/03-missal-reading.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -3525,8 +3612,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 28,
-     "pdf": "pdf/gpt/curriculums/ecclesiastical-latin/05-stage-assessments/04-advanced.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -3577,8 +3665,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 27,
-     "pdf": "pdf/gpt/devotions/novenas/00-ascension-to-pentecost.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -3611,8 +3700,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 11,
-     "pdf": "pdf/gpt/devotions/novenas/00-ascension-to-pentecost-daily-prayer.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "657ff02570e6d58844738ce44e90b209c0768bdc"
      },
@@ -3662,8 +3752,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 29,
-     "pdf": "pdf/gpt/devotions/novenas/10-our-lady-of-mount-carmel.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -3696,8 +3787,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 12,
-     "pdf": "pdf/gpt/devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "657ff02570e6d58844738ce44e90b209c0768bdc"
      },
@@ -3731,8 +3823,9 @@
      "models": [
       "claude-fable-5"
      ],
-     "pages": 17,
-     "pdf": "pdf/claude/history/biblical-translations/01-septuagint.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -3762,8 +3855,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 22,
-     "pdf": "pdf/gpt/history/biblical-translations/01-septuagint.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -3797,8 +3891,9 @@
      "models": [
       "claude-fable-5"
      ],
-     "pages": 18,
-     "pdf": "pdf/claude/history/biblical-translations/02-vulgate.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -3824,8 +3919,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 24,
-     "pdf": "pdf/gpt/history/biblical-translations/02-vulgate.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -4009,8 +4105,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 120,
-     "pdf": "pdf/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
      },
@@ -4049,8 +4146,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 33,
-     "pdf": "pdf/gpt/history/catholic-parish-histories/01-st-stanislaus-milwaukee.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -4084,8 +4182,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 28,
-     "pdf": "pdf/gpt/history/catholic-parish-histories/02-st-anthony-willits.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -4119,8 +4218,9 @@
      "models": [
       "claude-opus-5[1m]"
      ],
-     "pages": 36,
-     "pdf": "pdf/claude/history/traditional-priestly-institutes/01-sspx.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -4150,8 +4250,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 22,
-     "pdf": "pdf/gpt/history/traditional-priestly-institutes/01-sspx.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -4185,8 +4286,9 @@
      "models": [
       "claude-opus-5[1m]"
      ],
-     "pages": 47,
-     "pdf": "pdf/claude/history/traditional-priestly-institutes/02-fssp.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -4212,8 +4314,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 25,
-     "pdf": "pdf/gpt/history/traditional-priestly-institutes/02-fssp.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -4247,8 +4350,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 26,
-     "pdf": "pdf/gpt/history/traditional-priestly-institutes/03-icksp.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -4287,8 +4391,9 @@
      "models": [
       "claude-opus-5[1m]"
      ],
-     "pages": 38,
-     "pdf": "pdf/claude/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -4340,8 +4445,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 42,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/ordinary/00-ordinary-of-the-mass.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "7ace8e2b38aaa230d0fdfbacf5fd235aa5fbb39d"
      },
@@ -4410,8 +4516,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 16,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -4485,8 +4592,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 13,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/39-trinity-sunday.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -4555,8 +4663,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 12,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/41-second-after-pentecost.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -4606,8 +4715,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 13,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/43-third-after-pentecost.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -4677,8 +4787,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 11,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/44-fourth-after-pentecost.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -4737,8 +4848,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 13,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/45-fifth-after-pentecost.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -4797,8 +4909,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 12,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/46-sixth-after-pentecost.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -4867,8 +4980,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 12,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/47-seventh-after-pentecost.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -4907,8 +5021,9 @@
      "models": [
       "claude-opus-5[1m]"
      ],
-     "pages": 25,
-     "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "698eeffaf148a283cd0f3c74640aa90a66e33f4d"
      },
@@ -4979,8 +5094,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 11,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -5005,8 +5121,9 @@
      "also": [
       {
        "kind": "synthesis",
-       "pages": 12,
-       "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost-synthesis.pdf",
+       "pages": null,
+       "pdf": null,
+       "pdf_absent": "no PDF is installed for this issue",
        "subject": "Synthesis companion to the 1962 Roman Missal propers; complete appointed texts and the per-element reception sweep are omitted",
        "title": "Ninth Sunday after Pentecost (Synthesis Edition)"
       }
@@ -5045,8 +5162,9 @@
       "claude-opus-5[1m]",
       "gpt-5.6-sol"
      ],
-     "pages": 32,
-     "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "698eeffaf148a283cd0f3c74640aa90a66e33f4d"
      },
@@ -5063,8 +5181,9 @@
      "also": [
       {
        "kind": "synthesis",
-       "pages": 7,
-       "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost-synthesis.pdf",
+       "pages": null,
+       "pdf": null,
+       "pdf_absent": "no PDF is installed for this issue",
        "subject": "Synthesis companion to the 1962 Roman Missal propers; complete appointed texts and the per-element reception sweep are omitted",
        "title": "Ninth Sunday after Pentecost (Synthesis Edition)"
       }
@@ -5127,8 +5246,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 15,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -5153,8 +5273,9 @@
      "also": [
       {
        "kind": "synthesis",
-       "pages": 10,
-       "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost-synthesis.pdf",
+       "pages": null,
+       "pdf": null,
+       "pdf_absent": "no PDF is installed for this issue",
        "subject": "Research synthesis of the 1962 Roman Missal propers; complete appointed texts are reserved to the full edition",
        "title": "Tenth Sunday after Pentecost (Synthesis Edition)"
       }
@@ -5192,8 +5313,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 18,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "bee1d32dca8250883f27851a1589b6d4418df9d6"
      },
@@ -5218,8 +5340,9 @@
      "also": [
       {
        "kind": "synthesis",
-       "pages": 17,
-       "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost-synthesis.pdf",
+       "pages": null,
+       "pdf": null,
+       "pdf_absent": "no PDF is installed for this issue",
        "subject": "Synthesis companion to the 1962 Roman Missal propers; complete appointed texts and the per-element reception sweep are omitted in favour of an integrated cross-proper commentary",
        "title": "Eleventh Sunday after Pentecost: 1962 Roman Missal Proper Guide (Synthesis Edition)"
       }
@@ -5242,8 +5365,9 @@
       "claude-fable-5",
       "claude-opus-5[1m]"
      ],
-     "pages": 34,
-     "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "e216aad993d4853a1e93c34377eb935368069f97"
      },
@@ -5260,8 +5384,9 @@
      "also": [
       {
        "kind": "synthesis",
-       "pages": 12,
-       "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost-synthesis.pdf",
+       "pages": null,
+       "pdf": null,
+       "pdf_absent": "no PDF is installed for this issue",
        "subject": "Research synthesis of the 1962 Roman Missal propers; complete appointed texts are reserved to the full edition",
        "title": "Eleventh Sunday after Pentecost (Synthesis Edition)"
       }
@@ -5278,8 +5403,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 19,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "b3b507986321a056b3a02616cab978a798bbaceb"
      },
@@ -5304,8 +5430,9 @@
      "also": [
       {
        "kind": "synthesis",
-       "pages": 19,
-       "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost-synthesis.pdf",
+       "pages": null,
+       "pdf": null,
+       "pdf_absent": "no PDF is installed for this issue",
        "subject": "Synthesis companion to the 1962 Roman Missal propers; complete appointed texts and the per-element reception sweep are omitted",
        "title": "Twelfth Sunday after Pentecost (Synthesis Edition)"
       }
@@ -5328,8 +5455,9 @@
       "claude-fable-5",
       "claude-opus-5[1m]"
      ],
-     "pages": 36,
-     "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "e216aad993d4853a1e93c34377eb935368069f97"
      },
@@ -5346,8 +5474,9 @@
      "also": [
       {
        "kind": "synthesis",
-       "pages": 12,
-       "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost-synthesis.pdf",
+       "pages": null,
+       "pdf": null,
+       "pdf_absent": "no PDF is installed for this issue",
        "subject": "Research synthesis of the 1962 Roman Missal propers; complete appointed texts are reserved to the full edition",
        "title": "Twelfth Sunday after Pentecost (Synthesis Edition)"
       }
@@ -5369,8 +5498,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 20,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "b3b507986321a056b3a02616cab978a798bbaceb"
      },
@@ -5395,8 +5525,9 @@
      "also": [
       {
        "kind": "synthesis",
-       "pages": 19,
-       "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost-synthesis.pdf",
+       "pages": null,
+       "pdf": null,
+       "pdf_absent": "no PDF is installed for this issue",
        "subject": "Synthesis companion to the 1962 Roman Missal propers; complete appointed texts and the per-element reception sweep are omitted",
        "title": "Thirteenth Sunday after Pentecost (Synthesis Edition)"
       }
@@ -5419,8 +5550,9 @@
       "claude-fable-5",
       "claude-opus-5[1m]"
      ],
-     "pages": 43,
-     "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "e216aad993d4853a1e93c34377eb935368069f97"
      },
@@ -5437,8 +5569,9 @@
      "also": [
       {
        "kind": "synthesis",
-       "pages": 13,
-       "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost-synthesis.pdf",
+       "pages": null,
+       "pdf": null,
+       "pdf_absent": "no PDF is installed for this issue",
        "subject": "Research synthesis of the 1962 Roman Missal propers; complete appointed texts are reserved to the full edition",
        "title": "Thirteenth Sunday after Pentecost (Synthesis Edition)"
       }
@@ -5455,8 +5588,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 23,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "b3b507986321a056b3a02616cab978a798bbaceb"
      },
@@ -5573,8 +5707,9 @@
      "also": [
       {
        "kind": "synthesis",
-       "pages": 12,
-       "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost-synthesis.pdf",
+       "pages": null,
+       "pdf": null,
+       "pdf_absent": "no PDF is installed for this issue",
        "subject": "Research synthesis of the 1962 Roman Missal propers; complete appointed texts are reserved to the full edition",
        "title": "Fourteenth Sunday after Pentecost (Synthesis Edition)"
       }
@@ -5601,8 +5736,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 18,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "2778285849f2973ea89d1cfd5b2751ed4ae58e54"
      },
@@ -5627,8 +5763,9 @@
      "also": [
       {
        "kind": "synthesis",
-       "pages": 11,
-       "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.pdf",
+       "pages": null,
+       "pdf": null,
+       "pdf_absent": "no PDF is installed for this issue",
        "subject": "Research synthesis of the 1962 Roman Missal propers; complete appointed texts are reserved to the full edition",
        "title": "Fifteenth Sunday after Pentecost (Synthesis Edition)"
       }
@@ -5680,8 +5817,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 14,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "run_id": "e0fc63e64fc66336",
       "seed_commit": "c59d42a85932ff5bdb3236e154c5db796aea8017",
@@ -5700,6 +5838,75 @@
     }
    ],
    "leaf": "liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost",
+   "section": "liturgy"
+  },
+  {
+   "catalog": null,
+   "catalog_page": null,
+   "editions": [
+    {
+     "also": [
+      {
+       "kind": "synthesis",
+       "pages": null,
+       "pdf": null,
+       "pdf_absent": "no PDF is installed for this issue",
+       "subject": "Synthesis companion to the 1962 Roman Missal propers; complete appointed texts and the per-element reception sweep are omitted",
+       "title": "Sixteenth Sunday after Pentecost (Synthesis Edition)"
+      }
+     ],
+     "authorization": null,
+     "contributions": [
+      {
+       "model": "claude-opus-5[1m]",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent (authoring of the canonical leaf from the research-synthesis brief of workflow proper v25: the propers map and four senses; the page-2 dossier sheet built on the generated Scripture chronology projection, with the three settings the corpus leaves standing at the Communion, the two disputed labels at the Epistle and the Gospel, and the composition place, first audience and life stage recorded as not supplied; the complete appointed-text component against the collated text control, with the English gap marked at every element where the Douay answers the psalter and not the chant; the two-page thematic movement; the element-by-element detailed commentary with the Benziger collation, the fifteen divergences against the Clementine, and the reception dossiers for Augustine, Chrysostom, Cyril, Ambrose, Bede, Benedict, Gregory, Aquinas and Trent; the six cross-proper claims of the source-grounded synthesis, including the three strands, the AMS and Ottobonianus evidence and the Sarum split; the integrated commentary for the synthesis companion, organised by four cross-proper questions; the five audited notable-and-quotable entries and the six audited interpretive proposals; the terminal scope appendix and References; and the component manifest, leaf-local format, web-edition record and source-bindings record); Claude Code CLI 2.1.261; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5[1m]",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent (iteration-1 revision of the canonical leaf against seventeen blocking content-evaluation findings carried into this stage and against the amended research brief: the References entry for the chant database repointed to the printing its index cites; two Clementine comparands restored to the tracked text; the tracked-registry bound carried at every statement of a chant's further appointments; the terminal appendix's carried-forward source-record items restated as the records now stand; the Ephesians-course discrepancy restored as unresolved with both construals; the cross-proper claims redistributed so that Source-Grounded Synthesis Across the Propers carries only the transmission of the three strands, the chants' other appointments, the general rules framing the day and the reach of the registered English, with its roadmap and claim order made to agree; the integrated commentary rebuilt on four cross-proper units drawn from the element-level evidence; three arithmetic and enumeration defects corrected at the four measures, the chants printed elsewhere and the Frankish Gelasian's offsets; the Ps. 85:1 / Ps. 16:6 relation restated as a shared petition-form in all three places that printed it; and the reader-facing register of the page-2 dossiers, the appointed-text section, the element-by-element commentary, the integrated commentary, the synthesis section and the gallery rewritten to state findings rather than the search that produced them); Claude Code CLI 2.1.261; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5[1m]",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent (iteration-2 revision of the canonical leaf against eleven blocking content-evaluation findings carried into this stage and against the rewritten research brief, whose seven lanes returned three further direct psalm commentators and a formulary-level commentator: the element-by-element commentary rebuilt so that Cassiodorus, Theodoret of Cyrus and Robert Bellarmine stand beside Augustine at all five appointed psalms, with Jerome adjudicating the wording at the Offertory and the Communion and Guéranger read at the Collect, the Epistle, the Gradual, the Gospel, the Offertory, the Secret, the Communion and the Postcommunion; the four divergences those witnesses open --- what tota die measures, who speaks in the Gradual's psalm, what the Alleluia's wonders are, what iustitiae tuae solius excludes and what the Communion's three ages are --- carried into the thematic movement, the integrated commentary and the four senses; the statement that the psalm reception stands on one Latin Father and that no Greek psalm commentary reaches the five withdrawn from both editions; the Clementine's reading at Ps. 101:17 corrected and the tense and the noun of videbitur in maiestate sua separated; the claim that every checked witness's lemma differs from the missal replaced by the two rules the evidence supports; the Matt. 11:29 and 11:30 relation at the Introit's mitis restated across both verses; the map's Postcommunion connection cell and the Gradual's corrected; the Introit's English-gap count corrected; the 1955 general decree, the descent of the Sarum split into the English prayer books, Gerbert's own pages and the fixity of the ten appointed texts from 1862 to 1962 added to the source-grounded synthesis; the gallery's fifth entry changed from Eph. 3:21 in Dickens to Luke 14:11 in Nietzsche, with the 1882 witness for the gastric inner man; the interpretive proposals' sixth mechanism corrected and two textual controls added; References given the tracked calendar registry, the Catholic Encyclopedia articles by volume and New Advent number, and entries for every witness newly used; the terminal appendix rewritten to the searched result; nineteen source bindings added; and the reader-facing register of the commentary, the source-grounded synthesis, the integrated commentary and the thematic movement rewritten to state findings about sources rather than the search, the retrieval state and the evidence class behind them); Claude Code CLI 2.1.261; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5[1m]",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent (iteration-3 revision of the canonical leaf against eight blocking content-evaluation findings: the century-chain claim that the ten appointed texts do not move from 1862 to 1962 separated into its two halves, so that the texts and their order are claimed and the psalm citations of the 1920 typical edition and the pre-1955 Benziger are carried as an inference from uncorrected optical layers that garble this formulary's own numerals, with the References entry for those two books and the terminal appendix stating that no page image of either was opened; the Cassiodorus corroboration in the thematic movement moved off the Introit's Ps. 85, at which the two Latins divide, onto the Communion's Ps. 70, where his quae nullis meritis praecedentibus gratis semper impenditur stands against Augustine's nullis nostris meritis praecedentibus, with the corroboration-not-independence bound travelling with it; the Communion's votive appointment pro quacumque necessitate taken off the tracked calendar registry, which holds no votive Masses, and carried on the 1962 book's own text layer in all three places that state it; Sermo 165 named as the third of Augustine's three works on the four measures rather than a fourth text, in both editions; the four readings of iustitiae tuae solius fixed as the four psalm commentators' with Gueranger a fifth voice from outside the exegetical tradition, in both editions; a References entry added for the Antwerp 1614 Lapide printing whose extent the commentary publishes; Feltoe's 1896 Cambridge edition retitled Sacramentarium Leonianum; and the Plato locus in the first gallery entry carried as an unverified lead); Claude Code CLI 2.1.261; unexposed: server revision"
+      },
+      {
+       "model": "claude-opus-5[1m]",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent (iteration-4 revision of the canonical leaf against seven blocking content-evaluation findings: the Epistle's and the Gospel's other appointments in the 1962 calendar, and the two negatives built on them --- that Eph. 3:20--21 stands at no other Mass and that Luke 14:12--15 and 14:25 are appointed nowhere --- carried on the tracked calendar registry in both editions, with the registry's References entry rescoped from the chants alone to every element measured against it; Rubricae generales n. 18 and Missal rubric 298 attributed to the reference guide to the 1962 calendar that prints them, which References now names; the Offertory's dropped simul restated so that the Clementine's Ps. 39:15 carries the word, the Ps. 69:3 doublet does not, and the agreement stops at ut auferant eam; the Introit's count of Augustine's lemma differences made to agree with the witnessnote under it; the Alleluia's canticum novum count attached to the four places carrying the full incipit rather than to the nine; the optical state of the 1920 typical edition and the pre-1955 Benziger stated as a fact about those books' layers and their damaged numerals in the commentary and the source-grounded synthesis, and the two-state disclosure at the Gueranger witnessnote left to the terminal appendix and References that already carry it; and the gallery's preamble and its first, second and fifth entries rewritten so that each carries its phrase, its later user, its locus and its turn and nothing about the handling of the evidence); Claude Code CLI 2.1.261; unexposed: server revision"
+      }
+     ],
+     "eligibility": "eligible",
+     "models": [
+      "claude-opus-5[1m]"
+     ],
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
+     "produced": {
+      "run_id": "e4aebcbd941b6b1a",
+      "seed_commit": "b66eb4b44d8e76801a86275b19c3a2e45713b4ab",
+      "workflow_digest": "ad4a5ea8193bdaf4b5f7a3f261fd5377fd49208f49b709cd794aeb635d20cd46",
+      "workflow_id": "proper",
+      "workflow_version": "25"
+     },
+     "provider": "claude",
+     "reviewed": "2026-09-05",
+     "revised": "2026-09-06T14:40:00Z",
+     "status": null,
+     "subject": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
+     "title": "Sixteenth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)",
+     "title_source": "src/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/main.tex"
+    }
+   ],
+   "leaf": "liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost",
    "section": "liturgy"
   },
   {
@@ -5775,8 +5982,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 26,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
      },
@@ -5812,8 +6020,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 7,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
      },
@@ -5903,8 +6112,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 26,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
      },
@@ -5983,8 +6193,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 34,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
      },
@@ -6018,8 +6229,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 13,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
      },
@@ -6083,8 +6295,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 30,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
      },
@@ -6118,8 +6331,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 12,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
      },
@@ -6153,8 +6367,9 @@
      "models": [
       "claude-opus-5[1m]"
      ],
-     "pages": 40,
-     "pdf": "pdf/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -6186,8 +6401,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 40,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -6221,8 +6437,9 @@
      "models": [
       "claude-opus-5[1m]"
      ],
-     "pages": 45,
-     "pdf": "pdf/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -6253,8 +6470,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 19,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/liturgical-calendar.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -6469,8 +6687,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 11,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
      },
@@ -6679,8 +6898,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 13,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
      },
@@ -6889,8 +7109,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 11,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
      },
@@ -7099,8 +7320,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 10,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
      },
@@ -7309,8 +7531,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 16,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
      },
@@ -7524,8 +7747,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 12,
-     "pdf": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "b4b86b826817c4c154632760164c19cf2797347a"
      },
@@ -7559,8 +7783,9 @@
      "models": [
       "claude-opus-5[1m]"
      ],
-     "pages": 36,
-     "pdf": "pdf/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -7606,8 +7831,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 46,
-     "pdf": "pdf/gpt/liturgy/roman-rite/comparative/two-missals-one-sacrifice.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -7641,8 +7867,9 @@
      "models": [
       "claude-opus-5[1m]"
      ],
-     "pages": 38,
-     "pdf": "pdf/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -7693,8 +7920,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 77,
-     "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -7767,8 +7995,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 14,
-     "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s26-most-holy-trinity-year-a.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -7841,8 +8070,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 14,
-     "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s27-most-holy-body-and-blood-of-christ-year-a.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -7911,8 +8141,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 12,
-     "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-eleventh-sunday-in-ordinary-time-year-a.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -7981,8 +8212,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 12,
-     "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-twelfth-sunday-in-ordinary-time-year-a.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -8051,8 +8283,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 12,
-     "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-thirteenth-sunday-in-ordinary-time-year-a.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -8121,8 +8354,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 12,
-     "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-fourteenth-sunday-in-ordinary-time-year-a.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -8191,8 +8425,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 12,
-     "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-fifteenth-sunday-in-ordinary-time-year-a.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -8226,8 +8461,9 @@
      "models": [
       "claude-opus-5[1m]"
      ],
-     "pages": 21,
-     "pdf": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -8288,8 +8524,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 12,
-     "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -8314,8 +8551,9 @@
      "also": [
       {
        "kind": "synthesis",
-       "pages": 16,
-       "pdf": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+       "pages": null,
+       "pdf": null,
+       "pdf_absent": "no PDF is installed for this issue",
        "subject": "Synthesis companion to the source-first guide to PC-S41-A",
        "title": "Seventeenth Sunday in Ordinary Time, Year A (Synthesis Edition)"
       }
@@ -8338,8 +8576,9 @@
       "claude-opus-5[1m]",
       "GPT-5-based Codex agent"
      ],
-     "pages": 30,
-     "pdf": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -8356,8 +8595,9 @@
      "also": [
       {
        "kind": "synthesis",
-       "pages": 9,
-       "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+       "pages": null,
+       "pdf": null,
+       "pdf_absent": "no PDF is installed for this issue",
        "subject": "Synthesis companion to the source-audited proper exposition, PC-S41-A",
        "title": "Seventeenth Sunday in Ordinary Time: Year A (Synthesis Edition)"
       }
@@ -8415,8 +8655,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 13,
-     "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -8441,8 +8682,9 @@
      "also": [
       {
        "kind": "synthesis",
-       "pages": 10,
-       "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+       "pages": null,
+       "pdf": null,
+       "pdf_absent": "no PDF is installed for this issue",
        "subject": "Synthesis companion to the source-audited proper exposition, PC-S42-A",
        "title": "Eighteenth Sunday in Ordinary Time: Year A (Synthesis Edition)"
       }
@@ -8464,8 +8706,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 18,
-     "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "69841c232397c171487f906f9f5c6cd59369e6af"
      },
@@ -8490,8 +8733,9 @@
      "also": [
       {
        "kind": "synthesis",
-       "pages": 10,
-       "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b-synthesis.pdf",
+       "pages": null,
+       "pdf": null,
+       "pdf_absent": "no PDF is installed for this issue",
        "subject": "Synthesis companion to the source-audited proper exposition, PC-S42-B",
        "title": "Eighteenth Sunday in Ordinary Time: Year B (Synthesis Edition)"
       }
@@ -8513,8 +8757,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 16,
-     "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "69841c232397c171487f906f9f5c6cd59369e6af"
      },
@@ -8539,8 +8784,9 @@
      "also": [
       {
        "kind": "synthesis",
-       "pages": 8,
-       "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c-synthesis.pdf",
+       "pages": null,
+       "pdf": null,
+       "pdf_absent": "no PDF is installed for this issue",
        "subject": "Synthesis companion to the source-audited proper exposition, PC-S42-C",
        "title": "Eighteenth Sunday in Ordinary Time: Year C (Synthesis Edition)"
       }
@@ -8562,8 +8808,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 13,
-     "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "69841c232397c171487f906f9f5c6cd59369e6af"
      },
@@ -8608,8 +8855,9 @@
       "claude-opus-5[1m]",
       "GPT-5-based Codex agent"
      ],
-     "pages": 39,
-     "pdf": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -8640,8 +8888,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 18,
-     "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -8691,8 +8940,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 81,
-     "pdf": "pdf/gpt/theology/heresies/heresies-in-catholic-history.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -8726,8 +8976,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 8,
-     "pdf": "pdf/gpt/theology/mariology/angelus.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -8772,8 +9023,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 44,
-     "pdf": "pdf/gpt/theology/mariology/apparitions.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -8811,8 +9063,9 @@
      "models": [
       "claude-fable-5"
      ],
-     "pages": 65,
-     "pdf": "pdf/claude/theology/mariology/ark-of-the-covenant.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "2b9233978bcd8e798467bffaccf699b96031d97a"
      },
@@ -8838,8 +9091,9 @@
      "models": [
       "gpt-5.6-sol"
      ],
-     "pages": 46,
-     "pdf": "pdf/gpt/theology/mariology/ark-of-the-covenant.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "2b9233978bcd8e798467bffaccf699b96031d97a"
      },
@@ -8873,8 +9127,9 @@
      "models": [
       "claude-opus-5[1m]"
      ],
-     "pages": 32,
-     "pdf": "pdf/claude/theology/mariology/champion.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -8905,8 +9160,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 33,
-     "pdf": "pdf/gpt/theology/mariology/champion.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -8940,8 +9196,9 @@
      "models": [
       "gpt-5.6-sol"
      ],
-     "pages": 7,
-     "pdf": "pdf/gpt/theology/mariology/doctrinal-authority.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -8975,8 +9232,9 @@
      "models": [
       "claude-opus-5[1m]"
      ],
-     "pages": 37,
-     "pdf": "pdf/claude/theology/mariology/fatima.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -9013,8 +9271,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 32,
-     "pdf": "pdf/gpt/theology/mariology/fatima.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -9048,8 +9307,9 @@
      "models": [
       "claude-fable-5"
      ],
-     "pages": 40,
-     "pdf": "pdf/claude/theology/mariology/guadalupe.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "7ace8e2b38aaa230d0fdfbacf5fd235aa5fbb39d"
      },
@@ -9086,8 +9346,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 30,
-     "pdf": "pdf/gpt/theology/mariology/guadalupe.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -9121,8 +9382,9 @@
      "models": [
       "claude-opus-5[1m]"
      ],
-     "pages": 54,
-     "pdf": "pdf/claude/theology/mariology/la-salette.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -9154,8 +9416,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 33,
-     "pdf": "pdf/gpt/theology/mariology/la-salette.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -9189,8 +9452,9 @@
      "models": [
       "claude-fable-5"
      ],
-     "pages": 30,
-     "pdf": "pdf/claude/theology/mariology/lourdes.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "7ace8e2b38aaa230d0fdfbacf5fd235aa5fbb39d"
      },
@@ -9227,8 +9491,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 31,
-     "pdf": "pdf/gpt/theology/mariology/lourdes.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -9262,8 +9527,9 @@
      "models": [
       "claude-fable-5"
      ],
-     "pages": 36,
-     "pdf": "pdf/claude/theology/mariology/marian-dogmas.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -9295,8 +9561,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 35,
-     "pdf": "pdf/gpt/theology/mariology/marian-dogmas.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -9330,8 +9597,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 8,
-     "pdf": "pdf/gpt/theology/mariology/regina-coeli.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -9365,8 +9633,9 @@
      "models": [
       "claude-fable-5"
      ],
-     "pages": 32,
-     "pdf": "pdf/claude/theology/mariology/rosary.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -9403,8 +9672,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 27,
-     "pdf": "pdf/gpt/theology/mariology/rosary.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -9458,8 +9728,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 71,
-     "pdf": "pdf/gpt/theology/sacraments.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },
@@ -9492,8 +9763,9 @@
       "gpt-5.6-sol",
       "GPT-5-based Codex agent"
      ],
-     "pages": 10,
-     "pdf": "pdf/gpt/theology/sacraments-at-a-glance.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "55ed511c34c8984e70e910d8e256fa111ecc026b"
      },
@@ -9531,8 +9803,9 @@
      "models": [
       "GPT-5-based Codex agent"
      ],
-     "pages": 49,
-     "pdf": "pdf/gpt/theology/virtues.pdf",
+     "pages": null,
+     "pdf": null,
+     "pdf_absent": "no PDF is installed for this issue",
      "produced": {
       "install_commit": "01fcbfda26917a4028d256f7a5d20a50cc847005"
      },

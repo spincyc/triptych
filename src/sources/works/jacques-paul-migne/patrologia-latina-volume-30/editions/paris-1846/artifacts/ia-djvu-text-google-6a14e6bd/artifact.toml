@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.jacques-paul-migne.patrologia-latina-volume-30.paris-1846.ia-djvu-text-google-6a14e6bd"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-30.paris-1846"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "Migne's Patrologia Latina volume 30 was published at Paris in 1846, the volume's own title page reading PATROLOGIA TOMUS XXX / S. HIERONYMI TOMUS UNDECIMUS / PARISIIS ... 1846, and a work first published abroad before 1931 is out of United States copyright; that line is the one guidance/missals.md records from Cornell's public-domain chart as current on 1 January 2026 and it moves every January, so it is written here as derived for calendar year 2026 and not as a standing rule. 1846 clears it by eighty-five years. Restoration under 17 U.S.C. 104A could not reach it either: ninety-five years from 1846 ran out in 1941, so nothing remained to restore on 1 January 1996. These exact bytes are another matter. The same probes were run over this file: \"digitized by google\" 109, \"books google com\" 1, and its first seven lines are Google's own reproduction statement -- \"This is a reproduction of a library book that was digitized by Google as part of an ongoing effort to preserve the information in books and make it universally accessible.\" That is Google-authored prose and no distribution grant for it was established, so the file is recorded and not retained, following the disposition already settled at artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1843.ia-djvu-ocr."
+source_url = "https://archive.org/download/patrologiae_cursus_completus_lat_vol_030/patrologiae_cursus_completus_lat_vol_030_djvu.txt"
+provenance = "Acquired over HTTPS by the liturgical-history research lane of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "6a14e6bd238b04bddd9f2c99b0093a605dc3b830e6446ebf399ffd8dc0155772"
+byte_size = 3931045
+encoding = "utf-8"
+indexable = false
+notes = "A second, independent digitisation of the whole of the same 1846 printing, 79,941 LF-terminated lines, fetched as a cross-check on the readings taken from the other text layer. Extent as measured by the retrieving lane: A second, independent digitisation of the whole of the same 1846 printing of PL vol. 30, fetched purely as a cross-check on the readings and on the negative below.. ACCESS LIMITATION: not retained for the reason in `rights_basis`; the cross-check it supported can be replayed only by re-fetching this exact URL and this digest. It is NOT derived from the sibling text layer and no derived_from edge is asserted: they are separate scans of separate copies."

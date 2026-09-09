@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.gregorien-info.gregorien-info-chant-database.web-2026-09-05.manuscript-piece-84-monza-38b2487b"
+edition_id = "edition.gregorien-info.gregorien-info-chant-database.web-2026-09-05"
+artifact_type = "web-page"
+media_type = "text/html"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "The chant texts these pages index are ancient and in the public domain, and the manuscript sigla, Hesbert numbers and edition references they print are facts rather than expression. The page itself is another matter: it is a rendered view of the site's own database and carries no licence statement anywhere in the retrieved bytes -- the footer offers only \"Imprint\" and \"Data Protection\" links, which were not followed because a lane may retrieve and this stage may not. `tracked` requires an affirmative recorded distribution basis and this delivery supplies none, so the exact bytes are hashed and recorded and not retained. Availability and a successful download are expressly not relied on."
+source_url = "https://gregorien.info/manuscript/piece/84/en"
+provenance = "Acquired over HTTPS by the liturgical-history research lane of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "38b2487bd86ac93bef65a2ab19038dbc65ef7ca4aea067bf12475896f74e0fc2"
+byte_size = 64815
+indexable = false
+notes = "Rendered gregorien.info page carrying the chant index of the Monza cantatorium. Extent as measured by the retrieving lane: Complete alphabetical index of the 203 chants the database assigns to the Monza cantatorium, each with its AMS number; the list runs to the end of the alphabet and is not truncated.. ACCESS LIMITATION. These exact bytes are not retained because the delivery states no distribution basis for the site's own database view; a reader without the network cannot open this page from a checkout, and this repository holds no other copy of the database's readings. What it says about a manuscript is the database's reading and remains an unverified lead until collated against the manuscript or against Hesbert's printed Antiphonale Missarum Sextuplex."

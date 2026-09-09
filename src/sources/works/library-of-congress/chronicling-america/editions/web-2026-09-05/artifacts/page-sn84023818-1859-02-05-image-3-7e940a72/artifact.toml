@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.library-of-congress.chronicling-america.web-2026-09-05.page-sn84023818-1859-02-05-image-3-7e940a72"
+edition_id = "edition.library-of-congress.chronicling-america.web-2026-09-05"
+artifact_type = "ocr-text"
+media_type = "application/json"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Two layers, and both are clear for the pages registered here. The newspaper text is a United States publication of 1859, before 1929, and is in the United States public domain by publication date. The delivery is a response of the Library of Congress's own text service; a work of the United States Government is not subject to copyright protection in the United States (17 U.S.C. 105), and the optical character recognition it carries is machine output, which adds no human authorship on top of a public-domain page (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999), cited as reasoning). The response carries no licence statement, no notice and no condition anywhere in its bytes, which was checked rather than assumed. NOT RELIED ON: that the service is available or that the download succeeded."
+rights_jurisdiction = "United States"
+source_url = "https://tile.loc.gov/text-services/word-coordinates-service?segment=/service/ndnp/nhd/batch_nhd_eisenhower_ver01/data/sn84023818/00517015441/1859020501/0233.xml&format=alto_xml&full_text=1"
+provenance = "Acquired over HTTPS by the cultural-afterlife research lane of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "7e940a72fe87c508fa9a295eaa3ce0de24db5ac8d4c1acd456f15e0f01d37413"
+byte_size = 39430
+path = "src/sources/works/library-of-congress/chronicling-america/editions/web-2026-09-05/artifacts/page-sn84023818-1859-02-05-image-3-7e940a72/dollar-weekly-mirror-1859-02-05-image-3.json"
+indexable = false
+notes = "Uncorrected optical text of one newspaper page, Dollar Weekly Mirror, Manchester, New Hampshire, 5 February 1859, image 3 (LCCN sn84023818), as served by the Library of Congress word-coordinates service. Extent as measured by the retrieving lane: OCR full text of one newspaper page only - Dollar Weekly Mirror (Manchester, N.H.), 5 February 1859, image 3 - retrieved to classify the earliest hit, which proved to be a funeral sermon. ONE PAGE OF ONE ISSUE: the rest of the issue was not retrieved and nothing may be read off this file about any other page. The recognition is uncorrected and a raw-line search over it cannot exclude a differently recognised spelling; the JSON wrapper puts the whole page text on one physical line, so raw-line search over it is nearly useless and the file is not registered indexable."

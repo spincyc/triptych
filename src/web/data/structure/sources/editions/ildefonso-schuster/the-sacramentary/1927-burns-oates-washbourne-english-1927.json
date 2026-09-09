@@ -1,6 +1,21 @@
 {
  "artifacts": [
   {
+   "artifact_type": "ocr-text",
+   "byte_size": 1149699,
+   "edition_owned": true,
+   "id": "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-djvu-ocr-volume-3-4d8c8988",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Uncorrected optical text of the whole of volume III, 27628 LF-terminated lines, valid UTF-8, no CR bytes. Extent as measured by the retrieving lane: Complete DjVu optical-text layer of the whole of Schuster, The Sacramentary (Liber Sacramentorum), English vol. III ('The Eternal Nuptials of the Lamb: the sacred Liturgy from Trinity Sunday to Advent'), from Internet Archive item LiberSacramentorum -- the same item whose vol. 3 PDF is registered here as artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-scan-volume-3-410f6d11. This is the text layer and NOT the registered PDF bytes; the source record for that PDF states it carries no usable text layer, so this layer is an independent optical reading of the same scan.. This is the text layer of the same Internet Archive item whose PDF is registered on this edition as ia-scan-volume-3-410f6d11; the two are different bytes and this one is NOT derived from the registered PDF, so no derived_from edge is asserted. QUOTE FROM THIS ARTIFACT ONLY THROUGH A CHECKED PASSAGE: it is uncorrected recognition and a raw-line negative over it establishes nothing about the printed page.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "The English volume was published at London in 1927 and its United States copyright term, at most ninety-five years from publication under 17 U.S.C. 304, expired at the end of 2022; Schuster died in 1954 and the named translator, Arthur Levelis-Marke, earlier still, so no life-based term reaches it in the United States either. THE TEST WAS RUN OVER THESE BYTES AND NOT ASSUMED. The question for an Internet Archive optical text layer is whether Google's own prose is inside the file, and this repository already answers it the same way twice, in opposite directions: artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf is tracked because its file carries the four-word page-foot stamp and no Google-authored prose, and artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1843.ia-djvu-ocr stands remote and unresolved because its first sixty-five lines are Google's front-matter block entire. The same probes were run here, case-insensitively over the whole file with runs of non-alphanumeric characters collapsed, because this class of scan doubles its spaces: \"usage guidelines\" 0; \"about google book search\" 0; \"this is a digital copy\" 0; \"digitized by google\" 0; \"google book search\" 0. Not one word of Google-authored prose is in this file and no notice, licence, reservation or condition of any kind appears in it. A faithful mechanical reproduction of a public-domain work is not original authorship (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)), and machine optical character recognition adds no human authorship on top of it, so there is no author to hold a right in the text layer. NOT RELIED ON: that the item is available, that the download succeeded, or that any host marks the scan public domain.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/LiberSacramentorum/The%20Sacramentary%20%28Liber%20Sacramentorum%29%3A%20Historical%20%26%20Liturgical%20Notes%20on%20the%20Roman%20Missal%20%28vol.%203%29_djvu.txt",
+   "storage": "tracked"
+  },
+  {
    "artifact_type": "facsimile-pdf",
    "byte_size": 158333284,
    "edition_owned": true,

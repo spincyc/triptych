@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.cassiodorus.expositio-psalmorum.latin-corpus-corporum-monumenta-web-2026-09-05.monumenta-ps70-apparatus-latin-text"
+edition_id = "edition.cassiodorus.expositio-psalmorum.latin-corpus-corporum-monumenta-web-2026-09-05"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This file carries the printed Latin alone. Cassiodorus's sixth-century text is public domain everywhere and the nineteenth-century printing it descends from, Migne's Patrologia Latina 70, is out of United States copyright whichever state of Migne's series it is, that series having been printed between 1844 and 1866 -- which printing is not established here, because the pages carry no PL 70 column marker and name no edition; every element of monumenta.ch's own delivery -- its HTML, its per-sectio anchor links, its Google-Translate links, its navigation and its tooltip scripts -- has been removed by the stated transformation, so nothing authored by the host survives in these bytes. A faithful transcription of a public-domain text originates no separate copyright, originality being required by Feist Publications, Inc. v. Rural Telephone Service Co., 499 U.S. 340, 345 (1991). NOT RELIED ON: that the page is reachable, that the fetch succeeded, or that the host marks anything public domain -- it marks nothing at all."
+rights_jurisdiction = "United States"
+provenance = "Derived by script on 2026-09-05 from the exact parent delivery named in `derived_from`, whose SHA-256 and byte size were recomputed over the retained file and matched before the derivation ran. Nothing reached the network and no source text passed through a language model."
+retrieved = "2026-09-05"
+sha256 = "3745f10012379c67101d850b5709b8555a8b5323a6ea97cf609e3af1eb3ced3a"
+byte_size = 30024
+path = "src/sources/works/cassiodorus/expositio-psalmorum/editions/latin-corpus-corporum-monumenta-web-2026-09-05/artifacts/monumenta-ps70-apparatus-latin-text/cassiodorus-ps70-latin.txt"
+derived_from = "artifact.cassiodorus.expositio-psalmorum.latin-corpus-corporum-monumenta-web-2026-09-05.monumenta-ps70-15d9747f"
+transformation = "Deterministic, offline, and no source text passed through a language model. Over the exact parent bytes: split the page into <tr> rows; keep only a row whose first cell carries the host's own sectio anchor, <a name=\"N\" class=\"satznummer\">, and discard the interleaved rows whose only content is the host's \"Translate this sectio\" link (class=\"tinytext\"); take that row's second <td>, drop every remaining tag, decode HTML entities, normalise to NFC, collapse runs of whitespace, and emit one LF-terminated UTF-8 line per sectio beginning with the host's own sectio number and a tab. The script refuses to write an empty file if no numbered sectio row is found. This is a normalisation and not a facsimile: Migne's printed columns, line breaks and typography are not recoverable from it, and the sectio numbering is the host's own division and not Migne's or Cassiodorus's."
+encoding = "utf-8"
+indexable = true
+notes = "Cassiodorus's whole exposition of Vulgate Psalm 70 (in Psalmum LXX), from the psalm title through the conclusio psalmi, 33 LF-terminated lines, one per sectio, each beginning with the host's own sectio number. It carries Migne's marginal verse numerals in the form \"(Vers. 1.)\" and his manuscript variants in square brackets, because it is derived from the apparatus delivery. This is a transcription of a transcription and not a critical text: a claim about what Migne or Adriaen printed cannot be settled on it. A raw-line search here runs over one sectio at a time, which is the unit the host divides by, and a sectio can be a long paragraph."

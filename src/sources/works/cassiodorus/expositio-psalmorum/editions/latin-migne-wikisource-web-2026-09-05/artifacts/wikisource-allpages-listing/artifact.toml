@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.cassiodorus.expositio-psalmorum.latin-migne-wikisource-web-2026-09-05.wikisource-allpages-listing"
+edition_id = "edition.cassiodorus.expositio-psalmorum.latin-migne-wikisource-web-2026-09-05"
+artifact_type = "search-response"
+media_type = "application/json"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The response body was read in full before this basis was written. It is the MediaWiki API's own machine listing and nothing else: an envelope of three keys and 34 page titles, with no article text, no template, no header, no navigation, no category and no contributed prose of any kind, so none of the CC BY-SA 4.0 wiki markup that keeps this repository from retaining a Wikisource page is present in it. A list of titles is not copyrightable expression, originality being required by Feist Publications, Inc. v. Rural Telephone Service Co., 499 U.S. 340, 345 (1991), and the file carries no notice, licence or condition. NOT RELIED ON: that the endpoint is reachable or that the request succeeded."
+rights_jurisdiction = "United States"
+source_url = "https://la.wikisource.org/w/api.php?action=query&list=allpages&apprefix=Expositio%20in%20Psalterium&aplimit=500&format=json"
+provenance = "Acquired over HTTPS by the patristic-reception research lane of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "bdda74b4dfc45c5726025d5789af37956eb52cab45a6b7ce6802b8c6c59d7d49"
+byte_size = 2116
+path = "src/sources/works/cassiodorus/expositio-psalmorum/editions/latin-migne-wikisource-web-2026-09-05/artifacts/wikisource-allpages-listing/wikisource-allpages-expositio-in-psalterium.json"
+encoding = "utf-8"
+indexable = true
+notes = "THE RECEIPT THAT FIXES THIS ROUTE'S EXTENT, and the reason it is retained rather than left remote: a bounded negative that a reader cannot replay is not a bounded negative. Extent as measured by the retrieving lane: Complete unpaginated allpages listing for the prefix, 34 titles and no continuation token, which is the whole of what Latin Wikisource holds under Expositio in Psalterium: the work page, a disambiguating title, an introduction, one page numbered I, and Psalms 1 through 30. None of Psalms 39, 70, 85, 97 or 101 is present, which is the bound this receipt fixes. Read off these exact bytes: 34 titles, no \"continue\" key, the highest psalm number 30. The listing states the extent of Latin Wikisource's transcription on 2026-09-05 and nothing about any other route or any other date."

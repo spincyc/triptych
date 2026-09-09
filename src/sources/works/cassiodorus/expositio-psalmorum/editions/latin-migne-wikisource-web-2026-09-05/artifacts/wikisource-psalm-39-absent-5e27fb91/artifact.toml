@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.cassiodorus.expositio-psalmorum.latin-migne-wikisource-web-2026-09-05.wikisource-psalm-39-absent-5e27fb91"
+edition_id = "edition.cassiodorus.expositio-psalmorum.latin-migne-wikisource-web-2026-09-05"
+artifact_type = "web-page"
+media_type = "text/html"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "Two rights objects, and they are kept apart. The Latin that Latin Wikisource transcribes on this route is ancient and public domain, and Migne's printing of it is in the United States public domain by publication date. The wiki source of the page -- its templates, headers, navigation banners, links, categories and interface furniture -- is contributed matter licensed CC BY-SA 4.0, a condition on the contributors' markup rather than on the text beneath it. These exact bytes carry that markup, so they are hashed and recorded and not retained, which is the settled treatment of Latin Wikisource deliveries in this repository and is described in THIRD_PARTY.md."
+source_url = "https://la.wikisource.org/wiki/Expositio_in_Psalterium/39"
+provenance = "Acquired over HTTPS by the precedent-search research lane of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "5e27fb91951dc0c8214e11bcbb4e2dd924a807acea02eb3b6b205c1c4f66ba5f"
+byte_size = 38163
+indexable = false
+notes = "THE RECEIPT OF A NEGATIVE, NOT A TEXT OF THE WORK: the HTTP 404 \"page does not exist\" document Latin Wikisource returns for the Offertory's psalm. It carries no word of Cassiodorus. Extent as measured by the retrieving lane: The HTTP 404 'page does not exist' document returned for the Offertory's psalm; retained as the receipt of the negative, not as text of the work. The two deliveries registered for Psalm 85 on this edition differ by one byte and were fetched by two lanes minutes apart, which is what a MediaWiki error page does. ACCESS LIMITATION. What is not retained is a MediaWiki interface document under CC BY-SA 4.0 contributed markup; it is not retained because it carries share-alike matter and no text of the work. What a reader without the network can open instead is the machine listing that states the same absence positively, at artifact.cassiodorus.expositio-psalmorum.latin-migne-wikisource-web-2026-09-05.wikisource-allpages-listing."

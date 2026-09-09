@@ -1,0 +1,166 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "search-response",
+   "byte_size": 2116,
+   "edition_owned": true,
+   "id": "artifact.cassiodorus.expositio-psalmorum.latin-migne-wikisource-web-2026-09-05.wikisource-allpages-listing",
+   "media_type": "application/json",
+   "notes": "THE RECEIPT THAT FIXES THIS ROUTE'S EXTENT, and the reason it is retained rather than left remote: a bounded negative that a reader cannot replay is not a bounded negative. Extent as measured by the retrieving lane: Complete unpaginated allpages listing for the prefix, 34 titles and no continuation token, which is the whole of what Latin Wikisource holds under Expositio in Psalterium: the work page, a disambiguating title, an introduction, one page numbered I, and Psalms 1 through 30. None of Psalms 39, 70, 85, 97 or 101 is present, which is the bound this receipt fixes. Read off these exact bytes: 34 titles, no \"continue\" key, the highest psalm number 30. The listing states the extent of Latin Wikisource's transcription on 2026-09-05 and nothing about any other route or any other date.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "The response body was read in full before this basis was written. It is the MediaWiki API's own machine listing and nothing else: an envelope of three keys and 34 page titles, with no article text, no template, no header, no navigation, no category and no contributed prose of any kind, so none of the CC BY-SA 4.0 wiki markup that keeps this repository from retaining a Wikisource page is present in it. A list of titles is not copyrightable expression, originality being required by Feist Publications, Inc. v. Rural Telephone Service Co., 499 U.S. 340, 345 (1991), and the file carries no notice, licence or condition. NOT RELIED ON: that the endpoint is reachable or that the request succeeded.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://la.wikisource.org/w/api.php?action=query&list=allpages&apprefix=Expositio%20in%20Psalterium&aplimit=500&format=json",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "web-page",
+   "byte_size": 65010,
+   "edition_owned": true,
+   "id": "artifact.cassiodorus.expositio-psalmorum.latin-migne-wikisource-web-2026-09-05.wikisource-index-c531d00e",
+   "media_type": "text/html",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://la.wikisource.org/wiki/Expositio_in_Psalterium",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "web-page",
+   "byte_size": 38193,
+   "edition_owned": true,
+   "id": "artifact.cassiodorus.expositio-psalmorum.latin-migne-wikisource-web-2026-09-05.wikisource-psalm-101-absent-54589412",
+   "media_type": "text/html",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://la.wikisource.org/wiki/Expositio_in_Psalterium/101",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "web-page",
+   "byte_size": 66192,
+   "edition_owned": true,
+   "id": "artifact.cassiodorus.expositio-psalmorum.latin-migne-wikisource-web-2026-09-05.wikisource-psalm-16-control-dcc9b5c4",
+   "media_type": "text/html",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://la.wikisource.org/wiki/Expositio_in_Psalterium/16",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "web-page",
+   "byte_size": 68011,
+   "edition_owned": true,
+   "id": "artifact.cassiodorus.expositio-psalmorum.latin-migne-wikisource-web-2026-09-05.wikisource-psalm-24-control-50c3c595",
+   "media_type": "text/html",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://la.wikisource.org/wiki/Expositio_in_Psalterium/24",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "web-page",
+   "byte_size": 38163,
+   "edition_owned": true,
+   "id": "artifact.cassiodorus.expositio-psalmorum.latin-migne-wikisource-web-2026-09-05.wikisource-psalm-39-absent-5e27fb91",
+   "media_type": "text/html",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://la.wikisource.org/wiki/Expositio_in_Psalterium/39",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "web-page",
+   "byte_size": 38162,
+   "edition_owned": true,
+   "id": "artifact.cassiodorus.expositio-psalmorum.latin-migne-wikisource-web-2026-09-05.wikisource-psalm-70-absent-a27c7656",
+   "media_type": "text/html",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://la.wikisource.org/wiki/Expositio_in_Psalterium/70",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "web-page",
+   "byte_size": 38163,
+   "edition_owned": true,
+   "id": "artifact.cassiodorus.expositio-psalmorum.latin-migne-wikisource-web-2026-09-05.wikisource-psalm-85-absent-9065e82d",
+   "media_type": "text/html",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://la.wikisource.org/wiki/Expositio_in_Psalterium/85",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "web-page",
+   "byte_size": 38162,
+   "edition_owned": true,
+   "id": "artifact.cassiodorus.expositio-psalmorum.latin-migne-wikisource-web-2026-09-05.wikisource-psalm-85-absent-e9df53fb",
+   "media_type": "text/html",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://la.wikisource.org/wiki/Expositio_in_Psalterium/85",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "web-page",
+   "byte_size": 38162,
+   "edition_owned": true,
+   "id": "artifact.cassiodorus.expositio-psalmorum.latin-migne-wikisource-web-2026-09-05.wikisource-psalm-97-absent-505e5637",
+   "media_type": "text/html",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://la.wikisource.org/wiki/Expositio_in_Psalterium/97",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-09-05",
+  "editors": [
+   "Jacques-Paul Migne"
+  ],
+  "id": "edition.cassiodorus.expositio-psalmorum.latin-migne-wikisource-web-2026-09-05",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Migne Latin text transcribed at Latin Wikisource, consulted 2026-09-05",
+  "title": "Expositio in Psalterium, Migne transcription at Latin Wikisource, 2026-09-05 delivery state",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Expositio in Psalterium",
+   "Exposition of the Psalms"
+  ],
+  "author": "Cassiodorus",
+  "category": "patristic-psalm-commentary",
+  "description": "Cassiodorus's Latin exposition of the Psalter. A locus is Vulgate psalm number followed by the local numbered section in the consulted transcription.",
+  "id": "work.cassiodorus.expositio-psalmorum",
+  "languages": [
+   "la"
+  ],
+  "title": "Expositio Psalmorum"
+ }
+}

@@ -1,0 +1,59 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 29513,
+   "edition_owned": true,
+   "id": "artifact.elizabeth-barrett-browning.sonnets-from-the-portuguese.gutenberg-ebook-2002.gutenberg-pg2002-body-lf",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "All forty-four sonnets, transcribed from the 1906 Caradoc Press printing as the eBook's own credit line states. 97 LF-terminated lines. The Project Gutenberg licence, trademark references and marker lines are not in this file; Triptych claims no exclusive right in the source wording. It is a transcription and not a facsimile.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "The work was published in 1850, and the transcribed printing in 1906, before 1929, so it is in the United States public domain by publication date; Barrett Browning died in 1861. The Project Gutenberg wrapper is excluded from this file by the stated transformation.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "plain-text",
+   "byte_size": 53488,
+   "edition_owned": true,
+   "id": "artifact.elizabeth-barrett-browning.sonnets-from-the-portuguese.gutenberg-ebook-2002.gutenberg-pg2002-raw-b193a12e",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Project Gutenberg eBook 2002 as fetched on the retrieval date, wrapper included. Extent as measured by the retrieving lane: complete Project Gutenberg text of Sonnets from the Portuguese, all forty-four sonnets plus PG header and licence. ACCESS LIMITATION: these exact bytes are not retained because of the Gutenberg wrapper alone; the book text itself is retained whole and may be reopened offline at artifact.elizabeth-barrett-browning.sonnets-from-the-portuguese.gutenberg-ebook-2002.gutenberg-pg2002-body-lf.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "licensed",
+   "rights_basis": "Two things have to be separated. Project Gutenberg's permission page states that the vast majority of its eBooks are in the public domain in the United States and that nobody can grant or withhold permission to use them -- but that is a statement about the book, not about the file. This file is wrapped in Project Gutenberg's licence header and footer, which carry the Project Gutenberg trademark and conditions on its use. The wrapper-bearing bytes are therefore recorded as the hashed derivation input and are not retained in Git; what is retained is the derivative named in `notes`, from which the wrapper has been removed, leaving only the text whose rights the permission page settles.",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.gutenberg.org/cache/epub/2002/pg2002.txt",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-09-05",
+  "editors": [],
+  "id": "edition.elizabeth-barrett-browning.sonnets-from-the-portuguese.gutenberg-ebook-2002",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "Project Gutenberg electronic edition, eBook 2002, transcribed from the 1906 Caradoc Press edition by David Price, consulted 2026-09-05",
+  "title": "Sonnets from the Portuguese, Project Gutenberg eBook 2002",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Elizabeth Barrett Browning",
+  "category": "poetry-collection",
+  "description": "Forty-four love sonnets, of which the forty-third opens \"How do I love thee? Let me count the ways.\"",
+  "id": "work.elizabeth-barrett-browning.sonnets-from-the-portuguese",
+  "languages": [
+   "en"
+  ],
+  "title": "Sonnets from the Portuguese"
+ }
+}

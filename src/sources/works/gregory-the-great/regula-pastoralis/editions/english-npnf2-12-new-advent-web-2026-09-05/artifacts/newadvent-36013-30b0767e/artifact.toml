@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.gregory-the-great.regula-pastoralis.english-npnf2-12-new-advent-web-2026-09-05.newadvent-36013-30b0767e"
+edition_id = "edition.gregory-the-great.regula-pastoralis.english-npnf2-12-new-advent-web-2026-09-05"
+artifact_type = "web-page"
+media_type = "text/html"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "The translation printed inside these bytes is the NPNF translation of the Regula pastoralis from Nicene and Post-Nicene Fathers, Second Series, volume 12 (New York, 1895), which is in the United States public domain by publication date. That settles the translation and not this file. New Advent wraps it in the site's navigation, styling, advertising markup, support solicitation and \"About this page\" apparatus under a footer reading \"Copyright (c) 2026 by New Advent LLC\", and prints on the page that the text was revised and edited for New Advent. The retention route that src/sources/inventories/catholic-encyclopedia-rights-v1.toml opens for New Advent's cathen ARTICLE pages does not reach a fathers page, as the sibling record artifact.gregory-the-great.regula-pastoralis.english-npnf2-12-new-advent-web-2026-09-05.newadvent-36013-a327986c already records. No affirmative distribution basis for these exact bytes has been established, so none is asserted."
+source_url = "https://www.newadvent.org/fathers/36013.htm"
+provenance = "Acquired over HTTPS by the source-citation-coverage research lane of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "30b0767ec013d2a4e2125366eadb7770af3bd79976f3523f1f949f792d677fd7"
+byte_size = 329853
+indexable = false
+notes = "A SECOND DELIVERY OF A PAGE THIS EDITION ALREADY REGISTERS, and it is a separate artifact because the bytes moved: 329,853 against the 329,906 registered at artifact.gregory-the-great.regula-pastoralis.english-npnf2-12-new-advent-web-2026-09-05.newadvent-36013-a327986c, both fetched on 2026-09-05. The re-verifying lane diffed the two against the retained payload and reports the whole difference to be one stylesheet href -- New Advent serves the same document with and without PageSpeed-rewritten asset URLs -- with the extracted text identical at 244,457 characters, and two fetches minutes apart returning this same digest. THE CONSEQUENCE FOR STALENESS CHECKING, which is why this record exists: a newadvent.org digest is not reproducible on demand, so a mismatch there is not evidence that the source changed. Extent as measured by the retrieving lane: the complete Regula pastoralis book III page as the host serves it now, 329,853 bytes against the registered 329,906; the difference is one stylesheet href and the extracted text is identical at 244,457 characters ACCESS LIMITATION. The page is not retained, for the reason in `rights_basis`; neither is its sibling, and Regula pastoralis III is not held in Latin here either -- the absence is recorded on this edition."

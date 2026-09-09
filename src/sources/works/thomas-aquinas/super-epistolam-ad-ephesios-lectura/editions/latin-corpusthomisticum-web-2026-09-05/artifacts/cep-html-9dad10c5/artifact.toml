@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.thomas-aquinas.super-epistolam-ad-ephesios-lectura.latin-corpusthomisticum-web-2026-09-05.cep-html-9dad10c5"
+edition_id = "edition.thomas-aquinas.super-epistolam-ad-ephesios-lectura.latin-corpusthomisticum-web-2026-09-05"
+artifact_type = "html"
+media_type = "text/html; charset=utf-8"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "The medieval Latin text is public domain, but the Corpus Thomisticum transcription, editorial revision, presentation, markup and apparatus retain the site's stated rights: the page names Enrique Alarcon as the reviser of a machine transcription and carries no licence. Exact response bytes are hashed but not redistributed. This follows the disposition already settled for Corpus Thomisticum deliveries at artifact.thomas-aquinas.super-psalmos.latin-corpusthomisticum-web-2026-07-28.cps41-html-7879ef13."
+source_url = "https://www.corpusthomisticum.org/cep.html"
+provenance = "Acquired over HTTPS by the patristic-reception research lane of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "9dad10c5c2dde8cf5f74fbc4b8ecb62bb4808d6e98dd6510759ac7f6ef932e6e"
+byte_size = 351481
+indexable = false
+notes = "Exact Corpus Thomisticum response for the whole Super Epistolam ad Ephesios lectura, prooemium through chapter 6. Extent as measured by the retrieving lane: complete Corpus Thomisticum page for the whole Super Epistolam ad Ephesios lectura, prooemium through chapter 6. ACCESS LIMITATION. Restricted bytes are not retained and may not enter Git, build products, tests, fixtures or public artifacts: the site claims its own rights in the transcription as well as in the presentation, so unlike a host whose markup alone is encumbered there is no underlying layer this project may extract and keep. A reader without the network cannot open this text from a checkout at all, and no other witness to it is held here."

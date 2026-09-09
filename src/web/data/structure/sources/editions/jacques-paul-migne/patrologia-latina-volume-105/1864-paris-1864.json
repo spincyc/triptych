@@ -1,0 +1,50 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "ocr-text",
+   "byte_size": 4636959,
+   "edition_owned": true,
+   "id": "artifact.jacques-paul-migne.patrologia-latina-volume-105.paris-1864.ia-djvu-text-e40c76d6",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Uncorrected optical text of the whole volume, 110894 LF-terminated lines, valid UTF-8. Extent as measured by the retrieving lane: Complete Internet Archive optical-text layer of the whole of J.-P. Migne, Patrologiae cursus completus, Series Latina, vol. 105, which carries the Amalarian corpus. Retrieved as the one attempt this lane made on the medieval liturgical expositors and searched whole for 'mensis septimi', 'septimo mense', 'quatuor tempora', 'post Pentecosten' and 'de ordine antiphonarii'; the volume's Amalarian matter proves to be the Regula canonicorum and the four books De ecclesiasticis officiis, whose treatment of the Ember fasts is general and names no Sunday of the post-Pentecost series. A bounded negative: nothing in this lane rests on these bytes. QUOTE FROM THIS ARTIFACT ONLY THROUGH A CHECKED PASSAGE. It is uncorrected recognition of a two-column nineteenth-century printing, its line order is unreliable across the columns, and a raw-line negative over it cannot exclude a differently recognised spelling -- which bounds the searched negative the retrieving lane recorded on it.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "The volume was published at Paris in 1864, and a work first published abroad before 1931 is out of United States copyright; that line is the one guidance/missals.md records from Cornell's public-domain chart as current on 1 January 2026 and it moves every January, so it is written here as derived for calendar year 2026 and not as a standing rule. Restoration under 17 U.S.C. 104A could not reach it either: ninety-five years from 1864 ran out in 1959, so nothing remained to restore on 1 January 1996. THE GOOGLE QUESTION WAS DECIDED ON THESE BYTES. Probes run case-insensitively over the whole file with runs of non-alphanumeric characters collapsed, because this class of scan doubles its spaces: \"usage guidelines\" 0; \"about google book search\" 0; \"this is a digital copy\" 0; \"digitized by google\" 0; \"google book search\" 0. Google's front-matter block is absent and no notice, licence, reservation or condition of any kind appears in the file; the file opens instead with the Internet Archive's own scanning credit, \"Digitized by the Internet Archive in 2011 with funding from University of Toronto\". A faithful mechanical reproduction of a public-domain work is not original authorship (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)), and machine optical character recognition adds no human authorship on top of it. NOT RELIED ON: that the item is available, that the download succeeded, or that any host marks the scan public domain.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/patrologiaecur105mign/patrologiaecur105mign_djvu.txt",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1864",
+  "editors": [
+   "Jacques-Paul Migne"
+  ],
+  "id": "edition.jacques-paul-migne.patrologia-latina-volume-105.paris-1864",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Excudebatur et venit apud J.-P. Migne editorem, in via dicta d'Amboise, Parisiis, 1864",
+  "title": "Patrologiae cursus completus, series latina, tomus CV (Paris, 1864)",
+  "translators": [],
+  "year": 1864
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Patrologia Latina 105",
+   "PL 105",
+   "Patrologiae cursus completus, tomus CV"
+  ],
+  "author": "Jacques-Paul Migne",
+  "category": "patristic-collection",
+  "description": "The hundred and fifth volume of Migne's Latin series, printed at Paris in 1864, whose \"Elenchus auctorum et operum qui in hoc tomo CV continentur\" carries the Amalarian corpus -- the Regula canonicorum and the four books De ecclesiasticis officiis -- beside Agobard of Lyons. A locus is the printed column number.",
+  "id": "work.jacques-paul-migne.patrologia-latina-volume-105",
+  "languages": [
+   "la"
+  ],
+  "title": "Patrologiae cursus completus, series latina, tomus CV"
+ }
+}

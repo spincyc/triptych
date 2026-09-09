@@ -122,6 +122,21 @@
   },
   {
    "artifact_type": "web-page",
+   "byte_size": 67294,
+   "edition_owned": true,
+   "id": "artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05485a-e144286e",
+   "media_type": "text/html",
+   "notes": "Clifford, Cornelius. \"Epistle to the Ephesians.\" The Catholic Encyclopedia. Vol. 5. New York: Robert Appleton Company, 1909. A SECOND DELIVERY OF A PAGE THIS EDITION ALREADY REGISTERS: 67,294 bytes against the 67,653 registered at artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05485a-66d722ae, both fetched on 2026-09-05. The re-verifying lane found five Catholic Encyclopedia pages each exactly 359 bytes shorter than registered and no \"pagespeed\" string in the current bytes, and places them in the same class as the Gregory page it diffed directly, where the whole difference was one PageSpeed-rewritten stylesheet href; for these five that is an inference from the uniform deficit and not a diff, because the earlier bytes were not retained. Extent as measured by the retrieving lane: the complete 'Epistle to the Ephesians' article as the host serves it now, 67,294 bytes against the registered 67,653; recorded as the sample of the five Catholic Encyclopedia pages showing the uniform 359-byte deficit NO SECOND COPY OF THE ARTICLE TEXT IS RETAINED HERE. The article extracted from the sibling delivery is already retained at artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05485a-66d722ae-article-text, 44,176 bytes, and that is what a reader without the network opens; registering a second extraction of an unchanged article would put the same words in the tree twice.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "The Catholic Encyclopedia article is in the public domain in the United States: its volume was published between 1907 and 1912, so the longest term available to it under 17 U.S.C. 304 expired at the end of 2007 at the latest. What is not republished from this repository is New Advent's own layer of these exact bytes -- the site's navigation, styling, advertising markup, support solicitation and \"About this page\" apparatus -- which is why the delivery stays remote. That apparatus encumbers the page, not the article printed inside it. Settled once in src/sources/inventories/catholic-encyclopedia-rights-v1.toml.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://www.newadvent.org/cathen/05485a.htm",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "web-page",
    "byte_size": 34306,
    "edition_owned": true,
    "id": "artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05535a-50771778",

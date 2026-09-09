@@ -1,0 +1,63 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "web-page",
+   "byte_size": 118157,
+   "edition_owned": true,
+   "id": "artifact.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-a5280977",
+   "media_type": "text/plain",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://la.wikisource.org/w/index.php?title=Quaestiones_Evangeliorum_(ed._Migne)&action=raw",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 117690,
+   "edition_owned": true,
+   "id": "artifact.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-latin-text",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The printed Latin of both books of Augustine's Quaestiones euangeliorum, 126 LF-terminated lines. Not a facsimile and not a collation against the printed column; Migne's column numbers stand inline as bare numerals and are retained.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "This file carries the printed Latin alone. Migne's Patrologia Latina 35 is in the United States public domain by publication date and the ancient Latin inside it is public domain everywhere; every template, header, navigation banner, link, category and heading contributed at la.wikisource.org has been removed by the stated transformation, so nothing licensed CC BY-SA 4.0 survives in these bytes. A faithful transcription of a public-domain text originates no separate copyright, originality being required by Feist Publications, Inc. v. Rural Telephone Service Co., 499 U.S. 340, 345 (1991).",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-09-05",
+  "editors": [
+   "Jacques-Paul Migne",
+   "Corpus Corporum, University of Zurich"
+  ],
+  "id": "edition.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Dated web state of the Corpus Corporum transcription of the text reprinted in Jacques-Paul Migne, Patrologia Latina 35, reproduced at la.wikisource.org and consulted 2026-09-05",
+  "title": "Quaestiones euangeliorum, Migne's Latin as transcribed by Corpus Corporum and reproduced at la.wikisource.org",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Quaestiones evangeliorum",
+   "Questions on the Gospels"
+  ],
+  "author": "Augustine of Hippo",
+  "category": "patristic-gospel-questions",
+  "description": "Augustine's two books of short answers to questions raised by passages of Matthew and Luke, each book preceded by its own capitula list. Book II follows Luke in order. A locus is book.question.",
+  "id": "work.augustine.quaestiones-euangeliorum",
+  "languages": [
+   "la"
+  ],
+  "title": "Quaestiones euangeliorum"
+ }
+}

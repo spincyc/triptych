@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.cantus-index.cantus-index.web-2026-09-05.record-g01215-bb892a7a"
+edition_id = "edition.cantus-index.cantus-index.web-2026-09-05"
+artifact_type = "web-page"
+media_type = "text/html"
+storage = "restricted"
+rights_status = "licensed"
+rights_basis = "The page states its own licence in its footer: \"This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.\" The status is therefore `licensed` and the licence is named in `license`, because a status alone cannot say whether republication is permitted. That grant is real but it is not one this repository can take up for these bytes: it forbids commercial use and requires ShareAlike, and this repository distributes its own contributions under CC BY 4.0, which imposes neither, so retaining the file would put material under a public git tree whose conditions the tree's own licence does not carry and whose notice this stage has no authority to write into THIRD_PARTY.md. Lawful access therefore does not extend to redistribution from here, and the bytes stay out of Git, build products, tests, fixtures and public artifacts. The chant text printed inside the page is ancient and unaffected by any of this."
+license = "CC BY-NC-SA 4.0"
+source_url = "https://cantusindex.org/id/g01215"
+provenance = "Acquired over HTTPS by the liturgical-history research lane of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "bb892a7ac88dcb8d8bd16be410755db5b79e5fe4bce11d6c1962447864d06324"
+byte_size = 25737
+indexable = false
+notes = "Cantus Index record page g01215, for the Communion Domine memorabor. Extent as measured by the retrieving lane: Complete Cantus Index record page for the Communion, same limitation.. ACCESS LIMITATION. Restricted bytes are not retained and may not enter Git; a reader without the network cannot open this record from a checkout. The identity, the digest and the licence finding are kept here so that the witness stays citable without being republished."

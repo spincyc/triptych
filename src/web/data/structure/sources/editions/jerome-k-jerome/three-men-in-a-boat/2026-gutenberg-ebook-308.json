@@ -1,0 +1,59 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 359534,
+   "edition_owned": true,
+   "id": "artifact.jerome-k-jerome.three-men-in-a-boat.gutenberg-ebook-308.gutenberg-pg308-body-lf",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "All nineteen chapters of the 1889 novel. 1446 LF-terminated lines. The Project Gutenberg licence, trademark references and marker lines are not in this file; Triptych claims no exclusive right in the source wording. It is a transcription and not a facsimile.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "The work was published in 1889, before 1929, so it is in the United States public domain by publication date; Jerome died in 1927, so no life-based term reaches it either. The Project Gutenberg wrapper is excluded from this file by the stated transformation, so no Gutenberg trademark or licence condition travels with these bytes.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "plain-text",
+   "byte_size": 394007,
+   "edition_owned": true,
+   "id": "artifact.jerome-k-jerome.three-men-in-a-boat.gutenberg-ebook-308.gutenberg-pg308-raw-96f8a594",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Project Gutenberg eBook 308 as fetched on the retrieval date, wrapper included. Extent as measured by the retrieving lane: complete Project Gutenberg text of the 1889 novel, all nineteen chapters plus PG header and licence; the cited sentence stands in chapter XIX. ACCESS LIMITATION: these exact bytes are not retained because of the Gutenberg wrapper alone; the book text itself is retained whole and may be reopened offline at artifact.jerome-k-jerome.three-men-in-a-boat.gutenberg-ebook-308.gutenberg-pg308-body-lf.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "licensed",
+   "rights_basis": "Two things have to be separated. Project Gutenberg's permission page states that the vast majority of its eBooks are in the public domain in the United States and that nobody can grant or withhold permission to use them -- but that is a statement about the book, not about the file. This file is wrapped in Project Gutenberg's licence header and footer, which carry the Project Gutenberg trademark and conditions on its use. The wrapper-bearing bytes are therefore recorded as the hashed derivation input and are not retained in Git; what is retained is the derivative named in `notes`, from which the wrapper has been removed, leaving only the text whose rights the permission page settles.",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.gutenberg.org/cache/epub/308/pg308.txt",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-09-05",
+  "editors": [],
+  "id": "edition.jerome-k-jerome.three-men-in-a-boat.gutenberg-ebook-308",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "Project Gutenberg electronic edition, eBook 308, transcription credited to David Price and Margaret Price, consulted 2026-09-05",
+  "title": "Three Men in a Boat, Project Gutenberg eBook 308",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Jerome K. Jerome",
+  "category": "novel",
+  "description": "Jerome K. Jerome's comic novel of a Thames boating holiday, in nineteen chapters.",
+  "id": "work.jerome-k-jerome.three-men-in-a-boat",
+  "languages": [
+   "en"
+  ],
+  "title": "Three Men in a Boat (To Say Nothing of the Dog)"
+ }
+}

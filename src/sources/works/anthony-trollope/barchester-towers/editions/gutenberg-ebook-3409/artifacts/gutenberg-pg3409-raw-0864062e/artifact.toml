@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.anthony-trollope.barchester-towers.gutenberg-ebook-3409.gutenberg-pg3409-raw-0864062e"
+edition_id = "edition.anthony-trollope.barchester-towers.gutenberg-ebook-3409"
+artifact_type = "plain-text"
+media_type = "text/plain; charset=utf-8"
+storage = "remote"
+rights_status = "licensed"
+rights_basis = "Two things have to be separated. Project Gutenberg's permission page states that the vast majority of its eBooks are in the public domain in the United States and that nobody can grant or withhold permission to use them -- but that is a statement about the book, not about the file. This file is wrapped in Project Gutenberg's licence header and footer, which carry the Project Gutenberg trademark and conditions on its use. The wrapper-bearing bytes are therefore recorded as the hashed derivation input and are not retained in Git; what is retained is the derivative named in `notes`, from which the wrapper has been removed, leaving only the text whose rights the permission page settles."
+license = "Project Gutenberg License"
+source_url = "https://www.gutenberg.org/cache/epub/3409/pg3409.txt"
+provenance = "Acquired over HTTPS by the cultural-afterlife research lane of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "0864062ea4f3c34ffbcd4dbf0461878a84d69afe756012f00f6e9e942998c544"
+byte_size = 1134017
+indexable = false
+notes = "Project Gutenberg eBook 3409 as fetched on the retrieval date, wrapper included. Extent as measured by the retrieving lane: complete Project Gutenberg text of Barchester Towers, all fifty-three chapters; four occurrences of \"inner man\" present. ACCESS LIMITATION: these exact bytes are not retained because of the Gutenberg wrapper alone; the book text itself is retained whole and may be reopened offline at artifact.anthony-trollope.barchester-towers.gutenberg-ebook-3409.gutenberg-pg3409-body-lf."

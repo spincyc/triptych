@@ -61,6 +61,32 @@
    "storage": "tracked"
   },
   {
+   "artifact_type": "facsimile-page-image",
+   "byte_size": 961551,
+   "edition_owned": true,
+   "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-bookreader-leaf-437-62750f41",
+   "media_type": "image/jpeg",
+   "page_count": 1,
+   "retrieved": "2026-09-05",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://archive.org/download/romanmissaltran00churgoog/page/n437_w1400.jpg",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "facsimile-page-image",
+   "byte_size": 951874,
+   "edition_owned": true,
+   "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-bookreader-leaf-439-8899e8da",
+   "media_type": "image/jpeg",
+   "page_count": 1,
+   "retrieved": "2026-09-05",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://archive.org/download/romanmissaltran00churgoog/page/n439_w1400.jpg",
+   "storage": "remote"
+  },
+  {
    "artifact_type": "ocr-text",
    "byte_size": 1358135,
    "edition_owned": true,
@@ -6692,10 +6718,11 @@
    "states": [
     "cataloged",
     "acquired",
-    "inspected"
+    "inspected",
+    "verified"
    ],
    "storage": "tracked",
-   "verified_on": null,
+   "verified_on": "2026-09-05",
    "withheld": "not-prose"
   },
   {
@@ -6705,7 +6732,7 @@
    "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.post-pentecosten-16.collect",
    "locus": "post-pentecosten-16/collect",
    "media_type": "text/tab-separated-values; charset=utf-8",
-   "notes": "Wording collated character by character against the 1861 page image on 2026-07-25, and the formulary correspondence checked against the Latin `Tua nos, quaesumus, Domine, gratia semper et praeveniat et sequatur` at marginal number 1575 of the 1962 Vatican typical edition in the CMAA facsimile, SHA-256 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a. The 1861 English is a free devotional rendering, not a word-for-word translation, and is quoted as an identified historical English witness only.",
+   "notes": "Wording collated character by character against the 1861 page image on 2026-07-25, and the formulary correspondence checked against the Latin `Tua nos, quaesumus, Domine, gratia semper et praeveniat et sequatur` at marginal number 1593 of the 1962 Vatican typical edition (printed p. 397; artifact PDF p. 478). CORRECTION OF 2026-09-05: this sentence previously read \"marginal number 1575\", which was wrong. No. 1575 in that facsimile is the Gradual of the Fourteenth Sunday, `Bonum est confidere in Domino`, printed p. 396 and read at artifact PDF p. 477. The error was confined to this note: the passage’s own locus, text, page, leaf and formulary correspondence were and are right, and nothing in the wording changed. The right number was established on the controlling edition’s own page images by the facsimile collation recorded at src/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/propers/verified.md, and agrees with the calendar index in the CMAA facsimile, SHA-256 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a. The 1861 English is a free devotional rendering, not a word-for-word translation, and is quoted as an identified historical English witness only.",
    "readable": true,
    "rights": "public-domain",
    "rights_basis": "The 1861 Philadelphia printing was published long before 1929 and is in the public domain in the United States. This file contains only that printing's own English wording, transcribed by this project; a faithful transcription of a public-domain text originates no new copyright, and no Google or Internet Archive front matter, markup, annotation, or page-image material is reproduced.",

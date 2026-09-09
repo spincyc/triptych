@@ -1,0 +1,62 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 2162547,
+   "edition_owned": true,
+   "id": "artifact.miguel-de-cervantes.don-quijote-de-la-mancha.gutenberg-ebook-2000.gutenberg-pg2000-body-lf",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Both parts. The maxim stands once, in Primera parte capítulo XI: \"- Con todo eso, te has de sentar; porque a quien se humilla, Dios le ensalza.\" 5334 LF-terminated lines, one per source paragraph. It is a transcription and not a facsimile: the printing's pagination, line breaks and typography are not recoverable from it.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "The work was first published at Madrid in 1615, and a work first published abroad before 1931 is out of United States copyright; that line is the one guidance/missals.md records from Cornell's public-domain chart as current on 1 January 2026 and it moves every January, so it is written here as derived for calendar year 2026 and not as a standing rule. Restoration under 17 U.S.C. 104A could not reach it either: ninety-five years from 1615 ran out in 1710, so nothing remained to restore on 1 January 1996. The Project Gutenberg wrapper -- its licence, its trademark references and its marker lines -- is excluded from this file by the stated transformation, so nothing Project Gutenberg authored survives in these bytes and Triptych claims no exclusive right in the source wording. THE FILE ITSELF NAMES NO PRINTING: its Project Gutenberg header gives only a title, an author, a translator or editor where there is one, a release date and a language, so the first-publication fact above is the work's, carried on this work's own record, and not a statement about which printing was transcribed. That is enough to settle the rights question and not enough to identify an edition, which is why the edition record claims none.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "plain-text",
+   "byte_size": 2225803,
+   "edition_owned": true,
+   "id": "artifact.miguel-de-cervantes.don-quijote-de-la-mancha.gutenberg-ebook-2000.gutenberg-pg2000-raw-534f41d5",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Project Gutenberg eBook 2000 as fetched on the retrieval date, wrapper included. Extent as measured by the retrieving lane: complete Project Gutenberg Spanish text of Don Quijote (eBook 2000), both parts, plus PG header and licence; one occurrence of the maxim, in Primera parte Capitulo XI ACCESS LIMITATION: these exact bytes are not retained because of the Gutenberg wrapper alone; the text itself is retained whole and may be reopened offline at artifact.miguel-de-cervantes.don-quijote-de-la-mancha.gutenberg-ebook-2000.gutenberg-pg2000-body-lf.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "licensed",
+   "rights_basis": "Two things have to be separated. Project Gutenberg's permission page states that the vast majority of its eBooks are in the public domain in the United States and that nobody can grant or withhold permission to use them -- but that is a statement about the book, not about the file. This file is wrapped in Project Gutenberg's licence header and footer, which carry the Project Gutenberg trademark and conditions on its use. The wrapper-bearing bytes are therefore recorded as the hashed derivation input and are not retained in Git; what is retained is the derivative named in `notes`, from which the wrapper has been removed, leaving only the text whose rights the permission page settles.",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.gutenberg.org/cache/epub/2000/pg2000.txt",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-09-05",
+  "editors": [],
+  "id": "edition.miguel-de-cervantes.don-quijote-de-la-mancha.gutenberg-ebook-2000",
+  "jurisdiction": null,
+  "language": "es",
+  "publication": "Project Gutenberg electronic edition, eBook 2000, consulted 2026-09-05",
+  "title": "Don Quijote, Project Gutenberg eBook 2000",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Don Quixote",
+   "Don Quijote"
+  ],
+  "author": "Miguel de Cervantes Saavedra",
+  "category": "novel",
+  "description": "The novel whose Primera parte, capítulo XI puts the appointed Gospel's closing maxim into Don Quixote's mouth at a meal -- \"a quien se humilla, Dios le ensalza\" -- and then has him force Sancho up to the higher place.",
+  "id": "work.miguel-de-cervantes.don-quijote-de-la-mancha",
+  "languages": [
+   "es"
+  ],
+  "title": "El ingenioso hidalgo don Quijote de la Mancha"
+ }
+}

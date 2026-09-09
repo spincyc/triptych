@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.william-shakespeare.sonnets.folger-digital-text-2015.folger-digital-text-sonnets-4edceb55"
+edition_id = "edition.william-shakespeare.sonnets.folger-digital-text-2015"
+artifact_type = "plain-text"
+media_type = "text/plain; charset=utf-8"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "The 1609 sequence is public domain everywhere. These bytes are a modern edited text of it and their terms are not established. The file names its own editors in its first lines -- \"Edited by Barbara A. Mowat and Paul Werstine with Michael Poston and Rebecca Niles\", \"Folger Shakespeare Library\", \"Created on Jul 31, 2015\" -- so what is distributed here is an editorial text of 2015 and not a reprint of 1609. The whole file was then searched case-insensitively with runs of non-alphanumeric characters collapsed for \"copyright\", \"licen\", \"rights\", \"terms of use\", \"permission\" and \"creative commons\": every one returns zero except a single \"rights\" inside Sonnet 17. The file therefore grants nothing, and silence is not a grant: `tracked` requires an affirmative recorded distribution basis and none exists for a named modern editorial text. The identity, the digest and this finding are kept; the bytes are not."
+source_url = "https://shakespeare.folger.edu/downloads/txt/shakespeares-sonnets_TXT_FolgerShakespeare.txt"
+provenance = "Acquired over HTTPS by the cultural-afterlife research lane of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "4edceb55d15b87236a5e46069a1edf813864def60497b9fbd6afb0a6a47cdb6e"
+byte_size = 99272
+indexable = false
+notes = "The Folger digital text of the Sonnets as published for download; no editorial notes travel in this format. Extent as measured by the retrieving lane: complete Folger Shakespeare Library plain-text edition of Shakespeare's Sonnets, all 154 sonnets plus A Lover's Complaint, as published for download ACCESS LIMITATION. What is not retained is a named modern editorial text of 2015, and it is not retained because the file states no terms and a modern edition is not covered by the 1609 or 1598 printing's public domain. What a reader without the network can open instead is the same passage in the Project Gutenberg body text retained at artifact.william-shakespeare.complete-works.gutenberg-ebook-100.gutenberg-pg100-body-lf, whose wording at the quoted lines the retrieving lane reports as carrying the same hyphenated phrase."

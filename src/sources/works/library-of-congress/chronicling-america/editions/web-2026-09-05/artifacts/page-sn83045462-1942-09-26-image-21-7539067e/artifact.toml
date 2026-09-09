@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.library-of-congress.chronicling-america.web-2026-09-05.page-sn83045462-1942-09-26-image-21-7539067e"
+edition_id = "edition.library-of-congress.chronicling-america.web-2026-09-05"
+artifact_type = "ocr-text"
+media_type = "application/json"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "The delivery itself is a response of the Library of Congress's own text service and a work of the United States Government is not subject to copyright protection in the United States (17 U.S.C. 105). The newspaper text inside it is the problem: this page was published in 1942, after 1928, so its United States copyright status turns on renewal and on the publisher's own claims, and neither was established here -- the response carries no rights statement of any kind, and this stage may not retrieve one. `tracked` requires an affirmative recorded distribution basis, so the identity and the digest are kept and the bytes are not."
+source_url = "https://tile.loc.gov/text-services/word-coordinates-service?segment=/service/ndnp/dlc/batch_dlc_1warhol_ver01/data/sn83045462/0028060365A/1942092601/0602.xml&format=alto_xml&full_text=1"
+provenance = "Acquired over HTTPS by the cultural-afterlife research lane of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "7539067e00d5e354ee29ae603b178e02b2e1075937bc2992ec4af938ea3cbd6e"
+byte_size = 33615
+indexable = false
+notes = "Uncorrected optical text of one newspaper page, Evening Star, Washington, D.C., 26 September 1942, image 21 (LCCN sn83045462). Extent as measured by the retrieving lane: OCR full text of one newspaper page only - Evening Star (Washington, D.C.), 26 September 1942, image 21; retrieved to classify the top-ranked hit, which proved to be a sermon title. ACCESS LIMITATION. What is not retained is the OCR of a post-1928 American newspaper page; it is not retained because its own copyright status was not established and no rights statement travels with the response. A reader without the network cannot open it from a checkout, and what the retrieving lane read on it is recorded in that lane's finding. ONE PAGE OF ONE ISSUE: nothing may be read off it about any other page."

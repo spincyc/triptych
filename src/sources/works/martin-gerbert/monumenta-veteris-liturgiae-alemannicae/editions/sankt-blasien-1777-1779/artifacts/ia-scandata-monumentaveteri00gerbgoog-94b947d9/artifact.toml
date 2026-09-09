@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.martin-gerbert.monumenta-veteris-liturgiae-alemannicae.sankt-blasien-1777-1779.ia-scandata-monumentaveteri00gerbgoog-94b947d9"
+edition_id = "edition.martin-gerbert.monumenta-veteris-liturgiae-alemannicae.sankt-blasien-1777-1779"
+artifact_type = "scan-structure"
+media_type = "application/xml"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The file was read in full before this basis was written. It is a machine table and nothing else: one <page> element per leaf carrying a leaf number, a page type, pixel dimensions and a crop box, with no prose, no transcription and no notice, licence or condition anywhere in it. The same five Google probes run over it return \"usage guidelines\" 0; \"about google book search\" 0; \"this is a digital copy\" 0; \"digitized by google\" 0; \"google book search\" 0. A table of measurements is not copyrightable expression, originality being required by Feist Publications, Inc. v. Rural Telephone Service Co., 499 U.S. 340, 345 (1991). NOT RELIED ON: that the item is available or that the download succeeded."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/monumentaveteri00gerbgoog/monumentaveteri00gerbgoog_scandata.xml"
+provenance = "Acquired over HTTPS by the liturgical-history research lane of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "94b947d9320fc4f3015aacf098d468d2aaed8e5b744a43dbf5bb9d3c6ce35746"
+byte_size = 185660
+path = "src/sources/works/martin-gerbert/monumenta-veteris-liturgiae-alemannicae/editions/sankt-blasien-1777-1779/artifacts/ia-scandata-monumentaveteri00gerbgoog-94b947d9/monumentaveteri00gerbgoog-scandata.xml"
+encoding = "utf-8"
+indexable = true
+notes = "Complete leaf-to-printed-page table for Internet Archive item monumentaveteri00gerbgoog, all 561 leaves. It is what fixes leaf n194 = printed p. 146, leaf n228 = printed p. 180 and leaf n232 = printed p. 184 for the three page images retained on this edition. Extent as measured by the retrieving lane: Complete leaf-to-printed-page table for the first scan, all 561 leaves. This is what fixes leaf n232 = printed p. 184, leaf n228 = printed p. 180 and leaf n194 = printed p. 146; each was then confirmed against the page number printed in the running head of the image itself. It says where a leaf sits in the scan and nothing about what is printed on it; every correspondence used in this run was confirmed against the page number in the running head of the image itself."

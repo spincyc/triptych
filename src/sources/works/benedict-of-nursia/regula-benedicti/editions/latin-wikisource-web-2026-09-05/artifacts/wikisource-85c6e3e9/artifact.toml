@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.benedict-of-nursia.regula-benedicti.latin-wikisource-web-2026-09-05.wikisource-85c6e3e9"
+edition_id = "edition.benedict-of-nursia.regula-benedicti.latin-wikisource-web-2026-09-05"
+artifact_type = "web-page"
+media_type = "text/plain"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "Two rights objects, and they are kept apart. The Latin printed inside these bytes is ancient and in the public domain, and the Migne printing it is transcribed from is in the United States public domain by publication date. The wiki source of the page -- its templates, headers, navigation banners, links and categories -- is contributed matter licensed CC BY-SA 4.0, a condition on the contributors' markup rather than on Migne's text beneath it. These exact bytes carry that markup, so they are hashed and recorded and not retained; the Latin alone is retained as the derivative named in `notes`, which is the settled treatment of Latin Wikisource transcriptions of the Patrologia Latina in this repository and is described in THIRD_PARTY.md."
+source_url = "https://la.wikisource.org/w/index.php?title=Regula_sancti_Benedicti&action=raw"
+provenance = "Acquired over HTTPS by the patristic-reception research lane of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "85c6e3e9101951eaf8fb67670d9a7bb40211a257c12e75d177048130185a25bf"
+byte_size = 93654
+indexable = false
+notes = "Raw wikitext of the whole Regula sancti Benedicti. Extent as measured by the retrieving lane: complete raw wikitext of the Regula sancti Benedicti, prologue and all 73 chapters. The page carries a {{Textquality|50%}} banner, which is the wiki's own statement that the text has been half proofread, and that limit travels with every reading taken from it. ACCESS LIMITATION. These exact bytes are not retained because they carry the CC BY-SA 4.0 wiki markup; the Latin they carry is retained whole at artifact.benedict-of-nursia.regula-benedicti.latin-wikisource-web-2026-09-05.regula-latin-text."

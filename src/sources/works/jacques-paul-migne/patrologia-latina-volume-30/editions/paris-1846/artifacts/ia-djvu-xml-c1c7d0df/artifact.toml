@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.jacques-paul-migne.patrologia-latina-volume-30.paris-1846.ia-djvu-xml-c1c7d0df"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-30.paris-1846"
+artifact_type = "ocr-coordinates"
+media_type = "text/xml"
+storage = "remote"
+rights_status = "public-domain"
+rights_basis = "Migne's Patrologia Latina volume 30 was published at Paris in 1846, the volume's own title page reading PATROLOGIA TOMUS XXX / S. HIERONYMI TOMUS UNDECIMUS / PARISIIS ... 1846, and a work first published abroad before 1931 is out of United States copyright; that line is the one guidance/missals.md records from Cornell's public-domain chart as current on 1 January 2026 and it moves every January, so it is written here as derived for calendar year 2026 and not as a standing rule. 1846 clears it by eighty-five years. Restoration under 17 U.S.C. 104A could not reach it either: ninety-five years from 1846 ran out in 1941, so nothing remained to restore on 1 January 1996. A faithful mechanical reproduction of a public-domain work is not original authorship (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)), and machine optical character recognition adds no human authorship on top of it. NOT RELIED ON: that the item is available, that the download succeeded, or that any host marks the scan public domain. The same probes were run over this file as over its sibling text layer and returned the same zero counts; this record is remote for size and not for rights."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/patrologiaecursu0030jpmi/patrologiaecursu0030jpmi_djvu.xml"
+provenance = "Acquired over HTTPS by the liturgical-history research lane of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "c1c7d0df6299d24b23c516f5b353ff5864bf3390df4ca064f25195ec9ef40eee"
+byte_size = 90184476
+indexable = false
+notes = "The same optical text as the sibling text layer, with per-word bounding boxes, used to split each page at the column gutter and so to assign every entry to its true Migne column. Extent as measured by the retrieving lane: The same optical text of the whole volume with per-word bounding boxes. Used to split each page at the column gutter and so to assign every entry to its true Migne column, and to anchor column numbers to page indices.. ACCESS LIMITATION, AND IT IS A SIZE ARGUMENT MEASURED IN BYTES: 90,184,476 bytes, fifteen times the largest artifact this repository retains and six hundred times the evidence anyone needs from it. A reader without the network cannot open the coordinate file from a checkout; what it was used for is the column assignment recorded in the retrieving lane's finding, and the page images that carry the same evidence visually ARE retained here."
