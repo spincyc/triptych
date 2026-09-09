@@ -185,9 +185,10 @@ sung (PAT-015, PAT-022, THE-007).
 
 **C4 — One voice: the singular of the chants and the plural of the orations are the same
 speaker.** Anchors: Introit, Offertory, Collect, Secret, Postcommunion. The formulary
-shifts person throughout — first person singular at Introit and Offertory, first and second
-plural in the Epistle, no person at all in the Gradual, Christ's own singular at the
-Communion, first plural in Secret and Postcommunion (THE-003). Augustine expounds both of
+shifts person throughout — first person singular at Introit and Offertory, first plural,
+second plural and second singular (Gal. 6:1 `considerans teipsum, ne et tu tenteris`) in the
+Epistle, no person at all in the Gradual, Christ's own singular at the Communion, first
+plural in Secret and Postcommunion (THE-003). Augustine expounds both of
 this Mass's psalm-antiphons on one principle. At the Introit's psalm: `sitque ipse unus
 salvator corporis sui Dominus noster Iesus Christus Filius Dei, qui et oret pro nobis, et
 oret in nobis, et oretur a nobis. Orat pro nobis, ut sacerdos noster; orat in nobis, ut
@@ -195,11 +196,15 @@ caput nostrum, oratur a nobis, ut Deus noster` (En. Ps. 85.1), and on `clamavi t
 `non una die. Tota die, omni tempore intellege ... Unus homo usque in finem saeculi
 extenditur` (En. Ps. 85.5). At the Offertory's psalm he answers the question directly: `It
 is Christ ... sometimes ... in the name of our Head; sometimes also He speaks of us who are
-His members` (En. Ps. 39.5) (THE-009, PAT-011, PAT-014). Cassiodorus reads both psalms the
-same way independently — at Ps. 85 `Ex forma servi ... Christus omnipotenti supplicat
-Patri`, at Ps. 39 `Ecclesia catholica, quae fuerat de totius mundi partibus congreganda,
-patientiae virtutem praedicat` (PAT-024) — so the reading rests on two Latin witnesses and
-not on one. The orations' own objects narrow across the Mass while their verbs move from
+His members` (En. Ps. 39.5) (THE-009, PAT-011, PAT-014). Cassiodorus also expounds both
+psalms on the same principle, in his own words — at Ps. 85 `Ex forma servi ... Christus
+omnipotenti supplicat Patri`, at Ps. 39 `Ecclesia catholica, quae fuerat de totius mundi
+partibus congreganda, patientiae virtutem praedicat` (PAT-024) — so two Latin commentators
+state the reading. No independence of Augustine is claimed for him: PAT-024 records only
+what Cassiodorus says, and his exposition of Ps. 85 itself opens on the head-and-members
+division, `Secunda pro membris suis, quorum ipse caput est`, and cites `doctor Augustinus`
+within the same exposition (tracked text, `cassiodorus-ps85-latin.txt`). The orations' own
+objects narrow across the Mass while their verbs move from
 defence to possession: `Ecclesiam tuam` / `mundet et muniat`, then `nos` / `custodiant ...
 tueantur`, then `mentes nostras et corpora` / `possideat ... praeveniat` (THE-003). Class 3
 for the principle at both psalms and in both commentators, class 4 for the inference about
@@ -240,8 +245,8 @@ enim suo metemus, non deficientes` and `dum tempus habemus` (Ep.), `continuata` 
 (Coll.), `semper` (Sec.), `iugiter` (Postcomm.) (THE-011). Each of the load-bearing ones has
 a checked reading that stretches it to a lifetime. Augustine on `tota die`: `omni tempore
 intellege: ex quo corpus Christi gemit in pressuris, usque in finem saeculi` (En. Ps. 85.5),
-and Cassiodorus independently: `cum dicitur, tota die, totius vitae tempus ostenditur, ut
-per multa tempora annorumque curricula quasi unius diei continuus clamor esse monstretur`
+and Cassiodorus, in his own words: `cum dicitur, tota die, totius vitae tempus ostenditur,
+ut per multa tempora annorumque curricula quasi unius diei continuus clamor esse monstretur`
 (PAT-024). Augustine on the Gradual's versicle: `Mane dicitur, quando nobis bene est: nox
 dicitur, quando tristitia tribulationis est ... quando bene est, lauda misericordiam; quando
 male, lauda veritatem: quia peccata flagellat, non est iniquus` (En. Ps. 91.4), and
@@ -710,9 +715,12 @@ Gueranger names the day `the Sunday of the widow of Naim` (LIT-020).
 - **Bede**, *In Lucae evangelium expositio*, lib. II, on Lk. 7:11-17, PL 92, cols. 417-420, read
   on the OCR of the Google scan of PL 92 (Internet Archive item `patrologiaecurs54unkngoog`).
   Naim's topography at v. 11; at v. 12 the dead man carried out is sin no longer hidden in the
-  heart's chamber but published abroad, `quasi per civitatis ostia propalantem`, and the only
-  son is mother Church, `licet e multis collecta personis, una sit perfecta et immaculata
-  virgo`, with Gal. 4:19 quoted in support; the gate is one of the bodily senses, closing with
+  heart's chamber but published abroad, `quasi per suae civitatis ostia propalantem`, and the
+  widowed mother is mother Church, one perfect and immaculate virgin though gathered from many
+  persons, `licet e multis collecta personis, una sit perfecta et immaculata virgo, mater
+  Ecclesia`, each of the faithful being her only son, `singuli quique tamen fidelium
+  universalis se Ecclesiae filios rectissime fatentur`, with Gal. 4:19 quoted for her
+  motherhood; the gate is one of the bodily senses, closing with
   `Obsecro, Domine Jesu, cunctas meae civitatis portas justitiae facias` (Ps. 117:19); against
   Novatian, who `veramque matrem Ecclesiam ... negat consolari debere`; at v. 14 the bier is
   `male secura desperati peccatoris conscientia` and its bearers `vel immunda desideria ... vel
@@ -721,7 +729,11 @@ Gueranger names the day `the Sunday of the widow of Naim` (LIT-020).
   visitavit plebem suam. Non tantummodo verbum suum semel incorporando, sed etiam ... semper in
   corda mittendo` (PAT-005). Bede is the only witness located who comments on v. 16, and two of
   his moves are his own and not Ambrose's or Augustine's: the anti-Novatianist application and
-  the reading of the restoration to the mother as sacramental reconciliation.
+  the reading of the restoration to the mother as sacramental reconciliation. The v. 12 figure
+  and the word `suae` stand here as the registered Corpus Corporum transcription reads them at
+  col. 417C (artifact `wikisource-in-lucam-116db0ca`, hash-verified at evaluation, CON-EVI-035a
+  and CON-EVI-040); this entry's first reading, taken from the OCR layer, attached the virgin
+  tag to the son and lacked `suae`.
 - **Gregory of Nyssa**, *De hominis opificio* 25.6-11 (PG 44, 213-217), read in NPNF2/5 English
   at www.newadvent.org/fathers/2914.htm. The raising is fourth in a graded pedagogy by which
   Christ accustomed human weakness to believe in resurrection — the fever, the nobleman's son,
@@ -742,12 +754,16 @@ and is forbidden to weep because resurrection is owed to her; Augustine's rejoic
 joy, not one doctrine (THE-013). Augustine's Sermo 98 stops at v. 15, one verse short of the
 appointed pericope, and nothing in it comments on v. 16 (PAT-003).
 
-**Bounded absence.** Gregory the Great has nothing on this pericope. Within Luke 7 the Catena
-cites `Gregorius in Evang.` only at lect. 6, on the sinful woman of Lk. 7:36-50, and not at
-all at lect. 2; counted over the whole chapter the lemma frequencies are Ambrosius 25, Beda 20,
-Cyrillus 11, Chrysostomus 8, Titus 5, Theophylactus 3, Eusebius 2, Gregorius 2 plus `Gregorius
-in Evang.` once, and both bare hits are the lect. 6 ones. Gregory's *Homiliae in Evangelia*
-treat Luke 7 only at Homily 33, on Lk. 7:36-50. PL 76 and CCSL 141 were not opened (PAT-019).
+**Bounded absence.** Gregory the Great has nothing on this pericope. On the registered Corpus
+Thomisticum page, over Catena in Lc. cap. 7 lect. 1-6 (Marietti paragraphs 85816-85821), no
+excerpt heading of Gregory the Great stands at lect. 2; all twelve of his headings — nine bare
+`Gregorius` and three `Gregorius in Evang.`, a heading being the plain-text author name that
+precedes one excerpt — stand at lect. 6, on the sinful woman of Lk. 7:36-50. The five
+`Gregorius Nyssenus` headings, at lect. 2, 5 and 6, are another Gregory and are not counted
+with his. The per-author frequency row PAT-019 reported for the whole chapter did not describe
+the page and is withdrawn; the Gregory figures above are the count taken of the hash-verified
+page at evaluation (CON-CIT-028a). Gregory's *Homiliae in Evangelia* treat Luke 7 only at
+Homily 33, on Lk. 7:36-50. PL 76 and CCSL 141 were not opened (PAT-019).
 
 **Coverage.** This is the least-covered element in the library: an exhaustive scan of all 5,127
 registered passage records for any locus matching Luke 7 / Lucam 7 / Lk 7 returns **zero
@@ -2339,8 +2355,9 @@ it.**
 `propers/verified.md` and the tracked registry agrees at every reference (COV-015). The four
 senses are grounded: *literal* from §§2.1-2.8 throughout; *allegorical* from Ambrose (widow =
 holy Church; the bier as the wood by which salvation is poured back on the people through the
-gibbet of the Cross) and Bede (the only son as mother Church, the gate as a bodily sense) and
-Augustine's mother Church at Sermo 98.2; *moral* from Augustine's three grades of sin at
+gibbet of the Cross) and Bede (the widowed mother as mother Church, each of the faithful as
+her only son, the gate as a bodily sense) and Augustine's mother Church at Sermo 98.2; *moral*
+from Augustine's three grades of sin at
 Sermo 98.5-6, Bede's penitential allegory, and Jerome, Augustine, Chrysostom and Aquinas on
 Gal. 6:1; *anagogical* from Cyril's `pledge of the hope prepared for us of a resurrection of the
 dead`, the Communion chapter's threefold `et ego resuscitabo eum in novissimo die`
