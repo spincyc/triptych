@@ -5,7 +5,90 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-09-06.
+Last reconciled: 2026-09-09.
+
+## Traditional context and salient dates in GPT propers, 2026-09-09
+
+<!-- promised-deliverable: proper-salient-dates-2026-09-09 -->
+
+The maintainer requested investigation of the recent GPT Psalm dossiers, whose
+composition bounds omit the traditional Davidic era, and an elegant date
+presentation that also distinguishes earlier Old Testament settings from
+textual history. Implemented and reviewed on `feature/codex/propers/dating`.
+
+The corpus had composition and identified-event relations, but none for an
+attributed figure's era independent of an occasion. Its comprehensive gate
+could therefore be satisfied by the Psalter's “before c. 165 B.C.” bound alone.
+The new `traditional-attribution` relation links inspected titles to a
+separately sourced era. Six title-supported Psalms now show David's reign in
+Corbett's qualified “usual chronology,” 1055–1015 B.C., with its disputed
+status visible. The reign does not date composition or place a pre-accession
+episode inside the regnal span. Anonymous, Sabbath and Korahite titles receive
+no blanket Davidic date. Attribution and identified settings/events precede
+composition; distinct prophetic referents remain separate. Different subjects
+under one relation remain separate groups. Attribution alone does not earn
+event-date coverage.
+
+The [source and rendered review](src/sources/chronology/attribution-context-review.md)
+records title witnesses, numbering checks, earlier Old Testament examples,
+source qualifications and installed artifact hashes. Genesis and Exodus
+already return event chronology independently of composition. A possible
+overstatement of Wisdom's composition intervals is recorded for later
+source-relation review; no Solomonic composition date is inferred.
+
+GPT 54–56 and the affected held Claude 54 consumer have current generated
+dossiers and annotations. All eight PDFs were rebuilt and all 190 pages
+visually reviewed in bounded contact sheets, with date tables, changed
+references and colophons inspected at full resolution. Full/synthesis page
+counts remain 20/14, 16/12 and 20/13 for GPT, and 61/34 for Claude. Every date
+dossier fits page 2. Wider Date columns, concise prose and bold relation labels
+preserve readability. GPT 55 retains the common compact rights notice and
+visible bottom whitespace. Installed PDFs match the exact reviewed bytes.
+All four canonical web editions are regenerated, reviewed and installed.
+Chromium checks at 1280, 375 and 320 pixels preserve dates and internal links
+without page-level overflow; GPT entries reflow vertically. Claude retains its
+scrolling table, existing hold, inherited PDF URL-control text and sparse scope
+tail, as recorded in the review. No release acceptance is inferred for Claude.
+
+All 258 chronology tests, 29 annotation tests, 56 workflow chronology tests,
+38 web-converter tests and the derivation-lineage test pass. The missing
+historical base object was fetched; the pinned review manifest was regenerated
+without rebasing. Its 507 prior cases are unchanged apart from generated row
+numbers, with only the new temporal claim and binding added. A legacy workflow
+fixture was corrected after reproducing its failure against unchanged HEAD;
+production gates were not weakened. Bold wrappers are normalized by the
+converter's payload audit, with a negative test still refusing a lost date.
+
+Source bindings, inventories, family ledger, catalogue and exact site bindings
+are refreshed. All content-preflight checks pass for GPT 54–56, as do
+`make check-sources`, the document catalogue and `tmt check`. The completed
+ledger passes its required-complete gate. Final `make check` passes: 239 captured
+examples replay with zero divergences and zero tracked-state writes; six
+intentional exemptions and three unavailable sample-PDF examples retain their
+stated limits. The local site preview is built and verified by that replay.
+The three recaptured tools differ only in their generated example transcripts.
+
+The maintainer subsequently requested reconciliation/rebase and a push to
+`main`. This extends the earlier implementation scope to integration and the
+automatic Pages deployment. After fetching, `origin/main` at `d3ceb2937` is
+already the direct parent of the reviewed dating commit `1567fb53b`; rebase
+reports the workspace branch up to date. No source reconciliation is needed,
+and the source and rendered checks above apply to the unchanged implementation.
+`make public-site`, `make verify-public-site` and
+`public-alpha verify --deployment-target github-pages` pass. The exact outgoing
+range contains the reviewed dating implementation and this scope/status
+checkpoint; its newly reachable content is intended for the public repository.
+Both remote branches were fast-forwarded to `d99085c23`. Its exact-snapshot
+[Pages run](https://github.com/spincyc/triptych/actions/runs/34368786259)
+succeeded, including fresh PDF installation, deployment-source checks, public
+artifact construction and GitHub Pages verification. The three GPT 54–56 web
+routes at `https://mystago.gy/` return byte-identical copies of the verified
+local HTML and display traditional attribution separately from composition.
+All six live full/synthesis PDFs match the reviewed SHA-256 digests in the
+source and rendered review. The main integration and publication requirement
+is met. This follow-up checkpoint records that observed deployment; it changes
+only the work register, promise status and recaptured ledger examples. The
+workspace branch remains `feature/codex/propers/dating`.
 
 ## GPT propers 54–56 publication and integration, 2026-09-06
 

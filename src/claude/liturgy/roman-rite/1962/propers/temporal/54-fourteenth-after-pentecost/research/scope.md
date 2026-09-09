@@ -8860,3 +8860,11 @@ third of this join by itself and its findings carry §6.15 almost entire; and th
 which are written out at full citation length because **nothing after this stage may
 add to them and a generic source label or a direction to "carry the link from the
 brief" would not supply a title or a link this brief does not actually contain.**
+
+## Shared chronology refresh, 2026-09-09
+
+The generated chronology now carries the named Davidic attribution's regnal
+reference from Corbett's qualified usual chronology, in addition to the
+separate historical and textual assertions. The new contextual binding
+records that source. This shared-consumer refresh does not reopen or clear
+the publication's existing hold or its unrelated editorial findings.

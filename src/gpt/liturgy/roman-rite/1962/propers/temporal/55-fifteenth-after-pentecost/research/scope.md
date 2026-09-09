@@ -2597,3 +2597,14 @@ P1–P4 retain the targeted conjunctions and classifications; existing commentar
 ## Integration completeness
 
 The 109 findings in the complete joined packet are represented exactly once in the detailed evidence registers and gallery audit, with their id, lane, claim, evidence, and notes intact. Five cross-proper claims, four selected exploratory proposals, five selected gallery entries, eight distinct reception rows, all seven appointed scriptural chronology entries, the three composed orations, all reader-facing section positions, and the nine inherited plus four current standing findings have explicit dispositions. Every selected gallery evidence string and qualification was compared in full with its packet finding, including complete citation bundles and receipt extents. The seven-lane join supports authoring within the recorded limits; no source-library registration prerequisite or fresh acquisition task has been imposed on author-proper.
+
+## Chronological context revision, 2026-09-09
+
+The generated date dossier now distinguishes the traditional attribution's
+reference era from the poem's occasion and composition. The shared chronology
+corpus owns the inspected Psalm titles and Corbett's qualified regnal span;
+`guidance/scripture-chronology.md` sections 5, 8 and 14 govern the distinction.
+The source binding records the exact Corbett passage. No date is inferred from
+an anonymous, Sabbath or Korahite title. Existing composition alternatives,
+superscription settings and prophetic referents remain distinct assertions.
+The page-2 revision keeps all appointed passages and their claim-local limits.

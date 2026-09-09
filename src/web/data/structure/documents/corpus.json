@@ -25,8 +25,12 @@
    "id": "claude-fable-5"
   },
   {
-   "documents": 3,
+   "documents": 4,
    "id": "GPT-6-based Codex agent"
+  },
+  {
+   "documents": 1,
+   "id": "claude-fable-5-1"
   }
  ],
  "providers": [
@@ -74,12 +78,12 @@
  ],
  "workflows": [
   {
-   "digest": "479b26ae4ad3658de996620e7568bca243e890eeea086ad76898f41ece360ca1",
+   "digest": "57149dcf3ef59b513b84c5f7a57cc6c157482568dd9bd48ba541b828f0f10434",
    "id": "proper-finish",
    "version": "5"
   },
   {
-   "digest": "829c49d869d17929a3f45d5e58265d1a6f71c3ff2e6d1bbfc70b87c00a7dce2e",
+   "digest": "14618ee2a774fdebcdcd125b9afe821aa50f538c418fa8eb697486ffeff66d26",
    "id": "proper",
    "version": "27"
   }
@@ -5746,12 +5750,18 @@
        "model": "GPT-5-based Codex agent",
        "qualifiers": "unexposed: exact model identifier and model qualifiers",
        "runtime": "OpenAI Codex agent (integration of the deterministic Scripture chronology projection; correction of stale date claims and source attributions; and focused chronology validation); API workspace; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier, model qualifiers and reasoning effort",
+       "runtime": "OpenAI Codex API workspace; traditional-attribution chronology and date-dossier revision; unexposed: client version and server revision"
       }
      ],
      "eligibility": "eligible",
      "models": [
       "claude-opus-5[1m]",
-      "GPT-5-based Codex agent"
+      "GPT-5-based Codex agent",
+      "GPT-6-based Codex agent"
      ],
      "pages": null,
      "pdf_absent": "no PDF is installed for this issue",
@@ -5763,8 +5773,8 @@
       "workflow_version": "4"
      },
      "provider": "claude",
-     "reviewed": "2026-09-05",
-     "revised": "2026-09-06T23:55:33Z",
+     "reviewed": "2026-09-09",
+     "revised": "2026-09-09T14:42:22Z",
      "status": "hold",
      "subject": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
      "title": "Fourteenth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)",
@@ -5812,6 +5822,11 @@
        "model": "GPT-6-based Codex agent",
        "qualifiers": "unexposed: exact model identifier and model qualifiers; reasoning-effort=high",
        "runtime": "OpenAI Codex agent (visual revision: summary-table column gutter, canonical and synthesis rebuilds, and visual inspection); API workspace; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier, model qualifiers and reasoning effort",
+       "runtime": "OpenAI Codex API workspace; traditional-attribution chronology and date-dossier revision; unexposed: client version and server revision"
       }
      ],
      "eligibility": "eligible",
@@ -5830,8 +5845,8 @@
       "workflow_version": "25"
      },
      "provider": "gpt",
-     "reviewed": "2026-09-05",
-     "revised": "2026-09-05T19:04:00Z",
+     "reviewed": "2026-09-09",
+     "revised": "2026-09-09T14:36:51Z",
      "status": "alpha",
      "subject": "Full source-audited guide to the 1962 Roman Missal propers",
      "title": "Fourteenth Sunday after Pentecost (Full Edition)",
@@ -5898,25 +5913,31 @@
        "model": "claude-opus-5[1m]",
        "qualifiers": "unexposed: reasoning-effort and sampling configuration",
        "runtime": "Anthropic Claude Code agent (content revision of the canonical leaf against the three blocking findings of the seventh five-lane content evaluation of workflow proper v25: every quotation of the tracked Clementine Vulgate restored to that edition's own orthography at twenty-two sites across both editions --- its j at Ps.~94:8, Gal.~6:14, Ps.~91:13 and Ps.~39:5, and its ae-ligature at 3~Kings 17:23, Lk.~1:68, 1:78, 7:15 and 19:44, Ps.~39:3 and Jn.~6:52 and 6:53 --- with the comma the edition prints after visitavit restored at Lk.~1:68, one further Vulgate lemma of the same class corrected in the Communion commentary, and the patristic, sacramentary and missal orthographies left as their own editions print them; and the vocabulary control behind the three orations' negative restated in the full edition's commentary to the sixteen counts the brief records, naming the two Veronense scans, the Mozarabic and the Gothicum as the layers those counts were taken in, recording no count for the Bobbio Missal, bounding continuata to the Veronense, and carrying the terminal appendix's e caudata bound into the same sentence); Claude Code CLI 2.1.261; unexposed: server revision"
+      },
+      {
+       "model": "claude-fable-5-1",
+       "qualifiers": "unexposed: reasoning-effort and sampling configuration",
+       "runtime": "Anthropic Claude Code agent (authoring pass of workflow proper-finish v5 over the canonical leaf against the three blocking findings and the observations the previous production's last content evaluation left standing: the degraded-layer classification confined to the 1604 typica and the Venice 1570 in the scope appendix and the References, the Pustet 1862 no longer so described; Sorley's title printed in its own spelling and named as the title in the third gallery entry; Augustine's departures from the two psalm-antiphons counted at five in the thematic movement, with his Sustinens sustinui carried into the Offertory dossier; the Collect's incapacity stated as preceding its last petition on page~1, in the thematic movement and in the first proposal, and the Collect and Postcommunion named the Mass's first and last orations; the precedent-search boundary added to the scope appendix so that the exploratory notice's cross-reference holds; the ledger sentence of the scope appendix cleared of workflow vocabulary; the References entries for the Clementine, the Douay and the Cummiskey 1861 extended to the loci and renderings the guide uses, and the four sacramentary books behind the orations' negative given an entry; and the component manifest set in the profile's reader order); Claude Code CLI 2.1.266; unexposed: server revision"
       }
      ],
      "eligibility": "eligible",
      "models": [
-      "claude-opus-5[1m]"
+      "claude-opus-5[1m]",
+      "claude-fable-5-1"
      ],
      "pages": null,
      "pdf": null,
      "pdf_absent": "no PDF is installed for this issue",
      "produced": {
-      "run_id": "2bd4a1ab7521853d",
-      "seed_commit": "b743814e521622eb8dbea56316e6138d45e8f7f3",
-      "workflow_digest": "ad4a5ea8193bdaf4b5f7a3f261fd5377fd49208f49b709cd794aeb635d20cd46",
-      "workflow_id": "proper",
-      "workflow_version": "25"
+      "run_id": "6fb5fba4867eb8cf",
+      "seed_commit": "cbaa57659b78c0c3bb1bc7e0304993b9c7de934e",
+      "workflow_digest": "57149dcf3ef59b513b84c5f7a57cc6c157482568dd9bd48ba541b828f0f10434",
+      "workflow_id": "proper-finish",
+      "workflow_version": "5"
      },
      "provider": "claude",
      "reviewed": "2026-09-05",
-     "revised": "2026-09-06T19:43:49Z",
+     "revised": "2026-09-09T15:18:21Z",
      "status": null,
      "subject": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
      "title": "Fifteenth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)",
@@ -5994,6 +6015,11 @@
        "model": "GPT-6-based Codex agent",
        "qualifiers": "effort=high; unexposed: exact model identifier and other model qualifiers",
        "runtime": "OpenAI Codex agent (proper version 25 visual revision; paragraph-opening pagination in both editions); API workspace; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier, model qualifiers and reasoning effort",
+       "runtime": "OpenAI Codex API workspace; traditional-attribution chronology and date-dossier revision; unexposed: client version and server revision"
       }
      ],
      "eligibility": "eligible",
@@ -6012,8 +6038,8 @@
       "workflow_version": "25"
      },
      "provider": "gpt",
-     "reviewed": "2026-09-05",
-     "revised": "2026-09-05T23:15:36Z",
+     "reviewed": "2026-09-09",
+     "revised": "2026-09-09T14:39:24Z",
      "status": "alpha",
      "subject": "Full source-audited guide to the 1962 Roman Missal propers",
      "title": "Fifteenth Sunday after Pentecost (Full Edition)",
@@ -6131,6 +6157,11 @@
        "model": "GPT-6-based Codex agent",
        "qualifiers": "effort=high; unexposed: exact model identifier and other model qualifiers",
        "runtime": "OpenAI Codex API workspace; visual pagination revision and canonical and synthesis PDF review; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6-based Codex agent",
+       "qualifiers": "unexposed: exact model identifier, model qualifiers and reasoning effort",
+       "runtime": "OpenAI Codex API workspace; traditional-attribution chronology and date-dossier revision; unexposed: client version and server revision"
       }
      ],
      "eligibility": "eligible",
@@ -6148,8 +6179,8 @@
       "workflow_version": "25"
      },
      "provider": "gpt",
-     "reviewed": "2026-09-05",
-     "revised": "2026-09-05T23:47:40Z",
+     "reviewed": "2026-09-09",
+     "revised": "2026-09-09T14:36:51Z",
      "status": "alpha",
      "subject": "The complete appointed texts and commentary on the Sixteenth Sunday after Pentecost in the 1962 Roman Missal",
      "title": "Sixteenth Sunday after Pentecost (Full Edition)",

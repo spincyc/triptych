@@ -34,11 +34,11 @@
 
 **Citation:** Ps. 39 (40):14–15, selected
 
-**Location:** An endangered petitioner amid public thanksgiving.
+**Location:** Davidic title; an endangered petitioner.
 
-**Date:** Composition: Before c. 165 B.C.
+**Date:** **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Composition**: Before c. 165 B.C.
 
-The whole psalm moves from rescue and obedience back to threatened life; no particular writing-place or enemy is identified. The USCCB Psalms introduction supplies a shared latest composition boundary, not a secure date for this psalm. <span class="nodecor">(Ps. 39:1–18; USCCB, Psalms introduction.)</span>
+Corbett’s “usual chronology” supplies the Davidic regnal frame (*Catholic Encyclopedia*, IV, p. 642). Rescue and obedience return to threatened life; writing-place and enemy are unnamed. USCCB’s composition bound is shared by the Psalter, not an individual date. <span class="nodecor">(Ps. 39:1–18; USCCB, Psalms introduction.)</span>
 
 ### Communion
 
@@ -46,9 +46,9 @@ The whole psalm moves from rescue and obedience back to threatened life; no part
 
 **Location:** An aging speaker; Davidic and captivity settings remain distinct.
 
-**Date:** Composition: Before c. 165 B.C. Historical setting: When he fled from the face of his son Absalom. Superscription setting: Preferred In the third year of the reign of Joakim, king of Juda; alternatives A.M. 3398.
+**Date:** **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Superscription setting**: Preferred In the third year of the reign of Joakim, king of Juda; alternatives A.M. 3398. **Historical setting**: When he fled from the face of his son Absalom. **Composition**: Before c. 165 B.C.
 
-Youth, failing strength and future hearers frame the prayer. Bellarmine reads David’s testimony; no exact composition place is established. The common critical boundary does not date the individual psalm; the alternate A.M. figure belongs to the superscription discussion, not the preferred historical setting. <span class="nodecor">(Ps. 70:1–24; Bellarmine, pp. 212–213; chronology sources in References.)</span>
+Youth, failing strength and future hearers frame Bellarmine’s Davidic reading; writing-place is unestablished. The composition bound is general; the alternate A.M. figure concerns the superscription, not the preferred historical setting. <span class="nodecor">(Ps. 70:1–24; Bellarmine, pp. 212–213; chronology sources in References.)</span>
 
 ### Introit
 
@@ -56,9 +56,9 @@ Youth, failing strength and future hearers frame the prayer. Bellarmine reads Da
 
 **Location:** Davidic title; a needy servant threatened by attackers.
 
-**Date:** Composition: Before c. 165 B.C.
+**Date:** **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Composition**: Before c. 165 B.C.
 
-The title supplies the received attribution; the psalm names no particular Davidic crisis or writing-place. Its audience of prayer extends toward the nations’ worship. Individual composition remains insecure within the common critical boundary. <span class="nodecor">(Ps. 85:1–17; USCCB, Psalms introduction.)</span>
+The title names David, without a particular crisis or writing-place. Prayer opens toward the nations’ worship; individual composition remains insecure within the common critical bound. <span class="nodecor">(Ps. 85:1–17; USCCB, Psalms introduction.)</span>
 
 ### Alleluia
 
@@ -66,9 +66,9 @@ The title supplies the received attribution; the psalm names no particular David
 
 **Location:** Israel’s salvation before the nations and creation.
 
-**Date:** Composition: Before c. 165 B.C. Prophetic referent – disputed: B.C. 3; c. B.C. 7.
+**Date:** **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Composition**: Before c. 165 B.C. **Prophetic referent** – disputed: B.C. 3; c. B.C. 7.
 
-No particular rescue or composition place is named. The critical boundary is common to the Psalter. The Nativity alternatives concern its prophetic referent; Gerard reports one as an opinion held by others. <span class="nodecor">(Ps. 97:1–9; USCCB, Psalms introduction; Gerard, “General Chronology,” “Christian era,” first paragraph; “Chronology of the Life of Jesus Christ.”)</span>
+The Douay title names David, without a particular rescue or writing-place. The composition bound is common; the Nativity dates concern prophecy, with Gerard reporting one as others’ opinion. <span class="nodecor">(Ps. 97:1–9; USCCB, Psalms introduction; Gerard, “General Chronology,” “Christian era,” first paragraph; “Chronology of the Life of Jesus Christ.”)</span>
 
 ### Gradual
 
@@ -76,9 +76,9 @@ No particular rescue or composition place is named. The critical boundary is com
 
 **Location:** Sion/Jerusalem restored; peoples gathered for worship.
 
-**Date:** Composition: Before c. 165 B.C.
+**Date:** **Composition**: Before c. 165 B.C.
 
-An afflicted speaker contrasts his frailty with God’s permanence. Jerusalem is the subject, not a proved writing-location. Neither the restoration nor the psalm has an individual date established here. <span class="nodecor">(Ps. 101:1–29; USCCB, Psalms introduction.)</span>
+The afflicted speaker contrasts his frailty with God’s permanence. Jerusalem is the subject; writing-place, restoration date and individual composition date are unestablished. <span class="nodecor">(Ps. 101:1–29; USCCB, Psalms introduction.)</span>
 
 ### Gospel
 
@@ -86,11 +86,11 @@ An afflicted speaker contrasts his frailty with God’s permanence. Jerusalem is
 
 **Location:** St Luke’s Gospel; an unnamed leading Pharisee’s house.
 
-**Date:** Composition – disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished. Event – No narrated-event date in the chronology corpus.
+**Date:** **Event** – No narrated-event date in the chronology corpus. **Composition** – disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished.
 
 *Event: Sabbath meal and cure in the journey-to-Jerusalem context (Luke 13:22; 14:1–11); town and host unnamed. The wedding is the seating parable’s setting.*
 
-Traditional composition alternatives are those of the *Catholic Encyclopedia* and the Biblical Commission. Composition geography, detailed first-audience geography and a full modern authorship discussion are not established in the consulted material. The modern USCCB chapter note reports son/ox beside the ass/ox variant; the Missal retains ass/ox.
+Composition alternatives follow the *Catholic Encyclopedia* and Biblical Commission; writing-place, first-audience geography and a full modern authorship account remain unestablished. USCCB notes son/ox beside the ass/ox variant retained by the Missal.
 
 ### Epistle
 
@@ -98,9 +98,9 @@ Traditional composition alternatives are those of the *Catholic Encyclopedia* an
 
 **Location:** St Paul, imprisoned for his Gentile mission; saints sharing one inheritance.
 
-**Date:** Composition – disputed: A.D. 58–63; A.D. 61.
+**Date:** **Composition** – disputed: A.D. 58–63; A.D. 61.
 
-The apostle’s affliction and the Gentile recipients frame his prayer (Eph. 2–4). The traditional alternatives come from the *Catholic Encyclopedia*. Prison city, destination geography and a full modern authorship account are not established in the consulted introductions; the USCCB chapter notes treat the prayer’s wording and interpretation.
+Affliction and the Gentile mission frame the prayer (Eph. 2–4). The Encyclopedia supplies the traditional dates; prison city, destination geography and a full modern authorship account remain unestablished. USCCB treats wording and interpretation.
 
 ## The Propers: Themes and Movement {#triptych:brief-synthesis:start}
 
@@ -568,6 +568,8 @@ The Latin’s publication basis is its independently witnessed public-domain ant
 
 ## References
 
+- John Corbett, [“David, King,”](https://www.newadvent.org/cathen/04642b.htm) *Catholic Encyclopedia*, IV (1908), p. 642: the qualified “usual chronology.”
+
 - *Missale Romanum*, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962), *Dominica decima sexta post Pentecosten*, pp. 397–398, nos. 1592–1601. [CMAA facsimile](https://media.churchmusicassociation.org/pdf/missale62.pdf). *Missale Romanum* (Ratisbon: Pustet, 1862), same Sunday, pp. 339–341, [facsimile](https://archive.org/download/bub_gb_E7sPAAAAIAAJ/bub_gb_E7sPAAAAIAAJ.pdf).
 
 - *The Roman Missal translated into the English language for the use of the laity* (Philadelphia: Eugene Cummiskey, 1861), XVI. Sunday after Pentecost, Collect, Secret and Postcommunion; [facsimile](https://archive.org/download/romanmissaltran00churgoog/romanmissaltran00churgoog.pdf). Unnamed historical translator; conclusions remain abbreviated.
@@ -624,6 +626,6 @@ The Latin’s publication basis is its independently witnessed public-domain ant
 
 Online research witnesses were accessed on 5 September 2026; chronology retains its separately recorded corpus source states.
 
-**Last revised (UTC):** 2026-09-05T23:47:40Z
+**Last revised (UTC):** 2026-09-09T14:36:51Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

@@ -295,10 +295,23 @@ class WebEditionConversionTests(unittest.TestCase):
             r"{catholic-traditional-v1}{preferred}{derived A.D. 27}{A.D. 27}.}%"
             "\n}"
         )
-        markdown = self.convert(r"\chronologyannotation{gospel}", preamble=definitions)
-        self.assertIn("Composition – disputed: c. A.D. 70; Before Rome.", markdown)
-        self.assertIn("Event: A.D. 27.", markdown)
-        self.assertNotIn("triptychchronologyannotation@", markdown)
+        for bold in (False, True):
+            with self.subTest(bold_labels=bold):
+                preamble = definitions
+                if bold:
+                    preamble = preamble.replace(
+                        "{Composition --", r"{\textbf{Composition} --"
+                    ).replace("{Event: ", r"{\textbf{Event}: ")
+                markdown = self.convert(
+                    r"\chronologyannotation{gospel}", preamble=preamble
+                )
+                marker = "**" if bold else ""
+                self.assertIn(
+                    f"{marker}Composition{marker} – disputed: c. A.D. 70; Before Rome.",
+                    markdown,
+                )
+                self.assertIn(f"{marker}Event{marker}: A.D. 27.", markdown)
+                self.assertNotIn("triptychchronologyannotation@", markdown)
 
     def test_generated_chronology_annotation_without_definition_is_refused(self) -> None:
         with self.assertRaises(DRIVER.ConversionError) as raised:
@@ -379,6 +392,18 @@ class WebEditionAuditTests(unittest.TestCase):
             "Prose.",
             self.minimal_markdown(),
             chronology_annotations=["Composition: Before c. 165 B.C."],
+        )
+        self.assertIn(
+            "generated chronology annotation payload shortfall: expected 1, found 0: "
+            "Composition: Before c. 165 B.C.",
+            failures,
+        )
+
+    def test_bold_chronology_labels_do_not_hide_a_dropped_date(self) -> None:
+        failures = DRIVER.audit_output(
+            "Prose.",
+            self.minimal_markdown() + "\n**Composition**: Before c. B.C.\n",
+            chronology_annotations=[r"\textbf{Composition}: Before c. 165 B.C."],
         )
         self.assertIn(
             "generated chronology annotation payload shortfall: expected 1, found 0: "

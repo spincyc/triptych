@@ -627,7 +627,7 @@ promise rather than receiving a fabricated universal scope.
 
 ---
 
-## 5. The ten relations
+## 5. The temporal relations
 
 The vocabulary is closed. `_chronology.RELATIONS` holds it and an unrecognised
 relation is a load error.
@@ -637,6 +637,7 @@ relation is a load error.
 | `composition` | when the text was written |
 | `final-formation` | when a composite or anthology reached the editorial form the source dates |
 | `textual-attestation` | when an identified witness establishes that the text existed, without asserting when it was written |
+| `traditional-attribution` | the reference era of the author or figure named by a received attribution, without assigning the text a composition date or historical occasion |
 | `narrated-event` | when the event the passage narrates happened |
 | `utterance` | when the words the passage quotes were spoken |
 | `historical-setting` | the occasion tradition associates with the text |
@@ -654,6 +655,11 @@ prohibitions:
   false.
 - **`composition` is not `historical-setting`.** When a text was written and
   what occasion it is about are different events, frequently centuries apart.
+- **`traditional-attribution` is neither of those.** A Davidic title can point
+  to David's era without naming the crisis behind the poem or establishing
+  when its received wording was written. The assertion must name its temporal
+  subject: a regnal span is an orientation to the attributed figure, not a
+  claim that every attributed poem falls inside that reign.
 - **`final-formation` is not `composition`, canon closure, or earliest
   attestation.** A source dating assembly of the received work says when that
   form came together, not when every constituent was written; closure and
@@ -811,6 +817,17 @@ withdrawn on 2026-08-27. Removing a `historical-setting` does not disturb a
 `prophetic-referent` over the same psalm: they are different relations, and Ps
 21 keeps the Passion referent it was authored for.
 
+**An attribution's era must not disappear with the unproved occasion.** Use
+`traditional-attribution` when an inspected title or received witness names
+the figure and an inspected chronological source dates that figure's era.
+The binding cites the attribution; the reusable temporal subject cites the
+date. Display the subject and its qualification with the date. In particular,
+David's regnal years orient a Davidic psalm without dating a pre-accession
+episode to his reign. An anonymous, Sabbath, Korahite or other heading never
+acquires a Davidic date merely because the containing book is the Psalter.
+Edition-specific titles must identify their witness: the Clementine title at
+Psalm 94 is not printed in the tracked Douay heading.
+
 **It is an anthology.** It has no single composition date and this corpus will
 not give it one. Composition units are authored per psalm, or per group where
 tradition groups them. A profile may assert a `final-formation` horizon over the
@@ -857,9 +874,10 @@ would have reported event chronology nobody had researched.
 
 | Status | Meaning | Authored? |
 | --- | --- | --- |
-| `dated` | at least one non-textual-history assertion applies, direct or inherited | earned |
-| `composition-only` | only `composition` and/or `final-formation` assertions apply, at any scope | earned |
-| `attestation-only` | only `textual-attestation` assertions apply, at any scope | earned |
+| `dated` | at least one event, setting, utterance or prophecy assertion applies, direct or inherited; attribution alone does not earn this status | earned |
+| `composition-only` | composition and/or final-formation applies without an event assertion; an attribution may accompany it | earned |
+| `attestation-only` | textual attestation applies without composition or an event assertion; an attribution may accompany it | earned |
+| `attribution-only` | only a traditional attribution's era applies; no textual-history or event date is supplied | earned |
 | `research-pending` | nothing has been inspected for it yet | the default |
 | `undated-in-tradition` | ranked sources inspected; tradition dates nothing | `gaps.yaml` |
 | `not-alignable` | the locus cannot be safely addressed from the asking system | `gaps.yaml`, or returned live by the concordance |
@@ -1262,6 +1280,13 @@ run, and the rule above binds their production workflow from `proper` v17.
   tool's concise `display_label` because the same sealed macro invocation also
   retains the subject, relation, leaf profile, disposition, and raw label for
   audit. That display is regenerated from the corpus, never hand-authored.
+- The publication projection leads with traditional attribution and the
+  passage's identified setting, event or retrospect, then textual history,
+  then the distinct prophetic referent. This is presentation order, not a
+  change to source authority or the query's stable relation order. Every
+  applicable assertion survives. Traditional attribution includes its subject
+  title; composition bounds remain explicitly composition bounds. These
+  distinctions apply to Old Testament readings as well as Gospel episodes.
 - `content-preflight` enforces it. `chronology-record-current` regenerates the
   record and refuses a leaf whose copy has drifted — it is generated, so it is
   rewritten from the corpus and never reconciled toward the guide.
@@ -1415,21 +1440,24 @@ For Proper 55 its complete plain-text output is:
 ```console
 $ ./tools/tpt proper-chronology annotations --document liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost --provider gpt --profile catholic-comprehensive-v1 --format text --plain
 introit
+  Traditional attribution -- disputed: David (reign in the usual chronology), B.C. 1055-1015.
   Composition: Before c. 165 B.C.
 epistle
   Composition: Preferred A.D. 58; alternatives A.D. 49-50, c. A.D. 53-54, A.D. 56, A.D. 57-58.
 gradual
   Composition: Before c. 165 B.C.
 alleluia
+  Traditional attribution -- disputed: David (reign in the usual chronology), B.C. 1055-1015.
   Composition: Before c. 165 B.C.
 gospel
-  Composition -- disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished.
   Event: A.D. 27.
+  Composition -- disputed: c. A.D. 70; Before the end of the Roman imprisonment, when the Acts was finished.
 offertory
+  Traditional attribution -- disputed: David (reign in the usual chronology), B.C. 1055-1015.
   Composition: Before c. 165 B.C.
 communion
-  Composition -- disputed: c. A.D. 90-100; A.D. 96-100.
   Event: A.D. 28.
+  Composition -- disputed: c. A.D. 90-100; A.D. 96-100.
 ```
 
 The strict distinct-content gate proves that every textual locus the tracked
@@ -1445,6 +1473,7 @@ universe distinct-scripture-content
 verses 37171
 runs 1964
 status attestation-only 1792
+status attribution-only 0
 status composition-only 22692
 status dated 12687
 status not-alignable 0
@@ -1460,6 +1489,7 @@ relation prophetic-referent 297
 relation retrospective-event 413
 relation superscription-setting 277
 relation textual-attestation 2489
+relation traditional-attribution 102
 relation utterance 1476
 system greek 1356
 system vulgate 35809
@@ -1470,9 +1500,9 @@ universe-limitation note missing_dates and --require-date apply only to loci enu
 unenumerable-system nab this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
 unenumerable-system nova-vulgata this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
 unenumerable-system septuagint this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
-multiple-relations 8841
+multiple-relations 8884
 event-assertions 12687
-alternatives 14309
+alternatives 14378
 ```
 
 The address-universe companion checks alternate printed numberings as separate
@@ -1485,6 +1515,7 @@ universe supported-scripture-addresses
 verses 42587
 runs 2308
 status attestation-only 1796
+status attribution-only 0
 status composition-only 26418
 status dated 14373
 status not-alignable 0
@@ -1500,6 +1531,7 @@ relation prophetic-referent 532
 relation retrospective-event 488
 relation superscription-setting 553
 relation textual-attestation 2493
+relation traditional-attribution 204
 relation utterance 1528
 system greek 2156
 system hebrew 2528
@@ -1511,9 +1543,9 @@ universe-limitation note missing_dates and --require-date apply only to loci enu
 unenumerable-system nab this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
 unenumerable-system nova-vulgata this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
 unenumerable-system septuagint this repository holds no concordance that enumerates this system's loci, so its native universe cannot be honestly accounted for; chronology may not be authored in it
-multiple-relations 10527
+multiple-relations 10613
 event-assertions 14373
-alternatives 14696
+alternatives 14834
 ```
 
 `make check-scripture-chronology` runs `validate` and `check`, and is part of

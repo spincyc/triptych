@@ -1,6 +1,36 @@
 schema_version = 1
 
 [[deliverables]]
+id = "proper-salient-dates-2026-09-09"
+owner = "PROJECT-WORK.md"
+promise = "Explain the missing traditional Psalm era, preserve distinct sourced chronology relations, and show salient traditional context and textual-history dates elegantly in the recent GPT proper guides, with the same distinction usable for earlier Old Testament passages; reconcile with main, push the validated result, and verify deployment."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "source-grounded-context"
+  criterion = "The investigation records the cause, checks the appointed Psalm attributions and dating witnesses, distinguishes named authors from historical occasions, and checks representative earlier Old Testament passages."
+  status = "pass"
+  evidence = ["src/sources/chronology/attribution-context-review.md", "src/sources/chronology/events.yaml", "src/sources/chronology/bindings.yaml"]
+
+  [[deliverables.requirements]]
+  id = "reusable-chronology-and-projection"
+  criterion = "The shared corpus and deterministic proper projection preserve traditional context separately from composition, events and prophecy; regression checks prevent mislabeling and blanket Davidic dates."
+  status = "pass"
+  evidence = ["scripts/_chronology.py", "scripts/_proper_chronology.py", "guidance/scripture-chronology.md", "tools/tests/test_chronology.py", "tools/tests/test_proper_chronology_annotations.py"]
+
+  [[deliverables.requirements]]
+  id = "reviewed-guides"
+  criterion = "GPT propers 54–56 and every affected generated consumer have current chronology records; all affected full and synthesis PDFs and canonical web editions are built, checked and reviewed, with the date dossier remaining one page."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "src/sources/chronology/attribution-context-review.md"]
+
+  [[deliverables.requirements]]
+  id = "validated-main-and-deployment"
+  criterion = "The dating change is reconciled with current main, passes the affected publication gates, reaches origin/main by fast-forward, and its Pages deployment and affected public routes are verified."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml"]
+
+[[deliverables]]
 id = "gpt-propers-54-56-publication-integration-2026-09-06"
 owner = "PROJECT-WORK.md"
 promise = "Repair the proper 56 web converter, complete its reviewed PDF and web publication, reconcile branches 54 and 55 with this work and current main, then validate and fast-forward origin/main and verify deployment."

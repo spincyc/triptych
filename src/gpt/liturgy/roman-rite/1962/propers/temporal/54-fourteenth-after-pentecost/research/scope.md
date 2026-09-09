@@ -1707,3 +1707,14 @@ These are the research lanes' exact reported acquisitions, deduplicated only by 
 - **Findings PRE-004:** <https://www.newadvent.org/fathers/16012.htm>; accessed 2026-09-05; `text/html`; 187,763 bytes; SHA-256 `b17825eb0573e1f9b250f4dc0a2a6b4a34c1feedd5841753741957b4b7f28a42`. **Extent:** Complete Book II HTML page, numbered §§1–87, 27,484 extracted words including site matter; paired with Book I this acquires the host’s full two-book work, including its edition statement.
 
 - **Findings PRE-009:** <https://www.newadvent.org/fathers/1801095.htm>; accessed 2026-09-05; `text/html`; 28,522 bytes; SHA-256 `259493c5ea2a184c162f86253badc1172628b33d7cf7a787b909b7958c224341`. **Extent:** Complete freely hosted page: 13 numbered exposition sections, 3,019 extracted words including site matter; the NPNF presentation contains ellipses and is not the unabridged Latin work or the entire Psalter commentary.
+
+## Chronological context revision, 2026-09-09
+
+The generated date dossier now distinguishes the traditional attribution's
+reference era from the poem's occasion and composition. The shared chronology
+corpus owns the inspected Psalm titles and Corbett's qualified regnal span;
+`guidance/scripture-chronology.md` sections 5, 8 and 14 govern the distinction.
+The source binding records the exact Corbett passage. No date is inferred from
+an anonymous, Sabbath or Korahite title. Existing composition alternatives,
+superscription settings and prophetic referents remain distinct assertions.
+The page-2 revision keeps all appointed passages and their claim-local limits.

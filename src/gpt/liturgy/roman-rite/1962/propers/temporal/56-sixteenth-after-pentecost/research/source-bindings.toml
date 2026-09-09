@@ -430,3 +430,11 @@ role = "reception"
 states = ["cataloged", "acquired", "inspected"]
 context = "The cultural lane inspected the offered Sonnet 57 page and cross-checked the downloaded complete text. The gallery cites its exact URL and quotes a short underlying Shakespeare line for literary criticism; it does not reproduce the complete modern page. Metadata review 2026-09-09: the fingerprint moved because the work record now carries the title, aliases and composition date that both providers' Sixteenth Sunday productions had registered separately; the edition and artifact records, the bound bytes and their SHA-256 are unchanged."
 source_fingerprint = "sha256:0bf88e6b399afc838c01083f0388600e3b46c9cb68eced97c57ec4e7f372dffc"
+
+[[bindings]]
+source_id = "passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology"
+loci = ["article 'David, King,' printed p. 642, opening paragraph"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:30d1a361aacee847739689e156a7295bac16a72c00c0840ff4991950cd2a5af0"
+context = "Corbett's qualified regnal chronology supplies the traditional-attribution frame through the shared chronology corpus. The recorded facsimile collation and retained article text were consulted; no new facsimile collation is claimed. A regnal reference is not a claim that the poem was composed during that reign."

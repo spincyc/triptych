@@ -114,9 +114,9 @@
 
 **Location:** David’s flight to Geth in the title’s setting
 
-**Date:** Composition: Before c. 165 B.C. Superscription setting: A.M. 2944.
+**Date:** **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Superscription setting**: A.M. 2944. **Composition**: Before c. 165 B.C.
 
-The Douay title names Achimelech; 1 Kings 21:10–15 names Achis, king of Geth. The title-setting figure is reported-excluded in the corpus and does not date composition. Thanksgiving becomes instruction for those fearing God; the critical boundary applies to the Psalter, without securely dating this poem (Ps. 33; NABRE Psalms introduction; Haydock, 1 Kings 21).
+The Davidic regnal frame follows Corbett’s “usual chronology” (*Catholic Encyclopedia*, IV, p. 642). The Douay title names Achimelech; 1 Kings 21:10–15 names Achis, king of Geth. The title-setting figure is reported-excluded in the corpus and does not date composition. Thanksgiving becomes instruction for those fearing God; the critical boundary applies to the Psalter, without securely dating this poem (Ps. 33; NABRE Psalms introduction; Haydock, 1 Kings 21).
 
 ### Proper: Introit
 
@@ -124,7 +124,7 @@ The Douay title names Achimelech; 1 Kings 21:10–15 names Achis, king of Geth
 
 **Location:** Sons of Core; worship and ascent toward Sion
 
-**Date:** Composition: Between the days of Isaias and the return from exile.
+**Date:** **Composition**: Between the days of Isaias and the return from exile.
 
 The title supplies the Korahite attribution. Courts, altars and Sion locate the desired worship; neither an individual writer, composition site nor earthly royal addressee is named. The received range concerns the Korahite collection (Ps. 83; *Catholic Encyclopedia*, “Psalms”).
 
@@ -134,9 +134,9 @@ The title supplies the Korahite attribution. Courts, altars and Sion locate the 
 
 **Location:** Israel summoned to its Creator and shepherd
 
-**Date:** Composition: Before c. 165 B.C.
+**Date:** **Traditional attribution** – disputed: David (reign in the usual chronology), B.C. 1055–1015. **Composition**: Before c. 165 B.C.
 
-Hebrews 4:7 receives the warning “in David.” The complete psalm joins praise to wilderness disobedience and refused rest; it names no first performance or writing place. The modern critical boundary is general, not an individual composition date (Ps. 94; Heb. 3–4; NABRE Psalms introduction).
+The Clementine title names David; Hebrews 4:7 receives the warning “in David.” The complete psalm joins praise to wilderness disobedience and refused rest; it names no first performance or writing place. The modern critical boundary is general, not an individual composition date (Ps. 94; Heb. 3–4; NABRE Psalms introduction).
 
 ### Proper: Gradual
 
@@ -144,7 +144,7 @@ Hebrews 4:7 receives the warning “in David.” The complete psalm joins prais
 
 **Location:** Israel, Aaron’s house; gates and the Lord’s altar
 
-**Date:** Composition: Before c. 165 B.C.
+**Date:** **Composition**: Before c. 165 B.C.
 
 Personal deliverance becomes communal thanksgiving. Neither the speaker nor a particular historical procession is identified. Bellarmine uses received Davidic examples; the critical boundary dates no specific occasion (Ps. 117; Bellarmine, p. 370; NABRE Psalms introduction).
 
@@ -154,7 +154,7 @@ Personal deliverance becomes communal thanksgiving. Neither the speaker nor a pa
 
 **Location:** Galilean teaching; disciples and crowds
 
-**Date:** Composition – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. Event – No narrated-event date in the chronology corpus.
+**Date:** **Event** – No narrated-event date in the chronology corpus. **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50.
 
 *Narrated event: Jesus ascends an unnamed mountain after teaching in Galilee; disciples approach and crowds hear (Matt. 4:23–5:2; 7:28–29).*
 
@@ -166,7 +166,7 @@ St Matthew is the received author. Among the disputed composition alternatives 
 
 **Location:** Same Gospel; the kingdom command at reception
 
-**Date:** Composition – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50.
+**Date:** **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50.
 
 The antiphon abbreviates the Gospel’s final verse (Matt. 6:31–34), with no separate biblical author, audience or composition place. Its disputed dates concern Matthew: both Encyclopedia articles report “about A.D. 38–45”; vol. 14 also gives “about the year 50,” and vol. 10 supplies the other four alternatives. They do not date the chant.
 
@@ -176,7 +176,7 @@ The antiphon abbreviates the Gospel’s final verse (Matt. 6:31–34), with no 
 
 **Location:** Paul to the churches of Galatia
 
-**Date:** Composition: Preferred A.D. 58; alternatives A.D. 49–50, c. A.D. 53–54, A.D. 56, A.D. 57–58.
+**Date:** **Composition**: Preferred A.D. 58; alternatives A.D. 49–50, c. A.D. 53–54, A.D. 56, A.D. 57–58.
 
 Paul defends freedom, Abrahamic promise and sonship against compulsory circumcision among converts formerly serving non-gods; the letter fixes no writing site or north/south identification (Gal. 1–6). The preferred “anno Christi 58” is reported in a Lapide’s proemium and *Argumentum*. The Encyclopedia’s “St. Paul” (vol. 11) supplies “(1 and 2 Corinthians; Galatians), 56”; “Epistle to the Galatians” (vol. 6) supplies the alternatives “A.D. 49-50,” “about A.D. 53, 54,” and “A.D. 57 or 58.”
 
@@ -634,6 +634,8 @@ A student who has delayed his reading anticipates the April examinations, an unc
 
 The online witnesses cited below for SBLGNT, the Authorized Version, Augustine, Theodoret, Chrysostom, Basil, Aquinas, Hugh, Bellarmine, Anthony, Francis de Sales, Wilson, Gros, Schuster, and the Catechism were accessed September 5, 2026.
 
+- John Corbett, [“David, King,”](https://www.newadvent.org/cathen/04642b.htm) *Catholic Encyclopedia*, IV (1908), p. 642: the qualified “usual chronology.”
+
 - *Missale Romanum*, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962), *Dominica Decima Quarta post Pentecosten*, pp. 394–396, nos. 1572–1581, [CMAA facsimile](https://media.churchmusicassociation.org/pdf/missale62.pdf). Independent corroboration: *Missale Romanum*, editio iuxta typicam (New York: Benziger, 1962), pp. 389–391, Internet Archive item `MissaleRomanum1962RomanMissalColorLatin`.
 
 - *The Roman Missal, Translated into the English Language for the Use of the Laity* (Philadelphia: Eugene Cummiskey, 1861), Sunday XIV after Pentecost, Collect p. 425, Secret and Postcommunion p. 427. Anonymous historical English controls the three published orations.
@@ -686,6 +688,6 @@ The online witnesses cited below for SBLGNT, the Authorized Version, Augustine, 
 
 - Local exploratory precedents: the earlier GPT and Claude guides to this Fourteenth Sunday, especially their *Interpretive Possibilities* and *Source-Grounded Synthesis*; GPT’s Eighth Sunday proposal on tasting and conversion. Exact file and proposal loci are recorded under PRE-002–010 in `research/scope.md`. These are editorial precedents, not historical authorities for the formulary.
 
-**Last revised (UTC):** 2026-09-05T19:04:00Z
+**Last revised (UTC):** 2026-09-09T14:36:51Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

@@ -2702,3 +2702,14 @@ evaluation findings are carried forward, with the two research evidence
 defects answered and the four authoring repairs still outstanding. No
 registration prerequisite, new source, new date, original-research result,
 or completed publication review is asserted by this PASS.
+
+## Chronological context revision, 2026-09-09
+
+The generated date dossier now distinguishes the traditional attribution's
+reference era from the poem's occasion and composition. The shared chronology
+corpus owns the inspected Psalm titles and Corbett's qualified regnal span;
+`guidance/scripture-chronology.md` sections 5, 8 and 14 govern the distinction.
+The source binding records the exact Corbett passage. No date is inferred from
+an anonymous, Sabbath or Korahite title. Existing composition alternatives,
+superscription settings and prophetic referents remain distinct assertions.
+The page-2 revision keeps all appointed passages and their claim-local limits.

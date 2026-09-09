@@ -22,6 +22,7 @@ import _proper_chronology as chronology  # noqa: E402
 COLLECTION = "liturgy/roman-rite/1962/propers"
 FIFTEENTH = f"{COLLECTION}/temporal/55-fifteenth-after-pentecost"
 FOURTEENTH = f"{COLLECTION}/temporal/54-fourteenth-after-pentecost"
+SIXTEENTH = f"{COLLECTION}/temporal/56-sixteenth-after-pentecost"
 TRINITY = f"{COLLECTION}/temporal/39-trinity-sunday"
 EIGHTH = f"{COLLECTION}/temporal/48-eighth-after-pentecost"
 NINTH = f"{COLLECTION}/temporal/49-ninth-after-pentecost"
@@ -54,9 +55,11 @@ class AnnotationProjectionTests(unittest.TestCase):
         dossier = chronology.dossier(FIFTEENTH)
 
         self.assertEqual(len(by_key), 7)
-        self.assertEqual(by_key["introit"]["groups"][0]["status"], "preferred")
+        composition = next(group for group in by_key["introit"]["groups"]
+                           if group["relation"] == "composition")
+        self.assertEqual(composition["status"], "preferred")
         self.assertEqual(
-            by_key["introit"]["groups"][0]["claims"][0]["display_label"],
+            composition["claims"][0]["display_label"],
             "Before c. 165 B.C.",
         )
 
@@ -98,7 +101,7 @@ class AnnotationProjectionTests(unittest.TestCase):
         )
         self.assertEqual(
             [group["relation"] for group in gospel["groups"]],
-            ["composition", "narrated-event"],
+            ["narrated-event", "composition"],
         )
 
     def test_gospel_without_an_event_gets_an_explicit_gap(self) -> None:
@@ -126,11 +129,16 @@ class AnnotationProjectionTests(unittest.TestCase):
             ),
         )
         projected = chronology.annotations(without_event).elements[0]
-        event = projected.groups[1]
+        event = next(group for group in projected.groups
+                     if group.relation == "narrated-event")
         self.assertEqual(event.relation, "narrated-event")
         self.assertEqual(event.status, "research-pending")
         self.assertEqual(event.claims, ())
         self.assertIn("no event date", event.reason)
+        self.assertIn(
+            r"\textbf{Event} -- No narrated-event date in the chronology corpus.",
+            chronology.render_annotations_tex(chronology.annotations(without_event)),
+        )
 
     def test_partial_locus_gospel_event_is_a_nonuniform_gap(self) -> None:
         payload = self.payload(NATIVITY_OCTAVE)
@@ -167,7 +175,7 @@ class AnnotationProjectionTests(unittest.TestCase):
             if element["key"] == "gospel"
         )
         relative = next(
-            claim for claim in gospel["groups"][0]["claims"]
+            claim for group in gospel["groups"] for claim in group["claims"]
             if claim["precision"] == "relative"
         )
         self.assertEqual(
@@ -190,6 +198,149 @@ class AnnotationProjectionTests(unittest.TestCase):
             text.stdout,
         )
         self.assertNotIn("imprisonment…", text.stdout)
+
+    def test_recent_propers_foreground_only_supported_traditional_attributions(self) -> None:
+        expected = {
+            FOURTEENTH: {"alleluia", "offertory"},
+            FIFTEENTH: {"introit", "alleluia", "offertory"},
+            SIXTEENTH: {"introit", "alleluia", "offertory", "communion"},
+        }
+        for document, appointed in expected.items():
+            with self.subTest(document=document):
+                dossier = chronology.dossier(document)
+                projection = chronology.annotations(dossier)
+                found = set()
+                for element in projection.elements:
+                    attributions = [g for g in element.groups
+                                    if g.relation == "traditional-attribution"]
+                    if not attributions:
+                        continue
+                    found.add(element.key)
+                    self.assertEqual(element.groups[0], attributions[0])
+                    claim = attributions[0].claims[0]
+                    self.assertEqual(
+                        chronology._group_display(attributions[0]),
+                        "Traditional attribution -- disputed: David (reign in "
+                        "the usual chronology), B.C. 1055–1015.",
+                    )
+                    self.assertEqual(claim.profile, "catholic-traditional-v1")
+                    self.assertEqual(claim.label, "reigned from 1055 to 1015 B.C.")
+                    self.assertTrue(claim.sources)
+                    composition = next(g for g in element.groups
+                                       if g.relation == "composition")
+                    self.assertEqual(chronology._group_display(composition),
+                                     "Composition: Before c. 165 B.C.")
+                    self.assertEqual(composition.claims[0].precision, "boundary")
+                    self.assertEqual(composition.claims[0].profile,
+                                     "catholic-critical-v1")
+                    self.assertIn("no individual psalm can be dated securely",
+                                  composition.claims[0].label)
+                self.assertEqual(found, appointed)
+
+                # The ordering has no license to hide any source claim.
+                for element in projection.elements:
+                    source = dossier.element(element.key).publication_claims
+                    projected = [claim for group in element.groups
+                                 for claim in group.claims]
+                    self.assertCountEqual(
+                        [(c.relation, c.subject, c.label, c.profile, c.disposition)
+                         for c in projected],
+                        [(c.relation, c.subject, c.label, c.profile, c.disposition)
+                         for c in source],
+                    )
+
+    def test_attribution_keeps_setting_and_prophecy_in_their_own_display_groups(self) -> None:
+        fourteen = chronology.annotations(chronology.dossier(FOURTEENTH))
+        offertory = next(e for e in fourteen.elements if e.key == "offertory")
+        self.assertEqual(
+            [group.relation for group in offertory.groups],
+            ["traditional-attribution", "superscription-setting", "composition"],
+        )
+        sixteen = chronology.annotations(chronology.dossier(SIXTEENTH))
+        alleluia = next(e for e in sixteen.elements if e.key == "alleluia")
+        self.assertEqual(
+            [group.relation for group in alleluia.groups],
+            ["traditional-attribution", "composition", "prophetic-referent"],
+        )
+        communion = next(e for e in sixteen.elements if e.key == "communion")
+        self.assertEqual(
+            [group.relation for group in communion.groups],
+            ["traditional-attribution", "superscription-setting",
+             "historical-setting", "composition"],
+        )
+
+    def test_multiple_attributed_figures_are_not_flattened_into_alternative_dates(self) -> None:
+        dossier = chronology.dossier(FIFTEENTH)
+        introit = dossier.element("introit")
+        david = next(c for c in introit.publication_claims
+                     if c.relation == "traditional-attribution")
+        other = david._replace(subject="fixture.other-author",
+                               title="Another attributed figure",
+                               disposition="preferred")
+        element = introit._replace(publication_claims=(david, other))
+        projection = chronology.annotations(dossier._replace(elements=(element,)))
+        groups = projection.elements[0].groups
+        self.assertEqual(len(groups), 2)
+        self.assertEqual({group.status for group in groups}, {"preferred", "disputed"})
+        self.assertEqual({len(group.claims) for group in groups}, {1})
+        rendered = chronology.render_annotations_text(projection)
+        self.assertIn("Traditional attribution: Another attributed figure", rendered)
+        self.assertIn("Traditional attribution -- disputed: David", rendered)
+        self.assertNotIn("alternatives", rendered)
+
+    def test_attribution_only_is_preserved_through_publication_intersection(self) -> None:
+        dossier = chronology.dossier(FIFTEENTH, profile="catholic-traditional-v1")
+        introit = dossier.element("introit")
+        self.assertEqual(introit.status, "attribution-only")
+        self.assertEqual(introit.publication_status, "attribution-only")
+        projection = chronology.annotations(dossier)
+        rendered = next(e for e in projection.elements if e.key == "introit")
+        self.assertEqual(rendered.status, "attribution-only")
+        self.assertEqual([g.relation for g in rendered.groups],
+                         ["traditional-attribution"])
+
+    def test_old_testament_events_survive_and_precede_available_composition(self) -> None:
+        dossier = chronology.dossier(FIFTEENTH)
+        for locus in ("Gen.1.1", "Gen.12.4", "Ex.3.1", "Ex.16.1",
+                      "Jos.6.20", "3Kings.6.1", "1Mach.4.52"):
+            with self.subTest(locus=locus):
+                status, reason, claims = chronology._claims_at(locus, None, None)
+                self.assertTrue(any(c.relation == "narrated-event" for c in claims))
+                element = dossier.element("epistle")._replace(
+                    loci=(locus,), claims=tuple(claims),
+                    publication_status=status, publication_reason=reason,
+                    publication_claims=tuple(claims),
+                )
+                projection = chronology.annotations(dossier._replace(elements=(element,)))
+                groups = projection.elements[0].groups
+                self.assertEqual(groups[0].relation, "narrated-event")
+                self.assertTrue(all(group.claims for group in groups))
+                self.assertCountEqual(
+                    [(c.relation, c.subject, c.label, c.disposition)
+                     for group in groups for c in group.claims],
+                    [(c.relation, c.subject, c.label, c.disposition) for c in claims],
+                )
+                for group in groups:
+                    self.assertEqual(len({c.subject for c in group.claims}), 1)
+                if locus.startswith(("Jos.", "3Kings.", "1Mach.")):
+                    self.assertIn("composition", [g.relation for g in groups])
+                if locus.startswith(("3Kings.", "1Mach.")):
+                    events = [g for g in groups if g.relation == "narrated-event"]
+                    self.assertGreater(len(events), 1)
+                    for group in events:
+                        self.assertIn(group.claims[0].title,
+                                      chronology._group_display(group))
+
+    def test_old_testament_book_genre_does_not_invent_an_event_gap(self) -> None:
+        dossier = chronology.dossier(FIFTEENTH)
+        status, reason, claims = chronology._claims_at("Job.1.1", None, None)
+        element = dossier.element("epistle")._replace(
+            loci=("Job.1.1",), publication_status=status,
+            publication_reason=reason, publication_claims=tuple(claims),
+        )
+        projected = chronology.annotations(dossier._replace(elements=(element,)))
+        self.assertTrue(all(group.claims for group in projected.elements[0].groups))
+        self.assertNotIn("No narrated-event", chronology.render_annotations_text(projected))
 
     def test_century_notation_never_prints_its_unasserted_endpoints(self) -> None:
         cases = {
@@ -502,6 +653,9 @@ class AnnotationProjectionTests(unittest.TestCase):
             r"\newcommand{\chronologyannotation}[1]{%", rendered
         )
         self.assertNotIn(r"\providecommand{\chronologyannotation", rendered)
+        self.assertIn(r"\textbf{Traditional attribution} -- disputed:", rendered)
+        self.assertIn(r"\textbf{Composition} -- disputed:", rendered)
+        self.assertIn(r"\textbf{Event}:", rendered)
         for element in payload["elements"]:
             self.assertEqual(
                 rendered.count(
