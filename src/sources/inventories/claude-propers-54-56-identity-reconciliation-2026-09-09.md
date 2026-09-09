@@ -65,3 +65,23 @@ refreshed against the changed canonical catalog with every review unit still
 pending, as the 2026-09-06 refresh left it. `tools/source-library validate`,
 both inventory checks, `source-inventory classify` and `make check-sources`
 pass on the integrated tree.
+
+## Fourteenth Sunday (`feature/claude/propers/tlm/54`)
+
+No duplicate bytes: the branch's New Advent responses differ from the GPT
+production's by the page furniture that host changes between deliveries, so
+each stays its own artifact. Two records were registered under ids `main`
+already held, and `main`'s wording is kept verbatim in both cases, because
+each was already pinned by an integrated leaf:
+
+| Branch record | Disposition |
+| --- | --- |
+| `work.augustine.de-sermone-domini-in-monte` | `main`'s record (GPT Fourteenth Sunday registration, with its unknown-composition basis) stands; the branch's edition `english-npnf-new-advent-web-2026-09-05` and its Book II response join it unchanged |
+| `edition.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-09-05` | `main`'s record (Claude Sixteenth Sunday registration of the same dated web state) stands; the branch's four psalm responses (33, 83, 94, 117 in the Vulgate numbering) join it unchanged |
+
+Five bindings in
+`src/claude/…/54-fourteenth-after-pentecost/research/source-bindings.toml`
+(38 to 42) moved fingerprint through those two ancestors and are re-pinned
+with a `Metadata review 2026-09-09` note; their loci, roles and evidence
+states are unchanged. The Claude publication inventory follows the revised
+leaf, the family ledger is refreshed, and the same checks pass.

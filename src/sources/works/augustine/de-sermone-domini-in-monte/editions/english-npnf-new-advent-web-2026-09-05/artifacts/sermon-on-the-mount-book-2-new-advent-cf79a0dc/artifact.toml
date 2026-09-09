@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.augustine.de-sermone-domini-in-monte.english-npnf-new-advent-web-2026-09-05.sermon-on-the-mount-book-2-new-advent-cf79a0dc"
+edition_id = "edition.augustine.de-sermone-domini-in-monte.english-npnf-new-advent-web-2026-09-05"
+artifact_type = "web-page"
+media_type = "text/html"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "The underlying English translation is in the public domain in the United States. What is not redistributed is the exact newadvent.org response, which is mostly not the translation: it carries the site's navigation, styling, advertising slots and 'About this page' apparatus under New Advent's own copyright footer, and no permission to republish those was sought or granted. So the exact bytes stay remote, hashed, with the limitation stated: what a reader with no network cannot presently open here is this page's English, and the reason is that nothing in this repository yet separates New Advent's Fathers text from New Advent's own matter. src/sources/inventories/catholic-encyclopedia-rights-v1.toml settles that separation for the encyclopedia and extracts its articles as tracked public-domain derivatives; the commit that made it recorded expressly that New Advent's Fathers deliveries 'carry a different underlying work with a different public-domain basis, which needs its own rights record instead of an extension of this one by assertion'. That record does not exist yet, this stage may not write one on assertion, and so the artifact stays remote and the gap is named rather than papered over."
+source_url = "https://www.newadvent.org/fathers/16012.htm"
+provenance = "Exact HTML response acquired directly over HTTPS from newadvent.org by the research lane of run efff3a6f73c1f451 on 2026-09-05 and hashed."
+retrieved = "2026-09-05"
+sha256 = "cf79a0dcc1d16009cd6a5ad2a1abf888d6b6b5e54e745f7aeecc9878e98816c1"
+byte_size = 187710
+indexable = false
+notes = "Extent as the retrieving lane measured it: Complete New Advent page for Augustine, De sermone Domini in monte, book II entire (sections 1-87), NPNF1 vol. 6 as published there, plus site chrome. This is the whole of book II on one page, which is the fullest view the host offers; English translation only, no Latin retrieved. Book II entire on one page, sections 1 to 87, which includes the exposition of Matthew 6:24-33, the Gospel of the Roman Fourteenth Sunday after Pentecost."

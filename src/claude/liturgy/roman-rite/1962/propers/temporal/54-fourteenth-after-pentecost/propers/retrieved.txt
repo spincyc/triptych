@@ -34,6 +34,15 @@ storage "remote", no payload installed) were NOT read. An apparent Benziger read
 is therefore evidence about an uncorrected text layer, not a collated reading of the
 Benziger book. verified.md says so again where it matters.
 
+  AMENDED 2026-09-05 by the source-audit stage. The limit still governs THIS FILE, whose
+  body is the text layer and nothing else. But the Benziger pages have since been read
+  elsewhere: not on the registered .djvu, which was fetched whole and digest-matched this
+  run and remains undecodable in this environment, but on the same Internet Archive item's
+  own single-page JP2 derivative (..._jp2.zip, whole file retrieved 2026-09-05, 188,509,749
+  bytes, SHA-256 bb6db2500c3164e3855b1e4d9d5d84e48c7c80a71f166d8d29c60119d6f48dfb), for
+  which this library registers no artifact. See verified.md's fifth re-confirmation bullet.
+  Two things that reading changes for the notes below are marked at their own paragraphs.
+
 Known OCR corruptions in this excerpt, retained on purpose:
   digit-for-accent substitutions ("6" for o-acute, "f" for i-acute, "£" for e-acute,
   "&" for a-acute, "d" for a-acute in "dspice", "S" for e-acute); "Fotector" for
@@ -42,8 +51,7 @@ Known OCR corruptions in this excerpt, retained on purpose:
   "Considenite lflia" for "Considerate lilia"; "prsedfeo" for "praedico";
   "homicidia,ebrietates" and "L6ctioEpfstolse" word-space failures; "omuia" for
   "omnia"; "Praefatio de Ssma Trinitatc." for "...Trinitate."; "Mattha?um" for
-  "Matthaeum"; "II clasHis" for "II classis" (in the Fifteenth Sunday's heading);
-  "invidiee" for "invidiae"; "perp6tuee" for "perpetuae"; "queesu-mus" for
+  "Matthaeum"; "invidiee" for "invidiae"; "perp6tuee" for "perpetuae"; "queesu-mus" for
   "quaesumus"; "mammdnee" for "mammonae"; "feenum" for "faenum"; "m6dic£e" for
   "modicae"; "Ahgelus" for "Angelus".
 
@@ -55,9 +63,17 @@ read off as noise and quietly normalised. Elsewhere in this same derivative
 after this book's "f"-for-"í"; and across the whole file "mfllia" is what the
 layer gives for *thousands* at all sixteen of its occurrences, against
 sixty-four "mflia" that are every one of them "família" and its kin. The
-difference is now the first row of verified.md's Benziger table. It stands there
-as "probably real" and not as certain, because the registered Benziger page
-images were not opened here and only they can settle a doubled letter.
+difference is now the first row of verified.md's Benziger table.
+
+  SETTLED 2026-09-05 by the source-audit stage. This paragraph used to close by saying
+  the row stands as "probably real" and not as certain, because the registered Benziger
+  page images had not been opened and only they can settle a doubled letter. A page image
+  of printed p. 389 has now been read, on the Internet Archive item's own JP2 derivative
+  described under the standing limit above, and it prints "millia" with two l's and an
+  acute on the i. The row is Real. The same images also show that this book ACCENTS the
+  four "fi"-ligature words the Vatican typical edition prints bare -- "venefi'cia",
+  "confi'dere" twice, "fi'dei" -- so the accentless forms in the body below are this
+  layer losing an accent and are not evidence that the Benziger book withholds one.
 
 -----------------------------------------------------------------------------
 Antiphona ad Communionem 

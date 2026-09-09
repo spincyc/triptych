@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.united-kingdom-parliament.hansard-official-report.1962-12-03-commons-central-africa.hansard-api-debate-e2a8215a"
+edition_id = "edition.united-kingdom-parliament.hansard-official-report.1962-12-03-commons-central-africa"
+artifact_type = "api-response"
+media_type = "application/json"
+storage = "remote"
+rights_status = "licensed"
+rights_basis = "The retrieving research lane of run efff3a6f73c1f451 recorded that this is UK official parliamentary report material and that parliamentary material is published under the Open Parliament Licence. That is a real and affirmative licence, and it is recorded here as the lane found it. It is NOT relied on for retention, and the reason is stated rather than hidden: neither the retrieving lane nor this registration read the licence text or established which version governs this API's responses, so the affirmative recorded distribution basis that guidance/sources.md requires before `tracked` is asserted but not verified. What a reader with no network therefore cannot open here is the debate text itself; closing that needs a rights record for UK parliamentary material of the kind guidance/sources.md asks for when one question governs a whole body of material, and this stage may not write one on assertion."
+license = "Open Parliament Licence"
+source_url = "https://hansard-api.parliament.uk/debates/debate/4f32ac2d-6904-432f-be4c-5fbd07c99be0.json?house=Lords"
+provenance = "Exact JSON response acquired directly over HTTPS from hansard-api.parliament.uk by the research lane of run efff3a6f73c1f451 on 2026-09-05 and hashed."
+retrieved = "2026-09-05"
+sha256 = "e2a8215ad9d3963b8a482b499bc69561b0ccd7b4d59e39b95144cbb24ec1e327"
+byte_size = 363477
+indexable = false
+notes = "Extent as the retrieving lane measured it: Complete debate, HC 3 December 1962 vol. 668 (printed by Hansard as 'Central Africal'), all 141 contribution items including the printed time-markers; Berkeley's whole speech present. Carries no printed column numbers. Retrieved with house=Lords in the query string, which the API ignored and returned the Commons debate for this ExtId."

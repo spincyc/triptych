@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.the-ranch.issue-1910-11-01.1910-11-01-edition-1.loc-word-coordinates-0743b69f"
+edition_id = "edition.the-ranch.issue-1910-11-01.1910-11-01-edition-1"
+artifact_type = "word-coordinate-index"
+media_type = "application/json"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The issue was published in the United States before 1929 and is in the public domain there; the retrieving research lane of run efff3a6f73c1f451 recorded the same finding, in the form 'nineteenth-century American newspaper digitised by the Library of Congress; public domain'. The Library of Congress's mechanical digitisation and optical recognition of a public-domain page add no original authorship of their own. The bytes are retained at 0.13 MB: they are the Library's optical reading of a public-domain page, they are what a reader with no network opens to find the page's words, and no exemption guidance/sources.md allows comes near a file this size."
+rights_jurisdiction = "United States"
+source_url = "https://tile.loc.gov/text-services/word-coordinates-service?format=alto_xml&segment=%2Fservice%2Fndnp%2Fwa%2Fbatch_wa_cedar_ver01%2Fdata%2Fsn98047754%2F00211107789%2F1910110101%2F0849.xml"
+provenance = "Complete word-coordinate index for the whole of that page, acquired directly over HTTPS from the Library of Congress text-services endpoint by the research lane of run efff3a6f73c1f451 on 2026-09-05 and hashed. Despite the alto_xml parameter in the request the service returns JSON, and the recorded media type is what it actually served."
+retrieved = "2026-09-05"
+sha256 = "0743b69f1e41c4698e5b619eb769eadcc3fb1fdc66ecf935c273b22edad1605a"
+byte_size = 129718
+path = "src/sources/works/the-ranch/issue-1910-11-01/editions/1910-11-01-edition-1/artifacts/loc-word-coordinates-0743b69f/the-ranch-1910-11-01-p3-word-coordinates.json"
+encoding = "utf-8"
+indexable = false
+notes = "Extent as the retrieving lane measured it: Complete word-coordinate index for the whole of that page (declared page space 13464x18237, i.e. 3x the JP2 master), used to locate the crop regions."

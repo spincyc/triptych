@@ -1,0 +1,59 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "page-master-image",
+   "byte_size": 4854594,
+   "edition_owned": true,
+   "id": "artifact.semi-weekly-interior-journal.issue-1895-11-19.1895-11-19-edition-1.loc-page-master-9527457f",
+   "media_type": "image/jp2",
+   "notes": "Extent as the retrieving lane measured it: Complete page master image, Semi-weekly interior journal 1895-11-19 ed-1 page 2, 5204x7461 px 8-bit greyscale; the highest resolution the Library of Congress publishes for this page. Whole page, not a crop. The retrieving lane records this item as VERIFIED BY COLLATION AGAINST THE PAGE IMAGE for the quoted sentences at the named crop region, and for no further.",
+   "page_count": 1,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "The issue was published in the United States before 1929 and is in the public domain there; the retrieving research lane of run efff3a6f73c1f451 recorded the same finding, in the form 'nineteenth-century American newspaper digitised by the Library of Congress; public domain'. The Library of Congress's mechanical digitisation and optical recognition of a public-domain page add no original authorship of their own. The bytes are retained at 4.85 MB because they are the evidence itself: the retrieving lane collated its quotations against this page image and not against the optical text, and a reader with no network needs the image to repeat that collation. guidance/sources.md makes retention the default and names size as the only other exemption; this file is below the 5.88 MB that is the largest payload this library retains.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://tile.loc.gov/storage-services/service/ndnp/kyu/batch_kyu_casablanca_ver01/data/sn85052020/00206534163/1895111901/1434.jp2",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "word-coordinate-index",
+   "byte_size": 291097,
+   "edition_owned": true,
+   "id": "artifact.semi-weekly-interior-journal.issue-1895-11-19.1895-11-19-edition-1.loc-word-coordinates-9a00993a",
+   "media_type": "application/json",
+   "notes": "Extent as the retrieving lane measured it: Complete word-coordinate index for the whole of that page (declared page space 20816x29844, i.e. 4x the JP2 master), used to locate the crop region.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "The issue was published in the United States before 1929 and is in the public domain there; the retrieving research lane of run efff3a6f73c1f451 recorded the same finding, in the form 'nineteenth-century American newspaper digitised by the Library of Congress; public domain'. The Library of Congress's mechanical digitisation and optical recognition of a public-domain page add no original authorship of their own. The bytes are retained at 0.29 MB: they are the Library's optical reading of a public-domain page, they are what a reader with no network opens to find the page's words, and no exemption guidance/sources.md allows comes near a file this size.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://tile.loc.gov/text-services/word-coordinates-service?format=alto_xml&segment=%2Fservice%2Fndnp%2Fkyu%2Fbatch_kyu_casablanca_ver01%2Fdata%2Fsn85052020%2F00206534163%2F1895111901%2F1434.xml",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1895-11-19",
+  "editors": [],
+  "id": "edition.semi-weekly-interior-journal.issue-1895-11-19.1895-11-19-edition-1",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "Semi-weekly interior journal, 1895-11-19, edition 1, page 2, as digitised by the Library of Congress in the National Digital Newspaper Program under LCCN sn85052020 and served from tile.loc.gov.",
+  "title": "Semi-weekly interior journal, 1895-11-19, edition 1",
+  "translators": [],
+  "year": 1895
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Semi-weekly interior journal",
+  "category": "newspaper-issue",
+  "description": "Page 2 of the issue of 19 November 1895. Registered as one issue rather than as the serial, because one page of one issue is what was retrieved and the narrowest truthful owner of these bytes is that issue.",
+  "id": "work.semi-weekly-interior-journal.issue-1895-11-19",
+  "languages": [
+   "en"
+  ],
+  "title": "Semi-weekly interior journal, 1895-11-19"
+ }
+}

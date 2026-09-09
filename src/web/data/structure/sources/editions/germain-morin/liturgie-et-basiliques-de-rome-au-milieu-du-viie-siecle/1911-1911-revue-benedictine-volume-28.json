@@ -1,0 +1,67 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "ocr-text",
+   "byte_size": 1504310,
+   "edition_owned": true,
+   "id": "artifact.germain-morin.liturgie-et-basiliques-de-rome-au-milieu-du-viie-siecle.1911-revue-benedictine-volume-28.ia-djvu-ocr-3de8a598",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Extent as the retrieving lane measured it: Complete uncorrected OCR of Revue Benedictine vol. 28 (1911), the Maredsous scan; carries Morin's edition of the Wuerzburg gospel lists at pp. 296-330. Uncorrected optical recognition: a locating and searching layer, not a text of record.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "The printing reproduced here was published before 1931 and is in the public domain in the United States: the repository's own rights reading, recorded at guidance/missals.md section 5 against Cornell's public-domain chart current at 1 January 2026, is that a work first published abroad before 1931 is in the public domain with no term running. The Internet Archive's optical character recognition of a public-domain printing is a mechanical transcription that adds no original authorship, is served without a copyright claim asserted over it, and carries none of the host's markup, navigation or apparatus. The bytes are retained here because guidance/sources.md makes retention the project-wide default and none of its three exemptions reaches this file: it may lawfully be republished, it is not restricted, and at 1.50 MB it is below the 5.88 MB that is the largest payload this library already retains.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/revuebenedictineabbmared28/revuebenedictineabbmared28_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "page-scan-image",
+   "byte_size": 1698048,
+   "edition_owned": true,
+   "id": "artifact.germain-morin.liturgie-et-basiliques-de-rome-au-milieu-du-viie-siecle.1911-revue-benedictine-volume-28.ia-leaf-n325-010de247",
+   "media_type": "image/jpeg",
+   "notes": "Extent as the retrieving lane measured it: One page image, leaf n325 = Revue Benedictine 28 printed p. 314, carrying EBD. II-IIII POST SCI. LAUR. of the Wuerzburg gospel capitulary and Morin's notes 3-6. One leaf only.",
+   "page_count": 1,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "The printing reproduced here was published before 1931 and is in the public domain in the United States: the repository's own rights reading, recorded at guidance/missals.md section 5 against Cornell's public-domain chart current at 1 January 2026, is that a work first published abroad before 1931 is in the public domain with no term running. A faithful photographic reproduction of one page of a public-domain printing adds no original authorship of its own. The bytes are not retained, on the duplication ground guidance/sources.md gives for `remote`: this 1.70 MB page image reproduces one leaf of the volume whose complete optical text layer is retained in this repository at artifact.germain-morin.liturgie-et-basiliques-de-rome-au-milieu-du-viie-siecle.1911-revue-benedictine-volume-28.ia-djvu-ocr-3de8a598, and that retained file is what a reader with no network opens to read the words cited from this leaf. The retained layer is uncorrected optical recognition, so a reader who needs the printed letterform must re-fetch the image at the recorded URL.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/revuebenedictineabbmared28/page/n325.jpg?fit=cover&quality=100",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1911",
+  "editors": [
+   "Germain Morin"
+  ],
+  "id": "edition.germain-morin.liturgie-et-basiliques-de-rome-au-milieu-du-viie-siecle.1911-revue-benedictine-volume-28",
+  "jurisdiction": null,
+  "language": "fr",
+  "publication": "Maredsous: Abbaye de Maredsous, Revue Benedictine, volume 28, 1911. Internet Archive item revuebenedictineabbmared28.",
+  "title": "Liturgie et basiliques de Rome au milieu du VIIe siecle d'apres les listes d'evangiles de Wurzbourg, Revue Benedictine 28 (1911)",
+  "translators": [],
+  "year": 1911
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Wuerzburg gospel capitulary",
+   "Wurzburg gospel lists",
+   "Liturgie et basiliques de Rome",
+   "Capitulare evangeliorum of Wuerzburg"
+  ],
+  "author": "Germain Morin",
+  "category": "critical-edition-article",
+  "description": "Morin's edition of the gospel lists of the Wuerzburg manuscript. Its post-Laurentii series heads the Masses 'EBD. II-IIII POST SCI. LAUR.' rather than by a Sunday after Pentecost, which is the seventh-century form of the asymmetry between the chant strand and the reading strand that this run is tracing.",
+  "id": "work.germain-morin.liturgie-et-basiliques-de-rome-au-milieu-du-viie-siecle",
+  "languages": [
+   "fr",
+   "la"
+  ],
+  "title": "Liturgie et basiliques de Rome au milieu du VIIe siecle d'apres les listes d'evangiles de Wurzbourg"
+ }
+}

@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.newport-navalog.issue-1958-07-11.1958-07-11-edition-1.loc-word-coordinates-18906c50"
+edition_id = "edition.newport-navalog.issue-1958-07-11.1958-07-11-edition-1"
+artifact_type = "word-coordinate-index"
+media_type = "application/json"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "Rights in this issue are not established and are not assumed. It was published in the United States in 1958, which is late enough that the term depends on facts about notice and renewal that neither the retrieving research lane nor this registration checked. What the lane did record is narrower and is recorded as what it is: that the Navalog is a United States Naval Base publication digitised by the Library of Congress in the National Digital Newspaper Program and that the Library asserts no rights restriction in its own record, WHILE SAYING IN THE SAME BREATH that 'the date is late enough that a rights check should be repeated before publication'. That warning is the reason this record does not resolve the question in either direction. `unresolved` keeps the guard that matters, since TRACKABLE_RIGHTS excludes it and nothing may install the payload. A reader with no network cannot presently reopen this page here, and closing that needs a rights check on this title rather than an assertion from this stage. The index is the Library's optical reading of this page and can carry no better right than the page it reads."
+rights_jurisdiction = "United States"
+source_url = "https://tile.loc.gov/text-services/word-coordinates-service?format=alto_xml&segment=%2Fservice%2Fndnp%2Frp%2Fbatch_rp_hobgoblin_ver02%2Fdata%2Fsn91070618%2F0051699180A%2F1958071101%2F0754.xml"
+provenance = "Complete word-coordinate index for the whole of that page, acquired directly over HTTPS from the Library of Congress text-services endpoint by the research lane of run efff3a6f73c1f451 on 2026-09-05 and hashed. Despite the alto_xml parameter in the request the service returns JSON, and the recorded media type is what it actually served."
+retrieved = "2026-09-05"
+sha256 = "18906c500496cd0e8559b68051ff7174448b5c1c731b690934b4c458ed372e7a"
+byte_size = 106256
+indexable = false
+notes = "Extent as the retrieving lane measured it: Complete word-coordinate index for the whole of that page (declared page space 11307x13806, i.e. 3x the JP2 master), used to locate the crop region; despite the alto_xml parameter the service returns JSON, not ALTO."

@@ -1,0 +1,49 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "ocr-text",
+   "byte_size": 4060701,
+   "edition_owned": true,
+   "id": "artifact.berno-of-reichenau.libellus-de-quibusdam-rebus-ad-missae-officium-pertinentibus.latin-migne-pl-142.ia-djvu-ocr-991758f7",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Extent as the retrieving lane measured it: Complete uncorrected OCR of Migne, Patrologia Latina vol. 142 (Berno of Reichenau and others), whole volume. NO page image of this volume was fetched; every Berno reading here is optical text only. Uncorrected optical recognition: it is a locating and searching layer, not a text of record, and wording quoted from this volume was collated against page images rather than taken from here. This is the only witness to Berno that this run holds: no leaf of the volume was fetched, so nothing quoted from Berno here rises above an uncollated optical reading.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "The printing reproduced here was published long before 1931 and is in the public domain in the United States: the repository's own rights reading, recorded at guidance/missals.md section 5 against Cornell's public-domain chart current at 1 January 2026, is that a work first published abroad before 1931 is in the public domain with no term running. The Internet Archive's optical character recognition of a public-domain printing is a mechanical transcription that adds no original authorship, is served without a copyright claim asserted over it, and carries none of the host's markup, navigation or apparatus. The bytes are retained here because guidance/sources.md makes retention the project-wide default and none of its three exemptions reaches this file: it may lawfully be republished, it is not restricted, and at 4.06 MB it is at or below the 5.88 MB that is the largest payload this library already retains.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/patrologiaecursu0142mign/patrologiaecursu0142mign_djvu.txt",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": null,
+  "editors": [
+   "Jacques-Paul Migne"
+  ],
+  "id": "edition.berno-of-reichenau.libellus-de-quibusdam-rebus-ad-missae-officium-pertinentibus.latin-migne-pl-142",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Paris: J.-P. Migne, Patrologiae Cursus Completus, Series Latina, tomus 142. Internet Archive item patrologiaecursu0142mign. The scanned copy's imprint line reads APUD GARNIER FRATRES, EDITORES ET J.-P. MIGNE SUCCESSORES.",
+  "title": "Libellus de quibusdam rebus ad Missae officium pertinentibus, in Migne's Patrologia Latina volume 142",
+  "translators": [],
+  "year": null
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "De officio Missae",
+   "Berno Augiensis, De quibusdam rebus ad Missae officium pertinentibus"
+  ],
+  "author": "Berno of Reichenau",
+  "category": "liturgical-commentary",
+  "description": "Berno of Reichenau's treatise on the Mass. Chapter VI, read for this run at columns 1065-1072, asks why the compiler of the chant offices provided twenty-three Sundays between the octave of Pentecost and Advent while the arranger of the lections provided a different number -- the mechanism that produces a chant strand and a reading strand running on different schedules.",
+  "id": "work.berno-of-reichenau.libellus-de-quibusdam-rebus-ad-missae-officium-pertinentibus",
+  "languages": [
+   "la"
+  ],
+  "title": "Libellus de quibusdam rebus ad Missae officium pertinentibus"
+ }
+}

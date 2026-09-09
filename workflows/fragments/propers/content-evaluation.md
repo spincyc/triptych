@@ -123,10 +123,14 @@ detailed commentary" leaves the reviser to guess which passage to open.
     scope** — every section either edition puts in front of a reader, with no
     exception but the ones named next. The out-of-scope list below is the
     entire boundary; nothing else narrows it. Out of scope, as qualification
-    by design, are `Appendix: Scope and Qualifications`, `References`, and —
-    within `The Propers: Interpretive Possibilities` — the exploratory
-    notice, the novelty classification, and the controlling-limit field the
-    profile mandates for each proposal, however that field is labelled.
+    by design, are `Appendix: Scope and Qualifications`, `References`,
+    `Generation Metadata` — which `guidance/liturgy/roman-1962-propers.md`
+    lines 365-366 mandate and whose content the universal metadata standard
+    fixes, so that its production narration is provenance by design and never
+    a defect of the leaf — and — within `The Propers: Interpretive
+    Possibilities` — the exploratory notice, the novelty classification, and
+    the controlling-limit field the profile mandates for each proposal,
+    however that field is labelled.
     Where to look, which is a reading checklist and not the boundary: the
     page-1 four senses, `Scriptural Date and Location`, `The Propers: Themes
     and Movement`, the complete appointed text, `The Propers: Detailed
@@ -135,7 +139,17 @@ detailed commentary" leaves the reviser to guess which passage to open.
     Interpretive Possibilities`. A reader-facing section this checklist does
     not happen to name is in scope all the same, and the checklist being
     short of one is never a reason to leave a section unread: read what the
-    leaf actually builds. Three sections are in scope for their register and
+    leaf actually builds. An evidence bound is not a defect under this
+    criterion when its subject is a witness, a text or a reading rather than
+    this repository's handling of one. "The Internet Archive item's own JP2
+    derivative, which this library registers as no artifact, prints X" states
+    the bound where the reading is used and conforms; "no page of the
+    registered artifact was opened here" does not. Criteria 1 and 2 require
+    such a bound to stand at the point of use, so a repair under this
+    criterion that removes one — its qualifying adjective included,
+    `unregistered` as much as the clause around it — trades this criterion's
+    defect for theirs, and the next evaluation raises it. Rewrite the
+    subject; keep the bound. Three sections are in scope for their register and
     not for their required content. Page 2 must carry the traditional
     attribution, the modern critical horizon, the
     uncertainty, and the claim-local sources, and none of those is ever a
@@ -407,11 +421,20 @@ Return an evaluator result:
 - `CHANGES_REQUIRED` with blocking findings if any criterion fails.
 - `BLOCKED` if a finding cannot be resolved by revision.
 
-Finding IDs must use the `CON-` prefix and be stable across iterations. This
-is now load-bearing and not only tidy. The iteration budget charges a repeat:
-an evaluation that raises a blocking id this stage already had standing has not
-moved, and the run is that much closer to blocking. An evaluation that raises
-different ids has found different work and costs the run nothing but its place
-against the absolute ceiling. So reuse an id for the same unrepaired defect,
-never for a different one, and never mint a new id for a defect you are
-restating.
+Finding IDs must use the `CON-` prefix and must be unique within your own
+report. Across iterations, know what an id is and is not. Your lane packet
+carries an empty `PRIOR_FINDINGS` by design and you may not read an earlier
+iteration's results, so you cannot recover the ids your own lane minted
+before: an id is a handle you mint for this report, not an identity for a
+defect, and the iteration budget does not read it — it reads the reviser's
+`finding_dispositions`, which is the only record of what repair actually
+attempted and could not clear.
+
+One set of ids is recoverable, and there you must reuse an id for the same
+unrepaired defect. The blocking findings still standing against this leaf are
+written to `<document_root>/evaluations/blocking-findings-v1.toml`, rewritten
+whole at each evaluation. Read it, and where you find a defect it already
+names, keep that id. Where you are restating something whose id you cannot
+recover — an advisory in particular, since that file holds blocking findings
+and observations only — take a fresh id and say in `problem` what you are
+restating and why the id changed. Never reuse an id for a different defect.

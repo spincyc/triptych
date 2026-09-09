@@ -1,0 +1,66 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "ocr-text",
+   "byte_size": 4583014,
+   "edition_owned": true,
+   "id": "artifact.john-beleth.summa-de-ecclesiasticis-officiis.latin-migne-pl-202.ia-djvu-ocr-22b781bf",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Extent as the retrieving lane measured it: Complete uncorrected OCR of Migne, Patrologia Latina vol. 202 (John Beleth), whole volume; searched entire. Uncorrected optical recognition: it is a locating and searching layer, not a text of record, and wording quoted from this volume was collated against page images rather than taken from here.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "The printing reproduced here was published long before 1931 and is in the public domain in the United States: the repository's own rights reading, recorded at guidance/missals.md section 5 against Cornell's public-domain chart current at 1 January 2026, is that a work first published abroad before 1931 is in the public domain with no term running. The Internet Archive's optical character recognition of a public-domain printing is a mechanical transcription that adds no original authorship, is served without a copyright claim asserted over it, and carries none of the host's markup, navigation or apparatus. The bytes are retained here because guidance/sources.md makes retention the project-wide default and none of its three exemptions reaches this file: it may lawfully be republished, it is not restricted, and at 4.58 MB it is at or below the 5.88 MB that is the largest payload this library already retains.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/patrologiaecursu0202mign/patrologiaecursu0202mign_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "page-scan-image",
+   "byte_size": 1134544,
+   "edition_owned": true,
+   "id": "artifact.john-beleth.summa-de-ecclesiasticis-officiis.latin-migne-pl-202.ia-leaf-n039-f3b081d3",
+   "media_type": "image/jpeg",
+   "notes": "Extent as the retrieving lane measured it: One page image, leaf n39 = PL 202 cols. 67/68, Beleth capp. LXI-LXII on the night-office cursus. One leaf only.",
+   "page_count": 1,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "The printing reproduced here was published long before 1931 and is in the public domain in the United States: the repository's own rights reading, recorded at guidance/missals.md section 5 against Cornell's public-domain chart current at 1 January 2026, is that a work first published abroad before 1931 is in the public domain with no term running. A faithful photographic reproduction of one page of a public-domain printing adds no original authorship of its own. The bytes are not retained, on the duplication ground guidance/sources.md gives for `remote`: this 1.13 MB page image reproduces one leaf of the volume whose complete optical text layer is retained in this repository at artifact.john-beleth.summa-de-ecclesiasticis-officiis.latin-migne-pl-202.ia-djvu-ocr-22b781bf, and that retained file is what a reader with no network opens to read the words cited from this leaf. The retained layer is uncorrected optical recognition, so a reader who needs the printed letterform rather than a transcription of it must re-fetch the image at the recorded URL, which is the one thing this record does not put in the reader's hands.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/patrologiaecursu0202mign/page/n39.jpg?fit=cover&quality=100",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": null,
+  "editors": [
+   "Jacques-Paul Migne"
+  ],
+  "id": "edition.john-beleth.summa-de-ecclesiasticis-officiis.latin-migne-pl-202",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Paris: J.-P. Migne, Patrologiae Cursus Completus, Series Latina, tomus 202, the volume of John Beleth. Internet Archive item patrologiaecursu0202mign.",
+  "title": "Summa de ecclesiasticis officiis, printed as Rationale divinorum officiorum in Migne's Patrologia Latina volume 202",
+  "translators": [],
+  "year": null
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Rationale divinorum officiorum",
+   "Divinorum officiorum explicatio",
+   "Ioannis Beleth Rationale divinorum officiorum",
+   "Summa de ecclesiasticis officiis"
+  ],
+  "author": "John Beleth",
+  "category": "liturgical-commentary",
+  "description": "John Beleth's twelfth-century summa on the ecclesiastical offices. Migne prints it under the title Rationale divinorum officiorum, which is also Durandus's title and is the alias this library resolves before minting an identity: the two works are distinct and must not be merged. Chapters LXI-LXII on the night-office cursus, read for this run at columns 67-68, pin the September historiae to the Kalends of the month by the nearest Sunday. The composition date is not established in this registration.",
+  "id": "work.john-beleth.summa-de-ecclesiasticis-officiis",
+  "languages": [
+   "la"
+  ],
+  "title": "Summa de ecclesiasticis officiis"
+ }
+}

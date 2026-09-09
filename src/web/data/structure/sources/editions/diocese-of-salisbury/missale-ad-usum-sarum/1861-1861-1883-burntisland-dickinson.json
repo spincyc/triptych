@@ -1,0 +1,66 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "ocr-text",
+   "byte_size": 2856803,
+   "edition_owned": true,
+   "id": "artifact.diocese-of-salisbury.missale-ad-usum-sarum.1861-1883-burntisland-dickinson.ia-djvu-ocr-685c74b2",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Extent as the retrieving lane measured it: Complete uncorrected OCR text layer of the Internet Archive scan of Dickinson's Burntisland Sarum Missal, 828 page images, whole volume. Uncorrected optical recognition: a locating and searching layer, not a text of record. The extent bound matters here: guidance/missals.md section 7 records that Internet Archive copies of Dickinson differ in how many fascicles they carry, and calls that the Psalm 27 truncation failure waiting in a new place. The measured 828 images are recorded on this artifact so a later reader can check the bound rather than assume it.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "The printing reproduced here was published before 1931 and is in the public domain in the United States: the repository's own rights reading, recorded at guidance/missals.md section 5 against Cornell's public-domain chart current at 1 January 2026, is that a work first published abroad before 1931 is in the public domain with no term running. The Internet Archive's optical character recognition of a public-domain printing is a mechanical transcription that adds no original authorship, is served without a copyright claim asserted over it, and carries none of the host's markup, navigation or apparatus. The bytes are retained here because guidance/sources.md makes retention the project-wide default and none of its three exemptions reaches this file: it may lawfully be republished, it is not restricted, and at 2.86 MB it is below the 5.88 MB that is the largest payload this library already retains.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/dusumins00cath/dusumins00cath_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "page-scan-image",
+   "byte_size": 758076,
+   "edition_owned": true,
+   "id": "artifact.diocese-of-salisbury.missale-ad-usum-sarum.1861-1883-burntisland-dickinson.ia-leaf-n371-1a837e4b",
+   "media_type": "image/jpeg",
+   "notes": "Extent as the retrieving lane measured it: One page image, leaf n371 = Dickinson, Missale ad usum Sarum (Burntisland 1861-83), printed cols. 503/504. One leaf only.",
+   "page_count": 1,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "The printing reproduced here was published before 1931 and is in the public domain in the United States: the repository's own rights reading, recorded at guidance/missals.md section 5 against Cornell's public-domain chart current at 1 January 2026, is that a work first published abroad before 1931 is in the public domain with no term running. A faithful photographic reproduction of one page of a public-domain printing adds no original authorship of its own. The bytes are not retained, on the duplication ground guidance/sources.md gives for `remote`: this 0.76 MB page image reproduces one leaf of the volume whose complete optical text layer is retained in this repository at artifact.diocese-of-salisbury.missale-ad-usum-sarum.1861-1883-burntisland-dickinson.ia-djvu-ocr-685c74b2, and that retained file is what a reader with no network opens to read the words cited from this leaf. The retained layer is uncorrected optical recognition, so a reader who needs the printed letterform rather than a transcription of it must re-fetch the image at the recorded URL.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/dusumins00cath/page/n371.jpg?fit=cover&quality=100",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1861",
+  "editors": [
+   "Francis Henry Dickinson"
+  ],
+  "id": "edition.diocese-of-salisbury.missale-ad-usum-sarum.1861-1883-burntisland-dickinson",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Burntisland: Pitsligo Press, 1861-1883, issued in fascicles. Internet Archive item dusumins00cath.",
+  "title": "Missale ad usum insignis et praeclarae ecclesiae Sarum",
+  "translators": [],
+  "year": 1861
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Sarum Missal",
+   "Missale Sarisburiense",
+   "Missale ad usum Sarum",
+   "The Sarum Missal edited from three early manuscripts"
+  ],
+  "author": "The use of Salisbury (Sarum), Church of England before the Reformation",
+  "category": "missal",
+  "description": "The Mass book of the use of Salisbury, the dominant English medieval use and the immediate Latin background of the Book of Common Prayer collects. Its Sundays after Trinity run one ahead of the Roman Sundays after Pentecost, so the Roman Fourteenth after Pentecost is the Sarum Dominica quinta decima post festum sanctae Trinitatis. Registered here in two modern critical editions; the medieval work itself is not dated in this registration.",
+  "id": "work.diocese-of-salisbury.missale-ad-usum-sarum",
+  "languages": [
+   "la"
+  ],
+  "title": "Missale ad usum insignis et praeclarae ecclesiae Sarum"
+ }
+}

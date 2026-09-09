@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.john-chrysostom.homiliae-in-matthaeum.migne-pg-57-paris.ia-djvu-ocr-1b95176e"
+edition_id = "edition.john-chrysostom.homiliae-in-matthaeum.migne-pg-57-paris"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Migne's nineteenth-century Paris printing is in the public domain in the United States: the repository's own rights reading, recorded at guidance/missals.md section 5 against Cornell's public-domain chart current at 1 January 2026, is that a work first published abroad before 1931 is in the public domain with no term running. The Internet Archive's optical character recognition of a public-domain printing is a mechanical transcription that adds no original authorship and is served without a copyright claim asserted over it. The bytes are retained because guidance/sources.md makes retention the project-wide default and none of its three exemptions reaches this file: it may lawfully be republished, it is not restricted, and at 4.63 MB it is below the 5.88 MB that is the largest payload this library already retains."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/patrologiae_cursus_completus_gr_vol_057_chrysostom_matthew/patrologiae_cursus_completus_gr_vol_057_chrysostom_matthew_djvu.txt"
+provenance = "Internet Archive optical character recognition text layer of the whole volume, fetched over HTTPS by the research lane of run efff3a6f73c1f451 on 2026-09-05, hashed, and moved here unaltered."
+retrieved = "2026-09-05"
+sha256 = "1b95176e320b00892639b68991fd60cc86f332faea7ce4faa1dce60bc0f495e6"
+byte_size = 4629182
+path = "src/sources/works/john-chrysostom/homiliae-in-matthaeum/editions/migne-pg-57-paris/artifacts/ia-djvu-ocr-1b95176e/patrologiae_cursus_completus_gr_vol_057_chrysostom_matthew_djvu.txt"
+encoding = "utf-8"
+indexable = true
+notes = "Extent as the retrieving lane measured it: Complete optical text layer of the whole volume (Migne PG 57, Chrysostom's Homiliae in Matthaeum 1-44), all scanned leaves; used for locating passages, with every column figure re-read from the page image. Uncorrected optical recognition of a bilingual Greek and Latin page: it is a locating and searching layer only, its column figures were re-read from the page image rather than trusted, and the Greek must not be quoted from it."

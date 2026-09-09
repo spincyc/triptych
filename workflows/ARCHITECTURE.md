@@ -282,8 +282,12 @@ could reach it while both were in flight. Version 26 also adds the
 `ADVISORY_FINDINGS` packet header, which carries an evaluation's non-blocking
 findings to whichever stage the route sent the repair; before it an advisory
 reached nobody, and 31% of that run's blocking findings were the raising
-lane's own advisories promoted a round later in order to be heard. Version
-25 moves the repeat budget onto the reviser's own report where one exists,
+lane's own advisories promoted a round later in order to be heard. 
+Version 26 also reconciles criterion 12 with criteria 1 and 2, exempts the
+profile-mandated `Generation Metadata` from criterion 12, and reconciles the
+id-stability instruction with the fan-out design that makes a lane's own
+prior ids unrecoverable. Version 25 moves the repeat budget onto the
+reviser's own report where one exists,
 declares `document_root` on both pipelines so the packet header can carry
 `DOCUMENT_ROOT` and `REPAIR_TARGETS`, gives the five bounded-revision stages
 `reports_repairs` and `content-evaluation` `records_standing_findings`, and

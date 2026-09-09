@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.united-kingdom-parliament.hansard-official-report.2026-09-05-api-search-state-seek-ye-first-the-political-kingdom.hansard-api-search-51df717f"
+edition_id = "edition.united-kingdom-parliament.hansard-official-report.2026-09-05-api-search-state-seek-ye-first-the-political-kingdom"
+artifact_type = "search-response"
+media_type = "application/json"
+storage = "remote"
+rights_status = "licensed"
+rights_basis = "The retrieving research lane of run efff3a6f73c1f451 recorded that this is UK official parliamentary report material and that parliamentary material is published under the Open Parliament Licence. That is a real and affirmative licence, and it is recorded here as the lane found it. It is NOT relied on for retention, and the reason is stated rather than hidden: neither the retrieving lane nor this registration read the licence text or established which version governs this API's responses, so the affirmative recorded distribution basis that guidance/sources.md requires before `tracked` is asserted but not verified. What a reader with no network therefore cannot open here is the debate text itself; closing that needs a rights record for UK parliamentary material of the kind guidance/sources.md asks for when one question governs a whole body of material, and this stage may not write one on assertion."
+license = "Open Parliament Licence"
+source_url = "https://hansard-api.parliament.uk/search/contributions/Spoken.json?queryParameters.searchTerm=%22seek%20ye%20first%20the%20political%20kingdom%22&queryParameters.take=50"
+provenance = "Exact JSON response acquired directly over HTTPS from hansard-api.parliament.uk by the research lane of run efff3a6f73c1f451 on 2026-09-05 and hashed."
+retrieved = "2026-09-05"
+sha256 = "51df717fd3a6ef4c2577e0aadb04ea09c71047cb93b7def9fc2d4e8f1e238f51"
+byte_size = 29756
+indexable = false
+notes = "Extent as the retrieving lane measured it: Complete result set for the exact-phrase query across all Hansard dates: TotalResultCount = 2, both results present with full contribution text. Exhaustive for this phrase within Hansard's own digitised corpus; no truncation."

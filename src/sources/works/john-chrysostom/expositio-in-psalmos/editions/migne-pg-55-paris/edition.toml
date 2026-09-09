@@ -1,0 +1,9 @@
+schema = 1
+record_type = "edition"
+id = "edition.john-chrysostom.expositio-in-psalmos.migne-pg-55-paris"
+work_id = "work.john-chrysostom.expositio-in-psalmos"
+title = "Expositio in Psalmos, in Migne's Patrologia Graeca volume 55"
+language = "grc"
+publication = "Paris: J.-P. Migne, Patrologiae Cursus Completus, Series Graeca, tomus 55, which prints the Expositio in Psalmos and the Homiliae in Psalmos. Internet Archive item patrologiae_cursus_completus_gr_vol_055."
+editors = ["Jacques-Paul Migne"]
+notes = "Registered on the pattern this library already uses for a constituent of a Migne volume: the edition is the constituent as Migne prints it, and the artifacts are the Internet Archive's derivatives of the whole volume, which is the narrowest exact witness that was retrieved. Migne prints the Greek with a facing Latin translation; the edition language records the language of the text of record, which is the Greek. The printing year of the scanned copy is not established from these bytes and is therefore not asserted: the Patrologia Graeca volumes were reissued repeatedly and no legible year was found in the front matter of the retained or retrieved layers. The exposition of Psalm 117 read for this run stands at columns 331-332, under the running head EXPOSITIO IN PSALMUM CXVII. PAIRING: no English edition of this work was registered by this run. No lane of run efff3a6f73c1f451 retrieved one, and this stage does not retrieve, so what is recorded is the absence of a retrieval and not a finding that no lawful English translation exists. guidance/sources.md asks for the original and a translation together and this pair is half-filled; the half that is present is the original, which is the half that can settle a question about the work's own wording."

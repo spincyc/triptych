@@ -1,0 +1,81 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "ocr-text",
+   "byte_size": 8704355,
+   "edition_owned": true,
+   "id": "artifact.origen.selecta-in-psalmos.migne-pg-12-paris.ia-djvu-ocr-d37cd225",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Extent as the retrieving lane measured it: Complete optical text layer of the whole volume (Migne PG 12, Origen's exegetical remains including the Selecta in Psalmos), all scanned leaves; carries the located fragments and both bounded negatives. Uncorrected optical recognition of a bilingual Greek and Latin page; its numerals misread systematically and every column figure this run cites was re-read from a page image.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "Migne's nineteenth-century Paris printing is in the public domain in the United States: the repository's own rights reading, recorded at guidance/missals.md section 5 against Cornell's public-domain chart current at 1 January 2026, is that a work first published abroad before 1931 is in the public domain with no term running. The Internet Archive's optical character recognition of a public-domain printing is a mechanical transcription that adds no original authorship and is served without a copyright claim asserted over it, so nothing in the rights forbids retention. The bytes are not retained on the demonstrated-size ground guidance/sources.md allows: 8.70 MB, against 5.88 MB, which is the largest payload this library retains today across 10,461 files. THE COST OF THAT IS REAL AND IS STATED HERE RATHER THAN GLOSSED. What a reader with no network loses is the ability to replay this run's whole-volume searches of this volume, including its bounded negatives; what that reader keeps is the page images of the quoted columns, which are retained beside this record and carry the words themselves. The optical layer is in any case unusable as a text of record here, because its recognition of the polytonic Greek column is corrupt and the retrieving lane forbade quotation from it.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/patrologiae_cursus_completus_gr_vol_012/patrologiae_cursus_completus_gr_vol_012_djvu.txt",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "page-scan-image",
+   "byte_size": 3184815,
+   "edition_owned": true,
+   "id": "artifact.origen.selecta-in-psalmos.migne-pg-12-paris.ia-leaf-n535-ce5b161d",
+   "media_type": "image/jpeg",
+   "notes": "Extent as the retrieving lane measured it: One complete page image, 4058x6245 px, carrying Migne PG 12 cols. 1061-1062 entire, with the whole Ps. 83 passage and the 'nominatim Christo' gloss in the Latin column.",
+   "page_count": 1,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "Migne's nineteenth-century Paris printing is in the public domain in the United States: the repository's own rights reading, recorded at guidance/missals.md section 5 against Cornell's public-domain chart current at 1 January 2026, is that a work first published abroad before 1931 is in the public domain with no term running. A faithful photographic reproduction of one page of a public-domain printing adds no original authorship of its own. The bytes are retained at 3.18 MB because this leaf is the only witness to the quoted Greek that this repository holds: the volume's optical text layer is left remote for its size and its recognition of the polytonic Greek face is corrupt, so a reader with no network has nothing else here to read these columns in.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/patrologiae_cursus_completus_gr_vol_012/page/n535.jpg",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "page-scan-image",
+   "byte_size": 2600667,
+   "edition_owned": true,
+   "id": "artifact.origen.selecta-in-psalmos.migne-pg-12-paris.ia-leaf-n658-d7f6d681",
+   "media_type": "image/jpeg",
+   "notes": "Extent as the retrieving lane measured it: One complete page image, 3943x6216 px, carrying Migne PG 12 cols. 1307-1308 entire, opening the Ps. 33 selecta under the running head 'EX ORIGENE'.",
+   "page_count": 1,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "Migne's nineteenth-century Paris printing is in the public domain in the United States: the repository's own rights reading, recorded at guidance/missals.md section 5 against Cornell's public-domain chart current at 1 January 2026, is that a work first published abroad before 1931 is in the public domain with no term running. A faithful photographic reproduction of one page of a public-domain printing adds no original authorship of its own. The bytes are retained at 2.60 MB because this leaf is the only witness to the quoted Greek that this repository holds: the volume's optical text layer is left remote for its size and its recognition of the polytonic Greek face is corrupt, so a reader with no network has nothing else here to read these columns in.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/patrologiae_cursus_completus_gr_vol_012/page/n658.jpg",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": null,
+  "editors": [
+   "Jacques-Paul Migne"
+  ],
+  "id": "edition.origen.selecta-in-psalmos.migne-pg-12-paris",
+  "jurisdiction": null,
+  "language": "grc",
+  "publication": "Paris: J.-P. Migne, Patrologiae Cursus Completus, Series Graeca, tomus 12, the volume of Origen's exegetical remains. Internet Archive item patrologiae_cursus_completus_gr_vol_012.",
+  "title": "Selecta in Psalmos, in Migne's Patrologia Graeca volume 12",
+  "translators": [],
+  "year": null
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Selecta in Psalmos",
+   "Ex Origene",
+   "Excerpta in Psalmos",
+   "Fragmenta in Psalmos"
+  ],
+  "author": "Origen of Alexandria, under whose name the fragments are printed",
+  "category": "biblical-commentary",
+  "description": "The catena fragments on the Psalms printed under Origen's name in Migne's Patrologia Graeca 12. This run reads them on the Introit psalm, where they quote Psalm 83:2-3a and 83:10-11a together as one argument, cutting at exactly the words the antiphon ends on and glossing 'faciem Christi tui' as naming Christ explicitly; and on the Offertory psalm at Psalm 33:8. The attribution is the printing's and is recorded as an attribution: a catena fragment carries its lemma's name and not necessarily its author's.",
+  "id": "work.origen.selecta-in-psalmos",
+  "languages": [
+   "grc"
+  ],
+  "title": "Selecta in Psalmos"
+ }
+}
