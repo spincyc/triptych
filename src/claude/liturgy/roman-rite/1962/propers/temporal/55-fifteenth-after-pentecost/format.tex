@@ -90,20 +90,27 @@ answer the Latin.} #1\par}
 % three together and states the escape clause that licenses them. The first of
 % the three is the column widths set here. The profile fixes them at
 % 0.14 / 0.18 / 0.35 / 0.16\linewidth; this table sets
-% 0.12 / 0.16 / 0.23 / 0.32\linewidth. All four are changed, and the four
-% widths still total 0.83 as the profile's do. The movement is into Date, and
-% the reason is the chronology contract: the corpus answers the Epistle with
-% five labels and the Gospel and the Communion with three each, every one of
-% them printed in the source's own words, so the Date cell of three dossiers
-% carries several dates where the profile's measure assumes one. Proper,
-% Citation and Location each give up measure, their detail belonging to the
-% explanatory row beneath. The summary tier keeps \footnotesize,
-% \arraystretch, \LTpre and \LTpost exactly as the profile sets them.
+% 0.12 / 0.16 / 0.23 / 0.42\linewidth. All four are changed. The movement is
+% into Date, and the reason is the chronology contract: the corpus answers the
+% Epistle with five labels and the Gospel and the Communion with three each,
+% every one of them printed in the source's own words, and since the
+% projection revision of 2026-09-09 it leads the three Davidic psalms and the
+% two Gospel passages with a bold relation label --- Traditional attribution,
+% Event --- ahead of the composition answer, so the Date cell of five
+% dossiers carries two labelled relations where the profile's measure assumes
+% one figure. The profile asks that the Date column be given enough width for
+% those labels without loss of legibility; at 0.42\linewidth every Date cell
+% on the sheet stands in three lines or fewer and the sheet stays on one
+% page. Proper, Citation and Location each give up measure, their detail
+% belonging to the explanatory row beneath. With \tabcolsep at 3pt and the
+% table's outer padding suppressed, the four columns and their three gutters
+% total 0.966\linewidth. The summary tier keeps \footnotesize, \arraystretch,
+% \LTpre and \LTpost exactly as the profile sets them.
 \newenvironment{dossiertable}
 {\footnotesize
  \renewcommand{\arraystretch}{1.02}%
  \setlength{\LTpre}{0.15em}\setlength{\LTpost}{0pt}%
- \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.12\linewidth}>{\raggedright\arraybackslash}p{0.16\linewidth}>{\raggedright\arraybackslash}p{0.23\linewidth}>{\raggedright\arraybackslash}p{0.32\linewidth}@{}}
+ \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.12\linewidth}>{\raggedright\arraybackslash}p{0.16\linewidth}>{\raggedright\arraybackslash}p{0.23\linewidth}>{\raggedright\arraybackslash}p{0.42\linewidth}@{}}
  \toprule
  \textbf{Proper} & \textbf{Citation} & \textbf{Location} & \textbf{Date}\\
  \midrule
@@ -135,10 +142,12 @@ answer the Latin.} #1\par}
 %
 %   D1. Summary-tier column widths, set above at \dossiertable. Profile
 %       0.14 / 0.18 / 0.35 / 0.16\linewidth; here
-%       0.12 / 0.16 / 0.23 / 0.32\linewidth. All four change: 0.16\linewidth
-%       moves into Date, donated by Proper, Citation and Location, because the
-%       corpus answers three of the seven dossiers with several alternative
-%       labels each and every one of them is printed.
+%       0.12 / 0.16 / 0.23 / 0.42\linewidth. All four change: Date grows by
+%       0.26\linewidth, 0.16 of it donated by Proper, Citation and Location
+%       and 0.10 taken from the measure the profile's own widths leave
+%       unused, because the corpus answers three of the seven dossiers with
+%       several alternative labels each, leads five of them with a bold
+%       relation label, and every one of them is printed.
 %   D2. Spanning explanatory and event row width. Profile 0.92\linewidth;
 %       here 0.98\linewidth.
 %   D3. Spanning-row font size. The profile sets the table in \footnotesize and

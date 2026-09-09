@@ -793,14 +793,14 @@ source_id = "passage.united-states-conference-of-catholic-bishops.new-american-b
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:9d846d7a068a2f4ff21fbe83aa4460c0a7c96864afb26ad6692af23b96ab63df"
-context = "The source behind the one claim the chronology corpus makes for all four appointed psalms: a whole-Psalter latest-composition boundary on a modern critical profile, which states in its own words that no individual psalm can be dated securely. It is the reason the gated Date cell of the Offertory, the Introit, the Gradual and the Alleluia carries a critical figure and nothing traditional, and the reason the traditional answer for the psalms reaches the reader in the explanatory rows as authorship rather than as a year."
+context = "The source behind the composition claim the chronology corpus makes for all four appointed psalms: a whole-Psalter latest-composition boundary on a modern critical profile, which states in its own words that no individual psalm can be dated securely. It is the composition answer of every psalm Date cell on page 2, and for the Gradual, whose title names no author, the whole of the cell; since the corpus revision of 2026-09-09 the three Davidic psalms carry a traditional-attribution relation ahead of it, sourced to Corbett and bound below."
 
 [[bindings]]
 source_id = "passage.pontifical-biblical-commission.de-auctoribus-et-de-tempore-compositionis-psalmorum.latin-aas-2-1910.responsa-i-viii"
 role = "official-control"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:42e1707054a115ec2cb6b422ebe8096220fb02bf179cc8ef51654dc6877aab6a"
-context = "The 1910 responsa on the authors and time of composition of the Psalms, cited on page 2 for the antiquity of the psalm titles and for David as the chief author of the songs of the Psalter -- an author, and not a year. It is what lets the psalm dossiers foreground a traditional attribution where the corpus supplies only a critical boundary."
+context = "The 1910 responsa on the authors and time of composition of the Psalms, cited on page 2 for the antiquity of the psalm titles and for David as the chief author of the songs of the Psalter -- an author, and not a year. It stands beside the corpus's own traditional-attribution relation, which carries David's regnal era as a reference point, and it is what keeps that era an author's frame and not a psalm's year."
 
 [[bindings]]
 source_id = "passage.pontifical-biblical-commission.de-auctore-tempore-et-veritate-evangeliorum-marci-et-lucae.latin-aas-4-1912.responsa-i-ix"
@@ -829,6 +829,18 @@ role = "context"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:8e714d5f9db2e08f54da02b78a55723bf92afcbc30370a1d564e5a055158c41b"
 context = "The passage the chronology corpus resolves both narrated-event claims through: the raising of the widow's son at Naim and the Bread of Life discourse at Capharnaum. Its labels are what the Gospel's and the Communion's event rows print, and they answer a different question from the composition labels beside them."
+
+[[bindings]]
+source_id = "passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology"
+role = "context"
+states = ["cataloged"]
+context = "The passage the chronology corpus names for the traditional-attribution relation it added on 2026-09-09 to the three psalms whose titles name David: Corbett's reign of David in the usual chronology, carried in the Date cell of the Offertory, the Introit and the Alleluia as a named reference point beside the Davidic title and not as a date of the psalm. Bound from the regenerated research/chronology.toml and cited on page 2 and in References at the locus the corpus records, printed p. 642; the article was not reopened for this revision, so the binding claims no inspection."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"
+role = "context"
+states = ["cataloged"]
+context = "The retained article text of Corbett's King David, the second source the corpus records for the same regnal-era claim. Bound beside the passage above for the same relation and the same three dossiers, and likewise not reopened for this revision."
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25-article-text"

@@ -664,9 +664,11 @@ Gueranger names the day `the Sunday of the widow of Naim` (LIT-020).
    and classified, and before 7:13 the word is God in narration or cited Scripture, or a
    character's vocative, or inside a character's speech (SCR-015).
 7. `surge` at v. 14 and `surrexit` at v. 16 are the one Greek verb EGEIRO:, aorist passive
-   imperative and aorist passive indicative; the Latin does not preserve the identity with
-   Deut. 18:15, which reads `suscitabit`. `Propheta magnus` is not a stock biblical title: an
-   exhaustive sweep returns only Ecclus. 48:25, of Isaias, and this verse (SCR-016).
+   imperative and aorist passive indicative. The Vulgate Deut. 18:15 reads `suscitabit`; its
+   Greek was not collated (§3.1 opened Swete's Psalmi, Regnorum III and Regnorum IV only), so
+   no identity of verb between Lk. 7:16 and Deut. 18:15 is asserted here, and a guide must not
+   claim one on this record. `Propheta magnus` is not a stock biblical title: an exhaustive
+   sweep returns only Ecclus. 48:25, of Isaias, and this verse (SCR-016).
 
 **Direct ancient exegesis checked, six witnesses or witness-sets.**
 
