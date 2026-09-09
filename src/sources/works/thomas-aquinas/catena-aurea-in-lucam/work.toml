@@ -1,0 +1,12 @@
+schema = 1
+record_type = "work"
+id = "work.thomas-aquinas.catena-aurea-in-lucam"
+title = "Catena aurea in Lucam"
+responsible = "Thomas Aquinas"
+work_type = "patristic-catena"
+composed = "c. 1262-1267"
+composed_basis = "Aquinas compiled the Catena aurea on the four Gospels between about 1262 and 1268; the Matthew volume was dedicated to Urban IV, who died in 1264, and Mark, Luke and John followed under Clement IV. The date is the compiling, not the 1953 Marietti printing nor the dated web state this record's edition delivers."
+alternate_titles = ["Catena aurea in quatuor Evangelia, in Lucam", "Expositio continua in Lucam", "Golden Chain on Luke", "Catena in Lucam"]
+languages = ["la"]
+locus_pattern = '(?:[1-9]|1[0-9]|2[0-4])(?:\.l(?:[1-9]|1[0-9]))?'
+description = "Aquinas's continuous chain of patristic comment on the Gospel of Luke, compiled from Greek and Latin fathers and quoting each by name. It is a reception map and not an independent witness: an attribution in the chain must be checked back to the father's own work before it is cited as his. On the appointed Gospel of the Fifteenth Sunday after Pentecost, at chapter 7 lectio 2, it assembles Cyril, Bede, Gregory of Nyssa, Chrysostom, Titus of Bostra, Ambrose and Theophylact. A locus is chapter, optionally with a lectio."

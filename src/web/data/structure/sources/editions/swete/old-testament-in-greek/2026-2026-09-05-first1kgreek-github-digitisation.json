@@ -1,0 +1,77 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "electronic-text",
+   "byte_size": 716207,
+   "edition_owned": true,
+   "id": "artifact.swete.old-testament-in-greek.first1kgreek-github-digitisation-2026-09-05.lxx-swete-psalmi-d9a8fe86",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Complete Greek Psalter as Swete prints it. Measured on these exact bytes: 34,551 token lines over 2,551 distinct verse references, chapters 1-151 with no gap, that is LXX Psalms 1-151 in Septuagint numbering. One line-level defect: the title of Psalm 94 is emitted at the anomalous reference 27.94.23 rather than before verse 1, so titles in this file cannot be relied on for verse numbering. Septuagint psalm numbers are the Vulgate's, not the Hebrew's.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "licensed",
+   "rights_basis": "Swete died in 1917 and his edition is in the public domain in the United States and in life-plus-70 jurisdictions. The digitisation itself descends from the Open Greek and Latin First1KGreek project and is published under the Creative Commons Attribution-ShareAlike 4.0 International licence, which permits redistribution with attribution and under the same terms; the retained copy is redistributed on those terms. The licence statement is the one the retrieving lane recorded with the retrieval and was not re-read from the repository's own licence file in this run.",
+   "rights_jurisdiction": null,
+   "source_url": "https://raw.githubusercontent.com/nathans/lxx-swete/master/data/27.Psalmi.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "electronic-text",
+   "byte_size": 409463,
+   "edition_owned": true,
+   "id": "artifact.swete.old-testament-in-greek.first1kgreek-github-digitisation-2026-09-05.lxx-swete-regnorum-iii-4b129f8d",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Complete Greek 3 Kingdoms, which is the Vulgate's 3 Kings and the Hebrew 1 Kings. Measured on these exact bytes: 20,262 token lines over 829 distinct verse references, chapters 1-22 with no gap, the whole book. The Sarepta narrative used against Luke 7:15 stands at 3 Kingdoms 17.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "licensed",
+   "rights_basis": "Swete died in 1917 and his edition is in the public domain in the United States and in life-plus-70 jurisdictions. The digitisation itself descends from the Open Greek and Latin First1KGreek project and is published under the Creative Commons Attribution-ShareAlike 4.0 International licence, which permits redistribution with attribution and under the same terms; the retained copy is redistributed on those terms. The licence statement is the one the retrieving lane recorded with the retrieval and was not re-read from the repository's own licence file in this run.",
+   "rights_jurisdiction": null,
+   "source_url": "https://raw.githubusercontent.com/nathans/lxx-swete/master/data/13.Regnorum_III.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "electronic-text",
+   "byte_size": 369273,
+   "edition_owned": true,
+   "id": "artifact.swete.old-testament-in-greek.first1kgreek-github-digitisation-2026-09-05.lxx-swete-regnorum-iv-7303b2cd",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Complete Greek 4 Kingdoms, which is the Vulgate's 4 Kings and the Hebrew 2 Kings. Measured on these exact bytes: 18,376 token lines over 721 distinct verse references, chapters 1-25 with no gap, the whole book. Retrieved as the control for the Eliseus raising at 4 Kingdoms 4 beside the Elias raising at 3 Kingdoms 17.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "licensed",
+   "rights_basis": "Swete died in 1917 and his edition is in the public domain in the United States and in life-plus-70 jurisdictions. The digitisation itself descends from the Open Greek and Latin First1KGreek project and is published under the Creative Commons Attribution-ShareAlike 4.0 International licence, which permits redistribution with attribution and under the same terms; the retained copy is redistributed on those terms. The licence statement is the one the retrieving lane recorded with the retrieval and was not re-read from the repository's own licence file in this run.",
+   "rights_jurisdiction": null,
+   "source_url": "https://raw.githubusercontent.com/nathans/lxx-swete/master/data/14.Regnorum_IV.txt",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-09-05",
+  "editors": [],
+  "id": "edition.swete.old-testament-in-greek.first1kgreek-github-digitisation-2026-09-05",
+  "jurisdiction": null,
+  "language": "grc",
+  "publication": "Digitisation of Swete's Cambridge edition derived from the Open Greek and Latin First1KGreek project and published as one plain-text file per book in the nathans/lxx-swete GitHub repository; dated web state consulted 2026-09-05",
+  "title": "The Old Testament in Greek according to the Septuagint, Swete's text digitised for Open Greek and Latin and served from the lxx-swete repository",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Swete's Septuagint",
+   "The Old Testament in Greek"
+  ],
+  "author": "Henry Barclay Swete, editor",
+  "category": "critical-edition",
+  "description": "Swete's three-volume Cambridge manual edition of the Greek Old Testament, printing Codex Vaticanus where it survives with a foot apparatus of readings from Alexandrinus, Sinaiticus, and other identified uncials. Volume I covers Genesis through 4 Kings. It is a diplomatic manual edition, not a fully reconstructed critical text; consumers must not treat its readings as the judgment of the Gottingen Septuaginta. A locus is BookToken.chapter.verse in the Greek versification, which differs from the Hebrew in several books.",
+  "id": "work.swete.old-testament-in-greek",
+  "languages": [
+   "grc"
+  ],
+  "title": "The Old Testament in Greek according to the Septuagint"
+ }
+}

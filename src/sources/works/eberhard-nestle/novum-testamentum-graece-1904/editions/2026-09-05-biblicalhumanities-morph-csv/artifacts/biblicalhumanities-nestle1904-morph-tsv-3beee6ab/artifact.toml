@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.eberhard-nestle.novum-testamentum-graece-1904.biblicalhumanities-morph-csv-2026-09-05.biblicalhumanities-nestle1904-morph-tsv-3beee6ab"
+edition_id = "edition.eberhard-nestle.novum-testamentum-graece-1904.biblicalhumanities-morph-csv-2026-09-05"
+artifact_type = "tagged-text-table"
+media_type = "application/octet-stream (tab-separated text; server Content-Type as sent by raw.githubusercontent.com)"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "Nestle's 1904 Greek text is in the public domain in the United States by date of publication. The morphological tagging, lemmatisation and tabular compilation in these exact bytes are the biblicalhumanities project's own work; the retrieved file carries no licence statement of its own, and no licence file from that repository was retrieved in this run, so the distribution basis for the tagging layer is unresolved and the bytes are not redistributed here."
+source_url = "https://raw.githubusercontent.com/biblicalhumanities/Nestle1904/master/morph/Nestle1904.csv"
+provenance = "Complete morph/Nestle1904.csv fetched whole over HTTPS from raw.githubusercontent.com on 2026-09-05 and hashed locally; its length was checked against the server's Content-Length of 9,098,695 and against the size the GitHub contents API reported for the same blob. Nothing in the retrieval path passed through a model."
+retrieved = "2026-09-05"
+sha256 = "3beee6abb6302f691110fe0fc949fc195593b999cf2d0e463c9b573c1bb67150"
+byte_size = 9098695
+indexable = false
+notes = "Complete Greek New Testament. Measured on these exact bytes: 137,779 word tokens over 7,943 distinct verse references across all 27 books, first row Matt 1:1, last row Rev 22:21; the host imposed no bound. The verse count falls below a Textus-Receptus-based count because Nestle 1904 does not print the verses that edition prints, which is a difference of text and not a truncation. Not retained: the tagged compilation, because the tagging layer's distribution basis is unresolved and, at 9.1 MB, the file is larger than any payload this library retains. A reader without the network cannot open it from a checkout; the Greek wording a claim depends on must be quoted into the claim's own passage record, and edition.society-of-biblical-literature.sbl-greek-new-testament.holmes-v1.2-2023 is a registered Greek New Testament held here for comparison."

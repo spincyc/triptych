@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.kentucky-court-of-appeals.graham-v-john-r-watts-and-son.kentucky-reports-volume-238-1931.caselaw-access-project-html-19bdc5c8"
+edition_id = "edition.kentucky-court-of-appeals.graham-v-john-r-watts-and-son.kentucky-reports-volume-238-1931"
+artifact_type = "web-page"
+media_type = "text/html"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "The judicial opinion itself is not subject to copyright: works of judges acting in their judicial capacity are edicts of government and belong to no author, Banks v. Manchester, 128 U.S. 244, 253 (1888), reaffirmed in Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020). What is not established here is a distribution basis for the Caselaw Access Project's own layer of these exact bytes - its scanning of the printed reporter, its optical text, its structural markup and its page-image block coordinates - and for the commercial reporters' own editorial matter where a volume carries it. The retrieved bytes carry no licence statement, none was retrieved in this run, and the exact file is therefore identified and not redistributed."
+source_url = "https://static.case.law/ky/238/html/0096-01.html"
+provenance = "Complete Caselaw Access Project static HTML rendering of the same case fetched whole over HTTPS from static.case.law on 2026-09-05 and hashed locally. Retrieved beside the JSON record because only the HTML carries star pagination."
+retrieved = "2026-09-05"
+sha256 = "19bdc5c81e849531f616087f24df11429b11d25b0dc0bd9e656ffc1da339119d"
+byte_size = 38078
+indexable = false
+notes = "Complete case, same span pp. 96-108, in the Caselaw Access Project's HTML rendering, carrying star page labels such as *97 and per-paragraph page-image block coordinates. Used to fix the printed page of the quoted sentence. Not retained: the Caselaw Access Project's exact delivery, because no distribution basis for its scanning, optical text and structural layer was established within this run. A reader without the network cannot open this file from a checkout; the opinion is a public edict reachable from the printed reporter, and the wording a claim depends on must be quoted into the claim's own passage record."

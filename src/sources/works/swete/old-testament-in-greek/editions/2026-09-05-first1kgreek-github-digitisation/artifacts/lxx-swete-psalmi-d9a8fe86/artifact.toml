@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.swete.old-testament-in-greek.first1kgreek-github-digitisation-2026-09-05.lxx-swete-psalmi-d9a8fe86"
+edition_id = "edition.swete.old-testament-in-greek.first1kgreek-github-digitisation-2026-09-05"
+artifact_type = "electronic-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "licensed"
+rights_basis = "Swete died in 1917 and his edition is in the public domain in the United States and in life-plus-70 jurisdictions. The digitisation itself descends from the Open Greek and Latin First1KGreek project and is published under the Creative Commons Attribution-ShareAlike 4.0 International licence, which permits redistribution with attribution and under the same terms; the retained copy is redistributed on those terms. The licence statement is the one the retrieving lane recorded with the retrieval and was not re-read from the repository's own licence file in this run."
+license = "CC-BY-SA-4.0"
+source_url = "https://raw.githubusercontent.com/nathans/lxx-swete/master/data/27.Psalmi.txt"
+provenance = "Complete book file 27.Psalmi.txt fetched whole over HTTPS from raw.githubusercontent.com on 2026-09-05 and hashed locally; its length was checked against the server's Content-Length of 716,207. Nothing in the retrieval path passed through a model."
+retrieved = "2026-09-05"
+sha256 = "d9a8fe86689e23c8b5b04d8edc857a1861362eccb03514e92560b7f048785e2e"
+byte_size = 716207
+path = "src/sources/works/swete/old-testament-in-greek/editions/2026-09-05-first1kgreek-github-digitisation/artifacts/lxx-swete-psalmi-d9a8fe86/27-psalmi.txt"
+encoding = "utf-8"
+indexable = true
+notes = "Complete Greek Psalter as Swete prints it. Measured on these exact bytes: 34,551 token lines over 2,551 distinct verse references, chapters 1-151 with no gap, that is LXX Psalms 1-151 in Septuagint numbering. One line-level defect: the title of Psalm 94 is emitted at the anomalous reference 27.94.23 rather than before verse 1, so titles in this file cannot be relied on for verse numbering. Septuagint psalm numbers are the Vulgate's, not the Hebrew's."

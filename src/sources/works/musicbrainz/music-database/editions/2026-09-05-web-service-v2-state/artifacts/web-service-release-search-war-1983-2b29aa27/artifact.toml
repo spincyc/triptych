@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.musicbrainz.music-database.web-service-v2-state-2026-09-05.web-service-release-search-war-1983-2b29aa27"
+edition_id = "edition.musicbrainz.music-database.web-service-v2-state-2026-09-05"
+artifact_type = "api-response"
+media_type = "application/json"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "The retrieved responses carry discographic facts about a 1983 release. No licence statement appears in the exact bytes and none was retrieved in this run, so the distribution basis for the exact responses is unresolved and they are not redistributed here. MetaBrainz's own published position, that MusicBrainz core data is released into the public domain under CC0, was not read or verified in this run and is recorded as a lead rather than relied on."
+source_url = "https://musicbrainz.org/ws/2/release/?query=release:%22War%22%20AND%20artist:%22U2%22%20AND%20date:1983&fmt=json&limit=5"
+provenance = "Complete MusicBrainz web service search response for releases matching release:'War' AND artist:'U2' AND date:1983, limit 5, fetched over HTTPS on 2026-09-05 and hashed locally."
+retrieved = "2026-09-05"
+sha256 = "2b29aa27376ef7afade71971c55e52e92d169735b6f8004bdd6641120d5d5818"
+byte_size = 6300
+indexable = false
+notes = "Search response bounded by its own limit of five: the first five 1983 'War' releases, used only to identify the UK first pressing among them. A negative read off it is an absence from those five results and from nothing wider. Not retained: the exact response, because its distribution basis was not verified. A reader without the network cannot open it from a checkout; the discographic facts a claim needs must be quoted into the claim's own record."

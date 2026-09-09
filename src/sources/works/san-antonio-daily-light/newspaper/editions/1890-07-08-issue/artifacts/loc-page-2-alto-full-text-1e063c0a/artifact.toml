@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.san-antonio-daily-light.newspaper.issue-1890-07-08.loc-page-2-alto-full-text-1e063c0a"
+edition_id = "edition.san-antonio-daily-light.newspaper.issue-1890-07-08"
+artifact_type = "ocr-text"
+media_type = "application/json"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The newspaper issue was published in 1890 and is in the public domain in the United States by date. The digital surrogate was made for the National Digital Newspaper Program, a partnership of the Library of Congress and the National Endowment for the Humanities: a faithful photographic reproduction of a public-domain page adds no original authorship, and a machine-generated optical text layer over it originates none either, originality being required by Feist Publications, Inc. v. Rural Telephone Service Co., 499 U.S. 340, 345 (1991). The bytes are retained here under the project-wide retention default."
+rights_jurisdiction = "United States"
+source_url = "https://tile.loc.gov/text-services/word-coordinates-service?segment=/service/ndnp/txdn/batch_txdn_denton_ver02/data/sn86090439/0051717659A/1890070801/0043.xml&format=alto_xml&full_text=1"
+provenance = "Complete word-coordinates service response for the ALTO segment of page 2, requested from tile.loc.gov with full_text=1 and hashed locally on 2026-09-05. Nothing in the retrieval path passed through a model."
+retrieved = "2026-09-05"
+sha256 = "1e063c0acba20d01c81406942a07911d67bc2ffcef37f0c49e0330772fc92e8e"
+byte_size = 16226
+path = "src/sources/works/san-antonio-daily-light/newspaper/editions/1890-07-08-issue/artifacts/loc-page-2-alto-full-text-1e063c0a/1890-07-08-page-2-fulltext.json"
+encoding = "utf-8"
+indexable = true
+notes = "The complete uncorrected optical text layer of page 2, 15,395 characters, the whole page and nothing beyond it. Uncorrected optical character recognition of an 1890 newspaper page: it locates and identifies a paragraph and does not control its wording, which is why the page image crop was retrieved beside it."

@@ -1,0 +1,55 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "api-response",
+   "byte_size": 9137,
+   "edition_owned": true,
+   "id": "artifact.musicbrainz.music-database.web-service-v2-state-2026-09-05.web-service-release-3583fbc9-77e92fba",
+   "media_type": "application/json",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://musicbrainz.org/ws/2/release/3583fbc9-a597-35d3-a415-6bd0cfa34acc?inc=recordings+labels+artist-credits&fmt=json",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "api-response",
+   "byte_size": 6300,
+   "edition_owned": true,
+   "id": "artifact.musicbrainz.music-database.web-service-v2-state-2026-09-05.web-service-release-search-war-1983-2b29aa27",
+   "media_type": "application/json",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://musicbrainz.org/ws/2/release/?query=release:%22War%22%20AND%20artist:%22U2%22%20AND%20date:1983&fmt=json&limit=5",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-09-05",
+  "editors": [],
+  "id": "edition.musicbrainz.music-database.web-service-v2-state-2026-09-05",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "musicbrainz.org/ws/2, dated response state of 2026-09-05",
+  "title": "MusicBrainz web service version 2, dated response state",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "MetaBrainz Foundation",
+  "category": "discographic-database",
+  "description": "A community-maintained open database of music metadata, served as a public web service. A database record is discographic testimony about a release and never the release itself; it is registered here to pin the identity, date and track list of the 1983 U2 album 'War', whose closing track sets Vulgate Psalm 39, the psalm of the Offertory antiphon of the Fifteenth Sunday after Pentecost. A locus is an entity type and MusicBrainz identifier.",
+  "id": "work.musicbrainz.music-database",
+  "languages": [
+   "en"
+  ],
+  "title": "MusicBrainz music database"
+ }
+}

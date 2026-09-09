@@ -1,0 +1,18 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.ambrose.enarrationes-in-xii-psalmos-davidicos.migne-pl-14-paris-1845.documenta-catholica-omnia-facsimile-pdf-096925e4"
+edition_id = "edition.ambrose.enarrationes-in-xii-psalmos-davidicos.migne-pl-14-paris-1845"
+artifact_type = "facsimile-pdf"
+media_type = "application/pdf"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "Ambrose's Latin and Migne's nineteenth-century printing are public domain by age, but Documenta Catholica Omnia states that rights in its electronic edition are reserved. No permission to redistribute the host's PDF was established, so the exact bytes are identified and not retained."
+rights_jurisdiction = "United States"
+source_url = "http://www.documentacatholicaomnia.eu/02m/0339-0397,_Ambrosius,_Enarrationes_In_XII_Psalmos_Davidicos,_MLT.pdf"
+provenance = "Complete Documenta Catholica Omnia facsimile PDF of the Enarrationes in XII Psalmos Davidicos from Migne, acquired whole over HTTP on 2026-09-05 after the host's HTTPS route failed, then hashed locally. Page images were rendered and read directly; nothing in the retrieval path passed through a model."
+retrieved = "2026-09-05"
+sha256 = "096925e46d4eaa4ce17d74fb5dcdfaf5f35d24dc43b8d609f09525f177b42960"
+byte_size = 54628386
+page_count = 138
+indexable = false
+notes = "Complete work in 138 page images covering PL 14 cols. 921A-1180D, which is the extent the host's own catalogue page states. Two Migne columns to a PDF page, so col = 2p + 961 and the enarratio on Psalm 39 opens at col. 1109 on PDF page 74. No text layer: pdftotext returns nothing and all reading was done from the images. Not retained: the host's PDF, because Documenta Catholica Omnia reserves rights in its electronic edition and the file is 54.6 MB, larger than the whole of this library's retained payload by a wide margin. A reader without the network cannot open it from a checkout; the wording a claim depends on must be quoted into the claim's own passage record."

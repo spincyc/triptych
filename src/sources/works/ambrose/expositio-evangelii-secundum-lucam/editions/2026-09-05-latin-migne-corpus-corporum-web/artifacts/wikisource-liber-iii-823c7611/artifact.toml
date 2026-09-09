@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-web-2026-09-05.wikisource-liber-iii-823c7611"
+edition_id = "edition.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-web-2026-09-05"
+artifact_type = "wikitext"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Ambrose's Latin is ancient and in the public domain; Migne's Patrologia Latina 15 is in the United States public domain by date of publication; and a faithful transcription of a public-domain text originates no separate copyright, originality being required by Feist Publications, Inc. v. Rural Telephone Service Co., 499 U.S. 340, 345 (1991). The Corpus Corporum transcription is in addition reproduced at la.wikisource.org under that site's free-content terms. The bytes are therefore retained here under the project-wide retention default."
+rights_jurisdiction = "United States"
+source_url = "https://la.wikisource.org/w/index.php?title=Expositio_Evangelii_secundum_Lucam_(Ambrosius)/3&action=raw"
+provenance = "Raw wikitext of book III fetched whole in one HTTPS request with action=raw on 2026-09-05 and hashed locally. Nothing in the retrieval path passed through a model."
+retrieved = "2026-09-05"
+sha256 = "823c76116ede35f50b952a0c0163ab59084caccf12873fbf30e7cc1c49565f1a"
+byte_size = 57485
+path = "src/sources/works/ambrose/expositio-evangelii-secundum-lucam/editions/2026-09-05-latin-migne-corpus-corporum-web/artifacts/wikisource-liber-iii-823c7611/liber-03.wiki"
+encoding = "utf-8"
+indexable = true
+notes = "Complete raw wikitext of book III of the ten, the whole book in one response. Wikitext, not a facsimile: Migne's column numbers are embedded as page markers and the file carries wiki template and link syntax, so a raw-line literal search matches markup as well as Latin. Retention note: the sibling record for book X, artifact.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-web-2026-07-25.wikisource-liber-x-2868e872, keeps the same kind of bytes remote. That record is left as it stands; these are retained because their rights basis is affirmative, the files are small, and this work carries the formulary's decisive Latin patristic witness on the appointed Gospel, which a reader with no network must be able to reopen."

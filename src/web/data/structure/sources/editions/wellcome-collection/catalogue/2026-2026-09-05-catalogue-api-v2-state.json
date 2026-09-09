@@ -1,0 +1,42 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "api-response",
+   "byte_size": 8472,
+   "edition_owned": true,
+   "id": "artifact.wellcome-collection.catalogue.catalogue-api-v2-state-2026-09-05.catalogue-api-query-whatsoever-a-man-soweth-911babd6",
+   "media_type": "application/json",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "unresolved",
+   "rights_jurisdiction": null,
+   "source_url": "https://api.wellcomecollection.org/catalogue/v2/works?query=Whatsoever%20a%20man%20soweth&include=production,notes,subjects,contributors,items",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-09-05",
+  "editors": [],
+  "id": "edition.wellcome-collection.catalogue.catalogue-api-v2-state-2026-09-05",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "api.wellcomecollection.org/catalogue/v2, dated response state of 2026-09-05",
+  "title": "Wellcome Collection catalogue API v2, dated response state",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Wellcome Collection",
+  "category": "library-catalogue",
+  "description": "The catalogue of the Wellcome Collection library and archive, served as a public JSON API. A catalogue record is bibliographic testimony about a holding and never the holding itself. A locus is a work identifier in the catalogue.",
+  "id": "work.wellcome-collection.catalogue",
+  "languages": [
+   "en"
+  ],
+  "title": "Wellcome Collection catalogue"
+ }
+}
