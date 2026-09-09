@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.supreme-court-of-mississippi.ex-parte-marshall.mississippi-reports-volume-165-1933.caselaw-access-project-json-17e1ea24"
+edition_id = "edition.supreme-court-of-mississippi.ex-parte-marshall.mississippi-reports-volume-165-1933"
+artifact_type = "structured-case-record"
+media_type = "application/json"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "The judicial opinion itself is not subject to copyright: works of judges acting in their judicial capacity are edicts of government and belong to no author, Banks v. Manchester, 128 U.S. 244, 253 (1888), reaffirmed in Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020). What is not established here is a distribution basis for the Caselaw Access Project's own layer of these exact bytes - its scanning of the printed reporter, its optical text, its structural markup and its page-image block coordinates - and for the commercial reporters' own editorial matter where a volume carries it. The retrieved bytes carry no licence statement, none was retrieved in this run, and the exact file is therefore identified and not redistributed."
+source_url = "https://static.case.law/miss/165/cases/0523-01.json"
+provenance = "Complete Caselaw Access Project static case record fetched whole over HTTPS from static.case.law on 2026-09-05 and hashed locally. Nothing in the retrieval path passed through a model."
+retrieved = "2026-09-05"
+sha256 = "17e1ea24e7cdec369fec27e5c49e78433a36d8a9e17df7f6869e45964df8b035"
+byte_size = 106150
+indexable = false
+notes = "Complete case record: head matter plus the majority opinion of Ethridge J. and the dissents of Smith C.J. and McGowen J., 89,285 characters of casebody text by the retrieval's own count and 89,851 by the record's internal analysis figure, the whole of the reported decision at pp. 523-582. It was read in full to establish that the phrases a full-text index matched are absent from it; that absence is an absence from this case and from nothing wider. Not retained: the Caselaw Access Project's exact delivery, because no distribution basis for its scanning, optical text and structural layer was established within this run. A reader without the network cannot open this file from a checkout; the opinion is a public edict reachable from the printed reporter, and the wording a claim depends on must be quoted into the claim's own passage record."

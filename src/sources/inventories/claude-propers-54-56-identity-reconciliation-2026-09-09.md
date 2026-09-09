@@ -85,3 +85,45 @@ Five bindings in
 with a `Metadata review 2026-09-09` note; their loci, roles and evidence
 states are unchanged. The Claude publication inventory follows the revised
 leaf, the family ledger is refreshed, and the same checks pass.
+
+## Fifteenth Sunday (`feature/claude/propers/tlm/55`)
+
+Five edition ids `main` already held (from the GPT and Claude Sixteenth and
+Fourteenth Sunday productions) were declared a second time by this branch under
+differently spelled directories. `main`'s edition records stand verbatim; the
+branch's responses that `main` did not hold move under them unchanged, and the
+responses that duplicate bytes `main` holds are withdrawn:
+
+| Edition id, kept in `main`'s directory | Moved under it | Withdrawn as duplicate bytes |
+| --- | --- | --- |
+| `edition.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-09-05` | `newadvent-1801092-c37b1ddb` (Ps. 91 Vulg.) | `newadvent-1801040-3fab0826` and `newadvent-1801086-4f242c3f` (same ids as `main`'s), `newadvent-1801095-e0350e93` (same bytes as `psalm-94-new-advent-e0350e93`) |
+| `edition.augustine.enarrationes-in-psalmos.latin-augustinus-it-web-2026-09-05` | `augustinus-it-esposizione-salmo-112-4e9909f7`, `…-salmo-115-35833855`, `augustinus-it-esposizioni-salmi-sommario-369c7baf` | `…-salmo-054-0de304d7` (= `augustinus-it-ps039-0de304d7`), `…-salmo-104-3909c029` (= `augustinus-it-ps085-3909c029`) |
+| `edition.augustine.in-iohannis-evangelium-tractatus.english-npnf1-7-new-advent-web-2026-09-05` | `newadvent-1701026-9ec265de` (Tractate 26) | — |
+| `edition.jacques-paul-migne.patrologia-latina-volume-30.paris-1846` | — | `ia-page-image-leaf-264-3a711815` (= `ia-page-image-n264-3a711815`), `ia-djvu-ocr-patrologiaecursu0030jpmi` (= the tracked `ia-djvu-text-dd20c7b3`) |
+| `edition.thomas-aquinas.catena-aurea-in-lucam.latin-corpusthomisticum-web-2026-09-05` | `corpusthomisticum-clc04-d43a7afc` (Luke 4) | — |
+
+One further tracked duplicate is withdrawn from the branch's own edition
+`edition.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-web-2026-09-05`:
+its `wikisource-liber-v-fde2303a` repeats the bytes of `main`'s
+`latin-migne-wikisource-book-5.wikisource-book-5-fde2303a`. The edition keeps
+its other eight books. Four work records the branch re-registered
+(`anthony-of-padua.sermo-dominica-xvi-post-pentecosten`, `augustine.sermo-98`,
+`jacques-paul-migne.patrologia-latina-volume-30`,
+`thomas-aquinas.catena-aurea-in-lucam`) keep `main`'s wording; the branch's
+distinct editions under them (the 2021 Centro Studi PDF, the augustinus.it
+Latin of Sermo 98, and the English NPNF delivery of Sermo 98, whose bytes
+`main` also holds as a restricted response) stand as registered. Same-byte
+responses that differ only in storage class (`remote` beside `restricted` or
+`tracked`) are left as the library already leaves them elsewhere; only tracked
+duplicates and duplicated ids are refused, and only those are consolidated.
+
+Nine bindings in
+`src/claude/…/55-fifteenth-after-pentecost/research/source-bindings.toml`
+are rebound or re-pinned with a `Metadata review 2026-09-09` note: 30 and 31
+(PL 30, rebound), 44 and 47 (augustinus.it Enarrationes, rebound), 45, 46 and
+62 (moved responses), 33 (Guéranger volume XI, corrected ancestors) and 50
+(Sermo 98, `main`'s work record). The Claude publication inventory gains the
+Fifteenth Sunday leaf, classified from the works its bindings name (the strata
+of the Fourteenth, plus repository-internal for its bound sacramentary
+corpus); the family ledger is refreshed against the changed canonical catalog
+with every review unit still pending, and the same checks pass.

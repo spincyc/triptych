@@ -1,0 +1,9 @@
+schema = 1
+record_type = "work"
+id = "work.wellcome-collection.catalogue"
+title = "Wellcome Collection catalogue"
+responsible = "Wellcome Collection"
+work_type = "library-catalogue"
+languages = ["en"]
+locus_pattern = 'works-[a-z0-9]{8}'
+description = "The catalogue of the Wellcome Collection library and archive, served as a public JSON API. A catalogue record is bibliographic testimony about a holding and never the holding itself. A locus is a work identifier in the catalogue."

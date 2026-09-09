@@ -1,0 +1,9 @@
+schema = 1
+record_type = "work"
+id = "work.british-film-institute.screenonline"
+title = "BFI Screenonline"
+responsible = "British Film Institute"
+work_type = "reference-database"
+languages = ["en"]
+locus_pattern = '(?:film|tv|people)-[1-9][0-9]{0,7}(?:-(?:index|synopsis|credits))?'
+description = "The British Film Institute's online reference resource on British film and television history, giving each title a record page with credits, a curatorial analysis and a separate full synopsis. It is a modern reference work with signed curatorial prose, not a primary document, and its analyses are the BFI's own scholarship of their date. A locus is the site's own record identifier and page."

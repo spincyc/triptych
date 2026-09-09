@@ -1,0 +1,9 @@
+schema = 1
+record_type = "edition"
+id = "edition.eberhard-nestle.novum-testamentum-graece-1904.biblicalhumanities-morph-csv-2026-09-05"
+work_id = "work.eberhard-nestle.novum-testamentum-graece-1904"
+title = "Nestle 1904 with morphological tagging, biblicalhumanities tab-separated edition"
+language = "grc"
+publication = "biblicalhumanities/Nestle1904 GitHub repository, morph/Nestle1904.csv, dated web state consulted 2026-09-05"
+date = "2026-09-05"
+notes = "A dated delivery state of an electronic edition, not a printed one. Despite the .csv extension the file is tab-separated, with the columns BCV, text, func_morph, form_morph, strongs, lemma, normalized and a UTF-8 byte-order mark on the header row. The morphological tagging, the lemmatisation and the Strong's numbers are the project's own editorial layer over Nestle's 1904 text and are not Nestle's. The same repository serves a 25.8 MB XML form of the same data, which was not retrieved. Language pairing: this is a Greek New Testament, the original language of the appointed Epistle and Gospel; the library separately holds English and Latin Bibles, and no English of the Nestle 1904 edition as such exists to pair with it."

@@ -1,0 +1,9 @@
+schema = 1
+record_type = "work"
+id = "work.gregorien-info.gregorian-repertory"
+title = "The Gregorian Repertory (gregorien.info)"
+responsible = "gregorien.info"
+work_type = "chant-reference-database"
+languages = ["en", "fr", "la"]
+locus_pattern = '(?:chant|full-text)-[1-9][0-9]{0,5}'
+description = "A modern online database of the Gregorian Mass and Office repertory. Each chant page gathers the chant's text, mode, manuscript witnesses and calendar assignments, and indexes the six early Mass antiphonaries that Rene-Jean Hesbert collated in the Antiphonale Missarum Sextuplex by Hesbert's own numbers and sigla. It is an index of those books and not the books themselves: every Antiphonale Missarum Sextuplex number and siglum read from it is the database's report of Hesbert, and Hesbert's own pages are registered in this library at edition.rene-jean-hesbert.antiphonale-missarum-sextuplex.vromant-1935 with no artifact, because no United States redistribution basis was established for exact bytes of that edition. A locus is the site's own chant or full-text identifier."

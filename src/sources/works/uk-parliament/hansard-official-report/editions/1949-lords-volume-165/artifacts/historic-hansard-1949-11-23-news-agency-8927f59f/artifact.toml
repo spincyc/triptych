@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.uk-parliament.hansard-official-report.lords-volume-165-1949.historic-hansard-1949-11-23-news-agency-8927f59f"
+edition_id = "edition.uk-parliament.hansard-official-report.lords-volume-165-1949"
+artifact_type = "web-page"
+media_type = "text/html"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "The debates are the official record of proceedings in Parliament. The retrieved pages assert 'UK Parliament' copyright in their own footer and link to a site copyright statement that was not retrieved. UK Parliament ordinarily publishes Hansard under the Open Parliament Licence, which permits copying and publishing with attribution; that licence was not read or verified in this run and no licence statement appears in these exact bytes, so the distribution basis is recorded as unresolved and the bytes are not redistributed here."
+source_url = "https://api.parliament.uk/historic-hansard/lords/1949/nov/23/news-agency-and-diplomatic-privilege"
+provenance = "Complete historic Hansard page for the whole debate, retrieved over HTTPS from api.parliament.uk on 2026-09-05 and hashed locally."
+retrieved = "2026-09-05"
+sha256 = "8927f59f79a88ab4d2cd0bd8e717f316349d7de0e609cceca64749dadffc9574"
+byte_size = 51410
+indexable = false
+notes = "Complete official-report page for the whole debate, HL Deb 23 November 1949 vol 165 cc926-42, every contribution with speaker attribution, timings and per-column permalink anchors. It carries Lord Vansittart's quotation of Galatians 6:7 and his answer to it. Not retained: the exact page, because the licence its footer points to was not retrieved and the basis is unresolved. A reader without the network cannot open it from a checkout; the words a claim depends on must be quoted into the claim's own passage record with their House, volume and column."

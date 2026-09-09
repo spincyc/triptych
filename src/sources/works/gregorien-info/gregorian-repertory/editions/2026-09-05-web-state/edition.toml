@@ -1,0 +1,9 @@
+schema = 1
+record_type = "edition"
+id = "edition.gregorien-info.gregorian-repertory.web-state-2026-09-05"
+work_id = "work.gregorien-info.gregorian-repertory"
+title = "The Gregorian Repertory, English interface, dated web state"
+language = "en"
+publication = "gregorien.info English pages, dated web state consulted 2026-09-05"
+date = "2026-09-05"
+notes = "A dated delivery state of a living database, not a printed reference. The pages were served over HTTP/1.1 because the host's HTTP/2 response breaks curl. Two page shapes are registered: /chant/id/<n>/0/en, reached by chant identifier, and /full_text/pkey/<n>/en, reached through the full-text index; both render the same kind of record. Every Antiphonale Missarum Sextuplex citation taken from these pages carries the bound stated on the work record."

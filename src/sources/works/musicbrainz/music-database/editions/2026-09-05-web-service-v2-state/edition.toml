@@ -1,0 +1,9 @@
+schema = 1
+record_type = "edition"
+id = "edition.musicbrainz.music-database.web-service-v2-state-2026-09-05"
+work_id = "work.musicbrainz.music-database"
+title = "MusicBrainz web service version 2, dated response state"
+language = "en"
+publication = "musicbrainz.org/ws/2, dated response state of 2026-09-05"
+date = "2026-09-05"
+notes = "Dated states of two query responses, not of the database as a whole. Each response answers the query that produced it and nothing else, and each query string is part of the recorded source URL. MetaBrainz publishes MusicBrainz core data under a public data licence; that position was not verified within this run and no licence statement appears in the retrieved bytes, so the artifacts here record it as unresolved rather than assert it."

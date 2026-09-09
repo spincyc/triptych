@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.musicbrainz.music-database.web-service-v2-state-2026-09-05.web-service-release-3583fbc9-77e92fba"
+edition_id = "edition.musicbrainz.music-database.web-service-v2-state-2026-09-05"
+artifact_type = "api-response"
+media_type = "application/json"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "The retrieved responses carry discographic facts about a 1983 release. No licence statement appears in the exact bytes and none was retrieved in this run, so the distribution basis for the exact responses is unresolved and they are not redistributed here. MetaBrainz's own published position, that MusicBrainz core data is released into the public domain under CC0, was not read or verified in this run and is recorded as a lead rather than relied on."
+source_url = "https://musicbrainz.org/ws/2/release/3583fbc9-a597-35d3-a415-6bd0cfa34acc?inc=recordings+labels+artist-credits&fmt=json"
+provenance = "Complete MusicBrainz web service response for release 3583fbc9-a597-35d3-a415-6bd0cfa34acc with recordings, labels and artist credits included, fetched over HTTPS on 2026-09-05 and hashed locally. The query string is part of the recorded source URL."
+retrieved = "2026-09-05"
+sha256 = "77e92fba2f2d364cfc27f0edd180f6942963c02d31ea1bd20ce0b7197d51585b"
+byte_size = 9137
+indexable = false
+notes = "Complete release record for the UK 1983 Island pressing of U2's 'War': date, country, label, catalogue number and the full ten-track listing with durations, the tenth being '40'. Not retained: the exact response, because its distribution basis was not verified. A reader without the network cannot open it from a checkout; the discographic facts a claim needs must be quoted into the claim's own record."

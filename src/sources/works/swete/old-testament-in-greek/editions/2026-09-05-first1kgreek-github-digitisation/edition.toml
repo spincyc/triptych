@@ -1,0 +1,9 @@
+schema = 1
+record_type = "edition"
+id = "edition.swete.old-testament-in-greek.first1kgreek-github-digitisation-2026-09-05"
+work_id = "work.swete.old-testament-in-greek"
+title = "The Old Testament in Greek according to the Septuagint, Swete's text digitised for Open Greek and Latin and served from the lxx-swete repository"
+language = "grc"
+publication = "Digitisation of Swete's Cambridge edition derived from the Open Greek and Latin First1KGreek project and published as one plain-text file per book in the nathans/lxx-swete GitHub repository; dated web state consulted 2026-09-05"
+date = "2026-09-05"
+notes = "A dated delivery state of a digitisation, not a fresh collation of Swete's printed volumes and not a critical edition. Each file is a token stream, one Greek word per physical line, prefixed by a book.chapter.verse reference in Swete's own book numbering (27 = Psalmi, 13 = Regnorum III, 14 = Regnorum IV). Verse boundaries are therefore reference changes and not line boundaries, and a raw-line literal search over these files matches single words only. One line-level defect was measured in the Psalter file and is recorded on that artifact. Keep this digitisation distinct from edition.swete.old-testament-in-greek.cambridge-vol-1-1909, which is the printed volume, and from Rahlfs and Gottingen, neither of which was consulted. Language pairing: this is the Greek of the Septuagint, which is the witness the appointed chants are measured against; the library separately holds English and Latin Bibles, and no English of Swete's edition as such exists to pair with it."

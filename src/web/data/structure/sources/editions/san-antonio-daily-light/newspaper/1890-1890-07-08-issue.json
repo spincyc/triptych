@@ -1,0 +1,59 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "ocr-text",
+   "byte_size": 16226,
+   "edition_owned": true,
+   "id": "artifact.san-antonio-daily-light.newspaper.issue-1890-07-08.loc-page-2-alto-full-text-1e063c0a",
+   "media_type": "application/json",
+   "notes": "The complete uncorrected optical text layer of page 2, 15,395 characters, the whole page and nothing beyond it. Uncorrected optical character recognition of an 1890 newspaper page: it locates and identifies a paragraph and does not control its wording, which is why the page image crop was retrieved beside it.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "The newspaper issue was published in 1890 and is in the public domain in the United States by date. The digital surrogate was made for the National Digital Newspaper Program, a partnership of the Library of Congress and the National Endowment for the Humanities: a faithful photographic reproduction of a public-domain page adds no original authorship, and a machine-generated optical text layer over it originates none either, originality being required by Feist Publications, Inc. v. Rural Telephone Service Co., 499 U.S. 340, 345 (1991). The bytes are retained here under the project-wide retention default.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://tile.loc.gov/text-services/word-coordinates-service?segment=/service/ndnp/txdn/batch_txdn_denton_ver02/data/sn86090439/0051717659A/1890070801/0043.xml&format=alto_xml&full_text=1",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "page-scan-image",
+   "byte_size": 85023,
+   "edition_owned": true,
+   "id": "artifact.san-antonio-daily-light.newspaper.issue-1890-07-08.loc-page-2-image-crop-ab0473df",
+   "media_type": "image/jpeg",
+   "notes": "A crop of 880 by 720 pixels out of a 4338 by 6735 pixel page image: one region of page 2, covering the Yoakum Graphic quotation and the editor's reply. Legible at this resolution. The rest of the page was not cropped or inspected at image resolution, and the whole page image was not retrieved.",
+   "page_count": 1,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "The newspaper issue was published in 1890 and is in the public domain in the United States by date. The digital surrogate was made for the National Digital Newspaper Program, a partnership of the Library of Congress and the National Endowment for the Humanities: a faithful photographic reproduction of a public-domain page adds no original authorship, and a machine-generated optical text layer over it originates none either, originality being required by Feist Publications, Inc. v. Rural Telephone Service Co., 499 U.S. 340, 345 (1991). The bytes are retained here under the project-wide retention default.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://tile.loc.gov/image-services/iiif/service:ndnp:txdn:batch_txdn_denton_ver02:data:sn86090439:0051717659A:1890070801:0043/1020,3860,880,720/full/0/default.jpg",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1890-07-08",
+  "editors": [],
+  "id": "edition.san-antonio-daily-light.newspaper.issue-1890-07-08",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "San Antonio, Texas, 8 July 1890; digitised for Chronicling America, batch txdn_denton_ver02, reel sequence 0043",
+  "title": "San Antonio Daily Light, 8 July 1890",
+  "translators": [],
+  "year": 1890
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "San Antonio Daily Light",
+  "category": "newspaper",
+  "description": "A daily newspaper published at San Antonio, Texas, digitised for the Library of Congress's Chronicling America under Library of Congress control number sn86090439. One 1890 issue is registered here, for a paragraph that reprints Galatians 6:9 - appointed in the Epistle of the Fifteenth Sunday after Pentecost - with the harvest replaced by a cash prize. A locus is issue date, page and column.",
+  "id": "work.san-antonio-daily-light.newspaper",
+  "languages": [
+   "en"
+  ],
+  "title": "San Antonio Daily Light"
+ }
+}

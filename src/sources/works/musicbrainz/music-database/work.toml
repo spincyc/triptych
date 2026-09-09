@@ -1,0 +1,9 @@
+schema = 1
+record_type = "work"
+id = "work.musicbrainz.music-database"
+title = "MusicBrainz music database"
+responsible = "MetaBrainz Foundation"
+work_type = "discographic-database"
+languages = ["en"]
+locus_pattern = '(?:release|recording|artist)-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'
+description = "A community-maintained open database of music metadata, served as a public web service. A database record is discographic testimony about a release and never the release itself; it is registered here to pin the identity, date and track list of the 1983 U2 album 'War', whose closing track sets Vulgate Psalm 39, the psalm of the Offertory antiphon of the Fifteenth Sunday after Pentecost. A locus is an entity type and MusicBrainz identifier."
