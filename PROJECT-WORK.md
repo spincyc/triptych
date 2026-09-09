@@ -67,7 +67,19 @@ examples replay with zero divergences and zero tracked-state writes; six
 intentional exemptions and three unavailable sample-PDF examples retain their
 stated limits. The local site preview is built and verified by that replay.
 The three recaptured tools differ only in their generated example transcripts.
-Main integration and site deployment are outside this change.
+
+The maintainer subsequently requested reconciliation/rebase and a push to
+`main`. This extends the earlier implementation scope to integration and the
+automatic Pages deployment. After fetching, `origin/main` at `d3ceb2937` is
+already the direct parent of the reviewed dating commit `1567fb53b`; rebase
+reports the workspace branch up to date. No source reconciliation is needed,
+and the source and rendered checks above apply to the unchanged implementation.
+`make public-site`, `make verify-public-site` and
+`public-alpha verify --deployment-target github-pages` pass. The exact outgoing
+range contains the reviewed dating implementation and this scope/status
+checkpoint; its newly reachable content is intended for the public repository.
+A fast-forward push and production verification remain pending. The workspace
+branch remains `feature/codex/propers/dating`.
 
 ## GPT propers 54–56 publication and integration, 2026-09-06
 
