@@ -1,0 +1,59 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 572680,
+   "edition_owned": true,
+   "id": "artifact.charles-dickens.hard-times.gutenberg-ebook-786.gutenberg-pg786-body-lf",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "All three books, transcribed from the 1905 Chapman and Hall printing as the eBook's own credit line states. 2278 LF-terminated lines. The Project Gutenberg licence, trademark references and marker lines are not in this file; Triptych claims no exclusive right in the source wording. It is a transcription and not a facsimile.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "The work was published in 1854, and the transcribed printing in 1905, before 1929, so it is in the United States public domain by publication date; Dickens died in 1870. The Project Gutenberg wrapper is excluded from this file by the stated transformation.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "plain-text",
+   "byte_size": 626278,
+   "edition_owned": true,
+   "id": "artifact.charles-dickens.hard-times.gutenberg-ebook-786.gutenberg-pg786-raw-dd239b4a",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Project Gutenberg eBook 786 as fetched on the retrieval date, wrapper included. Extent as measured by the retrieving lane: complete Project Gutenberg text of Hard Times, all three books, plus PG header and licence; the cited sentence stands in Book the First, chapter V. ACCESS LIMITATION: these exact bytes are not retained because of the Gutenberg wrapper alone; the book text itself is retained whole and may be reopened offline at artifact.charles-dickens.hard-times.gutenberg-ebook-786.gutenberg-pg786-body-lf.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "licensed",
+   "rights_basis": "Two things have to be separated. Project Gutenberg's permission page states that the vast majority of its eBooks are in the public domain in the United States and that nobody can grant or withhold permission to use them -- but that is a statement about the book, not about the file. This file is wrapped in Project Gutenberg's licence header and footer, which carry the Project Gutenberg trademark and conditions on its use. The wrapper-bearing bytes are therefore recorded as the hashed derivation input and are not retained in Git; what is retained is the derivative named in `notes`, from which the wrapper has been removed, leaving only the text whose rights the permission page settles.",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.gutenberg.org/cache/epub/786/pg786.txt",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-09-05",
+  "editors": [],
+  "id": "edition.charles-dickens.hard-times.gutenberg-ebook-786",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "Project Gutenberg electronic edition, eBook 786, transcribed from the 1905 Chapman and Hall edition by David Price, consulted 2026-09-05",
+  "title": "Hard Times, Project Gutenberg eBook 786",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "Charles Dickens",
+  "category": "novel",
+  "description": "Dickens's Coketown novel, in three books.",
+  "id": "work.charles-dickens.hard-times",
+  "languages": [
+   "en"
+  ],
+  "title": "Hard Times"
+ }
+}

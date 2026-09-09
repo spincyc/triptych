@@ -35,10 +35,14 @@ appointed elements, textual features, senses, proposals, occurrences,
 departures, divisions — count what follows and check the two agree. Do the
 same for a total set against rows, a `both` against a list of three, an
 `only` against a second instance elsewhere in the same section. This runs
-through every reader-facing section and both editions, not only the sections
-where citations cluster, and the two editions were written at different
-lengths: a count that was true of the full commentary is routinely false of
-the abridged one that inherited the sentence.
+through every reader-facing section of the canonical edition, not only the
+sections where citations cluster.
+
+Count against what the canonical edition prints. Whether the companion's
+shorter text still bears out a sentence it inherited is the same class of
+defect, but it is asked later and by another lane, against a document that
+does not exist yet: `companion-conformance` owns it once the companion has
+been derived. Yours is the edition in front of you.
 
 The class is divided by defect and not by subject matter. It is yours when
 the things counted are patristic witnesses, and yours when they are Latin
@@ -46,6 +50,20 @@ constructions inside an exploratory proposal. It was lost for a whole
 production because the lane that saw it in the commentary judged it outside
 its own criteria, and the two lanes that saw it in the proposals both judged
 it an arithmetic question owned elsewhere. It is owned here.
+
+This stays a criterion and not a gate check, and the reason is measured
+rather than assumed. Counting looks mechanical, so it was tried as one: a
+screen over `N ...: a, b, and c` sentences in this leaf's prose. It fired
+eight times and was wrong eight times. `before and after, present and future`
+is two items and not four; `three ways: Augustine reads them as the four
+members of the Cross, Chrysostom for the extent of God's love, and not for
+the Cross at all, and Guéranger for the dimensions` is three items across six
+commas; and `The Propers: Notable and Quotable` is a title whose colon a
+screen reads as introducing a list. Narrowed until it stopped being wrong, it
+judged nothing at all. The enumerations this guide actually writes are
+natural-language series with internal commas, appositives and titles in them,
+and telling an item from a clause is the judgement you are here for. Count
+them yourself.
 
 Report a miscount as its own finding rather than folding it into a citation
 finding beside it: the repair is different, and one `required_result` that
@@ -70,15 +88,18 @@ was copied faithfully. Leave it there. It reached nobody once because this
 lane found it, correctly judged it criterion 2's, and had no way to say so;
 its owner is now explicit in that lane's fragment, so pass it by.
 
-## Both editions are yours
+## The canonical edition only
 
-The leaf builds more than one reader-facing document out of one source tree,
-as the shared fragment above explains. A citation or an English rendering
-carried in each is two published instances of it: an invented attribution
-corrected in one edition and left standing in the other is still published,
-and a rendering composed rather than quoted is still composed in the edition
-nobody opened. Read what every document renders, and name in each finding the
-file the citation is in.
+You read the document `main.tex` builds, and only that. The synthesis
+companion is written later, by `derive-synthesis`, from whatever this
+evaluation settles, and it is judged by its own lanes against the edition you
+are reading. Where `main.tex` carries an `\ifdefined\TriptychSynthesisEdition`
+branch, the arm that runs with the macro undefined is yours and the other arm
+is not; nothing under `sections/synthesis/` is yours at all.
+
+A defect that exists only in the companion is not a finding of yours. Raising
+it here routes a repair to a stage that has not run, and the companion may not
+even carry the passage once it is derived from the corrected canonical prose.
 
 For an online citation defect, compare the leaf with the read-only
 `research/scope.md` before assigning its repair. An exact title, responsible

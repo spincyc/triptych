@@ -1206,7 +1206,22 @@ class FindingForwardingTests(EngineCase):
         self.assertEqual(len([l for l in lines
                               if l.startswith("--- FRAGMENT: ")]), 2)
 
-    def test_only_blocking_findings_are_forwarded(self):
+    def test_only_blocking_findings_gate_but_advisories_still_travel(self):
+        """Blocking and advisory findings both reach the reviser, apart.
+
+        Severity decides what a finding *does*, not whether the stage that
+        must edit the document ever hears about it. A blocking finding is
+        `PRIOR_FINDINGS`: it routed the repair, it is owed an entry in
+        `finding_dispositions`, and it gates the run. An advisory is
+        `ADVISORY_FINDINGS`: it gates nothing, spends no budget, and is owed
+        no disposition -- but the reviser is already in those files, so it
+        arrives where it can be cleared for the cost of a sentence.
+
+        Keeping the two lists apart is the point. Merging them would tell the
+        reviser everything it reads was just blocked on; dropping the advisory
+        list is what taught lanes to re-file advisories as blocking a round
+        later in order to be heard at all.
+        """
         run_id = self.seed()["run_id"]
         self.advance_to(run_id, "eval-stage")
         findings = [blocking("CON-001", "must fix"),
@@ -1215,8 +1230,16 @@ class FindingForwardingTests(EngineCase):
         out = self.engine.advance(run_id, result_path=self.result(
             run_id, CHANGES_REQUIRED, findings=findings, name="mixed.json"))
         packet = Path(out["packet_abs_path"]).read_text(encoding="utf-8")
-        self.assertIn("must fix", packet)
-        self.assertNotIn("nice to have", packet)
+        prior = next(line for line in packet.splitlines()
+                     if line.startswith("PRIOR_FINDINGS: "))
+        advisory = next(line for line in packet.splitlines()
+                        if line.startswith("ADVISORY_FINDINGS: "))
+        # The blocking finding gates, and only it.
+        self.assertIn("must fix", prior)
+        self.assertNotIn("nice to have", prior)
+        # The advisory travels, in its own field, and never in the gating one.
+        self.assertIn("nice to have", advisory)
+        self.assertNotIn("must fix", advisory)
 
 
 class LauncherTests(unittest.TestCase):

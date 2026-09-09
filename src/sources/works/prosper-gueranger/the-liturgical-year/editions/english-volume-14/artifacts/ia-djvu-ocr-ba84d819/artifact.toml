@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.prosper-gueranger.the-liturgical-year.english-volume-14.ia-djvu-ocr-ba84d819"
+edition_id = "edition.prosper-gueranger.the-liturgical-year.english-volume-14"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "Guéranger died in 1875 and the named translator, Laurence Shepherd, in 1885, and the volume was published in 1910, so it is in the United States public domain by publication date and no life-based term reaches it. These exact bytes are another matter. THE TEST WAS RUN OVER THESE BYTES AND NOT ASSUMED. The question for an Internet Archive optical text layer is whether Google's own prose is inside the file, and this repository already answers it the same way twice, in opposite directions: artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf is tracked because its file carries the four-word page-foot stamp and no Google-authored prose, and artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1843.ia-djvu-ocr stands remote and unresolved because its first sixty-five lines are Google's front-matter block entire. The same probes were run here, case-insensitively over the whole file with runs of non-alphanumeric characters collapsed, because this class of scan doubles its spaces: \"usage guidelines\" 1; \"about google book search\" 1; \"this is a digital copy\" 1; \"digitized by google\" 82. Google's front-matter statement and usage guidelines are Google's own prose and no distribution grant for them was established, so the file is recorded and not retained. This follows the disposition already settled for artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1843.ia-djvu-ocr, which stands remote and unresolved for exactly this finding."
+source_url = "https://archive.org/download/V14TheLiturgicalYear/V14TheLiturgicalYear_djvu.txt"
+provenance = "Acquired over HTTPS by the liturgical-history research lane of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "ba84d8195122fbfdc5767829036d6ceeb57719f1f4ef7aea08a160af3bba7c95"
+byte_size = 869925
+encoding = "utf-8"
+indexable = false
+notes = "Uncorrected optical text of the whole volume, 33,358 LF-terminated lines. Extent as measured by the retrieving lane: Complete DjVu optical-text layer of Gueranger, The Liturgical Year: Time after Pentecost vol. V (overall vol. XIV, Stanbrook 1910). Fetched to test whether the later Time-after-Pentecost volumes carry the Sunday chapters; they do not -- this one is Common of the Time plus the Proper of the Saints for late August to early October.. ACCESS LIMITATION: not retained for the reason in `rights_basis`."

@@ -1,0 +1,158 @@
+schema = 1
+record_type = "proper-components"
+document = "liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost"
+entrypoint = "main.tex"
+synthesis_entrypoint = "synthesis.tex"
+appointed_text_completeness = "complete"
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+
+[outputs]
+research = "liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost"
+synthesis = "liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost-synthesis"
+web = "liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost"
+canonical_label = "Full PDF"
+synthesis_label = "Synthesis PDF"
+
+[[components]]
+key = "orientation"
+kind = "front-matter"
+path = "sections/00-map.tex"
+modes = ["research", "synthesis"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = []
+
+[[components]]
+key = "date-and-location"
+kind = "front-matter"
+path = "sections/10-date-location.tex"
+modes = ["research", "synthesis"]
+depends_on = ["orientation"]
+element_keys = ["introit", "epistle", "gradual", "alleluia", "gospel", "offertory", "communion"]
+references = ["sections/99-references.tex"]
+
+[[components]]
+key = "appointed-text"
+kind = "appointed-text"
+path = "sections/05-appointed-text.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = []
+
+[[components]]
+key = "per-element-sweep"
+kind = "proper-treatment"
+path = "sections/30-commentary.tex"
+modes = ["research"]
+depends_on = ["appointed-text"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["sections/99-references.tex"]
+
+[[components]]
+key = "brief-synthesis"
+kind = "brief-synthesis"
+path = "sections/20-themes.tex"
+modes = ["research", "synthesis"]
+depends_on = ["orientation"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["sections/99-references.tex"]
+
+[[components]]
+key = "integrated-commentary"
+kind = "integrated-commentary"
+path = "sections/synthesis/20-integrated-commentary.tex"
+modes = ["synthesis"]
+depends_on = ["brief-synthesis"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["sections/99-references.tex"]
+
+[[components]]
+key = "source-grounded-synthesis"
+kind = "source-grounded-synthesis"
+path = "sections/35-source-grounded-synthesis.tex"
+modes = ["research", "synthesis"]
+depends_on = ["brief-synthesis"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["sections/99-references.tex"]
+
+[[components]]
+key = "exploratory-synthesis"
+kind = "exploratory-synthesis"
+path = "sections/50-interpretive.tex"
+modes = ["research", "synthesis"]
+depends_on = ["source-grounded-synthesis"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["sections/99-references.tex"]
+
+[[components]]
+key = "notable-and-quotable"
+kind = "notable-quotable"
+path = "sections/40-notable.tex"
+modes = ["research", "synthesis"]
+depends_on = ["source-grounded-synthesis"]
+element_keys = ["epistle", "gospel"]
+references = ["sections/99-references.tex"]
+
+[[components]]
+key = "terminal-apparatus"
+kind = "terminal-apparatus"
+path = "sections/90-scope.tex"
+modes = ["research", "synthesis"]
+depends_on = ["notable-and-quotable"]
+element_keys = []
+references = ["sections/99-references.tex"]
+
+# --- Source-grounded relations, C1 to C4 -----------------------------------
+
+[[relations]]
+key = "three-strands-three-schedules"
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+evidence = ["documented-historical-orientation", "source-grounded-synthesis"]
+
+[[relations]]
+key = "only-the-introit-was-made-for-this-mass"
+element_keys = ["introit", "gradual", "alleluia", "offertory", "communion"]
+evidence = ["textual-observation", "documented-historical-orientation", "source-grounded-synthesis"]
+
+[[relations]]
+key = "the-frame-is-a-general-rule"
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+evidence = ["documented-historical-orientation", "source-grounded-synthesis"]
+
+[[relations]]
+key = "how-far-the-registered-english-reaches"
+element_keys = ["collect", "gradual", "offertory", "secret", "communion", "postcommunion"]
+evidence = ["textual-observation", "documented-reception", "source-grounded-synthesis"]
+
+# --- Exploratory relations, P1 to P6 ---------------------------------------
+
+[[relations]]
+key = "two-systems-of-measurement"
+element_keys = ["epistle", "gospel"]
+evidence = ["textual-observation", "exploratory-proposal"]
+
+[[relations]]
+key = "swollen-body-and-cleansed-mind"
+element_keys = ["gospel", "secret", "postcommunion"]
+evidence = ["textual-observation", "exploratory-proposal"]
+
+[[relations]]
+key = "three-acts-of-looking"
+element_keys = ["gospel", "offertory"]
+evidence = ["textual-observation", "exploratory-proposal"]
+
+[[relations]]
+key = "what-is-built-and-what-is-conferred"
+element_keys = ["gradual", "epistle", "gospel"]
+evidence = ["textual-observation", "exploratory-proposal"]
+
+[[relations]]
+key = "what-both-chants-stop-short-of"
+element_keys = ["alleluia", "communion", "epistle"]
+evidence = ["textual-observation", "exploratory-proposal"]
+
+[[relations]]
+key = "poverty-and-plenitude-by-element"
+element_keys = ["introit", "epistle", "gospel"]
+evidence = ["textual-observation", "exploratory-proposal"]

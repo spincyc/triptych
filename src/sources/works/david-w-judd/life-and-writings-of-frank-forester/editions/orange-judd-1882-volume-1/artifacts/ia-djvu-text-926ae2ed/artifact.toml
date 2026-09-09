@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.david-w-judd.life-and-writings-of-frank-forester.orange-judd-1882-volume-1.ia-djvu-text-926ae2ed"
+edition_id = "edition.david-w-judd.life-and-writings-of-frank-forester.orange-judd-1882-volume-1"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "The volume was published in New York in 1882, before 1929, so it is in the United States public domain by publication date. These exact bytes are another matter. The probes were run case-insensitively over the whole file with runs of non-alphanumeric characters collapsed: \"usage guidelines\" 1; \"about google book search\" 1; \"this is a digital copy\" 1; \"digitized by google\" 306. Google's front-matter block is present, entire, at the head of the file. That is Google-authored prose and no distribution grant for it was established, so the file is recorded and not retained, following the disposition already settled at artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1843.ia-djvu-ocr."
+source_url = "https://archive.org/download/lifeandwritings01pictgoog/lifeandwritings01pictgoog_djvu.txt"
+provenance = "Acquired over HTTPS by the cultural-afterlife research lane of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "926ae2ed97a8256b6f1656f434c5b971beccb5b57ed943da1dd2540622548417"
+byte_size = 591485
+encoding = "utf-8"
+indexable = false
+notes = "Uncorrected optical text of volume I only, 16,091 LF-terminated lines. ACCESS LIMITATION: not retained for the reason in `rights_basis`, so a reader without the network cannot replay over it the retrieving lane's negative -- that the sought phrase is not in volume I -- which is in any case bounded to volume I and to this recognition of it. Extent as measured by the retrieving lane: complete Internet Archive OCR text of volume 1 only of Life and Writings of Frank Forester (1882); volume 2 not retrieved, and the sought phrase is not in volume 1."

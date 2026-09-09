@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-liber-viii-latin-text"
+edition_id = "edition.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-wikisource-web-2026-09-05"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "This file carries the printed Latin alone. Migne's Patrologia Latina 15/16 is in the United States public domain by publication date and the ancient Latin inside it is public domain everywhere; every template, header, navigation banner, link, category and heading contributed at la.wikisource.org has been removed by the stated transformation, so nothing licensed CC BY-SA 4.0 survives in these bytes. A faithful transcription of a public-domain text originates no separate copyright, originality being required by Feist Publications, Inc. v. Rural Telephone Service Co., 499 U.S. 340, 345 (1991)."
+rights_jurisdiction = "United States"
+provenance = "Derived by script on 2026-09-05 from the exact parent delivery named in `derived_from`, whose SHA-256 and byte size were recomputed over the retained file and matched before the derivation ran. Nothing reached the network and no source text passed through a language model."
+retrieved = "2026-09-05"
+sha256 = "859fbd3805ed6198d63df446e74621c36828b1c8d0a2fbf234b165c9a35f24d1"
+byte_size = 69532
+path = "src/sources/works/ambrose/expositio-evangelii-secundum-lucam/editions/latin-migne-corpus-corporum-wikisource-web-2026-09-05/artifacts/wikisource-liber-viii-latin-text/expositio-lucam-liber-8.txt"
+derived_from = "artifact.ambrose.expositio-evangelii-secundum-lucam.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-liber-viii-dac68cfe"
+transformation = "Deterministic, offline, and no source text passed through a language model. Over the exact parent bytes, in order: drop HTML comments and every <ref>...</ref> footnote whole; drop every balanced {{...}} template whole, which in this corpus is the `titulus2` identity banner, the `Liber` previous/next navigation, the `Textquality` proofreading banner and the `finis` end mark; render [[target|label]] as its label and [[target]] as its target and an external [url label] as its label; drop every remaining HTML tag and the wiki bold and italic apostrophe runs; drop a =-delimited heading whose stripped content is a bare number, which is the wiki's own part numbering, and keep every other heading as its own line because those carry the printing's book and chapter titles; decode HTML entities; normalise to NFC; collapse runs of horizontal whitespace; emit one LF-terminated UTF-8 line per source paragraph and drop paragraphs that render empty. This is a normalisation and not a facsimile: the printing's line breaks and typography are not recoverable from it, and an inline bare numeral such as a Migne column marker, where the source carries one, is NOT removed, because no stated rule removes one without also removing numerals that belong to the text."
+encoding = "utf-8"
+indexable = true
+notes = "The printed Latin of Book VIII entire, 25 LF-terminated lines. Not a facsimile and not a collation against the printed column; Migne's column numbers stand inline as bare numerals and are retained."

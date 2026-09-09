@@ -76,6 +76,7 @@ and an identity with no line here is closed.
 - Authorized 2026-09-03: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost`.
 - Authorized 2026-09-05: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost`.
 - Authorized 2026-09-05: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost`.
+- Authorized 2026-09-05: provider `claude`, identity `liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost`.
 
 ## How to find out what exists
 

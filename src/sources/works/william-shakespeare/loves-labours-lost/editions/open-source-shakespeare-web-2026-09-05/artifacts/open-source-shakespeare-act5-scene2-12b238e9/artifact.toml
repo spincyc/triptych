@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.william-shakespeare.loves-labours-lost.open-source-shakespeare-web-2026-09-05.open-source-shakespeare-act5-scene2-12b238e9"
+edition_id = "edition.william-shakespeare.loves-labours-lost.open-source-shakespeare-web-2026-09-05"
+artifact_type = "web-page"
+media_type = "text/html"
+storage = "restricted"
+rights_status = "licensed"
+rights_basis = "The page states its own terms and they were read off these exact bytes: \"All Shakespeare texts are in the public domain. The Open Source Shakespeare database, concordance, and related data are licensed under the Creative Commons Attribution-NonCommercial 4.0 International license.\" with \"(c) 2003-2026 George Mason University\". The play text inside the page is therefore unencumbered and the site's own layer -- its database output, its continuous line numbering and its markup -- is licensed non-commercially. A non-commercial condition is a condition this repository does not place on its own tree, so lawful access here does not extend to redistribution and the bytes must not enter Git, build products, tests, fixtures or public artifacts. This follows the disposition already settled in this run for the Cantus Index pages under CC BY-NC-SA 4.0."
+license = "CC BY-NC 4.0"
+source_url = "https://www.opensourceshakespeare.org/views/plays/play_view.php?WorkID=loveslabours&Act=5&Scene=2&Scope=scene"
+provenance = "Acquired over HTTPS by the cultural-afterlife research lane of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "12b238e9df1cca10efb3a8074b9f05c9e56982b3070cb3ab5be8f9556e8f6bfb"
+byte_size = 123552
+indexable = false
+notes = "One scene only, Act 5 scene 2, carrying Open Source Shakespeare's continuous per-play line numbering. Extent as measured by the retrieving lane: one scene only - Open Source Shakespeare's page for Love's Labour's Lost Act 5 Scene 2, carrying that site's continuous per-play line numbering; the rest of the play was not retrieved ACCESS LIMITATION. What is not retained is the site's non-commercially licensed database output and markup, and it is not retained because of that licence. What a reader without the network can open instead is the scene itself in the Project Gutenberg body text retained at artifact.william-shakespeare.complete-works.gutenberg-ebook-100.gutenberg-pg100-body-lf; what cannot be reopened offline is this site's line numbering, which is the one thing it was fetched for, so a citation by that numbering rests on the digest and not on retained bytes."

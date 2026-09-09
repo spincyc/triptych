@@ -2,13 +2,26 @@
 
 ## Your task
 
-Author or revise the proper leaf. The leaf owns the prose, research, and
-audit records, and it builds more than one reader-facing document out of
-them: the canonical guide from `main.tex` and a synthesis edition from
-`synthesis.tex`. The second is derived mechanically only in the sense that
-one build produces both. What each edition puts in front of a reader is
-decided by branches and inputs you write, so prose reaching one and not the
-other is prose you authored for that edition alone and must keep true.
+Author or revise the proper leaf's **canonical edition** — the guide
+`main.tex` builds. The leaf owns the prose, research, and audit records, and
+the canonical guide is the largest edition and the authority for this
+formulary.
+
+**The synthesis companion is not yours and you do not write it here.** It is
+derived from the canonical edition by `derive-synthesis`, after this edition
+has passed a content evaluation, and it is judged separately against what you
+settle. Leave `synthesis.tex`, the `\ifdefined\TriptychSynthesisEdition`
+branches, and everything under `sections/synthesis/` alone; where they already
+exist from an earlier production, leave them as they are rather than updating
+them to match your changes.
+
+The two editions were once written and evaluated together, and it cost a
+production its whole iteration budget. Every evaluation lane read two
+documents, every finding had to be repaired in two places, and a claim
+corrected in one edition could stand published and wrong in the other because
+the reviser repaired the file the finding named and not its twin. Producing
+the larger edition first and deriving the smaller from it removes that class
+instead of policing it. Your part is to make the canonical edition right.
 
 Where the packet's CARRIED_FINDINGS header is not empty, read it before you
 begin. It holds blocking findings a content evaluation raised against the leaf
@@ -45,16 +58,13 @@ learns belongs in the files this stage owns, listed below.
    - Appendix: Scope and Qualifications
    - References
    - Generation Metadata
-2. Create or update `synthesis.tex` as a 2-line stub that defines
-   `\TriptychSynthesisEdition` and inputs `main.tex`. The stub is two lines;
-   what it produces is a second reader-facing document, published beside the
-   canonical guide. `main.tex` branches on
-   `\ifdefined\TriptychSynthesisEdition`, and every branch splits the prose:
-   an `\input` or a passage inside one arm reaches one edition's readers and
-   not the other's. Both arms are yours to write and yours to keep true to
-   each other. A claim carried in `sections/` and restated in
-   `sections/synthesis/` is two files, and correcting one leaves the other
-   published and wrong.
+2. Leave the synthesis companion alone. `synthesis.tex`, the
+   `\ifdefined\TriptychSynthesisEdition` branches, and `sections/synthesis/`
+   belong to `derive-synthesis`, which runs after this edition passes its
+   evaluation and writes the companion from what you settled. Do not create
+   them, and do not update ones that already exist. If your work makes an
+   existing companion file wrong, that is expected and it is the derivation's
+   business, not yours: say so in your summary and leave it.
 3. Create or update `proper-components.toml` with the component manifest.
 4. Create or update `format.tex` with leaf-local LaTeX macros.
 5. Create or update `generation-metadata.tex`. It carries three kinds of

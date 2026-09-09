@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.friedrich-nietzsche.menschliches-allzumenschliches.gutenberg-ebook-7207.gutenberg-pg7207-raw-769b6a85"
+edition_id = "edition.friedrich-nietzsche.menschliches-allzumenschliches.gutenberg-ebook-7207"
+artifact_type = "plain-text"
+media_type = "text/plain; charset=utf-8"
+storage = "remote"
+rights_status = "licensed"
+rights_basis = "Two things have to be separated. Project Gutenberg's permission page states that the vast majority of its eBooks are in the public domain in the United States and that nobody can grant or withhold permission to use them -- but that is a statement about the book, not about the file. This file is wrapped in Project Gutenberg's licence header and footer, which carry the Project Gutenberg trademark and conditions on its use. The wrapper-bearing bytes are therefore recorded as the hashed derivation input and are not retained in Git; what is retained is the derivative named in `notes`, from which the wrapper has been removed, leaving only the text whose rights the permission page settles."
+license = "Project Gutenberg License"
+source_url = "https://www.gutenberg.org/cache/epub/7207/pg7207.txt"
+provenance = "Acquired over HTTPS by the cultural-afterlife research lane of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "769b6a856d768bc020cf47a49635620b52287f853ed8225128ee6e221932a4cf"
+byte_size = 613914
+indexable = false
+notes = "Project Gutenberg eBook 7207 as fetched on the retrieval date, wrapper included. Extent as measured by the retrieving lane: complete Project Gutenberg text of the German Menschliches, Allzumenschliches, Erster Band, preface through aphorism 638 (\"Der Wanderer\"), plus PG header and licence; the second volume (Vermischte Meinungen und Sprueche, Der Wanderer und sein Schatten) is not in this eBook and was not retrieved ACCESS LIMITATION: these exact bytes are not retained because of the Gutenberg wrapper alone; the text itself is retained whole and may be reopened offline at artifact.friedrich-nietzsche.menschliches-allzumenschliches.gutenberg-ebook-7207.gutenberg-pg7207-body-lf."

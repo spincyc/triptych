@@ -80,6 +80,13 @@ CONTENT_LANES = [
     "evidence-discipline", "reception-sweep", "synthesis-argument",
     "citation-integrity", "profile-conformance",
 ]
+# The companion is judged by its own two lanes, after the canonical edition
+# has passed and `derive-synthesis` has written it. Fidelity reads the two
+# documents against each other; conformance reads the companion's own build
+# and its own arithmetic.
+SYNTHESIS_LANES = [
+    "derivation-fidelity", "companion-conformance",
+]
 VISUAL_LANES = [
     "density-and-hierarchy", "page-rhythm", "fixed-pagination",
     "clipping-and-apparatus",
@@ -101,11 +108,21 @@ PROGRAM_STAGES = {"scope-gate", "content-preflight", "mechanical-gates",
 
 # The v10 lifecycle, in order: authorize, produce, preflight the leaf, accept
 # the artifacts, publish, wire the catalog, accept the publication.
+#
+# The editions are produced largest first and smallest from it. `author-proper`
+# and the content loop settle the canonical guide alone; only once it has
+# passed does `derive-synthesis` write the companion, which is then judged
+# against the settled canonical edition by its own evaluation. They were once
+# authored and evaluated together, and it cost a production its whole iteration
+# budget: every lane read two documents, every finding was repaired in two
+# places, and a claim corrected in one edition could stand published and wrong
+# in the other.
 STAGE_ORDER = [
     "seed", "authorize-target", "scope-gate", "resolve-context",
     "source-audit", "research", "research-synthesis", "source-registration",
     "author-proper",
     "content-preflight", "content-evaluation", "content-revision",
+    "derive-synthesis", "synthesis-evaluation", "synthesis-revision",
     "build-artifacts",
     "mechanical-gates", "artifact-revision", "visual-evaluation",
     "visual-revision", "final-acceptance", "publish-artifacts",
@@ -133,6 +150,8 @@ FRAGMENT_PREFIX = {
     "content-synthesis-argument": "CON-SYN-",
     "content-citation-integrity": "CON-CIT-",
     "content-profile-conformance": "CON-PRO-",
+    "synthesis-fidelity": "SYN-FID-",
+    "synthesis-conformance": "SYN-CON-",
     "visual-density-and-hierarchy": "VIS-DEN-",
     "visual-page-rhythm": "VIS-RHY-",
     "visual-fixed-pagination": "VIS-FIX-",
@@ -1019,6 +1038,7 @@ class LauncherTests(unittest.TestCase):
         self.assertEqual(fanout, {
             "research": RESEARCH_LANES,
             "content-evaluation": CONTENT_LANES,
+            "synthesis-evaluation": SYNTHESIS_LANES,
             "visual-evaluation": VISUAL_LANES,
         })
 

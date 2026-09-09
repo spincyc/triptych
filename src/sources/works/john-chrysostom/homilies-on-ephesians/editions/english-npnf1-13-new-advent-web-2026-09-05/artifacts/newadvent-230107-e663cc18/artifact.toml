@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.john-chrysostom.homilies-on-ephesians.english-npnf1-13-new-advent-web-2026-09-05.newadvent-230107-e663cc18"
+edition_id = "edition.john-chrysostom.homilies-on-ephesians.english-npnf1-13-new-advent-web-2026-09-05"
+artifact_type = "web-page"
+media_type = "text/html"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "The translation printed inside these bytes is the translation by Gross Alexander, from Nicene and Post-Nicene Fathers, First Series, volume 13, edited by Philip Schaff (Buffalo, NY: Christian Literature Publishing Co., 1889). A work published in the United States in 1889, before 1929, is in the United States public domain by publication date, so the translation itself is unrestricted there. That settles the translation and not this file. New Advent prints on this page that the text was \"Revised and edited for New Advent by Kevin Knight\", and wraps it in the site's navigation, styling, advertising markup, support solicitation and \"About this page\" apparatus under a footer reading \"Copyright (c) 2026 by New Advent LLC\". The retention route that src/sources/inventories/catholic-encyclopedia-rights-v1.toml opens for New Advent's cathen ARTICLE pages -- extract the public-domain article and keep it -- does not reach a fathers page: that record scopes its holding to pages carrying the printed article \"and nothing more\" and says in terms that it does not reach a transcriber's own additions, and a stated revision is such an addition. No affirmative distribution basis for these exact bytes has been established, so none is asserted and nothing is retained."
+source_url = "https://www.newadvent.org/fathers/230107.htm"
+provenance = "Acquired over HTTPS by the patristic-reception and source-citation-coverage research lanes of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "e663cc1836e682bbcf3b2dd1d3d5d03ea8f017366f0ceb46f27137bf7afc763f"
+byte_size = 41717
+indexable = false
+notes = "New Advent page \"Homily 7 on Ephesians\". Extent as measured by the retrieving lane: complete New Advent page for Chrysostom's Homily 7 on Ephesians, running from Eph. 3:8 to the doxology of 3:21 and so covering the whole appointed Epistle. ACCESS LIMITATION. These exact bytes are not retained, for the reason in `rights_basis`. A reader without the network cannot open this homily from a checkout, and this repository holds neither the Greek of these homilies nor any other English of them. The homily is a remote witness only."

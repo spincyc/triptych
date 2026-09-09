@@ -50,6 +50,7 @@ from _workflow import (  # noqa: E402
 )
 from test_workflow_research_fanout import (  # noqa: E402
     CONTENT_LANES,
+    SYNTHESIS_LANES,
     DOC,
     FRAGMENTS,
     RESEARCH_LANES,
@@ -1085,6 +1086,7 @@ class PreservedGuaranteeTests(unittest.TestCase):
     def test_the_host_max_lane_rosters_are_unchanged(self):
         for stage_id, lanes in (("research", RESEARCH_LANES),
                                 ("content-evaluation", CONTENT_LANES),
+                                ("synthesis-evaluation", SYNTHESIS_LANES),
                                 ("visual-evaluation", VISUAL_LANES)):
             with self.subTest(stage=stage_id):
                 execution = self.stages[stage_id]["execution"]
@@ -1096,25 +1098,35 @@ class PreservedGuaranteeTests(unittest.TestCase):
         fanouts = {stage["id"] for stage in workflow_json()["stages"]
                    if stage["execution"]["mode"] == FANOUT}
         self.assertEqual(fanouts, {"research", "content-evaluation",
+                                   "synthesis-evaluation",
                                    "visual-evaluation"},
-                         "the publication phase added no fan-out")
+                         "the publication phase added no fan-out; the edition "
+                         "sequence added exactly one, over the companion")
 
-    def test_content_evaluation_is_still_the_only_routed_stage(self):
-        """The publication phase added no route; version 10 added one owner.
+    def test_the_routed_stages_are_the_two_evaluations_of_the_leaf(self):
+        """The publication phase added no route; the edition sequence added one.
 
         `brief` was inserted between the two owners this test was written
-        for, and it routes to the brief's sole writer. Everything else the
-        guarantee covers is unchanged: the order, the two outer owners, and
-        the fact that exactly one stage routes at all.
+        for, and it routes to the brief's sole writer. Version 26 added the
+        second routed stage: `synthesis-evaluation` owns the companion, which
+        is derived only after the canonical edition has passed, and its single
+        owner `derivation` reaches the one stage allowed to write the
+        companion. The guarantee is unchanged in what it was really about --
+        the order of the canonical owners, and that no stage outside the
+        leaf's own evaluations routes a repair at all.
         """
         self.assertEqual(self.stages["content-evaluation"]["repair_routes"], [
             {"repair_target": "research", "transition": "research"},
             {"repair_target": "brief", "transition": "research-synthesis"},
             {"repair_target": "authoring", "transition": "content-revision"},
         ])
+        self.assertEqual(
+            self.stages["synthesis-evaluation"]["repair_routes"],
+            [{"repair_target": "derivation",
+              "transition": "synthesis-revision"}])
         routed = [stage["id"] for stage in workflow_json()["stages"]
                   if stage.get("repair_routes")]
-        self.assertEqual(routed, ["content-evaluation"])
+        self.assertEqual(routed, ["content-evaluation", "synthesis-evaluation"])
 
     def test_research_synthesis_is_still_the_sole_writer_of_the_brief(self):
         self.assertEqual(self.stages["research-synthesis"]["execution"],

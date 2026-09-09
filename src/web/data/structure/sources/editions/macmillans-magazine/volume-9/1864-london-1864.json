@@ -1,0 +1,48 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "ocr-text",
+   "byte_size": 2539270,
+   "edition_owned": true,
+   "id": "artifact.macmillans-magazine.volume-9.london-1864.ia-djvu-text-72b09ddb",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Uncorrected optical text of the whole bound volume, contents list included. 65378 LF-terminated lines, valid UTF-8, no CR bytes. Extent as measured by the retrieving lane: complete Internet Archive OCR text of Macmillan's Magazine vol. IX (November 1863 - April 1864) as one bound volume; the volume contents list and the poem at pp. 436-439 are both present and legible. QUOTE FROM THIS ARTIFACT ONLY THROUGH A CHECKED PASSAGE: it is uncorrected recognition, and a raw-line negative over it cannot exclude a differently recognised spelling.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "The volume was published in London in 1863-1864, before 1931, so it is out of United States copyright on the line guidance/missals.md records from Cornell's public-domain chart as current on 1 January 2026 and re-derivable every January; restoration under 17 U.S.C. 104A could not reach it either, since ninety-five years from 1864 ran out in 1959 and nothing remained to restore on 1 January 1996. The volume's own printed \"[The Right of Translation and Reproduction is reserved.]\" is a nineteenth-century reservation whose term has long expired and is recorded as a fact about the page rather than as a live claim. THE GOOGLE QUESTION WAS DECIDED ON THESE BYTES, by the same probes this repository already used to separate artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf, which is tracked, from artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1843.ia-djvu-ocr, which is not. Run case-insensitively over the whole file with runs of non-alphanumeric characters collapsed, because this class of scan doubles its spaces: \"usage guidelines\" 0; \"about google book search\" 0; \"this is a digital copy\" 0; \"digitized by google\" 0; \"google book search\" 0. Google's front-matter block is absent and no notice, licence, reservation or condition of any kind appears in the file. A faithful mechanical reproduction of a public-domain work is not original authorship (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)), and machine optical character recognition adds no human authorship on top of it. NOT RELIED ON: that the item is available, that the download succeeded, or that any host marks the scan public domain.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/macmillansmagazi09macmuoft/macmillansmagazi09macmuoft_djvu.txt",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1864",
+  "editors": [
+   "David Masson"
+  ],
+  "id": "edition.macmillans-magazine.volume-9.london-1864",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "London: Macmillan and Co., 23 Henrietta Street, Covent Garden; printed by R. Clay, Son, and Taylor. Edited by David Masson",
+  "title": "Macmillan's Magazine, Volume IX, November 1863 - April 1864",
+  "translators": [],
+  "year": 1864
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Macmillan's Magazine, vol. IX, November 1863 - April 1864"
+  ],
+  "author": "David Masson, editor",
+  "category": "periodical-volume",
+  "description": "One bound half-yearly volume of the Victorian monthly, edited by David Masson. Christina Rossetti's longest poem was first published in it at pp. 436-439 under a title taken from Luke 14:10.",
+  "id": "work.macmillans-magazine.volume-9",
+  "languages": [
+   "en"
+  ],
+  "title": "Macmillan's Magazine, Volume IX"
+ }
+}

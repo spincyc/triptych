@@ -565,8 +565,9 @@ class EscalationTests(RoutingCase):
             run_id, lane_results=self.submissions(
                 run_id, [escalation("CON-PRO-002")]))
         self.assertEqual(
-            out["stage"], "build-artifacts",
-            "the profile is wrong and the leaf is right, so the run goes on")
+            out["stage"], "derive-synthesis",
+            "the profile is wrong and the leaf is right, so the run goes on "
+            "-- to the derivation, since the canonical edition has now passed")
         self.assertIsNone(out["disposition"])
 
     def test_an_escalation_is_recorded_where_it_outlives_the_run(self):

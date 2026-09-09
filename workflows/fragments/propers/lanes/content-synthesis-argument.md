@@ -60,15 +60,18 @@ mandated fields; whether its arithmetic is right is asked once, in one lane,
 across the whole guide. Do not report it, and do not withhold an otherwise
 sound criterion 5 finding because a miscount sits in the same paragraph.
 
-## Both editions are yours
+## The canonical edition only
 
-This lane meets that fact most directly. The leaf builds more than one
-reader-facing document out of one source tree, as the shared fragment above
-explains, and the second is commonly the synthesis itself — rendered from
-section files the canonical build never inputs, or from prose a
-`\ifdefined\TriptychSynthesisEdition` branch fences off. Reading `main.tex`
-alone can leave the very synthesis you are judging unread. Read what every
-document renders, and name in each finding the file the defect is in.
+You read the document `main.tex` builds, and only that. The synthesis
+companion is written later, by `derive-synthesis`, from whatever this
+evaluation settles, and it is judged by its own lanes against the edition you
+are reading. Where `main.tex` carries an `\ifdefined\TriptychSynthesisEdition`
+branch, the arm that runs with the macro undefined is yours and the other arm
+is not; nothing under `sections/synthesis/` is yours at all.
+
+A defect that exists only in the companion is not a finding of yours. Raising
+it here routes a repair to a stage that has not run, and the companion may not
+even carry the passage once it is derived from the corrected canonical prose.
 
 ## Result
 

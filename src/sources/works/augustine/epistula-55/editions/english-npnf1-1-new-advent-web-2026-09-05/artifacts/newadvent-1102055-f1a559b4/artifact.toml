@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.augustine.epistula-55.english-npnf1-1-new-advent-web-2026-09-05.newadvent-1102055-f1a559b4"
+edition_id = "edition.augustine.epistula-55.english-npnf1-1-new-advent-web-2026-09-05"
+artifact_type = "web-page"
+media_type = "text/html"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "The translation printed inside these bytes is the translation by J.G. Cunningham, from Nicene and Post-Nicene Fathers, First Series, volume 1, edited by Philip Schaff (Buffalo, NY: Christian Literature Publishing Co., 1887). A work published in the United States in 1887, before 1929, is in the United States public domain by publication date, so the translation itself is unrestricted there. That settles the translation and not this file. New Advent prints on this page that the text was \"Revised and edited for New Advent by Kevin Knight\", and wraps it in the site's navigation, styling, advertising markup, support solicitation and \"About this page\" apparatus under a footer reading \"Copyright (c) 2026 by New Advent LLC\". The retention route that src/sources/inventories/catholic-encyclopedia-rights-v1.toml opens for New Advent's cathen ARTICLE pages -- extract the public-domain article and keep it -- does not reach a fathers page: that record scopes its holding to pages carrying the printed article \"and nothing more\" and says in terms that it does not reach a transcriber's own additions, and a stated revision is such an addition. No affirmative distribution basis for these exact bytes has been established, so none is asserted and nothing is retained."
+source_url = "https://www.newadvent.org/fathers/1102055.htm"
+provenance = "Acquired over HTTPS by the patristic-reception research lane of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "f1a559b454de74bcae66b7257a96b26cd3423722332fa78f5eb0801c6bdc28db"
+byte_size = 99999
+indexable = false
+notes = "New Advent page \"Letter 55 (A.D. 400)\". Extent as measured by the retrieving lane: complete New Advent page for Augustine, Letter 55 (to Januarius), chapters 1 through 21 and numbered sections 1 through 39, ending in a well-formed document. ACCESS LIMITATION. These exact bytes are not retained, for the reason in `rights_basis`. A reader without the network cannot open this letter from a checkout. THE LATIN WAS SOUGHT AND NOT FOUND WITHIN THIS RUN'S RETRIEVALS: the retrieving lane swept augustinus.it and la.wikisource for Augustine's Latin under \"Epistula 55\", \"Ad inquisitiones Ianuarii\" and \"Ad Ianuarium\" and brought back no Latin file for this letter, and source-registration may not retrieve. The work is therefore held here in translation only, and that is recorded rather than passed over."

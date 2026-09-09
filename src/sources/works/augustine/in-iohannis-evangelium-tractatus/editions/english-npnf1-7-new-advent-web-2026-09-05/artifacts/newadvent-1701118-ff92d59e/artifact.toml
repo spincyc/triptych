@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.augustine.in-iohannis-evangelium-tractatus.english-npnf1-7-new-advent-web-2026-09-05.newadvent-1701118-ff92d59e"
+edition_id = "edition.augustine.in-iohannis-evangelium-tractatus.english-npnf1-7-new-advent-web-2026-09-05"
+artifact_type = "web-page"
+media_type = "text/html"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "The translation printed inside these bytes is the translation by John Gibb, from Nicene and Post-Nicene Fathers, First Series, volume 7, edited by Philip Schaff (Buffalo, NY: Christian Literature Publishing Co., 1888). A work published in the United States in 1888, before 1929, is in the United States public domain by publication date, so the translation itself is unrestricted there. That settles the translation and not this file. New Advent prints on this page that the text was \"Revised and edited for New Advent by Kevin Knight\", and wraps it in the site's navigation, styling, advertising markup, support solicitation and \"About this page\" apparatus under a footer reading \"Copyright (c) 2026 by New Advent LLC\". The retention route that src/sources/inventories/catholic-encyclopedia-rights-v1.toml opens for New Advent's cathen ARTICLE pages -- extract the public-domain article and keep it -- does not reach a fathers page: that record scopes its holding to pages carrying the printed article \"and nothing more\" and says in terms that it does not reach a transcriber's own additions, and a stated revision is such an addition. No affirmative distribution basis for these exact bytes has been established, so none is asserted and nothing is retained."
+source_url = "https://www.newadvent.org/fathers/1701118.htm"
+provenance = "Acquired over HTTPS by the patristic-reception research lane of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "ff92d59e716285f51ebc5a4401b47a7afd5cf95ecd5c5ec9b6c019f50fd99506"
+byte_size = 21136
+indexable = false
+notes = "New Advent page \"Tractate 118 (John 19:23-24)\". Extent as measured by the retrieving lane: complete New Advent page for Augustine, In Iohannis euangelium tractatus 118, all five sections. ACCESS LIMITATION. These exact bytes are not retained, for the reason in `rights_basis`. A reader without the network cannot open this English page from a checkout, and this repository holds no Latin of tractate 118 either; the tractate's exposition of the four dimensions of Ephesians 3:18 is witnessed here only by this remote record."

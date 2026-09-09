@@ -1,6 +1,6 @@
 {
   "id": "proper",
-  "version": 25,
+  "version": 26,
   "description": "1962 propers synthesis production workflow",
   "default_effort": "xhigh",
   "document_argument": "proper",
@@ -347,7 +347,7 @@
         "propers/content-evaluation.md"
       ],
       "result_schema": "content-evaluation-result.json",
-      "pass_transition": "build-artifacts",
+      "pass_transition": "derive-synthesis",
       "fail_transition": "content-revision",
       "repair_routes": [
         {
@@ -384,6 +384,83 @@
       ],
       "result_schema": "worker-result.json",
       "next": "content-preflight",
+      "reports_repairs": true
+    },
+    {
+      "id": "derive-synthesis",
+      "type": "linear",
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "propers/derive-synthesis.md"
+      ],
+      "repairs": [
+        "derivation"
+      ],
+      "result_schema": "worker-result.json",
+      "next": "synthesis-evaluation"
+    },
+    {
+      "id": "synthesis-evaluation",
+      "type": "evaluator",
+      "effort": "high",
+      "execution": {
+        "mode": "fanout",
+        "parallelism": "host-max",
+        "join": "strict-union",
+        "lanes": [
+          {
+            "id": "derivation-fidelity",
+            "fragments": [
+              "propers/lanes/synthesis-fidelity.md"
+            ]
+          },
+          {
+            "id": "companion-conformance",
+            "fragments": [
+              "propers/lanes/synthesis-conformance.md"
+            ]
+          }
+        ]
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "propers/synthesis-evaluation.md"
+      ],
+      "result_schema": "synthesis-evaluation-result.json",
+      "pass_transition": "build-artifacts",
+      "fail_transition": "synthesis-revision",
+      "repair_routes": [
+        {
+          "repair_target": "derivation",
+          "transition": "synthesis-revision"
+        }
+      ],
+      "max_iterations": 3,
+      "records_standing_findings": true
+    },
+    {
+      "id": "synthesis-revision",
+      "type": "bounded-revision",
+      "execution": {
+        "mode": "single"
+      },
+      "revision_target": "derive-synthesis",
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "propers/synthesis-revision.md",
+        "propers/derive-synthesis.md"
+      ],
+      "repairs": [
+        "derivation"
+      ],
+      "result_schema": "worker-result.json",
+      "next": "synthesis-evaluation",
       "reports_repairs": true
     },
     {

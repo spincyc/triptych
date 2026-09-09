@@ -1,0 +1,1128 @@
+# Generated. Do not edit.
+#
+# What the Scripture chronology corpus answers about this proper's appointed
+# loci, written by `tools/tpt proper-chronology record` and held
+# against the corpus by `check-content-preflight`. Every field
+# here is the corpus's, carried so that the guide's prose can be regenerated
+# without re-researching the fact: `guidance/scripture-chronology.md` §14.
+#
+# `formulary` is `appointed` when the calendar appoints this identity a Mass
+# formulary, and `no-calendar-formulary` when it does not — a ritual Mass,
+# appointed by a rite rather than by a day, which the calendar sources here do
+# not encode. In that state the record lists no element, `formulary_reason`
+# says why, and no date may be supplied from anywhere else to fill the gap.
+#
+# `label` is the source's own words and the only value a manually authored
+# guide may display. `date` is the normalized form, for comparison and never
+# for a manual page. The sole permitted display exception is the deterministic
+# `tools/tpt proper-chronology annotations` projection: it may render its
+# concise `display_label` because the same generated contract retains the raw
+# `label` and claim `profile`. No manual consumer may mint or edit one. An
+# element's `claims` are the full audit union of assertions resolved at any of
+# its appointed loci; each claim's nested `reaches` records every locus, corpus
+# scope, and inheritance route by which it was returned. `publication_claims`
+# is the exact across-all-loci intersection that the generated one-cell
+# annotation may display. `status` and `reason` summarize the audit answer;
+# `publication_status` and `publication_reason` describe that safe
+# intersection. An element with no `status` cites no Scripture; one whose
+# publication status is
+# `undated-in-tradition` or `research-pending` has no date to print, and the
+# guide states that absence rather than filling it. `nonuniform` means its loci
+# have chronology but share no one assertion an element-wide Date cell could
+# truthfully print.
+
+
+schema = 2
+record_type = "proper-chronology"
+document = "liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost"
+calendar = "roman-1962"
+mass = "pentecost-16"
+system = "vulgate"
+profile = "catholic-comprehensive-v1"
+formulary = "appointed"
+formulary_reason = ""
+generated_by = "tools/tpt proper-chronology record"
+
+[[elements]]
+key = "introit"
+name = "Introit"
+refs = ["Psalm 85:3, 5", "Psalm 85:1"]
+loci = ["Ps.85.3", "Ps.85.5", "Ps.85.1"]
+status = "composition-only"
+reason = ""
+publication_status = "composition-only"
+publication_reason = ""
+
+[[elements.claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.claims.reaches]]
+locus = "Ps.85.1"
+inherited = true
+scope = "Ps"
+
+[[elements.claims.reaches]]
+locus = "Ps.85.3"
+inherited = true
+scope = "Ps"
+
+[[elements.claims.reaches]]
+locus = "Ps.85.5"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.85.1"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.85.3"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.85.5"
+inherited = true
+scope = "Ps"
+
+[[elements]]
+key = "collect"
+name = "Collect"
+refs = []
+loci = []
+status = ""
+reason = ""
+publication_status = ""
+publication_reason = ""
+
+[[elements]]
+key = "epistle"
+name = "Epistle"
+refs = ["Ephesians 3:13-21"]
+loci = ["Eph.3.13", "Eph.3.14", "Eph.3.15", "Eph.3.16", "Eph.3.17", "Eph.3.18", "Eph.3.19", "Eph.3.20", "Eph.3.21"]
+status = "composition-only"
+reason = ""
+publication_status = "composition-only"
+publication_reason = ""
+
+[[elements.claims]]
+relation = "composition"
+subject = "composition.epistle-to-the-ephesians"
+title = "The Epistle to the Ephesians"
+label = "a period between 58 and 63"
+date = "58 A.D. to 63 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05485a-66d722ae"]
+
+[[elements.claims.reaches]]
+locus = "Eph.3.13"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.3.14"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.3.15"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.3.16"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.3.17"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.3.18"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.3.19"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.3.20"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.3.21"
+inherited = true
+scope = "Eph"
+
+[[elements.claims]]
+relation = "composition"
+subject = "composition.epistle-to-the-ephesians"
+title = "The Epistle to the Ephesians"
+label = "(Philemon; Colossians; Ephesians; Philippians), 61"
+date = "61 A.D."
+precision = "year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8"]
+
+[[elements.claims.reaches]]
+locus = "Eph.3.13"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.3.14"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.3.15"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.3.16"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.3.17"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.3.18"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.3.19"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.3.20"
+inherited = true
+scope = "Eph"
+
+[[elements.claims.reaches]]
+locus = "Eph.3.21"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.epistle-to-the-ephesians"
+title = "The Epistle to the Ephesians"
+label = "a period between 58 and 63"
+date = "58 A.D. to 63 A.D."
+precision = "interval"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05485a-66d722ae"]
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.3.13"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.3.14"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.3.15"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.3.16"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.3.17"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.3.18"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.3.19"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.3.20"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.3.21"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.epistle-to-the-ephesians"
+title = "The Epistle to the Ephesians"
+label = "(Philemon; Colossians; Ephesians; Philippians), 61"
+date = "61 A.D."
+precision = "year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8"]
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.3.13"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.3.14"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.3.15"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.3.16"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.3.17"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.3.18"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.3.19"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.3.20"
+inherited = true
+scope = "Eph"
+
+[[elements.publication_claims.reaches]]
+locus = "Eph.3.21"
+inherited = true
+scope = "Eph"
+
+[[elements]]
+key = "gradual"
+name = "Gradual"
+refs = ["Psalm 101:16-17"]
+loci = ["Ps.101.16", "Ps.101.17"]
+status = "composition-only"
+reason = ""
+publication_status = "composition-only"
+publication_reason = ""
+
+[[elements.claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.claims.reaches]]
+locus = "Ps.101.16"
+inherited = true
+scope = "Ps"
+
+[[elements.claims.reaches]]
+locus = "Ps.101.17"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.101.16"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.101.17"
+inherited = true
+scope = "Ps"
+
+[[elements]]
+key = "alleluia"
+name = "Alleluia"
+refs = ["Psalm 97:1"]
+loci = ["Ps.97.1"]
+status = "dated"
+reason = ""
+publication_status = "dated"
+publication_reason = ""
+
+[[elements.claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.claims.reaches]]
+locus = "Ps.97.1"
+inherited = true
+scope = "Ps"
+
+[[elements.claims]]
+relation = "prophetic-referent"
+subject = "life-of-christ.nativity"
+title = "The Nativity of Our Lord"
+label = "the year of Rome 750 which he styles 3 B.C."
+date = "3 B.C."
+precision = "year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03738a-5eb03e5b"]
+
+[[elements.claims.reaches]]
+locus = "Ps.97.1"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.claims]]
+relation = "prophetic-referent"
+subject = "life-of-christ.nativity"
+title = "The Nativity of Our Lord"
+label = "probably the year 7 B.C."
+date = "about 7 B.C."
+precision = "approximate-year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04"]
+
+[[elements.claims.reaches]]
+locus = "Ps.97.1"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.97.1"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims]]
+relation = "prophetic-referent"
+subject = "life-of-christ.nativity"
+title = "The Nativity of Our Lord"
+label = "the year of Rome 750 which he styles 3 B.C."
+date = "3 B.C."
+precision = "year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "reported-traditional"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03738a-5eb03e5b"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.97.1"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements.publication_claims]]
+relation = "prophetic-referent"
+subject = "life-of-christ.nativity"
+title = "The Nativity of Our Lord"
+label = "probably the year 7 B.C."
+date = "about 7 B.C."
+precision = "approximate-year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.97.1"
+inherited = true
+scope = "Ps.67 Ps.95 Ps.96 Ps.97"
+
+[[elements]]
+key = "gospel"
+name = "Gospel"
+refs = ["Luke 14:1-11"]
+loci = ["Luke.14.1", "Luke.14.2", "Luke.14.3", "Luke.14.4", "Luke.14.5", "Luke.14.6", "Luke.14.7", "Luke.14.8", "Luke.14.9", "Luke.14.10", "Luke.14.11"]
+status = "composition-only"
+reason = ""
+publication_status = "composition-only"
+publication_reason = ""
+
+[[elements.claims]]
+relation = "composition"
+subject = "composition.gospel-of-luke"
+title = "The Gospel of St Luke"
+label = "About the year 70"
+date = "about 70 A.D."
+precision = "approximate-year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"]
+
+[[elements.claims.reaches]]
+locus = "Luke.14.1"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.14.10"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.14.11"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.14.2"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.14.3"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.14.4"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.14.5"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.14.6"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.14.7"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.14.8"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.14.9"
+inherited = true
+scope = "Luke"
+
+[[elements.claims]]
+relation = "composition"
+subject = "composition.gospel-of-luke"
+title = "The Gospel of St Luke"
+label = "before the end of the Roman imprisonment, when the Acts was finished"
+date = "before the Acts of the Apostles, and therefore before the end of the Roman imprisonment, and not as late as the destruction of Jerusalem"
+precision = "relative"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["passage.pontifical-biblical-commission.de-auctore-tempore-et-veritate-evangeliorum-marci-et-lucae.latin-aas-4-1912.responsa-i-ix"]
+
+[[elements.claims.reaches]]
+locus = "Luke.14.1"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.14.10"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.14.11"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.14.2"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.14.3"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.14.4"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.14.5"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.14.6"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.14.7"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.14.8"
+inherited = true
+scope = "Luke"
+
+[[elements.claims.reaches]]
+locus = "Luke.14.9"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.gospel-of-luke"
+title = "The Gospel of St Luke"
+label = "About the year 70"
+date = "about 70 A.D."
+precision = "approximate-year"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"]
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.14.1"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.14.10"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.14.11"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.14.2"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.14.3"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.14.4"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.14.5"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.14.6"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.14.7"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.14.8"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.14.9"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "composition.gospel-of-luke"
+title = "The Gospel of St Luke"
+label = "before the end of the Roman imprisonment, when the Acts was finished"
+date = "before the Acts of the Apostles, and therefore before the end of the Roman imprisonment, and not as late as the destruction of Jerusalem"
+precision = "relative"
+disposition = "disputed"
+answerability = "answerable"
+basis_class = "traditional-catholic"
+profile = "catholic-traditional-v1"
+sources = ["passage.pontifical-biblical-commission.de-auctore-tempore-et-veritate-evangeliorum-marci-et-lucae.latin-aas-4-1912.responsa-i-ix"]
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.14.1"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.14.10"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.14.11"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.14.2"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.14.3"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.14.4"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.14.5"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.14.6"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.14.7"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.14.8"
+inherited = true
+scope = "Luke"
+
+[[elements.publication_claims.reaches]]
+locus = "Luke.14.9"
+inherited = true
+scope = "Luke"
+
+[[elements]]
+key = "offertory"
+name = "Offertory"
+refs = ["Psalm 39:14-15"]
+loci = ["Ps.39.14", "Ps.39.15"]
+status = "composition-only"
+reason = ""
+publication_status = "composition-only"
+publication_reason = ""
+
+[[elements.claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.claims.reaches]]
+locus = "Ps.39.14"
+inherited = true
+scope = "Ps"
+
+[[elements.claims.reaches]]
+locus = "Ps.39.15"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.39.14"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.39.15"
+inherited = true
+scope = "Ps"
+
+[[elements]]
+key = "secret"
+name = "Secret"
+refs = []
+loci = []
+status = ""
+reason = ""
+publication_status = ""
+publication_reason = ""
+
+[[elements]]
+key = "communion"
+name = "Communion"
+refs = ["Psalm 70:16-18"]
+loci = ["Ps.70.16", "Ps.70.17", "Ps.70.18"]
+status = "dated"
+reason = ""
+publication_status = "dated"
+publication_reason = ""
+
+[[elements.claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.claims.reaches]]
+locus = "Ps.70.16"
+inherited = true
+scope = "Ps"
+
+[[elements.claims.reaches]]
+locus = "Ps.70.17"
+inherited = true
+scope = "Ps"
+
+[[elements.claims.reaches]]
+locus = "Ps.70.18"
+inherited = true
+scope = "Ps"
+
+[[elements.claims]]
+relation = "historical-setting"
+subject = "israel.monarchy.david-flight-from-absalom"
+title = "David's flight from the face of Absalom"
+label = "when he fled from the face of his son Absalom"
+date = "when he fled from the face of his son Absalom"
+precision = "relative"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "scripture"
+profile = "catholic-traditional-v1"
+sources = ["bible:douay-rheims:Ps.3.1"]
+
+[[elements.claims.reaches]]
+locus = "Ps.70.16"
+inherited = true
+scope = "Ps.62 Ps.70"
+
+[[elements.claims.reaches]]
+locus = "Ps.70.17"
+inherited = true
+scope = "Ps.62 Ps.70"
+
+[[elements.claims.reaches]]
+locus = "Ps.70.18"
+inherited = true
+scope = "Ps.62 Ps.70"
+
+[[elements.claims]]
+relation = "superscription-setting"
+subject = "israel.exile.first-captivity"
+title = "The first captivity of Juda, under Joakim"
+label = "A.M. 3398"
+date = "3398 A.M."
+precision = "year"
+disposition = "alternate"
+answerability = "answerable"
+basis_class = "reported-excluded"
+profile = "catholic-traditional-v1"
+sources = ["passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology"]
+
+[[elements.claims.reaches]]
+locus = "Ps.70.16"
+inherited = true
+scope = "Ps.70"
+
+[[elements.claims.reaches]]
+locus = "Ps.70.17"
+inherited = true
+scope = "Ps.70"
+
+[[elements.claims.reaches]]
+locus = "Ps.70.18"
+inherited = true
+scope = "Ps.70"
+
+[[elements.claims]]
+relation = "superscription-setting"
+subject = "israel.exile.first-captivity"
+title = "The first captivity of Juda, under Joakim"
+label = "In the third year of the reign of Joakim, king of Juda"
+date = "In the third year of the reign of Joakim, king of Juda"
+precision = "relative"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "scripture"
+profile = "catholic-traditional-v1"
+sources = ["bible:douay-rheims:Dan.1.1"]
+
+[[elements.claims.reaches]]
+locus = "Ps.70.16"
+inherited = true
+scope = "Ps.70"
+
+[[elements.claims.reaches]]
+locus = "Ps.70.17"
+inherited = true
+scope = "Ps.70"
+
+[[elements.claims.reaches]]
+locus = "Ps.70.18"
+inherited = true
+scope = "Ps.70"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.70.16"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.70.17"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.70.18"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims]]
+relation = "historical-setting"
+subject = "israel.monarchy.david-flight-from-absalom"
+title = "David's flight from the face of Absalom"
+label = "when he fled from the face of his son Absalom"
+date = "when he fled from the face of his son Absalom"
+precision = "relative"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "scripture"
+profile = "catholic-traditional-v1"
+sources = ["bible:douay-rheims:Ps.3.1"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.70.16"
+inherited = true
+scope = "Ps.62 Ps.70"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.70.17"
+inherited = true
+scope = "Ps.62 Ps.70"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.70.18"
+inherited = true
+scope = "Ps.62 Ps.70"
+
+[[elements.publication_claims]]
+relation = "superscription-setting"
+subject = "israel.exile.first-captivity"
+title = "The first captivity of Juda, under Joakim"
+label = "A.M. 3398"
+date = "3398 A.M."
+precision = "year"
+disposition = "alternate"
+answerability = "answerable"
+basis_class = "reported-excluded"
+profile = "catholic-traditional-v1"
+sources = ["passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.psalm-70-captivities-usher-chronology"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.70.16"
+inherited = true
+scope = "Ps.70"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.70.17"
+inherited = true
+scope = "Ps.70"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.70.18"
+inherited = true
+scope = "Ps.70"
+
+[[elements.publication_claims]]
+relation = "superscription-setting"
+subject = "israel.exile.first-captivity"
+title = "The first captivity of Juda, under Joakim"
+label = "In the third year of the reign of Joakim, king of Juda"
+date = "In the third year of the reign of Joakim, king of Juda"
+precision = "relative"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "scripture"
+profile = "catholic-traditional-v1"
+sources = ["bible:douay-rheims:Dan.1.1"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.70.16"
+inherited = true
+scope = "Ps.70"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.70.17"
+inherited = true
+scope = "Ps.70"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.70.18"
+inherited = true
+scope = "Ps.70"
+
+[[elements]]
+key = "postcommunion"
+name = "Postcommunion"
+refs = []
+loci = []
+status = ""
+reason = ""
+publication_status = ""
+publication_reason = ""

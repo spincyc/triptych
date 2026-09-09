@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gpt"
-audited_on = "2026-09-06"
+audited_on = "2026-09-09"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 140
 source_surface_file_count = 2122
-snapshot = "sha256:a02579ca3702a29120bd7d47dc6c80db0908c4d271b19bbd6af93dd47e43749c"
+snapshot = "sha256:514397e32a6d222a5f5e6b7beb0934bfe6a6f6426c9a73a8d9c9945eb66da905"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -9401,7 +9401,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/research/source-bindings.toml"
-sha256 = "834a532bb05d262c3ff122ce64915245033fcead035597972760cb1e81a10d6f"
+sha256 = "47e08092d1a3345fe4452a358090039597190934a9f0874ba19f3fe1af7c1213"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost"]
 

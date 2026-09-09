@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.martin-gerbert.monumenta-veteris-liturgiae-alemannicae.sankt-blasien-1777-1779.ia-item-metadata-monumentaveteri00gerbgoog-1330a59c"
+edition_id = "edition.martin-gerbert.monumenta-veteris-liturgiae-alemannicae.sankt-blasien-1777-1779"
+artifact_type = "catalog-metadata"
+media_type = "application/json"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The file was read in full before this basis was written. It is the Internet Archive's own catalogue record for the item: identifier, title, creator, date, publisher, language, sponsor, contributor, scanner, source URL, and a file manifest of names, sizes and checksums. The only prose in it is one sentence of fact -- \"Book digitized by Google from the library of the New York Public Library and uploaded to the Internet Archive by user tpb\" -- which is a statement of what happened and not an expressive work, and the record carries no notice, licence or condition. Catalogue facts are not copyrightable expression, originality being required by Feist Publications, Inc. v. Rural Telephone Service Co., 499 U.S. 340, 345 (1991). NOT RELIED ON: the record's own \"possible-copyright-status\": \"NOT_IN_COPYRIGHT\" field, which is Internet Archive's assertion and not this repository's finding."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/metadata/monumentaveteri00gerbgoog"
+provenance = "Acquired over HTTPS by the liturgical-history research lane of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "1330a59c66fbe874d29a75a2d417201b4d6e7ef6f0a6a9cb27a7e4627dcc2e46"
+byte_size = 104271
+path = "src/sources/works/martin-gerbert/monumenta-veteris-liturgiae-alemannicae/editions/sankt-blasien-1777-1779/artifacts/ia-item-metadata-monumentaveteri00gerbgoog-1330a59c/monumentaveteri00gerbgoog-metadata.json"
+encoding = "utf-8"
+indexable = true
+notes = "Complete Internet Archive item metadata for monumentaveteri00gerbgoog. The retrieving lane fetched it only to see which derivative files existed and how large they were, and recorded that it \"carries no reading\". It is retained here for a different reason, which is the one fact in it that bears on artifact identity: ONE GOOGLE DIGITISATION UNDERLIES BOTH INTERNET ARCHIVE ITEMS OF PARS I, and the metadata registered on this edition says so in its own fields: item monumentaveteri00gerbgoog gives source = \"http://books.google.com/books?id=RIkPAAAAIAAJ\", scanner = \"google\", contributor = \"New York Public Library\" and description = \"Book digitized by Google from the library of the New York Public Library and uploaded to the Internet Archive by user tpb\"; the sibling item is named bub_gb_RIkPAAAAIAAJ, which is that same Google volume id. The two are separate derivations of one scan of one copy -- their leaf counts differ, 561 against 557, and their optical layers differ -- and not two independent scans of two copies. Anything resting on one as a control on the other should say so. Extent as measured by the retrieving lane: Complete Internet Archive item metadata for the first scan, used only to establish which derivative files exist and their sizes before choosing what to fetch. Carries no reading."

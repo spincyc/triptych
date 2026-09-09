@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.james-joyce.ulysses.gutenberg-ebook-4300.gutenberg-pg4300-body-lf"
+edition_id = "edition.james-joyce.ulysses.gutenberg-ebook-4300"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The novel was first published in 1922, before 1929, so it is in the United States public domain by publication date; its United States term expired at the end of 2021 at the latest. JURISDICTION MATTERS HERE MORE THAN USUAL: Joyce died in 1941, so in a life-plus-seventy jurisdiction the text was under copyright until the end of 2011 and this record's public-domain finding is stated for the United States and for nowhere else. The Project Gutenberg wrapper is excluded from this file by the stated transformation, and the eBook itself, which carries no editorial apparatus of its own, is not identified with any particular printing."
+rights_jurisdiction = "United States"
+provenance = "Derived by scripts/gutenberg_transcribe.py on 2026-09-05 from the exact parent delivery named in `derived_from`, whose SHA-256 and byte size were recomputed over the lane's retained file and matched before the derivation ran. Nothing reached the network and no source text passed through a language model."
+retrieved = "2026-09-05"
+sha256 = "2479e115a8cd5ca73516dbbc50bef7df52132d62aafbd8eac9b05994a4c5ca3d"
+byte_size = 1514454
+path = "src/sources/works/james-joyce/ulysses/editions/gutenberg-ebook-4300/artifacts/gutenberg-pg4300-body-lf/ulysses.txt"
+derived_from = "artifact.james-joyce.ulysses.gutenberg-ebook-4300.gutenberg-pg4300-raw-e0309462"
+transformation = "scripts/gutenberg_transcribe.py, run offline over the exact parent bytes on 2026-09-05 with no source text passing through a language model: take the UTF-8 text strictly between the Project Gutenberg START and END marker lines, which the script matches exactly and refuses to guess at; remove the trailing legacy \"End of Project Gutenberg\" line and adjacent trailing blank lines; normalise CRLF to LF; make no other editorial wording change."
+encoding = "utf-8"
+indexable = true
+notes = "All eighteen episodes. The eBook does not name the printing it transcribes, and Ulysses is a novel whose printings differ substantively, so a wording taken from this file is a witness to this transcription and not to any edition. 7179 LF-terminated lines. The Project Gutenberg licence, trademark references and marker lines are not in this file; Triptych claims no exclusive right in the source wording. It is a transcription and not a facsimile."

@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.cassiodorus.expositio-psalmorum.latin-migne-wikisource-web-2026-09-05.wikisource-psalm-16-control-dcc9b5c4"
+edition_id = "edition.cassiodorus.expositio-psalmorum.latin-migne-wikisource-web-2026-09-05"
+artifact_type = "web-page"
+media_type = "text/html"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "Two rights objects, and they are kept apart. The Latin that Latin Wikisource transcribes on this route is ancient and public domain, and Migne's printing of it is in the United States public domain by publication date. The wiki source of the page -- its templates, headers, navigation banners, links, categories and interface furniture -- is contributed matter licensed CC BY-SA 4.0, a condition on the contributors' markup rather than on the text beneath it. These exact bytes carry that markup, so they are hashed and recorded and not retained, which is the settled treatment of Latin Wikisource deliveries in this repository and is described in THIRD_PARTY.md."
+source_url = "https://la.wikisource.org/wiki/Expositio_in_Psalterium/16"
+provenance = "Acquired over HTTPS by the source-citation-coverage and precedent-search research lanes of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "dcc9b5c439012f307bc9b711ac7416a7dd6fe5e326638206862d56251dd5d6cd"
+byte_size = 66192
+indexable = false
+notes = "An HTTP 200 control at one of the two psalms the repository already registers from this host, fetched to prove that the route and the lane's access were sound where the five appointed psalms return 404. It is 66,192 bytes against the 66,001 registered at artifact.cassiodorus.expositio-psalmorum.latin-migne-wikisource-web-2026-07-28.psalm-16-html, so the live page has drifted from that digest. Extent as measured by the retrieving lane: the Psalm 16 page, re-fetched only as the live control on the registered artifact ...psalm-16-html; it returns HTTP 200 at 66,192 bytes against the registered 66,001, so the page is live but its bytes have drifted and the registered digest no longer matches ACCESS LIMITATION. What is not retained is a Latin Wikisource page carrying CC BY-SA 4.0 contributed markup; it is not retained because share-alike is a condition this repository does not accept over its own tree. What a reader without the network can open instead is the machine listing of this route's whole extent, retained at artifact.cassiodorus.expositio-psalmorum.latin-migne-wikisource-web-2026-09-05.wikisource-allpages-listing."

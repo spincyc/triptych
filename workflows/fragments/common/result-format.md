@@ -96,6 +96,12 @@ What the engine enforces, on a stage that reports and was given findings:
   that header it holds findings you must still address — they are yours and
   unaddressed — but they reached you from an earlier transition and the
   engine does not expect them here.
+- **`ADVISORY_FINDINGS` is not part of this report either, and naming one is
+  refused.** That header holds findings the evaluation did *not* block on.
+  They gate nothing and spend no iteration budget. Clear the ones you can
+  while you are already in those files — that is why they are handed to you —
+  and leave the rest. You owe the engine no account of them, and an entry for
+  one is rejected exactly as a finding the engine never forwarded is.
 
 Two things the engine does not check, and you should still get right. A
 stage handed no blocking findings has nothing to report and the engine
@@ -195,6 +201,40 @@ two of them, and a stage that names another means it.
 
 Only `blocking` severity findings trigger revision. `advisory` findings are
 recorded but do not block.
+
+### An advisory is a verdict, not a waiting room
+
+**Severity is decided once, on the evidence, at the iteration you first see
+the defect. It is not a queue position.** If a defect would justify blocking
+the run at any iteration, it is `blocking` the first time you report it. If it
+would not, it is `advisory` and it stays advisory for the life of the run.
+
+Raising as `blocking` an id you filed as `advisory` in an earlier iteration is
+the failure this rule exists to stop, and it is forbidden. Nothing about the
+defect changed between the two reports; only your patience did. What the
+practice actually does is hide the true size of the repair from the run:
+the blocking count falls round after round while the backlog behind it does
+not, so the iteration budget is spent draining a queue the engine cannot see.
+
+This is not hypothetical. In run `e4aebcbd941b6b1a`, **19 of 62 blocking
+findings — 31% — were the same lane's own advisories from a previous round,
+promoted a mean of 1.1 rounds later.** One lane filed four advisories at
+iteration 0 and raised those exact four as blocking at iteration 1; another
+filed four at iteration 4 and raised those exact four at iteration 5. The
+production's blocking counts read 18, 12, 10, 8, 7, 5, 7 and looked like
+convergence. They were slices off a backlog that refilled itself every round,
+and the run reached its absolute ceiling with the document in good shape.
+
+So: report the defect at the severity it deserves, immediately. A round that
+honestly returns twelve blocking findings converges; a round that returns four
+and warehouses eight does not. Do not soften a real defect to advisory because
+the round already carries several — the count is not a budget you are spending.
+
+Where a defect genuinely does not merit blocking, an advisory now reaches the
+reviser anyway: the `content-revision` packet carries the standing advisories
+under `ADVISORY_FINDINGS`, and the reviser clears what it can without the
+finding ever gating the run. An advisory is no longer a channel that reaches
+nobody, so there is no longer any reason to promote one to be heard.
 
 ### Five fields on every finding, whatever its severity
 

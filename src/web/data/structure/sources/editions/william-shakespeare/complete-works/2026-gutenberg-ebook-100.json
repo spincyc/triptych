@@ -1,0 +1,59 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 5302751,
+   "edition_owned": true,
+   "id": "artifact.william-shakespeare.complete-works.gutenberg-ebook-100.gutenberg-pg100-body-lf",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "All the plays, the sonnets and the poems. A whole-file search returns exactly two occurrences of \"world-without-end\", at Sonnet 57 and in Love's Labour's Lost Act 5 scene 2, which is the count the retrieving lane's finding rests on and which this file lets a reader replay. 40921 LF-terminated lines, one per source paragraph. It is a transcription and not a facsimile: the printing's pagination, line breaks and typography are not recoverable from it.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "Shakespeare died in 1616 and every play and poem in this collection was in print by the First Folio of 1623, so the works are in the public domain everywhere; and a work first published abroad before 1931 is out of United States copyright; that line is the one guidance/missals.md records from Cornell's public-domain chart as current on 1 January 2026 and it moves every January, so it is written here as derived for calendar year 2026 and not as a standing rule. Restoration under 17 U.S.C. 104A could not reach it either: ninety-five years from 1623 ran out in 1718, so nothing remained to restore on 1 January 1996. The Project Gutenberg wrapper -- its licence, its trademark references and its marker lines -- is excluded from this file by the stated transformation, so nothing Project Gutenberg authored survives in these bytes and Triptych claims no exclusive right in the source wording. THE FILE ITSELF NAMES NO PRINTING: its Project Gutenberg header gives only a title, an author, a translator or editor where there is one, a release date and a language, so the first-publication fact above is the work's, carried on this work's own record, and not a statement about which printing was transcribed. That is enough to settle the rights question and not enough to identify an edition, which is why the edition record claims none.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "plain-text",
+   "byte_size": 5638480,
+   "edition_owned": true,
+   "id": "artifact.william-shakespeare.complete-works.gutenberg-ebook-100.gutenberg-pg100-raw-3cf4b3d4",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Project Gutenberg eBook 100 as fetched on the retrieval date, wrapper included. Extent as measured by the retrieving lane: complete Project Gutenberg text of The Complete Works of William Shakespeare (eBook 100), all plays, sonnets and poems plus PG header and licence; a whole-file search returns exactly two occurrences of \"world-without-end\", at Sonnet 57 and Love's Labour's Lost V.ii ACCESS LIMITATION: these exact bytes are not retained because of the Gutenberg wrapper alone; the text itself is retained whole and may be reopened offline at artifact.william-shakespeare.complete-works.gutenberg-ebook-100.gutenberg-pg100-body-lf.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "licensed",
+   "rights_basis": "Two things have to be separated. Project Gutenberg's permission page states that the vast majority of its eBooks are in the public domain in the United States and that nobody can grant or withhold permission to use them -- but that is a statement about the book, not about the file. This file is wrapped in Project Gutenberg's licence header and footer, which carry the Project Gutenberg trademark and conditions on its use. The wrapper-bearing bytes are therefore recorded as the hashed derivation input and are not retained in Git; what is retained is the derivative named in `notes`, from which the wrapper has been removed, leaving only the text whose rights the permission page settles.",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.gutenberg.org/cache/epub/100/pg100.txt",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-09-05",
+  "editors": [],
+  "id": "edition.william-shakespeare.complete-works.gutenberg-ebook-100",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "Project Gutenberg electronic edition, eBook 100, consulted 2026-09-05",
+  "title": "The Complete Works of William Shakespeare, Project Gutenberg eBook 100",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [],
+  "author": "William Shakespeare",
+  "category": "dramatic-and-poetic-collection",
+  "description": "The plays, sonnets and poems in one file. Registered here because a whole-text search over it is what established that \"world-without-end\" stands exactly twice in Shakespeare, at Sonnet 57 and at Love's Labour's Lost V.ii.",
+  "id": "work.william-shakespeare.complete-works",
+  "languages": [
+   "en"
+  ],
+  "title": "The Complete Works of William Shakespeare"
+ }
+}

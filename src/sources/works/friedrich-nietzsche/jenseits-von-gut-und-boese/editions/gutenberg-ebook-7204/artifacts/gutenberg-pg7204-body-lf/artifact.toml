@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.friedrich-nietzsche.jenseits-von-gut-und-boese.gutenberg-ebook-7204.gutenberg-pg7204-body-lf"
+edition_id = "edition.friedrich-nietzsche.jenseits-von-gut-und-boese.gutenberg-ebook-7204"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The work was first published at Leipzig in 1886, and a work first published abroad before 1931 is out of United States copyright; that line is the one guidance/missals.md records from Cornell's public-domain chart as current on 1 January 2026 and it moves every January, so it is written here as derived for calendar year 2026 and not as a standing rule. Restoration under 17 U.S.C. 104A could not reach it either: ninety-five years from 1886 ran out in 1981, so nothing remained to restore on 1 January 1996. The Project Gutenberg wrapper -- its licence, its trademark references and its marker lines -- is excluded from this file by the stated transformation, so nothing Project Gutenberg authored survives in these bytes and Triptych claims no exclusive right in the source wording. THE FILE ITSELF NAMES NO PRINTING: its Project Gutenberg header gives only a title, an author, a translator or editor where there is one, a release date and a language, so the first-publication fact above is the work's, carried on this work's own record, and not a statement about which printing was transcribed. That is enough to settle the rights question and not enough to identify an edition, which is why the edition record claims none."
+rights_jurisdiction = "United States"
+provenance = "Derived by script on 2026-09-05 from the exact parent delivery named in `derived_from`, whose SHA-256 and byte size were recomputed over the retained file and matched before the derivation ran. Nothing reached the network and no source text passed through a language model."
+retrieved = "2026-09-05"
+sha256 = "b123f689ab24d16f29f3b22e857d770f3f045709dd79a66c9dfd8b33e74a2ac9"
+byte_size = 397054
+path = "src/sources/works/friedrich-nietzsche/jenseits-von-gut-und-boese/editions/gutenberg-ebook-7204/artifacts/gutenberg-pg7204-body-lf/jenseits-von-gut-und-boese.txt"
+derived_from = "artifact.friedrich-nietzsche.jenseits-von-gut-und-boese.gutenberg-ebook-7204.gutenberg-pg7204-raw-0fb771d6"
+transformation = "scripts/gutenberg_transcribe.py, run offline over the exact parent bytes on 2026-09-05 with no source text passing through a language model. It takes the UTF-8 text strictly between the Project Gutenberg START and END marker lines, which it matches exactly and refuses to guess at; removes any \"End of Project Gutenberg\" colophon line printed inside those markers; normalises to NFC; folds curly quotation marks, apostrophes and non-breaking spaces to their ASCII equivalents; normalises CRLF to LF; and emits one LF-terminated line per source paragraph, the source being hard-wrapped at about seventy columns so that a printed line there is a typesetting accident rather than a unit of sense. It is a transcription and not a facsimile, and no editorial wording change is made."
+encoding = "utf-8"
+indexable = true
+notes = "The German text entire. The retrieving lane searched it for \"erniedrig\" and found nothing, which is one of the bounded negatives fixing the aphorism to Menschliches, Allzumenschliches and to no other book. 658 LF-terminated lines, one per source paragraph. It is a transcription and not a facsimile: the printing's pagination, line breaks and typography are not recoverable from it."

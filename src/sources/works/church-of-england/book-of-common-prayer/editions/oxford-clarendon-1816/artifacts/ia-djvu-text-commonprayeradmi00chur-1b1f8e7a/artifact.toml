@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.church-of-england.book-of-common-prayer.oxford-clarendon-1816.ia-djvu-text-commonprayeradmi00chur-1b1f8e7a"
+edition_id = "edition.church-of-england.book-of-common-prayer.oxford-clarendon-1816"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The volume was published at Oxford in 1816, and a work first published abroad before 1931 is out of United States copyright; that line is the one guidance/missals.md records from Cornell's public-domain chart as current on 1 January 2026 and it moves every January, so it is written here as derived for calendar year 2026 and not as a standing rule. Restoration under 17 U.S.C. 104A could not reach it either: ninety-five years from 1816 ran out in 1911, so nothing remained to restore on 1 January 1996. THE GOOGLE QUESTION WAS DECIDED ON THESE BYTES. Probes run case-insensitively over the whole file with runs of non-alphanumeric characters collapsed, because this class of scan doubles its spaces: \"usage guidelines\" 0; \"about google book search\" 0; \"this is a digital copy\" 0; \"digitized by google\" 0; \"google book search\" 0. Google's front-matter block is absent and no notice, licence, reservation or condition of any kind appears in the file. A faithful mechanical reproduction of a public-domain work is not original authorship (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)), and machine optical character recognition adds no human authorship on top of it. NOT RELIED ON: that the item is available, that the download succeeded, or that any host marks the scan public domain."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/commonprayeradmi00chur/commonprayeradmi00chur_djvu.txt"
+provenance = "Acquired over HTTPS by the liturgical-history research lane of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "1b1f8e7a15bcddf2481f5c6531af95a90a97e4ad860f616899ebfb4edb2b33c3"
+byte_size = 1259579
+path = "src/sources/works/church-of-england/book-of-common-prayer/editions/oxford-clarendon-1816/artifacts/ia-djvu-text-commonprayeradmi00chur-1b1f8e7a/book-of-common-prayer-1816-djvu.txt"
+encoding = "utf-8"
+indexable = true
+notes = "Uncorrected optical text of the whole item, and a bad one: the recognition is largely unreadable, the front matter coming through as strings such as \"lii^ H. C. SHIP DUKE or YORK 25TH DECEMBER 1817\". It is retained so that the retrieving lane's negative can be replayed rather than taken on trust, and for no other use. 49706 LF-terminated lines. Extent as measured by the retrieving lane: Complete optical-text layer of The Book of Common Prayer (Oxford: Clarendon, 1816). Retrieved as a candidate straight English Prayer Book text and rejected on inspection: the layer is largely unreadable, returning no hit for 'prevent and follow', for any Sunday after Trinity heading, or for the running heads. A bounded negative about this digitisation, not about the book. QUOTE FROM THIS ARTIFACT ONLY THROUGH A CHECKED PASSAGE: it is uncorrected recognition, and a raw-line negative over it cannot exclude a differently recognised spelling."

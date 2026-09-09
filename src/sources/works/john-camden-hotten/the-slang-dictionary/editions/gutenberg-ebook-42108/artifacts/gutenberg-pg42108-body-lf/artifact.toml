@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.john-camden-hotten.the-slang-dictionary.gutenberg-ebook-42108.gutenberg-pg42108-body-lf"
+edition_id = "edition.john-camden-hotten.the-slang-dictionary.gutenberg-ebook-42108"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The work was published in 1859-1874, before 1929, so it is in the United States public domain by publication date; Hotten died in 1873. The Project Gutenberg wrapper is excluded from this file by the stated transformation."
+rights_jurisdiction = "United States"
+provenance = "Derived by scripts/gutenberg_transcribe.py on 2026-09-05 from the exact parent delivery named in `derived_from`, whose SHA-256 and byte size were recomputed over the lane's retained file and matched before the derivation ran. Nothing reached the network and no source text passed through a language model."
+retrieved = "2026-09-05"
+sha256 = "62fa3647df9368daa97ef1fc38faffa355c24cfce6f8cac6c81523ad6c4e9d36"
+byte_size = 961892
+path = "src/sources/works/john-camden-hotten/the-slang-dictionary/editions/gutenberg-ebook-42108/artifacts/gutenberg-pg42108-body-lf/slang-dictionary.txt"
+derived_from = "artifact.john-camden-hotten.the-slang-dictionary.gutenberg-ebook-42108.gutenberg-pg42108-raw-1e6fc1e6"
+transformation = "scripts/gutenberg_transcribe.py, run offline over the exact parent bytes on 2026-09-05 with no source text passing through a language model: take the UTF-8 text strictly between the Project Gutenberg START and END marker lines, which the script matches exactly and refuses to guess at; remove the trailing legacy \"End of Project Gutenberg\" line and adjacent trailing blank lines; normalise CRLF to LF; make no other editorial wording change."
+encoding = "utf-8"
+indexable = true
+notes = "The whole dictionary, A to Z. THE NEGATIVE THIS FILE CARRIES AND ITS BOUND: the retrieving lane read it for an \"inner man\" headword and found none. That is an absence from this transcription of this dictionary and from nothing wider, and a raw-line search over it cannot exclude a differently spelled or differently capitalised headword. 5969 LF-terminated lines. The Project Gutenberg licence, trademark references and marker lines are not in this file; Triptych claims no exclusive right in the source wording. It is a transcription and not a facsimile."

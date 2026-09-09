@@ -1,0 +1,61 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 198677,
+   "edition_owned": true,
+   "id": "artifact.friedrich-nietzsche.ecce-homo.gutenberg-ebook-7202.gutenberg-pg7202-body-lf",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "The German text entire, searched for the aphorism and negative. 267 LF-terminated lines, one per source paragraph. It is a transcription and not a facsimile: the printing's pagination, line breaks and typography are not recoverable from it.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "public-domain",
+   "rights_basis": "The work was first published at Leipzig in 1908, and a work first published abroad before 1931 is out of United States copyright; that line is the one guidance/missals.md records from Cornell's public-domain chart as current on 1 January 2026 and it moves every January, so it is written here as derived for calendar year 2026 and not as a standing rule. Restoration under 17 U.S.C. 104A could not reach it either: ninety-five years from 1908 ran out in 2003, so nothing remained to restore on 1 January 1996. The Project Gutenberg wrapper -- its licence, its trademark references and its marker lines -- is excluded from this file by the stated transformation, so nothing Project Gutenberg authored survives in these bytes and Triptych claims no exclusive right in the source wording. THE FILE ITSELF NAMES NO PRINTING: its Project Gutenberg header gives only a title, an author, a translator or editor where there is one, a release date and a language, so the first-publication fact above is the work's, carried on this work's own record, and not a statement about which printing was transcribed. That is enough to settle the rights question and not enough to identify an edition, which is why the edition record claims none.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "plain-text",
+   "byte_size": 222561,
+   "edition_owned": true,
+   "id": "artifact.friedrich-nietzsche.ecce-homo.gutenberg-ebook-7202.gutenberg-pg7202-raw-2b3016d8",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Project Gutenberg eBook 7202 as fetched on the retrieval date, wrapper included. Extent as measured by the retrieving lane: complete Project Gutenberg German text of Ecce homo, plus PG header and licence; searched for the aphorism and negative ACCESS LIMITATION: these exact bytes are not retained because of the Gutenberg wrapper alone; the text itself is retained whole and may be reopened offline at artifact.friedrich-nietzsche.ecce-homo.gutenberg-ebook-7202.gutenberg-pg7202-body-lf.",
+   "page_count": null,
+   "retrieved": "2026-09-05",
+   "rights": "licensed",
+   "rights_basis": "Two things have to be separated. Project Gutenberg's permission page states that the vast majority of its eBooks are in the public domain in the United States and that nobody can grant or withhold permission to use them -- but that is a statement about the book, not about the file. This file is wrapped in Project Gutenberg's licence header and footer, which carry the Project Gutenberg trademark and conditions on its use. The wrapper-bearing bytes are therefore recorded as the hashed derivation input and are not retained in Git; what is retained is the derivative named in `notes`, from which the wrapper has been removed, leaving only the text whose rights the permission page settles.",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.gutenberg.org/cache/epub/7202/pg7202.txt",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-09-05",
+  "editors": [],
+  "id": "edition.friedrich-nietzsche.ecce-homo.gutenberg-ebook-7202",
+  "jurisdiction": null,
+  "language": "de",
+  "publication": "Project Gutenberg electronic edition, eBook 7202, consulted 2026-09-05",
+  "title": "Ecce homo: Wie man wird, was man ist, Project Gutenberg eBook 7202",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Ecce Homo"
+  ],
+  "author": "Friedrich Nietzsche",
+  "category": "philosophical-work",
+  "description": "Opened in this run only as a bounded negative.",
+  "id": "work.friedrich-nietzsche.ecce-homo",
+  "languages": [
+   "de"
+  ],
+  "title": "Ecce homo: Wie man wird, was man ist"
+ }
+}

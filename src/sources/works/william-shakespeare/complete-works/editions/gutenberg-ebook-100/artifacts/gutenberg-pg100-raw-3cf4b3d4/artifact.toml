@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.william-shakespeare.complete-works.gutenberg-ebook-100.gutenberg-pg100-raw-3cf4b3d4"
+edition_id = "edition.william-shakespeare.complete-works.gutenberg-ebook-100"
+artifact_type = "plain-text"
+media_type = "text/plain; charset=utf-8"
+storage = "remote"
+rights_status = "licensed"
+rights_basis = "Two things have to be separated. Project Gutenberg's permission page states that the vast majority of its eBooks are in the public domain in the United States and that nobody can grant or withhold permission to use them -- but that is a statement about the book, not about the file. This file is wrapped in Project Gutenberg's licence header and footer, which carry the Project Gutenberg trademark and conditions on its use. The wrapper-bearing bytes are therefore recorded as the hashed derivation input and are not retained in Git; what is retained is the derivative named in `notes`, from which the wrapper has been removed, leaving only the text whose rights the permission page settles."
+license = "Project Gutenberg License"
+source_url = "https://www.gutenberg.org/cache/epub/100/pg100.txt"
+provenance = "Acquired over HTTPS by the cultural-afterlife research lane of workflow run e4aebcbd941b6b1a on 2026-09-05 and hashed by that lane before use. source-registration recomputed the SHA-256 and the byte size over the lane's retained file before writing this record and both matched. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-05"
+sha256 = "3cf4b3d44ee14cff4e14e78e2ad3318eff76f3f7f2afc3cee6bb925879110a37"
+byte_size = 5638480
+indexable = false
+notes = "Project Gutenberg eBook 100 as fetched on the retrieval date, wrapper included. Extent as measured by the retrieving lane: complete Project Gutenberg text of The Complete Works of William Shakespeare (eBook 100), all plays, sonnets and poems plus PG header and licence; a whole-file search returns exactly two occurrences of \"world-without-end\", at Sonnet 57 and Love's Labour's Lost V.ii ACCESS LIMITATION: these exact bytes are not retained because of the Gutenberg wrapper alone; the text itself is retained whole and may be reopened offline at artifact.william-shakespeare.complete-works.gutenberg-ebook-100.gutenberg-pg100-body-lf."

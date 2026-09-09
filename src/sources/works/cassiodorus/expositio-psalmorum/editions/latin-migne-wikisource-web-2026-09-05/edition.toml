@@ -1,0 +1,10 @@
+schema = 1
+record_type = "edition"
+id = "edition.cassiodorus.expositio-psalmorum.latin-migne-wikisource-web-2026-09-05"
+work_id = "work.cassiodorus.expositio-psalmorum"
+title = "Expositio in Psalterium, Migne transcription at Latin Wikisource, 2026-09-05 delivery state"
+language = "la"
+publication = "Migne Latin text transcribed at Latin Wikisource, consulted 2026-09-05"
+date = "2026-09-05"
+editors = ["Jacques-Paul Migne"]
+notes = "A dated web state of the same transcription the repository registers at edition.cassiodorus.expositio-psalmorum.latin-migne-wikisource-web-2026-07-28, which holds the Psalm 16 and Psalm 24 pages; this is not a second identity for that edition but its state two months later, and the two are registered side by side because the bytes have moved. THE MEASURED BOUND OF THIS ROUTE, which is why the edition exists at all: the site's own allpages API returns 34 titles under the prefix \"Expositio in Psalterium\" and no continuation token -- the work page, a disambiguating title, an introduction, one page numbered I, and Psalms 1 through 30. It reaches none of the five psalms this Mass appoints, and direct requests for /39, /70, /85, /97 and /101 each return an HTTP 404 document. The negative is bounded to what that listing states and to 2026-09-05; Latin Wikisource could extend the transcription tomorrow. THE LIVE PAGES HAVE DRIFTED FROM THE REGISTERED DIGESTS: /16 now returns 66,192 bytes against the 66,001 registered on the 2026-07-28 edition and /24 returns 68,011 against 67,816, so a staleness check against those artifacts will report a changed source. PAIRING: no English edition of this work was sought or retrieved in this run and none is registered here."

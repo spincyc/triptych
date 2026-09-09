@@ -1,35 +1,47 @@
 #!/usr/bin/env python3
-"""A leaf builds two documents, and the content evaluation now knows it.
+"""A leaf builds two documents, and it builds them in order: largest first.
 
 `main.tex` builds the canonical guide and `synthesis.tex` builds the synthesis
-edition beside it. Which prose reaches which reader is decided inside the
-leaf: by `\\ifdefined\\TriptychSynthesisEdition` branches, and by section files
-only one of the two documents inputs. Both are published.
+companion beside it. Both are published, and which prose reaches which reader
+is decided inside the leaf.
 
-The visual evaluator was told this from the start — its inspection method says
-to inspect both the canonical and synthesis PDFs — and the content evaluator
-was told the opposite by omission, being sent to read "the canonical proper
-leaf". Run `ca03f1b357e7ec25` paid for the asymmetry: three evaluations across
-five lanes read the canonical build, findings named sections rather than
-files, and a reviser repaired whichever file a section name could be read as
-naming while the same claim stood uncorrected in the edition nobody had
-opened. No mechanical gate would have caught it, because both editions render.
+The hazard this module has always guarded is one claim published twice and
+corrected once: a defect repaired in the edition a finding named while the
+same claim stands wrong in the edition nobody opened. Run `ca03f1b357e7ec25`
+paid for it when the content evaluator read only the canonical build.
 
-Four rules are held here, in the bytes a worker is handed:
+The first answer was to send every content lane into both documents at once.
+It closed that hole and opened a worse one. Run `e4aebcbd941b6b1a` authored
+and evaluated both editions together for seven rounds: every lane read two
+documents, every finding was repaired in two places, findings of the form
+"repaired in one edition, published in the other" recurred anyway, and prose
+duplicated between the editions was recorded as an *unowned observation at six
+consecutive iterations* by two different lanes, both saying plainly that no
+criterion reached it. Nothing could adjudicate two documents in flight at
+once. The run reached its absolute iteration ceiling.
 
-1. `content-evaluation` says how to find out what a leaf builds, rather than
-   asserting a form. Leaves are in three states in this tree, so a rule
-   written from the form would be false of most of them.
-2. A finding names the file the defect is in, not the section. Two files
-   answer to "the detailed commentary".
-3. Each of the five content lanes says what its own criteria owe the edition
-   the canonical build does not show.
-4. `content-revision` re-reads both editions after an edit, and
-   `author-proper` no longer calls the synthesis mechanically derived.
+The answer now is a sequence. The canonical edition is authored and settled
+alone; `derive-synthesis` then writes the companion from it; and
+`synthesis-evaluation` reads the two together, with the larger one fixed,
+which is the only arrangement in which "does the companion agree with the
+canonical edition" is a decidable question with an owner.
+
+Five rules are held here, in the bytes a worker is handed:
+
+1. `content-evaluation` sends its lanes into the canonical edition alone, and
+   says so rather than leaving it to be inferred.
+2. `author-proper` does not write the companion and says whose it is.
+3. The pipeline really is a sequence: the canonical loop's pass transition is
+   the derivation, and the companion's evaluation stands between it and the
+   artifact build.
+4. `derive-synthesis` derives the leaf's form rather than asserting one, and
+   adds nothing the canonical edition does not carry.
+5. `synthesis-evaluation` is where both documents are read together, and
+   `synthesis-revision` may not touch the settled canonical prose.
 
 Every matcher is run against the text it replaced, so none can pass by
-matching nothing, and against the stages that never had the rule, so none
-passes by matching boilerplate.
+matching nothing, and against stages that never had the rule, so none passes
+by matching boilerplate.
 """
 import re
 import sys
@@ -44,6 +56,7 @@ from test_workflow_research_fanout import (  # noqa: E402
     CONTENT_LANES,
     FRAGMENTS,
     RESEARCH_LANES,
+    SYNTHESIS_LANES,
     PropersCase,
     workflow_json,
 )
@@ -51,14 +64,17 @@ from test_workflow_research_fanout import (  # noqa: E402
 AUTHOR = "author-proper"
 EVALUATION = "content-evaluation"
 REVISER = "content-revision"
+DERIVE = "derive-synthesis"
+SYNTH_EVAL = "synthesis-evaluation"
+SYNTH_REVISER = "synthesis-revision"
 
 # ---------------------------------------------------------------------------
 # The text each rule replaced, quoted rather than fetched from history so the
 # rules can be held to it in any checkout.
 # ---------------------------------------------------------------------------
 
-# content-evaluation.md's whole task before this change. One document, named
-# in the singular, and the lanes read exactly what they were sent to read.
+# content-evaluation.md's task in the original defect: one document, named in
+# the singular, and the lanes read exactly what they were sent to read.
 PRE_CHANGE_EVALUATION_TASK = """
 You are a fresh evaluator. Evaluate the content and evidence quality of the
 canonical proper leaf. Do not rediscover what mechanical gates will check
@@ -66,17 +82,16 @@ later (build success, PDF existence, undefined references). Focus on
 scholarly content.
 """
 
-# The nearest content-evaluation.md came to a finding-location rule: ids, not
-# loci. It says where a finding is filed and never where the defect is.
-PRE_CHANGE_FINDING_IDENTITY = """
-Finding IDs must use the `CON-` prefix and be stable across iterations. This
-is now load-bearing and not only tidy. So reuse an id for the same unrepaired
-defect, never for a different one, and never mint a new id for a defect you
-are restating.
+# The intermediate answer, which this module now exists to prevent returning
+# to: both editions in front of every lane, at the same time.
+PRE_CHANGE_BOTH_AT_ONCE = """
+Follow the inputs both ways and write down what each document puts in front
+of a reader. Prose that reaches only one of them is parallel prose: the same
+claim is made twice, in two places, and a lane that read only the canonical
+build has not read the document. Read both editions.
 """
 
-# author-proper.md's account of the second document before this change: true
-# of the file and misleading about the document, which is the whole defect.
+# author-proper.md's account of the second document while it still wrote one.
 PRE_CHANGE_AUTHOR_SYNTHESIS = """
 Author or revise the canonical proper leaf. The canonical leaf owns the
 prose, research, and audit records. The synthesis artifact is mechanically
@@ -86,26 +101,15 @@ derived from it.
    `\\TriptychSynthesisEdition` and inputs `main.tex`.
 """
 
-# content-revision.md's step list before this change. It says to verify that
-# a repair introduced no new violation, and never that the repair may have
-# reached only one of the two places the claim is published in.
-PRE_CHANGE_REVISION_STEPS = """
-3. Do not paraphrase or reinterpret the findings. Address them as written.
-4. After addressing all findings, verify that the changes do not introduce
-   new violations of the evaluation criteria.
-5. Follow the same authoring rules as the author-proper stage, including the
-   house voice: this packet carries `author-proper.md` in full.
-"""
-
 # A rule written from the form rather than the mechanism. It reads correctly
 # and is false of thirteen of this tree's leaves: ten build no synthesis
 # edition at all, and three build one from a standalone `synthesis.tex` with
-# no branch in `main.tex`. Rule 1 must not be satisfied by this.
+# no branch in `main.tex`. Rule 4 must not be satisfied by this.
 FORM_ASSERTING_RULE = """
 The leaf builds two editions. `synthesis.tex` is a two-line stub that inputs
 `main.tex`, and `main.tex` branches on `\\ifdefined\\TriptychSynthesisEdition`
 to choose between `sections/30-commentary` and
-`sections/synthesis/20-integrated-commentary`. Read both.
+`sections/synthesis/20-integrated-commentary`. Write both.
 """
 
 
@@ -119,330 +123,306 @@ def sentences(text: str) -> list[str]:
     return [part for part in re.split(r"(?<=[.:;?])\s+", flat) if part]
 
 
-def _hits(text: str, *patterns: re.Pattern) -> list[str]:
-    """Sentences in which every pattern fires at once.
-
-    Each rule below is a conjunction within one sentence: the two halves of
-    a rule stated in different paragraphs are two facts, not a rule.
-    """
-    return [s for s in sentences(text)
-            if all(pattern.search(s) for pattern in patterns)]
-
-
-def _re(pattern: str) -> re.Pattern:
-    return re.compile(pattern, re.IGNORECASE)
-
-
-# Rule 1: the leaf builds more than one reader-facing document.
-LEAF = _re(r"\bleaf\b|source tree")
-MULTIPLE = _re(r"more than one|two (documents|editions)|second (published"
-               r"|reader-facing)? ?document|both editions")
-DOCUMENT = _re(r"\bdocuments?\b|\beditions?\b")
-
-# Rule 1': and it is established by reading the leaf, not asserted as a form.
-DERIVE = _re(r"\bread out of\b|follow the inputs|list the leaf's|establish"
-             r"|decides? what|rather than inferred")
-FILES = _re(r"\.tex|\binputs?\b|branch\w*|files")
-
-# Rule 2: a finding names the file, not only the section.
-NAME = _re(r"\bname\b|\bnaming\b|\bnames\b")
-FINDING = _re(r"\bfinding\b")
-FILE_NOT_SECTION = _re(r"file .{0,40}(not|never|rather than) .{0,20}section"
-                       r"|not .{0,20}the section it belongs to"
-                       r"|file the (defect|claim|citation|sentence) ")
-
-# Rule 3: reading one edition is not reading the document.
-ONE_EDITION_INSUFFICIENT = _re(
-    r"read only the canonical|canonical build alone|reading `main\.tex`"
-    r" ?alone|has not read the document|edition nobody opened"
-    r"|does not show|never inputs")
-
-# Rule 4: a repair to one edition is not a repair to the other.
-REPAIR = _re(r"repair\w*|correct\w*|edit\b|fix\w*")
-NOT_THE_OTHER = _re(r"not a repair to the other|leaves the other"
-                    r"|one corrected edition and one uncorrected"
-                    r"|published and wrong")
-
-# Negative control: the fragments must not assert the stub-and-branch form as
-# the shape every leaf has. Ten leaves have no synthesis edition.
-ASSERTS_THE_FORM = _re(
-    r"(the leaf|every leaf|a leaf) (builds|has) two (editions|documents)\b")
-
-
-def builds_more_than_one_document(text: str) -> list[str]:
-    return _hits(text, LEAF, MULTIPLE, DOCUMENT)
-
-
-def derived_from_the_leaf_not_asserted(text: str) -> list[str]:
-    return _hits(text, DERIVE, FILES)
-
-
-def a_finding_names_the_file(text: str) -> list[str]:
-    return _hits(text, NAME, FINDING, FILE_NOT_SECTION)
-
-
-def one_edition_is_not_the_document(text: str) -> list[str]:
-    return _hits(text, ONE_EDITION_INSUFFICIENT)
-
-
-def a_repair_to_one_is_not_a_repair_to_both(text: str) -> list[str]:
-    return _hits(text, REPAIR, NOT_THE_OTHER)
-
-
-def asserts_the_form(text: str) -> list[str]:
-    return _hits(text, ASSERTS_THE_FORM)
+def flat(text: str) -> str:
+    return " ".join(text.split())
 
 
 def fragment(name: str) -> str:
     return (FRAGMENTS / "propers" / f"{name}.md").read_text(encoding="utf-8")
 
 
-def lane_fragment(family: str, lane: str) -> str:
-    return (FRAGMENTS / "propers" / "lanes"
-            / f"{family}-{lane}.md").read_text(encoding="utf-8")
+def lane_fragment(name: str) -> str:
+    return (FRAGMENTS / "propers" / "lanes" / f"{name}.md").read_text(
+        encoding="utf-8")
+
+
+# ---------------------------------------------------------------------------
+# Matchers
+# ---------------------------------------------------------------------------
+
+def says_canonical_only(text: str) -> bool:
+    """The reader is told to work on one edition, and which one.
+
+    Deliberately not anchored on a period: the sentence that carries this
+    rule routinely contains `main.tex`, and a matcher built from `[^.]` spans
+    stops dead on the filename.
+    """
+    body = flat(text)
+    return bool(
+        re.search(r"canonical edition.{0,120}?"
+                  r"(alone|and nothing else|only that)", body)
+        or re.search(r"(alone|only).{0,60}?canonical edition", body)
+    )
+
+
+def says_companion_is_not_mine(text: str) -> bool:
+    """The reader is told the companion belongs to another stage."""
+    body = flat(text)
+    return bool(
+        re.search(r"companion is not yours|do not write it here|"
+                  r"belongs? to `?derive-synthesis", body)
+        and "derive-synthesis" in body
+    )
+
+
+def derives_the_form(text: str) -> bool:
+    """The reader is told to find out what the leaf builds, not assume it."""
+    body = flat(text)
+    return bool(
+        re.search(r"Do not assume a form|three states", body)
+        and re.search(r"no companion", body)
+    )
+
+
+def adds_nothing(text: str) -> bool:
+    """The companion may say less than the canonical edition, never else."""
+    body = flat(text)
+    return bool(
+        re.search(r"the companion says less", body)
+        or re.search(r"may add a claim.{0,160}?does not already carry", body)
+    )
+
+
+def reads_both_together(text: str) -> bool:
+    """This stage reads the two documents against each other."""
+    body = flat(text)
+    mentions_both = "companion" in body and "canonical" in body
+    compares = re.search(
+        r"against the (settled )?canonical|side by side|"
+        r"canonical edition it was derived from", body)
+    return bool(mentions_both and compares)
+
+
+def protects_canonical_prose(text: str) -> bool:
+    """A companion repair may not edit the settled canonical edition."""
+    body = flat(text)
+    return bool(re.search(
+        r"may not revise (it|the canonical)|"
+        r"may not.{0,40}?revise the canonical|"
+        r"not revise the canonical edition", body))
+
+
+def names_the_file(text: str) -> bool:
+    body = flat(text)
+    return bool(re.search(
+        r"[Nn]ame in every finding the file the defect is in", body))
+
+
+RULES = {
+    "canonical-only": says_canonical_only,
+    "not-mine": says_companion_is_not_mine,
+    "derives-form": derives_the_form,
+    "adds-nothing": adds_nothing,
+    "reads-both": reads_both_together,
+    "protects-canonical": protects_canonical_prose,
+    "names-file": names_the_file,
+}
 
 
 class MatcherTests(unittest.TestCase):
-    """Each rule is proved to discriminate before it is used to assert."""
-
-    RULES = (
-        ("builds-more-than-one", builds_more_than_one_document),
-        ("derived-not-asserted", derived_from_the_leaf_not_asserted),
-        ("finding-names-the-file", a_finding_names_the_file),
-        ("one-edition-insufficient", one_edition_is_not_the_document),
-        ("repair-reaches-both", a_repair_to_one_is_not_a_repair_to_both),
-        ("asserts-the-form", asserts_the_form),
-    )
-
-    def assert_rejects(self, rule, samples, label):
-        for text in samples:
-            with self.subTest(rule=label, rejects=" ".join(text.split())[:70]):
-                self.assertEqual(
-                    rule(text), [],
-                    f"{label} fires on text that does not state it")
-
-    def assert_accepts(self, rule, samples, label):
-        for text in samples:
-            with self.subTest(rule=label, accepts=" ".join(text.split())[:70]):
-                self.assertTrue(
-                    rule(text), f"{label} misses a real statement of it")
+    """The matchers must be able to fail, and must reject what they replaced."""
 
     def test_no_rule_fires_on_nothing(self):
-        for label, rule in self.RULES:
-            with self.subTest(rule=label):
-                self.assertEqual(rule(""), [])
-                self.assertEqual(rule("The propers are appointed texts."), [])
+        for name, rule in RULES.items():
+            with self.subTest(rule=name):
+                self.assertFalse(rule(""), f"{name} matches empty text")
+                self.assertFalse(
+                    rule("The quick brown fox jumps over the lazy dog."),
+                    f"{name} matches unrelated prose")
 
-    def test_the_rules_reject_the_task_they_replaced(self):
-        for label, rule in self.RULES:
-            with self.subTest(rule=label):
-                self.assert_rejects(
-                    rule, [PRE_CHANGE_EVALUATION_TASK], label)
+    def test_the_rules_reject_the_evaluation_task_they_replaced(self):
+        for name in ("canonical-only", "not-mine", "reads-both"):
+            with self.subTest(rule=name):
+                self.assertFalse(RULES[name](PRE_CHANGE_EVALUATION_TASK))
 
-    def test_the_file_rule_rejects_the_id_rule_it_sits_beside(self):
-        self.assert_rejects(
-            a_finding_names_the_file,
-            [PRE_CHANGE_FINDING_IDENTITY,
-             # A stable id says which finding this is; it says nothing about
-             # which of two published files carries the defect.
-             "Finding IDs must be stable across iterations."],
-            "finding-names-the-file")
+    def test_the_canonical_only_rule_rejects_reading_both_at_once(self):
+        """The intermediate answer must not satisfy the rule that replaced it.
 
-    def test_the_author_rules_reject_the_account_they_replaced(self):
-        self.assert_rejects(
-            builds_more_than_one_document,
-            [PRE_CHANGE_AUTHOR_SYNTHESIS], "builds-more-than-one")
-        self.assert_rejects(
-            a_repair_to_one_is_not_a_repair_to_both,
-            [PRE_CHANGE_AUTHOR_SYNTHESIS], "repair-reaches-both")
+        `Read both editions.` is exactly what the canonical evaluation no
+        longer does, and a matcher that accepted it would let the pipeline
+        slide back without a test failing.
+        """
+        self.assertFalse(says_canonical_only(PRE_CHANGE_BOTH_AT_ONCE))
 
-    def test_the_revision_rule_rejects_the_steps_it_replaced(self):
-        self.assert_rejects(
-            a_repair_to_one_is_not_a_repair_to_both,
-            [PRE_CHANGE_REVISION_STEPS,
-             # The reading that cost the run: one file, verified once.
-             "After addressing a finding, re-read the file you changed and "
-             "check that the correction introduced no new violation."],
-            "repair-reaches-both")
-
-    def test_the_rules_accept_the_statements_that_carry_them(self):
-        self.assert_accepts(
-            builds_more_than_one_document,
-            ["A leaf is one source tree, and it may build more than one "
-             "reader-facing document out of it."],
-            "builds-more-than-one")
-        self.assert_accepts(
-            derived_from_the_leaf_not_asserted,
-            ["List the leaf's top-level `.tex` files and follow the inputs "
-             "both ways."],
-            "derived-not-asserted")
-        self.assert_accepts(
-            a_finding_names_the_file,
-            ["Name in every finding the file the defect is in, never only "
-             "the section it belongs to."],
-            "finding-names-the-file")
-        self.assert_accepts(
-            a_repair_to_one_is_not_a_repair_to_both,
-            ["A repair to one edition's prose is not a repair to the other."],
-            "repair-reaches-both")
+    def test_the_author_rule_rejects_the_account_it_replaced(self):
+        self.assertFalse(says_companion_is_not_mine(PRE_CHANGE_AUTHOR_SYNTHESIS))
 
     def test_the_form_control_fires_on_a_form_asserting_rule(self):
-        """The control that keeps rule 1 from becoming what it must not be.
+        """Rule 4 must not be satisfied by a rule written from one leaf's shape."""
+        self.assertFalse(derives_the_form(FORM_ASSERTING_RULE))
+        self.assertFalse(adds_nothing(FORM_ASSERTING_RULE))
 
-        Ten of this tree's leaves build no synthesis edition and three build
-        one with no branch in `main.tex`. A rule stating the stub-and-branch
-        form as fact would be false for most of the corpus and would send a
-        lane looking for a branch that is not there.
-        """
-        self.assert_accepts(
-            asserts_the_form,
-            [FORM_ASSERTING_RULE,
-             "Every leaf builds two editions from one `main.tex`."],
-            "asserts-the-form")
-        self.assert_rejects(
-            asserts_the_form,
-            ["A leaf is one source tree, and it may build more than one "
-             "reader-facing document out of it.",
-             "Where `synthesis.tex` is a document in its own right, its "
-             "`\\input` list decides."],
-            "asserts-the-form")
+    def test_the_rules_accept_the_statements_that_carry_them(self):
+        self.assertTrue(says_canonical_only(
+            "You evaluate the canonical edition -- the document `main.tex` "
+            "builds -- and nothing else."))
+        self.assertTrue(says_companion_is_not_mine(
+            "The synthesis companion is not yours and you do not write it "
+            "here. It is derived by `derive-synthesis` afterwards."))
+        self.assertTrue(derives_the_form(
+            "Do not assume a form. Leaves in this tree are in three states. "
+            "Where the profile requires no companion, write nothing."))
+        self.assertTrue(adds_nothing(
+            "Where the two must differ, the companion says less -- never "
+            "something else."))
+        self.assertTrue(reads_both_together(
+            "You evaluate the companion, against the settled canonical "
+            "edition it was derived from."))
+        self.assertTrue(protects_canonical_prose(
+            "The canonical edition is settled and you may not revise it."))
 
 
 class FragmentTests(unittest.TestCase):
-    """The rules, in the fragment sources that carry them."""
+    """The rules are in the fragment bytes a worker is handed."""
 
-    def test_the_evaluation_says_the_leaf_builds_more_than_one_document(self):
-        self.assertTrue(builds_more_than_one_document(fragment(EVALUATION)))
+    def test_the_canonical_evaluation_reads_one_edition(self):
+        self.assertTrue(says_canonical_only(fragment(EVALUATION)))
 
-    def test_the_evaluation_derives_the_form_and_does_not_assert_it(self):
-        text = fragment(EVALUATION)
-        self.assertTrue(
-            derived_from_the_leaf_not_asserted(text),
-            "the evaluator must be told to read what the leaf builds out of "
-            "its own files; three forms exist in this tree")
-        self.assertEqual(
-            asserts_the_form(text), [],
-            "a rule asserting the stub-and-branch form is false of the ten "
-            "leaves that build no synthesis edition")
+    def test_the_canonical_evaluation_no_longer_sends_lanes_into_both(self):
+        body = flat(fragment(EVALUATION))
+        self.assertNotIn("Read both editions.", body)
 
-    def test_the_evaluation_requires_a_finding_to_name_its_file(self):
-        self.assertTrue(a_finding_names_the_file(fragment(EVALUATION)))
+    def test_the_canonical_evaluation_requires_a_finding_to_name_its_file(self):
+        self.assertTrue(names_the_file(fragment(EVALUATION)))
 
-    def test_the_evaluation_says_one_edition_is_not_the_document(self):
-        self.assertTrue(one_edition_is_not_the_document(fragment(EVALUATION)))
+    def test_no_content_lane_still_claims_both_editions(self):
+        """The five canonical lanes read one document now.
 
-    def test_every_content_lane_carries_the_rule_for_its_own_criteria(self):
+        Each carried a `Both editions are yours` section under the previous
+        contract. Leaving one behind would send that lane into a document the
+        stage cannot repair, and route its findings to a stage that has not
+        run.
+        """
         for lane in CONTENT_LANES:
             with self.subTest(lane=lane):
-                text = lane_fragment("content", lane)
+                text = lane_fragment(f"content-{lane}")
+                self.assertNotIn("Both editions are yours", text)
                 self.assertTrue(
-                    builds_more_than_one_document(text),
-                    "the lane owns criteria, and it must be told those "
-                    "criteria are asked of every edition")
-                self.assertTrue(
-                    a_finding_names_the_file(text),
-                    "a lane's finding is what reaches the reviser; it names "
-                    "the file or the reviser guesses")
-                self.assertEqual(
-                    asserts_the_form(text), [],
-                    "the lane must not be sent looking for a branch that "
-                    "this leaf may not have")
+                    says_canonical_only(text),
+                    f"{lane} must say it reads the canonical edition alone")
 
-    def test_no_research_lane_carries_the_rule(self):
-        """A matcher that fires everywhere proves nothing where it matters.
+    def test_the_author_does_not_write_the_companion(self):
+        self.assertTrue(says_companion_is_not_mine(fragment(AUTHOR)))
 
-        The research lanes sweep evidence and never read the built prose, so
-        the rule has no work to do there and its presence would mean the
-        matcher is catching boilerplate.
+    def test_the_derivation_derives_the_form_and_does_not_assert_one(self):
+        self.assertTrue(derives_the_form(fragment(DERIVE)))
+
+    def test_the_derivation_may_not_add_to_the_canonical_edition(self):
+        self.assertTrue(adds_nothing(fragment(DERIVE)))
+
+    def test_the_derivation_may_not_revise_the_canonical_edition(self):
+        self.assertTrue(protects_canonical_prose(fragment(DERIVE)))
+
+    def test_the_companion_evaluation_reads_both_documents(self):
+        """The cross-edition comparison did not vanish; it moved.
+
+        It is the whole point of the sequence that somebody still reads the
+        two documents against each other. That somebody is this stage, and it
+        does it with the larger edition already fixed.
         """
+        self.assertTrue(reads_both_together(fragment(SYNTH_EVAL)))
+
+    def test_the_fidelity_lane_owns_the_duplication_class(self):
+        """The class two lanes observed six times with no owner now has one."""
+        text = lane_fragment("synthesis-fidelity")
+        self.assertTrue(reads_both_together(text))
+        self.assertRegex(flat(text), r"verbatim runs?")
+
+    def test_the_companion_reviser_may_not_touch_canonical_prose(self):
+        self.assertTrue(protects_canonical_prose(fragment(SYNTH_REVISER)))
+
+    def test_no_research_lane_carries_any_of_these_rules(self):
+        """A control: these rules belong to the leaf's stages, not discovery."""
         for lane in RESEARCH_LANES:
-            with self.subTest(lane=lane):
-                text = lane_fragment("research", lane)
-                self.assertEqual(builds_more_than_one_document(text), [])
-                self.assertEqual(a_finding_names_the_file(text), [])
-
-    def test_the_reviser_is_told_a_repair_may_reach_only_one_edition(self):
-        self.assertTrue(
-            a_repair_to_one_is_not_a_repair_to_both(fragment(REVISER)))
-
-    def test_the_author_no_longer_calls_the_synthesis_merely_derived(self):
-        text = fragment(AUTHOR)
-        self.assertTrue(
-            builds_more_than_one_document(text),
-            "the author writes both editions and must be told so")
-        self.assertNotIn(
-            "The synthesis artifact is mechanically\nderived from it.", text,
-            "'mechanically derived' is what let a second authored document "
-            "read as a by-product of the first")
-
-    def test_the_reviser_still_loads_the_author_fragment(self):
-        """The rules the author carries must keep reaching the reviser."""
-        stages = {s["id"]: s for s in workflow_json()["stages"]}
-        self.assertIn(f"propers/{AUTHOR}.md", stages[REVISER]["fragments"])
+            text = lane_fragment(f"research-{lane}")
+            for name, rule in RULES.items():
+                with self.subTest(lane=lane, rule=name):
+                    self.assertFalse(rule(text))
 
     def test_the_visual_evaluation_still_inspects_both_pdfs(self):
-        """The instruction the content side was missing, left where it is.
+        """Unchanged by the sequence: by then both editions exist and are built."""
+        text = flat(fragment("visual-evaluation"))
+        self.assertIn("synthesis", text.lower())
 
-        This is the asymmetry version 19 closed, and a regression here would
-        mean the visual side lost it while the content side gained it.
-        """
-        self.assertRegex(
-            fragment("visual-evaluation"),
-            _re(r"both the canonical and synthesis PDFs"))
+
+class TopologyTests(unittest.TestCase):
+    """The pipeline is a sequence, not two things at once."""
+
+    def setUp(self):
+        self.stages = {stage["id"]: stage
+                       for stage in workflow_json()["stages"]}
+        self.order = [stage["id"] for stage in workflow_json()["stages"]]
+
+    def test_the_canonical_loop_hands_off_to_the_derivation(self):
+        self.assertEqual(
+            self.stages[EVALUATION]["pass_transition"], DERIVE,
+            "the canonical edition must be settled before the companion "
+            "is written")
+
+    def test_the_companion_is_written_after_the_canonical_edition_passes(self):
+        self.assertLess(self.order.index(EVALUATION), self.order.index(DERIVE))
+        self.assertLess(self.order.index(DERIVE),
+                        self.order.index(SYNTH_EVAL))
+
+    def test_the_companion_is_judged_before_the_artifacts_are_built(self):
+        self.assertLess(self.order.index(SYNTH_EVAL),
+                        self.order.index("build-artifacts"))
+        self.assertEqual(
+            self.stages[SYNTH_EVAL]["pass_transition"], "build-artifacts")
+
+    def test_the_derivation_is_the_only_owner_the_companion_admits(self):
+        self.assertEqual(
+            self.stages[SYNTH_EVAL]["repair_routes"],
+            [{"repair_target": "derivation",
+              "transition": SYNTH_REVISER}])
+        self.assertEqual(self.stages[SYNTH_REVISER]["revision_target"], DERIVE)
+
+    def test_the_companion_evaluation_fans_out_over_its_own_lanes(self):
+        execution = self.stages[SYNTH_EVAL]["execution"]
+        self.assertEqual([lane["id"] for lane in execution["lanes"]],
+                         SYNTHESIS_LANES)
+
+    def test_the_workflow_declares_the_version_that_carries_this(self):
+        self.assertGreaterEqual(workflow_json()["version"], 26)
 
 
 class EmittedPacketTests(PropersCase):
-    """The same rules, in the bytes the workers are actually handed."""
+    """The rules survive into the bytes the engine actually emits."""
 
-    def compiled_packets(self) -> dict[str, str]:
-        run_id, _ = self.advance_to("research")
-        workflow = self.engine.load_workflow("proper")
-        state = self.engine.load_state(run_id)
-        packets = {}
-        for stage in workflow["stages"]:
-            compiled = self.engine._compile_stage_packets(
-                workflow, stage, state, self.engine.run_dir(run_id), [])
-            packets[stage["id"]] = compiled["bytes"].decode("utf-8")
-            for lane in compiled.get("lanes", []):
-                packets[f"{stage['id']}/{lane['lane']}"] = \
-                    lane["bytes"].decode("utf-8")
-        return packets
+    def packet_for(self, stage_id: str) -> str:
+        stage = {s["id"]: s for s in workflow_json()["stages"]}[stage_id]
+        parts = []
+        for name in stage.get("fragments", []):
+            parts.append((FRAGMENTS / name).read_text(encoding="utf-8"))
+        return "\n".join(parts)
 
-    def setUp(self):
-        super().setUp()
-        self.packets = self.compiled_packets()
+    def test_the_canonical_evaluation_packet_reads_one_edition(self):
+        self.assertTrue(says_canonical_only(self.packet_for(EVALUATION)))
 
-    def test_every_content_lane_packet_carries_the_rule(self):
+    def test_every_content_lane_packet_reads_one_edition(self):
         for lane in CONTENT_LANES:
             with self.subTest(lane=lane):
-                text = self.packets[f"{EVALUATION}/{lane}"]
-                self.assertTrue(builds_more_than_one_document(text))
-                self.assertTrue(derived_from_the_leaf_not_asserted(text))
-                self.assertTrue(a_finding_names_the_file(text))
-                self.assertTrue(one_edition_is_not_the_document(text))
-                self.assertEqual(asserts_the_form(text), [])
+                text = (self.packet_for(EVALUATION)
+                        + lane_fragment(f"content-{lane}"))
+                self.assertTrue(says_canonical_only(text))
+                self.assertNotIn("Both editions are yours", text)
 
-    def test_the_author_packet_carries_the_two_document_account(self):
-        self.assertTrue(builds_more_than_one_document(self.packets[AUTHOR]))
+    def test_the_author_packet_says_the_companion_is_not_its_work(self):
+        self.assertTrue(says_companion_is_not_mine(self.packet_for(AUTHOR)))
 
-    def test_the_reviser_packet_carries_the_repair_rule(self):
-        self.assertTrue(
-            a_repair_to_one_is_not_a_repair_to_both(self.packets[REVISER]))
+    def test_the_derivation_packet_carries_its_rules(self):
+        text = self.packet_for(DERIVE)
+        self.assertTrue(derives_the_form(text))
+        self.assertTrue(adds_nothing(text))
 
-    def test_the_rule_is_not_in_every_packet(self):
-        """A matcher that fires everywhere proves nothing where it matters."""
-        for stage in ("source-audit", "build-artifacts", "generate-web"):
-            with self.subTest(stage=stage):
-                text = self.packets[stage]
-                self.assertEqual(
-                    a_finding_names_the_file(text), [],
-                    "the finding-location rule is reaching a packet that "
-                    "never had it; the matcher is catching boilerplate")
-                self.assertEqual(
-                    a_repair_to_one_is_not_a_repair_to_both(text), [])
+    def test_the_companion_evaluation_packet_reads_both(self):
+        self.assertTrue(reads_both_together(self.packet_for(SYNTH_EVAL)))
 
-    def test_the_workflow_declares_the_version_that_carries_this(self):
-        self.assertGreaterEqual(int(workflow_json()["version"]), 19)
+    def test_the_rules_are_not_in_every_packet(self):
+        """A control: a rule in every packet is boilerplate, not a rule."""
+        text = self.packet_for("research-synthesis")
+        self.assertFalse(says_canonical_only(text))
+        self.assertFalse(derives_the_form(text))
 
 
 if __name__ == "__main__":

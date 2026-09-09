@@ -988,8 +988,46 @@ whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
-The `proper` workflow is at version 25. The `proper-finish` workflow is at
-version 3.
+The `proper` workflow is at version 26. The `proper-finish` workflow is at
+version 4.
+
+Version 26 sequences the two editions largest first, and stops an advisory
+from being a queue.
+
+Until now `author-proper` wrote the canonical guide and the synthesis
+companion together, and `content-evaluation` judged both at once. Every lane
+read two documents, every finding was repaired in two places, and a class of
+defect existed that cannot exist under a sequence: a claim corrected in one
+edition and left published and wrong in the other, because the reviser
+repaired the file the finding named and not its twin. The canonical content
+loop now settles the larger edition alone. Only when it passes does
+`derive-synthesis` write the companion from it, and `synthesis-evaluation`
+— two lanes, `derivation-fidelity` and `companion-conformance` — judges the
+companion against the settled canonical edition, routing repairs to
+`synthesis-revision` under the single owner `derivation`. Neither the
+canonical prose nor the brief may be touched from there.
+
+That sequence also gives an owner to a class nothing owned. Prose duplicated
+between the two editions was recorded as an unowned observation at six
+consecutive iterations of run `e4aebcbd941b6b1a`, by two different lanes, both
+saying plainly that no criterion reached it. It is decidable only when one
+edition is fixed and the other is being derived from it, which is exactly
+where `derivation-fidelity` now stands.
+
+Version 26 also forwards advisory findings. `ADVISORY_FINDINGS` is a third
+packet header beside `PRIOR_FINDINGS` and `CARRIED_FINDINGS`: it carries the
+findings an evaluation chose not to block on, to whichever stage the route
+sent the repair. They gate nothing, spend no iteration budget, and are owed no
+entry in `finding_dispositions`; naming one there is refused exactly as a
+finding the engine never forwarded is. Before this, an advisory reached
+nobody, and a lane holding a real defect it did not want to block on had one
+way to be heard: raise it as blocking a round later. Lanes did. In run
+`e4aebcbd941b6b1a`, 19 of 62 blocking findings — 31% — were the raising lane's
+own advisory from an earlier round, promoted a mean of 1.1 rounds later, and
+the blocking counts read 18, 12, 10, 8, 7, 5, 7 while the backlog behind them
+refilled every round. `common/result-format.md` now states that severity is a
+verdict and not a queue position, and that promoting an advisory to blocking
+is forbidden.
 
 Version 25 moves the iteration budget onto the reviser's own report. A stage
 declaring `reports_repairs` returns `finding_dispositions`, one entry per
@@ -1086,10 +1124,15 @@ the check by carrying an older version in the leaf. Historical publications
 remain out of scope until substantive revision. A run seeded against `proper`
 version 23 or earlier or `proper-finish` version 1 fails closed; seed it again.
 
-The `proper-finish` workflow is at version 3. Version 1 remains the historical
+The `proper-finish` workflow is at version 4. Version 1 remains the historical
 authoring-to-publication rescue contract; version 2 changes no topology or
 repair ownership, but adopts the same authoring fragment, structural preflight,
-profile evaluator, and fail-closed version interlock as `proper` v24.
+profile evaluator, and fail-closed version interlock as `proper` v24. Version 4
+takes `proper` v26's edition sequence and its advisory forwarding: the
+canonical guide is settled before `derive-synthesis` writes the companion, and
+`synthesis-evaluation` judges the companion against it. Because this pipeline
+begins after research, it admits `authoring` for the canonical loop and
+`derivation` for the companion, and no other owner.
 
 Mainline version 23 did two things, both about what a run leaves behind rather
 than how far it gets.

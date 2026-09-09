@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.elizabeth-barrett-browning.sonnets-from-the-portuguese.gutenberg-ebook-2002.gutenberg-pg2002-body-lf"
+edition_id = "edition.elizabeth-barrett-browning.sonnets-from-the-portuguese.gutenberg-ebook-2002"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The work was published in 1850, and the transcribed printing in 1906, before 1929, so it is in the United States public domain by publication date; Barrett Browning died in 1861. The Project Gutenberg wrapper is excluded from this file by the stated transformation."
+rights_jurisdiction = "United States"
+provenance = "Derived by scripts/gutenberg_transcribe.py on 2026-09-05 from the exact parent delivery named in `derived_from`, whose SHA-256 and byte size were recomputed over the lane's retained file and matched before the derivation ran. Nothing reached the network and no source text passed through a language model."
+retrieved = "2026-09-05"
+sha256 = "e37858b9a080e1f5196240e59b7b8cc7ab77cee5366f2e327f7d200cd09ad863"
+byte_size = 29513
+path = "src/sources/works/elizabeth-barrett-browning/sonnets-from-the-portuguese/editions/gutenberg-ebook-2002/artifacts/gutenberg-pg2002-body-lf/sonnets-from-the-portuguese.txt"
+derived_from = "artifact.elizabeth-barrett-browning.sonnets-from-the-portuguese.gutenberg-ebook-2002.gutenberg-pg2002-raw-b193a12e"
+transformation = "scripts/gutenberg_transcribe.py, run offline over the exact parent bytes on 2026-09-05 with no source text passing through a language model: take the UTF-8 text strictly between the Project Gutenberg START and END marker lines, which the script matches exactly and refuses to guess at; remove the trailing legacy \"End of Project Gutenberg\" line and adjacent trailing blank lines; normalise CRLF to LF; make no other editorial wording change."
+encoding = "utf-8"
+indexable = true
+notes = "All forty-four sonnets, transcribed from the 1906 Caradoc Press printing as the eBook's own credit line states. 97 LF-terminated lines. The Project Gutenberg licence, trademark references and marker lines are not in this file; Triptych claims no exclusive right in the source wording. It is a transcription and not a facsimile."

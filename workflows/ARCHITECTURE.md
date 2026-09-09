@@ -268,7 +268,21 @@ A run records the digest at seed time, in both the manifest and the state, and
 every `advance` and `replay` recomputes it. If the workflow source has changed
 since the run was seeded, the run fails closed rather than continuing under
 guidance it never started with. A changed workflow means a new run. The
-`proper` workflow is at version 25 and `proper-finish` at version 3. Version
+`proper` workflow is at version 26 and `proper-finish` at version 4. Version
+26 produces the two editions in sequence, largest first: `author-proper` and
+the content loop settle the canonical guide alone, `derive-synthesis` then
+writes the synthesis companion from it, and `synthesis-evaluation` — two
+lanes, routing the single owner `derivation` to `synthesis-revision` — judges
+the companion against the settled canonical edition before the artifacts are
+built. Authoring and evaluating both at once cost run `e4aebcbd941b6b1a` its
+whole iteration ceiling: every lane read two documents, every finding was
+repaired in two places, and prose duplicated between the editions was recorded
+as an unowned observation at six consecutive iterations because no criterion
+could reach it while both were in flight. Version 26 also adds the
+`ADVISORY_FINDINGS` packet header, which carries an evaluation's non-blocking
+findings to whichever stage the route sent the repair; before it an advisory
+reached nobody, and 31% of that run's blocking findings were the raising
+lane's own advisories promoted a round later in order to be heard. Version
 25 moves the repeat budget onto the reviser's own report where one exists,
 declares `document_root` on both pipelines so the packet header can carry
 `DOCUMENT_ROOT` and `REPAIR_TARGETS`, gives the five bounded-revision stages
