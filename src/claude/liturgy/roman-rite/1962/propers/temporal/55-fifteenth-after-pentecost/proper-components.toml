@@ -1,0 +1,195 @@
+schema = 1
+record_type = "proper-components"
+document = "liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost"
+entrypoint = "main.tex"
+synthesis_entrypoint = "synthesis.tex"
+appointed_text_completeness = "complete"
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+
+[outputs]
+research = "liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost"
+synthesis = "liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis"
+web = "liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost"
+canonical_label = "Full PDF"
+synthesis_label = "Synthesis PDF"
+
+[[components]]
+key = "orientation"
+kind = "front-matter"
+path = "sections/00-map.tex"
+modes = ["research", "synthesis"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = []
+
+[[components]]
+key = "appointed-text"
+kind = "appointed-text"
+path = "sections/05-appointed-text.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = []
+
+[[components]]
+key = "per-element-sweep"
+kind = "proper-treatment"
+path = "sections/30-commentary.tex"
+modes = ["research"]
+depends_on = ["appointed-text"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["sections/99-references.tex"]
+
+[[components]]
+key = "brief-synthesis"
+kind = "brief-synthesis"
+path = "sections/20-themes.tex"
+modes = ["research", "synthesis"]
+depends_on = ["orientation"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["sections/99-references.tex"]
+
+[[components]]
+key = "integrated-commentary"
+kind = "integrated-commentary"
+path = "sections/synthesis/20-integrated-commentary.tex"
+modes = ["synthesis"]
+depends_on = ["brief-synthesis"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["sections/99-references.tex"]
+
+[[components]]
+key = "source-grounded-synthesis"
+kind = "source-grounded-synthesis"
+path = "sections/35-source-grounded-synthesis.tex"
+modes = ["research", "synthesis"]
+depends_on = ["brief-synthesis"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["sections/99-references.tex"]
+
+[[components]]
+key = "exploratory-synthesis"
+kind = "exploratory-synthesis"
+path = "sections/50-interpretive.tex"
+modes = ["research", "synthesis"]
+depends_on = ["source-grounded-synthesis"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["sections/99-references.tex"]
+
+[[components]]
+key = "notable-and-quotable"
+kind = "notable-quotable"
+path = "sections/40-notable.tex"
+modes = ["research", "synthesis"]
+depends_on = ["source-grounded-synthesis"]
+element_keys = ["epistle", "offertory"]
+references = ["sections/99-references.tex"]
+
+[[components]]
+key = "terminal-apparatus"
+kind = "terminal-apparatus"
+path = "sections/90-scope.tex"
+modes = ["research", "synthesis"]
+depends_on = ["notable-and-quotable"]
+element_keys = []
+references = ["sections/99-references.tex"]
+
+[[relations]]
+key = "mercy-moves-first"
+element_keys = ["introit", "collect", "gradual", "gospel", "postcommunion"]
+evidence = ["textual-observation", "documented-reception", "source-grounded-synthesis"]
+
+[[relations]]
+key = "sowing-on-a-given-currency"
+element_keys = ["epistle", "collect", "gradual", "postcommunion"]
+evidence = ["documented-reception", "source-grounded-synthesis"]
+
+[[relations]]
+key = "flesh-sown-carried-given"
+element_keys = ["epistle", "gospel", "communion"]
+evidence = ["textual-observation", "documented-reception", "source-grounded-synthesis"]
+
+[[relations]]
+key = "one-voice-across-person"
+element_keys = ["introit", "offertory", "collect", "secret", "postcommunion"]
+evidence = ["textual-observation", "documented-reception", "source-grounded-synthesis"]
+
+[[relations]]
+key = "chant-psalter-older-than-the-bible-beside-it"
+element_keys = ["introit", "alleluia", "offertory", "communion"]
+evidence = ["textual-observation", "documented-historical-orientation", "source-grounded-synthesis"]
+
+[[relations]]
+key = "an-interval-to-be-endured"
+element_keys = ["introit", "collect", "epistle", "gradual", "offertory", "secret", "postcommunion"]
+evidence = ["textual-observation", "documented-reception", "source-grounded-synthesis"]
+
+[[relations]]
+key = "orations-older-than-the-chants"
+element_keys = ["collect", "secret", "postcommunion", "introit", "gradual", "alleluia", "offertory", "communion"]
+evidence = ["documented-historical-orientation", "source-grounded-synthesis"]
+
+[[relations]]
+key = "only-the-greek-joins-them"
+element_keys = ["epistle", "gospel", "offertory", "communion"]
+evidence = ["textual-observation", "source-grounded-synthesis"]
+
+[[relations]]
+key = "nothing-sung-here-alone"
+element_keys = ["introit", "gradual", "alleluia", "offertory", "communion", "gospel"]
+evidence = ["textual-observation", "documented-historical-orientation", "source-grounded-synthesis"]
+
+[[relations]]
+key = "the-cross-reaches-this-mass-through-the-wood-of-the-bier"
+element_keys = ["epistle", "gospel", "communion", "collect", "secret", "postcommunion"]
+evidence = ["textual-observation", "documented-reception", "source-grounded-synthesis"]
+
+[[relations]]
+key = "exposition-falls-on-the-unsung-verses"
+element_keys = ["introit", "offertory"]
+evidence = ["textual-observation", "documented-reception"]
+
+[[relations]]
+key = "a-dropped-title-and-a-changed-predicate"
+element_keys = ["gradual", "alleluia", "epistle"]
+evidence = ["textual-observation", "documented-reception"]
+
+[[relations]]
+key = "one-verb-of-carrying-from-the-lesson-to-the-bier"
+element_keys = ["epistle", "gospel", "secret"]
+evidence = ["textual-observation", "documented-reception"]
+
+[[relations]]
+key = "where-the-expositors-put-the-church-at-naim"
+element_keys = ["collect", "epistle", "gospel"]
+evidence = ["textual-observation", "documented-reception"]
+
+[[relations]]
+key = "incapacity-stated-twice"
+element_keys = ["collect", "epistle"]
+evidence = ["textual-observation", "exploratory-proposal"]
+
+[[relations]]
+key = "great-king-and-the-town-he-visits"
+element_keys = ["alleluia", "gospel"]
+evidence = ["textual-observation", "exploratory-proposal"]
+
+[[relations]]
+key = "the-ear-and-the-visitation"
+element_keys = ["introit", "gospel"]
+evidence = ["textual-observation", "exploratory-proposal"]
+
+[[relations]]
+key = "four-operations-on-the-extents"
+element_keys = ["introit", "offertory", "communion", "gospel"]
+evidence = ["textual-observation", "exploratory-proposal"]
+
+[[relations]]
+key = "immediately-past-the-cuts"
+element_keys = ["offertory", "introit", "secret"]
+evidence = ["textual-observation", "exploratory-proposal"]
+
+[[relations]]
+key = "let-us-walk-and-jesus-was-going"
+element_keys = ["epistle", "gospel"]
+evidence = ["textual-observation", "exploratory-proposal"]
