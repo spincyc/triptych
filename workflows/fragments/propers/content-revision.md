@@ -33,23 +33,55 @@ what you reasonably can of the advisories.
 2. For each finding, make the specific change required by its
    `required_result` field.
 3. Do not paraphrase or reinterpret the findings. Address them as written.
-4. Read ADVISORY_FINDINGS and clear the ones whose repair is plainly stated
+4. Make the smallest change that clears the finding, and re-read the sentence
+   you changed and its neighbours before moving on. Repairs inject defects:
+   in one production a repair of one citation finding created the next
+   round's citation finding ("four words" where the Latin yields no such
+   count), a criterion 12 repair deleted the evidence bound criteria 1 and 2
+   require, and a narrowing of "add nothing to the question" to "were not
+   opened" contradicted a quotation two pages earlier. Three passes over one
+   sentence — too strong, too absolute, then exact — is the ordinary shape of
+   a repair that was not read back against the passage it sits in.
+5. Where a finding names a class of defect — a habit of register, an
+   orthography, a label — and the class has survived a site-by-site repair
+   before, sweep the class instead of the sites: search the whole edition
+   for the form and repair every instance, including the ones no lane named.
+   A declarative-discipline habit survived two named-site repairs and
+   cleared only when the third reviser rewrote twenty-five sites, thirteen
+   named and twelve it found; a scripted sweep for one orthography found a
+   twenty-third site no lane had listed.
+6. Read ADVISORY_FINDINGS and clear the ones whose repair is plainly stated
    and local to a file you are already editing. Skip any that would widen the
    change or that you are not confident of; nothing is charged either way.
-4. After addressing all findings, verify that the changes do not introduce
+7. After addressing all findings, verify that the changes do not introduce
    new violations of the evaluation criteria.
-5. Follow the same authoring rules as the author-proper stage, including the
+8. Follow the same authoring rules as the author-proper stage, including the
    house voice: this packet carries `author-proper.md` in full.
-6. A repair to one edition's prose is not a repair to the other. The leaf
-   builds more than one reader-facing document out of one source tree — a
-   `synthesis.tex` beside `main.tex`, an `\ifdefined\TriptychSynthesisEdition`
-   branch inside it, a `sections/synthesis/` file the canonical build never
-   inputs — and the same claim is routinely stated in both, at different
-   lengths. A finding names the file it was found in; the defect is not
-   confined to that file because the finding is. After every edit, re-read
-   what each document renders and correct each instance you find there, or
-   the run publishes one corrected edition and one uncorrected one.
-7. A house-voice finding is repaired by rewriting the sentence, never by
+9. Revise the canonical edition only — the document `main.tex` builds with
+   `\TriptychSynthesisEdition` undefined. Leave `synthesis.tex`, the
+   `\ifdefined\TriptychSynthesisEdition` branches and everything under
+   `sections/synthesis/` as they are, even where your repair makes an
+   existing companion file wrong: the companion is re-derived from the
+   settled canonical edition by `derive-synthesis` after this loop passes,
+   and a companion edited here is a companion edited outside its
+   evaluation. Say in your summary which of your repairs the derivation will
+   have to carry.
+10. Bring `generation-metadata.tex` forward. Update
+    `\AIDocumentRevisionTimestamp` to this revision and append an
+    `\AIModelContribution` record for it, on the rules `author-proper.md`
+    states for that file; leave the `\AIGenerationProvenance` record alone,
+    since the run is the same. A leaf whose sections were revised at 18:08
+    under a timestamp of 17:30 was published with its metadata predating its
+    content, because no fragment had told the reviser the file existed.
+11. Rebuild the canonical edition and compare its page count and the page of
+    each `\sectionguard` against the build you started from. The canonical
+    flow is continuous from page 5 to the end, so one added line inside an
+    early unbreakable box can surface as a two-line widow on a new last page
+    forty-five pages away; three such cascades were caught only by a reviser
+    who read the page count. A moved page is not a finding against you, but
+    report it in your summary and shorten your own wording where the
+    finding permits, and never let page 1 or page 2 overflow.
+12. A house-voice finding is repaired by rewriting the sentence, never by
    deleting what the sentence was about. Excessive methodological narration,
    editorial self-justification, secular skeptical framing, unnecessary
    distancing from patristic interpretation, and modern-critical framing that
@@ -125,7 +157,22 @@ once that revision is the wrong stage for it.
 
 Return `disposition: "BLOCKED"` instead when a finding cannot be addressed
 from this stage: a finding against `research/scope.md` is the standing case,
-because `research-synthesis` is that file's sole writer and this stage may
-not touch it. Name the finding and why it is out of reach. Blocking says that
-at once; three revisions that cannot address it say only that revision failed
-three times.
+because this stage may not touch that file — its writer is
+`research-synthesis` in `proper` and `brief-revision` in `proper-finish`, and
+a `brief` finding that reached this packet was misrouted. Name the finding
+and why it is out of reach. Blocking says that at once; three revisions that
+cannot address it say only that revision failed three times.
+
+## When this packet follows a brief repair
+
+In `proper-finish`, a `brief` finding sends the run to `brief-revision`, which
+corrects `research/scope.md` — a file this stage may not touch — and hands
+the run to this stage next. Your
+`PRIOR_FINDINGS` header is then empty — nothing was forwarded to you by an
+evaluator — and `CARRIED_FINDINGS` holds the `authoring` findings the same
+evaluation raised, which are yours to address as above. Beyond them, re-read
+the passages of the canonical edition that rest on the sentences the brief
+repair corrected (its summary names them), repair what now disagrees with
+the corrected brief, rebuild, and return `PASS`; with nothing forwarded there
+is no `finding_dispositions` to report, and say in your summary what the
+brief correction changed in the leaf, or that nothing needed to change.

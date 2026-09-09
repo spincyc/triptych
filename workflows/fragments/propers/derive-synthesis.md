@@ -59,10 +59,36 @@ companion that should not exist still renders.
    files under `sections/synthesis/` that those branches input.
 3. `proper-components.toml` — the manifest must declare which components the
    synthesis mode carries and which the research mode carries, and no included
-   component may depend on an omitted one.
+   component may depend on an omitted one. Declare `[[components]]` in the
+   profile's reader order — the source-grounded synthesis, then `The Propers:
+   Notable and Quotable`, then `The Propers: Interpretive Possibilities` —
+   which `check-proper-components` requires of a revised manifest.
+4. `generation-metadata.tex` — bring `\AIDocumentRevisionTimestamp` forward
+   to this derivation and append an `\AIModelContribution` record for it, on
+   the rules `author-proper.md` states for that file. The
+   `\AIGenerationProvenance` record is unchanged: this is the same run. A
+   companion derived at 19:06 under a timestamp of 17:30 was found by an
+   evaluator reading mtimes, and nothing in the workflow had told the stage
+   that wrote it the file existed.
 
-You may not touch `research/scope.md`, which no stage but `research-synthesis`
-writes. You may not touch `propers/verified.md` or `propers/retrieved.txt`.
+You may not touch `research/scope.md`, which no stage but its writer —
+`research-synthesis` in `proper`, `brief-revision` in `proper-finish` — may
+change. You may not touch `propers/verified.md` or `propers/retrieved.txt`.
+
+## What the canonical edition already says about the companion
+
+The settled edition makes claims about the document you are deriving, and it
+made them before that document existed: `format.tex`'s canonical
+`\editionnote` may assert that the companion "adds nothing this edition does
+not contain"; `sections/90-scope.tex` may state what the synthesis edition
+names at each use of a translation; a file both editions input may carry a
+locator that has to resolve in both. Under the sequence these are
+**constraints the derivation must satisfy**, not descriptions of an artifact.
+Read them before you write, derive so that each is true, and where one cannot
+be made true of a faithful companion, say so in your summary: you may not
+edit them, since they are canonical prose, and the `companion-conformance`
+lane judges them next. Eight sightings across two productions found such a
+sentence describing a companion nobody had yet written.
 
 **You may not revise the canonical edition's prose.** It passed. If deriving
 the companion shows you a defect in it, say so in your summary and leave it:

@@ -622,8 +622,12 @@ reviser's word should not displace a measurement.
 defaults to twice `max_iterations`. It is the bound that catches an optimistic
 reviser, which is the failure mode this design accepts in exchange for never
 again scoring a fresh defect as an unrepaired one. `content-evaluation`
-declares `max_iterations: 4` in `proper.json`, so its ceiling there is eight;
-it declares 3 in `proper-finish.json`, so its ceiling there is six.
+declares `max_iterations: 4` in both `proper.json` and `proper-finish.json`,
+and since `proper` version 27 and `proper-finish` version 5 both declare the
+ceiling explicitly — ten in `proper`, eight in `proper-finish` — because three
+productions reached the doubled default with their counts still falling and
+their last findings genuinely new; a ceiling that is reached only by a stage
+doing new work each round is set a little above where the work stopped.
 
 Both counters, and the standing ids the comparison reads, reset when the stage
 passes. `advance` names which bound stopped a run: `N/M failures that did not
@@ -673,7 +677,8 @@ a record anything later may depend on.
 What stands against the document itself has a tracked home instead. The stage
 that declares `records_standing_findings` — `content-evaluation`, in both
 propers pipelines, and no other stage — writes the blocking findings still
-standing against the leaf, and the observations its lanes recorded, to
+standing against the leaf, the observations its lanes recorded, and the run's
+whole escalation ledger, to
 
 ```
 <document_root>/evaluations/blocking-findings-v1.toml
@@ -988,8 +993,75 @@ whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
-The `proper` workflow is at version 26. The `proper-finish` workflow is at
-version 4.
+The `proper` workflow is at version 27. The `proper-finish` workflow is at
+version 5.
+
+Version 27 and `proper-finish` 5 encode what three Claude productions of the
+Fourteenth, Fifteenth and Sixteenth Sundays asked for. Two reached the
+content loop's absolute ceiling with their blocking counts still falling
+(18, 17, 10, 5, 5, 3, 3, 3 in one; 18, 12, 10, 8, 7, 5, 7 in the other) and
+their last findings genuinely new; the third died at a host limit one lane
+short of a complete evaluation. Their handoffs named the same causes.
+
+`content-evaluation` gains two criteria. Criterion 13, fidelity to the
+appointed texts, asks whether what the guide says an appointed text says,
+asks or does is so — three false assertions about a Collect stood through
+three and four consecutive evaluations of one leaf as observations, and four
+lanes said in their notes that no criterion owned them; the
+evidence-discipline lane owns it. Criterion 14, fidelity to the guide itself,
+asks whether the guide's statements about its own contents are true of the
+built edition; the profile-conformance lane owns it. Criteria 4 and 5 regain
+the clauses of the profile paragraphs they are drawn from — each substantial
+claim one fullest home, repeated quotations and recaps removed, the
+interpretive section a discovery section and not a recap — after the
+synthesis-argument lane escalated the gap three times in one production.
+Criterion 1 asks that a claim carry one bound wherever it recurs, and
+criterion 7 binds a collection-wide count to the sweep behind the guide,
+because a sibling leaf landed in the repository between an authoring and its
+evaluation and falsified a count no lane had swept.
+
+`proper-finish` gains `brief-revision`. That pipeline begins after research
+and had no stage that could write `research/scope.md`, so a brief defect
+found there had no owner: two productions recorded a stale brief layer that a
+later authoring pass would regenerate and a wrong biblical locus the leaf had
+fixed and the brief still carried. Its content evaluation now admits `brief`
+beside `authoring`; a `brief` finding routes to `brief-revision`, the brief's
+one writer in that pipeline, which corrects the sentence in place and hands
+the run to `content-revision`, where the same evaluation's `authoring`
+findings arrive under `CARRIED_FINDINGS`. `proper`'s route is unchanged:
+there `research-synthesis` remains the brief's only writer. The finish
+pipeline's content loop takes the same four repeats as `proper`'s, and both
+declare their absolute ceilings — eight and ten.
+
+The standing findings record now carries the run's escalation ledger under
+`[[escalations]]`, from every stage, so the decision an escalation asks of a
+maintainer outlives the run directory; seven escalations of one production
+survived only because a driver copied them into a handoff by hand.
+
+Three revising stages are told about `generation-metadata.tex`, which only
+the author had been told existed: `content-revision`, `derive-synthesis` and
+`synthesis-revision` bring the revision timestamp forward and record their
+contribution, after a companion derived at 19:06 was found stamped 17:30.
+`content-revision` now revises the canonical edition alone, as the sequence
+requires, makes the smallest change that clears a finding and re-reads it in
+place, sweeps a class that has survived a site-by-site repair, and compares
+the rebuilt page count against the build it started from, since a 28-word
+repair once surfaced as a widow forty-five pages downstream. `derive-synthesis`
+treats the canonical edition's statements about the companion — `format.tex`'s
+`\editionnote`, the scope appendix — as constraints to satisfy, and the
+companion-conformance lane owns them. `check-proper-components --aux` requires
+the brief synthesis to begin on page 3: it verified only that three anchors
+were adjacent, and accepted a whole reader order displaced by a page-1
+overflow. `source-registration` regenerates the tracked source projection it
+drifts. Every agent's brief says it is the whole of its dispatch and spawns
+nothing, after a lane that fanned out inside itself exhausted a host's budget
+and took four siblings down with it. And `author-proper` and
+`derive-synthesis` declare the component manifest in the profile's reader
+order, the disagreement between the profile and `check-proper-components`
+having been settled on 2026-09-06 in the profile's favour.
+
+A run seeded against `proper` 26 or `proper-finish` 4 fails closed and is
+seeded again.
 
 Version 26 sequences the two editions largest first, and stops an advisory
 from being a queue.
@@ -1141,7 +1213,7 @@ the check by carrying an older version in the leaf. Historical publications
 remain out of scope until substantive revision. A run seeded against `proper`
 version 23 or earlier or `proper-finish` version 1 fails closed; seed it again.
 
-The `proper-finish` workflow is at version 4. Version 1 remains the historical
+The `proper-finish` workflow is at version 5. Version 1 remains the historical
 authoring-to-publication rescue contract; version 2 changes no topology or
 repair ownership, but adopts the same authoring fragment, structural preflight,
 profile evaluator, and fail-closed version interlock as `proper` v24. Version 4

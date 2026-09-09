@@ -123,8 +123,15 @@ edition as an original that is missing. Do not add a variant.
 
 ```
 tools/source-library validate
+make source-projection
 make check-sources
 ```
+
+`make source-projection` rewrites the tracked reading projection under
+`src/web/data/structure/sources/` from the records you registered. It is
+deterministic and it is yours to run: the deployment gate refuses a stale
+projection, and one registration of 112 artifacts left the gate red for a
+console to notice because no stage owned the regeneration.
 
 Both must pass over what you wrote. `make check-sources` is the ordinary
 non-completion gate: it validates the canonical source graph and bindings and
@@ -133,7 +140,8 @@ returning `PASS` over one hands `author-proper` a fingerprint that will refuse.
 
 ## What you may not do
 
-You write `src/sources/` and nothing else. Not the canonical leaf, not
+You write `src/sources/`, and the projection `make source-projection`
+generates from it, and nothing else. Not the canonical leaf, not
 `research/scope.md`, not `propers/verified.md`, not guidance, not `tools/`. You
 do not retrieve: the lanes did that, and a source you fetch here is evidence no
 research lane swept, no coverage audit saw, and no rights check cleared. Where

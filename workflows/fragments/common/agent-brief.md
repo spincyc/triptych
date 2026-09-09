@@ -39,3 +39,10 @@ all of that.
 9. Follow guidance/ for what constitutes a correct Triptych artifact. The
    workflow system tells you the sequence of work; guidance/ tells you what
    correct means.
+10. You are the whole of your dispatch. Do not spawn sub-agents, helpers, or
+    lanes of your own: the workflow declares every agent that runs and gives
+    each exactly one packet, and an agent that fans out inside itself is a
+    dispatch the run did not record. One lane that did so produced some
+    2,600 lines of helper output, exhausted the host's budget, and took its
+    four sibling lanes down with it mid-flight. Read, verify, and write in
+    this context yourself.

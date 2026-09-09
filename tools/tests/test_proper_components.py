@@ -136,20 +136,35 @@ class ProperComponentTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             aux = Path(directory) / "guide.aux"
             aux.write_text(
-                "\\newlabel{triptych:brief-synthesis:start}{{}{7}}\n"
-                "\\newlabel{triptych:brief-synthesis:end}{{}{8}}\n"
-                "\\newlabel{triptych:brief-synthesis:next}{{}{9}}\n",
+                "\\newlabel{triptych:brief-synthesis:start}{{}{3}}\n"
+                "\\newlabel{triptych:brief-synthesis:end}{{}{4}}\n"
+                "\\newlabel{triptych:brief-synthesis:next}{{}{5}}\n",
                 encoding="utf-8",
             )
             module.validate_brief_pages(aux)
+
+    def test_rejects_displaced_brief_synthesis(self):
+        # Adjacent at 4, 5, 6 is exactly what a page-1 overflow produces:
+        # every anchor is where the profile puts it relative to the others
+        # and none is where the profile puts it.
+        with tempfile.TemporaryDirectory() as directory:
+            aux = Path(directory) / "guide.aux"
+            aux.write_text(
+                "\\newlabel{triptych:brief-synthesis:start}{{}{4}}\n"
+                "\\newlabel{triptych:brief-synthesis:end}{{}{5}}\n"
+                "\\newlabel{triptych:brief-synthesis:next}{{}{6}}\n",
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(ValueError, "begin on page 3"):
+                module.validate_brief_pages(aux)
 
     def test_rejects_spilled_brief_synthesis(self):
         with tempfile.TemporaryDirectory() as directory:
             aux = Path(directory) / "guide.aux"
             aux.write_text(
-                "\\newlabel{triptych:brief-synthesis:start}{{}{7}}\n"
-                "\\newlabel{triptych:brief-synthesis:end}{{}{9}}\n"
-                "\\newlabel{triptych:brief-synthesis:next}{{}{10}}\n",
+                "\\newlabel{triptych:brief-synthesis:start}{{}{3}}\n"
+                "\\newlabel{triptych:brief-synthesis:end}{{}{5}}\n"
+                "\\newlabel{triptych:brief-synthesis:next}{{}{6}}\n",
                 encoding="utf-8",
             )
             with self.assertRaisesRegex(ValueError, "exactly two"):

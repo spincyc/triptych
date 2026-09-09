@@ -2,10 +2,11 @@
 
 ## Your lane
 
-You own criteria **9 (Pagination)**, **10 (Provenance)** and **12
-(Declarative discipline)** of the shared criteria list above, and nothing
-else. Another lane owns each of the remaining criteria; do not report on
-them, and do not judge the work as a whole.
+You own criteria **9 (Pagination)**, **10 (Provenance)**, **12
+(Declarative discipline)** and **14 (Fidelity to the guide itself)** of the
+shared criteria list above, and nothing else. Another lane owns each of the
+remaining criteria; do not report on them, and do not judge the work as a
+whole.
 
 Read the leaf's structure and its source records against the profile in
 `guidance/liturgy/roman-1962-propers.md`, and answer only:
@@ -24,6 +25,16 @@ Read the leaf's structure and its source records against the profile in
     per-entry field or a table column. A criterion 12 finding is `authoring`,
     and it is repaired by rewriting the sentence, never by deleting what the
     sentence was about.
+14. Is every statement the guide makes about its own contents true of the
+    built canonical edition — that an appendix summarises something, that a
+    section names or prints something, that a figure appears "above", that a
+    cross-reference lands where it says? Open the passage the sentence points
+    at. An exploratory notice saying the precedent search is "summarised in
+    the terminal appendix", where the appendix names a record and enumerates
+    its holdings, stood through four consecutive evaluations as an
+    observation because no criterion owned it. A statement about what an
+    appointed text says is criterion 13 and the evidence-discipline lane's,
+    not yours.
 
 ## Criterion 12's scope, and why this lane is told twice
 

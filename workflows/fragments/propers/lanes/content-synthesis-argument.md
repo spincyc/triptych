@@ -11,11 +11,34 @@ Read the synthesis and the interpretive possibilities, and answer only:
 
 4. Is the synthesis a redistilled cross-proper argument rather than an
    abridged procession through the propers? Does each unit draw on more than
-   one appointed element and more than one witness?
+   one appointed element and more than one witness? And does each substantial
+   claim have one fullest home in the edition, with repeated quotations,
+   recaps, thin subsections, name lists and stretched links removed?
 5. Is every exploratory proposal labeled as exploratory, and does each join
    at least two appointed elements? Does each carry all four of the fields
    the profile mandates for a proposal, under headings that state the fields
-   the profile asks for?
+   the profile asks for? And is the section a discovery section rather than
+   a recap — no proposal a restatement of the detailed commentary or of the
+   synthesis?
+
+## One fullest home, and not a recap, are yours
+
+Criteria 4 and 5 are drawn from two paragraphs of the profile, and each used
+to drop the clause its paragraph ends on. The synthesis paragraph ends "give
+each substantial claim one fullest home; remove repeated quotations, recaps,
+thin subsections, name lists, and stretched links"; the proposals paragraph
+opens "a required discovery section, not a recap" and closes by rejecting
+"restatements of the detailed commentary". A lane escalated the gap three
+times across one production, measuring 31.7–32.1% verbatim overlap between
+the synthesis and the commentary of one edition while no criterion could name
+it. The clauses are in the criteria now and they are yours: a claim met at
+full strength in the commentary and again at full strength in the synthesis,
+a quotation printed whole in both, a proposal that restates a commentary
+paragraph with its fields filled in, are findings, and each names both
+passages and says which is the fullest home. The companion's reuse of
+canonical prose is a different question, asked later by the
+derivation-fidelity lane against a document that does not exist yet; yours is
+the canonical edition against itself.
 
 ## The mandated proposal fields are yours
 

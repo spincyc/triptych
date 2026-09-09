@@ -64,6 +64,11 @@ LABELS = (
     "triptych:brief-synthesis:end",
     "triptych:brief-synthesis:next",
 )
+# The profile's Reader-Facing Order fixes the brief synthesis at pages 3-4.
+# Checking only that the three anchors are adjacent accepted a whole reader
+# order displaced by a constant, which is exactly what a page-1 overflow
+# produces; one did, and it was caught by a worker reading page numbers.
+BRIEF_START_PAGE = 3
 
 
 def safe_file(leaf: Path, value: object, field: str) -> Path:
@@ -295,6 +300,13 @@ def validate_brief_pages(aux: Path) -> None:
         raise ValueError(
             "brief synthesis must occupy exactly two physical pages: "
             f"start={start}, end={end}, next={following}"
+        )
+    if start != BRIEF_START_PAGE:
+        raise ValueError(
+            "brief synthesis must begin on page "
+            f"{BRIEF_START_PAGE}, as the profile fixes it, not page {start}: "
+            "the reader order is displaced, most often by page 1 or page 2 "
+            "overflowing"
         )
 
 

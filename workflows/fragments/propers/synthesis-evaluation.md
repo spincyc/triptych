@@ -47,7 +47,14 @@ yours:
 4. **Companion conformance**: Does the companion's own build match the reader
    order and page assignments the profile fixes, and is every count it states
    true of its own shorter text? A count true of the full commentary is
-   routinely false of the abridged one that inherited the sentence.
+   routinely false of the abridged one that inherited the sentence. And is
+   every statement either edition makes about the other true of the
+   companion as derived — `format.tex`'s canonical `\editionnote` that the
+   companion "adds nothing this edition does not contain", a sentence in
+   `sections/90-scope.tex` about what the synthesis edition names at each
+   use, a locator in a file both editions input that has to resolve in both?
+   Such a sentence was written before the companion existed; it is decidable
+   only now, and it is owned here.
 
 ## Repair ownership
 

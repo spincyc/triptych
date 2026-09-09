@@ -15,7 +15,9 @@ while you are already in those files, and leave the rest.
 The companion, and only the companion: `synthesis.tex`, the
 `\ifdefined\TriptychSynthesisEdition` branches in `main.tex`, and the files
 under `sections/synthesis/`. `proper-components.toml` where the manifest must
-follow.
+follow, and `generation-metadata.tex`, whose `\AIDocumentRevisionTimestamp`
+you bring forward to this revision with an `\AIModelContribution` record for
+it, on the rules `author-proper.md` states for that file.
 
 **The canonical edition is settled and you may not revise it.** It passed a
 content evaluation before the companion was derived. If a finding can only be
@@ -26,8 +28,9 @@ put unevaluated changes into the larger edition, which is the direction this
 pipeline exists to prevent.
 
 You may not write `research/scope.md` either, at any severity: the research
-brief is immutable here and `research-synthesis` is its only writer. You may
-not write `propers/verified.md` or `propers/retrieved.txt`.
+brief is immutable here, and its writer is `research-synthesis` in `proper`
+and `brief-revision` in `proper-finish`. You may not write
+`propers/verified.md` or `propers/retrieved.txt`.
 
 ## Steps
 

@@ -42,7 +42,13 @@ detailed commentary" leaves the reviser to guess which passage to open.
 
 1. **Evidence discipline**: Are the five evidence states kept distinct
    (verified source text, checked quotation/paraphrase, source-grounded
-   synthesis, editorial/AI proposal, unverified lead)?
+   synthesis, editorial/AI proposal, unverified lead)? And where a claim is
+   stated in more than one section, does it carry the same bound each time?
+   Two passages saying flatly that no chant repertory was reached while a
+   third reports results from six named graduals is one defect whichever is
+   right, and the finding names every passage that must agree; the class
+   was sighted four times across one production's evaluations and owned by
+   none of them.
 2. **Source verification**: Are claims verified from primary, official,
    edition-identified sources? Are OCR and secondary citations treated as
    leads until checked? This criterion reaches the appointed Latin as the
@@ -59,7 +65,13 @@ detailed commentary" leaves the reviser to guess which passage to open.
    where found?
 4. **Cross-proper synthesis**: Is the synthesis a redistilled cross-proper
    argument (not an abridged procession)? Does each unit draw from multiple
-   elements and witnesses?
+   elements and witnesses? And does each substantial claim have one fullest
+   home in the edition, with repeated quotations, recaps, thin subsections,
+   name lists and stretched links removed, as the profile's own sentence
+   ends? A claim met at full strength in the commentary and again at full
+   strength in the synthesis, or a quotation printed whole in both, is this
+   criterion's defect, and the finding names both passages and says which is
+   the fullest home.
 5. **Exploratory proposals**: Are proposals labeled as exploratory? Does each
    join at least 2 elements? And does each carry every field the profile
    mandates for a proposal — the connecting mechanism, the theological,
@@ -71,6 +83,9 @@ detailed commentary" leaves the reviser to guess which passage to open.
    is on its own. The mandated fields of a proposal are criterion 5 and not
    criterion 9: reader order and page assignment are properties of the
    document, and the fields inside a proposal are properties of the proposal.
+   The section is a discovery section and not a recap: a proposal that
+   restates the detailed commentary or the synthesis, however well-formed
+   its fields, is this criterion's defect in the profile's own words.
 6. **Material disagreement**: Where the sources disagree, is the
    disagreement present in the prose and attributed to the sources that hold
    it? Is uncertainty carried where it bears on a claim, and currentness
@@ -91,6 +106,12 @@ detailed commentary" leaves the reviser to guess which passage to open.
    features, manuscripts, elements, proposals. It is not divided by subject
    matter: the arithmetic belongs here even when the things counted are
    evidence, or Latin constructions, or the appointed elements themselves.
+   A count over the collection — how many 1962 formularies, records or
+   identities carry a feature — is true only of the records the research
+   sweep behind this guide ran over and must be stated as bounded to that
+   sweep; a sibling leaf lands in the repository between an authoring and
+   its evaluation, and a count bound to the collection is falsified by a
+   leaf no lane read.
 8. **English rule**: Is English quoted from registered public-domain
    witnesses (Douay-Rheims for scripture, public-domain hand missal for
    orations)? No composed/translated/adapted English?
@@ -176,6 +197,28 @@ detailed commentary" leaves the reviser to guess which passage to open.
     itself both that it was in scope and which half of an English-gap block
     the profile asks for. It is in scope, on the same terms as the other
     two.
+13. **Fidelity to the appointed texts**: Is every reader-facing statement
+    about what an appointed text says, asks, or does true of the text as the
+    leaf prints it? A Collect that opens with a petition cannot state its
+    confession of incapacity "before anything at all is asked"; a Collect
+    belongs to the Mass of the Catechumens and cannot be one of "the two
+    prayers that frame the communion rite"; a phrase the guide says a Gospel
+    contains must be in the Gospel. The check is against `propers/verified.md`
+    and the appointed-text section, clause by clause, wherever the guide
+    paraphrases, orders, locates or characterizes an appointed text.
+    Criterion 2 asks whether the Latin is transcribed faithfully and
+    criterion 7 whether a count is right; this asks whether what the guide
+    says about the text is so. Three such errors stood through three and
+    four consecutive evaluations of one leaf as observations, because no
+    criterion owned them and four lanes said so.
+14. **Fidelity to the guide itself**: Is every statement the guide makes
+    about its own contents true of the built canonical edition? A notice
+    saying the precedent search is "summarised in the terminal appendix"
+    when the appendix names a record and enumerates its holdings, a
+    cross-reference to a section that does not carry what it is said to
+    carry, a figure said to appear "above" that does not, are this
+    criterion's defects. It is decided by opening the passage the sentence
+    points at, and it is `authoring`.
 
 ## Lane scope
 
@@ -221,13 +264,14 @@ Every **blocking** finding must name who has to repair it:
 
 **Your packet's `REPAIR_TARGETS` header names the values this run admits, and
 it is the authority — not the three above.** A pipeline that begins after
-research owns no research and no brief, so it admits `authoring` alone, and a
-finding naming an owner the run does not have is refused. On a fan-out stage
-that refusal costs every lane's result, not only yours. Where the header names
-one value, every blocking finding you raise carries that value; where the
-defect genuinely needs an owner the run does not have, it is not a blocking
-finding of yours at all but an escalation, which carries no `repair_target` —
-see *When no stage owns the repair* below.
+research owns no research, so `proper-finish` admits `brief` and `authoring`
+and never `research`, and a finding naming an owner the run does not have is
+refused. On a fan-out stage that refusal costs every lane's result, not only
+yours. Where the header names fewer values, every blocking finding you raise
+carries one of them; where the defect genuinely needs an owner the run does
+not have — evidence that was never retrieved, in a run that cannot retrieve —
+it is not a blocking finding of yours at all but an escalation, which carries
+no `repair_target` — see *When no stage owns the repair* below.
 
 Where the header names all three, ask the three questions in this order and
 stop at the first yes.
@@ -241,7 +285,8 @@ stop at the first yes.
   named against the component manifest — or it recorded a bound and does not
   carry that bound forward into what it asserts. Nothing new has to be
   retrieved: the correction is a sentence of `research/scope.md`, which no
-  stage but `research-synthesis` may touch.
+  stage but its writer may touch — `research-synthesis` in `proper`,
+  `brief-revision` in `proper-finish`.
 - `authoring` — **is the brief adequate, and the leaf departing from it?** The
   prose, the structure, or the use of citations in the canonical leaf is
   defective while the brief it was written from is right.
@@ -284,11 +329,16 @@ until the author runs. Both get done, in the order the evidence requires, and
 neither is rediscovered. Splitting is not bookkeeping: it is the only way the
 second half is delivered at all.
 
-`brief` exists because `research/scope.md` has exactly one writer,
-`research-synthesis`, and so a defect in the brief can be repaired in no other
-stage. Naming such a defect `research` does not reach that writer any sooner:
-it discards the brief and re-runs every research lane only to arrive back at
-the same stage with the same evidence.
+`brief` exists because `research/scope.md` has exactly one writer in any run
+— `research-synthesis` in `proper`, which writes it from the joined research,
+and `brief-revision` in `proper-finish`, which begins after research and
+corrects the brief in place — and so a defect in the brief can be repaired in
+no other stage. Naming such a defect `research` does not reach that writer any
+sooner: it discards the brief and re-runs every research lane only to arrive
+back at the same stage with the same evidence. Until `proper-finish` had a
+brief owner, a brief defect found there had no owner at all, and a later
+authoring pass reading the uncorrected brief regenerated the defect the
+previous evaluation had spent a finding removing.
 
 The line between `research` and `brief` is retrieval, not severity. A worked
 example: the brief cited the Gelasian Postcommunion at "Book II sect. LXIX,
@@ -305,7 +355,9 @@ that owner travel the route:
 - any finding naming `research` → the `research` stage, then
   `research-synthesis`, then `author-proper`, then a fresh content evaluation;
 - otherwise, any finding naming `brief` → `research-synthesis`, then
-  `author-proper`, then a fresh content evaluation;
+  `author-proper`, then a fresh content evaluation — in `proper-finish`,
+  → `brief-revision`, then `content-revision` with the same evaluation's
+  `authoring` findings carried to it, then a fresh content evaluation;
 - otherwise → `content-revision`.
 
 You do not choose the route and the controller does not choose the route: the
@@ -381,19 +433,21 @@ acceptance. It is written into the run's escalation ledger under its finding
 id, restated into the same slot if you raise it again, and reported in
 `tpt proper status` and in the terminal message of an accepted or blocked run.
 
-Be exact about how far that carries. The ledger is part of the run state
-under `build/`, which is ignored, which `make clean` removes and `wt tidy`
-sweeps, and which nothing preserves between productions. A blocking finding
-and an observation reach a tracked record beside the document; an escalation
-does not, and the only part of it that reliably leaves is the terminal
-message a person reads. Write it so that message is enough on its own: name
-the file and the lines, state the contradiction, and say in `required_result`
-what the maintainer is being asked to decide.
+It also reaches the tree. The ledger itself is run state under `build/`,
+which is ignored, which `make clean` removes and `wt tidy` sweeps; but the
+stage that records standing findings writes the run's whole escalation
+ledger, yours included, to `<document_root>/evaluations/blocking-findings-v1.toml`
+under `[[escalations]]`, rewritten whole at each evaluation, so the decision
+you are asking of a maintainer outlives the run directory. Write it so that
+record is enough on its own: name the file and the lines, state the
+contradiction, and say in `required_result` what the maintainer is being
+asked to decide. Seven escalations of one production survived only because a
+driver copied them into a handoff by hand.
 
 An escalation does not change your lane's disposition. Your criteria are met —
 the leaf conforms as well as anything could — so the lane returns `PASS` and
 files the escalation alongside. An evaluation carrying nothing but escalations
-is a `PASS` and the run continues to `build-artifacts`, which is the point: the
+is a `PASS` and the run continues to `derive-synthesis`, which is the point: the
 document is finished and the defect is somewhere else. Returning
 `CHANGES_REQUIRED` with only an escalation names no owner and the engine
 refuses it.
@@ -435,6 +489,8 @@ unrepaired defect. The blocking findings still standing against this leaf are
 written to `<document_root>/evaluations/blocking-findings-v1.toml`, rewritten
 whole at each evaluation. Read it, and where you find a defect it already
 names, keep that id. Where you are restating something whose id you cannot
-recover — an advisory in particular, since that file holds blocking findings
-and observations only — take a fresh id and say in `problem` what you are
-restating and why the id changed. Never reuse an id for a different defect.
+recover — an advisory in particular, since that file holds blocking findings,
+observations and escalations and no advisory — take a fresh id and say in
+`problem` what you are restating and why the id changed. An escalation's id
+is recoverable the same way, under `[[escalations]]`, and is reused when you
+restate the same escalation. Never reuse an id for a different defect.

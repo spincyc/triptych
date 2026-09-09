@@ -65,6 +65,17 @@ natural-language series with internal commas, appositives and titles in them,
 and telling an item from a clause is the judgement you are here for. Count
 them yourself.
 
+A count over the collection is a special case, and it is stated as bounded.
+"Twenty-one collated records covering fifteen distinct 1962 identities" was
+true when written and false three days later, because a sibling leaf landed
+in the repository between the authoring and the evaluation, and no lane of
+this run read it. Such a count is true only of the records the research
+sweep behind this guide ran over, and the conforming form binds it to that
+sweep — "of the fifteen formularies this guide has collated" — rather than to
+the collection; a count bound to the repository is a finding whenever the
+repository disagrees, and the repair is to re-bound it, not to recount what
+no lane swept.
+
 Report a miscount as its own finding rather than folding it into a citation
 finding beside it: the repair is different, and one `required_result` that
 asks for two unrelated corrections gets one of them. Say in
@@ -75,6 +86,16 @@ witness went missing or was never there. A miscount is ordinarily
 of them is wrong. It is `research` only where the count could not be made
 true without evidence the brief does not hold — where the fifth witness would
 have to be retrieved before it could be either printed or given up.
+
+## Not yours: whether a sentence about the text is true
+
+Whether the guide's paraphrase of an appointed text is so — that a Collect
+petitions before it confesses, that a Gospel contains the phrase the guide
+says it does — is criterion 13 and the evidence-discipline lane's; whether
+the guide's statement about its own contents is so — that an appendix
+summarises what a notice says it does — is criterion 14 and the
+profile-conformance lane's. Yours is the number and the citation, not the
+sentence around them.
 
 ## Not yours: the Latin's accents and spelling
 

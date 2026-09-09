@@ -1,6 +1,6 @@
 {
   "id": "proper",
-  "version": 26,
+  "version": 27,
   "description": "1962 propers synthesis production workflow",
   "default_effort": "xhigh",
   "document_argument": "proper",
@@ -364,6 +364,7 @@
         }
       ],
       "max_iterations": 4,
+      "max_total_iterations": 10,
       "records_standing_findings": true
     },
     {

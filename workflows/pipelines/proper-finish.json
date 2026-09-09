@@ -1,6 +1,6 @@
 {
   "id": "proper-finish",
-  "version": 4,
+  "version": 5,
   "description": "1962 propers synthesis production workflow",
   "default_effort": "xhigh",
   "document_argument": "proper",
@@ -170,11 +170,16 @@
       "fail_transition": "content-revision",
       "repair_routes": [
         {
+          "repair_target": "brief",
+          "transition": "brief-revision"
+        },
+        {
           "repair_target": "authoring",
           "transition": "content-revision"
         }
       ],
-      "max_iterations": 3,
+      "max_iterations": 4,
+      "max_total_iterations": 8,
       "records_standing_findings": true
     },
     {
@@ -195,6 +200,25 @@
       ],
       "result_schema": "worker-result.json",
       "next": "content-preflight",
+      "reports_repairs": true
+    },
+    {
+      "id": "brief-revision",
+      "type": "bounded-revision",
+      "execution": {
+        "mode": "single"
+      },
+      "revision_target": "research-synthesis",
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "propers/brief-revision.md"
+      ],
+      "repairs": [
+        "brief"
+      ],
+      "result_schema": "worker-result.json",
+      "next": "content-revision",
       "reports_repairs": true
     },
     {

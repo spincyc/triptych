@@ -1,6 +1,6 @@
 {
   "name": "content-evaluation-finish-result",
-  "description": "Structured result from the content evaluation fan-out, whose blocking findings name the stage that owns their repair and whose escalation findings name the artifact no stage in this run may write",
+  "description": "Structured result from the content evaluation fan-out of the proper-finish workflow, whose blocking findings name the stage that owns their repair -- brief for research/scope.md, which brief-revision corrects in place, or authoring for the canonical leaf -- and whose escalation findings name the artifact no stage in this run may write; there is no research owner, because this pipeline begins after research",
   "required_fields": [
     "stage",
     "iteration",
@@ -29,6 +29,7 @@
       "advisory"
     ],
     "repair_target": [
+      "brief",
       "authoring"
     ]
   },

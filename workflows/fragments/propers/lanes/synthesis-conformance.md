@@ -13,6 +13,24 @@ Read the companion's own build against the profile in
   fixes for it, measured on the companion's own build and not the canonical
   one?
 - Is every count the companion states true of the companion's own text?
+- Is every statement either edition makes about the other true of the
+  companion as derived?
+
+## Statements about the other edition are yours
+
+The canonical edition was settled before the companion existed, and it
+already says things about the companion: `format.tex`'s canonical
+`\editionnote` may claim the companion "adds nothing this edition does not
+contain", `sections/90-scope.tex` may say what the synthesis edition names at
+each use of a translation, and a file both editions input may carry a
+cross-reference or locator that has to resolve in both. Read each such
+sentence against the companion's build and report it where it is false. Where
+the companion cannot be made to satisfy it without changing the canonical
+sentence, say so in `required_result`: the derivation reviser may not edit
+canonical prose, and a finding that can only be cleared that way is one it
+will honestly report `not-repaired`. This class was sighted eight times across
+two productions and owned by nobody, because it is a claim about an artifact
+no canonical lane could see.
 
 ## Counts are yours, and the abridgement is where they break
 

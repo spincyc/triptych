@@ -29,6 +29,9 @@ STAGES = [
     "content-preflight",
     "content-evaluation",
     "content-revision",
+    # The brief's one writer in this pipeline, which begins after research
+    # and until v5 had no stage that could correct research/scope.md.
+    "brief-revision",
     # The editions are produced in sequence, largest first: the canonical
     # guide is settled by the loop above, and only then is the companion
     # written from it and judged against it.
@@ -101,7 +104,7 @@ class DefinitionTests(unittest.TestCase):
     def test_finish_pipeline_loads_end_to_end(self) -> None:
         loaded = self.engine.load_workflow("proper-finish")
         self.assertEqual(loaded["id"], "proper-finish")
-        self.assertEqual(loaded["version"], 4)
+        self.assertEqual(loaded["version"], 5)
         self.assertEqual([stage["id"] for stage in loaded["stages"]], STAGES)
 
     def test_document_contract_is_copied_verbatim(self) -> None:
@@ -114,11 +117,18 @@ class DefinitionTests(unittest.TestCase):
         finish = raw_stages("proper-finish")
         self.assertEqual(list(finish), STAGES)
         for stage_id in STAGES:
-            if stage_id == "content-evaluation":
+            if stage_id in ("content-evaluation", "brief-revision"):
                 continue
             with self.subTest(stage=stage_id):
                 self.assertEqual(finish[stage_id], original[stage_id])
+        self.assertNotIn("brief-revision", original,
+                         "the brief's writer in proper is research-synthesis; "
+                         "brief-revision exists only where that stage does not")
 
+        # The finish evaluation differs from the full one in exactly four
+        # ways: it cannot send a run to research, its brief route goes to the
+        # in-place corrector rather than the integrator, its schema admits
+        # only the owners it has, and its ceiling is two rounds lower.
         expected = original["content-evaluation"].replace(
             '"result_schema": "content-evaluation-result.json"',
             '"result_schema": "content-evaluation-finish-result.json"',
@@ -126,15 +136,14 @@ class DefinitionTests(unittest.TestCase):
             '        {\n'
             '          "repair_target": "research",\n'
             '          "transition": "research"\n'
-            '        },\n'
-            '        {\n'
-            '          "repair_target": "brief",\n'
-            '          "transition": "research-synthesis"\n'
             '        },\n',
             "",
         ).replace(
-            '"max_iterations": 4',
-            '"max_iterations": 3',
+            '"transition": "research-synthesis"',
+            '"transition": "brief-revision"',
+        ).replace(
+            '"max_total_iterations": 10',
+            '"max_total_iterations": 8',
         )
         self.assertEqual(finish["content-evaluation"], expected)
 
@@ -155,12 +164,15 @@ class DefinitionTests(unittest.TestCase):
                     "author-proper",
                 )
 
-    def test_content_findings_are_authoring_only_and_fail_closed(self) -> None:
+    def test_content_findings_name_brief_or_authoring_and_fail_closed(self) -> None:
         stage = next(
             stage for stage in self.finish["stages"]
             if stage["id"] == "content-evaluation"
         )
         self.assertEqual(stage["repair_routes"], [{
+            "repair_target": "brief",
+            "transition": "brief-revision",
+        }, {
             "repair_target": "authoring",
             "transition": "content-revision",
         }])
@@ -168,7 +180,13 @@ class DefinitionTests(unittest.TestCase):
                          "content-evaluation-finish-result.json")
         schema = self.engine.load_schema(stage["result_schema"])
         self.assertEqual(schema["finding_enums"]["repair_target"],
-                         ["authoring"])
+                         ["brief", "authoring"])
+        stages = {s["id"]: s for s in self.finish["stages"]}
+        self.assertEqual(stages["brief-revision"]["repairs"], ["brief"])
+        self.assertEqual(stages["brief-revision"]["next"], "content-revision",
+                         "the leaf's own findings from the same evaluation "
+                         "are carried to the reviser that runs next")
+        self.assertTrue(stages["brief-revision"]["reports_repairs"])
 
         research_owned = {
             "stage": "content-evaluation",
@@ -184,7 +202,7 @@ class DefinitionTests(unittest.TestCase):
             }],
         }
         with self.assertRaisesRegex(
-            WorkflowError, "expected one of: authoring"
+            WorkflowError, "expected one of: brief, authoring"
         ):
             _validate_result(research_owned, schema, EVALUATOR)
 
@@ -275,13 +293,13 @@ class DefinitionTests(unittest.TestCase):
                 "provider": "gpt",
             })
             self.assertEqual(seeded["workflow_id"], "proper-finish")
-            self.assertEqual(seeded["workflow_version"], 4)
+            self.assertEqual(seeded["workflow_version"], 5)
             self.assertEqual(seeded["stage"], "author-proper")
             packet = (
                 self.engine.run_dir(seeded["run_id"])
                 / "packets" / "author-proper-0000.txt"
             ).read_text(encoding="utf-8")
-            self.assertIn("WORKFLOW: proper-finish v4", packet)
+            self.assertIn("WORKFLOW: proper-finish v5", packet)
             self.assertIn("STAGE: author-proper", packet)
 
             commit = self.engine.load_state(seeded["run_id"])["repo_commit"]

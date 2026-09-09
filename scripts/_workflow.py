@@ -2764,8 +2764,13 @@ class WorkflowEngine:
             "# can cover it -- a committed record, or this file's hash in the",
             "# run id and the acceptance audit -- and until then this is a",
             "# record for people.",
+            "#",
+            "# Escalations -- defects in artifacts no stage of the run may",
+            "# write: guidance, the source library, the tools, the workflow --",
+            "# are written here too, from the run's whole ledger, so that the",
+            "# decision they ask of a maintainer outlives the run directory.",
             "",
-            "standing_findings_schema = 1",
+            "standing_findings_schema = 2",
             'record_type = "standing-blocking-findings"',
             f"document = {_toml_string(state['normalized_args'].get('proper', ''))}",
             f"provider = {_toml_string(state['normalized_args'].get('provider', ''))}",
@@ -2794,6 +2799,22 @@ class WorkflowEngine:
                     lines.append(
                         f"{key} = {_toml_string(str(observation[key]))}"
                     )
+            lines.append("")
+        # The ledger is keyed by (stage, id) and sorted, so this is a function
+        # of what the run found and not of when; the record carries the whole
+        # of it, not only this stage's, because the file is the one place an
+        # escalation raised by any stage reaches the tree.
+        for entry in state.get("escalations", []) or []:
+            finding = entry.get("finding", {}) or {}
+            lines.append("[[escalations]]")
+            lines.append(f"stage = {_toml_string(str(entry.get('stage', '')))}")
+            lines.append(f"iteration = {int(entry.get('iteration', 0))}")
+            for key in (
+                "id", "lane", "severity", "location", "problem",
+                "required_result", "escalated_to",
+            ):
+                if key in finding:
+                    lines.append(f"{key} = {_toml_string(str(finding[key]))}")
             lines.append("")
 
         try:

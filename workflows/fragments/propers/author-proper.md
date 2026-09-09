@@ -33,6 +33,19 @@ one and say in your summary what you did with it. This is not optional
 context; before it existed the author re-authored blind and the next
 evaluation spent five lanes finding the same defects again.
 
+Where `<document_root>/evaluations/blocking-findings-v1.toml` exists, read it
+too, before you begin. It is the tracked record a previous production's last
+content evaluation left: the blocking findings still standing against this
+leaf, the observations its lanes recorded outside their criteria, and the
+escalations it raised for a maintainer. Nothing forwards it to you — no packet
+header carries it, because it is tree state and not run state — so a
+production that starts at this stage would otherwise spend its first
+evaluation rediscovering exactly what the last one ended on. Treat each
+standing finding as a `CARRIED_FINDINGS` entry addressed to you: address it
+in this pass and say in your summary what became of it, and read the
+observations for defects the criteria of that evaluation did not reach. The
+escalations are not yours to repair; leave them where they are.
+
 Work from the research brief the `research-synthesis` stage wrote to
 `research/scope.md`, and not from any prose a controller composed for you.
 `research/scope.md` is immutable input owned by `research-synthesis`. Read
@@ -66,6 +79,14 @@ learns belongs in the files this stage owns, listed below.
    existing companion file wrong, that is expected and it is the derivation's
    business, not yours: say so in your summary and leave it.
 3. Create or update `proper-components.toml` with the component manifest.
+   Declare `[[components]]` in the profile's reader order — the
+   source-grounded synthesis, then `The Propers: Notable and Quotable`, then
+   `The Propers: Interpretive Possibilities`. `check-proper-components`
+   requires that order of a revised manifest and tolerates the reversed tail
+   only in manifests nobody has revised since: every manifest in the
+   collection carried the reversed tail while the tool and the profile
+   disagreed, and the disagreement was settled on 2026-09-06 in the
+   profile's favour.
 4. Create or update `format.tex` with leaf-local LaTeX macros.
 5. Create or update `generation-metadata.tex`. It carries three kinds of
    declaration and `check-generation-metadata` requires all of them:

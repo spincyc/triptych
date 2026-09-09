@@ -268,7 +268,32 @@ A run records the digest at seed time, in both the manifest and the state, and
 every `advance` and `replay` recomputes it. If the workflow source has changed
 since the run was seeded, the run fails closed rather than continuing under
 guidance it never started with. A changed workflow means a new run. The
-`proper` workflow is at version 26 and `proper-finish` at version 4. Version
+`proper` workflow is at version 27 and `proper-finish` at version 5. Version
+27 and `proper-finish` 5 are what three productions that reached the content
+loop's absolute ceiling, or died at a host limit one lane short of finishing
+it, asked for. `content-evaluation` gains two criteria — fidelity to the
+appointed texts, owned by the evidence-discipline lane, and fidelity to the
+guide's own statements about itself, owned by profile-conformance — because
+three false assertions about what a Collect says stood through four
+evaluations of one leaf as observations nobody owned; criteria 4 and 5 regain
+the profile clauses they had dropped (one fullest home, not a recap), criterion
+1 asks that a bound be stated at one strength wherever a claim recurs, and
+criterion 7 binds a collection-wide count to the sweep that produced it.
+`proper-finish` gains a `brief-revision` stage, the brief's one writer in that
+pipeline, so a `brief` finding found after research has an owner and is
+corrected in place before `content-revision` receives the leaf's own findings;
+its content loop widens to the same four repeats and an explicit ceiling of
+eight, and `proper`'s ceiling is declared at ten. The standing findings record
+carries the run's escalation ledger under `[[escalations]]`, so a decision
+asked of a maintainer outlives the run directory. `content-revision` revises
+the canonical edition alone, brings `generation-metadata.tex` forward, makes
+the smallest change and sweeps a class that has survived a site-by-site
+repair; `derive-synthesis` and `synthesis-revision` bring the metadata forward
+too, and the companion-conformance lane owns the statements the canonical
+edition makes about the companion. `check-proper-components --aux` now
+requires the brief synthesis to begin on page 3, since adjacency alone
+accepted a reader order displaced by a page-1 overflow. Every agent is told it
+is the whole of its dispatch. Version
 26 produces the two editions in sequence, largest first: `author-proper` and
 the content loop settle the canonical guide alone, `derive-synthesis` then
 writes the synthesis companion from it, and `synthesis-evaluation` — two
@@ -502,11 +527,13 @@ id so a lane restating it every iteration occupies one slot, and reported in
 `status` and in the terminal message of an accepted or blocked run.
 
 That ledger is part of the run state, and the run state is under `build/`.
-Unlike a blocking finding or an observation, an escalation reaches no tracked
-record, so what reliably leaves a run is the terminal message a person reads;
-`status` can restate it only while the run directory survives. Giving
-escalations a tracked home is owed work, and is the second half of what the
-standing findings record below does for findings.
+Since `proper` version 27 the stage that records standing findings writes the
+whole ledger — every stage's escalations, not only its own — into the tracked
+record below under `[[escalations]]`, keyed and sorted as the ledger is, so
+that the decision an escalation asks of a maintainer outlives the run
+directory. Before that the only part of an escalation that reliably left a run
+was the terminal message a person read, and seven escalations of one
+production survived only because a driver copied them into a handoff by hand.
 
 ### The standing findings record
 
@@ -836,7 +863,8 @@ stage may write a file. The third question is where a defect goes:
 ```
 independent evidence discovery  -> seven-lane host-max research
 research-synthesis              -> pure integration, no searching
-research/scope.md               -> sole writer is research-synthesis
+research/scope.md               -> one writer per run: research-synthesis in
+                                   proper, brief-revision in proper-finish
 authoring                       -> single owner
 content evaluation              -> classifies repair owner
 research defect                 -> research, synthesis, authoring, fresh evaluation
