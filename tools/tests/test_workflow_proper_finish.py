@@ -29,6 +29,12 @@ STAGES = [
     "content-preflight",
     "content-evaluation",
     "content-revision",
+    # The editions are produced in sequence, largest first: the canonical
+    # guide is settled by the loop above, and only then is the companion
+    # written from it and judged against it.
+    "derive-synthesis",
+    "synthesis-evaluation",
+    "synthesis-revision",
     "build-artifacts",
     "mechanical-gates",
     "artifact-revision",
@@ -95,7 +101,7 @@ class DefinitionTests(unittest.TestCase):
     def test_finish_pipeline_loads_end_to_end(self) -> None:
         loaded = self.engine.load_workflow("proper-finish")
         self.assertEqual(loaded["id"], "proper-finish")
-        self.assertEqual(loaded["version"], 3)
+        self.assertEqual(loaded["version"], 4)
         self.assertEqual([stage["id"] for stage in loaded["stages"]], STAGES)
 
     def test_document_contract_is_copied_verbatim(self) -> None:
@@ -269,13 +275,13 @@ class DefinitionTests(unittest.TestCase):
                 "provider": "gpt",
             })
             self.assertEqual(seeded["workflow_id"], "proper-finish")
-            self.assertEqual(seeded["workflow_version"], 3)
+            self.assertEqual(seeded["workflow_version"], 4)
             self.assertEqual(seeded["stage"], "author-proper")
             packet = (
                 self.engine.run_dir(seeded["run_id"])
                 / "packets" / "author-proper-0000.txt"
             ).read_text(encoding="utf-8")
-            self.assertIn("WORKFLOW: proper-finish v3", packet)
+            self.assertIn("WORKFLOW: proper-finish v4", packet)
             self.assertIn("STAGE: author-proper", packet)
 
             commit = self.engine.load_state(seeded["run_id"])["repo_commit"]

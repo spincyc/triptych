@@ -55,14 +55,18 @@ by defect and not by subject matter, so a miscount inside the evidence is
 still a miscount. Do not report it, and do not treat its presence as an
 evidence-state defect of your own.
 
-## Both editions are yours
+## The canonical edition only
 
-The leaf builds more than one reader-facing document out of one source tree,
-as the shared fragment above explains. A claim restated in a second edition
-carries its own evidence state, and the short form that reaches only the
-synthesis edition can stand a lead flat where the canonical prose bounded it.
-Reading the canonical build alone would never show that. Read what every
-document renders, and name in each finding the file the claim is in.
+You read the document `main.tex` builds, and only that. The synthesis
+companion is written later, by `derive-synthesis`, from whatever this
+evaluation settles, and it is judged by its own lanes against the edition you
+are reading. Where `main.tex` carries an `\ifdefined\TriptychSynthesisEdition`
+branch, the arm that runs with the macro undefined is yours and the other arm
+is not; nothing under `sections/synthesis/` is yours at all.
+
+A defect that exists only in the companion is not a finding of yours. Raising
+it here routes a repair to a stage that has not run, and the companion may not
+even carry the passage once it is derived from the corrected canonical prose.
 
 ## Result
 

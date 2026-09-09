@@ -1,0 +1,48 @@
+{
+  "name": "synthesis-evaluation-result",
+  "description": "Structured result from the synthesis-companion evaluation fan-out, which judges the derived companion against the settled canonical edition; its blocking findings name derivation as the owner, because the canonical leaf and the brief are both closed by the time this stage runs",
+  "required_fields": [
+    "stage",
+    "iteration",
+    "disposition",
+    "findings"
+  ],
+  "valid_dispositions": [
+    "PASS",
+    "CHANGES_REQUIRED",
+    "BLOCKED"
+  ],
+  "finding_fields": [
+    "id",
+    "severity",
+    "location",
+    "problem",
+    "required_result"
+  ],
+  "blocking_finding_fields": [
+    "repair_target"
+  ],
+  "finding_enums": {
+    "severity": [
+      "blocking",
+      "escalation",
+      "advisory"
+    ],
+    "repair_target": [
+      "derivation"
+    ]
+  },
+  "optional_fields": [
+    "summary",
+    "lane",
+    "lane_packet_hash",
+    "observations"
+  ],
+  "escalation_finding_fields": [
+    "escalated_to"
+  ],
+  "observation_fields": [
+    "location",
+    "note"
+  ]
+}

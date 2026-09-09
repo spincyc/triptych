@@ -916,6 +916,9 @@ class LauncherTests(unittest.TestCase):
                 "synthesis-argument", "citation-integrity",
                 "profile-conformance",
             ],
+            "synthesis-evaluation": [
+                "derivation-fidelity", "companion-conformance",
+            ],
             "visual-evaluation": [
                 "density-and-hierarchy", "page-rhythm", "fixed-pagination",
                 "clipping-and-apparatus",
@@ -926,7 +929,7 @@ class LauncherTests(unittest.TestCase):
         self.assertEqual(single, {
             "seed", "authorize-target", "resolve-context", "source-audit",
             "research-synthesis", "source-registration", "author-proper",
-            "content-revision",
+            "content-revision", "derive-synthesis", "synthesis-revision",
             "build-artifacts", "artifact-revision", "visual-revision",
             "publish-artifacts", "generate-web", "web-evaluation",
             "web-revision", "install-publication", "publication-revision",

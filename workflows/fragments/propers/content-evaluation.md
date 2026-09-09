@@ -8,38 +8,35 @@ tells you how to find. Do not rediscover what mechanical gates will check
 later (build success, PDF existence, undefined references). Focus on
 scholarly content.
 
-## What the leaf builds
+## What you are evaluating: the canonical edition, alone
 
-A leaf is one source tree, and it may build more than one reader-facing
-document out of it. Establish which before you read anything, because "the
-proper leaf" names that source tree and not a single document.
+**You evaluate the canonical edition — the document `main.tex` builds — and
+nothing else.** The synthesis companion does not exist yet at this stage and
+is not your business when it does. It is written from what you settle here, by
+`derive-synthesis`, and judged afterwards by its own evaluation against the
+edition you are reading now.
 
-List the leaf's top-level `.tex` files. `main.tex` builds the canonical
-guide. A `synthesis.tex` beside it builds a second published document, and
-what that document contains is read out of the files rather than inferred
-from the name:
+Establish what the canonical build renders before you read anything. Follow
+`main.tex`'s `\input` list and read what it puts in front of a reader. Where
+`main.tex` carries `\ifdefined\TriptychSynthesisEdition` branches, **the arm
+that runs when the macro is undefined is the canonical edition and is yours;
+the other arm is the companion's and is not.** A defect that exists only
+inside the companion's arm, or only under `sections/synthesis/`, is out of
+scope for you: raising it here routes a repair to a stage that has not run.
 
-- Where `synthesis.tex` is a two-line stub that defines
-  `\TriptychSynthesisEdition` and inputs `main.tex`, `main.tex`'s own
-  `\ifdefined\TriptychSynthesisEdition` branches decide what each edition
-  carries. A branch may swap one `\input` for another, or fence off prose
-  written inline.
-- Where `synthesis.tex` is a document in its own right, its `\input` list
-  decides, and it may share some section files with `main.tex` and not
-  others.
+This used to be otherwise, and the change is the reason this stage now
+converges. Both editions were evaluated together: every lane read two
+documents, every finding was repaired in two places, and a claim corrected in
+one edition could stand published and wrong in the other because the reviser
+repaired the file the finding named and not its twin. Run `e4aebcbd941b6b1a`
+raised that class round after round and its lanes recorded prose duplicated
+between the editions as an unowned observation at six consecutive iterations,
+because nothing could adjudicate two documents in flight at once. Halving what
+you read is not a loosening of this stage; it is what lets you finish it.
 
-Follow the inputs both ways and write down what each document puts in front
-of a reader. Prose that reaches only one of them is parallel prose: the same
-claim is made twice, in two places, and a lane that read only the canonical
-build has not read the document. Read both editions.
-
-Then name in every finding the file the defect is in, and the line or the
-sentence within it, never only the section it belongs to.
-`sections/30-commentary.tex` and
-`sections/synthesis/20-integrated-commentary.tex` are two files that both
-answer to "the detailed commentary", and a finding naming only "the detailed
-commentary" leaves the reviser to guess which to open — where a claim is
-stated in both, guessing repairs one edition and publishes the other.
+Name in every finding the file the defect is in, and the line or the sentence
+within it, never only the section it belongs to. A finding naming only "the
+detailed commentary" leaves the reviser to guess which passage to open.
 
 ## Evaluation criteria
 

@@ -7,10 +7,25 @@ empty it holds further blocking findings the same evaluation raised against
 the leaf and which never reached an author, because a `research` or `brief`
 defect was repaired first. They are yours too, and unaddressed.
 
+The ADVISORY_FINDINGS header is a third list and a different obligation. It
+holds findings the same evaluation raised and deliberately did **not** block
+on. They gate nothing, they spend no iteration budget, and they are owed no
+entry in `finding_dispositions` — naming one there is refused. Clear the ones
+you can while you are already in those files, and leave the rest without
+comment.
+
+Take them seriously anyway, because the alternative is worse than the work.
+An advisory that reached nobody used to leave a lane one way to be heard:
+re-file it as blocking a round later. Lanes did, and it cost a production its
+whole budget — 31% of every blocking finding in run `e4aebcbd941b6b1a` was
+the raising lane's own advisory from an earlier round. An advisory you clear
+now is a blocking finding that never has to be raised.
+
 ## Your task
 
 Address each blocking finding from the prior evaluation. Do not relitigate
-accepted work. Focus on the specific findings forwarded to you.
+accepted work. Focus on the specific findings forwarded to you, then clear
+what you reasonably can of the advisories.
 
 ## Steps
 
@@ -18,6 +33,9 @@ accepted work. Focus on the specific findings forwarded to you.
 2. For each finding, make the specific change required by its
    `required_result` field.
 3. Do not paraphrase or reinterpret the findings. Address them as written.
+4. Read ADVISORY_FINDINGS and clear the ones whose repair is plainly stated
+   and local to a file you are already editing. Skip any that would widen the
+   change or that you are not confident of; nothing is charged either way.
 4. After addressing all findings, verify that the changes do not introduce
    new violations of the evaluation criteria.
 5. Follow the same authoring rules as the author-proper stage, including the

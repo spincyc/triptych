@@ -315,8 +315,9 @@ class PropersWorkflowTests(unittest.TestCase):
                         (self.engine.fragments_dir / frag).is_file(),
                         f"missing lane fragment for {stage['id']}/"
                         f"{lane['id']}: {frag}")
-        self.assertEqual(declared, 16,
-                         "seven research, five content, four visual lanes")
+        self.assertEqual(
+            declared, 18,
+            "seven research, five content, two synthesis, four visual")
 
     def test_propers_all_fragments_exist(self):
         """Every fragment referenced by the workflow exists on disk."""

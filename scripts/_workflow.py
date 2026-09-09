@@ -1554,9 +1554,11 @@ class WorkflowEngine:
         carried_findings = self._carried_findings(
             run_id, workflow, pending, next_stage, prior_findings, fresh=result
         )
+        advisory_findings = self._extract_advisory_findings(result, stage)
         packet = self._compile_stage_packets(
             workflow, next_stage, pending, self.run_dir(run_id),
             prior_findings, carried_findings,
+            advisory_findings=advisory_findings,
         )
         self._stage_packet(pending, packet)
         # The packet is written before the result that produced it, so that a
@@ -1660,7 +1662,7 @@ class WorkflowEngine:
             return report
         workflow = self.load_bound_workflow(state)
         stage = self._get_stage(workflow, state["current_stage"])
-        prior_findings, carried_findings = \
+        prior_findings, carried_findings, advisory_findings = \
             self._load_prior_findings_for_current(run_id, state, workflow)
         # stage_iterations was incremented after the last packet was compiled,
         # so recompile at the iteration that packet used.
@@ -1672,6 +1674,7 @@ class WorkflowEngine:
         packet = self._compile_stage_packets(
             workflow, stage, state, self.run_dir(run_id), prior_findings,
             carried_findings, iteration=iteration,
+            advisory_findings=advisory_findings,
         )
         deterministic = (
             packet["hash"] == last_pkt["hash"] if last_pkt else True
@@ -1885,6 +1888,7 @@ class WorkflowEngine:
         iteration: int | None = None,
         lane: dict[str, Any] | None = None,
         lane_index: int | None = None,
+        advisory_findings: list[dict[str, Any]] | None = None,
     ) -> dict[str, Any]:
         """Deterministically compile a guidance packet, writing nothing.
 
@@ -2010,6 +2014,17 @@ class WorkflowEngine:
             )
         )
 
+        # A third field, and a third thing. These gate nothing and are owed no
+        # entry in `finding_dispositions`; they ride along because the stage
+        # about to edit the document is the only stage that can cheaply clear
+        # them, and because an advisory that reaches no one is an advisory a
+        # lane will re-file as blocking to be heard.
+        header_lines.append(
+            "ADVISORY_FINDINGS: " + json.dumps(
+                advisory_findings or [], sort_keys=True, separators=(",", ":")
+            )
+        )
+
         header = _FIELD_SEP.join(header_lines)
 
         # Load fragments in declared order. Argument placeholders are
@@ -2067,6 +2082,7 @@ class WorkflowEngine:
         prior_findings: list[dict[str, Any]],
         carried_findings: list[dict[str, Any]] | None = None,
         iteration: int | None = None,
+        advisory_findings: list[dict[str, Any]] | None = None,
     ) -> dict[str, Any]:
         """Compile a stage's packet and, for a fan-out stage, its lane packets.
 
@@ -2078,13 +2094,14 @@ class WorkflowEngine:
         """
         packet = self._compile_packet(
             workflow, stage, state, run_dir, prior_findings, carried_findings,
-            iteration=iteration,
+            iteration=iteration, advisory_findings=advisory_findings,
         )
         packet["lanes"] = [
             self._compile_packet(
                 workflow, stage, state, run_dir, prior_findings,
                 carried_findings,
                 iteration=packet["iteration"], lane=lane, lane_index=index,
+                advisory_findings=advisory_findings,
             )
             for index, lane in enumerate(_stage_lanes(stage))
         ]
@@ -3152,6 +3169,38 @@ class WorkflowEngine:
             return list(result.get("findings", []) or [])
         return []
 
+    def _extract_advisory_findings(
+        self,
+        result: dict[str, Any],
+        stage: dict[str, Any],
+    ) -> list[dict[str, Any]]:
+        """Extract advisory findings to forward alongside the blocking ones.
+
+        An advisory used to reach nobody. It was recorded, reported in status,
+        and never handed to a stage that could act on it, so a lane with a real
+        defect it did not want to block on had exactly one way to be heard:
+        raise it as blocking in a later iteration. Lanes did precisely that. In
+        run e4aebcbd941b6b1a, 31% of every blocking finding was the raising
+        lane's own advisory from an earlier round, and the run exhausted its
+        absolute ceiling draining a backlog the budget could not see.
+
+        So advisories travel with the repair. They do not gate anything, they
+        spend no iteration budget, they are not part of `finding_dispositions`,
+        and a reviser is free to leave one unrepaired. They arrive because the
+        reviser is already in those files and clearing one costs it a sentence.
+
+        Unlike a blocking finding, an advisory carries no `repair_target` and
+        so cannot choose a route. It goes to whichever stage the route chose,
+        which is the only stage that will be editing the document next.
+        """
+        if stage["type"] in (EVALUATOR, GATE):
+            if result.get("disposition") in (CHANGES_REQUIRED, FAIL):
+                return [
+                    f for f in result.get("findings", [])
+                    if f.get("severity") == "advisory"
+                ]
+        return []
+
     def _carried_findings(
         self,
         run_id: str,
@@ -3248,7 +3297,9 @@ class WorkflowEngine:
 
     def _load_prior_findings_for_current(
         self, run_id: str, state: dict[str, Any], workflow: dict[str, Any]
-    ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    ) -> tuple[
+        list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]
+    ]:
         """Rebuild both finding lists the current packet was compiled with.
 
         Whatever `_extract_prior_findings` and `_carried_findings` put in the
@@ -3271,7 +3322,7 @@ class WorkflowEngine:
         results = state.get("result_hashes") or []
         if not transitions or not results \
                 or transitions[-1].get("to") != current:
-            return [], []
+            return [], [], []
         source = self._get_stage(workflow, transitions[-1]["from"])
         # Whether anything can be forwarded at all is decided by the stage and
         # its disposition, before the recorded result is opened. Otherwise a
@@ -3281,12 +3332,13 @@ class WorkflowEngine:
         if _may_forward(source, transitions[-1].get("disposition")):
             result = self._read_recorded_result(run_id, results[-1], current)
             prior = self._extract_prior_findings(result, source)
+            advisory = self._extract_advisory_findings(result, source)
         else:
-            result, prior = None, []
+            result, prior, advisory = None, [], []
         carried = self._carried_findings(
             run_id, workflow, state, stage, prior, fresh=result
         )
-        return prior, carried
+        return prior, carried, advisory
 
     def _read_recorded_result(
         self, run_id: str, entry: dict[str, Any], current: str

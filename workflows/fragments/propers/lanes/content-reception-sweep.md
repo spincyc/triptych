@@ -48,14 +48,18 @@ witness is missing from the sweep rather than from the sentence, that is
 criterion 3 and it is yours — say that the witness is absent, not that the
 number is wrong.
 
-## Both editions are yours
+## The canonical edition only
 
-The leaf builds more than one reader-facing document out of one source tree,
-as the shared fragment above explains. Voice and disagreement live in prose,
-and the two editions' prose was written at different lengths and on different
-passes: one may harmonise what the other attributes, or narrate an inherited
-reading from outside where the other inhabits it. Read each document's own
-commentary, and name in each finding the file the sentence is in.
+You read the document `main.tex` builds, and only that. The synthesis
+companion is written later, by `derive-synthesis`, from whatever this
+evaluation settles, and it is judged by its own lanes against the edition you
+are reading. Where `main.tex` carries an `\ifdefined\TriptychSynthesisEdition`
+branch, the arm that runs with the macro undefined is yours and the other arm
+is not; nothing under `sections/synthesis/` is yours at all.
+
+A defect that exists only in the companion is not a finding of yours. Raising
+it here routes a repair to a stage that has not run, and the companion may not
+even carry the passage once it is derived from the corrected canonical prose.
 
 ## Result
 

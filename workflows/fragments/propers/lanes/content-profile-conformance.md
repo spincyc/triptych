@@ -84,36 +84,26 @@ conformance and this lane called it criterion 5.
     contrast, accessibility, and profile-mandated semantic fields are not
     rhetorical meta-labels.
 
-## Both editions are yours
+## The canonical edition only
 
-The leaf builds more than one reader-facing document out of one source tree,
-as the shared fragment above explains. Reader order and page assignment are
-properties of a built document, so a second edition has its own and is judged
-against the profile on its own; and a register that has moved into the body
-may have moved into one edition's prose and not the other's, because the two
-were written at different lengths. Read what every document renders, and name
-in each finding the file the defect is in.
+You read the document `main.tex` builds, and only that. The synthesis
+companion is written later, by `derive-synthesis`, from whatever this
+evaluation settles, and it is judged by its own lanes against the edition you
+are reading. Where `main.tex` carries an `\ifdefined\TriptychSynthesisEdition`
+branch, the arm that runs with the macro undefined is yours and the other arm
+is not; nothing under `sections/synthesis/` is yours at all.
+
+A defect that exists only in the companion is not a finding of yours. Raising
+it here routes a repair to a stage that has not run, and the companion may not
+even carry the passage once it is derived from the corrected canonical prose.
 
 Criteria 9 and 10 are judged from the leaf's structure and its source
-records. Criterion 12 is judged by reading the reader-facing prose itself:
-open every source either document inputs and read what it says, because a
-register that has moved into the body is visible nowhere else. The checklist
-above says where to start, not where to stop. The mechanical gates measure
-the rendered pages — build success, page counts, ordering, required blocks,
-undefined references — and you do not rediscover what they check.
-
-This lane reads the profile more closely than any other, so it is the lane
-most likely to find that the profile itself is at fault rather than the leaf.
-It has happened: the profile states its macro-order twice and the two
-statements cannot both be satisfied, and a leaf that takes the only jointly
-satisfiable reading is right while the document governing it is wrong. When
-the leaf conforms as well as anything could to a profile that contradicts
-itself, that is not a leaf defect and it is not a note either. Raise it with
-`severity: "escalation"` and `escalated_to` naming the guidance file and the
-lines that disagree, exactly as the shared fragment above describes. Say in
-`required_result` which readings could reconcile it, and leave the leaf alone.
-Your lane still returns `PASS`: the leaf met your criteria, and the escalation
-rides alongside that pass.
+records, and criterion 9 is measured on the canonical build alone. Criterion
+12 is judged by reading the canonical edition's reader-facing prose itself,
+because a register that has moved into the body is visible nowhere else. The
+checklist above says where to start, not where to stop. The mechanical gates
+measure the rendered pages — build success, page counts, ordering, required
+blocks, undefined references — and you do not rediscover what they check.
 
 ## Result
 

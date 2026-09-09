@@ -25,7 +25,10 @@ all of that.
    raised in an earlier evaluation against work this stage owns, which reached
    no owner then because a different owner was repaired first. They still
    stand and they are addressed to you. Treat them exactly as PRIOR_FINDINGS,
-   and say in your summary what you did with each.
+   and say in your summary what you did with each. An ADVISORY_FINDINGS
+   header is neither: it holds findings the evaluation chose not to block on,
+   which gate nothing and are owed no disposition. Clear what you can of them
+   while you are in those files and leave the rest.
 6. If you are an evaluator, return structured findings with stable IDs. Do
    not rediscover what mechanical gates already checked.
 7. Your prose, layout, and scholarly choices may vary. The guidance sequence
