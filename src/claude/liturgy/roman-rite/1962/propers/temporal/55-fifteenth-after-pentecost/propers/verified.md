@@ -566,10 +566,11 @@ any copyright in the preexisting material. This formulary is preexisting materia
 of the 1962 edition. This is the project's own reading of the statute and of the
 evidence, not a clearance anyone granted, and it is not legal advice.
 
-**Preexisting-material check, 2026-09-05.** All ten appointed elements above are
-printed, in the same order and at the same scriptural references, in three
-Missals this repository tracks as public-domain text. Each payload was hashed
-against its registered digest before it was opened.
+**Preexisting-material check, 2026-09-05.** Nine of the ten appointed elements
+above are printed, in the same order and at the same scriptural references, in
+three Missals this repository tracks as public-domain text, and the Gospel in
+two of them: the Pustet cross-references its Gospel rather than printing it.
+Each payload was hashed against its registered digest before it was opened.
 
 - **Vatican typica, 1604** — artifact
   `artifact.catholic-church.missale-romanum.vatican-typica-1604.missale-romanum-1604-text-6d12feef`,
@@ -612,7 +613,7 @@ against its registered digest before it was opened.
   `sha256:efd4426beabe5385be4e5df4542255c488fe460dee069ab999231255702d5b0f`,
   payload SHA-256 `f34bc7cf…` at 2,503,914 bytes. Under the heading `Dominica
   XV. post Pentecosten.` at printed pp. 338–339, text-layer lines 50,324–50,454:
-  all ten elements in order, with the Introit, Collect, Epistle, Gradual,
+  nine of the ten elements in order, with the Introit, Collect, Epistle, Gradual,
   Alleluia (`super omnem terram`), Offertory (`respexit me`, `deprecationem
   meam`, `hymnum`), Secret, Communion (`dedero`, `saeculi vita`) and
   Postcommunion as above. Two things are proper to this printing. Its **Gospel

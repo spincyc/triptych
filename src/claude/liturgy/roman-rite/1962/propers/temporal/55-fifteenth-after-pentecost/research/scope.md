@@ -41,31 +41,33 @@ before the element-by-element material.
 
 **The orations are the oldest thing in the Mass and the chants are not fixed to them.**
 All three composed orations stand together, as one Mass and in liturgical order, in the
-Gregorian Hadrianum as Wilson prints it, section CXXXIIII, heading `DOMINICA .XVI. POST
+Gregorian Hadrianum as Wilson prints it, section XXXIIII, heading `DOMINICA .XVI. POST
 PENTECOSTEN.`, printed p. 174, manuscript folio mark `[fo. 168v]` (LIT-001, read on the
 page image of Internet Archive leaf n231 of item `gregoriansacrame00cath`, and
-independently in the hash-verified optical layer at physical lines 14188-14201). The same
-three stand in the Old Gelasian (Vat. Reg. lat. 316) at Wilson 1894 Book III sect. XI,
-printed p. 230, under the heading `Item alia Missa` and with no Sunday number at all
-(LIT-003, COV-007). Between the eighth-century book and 1962 the wording changed in
-exactly one place: the Secret's adverb moved, both ancient Roman witnesses reading `contra
-diabolicos tueantur semper incursus` against the 1962 `contra diabolicos semper tueantur
-incursus` (LIT-002). Against that stability, the chant set is not stable. In the
-Ottobonianus 313 margins the chant series and the oration series run two Sundays apart
-across five consecutive sections, uniformly (LIT-005, LIT-007); the four-element Mass that
-stands under this Sunday's Introit in that margin — Introit `Inclina domine aurem`, Respond
-`Bonum est confidere`, Offertory `Expectans expectaui`, Communion `Qui manducat` — is
-agreed to, three slots out of four, by Honorius Augustodunensis writing c. 1120-1130
-(LIT-015), and it is not the 1962 four. Hesbert's six earliest Mass antiphonaries, as
-indexed by gregorien.info, already have this Sunday's Introit, Gradual and Offertory at
-`Dominica XV post Pentecosten` (AMS 187) but give it the Communion `Qui manducat carnem
-meam` and no fixed Alleluia at all (LIT-017). Against that record the movement is
-one-directional: the 1962 book has moved `Panis, quem ego dedero` from the Fourteenth Sunday
-to the Fifteenth, and the Communion AMS 187 gives the Fifteenth, `Qui manducat carnem meam`,
-has not taken its place at the 1962 Fourteenth, which sings `Primum quaerite` at Mt. 6:33;
-the 1962 book's own `Qui manducat meam carnem`, Jn. 6:57, stands at the Ninth Sunday
-(LIT-017 for the AMS placements, the tracked registry keyed at §3.3 for the 1962 ones; see
-§2.7 and §6.3).
+independently in the hash-verified optical layer at physical lines 14188-14201). The page
+prints the number `a/XXXIIII.`, the superscript `a` being the footnote marker for the
+page's chant note and `/` the manuscript line mark, and `bXXXV.` at the next Mass on the
+same page: no `C` stands before either number. The same three stand in the Old Gelasian
+(Vat. Reg. lat. 316) at Wilson 1894 Book III sect. XI, printed p. 230, under the heading
+`Item alia Missa` and with no Sunday number at all (LIT-003, COV-007). Between the
+eighth-century book and 1962 the wording changed in exactly one place: the Secret's adverb
+moved, both ancient Roman witnesses reading `contra diabolicos tueantur semper incursus`
+against the 1962 `contra diabolicos semper tueantur incursus` (LIT-002). Against that
+stability, the chant set is not stable. In the Ottobonianus 313 margins the chant series
+and the oration series run two Sundays apart across five consecutive sections, uniformly
+(LIT-005, LIT-007); the four-element Mass that stands under this Sunday's Introit in that
+margin — Introit `Inclina domine aurem`, Respond `Bonum est confidere`, Offertory
+`Expectans expectaui`, Communion `Qui manducat` — is agreed to, three slots out of four,
+by Honorius Augustodunensis writing c. 1120-1130 (LIT-015), and it is not the 1962 four.
+Hesbert's six earliest Mass antiphonaries, as indexed by gregorien.info, already have this
+Sunday's Introit, Gradual and Offertory at `Dominica XV post Pentecosten` (AMS 187) but
+give it the Communion `Qui manducat carnem meam` and no fixed Alleluia at all (LIT-017).
+Against that record the movement is one-directional: the 1962 book has moved `Panis, quem
+ego dedero` from the Fourteenth Sunday to the Fifteenth, and the Communion AMS 187 gives
+the Fifteenth, `Qui manducat carnem meam`, has not taken its place at the 1962 Fourteenth,
+which sings `Primum quaerite` at Mt. 6:33; the 1962 book's own `Qui manducat meam carnem`,
+Jn. 6:57, stands at the Ninth Sunday (LIT-017 for the AMS placements, the tracked registry
+keyed at §3.3 for the 1962 ones; see §2.7 and §6.3).
 
 **The chant's psalter is older than the Bible the guide prints beside it.** The appointed
 chants depart from the tracked Clementine at eight word-level places — `ad me` and `miserere
