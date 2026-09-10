@@ -40,6 +40,40 @@
 % cross-references. Defined once so the abbreviations stay uniform.
 \newcommand{\cue}[1]{\textnormal{(\textit{#1})}}
 
+% Three reading levels inside the detailed commentary, and the step between
+% the last two.
+%
+% The class gives \subsection and \subsubsection the same face, the same
+% weight and the same space above, and separates them by a single point ---
+% 12pt against 11pt under the 11pt base class. Here the two levels carry work
+% of very different kinds. The element headings (Introit, Collect, Epistle and
+% the rest) are the reader's primary navigation and are two words long; the
+% sub-topic headings beneath them are sentences running most of the measure.
+% At one point of difference the longer child outweighed the parent, and the
+% ten Mass elements were the least prominent headings on the pages that
+% carried them.
+%
+% The step is made by demoting the sub-topic heading and not by promoting the
+% element heading. \subsection also sets the themes section on pages 3 and 4,
+% whose two-page extent is fixed and whose first page is filled to its last
+% line, so anything added there moves a forced boundary. \subsubsection is
+% used in sections/30-commentary.tex alone --- the canonical edition's
+% detailed commentary, which begins well past the last forced boundary and
+% which the synthesis companion does not print --- so the change reaches the
+% pages the hierarchy fault is on and no others.
+%
+% A sub-topic heading now reads at the body size in italic, upright bold roman
+% being left to the two levels above it, with the space above cut and the
+% space below tightened so that the heading sits with the paragraph it opens
+% rather than floating between two. Size, weight, style and space above step
+% together, and section, element and sub-topic read as three distinct levels.
+\makeatletter
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+  {-2.4ex \@plus -1ex \@minus -.2ex}%
+  {0.3ex \@plus .2ex}%
+  {\normalfont\small\itshape}}
+\makeatother
+
 % Keeps an element's heading, identification line and text block together.
 \newcommand{\elementguard}{\Needspace{12\baselineskip}}
 
@@ -134,11 +168,13 @@ answer the Latin.} #1\par}
 % complete inventory cannot remain legible after the hierarchy and the evidence
 % have been preserved. That is this sheet's case: seven dossiers carrying the
 % evidence the research brief supplies for them will not stand on one physical
-% page at the profile's measurements, and the alternatives the profile forbids
-% are spilling, omitting evidence, or moving apparatus here from elsewhere.
+% page at the profile's summary-tier widths and at \footnotesize, and the
+% alternatives the profile forbids are spilling, omitting evidence, or moving
+% apparatus here from elsewhere. What the escape clause buys is the smallest
+% reduction that fits, not the largest that is legible.
 %
-% THREE of the profile's fixed measurements are varied on this sheet. These
-% are all three of them, and nothing else the profile fixes is changed:
+% TWO of the profile's fixed measurements are varied on this sheet. These
+% are both of them, and nothing else the profile fixes is changed:
 %
 %   D1. Summary-tier column widths, set above at \dossiertable. Profile
 %       0.14 / 0.18 / 0.35 / 0.16\linewidth; here
@@ -148,15 +184,29 @@ answer the Latin.} #1\par}
 %       unused, because the corpus answers three of the seven dossiers with
 %       several alternative labels each, leads five of them with a bold
 %       relation label, and every one of them is printed.
-%   D2. Spanning explanatory and event row width. Profile 0.92\linewidth;
-%       here 0.98\linewidth.
-%   D3. Spanning-row font size. The profile sets the table in \footnotesize and
+%   D2. Spanning-row font size. The profile sets the table in \footnotesize and
 %       specifies no separate size for the spanning row, so the profile's value
 %       for that row is \footnotesize --- 9pt on 11pt leading under the 11pt
-%       base class in src/common/preamble.tex. Here it is \fontsize{6.4}{6.9}:
-%       a reduction of roughly 29 percent in glyph size and 37 percent in
-%       leading, below \scriptsize and nearer \tiny. This is a large departure
-%       and is recorded as one.
+%       base class in src/common/preamble.tex. Here it is \fontsize{7}{8.4}:
+%       a reduction of roughly 22 percent in glyph size and 24 percent in
+%       leading. The leading is the document's own 1.2 ratio, so the departure
+%       is one of size alone and not of density.
+%
+% The spanning-row width is no longer a departure. It stood at 0.98\linewidth
+% until the visual evaluation of run 05f2d2fd7c2cf8b3 measured the rows at
+% about 136 characters to the line on 1.08 leading and found the return sweep
+% failing; the row is now set at the profile's own 0.92\linewidth. Width, size
+% and leading were set together against the one thing that bounds all three,
+% which is that the whole seven-dossier inventory stands alone on physical
+% page 2 with both forced boundaries intact. At \fontsize{7}{8.4} across
+% 0.92\linewidth the last rule falls about a fifth of an inch above the foot
+% of the text block; 7.1pt at the same width, and 7pt at 0.91\linewidth, each
+% spill the Epistle dossier onto a second page. So this is the largest glyph
+% the sheet admits at the document's own leading ratio, and the profile's own
+% measure is the narrowest that size admits. What that leaves is a full line
+% of about 130 characters, 139 at the longest, against 153 before: still a
+% long line, and the profile forbids buying the rest of the way by spilling,
+% by omitting evidence, or by moving apparatus here from elsewhere.
 %
 % What the profile fixes and this sheet leaves alone: the two-tier hierarchy,
 % the four summary fields, the \footnotesize summary tier, \arraystretch 1.02,
@@ -164,9 +214,9 @@ answer the Latin.} #1\par}
 % rows, \cmidrule(lr){1-4} within a dossier with \midrule only between complete
 % dossiers, and the italic event row set between two \cmidrule(lr){1-4} rules
 % ahead of its explanation.
-\newcommand{\dossierrowsize}{\fontsize{6.4}{6.9}\selectfont}
-\newcommand{\dossierprose}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash\dossierrowsize}p{0.98\linewidth}@{}}{#1}\\[0.1em]}
-\newcommand{\dossierevent}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash\dossierrowsize}p{0.98\linewidth}@{}}{\textit{#1}}\\}
+\newcommand{\dossierrowsize}{\fontsize{7}{8.4}\selectfont}
+\newcommand{\dossierprose}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash\dossierrowsize}p{0.92\linewidth}@{}}{#1}\\[0.1em]}
+\newcommand{\dossierevent}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash\dossierrowsize}p{0.92\linewidth}@{}}{\textit{#1}}\\}
 
 % Divergence table used in the commentary: appointed form against the Bible
 % text the guide's English is quoted from.
