@@ -50,9 +50,12 @@ page's chant note and `/` the manuscript line mark, and `bXXXV.` at the next Mas
 same page: no `C` stands before either number. The same three stand in the Old Gelasian
 (Vat. Reg. lat. 316) at Wilson 1894 Book III sect. XI, printed p. 230, under the heading
 `Item alia Missa` and with no Sunday number at all (LIT-003, COV-007). Between the
-eighth-century book and 1962 the wording changed in exactly one place: the Secret's adverb
-moved, both ancient Roman witnesses reading `contra diabolicos tueantur semper incursus`
-against the 1962 `contra diabolicos semper tueantur incursus` (LIT-002). Against that
+eighth-century books and 1962 the wording changed in two places, and the two ancient books do
+not move together: the Secret's adverb moved, both of them reading `contra diabolicos tueantur
+semper incursus` against the 1962 `contra diabolicos semper tueantur incursus`; and at the
+Postcommunion the Old Gelasian sets the vocative differently, `possideat, Domine, quaesumus`,
+where the Hadrianum and 1962 read `possideat, quaesumus, Domine`, so the Hadrianum stands apart
+from 1962 at one place and the Old Gelasian at two (LIT-002, COV-007; §6 item 5). Against that
 stability, the chant set is not stable. In the Ottobonianus 313 margins the chant series
 and the oration series run two Sundays apart across five consecutive sections, uniformly
 (LIT-005, LIT-007); the four-element Mass that stands under this Sunday's Introit in that
@@ -579,12 +582,18 @@ and not `the next verse`, and it is not: 94:1 to 94:3 skips v. 2 (LIT-011).
 **Text and its literary frame.** Ps. 94 is a summons to worship in vv. 1-7 and an oracle of
 warning in vv. 8-11, the turn falling at v. 7/8. The chant's verse, v. 3 `quoniam Deus magnus
 Dominus`, stands inside the summons as the first of its reason clauses, four verses before the
-turn, so the chant carries in the summons and not the warning. The warning half is what Hebrews quotes at length, returning to `Hodie si
-vocem eius audieritis` four times at Heb. 3:7-11, 3:15, 4:3, 4:5, 4:7 (SCR-008).
+turn, so the chant carries in the summons and not the warning. The warning half is what Hebrews
+quotes at length, at Heb. 3:7-11, 3:15, 4:3, 4:5 and 4:7, three of those five returning to
+`Hodie si vocem eius audieritis` (SCR-008).
 
 **The divergence, and the negative it produces.** See §1.1. Nothing further needs restating
-except its extent: this is the only element of the ten for which no checked witness expounds
-the appointed wording, and no dedicated search for one was made (PAT-021).
+except its extent: no checked witness expounds the chant's substituted predicate, and no
+dedicated search for one was made (PAT-021). What is proper to this element is not that its
+appointed wording alone goes unexpounded — the Introit's `miserere mihi` at Ps. 85:3 and the
+Communion's `dedero` and `saeculi` stand outside every lemma any lane opened as well (§1.2,
+§2.7) — but that both expositions of Ps. 94:3 the brief retains, Augustine's and Cassiodorus's,
+are built on the word the chant removes, so that neither survives the substitution (PAT-013,
+PAT-024).
 
 **Direct ancient exegesis checked, of the psalm and not of the chant.** Augustine,
 *Enarratio in Psalmum 94* §§5-6 (CCSL 39; PL 37, 1217-1234), Latin at www.augustinus.it, file
@@ -947,8 +956,9 @@ Cummiskey 1861, Lasance 1945, Gueranger 1909 — carries a future perfect for `d
 
 ### 2.8 The three composed orations — Collect, Secret, Postcommunion
 
-**Direct patristic commentary: none, and none of this kind exists.** No Father or Doctor is on
-record commenting on `Ecclesiam tuam, Domine, miseratio continuata`, `Tua nos, Domine,
+**Direct patristic commentary: none in the sources this production opened.** No Father or Doctor
+is on record, in this repository's tracked sources or in the works opened for this formulary,
+commenting on `Ecclesiam tuam, Domine, miseratio continuata`, `Tua nos, Domine,
 sacramenta custodiant` or `Mentes nostras et corpora possideat`. The repository's own
 commentary apparatus cannot supply one because it is keyed to Scripture alone:
 `src/sources/commentary/passage-commentary-index.yaml` (schema
@@ -962,14 +972,14 @@ tracked sources and of the nine works that lane opened, not of the patristic cor
 and it is correctable by anyone who finds a Father quoting one of the three incipits (PAT-018).
 
 **Documented liturgical reception, which is where their history is.** See §1.1 for the
-Hadrianum and Old Gelasian attestations and the one word-order change. Four further witnesses
+Hadrianum and Old Gelasian attestations and the two word-order changes. Five further witnesses
 number the Mass and disagree by one: Wilson's apparatus at Gelasian III.XI records `This Missa
 is assigned by R. S. Gerb. to the seventeenth Sunday after Pentecost: see the Missa for the
 sixteenth Sunday in Pam., and that for the seventeenth Sunday in Men.`, with marginal citations
 `R. S. / Gerb. 175. / Pam. 411. / Men. 179.` — Rheinau, S. Gallen, Gerbert and Menard at 1962
 + 2, Pamelius at 1962 + 1. The page image adds what the optical layers lose: the second Collect
 of the Gelasian Mass, `Da, quaesumus, Domine, hanc mentem populo tuo`, carries only `R. S. /
-Gerb. 175.` in its margin, so Pamelius and Menard do not have it, and the three prayers all four
+Gerb. 175.` in its margin, so Pamelius and Menard do not have it, and the three prayers all five
 numbering witnesses carry are exactly the three the 1962 formulary keeps. The one-Sunday split
 reproduces at the adjoining section, so the offset is a numeration base and not a local accident
 (LIT-004). Honorius Augustodunensis, *Gemma animae* IV cap. LXXVIII, `Dominica decima quinta,
@@ -1697,7 +1707,7 @@ the page image.
   are the KJV forms, and the official report sets them as displayed quotations without quotation
   marks. Appointed Latin: `Alter alterius onera portate` and `Unusquisque enim onus suum portabit`.
 - **Context and the turn.** Political, and the turn is that the appointed lesson is treated as a
-  self-contradicting statute to be construed. Paul sets the two sentences four verses apart in one
+  self-contradicting statute to be construed. Paul sets the two sentences three verses apart in one
   paragraph about correcting a brother and testing one's own work; in the Commons they become the
   two rival principles of the welfare state, quoted seven months before the Beveridge Report, in
   the debate whose subject-matter became the Family Allowances Act 1945. The reply is a lexical
@@ -1705,7 +1715,7 @@ the page image.
   a burden as to be a calamity`; the retort from the Labour benches is the counter-reading.
 - **Translation and rights.** UK official parliamentary report, published by Parliament in its own
   digitisation; no protected text.
-- **Cultural payoff.** Two sentences read aloud four verses apart at this Mass, quoted against
+- **Cultural payoff.** Two sentences read aloud three verses apart at this Mass, quoted against
   each other in wartime Parliament as the case for and against paying mothers for children.
 - **Limiting qualification.** Retrieved and read in a digital surrogate — the official historic
   Hansard digitisation read as continuous text with column anchors, not collated against the
@@ -2439,11 +2449,13 @@ gap is a genuine negative and the guide should declare it.
 one carries a bounded negative in place of reception.**
 Introit, Epistle, Gradual, Gospel, Offertory and Communion each have at least two direct
 witnesses checked at their own loci, and the Gospel and the Communion have four or more (§§2.1,
-2.2, 2.3, 2.5, 2.6, 2.7). The Collect, Secret and Postcommunion have **no witness of that class,
-and none exists**: patristic exegesis of a composed euchological text is not a category, so their
-substantive treatment comes from documented liturgical reception — the Hadrianum, the Old
-Gelasian, Wilson's four numbering witnesses, Honorius, the corpus negative, the *Variationes* — at
-§2.8, with any patristic sentence set beside them labelled as illumination of their doctrine
+2.2, 2.3, 2.5, 2.6, 2.7). The Collect, Secret and Postcommunion have **no witness of that class
+in any source this production opened**, and patristic exegesis of a composed euchological text is
+not a category; the negative is bounded exactly at §2.8 and is correctable by anyone who finds a
+Father quoting one of the three incipits. Their substantive treatment comes from documented
+liturgical reception — the Hadrianum, the Old Gelasian, Wilson's five numbering witnesses,
+Honorius, the corpus negative, the *Variationes* — at §2.8, with any patristic sentence set
+beside them labelled as illumination of their doctrine
 (PAT-018). **The Alleluia is the one element for which the brief supplies no reception of the
 appointed wording**, for the reason at §10.1 item 1; what it does supply for that element is the
 Ps. 46:3 collocation (SCR-009), the psalm's literary shape and its Hebrews afterlife (SCR-008),
