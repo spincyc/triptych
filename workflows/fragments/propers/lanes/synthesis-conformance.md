@@ -24,13 +24,35 @@ already says things about the companion: `format.tex`'s canonical
 contain", `sections/90-scope.tex` may say what the synthesis edition names at
 each use of a translation, and a file both editions input may carry a
 cross-reference or locator that has to resolve in both. Read each such
-sentence against the companion's build and report it where it is false. Where
-the companion cannot be made to satisfy it without changing the canonical
-sentence, say so in `required_result`: the derivation reviser may not edit
-canonical prose, and a finding that can only be cleared that way is one it
-will honestly report `not-repaired`. This class was sighted eight times across
-two productions and owned by nobody, because it is a claim about an artifact
-no canonical lane could see.
+sentence against the companion's build and report it where it is false.
+
+**That class now has an owner, and it is not `derivation`.** Where the
+companion cannot be made to satisfy the sentence without the shared file
+changing — because the profile forbids the companion the apparatus the sentence
+names, so nothing inside `sections/synthesis/` can make the pointer resolve —
+raise the finding with:
+
+```json
+"repair_target": "seam"
+```
+
+A `seam` finding licenses the reviser to wrap that one clause in an
+`\ifdefined\TriptychSynthesisEdition` branch, leaving the canonical rendering
+byte-identical, so the companion's reader gets a sentence true of the edition
+in hand. Say in `required_result` which clause, in which file, and what the
+companion's branch should say.
+
+Keep `derivation` for what the companion itself got wrong: a claim it
+misstates, a locus it dropped, prose it lifted. The test is not how serious the
+defect is but which file has to change to clear it. Getting this wrong in
+either direction wastes a round — a `seam` defect sent to `derivation` reaches
+a reviser forbidden to repair it, and a `derivation` defect sent to `seam`
+invites an edit to canonical prose that nothing evaluated.
+
+This class was sighted eight times across two productions and owned by nobody,
+because it is a claim about an artifact no canonical lane could see. Run
+`da04e65ca4ec963b` raised twenty-four dangling locators in one round and the
+reviser reported every one of them unrepaired, correctly.
 
 ## Counts are yours, and the abridgement is where they break
 

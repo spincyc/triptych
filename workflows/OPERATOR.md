@@ -993,8 +993,43 @@ whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
-The `proper` workflow is at version 27. The `proper-finish` workflow is at
-version 5.
+The `proper` workflow is at version 28. The `proper-finish` workflow is at
+version 6.
+
+Version 28 and `proper-finish` 6 answer a run that blocked while converging.
+`6fb5fba4867eb8cf` failed eight consecutive content evaluations with a repeat
+budget of 1 of 4 and never once a repair its reviser could not make. What
+stopped it was the absolute ceiling, which is the right stop for a document
+that keeps failing and the wrong one for a review that keeps finding. Four
+changes follow from that, and one from the run after it.
+
+`max_novel_iterations` bounds a third counter: consecutive failures that
+repeated nothing and left nothing unrepaired. Both evaluations declare 3, so
+three rounds of genuine new work still run and the fourth stops the run with a
+message that asks a person to decide whether the standing findings are worth
+another round. It is not a verdict on the leaf.
+
+`review_scope` puts `REVIEW_SCOPE` in every evaluation packet after the first:
+the leaf-relative files that changed since that stage last read the document.
+Lanes read the whole document once and the diff thereafter. A blocking finding
+against a file outside it, whose id is not already standing, must carry
+`out_of_scope_reason`; without one the engine refuses the submission, and on a
+fan-out stage that costs every lane's work, so check it before you join.
+
+`accepted` is a fourth severity for a defect that is real and not worth a
+repair round. It carries `accepted_because`, takes no repair owner, blocks
+nothing, and binds the run: a later round that raises the same id as blocking
+is refused. Accepted findings and advisories are both written to the leaf's
+standing findings record, which is now schema 3, so a judgement outlives the
+round that made it.
+
+`synthesis-evaluation` admits a second repair owner, `seam`, routed to
+`synthesis-revision`, which now declares `repairs: ["derivation", "seam"]`.
+A `seam` finding is a defect in canonical prose that both editions input and
+only the companion's form makes visible. Run `da04e65ca4ec963b` raised nine
+against one companion, and the two that were seam defects reached a reviser
+forbidden to repair them; it reported them unrepaired, correctly, and under v5
+the next round would have raised them again until the budget ran out.
 
 Version 27 and `proper-finish` 5 encode what three Claude productions of the
 Fourteenth, Fifteenth and Sixteenth Sundays asked for. Two reached the
@@ -1213,7 +1248,7 @@ the check by carrying an older version in the leaf. Historical publications
 remain out of scope until substantive revision. A run seeded against `proper`
 version 23 or earlier or `proper-finish` version 1 fails closed; seed it again.
 
-The `proper-finish` workflow is at version 5. Version 1 remains the historical
+The `proper-finish` workflow is at version 6. Version 1 remains the historical
 authoring-to-publication rescue contract; version 2 changes no topology or
 repair ownership, but adopts the same authoring fragment, structural preflight,
 profile evaluator, and fail-closed version interlock as `proper` v24. Version 4

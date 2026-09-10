@@ -282,7 +282,7 @@ class RepairOwnershipTests(RoutingCase):
         miscased = dict(missing, severity="Blocking", repair_target=RESEARCH)
         with self.assertRaises(WorkflowError) as caught:
             self.engine.advance(run_id, lane_results=submit(miscased))
-        self.assertIn("expected one of: blocking, escalation, advisory",
+        self.assertIn("expected one of: blocking, accepted, escalation, advisory",
                       str(caught.exception))
 
         # CHANGES_REQUIRED naming no owner would send a reviser work it

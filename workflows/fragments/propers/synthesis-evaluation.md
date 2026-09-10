@@ -59,15 +59,36 @@ yours:
 ## Repair ownership
 
 Every **blocking** finding carries `repair_target`, and your packet's
-`REPAIR_TARGETS` header names the values this run admits. In the ordinary case
-that is `derivation` alone: the canonical edition and the brief are both
-settled, and what you are judging is the derivation. Where the header names
-more, the shared rules for choosing an owner apply.
+`REPAIR_TARGETS` header names the values this run admits. There are two, and
+the test between them is not how grave the defect is but **which file has to
+change to clear it**.
 
-A defect that is equally true of the canonical edition is not a derivation
-defect and must not be routed as one. Where the header admits no owner who may
-write the canonical leaf, such a defect is an `escalation` or an observation,
-not a blocking finding — see the shared fragment above for both shapes.
+`derivation` is what the companion itself got wrong: a claim it misstates, a
+locus it dropped, canonical prose it lifted rather than redistilled, a bound it
+failed to carry across. Everything under `sections/synthesis/` is the
+derivation's.
+
+`seam` is a sentence in a file **both editions input** that is true of the
+canonical build and false of the companion's, because the profile forbids the
+companion the apparatus that sentence names — a locator sending a reader to an
+element subsection the companion has none of, a statement about an
+appointed-text section it does not print. Nobody wrote a defect: the canonical
+sentence is right about the canonical edition and the companion's form is what
+the profile requires. It is the join between them that fails, and it is
+repaired by branching that one clause on `\ifdefined\TriptychSynthesisEdition`
+so the canonical rendering stays byte-identical.
+
+Route by that test and not by severity. A `seam` defect sent to `derivation`
+reaches a reviser forbidden to repair it, which is how twenty-four dangling
+locators were reported unrepaired in one round of `da04e65ca4ec963b`; a
+`derivation` defect sent to `seam` invites an edit to canonical prose that no
+evaluation has seen.
+
+A defect that is equally true of the canonical edition **as the canonical
+edition** — one a reader of the larger book would meet exactly as the
+companion's reader does — is neither. It is not the derivation's, and no
+branch would fix it. Such a defect is an `escalation` or an observation, not a
+blocking finding; see the shared fragment above for both shapes.
 
 ## Result
 

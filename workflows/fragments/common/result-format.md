@@ -199,8 +199,8 @@ same issue every time it appears). Use the prefix your own stage fragment
 gives you; `CON-` for content evaluation and `VIS-` for visual evaluation are
 two of them, and a stage that names another means it.
 
-Only `blocking` severity findings trigger revision. `advisory` findings are
-recorded but do not block.
+Only `blocking` severity findings trigger revision. `accepted` and `advisory`
+findings are recorded but do not block.
 
 ### An advisory is a verdict, not a waiting room
 
@@ -236,6 +236,76 @@ under `ADVISORY_FINDINGS`, and the reviser clears what it can without the
 finding ever gating the run. An advisory is no longer a channel that reaches
 nobody, so there is no longer any reason to promote one to be heard.
 
+### `accepted`: true, and not worth a repair round
+
+Blocking and advisory were the only two answers a lane had for a real defect,
+and neither says the thing a careful reader most often wants to say: *this is
+true, I checked it, and repairing it would cost the document more than the
+defect costs the reader.* Forced to choose, lanes blocked. One lane wrote in
+its own report that it doubted a one-clause rewording deserved to block and
+raised it blocking anyway, because it read the rule above as forbidding
+anything else. That is a round spent on a clause.
+
+So there is a fourth severity:
+
+```json
+"severity": "accepted",
+"accepted_because": "the guide states the bound correctly two lines later; moving it costs a paragraph of settled prose to save a reader nothing"
+```
+
+Use it when **all** of these hold. The defect is real and you have checked it.
+Repairing it would touch settled prose, or move pagination, or trade one true
+sentence for another. And a reader who never learns of it is not misled.
+
+`accepted` carries no `repair_target` — accepting a defect is deciding it needs
+no owner, and the engine refuses a finding that claims both. It does not block,
+does not spend the iteration budget, and does not stop acceptance.
+
+**An accepted finding binds the rest of the run.** It is written to
+`<document_root>/evaluations/blocking-findings-v1.toml` under `[[accepted]]`
+with your reason, and the engine refuses a later round that raises the same id
+as blocking. That is the point of it: the judgement outlives the round that
+made it, so the next cold read of the same passage meets the decision instead
+of the bare defect. Advisories are written there too, under `[[advisories]]`,
+for the same reason.
+
+If you believe an earlier round accepted something it should not have, do not
+raise it blocking. Escalate it: a disagreement about what is worth repairing is
+a question for a person, and the escalation route is how one reaches them.
+
+### Reading `REVIEW_SCOPE`
+
+An evaluation packet after the first carries `REVIEW_SCOPE`: the leaf-relative
+files that changed since this stage last read the document. An empty list means
+nothing changed.
+
+Read the whole document the first time. After that, **read what moved, and read
+the passages your own standing findings name.** You are not being asked to skim
+the rest; you are being asked not to re-derive fresh blocking findings from
+settled prose that no reviser has been near.
+
+This is not a formality. A run of this pipeline blocked with its document in
+good shape after eight consecutive evaluations, eight failures, one repeated
+finding, and not one round in which the reviser failed to repair what it was
+given. Seven of the eight rounds found something new and true in prose nobody
+had touched, because a cold reader of a dense document at maximum effort never
+runs out of true things to say. The document was converging. The review was
+not terminating, and it cost some nine million subagent tokens to discover.
+
+A blocking finding against a file outside `REVIEW_SCOPE`, whose id is not
+already standing, must carry:
+
+```json
+"out_of_scope_reason": "unchanged in itself, but the sentence it depends on moved in sections/90-scope.tex this round, and its claim is now false"
+```
+
+Say what makes it true now and what kept it from being raised before. The
+engine refuses a blocking finding of that shape without one, and refuses the
+whole submission with it — on a fan-out stage that is every lane's work — so
+supply the field or choose a different severity. It is not a ban: a defect
+really can become true because another file changed, and that sentence is all
+that is asked of you.
+
 ### Five fields on every finding, whatever its severity
 
 **Every finding carries `id`, `severity`, `location`, `problem` and
@@ -266,9 +336,11 @@ Two fields, and only two, depend on severity:
 | `severity` | always |
 | `location` | always |
 | `problem` | always |
-| `required_result` | always — `blocking`, `advisory` and `escalation` alike |
+| `required_result` | always — `blocking`, `accepted`, `advisory` and `escalation` alike |
 | `repair_target` | `blocking` only |
+| `accepted_because` | `accepted` only |
 | `escalated_to` | `escalation` only |
+| `out_of_scope_reason` | a `blocking` finding outside `REVIEW_SCOPE` whose id is not already standing |
 
 `repair_target` is carried only where your stage's own fragment says the
 stage routes repairs by owner, and only on a blocking finding. It is refused

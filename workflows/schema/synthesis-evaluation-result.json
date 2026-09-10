@@ -25,11 +25,13 @@
   "finding_enums": {
     "severity": [
       "blocking",
+      "accepted",
       "escalation",
       "advisory"
     ],
     "repair_target": [
-      "derivation"
+      "derivation",
+      "seam"
     ]
   },
   "optional_fields": [
@@ -44,5 +46,11 @@
   "observation_fields": [
     "location",
     "note"
+  ],
+  "accepted_finding_fields": [
+    "accepted_because"
+  ],
+  "optional_finding_fields": [
+    "out_of_scope_reason"
   ]
 }

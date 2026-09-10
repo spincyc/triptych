@@ -401,6 +401,45 @@ is not there to repair it from. That tie-breaker does not reach criteria 11 and
 12, whose owner the paragraphs above already fix. There is no fourth value; the
 engine rejects anything else. Advisory findings do not need the field.
 
+## When the repair costs more than the defect
+
+Before you raise a blocking finding, ask what clearing it will cost. A true
+defect whose repair would touch settled prose, or move pagination, or trade one
+accurate sentence for another, and which misleads no reader who never learns of
+it, is `accepted` — a verdict, not a dodge. It carries `accepted_because`, takes
+no `repair_target`, blocks nothing, and is written to the leaf's standing
+findings record so the judgement outlives the round that made it.
+
+This is not permission to soften a real defect because the round already
+carries several; the shared fragment's rule against that stands and so does the
+rule against promoting an advisory. It is permission to say the thing the two
+severities could not say. A lane on this pipeline recorded that it doubted a
+one-clause rewording deserved to block and blocked on it anyway, reading the
+severity rule as forbidding any other answer. That was a repair round spent on
+a clause, and it is the shape that turns a document in good order into a run
+that never terminates.
+
+Once accepted, an id is settled for the run: the engine refuses a later round
+that raises it as blocking. If you believe an earlier judgement was wrong,
+escalate it rather than re-raising it, because a disagreement about what is
+worth repairing is a question for a person.
+
+## Reading `REVIEW_SCOPE`
+
+After the first evaluation your packet carries `REVIEW_SCOPE`: the
+leaf-relative files that changed since this stage last read the document. Read
+the whole leaf the first time. After that, read what moved and the passages
+your own standing findings name.
+
+Eight consecutive evaluations of one leaf failed while every repair the reviser
+attempted succeeded, because five cold lanes re-read thirty-five settled pages
+each round and a careful reader of a dense document never runs out of true
+things to say. A blocking finding against a file outside the scope, whose id is
+not already standing, must carry `out_of_scope_reason` naming what makes it
+true now and what kept it from being raised before. The engine refuses the
+whole submission without it, and on this stage that is five lanes' work, so
+supply the sentence or choose a different severity.
+
 ## When no stage owns the repair
 
 Some real defects are in neither the research, the brief, nor the leaf. A rule

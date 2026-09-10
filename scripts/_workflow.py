@@ -86,6 +86,7 @@ STRICT_UNION = "strict-union"
 # no revision of it could help; it is not advisory, because something really is
 # wrong and someone really must fix it. It leaves the run as a durable
 # escalation record instead of dying inside it as a note nobody reads.
+ACCEPTED_SEVERITY = "accepted"
 ESCALATION = "escalation"
 
 
@@ -740,6 +741,7 @@ class WorkflowEngine:
             "stage_iterations": {},
             "stage_failures": {},
             "stage_repeats": {},
+            "stage_novel": {},
             "stage_blocking_ids": {},
             "stage_blocking_targets": {},
             "findings_forwarded_by": {},
@@ -1205,6 +1207,7 @@ class WorkflowEngine:
         # this one only has to agree with the other forever.
         audit_state: dict[str, Any] = {
             "stage_failures": {}, "stage_repeats": {},
+            "stage_novel": {},
             "stage_blocking_ids": {}, "stage_blocking_targets": {},
             "findings_forwarded_by": {}, "findings_forwarded_ids": {},
             "unrepaired_for": {}, "unrepaired_notes": {}, "escalations": [],
@@ -1343,6 +1346,10 @@ class WorkflowEngine:
         if state.get("stage_repeats", {}) != audit_state["stage_repeats"]:
             raise WorkflowError(
                 f"run {run_id}: stage repeat counts disagree with results"
+            )
+        if state.get("stage_novel", {}) != audit_state["stage_novel"]:
+            raise WorkflowError(
+                f"run {run_id}: novel-round counts disagree with results"
             )
         # An escalation is the one thing a run produces that outlives it, so
         # the ledger has to be what the results actually said rather than
@@ -1617,6 +1624,7 @@ class WorkflowEngine:
             "stage_iterations": state["stage_iterations"],
             "stage_failures": state["stage_failures"],
             "stage_repeats": state.get("stage_repeats", {}),
+            "stage_novel": state.get("stage_novel", {}),
             "escalations": state.get("escalations", []),
             # What the tracked record says stands against this document. Read
             # here and nowhere else: it reaches no packet, so an operator can
@@ -1994,6 +2002,24 @@ class WorkflowEngine:
                 )
             )
 
+        # What moved since this stage last read the document. Absent on the
+        # first evaluation of a run, which reads everything: that read is the
+        # one worth its cost, and it is the one this exists to stop repeating.
+        #
+        # A run that blocked while converging did so because five cold lanes
+        # re-read thirty-five settled pages at maximum effort every round, and
+        # a capable cold reader of a dense document never runs out of true
+        # things to say. Eight rounds, eight failures, one repeat, nothing ever
+        # reported unrepairable, and some nine million subagent tokens. The
+        # fix is not a duller reader; it is telling the reader where the work
+        # since its last read actually happened.
+        scope = self._review_scope(state, stage)
+        if scope is not None:
+            header_lines.append(
+                "REVIEW_SCOPE: " + json.dumps(
+                    scope, separators=(",", ":")
+                )
+            )
         if prior_findings:
             header_lines.append(
                 f"PRIOR_FINDINGS: {json.dumps(prior_findings, sort_keys=True, separators=(',', ':'))}"
@@ -2478,6 +2504,33 @@ class WorkflowEngine:
         Only the failure counters in the state passed here are mutated, and
         that state is the caller's uncommitted copy.
         """
+        # The scope this result was judged against, read before the update
+        # below resets it. An evaluator's own result clears its baseline --
+        # it has just read the whole document -- so reading afterwards would
+        # always find an empty scope and the discipline could never fire.
+        scope_judged = self._review_scope(state, stage)
+        # Keep the scoping evaluators' baselines and diffs current. Done on
+        # every recorded result, because the edits that become the next
+        # evaluation's scope are made by the revision stages, not by the
+        # evaluator itself.
+        self._update_review_scope(workflow, state, stage)
+        # An accepted judgement is the run's, not the round's: it binds every
+        # later evaluation of the same stage. Accumulated rather than replaced,
+        # because each evaluation reports only what it saw this time and a
+        # judgement does not stop holding because a later lane did not restate
+        # it.
+        accepted_now = sorted(
+            str(finding.get("id", ""))
+            for finding in result.get("findings", []) or []
+            if isinstance(finding, dict)
+            and finding.get("severity") == ACCEPTED_SEVERITY
+            and str(finding.get("id", ""))
+        )
+        if accepted_now:
+            held = state.setdefault("accepted_ids", {}).setdefault(
+                stage["id"], []
+            )
+            held[:] = sorted(set(held) | set(accepted_now))
         disposition = result.get("disposition", "")
 
         if stage["type"] in (LINEAR, BOUNDED_REVISION):
@@ -2528,6 +2581,8 @@ class WorkflowEngine:
                         f"dispatching a worker with nothing to read, and on a "
                         f"stage that routes by owner it names no owner either"
                     )
+                self._check_accepted_not_reraised(state, stage, result)
+                self._check_review_scope(state, stage, result, scope_judged)
                 spent = self._failure_budget_spent(state, stage, result)
                 if spent:
                     return BLOCKED, spent
@@ -2668,16 +2723,234 @@ class WorkflowEngine:
                 f"{stage['id']}:\n  " + "\n  ".join(problems)
             )
 
+    def _document_file_hashes(
+        self, workflow: dict[str, Any], state: dict[str, Any],
+    ) -> dict[str, str] | None:
+        """Hash every input file of the document under work.
+
+        `evaluations/` is skipped: the engine rewrites the standing findings
+        record after every evaluation, so counting it would report the leaf as
+        changed on every round including the rounds where nothing moved, which
+        is exactly the signal this exists to give honestly.
+        """
+        document_root = state.get("document_root") or _document_root(
+            workflow, state["normalized_args"]
+        )
+        if not document_root:
+            return None
+        # The repository root, not `standing_findings_root`. In production the
+        # two are the same object, but they are not the same idea: one is
+        # where the document is, the other is where the engine's own record of
+        # it goes, and a caller may point the record somewhere disposable
+        # without moving the document.
+        root = self.repo_root.resolve()
+        try:
+            base = (root / document_root).resolve()
+            base.relative_to(root)
+        except (OSError, ValueError):
+            return None
+        if not base.is_dir():
+            return None
+        hashes: dict[str, str] = {}
+        for path in sorted(base.rglob("*")):
+            if not path.is_file() or path.is_symlink():
+                continue
+            try:
+                relative = path.relative_to(base)
+            except ValueError:
+                continue
+            if relative.parts and relative.parts[0] == "evaluations":
+                continue
+            try:
+                hashes[relative.as_posix()] = hashlib.sha256(
+                    path.read_bytes()
+                ).hexdigest()
+            except OSError:
+                continue
+        # An empty map is not the fact that the leaf is empty; it is the fact
+        # that this engine could not see it -- a document root that does not
+        # exist yet because the authoring stage has not run, a path template
+        # that resolved somewhere unexpected, a permission it does not have.
+        # Reporting that as "nothing changed" would let the scope discipline
+        # refuse every finding a lane raises, so it reports nothing instead
+        # and the scope rules stay switched off until there is something real
+        # to compare.
+        return hashes or None
+
+    @staticmethod
+    def _check_accepted_not_reraised(
+        state: dict[str, Any], stage: dict[str, Any],
+        result: dict[str, Any],
+    ) -> None:
+        """An accepted defect stays accepted for the life of the run.
+
+        The mirror of the rule that forbids promoting an advisory. Accepting
+        is a judgement that a true defect is not worth a repair round; a later
+        round that blocks on it has not found anything new, it has disagreed
+        with a decision already recorded, and it spends an iteration doing so.
+        Where a lane genuinely believes the judgement was wrong, the escalation
+        route exists and reaches a person, which is where a disagreement about
+        what is worth repairing belongs.
+        """
+        accepted = set(
+            (state.get("accepted_ids") or {}).get(stage["id"]) or []
+        )
+        if not accepted:
+            return
+        offenders = sorted(
+            str(finding.get("id", ""))
+            for finding in result.get("findings", []) or []
+            if isinstance(finding, dict)
+            and finding.get("severity") == "blocking"
+            and str(finding.get("id", "")) in accepted
+        )
+        if offenders:
+            raise WorkflowError(
+                f"evaluator {stage['id']} raises as blocking findings this "
+                f"run already accepted: {', '.join(offenders)}. Accepting a "
+                f"defect records that it is real and not worth a repair "
+                f"round, and the record of that judgement is in the leaf's "
+                f"standing findings file. Re-raising it spends an iteration "
+                f"reversing a decision rather than finding anything. If the "
+                f"judgement was wrong, escalate it."
+            )
+
+    def _check_review_scope(
+        self, state: dict[str, Any], stage: dict[str, Any],
+        result: dict[str, Any], scope: list[str] | None,
+    ) -> None:
+        """A blocking finding against text nothing touched must say why.
+
+        Not a ban. A defect in an untouched file can become true because a
+        different file moved, and a lane that sees one must be able to say so.
+        What this refuses is the unremarked case: a fresh blocking finding, at
+        an iteration with a scope, against a file no revision has touched
+        since this stage last read it, with nothing said about why it is being
+        raised now and was not raised before.
+
+        That is the shape the churn took. Each round a cold lane re-read the
+        whole settled document and found something new and true in prose no
+        reviser had been near, and the run could not tell that from progress.
+        `out_of_scope_reason` costs one sentence and makes the difference
+        legible to the budget, to the next lane, and to whoever reads the
+        record afterwards.
+
+        A refused submission is recoverable cheaply: the lane that wrote the
+        finding is still resumable and can amend its own result, which is why
+        this refuses rather than merely recording. Catch it before the join
+        with the pre-advance validator and it costs nothing at all.
+        """
+        if not scope:
+            # No baseline, or nothing moved. Nothing moving is not the
+            # evaluator's fault and refusing its findings would blame it for a
+            # revision that changed no file; the novel-round counter is what
+            # ends that loop, and it says so in the right words. This rule is
+            # for the other case: files did move, and a finding arrived from
+            # somewhere else.
+            return
+        standing = set(
+            (state.get("stage_blocking_ids") or {}).get(stage["id"]) or []
+        )
+        offenders: list[str] = []
+        for finding in result.get("findings", []) or []:
+            if not isinstance(finding, dict):
+                continue
+            if finding.get("severity") != "blocking":
+                continue
+            finding_id = str(finding.get("id", "")) or "(unidentified)"
+            if finding_id in standing:
+                continue
+            location = str(finding.get("location", ""))
+            if any(name and name in location for name in scope):
+                continue
+            if str(finding.get("out_of_scope_reason", "") or "").strip():
+                continue
+            offenders.append(finding_id)
+        if not offenders:
+            return
+        moved = ", ".join(scope) if scope else "nothing"
+        raise WorkflowError(
+            f"evaluator {stage['id']} raises blocking findings against text "
+            f"no revision has touched since it last read the document, "
+            f"without saying why now: {', '.join(sorted(offenders))}. What "
+            f"moved since then: {moved}. A finding like this is not forbidden "
+            f"-- a defect can become true because another file changed -- but "
+            f"it must carry 'out_of_scope_reason' saying what makes it true "
+            f"now and what kept it from being raised before. Amend the lane "
+            f"result and submit the join again."
+        )
+
+    def _update_review_scope(
+        self, workflow: dict[str, Any], state: dict[str, Any],
+        stage: dict[str, Any],
+    ) -> None:
+        """Keep each scoping evaluator's baseline, and its diff, in run state.
+
+        Called once per recorded result, whatever the stage. An evaluator that
+        scopes resets its own baseline: it has just read the whole document, so
+        nothing stands between it and what it saw. Every scoping stage's diff
+        is then recomputed against its baseline, which is how a revision's
+        edits become the next evaluation's scope.
+
+        The diff is stored rather than computed when the packet is built,
+        because `replay` recompiles the current packet from persisted state and
+        compares hashes. A header read off the working tree would be a new
+        input the run state does not carry, and two replays either side of an
+        edit would disagree about bytes that are supposed to be fixed. Stored,
+        it is a restatement of state exactly as `DOCUMENT_ROOT` is a
+        restatement of the arguments.
+        """
+        scoping = [
+            entry["id"] for entry in workflow["stages"]
+            if entry.get("review_scope")
+        ]
+        if not scoping:
+            return
+        current = self._document_file_hashes(workflow, state)
+        if current is None:
+            return
+        baselines = state.setdefault("stage_scope_baseline", {})
+        changed = state.setdefault("stage_scope_changed", {})
+        if stage.get("review_scope"):
+            baselines[stage["id"]] = current
+            changed[stage["id"]] = []
+        for stage_id in scoping:
+            baseline = baselines.get(stage_id)
+            if baseline is None or stage_id == stage["id"]:
+                continue
+            changed[stage_id] = sorted(
+                name for name in set(baseline) | set(current)
+                if baseline.get(name) != current.get(name)
+            )
+
+    def _review_scope(
+        self, state: dict[str, Any], stage: dict[str, Any],
+    ) -> list[str] | None:
+        """What moved in the leaf since this stage last evaluated it.
+
+        `None` means no baseline yet: the first evaluation of a run reads the
+        whole document, which is the read worth paying for and the one this
+        never suppresses.
+        """
+        if not stage.get("review_scope"):
+            return None
+        if stage["id"] not in (state.get("stage_scope_baseline") or {}):
+            return None
+        return list((state.get("stage_scope_changed") or {}).get(
+            stage["id"], []
+        ))
+
     @staticmethod
     def _clear_failures(state: dict[str, Any], stage: dict[str, Any]) -> None:
         """A stage that passes starts its next revision loop from zero.
 
-        All three counters reset together. The standing finding ids go with
+        All four counters reset together. The standing finding ids go with
         them: after a pass, a finding raised again is new work against a
         document that satisfied this stage in between, not a repeat.
         """
         state.setdefault("stage_failures", {})[stage["id"]] = 0
         state.setdefault("stage_repeats", {})[stage["id"]] = 0
+        state.setdefault("stage_novel", {})[stage["id"]] = 0
         state.setdefault("stage_blocking_ids", {}).pop(stage["id"], None)
         state.setdefault("stage_blocking_targets", {}).pop(stage["id"], None)
         state.setdefault("unrepaired_for", {}).pop(stage["id"], None)
@@ -2743,9 +3016,27 @@ class WorkflowEngine:
                 f"{document_root} passes through a symlink; refusing to write "
                 f"it"
             )
+        all_findings = result.get("findings", []) or []
         findings = [
-            f for f in result.get("findings", []) or []
-            if f.get("severity") == "blocking"
+            f for f in all_findings if f.get("severity") == "blocking"
+        ]
+        # Two severities that gate nothing and, until now, survived nothing.
+        #
+        # An advisory reached the reviser's packet and then vanished with the
+        # run directory, so the next cold read of the same leaf met the same
+        # defect with no memory that anyone had weighed it, and weighed it
+        # again -- often as blocking, which is the promotion the severity rule
+        # forbids and could not detect, because the record it would have been
+        # detected against did not carry advisories. An accepted finding is a
+        # judgement that a true defect is not worth a repair round, and a
+        # judgement that does not outlive its run is not a judgement, it is a
+        # delay.
+        accepted = [
+            f for f in all_findings
+            if f.get("severity") == ACCEPTED_SEVERITY
+        ]
+        advisories = [
+            f for f in all_findings if f.get("severity") == "advisory"
         ]
         observations = list(result.get("observations", []) or [])
 
@@ -2769,8 +3060,16 @@ class WorkflowEngine:
             "# write: guidance, the source library, the tools, the workflow --",
             "# are written here too, from the run's whole ledger, so that the",
             "# decision they ask of a maintainer outlives the run directory.",
+            "#",
+            "# Accepted findings are true defects a lane judged not worth a",
+            "# repair round, with the reason it judged so. Advisories are",
+            "# defects that did not merit blocking. Both are here because a",
+            "# verdict that dies with the run is met again by the next cold",
+            "# read as though nobody had ever weighed it, and weighed again --",
+            "# which is how a document in good shape spends a whole iteration",
+            "# budget. A later evaluation reads these before it raises.",
             "",
-            "standing_findings_schema = 2",
+            "standing_findings_schema = 3",
             'record_type = "standing-blocking-findings"',
             f"document = {_toml_string(state['normalized_args'].get('proper', ''))}",
             f"provider = {_toml_string(state['normalized_args'].get('provider', ''))}",
@@ -2781,6 +3080,8 @@ class WorkflowEngine:
             f"iteration = {int(result.get('iteration', 0))}",
             f"disposition = {_toml_string(str(result.get('disposition', '')))}",
             f"standing = {len(findings)}",
+            f"accepted_count = {len(accepted)}",
+            f"advisory_count = {len(advisories)}",
             "",
         ]
         for finding in findings:
@@ -2788,6 +3089,24 @@ class WorkflowEngine:
             for key in (
                 "id", "lane", "severity", "location", "problem",
                 "required_result", "repair_target",
+            ):
+                if key in finding:
+                    lines.append(f"{key} = {_toml_string(str(finding[key]))}")
+            lines.append("")
+        for finding in accepted:
+            lines.append("[[accepted]]")
+            for key in (
+                "id", "lane", "severity", "location", "problem",
+                "required_result", "accepted_because",
+            ):
+                if key in finding:
+                    lines.append(f"{key} = {_toml_string(str(finding[key]))}")
+            lines.append("")
+        for finding in advisories:
+            lines.append("[[advisories]]")
+            for key in (
+                "id", "lane", "severity", "location", "problem",
+                "required_result",
             ):
                 if key in finding:
                     lines.append(f"{key} = {_toml_string(str(finding[key]))}")
@@ -3071,6 +3390,40 @@ class WorkflowEngine:
         if previous is None or looping:
             spent += 1
         repeats[stage_id] = spent
+
+        # The third counter, and the one the evidence asked for. A round is
+        # *novel* when it failed, a round preceded it, and nothing came back:
+        # no finding repeated, and no reviser reported a repair it could not
+        # make. Every defect this round names is one no earlier round saw,
+        # against a document whose earlier defects were all cleared.
+        #
+        # That is not a document failing to converge. It is a review failing
+        # to terminate, and the two want opposite responses. Run
+        # 6fb5fba4867eb8cf is the case: eight consecutive content evaluations,
+        # eight failures, `stage_repeats` of 1, and `unrepaired_for` empty at
+        # every one -- the reviser repaired everything it was ever handed and
+        # seven of the eight rounds still found something new and true. The
+        # repeat budget correctly never fired, because repair was working. The
+        # absolute ceiling fired eight rounds and some nine million subagent
+        # tokens later, and reported it as a document that had run out of
+        # chances.
+        #
+        # A cold evaluator re-reading a dense document at maximum effort
+        # against open-ended criteria will always find something. That is what
+        # makes the first read worth its cost and what makes the eighth a
+        # tax. So a stage may declare `max_novel_iterations`: the number of
+        # consecutive purely-novel failures after which the run stops and says
+        # so, in its own words, rather than grinding to an absolute ceiling
+        # that will describe the wrong thing when it arrives.
+        #
+        # Undeclared, nothing changes: the counter is kept for the operator to
+        # read and bounds nothing. A stage opts in.
+        novel = state.setdefault("stage_novel", {})
+        if previous is not None and not looping:
+            fresh = novel.get(stage_id, 0) + 1
+        else:
+            fresh = 0
+        novel[stage_id] = fresh
         # Consumed. A reviser's report charges the budget once; leaving it in
         # place would charge every later failure for one stale admission.
         state.setdefault("unrepaired_for", {}).pop(stage_id, None)
@@ -3113,6 +3466,21 @@ class WorkflowEngine:
             return (
                 f"iteration limit exceeded for {label}{stage_id}: "
                 f"{spent}/{max_iter} failures that did not converge." + why
+            )
+        max_novel = stage.get("max_novel_iterations")
+        if max_novel is not None and fresh >= max_novel:
+            return (
+                f"review did not terminate for {label}{stage_id}: "
+                f"{fresh} consecutive rounds raised only findings no earlier "
+                f"round had raised, against a document whose earlier findings "
+                f"were all repaired. The repeat budget stands at "
+                f"{spent}/{max_iter} and the absolute ceiling at "
+                f"{count}/{ceiling}, so nothing here says the document is "
+                f"failing: it says a cold read of it does not run out of true "
+                f"things to say. Read the standing findings and decide whether "
+                f"they are worth another round; seed a fresh run over the same "
+                f"leaf to continue, or accept the document as it stands. This "
+                f"stop is a question for a person, not a verdict on the leaf."
             )
         if count >= ceiling:
             if not repeated:
@@ -3836,7 +4204,19 @@ def _validate_iteration_bounds(
     ceiling on consecutive failures and defaults to twice it. A ceiling below
     the repeat budget could never be reached by anything the repeat budget did
     not stop first, so declaring one is a mistake worth refusing at load.
+
+    `max_novel_iterations` bounds the third counter: consecutive failures that
+    repeated nothing and left nothing unrepaired. It is undeclared by default
+    and bounds nothing when it is, because a stage whose evaluator is cheap has
+    no reason to stop early. It may sit below `max_iterations` -- the two count
+    different things and neither implies the other, so no ordering between
+    them is a mistake.
     """
+    novel = stage.get("max_novel_iterations")
+    if novel is not None and (type(novel) is not int or novel < 1):
+        raise WorkflowError(
+            f"{path}: {sid}: 'max_novel_iterations' must be a positive integer"
+        )
     if "max_iterations" not in stage and "max_total_iterations" not in stage:
         return
     max_iter = stage.get("max_iterations", 3)
@@ -4380,6 +4760,7 @@ def _validate_result(
         # guess at the one thing it must not guess at.
         blocking_fields = schema.get("blocking_finding_fields", [])
         escalation_fields = schema.get("escalation_finding_fields", [])
+        accepted_fields = schema.get("accepted_finding_fields", [])
         finding_enums = schema.get("finding_enums", {})
         for i, finding in enumerate(findings):
             if not isinstance(finding, dict):
@@ -4396,6 +4777,37 @@ def _validate_result(
                         raise WorkflowError(
                             f"findings[{i}] is blocking and missing required "
                             f"field: {field}"
+                        )
+            elif finding.get("severity") == ACCEPTED_SEVERITY:
+                # True, seen, and judged not worth a repair round. The tier
+                # exists because the severity rule had only two answers for a
+                # real defect -- block, or file advisory -- and an advisory
+                # reached no record that outlived the run, so the next cold
+                # read met the same defect with no memory of the judgement and
+                # raised it again. That is not warehousing, which is a lane
+                # holding back a defect it believes blocks; it is a lane
+                # putting a decision somewhere it will still be when the next
+                # lane arrives.
+                for field in accepted_fields:
+                    if field not in finding:
+                        raise WorkflowError(
+                            f"findings[{i}] is accepted and missing required "
+                            f"field: {field}. An accepted finding states why "
+                            f"the defect is not worth a repair round, because "
+                            f"that sentence is the whole of what a later "
+                            f"reader has to judge it by."
+                        )
+                # Accepting a defect is deciding not to route it. Naming an
+                # owner would make it blocking wearing a severity that exempts
+                # it, which is the failure the escalation rule below guards
+                # against in the other direction.
+                for field in blocking_fields:
+                    if field in finding:
+                        raise WorkflowError(
+                            f"findings[{i}] is accepted and carries "
+                            f"'{field}'; accepting a defect is deciding it "
+                            f"needs no repair. Name an owner and it is "
+                            f"blocking."
                         )
             elif finding.get("severity") == ESCALATION:
                 for field in escalation_fields:

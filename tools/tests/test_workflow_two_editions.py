@@ -370,11 +370,25 @@ class TopologyTests(unittest.TestCase):
         self.assertEqual(
             self.stages[SYNTH_EVAL]["pass_transition"], "build-artifacts")
 
-    def test_the_derivation_is_the_only_owner_the_companion_admits(self):
+    def test_the_companion_admits_a_derivation_owner_and_a_seam_owner(self):
+        """A companion defect, and a defect the companion only makes visible.
+
+        Nine blocking findings against one companion in run da04e65ca4ec963b
+        split two ways. Six were the derivation's. Three were sentences in the
+        canonical prose both editions input -- twenty-four locators sending a
+        reader to element subsections the profile forbids the companion -- and
+        they reached a reviser whose remit was the companion alone. It reported
+        them unrepaired, which was the honest answer and left the defect with
+        no owner at all.
+        """
         self.assertEqual(
             self.stages[SYNTH_EVAL]["repair_routes"],
             [{"repair_target": "derivation",
+              "transition": SYNTH_REVISER},
+             {"repair_target": "seam",
               "transition": SYNTH_REVISER}])
+        self.assertEqual(self.stages[SYNTH_REVISER]["repairs"],
+                         ["derivation", "seam"])
         self.assertEqual(self.stages[SYNTH_REVISER]["revision_target"], DERIVE)
 
     def test_the_companion_evaluation_fans_out_over_its_own_lanes(self):

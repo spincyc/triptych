@@ -1,6 +1,6 @@
 {
   "id": "proper-finish",
-  "version": 5,
+  "version": 6,
   "description": "1962 propers synthesis production workflow",
   "default_effort": "xhigh",
   "document_argument": "proper",
@@ -180,7 +180,9 @@
       ],
       "max_iterations": 4,
       "max_total_iterations": 8,
-      "records_standing_findings": true
+      "records_standing_findings": true,
+      "review_scope": true,
+      "max_novel_iterations": 3
     },
     {
       "id": "content-revision",
@@ -273,10 +275,16 @@
         {
           "repair_target": "derivation",
           "transition": "synthesis-revision"
+        },
+        {
+          "repair_target": "seam",
+          "transition": "synthesis-revision"
         }
       ],
       "max_iterations": 3,
-      "records_standing_findings": true
+      "records_standing_findings": true,
+      "review_scope": true,
+      "max_novel_iterations": 3
     },
     {
       "id": "synthesis-revision",
@@ -292,7 +300,8 @@
         "propers/derive-synthesis.md"
       ],
       "repairs": [
-        "derivation"
+        "derivation",
+        "seam"
       ],
       "result_schema": "worker-result.json",
       "next": "synthesis-evaluation",

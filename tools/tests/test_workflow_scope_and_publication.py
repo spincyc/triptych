@@ -1123,7 +1123,12 @@ class PreservedGuaranteeTests(unittest.TestCase):
         self.assertEqual(
             self.stages["synthesis-evaluation"]["repair_routes"],
             [{"repair_target": "derivation",
-              "transition": "synthesis-revision"}])
+              "transition": "synthesis-revision"},
+             {"repair_target": "seam",
+              "transition": "synthesis-revision"}],
+            "both owners reach the same reviser, and the value is what tells "
+            "it which files it may touch: a seam defect is in canonical prose "
+            "both editions input, which a derivation repair may not go near")
         routed = [stage["id"] for stage in workflow_json()["stages"]
                   if stage.get("repair_routes")]
         self.assertEqual(routed, ["content-evaluation", "synthesis-evaluation"])

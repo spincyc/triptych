@@ -268,8 +268,35 @@ A run records the digest at seed time, in both the manifest and the state, and
 every `advance` and `replay` recomputes it. If the workflow source has changed
 since the run was seeded, the run fails closed rather than continuing under
 guidance it never started with. A changed workflow means a new run. The
-`proper` workflow is at version 27 and `proper-finish` at version 5. Version
-27 and `proper-finish` 5 are what three productions that reached the content
+`proper` workflow is at version 28 and `proper-finish` at version 6.
+
+Version 28 and `proper-finish` 6 are what one run's instrumentation asked for.
+Run `6fb5fba4867eb8cf` blocked with its leaf in good shape after eight
+consecutive content evaluations: eight failures, a repeat budget of 1 of 4,
+and `unrepaired_for` empty at every round -- the reviser repaired everything it
+was ever handed, and seven of the eight rounds still raised findings no earlier
+round had seen. The document was converging; the review was not terminating,
+and the engine already held the two counters that tell those apart while
+nothing acted on the difference.
+
+So a third counter, `stage_novel`, counts consecutive failures that repeated
+nothing and left nothing unrepaired, and `max_novel_iterations` stops a stage
+on the fourth with a message that says a person has to decide, not that the
+leaf failed. Evaluations after the first carry `REVIEW_SCOPE`, the leaf-relative
+files that moved since that stage last read the document, so the cold full read
+happens once instead of once a round; a blocking finding outside it, whose id
+is not already standing, carries `out_of_scope_reason` or the submission is
+refused. A fourth severity, `accepted`, records a defect as real and not worth
+a repair round, with the reason, and binds the rest of the run against
+re-raising it. The standing findings record rises to schema 3 and carries
+`[[accepted]]` and `[[advisories]]`, because a verdict that died with its run
+was met again by the next cold read as though nobody had weighed it. And
+`synthesis-evaluation` gains a second repair owner, `seam`, for defects in the
+canonical prose both editions input that only the companion's form makes
+visible -- twenty-four dangling locators reached `synthesis-revision` with no
+stage permitted to repair them, and it correctly reported them unrepaired.
+
+Version 27 and `proper-finish` 5 are what three productions that reached the content
 loop's absolute ceiling, or died at a host limit one lane short of finishing
 it, asked for. `content-evaluation` gains two criteria — fidelity to the
 appointed texts, owned by the evidence-discipline lane, and fidelity to the

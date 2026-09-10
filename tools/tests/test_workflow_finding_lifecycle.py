@@ -640,13 +640,18 @@ class EscalationTests(RoutingCase):
         self.assertEqual(state["stage_failures"].get(EVALUATION, 0), 0)
         self.assertEqual(state["stage_repeats"].get(EVALUATION, 0), 0)
 
-    def test_the_schema_admits_exactly_three_severities(self):
+    def test_the_schema_admits_exactly_four_severities(self):
         schema = json.loads(
             (ROOT / "workflows" / "schema" / "content-evaluation-result.json")
             .read_text(encoding="utf-8"))
         self.assertEqual(schema["finding_enums"]["severity"],
-                         ["blocking", ESCALATION, "advisory"])
+                         ["blocking", "accepted", ESCALATION, "advisory"],
+                         "accepted joined the three: a defect that is real and "
+                         "not worth a repair round had no severity of its own, "
+                         "and lanes blocked on clauses rather than say so")
         self.assertEqual(schema["escalation_finding_fields"], ["escalated_to"])
+        self.assertEqual(schema["accepted_finding_fields"],
+                         ["accepted_because"])
         self.assertEqual(
             schema["finding_enums"]["repair_target"],
             [RESEARCH, BRIEF, AUTHORING],
