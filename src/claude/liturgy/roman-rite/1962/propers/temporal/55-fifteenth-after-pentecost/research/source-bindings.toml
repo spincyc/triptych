@@ -462,11 +462,12 @@ loci = [
   "vol-xi-p-344",
   "vol-xi-p-345",
   "vol-xi-p-355",
+  "vol-xi-p-356",
 ]
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:0e3522ba89977d481203dac9573ba3f2127fb7f2322fa52b09cd7b74a68a391d"
-context = "Read in the digitisation's own embedded text layer at printed pp. 344-355, and not on page images. It supplies the name `the Sunday of the widow of Naim`, the state of the formulary before the 1960 change -- the three seasonal orations printed by cross-reference at pp. 345 and 355 -- and the Magnificat antiphon at Vespers, which is this book's and was not checked against a 1962 Breviary. Metadata review 2026-09-09: the fingerprint moved because the enclosing edition and work records were corrected on main before this binding was integrated (1909 imprint from the title page; Guéranger and continuators); the bound bytes and their SHA-256 are unchanged."
+context = "Read in the digitisation's own embedded text layer at printed pp. 344-356, and not on page images. It supplies the name `the Sunday of the widow of Naim`, the state of the formulary before the 1960 change -- the three seasonal orations printed by cross-reference at pp. 345 and 355 -- and the Magnificat antiphon at Vespers, at p. 356, which is this book's and was not checked against a 1962 Breviary. Metadata review 2026-09-09: the fingerprint moved because the enclosing edition and work records were corrected on main before this binding was integrated (1909 imprint from the title page; Guéranger and continuators); the bound bytes and their SHA-256 are unchanged."
 
 [[bindings]]
 source_id = "artifact.holy-see.acta-apostolicae-sedis.volume-52-1960.vatican-ocr-pdf-c734079d"
@@ -588,7 +589,7 @@ loci = [
 role = "direct-witness"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:4ae9d572313cde07b89e9a844dce37b2b42c4bf674904deee828a2c2086e4a14"
-context = "The locus classicus of the totus Christus, and the whole of the Introit's reception: the one Christ who prays for us, in us and is prayed to by us; `clamavi tota die` stretched to the end of the age; `Humilem respicit Deus, superbum repellit`; and the exhortation at the psalm verse. His lemma at v. 1 has no `ad me` and runs on into a clause the cento does not sing, his v. 3 reads `Miserere mei` and his v. 4 `Iucunda`, and all three differences are stated where he is quoted. A web presentation of the Maurist text; no critical edition was consulted. Metadata review 2026-09-09: rebound to the record main already held for the byte-identical augustinus.it page (SHA-256 3909c029…, Enarratio in Ps. 85 in the Vulgate numbering, the site's 104th file); this production's duplicate artifact is withdrawn and the loci are unchanged."
+context = "The locus classicus of the totus Christus, and the whole of the Introit's reception: the one Christ who prays for us, in us and is prayed to by us; `clamavi tota die` stretched to the end of the age; the ground of the petition at S 2, `Inclinat aurem, si tu non erigas cervicem: humiliato enim appropinquat; ab exaltato longe discedit` (the page's `Humilem respicit Deus, superbum repellit` above that paragraph is the site's editorial heading and is not quoted as his); and the exhortation at the psalm verse. His lemma at v. 1 has no `ad me` and runs on into a clause the cento does not sing, his v. 3 reads `Miserere mei` and his v. 4 `Iucunda`, and all three differences are stated where he is quoted. A web presentation of the Maurist text; no critical edition was consulted. Metadata review 2026-09-09: rebound to the record main already held for the byte-identical augustinus.it page (SHA-256 3909c029…, Enarratio in Ps. 85 in the Vulgate numbering, the site's 104th file); this production's duplicate artifact is withdrawn and the loci are unchanged."
 
 [[bindings]]
 source_id = "artifact.augustine.enarrationes-in-psalmos.latin-augustinus-it-web-2026-09-05.augustinus-it-esposizione-salmo-112-4e9909f7"

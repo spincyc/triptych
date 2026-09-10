@@ -128,8 +128,10 @@ life, but He comes to do so of His own accord` (Payne Smith vol. 1, pp. 132-133;
 PAT-004). The Collect and the Postcommunion deny the Church and the communicant any
 standing of their own — `quia sine te non potest salva consistere`, `ut non noster sensus
 in nobis, sed iugiter eius praeveniat effectus` — and Augustine's exposition of the
-Introit's own psalm makes the same denial the ground of the petition: `Humilem respicit
-Deus, superbum repellit` (En. Ps. 85.2; THE-001). Class 1 for the four occurrences, class 3
+Introit's own psalm makes the same denial the ground of the petition: `Inclinat aurem, si tu
+non erigas cervicem: humiliato enim appropinquat; ab exaltato longe discedit` (En. Ps. 85.2;
+THE-001 — `Humilem respicit Deus, superbum repellit`, formerly quoted here, is the
+augustinus.it edition's paragraph heading set before §2 and not a sentence of Augustine's). Class 1 for the four occurrences, class 3
 for Cyril and Augustine, class 4 for the movement. The real competitor is C2, and it is not
 dissolved by this claim; two limits belong beside it — `misericordia` and `miseratio` are
 different nouns, so the chain is one of sense and not of a repeated word, and `praeveniat`
@@ -165,8 +167,8 @@ matris suae`), and the Communion gives flesh as the world's life (`caro mea est 
 vita`) (THE-007). The joint is Cyril's and is made from the Gospel side, not the Eucharistic
 one: asked why Christ touched the bier when a word would have sufficed, he answers `that
 thou mightest learn that the holy body of Christ is effectual for the salvation of man. For
-the flesh of the Almighty Word is the body of life ... as iron, when brought into contact
-with fire, produces the effects of fire`, and it `annihilates the influence of death and
+the flesh of the Almighty Word is the body of life ... For consider, that iron, when brought
+into contact with fire, produces the effects of fire`, and it `annihilates the influence of death and
 corruption` (Payne Smith vol. 1, p. 135; PAT-004). The same doctrine is argued at length in
 his John commentary under the chapter heading `That the Holy Body of Christ is Life-giving`:
 the indwelling Word `transformed it into His Own proper good, that is life ... rendered It
@@ -573,8 +575,9 @@ Ps. 94:1, so this chant continues the preceding Sunday's psalm — Schuster says
 and not `the next verse`, and it is not: 94:1 to 94:3 skips v. 2 (LIT-011).
 
 **Text and its literary frame.** Ps. 94 is a summons to worship in vv. 1-7 and an oracle of
-warning in vv. 8-11, and the chant takes the verse at the hinge, carrying in the summons and
-not the warning. The warning half is what Hebrews quotes at length, returning to `Hodie si
+warning in vv. 8-11, the turn falling at v. 7/8. The chant's verse, v. 3 `quoniam Deus magnus
+Dominus`, stands inside the summons as the first of its reason clauses, four verses before the
+turn, so the chant carries in the summons and not the warning. The warning half is what Hebrews quotes at length, returning to `Hodie si
 vocem eius audieritis` four times at Heb. 3:7-11, 3:15, 4:3, 4:5, 4:7 (SCR-008).
 
 **The divergence, and the negative it produces.** See §1.1. Nothing further needs restating
@@ -597,8 +600,8 @@ this psalm (PAT-021). No Greek exposition, no chant-book commentary (THE-017).
 
 **How the witnesses may be used.** Augustine's and Cassiodorus's exposition may be quoted as
 exposition of Ps. 94:3 as the Latin Bible reads it, never as reception of the Alleluia as sung.
-Augustine's §6 reading of the neighbouring `in manu eius fines terrae` christologically, of
-Christ joining two peoples, is adjacent in sense to the chant's reading and is a verse the
+Augustine's §8 reading (En. Ps. 94.8) of the neighbouring `in manu eius fines terrae`, v. 4,
+christologically, of Christ joining two peoples, is adjacent in sense to the chant's reading and is a verse the
 chant does not sing; it is an adjacency, not a witness, and must not be presented as one
 (THE-017).
 
@@ -688,7 +691,7 @@ Gueranger names the day `the Sunday of the widow of Naim` (LIT-020).
   are the mortal fluxes of material nature, `cum uel ignis inmodicae cupiditatis exaestuat
   uel frigidus umor exundat uel pigra quadam corporis habitudine uigor habetatur animorum ...
   hi sunt nostri funeris portitores` (§90). At §§91-92, `quis iste est tumulus tuus nisi mali
-  mores? tumulus tuus perfidia est, sepulchrum tuum guttur est` (Ps. 5:10), and `fleat pro te
+  mores? tumulus tuus perfidia est, sepulchrum tuum guttur est` (Ps. 5:11 Vulg.; Masoretic 5:10), and `fleat pro te
   mater ecclesia, quae pro singulis tamquam pro unicis filiis uidua mater interuenit`
   (PAT-001). At VI.64, outside the pericope's own place, he explains why this raising is
   public where Jairus's daughter's is private, and reads the two as two peoples: `est etiam
@@ -937,7 +940,7 @@ and cannot be transferred to `dedero`, nor his exposition of the universality of
 `saeculi` (PAT-015, PAT-022). `propers/verified.md` already declares that the registered Douay
 answers neither reading and that the guide must print the Douay verse and supply no rendering
 of its own; no witness checked by the coverage lane — the tracked Douay, Keating 1806,
-Cummiskey 1861, Lasance 1945, Gueranger 1900 — carries a future perfect for `dedero` or renders
+Cummiskey 1861, Lasance 1945, Gueranger 1909 — carries a future perfect for `dedero` or renders
 `saeculi` distinctly from `mundi` (COV-009).
 
 ### 2.8 The three composed orations — Collect, Secret, Postcommunion
@@ -1013,7 +1016,7 @@ diversitate Temporum abolentur`, now read on a 220 dpi rendering of AAS 52 (1960
 p. 709, running head `Sacra Congregatio Rituum`. This closes a gap `propers/verified.md`
 declares. The citation hazard it names is real and visible: the same promulgation carries a
 *Rubricae generales* n. 18 at printed p. 599, on transferring the impeded post-Epiphany Sundays,
-so a bare `n. 18` is ambiguous (LIT-019). Gueranger's 1900 volume shows the formulary before
+so a bare `n. 18` is ambiguous (LIT-019). Gueranger's 1909 volume shows the formulary before
 that change, printing the three seasonal orations by cross-reference (`The other Collects, as
 on page 120`, p. 345; `The other Secrets, as on page 130` and `The other Postcommunions, as on
 page 131`, p. 355) (LIT-020).
@@ -1112,8 +1115,11 @@ page image of IA leaf n264 of item `patrologiaecursu0030jpmi` and corroborated i
 optical layer. Schuster, *The Sacramentary* vol. III (Burns Oates & Washbourne, 1927), printed
 pp. 139-141, read on page images of the registered artifact
 `...ia-scan-volume-3-410f6d11`, digest reproduced before reading. Gueranger, *The Liturgical
-Year: Time after Pentecost* vol. II (Duffy 1900), printed pp. 344-355, read in the PDF's own
-embedded text layer and not on page images. AAS 52 (1960), printed p. 709 on a 220 dpi
+Year: Time after Pentecost* vol. II, second edition, translated by Dom Laurence Shepherd
+(Stanbrook Abbey, Worcester; London: Burns & Oates, R. & T. Washbourne, Art & Book Company;
+United States: Benziger Bros., 1909 — the registered edition record notes that the preface
+identifies the volume as the second of the Continuation after Gueranger's death), printed
+pp. 344-355, read in the PDF's own embedded text layer and not on page images. AAS 52 (1960), printed p. 709 on a 220 dpi
 rendering of the Holy See's own `AAS-52-1960-ocr.pdf`, with pp. 598-600 read in the volume's
 optical layer. The tracked registry `src/sources/calendars/roman-1962/propers.yaml`, a
 repository derivative and finding aid, keys `pentecost-12` through `pentecost-18`, `septuagesima`,
@@ -1198,7 +1204,7 @@ Gathered so the author can state the absences rather than discover them.
    PAT-014); Cassiodorus's lemma does carry it (PAT-024).
 5. **The Communion's `dedero` and `saeculi` answer nothing in Nestle 1904**, which has `do:so:`
    and `kosmou` (SCR-020), and no English witness checked renders either distinctly — not the
-   tracked Douay, Keating 1806, Cummiskey 1861, Lasance 1945 or Gueranger 1900 (COV-009).
+   tracked Douay, Keating 1806, Cummiskey 1861, Lasance 1945 or Gueranger 1909 (COV-009).
 6. **`Naim` is a hapax in the tracked Clementine**, returned once by an exhaustive sweep of all
    73 book directories, at Lk. 7:11 (SCR-010, SCR-026).
 7. **`Propheta magnus` is not a stock biblical title:** an exhaustive sweep of the tracked
@@ -2215,8 +2221,8 @@ What follows is therefore sorted by whether anything actually blocks or constrai
     (§5). **What it constrains:** nothing published; both are leads.
 12. **No Ordo Romanus, station list, Breviary, Ambrosian or Mozarabic missal was opened for this
     Sunday** (LIT-022). **What it constrains:** the Magnificat antiphon `Propheta magnus surrexit
-    in nobis, et quia Deus visitavit plebem suam`, which Gueranger's 1900 volume prints at printed
-    p. 355 under VESPERS, is his book's and was not checked against a 1962 Breviary; whether this
+    in nobis, et quia Deus visitavit plebem suam`, which Gueranger's 1909 volume prints at printed
+    p. 356, under the VESPERS section that opens on p. 355, is his book's and was not checked against a 1962 Breviary; whether this
     Sunday has a station church was not established and must not be claimed either way.
 13. **Nothing establishes the composition date or authorship of any of the three orations**
     (LIT-022). Their attested history begins at the Old Gelasian and the Hadrianum, and no lane's
@@ -2412,7 +2418,7 @@ now named which witness answers which phrase (COV-009): the **Alleluia**'s `supe
 rendered by Keating 1806 (`For the Lord is the great God, and the great King over all the earth.
 Alleluia.`, tracked artifact `roman-missal-laity-1806-text-e9f54379`, physical lines 22189-22270,
 under `XV. SUNDAY after PENTECOST`), by Lasance 1945 (`a great king above all the earth`, tracked
-artifact `new-roman-missal-text-80b34759`, physical lines 73459-73780), by Gueranger 1900 at
+artifact `new-roman-missal-text-80b34759`, physical lines 73459-73780), by Gueranger 1909 at
 printed p. 349 and by Cummiskey 1861 at printed p. 428; the **Offertory**'s three phrases are
 answered together by exactly one witness, Keating 1806 (`I have patiently waited for the Lord, and
 he hath looked down upon me: he hath heard my prayer, and put a new canticle in my mouth; a hymn
