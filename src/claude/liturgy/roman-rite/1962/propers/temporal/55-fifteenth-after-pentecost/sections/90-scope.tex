@@ -45,8 +45,13 @@ resting any negative search on them; the Pustet's classifies its layer prose
 Latin and bounds that prohibition to searches over its accented text, and all
 three admit quotation only through a checked passage. It is not a
 page-image collation and
-nothing is quoted from any of the three: where the commentary or the
-appointed-text section reports one of their readings, a spelling or a point,
+nothing is quoted from any of the three: where
+\ifdefined\TriptychSynthesisEdition
+the commentary reports one of their readings, a spelling or a point,%
+\else
+the commentary or the
+appointed-text section reports one of their readings, a spelling or a point,%
+\fi{}
 what it reports is what that layer shows, and the strings behind those reports
 are the lightly normalised renderings recorded in \texttt{propers/verified.md}.
 No negative result in this guide rests on them. The Pustet does not print this
@@ -57,6 +62,23 @@ is more likely than not restored in the United States to the end of 2057; the
 reading of the statute above is this project's and is not a clearance anyone
 granted, and it is not legal advice.
 
+\ifdefined\TriptychSynthesisEdition
+No English here is composed, translated, adapted or paraphrased. This edition
+carries two registered English witnesses. The scriptural English is the
+Douay--Rheims as revised by Bishop Challoner, in the tracked Project Gutenberg
+e-text of that revision, with psalm loci resolved from the tracked numbering
+concordance and not by arithmetic; what this edition quotes of it is the
+Ps.\ 39:2--4 rendering in the notable-and-quotable gallery and the Douay
+wording the commentary reports at the places it names. The English of the three
+orations is \work{The Roman Missal translated into the English language for the
+use of the laity}, first revised edition (Philadelphia: Eugene Cummiskey, 1861),
+which this audit read on the page images of the registered scan at printed
+pp.~427--429 and found word for word the tracked transcription; of that book
+this edition quotes the Alleluia versicle's own rendering at printed p.~428,
+while the complete appointed text, with the Douay at every scriptural element
+and this book at all three orations, stands in the canonical full edition and
+not here.%
+\else
 No English here is composed, translated, adapted or paraphrased. Scriptural
 elements are quoted from the Douay--Rheims as revised by Bishop Challoner, in the
 tracked Project Gutenberg e-text of that revision, with psalm loci resolved from
@@ -64,12 +86,22 @@ the tracked numbering concordance and not by arithmetic. The three orations are
 quoted from \work{The Roman Missal translated into the English language for the
 use of the laity}, first revised edition (Philadelphia: Eugene Cummiskey, 1861),
 which this audit read on the page images of the registered scan at printed
-pp.~427--429 and found word for word the tracked transcription. \textbf{That
+pp.~427--429 and found word for word the tracked transcription.%
+\fi{} \textbf{That
 English is a free devotional rendering and not a word-for-word translation}, its
 translator is not established by any source opened here, and it is presented as an
-identified historical English witness on that footing. Where the registered
+identified historical English witness on that footing.
+\ifdefined\TriptychSynthesisEdition
+Where the registered English does not answer the Latin, this edition has no
+appointed-text section in which to say so at the element: the four gaps that
+follow and the missal's untranslated cues beside them are declared at the
+element in the canonical full edition and recorded in full in
+\texttt{propers/verified.md}.%
+\else
+Where the registered
 English does not answer the Latin, the appointed-text section says so at the
-element and leaves the gap open. At four sung elements the Douay has no
+element and leaves the gap open.%
+\fi{} At four sung elements the Douay has no
 counterpart for a reading --- the Introit's added \latin{ad me}, the Alleluia's
 \latin{super omnem terram}, the Offertory's three departed phrases, and the
 Communion's \latin{dédero} and \latin{sǽculi} --- and beside them stand the
@@ -79,10 +111,15 @@ untranslated. Of the four only the Alleluia's gap is closed, the 1861 book
 rendering \latin{super omnem terram} at its printed p.~428. That book answers
 the Offertory's \latin{hymnum} and not \latin{et respéxit me}, and at \latin{et
 exaudívit deprecatiónem meam} it takes the Douay's verb with the missal's number
-and so answers the missal's reading in number alone. \latin{Et respéxit me} is
+and so answers the missal's reading in number alone. \ifdefined\TriptychSynthesisEdition
+\latin{Et respéxit me} is answered by neither the Douay nor the 1861 book, and
+the Introit's added \latin{ad me} by the Douay;%
+\else
+\latin{Et respéxit me} is
 answered by neither of the two Englishes printed at the Offertory, the Douay's
 and the 1861 book's, and the Introit's added \latin{ad me} by the Douay, the one
-English printed there; the Communion's two readings are rendered distinctly by
+English printed there;%
+\fi{} the Communion's two readings are rendered distinctly by
 none of the five English witnesses examined.
 
 \textbf{The repository's translation ledger and its own passage records
