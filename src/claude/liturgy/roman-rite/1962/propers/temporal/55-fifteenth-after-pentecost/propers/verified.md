@@ -823,8 +823,10 @@ They must be declared in the guide and are not to be filled in by the project.
    God" for `hymnum Deo nostro`. The 1861 hand missal is only half a help here:
    at p. 429 it prints "with expectation I have waited for the Lord, and he was
    attentive to me: and he heard my prayer, and he put a new canticle into my
-   mouth: a hymn to our God" — following the Douay at the first two and the
-   missal at the third. The Douay's Ps. 39:2–4 also continues past what is sung;
+   mouth: a hymn to our God" — following the Douay at the first, taking the
+   Douay's verb with the missal's singular at the second (`deprecationem meam`
+   is singular where the Clementine's `preces meas` is plural, and the Douay
+   reads "he heard my prayers"), and the missal at the third. The Douay's Ps. 39:2–4 also continues past what is sung;
    the antiphon stops at `Deo nostro`.
 3. **The Communion.** The Douay's Jn. 6:52 reads "and the bread that **I will
    give** is my flesh, for the life of **the world**," which answers neither
