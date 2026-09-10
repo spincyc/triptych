@@ -118,6 +118,17 @@ SYNTHESIS_EDITION_BRANCH_RE = re.compile(
     r"\\ifdefined\\TriptychSynthesisEdition(.*?)\\else(.*?)\\fi",
     re.DOTALL,
 )
+# `\fi{}` is the inline form of an edition conditional: the empty group is what
+# stops \fi from eating the space after it, so it marks a branch standing inside
+# a sentence rather than between blocks.  TeX gobbles the whitespace after \else
+# and lets a line-ending comment eat its own newline, so an inline branch
+# contributes no whitespace of its own at either seam.  Pandoc honours neither
+# rule: it reads the newline before \ifdefined together with the one after \else
+# as a paragraph boundary, and the newline a comment ended as a space before
+# whatever punctuation follows.  Splicing an inline branch flush at both seams is
+# what keeps the sentence the PDF sets continuously one sentence on the page.
+INLINE_BRANCH_MARKER = "{}"
+BRANCH_TAIL_RE = re.compile(r"(?:(?<!\\)%[^\n]*)?\s*\Z")
 APPOINTED_HEADING_RE = re.compile(r"\\fulltextheading(?=\s*\{)")
 HYPERSETUP_RE = re.compile(r"pdf(title|subject)\s*=\s*\{")
 FOOTNOTE_DEF_RE = re.compile(r"^\[\^[^\]]+\]:", re.MULTILINE)
@@ -155,6 +166,45 @@ TABLE_STARTS = (r"\begin{longtable}", r"\begin{tabularx}", r"\begin{tabular}")
 OUTPUT_TABLE_RE = re.compile(r"^\|(?:[ :]*-+[ :]*\|)+\s*$", re.MULTILINE)
 # A row of nothing but cell separators is a row whose text the reader dropped.
 EMPTY_ROW_RE = re.compile(r"^\|(?:\s*\|)+[ \t]*$", re.MULTILINE)
+# A construct pandoc could not carry inline becomes a block boundary, and the
+# tail of the sentence it stood in is then set as a paragraph of its own. The
+# reader meets that as a paragraph opening on a lowercase word, after a block
+# that never closed its sentence -- the one signature the damage always leaves,
+# whatever construct did the cutting. It is judged against the leaf's own files
+# as they stand on disk, not against the body the conversion has already
+# rewritten, so a rewriting that introduces the break cannot also excuse it.
+BLOCK_SPLIT_RE = re.compile(r"\n[ \t]*\n")
+MARKDOWN_OPENING_RE = re.compile(
+    r"^(?:[>\s]*)(?:(?:[-*+]|\d+\.)[ \t]+)?[\\*_`~\[\]("
+    "\N{LEFT DOUBLE QUOTATION MARK}\N{LEFT SINGLE QUOTATION MARK}\"']*"
+)
+# Every LaTeX boundary a run of words may not be read across: a blank line, a
+# row or cell break, a list item, a heading, an environment edge. The
+# environment alternative eats the name and any column spec with it, so a
+# `tabular` argument does not enter the run as words of its own.
+SOURCE_BREAK_RE = re.compile(
+    r"\n[ \t]*\n"
+    r"|\\(?:begin|end)\s*\{[^{}]*\}(?:[ \t]*\[[^\[\]]*\])?(?:[ \t]*\{[^{}]*\})?"
+    r"|\\\\(?:[ \t]*\[[^\[\]]*\])?"
+    r"|&"
+    r"|\\(?:item|par|newline|linebreak|hline|tabularnewline|toprule|midrule"
+    r"|bottomrule|clearpage|newpage|pagebreak"
+    r"|(?:sub){0,2}section\*?|(?:sub)?paragraph\*?)(?![A-Za-z@])"
+)
+CONTROL_WORD_RE = re.compile(r"\\[A-Za-z@]+\*?")
+MARKDOWN_TAG_RE = re.compile(r"<[^<>]*>")
+MARKDOWN_TARGET_RE = re.compile(r"\]\([^()\s]*\)")
+WORD_RE = re.compile(r"[^\W\d_]+")
+# A block already closed by its own terminal punctuation, or by the marker of a
+# note that carries the rest of its thought, is a block that ended -- whatever
+# the next one opens with.
+SENTENCE_END_RE = re.compile(
+    r"(?:[.!?:;]|\[\^[^\]]+\])[)\]\"'*_`"
+    "\N{RIGHT DOUBLE QUOTATION MARK}\N{RIGHT SINGLE QUOTATION MARK}]*$"
+)
+# Only prose is compared: a table, a raw HTML block and a fenced code block
+# carry no sentence for a construct to cut in half.
+OPAQUE_BLOCK_PREFIXES = ("|", "<", "```", ":::", "$$")
 MATH_WARNING_RE = re.compile(r"^\[WARNING\] Could not convert TeX math", re.MULTILINE)
 DEFINE_RE = re.compile(r"\\(?:new|renew|provide)command\*?|\\(?:new|renew)environment\*?")
 CHRONOLOGY_DEFINITION_RE = re.compile(
@@ -206,11 +256,20 @@ def resolve_input(name: str, provider: str) -> Path | None:
     return next((path for path in candidates if path.is_file()), None)
 
 
+def select_branch(match: re.Match[str]) -> str:
+    """Splice the web branch in, flush at both seams where it stands inline."""
+    branch = match.group(2)
+    following = match.string[match.end() : match.end() + len(INLINE_BRANCH_MARKER)]
+    if following != INLINE_BRANCH_MARKER:
+        return branch
+    return BRANCH_TAIL_RE.sub("", branch.lstrip())
+
+
 def select_web_branches(text: str, *, proper: bool = False) -> str:
     """Select web-active text before resolving includes or auditing commands."""
-    text = PRINT_EDITION_BRANCH_RE.sub(lambda match: match.group(2), text)
+    text = PRINT_EDITION_BRANCH_RE.sub(select_branch, text)
     if proper:
-        text = SYNTHESIS_EDITION_BRANCH_RE.sub(lambda match: match.group(2), text)
+        text = SYNTHESIS_EDITION_BRANCH_RE.sub(select_branch, text)
     return text
 
 
@@ -489,6 +548,50 @@ def strip_contentless_breaks(markdown: str) -> str:
     return CONTENTLESS_BREAKS_RE.sub("", markdown)
 
 
+def source_openings(sources: str) -> set[str]:
+    """Every word the leaf's own files open a passage of running text with."""
+    openings = set()
+    for piece in SOURCE_BREAK_RE.split(COMMENT_RE.sub("", sources)):
+        word = WORD_RE.search(CONTROL_WORD_RE.sub(" ", piece))
+        if word is not None:
+            openings.add(word.group().casefold())
+    return openings
+
+
+def prose_blocks(markdown: str) -> list[str]:
+    """The output blocks that carry a sentence, stripped of their own markup."""
+    text = MARKDOWN_TARGET_RE.sub("]", MARKDOWN_TAG_RE.sub(" ", markdown))
+    blocks = []
+    for block in BLOCK_SPLIT_RE.split(text):
+        block = re.sub(r"^[ \t]*>[ \t]?", "", block, flags=re.MULTILINE).strip()
+        if not block or block.startswith(OPAQUE_BLOCK_PREFIXES + ("#",)):
+            blocks.append("")
+            continue
+        blocks.append(MARKDOWN_OPENING_RE.sub("", block).strip())
+    return blocks
+
+
+def reflowed_sentences(sources: str, markdown: str) -> list[str]:
+    """Name every paragraph the output opened in the middle of a sentence."""
+    # Without the leaf's own files there is nothing to judge an opening against,
+    # and a check with no reference would report every lowercase opening there is.
+    if not sources.strip():
+        return []
+    openings = source_openings(sources)
+    blocks = prose_blocks(markdown)
+    broken = []
+    for index, block in enumerate(blocks[1:], start=1):
+        previous = blocks[index - 1]
+        if not block or not previous or SENTENCE_END_RE.search(previous):
+            continue
+        word = WORD_RE.match(block)
+        if word is None or not word.group()[:1].islower():
+            continue
+        if word.group().casefold() not in openings:
+            broken.append(f"{previous[-40:]!r} then {block[:40]!r}")
+    return broken
+
+
 def normalize_audit_text(text: str) -> str:
     """Normalize spacing, dashes and bold wrappers without dropping their text."""
     text = replace_grouped_macro(text, "textbf", 1, lambda arguments: arguments[0])
@@ -504,6 +607,7 @@ def audit_output(
     markdown: str,
     tables: int = 0,
     chronology_annotations: list[str] | None = None,
+    sources: str = "",
 ) -> list[str]:
     """Compare critical macro payloads in the LaTeX body against the Markdown."""
     failures = []
@@ -527,6 +631,13 @@ def audit_output(
     divs = FENCED_DIV_RE.findall(markdown)
     if divs:
         failures.append(f"{len(divs)} unconverted fenced-div delimiter(s) left in output")
+    reflowed = reflowed_sentences(sources, markdown)
+    if reflowed:
+        failures.append(
+            f"{len(reflowed)} paragraph(s) opened on a lowercase word the leaf's "
+            "sources open none with, after a block that closed no sentence: "
+            + "; ".join(reflowed)
+        )
     source_headings = {
         level: len(
             re.findall(
@@ -665,11 +776,18 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
             resolve_anchors(result.stdout), set(LABEL_RE.findall(body))
         )
     )
+    # The paragraph audit is judged against the leaf's files as they stand on
+    # disk, before any branch was selected or any macro resolved, so a rewriting
+    # that introduced a break cannot supply the reference that excuses it.
+    raw_sources = "\n\n".join(
+        path.read_text(encoding="utf-8") for path in sorted(sources)
+    )
     failures = audit_output(
         body,
         markdown,
         table_count(body, shim_text + locals_text),
         chronology_annotations,
+        shim_text + "\n\n" + raw_sources,
     )
     if failures:
         raise ConversionError("\n".join(failures))

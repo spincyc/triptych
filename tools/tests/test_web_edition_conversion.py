@@ -101,6 +101,74 @@ class WebEditionConversionTests(unittest.TestCase):
         self.assertIn("Web alternative.", markdown)
         self.assertNotIn("Print-only wording.", markdown)
 
+    def test_inline_edition_branch_keeps_its_sentence_whole(self) -> None:
+        # `\fi{}` is the inline form: the branch stands inside a sentence, and
+        # the newlines around \ifdefined, \else and \fi are TeX's to gobble.
+        markdown = self.convert(
+            "The claim rests on a reading he sets out at length,\n"
+            r"\ifdefined\TriptychSynthesisEdition" "\n"
+            "as the fourth unit sets out%\n"
+            r"\else" "\n"
+            "as the Gospel subsection sets out%\n"
+            r"\fi{} (Payne, p.~1); and the same subsection shows it%" "\n"
+            r"\ifdefined\TriptychSynthesisEdition" "\n"
+            "there%\n"
+            r"\else" "\n"
+            "word by word%\n"
+            r"\fi{}: at that place the reading is closer.",
+            proper=True,
+        )
+        self.assertIn(
+            "The claim rests on a reading he sets out at length, "
+            "as the Gospel subsection sets out (Payne, p.\N{NO-BREAK SPACE}1); "
+            "and the same subsection shows it word by word: "
+            "at that place the reading is closer.",
+            markdown,
+        )
+        self.assertNotIn("sets out\n\n", markdown)
+        self.assertNotIn("word by word :", markdown)
+
+    def test_paragraph_opened_in_mid_sentence_is_reported(self) -> None:
+        sources = (
+            "Section.\n\n"
+            "The claim rests on a reading he sets out at length, "
+            "as the Gospel subsection sets out (Payne, p.~1).\n"
+        )
+        markdown = (
+            "# Subject\n\n"
+            "The claim rests on a reading he sets out at length,\n\n"
+            "as the Gospel subsection sets out (Payne, p. 1).\n"
+        )
+        failures = DRIVER.audit_output("Prose.", markdown, sources=sources)
+        self.assertTrue(
+            any("opened on a lowercase word" in failure for failure in failures),
+            failures,
+        )
+        whole = markdown.replace(",\n\n", ", ")
+        self.assertEqual(
+            [], [f for f in DRIVER.audit_output("Prose.", whole, sources=sources)
+                 if "opened on a lowercase word" in f]
+        )
+
+    def test_paragraph_the_sources_open_the_same_way_is_not_reported(self) -> None:
+        # A leaf may open a paragraph on a lowercase word of its own; only an
+        # opening its own files never use is evidence of a reflowed sentence.
+        sources = (
+            "Section.\n\n"
+            "\\item miserere mei, the psalm's own opening, is sung twice\n\n"
+            "and a further line that does not close its sentence\n"
+        )
+        markdown = (
+            "# Subject\n\n"
+            "and a further line that does not close its sentence\n\n"
+            "miserere mei, the psalm's own opening, is sung twice.\n"
+        )
+        self.assertEqual(
+            [],
+            [f for f in DRIVER.audit_output("Prose.", markdown, sources=sources)
+             if "opened on a lowercase word" in f],
+        )
+
     def test_proper_canonical_branch_survives_recursive_section_inputs(self) -> None:
         markdown = self.convert(
             r"\ifdefined\TriptychSynthesisEdition"

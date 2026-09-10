@@ -88,10 +88,27 @@ swallows the token opening every cell in that column, so dates and book
 numbers vanish from a citation; `\cmidrule` leaks its span into the
 following row; `\endnote` disappears with its citations; an `enumitem`
 option list takes every `\item` label with it; a comment between a
-`\newenvironment`'s groups hides the definition from the audit. When you
-meet a new one, add the audit that catches it, not just the fix. A macro
-the shim does not define and the audit does not know stops the
-conversion by design — extend the shim rather than dropping the leaf.
+`\newenvironment`'s groups hides the definition from the audit; an
+edition conditional written inline, `\ifdefined\TriptychSynthesisEdition
+… \else … \fi{}`, was spliced with the newlines that surrounded it and
+so cut its sentence in two at a paragraph break, which the paragraph
+audit now catches by its shape. When you meet a new one, add the audit
+that catches it, not just the fix. A macro the shim does not define and
+the audit does not know stops the conversion by design — extend the shim
+rather than dropping the leaf.
+
+Two handlings are deliberate rather than repaired, and a reviewer meets
+the decision here rather than the bare defect. A `\multicolumn` span
+keeps its contents but not its span: Markdown has no cell span, so a
+full-width note is written into the row's first cell and the row is
+padded with empty cells to the table's width. The note is therefore
+readable but stands under a column header that does not govern it, and
+the alternative — lifting it out as a paragraph beside the table — would
+separate it from the row it annotates. And a `<` inside quoted matter is
+written `\<`, which the site's Python-Markdown does not consume, so the
+backslash reaches the reader; the escape set the converter emits is
+pandoc's, and narrowing it to the site's is a change to every tracked
+edition that carries one.
 
 ## Componentized proper guides
 
