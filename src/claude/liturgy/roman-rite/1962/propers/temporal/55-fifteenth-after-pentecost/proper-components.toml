@@ -23,6 +23,15 @@ element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel"
 references = []
 
 [[components]]
+key = "brief-synthesis"
+kind = "brief-synthesis"
+path = "sections/20-themes.tex"
+modes = ["research", "synthesis"]
+depends_on = ["orientation"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["sections/99-references.tex"]
+
+[[components]]
 key = "appointed-text"
 kind = "appointed-text"
 path = "sections/05-appointed-text.tex"
@@ -37,15 +46,6 @@ kind = "proper-treatment"
 path = "sections/30-commentary.tex"
 modes = ["research"]
 depends_on = ["appointed-text"]
-element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
-references = ["sections/99-references.tex"]
-
-[[components]]
-key = "brief-synthesis"
-kind = "brief-synthesis"
-path = "sections/20-themes.tex"
-modes = ["research", "synthesis"]
-depends_on = ["orientation"]
 element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
 references = ["sections/99-references.tex"]
 
