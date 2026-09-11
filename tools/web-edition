@@ -138,6 +138,23 @@ LEAD_COMMENT_RE = re.compile(
     r"(?<!\\)%[^\n]*\n[ \t]*(?=\\ifdefined\\Triptych)"
 )
 APPOINTED_HEADING_RE = re.compile(r"\\fulltextheading(?=\s*\{)")
+# The other form the corpus heads an appointed element with. `\fulltextheading`
+# is defined only under src/gpt; a claude leaf writes `\subsection*{1. Introit
+# \cue{Int.}}`, so `anchor_appointed_elements` matched nothing there and every
+# claude edition shipped with no component anchors at all -- the site's toc
+# extension minting positional slugs in their place, and the commentary minting
+# a second set that does not agree with them. A numbered subsection is only an
+# appointed heading when its name is one the manifest declares, so this pattern
+# finds the candidates and the declared keys decide.
+NUMBERED_HEADING_RE = re.compile(r"\\subsection\*(?=\s*\{)")
+# An element name heads more than one section: the formulary prints
+# `\subsection*{1. Introit \cue{Int.}}` and the commentary on the same element
+# prints `\subsection*{1. Introit \cue{Int.} --- \latin{Miserére mihi}}`.
+# Anchoring both mints the key twice and the edition is refused for duplicate
+# anchors, so the appointed heading is the one that stops at its cue.
+APPOINTED_TITLE_RE = re.compile(
+    r"\A\s*\d+\.\s*([A-Za-z][A-Za-z-]*)\s*\\cue\s*\{[^{}]*\}\s*\Z"
+)
 HYPERSETUP_RE = re.compile(r"pdf(title|subject)\s*=\s*\{")
 FOOTNOTE_DEF_RE = re.compile(r"^\[\^[^\]]+\]:", re.MULTILINE)
 SAFE_PAYLOAD_RE = re.compile(r"^[A-Za-z0-9 .,()]+$")
@@ -297,15 +314,39 @@ def select_web_branches(text: str, *, proper: bool = False) -> str:
     return text
 
 
+def heading_element_key(title: str) -> str:
+    """The declared element a heading names, ignoring any ordinal before it."""
+    text = re.sub(r"^\s*\d+\.\s*", "", title.lstrip())
+    name = re.match(r"[A-Za-z][A-Za-z-]*", text)
+    return name.group().lower() if name else ""
+
+
 def anchor_appointed_elements(body: str, element_keys: set[str]) -> str:
-    """Give unlabeled appointed-text headings the manifest's stable element key."""
-    out, index = [], 0
+    """Give unlabeled appointed-text headings the manifest's stable element key.
+
+    Two heading forms, judged differently. `\fulltextheading` exists to head an
+    appointed element and nothing else, so a name it carries that the manifest
+    does not declare is a defect and stops the conversion. `\subsection*` heads
+    an appointed element in some leaves and ordinary prose in all of them, so a
+    name the manifest does not declare is simply not an appointed heading and is
+    passed over. Both forms yield the same anchor, which is the point: an
+    element's durable anchor must not depend on which macro its leaf heads it
+    with, and until now it did -- every claude edition had none.
+    """
+    anchored = []
     for match in APPOINTED_HEADING_RE.finditer(body):
         title, end = brace_group(body, match.end())
-        name = re.match(r"[A-Za-z][A-Za-z-]*", title.lstrip())
-        key = name.group().lower() if name else ""
+        key = heading_element_key(title)
         if key not in element_keys:
             raise ConversionError(f"undeclared appointed element in heading: {title}")
+        anchored.append((end, key))
+    for match in NUMBERED_HEADING_RE.finditer(body):
+        title, end = brace_group(body, match.end())
+        named = APPOINTED_TITLE_RE.match(title)
+        if named and named.group(1).lower() in element_keys:
+            anchored.append((end, named.group(1).lower()))
+    out, index = [], 0
+    for end, key in sorted(anchored):
         out.append(body[index:end])
         if not LABEL_RE.match(body[end:].lstrip()):
             out.append(r"\label{proper-" + key + "}")
@@ -564,6 +605,32 @@ def table_count(body: str, definitions: str) -> int:
 # fix belongs, since the LaTeX needs the hints to break a long URL on paper.
 CONTENTLESS_BREAKS_RE = re.compile(
     r"\\{1,2}(?:allowbreak|nobreak|linebreak|newline|-|/)(?![A-Za-z])\s*"
+)
+# The subset that must go before pandoc rather than after it. Pandoc does not
+# pass \allowbreak through in every context: inside \texttt it consumed the
+# token after it, and `sections/50-resumed-sundays.tex` reached the reader as
+# `sections/-resumed-sundays.tex` -- a silent deletion no audit could see,
+# because the macro the markdown would have carried was eaten along with the
+# digits. Stripping these from the copy handed to pandoc is lossless: they are
+# break hints with no content, the file on disk keeps them, and the PDF still
+# breaks its long identifiers on paper. `\linebreak` and `\newline` stay
+# behind, because those a reader does meet as a line ending.
+PRE_CONVERSION_BREAKS_RE = re.compile(
+    r"\\(?:allowbreak|nobreak|-|/)(?![A-Za-z])\s*"
+)
+# Pandoc drops \textperiodcentered without a warning, and the identity block of
+# every proper guide separates its fields with one: "Dominica Decima Sexta post
+# Pentecosten \textperiodcentered{} II classis" reached the reader as "post
+# Pentecosten II classis". It was listed among the commands that "may drop
+# without losing content", which is true of a break hint and false of a
+# separator the reader needs. Substituted before pandoc can drop it.
+# `{}` terminates the control word and the space after it is the author's own:
+# the identity block writes `\textperiodcentered{} II classis` and means the
+# space. Bare, TeX gobbles what follows, and the Catalan geminate in
+# `Miscel\textperiodcentered lania` means no space at all. Both forms are in the
+# corpus and they differ by exactly that.
+PERIOD_CENTERED_RE = re.compile(
+    r"\\textperiodcentered(?![A-Za-z])(?:\s*\{\}|\s*)"
 )
 
 
@@ -825,6 +892,8 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
     if proper:
         components = tomllib.loads((main.parent / "proper-components.toml").read_text())
         body = anchor_appointed_elements(body, set(components.get("element_keys", [])))
+    body = PERIOD_CENTERED_RE.sub("\N{MIDDLE DOT}", body)
+    body = PRE_CONVERSION_BREAKS_RE.sub("", body)
     body, chronology_annotations = expand_chronology_annotations(body, preamble)
     title, subtitle = pdf_metadata(preamble)
     body = TITLEPAGE_RE.sub("", body).replace(r"\tableofcontents", "")

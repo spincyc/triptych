@@ -149,6 +149,52 @@ class WebEditionConversionTests(unittest.TestCase):
             any("lowercase" in failure for failure in failures), failures
         )
 
+    def test_a_break_hint_does_not_eat_the_token_after_it(self) -> None:
+        # Pandoc consumed the token after \allowbreak inside \texttt, so
+        # `sections/50-resumed-sundays.tex` reached the reader as
+        # `sections/-resumed-sundays.tex`, with no warning of any kind.
+        markdown = self.convert(
+            r"The file \texttt{sections/\allowbreak 50-resumed-sundays.tex} "
+            r"carries it."
+        )
+        self.assertIn("sections/50-resumed-sundays.tex", markdown)
+        self.assertNotIn("sections/-resumed", markdown)
+
+    def test_a_middle_dot_separator_survives_and_keeps_its_spacing(self) -> None:
+        # Pandoc drops \textperiodcentered silently. Braced, the space after it
+        # is the author's; bare, TeX gobbles it, which is the Catalan geminate.
+        markdown = self.convert(
+            r"\textbf{Ident.} Dominica \textperiodcentered{} II classis "
+            r"\textperiodcentered{} Green, in \emph{Miscel\textperiodcentered "
+            r"lania}."
+        )
+        self.assertIn(
+            "Dominica \N{MIDDLE DOT} II classis \N{MIDDLE DOT} Green", markdown)
+        self.assertIn("Miscel\N{MIDDLE DOT}lania", markdown)
+
+    def test_a_numbered_element_heading_carries_the_declared_anchor(self) -> None:
+        """The anchor cannot depend on which macro a leaf heads an element with.
+
+        `anchor_appointed_elements` keyed on \fulltextheading, which is defined
+        only under src/gpt. A claude leaf heads the same element with a numbered
+        subsection, matched nothing, and every claude edition shipped with no
+        component anchors at all. The commentary heads the same element again
+        and adds the incipit, so the appointed heading is the one that stops at
+        its cue -- anchoring both mints the key twice and the edition is refused.
+        """
+        markdown = self.convert(
+            r"\subsection*{1. Introit \cue{Int.}}" "\n"
+            r"The appointed text stands here." "\n\n"
+            r"\subsection*{1. Introit \cue{Int.} --- \emph{Miserere mihi}}" "\n"
+            r"The commentary on it stands here." "\n\n"
+            r"\subsection*{2. A Section That Is Not An Element}" "\n"
+            r"Ordinary prose stands here.",
+            preamble=r"\newcommand{\cue}[1]{\textit{#1}}",
+            proper=True, element_keys=("introit",),
+        )
+        self.assertEqual(markdown.count("{#proper-introit}"), 1)
+        self.assertIn("Introit", markdown)
+
     def test_line_ending_comment_before_a_guard_sets_no_space(self) -> None:
         # TeX lets `%` eat its own newline, so the page sets "on John," closed
         # up.  Pandoc keeps the newline and reads it as a space, which is how
