@@ -4,9 +4,9 @@
 
 **Eleventh Sunday after Pentecost**
 
-**Dominica Undecima post Pentecosten* II classis Green*
+**Dominica Undecima post Pentecosten* · II classis · Green*
 
-1962 *Missale Romanum*, editio typica, pp. 390–392 *Credo* Preface of the Most Holy Trinity
+1962 *Missale Romanum*, editio typica, pp. 390–392 · *Credo* · Preface of the Most Holy Trinity
 
 ## The Propers: Map
 

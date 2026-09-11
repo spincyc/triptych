@@ -529,7 +529,7 @@ Franz Werfel titled a 1935 poem *Tempora mea in manibus tuis*. The title reorder
 
 - C. L. Feltoe, ed., *Sacramentarium Leonianum* (Cambridge, 1896), p. 76, July XXXIII; H. A. Wilson, ed., [*The Gelasian Sacramentary*](https://archive.org/details/gelasiansacrame00wilsgoog) (Oxford, 1894), pp. 229, 247, 249, 354; Wilson, ed., [*The Gregorian Sacramentary under Charles the Great*](https://archive.org/details/gregoriansacrame00cath) (London, 1915), pp. 172–173, especially p. 172 n. b and p. 173 Sunday XIV.
 
-- Miquel dels Sants Gros i Pujol, “El Sacramentari II de Gellona (Montpellier, Bib. Mun., ms. 18),” *Miscellània Litúrgica Catalana* 20 (2012), p. 155, fol. 153v, nos. 1118–1120; L. Scappaticci, “Frammenti di libri manoscritti della tradizione liturgica savonese,” *Atti e memorie della Società Savonese di Storia Patria*, n.s. 37 (2001), pp. 187–188, Savona AD Armadio 5, fols. 8r–v.
+- Miquel dels Sants Gros i Pujol, “El Sacramentari II de Gellona (Montpellier, Bib. Mun., ms. 18),” *Miscel·lània Litúrgica Catalana* 20 (2012), p. 155, fol. 153v, nos. 1118–1120; L. Scappaticci, “Frammenti di libri manoscritti della tradizione liturgica savonese,” *Atti e memorie della Società Savonese di Storia Patria*, n.s. 37 (2001), pp. 187–188, Savona AD Armadio 5, fols. 8r–v.
 
 - *Rituale Romanum*, first Regensburg edition (Pustet, 1872), pp. 75–76, 81, 261–262, for the Benediction route of *Panem de caelo praestitisti eis*; Prosper Guéranger, [*The Liturgical Year*](https://archive.org/details/V11TheLiturgicalYear), vol. XI (Dublin: Duffy, 1900), pp. 307–326; Ildefonso Schuster, *The Sacramentary*, vol. III (London, 1927), pp. 132–135.
 

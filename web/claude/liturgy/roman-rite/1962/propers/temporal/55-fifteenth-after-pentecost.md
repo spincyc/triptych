@@ -4,9 +4,9 @@
 
 **Fifteenth Sunday after Pentecost**
 
-**Dominica Decima Quinta post Pentecosten* II classis Green*
+**Dominica Decima Quinta post Pentecosten* · II classis · Green*
 
-1962 *Missale Romanum*, editio typica, pp. 396–397 *Credo* Preface of the Most Holy Trinity
+1962 *Missale Romanum*, editio typica, pp. 396–397 · *Credo* · Preface of the Most Holy Trinity
 
 ## The Propers: Map
 
@@ -103,7 +103,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **The English below.** Scriptural elements are the Douay–Rheims as revised by Bishop Challoner — the English of the Clementine Vulgate the missal prints — in the Project Gutenberg e-text of that revision, with the psalm loci resolved in the missal’s own Vulgate numbering. The three orations are the anonymous English of *The Roman Missal translated into the English language for the use of the laity*, first revised edition (Philadelphia: Eugene Cummiskey, 1861), at the three lines the tracked transcription of that book’s temporal orations carries for this formulary, physical lines 155–157, reproduced with its own nineteenth-century spelling and its abbreviated conclusion “Thro’.”
 
-### 1. Introit <span class="nodecor">(*Int.*)</span>
+### 1. Introit <span class="nodecor">(*Int.*)</span> {#proper-introit}
 
 > ***Ant. ad Introitum* — Ps. 85, 1 et 2-3 — marginal no. 1582**
 >
@@ -115,7 +115,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Where the registered English does not answer the Latin.** The antiphon is a three-part cento, not a quotation: v. 1a as far as *exáudi me*, then v. 2b from *salvum fac*, then v. 3 entire, with the psalm’s own inscription and the halves of vv. 1 and 2 that mention need, poverty and holiness all unsung. Two of its words are not the Clementine’s. *Ad me* is added at v. 1 and the Douay’s “Incline thy ear, O Lord, and hear me” has no counterpart for it; *miserére mihi* stands at v. 3 where the Bible text reads *miserere mei*, and the Douay’s “Have mercy on me” happens to answer both. The doxology cue *Glória Patri* belongs to the Ordinary and not to the proper.
 
-### 2. Collect <span class="nodecor">(*Coll.*)</span>
+### 2. Collect <span class="nodecor">(*Coll.*)</span> {#proper-collect}
 
 > ***Oratio* — marginal no. 1583**
 >
@@ -127,7 +127,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Where the registered English does not answer the Latin.** *Tuo semper múnere* becomes “by the influence of thy grace,” so the noun *munus* — the gift the Church is governed by, and the word Augustine uses at the Gradual’s psalm to deny that any progress is a merit — does not survive into the English, and *semper* is carried by the adverb of the verb rather than of the gift. The semicolon after *consístere* is the prayer’s hinge; the uncorrected optical layer of the Benziger 1962 shows it too, and those of the Pustet 1862, the Venice 1570 and the Vatican *typica* of 1604 show a comma there.
 
-### 3. Epistle <span class="nodecor">(*Ep.*)</span>
+### 3. Epistle <span class="nodecor">(*Ep.*)</span> {#proper-epistle}
 
 > ***Léctio Epístolæ beáti Pauli Apóstoli ad Gálatas.* — Gal. 5, 25-26; 6, 1-10 — marginal no. 1584**
 >
@@ -139,7 +139,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Where the registered English does not answer the Latin.** The word *Fratres* stands twice and only the first is liturgical: *Fratres:* at the head is the lesson’s added address, prefixed to Gal. 5:25 and displacing nothing, and it is the missal’s own, with no counterpart in the Douay; *Fratres,* in the middle is Paul’s own vocative at 6:1 and the Douay renders it. At 6:6 the Latin transliterates the Greek verb rather than rendering it, *catechizátur* and *catechízat*, while the Douay reads “instructed” and “instructeth,” so the Latin and English columns part company at the one word in this lesson that names a church office. The two burdens of 6:2 and 6:5 are one noun in Latin and in English, *ónera* and *onus*, where Paul writes two different Greek words. The sowing clause is numbered differently in the two languages: what the Clementine and the Douay print at the head of v. 8 stands at the end of Greek v. 7.
 
-### 4. Gradual <span class="nodecor">(*Grad.*)</span>
+### 4. Gradual <span class="nodecor">(*Grad.*)</span> {#proper-gradual}
 
 > ***Graduale* — Ps. 91, 2-3 — marginal no. 1585**
 >
@@ -151,7 +151,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Where the registered English does not answer the Latin.** The Latin wording is the Clementine’s exactly at both verses, with nothing added, dropped or transposed; what differs is pointing. The Clementine prints a comma after *misericórdiam tuam* and the typical edition does not, and the uncorrected optical layers of the Benziger 1962, the Pustet 1862, the Venice 1570 and the 1604 *typica* all show it. *Confitéri* carries confession of sin and confession of praise together, and both Augustine and Cassiodorus build their expositions on the double sense; the Douay’s “to give praise” renders the second alone.
 
-### 5. Alleluia <span class="nodecor">(*All.*)</span>
+### 5. Alleluia <span class="nodecor">(*All.*)</span> {#proper-alleluia}
 
 > **marginal no. 1586 — the missal prints no heading for this chant**
 >
@@ -163,7 +163,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Where the registered English does not answer the Latin.** **The Douay does not answer this chant.** The missal sings *super omnem terram* where the Clementine reads *super omnes deos*, and the Douay renders the Clementine; the predicate is not an orthographic or pointing variant but a different one, and it stands already in the uncorrected optical layers of the Pustet 1862, the Venice 1570 and the 1604 *typica*. The 1861 Philadelphia hand missal prints its own English of the versicle beside the Latin at printed p. 428, “℣. For the Lord is a great God, and a great King over all the earth. Alleluia.” — an identified nineteenth-century rendering of what the missal sings, and not the Douay.
 
-### 6. Gospel <span class="nodecor">(*Gosp.*)</span>
+### 6. Gospel <span class="nodecor">(*Gosp.*)</span> {#proper-gospel}
 
 > **✠ *Sequéntia sancti Evangélii secúndum Lucam.* — Luc. 7, 11-16 — marginal no. 1587**
 >
@@ -175,7 +175,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Where the registered English does not answer the Latin.** The missal’s incipit *In illo témpore: Ibat Iesus* replaces the Bible text’s *Et factum est: deinceps ibat*, which the Douay renders “And it came to pass afterwards that he went”; the missal’s opening is its own and has no Douay counterpart. *Aduléscens* is printed with *u* where the Clementine reads *Adolescens*, and the uncorrected optical layers of the Venice 1570 and the 1604 *typica* show the same, and the Douay’s “Young man” answers the word whichever way it is spelled. The parenthesis at v. 14 closes before its stop in this book, *stetérunt).*, against the Clementine’s *steterunt.)*.
 
-### 7. Offertory <span class="nodecor">(*Off.*)</span>
+### 7. Offertory <span class="nodecor">(*Off.*)</span> {#proper-offertory}
 
 > ***Ant. ad Offertorium* — Ps. 39, 2, 3 et 4 — marginal no. 1588**
 >
@@ -187,7 +187,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Where the registered English does not answer the Latin.** **Three of this antiphon’s phrases have no Douay equivalent, because the Douay renders the Clementine and the antiphon does not.** Where the Bible text has *et intendit mihi*, the chant has *et respéxit me*; where it has *Et exaudivit preces meas*, the chant has *et exaudívit deprecatiónem meam*; where it has *carmen Deo nostro*, the chant has *hymnum Deo nostro*. All three stand in the uncorrected optical layers of the Pustet 1862, the Venice 1570 and the 1604 *typica*. The 1861 Philadelphia hand missal is half a help here, printing at p. 429 “with expectation I have waited for the Lord, and he was attentive to me: and he heard my prayer, and he put a new canticle into my mouth: a hymn to our God” — following the Douay at the first, taking the Douay’s verb with the missal’s singular at the second, and the missal at the third. The whole of v. 3 from *et eduxit me de lacu miseriæ* to *direxit gressus meos* is cut, and so is the second half of v. 4, which the Douay prints and which the chant does not reach.
 
-### 8. Secret <span class="nodecor">(*Sec.*)</span>
+### 8. Secret <span class="nodecor">(*Sec.*)</span> {#proper-secret}
 
 > ***Secreta* — marginal no. 1589**
 >
@@ -199,7 +199,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Where the registered English does not answer the Latin.** The 1861 book prints no Latin incipit cue at this prayer, and no conclusion: the long form the typical edition sets out to *in unitáte.* is untranslated there, where the Collect’s short *Per Dóminum.* and the Postcommunion’s long form are rendered by the book’s abbreviated “Thro’.” The uncorrected optical layers of the Benziger 1962, the Pustet 1862 and the 1604 *typica* all show the short conclusion at this Secret; the long form here is the Vatican typical edition’s own choice at this place and is not a different prayer.
 
-### 9. Communion <span class="nodecor">(*Comm.*)</span>
+### 9. Communion <span class="nodecor">(*Comm.*)</span> {#proper-communion}
 
 > ***Ant. ad Communionem* — Io. 6, 52 — marginal no. 1590**
 >
@@ -211,7 +211,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Where the registered English does not answer the Latin.** **The Douay answers neither of the antiphon’s two departures.** *Dédero* is a future perfect where the Clementine has the simple future *dabo*, and the Douay reads “I will give”; *pro sǽculi vita* stands where the Clementine has *pro mundi vita*, and the Douay reads “the life of the world.” None of the five English witnesses examined renders either reading distinctly. Both readings stand in the uncorrected optical layers of the Pustet 1862, the Venice 1570 and the 1604 *typica*. The first half of the verse is not sung, and *Panis* is capitalised where the Bible text has it mid-sentence.
 
-### 10. Postcommunion <span class="nodecor">(*Postcomm.*)</span>
+### 10. Postcommunion <span class="nodecor">(*Postcomm.*)</span> {#proper-postcommunion}
 
 > ***Postcommunio* — marginal no. 1591**
 >
@@ -678,7 +678,7 @@ The research behind this guide was carried out in one production and its audit r
 
 ### The Missal and the liturgical witnesses
 
-- *Missale Romanum ex decreto Sacrosancti Concilii Tridentini restitutum, Summorum Pontificum cura recognitum*, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962), printed pp. 396–397, marginal nos. 1582–1591, with the *Rubricae generales* at printed pp. XX and XXXI. Read on the page images of the CMAA-hosted facsimile, `artifact.catholic-church.missale-romanum. vatican-typica-1962.cmaa-facsimile-pdf`, at the scan’s native resolution. Controls every Latin form, heading, reference, accent, point, marginal number and rubric printed here, and both formulary boundaries.
+- *Missale Romanum ex decreto Sacrosancti Concilii Tridentini restitutum, Summorum Pontificum cura recognitum*, editio typica (Vatican City: Typis Polyglottis Vaticanis, 1962), printed pp. 396–397, marginal nos. 1582–1591, with the *Rubricae generales* at printed pp. XX and XXXI. Read on the page images of the CMAA-hosted facsimile, `artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf`, at the scan’s native resolution. Controls every Latin form, heading, reference, accent, point, marginal number and rubric printed here, and both formulary boundaries.
 
 - *Missale Romanum*, editio iuxta typicam (New York: Benziger Brothers, 1962), printed pp. 390–392, read only in the uncorrected optical text layer of the Internet Archive digitisation. Every difference recorded from it is evidence about that layer.
 
@@ -688,7 +688,7 @@ The research behind this guide was carried out in one production and its audit r
 
 - H. A. Wilson (ed.), *The Gelasian Sacramentary* (Oxford: Clarendon, 1894), Book III sect. XI, printed p. 230, heading *Item alia Missa*, with the marginal apparatus *R. S. / Gerb. 175. / Pam. 411. / Men. 179.* Read on a page image and in two optical layers of the same printing that agree verbatim on every word quoted.
 
-- The four non-Gregorian, non-Gelasian books over which the three orations’ negative was run, read as the uncorrected optical layers of the registered corpus `corpus.catholic-church. ancient-sacramentaries-2026-08-01`: the Veronense in Feltoe’s edition, in two independent scans; Férotin’s *Liber mozarabicus sacramentorum*; Bannister’s *Missale Gothicum*; and Lowe’s *Bobbio Missal*. Searched by literal string, after letter folding, for fourteen distinctive phrases of the three orations and for five vocabulary controls, with the two Wilson layers as the positive control; nothing is quoted from any of the four, no page image of any was opened, and the negative carries the four bounds stated in the appendix.
+- The four non-Gregorian, non-Gelasian books over which the three orations’ negative was run, read as the uncorrected optical layers of the registered corpus `corpus.catholic-church.ancient-sacramentaries-2026-08-01`: the Veronense in Feltoe’s edition, in two independent scans; Férotin’s *Liber mozarabicus sacramentorum*; Bannister’s *Missale Gothicum*; and Lowe’s *Bobbio Missal*. Searched by literal string, after letter folding, for fourteen distinctive phrases of the three orations and for five vocabulary controls, with the two Wilson layers as the positive control; nothing is quoted from any of the four, no page image of any was opened, and the negative carries the four bounds stated in the appendix.
 
 - Honorius Augustodunensis, *Gemma animae* IV capp. LXVII, LXXII, LXXIV–LXXX, PL 172 cols. 715–721, with this Sunday at cap. LXXVIII. Read on page images of a registered facsimile whose bytes are rights-restricted and are not held here.
 
@@ -706,11 +706,11 @@ The research behind this guide was carried out in one production and its audit r
 
 ### Scripture, its versions, and the chronology corpus
 
-- *Biblia Sacra Vulgatae Editionis* (Clementine), tracked as `edition.catholic-church.vulgata-clementina. ebible-latvuc`: Pss. 39, 46, 85, 91 and 94, Gal. 5–6, Lk. 7 and Jn. 6, the comparison text for every divergence recorded here and the Bible whose English this guide quotes; and, behind the further readings and the exhaustive sweeps the commentary reports, the ascriptions of Pss. 72–88 with the doxologies at Ps. 71:19–20 and 88:53, Ps. 87:12, Ecclus. 48:25, 3 Kings 17:23, 4 Kings 4, Lk. 1:68, 1:78, 4:25–26, 7:22 and 19:44, Jn. 6:39–55, Eph. 2:19, Heb. 3:7–4:7 and 10:5, the whole-Bible sweeps for *Naim*, *propheta magnus*, *rex magnus super omnem terram* and *misericordiam tuam et veritatem tuam*, and the sweep of Luke for the stem *visita-*.
+- *Biblia Sacra Vulgatae Editionis* (Clementine), tracked as `edition.catholic-church.vulgata-clementina.ebible-latvuc`: Pss. 39, 46, 85, 91 and 94, Gal. 5–6, Lk. 7 and Jn. 6, the comparison text for every divergence recorded here and the Bible whose English this guide quotes; and, behind the further readings and the exhaustive sweeps the commentary reports, the ascriptions of Pss. 72–88 with the doxologies at Ps. 71:19–20 and 88:53, Ps. 87:12, Ecclus. 48:25, 3 Kings 17:23, 4 Kings 4, Lk. 1:68, 1:78, 4:25–26, 7:22 and 19:44, Jn. 6:39–55, Eph. 2:19, Heb. 3:7–4:7 and 10:5, the whole-Bible sweeps for *Naim*, *propheta magnus*, *rex magnus super omnem terram* and *misericordiam tuam et veritatem tuam*, and the sweep of Luke for the stem *visita-*.
 
-- *The Holy Bible, Douay–Rheims*, as revised by Bishop Challoner, tracked as `edition.english-college-of-douay. douay-rheims-bible.challoner-gutenberg-1581`: Ps. 39:2–4; 46:3; 85:1–4; 91:2–3; 94:3; Gal. 5:25–6:10; Lk. 7:11–16; Jn. 6:52. The English of every scriptural element, with the Vulgate-to-English psalm conversions taken from the tracked numbering concordance of the same edition.
+- *The Holy Bible, Douay–Rheims*, as revised by Bishop Challoner, tracked as `edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581`: Ps. 39:2–4; 46:3; 85:1–4; 91:2–3; 94:3; Gal. 5:25–6:10; Lk. 7:11–16; Jn. 6:52. The English of every scriptural element, with the Vulgate-to-English psalm conversions taken from the tracked numbering concordance of the same edition.
 
-- *The Roman Missal translated into the English language for the use of the laity*, first revised edition (Philadelphia: Eugene Cummiskey, 1861), printed pp. 427–429, and the tracked transcription `artifact.eugene-cummiskey. roman-missal-english-laity.philadelphia-1861. temporal-orations-en` at physical lines 155–157. The English of the Collect, the Secret and the Postcommunion; and, at printed pp. 428–429, the book’s own renderings of the Alleluia’s versicle and of the Offertory antiphon, reported at those elements as identified nineteenth-century English of what the missal sings and not as the Douay.
+- *The Roman Missal translated into the English language for the use of the laity*, first revised edition (Philadelphia: Eugene Cummiskey, 1861), printed pp. 427–429, and the tracked transcription `artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en` at physical lines 155–157. The English of the Collect, the Secret and the Postcommunion; and, at printed pp. 428–429, the book’s own renderings of the Alleluia’s versicle and of the Offertory antiphon, reported at those elements as identified nineteenth-century English of what the missal sings and not as the Douay.
 
 - Eberhard Nestle, *Novum Testamentum Graece* (1904), in the morphologically tagged digitisation of that text: Gal. 5–6, Lk. 7, Jn. 6, and the exhaustive lemma sweeps behind the counts of *bastazo*, *monogenes*, *splanchnizomai* and the visitation verb.
 

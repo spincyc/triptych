@@ -4,9 +4,9 @@
 
 **Ninth Sunday after Pentecost**
 
-**Dominica Nona post Pentecosten* II classis Green*
+**Dominica Nona post Pentecosten* · II classis · Green*
 
-1962 *Missale Romanum*, editio typica, pp. 388–389 *Credo* Preface of the Most Holy Trinity
+1962 *Missale Romanum*, editio typica, pp. 388–389 · *Credo* · Preface of the Most Holy Trinity
 
 ## The Propers: Map
 
@@ -65,7 +65,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **The English.** Scriptural elements are the Douay–Rheims as revised by Bishop Challoner (1749–1752) — the English of the Clementine Vulgate the missal prints — in the Project Gutenberg e-text of that revision. The three orations are the anonymous English of *The Roman Missal translated into the English language for the use of the laity*, first revised edition (Philadelphia: Eugene Cummiskey, 1861), from the three lines that book supplies for this formulary, reproduced with its own nineteenth-century spelling and its abbreviated conclusion “Thro’.” Both are public domain in the United States. Neither is an official liturgical translation, and neither is the text of the 1962 books: this is a study companion, not an altar book or a hand missal. The project has translated nothing. Where the registered English does not answer the missal’s Latin — and it fails to at four points in this formulary — the gap is marked at the element and left open.
 
-### 1. Introit <span class="nodecor">(*Int.*)</span>
+### 1. Introit <span class="nodecor">(*Int.*)</span> {#proper-introit}
 
 > ***Ant. ad Introitum* — Ps. 53, 6-7 — marginal no. 1522**
 >
@@ -77,7 +77,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Where the registered English does not answer the Latin.** Three clauses of the antiphon are not answered by that English, and none of them is filled in here. The antiphon’s closing vocative *protéctor meus, Dómine* has no counterpart anywhere in Psalm 53, so the Douay has none either. The psalm verse sings *líbera me* where the Clementine, and therefore the Douay, reads *judica me*: the English above says “judge me,” the missal does not. And the Douay’s opening “For” renders the *enim* that the antiphon drops at v. 6. The doxology cue *Glória Patri* belongs to the Ordinary rather than to this formulary and is a scriptureless liturgical formula; no English is supplied for it here.
 
-### 2. Collect <span class="nodecor">(*Coll.*)</span>
+### 2. Collect <span class="nodecor">(*Coll.*)</span> {#proper-collect}
 
 > ***Oratio* — marginal no. 1523**
 >
@@ -89,7 +89,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Where the registered English does not answer the Latin.** Not a missing clause but a shifted subject, and it matters enough to flag beside the text. *Ut peténtibus desideráta concédas* makes God the one who grants — that *thou* mayst grant to those who ask the things they desire. The 1861 English makes the petitioners the ones who succeed. The rendering is quoted because it is the registered public-domain witness for this formulary; the argument built on the prayer’s grammar is conducted on the Latin, in the detailed commentary.
 
-### 3. Epistle <span class="nodecor">(*Ep.*)</span>
+### 3. Epistle <span class="nodecor">(*Ep.*)</span> {#proper-epistle}
 
 > ***Léctio Epístolæ beáti Pauli Apóstoli ad Corínthios* — 1 Cor. 10, 6-13 — marginal no. 1524**
 >
@@ -101,7 +101,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Where the registered English does not answer the Latin.** The lesson opens mid-verse. Where the missal prints its own liturgical address *Fratres:*, the Clementine has *Hæc autem in figúra facta sunt nostri* and the Douay has “Now these things were done in a figure of us” — the words displaced above by the ellipsis. *Fratres:* is the missal’s own and is not translated here.
 
-### 4. Gradual <span class="nodecor">(*Grad.*)</span>
+### 4. Gradual <span class="nodecor">(*Grad.*)</span> {#proper-gradual}
 
 > ***Graduale* — Ps. 8, 2 — marginal no. 1525**
 >
@@ -111,7 +111,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > O Lord, our Lord, how admirable is thy name in the whole earth! ℣. For thy magnificence is elevated above the heavens.
 
-### 5. Alleluia <span class="nodecor">(*All.*)</span>
+### 5. Alleluia <span class="nodecor">(*All.*)</span> {#proper-alleluia}
 
 > **Alleluia, no separate heading — Ps. 58, 2 — marginal no. 1526**
 >
@@ -121,7 +121,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > Alleluia, alleluia. ℣. Deliver me from my enemies, O my God; and defend me from them that rise up against me. Alleluia.
 
-### 6. Gospel <span class="nodecor">(*Gosp.*)</span>
+### 6. Gospel <span class="nodecor">(*Gosp.*)</span> {#proper-gospel}
 
 > ***✠ Sequéntia sancti Evangélii secúndum Lucam* — Luc. 19, 41-47 — marginal no. 1527**
 >
@@ -135,7 +135,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Rubric as printed:** *Credo.* Printed on its own line immediately after the Gospel. A direction, not a text: the Creed itself is in the Ordinary.
 
-### 7. Offertory <span class="nodecor">(*Off.*)</span>
+### 7. Offertory <span class="nodecor">(*Off.*)</span> {#proper-offertory}
 
 > ***Antiphona ad Offertorium* — Ps. 18, 9, 10, 11 et 12 — marginal no. 1528**
 >
@@ -147,7 +147,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Where the registered English does not answer the Latin.** This antiphon is not a quotation but a centonisation, which is why the missal prints four verse numbers instead of a range: it takes v. 9a, the subject *iudicia* from v. 10c, the honey comparison from v. 11b, and v. 12a. The four Douay verses are therefore printed whole with the fragments marked, rather than stitched into a seamless English paragraph that the project would itself have composed. Read in the antiphon’s own order the fragments say: the justices of the Lord are right, rejoicing hearts, and the judgments of the Lord sweeter than honey and the honeycomb; for thy servant keepeth them. One further difference is invisible in English: the missal writes *nam et* where the psalm has *Etenim*, and the Douay reads “For” either way.
 
-### 8. Secret <span class="nodecor">(*Sec.*)</span>
+### 8. Secret <span class="nodecor">(*Sec.*)</span> {#proper-secret}
 
 > ***Secreta* — marginal no. 1529**
 >
@@ -161,7 +161,7 @@ The typical edition prints the long conclusion here, breaking off at *in unitát
 
 **Rubric as printed:** *Præfatio de Ssma Trinitate.* Printed immediately after the Secret, with *Ssma* under a tilde abbreviation for *Sanctissima*: the Preface of the Most Holy Trinity, which is in the Ordinary. Expanded here from the same book’s own abbreviation practice.
 
-### 9. Communion <span class="nodecor">(*Comm.*)</span>
+### 9. Communion <span class="nodecor">(*Comm.*)</span> {#proper-communion}
 
 > ***Ant. ad Communionem* — Io. 6, 57 — marginal no. 1530**
 >
@@ -173,7 +173,7 @@ The typical edition prints the long conclusion here, breaking off at *in unitát
 
 **Where the registered English does not answer the Latin.** The antiphon’s closing *dicit Dóminus* is the liturgy’s own attribution formula, not part of John 6:57, and therefore not in the Douay. The antiphon also reads *et ego in eo* where the Clementine has *et ego in illo*; the English is “and I in him” either way. The reference *Io. 6, 57* is the Clementine’s verse number, which the Douay–Rheims shares; most current editions number the same clause 6:56.
 
-### 10. Postcommunion <span class="nodecor">(*Postcomm.*)</span>
+### 10. Postcommunion <span class="nodecor">(*Postcomm.*)</span> {#proper-postcommunion}
 
 > ***Postcommunio* — marginal no. 1531**
 >

@@ -4,9 +4,9 @@
 
 **Twelfth Sunday after Pentecost**
 
-**Dominica Duodecima post Pentecosten* II classis Green*
+**Dominica Duodecima post Pentecosten* · II classis · Green*
 
-1962 *Missale Romanum*, editio typica, pp. 392–393 *Credo* Preface of the Most Holy Trinity
+1962 *Missale Romanum*, editio typica, pp. 392–393 · *Credo* · Preface of the Most Holy Trinity
 
 ## The Propers: Map
 
@@ -113,7 +113,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **The English.** Scriptural elements are the Douay–Rheims as revised by Bishop Challoner (1749–1752) — the English of the Clementine Vulgate the missal prints — in the Project Gutenberg e-text of that revision. The three orations are the anonymous English of *The Roman Missal translated into the English language for the use of the laity*, first revised edition (Philadelphia: Eugene Cummiskey, 1861), from the three lines that book supplies for this formulary, reproduced with its own nineteenth-century spelling and its abbreviated conclusion “Thro’.” Both are public domain in the United States. Neither is an official liturgical translation, and neither is the text of the 1962 books: this is a study companion, not an altar book or a hand missal. The project has translated nothing. Two chants of this formulary follow the old chant psalter or the Old Latin rather than the Clementine Vulgate, so the registered English does not answer their exact wording at several points; each gap is marked at the element and left open.
 
-### 1. Introit <span class="nodecor">(*Int.*)</span>
+### 1. Introit <span class="nodecor">(*Int.*)</span> {#proper-introit}
 
 > ***Ant. ad Introitum* — Ps. 69, 2-3 — marginal no. 1552**
 >
@@ -125,7 +125,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Where the registered English does not answer the Latin.** The antiphon and verse follow the chant psalter, not the Clementine the Douay translates, and the English above therefore misses the missal at two points. The antiphon sings *confundántur et revereántur inimíci mei*, “my enemies”; Clementine Ps. 69:3 has no *inimici mei*, so the Douay’s “that seek my soul” hangs from no named enemy. The verse sings *qui cógitant mihi mala*, “who devise evils against me”; the Clementine, and therefore the Douay, reads *qui volunt mihi mala*, “that desire evils to me” — desiring is what the English answers, devising is what the missal prints. The verse also stops at the half-verse; the Clementine’s continuation (*avertantur statim erubescentes…*) is not appointed. The doxology cue *Glória Patri* belongs to the Ordinary rather than to this formulary and is a scriptureless liturgical formula; no English is supplied for it here.
 
-### 2. Collect <span class="nodecor">(*Coll.*)</span>
+### 2. Collect <span class="nodecor">(*Coll.*)</span> {#proper-collect}
 
 > ***Oratio* — marginal no. 1553**
 >
@@ -137,7 +137,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Where the registered English does not answer the Latin.** The 1861 rendering gives one adverb where the Latin prays two: “worthily serve thee” answers *digne* and leaves *et laudabíliter* — “and laudably,” service that is also praise — without a separate English word. It also renders *a fidélibus tuis*, “by thy faithful,” as “thy people.” The grammatical argument in the commentary is therefore conducted on the Latin.
 
-### 3. Epistle <span class="nodecor">(*Ep.*)</span>
+### 3. Epistle <span class="nodecor">(*Ep.*)</span> {#proper-epistle}
 
 > ***Léctio Epístolæ beáti Pauli Apóstoli ad Corínthios.* — 2 Cor. 3, 4-9 — marginal no. 1554**
 >
@@ -149,7 +149,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Where the registered English does not answer the Latin.** The liturgical incipit *Fratres:* is the missal’s own and is not translated; it displaces the connective of Clementine 2 Cor. 3:4, *Fidúciam **autem** talem habémus* — the Douay’s opening “And” renders the *autem* that the lesson drops. The pericope ends at v. 9; v. 10 is outside the appointed lesson.
 
-### 4. Gradual <span class="nodecor">(*Grad.*)</span>
+### 4. Gradual <span class="nodecor">(*Grad.*)</span> {#proper-gradual}
 
 > ***Graduale* — Ps. 33, 2-3 — marginal no. 1555**
 >
@@ -159,7 +159,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > I will bless the Lord at all times, his praise shall be always in my mouth. ℣. In the Lord shall my soul be praised: let the meek hear and rejoice.
 
-### 5. Alleluia <span class="nodecor">(*All.*)</span>
+### 5. Alleluia <span class="nodecor">(*All.*)</span> {#proper-alleluia}
 
 > **Allelúia — Ps. 87, 2 — marginal no. 1556**
 >
@@ -169,7 +169,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 >
 > O Lord, the God of my salvation: I have cried in the day, and in the night before thee. *Allelúia.*
 
-### 6. Gospel <span class="nodecor">(*Gosp.*)</span>
+### 6. Gospel <span class="nodecor">(*Gosp.*)</span> {#proper-gospel}
 
 > **✠ *Sequéntia sancti Evangélii secúndum Lucam.* — Luc. 10, 23-37 — marginal no. 1557**
 >
@@ -183,7 +183,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Where the registered English does not answer the Latin.** The liturgical incipit *In illo témpore: Dixit Iesus discípulis suis:* is the missal’s own and is not translated. It displaces Luke’s narrative frame, Clementine 10:23 *Et convérsus ad discípulos suos, dixit:* — the evangelist’s “And turning to his disciples, he said” is outside the appointed text, so the Douay’s opening words for v. 23 are not printed above.
 
-### 7. Offertory <span class="nodecor">(*Off.*)</span>
+### 7. Offertory <span class="nodecor">(*Off.*)</span> {#proper-offertory}
 
 > ***Antiphona ad Offertorium* — Exodi 32, 11, 13 et 14 — marginal no. 1558**
 >
@@ -199,7 +199,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Where the registered English does not answer the Latin.** This chant is an Old-Latin adaptation of the narrative, not the Vulgate the Douay translates, so the three verses are printed whole above and no English sentence is stitched to match the chant. Four gaps stand. The chant’s *Parce iræ ánimæ tuæ* carries the matter of v. 12 — a verse the missal’s own citation does not name — and has no counterpart in any cited verse; the Douay’s v. 12, for the record, reads “let thy anger cease, and be appeased upon the wickedness of thy people.” The chant sings *Iacob* where v. 13, and therefore the Douay, reads “Israel, thy servants.” The chant’s oath is *dare terram fluéntem lac et mel*, “to give a land flowing with milk and honey,” where v. 13’s oath is the stars-and-seed promise printed above — the milk-and-honey formula belongs to Ex. 3:8 and 33:3, not to this verse. And the chant’s opening *in conspéctu Dómini Dei sui*, “in the sight of the Lord his God,” answers to nothing in v. 11’s “besought the Lord his God.”
 
-### 8. Secret <span class="nodecor">(*Sec.*)</span>
+### 8. Secret <span class="nodecor">(*Sec.*)</span> {#proper-secret}
 
 > ***Secreta* — marginal no. 1559**
 >
@@ -213,7 +213,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Where the registered English does not answer the Latin.** The 1861 book prints no incipit for this Secret, so its identity was confirmed clause against clause — “the offerings we lay on thy holy altar” against *quas sacris altáribus exhibémus*, “to the honour of thy name, by obtaining pardon for us” against *nobis indulgéntiam largiéndo, tuo nómini dent honórem* — and by reading the orations of the eleventh and thirteenth Sundays on either side to prove the filing does not slip by one. The English reverses the Latin’s order of honour and pardon and makes “look down” of *propítius inténde*, “favourably attend”; the commentary conducts the exchange-structure argument on the Latin.
 
-### 9. Communion <span class="nodecor">(*Comm.*)</span>
+### 9. Communion <span class="nodecor">(*Comm.*)</span> {#proper-communion}
 
 > ***Antiphona ad Communionem* — Ps. 103, 13 et 14-15 — marginal no. 1560**
 >
@@ -229,7 +229,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Where the registered English does not answer the Latin.** The antiphon takes v. 13’s second clause with its word order inverted and a vocative added — *De fructu óperum tuórum, **Dómine**, satiábitur terra* — and the *Dómine* is in no verse of the psalm here, so the Douay has no word for it. The antiphon then skips v. 14’s first clause, exactly as the printed citation *13 et 14-15* declares, and runs continuously from *ut edúcas* to the end of v. 15. The three verses are printed whole above with the antiphon’s path through them stated; no English join is composed.
 
-### 10. Postcommunion <span class="nodecor">(*Postcomm.*)</span>
+### 10. Postcommunion <span class="nodecor">(*Postcomm.*)</span> {#proper-postcommunion}
 
 > ***Postcommunio* — marginal no. 1561**
 >

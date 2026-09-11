@@ -86,7 +86,7 @@ The four witnesses relevant to a Catholic reader are the Masoretic Hebrew, the S
 | 15:17 | sun gone in; *thick darkness* | sun *going* toward setting; *a flame arose* — no darkness | *cum ergo occubuisset sol*; *caligo tenebrosa* |
 | 15:18 | *bayyom hahu* — in that day | *ekei* — *there* | *in illo die* — in that day |
 
-Read the Septuagint column downward and a different chapter appears. Its sun never finishes setting: at verse 12 it is “about the setting”, and at verse 17 it is still *eginet*­*o pros dusmais*, becoming toward its setting.[^4] It has no thick darkness at all. And at verse 18 it says not “in that day” but “there” — a marker of place where the Hebrew and Latin have a marker of time.
+Read the Septuagint column downward and a different chapter appears. Its sun never finishes setting: at verse 12 it is “about the setting”, and at verse 17 it is still *egineto pros dusmais*, becoming toward its setting.[^4] It has no thick darkness at all. And at verse 18 it says not “in that day” but “there” — a marker of place where the Hebrew and Latin have a marker of time.
 
 Swete’s printed Greek therefore makes the close less temporally insistent: it omits the Hebrew darkness phrase and prints a spatial marker at verse 18. That is a finding about this identified base text, not about every Septuagint witness and not an explanation of Christian reception.
 

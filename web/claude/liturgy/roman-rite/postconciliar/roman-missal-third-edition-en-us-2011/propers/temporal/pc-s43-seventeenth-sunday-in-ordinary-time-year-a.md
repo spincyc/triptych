@@ -4,7 +4,7 @@
 
 **Seventeenth Sunday in Ordinary Time**
 
-Year A Lectionary no. 109 Ordinary Time Week XVII formulary
+Year A · Lectionary no. 109 · Ordinary Time Week XVII formulary
 
 *Roman Missal*, Third Edition, and *Lectionary for Mass*, Second Typical Edition, for the dioceses of the United States of America
 

@@ -4,9 +4,9 @@
 
 **Thirteenth Sunday after Pentecost**
 
-**Dominica Decima Tertia post Pentecosten* II classis Green*
+**Dominica Decima Tertia post Pentecosten* · II classis · Green*
 
-1962 *Missale Romanum*, editio typica, pp. 393–394 *Credo* Preface of the Most Holy Trinity
+1962 *Missale Romanum*, editio typica, pp. 393–394 · *Credo* · Preface of the Most Holy Trinity
 
 ## The Propers: Map
 
@@ -110,7 +110,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **The English.** Scriptural elements are the Douay–Rheims as revised by Bishop Challoner (1749–1752) — the English of the Clementine Vulgate the missal prints — in the Project Gutenberg e-text of that revision. The three orations are the anonymous English of *The Roman Missal translated into the English language for the use of the laity*, first revised edition (Philadelphia: Eugene Cummiskey, 1861), from the three lines that book supplies for this formulary, reproduced with its own nineteenth-century spelling and its abbreviated conclusion “Thro’.” Both are public domain in the United States. Neither is an official liturgical translation, and neither is the text of the 1962 books: this is a study companion, not an altar book or a hand missal. The project has translated nothing. This Sunday’s chants preserve an older Latin psalter at several points where the Clementine — and therefore the Douay — reads otherwise; wherever the registered English does not answer the missal’s Latin, the gap is marked at the element and left open.
 
-### 1. Introit <span class="nodecor">(*Int.*)</span>
+### 1. Introit <span class="nodecor">(*Int.*)</span> {#proper-introit}
 
 > ***Antiphona ad Introitum* — Ps. 73, 20, 19 et 23 — marginal no. 1562**
 >
@@ -122,7 +122,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Where the registered English does not answer the Latin.** The antiphon is a centonisation whose wording departs from the Clementine — and therefore from the Douay — at four points, so the Douay verses are printed whole with the corresponding fragments marked rather than stitched into an English antiphon the project would itself have composed. The antiphon addresses *Dómine* where v. 20 names no addressee; it sings *ne derelínquas*, “forsake not,” where v. 19 and the Douay have “forget not”; it sings *exsúrge, Dómine* where v. 22 and the Douay have “Arise, O God” — a clause the printed reference does not even name, citing only vv. 20, 19 and 23; and it closes with *voces quæréntium te*, “the voices of them that seek thee,” where v. 23 and the Douay have “the voices of thy enemies.” None of these is filled in here. The psalm verse matches the Clementine exactly; in the Douay’s numbering v. 1 opens with the inscription “Understanding for Asaph,” which the chant does not sing. The doxology cue *Glória Patri* belongs to the Ordinary and is not translated here.
 
-### 2. Collect <span class="nodecor">(*Coll.*)</span>
+### 2. Collect <span class="nodecor">(*Coll.*)</span> {#proper-collect}
 
 > ***Oratio* — marginal no. 1563**
 >
@@ -134,7 +134,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Where the registered English does not answer the Latin.** One verb is bent rather than missing. *Ut mereámur ássequi quod promíttis* asks that we may deserve *to attain* what God promises; the 1861 English collapses *ássequi* into “deserve what thou promisest,” so the attaining disappears. The rendering is quoted because it is the registered public-domain witness for this formulary; the argument built on the prayer’s grammar is conducted on the Latin, in the detailed commentary.
 
-### 3. Epistle <span class="nodecor">(*Ep.*)</span>
+### 3. Epistle <span class="nodecor">(*Ep.*)</span> {#proper-epistle}
 
 > ***Léctio Epístolæ beáti Pauli Apóstoli ad Gálatas* — Gal. 3, 16-22 — marginal no. 1564**
 >
@@ -146,7 +146,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Where the registered English does not answer the Latin.** The lesson’s opening address *Fratres:* is the missal’s own: v. 16 begins directly *Abrahæ dictæ sunt promissiónes*, and Paul’s “Brethren” belongs to v. 15, which is outside the lesson. It is not translated here. The lesson also ends at v. 22: the image of the law as pedagogue, *pædagógus noster in Christo*, begins at v. 24 and is outside the appointed Epistle.
 
-### 4. Gradual <span class="nodecor">(*Grad.*)</span>
+### 4. Gradual <span class="nodecor">(*Grad.*)</span> {#proper-gradual}
 
 > ***Graduale* — Ps. 73, 20, 19 et 22 — marginal no. 1565**
 >
@@ -158,7 +158,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Where the registered English does not answer the Latin.** Here the Gradual’s *ne obliviscáris* is the Clementine’s own verb, so the Douay’s “forget not” answers it exactly — the one clause where this chant and the Bible text agree against the Introit. But the verse’s second clause, *memor esto oppróbrii servórum tuórum*, “remember the reproach of thy servants,” is not the Clementine’s v. 22b at all, which the Douay renders as printed above. The Douay wording that answers the chant’s clause stands at Ps. 88:51, “Be mindful, O Lord, of the reproach of thy servants”; it is quoted here only as apparatus, because the missal’s printed reference says Ps. 73 and this guide does not correct the book it studies. *Exsúrge, Dómine* again stands where the Clementine and Douay have “Arise, O God.” The gaps are marked and left open.
 
-### 5. Alleluia <span class="nodecor">(*All.*)</span>
+### 5. Alleluia <span class="nodecor">(*All.*)</span> {#proper-alleluia}
 
 > **Alleluia, no separate heading — Ps. 89, 1 — marginal no. 1566**
 >
@@ -170,7 +170,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Where the registered English does not answer the Latin.** The chant ends *a generatióne et progénie*, “from generation and progeny,” where the Clementine reads *a generatióne in generatiónem* and the Douay accordingly “from generation to generation.” The sense is near, the wording is not, and no rendering of the chant’s form is supplied. In the Douay’s numbering v. 1 opens with the inscription “A prayer of Moses the man of God,” which the chant does not sing; this is the one psalm in the Psalter that carries Moses’ name.
 
-### 6. Gospel <span class="nodecor">(*Gosp.*)</span>
+### 6. Gospel <span class="nodecor">(*Gosp.*)</span> {#proper-gospel}
 
 > ***✠ Sequéntia sancti Evangélii secúndum Lucam* — Luc. 17, 11-19 — marginal no. 1567**
 >
@@ -184,7 +184,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Rubric as printed:** *Credo.* Printed at the end of the Gospel’s last line. A direction, not a text: the Creed itself is in the Ordinary.
 
-### 7. Offertory <span class="nodecor">(*Off.*)</span>
+### 7. Offertory <span class="nodecor">(*Off.*)</span> {#proper-offertory}
 
 > ***Ant. ad Offertorium* — Ps. 30, 15-16 — marginal no. 1568**
 >
@@ -196,7 +196,7 @@ Everything the 1962 *Missale Romanum* prints for this Mass, in the order it prin
 
 **Where the registered English does not answer the Latin.** The antiphon’s last two words are the reason this element carries a gap. The Clementine reads *in mánibus tuis sortes meæ*, “my lots are in thy hands,” and that is what the Douay translates. The missal sings *témpora mea* — “my *times* are in thy hands” — an older Latin reading that here agrees with the Hebrew against the Clementine. No registered English renders the chant’s form, and none is composed for it. The antiphon also drops the psalm’s opening *Ego autem* (the Douay’s “But”) and inverts *Deus meus es tu* to *Tu es Deus meus*; the English is “Thou art my God” either way.
 
-### 8. Secret <span class="nodecor">(*Sec.*)</span>
+### 8. Secret <span class="nodecor">(*Sec.*)</span> {#proper-secret}
 
 > ***Secreta* — marginal no. 1569**
 >
@@ -210,7 +210,7 @@ The Latin says *propitiáre* twice — once over the people, once over the gifts
 
 **Rubric as printed:** *Præfatio de Ssma Trinitate.* Printed immediately after the Secret, with *Ssma* under a tilde abbreviation for *Sanctissima*: the Preface of the Most Holy Trinity, which is in the Ordinary. Expanded here from the same book’s own abbreviation practice.
 
-### 9. Communion <span class="nodecor">(*Comm.*)</span>
+### 9. Communion <span class="nodecor">(*Comm.*)</span> {#proper-communion}
 
 > ***Ant. ad Communionem* — Sap. 16, 20 — marginal no. 1570**
 >
@@ -222,7 +222,7 @@ The Latin says *propitiáre* twice — once over the people, once over the gifts
 
 **Where the registered English does not answer the Latin.** The antiphon is an adaptation, not a quotation. The Clementine’s third-person clause, *parátum panem de cælo præstitísti illis sine labóre* — “thou gavest *them* bread from heaven” — becomes a first-person address, *dedísti nobis, Dómine*, “thou hast given *us*,” with a vocative the verse does not have and the verb of Ps. 77:24, *panem cæli dedit eis*, in place of the verse’s *præstitísti*. The two closing phrases are recast: *omne delectaméntum in se habéntem* loses its *in se*, and *omnis sapóris suavitátem* is inverted to *omnem sapórem suavitátis*. The Douay verse is therefore printed whole with the reworked phrases marked, and no English of the antiphon’s own form is supplied.
 
-### 10. Postcommunion <span class="nodecor">(*Postcomm.*)</span>
+### 10. Postcommunion <span class="nodecor">(*Postcomm.*)</span> {#proper-postcommunion}
 
 > ***Postcommunio* — marginal no. 1571**
 >
@@ -812,7 +812,7 @@ Only sources actually used above, with loci sufficient to check the claims made 
 
 - *Missale Romanum* (Ratisbon: Friedrich Pustet, 1862), *Dominica XIII. post Pentecosten*, printed pp. 335–337; and *Missale Romanum* (Venice, 1570), the same formulary in the Sunday series. *Read as finding aids for the preexisting-material check recorded in* `propers/verified.md`*; nothing is quoted from either.*
 
-- *The Roman Missal translated into the English language for the use of the laity*, first revised edition (Philadelphia: Eugene Cummiskey, 1861), Collect, Secret and Postcommunion of the Thirteenth Sunday after Pentecost, printed pp. 423–425. Anonymous translation; public domain in the United States. *Source of the English of all three orations.* Registered in the repository’s source library as `edition.eugene-cummiskey. roman-missal-english-laity.philadelphia-1861`.
+- *The Roman Missal translated into the English language for the use of the laity*, first revised edition (Philadelphia: Eugene Cummiskey, 1861), Collect, Secret and Postcommunion of the Thirteenth Sunday after Pentecost, printed pp. 423–425. Anonymous translation; public domain in the United States. *Source of the English of all three orations.* Registered in the repository’s source library as `edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861`.
 
 - C. L. Feltoe (ed.), *Sacramentarium Leonianum* (Cambridge: Cambridge University Press, 1896), printed p. 76 (*Mense Iulio*, *Item alia*). *Earliest witness to the Collect; also the bounded negative for the Secret and Postcommunion.*
 
@@ -830,7 +830,7 @@ Only sources actually used above, with loci sufficient to check the claims made 
 
 ### Scripture
 
-- *The Holy Bible, Douay–Rheims*, the Challoner revision (1749–1752), in the Project Gutenberg e-text of that revision (eBook 1581). Quoted for Ps. 30:15–16; 73:1, 19–20, 22–23; 89:1; Sap. 16:20; Gal. 3:16–22; Lk. 17:11–19; with Ps. 88:51 quoted once as apparatus. *Source of the English of every scriptural proper.* The repository’s source library holds this edition with its book index, its Vulgate/Hebrew/English psalm-numbering concordance, its deuterocanonical numbering table, its verse-alias table, and its collation against the 1899 American edition, under the identity `edition.english-college-of-douay. douay-rheims-bible.challoner-gutenberg-1581`.
+- *The Holy Bible, Douay–Rheims*, the Challoner revision (1749–1752), in the Project Gutenberg e-text of that revision (eBook 1581). Quoted for Ps. 30:15–16; 73:1, 19–20, 22–23; 89:1; Sap. 16:20; Gal. 3:16–22; Lk. 17:11–19; with Ps. 88:51 quoted once as apparatus. *Source of the English of every scriptural proper.* The repository’s source library holds this edition with its book index, its Vulgate/Hebrew/English psalm-numbering concordance, its deuterocanonical numbering table, its verse-alias table, and its collation against the 1899 American edition, under the identity `edition.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581`.
 
 - Clementine Vulgate, consulted for the whole of Pss. 30, 73 and 89, for Wis. 16, Gal. 3 and Lk. 17, and for Ps. 77:24 and Ps. 88:51. <https://www.drbo.org/lvb/>
 
