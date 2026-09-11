@@ -46,6 +46,17 @@
 % Keeps an element's heading, identification line and text block together.
 \newcommand{\elementguard}{\Needspace{12\baselineskip}}
 
+% A framed box that runs to a page break closes its frame at the foot of the
+% earlier page and opens it again at the head of the next, so that a reader
+% meets a box that is continued and not one that is unfinished. The skin these
+% boxes are drawn with leaves both edges open at a break, which on a full page
+% shows as two side rules running off the bottom of the text block with nothing
+% across them. tcolorbox's own `enhanced standard' draws every part of a broken
+% box as a closed box instead, so the `enhanced' the box styles ask for is
+% routed to it here. The rule at a break was already counted in the box's
+% height, so this draws it and moves nothing.
+\tcbset{enhanced/.style={enhanced standard}}
+
 % The complete appointed Latin, inside the full edition only.
 \newenvironment{appointedlatin}[1]{%
   \begin{massbox}{#1}\itshape}{\end{massbox}}
@@ -131,11 +142,19 @@ answer the Latin.} #1\par}
 % within a dossier with \midrule only between complete dossiers, and the
 % italic event row set between two \cmidrule(lr){1-4} rules ahead of its
 % explanation.
+%
+% One clearance is added and no fixed measurement is altered to get it. At
+% \scriptsize the profile's \LTpre stands the top rule 1.4pt off the last line
+% of the introductory paragraph, against 3.2 to 4.0pt at every other rule of
+% the sheet, so at print size that rule reads as an underline struck under the
+% paragraph rather than as the head of the table. The 2.1pt skip below carries
+% it to 3.6pt, in line with the rest; the sheet still stands whole on page 2.
 \newenvironment{dossiertable}
 {\scriptsize
  \renewcommand{\arraystretch}{1.02}%
  \setlength{\LTpre}{0.15em}\setlength{\LTpost}{0pt}%
  \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.12\linewidth}>{\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.20\linewidth}>{\raggedright\arraybackslash}p{0.36\linewidth}@{}}
+ \noalign{\vskip 2.1pt}%
  \toprule
  \textbf{Proper} & \textbf{Citation} & \textbf{Location} & \textbf{Date}\\
  \midrule

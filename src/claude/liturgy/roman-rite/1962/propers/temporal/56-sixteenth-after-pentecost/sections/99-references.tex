@@ -445,6 +445,26 @@ K.~Jerome.}
 cap.~XI, Project Gutenberg eBook 2000; and John Ormsby's English, Project
 Gutenberg eBook 996. \textit{The Spanish proverbial form of Luke~14:11 set aside
 in the appendix above, read in those two e-texts and in no printed edition.}
+% The last entry of the References is guarded, because what follows this file
+% is the terminal apparatus: main.tex inputs generation-metadata.tex, which
+% prints the revision-timestamp line, and then issues the reuse-and-rights
+% colophon.  guidance/editorial.md and guidance/repository.md both require that
+% block to be read under the terminal content on one physical final page and
+% forbid it to stand on a page of its own, so where it cannot follow this entry
+% the break has to fall BEFORE the entry and carry the entry down with it.
+% Measured on this run's 200 dpi review raster: this entry sets to four lines
+% (132 px), the list end and the timestamp line take 43 px and 33 px after it,
+% and main.tex's own \Needspace{3\baselineskip} is then tested against the page
+% goal before \TriptychRightsNotice recovers the footer, so it asks a further
+% 99 px.  That is 307 px, or 9.3 baselines; ten are demanded.  The colophon's
+% own block is paid for by the 116 px (0.58 in) of suppressed footer the notice
+% recovers and needs nothing here.  The two editions break this shared text in
+% different places and the guard answers each on its own terms: the canonical
+% References reach to within about five baselines of the foot of their last
+% page, so it fires and this entry goes down to the final page ahead of the
+% colophon; the companion's end about twenty-nine baselines clear of the foot,
+% so it passes and nothing in that edition moves.
+\Needspace{10\baselineskip}%
 \item Negative corpora for the gallery: E.~C. Brewer, \work{Dictionary of Phrase
 and Fable}; John Camden Hotten, \work{The Slang Dictionary}; Francis Grose,
 \work{A Classical Dictionary of the Vulgar Tongue}; Webster's Unabridged of

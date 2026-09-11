@@ -33,12 +33,40 @@
 \input{liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/sections/50-interpretive}
 \input{liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/sections/90-scope}
 \input{liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/sections/99-references}
-% No \sectionguard here: the terminal colophon is an unbreakable minipage, and
-% demanding seven further baselines ahead of it pushes the whole block --- and
-% therefore the rights notice --- onto a page of its own, which the rights rule
-% forbids. The notice enlarges its own page and guards its own break.
-
+% The terminal apparatus is the revision-timestamp line that
+% generation-metadata prints and the reuse-and-rights colophon that follows it.
+% The colophon is an unbreakable minipage; it recovers 0.58in of the footer area
+% of the page it is ISSUED from, and it spends its \thispagestyle{empty} on that
+% same page.  Two things have to hold at once, and each is held by its own
+% guard.
+%
+% First, the enlargement and the folio suppression have to land on the page the
+% block itself lands on.  Where the block cannot start on the page the
+% References end on, it moves to the next page while the recovery and the
+% suppression stay behind, and the edition prints 42, 43, no number, 45 over a
+% full page of References.  \Needspace{3\baselineskip} below ends the page ahead
+% of the notice whenever the block cannot stand on it, so the issuing page and
+% the landing page are always one page.  The block is about 65pt tall and takes
+% 42pt of that back from the footer, so about two further baselines of ordinary
+% page space are what it needs and three are demanded --- well under what the
+% companion has left at this point, so it moves nothing there.
+%
+% Second, the page the block lands on has to carry terminal content.
+% guidance/editorial.md and guidance/repository.md both forbid the notice to
+% force a page of its own, and the first guard alone does not prevent one: it
+% ends a full page of References and then sets the apparatus at the head of the
+% next, which is precisely the rights-only sheet this edition printed.  Nothing
+% issued from here can repair that, because by this point every reference has
+% been set and only the apparatus is left to place.  It is arranged instead
+% where the material that must come down with the block still stands: the last
+% entry of the References is guarded at its own head, in
+% sections/99-references.tex, so that a break taken for the apparatus is taken
+% ahead of that entry and the entry is read above the colophon on the final
+% page.  That guard is the one that moves material, and the note beside it
+% carries its arithmetic and the measurement showing why the companion, whose
+% References end high on its last page, passes it and does not move.
 \input{liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/generation-metadata}
+\Needspace{3\baselineskip}
 \TriptychRightsNotice
 \end{deepstudy}
 
