@@ -3776,3 +3776,44 @@ travel; where it cannot be resolved by revision at all, it is an escalation,
 which the codex lane used and which ends a stage honestly. A severity that
 reaches no one is not a softer blocking finding. It is a blocking finding
 deferred one round, plus the interest.
+
+## Leaf 54's web edition is current, held, and unevaluated, 2026-09-11
+
+`web/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost.md`
+was refreshed on 2026-09-11 in `f666230d7`, mechanically, from sources that no
+evaluation has read. This section is the warning that belongs with it, because
+the publication record has five schema-fixed fields and no room to carry one.
+
+**Why it was refreshed.** `publication-gates` runs `check-web-editions-current`,
+which is corpus-wide: it requires every tracked web edition to match what
+current sources produce, whatever the state of the publication it belongs to.
+Leaf 56 could not reach ACCEPTED while any tracked edition was stale, and leaf
+54's had been stale since its own production was handed off mid-evaluation —
+four commits moved its sources after its edition was last written, `b91f8c11d`
+among them. Eight further editions had gone stale the same morning for an
+unrelated and harmless reason: `tools/web-edition` was repaired and now
+restores separators and anchors it had been dropping silently. The operator
+chose to refresh all nine rather than narrow the decision to leaf 54 alone.
+
+**What that did and did not do.** It did not publish anything. A held
+publication carries no route: `document-library` gives a held edition neither
+`pdf` nor `web` in the catalogue projection, row 54's claude cell in
+`library/traditional-latin-mass.md` still reads `Planned`, and both of leaf
+54's release records are `"status": "hold"` with null authorization — the two
+holds `check-public-alpha` counts. The edition's appearance under
+`site_sources` in `release/public-alpha.json` is a path→sha256 integrity
+record, which is what the gpt sibling has too, and not a serving manifest. The
+bytes are tracked and hash-recorded; nothing routes a reader to them.
+
+**What must happen before that hold is lifted.** The edition has never been
+through `web-evaluation`. Its prose is whatever leaf 54's sources held when its
+production stopped, which is not what any acceptance passed. Lifting the hold
+without driving leaf 54 to ACCEPTED would serve bytes nothing reviewed. Drive
+the leaf; do not promote the record.
+
+**The coupling itself is worth a decision.** A held publication's tracked
+edition gated an unrelated leaf's publication. That is why leaf 56's completion
+required a judgement about leaf 54 at all, and it is the same shape as the six
+site-level gates that stopped leaf 55: a leaf-scoped production blocked on
+corpus-scoped state. Whether `check-web-editions-current` should pass over held
+publications is a maintainer's call and is not made here.
