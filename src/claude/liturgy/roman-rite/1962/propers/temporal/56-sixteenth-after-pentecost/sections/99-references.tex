@@ -148,7 +148,19 @@ the registered item; no page image opened, and the title is a reported title and
 not a collated manuscript reading.}
 \item Guéranger, P., \work{The Liturgical Year}, vol.~XI, English of Dom
 Laurence Shepherd (Dublin: Duffy, 1900), the chapter for this Sunday at printed
-pp.~356--371, quoted above at pp.~357 (the Collect), 358--360 (the Epistle and
+pp.~356--371,%
+\ifdefined\TriptychSynthesisEdition{} quoted above at pp.~357 (the Collect),
+358--360 (the Epistle and the four measures), 365 and 367--368 (the Gospel, the
+wedding and Ecclus.~3:20--21), 370 (the Offertory and the Secret) and 370--371
+(the Communion and the Postcommunion), with his reading of the Gradual at p.~363
+reported and not quoted. \textit{The chapter heading, the printed folio
+and the opening sentence were read on a rendered page image at printed p.~356,
+and pp.~357, 359, 363, 365, 367--368 and 370--371 were rendered likewise; two
+passages of the chapter, at printed pp.~358 and 360, rest on the volume's own
+extracted text layer, with no page image behind them. A
+nineteenth-century liturgist writing devotionally, cited as that; a search of the
+whole chapter for the vocabulary of liturgical history returns nothing.}%
+\else{} quoted above at pp.~357 (the Collect), 358--360 (the Epistle and
 the four measures), 363 (the Gradual), 365 and 367--368 (the Gospel, the wedding
 and Ecclus.~3:20--21), 370 (the Offertory and the Secret) and 370--371 (the
 Communion and the Postcommunion). \textit{The chapter heading, the printed folio
@@ -157,7 +169,8 @@ and pp.~357, 359, 363, 365, 367--368 and 370--371 were rendered likewise; the
 sentence quoted from p.~360 and the observation reported from p.~358 rest on the
 volume's own extracted text layer, with no page image behind them. A
 nineteenth-century liturgist writing devotionally, cited as that; a search of the
-whole chapter for the vocabulary of liturgical history returns nothing.}
+whole chapter for the vocabulary of liturgical history returns nothing.}%
+\fi
 \item Fortescue, A., ``Preface,'' in \work{The Catholic Encyclopedia}, vol.~XII
 (New York: Robert Appleton, 1911); and Fortescue, A., \work{The Mass: A Study of
 the Roman Liturgy} (London: Longmans, 1922), searched whole. \textit{The
@@ -187,23 +200,38 @@ Lent~IV carries this Sunday's Communion and the Fifteenth Sunday's Gospel.}
 \begin{itemize}[leftmargin=1.2em, itemsep=0.15em]
 \item \work{Vulgata Clementina}, the Clementine Vulgate, tracked at
 \texttt{src/sources/bibles/clementine-vulgate}. \textit{The comparison text for
-every divergence tabulated above, and the corpus behind the exhaustive lists of
+every divergence
+\ifdefined\TriptychSynthesisEdition recorded\else tabulated\fi{} above, and the
+corpus behind the exhaustive lists of
 \latin{mitis}, \latin{canticum novum} and \latin{Amice}.}
 \item \work{The Holy Bible, Douay--Rheims}, revised by Bishop Richard Challoner
 (1749--1752), Project Gutenberg e-text, tracked at
-\texttt{src/sources/bibles/douay-rheims}. \textit{The registered public-domain
+\texttt{src/sources/bibles/douay-rheims}.%
+\ifdefined\TriptychSynthesisEdition{} \textit{The registered public-domain
+English of the seven scriptural elements, and the English this edition quotes
+its scriptural wording from. The three per-book artifacts it is quoted from, at
+Psalms, Ephesians and Luke, are named in
+\texttt{research/source-bindings.toml}.}%
+\else{} \textit{The registered public-domain
 English of all seven scriptural elements, printed whole where a chant sings part
 of a verse. The three per-book artifacts it is quoted from, at Psalms,
-Ephesians and Luke, are named in \texttt{research/source-bindings.toml}.}
+Ephesians and Luke, are named in \texttt{research/source-bindings.toml}.}%
+\fi
 \item \work{The Roman Missal translated into the English language for the use of
 the laity}, first revised edition (Philadelphia: Eugene Cummiskey, 1861),
 formulary \latin{XVI. SUNDAY after PENTECOST}, printed pp.~429 and 431, read on
 the page images at leaves n437 and n439 of Internet Archive item
 \texttt{romanmissaltran00churgoog}; passage
 \texttt{passage.\allowbreak eugene-cummiskey.\allowbreak roman-missal-english-laity.\allowbreak philadelphia-1861.\allowbreak post-pentecosten-16}.
+\ifdefined\TriptychSynthesisEdition
+\textit{The registered public-domain English of the three orations, a free
+devotional rendering this edition reports on and does not reproduce. Its English
+of the scriptural elements is not used.}%
+\else
 \textit{The registered public-domain English of the three orations, a free
 devotional rendering reproduced with the book's own spelling. Its English of the
-scriptural elements is not used.}
+scriptural elements is not used.}%
+\fi
 \item \work{The Authorized Version of the Bible}, Project Gutenberg eBook 10.
 \textit{The English the gallery's later users quote, and the corpus in which
 ``inner man'' and ``lowest room'' were counted.}
