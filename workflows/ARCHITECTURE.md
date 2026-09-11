@@ -268,7 +268,18 @@ A run records the digest at seed time, in both the manifest and the state, and
 every `advance` and `replay` recomputes it. If the workflow source has changed
 since the run was seeded, the run fails closed rather than continuing under
 guidance it never started with. A changed workflow means a new run. The
-`proper` workflow is at version 28 and `proper-finish` at version 6.
+`proper` workflow is at version 29 and `proper-finish` at version 7.
+
+Version 29 and `proper-finish` 7 are what a cold review of the pipelines asked
+for, after a run spent three of its four synthesis rounds draining one class of
+defect a site at a time. They add `synthesis-preflight`, a program gate between
+the companion's writers and its evaluation, running seven of the thirteen
+preflight checks under a new `--edition` scope; they make the standing-findings
+record schema 4, so a write replaces only the recording stage's entries instead
+of deleting the other evaluator's; and they tell the four revising stages that
+version 27 left out that `generation-metadata.tex` exists. What the new gate
+does not reach is the class that prompted it, which is a semantic claim about a
+References entry's own prose and wants a check of its own.
 
 Version 28 and `proper-finish` 6 are what one run's instrumentation asked for.
 Run `6fb5fba4867eb8cf` blocked with its leaf in good shape after eight
@@ -568,10 +579,11 @@ An evaluator that declares `records_standing_findings` writes, after each of
 its evaluations, the blocking findings still standing against the document and
 the observations its lanes recorded, to
 `<document_root>/evaluations/blocking-findings-v1.toml` beneath the repository
-root. It is rewritten whole, so it states what stands now rather than
-accumulating history; a `PASS` writes an empty list rather than deleting the
-file, because "this leaf was evaluated and nothing stands" and "nobody has
-looked" are different facts. It exists because a run's own results live under
+root. Each write replaces that stage's own entries whole, so the record states
+what stands now rather than accumulating history, and leaves every other
+stage's alone; a `PASS` writes that stage's header with no entries rather than
+deleting the file, because "this leaf was evaluated and nothing stands" and
+"nobody has looked" are different facts. It exists because a run's own results live under
 `build/`, which is ignored, which `make clean` and `wt tidy` delete without
 asking, and which nothing preserves between productions.
 
@@ -581,9 +593,23 @@ It is declared per stage. Every evaluator wrote this path at first, which meant
 a `web-evaluation` asking for changes replaced a leaf's content findings with
 findings about generated HTML, and a `research-synthesis` running before the
 author overwrote the previous production's record with defects in the brief.
-The file says what stands against the document, so only the stage that
-evaluates the document's own prose may write it. Both propers pipelines set the
-key on `content-evaluation` and on nothing else.
+The file says what stands against the document, so only a stage that
+evaluates the document itself may write it. Both propers pipelines set the key
+on `content-evaluation` and, since the edition sequence split the two
+evaluations apart, on `synthesis-evaluation`; `web-evaluation` and
+`visual-evaluation` set it on neither, which is why their verdicts do not
+outlive the run directory.
+
+Two writers to one path is what made the merge necessary. The synthesis
+evaluation always runs after the content evaluation has passed, so while a
+write replaced the file whole it deleted every content-lane advisory, accepted
+finding and observation on every run that got that far -- the v25
+`web-evaluation` failure recreated by giving a second stage the same
+declaration. One production lost an advisory that way: a defect in
+`research/scope.md` that the run had correctly declined to repair, because no
+stage of that pipeline may write the brief, and which afterwards stood nowhere
+in the tree. Entries are therefore keyed by the stage that raised them, and a
+write supersedes only its own.
 
 It is written before the run's commit, and on terminal transitions too. Before,
 because a write that raised after the commit reported failure on a run that had
@@ -784,7 +810,10 @@ never by sending a broken catalog link back through research or authoring.
 ### The mechanical preflight
 
 `content-preflight` is a `program` gate between `author-proper` and
-`content-evaluation`, and it exists because a five-lane AI evaluation was
+`content-evaluation`, and `synthesis-preflight` is its counterpart between
+`derive-synthesis` or `synthesis-revision` and `synthesis-evaluation`, running
+the seven of its checks that an `--edition synthesis` scope actually narrows to
+bytes the companion prints. Both exist because a fan-out AI evaluation was
 twice spent discovering things a shell can decide: References entries the body
 never cites, a cited source identifier that resolves to nothing, a
 component-manifest relation whose element keys the unit carrying its evidence

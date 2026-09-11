@@ -1,6 +1,6 @@
 {
   "id": "proper",
-  "version": 28,
+  "version": 29,
   "description": "1962 propers synthesis production workflow",
   "default_effort": "xhigh",
   "document_argument": "proper",
@@ -404,7 +404,54 @@
         "derivation"
       ],
       "result_schema": "worker-result.json",
-      "next": "synthesis-evaluation"
+      "next": "synthesis-preflight"
+    },
+    {
+      "id": "synthesis-preflight",
+      "type": "gate",
+      "execution": {
+        "mode": "program"
+      },
+      "checks": [
+        {
+          "id": "references-used",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check references-used --edition synthesis",
+          "required_result": "every References entry the companion prints must be cited somewhere in the companion's own body. The companion omits the complete appointed texts and the element-by-element sweep, so an entry whose only use stood in the prose this edition drops is an unused entry in the document a reader is actually handed, and neither the entry nor the body shows that alone"
+        },
+        {
+          "id": "identifiers-resolve",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check identifiers-resolve --edition synthesis",
+          "required_result": "every source identifier the companion prints must name a record the source library registers. The canonical loop cleared the identifiers the canonical edition prints; the companion's own prose is written after that gate last ran, and an identifier that resolves to nothing reads exactly like one that resolves"
+        },
+        {
+          "id": "restricted-not-reproduced",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check restricted-not-reproduced --edition synthesis",
+          "required_result": "no artifact the leaf's research bound as restricted may have its bytes reproduced in the companion. The companion is published as its own artifact under its own release record, and the derivation writes printed passages that no program read: the rights live in src/sources and nowhere in the document"
+        },
+        {
+          "id": "unquoted-not-quoted",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check unquoted-not-quoted --edition synthesis",
+          "required_result": "no source the companion's References declare the guide does not quote may be credited with a printed quotation in the companion. The derivation rewrites both halves of that contradiction, and it shows in neither statement alone"
+        },
+        {
+          "id": "structural-meta-labels",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check structural-meta-labels --edition synthesis",
+          "required_result": "from proper v24 and proper-finish v2, one forbidden reader-facing rhetorical or editorial meta-label in a heading, known box title, paragraph-opening run-in label, or table heading of the companion is a derivation defect: a thesis opens as prose rather than under Governing thesis, Thesis, Key takeaway, Argument map, or Reading order. The integrated commentary is written for this edition alone, so the canonical gate never inspected its surfaces"
+        },
+        {
+          "id": "house-voice",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check house-voice --edition synthesis",
+          "required_result": "reader-facing prose in the companion must state the finding rather than narrate the guide, its sweep, its apparatus or this repository. This is the class that names the gate: three successive max-effort evaluations of one canonical leaf spent an entire iteration budget draining it one site at a time, and until this stage existed every companion-owned byte reached two AI lanes with no program having read it at all"
+        },
+        {
+          "id": "proposal-fields",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --check proposal-fields --edition synthesis",
+          "required_result": "every exploratory proposal the companion prints must carry the anchors and four fields the profile fixes for it. The companion keeps the exploratory synthesis and the derivation shortens it, and a field a shortening drops reads on the page exactly like the field it replaced"
+        }
+      ],
+      "pass_transition": "synthesis-evaluation",
+      "fail_transition": "synthesis-revision",
+      "max_iterations": 3
     },
     {
       "id": "synthesis-evaluation",
@@ -470,7 +517,7 @@
         "seam"
       ],
       "result_schema": "worker-result.json",
-      "next": "synthesis-evaluation",
+      "next": "synthesis-preflight",
       "reports_repairs": true
     },
     {

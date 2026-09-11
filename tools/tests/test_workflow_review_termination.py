@@ -379,7 +379,7 @@ class AcceptedIsAVerdictTests(BudgetCase):
 class TheRecordCarriesTheVerdictsTests(AcceptedIsAVerdictTests):
     """An advisory that dies with its run is met again as though new."""
 
-    def test_the_record_is_schema_three(self):
+    def test_the_record_is_schema_four(self):
         run_id = self.drive_to(EVALUATION)
         self.submit(run_id, [
             finding("CON-EVI-01", "accepted",
@@ -389,7 +389,7 @@ class TheRecordCarriesTheVerdictsTests(AcceptedIsAVerdictTests):
         record = self.standing_record(run_id)
         if record is None:
             self.skipTest("no standing findings root under this fixture")
-        self.assertEqual(record["standing_findings_schema"], 3)
+        self.assertEqual(record["standing_findings_schema"], 4)
 
     def test_accepted_and_advisory_both_reach_the_tree(self):
         run_id = self.drive_to(EVALUATION)

@@ -38,7 +38,30 @@ So repair the wiring, and do not:
    `make check-document-catalogue` after any change to the catalog, a
    release record, or the tracked web edition; wiring one of them can
    invalidate another.
-5. Do not relitigate accepted work, and do not repair a finding by changing
+5. Leave `generation-metadata.tex` exactly as it stands. Nothing a wiring
+   repair touches is a file the document builds from — a catalog cell, a
+   release record, a scope authorization and the tracked web edition are none
+   of them — and the gate you were sent to clear runs
+   `check-generation-metadata` against the *installed* PDF, comparing its
+   `ModDate` and its one rendered "Last revised (UTC)" line against the
+   source's `\AIDocumentRevisionTimestamp`. A timestamp moved for a change no
+   installed artifact carries fails that check and refuses the publication for
+   the repair you made to clear it.
+6. A finding that can only be cleared by changing a file the document builds
+   from is out of reach from here, since this stage may not rebuild or
+   retypeset: return `BLOCKED` as below and name the file. If you changed such
+   a file even so, the record has to follow it. Bring
+   `\AIDocumentRevisionTimestamp` forward to this revision, in the UTC
+   whole-second form `YYYY-MM-DDTHH:MM:SSZ` the check requires; append an
+   `\AIModelContribution{model}{qualifiers}{runtime}` record for this pass, in
+   the form the records already in the file use and beside the records that
+   carry the same model and qualifiers, since `check-generation-metadata`
+   requires each model-and-qualifier group to be contiguous and two agents of
+   one production appended to a tail belonging to another group and had to
+   move the record up beside its own; leave `\AIGenerationProvenance` alone,
+   since it names the run and not the pass; and say in your summary which file
+   you changed, because the installed artifacts predate it.
+7. Do not relitigate accepted work, and do not repair a finding by changing
    what the gate checks.
 
 ## Result
@@ -49,6 +72,8 @@ a summary listing each finding addressed and what was changed.
 Return `disposition: "BLOCKED"` instead when a finding cannot be addressed
 from this stage. The standing cases are a finding that can only be answered
 by regenerating the web edition, which would bypass the evaluation that
-accepted it; a missing catalog row, which is the maintainer's to write; and a
-scope authorization that has been withdrawn, which no revision may restore.
-Name the finding and why it is out of reach.
+accepted it; a missing catalog row, which is the maintainer's to write; a
+scope authorization that has been withdrawn, which no revision may restore;
+and a finding that can only be cleared by changing a file the document builds
+from, which would need a rebuild and a fresh acceptance this stage may not
+make. Name the finding and why it is out of reach.

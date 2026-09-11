@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import functools
 import re
 import subprocess
 import sys
@@ -185,16 +186,206 @@ def leaf_dir(root: Path, provider: str, document: str) -> Path:
     return leaf
 
 
-def leaf_tex(leaf: Path) -> list[Path]:
-    """Every .tex file the leaf publishes, in a stable order.
+# --- Which edition a check reads -------------------------------------------
+#
+# One leaf builds two documents. `main.tex` is the canonical full edition and
+# `synthesis.tex` the companion, and which prose reaches which reader is
+# settled two ways: by section files only one of them inputs, and by
+# `\ifdefined\TriptychSynthesisEdition` branches inside the files they share.
+#
+# Every check reads `leaf` unless it is told otherwise, and `leaf` is the union
+# of both editions: every .tex file under the leaf, every branch of every
+# guard, nothing resolved. That is the right scope for a sweep over records --
+# a source bound for either edition is bound, and a sweep that read one
+# document alone would report the other's citations missing -- and it is what
+# every hand invocation and every `content-preflight` command has always done.
+# So it stays the default and stays byte-for-byte what it was.
+#
+# `canonical` and `synthesis` narrow a check to one document, and they exist
+# because a gate's refusal has to reach a reviser permitted to repair it.
+# `content-preflight` runs before the companion is written and routes to
+# `content-revision`, which may write the canonical edition alone;
+# `synthesis-preflight` runs after `derive-synthesis` and routes to
+# `synthesis-revision`, which may write the companion alone. A check that
+# named a canonical-only file in that gate would name a file its reviser is
+# forbidden to touch, and a gate keeps the finding-id comparison whatever a
+# reviser reports, so three such refusals would block the run outright.
+LEAF_EDITION = "leaf"
+CANONICAL_EDITION = "canonical"
+SYNTHESIS_EDITION = "synthesis"
+EDITION_CHOICES = (CANONICAL_EDITION, LEAF_EDITION, SYNTHESIS_EDITION)
+SYNTHESIS_FLAG = "TriptychSynthesisEdition"
+MAIN_TEX = "main.tex"
+SYNTHESIS_TEX = "synthesis.tex"
+# Where an edition's `\input` graph starts. `leaf` starts at both, which is
+# what the prose checks have always done.
+ENTRY_FILES = {
+    CANONICAL_EDITION: (MAIN_TEX,),
+    SYNTHESIS_EDITION: (SYNTHESIS_TEX,),
+    LEAF_EDITION: (MAIN_TEX, SYNTHESIS_TEX),
+}
+
+# Two shapes of `synthesis.tex` are current in this corpus, and in neither is
+# the flag a property of the edition's name. Most companions define
+# `\TriptychSynthesisEdition` and input `main.tex`, which branches on it; three
+# carry a standalone preamble that defines nothing and inputs a section list of
+# its own, so a guard in a file such a companion shares with `main.tex` takes
+# the *canonical* branch there. The definedness is therefore read off the entry
+# file, the way `scripts/_corpus.title_of` walks a preamble from whichever file
+# the build actually starts at, and never assumed from the edition asked for.
+DEFINES_FLAG = re.compile(
+    r"\\(?:def|gdef|edef|xdef|let)[ \t]*\\" + SYNTHESIS_FLAG
+    + r"(?![A-Za-z@])"
+    r"|\\(?:new|renew|provide)command[ \t]*\*?[ \t]*\{?[ \t]*\\"
+    + SYNTHESIS_FLAG + r"(?![A-Za-z@])")
+
+# A comment is not TeX: a `\fi` after a `%` closes nothing, and a walk that
+# counted one would resolve the wrong branch. The mask is exactly as long as
+# what it replaces, so every offset and line number below is still the file's.
+TEX_COMMENT = re.compile(r"(?<!\\)((?:\\\\)*)%[^\n]*")
+
+# The tokens a TeX conditional is made of. `\fi` carries a lookahead so that
+# `\finishfulltextelement`, which one leaf's `format.tex` defines, is not read
+# as the end of a branch.
+CONDITIONAL = re.compile(r"\\(if[A-Za-z@]*|else|fi|or)(?![A-Za-z@])")
+# `\ifthenelse` is a LaTeX macro over its arguments and opens no conditional.
+# Counting it would leave the walk one `\fi` short and resolve two guards'
+# branches into each other.
+NOT_CONDITIONAL = frozenset({"ifthenelse"})
+GUARD = re.compile(
+    r"\\ifdefined[ \t]*\\" + SYNTHESIS_FLAG + r"(?![A-Za-z@])")
+
+
+def uncommented(text: str) -> str:
+    """Every TeX comment blanked, the escaping counted rather than guessed."""
+    return TEX_COMMENT.sub(
+        lambda hit: hit.group(1) + " " * (len(hit.group(0))
+                                         - len(hit.group(1))),
+        text)
+
+
+@functools.lru_cache(maxsize=None)
+def flag_defined(leaf: Path, edition: str) -> bool | None:
+    """Whether `\\TriptychSynthesisEdition` is defined as this edition builds.
+
+    `None` for `leaf`, which resolves nothing at all: it is the union of both
+    editions and reads both branches of every guard.
+    """
+    if edition == LEAF_EDITION:
+        return None
+    if edition == CANONICAL_EDITION:
+        return False
+    entry = leaf / SYNTHESIS_TEX
+    if not entry.is_file():
+        return False
+    return bool(DEFINES_FLAG.search(
+        uncommented(entry.read_text(encoding="utf-8"))))
+
+
+def _guard_parts(masked: str,
+                 opening: re.Match) -> tuple[int | None, int | None, int, int]:
+    """One guard's `\\else` and `\\fi`, found by depth and not by proximity.
+
+    Depth-counted so that a conditional nested inside a branch keeps its own
+    `\\else` and `\\fi`, and so that the other flag this corpus uses,
+    `\\ifdefined\\TriptychPrintEdition`, is stepped over whole rather than having
+    its `\\fi` taken for the guard's. Every guard in every propers leaf is flat
+    today; the depth is what keeps that a measured fact rather than a
+    dependency.
+    """
+    depth = 1
+    else_at = else_end = None
+    at = opening.end()
+    while True:
+        token = CONDITIONAL.search(masked, at)
+        if token is None:
+            raise ValueError(
+                f"\\ifdefined\\{SYNTHESIS_FLAG} at offset "
+                f"{opening.start()} is never closed by \\fi")
+        name, at = token.group(1), token.end()
+        if name.startswith("if"):
+            if name not in NOT_CONDITIONAL:
+                depth += 1
+        elif name == "fi":
+            depth -= 1
+            if depth == 0:
+                return else_at, else_end, token.start(), token.end()
+        elif name == "else" and depth == 1:
+            if else_at is not None:
+                raise ValueError(
+                    f"\\ifdefined\\{SYNTHESIS_FLAG} at offset "
+                    f"{opening.start()} carries two \\else")
+            else_at, else_end = token.start(), token.end()
+
+
+def resolve_edition(text: str, defined: bool | None) -> str:
+    """`\\ifdefined\\TriptychSynthesisEdition` resolved for one edition.
+
+    The branch this edition does not take is replaced by spaces, its newlines
+    kept, and so are the guard's own tokens. Two properties follow, and both
+    are why it is spaces rather than a deletion or a marker character. Every
+    offset and every line number is still the file's own, so a refusal names
+    the line an editor shows and a worker can open it; and in the edition being
+    read the surviving text either side of a dropped branch really is
+    contiguous, so a sentence a guard splits is read as the one sentence the
+    reader is given rather than as two fragments.
+    """
+    if defined is None:
+        return text
+    masked = uncommented(text)
+    chars = list(text)
+
+    def blank(start: int, stop: int) -> None:
+        for index in range(start, stop):
+            if chars[index] != "\n":
+                chars[index] = " "
+
+    at = 0
+    while True:
+        opening = GUARD.search(masked, at)
+        if opening is None:
+            return "".join(chars)
+        else_at, else_end, fi_at, fi_end = _guard_parts(masked, opening)
+        blank(opening.start(), opening.end())
+        blank(fi_at, fi_end)
+        if else_at is None:
+            # A guard with no `\else` prints its one branch in the synthesis
+            # edition and nothing at all in the canonical one.
+            if not defined:
+                blank(opening.end(), fi_at)
+        elif defined:
+            blank(else_at, fi_at)
+        else:
+            blank(opening.end(), else_end)
+        at = opening.end()
+
+
+def edition_text(leaf: Path, path: Path,
+                 edition: str = LEAF_EDITION) -> str:
+    """One file's bytes as the named edition typesets them."""
+    return resolve_edition(path.read_text(encoding="utf-8"),
+                           flag_defined(leaf, edition))
+
+
+def leaf_tex(leaf: Path, edition: str = LEAF_EDITION) -> list[Path]:
+    """Every .tex file the named edition publishes, in a stable order.
 
     `format.tex` defines macros and `generation-metadata.tex` is stamped by
     the build; neither carries prose, and reading them would let a macro
     definition stand in for a citation.
+
+    Under `leaf`, every .tex file under the leaf. Under a named edition, that
+    same list narrowed to the files the edition actually typesets, which is
+    what `reader_facing` settles by following the `\\input` graph: a section
+    file only the other edition inputs is not this edition's to repair.
     """
-    return [path for path in sorted(leaf.rglob("*.tex"))
-            if path.name not in ("format.tex", "generation-metadata.tex",
-                                 "chronology-annotations.tex")]
+    paths = [path for path in sorted(leaf.rglob("*.tex"))
+             if path.name not in ("format.tex", "generation-metadata.tex",
+                                  "chronology-annotations.tex")]
+    if edition == LEAF_EDITION:
+        return paths
+    typeset = set(reader_facing(leaf, edition))
+    return [path for path in paths if path in typeset]
 
 
 URL_ARG = re.compile(r"\\(?:url|nolinkurl|href)\{[^{}]*\}")
@@ -228,11 +419,12 @@ REFERENCES = re.compile(r"\\section\*\{References\}")
 SECTION = re.compile(r"\\section\*\{")
 
 
-def split_leaf(leaf: Path) -> tuple[str, str]:
+def split_leaf(leaf: Path,
+               edition: str = LEAF_EDITION) -> tuple[str, str]:
     """The leaf's References section and everything else, as two strings."""
     references, body = "", []
-    for path in leaf_tex(leaf):
-        text = path.read_text(encoding="utf-8")
+    for path in leaf_tex(leaf, edition):
+        text = edition_text(leaf, path, edition)
         start = REFERENCES.search(text)
         if not start:
             body.append(text)
@@ -298,7 +490,9 @@ def anchors(item: str) -> set[str]:
 
 # --- The checks ------------------------------------------------------------
 
-def check_references_used(leaf: Path, root: Path) -> tuple[list[str], str]:
+def check_references_used(leaf: Path, root: Path,
+                         edition: str = LEAF_EDITION
+                         ) -> tuple[list[str], str]:
     """Every References entry is cited somewhere in the body.
 
     The profile is explicit: References carries only sources actually used,
@@ -307,7 +501,7 @@ def check_references_used(leaf: Path, root: Path) -> tuple[list[str], str]:
     settle it, and a five-lane evaluation has twice spent its judgment
     discovering entries the body never touches.
     """
-    references, body = split_leaf(leaf)
+    references, body = split_leaf(leaf, edition)
     if not references:
         return (["the leaf prints no References section"], "")
     used = fold(prose(body))
@@ -332,7 +526,8 @@ ALLOWBREAK = re.compile(r"\\allowbreak")
 RECORD_ID = re.compile(r'^id = "([^"]+)"$')
 
 
-def printed_identifiers(leaf: Path) -> list[str]:
+def printed_identifiers(leaf: Path,
+                        edition: str = LEAF_EDITION) -> list[str]:
     """Every source-library identifier the leaf prints, sorted and unique.
 
     A long identifier is broken for the typesetter with `\\allowbreak` and a
@@ -341,8 +536,8 @@ def printed_identifiers(leaf: Path) -> list[str]:
     unregistered.
     """
     found = set()
-    for path in leaf_tex(leaf):
-        text = path.read_text(encoding="utf-8")
+    for path in leaf_tex(leaf, edition):
+        text = edition_text(leaf, path, edition)
         for match in PRINTED_ID.finditer(text):
             value = "".join(ALLOWBREAK.sub("", match.group(1)).split())
             if IDENTIFIER.match(value):
@@ -370,13 +565,15 @@ def registered_ids(root: Path) -> set[str]:
     return ids
 
 
-def check_identifiers_resolve(leaf: Path, root: Path) -> tuple[list[str], str]:
+def check_identifiers_resolve(leaf: Path, root: Path,
+                             edition: str = LEAF_EDITION
+                             ) -> tuple[list[str], str]:
     """Every source identifier the leaf prints resolves in the library.
 
     An identifier that resolves to nothing is a citation with no source
     behind it, and it reads exactly like one that does.
     """
-    printed = printed_identifiers(leaf)
+    printed = printed_identifiers(leaf, edition)
     if not printed:
         return [], "the leaf prints no source identifier"
     known = registered_ids(root)
@@ -395,7 +592,9 @@ EVIDENCE_UNIT = {
 }
 
 
-def check_relation_coverage(leaf: Path, root: Path) -> tuple[list[str], str]:
+def check_relation_coverage(leaf: Path, root: Path,
+                           edition: str = LEAF_EDITION
+                           ) -> tuple[list[str], str]:
     """A relation's element keys are claimed by the unit carrying its evidence.
 
     `[[relations]]` says which appointed elements a claim joins, and
@@ -486,35 +685,41 @@ WRAPPER = re.compile(
     r"\{[^\n]*?\\begin\{(?:" + "|".join(BASE_ATTRIBUTED) + r")\}")
 
 
-def attributed_blocks(leaf: Path) -> list[str]:
+def attributed_blocks(leaf: Path,
+                      edition: str = LEAF_EDITION) -> list[str]:
     """The attribution argument of every printed passage the leaf sets.
 
     Reads `format.tex` for the leaf's own aliases of the base environments
     before scanning the body, so a renamed environment is still a printed
     passage. `format.tex` is read here and nowhere else: it defines the
-    aliases and carries no prose of its own.
+    aliases and carries no prose of its own. It is read for the named edition
+    too, because four leaves branch inside it and an alias defined in one
+    branch alone is an alias in one edition alone.
     """
     names = set(BASE_ATTRIBUTED)
     format_tex = leaf / "format.tex"
     if format_tex.is_file():
-        names.update(WRAPPER.findall(format_tex.read_text(encoding="utf-8")))
+        names.update(WRAPPER.findall(
+            edition_text(leaf, format_tex, edition)))
     pattern = re.compile(
         r"\\begin\{(?:" + "|".join(sorted(names)) + r")\}"
         r"\{((?:[^{}]|\{[^{}]*\})*)\}")
     found = []
-    for path in leaf_tex(leaf):
-        found.extend(pattern.findall(path.read_text(encoding="utf-8")))
+    for path in leaf_tex(leaf, edition):
+        found.extend(pattern.findall(edition_text(leaf, path, edition)))
     return found
 
 
-def check_unquoted_not_quoted(leaf: Path, root: Path) -> tuple[list[str], str]:
+def check_unquoted_not_quoted(leaf: Path, root: Path,
+                             edition: str = LEAF_EDITION
+                             ) -> tuple[list[str], str]:
     """No source the leaf says it does not quote is credited with a quotation.
 
     A guide that states four times that it quotes a witness only at second
     hand, and then prints that witness's words as quoted text, contradicts
     itself in a way neither statement shows on its own.
     """
-    references, _ = split_leaf(leaf)
+    references, _ = split_leaf(leaf, edition)
     if not references:
         return (["the leaf prints no References section"], "")
     declared = []
@@ -528,7 +733,7 @@ def check_unquoted_not_quoted(leaf: Path, root: Path) -> tuple[list[str], str]:
         if author:
             declared.append((author, flat[:80]))
     problems = []
-    for attribution in attributed_blocks(leaf):
+    for attribution in attributed_blocks(leaf, edition):
         credited = fold(prose(attribution))
         for author, entry in declared:
             if re.search(r"\b" + re.escape(author), credited):
@@ -694,7 +899,7 @@ def source_anchors(records: dict[str, dict[str, str]],
 
 
 def check_restricted_not_reproduced(
-    leaf: Path, root: Path
+    leaf: Path, root: Path, edition: str = LEAF_EDITION
 ) -> tuple[list[str], str]:
     """Nothing the leaf prints is reproduced from an artifact it may not copy.
 
@@ -745,7 +950,7 @@ def check_restricted_not_reproduced(
         for token in words:
             times_used[token] = times_used.get(token, 0) + 1
 
-    for attribution in attributed_blocks(leaf):
+    for attribution in attributed_blocks(leaf, edition):
         credited = fold(prose(attribution))
         for source_id in restricted:
             naming = sorted(
@@ -783,7 +988,9 @@ RUN_FIELDS = (
 RUN_CHECK = "provenance-matches-run"
 
 
-def check_bindings_valid(leaf: Path, root: Path) -> tuple[list[str], str]:
+def check_bindings_valid(leaf: Path, root: Path,
+                        edition: str = LEAF_EDITION
+                        ) -> tuple[list[str], str]:
     """The leaf's own binding record, held to the library's own schema.
 
     `author-proper` writes this file, and until this check the only thing in a
@@ -845,7 +1052,8 @@ def check_bindings_valid(leaf: Path, root: Path) -> tuple[list[str], str]:
 
 
 def check_provenance_matches_run(
-    leaf: Path, root: Path, run: dict[str, str]
+    leaf: Path, root: Path, run: dict[str, str],
+    edition: str = LEAF_EDITION
 ) -> tuple[list[str], str]:
     """The leaf states the run producing it, and not some earlier one.
 
@@ -1359,7 +1567,9 @@ def _corpus_answer(leaf: Path, root: Path):
     )
 
 
-def check_chronology_record_current(leaf: Path, root: Path) -> tuple[list[str], str]:
+def check_chronology_record_current(leaf: Path, root: Path,
+                                   edition: str = LEAF_EDITION
+                                   ) -> tuple[list[str], str]:
     """The carried chronology ids are the corpus's, and are the corpus's now.
 
     §14 asks a consumer to carry the stable ids — event id, unit id, profile,
@@ -1404,7 +1614,7 @@ def check_chronology_record_current(leaf: Path, root: Path) -> tuple[list[str], 
 
 
 def check_chronology_annotations_current(
-    leaf: Path, root: Path
+    leaf: Path, root: Path, edition: str = LEAF_EDITION
 ) -> tuple[list[str], str]:
     """The generated reader-facing chronology is complete and current.
 
@@ -1455,7 +1665,9 @@ def check_chronology_annotations_current(
     )
 
 
-def check_chronology_claims_supported(leaf: Path, root: Path) -> tuple[list[str], str]:
+def check_chronology_claims_supported(leaf: Path, root: Path,
+                                     edition: str = LEAF_EDITION
+                                     ) -> tuple[list[str], str]:
     """Every date the guide prints is one the corpus asserts, and it says which.
 
     Two failures, and only the second needs the macro discipline.
@@ -1495,8 +1707,8 @@ def check_chronology_claims_supported(leaf: Path, root: Path) -> tuple[list[str]
     _required, macros, why = _chronology_scope(leaf)
     annotation_required, annotation_why = _annotations_scope(leaf)
     printed = {
-        path: active_tex(path.read_text(encoding="utf-8"))
-        for path in leaf_tex(leaf)
+        path: active_tex(edition_text(leaf, path, edition))
+        for path in leaf_tex(leaf, edition)
     }
     # THE CORPUS IS NOT CONSULTED WHEN THERE IS NOTHING TO HOLD AGAINST IT. A
     # leaf that prints no chronology claim and is not yet bound by the macro
@@ -1748,24 +1960,27 @@ def check_chronology_claims_supported(leaf: Path, root: Path) -> tuple[list[str]
 # words no reader can reach. So the two checks below start at the editions
 # themselves and follow `\input` from there.
 TEX_INPUT = re.compile(r"\\input\{([^{}]*)\}")
-EDITIONS = ("main.tex", "synthesis.tex")
 NOT_PROSE = ("format.tex", "generation-metadata.tex")
 
 
-def reader_facing(leaf: Path) -> list[Path]:
-    """Every .tex file the leaf's editions typeset, in the order reached.
+def reader_facing(leaf: Path, edition: str = LEAF_EDITION) -> list[Path]:
+    """Every .tex file the named edition typesets, in the order reached.
 
-    Both editions, deliberately: `synthesis.tex` sets a flag and inputs
-    `main.tex`, whose `\\ifdefined` branches decide which components each
-    edition prints, and a defect in a component only the research edition
+    Under `leaf`, both editions deliberately: `synthesis.tex` sets a flag and
+    inputs `main.tex`, whose `\\ifdefined` branches decide which components
+    each edition prints, and a defect in a component only the research edition
     carries is still a defect. Following the graph also settles the case the
     filenames cannot: one published leaf inputs a further section from inside
     its commentary rather than from `main.tex`.
+
+    Under `canonical` or `synthesis`, one entry file and the guards resolved,
+    so a branch the other edition takes is followed no further than a reader
+    follows it: the `\\input` inside a dropped branch is dropped with it.
     """
     seen: set[Path] = set()
     order: list[Path] = []
     root = leaf.resolve()
-    queue = [leaf / name for name in EDITIONS]
+    queue = [leaf / name for name in ENTRY_FILES[edition]]
     while queue:
         path = queue.pop(0)
         # A tracked `\input` argument is repository-relative and shared
@@ -1779,7 +1994,7 @@ def reader_facing(leaf: Path) -> list[Path]:
         seen.add(path)
         if path.name not in NOT_PROSE:
             order.append(path)
-        text = path.read_text(encoding="utf-8")
+        text = edition_text(leaf, path, edition)
         for hit in TEX_INPUT.finditer(text):
             argument = hit.group(1)
             tail = (argument.split(f"{leaf.name}/", 1)[-1]
@@ -1788,7 +2003,9 @@ def reader_facing(leaf: Path) -> list[Path]:
     return order
 
 
-def check_house_voice(leaf: Path, root: Path) -> tuple[list[str], str]:
+def check_house_voice(leaf: Path, root: Path,
+                     edition: str = LEAF_EDITION
+                     ) -> tuple[list[str], str]:
     """No reader-facing sentence takes the guide or its apparatus as subject.
 
     `guidance/editorial.md` gives the test -- a qualifying sentence is
@@ -1820,16 +2037,17 @@ def check_house_voice(leaf: Path, root: Path) -> tuple[list[str], str]:
     half its discovery prose unread, and dropping the markup would otherwise
     silence this check and `proposal-fields` together in silence.
     """
-    files = reader_facing(leaf)
+    files = reader_facing(leaf, edition)
     if not files:
-        return (["the leaf typesets no reader-facing .tex file: neither "
-                 "main.tex nor synthesis.tex is there to say what it "
-                 "prints"], "")
+        return ([f"the {edition} scope typesets no reader-facing .tex file: "
+                 f"no entry file of "
+                 f"{', '.join(ENTRY_FILES[edition])} is there to say what it "
+                 f"prints"], "")
     problems = []
     unread = []
     for path in files:
         where = path.relative_to(leaf).as_posix()
-        text = path.read_text(encoding="utf-8")
+        text = edition_text(leaf, path, edition)
         for line, saw, quotation in house_voice(text):
             # Not `!r`: the quotation is the file's own bytes, backslashes and
             # all, so that a worker can search for it. `repr` would double
@@ -1935,7 +2153,9 @@ def _proposals(text: str) -> tuple[list[tuple[str, str]], list[int]]:
     return blocks, unreadable
 
 
-def check_proposal_fields(leaf: Path, root: Path) -> tuple[list[str], str]:
+def check_proposal_fields(leaf: Path, root: Path,
+                         edition: str = LEAF_EDITION
+                         ) -> tuple[list[str], str]:
     """Every exploratory proposal carries its anchors and four required fields.
 
     The profile: each proposal "must join at least two precisely named
@@ -1953,9 +2173,9 @@ def check_proposal_fields(leaf: Path, root: Path) -> tuple[list[str], str]:
     it.
     """
     section = None
-    for path in reader_facing(leaf):
+    for path in reader_facing(leaf, edition):
         text = LINE_COMMENT.sub(
-            "", path.read_text(encoding="utf-8"))
+            "", edition_text(leaf, path, edition))
         found = INTERPRETIVE_SECTION.search(text)
         if found:
             # The comment stripper deletes a comment's characters and not its
@@ -2110,13 +2330,14 @@ def _heading_calls(text: str) -> list[tuple[str, str, int]]:
     return found
 
 
-def _titled_box_names(leaf: Path) -> set[str]:
+def _titled_box_names(leaf: Path,
+                      edition: str = LEAF_EDITION) -> set[str]:
     """Known title-bearing boxes plus direct leaf-local wrappers around them."""
     names = set(BASE_TITLED_BOXES)
     format_tex = leaf / "format.tex"
     if not format_tex.is_file():
         return names
-    source = active_tex(format_tex.read_text(encoding="utf-8"))
+    source = active_tex(edition_text(leaf, format_tex, edition))
     # Resolve one wrapper layer at a time so an alias of an alias remains a
     # title-bearing box. Requiring the forwarding `#1` keeps this from treating
     # an arbitrary environment argument as a displayed title.
@@ -2276,7 +2497,7 @@ def _structural_scope(leaf: Path) -> tuple[bool, str]:
 
 
 def check_structural_meta_labels(
-    leaf: Path, root: Path
+    leaf: Path, root: Path, edition: str = LEAF_EDITION
 ) -> tuple[list[str], str]:
     """No rhetorical wrapper occupies a reader-facing structural surface.
 
@@ -2293,9 +2514,9 @@ def check_structural_meta_labels(
 
     problems = []
     surfaces = 0
-    titled_boxes = _titled_box_names(leaf)
-    for path in leaf_tex(leaf):
-        text = active_tex(path.read_text(encoding="utf-8"))
+    titled_boxes = _titled_box_names(leaf, edition)
+    for path in leaf_tex(leaf, edition):
+        text = active_tex(edition_text(leaf, path, edition))
         relative = path.relative_to(leaf)
         try:
             table_calls, table_ranges = _table_heading_calls(text)
@@ -2332,6 +2553,13 @@ def check_structural_meta_labels(
     )
 
 
+# Every check takes `(leaf, root, edition)` whether or not the edition changes
+# what it reads, so that `main` dispatches one way and a check cannot be added
+# that quietly ignores the flag it was handed. Six of the twelve do narrow --
+# they read the leaf's prose through `leaf_tex` or `reader_facing` -- and the
+# rest read one record for the whole leaf, where an edition is not a thing a
+# TOML file has. `synthesis-preflight` runs only the narrowing ones, for the
+# reason its own required_result lines give.
 CHECKS = {
     "bindings-valid": check_bindings_valid,
     "chronology-annotations-current": check_chronology_annotations_current,
@@ -2370,6 +2598,16 @@ def main() -> int:
                         help="provider directory under src/ (default: gpt)")
     parser.add_argument("--document",
                         help="leaf id under the provider root")
+    parser.add_argument("--edition", choices=EDITION_CHOICES,
+                        default=LEAF_EDITION,
+                        help="which edition's bytes to read: `leaf` (the "
+                             "default) reads every file under the leaf with "
+                             "no branch resolved, which is what a sweep over "
+                             "records wants and what every gate command has "
+                             "always run; `canonical` and `synthesis` read "
+                             "one document, following that edition's own "
+                             "entry file and resolving "
+                             "\\ifdefined\\TriptychSynthesisEdition for it")
     parser.add_argument("--check", choices=ALL_CHECKS,
                         help=f"run one check instead of all of them; "
                              f"{RUN_CHECK} is only ever run this way, so a "
@@ -2418,10 +2656,18 @@ def main() -> int:
     selected = [args.check] if args.check else sorted(CHECKS)
     failed = False
     for name in selected:
+        # The edition is named in the output because a log of a gate run has to
+        # say which document was refused: the same check id over the canonical
+        # edition and over the companion are two different measurements, and a
+        # line that read the same for both would make the run's own record
+        # ambiguous about which reviser owes the repair.
+        label = (name if args.edition == LEAF_EDITION
+                 else f"{name} ({args.edition} edition)")
         try:
             problems, summary = (
-                RUN_CHECKS[name](leaf, root, run) if name in RUN_CHECKS
-                else CHECKS[name](leaf, root)
+                RUN_CHECKS[name](leaf, root, run, args.edition)
+                if name in RUN_CHECKS
+                else CHECKS[name](leaf, root, args.edition)
             )
         # ImportError belongs here: the two chronology checks import the
         # corpus reader, which wants PyYAML, and a checkout that has not
@@ -2429,15 +2675,15 @@ def main() -> int:
         # run rather than handed a traceback.
         except (ImportError, OSError, ValueError,
                 tomllib.TOMLDecodeError) as exc:
-            print(f"{ERROR}{name}: {exc}", file=sys.stderr)
+            print(f"{ERROR}{label}: {exc}", file=sys.stderr)
             failed = True
             continue
         if problems:
             failed = True
             for problem in problems:
-                print(f"{ERROR}{name}: {problem}", file=sys.stderr)
+                print(f"{ERROR}{label}: {problem}", file=sys.stderr)
         else:
-            print(f"{name}: {summary}")
+            print(f"{label}: {summary}")
     return 1 if failed else 0
 
 

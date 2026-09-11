@@ -261,13 +261,21 @@ sentence for another. And a reader who never learns of it is not misled.
 no owner, and the engine refuses a finding that claims both. It does not block,
 does not spend the iteration budget, and does not stop acceptance.
 
-**An accepted finding binds the rest of the run.** It is written to
-`<document_root>/evaluations/blocking-findings-v1.toml` under `[[accepted]]`
-with your reason, and the engine refuses a later round that raises the same id
-as blocking. That is the point of it: the judgement outlives the round that
-made it, so the next cold read of the same passage meets the decision instead
-of the bare defect. Advisories are written there too, under `[[advisories]]`,
-for the same reason.
+**An accepted finding binds the rest of the run.** The engine refuses a later
+round that raises the same id as blocking, whichever evaluator you are and
+whether or not anything of yours reaches a tracked file. Where the stage is
+the one the pipeline declares as recording standing findings, your verdict is
+also written to `<document_root>/evaluations/blocking-findings-v1.toml` under
+`[[accepted]]` with your reason, and the advisories beside it under
+`[[advisories]]`. That is the point of it: the judgement outlives the round
+that made it, so the next cold read of the same passage meets the decision
+instead of the bare defect. Where the stage is not one of those — on the
+propers pipelines `visual-evaluation` and `web-evaluation` are not, and no
+recording stage runs after them — the judgement binds this run and stops
+there. It is held in the run directory under `build/`, which is gitignored,
+which `make clean` and a workspace tidy delete, and which no later run reads:
+what you accepted is a decision this run will honour and not a record the leaf
+carries forward.
 
 If you believe an earlier round accepted something it should not have, do not
 raise it blocking. Escalate it: a disagreement about what is worth repairing is

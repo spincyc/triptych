@@ -476,8 +476,8 @@ It also reaches the tree. The ledger itself is run state under `build/`,
 which is ignored, which `make clean` removes and `wt tidy` sweeps; but the
 stage that records standing findings writes the run's whole escalation
 ledger, yours included, to `<document_root>/evaluations/blocking-findings-v1.toml`
-under `[[escalations]]`, rewritten whole at each evaluation, so the decision
-you are asking of a maintainer outlives the run directory. Write it so that
+under `[[escalations]]`, so the decision you are asking of a maintainer
+outlives the run directory. Write it so that
 record is enough on its own: name the file and the lines, state the
 contradiction, and say in `required_result` what the maintainer is being
 asked to decide. Seven escalations of one production survived only because a
@@ -524,12 +524,19 @@ defect, and the iteration budget does not read it — it reads the reviser's
 attempted and could not clear.
 
 One set of ids is recoverable, and there you must reuse an id for the same
-unrepaired defect. The blocking findings still standing against this leaf are
-written to `<document_root>/evaluations/blocking-findings-v1.toml`, rewritten
-whole at each evaluation. Read it, and where you find a defect it already
-names, keep that id. Where you are restating something whose id you cannot
-recover — an advisory in particular, since that file holds blocking findings,
-observations and escalations and no advisory — take a fresh id and say in
-`problem` what you are restating and why the id changed. An escalation's id
-is recoverable the same way, under `[[escalations]]`, and is reused when you
-restate the same escalation. Never reuse an id for a different defect.
+unrepaired defect. What still stands against this leaf is written to
+`<document_root>/evaluations/blocking-findings-v1.toml`, where each evaluation
+replaces its own stage's entries and leaves the other evaluator's alone, and
+which holds four collections of findings rather than one since
+standing-findings schema 3: the blocking findings under `[[findings]]`,
+the accepted verdicts under `[[accepted]]`, the advisories under
+`[[advisories]]`, and the run's escalation ledger under `[[escalations]]`.
+Read all four, and where you find a defect the record already names, keep its
+id, whichever collection holds it. The lane observations are in the same file
+and carry no id, so there is nothing there to reuse. An advisory is the case
+to be careful of, because its id is in that record: minting a fresh one for an
+advisory the record already names is exactly the id churn this record exists
+to stop, and the engine's refusal of an accepted id raised again as blocking
+rests on those ids staying stable. Take a fresh id only where the defect is
+named nowhere in the record, and then say in `problem` what you are restating
+and why the id changed. Never reuse an id for a different defect.

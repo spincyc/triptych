@@ -51,7 +51,6 @@ from _workflow import (  # noqa: E402
 )
 from test_workflow_research_fanout import (  # noqa: E402
     DOC,
-    STAGE_ORDER,
     workflow_json,
 )
 from test_workflow_repair_routing import (  # noqa: E402
@@ -149,8 +148,16 @@ class TopologyTests(unittest.TestCase):
     """Where the gate sits, and where a failure of it may go."""
 
     def test_the_gate_sits_between_the_author_and_the_evaluation(self):
+        """Where this gate stands, and nothing about the other stages.
+
+        The whole stage list is asserted once, by
+        `test_workflow_research_fanout.TopologyTests`, which owns
+        `STAGE_ORDER`. It used to be asserted here as well, and a second copy
+        of one rule is a second place to update: the list is a literal, so a
+        stage added anywhere in the pipeline failed this file too and said
+        nothing about content-preflight while doing it.
+        """
         order = [s["id"] for s in workflow_json()["stages"]]
-        self.assertEqual(order, STAGE_ORDER)
         self.assertEqual(order[order.index("author-proper") + 1], STAGE)
         self.assertEqual(order[order.index(STAGE) + 1], "content-evaluation")
         stages = {s["id"]: s for s in workflow_json()["stages"]}

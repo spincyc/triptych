@@ -256,7 +256,7 @@ class EscalationRecordTests(FinishCase):
                                blocking("CON-PRO-001", "authoring")]})
         self.assertEqual(out["stage"], REVISION)
         record = self.record()
-        self.assertEqual(record["standing_findings_schema"], 3)
+        self.assertEqual(record["standing_findings_schema"], 4)
         self.assertEqual([f["id"] for f in record["findings"]], ["CON-PRO-001"])
         self.assertEqual(len(record["escalations"]), 1)
         entry = record["escalations"][0]

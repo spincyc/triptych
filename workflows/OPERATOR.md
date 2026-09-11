@@ -674,20 +674,21 @@ asking. No run state has ever been tracked, and none of it survives a routine
 cleanup. Read this directory as the working notes of a run in flight, never as
 a record anything later may depend on.
 
-What stands against the document itself has a tracked home instead. The stage
-that declares `records_standing_findings` — `content-evaluation`, in both
-propers pipelines, and no other stage — writes the blocking findings still
-standing against the leaf, the observations its lanes recorded, and the run's
-whole escalation ledger, to
+What stands against the document itself has a tracked home instead. A stage
+that declares `records_standing_findings` — `content-evaluation` and
+`synthesis-evaluation` in both propers pipelines, and no other stage — writes
+the blocking findings still standing against the leaf, the observations its
+lanes recorded, and the run's whole escalation ledger, to
 
 ```
 <document_root>/evaluations/blocking-findings-v1.toml
 ```
 
-rewritten whole each time, so it states what stands now rather than
-accumulating history. A `PASS` writes an empty list rather than deleting the
-file: "this leaf was evaluated and nothing stands" and "nobody has looked" are
-different facts. It is written before the run's commit, so a write that fails
+where each write replaces that stage's own entries whole, so the record states
+what stands now rather than accumulating history, and leaves the other stage's
+alone. A `PASS` writes that stage's header with no entries rather than deleting
+the file: "this leaf was evaluated and nothing stands" and "nobody has looked"
+are different facts, and they are now facts per stage. It is written before the run's commit, so a write that fails
 aborts the advance and the obvious retry works; and it is written on a
 terminal transition too, which is the case it exists for, a run that blocks
 being a run whose findings have nowhere else to go. The declaration is per
@@ -993,8 +994,98 @@ whether routed from `content-evaluation` or sent back by
 `research-synthesis`, is a fresh visit to the stage on the budget of the
 evaluator that sent it.
 
-The `proper` workflow is at version 28. The `proper-finish` workflow is at
-version 6.
+The `proper` workflow is at version 29. The `proper-finish` workflow is at
+version 7.
+
+Version 29 and `proper-finish` 7 answer a cold review of the pipelines, run
+after `05f2d2fd7c2cf8b3` spent three of its four synthesis rounds draining one
+class of defect a site at a time. Three of its eighteen findings are encoded
+here; the rest are recorded and unfixed.
+
+`synthesis-preflight` is a program gate between the companion's writers and
+its evaluation. `content-preflight` is reachable only from `author-proper` and
+`content-revision`, and both are forbidden to write the companion, so every
+companion byte a run wrote reached two AI lanes without a program having read
+it. The gate runs seven of the thirteen checks under a new `--edition` scope
+on `check-content-preflight`: `house-voice`, `structural-meta-labels`,
+`proposal-fields`, `references-used`, `identifiers-resolve`,
+`unquoted-not-quoted` and `restricted-not-reproduced`. The other six are
+excluded because the flag does not narrow them — `bindings-valid`,
+`relation-coverage` and the three chronology checks read one record for the
+leaf, and `provenance-matches-run` would hold a companion's reviser to a
+canonical fact. A refusal routes to `synthesis-revision`, whose repair owners
+can act on it; routing it to `content-revision`, which may not write those
+files, would have blocked the run at three refusals, because a gate keeps the
+finding-id comparison whatever a reviser reports.
+
+The scope had to be resolved and not assumed. Twelve companions define
+`\TriptychSynthesisEdition` and input `main.tex`; three do not define it at
+all and input their own section list, so a guard in a file they share takes
+the canonical branch there, and a resolver that inferred the flag from the
+edition's name would have screened the wrong prose in three leaves. The
+dropped branch is replaced by spaces with newlines kept, so a refusal names
+the line an editor shows and an inline `\fi{}` guard reads as the one sentence
+the reader gets. The gate refuses six of the fifteen manifest-era leaves
+today, and that set is a strict subset of what `content-preflight` already
+refuses: no leaf is refused for the first time by it.
+
+What it does not do is catch the class that prompted the review. A References
+entry describing what a cited edition supplied in terms of apparatus the
+companion does not print is a semantic claim about its own prose, and none of
+the thirteen checks sees it. That wants a fourteenth check, which is a new
+check and not a scope.
+
+The standing-findings record is schema 4, and a write now replaces only the
+recording stage's entries. Both propers pipelines have declared
+`records_standing_findings` on `content-evaluation` and on
+`synthesis-evaluation` since the edition sequence split the two evaluations
+apart, and the synthesis evaluation always runs last, so while the file was
+rewritten whole it deleted every content-lane advisory, accepted finding and
+observation on every run that reached `derive-synthesis` — the v25
+`web-evaluation` failure recreated by giving a second stage the same
+declaration. Run `05f2d2fd7c2cf8b3` lost `CON-EVI-002` that way: a real defect
+in `research/scope.md`, correctly left unrepaired because no stage of that
+pipeline may write the brief, which afterwards stood nowhere in the tree.
+Entries are keyed by the stage that raised them, `[[stages]]` carries one
+header per stage that has spoken, and a `PASS` writes its own header with no
+entries, so "evaluated and nothing stands" and "nobody has looked" stay
+different facts per stage. A schema 1, 2 or 3 file is upgraded rather than
+discarded: it was written whole by one stage and names it, so its entries are
+attributed there and superseded only when that stage speaks again.
+
+Four revising stages are told that `generation-metadata.tex` exists.
+Version 27 told three; `artifact-revision`, `visual-revision`, `web-revision`
+and `publication-revision` were not, and two of them are authorised to change
+what the document says. The cost is not only a stale timestamp: it disarms the
+one check that could catch a late edit, because `check-generation-metadata`
+compares the rendered PDF's ModDate against the source declaration, so an edit
+that does not move the timestamp leaves both sides consistent at the stale
+value. The instruction is conditional where it has to be — a catalog cell and
+a release record are not files the document builds from, and
+`publication-revision` may not rebuild, so there the normal answer is to leave
+the record alone and the exceptional one is `BLOCKED`.
+
+Two fragment sentences that contradicted the engine go with it.
+`content-evaluation` told a lane the record holds no advisory and to mint a
+fresh id when restating one, which is the id churn the record exists to stop;
+it now names all four collections. `result-format` told every evaluator that
+an accepted verdict reaches the tracked record, which is false for
+`visual-evaluation` and `web-evaluation`, neither of which records standing
+findings and after neither of which a recorder runs; that is now hedged the
+way the observations paragraph already was.
+
+A gap the review names and this version does not close: those two stages
+cannot recover the ids they minted in an earlier iteration. Their fan-out lane
+packets carry an empty `PRIOR_FINDINGS` by design, they may not read earlier
+results, and the tracked record never receives their findings. In
+`05f2d2fd7c2cf8b3` the driver handed those ids back by hand, and without that
+two `accepted` ids would have been re-raised as blocking and refused, costing
+all four lanes their work. A second gap: escalations are still written whole
+from the run ledger, so a new production over a leaf drops the escalations a
+previous one recorded.
+
+A run seeded against `proper` 28 or `proper-finish` 6 fails closed and is
+seeded again.
 
 Version 28 and `proper-finish` 6 answer a run that blocked while converging.
 `6fb5fba4867eb8cf` failed eight consecutive content evaluations with a repeat
@@ -1248,7 +1339,7 @@ the check by carrying an older version in the leaf. Historical publications
 remain out of scope until substantive revision. A run seeded against `proper`
 version 23 or earlier or `proper-finish` version 1 fails closed; seed it again.
 
-The `proper-finish` workflow is at version 6. Version 1 remains the historical
+The `proper-finish` workflow is at version 7. Version 1 remains the historical
 authoring-to-publication rescue contract; version 2 changes no topology or
 repair ownership, but adopts the same authoring fragment, structural preflight,
 profile evaluator, and fail-closed version interlock as `proper` v24. Version 4

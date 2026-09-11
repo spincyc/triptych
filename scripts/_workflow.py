@@ -136,6 +136,41 @@ NOT_REPAIRED = "not-repaired"
 # This is the tracked home those findings did not have.
 STANDING_FINDINGS_PATH = "evaluations/blocking-findings-v1.toml"
 
+# What that record's `standing_findings_schema` means.
+#
+#   1  the blocking findings and observations of the one stage that wrote it
+#   2  the run's whole escalation ledger beside them
+#   3  the accepted findings and the advisories beside those
+#   4  one record, many stages: every entry names the `stage` that raised it,
+#      `[[stages]]` says what each stage last said about this leaf, and a
+#      write replaces only the recording stage's own entries.
+#
+# 4 exists because 1 to 3 were rewritten whole from the single result being
+# recorded, and the declaration stopped being unique. Both `content-evaluation`
+# and `synthesis-evaluation` declare `records_standing_findings`, and a
+# synthesis evaluation runs only after the content evaluation has passed, so
+# every run that reached `derive-synthesis` -- every run that succeeds --
+# deleted the content evaluation's observations, accepted findings and
+# advisories from the tree and replaced them with the synthesis evaluation's.
+# Advisory CON-EVI-002 of the `55-fifteenth-after-pentecost` finish run, a
+# defect in `research/scope.md` correctly left unrepaired because no
+# `proper-finish` stage may write that file, stands nowhere in the tree because
+# of it. Only escalations survived, and only because they are written from the
+# run's whole ledger rather than from one stage's result.
+#
+# `OPERATOR.md` records the same loss at v25, when every evaluator wrote this
+# path and a `web-evaluation` replaced the leaf's content findings with
+# findings about generated HTML. Declaring the write per stage answered it
+# then; v26 and v28 recreated it by giving a second stage the declaration. Per
+# stage merging answers it without depending on how many stages declare it.
+STANDING_FINDINGS_SCHEMA = 4
+
+# What an entry is attributed to when the record it came from named no stage.
+# Only a hand-edited or truncated file can reach this: every record this engine
+# has ever written names its stage. It is kept rather than dropped, and kept
+# visibly, because losing a recorded defect is the failure schema 4 is for.
+UNRECORDED_STAGE = "(unrecorded)"
+
 # Schema names
 SCHEMA_WORKER = "worker-result.json"
 SCHEMA_EVALUATOR = "evaluator-result.json"
@@ -2960,7 +2995,7 @@ class WorkflowEngine:
         self, workflow: dict[str, Any], state: dict[str, Any],
         stage: dict[str, Any], result: dict[str, Any],
     ) -> None:
-        """Write the evaluation's standing blocking findings to a tracked file.
+        """Merge this evaluation's findings into the leaf's tracked record.
 
         Written before the run's own commit, and outside it either way. After
         was the obvious order — a run that could not store its own result has
@@ -2970,11 +3005,32 @@ class WorkflowEngine:
         obvious retry failed on a stage mismatch. Failing first leaves nothing
         recorded and a retry that works.
 
-        The file is rewritten whole on every evaluation, so it always states
-        what stands now rather than accumulating history. A PASS writes an
-        empty list rather than deleting the file, because "this leaf was
-        evaluated and nothing stands" and "nobody has looked" are different
-        facts and a later production reads them differently.
+        Merged per stage, never rewritten whole. Each entry carries the stage
+        that raised it; a write replaces that stage's own entries and leaves
+        every other stage's alone, so what the content evaluation last said
+        about this leaf still stands here after the synthesis evaluation has
+        spoken. Until schema 4 the file was rewritten from the single result
+        being recorded, which was safe only while exactly one stage declared
+        `records_standing_findings`; `STANDING_FINDINGS_SCHEMA` carries that
+        history and the advisory it cost.
+
+        Within a stage the result is still the whole truth: the stage's earlier
+        entries go, because the record states what stands now and not a
+        history. A PASS therefore writes an empty list for its own stage rather
+        than deleting the file or touching another stage's entries, because
+        "this leaf was evaluated and nothing stands" and "nobody has looked"
+        are different facts, and they are different facts per stage.
+
+        Older records are upgraded rather than dropped. A schema 1, 2 or 3 file
+        was rewritten whole by one stage and names it in a top-level `stage`,
+        so every entry in it is attributed to that stage, kept under it, and
+        superseded only when that same stage next speaks; its header becomes
+        that stage's `[[stages]]` entry. A file that will not parse is the one
+        thing not carried: a record this engine cannot read is one it must not
+        guess at, which is the rule `_standing_findings` already follows.
+
+        The escalation ledger is still written whole from `state`, because
+        it is the run's ledger across every stage, not one stage's result.
         """
         if self.standing_findings_root is None:
             return
@@ -3016,6 +3072,11 @@ class WorkflowEngine:
                 f"{document_root} passes through a symlink; refusing to write "
                 f"it"
             )
+        stage_id = str(stage["id"])
+        # Read before write. This is the whole of the fix: the record on disk
+        # may hold another stage's word about this leaf, and that word is not
+        # this stage's to spend.
+        existing = _read_standing_record(target)
         all_findings = result.get("findings", []) or []
         findings = [
             f for f in all_findings if f.get("severity") == "blocking"
@@ -3040,11 +3101,58 @@ class WorkflowEngine:
         ]
         observations = list(result.get("observations", []) or [])
 
+        # Findings, accepted findings and advisories are held by `(stage, id)`;
+        # observations by `(stage, location, note)`, because an observation has
+        # no id and those three are what identify a sighting. The same keying
+        # the escalation ledger uses, for the same reason: the record is then a
+        # function of what the stages found and not of the order they ran in.
+        merged_findings = _merge_standing_entries(
+            existing["findings"], stage_id, findings, ("id",))
+        merged_accepted = _merge_standing_entries(
+            existing["accepted"], stage_id, accepted, ("id",))
+        merged_advisories = _merge_standing_entries(
+            existing["advisories"], stage_id, advisories, ("id",))
+        merged_observations = _merge_standing_entries(
+            existing["observations"], stage_id, observations,
+            ("location", "note"))
+        # One header per stage that has ever written here, replacing this
+        # stage's. It is where "evaluated, nothing stands" now lives: a stage
+        # with no entries at all still has its say in the array.
+        headers = dict(existing["stages"])
+        headers[stage_id] = {
+            "stage": stage_id,
+            "iteration": _as_int(result.get("iteration", 0)),
+            "disposition": str(result.get("disposition", "")),
+            "run_id": str(state.get("run_id", "")),
+            "workflow": str(workflow.get("id", "")),
+            "workflow_version": _as_int(workflow.get("version", 0)),
+        }
+
+        def owned_by(entries: list[dict[str, Any]], owner: str) -> int:
+            return sum(1 for entry in entries
+                       if str(entry.get("stage", "")) == owner)
+
         lines = [
-            "# Blocking findings standing against this publication, and the",
-            "# observations its evaluation lanes recorded outside their own",
-            "# criteria. Written by tpt after each evaluation of this leaf and",
-            "# rewritten whole, so it states what stands now.",
+            "# Blocking findings standing against this publication, the",
+            "# verdicts its evaluation lanes reached, and the observations",
+            "# they recorded outside their own criteria. Written by tpt after",
+            "# each evaluation of this leaf.",
+            "#",
+            "# One record, several stages. Every entry names the stage that",
+            "# raised it, [[stages]] says what each stage last said, and an",
+            "# evaluation replaces its own stage's entries and leaves every",
+            "# other stage's alone -- so what the content evaluation found",
+            "# still stands here after the synthesis evaluation has spoken. A",
+            "# stage that looked and found nothing leaves an empty list",
+            "# rather than no entry: \"evaluated, nothing stands\" and",
+            "# \"nobody has looked\" are different facts, per stage.",
+            "#",
+            "# The keys directly below these comments describe the write that",
+            "# last touched this file, and count every stage's entries",
+            "# together. They are its summary line. What a given stage found",
+            "# is in that stage's [[stages]] entry and in the entries naming",
+            "# it -- reading the top-level stage as the record's one stage is",
+            "# the mistake this schema exists to stop.",
             "#",
             "# It exists because a run's own results live under build/, which",
             "# is ignored, which `make clean` and `wt tidy` delete without",
@@ -3069,60 +3177,82 @@ class WorkflowEngine:
             "# which is how a document in good shape spends a whole iteration",
             "# budget. A later evaluation reads these before it raises.",
             "",
-            "standing_findings_schema = 3",
+            f"standing_findings_schema = {STANDING_FINDINGS_SCHEMA}",
             'record_type = "standing-blocking-findings"',
             f"document = {_toml_string(state['normalized_args'].get('proper', ''))}",
             f"provider = {_toml_string(state['normalized_args'].get('provider', ''))}",
-            f"run_id = {_toml_string(state['run_id'])}",
-            f"workflow = {_toml_string(str(workflow['id']))}",
-            f"workflow_version = {int(workflow['version'])}",
-            f"stage = {_toml_string(stage['id'])}",
-            f"iteration = {int(result.get('iteration', 0))}",
+            # The run, stage and iteration of this write, and totals across
+            # every stage. They are the file's summary line, and they are also
+            # what a schema 1-3 reader knows how to ask for; `[[stages]]` below
+            # is where a stage's own word is stated and read.
+            f"run_id = {_toml_string(state.get('run_id', ''))}",
+            f"workflow = {_toml_string(str(workflow.get('id', '')))}",
+            f"workflow_version = {_as_int(workflow.get('version', 0))}",
+            f"stage = {_toml_string(stage_id)}",
+            f"iteration = {_as_int(result.get('iteration', 0))}",
             f"disposition = {_toml_string(str(result.get('disposition', '')))}",
-            f"standing = {len(findings)}",
-            f"accepted_count = {len(accepted)}",
-            f"advisory_count = {len(advisories)}",
+            f"standing = {len(merged_findings)}",
+            f"accepted_count = {len(merged_accepted)}",
+            f"advisory_count = {len(merged_advisories)}",
+            f"observation_count = {len(merged_observations)}",
             "",
         ]
-        for finding in findings:
-            lines.append("[[findings]]")
-            for key in (
+        for owner in sorted(headers):
+            header = headers[owner]
+            lines.append("[[stages]]")
+            lines.append(f"stage = {_toml_string(owner)}")
+            lines.append(f"iteration = {_as_int(header.get('iteration'))}")
+            lines.append(
+                "disposition = "
+                f"{_toml_string(str(header.get('disposition', '')))}"
+            )
+            lines.append(
+                f"run_id = {_toml_string(str(header.get('run_id', '')))}")
+            lines.append(
+                f"workflow = {_toml_string(str(header.get('workflow', '')))}")
+            lines.append(
+                "workflow_version = "
+                f"{_as_int(header.get('workflow_version'))}"
+            )
+            lines.append(f"standing = {owned_by(merged_findings, owner)}")
+            lines.append(
+                f"accepted_count = {owned_by(merged_accepted, owner)}")
+            lines.append(
+                f"advisory_count = {owned_by(merged_advisories, owner)}")
+            lines.append(
+                f"observation_count = {owned_by(merged_observations, owner)}")
+            lines.append("")
+        for finding in merged_findings:
+            lines.extend(_standing_entry_lines("findings", finding, (
                 "id", "lane", "severity", "location", "problem",
                 "required_result", "repair_target",
-            ):
-                if key in finding:
-                    lines.append(f"{key} = {_toml_string(str(finding[key]))}")
-            lines.append("")
-        for finding in accepted:
-            lines.append("[[accepted]]")
-            for key in (
+            )))
+        for finding in merged_accepted:
+            lines.extend(_standing_entry_lines("accepted", finding, (
                 "id", "lane", "severity", "location", "problem",
                 "required_result", "accepted_because",
-            ):
-                if key in finding:
-                    lines.append(f"{key} = {_toml_string(str(finding[key]))}")
-            lines.append("")
-        for finding in advisories:
-            lines.append("[[advisories]]")
-            for key in (
+            )))
+        for finding in merged_advisories:
+            lines.extend(_standing_entry_lines("advisories", finding, (
                 "id", "lane", "severity", "location", "problem",
                 "required_result",
-            ):
-                if key in finding:
-                    lines.append(f"{key} = {_toml_string(str(finding[key]))}")
-            lines.append("")
-        for observation in observations:
-            lines.append("[[observations]]")
-            for key in ("lane", "location", "note"):
-                if key in observation:
-                    lines.append(
-                        f"{key} = {_toml_string(str(observation[key]))}"
-                    )
-            lines.append("")
+            )))
+        for observation in merged_observations:
+            lines.extend(_standing_entry_lines(
+                "observations", observation, ("lane", "location", "note")))
         # The ledger is keyed by (stage, id) and sorted, so this is a function
         # of what the run found and not of when; the record carries the whole
         # of it, not only this stage's, because the file is the one place an
         # escalation raised by any stage reaches the tree.
+        #
+        # This section is still written whole, and it is the one place the file
+        # is: `state["escalations"]` already spans every stage of the run, so
+        # the loss schema 4 fixes never reached it. What it does mean is
+        # that an escalation a *previous* run recorded here is dropped when a
+        # new run writes -- unlike a finding, which its own stage supersedes.
+        # Merging across runs would leave no way to clear a decision once a
+        # maintainer had made it, so it waits for the carry-forward design
+        # `_standing_findings` describes.
         for entry in state.get("escalations", []) or []:
             finding = entry.get("finding", {}) or {}
             lines.append("[[escalations]]")
@@ -4488,12 +4618,167 @@ def _standing_findings(
         if not isinstance(entry, dict):
             continue
         standing.append({
+            # `stage` since schema 4, where the record holds every stage that
+            # spoke: what stands against the leaf is the union, and which stage
+            # said so travels with the finding rather than with the file.
             key: entry[key] for key in (
-                "id", "lane", "severity", "location", "problem",
+                "stage", "id", "lane", "severity", "location", "problem",
                 "required_result", "repair_target",
             ) if key in entry
         })
     return standing
+
+
+def _as_int(value: Any) -> int:
+    """An integer for a TOML count, from whatever a record actually holds.
+
+    The counts and iterations in a record on disk were written by this engine,
+    but the file is in the working tree a person edits, and a hand-edited
+    `iteration = "3"` must not raise inside the one write the engine makes
+    outside `build/`.
+    """
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return 0
+
+
+def _read_standing_record(path: Path) -> dict[str, Any]:
+    """The record already on disk, with every entry attributed to a stage.
+
+    The reader half of the merge. It answers for every schema a leaf in the
+    tree can carry:
+
+    - Schema 4 entries name their own `stage`, and `[[stages]]` carries the
+      per-stage headers.
+    - Schema 1, 2 and 3 records were rewritten whole by one stage and name it
+      in a top-level `stage`, so every entry in such a file belongs to that
+      stage: it is attributed there and its header becomes that stage's
+      `[[stages]]` entry. Nothing in an older file is discarded, and the stage
+      that wrote it is the stage that can supersede it.
+    - A file that names no stage at all -- only a hand-edited one can --
+      has its entries attributed to `UNRECORDED_STAGE`, which no stage will
+      ever supersede, rather than being silently dropped.
+    - A file that will not parse, or will not decode, carries nothing. A record
+      this engine cannot read is one it must not guess at, which is the rule
+      `_standing_findings` follows for the same bytes.
+
+    Only the keys the writer writes come back, so a merge cannot smuggle an
+    unknown key into the record it rewrites.
+    """
+    record: dict[str, Any] = {
+        "stages": {}, "findings": [], "accepted": [], "advisories": [],
+        "observations": [],
+    }
+    try:
+        data = tomllib.loads(path.read_text(encoding="utf-8"))
+    except (OSError, tomllib.TOMLDecodeError, UnicodeError):
+        return record
+    if not isinstance(data, dict):
+        return record
+    named_stage = str(data.get("stage", "") or "")
+    default_stage = named_stage or UNRECORDED_STAGE
+    for table, keys in (
+        ("findings", ("id", "lane", "severity", "location", "problem",
+                      "required_result", "repair_target")),
+        ("accepted", ("id", "lane", "severity", "location", "problem",
+                      "required_result", "accepted_because")),
+        ("advisories", ("id", "lane", "severity", "location", "problem",
+                        "required_result")),
+        ("observations", ("lane", "location", "note")),
+    ):
+        for entry in data.get(table, []) or []:
+            if not isinstance(entry, dict):
+                continue
+            kept = {key: entry[key] for key in keys if key in entry}
+            kept["stage"] = str(entry.get("stage", "") or "") or default_stage
+            record[table].append(kept)
+    for entry in data.get("stages", []) or []:
+        if not isinstance(entry, dict):
+            continue
+        owner = str(entry.get("stage", "") or "")
+        if not owner:
+            continue
+        record["stages"][owner] = {
+            "stage": owner,
+            "iteration": _as_int(entry.get("iteration")),
+            "disposition": str(entry.get("disposition", "") or ""),
+            "run_id": str(entry.get("run_id", "") or ""),
+            "workflow": str(entry.get("workflow", "") or ""),
+            "workflow_version": _as_int(entry.get("workflow_version")),
+        }
+    # The pre-4 header, promoted to the stage it belongs to. Skipped when
+    # `[[stages]]` already speaks for that stage, so a schema 4 file's
+    # top-level summary of its last write never overwrites the array.
+    carries_entries = any(record[table] for table in
+                          ("findings", "accepted", "advisories",
+                           "observations"))
+    if default_stage not in record["stages"] and (
+            named_stage or carries_entries):
+        record["stages"][default_stage] = {
+            "stage": default_stage,
+            "iteration": _as_int(data.get("iteration")),
+            "disposition": str(data.get("disposition", "") or ""),
+            "run_id": str(data.get("run_id", "") or ""),
+            "workflow": str(data.get("workflow", "") or ""),
+            "workflow_version": _as_int(data.get("workflow_version")),
+        }
+    return record
+
+
+def _merge_standing_entries(
+    existing: list[dict[str, Any]], stage_id: str,
+    raised: list[dict[str, Any]], key_fields: tuple[str, ...],
+) -> list[dict[str, Any]]:
+    """One stage's entries replaced, every other stage's kept.
+
+    Held by `(stage,) + key_fields` — `(stage, id)` for a finding, an accepted
+    finding or an advisory, and `(stage, location, note)` for an observation,
+    which has no id. The stage is part of the key because two evaluators cannot
+    coordinate their finding ids: each is handed an empty `PRIOR_FINDINGS` and
+    mints its own, so a bare id is not an identity across stages.
+
+    Within the recording stage the result is the whole truth and the stage's
+    earlier entries are dropped, because the record states what stands now
+    rather than a history — that is what made "rewritten whole" the right shape
+    for one stage and the wrong shape for two.
+
+    Stages are emitted in id order and entries in the order they were recorded,
+    so the file is a function of what was found and not of when the stages ran.
+    """
+    by_stage: dict[str, dict[tuple[str, ...], dict[str, Any]]] = {}
+    for entry in existing:
+        owner = str(entry.get("stage", "") or "")
+        if owner == stage_id:
+            continue
+        key = tuple(str(entry.get(field, "")) for field in key_fields)
+        by_stage.setdefault(owner, {})[key] = entry
+    for entry in raised:
+        item = dict(entry)
+        item["stage"] = stage_id
+        key = tuple(str(item.get(field, "")) for field in key_fields)
+        by_stage.setdefault(stage_id, {})[key] = item
+    return [entry for owner in sorted(by_stage)
+            for entry in by_stage[owner].values()]
+
+
+def _standing_entry_lines(
+    table: str, entry: dict[str, Any], keys: tuple[str, ...]
+) -> list[str]:
+    """One array-of-tables entry of the standing record, stage first.
+
+    Attribution is written first and unconditionally: an entry whose stage a
+    reader cannot see is an entry no stage can be held to and none can replace.
+    """
+    lines = [
+        f"[[{table}]]",
+        f"stage = {_toml_string(str(entry.get('stage', '')))}",
+    ]
+    for key in keys:
+        if key in entry:
+            lines.append(f"{key} = {_toml_string(str(entry[key]))}")
+    lines.append("")
+    return lines
 
 
 def _toml_string(value: str) -> str:
