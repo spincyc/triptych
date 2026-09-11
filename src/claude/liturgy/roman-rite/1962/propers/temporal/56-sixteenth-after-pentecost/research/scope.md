@@ -117,7 +117,7 @@ say which route it comes from.
 does not make him more than one witness.** That is what `CON-REC-002` said and
 what §0.7 answers.
 
-### 0.2 Eph. 3:18, where four lanes converge and the tradition divides
+### 0.2 Eph. 3:18, where five lanes converge and the tradition divides
 
 `patristic-reception` (PAT-006, PAT-007, PAT-013), `theological-synthesis`
 (THE-009), `scripture-context` (SCR-008), `cultural-afterlife` (CUL-004) and
@@ -196,8 +196,22 @@ humility following as the next lesson; Bede argues the sequence
 cordis") and ties the first place at table to glorying in one's own merits
 (512A: "non se, de meritis gloriando, quasi caeteris sublimior extollat").
 Bede's is the load-bearing testimony for this formulary because *de meritis
-gloriando* is the vocabulary of the Collect and the Communion; Ambrose gives
-the sequence and not the merit vocabulary.
+gloriando* names the matter the Collect and the Communion state doctrinally —
+grace going before merit, and a justice that is God's alone. **The words
+themselves are not in either prayer**: the Collect prints `grátia`,
+`prævéniat`, `sequátur`, `bonis opéribus`, `iúgiter` and `inténtos`, and the
+Communion `iustítiæ tuæ solíus`, `docuísti` and `ne derelínquas me`, neither
+carrying `meritum` or a form of *gloriari*. Counted on `verified.md`, as §9.8
+requires: no form of *gloriari* stands in any of this Mass's ten elements; the
+`meritum` vocabulary is appointed in one element only, the Secret's `mereámur`;
+and what the Gospel carries is the noun `glória`, which is not the Gospel's
+alone but is appointed in three elements — the Epistle three times, the Gradual
+once and the Gospel once (§1.1, §9.4), the Gospel's the only occurrence a host
+confers on a guest. The Introit's `Glória Patri` is the Ordinary's cue and no
+part of this formulary's own text. The Gospel's `qui se exáltat` is a form of
+*exaltáre* and belongs to neither family: it states the matter, on the same side
+of this distinction as the Collect and the Communion, and not the words.
+Ambrose gives the sequence and not the merit question.
 
 Ambrose's brevity is a bounded negative and not a gap in retrieval: books VIII
 and IX were retrieved whole by `patristic-reception` and book VIII by
@@ -229,7 +243,7 @@ modern printed chain 1862 → 1920 → 1947 → 1962 was collated at this formul
 establishing that the ten appointed texts do not change across it and dating the
 two apparatus changes that do (LIT-021).
 
-### 0.5 The psalm-numbering hazards, which are three species of one problem
+### 0.5 The psalm-numbering hazards, which are six species of one problem
 
 Three lanes each hit a verse-numbering offset and none of them is the same
 offset. They are joined here because a guide that confuses them publishes the
@@ -543,7 +557,7 @@ Clementine; class 1 throughout.
   Luke 14:3 is its **last** occurrence in that Gospel; the other synoptic sabbath
   controversies name the objectors otherwise. The observation is about the
   Vulgate's vocabulary, not about the identity of the persons: the appointed
-  verse pairs the word with `pharisæos`, as Luke does at 11:53. SCR-042.
+  verse pairs the word with `pharisǽos`, as Luke does at 11:53. SCR-042.
 
 ### 1.2 Threads that are NOT inside appointed text, recorded as controls
 
@@ -1494,10 +1508,20 @@ necessitate* with `T. P. Alleluia` added (LIT-008, PRE-008, PRE-017).
     Greek copies reading `Deus meus` he holds that `meus` is superfluous in
     `Deus, docuisti me a iuventute mea`; and against copies reading `mirabilia
     tua` at `donec annuntiem brachium tuum` he holds that `mirabilia tua` has been
-    carried up from the preceding verse and that `brachium` is right. **He
-    adjudicates the exact wording the antiphon sings**, which makes him usable
-    here under the documented-reception class provided the guide says what kind of
-    witness he is. Same rights bound as at §2.7. PAT-034.
+    carried up from the preceding verse and that `brachium` is right. **Only the
+    first of the two clauses is sung.** `Deus, docuisti me a iuventute mea` is the
+    first half of Ps. 70:17 and stands word for word in the antiphon; `donec
+    annuntiem brachium tuum` stands in Ps. 70:18 **after** `ne derelinquas me`,
+    the words on which the antiphon stops — the bound §9.5 anchors a whole
+    proposal on, and the same bound the Bellarmine bullet above applies when it
+    rules that continuation **outside** the appointed text — and the `mirabilia
+    tua` he rejects there was carried up from the second half of v. 17, which the
+    antiphon does not sing either. **So what he adjudicates is the wording of the
+    antiphon's own three verses, and the exact words it sings at one clause of the
+    two**, which makes him usable here under the documented-reception class
+    provided the guide says what kind of witness he is and does not present the
+    `brachium` ruling as a ruling on words the Mass sings. Same rights bound as at
+    §2.7. PAT-034.
 - **The row's first hinge is now disputed: what `solíus` excludes.** Augustine
   takes it to exclude any righteousness of the singer's own; Bellarmine to
   exclude human counsel and his own strength, which runs the same direction in a
@@ -3561,7 +3585,7 @@ authored by a model.
   `recúmbe in novíssimo loco`, `Amíce, ascénde supérius`, `qui se exáltat,
   humiliábitur`).
 - **Mechanism.** The reading asks the hearer to take four measures of a charity
-  it says surpasses knowledge; the Gospel ranks three seats and a comparative,
+  it says surpasses knowledge; the Gospel ranks two seats and a comparative,
   and settles the ranking by an act that is not the guest's.
 - **What the element-by-element reading misses.** Read separately, the Epistle's
   dimensions are a devotional flourish and the Gospel's places are table
