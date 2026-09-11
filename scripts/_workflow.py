@@ -1596,7 +1596,9 @@ class WorkflowEngine:
         carried_findings = self._carried_findings(
             run_id, workflow, pending, next_stage, prior_findings, fresh=result
         )
-        advisory_findings = self._extract_advisory_findings(result, stage)
+        advisory_findings = self._outstanding_advisories(
+            run_id, workflow, pending, fresh_stage=stage, fresh_result=result
+        )
         packet = self._compile_stage_packets(
             workflow, next_stage, pending, self.run_dir(run_id),
             prior_findings, carried_findings,
@@ -3720,6 +3722,46 @@ class WorkflowEngine:
                 ]
         return []
 
+    def _outstanding_advisories(
+        self,
+        run_id: str,
+        workflow: dict[str, Any],
+        state: dict[str, Any],
+        fresh_stage: dict[str, Any] | None = None,
+        fresh_result: dict[str, Any] | None = None,
+    ) -> list[dict[str, Any]]:
+        """Every advisory still waiting for a stage that will edit a document.
+
+        `_extract_advisory_findings` made advisories travel, and they travel to
+        whichever stage the route chose. Where the route chooses two revisers
+        in succession that is one stage too few: `content-evaluation` routed to
+        `brief-revision`, its advisories went to the reviser that edits the
+        brief, and `content-revision` -- the stage that edits the files those
+        advisories name -- was dispatched next with a wholly empty packet.
+        Observed three times on one leaf.
+
+        An advisory is therefore outstanding until the stage that raised it
+        speaks again, and every reviser between those two points receives it.
+        Derived, never consumed, exactly as the carried list is: delivering an
+        advisory marks nothing, and what ends its life is its own evaluator
+        producing another result, which the record already holds. A store that
+        emptied as packets were compiled would make every packet that read it
+        unreplayable.
+        """
+        if fresh_stage is not None and fresh_stage["type"] in (EVALUATOR, GATE):
+            return self._extract_advisory_findings(fresh_result or {}, fresh_stage)
+        for entry in reversed(state.get("result_hashes") or []):
+            source = self._get_stage(workflow, entry["stage"])
+            if source["type"] not in (EVALUATOR, GATE):
+                continue
+            if entry.get("disposition") not in (CHANGES_REQUIRED, FAIL):
+                return []
+            recorded = self._read_recorded_result(
+                run_id, entry, state["current_stage"]
+            )
+            return self._extract_advisory_findings(recorded, source)
+        return []
+
     def _carried_findings(
         self,
         run_id: str,
@@ -3851,9 +3893,9 @@ class WorkflowEngine:
         if _may_forward(source, transitions[-1].get("disposition")):
             result = self._read_recorded_result(run_id, results[-1], current)
             prior = self._extract_prior_findings(result, source)
-            advisory = self._extract_advisory_findings(result, source)
         else:
-            result, prior, advisory = None, [], []
+            result, prior = None, []
+        advisory = self._outstanding_advisories(run_id, workflow, state)
         carried = self._carried_findings(
             run_id, workflow, state, stage, prior, fresh=result
         )

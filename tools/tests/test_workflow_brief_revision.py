@@ -215,6 +215,40 @@ class BriefRouteTests(FinishCase):
                          "a reviser handed nothing forwarded owes no report "
                          "and the loop re-enters the gate")
 
+    def test_an_advisory_outlives_the_reviser_the_route_chose(self):
+        """An advisory reaches the stage that edits the files it names.
+
+        Advisories travel to whichever stage the route chose, because an
+        advisory carries no `repair_target` and cannot choose one for itself.
+        Where the route chooses two revisers in succession that was one stage
+        too short: the advisory arrived at `brief-revision`, which edits the
+        brief, and `content-revision` -- which edits the files the advisory
+        names -- was dispatched next with nothing. An advisory is outstanding
+        until the evaluator that raised it speaks again, so every reviser
+        between those two points receives it.
+        """
+        run_id = self.drive_to(EVALUATION)
+        findings = dict(self.MIXED)
+        findings[CONTENT_LANES[0]] = findings[CONTENT_LANES[0]] + [{
+            "id": "CON-EVI-003", "severity": "advisory", "location": "p2",
+            "problem": "a locator reads oddly", "required_result": "reword",
+        }]
+        out = self.evaluate(run_id, findings)
+        self.assertEqual(out["stage"], BRIEF_REVISION)
+        self.assertEqual(
+            [f["id"] for f in header(self.packet_text(run_id),
+                                     "ADVISORY_FINDINGS")],
+            ["CON-EVI-003"],
+            "the advisory travels to the stage the route chose")
+
+        out = self.pass_stage(run_id, BRIEF_REVISION)
+        self.assertEqual(out["stage"], REVISION)
+        self.assertEqual(
+            [f["id"] for f in header(self.packet_text(run_id),
+                                     "ADVISORY_FINDINGS")],
+            ["CON-EVI-003"],
+            "and is still outstanding at the reviser that owns its files")
+
     def test_a_brief_finding_not_repaired_charges_the_evaluators_budget(self):
         run_id = self.drive_to(EVALUATION)
         self.evaluate(run_id, {CONTENT_LANES[2]: [blocking("CON-SYN-001", "brief")]})
