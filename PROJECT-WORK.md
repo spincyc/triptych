@@ -3633,3 +3633,146 @@ unnamed translators of Guéranger and Schuster and an invented two-century
 interval between Honorius and Godfrey. `common/result-format.md` requires that
 an id name the same issue every time it appears. A carry-forward that reads
 these results by id will conflate them unless it reads each finding's text.
+
+## Why the claude propers runs did not converge and the codex ones did, 2026-09-11
+
+The operator's question: the codex lane finishes a proper in about three
+hours; the claude lane has spent days on the same three leaves. This entry
+answers it from run state, not recollection. The short answer is that the two
+lanes did not differ in how much work they did. They differed in which
+severity they filed it under, and one of those severities reached nobody.
+
+### The controlled comparison
+
+On 2026-09-05 both lanes ran the **same** pipeline — `proper` v25 — against
+the same three leaves, starting within twenty minutes of each other. Nothing
+about the workflow, the gates, the lane roster or the document profile
+differed. Only the provider did.
+
+| run | leaf | provider | disposition | stage iterations | active engine time |
+| --- | --- | --- | --- | --- | --- |
+| `ddd3a137a4936e88` | 54 | codex | **ACCEPTED** | 32 | 3.7 h |
+| `9bf9d40d825f419f` | 55 | codex | **ACCEPTED** | 36 | 3.7 h |
+| `8c6ccce8314da5fa` | 56 | codex | BLOCKED at `generate-web` | 26 | 2.7 h |
+| `efff3a6f73c1f451` | 54 | claude | BLOCKED at `content-revision` | 32 | 4.8 h |
+| `2bd4a1ab7521853d` | 55 | claude | BLOCKED at `content-revision` | 36 | 2.8 h |
+| `e4aebcbd941b6b1a` | 56 | claude | stalled at `content-revision` | 35 | 2.0 h |
+
+Active engine time is the sum of inter-event gaps under thirty minutes; the
+wall-clock spans (9–30 h) are mostly operator idle and say nothing about the
+engine. The operator's "about three hours" is exactly the codex figure.
+
+**The iteration totals are identical — 32 against 32, 36 against 36.** The
+claude runs did not do less work or more. They spent the same number of
+iterations without leaving the first loop: not one claude run under v25
+reached `build-artifacts`, while the codex runs traversed all twenty-five
+stages to publication.
+
+| stage | codex/55 | claude/55 |
+| --- | --- | --- |
+| `content-preflight` | 3 | 8 |
+| `content-evaluation` | 3 | 8 |
+| `content-revision` | 1 | 5 |
+| everything downstream | 22 | 0 |
+
+### Where the time went inside the run
+
+| run | `content-evaluation` | `content-revision` | share of run spent evaluating |
+| --- | --- | --- | --- |
+| codex/55 ACCEPTED | 41 min | 225 min | 7.1% |
+| claude/55 BLOCKED | 1106 min | 274 min | **61.5%** |
+
+Eighteen hours of review against four and a half hours of writing. The codex
+run inverted that ratio and finished.
+
+### The mechanism: an advisory was a queue
+
+The per-round severity mix is the whole diagnosis.
+
+| round | codex/55 | claude/55 | claude/54 |
+| --- | --- | --- | --- |
+| i0 | 4 blocking, **0 advisory** | 18 blocking, 3 advisory | 19 blocking, 9 advisory |
+| i1 | 2 blocking, **0 advisory** | 17 blocking, 6 advisory | 17 blocking, 9 advisory |
+| i2 | **0 blocking**, 0 advisory | 10 blocking, 7 advisory | 9 blocking, 18 advisory |
+| i3 | — | 5 blocking, 5 advisory | 11 blocking, 24 advisory |
+| i4 | — | 5 blocking, 4 advisory | 13 blocking, 27 advisory |
+| i5 | — | 3 blocking, 9 advisory | 5 blocking, 30 advisory |
+| i6 | — | 3 blocking, 3 advisory | 7 blocking, 36 advisory |
+| i7 | — | 3 blocking, 3 advisory | 1 blocking, **41 advisory** |
+
+**Codex filed zero advisories in any round of any leaf.** It filed blocking
+findings, which the engine routes to a reviser, and escalations, which the
+engine routes to a human and which let a stage pass. Both terminate.
+
+The claude lane filed 3 to 41 advisories a round. Under v25 an advisory was
+recorded, reported in status, and forwarded to no one. It could not be
+repaired, because no stage ever received it. So a lane with a real defect it
+had not wanted to block on had exactly one way to be heard: re-file it as
+blocking next round. The ratchet is visible id by id — `content-evaluation`
+i0 filed `CON-EVI-005`, `CON-EVI-006` and `CON-CIT-008` as advisory; the
+revision packet `content-revision-0000` carried the eighteen blocking ids and
+none of those three; i1 filed exactly those three as **blocking**. The same
+shape repeats at i1→i2 (`CON-REC-005`, `CON-CIT-009`, `-010`, `-011`) and
+i2→i3 and i3→i4. Twenty-eight of the run's eighty-two distinct ids appear in
+more than one round, and the dominant transition is advisory→blocking.
+
+Two consequences follow, and both are load-bearing:
+
+- **Every round therefore has a blocker.** Even as genuine defects fall away
+  (18 → 3 blocking), the ratchet manufactures fresh ones out of the backlog,
+  so the stage can never report a clean pass.
+- **The anti-loop budget cannot see it.** The repeat budget counts an id
+  returning unrepaired under the same owner. An advisory returning as blocking
+  is a *different* severity and reads as new work. The engine said so itself
+  when it stopped run `2bd4a1ab7521853d`: "iteration limit exceeded for
+  content-evaluation: 8/8 consecutive failures. The repeat budget (3/4) never
+  ran out because no round reported a repair it could not make; the absolute
+  ceiling stops a stage that finds something new forever."
+
+Codex never triggered any of this because it never used the severity. Whether
+that is greater decisiveness or lesser thoroughness is a judgment; what is not
+a judgment is that the engine rewarded it, and that a lane which raises a
+concern it cannot route pays for it twice.
+
+### This was found and fixed on 2026-09-09
+
+`3be1a1f9e`, "Sequence the two editions, and stop an advisory being a queue",
+added `_extract_advisory_findings`. Advisories now travel with the repair to
+whichever stage the route chose. They gate nothing, spend no budget, are
+absent from `finding_dispositions`, and a reviser may leave one unrepaired —
+they arrive because the reviser is already in those files. That commit's own
+measurement of run `e4aebcbd941b6b1a`: **31% of every blocking finding was the
+raising lane's own advisory from an earlier round.**
+
+The fix works. Under `proper-finish` v7, leaf 56's `content-evaluation` ran
+3 blocking → 1 → 2 → **0** across four rounds instead of eight, and
+`synthesis-evaluation` cleared in two. The advisory count still climbs
+(7 → 9 → 12 → 12) because a reviser may decline them, but it no longer
+ratchets into blocking, and the stage terminates on its own.
+
+### What is left is not convergence
+
+With the queue closed, the remaining cost is throughput and self-inflicted
+churn, and it should not be confused with the defect above:
+
+- `proper-finish` runs 22 stages, each dispatched to a fresh sub-agent by
+  rule. A `visual-evaluation` lane reads 74 page rasters and takes 10–15
+  minutes; a four-lane round is a quarter-hour of wall clock that no driver
+  can batch away. Leaf 56's v7 run cost 5.2 h active for a heavier graph than
+  the one codex finished in 3.7 h.
+- **Two workflow version bumps during the task killed live runs.** A run is
+  bound to the workflow-source digest. v28→v29 was correct and paid for
+  itself; it also stranded leaf 55's completed content work on a v6 run that
+  can no longer be advanced. Fixing the engine while driving it is what turned
+  a fixed problem into twelve hours.
+- Six `publication-gates` ids are properties of the whole site, not of any
+  leaf. No amount of leaf driving clears them.
+
+### The rule this leaves
+
+Do not file a finding under a severity the route cannot deliver. Where a
+concern is real but should not gate, it is an advisory only now that advisories
+travel; where it cannot be resolved by revision at all, it is an escalation,
+which the codex lane used and which ends a stage honestly. A severity that
+reaches no one is not a softer blocking finding. It is a blocking finding
+deferred one round, plus the interest.
