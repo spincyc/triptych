@@ -110,7 +110,7 @@ class WebEditionConversionTests(unittest.TestCase):
             "as the fourth unit sets out%\n"
             r"\else" "\n"
             "as the Gospel subsection sets out%\n"
-            r"\fi{} (Payne, p.~1); and the same subsection shows it%" "\n"
+            r"\fi{} (Payne, p.~1); and the same subsection shows it" "\n"
             r"\ifdefined\TriptychSynthesisEdition" "\n"
             "there%\n"
             r"\else" "\n"
@@ -127,6 +127,76 @@ class WebEditionConversionTests(unittest.TestCase):
         )
         self.assertNotIn("sets out\n\n", markdown)
         self.assertNotIn("word by word :", markdown)
+
+    def test_capital_opening_cut_is_reported_by_the_run_check(self) -> None:
+        # Both fragments open on a capital, so the case rule sees nothing; the
+        # source keeps these words in one run, so the run check sees the cut.
+        sources = (
+            "\\item Council of Trent, Session~VI, cap.~X, cap.~XVI and can.~32, "
+            "from the Tauchnitz 1887 printing of the Canones, page-verified in this repository.\n"
+        )
+        markdown = (
+            "# Subject\n\n"
+            "Council of Trent, Session VI, cap. X, cap. XVI and can. 32, from the\n\n"
+            "Tauchnitz 1887 printing of the Canones, page-verified in this repository.\n"
+        )
+        failures = DRIVER.audit_output("Prose.", markdown, sources=sources)
+        self.assertTrue(
+            any("fell inside a run of words" in failure for failure in failures),
+            failures,
+        )
+        self.assertFalse(
+            any("lowercase" in failure for failure in failures), failures
+        )
+
+    def test_line_ending_comment_before_a_guard_sets_no_space(self) -> None:
+        # TeX lets `%` eat its own newline, so the page sets "on John," closed
+        # up.  Pandoc keeps the newline and reads it as a space, which is how
+        # the only space-before-a-comma in a 205 KB edition got there.
+        markdown = self.convert(
+            "Augustine's \\work{Tractatus} on John%\n"
+            r"\ifdefined\TriptychSynthesisEdition{} and Chrysostom's Homily~7%"
+            "\n"
+            r"\else, Chrysostom's Homily~7, and Gregory's \work{Regula}%" "\n"
+            r"\fi{} are read in the NPNF English.",
+            proper=True,
+        )
+        self.assertIn("on John, Chrysostom", markdown)
+        self.assertNotIn("John ,", markdown)
+
+    def test_block_form_guard_mid_sentence_keeps_one_paragraph(self) -> None:
+        # A block-form guard standing inside a sentence used to contribute a
+        # blank line at each seam, cutting one reference into three paragraphs.
+        markdown = self.convert(
+            "Council of Trent,\n"
+            r"\ifdefined\TriptychSynthesisEdition" "\n"
+            "Session~VI, cap.~X and cap.~XVI, from the\n"
+            r"\else" "\n"
+            "Session~VI, cap.~X, cap.~XVI and can.~32, from the\n"
+            r"\fi" "\n"
+            "Tauchnitz 1887 printing of the Canones, page-verified in this repository.",
+            proper=True,
+        )
+        self.assertIn(
+            "Council of Trent, Session\N{NO-BREAK SPACE}VI, cap.\N{NO-BREAK SPACE}X, "
+            "cap.\N{NO-BREAK SPACE}XVI and can.\N{NO-BREAK SPACE}32, from the "
+            "Tauchnitz 1887 printing of the Canones, page-verified in this repository.",
+            markdown,
+        )
+
+    def test_block_form_guard_between_blocks_keeps_its_paragraphs(self) -> None:
+        markdown = self.convert(
+            "Paragraph one ends here.\n\n"
+            r"\ifdefined\TriptychSynthesisEdition" "\n"
+            "Companion block.\n"
+            r"\else" "\n"
+            "Canonical block.\n"
+            r"\fi" "\n\n"
+            "Paragraph two.",
+            proper=True,
+        )
+        self.assertIn("Paragraph one ends here.\n\nCanonical block.", markdown)
+        self.assertIn("Canonical block.\n\nParagraph two.", markdown)
 
     def test_paragraph_opened_in_mid_sentence_is_reported(self) -> None:
         sources = (

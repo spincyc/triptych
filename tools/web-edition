@@ -129,6 +129,14 @@ SYNTHESIS_EDITION_BRANCH_RE = re.compile(
 # what keeps the sentence the PDF sets continuously one sentence on the page.
 INLINE_BRANCH_MARKER = "{}"
 BRANCH_TAIL_RE = re.compile(r"(?:(?<!\\)%[^\n]*)?\s*\Z")
+# The mirror of BRANCH_TAIL_RE at the head of a branch.  A line-ending comment
+# before \ifdefined is how a source keeps a guard from contributing a space TeX
+# would not set; pandoc keeps the newline the comment ended and reads it as one,
+# which is how "the Tractatus on John" came to be followed by " ,".  The comment
+# and the newline it ate are removed together, before any branch is selected.
+LEAD_COMMENT_RE = re.compile(
+    r"(?<!\\)%[^\n]*\n[ \t]*(?=\\ifdefined\\Triptych)"
+)
 APPOINTED_HEADING_RE = re.compile(r"\\fulltextheading(?=\s*\{)")
 HYPERSETUP_RE = re.compile(r"pdf(title|subject)\s*=\s*\{")
 FOOTNOTE_DEF_RE = re.compile(r"^\[\^[^\]]+\]:", re.MULTILINE)
@@ -257,16 +265,32 @@ def resolve_input(name: str, provider: str) -> Path | None:
 
 
 def select_branch(match: re.Match[str]) -> str:
-    """Splice the web branch in, flush at both seams where it stands inline."""
+    """Splice the web branch in so it contributes no whitespace of its own.
+
+    The inline form, marked by the empty group after \\fi, is spliced flush.
+    The block form keeps its line structure but not the newlines its own
+    delimiters stand on: the source already ended a line before \\ifdefined and
+    begins one after \\fi, so returning a branch that still starts and ends with
+    a newline hands pandoc a blank line at each seam. Where the guard stands
+    between blocks those blank lines are harmless -- the blocks were separate
+    anyway. Where it stands mid-sentence they are not, and a reference set as
+    one continuous bullet on the page became three paragraphs, two of them
+    sentence fragments, in the web edition of every leaf that had one.
+    """
     branch = match.group(2)
     following = match.string[match.end() : match.end() + len(INLINE_BRANCH_MARKER)]
-    if following != INLINE_BRANCH_MARKER:
-        return branch
-    return BRANCH_TAIL_RE.sub("", branch.lstrip())
+    if following == INLINE_BRANCH_MARKER:
+        return BRANCH_TAIL_RE.sub("", branch.lstrip())
+    if match.string[match.start() - 1 : match.start()] == "\n":
+        branch = branch[1:] if branch.startswith("\n") else branch
+    if match.string[match.end() : match.end() + 1] == "\n":
+        branch = branch[:-1] if branch.endswith("\n") else branch
+    return branch
 
 
 def select_web_branches(text: str, *, proper: bool = False) -> str:
     """Select web-active text before resolving includes or auditing commands."""
+    text = LEAD_COMMENT_RE.sub("", text)
     text = PRINT_EDITION_BRANCH_RE.sub(select_branch, text)
     if proper:
         text = SYNTHESIS_EDITION_BRANCH_RE.sub(select_branch, text)
@@ -592,6 +616,65 @@ def reflowed_sentences(sources: str, markdown: str) -> list[str]:
     return broken
 
 
+# A brace group is an argument boundary: `\weektitle{title}{subtitle}{rite}`
+# sets three fields the page keeps apart, and their words are no more one run
+# than two paragraphs are. SOURCE_BREAK_RE does not break on braces because the
+# case rule only ever reads the first word after a break.
+RUN_BREAK_RE = re.compile(SOURCE_BREAK_RE.pattern + r"|[{}]")
+
+
+def source_word_runs(sources: str) -> list[list[str]]:
+    """The leaf's words, grouped by the runs no reader may be read across."""
+    return [
+        [word.casefold() for word in WORD_RE.findall(CONTROL_WORD_RE.sub(" ", piece))]
+        for piece in RUN_BREAK_RE.split(COMMENT_RE.sub("", sources))
+    ]
+
+
+def severed_runs(sources: str, markdown: str, span: int = 6) -> list[str]:
+    """Name every output break that fell inside one unbroken run of source words.
+
+    The case rule in `reflowed_sentences` reads the opening word and cannot see
+    a fragment that opens on a capital, which is how a reference cut into three
+    paragraphs -- "Council of Trent," / "Session VI ... from the" / "Tauchnitz
+    1887 printing" -- passed an audit added to catch exactly that cut. This
+    asks the question the case rule approximates, and asks it of the words
+    themselves: the source held these words in one run, across no boundary a
+    reader may not read across, and the output put a paragraph break in the
+    middle of them. It needs no view of what did the cutting, so it reports a
+    construct nobody has thought of yet as readily as a spliced edition guard.
+
+    The window is six words either side. Three matched a leaf's own title
+    and subtitle standing next to each other in a metadata line, which is a
+    real run of those words but not the run the break fell in; six is long
+    enough that a coincidental repetition has to quote the whole passage,
+    and short enough that any severed sentence carries it. A block with
+    fewer than six words of its own is not judged at all: a bold label is
+    not a severed sentence, and the case rule already reads those.
+    """
+    if not sources.strip():
+        return []
+    runs = source_word_runs(sources)
+    blocks = prose_blocks(markdown)
+    severed = []
+    for index, block in enumerate(blocks[1:], start=1):
+        previous = blocks[index - 1]
+        if not block or not previous or SENTENCE_END_RE.search(previous):
+            continue
+        head = [w.casefold() for w in WORD_RE.findall(previous)][-span:]
+        tail = [w.casefold() for w in WORD_RE.findall(block)][:span]
+        if len(head) < span or len(tail) < span:
+            continue
+        joined = head + tail
+        if any(
+            run[start : start + len(joined)] == joined
+            for run in runs
+            for start in range(len(run) - len(joined) + 1)
+        ):
+            severed.append(f"{previous[-40:]!r} then {block[:40]!r}")
+    return severed
+
+
 def normalize_audit_text(text: str) -> str:
     """Normalize spacing, dashes and bold wrappers without dropping their text."""
     text = replace_grouped_macro(text, "textbf", 1, lambda arguments: arguments[0])
@@ -631,6 +714,12 @@ def audit_output(
     divs = FENCED_DIV_RE.findall(markdown)
     if divs:
         failures.append(f"{len(divs)} unconverted fenced-div delimiter(s) left in output")
+    severed = severed_runs(sources, markdown)
+    if severed:
+        failures.append(
+            f"{len(severed)} paragraph break(s) fell inside a run of words the "
+            "leaf's sources keep unbroken: " + "; ".join(severed)
+        )
     reflowed = reflowed_sentences(sources, markdown)
     if reflowed:
         failures.append(
