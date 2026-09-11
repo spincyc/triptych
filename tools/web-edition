@@ -322,7 +322,7 @@ def heading_element_key(title: str) -> str:
 
 
 def anchor_appointed_elements(body: str, element_keys: set[str]) -> str:
-    """Give unlabeled appointed-text headings the manifest's stable element key.
+    r"""Give unlabeled appointed-text headings the manifest's stable element key.
 
     Two heading forms, judged differently. `\fulltextheading` exists to head an
     appointed element and nothing else, so a name it carries that the manifest
