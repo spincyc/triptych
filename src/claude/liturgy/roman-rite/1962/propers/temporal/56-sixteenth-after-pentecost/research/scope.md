@@ -2919,8 +2919,14 @@ sequence from the disease of the body to the disease of the heart. §2.6.
 `research/chronology.toml` does not resolve them and neither does this brief:
 the psalms boundary is `catholic-critical-v1` while every other claim on this
 formulary is `catholic-traditional-v1`; the Epistle, the Gospel and the Nativity
-claims are each `disputed` with two labels standing; and the Communion's Ps. 70
-carries three distinct settings at once. §12.
+claims are each `disputed` with two labels standing; the Communion's Ps. 70
+carries three distinct settings at once; and a `disputed`
+`traditional-attribution` of David's reign, `basis_class =
+"reported-traditional"`, stands at four of the five appointed psalms beside the
+`preferred` composition boundary — reaching none of them by an assertion made of
+that psalm alone, and reaching Ps. 101 at the Gradual not at all — so
+attribution, setting and composition are three answers the record keeps apart.
+§12, §12.11.
 
 ### 7.9 One tension the appointed texts themselves do not resolve, now narrowed
 
@@ -4233,9 +4239,15 @@ part that is not is named.**
   supplies it.** The Communion's Ps. 70 carries a `historical-setting` (David's
   flight from Absalom) and two `superscription-setting` claims (the first
   captivity of Juda), and the Alleluia's Ps. 97 carries two `prophetic-referent`
-  claims on the Nativity. **For the Introit, Gradual, Offertory, Epistle and
-  Gospel the corpus carries composition only**, and the guide states that rather
-  than filling it.
+  claims on the Nativity. **Four of the five appointed psalms — the Introit's
+  Ps. 85, the Alleluia's Ps. 97, the Offertory's Ps. 39 and the Communion's
+  Ps. 70 — carry in addition the corpus's `traditional-attribution`,
+  `subject = "israel.monarchy.david-traditional-era"`,
+  `label = "reigned from 1055 to 1015 B.C."`, `disposition = "disputed"`, which
+  is an assertion about David's regnal era and neither a composition date nor an
+  occasion** (§12.1, §12.11). **For the Gradual, the Epistle and the Gospel the
+  corpus carries composition only**, and the guide states that rather than
+  filling it.
 
 **Position 3 — `The Propers: Themes and Movement`, pages 3–4. SUPPLIED.** §10's
 six claims are the argument, and §10's preamble states its shape and its own
@@ -4351,12 +4363,27 @@ edit. `schema = 2`, `calendar = "roman-1962"`, `mass = "pentecost-16"`,
 `system = "vulgate"`, `profile = "catholic-comprehensive-v1"`,
 `formulary = "appointed"`, `formulary_reason = ""`.
 
-**Re-read at iteration 1 and unchanged.** `scripture-context` re-read the file
-and re-ran `tools/tpt proper-chronology loci --document
+**Regenerated during this run, and re-transcribed here against the regenerated
+file.** `scripture-context` re-read this record at iteration 1 and re-ran
+`tools/tpt proper-chronology loci --document
 liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost`, which
-reproduces the element table exactly and prints `(no scripture)` against the
-Collect, the Secret and the Postcommunion; the transcription below is therefore
-current as well as faithful. SCR-031, SCR-032.
+reproduced the element table exactly and printed `(no scripture)` against the
+Collect, the Secret and the Postcommunion (SCR-031, SCR-032). **That reading is
+history and no longer describes the file.** The Scripture chronology corpus
+moved afterwards, and this run's authoring stage regenerated
+`research/chronology.toml` and `research/chronology-annotations.tex` with
+`tools/tpt proper-chronology` — record mtime 2026-09-10T21:16:51, against this
+brief's own 2026-09-09T09:25:13 — adding a fifth relation type the earlier
+transcription could not have carried, `traditional-attribution`, at the Introit,
+the Alleluia, the Offertory and the Communion. **§12 was re-transcribed from the
+regenerated record by this run's `brief-revision` stage**, run
+`53bdb2eaab3ba398`, on findings `CON-EVI-002` and `CON-PRO-001`. The record now
+carries **eighteen assertions across the seven scriptural elements** — two at
+the Introit, two at the Epistle, one at the Gradual, four at the Alleluia, two
+at the Gospel, two at the Offertory, five at the Communion — and the fourteen
+this section already held were re-checked field by field against the regenerated
+file and stand unchanged, as do the element table and the three `(no scripture)`
+elements.
 
 **This record is the whole of what this brief may say about when a passage was
 written or when what it tells of happened.** No lane finding, commentary or
@@ -4369,7 +4396,12 @@ Christ in the assumed humanity. **Every one of those is reception**: it is
 recorded in §2 as what that source says, attributed to it, and **never as the
 date or setting of the passage**. A lane that reported a date the record does
 not carry reported **reception**, and it is recorded in §2 as what that source
-says, attributed to it, and never as the date of the passage.
+says, attributed to it, and never as the date of the passage. **The traditional
+attribution recorded at §§12.1, 12.5, 12.7 and 12.9 is inside that whole and is
+not an addition to it**: a guide sentence naming the reign the corpus attributes
+to David at those four elements states this record, provided it keeps the
+corpus's own distinction between an attribution, a setting and a date of
+composition (§12.11).
 
 For every element below, `publication_claims` — the across-all-loci
 intersection the generated one-cell annotation may display — is **identical to
@@ -4382,7 +4414,9 @@ the two are not confused. **No element of this formulary is
 ### 12.1 Introit — `refs = ["Psalm 85:3, 5", "Psalm 85:1"]`, `loci = ["Ps.85.3", "Ps.85.5", "Ps.85.1"]`
 
 `status = "composition-only"`, `reason = ""`;
-`publication_status = "composition-only"`, `publication_reason = ""`. One claim.
+`publication_status = "composition-only"`, `publication_reason = ""`. **Two
+claims**: the psalms composition boundary, and the corpus's traditional
+attribution of the psalm to David.
 
 - `relation = "composition"`; `subject = "critical.psalms.latest-composition-boundary"`;
   `title = "The latest composition boundary shared by the Psalms"`;
@@ -4392,6 +4426,20 @@ the two are not confused. **No element of this formulary is
   `basis_class = "catholic-critical"`; `profile = "catholic-critical-v1"`;
   `sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]`.
   Reaches Ps.85.1, Ps.85.3 and Ps.85.5, each `inherited`, `scope = "Ps"`.
+- `relation = "traditional-attribution"`;
+  `subject = "israel.monarchy.david-traditional-era"`;
+  `title = "David (reign in the usual chronology)"`;
+  `label = "reigned from 1055 to 1015 B.C."`; `date = "1055 B.C.-1015 B.C."`;
+  `precision = "range"`; `disposition = "disputed"`;
+  `answerability = "answerable"`; `basis_class = "reported-traditional"`;
+  `profile = "catholic-traditional-v1"`;
+  `sources = ["passage.catholic-encyclopedia.volume-4.new-york-1908.corbett-david-usual-chronology", "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04642b-f1c0bed3-article-text"]`.
+  Reaches Ps.85.1, Ps.85.3 and Ps.85.5, each `inherited`,
+  `scope = "Ps.33 Ps.39 Ps.70 Ps.85 Ps.94 Ps.97"` — i.e. by inheritance across a
+  group of six psalms and not by an assertion made of Ps. 85 alone. **This is a
+  fifth relation type and it is not a composition claim**: its `subject` is
+  David's regnal era, and the boundary above remains the only composition
+  assertion the corpus makes of these verses.
 
 ### 12.2 Collect — `refs = []`, `loci = []`, `status = ""`
 
@@ -4426,7 +4474,7 @@ reaching Ps.101.16 and Ps.101.17, each `inherited`, `scope = "Ps"`.
 
 ### 12.5 Alleluia — `refs = ["Psalm 97:1"]`, `loci = ["Ps.97.1"]`
 
-`status = "dated"`; `publication_status = "dated"`. **Three claims.**
+`status = "dated"`; `publication_status = "dated"`. **Four claims.**
 
 - The psalms composition boundary of §12.1, verbatim, reaching Ps.97.1
   `inherited`, `scope = "Ps"`.
@@ -4444,6 +4492,17 @@ reaching Ps.101.16 and Ps.101.17, each `inherited`, `scope = "Ps"`.
   `profile = "catholic-traditional-v1"`;
   `sources = ["artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04"]`.
   Reaches Ps.97.1 `inherited`, `scope = "Ps.67 Ps.95 Ps.96 Ps.97"`.
+- `relation = "traditional-attribution"`; the David attribution of §12.1,
+  verbatim in every field — `subject = "israel.monarchy.david-traditional-era"`,
+  `title = "David (reign in the usual chronology)"`,
+  `label = "reigned from 1055 to 1015 B.C."`, `date = "1055 B.C.-1015 B.C."`,
+  `precision = "range"`, `disposition = "disputed"`,
+  `answerability = "answerable"`, `basis_class = "reported-traditional"`,
+  `profile = "catholic-traditional-v1"`, and the two
+  `catholic-encyclopedia.volume-4.new-york-1908` sources, the
+  `corbett-david-usual-chronology` passage and the
+  `newadvent-04642b-f1c0bed3-article-text` artifact.
+  Reaches Ps.97.1 `inherited`, `scope = "Ps.33 Ps.39 Ps.70 Ps.85 Ps.94 Ps.97"`.
 
 ### 12.6 Gospel — `refs = ["Luke 14:1-11"]`, `loci = ["Luke.14.1"…"Luke.14.11"]`
 
@@ -4468,9 +4527,23 @@ Both reach all eleven appointed loci, each `inherited`, `scope = "Luke"`.
 
 ### 12.7 Offertory — `refs = ["Psalm 39:14-15"]`, `loci = ["Ps.39.14", "Ps.39.15"]`
 
-`status = "composition-only"`; `publication_status = "composition-only"`. One
-claim: the psalms composition boundary of §12.1, verbatim, reaching Ps.39.14 and
-Ps.39.15, each `inherited`, `scope = "Ps"`.
+`status = "composition-only"`; `publication_status = "composition-only"`. **Two
+claims.**
+
+- The psalms composition boundary of §12.1, verbatim in every field, reaching
+  Ps.39.14 and Ps.39.15, each `inherited`, `scope = "Ps"`.
+- `relation = "traditional-attribution"`; the David attribution of §12.1,
+  verbatim in every field — `subject = "israel.monarchy.david-traditional-era"`,
+  `title = "David (reign in the usual chronology)"`,
+  `label = "reigned from 1055 to 1015 B.C."`, `date = "1055 B.C.-1015 B.C."`,
+  `precision = "range"`, `disposition = "disputed"`,
+  `answerability = "answerable"`, `basis_class = "reported-traditional"`,
+  `profile = "catholic-traditional-v1"`, and the two
+  `catholic-encyclopedia.volume-4.new-york-1908` sources, the
+  `corbett-david-usual-chronology` passage and the
+  `newadvent-04642b-f1c0bed3-article-text` artifact.
+  Reaches Ps.39.14 and Ps.39.15, each `inherited`,
+  `scope = "Ps.33 Ps.39 Ps.70 Ps.85 Ps.94 Ps.97"`.
 
 ### 12.8 Secret — `refs = []`, `loci = []`, `status = ""`
 
@@ -4479,8 +4552,9 @@ prints `secret (no scripture)`.
 
 ### 12.9 Communion — `refs = ["Psalm 70:16-18"]`, `loci = ["Ps.70.16", "Ps.70.17", "Ps.70.18"]`
 
-`status = "dated"`; `publication_status = "dated"`. **Four claims, carrying
-three distinct settings at once.**
+`status = "dated"`; `publication_status = "dated"`. **Five claims: the psalms
+composition boundary, three distinct settings carried at once, and the
+traditional attribution.**
 
 - The psalms composition boundary of §12.1, verbatim, reaching all three loci
   `inherited`, `scope = "Ps"`.
@@ -4508,6 +4582,18 @@ three distinct settings at once.**
   `answerability = "answerable"`; `basis_class = "scripture"`;
   `profile = "catholic-traditional-v1"`; `sources = ["bible:douay-rheims:Dan.1.1"]`.
   Reaches all three loci `inherited`, `scope = "Ps.70"`.
+- `relation = "traditional-attribution"`; the David attribution of §12.1,
+  verbatim in every field — `subject = "israel.monarchy.david-traditional-era"`,
+  `title = "David (reign in the usual chronology)"`,
+  `label = "reigned from 1055 to 1015 B.C."`, `date = "1055 B.C.-1015 B.C."`,
+  `precision = "range"`, `disposition = "disputed"`,
+  `answerability = "answerable"`, `basis_class = "reported-traditional"`,
+  `profile = "catholic-traditional-v1"`, and the two
+  `catholic-encyclopedia.volume-4.new-york-1908` sources, the
+  `corbett-david-usual-chronology` passage and the
+  `newadvent-04642b-f1c0bed3-article-text` artifact.
+  Reaches all three loci `inherited`,
+  `scope = "Ps.33 Ps.39 Ps.70 Ps.85 Ps.94 Ps.97"`.
 
 ### 12.10 Postcommunion — `refs = []`, `loci = []`, `status = ""`
 
@@ -4532,6 +4618,22 @@ Carried so the guide states them rather than smoothing them (SCR-032):
   `Ps.67 Ps.95 Ps.96 Ps.97`, i.e. by inheritance across a group of psalms and
   not by an assertion made of Ps. 97 alone. The Communion's Absalom claim
   likewise reaches through `Ps.62 Ps.70`.
+- **The corpus asserts a traditional attribution as well as a composition date,
+  and keeps the two apart.** `relation = "traditional-attribution"`,
+  `subject = "israel.monarchy.david-traditional-era"`,
+  `label = "reigned from 1055 to 1015 B.C."`, `disposition = "disputed"`,
+  `basis_class = "reported-traditional"`, `profile = "catholic-traditional-v1"`:
+  an assertion about David's regnal era, and **neither a date of composition nor
+  an occasion**. It stands at four of the five appointed psalms — the Introit's
+  Ps. 85, the Alleluia's Ps. 97, the Offertory's Ps. 39 and the Communion's
+  Ps. 70 — reaching each through the corpus scope
+  `Ps.33 Ps.39 Ps.70 Ps.85 Ps.94 Ps.97` and so at none of them by an assertion
+  made of that psalm alone; **Ps. 101 at the Gradual is the one appointed psalm
+  it does not reach**. At each of the four it stands beside, and does not
+  displace, the `preferred` composition boundary, and at the Communion beside
+  the three settings above. A sentence or a Date cell that read the attributed
+  reign as a date of composition, or as the occasion of the psalm, would
+  collapse a distinction the corpus preserves.
 
 ### 12.12 One fidelity note that is not a defect
 

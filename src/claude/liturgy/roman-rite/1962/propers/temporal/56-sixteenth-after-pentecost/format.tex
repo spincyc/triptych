@@ -92,36 +92,50 @@ answer the Latin.} #1\par}
 % 0.14 / 0.18 / 0.35 / 0.16\linewidth and the spanning row at 0.92\linewidth,
 % and permits a change only when the complete inventory cannot remain legible
 % after the hierarchy and the evidence have been preserved. That is this
-% sheet's case, and TWO of the profile's measurements are varied. These are
-% both of them, and nothing else the profile fixes is changed:
+% sheet's case, and THREE of the profile's measurements are varied. These are
+% all of them, and nothing else the profile fixes is changed:
 %
 %   D1. Summary-tier column widths. Profile 0.14 / 0.18 / 0.35 / 0.16;
-%       here 0.13 / 0.15 / 0.24 / 0.31\linewidth, the same total of 0.83.
-%       0.15\linewidth moves into Date, donated by Citation and Location,
-%       because the generated chronology annotation carries two disputed
-%       labels at the Epistle and at the Gospel and three relation groups at
-%       the Communion, every one of them printed in the source's own words,
-%       so the Date cell of three dossiers carries several dates where the
-%       profile's measure assumes one.
+%       here 0.12 / 0.15 / 0.20 / 0.36\linewidth, the same total of 0.83.
+%       0.20\linewidth moves into Date, donated by Proper, Citation and
+%       Location, because the generated chronology annotation carries two
+%       disputed labels at the Epistle and at the Gospel, two groups at the
+%       Introit, the Alleluia and the Offertory, and four at the Communion,
+%       every one of them printed in the source's own words, so the Date cell
+%       of six dossiers carries several dates where the profile's measure
+%       assumes one.
 %   D2. Spanning explanatory and event row width, and its size. Profile
-%       0.92\linewidth at the table's \footnotesize; here 0.98\linewidth at
-%       \fontsize{6.4}{6.9}. Seven dossiers each carrying the historical
+%       0.92\linewidth at the table's summary-tier size; here 0.98\linewidth
+%       at \fontsize{6.4}{6.9}. Seven dossiers each carrying the historical
 %       judgment, the bound the research reached and the corpus's own
 %       preserved tension will not stand on one physical page at
 %       \footnotesize, and a longtable row cannot break, so the sheet either
 %       fits whole or starts a second page the profile forbids.
+%   D3. Summary-tier size. Profile \footnotesize; here \scriptsize. The
+%       corpus gained a traditional-attribution relation for David's reign
+%       that reaches four of this formulary's five appointed psalms, so the
+%       generated annotation grew by one labelled group at the Introit, the
+%       Alleluia, the Offertory and the Communion, and the Communion's cell
+%       now carries four groups. At \footnotesize the sheet ran onto a second
+%       page. Widening Date does not recover it: past 0.36\linewidth the
+%       Citation and Location cells become the tallest in their rows and the
+%       row heights stop falling. The profile forbids spilling, forbids
+%       omitting evidence and forbids moving apparatus onto page 2, and
+%       directs a redesign instead; reducing the summary tier by one step is
+%       the redesign that costs the reader least, since the explanatory tier
+%       is already at 6.4pt and the two tiers stay visibly distinct.
 %
 % What the profile fixes and this sheet leaves alone: the two-tier hierarchy,
-% the four summary fields, the \footnotesize summary tier, \arraystretch 1.02,
-% \LTpre 0.15em, \LTpost 0pt, the 0.1em breathing space ending ordinary
-% dossier rows, \cmidrule(lr){1-4} within a dossier with \midrule only between
-% complete dossiers, and the italic event row set between two \cmidrule(lr){1-4}
-% rules ahead of its explanation.
+% the four summary fields, \arraystretch 1.02, \LTpre 0.15em, \LTpost 0pt,
+% the 0.1em breathing space ending ordinary dossier rows, \cmidrule(lr){1-4}
+% within a dossier with \midrule only between complete dossiers, and the
+% italic event row set between two \cmidrule(lr){1-4} rules ahead of its
+% explanation.
 \newenvironment{dossiertable}
-{\footnotesize
+{\scriptsize
  \renewcommand{\arraystretch}{1.02}%
  \setlength{\LTpre}{0.15em}\setlength{\LTpost}{0pt}%
- \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.13\linewidth}>{\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.24\linewidth}>{\raggedright\arraybackslash}p{0.31\linewidth}@{}}
+ \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.12\linewidth}>{\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.20\linewidth}>{\raggedright\arraybackslash}p{0.36\linewidth}@{}}
  \toprule
  \textbf{Proper} & \textbf{Citation} & \textbf{Location} & \textbf{Date}\\
  \midrule
