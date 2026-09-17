@@ -44,12 +44,13 @@ SRC = ROOT / "src"
 OUT = ROOT / "build" / "web"
 # Every disabled extension names a construct the site's Markdown renderer would
 # print as literal punctuation: space-aligned tables, `:   ` definitions,
-# trailing-backslash breaks, and `$...$` math.  Heading attributes are kept
+# trailing-backslash breaks, `$...$` math, and caret-delimited superscripts.
+# Superscripts fall back to semantic <sup> tags. Heading attributes are kept
 # because the site reads them and a document's own cross-references need them.
 MARKDOWN_DIALECT = (
     "markdown-smart-simple_tables-multiline_tables-grid_tables"
     "-definition_lists-escaped_line_breaks-tex_math_dollars"
-    "-bracketed_spans-raw_attribute"
+    "-bracketed_spans-raw_attribute-superscript"
 )
 
 UNNUMBERED_HEADING_ATTRIBUTE_RE = re.compile(

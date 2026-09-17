@@ -1,0 +1,92 @@
+{
+  "review_base": "8dfccbea84778e2694a47e4c1d4ea7addfcf6336",
+  "pandoc_version": "3.10.2",
+  "markdown_version": "3.10.3",
+  "commands": [
+    {
+      "command": "TMPDIR=<review scratch> PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tools/tests -p 'test_web_edition*.py' -v",
+      "exit": 0,
+      "tests": 75,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "command": "TMPDIR=<review scratch> PYTHONDONTWRITEBYTECODE=1 python3 .scratch/implementation-cold-review/web-superscripts/probes.py",
+      "exit": 0,
+      "results": {
+        "content_superscripts": 8,
+        "superscript_texts": [
+          "137",
+          "er",
+          "*",
+          "a&b",
+          "ab",
+          "cd",
+          "Locus",
+          "research/scope.md"
+        ],
+        "styled_children": {
+          "ab": [
+            "em"
+          ],
+          "cd": [
+            "strong"
+          ],
+          "Locus": [
+            "a"
+          ],
+          "research/scope.md": [
+            "code"
+          ]
+        },
+        "ordinary_and_superscript_link_targets_identical": true,
+        "link_targets": [
+          "#main-content",
+          "index.html",
+          "index.html",
+          "about.html",
+          "contributing.html",
+          "index.html",
+          "library.html",
+          "https://example.invalid/locus?x=1&y=2",
+          "https://example.invalid/plain",
+          "#fn:1",
+          "https://creativecommons.org/licenses/by/4.0/",
+          "https://example.invalid/note",
+          "#fnref:1",
+          "license.html",
+          "third-party.html"
+        ],
+        "footnote_references": 1,
+        "footnote_backlinks": 1,
+        "only_fixture_markdown_change": "caret superscript delimiters become sup tags",
+        "no_superscript_control_bytes_identical": true,
+        "pre_pandoc_refusal_cases": 2,
+        "before_markdown_sha256": "30f9b14505784535a4db16975ced1175aeac7e5c4b9916f5b3e416e6c38cc7b2",
+        "after_markdown_sha256": "9d49981c069393a35fee5e974a37397dc7602ddb65d22da031685f9fe0d4be26",
+        "pandoc_version": "pandoc 3.10.2"
+      }
+    },
+    {
+      "command": "git diff --check -- tools/web-edition tools/tests/test_web_edition_conversion.py",
+      "exit": 0
+    },
+    {
+      "command": "SHA-256 comparison against the two author-frozen subject identities",
+      "exit": 0,
+      "matched": 2
+    }
+  ],
+  "evidence_sha256": {
+    "tests.log": "91fbd0b43d35c0468f5407b4ff0d83446d7bb8092d868e5540a29be96e254784",
+    "probes.py": "0bba3bd8952bc21dbd8bc89d03c6650d4a406ad6ec43bfed23861642d55dc369",
+    "probe-results.json": "a2071c2a2119783e52fc6b4a376addb94e73dc6f9870bce782baac1aef2c3506",
+    "before.md": "30f9b14505784535a4db16975ced1175aeac7e5c4b9916f5b3e416e6c38cc7b2",
+    "after.md": "9d49981c069393a35fee5e974a37397dc7602ddb65d22da031685f9fe0d4be26",
+    "before.html": "f0f4593d3752607562b2d82bfe504cdd11fb98200fe21612449c090122b43b86",
+    "after.html": "cee4a2a4513a1571b2009de1c7ec026b9a0b9d6c3d1ac79bc1eaf4a7d8f64d34",
+    "changes.patch": "7e72d86b1d6fef87d620e4240bb72ed3b62ec4e3593a0c9ed55d9b395401cc4c",
+    "final-hashes.json": "a87881c885c11267cf2cc3214731c34092e7ec390dc6f819153b8d70142547f3"
+  }
+}

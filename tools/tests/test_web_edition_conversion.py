@@ -3,6 +3,7 @@ from __future__ import annotations
 import importlib.machinery
 import importlib.util
 import re
+import runpy
 import shutil
 import sys
 import tempfile
@@ -89,6 +90,30 @@ class WebEditionConversionTests(unittest.TestCase):
         self.assertIn("*A synthetic leaf*", markdown)
         self.assertIn("## Body", markdown)
         self.assertNotIn("Dropped title page", markdown)
+
+    @unittest.skipUnless(importlib.util.find_spec("markdown"), "Python Markdown is not installed")
+    def test_superscripts_survive_the_actual_site_renderer(self) -> None:
+        # Pandoc's default ^137^ reached the site's reader as literal carets.
+        # Exercise the owning renderer, including its locked Markdown version.
+        markdown = self.convert(
+            r"\textsuperscript{137}SADE. Ordinal\textsuperscript{er}. "
+            r"Symbol\textsuperscript{*}. Escaped\textsuperscript{a\&b}. "
+            r"Styled\textsuperscript{\textit{ab}}. Note.\footnote{Citation.}"
+        )
+        site = runpy.run_path(str(ROOT / "tools/public-alpha"))
+        rendered = site["render_page"](
+            "web/test/studies/subject.md", markdown, "subject.html", True, {}
+        )
+        for fragment in (
+            "<sup>137</sup>SADE.", "Ordinal<sup>er</sup>",
+            "Symbol<sup>*</sup>", "Escaped<sup>a&amp;b</sup>",
+            "Styled<sup><em>ab</em></sup>",
+        ):
+            self.assertIn(fragment, rendered)
+        self.assertEqual(rendered.count("<sup>"), 5)
+        self.assertNotIn("^137^", rendered)
+        self.assertIn('class="footnote-ref"', rendered)
+        self.assertIn("Citation.", rendered)
 
     def test_braced_path_locators_survive_as_literal_unlinked_code(self) -> None:
         locators = (

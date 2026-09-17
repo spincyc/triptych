@@ -34,11 +34,11 @@ Greek is given throughout in transliteration, in italics, because this document�
 
 ### The English
 
-> ^3^ Peter therefore went out, and that other disciple: and they came to the sepulchre. ^4^ And they both ran together: and that other disciple did outrun Peter and came first to the sepulchre. ^5^ And when he stooped down, he saw the linen cloths lying: but yet he went not in. ^6^ Then cometh Simon Peter, following him, and went into the sepulchre: and saw the linen cloths lying, ^7^ And the napkin that had been about his head, not lying with the linen cloths, but apart, wrapped up into one place. ^8^ Then that other disciple also went in, who came first to the sepulchre: and he saw and believed. ^9^ For as yet they knew not the scripture, that he must rise again from the dead. ^10^ The disciples therefore departed again to their home. (Jn 20:3–10)
+> <sup>3</sup> Peter therefore went out, and that other disciple: and they came to the sepulchre. <sup>4</sup> And they both ran together: and that other disciple did outrun Peter and came first to the sepulchre. <sup>5</sup> And when he stooped down, he saw the linen cloths lying: but yet he went not in. <sup>6</sup> Then cometh Simon Peter, following him, and went into the sepulchre: and saw the linen cloths lying, <sup>7</sup> And the napkin that had been about his head, not lying with the linen cloths, but apart, wrapped up into one place. <sup>8</sup> Then that other disciple also went in, who came first to the sepulchre: and he saw and believed. <sup>9</sup> For as yet they knew not the scripture, that he must rise again from the dead. <sup>10</sup> The disciples therefore departed again to their home. (Jn 20:3–10)
 
 And, from a different Gospel and a different hand:
 
-> ^12^ But Peter rising up, ran to the sepulchre and, stooping down, he saw the linen cloths laid by themselves: and went away wondering in himself at that which was come to pass. (Lk 24:12)
+> <sup>12</sup> But Peter rising up, ran to the sepulchre and, stooping down, he saw the linen cloths laid by themselves: and went away wondering in himself at that which was come to pass. (Lk 24:12)
 
 Two features of the English are worth fixing before anything else, because both will be contested later. The Douay’s “napkin” at Jn 20:7 is the same word it uses at Jn 11:44 for the cloth bound about the face of Lazarus and at Lk 19:20 for the cloth in which a servant wrapped his master’s money. It is a seventeenth-century English word for a wiping-cloth of any kind, and it does not mean a table napkin here. And the Douay’s “wrapped up” is not “folded.” The distinction will turn out to matter more than anything else in the passage.
 
@@ -46,7 +46,7 @@ Two features of the English are worth fixing before anything else, because both 
 
 The Clementine text, read from the page images of Hetzenauer’s 1914 Pustet printing:
 
-> ^3^ Exiit ergo Petrus, et ille alius discipulus, et venerunt ad monumentum. ^4^ Currebant autem duo simul, et ille alius discipulus præcucurrit citius Petro, et venit primus ad monumentum. ^5^ Et cum se inclinasset, vidit posita linteamina, non tamen introivit. ^6^ Venit ergo Simon Petrus sequens eum, et introivit in monumentum, et vidit linteamina posita, ^7^ et sudarium, quod fuerat super caput eius, non cum linteaminibus positum, sed separatim involutum in unum locum. ^8^ Tunc ergo introivit et ille discipulus, qui venerat primus ad monumentum: et vidit, et credidit: ^9^ nondum enim sciebant Scripturam, quia oportebat eum a mortuis resurgere. ^10^ Abierunt ergo iterum discipuli ad semetipsos.
+> <sup>3</sup> Exiit ergo Petrus, et ille alius discipulus, et venerunt ad monumentum. <sup>4</sup> Currebant autem duo simul, et ille alius discipulus præcucurrit citius Petro, et venit primus ad monumentum. <sup>5</sup> Et cum se inclinasset, vidit posita linteamina, non tamen introivit. <sup>6</sup> Venit ergo Simon Petrus sequens eum, et introivit in monumentum, et vidit linteamina posita, <sup>7</sup> et sudarium, quod fuerat super caput eius, non cum linteaminibus positum, sed separatim involutum in unum locum. <sup>8</sup> Tunc ergo introivit et ille discipulus, qui venerat primus ad monumentum: et vidit, et credidit: <sup>9</sup> nondum enim sciebant Scripturam, quia oportebat eum a mortuis resurgere. <sup>10</sup> Abierunt ergo iterum discipuli ad semetipsos.
 
 And at Luke: *Petrus autem surgens cucurrit ad monumentum: et procumbens vidit linteamina sola posita, et abiit secum mirans quod factum fuerat.*
 
@@ -58,7 +58,7 @@ The 1914 edition prints an editorial marginal summary against these verses: *Pet
 
 From the Robinson–Pierpont Byzantine textform, transliterated:
 
-> ^3^ *Exēlthen oun ho Petros kai ho allos mathētēs, kai ērchonto eis to mnēmeion.* ^4^ *Etrechon de hoi dyo homou; kai ho allos mathētēs proedramen tachion tou Petrou, kai ēlthen prōtos eis to mnēmeion,* ^5^ *kai parakypsas blepei keimena ta othonia, ou mentoi eisēlthen.* ^6^ *Erchetai oun Simōn Petros akolouthōn autō, kai eisēlthen eis to mnēmeion, kai theōrei ta othonia keimena,* ^7^ *kai to soudarion ho ēn epi tēs kephalēs autou, ou meta tōn othoniōn keimenon, alla chōris entetyligmenon eis hena topon.* ^8^ *Tote oun eisēlthen kai ho allos mathētēs ho elthōn prōtos eis to mnēmeion, kai eiden, kai episteusen;* ^9^ *oudepō gar ēideisan tēn graphēn, hoti dei auton ek nekrōn anastēnai.*
+> <sup>3</sup> *Exēlthen oun ho Petros kai ho allos mathētēs, kai ērchonto eis to mnēmeion.* <sup>4</sup> *Etrechon de hoi dyo homou; kai ho allos mathētēs proedramen tachion tou Petrou, kai ēlthen prōtos eis to mnēmeion,* <sup>5</sup> *kai parakypsas blepei keimena ta othonia, ou mentoi eisēlthen.* <sup>6</sup> *Erchetai oun Simōn Petros akolouthōn autō, kai eisēlthen eis to mnēmeion, kai theōrei ta othonia keimena,* <sup>7</sup> *kai to soudarion ho ēn epi tēs kephalēs autou, ou meta tōn othoniōn keimenon, alla chōris entetyligmenon eis hena topon.* <sup>8</sup> *Tote oun eisēlthen kai ho allos mathētēs ho elthōn prōtos eis to mnēmeion, kai eiden, kai episteusen;* <sup>9</sup> *oudepō gar ēideisan tēn graphēn, hoti dei auton ek nekrōn anastēnai.*
 
 And Lk 24:12: *Ho de Petros anastas edramen epi to mnēmeion, kai parakypsas blepei ta othonia keimena mona; kai apēlthen pros heauton thaumazōn to gegonos.*
 

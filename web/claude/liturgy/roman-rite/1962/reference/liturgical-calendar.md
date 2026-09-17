@@ -389,7 +389,7 @@ The following extract shows the years used elsewhere in this reference together 
 | 1960 | 14 Feb | 2 Mar | 17 Apr | 26 May | 5 Jun | 5 | 24 | 27 Nov |
 | 1962 | 18 Feb | 7 Mar | 22 Apr | 31 May | 10 Jun | 6 | 24 | 2 Dec |
 | 1967 | 22 Jan | 8 Feb | 26 Mar | 4 May | 14 May | 2 | 28 | 3 Dec |
-| 1996 | 4 Feb | 21 Feb | 7 Apr | 16 May | 26 May | 4 | 26^\*^ | 1 Dec |
+| 1996 | 4 Feb | 21 Feb | 7 Apr | 16 May | 26 May | 4 | 26<sup>\*</sup> | 1 Dec |
 | 2008 | 20 Jan | 6 Feb | 23 Mar | 1 May | 11 May | 1 | 28 | 30 Nov |
 | 2011 | 20 Feb | 9 Mar | 24 Apr | 2 Jun | 12 Jun | 6 | 23 | 27 Nov |
 | 2026 | 1 Feb | 18 Feb | 5 Apr | 14 May | 24 May | 3 | 26 | 29 Nov |

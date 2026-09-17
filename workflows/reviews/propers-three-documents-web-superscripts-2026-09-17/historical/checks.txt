@@ -1,0 +1,101 @@
+Historical web superscript review checks
+
+All commands run from the repository root.
+
+$ PYTHONDONTWRITEBYTECODE=1 python3 .scratch/historical-web-superscript-review/review.py
+Exit: 0
+Result: all 10 old/current outputs reproduce; 47 source-backed superscripts; every other Markdown/HTML byte unchanged; 220 tracked inputs unchanged.
+
+The script loads the baseline converter directly from the pinned Git blob. Its ten convert() calls are assertions within the exit-0 script; they are not represented as standalone CLI exits.
+
+$ tools/web-edition --provider claude --output .scratch/historical-web-superscript-review/regenerated-current articles/scripture/the-linen-cloths-at-the-empty-tomb
+Exit: 0
+Result: .scratch/historical-web-superscript-review/regenerated-current/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb.md
+
+$ tools/tpt check-web-edition --provider claude --document articles/scripture/the-linen-cloths-at-the-empty-tomb
+Exit: 0
+Result: Web-edition declarations valid: 1 eligible, 0 conditional, 0 ineligible.
+
+$ tools/web-edition --provider claude --output .scratch/historical-web-superscript-review/regenerated-current history/biblical-translations/01-septuagint
+Exit: 0
+Result: .scratch/historical-web-superscript-review/regenerated-current/claude/history/biblical-translations/01-septuagint.md
+
+$ tools/tpt check-web-edition --provider claude --document history/biblical-translations/01-septuagint
+Exit: 0
+Result: Web-edition declarations valid: 1 eligible, 0 conditional, 0 ineligible.
+
+$ tools/web-edition --provider claude --output .scratch/historical-web-superscript-review/regenerated-current history/traditional-priestly-institutes/01-sspx
+Exit: 0
+Result: .scratch/historical-web-superscript-review/regenerated-current/claude/history/traditional-priestly-institutes/01-sspx.md
+
+$ tools/tpt check-web-edition --provider claude --document history/traditional-priestly-institutes/01-sspx
+Exit: 0
+Result: Web-edition declarations valid: 1 eligible, 0 conditional, 0 ineligible.
+
+$ tools/web-edition --provider claude --output .scratch/historical-web-superscript-review/regenerated-current liturgy/roman-rite/1962/reference/liturgical-calendar
+Exit: 0
+Result: .scratch/historical-web-superscript-review/regenerated-current/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.md
+
+$ tools/tpt check-web-edition --provider claude --document liturgy/roman-rite/1962/reference/liturgical-calendar
+Exit: 0
+Result: Web-edition declarations valid: 1 eligible, 0 conditional, 0 ineligible.
+
+$ tools/web-edition --provider claude --output .scratch/historical-web-superscript-review/regenerated-current liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar
+Exit: 0
+Result: .scratch/historical-web-superscript-review/regenerated-current/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.md
+
+$ tools/tpt check-web-edition --provider claude --document liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar
+Exit: 0
+Result: Web-edition declarations valid: 1 eligible, 0 conditional, 0 ineligible.
+
+$ tools/web-edition --provider claude --output .scratch/historical-web-superscript-review/regenerated-current theology/mariology/la-salette
+Exit: 0
+Result: .scratch/historical-web-superscript-review/regenerated-current/claude/theology/mariology/la-salette.md
+
+$ tools/tpt check-web-edition --provider claude --document theology/mariology/la-salette
+Exit: 0
+Result: Web-edition declarations valid: 1 eligible, 0 conditional, 0 ineligible.
+
+$ tools/web-edition --provider claude --output .scratch/historical-web-superscript-review/regenerated-current theology/mariology/lourdes
+Exit: 0
+Result: .scratch/historical-web-superscript-review/regenerated-current/claude/theology/mariology/lourdes.md
+
+$ tools/tpt check-web-edition --provider claude --document theology/mariology/lourdes
+Exit: 0
+Result: Web-edition declarations valid: 1 eligible, 0 conditional, 0 ineligible.
+
+$ tools/web-edition --provider gpt --output .scratch/historical-web-superscript-review/regenerated-current theology/mariology/angelus
+Exit: 0
+Result: .scratch/historical-web-superscript-review/regenerated-current/gpt/theology/mariology/angelus.md
+
+$ tools/tpt check-web-edition --provider gpt --document theology/mariology/angelus
+Exit: 0
+Result: Web-edition declarations valid: 1 eligible, 0 conditional, 0 ineligible.
+
+$ tools/web-edition --provider gpt --output .scratch/historical-web-superscript-review/regenerated-current theology/mariology/la-salette
+Exit: 0
+Result: .scratch/historical-web-superscript-review/regenerated-current/gpt/theology/mariology/la-salette.md
+
+$ tools/tpt check-web-edition --provider gpt --document theology/mariology/la-salette
+Exit: 0
+Result: Web-edition declarations valid: 1 eligible, 0 conditional, 0 ineligible.
+
+$ tools/web-edition --provider gpt --output .scratch/historical-web-superscript-review/regenerated-current theology/mariology/regina-coeli
+Exit: 0
+Result: .scratch/historical-web-superscript-review/regenerated-current/gpt/theology/mariology/regina-coeli.md
+
+$ tools/tpt check-web-edition --provider gpt --document theology/mariology/regina-coeli
+Exit: 0
+Result: Web-edition declarations valid: 1 eligible, 0 conditional, 0 ineligible.
+
+$ git diff --check 8dfccbea84778e2694a47e4c1d4ea7addfcf6336 -- web/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb.md web/claude/history/biblical-translations/01-septuagint.md web/claude/history/traditional-priestly-institutes/01-sspx.md web/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.md web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.md web/claude/theology/mariology/la-salette.md web/claude/theology/mariology/lourdes.md web/gpt/theology/mariology/angelus.md web/gpt/theology/mariology/la-salette.md web/gpt/theology/mariology/regina-coeli.md
+Exit: 2
+Result: Three preserved pre-existing two-space Markdown hard breaks at Claude postconciliar calendar lines 415–417; exact line bytes and actual br elements verified.
+
+$ git -c core.whitespace=-blank-at-eol diff --check 8dfccbea84778e2694a47e4c1d4ea7addfcf6336 -- web/claude/articles/scripture/the-linen-cloths-at-the-empty-tomb.md web/claude/history/biblical-translations/01-septuagint.md web/claude/history/traditional-priestly-institutes/01-sspx.md web/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.md web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.md web/claude/theology/mariology/la-salette.md web/claude/theology/mariology/lourdes.md web/gpt/theology/mariology/angelus.md web/gpt/theology/mariology/la-salette.md web/gpt/theology/mariology/regina-coeli.md
+Exit: 0
+Result: No diagnostics.
+
+Skipped
+PDF builds, PDF installation, full historical source/theological review, new Sunday/workflow acceptance, deployment and full-site release verification: outside this historical-formatting review.
+Browser screenshots, responsive and assistive-technology inspection: not performed; complete before/after HTML was generated with the actual site render_page implementation and parsed for every superscript and preserved structure.

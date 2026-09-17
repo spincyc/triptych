@@ -8,7 +8,7 @@ On 18 January 1862, the feast of the Chair of Saint Peter at Rome, Bertrand-Sév
 
 > **Operative text — Mandement of the Bishop of Tarbes, 18 January 1862, operative articles (French, as printed in Henri Lasserre’s contemporary reproduction, collated against the Sanctuary of Lourdes’ own transcription)**
 >
-> Art. 1^er^. Nous jugeons que l’<span class="smallcaps">Immaculée Marie, Mère de Dieu</span>, a réellement apparu à Bernadette Soubirous, le 11 février 1858 et jours suivants, au nombre de dix-huit fois, dans la Grotte de Massabielle, près de la ville de Lourdes ; que cette Apparition revêt tous les caractères de la vérité, et que les fidèles sont fondés à la croire certaine.
+> Art. 1<sup>er</sup>. Nous jugeons que l’<span class="smallcaps">Immaculée Marie, Mère de Dieu</span>, a réellement apparu à Bernadette Soubirous, le 11 février 1858 et jours suivants, au nombre de dix-huit fois, dans la Grotte de Massabielle, près de la ville de Lourdes ; que cette Apparition revêt tous les caractères de la vérité, et que les fidèles sont fondés à la croire certaine.
 >
 > Nous soumettons humblement notre jugement au jugement du Souverain-Pontife, qui est chargé de gouverner l’Église universelle.
 >

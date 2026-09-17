@@ -141,7 +141,7 @@ When the Regina caeli is prayed as part of the Liturgy of the Hours, the governi
 
 ### Current indulgence discipline
 
-As checked on 21 July 2026, the Apostolic Penitentiary’s fourth *Enchiridion Indulgentiarum* (1999), concession 17 §2, 2^o^, grants a *partial* indulgence to a member of the faithful who piously recites the Angelus with its appointed exchanges and collect early in the morning, at midday, or toward evening; during Easter Time it names the Regina caeli with its customary prayer instead.
+As checked on 21 July 2026, the Apostolic Penitentiary’s fourth *Enchiridion Indulgentiarum* (1999), concession 17 §2, 2<sup>o</sup>, grants a *partial* indulgence to a member of the faithful who piously recites the Angelus with its appointed exchanges and collect early in the morning, at midday, or toward evening; during Easter Time it names the Regina caeli with its customary prayer instead.
 
 The Latin alternatives mean that one pious recitation at one of the named times is the prescribed work. All three times form the recommended traditional rhythm, but they are not a set that must be completed before any indulgence can be gained. The grant remains subject to the *Enchiridion*’s general norms: the faithful must be baptized, not excommunicated, and in the state of grace at least when the work is completed; have at least the general intention of gaining the indulgence; perform the work duly; and, for a partial indulgence, act with at least a contrite heart (norms 4 and 17). A vernacular prayer used for the indulgence requires approval by competent ecclesiastical authority (norm 22). These are not the additional conditions proper to a plenary indulgence.
 
@@ -185,7 +185,7 @@ Outstanding: independent human collation of the Latin and historical English; in
 
 - Dom Gaspar Lefebvre, O.S.B., *Daily Missal with Vespers for Sundays and Feasts* (Lophem near Bruges: St. Andrew’s Abbey; St. Paul, Minnesota: E. M. Lohmann, 1925), printed pp. 13–14, [edition scan](https://archive.ccwatershed.org/media/pdfs/21/02/16/05-35-23_0.pdf). Governing Latin and historical-English prayer witness; its seasonal, posture, and indulgence directions are historical only.
 
-- Apostolic Penitentiary, *Enchiridion Indulgentiarum: Normae et Concessiones*, fourth edition (16 July 1999), norms 4, 17, and 22; concession 17 §2, 2^o^; and the printed Latin prayer: [Holy See Latin text](https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html). Governs the current universal indulgence claim as checked through 21 July 2026 and identifies the antiphon’s Easter-Time Liturgy of the Hours source.
+- Apostolic Penitentiary, *Enchiridion Indulgentiarum: Normae et Concessiones*, fourth edition (16 July 1999), norms 4, 17, and 22; concession 17 §2, 2<sup>o</sup>; and the printed Latin prayer: [Holy See Latin text](https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html). Governs the current universal indulgence claim as checked through 21 July 2026 and identifies the antiphon’s Easter-Time Liturgy of the Hours source.
 
 - Sacred Congregation for Divine Worship, *General Instruction of the Liturgy of the Hours*, second typical-edition context, no. 92, [English text published by the Liturgy Office of the Bishops’ Conference of England and Wales](https://www.liturgyoffice.org/Resources/Rites/GILH.pdf). Governs the Compline antiphon claim.
 

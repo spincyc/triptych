@@ -445,7 +445,7 @@ Later literature mentions additional Holy Office correspondence about the 1922 r
 
 ### What changed in 1966 and 1983
 
-On 14 June 1966 the Congregation for the Doctrine of the Faith issued its notification on the status of the Index (AAS 58 \[1966\], 445). The Index no longer had the force of ecclesiastical law with attached censures, while the notification still appealed to the faithful’s conscience under the demands of natural law. A decree of 15 November confirmed that the old automatic book prohibitions and penalties in canons 1399 and 2318 of the 1917 Code no longer bound as ecclesiastical law. The 1983 Code, canon 6 §1, 3^∘^, then abrogated Apostolic See penal laws not retained in the new Code.
+On 14 June 1966 the Congregation for the Doctrine of the Faith issued its notification on the status of the Index (AAS 58 \[1966\], 445). The Index no longer had the force of ecclesiastical law with attached censures, while the notification still appealed to the faithful’s conscience under the demands of natural law. A decree of 15 November confirmed that the old automatic book prohibitions and penalties in canons 1399 and 2318 of the 1917 Code no longer bound as ecclesiastical law. The 1983 Code, canon 6 §1, 3<sup>∘</sup>, then abrogated Apostolic See penal laws not retained in the new Code.
 
 Those sources settle the old Index machinery and penalty schedule; they do not, without a further competent interpretation, settle the present juridic status of every standalone non-penal command in the 1915 decree. Consequently, this study neither presents the old censures as currently executable nor asserts that the subject-wide command remains binding today in its original breadth. It also does not call the 1879 or 1922 text “rehabilitated.” A change in legal machinery does not transform a proscribed book into an authenticated revelation, reverse the historical act, or require the Church to promote it. Current readers remain bound by faith, morals, ecclesial communion, truthfulness, and current competent discipline.
 
@@ -886,7 +886,7 @@ DDF index, Holy See acts, Diocese, Shrine, public-message sources, and current r
 
 8.  DDF complete document index, searched for later La Salette action through 16 July 2026: [official index](https://www.vatican.va/roman_curia/congregations/cfaith/doc_doc_index.htm).
 
-9.  Code of Canon Law (1983), canon 6 §1, especially 3^∘^ on earlier Apostolic See penal laws: [official text](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann1-6_en.html).
+9.  Code of Canon Law (1983), canon 6 §1, especially 3<sup>∘</sup> on earlier Apostolic See penal laws: [official text](https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann1-6_en.html).
 
 ### The event, early documents, and Grenoble acts
 

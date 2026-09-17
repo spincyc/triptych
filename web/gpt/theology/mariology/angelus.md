@@ -179,7 +179,7 @@ During Easter Time—in the current Roman calendar, from Easter Sunday through P
 
 ### Current indulgence discipline
 
-As checked on 21 July 2026, the Apostolic Penitentiary’s fourth *Enchiridion Indulgentiarum* (1999), concession 17 §2, 2^o^, grants a *partial* indulgence to a member of the faithful who piously recites the Angelus with its appointed exchanges and collect early in the morning, at midday, or toward evening; in Easter Time it names the Regina Coeli with its customary collect instead.
+As checked on 21 July 2026, the Apostolic Penitentiary’s fourth *Enchiridion Indulgentiarum* (1999), concession 17 §2, 2<sup>o</sup>, grants a *partial* indulgence to a member of the faithful who piously recites the Angelus with its appointed exchanges and collect early in the morning, at midday, or toward evening; in Easter Time it names the Regina Coeli with its customary collect instead.
 
 The Latin alternatives mean that one pious recitation at one of the named times is the prescribed work; all three are the recommended daily rhythm, not a condition that must be completed as a set. The grant remains subject to the *Enchiridion*’s general norms: the faithful must be baptized, not excommunicated, and in the state of grace at least when the work is completed; have at least the general intention of gaining the indulgence; perform the work duly; and, for a partial indulgence, act with at least a contrite heart (norms 4 and 17). A vernacular prayer used for the indulgence requires the approval of competent ecclesiastical authority (norm 22). These are not the additional conditions proper to a plenary indulgence.
 
@@ -221,7 +221,7 @@ Outstanding: independent human collation of the Latin and historical English; in
 
 - Dom Gaspar Lefebvre, O.S.B., *Daily Missal with Vespers for Sundays and Feasts* (Lophem near Bruges: St. Andrew’s Abbey; St. Paul, Minnesota: E. M. Lohmann, 1925), printed pp. 5 and 12–13, [edition scan](https://archive.ccwatershed.org/media/pdfs/21/02/16/05-35-23_0.pdf). Governing Latin and historical-English prayer witness; the old indulgence and seasonal rubrics are historical only.
 
-- Apostolic Penitentiary, *Enchiridion Indulgentiarum: Normae et Concessiones*, fourth edition (16 July 1999), norms 4, 17, and 22; concession 17 §2, 2^o^; and the printed Latin prayers: [Holy See Latin text](https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html). Governs the current universal indulgence claim as checked through 21 July 2026.
+- Apostolic Penitentiary, *Enchiridion Indulgentiarum: Normae et Concessiones*, fourth edition (16 July 1999), norms 4, 17, and 22; concession 17 §2, 2<sup>o</sup>; and the printed Latin prayers: [Holy See Latin text](https://www.vatican.va/roman_curia/tribunals/apost_penit/documents/rc_trib_appen_doc_20020826_enchiridion-indulgentiarum_lt.html). Governs the current universal indulgence claim as checked through 21 July 2026.
 
 - Paul VI, apostolic constitution *Indulgentiarum doctrina* (1 January 1967), norms and concluding dispositions: [Holy See text](https://www.vatican.va/content/paul-vi/en/apost_constitutions/documents/hf_p-vi_apc_01011967_indulgentiarum-doctrina.html). Governs the break with older quantified partial-indulgence discipline.
 
