@@ -341,6 +341,13 @@ Compile each affected publication for enough passes to settle references and con
 
 Use only `make review-pdfs`, `make review-all-pdfs`, or `tools/tpt pdf-review` to prepare page rasters and bounded contact sheets. The helper owns concurrency and memory controls; do not replace it with raw parallel ImageMagick or equivalent whole-document commands. A cache hit or contact sheet is not review. Inspect every rendered page, opening full-size rasters where scale matters, then verify PDF structure, fonts, metadata, extracted text, and byte identity between reviewed build and installed mirror.
 
+The helper replaces its entire output directory. Give each stage and iteration
+a dedicated raster destination, such as
+`build/tpt-runs/<run>/artifacts/<stage>-<iteration>/rasters`; keep logs, author
+proofs and other review evidence outside that destination. A workflow's example
+artifact root is a namespace: select a dedicated child when that root contains
+other work. Never use a shared ancestor as the replaceable output directory.
+
 Audit publication size after rendered content settles. Investigate, rather
 than automatically rewrite, a PDF above 1 MiB or 75 KiB per page. Investigate
 a publishing raster above 1 MiB, above two megapixels without a placement
