@@ -1,0 +1,64 @@
+[
+  {
+    "name": "one-primitive-and-identical-six-extensions",
+    "passed": true
+  },
+  {
+    "name": "actual-site-ids-accents-slugs-footnotes-code-comments",
+    "passed": true,
+    "ids": [
+      "subject",
+      "proper-collect",
+      "repeated",
+      "repeated_1",
+      "1-other-appendix",
+      "proper-gospel",
+      "proper-entrance",
+      "fnref:1",
+      "fn:1"
+    ]
+  },
+  {
+    "name": "accent-title-inline-collision-refused",
+    "passed": true
+  },
+  {
+    "name": "styled-encoded-and-html-unresolved-proper-fragments-refused",
+    "passed": true
+  },
+  {
+    "name": "no-pin",
+    "passed": true,
+    "error": "requirements-public-alpha.txt must contain exactly one exact Markdown pin"
+  },
+  {
+    "name": "duplicate-pin",
+    "passed": true,
+    "error": "requirements-public-alpha.txt must contain exactly one exact Markdown pin"
+  },
+  {
+    "name": "wrong-version",
+    "passed": true,
+    "error": "installed Python Markdown does not match the bound dependency lock: expected 0.0.invalid, found 3.10.3"
+  },
+  {
+    "name": "missing-installed-distribution",
+    "passed": true,
+    "error": "Python Markdown is required; install requirements-public-alpha.txt in an isolated environment"
+  },
+  {
+    "name": "wrong-installed-distribution",
+    "passed": true,
+    "error": "installed Python Markdown does not match the bound dependency lock: expected 3.10.3, found 0.invalid"
+  },
+  {
+    "name": "missing-markdown-import",
+    "passed": true,
+    "error": "Python Markdown is required; install requirements-public-alpha.txt in an isolated environment"
+  },
+  {
+    "name": "actual-artifact-input-recognized-omission-and-staleness-refused",
+    "passed": true,
+    "recognized_count": 22113
+  }
+]

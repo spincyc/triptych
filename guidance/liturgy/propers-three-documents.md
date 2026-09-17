@@ -68,8 +68,9 @@ prose components, and generation record. It produces:
 The companions are deliberately authored condensations and applications within
 the same owner, not independently researched leaves. Each has its own declared
 components and title, is separately built and reviewed, and receives its own
-release record. The canonical study supplies the sole web edition. Shared
-evidence and exact quotations have one owner; a prose passage belongs to the
+release record. The canonical study supplies the sole web edition under the
+[web-edition profile](../web-editions.md), including its appointed-text anchors.
+Shared evidence and exact quotations have one owner; a prose passage belongs to the
 output whose reader it serves. Do not pad a short work with the full study's
 appendices or duplicate the full study verbatim to make a companion.
 

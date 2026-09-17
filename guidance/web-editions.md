@@ -132,3 +132,13 @@ durable anchors, and relation evidence classes remain readable text rather
 than styling alone. Component-scoped references accompany exactly the
 components that use them. Preflight rejects a component included in one mode
 when it depends on a component omitted from that mode.
+
+For schema 2, author one explicit `\label{proper-<element-key>}` at each
+appointed text or its rights-safe locator. Put it immediately after a heading
+that names only that element, or immediately before the element's paragraph
+when a heading groups several texts. Optional alternatives have their own
+declared keys and targets. The converter verifies exact coverage and unique
+source and rendered targets; it does not infer a liturgical role from a Bible
+reference or a combined heading. Label placement remains a source-review
+judgment. A missing or misplaced source label belongs to the study author;
+loss of a correctly placed label in conversion belongs to the converter.

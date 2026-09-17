@@ -71,6 +71,7 @@ class PublicAlphaTest(unittest.TestCase):
             "release/public-alpha/assets/icon.png",
             "requirements-public-alpha.txt",
             "tools/public-alpha",
+            "scripts/_markdown_render.py",
         }
         self.write("README.md", b"# Test\n")
         self.write(
@@ -106,6 +107,7 @@ class PublicAlphaTest(unittest.TestCase):
             (REPOSITORY_ROOT / "requirements-public-alpha.txt").read_bytes(),
         )
         self.write("tools/public-alpha", b"test generator\n")
+        self.write("scripts/_markdown_render.py", b"test renderer\n")
         self.write("release/rights/approval.md", b"stale approval record\n")
         self.write("src/gpt/work/main.tex", b"source\n")
         self.write("pdf/gpt/work.pdf", b"current pdf bytes\n")
@@ -1155,6 +1157,7 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertTrue(
             {
                 "tools/public-alpha",
+                "scripts/_markdown_render.py",
                 "requirements-public-alpha.txt",
                 "LICENSES/MIT.txt",
             }.issubset(candidate_paths)
@@ -1164,6 +1167,7 @@ class PublicAlphaTest(unittest.TestCase):
     def test_changed_artifact_inputs_do_not_require_shared_rebinding(self) -> None:
         for source_path in (
             "tools/public-alpha",
+            "scripts/_markdown_render.py",
             "requirements-public-alpha.txt",
             "LICENSES/MIT.txt",
         ):
@@ -1174,9 +1178,38 @@ class PublicAlphaTest(unittest.TestCase):
                 self.tool.validate_manifest(self.manifest)
                 self.write(source_path, original)
 
+    def test_shared_renderer_is_an_exact_artifact_input(self) -> None:
+        helper = "scripts/_markdown_render.py"
+        self.assertIn(helper, load_tool().FIXED_ARTIFACT_INPUT_PATHS)
+        self.authorize_current_inputs()
+        authorization = self.manifest["authorizations"]["test-authorization"]
+        authorization["site_sources"].pop(helper)
+        errors = self.tool.site_source_binding_errors(self.manifest)
+        self.assertTrue(any(helper in error and "not in the approved record" in error for error in errors))
+        self.authorize_current_inputs()
+        self.write(helper, b"changed renderer\n")
+        errors = self.tool.site_source_binding_errors(self.manifest)
+        self.assertTrue(any(helper in error and "does not match" in error for error in errors))
+
+    def test_shared_renderer_uses_callers_lock_and_preserves_site_markup(self) -> None:
+        article = (
+            "# Article\n\n## Próper collect\n\n## Repeated\n\n## Repeated\n\n"
+            "Text.[^1]\n\n| Name | Value |\n| --- | --- |\n| One | Two |\n\n"
+            "```text\nline one\nline two\n```\n\n[^1]: Endnote.\n"
+        )
+        page = self.tool.render_page("web/gpt/work.md", article, "web/gpt/work.html", True, {})
+        content = self.tool.add_table_header_scopes(self.tool.render_markdown(article, self.root))
+        self.assertIn(content, page)
+        for fragment in ('id="proper-collect"', 'id="repeated_1"', 'class="footnote"',
+                         '<th scope="col">Name</th>', '<pre><code class="language-text">'):
+            self.assertIn(fragment, page)
+        self.write("requirements-public-alpha.txt", b"Markdown>=3\n")
+        with self.assertRaisesRegex(self.tool.ReleaseError, "exactly one exact Markdown pin"):
+            self.tool.render_page("web/gpt/work.md", article, "work.html", True, {})
+
     def test_renderer_must_match_bound_dependency_lock(self) -> None:
         with mock.patch.object(
-            self.tool, "distribution_version", return_value="0.0-test-mismatch"
+            sys.modules["_markdown_render"], "distribution_version", return_value="0.0-test-mismatch"
         ):
             with self.assertRaises(self.tool.ReleaseError) as failure:
                 self.tool.require_locked_markdown_dependency()

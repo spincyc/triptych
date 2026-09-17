@@ -1,0 +1,149 @@
+[
+  {
+    "name": "title-inline-collision",
+    "status": "accepted",
+    "markdown_ids": [
+      "proper-collect",
+      "appointed-texts",
+      "proper-collect"
+    ],
+    "site_ids": [
+      "main-content",
+      "proper-collect",
+      "appointed-texts",
+      "proper-collect"
+    ],
+    "site_fragments": [
+      "#main-content",
+      "#proper-collect"
+    ]
+  },
+  {
+    "name": "repeated-autoheading-styles",
+    "status": "accepted",
+    "markdown_ids": [
+      "subject",
+      "proper-collect",
+      "other",
+      "other-1"
+    ],
+    "site_ids": [
+      "main-content",
+      "subject",
+      "proper-collect",
+      "other",
+      "other_1"
+    ],
+    "site_fragments": [
+      "#main-content"
+    ]
+  },
+  {
+    "name": "proper-missing-ref-styled",
+    "status": "accepted",
+    "markdown_ids": [
+      "subject",
+      "proper-collect"
+    ],
+    "site_ids": [
+      "main-content",
+      "subject",
+      "proper-collect"
+    ],
+    "site_fragments": [
+      "#main-content"
+    ]
+  },
+  {
+    "name": "href-proper-missing",
+    "status": "refused",
+    "error": "ConversionError: \\href payload dropped: \\#proper-typo"
+  },
+  {
+    "name": "explicit-ordinary-label-hyphen",
+    "status": "accepted",
+    "markdown_ids": [
+      "subject",
+      "proper-collect",
+      "ordinary-appendix"
+    ],
+    "site_ids": [
+      "main-content",
+      "subject",
+      "proper-collect",
+      "ordinary-appendix"
+    ],
+    "site_fragments": [
+      "#main-content",
+      "#ordinary-appendix"
+    ]
+  },
+  {
+    "name": "discarded-ordinary-label",
+    "status": "accepted",
+    "markdown_ids": [
+      "subject",
+      "proper-collect"
+    ],
+    "site_ids": [
+      "main-content",
+      "subject",
+      "proper-collect"
+    ],
+    "site_fragments": [
+      "#main-content"
+    ]
+  },
+  {
+    "name": "proper-label-in-footnote",
+    "status": "accepted",
+    "markdown_ids": [
+      "subject",
+      "text",
+      "fnref1",
+      "footnotes",
+      "fn1",
+      "proper-collect"
+    ],
+    "site_ids": [
+      "main-content",
+      "subject",
+      "text",
+      "fnref:1",
+      "fn:1",
+      "proper-collect"
+    ],
+    "site_fragments": [
+      "#main-content",
+      "#fn:1",
+      "#proper-collect",
+      "#fnref:1"
+    ]
+  },
+  {
+    "name": "one-paragraph-html-code",
+    "status": "accepted",
+    "markdown_ids": [
+      "subject",
+      "proper-collect"
+    ],
+    "site_ids": [
+      "main-content",
+      "subject",
+      "proper-collect"
+    ],
+    "site_fragments": [
+      "#main-content"
+    ]
+  },
+  {
+    "name": "inline-before-text-code",
+    "status": "refused",
+    "error": "ConversionError: missing schema-2 source proper anchor(s): proper-collect"
+  },
+  {
+    "name": "nested-branches",
+    "status": "refused",
+    "error": "ConversionError: duplicate schema-2 source proper anchor(s): proper-collect"
+  }
+]

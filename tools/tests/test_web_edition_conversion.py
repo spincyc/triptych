@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import importlib.machinery
 import importlib.util
+from importlib.metadata import PackageNotFoundError
 import re
 import runpy
 import shutil
@@ -41,6 +42,8 @@ class WebEditionConversionTests(unittest.TestCase):
         self, body: str, metadata: str = CONTRIBUTION, preamble: str = "",
         *, files: dict[str, str] | None = None, proper: bool = False,
         element_keys: tuple[str, ...] = (),
+        proper_schema: int | None = None,
+        title: str = "Subject",
     ) -> str:
         """Convert a synthetic single-section leaf and return its Markdown."""
         with tempfile.TemporaryDirectory() as temporary:
@@ -49,7 +52,8 @@ class WebEditionConversionTests(unittest.TestCase):
             leaf.mkdir(parents=True)
             if proper:
                 (leaf / "proper-components.toml").write_text(
-                    f"element_keys = {list(element_keys)!r}\n", encoding="utf-8"
+                    (f"schema = {proper_schema}\n" if proper_schema is not None else "")
+                    + f"element_keys = {list(element_keys)!r}\n", encoding="utf-8"
                 )
             for name, text in (files or {}).items():
                 path = leaf / name
@@ -61,7 +65,7 @@ class WebEditionConversionTests(unittest.TestCase):
             )
             (leaf / "main.tex").write_text(
                 "\\input{common/preamble}\n"
-                r"\hypersetup{pdftitle={Subject},pdfsubject={A synthetic leaf}}"
+                r"\hypersetup{pdftitle={" + title + r"},pdfsubject={A synthetic leaf}}"
                 "\n" + preamble + "\n\\begin{document}\n"
                 "\\begin{titlepage}\nDropped title page\n\\end{titlepage}\n"
                 "\\section{Body}\n" + body + "\n"
@@ -425,6 +429,117 @@ class WebEditionConversionTests(unittest.TestCase):
                 proper=True, element_keys=("collect",),
             )
         self.assertIn("undeclared appointed element", str(raised.exception))
+
+    @unittest.skipUnless(importlib.util.find_spec("markdown"), "Python Markdown is not installed")
+    def test_schema_two_explicit_heading_and_paragraph_anchors_reach_the_site(self) -> None:
+        keys = ("entrance", "collect", "first-reading", "responsorial-psalm", "second-reading",
+                "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion")
+        body = (
+            r"\subsection{Entrance and Collect}\label{proper-entrance}" "\n"
+            r"\textbf{Entrance:} Entrance locator." "\n\n"
+            r"\label{proper-collect}\textbf{Collect:} Collect locator." "\n\n"
+        )
+        for key, heading in zip(keys[2:8], (
+            "Isaiah 55:6--9", "Psalm 145", "Philippians 1", "Acts 16",
+            "Matthew 20", "Prayer over the Offerings",
+        )):
+            body += rf"\subsection{{{heading}}}\label{{proper-{key}}} Text for {key}." + "\n\n"
+        body += (
+            r"\subsection{Communion alternatives}\label{proper-communion-ps119}" "\n"
+            r"\textbf{First alternative:} Psalm text." "\n\n"
+            r"\label{proper-communion-jn10}\textbf{Second alternative:} John text." "\n\n"
+            r"\subsection{Prayer after Communion}\label{proper-after-communion} Prayer locator." "\n\n"
+            r"\section{Appendix}\label{ordinary-label} Other labels remain allowed. "
+            r"See \hyperref[proper-collect]{Collect} and \hyperref[proper-communion-jn10]{John}."
+        )
+        markdown = self.convert(body, proper=True, proper_schema=2, element_keys=keys)
+        site = runpy.run_path(str(ROOT / "tools/public-alpha"))
+        rendered = site["render_page"]("web/test/studies/subject.md", markdown, "subject.html", True, {})
+        self.assertCountEqual(re.findall(r'id="(proper-[^"]+)"', rendered), [f"proper-{key}" for key in keys])
+        self.assertIn('id="proper-collect" data-label="proper-collect"></span><strong>Collect:</strong>', rendered)
+        self.assertIn('id="proper-communion-jn10" data-label="proper-communion-jn10"></span><strong>Second alternative:</strong>', rendered)
+        self.assertIn('href="#proper-collect"', rendered)
+        self.assertIn('href="#proper-communion-jn10"', rendered)
+        self.assertIn('id="ordinary-label"', rendered)
+
+    def test_schema_two_ten_1962_labels_do_not_depend_on_heading_names(self) -> None:
+        keys = ("introit", "collect", "epistle", "gradual", "alleluia", "gospel",
+                "offertory", "secret", "communion", "postcommunion")
+        body = "\n\n".join(
+            rf"\subsection{{Text {index}}}\label{{proper-{key}}} Appointed text."
+            for index, key in enumerate(keys)
+        )
+        markdown = self.convert(body, proper=True, proper_schema=2, element_keys=keys)
+        self.assertCountEqual(DRIVER.rendered_markdown_anchors(markdown), [
+            "subject", "body", *(f"proper-{key}" for key in keys),
+        ])
+
+    def test_schema_two_adjacent_labels_survive_as_distinct_ids(self) -> None:
+        markdown = self.convert(
+            r"\subsection{Grouped}\label{proper-entrance}\label{proper-collect} Text.",
+            proper=True, proper_schema=2, element_keys=("entrance", "collect"),
+        )
+        anchors = DRIVER.rendered_markdown_anchors(markdown)
+        self.assertEqual(anchors.count("proper-entrance"), 1)
+        self.assertEqual(anchors.count("proper-collect"), 1)
+
+    def test_schema_two_rejects_title_and_site_normalized_heading_collisions(self) -> None:
+        body = (r"\section{Appointed texts} Introduction." "\n\n"
+                r"\label{proper-collect}\textbf{Collect:} Prayer.")
+        for title, extra in (
+            ("Proper collect", ""),
+            ("Subject", "\n\n" + r"\subsection{Próper collect} Other text."),
+        ):
+            with self.subTest(title=title, extra=extra):
+                with self.assertRaises(DRIVER.ConversionError) as raised:
+                    self.convert(body + extra, title=title, proper=True, proper_schema=2, element_keys=("collect",))
+                self.assertIn("duplicate schema-2 rendered proper anchor(s): proper-collect", str(raised.exception))
+
+    def test_schema_two_rejects_unresolved_proper_links_with_styled_text(self) -> None:
+        for text in ("the Collect", r"\textbf{the Collect}", r"\emph{the \textbf{Collect}}"):
+            with self.subTest(text=text):
+                with self.assertRaises(DRIVER.ConversionError) as raised:
+                    self.convert(
+                        r"\subsection{Collect}\label{proper-collect} Prayer. "
+                        + rf"See \hyperref[proper-typo]{{{text}}}.",
+                        proper=True, proper_schema=2, element_keys=("collect",),
+                    )
+                self.assertIn("unresolved schema-2 proper fragment(s): proper-typo", str(raised.exception))
+
+    def test_schema_two_requires_the_site_renderer_dependency_lock(self) -> None:
+        for behavior, message in (
+            ({"return_value": "0.invalid"}, "does not match the bound dependency lock"),
+            ({"side_effect": PackageNotFoundError("Markdown")}, "Python Markdown is required"),
+        ):
+            with self.subTest(behavior=behavior), mock.patch("_markdown_render.distribution_version", **behavior):
+                with self.assertRaises(DRIVER.ConversionError) as raised:
+                    self.convert(
+                        r"\subsection{Collect}\label{proper-collect} Prayer.",
+                        proper=True, proper_schema=2, element_keys=("collect",),
+                    )
+            self.assertIn("schema-2 site-rendered anchor audit failed", str(raised.exception))
+            self.assertIn(message, str(raised.exception))
+
+    def test_schema_two_requires_exact_active_source_label_coverage(self) -> None:
+        for body, failure in (
+            (r"\subsection{Collect} Prayer.", "missing"),
+            ("% \\label{proper-collect}\nPrayer.", "missing"),
+            (r"\subsection{Prayer}\label{proper-collect}\label{proper-collect} Prayer.", "duplicate"),
+            (r"\subsection{Prayer}\label{proper-collect}\label{proper-other} Prayer.", "undeclared"),
+        ):
+            with self.subTest(body=body), self.assertRaises(DRIVER.ConversionError) as raised:
+                self.convert(body, proper=True, proper_schema=2, element_keys=("collect",))
+            self.assertIn(f"{failure} schema-2 source proper anchor", str(raised.exception))
+
+    def test_schema_two_rejects_labels_dropped_by_a_macro_and_code_decoys(self) -> None:
+        for decoy in ("", r'\texttt{<span id="proper-collect"></span>}'):
+            with self.subTest(decoy=decoy), self.assertRaises(DRIVER.ConversionError) as raised:
+                self.convert(
+                    r"\discard{\label{proper-collect}} Prayer. " + decoy,
+                    preamble=r"\newcommand{\discard}[1]{}", proper=True,
+                    proper_schema=2, element_keys=("collect",),
+                )
+            self.assertIn("missing schema-2 rendered proper anchor", str(raised.exception))
 
     def test_named_table_environment_keeps_its_header_and_every_row(self) -> None:
         markdown = self.convert(

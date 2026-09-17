@@ -1,21 +1,28 @@
 #!/usr/bin/env python3
-"""Convert publication leaves to Markdown web editions with installed pandoc."""
+"""Convert publication leaves to Markdown web editions with installed pandoc.
+
+Schema-2 anchor validation also uses the site's renderer and the existing
+Python Markdown pin in requirements-public-alpha.txt.
+"""
 
 from __future__ import annotations
 
 import argparse
 from collections import Counter
+from html.parser import HTMLParser
 import re
 import subprocess
 import sys
 import tempfile
 import tomllib
 from pathlib import Path
+from urllib.parse import unquote
 # Shared CLI helpers live outside tools/ so that tmt's registry scan, which
 # requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from _tooling import Example, with_examples  # noqa: E402
+from _markdown_render import MarkdownRenderError, render_markdown  # noqa: E402
 
 # Captured transcripts, never composed; see scripts/_tooling.py.
 EXAMPLES = {
@@ -356,6 +363,63 @@ def anchor_appointed_elements(body: str, element_keys: set[str]) -> str:
     return "".join(out)
 
 
+def proper_anchor_failures(anchors: list[str], expected: set[str], stage: str) -> list[str]:
+    """Check identity and multiplicity, not whether an author chose the right passage."""
+    counts = Counter(anchor for anchor in anchors if anchor.startswith("proper-"))
+    failures = []
+    for description, keys in (
+        ("missing", expected - counts.keys()),
+        ("undeclared", counts.keys() - expected),
+        ("duplicate", {key for key, count in counts.items() if count > 1}),
+    ):
+        if keys:
+            failures.append(f"{description} schema-2 {stage} proper anchor(s): " + ", ".join(sorted(keys)))
+    return failures
+
+
+def rendered_markdown_targets(markdown: str) -> tuple[list[str], set[str]]:
+    """Read IDs and proper links using the site's owning renderer and dependency lock."""
+    try:
+        rendered = render_markdown(markdown, ROOT)
+    except MarkdownRenderError as exc:
+        raise ConversionError(f"schema-2 site-rendered anchor audit failed: {exc}") from exc
+
+    class AnchorParser(HTMLParser):
+        def __init__(self) -> None:
+            super().__init__()
+            self.anchors: list[str] = []
+            self.proper_links: set[str] = set()
+
+        def handle_starttag(self, tag: str, attributes: list[tuple[str, str | None]]) -> None:
+            self.anchors.extend(value for name, value in attributes if name == "id" and value is not None)
+            for name, value in attributes:
+                if name == "href" and value is not None and value.startswith("#"):
+                    target = unquote(value[1:])
+                    if target.startswith("proper-"):
+                        self.proper_links.add(target)
+
+    parser = AnchorParser()
+    parser.feed(rendered)
+    return parser.anchors, parser.proper_links
+
+
+def rendered_markdown_anchors(markdown: str) -> list[str]:
+    return rendered_markdown_targets(markdown)[0]
+
+
+def audit_schema_two_targets(
+    markdown: str, expected: set[str],
+) -> list[str]:
+    anchors, links = rendered_markdown_targets(markdown)
+    failures = proper_anchor_failures(anchors, expected, "rendered")
+    missing_links = links - set(anchors)
+    if missing_links:
+        failures.append("unresolved schema-2 proper fragment(s): " + ", ".join(sorted(missing_links)))
+    if failures:
+        raise ConversionError("\n".join(failures))
+    return anchors
+
+
 def assemble(
     text: str, provider: str, seen: dict[Path, str] | None, *, proper: bool = False
 ) -> str:
@@ -561,11 +625,11 @@ def undefined_uses(sources: dict[Path, str], defined: set[str]) -> list[str]:
     return failures
 
 
-def resolve_anchors(markdown: str) -> str:
-    """Unlink a cross-reference to a label no heading in the page carries."""
+def resolve_anchors(markdown: str, anchors: list[str] | None = None) -> str:
+    """Unlink references without a heading or an explicitly supplied inline target."""
     # A reference's pandoc attributes restate the label and carry no text.
     markdown = LINK_ATTRIBUTE_RE.sub(r"\1", markdown)
-    declared = set(ANCHOR_DEFINITION_RE.findall(markdown))
+    declared = set(ANCHOR_DEFINITION_RE.findall(markdown) if anchors is None else anchors)
     return ANCHOR_LINK_RE.sub(
         lambda match: match.group(0) if match.group(2) in declared else match.group(1),
         markdown,
@@ -763,6 +827,8 @@ def audit_output(
     tables: int = 0,
     chronology_annotations: list[str] | None = None,
     sources: str = "",
+    rendered_anchors: list[str] | None = None,
+    required_anchors: set[str] | None = None,
 ) -> list[str]:
     """Compare critical macro payloads in the LaTeX body against the Markdown."""
     failures = []
@@ -824,7 +890,9 @@ def audit_output(
                 f"{expected} level-{level} source heading(s) became "
                 f"{output_headings[level]} heading(s)"
             )
-    anchors = ANCHOR_DEFINITION_RE.findall(markdown)
+    anchors = ANCHOR_DEFINITION_RE.findall(markdown) if rendered_anchors is None else rendered_anchors
+    if required_anchors is not None:
+        failures.extend(proper_anchor_failures(anchors, required_anchors, "rendered"))
     duplicate_anchors = sorted(
         anchor for anchor in set(anchors) if anchors.count(anchor) > 1
     )
@@ -894,9 +962,20 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
     preamble = assemble(head, provider, None, proper=proper)
     sources: dict[Path, str] = {main: tail}
     body = assemble(tail, provider, sources, proper=proper)
+    required_anchors = None
     if proper:
         components = tomllib.loads((main.parent / "proper-components.toml").read_text())
-        body = anchor_appointed_elements(body, set(components.get("element_keys", [])))
+        if components.get("schema") == 2:
+            from _proper_components import KEY, strings
+            try:
+                keys = strings(components.get("element_keys"), "element_keys")
+                if any(not KEY.fullmatch(key) for key in keys):
+                    raise ValueError("element_keys must use stable lowercase kebab-case")
+            except ValueError as exc:
+                raise ConversionError(str(exc)) from exc
+            required_anchors = {f"proper-{key}" for key in keys}
+        else:
+            body = anchor_appointed_elements(body, set(components.get("element_keys", [])))
     body = PERIOD_CENTERED_RE.sub("\N{MIDDLE DOT}", body)
     body = PRE_CONVERSION_BREAKS_RE.sub("", body)
     body, chronology_annotations = expand_chronology_annotations(body, preamble)
@@ -910,6 +989,10 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
     body = deduplicate_contributions(body)
     if r"\TriptychRightsNotice" not in body:
         body += "\n\\TriptychRightsNotice\n"
+    if required_anchors is not None:
+        failures = proper_anchor_failures(LABEL_RE.findall(strip_for_scan(body)), required_anchors, "source")
+        if failures:
+            raise ConversionError("\n".join(failures))
     shim_text = ALIGNMENT_FIXUP_RE.sub("", SHIM.read_text(encoding="utf-8"))
     locals_text = ALIGNMENT_FIXUP_RE.sub(
         "", LIST_OPTION_RE.sub(r"\1", local_definitions(preamble))
@@ -934,11 +1017,29 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         raise ConversionError(f"pandoc failed:\n{result.stderr.strip()}")
     if MATH_WARNING_RE.search(result.stderr):
         raise ConversionError(f"math left as raw TeX:\n{result.stderr.strip()}")
-    markdown = strip_contentless_breaks(
-        normalize_unnumbered_headings(
-            resolve_anchors(result.stdout), set(LABEL_RE.findall(body))
+    heading = f"# {title}\n"
+    if subtitle:
+        heading += f"\n*{subtitle}*\n"
+    rendered_anchors = None
+    if required_anchors is None:
+        markdown = strip_contentless_breaks(
+            normalize_unnumbered_headings(
+                resolve_anchors(result.stdout), set(LABEL_RE.findall(body))
+            )
         )
-    )
+    else:
+        markdown = strip_contentless_breaks(normalize_unnumbered_headings(
+            LINK_ATTRIBUTE_RE.sub(r"\1", result.stdout), set(LABEL_RE.findall(body))
+        ))
+        # Validate before legacy unlinking can erase a broken proper reference,
+        # and again on the exact final publication, title and subtitle included.
+        rendered_anchors = audit_schema_two_targets(
+            f"{heading}\n{markdown}", required_anchors,
+        )
+        markdown = resolve_anchors(markdown, rendered_anchors)
+        rendered_anchors = audit_schema_two_targets(
+            f"{heading}\n{markdown}", required_anchors,
+        )
     # The paragraph audit is judged against the leaf's files as they stand on
     # disk, before any branch was selected or any macro resolved, so a rewriting
     # that introduced a break cannot supply the reference that excuses it.
@@ -951,12 +1052,11 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         table_count(body, shim_text + locals_text),
         chronology_annotations,
         shim_text + "\n\n" + raw_sources,
+        rendered_anchors,
+        required_anchors,
     )
     if failures:
         raise ConversionError("\n".join(failures))
-    heading = f"# {title}\n"
-    if subtitle:
-        heading += f"\n*{subtitle}*\n"
     destination = out / provider / f"{leaf}.md"
     destination.parent.mkdir(parents=True, exist_ok=True)
     destination.write_text(f"{heading}\n{markdown}", encoding="utf-8")

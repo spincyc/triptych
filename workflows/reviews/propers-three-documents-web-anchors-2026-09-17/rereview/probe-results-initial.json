@@ -1,0 +1,169 @@
+[
+  {
+    "name": "paragraph-link",
+    "status": "accepted",
+    "markdown_ids": [
+      "subject",
+      "proper-collect"
+    ],
+    "site_ids": [
+      "main-content",
+      "subject",
+      "proper-collect"
+    ],
+    "site_fragments": [
+      "#main-content",
+      "#proper-collect"
+    ]
+  },
+  {
+    "name": "ordinary-inline-link",
+    "status": "accepted",
+    "markdown_ids": [
+      "subject",
+      "proper-collect",
+      "ordinary"
+    ],
+    "site_ids": [
+      "main-content",
+      "subject",
+      "proper-collect",
+      "ordinary"
+    ],
+    "site_fragments": [
+      "#main-content",
+      "#ordinary"
+    ]
+  },
+  {
+    "name": "verbatim-only",
+    "status": "refused",
+    "error": "ConversionError: missing schema-2 rendered proper anchor(s): proper-collect"
+  },
+  {
+    "name": "verbatim-plus-real",
+    "status": "refused",
+    "error": "ConversionError: duplicate schema-2 source proper anchor(s): proper-collect"
+  },
+  {
+    "name": "verbatim-undeclared",
+    "status": "refused",
+    "error": "ConversionError: undeclared schema-2 source proper anchor(s): proper-example"
+  },
+  {
+    "name": "comment-plus-real",
+    "status": "accepted",
+    "markdown_ids": [
+      "subject",
+      "proper-collect"
+    ],
+    "site_ids": [
+      "main-content",
+      "subject",
+      "proper-collect"
+    ],
+    "site_fragments": [
+      "#main-content"
+    ]
+  },
+  {
+    "name": "print-inactive-duplicate",
+    "status": "accepted",
+    "markdown_ids": [
+      "subject",
+      "proper-collect"
+    ],
+    "site_ids": [
+      "main-content",
+      "subject",
+      "proper-collect"
+    ],
+    "site_fragments": [
+      "#main-content"
+    ]
+  },
+  {
+    "name": "synthesis-inactive-duplicate",
+    "status": "accepted",
+    "markdown_ids": [
+      "subject",
+      "proper-collect"
+    ],
+    "site_ids": [
+      "main-content",
+      "subject",
+      "proper-collect"
+    ],
+    "site_fragments": [
+      "#main-content"
+    ]
+  },
+  {
+    "name": "missing",
+    "status": "refused",
+    "error": "ConversionError: missing schema-2 source proper anchor(s): proper-collect"
+  },
+  {
+    "name": "duplicate",
+    "status": "refused",
+    "error": "ConversionError: duplicate schema-2 source proper anchor(s): proper-collect"
+  },
+  {
+    "name": "undeclared",
+    "status": "refused",
+    "error": "ConversionError: undeclared schema-2 source proper anchor(s): proper-extra"
+  },
+  {
+    "name": "discarded",
+    "status": "refused",
+    "error": "ConversionError: missing schema-2 rendered proper anchor(s): proper-collect"
+  },
+  {
+    "name": "duplicated-expansion",
+    "status": "refused",
+    "error": "ConversionError: duplicate schema-2 rendered proper anchor(s): proper-collect"
+  },
+  {
+    "name": "undeclared-expansion",
+    "status": "refused",
+    "error": "ConversionError: undeclared schema-2 rendered proper anchor(s): proper-extra"
+  },
+  {
+    "name": "missing-link",
+    "status": "refused",
+    "error": "ConversionError: unresolved schema-2 proper fragment(s): proper-typo"
+  },
+  {
+    "name": "title-collision",
+    "status": "refused",
+    "error": "ConversionError: undeclared schema-2 rendered proper anchor(s): proper-collect_1"
+  },
+  {
+    "name": "source-collision-autoheading",
+    "status": "refused",
+    "error": "ConversionError: undeclared schema-2 rendered proper anchor(s): proper-collect-1"
+  },
+  {
+    "name": "inline-collision-autoheading",
+    "status": "refused",
+    "error": "ConversionError: undeclared schema-2 rendered proper anchor(s): proper-collect-1"
+  },
+  {
+    "name": "ordinary-autoheading-link",
+    "status": "accepted",
+    "markdown_ids": [
+      "subject",
+      "proper-collect",
+      "1-other-appendix"
+    ],
+    "site_ids": [
+      "main-content",
+      "subject",
+      "proper-collect",
+      "1-other-appendix"
+    ],
+    "site_fragments": [
+      "#main-content"
+    ]
+  }
+]
