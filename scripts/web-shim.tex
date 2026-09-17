@@ -54,6 +54,8 @@
 
 % ------------------------------------------------------------- semantic inlines
 \newcommand{\sourceurl}[2]{\href{#1}{#2}}
+% Keep braced file locators literal and unlinked; PDF line breaking stays in TeX.
+\newcommand{\path}[1]{\nolinkurl{#1}}
 \newcommand{\latin}[1]{\textit{#1}}
 \newcommand{\Latin}[1]{\textit{#1}}
 \newcommand{\CanonLatin}[1]{\textit{#1}}

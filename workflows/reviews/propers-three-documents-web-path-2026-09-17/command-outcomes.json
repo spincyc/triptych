@@ -1,0 +1,66 @@
+{
+  "review_base": "50612cf36ac055d2facd222e721cf7274e50b181",
+  "pandoc_version": "3.10.2",
+  "checks": [
+    {
+      "command": "TMPDIR=<review scratch> PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tools/tests -p 'test_web_edition*.py' -v",
+      "exit": 0,
+      "tests": 74,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "command": "TMPDIR=<review scratch> PYTHONDONTWRITEBYTECODE=1 python3 .scratch/implementation-cold-review/web-path/final_probes.py",
+      "exit": 0,
+      "checks_passed": 9
+    },
+    {
+      "command": "git diff --check -- scripts/web-shim.tex tools/web-edition tools/tests/test_web_edition_conversion.py",
+      "exit": 0
+    },
+    {
+      "command": "tools/web-edition --help",
+      "exit": 0,
+      "note": "Invoked by its resolved absolute repository tool path."
+    },
+    {
+      "command": "tools/tpt web-edition --help",
+      "exit": 0,
+      "note": "Invoked by its resolved absolute repository launcher path."
+    }
+  ],
+  "legacy_comparisons": [
+    {
+      "check": "base/final legacy conversion bytes identical",
+      "provider": "claude",
+      "document": "articles/faith/at-the-end-of-every-why",
+      "pass": true,
+      "markdown_sha256": "082ed8bce0ef03784fe1004db7b26d88410b0c48468efd47c79e2ad6bb47f329"
+    },
+    {
+      "check": "base/final legacy conversion bytes identical",
+      "provider": "gpt",
+      "document": "articles/faith/the-due-return",
+      "pass": true,
+      "markdown_sha256": "65b12fcd1694e0d8bfffae06ea11d567436d53ea8ec9738c8687c18bae5a3f3a"
+    },
+    {
+      "check": "base/final legacy conversion bytes identical",
+      "provider": "gpt",
+      "document": "liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost",
+      "pass": true,
+      "markdown_sha256": "2bda5806d1904ef917029b37f6d6bb010b683fb2825e569058233d6183c971f0"
+    }
+  ],
+  "evidence_sha256": {
+    "initial-hashes.json": "e9b528074c40f7ff7eb078df91942aac3dcd90bd9e43a51a64f31ddc977d21cd",
+    "initial.patch": "5dda3f3a6d505d8d48e12ec7873ac33f1d9466d500df31452134b3e5e9796e4b",
+    "probes-initial.json": "32825344dc57f3719acaadf1f308353e70f9759735227c098b961b4e2f063781",
+    "unsupported-base-comparison.json": "f2475a025af44fe84df19c57e419995742dd5d378814fe31f9e4e0304df08a1b",
+    "final-tests.log": "4dce46fa92256ba6f0d4fc6e2c59bf674cd57340fbe392185400e4b59c54f051",
+    "final_probes.py": "fd16bc1b2e0f2e37b16fdc5c693135228a8fef65ef507a217776168bf8c59a20",
+    "final-probes.json": "418d28aa7e75d14af4c4529ee13353f5e38fd9d92c01e8cf4d526ba410289754",
+    "final-hashes.json": "09f6ec16a9bcca66f2db5d0224e68f5e2723c496f96c931bc68665b48c68269d"
+  }
+}

@@ -90,6 +90,42 @@ class WebEditionConversionTests(unittest.TestCase):
         self.assertIn("## Body", markdown)
         self.assertNotIn("Dropped title page", markdown)
 
+    def test_braced_path_locators_survive_as_literal_unlinked_code(self) -> None:
+        locators = (
+            "propers/verified.md",
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/production-review.md",
+            "research/source_record-v1&notes#locus.md",
+        )
+        markdown = self.convert("See " + ", ".join(
+            rf"\path{{{locator}}}" for locator in locators
+        ) + ".")
+        for locator in locators:
+            self.assertIn(f"`{locator}`", markdown)
+            self.assertNotIn(f"]({locator})", markdown)
+        self.assertNotIn(r"\path", markdown)
+
+    def test_path_allows_whitespace_before_its_braced_locator(self) -> None:
+        markdown = self.convert("See \\path \n {research/scope.md}.")
+        self.assertIn("`research/scope.md`", markdown)
+
+    def test_non_braced_path_syntax_is_refused_before_conversion(self) -> None:
+        for body in (
+            r"See \path|research/source_record-v1.md|.",
+            r"See \path+research/source_record-v1.md+.",
+            r"See \path[draw] (0,0) -- (1,1);.",
+        ):
+            with self.subTest(body=body), mock.patch.object(DRIVER.subprocess, "run") as pandoc:
+                with self.assertRaises(DRIVER.ConversionError) as raised:
+                    self.convert(
+                        r"\input{studies/subject/sections/paths}",
+                        files={"sections/paths.tex": body},
+                    )
+                self.assertIn(r"unsupported \path syntax", str(raised.exception))
+                self.assertIn("sections/paths.tex", str(raised.exception))
+                pandoc.assert_not_called()
+
     def test_print_only_branch_keeps_its_web_alternative(self) -> None:
         markdown = self.convert(
             "\\ifdefined\\TriptychPrintEdition\n"
@@ -545,6 +581,15 @@ class WebEditionAuditTests(unittest.TestCase):
         self.assertIn(
             r"\sourceurl payload dropped: https://example.invalid/a", failures
         )
+
+    def test_dropped_or_changed_path_locator_is_reported(self) -> None:
+        body = r"See \path{research/source_record-v1.md}."
+        for output in ("", "`research/source_record-v2.md`"):
+            with self.subTest(output=output):
+                failures = DRIVER.audit_output(body, self.minimal_markdown() + output)
+                self.assertIn(
+                    r"\path payload dropped: research/source_record-v1.md", failures
+                )
 
     def test_missing_colophon_and_timestamp_are_reported(self) -> None:
         failures = DRIVER.audit_output("Prose.", "# Subject\n\nProse.\n")

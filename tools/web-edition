@@ -547,6 +547,10 @@ def undefined_uses(sources: dict[Path, str], defined: set[str]) -> list[str]:
     # pooled across the whole assembled document before anything is judged.
     known = defined.union(*(defined_names(text) for text in scanned.values()))
     for path, text in scanned.items():
+        for match in COMMAND_RE.finditer(text):
+            if (match.group(1) == "path"
+                    and not text[match.end():].lstrip().startswith("{")):
+                failures.append(f"{path}: unsupported \\path syntax; expected a braced file locator")
         for name in sorted(set(COMMAND_RE.findall(text)) - {""}):
             if name not in known and name not in KNOWN_COMMANDS:
                 failures.append(f"{path}: unknown macro \\{name}")
@@ -835,10 +839,10 @@ def audit_output(
     notes, kept = len(NOTE_MACRO_RE.findall(body)), len(FOOTNOTE_DEF_RE.findall(markdown))
     if kept < notes:
         failures.append(f"{notes} endnote/footnote calls became {kept} footnotes")
-    # A URL must survive verbatim; prose payloads are only checked where LaTeX
-    # and Markdown spell them identically.
-    for macro in (r"\sourceurl", r"\href", r"\work", r"\latin", r"\Latin", r"\CanonLatin"):
-        verbatim = macro in (r"\sourceurl", r"\href")
+    # URLs and file locators must survive verbatim; prose payloads are only
+    # checked where LaTeX and Markdown spell them identically.
+    for macro in (r"\sourceurl", r"\href", r"\path", r"\work", r"\latin", r"\Latin", r"\CanonLatin"):
+        verbatim = macro in (r"\sourceurl", r"\href", r"\path")
         for match in re.finditer(re.escape(macro) + r"\s*\{", body):
             payload = brace_group(body, match.end() - 1)[0].strip()
             if not (verbatim or SAFE_PAYLOAD_RE.match(payload)):
