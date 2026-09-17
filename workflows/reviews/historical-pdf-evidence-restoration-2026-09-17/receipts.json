@@ -1,0 +1,2004 @@
+[
+  {
+    "destination": "pdf/gpt/theology/mariology/ark-of-the-covenant.pdf",
+    "ledger_references": [
+      "gpt-mary-new-ark-journey-2026-08-15/publication-installation",
+      "gpt-mary-new-ark-journey-2026-08-15/provider-distinct-ark-catalog"
+    ],
+    "url": "https://spincyc.github.io/triptych/pdf/gpt/theology/mariology/ark-of-the-covenant.pdf",
+    "retrieved_utc": "2026-09-17T20:54:02.889627+00:00",
+    "retrieval": {
+      "command": [
+        "curl",
+        "-q",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--max-redirs",
+        "3",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "60",
+        "--proto",
+        "=https",
+        "--proto-redir",
+        "=https",
+        "--output",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/theology/mariology/ark-of-the-covenant.pdf",
+        "--write-out",
+        "%{http_code}\n%{content_type}\n%{url_effective}\n",
+        "https://spincyc.github.io/triptych/pdf/gpt/theology/mariology/ark-of-the-covenant.pdf"
+      ],
+      "exit": 0,
+      "stdout": "200\napplication/pdf\nhttps://mystago.gy/pdf/gpt/theology/mariology/ark-of-the-covenant.pdf\n",
+      "stderr": ""
+    },
+    "status": "restored_verified_bytes",
+    "http_status": "200",
+    "content_type": "application/pdf",
+    "effective_url": "https://mystago.gy/pdf/gpt/theology/mariology/ark-of-the-covenant.pdf",
+    "sha256": "0d995ac1d447f53cc55496fa8907c16a7940639b986fee02579b16e87d7164da",
+    "bytes": 6856128,
+    "pdfinfo": {
+      "command": [
+        "pdfinfo",
+        "-rawdates",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/theology/mariology/ark-of-the-covenant.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Title:           The Ark and the Mother of the Lord: The Journey of the Covenant Presence\nSubject:         The Ark's scriptural journey, its fulfillment in Mary, patristic and saintly reception, the four Marian dogmas, virginal marriage, and spiritual application\nKeywords:        \nAuthor:          \nCreator:         LaTeX with hyperref\nProducer:        pdfTeX-1.40.29\nModDate:         D:20260816153851Z\nCustom Metadata: yes\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           46\nEncrypted:       no\nPage size:       612 x 792 pts (letter)\nPage rot:        0\nFile size:       6856128 bytes\nOptimized:       no\nPDF version:     1.7\n",
+      "stderr": ""
+    },
+    "provider": "gpt",
+    "document": "theology/mariology/ark-of-the-covenant",
+    "source_entry": "src/gpt/theology/mariology/ark-of-the-covenant/main.tex",
+    "source_metadata": "src/gpt/theology/mariology/ark-of-the-covenant/generation-metadata.tex",
+    "source_metadata_sha256": "f019e565496a44f28742e74380c2bc0b1fb343d127ebf7115f609b8b70beb14f",
+    "pages": 46,
+    "title": "The Ark and the Mother of the Lord: The Journey of the Covenant Presence",
+    "subject": "The Ark's scriptural journey, its fulfillment in Mary, patristic and saintly reception, the four Marian dogmas, virginal marriage, and spiritual application",
+    "revision": "2026-08-16T15:38:51Z",
+    "comparisons": {
+      "pages": {
+        "actual": 46,
+        "corpus": 46
+      },
+      "title": {
+        "actual": "The Ark and the Mother of the Lord: The Journey of the Covenant Presence",
+        "corpus": "The Ark and the Mother of the Lord: The Journey of the Covenant Presence",
+        "source": "The Ark and the Mother of the Lord: The Journey of the Covenant Presence"
+      },
+      "subject": {
+        "actual": "The Ark's scriptural journey, its fulfillment in Mary, patristic and saintly reception, the four Marian dogmas, virginal marriage, and spiritual application",
+        "corpus": "The Ark's scriptural journey, its fulfillment in Mary, patristic and saintly reception, the four Marian dogmas, virginal marriage, and spiritual application",
+        "source": "The Ark's scriptural journey, its fulfillment in Mary, patristic and saintly reception, the four Marian dogmas, virginal marriage, and spiritual application"
+      },
+      "revision": {
+        "source": "2026-08-16T15:38:51Z",
+        "corpus": "2026-08-16T15:38:51Z",
+        "pdf_moddate": "D:20260816153851Z",
+        "expected_moddate": "D:20260816153851Z"
+      }
+    },
+    "comparison_pass": true,
+    "metadata_gate": {
+      "command": [
+        "tools/check-generation-metadata",
+        "--provider",
+        "gpt",
+        "--pdf",
+        "theology/mariology/ark-of-the-covenant",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/theology/mariology/ark-of-the-covenant.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Generation metadata valid: 1 canonical record(s), 0 inherited record(s).\n",
+      "stderr": ""
+    },
+    "installed_utc": "2026-09-17T20:54:33.320989+00:00",
+    "installed_sha256": "0d995ac1d447f53cc55496fa8907c16a7940639b986fee02579b16e87d7164da",
+    "ignored_untracked": true
+  },
+  {
+    "destination": "pdf/claude/theology/mariology/ark-of-the-covenant.pdf",
+    "ledger_references": [
+      "gpt-mary-new-ark-journey-2026-08-15/provider-distinct-ark-catalog"
+    ],
+    "url": "https://spincyc.github.io/triptych/pdf/claude/theology/mariology/ark-of-the-covenant.pdf",
+    "retrieved_utc": "2026-09-17T20:54:02.875053+00:00",
+    "retrieval": {
+      "command": [
+        "curl",
+        "-q",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--max-redirs",
+        "3",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "60",
+        "--proto",
+        "=https",
+        "--proto-redir",
+        "=https",
+        "--output",
+        ".scratch/historical-pdf-restore/downloads/pdf/claude/theology/mariology/ark-of-the-covenant.pdf",
+        "--write-out",
+        "%{http_code}\n%{content_type}\n%{url_effective}\n",
+        "https://spincyc.github.io/triptych/pdf/claude/theology/mariology/ark-of-the-covenant.pdf"
+      ],
+      "exit": 0,
+      "stdout": "200\napplication/pdf\nhttps://mystago.gy/pdf/claude/theology/mariology/ark-of-the-covenant.pdf\n",
+      "stderr": ""
+    },
+    "status": "restored_verified_bytes",
+    "http_status": "200",
+    "content_type": "application/pdf",
+    "effective_url": "https://mystago.gy/pdf/claude/theology/mariology/ark-of-the-covenant.pdf",
+    "sha256": "7877add8a640a9d2f237eb149e35440bc8c392ce84fe30a24e16a03b54c3d7d0",
+    "bytes": 1073502,
+    "pdfinfo": {
+      "command": [
+        "pdfinfo",
+        "-rawdates",
+        ".scratch/historical-pdf-restore/downloads/pdf/claude/theology/mariology/ark-of-the-covenant.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Title:           The Ark of the Covenant: From Sinai to the Woman Clothed with the Sun\nSubject:         A source-audited study of the ark of the covenant: its canonical journey from Sinai to its disappearance, the theology of presence and holiness it teaches, and the Church's reading of the Virgin Mary as the ark of the new covenant, with every parallel graded by attestation and reception\nKeywords:        \nAuthor:          \nCreator:         LaTeX with hyperref\nProducer:        pdfTeX-1.40.29\nModDate:         D:20260816154717Z\nCustom Metadata: yes\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           65\nEncrypted:       no\nPage size:       612 x 792 pts (letter)\nPage rot:        0\nFile size:       1073502 bytes\nOptimized:       no\nPDF version:     1.7\n",
+      "stderr": ""
+    },
+    "provider": "claude",
+    "document": "theology/mariology/ark-of-the-covenant",
+    "source_entry": "src/claude/theology/mariology/ark-of-the-covenant/main.tex",
+    "source_metadata": "src/claude/theology/mariology/ark-of-the-covenant/generation-metadata.tex",
+    "source_metadata_sha256": "cbfa6c77832e065597a9f865b8b4a4eb3588d20517f4a760a58ba39cce445a9e",
+    "pages": 65,
+    "title": "The Ark of the Covenant: From Sinai to the Woman Clothed with the Sun",
+    "subject": "A source-audited study of the ark of the covenant: its canonical journey from Sinai to its disappearance, the theology of presence and holiness it teaches, and the Church's reading of the Virgin Mary as the ark of the new covenant, with every parallel graded by attestation and reception",
+    "revision": "2026-08-16T15:47:17Z",
+    "comparisons": {
+      "pages": {
+        "actual": 65,
+        "corpus": 65
+      },
+      "title": {
+        "actual": "The Ark of the Covenant: From Sinai to the Woman Clothed with the Sun",
+        "corpus": "The Ark of the Covenant: From Sinai to the Woman Clothed with the Sun",
+        "source": "The Ark of the Covenant: From Sinai to the Woman Clothed with the Sun"
+      },
+      "subject": {
+        "actual": "A source-audited study of the ark of the covenant: its canonical journey from Sinai to its disappearance, the theology of presence and holiness it teaches, and the Church's reading of the Virgin Mary as the ark of the new covenant, with every parallel graded by attestation and reception",
+        "corpus": "A source-audited study of the ark of the covenant: its canonical journey from Sinai to its disappearance, the theology of presence and holiness it teaches, and the Church's reading of the Virgin Mary as the ark of the new covenant, with every parallel graded by attestation and reception",
+        "source": "A source-audited study of the ark of the covenant: its canonical journey from Sinai to its disappearance, the theology of presence and holiness it teaches, and the Church's reading of the Virgin Mary as the ark of the new covenant, with every parallel graded by attestation and reception"
+      },
+      "revision": {
+        "source": "2026-08-16T15:47:17Z",
+        "corpus": "2026-08-16T15:47:17Z",
+        "pdf_moddate": "D:20260816154717Z",
+        "expected_moddate": "D:20260816154717Z"
+      }
+    },
+    "comparison_pass": true,
+    "metadata_gate": {
+      "command": [
+        "tools/check-generation-metadata",
+        "--provider",
+        "claude",
+        "--pdf",
+        "theology/mariology/ark-of-the-covenant",
+        ".scratch/historical-pdf-restore/downloads/pdf/claude/theology/mariology/ark-of-the-covenant.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Generation metadata valid: 1 canonical record(s), 0 inherited record(s).\n",
+      "stderr": ""
+    },
+    "installed_utc": "2026-09-17T20:54:33.329835+00:00",
+    "installed_sha256": "7877add8a640a9d2f237eb149e35440bc8c392ce84fe30a24e16a03b54c3d7d0",
+    "ignored_untracked": true
+  },
+  {
+    "destination": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost.pdf",
+    "ledger_references": [
+      "project-gpt-deep-research-redevelopment-2026-07-29/gpt-publications-verified"
+    ],
+    "url": "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost.pdf",
+    "retrieved_utc": "2026-09-17T20:54:02.787733+00:00",
+    "retrieval": {
+      "command": [
+        "curl",
+        "-q",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--max-redirs",
+        "3",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "60",
+        "--proto",
+        "=https",
+        "--proto-redir",
+        "=https",
+        "--output",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost.pdf",
+        "--write-out",
+        "%{http_code}\n%{content_type}\n%{url_effective}\n",
+        "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost.pdf"
+      ],
+      "exit": 0,
+      "stdout": "200\napplication/pdf\nhttps://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost.pdf\n",
+      "stderr": ""
+    },
+    "status": "restored_verified_bytes",
+    "http_status": "200",
+    "content_type": "application/pdf",
+    "effective_url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost.pdf",
+    "sha256": "e178f4527fcb61897904082758280fe2f776915649125369dbb605d5b9e1ecd7",
+    "bytes": 491184,
+    "pdfinfo": {
+      "command": [
+        "pdfinfo",
+        "-rawdates",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Title:           Tenth Sunday after Pentecost (Full Edition)\nSubject:         Full source-audited guide to the 1962 Roman Missal propers\nKeywords:        \nAuthor:          \nCreator:         LaTeX with hyperref\nProducer:        pdfTeX-1.40.29\nModDate:         D:20260729202155Z\nCustom Metadata: yes\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           18\nEncrypted:       no\nPage size:       612 x 792 pts (letter)\nPage rot:        0\nFile size:       491184 bytes\nOptimized:       no\nPDF version:     1.7\n",
+      "stderr": ""
+    },
+    "provider": "gpt",
+    "document": "liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost",
+    "source_entry": "src/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost/main.tex",
+    "source_metadata": "src/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost/generation-metadata.tex",
+    "source_metadata_sha256": "1d921bf64dc1cfe96218a76a6dce63e5be1f43c42b10a504fe21d701132ff18d",
+    "pages": 18,
+    "title": "Tenth Sunday after Pentecost (Full Edition)",
+    "subject": "Full source-audited guide to the 1962 Roman Missal propers",
+    "revision": "2026-07-29T20:21:55Z",
+    "comparisons": {
+      "pages": {
+        "actual": 18,
+        "corpus": 18
+      },
+      "title": {
+        "actual": "Tenth Sunday after Pentecost (Full Edition)",
+        "corpus": "Tenth Sunday after Pentecost (Full Edition)",
+        "source": "Tenth Sunday after Pentecost (Full Edition)"
+      },
+      "subject": {
+        "actual": "Full source-audited guide to the 1962 Roman Missal propers",
+        "corpus": "Full source-audited guide to the 1962 Roman Missal propers",
+        "source": "Full source-audited guide to the 1962 Roman Missal propers"
+      },
+      "revision": {
+        "source": "2026-07-29T20:21:55Z",
+        "corpus": "2026-07-29T20:21:55Z",
+        "pdf_moddate": "D:20260729202155Z",
+        "expected_moddate": "D:20260729202155Z"
+      }
+    },
+    "comparison_pass": true,
+    "metadata_gate": {
+      "command": [
+        "tools/check-generation-metadata",
+        "--provider",
+        "gpt",
+        "--pdf",
+        "liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Generation metadata valid: 1 canonical record(s), 0 inherited record(s).\n",
+      "stderr": ""
+    },
+    "installed_utc": "2026-09-17T20:54:33.337721+00:00",
+    "installed_sha256": "e178f4527fcb61897904082758280fe2f776915649125369dbb605d5b9e1ecd7",
+    "ignored_untracked": true
+  },
+  {
+    "destination": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a.pdf",
+    "ledger_references": [
+      "project-gpt-deep-research-redevelopment-2026-07-29/gpt-publications-verified"
+    ],
+    "url": "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a.pdf",
+    "retrieved_utc": "2026-09-17T20:54:02.832168+00:00",
+    "retrieval": {
+      "command": [
+        "curl",
+        "-q",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--max-redirs",
+        "3",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "60",
+        "--proto",
+        "=https",
+        "--proto-redir",
+        "=https",
+        "--output",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a.pdf",
+        "--write-out",
+        "%{http_code}\n%{content_type}\n%{url_effective}\n",
+        "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a.pdf"
+      ],
+      "exit": 0,
+      "stdout": "200\napplication/pdf\nhttps://mystago.gy/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a.pdf\n",
+      "stderr": ""
+    },
+    "status": "restored_verified_bytes",
+    "http_status": "200",
+    "content_type": "application/pdf",
+    "effective_url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a.pdf",
+    "sha256": "0c75179b791e4609d4dcbc090d2f5f8f9f232e2213253ff32f505dd1981277b0",
+    "bytes": 512878,
+    "pdfinfo": {
+      "command": [
+        "pdfinfo",
+        "-rawdates",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Title:           Eighteenth Sunday in Ordinary Time: Year A (Research Edition)\nSubject:         Source-audited proper exposition, PC-S42-A\nKeywords:        \nAuthor:          \nCreator:         LaTeX with hyperref\nProducer:        pdfTeX-1.40.29\nModDate:         D:20260729180407Z\nCustom Metadata: yes\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           18\nEncrypted:       no\nPage size:       612 x 792 pts (letter)\nPage rot:        0\nFile size:       512878 bytes\nOptimized:       no\nPDF version:     1.7\n",
+      "stderr": ""
+    },
+    "provider": "gpt",
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a",
+    "source_entry": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a/main.tex",
+    "source_metadata": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a/generation-metadata.tex",
+    "source_metadata_sha256": "1038092419943155149fa26091132aaf61d3fa03506d6deef37a6a4c2ffa6843",
+    "pages": 18,
+    "title": "Eighteenth Sunday in Ordinary Time: Year A (Research Edition)",
+    "subject": "Source-audited proper exposition, PC-S42-A",
+    "revision": "2026-07-29T18:04:07Z",
+    "comparisons": {
+      "pages": {
+        "actual": 18,
+        "corpus": 18
+      },
+      "title": {
+        "actual": "Eighteenth Sunday in Ordinary Time: Year A (Research Edition)",
+        "corpus": "Eighteenth Sunday in Ordinary Time: Year A (Research Edition)",
+        "source": "Eighteenth Sunday in Ordinary Time: Year A (Research Edition)"
+      },
+      "subject": {
+        "actual": "Source-audited proper exposition, PC-S42-A",
+        "corpus": "Source-audited proper exposition, PC-S42-A",
+        "source": "Source-audited proper exposition, PC-S42-A"
+      },
+      "revision": {
+        "source": "2026-07-29T18:04:07Z",
+        "corpus": "2026-07-29T18:04:07Z",
+        "pdf_moddate": "D:20260729180407Z",
+        "expected_moddate": "D:20260729180407Z"
+      }
+    },
+    "comparison_pass": true,
+    "metadata_gate": {
+      "command": [
+        "tools/check-generation-metadata",
+        "--provider",
+        "gpt",
+        "--pdf",
+        "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Generation metadata valid: 1 canonical record(s), 0 inherited record(s).\n",
+      "stderr": ""
+    },
+    "installed_utc": "2026-09-17T20:54:33.345354+00:00",
+    "installed_sha256": "0c75179b791e4609d4dcbc090d2f5f8f9f232e2213253ff32f505dd1981277b0",
+    "ignored_untracked": true
+  },
+  {
+    "destination": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b.pdf",
+    "ledger_references": [
+      "project-gpt-deep-research-redevelopment-2026-07-29/gpt-publications-verified"
+    ],
+    "url": "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b.pdf",
+    "retrieved_utc": "2026-09-17T20:54:03.193222+00:00",
+    "retrieval": {
+      "command": [
+        "curl",
+        "-q",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--max-redirs",
+        "3",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "60",
+        "--proto",
+        "=https",
+        "--proto-redir",
+        "=https",
+        "--output",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b.pdf",
+        "--write-out",
+        "%{http_code}\n%{content_type}\n%{url_effective}\n",
+        "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b.pdf"
+      ],
+      "exit": 0,
+      "stdout": "200\napplication/pdf\nhttps://mystago.gy/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b.pdf\n",
+      "stderr": ""
+    },
+    "status": "restored_verified_bytes",
+    "http_status": "200",
+    "content_type": "application/pdf",
+    "effective_url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b.pdf",
+    "sha256": "8c4e600d9d399c4899acda02370cca57c7634c5a58de2e79015627c9cd0f533f",
+    "bytes": 449234,
+    "pdfinfo": {
+      "command": [
+        "pdfinfo",
+        "-rawdates",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Title:           Eighteenth Sunday in Ordinary Time: Year B (Research Edition)\nSubject:         Source-audited proper exposition, PC-S42-B\nKeywords:        \nAuthor:          \nCreator:         LaTeX with hyperref\nProducer:        pdfTeX-1.40.29\nModDate:         D:20260729180407Z\nCustom Metadata: yes\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           16\nEncrypted:       no\nPage size:       612 x 792 pts (letter)\nPage rot:        0\nFile size:       449234 bytes\nOptimized:       no\nPDF version:     1.7\n",
+      "stderr": ""
+    },
+    "provider": "gpt",
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b",
+    "source_entry": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b/main.tex",
+    "source_metadata": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b/generation-metadata.tex",
+    "source_metadata_sha256": "c1ff3268a5963af50682031a522d99466a00112fdfe7c3ef8f3b899949a96062",
+    "pages": 16,
+    "title": "Eighteenth Sunday in Ordinary Time: Year B (Research Edition)",
+    "subject": "Source-audited proper exposition, PC-S42-B",
+    "revision": "2026-07-29T18:04:07Z",
+    "comparisons": {
+      "pages": {
+        "actual": 16,
+        "corpus": 16
+      },
+      "title": {
+        "actual": "Eighteenth Sunday in Ordinary Time: Year B (Research Edition)",
+        "corpus": "Eighteenth Sunday in Ordinary Time: Year B (Research Edition)",
+        "source": "Eighteenth Sunday in Ordinary Time: Year B (Research Edition)"
+      },
+      "subject": {
+        "actual": "Source-audited proper exposition, PC-S42-B",
+        "corpus": "Source-audited proper exposition, PC-S42-B",
+        "source": "Source-audited proper exposition, PC-S42-B"
+      },
+      "revision": {
+        "source": "2026-07-29T18:04:07Z",
+        "corpus": "2026-07-29T18:04:07Z",
+        "pdf_moddate": "D:20260729180407Z",
+        "expected_moddate": "D:20260729180407Z"
+      }
+    },
+    "comparison_pass": true,
+    "metadata_gate": {
+      "command": [
+        "tools/check-generation-metadata",
+        "--provider",
+        "gpt",
+        "--pdf",
+        "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Generation metadata valid: 1 canonical record(s), 0 inherited record(s).\n",
+      "stderr": ""
+    },
+    "installed_utc": "2026-09-17T20:54:33.352204+00:00",
+    "installed_sha256": "8c4e600d9d399c4899acda02370cca57c7634c5a58de2e79015627c9cd0f533f",
+    "ignored_untracked": true
+  },
+  {
+    "destination": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c.pdf",
+    "ledger_references": [
+      "project-gpt-deep-research-redevelopment-2026-07-29/gpt-publications-verified"
+    ],
+    "url": "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c.pdf",
+    "retrieved_utc": "2026-09-17T20:54:03.723898+00:00",
+    "retrieval": {
+      "command": [
+        "curl",
+        "-q",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--max-redirs",
+        "3",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "60",
+        "--proto",
+        "=https",
+        "--proto-redir",
+        "=https",
+        "--output",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c.pdf",
+        "--write-out",
+        "%{http_code}\n%{content_type}\n%{url_effective}\n",
+        "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c.pdf"
+      ],
+      "exit": 0,
+      "stdout": "200\napplication/pdf\nhttps://mystago.gy/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c.pdf\n",
+      "stderr": ""
+    },
+    "status": "restored_verified_bytes",
+    "http_status": "200",
+    "content_type": "application/pdf",
+    "effective_url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c.pdf",
+    "sha256": "55f8350dadef4aad0808786a789119b698d0020334849f7e19c49115dacdc7c6",
+    "bytes": 437540,
+    "pdfinfo": {
+      "command": [
+        "pdfinfo",
+        "-rawdates",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Title:           Eighteenth Sunday in Ordinary Time: Year C (Research Edition)\nSubject:         Source-audited proper exposition, PC-S42-C\nKeywords:        \nAuthor:          \nCreator:         LaTeX with hyperref\nProducer:        pdfTeX-1.40.29\nModDate:         D:20260729180407Z\nCustom Metadata: yes\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           13\nEncrypted:       no\nPage size:       612 x 792 pts (letter)\nPage rot:        0\nFile size:       437540 bytes\nOptimized:       no\nPDF version:     1.7\n",
+      "stderr": ""
+    },
+    "provider": "gpt",
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c",
+    "source_entry": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c/main.tex",
+    "source_metadata": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c/generation-metadata.tex",
+    "source_metadata_sha256": "030a90581d651f57075736ab361874dea13a2a7d6029214983c7552e2893837c",
+    "pages": 13,
+    "title": "Eighteenth Sunday in Ordinary Time: Year C (Research Edition)",
+    "subject": "Source-audited proper exposition, PC-S42-C",
+    "revision": "2026-07-29T18:04:07Z",
+    "comparisons": {
+      "pages": {
+        "actual": 13,
+        "corpus": 13
+      },
+      "title": {
+        "actual": "Eighteenth Sunday in Ordinary Time: Year C (Research Edition)",
+        "corpus": "Eighteenth Sunday in Ordinary Time: Year C (Research Edition)",
+        "source": "Eighteenth Sunday in Ordinary Time: Year C (Research Edition)"
+      },
+      "subject": {
+        "actual": "Source-audited proper exposition, PC-S42-C",
+        "corpus": "Source-audited proper exposition, PC-S42-C",
+        "source": "Source-audited proper exposition, PC-S42-C"
+      },
+      "revision": {
+        "source": "2026-07-29T18:04:07Z",
+        "corpus": "2026-07-29T18:04:07Z",
+        "pdf_moddate": "D:20260729180407Z",
+        "expected_moddate": "D:20260729180407Z"
+      }
+    },
+    "comparison_pass": true,
+    "metadata_gate": {
+      "command": [
+        "tools/check-generation-metadata",
+        "--provider",
+        "gpt",
+        "--pdf",
+        "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Generation metadata valid: 1 canonical record(s), 0 inherited record(s).\n",
+      "stderr": ""
+    },
+    "installed_utc": "2026-09-17T20:54:33.358600+00:00",
+    "installed_sha256": "55f8350dadef4aad0808786a789119b698d0020334849f7e19c49115dacdc7c6",
+    "ignored_untracked": true
+  },
+  {
+    "destination": "pdf/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf",
+    "ledger_references": [
+      "project-gpt-deep-research-redevelopment-2026-07-29/gpt-publications-verified",
+      "task-2-exorcism-100-pages/physical-pages"
+    ],
+    "url": "https://spincyc.github.io/triptych/pdf/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf",
+    "retrieved_utc": "2026-09-17T20:54:03.428789+00:00",
+    "retrieval": {
+      "command": [
+        "curl",
+        "-q",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--max-redirs",
+        "3",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "60",
+        "--proto",
+        "=https",
+        "--proto-redir",
+        "=https",
+        "--output",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf",
+        "--write-out",
+        "%{http_code}\n%{content_type}\n%{url_effective}\n",
+        "https://spincyc.github.io/triptych/pdf/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf"
+      ],
+      "exit": 0,
+      "stdout": "200\napplication/pdf\nhttps://mystago.gy/pdf/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf\n",
+      "stderr": ""
+    },
+    "status": "restored_verified_bytes",
+    "http_status": "200",
+    "content_type": "application/pdf",
+    "effective_url": "https://mystago.gy/pdf/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf",
+    "sha256": "960c517f9b4bf716f0f39cbccce32fbd8e49fc0aee58db8184822a8cad365fd8",
+    "bytes": 764589,
+    "pdfinfo": {
+      "command": [
+        "pdfinfo",
+        "-rawdates",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Title:           Catholic Exorcism: History, Discipline, and Pastoral Practice\nSubject:         A bounded comprehensive historical study\nKeywords:        \nAuthor:          \nCreator:         LaTeX with hyperref\nProducer:        pdfTeX-1.40.29\nModDate:         D:20260729191452Z\nCustom Metadata: yes\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           120\nEncrypted:       no\nPage size:       612 x 792 pts (letter)\nPage rot:        0\nFile size:       764589 bytes\nOptimized:       no\nPDF version:     1.7\n",
+      "stderr": ""
+    },
+    "provider": "gpt",
+    "document": "history/catholic-exorcism/01-history-and-current-practice",
+    "source_entry": "src/gpt/history/catholic-exorcism/01-history-and-current-practice/main.tex",
+    "source_metadata": "src/gpt/history/catholic-exorcism/01-history-and-current-practice/generation-metadata.tex",
+    "source_metadata_sha256": "089161523ba5bad479e369dde0d28c5c40302ce3139780d4b4637d04ac5dbdd4",
+    "pages": 120,
+    "title": "Catholic Exorcism: History, Discipline, and Pastoral Practice",
+    "subject": "A bounded comprehensive historical study",
+    "revision": "2026-07-29T19:14:52Z",
+    "comparisons": {
+      "pages": {
+        "actual": 120,
+        "corpus": 120
+      },
+      "title": {
+        "actual": "Catholic Exorcism: History, Discipline, and Pastoral Practice",
+        "corpus": "Catholic Exorcism: History, Discipline, and Pastoral Practice",
+        "source": "Catholic Exorcism: History, Discipline, and Pastoral Practice"
+      },
+      "subject": {
+        "actual": "A bounded comprehensive historical study",
+        "corpus": "A bounded comprehensive historical study",
+        "source": "A bounded comprehensive historical study"
+      },
+      "revision": {
+        "source": "2026-07-29T19:14:52Z",
+        "corpus": "2026-07-29T19:14:52Z",
+        "pdf_moddate": "D:20260729191452Z",
+        "expected_moddate": "D:20260729191452Z"
+      }
+    },
+    "comparison_pass": true,
+    "metadata_gate": {
+      "command": [
+        "tools/check-generation-metadata",
+        "--provider",
+        "gpt",
+        "--pdf",
+        "history/catholic-exorcism/01-history-and-current-practice",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Generation metadata valid: 1 canonical record(s), 0 inherited record(s).\n",
+      "stderr": ""
+    },
+    "installed_utc": "2026-09-17T20:54:33.365370+00:00",
+    "installed_sha256": "960c517f9b4bf716f0f39cbccce32fbd8e49fc0aee58db8184822a8cad365fd8",
+    "ignored_untracked": true
+  },
+  {
+    "destination": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive.pdf",
+    "ledger_references": [
+      "task-3-sanctuary-dictionaries/six-pdfs"
+    ],
+    "url": "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive.pdf",
+    "retrieved_utc": "2026-09-17T20:54:04.487276+00:00",
+    "retrieval": {
+      "command": [
+        "curl",
+        "-q",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--max-redirs",
+        "3",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "60",
+        "--proto",
+        "=https",
+        "--proto-redir",
+        "=https",
+        "--output",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive.pdf",
+        "--write-out",
+        "%{http_code}\n%{content_type}\n%{url_effective}\n",
+        "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive.pdf"
+      ],
+      "exit": 0,
+      "stdout": "200\napplication/pdf\nhttps://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive.pdf\n",
+      "stderr": ""
+    },
+    "status": "restored_verified_bytes",
+    "http_status": "200",
+    "content_type": "application/pdf",
+    "effective_url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive.pdf",
+    "sha256": "1d6d8e87927b671f5cbc2fe8215e80ea26a1150f92ee47084b9b6a2555668e20",
+    "bytes": 17834324,
+    "pdfinfo": {
+      "command": [
+        "pdfinfo",
+        "-rawdates",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Title:           The Illustrated Dictionary of the Roman Sanctuary\nSubject:         Pictorial dictionary at the 1962 Roman Rite horizon\nKeywords:        \nAuthor:          \nCreator:         LaTeX with hyperref\nProducer:        pdfTeX-1.40.29\nModDate:         D:20260729191452Z\nCustom Metadata: yes\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           13\nEncrypted:       no\nPage size:       612 x 792 pts (letter)\nPage rot:        0\nFile size:       17834324 bytes\nOptimized:       no\nPDF version:     1.7\n",
+      "stderr": ""
+    },
+    "provider": "gpt",
+    "document": "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive",
+    "source_entry": "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive/main.tex",
+    "source_metadata": "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive/generation-metadata.tex",
+    "source_metadata_sha256": "fcc274d6982a68f7620d49ee90581fa3873b06de7c0b2f83395261ec4b2194e6",
+    "pages": 13,
+    "title": "The Illustrated Dictionary of the Roman Sanctuary",
+    "subject": "Pictorial dictionary at the 1962 Roman Rite horizon",
+    "revision": "2026-07-29T19:14:52Z",
+    "comparisons": {
+      "pages": {
+        "actual": 13,
+        "corpus": 13
+      },
+      "title": {
+        "actual": "The Illustrated Dictionary of the Roman Sanctuary",
+        "corpus": "The Illustrated Dictionary of the Roman Sanctuary",
+        "source": "The Illustrated Dictionary of the Roman Sanctuary"
+      },
+      "subject": {
+        "actual": "Pictorial dictionary at the 1962 Roman Rite horizon",
+        "corpus": "Pictorial dictionary at the 1962 Roman Rite horizon",
+        "source": "Pictorial dictionary at the 1962 Roman Rite horizon"
+      },
+      "revision": {
+        "source": "2026-07-29T19:14:52Z",
+        "corpus": "2026-07-29T19:14:52Z",
+        "pdf_moddate": "D:20260729191452Z",
+        "expected_moddate": "D:20260729191452Z"
+      }
+    },
+    "comparison_pass": true,
+    "metadata_gate": {
+      "command": [
+        "tools/check-generation-metadata",
+        "--provider",
+        "gpt",
+        "--pdf",
+        "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Generation metadata valid: 1 canonical record(s), 0 inherited record(s).\n",
+      "stderr": ""
+    },
+    "installed_utc": "2026-09-17T20:54:33.391993+00:00",
+    "installed_sha256": "1d6d8e87927b671f5cbc2fe8215e80ea26a1150f92ee47084b9b6a2555668e20",
+    "ignored_untracked": true
+  },
+  {
+    "destination": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.pdf",
+    "ledger_references": [
+      "task-3-sanctuary-dictionaries/six-pdfs"
+    ],
+    "url": "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.pdf",
+    "retrieved_utc": "2026-09-17T20:54:04.980386+00:00",
+    "retrieval": {
+      "command": [
+        "curl",
+        "-q",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--max-redirs",
+        "3",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "60",
+        "--proto",
+        "=https",
+        "--proto-redir",
+        "=https",
+        "--output",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.pdf",
+        "--write-out",
+        "%{http_code}\n%{content_type}\n%{url_effective}\n",
+        "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.pdf"
+      ],
+      "exit": 0,
+      "stdout": "200\napplication/pdf\nhttps://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.pdf\n",
+      "stderr": ""
+    },
+    "status": "restored_verified_bytes",
+    "http_status": "200",
+    "content_type": "application/pdf",
+    "effective_url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.pdf",
+    "sha256": "064698f20dae028eb9e9c77a9d2d6add68bb378125a4ac415854bddcf2260706",
+    "bytes": 17731157,
+    "pdfinfo": {
+      "command": [
+        "pdfinfo",
+        "-rawdates",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Title:           The General Reader's Visual Dictionary\nSubject:         Pictorial dictionary at the 1962 Roman Rite horizon\nKeywords:        \nAuthor:          \nCreator:         LaTeX with hyperref\nProducer:        pdfTeX-1.40.29\nModDate:         D:20260729191452Z\nCustom Metadata: yes\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           11\nEncrypted:       no\nPage size:       612 x 792 pts (letter)\nPage rot:        0\nFile size:       17731157 bytes\nOptimized:       no\nPDF version:     1.7\n",
+      "stderr": ""
+    },
+    "provider": "gpt",
+    "document": "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader",
+    "source_entry": "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader/main.tex",
+    "source_metadata": "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader/generation-metadata.tex",
+    "source_metadata_sha256": "d6feb670ecbeb2ee0b890a6c436ec1508639657daaef2e19f43c8a526f91f9da",
+    "pages": 11,
+    "title": "The General Reader's Visual Dictionary",
+    "subject": "Pictorial dictionary at the 1962 Roman Rite horizon",
+    "revision": "2026-07-29T19:14:52Z",
+    "comparisons": {
+      "pages": {
+        "actual": 11,
+        "corpus": 11
+      },
+      "title": {
+        "actual": "The General Reader's Visual Dictionary",
+        "corpus": "The General Reader's Visual Dictionary",
+        "source": "The General Reader's Visual Dictionary"
+      },
+      "subject": {
+        "actual": "Pictorial dictionary at the 1962 Roman Rite horizon",
+        "corpus": "Pictorial dictionary at the 1962 Roman Rite horizon",
+        "source": "Pictorial dictionary at the 1962 Roman Rite horizon"
+      },
+      "revision": {
+        "source": "2026-07-29T19:14:52Z",
+        "corpus": "2026-07-29T19:14:52Z",
+        "pdf_moddate": "D:20260729191452Z",
+        "expected_moddate": "D:20260729191452Z"
+      }
+    },
+    "comparison_pass": true,
+    "metadata_gate": {
+      "command": [
+        "tools/check-generation-metadata",
+        "--provider",
+        "gpt",
+        "--pdf",
+        "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Generation metadata valid: 1 canonical record(s), 0 inherited record(s).\n",
+      "stderr": ""
+    },
+    "installed_utc": "2026-09-17T20:54:33.417084+00:00",
+    "installed_sha256": "064698f20dae028eb9e9c77a9d2d6add68bb378125a4ac415854bddcf2260706",
+    "ignored_untracked": true
+  },
+  {
+    "destination": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server.pdf",
+    "ledger_references": [
+      "task-3-sanctuary-dictionaries/six-pdfs"
+    ],
+    "url": "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server.pdf",
+    "retrieved_utc": "2026-09-17T20:54:04.834724+00:00",
+    "retrieval": {
+      "command": [
+        "curl",
+        "-q",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--max-redirs",
+        "3",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "60",
+        "--proto",
+        "=https",
+        "--proto-redir",
+        "=https",
+        "--output",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server.pdf",
+        "--write-out",
+        "%{http_code}\n%{content_type}\n%{url_effective}\n",
+        "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server.pdf"
+      ],
+      "exit": 0,
+      "stdout": "200\napplication/pdf\nhttps://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server.pdf\n",
+      "stderr": ""
+    },
+    "status": "restored_verified_bytes",
+    "http_status": "200",
+    "content_type": "application/pdf",
+    "effective_url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server.pdf",
+    "sha256": "a1c73dae1be5cdfb5c64aeb821da5858aa2bf06c1e07200f39fead0c9f6c91fd",
+    "bytes": 17888111,
+    "pdfinfo": {
+      "command": [
+        "pdfinfo",
+        "-rawdates",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Title:           The Altar Server's Visual Dictionary\nSubject:         Pictorial dictionary at the 1962 Roman Rite horizon\nKeywords:        \nAuthor:          \nCreator:         LaTeX with hyperref\nProducer:        pdfTeX-1.40.29\nModDate:         D:20260729191452Z\nCustom Metadata: yes\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           11\nEncrypted:       no\nPage size:       612 x 792 pts (letter)\nPage rot:        0\nFile size:       17888111 bytes\nOptimized:       no\nPDF version:     1.7\n",
+      "stderr": ""
+    },
+    "provider": "gpt",
+    "document": "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server",
+    "source_entry": "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server/main.tex",
+    "source_metadata": "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server/generation-metadata.tex",
+    "source_metadata_sha256": "b2e5dae73e5f8b9784c67cfcb321efd7ec6b274b860602c9bd2ce527e442ba19",
+    "pages": 11,
+    "title": "The Altar Server's Visual Dictionary",
+    "subject": "Pictorial dictionary at the 1962 Roman Rite horizon",
+    "revision": "2026-07-29T19:14:52Z",
+    "comparisons": {
+      "pages": {
+        "actual": 11,
+        "corpus": 11
+      },
+      "title": {
+        "actual": "The Altar Server's Visual Dictionary",
+        "corpus": "The Altar Server's Visual Dictionary",
+        "source": "The Altar Server's Visual Dictionary"
+      },
+      "subject": {
+        "actual": "Pictorial dictionary at the 1962 Roman Rite horizon",
+        "corpus": "Pictorial dictionary at the 1962 Roman Rite horizon",
+        "source": "Pictorial dictionary at the 1962 Roman Rite horizon"
+      },
+      "revision": {
+        "source": "2026-07-29T19:14:52Z",
+        "corpus": "2026-07-29T19:14:52Z",
+        "pdf_moddate": "D:20260729191452Z",
+        "expected_moddate": "D:20260729191452Z"
+      }
+    },
+    "comparison_pass": true,
+    "metadata_gate": {
+      "command": [
+        "tools/check-generation-metadata",
+        "--provider",
+        "gpt",
+        "--pdf",
+        "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Generation metadata valid: 1 canonical record(s), 0 inherited record(s).\n",
+      "stderr": ""
+    },
+    "installed_utc": "2026-09-17T20:54:33.441995+00:00",
+    "installed_sha256": "a1c73dae1be5cdfb5c64aeb821da5858aa2bf06c1e07200f39fead0c9f6c91fd",
+    "ignored_untracked": true
+  },
+  {
+    "destination": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer.pdf",
+    "ledger_references": [
+      "task-3-sanctuary-dictionaries/six-pdfs"
+    ],
+    "url": "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer.pdf",
+    "retrieved_utc": "2026-09-17T20:54:05.103436+00:00",
+    "retrieval": {
+      "command": [
+        "curl",
+        "-q",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--max-redirs",
+        "3",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "60",
+        "--proto",
+        "=https",
+        "--proto-redir",
+        "=https",
+        "--output",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer.pdf",
+        "--write-out",
+        "%{http_code}\n%{content_type}\n%{url_effective}\n",
+        "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer.pdf"
+      ],
+      "exit": 0,
+      "stdout": "200\napplication/pdf\nhttps://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer.pdf\n",
+      "stderr": ""
+    },
+    "status": "restored_verified_bytes",
+    "http_status": "200",
+    "content_type": "application/pdf",
+    "effective_url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer.pdf",
+    "sha256": "803f92f2239a6c2923b33185e7a66bbbcc9681d6c078d8ed1fa254fb6951df8f",
+    "bytes": 18059017,
+    "pdfinfo": {
+      "command": [
+        "pdfinfo",
+        "-rawdates",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Title:           The MC and Trainer's Visual Dictionary\nSubject:         Pictorial dictionary at the 1962 Roman Rite horizon\nKeywords:        \nAuthor:          \nCreator:         LaTeX with hyperref\nProducer:        pdfTeX-1.40.29\nModDate:         D:20260729191452Z\nCustom Metadata: yes\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           10\nEncrypted:       no\nPage size:       612 x 792 pts (letter)\nPage rot:        0\nFile size:       18059017 bytes\nOptimized:       no\nPDF version:     1.7\n",
+      "stderr": ""
+    },
+    "provider": "gpt",
+    "document": "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer",
+    "source_entry": "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer/main.tex",
+    "source_metadata": "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer/generation-metadata.tex",
+    "source_metadata_sha256": "c70f89e7c779cf8a3f368373db8e7aeb15ddc5302f768454b239e7f51bdc936d",
+    "pages": 10,
+    "title": "The MC and Trainer's Visual Dictionary",
+    "subject": "Pictorial dictionary at the 1962 Roman Rite horizon",
+    "revision": "2026-07-29T19:14:52Z",
+    "comparisons": {
+      "pages": {
+        "actual": 10,
+        "corpus": 10
+      },
+      "title": {
+        "actual": "The MC and Trainer's Visual Dictionary",
+        "corpus": "The MC and Trainer's Visual Dictionary",
+        "source": "The MC and Trainer's Visual Dictionary"
+      },
+      "subject": {
+        "actual": "Pictorial dictionary at the 1962 Roman Rite horizon",
+        "corpus": "Pictorial dictionary at the 1962 Roman Rite horizon",
+        "source": "Pictorial dictionary at the 1962 Roman Rite horizon"
+      },
+      "revision": {
+        "source": "2026-07-29T19:14:52Z",
+        "corpus": "2026-07-29T19:14:52Z",
+        "pdf_moddate": "D:20260729191452Z",
+        "expected_moddate": "D:20260729191452Z"
+      }
+    },
+    "comparison_pass": true,
+    "metadata_gate": {
+      "command": [
+        "tools/check-generation-metadata",
+        "--provider",
+        "gpt",
+        "--pdf",
+        "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Generation metadata valid: 1 canonical record(s), 0 inherited record(s).\n",
+      "stderr": ""
+    },
+    "installed_utc": "2026-09-17T20:54:33.469001+00:00",
+    "installed_sha256": "803f92f2239a6c2923b33185e7a66bbbcc9681d6c078d8ed1fa254fb6951df8f",
+    "ignored_untracked": true
+  },
+  {
+    "destination": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan.pdf",
+    "ledger_references": [
+      "task-3-sanctuary-dictionaries/six-pdfs"
+    ],
+    "url": "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan.pdf",
+    "retrieved_utc": "2026-09-17T20:54:05.772123+00:00",
+    "retrieval": {
+      "command": [
+        "curl",
+        "-q",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--max-redirs",
+        "3",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "60",
+        "--proto",
+        "=https",
+        "--proto-redir",
+        "=https",
+        "--output",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan.pdf",
+        "--write-out",
+        "%{http_code}\n%{content_type}\n%{url_effective}\n",
+        "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan.pdf"
+      ],
+      "exit": 0,
+      "stdout": "200\napplication/pdf\nhttps://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan.pdf\n",
+      "stderr": ""
+    },
+    "status": "restored_verified_bytes",
+    "http_status": "200",
+    "content_type": "application/pdf",
+    "effective_url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan.pdf",
+    "sha256": "8240b82fe9f764747fdc0bf0d8005c2c4abd64c4ee17e645a8a053c8177c09a0",
+    "bytes": 18099062,
+    "pdfinfo": {
+      "command": [
+        "pdfinfo",
+        "-rawdates",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Title:           The Sacristan's Visual Dictionary\nSubject:         Pictorial dictionary at the 1962 Roman Rite horizon\nKeywords:        \nAuthor:          \nCreator:         LaTeX with hyperref\nProducer:        pdfTeX-1.40.29\nModDate:         D:20260729191452Z\nCustom Metadata: yes\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           12\nEncrypted:       no\nPage size:       612 x 792 pts (letter)\nPage rot:        0\nFile size:       18099062 bytes\nOptimized:       no\nPDF version:     1.7\n",
+      "stderr": ""
+    },
+    "provider": "gpt",
+    "document": "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan",
+    "source_entry": "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan/main.tex",
+    "source_metadata": "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan/generation-metadata.tex",
+    "source_metadata_sha256": "dbff2c1328cc9b750b5b8c023bcee1cfe7b3e6b4777927db3e3482a530aabf4b",
+    "pages": 12,
+    "title": "The Sacristan's Visual Dictionary",
+    "subject": "Pictorial dictionary at the 1962 Roman Rite horizon",
+    "revision": "2026-07-29T19:14:52Z",
+    "comparisons": {
+      "pages": {
+        "actual": 12,
+        "corpus": 12
+      },
+      "title": {
+        "actual": "The Sacristan's Visual Dictionary",
+        "corpus": "The Sacristan's Visual Dictionary",
+        "source": "The Sacristan's Visual Dictionary"
+      },
+      "subject": {
+        "actual": "Pictorial dictionary at the 1962 Roman Rite horizon",
+        "corpus": "Pictorial dictionary at the 1962 Roman Rite horizon",
+        "source": "Pictorial dictionary at the 1962 Roman Rite horizon"
+      },
+      "revision": {
+        "source": "2026-07-29T19:14:52Z",
+        "corpus": "2026-07-29T19:14:52Z",
+        "pdf_moddate": "D:20260729191452Z",
+        "expected_moddate": "D:20260729191452Z"
+      }
+    },
+    "comparison_pass": true,
+    "metadata_gate": {
+      "command": [
+        "tools/check-generation-metadata",
+        "--provider",
+        "gpt",
+        "--pdf",
+        "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Generation metadata valid: 1 canonical record(s), 0 inherited record(s).\n",
+      "stderr": ""
+    },
+    "installed_utc": "2026-09-17T20:54:33.494480+00:00",
+    "installed_sha256": "8240b82fe9f764747fdc0bf0d8005c2c4abd64c4ee17e645a8a053c8177c09a0",
+    "ignored_untracked": true
+  },
+  {
+    "destination": "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies.pdf",
+    "ledger_references": [
+      "task-3-sanctuary-dictionaries/six-pdfs"
+    ],
+    "url": "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies.pdf",
+    "retrieved_utc": "2026-09-17T20:54:06.361279+00:00",
+    "retrieval": {
+      "command": [
+        "curl",
+        "-q",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--max-redirs",
+        "3",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "60",
+        "--proto",
+        "=https",
+        "--proto-redir",
+        "=https",
+        "--output",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies.pdf",
+        "--write-out",
+        "%{http_code}\n%{content_type}\n%{url_effective}\n",
+        "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies.pdf"
+      ],
+      "exit": 0,
+      "stdout": "200\napplication/pdf\nhttps://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies.pdf\n",
+      "stderr": ""
+    },
+    "status": "restored_verified_bytes",
+    "http_status": "200",
+    "content_type": "application/pdf",
+    "effective_url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies.pdf",
+    "sha256": "dc0da7ba4de58bb1ca4ae5c8c8d5388164a92eae9ae6348c4095961c5d7fcd2a",
+    "bytes": 24286779,
+    "pdfinfo": {
+      "command": [
+        "pdfinfo",
+        "-rawdates",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Title:           Pontifical Ceremonies Visual Reference\nSubject:         Pictorial dictionary at the 1962 Roman Rite horizon\nKeywords:        \nAuthor:          \nCreator:         LaTeX with hyperref\nProducer:        pdfTeX-1.40.29\nModDate:         D:20260729191452Z\nCustom Metadata: yes\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           16\nEncrypted:       no\nPage size:       612 x 792 pts (letter)\nPage rot:        0\nFile size:       24286779 bytes\nOptimized:       no\nPDF version:     1.7\n",
+      "stderr": ""
+    },
+    "provider": "gpt",
+    "document": "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies",
+    "source_entry": "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies/main.tex",
+    "source_metadata": "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies/generation-metadata.tex",
+    "source_metadata_sha256": "3c598445523b795e662467fe3826a163243774e12dd0b8fef8ed7a1f7ef2610a",
+    "pages": 16,
+    "title": "Pontifical Ceremonies Visual Reference",
+    "subject": "Pictorial dictionary at the 1962 Roman Rite horizon",
+    "revision": "2026-07-29T19:14:52Z",
+    "comparisons": {
+      "pages": {
+        "actual": 16,
+        "corpus": 16
+      },
+      "title": {
+        "actual": "Pontifical Ceremonies Visual Reference",
+        "corpus": "Pontifical Ceremonies Visual Reference",
+        "source": "Pontifical Ceremonies Visual Reference"
+      },
+      "subject": {
+        "actual": "Pictorial dictionary at the 1962 Roman Rite horizon",
+        "corpus": "Pictorial dictionary at the 1962 Roman Rite horizon",
+        "source": "Pictorial dictionary at the 1962 Roman Rite horizon"
+      },
+      "revision": {
+        "source": "2026-07-29T19:14:52Z",
+        "corpus": "2026-07-29T19:14:52Z",
+        "pdf_moddate": "D:20260729191452Z",
+        "expected_moddate": "D:20260729191452Z"
+      }
+    },
+    "comparison_pass": true,
+    "metadata_gate": {
+      "command": [
+        "tools/check-generation-metadata",
+        "--provider",
+        "gpt",
+        "--pdf",
+        "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Generation metadata valid: 1 canonical record(s), 0 inherited record(s).\n",
+      "stderr": ""
+    },
+    "installed_utc": "2026-09-17T20:54:33.531685+00:00",
+    "installed_sha256": "dc0da7ba4de58bb1ca4ae5c8c8d5388164a92eae9ae6348c4095961c5d7fcd2a",
+    "ignored_untracked": true
+  },
+  {
+    "destination": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata.pdf",
+    "ledger_references": [
+      "task-4-missa-cantata/installed-pdfs"
+    ],
+    "url": "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata.pdf",
+    "retrieved_utc": "2026-09-17T20:54:05.424646+00:00",
+    "retrieval": {
+      "command": [
+        "curl",
+        "-q",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--max-redirs",
+        "3",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "60",
+        "--proto",
+        "=https",
+        "--proto-redir",
+        "=https",
+        "--output",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata.pdf",
+        "--write-out",
+        "%{http_code}\n%{content_type}\n%{url_effective}\n",
+        "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata.pdf"
+      ],
+      "exit": 0,
+      "stdout": "200\napplication/pdf\nhttps://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata.pdf\n",
+      "stderr": ""
+    },
+    "status": "restored_verified_bytes",
+    "http_status": "200",
+    "content_type": "application/pdf",
+    "effective_url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata.pdf",
+    "sha256": "1338773cc10044789ffc1c76dc850d9418806823efd0d02cd3edfbfb436cb12d",
+    "bytes": 2363826,
+    "pdfinfo": {
+      "command": [
+        "pdfinfo",
+        "-rawdates",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Title:           Serving Missa Cantata\nSubject:         A complete model-roster action, response, memorization, and Roman-pronunciation guide for young servers of the 1962 Roman Missal\nKeywords:        \nAuthor:          \nCreator:         LaTeX with hyperref\nProducer:        pdfTeX-1.40.29\nModDate:         D:20260729191452Z\nCustom Metadata: yes\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           34\nEncrypted:       no\nPage size:       612 x 792 pts (letter)\nPage rot:        0\nFile size:       2363826 bytes\nOptimized:       no\nPDF version:     1.7\n",
+      "stderr": ""
+    },
+    "provider": "gpt",
+    "document": "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata",
+    "source_entry": "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata/main.tex",
+    "source_metadata": "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata/generation-metadata.tex",
+    "source_metadata_sha256": "59736f575bdc47ae3e4ffbc19027f1a2b22b9164af9dca70fde8df38ef22b09d",
+    "pages": 34,
+    "title": "Serving Missa Cantata",
+    "subject": "A complete model-roster action, response, memorization, and Roman-pronunciation guide for young servers of the 1962 Roman Missal",
+    "revision": "2026-07-29T19:14:52Z",
+    "comparisons": {
+      "pages": {
+        "actual": 34,
+        "corpus": 34
+      },
+      "title": {
+        "actual": "Serving Missa Cantata",
+        "corpus": "Serving Missa Cantata",
+        "source": "Serving Missa Cantata"
+      },
+      "subject": {
+        "actual": "A complete model-roster action, response, memorization, and Roman-pronunciation guide for young servers of the 1962 Roman Missal",
+        "corpus": "A complete model-roster action, response, memorization, and Roman-pronunciation guide for young servers of the 1962 Roman Missal",
+        "source": "A complete model-roster action, response, memorization, and Roman-pronunciation guide for young servers of the 1962 Roman Missal"
+      },
+      "revision": {
+        "source": "2026-07-29T19:14:52Z",
+        "corpus": "2026-07-29T19:14:52Z",
+        "pdf_moddate": "D:20260729191452Z",
+        "expected_moddate": "D:20260729191452Z"
+      }
+    },
+    "comparison_pass": true,
+    "metadata_gate": {
+      "command": [
+        "tools/check-generation-metadata",
+        "--provider",
+        "gpt",
+        "--pdf",
+        "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Generation metadata valid: 1 canonical record(s), 0 inherited record(s).\n",
+      "stderr": ""
+    },
+    "installed_utc": "2026-09-17T20:54:33.542044+00:00",
+    "installed_sha256": "1338773cc10044789ffc1c76dc850d9418806823efd0d02cd3edfbfb436cb12d",
+    "ignored_untracked": true
+  },
+  {
+    "destination": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.pdf",
+    "ledger_references": [
+      "task-4-missa-cantata/installed-pdfs"
+    ],
+    "url": "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.pdf",
+    "retrieved_utc": "2026-09-17T20:54:05.454569+00:00",
+    "retrieval": {
+      "command": [
+        "curl",
+        "-q",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--max-redirs",
+        "3",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "60",
+        "--proto",
+        "=https",
+        "--proto-redir",
+        "=https",
+        "--output",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.pdf",
+        "--write-out",
+        "%{http_code}\n%{content_type}\n%{url_effective}\n",
+        "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.pdf"
+      ],
+      "exit": 0,
+      "stdout": "200\napplication/pdf\nhttps://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.pdf\n",
+      "stderr": ""
+    },
+    "status": "restored_verified_bytes",
+    "http_status": "200",
+    "content_type": "application/pdf",
+    "effective_url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.pdf",
+    "sha256": "abcd27d40cf04af3cec3be36ca67f6b0a6e480e452cade65203a186f7b004909",
+    "bytes": 628470,
+    "pdfinfo": {
+      "command": [
+        "pdfinfo",
+        "-rawdates",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Title:           Missa Cantata Cue Cards\nSubject:         Six-up integrated response and action cards for young Missa Cantata servers\nKeywords:        \nAuthor:          \nCreator:         LaTeX with hyperref\nProducer:        pdfTeX-1.40.29\nModDate:         D:20260729191452Z\nCustom Metadata: yes\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           13\nEncrypted:       no\nPage size:       612 x 792 pts (letter)\nPage rot:        0\nFile size:       628470 bytes\nOptimized:       no\nPDF version:     1.7\n",
+      "stderr": ""
+    },
+    "provider": "gpt",
+    "document": "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards",
+    "source_entry": "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards/main.tex",
+    "source_metadata": "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards/generation-metadata.tex",
+    "source_metadata_sha256": "48c443b87c227fd974c4355ab049c6b9f48453944f6afc917c06c98496b64147",
+    "pages": 13,
+    "title": "Missa Cantata Cue Cards",
+    "subject": "Six-up integrated response and action cards for young Missa Cantata servers",
+    "revision": "2026-07-29T19:14:52Z",
+    "comparisons": {
+      "pages": {
+        "actual": 13,
+        "corpus": 13
+      },
+      "title": {
+        "actual": "Missa Cantata Cue Cards",
+        "corpus": "Missa Cantata Cue Cards",
+        "source": "Missa Cantata Cue Cards"
+      },
+      "subject": {
+        "actual": "Six-up integrated response and action cards for young Missa Cantata servers",
+        "corpus": "Six-up integrated response and action cards for young Missa Cantata servers",
+        "source": "Six-up integrated response and action cards for young Missa Cantata servers"
+      },
+      "revision": {
+        "source": "2026-07-29T19:14:52Z",
+        "corpus": "2026-07-29T19:14:52Z",
+        "pdf_moddate": "D:20260729191452Z",
+        "expected_moddate": "D:20260729191452Z"
+      }
+    },
+    "comparison_pass": true,
+    "metadata_gate": {
+      "command": [
+        "tools/check-generation-metadata",
+        "--provider",
+        "gpt",
+        "--pdf",
+        "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Generation metadata valid: 0 canonical record(s), 1 inherited record(s).\n",
+      "stderr": ""
+    },
+    "installed_utc": "2026-09-17T20:54:33.550255+00:00",
+    "installed_sha256": "abcd27d40cf04af3cec3be36ca67f6b0a6e480e452cade65203a186f7b004909",
+    "ignored_untracked": true
+  },
+  {
+    "destination": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass.pdf",
+    "ledger_references": [
+      "task-5-solemn-mass/installed-pdfs"
+    ],
+    "url": "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass.pdf",
+    "retrieved_utc": "2026-09-17T20:54:05.971560+00:00",
+    "retrieval": {
+      "command": [
+        "curl",
+        "-q",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--max-redirs",
+        "3",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "60",
+        "--proto",
+        "=https",
+        "--proto-redir",
+        "=https",
+        "--output",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass.pdf",
+        "--write-out",
+        "%{http_code}\n%{content_type}\n%{url_effective}\n",
+        "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass.pdf"
+      ],
+      "exit": 0,
+      "stdout": "200\napplication/pdf\nhttps://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass.pdf\n",
+      "stderr": ""
+    },
+    "status": "restored_verified_bytes",
+    "http_status": "200",
+    "content_type": "application/pdf",
+    "effective_url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass.pdf",
+    "sha256": "c026383c946a4ac48a1469fb388355f25173ed90cb931dc650a356a7c57811c9",
+    "bytes": 2707272,
+    "pdfinfo": {
+      "command": [
+        "pdfinfo",
+        "-rawdates",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Title:           Serving Solemn Mass\nSubject:         A complete model-roster action, response, memorization, and Roman-pronunciation guide for young servers of the 1962 Roman Missal\nKeywords:        \nAuthor:          \nCreator:         LaTeX with hyperref\nProducer:        pdfTeX-1.40.29\nModDate:         D:20260729191452Z\nCustom Metadata: yes\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           30\nEncrypted:       no\nPage size:       612 x 792 pts (letter)\nPage rot:        0\nFile size:       2707272 bytes\nOptimized:       no\nPDF version:     1.7\n",
+      "stderr": ""
+    },
+    "provider": "gpt",
+    "document": "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass",
+    "source_entry": "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass/main.tex",
+    "source_metadata": "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass/generation-metadata.tex",
+    "source_metadata_sha256": "c0c1b1da6d681cd9046ceb43df85251297bf1b84ff492bdffb5341e455501375",
+    "pages": 30,
+    "title": "Serving Solemn Mass",
+    "subject": "A complete model-roster action, response, memorization, and Roman-pronunciation guide for young servers of the 1962 Roman Missal",
+    "revision": "2026-07-29T19:14:52Z",
+    "comparisons": {
+      "pages": {
+        "actual": 30,
+        "corpus": 30
+      },
+      "title": {
+        "actual": "Serving Solemn Mass",
+        "corpus": "Serving Solemn Mass",
+        "source": "Serving Solemn Mass"
+      },
+      "subject": {
+        "actual": "A complete model-roster action, response, memorization, and Roman-pronunciation guide for young servers of the 1962 Roman Missal",
+        "corpus": "A complete model-roster action, response, memorization, and Roman-pronunciation guide for young servers of the 1962 Roman Missal",
+        "source": "A complete model-roster action, response, memorization, and Roman-pronunciation guide for young servers of the 1962 Roman Missal"
+      },
+      "revision": {
+        "source": "2026-07-29T19:14:52Z",
+        "corpus": "2026-07-29T19:14:52Z",
+        "pdf_moddate": "D:20260729191452Z",
+        "expected_moddate": "D:20260729191452Z"
+      }
+    },
+    "comparison_pass": true,
+    "metadata_gate": {
+      "command": [
+        "tools/check-generation-metadata",
+        "--provider",
+        "gpt",
+        "--pdf",
+        "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Generation metadata valid: 1 canonical record(s), 0 inherited record(s).\n",
+      "stderr": ""
+    },
+    "installed_utc": "2026-09-17T20:54:33.559606+00:00",
+    "installed_sha256": "c026383c946a4ac48a1469fb388355f25173ed90cb931dc650a356a7c57811c9",
+    "ignored_untracked": true
+  },
+  {
+    "destination": "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.pdf",
+    "ledger_references": [
+      "task-5-solemn-mass/installed-pdfs"
+    ],
+    "url": "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.pdf",
+    "retrieved_utc": "2026-09-17T20:54:05.894517+00:00",
+    "retrieval": {
+      "command": [
+        "curl",
+        "-q",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--max-redirs",
+        "3",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "60",
+        "--proto",
+        "=https",
+        "--proto-redir",
+        "=https",
+        "--output",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.pdf",
+        "--write-out",
+        "%{http_code}\n%{content_type}\n%{url_effective}\n",
+        "https://spincyc.github.io/triptych/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.pdf"
+      ],
+      "exit": 0,
+      "stdout": "200\napplication/pdf\nhttps://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.pdf\n",
+      "stderr": ""
+    },
+    "status": "restored_verified_bytes",
+    "http_status": "200",
+    "content_type": "application/pdf",
+    "effective_url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.pdf",
+    "sha256": "b2703a930eafcfb245f987ae48b98554d5eec2dcdaff08867d105103d2eb4ad6",
+    "bytes": 630490,
+    "pdfinfo": {
+      "command": [
+        "pdfinfo",
+        "-rawdates",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Title:           Solemn Mass Cue Cards\nSubject:         Printable response and action faces paired with the Solemn Mass training guide\nKeywords:        \nAuthor:          \nCreator:         LaTeX with hyperref\nProducer:        pdfTeX-1.40.29\nModDate:         D:20260729191452Z\nCustom Metadata: yes\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           12\nEncrypted:       no\nPage size:       612 x 792 pts (letter)\nPage rot:        0\nFile size:       630490 bytes\nOptimized:       no\nPDF version:     1.7\n",
+      "stderr": ""
+    },
+    "provider": "gpt",
+    "document": "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards",
+    "source_entry": "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards/main.tex",
+    "source_metadata": "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards/generation-metadata.tex",
+    "source_metadata_sha256": "d6aa1dda4bd01cb83eea3ddb539b911d145fc4a932c73ff99db00df4731d8a8e",
+    "pages": 12,
+    "title": "Solemn Mass Cue Cards",
+    "subject": "Printable response and action faces paired with the Solemn Mass training guide",
+    "revision": "2026-07-29T19:14:52Z",
+    "comparisons": {
+      "pages": {
+        "actual": 12,
+        "corpus": 12
+      },
+      "title": {
+        "actual": "Solemn Mass Cue Cards",
+        "corpus": "Solemn Mass Cue Cards",
+        "source": "Solemn Mass Cue Cards"
+      },
+      "subject": {
+        "actual": "Printable response and action faces paired with the Solemn Mass training guide",
+        "corpus": "Printable response and action faces paired with the Solemn Mass training guide",
+        "source": "Printable response and action faces paired with the Solemn Mass training guide"
+      },
+      "revision": {
+        "source": "2026-07-29T19:14:52Z",
+        "corpus": "2026-07-29T19:14:52Z",
+        "pdf_moddate": "D:20260729191452Z",
+        "expected_moddate": "D:20260729191452Z"
+      }
+    },
+    "comparison_pass": true,
+    "metadata_gate": {
+      "command": [
+        "tools/check-generation-metadata",
+        "--provider",
+        "gpt",
+        "--pdf",
+        "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards",
+        ".scratch/historical-pdf-restore/downloads/pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Generation metadata valid: 0 canonical record(s), 1 inherited record(s).\n",
+      "stderr": ""
+    },
+    "installed_utc": "2026-09-17T20:54:33.567438+00:00",
+    "installed_sha256": "b2703a930eafcfb245f987ae48b98554d5eec2dcdaff08867d105103d2eb4ad6",
+    "ignored_untracked": true
+  },
+  {
+    "destination": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.pdf",
+    "ledger_references": [
+      "claude-eleventh-thirteenth-after-pentecost-2026-08-19/claude-publications-verified"
+    ],
+    "url": "https://spincyc.github.io/triptych/pdf/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.pdf",
+    "retrieved_utc": "2026-09-17T20:54:06.164402+00:00",
+    "retrieval": {
+      "command": [
+        "curl",
+        "-q",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--max-redirs",
+        "3",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "60",
+        "--proto",
+        "=https",
+        "--proto-redir",
+        "=https",
+        "--output",
+        ".scratch/historical-pdf-restore/downloads/pdf/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.pdf",
+        "--write-out",
+        "%{http_code}\n%{content_type}\n%{url_effective}\n",
+        "https://spincyc.github.io/triptych/pdf/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.pdf"
+      ],
+      "exit": 0,
+      "stdout": "200\napplication/pdf\nhttps://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.pdf\n",
+      "stderr": ""
+    },
+    "status": "restored_verified_bytes",
+    "http_status": "200",
+    "content_type": "application/pdf",
+    "effective_url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.pdf",
+    "sha256": "20576607f017b22e3b01e478e561a16062b1ad35220dcc9aef868c9f19618e94",
+    "bytes": 574710,
+    "pdfinfo": {
+      "command": [
+        "pdfinfo",
+        "-rawdates",
+        ".scratch/historical-pdf-restore/downloads/pdf/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Title:           Eleventh Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)\nSubject:         Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives\nKeywords:        \nAuthor:          \nCreator:         LaTeX with hyperref\nProducer:        pdfTeX-1.40.29\nModDate:         D:20260820092701Z\nCustom Metadata: yes\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           34\nEncrypted:       no\nPage size:       612 x 792 pts (letter)\nPage rot:        0\nFile size:       574710 bytes\nOptimized:       no\nPDF version:     1.7\n",
+      "stderr": ""
+    },
+    "provider": "claude",
+    "document": "liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost",
+    "source_entry": "src/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost/main.tex",
+    "source_metadata": "src/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost/generation-metadata.tex",
+    "source_metadata_sha256": "54c7210f592ab73dcbb65f676c6dc50a55fdedee9fcf5c8cffdbbc8de4c1ff14",
+    "pages": 34,
+    "title": "Eleventh Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)",
+    "subject": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
+    "revision": "2026-08-20T09:27:01Z",
+    "comparisons": {
+      "pages": {
+        "actual": 34,
+        "corpus": 34
+      },
+      "title": {
+        "actual": "Eleventh Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)",
+        "corpus": "Eleventh Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)",
+        "source": "Eleventh Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)"
+      },
+      "subject": {
+        "actual": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
+        "corpus": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
+        "source": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives"
+      },
+      "revision": {
+        "source": "2026-08-20T09:27:01Z",
+        "corpus": "2026-08-20T09:27:01Z",
+        "pdf_moddate": "D:20260820092701Z",
+        "expected_moddate": "D:20260820092701Z"
+      }
+    },
+    "comparison_pass": true,
+    "metadata_gate": {
+      "command": [
+        "tools/check-generation-metadata",
+        "--provider",
+        "claude",
+        "--pdf",
+        "liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost",
+        ".scratch/historical-pdf-restore/downloads/pdf/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Generation metadata valid: 1 canonical record(s), 0 inherited record(s).\n",
+      "stderr": ""
+    },
+    "installed_utc": "2026-09-17T20:54:33.584759+00:00",
+    "installed_sha256": "20576607f017b22e3b01e478e561a16062b1ad35220dcc9aef868c9f19618e94",
+    "ignored_untracked": true
+  },
+  {
+    "destination": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.pdf",
+    "ledger_references": [
+      "claude-eleventh-thirteenth-after-pentecost-2026-08-19/claude-publications-verified"
+    ],
+    "url": "https://spincyc.github.io/triptych/pdf/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.pdf",
+    "retrieved_utc": "2026-09-17T20:54:06.300203+00:00",
+    "retrieval": {
+      "command": [
+        "curl",
+        "-q",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--max-redirs",
+        "3",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "60",
+        "--proto",
+        "=https",
+        "--proto-redir",
+        "=https",
+        "--output",
+        ".scratch/historical-pdf-restore/downloads/pdf/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.pdf",
+        "--write-out",
+        "%{http_code}\n%{content_type}\n%{url_effective}\n",
+        "https://spincyc.github.io/triptych/pdf/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.pdf"
+      ],
+      "exit": 0,
+      "stdout": "200\napplication/pdf\nhttps://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.pdf\n",
+      "stderr": ""
+    },
+    "status": "restored_verified_bytes",
+    "http_status": "200",
+    "content_type": "application/pdf",
+    "effective_url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.pdf",
+    "sha256": "98aeb73ba787c1406f63e2addeff5dc360f6f1dc6cc1c5191936e4efc5589a09",
+    "bytes": 589947,
+    "pdfinfo": {
+      "command": [
+        "pdfinfo",
+        "-rawdates",
+        ".scratch/historical-pdf-restore/downloads/pdf/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Title:           Twelfth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)\nSubject:         Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives\nKeywords:        \nAuthor:          \nCreator:         LaTeX with hyperref\nProducer:        pdfTeX-1.40.29\nModDate:         D:20260820093628Z\nCustom Metadata: yes\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           36\nEncrypted:       no\nPage size:       612 x 792 pts (letter)\nPage rot:        0\nFile size:       589947 bytes\nOptimized:       no\nPDF version:     1.7\n",
+      "stderr": ""
+    },
+    "provider": "claude",
+    "document": "liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost",
+    "source_entry": "src/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost/main.tex",
+    "source_metadata": "src/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost/generation-metadata.tex",
+    "source_metadata_sha256": "214e7f007c3d7e5e564bd7f3455519eba23d2ef6839adb2f70d352989245ab48",
+    "pages": 36,
+    "title": "Twelfth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)",
+    "subject": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
+    "revision": "2026-08-20T09:36:28Z",
+    "comparisons": {
+      "pages": {
+        "actual": 36,
+        "corpus": 36
+      },
+      "title": {
+        "actual": "Twelfth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)",
+        "corpus": "Twelfth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)",
+        "source": "Twelfth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)"
+      },
+      "subject": {
+        "actual": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
+        "corpus": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
+        "source": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives"
+      },
+      "revision": {
+        "source": "2026-08-20T09:36:28Z",
+        "corpus": "2026-08-20T09:36:28Z",
+        "pdf_moddate": "D:20260820093628Z",
+        "expected_moddate": "D:20260820093628Z"
+      }
+    },
+    "comparison_pass": true,
+    "metadata_gate": {
+      "command": [
+        "tools/check-generation-metadata",
+        "--provider",
+        "claude",
+        "--pdf",
+        "liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost",
+        ".scratch/historical-pdf-restore/downloads/pdf/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Generation metadata valid: 1 canonical record(s), 0 inherited record(s).\n",
+      "stderr": ""
+    },
+    "installed_utc": "2026-09-17T20:54:33.592758+00:00",
+    "installed_sha256": "98aeb73ba787c1406f63e2addeff5dc360f6f1dc6cc1c5191936e4efc5589a09",
+    "ignored_untracked": true
+  },
+  {
+    "destination": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf",
+    "ledger_references": [
+      "claude-eleventh-thirteenth-after-pentecost-2026-08-19/claude-publications-verified"
+    ],
+    "url": "https://spincyc.github.io/triptych/pdf/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf",
+    "retrieved_utc": "2026-09-17T20:54:06.495646+00:00",
+    "retrieval": {
+      "command": [
+        "curl",
+        "-q",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--max-redirs",
+        "3",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "60",
+        "--proto",
+        "=https",
+        "--proto-redir",
+        "=https",
+        "--output",
+        ".scratch/historical-pdf-restore/downloads/pdf/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf",
+        "--write-out",
+        "%{http_code}\n%{content_type}\n%{url_effective}\n",
+        "https://spincyc.github.io/triptych/pdf/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf"
+      ],
+      "exit": 0,
+      "stdout": "200\napplication/pdf\nhttps://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf\n",
+      "stderr": ""
+    },
+    "status": "restored_verified_bytes",
+    "http_status": "200",
+    "content_type": "application/pdf",
+    "effective_url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf",
+    "sha256": "972ae45194ba9cb4c5fadf676863673dd68873ac53145678ed5fae5cc5e5b734",
+    "bytes": 637623,
+    "pdfinfo": {
+      "command": [
+        "pdfinfo",
+        "-rawdates",
+        ".scratch/historical-pdf-restore/downloads/pdf/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Title:           Thirteenth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)\nSubject:         Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives\nKeywords:        \nAuthor:          \nCreator:         LaTeX with hyperref\nProducer:        pdfTeX-1.40.29\nModDate:         D:20260820095407Z\nCustom Metadata: yes\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           43\nEncrypted:       no\nPage size:       612 x 792 pts (letter)\nPage rot:        0\nFile size:       637623 bytes\nOptimized:       no\nPDF version:     1.7\n",
+      "stderr": ""
+    },
+    "provider": "claude",
+    "document": "liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost",
+    "source_entry": "src/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost/main.tex",
+    "source_metadata": "src/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost/generation-metadata.tex",
+    "source_metadata_sha256": "68a83eaf95b44237c63811a4e24966b1c357f330644c4a289d019cbd8145c69d",
+    "pages": 43,
+    "title": "Thirteenth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)",
+    "subject": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
+    "revision": "2026-08-20T09:54:07Z",
+    "comparisons": {
+      "pages": {
+        "actual": 43,
+        "corpus": 43
+      },
+      "title": {
+        "actual": "Thirteenth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)",
+        "corpus": "Thirteenth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)",
+        "source": "Thirteenth Sunday after Pentecost: 1962 Roman Missal Proper Guide (Full Edition)"
+      },
+      "subject": {
+        "actual": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
+        "corpus": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives",
+        "source": "Full source-first companion to the 1962 Roman Missal propers, including complete appointed texts, per-element reception, source-grounded and exploratory synthesis, and documented cultural afterlives"
+      },
+      "revision": {
+        "source": "2026-08-20T09:54:07Z",
+        "corpus": "2026-08-20T09:54:07Z",
+        "pdf_moddate": "D:20260820095407Z",
+        "expected_moddate": "D:20260820095407Z"
+      }
+    },
+    "comparison_pass": true,
+    "metadata_gate": {
+      "command": [
+        "tools/check-generation-metadata",
+        "--provider",
+        "claude",
+        "--pdf",
+        "liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost",
+        ".scratch/historical-pdf-restore/downloads/pdf/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf"
+      ],
+      "exit": 0,
+      "stdout": "Generation metadata valid: 1 canonical record(s), 0 inherited record(s).\n",
+      "stderr": ""
+    },
+    "installed_utc": "2026-09-17T20:54:33.600404+00:00",
+    "installed_sha256": "972ae45194ba9cb4c5fadf676863673dd68873ac53145678ed5fae5cc5e5b734",
+    "ignored_untracked": true
+  }
+]

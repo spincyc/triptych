@@ -130,6 +130,32 @@ Philanthropists* retain their supplied producer credits, wrappers and licenses.
 Those notices are part of the retained files; they are not replaced by
 Triptych's project license.
 
+The complete Latin Wikisource EPUB of Gregory the Great's *Homiliarum in
+Evangelia*, acquired on 17 September 2026, and its separately manifested text
+extraction are retained under the export's explicit
+[Creative Commons Attribution-ShareAlike 3.0 Unported
+License](https://creativecommons.org/licenses/by-sa/3.0/). The export credits
+Gregorius Magnus and contributor Mizardellorsa; the
+[work and linked homily pages](https://la.wikisource.org/wiki/Homiliarum_in_Evangelia)
+provide contributor histories. The EPUB is unchanged. The extraction keeps the
+index, preface and forty homilies in spine order, while omitting generated
+navigation, title, style, logo and About pages. Attribution and licensing remain
+in the artifact record and complete parent EPUB. Reusers must preserve those
+notices, identify changes and meet ShareAlike where required. The ancient Latin,
+the modern transcription and encoding, and the separately retained historical
+facsimile excerpts remain distinct rights objects.
+
+The other September 2026 acquisitions include complete CCEL deliveries of
+historical *Nicene and Post-Nicene Fathers* volumes, historical Latin Aquinas
+and Jerome witnesses, and a Gutenberg English *Summa* witness. Their artifact
+records state the particular U.S. public-domain basis, exact digital delivery,
+derivation, retained extent, and editorial or OCR limitations. A digital
+delivery date does not identify an unverified historical printing. OCR is a
+finding aid; a transcription is not a facsimile. Modern website wrappers and
+current Ordo pages with unresolved redistribution rights are represented by
+metadata, not retained public payloads. None of these historical texts is
+offered under Triptych's CC BY 4.0 license.
+
 ## Liturgical and Scriptural Texts
 
 Scripture, Missal formularies, Orders of Mass, rubrics, chants, and texts from
@@ -317,6 +343,12 @@ Modern before. Libertinus is supplied
 by the Libertinus Project and is not relicensed under CC BY 4.0. The installed
 font metadata identifies SIL Open Font License 1.1; the `libertinus` TeX
 support files are supplied separately under the LaTeX Project Public License.
+The three-document proper studies also use URW Palladio L from the
+[URW Base 35 distribution](https://ctan.org/tex-archive/fonts/urw/base35).
+Its Type 1 font programs identify copyright 1999 by URW++ Design & Development
+and the GNU General Public License, with an explicit exception permitting
+embedding in PostScript or PDF documents regardless of the document's license.
+These font programs likewise retain their own license rather than CC BY 4.0.
 The PDFs embed subsetted font programs. TeX packages and other build
 dependencies are external software governed by their own licenses; they are
 not vendored merely because the build invokes them.

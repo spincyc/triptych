@@ -1,0 +1,77 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "digital-text",
+   "byte_size": null,
+   "edition_owned": false,
+   "id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.ccel-text-ce371798",
+   "media_type": "text/plain",
+   "notes": null,
+   "page_count": null,
+   "retrieved": null,
+   "rights": "public-domain",
+   "rights_basis": "The exact downloadable file explicitly states Rights: Public Domain. The historical NPNF translation and editorial text are public domain in the United States; the whole CCEL download and its source credits are retained without alteration.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://ccel.org/ccel/s/schaff/npnf106/cache/npnf106.txt",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-09-17",
+  "editors": [
+   "M. B. Riddle"
+  ],
+  "id": "edition.augustine.de-consensu-evangelistarum.ccel-web-2026-09-17",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "CCEL complete NPNF 1-06 digital text",
+  "title": "The Harmony of the Gospels, S. D. F. Salmond translation in NPNF 1-06",
+  "translators": [
+   "S. D. F. Salmond"
+  ],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.ccel-text-ce371798",
+   "artifact_type": "digital-text",
+   "context": "Read both numbered paragraphs and the beginning of chapter 74 in the retained CCEL witness.",
+   "id": "passage.augustine.de-consensu-evangelistarum.ccel-web-2026-09-17.ii-73-141-142",
+   "locus": "II.73.141-142",
+   "media_type": "text/plain",
+   "notes": "Paragraph 142 literally says Mark and Luke when referring back to the parallel narrative, although the preceding comparison treats Matthew and Mark; retain this source-local wording, do not silently correct it. No printed-image or Latin collation claimed.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The exact downloadable file explicitly states Rights: Public Domain. The historical NPNF translation and editorial text are public domain in the United States; the whole CCEL download and its source credits are retained without alteration.",
+   "rights_jurisdiction": "United States",
+   "segment_id": "segment.augustine.de-consensu-evangelistarum.ccel-web-2026-09-17.complete-work",
+   "source": "physical-lines",
+   "source_url": "https://ccel.org/ccel/s/schaff/npnf106/cache/npnf106.txt",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.augustine.de-consensu-evangelistarum.ccel-web-2026-09-17.ii-73-141-142.json",
+   "verified_on": null,
+   "words": 777
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Harmony of the Gospels",
+   "On the Harmony of the Evangelists"
+  ],
+  "author": "Augustine of Hippo",
+  "category": "patristic-treatise",
+  "description": "Augustine's four books reconciling the four Gospel narratives. Book III treats the Passion and Resurrection and is the traditional Latin authority for holding that the four evangelists narrate one sequence of events; this repository reads it for that claim rather than for chronology in years, which it does not give.",
+  "id": "work.augustine.de-consensu-evangelistarum",
+  "languages": [
+   "la"
+  ],
+  "title": "De consensu evangelistarum"
+ }
+}

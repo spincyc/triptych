@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.wsexport-complete-epub-50cc6f72"
+edition_id = "edition.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17"
+artifact_type = "ebook"
+media_type = "application/epub+zip"
+storage = "tracked"
+rights_status = "licensed"
+rights_basis = "The exact EPUB metadata and its About this digital edition page explicitly offer this export under Creative Commons Attribution-ShareAlike3.0 Unported (https://creativecommons.org/licenses/by-sa/3.0/), alternatively GNU FDL. This retention elects CC-BY-SA-3.0. The EPUB credits Gregorius Magnus and contributor Mizardellorsa. Attribution and contributor history: https://la.wikisource.org/wiki/Homiliarum_in_Evangelia and its linked homily pages. The ancient underlying Latin remains public domain; the modern transcription and encoding are retained under the stated license."
+source_url = "https://ws-export.wmcloud.org/?lang=la&page=Homiliarum_in_Evangelia&format=epub-3"
+provenance = "Before acquisition, repository records were searched for Gregory the Great; Homiliae in Evangelia; Homiliarum in Evangelia; PL76; Homily19. Existing records held only Homily22 excerpts and its web witness, not a whole work. The public query site:la.wikisource.org Homiliarum in Evangelia XIX located the chapter and linked work index. Rather than retain only the chapter, the complete offered EPUB was fetched directly by curl over HTTPS, opened as a ZIP, and its manifest/spine inspected. No model mediated the acquired bytes."
+retrieved = "2026-09-17"
+sha256 = "50cc6f72a7f28c4a16e67f6d9bd13827078c03eb290be1cd50e5ed001d6a294b"
+byte_size = 307630
+indexable = false
+notes = "Whole offered EPUB: 307630 bytes; manifest contains the work index, preface and forty numbered homily members, plus navigation, title, stylesheet and About/license/credit material. Presence of all forty members establishes exported extent, not whole-work textual verification."
+license = "CC-BY-SA-3.0"
+path = "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-wikisource/artifacts/wsexport-complete-epub-50cc6f72/gregory-whole.epub"

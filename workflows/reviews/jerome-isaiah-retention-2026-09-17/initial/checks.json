@@ -1,0 +1,86 @@
+{
+  "checks": [
+    {
+      "command": "tools/tpt source-library validate > .scratch/jerome-retention-cold-review/source-library-validate.log 2>&1",
+      "exit_status": 1,
+      "result": "Ten stale publication binding fingerprints; no diagnostic in the four Jerome records.",
+      "log": ".scratch/jerome-retention-cold-review/source-library-validate.log"
+    },
+    {
+      "command": "pdfinfo .scratch/no-production/research-0/jerome-isaiah-part4.pdf > .scratch/jerome-retention-cold-review/pdfinfo.txt",
+      "exit_status": 0,
+      "result": "228 pages, 643374 bytes; 2006 digital creation/modification; text PDF, no encryption."
+    },
+    {
+      "command": "curl --location --fail --max-time 30 --silent --show-error --dump-header .scratch/jerome-retention-cold-review/independent-pdf.headers 'https://www.documentacatholicaomnia.eu/03d/0347-0420,_Hieronymus,_In_Isaiam_Pars_4,_LT.pdf' --output .scratch/jerome-retention-cold-review/independent.pdf",
+      "exit_status": 60,
+      "result": "Certificate chain could not be validated."
+    },
+    {
+      "command": "curl --insecure --location --fail --max-time 30 --silent --show-error --dump-header .scratch/jerome-retention-cold-review/independent-pdf-insecure.headers 'https://www.documentacatholicaomnia.eu/03d/0347-0420,_Hieronymus,_In_Isaiam_Pars_4,_LT.pdf' --output .scratch/jerome-retention-cold-review/independent.pdf",
+      "exit_status": 0,
+      "result": "Complete independent download; same hash and size. Certificate verification disabled and origin authentication therefore not established."
+    },
+    {
+      "command": "sha256sum .scratch/no-production/research-0/jerome-isaiah-part4.pdf .scratch/jerome-retention-cold-review/independent.pdf",
+      "exit_status": 0,
+      "result": "Both SHA-256 digests 97785e2b71a8bdc60e866af2309a205b119bce40cc16a237692a2cdda41ab7e9."
+    },
+    {
+      "command": "curl --insecure --location --fail --max-time 30 --silent --show-error 'https://www.documentacatholicaomnia.eu/' --output .scratch/jerome-retention-cold-review/dco-home.html",
+      "exit_status": 0,
+      "result": "Fetched full host homepage; copyright notice for generated HTML/program material, no established PDF redistribution basis."
+    },
+    {
+      "command": "rg -n -i '(hieronym|jerome|eusebii|isaiam|isaiah)' src/sources/works -g work.toml > .scratch/jerome-retention-cold-review/identity-alias-search.log",
+      "exit_status": 0,
+      "result": "No competing Jerome Isaiah work found within registered work metadata; shared English Isaiah title belongs separately to Aquinas."
+    },
+    {
+      "command": "pdftotext -layout -f 26 -l 31 .scratch/no-production/research-0/jerome-isaiah-part4.pdf .scratch/jerome-retention-cold-review/locus-pages-26-31.txt",
+      "exit_status": 0,
+      "result": "Source-local 55:6-9 pages 27-30 and beginning of continuation checked."
+    },
+    {
+      "command": "pdftotext -layout -f 32 -l 33 .scratch/no-production/research-0/jerome-isaiah-part4.pdf .scratch/jerome-retention-cold-review/continuation-pages-32-33.txt",
+      "exit_status": 0,
+      "result": "55:10-11 ends at top of p.32 before 12-13 heading."
+    },
+    {
+      "command": "pdftoppm -f 27 -l 30 -scale-to 1250 -png .scratch/no-production/research-0/jerome-isaiah-part4.pdf .scratch/jerome-retention-cold-review/page > .scratch/jerome-retention-cold-review/render.log 2>&1",
+      "exit_status": 0,
+      "result": "Four page rasters generated and visually inspected."
+    },
+    {
+      "command": "pdftoppm -f 1 -l 1 -scale-to 1100 -png .scratch/no-production/research-0/jerome-isaiah-part4.pdf .scratch/jerome-retention-cold-review/boundary",
+      "exit_status": 0,
+      "result": "Title, author, Pars 4, Book XV, Isaiah 54 heading visually inspected."
+    },
+    {
+      "command": "pdftoppm -f 228 -l 228 -scale-to 1100 -png .scratch/no-production/research-0/jerome-isaiah-part4.pdf .scratch/jerome-retention-cold-review/boundary",
+      "exit_status": 0,
+      "result": "Final page and FINIS visually inspected; bracketed editorial note present."
+    },
+    {
+      "command": "/usr/bin/python3 .scratch/jerome-retention-cold-review/verify.py",
+      "exit_status": 0,
+      "result": "Four subject files unchanged and both exact PDF files match snapshot hashes/size."
+    }
+  ],
+  "non_cli_access": [
+    {
+      "tool": "web.run open",
+      "urls": [
+        "https://www.documentacatholicaomnia.eu/03d/0347-0420,_Hieronymus,_In_Isaiam_Pars_4,_LT.pdf",
+        "https://www.documentacatholicaomnia.eu/"
+      ],
+      "result": "Failed: PDF timeout; homepage 502. Raw full curl downloads used instead."
+    }
+  ],
+  "skipped": [
+    {
+      "check": "Publication content, interpretation, appointments, builds, bindings repair, global inventory refresh",
+      "reason": "Excluded from this source-layer review and coordinator-owned."
+    }
+  ]
+}

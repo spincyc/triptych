@@ -1,0 +1,54 @@
+{
+  "branch": "feature/codex/propers/homily",
+  "head": "af9b2d10a98a6aac2ce44cc84d6358ede8e630e8",
+  "records": [
+    {
+      "path": "src/sources/works/jerome/commentarii-in-isaiam/editions/dco-latin-web-2026-09-17/artifacts/pars-4-pdf-97785e2b/artifact.toml",
+      "sha256": "99f227f85b1875bcd706af8595e98d79ab0282e31cf79f6f234007616ed7d8d1",
+      "byte_size": 1598,
+      "id": "artifact.jerome.commentarii-in-isaiam.dco-latin-web-2026-09-17.pars-4-pdf-97785e2b"
+    },
+    {
+      "path": "src/sources/works/jerome/commentarii-in-isaiam/editions/dco-latin-web-2026-09-17/edition.toml",
+      "sha256": "bd50a630fa3c5f31fb9fd01e6abbb05d09d4d61c60a77994c463a6d66cc1780a",
+      "byte_size": 621,
+      "id": "edition.jerome.commentarii-in-isaiam.dco-latin-web-2026-09-17"
+    },
+    {
+      "path": "src/sources/works/jerome/commentarii-in-isaiam/editions/dco-latin-web-2026-09-17/passages/15-isaiah-55-6-9.toml",
+      "sha256": "2ef2a002f331f55988f784e8b6188bb1924cf2b024db2e94332d1473c55b44d3",
+      "byte_size": 915,
+      "id": "passage.jerome.commentarii-in-isaiam.dco-latin-web-2026-09-17.15-isaiah-55-6-9"
+    },
+    {
+      "path": "src/sources/works/jerome/commentarii-in-isaiam/work.toml",
+      "sha256": "354178cec35ec8f3c62f610297a1347dbf8e892427fe5b3eb5d9da0236ec69d0",
+      "byte_size": 613,
+      "id": "work.jerome.commentarii-in-isaiam"
+    }
+  ],
+  "acquisition": {
+    "path": ".scratch/no-production/research-0/jerome-isaiah-part4.pdf",
+    "sha256": "97785e2b71a8bdc60e866af2309a205b119bce40cc16a237692a2cdda41ab7e9",
+    "byte_size": 643374,
+    "text_pages": 228,
+    "book_heads": [
+      {
+        "page": 1,
+        "heading": "LIBER DECIMUS QUINTUS."
+      },
+      {
+        "page": 47,
+        "heading": "LIBER DECIMUS SEXTUS."
+      },
+      {
+        "page": 102,
+        "heading": "LIBER DECIMUS SEPTIMUS."
+      },
+      {
+        "page": 160,
+        "heading": "LIBER DECIMUS OCTAVUS."
+      }
+    ]
+  }
+}

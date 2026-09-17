@@ -1,0 +1,91 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "web-transcription",
+   "byte_size": 229836,
+   "edition_owned": true,
+   "id": "artifact.jerome.commentaria-in-danielem.migne-pl-25-wikisource-1845.latin-text-3fe4ba4f",
+   "media_type": "text/plain",
+   "notes": "Complete offered Latin page, 81 physical lines; prologue and commentary through Susanna. The extractor’s repeated {1.0} prefixes are generated paragraph furniture, not valid native book/chapter loci: this delivery uses parenthesized CAP divisions the extractor does not recognize. Native biblical verse labels within paragraphs remain. Bare numeric page/column markers remain. No passage rises above inspected without facsimile collation.",
+   "page_count": null,
+   "retrieved": "2026-09-17",
+   "rights": "public-domain",
+   "rights_basis": "The underlying Jerome Latin and Migne 1845 printing are in the United States public domain by publication date. The existing Migne extractor removes contributor templates, host navigation and the 2013 encoding note. No modern translation is included; pre-existing source wording remains public domain.",
+   "rights_jurisdiction": "United States",
+   "source_url": null,
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "wiki-export-xml",
+   "byte_size": 233472,
+   "edition_owned": true,
+   "id": "artifact.jerome.commentaria-in-danielem.migne-pl-25-wikisource-1845.wiki-export-c56fd792",
+   "media_type": "application/xml",
+   "notes": "Complete offered current-page export, prologue through the final Susanna commentary. Access limitation: exact wrapper-bearing wiki XML is recorded remotely because its contributor markup is omitted from the public-domain derivative; the entire extracted Latin is retained and readable offline. No claim of critical-edition completeness or printed-image collation.",
+   "page_count": null,
+   "retrieved": "2026-09-17",
+   "rights": "licensed",
+   "rights_basis": "Latin Wikisource’s rightsinfo API states Creative Commons Attribution-Share Alike 4.0 for contributions. The underlying ancient Latin and 1845 printing are public domain in the United States; modern host markup is excluded from the retained Latin derivative.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://la.wikisource.org/w/index.php?title=Special:Export&pages=Commentaria%20in%20Danielem%20(Hieronymus)&curonly=1&action=submit",
+   "storage": "remote"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1845",
+  "editors": [
+   "Jacques-Paul Migne"
+  ],
+  "id": "edition.jerome.commentaria-in-danielem.migne-pl-25-wikisource-1845",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Latin Wikisource, reproducing Corpus Corporum transcription of Migne, Patrologia Latina 25",
+  "title": "Commentaria in Danielem, Latin Wikisource transcription attributed to Migne 1845",
+  "translators": [],
+  "year": 1845
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.jerome.commentaria-in-danielem.migne-pl-25-wikisource-1845.latin-text-3fe4ba4f",
+   "artifact_type": "web-transcription",
+   "context": "Read the entire paragraph containing Daniel 9:13-21, including the separate verse 17, 18, 20, 21 comments. The row is one physical line in this derivative.",
+   "id": "passage.jerome.commentaria-in-danielem.migne-pl-25-wikisource-1845.ii-daniel-9-17-21",
+   "locus": "II.Daniel.9.17-21",
+   "media_type": "text/plain",
+   "notes": "The source labels Daniel 9 explicitly before this paragraph. No separate verse 19 exposition appears in this paragraph. Book II numbering is supplied by the conventional reference and the English witness, not by the derivative’s generated {1.0} label. Printed-image collation not performed.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The underlying Jerome Latin and Migne 1845 printing are in the United States public domain by publication date. The existing Migne extractor removes contributor templates, host navigation and the 2013 encoding note. No modern translation is included; pre-existing source wording remains public domain.",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": null,
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.jerome.commentaria-in-danielem.migne-pl-25-wikisource-1845.ii-daniel-9-17-21.json",
+   "verified_on": null,
+   "words": 409
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Commentarii in Danielem",
+   "Commentariorum in Danielem libri",
+   "In Danielem"
+  ],
+  "author": "Jerome",
+  "category": "biblical-commentary",
+  "description": "Jerome's Latin commentary on Daniel, addressed by commentary book and biblical chapter and verse; book divisions vary between deliveries.",
+  "id": "work.jerome.commentaria-in-danielem",
+  "languages": [
+   "la"
+  ],
+  "title": "Commentaria in Danielem"
+ }
+}

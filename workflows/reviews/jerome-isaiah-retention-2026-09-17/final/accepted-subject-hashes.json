@@ -1,0 +1,52 @@
+{
+  "records": [
+    {
+      "path": "src/sources/works/jerome/commentarii-in-isaiam/editions/2026-09-17-dco-latin-web/artifacts/pars-4-pdf-97785e2b/artifact.toml",
+      "id": "artifact.jerome.commentarii-in-isaiam.dco-latin-web-2026-09-17.pars-4-pdf-97785e2b",
+      "sha256": "3254550e744db5ecf606f7ff943e368da72e6072daa04d5460751964aa55976b",
+      "byte_size": 3709
+    },
+    {
+      "path": "src/sources/works/jerome/commentarii-in-isaiam/editions/2026-09-17-dco-latin-web/edition.toml",
+      "id": "edition.jerome.commentarii-in-isaiam.dco-latin-web-2026-09-17",
+      "sha256": "bd50a630fa3c5f31fb9fd01e6abbb05d09d4d61c60a77994c463a6d66cc1780a",
+      "byte_size": 621
+    },
+    {
+      "path": "src/sources/works/jerome/commentarii-in-isaiam/editions/2026-09-17-dco-latin-web/passages/15-isaiah-55-6-9.toml",
+      "id": "passage.jerome.commentarii-in-isaiam.dco-latin-web-2026-09-17.15-isaiah-55-6-9",
+      "sha256": "cefc158cce448b43b3b25a3356bdfcbba681cc02792802152df70610c7ce1f30",
+      "byte_size": 944
+    },
+    {
+      "path": "src/sources/works/jerome/commentarii-in-isaiam/work.toml",
+      "id": "work.jerome.commentarii-in-isaiam",
+      "sha256": "354178cec35ec8f3c62f610297a1347dbf8e892427fe5b3eb5d9da0236ec69d0",
+      "byte_size": 613
+    }
+  ],
+  "pdf_sha256": "97785e2b71a8bdc60e866af2309a205b119bce40cc16a237692a2cdda41ab7e9",
+  "pdf_byte_size": 643374,
+  "stable_ids_preserved": true,
+  "old_paths_absent": true,
+  "prior_reports_unchanged": true,
+  "verdict": "PASS",
+  "scope": "Four exact Jerome source metadata/retention records only; no redistribution clearance, historical-edition authentication, publication interpretation, appointment, or evidence-sufficiency acceptance.",
+  "branch": "feature/codex/propers/homily",
+  "head": "af9b2d10a98a6aac2ce44cc84d6358ede8e630e8",
+  "checks": [
+    {
+      "command": "tools/tpt source-library validate > .scratch/jerome-retention-cold-review/final-validation.log 2>&1",
+      "exit_status": 0
+    },
+    {
+      "command": "/usr/bin/python3 .scratch/jerome-retention-cold-review/final-verify.py > .scratch/jerome-retention-cold-review/final-verify.log 2>&1",
+      "exit_status": 0
+    }
+  ],
+  "review": {
+    "path": ".scratch/jerome-retention-cold-review/final-rereview.md",
+    "sha256": "99c3981985cd08f3975898ac851c67aa2e9447ec62bb093121408a0b6f9ac590"
+  },
+  "subject_files_mutated_by_reviewer": false
+}

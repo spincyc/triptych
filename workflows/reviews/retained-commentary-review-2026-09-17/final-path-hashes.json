@@ -1,0 +1,872 @@
+{
+  "branch": "feature/codex/propers/homily",
+  "head": "af9b2d10a98a6aac2ce44cc84d6358ede8e630e8",
+  "scope_file_count": 126,
+  "files": [
+    {
+      "path": "src/sources/works/augustine/de-consensu-evangelistarum/editions/2026-09-17-ccel-web/edition.toml",
+      "sha256": "f4d925ee053835651b32dc0f8865e9842e3a6b7e981b727555a3589fca60f282",
+      "byte_size": 565,
+      "record_type": "edition",
+      "id": "edition.augustine.de-consensu-evangelistarum.ccel-web-2026-09-17"
+    },
+    {
+      "path": "src/sources/works/augustine/de-consensu-evangelistarum/editions/2026-09-17-ccel-web/passages/ii-73-141-142.toml",
+      "sha256": "11769786ced28853325d5a446dda79204572d7ca6100bda45610bd4202008ab1",
+      "byte_size": 862,
+      "record_type": "passage",
+      "id": "passage.augustine.de-consensu-evangelistarum.ccel-web-2026-09-17.ii-73-141-142"
+    },
+    {
+      "path": "src/sources/works/augustine/de-consensu-evangelistarum/editions/2026-09-17-ccel-web/segments/complete-work.toml",
+      "sha256": "26f141173924dedc5d9d91d0d1e3eb18687b4076f776fe95795131c5399b4110",
+      "byte_size": 628,
+      "record_type": "segment",
+      "id": "segment.augustine.de-consensu-evangelistarum.ccel-web-2026-09-17.complete-work"
+    },
+    {
+      "path": "src/sources/works/augustine/de-doctrina-christiana/editions/2026-09-17-ccel-web/edition.toml",
+      "sha256": "5c9632ebe66a0c1cdb8e91c49de55e19137ad59ac4489405cd5f942feeded203",
+      "byte_size": 631,
+      "record_type": "edition",
+      "id": "edition.augustine.de-doctrina-christiana.ccel-web-2026-09-17"
+    },
+    {
+      "path": "src/sources/works/augustine/de-doctrina-christiana/editions/2026-09-17-ccel-web/passages/i-22-20-21.toml",
+      "sha256": "12de42643ff6ea4b863bc69225f8f27ac89986cf0a9505201f348a63f5b6596f",
+      "byte_size": 735,
+      "record_type": "passage",
+      "id": "passage.augustine.de-doctrina-christiana.ccel-web-2026-09-17.i-22-20-21"
+    },
+    {
+      "path": "src/sources/works/augustine/de-doctrina-christiana/editions/2026-09-17-ccel-web/passages/i-30.toml",
+      "sha256": "51bbb5b595d1c041851c552c29ca600ddf4ac0854fdd10d9a6d2e114046b9409",
+      "byte_size": 723,
+      "record_type": "passage",
+      "id": "passage.augustine.de-doctrina-christiana.ccel-web-2026-09-17.i-30"
+    },
+    {
+      "path": "src/sources/works/augustine/de-doctrina-christiana/editions/2026-09-17-ccel-web/segments/complete-work.toml",
+      "sha256": "a8da1911753a305060b202b21aa9e6ad5ef427fd44cc9fbd39821fc7f3276fff",
+      "byte_size": 621,
+      "record_type": "segment",
+      "id": "segment.augustine.de-doctrina-christiana.ccel-web-2026-09-17.complete-work"
+    },
+    {
+      "path": "src/sources/works/augustine/de-doctrina-christiana/work.toml",
+      "sha256": "ef320d5c13968d495042a9427199c161a7a8516717d9e58df4b6d3ad0b1bf9e1",
+      "byte_size": 704,
+      "record_type": "work",
+      "id": "work.augustine.de-doctrina-christiana"
+    },
+    {
+      "path": "src/sources/works/augustine/de-praedestinatione-sanctorum/editions/2026-09-17-ccel-web/edition.toml",
+      "sha256": "ce131874eca75f9c08287da620dab5e41ce0e949d38cc5de34b0ae025fc446b6",
+      "byte_size": 743,
+      "record_type": "edition",
+      "id": "edition.augustine.de-praedestinatione-sanctorum.ccel-web-2026-09-17"
+    },
+    {
+      "path": "src/sources/works/augustine/de-praedestinatione-sanctorum/editions/2026-09-17-ccel-web/passages/1.41.toml",
+      "sha256": "1e5b024830ad6428ce415109bccecae4bf5c344829e0bcaa5b8d728c211ad324",
+      "byte_size": 801,
+      "record_type": "passage",
+      "id": "passage.augustine.de-praedestinatione-sanctorum.ccel-web-2026-09-17.1.41"
+    },
+    {
+      "path": "src/sources/works/augustine/de-praedestinatione-sanctorum/editions/2026-09-17-ccel-web/segments/book-1.toml",
+      "sha256": "a93a63451c2f8bfe21ad7a61174d31e58882144b38667e4914a99d40979f915a",
+      "byte_size": 649,
+      "record_type": "segment",
+      "id": "segment.augustine.de-praedestinatione-sanctorum.ccel-web-2026-09-17.book-1"
+    },
+    {
+      "path": "src/sources/works/augustine/de-praedestinatione-sanctorum/work.toml",
+      "sha256": "3c2d78769a89782d475a3445e578f1c918ee756acbeb4fa2b5dbd99b62f39a83",
+      "byte_size": 707,
+      "record_type": "work",
+      "id": "work.augustine.de-praedestinatione-sanctorum"
+    },
+    {
+      "path": "src/sources/works/augustine/in-iohannis-evangelium-tractatus/editions/2026-09-17-ccel-web/edition.toml",
+      "sha256": "e7017f8189fd26378b0cbf2bbdd277ec10720678dc335627ccefc8dd81e5b221",
+      "byte_size": 758,
+      "record_type": "edition",
+      "id": "edition.augustine.in-iohannis-evangelium-tractatus.ccel-web-2026-09-17"
+    },
+    {
+      "path": "src/sources/works/augustine/in-iohannis-evangelium-tractatus/editions/2026-09-17-ccel-web/passages/47.1.toml",
+      "sha256": "93f1a42cf0b913eddb85adc835fd5dbcb9b06931dbeb2d92adcc23523acca430",
+      "byte_size": 745,
+      "record_type": "passage",
+      "id": "passage.augustine.in-iohannis-evangelium-tractatus.ccel-web-2026-09-17.47.1"
+    },
+    {
+      "path": "src/sources/works/augustine/in-iohannis-evangelium-tractatus/editions/2026-09-17-ccel-web/passages/47.2.toml",
+      "sha256": "03924e98bddc39b28e53fe3860c83263a08d8a067daf8e47e89aba14921131f3",
+      "byte_size": 745,
+      "record_type": "passage",
+      "id": "passage.augustine.in-iohannis-evangelium-tractatus.ccel-web-2026-09-17.47.2"
+    },
+    {
+      "path": "src/sources/works/augustine/in-iohannis-evangelium-tractatus/editions/2026-09-17-ccel-web/passages/47.3.toml",
+      "sha256": "1744edf4dbece318900a98d6d1e61492d7de1f3c75a2423ea144590ea13237a8",
+      "byte_size": 745,
+      "record_type": "passage",
+      "id": "passage.augustine.in-iohannis-evangelium-tractatus.ccel-web-2026-09-17.47.3"
+    },
+    {
+      "path": "src/sources/works/augustine/in-iohannis-evangelium-tractatus/editions/2026-09-17-ccel-web/passages/47.4.toml",
+      "sha256": "3ee7ae0bf6be65d103c5e947092b82cec896c0d02135cc1591cd75f412fc899a",
+      "byte_size": 745,
+      "record_type": "passage",
+      "id": "passage.augustine.in-iohannis-evangelium-tractatus.ccel-web-2026-09-17.47.4"
+    },
+    {
+      "path": "src/sources/works/augustine/in-iohannis-evangelium-tractatus/editions/2026-09-17-ccel-web/segments/tractate-47.toml",
+      "sha256": "3d690addb0c2faf41c7918c39e6717f961e2f2fbfb838662e995de9c1e668610",
+      "byte_size": 666,
+      "record_type": "segment",
+      "id": "segment.augustine.in-iohannis-evangelium-tractatus.ccel-web-2026-09-17.tractate-47"
+    },
+    {
+      "path": "src/sources/works/augustine/sermo-87/editions/2026-09-17-ccel-web/edition.toml",
+      "sha256": "2d514711900cc1ca04eb459df0a4b8a6a3c13c1845560ecadf18b9744bdc9f1e",
+      "byte_size": 680,
+      "record_type": "edition",
+      "id": "edition.augustine.sermo-87.ccel-web-2026-09-17"
+    },
+    {
+      "path": "src/sources/works/augustine/sermo-87/editions/2026-09-17-ccel-web/passages/1-10-and-14-15.toml",
+      "sha256": "1bcbf29392e15529d81d510c5360fca7b189e0f35051f802babc7b61ba9c2081",
+      "byte_size": 811,
+      "record_type": "passage",
+      "id": "passage.augustine.sermo-87.ccel-web-2026-09-17.1-10-and-14-15"
+    },
+    {
+      "path": "src/sources/works/augustine/sermo-87/editions/2026-09-17-ccel-web/segments/complete-sermon.toml",
+      "sha256": "88b30c5f197217741f8487dd8707acbd2d5732bab35710be823958b5c09306cf",
+      "byte_size": 600,
+      "record_type": "segment",
+      "id": "segment.augustine.sermo-87.ccel-web-2026-09-17.complete-sermon"
+    },
+    {
+      "path": "src/sources/works/augustine/sermo-87/work.toml",
+      "sha256": "1eab475f5cf55470489b3d4bae62321b44f3a79cec52bbe4d8a7c10d92ab7562",
+      "byte_size": 668,
+      "record_type": "work",
+      "id": "work.augustine.sermo-87"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ia-bookreader-leaf-427-203fc51d/artifact.toml",
+      "sha256": "345b8933263ceb1dbe2273a5f68dd872ea48e5807e97603504e3e55a05f51dec",
+      "byte_size": 1929,
+      "record_type": "artifact",
+      "id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-427-203fc51d"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ia-bookreader-leaf-427-203fc51d/source.jpg",
+      "sha256": "203fc51d3a46aa04cb55c9d65cbfea45cf1e4b26f5c24d20fb8ee13b5c708acb",
+      "byte_size": 1173965,
+      "record_type": "payload"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/pentecost-17-continuation.toml",
+      "sha256": "4e7d0e790ec286b86d2030d295a5ffaca51b34e00f6b74b43950101058414b6b",
+      "byte_size": 950,
+      "record_type": "passage",
+      "id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.pentecost-17-continuation"
+    },
+    {
+      "path": "src/sources/works/fssp-france/ordo-du-mois/editions/2026-09-17-web/artifacts/html-aa1c6f16/artifact.toml",
+      "sha256": "b470e18419e838d19fb52b2c74e8970f1ee389f4f9357934eb2e247e7ef7ef99",
+      "byte_size": 1531,
+      "record_type": "artifact",
+      "id": "artifact.fssp-france.ordo-du-mois.web-2026-09-17.html-aa1c6f16"
+    },
+    {
+      "path": "src/sources/works/fssp-france/ordo-du-mois/editions/2026-09-17-web/edition.toml",
+      "sha256": "6fca05948c41f4710c29255c86a25749462c8dbf6f2d60e464f9ab0ebfcf8b95",
+      "byte_size": 486,
+      "record_type": "edition",
+      "id": "edition.fssp-france.ordo-du-mois.web-2026-09-17"
+    },
+    {
+      "path": "src/sources/works/fssp-france/ordo-du-mois/editions/2026-09-17-web/passages/2026-09-20.toml",
+      "sha256": "b8fdfa51da2941f08c3ce1f9f325e4ebe0101091f5f173e35254b231c6399197",
+      "byte_size": 725,
+      "record_type": "passage",
+      "id": "passage.fssp-france.ordo-du-mois.web-2026-09-17.2026-09-20"
+    },
+    {
+      "path": "src/sources/works/fssp-france/ordo-du-mois/work.toml",
+      "sha256": "dcc1ec1d20557acd48c3c896c3865a0cb9c98634ebcac8dd6d789a3d7d841450",
+      "byte_size": 742,
+      "record_type": "work",
+      "id": "work.fssp-france.ordo-du-mois"
+    },
+    {
+      "path": "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-pl76-facsimile/artifacts/dco-complete-pdf-af9ea4a1/artifact.toml",
+      "sha256": "961ccfaf829aa9b59259ebbd7d9509502322a9c9407ef47a606c7bca1980e271",
+      "byte_size": 1661,
+      "record_type": "artifact",
+      "id": "artifact.gregory-the-great.homiliae-in-evangelia.pl76-facsimile-web-2026-09-17.dco-complete-pdf-af9ea4a1"
+    },
+    {
+      "path": "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-pl76-facsimile/artifacts/homily19-facsimile-pages-c122ee50/artifact.toml",
+      "sha256": "5ccf5763a62019cfba523fa7c49f4c8c4318d08e7fdf1d180cb437438fb99118",
+      "byte_size": 2212,
+      "record_type": "artifact",
+      "id": "artifact.gregory-the-great.homiliae-in-evangelia.pl76-facsimile-web-2026-09-17.homily19-facsimile-pages-c122ee50"
+    },
+    {
+      "path": "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-pl76-facsimile/artifacts/homily19-facsimile-pages-c122ee50/gregory-homily19-pages.pdf",
+      "sha256": "c122ee50b1e2065719bd2c8794fd751a4146e5075e9e9d63abf8eb0407e9e757",
+      "byte_size": 841454,
+      "record_type": "payload"
+    },
+    {
+      "path": "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-pl76-facsimile/edition.toml",
+      "sha256": "efe5235b586c4d15c988197995320f01ae8caa7c8029aeee4a7b15257872c4de",
+      "byte_size": 684,
+      "record_type": "edition",
+      "id": "edition.gregory-the-great.homiliae-in-evangelia.pl76-facsimile-web-2026-09-17"
+    },
+    {
+      "path": "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-pl76-facsimile/passages/19.1-6.toml",
+      "sha256": "10b09d92c2630ec3caeb363ec75100e898f2addecd40ebdde674ed83b4acca1f",
+      "byte_size": 980,
+      "record_type": "passage",
+      "id": "passage.gregory-the-great.homiliae-in-evangelia.pl76-facsimile-web-2026-09-17.19.1-6"
+    },
+    {
+      "path": "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-wikisource/artifacts/complete-extracted-text-dc25dd69/artifact.toml",
+      "sha256": "3879d5bdd6491cc4d1c019a5178356e2a167a199122daede03de13f7c5728228",
+      "byte_size": 2440,
+      "record_type": "artifact",
+      "id": "artifact.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.complete-extracted-text-dc25dd69"
+    },
+    {
+      "path": "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-wikisource/artifacts/complete-extracted-text-dc25dd69/gregory-whole.txt",
+      "sha256": "dc25dd691b3ed44100e8417b7cdad9e6120753cf60bc59b80c7c3239471e618d",
+      "byte_size": 629050,
+      "record_type": "payload"
+    },
+    {
+      "path": "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-wikisource/artifacts/wsexport-complete-epub-50cc6f72/artifact.toml",
+      "sha256": "e29bf61af49557c0c1693386188b36ba9cc8ad2e2601eb4950a0a14a2b2253af",
+      "byte_size": 2188,
+      "record_type": "artifact",
+      "id": "artifact.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.wsexport-complete-epub-50cc6f72"
+    },
+    {
+      "path": "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-wikisource/artifacts/wsexport-complete-epub-50cc6f72/gregory-whole.epub",
+      "sha256": "50cc6f72a7f28c4a16e67f6d9bd13827078c03eb290be1cd50e5ed001d6a294b",
+      "byte_size": 307630,
+      "record_type": "payload"
+    },
+    {
+      "path": "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-wikisource/edition.toml",
+      "sha256": "50d4337a534e27027152b091a6020ac6f25e3b3507a620f472bfe912b95110c9",
+      "byte_size": 672,
+      "record_type": "edition",
+      "id": "edition.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17"
+    },
+    {
+      "path": "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-wikisource/passages/19.1-6.toml",
+      "sha256": "d00cfe53a26249e96efefb9d3e9989f1fb15859c6e5ef803c7c0778bf7839fe8",
+      "byte_size": 1029,
+      "record_type": "passage",
+      "id": "passage.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.19.1-6"
+    },
+    {
+      "path": "src/sources/works/icrsp-france/ordo/editions/2026-09-17-web/artifacts/html-0c6c1fd5/artifact.toml",
+      "sha256": "049c5ed32d4e1ddf1658f2536a9f976fdbb58758232c05559a739e5ff8c11d9e",
+      "byte_size": 1516,
+      "record_type": "artifact",
+      "id": "artifact.icrsp-france.ordo.web-2026-09-17.html-0c6c1fd5"
+    },
+    {
+      "path": "src/sources/works/icrsp-france/ordo/editions/2026-09-17-web/edition.toml",
+      "sha256": "ed7a109eca467781f2c17d6bb254ecf02ca91df9cc10bd6ddb7507d82a31c358",
+      "byte_size": 467,
+      "record_type": "edition",
+      "id": "edition.icrsp-france.ordo.web-2026-09-17"
+    },
+    {
+      "path": "src/sources/works/icrsp-france/ordo/editions/2026-09-17-web/passages/2026-09-20.toml",
+      "sha256": "a6b4e7cb4c3189595e9e5cb5df4268a58ba102b69d27d8a024279f37c1c65b45",
+      "byte_size": 906,
+      "record_type": "passage",
+      "id": "passage.icrsp-france.ordo.web-2026-09-17.2026-09-20"
+    },
+    {
+      "path": "src/sources/works/icrsp-france/ordo/work.toml",
+      "sha256": "02983304fdcbf6777e8cbb85685e839233f808c1bcd2efffb73059a0133898f9",
+      "byte_size": 730,
+      "record_type": "work",
+      "id": "work.icrsp-france.ordo"
+    },
+    {
+      "path": "src/sources/works/irenaeus/adversus-haereses/editions/roberts-rambaut-coxe-anf1-1887/passages/2.13.3-4.ocr.toml",
+      "sha256": "b1cf781d427b6ea96f37424a1a65856933d69ab06fffd3ed1117d8cf32161310",
+      "byte_size": 840,
+      "record_type": "passage",
+      "id": "passage.irenaeus.adversus-haereses.roberts-rambaut-coxe-anf1-1887.2.13.3-4.ocr"
+    },
+    {
+      "path": "src/sources/works/jerome/commentaria-in-danielem/editions/1845-migne-pl-25-wikisource/artifacts/latin-text-3fe4ba4f/artifact.toml",
+      "sha256": "d62f1f13adebdcf63a6734334c5c657295a109a16415008570f4d504ec6b1068",
+      "byte_size": 2187,
+      "record_type": "artifact",
+      "id": "artifact.jerome.commentaria-in-danielem.migne-pl-25-wikisource-1845.latin-text-3fe4ba4f"
+    },
+    {
+      "path": "src/sources/works/jerome/commentaria-in-danielem/editions/1845-migne-pl-25-wikisource/artifacts/latin-text-3fe4ba4f/source.txt",
+      "sha256": "3fe4ba4f9f3fe24f1bf0024f89cf470ee77a06591ee7b05b965ac0e4d47ad1c4",
+      "byte_size": 229836,
+      "record_type": "payload"
+    },
+    {
+      "path": "src/sources/works/jerome/commentaria-in-danielem/editions/1845-migne-pl-25-wikisource/artifacts/wiki-export-c56fd792/artifact.toml",
+      "sha256": "da38cb26afd13ac84c39fc4b02f1dd4240d0a18c7cd166ef8602f9999afdf35b",
+      "byte_size": 1717,
+      "record_type": "artifact",
+      "id": "artifact.jerome.commentaria-in-danielem.migne-pl-25-wikisource-1845.wiki-export-c56fd792"
+    },
+    {
+      "path": "src/sources/works/jerome/commentaria-in-danielem/editions/1845-migne-pl-25-wikisource/edition.toml",
+      "sha256": "01fdf588eb4dcf35c239be303324c1b7e17164f5487b97ca8df69c18ab66b968",
+      "byte_size": 766,
+      "record_type": "edition",
+      "id": "edition.jerome.commentaria-in-danielem.migne-pl-25-wikisource-1845"
+    },
+    {
+      "path": "src/sources/works/jerome/commentaria-in-danielem/editions/1845-migne-pl-25-wikisource/passages/ii-daniel-9-17-21.toml",
+      "sha256": "5398c49279cf7598912ef5f29dedbac6bbc7057a2570c4677d252274f8e7e408",
+      "byte_size": 979,
+      "record_type": "passage",
+      "id": "passage.jerome.commentaria-in-danielem.migne-pl-25-wikisource-1845.ii-daniel-9-17-21"
+    },
+    {
+      "path": "src/sources/works/jerome/commentaria-in-danielem/work.toml",
+      "sha256": "e360ebf8e8a5d30f54c903f3acdfabe0161caf60ed5fb10d6c3232092f783da0",
+      "byte_size": 730,
+      "record_type": "work",
+      "id": "work.jerome.commentaria-in-danielem"
+    },
+    {
+      "path": "src/sources/works/john-chrysostom/homiliae-in-matthaeum/editions/2026-09-17-ccel-web/edition.toml",
+      "sha256": "9680650876dea2cd866d4f8ef04dce01afd22e36f689ab1f5a10f440de0ef179",
+      "byte_size": 732,
+      "record_type": "edition",
+      "id": "edition.john-chrysostom.homiliae-in-matthaeum.ccel-web-2026-09-17"
+    },
+    {
+      "path": "src/sources/works/john-chrysostom/homiliae-in-matthaeum/editions/2026-09-17-ccel-web/passages/64.3.toml",
+      "sha256": "7c38192d3862848d9086097919880ee50d6ea793a150b338c6101b628289cf74",
+      "byte_size": 753,
+      "record_type": "passage",
+      "id": "passage.john-chrysostom.homiliae-in-matthaeum.ccel-web-2026-09-17.64.3"
+    },
+    {
+      "path": "src/sources/works/john-chrysostom/homiliae-in-matthaeum/editions/2026-09-17-ccel-web/passages/64.4.toml",
+      "sha256": "1d98080e948932de036d4a38a43a7c33491a2b7459a2b5171800bca6a2752571",
+      "byte_size": 753,
+      "record_type": "passage",
+      "id": "passage.john-chrysostom.homiliae-in-matthaeum.ccel-web-2026-09-17.64.4"
+    },
+    {
+      "path": "src/sources/works/john-chrysostom/homiliae-in-matthaeum/editions/2026-09-17-ccel-web/passages/64.5.toml",
+      "sha256": "c441ce00fbd7484e4eb77ed71dc32b04150bf2e4600781cb748244d4c9c222c0",
+      "byte_size": 753,
+      "record_type": "passage",
+      "id": "passage.john-chrysostom.homiliae-in-matthaeum.ccel-web-2026-09-17.64.5"
+    },
+    {
+      "path": "src/sources/works/john-chrysostom/homiliae-in-matthaeum/editions/2026-09-17-ccel-web/passages/homily-71.toml",
+      "sha256": "8d31f2749beb148ba15b61acf8e03144340217707fd2948325f3b6c5899a7338",
+      "byte_size": 893,
+      "record_type": "passage",
+      "id": "passage.john-chrysostom.homiliae-in-matthaeum.ccel-web-2026-09-17.homily-71"
+    },
+    {
+      "path": "src/sources/works/john-chrysostom/homiliae-in-matthaeum/editions/2026-09-17-ccel-web/segments/complete-homilies.toml",
+      "sha256": "c7699371f46a9ecc00bf129d4476ad651ec4a61ce859d1b2b32019296f87c3d3",
+      "byte_size": 638,
+      "record_type": "segment",
+      "id": "segment.john-chrysostom.homiliae-in-matthaeum.ccel-web-2026-09-17.complete-homilies"
+    },
+    {
+      "path": "src/sources/works/john-chrysostom/homilies-on-acts/editions/2026-09-17-ccel-web/edition.toml",
+      "sha256": "4d0a75855168f30152f252b87bdee76ad48bddbb5bc7eb4ee765445f5aa00ec9",
+      "byte_size": 737,
+      "record_type": "edition",
+      "id": "edition.john-chrysostom.homilies-on-acts.ccel-web-2026-09-17"
+    },
+    {
+      "path": "src/sources/works/john-chrysostom/homilies-on-acts/editions/2026-09-17-ccel-web/passages/35.acts-16.13-15.toml",
+      "sha256": "cd3626e0ab439535726fc53f154ed5f9ca2296d45f2ee1fbde74e3c04009fcaa",
+      "byte_size": 875,
+      "record_type": "passage",
+      "id": "passage.john-chrysostom.homilies-on-acts.ccel-web-2026-09-17.35.acts-16.13-15"
+    },
+    {
+      "path": "src/sources/works/john-chrysostom/homilies-on-acts/editions/2026-09-17-ccel-web/segments/homily-35.toml",
+      "sha256": "645faf0303e1aae8a7c263d3fa615f26e4caf8b83a8b58c51cb44317c1d867bf",
+      "byte_size": 643,
+      "record_type": "segment",
+      "id": "segment.john-chrysostom.homilies-on-acts.ccel-web-2026-09-17.homily-35"
+    },
+    {
+      "path": "src/sources/works/john-chrysostom/homilies-on-acts/work.toml",
+      "sha256": "715eb1e6d6513b5da1e5ca4f7c33769956625a92e7c00114652181fe4dacd9ae",
+      "byte_size": 672,
+      "record_type": "work",
+      "id": "work.john-chrysostom.homilies-on-acts"
+    },
+    {
+      "path": "src/sources/works/john-chrysostom/homilies-on-philippians/editions/2026-09-17-ccel-web/edition.toml",
+      "sha256": "abead1e26a60208687c2ad07b4c2634b10eeacd4627d922aaeb4d22703d983c7",
+      "byte_size": 738,
+      "record_type": "edition",
+      "id": "edition.john-chrysostom.homilies-on-philippians.ccel-web-2026-09-17"
+    },
+    {
+      "path": "src/sources/works/john-chrysostom/homilies-on-philippians/editions/2026-09-17-ccel-web/passages/3.toml",
+      "sha256": "61e41e6f7104ae63077d08357706ff3d59ab926124afaab9d0a52382237b9a44",
+      "byte_size": 808,
+      "record_type": "passage",
+      "id": "passage.john-chrysostom.homilies-on-philippians.ccel-web-2026-09-17.3"
+    },
+    {
+      "path": "src/sources/works/john-chrysostom/homilies-on-philippians/editions/2026-09-17-ccel-web/passages/4.toml",
+      "sha256": "fb5a4912917e1e02eacba0fd7a20cb64d93d133cb92dff45c4547304c67d7bbc",
+      "byte_size": 807,
+      "record_type": "passage",
+      "id": "passage.john-chrysostom.homilies-on-philippians.ccel-web-2026-09-17.4"
+    },
+    {
+      "path": "src/sources/works/john-chrysostom/homilies-on-philippians/editions/2026-09-17-ccel-web/segments/homilies-3-4.toml",
+      "sha256": "b6c0c376ea6683ed6d8eaf3faa61b2352a52599051bb45162afabf8776fce615",
+      "byte_size": 680,
+      "record_type": "segment",
+      "id": "segment.john-chrysostom.homilies-on-philippians.ccel-web-2026-09-17.homilies-3-4"
+    },
+    {
+      "path": "src/sources/works/john-chrysostom/homilies-on-philippians/work.toml",
+      "sha256": "eb5b24e273e668ef49a76956030c999ed6fb10a93b3a65e7d4e5d3c4265b8de1",
+      "byte_size": 683,
+      "record_type": "work",
+      "id": "work.john-chrysostom.homilies-on-philippians"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-10/editions/2026-09-17-ccel-web/artifacts/ccel-text-adb8f1c9/artifact.toml",
+      "sha256": "18ecf1cafe3bdf1260814535e463685ba022188b44e41081b458ecaca8c9d2f0",
+      "byte_size": 1651,
+      "record_type": "artifact",
+      "id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-10.ccel-web-2026-09-17.ccel-text-adb8f1c9"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-10/editions/2026-09-17-ccel-web/artifacts/ccel-text-adb8f1c9/source.txt",
+      "sha256": "adb8f1c9a988c5050a20fb9fdbf75143dcb227e95e3dad2f560a63b757923648",
+      "byte_size": 3345978,
+      "record_type": "payload"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-10/editions/2026-09-17-ccel-web/edition.toml",
+      "sha256": "b7a13b8b36fdb18210633d56da442b6cac0cde36212d685641416e66c150d4ba",
+      "byte_size": 731,
+      "record_type": "edition",
+      "id": "edition.nicene-and-post-nicene-fathers.series-1-volume-10.ccel-web-2026-09-17"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-10/work.toml",
+      "sha256": "64f748a6adfa87fbc44e85db154af8f940cb56bec23b06847e75ce657a6e49d7",
+      "byte_size": 779,
+      "record_type": "work",
+      "id": "work.nicene-and-post-nicene-fathers.series-1-volume-10"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-11/editions/2026-09-17-ccel-web/artifacts/ccel-text-8bdb50c6/artifact.toml",
+      "sha256": "9094ca6e0488afcdb956294a9b826b2794a2f1305ae5472a351af12510ab300f",
+      "byte_size": 1651,
+      "record_type": "artifact",
+      "id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-11.ccel-web-2026-09-17.ccel-text-8bdb50c6"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-11/editions/2026-09-17-ccel-web/artifacts/ccel-text-8bdb50c6/source.txt",
+      "sha256": "8bdb50c6fd132a9558cbd16808ae05000ddcc7059cfd6c1d282f4f734e539c15",
+      "byte_size": 4443151,
+      "record_type": "payload"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-11/editions/2026-09-17-ccel-web/edition.toml",
+      "sha256": "19d5972045bfd54eea14b1ea52cb2c2094b70ddfc2e84c37af43f525e3b1029b",
+      "byte_size": 742,
+      "record_type": "edition",
+      "id": "edition.nicene-and-post-nicene-fathers.series-1-volume-11.ccel-web-2026-09-17"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-11/work.toml",
+      "sha256": "326bf20f8b3052955d75c37168b89a96e7dd252bbd13f16cf6e0482ae1f94556",
+      "byte_size": 807,
+      "record_type": "work",
+      "id": "work.nicene-and-post-nicene-fathers.series-1-volume-11"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-2/editions/2026-09-17-ccel-web/artifacts/ccel-text-5c973fed/artifact.toml",
+      "sha256": "c5940415858daf121b09f719f165bc0e3f2798dda0a1c7521c41c7b38a77a020",
+      "byte_size": 1398,
+      "record_type": "artifact",
+      "id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-2.ccel-web-2026-09-17.ccel-text-5c973fed"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-2/editions/2026-09-17-ccel-web/artifacts/ccel-text-5c973fed/source.txt",
+      "sha256": "5c973feda803f3e58a88ed7df210b42d436f5466741eb8dbeae713ab56dedae4",
+      "byte_size": 3692898,
+      "record_type": "payload"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-2/editions/2026-09-17-ccel-web/edition.toml",
+      "sha256": "dc144d2c1ba4fbfd8fd1f405f6d95b9125cfc059cb504c0038eaa03a52561abf",
+      "byte_size": 648,
+      "record_type": "edition",
+      "id": "edition.nicene-and-post-nicene-fathers.series-1-volume-2.ccel-web-2026-09-17"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-2/work.toml",
+      "sha256": "eda5556815324002fe8cd984cebaa1418d2ff0539c339b5257e02a963f6a4cac",
+      "byte_size": 735,
+      "record_type": "work",
+      "id": "work.nicene-and-post-nicene-fathers.series-1-volume-2"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-5/editions/2026-09-17-ccel-web/artifacts/ccel-text-bf3dd167/artifact.toml",
+      "sha256": "c70ecf5b99aec4d87166b731e2841b198e40a103988a406d0a5ce146551accde",
+      "byte_size": 1646,
+      "record_type": "artifact",
+      "id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-5.ccel-web-2026-09-17.ccel-text-bf3dd167"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-5/editions/2026-09-17-ccel-web/artifacts/ccel-text-bf3dd167/source.txt",
+      "sha256": "bf3dd167062eb4e9f4f193b4957df6973df0321fb5448c157c735309c9c6b40b",
+      "byte_size": 3756609,
+      "record_type": "payload"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-5/editions/2026-09-17-ccel-web/edition.toml",
+      "sha256": "ba968ae35429403ec490bf5b9f7a839e5b46bcd53e698d408bd3db543d742449",
+      "byte_size": 711,
+      "record_type": "edition",
+      "id": "edition.nicene-and-post-nicene-fathers.series-1-volume-5.ccel-web-2026-09-17"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-5/work.toml",
+      "sha256": "3c0f11618ee05eb85451fe02c0f011a2cdb698a4628c14d900e88e8b0ea70a11",
+      "byte_size": 759,
+      "record_type": "work",
+      "id": "work.nicene-and-post-nicene-fathers.series-1-volume-5"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-6/editions/2026-09-17-ccel-web/artifacts/ccel-text-ce371798/artifact.toml",
+      "sha256": "a7fd1cce189a25a74f8f70b3390bb0e640b3e400cbc1ed11e9db15207dd76e51",
+      "byte_size": 1721,
+      "record_type": "artifact",
+      "id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.ccel-text-ce371798"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-6/editions/2026-09-17-ccel-web/artifacts/ccel-text-ce371798/source.txt",
+      "sha256": "ce37179876e5e5c9d8e7a6f1f17b8796c4fdf3ffd2815acb82a1c734c57ecd18",
+      "byte_size": 3873176,
+      "record_type": "payload"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-6/editions/2026-09-17-ccel-web/edition.toml",
+      "sha256": "26d95c4235cabfde331bf62c72f0c9dcd253e34a97f2fd6c26da822b8f7bba26",
+      "byte_size": 757,
+      "record_type": "edition",
+      "id": "edition.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-6/work.toml",
+      "sha256": "ed3eae018d1b07504a5146903ecf63d241ec898e0dbf3f7c2b816fee340f2887",
+      "byte_size": 806,
+      "record_type": "work",
+      "id": "work.nicene-and-post-nicene-fathers.series-1-volume-6"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-7/editions/2026-09-17-ccel-web/artifacts/ccel-text-266502c9/artifact.toml",
+      "sha256": "15f5be8a03711aa84997af8e4e7eb4dba121ef3d83886374fb7df87ce8053e6b",
+      "byte_size": 1646,
+      "record_type": "artifact",
+      "id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-7.ccel-web-2026-09-17.ccel-text-266502c9"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-7/editions/2026-09-17-ccel-web/artifacts/ccel-text-266502c9/source.txt",
+      "sha256": "266502c9bc5da73981217fc536682b999fc7a09da50255477ed4bcbdad1363e3",
+      "byte_size": 3204445,
+      "record_type": "payload"
+    },
+    {
+      "path": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-7/editions/2026-09-17-ccel-web/edition.toml",
+      "sha256": "faafb7e51384f9c9b8f190f75593df035d34d976c61353210286ac7e8f394286",
+      "byte_size": 771,
+      "record_type": "edition",
+      "id": "edition.nicene-and-post-nicene-fathers.series-1-volume-7.ccel-web-2026-09-17"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/expositio-super-isaiam-ad-litteram/editions/1863-parma/edition.toml",
+      "sha256": "86ad8a87121d5349f76b9c1ab6cef2dc19e6972f4c614d951ba9c0fe325608cb",
+      "byte_size": 510,
+      "record_type": "edition",
+      "id": "edition.thomas-aquinas.expositio-super-isaiam-ad-litteram.1863-parma"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/expositio-super-isaiam-ad-litteram/editions/1863-parma/passages/55.facsimile.toml",
+      "sha256": "d0f1f900f130a5ec31ca6886b9826274b8d1ed057aa2aa6bab6f280b91ece601",
+      "byte_size": 922,
+      "record_type": "passage",
+      "id": "passage.thomas-aquinas.expositio-super-isaiam-ad-litteram.1863-parma.55.facsimile"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/expositio-super-isaiam-ad-litteram/editions/1863-parma/passages/55.ocr.toml",
+      "sha256": "6c2cdfc5e8a741a16d22a98ba24c2f4f3e5a3987d7c797ba1a24b5dae79ea8e0",
+      "byte_size": 918,
+      "record_type": "passage",
+      "id": "passage.thomas-aquinas.expositio-super-isaiam-ad-litteram.1863-parma.55.ocr"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/expositio-super-isaiam-ad-litteram/editions/1863-parma/segments/isaiah55-facsimile.toml",
+      "sha256": "f5e34a7374aa313c03b703e96619ef01e2014ce381f60049d125bbb206f70496",
+      "byte_size": 660,
+      "record_type": "segment",
+      "id": "segment.thomas-aquinas.expositio-super-isaiam-ad-litteram.1863-parma.isaiah55-facsimile"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/expositio-super-isaiam-ad-litteram/editions/1863-parma/segments/isaiah55-ocr.toml",
+      "sha256": "d178b53bf48cfec006309b3ed994719e094b71af943f2bb61925f95435b45f63",
+      "byte_size": 649,
+      "record_type": "segment",
+      "id": "segment.thomas-aquinas.expositio-super-isaiam-ad-litteram.1863-parma.isaiah55-ocr"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/expositio-super-isaiam-ad-litteram/work.toml",
+      "sha256": "ee0d66f19b9eb6e1d65ace1d5a630adc7da5bf144f79f2b2a2c4d279712ea7b6",
+      "byte_size": 758,
+      "record_type": "work",
+      "id": "work.thomas-aquinas.expositio-super-isaiam-ad-litteram"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/editions/1857-dessain-volume-2/artifacts/book-facsimile-e8b81493/artifact.toml",
+      "sha256": "ce802cd683866fe1a3250c53891a50395e43f8bb9e2643b97593cddf77f9b58e",
+      "byte_size": 2402,
+      "record_type": "artifact",
+      "id": "artifact.thomas-aquinas.in-omnes-pauli-epistolas-commentaria.dessain-volume-2-1857.book-facsimile-e8b81493"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/editions/1857-dessain-volume-2/artifacts/book-facsimile-e8b81493/source.pdf",
+      "sha256": "e8b81493cc4a561b64de09cfd2d3278c37fe45fbb46a16f00c2b1ec88f34d4e1",
+      "byte_size": 24702869,
+      "record_type": "payload"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/editions/1857-dessain-volume-2/artifacts/book-ocr-2b7b11dc/artifact.toml",
+      "sha256": "895f86955ed0a3617da80300630f4427ad76d0c724f33d21f0c09bcfd4595833",
+      "byte_size": 2253,
+      "record_type": "artifact",
+      "id": "artifact.thomas-aquinas.in-omnes-pauli-epistolas-commentaria.dessain-volume-2-1857.book-ocr-2b7b11dc"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/editions/1857-dessain-volume-2/artifacts/book-ocr-2b7b11dc/source.txt",
+      "sha256": "2b7b11dccac61ed35cef61e412b521c4028890caec2611c362336450972567ed",
+      "byte_size": 1474920,
+      "record_type": "payload"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/editions/1857-dessain-volume-2/artifacts/ia-ocr-2529728f/artifact.toml",
+      "sha256": "2b8812879cc38379d3da6059e1c68c33a15fddaf833b069e29956bc0f4012c50",
+      "byte_size": 1775,
+      "record_type": "artifact",
+      "id": "artifact.thomas-aquinas.in-omnes-pauli-epistolas-commentaria.dessain-volume-2-1857.ia-ocr-2529728f"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/editions/1857-dessain-volume-2/artifacts/ia-pdf-8d69fd95/artifact.toml",
+      "sha256": "37b031e15e5ccfa4b661ada4b4cf9f5612bc0fae69392bc625a56594d67b5db0",
+      "byte_size": 1807,
+      "record_type": "artifact",
+      "id": "artifact.thomas-aquinas.in-omnes-pauli-epistolas-commentaria.dessain-volume-2-1857.ia-pdf-8d69fd95"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/editions/1857-dessain-volume-2/edition.toml",
+      "sha256": "291ddf0e4045047fdf7a369a4019c3946e7a032be743c65d45155b527f3f83ea",
+      "byte_size": 859,
+      "record_type": "edition",
+      "id": "edition.thomas-aquinas.in-omnes-pauli-epistolas-commentaria.dessain-volume-2-1857"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/work.toml",
+      "sha256": "06bb6a660ea3e7d48fdfbf5c8bf685c8818454bc089eed657ae701e2449420cb",
+      "byte_size": 834,
+      "record_type": "work",
+      "id": "work.thomas-aquinas.in-omnes-pauli-epistolas-commentaria"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/opera-omnia-volume-14/editions/1863-parma/artifacts/ia-complete-ocr-02c6dc25/aquinas-parma14.txt",
+      "sha256": "02c6dc25802b1964948ba9ab48dcd91eb89c102381a6401c737eecb902153855",
+      "byte_size": 5376121,
+      "record_type": "payload"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/opera-omnia-volume-14/editions/1863-parma/artifacts/ia-complete-ocr-02c6dc25/artifact.toml",
+      "sha256": "efa0f5ef9b87aa18ecbf6bd3127078894aad078aab38b660fd18244597bdad3e",
+      "byte_size": 1819,
+      "record_type": "artifact",
+      "id": "artifact.thomas-aquinas.opera-omnia-volume-14.1863-parma.ia-complete-ocr-02c6dc25"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/opera-omnia-volume-14/editions/1863-parma/artifacts/ia-complete-pdf-aab1181a/artifact.toml",
+      "sha256": "d1a54920c640dd788dd38ed6b2042e3d6cb3a37fef24c9033b14757ee9b92b77",
+      "byte_size": 1895,
+      "record_type": "artifact",
+      "id": "artifact.thomas-aquinas.opera-omnia-volume-14.1863-parma.ia-complete-pdf-aab1181a"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/opera-omnia-volume-14/editions/1863-parma/artifacts/title-and-isaiah55-facsimile-8005fe61/aquinas-title-isaiah55.pdf",
+      "sha256": "8005fe61a6d6c972aac9afe3a9dd244903fd1fff0dc0a33d35bba46464e3746f",
+      "byte_size": 630766,
+      "record_type": "payload"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/opera-omnia-volume-14/editions/1863-parma/artifacts/title-and-isaiah55-facsimile-8005fe61/artifact.toml",
+      "sha256": "dc755bd9f95394da1369f6d916b0b3b6632fd55b33f7faca2f7f4c0bf86a7b20",
+      "byte_size": 1776,
+      "record_type": "artifact",
+      "id": "artifact.thomas-aquinas.opera-omnia-volume-14.1863-parma.title-and-isaiah55-facsimile-8005fe61"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/opera-omnia-volume-14/editions/1863-parma/edition.toml",
+      "sha256": "648b56d586ba1fd2c02a0174a392ac76689ab0ab11ec2ca8a819d1230d20a04e",
+      "byte_size": 596,
+      "record_type": "edition",
+      "id": "edition.thomas-aquinas.opera-omnia-volume-14.1863-parma"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/opera-omnia-volume-14/work.toml",
+      "sha256": "cfe33a678d3d848ec6631c524c38f7eb98468ac8e500ccc163ef445353d90239",
+      "byte_size": 823,
+      "record_type": "work",
+      "id": "work.thomas-aquinas.opera-omnia-volume-14"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/artifacts/pg19950-body-4597132e/artifact.toml",
+      "sha256": "6154e86711081c51cdd680d9d97378f69958f5e2b06a237c600ff1371ea13efe",
+      "byte_size": 1764,
+      "record_type": "artifact",
+      "id": "artifact.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006.pg19950-body-4597132e"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/artifacts/pg19950-body-4597132e/source.txt",
+      "sha256": "4597132e2dfd680253f4a52977af25245b61406d2325480f5a7308bc50265efd",
+      "byte_size": 2686579,
+      "record_type": "payload"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/artifacts/pg19950-raw-4adb238f/artifact.toml",
+      "sha256": "c3bc07fb6e32ab3b831b22869b09fc0dd8912ddfcb94b186bbedf87569b7defa",
+      "byte_size": 1437,
+      "record_type": "artifact",
+      "id": "artifact.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006.pg19950-raw-4adb238f"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/edition.toml",
+      "sha256": "6f40b2cb777a069da39170772ba21fb55606c47c2ed971d5ed82c7dc85d6f38b",
+      "byte_size": 939,
+      "record_type": "edition",
+      "id": "edition.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/passages/iii-79-1-corpus.toml",
+      "sha256": "ef5a1632a8023254bdfa04543e10775f773093e353d491e4ccfe4a65dbbff1dd",
+      "byte_size": 819,
+      "record_type": "passage",
+      "id": "passage.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006.iii-79-1-corpus"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/passages/iii-79-2-corpus.toml",
+      "sha256": "9fc873af9478a5d50ef55ba60c0d127e8cd896707504d06db02ae3e02a2afdff",
+      "byte_size": 819,
+      "record_type": "passage",
+      "id": "passage.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006.iii-79-2-corpus"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/passages/iii-79-2-reply-1.toml",
+      "sha256": "fd6f6873750cb7de9d2ea670ef6f8ed7d60ccaf7cb1c1b061303123b1a18811c",
+      "byte_size": 727,
+      "record_type": "passage",
+      "id": "passage.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006.iii-79-2-reply-1"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/passages/iii-79-6-corpus.toml",
+      "sha256": "271abe0190246a25d4ff547d1c68b48bf6cd6aa5003b59972c68162789b90722",
+      "byte_size": 819,
+      "record_type": "passage",
+      "id": "passage.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006.iii-79-6-corpus"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/passages/iii-79-6-reply-1.toml",
+      "sha256": "68b6ed495986d534c383082ad7c3728441cd7d90dfac19b20bb289e5d47ac46f",
+      "byte_size": 727,
+      "record_type": "passage",
+      "id": "passage.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006.iii-79-6-reply-1"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/super-ephesios/editions/1857-dessain-volume-2/edition.toml",
+      "sha256": "11718b71891cd960b5c29ae11ce9444c1cb0042cead81055cd93af3dad508e5a",
+      "byte_size": 818,
+      "record_type": "edition",
+      "id": "edition.thomas-aquinas.super-ephesios.dessain-volume-2-1857"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/super-ephesios/editions/1857-dessain-volume-2/passages/chapter-4-lectio-1.toml",
+      "sha256": "eba2984b5841facf07b577de4102072f1a0d0cdce166db4aaa2b1b4362a2e4f2",
+      "byte_size": 888,
+      "record_type": "passage",
+      "id": "passage.thomas-aquinas.super-ephesios.dessain-volume-2-1857.chapter-4-lectio-1"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/super-ephesios/editions/1857-dessain-volume-2/passages/chapter-4-lectio-2.toml",
+      "sha256": "daa5c856ce68f87e938365ce8c8f917a843a97d79c4295e552b98b400efa5f8f",
+      "byte_size": 759,
+      "record_type": "passage",
+      "id": "passage.thomas-aquinas.super-ephesios.dessain-volume-2-1857.chapter-4-lectio-2"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/super-ephesios/editions/1857-dessain-volume-2/segments/chapter-4-lectures-1-2-facsimile.toml",
+      "sha256": "901c262b99b0d8b332a3642cba112b7e5ab68b5e7fc81ffa8b36bea4154b6104",
+      "byte_size": 726,
+      "record_type": "segment",
+      "id": "segment.thomas-aquinas.super-ephesios.dessain-volume-2-1857.chapter-4-lectures-1-2-facsimile"
+    },
+    {
+      "path": "src/sources/works/thomas-aquinas/super-ephesios/editions/1857-dessain-volume-2/segments/complete-commentary-ocr.toml",
+      "sha256": "02d4e71ad6faaa593b9bed1256f7c5e325f9c2e8cda1cf815aba04955ff35af6",
+      "byte_size": 695,
+      "record_type": "segment",
+      "id": "segment.thomas-aquinas.super-ephesios.dessain-volume-2-1857.complete-commentary-ocr"
+    },
+    {
+      "path": "THIRD_PARTY.md",
+      "sha256": "bbd82829c5171bf12574657893dade7d1af5f8243f961262c21c09be1c6a7d5e",
+      "byte_size": 22368,
+      "record_type": "notice"
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/post-pentecosten-17.toml",
+      "sha256": "6789a40797425bcd698aac54aa0596ed55fe5f599ba737744a7564d410e77468",
+      "byte_size": 2325,
+      "record_type": "passage",
+      "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.post-pentecosten-17"
+    }
+  ]
+}

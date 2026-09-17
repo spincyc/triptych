@@ -1,0 +1,89 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "normalized-text",
+   "byte_size": 629050,
+   "edition_owned": true,
+   "id": "artifact.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.complete-extracted-text-dc25dd69",
+   "media_type": "text/plain",
+   "notes": "All index/preface/homily XHTML members from the EPUB spine are retained in order. This derivative omits the generated title, navigation, stylesheet, logo and About pages; their license and contributor attribution remain in this record and the whole parent EPUB. Printed-page marker text remains where encoded. It is a discovery/reading witness, not a critical edition or a corrected transcription.",
+   "page_count": null,
+   "retrieved": "2026-09-17",
+   "rights": "licensed",
+   "rights_basis": "The exact EPUB metadata and its About this digital edition page explicitly offer this export under Creative Commons Attribution-ShareAlike3.0 Unported (https://creativecommons.org/licenses/by-sa/3.0/), alternatively GNU FDL. This retention elects CC-BY-SA-3.0. The EPUB credits Gregorius Magnus and contributor Mizardellorsa. Attribution and contributor history: https://la.wikisource.org/wiki/Homiliarum_in_Evangelia and its linked homily pages. The ancient underlying Latin remains public domain; the modern transcription and encoding are retained under the stated license.",
+   "rights_jurisdiction": null,
+   "source_url": "https://ws-export.wmcloud.org/?lang=la&page=Homiliarum_in_Evangelia&format=epub-3",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "ebook",
+   "byte_size": 307630,
+   "edition_owned": true,
+   "id": "artifact.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.wsexport-complete-epub-50cc6f72",
+   "media_type": "application/epub+zip",
+   "notes": "Whole offered EPUB: 307630 bytes; manifest contains the work index, preface and forty numbered homily members, plus navigation, title, stylesheet and About/license/credit material. Presence of all forty members establishes exported extent, not whole-work textual verification.",
+   "page_count": null,
+   "retrieved": "2026-09-17",
+   "rights": "licensed",
+   "rights_basis": "The exact EPUB metadata and its About this digital edition page explicitly offer this export under Creative Commons Attribution-ShareAlike3.0 Unported (https://creativecommons.org/licenses/by-sa/3.0/), alternatively GNU FDL. This retention elects CC-BY-SA-3.0. The EPUB credits Gregorius Magnus and contributor Mizardellorsa. Attribution and contributor history: https://la.wikisource.org/wiki/Homiliarum_in_Evangelia and its linked homily pages. The ancient underlying Latin remains public domain; the modern transcription and encoding are retained under the stated license.",
+   "rights_jurisdiction": null,
+   "source_url": "https://ws-export.wmcloud.org/?lang=la&page=Homiliarum_in_Evangelia&format=epub-3",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-09-17",
+  "editors": [],
+  "id": "edition.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Latin Wikisource; complete WSExport EPUB delivery",
+  "title": "Homiliarum in Evangelia — complete Latin Wikisource electronic edition",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "acknowledgement": "The exact EPUB metadata and its About this digital edition page explicitly offer this export under Creative Commons Attribution-ShareAlike3.0 Unported (https://creativecommons.org/licenses/by-sa/3.0/), alternatively GNU FDL. This retention elects CC-BY-SA-3.0. The EPUB credits Gregorius Magnus and contributor Mizardellorsa. Attribution and contributor history: https://la.wikisource.org/wiki/Homiliarum_in_Evangelia and its linked homily pages. The ancient underlying Latin remains public domain; the modern transcription and encoding are retained under the stated license.",
+   "artifact_id": "artifact.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.complete-extracted-text-dc25dd69",
+   "artifact_type": "normalized-text",
+   "context": "Homily XIX sections1–6 read in the extracted EPUB text, with the opening Gospel lemma and following section7 as context. Lines219 and224 include multiple numbered sections because the source XHTML groups them into one paragraph.",
+   "id": "passage.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.19.1-6",
+   "locus": "19.1-6",
+   "media_type": "text/plain",
+   "notes": "A lexical/diplomatic identity with PL76 is not asserted. For example, the web witness has Operator ergo where the facsimile reads Operari ergo, and splits invigilant as in vigilant. The PL76 page images separately retained control exact printed wording.",
+   "readable": true,
+   "rights": "licensed",
+   "rights_basis": "The exact EPUB metadata and its About this digital edition page explicitly offer this export under Creative Commons Attribution-ShareAlike3.0 Unported (https://creativecommons.org/licenses/by-sa/3.0/), alternatively GNU FDL. This retention elects CC-BY-SA-3.0. The EPUB credits Gregorius Magnus and contributor Mizardellorsa. Attribution and contributor history: https://la.wikisource.org/wiki/Homiliarum_in_Evangelia and its linked homily pages. The ancient underlying Latin remains public domain; the modern transcription and encoding are retained under the stated license.",
+   "rights_jurisdiction": null,
+   "segment_id": null,
+   "source": "physical-lines",
+   "source_url": "https://ws-export.wmcloud.org/?lang=la&page=Homiliarum_in_Evangelia&format=epub-3",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.19.1-6.json",
+   "verified_on": null,
+   "words": 1732
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Homilies on the Gospels",
+   "Forty Gospel Homilies"
+  ],
+  "author": "Gregory the Great",
+  "category": "patristic-homily-collection",
+  "description": "Gregory's forty homilies on the Gospels, preached at Rome about 590 to 592 and issued in two books. Homily XXII, preached in the Lateran basilica on the Saturday after Easter, takes John 20:1-9 as its lection and expounds the burial cloths allegorically. A locus is homily.section or the homily number alone.",
+  "id": "work.gregory-the-great.homiliae-in-evangelia",
+  "languages": [
+   "la"
+  ],
+  "title": "Homiliae in Evangelia"
+ }
+}

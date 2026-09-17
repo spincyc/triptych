@@ -1,0 +1,110 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "facsimile-excerpt",
+   "byte_size": null,
+   "edition_owned": false,
+   "id": "artifact.thomas-aquinas.opera-omnia-volume-14.1863-parma.title-and-isaiah55-facsimile-8005fe61",
+   "media_type": "application/pdf",
+   "notes": null,
+   "page_count": null,
+   "retrieved": null,
+   "rights": "public-domain",
+   "rights_basis": "The1863 printing is public domain in the United States by publication date. The exact source is a mechanical digitization of the University of Toronto/PIMS copy; Princeton Theological Commons identifies the same item and labels its image No Known Copyright: https://commons.ptsem.edu/id/sanctithomaeaqui14thom . No modern editorial text is added by this retention.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/sanctithomaeaqui14thom/sanctithomaeaqui14thom.pdf",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "raw-ocr",
+   "byte_size": null,
+   "edition_owned": false,
+   "id": "artifact.thomas-aquinas.opera-omnia-volume-14.1863-parma.ia-complete-ocr-02c6dc25",
+   "media_type": "text/plain",
+   "notes": null,
+   "page_count": null,
+   "retrieved": null,
+   "rights": "public-domain",
+   "rights_basis": "The1863 printing is public domain in the United States by publication date. The exact source is a mechanical digitization of the University of Toronto/PIMS copy; Princeton Theological Commons identifies the same item and labels its image No Known Copyright: https://commons.ptsem.edu/id/sanctithomaeaqui14thom . No modern editorial text is added by this retention.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/sanctithomaeaqui14thom/sanctithomaeaqui14thom_djvu.txt",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1863",
+  "editors": [],
+  "id": "edition.thomas-aquinas.expositio-super-isaiam-ad-litteram.1863-parma",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Opera omnia, volume14, Parmae: Typis Petri Fiaccadori",
+  "title": "In Isaiam prophetam expositio",
+  "translators": [],
+  "year": 1863
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.thomas-aquinas.opera-omnia-volume-14.1863-parma.title-and-isaiah55-facsimile-8005fe61",
+   "artifact_type": "facsimile-excerpt",
+   "id": "passage.thomas-aquinas.expositio-super-isaiam-ad-litteram.1863-parma.55.facsimile",
+   "locus": "55",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": "segment.thomas-aquinas.expositio-super-isaiam-ad-litteram.1863-parma.isaiah55-facsimile",
+   "source_url": "https://archive.org/download/sanctithomaeaqui14thom/sanctithomaeaqui14thom.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "tracked",
+   "verified_on": null,
+   "withheld": "no-transcription"
+  },
+  {
+   "artifact_id": "artifact.thomas-aquinas.opera-omnia-volume-14.1863-parma.ia-complete-ocr-02c6dc25",
+   "artifact_type": "raw-ocr",
+   "context": "Chapter55 printedpp556–557 inspected, including the biblical lemma and the complete commentary before the chapter56 heading. The chapter55 continuation appears under the running head CAPUT LVI on p557 because chapter56 begins lower on that page.",
+   "id": "passage.thomas-aquinas.expositio-super-isaiam-ad-litteram.1863-parma.55.ocr",
+   "locus": "55",
+   "media_type": "text/plain",
+   "notes": "The rawOCR has many recognition defects. The retained page images control wording; no equation with the CorpusThomisticum Leonine paragraph numbering is asserted.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The1863 printing is public domain in the United States by publication date. The exact source is a mechanical digitization of the University of Toronto/PIMS copy; Princeton Theological Commons identifies the same item and labels its image No Known Copyright: https://commons.ptsem.edu/id/sanctithomaeaqui14thom . No modern editorial text is added by this retention.",
+   "rights_jurisdiction": "United States",
+   "segment_id": "segment.thomas-aquinas.expositio-super-isaiam-ad-litteram.1863-parma.isaiah55-ocr",
+   "source": "physical-lines",
+   "source_url": "https://archive.org/download/sanctithomaeaqui14thom/sanctithomaeaqui14thom_djvu.txt",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.thomas-aquinas.expositio-super-isaiam-ad-litteram.1863-parma.55.ocr.json",
+   "verified_on": null,
+   "words": 1229
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "In Isaiam prophetam expositio",
+   "Commentary on Isaiah",
+   "Super Isaiam"
+  ],
+  "author": "Thomas Aquinas",
+  "category": "medieval-biblical-commentary",
+  "description": "Latin commentary on Isaiah, addressed by biblical chapter and lemma; editions and editorial paragraph systems are distinct.",
+  "id": "work.thomas-aquinas.expositio-super-isaiam-ad-litteram",
+  "languages": [
+   "la"
+  ],
+  "title": "Expositio super Isaiam ad litteram"
+ }
+}

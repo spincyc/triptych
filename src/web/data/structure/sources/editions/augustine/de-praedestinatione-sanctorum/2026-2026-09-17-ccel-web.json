@@ -1,0 +1,75 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "digital-text",
+   "byte_size": null,
+   "edition_owned": false,
+   "id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-5.ccel-web-2026-09-17.ccel-text-bf3dd167",
+   "media_type": "text/plain",
+   "notes": null,
+   "page_count": null,
+   "retrieved": null,
+   "rights": "public-domain",
+   "rights_basis": "The exact downloadable file explicitly states Rights: Public Domain. The historical NPNF translation and editorial text are public domain in the United States; the whole CCEL download and its source credits are retained without alteration.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://ccel.org/ccel/s/schaff/npnf105/cache/npnf105.txt",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-09-17",
+  "editors": [
+   "Philip Schaff"
+  ],
+  "id": "edition.augustine.de-praedestinatione-sanctorum.ccel-web-2026-09-17",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "Nicene and Post-Nicene Fathers, First Series, volume 5, CCEL complete text delivery",
+  "title": "De praedestinatione sanctorum — NPNF English translation in CCEL",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-5.ccel-web-2026-09-17.ccel-text-bf3dd167",
+   "artifact_type": "digital-text",
+   "context": "Complete chapter41 of the first treatise inspected, together with the preceding end of chapter40 and the following chapter42 heading.",
+   "id": "passage.augustine.de-praedestinatione-sanctorum.ccel-web-2026-09-17.1.41",
+   "locus": "1.41",
+   "media_type": "text/plain",
+   "notes": "Exact CCEL English digital witness inspected; no Greek or Latin original-language collation, no facsimile collation, and no claim of identity with New Advent revisions.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The exact downloadable file explicitly states Rights: Public Domain. The historical NPNF translation and editorial text are public domain in the United States; the whole CCEL download and its source credits are retained without alteration.",
+   "rights_jurisdiction": "United States",
+   "segment_id": "segment.augustine.de-praedestinatione-sanctorum.ccel-web-2026-09-17.book-1",
+   "source": "physical-lines",
+   "source_url": "https://ccel.org/ccel/s/schaff/npnf105/cache/npnf105.txt",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.augustine.de-praedestinatione-sanctorum.ccel-web-2026-09-17.1.41.json",
+   "verified_on": null,
+   "words": 442
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "On the Predestination of the Saints",
+   "De praedestinatione sanctorum liber primus"
+  ],
+  "author": "Augustine of Hippo",
+  "category": "patristic-work",
+  "description": "Primary patristic work, distinct from its English translation and anthology delivery.",
+  "id": "work.augustine.de-praedestinatione-sanctorum",
+  "languages": [
+   "la"
+  ],
+  "title": "De praedestinatione sanctorum"
+ }
+}

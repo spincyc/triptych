@@ -1,0 +1,82 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "facsimile-pdf",
+   "byte_size": 11823447,
+   "edition_owned": true,
+   "id": "artifact.gregory-the-great.homiliae-in-evangelia.pl76-facsimile-web-2026-09-17.dco-complete-pdf-af9ea4a1",
+   "media_type": "application/pdf",
+   "page_count": 120,
+   "retrieved": "2026-09-17",
+   "rights": "restricted",
+   "rights_jurisdiction": null,
+   "source_url": "https://www.documentacatholicaomnia.eu/01p/0590-0604,_SS_Gregorius_I_Magnus,_Homiliarum_In_Evangelia_Libri_Duo,_MLT.pdf",
+   "storage": "restricted"
+  },
+  {
+   "artifact_type": "facsimile-excerpt",
+   "byte_size": 841454,
+   "edition_owned": true,
+   "id": "artifact.gregory-the-great.homiliae-in-evangelia.pl76-facsimile-web-2026-09-17.homily19-facsimile-pages-c122ee50",
+   "media_type": "application/pdf",
+   "notes": "Three pages only: parentPDFpages40–42, printedPL76cols1153–1158. Contains the end of HomilyXVIII, the heading/Gospel and sections1–6 of HomilyXIX, and only the beginning of section7. It does not contain the whole HomilyXIX or whole work.",
+   "page_count": 3,
+   "retrieved": "2026-09-17",
+   "rights": "public-domain",
+   "rights_basis": "The retained derivative reproduces only three historical Migne printed leaves, a mechanical two-dimensional reproduction of public-domain Latin and public-domain typography. It includes no DocumentaCatholicaOmnia editorial text or site wrapper. The Google digitization watermark is preserved as source provenance; no endorsement or ownership of that mark is claimed. Underlying historical page content is public domain in the United States by age; this basis does not license unrelated modern host material.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://www.documentacatholicaomnia.eu/01p/0590-0604,_SS_Gregorius_I_Magnus,_Homiliarum_In_Evangelia_Libri_Duo,_MLT.pdf",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-09-17",
+  "editors": [],
+  "id": "edition.gregory-the-great.homiliae-in-evangelia.pl76-facsimile-web-2026-09-17",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Migne, Patrologia Latina76, historical Google-scanned impression delivered by Documenta Catholica Omnia",
+  "title": "Homiliarum in Evangelia libri duo — PL76 facsimile delivery",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.gregory-the-great.homiliae-in-evangelia.pl76-facsimile-web-2026-09-17.homily19-facsimile-pages-c122ee50",
+   "artifact_type": "facsimile-excerpt",
+   "id": "passage.gregory-the-great.homiliae-in-evangelia.pl76-facsimile-web-2026-09-17.19.1-6",
+   "locus": "19.1-6",
+   "media_type": "application/pdf",
+   "readable": false,
+   "reason": "This passage records neither a transcription nor line bounds, so the corpus identifies where it is without holding its words.",
+   "rights": "public-domain",
+   "rights_jurisdiction": "United States",
+   "segment_id": null,
+   "source_url": "https://www.documentacatholicaomnia.eu/01p/0590-0604,_SS_Gregorius_I_Magnus,_Homiliarum_In_Evangelia_Libri_Duo,_MLT.pdf",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "tracked",
+   "verified_on": null,
+   "withheld": "no-transcription"
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Homilies on the Gospels",
+   "Forty Gospel Homilies"
+  ],
+  "author": "Gregory the Great",
+  "category": "patristic-homily-collection",
+  "description": "Gregory's forty homilies on the Gospels, preached at Rome about 590 to 592 and issued in two books. Homily XXII, preached in the Lateran basilica on the Saturday after Easter, takes John 20:1-9 as its lection and expounds the burial cloths allegorically. A locus is homily.section or the homily number alone.",
+  "id": "work.gregory-the-great.homiliae-in-evangelia",
+  "languages": [
+   "la"
+  ],
+  "title": "Homiliae in Evangelia"
+ }
+}

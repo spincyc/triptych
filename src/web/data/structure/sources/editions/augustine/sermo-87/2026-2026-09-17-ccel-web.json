@@ -1,0 +1,76 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "digital-text",
+   "byte_size": null,
+   "edition_owned": false,
+   "id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.ccel-text-ce371798",
+   "media_type": "text/plain",
+   "notes": null,
+   "page_count": null,
+   "retrieved": null,
+   "rights": "public-domain",
+   "rights_basis": "The exact downloadable file explicitly states Rights: Public Domain. The historical NPNF translation and editorial text are public domain in the United States; the whole CCEL download and its source credits are retained without alteration.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://ccel.org/ccel/s/schaff/npnf106/cache/npnf106.txt",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "2026-09-17",
+  "editors": [
+   "Philip Schaff"
+  ],
+  "id": "edition.augustine.sermo-87.ccel-web-2026-09-17",
+  "jurisdiction": null,
+  "language": "en",
+  "publication": "Nicene and Post-Nicene Fathers, First Series, volume 6, CCEL complete text delivery",
+  "title": "Sermo 87 — NPNF English translation in CCEL",
+  "translators": [],
+  "year": 2026
+ },
+ "passages": [
+  {
+   "artifact_id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.ccel-text-ce371798",
+   "artifact_type": "digital-text",
+   "context": "Sections1–10 and14–15 inspected, with the whole Sermon87 read as surrounding context. CCEL labels the sermon XXXVII and explicitly supplies Benedictine LXXXVII.",
+   "id": "passage.augustine.sermo-87.ccel-web-2026-09-17.1-10-and-14-15",
+   "locus": "1-10; 14-15",
+   "media_type": "text/plain",
+   "notes": "Exact CCEL English digital witness inspected; no Greek or Latin original-language collation, no facsimile collation, and no claim of identity with New Advent revisions.",
+   "readable": true,
+   "rights": "public-domain",
+   "rights_basis": "The exact downloadable file explicitly states Rights: Public Domain. The historical NPNF translation and editorial text are public domain in the United States; the whole CCEL download and its source credits are retained without alteration.",
+   "rights_jurisdiction": "United States",
+   "segment_id": "segment.augustine.sermo-87.ccel-web-2026-09-17.complete-sermon",
+   "source": "physical-lines",
+   "source_url": "https://ccel.org/ccel/s/schaff/npnf106/cache/npnf106.txt",
+   "states": [
+    "cataloged",
+    "acquired",
+    "inspected"
+   ],
+   "storage": "tracked",
+   "text_path": "structure/sources/text/passage.augustine.sermo-87.ccel-web-2026-09-17.1-10-and-14-15.json",
+   "verified_on": null,
+   "words": 4065
+  }
+ ],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Sermon 87",
+   "Sermon XXXVII on New Testament Lessons",
+   "Sermo de operariis in vinea"
+  ],
+  "author": "Augustine of Hippo",
+  "category": "patristic-sermon",
+  "description": "Primary patristic work, distinct from its English translation and anthology delivery.",
+  "id": "work.augustine.sermo-87",
+  "languages": [
+   "la"
+  ],
+  "title": "Sermo 87"
+ }
+}

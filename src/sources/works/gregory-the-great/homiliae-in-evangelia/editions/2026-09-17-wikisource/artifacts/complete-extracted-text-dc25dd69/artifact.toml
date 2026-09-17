@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.complete-extracted-text-dc25dd69"
+edition_id = "edition.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17"
+artifact_type = "normalized-text"
+media_type = "text/plain"
+storage = "tracked"
+rights_status = "licensed"
+rights_basis = "The exact EPUB metadata and its About this digital edition page explicitly offer this export under Creative Commons Attribution-ShareAlike3.0 Unported (https://creativecommons.org/licenses/by-sa/3.0/), alternatively GNU FDL. This retention elects CC-BY-SA-3.0. The EPUB credits Gregorius Magnus and contributor Mizardellorsa. Attribution and contributor history: https://la.wikisource.org/wiki/Homiliarum_in_Evangelia and its linked homily pages. The ancient underlying Latin remains public domain; the modern transcription and encoding are retained under the stated license."
+source_url = "https://ws-export.wmcloud.org/?lang=la&page=Homiliarum_in_Evangelia&format=epub-3"
+provenance = "Deterministic extraction from the exactly hashed complete EPUB. Created by Triptych on2026-09-17; modifications are identified in transformation."
+retrieved = "2026-09-17"
+sha256 = "dc25dd691b3ed44100e8417b7cdad9e6120753cf60bc59b80c7c3239471e618d"
+byte_size = 629050
+indexable = true
+notes = "All index/preface/homily XHTML members from the EPUB spine are retained in order. This derivative omits the generated title, navigation, stylesheet, logo and About pages; their license and contributor attribution remain in this record and the whole parent EPUB. Printed-page marker text remains where encoded. It is a discovery/reading witness, not a critical edition or a corrected transcription."
+license = "CC-BY-SA-3.0"
+derived_from = "artifact.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.wsexport-complete-epub-50cc6f72"
+transformation = "Read OPS/content.opf with Python xml.etree.ElementTree; resolve manifest hrefs in spine order for every id beginning c; emit a source/member marker line, then one normalized-whitespace line per h1,h2,h3,p,pre element, using its itertext in order. Join lines with LF and append a terminal LF. No lexical correction, model transcription or translation."
+path = "src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-wikisource/artifacts/complete-extracted-text-dc25dd69/gregory-whole.txt"
+encoding = "utf-8"

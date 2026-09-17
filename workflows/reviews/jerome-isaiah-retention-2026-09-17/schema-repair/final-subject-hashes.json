@@ -1,0 +1,61 @@
+{
+  "records": [
+    {
+      "path": "src/sources/works/jerome/commentarii-in-isaiam/editions/2026-09-17-dco-latin-web/artifacts/pars-4-pdf-97785e2b/artifact.toml",
+      "sha256": "7b786e1c1377ef6b3e3e96278d660958f4bc8b7508c912e8a4669e4b0bb207fd",
+      "byte_size": 3753,
+      "id": "artifact.jerome.commentarii-in-isaiam.dco-latin-web-2026-09-17.pars-4-pdf-97785e2b",
+      "stable_id_preserved": true
+    },
+    {
+      "path": "src/sources/works/jerome/commentarii-in-isaiam/editions/2026-09-17-dco-latin-web/edition.toml",
+      "sha256": "bd50a630fa3c5f31fb9fd01e6abbb05d09d4d61c60a77994c463a6d66cc1780a",
+      "byte_size": 621,
+      "id": "edition.jerome.commentarii-in-isaiam.dco-latin-web-2026-09-17",
+      "stable_id_preserved": true
+    },
+    {
+      "path": "src/sources/works/jerome/commentarii-in-isaiam/editions/2026-09-17-dco-latin-web/passages/15-isaiah-55-6-9.toml",
+      "sha256": "cefc158cce448b43b3b25a3356bdfcbba681cc02792802152df70610c7ce1f30",
+      "byte_size": 944,
+      "id": "passage.jerome.commentarii-in-isaiam.dco-latin-web-2026-09-17.15-isaiah-55-6-9",
+      "stable_id_preserved": true
+    },
+    {
+      "path": "src/sources/works/jerome/commentarii-in-isaiam/work.toml",
+      "sha256": "354178cec35ec8f3c62f610297a1347dbf8e892427fe5b3eb5d9da0236ec69d0",
+      "byte_size": 613,
+      "id": "work.jerome.commentarii-in-isaiam",
+      "stable_id_preserved": true
+    }
+  ],
+  "deleted_old_paths_confirmed_absent": [
+    "src/sources/works/jerome/commentarii-in-isaiam/editions/dco-latin-web-2026-09-17/edition.toml",
+    "src/sources/works/jerome/commentarii-in-isaiam/editions/dco-latin-web-2026-09-17/artifacts/pars-4-pdf-97785e2b/artifact.toml",
+    "src/sources/works/jerome/commentarii-in-isaiam/editions/dco-latin-web-2026-09-17/passages/15-isaiah-55-6-9.toml"
+  ],
+  "pdf_sha256": "97785e2b71a8bdc60e866af2309a205b119bce40cc16a237692a2cdda41ab7e9",
+  "pdf_bytes": 643374,
+  "original_review_artifacts_unchanged": true,
+  "verdict": "CHANGES_REQUIRED",
+  "snapshot_status": "Inspected repair handoff snapshot; author changed artifact during final hash recheck. Subsequent state not reviewed here.",
+  "source_record_defects": [
+    {
+      "path": "src/sources/works/jerome/commentarii-in-isaiam/editions/2026-09-17-dco-latin-web/artifacts/pars-4-pdf-97785e2b/artifact.toml",
+      "lines": [
+        19,
+        20
+      ],
+      "finding": "Unsupported artifact fields access_limitations and identity_search; preserve contents in accepted provenance/notes fields."
+    }
+  ],
+  "review": {
+    "path": ".scratch/jerome-retention-cold-review/rereview.md",
+    "sha256": "66f0af804b5583c3a2816600e5d172adab9b2e6220d215b8a561421f860d95e4"
+  },
+  "source_library_validate_exit_status": 1,
+  "source_reader_exit_status": 0,
+  "publication_binding_diagnostics": 11,
+  "subject_files_mutated_by_reviewer": false,
+  "final_live_hash_assertion_exit_status": 1
+}

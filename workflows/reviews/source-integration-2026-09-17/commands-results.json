@@ -1,0 +1,58 @@
+{
+  "head": "af9b2d10a98a6aac2ce44cc84d6358ede8e630e8",
+  "checked_utc": "2026-09-17T20:35:25.085846+00:00",
+  "subject_file_count": 58,
+  "commands": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 tools/source-reader structure --strict --check",
+      "exit_status": 0,
+      "log": "projection-check.log"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 tools/source-reader check --strict",
+      "exit_status": 0,
+      "log": "reader-check.log"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 tools/source-inventory check src/sources/inventories/claude-publications-v1.toml --review src/sources/inventories/claude-classification-review-v1.toml",
+      "exit_status": 0,
+      "log": "inventory-check.log"
+    },
+    {
+      "command": "sha256sum .scratch/no-production/research-0/gilm.pdf",
+      "exit_status": 0,
+      "log": null
+    },
+    {
+      "command": "pdfinfo .scratch/no-production/research-0/gilm.pdf",
+      "exit_status": 0,
+      "log": "gilm-pdfinfo.log"
+    },
+    {
+      "command": "tools/source-library uses artifact.catholic-church.ordo-lectionum-missae.english-liturgy-office-web-2026-07-25.liturgy-office-pdf-d286cb13 --format json",
+      "exit_status": 0,
+      "log": "gilm-uses.json"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 tools/source-library fingerprint artifact.catholic-church.ordo-lectionum-missae.english-liturgy-office-web-2026-07-25.liturgy-office-pdf-d286cb13",
+      "exit_status": 0,
+      "log": "gilm-fingerprint.log"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 .scratch/source-integration-review/verify.py",
+      "exit_status": 0,
+      "log": "verify.log"
+    },
+    {
+      "command": "git diff --check HEAD -- src/sources/inventories/claude-publications-v1.toml src/sources/works/catholic-church/ordo-lectionum-missae/editions/english-liturgy-office-web-2026-07-25/artifacts/liturgy-office-pdf-d286cb13/artifact.toml src/claude/liturgy/roman-rite/comparative/two-missals-one-sacrifice/research/source-bindings.toml src/web/data/structure/sources",
+      "exit_status": 0,
+      "log": "diff-check.log"
+    },
+    {
+      "command": "sha256sum -c .scratch/source-integration-review/reviewed-file-hashes.sha256",
+      "exit_status": 0,
+      "log": "final-subject-hash-check.log"
+    }
+  ],
+  "qualification": "verify.py and its successful upstream 126-file comparison ran before the separate URW notice supplement. Only THIRD_PARTY.md subsequently differs from that accepted upstream snapshot; all 58 integration subjects remain unchanged. Do not rerun the old upstream-snapshot assertion as though the later font paragraph were part of that snapshot."
+}

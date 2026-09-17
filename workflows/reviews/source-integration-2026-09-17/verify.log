@@ -1,0 +1,7 @@
+PASS: GILM exact PDF has 44 pages; only page_count/notes and one consumer fingerprint changed.
+PASS: 1127 Claude inventory file hashes; 38 refreshed hashes, 37 already equal HEAD; all classifications/ownership unchanged.
+PASS: 29 projected editions, 83 artifact rows, 830 passage rows; exact text of all 25 new payloads.
+PASS: 33 new passage dispositions: {'readable': 25, 'no-transcription': 5, 'rights': 3}
+PASS: index identity/rights preserved; additions: {'artifacts': 25, 'editions': 25, 'passages': 33, 'readable': 25, 'works': 17}
+PASS: upstream retained-review manifests remain exact: [{'manifest': 'workflows/reviews/retained-commentary-review-2026-09-17/final-path-hashes.json', 'matching_files': 126}, {'manifest': 'workflows/reviews/jerome-isaiah-retention-2026-09-17/final/accepted-subject-hashes.json', 'matching_files': 4}]
+PASS: all 58 subject hashes remain unchanged.

@@ -1,0 +1,77 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "raw-ocr",
+   "byte_size": 5376121,
+   "edition_owned": true,
+   "id": "artifact.thomas-aquinas.opera-omnia-volume-14.1863-parma.ia-complete-ocr-02c6dc25",
+   "media_type": "text/plain",
+   "notes": "Complete offered OCR of the volume retained without correction; a locating witness with substantial recognition defects, not a checked transcription.",
+   "page_count": null,
+   "retrieved": "2026-09-17",
+   "rights": "public-domain",
+   "rights_basis": "The1863 printing is public domain in the United States by publication date. The exact source is a mechanical digitization of the University of Toronto/PIMS copy; Princeton Theological Commons identifies the same item and labels its image No Known Copyright: https://commons.ptsem.edu/id/sanctithomaeaqui14thom . No modern editorial text is added by this retention.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/sanctithomaeaqui14thom/sanctithomaeaqui14thom_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "facsimile-pdf",
+   "byte_size": 118531843,
+   "edition_owned": true,
+   "id": "artifact.thomas-aquinas.opera-omnia-volume-14.1863-parma.ia-complete-pdf-aab1181a",
+   "media_type": "application/pdf",
+   "notes": "Complete736-page file acquired. Access limitation: the118531843-byte whole PDF is not tracked because its measured size substantially exceeds the bounded evidence needed here. An offline checkout retains the complete5376121-byte rawOCR and a three-page facsimile derivative containing the title and all of Isaiah55; other page images require the remote file.",
+   "page_count": 736,
+   "retrieved": "2026-09-17",
+   "rights": "public-domain",
+   "rights_basis": "The1863 printing is public domain in the United States by publication date. The exact source is a mechanical digitization of the University of Toronto/PIMS copy; Princeton Theological Commons identifies the same item and labels its image No Known Copyright: https://commons.ptsem.edu/id/sanctithomaeaqui14thom . No modern editorial text is added by this retention.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/sanctithomaeaqui14thom/sanctithomaeaqui14thom.pdf",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "facsimile-excerpt",
+   "byte_size": 630766,
+   "edition_owned": true,
+   "id": "artifact.thomas-aquinas.opera-omnia-volume-14.1863-parma.title-and-isaiah55-facsimile-8005fe61",
+   "media_type": "application/pdf",
+   "notes": "Three pages only: parentPDFpages11,576,577 in that order. Includes titlepage and the complete chapter55, plus the incidental end of chapter54 and beginning of chapter56. All other parentpages omitted.",
+   "page_count": 3,
+   "retrieved": "2026-09-17",
+   "rights": "public-domain",
+   "rights_basis": "The1863 printing is public domain in the United States by publication date. The exact source is a mechanical digitization of the University of Toronto/PIMS copy; Princeton Theological Commons identifies the same item and labels its image No Known Copyright: https://commons.ptsem.edu/id/sanctithomaeaqui14thom . No modern editorial text is added by this retention.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/sanctithomaeaqui14thom/sanctithomaeaqui14thom.pdf",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1863",
+  "editors": [],
+  "id": "edition.thomas-aquinas.opera-omnia-volume-14.1863-parma",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Parmae: Typis Petri Fiaccadori",
+  "title": "Expositio in aliquot libros Veteris Testamenti et in Psalmos L, adjectis brevibus annotationibus",
+  "translators": [],
+  "year": 1863
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Sancti Thomae Aquinatis Opera omnia XIV",
+   "Expositio in aliquot libros Veteris Testamenti et in Psalmos L"
+  ],
+  "author": "Thomas Aquinas; collected edition",
+  "category": "collected-works-volume",
+  "description": "Historical collected-volume container; the biblical commentaries remain separate constituent works.",
+  "id": "work.thomas-aquinas.opera-omnia-volume-14",
+  "languages": [
+   "la"
+  ],
+  "title": "Opera omnia, volume14: Expositio in aliquot libros Veteris Testamenti et in Psalmos L"
+ }
+}

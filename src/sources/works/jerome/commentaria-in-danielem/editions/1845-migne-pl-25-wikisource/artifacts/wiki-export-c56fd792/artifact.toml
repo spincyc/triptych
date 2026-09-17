@@ -1,0 +1,18 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.jerome.commentaria-in-danielem.migne-pl-25-wikisource-1845.wiki-export-c56fd792"
+edition_id = "edition.jerome.commentaria-in-danielem.migne-pl-25-wikisource-1845"
+artifact_type = "wiki-export-xml"
+media_type = "application/xml"
+storage = "remote"
+rights_status = "licensed"
+rights_basis = "Latin Wikisource’s rightsinfo API states Creative Commons Attribution-Share Alike 4.0 for contributions. The underlying ancient Latin and 1845 printing are public domain in the United States; modern host markup is excluded from the retained Latin derivative."
+rights_jurisdiction = "United States"
+source_url = "https://la.wikisource.org/w/index.php?title=Special:Export&pages=Commentaria%20in%20Danielem%20(Hieronymus)&curonly=1&action=submit"
+provenance = "Aliases Commentaria in Danielem, Commentarii in Danielem, In Danielem and Jerome were checked in the repository; none identified an existing work. A web search for Jerome Commentariorum in Danielem Migne 25 Latin text located the complete single-page Wikisource witness. Retrieved the full current-page XML export directly; revision 263922. Rightsinfo API was separately read."
+retrieved = "2026-09-17"
+sha256 = "c56fd792259c2eb71d6b2b4b0e8f9d6121e7f967ff88273028c9b29250b92932"
+byte_size = 233472
+indexable = false
+notes = "Complete offered current-page export, prologue through the final Susanna commentary. Access limitation: exact wrapper-bearing wiki XML is recorded remotely because its contributor markup is omitted from the public-domain derivative; the entire extracted Latin is retained and readable offline. No claim of critical-edition completeness or printed-image collation."
+license = "CC-BY-SA-4.0"
