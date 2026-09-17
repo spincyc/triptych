@@ -91,6 +91,15 @@ proper; do not attribute the editor's complete Mass synthesis to an author who
 only explained one passage. A catena supplies leads, not proof that its named
 author or underlying work has been checked.
 
+Declare controlling external source owners in
+`research/review-dependencies.toml`; its paths must remain beneath `src/`.
+Registered bindings already seal their source ancestry and available payloads.
+Global guidance, `THIRD_PARTY.md`, and workflow review receipts remain governing
+controls or audit references; do not list them as external source owners.
+Explicitly declare controlling rights inventories, permission evidence, and
+collation records beneath `src/` unless registered binding ancestry already
+reaches them. A prose link in a source record does not add a sealed dependency.
+
 Group compatible *arguments*, not reputations, periods, nationalities, or
 quotations sharing a word. An author may contribute to several interpretations
 when different checked passages support them. Each interpretation draws
