@@ -119,6 +119,14 @@ is a bounded mechanical companion and receives no separate web leaf; canonical
 HTML is its accessible superset. This is not an `ineligible` classification
 and must not be represented by a fabricated blocking construct.
 
+Under [the schema-2 contract](liturgy/propers-three-documents.md), the
+canonical research study remains the sole web owner. Its `-synthesis` and
+`-homily` PDFs contain separately authored concise and spoken presentations
+within that same source leaf and have no separate web declarations. The
+canonical HTML supplies their research and citations, not a claim that it
+reproduces their distinct prose verbatim. The reader catalog links all three
+PDFs alongside the canonical web edition.
+
 Component boundaries become semantic headings, stable element keys become
 durable anchors, and relation evidence classes remain readable text rather
 than styling alone. Component-scoped references accompany exactly the

@@ -18,7 +18,8 @@ occurrence rule. Those live where they are derived:
 | The reusable postconciliar guide architecture | [the postconciliar proper profile](postconciliar-propers.md) |
 | The 1962 `01`–`68` temporal spine, `64`–`67` (resumed Sundays), and the `F`/`M` prefixes | [the 1962 proper-guide profile](roman-1962-propers.md) |
 | Edition-locale adoption, dispositions, and dated occurrence results | the selected edition's `propers/registry/` records |
-| Leaf paths, the canonical-plus-`-synthesis` publication pair, catalog rules | [the repository contract](../repository.md) |
+| Leaf paths, derived companions, catalog rules | [the repository contract](../repository.md) |
+| Three-document studies and the successor workflow | [the three-document profile](propers-three-documents.md) |
 
 Where any of those revises, it controls and this file follows. An earlier
 revision of this file reproduced all of it — 60 parent rows, 184 queue rows, 52
@@ -65,6 +66,12 @@ one that cannot.
 
 ### Authorized targets
 
+On 2026-09-17 the maintainer authorized the two GPT targets below for Sunday,
+20 September 2026, and the three-document successor contract: an expansive
+study, concise comparison, and homily for each Missal. This opens only those
+two identities. Earlier publications keep their existing contract until an
+authorized substantial revision.
+
 Each line below records one maintainer decision to open the boundary for
 one provider and one permanent identity. A line is the whole
 authorization: it opens that provider's target and nothing else — not the
@@ -78,6 +85,8 @@ and an identity with no line here is closed.
 - Authorized 2026-09-05: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost`.
 - Authorized 2026-09-05: provider `claude`, identity `liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost`.
 - Authorized 2026-09-05: provider `claude`, identity `liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost`.
+- Authorized 2026-09-17: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost`.
+- Authorized 2026-09-17: provider `gpt`, identity `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a`.
 
 ## How to find out what exists
 
@@ -128,11 +137,12 @@ so they are not made again:
 
 ## Counting rule
 
-Registry counts are counts of **targets**. A target is one canonical leaf and,
-where its manifest authorizes one, one derived `-synthesis` companion — one
+Registry counts are counts of **targets**. A target is one canonical leaf and
+the derived companions its manifest authorizes — one
 identity, one owner, one research trail, one set of source bindings. A target is
-not finished when only the canonical PDF exists, and the companion is never a
-second target.
+not finished when only the canonical PDF exists, and companions are never
+additional targets. Schema 2 requires both `-synthesis` and `-homily` under the
+three-document contract; schema 1 retains its existing synthesis companion.
 
 The English requirement is retrospective. Every proper published before it was
 authored under the previous rule, which printed the appointed Latin in full and

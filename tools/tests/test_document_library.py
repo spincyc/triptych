@@ -12,6 +12,7 @@ trusted.
 
 from __future__ import annotations
 
+import copy
 import json
 import re
 import shutil
@@ -754,6 +755,69 @@ class DriftIsAdvisoryTests(unittest.TestCase):
             for word in ("stale", "rebaseline"):
                 with self.subTest(literal=literal[:40], word=word):
                     self.assertNotIn(word, literal.lower())
+
+
+class SourceOnlyCatalogueTests(unittest.TestCase):
+    """The tracked record survives a clone; it is not an artifact-validation pass."""
+
+    def setUp(self):
+        self.tool = _load_tool()
+        self.old = {
+            "schema": self.tool.SCHEMA, "counted": {"pages": 20}, "works": [{
+                "leaf": "proper", "editions": [{
+                    "provider": "gpt", "title": "Study", "revised": "2026-09-17T00:00:00Z",
+                    "status": "alpha", "pages": 20, "pdf": "pdf/gpt/proper.pdf",
+                    "also": [{"kind": "synthesis", "title": "Concise", "pages": 5,
+                              "pdf": "pdf/gpt/proper-synthesis.pdf"},
+                             {"kind": "homily", "title": "Homily", "pages": 3,
+                              "pdf": "pdf/gpt/proper-homily.pdf"}],
+                }],
+            }],
+        }
+        self.built = copy.deepcopy(self.old)
+        self.edition = self.built["works"][0]["editions"][0]
+        for issue in [self.edition, *self.edition["also"]]:
+            issue.update(pdf=None, pages=None, pdf_absent="not installed")
+
+    def test_unchanged_uninstalled_issues_retain_exact_recorded_facts(self):
+        self.tool.preserve_uninstalled_facts(self.built, self.old)
+        self.assertEqual(self.built, self.old)
+
+    def test_changed_revision_without_artifact_requires_rebuild(self):
+        self.edition["revised"] = "2026-09-18T00:00:00Z"
+        with self.assertRaisesRegex(_corpus.CorpusError, "build and install"):
+            self.tool.preserve_uninstalled_facts(self.built, self.old)
+
+    def test_changed_homily_title_without_artifact_requires_rebuild(self):
+        self.edition["also"][1]["title"] = "Rewritten sermon"
+        with self.assertRaisesRegex(_corpus.CorpusError, "proper-homily"):
+            self.tool.preserve_uninstalled_facts(self.built, self.old)
+
+    def test_installed_extent_wins_over_history(self):
+        self.edition.update(pages=21, pdf="pdf/gpt/proper.pdf")
+        self.edition.pop("pdf_absent")
+        self.tool.preserve_uninstalled_facts(self.built, self.old)
+        self.assertEqual(self.built["counted"]["pages"], 21)
+
+    def test_unrecorded_artifact_is_never_invented(self):
+        self.old["works"] = []
+        self.tool.preserve_uninstalled_facts(self.built, self.old)
+        self.assertIsNone(self.edition["pages"])
+        self.assertIsNone(self.edition["pdf"])
+
+    def test_recorded_pdf_cannot_change_identity(self):
+        self.old["works"][0]["editions"][0]["pdf"] = "pdf/gpt/another.pdf"
+        with self.assertRaisesRegex(_corpus.CorpusError, "invalid recorded artifact"):
+            self.tool.preserve_uninstalled_facts(self.built, self.old)
+
+    def test_hold_keeps_its_extent_without_exposing_a_pdf_link(self):
+        old = self.old["works"][0]["editions"][0]
+        old["status"] = self.edition["status"] = "hold"
+        old.pop("pdf")
+        self.edition.pop("pdf")
+        self.tool.preserve_uninstalled_facts(self.built, self.old)
+        self.assertEqual(self.edition["pages"], 20)
+        self.assertNotIn("pdf", self.edition)
 
 
 if __name__ == "__main__":

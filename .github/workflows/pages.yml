@@ -334,7 +334,7 @@ jobs:
           if not providers:
               raise SystemExit("no provider carries a src/<provider>/**/main.tex")
 
-          SYNTHESIS = "-synthesis"
+          COMPANIONS = ("synthesis", "homily")
 
 
           def resolvable(provider, document):
@@ -343,17 +343,20 @@ jobs:
               A restored PDF still has to pass `.metadata/%.ok`, whose recipe is
               that validator, so a document whose id the validator cannot resolve
               must be typeset rather than restored: its stamp would otherwise be
-              written by a recipe that never ran. Two shapes resolve. A leaf
+              written by a recipe that never ran. A leaf
               carries its own src/<provider>/<id>/main.tex. A proper synthesis is
               the leaf id with `-synthesis` appended and is typeset from the same
               leaf directory's synthesis.tex -- there is no <leaf>-synthesis/
-              directory and there is not meant to be. Anything else is typeset.
+              directory and there is not meant to be. The homily companion
+              resolves in the same way through homily.tex. Anything else is typeset.
               """
               if (WORKSPACE / "src" / provider / document / "main.tex").is_file():
                   return True
-              if document.endswith(SYNTHESIS):
-                  leaf = document[: -len(SYNTHESIS)]
-                  return (WORKSPACE / "src" / provider / leaf / "synthesis.tex").is_file()
+              for mode in COMPANIONS:
+                  suffix = f"-{mode}"
+                  if document.endswith(suffix):
+                      leaf = document.removesuffix(suffix)
+                      return (WORKSPACE / "src" / provider / leaf / f"{mode}.tex").is_file()
               return False
 
 

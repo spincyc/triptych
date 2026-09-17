@@ -349,13 +349,17 @@ def workflow_help(engine, workflow_id: str) -> str:
     example = ""
     if "e.g. " in described:
         example = described.split("e.g. ", 1)[1].rstrip(")").strip()
+    seed_flags = " ".join(
+        f"[--{name.replace('_', '-')} <{'name' if name == 'provider' else name}>]"
+        for name in workflow.get("argument_schema", {}) if name != argument
+    )
     lines = [
         f"tpt {workflow_id} \u2014 {workflow.get('description', '')} "
         f"(v{workflow['version']})",
         "",
         "usage:",
         f"  tpt {workflow_id} list [--json]",
-        f"  tpt {workflow_id} <{argument}> seed [--provider <name>]",
+        f"  tpt {workflow_id} <{argument}> seed {seed_flags}".rstrip(),
         f"  tpt {workflow_id} <{argument}> advance <run-id> --result <path>",
         f"  tpt {workflow_id} <{argument}> advance <run-id> "
         f"--lane-result <lane>=<path> ...",
@@ -474,14 +478,6 @@ def dispatch_workflow(workflow_id: str, rest: list[str]) -> int:
 def _workflow_seed(
     engine, workflow_id: str, doc_id: str, opts: list[str]
 ) -> int:
-    provider = None
-    i = 0
-    while i < len(opts):
-        if opts[i] == "--provider" and i + 1 < len(opts):
-            provider = opts[i + 1]
-            i += 2
-        else:
-            raise ToolError(f"seed: unknown option: {opts[i]}")
     workflow = engine.load_workflow(workflow_id)
     doc_arg = workflow.get("document_argument")
     if not doc_arg:
@@ -492,8 +488,20 @@ def _workflow_seed(
     # The workflow's own argument schema owns the defaults; passing one here
     # would let the launcher and the definition disagree about a run's inputs.
     args = {doc_arg: doc_id}
-    if provider is not None:
-        args["provider"] = provider
+    flags = {"--" + name.replace("_", "-"): name
+             for name in workflow.get("argument_schema", {}) if name != doc_arg}
+    i = 0
+    while i < len(opts):
+        flag = opts[i]
+        if flag not in flags:
+            raise ToolError(f"seed: unknown option: {flag}")
+        name = flags[flag]
+        if name in args:
+            raise ToolError(f"seed: duplicate option: {flag}")
+        if i + 1 >= len(opts) or opts[i + 1].startswith("--"):
+            raise ToolError(f"seed: missing value for {flag}")
+        args[name] = opts[i + 1]
+        i += 2
     sys.stdout.buffer.write(engine.seed_bytes(workflow_id, args))
     return 0
 

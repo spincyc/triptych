@@ -212,18 +212,38 @@ def leaf_dir(root: Path, provider: str, document: str) -> Path:
 # reviser reports, so three such refusals would block the run outright.
 LEAF_EDITION = "leaf"
 CANONICAL_EDITION = "canonical"
+RESEARCH_EDITION = "research"
 SYNTHESIS_EDITION = "synthesis"
-EDITION_CHOICES = (CANONICAL_EDITION, LEAF_EDITION, SYNTHESIS_EDITION)
+HOMILY_EDITION = "homily"
+EDITION_CHOICES = (CANONICAL_EDITION, LEAF_EDITION, RESEARCH_EDITION,
+                   SYNTHESIS_EDITION, HOMILY_EDITION)
 SYNTHESIS_FLAG = "TriptychSynthesisEdition"
 MAIN_TEX = "main.tex"
 SYNTHESIS_TEX = "synthesis.tex"
-# Where an edition's `\input` graph starts. `leaf` starts at both, which is
-# what the prose checks have always done.
+HOMILY_TEX = "homily.tex"
+# Where an edition's `\input` graph starts. Schema 1 keeps its two-document
+# union; schema 2 adds the homily through entry_files below.
 ENTRY_FILES = {
     CANONICAL_EDITION: (MAIN_TEX,),
+    RESEARCH_EDITION: (MAIN_TEX,),
     SYNTHESIS_EDITION: (SYNTHESIS_TEX,),
+    HOMILY_EDITION: (HOMILY_TEX,),
     LEAF_EDITION: (MAIN_TEX, SYNTHESIS_TEX),
 }
+
+
+def three_document_study(leaf: Path) -> bool:
+    """Only schema 2 adopts the new publication contract; schema 1 stays legacy."""
+    manifest = leaf / "proper-components.toml"
+    return manifest.is_file() and tomllib.loads(
+        manifest.read_text(encoding="utf-8")).get("schema") == 2
+
+
+def entry_files(leaf: Path, edition: str) -> tuple[str, ...]:
+    if edition == LEAF_EDITION and three_document_study(leaf):
+        return (MAIN_TEX, SYNTHESIS_TEX, HOMILY_TEX)
+    return ENTRY_FILES[edition]
+
 
 # Two shapes of `synthesis.tex` are current in this corpus, and in neither is
 # the flag a property of the edition's name. Most companions define
@@ -273,9 +293,9 @@ def flag_defined(leaf: Path, edition: str) -> bool | None:
     """
     if edition == LEAF_EDITION:
         return None
-    if edition == CANONICAL_EDITION:
+    if edition in (CANONICAL_EDITION, RESEARCH_EDITION):
         return False
-    entry = leaf / SYNTHESIS_TEX
+    entry = leaf / entry_files(leaf, edition)[0]
     if not entry.is_file():
         return False
     return bool(DEFINES_FLAG.search(
@@ -608,6 +628,15 @@ def check_relation_coverage(leaf: Path, root: Path,
     if not manifest.is_file():
         return (["the leaf carries no proper-components.toml"], "")
     data = tomllib.loads(manifest.read_text(encoding="utf-8"))
+    if data.get("schema") == 2:
+        from _proper_components import audit_v2
+
+        provider_root = root / "src" / leaf.relative_to(root / "src").parts[0]
+        # The schema owns lane coverage. Scope validation checks those record
+        # relations without demanding companions a later author will write.
+        audit_v2(data, manifest, provider_root, phase="scope")
+        return [], (f"{len(data['lanes'])} interpretive lanes, each declaring "
+                    "all four senses and whole-proper component coverage")
     claimed: dict[str, set[str]] = {}
     for component in data.get("components", []):
         claimed.setdefault(component.get("kind", ""), set()).update(
@@ -1499,6 +1528,19 @@ def _chronology_scope(leaf: Path) -> tuple[bool, bool, str]:
     production = _stated_production(leaf)
     wiring = _wiring()
     carried = (leaf / wiring.RECORD).is_file()
+    if three_document_study(leaf):
+        # A carried record remains checked, but adopting the corpus's facts
+        # no longer commits a publication to a date table or to printing dates.
+        marks = ("\\" + CHRONOLOGY_CLAIM, "\\" + CHRONOLOGY_CELL,
+                 "\\" + CHRONOLOGY_ANNOTATION)
+        printed = any(mark in active_tex(path.read_text(encoding="utf-8"))
+                      for path in reader_facing(leaf)
+                      if path.name != "chronology-annotations.tex"
+                      for mark in marks)
+        return carried or printed, False, (
+            "schema 2 permits dates to be omitted; any stated chronology "
+            "claim must still be supported by the corpus and carry its record"
+        )
     workflow, version = production if production is not None else (None, None)
     threshold = CHRONOLOGY_FROM_VERSION.get(workflow) if workflow else None
     bound = threshold is not None and version is not None and version >= threshold
@@ -1534,6 +1576,11 @@ def _annotations_scope(leaf: Path) -> tuple[bool, str]:
     wiring = _wiring()
     path = wiring.annotations_path(leaf)
     carried = path.is_file()
+    if three_document_study(leaf):
+        return carried, (
+            f"schema 2 requires a current projection only when carried "
+            f"in {path.relative_to(leaf)}"
+        )
     workflow, version = production if production is not None else (None, None)
     threshold = ANNOTATIONS_FROM_VERSION.get(workflow) if workflow else None
     bound = threshold is not None and version is not None and version >= threshold
@@ -1632,7 +1679,11 @@ def check_chronology_annotations_current(
     problems = _annotation_macro_definitions(leaf, path)
     if not required:
         return problems, f"not in scope: {why}"
-    problems.extend(_date_cell_wrapper_integrity(leaf))
+    if not three_document_study(leaf) or any(
+        "\\" + CHRONOLOGY_CELL in active_tex(edition_text(leaf, prose_path, edition))
+        for prose_path in leaf_tex(leaf, edition)
+    ):
+        problems.extend(_date_cell_wrapper_integrity(leaf))
     if not path.is_file():
         problems.append(
             f"{why}, so the leaf must carry {path.relative_to(leaf)}; write "
@@ -1919,7 +1970,7 @@ def check_chronology_claims_supported(leaf: Path, root: Path,
     # saying which is the guide's, and a second cell is also how an element
     # already covered by a shared row gets a date of its own smuggled in.
     doubled = sorted(key for key, count in cells_for.items() if count > 1)
-    if doubled:
+    if doubled and not three_document_study(leaf):
         problems.append(
             f"more than one \\{CHRONOLOGY_CELL} names {doubled}; one "
             f"appointed text has one date cell, or the page states two dates "
@@ -1977,10 +2028,23 @@ def reader_facing(leaf: Path, edition: str = LEAF_EDITION) -> list[Path]:
     so a branch the other edition takes is followed no further than a reader
     follows it: the `\\input` inside a dropped branch is dropped with it.
     """
+    if three_document_study(leaf):
+        from _proper_components import include_graph
+
+        provider_root = next(parent for parent in leaf.parents
+                             if parent.parent.name == "src")
+        paths = set()
+        for name in entry_files(leaf, edition):
+            entry = leaf / name
+            if edition == LEAF_EDITION and not entry.is_file():
+                # An early phase may legitimately precede either companion.
+                continue
+            paths.update(include_graph(entry, leaf, provider_root))
+        return sorted(path for path in paths if path.name not in NOT_PROSE)
     seen: set[Path] = set()
     order: list[Path] = []
     root = leaf.resolve()
-    queue = [leaf / name for name in ENTRY_FILES[edition]]
+    queue = [leaf / name for name in entry_files(leaf, edition)]
     while queue:
         path = queue.pop(0)
         # A tracked `\input` argument is repository-relative and shared
@@ -2041,7 +2105,7 @@ def check_house_voice(leaf: Path, root: Path,
     if not files:
         return ([f"the {edition} scope typesets no reader-facing .tex file: "
                  f"no entry file of "
-                 f"{', '.join(ENTRY_FILES[edition])} is there to say what it "
+                 f"{', '.join(entry_files(leaf, edition))} is there to say what it "
                  f"prints"], "")
     problems = []
     unread = []
@@ -2172,6 +2236,9 @@ def check_proposal_fields(leaf: Path, root: Path,
     them reported it -- it fell between two lanes' criteria and no lane owned
     it.
     """
+    if three_document_study(leaf):
+        return [], ("not in scope: schema 2 uses whole-proper interpretive "
+                    "lanes, not the legacy exploratory-proposal template")
     section = None
     for path in reader_facing(leaf, edition):
         text = LINE_COMMENT.sub(
@@ -2246,6 +2313,7 @@ def check_proposal_fields(leaf: Path, root: Path,
 STRUCTURAL_FROM_VERSION = {
     "proper": 24,
     "proper-finish": 2,
+    "proper-study": 1,
 }
 FORBIDDEN_STRUCTURAL_LABELS = frozenset({
     "argument map",
@@ -2480,6 +2548,8 @@ def _run_in_calls(
 
 def _structural_scope(leaf: Path) -> tuple[bool, str]:
     """Whether this leaf states a production contract carrying the rule."""
+    if three_document_study(leaf):
+        return True, "the leaf adopts schema 2"
     production = _stated_production(leaf)
     if production is None:
         return False, (
@@ -2604,7 +2674,8 @@ def main() -> int:
                              "default) reads every file under the leaf with "
                              "no branch resolved, which is what a sweep over "
                              "records wants and what every gate command has "
-                             "always run; `canonical` and `synthesis` read "
+                             "always run; `research` (or legacy `canonical`), "
+                             "`synthesis`, and `homily` read "
                              "one document, following that edition's own "
                              "entry file and resolving "
                              "\\ifdefined\\TriptychSynthesisEdition for it")

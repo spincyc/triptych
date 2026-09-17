@@ -1223,6 +1223,11 @@ class WorkflowEngine:
                 raise WorkflowError(
                     f"run {run_id}: recorded packet hash is inconsistent"
                 )
+            if stages[stage].get("review_input_command"):
+                seal = record.get("review_inputs")
+                line = "REVIEW_INPUTS: " + json.dumps(seal, sort_keys=True, separators=(",", ":"))
+                if not isinstance(seal, dict) or line not in path.read_text().splitlines():
+                    raise WorkflowError(f"run {run_id}: review seal disagrees with hashed packet")
             self._verify_recorded_lane_files(
                 run_id, record, packets_dir, f"{stage}-{iteration:04d}", ".txt"
             )
@@ -1291,6 +1296,8 @@ class WorkflowEngine:
                 body, self.load_schema(self.schema_name_for(stage)),
                 stage["type"],
             )
+            if stage.get("review_input_command") and body.get("review_inputs") != packet.get("review_inputs"):
+                raise WorkflowError(f"run {run_id}: review result seal disagrees with its packet")
             self._record_escalations(
                 audit_state, stage, body, packet["iteration"]
             )
@@ -1335,7 +1342,7 @@ class WorkflowEngine:
                     expected_target = (
                         BLOCKED
                         if self._failure_budget_spent(audit_state, stage, body)
-                        else stage["fail_transition"]
+                        else ((_repair_route(stage, body) or {}).get("transition", stage["fail_transition"]))
                     )
             target = transition["to"]
             if target != expected_target:
@@ -1977,6 +1984,14 @@ class WorkflowEngine:
         )
         args = state["normalized_args"]
 
+        review_inputs = None
+        if stage.get("review_input_command"):
+            previous = next((record for record in state["packet_hashes"]
+                             if record["stage"] == stage["id"]
+                             and record["iteration"] == stage_iteration), None)
+            review_inputs = (previous["review_inputs"] if previous else
+                             self._review_inputs(workflow, stage, state))
+
         # Build header
         header_lines = [
             f"WORKFLOW: {workflow['id']} v{workflow['version']}",
@@ -1987,6 +2002,10 @@ class WorkflowEngine:
             f"ITERATION: {stage_iteration}",
             f"EXECUTION: {_execution_label(stage)}",
         ]
+
+        if review_inputs is not None:
+            header_lines.append("REVIEW_INPUTS: " + json.dumps(
+                review_inputs, sort_keys=True, separators=(",", ":")))
 
         effort = _stage_effort(workflow, stage, lane)
         if effort:
@@ -2131,6 +2150,8 @@ class WorkflowEngine:
             "iteration": stage_iteration,
             "size": len(packet_bytes),
         }
+        if review_inputs is not None:
+            compiled["review_inputs"] = review_inputs
         if lane is not None:
             compiled["lane"] = lane["id"]
             compiled["lane_index"] = lane_index
@@ -2186,6 +2207,8 @@ class WorkflowEngine:
             "hash": packet["hash"],
             "path": str(packet["path"].relative_to(self.repo_root)),
         }
+        if "review_inputs" in packet:
+            record["review_inputs"] = packet["review_inputs"]
         if packet.get("lanes"):
             record["lanes"] = [
                 {
@@ -2229,6 +2252,51 @@ class WorkflowEngine:
 
     # --- Internal: result handling ---
 
+    def _review_inputs(self, workflow, stage, state):
+        """Compute declared review evidence; only the engine may seal it."""
+        command = _substitute_args(stage["review_input_command"],
+                                   _gate_substitutions(workflow, state), quote=True)
+        try:
+            proc = subprocess.run(command, shell=True, capture_output=True,
+                                  text=True, cwd=self.repo_root, timeout=240)
+            if proc.returncode:
+                raise ValueError(self._portable_output(proc.stderr or proc.stdout))
+            value = json.loads(proc.stdout)
+            if not isinstance(value, dict) or not value:
+                raise ValueError("review input command must return a nonempty JSON object")
+            return value
+        except (OSError, ValueError, subprocess.TimeoutExpired) as error:
+            raise WorkflowError(f"{stage['id']}: cannot seal review inputs: {error}") from error
+
+    def _stale_reviews(self, workflow, state):
+        """Earliest stale owner wins; downstream reviews must run again."""
+        latest = {record["stage"]: record for record in state["result_hashes"]}
+        findings = []
+        for other in workflow["stages"]:
+            if not other.get("review_input_command"):
+                continue
+            record = latest.get(other["id"])
+            try:
+                if not record or record["disposition"] != PASS:
+                    raise WorkflowError("no accepted review")
+                path = self.repo_root / record["path"]
+                if hashlib.sha256(path.read_bytes()).hexdigest() != record["hash"]:
+                    raise WorkflowError("recorded review result hash changed")
+                body = _read_json(path)
+                if body.get("review_inputs") == self._review_inputs(workflow, other, state):
+                    continue
+                detail = "current input bytes differ from the accepted review"
+            except (OSError, WorkflowError) as error:
+                detail = str(error)
+            findings.append({
+                "id": "STALE-" + other["id"].upper(), "severity": "blocking",
+                "check": "review-inputs", "location": other["id"],
+                "problem": detail,
+                "required_result": "Repair or restore the owning deliverable and obtain a new independent review of its current bytes.",
+                "repair_target": other["review_input_repair_target"],
+            })
+        return findings
+
     def _load_and_validate_result(
         self,
         result_path: str,
@@ -2248,6 +2316,26 @@ class WorkflowEngine:
         schema = self.load_schema(self.schema_name_for(stage))
         _validate_result(result, schema, stage["type"])
         self._verify_result_answers_packet(result, stage, state)
+        if stage.get("review_input_command"):
+            if "review_inputs" in result:
+                raise WorkflowError("review_inputs is reserved for engine-owned evidence")
+            packet = _current_packet(state, stage["id"])
+            sealed = packet["review_inputs"]
+            workflow = self.load_bound_workflow(state)
+            try:
+                unchanged = sealed == self._review_inputs(workflow, stage, state)
+            except WorkflowError:
+                unchanged = False
+            result["review_inputs"] = sealed
+            if result["disposition"] == PASS and not unchanged:
+                result["disposition"] = CHANGES_REQUIRED
+                result["findings"].append({
+                    "id": "STALE-" + stage["id"].upper(), "severity": "blocking",
+                    "location": stage["id"],
+                    "problem": "Review inputs changed after this cold review packet was dispatched.",
+                    "required_result": "Stabilize the owning deliverable and obtain a new independent review.",
+                    "repair_target": stage["review_input_repair_target"],
+                })
         return result
 
     def _verify_result_answers_packet(
@@ -2642,7 +2730,8 @@ class WorkflowEngine:
                 spent = self._failure_budget_spent(state, stage, result)
                 if spent:
                     return BLOCKED, spent
-                return stage["fail_transition"], None
+                route = _repair_route(stage, result)
+                return (route["transition"] if route else stage["fail_transition"]), None
             raise WorkflowError(
                 f"gate {stage['id']} returned invalid disposition: {disposition}"
             )
@@ -2666,7 +2755,8 @@ class WorkflowEngine:
         bounded revision path. Reaching acceptance with a run whose own record
         contradicts it is not repairable by revision, so it fails closed.
         """
-        problems: list[str] = []
+        problems: list[str] = [finding["id"] + ": " + finding["problem"]
+                               for finding in self._stale_reviews(workflow, state)]
         if stage["type"] != GATE:
             problems.append(
                 f"stage {stage['id']} is a {stage['type']} stage; only a "
@@ -3960,6 +4050,11 @@ class WorkflowEngine:
         all_passed = True
         stage_iter = _current_packet(state, stage["id"])["iteration"]
         log_dir = self.run_dir(run_id) / "gate-logs"
+        if stage.get("verify_review_inputs"):
+            stale = self._stale_reviews(workflow, state)
+            if stale:
+                return {"disposition": FAIL, "findings": stale,
+                        "stage": stage["id"], "iteration": stage_iter}
 
         for check in checks:
             check_id = check["id"]
@@ -4286,6 +4381,16 @@ def _validate_workflow(data: dict[str, Any], path: Path) -> None:
                     )
             if "checks" not in stage or not isinstance(stage["checks"], list):
                 raise WorkflowError(f"{path}: {sid}: gate stage requires 'checks' list")
+
+        if "review_input_command" in stage:
+            if (stype != EVALUATOR or _stage_lanes(stage)
+                    or not isinstance(stage["review_input_command"], str)
+                    or not stage["review_input_command"].strip()
+                    or stage.get("review_input_repair_target") not in
+                    {route.get(REPAIR_TARGET) for route in stage.get(REPAIR_ROUTES, [])}):
+                raise WorkflowError(f"{path}: {sid}: review inputs require a single evaluator, a command and an admitted repair target")
+        if "verify_review_inputs" in stage and (stype != GATE or stage["verify_review_inputs"] is not True):
+            raise WorkflowError(f"{path}: {sid}: verify_review_inputs requires a program gate and true")
 
         _validate_execution(path, sid, stype, stage)
         _validate_repair_routes(path, sid, stype, stage)
@@ -4976,10 +5081,10 @@ def _validate_repair_routes(
     """
     if REPAIR_ROUTES not in stage:
         return
-    if stype != EVALUATOR:
+    if stype != EVALUATOR and not (stype == GATE and stage.get("verify_review_inputs") is True):
         raise WorkflowError(
             f"{path}: {sid}: only an {EVALUATOR} stage may declare "
-            f"'{REPAIR_ROUTES}'; {sid} is a {stype} stage"
+            f"'{REPAIR_ROUTES}' unless it is a gate verifying sealed review inputs; {sid} is a {stype} stage"
         )
     routes = stage[REPAIR_ROUTES]
     if not isinstance(routes, list) or not routes:

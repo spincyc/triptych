@@ -2,7 +2,14 @@
 
 This profile governs source-first guides to temporal, ritual, votive, and other proper formularies in the 1962 *Missale Romanum*. It does not govern calendar assembly, the Ordinary or Order of Mass, postconciliar propers, standalone theological references, or discursive articles. Use `guidance/liturgy/roman-1962-assembly.md` for edition-specific assembly and calendar questions. Universal evidence, metadata, review, rights, and publication rules remain in `guidance/editorial.md`; repository paths and build rules remain in `guidance/repository.md`.
 
-Each guide is a hand-missal companion, not an official liturgical text, critical edition, homily, or substitute for the cited sources. It should help a reader perceive the appointed texts as one ordered liturgical action while keeping verified text, documented history and reception, editorial synthesis, and exploratory proposal distinct.
+New and substantially revised guides use the
+[three-document contract](propers-three-documents.md) and `proper-study`
+workflow: an expansive study, concise comparison, and a distinct homily.
+That contract supersedes this profile's older presentation and pagination
+requirements for schema 2; the source, identity, language, and rights rules
+below remain in force. Schema-1 guides retain the older presentation below.
+
+The study is a hand-missal companion, not an official liturgical text, critical edition, or substitute for the cited sources. It should help a reader perceive the appointed texts as one ordered liturgical action while keeping verified text, documented history and reception, editorial synthesis, and exploratory proposal distinct. The separately reviewed homily is authored under the three-document contract.
 
 ## Collection Identity
 

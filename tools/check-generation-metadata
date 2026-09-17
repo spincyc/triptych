@@ -36,6 +36,7 @@ from _corpus import (  # noqa: E402
     read_production,
 )
 from _tooling import Example, with_examples  # noqa: E402
+from _proper_components import companion_owner  # noqa: E402
 
 # Captured transcripts, never composed; see scripts/_tooling.py.
 EXAMPLES = {
@@ -458,6 +459,10 @@ def resolve_source(source_root: Path, relative: str) -> Source:
     leaf = source_root / relative
     if (leaf / MAIN).is_file():
         return Source(leaf=leaf, relative=relative, entry=leaf / MAIN)
+    companion = companion_owner(source_root, relative)
+    if companion is not None:
+        directory, entry = companion
+        return Source(leaf=directory, relative=directory.relative_to(source_root).as_posix(), entry=entry)
     if relative.endswith(SYNTHESIS_SUFFIX):
         directory = source_root / relative[: -len(SYNTHESIS_SUFFIX)]
         if (directory / SYNTHESIS).is_file():
@@ -505,7 +510,7 @@ def validate_provenance_input(source: Source) -> None:
     through_main = count_inputs(entry_text, f"{source.relative}/{main_stem}")
     if direct + through_main != 1:
         raise ValueError(
-            "synthesis.tex must reach its structured provenance exactly once, by "
+            f"{source.entry.name} must reach its structured provenance exactly once, by "
             "inputting it or by inputting the main.tex that does: found "
             f"{direct} direct and {through_main} through main.tex"
         )

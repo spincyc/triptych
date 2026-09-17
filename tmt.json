@@ -103,7 +103,7 @@
         "tpt"
       ],
       "stage": "draft",
-      "usage": "check-content-preflight [--root DIR] [--provider NAME] [--document ID] [--check NAME] [--list]"
+      "usage": "check-content-preflight [--root DIR] [--provider NAME] [--document ID] [--edition leaf|canonical|research|synthesis|homily] [--check NAME] [--list]"
     },
     "check-curriculum-structure": {
       "idempotent": true,
@@ -147,7 +147,7 @@
       "purpose": "Validate the provider-neutral component manifest used by proper guides.",
       "requires": [],
       "stage": "draft",
-      "usage": "check-proper-components [--provider NAME] [--document ID]"
+      "usage": "check-proper-components [--provider NAME] [--document ID] [--phase scope|content|artifacts] [--edition research|synthesis|homily]"
     },
     "check-proper-identity": {
       "idempotent": true,

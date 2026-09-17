@@ -106,8 +106,12 @@ MAIN_SOURCES := $(shell find $(SOURCE_ROOT) -type f -name main.tex 2>/dev/null |
 CANONICAL_DOCUMENTS := $(patsubst $(SOURCE_ROOT)/%/main.tex,%,$(MAIN_SOURCES))
 PROPER_SYNTHESIS_DOCUMENTS := $(shell \
 	$(PYTHON) tools/tpt check-proper-components --provider $(PROVIDER) \
-		--list-synthesis 2>/dev/null)
-DOCUMENTS := $(CANONICAL_DOCUMENTS) $(PROPER_SYNTHESIS_DOCUMENTS)
+		--phase scope --list-synthesis 2>/dev/null)
+PROPER_HOMILY_DOCUMENTS := $(shell \
+	$(PYTHON) tools/tpt check-proper-components --provider $(PROVIDER) \
+		--phase scope --list-homily 2>/dev/null)
+PROPER_DERIVED_DOCUMENTS := $(PROPER_SYNTHESIS_DOCUMENTS) $(PROPER_HOMILY_DOCUMENTS)
+DOCUMENTS := $(CANONICAL_DOCUMENTS) $(PROPER_DERIVED_DOCUMENTS)
 BUILD_PDFS := $(addprefix $(BUILD_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
 BUILD_METADATA_STAMPS := $(addprefix $(BUILD_ROOT)/.metadata/,$(addsuffix .ok,$(DOCUMENTS)))
 BUILD_METADATA_VERIFICATIONS := $(addprefix $(BUILD_ROOT)/.metadata/,$(addsuffix .verify,$(DOCUMENTS)))
@@ -872,27 +876,29 @@ rebaseline-doc:
 # The gates that read the installed tree.
 #
 # Installed PDFs stopped being tracked on 2026-09-04 and are built during
-# deployment instead (guidance/repository.md). Everything named here therefore
-# reads build output, and on a checkout that has not been built it fails for
-# want of files rather than for want of correctness. Measured against a tree
-# holding the six tracked reading tracks and nothing else under pdf/:
+# deployment instead (guidance/repository.md). These gates include checks of
+# build output. Before the source-only catalogue fallback added on 2026-09-17,
+# a tree holding only the six tracked reading tracks produced these results:
 # `check-document-catalogue` reports 204 editions with no installed PDF and a
 # drifted corpus.json, `check-public-alpha` refuses 204 release entries,
 # `check-promised-deliverables` cannot find 23 pieces of evidence, and
 # `check-sources` fails inside `check-deployment-sources`, at the
 # `document-library structure --check` it reaches through
-# `check-document-catalogue`. That is the same corpus.json comparison that
-# keeps `check-document-catalogue` itself here: the tracked projection records
-# an installed `pdf` for all 204 editions and no `pdf_absent`, so on an
-# unbuilt tree every one of them flips and the whole projection drifts. The
-# whole of `check-sources` is here rather than that one comparison because
-# the comparison is reached through it.
+# `check-document-catalogue`. The projection then replaced recorded PDF paths
+# and extents with local absence, making the whole catalogue drift.
+# `structure --check` now retains those historical artifact facts only when
+# source metadata and issue identity are unchanged. It does not validate an
+# absent PDF: the live catalogue check still needs installed files to compare
+# their titles and extents, changed metadata requires a rebuilt artifact, and
+# new issues without artifacts remain incomplete. The installed-tree grouping
+# stays until these complete targets have been measured again.
 #
 # It was `check-curriculum-rights` that stopped `check-sources` here until
 # 2026-09-05, counting 0 installed curriculum PDFs against 37. That suite now
 # skips its installed-PDF assertions with a reason naming what did not run,
-# so it is no longer the reason; the catalogue projection is, and
-# `check-sources` stays.
+# so it stopped being that blocker. The catalogue projection was the remaining
+# blocker at that measurement; its fallback above does not itself establish
+# that the complete `check-sources` target is now independent of installed PDFs.
 #
 # `check-release-bindings` is deliberately absent: the six volumes under
 # pdf/reading-plans/ stay tracked, so its recorded site sources are still on
@@ -1206,17 +1212,21 @@ $(BUILD_ROOT)/$(1).pdf: $(shell find $(SOURCE_ROOT)/$(1) -type f \( \
 endef
 $(foreach document,$(CANONICAL_DOCUMENTS),$(eval $(call REGISTER_DOCUMENT_SOURCES,$(document))))
 
-define REGISTER_PROPER_SYNTHESIS_SOURCES
-$(BUILD_ROOT)/$(1).pdf: $(shell find $(SOURCE_ROOT)/$(patsubst %-synthesis,%,$(1)) \
+define REGISTER_PROPER_DERIVED_SOURCES
+$(BUILD_ROOT)/$(1).pdf: $(shell find $(SOURCE_ROOT)/$(patsubst %-homily,%,$(patsubst %-synthesis,%,$(1))) \
 	-type f \( -name '*.tex' -o -name '*.toml' -o -name '*.sty' -o -name '*.bib' \) \
 	2>/dev/null | sort)
 endef
-$(foreach document,$(PROPER_SYNTHESIS_DOCUMENTS),\
-	$(eval $(call REGISTER_PROPER_SYNTHESIS_SOURCES,$(document))))
+$(foreach document,$(PROPER_DERIVED_DOCUMENTS),\
+	$(eval $(call REGISTER_PROPER_DERIVED_SOURCES,$(document))))
 
 $(foreach document,$(PROPER_SYNTHESIS_DOCUMENTS),\
 	$(eval $(BUILD_ROOT)/$(document).pdf: \
 		$(SOURCE_ROOT)/$(patsubst %-synthesis,%,$(document))/synthesis.tex))
+
+$(foreach document,$(PROPER_HOMILY_DOCUMENTS),\
+	$(eval $(BUILD_ROOT)/$(document).pdf: \
+		$(SOURCE_ROOT)/$(patsubst %-homily,%,$(document))/homily.tex))
 
 # Run pdfLaTeX until the document stops moving under it.
 #
@@ -1394,7 +1404,7 @@ recorded='$(1).fls'; \
 endef
 
 # $(COMMON_SOURCES) because a synthesis is a document like any other and opens
-# the shared preamble. REGISTER_PROPER_SYNTHESIS_SOURCES already declares each
+# the shared preamble. REGISTER_PROPER_DERIVED_SOURCES already declares each
 # synthesis's own sources per target; what this pattern rule was missing was
 # the shared preamble alone, so a preamble edit rebuilt no synthesis at all.
 # ASSERT_DECLARED_INPUTS below found it. When it did, synthesis PDFs were not
@@ -1408,8 +1418,8 @@ $(BUILD_ROOT)/%-synthesis.pdf: $(COMMON_SOURCES)
 	@rm -f -- '$(BUILD_ROOT)/.metadata/$*-synthesis.ok'
 	@$(call PDFLATEX_TO_FIXED_POINT,$(notdir $*)-synthesis,$*/synthesis.tex,$(BUILD_ROOT)/$*-synthesis)
 	@$(PROPER_COMPONENT_CHECKER) --provider '$(PROVIDER)' --document '$*' \
-		--aux '$(BUILD_ROOT)/$*-synthesis.aux'
-	@$(METADATA_CHECKER) --provider '$(PROVIDER)' --pdf '$*' '$@'
+		--edition synthesis --aux '$(BUILD_ROOT)/$*-synthesis.aux'
+	@$(METADATA_CHECKER) --provider '$(PROVIDER)' --pdf '$*-synthesis' '$@'
 	@set -eu; \
 		pdf_line=$$($(SHA256) -- '$@'); pdf_hash=$${pdf_line%% *}; \
 		validator_line=$$($(SHA256) -- '$(METADATA_CHECKER_IMPL)'); \
@@ -1417,6 +1427,21 @@ $(BUILD_ROOT)/%-synthesis.pdf: $(COMMON_SOURCES)
 		printf 'schema=1\nprovider=%s\ndocument=%s\npdf_sha256=%s\nvalidator_sha256=%s\n' \
 			'$(PROVIDER)' '$*-synthesis' "$$pdf_hash" "$$validator_hash" \
 			> '$(BUILD_ROOT)/.metadata/$*-synthesis.ok'
+
+$(BUILD_ROOT)/%-homily.pdf: $(COMMON_SOURCES)
+	@mkdir -p $(@D) '$(BUILD_ROOT)/.metadata/$(dir $*)'
+	@rm -f -- '$(BUILD_ROOT)/.metadata/$*-homily.ok'
+	@$(call PDFLATEX_TO_FIXED_POINT,$(notdir $*)-homily,$*/homily.tex,$(BUILD_ROOT)/$*-homily)
+	@$(PROPER_COMPONENT_CHECKER) --provider '$(PROVIDER)' --document '$*' \
+		--edition homily --aux '$(BUILD_ROOT)/$*-homily.aux'
+	@$(METADATA_CHECKER) --provider '$(PROVIDER)' --pdf '$*-homily' '$@'
+	@set -eu; \
+		pdf_line=$$($(SHA256) -- '$@'); pdf_hash=$${pdf_line%% *}; \
+		validator_line=$$($(SHA256) -- '$(METADATA_CHECKER_IMPL)'); \
+		validator_hash=$${validator_line%% *}; \
+		printf 'schema=1\nprovider=%s\ndocument=%s\npdf_sha256=%s\nvalidator_sha256=%s\n' \
+			'$(PROVIDER)' '$*-homily' "$$pdf_hash" "$$validator_hash" \
+			> '$(BUILD_ROOT)/.metadata/$*-homily.ok'
 
 $(BUILD_ROOT)/%.pdf: $(SOURCE_ROOT)/%/main.tex $(COMMON_SOURCES) | check-metadata
 	@mkdir -p $(@D)

@@ -4,6 +4,13 @@ This delta profile governs source-first guides to the textual variable parts of 
 
 ## Governing priorities
 
+New and substantially revised guides use the
+[three-document contract](propers-three-documents.md) and `proper-study`
+workflow. It replaces this profile's older presentation, fixed pagination,
+and two-document membership for schema 2. The edition, identity, occurrence,
+branch, source-owner, language, and rights rules below still apply; schema-1
+guides retain the older presentation.
+
 Apply these priorities in order:
 
 1. **Identify the instance.** Fix the edition, language, territory, calendar, date when needed, formula key or other governing identity, source owner, cycle, form, ritual context, and branch universe before drafting.

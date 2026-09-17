@@ -121,9 +121,9 @@ if run_tool --aux "$sandbox/wide.aux" >/dev/null 2>&1; then
 fi
 
 cat >"$sandbox/good.aux" <<'AUX'
-\newlabel{triptych:brief-synthesis:start}{{1}{10}}
-\newlabel{triptych:brief-synthesis:end}{{1}{11}}
-\newlabel{triptych:brief-synthesis:next}{{1}{12}}
+\newlabel{triptych:brief-synthesis:start}{{1}{3}}
+\newlabel{triptych:brief-synthesis:end}{{1}{4}}
+\newlabel{triptych:brief-synthesis:next}{{1}{5}}
 AUX
 run_tool --aux "$sandbox/good.aux" >/dev/null
 

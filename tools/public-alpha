@@ -35,6 +35,10 @@ from _corpus import (  # noqa: E402
     eligible_document_ids as corpus_eligible_document_ids,
 )
 from _scanning import markers_for, present  # noqa: E402
+from _proper_components import (
+    audit_v2, companion_owner, outputs as proper_outputs, relative_id,
+)
+
 from _tooling import (  # noqa: E402
     Example,
     examples_live_on_the_verbs,
@@ -283,6 +287,7 @@ FIXED_ARTIFACT_INPUT_PATHS = {
     "requirements-public-alpha.txt",
     POSTCONCILIAR_TRANSLATIONS_RELATIVE.as_posix(),
     "tools/public-alpha",
+    "scripts/_proper_components.py",
 }
 # The one origin the published site is reached at. Keep this as an origin
 # serialization (no trailing slash); public_site_url adds the path separator.
@@ -2179,21 +2184,21 @@ def discover_source_ids(provider: str) -> set[str]:
     for path in root.rglob("proper-components.toml"):
         try:
             data = tomllib.loads(path.read_text(encoding="utf-8"))
-            synthesis = data.get("outputs", {}).get("synthesis")
-        except (OSError, tomllib.TOMLDecodeError):
-            continue
-        if isinstance(synthesis, str):
-            ids.add(synthesis)
+            declared = proper_outputs(data)
+            if data["document"] != path.parent.relative_to(root).as_posix():
+                raise ValueError("document must match its canonical source owner")
+        except (OSError, ValueError, tomllib.TOMLDecodeError) as exc:
+            raise ReleaseError(f"invalid proper manifest {path}: {exc}") from exc
+        for mode in ("synthesis", "homily"):
+            if mode in declared:
+                ids.add(declared[mode])
     return ids
 
 
 def publication_source_path(provider: str, leaf: str) -> Path:
     direct = ROOT / "src" / provider / leaf / "main.tex"
-    if direct.is_file() or not leaf.endswith("-synthesis"):
-        return direct
-    canonical = ROOT / "src" / provider / leaf.removesuffix("-synthesis")
-    manifest = canonical / "proper-components.toml"
-    return manifest if manifest.is_file() else direct
+    companion = companion_owner(ROOT / "src" / provider, leaf)
+    return companion[0] / "proper-components.toml" if companion else direct
 
 
 def discover_pdf_ids(provider: str) -> set[str]:
@@ -2262,7 +2267,14 @@ def validate_manifest(
     require_active_release: bool = True,
     current_time: datetime | None = None,
     verify_approval_bindings: bool = True,
+    installed_scope: set[tuple[str, str]] | None = None,
 ) -> dict[tuple[str, str], dict]:
+    """Validate global policy, optionally limiting installed-PDF prerequisites.
+
+    Source inventory, release records, catalog identities and authorization
+    remain global. A scope is for accepting selected new outputs in a source-only
+    checkout; site builds and deployment verification always use the whole set.
+    """
     errors: list[str] = []
     try:
         primary, providers = declared_providers(manifest)
@@ -2303,6 +2315,12 @@ def validate_manifest(
         for leaf in discover_pdf_ids(discovery_provider)
     }
     manifest_ids = set(publications)
+    if installed_scope is not None:
+        if not installed_scope:
+            errors.append("installed-PDF scope must not be empty")
+        unknown_scope = installed_scope - (source_ids & manifest_ids)
+        if unknown_scope:
+            errors.append(f"installed-PDF scope contains unknown outputs: {labels(unknown_scope)!r}")
     if source_ids != manifest_ids:
         errors.append(
             "manifest/source mismatch: "
@@ -2332,8 +2350,11 @@ def validate_manifest(
             continue
         counts[status] += 1
         has_pdf = key in pdf_ids
-        if status in {"release", "review"} and not has_pdf:
+        selected_install = installed_scope is None or key in installed_scope
+        if status in {"release", "review"} and not has_pdf and selected_install:
             errors.append(f"{label}: {status} entries require an installed PDF")
+        if installed_scope is not None and key in installed_scope and status == "hold":
+            errors.append(f"{label}: selected output is held, not cleared for publication")
 
         catalog = publication.get("catalog")
         if not isinstance(catalog, str) or not catalog.startswith("library/") or not catalog.endswith(".md"):
@@ -2398,6 +2419,7 @@ def validate_manifest(
         label = publication_label(key, primary)
         homes = occurrences.get(key, [])
         marked_homes = marked_occurrences.get(key, [])
+        selected_install = installed_scope is None or key in installed_scope
         if key in pdf_ids:
             secondary_hold = publication.get("status") == "hold" and provider != primary
             if secondary_hold and len(homes) > 1:
@@ -2418,7 +2440,7 @@ def validate_manifest(
                     f"{label}: manifest catalog {publication.get('catalog')!r} "
                     f"does not match {homes[0]!r}"
                 )
-        elif publication.get("status") == "hold" and homes:
+        elif publication.get("status") == "hold" and homes and selected_install:
             errors.append(
                 f"{label}: source-only hold entries "
                 f"require zero catalog PDF links, found {len(homes)}"
@@ -2434,7 +2456,7 @@ def validate_manifest(
                     f"{label}: manifest catalog {publication.get('catalog')!r} "
                     f"does not match marked identity {marked_homes[0]!r}"
                 )
-        if key not in pdf_ids and publication.get("status") == "hold":
+        if key not in pdf_ids and publication.get("status") == "hold" and selected_install:
             if len(marked_homes) != 1:
                 errors.append(
                     f"{label}: source-only hold entries require exactly one "
@@ -2459,6 +2481,22 @@ def validate_manifest(
     if errors:
         raise ReleaseError("Public-alpha policy check failed:\n- " + "\n- ".join(errors))
     return publications
+
+
+def selected_proper_scope(provider: str, document: str) -> set[tuple[str, str]]:
+    """Resolve exactly the three schema-two outputs from their canonical owner."""
+    try:
+        relative_id(provider, "provider")
+        relative_id(document, "document")
+        if "/" in provider:
+            raise ValueError("provider must be one path component")
+        source_root = ROOT / "src" / provider
+        path = source_root / document / "proper-components.toml"
+        data = tomllib.loads(path.read_text(encoding="utf-8"))
+        audit_v2(data, path, source_root, phase="scope")
+    except (OSError, ValueError, tomllib.TOMLDecodeError) as exc:
+        raise ReleaseError(f"invalid selected proper scope: {exc}") from exc
+    return {(provider, data["outputs"][mode]) for mode in ("research", "synthesis", "homily")}
 
 
 def included_publications(
@@ -5120,6 +5158,8 @@ def main() -> int:
         choices=("github-pages",),
         help="with verify, reject conditions the named deployment target cannot enforce",
     )
+    parser.add_argument("--provider", help="with check --document, select one proper's provider")
+    parser.add_argument("--document", help="with check --provider, require only this canonical proper's three installed PDFs")
     with_examples(parser, tuple(e for verb in EXAMPLES for e in EXAMPLES[verb]))
     args = parser.parse_args()
     try:
@@ -5127,6 +5167,11 @@ def main() -> int:
         # when this command ends. See `held_repository_inputs`.
         with held_repository_inputs():
             manifest = load_manifest()
+            installed_scope = None
+            if args.provider or args.document:
+                if args.command != "check" or args.preview or not (args.provider and args.document):
+                    raise ReleaseError("--provider and --document must be supplied together, only with check")
+                installed_scope = selected_proper_scope(args.provider, args.document)
             if args.deployment_target and (args.command != "verify" or args.preview):
                 raise ReleaseError(
                     "--deployment-target is valid only for public artifact verification"
@@ -5140,12 +5185,19 @@ def main() -> int:
                 )
                 return 0
             publications = validate_manifest(
-                manifest, require_active_release=not args.preview
+                manifest, require_active_release=not args.preview,
+                installed_scope=installed_scope,
             )
             if args.command == "check":
                 if args.preview:
                     raise ReleaseError("--preview is not meaningful with check")
-                print_policy_summary(manifest, publications)
+                if installed_scope is None:
+                    print_policy_summary(manifest, publications)
+                else:
+                    print(f"public-alpha scoped policy valid: {args.provider}:{args.document}")
+                    print(f"global source, release and authorization records valid: {len(publications)} publications")
+                    print("installed-PDF scope: " + ", ".join(leaf for _, leaf in sorted(installed_scope)))
+                    print("Unrelated PDF installation was not checked; this is not a deployment verification.")
             elif args.command == "build":
                 output = build_site(manifest, publications, args.preview)
                 verify_command = "verify --preview" if args.preview else "verify"

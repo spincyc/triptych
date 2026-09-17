@@ -5,7 +5,82 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-09-09.
+Last reconciled: 2026-09-17.
+
+## Three-document proper studies and homilies, 2026-09-17
+
+<!-- promised-deliverable: propers-three-documents-2026-09-17 -->
+
+**In progress.** The maintainer requested a robust, versioned successor
+`proper-study` state machine, retaining the legacy `proper` schema-1 contract,
+and a complete production exercise for both upcoming Sunday propers on
+2026-09-20. The authorized provider is GPT, with these exact identities:
+
+- `liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost`;
+- `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a`.
+
+Each proper must yield three distinct, coherent documents: an expansive full
+study with two to five patristic or saintly interpretive lanes, each interpreting
+the whole proper and each developing the literal, allegorical, moral and
+anagogical senses; a concise alternative reading document interleaving the
+appointed texts and interpretation; and a standalone, speakable exegetical and
+pedagogical homily. Source reception and original editorial synthesis must
+remain distinguishable. The working homily audience is an adult parish and the
+working delivery length is 10–12 minutes, pending any maintainer clarification.
+These are drafting assumptions, not independently received preferences.
+
+The maintainer clarified that the 1962 and postconciliar paths must never
+cross: their calendars and propers are distinct. Each production therefore
+has separate calendar resolution, source-owner judgments, interpretations,
+documents, reviews and release records. Shared build/review machinery and
+independently used primary-source identities do not authorize cross-family
+appointments or imported interpretive prose. This separation must be explicit
+in guidance and tested at the family and component boundaries.
+
+Completion requires reusable output contracts and regressions, verified source
+instances and interpretive lanes for both Sundays, all six beautiful PDFs
+built and visually reviewed page by page before installation, faithful canonical
+web editions, and reconciled catalogue and release records. At each substantive
+deliverable, a cold independent review must inform correction of the deliverable
+and its governing guidance, followed by rerunning the affected workflow to
+completion. Tracked review dispositions and an evaluation of the real iterations
+must survive removal of transient run directories. A terminal blocked run is
+evidence of its actual disposition, not completion of this publication promise.
+
+The guidance has passed independent cold review, including the maintainer's
+subsequent clarification that the physical trees must separate every prayer,
+chant, reading and option. The review is preserved in
+`workflows/reviews/propers-three-documents-guidance-2026-09-17.md`.
+Implementation review identified gaps in binding acceptance to reviewed bytes,
+routing a later stale artifact back through review, and requiring unrelated
+installed PDFs at a single proper's publication gate. All three were corrected
+and passed independent re-review: engine-owned review seals, executable repair
+routes, and a scoped installed-artifact check that preserves the global release
+policy. An actual new-leaf check also exposed and fixed the research owner's
+missing-entrypoint deadlock without changing the source-library schema. The
+implementation review and its exact file hashes are under `workflows/reviews/`;
+156 independently run focused tests passed. Real production remains the next
+acceptance boundary.
+Each research team is preparing its own complete formulary records. No Sunday
+document, production run, installation or release is accepted by this entry;
+the publication and real-run acceptance requirements remain open. The workflow authorities
+under `workflows/`, the owning liturgical profiles under `guidance/liturgy/`,
+and the two GPT publication leaves will hold their respective implementation,
+research, review and production evidence as it is completed. This ledger and
+register own overall scope and completion state. Work remains on
+`feature/codex/propers/homily`; this request does not authorize integration into
+`main` or deployment.
+
+Existing requirements are not discharged by this new promise. In particular,
+the chronology corpus ledger still has its independent source audit and two
+related requirements open, while later entries record published proper
+consumers. That historical acceptance discrepancy needs an explicit disposition;
+consumer use must not imply corpus acceptance or independently invent dates.
+The earlier workflow records also identify durable carry-forward and escalation
+gaps, advisory routing, source-version changes stranding active runs, and
+publication gates coupling unrelated leaves. The successor's review and real
+run evaluation must distinguish inherited defects from newly demonstrated
+behavior without rewriting historical run outcomes.
 
 ## Traditional context and salient dates in GPT propers, 2026-09-09
 

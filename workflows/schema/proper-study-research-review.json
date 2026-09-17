@@ -1,0 +1,42 @@
+{
+  "name": "proper-study-research-review",
+  "description": "Independent cold review with explicit upstream repair ownership.",
+  "required_fields": [
+    "stage",
+    "iteration",
+    "disposition",
+    "findings"
+  ],
+  "valid_dispositions": [
+    "PASS",
+    "CHANGES_REQUIRED",
+    "BLOCKED"
+  ],
+  "finding_fields": [
+    "id",
+    "severity",
+    "location",
+    "problem",
+    "required_result"
+  ],
+  "blocking_finding_fields": [
+    "repair_target"
+  ],
+  "finding_enums": {
+    "severity": [
+      "blocking",
+      "advisory"
+    ],
+    "repair_target": [
+      "research"
+    ]
+  },
+  "optional_fields": [
+    "summary",
+    "observations"
+  ],
+  "observation_fields": [
+    "location",
+    "note"
+  ]
+}

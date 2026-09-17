@@ -1,6 +1,60 @@
 schema_version = 1
 
 [[deliverables]]
+id = "propers-three-documents-2026-09-17"
+owner = "PROJECT-WORK.md"
+promise = "Build and exercise a robust versioned proper-study successor while preserving legacy proper schema 1; produce a full expansive study, concise interleaved alternative reading document, and standalone speakable exegetical pedagogical homily for both GPT Sunday propers on 2026-09-20, with independent cold review, guidance revision and reruns, six beautiful reviewed PDFs and canonical web editions."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "reusable-three-output-contracts"
+  criterion = "Versioned proper-study contracts, guidance, state transitions and regression tests enforce all three distinct outputs, preserve legacy proper schema 1, and fail closed on missing source, review, revision or publication evidence."
+  status = "pass"
+  evidence = ["workflows/pipelines/proper-study.json", "guidance/liturgy/propers-three-documents.md", "tools/tests/test_workflow_proper_study.py", "tools/tests/test_proper_components_v2.py", "workflows/reviews/propers-three-documents-implementation-2026-09-17.md", "workflows/reviews/propers-three-documents-guidance-2026-09-17.md"]
+
+  [[deliverables.requirements]]
+  id = "verified-sunday-instances"
+  criterion = "The GPT 1962 57-seventeenth-after-pentecost and postconciliar US 2011 pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a instances for 2026-09-20 have verified calendar identity, appointed texts, edition and rights boundaries, exact source loci and research records; chronology is consumed from its canonical corpus with unresolved acceptance or evidence limits stated honestly."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "separate-liturgical-paths"
+  criterion = "The 1962 and postconciliar runs independently resolve their own calendars, propers, sources, interpretations and publications; guidance and negative tests prevent cross-family liturgical owner/component imports or mixed appointments while permitting generic shared infrastructure and independent primary-source reuse."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "guidance/liturgy/propers-three-documents.md"]
+
+  [[deliverables.requirements]]
+  id = "whole-proper-four-sense-lanes"
+  criterion = "Each expansive full study develops two to five coherent patristic or saintly interpretive lanes; every lane interprets the whole proper and individually develops all four senses, with checked reception distinguished from original editorial synthesis and no unsupported attribution."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "interleaved-reading-and-speakable-homily"
+  criterion = "Each proper has a concise independently usable reading document interleaving appointed texts and interpretation, and a distinct standalone homily with a coherent exegetical and pedagogical argument suitable for oral delivery; the adult-parish 10–12-minute working assumption or its expressly revised replacement is documented and reviewed."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "six-reviewed-publications"
+  criterion = "All six PDFs are beautifully typeset, built to settled references, mechanically checked and visually reviewed on every page, then installed with exact reviewed-byte identity; canonical web editions pass fidelity and presentation review, and build, catalogue and release records discover the correct outputs without claiming unperformed approval."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "durable-cold-reviews-and-corrections"
+  criterion = "Every substantive deliverable receives cold independent review against its actual evidence; findings, corrections, governing-guidance revisions and independent re-review dispositions are preserved in tracked records, with no self-acceptance or ignored run directory serving as the sole durable evidence."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "real-workflow-completion-and-evaluation"
+  criterion = "The successor is driven on both real Sunday instances through successful completion after required revisions and reruns; tracked iteration evaluation identifies actual state transitions, findings, guidance changes, regression results and terminal dispositions, preserves legacy run history, and leaves no required output or blocking review finding unresolved."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "proper-salient-dates-2026-09-09"
 owner = "PROJECT-WORK.md"
 promise = "Explain the missing traditional Psalm era, preserve distinct sourced chronology relations, and show salient traditional context and textual-history dates elegantly in the recent GPT proper guides, with the same distinction usable for earlier Old Testament passages; reconcile with main, push the validated result, and verify deployment."

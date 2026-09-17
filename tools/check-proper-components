@@ -13,6 +13,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from _tooling import Example, with_examples  # noqa: E402
+from _proper_components import audit_v2, outputs as proper_outputs, relative_id  # noqa: E402
 
 # Captured transcripts, never composed; see scripts/_tooling.py.
 EXAMPLES = {
@@ -95,8 +96,11 @@ def string_list(value: object, field: str, *, nonempty: bool = False) -> list[st
 
 def parse_manifest(path: Path) -> dict:
     data = tomllib.loads(path.read_text(encoding="utf-8"))
-    if data.get("schema") != 1 or data.get("record_type") != "proper-components":
-        raise ValueError("manifest requires schema = 1 and record_type = 'proper-components'")
+    if data.get("schema") not in {1, 2} or data.get("record_type") != "proper-components":
+        raise ValueError("manifest requires schema = 1 or 2 and record_type = 'proper-components'")
+    if data["schema"] == 2:
+        proper_outputs(data)
+        return data
     document = data.get("document")
     if not isinstance(document, str) or not document:
         raise ValueError("document must be a provider-relative canonical leaf id")
@@ -127,8 +131,12 @@ def parse_manifest(path: Path) -> dict:
     return data
 
 
-def audit_manifest(path: Path, provider_root: Path) -> None:
+def audit_manifest(path: Path, provider_root: Path, *, phase: str = "content",
+                   edition: str | None = None, build_root: Path | None = None) -> None:
     data = parse_manifest(path)
+    if data["schema"] == 2:
+        audit_v2(data, path, provider_root, phase=phase, edition=edition, build_root=build_root)
+        return
     leaf = path.parent
     relative = str(leaf.relative_to(provider_root))
     if data["document"] != relative:
@@ -313,12 +321,26 @@ def validate_brief_pages(aux: Path) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--provider", default="gpt")
+    parser.add_argument("--root", type=Path, default=ROOT)
+    parser.add_argument("--phase", choices=("scope", "content", "artifacts"), default="content")
+    parser.add_argument("--edition", choices=("research", "synthesis", "homily"))
+    parser.add_argument("--build-root", type=Path, help="provider build directory (artifacts phase)")
     parser.add_argument("--document")
     parser.add_argument("--aux", type=Path)
     parser.add_argument("--list-synthesis", action="store_true")
+    parser.add_argument("--list-homily", action="store_true")
+    parser.add_argument("--list-derived", action="store_true")
     with_examples(parser, EXAMPLES[""])
     args = parser.parse_args()
-    provider_root = ROOT / "src" / args.provider
+    try:
+        relative_id(args.provider, "provider")
+        if "/" in args.provider:
+            raise ValueError("provider must be one path component")
+        if args.document:
+            relative_id(args.document, "document")
+    except ValueError as exc:
+        parser.error(str(exc))
+    provider_root = args.root / "src" / args.provider
     paths = (
         [provider_root / args.document / MANIFEST]
         if args.document
@@ -329,22 +351,26 @@ def main() -> int:
         try:
             if not path.is_file():
                 raise ValueError(f"missing manifest {path}")
-            audit_manifest(path, provider_root)
+            audit_manifest(path, provider_root, phase=args.phase,
+                           edition=args.edition, build_root=args.build_root)
         except (OSError, ValueError, tomllib.TOMLDecodeError) as exc:
             errors.append(f"{path}: {exc}")
     if args.aux:
         try:
-            validate_brief_pages(args.aux)
+            if not (args.document and parse_manifest(paths[0])["schema"] == 2):
+                validate_brief_pages(args.aux)
         except (OSError, ValueError) as exc:
             errors.append(str(exc))
     if errors:
         for error in errors:
             print(f"proper-component error: {error}", file=sys.stderr)
         return 1
-    if args.list_synthesis:
+    if args.list_synthesis or args.list_homily or args.list_derived:
         for path in paths:
             data = parse_manifest(path)
-            print(data["outputs"]["synthesis"])
+            for mode in ("synthesis", "homily"):
+                if (args.list_derived or getattr(args, f"list_{mode}")) and mode in data["outputs"]:
+                    print(data["outputs"][mode])
         return 0
     print(f"Proper component manifests valid: {len(paths)}.")
     return 0

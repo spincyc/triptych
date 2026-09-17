@@ -656,7 +656,7 @@ def edition_record(document: Document, by_key: dict[tuple[str, str], Document]) 
     """One provider's edition of a work, as the page reads it.
 
     The full issue's title, subject, extent and PDF sit on the edition itself; a
-    synthesis edition is carried under `also`, writing only the fields on which
+    companion edition is carried under `also`, writing only the fields on which
     it departs from the full issue. Restating the fields it shares would put the
     same status in two places on the same object, and the two would be free to
     disagree the moment one of them was corrected.
@@ -667,7 +667,7 @@ def edition_record(document: Document, by_key: dict[tuple[str, str], Document]) 
         if issue.kind == FULL:
             continue
         entry = {"kind": issue.kind, "pages": issue.pages}
-        # A companion is a cut of this document, published or withheld with it.
+        # Derived companions share the canonical owner and its hold boundary.
         if whole.status != "hold":
             entry["pdf"] = issue.pdf
         if issue.pdf_absent:
@@ -729,8 +729,8 @@ def edition_record(document: Document, by_key: dict[tuple[str, str], Document]) 
         record["blocking_constructs"] = list(document.blocking_constructs)
     # What produced this edition. It hangs off the edition and not the work,
     # because two providers' editions of one leaf are independent works that
-    # were produced separately. A `-synthesis` companion is a cut of this
-    # document and not a second one, so it carries no record of its own and
+    # were produced separately. Synthesis and homily companions share this
+    # document's contribution ledger, so each carries no record of its own and
     # appears under `also` without one.
     produced = production_record(document.provenance.produced)
     if produced:
@@ -876,10 +876,73 @@ def _serialise(payload: dict) -> str:
     return json.dumps(payload, ensure_ascii=False, sort_keys=True, indent=1) + "\n"
 
 
+def preserve_uninstalled_facts(built: dict, previous: dict) -> None:
+    """Keep recorded artifact facts in source-only checkouts, never invent them.
+
+    PDFs are deployment outputs; the tracked catalogue is the retained record
+    of their extents. Source metadata and issue identities must still agree.
+    A changed edition needs its own rebuilt PDF before its record can advance.
+    Live `check` and `show` continue reporting what is actually installed.
+    """
+    if previous.get("schema") != built.get("schema"):
+        return
+    old_editions = {
+        (edition["provider"], work["leaf"]): edition
+        for work in previous.get("works", [])
+        for edition in work.get("editions", [])
+    }
+    artifact_fields = {"pages", "pdf", "pdf_absent"}
+
+    def source_fields(record: dict) -> dict:
+        return {key: value for key, value in record.items()
+                if key not in artifact_fields | {"also"}}
+
+    def restore(current: dict, old: dict, expected: str, unchanged: bool, held: bool) -> None:
+        if current.get("pages") is not None or old.get("pages") is None:
+            return
+        if not unchanged or source_fields(current) != source_fields(old):
+            raise CorpusError(
+                f"{expected}: source metadata changed but its PDF is not installed; "
+                "build and install this edition before refreshing the catalogue"
+            )
+        if ((old.get("pdf") != expected and not (held and "pdf" not in old))
+                or not isinstance(old.get("pages"), int) or old["pages"] < 1):
+            raise CorpusError(f"{expected}: invalid recorded artifact identity or extent")
+        if "pdf" in old:
+            current["pdf"] = old["pdf"]
+        current["pages"] = old["pages"]
+        current.pop("pdf_absent", None)
+
+    for work in built["works"]:
+        for edition in work["editions"]:
+            old = old_editions.get((edition["provider"], work["leaf"]))
+            if old is None:
+                continue
+            stem = f"pdf/{edition['provider']}/{work['leaf']}"
+            unchanged = source_fields(edition) == source_fields(old)
+            held = edition.get("status") == "hold"
+            restore(edition, old, stem + ".pdf", unchanged, held)
+            old_issues = {issue["kind"]: issue for issue in old.get("also", [])}
+            for issue in edition.get("also", []):
+                prior = old_issues.get(issue["kind"])
+                if prior:
+                    restore(issue, prior, f"{stem}-{issue['kind']}.pdf", unchanged, held)
+    built["counted"]["pages"] = sum(
+        edition.get("pages") or 0
+        for work in built["works"] for edition in work["editions"]
+    )
+
+
 def run_structure(arguments: argparse.Namespace) -> dict:
     rows, by_key = selected(arguments)
     built = catalogue(rows, by_key)
     target = Path(arguments.out) / STRUCTURE_RELATIVE
+    if target.is_file():
+        try:
+            previous = json.loads(target.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as error:
+            raise CorpusError(f"cannot read tracked catalogue {target}: {error}") from error
+        preserve_uninstalled_facts(built, previous)
     serialised = _serialise(built)
     if arguments.check:
         if not target.is_file():

@@ -511,6 +511,92 @@ class PublicAlphaTest(unittest.TestCase):
             (json.dumps(self.manifest, indent=2) + "\n").encode(),
         )
 
+    def prepare_scoped_proper(self) -> set[tuple[str, str]]:
+        from tools.tests.test_proper_components_v2 import fixture, save
+
+        data, path, _ = fixture(self.root)
+        save(data, path)
+        rows = (self.root / "library/test.md").read_text()
+        for leaf in ("proper", "proper-synthesis", "proper-homily"):
+            self.write(f"pdf/gpt/{leaf}.pdf", b"%PDF-1.7\nselected artifact\n")
+            self.manifest["publications"].append({
+                "id": leaf, "status": "release", "catalog": "library/test.md", "gates": [],
+                "approval": {"authorization": "test-authorization", "pdf_sha256": "0" * 64},
+            })
+            rows += f"\n[{leaf}](../pdf/gpt/{leaf}.pdf)\n"
+        self.write("library/test.md", rows.encode())
+        self.authorize_current_inputs()
+        (self.root / "pdf/gpt/work.pdf").unlink()
+        self.write_manifest()
+        return self.tool.selected_proper_scope("gpt", "proper")
+
+    def test_selected_proper_requires_three_outputs_without_unrelated_pdf(self) -> None:
+        scope = self.prepare_scoped_proper()
+        self.assertEqual(scope, {("gpt", leaf) for leaf in ("proper", "proper-synthesis", "proper-homily")})
+        publications = self.tool.validate_manifest(self.manifest, installed_scope=scope)
+        self.assertEqual(len(publications), 4)
+        with self.assertRaisesRegex(self.tool.ReleaseError, "work: release entries require an installed PDF"):
+            self.tool.validate_manifest(self.manifest)
+
+    def test_selected_proper_rejects_each_missing_target_pdf(self) -> None:
+        scope = self.prepare_scoped_proper()
+        for provider, leaf in sorted(scope):
+            path = self.root / "pdf" / provider / f"{leaf}.pdf"
+            contents = path.read_bytes()
+            path.unlink()
+            with self.subTest(leaf=leaf), self.assertRaisesRegex(self.tool.ReleaseError, f"{leaf}: release entries require an installed PDF"):
+                self.tool.validate_manifest(self.manifest, installed_scope=scope)
+            path.write_bytes(contents)
+
+    def test_selected_proper_still_checks_global_source_inventory(self) -> None:
+        scope = self.prepare_scoped_proper()
+        self.write("src/gpt/unregistered/main.tex", b"Unregistered source.\n")
+        with self.assertRaisesRegex(self.tool.ReleaseError, "manifest/source mismatch"):
+            self.tool.validate_manifest(self.manifest, installed_scope=scope)
+
+    def test_selected_proper_still_checks_unrelated_release_record(self) -> None:
+        scope = self.prepare_scoped_proper()
+        self.manifest["publications"][0]["approval"]["authorization"] = "nonexistent"
+        with self.assertRaisesRegex(self.tool.ReleaseError, "work: alpha binding references unknown authorization"):
+            self.tool.validate_manifest(self.manifest, installed_scope=scope)
+
+    def test_selected_proper_still_checks_authorization_record_hash(self) -> None:
+        scope = self.prepare_scoped_proper()
+        self.write("release/rights/approval.md", b"changed authorization record\n")
+        with self.assertRaisesRegex(self.tool.ReleaseError, "SHA-256"):
+            self.tool.validate_manifest(self.manifest, installed_scope=scope)
+
+    def test_selected_proper_rejects_hold_even_with_an_installed_pdf(self) -> None:
+        scope = self.prepare_scoped_proper()
+        selected = next(p for p in self.manifest["publications"] if p["id"] == "proper-homily")
+        selected.update(status="hold", approval=None)
+        with self.assertRaisesRegex(self.tool.ReleaseError, "selected output is held"):
+            self.tool.validate_manifest(self.manifest, installed_scope=scope)
+
+    def test_selected_proper_cli_reports_its_exact_scope(self) -> None:
+        self.prepare_scoped_proper()
+        result, stdout, stderr = self.run_main("check", "--provider", "gpt", "--document", "proper")
+        self.assertEqual((result, stderr), (0, ""))
+        self.assertIn("scoped policy valid: gpt:proper", stdout)
+        self.assertIn("proper-homily", stdout)
+        self.assertIn("not a deployment verification", stdout)
+
+    def test_selected_proper_cli_cannot_scope_build_prepare_or_verify(self) -> None:
+        self.prepare_scoped_proper()
+        for command in ("build", "prepare", "verify"):
+            with self.subTest(command=command):
+                result, stdout, stderr = self.run_main(command, "--provider", "gpt", "--document", "proper")
+                self.assertEqual(result, 1)
+                self.assertEqual(stdout, "")
+                self.assertIn("only with check", stderr)
+
+    def test_selected_proper_rejects_derived_identity_and_empty_scope(self) -> None:
+        self.prepare_scoped_proper()
+        with self.assertRaisesRegex(self.tool.ReleaseError, "invalid selected proper scope"):
+            self.tool.selected_proper_scope("gpt", "proper-homily")
+        with self.assertRaisesRegex(self.tool.ReleaseError, "scope must not be empty"):
+            self.tool.validate_manifest(self.manifest, installed_scope=set())
+
     def add_unapproved_publication(
         self,
         publication_id: str,

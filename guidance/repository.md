@@ -168,7 +168,7 @@ src/<provider>/
 
 Each publishable leaf contains `main.tex`, `generation-metadata.tex` or a profile-authorized inherited declaration, `web-edition.toml` declaring its web-edition eligibility, and the profile-required records. Shared directories are non-publishable and have no PDF mirror. Put shared material at the narrowest ancestor that genuinely owns it; keep provider-neutral global typesetting primitives under `src/common/` — both providers import the shared preamble, which the build resolves as `\input{common/preamble}` through `TEXINPUTS` — and rite-, edition-, collection-, or work-specific material within its subtree. Hoist a file to `src/common/` only when it is pure typesetting or format and providers genuinely share it. Content-bearing shared material — lesson content, prayer texts, verified liturgical texts, response references — remains inside its provider branch; a provider's documents must not ride on another provider's authored substance.
 
-A proper-guide profile may authorize one canonical leaf to produce two PDFs
+A proper-guide profile may authorize one canonical leaf to produce multiple PDFs
 through a provider-neutral `proper-components.toml` manifest. The bare leaf ID
 is the canonical research edition and the same source is its sole web edition.
 The mechanical `-synthesis` PDF is a derived companion, not a second editable
@@ -178,6 +178,16 @@ or independently authored prose. It is compiled through the manifest's
 components whose manifest mode is `synthesis`. Both outputs are independently
 reviewed, installed, cataloged in the canonical row, and bound to their own
 exact release hashes.
+
+For schema 2, [the three-document profile](liturgy/propers-three-documents.md)
+supersedes the preceding schema-1 membership and prose-free companion rule.
+One leaf owns three independently reviewed entrypoints: the research study,
+the concise `-synthesis` study, and the `-homily` companion. Their authored
+prose remains in the canonical leaf, with one research trail and generation
+record; neither companion is another editable publication leaf. Each has its
+own release record and derived PDF identity. Only the research study has a web
+edition. The manifest and include graph establish the build dependencies of
+all three outputs.
 
 `build/<provider>/`, `pdf/<provider>/`, and `web/<provider>/` mirror a publishable leaf's path below `src/<provider>/`; the PDF and the web edition are named for the leaf. For example, under `gpt`:
 
@@ -458,6 +468,11 @@ Sunday calendars its provider cell links every installed artifact the identity
 owns, in this order and joined by ` · `:
 
     [Full PDF](../pdf/<provider>/<leaf>.pdf) · [Synthesis PDF](../pdf/<provider>/<leaf>-synthesis.pdf) · [Read](../web/<provider>/<leaf>.html)
+
+For schema 2, insert `[Homily PDF](../pdf/<provider>/<leaf>-homily.pdf)`
+between the synthesis and web links. The canonical label remains `Research PDF`
+when appointed text is rights-limited. All three PDFs occupy the same owning
+catalog identity; their separate release records do not create extra rows.
 
 Show `Planned` when the identity has no installed artifact for that provider.
 The row still carries its stable-publication marker, which owns the canonical

@@ -1,5 +1,71 @@
 # TPT Workflow Engine — Operator Documentation
 
+## New proper studies: `proper-study`
+
+New and substantially revised proper guides use `tools/tpt proper-study`, the
+schema-2 successor for both the 1962 and postconciliar Roman Rite collections.
+It produces the expansive study, concise `-synthesis` companion and standalone
+`-homily` from one canonical owner. The old `proper` and `proper-finish` remain
+available for legacy schema-1 work; their two-document and fixed-pagination
+rules are not the new production contract. Read
+`guidance/liturgy/propers-three-documents.md` for the owning standard.
+
+The driver grammar is unchanged:
+
+```sh
+tools/tpt proper-study <canonical-proper-id> seed --provider gpt
+tools/tpt proper-study <canonical-proper-id> advance <run-id> --run-gate
+tools/tpt proper-study <canonical-proper-id> advance <run-id> --result <result.json>
+```
+
+For a dated request, add `--date YYYY-MM-DD`. `--audience "adult parish assembly"`
+states the default homily audience; `--research-handoff <repo-relative-path>`
+can supply a preliminary source dossier. These arguments are pinned into the
+run and every packet; a handoff supplies leads, never inherited verification.
+The 1962 and postconciliar targets always run separately, with their own
+calendar, texts and interpretation records. No import from the other family
+or another governing edition is allowed.
+
+The printed packet chooses which advance command is valid. Use full IDs for
+new leaves; the scope gate checks exact provider authorization before research.
+Postconciliar discovery validates registry-fixed formula slugs and the selected
+edition-locale. The initial resolver supports Proper-of-Time targets; additional
+postconciliar families require an explicit registry resolver rather than a
+grammar-only pass.
+
+The sequence is context, research, cold research review, expansive study and
+cold review, concise study and cold review, homily and cold review, build and
+cold visual review, canonical web conversion and cold review, installation and
+terminal publication gates. Every author stage runs at `high`; every review at
+`xhigh`. Dispatch each as a new worker with no authoring conversation history,
+exactly the compiled packet and its result destination. Never prefill a PASS
+from preparatory work or use an author as the cold reviewer of that work.
+
+Review findings route to the actual evidence, study, concise, homily, artifact
+or publication owner. An upstream repair reruns every downstream document and
+review. The engine seals each review's actual inputs in its hashed dispatch
+packet and accepted result; a reviewer cannot supply or refresh that seal.
+Changed evidence or content returns to its author, changed PDFs return to the
+build/visual boundary, and changed web returns to conversion/review. The
+terminal gate and the independent acceptance audit both verify these seals.
+`research/artifacts.json` and `research/web-artifact.json` remain useful build
+receipts; refreshing one cannot renew an old approval. Research seals include
+local evidence, appointed-text and instance audits, registered source ancestry
+and available payloads, plus external owners declared in
+`research/review-dependencies.toml`. Reviewers check that declaration's coverage.
+Only pure generation timestamp/contribution furniture may evolve between prose
+reviews; stable run provenance and all final render bytes remain sealed.
+
+Publication checks require all three target PDFs and the canonical web edition,
+their exact release records and the correct family catalog. Public-alpha uses
+`check --provider <provider> --document <canonical-id>` to retain global source,
+release and authorization validation while requiring installed artifacts for
+this family. Unrelated uninstalled PDFs are outside that artifact check; this
+is not a global deployment approval. The live document-catalog check is scoped
+to this owner and the deterministic source projection remains globally checked.
+Complete reusable pipeline changes and checks before seeding a real run so the
+run remains bound to one reviewed workflow digest.
+
 ## Overview
 
 The deterministic AI-guidance workflow engine drives a cycle of fresh AI

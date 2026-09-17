@@ -75,16 +75,17 @@ PROVIDERS = ("claude", "gpt")
 
 MAIN = "main.tex"
 SYNTHESIS = "synthesis.tex"
+HOMILY = "homily.tex"
 GENERATION_METADATA = "generation-metadata.tex"
 WEB_EDITION_RECORD = "web-edition.toml"
 
-# A leaf builds one PDF, or two where it carries a synthesis edition: the same
-# document set twice, once whole and once with the appointed texts and the
-# per-element sweep left out. They are issues of one document and not two
-# documents, so they hang off the document rather than doubling the corpus.
+# A leaf owns its research PDF and any declared synthesis/homily companions.
+# These are issues under one catalog identity, with one contribution ledger.
 FULL = "full"
 SYNTHESIS_ISSUE = "synthesis"
 SYNTHESIS_SUFFIX = "-synthesis"
+HOMILY_ISSUE = "homily"
+HOMILY_SUFFIX = "-homily"
 
 
 class CorpusError(RuntimeError):
@@ -683,7 +684,7 @@ def eligible_document_ids(source_root: Path | None = None) -> set[tuple[str, str
 
 @dataclass(frozen=True)
 class Issue:
-    """One PDF a document builds: the whole of it, or its synthesis edition."""
+    """One PDF a document builds: research, synthesis, or a homily companion."""
 
     kind: str
     stem: str
@@ -735,6 +736,13 @@ def _issues_of(directory: Path, provider: str, leaf: str, extents: bool) -> tupl
     entries = [(FULL, directory / MAIN, leaf)]
     if (directory / SYNTHESIS).is_file():
         entries.append((SYNTHESIS_ISSUE, directory / SYNTHESIS, leaf + SYNTHESIS_SUFFIX))
+
+    # A homily is independently composed inside the canonical source owner.
+    # Only a versioned manifest establishes it as a companion issue.
+    from _proper_components import companion_owner
+    companion = companion_owner(directory.parents[len(Path(leaf).parts) - 1], leaf + HOMILY_SUFFIX)
+    if companion is not None:
+        entries.append((HOMILY_ISSUE, companion[1], leaf + HOMILY_SUFFIX))
 
     issues = []
     for kind, entry, stem in entries:

@@ -1,0 +1,770 @@
+{
+  "id": "proper-study",
+  "version": 1,
+  "description": "Source-first proper study, concise study and standalone homily, with independent reviews",
+  "default_effort": "high",
+  "document_argument": "proper",
+  "document_root": "src/{provider}/{proper}",
+  "document_discovery": {
+    "search": "src/*/liturgy/roman-rite/**/propers/*/*",
+    "marker": "main.tex",
+    "id_drops_leading": 2,
+    "validator": "python3 scripts/_proper_study.py identity --document {proper}"
+  },
+  "argument_schema": {
+    "proper": {
+      "type": "string",
+      "required": true,
+      "description": "Canonical 1962 or postconciliar proper leaf id"
+    },
+    "provider": {
+      "type": "string",
+      "required": false,
+      "default": "gpt",
+      "description": "Provider directory (gpt or claude)"
+    },
+    "date": {
+      "type": "string",
+      "required": false,
+      "default": "undated",
+      "description": "Requested civil date YYYY-MM-DD, or undated for a formulary study"
+    },
+    "audience": {
+      "type": "string",
+      "required": false,
+      "default": "adult parish assembly",
+      "description": "Intended homily audience"
+    },
+    "research_handoff": {
+      "type": "string",
+      "required": false,
+      "default": "none",
+      "description": "Repository-relative preliminary research dossier path; evidence leads only"
+    }
+  },
+  "stages": [
+    {
+      "id": "scope-gate",
+      "type": "gate",
+      "execution": {
+        "mode": "program"
+      },
+      "checks": [
+        {
+          "id": "authorized-identity",
+          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase scope",
+          "required_result": "An exact registered identity, edition-locale and provider authorization are required before research."
+        }
+      ],
+      "pass_transition": "resolve-context",
+      "fail_transition": "BLOCKED",
+      "max_iterations": 4
+    },
+    {
+      "id": "resolve-context",
+      "type": "linear",
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "proper-study/contract.md",
+        "proper-study/resolve-context.md"
+      ],
+      "result_schema": "worker-result.json",
+      "next": "research"
+    },
+    {
+      "id": "research",
+      "type": "linear",
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "proper-study/contract.md",
+        "proper-study/research.md"
+      ],
+      "result_schema": "worker-result.json",
+      "next": "research-preflight",
+      "repairs": [
+        "research"
+      ],
+      "reports_repairs": true
+    },
+    {
+      "id": "research-preflight",
+      "type": "gate",
+      "execution": {
+        "mode": "program"
+      },
+      "checks": [
+        {
+          "id": "research-records",
+          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase research",
+          "required_result": "Context, bounded research and valid source bindings must exist before cold evidence review."
+        }
+      ],
+      "pass_transition": "research-review",
+      "fail_transition": "research",
+      "max_iterations": 4
+    },
+    {
+      "id": "research-review",
+      "type": "evaluator",
+      "effort": "xhigh",
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "proper-study/contract.md",
+        "proper-study/review.md",
+        "proper-study/research-review.md"
+      ],
+      "result_schema": "proper-study-research-review.json",
+      "pass_transition": "author-study",
+      "fail_transition": "research",
+      "repair_routes": [
+        {
+          "repair_target": "research",
+          "transition": "research"
+        }
+      ],
+      "max_iterations": 4,
+      "max_total_iterations": 10,
+      "max_novel_iterations": 4,
+      "records_standing_findings": true,
+      "review_input_command": "python3 scripts/_proper_study.py seal --provider {provider} --document {proper} --review research",
+      "review_input_repair_target": "research"
+    },
+    {
+      "id": "author-study",
+      "type": "linear",
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "proper-study/contract.md",
+        "proper-study/author-study.md"
+      ],
+      "result_schema": "worker-result.json",
+      "next": "study-preflight",
+      "repairs": [
+        "study"
+      ],
+      "reports_repairs": true
+    },
+    {
+      "id": "study-preflight",
+      "type": "gate",
+      "execution": {
+        "mode": "program"
+      },
+      "checks": [
+        {
+          "id": "component-contract",
+          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase content --edition research",
+          "required_result": "The schema-2 component graph must faithfully describe this edition and its complete interpretive lanes."
+        },
+        {
+          "id": "references-used",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition research --check references-used",
+          "required_result": "This edition must pass the owning references-used check."
+        },
+        {
+          "id": "identifiers-resolve",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition research --check identifiers-resolve",
+          "required_result": "This edition must pass the owning identifiers-resolve check."
+        },
+        {
+          "id": "bindings-valid",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition research --check bindings-valid",
+          "required_result": "This edition must pass the owning bindings-valid check."
+        },
+        {
+          "id": "restricted-not-reproduced",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition research --check restricted-not-reproduced",
+          "required_result": "This edition must pass the owning restricted-not-reproduced check."
+        },
+        {
+          "id": "relation-coverage",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition research --check relation-coverage",
+          "required_result": "This edition must pass the owning relation-coverage check."
+        },
+        {
+          "id": "unquoted-not-quoted",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition research --check unquoted-not-quoted",
+          "required_result": "This edition must pass the owning unquoted-not-quoted check."
+        },
+        {
+          "id": "structural-meta-labels",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition research --check structural-meta-labels",
+          "required_result": "This edition must pass the owning structural-meta-labels check."
+        },
+        {
+          "id": "house-voice",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition research --check house-voice",
+          "required_result": "This edition must pass the owning house-voice check."
+        },
+        {
+          "id": "chronology-record-current",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition research --check chronology-record-current",
+          "required_result": "This edition must pass the owning chronology-record-current check."
+        },
+        {
+          "id": "chronology-annotations-current",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition research --check chronology-annotations-current",
+          "required_result": "This edition must pass the owning chronology-annotations-current check."
+        },
+        {
+          "id": "chronology-claims-supported",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition research --check chronology-claims-supported",
+          "required_result": "This edition must pass the owning chronology-claims-supported check."
+        },
+        {
+          "id": "provenance-matches-run",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition research --check provenance-matches-run --run-workflow {run.workflow_id} --run-workflow-version {run.workflow_version} --run-workflow-digest {run.workflow_digest} --run-id {run.run_id} --run-seed-commit {run.repo_commit}",
+          "required_result": "Generation provenance must identify this actual workflow run."
+        }
+      ],
+      "pass_transition": "study-review",
+      "fail_transition": "author-study",
+      "max_iterations": 4
+    },
+    {
+      "id": "study-review",
+      "type": "evaluator",
+      "effort": "xhigh",
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "proper-study/contract.md",
+        "proper-study/review.md",
+        "proper-study/study-review.md"
+      ],
+      "result_schema": "proper-study-study-review.json",
+      "pass_transition": "derive-synthesis",
+      "fail_transition": "author-study",
+      "repair_routes": [
+        {
+          "repair_target": "research",
+          "transition": "research"
+        },
+        {
+          "repair_target": "study",
+          "transition": "author-study"
+        }
+      ],
+      "max_iterations": 4,
+      "max_total_iterations": 10,
+      "max_novel_iterations": 4,
+      "records_standing_findings": true,
+      "review_input_command": "python3 scripts/_proper_study.py seal --provider {provider} --document {proper} --review study",
+      "review_input_repair_target": "study"
+    },
+    {
+      "id": "derive-synthesis",
+      "type": "linear",
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "proper-study/contract.md",
+        "proper-study/derive-synthesis.md"
+      ],
+      "result_schema": "worker-result.json",
+      "next": "synthesis-preflight",
+      "repairs": [
+        "synthesis"
+      ],
+      "reports_repairs": true
+    },
+    {
+      "id": "synthesis-preflight",
+      "type": "gate",
+      "execution": {
+        "mode": "program"
+      },
+      "checks": [
+        {
+          "id": "component-contract",
+          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase content --edition synthesis",
+          "required_result": "The schema-2 component graph must faithfully describe this edition and its complete interpretive lanes."
+        },
+        {
+          "id": "references-used",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition synthesis --check references-used",
+          "required_result": "This edition must pass the owning references-used check."
+        },
+        {
+          "id": "identifiers-resolve",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition synthesis --check identifiers-resolve",
+          "required_result": "This edition must pass the owning identifiers-resolve check."
+        },
+        {
+          "id": "bindings-valid",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition synthesis --check bindings-valid",
+          "required_result": "This edition must pass the owning bindings-valid check."
+        },
+        {
+          "id": "restricted-not-reproduced",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition synthesis --check restricted-not-reproduced",
+          "required_result": "This edition must pass the owning restricted-not-reproduced check."
+        },
+        {
+          "id": "relation-coverage",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition synthesis --check relation-coverage",
+          "required_result": "This edition must pass the owning relation-coverage check."
+        },
+        {
+          "id": "unquoted-not-quoted",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition synthesis --check unquoted-not-quoted",
+          "required_result": "This edition must pass the owning unquoted-not-quoted check."
+        },
+        {
+          "id": "structural-meta-labels",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition synthesis --check structural-meta-labels",
+          "required_result": "This edition must pass the owning structural-meta-labels check."
+        },
+        {
+          "id": "house-voice",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition synthesis --check house-voice",
+          "required_result": "This edition must pass the owning house-voice check."
+        },
+        {
+          "id": "chronology-record-current",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition synthesis --check chronology-record-current",
+          "required_result": "This edition must pass the owning chronology-record-current check."
+        },
+        {
+          "id": "chronology-annotations-current",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition synthesis --check chronology-annotations-current",
+          "required_result": "This edition must pass the owning chronology-annotations-current check."
+        },
+        {
+          "id": "chronology-claims-supported",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition synthesis --check chronology-claims-supported",
+          "required_result": "This edition must pass the owning chronology-claims-supported check."
+        },
+        {
+          "id": "provenance-matches-run",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition synthesis --check provenance-matches-run --run-workflow {run.workflow_id} --run-workflow-version {run.workflow_version} --run-workflow-digest {run.workflow_digest} --run-id {run.run_id} --run-seed-commit {run.repo_commit}",
+          "required_result": "Generation provenance must identify this actual workflow run."
+        }
+      ],
+      "pass_transition": "synthesis-review",
+      "fail_transition": "derive-synthesis",
+      "max_iterations": 4
+    },
+    {
+      "id": "synthesis-review",
+      "type": "evaluator",
+      "effort": "xhigh",
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "proper-study/contract.md",
+        "proper-study/review.md",
+        "proper-study/synthesis-review.md"
+      ],
+      "result_schema": "proper-study-synthesis-review.json",
+      "pass_transition": "derive-homily",
+      "fail_transition": "derive-synthesis",
+      "repair_routes": [
+        {
+          "repair_target": "research",
+          "transition": "research"
+        },
+        {
+          "repair_target": "study",
+          "transition": "author-study"
+        },
+        {
+          "repair_target": "synthesis",
+          "transition": "derive-synthesis"
+        }
+      ],
+      "max_iterations": 4,
+      "max_total_iterations": 10,
+      "max_novel_iterations": 4,
+      "records_standing_findings": true,
+      "review_input_command": "python3 scripts/_proper_study.py seal --provider {provider} --document {proper} --review synthesis",
+      "review_input_repair_target": "synthesis"
+    },
+    {
+      "id": "derive-homily",
+      "type": "linear",
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "proper-study/contract.md",
+        "proper-study/derive-homily.md"
+      ],
+      "result_schema": "worker-result.json",
+      "next": "homily-preflight",
+      "repairs": [
+        "homily"
+      ],
+      "reports_repairs": true
+    },
+    {
+      "id": "homily-preflight",
+      "type": "gate",
+      "execution": {
+        "mode": "program"
+      },
+      "checks": [
+        {
+          "id": "component-contract",
+          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase content --edition homily",
+          "required_result": "The schema-2 component graph must faithfully describe this edition and its complete interpretive lanes."
+        },
+        {
+          "id": "references-used",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition homily --check references-used",
+          "required_result": "This edition must pass the owning references-used check."
+        },
+        {
+          "id": "identifiers-resolve",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition homily --check identifiers-resolve",
+          "required_result": "This edition must pass the owning identifiers-resolve check."
+        },
+        {
+          "id": "bindings-valid",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition homily --check bindings-valid",
+          "required_result": "This edition must pass the owning bindings-valid check."
+        },
+        {
+          "id": "restricted-not-reproduced",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition homily --check restricted-not-reproduced",
+          "required_result": "This edition must pass the owning restricted-not-reproduced check."
+        },
+        {
+          "id": "relation-coverage",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition homily --check relation-coverage",
+          "required_result": "This edition must pass the owning relation-coverage check."
+        },
+        {
+          "id": "unquoted-not-quoted",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition homily --check unquoted-not-quoted",
+          "required_result": "This edition must pass the owning unquoted-not-quoted check."
+        },
+        {
+          "id": "structural-meta-labels",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition homily --check structural-meta-labels",
+          "required_result": "This edition must pass the owning structural-meta-labels check."
+        },
+        {
+          "id": "house-voice",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition homily --check house-voice",
+          "required_result": "This edition must pass the owning house-voice check."
+        },
+        {
+          "id": "chronology-record-current",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition homily --check chronology-record-current",
+          "required_result": "This edition must pass the owning chronology-record-current check."
+        },
+        {
+          "id": "chronology-annotations-current",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition homily --check chronology-annotations-current",
+          "required_result": "This edition must pass the owning chronology-annotations-current check."
+        },
+        {
+          "id": "chronology-claims-supported",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition homily --check chronology-claims-supported",
+          "required_result": "This edition must pass the owning chronology-claims-supported check."
+        },
+        {
+          "id": "provenance-matches-run",
+          "command": "tools/tpt check-content-preflight --provider {provider} --document {proper} --edition homily --check provenance-matches-run --run-workflow {run.workflow_id} --run-workflow-version {run.workflow_version} --run-workflow-digest {run.workflow_digest} --run-id {run.run_id} --run-seed-commit {run.repo_commit}",
+          "required_result": "Generation provenance must identify this actual workflow run."
+        }
+      ],
+      "pass_transition": "homily-review",
+      "fail_transition": "derive-homily",
+      "max_iterations": 4
+    },
+    {
+      "id": "homily-review",
+      "type": "evaluator",
+      "effort": "xhigh",
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "proper-study/contract.md",
+        "proper-study/review.md",
+        "proper-study/homily-review.md"
+      ],
+      "result_schema": "proper-study-homily-review.json",
+      "pass_transition": "build-artifacts",
+      "fail_transition": "derive-homily",
+      "repair_routes": [
+        {
+          "repair_target": "research",
+          "transition": "research"
+        },
+        {
+          "repair_target": "study",
+          "transition": "author-study"
+        },
+        {
+          "repair_target": "synthesis",
+          "transition": "derive-synthesis"
+        },
+        {
+          "repair_target": "homily",
+          "transition": "derive-homily"
+        }
+      ],
+      "max_iterations": 4,
+      "max_total_iterations": 10,
+      "max_novel_iterations": 4,
+      "records_standing_findings": true,
+      "review_input_command": "python3 scripts/_proper_study.py seal --provider {provider} --document {proper} --review homily",
+      "review_input_repair_target": "homily"
+    },
+    {
+      "id": "build-artifacts",
+      "type": "linear",
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "proper-study/contract.md",
+        "proper-study/build-artifacts.md"
+      ],
+      "result_schema": "worker-result.json",
+      "next": "artifact-gates",
+      "repairs": [
+        "artifacts"
+      ],
+      "reports_repairs": true
+    },
+    {
+      "id": "artifact-gates",
+      "type": "gate",
+      "execution": {
+        "mode": "program"
+      },
+      "checks": [
+        {
+          "id": "reviewed-artifact-snapshot",
+          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase artifacts",
+          "required_result": "All three settled PDFs, their metadata, declared components and recorded render inputs must match the review snapshot."
+        }
+      ],
+      "pass_transition": "visual-review",
+      "fail_transition": "build-artifacts",
+      "max_iterations": 4
+    },
+    {
+      "id": "visual-review",
+      "type": "evaluator",
+      "effort": "xhigh",
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "proper-study/contract.md",
+        "proper-study/review.md",
+        "proper-study/visual-review.md"
+      ],
+      "result_schema": "proper-study-visual-review.json",
+      "pass_transition": "generate-web",
+      "fail_transition": "build-artifacts",
+      "repair_routes": [
+        {
+          "repair_target": "research",
+          "transition": "research"
+        },
+        {
+          "repair_target": "study",
+          "transition": "author-study"
+        },
+        {
+          "repair_target": "synthesis",
+          "transition": "derive-synthesis"
+        },
+        {
+          "repair_target": "homily",
+          "transition": "derive-homily"
+        },
+        {
+          "repair_target": "artifacts",
+          "transition": "build-artifacts"
+        }
+      ],
+      "max_iterations": 4,
+      "max_total_iterations": 10,
+      "max_novel_iterations": 4,
+      "records_standing_findings": true,
+      "review_input_command": "python3 scripts/_proper_study.py seal --provider {provider} --document {proper} --review visual",
+      "review_input_repair_target": "artifacts"
+    },
+    {
+      "id": "generate-web",
+      "type": "linear",
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "proper-study/contract.md",
+        "proper-study/generate-web.md"
+      ],
+      "result_schema": "worker-result.json",
+      "next": "web-review",
+      "repairs": [
+        "publication"
+      ],
+      "reports_repairs": true
+    },
+    {
+      "id": "web-review",
+      "type": "evaluator",
+      "effort": "xhigh",
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "proper-study/contract.md",
+        "proper-study/review.md",
+        "proper-study/web-review.md"
+      ],
+      "result_schema": "proper-study-web-review.json",
+      "pass_transition": "install-publication",
+      "fail_transition": "generate-web",
+      "repair_routes": [
+        {
+          "repair_target": "research",
+          "transition": "research"
+        },
+        {
+          "repair_target": "study",
+          "transition": "author-study"
+        },
+        {
+          "repair_target": "publication",
+          "transition": "generate-web"
+        }
+      ],
+      "max_iterations": 4,
+      "max_total_iterations": 10,
+      "max_novel_iterations": 4,
+      "records_standing_findings": true,
+      "review_input_command": "python3 scripts/_proper_study.py seal --provider {provider} --document {proper} --review web",
+      "review_input_repair_target": "publication"
+    },
+    {
+      "id": "install-publication",
+      "type": "linear",
+      "execution": {
+        "mode": "single"
+      },
+      "fragments": [
+        "common/agent-brief.md",
+        "common/result-format.md",
+        "proper-study/contract.md",
+        "proper-study/install-publication.md"
+      ],
+      "result_schema": "worker-result.json",
+      "next": "publication-gates",
+      "repairs": [
+        "publication"
+      ],
+      "reports_repairs": true
+    },
+    {
+      "id": "publication-gates",
+      "type": "gate",
+      "execution": {
+        "mode": "program"
+      },
+      "checks": [
+        {
+          "id": "three-document-publication",
+          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase publication",
+          "required_result": "All three installed PDFs must match their reviewed bytes; canonical web, exact release IDs and owning catalog must match this provider and family."
+        },
+        {
+          "id": "release-bindings",
+          "command": "make check-release-bindings",
+          "required_result": "The site authorization must bind the current reader-facing sources."
+        },
+        {
+          "id": "public-alpha",
+          "command": "tools/tpt public-alpha check --provider {provider} --document {proper}",
+          "required_result": "Every publication record and catalog link must satisfy the public release contract."
+        },
+        {
+          "id": "document-catalogue",
+          "command": "tools/tpt document-library check --provider {provider} --document {proper} && tools/tpt document-library structure --check",
+          "required_result": "The deterministic corpus catalog must include the current publications."
+        },
+        {
+          "id": "web-editions-current",
+          "command": "make check-web-editions-current",
+          "required_result": "The reviewed web editions must derive from their current canonical sources."
+        }
+      ],
+      "pass_transition": "ACCEPTED",
+      "fail_transition": "install-publication",
+      "max_iterations": 4,
+      "verify_review_inputs": true,
+      "result_schema": "proper-study-publication-gate.json",
+      "repair_routes": [
+        {
+          "repair_target": "research",
+          "transition": "research"
+        },
+        {
+          "repair_target": "study",
+          "transition": "author-study"
+        },
+        {
+          "repair_target": "synthesis",
+          "transition": "derive-synthesis"
+        },
+        {
+          "repair_target": "homily",
+          "transition": "derive-homily"
+        },
+        {
+          "repair_target": "artifacts",
+          "transition": "build-artifacts"
+        },
+        {
+          "repair_target": "publication",
+          "transition": "generate-web"
+        }
+      ]
+    }
+  ]
+}
