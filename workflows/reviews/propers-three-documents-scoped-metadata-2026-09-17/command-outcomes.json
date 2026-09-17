@@ -1,0 +1,77 @@
+{
+  "review_base": "53fbb228615420f45446f6c8a6eb457da2ce115d",
+  "commands": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 .scratch/implementation-cold-review/scoped-metadata/run_tests.py",
+      "exit": 0,
+      "result": {
+        "tests": 55,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "command": "python3 .scratch/implementation-cold-review/scoped-metadata/audit_tracked_sources.py",
+      "exit": 0,
+      "result": {
+        "tracked_canonical_sources": 192,
+        "gpt": 140,
+        "claude": 52,
+        "failures": 0
+      }
+    },
+    {
+      "command": "python3 .scratch/implementation-cold-review/scoped-metadata/probe_cached_source.py base",
+      "exit": 0,
+      "result": {
+        "cached_doc_exit": 2,
+        "direct_cached_pdf_exit": 2
+      }
+    },
+    {
+      "command": "python3 .scratch/implementation-cold-review/scoped-metadata/probe_cached_source.py initial",
+      "exit": 0,
+      "result": {
+        "cached_doc_exit": 0,
+        "direct_cached_pdf_exit": 0,
+        "finding": "source deletion bypass"
+      }
+    },
+    {
+      "command": "python3 .scratch/implementation-cold-review/scoped-metadata/probe_cached_source.py",
+      "exit": 0,
+      "result": {
+        "cached_doc_exit": 2,
+        "direct_cached_pdf_exit": 2,
+        "tex_invocations": 0
+      }
+    },
+    {
+      "command": "python3 .scratch/implementation-cold-review/scoped-metadata/probe_single_install.py",
+      "exit": 0,
+      "result": {
+        "single_install_scenarios_passed": 6,
+        "bulk_gate_targets_passed": 4
+      }
+    },
+    {
+      "command": "git diff --check -- Makefile tools/check-generation-metadata tmt.json tools/tests/test_generation_metadata.py tools/tests/test_makefile.py",
+      "exit": 0
+    },
+    {
+      "command": "git diff --exit-code 53fbb228615420f45446f6c8a6eb457da2ce115d -- workflows/pipelines workflows/fragments workflows/schema scripts/_workflow.py",
+      "exit": 0
+    }
+  ],
+  "evidence_sha256": {
+    "tests.log": "ed1cb75e441405f8b7b2113f8328fbc95ad31cf94ac2d0ab508acfaa70e36faf",
+    "tracked-source-audit.json": "73c677524adb1c1824e292f9a953577a1089c3176163f89d1f60177d26a3d490",
+    "probe_cached_source-base.txt": "17583484facbd95ce8fd053f1bc5ba87ee062f47edddb882e085582629e0b214",
+    "probe_cached_source-initial.txt": "89e05945febe887a1c3873dc7c62031fc8824a488e627ab13ce160eb6009c87a",
+    "probe_cached_source-final.txt": "77a27d454bac9fd2c0fbb432ce74ca3bc4663d31c0a8f3541023940a9a5e1617",
+    "probe_single_install-final.json": "1a5a9d7d35c245957d81dad8ba908dcec83e4518050edfb077780ad6a81da920",
+    "initial-hashes.json": "4e321dfc48cafe05ee307bef291fa690166d81f3e956898de2b5d438bd9c52b0",
+    "final-hashes.json": "c97af0028a516245179c5ca0f4b1e573a4b3a679f3da99b57842f2135638f66d"
+  }
+}

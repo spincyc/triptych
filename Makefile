@@ -112,6 +112,7 @@ PROPER_HOMILY_DOCUMENTS := $(shell \
 		--phase scope --list-homily 2>/dev/null)
 PROPER_DERIVED_DOCUMENTS := $(PROPER_SYNTHESIS_DOCUMENTS) $(PROPER_HOMILY_DOCUMENTS)
 DOCUMENTS := $(CANONICAL_DOCUMENTS) $(PROPER_DERIVED_DOCUMENTS)
+SOURCE_METADATA_CHECKS := $(addprefix $(BUILD_ROOT)/.metadata/,$(addsuffix .source-check,$(sort $(DOCUMENTS) $(DOC))))
 BUILD_PDFS := $(addprefix $(BUILD_ROOT)/,$(addsuffix .pdf,$(DOCUMENTS)))
 BUILD_METADATA_STAMPS := $(addprefix $(BUILD_ROOT)/.metadata/,$(addsuffix .ok,$(DOCUMENTS)))
 BUILD_METADATA_VERIFICATIONS := $(addprefix $(BUILD_ROOT)/.metadata/,$(addsuffix .verify,$(DOCUMENTS)))
@@ -267,7 +268,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-staleness measure-staleness explain-staleness rebaseline-doc \
 	bibles bible review-bible check-bibles \
 	tracks track review-track check-tracks check-plan-sources reading-structure \
-	FORCE_METADATA_VERIFICATION FORCE_BIBLE_RENDER
+	FORCE_METADATA_VERIFICATION FORCE_BIBLE_RENDER $(SOURCE_METADATA_CHECKS)
 .DELETE_ON_ERROR:
 .SECONDARY: $(BUILD_METADATA_STAMPS)
 
@@ -766,7 +767,7 @@ doc:
 		echo 'doc requires DOC=<document id below src/$(PROVIDER)/>' >&2; \
 		exit 1; \
 	fi
-	@$(MAKE) --no-print-directory '$(BUILD_ROOT)/$(DOC).pdf'
+	@$(MAKE) --no-print-directory '$(BUILD_ROOT)/.metadata/$(DOC).verify'
 
 review-doc: doc
 	@$(PYTHON) $(PDF_REVIEW_TOOL) '$(BUILD_ROOT)/$(DOC).pdf'
@@ -1413,7 +1414,14 @@ endef
 # to resolve a <leaf>-synthesis id to <leaf>/synthesis.tex, which is what had
 # excluded them -- so this rule's prerequisites are part of a cache key, and a
 # missing one would publish a stale PDF rather than merely fail to rebuild.
-$(BUILD_ROOT)/%-synthesis.pdf: $(COMMON_SOURCES)
+# A deleted source disappears from find-based prerequisites. Audit the owner
+# even when its PDF is cached, without making that PDF need typesetting again.
+ifneq ($(strip $(SOURCE_METADATA_CHECKS)),)
+$(SOURCE_METADATA_CHECKS): $(BUILD_ROOT)/.metadata/%.source-check: | check-tools
+	@$(METADATA_CHECKER) --provider '$(PROVIDER)' --document '$*'
+endif
+
+$(BUILD_ROOT)/%-synthesis.pdf: $(COMMON_SOURCES) | $(BUILD_ROOT)/.metadata/%-synthesis.source-check
 	@mkdir -p $(@D) '$(BUILD_ROOT)/.metadata/$(dir $*)'
 	@rm -f -- '$(BUILD_ROOT)/.metadata/$*-synthesis.ok'
 	@$(call PDFLATEX_TO_FIXED_POINT,$(notdir $*)-synthesis,$*/synthesis.tex,$(BUILD_ROOT)/$*-synthesis)
@@ -1428,7 +1436,7 @@ $(BUILD_ROOT)/%-synthesis.pdf: $(COMMON_SOURCES)
 			'$(PROVIDER)' '$*-synthesis' "$$pdf_hash" "$$validator_hash" \
 			> '$(BUILD_ROOT)/.metadata/$*-synthesis.ok'
 
-$(BUILD_ROOT)/%-homily.pdf: $(COMMON_SOURCES)
+$(BUILD_ROOT)/%-homily.pdf: $(COMMON_SOURCES) | $(BUILD_ROOT)/.metadata/%-homily.source-check
 	@mkdir -p $(@D) '$(BUILD_ROOT)/.metadata/$(dir $*)'
 	@rm -f -- '$(BUILD_ROOT)/.metadata/$*-homily.ok'
 	@$(call PDFLATEX_TO_FIXED_POINT,$(notdir $*)-homily,$*/homily.tex,$(BUILD_ROOT)/$*-homily)
@@ -1443,7 +1451,7 @@ $(BUILD_ROOT)/%-homily.pdf: $(COMMON_SOURCES)
 			'$(PROVIDER)' '$*-homily' "$$pdf_hash" "$$validator_hash" \
 			> '$(BUILD_ROOT)/.metadata/$*-homily.ok'
 
-$(BUILD_ROOT)/%.pdf: $(SOURCE_ROOT)/%/main.tex $(COMMON_SOURCES) | check-metadata
+$(BUILD_ROOT)/%.pdf: $(SOURCE_ROOT)/%/main.tex $(COMMON_SOURCES) | $(BUILD_ROOT)/.metadata/%.source-check
 	@mkdir -p $(@D)
 	@mkdir -p '$(BUILD_ROOT)/.metadata/$(dir $*)'
 	@rm -f -- '$(BUILD_ROOT)/.metadata/$*.ok'
@@ -1513,7 +1521,7 @@ $(BUILD_ROOT)/.metadata/%.ok: $(BUILD_ROOT)/%.pdf $(METADATA_CHECKER_IMPL)
 
 FORCE_METADATA_VERIFICATION:
 
-$(BUILD_ROOT)/.metadata/%.verify: $(BUILD_ROOT)/.metadata/%.ok FORCE_METADATA_VERIFICATION
+$(BUILD_ROOT)/.metadata/%.verify: $(BUILD_ROOT)/.metadata/%.ok FORCE_METADATA_VERIFICATION | $(BUILD_ROOT)/.metadata/%.source-check
 	@set -eu; \
 		pdf='$(BUILD_ROOT)/$*.pdf'; \
 		stamp='$<'; \
@@ -1609,6 +1617,10 @@ $(BUILD_ROOT)/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-
 $(BUILD_ROOT)/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c.pdf \
 $(BUILD_ROOT)/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-c-synthesis.pdf: \
 	$(POSTCONCILIAR_US_ROOT)/temporal/shared/ordinary-time/weeks/18/propers/verified.md
+$(BUILD_ROOT)/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf \
+$(BUILD_ROOT)/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.pdf \
+$(BUILD_ROOT)/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf: \
+	$(POSTCONCILIAR_US_ROOT)/temporal/shared/ordinary-time/weeks/25/propers/verified.md
 $(NOVENA_BUILD_PDFS): $(NOVENA_SHARED)
 $(BIOGRAPHY_BUILD_PDFS): $(BIOGRAPHY_SHARED)
 $(HISTORICAL_TRANSLATION_BUILD_PDFS): $(HISTORICAL_TRANSLATION_SHARED)
@@ -1631,7 +1643,7 @@ $(BUILD_ROOT)/devotions/novenas/10-our-lady-of-mount-carmel-daily-prayer.pdf: \
 	$(CARMEL_NOVENA_PRAYERS) \
 	$(CARMEL_NOVENA_ROOT)/generation-metadata.tex
 
-$(PDF_ROOT)/%.pdf: $(BUILD_ROOT)/%.pdf | check-metadata $(BUILD_ROOT)/.metadata/%.verify
+$(PDF_ROOT)/%.pdf: $(BUILD_ROOT)/%.pdf | $(BUILD_ROOT)/.metadata/%.source-check $(BUILD_ROOT)/.metadata/%.verify
 	@set -eu; \
 		pdf='$(BUILD_ROOT)/$*.pdf'; \
 		stamp='$(BUILD_ROOT)/.metadata/$*.ok'; \

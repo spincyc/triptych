@@ -36,7 +36,7 @@ from _corpus import (  # noqa: E402
     read_production,
 )
 from _tooling import Example, with_examples  # noqa: E402
-from _proper_components import companion_owner  # noqa: E402
+from _proper_components import companion_owner, relative_id  # noqa: E402
 
 # Captured transcripts, never composed; see scripts/_tooling.py.
 EXAMPLES = {
@@ -456,21 +456,25 @@ class Source:
 
 
 def resolve_source(source_root: Path, relative: str) -> Source:
+    relative_id(relative, "document")
+
+    def owned_source(directory: Path, entry: Path) -> Source:
+        if (not directory.resolve().is_relative_to(source_root.resolve())
+                or not entry.resolve().is_relative_to(directory.resolve())):
+            raise ValueError("source document must remain inside its provider and canonical owner")
+        return Source(leaf=directory, relative=directory.relative_to(source_root).as_posix(), entry=entry)
+
     leaf = source_root / relative
     if (leaf / MAIN).is_file():
-        return Source(leaf=leaf, relative=relative, entry=leaf / MAIN)
+        return owned_source(leaf, leaf / MAIN)
     companion = companion_owner(source_root, relative)
     if companion is not None:
         directory, entry = companion
-        return Source(leaf=directory, relative=directory.relative_to(source_root).as_posix(), entry=entry)
+        return owned_source(directory, entry)
     if relative.endswith(SYNTHESIS_SUFFIX):
         directory = source_root / relative[: -len(SYNTHESIS_SUFFIX)]
         if (directory / SYNTHESIS).is_file():
-            return Source(
-                leaf=directory,
-                relative=relative[: -len(SYNTHESIS_SUFFIX)],
-                entry=directory / SYNTHESIS,
-            )
+            return owned_source(directory, directory / SYNTHESIS)
         raise ValueError(f"missing source document {directory / SYNTHESIS}")
     raise ValueError(f"missing source document {leaf / MAIN}")
 
@@ -530,6 +534,8 @@ def audit_document(source_root: Path, relative: str, pdf: Path | None = None) ->
     metadata = leaf / GENERATION_METADATA
     if not metadata.is_file():
         raise ValueError(f"missing structured provenance record {metadata}")
+    if not metadata.resolve().is_relative_to(leaf.resolve()):
+        raise ValueError("structured provenance must remain inside the canonical owner")
 
     validate_provenance_input(source)
     for tex_source in leaf.rglob("*.tex"):
@@ -574,7 +580,12 @@ def audit_document(source_root: Path, relative: str, pdf: Path | None = None) ->
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--provider", default=os.environ.get("PROVIDER", "gpt"))
-    parser.add_argument(
+    selection = parser.add_mutually_exclusive_group()
+    selection.add_argument(
+        "--document", metavar="DOCUMENT",
+        help="validate only this document's source provenance, including a declared companion",
+    )
+    selection.add_argument(
         "--pdf",
         nargs=2,
         metavar=("DOCUMENT", "PDF"),
@@ -582,6 +593,12 @@ def main() -> int:
     )
     with_examples(parser, EXAMPLES[""])
     args = parser.parse_args()
+    try:
+        relative_id(args.provider, "provider")
+        if "/" in args.provider:
+            raise ValueError("provider must be one path component")
+    except ValueError as exc:
+        parser.error(str(exc))
     source_root = ROOT / "src" / args.provider
 
     errors: list[str] = []
@@ -589,6 +606,8 @@ def main() -> int:
     if args.pdf:
         relative, pdf_name = args.pdf
         documents = [(relative, Path(pdf_name))]
+    elif args.document is not None:
+        documents = [(args.document, None)]
     else:
         documents = [
             (str(path.parent.relative_to(source_root)), None)

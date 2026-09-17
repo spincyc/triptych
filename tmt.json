@@ -125,7 +125,7 @@
       "purpose": "Validate tracked revision timestamps and AI provenance in source and PDFs.",
       "requires": [],
       "stage": "draft",
-      "usage": "check-generation-metadata [--provider NAME] [--pdf DOCUMENT PDF]"
+      "usage": "check-generation-metadata [--provider NAME] [--document DOCUMENT | --pdf DOCUMENT PDF]"
     },
     "check-promised-deliverables": {
       "idempotent": true,

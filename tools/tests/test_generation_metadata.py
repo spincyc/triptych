@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import io
 import importlib.machinery
 import importlib.util
 import json
@@ -51,6 +52,85 @@ RECORDED_PROVENANCE = (
 # What every record in this file states about its production unless the test is
 # about production: nothing was recoverable.
 NOTHING_RECOVERABLE = None
+
+
+class ScopedGenerationMetadataTests(unittest.TestCase):
+    def setUp(self):
+        scratch = ROOT / ".scratch/components/scoped-metadata"
+        scratch.mkdir(parents=True, exist_ok=True)
+        self.temporary = tempfile.TemporaryDirectory(dir=scratch)
+        self.addCleanup(self.temporary.cleanup)
+        self.root = Path(self.temporary.name)
+        self.provider = self.root / "src/gpt"
+        self.leaf = self.provider / "valid"
+        self.leaf.mkdir(parents=True)
+        (self.leaf / "main.tex").write_text("\\input{valid/generation-metadata}\n")
+        (self.leaf / "generation-metadata.tex").write_text(
+            rf"\AIDocumentRevisionTimestamp{{{TIMESTAMP}}}" + "\n" + PROVENANCE + "\n" + CONTRIBUTION + "\n"
+        )
+        (self.provider / "incomplete").mkdir()
+        (self.provider / "incomplete/main.tex").write_text("% preauthoring scaffold\n")
+
+    def run_checker(self, *arguments):
+        output, errors = io.StringIO(), io.StringIO()
+        with mock.patch.object(CHECKER, "ROOT", self.root), \
+                mock.patch.object(sys, "argv", [str(CHECKER_PATH), *arguments]), \
+                mock.patch.object(sys, "stdout", output), mock.patch.object(sys, "stderr", errors):
+            try:
+                status = CHECKER.main()
+            except SystemExit as exc:
+                status = exc.code
+        return status, output.getvalue(), errors.getvalue()
+
+    def test_selected_valid_source_ignores_unrelated_scaffold_but_global_refuses(self):
+        status, output, errors = self.run_checker("--document", "valid")
+        self.assertEqual((status, errors), (0, ""))
+        self.assertIn("1 canonical record(s)", output)
+        status, _, errors = self.run_checker()
+        self.assertEqual(status, 1)
+        self.assertIn("incomplete: missing structured provenance", errors)
+
+    def test_selected_source_still_rejects_missing_metadata_and_duplicate_input(self):
+        metadata = self.leaf / "generation-metadata.tex"
+        original = metadata.read_text()
+        metadata.unlink()
+        self.assertIn("missing structured provenance", self.run_checker("--document", "valid")[2])
+        metadata.write_text(original)
+        (self.leaf / "main.tex").write_text("\\input{valid/generation-metadata}\n" * 2)
+        status, _, errors = self.run_checker("--document", "valid")
+        self.assertEqual(status, 1)
+        self.assertIn("exactly once", errors)
+
+    def test_selected_declared_companions_share_the_canonical_provenance(self):
+        from tools.tests.test_proper_components_v2 import fixture, save
+        data, manifest, _ = fixture(self.root)
+        save(data, manifest)
+        (manifest.parent / "generation-metadata.tex").write_text((self.leaf / "generation-metadata.tex").read_text())
+        for document in ("proper-synthesis", "proper-homily"):
+            with self.subTest(document=document):
+                status, _, errors = self.run_checker("--document", document)
+                self.assertEqual((status, errors), (0, ""))
+
+    def test_source_and_rendered_selection_are_mutually_exclusive(self):
+        status, _, errors = self.run_checker("--document", "valid", "--pdf", "valid", "unused.pdf")
+        self.assertEqual(status, 2)
+        self.assertIn("not allowed with argument", errors)
+
+    def test_missing_and_escaping_ids_are_refused(self):
+        for document in ("", "missing", "../outside", str(self.leaf), "valid/../incomplete"):
+            with self.subTest(document=document):
+                status, _, _ = self.run_checker("--document", document)
+                self.assertEqual(status, 1)
+        self.assertEqual(self.run_checker("--provider", "../gpt", "--document", "valid")[0], 2)
+
+    def test_symlinked_source_cannot_escape_its_provider(self):
+        outside = self.root / "outside"
+        outside.mkdir()
+        (outside / "main.tex").write_text("\\input{escaped/generation-metadata}\n")
+        (self.provider / "escaped").symlink_to(outside, target_is_directory=True)
+        status, _, errors = self.run_checker("--document", "escaped")
+        self.assertEqual(status, 1)
+        self.assertIn("inside its provider", errors)
 
 
 class GenerationMetadataParserTests(unittest.TestCase):

@@ -319,7 +319,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
     def test_direct_and_default_build_each_validate_a_new_pdf_once(self) -> None:
         self.run_make("build/gpt/demo-a.pdf")
         self.assertEqual(len(self.lines(self.latex_log)), 2)
-        self.assertEqual(len(self.lines(self.check_log)), 2)  # global source + local PDF
+        self.assertEqual(len(self.lines(self.check_log)), 2)  # own source + own PDF
         build_pdf = self.root / "build/gpt/demo-a.pdf"
         stamp = self.root / "build/gpt/.metadata/demo-a.ok"
         self.assertEqual(
@@ -337,7 +337,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.clear_logs()
         result = self.run_make("PDF_JOBS=2")
         self.assertEqual(len(self.lines(self.latex_log)), 4)
-        self.assertEqual(len(self.lines(self.check_log)), 3)  # one global + two local
+        self.assertEqual(len(self.lines(self.check_log)), 5)  # global + two source/PDF pairs
         self.assertTrue(all("-j2" in flags for flags in self.lines(self.flags_log)))
         self.assertNotIn("resetting jobserver", result.stderr)
         self.assertNotIn("jobserver unavailable", result.stderr)
@@ -353,7 +353,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.clear_logs()
         self.run_make("-j4", "all", "pdf")
         self.assertEqual(self.lines(self.latex_log), [])
-        self.assertEqual(len(self.lines(self.check_log)), 1)
+        self.assertEqual(len(self.lines(self.check_log)), 3)  # global + two sources
 
     def test_check_sources_invokes_validation_without_building(self) -> None:
         inventory = self.root / "src/sources/inventories/publications-v1.toml"
@@ -379,6 +379,157 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.assertEqual(self.lines(self.latex_log), [])
         self.assertEqual(self.lines(self.check_log), [])
 
+    def test_doc_scopes_source_validation_and_rejects_own_defect_before_tex(self) -> None:
+        # Source validation itself is exercised with the real checker in
+        # ScopedGenerationMetadataTests; this fixture proves build selection
+        # and fail-before-TeX ordering without manufacturing a rendered PDF.
+        self.checker.write_text(self.checker.read_text() + '''
+if [ "$3" = --document ]; then
+    [ -f "src/gpt/$4/generation-metadata.tex" ] || exit 41
+elif [ "$#" -eq 2 ]; then
+    [ ! -f src/gpt/unrelated/main.tex ] || exit 42
+fi
+''')
+        unrelated = self.root / "src/gpt/unrelated"
+        unrelated.mkdir()
+        (unrelated / "main.tex").write_text("% unfinished sibling\n")
+        self.run_make("doc", "DOC=demo-a")
+        self.assertEqual(self.lines(self.check_log)[0], "--provider gpt --document demo-a")
+        self.assertEqual(len(self.lines(self.latex_log)), 2)
+        self.clear_logs()
+        (self.root / "src/gpt/demo-b/generation-metadata.tex").unlink()
+        result = self.run_make("doc", "DOC=demo-b", check=False)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertEqual(self.lines(self.latex_log), [])
+        for target in ("pdf", "install", "check-metadata"):
+            with self.subTest(target=target):
+                self.clear_logs()
+                result = self.run_make(target, check=False)
+                self.assertNotEqual(result.returncode, 0)
+                self.assertEqual(self.lines(self.check_log)[0], "--provider gpt")
+                self.assertEqual(self.lines(self.latex_log), [])
+
+    def test_doc_revalidates_cached_checker_and_detects_old_mtime_pdf_tampering(self) -> None:
+        self.run_make("doc", "DOC=demo-a")
+        time.sleep(0.02)
+        self.checker.write_text(self.checker.read_text() + "# revised validator\n")
+        self.clear_logs()
+        self.run_make("doc", "DOC=demo-a")
+        self.assertEqual(self.lines(self.latex_log), [])
+
+        self.assertEqual(self.lines(self.check_log), [
+            "--provider gpt --document demo-a",
+            "--provider gpt --pdf demo-a build/gpt/demo-a.pdf",
+        ])
+        pdf = self.root / "build/gpt/demo-a.pdf"
+        before = pdf.stat()
+        pdf.write_bytes(b"tampered cached artifact\n")
+        os.utime(pdf, ns=(before.st_atime_ns, before.st_mtime_ns))
+        self.clear_logs()
+        result = self.run_make("doc", "DOC=demo-a", check=False)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Validation stamp does not match current PDF/checker", result.stderr)
+        self.assertEqual(self.lines(self.latex_log), [])
+
+    def test_deleted_metadata_rejects_cached_doc_and_direct_pdf_without_tex(self) -> None:
+        self.checker.write_text(self.checker.read_text() + '''
+if [ "$3" = --document ]; then
+    [ -f "src/gpt/$4/generation-metadata.tex" ] || exit 41
+fi
+''')
+        self.run_make("doc", "DOC=demo-a")
+        (self.root / "src/gpt/demo-a/generation-metadata.tex").unlink()
+        for arguments in (("doc", "DOC=demo-a"), ("build/gpt/demo-a.pdf",)):
+            with self.subTest(arguments=arguments):
+                self.clear_logs()
+                result = self.run_make(*arguments, check=False)
+                self.assertNotEqual(result.returncode, 0)
+                self.assertEqual(self.lines(self.check_log), ["--provider gpt --document demo-a"])
+                self.assertEqual(self.lines(self.latex_log), [])
+
+    def test_single_installs_scope_sources_and_reject_cached_provenance_defects(self) -> None:
+        self.checker.write_text(self.checker.read_text() + '''
+if [ "$3" = --document ]; then
+    [ -f "src/gpt/$4/generation-metadata.tex" ] || exit 41
+    grep -qx metadata "src/gpt/$4/generation-metadata.tex" || exit 43
+elif [ "$#" -eq 2 ]; then
+    [ ! -f src/gpt/unrelated/main.tex ] || exit 42
+fi
+''')
+        unrelated = self.root / "src/gpt/unrelated"
+        unrelated.mkdir()
+        (unrelated / "main.tex").write_text("% unfinished sibling\n")
+        for document, arguments in (
+            ("demo-a", ("install-doc", "DOC=demo-a")),
+            ("demo-b", ("pdf/gpt/demo-b.pdf",)),
+        ):
+            with self.subTest(arguments=arguments):
+                self.clear_logs()
+                self.run_make(*arguments)
+                built = self.root / f"build/gpt/{document}.pdf"
+                installed = self.root / f"pdf/gpt/{document}.pdf"
+                original_bytes = built.read_bytes()
+                self.assertEqual(installed.read_bytes(), original_bytes)
+                self.assertEqual(self.lines(self.check_log), [
+                    f"--provider gpt --document {document}",
+                    f"--provider gpt --pdf {document} build/gpt/{document}.pdf",
+                ])
+                metadata = self.root / f"src/gpt/{document}/generation-metadata.tex"
+                metadata_stat = metadata.stat()
+                metadata.unlink()
+                for defect in ("deleted", "invalid"):
+                    with self.subTest(defect=defect):
+                        if defect == "invalid":
+                            metadata.write_text("invalid provenance\n")
+                            os.utime(metadata, ns=(metadata_stat.st_atime_ns, metadata_stat.st_mtime_ns))
+                        self.clear_logs()
+                        result = self.run_make(*arguments, check=False)
+                        self.assertNotEqual(result.returncode, 0)
+                        self.assertEqual(self.lines(self.check_log), [f"--provider gpt --document {document}"])
+                        self.assertEqual(self.lines(self.latex_log), [])
+                        self.assertEqual(installed.read_bytes(), original_bytes)
+                metadata.write_text("metadata\n")
+                os.utime(metadata, ns=(metadata_stat.st_atime_ns, metadata_stat.st_mtime_ns))
+                built_stat = built.stat()
+                built.write_bytes(b"tampered cached artifact\n")
+                os.utime(built, ns=(built_stat.st_atime_ns, built_stat.st_mtime_ns))
+                self.clear_logs()
+                result = self.run_make(*arguments, check=False)
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn("Validation stamp does not match current PDF/checker", result.stderr)
+                self.assertEqual(self.lines(self.latex_log), [])
+                self.assertEqual(installed.read_bytes(), original_bytes)
+        self.clear_logs()
+        result = self.run_make("install", check=False)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertEqual(self.lines(self.check_log), ["--provider gpt"])
+        self.assertEqual(self.lines(self.latex_log), [])
+
+    def test_doc_verification_chain_builds_both_derived_companions(self) -> None:
+        checker = self.root / "tools/check-proper-components"
+        checker.write_text('''#!/bin/sh
+case "$*" in
+    *--list-synthesis*) echo demo-a-synthesis ;;
+    *--list-homily*) echo demo-a-homily ;;
+esac
+''')
+        checker.chmod(0o755)
+        for edition in ("synthesis", "homily"):
+            (self.root / f"src/gpt/demo-a/{edition}.tex").write_text("Companion fixture.\n")
+            self.clear_logs()
+            self.run_make("doc", f"DOC=demo-a-{edition}")
+            self.assertEqual(len(self.lines(self.latex_log)), 2)
+            self.assertEqual(self.lines(self.check_log), [
+                f"--provider gpt --document demo-a-{edition}",
+                f"--provider gpt --pdf demo-a-{edition} build/gpt/demo-a-{edition}.pdf"
+            ])
+            stamp = self.root / f"build/gpt/.metadata/demo-a-{edition}.ok"
+            self.assertEqual(self.stamp_fields(stamp)["validator_sha256"], self.sha256(self.checker))
+            self.clear_logs()
+            self.run_make("doc", f"DOC=demo-a-{edition}")
+            self.assertEqual(self.lines(self.latex_log), [])
+            self.assertEqual(self.lines(self.check_log), [f"--provider gpt --document demo-a-{edition}"])
+
     def test_individual_source_gates_keep_completion_screening_explicit(self) -> None:
         self.run_make("check-source-inventory")
         self.run_make("check-source-family-migration")
@@ -394,7 +545,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
     def test_clean_review_bootstraps_bounded_jobs_and_reuses_a_jobserver(self) -> None:
         result = self.run_make("review-pdfs", "PDF_JOBS=2")
         self.assertEqual(len(self.lines(self.latex_log)), 4)
-        self.assertEqual(len(self.lines(self.check_log)), 3)
+        self.assertEqual(len(self.lines(self.check_log)), 5)
         self.assertEqual(len(self.lines(self.review_log)), 1)
         self.assertTrue(all("-j2" in flags for flags in self.lines(self.flags_log)))
         self.assertNotIn("resetting jobserver", result.stderr)
@@ -416,7 +567,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
     def test_parallel_all_and_install_share_one_build_graph(self) -> None:
         result = self.run_make("-j4", "all", "install")
         self.assertEqual(len(self.lines(self.latex_log)), 4)
-        self.assertEqual(len(self.lines(self.check_log)), 3)
+        self.assertEqual(len(self.lines(self.check_log)), 5)
         self.assertNotIn("resetting jobserver", result.stderr)
         self.assertNotIn("jobserver unavailable", result.stderr)
         for document in ("demo-a", "demo-b"):
@@ -433,7 +584,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         notes.write_text("changed notes\n", encoding="utf-8")
         self.run_make("pdf")
         self.assertEqual(self.lines(self.latex_log), [])
-        self.assertEqual(len(self.lines(self.check_log)), 1)
+        self.assertEqual(len(self.lines(self.check_log)), 3)  # global + two sources
 
         self.clear_logs()
         time.sleep(0.02)
@@ -443,7 +594,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         )
         self.run_make("pdf")
         self.assertEqual(self.lines(self.latex_log), [])
-        self.assertEqual(len(self.lines(self.check_log)), 3)  # global + two PDFs
+        self.assertEqual(len(self.lines(self.check_log)), 5)  # global + two source/PDF pairs
 
         self.clear_logs()
         time.sleep(0.02)
@@ -451,7 +602,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         body.write_text("changed publication\n", encoding="utf-8")
         self.run_make("pdf")
         self.assertEqual(len(self.lines(self.latex_log)), 2)
-        self.assertEqual(len(self.lines(self.check_log)), 2)
+        self.assertEqual(len(self.lines(self.check_log)), 4)  # global + two sources + changed PDF
 
     def test_curriculum_shared_source_rebuilds_each_dependent_packet(self) -> None:
         for module in ("01-first", "02-second"):
@@ -508,7 +659,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.clear_logs()
         self.run_make("install")
         self.assertEqual(self.lines(self.latex_log), [])
-        self.assertEqual(len(self.lines(self.check_log)), 2)  # global + changed PDF
+        self.assertEqual(len(self.lines(self.check_log)), 4)  # global + two sources + changed PDF
         self.assertEqual(installed_pdf.read_bytes(), build_pdf.read_bytes())
 
     def test_altar_server_single_install_routes_through_complete_series_gate(self) -> None:
@@ -593,7 +744,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.clear_logs()
         self.run_make("install")
 
-        self.assertEqual(len(self.lines(self.check_log)), 3)  # global + two PDFs
+        self.assertEqual(len(self.lines(self.check_log)), 5)  # global + two source/PDF pairs
         self.assertEqual(
             [pdf.stat().st_mtime_ns for pdf in installed_pdfs], installed_mtimes
         )
@@ -616,7 +767,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("Validation stamp does not match current PDF/checker", result.stderr)
         self.assertFalse((self.root / "pdf/gpt/demo-a.pdf").exists())
-        self.assertEqual(len(self.lines(self.check_log)), 1)  # global source only
+        self.assertEqual(len(self.lines(self.check_log)), 2)  # global + selected source
 
     def test_legacy_empty_stamp_is_revalidated_and_migrated(self) -> None:
         self.run_make("pdf")
@@ -628,7 +779,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.run_make("pdf")
 
         self.assertEqual(self.lines(self.latex_log), [])
-        self.assertEqual(len(self.lines(self.check_log)), 2)  # global + migrated PDF
+        self.assertEqual(len(self.lines(self.check_log)), 4)  # global + two sources + migrated PDF
         self.assertEqual(
             self.stamp_fields(stamp),
             {
