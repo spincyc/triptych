@@ -100,6 +100,14 @@ Explicitly declare controlling rights inventories, permission evidence, and
 collation records beneath `src/` unless registered binding ancestry already
 reaches them. A prose link in a source record does not add a sealed dependency.
 
+At initial submission and after a research repair, audit the complete chain of
+adopted authorities in the context, instance, formulary, source and rights
+records. Include calendar and rubric authorities used to select permitted
+branches. For each controlling authority, verify that its exact source owner
+appears in the compiled research seal, following a summary inventory through
+to any underlying records that govern its conclusion. Keep excluded leads
+distinct from adopted evidence when determining this boundary.
+
 Group compatible *arguments*, not reputations, periods, nationalities, or
 quotations sharing a word. An author may contribute to several interpretations
 when different checked passages support them. Each interpretation draws
