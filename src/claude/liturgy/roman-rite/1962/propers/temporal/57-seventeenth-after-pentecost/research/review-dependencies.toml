@@ -1,0 +1,42 @@
+
+# Controlling evidence this leaf's research reads outside the leaf and outside the
+# ancestry of its registered source bindings. The engine separately seals the
+# leaf's own research/, propers/ and instance/ records, every bound source record
+# with its ancestry and available payloads, and the chronology computation code.
+#
+# - The 1962 calendar index resolves the appointed loci for the chronology tool and
+#   is the finding aid research/context.md used for identity and occurrence; the
+#   companion rubric registry drove the precedence computation.
+# - The facsimile-rights inventory settles the Latin publication basis relied on in
+#   propers/verified.md; the Latin provenance ledger carries this Sunday's three
+#   orations as collated, and its Secret entry's wording on the printed conclusion
+#   is reported in research/scope.md section 10; the translation overlay is the
+#   shared record whose stale entry for these orations propers/verified.md reports.
+# - The five authored Scripture-chronology files are the corpus whose answer is
+#   research/chronology.toml and research/chronology-annotations.tex.
+# - The canon and concordance data the chronology computation opens when it
+#   answers this leaf (traced on the research stage's third reentry with a Python
+#   audit hook over `proper-chronology record --check` and `annotations --check`;
+#   research/scope.md section 7.5): the Clementine book index, the Clementine
+#   chapter files, and the Douay-Rheims (Challoner), Revised Version and World
+#   English Bible Catholic verse texts, with the Douay deuterocanon-numbering
+#   concordance. The three verse-text editions are declared by edition directory,
+#   the smallest owner that covers every verse text the computation opens; the
+#   Douay directory also holds the deuterocanon concordance.
+paths = [
+  "src/sources/calendars/roman-1962/propers.yaml",
+  "src/sources/calendars/roman-1962/rubrics.yaml",
+  "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml",
+  "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+  "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+  "src/sources/chronology/profiles.yaml",
+  "src/sources/chronology/events.yaml",
+  "src/sources/chronology/composition.yaml",
+  "src/sources/chronology/bindings.yaml",
+  "src/sources/chronology/gaps.yaml",
+  "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/book-index-fcad78c2",
+  "src/sources/bibles/clementine-vulgate/chapters",
+  "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581",
+  "src/sources/works/convocation-of-canterbury/revised-version/editions/ebible-eng-rv",
+  "src/sources/works/ebible-org/world-english-bible/editions/catholic-eng-web-c",
+]

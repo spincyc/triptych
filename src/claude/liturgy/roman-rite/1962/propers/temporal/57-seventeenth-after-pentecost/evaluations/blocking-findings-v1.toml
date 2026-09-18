@@ -1,0 +1,78 @@
+# Blocking findings standing against this publication, the
+# verdicts its evaluation lanes reached, and the observations
+# they recorded outside their own criteria. Written by tpt after
+# each evaluation of this leaf.
+#
+# One record, several stages. Every entry names the stage that
+# raised it, [[stages]] says what each stage last said, and an
+# evaluation replaces its own stage's entries and leaves every
+# other stage's alone -- so what the content evaluation found
+# still stands here after the synthesis evaluation has spoken. A
+# stage that looked and found nothing leaves an empty list
+# rather than no entry: "evaluated, nothing stands" and
+# "nobody has looked" are different facts, per stage.
+#
+# The keys directly below these comments describe the write that
+# last touched this file, and count every stage's entries
+# together. They are its summary line. What a given stage found
+# is in that stage's [[stages]] entry and in the entries naming
+# it -- reading the top-level stage as the record's one stage is
+# the mistake this schema exists to stop.
+#
+# It exists because a run's own results live under build/, which
+# is ignored, which `make clean` and `wt tidy` delete without
+# asking, and which nothing preserves between productions.
+#
+# Nothing reads this back into a run. Carrying findings from one
+# production into the next wants doing where the run's identity
+# can cover it -- a committed record, or this file's hash in the
+# run id and the acceptance audit -- and until then this is a
+# record for people.
+#
+# Escalations -- defects in artifacts no stage of the run may
+# write: guidance, the source library, the tools, the workflow --
+# are written here too, from the run's whole ledger, so that the
+# decision they ask of a maintainer outlives the run directory.
+#
+# Accepted findings are true defects a lane judged not worth a
+# repair round, with the reason it judged so. Advisories are
+# defects that did not merit blocking. Both are here because a
+# verdict that dies with the run is met again by the next cold
+# read as though nobody had ever weighed it, and weighed again --
+# which is how a document in good shape spends a whole iteration
+# budget. A later evaluation reads these before it raises.
+
+standing_findings_schema = 4
+record_type = "standing-blocking-findings"
+document = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"
+provider = "claude"
+run_id = "1e02dc05f2df9940"
+workflow = "proper-study"
+workflow_version = 3
+stage = "research-review"
+iteration = 3
+disposition = "PASS"
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 0
+
+[[stages]]
+stage = "research-review"
+iteration = 3
+disposition = "PASS"
+run_id = "1e02dc05f2df9940"
+workflow = "proper-study"
+workflow_version = 3
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 0
+
+[[advisories]]
+stage = "research-review"
+id = "RES-018"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/scope.md section 4.5, 'What each adds' (the English 'Now this they own to be an attribute of the Son…' printed with the Greek 'Καίτοι τοῦ Υἱοῦ, τοῦτο εἶναί φησιν…' in parentheses as its original), and section 3.3, 'Direct ancient exegesis, Greek' row (the note that Migne's text lacks only a word for 'the Lord'); src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/interpretations.md section 2.1 ('this attribute, which is owned to be the Son's') and section 2.2 (the Chrysostom In Eph. hom. 11 bullet)"
+problem = "The third reentry read Chrysostom's hom. 11 in Migne, PG 62 col. 80. It records one divergence from the NPNF English: Migne's first gloss is ὁ ἐπάνω πάντων, with no word for 'the Lord'. There is a second divergence. This reviewer read the same page image (IA patrologiae_cursus_completus_gr_vol_062, leaf n83, SHA-256 efd4c7cd… matched). It prints 'Καίτοι τοῦ Υἱοῦ, τοῦτο εἶναί φησιν', with the singular φησιν, 'he says'. The NPNF sentence the record pairs with it reads 'Now this they own to be an attribute of the Son'. That has a plural subject which the Greek does not have. In Migne, the one who says the attribute belongs to the Son is 'he', presumably Paul, whose words the homily introduces with φησί throughout. In the NPNF, 'they' admit it. Section 4.5 prints the Greek as the original of the English, and section 3.3 implies that 'the Lord' is the only difference. The controlling claim is not affected. Under either text, an attribute ascribed to the Son is here said of the Father and so cannot mark inferiority, and reading 2 uses nothing more. But a study that quotes the NPNF English and cites PG 62 for it would give Migne's Greek a subject it does not have. The Greek reading also bears on the record's own inference that 'this' is 'through all', because Paul says of the Son 'through whom are all things' (1 Cor 8:6, which the record already cites)."
+required_result = "In scope sections 3.3 and 4.5, record that PG 62 col. 80 reads φησιν ('he says') where the NPNF English has 'this they own', and that the Greek text behind the NPNF was not identified for this sentence either. Stop presenting the NPNF sentence as a rendering of the quoted Greek. Quote the English alone, as the registered NPNF, or give the Greek with its own sense. Adjust 'which is owned to be the Son's' in interpretations section 2.1 to match. Keep the identification of 'this' with 'through all' labelled as the record's inference."
