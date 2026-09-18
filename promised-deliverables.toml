@@ -63,8 +63,8 @@ state = "blocked"
   [[deliverables.requirements]]
   id = "recovered-main-and-pages"
   criterion = "Recovered work is preserved in coherent commits, reconciled with current main without rewriting history, and pushed; the exact pushed snapshot passes the Pages workflow and the six Sunday PDFs and two canonical web routes are verified live. Held publications remain excluded."
-  status = "open"
-  evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml", "workflows/reviews/propers-three-documents-v3-recovery-2026-09-18/deployment-evidence.json", "workflows/reviews/propers-three-documents-v3-recovery-2026-09-18/pages-review.md"]
 
 [[deliverables]]
 id = "proper-salient-dates-2026-09-09"

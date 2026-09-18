@@ -131,3 +131,26 @@ The latter preserves the reviewer's earlier scratch package and records the
 coordinator's corrective-patch inspection. Neither package is committed.
 Actual main integration, Pages execution and live-route verification remain
 pending at this checkpoint. New v3 productions remain quota-blocked.
+
+## Main publication verified
+
+The preparation above was followed by a fast-forward push of
+`362cd5d1a42b7ed2b255748750a0aa7ca1ca70c8` to `main`, without rewriting history.
+The exact 15-commit outgoing range was inspected, including a bounded screen
+of **836 blobs** with no private-path or credential-pattern finding. The
+working tree was clean; no ignored transport package entered the range.
+
+[Pages run 35346638189](https://github.com/spincyc/triptych/actions/runs/35346638189)
+completed successfully at **2026-09-18 12:59:35 UTC**, exercising the real pinned
+container path, deployment-source gate, site build and Pages compatibility
+verification before successful deployment.
+
+[The retained evidence](deployment-evidence.json) records live verification
+after that run: all **six PDFs and two canonical web routes returned HTTP 200**
+and matched the local verified artifact byte-for-byte. All six PDF hashes are
+the previously accepted identities, not newly accepted replacements. Both held
+proper-54 PDF routes returned **404** and are absent from the local artifact.
+
+This completes the recovery/main/Pages requirement only. It does not meet or
+close the 10–12-page concise-document revision, waive the required fresh
+productions, or convert any inherited broad-suite failure into a pass.

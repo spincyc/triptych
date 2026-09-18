@@ -30,8 +30,17 @@ invalid citation endpoints and cross-edition chronology counting. Source,
 release-binding, deployment-source, public-site and GitHub Pages compatibility
 gates pass locally. The [recovery record](workflows/reviews/propers-three-documents-v3-recovery-2026-09-18/README.md)
 retains the reviews, inherited test failures and unchanged historical artifact
-identities. Push and actual deployment verification remain pending; these
-checks do not accept the blocked revised Sunday productions.
+identities. These checks do not accept the blocked revised Sunday productions.
+
+**Publication recovery verified.** Checkpoint `362cd5d1a` was fast-forward
+pushed to `main`. [Pages run 35346638189](https://github.com/spincyc/triptych/actions/runs/35346638189)
+succeeded on that exact SHA. All six Sunday PDFs and both canonical web routes
+returned HTTP 200 with byte-for-byte matches to the verified local artifact;
+the six PDFs retain their accepted hashes. Both held proper-54 PDF routes
+returned 404. [Deployment evidence](workflows/reviews/propers-three-documents-v3-recovery-2026-09-18/deployment-evidence.json)
+records the run, timestamp and all comparisons. Only the main/Pages recovery
+requirement is closed; the longer concise editions and genuine v3 production
+remain blocked.
 
 **Blocked: pagination revision.** Both first-production Sunday runs reached
 ACCEPTED, with six reviewed PDFs and two canonical web editions installed.
