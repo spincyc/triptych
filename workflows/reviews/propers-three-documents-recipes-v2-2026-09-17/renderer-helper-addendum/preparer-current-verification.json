@@ -1,0 +1,99 @@
+{
+  "active_state_copy_guard": {
+    "detail": "v2 preparation: v1 run 80a724fb8410dc3d is not an identity-consistent ACCEPTED run; refusing application",
+    "exit": 1,
+    "no_fixture_mutation": true
+  },
+  "base_hashes_unchanged": true,
+  "completion_guard_unchanged": true,
+  "current_toolchain_hashes": {
+    "guidance/liturgy/propers-three-documents.md": "a9ab0db78a697cb2519ce0aa3a3b9569ddf83ec4d97cb09b0f0f4bf67f6f97a4",
+    "guidance/web-editions.md": "b786dea6d618896926cd7c2a5762f161c11dfee5092ffa463233f6f96ead47d6",
+    "requirements-public-alpha.txt": "59bd4c5252324612c6ce5a27f4a4ba4e62aa4cc76bc3d974a29b45491c97c762",
+    "scripts/_corpus.py": "32512b55113d335b155e7e602454853584ba8c02d7b92161cc1e678d71e7d061",
+    "scripts/_markdown_render.py": "d74e56ea19a9d4aa81b0c4cf06bd7b110cdf0ac87c5b2a10320821b0c958f37a",
+    "scripts/_proper_components.py": "9e5635eb71a78bc3f84c73b97dd661aed708970946250ef5eb70b377abdb8e3c",
+    "scripts/_proper_study.py": "d1fc61e47a08d8b39f2d5f95b25802b1e9748f48767e36c1517ce25ca75f2fe3",
+    "scripts/_tooling.py": "592aa0610872c2f4aecd078fb5b4e6a56de46dece36e04a22b54ac24e8338fed",
+    "scripts/_workflow.py": "0692a07631d50ceb4a65c0e32f5b4d29289f1f075cfbf5ffbc9cf04041198fe3",
+    "scripts/web-shim.tex": "679ff8592e5e8ae1a9755aed9b856710e7fcc49adca32050a54896a723022b22",
+    "tmt.json": "075bb6d9529815d4fa8bbef11b40fa7cfb89a3c69842d1e8bd88f598fdcb353e",
+    "tools/check-proper-identity": "f2f9e65e3dfcac7a15b1b1c6dd66728a20bb6c343bc44575801525710f80bb52",
+    "tools/pdf-review": "3797128b9e275149267b610af82855322688a0846769e2d230394b3472e331dc",
+    "tools/public-alpha": "5618b1d040e6010f544649fafa6a5fa9bea3944550a647ef5a3c7a96e0f87839",
+    "tools/tests/test_public_alpha.py": "4cc0bb0e7d76d5af1a4ded758c547b94eb9a5ce2d342f7ee425594f45bbf5802",
+    "tools/tests/test_web_edition_conversion.py": "e3b715f61a6ad9d67bbe96f39182e7bcbeb31aa7975f13798736b64184844735",
+    "tools/tpt": "bdfcb8e9eaad438820fc8d1ce33ec9655337b07e98587b85146647c032431438",
+    "tools/web-edition": "d945021413b26de9a8b2e1c961caed9035c742a3802ccf9339001c28ba215d7b"
+  },
+  "executed_checks": [
+    {
+      "exit": 0,
+      "log": "current-toolchain-106-tests.log",
+      "name": "owning-suite",
+      "skips": 0,
+      "tests": 106
+    },
+    {
+      "exit": 0,
+      "log": "current-postconciliar-tests.log",
+      "name": "postconciliar-real-command-fixtures",
+      "skips": 0,
+      "tests": 2
+    },
+    {
+      "exit": 1,
+      "expected_failure": true,
+      "log": "baseline-regression.log",
+      "name": "original-recipe-negative-controls"
+    },
+    {
+      "exit": 0,
+      "log": "current-base-check.log",
+      "name": "base-and-patch-check"
+    },
+    {
+      "each_inner_exit": 1,
+      "log": "guard-rejection.log",
+      "name": "base-drift-and-preexisting-test-refusals",
+      "outer_exit": 0
+    },
+    {
+      "exit": 1,
+      "expected_failure": true,
+      "name": "active-state-copy-refusal",
+      "no_fixture_mutation": true
+    },
+    {
+      "exit": 0,
+      "name": "git-apply-whitespace-check",
+      "writes": false
+    }
+  ],
+  "live_status": {
+    "80a724fb8410dc3d": {
+      "current_stage": "visual-review",
+      "disposition": null,
+      "workflow_digest": "1375f708d8670b2f4ccaf1869cfaa6fe67fe6946dc2b962c766bcdc499d3b47e",
+      "workflow_version": 1
+    },
+    "8f4e6454c021280a": {
+      "current_stage": "study-review",
+      "disposition": null,
+      "workflow_digest": "1375f708d8670b2f4ccaf1869cfaa6fe67fe6946dc2b962c766bcdc499d3b47e",
+      "workflow_version": 1
+    }
+  },
+  "original_evidence_artifacts_unchanged": 13,
+  "patch_sha256": "2ea50623c6d6090ce95309d2a7a27f231c8af0575e8a6dd1762a6dba54e02469",
+  "result_hashes": {
+    "tools/tests/test_workflow_proper_study_recipes.py": "f75ad163dc364ab2ef680b3f7e457055e4ae5f295146a0842f3781c5ac1d120f",
+    "workflows/OPERATOR.md": "e9ebb1570d36aeb2e496b023499dc952571d8135c62ebc334b8c3801fd960e47",
+    "workflows/fragments/proper-study/build-artifacts.md": "2f01c11db449a9f6100fbb72180792663144d6850269b8a784c2024bece73782",
+    "workflows/fragments/proper-study/generate-web.md": "ef5a4ecdd51fd90ae5ce6a9d00d0d2415a39c89487802b65aca63e6ab2c322cf",
+    "workflows/pipelines/proper-study.json": "15e4bea2dbed6b5f94651886e136958a65fa95fcad6a0c62ee5eff9c8acd0e26"
+  },
+  "sole_patch_delta": "scripts/_markdown_render.py added to recipe-test copy list",
+  "toolchain_drift": {},
+  "v2_workflow_digest": "e9bba4f684555ebfbba1bae6c30e51630802b7f6db7ba848fd9abb71385ce768"
+}

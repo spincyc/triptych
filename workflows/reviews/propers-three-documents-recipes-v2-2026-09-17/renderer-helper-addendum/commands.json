@@ -1,0 +1,69 @@
+[
+  {
+    "name": "base-check",
+    "cwd": "tree",
+    "command": [
+      "python3",
+      "../apply-prepared.py",
+      "--repo",
+      "."
+    ],
+    "exit": 0,
+    "log": "base-check.log"
+  },
+  {
+    "name": "patch-apply",
+    "cwd": "tree",
+    "command": [
+      "git",
+      "apply",
+      "--whitespace=error",
+      "../proper-study-v2.patch"
+    ],
+    "exit": 0,
+    "log": "patch-apply.log"
+  },
+  {
+    "name": "recipe-tests",
+    "cwd": "tree",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "tools.tests.test_workflow_proper_study_recipes",
+      "-v"
+    ],
+    "exit": 0,
+    "log": "recipe-tests.log"
+  },
+  {
+    "name": "postconciliar-recipes",
+    "cwd": "tree",
+    "command": [
+      "python3",
+      "../probe-postconciliar.py"
+    ],
+    "exit": 0,
+    "log": "postconciliar-recipes.log"
+  },
+  {
+    "name": "helper-necessity",
+    "cwd": "tree",
+    "command": [
+      "python3",
+      "../check-helper-necessity.py"
+    ],
+    "exit": 0,
+    "log": "helper-necessity.log"
+  },
+  {
+    "name": "identity-check",
+    "cwd": "tree",
+    "command": [
+      "python3",
+      "../check-identities.py"
+    ],
+    "exit": 0,
+    "log": "identity-check.log"
+  }
+]

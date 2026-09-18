@@ -1,0 +1,37 @@
+Verdict: **PASS for the bounded installation addendum** in six-subject prepared patch `55622214a655db4414b196319274d2ebbc528e268b44230ffd9447427bc85a13`. No blocking or actionable defect was found. The clarification is compatible with the normal Make install path, the accepted-artifact requirement, and the existing linear worker schema. This remains preparation review; both active real v1 productions must finish ACCEPTED before coordinator-owned live application.
+
+The prior five result files from patch `2ea50623c6d6090ce95309d2a7a27f231c8af0575e8a6dd1762a6dba54e02469` remain byte-identical. The sole additional subject is `workflows/fragments/proper-study/install-publication.md`, from SHA-256 `203b68ec9b23f945aac5f7716429605cb5fd1ed098fcb65458789e7bd5e9a9de` to `9596f147854a89916f4ae9247d56c24ecc48cd38ec99a54216e1066b26f837bc`. The complete independently derived additional diff is `verified-installation-delta.patch`. All six result identities are independently matched in `identity-evidence.json` and `result-hashes.json`.
+
+The added fragment changes the prepared v2 workflow digest to `4e4bbd64b71b60bd9e04c9fa7592ecb52c85e05cad1349c41941fa4d31e4e4d2`; the earlier `e9bba4f6...` digest belongs to the earlier preparation. No pipeline stage, schema, transition, gate, helper implementation, or previous test was changed by this addendum. All 39 earlier cold-review manifest entries were independently rechecked and remain unchanged.
+
+Concrete instruction review:
+
+| Location in prepared result | Conclusion |
+| --- | --- |
+| `install-publication.md:3` | The normal `make install-doc` command remains mandatory, including on reentry. It no longer conflicts with an absolute prohibition on retypesetting. The prohibitions on `-o`, `-t`, dependency suppression, and accepted-source/generation-timestamp changes prevent bypassing the normal checks merely to avoid a rebuild. |
+| `install-publication.md:9` | The worker must check the existing snapshot and retain the three accepted SHA-256 values before installation, then compare both build and installed PDFs to those accepted values. Thus a newly generated PDF is not accepted merely because it matches its installed copy. |
+| `install-publication.md:13` | A differing hash leaves the installation work incomplete. The explicit response is BLOCKED with the expected and actual identities; refreshing a receipt or claiming reviewed installation is forbidden. The mismatch can be stated in the schema's existing summary/notes fields without adding invented fields. |
+| `install-publication.md:16` | The text correctly assigns reporting and subsequent repair/review to the coordinator and explicitly says BLOCKED does not route that repair automatically. It does not instruct the worker to submit PASS or advance to the following gate when installation failed. |
+| `install-publication.md:18` | A byte-identical normal rebuild can complete the stage only after its remaining installation, catalog, release, and audit work is done. This does not grant publication acceptance; the unchanged terminal gates and sealed reviews still govern. |
+
+The Makefile supports the revised instruction. `Makefile:775` resolves `install-doc` to the installed PDF target. That target at `Makefile:1646` depends on the build PDF and source/metadata checks, then checks source/copy hashes and the validator identity during installation. The companion dependency registration at `Makefile:1216` includes the owning leaf's declared TeX, TOML, style and bibliography files; normal dependency evaluation may therefore reexecute a build without changing its final PDF bytes. The clarification preserves that dependency evaluation and adds comparison with the previously accepted PDF identities. This review inspected the actual Make source but did not rerun a real production install. The coordinator's real TLM rebuild evidence remains separately owned.
+
+`workflows/pipelines/proper-study.json:685` still declares installation as a linear stage using `worker-result.json`, with `publication-gates` as its PASS successor and no automatic repair route. The schema accepts only PASS or BLOCKED. `scripts/_workflow.py:2661` makes a linear BLOCKED result terminal; the common result fragment likewise says the run stops. The independently executed existing regression `test_worker_may_report_blocked_instead_of_a_false_pass` confirms BLOCKED is recorded and a further advance is refused. Coordinator repair after such a result cannot be interpreted as permission to mutate or resume that terminal state, manufacture a PASS, or skip fresh review.
+
+The application helper's only textual change is “five” to “six” in its success message. Its exact SHA-256 is `63f6e148e5c29b5c74ee999cef6b7d5fafaafe84c8534acebb699d656f09b4b7`; the extended base-hash file is `f0818142f99056fb3cf8dc8fe39cf0d2f94aed56abeb1b2b12ef2815d143db81`. Existing base expectations are unchanged, and the sixth installation subject is now included. An independent isolated probe changed only that subject: the helper returned 1 for base drift before mutation, and every fixture byte remained unchanged. The existing BOTH-v1-ACCEPTED and immutable identity checks are otherwise unchanged. As before, they supplement rather than replace genuine engine acceptance evidence.
+
+Independent command evidence is preserved in `checks.txt`, `commands.json`, and the named logs:
+
+| Check | Exit | Result |
+| --- | --- | --- |
+| Prepared default base/patch check, isolated baseline | 0 | Six exact base expectations and patch check pass without writes. |
+| Exact patch application with `--whitespace=error`, isolated copy only | 0 | All six result hashes match. |
+| Existing worker BLOCKED regression | 0 | 1 test passed, no skips; terminal continuation refused. |
+| New sixth-subject guard probe | 0 outer / 1 inner | Expected base-drift refusal with no fixture-byte mutation. |
+| Exact identities, previous evidence, stage/schema contract, toolchain and live freeze | 0 | Prior five results preserved; new v2 digest matches; all 18 current toolchain hashes and reviewed Makefile unchanged. |
+
+The preparer's `current-verification.json`, test-summary logs, negative-control record and active-state-copy refusal evidence were inspected. They report 106 owning tests and two postconciliar command fixtures passing, expected failures for the original recipes, and active-copy refusal with no mutation. Those executions are attributed to the preparer; this supplement did not redundantly rerun the full suite or claim that recipe fixtures prove installation judgment. The new verification here targets the changed wording's actual engine semantics and new guard subject.
+
+The final read-only status snapshot found `80a724fb8410dc3d` at `study-review` and `8f4e6454c021280a` at `derive-homily`, both still active and bound to frozen v1 digest `1375f708d8670b2f4ccaf1869cfaa6fe67fe6946dc2b962c766bcdc499d3b47e`. All six live base expectations still match. Only `.scratch/workflow-v2-cold-review/installation-addendum/` was written for this review.
+
+The later integration supplement must bind the final applied six-file bytes, actual owning checks, both real terminal statuses/integrity reports, preserved v1 publication provenance, and the separately generated corpus-workflow projection and scoped release-binding update. No live application, production Make installation, real v2 run, visual or semantic publication acceptance, deployment, or deterministic historical recompilation was performed or asserted here.

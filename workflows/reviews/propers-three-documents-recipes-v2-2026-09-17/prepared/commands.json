@@ -1,0 +1,150 @@
+[
+  {
+    "name": "base-check",
+    "cwd": "tree",
+    "command": [
+      "python3",
+      "../apply-prepared.py",
+      "--repo",
+      "."
+    ],
+    "exit": 0,
+    "log": "base-check.log"
+  },
+  {
+    "name": "patch-apply",
+    "cwd": "tree",
+    "command": [
+      "git",
+      "apply",
+      "--whitespace=error",
+      "../proper-study-v2.patch"
+    ],
+    "exit": 0,
+    "log": "patch-apply.log"
+  },
+  {
+    "name": "recipe-tests",
+    "cwd": "tree",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "tools.tests.test_workflow_proper_study_recipes",
+      "-v"
+    ],
+    "exit": 0,
+    "log": "recipe-tests.log"
+  },
+  {
+    "name": "focused-tests",
+    "cwd": "tree",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "tools.tests.test_workflow_proper_study",
+      "tools.tests.test_workflow_proper_study_recipes",
+      "tools.tests.test_workflow_engine",
+      "tools.tests.test_workflow_determinism",
+      "tools.tests.test_workflow_seed_idempotency",
+      "-q"
+    ],
+    "exit": 1,
+    "log": "focused-tests.log"
+  },
+  {
+    "name": "baseline-revert",
+    "cwd": "tree",
+    "command": [
+      "git",
+      "apply",
+      "--reverse",
+      "--include=workflows/fragments/proper-study/build-artifacts.md",
+      "--include=workflows/fragments/proper-study/generate-web.md",
+      "../proper-study-v2.patch"
+    ],
+    "exit": 0,
+    "log": "baseline-revert.log"
+  },
+  {
+    "name": "baseline-regressions",
+    "cwd": "tree",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "tools.tests.test_workflow_proper_study_recipes.IsolatedRecipeTests.test_real_conversion_lands_at_snapshot_path_once_per_provider",
+      "tools.tests.test_workflow_proper_study_recipes.IsolatedRecipeTests.test_real_renderer_replaces_only_its_child_and_preserves_sibling_evidence",
+      "-v"
+    ],
+    "exit": 1,
+    "log": "baseline-regressions.log"
+  },
+  {
+    "name": "baseline-restore",
+    "cwd": "tree",
+    "command": [
+      "git",
+      "apply",
+      "--include=workflows/fragments/proper-study/build-artifacts.md",
+      "--include=workflows/fragments/proper-study/generate-web.md",
+      "../proper-study-v2.patch"
+    ],
+    "exit": 0,
+    "log": "baseline-restore.log"
+  },
+  {
+    "name": "focused-tests-with-git-metadata",
+    "cwd": "tree",
+    "command": [
+      "env",
+      "-u",
+      "GIT_CEILING_DIRECTORIES",
+      "python3",
+      "-m",
+      "unittest",
+      "tools.tests.test_workflow_proper_study",
+      "tools.tests.test_workflow_proper_study_recipes",
+      "tools.tests.test_workflow_engine",
+      "tools.tests.test_workflow_determinism",
+      "tools.tests.test_workflow_seed_idempotency",
+      "-q"
+    ],
+    "exit": 0,
+    "log": "focused-tests-with-git-metadata.log"
+  },
+  {
+    "name": "postconciliar-recipes",
+    "cwd": "tree",
+    "command": [
+      "python3",
+      "../probe-postconciliar.py"
+    ],
+    "exit": 0,
+    "log": "postconciliar-recipes.log"
+  },
+  {
+    "name": "identity-check",
+    "cwd": "tree",
+    "command": [
+      "env",
+      "-u",
+      "GIT_CEILING_DIRECTORIES",
+      "python3",
+      "../check-identities.py"
+    ],
+    "exit": 0,
+    "log": "identity-check.log"
+  },
+  {
+    "name": "guard-check",
+    "cwd": "tree",
+    "command": [
+      "python3",
+      "../check-guard.py"
+    ],
+    "exit": 0,
+    "log": "guard-check.log"
+  }
+]

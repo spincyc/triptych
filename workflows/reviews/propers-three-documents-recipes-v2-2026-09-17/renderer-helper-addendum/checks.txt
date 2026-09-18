@@ -1,0 +1,39 @@
+Independent renderer-helper addendum commands. CWD is tree/ within this review directory.
+The runner disables bytecode, confines Git discovery to the isolated copy, and sets TMPDIR/TMP/TEMP to review tmp/.
+
+base-check
+Command: python3 ../apply-prepared.py --repo .
+Exit: 0
+Log: base-check.log
+
+patch-apply
+Command: git apply --whitespace=error ../proper-study-v2.patch
+Exit: 0
+Log: patch-apply.log
+
+recipe-tests
+Command: python3 -m unittest tools.tests.test_workflow_proper_study_recipes -v
+Exit: 0
+Log: recipe-tests.log
+
+postconciliar-recipes
+Command: python3 ../probe-postconciliar.py
+Exit: 0
+Log: postconciliar-recipes.log
+
+helper-necessity
+Command: python3 ../check-helper-necessity.py
+Exit: 0
+Log: helper-necessity.log
+
+identity-check
+Command: python3 ../check-identities.py
+Exit: 0
+Log: identity-check.log
+
+Nested expected negative command: python3 -m unittest tools.tests.test_workflow_proper_study_recipes.IsolatedRecipeTests.test_real_conversion_lands_at_snapshot_path_once_per_provider -v
+Exit: 1
+Both provider conversion subprocesses refuse because the helper is absent from their copied fixture.
+Log: missing-helper-negative.log
+
+Not repeated: full 106-test owning suite and unchanged guard refusal probes. Reviewed current preparer evidence is distinguished in REPORT.md. No live application or real production run performed.

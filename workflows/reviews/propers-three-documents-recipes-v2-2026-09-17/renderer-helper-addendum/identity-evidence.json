@@ -1,0 +1,32 @@
+{
+  "sole_delta_verified": true,
+  "unchanged_workflow_files": 4,
+  "result_hashes": {
+    "tools/tests/test_workflow_proper_study_recipes.py": "f75ad163dc364ab2ef680b3f7e457055e4ae5f295146a0842f3781c5ac1d120f",
+    "workflows/OPERATOR.md": "e9ebb1570d36aeb2e496b023499dc952571d8135c62ebc334b8c3801fd960e47",
+    "workflows/fragments/proper-study/build-artifacts.md": "2f01c11db449a9f6100fbb72180792663144d6850269b8a784c2024bece73782",
+    "workflows/fragments/proper-study/generate-web.md": "ef5a4ecdd51fd90ae5ce6a9d00d0d2415a39c89487802b65aca63e6ab2c322cf",
+    "workflows/pipelines/proper-study.json": "15e4bea2dbed6b5f94651886e136958a65fa95fcad6a0c62ee5eff9c8acd0e26"
+  },
+  "original_review_records_verified": 21,
+  "live_base_hashes_unchanged": true,
+  "current_toolchain_hashes_unchanged": true,
+  "guard_sha256": "ab99a3e9e6b96e5ad425412b1c5e49924dd86a23c2d979aa2305b3e1f73947d3",
+  "base_hashes_sha256": "7f9cdbbc4a168cfc6fa218e1674e001100d455ef5b66a19b08195d9c87f76d8d",
+  "v1_digest": "1375f708d8670b2f4ccaf1869cfaa6fe67fe6946dc2b962c766bcdc499d3b47e",
+  "v2_digest": "e9bba4f684555ebfbba1bae6c30e51630802b7f6db7ba848fd9abb71385ce768",
+  "read_only_status_snapshot": {
+    "80a724fb8410dc3d": {
+      "current_stage": "web-review",
+      "disposition": null,
+      "workflow_version": 1,
+      "workflow_digest": "1375f708d8670b2f4ccaf1869cfaa6fe67fe6946dc2b962c766bcdc499d3b47e"
+    },
+    "8f4e6454c021280a": {
+      "current_stage": "derive-synthesis",
+      "disposition": null,
+      "workflow_version": 1,
+      "workflow_digest": "1375f708d8670b2f4ccaf1869cfaa6fe67fe6946dc2b962c766bcdc499d3b47e"
+    }
+  }
+}

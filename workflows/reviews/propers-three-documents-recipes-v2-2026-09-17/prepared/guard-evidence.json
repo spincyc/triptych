@@ -1,0 +1,41 @@
+[
+  {
+    "name": "active-real-v1-state-copy",
+    "command": [
+      "python3",
+      "../apply-prepared.py",
+      "--repo",
+      "../guard-fixture",
+      "--apply"
+    ],
+    "exit": 1,
+    "no_fixture_mutation": true,
+    "detail": "v2 preparation: v1 run 80a724fb8410dc3d is not an identity-consistent ACCEPTED run; refusing application"
+  },
+  {
+    "name": "base-drift",
+    "command": [
+      "python3",
+      "../apply-prepared.py",
+      "--repo",
+      "../guard-fixture",
+      "--apply"
+    ],
+    "exit": 1,
+    "no_fixture_mutation": true,
+    "detail": "v2 preparation: base hash drift: workflows/pipelines/proper-study.json; expected 0fc5c13559dc37bb7d3df7d95c63108ec51b2b767a9e4cb3cbe40659bf13c276, found c60e2daf69b02d26c85e756b25f3ed2398bd2d998bc5866d2639d2da8034eb25"
+  },
+  {
+    "name": "preexisting-new-test",
+    "command": [
+      "python3",
+      "../apply-prepared.py",
+      "--repo",
+      "../guard-fixture",
+      "--apply"
+    ],
+    "exit": 1,
+    "no_fixture_mutation": true,
+    "detail": "v2 preparation: base hash drift: tools/tests/test_workflow_proper_study_recipes.py; expected None, found acae299cb5c33d0f20760e3cd1f02d758b067335601d89f62b4d9f8415610815"
+  }
+]

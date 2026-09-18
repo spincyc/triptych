@@ -1,0 +1,32 @@
+{
+  "patch_sha256": "abcb8bea6d5c309802f13735f651a037e2d1d60f4a925f7bf0057ef6dff3ef59",
+  "base_hashes": {
+    "tools/tests/test_workflow_proper_study_recipes.py": null,
+    "workflows/OPERATOR.md": "76dd55af6847412d44337eb393d761f703f1c033a5954adfd2f956f7aad1e4c3",
+    "workflows/fragments/proper-study/build-artifacts.md": "0ea46bcb75f2e7f89b579f46222d48cd798001899264fdf27ab24393fdaa00c5",
+    "workflows/fragments/proper-study/generate-web.md": "2c9e0299ee58399814ecd5e5b36b46e43c3f648918f7d2c9e1e99e5ac8a544ca",
+    "workflows/pipelines/proper-study.json": "0fc5c13559dc37bb7d3df7d95c63108ec51b2b767a9e4cb3cbe40659bf13c276"
+  },
+  "helper_hashes": {
+    "scripts/_corpus.py": "32512b55113d335b155e7e602454853584ba8c02d7b92161cc1e678d71e7d061",
+    "scripts/_proper_components.py": "9e5635eb71a78bc3f84c73b97dd661aed708970946250ef5eb70b377abdb8e3c",
+    "scripts/_proper_study.py": "d1fc61e47a08d8b39f2d5f95b25802b1e9748f48767e36c1517ce25ca75f2fe3",
+    "scripts/_tooling.py": "592aa0610872c2f4aecd078fb5b4e6a56de46dece36e04a22b54ac24e8338fed",
+    "scripts/_workflow.py": "0692a07631d50ceb4a65c0e32f5b4d29289f1f075cfbf5ffbc9cf04041198fe3",
+    "scripts/web-shim.tex": "679ff8592e5e8ae1a9755aed9b856710e7fcc49adca32050a54896a723022b22",
+    "tmt.json": "075bb6d9529815d4fa8bbef11b40fa7cfb89a3c69842d1e8bd88f598fdcb353e",
+    "tools/check-proper-identity": "f2f9e65e3dfcac7a15b1b1c6dd66728a20bb6c343bc44575801525710f80bb52",
+    "tools/pdf-review": "3797128b9e275149267b610af82855322688a0846769e2d230394b3472e331dc",
+    "tools/tpt": "bdfcb8e9eaad438820fc8d1ce33ec9655337b07e98587b85146647c032431438",
+    "tools/web-edition": "1ee4437ba79468709d75cad1c8f83dadcebfb7ae1ce148645aad20bb1b924fc2"
+  },
+  "toolchain_drift_from_preparation": {
+    "tools/web-edition": {
+      "prepared": "010e7d412d24fa2497f54a84f4bb21b88afe8f804a0f10f563c573df86ae4de3",
+      "cold_copy": "1ee4437ba79468709d75cad1c8f83dadcebfb7ae1ce148645aad20bb1b924fc2"
+    }
+  },
+  "branch": "feature/codex/propers/homily",
+  "head": "8dfccbea84778e2694a47e4c1d4ea7addfcf6336",
+  "frozen_v1_commit": "af9b2d10a98a6aac2ce44cc84d6358ede8e630e8"
+}

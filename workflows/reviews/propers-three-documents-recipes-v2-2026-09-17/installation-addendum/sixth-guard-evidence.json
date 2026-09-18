@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python3",
+    "../apply-prepared.py",
+    "--repo",
+    "../sixth-guard-fixture",
+    "--apply"
+  ],
+  "exit": 1,
+  "expected_failure": true,
+  "no_fixture_mutation": true,
+  "detail": "v2 preparation: base hash drift: workflows/fragments/proper-study/install-publication.md; expected 203b68ec9b23f945aac5f7716429605cb5fd1ed098fcb65458789e7bd5e9a9de, found ec7f5a5246af8d6dacb03b7198bf04cabcc60d659379ed175f3dbeca5fdf4401"
+}

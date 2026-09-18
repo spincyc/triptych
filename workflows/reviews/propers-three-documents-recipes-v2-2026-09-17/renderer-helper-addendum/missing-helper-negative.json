@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "tools.tests.test_workflow_proper_study_recipes.IsolatedRecipeTests.test_real_conversion_lands_at_snapshot_path_once_per_provider",
+    "-v"
+  ],
+  "exit": 1,
+  "expected_failure": true,
+  "observed": "Both provider conversion subprocesses refuse because the helper is absent from their copied fixture.",
+  "log": "missing-helper-negative.log"
+}

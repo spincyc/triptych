@@ -1,0 +1,34 @@
+Installation-addendum independent commands; cwd is this review tree/.
+Runner uses PYTHONDONTWRITEBYTECODE=1, review-local TMPDIR/TMP/TEMP, and a Git discovery ceiling at this review directory.
+
+base-check
+Command: python3 ../apply-prepared.py --repo .
+Exit: 0
+Log: base-check.log
+
+patch-apply
+Command: git apply --whitespace=error ../proper-study-v2.patch
+Exit: 0
+Log: patch-apply.log
+
+blocked-worker-test
+Command: python3 -m unittest tools.tests.test_workflow_adversarial.ResultBindingTests.test_worker_may_report_blocked_instead_of_a_false_pass -v
+Exit: 0
+Log: blocked-worker-test.log
+
+sixth-subject-guard
+Command: python3 ../check-sixth-guard.py
+Exit: 0
+Log: sixth-subject-guard.log
+
+identity-check
+Command: python3 ../check-identities.py
+Exit: 0
+Log: identity-check.log
+
+Nested sixth-subject guard command: python3 ../apply-prepared.py --repo ../sixth-guard-fixture --apply
+Exit: 1
+No fixture mutation: True
+v2 preparation: base hash drift: workflows/fragments/proper-study/install-publication.md; expected 203b68ec9b23f945aac5f7716429605cb5fd1ed098fcb65458789e7bd5e9a9de, found ec7f5a5246af8d6dacb03b7198bf04cabcc60d659379ed175f3dbeca5fdf4401
+
+Not repeated: preparer 106-test and 2-test suites, prior real-command probes, and unchanged active-run guard. No production Make installation or live patch application performed.

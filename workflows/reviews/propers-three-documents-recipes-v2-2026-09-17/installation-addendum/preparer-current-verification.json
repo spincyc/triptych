@@ -1,0 +1,87 @@
+{
+  "base_hashes": {
+    "tools/tests/test_workflow_proper_study_recipes.py": null,
+    "workflows/OPERATOR.md": "76dd55af6847412d44337eb393d761f703f1c033a5954adfd2f956f7aad1e4c3",
+    "workflows/fragments/proper-study/build-artifacts.md": "0ea46bcb75f2e7f89b579f46222d48cd798001899264fdf27ab24393fdaa00c5",
+    "workflows/fragments/proper-study/generate-web.md": "2c9e0299ee58399814ecd5e5b36b46e43c3f648918f7d2c9e1e99e5ac8a544ca",
+    "workflows/fragments/proper-study/install-publication.md": "203b68ec9b23f945aac5f7716429605cb5fd1ed098fcb65458789e7bd5e9a9de",
+    "workflows/pipelines/proper-study.json": "0fc5c13559dc37bb7d3df7d95c63108ec51b2b767a9e4cb3cbe40659bf13c276"
+  },
+  "executed_checks": [
+    {
+      "exit": 0,
+      "name": "owning-suite",
+      "skips": 0,
+      "tests": 106
+    },
+    {
+      "exit": 0,
+      "name": "postconciliar-real-command-fixtures",
+      "skips": 0,
+      "tests": 2
+    },
+    {
+      "expected_failure": true,
+      "inner_exit": 1,
+      "name": "original-recipe-negative-controls",
+      "outer_exit": 0
+    },
+    {
+      "inner_exits": [
+        1,
+        1
+      ],
+      "name": "base-drift-and-preexisting-test-refusals",
+      "outer_exit": 0
+    },
+    {
+      "exit": 1,
+      "expected_failure": true,
+      "name": "sixth-subject-base-drift-refusal"
+    },
+    {
+      "exit": 1,
+      "expected_failure": true,
+      "name": "active-copies-completion-refusal",
+      "no_fixture_mutation": true
+    },
+    {
+      "exit": 0,
+      "name": "live-base-patch-and-whitespace-check-read-only"
+    }
+  ],
+  "guard_behavior_unchanged": true,
+  "guard_only_delta": "five -> six in success message; no behavioral change",
+  "live_status": {
+    "80a724fb8410dc3d": {
+      "current_stage": "study-review",
+      "disposition": null,
+      "workflow_digest": "1375f708d8670b2f4ccaf1869cfaa6fe67fe6946dc2b962c766bcdc499d3b47e",
+      "workflow_version": 1
+    },
+    "8f4e6454c021280a": {
+      "current_stage": "derive-homily",
+      "disposition": null,
+      "workflow_digest": "1375f708d8670b2f4ccaf1869cfaa6fe67fe6946dc2b962c766bcdc499d3b47e",
+      "workflow_version": 1
+    }
+  },
+  "live_v1_workflow_digest": "1375f708d8670b2f4ccaf1869cfaa6fe67fe6946dc2b962c766bcdc499d3b47e",
+  "patch_sha256": "55622214a655db4414b196319274d2ebbc528e268b44230ffd9447427bc85a13",
+  "prior_evidence_files_unchanged": 925,
+  "prior_five_subjects_unchanged": true,
+  "prior_patch_sha256": "2ea50623c6d6090ce95309d2a7a27f231c8af0575e8a6dd1762a6dba54e02469",
+  "production_acceptance_claimed": false,
+  "result_hashes": {
+    "tools/tests/test_workflow_proper_study_recipes.py": "f75ad163dc364ab2ef680b3f7e457055e4ae5f295146a0842f3781c5ac1d120f",
+    "workflows/OPERATOR.md": "e9ebb1570d36aeb2e496b023499dc952571d8135c62ebc334b8c3801fd960e47",
+    "workflows/fragments/proper-study/build-artifacts.md": "2f01c11db449a9f6100fbb72180792663144d6850269b8a784c2024bece73782",
+    "workflows/fragments/proper-study/generate-web.md": "ef5a4ecdd51fd90ae5ce6a9d00d0d2415a39c89487802b65aca63e6ab2c322cf",
+    "workflows/fragments/proper-study/install-publication.md": "9596f147854a89916f4ae9247d56c24ecc48cd38ec99a54216e1066b26f837bc",
+    "workflows/pipelines/proper-study.json": "15e4bea2dbed6b5f94651886e136958a65fa95fcad6a0c62ee5eff9c8acd0e26"
+  },
+  "sole_delta_from_prior_five_file_proposal": "workflows/fragments/proper-study/install-publication.md",
+  "toolchain_drift": {},
+  "tracked_application_performed": false,
+  "v2_workflow_digest": "4e4bbd64b71b60bd9e04c9fa7592ecb52c85e05cad1349c41941fa4d31e4e4d2"
+}

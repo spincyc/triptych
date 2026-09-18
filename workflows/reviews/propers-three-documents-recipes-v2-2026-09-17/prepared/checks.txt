@@ -1,0 +1,82 @@
+Cold-review command evidence. Commands ran from the isolated tree/ directory.
+run-checks.py sets PYTHONDONTWRITEBYTECODE=1 and TMPDIR/TMP/TEMP to the review tmp/ directory.
+GIT_CEILING_DIRECTORIES confines patch operations to the isolated tree; the explicitly shown env -u permits read-only parent Git metadata discovery for the owning tests and source inspection.
+
+Numeric exits are actual command return codes. Expected negative controls are retained.
+
+base-check
+Command: python3 ../apply-prepared.py --repo .
+Exit: 0
+Log: base-check.log
+
+patch-apply
+Command: git apply --whitespace=error ../proper-study-v2.patch
+Exit: 0
+Log: patch-apply.log
+
+recipe-tests
+Command: python3 -m unittest tools.tests.test_workflow_proper_study_recipes -v
+Exit: 0
+Log: recipe-tests.log
+
+focused-tests
+Command: python3 -m unittest tools.tests.test_workflow_proper_study tools.tests.test_workflow_proper_study_recipes tools.tests.test_workflow_engine tools.tests.test_workflow_determinism tools.tests.test_workflow_seed_idempotency -q
+Exit: 1
+Log: focused-tests.log
+
+baseline-revert
+Command: git apply --reverse --include=workflows/fragments/proper-study/build-artifacts.md --include=workflows/fragments/proper-study/generate-web.md ../proper-study-v2.patch
+Exit: 0
+Log: baseline-revert.log
+
+baseline-regressions
+Command: python3 -m unittest tools.tests.test_workflow_proper_study_recipes.IsolatedRecipeTests.test_real_conversion_lands_at_snapshot_path_once_per_provider tools.tests.test_workflow_proper_study_recipes.IsolatedRecipeTests.test_real_renderer_replaces_only_its_child_and_preserves_sibling_evidence -v
+Exit: 1
+Log: baseline-regressions.log
+
+baseline-restore
+Command: git apply --include=workflows/fragments/proper-study/build-artifacts.md --include=workflows/fragments/proper-study/generate-web.md ../proper-study-v2.patch
+Exit: 0
+Log: baseline-restore.log
+
+focused-tests-with-git-metadata
+Command: env -u GIT_CEILING_DIRECTORIES python3 -m unittest tools.tests.test_workflow_proper_study tools.tests.test_workflow_proper_study_recipes tools.tests.test_workflow_engine tools.tests.test_workflow_determinism tools.tests.test_workflow_seed_idempotency -q
+Exit: 0
+Log: focused-tests-with-git-metadata.log
+
+postconciliar-recipes
+Command: python3 ../probe-postconciliar.py
+Exit: 0
+Log: postconciliar-recipes.log
+
+identity-check
+Command: env -u GIT_CEILING_DIRECTORIES python3 ../check-identities.py
+Exit: 0
+Log: identity-check.log
+
+guard-check
+Command: python3 ../check-guard.py
+Exit: 0
+Log: guard-check.log
+
+Guard nested refusals (all operate on guard-fixture/ only):
+
+active-real-v1-state-copy
+Command: python3 ../apply-prepared.py --repo ../guard-fixture --apply
+Exit: 1
+No fixture mutation: True
+v2 preparation: v1 run 80a724fb8410dc3d is not an identity-consistent ACCEPTED run; refusing application
+
+base-drift
+Command: python3 ../apply-prepared.py --repo ../guard-fixture --apply
+Exit: 1
+No fixture mutation: True
+v2 preparation: base hash drift: workflows/pipelines/proper-study.json; expected 0fc5c13559dc37bb7d3df7d95c63108ec51b2b767a9e4cb3cbe40659bf13c276, found c60e2daf69b02d26c85e756b25f3ed2398bd2d998bc5866d2639d2da8034eb25
+
+preexisting-new-test
+Command: python3 ../apply-prepared.py --repo ../guard-fixture --apply
+Exit: 1
+No fixture mutation: True
+v2 preparation: base hash drift: tools/tests/test_workflow_proper_study_recipes.py; expected None, found acae299cb5c33d0f20760e3cd1f02d758b067335601d89f62b4d9f8415610815
+
+Skipped: Live application, real v2 production, production acceptance, full document builds, visual publication review, and deployment are outside this preparation review. None of the reported test cases skipped.

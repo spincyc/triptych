@@ -1,0 +1,12 @@
+--- original-reviewed-test.py
++++ revised-test.py
+@@ -30,7 +30,8 @@
+         self.root = Path(temporary.name)
+         for name in ("tools/tpt", "tools/web-edition", "tools/pdf-review", "tmt.json",
+                      "scripts/_tooling.py", "scripts/_corpus.py", "scripts/_workflow.py",
+-                     "scripts/_proper_study.py", "scripts/_proper_components.py", "scripts/web-shim.tex"):
++                     "scripts/_proper_study.py", "scripts/_proper_components.py", "scripts/_markdown_render.py",
++                     "scripts/web-shim.tex"):
+             target = self.root / name
+             target.parent.mkdir(parents=True, exist_ok=True)
+             shutil.copy2(ROOT / name, target)
