@@ -173,6 +173,7 @@ def _dossier(arguments: argparse.Namespace) -> _wiring.Dossier:
         root=root,
         profile=arguments.profile,
         corpus_root=_corpus_root(arguments),
+        provider=arguments.provider,
     )
 
 

@@ -23,11 +23,17 @@ Three seams meet here and none of them is re-implemented:
 - **The chronology.** `_chronology.chronology()` is the whole seam onto the
   corpus, per that guidance's §2. Nothing here reads the corpus YAML.
 
-The calendar declares `psalm_numbering: vulgate` and the chronology corpus's
+For 1962 the calendar declares `psalm_numbering: vulgate` and the chronology corpus's
 preferred system is `vulgate`, so a locus crosses this boundary unconverted.
 That agreement is asserted rather than assumed: `element_loci` refuses when
 the calendar declares any other numbering, because a psalm locus quietly read
 in the wrong system would name a different psalm and still look right.
+
+Postconciliar PC-S leaves use their reviewed edition-specific appointment
+inputs through `_proper_chronology_inputs`, not the 1962 calendar or an
+unreviewed calendar lead. That adapter retains citation relationships and
+partial-verse bounds, and converts declared Hebrew psalm addresses through the
+canonical concordance before the same chronology queries below.
 """
 
 from __future__ import annotations
@@ -183,6 +189,8 @@ class Dossier(NamedTuple):
     state: str
     reason: str
     elements: tuple[Element, ...]
+    appointment_dependencies: tuple[tuple[str, str], ...] = ()
+    appointment_notes: tuple[str, ...] = ()
 
     def element(self, key: str) -> Element | None:
         for item in self.elements:
@@ -243,6 +251,8 @@ class AnnotationProjection(NamedTuple):
     state: str
     reason: str
     elements: tuple[AnnotationElement, ...]
+    appointment_dependencies: tuple[tuple[str, str], ...] = ()
+    appointment_notes: tuple[str, ...] = ()
 
 
 # --- From a leaf id to its mass --------------------------------------------
@@ -300,6 +310,10 @@ def formulary_state(document: str) -> tuple[str, str]:
 
 def identity_prefix(document: str) -> str:
     """The catalog identity a leaf id claims, e.g. `54`."""
+    if not document.startswith("liturgy/roman-rite/1962/propers/") or any(
+        part in {"", ".", ".."} for part in document.split("/")
+    ):
+        raise ChronologyWiringError(f"{document!r} does not name a supported proper family")
     slug = document.rstrip("/").rpartition("/")[2]
     matched = PREFIX.match(slug)
     if matched is None:
@@ -629,6 +643,7 @@ def dossier(
     root: Path = ROOT,
     profile: str | None = None,
     corpus_root: Path | None = None,
+    provider: str = "claude",
 ) -> Dossier:
     """Everything the corpus answers about a proper's appointed Scripture."""
     # `_chronology.chronology` resolves an omitted profile to the corpus's
@@ -638,7 +653,17 @@ def dossier(
     # that policy. `load` is cached, and every locus query reaches the same
     # cached corpus through the chronology seam below.
     effective_profile = profile or _chronology.load(corpus_root).default_profile
-    state, reason = formulary_state(document)
+    inputs = None
+    if document.startswith("liturgy/roman-rite/postconciliar/"):
+        import _proper_chronology_inputs
+
+        try:
+            inputs = _proper_chronology_inputs.load(document, root, provider, _loci_of)
+        except ValueError as exc:
+            raise ChronologyWiringError(str(exc)) from exc
+        state, reason = APPOINTED, ""
+    else:
+        state, reason = formulary_state(document)
     if state != APPOINTED:
         # Empty, and valid: the record exists, says which identity it is for,
         # and says in the corpus's absence why it lists nothing. A gate can
@@ -655,9 +680,13 @@ def dossier(
             reason=reason,
             elements=(),
         )
-    mass_key, _mass = mass_of(document, root)
+    if inputs is None:
+        mass_key, _mass = mass_of(document, root)
+        appointments = appointed(document, root)
+    else:
+        mass_key, appointments = inputs.formula, inputs.elements
     elements = []
-    for key, name, refs, loci in appointed(document, root):
+    for key, name, refs, loci in appointments:
         answers: list[tuple[str, str, str, list[Claim]]] = []
         for locus in loci:
             status, reason, found = _claims_at(
@@ -685,13 +714,15 @@ def dossier(
         )
     return Dossier(
         document=document,
-        calendar=CALENDAR,
+        calendar="postconciliar" if inputs is not None else CALENDAR,
         mass=mass_key,
         system=REQUIRED_NUMBERING,
         profile=effective_profile,
         state=state,
         reason=reason,
         elements=tuple(elements),
+        appointment_dependencies=inputs.dependencies if inputs is not None else (),
+        appointment_notes=inputs.notes if inputs is not None else (),
     )
 
 
@@ -951,6 +982,8 @@ def annotations(found: Dossier) -> AnnotationProjection:
         state=found.state,
         reason=found.reason,
         elements=tuple(projected),
+        appointment_dependencies=found.appointment_dependencies,
+        appointment_notes=found.appointment_notes,
     )
 
 
@@ -968,6 +1001,9 @@ def annotation_payload(found: AnnotationProjection) -> dict[str, object]:
         "formulary": found.state,
         "formulary_reason": found.reason,
         "generated_by": ANNOTATIONS_GENERATOR,
+        **({"appointment_dependencies": dict(found.appointment_dependencies),
+            "appointment_notes": list(found.appointment_notes)}
+           if found.appointment_dependencies else {}),
         "elements": [
             {
                 "key": element.key,
@@ -1157,6 +1193,11 @@ def render_annotations_tex(found: AnnotationProjection) -> str:
         r"    \PackageError{triptych}{No chronology annotation for #1}{}%",
         r"  \fi}",
     ]
+    if found.appointment_dependencies:
+        lines.extend(f"% appointment-dependency: {path} sha256={digest}"
+                     for path, digest in found.appointment_dependencies)
+        lines.extend(f"% appointment-note: {tex_escape(note)}"
+                     for note in found.appointment_notes)
     for element in found.elements:
         lines.extend(
             (
@@ -1184,11 +1225,11 @@ HEADER = """\
 #
 # What the Scripture chronology corpus answers about this proper's appointed
 # loci, written by `{generator}` and held
-# against the corpus by `check-content-preflight`. Every field
+# against the corpus by `check-content-preflight`. Every {claim_field}
 # here is the corpus's, carried so that the guide's prose can be regenerated
 # without re-researching the fact: `guidance/scripture-chronology.md` §14.
 #
-# `formulary` is `appointed` when the calendar appoints this identity a Mass
+# `formulary` is `appointed` when {appointment_source} appoints this identity a Mass
 # formulary, and `no-calendar-formulary` when it does not — a ritual Mass,
 # appointed by a rite rather than by a day, which the calendar sources here do
 # not encode. In that state the record lists no element, `formulary_reason`
@@ -1266,7 +1307,11 @@ def _render_claim(lines: list[str], table: str, claim: Claim) -> None:
 
 def render(found: Dossier) -> str:
     """The record's canonical bytes. One dossier renders one way, always."""
-    lines = [HEADER.format(generator=GENERATOR), ""]
+    lines = [HEADER.format(
+        generator=GENERATOR,
+        claim_field="chronology claim" if found.appointment_dependencies else "field",
+        appointment_source="the reviewed edition input" if found.appointment_dependencies else "the calendar",
+    ), ""]
     lines.append(_field("schema", RECORD_SCHEMA))
     lines.append(_field("record_type", RECORD_TYPE))
     lines.append(_field("document", found.document))
@@ -1277,6 +1322,11 @@ def render(found: Dossier) -> str:
     lines.append(_field("formulary", found.state))
     lines.append(_field("formulary_reason", found.reason))
     lines.append(_field("generated_by", GENERATOR))
+    if found.appointment_dependencies:
+        lines.append(_field("appointment_notes", found.appointment_notes))
+        for path, digest in found.appointment_dependencies:
+            lines.extend(("", "[[appointment_dependencies]]",
+                          _field("path", path), _field("sha256", digest)))
     for element in found.elements:
         lines.append("")
         lines.append("[[elements]]")

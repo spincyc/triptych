@@ -24,8 +24,14 @@ the 10–12-page concise revision remains blocked, not complete.
 The most recent Pages run on the inherited `main` failed while building the
 held, unpublished Claude proper 54 synthesis. Deployment preparation must
 respect the existing publication selection, without publishing held work or
-waiving its pagination checks. The implementation and deployment repair are
-being validated separately from the blocked revised Sunday productions.
+waiving its pagination checks. Independent implementation and deployment
+reviews passed their bounded scopes; the implementation recovery corrected
+invalid citation endpoints and cross-edition chronology counting. Source,
+release-binding, deployment-source, public-site and GitHub Pages compatibility
+gates pass locally. The [recovery record](workflows/reviews/propers-three-documents-v3-recovery-2026-09-18/README.md)
+retains the reviews, inherited test failures and unchanged historical artifact
+identities. Push and actual deployment verification remain pending; these
+checks do not accept the blocked revised Sunday productions.
 
 **Blocked: pagination revision.** Both first-production Sunday runs reached
 ACCEPTED, with six reviewed PDFs and two canonical web editions installed.

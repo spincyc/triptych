@@ -1,0 +1,46 @@
+Run from the repository root. The scratch sitecustomize.py redirects tempfile.mkdtemp
+into the assigned review directory; PYTHONDONTWRITEBYTECODE prevents source-tree caches.
+
+Prefix for each Python test/probe command below:
+PYTHON_COLORS=0 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH="$PWD/.scratch/recovery-implementation:$PWD/scripts"
+
+1. python3 -m unittest tools.tests.test_proper_chronology_postconciliar.PostconciliarChronologyTests.test_out_of_bounds_cross_chapter_endpoints_refuse_before_expansion
+Exit 1 before repair: 1 test, 4 failing endpoint subcases. Final focused suite includes the repaired test.
+
+2. python3 -m unittest tools.tests.test_proper_pagination.PaginationTests.test_leaf_chronology_checks_each_reading_experience_separately
+Exit 1 before repair: 1 test, 2 failures (cross-edition duplicate and concealed concise omission).
+Final focused suite includes the repaired test.
+
+3. python3 -m unittest -v tools.tests.test_proper_chronology_postconciliar tools.tests.test_proper_pagination tools.tests.test_workflow_proper_study_artifact_routing
+Exit 0: 49 tests passed. Real TeX/Poppler test ran, not skipped. Final repaired state.
+
+4. python3 -m unittest -v tools.tests.test_proper_chronology_postconciliar tools.tests.test_proper_pagination tools.tests.test_workflow_proper_study_artifact_routing tools.tests.test_proper_components tools.tests.test_proper_components_v2 tools.tests.test_proper_chronology_annotations tools.tests.test_workflow_chronology tools.tests.test_workflow_proper_study tools.tests.test_workflow_proper_study_recipes tools.tests.test_workflow_proper_finish tools.tests.test_workflow_two_editions tools.tests.test_workflow_content_preflight tools.tests.test_workflow_synthesis_preflight
+Exit 1: 334 tests, 333 passed, sole inherited 15-versus-16 corpus-count assertion.
+
+5. python3 -m unittest discover -s tools/tests -p 'test_workflow*.py'
+Initial attempt: timeout at 240 seconds; no completed suite result, not a pass.
+Completed rerun exit 1: 929 tests, 928 passed, same inherited corpus-count assertion.
+The rerun began before the final preflight repair; test 3 and test 4 reran affected checks afterward.
+
+6. python3 -m unittest tools.tests.test_proper_components tools.tests.test_proper_components_v2 tools.tests.test_proper_chronology_annotations tools.tests.test_chronology tools.tests.test_chronology_derivation_lineage
+Exit 1: 324 tests, 322 passed, two inherited unavailable-history failures.
+
+7. python3 .scratch/recovery-implementation/compatibility_probe.py
+Exit 0: eight historical wire-byte comparisons, two research-seal comparisons,
+one artifact-seal comparison. Base already has 16 manifests. Historical object absent;
+all owners of inherited failures unchanged. Details in compatibility-probe.json.
+
+8. PYTHONDONTWRITEBYTECODE=1 tools/tpt workflow show proper-study
+Exit 0: workflow, routes, and schemas load.
+
+9. PYTHONDONTWRITEBYTECODE=1 tmt check
+Exit 0: ok.
+
+10. git diff --check -- scripts/_proper_chronology.py scripts/_proper_components.py scripts/_proper_study.py scripts/_workflow.py tools/check-content-preflight tools/proper-chronology tools/tests/test_workflow_proper_study.py
+Exit 0: no tracked implementation diff whitespace defects.
+
+Skipped
+- No publication builds, source/rights re-research, visual acceptance, web conversion,
+  deployment gates, real workflow seeding/advancement, commits, or pushes: out of this assignment.
+- Complete repository make check not run; focused implementation and historical regressions
+  above are the review scope. Inherited failures are reported, not bypassed.

@@ -258,9 +258,8 @@ class ReviewSealExecutionTests(unittest.TestCase):
         self.fail("fixture did not reach " + target)
 
     def test_changed_study_cannot_accept_and_routes_through_all_downstream_reviews(self):
-        self.drive_to("derive-synthesis")
-        (self.root / "study.txt").write_text("changed after cold review")
         self.drive_to("publication-gates")
+        (self.root / "study.txt").write_text("changed after artifact and cold reviews")
         self.advance()
         self.assertEqual(self.engine.load_state(self.run_id)["current_stage"], "author-study")
         self.drive_to("ACCEPTED")

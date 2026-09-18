@@ -1523,12 +1523,17 @@ def _stated_production(leaf: Path) -> tuple[str, int] | None:
         return None
 
 
-def _chronology_scope(leaf: Path) -> tuple[bool, bool, str]:
+def _chronology_scope(leaf: Path, edition: str = LEAF_EDITION) -> tuple[bool, bool, str]:
     """`(record required, macro discipline required, why)` for this leaf."""
     production = _stated_production(leaf)
     wiring = _wiring()
     carried = (leaf / wiring.RECORD).is_file()
     if three_document_study(leaf):
+        from _proper_components import presentation_contract
+        data = tomllib.loads((leaf / "proper-components.toml").read_text())
+        if presentation_contract(data):
+            return True, edition in {LEAF_EDITION, SYNTHESIS_EDITION}, (
+                "the concise physical-page contract requires the complete canonical chronology")
         # A carried record remains checked, but adopting the corpus's facts
         # no longer commits a publication to a date table or to printing dates.
         marks = ("\\" + CHRONOLOGY_CLAIM, "\\" + CHRONOLOGY_CELL,
@@ -1577,6 +1582,9 @@ def _annotations_scope(leaf: Path) -> tuple[bool, str]:
     path = wiring.annotations_path(leaf)
     carried = path.is_file()
     if three_document_study(leaf):
+        from _proper_components import presentation_contract
+        if presentation_contract(tomllib.loads((leaf / "proper-components.toml").read_text())):
+            return True, "the concise physical-page contract requires canonical generated annotations"
         return carried, (
             f"schema 2 requires a current projection only when carried "
             f"in {path.relative_to(leaf)}"
@@ -1611,6 +1619,7 @@ def _corpus_answer(leaf: Path, root: Path):
         _leaf_document(leaf, root),
         root=root,
         corpus_root=root / "src" / "sources" / "chronology",
+        provider=leaf.relative_to(root / "src").parts[0],
     )
 
 
@@ -1755,7 +1764,17 @@ def check_chronology_claims_supported(leaf: Path, root: Path,
     That guidance says so in as many words. A green result here is not a
     statement that the page's prose was held against the corpus.
     """
-    _required, macros, why = _chronology_scope(leaf)
+    _required, macros, why = _chronology_scope(leaf, edition)
+    if edition == LEAF_EDITION and three_document_study(leaf) and macros:
+        # The v3 page-two inventory belongs to the concise edition. Counting
+        # the whole leaf together both rejects a separate research appendix
+        # as duplicate cells and lets that appendix hide a missing concise row.
+        problems, details = [], []
+        for mode in (RESEARCH_EDITION, SYNTHESIS_EDITION, HOMILY_EDITION):
+            found, detail = check_chronology_claims_supported(leaf, root, mode)
+            problems.extend(f"{mode}: {problem}" for problem in found)
+            details.append(f"{mode}: {detail}")
+        return problems, "; ".join(details)
     annotation_required, annotation_why = _annotations_scope(leaf)
     printed = {
         path: active_tex(edition_text(leaf, path, edition))
@@ -1970,7 +1989,7 @@ def check_chronology_claims_supported(leaf: Path, root: Path,
     # saying which is the guide's, and a second cell is also how an element
     # already covered by a shared row gets a date of its own smuggled in.
     doubled = sorted(key for key, count in cells_for.items() if count > 1)
-    if doubled and not three_document_study(leaf):
+    if doubled and (not three_document_study(leaf) or macros):
         problems.append(
             f"more than one \\{CHRONOLOGY_CELL} names {doubled}; one "
             f"appointed text has one date cell, or the page states two dates "

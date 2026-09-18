@@ -1,0 +1,685 @@
+diff --git a/guidance/liturgy/postconciliar-propers.md b/guidance/liturgy/postconciliar-propers.md
+index 6bcf2c20d..779ae6458 100644
+--- a/guidance/liturgy/postconciliar-propers.md
++++ b/guidance/liturgy/postconciliar-propers.md
+@@ -6,8 +6,9 @@ This delta profile governs source-first guides to the textual variable parts of
+ 
+ New and substantially revised guides use the
+ [three-document contract](propers-three-documents.md) and `proper-study`
+-workflow. It replaces this profile's older presentation, fixed pagination,
+-and two-document membership for schema 2. The edition, identity, occurrence,
++workflow. It owns schema 2's presentation and pagination, including the restored
++first four pages of its 10–12-page concise study, and replaces the older
++two-document membership. The edition, identity, occurrence,
+ branch, source-owner, language, and rights rules below still apply; schema-1
+ guides retain the older presentation.
+ 
+diff --git a/guidance/liturgy/propers-three-documents.md b/guidance/liturgy/propers-three-documents.md
+index fa1e858dc..3ba79a4dc 100644
+--- a/guidance/liturgy/propers-three-documents.md
++++ b/guidance/liturgy/propers-three-documents.md
+@@ -12,9 +12,12 @@ implemented by `proper-study` and `proper-components.toml` schema 2.
+ The [1962 profile](roman-1962-propers.md) and
+ [postconciliar profile](postconciliar-propers.md) continue to own identities,
+ governing editions, occurrence, source control, rights, language, and
+-form-specific branches. This profile replaces their reader-facing sequence,
+-fixed pagination, one collective four-senses table, mandatory cultural gallery,
+-and exploratory-proposal quotas for schema 2. Those older requirements remain
++form-specific branches. This profile owns schema 2's reader-facing sequence
++and extent. The maintainer subsequently specified a 20–50-page expansive study
++and an approximately 10–12-page concise study retaining the established first
++four pages. The concise opening below adopts those pages without reinstating
++the old mandatory cultural gallery or exploratory-proposal quotas. The older
++two-document requirements remain
+ in force for schema-1 publications and the legacy `proper` and `proper-finish`
+ workflows. A new contract does not silently invalidate previously reviewed
+ documents or reopen the collection's production boundary.
+@@ -100,6 +103,10 @@ controls or audit references; do not list them as external source owners.
+ Explicitly declare controlling rights inventories, permission evidence, and
+ collation records beneath `src/` unless registered binding ancestry already
+ reaches them. A prose link in a source record does not add a sealed dependency.
++For v3 research review, the engine separately seals the chronology computation
++code and applicable identity registry. These are computation inputs, not entries
++in the source-owner declaration; historical review contracts retain their
++original seal shape.
+ 
+ At initial submission and after a research repair, audit the complete chain of
+ adopted authorities in the context, instance, formulary, source and rights
+@@ -161,13 +168,19 @@ where their answers differ. Give each substantial argument one fullest home.
+ Depth means explaining why an author reads the text as he does and what that
+ reading changes, not accumulating names or repeating the same application.
+ For an ordinary Sunday, roughly 6,000–10,000 words of substantive exposition
+-is a useful planning range, not a quota. Evidence and reader value decide the
+-actual extent; reviewers must reject a thin outline masquerading as expansive.
++is a useful planning range, not a quota. The finished expansive PDF occupies
++20–50 physical pages, including its terminal apparatus. Evidence and reader
++value determine the treatment within that range; reviewers must reject a thin
++outline masquerading as expansive or repetition used to reach the minimum.
+ 
+ Historical orientation can accompany the passage or occupy a terminal
+ appendix. A date asserted for Scripture still comes from the shared chronology
+-corpus under [its profile](../scripture-chronology.md). Schema 2 requires no
+-physical page-2 dossier and never invents a date to fill one. Terminal scope,
++corpus under [its profile](../scripture-chronology.md). The expansive study has
++no fixed page-2 dossier. Its concise companion does, as specified below;
++neither invents a date to fill a position. Chronological claims needed by the
++concise opening must already have a reviewed home in the same owner's research
++and expansive study, conveniently as a shared terminal historical appendix.
++Terminal scope,
+ used references, generation timestamp, and compact rights colophon remain.
+ 
+ ## The concise study
+@@ -186,10 +199,75 @@ argument remains available there. Qualifications that affect truth survive
+ compression. Introduce no new source-dependent claim: a needed new claim goes
+ back through research and review of the expansive study.
+ 
+-Aim ordinarily for about 1,500–2,500 words, with substantive prose at most
+-roughly one third of the study. A longer or shorter treatment is acceptable
+-when the owning audit explains the reader's need. No mandatory two-page layout
+-or copied research apparatus substitutes for concision.
++The finished concise PDF targets 10–12 physical pages, including the opening
++four pages and terminal apparatus. The earlier 1,500–2,500-word and one-third
++planning limits are superseded. Concision means selecting and integrating the
++long study's strongest explanations; it does not mean a five-page abstract.
++After the opening, develop the interpretive differences through the actual
++exegetical reasoning and pertinent whole-formulary connections. Do not reach
++the target through enlarged type, repeated summaries or copied appendices.
++
++### The first four pages
++
++Physical page 1 contains the complete propers map in liturgical order, followed
++immediately by exactly four overview rows: **Literal**, **Allegorical**,
++**Moral**, and **Anagogical**. Include every appointed element and identify
++options as options. This brief orientation does not replace each expansive
++interpretation's own four senses or erase differences developed in the concise
++argument. No preceding cover shifts the physical page positions.
++
++Physical page 2 contains only **Scriptural Date and Location**. Follow the
++owning family's established dossier and evidence rules: the
++[1962 dossier](roman-1962-propers.md#page-2-scriptural-date-and-location) or
++the [postconciliar reader sequence](postconciliar-propers.md#reader-facing-order).
++Inventory each distinct directly appointed biblical passage once, in canonical
++then verse order, and distinguish composition, attributed setting, narrated
++event, and reception. Use the canonical chronology tool's generated record and
++annotations, including its alternatives, relation labels and unresolved states.
++Do not reuse another Sunday's dates or substitute hand-authored date labels.
++Postconciliar query inputs identify that edition's own verified appointments
++through the adapter specified in the [chronology profile](../scripture-chronology.md).
++Research review must inspect the new chronology and its controlling sources;
++a formerly date-free study's approval does not cover newly added dates.
++
++Physical pages 3 and 4 contain **The Propers: Themes and Movement**, a substantive
++two-page source-grounded argument. Open with a direct thesis and develop the
++whole formulary's movement. Both pages must earn their extent through readable
++argument rather than decorative space or displaced apparatus. Physical page 5
++begins the developed interleaved commentary. Its cross-proper questions deepen
++and compare the earlier movement instead of repeating it. This restores only
++the opening sequence; the remaining pages follow this three-document contract.
++
++### Declared presentation and physical-page evidence
++
++New `proper-study` runs require schema 2's
++`presentation_contract = "interpretive-pagination-v1"`. Its `[presentation]`
++table names distinct component keys for `inventory`, `overview`, `chronology`,
++`themes`, and `commentary`. The first four are `front-matter` components
++available in synthesis mode; the last is its synthesis-only
++`integrated-commentary`. An opening component may also be used within the
++same owner's research study. The inventory binds every appointed element key.
++The chronology component declares `research/chronology-annotations.tex` as a
++reference, imports those generated definitions once, and uses the required
++`\chronodate{element-key}{\chronologyannotation{element-key}}` cells.
++
++Use `zref-user` and `zref-abspage` in the concise entrypoint so settled auxiliary
++evidence records physical pages, independent of printed page counters. Place
++`\zlabel{triptych:concise:<role>:start}` and the corresponding `:end` around
++the actual inventory, overview, chronology and themes content. Mark each
++overview row with `triptych:concise:sense:literal`, `:allegorical`, `:moral`,
++or `:anagogical`, respectively; each complete marker includes that same prefix.
++Use `triptych:concise:commentary:start` at the beginning of the developed
++commentary. The component checker owns the exact marker validation.
++
++The artifact gates require inventory and overview on physical page 1,
++chronology on page 2, themes beginning on 3 and ending on 4, and commentary
++beginning on 5, together with the two PDF length ranges. They also require
++settled references. These checks prove placement and declared coverage; cold
++review must still judge the actual map, dates, four senses, argument and beauty.
++Historical schema-1 and schema-2 publications without this explicit contract
++retain their original validation rules. A new run cannot omit the contract to
++evade the revised requirement, and old accepted results are not restamped.
+ 
+ ## The homily
+ 
+diff --git a/guidance/liturgy/roman-1962-propers.md b/guidance/liturgy/roman-1962-propers.md
+index c4cc79276..520d591f4 100644
+--- a/guidance/liturgy/roman-1962-propers.md
++++ b/guidance/liturgy/roman-1962-propers.md
+@@ -5,8 +5,9 @@ This profile governs source-first guides to temporal, ritual, votive, and other
+ New and substantially revised guides use the
+ [three-document contract](propers-three-documents.md) and `proper-study`
+ workflow: an expansive study, concise comparison, and a distinct homily.
+-That contract supersedes this profile's older presentation and pagination
+-requirements for schema 2; the source, identity, language, and rights rules
++That contract owns schema 2's presentation and pagination, including the
++restored first four pages of its 10–12-page concise study; the source,
++identity, language, and rights rules
+ below remain in force. Schema-1 guides retain the older presentation below.
+ 
+ The study is a hand-missal companion, not an official liturgical text, critical edition, or substitute for the cited sources. It should help a reader perceive the appointed texts as one ordered liturgical action while keeping verified text, documented history and reception, editorial synthesis, and exploratory proposal distinct. The separately reviewed homily is authored under the three-document contract.
+diff --git a/guidance/scripture-chronology.md b/guidance/scripture-chronology.md
+index 2ef0f0832..6079d8e9a 100644
+--- a/guidance/scripture-chronology.md
++++ b/guidance/scripture-chronology.md
+@@ -1246,8 +1246,10 @@ payload, so prose can be regenerated without re-researching the fact.
+ 
+ ### 14.1 The propers, wired
+ 
+-**The 1962 propers are wired.** The lane this document said would come has
+-run, and the rule above binds their production workflow from `proper` v17.
++**The 1962 propers and explicitly bound postconciliar PC-S propers are wired.**
++The rule above binds the 1962 production workflow from `proper` v17. The
++postconciliar adapter uses the owning edition's reviewed appointment input;
++it does not import the 1962 calendar, source owner, or research judgments.
+ 
+ - `scripts/_proper_chronology.py` is the wiring. It resolves a formulary's
+   appointed verses through `scripts/_calendars.py`, the machinery every other
+@@ -1256,7 +1258,52 @@ run, and the rule above binds their production workflow from `proper` v17.
+   so the two cannot come to spell a book differently — and asks
+   `chronology()`. It parses no citation and reads no corpus file. The calendar
+   declares `psalm_numbering: vulgate` and the corpus prefers `vulgate`; the
+-  wiring asserts that agreement and refuses rather than converting. **[verified]**
++  1962 wiring asserts that agreement and refuses rather than converting.
++  **[verified]**
++- Postconciliar `PC-S` temporal leaves use
++  `scripts/_proper_chronology_inputs.py` and their own
++  `research/chronology-inputs.toml`. This is an appointment-query input, never
++  a chronology source: it contains citations and ownership, no authored dates.
++  The CLI's `--provider` identifies the owning leaf. An exact stable formula,
++  matching edition disposition, canonical same-edition shared owner, and
++  complete ordered partition of the numbered `instance/manifest.md` inventory
++  are required. A `proper-components.toml` manifest, when present, must match
++  the document, calendar, and ordered element keys; research can generate
++  chronology before authoring creates that presentation manifest. Missing
++  input, another family, an unsupported identity, owner aliases, and incomplete
++  inventories refuse; there is no fallback to another calendar's appointments.
++  The generic postconciliar calendar remains a finding aid, not an override
++  of this edition's checked citation evidence.
++- The input has `schema = 1`, `record_type = "proper-chronology-inputs"`,
++  `document`, `calendar = "postconciliar"`, exact `formula`, repository-relative
++  `shared_owner` ending in `propers/verified.md`, and ordered `[[elements]]`.
++  Each element has `key`, `name`, `owner` (this leaf's or that canonical shared
++  owner's `propers/verified.md`), and explicit `citations`. Each citation has
++  `ref` (printed citation, optionally prefixed `Cf. `), `citation` (the same
++  address without that prefix), `system`, and `kind`: `appointed`, `adaptation`,
++  `identified-basis`, or `response`. `Cf.` requires `adaptation`. A composed
++  element has `citations = []` and a substantive `non_scriptural_reason`.
++  Separate element keys retain separately appointed alternatives. An identified
++  scriptural basis does not become verbatim appointed wording.
++- Citation encoding belongs to `tools/citations`; the adapter calls that parser
++  rather than inventing another. Each citation declares `vulgate`, or `hebrew`
++  for a closed Psalm range converted through the canonical chronology
++  concordance. Other systems are unsupported and refuse. For non-Psalms,
++  `vulgate` is a reviewed declaration about these query addresses, not an
++  assertion that the entire Lectionary uses Vulgate numbering. Partial-verse
++  letters and `Cf.` survive in the generated references; an explicit audit
++  note identifies whole-verse query envelopes, which claim no subverse
++  chronology or appointed wording. Review still has to establish that each
++  citation and relationship agrees with the controlling witness: parsing,
++  matching keys, and hashing prose do not verify its meaning.
++- Postconciliar records and generated annotation TeX retain SHA-256 fingerprints
++  of the appointment input, both owners, instance inventory, stable registry,
++  and edition registry/dispositions. Presentation-only component additions or
++  layout changes preserve the exact chronology bytes; meaningful component
++  identity or element-inventory changes refuse. Thus rewriting
++  an owner or appointment invalidates both currency checks even if the neutral
++  corpus answer happens to remain unchanged. Those inputs and both chronology
++  adapter modules are research dependencies for a sealed production run.
+ - `tools/tpt proper-chronology` is the command. `loci` prints the appointed
+   loci and their statuses; `record` renders the answer as the leaf's
+   `research/chronology.toml` and writes or verifies it; `annotations` projects
+@@ -1306,8 +1353,10 @@ assertion to name, the cell carries no figure, and the guide states the
+ absence — which is this section's own rule, made mechanical.
+ 
+ `workflows/OPERATOR.md` and `workflows/ARCHITECTURE.md` carry the workflow
+-side of it. Nothing here changes for other consumers: a publication that is
+-not a 1962 proper is bound by §14 exactly as before, and has no wiring yet.
++side of it. Other consumers remain bound by §14; a consumer outside the
++1962 and explicitly bound postconciliar PC-S adapters has no proper-specific
++wiring yet. The source-neutral chronology corpus remains independently
++queryable without acquiring any liturgical family's ownership or judgments.
+ 
+ ---
+ 
+diff --git a/workflows/OPERATOR.md b/workflows/OPERATOR.md
+index fab4c44ad..d33fef62c 100644
+--- a/workflows/OPERATOR.md
++++ b/workflows/OPERATOR.md
+@@ -6,8 +6,9 @@ New and substantially revised proper guides use `tools/tpt proper-study`, the
+ schema-2 successor for both the 1962 and postconciliar Roman Rite collections.
+ It produces the expansive study, concise `-synthesis` companion and standalone
+ `-homily` from one canonical owner. The old `proper` and `proper-finish` remain
+-available for legacy schema-1 work; their two-document and fixed-pagination
+-rules are not the new production contract. Read
++available for legacy schema-1 work. The current three-document contract
++restores the established first four pages for the concise companion, while
++its remaining argument and the expansive study follow their distinct roles. Read
+ `guidance/liturgy/propers-three-documents.md` for the owning standard.
+ 
+ The driver grammar is unchanged:
+@@ -55,6 +56,11 @@ and available payloads, plus external owners declared in
+ `research/review-dependencies.toml`. Reviewers check that declaration's coverage.
+ Only pure generation timestamp/contribution furniture may evolve between prose
+ reviews; stable run provenance and all final render bytes remain sealed.
++The v3 research-review command explicitly selects
++`--review-contract proper-study-v3`, requiring canonical chronology records and separately sealing
++their computation code and applicable identity registry even before a new
++leaf's component manifest exists. The default seal contract remains unchanged
++for historical runs, including older studies that already carried chronology.
+ 
+ Publication checks require all three target PDFs and the canonical web edition,
+ their exact release records and the correct family catalog. Public-alpha uses
+@@ -77,7 +83,36 @@ loads only the current definition for an ID; it has no historical-version
+ resolver. Running `replay` recompiles the current packet under its matching
+ version and digest. Terminal `replay` instead checks the saved packet's integrity
+ and returns `deterministic: null`, both before and after a version change.
+-Terminal status and that integrity report remain available under v2.
++Terminal status and that integrity report remain available after a version change.
++
++Version 3 incorporates the maintainer's clarified extent: 20–50 physical pages
++for the expansive study and approximately 10–12 for the concise companion.
++The concise opening restores page 1's appointed map and four senses overview,
++page 2's canonical chronology dossier, and pages 3–4's Themes and Movement;
++developed interleaved commentary begins on page 5. The owning profile names
++the explicit presentation contract, component roles and physical-page markers.
++New runs require that contract; existing schema-1 and older schema-2 publications
++keep their original validation rules. Source, content and visual reviewers
++judge the material; marker and PDF-count gates prove only mechanical placement.
++
++Both study authors now build their own settled, edition-scoped proofs before
++cold content review. The later three-document build may make bounded layout
++repairs, but changed source bytes invalidate their prior content seals. Before
++visual review, the artifact gate checks exactly the completed research, study,
++synthesis and homily reviews and routes stale inputs to the earliest affected
++author. Future visual/web reviews are outside that gate's scope. The terminal
++gate still checks every required review. A visual finding requiring source
++layout changes returns directly to that source owner; disposable artifact
++regeneration from unchanged sources remains an artifact repair.
++
++After the original September 20 productions reached ACCEPTED, this clarification
++requires fresh production identities and independent review. Preserve the old
++accepted packets, results, provenance and artifacts; never rewrite a terminal
++run or carry its approval across new chronology, prose or layout. Verified
++same-owner research may be reused only after its new boundary is independently
++checked. The postconciliar chronology path consumes explicit verified
++appointments from its own edition tree and independently queries the neutral
++chronology corpus; it does not borrow the 1962 resolver or its dates.
+ 
+ ## Overview
+ 
+diff --git a/workflows/fragments/proper-study/author-study.md b/workflows/fragments/proper-study/author-study.md
+index a026b6fcb..f3e394113 100644
+--- a/workflows/fragments/proper-study/author-study.md
++++ b/workflows/fragments/proper-study/author-study.md
+@@ -12,7 +12,8 @@ Use `research/interpretations.md` as the evidence map. Preserve material
+ qualifications and disagreements where they change a claim. Do not invent a
+ Father's commentary on this whole Mass, generic patristic agreement, or a
+ historically intentional postconciliar theme. Roughly 6,000–10,000 substantive
+-words is a planning range; meaningful exposition decides length. Reject both
++words is a planning range; the finished PDF must occupy 20–50 physical pages.
++Meaningful exposition decides the treatment within that range. Reject both
+ padding and an outline passed off as expansive.
+ 
+ Create or revise the full schema-2 `proper-components.toml`, declaring future
+@@ -20,11 +21,16 @@ synthesis and homily components as well as the actual research files. The
+ study preflight requires only research-mode files to exist yet. Record two to
+ five `[[lanes]]` with all appointed element keys, four senses, substantive
+ authors, source-audit paths, and the relevant interpretive-lane component keys.
+-Follow the checker and owning profile for exact fields. Each interpretive lane
++Declare the profile's `interpretive-pagination-v1` presentation contract and
++the future concise opening roles. Follow the checker and owning profile for
++exact fields. Each interpretive lane
+ is a separate component. Keep shared source ownership and references explicit.
+ 
+ Choose generous, legible typography, navigable substantial sections, restrained
+-running matter, and intentional breaks. There are no fixed page positions.
++running matter, and intentional breaks. The expansive study has no fixed
++opening-page positions; the concise companion's first four pages are fixed
++by the owning three-document profile. Give its required reviewed chronology
++a home here, normally a shared terminal historical appendix.
+ Palatino with a comfortable measure and roughly 11-point text on 15-point
+ leading is one available starting point. Prefer ordinary semantic sectioning
+ and simple shared formatting that the web converter already understands; an
+@@ -33,6 +39,15 @@ Put work-wide scope and used references at the end; display the one canonical
+ generation timestamp and compact rights colophon. Set exact provenance from
+ this packet and declare canonical web eligibility.
+ 
++Build an author proof with `make doc DOC={proper} PROVIDER={provider}` before
++submission. Run
++`tools/check-proper-components --provider {provider} --document {proper} --phase artifacts --edition research`; inspect
++the settled PDF, its page count and build diagnostics. Keep any proof copies,
++logs and raster evidence beneath this run's stage/iteration artifact directory,
++with rasters in their own replaceable child. Report the exact PDF path and hash
++for the cold reviewer. This is author verification; the later shared-timestamp
++three-document build and independent visual review remain required.
++
+ Update `research/production-review.md` with actual scope, substantive word
+ count and source limits. On reentry, repair study-owned findings; the workflow
+ will rederive and independently review both companions. Do not silently change
+diff --git a/workflows/fragments/proper-study/build-artifacts.md b/workflows/fragments/proper-study/build-artifacts.md
+index 85375bc4c..25571b741 100644
+--- a/workflows/fragments/proper-study/build-artifacts.md
++++ b/workflows/fragments/proper-study/build-artifacts.md
+@@ -4,9 +4,19 @@ Build the bare document, `{proper}-synthesis`, and `{proper}-homily` with
+ `make doc DOC=<id> PROVIDER={provider}`. The Makefile owns fixed-point passes,
+ declared dependencies and metadata validation. Inspect all three logs and
+ extracted texts; resolve fatal errors, undefined references, overflow and
+-unresolved layout warnings. Check PDF structure and font embedding. Do not
++unresolved layout warnings. Check PDF structure and font embedding. Verify
++the required 20–50-page study, 10–12-page concise work and settled physical-page
++markers for the concise opening: map and senses on 1, chronology on 2,
++themes on 3–4, commentary beginning on 5. No logical counter reset can supply
++missing physical pages. Keep the concise auxiliary and log evidence with the
++final PDFs for the artifact snapshot and gate. Do not
+ change accepted prose or evidence here. Layout repairs may change presentation
+-but must preserve all content and source roles. Report semantic defects for
++but must preserve all content and source roles. Any such source edit invalidates
++the affected content review: the following artifact gate checks the completed
++research, study, synthesis and homily seals and routes changed bytes to the
++earliest affected author, followed by fresh dependent reviews and a new build.
++Record the exact layout edits; never refresh a content seal or describe an old
++approval as current. Report semantic defects for
+ the visual reviewer to send upstream.
+ 
+ After the final builds, record the exact PDF and render-input snapshot:
+@@ -23,6 +33,7 @@ evidence outside this dedicated raster child. Record artifact paths, page counts
+ log/font/extraction results and remaining limitations in the production audit.
+ The helper writes `research/artifacts.json`; it records real bytes and declared
+ source inputs, never a claim of review. A fresh worker visually inspects every
+-page next. Do not install PDFs yet. On reentry, update render finalization
++page after the upstream seals and artifact checks pass. Do not install PDFs yet.
++On reentry, update render finalization
+ metadata after a layout change, rebuild every affected consumer, and replace
+ the snapshot only before the new visual review. Return the concrete outputs.
+diff --git a/workflows/fragments/proper-study/contract.md b/workflows/fragments/proper-study/contract.md
+index 406f3d425..b92e34f07 100644
+--- a/workflows/fragments/proper-study/contract.md
++++ b/workflows/fragments/proper-study/contract.md
+@@ -1,9 +1,10 @@
+ # Three documents, one proper
+ 
+ Read `guidance/liturgy/propers-three-documents.md` completely. It owns this
+-workflow's deliverable and supersedes the legacy presentation requirements:
+-no fixed page count, global substitute for each interpretation's four senses,
+-mandatory cultural gallery, or exploratory-proposal quota. Read the applicable
++workflow's deliverable: a 20–50-page expansive study, a 10–12-page concise
++study with the restored four-page opening, and a standalone homily. There is
++no global substitute for each interpretation's four senses, mandatory cultural
++gallery, or exploratory-proposal quota. Read the applicable
+ 1962 or postconciliar profile for identity, text control, rights, source
+ research, and branches. Universal editorial and repository guidance continues
+ to govern. The canonical leaf is `DOCUMENT_ROOT` in this packet.
+@@ -40,7 +41,12 @@ is insufficient. Never attribute an
+ editorial whole-Mass construction to a Father who only comments on one verse.
+ Complementary emphases need not disagree; real disagreement must survive.
+ 
+-The concise study interleaves alternatives at their points of comparison. The
++The concise study places the complete proper inventory and exactly four
++overview sense rows on physical page 1; Scriptural Date and Location alone on
++page 2; and The Propers: Themes and Movement on pages 3–4. Developed commentary
++begins on page 5 and interleaves alternatives at their points of comparison.
++Follow the presentation contract and canonical chronology requirements in the
++owning profile; count terminal apparatus within the page limits. The
+ homily speaks one intelligible exegetical argument to an adult parish assembly,
+ unless `ARGS.audience` names another audience, ordinarily for 10–12 minutes.
+ It is finished prose, not an outline or advice to
+diff --git a/workflows/fragments/proper-study/derive-synthesis.md b/workflows/fragments/proper-study/derive-synthesis.md
+index 49418c034..d6a32fdac 100644
+--- a/workflows/fragments/proper-study/derive-synthesis.md
++++ b/workflows/fragments/proper-study/derive-synthesis.md
+@@ -1,11 +1,21 @@
+ # Derive the concise comparison
+ 
+ Read the accepted expansive study and write `synthesis.tex` and its components.
+-Its substantive prose ordinarily runs roughly 1,500–2,500 words and no more
+-than about one third of the study; record any justified exception in the audit.
+-Write a standalone concise argument organized around cross-proper questions
++The finished PDF targets 10–12 physical pages. Restore the first four pages
++specified in `guidance/liturgy/propers-three-documents.md`: page 1, complete
++propers map and four senses overview; page 2, Scriptural Date and Location;
++pages 3–4, The Propers: Themes and Movement. Developed interleaved commentary
++begins on page 5. Declare the presentation component roles and place the
++profile's physical-page zref markers around their actual content. No cover
++may shift these positions. Use the same owner's reviewed generated chronology;
++preserve its exact dates, alternatives, relation labels and unresolved states.
++
++Write a standalone developed argument organized around cross-proper questions
+ or movements. Interleave the authors' alternatives where they address the same
+ question; a sequence of miniature lane summaries does not satisfy the task.
++The first two thematic pages orient the reader; the later commentary earns
++its extent by explaining and comparing witnesses' reasoning. The earlier
++1,500–2,500-word and one-third ratio limits do not govern this revised contract.
+ 
+ Preserve every interpretation's controlling claim, meaningful agreements and
+ differences, exact source attributions, and truth-changing qualifications.
+@@ -20,3 +30,13 @@ Maintain synthesis-only components and truthful mode membership in the common
+ manifest. Update the common generation timestamp and actual contribution
+ record, and record the substantive word count in the production audit. A
+ fresh reviewer compares this work both on its own and against its source study.
++
++Build an author proof with
++`make doc DOC={proper}-synthesis PROVIDER={provider}`. Run
++`tools/check-proper-components --provider {provider} --document {proper} --phase artifacts --edition synthesis`
++and inspect the settled PDF and physical-page
++evidence. Give the reviewer exact PDF, auxiliary and log paths with hashes;
++retain them beneath this run's stage/iteration artifact directory. Keep raster
++evidence in a dedicated child because its helper replaces the destination.
++An author proof does not replace the final three-document build or cold visual
++review after the shared generation metadata has settled.
+diff --git a/workflows/fragments/proper-study/research-review.md b/workflows/fragments/proper-study/research-review.md
+index f527aa4eb..6efb616f6 100644
+--- a/workflows/fragments/proper-study/research-review.md
++++ b/workflows/fragments/proper-study/research-review.md
+@@ -8,6 +8,15 @@ Test the passage-by-passage reception sweep for omissions and unsupported
+ claims of having searched or verified. Do not substitute the old profile's
+ mandatory gallery or proposal counts for this new task.
+ 
++Independently inspect the generated chronology record and annotations needed
++by the concise opening's page-2 dossier. Check every directly appointed
++Scripture unit and alternative, exact citation and Psalm numbering system,
++canonical chronology claims and their controlling sources. Distinguish
++composition and narrated-event dates; preserve disputed and unresolved states.
++Postconciliar appointment query inputs must derive from that edition's own
++verified owner, never another family's calendar or a neighboring Sunday's data.
++Confirm that all controlling chronology evidence enters the research seal.
++
+ Test every proposed interpretation as a complete argument, supported by
+ substantive contributions from at least two distinct Fathers or saints. A
+ name-count alone does not demonstrate agreement. Are its authors'
+diff --git a/workflows/fragments/proper-study/research.md b/workflows/fragments/proper-study/research.md
+index ac3bf9907..32378e8ab 100644
+--- a/workflows/fragments/proper-study/research.md
++++ b/workflows/fragments/proper-study/research.md
+@@ -20,8 +20,15 @@ defensible readings emerge, research again rather than invent a second one.
+ Preserve real disputes and identify complementary differences honestly. The
+ goal is source-first interpretive depth, not a quota of names. Missing support
+ requires the proportionate second search the editorial standard specifies.
+-Keep factual biblical dates tied to the shared chronology corpus; a schema-2
+-study does not need dates for their own sake. Complete these records before
++Prepare the concise study's required page-2 chronology through the canonical
++`proper-chronology` record and annotations commands. Use this family's own
++verified appointments and the owning adapter; preserve partial-verse and
++adaptation limits, alternatives, event/composition distinctions and absent
++dates. Follow the chronology profile for postconciliar appointment query inputs.
++Declare and inspect the controlling chronology source owners in this research
++boundary. A prior date-free study's approval does not cover new date claims.
++Provide those claims a reviewed home in the expansive study as well, such as
++a same-owner terminal historical appendix. Complete these records before
+ drafting reader-facing study prose. A fresh research reviewer follows.
+ 
+ On reentry, address all research-owned findings and update every affected
+diff --git a/workflows/fragments/proper-study/study-review.md b/workflows/fragments/proper-study/study-review.md
+index ad39259d7..ae0984041 100644
+--- a/workflows/fragments/proper-study/study-review.md
++++ b/workflows/fragments/proper-study/study-review.md
+@@ -17,7 +17,9 @@ exegesis may be represented as his synthesis of the Mass. Complementary
+ emphases are valid distinct interpretations when the study demonstrates their
+ different movement or consequence. Historic compositional intent needs evidence.
+ 
+-Judge clarity and reader value as well as correctness. No artificial word or
+-page quota, gallery, proposal appendix, or global four-senses table can satisfy
+-this contract. Use `STU-` findings: `research` for missing or false evidence;
++Judge clarity and reader value as well as correctness. The complete expansive
++PDF must fall within 20–50 physical pages; a page count alone proves no depth.
++Check the reviewed chronology needed by the concise opening in its appropriate
++place here. No padding, gallery, proposal appendix, or global four-senses table
++can satisfy this contract. Use `STU-` findings: `research` for missing or false evidence;
+ `study` for how reviewed evidence is selected, reasoned through or written.
+diff --git a/workflows/fragments/proper-study/synthesis-review.md b/workflows/fragments/proper-study/synthesis-review.md
+index 9e3e1f08d..e04f9f769 100644
+--- a/workflows/fragments/proper-study/synthesis-review.md
++++ b/workflows/fragments/proper-study/synthesis-review.md
+@@ -8,6 +8,16 @@ present, material differences preserved, and complementary readings described
+ without theatrical conflict? Did compression silently upgrade evidence or
+ remove a qualification? Are its length and apparatus truly concise?
+ 
++Require approximately 10–12 physical pages with the established first four:
++the complete appointed map followed by exactly four senses overview rows on
++page 1; the sole Scriptural Date and Location dossier on page 2; two complete,
++substantive pages of The Propers: Themes and Movement on pages 3–4; developed
++interleaved commentary beginning on page 5. Check the actual material and
++settled physical-page evidence, not just labels or declared roles. Every
++appointed option remains recognizable. The overview cannot replace the full
++study's individual four-sense distillations. Verify canonical chronology and
++claim-local qualifications, and reject padding or compressed unreadable tables.
++
+ Check that it introduces no new source-dependent claim and that the four-sense
+ distinctions remain clear where they affect the argument. Judge it as a useful
+ finished document, never as a teaser that requires the study to be understood.
+diff --git a/workflows/fragments/proper-study/visual-review.md b/workflows/fragments/proper-study/visual-review.md
+index 06144c1ff..2ec9c0269 100644
+--- a/workflows/fragments/proper-study/visual-review.md
++++ b/workflows/fragments/proper-study/visual-review.md
+@@ -9,12 +9,21 @@ running furniture, embedded fonts, and the final compact rights colophon.
+ 
+ Judge each artifact for its use: navigation and substantial exposition in the
+ study, visible interleaving in the concise work, comfortable reading and
+-recoverable paragraphs in the homily. Beauty does not require images or a
+-fixed page count. Do not enforce the legacy physical-page-2 or two-page brief.
++recoverable paragraphs in the homily. The study must occupy 20–50 physical
++pages and the concise work 10–12. Inspect its restored opening directly:
++complete map and exactly four senses rows on page 1; readable, complete
++chronology alone on page 2; substantive Themes and Movement on pages 3–4;
++developed interleaved commentary beginning on page 5. Compare settled physical
++marker evidence with the actual pages. No padding, unreadable reduction or
++logical page-counter trick meets this contract. Beauty does not require images.
+ Ensure the substantive pages actually contain the accepted argument and that
+ source notes are present without intruding into the spoken homily.
+ 
+-Use `VIS-` findings. Pure typesetting/build defects belong to `artifacts`;
+-actual content defects belong to `research`, `study`, `synthesis`, or `homily`.
++Use `VIS-` findings. Regenerating disposable outputs from unchanged approved
++sources belongs to `artifacts`. A repair requiring TeX, component or style
++changes belongs to the earliest affected source owner: `study`, `synthesis`,
++or `homily`; shared style changes affecting the study begin with `study`.
++Evidence defects belong to `research`. Preserve the distinction even when a
++source change affects only layout, so the changed bytes receive fresh review.
+ Name every reviewed artifact, its receipt hash and page coverage in the result.
+ Return PASS only after actual full-page inspection. Do not edit the artifacts.
+diff --git a/workflows/pipelines/proper-study.json b/workflows/pipelines/proper-study.json
+index ae8fd47ec..7a3fb0c53 100644
+--- a/workflows/pipelines/proper-study.json
++++ b/workflows/pipelines/proper-study.json
+@@ -1,6 +1,6 @@
+ {
+   "id": "proper-study",
+-  "version": 2,
++  "version": 3,
+   "description": "Source-first proper study, concise study and standalone homily, with independent reviews",
+   "default_effort": "high",
+   "document_argument": "proper",
+@@ -138,7 +138,7 @@
+       "max_total_iterations": 10,
+       "max_novel_iterations": 4,
+       "records_standing_findings": true,
+-      "review_input_command": "python3 scripts/_proper_study.py seal --provider {provider} --document {proper} --review research",
++      "review_input_command": "python3 scripts/_proper_study.py seal --provider {provider} --document {proper} --review research --review-contract proper-study-v3",
+       "review_input_repair_target": "research"
+     },
+     {
+@@ -169,7 +169,7 @@
+       "checks": [
+         {
+           "id": "component-contract",
+-          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase content --edition research",
++          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase content --edition research --require-presentation",
+           "required_result": "The schema-2 component graph must faithfully describe this edition and its complete interpretive lanes."
+         },
+         {
+@@ -299,7 +299,7 @@
+       "checks": [
+         {
+           "id": "component-contract",
+-          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase content --edition synthesis",
++          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase content --edition synthesis --require-presentation",
+           "required_result": "The schema-2 component graph must faithfully describe this edition and its complete interpretive lanes."
+         },
+         {
+@@ -433,7 +433,7 @@
+       "checks": [
+         {
+           "id": "component-contract",
+-          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase content --edition homily",
++          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase content --edition homily --require-presentation",
+           "required_result": "The schema-2 component graph must faithfully describe this edition and its complete interpretive lanes."
+         },
+         {
+@@ -571,13 +571,39 @@
+       "checks": [
+         {
+           "id": "reviewed-artifact-snapshot",
+-          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase artifacts",
++          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase artifacts --require-presentation",
+           "required_result": "All three settled PDFs, their metadata, declared components and recorded render inputs must match the review snapshot."
+         }
+       ],
+       "pass_transition": "visual-review",
+       "fail_transition": "build-artifacts",
+-      "max_iterations": 4
++      "max_iterations": 4,
++      "verify_review_inputs": true,
++      "review_input_stages": [
++        "research-review",
++        "study-review",
++        "synthesis-review",
++        "homily-review"
++      ],
++      "result_schema": "proper-study-artifact-gate.json",
++      "repair_routes": [
++        {
++          "repair_target": "research",
++          "transition": "research"
++        },
++        {
++          "repair_target": "study",
++          "transition": "author-study"
++        },
++        {
++          "repair_target": "synthesis",
++          "transition": "derive-synthesis"
++        },
++        {
++          "repair_target": "homily",
++          "transition": "derive-homily"
++        }
++      ]
+     },
+     {
+       "id": "visual-review",
+@@ -710,7 +736,7 @@
+       "checks": [
+         {
+           "id": "three-document-publication",
+-          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase publication",
++          "command": "python3 scripts/_proper_study.py check --provider {provider} --document {proper} --date {date} --phase publication --require-presentation",
+           "required_result": "All three installed PDFs must match their reviewed bytes; canonical web, exact release IDs and owning catalog must match this provider and family."
+         },
+         {
