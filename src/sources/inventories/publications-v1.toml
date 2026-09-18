@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gpt"
-audited_on = "2026-09-17"
+audited_on = "2026-09-18"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 142
-source_surface_file_count = 2286
-snapshot = "sha256:3bd4ae2f0118a1187c19886fe08f401939c23cf1f242a0eaf9a735806622c421"
+source_surface_file_count = 2288
+snapshot = "sha256:69b67f2a7b5ed26545737faac68cf971368d5086dc625746a08a8c56ab1698ad"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -9509,6 +9509,12 @@ kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/pagination-revision-proposal/README.md"
+sha256 = "272c7fe226ba5ed2c352aa8d01a3f733b00f013a1b5f7b39bda8aaee1eed949f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/80a724fb8410dc3d/packets/artifact-gates-0000.txt"
 sha256 = "7549cc2bb1938aedc856bf485e941046e453bb673ee294f8268e0cef1e93a5a9"
 kind = "rendered-content"
@@ -13021,6 +13027,12 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/blocking-findings-v1.toml"
 sha256 = "48bef15112711bcd44b58c818fb3a9b2ac88a4bfc1a53b65e42991551ca714b4"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/pagination-revision-proposal/README.md"
+sha256 = "c9bca251d4b263d51fcecfe7054560b790aa1c66a00f97ed53b605670bd992ce"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
 

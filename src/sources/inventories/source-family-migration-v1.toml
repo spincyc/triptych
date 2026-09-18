@@ -1,14 +1,14 @@
 migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
-audited_on = "2026-09-17"
+audited_on = "2026-09-18"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:3bd4ae2f0118a1187c19886fe08f401939c23cf1f242a0eaf9a735806622c421"
+inventory_snapshot = "sha256:69b67f2a7b5ed26545737faac68cf971368d5086dc625746a08a8c56ab1698ad"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:5d88f73b583375616ceb31514f89bd452f0882b47b94acaa649341505cf6d7e1"
 canonical_catalog_snapshot = "sha256:dd8a2fb28532dbbe161e0c38c5ee38602c18e8be2ccb6447b068634320891ff1"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:e6407fe7b3961f7a726c9b15d309d004ad717582b4c2d1da885d3e1b7289b3f3"
+snapshot = "sha256:738876e38db004b8c45addd6f817b62d4b606967c5a90513a2791cc6be191b4f"
 families = []
 
 [[review_units]]
@@ -483,7 +483,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"
-surface_snapshot = "sha256:54191c146c6964c908b1b7e7d4ccc99ad5ea233f2ccbf3bf2a442245e37a2367"
+surface_snapshot = "sha256:c1468ea13b44f38bb5b587fe44c590e776c0165096b918d5ad3c6f15038668bc"
 review_state = "pending"
 
 [[review_units]]
@@ -633,7 +633,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"
-surface_snapshot = "sha256:9561e3666ec70a5e9a38a6cb2da6a080f563964198458700c315413e213000ca"
+surface_snapshot = "sha256:f0f0bb89d62e6d83bfbd7f0c4e8416028f6fcd22ae20ccbf91ebddc2b3c598f0"
 review_state = "pending"
 
 [[review_units]]

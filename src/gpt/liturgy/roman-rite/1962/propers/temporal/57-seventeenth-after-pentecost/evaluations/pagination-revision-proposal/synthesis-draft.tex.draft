@@ -1,0 +1,17 @@
+% Unrendered scratch scaffold; no accepted pagination or current-run provenance.
+\input{common/preamble}
+\input{liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/format}
+\usepackage{zref-user,zref-abspage}
+% Supply the reviewed local dossier macros at the later authoring stage.
+% Date column should start from the prior same-family 56 layout's wide column;
+% do not narrow the seven generated date projections until unreadable.
+\begin{document}
+\weektitle{Seventeenth Sunday after Pentecost}{Love Received and Lived}{1962 Roman Missal · Concise Study}
+\input{.scratch/tlm-production/pagination-revision/components/00-inventory}
+\input{.scratch/tlm-production/pagination-revision/components/01-overview}
+\input{.scratch/tlm-production/pagination-revision/components/02-scriptural-date-location}
+\input{.scratch/tlm-production/pagination-revision/components/20-themes-and-movement}
+\input{.scratch/tlm-production/pagination-revision/components/30-interleaved-commentary}
+\input{.scratch/tlm-production/pagination-revision/components/90-apparatus}
+% New-run generation metadata belongs here only after the new run is seeded.
+\end{document}

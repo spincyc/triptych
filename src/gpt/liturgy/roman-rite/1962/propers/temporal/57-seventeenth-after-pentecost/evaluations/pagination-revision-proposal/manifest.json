@@ -1,0 +1,127 @@
+{
+  "archival_wrappers": [
+    "README.md",
+    "manifest.json",
+    "SHA256SUMS"
+  ],
+  "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+  "excluded": [],
+  "family": "1962",
+  "historical_accepted_run": "80a724fb8410dc3d",
+  "payload_transformation": "none; filename gains terminal .draft only",
+  "payloads": [
+    {
+      "archived_filename": "PLAN.md.draft",
+      "bytes": 10628,
+      "original_relative_filename": "PLAN.md",
+      "privacy_findings": [],
+      "sha256": "535749f4b926bfe66394aae53f78b7fc6f0ff0ba107f5dedc2d7e4090d9fa99b",
+      "source_root": ".scratch/tlm-production/pagination-revision",
+      "status": "unrendered, unreviewed proposal; no new acceptance"
+    },
+    {
+      "archived_filename": "chronology-annotations.tex.draft",
+      "bytes": 9633,
+      "original_relative_filename": "chronology-annotations.tex",
+      "privacy_findings": [],
+      "sha256": "3bf62cf41bfbc61275ce49a192bf6d94b4da80d1aa56248e4849e3b9d92b7f85",
+      "source_root": ".scratch/tlm-production/pagination-revision",
+      "status": "unrendered, unreviewed proposal; no new acceptance"
+    },
+    {
+      "archived_filename": "chronology-source-ids.json.draft",
+      "bytes": 641,
+      "original_relative_filename": "chronology-source-ids.json",
+      "privacy_findings": [],
+      "sha256": "046f48fd96d45c7cb4af16101f65e087627682e4f0090e92bffaf0dc0c7a18ed",
+      "source_root": ".scratch/tlm-production/pagination-revision",
+      "status": "unrendered, unreviewed proposal; no new acceptance"
+    },
+    {
+      "archived_filename": "chronology.toml.draft",
+      "bytes": 36353,
+      "original_relative_filename": "chronology.toml",
+      "privacy_findings": [],
+      "sha256": "7321744467ba108d8ba22223060445081a81bb3f4e9a49d087aa8edb6c71165b",
+      "source_root": ".scratch/tlm-production/pagination-revision",
+      "status": "unrendered, unreviewed proposal; no new acceptance"
+    },
+    {
+      "archived_filename": "components/00-inventory.tex.draft",
+      "bytes": 1574,
+      "original_relative_filename": "components/00-inventory.tex",
+      "privacy_findings": [],
+      "sha256": "f1082e3a1f10d959ebb103b47f889867cb600f75d2490ac79067edc66ec42171",
+      "source_root": ".scratch/tlm-production/pagination-revision",
+      "status": "unrendered, unreviewed proposal; no new acceptance"
+    },
+    {
+      "archived_filename": "components/01-overview.tex.draft",
+      "bytes": 938,
+      "original_relative_filename": "components/01-overview.tex",
+      "privacy_findings": [],
+      "sha256": "bb99d058dd49dd5e6f7f80ecce71f2b6fce9afb6ff30737688a7996c2dfe7f5b",
+      "source_root": ".scratch/tlm-production/pagination-revision",
+      "status": "unrendered, unreviewed proposal; no new acceptance"
+    },
+    {
+      "archived_filename": "components/02-scriptural-date-location.tex.draft",
+      "bytes": 3587,
+      "original_relative_filename": "components/02-scriptural-date-location.tex",
+      "privacy_findings": [],
+      "sha256": "8bf5a9f799ae52c9e60b72ae293d4e71c1fe3ccc45424d5c9651c857a9b18216",
+      "source_root": ".scratch/tlm-production/pagination-revision",
+      "status": "unrendered, unreviewed proposal; no new acceptance"
+    },
+    {
+      "archived_filename": "components/20-themes-and-movement.tex.draft",
+      "bytes": 7606,
+      "original_relative_filename": "components/20-themes-and-movement.tex",
+      "privacy_findings": [],
+      "sha256": "46da90bc55131021dec5ab2038ee23a0b7962bf758771b3d0e8ef65f577226f9",
+      "source_root": ".scratch/tlm-production/pagination-revision",
+      "status": "unrendered, unreviewed proposal; no new acceptance"
+    },
+    {
+      "archived_filename": "components/30-interleaved-commentary.tex.draft",
+      "bytes": 19432,
+      "original_relative_filename": "components/30-interleaved-commentary.tex",
+      "privacy_findings": [],
+      "sha256": "fc01f44a729fd03a1b2ca4476589a8ea5fa281d406ac1ab6185778bab38179d4",
+      "source_root": ".scratch/tlm-production/pagination-revision",
+      "status": "unrendered, unreviewed proposal; no new acceptance"
+    },
+    {
+      "archived_filename": "components/90-apparatus.tex.draft",
+      "bytes": 4145,
+      "original_relative_filename": "components/90-apparatus.tex",
+      "privacy_findings": [],
+      "sha256": "5b75c9f6a59086867f637cb6a5158cb9c5d8a69060015ebc4c327737ec731122",
+      "source_root": ".scratch/tlm-production/pagination-revision",
+      "status": "unrendered, unreviewed proposal; no new acceptance"
+    },
+    {
+      "archived_filename": "draft-manifest.json.draft",
+      "bytes": 1109,
+      "original_relative_filename": "draft-manifest.json",
+      "privacy_findings": [],
+      "sha256": "95d916d4327939165dfdef00560d3387c1d28e4c0b409b7e1a37718f9ddb6352",
+      "source_root": ".scratch/tlm-production/pagination-revision",
+      "status": "unrendered, unreviewed proposal; no new acceptance"
+    },
+    {
+      "archived_filename": "synthesis-draft.tex.draft",
+      "bytes": 1161,
+      "original_relative_filename": "synthesis-draft.tex",
+      "privacy_findings": [],
+      "sha256": "be216c38ffe18d8be93ce3cd94647760d874214af9d13f135689a2175141dc0d",
+      "source_root": ".scratch/tlm-production/pagination-revision",
+      "status": "unrendered, unreviewed proposal; no new acceptance"
+    }
+  ],
+  "provider": "gpt",
+  "record_type": "unreviewed-pagination-draft-archive",
+  "restore_instructions": "Verify SHA256SUMS. Copy payload bytes to a new same-family scratch tree using original_relative_filename and separate source_root groups; never overwrite canonical inputs. Verify original SHA256; restoration is not adoption or acceptance.",
+  "schema": 1,
+  "status": "unrendered and unreviewed; no new acceptance; revised requirement OPEN"
+}

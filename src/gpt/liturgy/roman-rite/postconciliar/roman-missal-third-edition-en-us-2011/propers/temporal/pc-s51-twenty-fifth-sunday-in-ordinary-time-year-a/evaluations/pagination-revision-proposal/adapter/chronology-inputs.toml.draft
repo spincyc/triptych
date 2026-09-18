@@ -1,0 +1,96 @@
+# Appointment query input, not a chronology source.
+schema = 1
+record_type = "proper-chronology-inputs"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"
+calendar = "postconciliar"
+formula = "PC-S51-A"
+shared_owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/25/propers/verified.md"
+
+[[elements]]
+key = "entrance"
+name = "Entrance antiphon"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/25/propers/verified.md"
+citations = [
+  { ref = "Psalm 37:39-40", citation = "Psalm 37:39-40", system = "hebrew", kind = "identified-basis" },
+]
+
+[[elements]]
+key = "collect"
+name = "Collect"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/25/propers/verified.md"
+citations = [
+]
+non_scriptural_reason = "Composed Missal oration; no directly appointed biblical citation."
+
+[[elements]]
+key = "first-reading"
+name = "First reading"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "Isaiah 55:6-9", citation = "Isaiah 55:6-9", system = "vulgate", kind = "appointed" },
+]
+
+[[elements]]
+key = "responsorial-psalm"
+name = "Responsorial psalm"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "Psalm 145:2-3, 8-9, 17-18", citation = "Psalm 145:2-3, 8-9, 17-18", system = "hebrew", kind = "appointed" },
+  { ref = "Psalm 145:18a", citation = "Psalm 145:18a", system = "hebrew", kind = "response" },
+]
+
+[[elements]]
+key = "second-reading"
+name = "Second reading"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "Philippians 1:20c-24, 27a", citation = "Philippians 1:20c-24, 27a", system = "vulgate", kind = "appointed" },
+]
+
+[[elements]]
+key = "acclamation"
+name = "Gospel acclamation"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "Cf. Acts 16:14b", citation = "Acts 16:14b", system = "vulgate", kind = "adaptation" },
+]
+
+[[elements]]
+key = "gospel"
+name = "Gospel"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [
+  { ref = "Matthew 20:1-16a", citation = "Matthew 20:1-16a", system = "vulgate", kind = "appointed" },
+]
+
+[[elements]]
+key = "offerings"
+name = "Prayer over the Offerings"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/25/propers/verified.md"
+citations = [
+]
+non_scriptural_reason = "Composed Missal oration; no directly appointed biblical citation."
+
+[[elements]]
+key = "communion-ps119"
+name = "Communion antiphon: Psalm option"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/25/propers/verified.md"
+citations = [
+  { ref = "Psalm 119:4-5", citation = "Psalm 119:4-5", system = "hebrew", kind = "appointed" },
+]
+
+[[elements]]
+key = "communion-jn10"
+name = "Communion antiphon: John option"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/25/propers/verified.md"
+citations = [
+  { ref = "John 10:14", citation = "John 10:14", system = "vulgate", kind = "appointed" },
+]
+
+[[elements]]
+key = "after-communion"
+name = "Prayer after Communion"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/25/propers/verified.md"
+citations = [
+]
+non_scriptural_reason = "Composed Missal oration; no directly appointed biblical citation."

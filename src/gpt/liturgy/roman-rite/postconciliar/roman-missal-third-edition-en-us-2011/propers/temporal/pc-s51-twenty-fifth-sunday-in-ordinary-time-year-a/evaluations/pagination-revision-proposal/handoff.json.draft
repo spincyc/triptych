@@ -1,0 +1,250 @@
+{
+  "status": "scratch draft only; no canonical writes or PDF build",
+  "plan": ".scratch/no-production/pagination-revision/PLAN.md",
+  "draft_components": [
+    ".scratch/no-production/pagination-revision/components/01-inventory.tex",
+    ".scratch/no-production/pagination-revision/components/02-overview.tex",
+    ".scratch/no-production/pagination-revision/components/03-chronology.tex",
+    ".scratch/no-production/pagination-revision/components/04-themes.tex",
+    ".scratch/no-production/pagination-revision/components/05-interleaved-commentary.tex"
+  ],
+  "contract_fragment": ".scratch/no-production/pagination-revision/presentation-fragment.toml",
+  "source_map": ".scratch/no-production/pagination-revision/source-map.md",
+  "word_counts": {
+    "status": "unbuilt scratch draft; no publication count or pagination acceptance",
+    "method": "Same prior concise-author count: Pandoc LaTeX AST; exclude Headers, Notes, Tables; whitespace count of plain prose. Diagram text remains prose; page1/page2/terminal apparatus excluded.",
+    "components": {
+      "04-themes.tex": 796,
+      "05-interleaved-commentary.tex": 2589
+    },
+    "draft_substantive_total": 3385
+  },
+  "chronology_queries": 38,
+  "adapter_draft": ".scratch/postconciliar-chronology/chronology-inputs.toml",
+  "target_pages": [
+    10,
+    12
+  ],
+  "target_opening_pages": {
+    "inventory_and_four_senses": 1,
+    "chronology_only": 2,
+    "themes": [
+      3,
+      4
+    ],
+    "commentary_start": 5
+  },
+  "new_evidence": "Canonical chronology input/projection/source ancestry needs fresh v3 research and a shared terminal home in the expansive study; no extra patristic evidence identified.",
+  "feasibility_limit": "No rendering performed under scratch-only boundary. Page2 is the key fit risk; all disputed dates/relations must survive legibly.",
+  "accepted_installed_hashes_unchanged": true,
+  "files": [
+    {
+      "path": ".scratch/no-production/pagination-revision/PLAN.md",
+      "sha256": "3b643647eb4ea0a3c024493422c2fa6897b35e3e31862c873cc9364b1990c5c6"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Acts.16.14.json",
+      "sha256": "91b9f37a153a6a28f58e7452f5a421d9f640caccf1dc41a9d6a226cf4fe450a8"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Is.55.6.json",
+      "sha256": "c5cf79f872f59de322191a0f9f28015e80996e18db79c0f212ea9afe85be1fd3"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Is.55.7.json",
+      "sha256": "f3a4f148e68102eee032a0ed82342db37bd0bef0da1fcbac810848e3f25fd9ed"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Is.55.8.json",
+      "sha256": "ae5acbced7b1bb91d7c3c6921d37e35d6a7a2c8f135bf7c75382531e84129a94"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Is.55.9.json",
+      "sha256": "f4689e91ad422d49353000f1f47d9ab1d097402f431b58791254916daa66c56e"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/John.10.14.json",
+      "sha256": "6e13170d889b46160533ab76deaa50fbac4561faeab865fa1c75af0eaa00bcfe"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Matt.20.1.json",
+      "sha256": "76e441cab81005a8aa10cafb028140e1d36aadb35f7f65c1bedbefc1e4c78577"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Matt.20.10.json",
+      "sha256": "b09c1370f13fbfede9da431924813fc3d11411bc5294c461e545717b48afec79"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Matt.20.11.json",
+      "sha256": "1b52e6a83098eae4e0f579f204edb263eca55339e7354571fdfadfca6fdc798b"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Matt.20.12.json",
+      "sha256": "3a103dd1f29b30c93deee1a26858d5ab1a533a66f92fb257b3fcc59af8e99366"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Matt.20.13.json",
+      "sha256": "5b0fa731d39f4f174df709c87993d179f2e9a57647832203f9b14923bb552b18"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Matt.20.14.json",
+      "sha256": "9fe8a531b0897bc11274d35424dddd9c33e5f93fd7c33725c558a3f46924bd89"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Matt.20.15.json",
+      "sha256": "4fbd894889c5e9539119d754222afd7f5a8b687e6235a2681faceda8df204309"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Matt.20.16.json",
+      "sha256": "72377b2b57e6d5cdfd4f47e327190d41ef56b5b7392cc0e9c45e6513ba98c713"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Matt.20.2.json",
+      "sha256": "75d398a788768f069f12f0e25d7d659735c4dd37dc8ea53ed68bb041d1958663"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Matt.20.3.json",
+      "sha256": "a0f627625e9dd7c163a376dfd61c14bd6457fb571ce7fcebacbc39bd122d464c"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Matt.20.4.json",
+      "sha256": "b497432096bac1e3d7308cf77307de05b697585ad3543ce94a2f0a3d6abdb489"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Matt.20.5.json",
+      "sha256": "074ec84684aacb0b14b534b47ce428b38fe03696e8ad73fa24b552ae995565c8"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Matt.20.6.json",
+      "sha256": "2516e735e66169830683dc3ba4ca4a201eebcabd8d822bae24c8e7daa420b49c"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Matt.20.7.json",
+      "sha256": "974cdbcc42d57df24d58e3e2ebbcfcdb0505989b8c08b35f34562721c5702470"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Matt.20.8.json",
+      "sha256": "7a6f467fc7356cf72e5c036fccc2de6a593c6d84781b39cfeb5d3e7922a25a06"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Matt.20.9.json",
+      "sha256": "01b99d2333ba435789dc7c0730d949e8944f6312366d1c304355942d654f9199"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Phil.1.20.json",
+      "sha256": "55cbab15552ecb70177b7bb8507a55c9ae3443d8957fbcd9db6c40592afbb60a"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Phil.1.21.json",
+      "sha256": "288c55916741b3c1c88a08da9f042594da61e494f056b1af8c290fa3531fe325"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Phil.1.22.json",
+      "sha256": "b1c185b8294c5c2aa3d16f248c249ef4881314600983d71b9c5c2593f52d96d9"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Phil.1.23.json",
+      "sha256": "bf517278e1e4ca314eea703aceb0615725741676362a784e9a6ebf557cf19441"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Phil.1.24.json",
+      "sha256": "74b6fc59e6e17485997475e51dd66b139929a00e6a7600cff00611e7e3bc5078"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Phil.1.27.json",
+      "sha256": "1fb0564cc884d53808b1adc1e780a0321f315a822063f0c28e97aafd7f3f93cd"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Ps.118.4.json",
+      "sha256": "ea6e27534b02b622249b3fe62b740253b2e73c89d56f18a82d622edc99e50272"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Ps.118.5.json",
+      "sha256": "e50d7ebfac6e88381d33cd43a4f926ee34b01a5622ac2600c2c2e564bdcbc77a"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Ps.144.17.json",
+      "sha256": "67d6e56454c5649d816390b45fa9374b74a0256160bb9a3cf68d3437936d5b46"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Ps.144.18.json",
+      "sha256": "eebf3bacc57ef361d1cb32d2f2dc8271f0efabe73e0c5ec9c68812e3ceadef8e"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Ps.144.2.json",
+      "sha256": "f153b999350277f19fb9a0a5f92ab0954dc605b42f8bc842c2950e65c4476ca1"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Ps.144.3.json",
+      "sha256": "0edbe0b8a329c7e9fde8ea546e209a402be0761875054943ac0e2fc798071596"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Ps.144.8.json",
+      "sha256": "6c16ffddff1bc52a20483f303c5bb037ac687cedffb0fd60c10da359671cc7ed"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Ps.144.9.json",
+      "sha256": "bd8c504b5b2bf0516f1b0902ea28e8d1fe43f6605dd97a68f56a094b4bc7d02a"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Ps.36.39.json",
+      "sha256": "260be687acb71cf303458f353e6a010d33c037649b5f2cedadee5f8b42b8c29c"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/Ps.36.40.json",
+      "sha256": "8849b84c29e2ba4ea67b072fa99022418b7d317090b5be46eb11b52b79549570"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology/manifest.json",
+      "sha256": "26b086a941dda138aeafa1f2dadeefd07cb9995c84a1676dc3b95aa5ed0d7ad9"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/chronology-summary.txt",
+      "sha256": "aedb7c8b473f95d9bb6b03d8ad05d59b430ce4613d78b54f95fec8694e1f4652"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/components/01-inventory.tex",
+      "sha256": "737db1a2ab488812bad806658a8022ecd495c0656bafa4f40e8d0cdb3afb27c7"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/components/02-overview.tex",
+      "sha256": "53ae9a7474fac1854228f44d51184bcf24a117ced2d8f8c01dc1c0ed2b0f17b2"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/components/03-chronology.tex",
+      "sha256": "368ed74a42c1c74806f9c40c0d08e3a0d22132db8309d6e7a95dea541c0d3919"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/components/04-themes.tex",
+      "sha256": "d65d23fd4b10f8df88e902517b6e41b1398c752ecc49d497828d5ecbf83b089e"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/components/05-interleaved-commentary.tex",
+      "sha256": "32a2078f8439e943cc1bc4ba429cdd5639b85e80bc3c6c917fcae42ace8c6e24"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/count-drafts.py",
+      "sha256": "87971a61a7546788b6848315e3f21061695b81b963cd6fe622756facba0badf0"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/expand-commentary.py",
+      "sha256": "bf01b9a5b6241041d7ba43af62192a047f1ce8440f5f935d7abbfa2cdc73073a"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/presentation-fragment.toml",
+      "sha256": "5e44f6dea9b84f34ba10ba4fab8085bfc2658606eaf01130dd2bbb8426b5b58d"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/query-chronology.py",
+      "sha256": "fe79b453c1781c2d8335ca738421d27fc45d89648970aff372a185dd709b69ab"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/source-map.md",
+      "sha256": "efc7ad425752530433e3f2db6a6fa6ad8b9b07c64bc29d6e8589b3b474819b5b"
+    },
+    {
+      "path": ".scratch/no-production/pagination-revision/word-counts.json",
+      "sha256": "ae0bdc9dc9bc06fd76ed2e444e1fa9252248cf37151157a832174ca19b745b63"
+    }
+  ]
+}

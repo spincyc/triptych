@@ -5,13 +5,29 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-09-17.
+Last reconciled: 2026-09-18.
 
 ## Three-document proper studies and homilies, 2026-09-17
 
 <!-- promised-deliverable: propers-three-documents-2026-09-17 -->
 
-**In progress: pagination revision.** Both first-production Sunday runs reached
+**Recovery, 18 September.** The maintainer requested recovery of the interrupted
+production, completion where feasible, coherent commits, reconciliation and
+push to `main`, and verification of the resulting Pages workflow. The preserved
+first production and uncommitted v3 pagination/chronology changes were recovered.
+The required fresh-stage runner refused an availability probe because its usage
+limit was exhausted, reporting availability on 20 September at 06:23 without a
+timezone. No v3 production was seeded, no review was fabricated, and no
+historical acceptance is being transferred to revised documents. Publication
+recovery therefore concerns the accepted 23/5/4-page and 20/5/4-page sets;
+the 10–12-page concise revision remains blocked, not complete.
+The most recent Pages run on the inherited `main` failed while building the
+held, unpublished Claude proper 54 synthesis. Deployment preparation must
+respect the existing publication selection, without publishing held work or
+waiving its pagination checks. The implementation and deployment repair are
+being validated separately from the blocked revised Sunday productions.
+
+**Blocked: pagination revision.** Both first-production Sunday runs reached
 ACCEPTED, with six reviewed PDFs and two canonical web editions installed.
 Independent [integration review](workflows/reviews/propers-three-documents-integration-checkpoint-2026-09-17/REPORT.md)
 passed that exact prior scope. The maintainer then specified approximately

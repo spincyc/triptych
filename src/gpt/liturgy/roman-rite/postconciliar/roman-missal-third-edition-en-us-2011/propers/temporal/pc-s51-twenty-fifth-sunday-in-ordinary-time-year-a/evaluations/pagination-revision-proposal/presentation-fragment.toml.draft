@@ -1,0 +1,54 @@
+# Scratch additive fragment, not a complete manifest or an adopted schema result.
+presentation_contract = "interpretive-pagination-v1"
+
+[presentation]
+inventory = "concise-inventory"
+overview = "concise-overview"
+chronology = "concise-chronology"
+themes = "concise-themes"
+commentary = "integrated"
+
+[[components]]
+key = "concise-inventory"
+kind = "front-matter"
+path = "sections/synthesis-inventory.tex"
+modes = ["synthesis"]
+element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
+depends_on = []
+references = ["propers/verified.md", "instance/manifest.md"]
+
+[[components]]
+key = "concise-overview"
+kind = "front-matter"
+path = "sections/synthesis-overview.tex"
+modes = ["synthesis"]
+element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
+depends_on = []
+references = ["research/interpretations.md", "research/source-audit.md"]
+
+[[components]]
+key = "concise-chronology"
+kind = "front-matter"
+path = "sections/scriptural-date-location.tex"
+modes = ["research", "synthesis"]
+element_keys = ["entrance", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "communion-ps119", "communion-jn10"]
+depends_on = []
+references = ["research/chronology-inputs.toml", "research/chronology.toml", "research/chronology-annotations.tex"]
+
+[[components]]
+key = "concise-themes"
+kind = "front-matter"
+path = "sections/synthesis-themes.tex"
+modes = ["synthesis"]
+element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
+depends_on = []
+references = ["research/interpretations.md", "research/source-audit.md"]
+
+[[components]]
+key = "integrated"
+kind = "integrated-commentary"
+path = "sections/synthesis-commentary.tex"
+modes = ["synthesis"]
+element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
+depends_on = []
+references = ["research/interpretations.md", "research/source-audit.md"]

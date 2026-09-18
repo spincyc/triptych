@@ -4,7 +4,7 @@ schema_version = 1
 id = "propers-three-documents-2026-09-17"
 owner = "PROJECT-WORK.md"
 promise = "Build and exercise a robust versioned proper-study successor while preserving legacy proper schema 1; produce a 20–50-page expansive study, 10–12-page concise interleaved alternative reading document with the established first four pages, and standalone speakable exegetical pedagogical homily for both GPT Sunday propers on 2026-09-20, with independent cold review, guidance revision and reruns, six beautiful reviewed PDFs and canonical web editions."
-state = "in_progress"
+state = "blocked"
 
   [[deliverables.requirements]]
   id = "reusable-three-output-contracts"
@@ -51,14 +51,20 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "real-workflow-completion-and-evaluation"
   criterion = "The successor is driven on both real Sunday instances through successful completion after required revisions and reruns; tracked iteration evaluation identifies actual state transitions, findings, guidance changes, regression results and terminal dispositions, preserves legacy run history, and leaves no required output or blocking review finding unresolved."
-  status = "open"
+  status = "blocked"
   evidence = ["workflows/reviews/propers-three-documents-production-2026-09-17.md", "workflows/reviews/propers-three-documents-recipes-v2-2026-09-17/live-application/RECORD.md"]
 
   [[deliverables.requirements]]
   id = "restored-concise-opening-and-extent"
   criterion = "Each concise interpretive PDF is approximately 10–12 physical pages: page 1 maps every appointed element followed by four senses overview rows; page 2 is Scriptural Date and Location using the canonical chronology corpus; pages 3–4 are The Propers: Themes and Movement; developed interleaved commentary begins page 5. Each expansive study is 20–50 pages and retains two to five whole-formulary interpretations with each lane's own four senses. The reusable contract, physical page gates, fresh independent reviews and new real workflow runs enforce the revision without padding or altering historical acceptance."
-  status = "open"
+  status = "blocked"
   evidence = ["PROJECT-WORK.md", "workflows/reviews/propers-three-documents-integration-checkpoint-2026-09-17/REPORT.md"]
+
+  [[deliverables.requirements]]
+  id = "recovered-main-and-pages"
+  criterion = "Recovered work is preserved in coherent commits, reconciled with current main without rewriting history, and pushed; the exact pushed snapshot passes the Pages workflow and the six Sunday PDFs and two canonical web routes are verified live. Held publications remain excluded."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml"]
 
 [[deliverables]]
 id = "proper-salient-dates-2026-09-09"

@@ -1,0 +1,161 @@
+# PC-S51-A concise pagination revision — scratch proposal
+
+Status: unbuilt planning/draft only. No canonical source, metadata, installed
+artifact, accepted v1 record, or run state has been changed. The historical
+v1 acceptance remains true of its exact bytes. Adoption belongs to fresh
+proper-study v3 packets after the coordinator releases the reviewed contract.
+
+## Proposed result
+
+Aim for 11 physical pages, with 10–12 the authorized range. Keep the existing
+comfortable Palatino body measure and approximately 11-point text on 15-point
+leading. Use a compact celebration title, meaningful headings, ordinary
+paragraphs and restrained tabular matter. Do not enlarge type, insert blank
+space, reproduce protected liturgical bodies, or repeat lane summaries to
+obtain pages.
+
+The existing expansive study is 20 pages and already has three whole-proper
+lanes, each with multiple substantive authors and its own four senses. Preserve
+those arguments and all twelve lane distillations. Its necessary new chronology
+home is a terminal appendix using the same chronology component as the concise
+study; that may make the study about 21 pages, comfortably inside 20–50. This is
+a forecast, not an inspected page count. The 1,288-word homily needs fresh
+derivation/review under the new run but no substantive change is currently
+identified.
+
+## Physical reader sequence and budget
+
+| Page | Content and treatment | Draft/budget |
+|---|---|---|
+| 1 | Compact celebration/Year A title; complete two-column appointed map in ritual order; one unheaded table of exactly Literal, Allegorical, Moral, Anagogical | About 300–370 words including table labels; ten ritual rows cover all eleven keys, with both Communion alternatives in one row |
+| 2 | Sole `Scriptural Date and Location`; eight canonical-order dossiers, generated chronology, local setting distinctions | About 400–550 words including all date alternatives; actual annotation projection determines fit |
+| 3–4 | `The Propers: Themes and Movement` exactly two substantive pages; four developed functional units, one opening heading, no continuation heading | Draft 796 substantive words; about 400/page |
+| 5–10 | Developed comparison begins on page 5 as `The Propers: Detailed Commentary`; five question/relationship units interleave the three readings | Draft 2,589 substantive words; target about six pages with meaningful paragraph and heading rhythm |
+| 10–12, as needed | Compact work-wide scope, source notes/references and generation furniture follow the completed argument | Retain existing bounded apparatus, add only actual chronology authorities/limits; target last page 11 |
+
+The current two prose draft components total 3,385 substantive words by the
+same Pandoc AST method used for the accepted concise author's count: omit
+headings, notes and tables, then count whitespace-delimited plain prose. The
+opening diagram remains prose in that method. Page-one tables, chronology,
+references and terminal metadata are excluded. See `word-counts.json`.
+This is about 51% of the accepted study's 6,608 substantive words, compared
+with the historical concise count of 1,750. Actual build and review must decide
+pagination, readability and redundancy; no PDF has been built in this task.
+
+## Four-page opening
+
+`components/01-inventory.tex` has ten ritual slots and all eleven elements:
+Entrance, Collect, Isaiah, Psalm, Philippians, adapted Acts acclamation,
+Matthew, Offerings, both mutually exclusive Communions, After Communion. The
+map uses locators and existing incipits, not ICEL/CCD bodies. Open chant,
+Preface and Eucharistic Prayer selections remain unselected; their scope
+belongs in the terminal apparatus rather than invented page-one appointments.
+
+`components/02-overview.tex` contains exactly four overview rows. It compresses
+the accepted arguments without replacing the expansive study's lane-specific
+four senses. The first page ends after this table.
+
+`components/03-chronology.tex` is a layout/interface draft, not a generated
+chronology file. It imports the future canonical generated annotations once
+and uses `\chronodate{key}{\chronologyannotation{key}}`. It must be adopted only
+after the adapter and fresh research own the real record. Dossier order is
+Psalms 37, 119, 145; Isaiah 55; Matthew 20; John 10; Acts 16; Philippians 1.
+That is canonical book/verse order, not ritual order. The same-edition older
+pilot is a layout reference only: its date prose and its Isaiah-before-Psalms
+ordering are not inherited as authority.
+
+Page two is feasible but is the principal unproved fit risk. The default
+corpus returns six disputed Matthew composition dates, two John dates, two
+Philippians dates, and both Acts composition and two mission-event dates.
+Three psalm dossiers share a broad composition boundary. Preserve all
+applicable assertions and their relations through the generated concise
+projection. Do not manually shorten raw dates, suppress alternatives, use
+tiny type, or date the parable's fictional workday as an event. Start near
+9-point table text, modest cell padding and a wider date column; use compact
+full-width explanatory rows and remove redundant dossier prose before
+considering any typography adjustment. If the projected annotations cannot
+fit legibly, report that concrete result to the coordinator; do not silently
+spill onto page three or omit a claim.
+
+`components/04-themes.tex` has four functional units: help teaches the heart;
+mercy changes the measure of justice; an opened heart enters service; the
+received gift becomes a common life. The first two occupy page three, the
+last two page four. Every unit is integrated, with both Communion endings
+conditional. Isaiah/Gospel correlation, the Psalm's response and the
+semi-continuous Epistle remain distinct. The draft closes page four explicitly
+before commentary. Future proofing should tune prose distribution rather than
+stretch spacing; the current draft is approximately 400 substantive words per
+page and makes no claim of already satisfying the physical gate.
+
+## Commentary expansion
+
+`components/05-interleaved-commentary.tex` preserves the existing concise
+argument and adds approximately 950 words within its comparison points:
+
+1. The personal vineyard and the Church across history: how Augustine's
+   cultivated hearts join the two scales without harmonizing Gregory's and
+   Augustine's different hour allocations.
+2. The distorted eye in Psalm 37 and Matthew: distinguish evildoers' apparent
+   success from mercy granted to called late workers; retain contractual
+   justice rather than treating the parable as a wage-policy rule.
+3. Earlier workers and waiting: honor Israel's holy fathers within Gregory's
+   vineyard and compare his Christological explanation with Augustine's
+   common resurrection and Chrysostom's narrative explanation.
+4. Lydia's active reception: compare divine initiative, attention and
+   hospitality without converting Chrysostom into an Augustinian formula or
+   Augustine into a theory of unaided initiative.
+5. Paul's costly remaining: develop Chrysostom's trader/athlete/soldier
+   imagery and Aquinas's friendship argument so service is a substantive
+   alternative to resentment.
+6. The communal prayer and the purchased flock: compare the Psalm's body
+   voice with the Shepherd's personal center, then bring the three readings
+   together through their distinct answers to labor, despair and possession.
+
+No new patristic or liturgical claim is needed for these additions; each has
+an explicit home in the accepted study and research. `source-map.md` records
+those homes. The future author should verify actual cited evidence afresh,
+retain exact source notes and rights limits, and remove any genuine overlap
+between themes and commentary discovered in the proof. The thematic pages
+state the movement; the later pages earn the detail through comparative
+reasoning, distinctions and objections.
+
+## New evidence and workflow boundary
+
+Chronology is the substantive new evidence dependency. The present CLI
+adapter was actually tested and refused the postconciliar ID. Root assigned
+the bounded adapter repair. Its proposed input lives at
+`.scratch/postconciliar-chronology/chronology-inputs.toml`; canonical adoption,
+generated `research/chronology.toml` and `chronology-annotations.tex`, source
+ancestry/dependency pins, full-study appendix and references all belong to
+fresh v3 research/authoring and cold review. No generated chronology is
+handwritten in this plan.
+
+Read-only direct queries were made for all 38 relevant canonical verses and
+retained under `chronology/`, with actual CLI commands and exact payload
+hashes in `chronology/manifest.json`. These are planning evidence, not a
+replacement per-proper source owner. Whole-verse queries must not silently
+widen the Lectionary's `20c`, `27a`, `14b` or `16a` cuts. The adapter's explicit
+numbering/citation mapping must govern the final element-level intersection.
+
+Existing rights/retention limits remain: no complete 2008 Latin or U.S. 2011
+altar-book collation is newly claimed; Jerome's digital printing remains
+unidentified and remote-only; Irenaeus OCR is not promoted into facsimile
+evidence; the abridged Augustine Psalm witness is not silently equated with
+the fuller Latin. No extra direct quotation is required.
+
+## Contract and later verification
+
+Use the coordinator's additive `presentation_contract =
+"interpretive-pagination-v1"` with separate inventory, overview, chronology
+and themes `front-matter` components and synthesis-only `integrated`
+commentary. See the scratch `presentation-fragment.toml`. Add `zref-user` and
+`zref-abspage` in the actual entrypoint and use the physical labels supplied
+by the new owning contract. Do not change frozen v1 artifacts or restamp
+their acceptance.
+
+After the tested v3 contract is committed and the coordinator releases a new
+seed, follow each real emitted packet: new chronology research and cold
+review, study review, concise authoring/preflight/cold review, homily review,
+settled three-PDF builds, every-page visual review, sole canonical web review,
+exact installs and root-controlled publication wiring/gates. A requested
+10–12-page result requires actual physical-page checks, not this word budget.

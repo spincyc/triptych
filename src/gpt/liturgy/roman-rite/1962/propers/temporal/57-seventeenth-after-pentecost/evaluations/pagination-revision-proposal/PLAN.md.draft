@@ -1,0 +1,176 @@
+# TLM concise pagination revision — scratch proposal
+
+Status: drafted, not rendered or independently reviewed. No canonical files,
+metadata, accepted output, or run state were changed. The actual v1 ACCEPTED
+run remains historical evidence. A fresh reviewed version-3 run must own the
+research addition, authoring, reviews, generation and publication.
+
+## Proposed result
+
+Target 11–12 readable pages, with 10 as the permissible lower end. Preserve the
+current type size and Palladio family; solve layout with the content hierarchy
+and balanced paragraphs. Do not manufacture pages through blank space, larger
+type, standalone title/contents pages or repeated quotations. The existing
+23-page expansive study already meets the 20–50-page band; adding the new shared
+chronology near its terminal apparatus should yield roughly 24–25 pages, subject
+to actual build. Its three developed interpretations and their own four-sense
+distillations remain intact.
+
+The same-family predecessor 56 establishes the page-1 map/four-sense table,
+page-2 dossier hierarchy and two substantive thematic pages. It is a structural
+reference only. No appointments, interpretations or source claims from that
+different Sunday enter this draft. No postconciliar proper has been inspected.
+
+| Physical page | Component / function | Planned extent |
+|---|---|---|
+| 1 | Ten-element map, immediately followed by exactly four overview rows | About 300 words plus compact title; no history/status apparatus |
+| 2 | Scriptural Date and Location, seven distinct biblical dossiers in Catholic canonical order | About 400 words plus generated date labels; one page only |
+| 3 | Themes and Movement: mercy makes the command walkable; one Lord gives a people its life | About 500 substantive words plus short locators |
+| 4 | Themes and Movement: intercession carries the common wound; mysteries strengthen fidelity for glory | About 500 substantive words plus short locators |
+| 5–10/11 | Developed interleaved commentary, five cross-proper questions | About 2,500 substantive words, approximately 2,875 including heading/locator tokens |
+| 11/12 | Scope, references and truthful new-run metadata | Roughly 575 words before chronology-reference additions |
+
+The four front pages are substantive reading, not a four-page preface to the
+old five-page PDF. Commentary has been expanded by explaining the accepted
+witnesses' reasoning and the consequences of their differences. The draft
+contains about 5,300 text tokens counted by a simple word regex after macro-name
+removal; that is a sizing estimate including citations/table syntax, not the
+profile's final substantive word count. Expect approximately 4,300–4,600
+substantive words overall. Final accurate counting belongs to the new author
+stage. The page budget remains a hypothesis until actual settled TeX and every
+page are inspected.
+
+## Component changes proposed for the new run
+
+- New `sections/synthesis/00-inventory.tex`, manifest key `concise-inventory`,
+  kind `front-matter`, synthesis mode, all ten element keys.
+- New `sections/synthesis/01-overview.tex`, key `concise-overview`, kind
+  `front-matter`, synthesis mode; precisely Literal/Allegorical/Moral/Anagogical.
+- New shared `sections/02-scriptural-date-location.tex`, key
+  `concise-chronology`, kind `front-matter`, research and synthesis modes. It is
+  page 2 in the concise entrypoint and terminal historical apparatus in the
+  expansive entrypoint. Same source component and same generated data in both.
+- New `sections/synthesis/20-themes-and-movement.tex`, key `concise-themes`,
+  kind `front-matter`, synthesis mode, exactly two full physical pages.
+- Replace the concise `sections/synthesis/10-study.tex` body with the developed
+  interleaved draft, retaining existing key `integrated`, kind
+  `integrated-commentary`, synthesis-only. Five functional units remain
+  questions across the proper, not a procession of ten abbreviated entries or
+  three isolated essays.
+- Update concise entrypoint and local format for the dossier macros and zref;
+  append the shared chronology to the expansive entrypoint before scope and
+  references. Do not move or truncate the expansive interpretations.
+- Add generated `research/chronology.toml` and
+  `research/chronology-annotations.tex`; add actual adopted source owners to the
+  research seal and update research/source audits, bindings and references as
+  required by the new research stage.
+- Update the schema-2 manifest with the additive presentation contract, current
+  dependencies and source-grounded cross-element relations. Add fresh run
+  provenance/metadata only from the actual new packet. The old homily's prose
+  may remain if fresh author/reviewer comparison confirms it; its metadata,
+  source approval, build and visual acceptance must belong to the new run.
+
+Agreed additive declaration:
+
+```toml
+presentation_contract = "interpretive-pagination-v1"
+
+[presentation]
+inventory = "concise-inventory"
+overview = "concise-overview"
+chronology = "concise-chronology"
+themes = "concise-themes"
+commentary = "integrated"
+```
+
+The chronology component's references include
+`research/chronology-annotations.tex`, and that component imports its generated
+definitions exactly once. Each biblical key uses the unchanged generated
+`chronodate` / `chronologyannotation` interface. Draft physical markers match
+root's supplied `triptych:concise:<role>:start/end` contract, with four sense
+markers and commentary start. They do not themselves prove page positions.
+
+## What the added commentary does
+
+1. **The Lord and the hearer:** compares Chrysostom's account of the lawyer's
+   improvement with Augustine's alternative initial motive, then relates both
+   to healed knowledge, truth held in common and the giver's allegiance.
+2. **Command and remedy:** distinguishes following, preservation and cure in
+   the three orations; develops Augustine's continuing illumination and
+   Bellarmine's practical love. It keeps help distinct from replacement of the
+   hearer's agency.
+3. **The received people:** develops literal creation versus spiritual heavens,
+   Chrysostom's body across generations versus Thomas's common order, and the
+   afflicted member versus Daniel's representative intercession.
+4. **Offering and accountability:** compares healed fidelity, a common center
+   and fulfilled speech at Communion; preserves common obligations versus
+   special vows and public sovereignty versus the inward conquest of pride.
+5. **The common end:** retains the three readings' distinct four-sense emphases
+   and their convergence in the eternal remedy, without turning anagogy into
+   another label for present moral improvement.
+
+Every claim in those expansions is traceable to the accepted expansive
+components 20, 30, 40, 50 or 60 and their already checked source loci. These draft
+derivations do not inherit a new verdict; the future cold reviewer still checks
+the claims and the expanded condensation.
+
+## Chronology and missing evidence
+
+The current leaf carries no biblical chronology record because v1 introduced no
+biblical dates. Read-only `proper-chronology record` and `annotations` outputs
+are now retained here exactly, without `--write`. They cover the seven biblical
+elements. The three composed prayers receive no invented biblical date row.
+
+The page-2 order is Psalms 32, 75, 101, 118, Daniel 9, Matthew 22, Ephesians 4.
+Repeated or reordered verses within one proper are consolidated. The Daniel
+chant remains a selected/rearranged adaptation; the Gospel's embedded citations
+are not promoted to three independently appointed extra readings.
+
+The current default corpus gives:
+
+- Four Psalms: a general composition boundary before about 165 B.C.; no date
+  specific to each psalm may be inferred from it. No Davidic regnal date may be
+  supplied simply because an adjacent Sunday printed one.
+- Daniel: a seventy-year duration under historical setting, separately from a
+  composition range. Preserve the relation label and do not turn the duration
+  into the date of Daniel's prayer or the chant's composition.
+- Matthew: six received composition alternatives, and an explicit unresolved
+  narrated-event date. Preserve all generated alternatives and that typed
+  absence; no date may be supplied from memory, a neighboring proper or a
+  publication-local chronological calculation.
+- Ephesians: two received composition answers, with their disputed status.
+
+`chronology-source-ids.json` lists the exact adopted chronology source IDs.
+The new research worker must independently inspect the displayed sources and
+their loci, bind/depend on their real source owners and the controlling corpus
+owners, and add the references to both editions. Broad copying of all chronology
+files or global guidance into review dependencies is not a substitute for that
+ownership audit.
+
+The existing accepted biblical contexts support the present geography/speaker
+draft. They do not yet supply a full modern authorship/first-audience account
+for every dossier, or an independently checked Gospel event location beyond
+the bounded chapter-22 encounter. The new research stage should inspect the
+canonical location context and the already registered chronology witnesses for
+traditional attribution, audience and place, reporting responsible uncertainty.
+That is additional verification work, not permission to invent absent dates.
+No new acquisition is presently shown necessary; any exact evidence gap after
+that inspection should be escalated to the source owner before prose claims
+are expanded. The missing Gospel event date is concrete and must remain visible
+unless the canonical corpus itself gains a separately reviewed answer.
+
+## Front-matter feasibility and release boundary
+
+The ten short rows and four short senses should fit page 1 at the established
+table size. Page 2 is the tightest page because Matthew retains six dates: start
+with the same-family 56 wide Date column, preserve two-tier dossiers, and trim
+redundant prose before altering legible type size. The two thematic halves are
+balanced at roughly 500 substantive words each and account for every appointed
+element; settling line breaks remains an actual build task. Commentary must
+start on physical page 5, with final bibliography/metadata inside the total
+10–12-page band.
+
+The scratch scaffold intentionally has no new-run metadata and does not pretend
+to be a build-ready accepted owner. No proof PDF was produced under this
+scratch-only authorization. On root's release, a fresh author must follow its
+exact v3 packet, not copy this plan as a substitute for the packet or its review.
