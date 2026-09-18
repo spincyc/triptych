@@ -1,0 +1,14 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/review-dependencies.toml",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "GATE-RESEARCH-RECORDS",
+      "note": "Removed the three workflow review receipt paths and THIRD_PARTY.md from the external evidence-owner list. Their audit/control roles remain explicit in scope.md; registered source bindings independently seal artifact rights, provenance and available payloads. The pipeline's exact research-records command exits 0.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "stage": "research",
+  "summary": "Repaired research/review-dependencies.toml to declare only the tracked 1962 calendar, rubric and facsimile-rights owners under src/, and updated research/context.md and research/scope.md to distinguish these dependencies from global policy and workflow review receipts. The exact research preflight passes, including binding validation and evidence-seal construction; source bindings, interpretation proposals and their recorded research limitations are unchanged, and cold research review remains outstanding."
+}

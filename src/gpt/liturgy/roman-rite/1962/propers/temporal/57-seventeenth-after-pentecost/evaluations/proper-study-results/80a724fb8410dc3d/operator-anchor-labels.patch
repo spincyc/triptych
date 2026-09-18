@@ -1,0 +1,90 @@
+--- src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/10-appointed-text.tex (before)
++++ src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/10-appointed-text.tex (after)
+@@ -2,7 +2,7 @@
+ 
+ The Latin follows the 1962 Missal, pp.~398--400, nos.~1602--1611, with stress marks removed and ligatures expanded. The three English prayers are the historical human translation published by Cummiskey in 1861, pp.~431--433. Biblical English is the American 1899 Douay--Rheims canonical study text; it does not translate the Missal’s adaptations or its added formulas. Psalm numbering follows the Missal, with common modern equivalents in parentheses. These public-domain witnesses remain distinct from project-created exposition.
+ 
+-\subsection{Introit}
++\subsection{Introit}\label{proper-introit}
+ 
+ \textit{Iustus es, Domine, et rectum iudicium tuum: fac cum servo tuo secundum misericordiam tuam.}
+ 
+@@ -14,13 +14,13 @@
+ 
+ Ps.~118:137, 124; verse 1 (119). The Gloria Patri remains the Missal’s cue.
+ 
+-\subsection{Collect}
++\subsection{Collect}\label{proper-collect}
+ 
+ \textit{Da, quaesumus, Domine, populo tuo diabolica vitare contagia: et te solum Deum pura mente sectari. Per Dominum nostrum.}
+ 
+ \textbf{Cummiskey 1861.} Grant, we beseech thee, O Lord, that thy people may avoid all contagion of the devil: and with a clean heart follow thee, the only true God. Thro’.
+ 
+-\subsection{Epistle}
++\subsection{Epistle}\label{proper-epistle}
+ 
+ \textit{Lectio Epistolae beati Pauli Apostoli ad Ephesios.}
+ 
+@@ -30,7 +30,7 @@
+ 
+ Eph.~4:1--6. The Latin adds Fratres and the final doxology; these are absent from the canonical English above.
+ 
+-\subsection{Gradual}
++\subsection{Gradual}\label{proper-gradual}
+ 
+ \textit{Beata gens, cuius est Dominus Deus eorum: populus, quem elegit Dominus in hereditatem sibi.}
+ 
+@@ -40,7 +40,7 @@
+ 
+ Ps.~32:12, 6 (33), in the chant’s order.
+ 
+-\subsection{Alleluia}
++\subsection{Alleluia}\label{proper-alleluia}
+ 
+ \textit{Alleluia, alleluia. V. Domine, exaudi orationem meam, et clamor meus ad te perveniat. Alleluia.}
+ 
+@@ -48,7 +48,7 @@
+ 
+ Ps.~101:2 (102:1). The biblical verse does not supply the Alleluia refrain.
+ 
+-\subsection{Gospel}
++\subsection{Gospel}\label{proper-gospel}
+ 
+ \textit{Sequentia sancti Evangelii secundum Matthaeum.}
+ 
+@@ -60,7 +60,7 @@
+ 
+ Matt.~22:34--46. Canonical verse 34 supplies the Sadducee setting; the Missal replaces the opening. The appointed Gospel includes the full Son-of-David dialogue. Credo is the Missal’s following cue.
+ 
+-\subsection{Offertory}
++\subsection{Offertory}\label{proper-offertory}
+ 
+ \textit{Oravi Deum meum ego Daniel, dicens: Exaudi, Domine, preces servi tui: illumina faciem tuam super sanctuarium tuum: et propitius intende populum istum, super quem invocatum est nomen tuum, Deus.}
+ 
+@@ -68,7 +68,7 @@
+ 
+ Dan.~9:17--19 supplies context. The Latin chant introduces Daniel and rearranges selected petitions; the continuous English passage is not an English liturgical Offertory.
+ 
+-\subsection{Secret}
++\subsection{Secret}\label{proper-secret}
+ 
+ \textit{Maiestatem tuam, Domine, suppliciter deprecamur: ut haec sancta, quae gerimus, et a praeteritis nos delictis exuant, et futuris. Per Dominum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.}
+ 
+@@ -78,7 +78,7 @@
+ 
+ The Trinity Preface is appointed; its full text is outside this proper-text reproduction. The historical English concerning future offences is explained in the commentary.
+ 
+-\subsection{Communion}
++\subsection{Communion}\label{proper-communion}
+ 
+ \textit{Vovete et reddite Domino Deo vestro, omnes, qui in circuitu eius affertis munera: terribili, et ei qui aufert spiritum principum: terribili apud omnes reges terrae.}
+ 
+@@ -86,7 +86,7 @@
+ 
+ Ps.~75:12--13 (76:11--12).
+ 
+-\subsection{Postcommunion}
++\subsection{Postcommunion}\label{proper-postcommunion}
+ 
+ \textit{Sanctificationibus tuis, omnipotens Deus, et vitia nostra curentur, et remedia nobis aeterna proveniant. Per Dominum nostrum.}
+ 

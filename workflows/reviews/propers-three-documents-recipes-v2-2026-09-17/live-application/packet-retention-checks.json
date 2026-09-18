@@ -1,0 +1,39 @@
+{
+  "packet_archive_manifest": "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/80a724fb8410dc3d/packet-archive-manifest.json",
+  "manifest_sha256": "7ded8a505f867755b4a3e888e3729d862da1ce8da9c745cb838ddf0ee303e1ec",
+  "actual_packet_files": 57,
+  "copied_packet_bytes": 1349612,
+  "prior_archive_files_unchanged": 68,
+  "classification_review_unchanged": true,
+  "current_inventory_publications": 142,
+  "current_inventory_files": 2286,
+  "full_source_and_release_checks": "Both actual commands exited 0 after packet archive and inventory/family refresh; zero stale release bindings",
+  "commands": [
+    {
+      "command": "make check-sources",
+      "exit_code": 0,
+      "log": "packet-archive-check-sources.log"
+    },
+    {
+      "command": "make check-release-bindings",
+      "exit_code": 0,
+      "log": "packet-archive-check-release-bindings.log"
+    }
+  ],
+  "logs": {
+    "packet-archive-check-sources.log": {
+      "sha256": "ba2a2fec9d8bd34a5749c20eaa94463eb712b4e6db12cc91064571b43a298fd4",
+      "original_sha256": "4c872cf5303e9f6978a0ea3b45b6d39ab4061fcab1cba5afef81cba4dcfffac0",
+      "exit_code": 0,
+      "source": ".scratch/integration/packet-archive-check-sources.log",
+      "transformation": "Checkout prefix replaced with repository-relative path"
+    },
+    "packet-archive-check-release-bindings.log": {
+      "sha256": "81b5c9979e16b7295a385dc9fd585e88bef46d1c28bd0643ee7e4e47dc373c3f",
+      "original_sha256": "81b5c9979e16b7295a385dc9fd585e88bef46d1c28bd0643ee7e4e47dc373c3f",
+      "exit_code": 0,
+      "source": ".scratch/integration/packet-archive-check-release-bindings.log",
+      "transformation": "verbatim"
+    }
+  }
+}

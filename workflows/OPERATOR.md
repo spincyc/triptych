@@ -66,6 +66,19 @@ to this owner and the deterministic source projection remains globally checked.
 Complete reusable pipeline changes and checks before seeding a real run so the
 run remains bound to one reviewed workflow digest.
 
+Version 2 corrects two command recipes: PDF review writes to a dedicated
+stage/iteration raster child because its helper replaces the whole destination,
+and web conversion uses `--output build/web` because the converter appends the
+provider. Existing v1 publication provenance and run records remain v1; the
+frozen v1 source is retained in Git commit `af9b2d10a`.
+
+Complete active v1 runs before replacing their bound definition. The engine
+loads only the current definition for an ID; it has no historical-version
+resolver. Running `replay` recompiles the current packet under its matching
+version and digest. Terminal `replay` instead checks the saved packet's integrity
+and returns `deterministic: null`, both before and after a version change.
+Terminal status and that integrity report remain available under v2.
+
 ## Overview
 
 The deterministic AI-guidance workflow engine drives a cycle of fresh AI

@@ -1,0 +1,352 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 2,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/01-opening.tex",
+          "references": [
+            "research/source-audit.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "appointed-texts",
+          "kind": "appointed-text",
+          "path": "sections/05-appointed-texts.tex",
+          "references": [
+            "research/source-audit.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "each-element",
+          "kind": "proper-treatment",
+          "path": "sections/10-each-element.tex",
+          "references": [
+            "research/source-audit.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "gift-cultivation",
+          "kind": "interpretive-lane",
+          "path": "sections/20-gift-cultivation.tex",
+          "references": [
+            "research/source-audit.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "conversion-without-rivalry",
+          "kind": "interpretive-lane",
+          "path": "sections/30-conversion-without-rivalry.tex",
+          "references": [
+            "research/source-audit.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "one-people-through-ages",
+          "kind": "interpretive-lane",
+          "path": "sections/40-one-people-through-ages.tex",
+          "references": [
+            "research/source-audit.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/80-comparison.tex",
+          "references": [
+            "research/source-audit.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "study-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-apparatus.tex",
+          "references": [
+            "research/source-audit.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+      "element_keys": [
+        "entrance",
+        "collect",
+        "first-reading",
+        "responsorial-psalm",
+        "second-reading",
+        "acclamation",
+        "gospel",
+        "offerings",
+        "communion-ps119",
+        "communion-jn10",
+        "after-communion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine",
+            "Thomas Aquinas",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "gift-cultivation"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "gift-cultivation",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/source-audit.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Augustine",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "conversion-without-rivalry"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "conversion-without-rivalry",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/source-audit.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Gregory the Great",
+            "Augustine"
+          ],
+          "component_keys": [
+            "one-people-through-ages"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "one-people-through-ages",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/source-audit.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+    "files": {
+      "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/main.tex": "1137fadf039c394287b9ed5f774d13b3cf6d6ae397b77f4bcd8119e0c76f6e83",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/interpretations.md": "f399b2bd86ea0ef6c4997ed09660278b02ca43c3294eb6792d65581bce66646b",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/source-audit.md": "3f66b8da4d4eaba71ee8eee9ab2d62ae483341a933d76be8d83cf3618cde36be",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/01-opening.tex": "385d108bb412194d9c48a585feb8089feae22b4b79e4d60b8a6251cf46e08ba4",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/05-appointed-texts.tex": "b046a8b1ed8e7cb886a7df4f8163c94cc6f95c197a3f71971e270e06c47122e0",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/10-each-element.tex": "2a6e3c4ef1550227b9860f69e62a6d154ca40b94fdbecb3f19c9d0bbcfb95f45",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/20-gift-cultivation.tex": "01dccad4f4853257c783b0fdaa4200e463fd06967bac83f380da98227ca32e95",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/30-conversion-without-rivalry.tex": "99142ff7d907c602d246155938bbc019d2042119dafd9a4a06746970f7e0029b",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/40-one-people-through-ages.tex": "8618589d3df3e154b6d7eb9b9e80daa94c54b92531816a5aede632bbc49d63c7",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/80-comparison.tex": "79911e59f3c166d763281e202cecc384258098367a11da42d58435cc27217d1a",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/90-apparatus.tex": "e63646cf6a6808d71acbbdb19652422a41dad5f0dda93ed32d02e408cdca827d"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "1",
+            "1375f708d8670b2f4ccaf1869cfaa6fe67fe6946dc2b962c766bcdc499d3b47e",
+            "8f4e6454c021280a",
+            "af9b2d10a98a6aac2ce44cc84d6358ede8e630e8",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "PASS for the complete sealed PC-S51-A study, comprising main.tex and eight declared components: independent review covered all eleven element roles, the three distinct whole-formulary interpretations and their four-sense distillations, with direct checks of the appointed Douay-Rheims texts and context, the dated USCCB appointment, cited Augustine and Chrysostom passages, Gregory Homily 19 and Aquinas Isaiah 55/Philippians 1 page images, Jerome Isaiah 55, Bellarmine, Irenaeus, and General Introduction to the Lectionary 19-23, 67-68, 105-107. No blocking defect was found in coverage, argument, attribution, source support, or treatment of alternatives and author disagreements; acceptance retains the disclosed digital-text, OCR, abridgment and edition limits, does not supply a complete official 2008 Latin or U.S. 2011 Missal collation, and does not constitute final-PDF visual acceptance."
+}

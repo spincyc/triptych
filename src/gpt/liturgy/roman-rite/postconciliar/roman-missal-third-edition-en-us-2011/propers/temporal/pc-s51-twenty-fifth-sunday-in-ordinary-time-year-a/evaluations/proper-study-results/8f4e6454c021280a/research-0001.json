@@ -1,0 +1,14 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/review-dependencies.toml",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-001",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": "Also updated research/scope.md. The driver must verify the emitted research-review seal against .scratch/no-production/research-1/verification.json before review. No new source-library payloads or permissions are introduced; exact U.S. 2011 and official 2008 full-book collation remains unperformed. Existing Latin and web-summary source records were inspected without claiming fresh retrieval of those remote artifacts.",
+  "stage": "research",
+  "summary": "Repaired RES-001 by declaring the controlling ICEL policy sources, companion rights inventory, Latin-rights evidence, and CCD rights-notice artifact with their ancestry. Rechecked both official policy PDF hashes and verified every added record is present in the read-only compiled research evidence set; source restrictions and edition limits are preserved."
+}

@@ -1,0 +1,647 @@
+WORKFLOW: proper-study v1
+WORKFLOW_DIGEST: 1375f708d8670b2f4ccaf1869cfaa6fe67fe6946dc2b962c766bcdc499d3b47e
+RUN_ID: 80a724fb8410dc3d
+COMMIT: af9b2d10a98a6aac2ce44cc84d6358ede8e630e8
+STAGE: research-review
+ITERATION: 0
+EXECUTION: single
+REVIEW_INPUTS: {"document":"liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost","files":{"src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/propers/retrieved.txt":"6f85c692ca9051c4fe483b866831d6bd595ac2ebb5bfe6fab5762ec87415b851","src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/propers/verified.md":"c8d9cb210dcc55429acdaa33b868340b44df1039fb5a4c0bd80c42ac462a3d88","src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/context.md":"662dde5b402bc638c50698ce0bee99e718308036846c349872b9f0a8f4f4de24","src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/english-verification.md":"45b35153c4ea337088721433fb7926142157b64fc5066b27fc6c76684c295d73","src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/interpretations.md":"e3bb9a397ed2918aed093ba8e9ee2e1e1d542242a97f7d380288071eafc5ddac","src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/review-dependencies.toml":"93b3f572c985f01e23b977c10cce0434280742d616598fd1025f359a9eee836d","src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/scope.md":"5ee740379979cc5b305b2eae9e16edfef3c08567cc071cf9e569e6c2211fcd1d","src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/source-audit.md":"4e68e7a069fd354cb4fa799ab50cc38370a3fe4e6cc54861e9225ee97bb395e2","src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/source-bindings.toml":"9a3918cac237b05a29dd80382135acee325e3a34decea4a625a77f15c8061c03","src/sources/calendars/roman-1962/propers.yaml":"ad99721934f0feca5fb1e1a98339f31ef241d5c5a6beb93b0dbbeef7abaaacf0","src/sources/calendars/roman-1962/rubrics.yaml":"0e07bd5bffc4f15e625ca870cc2ef9fc9179f2bdcc4b5a789f323bf8915528fd","src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml":"d38c50f5ec0b834a7c0a614c9a80f9117c920abc11c8a444fa1eb067c6e1594b","src/sources/works/augustine/de-consensu-evangelistarum/editions/2026-09-17-ccel-web/edition.toml":"f4d925ee053835651b32dc0f8865e9842e3a6b7e981b727555a3589fca60f282","src/sources/works/augustine/de-consensu-evangelistarum/editions/2026-09-17-ccel-web/passages/ii-73-141-142.toml":"11769786ced28853325d5a446dda79204572d7ca6100bda45610bd4202008ab1","src/sources/works/augustine/de-consensu-evangelistarum/editions/2026-09-17-ccel-web/segments/complete-work.toml":"26f141173924dedc5d9d91d0d1e3eb18687b4076f776fe95795131c5399b4110","src/sources/works/augustine/de-consensu-evangelistarum/work.toml":"8b87603cafed17856260eb69ab527a6d6abe2942dcf4135afa28948557fa7cf4","src/sources/works/augustine/de-doctrina-christiana/editions/2026-09-17-ccel-web/edition.toml":"5c9632ebe66a0c1cdb8e91c49de55e19137ad59ac4489405cd5f942feeded203","src/sources/works/augustine/de-doctrina-christiana/editions/2026-09-17-ccel-web/passages/i-22-20-21.toml":"12de42643ff6ea4b863bc69225f8f27ac89986cf0a9505201f348a63f5b6596f","src/sources/works/augustine/de-doctrina-christiana/editions/2026-09-17-ccel-web/passages/i-30.toml":"51bbb5b595d1c041851c552c29ca600ddf4ac0854fdd10d9a6d2e114046b9409","src/sources/works/augustine/de-doctrina-christiana/editions/2026-09-17-ccel-web/segments/complete-work.toml":"a8da1911753a305060b202b21aa9e6ad5ef427fd44cc9fbd39821fc7f3276fff","src/sources/works/augustine/de-doctrina-christiana/work.toml":"ef320d5c13968d495042a9427199c161a7a8516717d9e58df4b6d3ad0b1bf9e1","src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/artifacts/ccel-npnf108-text-d6841950/artifact.toml":"6bee6f13dd757842ceeb86ef5fd06b6fb0251a5ab75590fa793f324aef07b79f","src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/artifacts/ccel-npnf108-text-d6841950/source.txt":"d6841950333024906294e6e829f7512d08b3adf62ae6cee3615d18a7ad0020e9","src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/edition.toml":"ca66a1598f692914e7c16f7a3200ed3be8f03c4e08246b87055c4d83929e2ab4","src/sources/works/augustine/enarrationes-in-psalmos/work.toml":"a3fa6fbac8db1820c20de67f21b12da3e0feb0aa18751b0fc0288223904992d4","src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ia-bookreader-leaf-426-50a5e6c3/artifact.toml":"9f303459157a0c703bed58a08c2e6894ca932870467dc46b5c51076865cc53d0","src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ia-bookreader-leaf-426-50a5e6c3/page-426.jpg":"50a5e6c35bc4685d31ddf1aa66632fc6cb34a18422cf6ddb95d611210e9e9b43","src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ia-bookreader-leaf-427-203fc51d/artifact.toml":"345b8933263ceb1dbe2273a5f68dd872ea48e5807e97603504e3e55a05f51dec","src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ia-bookreader-leaf-427-203fc51d/source.jpg":"203fc51d3a46aa04cb55c9d65cbfea45cf1e4b26f5c24d20fb8ee13b5c708acb","src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/edition.toml":"fa9da57d68f8c80a51376a87dbeed3b19c1d1d0043a4a9b202a3c8de9e1dd7ad","src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/pentecost-17-continuation.toml":"4e7d0e790ec286b86d2030d295a5ffaca51b34e00f6b74b43950101058414b6b","src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml":"9e2440cfcf8fd3a0bc86dfc57bd9871992b9bca4fd5baced4ce07c7c06c48fbf","src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/edition.toml":"2d629ce174b247c8d624b41f9061efe8c7bdf9ea29fcee0a2aec18db2d78bd10","src/sources/works/catholic-church/missale-romanum/work.toml":"ae029277a68493ed903cd608cd7abdb91797aaff614ab5646f7c6a2dbeaa2ffd","src/sources/works/english-college-of-douay/douay-rheims-bible/editions/american-1899-ebible/artifacts/ebible-usfm-36d3c0b2/artifact.toml":"d9cbd27c696336b3dc958ce750a9be2d4240080e7431aed70fd812400bdfeb29","src/sources/works/english-college-of-douay/douay-rheims-bible/editions/american-1899-ebible/artifacts/verse-text-21-psalms-6d114c22/21-psalms.tsv":"6d114c22315ae3a706d5913f36e36b75244da695e803f5f818df4ad875e9d7aa","src/sources/works/english-college-of-douay/douay-rheims-bible/editions/american-1899-ebible/artifacts/verse-text-21-psalms-6d114c22/artifact.toml":"d6f934765a4947edb2d1faf8288fbf0c42c99c23af925a1255e86ad37400eb75","src/sources/works/english-college-of-douay/douay-rheims-bible/editions/american-1899-ebible/artifacts/verse-text-32-daniel-1550cfbe/32-daniel.tsv":"1550cfbeb058c86675ff21b9d19dfb90306dea7a411252038afc6cc927c10f04","src/sources/works/english-college-of-douay/douay-rheims-bible/editions/american-1899-ebible/artifacts/verse-text-32-daniel-1550cfbe/artifact.toml":"2324a9ee750bdb63f5736954e7ec7598d81da9e928a12796f8628daf05f924de","src/sources/works/english-college-of-douay/douay-rheims-bible/editions/american-1899-ebible/artifacts/verse-text-47-matthew-438b2953/47-matthew.tsv":"438b295306a6bbff132638892eab47b6cf313da91b9d8ad1b4f3c73dbb51d7e4","src/sources/works/english-college-of-douay/douay-rheims-bible/editions/american-1899-ebible/artifacts/verse-text-47-matthew-438b2953/artifact.toml":"b3b1db33f303e05dd56f2a0f8958455237f37836d3ac1cf29082843c58c2bfd3","src/sources/works/english-college-of-douay/douay-rheims-bible/editions/american-1899-ebible/artifacts/verse-text-56-ephesians-05619bc8/56-ephesians.tsv":"05619bc800416080d06c53827520ed05141de67b63e8c6ed9e71de8de0243bb5","src/sources/works/english-college-of-douay/douay-rheims-bible/editions/american-1899-ebible/artifacts/verse-text-56-ephesians-05619bc8/artifact.toml":"73b6e0b8b23351a2ddc0d0101d87e4d113c704a35f51d6ceee464b8c3c450287","src/sources/works/english-college-of-douay/douay-rheims-bible/editions/american-1899-ebible/edition.toml":"69993a0649ffae83afe74f9523672f2279d3e7608f6e0e867c9c801a01afbe16","src/sources/works/english-college-of-douay/douay-rheims-bible/work.toml":"33a0a06dd333ec0a2105e8904a7383b02cfeddcd7c3149f102704a6b95fa0dbc","src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ia-djvu-ocr/artifact.toml":"2fef4a285cad76c971084d77758d65d80ffa9f86ab69517b343fb8e7abbd91c1","src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/temporal-orations-en/artifact.toml":"6388dbafb70a4959f3d6b29d988b85a8067cbd7665f14ea5267708239a0722e2","src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/temporal-orations-en/temporal-orations-en.tsv":"c79e9500b1b3a50f4ed3f6096b9bf89012f16bf79a8d24c1ed365b295ec1bae0","src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/edition.toml":"a6a946e4c1f7b470392972302a03036b151260f728ffe8a26d683f0493af7466","src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/post-pentecosten-17.toml":"6789a40797425bcd698aac54aa0596ed55fe5f599ba737744a7564d410e77468","src/sources/works/eugene-cummiskey/roman-missal-english-laity/work.toml":"80a589340fe7fbe6284fa8cb1eef65b0f98d4bb6baee2d2f17a00b7b1b0c6358","src/sources/works/fssp-france/ordo-du-mois/editions/2026-09-17-web/artifacts/html-aa1c6f16/artifact.toml":"b470e18419e838d19fb52b2c74e8970f1ee389f4f9357934eb2e247e7ef7ef99","src/sources/works/fssp-france/ordo-du-mois/editions/2026-09-17-web/edition.toml":"6fca05948c41f4710c29255c86a25749462c8dbf6f2d60e464f9ab0ebfcf8b95","src/sources/works/fssp-france/ordo-du-mois/editions/2026-09-17-web/passages/2026-09-20.toml":"b8fdfa51da2941f08c3ce1f9f325e4ebe0101091f5f173e35254b231c6399197","src/sources/works/fssp-france/ordo-du-mois/work.toml":"dcc1ec1d20557acd48c3c896c3865a0cb9c98634ebcac8dd6d789a3d7d841450","src/sources/works/icrsp-france/ordo/editions/2026-09-17-web/artifacts/html-0c6c1fd5/artifact.toml":"049c5ed32d4e1ddf1658f2536a9f976fdbb58758232c05559a739e5ff8c11d9e","src/sources/works/icrsp-france/ordo/editions/2026-09-17-web/edition.toml":"ed7a109eca467781f2c17d6bb254ecf02ca91df9cc10bd6ddb7507d82a31c358","src/sources/works/icrsp-france/ordo/editions/2026-09-17-web/passages/2026-09-20.toml":"a6b4e7cb4c3189595e9e5cb5df4268a58ba102b69d27d8a024279f37c1c65b45","src/sources/works/icrsp-france/ordo/work.toml":"02983304fdcbf6777e8cbb85685e839233f808c1bcd2efffb73059a0133898f9","src/sources/works/jerome/commentaria-in-danielem/editions/1845-migne-pl-25-wikisource/artifacts/latin-text-3fe4ba4f/artifact.toml":"d62f1f13adebdcf63a6734334c5c657295a109a16415008570f4d504ec6b1068","src/sources/works/jerome/commentaria-in-danielem/editions/1845-migne-pl-25-wikisource/artifacts/latin-text-3fe4ba4f/source.txt":"3fe4ba4f9f3fe24f1bf0024f89cf470ee77a06591ee7b05b965ac0e4d47ad1c4","src/sources/works/jerome/commentaria-in-danielem/editions/1845-migne-pl-25-wikisource/artifacts/wiki-export-c56fd792/artifact.toml":"da38cb26afd13ac84c39fc4b02f1dd4240d0a18c7cd166ef8602f9999afdf35b","src/sources/works/jerome/commentaria-in-danielem/editions/1845-migne-pl-25-wikisource/edition.toml":"01fdf588eb4dcf35c239be303324c1b7e17164f5487b97ca8df69c18ab66b968","src/sources/works/jerome/commentaria-in-danielem/editions/1845-migne-pl-25-wikisource/passages/ii-daniel-9-17-21.toml":"5398c49279cf7598912ef5f29dedbac6bbc7057a2570c4677d252274f8e7e408","src/sources/works/jerome/commentaria-in-danielem/work.toml":"e360ebf8e8a5d30f54c903f3acdfabe0161caf60ed5fb10d6c3232092f783da0","src/sources/works/john-chrysostom/homiliae-in-matthaeum/editions/2026-09-17-ccel-web/edition.toml":"9680650876dea2cd866d4f8ef04dce01afd22e36f689ab1f5a10f440de0ef179","src/sources/works/john-chrysostom/homiliae-in-matthaeum/editions/2026-09-17-ccel-web/passages/homily-71.toml":"8d31f2749beb148ba15b61acf8e03144340217707fd2948325f3b6c5899a7338","src/sources/works/john-chrysostom/homiliae-in-matthaeum/editions/2026-09-17-ccel-web/segments/complete-homilies.toml":"c7699371f46a9ecc00bf129d4476ad651ec4a61ce859d1b2b32019296f87c3d3","src/sources/works/john-chrysostom/homiliae-in-matthaeum/work.toml":"9c8e9eb19f79ce4585b3dfdb5feabf5b74afe56f66a2208d4dab48821b6d19dc","src/sources/works/john-chrysostom/homilies-on-ephesians/editions/2026-09-05-english-npnf13-ccel-web-2026-09-05/edition.toml":"af2b244e644049d228a21ae33ffe2a393b7424d09bcc8e5a1c3d4d7df61e0884","src/sources/works/john-chrysostom/homilies-on-ephesians/editions/2026-09-05-english-npnf13-ccel-web-2026-09-05/segments/complete-commentary.toml":"742917e309bbd3ad400ae70bc9e9c950ecaa498ba6ec17eec024fad7e3b1c047","src/sources/works/john-chrysostom/homilies-on-ephesians/work.toml":"7d6e7234e0191747a089c525160df0a5181b9ec6cc4cd0f034afd7d90daa967f","src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-10/editions/2026-09-17-ccel-web/artifacts/ccel-text-adb8f1c9/artifact.toml":"18ecf1cafe3bdf1260814535e463685ba022188b44e41081b458ecaca8c9d2f0","src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-10/editions/2026-09-17-ccel-web/artifacts/ccel-text-adb8f1c9/source.txt":"adb8f1c9a988c5050a20fb9fdbf75143dcb227e95e3dad2f560a63b757923648","src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-10/editions/2026-09-17-ccel-web/edition.toml":"b7a13b8b36fdb18210633d56da442b6cac0cde36212d685641416e66c150d4ba","src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-10/work.toml":"64f748a6adfa87fbc44e85db154af8f940cb56bec23b06847e75ce657a6e49d7","src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/editions/2026-09-05-english-ccel-web-2026-09-05/artifacts/ccel-npnf113-text-54274dd9/artifact.toml":"0adbf85d85f7032db57850993746138d1fd0142b1c9a0c51b2c5af46679c00b3","src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/editions/2026-09-05-english-ccel-web-2026-09-05/artifacts/ccel-npnf113-text-54274dd9/source.txt":"54274dd9aa73ca36e4da9e763e4a27d1818b09e42ffc73795529afec703a4210","src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/editions/2026-09-05-english-ccel-web-2026-09-05/edition.toml":"7f2bdc7b4f135df424279c10ef2c86fa0d18cd02150cfccb9018d96700d2e37a","src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-13/work.toml":"3b9fcf5867eac27bc6875c69dcb8d5599aa1881228cb2bc28fdacfb5e5417f88","src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-2/editions/2026-09-17-ccel-web/artifacts/ccel-text-5c973fed/artifact.toml":"c5940415858daf121b09f719f165bc0e3f2798dda0a1c7521c41c7b38a77a020","src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-2/editions/2026-09-17-ccel-web/artifacts/ccel-text-5c973fed/source.txt":"5c973feda803f3e58a88ed7df210b42d436f5466741eb8dbeae713ab56dedae4","src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-2/editions/2026-09-17-ccel-web/edition.toml":"dc144d2c1ba4fbfd8fd1f405f6d95b9125cfc059cb504c0038eaa03a52561abf","src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-2/work.toml":"eda5556815324002fe8cd984cebaa1418d2ff0539c339b5257e02a963f6a4cac","src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-6/editions/2026-09-17-ccel-web/artifacts/ccel-text-ce371798/artifact.toml":"a7fd1cce189a25a74f8f70b3390bb0e640b3e400cbc1ed11e9db15207dd76e51","src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-6/editions/2026-09-17-ccel-web/artifacts/ccel-text-ce371798/source.txt":"ce37179876e5e5c9d8e7a6f1f17b8796c4fdf3ffd2815acb82a1c734c57ecd18","src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-6/editions/2026-09-17-ccel-web/edition.toml":"26d95c4235cabfde331bf62c72f0c9dcd253e34a97f2fd6c26da822b8f7bba26","src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-6/work.toml":"ed3eae018d1b07504a5146903ecf63d241ec898e0dbf3f7c2b816fee340f2887","src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/artifacts/full-text-html-c74854f0/artifact.toml":"24ce30309f919925cc65c4df4116e8c261dee33feacce2952113fdb83370f76f","src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/artifacts/historical-text-357551e1/artifact.toml":"6037444f771d285ced965d5688431d57056d1bf8242000de588ba556205a406c","src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/artifacts/historical-text-357551e1/text.txt":"357551e186b7c400fcd4f442ef2a70f6e51b7148ae69ab467b93b4a64ae51bc2","src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/2026-09-05-osullivan-ecatholic2000/edition.toml":"91147082b1ba6f4478082eb6fc533efca88cd151335a478b648a83211e025328","src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/work.toml":"18e7b82e6690e2dcca16267372957474d58097a6650793f71b42b17f003a8009","src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/editions/1857-dessain-volume-2/artifacts/book-facsimile-e8b81493/artifact.toml":"ce802cd683866fe1a3250c53891a50395e43f8bb9e2643b97593cddf77f9b58e","src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/editions/1857-dessain-volume-2/artifacts/book-facsimile-e8b81493/source.pdf":"e8b81493cc4a561b64de09cfd2d3278c37fe45fbb46a16f00c2b1ec88f34d4e1","src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/editions/1857-dessain-volume-2/artifacts/ia-pdf-8d69fd95/artifact.toml":"37b031e15e5ccfa4b661ada4b4cf9f5612bc0fae69392bc625a56594d67b5db0","src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/editions/1857-dessain-volume-2/edition.toml":"291ddf0e4045047fdf7a369a4019c3946e7a032be743c65d45155b527f3f83ea","src/sources/works/thomas-aquinas/in-omnes-pauli-epistolas-commentaria/work.toml":"06bb6a660ea3e7d48fdfbf5c8bf685c8818454bc089eed657ae701e2449420cb","src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/artifacts/pg19950-body-4597132e/artifact.toml":"6154e86711081c51cdd680d9d97378f69958f5e2b06a237c600ff1371ea13efe","src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/artifacts/pg19950-body-4597132e/source.txt":"4597132e2dfd680253f4a52977af25245b61406d2325480f5a7308bc50265efd","src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/artifacts/pg19950-raw-4adb238f/artifact.toml":"c3bc07fb6e32ab3b831b22869b09fc0dd8912ddfcb94b186bbedf87569b7defa","src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/edition.toml":"6f40b2cb777a069da39170772ba21fb55606c47c2ed971d5ed82c7dc85d6f38b","src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/passages/iii-79-1-corpus.toml":"ef5a1632a8023254bdfa04543e10775f773093e353d491e4ccfe4a65dbbff1dd","src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/passages/iii-79-2-corpus.toml":"9fc873af9478a5d50ef55ba60c0d127e8cd896707504d06db02ae3e02a2afdff","src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/passages/iii-79-6-corpus.toml":"271abe0190246a25d4ff547d1c68b48bf6cd6aa5003b59972c68162789b90722","src/sources/works/thomas-aquinas/summa-theologiae/editions/2006-english-dominicans-gutenberg-tertia/passages/iii-79-6-reply-1.toml":"68b6ed495986d534c383082ad7c3728441cd7d90dfac19b20bb289e5d47ac46f","src/sources/works/thomas-aquinas/summa-theologiae/work.toml":"99bf96a21399140542fd6e02b51ace8f3b312ba3b0ad30446f8ceb46f18e70ab","src/sources/works/thomas-aquinas/super-ephesios/editions/1857-dessain-volume-2/edition.toml":"11718b71891cd960b5c29ae11ce9444c1cb0042cead81055cd93af3dad508e5a","src/sources/works/thomas-aquinas/super-ephesios/editions/1857-dessain-volume-2/passages/chapter-4-lectio-1.toml":"eba2984b5841facf07b577de4102072f1a0d0cdce166db4aaa2b1b4362a2e4f2","src/sources/works/thomas-aquinas/super-ephesios/editions/1857-dessain-volume-2/passages/chapter-4-lectio-2.toml":"daa5c856ce68f87e938365ce8c8f917a843a97d79c4295e552b98b400efa5f8f","src/sources/works/thomas-aquinas/super-ephesios/editions/1857-dessain-volume-2/segments/chapter-4-lectures-1-2-facsimile.toml":"901c262b99b0d8b332a3642cba112b7e5ab68b5e7fc81ffa8b36bea4154b6104","src/sources/works/thomas-aquinas/super-ephesios/work.toml":"2d8e8d012a30bb8dcc6f678e33d8615cc37b28d625f0c7a2ff960c6c964cc92b"},"provider":"gpt","review":"research","schema":1}
+EFFORT: xhigh
+ARGS: {"audience":"adult parish assembly","date":"2026-09-20","proper":"liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost","provider":"gpt","research_handoff":".scratch/tlm-research/dossier.md"}
+DOCUMENT_ROOT: src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost
+REPAIR_TARGETS: ["research"]
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: []
+
+
+--- FRAGMENT: common/agent-brief.md ---
+# Agent Brief
+
+You are a fresh AI worker in a deterministic guidance workflow. You receive
+exactly one guidance packet. You do not decide what task comes next, what
+criteria to apply, or whether your work is accepted. The workflow engine owns
+all of that.
+
+## Your constraints
+
+1. You receive one packet. Do not ask for additional instructions beyond what
+   the packet contains.
+2. You must produce a structured JSON result at a path the parent driver
+   specifies. The result schema depends on the stage type.
+3. Do not paraphrase, summarize, or reinterpret the packet. Execute it.
+4. Your packet's header states the run you are part of and the ground you
+   work on. `DOCUMENT_ROOT` is the resolved path of the thing under work: use
+   it, and do not assemble a path from `ARGS` yourself. A document of the same
+   name exists under more than one provider directory, and a lane that built
+   the path from the arguments swept the wrong provider's copy to completion
+   before anything caught it. Where the header names `REPAIR_TARGETS`, those
+   are the repair owners this run admits, whatever a later fragment lists.
+5. If you are a reviser, the packet contains PRIOR_FINDINGS from the
+   evaluator. Address each blocking finding. Do not relitigate accepted work.
+   A CARRIED_FINDINGS header, where it is not empty, holds blocking findings
+   raised in an earlier evaluation against work this stage owns, which reached
+   no owner then because a different owner was repaired first. They still
+   stand and they are addressed to you. Treat them exactly as PRIOR_FINDINGS,
+   and say in your summary what you did with each. An ADVISORY_FINDINGS
+   header is neither: it holds findings the evaluation chose not to block on,
+   which gate nothing and are owed no disposition. Clear what you can of them
+   while you are in those files and leave the rest.
+6. If you are an evaluator, return structured findings with stable IDs. Do
+   not rediscover what mechanical gates already checked.
+7. Your prose, layout, and scholarly choices may vary. The guidance sequence
+   itself is deterministic; your output is not required to be.
+8. Preserve the existing repository model: the canonical proper leaf owns the
+   prose and research. The synthesis artifact is derived from it. Do not
+   create a second synthesis-only prose authority.
+9. Follow guidance/ for what constitutes a correct Triptych artifact. The
+   workflow system tells you the sequence of work; guidance/ tells you what
+   correct means.
+10. You are the whole of your dispatch. Do not spawn sub-agents, helpers, or
+    lanes of your own: the workflow declares every agent that runs and gives
+    each exactly one packet, and an agent that fans out inside itself is a
+    dispatch the run did not record. One lane that did so produced some
+    2,600 lines of helper output, exhausted the host's budget, and took its
+    four sibling lanes down with it mid-flight. Read, verify, and write in
+    this context yourself.
+
+--- FRAGMENT: common/result-format.md ---
+# Result Format
+
+Your structured result must be valid JSON. The required schema depends on
+your stage type.
+
+## Name the packet you are answering
+
+Every result must repeat, exactly, the `STAGE` and `ITERATION` values from
+this packet's header:
+
+```json
+{
+  "stage": "<the STAGE line of this packet>",
+  "iteration": <the ITERATION line of this packet, as a number>
+}
+```
+
+The engine rejects a result that names any other packet. That is how it tells
+your work from a result submitted for a different stage, or from an earlier
+result resubmitted.
+
+## Name your lane, when this packet is a lane packet
+
+If this packet's header carries `LANE` and `LANE_INDEX` lines, you are one
+lane of a fan-out stage. Your result must also repeat, exactly:
+
+```json
+{
+  "lane": "<the LANE line of this packet>",
+  "lane_packet_hash": "<the lane_packet_hash the parent driver gave you>"
+}
+```
+
+The parent driver states your lane's `lane_packet_hash` when it dispatches
+you; it is the digest of this packet's exact bytes, and echoing it is how the
+engine tells your result from one written against a packet it has replaced.
+The engine rejects a lane result that names another lane, or a packet hash
+other than the one it emitted for your lane. Report only on the criteria your
+lane fragment gives you. Do not answer for another lane, and do not merge your
+findings with anyone else's: `tpt` joins the lanes itself, in the order the
+workflow declares.
+
+## Worker (linear or revision) stages
+
+```json
+{
+  "stage": "author-proper",
+  "iteration": 0,
+  "disposition": "PASS",
+  "summary": "One or two sentences describing what you did.",
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost/main.tex"
+}
+```
+
+Use `disposition: "PASS"` when you completed the stage's work. If you could
+not complete it, use `disposition: "BLOCKED"` with a `summary` naming what
+stopped you: the run stops there. Do not report `PASS` for work you did not
+do; the engine has no other way to tell the difference.
+
+### Say what happened to each finding you were given
+
+Some stages owe the engine a repair report and some cannot give one. The
+pipeline decides, with `reports_repairs` on the stage, and your own stage
+fragment tells you whether yours is one. **Where it is, and your packet's
+`PRIOR_FINDINGS` header carries blocking findings, a `PASS` result must also
+carry `finding_dispositions`.** One entry per forwarded finding, and no result
+without it advances:
+
+```json
+{
+  "finding_dispositions": [
+    {"id": "CON-CIT-003", "outcome": "repaired"},
+    {"id": "CON-PRO-001", "outcome": "not-repaired",
+     "note": "Why it could not be cleared, in a sentence."}
+  ]
+}
+```
+
+- `id` is the finding id **exactly as `PRIOR_FINDINGS` gives it**. You are
+  not minting these; you are answering the ones you were handed.
+- `outcome` is `repaired` or `not-repaired`. There is no third value.
+- `note` is optional to the engine and needed in practice on a
+  `not-repaired`: it is what the run quotes back when a stage blocks, and an
+  unrepaired finding with no note tells the next reader nothing.
+
+What the engine enforces, on a stage that reports and was given findings:
+
+- **Every forwarded blocking finding appears exactly once.** Leaving one out
+  is refused, and so is naming one twice. A dropped finding reads exactly
+  like a repaired one, and the iteration budget would score an abandoned
+  defect as progress.
+- **A finding the engine did not forward you is refused.** The set it holds
+  you to is the blocking ids it recorded when it routed them into your stage,
+  which is what `PRIOR_FINDINGS` states: one more or one fewer is refused.
+- **`CARRIED_FINDINGS` is not part of this report.** Where your packet has
+  that header it holds findings you must still address — they are yours and
+  unaddressed — but they reached you from an earlier transition and the
+  engine does not expect them here.
+- **`ADVISORY_FINDINGS` is not part of this report either, and naming one is
+  refused.** That header holds findings the evaluation did *not* block on.
+  They gate nothing and spend no iteration budget. Clear the ones you can
+  while you are already in those files — that is why they are handed to you —
+  and leave the rest. You owe the engine no account of them, and an entry for
+  one is rejected exactly as a finding the engine never forwarded is.
+
+Two things the engine does not check, and you should still get right. A
+stage handed no blocking findings has nothing to report and the engine
+returns before reading the field, so a report volunteered there is accepted
+and silently ignored — a first authoring pass is not a failed repair. And the
+shape check is by schema, not by stage, so a worker-shape stage that does not
+report may carry the field without being refused. Neither reaches the budget.
+Return the field when you were given findings and told to account for them,
+and not otherwise.
+
+The declaration is per stage because two stages receive blocking findings and
+cannot answer for them. A fan-out `research` re-entry returns a result the
+engine composed by joining its lanes: no agent wrote it, and no lane can speak
+for the whole. `research-synthesis` returns an evaluator shape. Neither may
+carry the field at all — their schemas do not define it, and the engine
+refuses a result that carries it.
+
+`not-repaired` is a legitimate outcome and reporting it is not a failure. It
+does not by itself block the run and it is not held against you; it is the
+honest answer whenever you attempted a finding and are not confident you
+cleared it. Where your stage reports, this is the only channel through which
+the engine learns whether repair is working — the evaluator cannot supply it,
+because re-reading a changed document it sees defects and not the history of
+attempts on them. A production's central defect survived three rounds for
+exactly that reason: each round reported it repaired, and the run spent its
+budget re-finding it.
+
+## Research lane stages
+
+A read-only research lane returns evidence, not prose and not an artifact:
+
+```json
+{
+  "stage": "research",
+  "iteration": 0,
+  "lane": "scripture-context",
+  "lane_packet_hash": "the lane_packet_hash the parent driver gave you",
+  "disposition": "PASS",
+  "summary": "One or two sentences on what you swept and what you found.",
+  "findings": [
+    {
+      "id": "SCR-001",
+      "claim": "What you are asserting, in one sentence.",
+      "evidence": ["Each source named precisely enough to be checked."],
+      "notes": "Uncertainty, disagreement, negative results, evidence state."
+    }
+  ]
+}
+```
+
+Every finding carries all four of `id`, `claim`, `evidence`, and `notes`.
+`evidence` is a list of strings. A sweep that found nothing is itself a
+finding: record the negative result rather than omitting it.
+
+A research lane has only two dispositions. `PASS` means you did your lane's
+sweep and these are its results, whether or not it found much. `BLOCKED` means
+you could not do the sweep at all, and the run stops there. There is no
+`CHANGES_REQUIRED` for a research lane; the engine rejects one.
+
+`tpt` joins every lane itself and forwards the joined findings, each
+tagged with the lane that raised it, into the next stage's packet. Do not
+write anything into the repository, and do not answer for another lane.
+
+## Evaluator stages
+
+```json
+{
+  "stage": "content-evaluation",
+  "iteration": 0,
+  "disposition": "PASS" | "CHANGES_REQUIRED" | "BLOCKED",
+  "summary": "One or two sentences.",
+  "findings": [
+    {
+      "id": "VIS-001",
+      "severity": "blocking",
+      "location": "page 4",
+      "problem": "Description of the issue.",
+      "required_result": "What the reviser must produce to resolve this finding."
+    }
+  ]
+}
+```
+
+- `PASS`: no blocking findings. The workflow advances. A `PASS` that still
+  carries one is refused, because nothing downstream can resolve it.
+- `CHANGES_REQUIRED`: blocking findings present. The workflow enters a
+  bounded loop back to the stage that owns the repair — a reviser, or an
+  earlier stage that must run again. Findings are forwarded verbatim to it.
+  A `CHANGES_REQUIRED` carrying no blocking finding is refused: it asks for a
+  change while naming none.
+- `BLOCKED`: a finding cannot be resolved by revision. The workflow stops.
+
+Finding IDs must be stable across iterations (e.g., `VIS-001` refers to the
+same issue every time it appears). Use the prefix your own stage fragment
+gives you; `CON-` for content evaluation and `VIS-` for visual evaluation are
+two of them, and a stage that names another means it.
+
+Only `blocking` severity findings trigger revision. `accepted` and `advisory`
+findings are recorded but do not block.
+
+### An advisory is a verdict, not a waiting room
+
+**Severity is decided once, on the evidence, at the iteration you first see
+the defect. It is not a queue position.** If a defect would justify blocking
+the run at any iteration, it is `blocking` the first time you report it. If it
+would not, it is `advisory` and it stays advisory for the life of the run.
+
+Raising as `blocking` an id you filed as `advisory` in an earlier iteration is
+the failure this rule exists to stop, and it is forbidden. Nothing about the
+defect changed between the two reports; only your patience did. What the
+practice actually does is hide the true size of the repair from the run:
+the blocking count falls round after round while the backlog behind it does
+not, so the iteration budget is spent draining a queue the engine cannot see.
+
+This is not hypothetical. In run `e4aebcbd941b6b1a`, **19 of 62 blocking
+findings — 31% — were the same lane's own advisories from a previous round,
+promoted a mean of 1.1 rounds later.** One lane filed four advisories at
+iteration 0 and raised those exact four as blocking at iteration 1; another
+filed four at iteration 4 and raised those exact four at iteration 5. The
+production's blocking counts read 18, 12, 10, 8, 7, 5, 7 and looked like
+convergence. They were slices off a backlog that refilled itself every round,
+and the run reached its absolute ceiling with the document in good shape.
+
+So: report the defect at the severity it deserves, immediately. A round that
+honestly returns twelve blocking findings converges; a round that returns four
+and warehouses eight does not. Do not soften a real defect to advisory because
+the round already carries several — the count is not a budget you are spending.
+
+Where a defect genuinely does not merit blocking, an advisory now reaches the
+reviser anyway: the `content-revision` packet carries the standing advisories
+under `ADVISORY_FINDINGS`, and the reviser clears what it can without the
+finding ever gating the run. An advisory is no longer a channel that reaches
+nobody, so there is no longer any reason to promote one to be heard.
+
+### `accepted`: true, and not worth a repair round
+
+Blocking and advisory were the only two answers a lane had for a real defect,
+and neither says the thing a careful reader most often wants to say: *this is
+true, I checked it, and repairing it would cost the document more than the
+defect costs the reader.* Forced to choose, lanes blocked. One lane wrote in
+its own report that it doubted a one-clause rewording deserved to block and
+raised it blocking anyway, because it read the rule above as forbidding
+anything else. That is a round spent on a clause.
+
+So there is a fourth severity:
+
+```json
+"severity": "accepted",
+"accepted_because": "the guide states the bound correctly two lines later; moving it costs a paragraph of settled prose to save a reader nothing"
+```
+
+Use it when **all** of these hold. The defect is real and you have checked it.
+Repairing it would touch settled prose, or move pagination, or trade one true
+sentence for another. And a reader who never learns of it is not misled.
+
+`accepted` carries no `repair_target` — accepting a defect is deciding it needs
+no owner, and the engine refuses a finding that claims both. It does not block,
+does not spend the iteration budget, and does not stop acceptance.
+
+**An accepted finding binds the rest of the run.** The engine refuses a later
+round that raises the same id as blocking, whichever evaluator you are and
+whether or not anything of yours reaches a tracked file. Where the stage is
+the one the pipeline declares as recording standing findings, your verdict is
+also written to `<document_root>/evaluations/blocking-findings-v1.toml` under
+`[[accepted]]` with your reason, and the advisories beside it under
+`[[advisories]]`. That is the point of it: the judgement outlives the round
+that made it, so the next cold read of the same passage meets the decision
+instead of the bare defect. Where the stage is not one of those — on the
+propers pipelines `visual-evaluation` and `web-evaluation` are not, and no
+recording stage runs after them — the judgement binds this run and stops
+there. It is held in the run directory under `build/`, which is gitignored,
+which `make clean` and a workspace tidy delete, and which no later run reads:
+what you accepted is a decision this run will honour and not a record the leaf
+carries forward.
+
+If you believe an earlier round accepted something it should not have, do not
+raise it blocking. Escalate it: a disagreement about what is worth repairing is
+a question for a person, and the escalation route is how one reaches them.
+
+### Reading `REVIEW_SCOPE`
+
+An evaluation packet after the first carries `REVIEW_SCOPE`: the leaf-relative
+files that changed since this stage last read the document. An empty list means
+nothing changed.
+
+Read the whole document the first time. After that, **read what moved, and read
+the passages your own standing findings name.** You are not being asked to skim
+the rest; you are being asked not to re-derive fresh blocking findings from
+settled prose that no reviser has been near.
+
+This is not a formality. A run of this pipeline blocked with its document in
+good shape after eight consecutive evaluations, eight failures, one repeated
+finding, and not one round in which the reviser failed to repair what it was
+given. Seven of the eight rounds found something new and true in prose nobody
+had touched, because a cold reader of a dense document at maximum effort never
+runs out of true things to say. The document was converging. The review was
+not terminating, and it cost some nine million subagent tokens to discover.
+
+A blocking finding against a file outside `REVIEW_SCOPE`, whose id is not
+already standing, must carry:
+
+```json
+"out_of_scope_reason": "unchanged in itself, but the sentence it depends on moved in sections/90-scope.tex this round, and its claim is now false"
+```
+
+Say what makes it true now and what kept it from being raised before. The
+engine refuses a blocking finding of that shape without one, and refuses the
+whole submission with it — on a fan-out stage that is every lane's work — so
+supply the field or choose a different severity. It is not a ban: a defect
+really can become true because another file changed, and that sentence is all
+that is asked of you.
+
+### Five fields on every finding, whatever its severity
+
+**Every finding carries `id`, `severity`, `location`, `problem` and
+`required_result`. All five, on every finding, at every severity.** There is
+no reduced shape for a finding that does not block. `required_result` in
+particular is required on an `advisory` and on an `escalation` exactly as it
+is on a `blocking` finding, and the engine refuses a result that omits it.
+
+That is a rule about the report and also about the thinking behind it. A
+finding that cannot say what would satisfy it has not identified a defect: it
+has recorded a misgiving. An advisory saying only that a passage "could be
+stronger" leaves the next reader nothing to act on and nothing to close, so
+the field is demanded of it. For an advisory, `required_result` states what
+would resolve it if anyone chose to act on it; for an escalation, it states
+what the maintainer is being asked to decide. Neither is a promise that the
+run will do the work.
+
+The refusal is total. A malformed finding fails the whole result, and on a
+fan-out stage the whole submission — every lane's result is refused, not only
+the one that carried it, and the run is untouched. One advisory missing
+`required_result` has cost a five-lane submission a full round trip.
+
+Two fields, and only two, depend on severity:
+
+| Field | When it is required |
+| --- | --- |
+| `id` | always |
+| `severity` | always |
+| `location` | always |
+| `problem` | always |
+| `required_result` | always — `blocking`, `accepted`, `advisory` and `escalation` alike |
+| `repair_target` | `blocking` only |
+| `accepted_because` | `accepted` only |
+| `escalated_to` | `escalation` only |
+| `out_of_scope_reason` | a `blocking` finding outside `REVIEW_SCOPE` whose id is not already standing |
+
+`repair_target` is carried only where your stage's own fragment says the
+stage routes repairs by owner, and only on a blocking finding. It is refused
+on an escalation, because an escalation is precisely a defect no stage in
+this run may repair and naming an owner would make it a blocking finding
+wearing a severity that exempts it. An advisory does not carry it.
+`escalated_to` belongs to an escalation and only to a stage whose fragment
+admits that severity.
+
+Nothing else on a finding varies with severity. If your stage's fragment
+gives you a field this table does not name, it is that fragment's to explain.
+
+### `observations`: something real that your criteria do not reach
+
+An evaluator result may also carry observations:
+
+```json
+{
+  "observations": [
+    {"location": "sections/50-interpretive.tex P4",
+     "note": "carries no 'what the element-by-element reading misses' field"}
+  ]
+}
+```
+
+Both `location` and `note` are required on each entry, and there are no
+other fields. An observation has **no severity, no `required_result`, and no
+`repair_target`**: it routes nothing, blocks nothing, spends no iteration
+budget, and stops no acceptance. `location` names the file and the place in
+it to the same standard a finding's does. `note` states what you saw, in a
+sentence.
+
+It exists so that a real sighting a lane's own criteria do not reach reaches
+the run at all, instead of dying in the lane's hand-back prose. `tpt` joins
+observations in canonical lane order exactly as it joins findings and tags
+each with the lane that raised it. Where the stage is the one the pipeline
+declares as recording standing findings, they are written beside the blocking
+findings into a tracked file in the document's own tree, which outlives the
+run — a record for a person to read; no later run reads it back.
+
+An observation is not a lesser finding and not a shortcut. If your own
+criteria reach the defect, raise it as a finding under them; if your stage's
+fragment names the class as another lane's, leave it to that lane rather than
+observing it. And a kind of thing that keeps arriving as an observation is a
+missing criterion in some lane's fragment, not a fact about the document —
+say so in the `note` when you think you have found one.
+
+Only stages whose schema defines observations may return them; the engine
+refuses the field from a stage that does not, and your own fragment says
+whether yours is one. A worker stage and a research lane have none.
+
+A stage that also writes an artifact returns `artifact_path` alongside these
+fields on a `PASS`, exactly as a worker stage does. Its own fragment says so
+where that applies.
+
+## Naming who repairs a blocking finding
+
+Some evaluator stages route a repair by owner. Where the stage's own fragment
+says so, every **blocking** finding must also carry:
+
+```json
+{
+  "repair_target": "research" | "brief" | "authoring"
+}
+```
+
+- `research`: the evidence is not there, and getting it needs a fresh sweep.
+- `brief`: the evidence is there and the research brief states it wrongly, or
+  drops a bound the brief itself recorded. No retrieval is required.
+- `authoring`: the brief is adequate; the canonical leaf's prose, structure,
+  or use of citations is not.
+
+The stage's own fragment names the values it admits and how to tell them
+apart; a stage that routes by owner may declare fewer than these three.
+
+`tpt` reads the field and chooses the repair route itself, in the order the
+workflow declares its routes, so one blocking finding naming the earlier owner
+sends the whole run that way. You are not choosing the route and neither is
+the driver: you are stating who owns the defect. The set of values is closed,
+and the engine rejects a blocking finding that omits the field or names
+anything outside it. Advisory findings do not carry it.
+
+## Gate stages
+
+Gates are run by `tpt` directly. No AI worker result is needed. The parent
+driver runs `tpt ... advance <run-id> --run-gate`.
+
+## Fail closed
+
+A malformed or missing result, or one naming a different packet, causes the
+workflow to stop with an error. No transition occurs. The run remains
+inspectable but cannot advance until a valid result for the current packet is
+submitted.
+
+A refused result is not recorded: it is not copied into the run and its hash
+does not enter the run's state. Nothing later reads it. Correct it and submit
+it again for the same packet.
+
+--- FRAGMENT: proper-study/contract.md ---
+# Three documents, one proper
+
+Read `guidance/liturgy/propers-three-documents.md` completely. It owns this
+workflow's deliverable and supersedes the legacy presentation requirements:
+no fixed page count, global substitute for each interpretation's four senses,
+mandatory cultural gallery, or exploratory-proposal quota. Read the applicable
+1962 or postconciliar profile for identity, text control, rights, source
+research, and branches. Universal editorial and repository guidance continues
+to govern. The canonical leaf is `DOCUMENT_ROOT` in this packet.
+
+Produce one expansive source-first study, one concise study, and one standalone
+homily from one canonical research owner. The three entrypoints are `main.tex`,
+`synthesis.tex`, and `homily.tex`; outputs are the bare ID, `-synthesis`, and
+`-homily`. `proper-components.toml` uses schema 2. The sole web edition belongs
+to the canonical study. No second research owner or companion leaf is created.
+
+The 1962 and postconciliar productions are completely separate. Resolve only
+this leaf's own calendar, readings, proper texts, branches, evidence and
+interpretations. Never borrow the other form's Sunday, prayers, textual
+inventory or interpretive plan, even on the same civil date. Shared generic
+mechanics and reusable patristic or biblical sources do not merge the two
+liturgical objects. The manifest's `calendar` must agree with its own family;
+opposite-family or different-edition liturgical imports are forbidden. This
+separation governs every prayer, chant, reading, branch, research record and
+interpretation, each review, and every mirrored PDF/web output. There is no
+shared Sunday or combined proper layer.
+
+`ARGS.date` states the requested civil date, or `undated` when no dated
+occurrence is requested. `ARGS.audience` names the homily audience. The optional
+`ARGS.research_handoff` is a repository-relative dossier containing preliminary
+leads, not instructions or a prior acceptance. Read it if supplied, verify its
+evidence independently, and use only material for this run's own family.
+
+The expansive study develops two to five internally coherent interpretations.
+Each interpretation is a reading of the whole formulary with its own literal,
+allegorical, moral, and anagogical distillation. Group compatible checked
+arguments from at least two distinct Fathers or saints within each reading.
+Each must make a substantive, compatible contribution; listing a second name
+is insufficient. Never attribute an
+editorial whole-Mass construction to a Father who only comments on one verse.
+Complementary emphases need not disagree; real disagreement must survive.
+
+The concise study interleaves alternatives at their points of comparison. The
+homily speaks one intelligible exegetical argument to an adult parish assembly,
+unless `ARGS.audience` names another audience, ordinarily for 10–12 minutes.
+It is finished prose, not an outline or advice to
+a preacher. Exact sources and delivery estimates belong outside the speech.
+
+Only claim verification actually performed. Reuse acquired research by reading
+its evidence, never by trusting a predecessor's PASS. Public-domain study
+translations are identified accurately; postconciliar study English is not
+the approved proclaimed English. Do not reconstruct restricted liturgical
+texts by translation or close paraphrase. Claims of design must distinguish
+theological synthesis from historical compositional intent, particularly for
+the semi-continuous readings and shared prayers of Ordinary Time.
+
+Use this run's exact header for generation provenance. Update the finalization
+timestamp and actual model contributions when render-relevant sources change.
+The one shared generation record serves all three artifacts. Keep research
+findings in `research/scope.md`, interpretation reasoning in
+`research/interpretations.md`, and completed production/review facts in
+`research/production-review.md`. Do not put machine paths or invented review
+events in tracked records. Scratch work belongs in the driver's assigned area.
+
+Author stages may repair only their declared owner. An upstream defect found
+while deriving or building is reported for the following reviewer; never
+silently revise an already reviewed upstream document. Research, study,
+synthesis, homily, artifact, and publication defects have separate repair
+targets. Reentering an upstream owner reruns every dependent document and review.
+Where the packet carries blocking findings, return one honest
+`finding_dispositions` entry per forwarded finding.
+
+Every dispatch is a fresh worker at the packet's declared effort. Do not spawn
+nested agents. Reviewers receive no authoring conversation, author's defense,
+or desired verdict. Follow the exact packet and return the structured result.
+
+--- FRAGMENT: proper-study/review.md ---
+# Independent cold review
+
+You are the independent reviewer, not the author or the author's advocate.
+Read this packet, the actual deliverable, the governing contract, and its
+evidence. Do not receive or request the authoring conversation or a preferred
+verdict. Inspect independently, including the relevant exact source loci.
+Existing records guide verification; they do not establish that you performed it.
+
+Return stable, concrete findings with `id`, `severity`, `location`, `problem`,
+and `required_result`. Every blocking finding names an admitted `repair_target`
+from this packet. Use PASS only when no blocking defect remains; use
+CHANGES_REQUIRED for repairable defects and BLOCKED for an actual obstacle.
+Do not downgrade a defect to exhaust a budget. Report disagreements about
+quality with evidence and preserve source uncertainty without manufacturing it.
+
+Judge the whole assigned deliverable, including defects not named by the last
+review. Mechanical checks are necessary but do not prove source support,
+theological coherence, faithful comparison, depth, oral clarity, or beauty.
+The review summary names the artifact, checked evidence, meaningful limits,
+and verdict. Do not edit the artifact you review. The next author records
+dispositions in the production audit; the engine retains your exact result.
+
+`REVIEW_INPUTS` is the engine's immutable evidence seal for this dispatch. Do
+not supply `review_inputs` in your result; the engine owns that field. Any
+changed reviewed bytes require a new dispatch and independent review. Mutable
+artifact receipts cannot renew an earlier acceptance. Research review also
+checks `research/review-dependencies.toml` for complete same-family external
+owners; missing controlling evidence is a research-owned blocking finding.
+
+--- FRAGMENT: proper-study/research-review.md ---
+# Review the research before prose
+
+Review `research/context.md`, `scope.md`, `interpretations.md`, source bindings,
+and the edition-controlled collation records. Verify the Sunday, cycle,
+territory, exact passage boundaries, full ordered inventory, and branches.
+Check the retained primary sources at their exact loci, attribution and rights.
+Test the passage-by-passage reception sweep for omissions and unsupported
+claims of having searched or verified. Do not substitute the old profile's
+mandatory gallery or proposal counts for this new task.
+
+Test every proposed interpretation as a complete argument, supported by
+substantive contributions from at least two distinct Fathers or saints. A
+name-count alone does not demonstrate agreement. Are its authors'
+controlling claims compatible? Does each appointed element actually contribute?
+Are its four senses distinct and textually grounded? Do the two to five
+readings differ materially without invented conflict? Are the Fathers' own
+claims kept distinct from the editor's complete-Mass synthesis? For Ordinary
+Time, does the evidence respect independent semi-continuous courses and shared
+Missal prayers? Refuse thin themes or source lists that cannot support a study.
+
+Use stable `RES-` finding IDs and repair target `research`. PASS authorizes
+study drafting from this bounded evidence, not a claim of exhaustive scholarship.

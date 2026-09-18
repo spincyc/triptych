@@ -1,0 +1,361 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "STU-001",
+      "location": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/10-each-element.tex:38,45; sections/20-gift-cultivation.tex:19; sections/30-conversion-without-rivalry.tex:23; sections/40-one-people-through-ages.tex:18",
+      "problem": "The body repeatedly narrates its policy for preserving source differences after already stating those differences. Examples include \u201cTheir emphases should remain audible in their own terms\u201d; \u201cThey must not be fused into one account\u201d; \u201cThe Sunday movement can carry both without pretending that their explanations are verbally identical\u201d; and \u201cThis qualification belongs beside Chrysostom\u2019s language of readiness to obey.\u201d The historical reading repeats the assurance that one people can be confessed \u201cwithout pretending\u201d every Father gives the same account. These sentences describe the writer\u2019s interpretive restraint rather than add a fact about Augustine, Chrysostom, Gregory, or their texts. Taken together they meet the recurrence threshold in guidance/editorial.md, \u201cState the finding, not the process that produced it,\u201d which expressly identifies narration of non-harmonisation as a defect. The actual source differences are useful and substantially accurate; the accompanying compliance narration interrupts otherwise substantive exposition.",
+      "repair_target": "study",
+      "required_result": "Revise the recurring process sentences across the study into direct source-attributed conclusions, or remove them where the surrounding exposition already establishes the difference. Preserve the concrete distinctions about faith\u2019s beginning and willing response, historical hour allocations, payment order, and heavenly murmuring; retain claim-local qualifications that materially affect accuracy. The resulting body should demonstrate these differences without explaining its policy of retaining or not harmonising them. Rebuild and inspect the affected pagination.",
+      "severity": "blocking"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/01-opening.tex",
+          "references": [
+            "research/source-audit.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "appointed-texts",
+          "kind": "appointed-text",
+          "path": "sections/05-appointed-texts.tex",
+          "references": [
+            "research/source-audit.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "each-element",
+          "kind": "proper-treatment",
+          "path": "sections/10-each-element.tex",
+          "references": [
+            "research/source-audit.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "gift-cultivation",
+          "kind": "interpretive-lane",
+          "path": "sections/20-gift-cultivation.tex",
+          "references": [
+            "research/source-audit.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "conversion-without-rivalry",
+          "kind": "interpretive-lane",
+          "path": "sections/30-conversion-without-rivalry.tex",
+          "references": [
+            "research/source-audit.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "one-people-through-ages",
+          "kind": "interpretive-lane",
+          "path": "sections/40-one-people-through-ages.tex",
+          "references": [
+            "research/source-audit.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/80-comparison.tex",
+          "references": [
+            "research/source-audit.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "study-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-apparatus.tex",
+          "references": [
+            "research/source-audit.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+      "element_keys": [
+        "entrance",
+        "collect",
+        "first-reading",
+        "responsorial-psalm",
+        "second-reading",
+        "acclamation",
+        "gospel",
+        "offerings",
+        "communion-ps119",
+        "communion-jn10",
+        "after-communion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine",
+            "Thomas Aquinas",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "gift-cultivation"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "gift-cultivation",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/source-audit.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Augustine",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "conversion-without-rivalry"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "conversion-without-rivalry",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/source-audit.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Gregory the Great",
+            "Augustine"
+          ],
+          "component_keys": [
+            "one-people-through-ages"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "one-people-through-ages",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/source-audit.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+    "files": {
+      "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/main.tex": "4e39abdc774f10ea2200c30d8e2161464d6425ce0cb3040db912153f2e2df3e7",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/interpretations.md": "f399b2bd86ea0ef6c4997ed09660278b02ca43c3294eb6792d65581bce66646b",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/source-audit.md": "3f66b8da4d4eaba71ee8eee9ab2d62ae483341a933d76be8d83cf3618cde36be",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/01-opening.tex": "385d108bb412194d9c48a585feb8089feae22b4b79e4d60b8a6251cf46e08ba4",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/05-appointed-texts.tex": "3cf65a230bc7ae5fc6b5d9f5348619dba782d75432fcd9d0d37718f2ff25d75a",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/10-each-element.tex": "05ba4a9c39f2af39ab21e09423bfc8ba0e52ef841ec3b7ab45b11d6dd790e55c",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/20-gift-cultivation.tex": "300ed2ae5da98fb5b1f6c44d38f68db1f92627529b079dd0482c82405e2bb153",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/30-conversion-without-rivalry.tex": "b46ed8ece93c086586f97da2478fbff51325a74c71493eacedb60b119cfe6928",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/40-one-people-through-ages.tex": "3e0cc6950ee89138cd142f64bb00f80de370542b8a9ef350d5316bb18df0d4fc",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/80-comparison.tex": "f24d2f086bd035a98a2e527626e1a28072ce8550616b2ec4e240d05626185d2b",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/90-apparatus.tex": "e63646cf6a6808d71acbbdb19652422a41dad5f0dda93ed32d02e408cdca827d"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "1",
+            "1375f708d8670b2f4ccaf1869cfaa6fe67fe6946dc2b962c766bcdc499d3b47e",
+            "8f4e6454c021280a",
+            "af9b2d10a98a6aac2ce44cc84d6358ede8e630e8",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "Reviewed the complete canonical study, The Gift We Share, and its 20-page proof at build/tpt-runs/8f4e6454c021280a/artifacts/study-review-0/proof/study.pdf. Its three substantial readings each engage the full formulary, both Communion alternatives and all four senses, with meaningful contributions from multiple Fathers or saints. Independently checked relevant Scripture, Augustine, Chrysostom, Gregory, Aquinas, Jerome, Irenaeus and Bellarmine loci, the dated USCCB readings, and liturgical witnesses at their stated evidentiary levels. No substantive source, doctrinal, coverage or visual defect was identified. Complete official 2008 Latin/2011 U.S. altar-book collation and original-language collation of the retained NPNF English remain unperformed and are not claimed. CHANGES_REQUIRED for one recurring study-owned editorial defect. Detailed verification is recorded in .scratch/no-production/study-review-0/verification.md."
+}

@@ -11,76 +11,126 @@ Last reconciled: 2026-09-17.
 
 <!-- promised-deliverable: propers-three-documents-2026-09-17 -->
 
-**In progress.** The maintainer requested a robust, versioned successor
-`proper-study` state machine, retaining the legacy `proper` schema-1 contract,
-and a complete production exercise for both upcoming Sunday propers on
-2026-09-20. The authorized provider is GPT, with these exact identities:
+**In progress: pagination revision.** Both first-production Sunday runs reached
+ACCEPTED, with six reviewed PDFs and two canonical web editions installed.
+Independent [integration review](workflows/reviews/propers-three-documents-integration-checkpoint-2026-09-17/REPORT.md)
+passed that exact prior scope. The maintainer then specified approximately
+10–12 pages for each concise interpretive document, retaining the established
+first four pages, and 20–50 pages for each expansive study. The two five-page
+concise PDFs do not meet that clarified requirement and are being superseded;
+no whole-task completion is claimed.
+The maintainer requested three distinct documents for each Sunday on
+20 September 2026, cold review at each substantive deliverable, and correction
+and rerunning to completion. The GPT identities are:
 
 - `liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost`;
 - `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a`.
 
-Each proper must yield three distinct, coherent documents: an expansive full
-study with two to five patristic or saintly interpretive lanes, each interpreting
-the whole proper and each developing the literal, allegorical, moral and
-anagogical senses; a concise alternative reading document interleaving the
-appointed texts and interpretation; and a standalone, speakable exegetical and
-pedagogical homily. Source reception and original editorial synthesis must
-remain distinguishable. The working homily audience is an adult parish and the
-working delivery length is 10–12 minutes, pending any maintainer clarification.
-These are drafting assumptions, not independently received preferences.
+Each expansive study develops three coherent patristic or saintly
+interpretations of the **whole formulary**, each with its own four senses.
+Each concise study interleaves the alternatives; each separate homily provides
+continuous, directly speakable exegetical preaching. The working assumptions
+are an adult parish assembly and approximately 10–12 minutes. Word-count
+estimates do not certify timed human delivery.
 
-The maintainer clarified that the 1962 and postconciliar paths must never
-cross: their calendars and propers are distinct. Each production therefore
-has separate calendar resolution, source-owner judgments, interpretations,
-documents, reviews and release records. Shared build/review machinery and
-independently used primary-source identities do not authorize cross-family
-appointments or imported interpretive prose. This separation must be explicit
-in guidance and tested at the family and component boundaries.
+The maintainer repeatedly required physical separation of **all** calendar,
+proper, research, interpretation, document and review ownership. Every prayer,
+chant, reading and option stays beneath its owning 1962 or postconciliar
+edition tree. There is no common Sunday leaf. Generic machinery and neutral
+primary-source identities may serve independent consumers; appointments,
+source judgments and authored interpretations never pass between the trees.
+The [owning profile](guidance/liturgy/propers-three-documents.md) records this
+boundary, and direct, indirect and actual TeX recorder import probes verify
+rejection of opposite-family imports in both directions for all three outputs.
 
-Completion requires reusable output contracts and regressions, verified source
-instances and interpretive lanes for both Sundays, all six beautiful PDFs
-built and visually reviewed page by page before installation, faithful canonical
-web editions, and reconciled catalogue and release records. At each substantive
-deliverable, a cold independent review must inform correction of the deliverable
-and its governing guidance, followed by rerunning the affected workflow to
-completion. Tracked review dispositions and an evaluation of the real iterations
-must survive removal of transient run directories. A terminal blocked run is
-evidence of its actual disposition, not completion of this publication promise.
+| Historically accepted first production | Expansive study | Concise study | Homily |
+| --- | --- | --- | --- |
+| 1962 | 7,443 substantive words; 23 pages | 1,686 words; 5 pages | 1,283 spoken words; 4 pages |
+| U.S. 2011 postconciliar | 6,608 substantive words; 20 pages | 1,750 words; 5 pages | 1,288 spoken words; 4 pages |
 
-The guidance has passed independent cold review, including the maintainer's
-subsequent clarification that the physical trees must separate every prayer,
-chant, reading and option. The review is preserved in
-`workflows/reviews/propers-three-documents-guidance-2026-09-17.md`.
-Implementation review identified gaps in binding acceptance to reviewed bytes,
-routing a later stale artifact back through review, and requiring unrelated
-installed PDFs at a single proper's publication gate. All three were corrected
-and passed independent re-review: engine-owned review seals, executable repair
-routes, and a scoped installed-artifact check that preserves the global release
-policy. An actual new-leaf check also exposed and fixed the research owner's
-missing-entrypoint deadlock without changing the source-library schema. The
-implementation review and its exact file hashes are under `workflows/reviews/`;
-156 independently run focused tests passed. Real production remains the next
-acceptance boundary.
-Each research team is preparing its own complete formulary records. No Sunday
-document, production run, installation or release is accepted by this entry;
-the publication and real-run acceptance requirements remain open. The workflow authorities
-under `workflows/`, the owning liturgical profiles under `guidance/liturgy/`,
-and the two GPT publication leaves will hold their respective implementation,
-research, review and production evidence as it is completed. This ledger and
-register own overall scope and completion state. Work remains on
-`feature/codex/propers/homily`; this request does not authorize integration into
-`main` or deployment.
+The [production evaluation](workflows/reviews/propers-three-documents-production-2026-09-17.md)
+explains the resulting arguments, exact review history, repairs, source limits
+and verification. Both actual runs remain proper-study v1, seeded at
+`af9b2d10a`: 1962 `80a724fb8410dc3d`, 57 results (53 PASS, three FAIL,
+one CHANGES_REQUIRED); postconciliar `8f4e6454c021280a`, 44 results
+(40 PASS, four CHANGES_REQUIRED). The actual terminal publication gates
+returned ACCEPTED without findings or escalations. Each owning leaf archives
+its exact packets, results, immutable identity and terminal evidence.
 
-Existing requirements are not discharged by this new promise. In particular,
-the chronology corpus ledger still has its independent source audit and two
-related requirements open, while later entries record published proper
-consumers. That historical acceptance discrepancy needs an explicit disposition;
-consumer use must not imply corpus acceptance or independently invent dates.
-The earlier workflow records also identify durable carry-forward and escalation
-gaps, advisory routing, source-version changes stranding active runs, and
-publication gates coupling unrelated leaves. The successor's review and real
-run evaluation must distinguish inherited defects from newly demonstrated
-behavior without rewriting historical run outcomes.
+The 1962 stale-review failures after layout and navigation-label changes both
+returned to their real owner and fresh independent reviews. Its current study,
+concise, homily and visual reviews are iteration 2; web review is iteration 3.
+The postconciliar research authority/rights repairs, study prose correction,
+anchor repair and elective typography polish retain their original findings
+and dispositions. Its current research/study reviews are iteration 2;
+concise/homily/visual/web reviews are iteration 1. All 61 final PDF pages were
+individually inspected. Normal Make installation reproduced exact approved
+bytes, including ordinary companion rebuilds. Final desktop/mobile article
+proofs use the independently accepted breadcrumb names and renderer.
+
+The successor preserves legacy schema-1 publications and workflows. Review
+required engine-owned input seals, ordered upstream repair routes with fresh
+downstream review, and a scoped three-PDF publication check. Production exposed
+and repaired scoped metadata checks, literal-path conversion, superscripts,
+missing proper targets, and breadcrumb naming. Their independent reviews,
+negative controls, bounded historical comparisons and original failures remain
+under `workflows/reviews/`. The older combined anchor test command remains
+198 passes and one baseline-reproduced missing-publication error; after the
+legitimate installation, the exact missing-publication case passed separately.
+It is not represented as a rerun of all 199 tests.
+
+The final six-file proper-study v2 preparation was applied only after both
+real v1 acceptances and terminal archives. It fixes destructive raster output
+placement and doubled web-provider paths, includes the actual Markdown helper
+in command fixtures, and clarifies that ordinary Make installation must
+reproduce accepted hashes or return BLOCKED. The [live application record](workflows/reviews/propers-three-documents-recipes-v2-2026-09-17/live-application/RECORD.md)
+preserves the application, all 106 passing live tests, exact identities and
+four successful old-run status/replay checks. Original v1 state/manifests remain
+byte-identical; the catalogue separately declares current v2 and produced v1.
+No historical-version resolver or real v2 Sunday production is claimed.
+Terminal replay checks packet integrity, not historical recompilation.
+
+Final catalogue, release records, inventories and bindings are coherent:
+142 works, 194 documents, 218 issues and 6,220 pages; 142 source-inventoried
+publications and 2,286 files. All 142 classification arrays remain unchanged.
+`make check-sources` and `make check-release-bindings` pass after terminal
+archiving and v2 application, with zero stale release bindings. Source-family
+screening remains explicitly pending for all 153 units.
+
+Source evidence remains bounded. Full official 2008 Latin/U.S. 2011 altar-book
+collation is incomplete; postconciliar public-domain English is study wording,
+not approved proclamation text. Jerome's Isaiah delivery retains unresolved
+rights and no offline protected payload. Sixteen work records distinguish
+unknown composition dates from edition dates; GILM's registered PDF count was
+corrected to 44 without changing its bytes or loci. Twenty historical PDFs
+were restored through identity, metadata and byte checks, without new content
+or visual acceptance. Some transient reports lost during an earlier raster
+invocation were not recovered; the dedicated raster-child rule addresses the
+cause without rewriting the record.
+
+The new concise opening is physical page 1: complete propers map followed by
+exactly four senses overview rows; page 2: `Scriptural Date and Location`;
+pages 3–4: `The Propers: Themes and Movement`; page 5 begins the developed
+interleaved commentary. The overview does not replace each expansive lane's
+own four senses. The remaining concise pages must earn their extent through
+source-grounded comparison, not enlarged type, repetition or excess apparatus.
+
+Reusable guidance and mechanical checks are being revised for proper-study v3,
+with physical-page evidence and a new explicit presentation contract. The
+canonical chronology adapter also needs an independent postconciliar path:
+the earlier adapter only handles 1962 identities. Each revised owner must add
+its own generated chronology and source review, revise and independently
+review its concise document, recheck the other two outputs, and execute a
+fresh real workflow to terminal acceptance. Prior accepted states, packets,
+results and PDF proofs remain unchanged as historical evidence. No prior
+verdict may stand in for acceptance of the revised contract.
+
+A final integration review, completed-ledger check and ignored external-review
+transport follow those new productions. No handoff directory or ZIP has been
+assembled yet. Work stays
+on `feature/codex/propers/homily`; no default-branch integration or deployment
+is authorized by this task. Existing chronology-corpus and historical workflow
+promises remain distinct and are not closed by these consumers.
 
 ## Traditional context and salient dates in GPT propers, 2026-09-09
 

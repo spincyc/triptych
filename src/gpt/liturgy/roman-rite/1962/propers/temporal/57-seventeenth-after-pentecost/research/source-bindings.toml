@@ -1,0 +1,198 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = ["Dominica decima septima post Pentecosten; printed398–400, PDF479–481; marginal1602–1611; calendarLI/PDF53; rubric111b XVIII/PDF16; Trinity Preface293/PDF374"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Fresh complete target image reading controls the ten elements, IIclassis heading, boundaries, Credo and Trinity Preface cue. Download hash matches registered scan. No whole-book reading or scan redistribution claim."
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
+verified_on = "2026-09-17"
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-bookreader-leaf-426-50a5e6c3"
+loci = ["printed341, IAleafn426: beginning of DominicaXVII after prior formulary"]
+role = "rights-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Retained printed341 page image visually checked for target beginning. Printed342 continuation is now separately retained and bound as passage.catholic-church.missale-romanum.pustet-ratisbon-1862.pentecost-17-continuation. Distinct page identities and the1962 controlling appointment remain explicit."
+source_fingerprint = "sha256:1cc83f4ae703027d56c65915c6bfd99247dad2b8ff1ca7c98d12c7ed253c4887"
+verified_on = "2026-09-17"
+
+[[bindings]]
+source_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.post-pentecosten-17"
+loci = ["post-pentecosten-17"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "All three human English orations visually collated in printed431–433, PDF440–442, against exact registered scan hash. TSV ia_leaf439/441 is zero-based and unchanged. Anonymous1861 English is study wording, not official1962 English."
+source_fingerprint = "sha256:e21d1cc163589cf076a45cdedd41c3d712a884f8de2518b2f81583541ed49a91"
+verified_on = "2026-09-17"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.verse-text-21-psalms-6d114c22"
+loci = ["Ps.118.1-176", "Ps.32.1-22", "Ps.101.1-29", "Ps.75.1-13"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Retained canonical Douay–Rheims contexts read in full at these Psalm bounds. Vulgate numbering controls; modern Psalm119/33/102/76 equivalents and verse offsets disclosed. No fresh1899 print collation claimed."
+source_fingerprint = "sha256:2c0c07bbac7a7e547fc0be807dfbb67f9a1746ea5ae62bd07c6f7e3015eaa05b"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.verse-text-47-matthew-438b2953"
+loci = ["Matt.22.1-46"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete canonical chapter read. Target Gospel replaces canonical34 opening; biblical study English must not be presented as verbatim adapted Missal English."
+source_fingerprint = "sha256:2022a4e9ae6de3eb74e294aaf09990314ba1654bfafb37e65d5301779d83ace2"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.verse-text-56-ephesians-05619bc8"
+loci = ["Eph.4.1-32"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete canonical chapter read, including diverse ministries and practical conduct. Fratres and target terminal doxology are liturgical additions not represented by these six Bible verses."
+source_fingerprint = "sha256:ab1acb96d4eb62dd9194eb1338d3e72a55e694257e31bfedcc8bbdbec68b291c"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.verse-text-32-daniel-1550cfbe"
+loci = ["Dan.9.1-27"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete canonical chapter read. Offertory is a selected and rearranged liturgical adaptation with Daniel introduction; this binding supplies canonical study English and context, not an invented exact English chant."
+source_fingerprint = "sha256:b35bd3f7fb324d9c81ebfff81b1807036e69dc3123696c319795926b48a82b70"
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
+loci = ["32.1-22", "75.3,8-13", "101.1-3", "118.34-36,41"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Fresh retained NPNF8 English inspection at exact scopes in scope.md confirms earlier remote reading; explicit editorial abridgments remain. The numeric118.34–36,41 loci independently support grace and twofold love. Separately inspected NPNF English paragraphs123–125,126opening,136 are exact ordinary-bibliography claims on this same artifact, not represented by those numeric loci, because the current work grammar permits sections only through99; no Latin-number conversion or broader inspection is inferred. Modern headings33/76/102/119, Latin psalm numbers32/75/101/118. No whole-volume inspection or unabridged critical-edition claim."
+source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
+
+[[bindings]]
+source_id = "segment.john-chrysostom.homilies-on-ephesians.english-npnf13-ccel-web-2026-09-05.complete-commentary"
+loci = ["9", "10", "11"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Fresh retained NPNF13 constituent reading confirms the specific unity, common gifts and different ministries arguments. Source segment covers the entire commentary but this inspection is bounded to stated loci, not all24homilies."
+source_fingerprint = "sha256:6fae4d670aaa24ec943ddbe8297aa83673ffe73927b59b3256f2d89f7a2695f6"
+
+[[bindings]]
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+loci = ["Psalm32 commentary on verses1–22, especially6 and12", "Psalm75 commentary on verses1–12, especially8–12", "Psalm101 commentary on verses1–5", "Psalm118 commentary on verses1,124,137"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Fresh read of retained public-domain O’Sullivan English derivative: physical1131–1175,2693–2717,3565–3579,4135,4377,4405. The translation explicitly omits philological disputes, variant readings and original Psalm prefaces; modern reproduction has transcription errors, so final verbatim quotation needs print collation. Paraphrase only proposed here. Psalm75 uses commentary numbering11–12 for target Vulgate12–13; Psalm101 opening verse1 corresponds to target2. No fresh1866 facsimile check claimed."
+source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
+
+[[bindings]]
+source_id = "passage.augustine.de-doctrina-christiana.ccel-web-2026-09-17.i-22-20-21"
+loci = ["I.22.20-21"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Fresh independent17September reading of the retained transcription at the exact passage lines supports the bounded claim in scope.md. No printed-image or original-language collation claimed. Final17September metadata and actual passage/constituent boundaries reread after source-owner freeze; fingerprint refreshed without changing the bounded reading claim or source payload."
+source_fingerprint = "sha256:504ea3662f2d9651967c6e8e9313987d8038df2d16e04880ea294c7df3bf11cf"
+
+[[bindings]]
+source_id = "passage.augustine.de-doctrina-christiana.ccel-web-2026-09-17.i-30"
+loci = ["I.30"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Fresh independent17September reading of the retained transcription at the exact passage lines supports the bounded claim in scope.md. No printed-image or original-language collation claimed. Final17September metadata and actual passage/constituent boundaries reread after source-owner freeze; fingerprint refreshed without changing the bounded reading claim or source payload."
+source_fingerprint = "sha256:2c372a22e8fb4ec9121b292a2b9c30fde8c50d6f1a2ba9e4c574c9c241592d33"
+
+[[bindings]]
+source_id = "passage.augustine.de-consensu-evangelistarum.ccel-web-2026-09-17.ii-73-141-142"
+loci = ["II.73.141-142"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Fresh independent17September reading of the retained transcription at the exact passage lines supports the bounded claim in scope.md. No printed-image or original-language collation claimed. Paragraph142 literally gives Mark and Luke in its final comparison despite Matthew/Mark setup; retain this source-local discrepancy and do not invent a repaired quotation. Final17September metadata and actual passage/constituent boundaries reread after source-owner freeze; fingerprint refreshed without changing the bounded reading claim or source payload."
+source_fingerprint = "sha256:3511d1b7a0531e1d21e596e1b71fcaa2c3f35165637c0014a50c53b825b8e0d2"
+
+[[bindings]]
+source_id = "passage.john-chrysostom.homiliae-in-matthaeum.ccel-web-2026-09-17.homily-71"
+loci = ["71"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Fresh independent retained-text reading physical39940–40085 covers love commands, changed questioner motive and Davidic Son/Lord exposition. Remaining homily acquired but not freshly read in this retained version; no claim from the moral continuation is needed in this research. No fresh Greek or print collation."
+source_fingerprint = "sha256:5d167abcbed424c0f3506bddad544c5c48afd0d5ae27121689a969084b8e9138"
+
+[[bindings]]
+source_id = "passage.jerome.commentaria-in-danielem.migne-pl-25-wikisource-1845.ii-daniel-9-17-21"
+loci = ["II.Daniel.9.17-21"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Fresh independent reading of the complete retained Latin paragraph53, native Daniel9:13–21, confirms ad17 restoration, ad18 divine attention, ad20 alternative personal/representative confession, ad21 evening-sacrifice prayer. This provides a lawful Latin basis distinct from copyrighted ArcherEnglish. Generated1.0 is not a native locus; no print collation. Final17September metadata and actual passage/constituent boundaries reread after source-owner freeze; fingerprint refreshed without changing the bounded reading claim or source payload."
+source_fingerprint = "sha256:e9e9bf6ccf99df873a8bb19371022040b0e3f7777ea8d76ef08d2cacfb1c9adf"
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006.iii-79-1-corpus"
+loci = ["III.79.1.corpus"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Fresh independent reading of this retained article division confirms the doctrine described in scope.md. Gutenberg electronic-editor modifications are disclosed by its edition; no identity with every NewAdvent word or1920 printed page is claimed. No underlying Father cited by Thomas becomes independently verified through this binding. Final17September metadata and actual passage/constituent boundaries reread after source-owner freeze; fingerprint refreshed without changing the bounded reading claim or source payload."
+source_fingerprint = "sha256:922898f245e5d278a6100c380a7713e2d683843b0b3ea09b3204ac17557179b4"
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006.iii-79-2-corpus"
+loci = ["III.79.2.corpus"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Fresh independent reading of this retained article division confirms the doctrine described in scope.md. Gutenberg electronic-editor modifications are disclosed by its edition; no identity with every NewAdvent word or1920 printed page is claimed. No underlying Father cited by Thomas becomes independently verified through this binding. Final17September metadata and actual passage/constituent boundaries reread after source-owner freeze; fingerprint refreshed without changing the bounded reading claim or source payload."
+source_fingerprint = "sha256:4e920e3415b8cccf1abbe106f11d6b425c1214d4b1a817a1e5b8630e4b538efa"
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006.iii-79-6-corpus"
+loci = ["III.79.6.corpus"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Fresh independent reading of this retained article division confirms the doctrine described in scope.md. Gutenberg electronic-editor modifications are disclosed by its edition; no identity with every NewAdvent word or1920 printed page is claimed. No underlying Father cited by Thomas becomes independently verified through this binding. Final17September metadata and actual passage/constituent boundaries reread after source-owner freeze; fingerprint refreshed without changing the bounded reading claim or source payload."
+source_fingerprint = "sha256:afafd5edccb7698def3950e7d27b154aab5697177b9176235f3bcc516b03266e"
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.summa-theologiae.english-dominicans-gutenberg-tertia-2006.iii-79-6-reply-1"
+loci = ["III.79.6.reply-1"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Fresh independent reading of this retained article division confirms the doctrine described in scope.md. Gutenberg electronic-editor modifications are disclosed by its edition; no identity with every NewAdvent word or1920 printed page is claimed. No underlying Father cited by Thomas becomes independently verified through this binding. Final17September metadata and actual passage/constituent boundaries reread after source-owner freeze; fingerprint refreshed without changing the bounded reading claim or source payload."
+source_fingerprint = "sha256:815956a94bc036c1e1324f9de091a42920c5fd5358c509aaa56a99f362b5305e"
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.super-ephesios.dessain-volume-2-1857.chapter-4-lectio-1"
+loci = ["4.1"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Fresh independent visual reading of retained1857 Dessain facsimile printed312–315, artifact316–319, from CAPUT IV to LECTIO2. Confirms charitable appeal, four vices, correction at fitting time, good versus evil unity, body/spirit and shared hope. Whole book acquired but only stated locus inspected; no claim of equivalence with modern CorpusThomisticum or English."
+source_fingerprint = "sha256:dd99da73abf405f9607410701b3022573d46fb7894966cc251d792785073aa5b"
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.super-ephesios.dessain-volume-2-1857.chapter-4-lectio-2"
+loci = ["4.2"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+context = "Fresh independent visual reading of retained1857 Dessain facsimile printed315–317, artifact319–321, LECTIO2 through next LECTIO3 heading. Confirms city ruler/law/signs/end, faith as believed content or habit, baptismal unity and unrepeatability, and the Father as common end. No whole-work reading or modern-edition identity claimed."
+source_fingerprint = "sha256:4698c8c8eecb51d60b4ce120f225c92ddb62350277a6e48ca7107f6af12fb5ce"
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.pentecost-17-continuation"
+loci = ["pentecost-17-continuation"]
+role = "rights-control"
+states = ["cataloged", "acquired", "inspected"]
+context = "Fresh independent visual rereading of retained printed342 page image, hash matches prior scratch acquisition. Gradual continuation through Postcommunion belongs to previousSunday despite running EmberWednesday header; target bodies precede nextformulary boundary. Extra1862 orations excluded from1962 inventory. Antecedent rights witness, not controlling1962 rubrics."
+source_fingerprint = "sha256:96a9563dd0d2f53144657f4ca181d39131541db21ed1fb8b4dffbe3ec8cb8cfe"
+
+[[bindings]]
+source_id = "passage.fssp-france.ordo-du-mois.web-2026-09-17.2026-09-20"
+loci = ["2026-09-20"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete earlier offered response independently hash-checked in this research, and live entry reopened to check September2026 heading and Sunday20September entry. Corroborates XVIIafterPentecost, IIclass, green; no unidentified UnitedStates local overlay. ModernHTML remains restricted; factual record only."
+source_fingerprint = "sha256:f9b12a1194b3739c7529ee21324ec3098f3f327d0609eb9d855691b637b2aba3"
+
+[[bindings]]
+source_id = "passage.icrsp-france.ordo.web-2026-09-17.2026-09-20"
+loci = ["2026-09-20"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Complete earlier offered response independently hash-checked in this research, and live entry reopened to check explicit20September2026 entry. Corroborates Sunday, rank,color,Justus est,Gloria,Credo,TrinityPreface. Institution-specific Or.proPapa not imported into universal target. ModernHTML remains restricted; factual record only."
+source_fingerprint = "sha256:73df8dc868b1ad55fd7a77574398c2c268c113d183bb3db03d06376c8ac2a7fe"

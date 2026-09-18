@@ -1,0 +1,14 @@
+{
+  "disposition": "FAIL",
+  "findings": [
+    {
+      "check": "research-records",
+      "id": "GATE-RESEARCH-RECORDS",
+      "problem": "command exited 1: proper-study: evidence dependencies must name tracked source owners under src/",
+      "required_result": "Context, bounded research and valid source bindings must exist before cold evidence review.",
+      "severity": "blocking"
+    }
+  ],
+  "iteration": 0,
+  "stage": "research-preflight"
+}

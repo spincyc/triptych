@@ -1,0 +1,186 @@
+[
+  {
+    "command": "/usr/bin/python3 scripts/_proper_study.py seal --provider gpt --document liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost --review research",
+    "exit_code": 0,
+    "stdout": "1962-research-review-seal.stdout",
+    "stderr": "1962-research-review-seal.stderr",
+    "environment": "PYTHONDONTWRITEBYTECODE=1; TMPDIR=.scratch/final-integration-review",
+    "log_transform": "Checkout prefix removed if present; no other changes."
+  },
+  {
+    "command": "/usr/bin/python3 scripts/_proper_study.py seal --provider gpt --document liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost --review study",
+    "exit_code": 0,
+    "stdout": "1962-study-review-seal.stdout",
+    "stderr": "1962-study-review-seal.stderr",
+    "environment": "PYTHONDONTWRITEBYTECODE=1; TMPDIR=.scratch/final-integration-review",
+    "log_transform": "Checkout prefix removed if present; no other changes."
+  },
+  {
+    "command": "/usr/bin/python3 scripts/_proper_study.py seal --provider gpt --document liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost --review synthesis",
+    "exit_code": 0,
+    "stdout": "1962-synthesis-review-seal.stdout",
+    "stderr": "1962-synthesis-review-seal.stderr",
+    "environment": "PYTHONDONTWRITEBYTECODE=1; TMPDIR=.scratch/final-integration-review",
+    "log_transform": "Checkout prefix removed if present; no other changes."
+  },
+  {
+    "command": "/usr/bin/python3 scripts/_proper_study.py seal --provider gpt --document liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost --review homily",
+    "exit_code": 0,
+    "stdout": "1962-homily-review-seal.stdout",
+    "stderr": "1962-homily-review-seal.stderr",
+    "environment": "PYTHONDONTWRITEBYTECODE=1; TMPDIR=.scratch/final-integration-review",
+    "log_transform": "Checkout prefix removed if present; no other changes."
+  },
+  {
+    "command": "/usr/bin/python3 scripts/_proper_study.py seal --provider gpt --document liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost --review visual",
+    "exit_code": 0,
+    "stdout": "1962-visual-review-seal.stdout",
+    "stderr": "1962-visual-review-seal.stderr",
+    "environment": "PYTHONDONTWRITEBYTECODE=1; TMPDIR=.scratch/final-integration-review",
+    "log_transform": "Checkout prefix removed if present; no other changes."
+  },
+  {
+    "command": "/usr/bin/python3 scripts/_proper_study.py seal --provider gpt --document liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost --review web",
+    "exit_code": 0,
+    "stdout": "1962-web-review-seal.stdout",
+    "stderr": "1962-web-review-seal.stderr",
+    "environment": "PYTHONDONTWRITEBYTECODE=1; TMPDIR=.scratch/final-integration-review",
+    "log_transform": "Checkout prefix removed if present; no other changes."
+  },
+  {
+    "command": "/usr/bin/pdfinfo pdf/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf",
+    "exit_code": 0,
+    "stdout": "1962-57-seventeenth-after-pentecost-pdfinfo.stdout",
+    "stderr": "1962-57-seventeenth-after-pentecost-pdfinfo.stderr",
+    "environment": "PYTHONDONTWRITEBYTECODE=1; TMPDIR=.scratch/final-integration-review",
+    "log_transform": "Checkout prefix removed if present; no other changes."
+  },
+  {
+    "command": "/usr/bin/pdfinfo pdf/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf",
+    "exit_code": 0,
+    "stdout": "1962-57-seventeenth-after-pentecost-synthesis-pdfinfo.stdout",
+    "stderr": "1962-57-seventeenth-after-pentecost-synthesis-pdfinfo.stderr",
+    "environment": "PYTHONDONTWRITEBYTECODE=1; TMPDIR=.scratch/final-integration-review",
+    "log_transform": "Checkout prefix removed if present; no other changes."
+  },
+  {
+    "command": "/usr/bin/pdfinfo pdf/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf",
+    "exit_code": 0,
+    "stdout": "1962-57-seventeenth-after-pentecost-homily-pdfinfo.stdout",
+    "stderr": "1962-57-seventeenth-after-pentecost-homily-pdfinfo.stderr",
+    "environment": "PYTHONDONTWRITEBYTECODE=1; TMPDIR=.scratch/final-integration-review",
+    "log_transform": "Checkout prefix removed if present; no other changes."
+  },
+  {
+    "command": "tools/tpt proper-study liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost status 80a724fb8410dc3d",
+    "exit_code": 0,
+    "stdout": "1962-terminal-status.stdout",
+    "stderr": "1962-terminal-status.stderr",
+    "environment": "PYTHONDONTWRITEBYTECODE=1; TMPDIR=.scratch/final-integration-review",
+    "log_transform": "Checkout prefix removed if present; no other changes."
+  },
+  {
+    "command": "tools/tpt proper-study liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost replay 80a724fb8410dc3d",
+    "exit_code": 0,
+    "stdout": "1962-terminal-replay.stdout",
+    "stderr": "1962-terminal-replay.stderr",
+    "environment": "PYTHONDONTWRITEBYTECODE=1; TMPDIR=.scratch/final-integration-review",
+    "log_transform": "Checkout prefix removed if present; no other changes."
+  },
+  {
+    "command": "/usr/bin/python3 scripts/_proper_study.py seal --provider gpt --document liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a --review research",
+    "exit_code": 0,
+    "stdout": "postconciliar-us-2011-research-review-seal.stdout",
+    "stderr": "postconciliar-us-2011-research-review-seal.stderr",
+    "environment": "PYTHONDONTWRITEBYTECODE=1; TMPDIR=.scratch/final-integration-review",
+    "log_transform": "Checkout prefix removed if present; no other changes."
+  },
+  {
+    "command": "/usr/bin/python3 scripts/_proper_study.py seal --provider gpt --document liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a --review study",
+    "exit_code": 0,
+    "stdout": "postconciliar-us-2011-study-review-seal.stdout",
+    "stderr": "postconciliar-us-2011-study-review-seal.stderr",
+    "environment": "PYTHONDONTWRITEBYTECODE=1; TMPDIR=.scratch/final-integration-review",
+    "log_transform": "Checkout prefix removed if present; no other changes."
+  },
+  {
+    "command": "/usr/bin/python3 scripts/_proper_study.py seal --provider gpt --document liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a --review synthesis",
+    "exit_code": 0,
+    "stdout": "postconciliar-us-2011-synthesis-review-seal.stdout",
+    "stderr": "postconciliar-us-2011-synthesis-review-seal.stderr",
+    "environment": "PYTHONDONTWRITEBYTECODE=1; TMPDIR=.scratch/final-integration-review",
+    "log_transform": "Checkout prefix removed if present; no other changes."
+  },
+  {
+    "command": "/usr/bin/python3 scripts/_proper_study.py seal --provider gpt --document liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a --review homily",
+    "exit_code": 0,
+    "stdout": "postconciliar-us-2011-homily-review-seal.stdout",
+    "stderr": "postconciliar-us-2011-homily-review-seal.stderr",
+    "environment": "PYTHONDONTWRITEBYTECODE=1; TMPDIR=.scratch/final-integration-review",
+    "log_transform": "Checkout prefix removed if present; no other changes."
+  },
+  {
+    "command": "/usr/bin/python3 scripts/_proper_study.py seal --provider gpt --document liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a --review visual",
+    "exit_code": 0,
+    "stdout": "postconciliar-us-2011-visual-review-seal.stdout",
+    "stderr": "postconciliar-us-2011-visual-review-seal.stderr",
+    "environment": "PYTHONDONTWRITEBYTECODE=1; TMPDIR=.scratch/final-integration-review",
+    "log_transform": "Checkout prefix removed if present; no other changes."
+  },
+  {
+    "command": "/usr/bin/python3 scripts/_proper_study.py seal --provider gpt --document liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a --review web",
+    "exit_code": 0,
+    "stdout": "postconciliar-us-2011-web-review-seal.stdout",
+    "stderr": "postconciliar-us-2011-web-review-seal.stderr",
+    "environment": "PYTHONDONTWRITEBYTECODE=1; TMPDIR=.scratch/final-integration-review",
+    "log_transform": "Checkout prefix removed if present; no other changes."
+  },
+  {
+    "command": "/usr/bin/pdfinfo pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf",
+    "exit_code": 0,
+    "stdout": "postconciliar-us-2011-pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-pdfinfo.stdout",
+    "stderr": "postconciliar-us-2011-pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-pdfinfo.stderr",
+    "environment": "PYTHONDONTWRITEBYTECODE=1; TMPDIR=.scratch/final-integration-review",
+    "log_transform": "Checkout prefix removed if present; no other changes."
+  },
+  {
+    "command": "/usr/bin/pdfinfo pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+    "exit_code": 0,
+    "stdout": "postconciliar-us-2011-pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis-pdfinfo.stdout",
+    "stderr": "postconciliar-us-2011-pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis-pdfinfo.stderr",
+    "environment": "PYTHONDONTWRITEBYTECODE=1; TMPDIR=.scratch/final-integration-review",
+    "log_transform": "Checkout prefix removed if present; no other changes."
+  },
+  {
+    "command": "/usr/bin/pdfinfo pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf",
+    "exit_code": 0,
+    "stdout": "postconciliar-us-2011-pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily-pdfinfo.stdout",
+    "stderr": "postconciliar-us-2011-pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily-pdfinfo.stderr",
+    "environment": "PYTHONDONTWRITEBYTECODE=1; TMPDIR=.scratch/final-integration-review",
+    "log_transform": "Checkout prefix removed if present; no other changes."
+  },
+  {
+    "command": "tools/tpt proper-study liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a status 8f4e6454c021280a",
+    "exit_code": 0,
+    "stdout": "postconciliar-us-2011-terminal-status.stdout",
+    "stderr": "postconciliar-us-2011-terminal-status.stderr",
+    "environment": "PYTHONDONTWRITEBYTECODE=1; TMPDIR=.scratch/final-integration-review",
+    "log_transform": "Checkout prefix removed if present; no other changes."
+  },
+  {
+    "command": "tools/tpt proper-study liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a replay 8f4e6454c021280a",
+    "exit_code": 0,
+    "stdout": "postconciliar-us-2011-terminal-replay.stdout",
+    "stderr": "postconciliar-us-2011-terminal-replay.stderr",
+    "environment": "PYTHONDONTWRITEBYTECODE=1; TMPDIR=.scratch/final-integration-review",
+    "log_transform": "Checkout prefix removed if present; no other changes."
+  },
+  {
+    "command": "tools/tpt check-promised-deliverables",
+    "exit_code": 0,
+    "stdout": "promise-ledger-before-closure.stdout",
+    "stderr": "promise-ledger-before-closure.stderr",
+    "environment": "PYTHONDONTWRITEBYTECODE=1; TMPDIR=.scratch/final-integration-review",
+    "log_transform": "Checkout prefix removed if present; no other changes."
+  }
+]

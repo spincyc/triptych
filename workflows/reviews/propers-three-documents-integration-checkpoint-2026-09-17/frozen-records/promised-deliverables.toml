@@ -1,0 +1,2004 @@
+schema_version = 1
+
+[[deliverables]]
+id = "propers-three-documents-2026-09-17"
+owner = "PROJECT-WORK.md"
+promise = "Build and exercise a robust versioned proper-study successor while preserving legacy proper schema 1; produce a full expansive study, concise interleaved alternative reading document, and standalone speakable exegetical pedagogical homily for both GPT Sunday propers on 2026-09-20, with independent cold review, guidance revision and reruns, six beautiful reviewed PDFs and canonical web editions."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "reusable-three-output-contracts"
+  criterion = "Versioned proper-study contracts, guidance, state transitions and regression tests enforce all three distinct outputs, preserve legacy proper schema 1, and fail closed on missing source, review, revision or publication evidence."
+  status = "pass"
+  evidence = ["workflows/pipelines/proper-study.json", "guidance/liturgy/propers-three-documents.md", "tools/tests/test_workflow_proper_study.py", "tools/tests/test_proper_components_v2.py", "workflows/reviews/propers-three-documents-implementation-2026-09-17.md", "workflows/reviews/propers-three-documents-guidance-2026-09-17.md", "workflows/reviews/propers-three-documents-dependencies-2026-09-17.md", "workflows/reviews/propers-three-documents-authority-sweep-2026-09-17.md"]
+
+  [[deliverables.requirements]]
+  id = "verified-sunday-instances"
+  criterion = "The GPT 1962 57-seventeenth-after-pentecost and postconciliar US 2011 pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a instances for 2026-09-20 have verified calendar identity, appointed texts, edition and rights boundaries, exact source loci and research records; chronology is consumed from its canonical corpus with unresolved acceptance or evidence limits stated honestly."
+  status = "pass"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/context.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/scope.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/context.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/scope.md"]
+
+  [[deliverables.requirements]]
+  id = "separate-liturgical-paths"
+  criterion = "The 1962 and postconciliar runs independently resolve their own calendars, propers, sources, interpretations and publications; guidance and negative tests prevent cross-family liturgical owner/component imports or mixed appointments while permitting generic shared infrastructure and independent primary-source reuse."
+  status = "pass"
+  evidence = ["guidance/liturgy/propers-three-documents.md", "tools/tests/test_proper_components_v2.py", "tools/tests/test_workflow_proper_study.py", "workflows/reviews/propers-three-documents-implementation-2026-09-17.md"]
+
+  [[deliverables.requirements]]
+  id = "whole-proper-four-sense-lanes"
+  criterion = "Each expansive full study develops two to five coherent patristic or saintly interpretive lanes; every lane interprets the whole proper and individually develops all four senses, with checked reception distinguished from original editorial synthesis and no unsupported attribution."
+  status = "pass"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/interpretations.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/80a724fb8410dc3d/study-review-0002.json", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/interpretations.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/8f4e6454c021280a/study-review-0002.json"]
+
+  [[deliverables.requirements]]
+  id = "interleaved-reading-and-speakable-homily"
+  criterion = "Each proper has a concise independently usable reading document interleaving appointed texts and interpretation, and a distinct standalone homily with a coherent exegetical and pedagogical argument suitable for oral delivery; the adult-parish 10–12-minute working assumption or its expressly revised replacement is documented and reviewed."
+  status = "pass"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/80a724fb8410dc3d/synthesis-review-0002.json", "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/80a724fb8410dc3d/homily-review-0002.json", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/8f4e6454c021280a/synthesis-review-0001.json", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/8f4e6454c021280a/homily-review-0001.json"]
+
+  [[deliverables.requirements]]
+  id = "six-reviewed-publications"
+  criterion = "All six PDFs are beautifully typeset, built to settled references, mechanically checked and visually reviewed on every page, then installed with exact reviewed-byte identity; canonical web editions pass fidelity and presentation review, and build, catalogue and release records discover the correct outputs without claiming unperformed approval."
+  status = "pass"
+  evidence = ["workflows/reviews/propers-three-documents-recipes-v2-2026-09-17/live-application/final-artifact-identity.json", "workflows/reviews/propers-three-documents-production-2026-09-17.md"]
+
+  [[deliverables.requirements]]
+  id = "durable-cold-reviews-and-corrections"
+  criterion = "Every substantive deliverable receives cold independent review against its actual evidence; findings, corrections, governing-guidance revisions and independent re-review dispositions are preserved in tracked records, with no self-acceptance or ignored run directory serving as the sole durable evidence."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "real-workflow-completion-and-evaluation"
+  criterion = "The successor is driven on both real Sunday instances through successful completion after required revisions and reruns; tracked iteration evaluation identifies actual state transitions, findings, guidance changes, regression results and terminal dispositions, preserves legacy run history, and leaves no required output or blocking review finding unresolved."
+  status = "pass"
+  evidence = ["workflows/reviews/propers-three-documents-production-2026-09-17.md", "workflows/reviews/propers-three-documents-recipes-v2-2026-09-17/live-application/RECORD.md"]
+
+[[deliverables]]
+id = "proper-salient-dates-2026-09-09"
+owner = "PROJECT-WORK.md"
+promise = "Explain the missing traditional Psalm era, preserve distinct sourced chronology relations, and show salient traditional context and textual-history dates elegantly in the recent GPT proper guides, with the same distinction usable for earlier Old Testament passages; reconcile with main, push the validated result, and verify deployment."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "source-grounded-context"
+  criterion = "The investigation records the cause, checks the appointed Psalm attributions and dating witnesses, distinguishes named authors from historical occasions, and checks representative earlier Old Testament passages."
+  status = "pass"
+  evidence = ["src/sources/chronology/attribution-context-review.md", "src/sources/chronology/events.yaml", "src/sources/chronology/bindings.yaml"]
+
+  [[deliverables.requirements]]
+  id = "reusable-chronology-and-projection"
+  criterion = "The shared corpus and deterministic proper projection preserve traditional context separately from composition, events and prophecy; regression checks prevent mislabeling and blanket Davidic dates."
+  status = "pass"
+  evidence = ["scripts/_chronology.py", "scripts/_proper_chronology.py", "guidance/scripture-chronology.md", "tools/tests/test_chronology.py", "tools/tests/test_proper_chronology_annotations.py"]
+
+  [[deliverables.requirements]]
+  id = "reviewed-guides"
+  criterion = "GPT propers 54–56 and every affected generated consumer have current chronology records; all affected full and synthesis PDFs and canonical web editions are built, checked and reviewed, with the date dossier remaining one page."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "src/sources/chronology/attribution-context-review.md"]
+
+  [[deliverables.requirements]]
+  id = "validated-main-and-deployment"
+  criterion = "The dating change is reconciled with current main, passes the affected publication gates, reaches origin/main by fast-forward, and its Pages deployment and affected public routes are verified."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml"]
+
+[[deliverables]]
+id = "gpt-propers-54-56-publication-integration-2026-09-06"
+owner = "PROJECT-WORK.md"
+promise = "Repair the proper 56 web converter, complete its reviewed PDF and web publication, reconcile branches 54 and 55 with this work and current main, then validate and fast-forward origin/main and verify deployment."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "converter-regression"
+  criterion = "Canonical branch selection applies to included proper sections, a regression test proves retained content and excluded alternatives, unsupported active commands still fail, and the real proper 56 web conversion passes."
+  status = "pass"
+  evidence = ["tools/web-edition", "tools/tests/test_web_edition_conversion.py"]
+
+  [[deliverables.requirements]]
+  id = "reviewed-publication"
+  criterion = "Proper 56 full and synthesis PDFs are reviewed and installed, the canonical web edition passes fidelity and narrow-viewport review, and catalogue and alpha records discover the installed artifacts with publication checks passing."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "branches-reconciled"
+  criterion = "The integrated tree preserves the intended outcomes of branches 54, 55 and 56 and current origin/main, with shared source inventories, catalogue and release state reconciled and affected checks passing."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "validated-main-and-deployment"
+  criterion = "The reviewed outgoing history passes deployment-source, public-artifact and GitHub Pages compatibility gates, reaches origin/main by fast-forward, and the exact pushed snapshot's Pages run and affected public routes are verified."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml"]
+
+[[deliverables]]
+id = "gpt-sixteenth-after-pentecost-workflow-2026-09-05"
+owner = "PROJECT-WORK.md"
+promise = "Execute the prescribed proper v25 workflow for the GPT Sixteenth Sunday after Pentecost through ACCEPTED or BLOCKED, preserving its completed work and accurately recording the publication disposition and unresolved findings."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "exact-production-target"
+  criterion = "The production plan records authorization for exactly provider gpt and identity liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost, and the workflow scope gate passes."
+  status = "pass"
+  evidence = ["guidance/liturgy/propers-production-plan.md", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "prescribed-terminal-disposition"
+  criterion = "The workflow reaches ACCEPTED or BLOCKED by executing its emitted packets and gates, with the resulting disposition preserved in the owning tracked record."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "publication-and-findings-reconciled"
+  criterion = "The owning tracked record accurately identifies the completed artifacts, actual publication state, validation and any unresolved findings; BLOCKED is never represented as publication acceptance."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
+id = "gpt-mary-new-ark-journey-2026-08-15"
+owner = "src/gpt/theology/mariology/ark-of-the-covenant/research/scope.md"
+promise = "Publish a source-audited Catholic Marian study that tells the Ark's scriptural journey, presents Mary as its living New-Covenant fulfillment in Christ, synthesizes authenticated patristic and saintly reception, relates the four Marian dogmas, gives Joseph and Mary's true virginal marriage a positive and proper place in the typology, applies the requested spiritual pedagogy, and includes a source-controlled detailed graphite map and Ark/sanctuary plates in the reviewed GPT PDF and web edition."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "ark-narrative-and-scripture"
+  criterion = "The publication gives a vivid source-bound account of the Ark from Sinai through its final scriptural and heavenly horizons, and distinguishes narrated movement, canonical tradition, vision, and geographic uncertainty."
+  status = "pass"
+  evidence = ["src/gpt/theology/mariology/ark-of-the-covenant"]
+
+  [[deliverables.requirements]]
+  id = "new-ark-typology-and-lexical-audit"
+  criterion = "The Annunciation and Visitation synthesis checks the overshadowing, hill-country, household, blessing, question, leaping, three-month, and Greek or Septuagintal claims without weakening the Church's affirmative New-Ark reading or overstating verbal identity."
+  status = "pass"
+  evidence = ["src/gpt/theology/mariology/ark-of-the-covenant/research/lexical-parallels-audit.md"]
+
+  [[deliverables.requirements]]
+  id = "patristic-saintly-and-liturgical-reception"
+  criterion = "Every patristic, saintly, and liturgical Ark witness used in the publication has an exact locus, edition or checked witness, date and attribution status, while traditional pseudonymous reception is preserved under its honest name."
+  status = "pass"
+  evidence = ["src/gpt/theology/mariology/ark-of-the-covenant/research/patristic-typology-audit.md"]
+
+  [[deliverables.requirements]]
+  id = "four-dogma-synthesis"
+  criterion = "The four Marian dogmas are stated according to their exact objects and authorities and presented as the full unfolding of Mary's Ark vocation under Christ's definitive covenantal fulfillment, not as deductions from isolated details."
+  status = "pass"
+  evidence = ["src/gpt/theology/mariology/ark-of-the-covenant/research/dogma-and-typology-inventory.md"]
+
+  [[deliverables.requirements]]
+  id = "virginal-marriage-fulfillment"
+  criterion = "Joseph and Mary's true, freely shared virginal marriage receives a positive typological synthesis grounded in Joseph's obedient reception, guardianship, Davidic service, and the ordered custody of holy presence; Uzzah remains a bounded contrast rather than a claim that marriage is defiling or Mary physically dangerous."
+  status = "pass"
+  evidence = ["src/gpt/theology/mariology/ark-of-the-covenant/research/virginal-marriage-typology.md"]
+
+  [[deliverables.requirements]]
+  id = "spiritual-pedagogy"
+  criterion = "Original prose and exercises adapt the requested pedagogical movements from C. S. Lewis, Dom Chautard, and Réginald Garrigou-Lagrange while keeping them distinct from biblical, patristic, or dogmatic evidence and respecting rights."
+  status = "pass"
+  evidence = ["src/gpt/theology/mariology/ark-of-the-covenant/research/pedagogy-plan.md"]
+
+  [[deliverables.requirements]]
+  id = "pencil-map"
+  criterion = "The reviewed PDF contains a very finely detailed graphite cartographic composition—not rough wavy-line diagram styling—built from pinned Natural Earth and Mapzen inputs with a project-authored semantic overlay whose geography, routes, uncertainties, typological correspondences, accessibility equivalent, provenance, rights, and production checks reconcile to a tracked source matrix."
+  status = "pass"
+  evidence = ["src/gpt/theology/mariology/ark-of-the-covenant/research/map-provenance.md"]
+
+  [[deliverables.requirements]]
+  id = "ark-and-sanctuary-diagrams"
+  criterion = "The reviewed publication includes very finely detailed graphite illustrations of the Ark's commanded form and its attested placement in the wilderness Tabernacle, Shiloh, David's tent on Zion, and Solomon's Temple, replacing rough wavy-line schematics while keeping architectural or locational uncertainty explicit and treating no generated pixel as factual evidence."
+  status = "pass"
+  evidence = [
+    "src/gpt/theology/mariology/ark-of-the-covenant/sections/57-ark-and-sanctuaries.tex",
+    "src/gpt/theology/mariology/ark-of-the-covenant/research/ark-diagram-audit.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "publication-installation"
+  criterion = "The settled PDF and faithful web edition are installed under the mirrored GPT Mariology paths, every PDF page and the web conversion are reviewed, and the owning catalog and alpha release record discover the work."
+  status = "pass"
+  evidence = [
+    "pdf/gpt/theology/mariology/ark-of-the-covenant.pdf",
+    "web/gpt/theology/mariology/ark-of-the-covenant.md",
+    "library/mariology.md",
+    "release/publications/gpt/theology/mariology/ark-of-the-covenant.json",
+    "src/gpt/theology/mariology/ark-of-the-covenant/research/sanity-review.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "validated-push-and-deployment"
+  criterion = "Required source, metadata, PDF, web, catalog, release, public-site, and deployment gates pass; the intended exact commit is pushed to origin/main without rewriting history; and the resulting Pages run and affected live routes are verified."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml"]
+
+  [[deliverables.requirements]]
+  id = "provider-distinct-ark-catalog"
+  criterion = "The ChatGPT and Claude Ark studies appear in one Mariology catalog row with their distinct titles visible in the provider link labels; both provider PDFs remain distinct, the GPT web reader remains current, every published provider-qualified route carries the intended edition and artwork, and regression coverage prevents either edition from replacing the other."
+  status = "pass"
+  evidence = [
+    "library/mariology.md",
+    "pdf/gpt/theology/mariology/ark-of-the-covenant.pdf",
+    "pdf/claude/theology/mariology/ark-of-the-covenant.pdf",
+    "web/gpt/theology/mariology/ark-of-the-covenant.md",
+    "tools/tests/test_public_alpha.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "reader-facing-bible-nomenclature"
+  criterion = "Reader-facing prose identifies the biblical scene as 2 Samuel 6; the title 2 Reigns appears only where it is explicitly explained as the Septuagint name for 2 Samuel rather than as an unexplained English book title."
+  status = "pass"
+  evidence = [
+    "src/gpt/theology/mariology/ark-of-the-covenant/sections/60-scripture-recognizes-scripture.tex",
+    "src/gpt/theology/mariology/ark-of-the-covenant/sections/99-references.tex",
+  ]
+
+[[deliverables]]
+id = "corpus-browser-foundation-design-2026-08-08"
+owner = "guidance/corpus-browser-roadmap.md"
+promise = "Execute A0-A4 for the non-PDF Triptych corpus experience: complete the public-surface inventory and scholarly-interface research, define the governing site-wide product vision and three visual archetypes, specify shared navigation/search/context behavior, commit durable design memory, and produce one verified standard external-review ZIP without implementing production application logic or merging to main."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "a0-complete-surface-inventory"
+  criterion = "A complete route, surface, state, owning-source, and design-debt inventory is reconciled against the generated public artifact and includes representative current-state visual evidence."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-inventory.md",
+    "guidance/corpus-browser-roadmap.md",
+    "build/agent-continuity/corpus-browser-foundation.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "a1-research-synthesis"
+  criterion = "Checked, dated scholarly-interface and accessibility research distinguishes observed fact, Triptych inference, borrowed principles, rejected approaches, and unresolved leads."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-research.md",
+    "build/agent-continuity/corpus-browser-foundation.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "a2-site-wide-product-vision"
+  criterion = "The tracked corpus-browser vision governs information architecture, visual language, responsive and accessible behavior, source and edition presentation, URLs, performance, canonical PDFs, anti-patterns, and world-class completion while preserving the more specific liturgy contract."
+  status = "pass"
+  evidence = ["guidance/corpus-browser-vision.md"]
+
+  [[deliverables.requirements]]
+  id = "a3-visual-system-and-archetypes"
+  criterion = "A review-only prototype and tracked design contract define compatible Reader, Catalogue, and Instrument archetypes with desktop, mobile, 320-pixel, enlarged-text, zoom, and forced-color evidence."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-vision.md",
+    "guidance/corpus-browser-roadmap.md",
+    "src/web/browser/prototypes/corpus-foundation/index.html",
+    "src/web/browser/prototypes/corpus-foundation/prototype.css",
+    "tools/tests/test_corpus_foundation_prototype.py",
+    "tools/tests/corpus_foundation_prototype_browser.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "a4-shared-shell-and-discovery"
+  criterion = "Shared navigation, typed static-first search, contextual related-object navigation, responsive shell, keyboard/focus behavior, URL state, and unsupported/partial states are specified and prototyped without claiming unavailable production data or relationships."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-vision.md",
+    "guidance/corpus-browser-roadmap.md",
+    "src/web/browser/prototypes/corpus-foundation/index.html",
+    "src/web/browser/prototypes/corpus-foundation/prototype.js",
+    "tools/tests/test_corpus_foundation_prototype.py",
+    "tools/tests/corpus_foundation_prototype_browser.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "foundation-scope-and-production-boundary"
+  criterion = "The foundation changes only tracked design/research memory, the isolated synthetic prototype, and its tests; production browser routes, generated data, public build mappings, canonical PDFs, deployment, integration, and accepted liturgy assets remain unchanged."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-roadmap.md",
+    "src/web/browser/prototypes/corpus-foundation/index.html",
+    "tools/tests/test_corpus_foundation_prototype.py",
+    "build/agent-continuity/corpus-browser-foundation.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "committed-standard-review-handoff"
+  criterion = "All durable discoveries and decisions are committed before one fresh standard handoff directory and one-root ZIP are assembled and verified with exact base/head/branch/commits, inventories, source notes, before/after responsive evidence, contact sheet, numeric check statuses, limitations, blockers, and next tasks."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-roadmap.md",
+    "build/agent-continuity/corpus-browser-foundation.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "independent-foundation-disposition"
+  criterion = "An independent reviewer answers the four blocking information-architecture, liturgy-adapter, provider-terminology, and A2-A4 visual/interaction questions, and the accepted, rejected, or changes-required disposition is recorded in the operational authorities before production foundation work begins."
+  status = "open"
+  evidence = [
+    "guidance/corpus-browser-vision.md",
+    "guidance/corpus-browser-roadmap.md",
+    "build/agent-continuity/corpus-browser-foundation.md",
+  ]
+
+[[deliverables]]
+id = "corpus-browser-foundation-hardening-2026-08-08"
+owner = "guidance/corpus-browser-implementation.md"
+promise = "Establish the design-neutral implementation foundation for the non-PDF corpus browser: a durable architecture and defect record, verification that reaches the artifact a reader receives rather than the repository copies, the published hash contracts pinned before any router cleanup, and the selector and plumbing hazards that would make later parallel surface work collide."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "durable-architecture-record"
+  criterion = "A tracked record states how the non-PDF browser surfaces are built, what will refuse a change, the verifiable sequencing, the ranked risks, the conflicts returned for disposition, and the defect register with each finding's status and each refuted finding's refutation."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-implementation.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "artifact-gate-over-the-built-site"
+  criterion = "A design-neutral gate drives real Chromium over the built artifact across the five-viewport governing matrix, asserts no visual contract, skips cleanly with a stated reason when no browser resolves, and stays out of `make check`."
+  status = "pass"
+  evidence = [
+    "tools/tests/corpus_browser_gate.mjs",
+    "tools/tests/test_corpus_browser_gate.py",
+    "Makefile",
+  ]
+
+  [[deliverables.requirements]]
+  id = "chromium-harnesses-are-run"
+  criterion = "The four reader harnesses have a target that builds their data root first and holds them to a recorded pass floor rather than to a zero exit."
+  status = "pass"
+  evidence = [
+    "Makefile",
+    "tools/tests/test_browser_harnesses.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "published-hash-contracts-pinned"
+  criterion = "Every published hash key of every instrument is pinned by test before any router cleanup, including the keys that are deliberately input-only."
+  status = "pass"
+  evidence = [
+    "tools/tests/test_browser_url_contract.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "shared-shell-blocking-collisions-resolved"
+  criterion = "The four selector and plumbing hazards that block a shared shell are resolved with an unchanged rendered DOM: the `#reading`/`#banner` hard-coding, history's `.field`, texts' `.detail`, and `day-missal.css`'s unscoped `body > .site-header`."
+  status = "open"
+  evidence = [
+    "src/web/browser/shared/browser-core.js",
+    "src/web/browser/history/history.css",
+    "src/web/browser/texts/texts.css",
+    "tools/tests/test_browser_collisions.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "no-visual-or-product-decision"
+  criterion = "The lane changes no visual contract, accepts no screenshot baseline as an oracle, and makes no production change to a protected liturgy asset."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-implementation.md",
+  ]
+
+[[deliverables]]
+id = "corpus-browser-wave-1-design-2026-08-08"
+owner = "guidance/corpus-browser-roadmap.md"
+promise = "Produce one independently reviewable real-data Wave 1 visual and product-design candidate for Home, Publications, the long-form Publication Reader, Catena Omnia, and the Source Library, while preserving canonical PDFs, protected Liturgy, production routes and implementation, source truth, and the requirement for a separate external acceptance disposition."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "canonical-durable-authorities"
+  criterion = "The tracked corpus-browser master plan, vision, roadmap, and implementation record are the mutually consistent canonical authorities for the accepted foundation amendments, Wave 1 scope and branch/base, route-specific decisions, data limitations, implementation seams, evidence gates, and final external dispositions; no ignored continuity file is required to recover a decisive fact."
+  status = "pass"
+  check = "path_exists"
+  evidence = [
+    "guidance/corpus-browser-master-plan.md",
+    "guidance/corpus-browser-vision.md",
+    "guidance/corpus-browser-roadmap.md",
+    "guidance/corpus-browser-implementation.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "isolated-real-route-prototype"
+  criterion = "One unlinked noindex prototype under the dedicated Wave 1 prototype root presents Home, Publications, Publication Reader, Catena Omnia, and Source Library compositions over actual generated route content, titles, metadata, rights and absence states, and provider differences without becoming production application logic or a second editable publication text. The disposable overlay was reviewed on ux/corpus-wave-1-review-fixes and deliberately not merged to main, per the acceptance's own scope limit; the preserved branch and the roadmap disposition register are the evidence."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "five-by-five-before-after-matrix"
+  criterion = "The review evidence contains comparable before and after captures for all five governed surfaces at 1440x900, 1024x768, 768x1024, 393x852, and 320x852: twenty-five route-and-viewport pairs and at least fifty original-resolution screenshots, with a numbered contact sheet and an index mapping every capture to route, state, viewport, and review purpose."
+  status = "pass"
+  check = "path_exists"
+  evidence = [
+    "build/agent-handoffs",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "stress-accessibility-and-print-evidence"
+  criterion = "Additional original-resolution evidence exercises real long-title and long-metadata states, paired and single-provider publications, PDF-only and browser-readable treatments, synthesis, sparse provenance, zero results, multilingual or source-heavy content, unavailable or withheld states where applicable, 200 percent text, representative 400 percent zoom/reflow, keyboard focus, forced colors, reduced motion, no-JavaScript static truth, and Publication Reader browser print."
+  status = "pass"
+  check = "path_exists"
+  evidence = [
+    "build/agent-handoffs",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "complete-external-review-package"
+  criterion = "One verified one-root timestamped handoff directory and matching ZIP are reconciled into the evidence paths before this requirement passes and contain HANDOFF.md first, REVIEW_REQUEST.md with blocking questions, changes.patch, checks.txt with commands and numeric exits, sources.md, a changed-file inventory, route-state matrix, base/head/branch and commit list, screenshot index and contact sheet, required captures, prototype files, design decisions, known limitations, exact recommended next Codex tasks, and SHA-256 manifest and ZIP digest."
+  status = "pass"
+  check = "path_exists"
+  evidence = [
+    "build/agent-handoffs",
+    "guidance/external-review-handoffs.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "protected-production-zero-diff"
+  criterion = "The exact base-to-head and staged-diff evidence reports zero changes to canonical Day and Propers and every other production Liturgy asset, all canonical PDFs, publication prose, production browser HTML/CSS/JavaScript outside the isolated prototype, generated public data, release bindings, public routes and hash keys, and deployment configuration; no broad ignore rule or omitted path may substitute for the explicit inventories."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-roadmap.md",
+    "build/agent-handoffs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "named-branch-commit-and-push"
+  criterion = "The original Wave 1 design authorities, isolated prototype sources, review evidence records, and promise reconciliation are committed coherently on ux/corpus-wave-1 from its recorded exact base; the bounded correction and final acceptance/continuity records are committed coherently on ux/corpus-wave-1-review-fixes from the exact reviewed head; both are pushed to their same named remote branches with outgoing ranges and remote heads verified, while no merge or push to main and no deployment occurs."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-roadmap.md",
+    "PROJECT-WORK.md",
+    "build/agent-handoffs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "independent-external-acceptance"
+  criterion = "Independent external visual and product review records the exact disposition for C0, C1, D0, E0, F0, and the shared non-Liturgy shell after reviewing the real pages and complete ZIP; C0, C1, D0, and E0 are accepted, and fresh correction review records F0 Source Library and the shared shell as ACCEPT. Prototype completion, checks, commit, push, packaging, or design acceptance alone cannot authorize production implementation, main integration, deployment, or public cutover."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-roadmap.md",
+    "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "review-fix-shell-acceptance"
+  criterion = "A fresh immutable correction handoff preserves the accepted C0, C1, D0, and E0 designs and protected Liturgy, PDF, route, and hash boundaries; corrects the Source Library sibling/controller model and one-passage navigation; corrects duplicated wide current-domain identity and the generic wide Menu while preserving compact narrow Menu and bounded Jump; and independent external review accepts corrected F0 and the shared non-Liturgy shell before Sources implementation or final shell cutover is authorized."
+  status = "pass"
+  evidence = [
+    "guidance/corpus-browser-roadmap.md",
+    "PROJECT-WORK.md",
+  ]
+
+[[deliverables]]
+id = "liturgy-reader-live-ritual-flow-2026-08-07"
+owner = "build/agent-continuity/liturgy-reader-visual-plan.md"
+promise = "Improve the live canonical Day and Propers readers for sustained liturgical reading through source-owned persistent ritual orientation, a current-place Contents map, and a calmer principal/rubric/reference hierarchy without reopening the accepted first viewport, cutover, navigation, state, renderer, source, or translation boundaries."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "baseline-and-semantic-inventory"
+  criterion = "A focused original-pixel live/canonical baseline and explicit semantic inventory identify the current state owners and every distinction that cannot safely be made without new liturgical inference."
+  status = "open"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-ritual-flow-baseline.md",
+    "build/agent-continuity/liturgy-reader-ritual-flow-semantics.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "persistent-source-owned-locus"
+  criterion = "Deep Day and Propers reading exposes a restrained current major division and available current unit from existing semantic ownership, without floating app chrome, URL changes, flicker, stale render state, text obstruction, or invented liturgical labels."
+  status = "open"
+  evidence = [
+    "src/web/browser/liturgy/reader-shell.js",
+    "src/web/browser/liturgy/reader-instrument.css",
+  ]
+
+  [[deliverables.requirements]]
+  id = "contents-live-map"
+  criterion = "Contents opens with its accessible current row immediately visible near the useful central portion of the surface across beginning, deep, mobile, 200%, and keyboard states while preserving close, focus, inertness, and semantic restoration behavior."
+  status = "open"
+  evidence = [
+    "src/web/browser/liturgy/reader-shell.js",
+  ]
+
+  [[deliverables.requirements]]
+  id = "ritual-apparatus-hierarchy"
+  criterion = "Principal liturgical action remains visually dominant over source-classified rubric, provenance, conditional, and reference material on desktop and mobile, with no source text dropped and no new applicability decision."
+  status = "open"
+  evidence = [
+    "src/web/browser/liturgy/reader-instrument.css",
+    "build/agent-continuity/liturgy-reader-ritual-flow-semantics.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "protected-regression-and-live-evidence"
+  criterion = "The accepted first viewport, 636-pixel portrait Read measure, four-action shell, URL/state contracts, accessibility behavior, candidate/oracle fallbacks, release bindings, and public-alpha artifact remain intact, with full-size visual inspection and exact deployed evidence."
+  status = "open"
+  evidence = [
+    "tools/tests/liturgy_reader_visual_reset_browser.mjs",
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "immutable-independent-review-handoff"
+  criterion = "A fresh tracked immutable handoff and verified one-root ZIP contain the instructions, byte-identical continuity, semantic inventory, before/after evidence, measurements, checks, deployment record, and exact independent-review questions."
+  status = "open"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+  ]
+
+[[deliverables]]
+id = "liturgy-reader-instrument-public-cutover-plan-2026-08-06"
+owner = "build/agent-continuity/liturgy-reader-cutover-decision.md"
+promise = "Produce an independently reviewable, route-compatible, reversible public-cutover plan for moving the accepted Liturgical Instrument Day and Propers readers onto their canonical URLs without changing canonical pages, public navigation, candidate routes, or the accepted visual oracle during planning."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "same-path-public-cutover-execution"
+  criterion = "After separate independent authorization, canonical Day and Propers are promoted in place from the accepted compatibility-closed implementation with unchanged external filenames, no redirect or public-navigation change, exact release bindings, retained noindex candidate/oracle fallbacks, and ordinary-revert rollback."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/day.html",
+    "src/web/browser/liturgy/index.html",
+    "release/public-alpha.json",
+    "release/rights/public-alpha-2026-07-15.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "accepted-starting-boundary-and-planning-scope"
+  criterion = "The plan begins from the accepted and durably archived production integration, freezes the accepted visual and behavioral seams, and does not execute a canonical-route, navigation, candidate, oracle, or public-cutover change."
+  status = "pass"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "route-state-and-navigation-inventory"
+  criterion = "Tracked human- and machine-readable inventories distinguish the canonical public contract from implementation detail and classify every material Day, Propers, navigation, metadata, indexing, cache, and static-hosting difference."
+  status = "pass"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-cutover-route-map.md",
+    "build/agent-continuity/liturgy-reader-cutover-state-matrix.md",
+    "build/agent-continuity/liturgy-reader-cutover-state-matrix.json",
+    "build/agent-continuity/liturgy-reader-cutover-navigation-map.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "smallest-reversible-mechanism"
+  criterion = "The plan selects and justifies the smallest canonical-URL-preserving mechanism, rejects more invasive alternatives, names exact cutover and protected files, and records every unresolved compatibility blocker without reopening accepted design."
+  status = "pass"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-cutover-decision.md",
+    "build/agent-continuity/liturgy-reader-public-cutover-proposed.patch",
+  ]
+
+  [[deliverables.requirements]]
+  id = "deterministic-day-gate"
+  criterion = "The Day first-visit browser assertion is made deterministic without changing product behavior or weakening its repository-default contract, or a newly discovered non-date-dependent cause remains an explicit cutover blocker."
+  status = "pass"
+  evidence = [
+    "tools/tests/day_reader_integration_browser.mjs",
+    "build/agent-continuity/liturgy-reader-cutover-state-matrix.md",
+    "build/agent-continuity/liturgy-reader-day-deterministic-test.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "rollback-and-acceptance-gates"
+  criterion = "An operational ordinary-revert rollback and exact local, canonical-route, visual-oracle, publication, Pages, deployed-parity, indexing, cache, accessibility, and browser acceptance gates make later execution bounded and testable."
+  status = "pass"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-public-cutover-rollback.md",
+    "build/agent-continuity/liturgy-reader-public-cutover-gates.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "immutable-plan-review-handoff"
+  criterion = "A fresh tracked immutable handoff directory and verified one-root ZIP contain the exact instruction, byte-identical continuity, route/state/navigation inventories, decision, proposed patch, rollback, gates, source snapshots, checks, and narrow independent-review request."
+  status = "pass"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+    "build/agent-handoffs/20260806T212148Z-liturgy-reader-instrument-public-cutover-plan/HANDOFF.md",
+    "build/agent-handoffs/20260806T212148Z-liturgy-reader-instrument-public-cutover-plan/MANIFEST.sha256",
+  ]
+
+  [[deliverables.requirements]]
+  id = "independent-cutover-plan-review"
+  criterion = "Independent review accepts the cutover plan and separately authorizes execution; planning quality alone does not authorize public navigation changes or public cutover."
+  status = "pass"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "accepted-same-path-architecture-and-public-contract-decisions"
+  criterion = "Independent review accepts same-path source promotion, rollback, static-hosting, canonical-route, deterministic-Day, and visual-oracle planning, and records binding compatibility decisions without authorizing canonical promotion, public navigation, or cutover execution."
+  status = "pass"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+    "build/agent-continuity/liturgy-reader-cutover-decision.md",
+    "build/agent-continuity/liturgy-reader-public-cutover-gates.md",
+    "build/agent-continuity/liturgy-reader-public-cutover-rollback.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "compatibility-closure-implementation"
+  criterion = "The retained candidate/shared implementation preserves source-derived Day reasoning and all territorial outcomes, stable Propers public option keys, static candidate privacy, route-neutral visible wording, and subordinate Details navigation without changing canonical routes, public navigation, the accepted shell, or the visual oracle."
+  status = "pass"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+    "src/web/browser/liturgy/day-reader.js",
+    "src/web/browser/liturgy/propers-reader.js",
+    "src/web/browser/liturgy/reader-state.js",
+    "tools/tests/day_reader_integration_browser.mjs",
+    "tools/tests/propers_reader_integration_browser.mjs",
+    "tools/tests/liturgy_reader_visual_reset_browser.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "compatibility-closure-evidence-and-narrow-rereview"
+  criterion = "The accepted candidate/shared readers implement and evidence preserved Day reasoning and territorial outcomes, stable Propers public option keys, static retained-candidate noindex, route-neutral wording, and Details navigation; the final cutover patch is regenerated and mechanically checked; and a new immutable handoff passes narrow independent re-review before execution is authorized."
+  status = "pass"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+    "build/agent-continuity/liturgy-reader-public-cutover-proposed.patch",
+  ]
+
+  [[deliverables.requirements]]
+  id = "independent-public-cutover-acceptance"
+  criterion = "Independent post-deployment review accepts the canonical Day and Propers cutover after exact-cutover-SHA Pages success, deployed-byte parity, immediate and post-cache-window verification, with public navigation unchanged and retained candidate/oracle routes intact and nonindexable."
+  status = "pass"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-public-cutover-final-acceptance.md",
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+  ]
+
+[[deliverables]]
+id = "liturgy-reader-instrument-production-integration-2026-08-06"
+owner = "src/web/browser/liturgy/reader-instrument.css"
+promise = "Move the independently accepted Liturgical Instrument visual system into the existing unlinked, noindex Day and Propers production-reader candidates through the smallest shared presentation seam, prove prototype-to-production parity, and preserve accepted M1–M3/W3 behavior without changing public navigation or beginning public cutover."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "accepted-foundation-and-scope"
+  criterion = "Liturgical Instrument remains the accepted production visual foundation; its accepted visual decisions and M1–M3/W3 behavioral seams remain frozen, and production integration does not authorize public navigation or cutover."
+  status = "pass"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+    "guidance/liturgy-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "hook-inventory-and-smallest-seam"
+  criterion = "A durable prototype-to-production hook inventory identifies the smallest candidate-scoped shared presentation seam, records every necessary HTML or adapter hook, and proves why public-loaded styles and accepted controller/state owners remain unchanged."
+  status = "pass"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+    "src/web/browser/liturgy/reader-instrument.css",
+  ]
+
+  [[deliverables.requirements]]
+  id = "production-presentation-parity"
+  criterion = "The production Day Read/Missal and Propers Read/Browse candidates use the accepted masthead, reading plane, ritual grid, warning hierarchy, shell, surfaces, responsive dock, and accessibility finish at the governing states and viewports."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/reader-instrument.css",
+    "src/web/browser/liturgy/day-reader.html",
+    "src/web/browser/liturgy/propers-reader.html",
+    "tools/tests/liturgy_reader_visual_reset_browser.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "frozen-behavior-and-public-isolation"
+  criterion = "State adapters, production renderers, Ordinary seating, fail-closed behavior, semantic-location and focus restoration, race ownership, four one-step actions, public routes/navigation, and the isolated noindex comparison prototype remain intact."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/day-reader.js",
+    "src/web/browser/liturgy/propers-reader.js",
+    "tools/tests/test_liturgy_reader_shell.py",
+    "tools/tests/test_liturgy_reader_visual_reset.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "complete-parity-evidence-and-deployment"
+  criterion = "Production/prototype pairs, measurements, browser results, focused and governed checks, locked public-alpha verification, exact Pages disposition, and direct deployed/source asset parity are complete and honestly recorded."
+  status = "pass"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+    "tools/tests/liturgy_reader_visual_reset_browser.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "independent-integration-review"
+  criterion = "Independent integration review resolves every blocker before any separately authorized public navigation change or public cutover."
+  status = "pass"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "durable-handoff-closeout"
+  criterion = "The exact independently reviewed production-integration handoff directory and transport ZIP were tracked and pushed unchanged, with all 216 manifest entries valid and the reviewed ZIP SHA-256 preserved; the later rights quarantine of protected legacy payloads remains enforced without rewriting that historical completion record."
+  status = "pass"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+    "tools/tests/test_liturgical_rights_surfaces.py",
+  ]
+
+[[deliverables]]
+id = "liturgy-reader-instrument-correction-2026-08-05"
+owner = "src/web/browser/liturgy/reader-visual-reset-day.html"
+promise = "Correct the seven independently reviewed Liturgical Instrument visual blockers, produce measured before/after browser evidence and a complete immutable review handoff, and preserve accepted reader behavior and public-route isolation without beginning production integration or public cutover."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "selected-foundation-and-scope"
+  criterion = "Liturgical Instrument remains the sole selected production visual foundation; Quiet Folio and Contemporary Reader stay frozen comparison references; accepted M1–M3/W3 behavior, public routes, deferred modes, and production data are not reopened."
+  status = "pass"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+    "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "reading-plane-and-first-viewport"
+  criterion = "Read uses one deliberate axis and a controlled 768×1024 measure, while Missal advances principal ritual text by about 80 pixels at the required desktop and mobile viewports without crowding or semantic-grid loss."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/reader-visual-reset.css",
+    "tools/tests/liturgy_reader_visual_reset_browser.mjs",
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "integrated-shell-masthead-and-ritual-finish"
+  criterion = "The permanent controls and masthead read as one authored Instrument composition, including a square opaque edge dock at 1024 and whole labeled 2×2 controls at extreme reflow; warnings remain honest but subordinate, and mobile exchanges and narrow division titles retain deliberate editorial spacing and wrapping."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/reader-visual-reset-day.html",
+    "src/web/browser/liturgy/reader-visual-reset-propers.html",
+    "src/web/browser/liturgy/reader-visual-reset.css",
+    "src/web/browser/liturgy/reader-visual-reset.js",
+    "tools/tests/liturgy_reader_visual_reset_browser.mjs",
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "complete-measured-evidence-and-handoff"
+  criterion = "The required responsive, open-surface, partial-coverage, enlarged-text, forced-color, reduced-motion, keyboard, and deep-scroll matrix has comparable before/after captures, explicit deltas, clean browser results, a labeled final contact sheet, and a verified immutable tracked handoff directory and ZIP; the later rights quarantine of protected legacy payloads remains enforced without rewriting that historical completion record."
+  status = "pass"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+    "tools/tests/liturgy_reader_visual_reset_browser.mjs",
+    "tools/tests/test_liturgical_rights_surfaces.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "behavior-release-and-production-isolation"
+  criterion = "Focused integration, shared-shell, browser, accessibility, release-binding, full-gate, public-alpha build/verify, Pages, and direct deployed prototype checks agree while public Day and Propers and accepted reader seams remain unchanged."
+  status = "pass"
+  evidence = [
+    "tools/tests/test_liturgy_reader_visual_reset.py",
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "independent-correction-review"
+  criterion = "A new independent visual review resolves every correction blocker before production-integration execution begins; public cutover remains separately unauthorized."
+  status = "pass"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+    "guidance/liturgy-browser-roadmap.md",
+  ]
+
+[[deliverables]]
+id = "liturgy-reader-visual-reset-candidate-2026-08-05"
+owner = "src/web/browser/liturgy/reader-visual-reset-day.html"
+promise = "Produce an unlinked, noindex high-fidelity visual-reset prototype for the Day and Propers entrances, presenting three genuinely distinct directions over the accepted shared state, shell behavior, production assembly, Ordinary seating, and Proper rendering boundaries without changing public routes, liturgical data, or deferred reader modes."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "three-shared-real-content-directions"
+  criterion = "Quiet Folio, Liturgical Instrument, and Contemporary Reader are materially distinct polished compositions over one shared semantic DOM and interaction foundation, using real Day Read/Missal and Propers production content."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/reader-visual-reset-day.html",
+    "src/web/browser/liturgy/reader-visual-reset-propers.html",
+    "src/web/browser/liturgy/reader-visual-reset.css",
+  ]
+
+  [[deliverables.requirements]]
+  id = "reader-interaction-and-responsive-quality"
+  criterion = "Date or Browse, Contents, Mode, and Details remain one action away; semantic location and focus survive interaction; and the shared visual shell passes keyboard, reflow, zoom, forced-colors, reduced-motion, overflow, and clean-network checks."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/reader-visual-reset.js",
+    "tools/tests/liturgy_reader_visual_reset_browser.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "measured-visual-review-candidate"
+  criterion = "The three directions and one clearly justified recommendation have current same-viewport comparison captures, measured reading and shell evidence, and a compact immutable external-review handoff that permits any direction or none to be selected."
+  status = "pass"
+  evidence = [
+    "guidance/liturgy-browser-roadmap.md",
+    "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "production-isolation"
+  criterion = "Public Day and Propers routes, accepted reader candidates, state and renderer seams, public navigation, and production calendar, liturgical, source, and rights data remain unchanged."
+  status = "pass"
+  evidence = [
+    "tools/tests/test_liturgy_reader_visual_reset.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "external-review-decision"
+  criterion = "Independent visual review chooses a production foundation or explicitly finds that none of the directions is sufficient; the candidate may not self-accept or authorize public cutover."
+  status = "pass"
+  evidence = [
+    "build/agent-continuity/liturgy-reader-visual-plan.md",
+    "guidance/liturgy-browser-roadmap.md",
+    "PROJECT-WORK.md",
+  ]
+
+[[deliverables]]
+id = "liturgy-day-missal-w3-candidate-2026-08-05"
+owner = "src/web/browser/liturgy/day-reader.html"
+promise = "Integrate an unlinked, noindex W3 Day Missal-mode candidate into the accepted shared production reader using the existing M1 Day state, calendar assembly, Ordinary rendering, seating, and Proper rendering paths without changing public routes, the accepted Propers candidate, production data, later modes, search, or recension coverage."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "continuous-production-missal"
+  criterion = "Read remains the default and unchanged, while Missal renders the selected production Ordinary and each appointed Proper exactly once at its production semantic seat for Roman 1962 and postconciliar states without a second renderer, seating engine, or event-order implementation."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/day-reader.html",
+    "src/web/browser/liturgy/day-reader.js",
+  ]
+
+  [[deliverables.requirements]]
+  id = "state-options-and-transitions"
+  criterion = "Legacy Ordinary, language, Eucharistic Prayer, rubrics, and why state is validated fail-closed; legitimate options are never chosen by incidental order; and Read/Missal transitions preserve valid latent preferences and explicit semantic location across navigation and races."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/day-reader.js",
+    "tools/tests/test_day_missal_integration.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "interaction-accessibility-performance-and-print"
+  criterion = "Focused and real-browser checks cover semantic Contents, Details, deep-scroll mode transitions, responsive and 200% reflow, accessibility, request and size budgets, superseded asynchronous renders, and independently usable continuous Missal print."
+  status = "pass"
+  evidence = [
+    "tools/tests/day_reader_integration_browser.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "semantic-parity-and-production-isolation"
+  criterion = "Representative candidate output agrees with the production Day assembly, seating, Ordinary, and Proper semantics while public Day, public Propers, the accepted Propers candidate, navigation, selectors, M1 semantics, and production liturgical and generated data remain isolated."
+  status = "pass"
+  evidence = [
+    "tools/tests/test_day_missal_integration.py",
+    "tools/tests/day_reader_integration_browser.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "external-review-corrections"
+  criterion = "Resolve the external review's three bounded blockers by committing deterministic outcome-aware mode chrome, restoring keyboard focus to rerendered inline Ordinary options, and making fresh-document and same-document browser synchronization generation-safe, with wholly recaptured browser and print evidence and no public or Propers behavior change."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/day-reader.js",
+    "tools/tests/day_reader_integration_browser.mjs",
+    "tools/tests/test_day_missal_integration.py",
+    "tools/tests/test_day_reader_integration.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "external-review-evidence-settlement"
+  criterion = "Resolve the correction review's bounded evidence defect by waiting for animation-frame scroll and semantic-target stability, proving settled inline Eucharistic Prayer focus under default and reduced motion, and exercising both duplicate ordinary-key orderings on fresh documents and transitions from Read and Missal, with wholly regenerated browser and print evidence and no product behavior change."
+  status = "pass"
+  evidence = [
+    "tools/tests/day_reader_integration_browser.mjs",
+    "tools/tests/test_day_missal_integration.py",
+    "tools/tests/test_day_reader_integration.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "external-review-acceptance"
+  criterion = "External review accepts the corrected W3 Day Missal integration while public cutover, later modes, search, source or recension expansion, and print redesign remain deferred."
+  status = "pass"
+  evidence = [
+    "guidance/liturgy-browser-roadmap.md",
+    "PROJECT-WORK.md",
+  ]
+  check = "contains"
+  path = "guidance/liturgy-browser-roadmap.md"
+  needle = "86a9816c1bffdcbdd09469f5f8d005c666a8045e"
+
+[[deliverables]]
+id = "liturgy-propers-read-w3-candidate-2026-08-04"
+owner = "src/web/browser/liturgy/propers-reader.html"
+promise = "Integrate an unlinked, noindex W3 Propers Read candidate into the accepted shared production reader shell and M1 Propers state path without reopening the accepted M3 Day integration or changing public routes, data, later modes, search, or recension coverage."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "shared-shell-and-production-renderer"
+  criterion = "The candidate uses the exact accepted shell module and stylesheet and renders production formularies through the existing Proper renderer without route-specific shell duplication."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/propers-reader.html",
+    "src/web/browser/liturgy/propers-reader.js",
+    "tools/tests/test_propers_reader_integration.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "m1-state-legacy-and-choice-semantics"
+  criterion = "The candidate validates the explicit M1 Propers entrance, preserves supported legacy URL semantics, fails closed on missing or invalid formulary identity, and keeps cycles and alternatives independent without order-based selection."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/propers-reader.js",
+    "tools/tests/test_propers_reader_integration.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "interaction-accessibility-and-measurement"
+  criterion = "Focused and real-browser checks cover Browse, Contents, Mode, Details, transition races, responsive and enlarged-text overflow, accessibility, performance, required captures, and print."
+  status = "pass"
+  evidence = [
+    "tools/tests/propers_reader_integration_browser.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "semantic-parity-and-production-isolation"
+  criterion = "Representative current and candidate output agrees semantically except for explicitly documented accepted-contract corrections, while live routes, the accepted Day candidate, public discovery, and production data remain unchanged."
+  status = "pass"
+  evidence = [
+    "tools/tests/test_propers_reader_integration.py",
+    "tools/tests/propers_reader_integration_browser.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "external-review-acceptance"
+  criterion = "External review accepts the corrected W3 Propers Read integration as the second entrance into the shared production reader while public cutover, later modes, search, and recension work remain deferred."
+  status = "pass"
+  evidence = [
+    "guidance/liturgy-browser-roadmap.md",
+    "PROJECT-WORK.md",
+  ]
+  check = "contains"
+  path = "guidance/liturgy-browser-roadmap.md"
+  needle = "1e4587dfe04a11c18e996a16f7fbbdb54bc744a4"
+
+[[deliverables]]
+id = "liturgy-reader-state-m1-2026-08-03"
+owner = "src/web/browser/liturgy/reader-state.js"
+promise = "Define the first W1/W9 shared semantic reader-state, URL, fixture, and Day/Propers/CLI parity contract without changing production reader behavior."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "shared-contract"
+  criterion = "A versioned DOM-free, fail-closed contract distinguishes Day and Propers, rejects malformed or unknown v1 state, enforces mode and entrance consistency, and represents typed coverage, absence, unresolved authorized choices, and entrance-specific Compare anchors."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/reader-state.js",
+    "src/web/browser/liturgy/reader-state-adapters.js",
+    "guidance/liturgy-reader-state.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "url-compatibility"
+  criterion = "Every current Day and Propers URL key is inventoried and tested for manifest validation, precedence, storage-free operation, fail-closed explicit values, safe unknown-key handling, and canonical round trips."
+  status = "pass"
+  evidence = ["tools/tests/test_liturgy_reader_state.py"]
+
+  [[deliverables.requirements]]
+  id = "semantic-fixtures-and-parity"
+  criterion = "Versioned production-backed and non-public synthetic fixtures prove semantic parity across Day, Propers, and mass-today --expanded without duplicating calendar or seating logic, including structured cycle alternatives that cannot be merged or selected by order."
+  status = "pass"
+  evidence = [
+    "tools/tests/fixtures/liturgy-reader-state/v1",
+    "tools/tests/test_liturgy_reader_state.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "production-behavior-boundary"
+  criterion = "Current route HTML, CSS, JavaScript, liturgical/generated data, selector contents, and supported URL meanings remain unchanged; the M1 modules are not loaded by either route."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/day.html",
+    "src/web/browser/liturgy/index.html",
+    "tools/tests/test_liturgy_reader_state.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "external-acceptance"
+  criterion = "The immutable M1 handoff receives external review and every blocking finding is resolved before M1 is marked accepted."
+  status = "pass"
+  evidence = [
+    "guidance/liturgy-browser-roadmap.md",
+    "PROJECT-WORK.md",
+  ]
+  check = "contains"
+  path = "guidance/liturgy-browser-roadmap.md"
+  needle = "c1a590f5854215d68d167d9040e188f41762663e"
+
+[[deliverables]]
+id = "liturgy-day-reader-shell-m3-candidate-2026-08-04"
+owner = "src/web/browser/liturgy/day-reader.html"
+promise = "Extract the accepted quiet persistent shell into a reusable production foundation and integrate a reversible, internal Day Read-mode candidate with production semantic parity, M1 state validation, explicit legacy-state handling, responsive interaction, and no live-route change."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "production-shell-foundation"
+  criterion = "A noindex, unlinked candidate uses a reusable persistent shell module rather than the M2 demonstration harness and remains removable without affecting live routes or public discovery."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/day-reader.html",
+    "src/web/browser/liturgy/reader-shell.js",
+    "src/web/browser/liturgy/reader-shell.css",
+  ]
+
+  [[deliverables.requirements]]
+  id = "day-read-semantic-parity"
+  criterion = "The candidate renders real production Day content through the existing assembly and Proper-rendering path, crosses the accepted M1 state boundary, and matches current Day Read semantics for supported representative states."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/day-reader.js",
+    "tools/tests/test_day_reader_integration.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "legacy-and-deferred-state"
+  criterion = "Read-compatible legacy state retains its current meaning; invalid explicit state fails closed; and later-mode state is preserved, disclosed, and handed to the unchanged live Day route without silent loss."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/day-reader.js",
+    "tools/tests/test_day_reader_integration.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "interaction-accessibility-and-measurement"
+  criterion = "Focused and real-browser checks cover persistent deep-scroll reachability, semantic Contents, modal lifecycle, responsive and enlarged-text overflow, accessibility, performance, print, and the required review states."
+  status = "pass"
+  evidence = [
+    "tools/tests/day_reader_integration_browser.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "production-isolation"
+  criterion = "The live Day and Propers routes, public navigation and selectors, existing supported URLs, liturgical and calendar data, generated public data, and M1 semantics retain their current behavior."
+  status = "pass"
+  evidence = [
+    "tools/tests/test_day_reader_integration.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "external-review-acceptance"
+  criterion = "External review accepts the production Day Read candidate after the final superseded-render micro-fix, and the roadmap records M3 complete without authorizing live-route cutover or later-mode integration."
+  status = "pass"
+  evidence = [
+    "guidance/liturgy-browser-roadmap.md",
+    "PROJECT-WORK.md",
+  ]
+
+[[deliverables]]
+id = "liturgy-reader-shell-m2-candidate-2026-08-03"
+owner = "src/web/browser/liturgy/prototypes/reader-shell"
+promise = "Prototype and measure one shared responsive reader shell for the distinct Day and Propers entrances without integrating production routes, later mode engines, search, comparison semantics, recension work, or liturgical data changes."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "shared-responsive-prototype"
+  criterion = "One noindex, unlinked, non-production prototype reuses the current Proper renderer and demonstrates both entrances, all four global actions, persistent and scroll-reveal reachability variants, representative states, semantic Contents, coherent Study, and print composition."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/prototypes/reader-shell",
+    "guidance/liturgy-reader-shell-prototype.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "interaction-accessibility-and-measurement"
+  criterion = "Focused unit and real-browser checks, accessibility review, performance and size measurements, required viewport captures, deep-scroll checks, 320-pixel reflow, and print review support a measured shell recommendation."
+  status = "pass"
+  evidence = [
+    "tools/tests/test_liturgy_reader_shell.py",
+    "guidance/liturgy-reader-shell-prototype.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "production-boundary"
+  criterion = "Current Day and Propers production route sources and behavior, M1 semantics, public generated data and manifests, selector contents, and existing URL meanings remain unchanged; the nested prototype is excluded from production navigation and the public artifact."
+  status = "pass"
+  evidence = [
+    "src/web/browser/liturgy/day.html",
+    "src/web/browser/liturgy/index.html",
+    "tools/tests/test_liturgy_reader_shell.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "external-review-candidate"
+  criterion = "The immutable responsive prototype handoff is ready for external review and the roadmap records M2 only as a candidate pending that review."
+  status = "pass"
+  evidence = [
+    "guidance/liturgy-browser-roadmap.md",
+    "guidance/liturgy-reader-shell-prototype.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "external-review-corrections"
+  criterion = "External review's three bounded M2 blockers are resolved and validated for a compact immutable correction handoff without marking M2 accepted or changing production routes, M1 semantics, liturgical data, or the persistent-shell recommendation."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/liturgy-reader-shell-prototype.md",
+    "tools/tests/liturgy_reader_shell_browser.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "external-review-acceptance"
+  criterion = "External review accepts the corrected quiet persistent reader shell as the M2 direction while production Day and Propers routes, M1 semantics, public data, URLs, and later workstreams remain unchanged."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/liturgy-browser-roadmap.md",
+    "guidance/liturgy-reader-shell-prototype.md",
+  ]
+  check = "contains"
+  path = "guidance/liturgy-browser-roadmap.md"
+  needle = "75234e72c402f0b25a681fbe074da70d895f7274"
+
+[[deliverables]]
+id = "project-gpt-deep-research-redevelopment-2026-07-29"
+owner = "src/gpt"
+promise = "Substantively redevelop the GPT Tenth Sunday after Pentecost, all three GPT Eighteenth Sunday in Ordinary Time cycles, and the GPT Catholic exorcism study through broad and deep source-first research without materially changing Claude publications."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "five-gpt-leaves"
+  criterion = "The five authorized GPT leaves receive substantive content redevelopment rather than date-only, layout-only, or quota-driven expansion."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c",
+    "src/gpt/history/catholic-exorcism/01-history-and-current-practice",
+  ]
+
+  [[deliverables.requirements]]
+  id = "broad-and-deep-evidence"
+  criterion = "Publication-local audits document broad relevant source-family coverage, deep treatment of the strongest witnesses, material disagreements and limits, and consequential negative results."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost/research",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a/research",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b/research",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c/research",
+    "src/gpt/history/catholic-exorcism/01-history-and-current-practice/research",
+  ]
+
+  [[deliverables.requirements]]
+  id = "gpt-publications-verified"
+  criterion = "Every affected GPT research and synthesis PDF and canonical web edition is rebuilt, installed from a reviewed build, checked for source and metadata integrity, and visually inspected page by page."
+  status = "pass"
+  evidence = [
+    "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost.pdf",
+    "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a.pdf",
+    "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b.pdf",
+    "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c.pdf",
+    "pdf/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf",
+    "web/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost.md",
+    "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a.md",
+    "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b.md",
+    "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c.md",
+    "web/gpt/history/catholic-exorcism/01-history-and-current-practice.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "claude-boundary"
+  criterion = "No Claude publication receives a material source, PDF, web, catalog, release, or baseline change from this work."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
+id = "task-2-exorcism-100-pages"
+owner = "src/gpt/history/catholic-exorcism/01-history-and-current-practice"
+promise = "Produce and hard-review a substantive Catholic exorcism study of at least 100 pages."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "physical-pages"
+  criterion = "The installed Catholic exorcism PDF has at least 100 physical pages."
+  status = "pass"
+  check = "pdf_min_pages"
+  path = "pdf/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf"
+  minimum = 100
+  evidence = [
+    "pdf/gpt/history/catholic-exorcism/01-history-and-current-practice.pdf",
+    "src/web/data/structure/documents/corpus.json",
+  ]
+
+  [[deliverables.requirements]]
+  id = "substantive-pages"
+  criterion = "At least 100 pages are substantive, excluding front matter, terminal audit apparatus, and padding."
+  status = "pass"
+  evidence = ["src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/comprehensive-expansion-plan-2026-07-27.md"]
+
+  [[deliverables.requirements]]
+  id = "hard-review"
+  criterion = "Source, safety, law, PDF, web, and every-page review gates pass on one exact snapshot."
+  status = "pass"
+  evidence = ["src/gpt/history/catholic-exorcism/01-history-and-current-practice/research/final-exact-snapshot-review-2026-07-27.md"]
+
+[[deliverables]]
+id = "task-6-linen-restoration"
+owner = "src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb"
+promise = "Restore and hard-review the dropped archaeological and funerary context."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "context-restored"
+  criterion = "The canonical study contains the bounded archaeological and funerary context."
+  status = "pass"
+  check = "contains"
+  path = "src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb/main.tex"
+  needle = "\\subsection{Burial practice and material limits}"
+  evidence = ["src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb/main.tex"]
+
+  [[deliverables.requirements]]
+  id = "hard-review"
+  criterion = "Current source, PDF, web, audit, and every-page review evidence agree."
+  status = "pass"
+  evidence = ["src/gpt/articles/scripture/the-linen-cloths-at-the-empty-tomb/research/source-audit.md"]
+
+[[deliverables]]
+id = "task-1-altar-server-guides"
+owner = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides"
+promise = "Repair and hard-review the seven altar-server guides and card companions, including the four retained old Low Mass images."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "four-assets"
+  criterion = "The four corrected Low Mass assets are tracked."
+  status = "pass"
+  check = "path_exists"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-001-lm-start.png",
+    "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-002-lm-foot-kneel.png",
+    "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-005-lm-missal-move-corrected.png",
+    "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-006-lm-lavabo-corrected.png",
+  ]
+
+  [[deliverables.requirements]]
+  id = "artifact-and-visual-consistency"
+  criterion = "Low Mass and trainer PDFs, maps, hashes, artwork records, and every-page visual evidence agree on one exact snapshot."
+  status = "open"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/artwork-manifest.md"]
+
+[[deliverables]]
+id = "task-3-sanctuary-dictionaries"
+owner = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"
+promise = "Repair the six sanctuary pictorial dictionaries and make their qualified state accurate."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "six-pdfs"
+  criterion = "All six installed review PDFs exist."
+  status = "pass"
+  check = "path_exists"
+  evidence = [
+    "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive.pdf",
+    "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.pdf",
+    "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server.pdf",
+    "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer.pdf",
+    "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan.pdf",
+    "pdf/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies.pdf",
+    "release/publications/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive.json",
+    "release/publications/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.json",
+    "release/publications/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server.json",
+    "release/publications/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer.json",
+    "release/publications/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan.json",
+    "release/publications/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies.json",
+  ]
+
+  [[deliverables.requirements]]
+  id = "records-consistent"
+  criterion = "Inventory, omissions, page counts, source state, artwork state, and review records are mutually consistent."
+  status = "pass"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"]
+
+[[deliverables]]
+id = "task-4-missa-cantata"
+owner = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides"
+promise = "Repair and hard-review the Missa Cantata guide and cue cards."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "installed-pdfs"
+  criterion = "The rebuilt Missa Cantata guide and cue-card PDFs are installed."
+  status = "pass"
+  check = "path_exists"
+  evidence = [
+    "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata.pdf",
+    "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.pdf",
+    "release/publications/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata.json",
+    "release/publications/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.json",
+  ]
+
+  [[deliverables.requirements]]
+  id = "exact-snapshot-review"
+  criterion = "Source support, rights and distribution status, safety, artifact consistency, mechanical correctness, and every-page visual evidence agree on one exact snapshot; any concrete defect remains explicit."
+  status = "open"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/production-manifest.md"]
+
+[[deliverables]]
+id = "task-5-solemn-mass"
+owner = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides"
+promise = "Repair and hard-review the Solemn Mass guide and cue cards."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "installed-pdfs"
+  criterion = "The rebuilt Solemn Mass guide and cue-card PDFs are installed."
+  status = "pass"
+  check = "path_exists"
+  evidence = [
+    "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass.pdf",
+    "pdf/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.pdf",
+    "release/publications/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass.json",
+    "release/publications/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.json",
+  ]
+
+  [[deliverables.requirements]]
+  id = "exact-snapshot-review"
+  criterion = "Source support, rights and distribution status, safety, artifact consistency, mechanical correctness, and every-page visual evidence agree on one exact snapshot; any concrete defect remains explicit."
+  status = "open"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/production-manifest.md"]
+
+[[deliverables]]
+id = "project-review-discoverability"
+owner = "tools/public-alpha"
+promise = "Keep review publications ordinarily discoverable with conspicuous review labeling."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "policy"
+  criterion = "Repository guidance states that review status controls labeling rather than discoverability."
+  status = "pass"
+  check = "contains"
+  path = "guidance/repository.md"
+  needle = "`review` includes an installed paper in the public alpha"
+  evidence = ["guidance/repository.md"]
+
+  [[deliverables.requirements]]
+  id = "standing-alpha-authority"
+  criterion = "A standing maintainer decision permits exact-current public-alpha snapshots without repeated document-by-document authorization while preserving all concrete completion defects."
+  status = "pass"
+  check = "contains"
+  path = "guidance/repository.md"
+  needle = "standing public-alpha decision of 27 July 2026"
+  evidence = ["guidance/repository.md", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "site-check"
+  criterion = "Production-site validation proves every review publication has a resolving catalog route and visible review label."
+  status = "pass"
+  evidence = ["tools/public-alpha"]
+
+[[deliverables]]
+id = "project-recent-paper-hard-review"
+owner = "src/gpt/articles"
+promise = "Hard-review every recently discussed paper against current universal and genre guidance."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "paper-set"
+  criterion = "The review covers Exorcism, Last Supper, Abraham, John 6, and Linen Cloths."
+  status = "pass"
+  evidence = ["guidance/editorial.md", "guidance/articles.md", "guidance/history/historical-accounts.md"]
+
+  [[deliverables.requirements]]
+  id = "records-reconciled"
+  criterion = "Each paper's scope, audit, web artifact, installed PDF, catalog state, and completion claims agree."
+  status = "pass"
+  evidence = ["promised-deliverables.toml"]
+
+[[deliverables]]
+id = "project-integrate-and-deploy"
+owner = ".github/workflows/pages.yml"
+promise = "Integrate the pushed repair series and verify the resulting production Pages deployment."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "integrated"
+  criterion = "The repair commits are contained by main through an authorized integration."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml"]
+
+  [[deliverables.requirements]]
+  id = "production-verified"
+  criterion = "The deployed production artifact resolves the repaired landing pages, web editions, and PDFs."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "tools/public-alpha"]
+
+[[deliverables]]
+id = "project-stale-editions"
+owner = "tools/research-staleness"
+promise = "Reconcile every publication edition reported stale by the repository-wide audit."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "staleness-zero"
+  criterion = "The exhaustive staleness audit passes with no stale edition."
+  status = "open"
+  evidence = ["tools/research-staleness", "PROJECT-WORK.md"]
+
+[[deliverables]]
+id = "project-source-family-screening"
+owner = "src/sources/inventories/source-family-migration-v1.toml"
+promise = "Complete the provider-neutral reusable-source family screening backlog."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "screening-complete"
+  criterion = "Every exact source-family review unit is family-screened."
+  status = "pass"
+  evidence = ["src/sources/inventories/source-family-migration-v1.toml", "guidance/sources.md"]
+
+[[deliverables]]
+id = "project-public-review-gates"
+owner = "release/public-alpha.json"
+promise = "Close or accurately retain every work-specific completion gate for all public review publications."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "work-specific-gates"
+  criterion = "Every public-alpha publication has exact-snapshot evidence for source support, rights and distribution status, safety, artifact consistency, mechanical correctness, and every-page visual inspection, or retains each concrete defect explicitly."
+  status = "open"
+  evidence = ["release/public-alpha.json", "PROJECT-WORK.md"]
+
+[[deliverables]]
+id = "project-dictionary-artwork-holds"
+owner = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"
+promise = "Resolve every held dictionary-artwork identification and resolution notice."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "artwork-notices-closed"
+  criterion = "Artwork validation and source-controlled review records close every held notice without inventing object identities or implying external approval."
+  status = "pass"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary", "PROJECT-WORK.md"]
+
+[[deliverables]]
+id = "claude-eleventh-thirteenth-after-pentecost-2026-08-19"
+owner = "src/claude/liturgy/roman-rite/1962/propers/temporal"
+promise = "Author and publish componentized Claude proper guides for the Eleventh, Twelfth, and Thirteenth Sundays after Pentecost (IDs 51-53) with deep and broad patristic reception research, shared-corpus enrichment, installed Full and Synthesis PDFs, reviewed web editions, and linked catalog rows, under the maintainer's 2026-08-19 reopening of the closed temporal boundary for exactly these three targets."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "three-claude-leaves"
+  criterion = "Three componentized Claude leaves 51-53 exist with facsimile-collated verified.md, retrieved.txt, complete research/scope.md reception matrices, and schema-2 source bindings."
+  status = "pass"
+  evidence = [
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost/research/scope.md",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost/research/scope.md",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost/research/scope.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "broad-and-deep-reception-evidence"
+  criterion = "Each leaf's research records document a broad documented search across the major relevant Greek and Latin patristic and later saintly corpora for every appointed passage, deep comparative treatment of checked witnesses at work and locus, and material negative results."
+  status = "pass"
+  evidence = [
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost/research",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost/research",
+    "src/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost/research",
+  ]
+
+  [[deliverables.requirements]]
+  id = "shared-corpus-enrichment"
+  criterion = "Reception research verified for these guides is recorded in the provider-neutral source library as work, edition, or passage records and schema-2 bindings rather than remaining publication-local."
+  status = "pass"
+  evidence = [
+    "src/sources/works/theodoret-of-cyrus/interpretatio-in-psalmos/editions/migne-pg80-paris-1860/passages",
+    "src/sources/works/robert-bellarmine/commentary-on-the-book-of-psalms/editions/osullivan-duffy-1866/passages",
+    "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages",
+    "src/sources/inventories/source-family-migration-v1.toml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "claude-publications-verified"
+  criterion = "All three Full and Synthesis PDFs are rebuilt, gate-checked, visually inspected page by page, and installed, and each canonical web edition is generated, reviewed against the installed PDF, and installed."
+  status = "pass"
+  evidence = [
+    "pdf/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.pdf",
+    "pdf/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.pdf",
+    "pdf/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.pdf",
+    "web/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.md",
+    "web/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.md",
+    "web/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "catalog-and-release-links"
+  criterion = "Rows 51-53 of the Sunday calendar link the installed Claude Synthesis PDFs and web editions with stable publication markers, six release records exist, and release bindings are refreshed."
+  status = "pass"
+  evidence = [
+    "library/traditional-latin-mass.md",
+    "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.json",
+    "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.json",
+    "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.json",
+  ]
+
+  [[deliverables.requirements]]
+  id = "gpt-boundary"
+  criterion = "No GPT publication receives a material source, PDF, web, catalog, release, or baseline change from this work."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+  ]
+
+[[deliverables]]
+id = "gpt-eleventh-thirteenth-after-pentecost-2026-08-20"
+owner = "src/gpt/liturgy/roman-rite/1962/propers/temporal"
+promise = "Author and publish componentized GPT proper guides for the Eleventh, Twelfth, and Thirteenth Sundays after Pentecost (IDs 51-53) with full source-first research, broad and deep patristic and saintly reception, Catholic-faithful scholarly synthesis, provider-neutral shared-corpus enrichment where warranted, installed Full and Synthesis PDFs, reviewed web editions, and linked catalog rows under the maintainer's 2026-08-20 reopening of exactly these three GPT targets."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "gpt-boundary-recorded"
+  criterion = "The 1962 proper-guide profile and production plan record the new GPT 51-53 exception without reopening any other target."
+  status = "pass"
+  evidence = [
+    "guidance/liturgy/roman-1962-propers.md",
+    "guidance/liturgy/propers-production-plan.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "three-gpt-leaves"
+  criterion = "Three componentized GPT leaves 51-53 exist with facsimile-collated verified.md, focused retrieved.txt, complete research/scope.md reception matrices, and validated source bindings."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost",
+  ]
+
+  [[deliverables.requirements]]
+  id = "full-patristic-saintly-research"
+  criterion = "Every appointed passage receives documented full-context research and a broad search across the major relevant Greek and Latin patristic, medieval Doctoral, and later saintly corpora, with deep comparative treatment of retained witnesses, exact loci, material disagreements, doctrinal limits, and bounded negative results."
+  status = "pass"
+  evidence = [
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost/research/scope.md",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost/research/scope.md",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost/research/scope.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "shared-corpus-enrichment"
+  criterion = "Verified reusable source identity or passage evidence newly required by the three GPT guides is entered into the provider-neutral source library and bound from each consumer; publication-local interpretation remains local."
+  status = "pass"
+  evidence = [
+    "src/sources/works/gregory-the-great/homiliae-in-hiezechihelem-prophetam",
+    "src/sources/works/bonaventure/commentarius-in-librum-sapientiae",
+    "src/sources/works/honorius-augustodunensis/gemma-animae",
+    "src/sources/works/anthony-of-padua/sermons-for-sundays-and-festivals",
+    "src/sources/works/united-states-conference-of-catholic-bishops/new-american-bible-revised-edition/editions/english-usccb-web-2026-08-20",
+  ]
+
+  [[deliverables.requirements]]
+  id = "gpt-publications-verified"
+  criterion = "All three Full and Synthesis PDFs are built, gate-checked, visually inspected page by page, and installed from the reviewed builds, and each canonical web edition is generated, reviewed, and installed."
+  status = "pass"
+  evidence = [
+    "pdf/gpt/liturgy/roman-rite/1962/propers/temporal",
+    "web/gpt/liturgy/roman-rite/1962/propers/temporal",
+  ]
+
+  [[deliverables.requirements]]
+  id = "catalog-release-and-deployment"
+  criterion = "Rows 51-53 link the GPT Synthesis PDFs; their stable publication markers own the canonical Full PDFs and web editions; provider-qualified release records are validated; the exact outgoing range is publicly reviewable; and the resulting Pages deployment and affected live routes are verified."
+  status = "pass"
+  evidence = [
+    "library/traditional-latin-mass.md",
+    "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal",
+    "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "claude-publication-boundary"
+  criterion = "No Claude publication receives a substantive content, PDF, web, catalog, release, or generation-metadata revision from this GPT work; cross-provider binding-fingerprint refreshes required by corrections to provider-neutral source records remain permitted and inventory-validated."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "traditional-depth-revision"
+  criterion = "All three guides satisfy the maintainer's 2026-08-21 revision: two substantively complete thematic pages, responsibly sourced traditional Catholic dates and attributions in the page-2 summaries, faithful positive synthesis of patristic and saintly thought, and materially deeper intra- and cross-proper exegesis."
+  status = "pass"
+  evidence = [
+    "guidance/liturgy/roman-1962-propers.md",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost",
+  ]
+
+[[deliverables]]
+id = "scripture-chronology-corpus-2026-08-26"
+owner = "guidance/scripture-chronology.md"
+promise = "A provider-neutral, translation-independent, traditional-Catholic Scripture chronology corpus exists behind the Bible locus/projection layer; it supports a variable number of typed temporal assertions per locus; preserves provenance, alternative traditional claims, uncertainty, and typed resolution failures; can generate and query verse-level chronology without duplicating authored data per translation; and ultimately covers the complete addressable Scripture corpus without downstream documents re-deriving dates."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "governing-contract"
+  criterion = "A tracked guidance file owns the chronology semantics, traditional chronology policy, authority hierarchy, relation vocabulary, inheritance rules, provenance requirements, and the consumer contract, and repository routing sends a future agent to it."
+  status = "pass"
+  evidence = ["guidance/scripture-chronology.md", "AGENTS.md"]
+
+  [[deliverables.requirements]]
+  id = "translation-independent-identity"
+  criterion = "Chronology identity rests on named Scripture textual/addressing systems rather than translation editions; the Vulgate remains the preferred shared system wherever an existing safe correspondence holds, and shared chronology is authored once there rather than duplicated per system; a textually distinct non-Vulgate locus may own chronology natively; a failed projection into the Vulgate does not imply a failed native chronology query, mapping status and chronology status being separate axes; chronology is not duplicated per translation; and no universal verse-space fiction is introduced."
+  status = "open"
+  evidence = [
+    "scripts/_chronology.py",
+    "guidance/scripture-chronology.md",
+    "tools/tests/test_chronology.py",
+  ]
+  note = "Reopened 2026-08-27. The former criterion was satisfiable by one named system, `vulgate`, and so did not prove the requirement it was written for. The corpus treated a concordance refusal as a chronology refusal, which conflates two questions: whether this locus can be asserted equivalent to that one, and whether this locus can carry chronology at all. A textually distinct locus - the Greek Sirach is the repository's own standing example - must be able to own native chronology while its mapping to the Vulgate is still refused."
+
+  # 2026-08-27, post-audit correction lane: READY_FOR_REREVIEW, and still open,
+  # because this lane authored the corrections and may not accept its own work.
+  # All five criteria now hold, the fifth for the first time. The cold audit
+  # confirmed four and kept this open because the §3.0 gate probed only a span's
+  # first locus: it now walks every locus the witness prints inside the span,
+  # refuses a duplicated fact rather than a safe correspondence, and asks the
+  # module that owns each system which kind it is - a psalter renumbering may
+  # never date natively where the concordance carries, a witness to another text
+  # may. A successful mapping no longer discards a native assertion. The
+  # regression fixture is a span whose first locus refuses and whose interior
+  # would duplicate; it loads under the old gate and is refused by the new one.
+  # The next cold reviewer decides PASS; see post-audit-rereview-manifest.tsv.
+
+  # 2026-08-27, final repair lane: READY_FOR_FINAL_COLD_ACCEPTANCE, and still
+  # open. The targeted cold re-review of the 92 changed rows recommended PASS
+  # on all five criteria, verifying the fifth by construction rather than by
+  # reading the tests, and none of the 23 rows it failed touches this
+  # requirement. The repair lane that closed those 23 changed nothing here
+  # either. But that re-review disclosed that it ran in the same session as the
+  # lane it reviewed, and this lane is in the same position, so neither may
+  # accept. The reviewer who marks this pass reviews every row of
+  # final-acceptance-manifest.tsv from a clean session.
+
+  [[deliverables.requirements]]
+  id = "typed-many-valued-model"
+  criterion = "One locus resolves to any number of typed temporal assertions, one event binds to many loci, composition chronology is independent of narrated-event chronology, and prophecy is not collapsed into ordinary narration."
+  status = "pass"
+  evidence = [
+    "scripts/_chronology.py",
+    "src/sources/chronology/bindings.yaml",
+    "src/sources/chronology/events.yaml",
+  ]
+
+  [[deliverables.requirements]]
+  id = "traditional-profile"
+  criterion = "A named traditional Catholic chronology profile states operationally what traditional means, which authorities win when sources differ, which are excluded, and that modern critical chronology is a separate profile rather than a silent correction."
+  status = "pass"
+  evidence = ["src/sources/chronology/profiles.yaml"]
+
+  [[deliverables.requirements]]
+  id = "provenance-and-alternatives"
+  criterion = "Every substantive chronology assertion names inspected repository source evidence or an explicit deterministic derivation over such evidence, carries a prose basis, and material traditional disagreements remain represented with their dispositions rather than harmonized."
+  status = "pass"
+  evidence = [
+    "src/sources/chronology/events.yaml",
+    "src/sources/chronology/composition.yaml",
+    "src/sources/works/catholic-encyclopedia",
+  ]
+
+  [[deliverables.requirements]]
+  id = "machine-validation"
+  criterion = "Schema and semantic gates reject malformed identifiers, impossible dates, year zero, inverted ranges, missing referenced events or profiles, unrecognized relations, ambiguous overlapping inheritance, dangling source references, scopes past a chapter's end, stale generated output, and untyped unresolved states."
+  status = "pass"
+  evidence = [
+    "tools/scripture-chronology",
+    "tools/tests/test_chronology.py",
+    "tests/tools/scripture-chronology.test",
+  ]
+
+  [[deliverables.requirements]]
+  id = "verse-query"
+  criterion = "A deterministic library and tool answer a Scripture-locus chronology query with every applicable explicit and inherited temporal assertion in a defined stable order, and never silently choose one assertion when alternatives exist."
+  status = "pass"
+  evidence = ["scripts/_chronology.py", "tools/scripture-chronology"]
+
+  [[deliverables.requirements]]
+  id = "generated-coverage-view"
+  criterion = "A derived machine-consumer view expands compact authored ranges and inheritance to verse-level coverage without becoming the source of truth, is reproducible, and is gated for staleness rather than silently rebuilt during verification."
+  status = "pass"
+  evidence = ["src/sources/chronology/coverage.tsv", "Makefile"]
+
+  [[deliverables.requirements]]
+  id = "representative-hard-cases"
+  criterion = "Automated fixtures prove the model on the Psalter's Vulgate/Hebrew numbering, a four-Gospel Passion harmony sharing one event, prophecy against fulfilment, book-level composition inheritance, a deuterocanonical arrangement refusal, a traditional-versus-modern profile boundary, a locus carrying three or more relation types, and a preserved traditional disagreement."
+  status = "pass"
+  evidence = ["tools/tests/test_chronology.py"]
+
+  [[deliverables.requirements]]
+  id = "exhaustive-coverage"
+  criterion = "Coverage is reported over a universe that is named rather than assumed. Every locus of the Vulgate/Clementine primary chronology universe reaches exactly one typed chronology status and none is silently undated; separately, every additional native locus in each non-Vulgate textual/addressing system the chronology subsystem declares native support for is accounted for, without counting an alternate numbering of a safely corresponding text as new Scripture; cross-system mapping status is reported as its own axis rather than as a chronology status; and the report distinguishes substantive, composition-only, multi-assertion, alternative-bearing, research-gap and mapping-refused categories without a bare headline percentage."
+  status = "open"
+  evidence = [
+    "src/sources/chronology/coverage.tsv",
+    "src/sources/chronology/gaps.yaml",
+    "guidance/scripture-chronology.md",
+    "tools/tests/test_chronology.py",
+  ]
+  note = "Reopened 2026-08-27. The former criterion proved exhaustive Vulgate/Clementine accounting - 35 809 verses, none research-pending - and was marked pass on that basis, but it did not prove exhaustive coverage of every locus the chronology layer can address once native non-Vulgate systems are admitted, because the layer admitted none. It returns to pass only when the corrected universe is honestly and completely enumerated; if the repository's machinery cannot yet enumerate a supported system's native loci, this stays open with that reason recorded."
+
+  # 2026-08-27, post-audit correction lane: still open, and now open for a
+  # reason the criterion names rather than for a defect. Every locus of every
+  # declared native system reaches a chronology status of its own: a mapping
+  # word no longer stands in the chronology axis, a native locus whose mapping
+  # refuses consults gap rows scoped in its own system and otherwise reaches
+  # §9's honest default, and native scopes are bounded by their own witness
+  # rather than by the canon, which had left `EsthGr` unauthorable. Seven loci
+  # answer `research-pending` - one Greek Esther locus and six World English
+  # Catholic ones - because no ranked source has been inspected for them, and
+  # this lane invented no date to close them. Three of the ten the audit counted
+  # were never loci: `_system_loci` filled each chapter from its first printed
+  # verse to its last, and the corrected universe is 35 809 + 1 356 + 6 + 0 =
+  # 37 171. The criterion is unweakened, and stays open while any locus is
+  # `research-pending`.
+
+  # 2026-08-27, final repair lane: READY_FOR_FINAL_COLD_ACCEPTANCE, and still
+  # open, on the criterion AS WRITTEN. The targeted cold re-review read it
+  # strictly and found all five things it asks for satisfied: the universe is
+  # named, every Vulgate locus reaches exactly one typed status, every
+  # additional native locus is accounted for without counting an alias as new
+  # Scripture, mapping status is reported on its own axis, and the report
+  # distinguishes substantive, composition-only, multi-assertion,
+  # alternative-bearing, research-gap and mapping-refused without a headline
+  # percentage. The criterion nowhere requires zero `research-pending`: it
+  # requires a research-gap CATEGORY, and the seven native loci occupy it
+  # honestly. The note above read it more strictly than it is written and kept
+  # the requirement open on that reading. Erring toward open is the safe
+  # direction, and it stays open here for that reason and because no lane that
+  # authored the corpus may accept it -- but if the maintainer intends the
+  # stricter reading, the criterion should SAY so rather than be enforced by a
+  # note. The seven loci are preserved: no date was invented to close them.
+
+  [[deliverables.requirements]]
+  id = "consumer-non-derivation-contract"
+  criterion = "Tracked guidance states that propers and every other consumer must obtain biblical chronology from this corpus and must not independently research, infer, harmonize, or invent a replacement date when the corpus is absent or unresolved."
+  status = "pass"
+  evidence = ["guidance/scripture-chronology.md"]
+
+  [[deliverables.requirements]]
+  id = "independent-source-audit"
+  criterion = "A cold agent that did not author or correct the chronology independently reopens the cited sources and performs the required high-risk and stratified source audit, records exact PASS / CHANGES REQUIRED findings with source loci, and no chronology acceptance, merge, or propers integration occurs until that independent disposition is PASS."
+  status = "open"
+  evidence = ["guidance/scripture-chronology.md", "PROJECT-WORK.md"]
+  note = "Added 2026-08-27 by the correction lane, which may not mark it pass. Machine-valid is not source-verified: the population wave passed every gate and its own authors' review, and a second reader still found a quotation from memory, a wrong relative anchor, a modern-critical figure inside the traditional profile, an unretained claim of source silence that proved false for half its subjects, and a refusal that went stale mid-wave. Author self-review cannot discharge this. The corpus is a canonical factual dependency for every future proper, which makes false confidence more dangerous than missing data."
+
+  # 2026-08-27: the cold audit ran and returned CHANGES_REQUIRED - 104 standing
+  # findings over 84 distinct defects, one critical. The post-audit correction
+  # lane dispositioned all 104: 96 fixed, 8 withdrawn on evidence stronger than
+  # the audit's, none blocked and none unresolved. That does NOT discharge this
+  # requirement. An author correcting findings is not an independent acceptance,
+  # and the corrections are themselves unreviewed. It stays open until a cold
+  # reviewer reopens every row of post-audit-rereview-manifest.tsv - 92 changed
+  # claims, binding scopes, gap rows and hard cases, none of them sampled - and
+  # returns PASS.
+
+  # 2026-08-27: that re-review ran and returned CHANGES_REQUIRED -- 23 of 114
+  # rows, 9 major, 0 critical -- and disclosed that it was NOT independent at
+  # the session level, so it discharges nothing here either. A bounded repair
+  # lane then closed all 23. It also found what the 92-row manifest could not:
+  # four binding groups changed with no scope change (two of them corrected
+  # misquotations of the tracked Douay), the guidance contract and the loader
+  # changed unenumerated, and the 92 rows are 96 distinct cases rather than 92.
+  # The review surface is now src/sources/chronology/final-acceptance-manifest.tsv,
+  # derived from both correction lanes and proved complete in both directions by
+  # scripts/check_final_acceptance_manifest.py. This requirement is closed only
+  # by a reviewer in a NEW session that performed none of the population, the
+  # audit, the correction, the re-review or the repair. No same-session subagent
+  # arrangement satisfies it.
+
+  [[deliverables.requirements]]
+  id = "validation-and-handoff"
+  criterion = "The focused chronology tests and the repository gates affected by the touched files have been run, new failures are distinguished from the base's inherited failures, and branch state, coverage, and remaining work are recoverable from tracked records."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "promised-deliverables.toml"]
+
+[[deliverables]]
+id = "complete-missal-remediation-2026-08-26"
+owner = "PROJECT-WORK.md"
+promise = "Audit and source-honestly remediate the postconciliar, Roman 1962, and Roman pre-1955 Missal data and reader across English and Latin for a complete year; close actionable Proper, Common, Ordinary, calendar, recension, tooling, dialogue, visual, rights, provenance, generated-data, and publication-boundary defects; validate and push coherent feature work; obtain a cold review; then reconcile and fast-forward the accepted result to origin/main with verified deployment."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "complete-year-audit-baseline"
+  criterion = "A reproducible audit covers all three calendars, English and Latin, and every date from 2026-08-26 through 2027-08-25 in JSON and text; records invocation, parse, and standard-error results; and reconciles the resulting content, calendar, tooling, recension, and rights findings into the tracked work register."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "source-honest-content-and-recensions"
+  criterion = "Every actionable Proper, Common, Ordinary, and recension gap identified by the audit is corrected from an exact permitted witness or retained as a typed unresolved, unavailable, withheld, or partial-coverage state; no reconstruction, unofficial-copy substitution, silent cross-recension borrowing, or overstated 1962, pre-1955, 1956-1960, or postconciliar coverage remains."
+  status = "pass"
+  evidence = [
+    "src/sources/calendars",
+    "guidance/missals.md",
+    "guidance/recensions.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "calendar-and-tooling-correctness"
+  criterion = "The historical January 4-5 resolution, 2027-06-05 precedence conflict, Roman calendar-spine identities, scoped calendar-rubrics comparison, weekday-cycle selection, Common ambiguity, language behavior, diagnostic exit behavior, and related deterministic/schema/duplicate checks are corrected or fail closed with explicit tested limitations; all three calendar and rubric checkers pass."
+  status = "pass"
+  evidence = [
+    "tools/calendar-days",
+    "tools/calendar-rubrics",
+    "tools/check-calendar-masses",
+    "tools/mass-today",
+    "tests/tools/calendar-rubrics.test",
+    "tests/tools/mass-today.test",
+  ]
+
+  [[deliverables.requirements]]
+  id = "rights-provenance-and-publication-boundary"
+  criterion = "Every affected ICEL, CCD, USCCB, FDLC, Latin, and other third-party surface has accurate ownership, witness, artifact, rights, acknowledgement, and per-surface publication metadata; public builders and direct data routes refuse uncleared text; and cross-surface tests prove that repository, browser, CLI, downloadable, print, and public-data behavior does not overgrant or misattribute permission."
+  status = "pass"
+  evidence = [
+    "guidance/liturgical-text-publication-policy.md",
+    "THIRD_PARTY.md",
+    "src/sources",
+    "tools/public-alpha",
+  ]
+
+  [[deliverables.requirements]]
+  id = "structured-dialogue-and-missal-presentation"
+  criterion = "Ordinary dialogue uses source-owned ordered turn semantics where held, exposes complete accessible speaker identity, renders honest role or versicle/response cues without prose matching or role substitution, preserves opaque text where boundaries are unknown, and passes the required Chromium, Firefox, mobile, reflow, forced-colors, reduced-motion, accessibility, interaction, full-Mass, and print review."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "src/web/browser/liturgy/day.js",
+    "src/web/browser/liturgy/reader-instrument.css",
+    "tools/tests/day_reader_integration_browser.mjs",
+    "guidance/liturgy-browser-vision.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "generated-data-and-consumer-parity"
+  criterion = "Every source-owned change is projected by its canonical generator; tracked generated structures contain no stale or orphan output; browser, generated data, CLI, and tests agree on identity, selected branches and options, semantic event order, liturgical text, Proper and Ordinary order, sources, rights, seats, rubrics, and explicit absence across the complete one-year three-calendar by two-language regression matrix."
+  status = "pass"
+  evidence = [
+    "src/web/data",
+    "guidance/web-data.md",
+    "src/web/browser/liturgy/reader-state-adapters.js",
+    "src/web/browser/liturgy/ordinary-seating.js",
+  ]
+
+  [[deliverables.requirements]]
+  id = "owning-and-release-gates"
+  criterion = "The exact current owning suite and full current mass-ordinary suite pass; each of the original nine owning-suite and six mass-ordinary failures is demonstrably closed inside those expanded suites with no new failure; tpt --check, tmt check, the three calendar/rubric checkers, the complete one-year dump regression, deterministic/duplicate/schema checks, browser static and harness checks, public-alpha checks, and scoped post-refresh release-binding checks pass without concealing inherited failures."
+  status = "pass"
+  evidence = [
+    "tools/tests",
+    "tests/tools",
+    "tmt.json",
+    "release/public-alpha.json",
+  ]
+
+  [[deliverables.requirements]]
+  id = "feature-cold-review-main-and-deployment"
+  criterion = "The coherent result is committed and pushed to feature/complete-missal; an independent cold review examines the exact feature snapshot and every blocking finding is resolved; the accepted snapshot is reconciled cleanly with current origin/main; origin/main is advanced by genuine fast-forward without force or history rewrite only after make check-deployment-sources, make public-site, and public-alpha verify --deployment-target github-pages pass; and the exact resulting Pages workflow and affected live routes are verified."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    ".github/workflows/pages.yml",
+    "tools/public-alpha",
+  ]
+
+[[deliverables]]
+id = "corpus-browser-catena-e1-integration-candidate-2026-08-28"
+owner = "guidance/corpus-browser-roadmap.md"
+promise = "Build the clean E1 Catena integration candidate from the exact convergence-authorized main base with the review's bring-across manifest only, validate the integrated result against that base, and stop awaiting independent integration review without merging, releasing, deploying, or continuing synthetic hardening."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "exact-base-and-manifest"
+  criterion = "The candidate branches from 2778285849f2973ea89d1cfd5b2751ed4ae58e54 and carries only the manifest: the final Catena route/model/HTML/CSS, the voice-authority generator change with its deterministic generated data, the generator-contract test expansion, and curated production regressions, with no evidence tooling, synthetic hostile fixtures, V16-side records, shared-shell, Liturgy, PDF, or release-binding changes."
+  status = "pass"
+  evidence = [
+    "src/web/browser/catena/catena-model.js",
+    "src/web/browser/catena/catena.js",
+    "src/web/browser/catena/catena.css",
+    "src/web/browser/catena/index.html",
+    "scripts/_catena.py",
+    "src/web/data/structure/catena/index.json",
+    "tools/tests/test_catena.py",
+    "tools/tests/test_catena_production.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "focused-and-structure-validation"
+  criterion = "The generator contract reports 1,351 fragments, 1 book, and 73 canon entries; the focused Catena suites pass in full, preserving exact voices (original, translation:en, translation:la), refusal/absence distinction, provenance truthfulness, path namespace closure, and same-path/late/cache isolation."
+  status = "pass"
+  evidence = [
+    "tools/tests/test_catena.py",
+    "tools/tests/test_catena_production.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "base-and-candidate-comparison"
+  criterion = "Real-Chromium route-only runs produce identical 121 assertion identities with identical statuses at the exact base and the candidate, and full discovery produces zero new integration-caused failure identities with zero Catena failures; governed CSS/JS budgets pass without raised ceilings."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "backlogs-and-stop-line"
+  criterion = "Hardening findings and evidence tooling remain backlog, separately owned concerns are untouched, release bindings are unrefreshed, and the record states awaiting independent integration review without marking E1 accepted or integrated, merging, deploying, or release signing."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "reviewed-merge-blockers-corrected"
+  criterion = "The two MERGE_BLOCKER findings of integration review c3698563e3b45e35a672db37616e39ef27eb3d08 are corrected: translation-absence rows carry a semantic DOM delimiter so a row's flattened text never reads the author and the work as one word, and keyboard recovery onto the reading region draws a visible keyboard-only focus indicator of sufficient contrast in real Chromium on both the success and the failure/recovery path, without changing the shared shell, removing the focus-management behaviour, or raising a governed budget ceiling."
+  status = "pass"
+  evidence = [
+    "src/web/browser/catena/catena.js",
+    "src/web/browser/catena/catena.css",
+    "tools/tests/test_catena_production.py",
+    "tools/tests/catena_recovery_focus_gate.mjs",
+  ]
+
+  [[deliverables.requirements]]
+  id = "curated-suite-cleanup-and-measured-inventory"
+  criterion = "The curated suite carries no candidate or source SHA pin and no synthetic hostile or evidence-only machinery, retains GenuinelyLateStaleWorkTest with its GUARDED dependency, restores the ordinary coverage the first curation lost, keeps all nine required production coverage categories represented, and records an inventory counted the same way for both files rather than the disproved 8-hostile-plus-40-non-manifest split."
+  status = "pass"
+  evidence = [
+    "tools/tests/test_catena_production.py",
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+
+  [[deliverables.requirements]]
+  id = "record-integrity-at-the-exact-corrected-head"
+  criterion = "The ledger entry carries exactly one work-register marker in PROJECT-WORK.md, the recorded generator command is executable as written, and full discovery is rerun at the exact integration base and the exact corrected head with zero new integration-caused failure or error identities."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+    "scripts/_catena.py",
+  ]
+
+  [[deliverables.requirements]]
+  id = "correction-stays-bounded"
+  criterion = "The pass changes only the four authorized corrections: no V17 semantic lane, no broadened merge bar, no hardening or evidence-tooling backlog work, no separately owned concern touched, no release binding refreshed, and no merge, deployment, release signing, or self-acceptance."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]
+  [[deliverables.requirements]]
+  id = "confirmation-review-and-merge-to-main"
+  criterion = "Confirmation review 7dfd944494a8d9355264579156214f16d3722a9f dispositioned candidate b832cdc5bc01391cea67c01437318d25e0c7c315 as CONFIRMED - CATENA E1 INTEGRATION READY TO MERGE, and that exact candidate is merged into main with only the PROJECT-WORK.md and promised-deliverables.toml record conflicts reconciled, the minimal post-merge smoke passing, and the hardening backlog, evidence-tooling backlog, and separately owned concerns left open and untouched."
+  status = "pass"
+  evidence = [
+    "PROJECT-WORK.md",
+    "guidance/corpus-browser-roadmap.md",
+  ]

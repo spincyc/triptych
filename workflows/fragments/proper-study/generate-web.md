@@ -2,7 +2,10 @@
 
 Convert only the canonical study with the repository tool:
 
-    tools/tpt web-edition --provider {provider} --output build/web/{provider} {proper}
+    tools/tpt web-edition --provider {provider} --output build/web {proper}
+
+The converter appends the provider and document to `--output`; the output root
+is `build/web`, giving `build/web/{provider}/{proper}.md`.
 
 Read `guidance/web-editions.md` before changing conversion or declaration
 behavior. Ensure the generated Markdown preserves the canonical study's whole

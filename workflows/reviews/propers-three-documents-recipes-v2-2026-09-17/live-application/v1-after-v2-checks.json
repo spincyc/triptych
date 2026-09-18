@@ -1,0 +1,50 @@
+[
+  {
+    "command": [
+      "tools/tpt",
+      "proper-study",
+      "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+      "status",
+      "80a724fb8410dc3d"
+    ],
+    "exit": 0,
+    "output": ".scratch/integration/80a724fb8410dc3d-after-v2-status.json",
+    "sha256": "9a19fb9865cf486c5571ac17a58197ea847723ff786c7ed737d463d6453d95a7"
+  },
+  {
+    "command": [
+      "tools/tpt",
+      "proper-study",
+      "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+      "replay",
+      "80a724fb8410dc3d"
+    ],
+    "exit": 0,
+    "output": ".scratch/integration/80a724fb8410dc3d-after-v2-replay.json",
+    "sha256": "dde0318b4ef42c02aed7b7619724ee36d2cc440b36c049affbc7a1ff9049d189"
+  },
+  {
+    "command": [
+      "tools/tpt",
+      "proper-study",
+      "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+      "status",
+      "8f4e6454c021280a"
+    ],
+    "exit": 0,
+    "output": ".scratch/integration/8f4e6454c021280a-after-v2-status.json",
+    "sha256": "11509e46438f9a9dcf0a2530f7e3da9a6d39619f953eab337746644ae07d9e35"
+  },
+  {
+    "command": [
+      "tools/tpt",
+      "proper-study",
+      "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+      "replay",
+      "8f4e6454c021280a"
+    ],
+    "exit": 0,
+    "output": ".scratch/integration/8f4e6454c021280a-after-v2-replay.json",
+    "sha256": "e5e74123f52877e7c62cc3d671835b3e3f4687d90ce04db4c3ec34ea37d5eb1a"
+  }
+]

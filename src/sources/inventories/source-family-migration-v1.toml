@@ -1,14 +1,14 @@
 migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
-audited_on = "2026-09-09"
+audited_on = "2026-09-17"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:3a73d6ced75b33e9f2238b803cfe93fa856573d0159c16a6598f32e9f12157ea"
+inventory_snapshot = "sha256:3bd4ae2f0118a1187c19886fe08f401939c23cf1f242a0eaf9a735806622c421"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
-classification_snapshot = "sha256:21048643572a8265f73030712d09ba70de87a8cda712ddf5318caf62c3464801"
-canonical_catalog_snapshot = "sha256:9d5fa07cada2e9623fd69a08b34e4a2fde127a2ec1430b0ddf75cce541b85deb"
+classification_snapshot = "sha256:5d88f73b583375616ceb31514f89bd452f0882b47b94acaa649341505cf6d7e1"
+canonical_catalog_snapshot = "sha256:dd8a2fb28532dbbe161e0c38c5ee38602c18e8be2ccb6447b068634320891ff1"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:805233f824afbb995bc70ea8c92f5fbaa6b4a8474775195a633c14613c85ce20"
+snapshot = "sha256:e6407fe7b3961f7a726c9b15d309d004ad717582b4c2d1da885d3e1b7289b3f3"
 families = []
 
 [[review_units]]
@@ -482,6 +482,11 @@ surface_snapshot = "sha256:d4b9e540b09f7b8c00871bed664031fe7fe445c5ab6bfcd08948a
 review_state = "pending"
 
 [[review_units]]
+owner_id = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"
+surface_snapshot = "sha256:54191c146c6964c908b1b7e7d4ccc99ad5ea233f2ccbf3bf2a442245e37a2367"
+review_state = "pending"
+
+[[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"
 surface_snapshot = "sha256:9ec0f48e2abd49a11820dc231a3d71f1d83da915221cf98d8c9c38d1245c8fad"
 review_state = "pending"
@@ -627,6 +632,11 @@ surface_snapshot = "sha256:afd3523b763ef351de1db967bdac82e691a00a5217325863a38ba
 review_state = "pending"
 
 [[review_units]]
+owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"
+surface_snapshot = "sha256:9561e3666ec70a5e9a38a6cb2da6a080f563964198458700c315413e213000ca"
+review_state = "pending"
+
+[[review_units]]
 owner_id = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"
 surface_snapshot = "sha256:d87dfdd7d31c398dd2588b101c3d2e8418dc877523869edbace21447e04efe7c"
 review_state = "pending"
@@ -673,7 +683,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.postconciliar.roman-missal-third-edition-en-us-2011-propers"
-surface_snapshot = "sha256:00399577ec5975a7971a9c8f275286bcd2e9d470d8a73c50553eed4448bfffb0"
+surface_snapshot = "sha256:181e7481939354be05e01cc36e821fa667f3343a8602733202b39bd711ac94f1"
 review_state = "pending"
 
 [[review_units]]

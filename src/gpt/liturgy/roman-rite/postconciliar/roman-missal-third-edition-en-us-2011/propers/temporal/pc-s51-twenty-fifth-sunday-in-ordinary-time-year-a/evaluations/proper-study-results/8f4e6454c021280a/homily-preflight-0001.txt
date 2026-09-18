@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v1
+WORKFLOW_DIGEST: 1375f708d8670b2f4ccaf1869cfaa6fe67fe6946dc2b962c766bcdc499d3b47e
+RUN_ID: 8f4e6454c021280a
+COMMIT: af9b2d10a98a6aac2ce44cc84d6358ede8e630e8
+STAGE: homily-preflight
+ITERATION: 1
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-09-20","proper":"liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a","provider":"gpt","research_handoff":".scratch/no-research/dossier.md"}
+DOCUMENT_ROOT: src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: []
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

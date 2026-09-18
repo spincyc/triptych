@@ -1,0 +1,15 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/review-dependencies.toml",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-002",
+      "note": "Declared the existing GIRM work and entire english-us-2011-emended-2021 edition; the owning prospective compiler includes Chapter II, Chapter VII, landing authority/rights and existing passage ancestry. Driver must verify the actual next emitted seal.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 2,
+  "notes": "Changed only research/review-dependencies.toml and research/scope.md in the canonical leaf. Exact added-evidence checklist: .scratch/no-production/research-2/added-evidence-paths.txt; hashes: .scratch/no-production/research-2/added-evidence-sha256.json; prospective seal: .scratch/no-production/research-2/prospective-seal.json; comparison: .scratch/no-production/research-2/seal-check.txt. Preserved the official-browser Chapter II inspection, failed exact-byte retrieval, unperformed complete Preface/Eucharistic Prayer menu collation and U.S.2011/official2008 full-book collation limits. No fresh GIRM acquisition, shared source mutation, or cold-review acceptance is asserted. make check-sources reached source-library validity but exited 2 at check-document-catalogue because this pre-authoring leaf lacks web-edition.toml; log: .scratch/no-production/research-2/check-sources.txt. Global inventory refresh and actual workflow submission remain driver-owned.",
+  "stage": "research",
+  "summary": "Added the controlling GIRM work and U.S. English edition ancestry to review-dependencies.toml and recorded the complete adopted-authority dependency audit in scope.md, repairing RES-002. Research preflight and the prospective seal check pass; all 15 added GIRM metadata records are present without adding restricted payloads or extending the recorded inspection claims."
+}

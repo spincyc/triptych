@@ -2,10 +2,11 @@
 
 **Territory:** dioceses of the United States of America
 **Calendar and source records checked through:** 2026-07-28
+**Specific addition:** PC-S51-A on 2026-09-20, independently resolved 2026-09-17; earlier occurrence records have not been re-reviewed by this addition.
 **Sunday cycle:** Year A, from 2025-11-30 through 2026-11-22
 **Adjacent ferial cycle:** Cycle II, independently resolved
 
-This record indexes the first ten 2026 national-calendar occurrences represented by existing leaves. It does not resolve an unknown diocesan, religious, parish, titular, dedication, patronal, or other church-proper solemnity, and it is not an annual Ordo.
+This record indexes the first ten 2026 national-calendar occurrences represented by existing leaves, plus PC-S51-A on 20 September. It does not resolve an unknown diocesan, religious, parish, titular, dedication, patronal, or other church-proper solemnity, and it is not an annual Ordo.
 
 | Formula key | Full publication slug | Civil date | Lectionary | National-calendar result | Controlling manifest |
 | --- | --- | --- | ---: | --- | --- |
@@ -19,5 +20,6 @@ This record indexes the first ten 2026 national-calendar occurrences represented
 | `PC-S40-A` | `pc-s40-sixteenth-sunday-in-ordinary-time-year-a` | 2026-07-19 | 106 | Sixteenth Sunday in Ordinary Time is celebrated. | [Manifest](../temporal/pc-s40-sixteenth-sunday-in-ordinary-time-year-a/instance/manifest.md) |
 | `PC-S41-A` | `pc-s41-seventeenth-sunday-in-ordinary-time-year-a` | 2026-07-26 | 109 | Seventeenth Sunday in Ordinary Time is celebrated; the memorial of Saints Joachim and Anne is omitted without commemoration or transfer. | [Manifest](../temporal/pc-s41-seventeenth-sunday-in-ordinary-time-year-a/instance/manifest.md) |
 | `PC-S42-A` | `pc-s42-eighteenth-sunday-in-ordinary-time-year-a` | 2026-08-02 | 112 | Eighteenth Sunday in Ordinary Time is celebrated in the national calendar. | [Manifest](../temporal/pc-s42-eighteenth-sunday-in-ordinary-time-year-a/instance/manifest.md) |
+| `PC-S51-A` | `pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a` | 2026-09-20 | 133 | Twenty-fifth Sunday in Ordinary Time, Year A; green; the occurring Korean-martyrs memorial is omitted. Unknown local proper solemnities remain unresolved. | [Manifest](../temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/instance/manifest.md) |
 
-The two solemnities do not erase Ordinary Time Weeks IX and X. None of the ten dated Sunday targets imports its Year A readings, Gloria, Creed, Preface, or formulary automatically into the following weekday; every ferial use requires its own manifest and the independent Cycle II Lectionary path.
+The two solemnities do not erase Ordinary Time Weeks IX and X. None of the eleven dated Sunday targets imports its Year A readings, Gloria, Creed, Preface, or formulary automatically into the following weekday; every ferial use requires its own manifest and the independent Cycle II Lectionary path.

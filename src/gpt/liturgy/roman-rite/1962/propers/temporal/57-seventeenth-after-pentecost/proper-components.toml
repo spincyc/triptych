@@ -1,0 +1,159 @@
+schema = 2
+record_type = "proper-components"
+document = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"
+calendar = "roman-1962"
+entrypoint = "main.tex"
+synthesis_entrypoint = "synthesis.tex"
+homily_entrypoint = "homily.tex"
+appointed_text_completeness = "complete"
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+
+[outputs]
+research = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"
+synthesis = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis"
+homily = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily"
+web = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"
+canonical_label = "Full PDF"
+synthesis_label = "Synthesis PDF"
+homily_label = "Homily PDF"
+
+[[components]]
+key = "format"
+kind = "front-matter"
+path = "format.tex"
+modes = ["research", "synthesis", "homily"]
+depends_on = []
+element_keys = []
+references = []
+
+[[components]]
+key = "opening"
+kind = "front-matter"
+path = "sections/00-opening.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["research/interpretations.md", "research/source-audit.md", "research/source-bindings.toml"]
+
+[[components]]
+key = "appointed-text"
+kind = "appointed-text"
+path = "sections/10-appointed-text.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["research/interpretations.md", "research/source-audit.md", "research/source-bindings.toml"]
+
+[[components]]
+key = "commentary"
+kind = "proper-treatment"
+path = "sections/20-commentary.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["research/interpretations.md", "research/source-audit.md", "research/source-bindings.toml"]
+
+[[components]]
+key = "healed-charity"
+kind = "interpretive-lane"
+path = "sections/30-healed-charity.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["research/interpretations.md", "research/source-audit.md", "research/source-bindings.toml"]
+
+[[components]]
+key = "one-people"
+kind = "interpretive-lane"
+path = "sections/40-one-people.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["research/interpretations.md", "research/source-audit.md", "research/source-bindings.toml"]
+
+[[components]]
+key = "faithful-offering"
+kind = "interpretive-lane"
+path = "sections/50-faithful-offering.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["research/interpretations.md", "research/source-audit.md", "research/source-bindings.toml"]
+
+[[components]]
+key = "comparison"
+kind = "front-matter"
+path = "sections/60-comparison.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["research/interpretations.md", "research/source-audit.md", "research/source-bindings.toml"]
+
+[[components]]
+key = "study-apparatus"
+kind = "terminal-apparatus"
+path = "sections/90-study-apparatus.tex"
+modes = ["research"]
+depends_on = []
+element_keys = []
+references = []
+
+[[components]]
+key = "concise-study"
+kind = "integrated-commentary"
+path = "sections/synthesis/10-study.tex"
+modes = ["synthesis"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["research/interpretations.md", "research/source-audit.md", "research/source-bindings.toml"]
+
+[[components]]
+key = "synthesis-apparatus"
+kind = "terminal-apparatus"
+path = "sections/synthesis/90-apparatus.tex"
+modes = ["synthesis"]
+depends_on = []
+element_keys = []
+references = []
+
+[[components]]
+key = "homily-body"
+kind = "homily"
+path = "sections/homily/10-homily.tex"
+modes = ["homily"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["research/interpretations.md", "research/source-audit.md", "research/source-bindings.toml"]
+
+[[components]]
+key = "homily-apparatus"
+kind = "terminal-apparatus"
+path = "sections/homily/90-apparatus.tex"
+modes = ["homily"]
+depends_on = []
+element_keys = []
+references = []
+
+[[lanes]]
+key = "healed-charity"
+authors = ["Augustine", "John Chrysostom", "Thomas Aquinas", "Robert Bellarmine"]
+sources = ["research/scope.md", "research/interpretations.md", "research/source-audit.md"]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+component_keys = ["healed-charity"]
+
+[[lanes]]
+key = "one-people"
+authors = ["John Chrysostom", "Augustine", "Thomas Aquinas", "Robert Bellarmine"]
+sources = ["research/scope.md", "research/interpretations.md", "research/source-audit.md"]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+component_keys = ["one-people"]
+
+[[lanes]]
+key = "faithful-offering"
+authors = ["Augustine", "Jerome", "Thomas Aquinas", "Robert Bellarmine"]
+sources = ["research/scope.md", "research/interpretations.md", "research/source-audit.md"]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+component_keys = ["faithful-offering"]

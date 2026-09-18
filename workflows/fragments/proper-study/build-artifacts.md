@@ -15,9 +15,11 @@ After the final builds, record the exact PDF and render-input snapshot:
 
 Generate bounded page rasters only with the repository helper:
 
-    tools/tpt pdf-review --output build/tpt-runs/<run-id>/artifacts build/{provider}/{proper}.pdf build/{provider}/{proper}-synthesis.pdf build/{provider}/{proper}-homily.pdf
+    tools/tpt pdf-review --output build/tpt-runs/<run-id>/artifacts/build-artifacts-<iteration>/rasters build/{provider}/{proper}.pdf build/{provider}/{proper}-synthesis.pdf build/{provider}/{proper}-homily.pdf
 
-Use the actual run ID from the packet. Record artifact paths, page counts,
+Use the actual run ID and this stage's iteration from the packet. The helper
+replaces its entire output directory: keep logs, author proofs and other review
+evidence outside this dedicated raster child. Record artifact paths, page counts,
 log/font/extraction results and remaining limitations in the production audit.
 The helper writes `research/artifacts.json`; it records real bytes and declared
 source inputs, never a claim of review. A fresh worker visually inspects every

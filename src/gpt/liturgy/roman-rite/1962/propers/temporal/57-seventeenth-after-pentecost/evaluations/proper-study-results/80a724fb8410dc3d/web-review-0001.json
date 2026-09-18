@@ -1,0 +1,17 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 1,
+  "review_inputs": {
+    "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+    "files": {},
+    "provider": "gpt",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md": "6c3fde3e841b05d124938ef842978a4b1e91ac5f8f9dd73020a3d56d02cb648f"
+    }
+  },
+  "stage": "web-review",
+  "summary": "PASS for build/web/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md, conversion SHA-256 6c3fde3e841b05d124938ef842978a4b1e91ac5f8f9dd73020a3d56d02cb648f: full comparison with the canonical source and 23-page research PDF preserves all ten appointed elements, three interpretations and their four senses, 50 exact source notes, heading hierarchy, timestamp, and rights notice. Chromium inspection at 1280\u00d71000 and 393\u00d7852 confirmed readable verse superscripts, table reflow, and working note navigation; all 19 external links returned HTTP 200, and focused Augustine, Chrysostom, and Thomas source checks disclosed no conversion or attribution defect, without claiming a renewed full research sweep or facsimile collation."
+}

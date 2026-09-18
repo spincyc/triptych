@@ -1,0 +1,30 @@
+{
+  "commands": [
+    {
+      "command": "make check-sources",
+      "exit_code": 0,
+      "log": "terminal-v2-check-sources.log"
+    },
+    {
+      "command": "make check-release-bindings",
+      "exit_code": 0,
+      "log": "terminal-v2-check-release-bindings.log"
+    }
+  ],
+  "files": {
+    "terminal-v2-check-sources.log": {
+      "sha256": "09e0ad725263f8202f9a0c43600c0dfe7730dccccd35c2c0370c1ad3a86922df",
+      "original_sha256": "dd90ab549679831b560eb3ba54e25c63a993b057771e7c514557d4efcc222aea",
+      "exit_code": 0,
+      "source": ".scratch/integration/terminal-v2-check-sources.log",
+      "transformation": "Replace checkout absolute-path prefix with repository-relative paths; no other changes"
+    },
+    "terminal-v2-check-release-bindings.log": {
+      "sha256": "81b5c9979e16b7295a385dc9fd585e88bef46d1c28bd0643ee7e4e47dc373c3f",
+      "original_sha256": "81b5c9979e16b7295a385dc9fd585e88bef46d1c28bd0643ee7e4e47dc373c3f",
+      "exit_code": 0,
+      "source": ".scratch/integration/terminal-v2-check-release-bindings.log",
+      "transformation": "verbatim"
+    }
+  }
+}

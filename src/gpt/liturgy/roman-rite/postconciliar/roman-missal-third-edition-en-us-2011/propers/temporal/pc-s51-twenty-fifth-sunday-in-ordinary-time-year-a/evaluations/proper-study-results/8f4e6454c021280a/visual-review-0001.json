@@ -1,0 +1,46 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 1,
+  "review_inputs": {
+    "artifacts": {
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+      "pdfs": {
+        "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf": "edc7b47ef5a77d255246d684a5066468e7544465c10d96a513e6f45fe8abe11e",
+        "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.pdf": "98634ecb6e3a2896ec67e0d0dc5935ba3ac091764b551ea95f4c87b53ff3ca3a",
+        "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf": "79331d33fe36dc8a82588e5bac1d6626732587a6eeed697f7e9379598d6ff811"
+      },
+      "provider": "gpt",
+      "render_inputs": {
+        "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/generation-metadata.tex": "cfe09ea39adde1561b26a9ef4e27f6a809567d28b040f0d14dcc0be8925c0276",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/homily.tex": "32201817d1e8e1d613bb291cc558c75d7d8504cdc48b0f60b3aadc0e50af96b2",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/main.tex": "1137fadf039c394287b9ed5f774d13b3cf6d6ae397b77f4bcd8119e0c76f6e83",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/proper-components.toml": "ec4e4232a8dbba50e6a166bf78f15e6457c3b6b8398d9a7b5be6eddc093dafe4",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/01-opening.tex": "385d108bb412194d9c48a585feb8089feae22b4b79e4d60b8a6251cf46e08ba4",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/05-appointed-texts.tex": "b046a8b1ed8e7cb886a7df4f8163c94cc6f95c197a3f71971e270e06c47122e0",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/10-each-element.tex": "2a6e3c4ef1550227b9860f69e62a6d154ca40b94fdbecb3f19c9d0bbcfb95f45",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/20-gift-cultivation.tex": "01dccad4f4853257c783b0fdaa4200e463fd06967bac83f380da98227ca32e95",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/30-conversion-without-rivalry.tex": "99142ff7d907c602d246155938bbc019d2042119dafd9a4a06746970f7e0029b",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/40-one-people-through-ages.tex": "8618589d3df3e154b6d7eb9b9e80daa94c54b92531816a5aede632bbc49d63c7",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/80-comparison.tex": "79911e59f3c166d763281e202cecc384258098367a11da42d58435cc27217d1a",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/90-apparatus.tex": "e63646cf6a6808d71acbbdb19652422a41dad5f0dda93ed32d02e408cdca827d",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/homily-apparatus.tex": "0252af175102b7636283dbb540b5117e612570eda987f74c2bd4711b72addbbc",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/homily-body.tex": "f944e0167e68d64751c5cad51d3b80c04ce1830e39ef5b2923ff5f897486b8e9",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/homily-opening.tex": "a430f5681ceacc7cea4168ce5433310e4c364c670984b679d884d34a3e8d959f",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/synthesis-apparatus.tex": "643ca2b62740e069803e94d04db604133c0a503ea012a019fc50f8e3db8b61c7",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/synthesis-commentary.tex": "5d2a2f7dfa96a85493005d131a001afa0265c1c81448a325cacbe3c2c1244bb0",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/synthesis-opening.tex": "a6ce35799c875f824809ea1c024264513b7091bec789292b7a26bd1c0cb78be5",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/synthesis.tex": "f8aaa68c623d01aa79c123867820386ee99ed0e66a405d45ff645e13334667b4"
+      },
+      "schema": 1
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+    "files": {},
+    "provider": "gpt",
+    "review": "visual",
+    "schema": 1
+  },
+  "stage": "visual-review",
+  "summary": "PASS after opening all three contact sheets and individually inspecting all 29 full-page rasters: pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf SHA-256 79331d33fe36dc8a82588e5bac1d6626732587a6eeed697f7e9379598d6ff811 pages 1-20; pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.pdf SHA-256 98634ecb6e3a2896ec67e0d0dc5935ba3ac091764b551ea95f4c87b53ff3ca3a pages 1-5; pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf SHA-256 edc7b47ef5a77d255246d684a5066468e7544465c10d96a513e6f45fe8abe11e pages 1-4. All three PDFs and 20 render inputs match the packet seal; research/artifacts.json SHA-256 9eba3167c84d8fe523a251e001f80c218b9a552c645bffc887dcc3410aa48260 matches that seal; build-artifacts-0001/review-artifacts.json SHA-256 f54c2692e6e89ac52fc70c145588f77b81c75c6100cef8b501d3404d4b198691 has 110 verified files; independent font checks found four embedded, subsetted, Unicode-mapped fonts per PDF, and independent text extractions match the receipt proofs; the study has usable navigation, sustained exposition and intact notes, the concise work visibly interleaves alternatives, the homily has three readable spoken pages followed by separate source notes, and every final colophon is legible without a rights-only spill; page-by-page evidence is in .scratch/no-production/visual-review-1/inspection-evidence.json; limits are screen-only inspection, no audible or physical-use test, no fresh comprehensive source review, and no installation or web-publication check."
+}

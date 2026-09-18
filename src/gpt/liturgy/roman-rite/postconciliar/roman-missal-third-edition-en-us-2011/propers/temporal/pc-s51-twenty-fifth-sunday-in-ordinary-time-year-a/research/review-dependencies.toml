@@ -1,0 +1,39 @@
+# Registered binding ancestry and available payloads are also sealed by the engine.
+paths = [
+  "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/25/propers/verified.md",
+  "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/README.md",
+  "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/formula-dispositions.md",
+  "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry/occurrences-2026.md",
+  # U.S. branch norms: Chapter II, Chapter VII / 365, and the landing
+  # edition/rights notice. Declaration preserves the inspection limits in
+  # context.md; it does not assert a new acquisition of the restricted bytes.
+  "src/sources/works/catholic-church/institutio-generalis-missalis-romani/work.toml",
+  "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/english-us-2011-emended-2021",
+  "src/sources/works/catholic-church/missale-romanum/work.toml",
+  "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary",
+  "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002",
+  "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-reimpressio-emendata-2008/edition.toml",
+  "src/sources/works/united-states-conference-of-catholic-bishops/liturgical-calendar-dioceses-united-states/work.toml",
+  "src/sources/works/united-states-conference-of-catholic-bishops/liturgical-calendar-dioceses-united-states/editions/2026",
+  "src/sources/inventories/icel-web-permission-rights-v1.toml",
+  # Inventories do not traverse source_ids or prose links: seal the rights
+  # evidence and its work/edition/artifact ancestry explicitly.
+  "src/sources/inventories/liturgical-english-rights-v1.toml",
+  "src/sources/works/international-commission-on-english-in-the-liturgy/publication-policies/work.toml",
+  "src/sources/works/international-commission-on-english-in-the-liturgy/publication-policies/editions/2013-amended-booklet",
+  "src/sources/works/international-commission-on-english-in-the-liturgy/publication-policies/editions/web-2026-08-01",
+  # Latin ownership and translation bounds; the 2001 text is corroboration,
+  # with the 2021 decree controlling the inventory's ecclesiastical claim.
+  "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/decree-implementing-canon-838-2021/work.toml",
+  "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/decree-implementing-canon-838-2021/editions/2021-english-press-office-bulletin",
+  "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/liturgiam-authenticam-2001/work.toml",
+  "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/liturgiam-authenticam-2001/editions/english-vatican-web-2026-07-25",
+  "src/sources/works/world-intellectual-property-organization/wipo-lex-berne-contracting-parties/work.toml",
+  "src/sources/works/world-intellectual-property-organization/wipo-lex-berne-contracting-parties/editions/web-2026-08-01",
+  # No CCD permission is inferred from ICEL: the full artifact contains the
+  # separate LFM/NAB rights notices, paragraph 13, printed page 5 / PDF page 9.
+  "src/sources/works/united-states-conference-of-catholic-bishops/guidelines-publication-liturgical-books/work.toml",
+  "src/sources/works/united-states-conference-of-catholic-bishops/guidelines-publication-liturgical-books/editions/2025-first-printing",
+  "src/sources/works/catholic-church/ordo-lectionum-missae/work.toml",
+  "src/sources/works/catholic-church/ordo-lectionum-missae/editions/english-liturgy-office-web-2026-07-25",
+]

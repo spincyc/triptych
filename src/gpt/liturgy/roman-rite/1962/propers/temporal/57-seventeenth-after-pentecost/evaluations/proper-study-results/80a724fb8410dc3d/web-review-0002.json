@@ -1,0 +1,17 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 2,
+  "review_inputs": {
+    "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+    "files": {},
+    "provider": "gpt",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md": "a2ab850cd6fc7ea3487e719d54ca6f7b28ab94f9f148ffec8b7bdb0cc65b822f"
+    }
+  },
+  "stage": "web-review",
+  "summary": "PASS for build/web/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md, SHA-256 a2ab850cd6fc7ea3487e719d54ca6f7b28ab94f9f148ffec8b7bdb0cc65b822f, matching research/web-artifact.json: the complete canonical study was read and compared with its TeX include closure and reviewed 23-page PDF, preserving all 238 checked source blocks, ten appointed elements, three interpretations with their twelve sense distillations, and all 50 source notes, with no substantive omission, TeX debris or exposed production identifiers. The existing site renderer was independently inspected in Chromium at 1280x1000 and 393x852 with correct element anchors, working footnote navigation, readable tables and superscripts, no horizontal overflow, and nineteen reachable external links; evidence is retained under build/tpt-runs/80a724fb8410dc3d/artifacts/web-review-0002, with source-locus spot checks and the explicit limit that this isolated article preview is not full-site acceptance or a new exhaustive source/PDF review."
+}

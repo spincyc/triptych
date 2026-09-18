@@ -1,0 +1,93 @@
+{
+  "80a724fb8410dc3d": {
+    "state_sha256": "35ea579809d137c7239ae2fd082d9772da536a97123f93dea5b000a9aace05d1",
+    "manifest_sha256": "9ca34ef0a6ddf8ba09f712d3e0a32f1642d7be2b21b74f76a70cfff15152269e",
+    "provenance": {
+      "run_id": "80a724fb8410dc3d",
+      "workflow_id": "proper-study",
+      "workflow_version": 1,
+      "workflow_digest": "1375f708d8670b2f4ccaf1869cfaa6fe67fe6946dc2b962c766bcdc499d3b47e",
+      "repo_commit": "af9b2d10a98a6aac2ce44cc84d6358ede8e630e8",
+      "normalized_args": {
+        "audience": "adult parish assembly",
+        "date": "2026-09-20",
+        "proper": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+        "provider": "gpt",
+        "research_handoff": ".scratch/tlm-research/dossier.md"
+      }
+    },
+    "result_count": 57,
+    "disposition_counts": {
+      "PASS": 53,
+      "FAIL": 3,
+      "CHANGES_REQUIRED": 1
+    },
+    "nonpass_results": [
+      {
+        "stage": "research-preflight",
+        "iteration": 0,
+        "disposition": "FAIL"
+      },
+      {
+        "stage": "web-review",
+        "iteration": 0,
+        "disposition": "CHANGES_REQUIRED"
+      },
+      {
+        "stage": "publication-gates",
+        "iteration": 0,
+        "disposition": "FAIL"
+      },
+      {
+        "stage": "publication-gates",
+        "iteration": 1,
+        "disposition": "FAIL"
+      }
+    ]
+  },
+  "8f4e6454c021280a": {
+    "state_sha256": "15f8fdf78fe1556fb85ab2217a31e13bbec8358ff6243ae17117f452823e979e",
+    "manifest_sha256": "c0ac2af9c5efb10bbaee9543964ee104f06af2dc5a4357efb1191b5ff2f4da21",
+    "provenance": {
+      "run_id": "8f4e6454c021280a",
+      "workflow_id": "proper-study",
+      "workflow_version": 1,
+      "workflow_digest": "1375f708d8670b2f4ccaf1869cfaa6fe67fe6946dc2b962c766bcdc499d3b47e",
+      "repo_commit": "af9b2d10a98a6aac2ce44cc84d6358ede8e630e8",
+      "normalized_args": {
+        "audience": "adult parish assembly",
+        "date": "2026-09-20",
+        "proper": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+        "provider": "gpt",
+        "research_handoff": ".scratch/no-research/dossier.md"
+      }
+    },
+    "result_count": 44,
+    "disposition_counts": {
+      "PASS": 40,
+      "CHANGES_REQUIRED": 4
+    },
+    "nonpass_results": [
+      {
+        "stage": "research-review",
+        "iteration": 0,
+        "disposition": "CHANGES_REQUIRED"
+      },
+      {
+        "stage": "research-review",
+        "iteration": 1,
+        "disposition": "CHANGES_REQUIRED"
+      },
+      {
+        "stage": "study-review",
+        "iteration": 0,
+        "disposition": "CHANGES_REQUIRED"
+      },
+      {
+        "stage": "web-review",
+        "iteration": 0,
+        "disposition": "CHANGES_REQUIRED"
+      }
+    ]
+  }
+}

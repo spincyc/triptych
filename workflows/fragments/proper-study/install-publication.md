@@ -1,9 +1,24 @@
 # Install and wire the reviewed three-document family
 
 Install the three accepted PDFs with `make install-doc DOC=<id>
-PROVIDER={provider}`, for the bare ID, `-synthesis`, and `-homily`. Do not
-retypeset or alter accepted content. Confirm the artifact snapshot is still
-current. Install the reviewed canonical Markdown from
+PROVIDER={provider}`, for the bare ID, `-synthesis`, and `-homily`. Run the
+normal Make recipes with their declared dependencies and checks, including on
+reentry. Do not suppress them with `-o`, `-t`, or dependency/timestamp changes;
+do not alter accepted sources or their generation timestamp to avoid a rebuild.
+
+Confirm the artifact snapshot is current before installation and retain the
+three accepted PDF SHA-256 values. Make may retypeset unchanged inputs. After
+building and installing, compare each build PDF and installed PDF against its
+accepted SHA-256; a rebuild is acceptable only when those bytes are identical.
+If any hash differs, the installation contract is unfulfilled: stop and return
+BLOCKED with the exact expected and actual hashes. Do not claim a reviewed
+installation, refresh a receipt to conceal the difference, or suppress checks.
+Report the artifact defect to the coordinator for repair and a new artifact
+review before acceptance; this linear stage's BLOCKED result does not route
+that repair automatically. Byte-identical normal-Make rebuilds may complete
+this stage normally when its remaining work is done.
+
+Install the reviewed canonical Markdown from
 `build/web/{provider}/{proper}.md` to `web/{provider}/{proper}.md`, byte for
 byte, and stage that Markdown so the publication gate can prove it is tracked.
 Do not create a separate companion web authority.

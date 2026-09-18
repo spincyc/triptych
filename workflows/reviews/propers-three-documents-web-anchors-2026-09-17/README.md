@@ -13,8 +13,9 @@ the tested behavior and exact reviewed hashes; no missing working file is
 represented as retained evidence. The separate `rereview/` report accepts the repaired seven-file implementation.
 It preserves the original findings and reports 198 passing tests plus one
 missing-publication error also reproduced with the exact baseline tool and
-test. That case remains to be rerun after the legitimate postconciliar web
-installation. The complete site-renderer comparison covers 144 byte-identical
+test. The [post-installation verification](post-install-verification.md) records the
+later successful rerun of that exact case after legitimate postconciliar web
+installation, without rewriting the earlier combined command. The complete site-renderer comparison covers 144 byte-identical
 HTML pages, and twenty schema-1 conversions remain byte-identical. These
 implementation checks do not confer document, PDF, release, or deployment
 approval. Transient fixture scripts, logs, and rendered HTML mentioned by the

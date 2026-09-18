@@ -1,0 +1,168 @@
+schema = 2
+record_type = "proper-components"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"
+calendar = "postconciliar"
+entrypoint = "main.tex"
+synthesis_entrypoint = "synthesis.tex"
+homily_entrypoint = "homily.tex"
+appointed_text_completeness = "rights-limited"
+element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
+
+[outputs]
+research = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"
+synthesis = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis"
+homily = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily"
+web = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"
+canonical_label = "Research PDF"
+synthesis_label = "Synthesis PDF"
+homily_label = "Homily PDF"
+
+[[components]]
+key = "opening"
+kind = "front-matter"
+path = "sections/01-opening.tex"
+modes = ["research"]
+element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
+depends_on = []
+references = ["research/source-audit.md", "research/interpretations.md"]
+
+[[components]]
+key = "appointed-texts"
+kind = "appointed-text"
+path = "sections/05-appointed-texts.tex"
+modes = ["research"]
+element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
+depends_on = []
+references = ["research/source-audit.md", "research/interpretations.md"]
+
+[[components]]
+key = "each-element"
+kind = "proper-treatment"
+path = "sections/10-each-element.tex"
+modes = ["research"]
+element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
+depends_on = []
+references = ["research/source-audit.md", "research/interpretations.md"]
+
+[[components]]
+key = "gift-cultivation"
+kind = "interpretive-lane"
+path = "sections/20-gift-cultivation.tex"
+modes = ["research"]
+element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
+depends_on = []
+references = ["research/source-audit.md", "research/interpretations.md"]
+
+[[components]]
+key = "conversion-without-rivalry"
+kind = "interpretive-lane"
+path = "sections/30-conversion-without-rivalry.tex"
+modes = ["research"]
+element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
+depends_on = []
+references = ["research/source-audit.md", "research/interpretations.md"]
+
+[[components]]
+key = "one-people-through-ages"
+kind = "interpretive-lane"
+path = "sections/40-one-people-through-ages.tex"
+modes = ["research"]
+element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
+depends_on = []
+references = ["research/source-audit.md", "research/interpretations.md"]
+
+[[components]]
+key = "comparison"
+kind = "front-matter"
+path = "sections/80-comparison.tex"
+modes = ["research"]
+element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
+depends_on = []
+references = ["research/source-audit.md", "research/interpretations.md"]
+
+[[components]]
+key = "study-apparatus"
+kind = "terminal-apparatus"
+path = "sections/90-apparatus.tex"
+modes = ["research"]
+element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
+depends_on = []
+references = ["research/source-audit.md", "research/interpretations.md"]
+
+[[components]]
+key = "concise-opening"
+kind = "front-matter"
+path = "sections/synthesis-opening.tex"
+modes = ["synthesis"]
+element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
+depends_on = []
+references = ["research/source-audit.md", "research/interpretations.md"]
+
+[[components]]
+key = "concise-commentary"
+kind = "integrated-commentary"
+path = "sections/synthesis-commentary.tex"
+modes = ["synthesis"]
+element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
+depends_on = []
+references = ["research/source-audit.md", "research/interpretations.md"]
+
+[[components]]
+key = "concise-apparatus"
+kind = "terminal-apparatus"
+path = "sections/synthesis-apparatus.tex"
+modes = ["synthesis"]
+element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
+depends_on = []
+references = ["research/source-audit.md", "research/interpretations.md"]
+
+[[components]]
+key = "homily-opening"
+kind = "front-matter"
+path = "sections/homily-opening.tex"
+modes = ["homily"]
+element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
+depends_on = []
+references = ["research/source-audit.md", "research/interpretations.md"]
+
+[[components]]
+key = "homily-body"
+kind = "homily"
+path = "sections/homily-body.tex"
+modes = ["homily"]
+element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
+depends_on = []
+references = ["research/source-audit.md", "research/interpretations.md"]
+
+[[components]]
+key = "homily-apparatus"
+kind = "terminal-apparatus"
+path = "sections/homily-apparatus.tex"
+modes = ["homily"]
+element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
+depends_on = []
+references = ["research/source-audit.md", "research/interpretations.md"]
+
+[[lanes]]
+key = "gift-cultivation"
+authors = ["Augustine", "Thomas Aquinas", "John Chrysostom"]
+sources = ["research/source-audit.md", "research/interpretations.md", "research/source-bindings.toml"]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
+component_keys = ["gift-cultivation"]
+
+[[lanes]]
+key = "conversion-without-rivalry"
+authors = ["John Chrysostom", "Augustine", "Thomas Aquinas"]
+sources = ["research/source-audit.md", "research/interpretations.md", "research/source-bindings.toml"]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
+component_keys = ["conversion-without-rivalry"]
+
+[[lanes]]
+key = "one-people-through-ages"
+authors = ["Gregory the Great", "Augustine"]
+sources = ["research/source-audit.md", "research/interpretations.md", "research/source-bindings.toml"]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
+component_keys = ["one-people-through-ages"]

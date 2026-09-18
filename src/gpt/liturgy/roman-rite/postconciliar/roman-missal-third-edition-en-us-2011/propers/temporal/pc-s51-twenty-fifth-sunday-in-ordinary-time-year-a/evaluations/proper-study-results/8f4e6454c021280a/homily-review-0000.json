@@ -1,0 +1,232 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "homily-opening",
+          "kind": "front-matter",
+          "path": "sections/homily-opening.tex",
+          "references": [
+            "research/source-audit.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily-body.tex",
+          "references": [
+            "research/source-audit.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "homily-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily-apparatus.tex",
+          "references": [
+            "research/source-audit.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+      "element_keys": [
+        "entrance",
+        "collect",
+        "first-reading",
+        "responsorial-psalm",
+        "second-reading",
+        "acclamation",
+        "gospel",
+        "offerings",
+        "communion-ps119",
+        "communion-jn10",
+        "after-communion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine",
+            "Thomas Aquinas",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "gift-cultivation"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "gift-cultivation",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/source-audit.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Augustine",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "conversion-without-rivalry"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "conversion-without-rivalry",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/source-audit.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Gregory the Great",
+            "Augustine"
+          ],
+          "component_keys": [
+            "one-people-through-ages"
+          ],
+          "element_keys": [
+            "entrance",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "acclamation",
+            "gospel",
+            "offerings",
+            "communion-ps119",
+            "communion-jn10",
+            "after-communion"
+          ],
+          "key": "one-people-through-ages",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/source-audit.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+    "files": {
+      "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/homily.tex": "32201817d1e8e1d613bb291cc558c75d7d8504cdc48b0f60b3aadc0e50af96b2",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/interpretations.md": "f399b2bd86ea0ef6c4997ed09660278b02ca43c3294eb6792d65581bce66646b",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/source-audit.md": "3f66b8da4d4eaba71ee8eee9ab2d62ae483341a933d76be8d83cf3618cde36be",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/homily-apparatus.tex": "0252af175102b7636283dbb540b5117e612570eda987f74c2bd4711b72addbbc",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/homily-body.tex": "f944e0167e68d64751c5cad51d3b80c04ce1830e39ef5b2923ff5f897486b8e9",
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/homily-opening.tex": "a430f5681ceacc7cea4168ce5433310e4c364c670984b679d884d34a3e8d959f"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "1",
+            "1375f708d8670b2f4ccaf1869cfaa6fe67fe6946dc2b962c766bcdc499d3b47e",
+            "8f4e6454c021280a",
+            "af9b2d10a98a6aac2ce44cc84d6358ede8e630e8",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "PASS for Room for Another's Joy (homily.tex): the continuous speech develops a clear, pastorally concrete argument from the appointed Gospel through Isaiah, the psalm, Paul, receptive hearing and the Mass's prayers, faithfully deriving from the study and concise companion; independently checked evidence includes Augustine Sermon 87.1-10 and John 47.2, Chrysostom Matthew 64.3 and Philippians 4 opening, retained Scripture, the dated USCCB readings and the common-prayer publisher witness. All eight sealed files match, all four proof pages were inspected, and the body is exactly 1,288 words, yielding an estimated 10.3-11.2 minutes at 115-125 words per minute; no audible rehearsal, timed human delivery, new original-language collation or complete official 2008/2011 altar-book collation is certified, and no blocking defect remains."
+}

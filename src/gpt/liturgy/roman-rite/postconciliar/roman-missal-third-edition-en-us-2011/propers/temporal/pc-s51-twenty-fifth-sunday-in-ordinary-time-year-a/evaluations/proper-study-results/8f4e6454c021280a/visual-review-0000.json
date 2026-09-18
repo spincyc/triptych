@@ -1,0 +1,61 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "VIS-001",
+      "location": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/main.tex:28\u201332 and src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/synthesis.tex:21\u201325; study PDF page 18, final comparison paragraph; synthesis PDF page 4, final expository paragraph before Appendix: Scope and Qualifications",
+      "problem": "The last body paragraph abruptly adopts the compact apparatus leading before the appendix begins. The study's line-top spacing drops from approximately 15.18 pt to 11.96 pt, and the synthesis's from approximately 14.90 pt to 12.03 pt. Both remain readable, but the dense ending visibly interrupts the otherwise consistent body typography. The entrypoints select the smaller apparatus settings before terminating the preceding input's final paragraph.",
+      "required_result": "If polishing the layout, terminate the final body paragraph before entering the compact apparatus group, then rebuild and inspect the affected closing pages so that body leading remains consistent and apparatus settings begin only with the appendix.",
+      "severity": "advisory"
+    },
+    {
+      "id": "VIS-002",
+      "location": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/30-conversion-without-rivalry.tex:21 and :36; study PDF pages 13\u201315",
+      "problem": "The paragraph beginning 'The adapted acclamation locates conversion' leaves its single final line at the top of page 14. The Moral paragraph at the foot of page 14 also divides 'comparative' across the page turn ('compar-' / 'ative'). These are minor interruptions to reading continuity; no words are missing and the argument remains clear.",
+      "required_result": "If polishing the study, prevent the single-line widow and the hyphenated word across the page turn, using paragraph/page-break controls without reducing type size or removing content, and inspect the resulting page boundaries.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "artifacts": {
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+      "pdfs": {
+        "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf": "47697b1b71dbbee6961cc7680b0e7827afa3781e05ae723510d5b721bd4c8c09",
+        "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.pdf": "c41d7e75a47525863a9fa279bcc9361f4a0bb6e92f420c4244be2b24f3d44279",
+        "build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf": "336fd032c87622cf5d9d174fd8ec1a4f3c2a98781c0b44a0dfbb493d3ac2635a"
+      },
+      "provider": "gpt",
+      "render_inputs": {
+        "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/generation-metadata.tex": "76d47323fd6a5c40e96c41a31f6db247b8ef644e25f6a22f7a96258bac5adeed",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/homily.tex": "32201817d1e8e1d613bb291cc558c75d7d8504cdc48b0f60b3aadc0e50af96b2",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/main.tex": "4e39abdc774f10ea2200c30d8e2161464d6425ce0cb3040db912153f2e2df3e7",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/proper-components.toml": "ec4e4232a8dbba50e6a166bf78f15e6457c3b6b8398d9a7b5be6eddc093dafe4",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/01-opening.tex": "385d108bb412194d9c48a585feb8089feae22b4b79e4d60b8a6251cf46e08ba4",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/05-appointed-texts.tex": "3cf65a230bc7ae5fc6b5d9f5348619dba782d75432fcd9d0d37718f2ff25d75a",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/10-each-element.tex": "2a6e3c4ef1550227b9860f69e62a6d154ca40b94fdbecb3f19c9d0bbcfb95f45",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/20-gift-cultivation.tex": "01dccad4f4853257c783b0fdaa4200e463fd06967bac83f380da98227ca32e95",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/30-conversion-without-rivalry.tex": "99142ff7d907c602d246155938bbc019d2042119dafd9a4a06746970f7e0029b",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/40-one-people-through-ages.tex": "8618589d3df3e154b6d7eb9b9e80daa94c54b92531816a5aede632bbc49d63c7",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/80-comparison.tex": "79911e59f3c166d763281e202cecc384258098367a11da42d58435cc27217d1a",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/90-apparatus.tex": "e63646cf6a6808d71acbbdb19652422a41dad5f0dda93ed32d02e408cdca827d",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/homily-apparatus.tex": "0252af175102b7636283dbb540b5117e612570eda987f74c2bd4711b72addbbc",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/homily-body.tex": "f944e0167e68d64751c5cad51d3b80c04ce1830e39ef5b2923ff5f897486b8e9",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/homily-opening.tex": "a430f5681ceacc7cea4168ce5433310e4c364c670984b679d884d34a3e8d959f",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/synthesis-apparatus.tex": "643ca2b62740e069803e94d04db604133c0a503ea012a019fc50f8e3db8b61c7",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/synthesis-commentary.tex": "5d2a2f7dfa96a85493005d131a001afa0265c1c81448a325cacbe3c2c1244bb0",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/synthesis-opening.tex": "a6ce35799c875f824809ea1c024264513b7091bec789292b7a26bd1c0cb78be5",
+        "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/synthesis.tex": "d283442cb36acc94572cb29cd759a07d99329bc35fa894229065cec5829a99a9"
+      },
+      "schema": 1
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+    "files": {},
+    "provider": "gpt",
+    "review": "visual",
+    "schema": 1
+  },
+  "stage": "visual-review",
+  "summary": "PASS after opening all three contact sheets and individually viewing every final full-page raster: 29 pages total. The study has usable contents, substantial exposition and legible footnotes; the concise study visibly interleaves the alternatives; the homily has comfortable 13-point type, intact paragraphs across its three spoken pages, and separate source/delivery notes on page 4. No blocking clipping, overlap, missing text, broken table or footnote, blank/sparse spill page, or rights-only page was found; all three final compact rights colophons remain legible beside terminal content. Two minor typography defects are advisory.\n\nExact inspected artifacts and receipt SHA-256 values:\n- study: build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf; pages 1\u201320, every page individually viewed; SHA-256 336fd032c87622cf5d9d174fd8ec1a4f3c2a98781c0b44a0dfbb493d3ac2635a.\n- synthesis: build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.pdf; pages 1\u20135, every page individually viewed; SHA-256 c41d7e75a47525863a9fa279bcc9361f4a0bb6e92f420c4244be2b24f3d44279.\n- homily: build/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf; pages 1\u20134, every page individually viewed; SHA-256 47697b1b71dbbee6961cc7680b0e7827afa3781e05ae723510d5b721bd4c8c09.\nReceipt: src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/artifacts.json; SHA-256 1b4d9a565f308b2790725c8c23b768e6b3dadf88c6e8228c7ba5d14564aba16e. The receipt, all 3 PDF hashes and all 20 render-input hashes match the packet seal, and every cached page/contact-sheet hash was verified. Direct pdfinfo, pdffonts, pdftotext and Ghostscript structure checks succeeded for all three current PDFs; every font is embedded, extraction has one visible revision timestamp per PDF and no replacement characters, and current build logs contain no warnings, overflow, undefined references or fatal errors. Detailed per-page raster identities and check commands are retained in .scratch/no-production/visual-review-0/inspection-evidence.json. This verdict covers visual artifact acceptance, not a repeated primary-source content review or a timed human delivery."
+}

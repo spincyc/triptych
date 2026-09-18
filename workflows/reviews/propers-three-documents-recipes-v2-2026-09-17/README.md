@@ -1,9 +1,10 @@
 # Proper-study v2 recipe review
 
 `prepared/` contains verbatim independent cold-review records of the exact
-five-file patch tested in isolation. Preparation passed; this is not yet
-evidence of live application or a real v2 production. Live application remains
-forbidden until both original v1 productions are ACCEPTED.
+five-file patch tested in isolation. Preparation passed; these original records are not evidence of live
+application or a real v2 production. The later [live-application record](live-application/RECORD.md)
+preserves the actual guarded application of the final six-file variant only
+after both original v1 productions reached ACCEPTED.
 
 The records name transient scripts, isolated fixtures and raw logs retained
 under the review's scratch directory. They are not contents of this archive.
@@ -36,10 +37,16 @@ prepared v2 digest is
 `4e4bbd64b71b60bd9e04c9fa7592ecb52c85e05cad1349c41941fa4d31e4e4d2`;
 all earlier patches and digests remain historical preparation evidence. This
 archive retains exact reports, commands, identities and negative outcomes, not
-the transient scripts, fixtures or raw logs they reference. Guarded live
-application and its integration review are still pending.
+the transient scripts, fixtures or raw logs they reference. The later live-application record preserves actual application and owning
+checks. Independent final integration review remains separately required.
 
 Archive whitespace verification: ordinary `git diff --cached --check` returned
 2 solely for the required space prefix on a blank context line in the retained
 installation delta patch. The exact patch is preserved; the scoped check with
 `-c core.whitespace=-blank-at-eol` returned 0.
+
+
+The [independent integration checkpoint](../propers-three-documents-integration-checkpoint-2026-09-17/REPORT.md)
+subsequently passed the exact v2 application and first Sunday productions.
+That historical approval does not satisfy the maintainer's later 10–12-page
+concise/first-four-page revision; the overall task remains open.

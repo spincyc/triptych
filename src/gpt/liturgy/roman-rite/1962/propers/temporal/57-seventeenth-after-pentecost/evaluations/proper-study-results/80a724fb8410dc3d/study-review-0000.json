@@ -1,0 +1,347 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "format",
+          "kind": "front-matter",
+          "path": "format.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/00-opening.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/source-audit.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "appointed-text",
+          "kind": "appointed-text",
+          "path": "sections/10-appointed-text.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/source-audit.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "commentary",
+          "kind": "proper-treatment",
+          "path": "sections/20-commentary.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/source-audit.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "healed-charity",
+          "kind": "interpretive-lane",
+          "path": "sections/30-healed-charity.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/source-audit.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "one-people",
+          "kind": "interpretive-lane",
+          "path": "sections/40-one-people.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/source-audit.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "faithful-offering",
+          "kind": "interpretive-lane",
+          "path": "sections/50-faithful-offering.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/source-audit.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/60-comparison.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/source-audit.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "study-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-study-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "healed-charity"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "healed-charity",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-audit.md"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Augustine",
+            "Thomas Aquinas",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "one-people"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "one-people",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-audit.md"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine",
+            "Jerome",
+            "Thomas Aquinas",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "faithful-offering"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "faithful-offering",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-audit.md"
+          ]
+        }
+      ],
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+    "files": {
+      "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/format.tex": "5ba0336ae41e34754e77f06bf9b6e0aa553b4ed1acd41db15a6757b0083884d8",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/main.tex": "b0b132e3a0395586153cae91bfb901b89f6a4365bb6a9eb98327dd5c187b94e3",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/interpretations.md": "e3bb9a397ed2918aed093ba8e9ee2e1e1d542242a97f7d380288071eafc5ddac",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/source-audit.md": "4e68e7a069fd354cb4fa799ab50cc38370a3fe4e6cc54861e9225ee97bb395e2",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/source-bindings.toml": "9a3918cac237b05a29dd80382135acee325e3a34decea4a625a77f15c8061c03",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/00-opening.tex": "6ff032d21137f2be893738c1a42e3a3829f2e1de31b5a739a71e50f62b1fab1e",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/10-appointed-text.tex": "2fb2c9afd135bc6298c1cee602019b71f42610f4218c3f628540e99cf3b786e3",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/20-commentary.tex": "80cf6429214562d82494191f0544eea3e39c54d8a645a8e9f6f3514626ee8cff",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/30-healed-charity.tex": "5305ed4c93037fbb76a59ec419b4cdebc52779eccb6d4f2625a3ffaff134d2de",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/40-one-people.tex": "8343049fe9f1e428af16216abfdd2561a2013383c92006e4a996004dfc2c2ba9",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/50-faithful-offering.tex": "7dcc3bed50358cd2e0582af543b1df9e92cac1ddc1efef80e61ca1d7b6a519d3",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/60-comparison.tex": "bfa7d5d5aa1390535202bf54fe14b6670ee0a0a5ba4126c44de967d688ad5533",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/90-study-apparatus.tex": "a340110e055265d48eb062ed1bd736aa726d4201eed27a86e722f628ab6b650e"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "1",
+            "1375f708d8670b2f4ccaf1869cfaa6fe67fe6946dc2b962c766bcdc499d3b47e",
+            "80a724fb8410dc3d",
+            "af9b2d10a98a6aac2ce44cc84d6358ede8e630e8",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "PASS after independently reading main.tex and every included section of the expansive 1962 Seventeenth Sunday after Pentecost study: its three substantial interpretations give all ten appointed elements meaningful roles, develop compatible arguments from multiple distinct witnesses, distinguish their respective four senses, preserve consequential exegetical alternatives, and identify the whole-formulary constructions as editorial synthesis. Verification covered the complete appointed biblical chapters and psalms in the retained Douay\u2013Rheims text; the Latin and historical oration English against the 1962 Missal pp. 398\u2013400 and Cummiskey pp. 431\u2013433 images; Augustine on Psalms 32, 75, 101 and 118, De doctrina I.22 and I.30, and De consensu II.73; Chrysostom Matthew 71 and Ephesians 9\u201311; Jerome on Daniel 9:17\u201321; Thomas's Dessain Ephesians 4 lectures 1\u20132 page images and Summa III.79.1\u20132,6; Bellarmine's cited psalm passages; and the dated FSSP and ICRSP Ordo entries, with all 14 packet-sealed files still matching their hashes and with the disclosed transcription/translation limits retained, no new critical-edition collation claimed, and rendered-artifact review left to its separate stage."
+}

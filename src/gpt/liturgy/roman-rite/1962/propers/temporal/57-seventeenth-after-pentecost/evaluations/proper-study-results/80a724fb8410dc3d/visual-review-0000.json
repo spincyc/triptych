@@ -1,0 +1,45 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "review_inputs": {
+    "artifacts": {
+      "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+      "pdfs": {
+        "build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf": "e138fbefcb8e80053c8b2c9cbd867fed3540e11d5696ebe4f038486bb620008a",
+        "build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf": "65ce2123ca8aa8a3933ede37db2fbc4bcb1186873488f554a3916098980639fe",
+        "build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf": "d4b5a62c07900ca572fffb0636c97904c48e384c455701469c2d55b02331e5c5"
+      },
+      "provider": "gpt",
+      "render_inputs": {
+        "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/format.tex": "5ba0336ae41e34754e77f06bf9b6e0aa553b4ed1acd41db15a6757b0083884d8",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/generation-metadata.tex": "4ae9717c1e64dcdcb28365d7ff8359bd9f8b9231fb3969d214648ea22f898731",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/homily.tex": "a55468801eb5afb53341f850bff04e580af98b01326f2e777cb8a1a5f738759d",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/main.tex": "8e559c412ab9f0330cc6a236e5f51ded3c39e7969d6bee4deb451b997d1f8d82",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/proper-components.toml": "7b35714c312bc2df252803d1e23cca3247b5e05811e38e82ea2e60e0cfd3d6be",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/00-opening.tex": "6ff032d21137f2be893738c1a42e3a3829f2e1de31b5a739a71e50f62b1fab1e",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/10-appointed-text.tex": "2fb2c9afd135bc6298c1cee602019b71f42610f4218c3f628540e99cf3b786e3",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/20-commentary.tex": "04c50977c106416a4f1bf3595f84a4392d41ede3ec8e1fcd686a5eac59cfcaa6",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/30-healed-charity.tex": "1283f8d1dd74ae6d3c4a90da01dd2cdf7da0308642ee2eba39c0d5a6566371f4",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/40-one-people.tex": "1c2c23e8a7ab7721b545ab334a6ffa4d26ac31a86b0ea3765715421bf35f5b03",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/50-faithful-offering.tex": "82803c1c607f79dda194ea7f03b2902ef00b4e99c1a97a83499e95f44c05a373",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/60-comparison.tex": "bfa7d5d5aa1390535202bf54fe14b6670ee0a0a5ba4126c44de967d688ad5533",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/90-study-apparatus.tex": "a340110e055265d48eb062ed1bd736aa726d4201eed27a86e722f628ab6b650e",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/homily/10-homily.tex": "687f16aeecb988f6af38599ca35f99ab0dbdda14cc53e81d147f3b0ec63fb2f2",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/homily/90-apparatus.tex": "b5581d7608d426115b73f78620169e6d6bfdc443e5af8391f14a49783a1290be",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/synthesis/10-study.tex": "008b8b12719c69eb5ff0bf340453bdd0524f3f66dcd80354b702544a81d75140",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/synthesis/90-apparatus.tex": "5b75c9f6a59086867f637cb6a5158cb9c5d8a69060015ebc4c327737ec731122",
+        "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/synthesis.tex": "642f7451f2debd6836ba4d840be966e877321a952c353d2841c16e095a914413"
+      },
+      "schema": 1
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+    "files": {},
+    "provider": "gpt",
+    "review": "visual",
+    "schema": 1
+  },
+  "stage": "visual-review",
+  "summary": "PASS after opening all four contact sheets and independently inspecting every full-page raster of all three PDFs: build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf, pages 1\u201323, receipt SHA-256 d4b5a62c07900ca572fffb0636c97904c48e384c455701469c2d55b02331e5c5; build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf, pages 1\u20135, receipt SHA-256 65ce2123ca8aa8a3933ede37db2fbc4bcb1186873488f554a3916098980639fe; build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf, pages 1\u20134, receipt SHA-256 e138fbefcb8e80053c8b2c9cbd867fed3540e11d5696ebe4f038486bb620008a. The owning research/artifacts.json receipt has SHA-256 f02011747302b03a3645432cf4e413c5048c0ccc0ba70de7afab4fb018a92c58; its PDF and render-input hashes match the packet seal, and all reviewed raster-cache file hashes match. The study has usable contents, substantial exposition and intact tables and footnotes; the concise study visibly interleaves the three interpretations; the homily uses readable 13-point type with recoverable paragraphs, complete paragraph boundaries at both spoken page turns, and source notes confined to page 4. All three have readable, compact final-page rights colophons without a rights-only spill, and no clipping, overlap, stranded headings, conspicuous sparse spill, or material density defect was found. Independent pdffonts and pdfinfo checks confirmed embedded fonts, page counts, titles, subjects and revision metadata; final build logs contain no warnings, and independent Ghostscript nullpage rendering and complete text extraction succeeded. Checks and extracted text are retained at .scratch/tlm-production/visual-review-0000/. This is visual and artifact verification, not a renewed source review, physical print trial, human oral rehearsal, or installation acceptance."
+}

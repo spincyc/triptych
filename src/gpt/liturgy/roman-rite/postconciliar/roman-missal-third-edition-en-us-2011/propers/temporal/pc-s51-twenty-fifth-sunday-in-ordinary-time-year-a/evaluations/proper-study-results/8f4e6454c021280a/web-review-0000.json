@@ -1,0 +1,26 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "WEB-001",
+      "location": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/05-appointed-texts.tex:5\u2013124; corresponding generated canonical Markdown lines 37\u2013145; proper-components.toml element_keys",
+      "problem": "None of the 11 declared element keys has its required durable proper-<key> anchor in the canonical source, generated Markdown, or rendered HTML. The renderer supplies only heading-derived slugs, so targets such as #proper-gospel, #proper-collect and #proper-communion-jn10 do not exist; the grouped Entrance/Collect and Communion headings also leave their individual elements without separate stable targets. This fails the componentized-proper anchor requirement in guidance/web-editions.md even though all text and the 37 footnote links survive.",
+      "repair_target": "study",
+      "required_result": "Add one semantic proper-<key> label for each of the 11 manifest element keys at its own appointed text or rights-safe locator in the canonical study source, preserving separate targets for the Collect and the John Communion alternative within their grouped sections. Regenerate the canonical web edition and verify that all 11 declared anchors occur exactly once in the rendered DOM at the correct elements and that fragment links resolve; preserve the existing prose, source notes and alternative boundaries.",
+      "severity": "blocking"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+    "files": {},
+    "provider": "gpt",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.md": "d0048244a4d0ff00aef23f50e70853d389daaefac845078542818ab8463be831"
+    }
+  },
+  "stage": "web-review",
+  "summary": "Reviewed the complete canonical PC-S51-A Markdown, SHA-256 d0048244a4d0ff00aef23f50e70853d389daaefac845078542818ab8463be831 from research/web-artifact.json, against all eight canonical components and the 20-page research PDF (336fd032c87622cf5d9d174fd8ec1a4f3c2a98781c0b44a0dfbb493d3ac2635a), including every source note, all three interpretations and their four senses, both Communion alternatives, the inventory, revision timestamp and rights notice. CHANGES_REQUIRED for absent stable element anchors; exact Augustine Sermon 87.1\u20138, Chrysostom Matthew 64.3\u20134 and Augustine Psalm 118 sermon 4.1\u20133 loci were checked, and the owning site renderer was inspected in Chromium at 1440\u00d71000 and 393\u00d7852, with browser sampling limited to the opening, inventory, Gospel, four-sense boundary, notes and references rather than a whole-site acceptance review."
+}

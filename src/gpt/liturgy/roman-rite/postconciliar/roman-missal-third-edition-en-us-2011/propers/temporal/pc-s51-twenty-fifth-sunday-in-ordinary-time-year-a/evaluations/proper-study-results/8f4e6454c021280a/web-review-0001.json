@@ -1,0 +1,17 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 1,
+  "review_inputs": {
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+    "files": {},
+    "provider": "gpt",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.md": "ac4cdbecab8f07b38803ca3168c174d49cc1b6d22c584697bb1ca4252f5e19b7"
+    }
+  },
+  "stage": "web-review",
+  "summary": "PASS for the canonical web conversion SHA-256 ac4cdbecab8f07b38803ca3168c174d49cc1b6d22c584697bb1ca4252f5e19b7 from research/web-artifact.json: compared the complete Markdown with all eight canonical source sections and the 20-page research PDF, confirmed all 153 checked source blocks and 37 notes, inspected selected PDF and primary-source facsimile pages, and independently checked consequential Augustine, Chrysostom, Gregory and appointed-reading loci. Desktop 1440x1000 and mobile 390x844 browser review using final tools/public-alpha SHA-256 ac4d7145e7b9886042db03c1a4a38923386bf002956602f06186f0674d860251 found readable tables, all three interpretations with four senses, complete apparatus, working anchors/backlinks and no observed overflow, TeX debris or browser errors; evidence, final HTML/assets/screenshots and hashes are recorded in build/tpt-runs/8f4e6454c021280a/artifacts/web-review-0001/evidence-manifest.json, with single-page browser proof, selected PDF visual sampling and source spot checks rather than whole-site, companion-artifact or exhaustive source review."
+}

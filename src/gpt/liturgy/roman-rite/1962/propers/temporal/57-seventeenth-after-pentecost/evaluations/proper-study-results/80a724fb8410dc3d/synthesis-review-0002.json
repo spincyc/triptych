@@ -1,0 +1,203 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 2,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "format",
+          "kind": "front-matter",
+          "path": "format.tex",
+          "references": []
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-study",
+          "kind": "integrated-commentary",
+          "path": "sections/synthesis/10-study.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/source-audit.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "synthesis-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/synthesis/90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "healed-charity"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "healed-charity",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-audit.md"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Augustine",
+            "Thomas Aquinas",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "one-people"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "one-people",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-audit.md"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine",
+            "Jerome",
+            "Thomas Aquinas",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "faithful-offering"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "faithful-offering",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-audit.md"
+          ]
+        }
+      ],
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+    "files": {
+      "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/format.tex": "5ba0336ae41e34754e77f06bf9b6e0aa553b4ed1acd41db15a6757b0083884d8",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/interpretations.md": "e3bb9a397ed2918aed093ba8e9ee2e1e1d542242a97f7d380288071eafc5ddac",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/source-audit.md": "4e68e7a069fd354cb4fa799ab50cc38370a3fe4e6cc54861e9225ee97bb395e2",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/source-bindings.toml": "9a3918cac237b05a29dd80382135acee325e3a34decea4a625a77f15c8061c03",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/synthesis/10-study.tex": "008b8b12719c69eb5ff0bf340453bdd0524f3f66dcd80354b702544a81d75140",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/synthesis/90-apparatus.tex": "5b75c9f6a59086867f637cb6a5158cb9c5d8a69060015ebc4c327737ec731122",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/synthesis.tex": "642f7451f2debd6836ba4d840be966e877321a952c353d2841c16e095a914413"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "1",
+            "1375f708d8670b2f4ccaf1869cfaa6fe67fe6946dc2b962c766bcdc499d3b47e",
+            "80a724fb8410dc3d",
+            "af9b2d10a98a6aac2ce44cc84d6358ede8e630e8",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "Independently reviewed Love Received and Lived in synthesis.tex and its complete five-page proof against the expansive study, interpretation audit, appointed-text record, Cummiskey orations, and cited loci in Augustine, Chrysostom, Jerome, Bellarmine, and Thomas: the concise study interleaves all three readings, preserves their controlling claims and material four-sense distinctions, retains source qualifications, and introduces no new source-dependent claim. Exact retained commentary passages and Thomas's 1857 Ephesians facsimile pages 312\u2013317 were inspected; the disclosed abridgment and transcription limits remain, all eight sealed files are unchanged, and no blocking defect was found."
+}

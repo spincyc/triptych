@@ -1,0 +1,26 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "WEB-001",
+      "location": "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md:46,62,72,80,92,100,118 (the seven biblical study-text paragraphs)",
+      "problem": "All 30 verse numbers are emitted as Pandoc superscript syntax, for example ^137^SADE, ^1^I therefore and ^34^But, rather than notation supported by the site's Markdown renderer. tools/public-alpha.render_page with the installed locked Markdown 3.10.3 leaves these carets in visible HTML, confirmed in desktop and narrow Chromium views. The reviewed PDF and sections/10-appointed-text.tex instead distinguish the numbers as superscripts. The repeated literal markup interrupts every biblical study-text paragraph and fails the web conversion's readable-notation requirement. Exact rendered evidence is build/tpt-runs/80a724fb8410dc3d/artifacts/web-review-0000/review.html; screenshots are appointed-introit--1280x1000.png and appointed-introit--393x852.png in that same directory.",
+      "repair_target": "publication",
+      "required_result": "Regenerate the canonical web conversion so that all 30 verse numbers render as actual superscripts, or another explicitly readable and faithful verse-number form, through the site's existing renderer without visible caret syntax. Preserve the complete study and citation content, verify the generated HTML, and submit the new conversion bytes and hash for independent review; do not repair only the review preview or hand-edit the generated Markdown.",
+      "severity": "blocking"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+    "files": {},
+    "provider": "gpt",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md": "340048411a88a76e554eed2becdf2e2a3540dbcc3002cf83a6804ebaeeb82535"
+    }
+  },
+  "stage": "web-review",
+  "summary": "CHANGES_REQUIRED for build/web/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md, SHA-256 340048411a88a76e554eed2becdf2e2a3540dbcc3002cf83a6804ebaeeb82535, matching research/web-artifact.json: the complete canonical study, three interpretations and their four senses, ten-element table, all 50 source notes, references, timestamp and rights notice survive comparison with the canonical TeX and reviewed study PDF; all internal fragments resolve and all 19 external links returned HTTP 200. The exact site renderer and focused Chromium views at 1280x1000 and 393x852 expose 30 unrendered verse-number superscripts; browser inspection was limited to those views, with no full-site acceptance or fresh primary-witness collation claimed."
+}

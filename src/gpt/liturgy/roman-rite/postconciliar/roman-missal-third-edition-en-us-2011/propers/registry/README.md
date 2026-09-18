@@ -2,6 +2,7 @@
 
 **Registry scope:** postconciliar Roman Rite; dioceses of the United States of America
 **Registry checked through:** 2026-07-28
+**Specific addition:** PC-S51-A, checked 2026-09-17; earlier dispositions have not been re-reviewed by this addition.
 
 This non-publishable directory records how this edition-locale adopts and resolves [the stable postconciliar proper registry](../../../../../../../../guidance/liturgy/postconciliar-propers-registry.md). The reusable guide architecture remains in [the postconciliar proper profile](../../../../../../../../guidance/liturgy/postconciliar-propers.md).
 
@@ -9,15 +10,15 @@ This non-publishable directory records how this edition-locale adopts and resolv
 
 - **Latin base:** `Missale Romanum`, editio typica tertia, reimpressio emendata (2008). Current formulary audits collate the accessible 2002 digitally typeset PDF reproduction and the official 2008 variation list; direct inspection of the corresponding 2008 reprint pages remains outstanding where each owner says so.
 - **Vernacular Missal:** `Roman Missal, Third Edition, for Use in the Dioceses of the United States of America`, English, implemented 2011-11-27. Publisher-specific collation of protected English orations remains outstanding where the owner audit says so.
-- **Lectionary:** `Lectionary for Mass for Use in the Dioceses of the United States of America`, Second Typical Edition, Volume I, for the twelve evaluated Sunday targets.
+- **Lectionary:** `Lectionary for Mass for Use in the Dioceses of the United States of America`, Second Typical Edition, Volume I, for the thirteen evaluated Sunday targets.
 - **Calendar:** General Roman Calendar as implemented nationally in the United States. Unknown diocesan, religious, parish, titular, dedication, patronal, and other church-proper overlays are not resolved.
 
 ## Records
 
-- [Formula dispositions](formula-dispositions.md) records the twelve evaluated targets, all still-unassessed registry classes, and the fail-closed U.S. `PC-R08` state.
-- [2026 occurrences](occurrences-2026.md) records the first ten national-calendar dates currently represented by publication leaves, through 2 August 2026. The Year B and C leaves are recurring cycle references rather than invented 2026 occurrences.
+- [Formula dispositions](formula-dispositions.md) records the thirteen evaluated targets, all still-unassessed registry classes, and the fail-closed U.S. `PC-R08` state.
+- [2026 occurrences](occurrences-2026.md) records the first ten national-calendar dates represented by publication leaves, through 2 August 2026, plus PC-S51-A on 20 September 2026. The Year B and C leaves are recurring cycle references rather than invented 2026 occurrences.
 
-These records do not replace the leaf manifest, leaf composition audit, shared formulary audit, or research scope. A blank or unassessed target is not `not-present-in-edition`, and no collection-completeness claim follows from the twelve evaluated leaves.
+These records do not replace the leaf manifest, leaf composition audit, shared formulary audit, or research scope. A blank or unassessed target is not `not-present-in-edition`, and no collection-completeness claim follows from the thirteen evaluated targets.
 
 This edition-locale also adopts the stable Sacred Triduum identities:
 `PC-T01` Evening Mass of the Lord's Supper and `PC-T02` Celebration of the

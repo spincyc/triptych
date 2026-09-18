@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
-audited_on = "2026-09-05"
-publication_snapshot = "sha256:253dbedde34cc73d8bd7ab832d716ccfbf3b71ac59fd0541c2263235a737ae7f"
-classification_snapshot = "sha256:21048643572a8265f73030712d09ba70de87a8cda712ddf5318caf62c3464801"
+audited_on = "2026-09-17"
+publication_snapshot = "sha256:45b8b793cb59282061d588d9061632335ecd3e2e4e81f00fa153dc9550181412"
+classification_snapshot = "sha256:5d88f73b583375616ceb31514f89bd452f0882b47b94acaa649341505cf6d7e1"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -381,6 +381,10 @@ document = "liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecos
 source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "repository-internal", "scholastic", "scripture", "secondary"]
 
 [[classifications]]
+document = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "repository-internal", "scholastic", "scripture", "secondary"]
+
+[[classifications]]
 document = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"
 source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "secondary"]
 
@@ -495,6 +499,10 @@ source_categories = ["historical-primary", "liturgical", "scripture"]
 [[classifications]]
 document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c"
 source_categories = ["historical-primary", "institutional-current", "liturgical", "magisterial"]
+
+[[classifications]]
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"
+source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 
 [[classifications]]
 document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"

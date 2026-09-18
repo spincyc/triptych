@@ -1,0 +1,15 @@
+{
+  "stage": "research-review",
+  "iteration": 0,
+  "disposition": "PASS",
+  "summary": "Independently reviewed the research and controlled text for the GPT 1962 Seventeenth Sunday after Pentecost, 20 September 2026: checked the Missal's printed 398–400, calendar LI, rubric 111(b) and Trinity Preface 293 against images; Pustet 1862 printed 341–342 and Cummiskey 1861 printed 431–433 against images; the seven complete retained Douay–Rheims contexts; the principal retained Augustine, Chrysostom, Jerome, Thomas and Bellarmine loci; source bindings and same-family external dependencies; and the dated entries at https://www.fssp.fr/ordo-du-mois/ and https://icrspfrance.fr/ordo.php. PASS authorizes drafting the three distinct, compatible, whole-formulary interpretations with their individual four senses and substantive contributions from multiple checked authors, within the recorded universal-calendar scope, abridged historical translations, uncollated Jerome/Bellarmine transcriptions, excluded unverified leads and canonical-versus-liturgical English boundaries; this is bounded research acceptance, not exhaustive scholarship or acceptance of publication prose.",
+  "findings": [
+    {
+      "id": "RES-001",
+      "severity": "advisory",
+      "location": "propers/verified.md, opening collation paragraph; research/source-audit.md, statement of 1862 differences",
+      "problem": "The assertion that the 1862 bodies agree in words apart from orthographic forms is slightly too broad. At Matthew 22:37, Pustet printed 342 reads 'ex toto corde tuo, in tota anima tua', whereas the 1962 typica printed 399 reads 'ex toto corde tuo, et in tota anima tua'. This is a conjunction difference, not merely punctuation or orthography. The actual retained 1962 transcription is correct, and the difference does not alter the proposed arguments or the identification of the inherited formulary.",
+      "required_result": "When refining the collation notes, record the omitted first 'et' in the 1862 Gospel among the edition differences, retaining the correctly transcribed 1962 wording. No redrafting of the interpretations is needed."
+    }
+  ]
+}
