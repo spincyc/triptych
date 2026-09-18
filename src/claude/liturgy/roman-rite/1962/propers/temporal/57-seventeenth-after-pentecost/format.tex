@@ -1,0 +1,168 @@
+% Claude 1962 proper study, Seventeenth Sunday after Pentecost: leaf-local
+% presentation. This file owns typography only; every textual, historical,
+% exegetical and rights judgment lives in the section files and in the
+% leaf's research records. It is shared by the three entrypoints of the leaf
+% (main.tex, synthesis.tex, homily.tex) so that a component used by more than
+% one of them sets identically in each.
+%
+% Web-edition constraint: the canonical study is declared web-eligible, so no
+% landscape, multicols, TikZ or rule-line construct is used here or in any
+% research component.
+
+% --- Type and measure -------------------------------------------------------
+% Palatino (TeX Gyre Pagella through newpxtext) at 11pt on 15pt leading, on a
+% measure of about seventy characters.
+\usepackage{newpxtext}
+\linespread{1.1}
+\geometry{letterpaper,left=1.3in,right=1.3in,top=1in,bottom=1.05in,
+  headheight=14pt,headsep=20pt,footskip=32pt}
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{0pt plus 1pt}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+\brokenpenalty=10000
+\usepackage{xurl}
+\newcommand{\work}[1]{\textit{#1}}
+
+% Unnumbered sectioning that still reaches the contents and the running head.
+% The bookmark package gives each unnumbered heading its own outline anchor.
+\usepackage{bookmark}
+\setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{1}
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\Large\bfseries\raggedright}{}{0pt}{}
+\titlespacing*{\section}{0pt}{3.2ex plus 1ex minus .2ex}{1.4ex plus .2ex}
+\titleformat{\subsection}{\normalfont\large\bfseries\raggedright}{}{0pt}{}
+\titlespacing*{\subsection}{0pt}{2.6ex plus .8ex minus .2ex}{0.9ex plus .2ex}
+\titleformat{\subsubsection}{\normalfont\normalsize\bfseries\itshape\raggedright}{}{0pt}{}
+\titlespacing*{\subsubsection}{0pt}{2ex plus .6ex minus .2ex}{0.6ex plus .1ex}
+
+% Quiet running matter: the Sunday on the left, the current section on the
+% right, the folio centred below.
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\fancyhead[L]{\footnotesize\scshape Seventeenth Sunday after Pentecost}
+\fancyhead[R]{\footnotesize\itshape\nouppercase{\rightmark}}
+\fancyfoot[C]{\footnotesize\thepage}
+\fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}%
+  \fancyfoot[C]{\footnotesize\thepage}}
+
+% Physical-page evidence for the concise companion's fixed opening, whose
+% entrypoint shares this file; the study itself sets no page markers.
+\usepackage{zref-user,zref-abspage}
+
+% --- Characters the Missal prints outside T1 ---------------------------------
+% The versicle sign, as a slashed V, so that the appointed text is set as
+% printed; the acute over the ae-ligature (quǽsumus, sǽcula); and the cross
+% before the Gospel heading.
+\usepackage{graphicx}
+\newcommand{\Vsign}{\leavevmode\hbox{\rlap{\kern0.16em\raisebox{0.12ex}{\scalebox{0.85}[1.0]{/}}}V}}
+\DeclareUnicodeCharacter{2123}{\Vsign}
+\DeclareUnicodeCharacter{01FD}{\'{\ae}}
+\DeclareUnicodeCharacter{01FC}{\'{\AE}}
+
+% --- Appointed texts -----------------------------------------------------------
+% The Latin of the 1962 editio typica, set as a block; and the English of an
+% identified public-domain witness, whose name and locus stand above it.
+\newenvironment{latinproper}{\begin{quote}\itshape}{\end{quote}}
+\newenvironment{englishwitness}[1]{\begin{quote}\textsc{#1}\par\nopagebreak}{\end{quote}}
+\newcommand{\properlocus}[1]{\par{\small\noindent #1\par}}
+
+% --- The four senses of each reading ---------------------------------------------
+\newenvironment{fourSenses}{\begin{description}}{\end{description}}
+
+% --- Scriptural Date and Location -----------------------------------------------
+% Two-tier dossier table after the 1962 profile's page-2 standard: a four-field
+% summary row, then a full-width explanatory row, with an italic event row for
+% a narrated event and \midrule only between complete dossiers.
+%
+% Measurement note. The profile fixes the summary tier at 0.14 / 0.18 / 0.35 /
+% 0.16\linewidth and the explanatory row at 0.92\linewidth, and permits a
+% change only when the complete inventory cannot remain legible after the
+% hierarchy and evidence have been preserved. Two measurements are varied, and
+% nothing else the profile fixes:
+%
+%   D1. Summary-tier widths 0.12 / 0.14 / 0.29 / 0.39\linewidth (0.94 in
+%       all, so that the summary tier spans the same measure as the row
+%       beneath it). The generated annotation prints six disputed composition
+%       labels at the Gospel beside its event statement and two at the
+%       Epistle, each in the source's own words; at the profile's
+%       0.16\linewidth the Gospel's Date cell alone ran to thirteen lines, and
+%       at 0.32\linewidth the sheet still ran onto a second page.
+%   D2. Explanatory and event rows at 0.98\linewidth in \scriptsize, so that
+%       seven dossiers stand on the one physical page the sheet must occupy.
+%
+% Kept as the profile fixes them: the two-tier hierarchy, the four summary
+% fields, \footnotesize for the summary tier, \arraystretch 1.02, \LTpre
+% 0.15em, \LTpost 0pt, 0.1em after ordinary dossier rows, \cmidrule(lr){1-4}
+% within a dossier and \midrule between dossiers.
+\newenvironment{dossiertable}
+{\footnotesize
+ \renewcommand{\arraystretch}{1.02}%
+ \setlength{\LTpre}{0.15em}\setlength{\LTpost}{0pt}%
+ \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.12\linewidth}>{\raggedright\arraybackslash}p{0.14\linewidth}>{\raggedright\arraybackslash}p{0.29\linewidth}>{\raggedright\arraybackslash}p{0.39\linewidth}@{}}
+ \toprule
+ \textbf{Proper} & \textbf{Citation} & \textbf{Location} & \textbf{Date}\\
+ \midrule
+ \endhead}
+{\bottomrule\end{longtable}}
+
+% \chronodate{element-key}{content}: one dossier row's Date cell. It typesets
+% the content and nothing else. Every biblical date printed in this leaf comes
+% from the Scripture chronology corpus through the generated projection in
+% research/chronology-annotations.tex, which owns \chronologyannotation.
+\newcommand{\chronodate}[2]{#2}
+
+\newcommand{\dossierrowsize}{\scriptsize}
+\newcommand{\dossierprose}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash\dossierrowsize}p{0.98\linewidth}@{}}{#1}\\[0.1em]}
+\newcommand{\dossierevent}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash\dossierrowsize}p{0.98\linewidth}@{}}{\textit{#1}}\\}
+
+% --- Comparison tables ----------------------------------------------------------
+\newenvironment{comparisontable}[4]
+{\small\renewcommand{\arraystretch}{1.18}%
+ \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.17\linewidth}>{\raggedright\arraybackslash}p{0.26\linewidth}>{\raggedright\arraybackslash}p{0.26\linewidth}>{\raggedright\arraybackslash}p{0.26\linewidth}@{}}
+ \toprule
+ \textbf{#1} & \textbf{#2} & \textbf{#3} & \textbf{#4}\\
+ \midrule
+ \endhead}
+{\bottomrule\end{longtable}}
+
+% The concise companion's first physical page: the map of the appointed
+% elements and, beneath it, the four overview rows. Both are set one step
+% smaller than the study's map so that the complete inventory and the four
+% senses stand together on the single page the concise profile fixes for them,
+% and their column widths are chosen so that the two tables rule to exactly the
+% same measure: 0.96\linewidth of columns plus two inter-column gaps in the
+% three-column map, and 0.9788\linewidth plus one gap in the two-column
+% overview, each with \tabcolsep at 4pt, which come to the same width.
+\newenvironment{concisemaptable}
+{\footnotesize\renewcommand{\arraystretch}{1.04}\setlength{\tabcolsep}{4pt}%
+ \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.56\linewidth}@{}}
+ \toprule
+ \textbf{Element} & \textbf{Text and reference} & \textbf{What it says}\\
+ \midrule
+ \endhead}
+{\bottomrule\end{longtable}}
+
+\newenvironment{conciseoverview}
+{\footnotesize\renewcommand{\arraystretch}{1.06}\setlength{\tabcolsep}{4pt}%
+ \begin{longtable}{@{}>{\bfseries\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.8288\linewidth}@{}}
+ \toprule
+ \textbf{Sense} & \textbf{Synthesis}\\
+ \midrule
+ \endhead}
+{\bottomrule\end{longtable}}
+
+\newenvironment{maptable}
+{\small\renewcommand{\arraystretch}{1.15}%
+ \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.17\linewidth}>{\raggedright\arraybackslash}p{0.27\linewidth}>{\raggedright\arraybackslash}p{0.52\linewidth}@{}}
+ \toprule
+ \textbf{Element} & \textbf{Text and reference} & \textbf{What it says}\\
+ \midrule
+ \endhead}
+{\bottomrule\end{longtable}}

@@ -14,7 +14,11 @@ St John of God (reading 1). Revised a third time on the stage's third reentry.
 Chrysostom's gloss on Eph 4:6 is now quoted. The Fathers' reading of the verse
 is restated as two lines: Jerome and Aquinas give the three phrases to the
 Persons, and Chrysostom and Theodoret read them as three relations of the one God
-and Father. This touches readings 1 and 2, §§1.2, 1.6, 2.1, 2.2, 2.5 and 2.6. It
+and Father. This touches readings 1 and 2, §§1.2, 1.6, 2.1, 2.2, 2.5 and 2.6.
+Revised a fourth time on the stage's fourth reentry, at §2.6 alone: it said
+Theodoret was not one of reading 2's witnesses, which contradicted §§2.2 and 2.5
+of this same file and the note above; it now states what he contributes there and
+what he may not be credited with. It
 is reasoning for the authors and reviewers of the three documents, not
 reader-facing prose.
 
@@ -440,9 +444,11 @@ Ps 109 reveals it. At Eph 4:6 they follow two lines of exegesis (scope §4.5).
 Jerome distributes the three phrases to Father, Son and Holy Spirit, and Aquinas
 appropriates them to the three. Chrysostom reads them as the one God and Father
 above all, providing for all and dwelling in all, and argues that what is said
-of the Father cannot mark inferiority in the Son. Theodoret, who is not one of
-this reading's witnesses, follows Chrysostom's gloss and draws concord from vv.
-5–6; he does not argue about the Son. The witnesses also differ on the persona of Ps
+of the Father cannot mark inferiority in the Son. Theodoret is the second witness
+of that line here, and only of it: he names the same three relations — lordship,
+providence, indwelling — and draws concord from vv. 5–6, but does not argue about
+the Son, and the rest of his exegesis of the Epistle serves reading 1 (§1.2). He
+must not be credited with the distribution. The witnesses also differ on the persona of Ps
 101. Jerome's eschatological reading of "one body" carries an Origenian register
 he reports rather than develops (scope §4.6).
 

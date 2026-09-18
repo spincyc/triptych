@@ -42,6 +42,19 @@ and Father (§§3.3, 4.5, 6.2). The Offertory row records its medieval and later
 reception search (§§3.7, 5.2). The chronology computation's canon and
 concordance data are declared in the research seal (§7.5).
 
+Revised a fourth time on the stage's fourth reentry (iteration 4, 18 September
+2026), after the first cold study review sent one finding back to research. The
+traditional first audience and place of composition of the Gospel and of the
+Offertory's book were missing from this record, although both encyclopedia
+articles that the chronology corpus already cites, and that this leaf already
+binds, state them outside their date sections. They are now read and recorded at
+their own loci in §7.6, with §7.3 recording the reading and §7.4 the bound on
+their use. No date, era or reign is taken from those articles: every figure on
+the dossier still reaches its Date cell through the generated annotations. §2.6
+of `research/interpretations.md` is corrected in the same pass: it said Theodoret
+was not a witness of the second reading, which contradicted that file's own §§2.2
+and 2.5 and its head note.
+
 This production is independent. The GPT leaf for the same identity and every
 postconciliar record were not opened. Source-library records registered by other
 lanes were reused only where this stage read the evidence itself; where it did
@@ -996,6 +1009,13 @@ Durandus layers). Results:
 - The Office of this Sunday (September Scripture of the Breviary; the ICRSP Ordo
   names the III Sunday of September lessons and the homily of the XVII Sunday) —
   outside this formulary and not examined.
+- **A first audience or a place of composition for the four psalms** (noted on
+  the fourth reentry, §7.6). Nothing bound here supplies either, and nothing was
+  sought beyond the psalm titles and the chronology corpus. The families that
+  would answer it are the introduction of a critical Psalter edition, an
+  encyclopedia article on the Psalms of the kind already bound for the other
+  three books, and the patristic *argumenta* prefixed to individual psalms
+  (Augustine's and Cassiodorus's openings were read only for their exegesis).
 
 ### 5.3 No precedent search was run for exploratory proposals
 
@@ -1111,7 +1131,14 @@ read and their digests matched: "Book of Daniel"
 (`…newadvent-05485a-66d722ae-article-text`, lines 69, 83, 97) and "Gospel of St.
 Matthew" (`…newadvent-10057a-e7b6ccef-article-text`, lines 201, 203). They carry the
 traditional labels above and the critical positions recorded in §7.4, and they
-are bound as context for §7.4. The NABRE psalms introduction is a
+are bound as context for §7.4. On the fourth reentry the Matthew and Daniel
+extractions were opened again and their digests matched
+(`sha256:3d9a35cc773f774ed3b423c890956ba655c61ceb7096fbd7c01a197f062168c2`,
+64,011 bytes; `sha256:ab2fefc01dbced920144a24d1e34513844bf9ca5c580be02551b4f4011a442db`,
+36,621 bytes, each against its own `artifact.toml`), and were read this time
+outside their date sections, at the loci that carry the first audience and the
+place of composition: Matthew lines 175, 195–197 and 221, Daniel lines 19, 37, 43
+and 45. §7.6 records what they say. The NABRE psalms introduction is a
 protected text registered as a summarized passage; it was not re-read. The
 seventy-years event was read in `src/sources/chronology/events.yaml` (id
 `israel.exile.seventy-years`), whose basis quotes Douay Jer 25:11–12; those verses
@@ -1145,6 +1172,19 @@ were read in the tracked Douay verse text.
   no title beyond *Alleluia* — attaching no date and no era to any of them. What
   it may not do is supply a date or regnal era from memory: every date comes from
   the generated annotations.
+- **What page 2 may say about the first audience and the place of writing.** These
+  two fields are not chronology-corpus answers at all: the corpus carries dates and
+  the relations that hold them, and nothing else. They come from the same
+  encyclopedia articles the corpus cites, read at their own sections on destination
+  and authorship, and §7.6 records the wording. The dossier may carry them for the
+  Gospel, the Offertory and the Epistle, and it must keep three geographies apart:
+  where the writer wrote, whom he wrote for, and where the narrated event happened.
+  What it may not do is carry any date, era, reign or period across from those
+  sections — not Eusebius's "when he left Palestine" clause in the Matthew article's
+  date section (line 201), and not the reign the Daniel article names when it reads
+  the book's object (line 19) or reports the rival theory (lines 25, 61). The
+  articles' date sections remain closed to the dossier; every figure reaches a Date
+  cell through the generated annotations alone.
 - **The Gospel's narrated event carries no date.** The controversy in the Temple in
   the last week before the Passion has no corpus event; the Date cell must state
   the absence.
@@ -1264,6 +1304,124 @@ these data are research's to declare. What neither states is which data files th
 computation opens, so each leaf has had to trace them. That gap is reported to the
 workflow owner in the stage result.
 
+### 7.6 First audience and place of composition (fourth reentry)
+
+The 1962 profile requires of each dossier "the author or compositional horizon,
+first audience, composition place and date or range", and that writer, event and
+recipient geography be distinguished (`guidance/liturgy/roman-1962-propers.md`).
+Dates belong to the chronology corpus alone (§§7.1–7.4). The other two fields are
+not corpus answers and were missing from this record for the Gospel and the
+Offertory. They were read on the fourth reentry in the two articles this leaf
+already binds — away from those articles' date sections, which stay closed to the
+dossier (§7.4). Loci are physical lines of the tracked article-text extractions
+whose digests §7.3 records.
+
+**Gospel — "Gospel of St. Matthew" (Jacquier, CE vol. 10, 1911),
+`…newadvent-10057a-e7b6ccef-article-text`.** The article gives the destination its
+own section, "Destination of the Gospel" (heading line 195, body line 197):
+Papias, Irenaeus, Origen, Eusebius and Jerome "agree in declaring that St. Matthew
+wrote his Gospel for the Jews", and "Everything in this Gospel proves, that the
+writer addresses himself to Jewish readers" — he does not explain Jewish customs
+as the other Evangelists do "for their Greek and Latin readers", and "he assumes
+that they are acquainted with Palestine, since, unlike St. Luke he mentions places
+without giving any indication of their topographical position". Origen "categorically
+asserts that this Gospel was published for Jews converted to the Faith", and "St.
+Jerome, summarizing tradition, teaches us that St. Matthew published his Gospel in
+Judea and in the Hebrew language, principally for those among the Jews who believed
+in Jesus" (*In Matt. Prol.*). The same line carries one qualification, from a
+non-Catholic authority the article quotes rather than adopts: Zahn holds it
+"extremely probable that Matthew wished his book to be read primarily by the Jews
+who were not yet Christians", the book being suited both to Jewish Christians "still
+exposed to Jewish influence" and to "Jews who still resisted the Gospel". For the
+place, Jerome's "in Judea" at line 197 is the article's own statement of it, and two
+loci outside the date section stand with it: line 175, where the Evangelist
+"proclaimed the Gospel to the Hebrews and, before his departure from Jerusalem,
+wrote in his mother tongue the Gospel that he had preached"; and line 221, where the
+Biblical Commission's answers hold that the belief "that the first Gospel was written
+in the native language of the Jews then in Palestine, is to be considered as based on
+Tradition" — a statement about the language and the Jews then in Palestine, which
+bears on both fields without being a separate claim of place. Negative results at
+this locus: the article reports **no rival place of composition** — a search of its whole text for Antioch, Syria and
+Alexandria returns only Theophilus of Antioch and Clement of Alexandria as canon
+witnesses (lines 25, 37) — and the one place clause inside its date section
+("According to Eusebius, Matthew wrote his Gospel in Hebrew when he left Palestine",
+line 201) is a step in a date argument and is not used. None of this touches the
+narrated event, which the Gospel locates itself, in the Temple at Jerusalem
+(Mt 21:23; §§3.6, 7.4).
+
+**Offertory — "Book of Daniel" (Gigot, CE vol. 4, 1908),
+`…newadvent-04621b-2a74931e-article-text`.** The article has no destination section;
+its account of both fields is inside "Authorship and date of composition", in the
+intrinsic grounds, and is separable from every figure there. Place: the first of
+the three indirect intrinsic grounds is that the author was "a resident in Babylon"
+(line 37, with the other two at lines 39 and 41), developed at line 43 — "the minute details he refers to, the local
+colouring of his descriptions, his exact references to facts, are such as only a
+resident in Babylon could be fairly supposed to possess", and the imagery of the
+visions suits "one living in Babylon". First audience: at line 45 the linguistic
+argument turns on the readers — the easy transition between Hebrew and Aramaic "is
+explicable, we are told, only on the supposition that the writer and the readers of
+the book were equally familiar with both" — and the same line closes with Daniel,
+"owing to his position at the court of Babylon", being "eminently fitted at that
+time for writing the prophecies which had been imparted to him for the comfort of
+the Jews of his time and of subsequent ages". The book's stated object is "to
+comfort God's people under the ordeal of a cruel persecution" (line 19); the
+persecution the article names there is a reign, and no reign is carried to the
+dossier (§7.4). Negative result: for the later author of the rival theory the
+article states **no place of composition at all** (lines 25, 47, 61). Its only
+geographical remarks about that theory are the book's place among "the Writings" in
+the Palestinian Canon (lines 33, 61), a canon fact and not a place of writing, and
+its audience, "the Jews of that period" so oppressed (line 61), which again names
+the reign this record does not carry. The narrated setting is distinct from both:
+the appointed verses are Daniel's own prayer in the kingdom of the Chaldeans
+(Dan 9:1) for the desolate sanctuary of Jerusalem (9:17; §3.7).
+
+**Epistle — already carried, and one limit now recorded.** The dossier's "at Rome
+or Caesarea" is the Ephesians article's own alternative at its date locus (§7.3,
+line 69), and its "to the saints at Ephesus (1:1)" is the letter's own received
+address, not a claim of that article: the bound Clementine verse text reads
+"omnibus sanctis qui sunt Ephesi" and the bound Douay "to all the saints who are at
+Ephesus" (both read again at 1:1 on this reentry).
+The article in fact argues the other way, in its own section "To whom addressed"
+(heading line 57, body lines 59–63, read on this reentry, digest matched
+`sha256:c101da65…`, its `artifact.toml` value): the words *en Epheso* at 1:1 "do not
+belong to the primitive text", Basil attesting that "even in his day, they were not
+met with in the ancient manuscripts" and Codices B and Aleph (first hand) lacking
+them; the letter has "nothing personal, no greeting, no special recommendation", so
+the article reads it as "a circular letter to a group of churches still unknown to
+Paul", and proposes a conjectural restoration of the address. That is a modern
+critical horizon on the recipients, of the same order as the authorship denial the
+dossier already carries, and belongs in the explanatory row beside it, with no
+figure taken from the same sentences.
+
+**The four psalms — negative, and the bound of the search.** No source bound in
+this leaf states a first audience or a place of composition for Ps 32, 75, 101 or
+118. The corpus gives them only the critical boundary (§7.2), its controlling
+source for that boundary is a protected text registered as a summarized passage and
+not quotable (§7.3), and the psalm commentators read here — Augustine, Cassiodorus,
+Hilary, Bellarmine — are bound as reception, not as chronology or introduction
+sources; none of them was searched for a compositional audience or place, and the
+titles read in the Clementine and Douay (§7.4) give attribution only. The dossier's
+psalm rows therefore state the titles, the absence of a traditional date and, where
+the psalm itself names one, the place inside the psalm (Sion, Judea), and assert
+nothing about hearers or a place of writing. Taking that search further — the
+introductions of a critical edition, or a bound patristic *argumentum* to a psalm —
+is open work, listed with the unreached corpora of §5.2.
+
+**The bound on all of this.** These are the traditional answers and one reported
+critical qualification apiece. They reach the reader through
+`sections/80-date-location.tex`, the reviewed home of the chronology the concise
+study's physical page 2 reprints (`guidance/liturgy/propers-three-documents.md`),
+and they carry no date, era, reign or period with them: every figure in a Date cell
+still comes from `research/chronology-annotations.tex` (§7.1). Two consequences for
+the documents that use this record. The dossier is a required field per passage, not
+an optional expansion: carrying the Gospel's and the Offertory's first audience and
+place of writing is what the profile asks, and dropping them again to save a line
+would restore the defect this reentry answered. And page 2 of the concise study,
+which must hold the whole inventory on one physical page, has to reach that by
+compressing the wording — the quotations above can be reduced to their substance
+(Judea, the believing Jews; Babylon, the Jews of the Exile and after) — and not by
+leaving a required field unanswered.
+
 ---
 
 ## 8. Calendar, rubrics and occurrence: what this stage re-checked
@@ -1368,5 +1526,15 @@ workflow owner in the stage result.
 8. **Bellarmine** was read only in O'Sullivan's English, which its translator
    abridged; a quotation for publication should say so, and his Latin was not
    read.
-9. **What a research PASS covers**: study drafting from this bounded evidence. It
+9. **The first audience and the place of composition are the encyclopedia's own
+   report** (§7.6). Both articles are dated reference works of 1907–1912, as their
+   artifact records say, and the patristic testimonies they summarize — Papias,
+   Irenaeus, Origen, Eusebius and Jerome on the destination of Matthew — were not
+   read at their own loci by this stage; they are carried as the article's
+   statement of the tradition, not as verified quotations of those Fathers. The
+   Daniel article's account is an argument for the traditional authorship, not a
+   separate witness to it. The Ephesians article's contrary view of the address
+   (§7.6) is recorded and carried as a critical horizon only; no editor's judgment
+   between it and the received text is made here.
+10. **What a research PASS covers**: study drafting from this bounded evidence. It
    is not a claim to have searched every witness; §5.2 names what was not reached.
