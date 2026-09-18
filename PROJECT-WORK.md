@@ -11,6 +11,16 @@ Last reconciled: 2026-09-18.
 
 <!-- promised-deliverable: propers-three-documents-2026-09-17 -->
 
+**Revision resumed, 18 September.** The maintainer explicitly requested the
+10–12-page versions now, through push to `main`. The Codex runner still reports
+its usage limit, but a fresh GPT-5.6 Sol session through Droid successfully
+ran at `xhigh`. The workflow requires fresh workers at its declared effort,
+not a particular runner executable. Separate new 1962 and postconciliar v3
+productions are proceeding with `high` author stages and `xhigh` cold reviews.
+The existing LaTeX/Make pipeline and all source, pagination, review and
+publication gates remain mandatory. Historical v1 acceptances stay historical;
+the revised editions are not yet accepted or published.
+
 **Recovery, 18 September.** The maintainer requested recovery of the interrupted
 production, completion where feasible, coherent commits, reconciliation and
 push to `main`, and verification of the resulting Pages workflow. The preserved
@@ -42,7 +52,7 @@ records the run, timestamp and all comparisons. Only the main/Pages recovery
 requirement is closed; the longer concise editions and genuine v3 production
 remain blocked.
 
-**Blocked: pagination revision.** Both first-production Sunday runs reached
+**In progress: pagination revision.** Both first-production Sunday runs reached
 ACCEPTED, with six reviewed PDFs and two canonical web editions installed.
 Independent [integration review](workflows/reviews/propers-three-documents-integration-checkpoint-2026-09-17/REPORT.md)
 passed that exact prior scope. The maintainer then specified approximately
@@ -146,10 +156,10 @@ interleaved commentary. The overview does not replace each expansive lane's
 own four senses. The remaining concise pages must earn their extent through
 source-grounded comparison, not enlarged type, repetition or excess apparatus.
 
-Reusable guidance and mechanical checks are being revised for proper-study v3,
-with physical-page evidence and a new explicit presentation contract. The
-canonical chronology adapter also needs an independent postconciliar path:
-the earlier adapter only handles 1962 identities. Each revised owner must add
+Reusable guidance and mechanical checks for proper-study v3 have now been
+independently reviewed, including physical-page evidence, the explicit
+presentation contract and the independent postconciliar chronology adapter.
+Each revised owner must add
 its own generated chronology and source review, revise and independently
 review its concise document, recheck the other two outputs, and execute a
 fresh real workflow to terminal acceptance. Prior accepted states, packets,
@@ -157,10 +167,11 @@ results and PDF proofs remain unchanged as historical evidence. No prior
 verdict may stand in for acceptance of the revised contract.
 
 A final integration review, completed-ledger check and ignored external-review
-transport follow those new productions. No handoff directory or ZIP has been
-assembled yet. Work stays
-on `feature/codex/propers/homily`; no default-branch integration or deployment
-is authorized by this task. Existing chronology-corpus and historical workflow
+transport follow those new productions. Earlier recovery handoffs cover only
+their stated historical and implementation scopes, not these new artifacts.
+Work stays on `feature/codex/propers/homily`; the maintainer's renewed request
+explicitly authorizes the validated push to `main` and its Pages deployment.
+Existing chronology-corpus and historical workflow
 promises remain distinct and are not closed by these consumers.
 
 ## Traditional context and salient dates in GPT propers, 2026-09-09
