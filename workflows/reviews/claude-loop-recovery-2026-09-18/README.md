@@ -56,16 +56,28 @@ state of up to 1.6 GB each and are not preserved.
 
 ## Still open
 
-These items are recorded, not repaired. They belong to the legacy `proper`
-and `proper-finish` workflows. The `proper-study` successor routes each
-review's findings to one owner per repair target and carries upstream routes
-from every review. The maintainer has not authorized engine changes under
-this request, and a live `proper-study` run was bound to the current engine
-when this record was made.
+The maintainer then authorized engine changes wherever both the defect and
+its fix are clear. Two were repaired in the same session:
+
+- Cold review 4.1 is fixed in `scripts/_workflow.py`. A finding now travels as
+  a forwarded finding whenever its own route leads to the stage the winning
+  route chose, so a mixed `derivation`/`seam` round hands the reviser both
+  kinds to account for. `tools/tests/test_workflow_shared_reviser.py` fails
+  5 of its 6 cases without the change. No `proper-study` route shares a
+  reviser, and both live `proper-study` runs replayed byte-identically after
+  it.
+- The `_check_review_scope` docstring no longer cites a pre-advance validator
+  as if one were tracked.
+
+The rest are recorded, not repaired. They belong to the legacy `proper` and
+`proper-finish` workflows. The `proper-study` successor routes each review's
+findings to one owner per repair target and carries upstream routes from
+every review. Items 4.2 and 4d would change shared fragments that a live
+`proper-study` run is bound to by digest. The others lack a single clear fix.
 
 | Id | Open defect | Proposed remedy in the source record |
 | --- | --- | --- |
-| Cold review 4.1 | In `proper-finish`, `synthesis-evaluation` routes both `derivation` and `seam` to `synthesis-revision`, but the engine forwards only the findings naming the winning route. Seam findings arrive only as carried findings, so they are never reported `not-repaired` and never charge the repeat budget. This is the same budget blindness as the v25 ratchet. | Forward every finding whose route resolves to the chosen transition (about four lines in `_workflow.py`) |
+| Cold review 4.1 (repaired, above) | In `proper-finish`, `synthesis-evaluation` routes both `derivation` and `seam` to `synthesis-revision`, but the engine forwards only the findings naming the winning route. Seam findings arrive only as carried findings, so they are never reported `not-repaired` and never charge the repeat budget. This is the same budget blindness as the v25 ratchet. | Forward every finding whose route resolves to the chosen transition (about four lines in `_workflow.py`) |
 | Cold review 4.2 | Two lanes' partitions can produce findings that cannot both be satisfied, so the run oscillates silently | One `result-format.md` paragraph on contradictory findings |
 | Handoff 4a | The "seam" defect class (a clause true in the canonical edition and false in the companion) was carried only by driver memory | Encode the class in a gate or fragment |
 | Handoff 4d | An evaluator can mark a defect `accepted` against explicit guidance, for example a rights-only final page | Require accepted findings to cite the guidance checked; give lane fragments the guidance loci their criteria touch |

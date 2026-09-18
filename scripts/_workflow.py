@@ -2968,8 +2968,11 @@ class WorkflowEngine:
 
         A refused submission is recoverable cheaply: the lane that wrote the
         finding is still resumable and can amend its own result, which is why
-        this refuses rather than merely recording. Catch it before the join
-        with the pre-advance validator and it costs nothing at all.
+        this refuses rather than merely recording. A driver that checks each
+        lane result against this rule before submitting the join pays nothing
+        at all. No such validator is tracked: the one this sentence once named
+        lived in a driver's scratch area and survives only as a record in
+        `workflows/reviews/claude-loop-recovery-2026-09-18/`.
         """
         if not scope:
             # No baseline, or nothing moved. Nothing moving is not the
@@ -3769,14 +3772,28 @@ class WorkflowEngine:
                 ]
                 route = _repair_route(stage, result)
                 if route is not None:
-                    # Only the findings that chose this route travel it. A
-                    # finding for another owner is not carried across the
-                    # regeneration its own route would trigger; the fresh
-                    # evaluation afterwards raises it again if it still holds,
-                    # which is the whole reason the evaluation is fresh.
+                    # Only the findings whose own route leads where this one
+                    # does travel it. A finding for an owner reached by another
+                    # route is not carried across the regeneration its own
+                    # route would trigger; the fresh evaluation afterwards
+                    # raises it again if it still holds, which is the whole
+                    # reason the evaluation is fresh.
+                    #
+                    # Two owners can share one reviser: `synthesis-evaluation`
+                    # routes `derivation` and `seam` alike to
+                    # `synthesis-revision`. Matching the winning target alone
+                    # handed that reviser its seam findings only as carried
+                    # ones, which it owes no disposition, so a seam repair that
+                    # failed round after round never charged the repeat budget
+                    # and the run ran to its ceiling instead.
+                    same = {
+                        other[REPAIR_TARGET]
+                        for other in stage.get(REPAIR_ROUTES, [])
+                        if other["transition"] == route["transition"]
+                    }
                     forwarded = [
                         f for f in forwarded
-                        if f.get(REPAIR_TARGET) == route[REPAIR_TARGET]
+                        if f.get(REPAIR_TARGET) in same
                     ]
                 return forwarded
         if stage["type"] == LINEAR and _stage_lanes(stage) \
@@ -3869,9 +3886,10 @@ class WorkflowEngine:
 
         Routing decides where a run goes next. It also, before this, decided
         who never heard about the defect at all: `_extract_prior_findings`
-        keeps only the findings whose target won the route, so with three
-        owners a `brief` finding sent the run to `research-synthesis` and the
-        seven `authoring` findings raised in the same breath reached nobody.
+        keeps only the findings whose route leads where the winner's does, so
+        with three owners a `brief` finding sent the run to
+        `research-synthesis` and the seven `authoring` findings raised in the
+        same breath reached nobody.
         The author then re-authored with an empty packet and the next
         evaluation rediscovered them, which is a five-lane evaluation and a
         third of a failure budget spent learning what the run already knew.

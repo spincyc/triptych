@@ -205,8 +205,9 @@ state.
      than leaving a worker to infer it from a route table it cannot see
    - `PRIOR_FINDINGS`: findings forwarded from the preceding stage — an
      evaluator's or gate's blocking findings into the packet of the stage that
-     repairs them, filtered to the repair owner that chose the route where the
-     evaluator routes by owner, or a linear fan-out stage's joined lane
+     repairs them, filtered to the repair owners whose routes lead to the
+     stage the chosen route names where the evaluator routes by owner, or a
+     linear fan-out stage's joined lane
      findings into its successor's packet, and empty otherwise — serialized as
      sorted JSON on one line. A fan-out successor carries the same line on
      every one of its lane packets.
@@ -534,9 +535,9 @@ because both write the leaf and either may be the next to run.
 
 Routing selects one owner. Everything else a `CHANGES_REQUIRED` evaluation
 raised used to stop there: `_extract_prior_findings` keeps only the findings
-whose target won the route, so with three owners a `brief` finding sent the run
-to `research-synthesis` and the `authoring` findings raised alongside reached
-nobody. The engine now derives, for each stage about to run, the blocking
+whose route leads where the winner's does, so with three owners a `brief`
+finding sent the run to `research-synthesis` and the `authoring` findings
+raised alongside reached nobody. The engine now derives, for each stage about to run, the blocking
 findings it owns that no owner of that target has yet seen, and emits them in a
 `CARRIED_FINDINGS` packet header beside `PRIOR_FINDINGS`. Two headers, because
 they are two different things: one came from the transition that produced this
@@ -971,8 +972,14 @@ brief, re-runs seven lanes, and arrives back at the same writer with the same
 evidence — which is what version 9 did, and what cost a production run a full
 research round to correct one page number.
 
-Only the findings that chose the route travel it. `_extract_prior_findings`
-filters the forwarded blocking findings to the chosen `repair_target`, so a
+Only the findings whose own route leads where the chosen one does travel it.
+`_extract_prior_findings` filters the forwarded blocking findings to the
+repair targets routed to the chosen stage, which is usually the chosen
+`repair_target` alone. `synthesis-evaluation` is the exception: `derivation`
+and `seam` both route to `synthesis-revision`, so a round with both kinds
+forwards both. Otherwise the seam findings arrived only as carried findings,
+owed no disposition, and a failing seam repair never charged the repeat
+budget. The filter still means that a
 research-owned finding cannot arrive at `content-revision`, which could not
 repair it, a brief-owned finding is not carried into the research lanes, which
 do not write the brief, and an authoring-owned finding is not carried across a
