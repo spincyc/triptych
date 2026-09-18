@@ -105,6 +105,15 @@ artifact missing one. `check-deployment-sources` re-derives page counts from
 the built PDFs, so the workflow typesets first and gates afterwards; the order
 is load-bearing and not an accident of listing.
 
+Pages derives its per-provider build selection from `tools/public-alpha`'s
+publication inventory and inclusion policy, including local-record overrides
+of legacy rows and separately identified companions. It rejects source or
+build-inventory mismatches and unknown states before planning cache reuse.
+Only the included set is cached, typeset, and installed, using the same explicit
+`DOCUMENTS` selection in both cold-cache and cache-only installs. Held work
+remains excluded; this does not change ordinary local `make install`, relax
+publication or pagination gates, or permit missing approved outputs.
+
 No check was left proving an installed PDF current by asking Git whether it
 differed. `check-tracks` did exactly that, over `pdf/reading-plans` — which
 stays tracked, so it had not silently stopped working — and it was replaced

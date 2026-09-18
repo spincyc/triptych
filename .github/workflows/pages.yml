@@ -234,10 +234,12 @@ jobs:
           import hashlib
           import json
           import os
+          import runpy
           import shutil
           import subprocess
           import time
           from pathlib import Path
+          from types import SimpleNamespace
 
           WORKSPACE = Path(os.environ["GITHUB_WORKSPACE"]).resolve()
           STORE = Path(os.environ["PDF_STORE"])
@@ -297,9 +299,10 @@ jobs:
               return [(str(p.relative_to(WORKSPACE)), digest(p)) for p in paths]
 
 
-          def database(provider):
+          def database(provider, documents):
               """Every declared file prerequisite of every build PDF, from make."""
-              text = make("-p", "-n", "install", "PROVIDER=%s" % provider)
+              text = make("-p", "-n", "install", "PROVIDER=%s" % provider,
+                          "DOCUMENTS=%s" % " ".join(documents))
               prerequisites = {}
               variables = {}
               for line in text.splitlines():
@@ -325,14 +328,46 @@ jobs:
               return prerequisites, variables
 
 
-          providers = sorted(
-              {
-                  path.relative_to(WORKSPACE / "src").parts[0]
-                  for path in (WORKSPACE / "src").glob("*/**/main.tex")
-              }
-          )
-          if not providers:
-              raise SystemExit("no provider carries a src/<provider>/**/main.tex")
+          # Plan the public renderer's set, including per-publication overrides
+          # of legacy rows. A held source is inventory, not a deploy prerequisite.
+          release = SimpleNamespace(**runpy.run_path(str(WORKSPACE / "tools/public-alpha")))
+          manifest = release.load_manifest()
+          primary, providers = release.declared_providers(manifest)
+          providers = sorted(providers)
+          publications = release.publication_map(manifest, primary, providers)
+          source_providers = {
+              path.relative_to(WORKSPACE / "src").parts[0]
+              for name in ("main.tex", "proper-components.toml")
+              for path in (WORKSPACE / "src").glob("*/**/%s" % name)
+          }
+          if source_providers - set(providers):
+              raise SystemExit("undeclared source providers: %s" % sorted(source_providers - set(providers)))
+          source_ids = {
+              (provider, document)
+              for provider in providers
+              for document in release.discover_source_ids(provider)
+          }
+          if source_ids != set(publications):
+              raise SystemExit(
+                  "manifest/source mismatch: missing=%s, extra=%s"
+                  % (sorted(source_ids - set(publications)), sorted(set(publications) - source_ids))
+              )
+          for key, publication in publications.items():
+              if "status" not in publication:
+                  raise SystemExit("missing publication status: %s" % (key,))
+          included = release.included_publications(publications, preview=False)
+          for key in publications.keys() - included.keys():
+              if publications[key]["status"] != "hold":
+                  raise SystemExit("invalid publication status: %s: %r" % (key, publications[key]["status"]))
+          selected = {}
+          for provider in providers:
+              # Make must agree with source discovery even for excluded works;
+              # otherwise a missing companion could silently leave the plan.
+              documents = make("list", "PROVIDER=%s" % provider).split()
+              expected = {document for owner, document in source_ids if owner == provider}
+              if len(documents) != len(set(documents)) or set(documents) != expected:
+                  raise SystemExit("make/source mismatch for %s" % provider)
+              selected[provider] = sorted(document for owner, document in included if owner == provider)
 
           COMPANIONS = ("synthesis", "homily")
 
@@ -384,8 +419,10 @@ jobs:
           uncacheable = 0
           neutralise = True
           for provider in providers:
-              documents = make("list", "PROVIDER=%s" % provider).split()
-              prerequisites, variables = database(provider)
+              documents = selected[provider]
+              if not documents:
+                  continue
+              prerequisites, variables = database(provider, documents)
 
               wanted = any(
                   GENERATOR in prerequisites.get("build/%s/%s.pdf" % (provider, document), ())
@@ -470,6 +507,10 @@ jobs:
           PLAN.mkdir(parents=True, exist_ok=True)
           (PLAN / "keys.json").write_text(json.dumps(keys, indent=1, sort_keys=True), encoding="utf-8")
           (PLAN / "providers.txt").write_text(" ".join(providers) + "\n", encoding="utf-8")
+          for provider, documents in selected.items():
+              (PLAN / ("documents-%s.txt" % provider)).write_text(
+                  " ".join(documents) + "\n", encoding="utf-8"
+              )
           (PLAN / "restored.txt").write_text(
               "\n".join(sorted(p.name for p in STORE.glob("*.pdf"))) + "\n", encoding="utf-8"
           )
@@ -500,7 +541,7 @@ jobs:
       # when the planning step above found something it could not restore. That
       # step says `typesetting: none` when, and only when, its count of misses,
       # unkeyable documents and documents the metadata validator cannot resolve
-      # came to zero -- every document in the corpus already in hand, and proven
+      # came to zero -- every included publication already in hand, and proven
       # so. Every other answer, an absent one included, comes here. The single
       # step after them installs the restored corpus without a toolchain.
       #
@@ -537,9 +578,12 @@ jobs:
           python3 -c "import sys, tomllib; assert sys.version_info >= (3, 11), sys.version"
 
           for provider in ${TRIPTYCH_PROVIDERS}; do
+            documents="$(cat "${TRIPTYCH_PLAN}/documents-${provider}.txt")"
+            [ -n "$documents" ] || continue
             echo "::group::make install PROVIDER=${provider}"
             # shellcheck disable=SC2086
-            make --jobs="$(nproc)" ${TRIPTYCH_MAKE_FLAGS} install "PROVIDER=${provider}"
+            make --jobs="$(nproc)" ${TRIPTYCH_MAKE_FLAGS} install \
+              "PROVIDER=${provider}" "DOCUMENTS=${documents}"
             echo "::endgroup::"
           done
           SH
@@ -567,11 +611,9 @@ jobs:
             docker pull "${ARCH_IMAGE}"
           fi
 
-      # Every provider, not the Makefile's PROVIDER default of gpt: the site's
-      # publication records span all of them. The Makefile computes PROVIDERS
-      # from src/*/**/main.tex but exposes no target that installs across them,
-      # so the planning step above derives the same list and this loop is this
-      # workflow's.
+      # Every declared provider, not the Makefile's PROVIDER default of gpt.
+      # Both install branches consume the same planned publication set; local
+      # `make install` continues to build all documents unless explicitly scoped.
       #
       # `make install` and not a pdflatex loop, because the real pipeline is
       # what has to run: check-metadata first, then per document the
@@ -607,8 +649,10 @@ jobs:
           docker run --rm \
             --volume "${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE}" \
             --volume "${RUNNER_TEMP}/triptych-toolchain:/triptych-toolchain:ro" \
+            --volume "${RUNNER_TEMP}/triptych-plan:/triptych-plan:ro" \
             --workdir "${GITHUB_WORKSPACE}" \
             --env "TRIPTYCH_PROVIDERS=${providers}" \
+            --env "TRIPTYCH_PLAN=/triptych-plan" \
             --env "TRIPTYCH_SNAPSHOT=${ARCH_SNAPSHOT}" \
             --env "TRIPTYCH_PACKAGES=${ARCH_PACKAGES}" \
             --env "TRIPTYCH_MAKE_FLAGS=${make_flags}" \
@@ -676,11 +720,13 @@ jobs:
           printf 'providers: %s\nmake flags: %s\n' "$providers" "$make_flags"
           python3 -c "import sys, tomllib; assert sys.version_info >= (3, 11), sys.version"
           for provider in $providers; do
+            documents="$(cat "${RUNNER_TEMP}/triptych-plan/documents-${provider}.txt")"
+            [ -n "$documents" ] || continue
             echo "::group::make install PROVIDER=${provider}"
             # Deliberately unquoted: the flags are a word list and are usually empty.
             # shellcheck disable=SC2086
             make --jobs="$(nproc)" ${make_flags} install \
-              "PROVIDER=${provider}" "PDFLATEX=${guard}"
+              "PROVIDER=${provider}" "DOCUMENTS=${documents}" "PDFLATEX=${guard}"
             echo "::endgroup::"
           done
 
