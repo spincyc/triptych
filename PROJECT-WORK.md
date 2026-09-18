@@ -55,6 +55,12 @@ The existing LaTeX/Make pipeline and all source, pagination, review and
 publication gates remain mandatory. Historical v1 acceptances stay historical;
 the revised editions are not yet accepted or published.
 
+**Reconciled later on 18 September.** The run directories show less than the
+paragraph above states. Only the postconciliar v3 run, `9818cd3399aee297`,
+was seeded. It passed its scope gate and stopped at `resolve-context`
+iteration 0 with no worker result. No GPT 1962 v3 run exists. Neither GPT
+v3 production is advancing, and no agent holds this workspace for them.
+
 **Recovery, 18 September.** The maintainer requested recovery of the interrupted
 production, completion where feasible, coherent commits, reconciliation and
 push to `main`, and verification of the resulting Pages workflow. The preserved
