@@ -1,6 +1,48 @@
 schema_version = 1
 
 [[deliverables]]
+id = "claude-1962-seventeenth-three-documents-2026-09-18"
+owner = "PROJECT-WORK.md"
+promise = "Drive the proper-study v3 workflow for provider claude on the 1962 Seventeenth Sunday after Pentecost for Sunday 2026-09-20 through terminal acceptance: expansive study, 10–12-page concise study and standalone homily with fresh cold reviews; document every workflow cycle encountered; recover parallel attempts to fix Claude's non-converging workflow runs; reconcile with main, push, verify the Pages workflow, and finish with an independent cold review."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "claude-authorization"
+  criterion = "The exact provider and identity authorization is recorded in the production plan before the run is seeded, and the Claude leaf is authored independently of the GPT leaf for the same identity."
+  status = "pass"
+  evidence = ["guidance/liturgy/propers-production-plan.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-run-accepted"
+  criterion = "A proper-study v3 run for provider claude, identity liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost, date 2026-09-20, reaches ACCEPTED with every review a fresh worker at the declared effort; the three reviewed PDFs and the canonical web edition are installed with exact reviewed bytes and the owning leaf archives the run evidence."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-cycles-documented"
+  criterion = "Every repair cycle the run entered (review to owner and back, gate failure and retry, refused result) is recorded in a tracked record with its stage, iteration, cause, repair and outcome, and any repeatable lesson is promoted or explicitly declined."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "looping-fix-recovery"
+  criterion = "Directories and branches parallel to this workspace are surveyed for work that attempted to fix Claude's non-converging workflow runs; each item is classified as already on main, superseded, recovered, or recorded-only, with evidence."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-main-and-pages"
+  criterion = "The work is reconciled with current main without rewriting published history, passes the deployment gates locally, reaches origin/main by fast-forward, and the triggered Pages run and the new public routes are verified."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-final-cold-review"
+  criterion = "After integration, a fresh reviewer with no production history reviews the delivered three documents, the web edition and the run record, and its findings and their dispositions are recorded."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "propers-three-documents-2026-09-17"
 owner = "PROJECT-WORK.md"
 promise = "Build and exercise a robust versioned proper-study successor while preserving legacy proper schema 1; produce a 20–50-page expansive study, 10–12-page concise interleaved alternative reading document with the established first four pages, and standalone speakable exegetical pedagogical homily for both GPT Sunday propers on 2026-09-20, with independent cold review, guidance revision and reruns, six beautiful reviewed PDFs and canonical web editions."

@@ -7,6 +7,25 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-09-18.
 
+## Claude 1962 Seventeenth Sunday three documents, 2026-09-18
+
+<!-- promised-deliverable: claude-1962-seventeenth-three-documents-2026-09-18 -->
+
+The maintainer requested the three proper-study documents for provider
+`claude` for the 1962 Mass of Sunday 20 September 2026, the Seventeenth Sunday
+after Pentecost
+(`liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost`),
+using the `proper-study` workflow and driven to completion; every workflow
+cycle encountered documented; recovery of work in parallel directories that
+attempted to fix Claude's non-converging workflow runs; reconciliation with
+`main`, push and Pages verification; and a final cold review. The
+authorization is recorded in the
+[production plan](guidance/liturgy/propers-production-plan.md). This is an
+independent Claude production: it borrows neither the GPT leaf for the same
+identity nor that leaf's accepted verdicts.
+
+**State: in progress.** Nothing is seeded, authored, reviewed or published yet.
+
 ## Three-document proper studies and homilies, 2026-09-17
 
 <!-- promised-deliverable: propers-three-documents-2026-09-17 -->

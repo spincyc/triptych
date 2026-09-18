@@ -70,7 +70,10 @@ On 2026-09-17 the maintainer authorized the two GPT targets below for Sunday,
 20 September 2026, and the three-document successor contract: an expansive
 study, concise comparison, and homily for each Missal. This opens only those
 two identities. Earlier publications keep their existing contract until an
-authorized substantial revision.
+authorized substantial revision. On 2026-09-18 the maintainer separately
+authorized the Claude 1962 target for the same Sunday under the same
+three-document contract; it is an independent Claude production, not a
+companion to or a derivative of the GPT leaf.
 
 Each line below records one maintainer decision to open the boundary for
 one provider and one permanent identity. A line is the whole
@@ -87,6 +90,7 @@ and an identity with no line here is closed.
 - Authorized 2026-09-05: provider `claude`, identity `liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost`.
 - Authorized 2026-09-17: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost`.
 - Authorized 2026-09-17: provider `gpt`, identity `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a`.
+- Authorized 2026-09-18: provider `claude`, identity `liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost`.
 
 ## How to find out what exists
 
