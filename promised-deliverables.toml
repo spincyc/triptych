@@ -27,8 +27,9 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "looping-fix-recovery"
   criterion = "Directories and branches parallel to this workspace are surveyed for work that attempted to fix Claude's non-converging workflow runs; each item is classified as already on main, superseded, recovered, or recorded-only, with evidence."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/claude-loop-recovery-2026-09-18/README.md", "workflows/reviews/claude-loop-recovery-2026-09-18/proper-finish-cold-review-2026-09-10/FINDINGS.md", "workflows/reviews/claude-loop-recovery-2026-09-18/driver-handoff-2026-09-11/HANDOFF.md", "workflows/reviews/claude-loop-recovery-2026-09-18/loop-runs-summary.json"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "claude-main-and-pages"

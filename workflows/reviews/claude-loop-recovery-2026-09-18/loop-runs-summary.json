@@ -1,0 +1,2327 @@
+{
+ "05f2d2fd7c2cf8b3": {
+  "current_stage": "publication-revision",
+  "disposition": null,
+  "document": "liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost",
+  "escalations": 2,
+  "provider": "claude",
+  "results": [
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "0baa28e627a41f58ead20e92ee70b4994dfebd64bbb2ca5b1eb1db2090702a83",
+    "stage": "author-proper"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "f56078b015c8ee18ed7900ce76d65e6d1a696f5af993db34959323aa18bfea61",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 8,
+     "blocking": 3,
+     "escalation": 2
+    },
+    "iteration": 0,
+    "result_sha256": "865a411a099dca1b153e983405267c2119ea2dff05f3213cad65de860d623cae",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "647248f5eae4a5f42163255e79e0b6c74e8c6756112f62e5aeab77a197afdb72",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "7a24c844f4cfbbf394ac82e9e0b8674afb4f2d0ac60a6b77be818a398614a441",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 1,
+     "blocking": 1,
+     "escalation": 2
+    },
+    "iteration": 1,
+    "result_sha256": "187941fbaee882acb8d3ce81c71be0ed3ef2da7e0ccc6a25f7b8a7daa7dc86ba",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "9f26852d609233891a7028dd3a69fcef27fcb17a298161e3ef237c4edd9019e4",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "37647487f6321b63262000c1565577b47ff3457a57467e025b9fae18c6a5d2ba",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {
+     "escalation": 2
+    },
+    "iteration": 2,
+    "result_sha256": "7941097c3a7711eebdc8ca5ebec473d837dcf009d98c9a81187a620466caaa93",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "5b0ffd1cfc2d2b08fc3289d31bb6d2ead5680d52f3370b8cdae02ddd0e0246dd",
+    "stage": "derive-synthesis"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 1,
+     "blocking": 9
+    },
+    "iteration": 0,
+    "result_sha256": "b87ba844ad3ed92709051fa68dd77c0c4e3b4160587f8463b677a48f21f58931",
+    "stage": "synthesis-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "9a409b00950e22168c3d7fa5c677153dc5d5880fdbab5941c9578fe4c2cc5e85",
+    "stage": "synthesis-revision"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 1,
+     "blocking": 2
+    },
+    "iteration": 1,
+    "result_sha256": "b041e944e653750141d6f9f7d4d94f531f0d2406bc5e195a29feab850d3b1d96",
+    "stage": "synthesis-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "17af598d46c21bc96754da41ce49e502d298e431f4d032402a6dc1fc64e2de46",
+    "stage": "synthesis-revision"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "blocking": 1
+    },
+    "iteration": 2,
+    "result_sha256": "515ad456cdd81d9488296c151e597593e1706979cc2f995106d6f8890fa1a181",
+    "stage": "synthesis-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "92d7c937a98425cb6e5e33a02a6ea24d6167e56f1ff9b7af9964e6082b4bf5d0",
+    "stage": "synthesis-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {
+     "accepted": 1
+    },
+    "iteration": 3,
+    "result_sha256": "d91f5a370497e3a2c0429fe1d326cf1d7fcbb23aaa71d09c3be8fa1de1055aca",
+    "stage": "synthesis-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "5584903c48c5562369c3ace432a49bf843a3f8054d807ba64ee1c540fcaa1d82",
+    "stage": "build-artifacts"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "fffe28c0dc6a321ddd64f81e3f92c0282ce6503e30015ed7acf0398feba3631e",
+    "stage": "mechanical-gates"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "accepted": 2,
+     "advisory": 4,
+     "blocking": 2
+    },
+    "iteration": 0,
+    "result_sha256": "e588e33aefd6c1082c2fd9490cf522003b153d0904f8487402d5b29b8c9d112e",
+    "stage": "visual-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "775a8c1accf366c60e54b30a86b11b9569721c8138d067d3d71fde29ff2eb12d",
+    "stage": "visual-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "8245170b798f9e4fd6190890e14ffbaab27d79549473fa90c6afc10f59d1c948",
+    "stage": "mechanical-gates"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {
+     "accepted": 3,
+     "advisory": 3
+    },
+    "iteration": 1,
+    "result_sha256": "9a72ed7dc4fea4a609bb1f254ab5a507e63e580fb223ce6ad243c496b33e8af2",
+    "stage": "visual-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "db03399d61714f344bde8279a258a17ae35569ba6c853f4ded0d5c361c1bed3a",
+    "stage": "final-acceptance"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "bab601c9fc479d0c7c31ee14eca296fbe1c6ffc8c5de89d5dc25179c49d84daa",
+    "stage": "publish-artifacts"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "adce8150b477668d471339f464991d202904bd51f32ec4afe955215435ae25b5",
+    "stage": "generate-web"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 2,
+     "blocking": 2
+    },
+    "iteration": 0,
+    "result_sha256": "7105daa61e10e551f8f43f18aa9e4c4d77b59fb434e5c95bd3b60daf801cd364",
+    "stage": "web-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "6c668188a986136b36dc5af57d019f7054beb717ed62c11803c946b23bf40b99",
+    "stage": "web-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {
+     "accepted": 1,
+     "advisory": 4
+    },
+    "iteration": 1,
+    "result_sha256": "0c81c71aa38cae27fb6054d7fdb21f8c6a9d58a45f5e88a6963d2b21543da434",
+    "stage": "web-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "7b94b1386ad7e7610a3f2356a054ad864e164610436791cba70a767caac41725",
+    "stage": "install-publication"
+   },
+   {
+    "disposition": "FAIL",
+    "findings_by_severity": {
+     "blocking": 6
+    },
+    "iteration": 0,
+    "result_sha256": "7fd92927ef90e50884029495f7b2cb9bb8bf39bdd66fcfed146b6c108bb36e45",
+    "stage": "publication-gates"
+   }
+  ],
+  "stage_iterations": {
+   "author-proper": 1,
+   "build-artifacts": 1,
+   "content-evaluation": 3,
+   "content-preflight": 3,
+   "content-revision": 2,
+   "derive-synthesis": 1,
+   "final-acceptance": 1,
+   "generate-web": 1,
+   "install-publication": 1,
+   "mechanical-gates": 2,
+   "publication-gates": 1,
+   "publication-revision": 1,
+   "publish-artifacts": 1,
+   "synthesis-evaluation": 4,
+   "synthesis-revision": 3,
+   "visual-evaluation": 2,
+   "visual-revision": 1,
+   "web-evaluation": 2,
+   "web-revision": 1
+  },
+  "state_sha256": "5ff61574b59567e3d904dd79388c48f37a434447a41b5315645a6c68338c18e9",
+  "version": 6,
+  "workflow": "proper-finish"
+ },
+ "29f20fa20e542429": {
+  "current_stage": "derive-synthesis",
+  "disposition": null,
+  "document": "liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost",
+  "escalations": 1,
+  "provider": "claude",
+  "results": [
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "0c3a59bc99a164d2037b0c7242f53f3208c31e06682e56ae46bf8a406326da14",
+    "stage": "author-proper"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "f56078b015c8ee18ed7900ce76d65e6d1a696f5af993db34959323aa18bfea61",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 11,
+     "blocking": 4
+    },
+    "iteration": 0,
+    "result_sha256": "a18aa696195985722e36ac4c5c5f1b6fcd926e5a0b62abc173f8efad08673794",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "272c89ee0caec00675999306cbd3f7780a65a4a48eecfb345fd23c1a79e489a5",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "7a24c844f4cfbbf394ac82e9e0b8674afb4f2d0ac60a6b77be818a398614a441",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 5,
+     "blocking": 2
+    },
+    "iteration": 1,
+    "result_sha256": "ec17a836d5a321096f90105b06328abf8b618b303abaf512e3b49598c48e156a",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "800a54066faac427ec57b2e3691b7b3a87e850cde3491e3243b059114d04f60a",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "37647487f6321b63262000c1565577b47ff3457a57467e025b9fae18c6a5d2ba",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 4,
+     "blocking": 4,
+     "escalation": 1
+    },
+    "iteration": 2,
+    "result_sha256": "23bed576cc8db6664ff8e713dd47fbbfe0261e3ef6ea8716cf0a0a561535b46c",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "dd98d59831dfaf0275a4128720fcfc731dc90249c76c11957553458e1a2235bb",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 3,
+    "result_sha256": "3d1a16458f93e6b168102498ec822e6c2146eced86044d0888acb876e1010236",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {
+     "advisory": 1,
+     "escalation": 1
+    },
+    "iteration": 3,
+    "result_sha256": "b5c12f536c9da9e6ce675bea00ce9c634456eec0897d0b37bf6428f8199764e7",
+    "stage": "content-evaluation"
+   }
+  ],
+  "stage_iterations": {
+   "author-proper": 1,
+   "content-evaluation": 4,
+   "content-preflight": 4,
+   "content-revision": 3,
+   "derive-synthesis": 1
+  },
+  "state_sha256": "17c94eb7a43cc11d2a81d491617fa82f49926d7fa23c3a81d40d244fa6ba7b8a",
+  "version": 4,
+  "workflow": "proper-finish"
+ },
+ "2bd4a1ab7521853d": {
+  "current_stage": "BLOCKED",
+  "disposition": "BLOCKED",
+  "document": "liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost",
+  "escalations": 7,
+  "provider": "claude",
+  "results": [
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "c7929daa206074683003244c109a96b9742f1cb4182d2d5e3a5bfc919aaeb081",
+    "stage": "seed"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "ab60815d8ec8116ae159be30c6646e7759c15e3397cf0e4ca6e5567879a5dc8f",
+    "stage": "authorize-target"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "c2c5dc73384dcaa82e6a0b0b6d655a49fd9f0d8345607513add762f6826c4e2d",
+    "stage": "scope-gate"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "84f1ef94bacb22cdad310fbb99c80d13475e188840be8a5204a89f46e2a36aa8",
+    "stage": "resolve-context"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "a9291737eadbdcb40a26fefaf473f6a5d4b6a6979ba88ef514c88648a410583d",
+    "stage": "source-audit"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {
+     "research-finding": 143
+    },
+    "iteration": 0,
+    "result_sha256": "2811185a779adc93f4a808a08605b244f71064b39e886c391f0733d579662e54",
+    "stage": "research"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "0c6b8d7c2a996c5eeedc4861cdfee6421b00cdb9dcba6d73494d6c421c939c98",
+    "stage": "research-synthesis"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "c004e07109482821f24815d3e3ac178b054a07ea3d7df392aa7512e7b381359a",
+    "stage": "source-registration"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "2a9a41524f48c771561439f07e0a0af36400a676b71decc9e34bbaf600b0b330",
+    "stage": "author-proper"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "f56078b015c8ee18ed7900ce76d65e6d1a696f5af993db34959323aa18bfea61",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 3,
+     "blocking": 18,
+     "escalation": 2
+    },
+    "iteration": 0,
+    "result_sha256": "e76257546a7447084a857ec24a2646077529037101859cdcdc6ecd79837d3659",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "8d4cbf58bc2e3d1c6a2dbb4611ccfcb1b39ba7cdd65d40fbe1d4a643d8225499",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "7a24c844f4cfbbf394ac82e9e0b8674afb4f2d0ac60a6b77be818a398614a441",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 6,
+     "blocking": 17,
+     "escalation": 2
+    },
+    "iteration": 1,
+    "result_sha256": "09041dea405003f4f2fc451f4e210444853a31f8850e271ab65a82fcd07e1aa5",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "8e956ec92659b3b871cffcee128218b8bd32653fb8330d97478001bbaaa26216",
+    "stage": "research-synthesis"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "c2da44c8b2bf5df21ae2de673f72619309839a33c82fb118db3e9b7d2cd2daa0",
+    "stage": "source-registration"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "ce928cecd176d5ffe244780365b26f46a938df45fbd5efeaf65042dbb86ecee5",
+    "stage": "author-proper"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "37647487f6321b63262000c1565577b47ff3457a57467e025b9fae18c6a5d2ba",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 7,
+     "blocking": 10,
+     "escalation": 3
+    },
+    "iteration": 2,
+    "result_sha256": "1022306f17c643f5339b45530b3e2f7d67e179103becc5202a7af216a7475684",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "a0c038bbcf9b892f972a24c44fbb7d764fe49ad101aabe2fcd8432df8658520f",
+    "stage": "research-synthesis"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "5f2a0dce62424ecd2422064d29b91eec50ec6d3cbfaa17eca6937858c7ad717b",
+    "stage": "source-registration"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "14ad809a0cd84b4f4041f67576e7e3ab27ac35e8b9bf8cd05d293c1b5520253d",
+    "stage": "author-proper"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 3,
+    "result_sha256": "3d1a16458f93e6b168102498ec822e6c2146eced86044d0888acb876e1010236",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 5,
+     "blocking": 5,
+     "escalation": 3
+    },
+    "iteration": 3,
+    "result_sha256": "fcda6a42891615d13c07acbc23e828f9d3834cae0f10a954aca57b207afc8f97",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "4019da442e904732cdccb4ff7069e6acf4b14f9c1e48c8a462bbafddfc60cacf",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 4,
+    "result_sha256": "3f538198129dc766908931e888b78c2c920ce04ecb0a05f0446a7a11ba3546fa",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 4,
+     "blocking": 5
+    },
+    "iteration": 4,
+    "result_sha256": "578555bf16b47e680dd38ad3700a00d821079f810eebfe838ea56e22352bc620",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "1557829c027b240ab87d5ecb06bfb82a7074ad8bc8c628c96ce563554e035110",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 5,
+    "result_sha256": "a8590158fd6e77eaccdde89ede2db1dc90321c9cc7cde8b463d34a07e4f3c13e",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 9,
+     "blocking": 3
+    },
+    "iteration": 5,
+    "result_sha256": "8cac20b65502d86db2677294a93cfa4a0e046e8aac52c91a41382f46e82fcaf0",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 3,
+    "result_sha256": "c828bf7033cf0510b08dced665a279cafefff83014a50a69a362d5052f9ce094",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 6,
+    "result_sha256": "b7436015e19a0f65a67a4053cd35cdb143bc9c52ff375d826d36719ffd71d89a",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 3,
+     "blocking": 3
+    },
+    "iteration": 6,
+    "result_sha256": "cc5654742041d209d3049fed1c1d20429eb5802082c577d9fbc51db5e7fd83f5",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 4,
+    "result_sha256": "db7f4f6c1ae032b772a34b020ec71b71ffca9506a16ae4bcafa78bf4a29f91e0",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 7,
+    "result_sha256": "7a60c7e0f0bdc14171297e84a41774d00662913085f55363aa8d02ecf393f87c",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 3,
+     "blocking": 3
+    },
+    "iteration": 7,
+    "result_sha256": "9dbfd35ebd928a1cb9c61458df9192bc421299dabb3e9f49ebe8d0c135fe428d",
+    "stage": "content-evaluation"
+   }
+  ],
+  "stage_iterations": {
+   "author-proper": 3,
+   "authorize-target": 1,
+   "content-evaluation": 8,
+   "content-preflight": 8,
+   "content-revision": 5,
+   "research": 1,
+   "research-synthesis": 3,
+   "resolve-context": 1,
+   "scope-gate": 1,
+   "seed": 1,
+   "source-audit": 1,
+   "source-registration": 3
+  },
+  "state_sha256": "30b759d327ecbc6409bdb5260b973a00c178cc6e765aa895c3adfbd182f402f5",
+  "version": 25,
+  "workflow": "proper"
+ },
+ "3c3fb16baa13ee6b": {
+  "current_stage": "content-revision",
+  "disposition": null,
+  "document": "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost",
+  "escalations": 0,
+  "provider": "claude",
+  "results": [
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "6dfc26a3707a6824e498fe0dadc5b1b275d03f4157dede71177945684605f5a8",
+    "stage": "author-proper"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "f56078b015c8ee18ed7900ce76d65e6d1a696f5af993db34959323aa18bfea61",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 5,
+     "blocking": 16
+    },
+    "iteration": 0,
+    "result_sha256": "9a6f3b4253f3283bd165b390940ac894b301bea0b81ba2462de522e17bffb8fe",
+    "stage": "content-evaluation"
+   }
+  ],
+  "stage_iterations": {
+   "author-proper": 1,
+   "content-evaluation": 1,
+   "content-preflight": 1,
+   "content-revision": 1
+  },
+  "state_sha256": "6aab0ddde4a5f0c033d047817c45bda1a804c26b02a60a41ea45263b9f45936d",
+  "version": 7,
+  "workflow": "proper-finish"
+ },
+ "45f0ddc21d634d9a": {
+  "current_stage": "content-evaluation",
+  "disposition": null,
+  "document": "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost",
+  "escalations": 3,
+  "provider": "claude",
+  "results": [
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "c9879bc9b4dd27e7babf426462bbbb07055da26f8148c89668fdb33d2c4f1c75",
+    "stage": "author-proper"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "f56078b015c8ee18ed7900ce76d65e6d1a696f5af993db34959323aa18bfea61",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 8,
+     "blocking": 8,
+     "escalation": 1
+    },
+    "iteration": 0,
+    "result_sha256": "ab6fe081f2c9a783db32ab4db9f86448006013bb4055c1fed079e7278fb348db",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "3487bafac46c88cdffea11dadd664dd992ecad78850ec05f5c1e0a8d549c9078",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "7a24c844f4cfbbf394ac82e9e0b8674afb4f2d0ac60a6b77be818a398614a441",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 8,
+     "blocking": 4,
+     "escalation": 1
+    },
+    "iteration": 1,
+    "result_sha256": "e166122a140630da0cf45ffcdd3280c81d729f39b0ffbe533bf483e577a7a6d6",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "7f42c06facfd739d4ce3b967e00ba71a05b9da724e87d43c3407231534b42e61",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "37647487f6321b63262000c1565577b47ff3457a57467e025b9fae18c6a5d2ba",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 8,
+     "blocking": 3,
+     "escalation": 1
+    },
+    "iteration": 2,
+    "result_sha256": "61e9b32f487ca412223c64db35905345e1600aea396e707d160f616b32443330",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "900a614d9b3d26b3d17f4dce47c5e00743b308c2c6bcfadc5f45ce831a4fce70",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 3,
+    "result_sha256": "3d1a16458f93e6b168102498ec822e6c2146eced86044d0888acb876e1010236",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 8,
+     "blocking": 2,
+     "escalation": 1
+    },
+    "iteration": 3,
+    "result_sha256": "4974b407f90ff862a3577acce3d87019aa52b46aa4344840b94ceac73aa441df",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 3,
+    "result_sha256": "3df6203948e26de997725c2ff3b96b9bbf9fedee1b26400cb96f4fcea788b558",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 4,
+    "result_sha256": "3f538198129dc766908931e888b78c2c920ce04ecb0a05f0446a7a11ba3546fa",
+    "stage": "content-preflight"
+   }
+  ],
+  "stage_iterations": {
+   "author-proper": 1,
+   "content-evaluation": 5,
+   "content-preflight": 5,
+   "content-revision": 4
+  },
+  "state_sha256": "509bb06dde191ce86bb81675f8b233c78e6e70dd3160afab3a6c2ff0fc037521",
+  "version": 4,
+  "workflow": "proper-finish"
+ },
+ "53bdb2eaab3ba398": {
+  "current_stage": "BLOCKED",
+  "disposition": "BLOCKED",
+  "document": "liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost",
+  "escalations": 0,
+  "provider": "claude",
+  "results": [
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "0cec0f8e14cd7c1fe10042122ae3dbb4608446a33e6cd0ee05a9c64071e8fb5c",
+    "stage": "author-proper"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "f56078b015c8ee18ed7900ce76d65e6d1a696f5af993db34959323aa18bfea61",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 2,
+     "blocking": 6
+    },
+    "iteration": 0,
+    "result_sha256": "a5389ce40a4a067ec68f45b270e0378df12068ff19ea15008f66b3edf3c6f36e",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "87c15274a45b01e64d949c9c1e3fb5daa3917763aa4bfa9beb51173c59fab6b0",
+    "stage": "brief-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "45c8eb284131e02dae70e933c1c6a569ce716a44e6790f931f020adbc9004000",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "7a24c844f4cfbbf394ac82e9e0b8674afb4f2d0ac60a6b77be818a398614a441",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {
+     "advisory": 2
+    },
+    "iteration": 1,
+    "result_sha256": "77214f0b5f13dd42b0834b1accfe7b1e547d0c5a5ce0fadc1157d5107024c689",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "cbbdca08acee9e1122b81bb0398040ceffed28f626288d43a6a0b68a68aad31f",
+    "stage": "derive-synthesis"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "67b87db41056e0690c03027475a5706f18334b8a627effc6e088c72dc2725ad3",
+    "stage": "synthesis-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 2,
+     "blocking": 7
+    },
+    "iteration": 0,
+    "result_sha256": "7fc75a5fff02b49b692bc72161d1f5748b51a921ebaa4a29b4663eed2a36fed0",
+    "stage": "synthesis-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "58cc916086959a1a610bef0f2abf4dbc9cf59b0db84e3cf5f0feccca24956f77",
+    "stage": "synthesis-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "6e1973b0386d22a673b2f14206bbd01007c3c41624ed78abd9fac4f7055f4055",
+    "stage": "synthesis-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 1,
+     "blocking": 3
+    },
+    "iteration": 1,
+    "result_sha256": "47d71174ca10f09eef9acf4f475a4f8441f5bd4c84a4e3ddfb9cff5b7609b4e9",
+    "stage": "synthesis-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "5eb964079d685c4e3a94117b3ac67a1feeb919b14bf5bee6b481ab582f0213ee",
+    "stage": "synthesis-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "42a2ff6eb1fbf1e3588bd868fb35cdfcf87527144fff18ceffdfdb4cefa15e04",
+    "stage": "synthesis-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "blocking": 3
+    },
+    "iteration": 2,
+    "result_sha256": "f76a6e481967c7757a742894925c00dc822038ccc084abf14d9a31c224e112b8",
+    "stage": "synthesis-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "985c83870d6c0cecf626d0ea0f8c6daef464431fee1a213d7ce67b053beac74d",
+    "stage": "synthesis-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 3,
+    "result_sha256": "66d3490d62161845be2c67fe2e00298669ead41ac54a2372ab5a71dce0627b02",
+    "stage": "synthesis-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "blocking": 2
+    },
+    "iteration": 3,
+    "result_sha256": "08cf08fd2387bce1a0453080271dd6b2d5535d6ca3812335e2dc07e51aa0b629",
+    "stage": "synthesis-evaluation"
+   }
+  ],
+  "stage_iterations": {
+   "author-proper": 1,
+   "brief-revision": 1,
+   "content-evaluation": 2,
+   "content-preflight": 2,
+   "content-revision": 1,
+   "derive-synthesis": 1,
+   "synthesis-evaluation": 4,
+   "synthesis-preflight": 4,
+   "synthesis-revision": 3
+  },
+  "state_sha256": "c0b194e73cf69d579c27713e5ff801f4c7e445256a07f21cacb3237e8e807418",
+  "version": 7,
+  "workflow": "proper-finish"
+ },
+ "6fb5fba4867eb8cf": {
+  "current_stage": "BLOCKED",
+  "disposition": "BLOCKED",
+  "document": "liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost",
+  "escalations": 1,
+  "provider": "claude",
+  "results": [
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "8d8517174078c0c8b82477c92ec5d872c2ce2411b779a218f0b28f0ab06d3593",
+    "stage": "author-proper"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "f56078b015c8ee18ed7900ce76d65e6d1a696f5af993db34959323aa18bfea61",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 13,
+     "blocking": 11
+    },
+    "iteration": 0,
+    "result_sha256": "0eb975c6a49ba71a8dd6a61f854f336279d57f641f7c6661576f6eeba79fe841",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "ecac810db57a61b1710bf887cc02fdbacb5a6678d1cfa39c7369ca7aed1c671e",
+    "stage": "brief-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "1d524a7028d13c159265757d3e5dae1c4b36ab2fbdca636ef5179091715b26b7",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "FAIL",
+    "findings_by_severity": {
+     "blocking": 2
+    },
+    "iteration": 1,
+    "result_sha256": "7d7967cf69b36fca48b4c09cb3d83812f76c312e4574e456f68af414b7eb4d0b",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "a3de37a7bc915085d15f750661d8d69525e6f427c871d44e672123cc5878b1b8",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "37647487f6321b63262000c1565577b47ff3457a57467e025b9fae18c6a5d2ba",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 12,
+     "blocking": 6
+    },
+    "iteration": 1,
+    "result_sha256": "693c94561d13d71a1af5242562c0c62aea146974d2c3ff94e879e46ebfddc60a",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "938fdf771190624682e500e2480ee61ccd3f93410bd6e65e02a8e432e5472c6d",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 3,
+    "result_sha256": "3d1a16458f93e6b168102498ec822e6c2146eced86044d0888acb876e1010236",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 7,
+     "blocking": 8
+    },
+    "iteration": 2,
+    "result_sha256": "7fb5cbf8cb0ca282c60727fca6a372cdfff9a67a737c2aea7ea6cfe315e3ccb3",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "b3d296454329f920d5a9d9f2cdad784d4fb738b62fed74b4018bf0bba5763139",
+    "stage": "brief-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 3,
+    "result_sha256": "7b21ae0cae348d826311bbe39b70b5cec4391c395458d4fcb2b06375003527a2",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 4,
+    "result_sha256": "3f538198129dc766908931e888b78c2c920ce04ecb0a05f0446a7a11ba3546fa",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 7,
+     "blocking": 14
+    },
+    "iteration": 3,
+    "result_sha256": "07c2568c5384bebcc147a97f5f814b44660c4223109712eba00d1c1c6d92ebf3",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "e466b7a42bcc20b4ecb66907912f0633e725bb99c45fb3aca2806110fffdf069",
+    "stage": "brief-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 4,
+    "result_sha256": "efb834d4b96f9ce19d5ed9e0e65b7a4943907b07099d3dcef9c9630d59614148",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 5,
+    "result_sha256": "a8590158fd6e77eaccdde89ede2db1dc90321c9cc7cde8b463d34a07e4f3c13e",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 6,
+     "blocking": 3
+    },
+    "iteration": 4,
+    "result_sha256": "177d8e6a0e82cb04a656220ad08e472d663fe52db7e7d89f06224a869b035522",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 3,
+    "result_sha256": "e8e9809a9b2d79740a22876c5ac9f469dc327047d891d56ef66f81cc74a264c5",
+    "stage": "brief-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 5,
+    "result_sha256": "bb66c117347e5ece5e3a11673dab67fdc94b20635a41cf72235cf41cfa9573a9",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 6,
+    "result_sha256": "b7436015e19a0f65a67a4053cd35cdb143bc9c52ff375d826d36719ffd71d89a",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 1,
+     "blocking": 5
+    },
+    "iteration": 5,
+    "result_sha256": "568e8021fb68ddd5c445b984c7b4be64b0dcd871009ec24862fb4aa14c7f691e",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 6,
+    "result_sha256": "3f95d17068cee919041d2bf79a9da62c49e092a8a878a2d5a10ab7351372c0df",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 7,
+    "result_sha256": "7a60c7e0f0bdc14171297e84a41774d00662913085f55363aa8d02ecf393f87c",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 2,
+     "blocking": 6
+    },
+    "iteration": 6,
+    "result_sha256": "d2e037e6bf0e13a48d7e4b220b5ec89dc221b6ee83b54f6daf3c69c75bbf7df2",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 4,
+    "result_sha256": "53d9ee9e3ef6e6fa82ac25639ad1e184265b30dc9801b8ccec0a6610edb7f54b",
+    "stage": "brief-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 7,
+    "result_sha256": "052ac0d07990394de737aa6066cd539b1650717556c1b2d3615a4aba5f58737d",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 8,
+    "result_sha256": "a98dc5a376226b2446a447fba4f0146f0ed1b74981db78bd5e48ecfc1561a9bd",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "blocking": 4,
+     "escalation": 1
+    },
+    "iteration": 7,
+    "result_sha256": "8138fd9d293b7e068f10c91ab93368de8825d0ceb742f8194516c3d17c879218",
+    "stage": "content-evaluation"
+   }
+  ],
+  "stage_iterations": {
+   "author-proper": 1,
+   "brief-revision": 5,
+   "content-evaluation": 8,
+   "content-preflight": 9,
+   "content-revision": 8
+  },
+  "state_sha256": "6e4bacd01e35a8bf6582221203ec59b9ebea1aa1b69fda6839572d07a6e6d722",
+  "version": 5,
+  "workflow": "proper-finish"
+ },
+ "b16414357535992e": {
+  "current_stage": "ACCEPTED",
+  "disposition": "ACCEPTED",
+  "document": "liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost",
+  "escalations": 1,
+  "provider": "claude",
+  "results": [
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "cdb833a4f0821aa5f077a1a041446af8fac16c5682bab792c6855aa97a2d3436",
+    "stage": "author-proper"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "f56078b015c8ee18ed7900ce76d65e6d1a696f5af993db34959323aa18bfea61",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 7,
+     "blocking": 3
+    },
+    "iteration": 0,
+    "result_sha256": "9b851fc73366ff9f6b4b1a2ddeda3f559d11919daf90ccb2f040b3d0bb7f469b",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "1a3ddaf390a4d2b10b2eb5810fa1e3784d8467746cf0703b1491f8dddfd217d6",
+    "stage": "brief-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "d13f9ab3532f5aeabccf1baaf97edb25d84745f605ea98d3be4a588139a84a5d",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "7a24c844f4cfbbf394ac82e9e0b8674afb4f2d0ac60a6b77be818a398614a441",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 9,
+     "blocking": 1,
+     "escalation": 1
+    },
+    "iteration": 1,
+    "result_sha256": "ce1401cc553f97ee953eaec5dbdd13ad953f88a7ebf375d176ab3e9850b0472b",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "c2ce626520c6c4e7734f941dc68c6c7df525d224a522cab11f0449e78851b21e",
+    "stage": "brief-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "52b6fd7d3a497313db5af276e82e1a82f381b4b719a510a778b6f7821b77c688",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "37647487f6321b63262000c1565577b47ff3457a57467e025b9fae18c6a5d2ba",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 12,
+     "blocking": 2,
+     "escalation": 1
+    },
+    "iteration": 2,
+    "result_sha256": "2b1d8db5848316d9deef31306f847fc7cf8ce3cb48a6ed830620a74124fa5f11",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "9cd6ea68f6627583beda0841804fbb8f887264e2a0404e9ec6b04c16a35a26f0",
+    "stage": "brief-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "84e42cc46058d1d5e963b54adda1d5450acfb3033a5265d28ee08d8bbb596256",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 3,
+    "result_sha256": "3d1a16458f93e6b168102498ec822e6c2146eced86044d0888acb876e1010236",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {
+     "advisory": 12,
+     "escalation": 1
+    },
+    "iteration": 3,
+    "result_sha256": "c2789cd0b05d01e9efef7a4f501a3345dcb306959ae0260791c4c9917f20552d",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "ac9153afb074a04a689455e1e05b48c946cdb820b6e6f56f5444e66c634c74cf",
+    "stage": "derive-synthesis"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "67b87db41056e0690c03027475a5706f18334b8a627effc6e088c72dc2725ad3",
+    "stage": "synthesis-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 1,
+     "blocking": 1
+    },
+    "iteration": 0,
+    "result_sha256": "2e9dd8fdf600f180bb50847dd61952430f76b545497cdcdca1bd870acc165aeb",
+    "stage": "synthesis-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "b3be7ea4219af8de5828fb7b6c9ca4148ca098dc7feb7944f6692d7565f13750",
+    "stage": "synthesis-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "6e1973b0386d22a673b2f14206bbd01007c3c41624ed78abd9fac4f7055f4055",
+    "stage": "synthesis-preflight"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "d62e0e8cc31e3062589088136bb4ce1d220d46c2600c2cc1ba72da39c68f0c7b",
+    "stage": "synthesis-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "5c02171d3a01635228e4d7dc1fa44ebb1456e2177d18d0ee9f3ec9ed0792d888",
+    "stage": "build-artifacts"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "fffe28c0dc6a321ddd64f81e3f92c0282ce6503e30015ed7acf0398feba3631e",
+    "stage": "mechanical-gates"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "accepted": 4,
+     "advisory": 6,
+     "blocking": 3
+    },
+    "iteration": 0,
+    "result_sha256": "e8fa645e047b9beaf2cc008fc8a8aa4cec8c61780cde63df2e108b624e4c0d3f",
+    "stage": "visual-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "975618ec5b2b171dbc17d95dc3c7f67ee074c885a6e2afab787da770b950bfd5",
+    "stage": "visual-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "8245170b798f9e4fd6190890e14ffbaab27d79549473fa90c6afc10f59d1c948",
+    "stage": "mechanical-gates"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "accepted": 4,
+     "advisory": 3,
+     "blocking": 1
+    },
+    "iteration": 1,
+    "result_sha256": "1d4f4af46028c649a754bb9dd14936dc9c6a773c03c5e34bf872f1ee34a040cd",
+    "stage": "visual-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "3b946424aa708dc513be43f835f4965888d88552bd6a038c042007ba87245226",
+    "stage": "visual-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "e2692305c08f932fe4fa3a7a61dc9c4894b549c9b2426ce78e9edc9e08bdade8",
+    "stage": "mechanical-gates"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {
+     "accepted": 4,
+     "advisory": 3
+    },
+    "iteration": 2,
+    "result_sha256": "8c5d55c8dbb7e42d60ef3651471710b68f9d885bc58f1c6da23a29b390addd96",
+    "stage": "visual-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "db03399d61714f344bde8279a258a17ae35569ba6c853f4ded0d5c361c1bed3a",
+    "stage": "final-acceptance"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "3b09f5e2f396a5c4853c50e2c781e7307b5bcdad3cbbc9ed02e7933ef48922d2",
+    "stage": "publish-artifacts"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "23110ae82803da15f47c12e0f855302076eb70c7182adceb06a5d74a38f0e40b",
+    "stage": "generate-web"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "accepted": 1,
+     "blocking": 3
+    },
+    "iteration": 0,
+    "result_sha256": "845adf3bbbc6b583d5ebcdb71721d04e619a6c99746457f78d4c6b799e8f7c32",
+    "stage": "web-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "c2036d6cd0d7d67c4fd5efe315d29597c2e1f016acd9f914a9bceeaf42fe2523",
+    "stage": "web-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "99e6c549bb2cc4080fad0543353d062f188e0ac3f2b9a50dcaad595b821e8152",
+    "stage": "web-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "ca3e3d13864ccfc4dcd5a7d4a63704f483b7b502c1c00a6a18a3c968b9e8ee42",
+    "stage": "install-publication"
+   },
+   {
+    "disposition": "FAIL",
+    "findings_by_severity": {
+     "blocking": 2
+    },
+    "iteration": 0,
+    "result_sha256": "311aca2594d445554e0460c243387918f4fe3bd6625cadb4b1510015bface637",
+    "stage": "publication-gates"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "c8362bb5f733734289031a19ce0ffad07a95bfc088a625871647ecd2c17bb05d",
+    "stage": "publication-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "ce997de4ddf26681d85bd5133ef4aaeabdfe30dc81dac9bde2a3d404c28d9717",
+    "stage": "publication-gates"
+   }
+  ],
+  "stage_iterations": {
+   "author-proper": 1,
+   "brief-revision": 3,
+   "build-artifacts": 1,
+   "content-evaluation": 4,
+   "content-preflight": 4,
+   "content-revision": 3,
+   "derive-synthesis": 1,
+   "final-acceptance": 1,
+   "generate-web": 1,
+   "install-publication": 1,
+   "mechanical-gates": 3,
+   "publication-gates": 2,
+   "publication-revision": 1,
+   "publish-artifacts": 1,
+   "synthesis-evaluation": 2,
+   "synthesis-preflight": 2,
+   "synthesis-revision": 1,
+   "visual-evaluation": 3,
+   "visual-revision": 2,
+   "web-evaluation": 2,
+   "web-revision": 1
+  },
+  "state_sha256": "f2ffce8c13781457a2a55eac39afc7cd582d965824923b56b908ab38b251ac75",
+  "version": 7,
+  "workflow": "proper-finish"
+ },
+ "da04e65ca4ec963b": {
+  "current_stage": "synthesis-evaluation",
+  "disposition": null,
+  "document": "liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost",
+  "escalations": 1,
+  "provider": "claude",
+  "results": [
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "c3b91744389e677b0e4f01a1ddfcfca6e3cb2c9fd9adad03d7356b0e3ca9abc1",
+    "stage": "author-proper"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "f56078b015c8ee18ed7900ce76d65e6d1a696f5af993db34959323aa18bfea61",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 3,
+     "blocking": 2,
+     "escalation": 1
+    },
+    "iteration": 0,
+    "result_sha256": "dd7914cde69b724d94fc911cd46650a08faa7a49be0133ab5ef5070f23c71524",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "d78b05d3cea5213d6ce0bf8f64226853a6abaa5b605816fe46715f65e94a45bb",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "7a24c844f4cfbbf394ac82e9e0b8674afb4f2d0ac60a6b77be818a398614a441",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {
+     "advisory": 1,
+     "escalation": 1
+    },
+    "iteration": 1,
+    "result_sha256": "ddf834d72e17793f22e7effd77d57b6cb14b139002ada5bbbce37ed8fa6d1d8c",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "7f6c740e69fd20b57fe1c33e24e943ac7da7510453f8f71796642cddb6d01b50",
+    "stage": "derive-synthesis"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "blocking": 9
+    },
+    "iteration": 0,
+    "result_sha256": "f24c4643d6f0d4bf3696402ba70bd0183bac514bdeab72f4213e827a734801df",
+    "stage": "synthesis-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "70a0b3939ed75e03b0200ae05d7f8ad8188b831ef71295ef271c495d24bfe6f4",
+    "stage": "synthesis-revision"
+   }
+  ],
+  "stage_iterations": {
+   "author-proper": 1,
+   "content-evaluation": 2,
+   "content-preflight": 2,
+   "content-revision": 1,
+   "derive-synthesis": 1,
+   "synthesis-evaluation": 2,
+   "synthesis-revision": 1
+  },
+  "state_sha256": "dad2fab9f456c921e45a29f9fa8783ed2bec81b4dca5ed5eee2c55f9c5ce1951",
+  "version": 5,
+  "workflow": "proper-finish"
+ },
+ "e4aebcbd941b6b1a": {
+  "current_stage": "content-revision",
+  "disposition": null,
+  "document": "liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost",
+  "escalations": 1,
+  "provider": "claude",
+  "results": [
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "f77f2f2399ac10c0d06eb89369e48131ad60f83e9765b584b28975b425f5b9f8",
+    "stage": "seed"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "050d70f60d8856df971c5347e16cf0f6b82bdd852c60ec40a26224ce2e6a41b8",
+    "stage": "authorize-target"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "c2c5dc73384dcaa82e6a0b0b6d655a49fd9f0d8345607513add762f6826c4e2d",
+    "stage": "scope-gate"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "4429392727a10791314bbd9e32370cf8d47e11f42bcc8bf9cda9cebbe027ccde",
+    "stage": "resolve-context"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "7c7508ebfc73fcde6a6190835f33af080aec73031512f3735d588783d5db469a",
+    "stage": "source-audit"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {
+     "research-finding": 140
+    },
+    "iteration": 0,
+    "result_sha256": "fe53c039b18f4795087d502f3d83dbe3c0f06bd6677ebbed5ac0ae578cb3c1c2",
+    "stage": "research"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "e3d0305a4f26a3d1ec1683c142f693ce736f518433de432faa10babb61478be9",
+    "stage": "research-synthesis"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "774cf47cb37ce31a4cc26e320fcbc5875706d475d338f8c58dd42af68d3dfe5e",
+    "stage": "source-registration"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "2a6ce04ad823b48100e006caaece87982ad8234eac8af696fc3cd37bba13ed5d",
+    "stage": "author-proper"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "f56078b015c8ee18ed7900ce76d65e6d1a696f5af993db34959323aa18bfea61",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 5,
+     "blocking": 18
+    },
+    "iteration": 0,
+    "result_sha256": "f0a39bc6ef41e3a2f9b2437dd119141947f11a9a7c0beee5d6b057cb7ba83da5",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "2d9e309721469ef3181ad1aeaa4ebcf61d7bcf587e27f8e2b88454f528e7716b",
+    "stage": "research-synthesis"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "b6025d3bf1c6e73189f252d573f539ede974011699aa95edc9e439b6d4245157",
+    "stage": "source-registration"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "de40898bdb104499d801955f03a2e083d053d0d51886854be0a0df6d65dffdd7",
+    "stage": "author-proper"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "7a24c844f4cfbbf394ac82e9e0b8674afb4f2d0ac60a6b77be818a398614a441",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 5,
+     "blocking": 12
+    },
+    "iteration": 1,
+    "result_sha256": "b542d262a8e79a34d105a1cc66667b5824b9e94443e9a0013d1e33be7ad97016",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {
+     "research-finding": 216
+    },
+    "iteration": 1,
+    "result_sha256": "de4cdc2dea01cb55f9b13e80d776c636a20204ac4ad3f783bc75c9ba8c782033",
+    "stage": "research"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "6fd5c83e43adedeefc1d2f82cf43d0cffc8eb53adec45b0724058215aef7af2b",
+    "stage": "research-synthesis"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "fc07e7da1f33f978f7d261e238e072a3b2fb5def30e6dc2edfcb410d377688c4",
+    "stage": "source-registration"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "9e27366daeafeec32934fc7bded3cafa8a77b97d44d2f0e278f5d11aab267995",
+    "stage": "author-proper"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "37647487f6321b63262000c1565577b47ff3457a57467e025b9fae18c6a5d2ba",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 5,
+     "blocking": 10
+    },
+    "iteration": 2,
+    "result_sha256": "277021cf0d49bcc0b2aead76573cec01d9f2d87305e61435e99928287f19002f",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "bc332b1d25fdfbe7a3a0c280ee584fb33b4c1f1187e4785cfddff7da51cd39df",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 3,
+    "result_sha256": "3d1a16458f93e6b168102498ec822e6c2146eced86044d0888acb876e1010236",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 9,
+     "blocking": 8
+    },
+    "iteration": 3,
+    "result_sha256": "81ef1e7ddafce7ecb2313355a10ca2e24e6c9f39066757310ba31e4c4259e997",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "1a9fff8fe41e523dbda3e2c33b97715451c9a589fa2618d00ed10f2c0c36c764",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 4,
+    "result_sha256": "3f538198129dc766908931e888b78c2c920ce04ecb0a05f0446a7a11ba3546fa",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 9,
+     "blocking": 7
+    },
+    "iteration": 4,
+    "result_sha256": "e0736ee5f854f1900f1b9c3e757417ddb58be0c86f08aea85d60ba4ae019e677",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "c82413dfde05733c00e8bc17adfb6fbff539844cd51ef41553168c24f4b1a98b",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 5,
+    "result_sha256": "a8590158fd6e77eaccdde89ede2db1dc90321c9cc7cde8b463d34a07e4f3c13e",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 8,
+     "blocking": 5
+    },
+    "iteration": 5,
+    "result_sha256": "d759235a29632865ce552d14d0771c896743241a20b5f42741868f9f21043e52",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 3,
+    "result_sha256": "cf4cb70b0199343f9b3a7a1aa20efc4bfcf8d12bfee3bfbca787eb1962eed0a8",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 6,
+    "result_sha256": "b7436015e19a0f65a67a4053cd35cdb143bc9c52ff375d826d36719ffd71d89a",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 8,
+     "blocking": 7,
+     "escalation": 1
+    },
+    "iteration": 6,
+    "result_sha256": "eb3965e59e57f25769e32bb856f9b9b30bcd3d88fcc2ef6b0c773a65cd693c62",
+    "stage": "content-evaluation"
+   }
+  ],
+  "stage_iterations": {
+   "author-proper": 3,
+   "authorize-target": 1,
+   "content-evaluation": 7,
+   "content-preflight": 7,
+   "content-revision": 5,
+   "research": 2,
+   "research-synthesis": 3,
+   "resolve-context": 1,
+   "scope-gate": 1,
+   "seed": 1,
+   "source-audit": 1,
+   "source-registration": 3
+  },
+  "state_sha256": "05ae3f8ee766c73dc3a7a79efdd01c8e1fb1c7a3b83ab53122b112a4b3304a96",
+  "version": 25,
+  "workflow": "proper"
+ },
+ "efff3a6f73c1f451": {
+  "current_stage": "BLOCKED",
+  "disposition": "BLOCKED",
+  "document": "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost",
+  "escalations": 1,
+  "provider": "claude",
+  "results": [
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "278997f0d22e9ebe73c1be90a36254ed33a62a2795f4d480c5978ce5d86ba06b",
+    "stage": "seed"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "1d23a5194fa74655f1465b54f3e561b10020e1c10d7e4ab96aba7c9d2af60be9",
+    "stage": "authorize-target"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "c2c5dc73384dcaa82e6a0b0b6d655a49fd9f0d8345607513add762f6826c4e2d",
+    "stage": "scope-gate"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "fff4d867bd35e6125ec11fab5a182eef52d20731026d9e123ed642d11a72778e",
+    "stage": "resolve-context"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "1da7042f360de60676bd139531d15bad4f40af66174e80662753c14370ca9dca",
+    "stage": "source-audit"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {
+     "research-finding": 119
+    },
+    "iteration": 0,
+    "result_sha256": "430c0529201d7e04365af22fae850eb0ee33b1b88b3354bec38aaa41867cc5a0",
+    "stage": "research"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "8717a791ae3a96c3be9bc72413075744df8a9c954270d28e43ec8c8116556c3e",
+    "stage": "research-synthesis"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "9f1a6ff8808bbc317e65634eec538547cfcf9856e713e7344398e2dba8014bb6",
+    "stage": "source-registration"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "18a7c0288471d769f10f7d8692c597c0fa5a66c4f5f4ae8db6e59ece2741bd1a",
+    "stage": "author-proper"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "f56078b015c8ee18ed7900ce76d65e6d1a696f5af993db34959323aa18bfea61",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 9,
+     "blocking": 19
+    },
+    "iteration": 0,
+    "result_sha256": "eff4ca1ad9998f03a3fbd15ee96c58c3416a789a9f14f0c945d728832c12023b",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 0,
+    "result_sha256": "a3ca57897bbc1a29b4d621fdf9d0756ca7132453f1d0bbeb8377eef3a311a583",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "7a24c844f4cfbbf394ac82e9e0b8674afb4f2d0ac60a6b77be818a398614a441",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 9,
+     "blocking": 17
+    },
+    "iteration": 1,
+    "result_sha256": "56912cb55ff58575bde29f42abdbb29e6402720db5c8a87156ea273f27a5531f",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 1,
+    "result_sha256": "c16188248d79746f683e28408861500f20ba8dce47dc7a06315f6c096b9d9fab",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "37647487f6321b63262000c1565577b47ff3457a57467e025b9fae18c6a5d2ba",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 18,
+     "blocking": 9
+    },
+    "iteration": 2,
+    "result_sha256": "c998e68f3bf599e98c9433a501d0daf22a4377d396e13f5e2f16888516fef65f",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 2,
+    "result_sha256": "0157dac5bdcfe504d33b6df3e5859d25d1c1b6bc4d03f13c361b3de14517de13",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 3,
+    "result_sha256": "3d1a16458f93e6b168102498ec822e6c2146eced86044d0888acb876e1010236",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 24,
+     "blocking": 11,
+     "escalation": 1
+    },
+    "iteration": 3,
+    "result_sha256": "91ef2f8b967c1e50b2022bdbd01234b176c99451785edffaccfb89ba17038424",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 3,
+    "result_sha256": "01b6b466883e33c18bdc3629d9c594c4ca3dd9fb4fd504151564fb1ce0b4e679",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 4,
+    "result_sha256": "3f538198129dc766908931e888b78c2c920ce04ecb0a05f0446a7a11ba3546fa",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 27,
+     "blocking": 13,
+     "escalation": 1
+    },
+    "iteration": 4,
+    "result_sha256": "d0bb093286b1359eba7a9252a66ba550ede28f9ecd68a156299641567c8719c8",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 4,
+    "result_sha256": "2927ecd2305a0d37e22e245ed75cd9e1e8cfc36bb760aeb4cfe431cb3dca75ef",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 5,
+    "result_sha256": "a8590158fd6e77eaccdde89ede2db1dc90321c9cc7cde8b463d34a07e4f3c13e",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 30,
+     "blocking": 5
+    },
+    "iteration": 5,
+    "result_sha256": "a8bd6c4a69775d0fcc1df54627eb16d7216dcfc43d0cef2894bbc955ef7789a3",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 5,
+    "result_sha256": "0e895865fa31503a408448fe33a6c22cbf4e93b1ccb9cd52d00b61df4b45a10d",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 6,
+    "result_sha256": "b7436015e19a0f65a67a4053cd35cdb143bc9c52ff375d826d36719ffd71d89a",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 36,
+     "blocking": 7
+    },
+    "iteration": 6,
+    "result_sha256": "c1b05ca633c5bf3b6e3ce9c56b746c86e53fc15cb6baec82fded33f5b069bded",
+    "stage": "content-evaluation"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 6,
+    "result_sha256": "292a18c1f5e909d9348e3be0a8c90671ce2de8bff912cba98603e10650f06c10",
+    "stage": "content-revision"
+   },
+   {
+    "disposition": "PASS",
+    "findings_by_severity": {},
+    "iteration": 7,
+    "result_sha256": "7a60c7e0f0bdc14171297e84a41774d00662913085f55363aa8d02ecf393f87c",
+    "stage": "content-preflight"
+   },
+   {
+    "disposition": "CHANGES_REQUIRED",
+    "findings_by_severity": {
+     "advisory": 41,
+     "blocking": 1
+    },
+    "iteration": 7,
+    "result_sha256": "c8afaf4af58166f0ff947a92d1c462e43561d102a1548aeabe101a1918039702",
+    "stage": "content-evaluation"
+   }
+  ],
+  "stage_iterations": {
+   "author-proper": 1,
+   "authorize-target": 1,
+   "content-evaluation": 8,
+   "content-preflight": 8,
+   "content-revision": 7,
+   "research": 1,
+   "research-synthesis": 1,
+   "resolve-context": 1,
+   "scope-gate": 1,
+   "seed": 1,
+   "source-audit": 1,
+   "source-registration": 1
+  },
+  "state_sha256": "ed9ab7762ac7d730d361ef028593be6381260c760902674b09a6afff2f74022c",
+  "version": 25,
+  "workflow": "proper"
+ }
+}

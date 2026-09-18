@@ -1,0 +1,81 @@
+#!/usr/bin/env python3
+"""Pre-advance shape check for fan-out lane results: usage validate-lanes.py <run-id> <stage> <iteration> [lanes...]"""
+import json, sys, hashlib, os, tomllib
+ROOT = "<checkout of the claude/propers/tlm/merge workspace>"
+run, stage, it = sys.argv[1], sys.argv[2], int(sys.argv[3])
+state = json.load(open(f"{ROOT}/build/tpt-runs/{run}/state.json"))
+pkt = state["packet_hashes"][-1]
+assert pkt["stage"] == stage and pkt["iteration"] == it, (pkt["stage"], pkt["iteration"])
+lanes = {e["lane"]: e for e in pkt.get("lanes", [])}
+admitted = None
+ws = json.load(open(f"{ROOT}/workflows/pipelines/proper-finish.json"))
+st = next(s for s in ws["stages"] if s["id"] == stage)
+schema = json.load(open(f"{ROOT}/workflows/schema/{st['result_schema']}"))
+enums = schema.get("finding_enums", {})
+admitted = enums.get("repair_target")
+severities = enums.get("severity", ["blocking", "accepted", "escalation", "advisory"])
+# What the engine will refuse a fresh blocking finding for, if this stage
+# scopes its review: the diff it recorded, and the ids already standing.
+scope = None
+if st.get("review_scope") and stage in (state.get("stage_scope_baseline") or {}):
+    scope = (state.get("stage_scope_changed") or {}).get(stage, [])
+standing = set((state.get("stage_blocking_ids") or {}).get(stage) or [])
+accepted_held = set((state.get("accepted_ids") or {}).get(stage) or [])
+if scope is not None:
+    print(f"# REVIEW_SCOPE ({len(scope)}): {', '.join(scope) or 'nothing moved'}")
+ok = True
+flags = []
+for lane, entry in lanes.items():
+    idx = entry["index"]
+    path = f"{ROOT}/.scratch/tpt/{run}/{stage}-{it:04d}-lane-{idx:02d}-{lane}.result.json"
+    if not os.path.exists(path):
+        print(f"[{lane}] MISSING {path}"); ok = False; continue
+    d = json.load(open(path))
+    errs = []
+    if d.get("stage") != stage or d.get("iteration") != it: errs.append("stage/iteration")
+    if d.get("lane") != lane: errs.append(f"lane={d.get('lane')}")
+    if d.get("lane_packet_hash") != entry["hash"]: errs.append("lane_packet_hash mismatch")
+    if d.get("disposition") not in schema["valid_dispositions"]: errs.append(f"disposition={d.get('disposition')}")
+    ids = []
+    blocking = 0
+    for i, f in enumerate(d.get("findings", [])):
+        for k in schema["finding_fields"]:
+            if k not in f: errs.append(f"findings[{i}] missing {k}")
+        sev = f.get("severity")
+        if sev not in severities: errs.append(f"findings[{i}] severity={sev}")
+        if sev == "blocking":
+            blocking += 1
+            if admitted and "repair_target" not in f: errs.append(f"findings[{i}] blocking without repair_target")
+            elif admitted and f["repair_target"] not in admitted: errs.append(f"findings[{i}] repair_target={f['repair_target']} not in {admitted}")
+            elif not admitted and "repair_target" in f: errs.append(f"findings[{i}] repair_target on a stage that routes none")
+            if "escalated_to" in f: errs.append(f"findings[{i}] blocking with escalated_to")
+        elif sev == "escalation":
+            if "escalated_to" not in f: errs.append(f"findings[{i}] escalation without escalated_to")
+            if "repair_target" in f: errs.append(f"findings[{i}] escalation with repair_target")
+        elif sev == "accepted":
+            for k in schema.get("accepted_finding_fields", []):
+                if k not in f: errs.append(f"findings[{i}] accepted without {k}")
+            if "repair_target" in f: errs.append(f"findings[{i}] accepted with repair_target")
+        else:
+            if admitted and "repair_target" in f: errs.append(f"findings[{i}] advisory with repair_target")
+        if sev == "blocking" and f.get("id") in accepted_held:
+            errs.append(f"findings[{i}] {f.get('id')} was accepted earlier in this run; blocking on it is refused")
+        # The scope discipline, checked here so a violation costs a message to
+        # one lane instead of the whole five-lane join.
+        if sev == "blocking" and scope and f.get("id") not in standing:
+            loc = str(f.get("location", ""))
+            if not any(n and n in loc for n in scope) and not str(f.get("out_of_scope_reason", "") or "").strip():
+                errs.append(f"findings[{i}] {f.get('id')} is outside REVIEW_SCOPE and carries no out_of_scope_reason")
+        ids.append(f.get("id"))
+    if len(ids) != len(set(ids)): errs.append("duplicate ids")
+    if d.get("disposition") == "CHANGES_REQUIRED" and blocking == 0: errs.append("CHANGES_REQUIRED without blocking")
+    if d.get("disposition") == "PASS" and blocking: errs.append("PASS with blocking")
+    for i, o in enumerate(d.get("observations", []) or []):
+        if set(o) != {"location", "note"}: errs.append(f"observations[{i}] fields {sorted(o)}")
+    sevs = {}
+    for f in d.get("findings", []): sevs[f.get("severity")] = sevs.get(f.get("severity"), 0) + 1
+    print(f"[{lane}] {d.get('disposition')} findings={sevs} observations={len(d.get('observations', []) or [])} {'OK' if not errs else 'ERRORS: ' + '; '.join(errs)}")
+    if errs: ok = False
+    flags.append(f"--lane-result {lane}={path}")
+print("ALL-OK" if ok else "NOT-OK")
+print(" ".join(flags))

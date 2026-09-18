@@ -24,7 +24,22 @@ authorization is recorded in the
 independent Claude production: it borrows neither the GPT leaf for the same
 identity nor that leaf's accepted verdicts.
 
-**State: in progress.** Nothing is seeded, authored, reviewed or published yet.
+**Recovery of the looping fixes: done.** A read-only survey of 44 local
+clones and the related remote branches found no unmerged code fix for the
+September advisory ratchet; `3be1a1f9e` and `fba3974a9` closed it on `main`.
+The only unrecovered work was a 10 September cold review of `proper-finish`,
+a driver handoff and a lane validator in an ignored `.scratch` of a workspace
+with no remote. They are preserved, with a derived summary of the eleven
+Claude loop runs, in
+[the recovery record](workflows/reviews/claude-loop-recovery-2026-09-18/README.md).
+Six legacy-workflow convergence defects it names remain open and unrepaired,
+including the `seam` findings that never charge the repeat budget; no engine
+change was authorized by this request.
+
+**Production: in progress.** Run `1e02dc05f2df9940` was seeded at `72616eb9c`
+(`proper-study` v3). Every stage is dispatched as a fresh Claude Code harness
+subagent. Those inherit the driver's `xhigh` effort, so author stages declared
+`high` run one level higher; the run records this as intervention 0000.
 
 ## Three-document proper studies and homilies, 2026-09-17
 
