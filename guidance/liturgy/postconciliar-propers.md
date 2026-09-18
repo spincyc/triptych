@@ -271,7 +271,9 @@ option branches:
   them as alternatives.
 - A surviving proposal is controlled additionally by **official correlations,
   independent or semi-continuous strands, and authorized branches**. Attribute no
-  proposal to a cited authority and claim no historical compositional intent.
+  proposal to a cited authority and claim no historical compositional intent;
+  the formulary is a compilation, as settled in
+  [the three-document profile](propers-three-documents.md#the-formulary-is-a-compilation).
 
 ## Terminal appendices
 

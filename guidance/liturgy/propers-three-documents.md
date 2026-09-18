@@ -95,6 +95,34 @@ proper; do not attribute the editor's complete Mass synthesis to an author who
 only explained one passage. A catena supplies leads, not proof that its named
 author or underlying work has been checked.
 
+### The formulary is a compilation
+
+This is settled for every proper and is not re-established Sunday by Sunday.
+A Mass formulary is a liturgical compilation. Its chants, orations and
+lessons have separate origins and were assigned to the day, and sometimes
+reassigned, over a long history; the assembled Mass is a different object
+from any of its parts. Patristic and later exegesis comments on the
+constituent texts, such as a psalm, a prophecy or a Gospel pericope. It is
+reception of that text, not of the Mass. A reading of the whole formulary is
+therefore the editor's synthesis. Where a named liturgical commentator
+expounds the Mass of the day as his books gave it, that is a distinct witness:
+documented reception of the compilation as he received it, which may differ
+from the governing edition's assignment.
+
+Research therefore does not investigate a formulary's compilation history to
+show that a whole-Mass reading lacks compositional warrant, and no review asks
+for that demonstration. Record compilation history only where a specific fact
+changes a claim. Examples are a documented deliberate pairing, a commentator
+whose Mass had another Gospel or chant, or a textual form that only the
+compilation explains. The distinction lives in the records.
+`research/interpretations.md` labels cross-element connections as editorial
+synthesis, and the studies attribute to each Father only what he said of his
+own passage. Reader-facing prose does not disclaim a compiler's intention: the
+[1962 profile's evidence rule](roman-1962-propers.md#evidence-and-claim-discipline)
+is satisfied by not asserting one. In postconciliar Ordinary Time the premise
+holds with added force, because the semi-continuous readings and shared Missal
+prayers follow independent courses.
+
 Declare controlling external source owners in
 `research/review-dependencies.toml`; its paths must remain beneath `src/`.
 Registered bindings already seal their source ancestry and available payloads.
@@ -131,9 +159,8 @@ An interpretation can differ by governing emphasis, exegetical identification,
 movement, or theological consequence. Complementary readings need not be rival
 doctrines. Explain that relationship concretely. Neither smooth incompatible
 identifications into one account nor dramatize complementary emphases as a
-dispute. In Ordinary Time, a coherent theological reading of the whole Mass
-does not prove that its semi-continuous readings and common orations were
-historically composed as one thematic unit.
+dispute. A coherent whole-Mass reading is editorial synthesis over a
+compilation, as [above](#the-formulary-is-a-compilation).
 
 ## The expansive study
 
