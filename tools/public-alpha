@@ -3242,8 +3242,8 @@ def reader_shelf(source_relative: str) -> tuple[str, str] | None:
     if not source_relative.startswith("web/"):
         return None
     routes = (
-        ("/liturgy/roman-rite/1962/", "Traditional Latin Mass", "library/traditional-latin-mass.html"),
-        ("/liturgy/roman-rite/postconciliar/", "Novus Ordo", "library/novus-ordo-liturgy.html"),
+        ("/liturgy/roman-rite/1962/", "1962 Missal", "library/traditional-latin-mass.html"),
+        ("/liturgy/roman-rite/postconciliar/", "Postconciliar Missal", "library/novus-ordo-liturgy.html"),
         ("/liturgy/roman-rite/comparative/", "Liturgy", "library/liturgy.html"),
         ("/history/catholic-exorcism/", "Catholic Exorcism", "library/catholic-exorcism.html"),
         ("/curriculums/ecclesiastical-latin/", "Ecclesiastical Latin", "library/ecclesiastical-latin.html"),

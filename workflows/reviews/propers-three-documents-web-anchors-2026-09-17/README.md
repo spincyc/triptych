@@ -20,3 +20,19 @@ implementation checks do not confer document, PDF, release, or deployment
 approval. Transient fixture scripts, logs, and rendered HTML mentioned by the
 report are not included in this compact archive; the exact report and result
 manifests are retained with their hashes.
+
+The later [breadcrumb addendum](breadcrumb-addendum/cold-review/REPORT.md)
+accepts exactly two apparatus-name corrections to the renderer, following
+`guidance/editorial.md`: “1962 Missal” and “Postconciliar Missal.” Route
+selectors and destinations are unchanged. Four independently compared complete
+rendered pages preserve every URL, ID and other HTML byte; only the intended
+breadcrumb text differs. Thus the earlier 144-page parity belongs to its
+earlier frozen implementation, not to this deliberate naming correction.
+Both actual Sunday web reviewers recapture their final article proofs against
+the corrected renderer.
+
+The addendum preserves exact implementation/review reports, the two-line patch,
+subject identities and comparison manifests. Their referenced transient HTML,
+comparison scripts, raw logs and baseline-tool copies are not included. The
+prior renderer is retained in Git, and no absent transient file is represented
+as archived evidence.
