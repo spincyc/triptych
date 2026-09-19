@@ -1,0 +1,50 @@
+{
+  "record_type": "deployment-verification",
+  "verified_on": "2026-09-19",
+  "commit": "03362a6de3dd5efb50b44e76b9a584fdd76a5dea",
+  "workflow_run": "https://github.com/spincyc/triptych/actions/runs/35471017631",
+  "workflow_conclusion": "success",
+  "publication": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+  "provider": "claude",
+  "routes": [
+    {
+      "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf",
+      "http_status": 200,
+      "physical_pages": 39,
+      "sha256": "fd3a4d13f7bb980bbe3bb6025dac194997add5bf40a9f53eb4bced31af81dcb8",
+      "compared_with": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+      "http_status": 200,
+      "physical_pages": 12,
+      "sha256": "09275d9d8d97c81068c262dc7cab16f24744ce9f1b0f1af9bce8fd39e2cfa96f",
+      "compared_with": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf",
+      "http_status": 200,
+      "physical_pages": 6,
+      "sha256": "99a0877432a268bd56b92c4cfe45011d059a00ab42498113def2f376457bd70f",
+      "compared_with": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.html",
+      "http_status": 200,
+      "sha256": "6fb67495bb7d2fc965f72db933f5a0278726c65d17ef5b66d4c5e36dbd24f16a",
+      "bytes": 138557,
+      "appointed_element_anchors": 11,
+      "compared_with": "web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.md",
+      "match": "rendered from the tracked Markdown edition; the page is HTML and is not compared byte for byte with it"
+    }
+  ],
+  "what_this_does_not_cover": [
+    "The routes were fetched and compared as bytes; no page was rendered in a browser.",
+    "No other publication's routes were checked, and no route of the 1962 Claude leaf published earlier the same day was re-checked.",
+    "The anchor count is a count of id=\"proper-\" occurrences in the served HTML, not a check that each anchor resolves to the right element.",
+    "The Pages run was read from the GitHub API on the exact pushed SHA; its internal steps were not audited."
+  ]
+}

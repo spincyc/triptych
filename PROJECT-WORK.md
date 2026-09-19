@@ -47,6 +47,22 @@ and the leaf's provenance record states both efforts. Stages through
 the host's usage limit ended one dispatch and the maintainer changed the
 session model, they ran on Claude Opus 5. Intervention 0002 records it.
 
+**Published and verified live.** Checkpoint `03362a6de` was fast-forward
+pushed to `main` after the five local deploy gates passed: `make check-sources`,
+`make check-release-bindings`, `make check-deployment-sources`,
+`make public-site` and
+`tpt public-alpha verify --deployment-target github-pages`. Three gate refusals
+on the way were correct and are recorded in their own commits: the publication
+inventory did not carry the run archive, the source-reader projection had
+drifted from the source records this production registered, and the
+regenerated projection left thirteen site-source approvals stale.
+[Pages run 35471017631](https://github.com/spincyc/triptych/actions/runs/35471017631)
+succeeded on that exact SHA. All four public routes return HTTP 200; the three
+PDFs are byte-identical to the local artifacts at 39, 12 and 6 physical pages,
+and the web page carries its eleven appointed-element anchors. The
+[deployment evidence](workflows/reviews/claude-pc-s51-production-2026-09-19/deployment-evidence.json)
+records each comparison and what it does not cover.
+
 **Four cycles, recorded.** All four came from cold reviews and none from a
 gate. Two returned to research: no controlling liturgical authority was bound
 or sealed, 153 verse files the chronology computation opens were undeclared,
