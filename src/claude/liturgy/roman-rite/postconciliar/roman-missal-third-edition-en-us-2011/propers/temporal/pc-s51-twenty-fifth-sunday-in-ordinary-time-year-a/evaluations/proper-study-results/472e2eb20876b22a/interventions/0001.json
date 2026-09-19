@@ -1,0 +1,6 @@
+{
+  "encoded": false,
+  "stage": "research",
+  "text": "Addendum to the host effort deviation: the parallel-directory recovery survey found pinned-effort Claude Code subagent definitions (tpt-high, tpt-xhigh, tpt-max) written by an earlier Claude driver in a workspace outside any clone. The driver attempted to install them into this workspace's agent directory so that author stages could be dispatched at their declared effort; the host's permission policy refused the write as self-modification, and the driver did not work around the refusal. Agent definitions load at session start in any case. The definitions are preserved in the tracked recovery record so a maintainer can install them before launching the next driver session. The deviation recorded in intervention 0000 therefore stands for this whole run.",
+  "timestamp": "2026-09-19T11:52:44Z"
+}

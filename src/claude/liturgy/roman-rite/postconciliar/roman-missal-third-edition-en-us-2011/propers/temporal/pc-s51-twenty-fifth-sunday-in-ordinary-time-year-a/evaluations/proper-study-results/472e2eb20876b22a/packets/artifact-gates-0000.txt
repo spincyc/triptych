@@ -1,0 +1,16 @@
+WORKFLOW: proper-study v4
+WORKFLOW_DIGEST: e318311c264a5a3a620c9da404ad4d4ab3d4291815421d7753d2630044ecdeb0
+RUN_ID: 472e2eb20876b22a
+COMMIT: 02bae3f417048707bf5f76a9ef50b3236bf60701
+STAGE: artifact-gates
+ITERATION: 0
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-09-20","proper":"liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a","provider":"claude","research_handoff":"none"}
+DOCUMENT_ROOT: src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a
+REPAIR_TARGETS: ["research","study","synthesis","homily"]
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: []
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

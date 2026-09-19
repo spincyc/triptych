@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
 audited_on = "2026-09-04"
-publication_snapshot = "sha256:8e094bd7834dae5fd0a4ba4201704e1fbf88f4a3a2c025945fa9de107d268223"
-classification_snapshot = "sha256:63deea0513185d0bc9cf6c92e018aadd987e88657cdaf50d3a5cd8077f9a13e1"
+publication_snapshot = "sha256:a9470fd7a991417c6f3903b44c1ae2036350a26f29e9349f28b6572986d4fc70"
+classification_snapshot = "sha256:c567ddd43b6f8251ab8e7e7615d4ecc1a1a29a6f7ca3bc4d199f0b7130be26c4"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -179,6 +179,10 @@ source_categories = ["canon-law", "finding-aid", "historical-primary", "institut
 [[classifications]]
 document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a"
 source_categories = ["canon-law", "finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 
 [[classifications]]
 document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar"

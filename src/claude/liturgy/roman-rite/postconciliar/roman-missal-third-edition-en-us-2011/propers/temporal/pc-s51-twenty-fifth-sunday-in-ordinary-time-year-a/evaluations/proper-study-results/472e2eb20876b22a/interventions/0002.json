@@ -1,0 +1,6 @@
+{
+  "encoded": false,
+  "stage": "visual-review",
+  "text": "Host events at visual-review iteration 0. The first dispatch of this packet terminated on the host's usage limit (HTTP 429) partway through its page inspection, before writing any result; it changed no tracked file, no build artifact and no run file, and its partial scratch crops are not evidence for this stage. The driver dispatched a new fresh worker for the same packet with a new, empty scratch directory. At the same point the maintainer switched the host session's model from claude-fable-5-1 to claude-opus-5, so every stage from this visual review onward runs on claude-opus-5, still at host-dispatched effort xhigh; every earlier stage ran on claude-fable-5-1. The packet bytes, the workflow digest and the declared efforts are unchanged.",
+  "timestamp": "2026-09-19T20:32:24Z"
+}

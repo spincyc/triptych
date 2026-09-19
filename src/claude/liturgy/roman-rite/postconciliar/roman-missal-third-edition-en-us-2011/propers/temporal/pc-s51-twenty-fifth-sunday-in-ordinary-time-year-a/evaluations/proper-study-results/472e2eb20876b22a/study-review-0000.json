@@ -1,0 +1,511 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "STU-001",
+      "location": "sections/40-because-i-am-good.tex, subsection 'Asking for what is commanded', lines 221-234 ('Chrysostom reads the same verse otherwise' to 'Chrysostom's objection stands beside Augustine's second step'); subsection 'The contract that remains', lines 279-282; sections/50-comparison.tex, table row 'What is asked at the Alleluia?' (lines 35-38, 'with Chrysostom's dissent') and the paragraph at lines 55-63",
+      "problem": "The study presents the difference between Chrysostom and Augustine on Acts 16:14 as Chrysostom's 'objection' and 'dissent', and says that he 'denies that the willingness God opens is itself given, and no witness read here settles between him and Augustine'. The locus read does not say that. Hom. in Acta 35 (tracked NPNF text, lines 21230-21234) says: 'we need God, to open the heart: but God opens the hearts that are willing: for there are hardened hearts to be seen ... The opening, then, was God's work, the attending was hers: so that it was both God's doing and man's.' Chrysostom says nothing there about where the willingness comes from, denies nothing, and answers no one; he does not address Augustine's argument, and the study's own scope appendix says that nothing is claimed about the order in time or the mutual dependence of the witnesses. 'Objection', 'dissent' and 'denies' therefore attribute to a Father a position against Augustine's claim that the evidence does not contain, on the one point in the study where doctrine is at stake. The second defect is one of doctrinal precision. Whether the very beginning of faith is God's gift is not a question the Catholic tradition leaves open; this reviewer notes from general knowledge, not from a source checked in this review and not from anything in the research record, that the Second Council of Orange (canons 5-7) and Trent (Session VI, chapter 5 and canon 3) define it. The sentence that no witness read settles between the two, set beside 'denies', leaves a reader, and the homily that will be drawn from this lane, with a Doctor of the Church denying what Augustine affirms and the matter undecided. What is true and should survive is narrower: the two read the verse differently, Chrysostom speaking of hearts that are willing and dividing the verse between God's work and Lydia's, Augustine counting the beginning of faith itself a gift and saying she was called so that she might believe.",
+      "repair_target": "study",
+      "required_result": "In both subsections of lane 3 and in the comparison (table cell and paragraph), report what each author says of Acts 16:14 in his own words and state the real difference between those two readings beside the step it qualifies, without 'objection', 'dissent', 'denies that the willingness God opens is itself given', or any wording that has Chrysostom answering Augustine or denying that the willingness is given. Remove or recast 'no witness read here settles between him and Augustine' so that the study does not present as undecided in the tradition whether the beginning of faith is God's gift. If the author wants to state the Church's teaching on that point, the claim needs a checked and bound source through research first; without one the study says only what the two authors say of the verse. Chrysostom's agreement with the lane's controlling claim ('the whole is of His love to man', 64.4) stays.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-002",
+      "location": "sections/40-because-i-am-good.tex, four senses, Allegorical (lines 295-299) and Anagogical (lines 306-311); sections/30-seek-the-lord-while-he-may-be-found.tex, four senses, Allegorical (lines 255-257); sections/20-one-wage-across-the-ages.tex, four senses, Anagogical (lines 264-269); sections/50-comparison.tex, row 'What does Paul show?' (lines 32-34)",
+      "problem": "In the distilled forms that the concise study and the homily will condense, several parenthetical names credit a Father with an identification that is the editor's. (a) Lane 3, Allegorical: 'The denarius stamped with the king's image is Christ given to each labourer alike (Jerome).' Jerome says the wage is the king's image and likeness: 'Recepisti ergo mercedem quam tibi promiseram, hoc est, imaginem et similitudinem meam' (PL 26, 142, read on the page image). He does not say the denarius is Christ or that Christ is given; the study's own body text reports him correctly ('that likeness is the promised wage'), and research/interpretations.md carries no such claim. This is a false attribution. (b) Lane 2, Allegorical: 'Christ the householder goes out to each person at every age of life ... (Jerome; Augustine; Gregory)'. Of the three only Augustine makes the one who goes out Christ (Sermo 87.9); Gregory names the householder 'conditor noster', as lane 1 itself reports ('The householder is the Creator'), and Jerome does not identify him. The three share the ages of a life, not that identification. (c) Lane 1, Anagogical: 'the long waiting of the first will be swallowed up in the same joy that the last enter without delay (Gregory)'. Gregory 19.4 speaks of the ancient fathers as having already come to the joys of the kingdom after their delay ('post longa inferni tempora ad gaudia regni pervenerunt'), not of a future event. (d) Lane 3, Anagogical, and the comparison's Paul row: Augustine's 'cum seipsum tibi dederit' is said of Ps 144:18 and Gregory's 'vultus praesens Dei' of the pasture of John 10:9, yet both are given as statements about 'the one denarius'; and '(Aquinas; Chrysostom)' follows 'A labourer whose wage is a person, and who asks for a longer day', although the body says that neither author mentions the parable. Limb (a) is the defect that blocks by itself; (b) to (d) are the same fault in a lesser degree and belong to the same repair.",
+      "repair_target": "study",
+      "required_result": "In every four-senses block and in the comparison table, a parenthetical name attaches only to what that author says of his own passage. Specifically: (a) do not credit Jerome with the denarius as Christ given; give his own identification, the king's image and likeness, under his name, and leave any identification with Christ unattributed as the study's; (b) credit Jerome, Augustine and Gregory with the ages of a life, and Augustine alone (87.9) with Christ as the householder who goes out; (c) state Gregory's point in the tense he gives it, or leave the future-tense sentence to Augustine; (d) word the lane 3 Anagogical sense and the Paul row so that a reader can see that Augustine speaks of the psalm, Gregory of the shepherd's pasture, and Aquinas and Chrysostom of Paul, and that joining them to the denarius and the labourer is the study's.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-003",
+      "location": "sections/20-one-wage-across-the-ages.tex, subsection 'A parable's details, and how far they may be pressed', lines 221-229; sections/50-comparison.tex, lines 50-53",
+      "problem": "Chrysostom's rule against inquiring into a parable word by word is quoted as 'the strongest objection to this interpretation', with the inference that it 'tells against assigning each of them [the hours] an epoch'. In Hom. in Matt. 64.3 he states the rule about the murmuring and invokes it a second time about the excuse 'No man hath hired us' ('we must not be curious about all the points in the parables; but here neither is the good man of the house represented to say this, but they ... For that He called all, as far as lay in Him, from the first even the parable shows'). He never applies it to the hours, which he himself assigns to the ages of a life, as lane 2 reports; so the inference, as written, would tell equally against lane 2. He also makes no objection to the ages-of-the-world reading, which he does not mention. The passage meanwhile misses the real disagreement his second application yields: Gregory (19.1), followed by Aquinas, presses that very excuse as the Gentiles' true plea ('Nullus quippe ad eos patriarcha, nullus propheta venerat'), and lane 1 quotes it as a highlight, while Chrysostom holds that the excuse is the labourers' own word, not to be pressed, and that God called all from the first. Nothing Chrysostom says is misquoted and the inference is marked as the study's, which is why this does not block.",
+      "required_result": "Say what Chrysostom applies his rule to (the murmuring, and the excuse 'No man hath hired us'), set his 'He called all, as far as lay in Him, from the first' against Gregory's and Aquinas's reading of the excuse as a real difference among the witnesses read, and either drop the claim that the rule tells against assigning the hours an epoch or reconcile it with his own assignment of the hours to ages of life. Present the difficulty as the study's inference and not as an objection Chrysostom makes. Adjust the comparison's sentence to match.",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-004",
+      "location": "sections/00-opening.tex, first paragraph, lines 4-13",
+      "problem": "The study's first paragraph is resolution mechanics: the 2026 date, the colour, Gloria and Creed, the omitted memorial of the Korean martyrs and the rule for choosing a Preface. The three-document profile asks the study to open with substantive prose introducing the Sunday's question, and the postconciliar profile (priority 4) puts resolution mechanics in the terminal appendices. Every one of these facts already stands in 'Appendix: Liturgical Resolution', so the reader crosses them twice and reaches the parable only in the second paragraph.",
+      "required_result": "Open on the parable and the Sunday's question. Keep at most one identifying sentence naming the Sunday, the Missal and Lectionary no. 133, and leave the date, colour, omitted memorial and Preface rule to the resolution appendix.",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-005",
+      "location": "sections/40-because-i-am-good.tex, subsection 'The evil eye', lines 77-81",
+      "problem": "Jerome's sentence 'Iudaeus in Lege non gratia, sed opere salvatur' is quoted and translated alone, as a blunt contrast. On the page (PL 26, 142) it is followed at once by its ground, 'Qui enim fecerit eam, vivet in ea', the Law's own term (Lev 18:5), and it glosses the householder's dealing with the first-hired by contract. Without that clause a reader of a lane about grace can take the sentence as a thesis that Israel was saved without grace, which neither Jerome's context nor the lane's own later section on the contract supports, and the sentence is never connected to that section.",
+      "required_result": "Quote Jerome's next clause with the sentence so that it reads as his account of the Law's own terms and of the first-hired's contract, and let 'The contract that remains' take it up beside Augustine's 'to the first, it is a payment' and Aquinas's justice to the one and mercy to the other.",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-006",
+      "location": "sections/10-each-element.tex, lines 154-155 and 225-226; sections/20-one-wage-across-the-ages.tex, lines 57-60; sections/40-because-i-am-good.tex, lines 36-38; sections/50-comparison.tex, lines 24-25",
+      "problem": "Small inaccuracies about what a source contains. (1) 'Augustine's forty-seventh tractate treats the discourse from verse 11 to verse 16': the tractate is headed on John 10:14-21 in the text read and goes on to verses 17-18 and beyond; sections 1-5 pass from verse 11 to verses 15-16. That he gives the appointed clause no separate comment stands. (2) 'Chrysostom, Jerome, St Gregory the Great and Aquinas all had the longer verse before them and expound its second sentence': Jerome (PL 26, 142) carries 'Multi enim sunt vocati' in his lemma and repeats it as the parable's end but gives it no exposition of its own. (3) 'The four do not draw the lines in the same places' is followed by three divisions; Aquinas's own, in the pages read in OCR, runs the sixth hour from Abraham to David and the ninth from David to Christ, and goes unstated. (4) Gregory 19.4 is paraphrased 'none because he gives what he does not owe'; the Latin read is 'si non dat quod non debet', no complaint if he does not give what he does not owe. (5) The comparison table has Jerome explain the murmuring as 'each earlier calling's envy of the next'; Jerome says every earlier calling envies the Gentiles ('Omnis itaque retro vocatio gentibus invidet'), as lane 1's body reports correctly.",
+      "required_result": "State each of the five as the source has it: the tractate's range and the sections read; Jerome as carrying the longer verse without expounding its second sentence; either three expositors' divisions or Aquinas's division by paraphrase; Gregory's sentence in its own sense; and Jerome's envy as directed at the Gentiles.",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-007",
+      "location": "sections/10-each-element.tex, lines 21-24 and 138-139; sections/20-one-wage-across-the-ages.tex, lines 164 and 188-189; sections/40-because-i-am-good.tex, lines 12-16 and 172-175; sections/90-apparatus.tex, lines 79-80",
+      "problem": "Small wording faults about the texts. (1) The Alleluia verse and the second reading are said three times to 'come from Philippi'; Acts 16 is set at Philippi and the letter is addressed to Philippi and, on the study's own date sheet, written at Rome. In the same place 'The verse narrates the founding of the church' follows a sentence about the liturgical verse, which is a petition and narrates nothing; Acts 16:14 is meant. (2) Lane 1 prints 'for ever' in quotation marks as the Entrance Antiphon's wording, although the study states that no English is supplied for that antiphon. (3) The Entrance Antiphon paragraph cites Ps 33:18 and Ps 90:15 in Vulgate numbering alone, against the convention the opening states, with only the first of the three marked as Vulgate. (4) 'This is also where the Ordo lectionum Missae places the day's weight': the tituli show what the Ordo singles out within each reading and the one correlation of first reading and Gospel; the second reading has its own titulus, as the opening says. (5) Lane 3 calls Paul 'a labourer of the first hour', while Chrysostom, quoted in lane 2, uses Paul as his example of one called later, when he was ready to obey.",
+      "required_result": "Say that both texts belong to or concern Philippi and name Acts 16:14 as what narrates; drop the quotation marks from 'for ever'; give the three psalm contacts in the study's dual numbering or mark all three as Vulgate; say that the Ordo's titles mark the two correlated readings; and word Paul's place in lane 3 so that it does not contradict Chrysostom's use of him.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "observations": [
+    {
+      "location": "research/interpretations.md, Reading 3, 'Augustine's development, set beside the claim' ('and Chrysostom disputes it') and 'A real disagreement, to be preserved'",
+      "note": "The record says Chrysostom 'disputes' Augustine's second step; Hom. in Acta 35 addresses no such claim, so the record carries in milder form the looseness STU-001 raises against the study, and a study author following the record will meet it again."
+    },
+    {
+      "location": "shared/ordinary-time/weeks/25/propers/verified.md, Collect row, analytical summary; sections/40-because-i-am-good.tex, lines 201-204",
+      "note": "From this reviewer's memory of the editio typica, not verified here because the Latin body is rights-withheld in every tracked record, the Collect's petition carries the verb 'mereamur' (to merit to reach eternal life by keeping the precepts); the owner's summary and the study's description omit it, and it bears directly on lane 3's difficulty about contract, merit and gift. A lead for the owner record, not a checked fact."
+    },
+    {
+      "location": "research/scope.md, section 3.1, Chrysostom row",
+      "note": "The row records that God called all from the first but not Chrysostom's second application of his rule, to the excuse 'No man hath hired us' (64.3, inside the bound locus), which is the sentence that sets him against Gregory 19.1 and on which STU-003 turns."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/00-opening.tex",
+          "references": [
+            "format.tex",
+            "research/context.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "appointed-texts",
+          "kind": "appointed-text",
+          "path": "sections/05-appointed-texts.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/context.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "appointed-texts"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "each-element",
+          "kind": "proper-treatment",
+          "path": "sections/10-each-element.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/context.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "one-wage-across-the-ages",
+          "kind": "interpretive-lane",
+          "path": "sections/20-one-wage-across-the-ages.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "seek-the-lord-while-he-may-be-found",
+          "kind": "interpretive-lane",
+          "path": "sections/30-seek-the-lord-while-he-may-be-found.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "because-i-am-good",
+          "kind": "interpretive-lane",
+          "path": "sections/40-because-i-am-good.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "one-wage-across-the-ages",
+            "seek-the-lord-while-he-may-be-found",
+            "because-i-am-good"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/50-comparison.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "communion-antiphon-a",
+            "communion-antiphon-b"
+          ],
+          "key": "scriptural-date-location",
+          "kind": "front-matter",
+          "path": "sections/80-date-location.tex",
+          "references": [
+            "format.tex",
+            "research/chronology-annotations.tex",
+            "research/chronology.toml",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "liturgical-resolution",
+          "kind": "terminal-apparatus",
+          "path": "sections/85-liturgical-resolution.tex",
+          "references": [
+            "format.tex",
+            "instance/manifest.md",
+            "research/context.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "study-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-apparatus.tex",
+          "references": [
+            "propers/verified.md",
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+      "element_keys": [
+        "entrance-antiphon",
+        "collect",
+        "first-reading",
+        "responsorial-psalm",
+        "second-reading",
+        "gospel-acclamation",
+        "gospel",
+        "prayer-over-offerings",
+        "communion-antiphon-a",
+        "communion-antiphon-b",
+        "prayer-after-communion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "Augustine",
+            "Jerome",
+            "Thomas Aquinas",
+            "Bede",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "one-wage-across-the-ages"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "economy",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Jerome",
+            "Augustine",
+            "Gregory the Great",
+            "Thomas Aquinas",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "seek-the-lord-while-he-may-be-found"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "conversion",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine",
+            "Gregory the Great",
+            "Jerome",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "because-i-am-good"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "gift",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+    "files": {
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/format.tex": "7a43271fb97e98f4e23139b5f16fae301349bfb058973bd0ecf43be4f7e71ff9",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/instance/manifest.md": "e9c676d49b8a6574847545c585a046b53df1b049ab37c95660a78e584b142b3a",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/main.tex": "324862a763f0ff64e5b7588f6576bce95ddf437f753620ca4bb704ab5ad262ea",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/propers/verified.md": "dd96d6d6a3e81d76e2e209875e0ffceb5b6be42484d407f8abe0cc0edcf83941",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex": "6967cfbe4391b17e8a88115f92f57744fed87815ebcf8a40c3ccbfec807848e6",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/chronology.toml": "64dd0c51a5f159bb78e1c19778d001733f0aae19e6c9cf13d678397bbb1b1110",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/context.md": "9dc90eb24f099a5471ce7ad5ad4e37b2dcf2859b1f725f6d5e6159577b33a01b",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/interpretations.md": "47533589c0e46f489e22223be6a1cb0a096b3a185798bf793feff8a623243d85",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/scope.md": "3262329d2d9dc6451f1979c5cf347389e36f0c9753120d083124b8ba057a76c8",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/source-bindings.toml": "5c47c6454bb77abeb50e17d05ce9ab491969093868afc91d327a19ea16effd38",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/00-opening.tex": "8fc82be5c24e0201c4fcb03ca34e4d48678df6dc79f6fe2848f2b5582365897e",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/05-appointed-texts.tex": "7f8552f6a4714c0202b000315c2e137f4e5b4b4de002178e28753c0c284283bb",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/10-each-element.tex": "9d4a87bb7f790b6a03352d43f323d8efb78ff0386656d2801a26762196de61e8",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/20-one-wage-across-the-ages.tex": "3d6fd75e298e2d46f23b48977dac04813cdb0d4c680ba840d16dd58c56cb9ec9",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/30-seek-the-lord-while-he-may-be-found.tex": "ef1f4f408adf65424fd5b7c3151a1252b946274c8022e53d5005f72ebea7e007",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/40-because-i-am-good.tex": "3b2af538dc4cbec5eb5f38ae873e9c1ec623d05707e3e4972627f305cd84e670",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/50-comparison.tex": "fde26edaf81f94a6218bfbee6464e6cbbf1a42d90e5211b1f07fb186c94f13e2",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/80-date-location.tex": "2e686dd09f3e163aca2ac784853eb4803472d70ab65f08a1b1f89824d328ed42",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/85-liturgical-resolution.tex": "6f75aa546d3bd84e3d7b67d62a1379c7e0c4b3ccd0b63f2319df454e83389b25",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/90-apparatus.tex": "5b606283d17d5ca6d6a5f2fbb578838ea02c03128944557149a157e0d5702b0e",
+      "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "4",
+            "e318311c264a5a3a620c9da404ad4d4ab3d4291815421d7753d2630044ecdeb0",
+            "472e2eb20876b22a",
+            "02bae3f417048707bf5f76a9ef50b3236bf60701",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "Cold review of the expansive study (main.tex with sections 00-90) of PC-S51-A, Claude postconciliar leaf, against the sealed bytes (all 21 sealed hashes matched before reading). Checked at source: Chrysostom Hom. in Matt. 64.3-4, Hom. in Phil. 3-4 and Hom. in Acta 35 (tracked NPNF text); Augustine Sermo 87.1-11, De praed. sanct. 20.41 and Tract. in Ioh. 47 (tracked NPNF); Gregory Hom. 14 and 19 (tracked Latin); Jerome on Matthew (PL 26, 140-142) and on Isaiah (PL 24, 553-555), Augustine Enarr. 118 s.4 and 144.10-11 (PL 37), Hilary (CSEL 22, pp. 366, 367, 834, 838) and Bede (PL 92, 1025) on the retained page images; Aquinas on Matthew 20, John 10, Philippians 1 and Isaiah 55 in the tracked OCR; Bellarmine in the tracked English; Schuster p. 171; Augustine Enarr. 144.21-22 in a fresh fetch of the augustinus.it page whose SHA-256 equals the one research recorded; every running-prose and display Scripture quotation against the tracked Douay-Rheims. Every quotation tested stands as printed. The study has three distinguishable, coherent readings, each carried through all eleven elements with its own four senses, each resting on the reasoning of several Fathers, with honest labelling of editorial links; a three-pass pdflatex build in scratch gives 37 physical pages with a clean log. Two defects block: lane 3 casts Chrysostom as objecting to and denying Augustine's claim about the beginning of faith, which the loci read do not support, and leaves a doctrinally defined point looking open (STU-001); and several four-senses and comparison-table parentheses credit a Father with the editor's identification, one of them falsely (STU-002). Five advisories and three observations follow. Limits: Aquinas was checked in OCR only, not on the page images; no restricted liturgical book was opened; Bellarmine's Latin was not compared; no page was inspected visually; the build did not use make's fixed-point recipe. Verdict: CHANGES_REQUIRED, both repairs owned by the study."
+}

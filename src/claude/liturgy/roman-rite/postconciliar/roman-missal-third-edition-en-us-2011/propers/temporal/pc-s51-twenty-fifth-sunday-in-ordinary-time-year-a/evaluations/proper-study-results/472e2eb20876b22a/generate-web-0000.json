@@ -1,0 +1,7 @@
+{
+  "artifact_path": "build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.md",
+  "disposition": "PASS",
+  "iteration": 0,
+  "stage": "generate-web",
+  "summary": "Converted only the canonical study to build/web (550 lines, sha256 2bd7f5908e264581a4e66b209dc825266d43b51c688d4887ddea77ff4cd3586d) and recorded research/web-artifact.json with snapshot-web. The first conversion exited 0 but silently dropped the bracketed \\notread first half of Acts 16:14 in the Alleluia verse's appointed text: pandoc read the expanded bracket as the optional argument of the \\nopagebreak that ends the englishwitness opening. This was repaired in tools/web-edition, which now guards every command whose text opens with a bracket behind an empty group, and a new audit requires each call's words in the output. Two regression tests were added (the conversion test fails on the old converter) and guidance/web-editions.md now lists the case among the known deletions. Before and after the change, every leaf of both providers converted to byte-identical output with the same failures, except this leaf, whose only change is the restored clause. A word-by-word comparison with the built study PDF leaves only the table of contents, running heads, repeated table headers and the order of table cells, and no source text is missing. No leaf source changed, nothing was installed, and the production-review entry is recorded."
+}

@@ -49,13 +49,13 @@ provider = "claude"
 run_id = "472e2eb20876b22a"
 workflow = "proper-study"
 workflow_version = 4
-stage = "homily-review"
+stage = "web-review"
 iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 0
-advisory_count = 8
-observation_count = 3
+advisory_count = 11
+observation_count = 6
 
 [[stages]]
 stage = "homily-review"
@@ -104,6 +104,30 @@ standing = 0
 accepted_count = 0
 advisory_count = 3
 observation_count = 0
+
+[[stages]]
+stage = "visual-review"
+iteration = 0
+disposition = "PASS"
+run_id = "472e2eb20876b22a"
+workflow = "proper-study"
+workflow_version = 4
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 0
+
+[[stages]]
+stage = "web-review"
+iteration = 0
+disposition = "PASS"
+run_id = "472e2eb20876b22a"
+workflow = "proper-study"
+workflow_version = 4
+standing = 0
+accepted_count = 0
+advisory_count = 2
+observation_count = 3
 
 [[advisories]]
 stage = "homily-review"
@@ -169,6 +193,30 @@ location = "sections/concise/10-commentary.tex, subsection 'Whose work is the co
 problem = "In the study the corresponding sentence has Chrysostom's different reading of Acts 16:14 as its subject: that difference 'does not reach the first step or the claim with which this interpretation began'. Compression joined it to a sentence whose subject is 'the step', so 'it' now reads as the second step and the clause says that the step does not reach the claim, which is not what is meant; 'the first step' was dropped as well. A reader can recover the sense from the preceding sentences, so nothing false is conveyed, but the sentence that bounds the one real difference in the third interpretation is the least clear in its paragraph."
 required_result = "Give the clause its own subject, for example that the difference between the two readings of Acts 16:14 touches neither the first step nor the claim with which the third interpretation began, which Chrysostom states for himself."
 
+[[advisories]]
+stage = "visual-review"
+id = "VIS-001"
+severity = "advisory"
+location = "Study PDF (fd3a4d13...), physical page 2; source sections/00-opening.tex, the \\small translation note ('Scripture is quoted throughout in the Douay--Rheims ...') after the first paragraph"
+problem = "The small-type note on the study translation starts on the very next baseline under the opening paragraph, with no space above it, while a \\medskip follows it. Because the spacing is lopsided, the note looks like a smaller-type continuation of the parable paragraph rather than a separate note on the text."
+required_result = "Whenever the study source is next reopened for another reason, put the same vertical space above the note as below it (for example a \\medskip before the group), or otherwise set it apart, so that it reads as a separate note."
+
+[[advisories]]
+stage = "web-review"
+id = "WEB-001"
+severity = "advisory"
+location = "build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.md, whole document: nothing between the title block (lines 5-14) and the first section (line 16) stands for the PDF's Contents on p. 1"
+problem = "The study PDF opens with a Contents list of its eleven sections with page numbers. tools/web-edition (line 1099) deletes \\tableofcontents, and neither the Markdown nor the site layout supplies any replacement. The published page is about 54,000 px tall at a 1280 px viewport and about 74,000 px tall at 500 px. It has 11 h2 and 51 h3 headings and no in-page navigation. Every heading carries an id, so nothing is unreachable by link, and the loss is navigation apparatus rather than text. guidance/web-editions.md neither declares this omission nor gives a reason for it, and the generate-web audit lists it only as an item for the reviewer."
+required_result = "Either the canonical web edition offers in-page navigation equivalent to the PDF's Contents, or the decision to drop print navigation from long studies is recorded in guidance/web-editions.md where a reviewer will meet it. For the first, the converter could emit a [TOC] marker for an entrypoint that requests \\tableofcontents, and the site's already-enabled toc extension would render it as a linked list of the sections."
+
+[[advisories]]
+stage = "web-review"
+id = "WEB-002"
+severity = "advisory"
+location = "build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.md lines 258-268, 320-330 and 386-396 (the three 'The four senses of this interpretation' blocks), and line 13 (the title-block subtitle); PDF pp. 17-18, 23 and 29"
+problem = "The source sets the four senses as a description list (fourSenses in format.tex). The PDF therefore prints each label (Literal., Allegorical., Moral., Anagogical.) as a bold term with its text in a hanging indent. The converter writes each label as plain text followed by a two-space Markdown hard break. On the site that break is lost: render_source_page runs rewrite_links, which calls rstrip() on every line (tools/public-alpha, line 2968) before rendering, so the trailing spaces are gone first. In headless Chromium the rendered page carries no <br> in <main> at all. Each label runs straight into its paragraph at body weight, for example 'Literal. A landowner hires workers at five hours of one day…'. The generate-web note that each label is 'followed by a line break' is true only of scripts/_markdown_render.py on its own. The same stripping joins the two lines of the subtitle at line 13, which does no harm. Nothing is lost or confusable: all four senses are present, named, in order, each in its own paragraph under its own h3. But the one structure the three-documents contract requires of every interpretation is the one place where the source's distinction between label and body is dropped rather than adapted."
+required_result = "On the published page, the four sense labels carry a weight or structure that survives the site's page path, so that each interpretation's senses can be scanned as easily as in the PDF. For example, the converter could write each description term as a bold run-in label, '**Literal.** …' (the form the tracked gpt proper editions already use and the site already renders), or the site could stop stripping Markdown hard breaks."
+
 [[observations]]
 stage = "homily-review"
 location = "proper-components.toml, component homily-body, element_keys (line 194), with scripts/_proper_components.py lines 433-439 ('must declare coverage of every element key')"
@@ -183,3 +231,18 @@ note = "First recorded at iteration 1 and still true: the screen's names for the
 stage = "study-review"
 location = "research/interpretations.md, standing limits (line 43-44), Reading 3 ('and Chrysostom disputes it'; 'A real disagreement, to be preserved'; 'Chrysostom's objection above') and the Comparison ('his rule on details tells against one'; 'the one real dispute among the authors read'); research/scope.md, section 3.1, rows for Chrysostom and Aquinas on Matthew; research/production-review.md, 'For the cold reviewer, about the research records', items 1 to 6"
 note = "First recorded at iterations 0 and 1 and re-confirmed here at the bound sources: the research records, unchanged since research review, still say that Chrysostom disputes or objects to Augustine's second step, although Hom. in Acta 35 addresses no such claim and says nothing of where the willingness comes from; still list Jerome among those who expound the second sentence of Mt 20:16, which PL 26 col. 142 shows him carrying without comment; still say Chrysostom's rule on details tells against the ages of the world, which the study dropped under STU-003; and do not record his second application of that rule to 'No man hath hired us' (64.3) or Aquinas's division of the hours at David. The study as it stands follows the sources and not these sentences, and the production audit lists each point, but the concise and homily components name these records as references."
+
+[[observations]]
+stage = "web-review"
+location = "build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.md lines 425-443 (Scriptural Date and Location table)"
+note = "The \\multicolumn handling that guidance/web-editions.md declares deliberate puts each dossier's full-width prose note into the Textual unit column. On the site that column is about 220 of the table's 632 px at a 1280 px viewport, so the longest note (Isaiah, about 120 words) becomes a tall, narrow cell beside three empty columns. The guidance's reasoning weighs the header mismatch but not this narrow measure, which this dossier's long notes make conspicuous. The text is complete and readable, and this is recorded for the owner of that decision."
+
+[[observations]]
+stage = "web-review"
+location = "tools/public-alpha rewrite_links (line 2968), which every web/ page passes through in render_source_page"
+note = "rewrite_links strips trailing whitespace from every Markdown line before rendering, so any two-space hard break is silently lost on the site. 16 tracked editions under web/ contain such lines, for example web/gpt/liturgy/roman-rite/1962/reference/assembling-the-mass.md with 253 lines and web/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md with 13. The converter's render audit uses scripts/_markdown_render.py alone and not the site's rewrite step, so a construct that depends on whitespace passes the audit and still changes on the page. This looks like a missing criterion in the converter audit or the site's verification, not something this conversion can repair."
+
+[[observations]]
+stage = "web-review"
+location = "build/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.md lines 488-490 ('## References' followed by a standalone <span id=\"sec:references\">)"
+note = "In sections/90-apparatus.tex, \\label{sec:references} follows the starred References heading and its \\addcontentsline instead of sitting on the heading. It therefore converts to an empty span in its own paragraph, while the heading takes the auto-generated id 'references'. Every other sec: label became its heading's own id. Nothing links to either id, so nothing is broken."

@@ -1,0 +1,82 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "raw-ocr",
+   "byte_size": 4974396,
+   "edition_owned": true,
+   "id": "artifact.thomas-aquinas.opera-editio-altera-veneta-tomus-3.venice-bettinelli-1745.ia-djvu-ocr-10aa155e",
+   "media_type": "text/plain",
+   "notes": "Complete offered OCR of the volume, 111,097 physical lines, retained without correction. The long s is recognized as f and the two columns of each page are interleaved; it is a locating witness only. Matthew 20 lectio 1 lies near physical lines 33,100-33,760 and John 10 lectio 4 near 84,900-85,010.",
+   "page_count": null,
+   "retrieved": "2026-09-19",
+   "rights": "public-domain",
+   "rights_basis": "The 1745 Venice printing is in the public domain in the United States: the repository's own rights reading, recorded at guidance/missals.md section 5, is that a work first published abroad before 1931 is in the public domain with no term running. The scan is Google's digitization of the University of Turin copy, delivered by the Internet Archive. A mechanical digitization of a public-domain printing adds no original authorship of its own. No modern editorial text is added by this retention.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/bub_gb_N4avJjSakk8C/bub_gb_N4avJjSakk8C_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "facsimile-pdf",
+   "byte_size": 56148876,
+   "edition_owned": true,
+   "id": "artifact.thomas-aquinas.opera-editio-altera-veneta-tomus-3.venice-bettinelli-1745.internet-archive-google-pdf-adb333e0",
+   "media_type": "application/pdf",
+   "notes": "Complete 909-page file acquired. Access limitation: the 56,148,876-byte whole PDF is not tracked because its measured size far exceeds the bounded evidence needed here, which is seven pages. An offline checkout retains the complete raw OCR of the volume and a seven-page facsimile derivative holding the title page, Matthew 20 lectio 1 and the page of John 10 lectio 4 that treats verse 14; other page images require the remote file.",
+   "page_count": 909,
+   "retrieved": "2026-09-19",
+   "rights": "public-domain",
+   "rights_basis": "The 1745 Venice printing is in the public domain in the United States: the repository's own rights reading, recorded at guidance/missals.md section 5, is that a work first published abroad before 1931 is in the public domain with no term running. The scan is Google's digitization of the University of Turin copy, delivered by the Internet Archive. A mechanical digitization of a public-domain printing adds no original authorship of its own. No modern editorial text is added by this retention.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/bub_gb_N4avJjSakk8C/bub_gb_N4avJjSakk8C.pdf",
+   "storage": "remote"
+  },
+  {
+   "artifact_type": "facsimile-excerpt",
+   "byte_size": 1045311,
+   "edition_owned": true,
+   "id": "artifact.thomas-aquinas.opera-editio-altera-veneta-tomus-3.venice-bettinelli-1745.title-matthew-20-john-10-facsimile-d362fdfe",
+   "media_type": "application/pdf",
+   "notes": "Seven pages only: parent PDF page 3 (title page), pages 276-280 (printed pp. 258-262: the lemma of Matthew 20 and the whole of lectio 1 on 20:1-16, running into the lecture on 20:17) and page 680 (printed p. 662: John 10 lectio 4, on verses 14-15), in that order. All other parent pages are omitted.",
+   "page_count": 7,
+   "retrieved": "2026-09-19",
+   "rights": "public-domain",
+   "rights_basis": "The 1745 Venice printing is in the public domain in the United States: the repository's own rights reading, recorded at guidance/missals.md section 5, is that a work first published abroad before 1931 is in the public domain with no term running. The scan is Google's digitization of the University of Turin copy, delivered by the Internet Archive. A mechanical digitization of a public-domain printing adds no original authorship of its own. No modern editorial text is added by this retention.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/bub_gb_N4avJjSakk8C/bub_gb_N4avJjSakk8C.pdf",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1745",
+  "editors": [
+   "Bernardo Maria de Rubeis"
+  ],
+  "id": "edition.thomas-aquinas.opera-editio-altera-veneta-tomus-3.venice-bettinelli-1745",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Venetiis: cudebat Ioseph Bettinelli, 1745",
+  "title": "Divi Thomae Aquinatis Opera, editio altera Veneta, tomus tertius",
+  "translators": [],
+  "year": 1745
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Super Evangelium S. Matthaei lectura",
+   "Super Evangelium S. Ioannis lectura",
+   "Commentaria in Evangelia S. Matthaei et S. Ioannis",
+   "In Matthaeum",
+   "In Ioannem"
+  ],
+  "author": "Thomas Aquinas; collected edition",
+  "category": "collected-works-volume",
+  "description": "Historical collected-volume container holding Aquinas's lectures on Matthew and on John as printed in the second Venetian edition, with Bernardo Maria de Rubeis's prefatory Admonitio on the authenticity of the Matthew commentary. The two commentaries remain separate constituent works and are not yet registered as such.",
+  "id": "work.thomas-aquinas.opera-editio-altera-veneta-tomus-3",
+  "languages": [
+   "la"
+  ],
+  "title": "Divi Thomae Aquinatis Opera, editio altera Veneta, tomus tertius: Commentaria in Evangelia S. Matthaei et S. Ioannis"
+ }
+}

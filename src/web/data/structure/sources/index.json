@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 2727,
-  "editions": 988,
-  "passages": 5160,
+  "artifacts": 2743,
+  "editions": 991,
+  "passages": 5179,
   "readable": 3059,
-  "works": 723
+  "works": 726
  },
  "facets": {
   "authors": [
@@ -787,7 +787,7 @@
    },
    {
     "id": "Jacques-Paul Migne, publisher and series editor",
-    "works": 7
+    "works": 8
    },
    {
     "id": "James Joyce",
@@ -1519,7 +1519,7 @@
    },
    {
     "id": "Thomas Aquinas; collected edition",
-    "works": 1
+    "works": 2
    },
    {
     "id": "Tranquille de Saint-Remi, O.F.M. Cap.",
@@ -1555,7 +1555,7 @@
    },
    {
     "id": "United States Conference of Catholic Bishops",
-    "works": 1
+    "works": 2
    },
    {
     "id": "United States Conference of Catholic Bishops, Committee on Divine Worship",
@@ -1704,6 +1704,10 @@
     "works": 9
    },
    {
+    "id": "collected-volume",
+    "works": 8
+   },
+   {
     "id": "encyclopedia-volume",
     "works": 8
    },
@@ -1718,10 +1722,6 @@
    {
     "id": "reference-encyclopedia",
     "works": 8
-   },
-   {
-    "id": "collected-volume",
-    "works": 7
    },
    {
     "id": "encyclical",
@@ -1945,6 +1945,10 @@
    },
    {
     "id": "circular-letter",
+    "works": 2
+   },
+   {
+    "id": "collected-works-volume",
     "works": 2
    },
    {
@@ -2173,10 +2177,6 @@
    },
    {
     "id": "collected-works",
-    "works": 1
-   },
-   {
-    "id": "collected-works-volume",
     "works": 1
    },
    {
@@ -2680,6 +2680,10 @@
     "works": 1
    },
    {
+    "id": "official-web-lectionary-presentation",
+    "works": 1
+   },
+   {
     "id": "papal-act-of-consecration",
     "works": 1
    },
@@ -2998,11 +3002,11 @@
   ],
   "languages": [
    {
-    "editions": 531,
+    "editions": 532,
     "id": "en"
    },
    {
-    "editions": 292,
+    "editions": 294,
     "id": "la"
    },
    {
@@ -3123,12 +3127,12 @@
     "label": "17th century"
    },
    {
-    "editions": 10,
+    "editions": 11,
     "id": "1700",
     "label": "18th century"
    },
    {
-    "editions": 169,
+    "editions": 170,
     "id": "1800",
     "label": "19th century"
    },
@@ -3138,20 +3142,20 @@
     "label": "20th century"
    },
    {
-    "editions": 543,
+    "editions": 544,
     "id": "2000",
     "label": "21st century"
    }
   ],
   "rights": [
    {
-    "artifacts": 1512,
-    "editions": 335,
+    "artifacts": 1525,
+    "editions": 339,
     "id": "public-domain"
    },
    {
-    "artifacts": 718,
-    "editions": 361,
+    "artifacts": 721,
+    "editions": 362,
     "id": "restricted"
    },
    {
@@ -7585,7 +7589,7 @@
      "file": "2011-english-us-2011-emended-2021.json",
      "id": "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021",
      "language": "en",
-     "passages": 10,
+     "passages": 21,
      "readable": 0,
      "rights": [
       "restricted"
@@ -7821,7 +7825,7 @@
      "file": "2002-vatican-typica-tertia-2002.json",
      "id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002",
      "language": "la",
-     "passages": 30,
+     "passages": 31,
      "readable": 0,
      "rights": [
       "restricted"
@@ -7858,7 +7862,7 @@
      "file": "2010-2010-english-icel-antiphonary.json",
      "id": "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary",
      "language": "en",
-     "passages": 5,
+     "passages": 6,
      "readable": 0,
      "rights": [
       "restricted"
@@ -7959,7 +7963,7 @@
      "file": "1981-latin-editio-typica-altera-1981.json",
      "id": "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981",
      "language": "la",
-     "passages": 17,
+     "passages": 20,
      "readable": 0,
      "rights": [
       "restricted"
@@ -13397,6 +13401,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [
+      "public-domain",
       "unresolved"
      ],
      "title": "S. Hilarii episcopi Pictaviensis Tractatus super Psalmos, CSEL 22",
@@ -14706,6 +14711,32 @@
    "alternate_titles": [],
    "author": "Jacques-Paul Migne, publisher and series editor",
    "category": "collected-volume",
+   "directory": "editions/jacques-paul-migne/patrologia-latina-volume-24/",
+   "editions": [
+    {
+     "date": "1865",
+     "file": "1865-1865-paris.json",
+     "id": "edition.jacques-paul-migne.patrologia-latina-volume-24.paris-1865",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Patrologiae cursus completus, Series Latina, Tomus XXIV: Sancti Eusebii Hieronymi Opera omnia, tomus quartus",
+     "year": 1865
+    }
+   ],
+   "id": "work.jacques-paul-migne.patrologia-latina-volume-24",
+   "languages": [
+    "la"
+   ],
+   "title": "Patrologiae cursus completus, Series Latina, volume 24"
+  },
+  {
+   "alternate_titles": [],
+   "author": "Jacques-Paul Migne, publisher and series editor",
+   "category": "collected-volume",
    "directory": "editions/jacques-paul-migne/patrologia-latina-volume-26/",
    "editions": [
     {
@@ -14850,6 +14881,7 @@
      "passages": 0,
      "readable": 0,
      "rights": [
+      "public-domain",
       "unresolved"
      ],
      "title": "Patrologiae cursus completus, Series Latina, Tomus XCII",
@@ -25462,6 +25494,38 @@
   },
   {
    "alternate_titles": [
+    "Super Evangelium S. Matthaei lectura",
+    "Super Evangelium S. Ioannis lectura",
+    "Commentaria in Evangelia S. Matthaei et S. Ioannis",
+    "In Matthaeum",
+    "In Ioannem"
+   ],
+   "author": "Thomas Aquinas; collected edition",
+   "category": "collected-works-volume",
+   "directory": "editions/thomas-aquinas/opera-editio-altera-veneta-tomus-3/",
+   "editions": [
+    {
+     "date": "1745",
+     "file": "1745-1745-venice-bettinelli.json",
+     "id": "edition.thomas-aquinas.opera-editio-altera-veneta-tomus-3.venice-bettinelli-1745",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Divi Thomae Aquinatis Opera, editio altera Veneta, tomus tertius",
+     "year": 1745
+    }
+   ],
+   "id": "work.thomas-aquinas.opera-editio-altera-veneta-tomus-3",
+   "languages": [
+    "la"
+   ],
+   "title": "Divi Thomae Aquinatis Opera, editio altera Veneta, tomus tertius: Commentaria in Evangelia S. Matthaei et S. Ioannis"
+  },
+  {
+   "alternate_titles": [
     "Sancti Thomae Aquinatis Opera omnia XIV",
     "Expositio in aliquot libros Veteris Testamenti et in Psalmos L"
    ],
@@ -25802,6 +25866,35 @@
   },
   {
    "alternate_titles": [
+    "USCCB Daily Readings",
+    "bible.usccb.org daily readings"
+   ],
+   "author": "United States Conference of Catholic Bishops",
+   "category": "official-web-lectionary-presentation",
+   "directory": "editions/united-states-conference-of-catholic-bishops/daily-readings/",
+   "editions": [
+    {
+     "date": "2026-09-19",
+     "file": "2026-2026-09-19-page-for-2026-09-20.json",
+     "id": "edition.united-states-conference-of-catholic-bishops.daily-readings.2026-09-20-web-2026-09-19",
+     "language": "en",
+     "passages": 1,
+     "readable": 0,
+     "rights": [
+      "restricted"
+     ],
+     "title": "Daily Readings page for 20 September 2026, Twenty-fifth Sunday in Ordinary Time, web state of 19 September 2026",
+     "year": 2026
+    }
+   ],
+   "id": "work.united-states-conference-of-catholic-bishops.daily-readings",
+   "languages": [
+    "en"
+   ],
+   "title": "Daily Readings"
+  },
+  {
+   "alternate_titles": [
     "NABRE"
    ],
    "author": "United States Conference of Catholic Bishops",
@@ -25963,7 +26056,7 @@
      "file": "2026-2026.json",
      "id": "edition.united-states-conference-of-catholic-bishops.liturgical-calendar-dioceses-united-states.2026",
      "language": "en",
-     "passages": 3,
+     "passages": 5,
      "readable": 0,
      "rights": [
       "restricted"

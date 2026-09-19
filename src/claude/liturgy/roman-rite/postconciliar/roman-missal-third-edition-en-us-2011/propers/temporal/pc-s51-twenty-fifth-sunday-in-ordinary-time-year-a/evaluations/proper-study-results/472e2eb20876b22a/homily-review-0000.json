@@ -1,0 +1,250 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "HOM-001",
+      "location": "sections/homily/90-note.tex, paragraph 'Relation to the reviewed interpretations', the sentence beginning 'That the psalm's two words describe the householder's two dealings' (lines 36-41); with sections/homily/10-homily.tex lines 82-85 ('That is why this wage cannot be cut into shares ... he has no smaller self to give the latecomer'), lines 65-67 ('The men at the back of the line reasoned by the thoughts of men: more hours, more pay') and lines 112-114 ('So the murmur in this parable is no report from heaven. It is set before us now')",
+      "problem": "The note names four connections as the study's own, 'drawn from the wording of the texts; no Father makes them', and the sentence reads as the list of them. It leaves out the largest editorial step in the speech, the one its title rests on: that the parable's denarius is God giving himself and therefore cannot be divided. In the body that step is spoken in the preacher's voice directly after Jerome on the coin and Augustine on Psalm 144:18, and the accepted study marks it expressly as a joining of separate texts ('Two other witnesses say what the last reward is, each of his own text and neither of the parable', sections/40-because-i-am-good.tex lines 104-105). Two smaller steps of the same kind are also unlisted: the application of Isaiah 55:8 and Aquinas's antithesis to the labourers' arithmetic, and the inference drawn after Chrysostom's sentence that the murmur is set before the hearers now. It does not block because the body introduces Augustine as preaching on the psalm, the loci paragraph places his sentence at Enarrationes 144.22, and each attribution in the speech is accurate, so no reader is told that a Father said what he did not say; the defect is an incomplete account of which steps are the study's.",
+      "required_result": "Beside the four connections already listed, the note says that identifying the parable's wage with God's gift of himself joins Jerome on the coin to Augustine on Psalm 144:18 and is the study's synthesis, and either names the two smaller applications as well or words the sentence so that it does not read as a complete list. The speech itself needs no change.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-002",
+      "location": "sections/homily/10-homily.tex, the spoken body as a whole; most nearly the sixth movement, lines 138-143 ('Before this Mass ends another line will form ... The Lord himself, the pledge of that one wage')",
+      "problem": "The three-document profile makes the Homiletic Directory's orientation govern the homily's movement: the readings and prayers lead through Christ's Paschal mystery to Eucharistic participation and daily life. The speech reaches Communion and the coming week, but it never names the Lord's death or rising and never names Jesus as the teller of the parable. A search of the spoken body finds 'Christ' only in the three sentences on Philippians and 'The Lord himself' once at the Communion line, and finds no cross, blood, sacrifice, resurrection or 'Jesus'. The central claim, that the householder's wage is the giver himself, is therefore preached without the act in which he gives himself. The accepted study holds material that the derivation left out (Gregory on the thief as the labourer of the eleventh hour, Hom. in Evang. 19.3, and on the shepherd who feeds the redeemed with his own body and blood, 14.1). It does not block because the Communion movement does carry the assembly to Eucharistic participation, Christ is proclaimed as the wage in the Philippians movement, and the argument is complete and true without the addition.",
+      "required_result": "If the speech is revised, one sentence, most naturally at the second line, says that the Lord given alike to each is the one who gave himself in his death and rising, so that the claim 'he gives himself' names how; the speech stays within its present length and adds no unsourced attribution.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "observations": [
+    {
+      "location": "proper-components.toml, component homily-body, element_keys (line 194), with scripts/_proper_components.py lines 433-439 ('must declare coverage of every element key')",
+      "note": "The component gate requires the homily component to declare every element key, so homily-body declares all eleven, while the speech uses seven and the note truthfully leaves the Alleluia verse, the Prayer over the Offerings and both Communion antiphons to the studies, as the profile allows ('without reciting an inventory of every minor proper'); the declared coverage says more than any homily written to the profile will do, which is a mismatch between the gate and the profile and not a fact about this document."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "homily-body"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+      "element_keys": [
+        "entrance-antiphon",
+        "collect",
+        "first-reading",
+        "responsorial-psalm",
+        "second-reading",
+        "gospel-acclamation",
+        "gospel",
+        "prayer-over-offerings",
+        "communion-antiphon-a",
+        "communion-antiphon-b",
+        "prayer-after-communion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "Augustine",
+            "Jerome",
+            "Thomas Aquinas",
+            "Bede",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "one-wage-across-the-ages"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "economy",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Jerome",
+            "Augustine",
+            "Gregory the Great",
+            "Thomas Aquinas",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "seek-the-lord-while-he-may-be-found"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "conversion",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine",
+            "Gregory the Great",
+            "Jerome",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "because-i-am-good"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "gift",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+    "files": {
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/format.tex": "7a43271fb97e98f4e23139b5f16fae301349bfb058973bd0ecf43be4f7e71ff9",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/homily.tex": "de579fba732508eac1d66cbef2ac3990bd75368d65ac114f82db3636b0e58649",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/interpretations.md": "47533589c0e46f489e22223be6a1cb0a096b3a185798bf793feff8a623243d85",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/scope.md": "3262329d2d9dc6451f1979c5cf347389e36f0c9753120d083124b8ba057a76c8",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/homily/10-homily.tex": "f091ebdcddaf3ea30a7b5d31353d5ce63ba39661ab217ea65595683067594037",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/homily/90-note.tex": "16446f7b42bdf0378602d1c5173aaa9f12f2c9edb32ffbe7fdfd2d049d55ce44",
+      "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "4",
+            "e318311c264a5a3a620c9da404ad4d4ab3d4291815421d7753d2630044ecdeb0",
+            "472e2eb20876b22a",
+            "02bae3f417048707bf5f76a9ef50b3236bf60701",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Cold review of the homily 'The Wage and the Giver' for the Claude postconciliar Twenty-fifth Sunday in Ordinary Time, Year A (homily.tex with sections/homily/10-homily.tex and 90-note.tex; all seven sealed input hashes matched before reading). Verdict: PASS, no blocking defect, two advisories, one observation. The speech makes one exegetical claim that belongs to this Mass: the first-hired lose nothing, the householder's reply is justice to one and gift to another, Isaiah 55:7-8 gives the reason as pardon, and the wage is the giver himself, so another's share takes nothing from mine. It moves from the pay line through the householder's answer, the prophet's reason, the coin, Paul and Chrysostom's two kinds of hearer to the Communion line and one practicable response, returns to its opening image, and uses the Gospel, first reading, psalm, second reading, Entrance Antiphon, Collect and Prayer after Communion. It contains no anecdote, no first-person singular outside quotation, no clerical identity, no stage direction and no composed prayer, and it ends as preaching. Checked at source by this reviewer: every Scripture quotation against the tracked Douay-Rheims verse files (Mt 20:8-15, Isa 55:7-9, Ps 144:8, 17-18, Phil 1:7, 13, 21-24); Augustine, Sermo 87.4, 6 and 8, and Chrysostom, Hom. in Matt. 64.3-4, in the tracked NPNF texts with their section boundaries; Jerome on the page image of PL 26 col. 142, where both sentences and 'quid quaeris amplius' stand; Aquinas on the page images of Venice 1745 p. 262 and Parma 1863 p. 556; Augustine, Enarr. in Ps. 144.22, in a fresh fetch of the augustinus.it page whose byte size and SHA-256 equal the scope record's; and Praenotanda 106 on the page image of printed p. XLV in a fresh hash-matched fetch of the registered 1981 scan. Every quotation is exact, every report is faithful, each Father is credited only with what he says of his own passage, the one difference that bears on the argument (no murmuring among the saved, Chrysostom) is spoken, Augustine's unequal brightness stands beside the undivided wage, and the argument and the descriptions of the three Missal texts follow the accepted study and reproduce no approved English. My own count of the spoken body is 1,482 words, as the note states: about 11.4, 11.9 and 12.35 minutes at 130, 125 and 120 words a minute, which is the top of the 10-12-minute scope; the longest sentence is Isaiah 55:7 at 36 words and the mean is under fifteen. Limits: no delivery was heard or timed, so the pace is arithmetic only; the speech quotes the Douay-Rheims to an assembly that has heard the Lectionary's English, which the body names once and the rights position requires; ten named patristic attributions in under 1,500 words is dense for listeners, most of all in the paragraph on the coin, though each carries a step of the argument and none is ornamental; Enarr. 144.22 still rests on an electronic text alone, as the note says; the author's six-page proof was read in extracted text only, and no independent build or page inspection was made, which belongs to the visual review."
+}

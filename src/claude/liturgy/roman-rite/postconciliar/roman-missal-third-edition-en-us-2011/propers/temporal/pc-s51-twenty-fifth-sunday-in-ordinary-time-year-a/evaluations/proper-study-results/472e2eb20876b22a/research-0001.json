@@ -1,0 +1,35 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-001",
+      "note": "USCCB 2026 calendar, 2002 Missal, Normae universales, General Calendar, 2008 variation list, ICEL Antiphonary, OLM 1981 and the dated USCCB readings page were fetched whole over verified TLS, matched to their registered or recorded SHA-256, re-read at the cited loci and bound; new passage records for Week XXV (pp. 288-289), OLM no. 133, Praenotanda 105-107, Tabella II, the 20 September calendar entry, the Antiphonary page and GIRM 48, 51, 53, 61-64, 68, 74, 87, 364. The GIRM chapter responses differ by two bytes from the registered states, so they are registered as new dated artifacts and the existing 363/365 passage records are bound as catalogued only. A recomputed seal lists files under every owner.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-002",
+      "note": "Both --check runs traced under a Python audit hook: 1,590 repository files opened, 1,576 beneath src/, 153 of which (80 Revised Version, 73 WEB Catholic verse files) lay outside the first seal. Both edition directories are declared; the recomputed seal contains every src/ file the runs open.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-003",
+      "note": "Option (a): Migne PL 24, Paris 1865 (Vallarsi's text), Internet Archive item sanctieusebiihie04jero, fetched whole over verified TLS, registered with its complete OCR and a four-page facsimile (both title pages, cols. 553-556) retained. All six quotations verified on page images with columns. The earlier remote delivery is no longer bound. Certificate verification was never disabled.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-004",
+      "note": "Added, each read at an exact locus: Jerome on Matthew 20 (PL 26, page images), Aquinas on Matthew 20 and John 10:14 (Venice 1745; the quoted sentences on page images, the rest of the Matthew lecture in OCR only), Aquinas on Philippians 1 (Dessain 1857 facsimile), Hilary on Psalm 118:4-5 and Psalm 144 (CSEL 22 page images), Bellarmine on both psalms (abridged 1866 English), Bede on Acts 16:14-15 (PL 92 page image) with a bounded negative for later comment on 14b, and Augustine Tract. 47.3-5. Limits that remain are stated in scope sections 4, 5 and 10.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-005",
+      "note": "Scope section 7 now confines the Augustine-Chrysostom difference to Acts 16:14, states that Sermo 87.8 concerns the labourers' ignorance of the wage and that Sermo 87 does not address lateness; interpretations Reading 3 and the Comparison were made consistent.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": "RECORDS WRITTEN OR REVISED: research/scope.md (rewritten); research/interpretations.md (rewritten; lanes economy, conversion, gift unchanged in key and claim, gift's controlling claim reworded per RES-009); research/source-bindings.toml (70 bindings); research/review-dependencies.toml; research/context.md (one error corrected: the 2026 calendar does name the Korean martyrs, in an appended Spanish title list; the Ordo's tituli added; re-entry note); research/chronology-inputs.toml (comment only), with chronology.toml and chronology-annotations.tex regenerated (only dependency fingerprints changed, no date); propers/verified.md; Week XXV owner propers/verified.md (additions 5-6, Outstanding reduced); registry/occurrences-2026.md row PC-S51-A. SOURCE LIBRARY: new works patrologia-latina-volume-24, thomas-aquinas/opera-editio-altera-veneta-tomus-3 and USCCB daily-readings; new tracked facsimile or leaf artifacts under PL 26, PL 37, PL 92 and Hilary CSEL 22; new passages under the 2002 Missal, OLM 1981, USCCB 2026 calendar, ICEL Antiphonary and US GIRM; two new dated GIRM artifacts. ADVISORIES CLEARED: RES-006 through RES-012 were all acted on. GATES: tools/source-library validate passes; proper-study check --phase research passes; both proper-chronology --check runs pass. LIMITATION: make check-sources fails on publication-inventory staleness for this unfinished, uncommitted production (leaf absent from claude-publications-v1.toml, registry files changed, no web-edition.toml); those failures predate this re-entry and the inventory refresh was left to the integration phase. REMAINING EVIDENCE LIMITS: Aquinas on Matthew pp. 258-261 read in OCR only; Bellarmine read in an abridged English translation; Augustine Enarr. 144.3-5, 12, 21-22 rest on an unregistered augustinus.it delivery; Origen, Hilary on Matthew and the other corpora of scope section 4 remain unopened; Greek evidence for Matthew 20:16b and the Ordo's 16a lettering unresolved.",
+  "stage": "research",
+  "summary": "Research re-entry for PC-S51-A: bound every adopted liturgical authority from hash-matched re-reads, traced and declared the chronology computation's inputs, replaced the unverifiable Jerome delivery with Migne PL 24 (1865) and re-checked all six quotations on page images, completed the reception matrix to two tiers for every Scripture unit, and corrected the Augustine-Chrysostom row; the three readings stand, with gift's controlling claim now carried by four expositors of the Gospel."
+}

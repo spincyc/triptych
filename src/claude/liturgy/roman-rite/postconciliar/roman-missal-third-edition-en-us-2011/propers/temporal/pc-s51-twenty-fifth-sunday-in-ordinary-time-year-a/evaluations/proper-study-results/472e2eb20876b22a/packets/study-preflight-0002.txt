@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v4
+WORKFLOW_DIGEST: e318311c264a5a3a620c9da404ad4d4ab3d4291815421d7753d2630044ecdeb0
+RUN_ID: 472e2eb20876b22a
+COMMIT: 02bae3f417048707bf5f76a9ef50b3236bf60701
+STAGE: study-preflight
+ITERATION: 2
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-09-20","proper":"liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a","provider":"claude","research_handoff":"none"}
+DOCUMENT_ROOT: src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"STU-009","location":"generation-metadata.tex, \\AIModelContribution, second argument ('effort=high; unexposed: sampling configuration')","problem":"The declaration records effort=high, which is the EFFORT line of the two author-study packets. The run's own record says the stage did not run at that effort: intervention 0000 of this run, entered at resolve-context, states that every stage is dispatched as a harness subagent inheriting the driver session's effort, xhigh, and that 'Stages whose packets declare EFFORT high (all author stages) therefore run one level above the declared effort'; intervention 0001 says the deviation 'stands for this whole run'. guidance/editorial.md requires exposed qualifiers verbatim and unavailable components named specifically and never guessed, and the two other Claude leaves of this collection record 'unexposed: reasoning-effort and sampling configuration'. The record renders nothing, so no reader of the PDF is affected; a reader of the tracked declaration is told an effort the run's record contradicts.","required_result":"The qualifier states the effort the stage actually ran at, as the run records it, or names reasoning effort as unexposed if the worker cannot observe it; it does not give the packet's declared value as the actual one. One acceptable form: 'effort: packet-declared high, host-dispatched xhigh; unexposed: sampling configuration'.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

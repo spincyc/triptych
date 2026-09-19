@@ -1,0 +1,471 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "STU-008",
+      "location": "sections/40-because-i-am-good.tex: subsection 'The wage is the giver', lines 104-106 ('and it is this study that sets their sentences beside the coin'); subsection 'The contract that remains', lines 305-306 ('The study reports each reading as its author gives it and rests the step on Augustine's argument and on no agreement between the two'); four senses, Allegorical, lines 321-323 ('This study sees in the householder's goodness the goodness of Christ, and it draws on what three authors say ...') and lines 328-329 ('That this likeness, given to each labourer alike, is Christ is the study's identification and not Jerome's'); four senses, Anagogical, line 336 ('The study takes the one denarius to be God giving himself') and line 338 ('Beside that the study sets two sentences spoken of other texts')",
+      "problem": "The repair of STU-002 removed the false and misplaced parentheses, and in doing so wrote six sentences whose grammatical subject or possessor is the study itself, four of them inside the four-senses block of the third interpretation. guidance/editorial.md names this form as the defect: a qualifying sentence is legitimate when its subject is a source, a text, a witness or a fact, and is the defect when its subject is the guide or the reading, because it then tells the reader something about the writer; 'naming the discipline is itself the defect', and 'a constraint on what may be asserted is satisfied by not asserting it, never by disclaiming it in the reader's hearing'. The three-document profile asks the same of whole-formulary links: the audit record labels them editorial synthesis and the study attributes to each Father only what he said of his own passage. The standard's recurrence test is met. There are six such sentences in one section, all new this round, and the Allegorical and Anagogical senses, which the contract requires to be this interpretation's own distillation and which the concise study and the homily will condense, now open 'This study sees' and 'The study takes' and the Allegorical sense closes on a disclaimer. The first and second interpretations show the compliant form in the same position: their four senses state an editorial identification with no name attached ('The one denarius is the life he opens to Israel and to the Gentiles together') and give each Father what he says. research/interpretations.md states this interpretation's allegorical and anagogical senses in the same plain way. The house-voice preflight passed only because its vocabulary for the work (guide, project, repository, document, leaf, publication) does not include 'study'; with 'guide' in its place, 'the guide's identification', 'The guide reports' and 'The guide takes' are forms that screen refuses. Nothing in the six sentences is false, and the attribution boundaries they draw are right; the fault is whom the sentences are about. The sentence at lines 305-306 also repeats what the two sentences before it and lines 248-250 already say with the witnesses as subject. The compact claim-local forms that stood at iteration 0 ('is assigned here', 'is drawn here', 'rest on the wording of those texts and on no commentator') are not part of this finding.",
+      "repair_target": "study",
+      "required_result": "Rewrite the six sentences so that none has the study as subject or possessor, keeping every attribution boundary STU-002 established and restoring no parenthesis it removed. (1) State the interpretation's own identifications plainly and with no name attached, as the first two interpretations and research/interpretations.md do: the householder's goodness is the goodness of Christ; the likeness given to each labourer alike is Christ; the one denarius is God giving himself. (2) Give each author what he says, of the passage he says it of, with the author as the subject: of the good shepherd of John 10 and not of the parable, Gregory, Aquinas and Augustine; of the coin, Jerome, that it bears the king's figure and that the promised wage is the king's image and likeness, adding if the limit is wanted that Jerome does not name Christ there; of the psalm's promise to those who call in truth, Augustine; of the pasture the shepherd's sheep find, Gregory; neither of them of the parable. (3) In 'The wage is the giver', end the sentence at 'each of his own text and neither of the parable', or recast its last clause without the study as subject. (4) In 'The contract that remains', delete the sentence 'The study reports each reading ... no agreement between the two', or recast it with the step or the two authors as subject. After the repair the four senses of the third interpretation read as a distillation in the same voice as those of the other two, no name stands beside an identification its bearer does not make, and no sentence of sections/40-because-i-am-good.tex has 'the study', 'this study' or 'the study's' as its subject or possessor.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-009",
+      "location": "generation-metadata.tex, \\AIModelContribution, second argument ('effort=high; unexposed: sampling configuration')",
+      "problem": "The declaration records effort=high, which is the EFFORT line of the two author-study packets. The run's own record says the stage did not run at that effort: intervention 0000 of this run, entered at resolve-context, states that every stage is dispatched as a harness subagent inheriting the driver session's effort, xhigh, and that 'Stages whose packets declare EFFORT high (all author stages) therefore run one level above the declared effort'; intervention 0001 says the deviation 'stands for this whole run'. guidance/editorial.md requires exposed qualifiers verbatim and unavailable components named specifically and never guessed, and the two other Claude leaves of this collection record 'unexposed: reasoning-effort and sampling configuration'. The record renders nothing, so no reader of the PDF is affected; a reader of the tracked declaration is told an effort the run's record contradicts.",
+      "required_result": "The qualifier states the effort the stage actually ran at, as the run records it, or names reasoning effort as unexposed if the worker cannot observe it; it does not give the packet's declared value as the actual one. One acceptable form: 'effort: packet-declared high, host-dispatched xhigh; unexposed: sampling configuration'.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 1,
+  "observations": [
+    {
+      "location": "scripts/_house_voice.py, line 271 (SELF) with WORK_NAMED and the rule 'the work possesses the finding'",
+      "note": "The screen's names for the work are guide, project, repository, document, leaf and publication. A schema-2 leaf calls itself 'the study', so the six sentences of STU-008 passed house-voice, although 'the guide's identification', 'The guide reports' and 'The guide takes' would have been refused. This is a missing word in a gate and not a fact about this document; 'sees' and 'sets' are also absent from the verbs the subject test accepts."
+    },
+    {
+      "location": "research/production-review.md, 'For the cold reviewer, about the research records', items 1, 2, 5 and 6; research/interpretations.md, Reading 3, 'Chrysostom's place' row ('his rule on details tells against one') and the standing limits; research/scope.md, section 3.1, rows for Chrysostom and Aquinas on Matthew",
+      "note": "The research records now lag the reviewed study at four further points, each confirmed here at the bound source: Jerome carries the second sentence of Mt 20:16 without expounding it (PL 26, 142, page image); the retained Venice facsimile holds printed pp. 258-261 as images, and p. 260 carries Aquinas's division of the hours at David and his reference of 'No man hath hired us' to the Gentile people; Chrysostom applies his rule on parables a second time to that excuse (64.3); and the record still says his rule tells against the ages of the world, which the study dropped under STU-003. None changes a claim in the study as it stands, but the concise and homily components name these records as references."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "postconciliar",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/00-opening.tex",
+          "references": [
+            "format.tex",
+            "research/context.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "appointed-texts",
+          "kind": "appointed-text",
+          "path": "sections/05-appointed-texts.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/context.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "appointed-texts"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "each-element",
+          "kind": "proper-treatment",
+          "path": "sections/10-each-element.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/context.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "one-wage-across-the-ages",
+          "kind": "interpretive-lane",
+          "path": "sections/20-one-wage-across-the-ages.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "seek-the-lord-while-he-may-be-found",
+          "kind": "interpretive-lane",
+          "path": "sections/30-seek-the-lord-while-he-may-be-found.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "because-i-am-good",
+          "kind": "interpretive-lane",
+          "path": "sections/40-because-i-am-good.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "one-wage-across-the-ages",
+            "seek-the-lord-while-he-may-be-found",
+            "because-i-am-good"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/50-comparison.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "communion-antiphon-a",
+            "communion-antiphon-b"
+          ],
+          "key": "scriptural-date-location",
+          "kind": "front-matter",
+          "path": "sections/80-date-location.tex",
+          "references": [
+            "format.tex",
+            "research/chronology-annotations.tex",
+            "research/chronology.toml",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "liturgical-resolution",
+          "kind": "terminal-apparatus",
+          "path": "sections/85-liturgical-resolution.tex",
+          "references": [
+            "format.tex",
+            "instance/manifest.md",
+            "research/context.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "study-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-apparatus.tex",
+          "references": [
+            "propers/verified.md",
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+      "element_keys": [
+        "entrance-antiphon",
+        "collect",
+        "first-reading",
+        "responsorial-psalm",
+        "second-reading",
+        "gospel-acclamation",
+        "gospel",
+        "prayer-over-offerings",
+        "communion-antiphon-a",
+        "communion-antiphon-b",
+        "prayer-after-communion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Gregory the Great",
+            "Augustine",
+            "Jerome",
+            "Thomas Aquinas",
+            "Bede",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "one-wage-across-the-ages"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "economy",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Jerome",
+            "Augustine",
+            "Gregory the Great",
+            "Thomas Aquinas",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "seek-the-lord-while-he-may-be-found"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "conversion",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine",
+            "Gregory the Great",
+            "Jerome",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "because-i-am-good"
+          ],
+          "element_keys": [
+            "entrance-antiphon",
+            "collect",
+            "first-reading",
+            "responsorial-psalm",
+            "second-reading",
+            "gospel-acclamation",
+            "gospel",
+            "prayer-over-offerings",
+            "communion-antiphon-a",
+            "communion-antiphon-b",
+            "prayer-after-communion"
+          ],
+          "key": "gift",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+    "files": {
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/format.tex": "7a43271fb97e98f4e23139b5f16fae301349bfb058973bd0ecf43be4f7e71ff9",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/instance/manifest.md": "e9c676d49b8a6574847545c585a046b53df1b049ab37c95660a78e584b142b3a",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/main.tex": "324862a763f0ff64e5b7588f6576bce95ddf437f753620ca4bb704ab5ad262ea",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/propers/verified.md": "dd96d6d6a3e81d76e2e209875e0ffceb5b6be42484d407f8abe0cc0edcf83941",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex": "6967cfbe4391b17e8a88115f92f57744fed87815ebcf8a40c3ccbfec807848e6",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/chronology.toml": "64dd0c51a5f159bb78e1c19778d001733f0aae19e6c9cf13d678397bbb1b1110",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/context.md": "9dc90eb24f099a5471ce7ad5ad4e37b2dcf2859b1f725f6d5e6159577b33a01b",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/interpretations.md": "47533589c0e46f489e22223be6a1cb0a096b3a185798bf793feff8a623243d85",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/scope.md": "3262329d2d9dc6451f1979c5cf347389e36f0c9753120d083124b8ba057a76c8",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/source-bindings.toml": "5c47c6454bb77abeb50e17d05ce9ab491969093868afc91d327a19ea16effd38",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/00-opening.tex": "8e1499074e46750db0d544607f3ec36d7cdcf97964ce57561986723f968761f1",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/05-appointed-texts.tex": "7f8552f6a4714c0202b000315c2e137f4e5b4b4de002178e28753c0c284283bb",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/10-each-element.tex": "56bdda88389af6ddd8f5385cbbd57d45046f594c47ddc38ed9e755ef50f4299d",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/20-one-wage-across-the-ages.tex": "0d7e6fcd82a0e59e21f5fa3a36270fb3cc8150af6228717e1f7ffed6eb083231",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/30-seek-the-lord-while-he-may-be-found.tex": "8da59bb9fb8db4d2ab296cb7efa6ca8cb4d9c3edc24ee18abfb8c40df937e608",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/40-because-i-am-good.tex": "51655ed62cee96479c952c05c324bbaaa6580a5cee988a27364c69f23ad22a6f",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/50-comparison.tex": "29b81c799c6618276fcf269f432a61da9028d9ced1c4f27c5adfabd954b40f36",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/80-date-location.tex": "2e686dd09f3e163aca2ac784853eb4803472d70ab65f08a1b1f89824d328ed42",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/85-liturgical-resolution.tex": "6f75aa546d3bd84e3d7b67d62a1379c7e0c4b3ccd0b63f2319df454e83389b25",
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/90-apparatus.tex": "d46bf0f631753c859c7220c2f08afacd431d0bc69c7cf2500f973447ae06c7c2",
+      "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "4",
+            "e318311c264a5a3a620c9da404ad4d4ab3d4291815421d7753d2630044ecdeb0",
+            "472e2eb20876b22a",
+            "02bae3f417048707bf5f76a9ef50b3236bf60701",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "Cold re-review of the expansive study (main.tex with sections 00-90) of PC-S51-A, Claude postconciliar leaf, after author-study iteration 1. All 21 sealed hashes matched before reading. What moved was found by a word-level diff of the iteration-0 and iteration-1 author proofs; every changed section, the unchanged sections 05, 80 and 85, the manifest, the generation record and the production audit were read in full. A four-pass pdflatex build in scratch gives 39 physical pages with no overfull or underfull box and no undefined reference, and its extracted text is identical to the author proof. Checked at source for the changed passages: Chrysostom Hom. in Acta 35 and Hom. in Matt. 64.3 (tracked NPNF text); Jerome on Matthew, PL 26 cols. 141-142, on the retained page image, including 'Qui enim fecerit eam, vivet in ea' under the lemma of vv. 14-15 and the uncommented second sentence of v. 16; Aquinas on Matthew, Venice 1745, printed pp. 260 and 262 on the retained page images (the division of the hours at David, the excuse referred to the Gentile people, and every Latin sentence quoted from p. 262); Clementine Lev 18:5, Rom 10:5 and Gal 3:12; Gregory Hom. 19.4 and 19.6 (tracked Latin); Augustine Tract. 47, heading and sections 2, 4-5 (tracked NPNF). Every new or changed quotation and paraphrase stands. STU-001 and STU-002 are repaired in substance: Chrysostom and Augustine are each reported in their own words on Acts 16:14 with no objection, dissent or denial and nothing left looking undecided, and every parenthetical name now attaches only to what that author says of his own passage. STU-003 to STU-007 are cleared. The study still has three distinguishable, coherent readings, each through all eleven elements with its own four senses and several contributing Fathers. One defect blocks, and the repair introduced it: six new sentences of the third interpretation, four of them inside its four-senses block, take the study itself as grammatical subject or possessor, the form guidance/editorial.md names as the defect, where the other two interpretations state the same kind of identification plainly (STU-008). One advisory concerns the effort qualifier in the generation record (STU-009). Two observations follow. Limits: quotations in prose that did not change were not re-verified beyond those listed; Bellarmine's Latin and the restricted liturgical books were not opened; no page was inspected visually beyond the log and text extraction; the build did not use make's fixed-point recipe. Verdict: CHANGES_REQUIRED, the repair owned by the study."
+}
