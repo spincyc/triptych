@@ -25,6 +25,8 @@
   "finding_enums": {
     "severity": [
       "blocking",
+      "accepted",
+      "escalation",
       "advisory"
     ],
     "repair_target": [
@@ -38,5 +40,14 @@
   "observation_fields": [
     "location",
     "note"
+  ],
+  "escalation_finding_fields": [
+    "escalated_to"
+  ],
+  "accepted_finding_fields": [
+    "accepted_because"
+  ],
+  "optional_finding_fields": [
+    "out_of_scope_reason"
   ]
 }

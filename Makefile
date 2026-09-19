@@ -1213,10 +1213,19 @@ $(BUILD_ROOT)/$(1).pdf: $(shell find $(SOURCE_ROOT)/$(1) -type f \( \
 endef
 $(foreach document,$(CANONICAL_DOCUMENTS),$(eval $(call REGISTER_DOCUMENT_SOURCES,$(document))))
 
+# `evaluations/` is pruned because nothing in it is rendered and the engine
+# writes into it while a run is in flight: the standing-findings record an
+# evaluation stage writes is a `.toml` under the leaf, so registering it made
+# every derived PDF stale between the artifact build and installation. The
+# retypeset that follows is byte-identical in the PDF and not in the log,
+# whose first line carries pdfTeX's clock, and that log is sealed as this
+# workflow's pagination evidence -- so a record of what a reviewer found
+# invalidated the proof the reviewer had read.
 define REGISTER_PROPER_DERIVED_SOURCES
 $(BUILD_ROOT)/$(1).pdf: $(shell find $(SOURCE_ROOT)/$(patsubst %-homily,%,$(patsubst %-synthesis,%,$(1))) \
+	-type d -name evaluations -prune -o \
 	-type f \( -name '*.tex' -o -name '*.toml' -o -name '*.sty' -o -name '*.bib' \) \
-	2>/dev/null | sort)
+	-print 2>/dev/null | sort)
 endef
 $(foreach document,$(PROPER_DERIVED_DOCUMENTS),\
 	$(eval $(call REGISTER_PROPER_DERIVED_SOURCES,$(document))))

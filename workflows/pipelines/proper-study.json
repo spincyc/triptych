@@ -1,6 +1,6 @@
 {
   "id": "proper-study",
-  "version": 3,
+  "version": 4,
   "description": "Source-first proper study, concise study and standalone homily, with independent reviews",
   "default_effort": "high",
   "document_argument": "proper",
@@ -137,6 +137,7 @@
       "max_iterations": 4,
       "max_total_iterations": 10,
       "max_novel_iterations": 4,
+      "review_scope": true,
       "records_standing_findings": true,
       "review_input_command": "python3 scripts/_proper_study.py seal --provider {provider} --document {proper} --review research --review-contract proper-study-v3",
       "review_input_repair_target": "research"
@@ -267,6 +268,7 @@
       "max_iterations": 4,
       "max_total_iterations": 10,
       "max_novel_iterations": 4,
+      "review_scope": true,
       "records_standing_findings": true,
       "review_input_command": "python3 scripts/_proper_study.py seal --provider {provider} --document {proper} --review study",
       "review_input_repair_target": "study"
@@ -401,6 +403,7 @@
       "max_iterations": 4,
       "max_total_iterations": 10,
       "max_novel_iterations": 4,
+      "review_scope": true,
       "records_standing_findings": true,
       "review_input_command": "python3 scripts/_proper_study.py seal --provider {provider} --document {proper} --review synthesis",
       "review_input_repair_target": "synthesis"
@@ -539,6 +542,7 @@
       "max_iterations": 4,
       "max_total_iterations": 10,
       "max_novel_iterations": 4,
+      "review_scope": true,
       "records_standing_findings": true,
       "review_input_command": "python3 scripts/_proper_study.py seal --provider {provider} --document {proper} --review homily",
       "review_input_repair_target": "homily"
@@ -647,6 +651,7 @@
       "max_iterations": 4,
       "max_total_iterations": 10,
       "max_novel_iterations": 4,
+      "review_scope": true,
       "records_standing_findings": true,
       "review_input_command": "python3 scripts/_proper_study.py seal --provider {provider} --document {proper} --review visual",
       "review_input_repair_target": "artifacts"
@@ -704,6 +709,7 @@
       "max_iterations": 4,
       "max_total_iterations": 10,
       "max_novel_iterations": 4,
+      "review_scope": true,
       "records_standing_findings": true,
       "review_input_command": "python3 scripts/_proper_study.py seal --provider {provider} --document {proper} --review web",
       "review_input_repair_target": "publication"

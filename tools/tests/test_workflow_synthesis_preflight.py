@@ -705,14 +705,21 @@ class CorpusTests(unittest.TestCase):
                        for job, result in zip(jobs, results)
                        if result.returncode})
 
-    def test_the_gate_refuses_six_of_the_fifteen_manifest_leaves(self):
+    def test_the_gate_refuses_six_of_the_seventeen_manifest_leaves(self):
         """Which, recorded, so that a change in the number is a decision.
 
         Every one of the six is a leaf `content-preflight` refuses as well,
         and five of the six are refused for `house-voice` in prose written
         before either screen existed.
+
+        The census stood at fifteen and is now seventeen, and both additions
+        are recorded here rather than left to fail as an inherited red: the
+        GPT Seventeenth Sunday after Pentecost, and the Claude Seventeenth
+        Sunday produced by run `1e02dc05f2df9940`. Neither is refused, so the
+        list below is unchanged — which is the assertion this test exists for,
+        and which the stale count had been failing before it could run.
         """
-        self.assertEqual(len(manifest_leaves()), 15)
+        self.assertEqual(len(manifest_leaves()), 17)
         self.assertEqual(
             self.refused(GATE_CHECKS, "synthesis"),
             ["claude/49-ninth-after-pentecost",

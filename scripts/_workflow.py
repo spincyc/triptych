@@ -3861,17 +3861,39 @@ class WorkflowEngine:
         """
         if fresh_stage is not None and fresh_stage["type"] in (EVALUATOR, GATE):
             return self._extract_advisory_findings(fresh_result or {}, fresh_stage)
-        for entry in reversed(state.get("result_hashes") or []):
-            source = self._get_stage(workflow, entry["stage"])
+        # Per raising stage, not per run. Reading back only to the most recent
+        # evaluator of any stage made another evaluator's PASS end advisories
+        # it never saw: `study-review` filed three against the leaf's prose,
+        # the route went up to `research`, `research-review` passed, and
+        # `author-study` -- the stage that edits the files those advisories
+        # name, and the only one that would -- was dispatched with an empty
+        # advisory header. Each evaluator's own latest word decides the life
+        # of its own advisories, exactly as the carried list reads each
+        # evaluator's latest result for findings.
+        outstanding: list[dict[str, Any]] = []
+        seen: set[str] = set()
+        results = state.get("result_hashes") or []
+        for source in workflow["stages"]:
             if source["type"] not in (EVALUATOR, GATE):
                 continue
-            if entry.get("disposition") not in (CHANGES_REQUIRED, FAIL):
-                return []
+            latest = None
+            for entry in results:
+                if entry["stage"] == source["id"]:
+                    latest = entry
+            if latest is None:
+                continue
+            if latest.get("disposition") not in (CHANGES_REQUIRED, FAIL):
+                continue
             recorded = self._read_recorded_result(
-                run_id, entry, state["current_stage"]
+                run_id, latest, state["current_stage"]
             )
-            return self._extract_advisory_findings(recorded, source)
-        return []
+            for finding in self._extract_advisory_findings(recorded, source):
+                finding_id = str(finding.get("id"))
+                if finding_id in seen:
+                    continue
+                seen.add(finding_id)
+                outstanding.append(finding)
+        return outstanding
 
     def _carried_findings(
         self,
