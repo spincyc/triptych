@@ -1,0 +1,24 @@
+import subprocess,hashlib,re,json
+from pathlib import Path
+rng='origin/feature/codex/propers/tlm/56..HEAD'
+raw=subprocess.check_output(['git','rev-list','--objects',rng],text=True)
+rows=[line.split(' ',1) for line in raw.splitlines()]
+meta=subprocess.check_output(['git','cat-file','--batch-check=%(objectname) %(objecttype) %(objectsize)'],input=''.join(r[0]+'\n' for r in rows),text=True)
+head=subprocess.check_output(['git','rev-parse','--short','HEAD'],text=True).strip()
+base=Path('.scratch/tpt-8c6ccce8314da5fa/driver')
+(base/f'outgoing-{head}-objects.txt').write_text(raw)
+(base/f'outgoing-{head}-sizes.txt').write_text(meta)
+patterns=[rb'-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----',rb'gh[pousr]_[A-Za-z0-9]{30,}',rb'github_pat_[A-Za-z0-9_]{40,}',rb'(?i)(?:api[_-]?key|access[_-]?token|password)\s*[:=]\s*[\"\x27][A-Za-z0-9_/-]{16,}']
+text_n=0;binary_n=0;total=0
+for row,line in zip(rows,meta.splitlines()):
+ oid,kind,size=line.split()
+ if kind not in ('blob','commit'):continue
+ b=subprocess.check_output(['git','cat-file',kind,oid]);total+=len(b)
+ if kind=='blob' and b.startswith(b'%PDF-'):
+  assert len(b)==11026232 and hashlib.sha256(b).hexdigest()=='95ba98e2d71e4374c4e5262935c71d5d2479b64b34dd3da290b60209ebd92690',row
+  binary_n+=1;continue
+ b.decode('utf-8');assert not any(re.search(q,b) for q in patterns),row
+ text_n+=1
+subprocess.run(['git','diff','--check',rng],check=True)
+print(subprocess.check_output(['git','log','--format=%h %s',rng],text=True),end='')
+print(json.dumps({'text_blobs_and_commits':text_n,'authenticated_pdf_blobs':binary_n,'reviewed_bytes':total}))

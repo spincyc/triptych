@@ -1,0 +1,358 @@
+From 742bda9ac91bddb65812f57bb4b621e2312b41eb Mon Sep 17 00:00:00 2001
+From: Triptych Project <71109625+spincyc@users.noreply.github.com>
+Date: Fri, 11 Sep 2026 12:21:34 -0500
+Subject: [PATCH] propers(54): repair the displaced reader order that broke the
+ deploy
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Run 3c3fb16baa13ee6b, `author-proper` iteration 0. Seeded because the
+49-commit fast-forward to origin/main carried this leaf's unfinished
+production onto main, where the deploy typesets what it had been serving from
+cache and the build stopped: `brief synthesis must begin on page 3, as the
+profile fixes it, not page 4`.
+
+The displacement was in **both** editions, not the companion alone. The
+canonical `.aux` also carried `brief-synthesis:start` at page 4; the canonical
+build target does not run the `--aux` gate, so it built while displaced and
+only the companion failed. Cause: `1567fb53b`'s traditional-attribution
+relation lengthened the generated Date cells, which this stage may not edit, so
+the page-2 sheet spilled its Epistle dossier onto page 3. Repaired by
+tightening the seven dossiers' explanatory prose without dropping a fact, and
+by reinstating the sheet's three documented measurement departures in
+`format.tex` with a note stating them and why. Both editions now build at 76
+and 45 pages with start/end/next at 3/4/5.
+
+The two standing blocking findings this leaf carried are repaired:
+
+- `CON-CIT-110` — the Postcommunion's second `semper` paragraph. The brief's
+  own denominator does take in the Fifteenth Sunday, so the clause claiming it
+  did not was itself false. Re-swept over the collated records: `semper` stands
+  in an appointed oration of four of the fifteen identities, twice in two of
+  them, with two further identities carrying it in a chant -- the Fifth's
+  Offertory and the Twelfth's Gradual, where the finding had said "Introit"
+  and named no element for the Twelfth. The paragraph now agrees with
+  `50-interpretive.tex`.
+- `CON-CIT-107` — the nine named locators were already correct in the tree.
+  The sweep its `required_result` demanded is now done: every `above`,
+  `below`, `here`, `there` and "the commentary" locator in all eight shared
+  files read and tested against the rebuilt companion, all resolving in both
+  editions.
+
+`notable-and-quotable` moves ahead of `exploratory-synthesis` into the
+profile's reader order. The page-2 sheet's one verbatim encyclopedia
+reproduction is now reported rather than reproduced. `research/scope.md`,
+`synthesis.tex`, the edition guards and `sections/synthesis/` are untouched.
+
+Verified before advancing, not taken on report: both editions build,
+`check-proper-components --aux` on the companion exits 0 where it was the
+command CI failed on, and all twelve `check-content-preflight` checks pass.
+
+Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01XrLgFz9yPrvQfKyWyEw57C
+---
+ .../54-fourteenth-after-pentecost/format.tex  | 60 ++++++++++---------
+ .../generation-metadata.tex                   |  5 +-
+ .../proper-components.toml                    | 16 ++---
+ .../sections/10-date-location.tex             | 59 +++++++++---------
+ .../sections/30-commentary.tex                | 14 +++--
+ 5 files changed, 81 insertions(+), 73 deletions(-)
+
+diff --git a/src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/format.tex b/src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/format.tex
+index 0f43bd9b0..5c3d60394 100644
+--- a/src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/format.tex
++++ b/src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/format.tex
+@@ -85,26 +85,29 @@ answer the Latin.} #1\par}
+ \newenvironment{afterlife}[1]{%
+   \begin{massbox}{#1}\small}{\end{massbox}}
+ 
+-% Two-tier page-2 dossier table. This sheet makes two departures from the
++% Two-tier page-2 dossier table. This sheet makes three departures from the
+ % profile's fixed page-2 measurements and the note below \dossierprose states
+-% both together with the escape clause that licenses them. The first is the
+-% summary-tier column widths set here. The profile fixes them at
++% all three together with the escape clause that licenses them. The first is
++% the summary-tier column widths set here. The profile fixes them at
+ % 0.14 / 0.18 / 0.35 / 0.16\linewidth; this table sets
+-% 0.13 / 0.17 / 0.24 / 0.29\linewidth, the four still totalling 0.83 as the
++% 0.11 / 0.16 / 0.20 / 0.36\linewidth, the four still totalling 0.83 as the
+ % profile's do. The movement is into Date, because the corpus answers the
+ % Gospel and the Communion with six composition claims apiece and the Epistle
+-% with five, and the generated annotation prints them in one cell. Location
+-% gives up the most, its detail belonging to the explanatory row beneath. The
+-% summary tier keeps \footnotesize, \arraystretch, \LTpre and \LTpost exactly
+-% as the profile sets them. An earlier form of this sheet set
+-% 0.13 / 0.16 / 0.22 / 0.32, when the Date cell printed every source label in
+-% full; the generated projection now prints the corpus's concise display
+-% labels, which is what allows two of the four widths back toward the profile.
++% with five, the Offertory and the Alleluia now carry a traditional-attribution
++% era and a superscription setting beside their composition claim, and the
++% generated annotation prints all of them in one cell. Location gives up the
++% most, its detail belonging to the explanatory row beneath; Proper gives up
++% what \latin{Communion} does not need. The summary tier keeps \footnotesize,
++% \arraystretch, \LTpre and \LTpost exactly as the profile sets them. The
++% widths were briefly relaxed to 0.13 / 0.17 / 0.24 / 0.29 while the Date cell
++% printed a composition claim alone; the attribution relation put two further
++% claims back into the tallest cells, and the sheet spilled onto a second page
++% until the width moved back into Date.
+ \newenvironment{dossiertable}
+ {\footnotesize
+  \renewcommand{\arraystretch}{1.02}%
+  \setlength{\LTpre}{0.15em}\setlength{\LTpost}{0pt}%
+- \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.13\linewidth}>{\raggedright\arraybackslash}p{0.17\linewidth}>{\raggedright\arraybackslash}p{0.24\linewidth}>{\raggedright\arraybackslash}p{0.29\linewidth}@{}}
++ \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.11\linewidth}>{\raggedright\arraybackslash}p{0.16\linewidth}>{\raggedright\arraybackslash}p{0.20\linewidth}>{\raggedright\arraybackslash}p{0.36\linewidth}@{}}
+  \toprule
+  \textbf{Proper} & \textbf{Citation} & \textbf{Location} & \textbf{Date}\\
+  \midrule
+@@ -130,14 +133,15 @@ answer the Latin.} #1\par}
+ %
+ %   D1. Summary-tier column widths, set above at \dossiertable. Profile
+ %       0.14 / 0.18 / 0.35 / 0.16\linewidth; here
+-%       0.13 / 0.17 / 0.24 / 0.29\linewidth.
++%       0.11 / 0.16 / 0.20 / 0.36\linewidth.
+ %   D2. Spanning-row font size. The profile sets the table in \footnotesize and
+ %       specifies no separate size for the spanning row, so the profile's value
+ %       for that row is \footnotesize --- 9pt on 11pt leading under the 11pt
+-%       base class in src/common/preamble.tex. Here it is \fontsize{6.6}{7.2}:
+-%       a reduction of about 27 percent in glyph size and 35 percent in
++%       base class in src/common/preamble.tex. Here it is \fontsize{6.4}{6.9}:
++%       a reduction of about 29 percent in glyph size and 37 percent in
+ %       leading, a little below \scriptsize. This is a large departure and is
+ %       recorded as one.
++%   D3. Spanning-row width. Profile 0.92\linewidth; here 0.98\linewidth.
+ %
+ % The profile provides for both and states the condition: change its fixed
+ % measurements only when the complete inventory cannot remain legible after the
+@@ -149,23 +153,25 @@ answer the Latin.} #1\par}
+ % commentator's own reconstruction -- and a longtable row cannot break, so the
+ % sheet either fits whole or starts a second page the profile forbids.
+ %
+-% A THIRD departure of the earlier revision is withdrawn at this one: the
+-% spanning explanatory and event rows are back at the profile's 0.92\linewidth,
+-% from 0.98. D1 and D2 are both smaller than they were --- the widths move from
+-% 0.13 / 0.16 / 0.22 / 0.32 and the type size from \fontsize{6.4}{6.9} --- and
+-% the reason all three could be relaxed together is the chronology projection,
+-% whose concise display labels replaced the full source labels the Date cell
+-% used to print.
++% All three departures were relaxed at an earlier revision, when the chronology
++% projection's concise display labels replaced the full source labels the Date
++% cell used to print and the sheet had room to spare. The traditional-attribution
++% relation has since given the Offertory and the Alleluia an era and the
++% Offertory a superscription setting on top of their composition claim, the
++% tallest Date cells grew by three and two lines, and the Epistle dossier fell
++% onto a second page. The three are therefore reinstated together at the values
++% recorded above, and the explanatory prose was tightened beside them, rather
++% than any evidence leaving the sheet.
+ %
+ % What the profile fixes and this sheet leaves alone: the two-tier hierarchy,
+ % the four summary fields, the \footnotesize summary tier, \arraystretch 1.02,
+ % \LTpre 0.15em, \LTpost 0pt, the 0.1em breathing space ending ordinary dossier
+ % rows, \cmidrule(lr){1-4} within a dossier with \midrule only between complete
+-% dossiers, the italic event row set between two \cmidrule(lr){1-4} rules ahead
+-% of its explanation, and the 0.92\linewidth spanning-row width.
+-\newcommand{\dossierrowsize}{\fontsize{6.6}{7.2}\selectfont}
+-\newcommand{\dossierprose}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash\dossierrowsize}p{0.92\linewidth}@{}}{#1}\\[0.1em]}
+-\newcommand{\dossierevent}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash\dossierrowsize}p{0.92\linewidth}@{}}{\textit{#1}}\\}
++% dossiers, and the italic event row set between two \cmidrule(lr){1-4} rules
++% ahead of its explanation.
++\newcommand{\dossierrowsize}{\fontsize{6.4}{6.9}\selectfont}
++\newcommand{\dossierprose}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash\dossierrowsize}p{0.98\linewidth}@{}}{#1}\\[0.1em]}
++\newcommand{\dossierevent}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash\dossierrowsize}p{0.98\linewidth}@{}}{\textit{#1}}\\}
+ 
+ % Divergence table used in the commentary: appointed form against the Bible
+ % text the guide's English is quoted from.
+diff --git a/src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/generation-metadata.tex b/src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/generation-metadata.tex
+index 3ef3e7187..0300a53a8 100644
+--- a/src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/generation-metadata.tex
++++ b/src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/generation-metadata.tex
+@@ -1,5 +1,5 @@
+-\AIDocumentRevisionTimestamp{2026-09-09T14:42:22Z}
+-\AIGenerationProvenance{proper-finish}{4}{72ffa2abb5dd999dc69254b5164c23e3d6b7374dbc36ba1786a4773109bb5ca3}{45f0ddc21d634d9a}{9d7e9c34838557f446e49cfbc8223a9aae22461d}{unknown}
++\AIDocumentRevisionTimestamp{2026-09-11T17:09:08Z}
++\AIGenerationProvenance{proper-finish}{7}{99e6c941a04266c6596fde0857fd3be300d66d72b3ece7a45a3a7665e67b7c75}{3c3fb16baa13ee6b}{b27036f9b856bd8f662f51b6e6128bd90a5ed633}{unknown}
+ \AIModelContribution{claude-opus-5[1m]}{unexposed: reasoning-effort and sampling configuration}{Anthropic Claude Code agent (authoring of the canonical leaf from the research-synthesis brief: the propers map and four senses, the page-2 dossier sheet with its composition and event research, the complete appointed-text component against the collated source record, the two-page thematic movement, the element-by-element detailed commentary with its reception dossiers and evidence states, the source-grounded synthesis, the integrated synthesis commentary, the notable-and-quotable gallery, the interpretive proposals, the terminal scope appendix and references, the component manifest and leaf-local format, and the correction of the psalm-numbering glosses and rubrical attributions in the leaf's source records); Claude Code CLI 2.1.246; unexposed: server revision}
+ \AIModelContribution{claude-opus-5[1m]}{unexposed: reasoning-effort and sampling configuration}{Anthropic Claude Code agent (revision of the canonical leaf against the rebuilt research brief: rebuilding the page-2 dossier sheet on held and registered evidence, removing the verbatim and unregistered restricted-translation attributions and the citations to encyclopedia volumes this repository does not hold, re-sourcing the Offertory and Gospel chronologies, restating the Gradual's date as a bounded negative, adding the preserved disagreements at the Introit, Alleluia, Epistle, Gradual and Offertory, restoring and expanding the Sunday-number transmission finding with its evidence-state floor, correcting the Gelasian section number and the Augustine provenance sentence, rebuilding the notable-and-quotable gallery on the audited entries at their true evidence state, replacing one interpretive proposal with the two audited ones it displaced, removing the project-composed English renderings and the inserted bracket in a quoted Douay verse, rewriting the terminal scope appendix and references, and creating the leaf's source-bindings record); Claude Code CLI 2.1.246; unexposed: server revision}
+ \AIModelContribution{claude-opus-5[1m]}{unexposed: reasoning-effort and sampling configuration}{Anthropic Claude Code agent (revision of the canonical leaf against the rewritten research brief of workflow proper v10, which integrates seven research lanes and replaces the brief the earlier production worked from: rebuilding the page-2 dossier so that every row prints the bounded negative the brief records --- Papias, Eusebius Historia ecclesiastica Book III and Jerome on Galatians as held in no form, Theodoret on Psalms 83 and 94 and Irenaeus as held bytes with no registered passage locus, Jerome De viris illustribus registered at the wrong chapter, Haydock as summarise-only on unresolved rights, the Psalm 33 acrostic as unassertable, and no modern critical horizon for any row --- and distinguishing summary by choice from summary compelled by rights; correcting the saint-adapted Postcommunion locus to Gelasianum Book II sect. LXVIII with the running-head hazard recorded; restating the Collect-and-Secret displacement as eleven consecutive Masses covering two of the formulary's ten elements, with Gerbert's Gregorian lean and the non-independence of Pamelius; removing every claim resting on witnesses the brief does not carry (Theodoret at Psalms 83, 94 and Galatians, Cassiodorus, Ambrosiaster, Cassian, Jerome on Galatians, Chrysostom on Psalm 117, Gregory, Schuster) and rebuilding the detailed commentary on the witnesses it does; barring any Greek witness from commenting on homicidia or castitas; rewriting the two-page thematic movement, the source-grounded synthesis and the synthesis companion's integrated commentary on the brief's five cross-proper claims; replacing the notable-and-quotable gallery with exactly the five audited afterlives at their true inspected state; replacing the six interpretive proposals with exactly the five the precedent audit covers, and dropping the fruit-count relation from the manifest; and rewriting the terminal scope appendix and references, excluding from references the three witnesses this repository does not hold); Claude Code CLI 2.1.246; unexposed: server revision}
+@@ -23,5 +23,6 @@
+ \AIModelContribution{claude-opus-5[1m]}{unexposed: reasoning-effort and sampling configuration}{Anthropic Claude Code agent (content revision of workflow proper-finish v4 against the four blocking findings of the second content evaluation: naming, for Cornelius a Lapide alone, his commentary on the appointed verses as what was not opened, in the Epistle commentary and in the scope appendix, so the negative agrees with the use made of his Argumentum on the dossier sheet; recording that the De civitate Dei XIV.2 in Aquinas's Super Galatas is his citation of it while Augustine's own wording at that place was read in the tracked CSEL 40.2 transcription; binding the cross-formulary denominator to the records the research sweep behind this guide ran over rather than to what the repository holds, and with it the propitiatio, the semper and the English-gap claims drawn from it; and restating the Decreta authentica figures as occurrences of Trinit and praefat across the volume's optical layer rather than as counts of decrees); Claude Code CLI 2.1.261; unexposed: server revision}
+ \AIModelContribution{claude-opus-5[1m]}{unexposed: reasoning-effort and sampling configuration}{Anthropic Claude Code agent (content revision of workflow proper-finish v4 against the three blocking findings of the third content evaluation: making every sentence that located a text above true of both published editions, so that the gallery's two Douay comparanda now state what the Douay reads and the Cummiskey, Clementine and Douay entries of the References and the scope appendix's English paragraph name the canonical edition as the place the orations' English, the divergence tables and the scriptural propers' English are printed, the Douay entry also carrying the gallery's own Douay readings; dropping the falsifiable count of orations asking for peace, health or the world's ordering from the thematic movement, which is the form the research brief records for that finding, and naming the Eighth Sunday's Postcommunion reparatio mentis et corporis beside the four loci the source-grounded synthesis already enumerated, so that the two places agree; and restating the Benziger comparison at the granularity of the leaf's text-control record --- fourteen differences carried in eleven rows, three of them taking a pair at once, beside the two rows that record an agreement and a recognition failure); Claude Code CLI 2.1.261; unexposed: server revision}
+ \AIModelContribution{claude-opus-5[1m]}{unexposed: reasoning-effort and sampling configuration}{Anthropic Claude Code agent (content revision of workflow proper-finish v4 against the two blocking findings of the fourth content evaluation: sweeping to completion the class of sentences that, in a file both published editions build, located material by ``above'', ``here'' or ``the commentary'' when the material stands only in the canonical edition, so that the References head, the Acta Apostolicae Sedis and Decreta authentica entries, and the Honorius, Augustine-on-Galatians, Basil, Cyril, Ambrose, Ambrosiaster, Arnobius, Christian of Stavelot, pseudo-Bede-adjacent Super Matthaeum and Anthony of Padua entries, together with the scope appendix's rights paragraph on Anthony, either name the canonical edition or state the fact without a locator; and bounding the Postcommunion's cross-formulary semper count where the reader meets it, by naming that the fifteen collated identities do not take in the Fifteenth Sunday, whose own Collect carries the word); Claude Code CLI 2.1.261; unexposed: server revision}
++\AIModelContribution{claude-opus-5[1m]}{unexposed: reasoning-effort and sampling configuration}{Anthropic Claude Code agent (authoring pass of workflow proper-finish v7 over the already-produced leaf: clearing the two blocking findings the previous production left standing in the leaf's evaluations record --- restating the Postcommunion's cross-formulary semper count as the collated records return it, four of the fifteen identities carrying it in an oration and two of those four carrying it twice, in agreement with the Fifteenth Sunday sharing already named in the interpretive section; and sweeping to completion the class of cross-edition locators in the files both editions build, each surviving candidate tested against the rebuilt synthesis PDF. Restoring the page-2 dossier sheet to one physical page after the traditional-attribution chronology relation lengthened the tallest Date cells: summary-tier width moved back into Date, the spanning row returned to its earlier size and width, and the explanatory prose tightened without evidence leaving the sheet, which also replaced the one verbatim reproduction of an encyclopedia article on page 2 with a report of it. Component manifest reordered to the profile's reader order, notable and quotable ahead of interpretive possibilities; provenance record restated against this run); Claude Code CLI 2.1.268; unexposed: server revision}
+ \AIModelContribution{GPT-5-based Codex agent}{unexposed: exact model identifier and model qualifiers}{OpenAI Codex agent (integration of the deterministic Scripture chronology projection; correction of stale date claims and source attributions; and focused chronology validation); API workspace; unexposed: client version and server revision}
+ \AIModelContribution{GPT-6-based Codex agent}{unexposed: exact model identifier, model qualifiers and reasoning effort}{OpenAI Codex API workspace; traditional-attribution chronology and date-dossier revision; unexposed: client version and server revision}
+diff --git a/src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/proper-components.toml b/src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/proper-components.toml
+index fa56d66e9..bc32499a2 100644
+--- a/src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/proper-components.toml
++++ b/src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/proper-components.toml
+@@ -68,21 +68,21 @@ element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel"
+ references = ["sections/99-references.tex"]
+ 
+ [[components]]
+-key = "exploratory-synthesis"
+-kind = "exploratory-synthesis"
+-path = "sections/50-interpretive.tex"
++key = "notable-and-quotable"
++kind = "notable-quotable"
++path = "sections/40-notable.tex"
+ modes = ["research", "synthesis"]
+ depends_on = ["source-grounded-synthesis"]
+-element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
++element_keys = ["epistle", "gradual", "gospel", "communion"]
+ references = ["sections/99-references.tex"]
+ 
+ [[components]]
+-key = "notable-and-quotable"
+-kind = "notable-quotable"
+-path = "sections/40-notable.tex"
++key = "exploratory-synthesis"
++kind = "exploratory-synthesis"
++path = "sections/50-interpretive.tex"
+ modes = ["research", "synthesis"]
+ depends_on = ["source-grounded-synthesis"]
+-element_keys = ["epistle", "gradual", "gospel", "communion"]
++element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+ references = ["sections/99-references.tex"]
+ 
+ [[components]]
+diff --git a/src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/10-date-location.tex b/src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/10-date-location.tex
+index 2d5ca12b6..f1b4a21b6 100644
+--- a/src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/10-date-location.tex
++++ b/src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/10-date-location.tex
+@@ -9,17 +9,17 @@ Offertory & Ps. 33:8--9a (Eng. 34:7--8) & Title: before Achimelech, 1~Kings~21 &
+ \cmidrule(lr){1-4}
+ \dossierprose{Corbett's ``usual chronology'' supplies the Davidic regnal frame
+ (\work{Catholic Encyclopedia}, IV, p.~642); the escape precedes David's
+-accession. The superscription anchors the psalm to a named escape,
++accession. The superscription anchors it to a named escape,
+ \latin{Davidi, cum immutavit vultum suum coram Achimelech}, cross-referenced in
+ the Douay to ``[1 Kings 21.],'' modern \textbf{1~Samuel~21}. \textbf{The title
+-and the chapter name different men.} The title names Achimelech; in the chapter
+-Achimelech stands at Nobe and the change of countenance falls before
+-\textbf{Achis, king of Geth}, and the Catholic Public Domain Version prints
++and the chapter name different men}: the title names Achimelech, while in the
++chapter he stands at Nobe and the change of countenance falls before
++\textbf{Achis, king of Geth}; the Catholic Public Domain Version prints
+ \latin{Abimelech} at the title. The superscription-setting date above is the
+-edition's own uninitialled marginal note, attributed to Ussher, and it dates
+-what the superscription points to and not the writing of the psalm; the
+-composition claim beside it is a whole-Psalter latest boundary, declining in its
+-own words to date any individual psalm securely.}
++edition's own uninitialled marginal note, attributed to Ussher, and dates what
++it points to and not the psalm's writing; the composition claim
++beside it is a whole-Psalter latest boundary declining, in its own words, to
++date any psalm individually.}
+ \midrule
+ Introit & Ps. 83:10--11a, 2--3a (Eng. 84:9--10a, 84:1--2a) & Sons of Core; movement toward the temple & \chronodate{introit}{\chronologyannotation{introit}}\\
+ \cmidrule(lr){1-4}
+@@ -31,9 +31,9 @@ no superscription setting. The Biblical Commission's 1910 responsa affirm the
+ psalm titles' antiquity and David as principal author ---
+ \textbf{a criterion about titles generally, not a ruling on this psalm}
+ (\work{AAS}~2 (1910) 354--355, verified). Theodoret's Greek at
+-PG~80:1541--1545 sets the psalm among the Babylonian captives: \textbf{his own
+-reconstruction.} The narrower traditional Korahite ascription answers
+-the same relation, and no modern critical study dates Ps.~83 individually.}
++PG~80:1541--1545 sets it among the Babylonian captives: \textbf{his own
++reconstruction.} The narrower Korahite ascription answers the same
++relation, and no modern critical study dates Ps.~83 individually.}
+ \midrule
+ Alleluia & Ps. 94:1 (Eng. 95:1) & No place or episode named & \chronodate{alleluia}{\chronologyannotation{alleluia}}\\
+ \cmidrule(lr){1-4}
+@@ -45,22 +45,20 @@ attribution and not a date}; it quotes vv.~8--11, which the Alleluia does not
+ appoint. Theodoret's Greek reports the psalm \textbf{untitled among the Hebrews}
+ and composes it in the person of King Josiah --- \textbf{his own
+ reconstruction.} The composition claim above is this psalm's modern critical
+-horizon and is a whole-Psalter boundary, declining in its own words to date any
+-individual psalm securely; no modern critical study dates Ps.~94
+-individually.}
++horizon, a whole-Psalter boundary declining in its own words to date any psalm
++individually; none dates Ps.~94.}
+ \midrule
+ Gradual & Ps. 117:8--9 (Eng. 118:8--9) & No superscription; thanksgiving & \chronodate{gradual}{\chronologyannotation{gradual}}\\
+ \cmidrule(lr){1-4}
+ \dossierprose{\textbf{No superscription stands at Ps.~117}, a psalm
+ of 29 verses; the Clementine and
+ the Catholic Public Domain Version print \latin{Alleluja} at the head of v.~1,
+-a rubric-word and not an ascription, and \textbf{Theodoret's Greek heads the
+-psalm with that same word.} \textbf{The text supplies neither the speaker
+-as king nor the occasion as a victory}, and the New Testament quotes this psalm
+-\emph{as Scripture and never as David's}. The composition claim above is this
+-psalm's modern critical horizon and is a whole-Psalter boundary, declining in
+-its own words to date any individual psalm securely; no modern critical study
+-dates Ps.~117 individually.}
++a rubric-word and not an ascription, and \textbf{Theodoret's Greek heads it with
++that same word.} \textbf{The text supplies neither the speaker as king nor the
++occasion as a victory}, and the New Testament quotes it \emph{as Scripture and
++never as David's}. The composition claim above is this
++psalm's modern critical horizon, a whole-Psalter boundary declining in its own
++words to date any psalm individually; none dates Ps.~117.}
+ \midrule
+ Gospel & Mt. 6:24--33 & Judaea, in Hebrew letters, for Jews & \chronodate{gospel}{\chronologyannotation{gospel}}\\
+ \cmidrule(lr){1-4}
+@@ -70,18 +68,18 @@ crowds from Galilee, Decapolis, Jerusalem, Judea and beyond the Jordan (4:25).
+ \textbf{The received chronology dates that occasion nowhere}, and Maas's
+ ministry chronology, the one that would reach it, stops short of the Sermon.}
+ \cmidrule(lr){1-4}
+-\dossierprose{The six dates above stand in volumes~X and~XIV of \work{The
+-Catholic Encyclopedia} (New York: Robert Appleton, 1911--1912), in those
+-volumes' own words, and disagree with one another. \textbf{Jacquier's article in
+-volume~X, which supplies five of the six, sets beside them the principal modern
+-critical datings, which are later and disagree among themselves}; none of those
++\dossierprose{The six dates above stand, in their own words, in volumes~X
++and~XIV of \work{The Catholic Encyclopedia} (New York: Robert Appleton,
++1911--1912), and disagree with one another. \textbf{Jacquier's article in
++volume~X supplies five of the six and sets beside them the principal modern
++critical datings, later still and disagreeing among themselves}; none of those
+ later figures stands behind the cell above, and no separate modern critical
+ dating of Matthew stands there either.}
+ \midrule
+ Communion & Mt. 6:33 recast & The Gospel's setting; no separate occasion & \chronodate{communion}{\chronologyannotation{communion}}\\
+ \cmidrule(lr){1-4}
+ \dossierprose{The Communion adapts the Gospel's final appointed verse, so its
+-composition candidates are Matthew's. It supplies no separate narrated
++composition candidates are Matthew's, and it supplies no separate narrated
+ occasion to date.}
+ \midrule
+ Epistle & Gal. 5:16--24 & Galatia; region named in Acts & \chronodate{epistle}{\chronologyannotation{epistle}}\\
+@@ -92,10 +90,9 @@ reports the subscriptions and Fathers for \textbf{Rome}, Chrysostom and Baronius
+ for \textbf{Ephesus}; he reproduces Baronius's chronology (Antwerp 1614), the
+ preferred label above, while his \emph{Argumentum} says time and place cannot be
+ determined with certainty. \textbf{Aherne's article in volume~VI carries the
+-southern-Galatian alternative}, under which Ramsay and Weber hold the letter
+-written from \textbf{Antioch}, before the council, while ``the majority of the
+-upholders of the South-Galatian theory suppose, with much greater
+-probability,'' a later date: the first two candidates above are his.}
++southern-Galatian alternative}: Ramsay and Weber hold the letter written from
++\textbf{Antioch} before the council, and Aherne judges a later date much the
++more probable --- the first two candidates above are his.}
+ \end{dossiertable}
+ 
+ \clearpage
+diff --git a/src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/30-commentary.tex b/src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/30-commentary.tex
+index c195cf50a..ce364dad5 100644
+--- a/src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/30-commentary.tex
++++ b/src/claude/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost/sections/30-commentary.tex
+@@ -2636,11 +2636,15 @@ salvatiónis} is the one phrase in the ten elements that looks beyond the
+ present.
+ 
+ \textbf{\latin{Semper}, a second time.} The Collect asked \latin{tuis semper
+-auxíliis}; this prayer opens \latin{Puríficent semper}. Of the fifteen 1962
+-formularies this guide has collated --- a set that does not take in the
+-Fifteenth Sunday, whose own Collect carries the word --- three carry
+-\latin{semper} in an oration and \textbf{this is the only one of those fifteen
+-that carries it twice.}
++auxíliis}; this prayer opens \latin{Puríficent semper}. \latin{Semper} stands in
++an appointed oration of four of the fifteen 1962 formularies this guide has
++collated --- Trinity Sunday and the Eighth Sunday at the Collect, this Sunday at
++the Collect and the Postcommunion, and the Fifteenth Sunday at the Collect
++(\latin{tuo semper múnere gubernétur}) and the Secret (\latin{contra diabólicos
++semper tueántur incúrsus}) --- and \textbf{two of those four carry it twice,
++this Sunday and the Fifteenth.} Two further identities carry the word in a chant
++and not in an oration: the Fifth Sunday's Offertory at Ps.~15:8 and the Twelfth
++Sunday's Gradual at Ps.~33:2.
+ 
+ \textbf{Transmission, and it is the sharpest structural point in the oration
+ dossier.} This prayer does not come from the same place as the other two, and
+-- 
+2.55.0
+

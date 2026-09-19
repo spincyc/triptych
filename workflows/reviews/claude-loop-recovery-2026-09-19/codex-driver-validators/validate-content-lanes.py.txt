@@ -1,0 +1,24 @@
+from pathlib import Path
+import hashlib,json,sys
+iteration=int(sys.argv[1]);lanes=['evidence-discipline','reception-sweep','synthesis-argument','citation-integrity','profile-conformance']
+root=Path('build/tpt-runs/8c6ccce8314da5fa/packets');checks=[]
+for i,lane in enumerate(lanes):
+ p=root/f'content-evaluation-{iteration:04}-lane-{i:02}-{lane}.txt'
+ result=Path(f'.scratch/tpt-8c6ccce8314da5fa/content-evaluation-{iteration:04}-{lane}/result.json')
+ b=result.read_bytes();d=json.loads(b);packet_hash=hashlib.sha256(p.read_bytes()).hexdigest()
+ for key,value in {'stage':'content-evaluation','iteration':iteration,'lane':lane,'lane_packet_hash':packet_hash}.items():assert d.get(key)==value,(lane,key)
+ assert d['disposition'] in ('PASS','CHANGES_REQUIRED','BLOCKED'),lane
+ assert isinstance(d.get('findings'),list),lane
+ ids=[];blocking=0
+ for f in d['findings']:
+  assert {'id','severity','location','problem','required_result'}<=f.keys(),(lane,f.get('id'))
+  assert all(isinstance(f[k],str) and f[k] for k in ('id','severity','location','problem','required_result'))
+  ids.append(f['id'])
+  if f['severity']=='blocking':
+   blocking+=1;assert f.get('repair_target') in ('research','brief','authoring'),f['id']
+ assert len(ids)==len(set(ids)),lane
+ if d['disposition']=='PASS':assert not blocking,lane
+ if d['disposition']=='CHANGES_REQUIRED':assert blocking,lane
+ for o in d.get('observations',[]):assert set(o)=={'location','note'} and all(isinstance(v,str) and v for v in o.values())
+ checks.append({'lane':lane,'disposition':d['disposition'],'findings':len(ids),'blocking':blocking,'observations':len(d.get('observations',[])),'result_sha256':hashlib.sha256(b).hexdigest()})
+print(json.dumps(checks,indent=2))

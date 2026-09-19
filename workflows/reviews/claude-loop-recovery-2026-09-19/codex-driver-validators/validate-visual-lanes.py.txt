@@ -1,0 +1,19 @@
+from pathlib import Path
+import hashlib,json,sys
+iteration=int(sys.argv[1]);lanes=['density-and-hierarchy','page-rhythm','fixed-pagination','clipping-and-apparatus'];checks=[]
+for i,lane in enumerate(lanes):
+ p=Path(f'build/tpt-runs/8c6ccce8314da5fa/packets/visual-evaluation-{iteration:04}-lane-{i:02}-{lane}.txt')
+ result=Path(f'.scratch/tpt-8c6ccce8314da5fa/visual-evaluation-{iteration:04}-{lane}/result.json');b=result.read_bytes();d=json.loads(b)
+ for key,value in {'stage':'visual-evaluation','iteration':iteration,'lane':lane,'lane_packet_hash':hashlib.sha256(p.read_bytes()).hexdigest()}.items():assert d.get(key)==value,(lane,key)
+ assert d['disposition'] in ('PASS','CHANGES_REQUIRED','BLOCKED') and isinstance(d['findings'],list)
+ ids=[];blocking=0
+ for f in d['findings']:
+  assert {'id','severity','location','problem','required_result'}<=f.keys()
+  assert all(isinstance(f[k],str) and f[k] for k in ('id','severity','location','problem','required_result'))
+  ids.append(f['id']);blocking+=f['severity']=='blocking'
+ assert len(ids)==len(set(ids))
+ if d['disposition']=='PASS':assert blocking==0
+ if d['disposition']=='CHANGES_REQUIRED':assert blocking>0
+ for o in d.get('observations',[]):assert set(o)=={'location','note'} and all(isinstance(v,str) and v for v in o.values())
+ checks.append({'lane':lane,'disposition':d['disposition'],'findings':len(ids),'blocking':blocking,'observations':len(d.get('observations',[])),'result_sha256':hashlib.sha256(b).hexdigest()})
+print(json.dumps(checks,indent=2))
