@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.usccb-chapter-vii-html-2026-09-19-00067f46"
+edition_id = "edition.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021"
+artifact_type = "official-html-chapter"
+media_type = "text/html"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "The official USCCB General Instruction landing page governing this chapter identifies ICEL excerpts and United States adaptations as protected and states that the work is copyrighted by the USCCB with all rights reserved and no reproduction or transmission without written permission. No repository redistribution permission was established."
+source_url = "https://www.usccb.org/prayer-and-worship/the-mass/general-instruction-of-the-roman-missal/girm-chapter-7"
+provenance = "Exact HTML response acquired whole with curl over verified TLS from the official USCCB Chapter VII presentation on 2026-09-19 and hashed before it was read. Nothing in the retrieval path passed through a model."
+retrieved = "2026-09-19"
+sha256 = "00067f46d540900a0933c8ab3d33947982c410859bfcfe85a79262c4333eb5da"
+byte_size = 58201
+indexable = false
+notes = "The response contains Chapter VII, nos. 352-367. It is 58,201 bytes, two more than the state registered on 2026-07-23, so it is registered as its own dated state rather than re-pinned. A second request the same day was refused by the host with HTTP 403, so byte stability was not tested. Exact bytes are identified but not retained because the rights record forbids redistribution; a reader without the network has the numbered paragraph summaries in this edition's passage records."

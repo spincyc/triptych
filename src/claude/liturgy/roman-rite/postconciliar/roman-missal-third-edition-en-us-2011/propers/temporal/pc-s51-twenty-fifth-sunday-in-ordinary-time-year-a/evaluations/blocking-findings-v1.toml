@@ -1,0 +1,94 @@
+# Blocking findings standing against this publication, the
+# verdicts its evaluation lanes reached, and the observations
+# they recorded outside their own criteria. Written by tpt after
+# each evaluation of this leaf.
+#
+# One record, several stages. Every entry names the stage that
+# raised it, [[stages]] says what each stage last said, and an
+# evaluation replaces its own stage's entries and leaves every
+# other stage's alone -- so what the content evaluation found
+# still stands here after the synthesis evaluation has spoken. A
+# stage that looked and found nothing leaves an empty list
+# rather than no entry: "evaluated, nothing stands" and
+# "nobody has looked" are different facts, per stage.
+#
+# The keys directly below these comments describe the write that
+# last touched this file, and count every stage's entries
+# together. They are its summary line. What a given stage found
+# is in that stage's [[stages]] entry and in the entries naming
+# it -- reading the top-level stage as the record's one stage is
+# the mistake this schema exists to stop.
+#
+# It exists because a run's own results live under build/, which
+# is ignored, which `make clean` and `wt tidy` delete without
+# asking, and which nothing preserves between productions.
+#
+# Nothing reads this back into a run. Carrying findings from one
+# production into the next wants doing where the run's identity
+# can cover it -- a committed record, or this file's hash in the
+# run id and the acceptance audit -- and until then this is a
+# record for people.
+#
+# Escalations -- defects in artifacts no stage of the run may
+# write: guidance, the source library, the tools, the workflow --
+# are written here too, from the run's whole ledger, so that the
+# decision they ask of a maintainer outlives the run directory.
+#
+# Accepted findings are true defects a lane judged not worth a
+# repair round, with the reason it judged so. Advisories are
+# defects that did not merit blocking. Both are here because a
+# verdict that dies with the run is met again by the next cold
+# read as though nobody had ever weighed it, and weighed again --
+# which is how a document in good shape spends a whole iteration
+# budget. A later evaluation reads these before it raises.
+
+standing_findings_schema = 4
+record_type = "standing-blocking-findings"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"
+provider = "claude"
+run_id = "472e2eb20876b22a"
+workflow = "proper-study"
+workflow_version = 4
+stage = "research-review"
+iteration = 2
+disposition = "PASS"
+standing = 0
+accepted_count = 0
+advisory_count = 3
+observation_count = 0
+
+[[stages]]
+stage = "research-review"
+iteration = 2
+disposition = "PASS"
+run_id = "472e2eb20876b22a"
+workflow = "proper-study"
+workflow_version = 4
+standing = 0
+accepted_count = 0
+advisory_count = 3
+observation_count = 0
+
+[[advisories]]
+stage = "research-review"
+id = "RES-017"
+severity = "advisory"
+location = "research/scope.md section 4 'Consequence' (final sentence) and section 3.6 (closing paragraph, 'independently and a generation apart'); research/interpretations.md Reading 1, Jerome on Matthew row ('An earlier witness to the scheme than Augustine or Gregory') and 'Strongest difficulty' ('Jerome, the earliest witness read for the scheme'), and Reading 3, 'Augustine's development' with the Gregory 19.4 and Hilary Aleph 12 rows ('independently')"
+problem = "The records rank the witnesses read by date and call several of them independent, yet no dating or dependence evidence for any patristic work is cited or bound. Scope section 4 says the earliest witness read for the ages of a life as his own view is Jerome. Chrysostom was read, holds that reading as his own (Hom. in Matt. 64.3), and the library's sealed work record places his homilies at Antioch in the 390s, while the library's record for Jerome's commentary, which is outside the seal, gives 398; on the library's own records that limb is unsupported and probably false. The sealed work record for Augustine's Sermo 87 gives its composition as unknown, so 'an earlier witness than Augustine' is unsupported as well. 'A generation apart' is said of Hilary (library: c. 364-367) and Augustine's Enarr. 118, whose date the record nowhere gives. 'Independently' reads as a claim that Gregory did not draw on Augustine, nor Augustine on Hilary, which nothing read establishes, and the record itself reports an editor's statement that Hilary drew on Origen. This reviewer verified none of these dates at a source; the defect is that the record asserts an order and an independence it has not evidenced. No reading, element contribution or sense depends on them, and the standing limits already forbid calling a reading the earliest, which is why this does not block."
+required_result = "Remove the statements of priority, interval and independence, keeping what each author says and that Jerome reports the ages-of-the-world reading as others'; or support each with a checked and bound dating or dependence source. In particular do not name Jerome the earliest witness read for the ages of a life while Chrysostom 64.3 holds it as his own, and replace 'independently' with wording that says only that the author states the point himself of his own passage. Until then the studies should state no order of priority among the witnesses."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-018"
+severity = "advisory"
+location = "research/context.md, 'The Ordo's own tituli (added on research re-entry)', first sentence"
+problem = "Praenotanda no. 106 is given in English inside quotation marks ('is shown by the careful choice of the tituli set over the individual readings'). Research read the paragraph only in Latin, and this review confirmed the Latin on the page image of printed p. XLV: 'Relatio autem inter lectiones eiusdem Missae ostenditur per accuratam selectionem titulorum qui singulis lectionibus praeponuntur.' The English is therefore this leaf's own rendering presented as a quotation; no English witness of the General Introduction to the Lectionary is bound, and whether the wording coincides with the approved English was not checked. A study author may print it as the document's English. The leaf audit states the same point without quotation marks and is not affected."
+required_result = "Quote the Latin sentence with its locator, or give the English without quotation marks as this leaf's paraphrase of the Latin."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-019"
+severity = "advisory"
+location = "research/scope.md section 3, 'Quotation check', first sentence"
+problem = "The count does not reconcile: thirty-three quotations searched, thirty-two matched, and two of Gregory's corrected. Thirty-two matches leave one quotation that did not match, and two are said to have been corrected, so the fate of at least one quotation is unstated. Two reviews have since matched the quotations in the texts, so no quotation is known to be unverified; the defect is in the audit statement."
+required_result = "State counts that reconcile: how many quotations were searched, how many matched as first written, which did not, and what was done with each."

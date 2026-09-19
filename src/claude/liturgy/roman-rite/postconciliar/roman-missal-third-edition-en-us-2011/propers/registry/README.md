@@ -2,6 +2,7 @@
 
 **Registry scope:** postconciliar Roman Rite; dioceses of the United States of America
 **Registry checked through:** 2026-07-25
+**Specific addition:** `PC-S51-A`, disposed and dated 2026-09-19; the earlier records were not re-reviewed by this addition.
 **Provider:** Anthropic Claude
 
 This non-publishable directory records how this edition-locale adopts and resolves [the stable postconciliar proper registry](../../../../../../../../guidance/liturgy/postconciliar-propers-registry.md). Guide architecture remains in [the postconciliar proper profile](../../../../../../../../guidance/liturgy/postconciliar-propers.md). This edition record adopts the stable registry's keys, slugs, canonical order and counts without alteration; it adds no key and infers none.

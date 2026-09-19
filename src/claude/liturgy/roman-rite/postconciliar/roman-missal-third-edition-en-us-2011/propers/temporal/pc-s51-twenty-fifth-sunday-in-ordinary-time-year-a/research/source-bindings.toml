@@ -1,0 +1,924 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"
+
+# Publication-local record of how this leaf's research used the reusable source
+# library on 2026-09-19, in the research stage of run 472e2eb20876b22a. It
+# supplements propers/verified.md (text control), research/scope.md (reception
+# matrix, bounds, negatives) and research/interpretations.md.
+#
+# States say what this stage did, not what a record could support. `inspected`
+# means this stage read the stated loci itself, in the language stated. Nothing
+# here is `verified`: no reception witness was collated against a critical
+# edition or an original-language text. Each binding's context says whether the
+# locus was read on a page image of a printed edition, in an electronic text,
+# in OCR, or in an English translation. Several of these library records were registered by an
+# earlier production for another provider. Their existence was used to find
+# the text; every locus bound as `inspected` was re-read here, and no earlier
+# reading, summary or verdict was relied on.
+#
+# No `negative-search` binding appears. The one negative this stage records
+# (oration incipits) was a recursive literal search of tracked files, which is
+# not a canonical tool mode over a registered search representation, so it has
+# no replayable receipt. It is described, with its limits, in the Week XXV
+# owner and in research/scope.md.
+#
+# Scripture is bound at the per-book verse-text artifacts actually opened, since
+# an edition record cannot carry an inspected state.
+#
+# Read from public deliveries the library does not register, and therefore
+# unbound: Augustine, Enarrationes in Psalmos 118 (sermons 2-4) and 144, Latin,
+# augustinus.it; the Nova Vulgata Gospel of Matthew, vatican.va; and, on the
+# second re-entry, the current delivery of the NABRE Psalms introduction,
+# bible.usccb.org, whose registered earlier state is bound below. Retrieval
+# dates, byte sizes and SHA-256 values are in research/scope.md section 5. The
+# sentences of Enarr. 118 s. 4.1-2 and 144.10-11 that the records quote were
+# checked on the research re-entry against Migne PL 37, which is bound below.
+#
+# Research re-entry, iteration 1 (2026-09-19). Added: the calendar, Missal,
+# Ordo lectionum, variation-list, Antiphonary and General Instruction records
+# this leaf's identity, occurrence, boundaries and branches rest on, each
+# re-read from hash-matched bytes fetched over verified TLS; Jerome on Isaiah
+# from an edition-identified printing (Migne PL 24, 1865) in place of the
+# unverifiable remote delivery, which is no longer bound; and the second and
+# later-tier reception witnesses of research/scope.md section 3.
+#
+# Research re-entry, iteration 2 (2026-09-19). Added, at the end of the file:
+# the nine source records the Scripture chronology corpus cites for every
+# answer in research/chronology.toml, on which the page-2 Date column rests.
+# Each of the eight Catholic Encyclopedia articles is bound twice: the exact
+# record the corpus cites (the remote New Advent delivery, whose bytes this
+# stage did not re-obtain: catalogued only) and its tracked article-text
+# extraction, which this stage hashed, matched to its record and read at the
+# sentence carrying each corpus label (research/scope.md section 8). The NABRE
+# Psalms introduction is bound as catalogued only: the registered bytes are
+# restricted and unretained, and what this stage read was the page's current
+# delivery, which differs from them. No binding here supplies or alters a date.
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-27-isaias-7c9a1228"
+loci = [
+  "Is.54.7-10",
+  "Is.55.1-13",
+  "Is.56.1-8",
+]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:41639d5457be3a0a6446fe59d3c59c7561aacfef7bc43089f650a7353452bbf8"
+context = "First reading Isaiah 55:6-9 with its literary context, read in the tracked verse file. Public-domain study translation, not the proclaimed English. Only the listed verses were read."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+loci = [
+  "Ps.144.1-21",
+  "Ps.118.1-8",
+  "Ps.36.37-40",
+]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+context = "Responsorial psalm (Hebrew 145) entire, Communion antiphon A (Hebrew 119:4-5) in context, and the psalm the ICEL compiler names for the Entrance antiphon. Vulgate numbering. Public-domain study translation, not the proclaimed English. Only the listed verses were read."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-47-matthew-dd0ba183"
+loci = [
+  "Matt.19.16-20.19",
+]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:ed47ecb092ecb6256fb84450e8ad39d0debf2efe6c65442199a76a7fb1a8b98b"
+context = "Gospel Matthew 20:1-16a in context from the rich young man to the third passion prediction. This edition prints the second sentence of 20:16, which the Mass does not appoint. Public-domain study translation, not the proclaimed English. Only the listed verses were read."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-57-philippians-4ff760a7"
+loci = [
+  "Phil.1.1-30",
+  "Phil.2.1-4",
+]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:54e63d9ca96234397f0c14d3931dc07c142fc0ee3372786d16091c899ccc0632"
+context = "Second reading Philippians 1:20c-24, 27a in the whole first chapter; vv. 25-26 and the rest of v. 27 are context, not appointed text. Public-domain study translation, not the proclaimed English. Only the listed verses were read."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-51-acts-73f7a420"
+loci = [
+  "Acts.16.9-15",
+  "Acts.16.40",
+]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:dd87be0f13bd98112feedd55e3532a9a4dcbbfe28dee45371197dbc842acd2da"
+context = "Identified basis of the adapted Alleluia verse: Lydia at Philippi. Third-person narrative, not the acclamation's wording. Public-domain study translation, not the proclaimed English. Only the listed verses were read."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-50-john-27b8f3ed"
+loci = [
+  "John.9.39-41",
+  "John.10.1-18",
+  "John.10.26-30",
+]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:4498ea55e49e3577649969ed0bcf456423b8aec2f9edda55586c37190dfe77a4"
+context = "Communion antiphon B John 10:14 in the shepherd discourse. Public-domain study translation, not the proclaimed English. Only the listed verses were read."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-21-psalms-d20e21f8"
+loci = [
+  "Ps.33.7",
+  "Ps.33.18",
+  "Ps.34.3",
+  "Ps.36.39-40",
+  "Ps.49.15",
+  "Ps.90.15",
+  "Ps.118.4-5",
+  "Ps.144.18",
+]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1481d71b5253d2bf9644408f82c40a7cd90fce2191d6586d9fa24b0f62d49130"
+context = "Latin comparison text for the test of the Entrance antiphon's stated psalm basis and for Communion antiphon A. Only the listed verses were read. It is not the Missal's or the Lectionary's Latin."
+
+[[bindings]]
+source_id = "passage.john-chrysostom.homiliae-in-matthaeum.ccel-web-2026-09-17.64.3"
+loci = [
+  "64.3",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:8cb8fbdcac0d0170d115dda982be68d532e77ff77d1d531667fbb5a0cee79dc9"
+context = "Extent read in this stage: Homily 64.3, with 64.1-2 read as context (container physical lines 36230-36489). Direct exegesis of Matthew 20:1-16 in the NPNF English. Vineyard as the commandments, hours as ages of life, the murmuring not to be pressed, the call refused only by the disposition of the called. Chrysostom's lemma includes the second sentence of v. 16, which this Mass does not appoint. Container hash matched before reading. No Greek collation."
+
+[[bindings]]
+source_id = "passage.john-chrysostom.homiliae-in-matthaeum.ccel-web-2026-09-17.64.4"
+loci = [
+  "64.4",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:393d827f98154d7dac78ffc87ba9a293e31d6e820bacc41e1843524e6c78c7d2"
+context = "Extent read in this stage: Homily 64.4 entire, and the opening lines of 64.5 (container physical lines 36491-36600). The parable's stated aim, the distinction between the parable's equality and the saying's reversal, and the moral turn to a life matching faith. The remainder of 64.5 was not read and is not bound. No Greek collation."
+
+[[bindings]]
+source_id = "passage.augustine.sermo-87.ccel-web-2026-09-17.1-10-and-14-15"
+loci = [
+  "1-10; 14-15",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:0d0506ac81e19b43dc0d51d5bfab0f550d2bc17ff33a14ff3ea5e3bacf77d964"
+context = "Extent read in this stage: Sermon 87.1-15, the whole sermon (container physical lines 35981-36425). Direct exegesis of Matthew 20:1-16 in the NPNF English (its Sermon 37). Payment and gift, equality of the denarius as eternal life, ages of the world and ages of life, against delay and against despair. Sections 11-13 lie outside the passage record's ranges and were read as context. Augustine cites Ezekiel and Sirach against delay and does not cite Isaiah 55. No Latin collation."
+
+[[bindings]]
+source_id = "passage.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.19.1-6"
+loci = [
+  "19.1-6",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:98fec94ea8d342409f343469d7bef3906ff8e44ed291fc556da6d8d15eab8054"
+context = "Extent read in this stage: Homily 19.1-7, Latin, with its Gospel lemma and heading (artifact physical lines 215-228). Direct exegesis of Matthew 20:1-16, read in Latin. Ages of the world with Jews and Gentiles, ages of life, the thief at the eleventh hour, the murmuring as the patriarchs' delay. Section 5 expounds the second sentence of v. 16, not appointed here. The homily's own heading assigns it to Septuagesima Sunday; that is a fact about Gregory's book and imports no other formulary. Electronic text; the tracked facsimile pages of the PL edition were not opened in this stage."
+
+[[bindings]]
+source_id = "artifact.gregory-the-great.homiliae-in-evangelia.wikisource-web-2026-09-17.complete-extracted-text-dc25dd69"
+loci = [
+  "14.1-6",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:dd03fd6ff09944af5ba01e741418ae3278e9bc68a08acb4d0cd4538129984eea"
+context = "Extent read in this stage: Homily 14.1-6 on John 10:11-16, Latin (physical lines 147-153). Direct exegesis of John 10:14 for Communion antiphon B. To know is to love, and those who love obey; knowledge of the shepherd tested by keeping the commandments (1 John 2:4); the shepherd feeds the redeemed with his body and blood. The library has no passage record for Homily 14, so the artifact is bound at its line range. Artifact hash matched. The extracted text misnumbers two section heads; the sequence of the argument is unaffected."
+
+[[bindings]]
+source_id = "passage.john-chrysostom.homilies-on-philippians.ccel-web-2026-09-17.3"
+loci = [
+  "3",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:87d5c6568f3b96c58f436d80555b3fe6e94e47828b4e5631a01192494ec30f9c"
+context = "Extent read in this stage: Homily 3 from its heading through the comment on Philippians 1:24 and the first part of the moral section (container physical lines 17713-17990). Direct exegesis of Philippians 1:20-24. The rest of the homily's moral section was not read. No Greek collation."
+
+[[bindings]]
+source_id = "passage.john-chrysostom.homilies-on-philippians.ccel-web-2026-09-17.4"
+loci = [
+  "4",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:2e48e64337031721bf7aad05d6ad8235d040edd1e176a60f132086c7e6812684"
+context = "Extent read in this stage: Homily 4 from its heading through the comment on Philippians 1:28 (container physical lines 18073-18265). Direct exegesis of Philippians 1:22-27. Paul declines the crown to make the planted plot bear fruit; 'only' in v. 27. The homily beyond v. 28 was not read. No Greek collation."
+
+[[bindings]]
+source_id = "passage.john-chrysostom.homilies-on-acts.ccel-web-2026-09-17.35.acts-16.13-15"
+loci = [
+  "35: Acts 16:13-15",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:19d4c9a184629718155be4319e79193c22da08f141c9620d399cb411809a92ab"
+context = "Extent read in this stage: Homily 35, opening exposition and recapitulation of Acts 16:13-15 (container physical lines 21124-21168 and 21218-21245). Direct exegesis of Acts 16:14, the identified basis of the adapted Alleluia verse. 'The opening was God's work, the attending was hers.' It comments on the narrative verse, not on the liturgical adaptation."
+
+[[bindings]]
+source_id = "passage.augustine.de-praedestinatione-sanctorum.ccel-web-2026-09-17.1.41"
+loci = [
+  "1.41",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:e6eaa72c06815ba696c5db91e2587937a156a793c7a229e2ea7827ae0e77a660"
+context = "Extent read: Chapter 41 entire with the end of chapter 40 (container physical lines 50380-50450), re-read on the research re-entry. Augustine argues from Colossians 4:3, where the apostle asks prayer that God open a door for the word, that the beginning of faith is God's gift, since it would not be asked of him unless it were believed to be given by him; he then names Lydia (Acts 16:14) as one on whom 'this gift of heavenly grace had descended', whose heart the Lord opened, 'for she was so called that she might believe'. Acts 16:14 is his instance of the gift; the argument from prayer is made from Colossians. Doctrinal use of the verse in controversy, not a commentary on Acts."
+
+[[bindings]]
+source_id = "passage.augustine.in-iohannis-evangelium-tractatus.ccel-web-2026-09-17.47.1"
+loci = [
+  "47.1",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:4b44d2227f47effb88c43915bac8ccdbfbda1437524e6316c846b2bd3c25519d"
+context = "Extent read in this stage: Tractate 47.1 (container physical lines 20885-20916). Opening of Augustine's exposition of John 10:14-21. Sections 47.3-5 were read on the research re-entry and 47.3-4 are bound below."
+
+[[bindings]]
+source_id = "passage.augustine.in-iohannis-evangelium-tractatus.ccel-web-2026-09-17.47.2"
+loci = [
+  "47.2",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:7d3b0a813dc07a180e7273b6a15b0e2862823fb5210f823123e170cbd96fc807"
+context = "Extent read in this stage: Tractate 47.2 (container physical lines 20918-20963). The sheep bought with Christ's blood; the ruler's table as the body and blood of Christ, to which one comes ready to make like provision by laying down life for the brethren."
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.expositio-super-isaiam-ad-litteram.1863-parma.55.ocr"
+loci = [
+  "55",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:00628c87ae5e04135be0a25c0bd533dff08e5a0074778f254789aff7c89f6d48"
+context = "Extent read in this stage: Chapter 55, Parma 1863 vol. 14 pp. 556-557 (OCR physical lines 88740-88869). Medieval Doctoral reception of Isaiah 55:6-9, used to find the text. The OCR is heavily damaged and controls no wording."
+
+[[bindings]]
+source_id = "passage.thomas-aquinas.expositio-super-isaiam-ad-litteram.1863-parma.55.facsimile"
+loci = [
+  "55",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:e1636762715110766e23bc74065298525b2f3e2529e453129a82ac796ca4aa34"
+context = "Extent read in this stage: p. 556, right column, from 'Quaerite Dominum dum inveniri potest' to 'ego misericordiam'. The tracked facsimile page rendered at 170 dpi and read for the sentences the study may use: the fit time before adversity or death; impius against God and iniquus against neighbour; the fruit of return as manifold mercy; and the removal of the obstacle to mercy, 'vos ultionem cogitatis, ego misericordiam'. Only this column was read on the image."
+
+[[bindings]]
+source_id = "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-volume-3-ocr-4d8c8988"
+loci = ["vol. 3, p. 171, Nineteenth Sunday after Pentecost (physical lines 10700-10760)"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:04f9c86491a663faa60eb325af91ca9056441e83aadb4608fbb0d8b87136a32f"
+context = "A liturgical historian's account of the Entrance antiphon's earlier Roman use and his conjecture that the text 'emanates perhaps from the Itala'. History of the antiphon only; it supplies no interpretation of this Mass. OCR read; printed page not collated."
+
+[[bindings]]
+source_id = "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.missale-ambrosianum-1712-text-a1319e20"
+loci = ["Oratio post Communionem 'Quos tuis, Domine, reficis sacramentis' (physical lines 66599-66603)"]
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:b6797b69c78adba4b218e35be254cd4b6f55d8204e2f3d78d85b9c959f00107a"
+context = "One earlier occurrence of the Prayer after Communion's wording, in a section of votive orations whose title the damaged OCR does not yield. A lead on the prayer's history. It controls no wording and supports no claim about origin."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.liturgical-calendar-dioceses-united-states.2026.principal-celebrations-and-cycles"
+loci = [
+  "principal-celebrations-and-cycles",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:de37a5abe41f8ce4d266781ea631cd79b904bd3e1fcc59281dd8d96ff64952ed"
+context = "Printed p. 5 (artifact p. 7): Sunday cycle Year A from 30 November 2025 to 22 November 2026, weekday Cycle 2, the principal dates of the year, and the book identities of the Lectionary and Missal the calendar follows. Controls the cycle and the governing books in research/context.md. Only artifact p. 7 of the passage's range was read. Re-read on 2026-09-19 on the research re-entry from a copy fetched whole over verified TLS and matched to the registered SHA-256 before any page was read."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.liturgical-calendar-dioceses-united-states.2026.ordinary-time-week-numbering"
+loci = [
+  "ordinary-time-week-numbering",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:2ffbbf2ea1f5aef517a49c360b51beb89a6b808aeb1f36acb91fd828338deb90"
+context = "The parenthetical week labels: First Week at 12 January and Eighth Week at the Monday after Pentecost, 25 May; with the Sunday title of 15 February as the Sixth Sunday, read outside the passage's range. They corroborate the thirty-three-week count and the week number computed in research/context.md. Read in the text layer. Re-read on 2026-09-19 on the research re-entry from a copy fetched whole over verified TLS and matched to the registered SHA-256 before any page was read."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.liturgical-calendar-dioceses-united-states.2026.september-20-twenty-fifth-sunday"
+loci = [
+  "september-20-twenty-fifth-sunday",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:4bb5a3e728976bcb366e249380ddb9694c6f7952c11e9a733707409d74a1c3f7"
+context = "The dated entry that controls this occurrence: 20 September 2026, Twenty-Fifth Sunday in Ordinary Time, green, the three reading citations, Lectionary no. 133, Psalter Week I, and no other celebration on the date. Passage registered on this re-entry. Re-read on 2026-09-19 on the research re-entry from a copy fetched whole over verified TLS and matched to the registered SHA-256 before any page was read."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.liturgical-calendar-dioceses-united-states.2026.titulos-liturgicos-septiembre"
+loci = [
+  "titulos-liturgicos-septiembre",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:b6c558041c02d21794e21286d4cbb6a1998e018f119381a0030959b9b748a083"
+context = "The only place the 2026 calendar names the Korean martyrs: an appended Spanish list of liturgical titles by date, not a dated 2026 entry. It corrects the earlier statement in research/context.md that they appear nowhere in the calendar. Passage registered on this re-entry. Re-read on 2026-09-19 on the research re-entry from a copy fetched whole over verified TLS and matched to the registered SHA-256 before any page was read."
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.dominica-xxv-per-annum"
+loci = [
+  "Dominica XXV per annum",
+]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:a1db85bf995d60723a620f7d28118c33de8db099a54c85f7bf329a8316104ff7"
+context = "The Week XXV Latin formulary at artifact pp. 288-289: element order, the absence of a locator on the Entrance antiphon, the Communion locators Ps 118, 4-5 and Io 10, 14, the Vel: structure, the three oration incipits and their conclusions. Controls the Week XXV owner's element table. Passage registered on this re-entry; read in the text layer, with p. 288 also in a rendered page image. Re-read on 2026-09-19 on the research re-entry from a copy fetched whole over verified TLS and matched to the registered SHA-256 before any page was read."
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.rubricae-temporis-per-annum"
+loci = [
+  "rubricae-temporis-per-annum",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:dcd8f89fd9d2c35046aced753c2354ad35617f8073e3a682fdf794171307702d"
+context = "Tempus per annum rubrics 1-6 at artifact pp. 267-268: the week count, the Sunday Mass answering to the Sunday number, Gloria and Creed on Sundays, the Sunday Prefaces, and rubric 6 on the pair of Communion antiphons with its preference for one that agrees with the Gospel. Controls the branch table. Read in the text layer; rubric 6 is letter-spaced in the artifact and was read through that. Re-read on 2026-09-19 on the research re-entry from a copy fetched whole over verified TLS and matched to the registered SHA-256 before any page was read."
+
+[[bindings]]
+source_id = "passage.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002.complete-text"
+loci = [
+  "complete-text",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:28462ed005480e0805d39996c9a2eb315a79b1da8c25d91e930a32e7978b5fa4"
+context = "Nos. 56-61 with the Tabula dierum liturgicorum at artifact pp. 70-71: Sundays per annum at place 6, obligatory memorials of the General Calendar at place 10, and no. 60, under which the higher place is celebrated, only an impeded solemnity is transferred and the remaining celebrations are omitted that year. Controls the omission of the memorial. Only those two pages of the passage's range were read. Re-read on 2026-09-19 on the research re-entry from a copy fetched whole over verified TLS and matched to the registered SHA-256 before any page was read."
+
+[[bindings]]
+source_id = "passage.catholic-church.calendarium-romanum-generale.latin-missale-romanum-typica-tertia-2002.complete-calendar"
+loci = [
+  "complete-calendar",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:8bef1c29da813d7dccc6aa23be1df3156345cad7ac86e14c1e3df1e7a55f4f6d"
+context = "The September page at artifact p. 78, which inscribes Saints Andrew Kim Tae-gon, Paul Chong Ha-sang and Companions on 20 September as Memoria, and the note that an unmarked rank means an optional memorial. Only that page and the January note were read. Re-read on 2026-09-19 on the research re-entry from a copy fetched whole over verified TLS and matched to the registered SHA-256 before any page was read."
+
+[[bindings]]
+source_id = "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.tempus-per-annum"
+loci = [
+  "tempus-per-annum",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:dca2fb4e1dce71f98132cc55c9ffce5cb213af57d2732bab908824ea00bb40fb"
+context = "The Tempus per annum subsection of the 2008 variation list at artifact p. 53 (printed journal p. 371): exactly two entries, at printed Missal pp. 457 and 471, neither in Week XXV. Bounded negative-list evidence only; it does not prove page identity between the 2002 and 2008 printings. Re-read on 2026-09-19 on the research re-entry from a copy fetched whole over verified TLS and matched to the registered SHA-256 before any page was read."
+
+[[bindings]]
+source_id = "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.ordo-missae"
+loci = [
+  "ordo-missae",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:2adbe473be8db34ca022017182eb56cf39a82dfc18936922ef12bf7931a2bb34"
+context = "The Ordo Missae subsection at artifact p. 54 (printed journal p. 372), read for the entry at Missal p. 605, n. 144, which adds three alternative dismissal formulas. They are Ordinary, not proper, and bear only on the concluding-blessing-form branch note. The Supplementum pages of the passage's range were not re-read. Re-read on 2026-09-19 on the research re-entry from a copy fetched whole over verified TLS and matched to the registered SHA-256 before any page was read."
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.ordinary-time-twenty-fifth-sunday"
+loci = [
+  "proper-of-time.ordinary-time.twenty-fifth-sunday",
+]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:678012a00e606f6bd2721e6b535bfe308442f481a9353a80f88c343ba15d3235"
+context = "Artifact p. 87 (printed p. 79): no citation on the Entrance antiphon, Ps 118: 4-5 and Jn 10: 14 on the two Communion antiphons, their either/or structure, and the compiler's sub-line naming Psalm 36[37]: 39-40 as the Entrance antiphon's basis. Corroborates the Latin; no approved English is retained. Passage registered on this re-entry. Re-read on 2026-09-19 on the research re-entry from a copy fetched whole over verified TLS and matched to the registered SHA-256 before any page was read."
+
+[[bindings]]
+source_id = "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.dominica-xxv-per-annum-133"
+loci = [
+  "dominica-xxv-per-annum-133",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:03ace021a8ea4eefa376e608ab80a175936134afaa44246df119255f603acebd"
+context = "No. 133, Year A, printed p. 72 (artifact p. 126): every reading boundary of this Mass, the psalm response locator 18a, the Cf. on the Alleluia verse, the Gospel's incipit, and the three tituli the Ordo sets over the readings. Read in a page image at 200 dpi. Passage registered on this re-entry. Re-read on 2026-09-19 on the research re-entry from a copy fetched whole over verified TLS and matched to the registered SHA-256 before any page was read."
+
+[[bindings]]
+source_id = "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.praenotanda-105-107"
+loci = [
+  "praenotanda-105-107",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:63c71d6276c9bbb9fcfc571721a89351d5c764bdf5790a93935862873635da30"
+context = "Praenotanda 105-107, printed pp. XLIV-XLV: the semi-continuous Gospel and Apostle courses, the choice of the Old Testament reading in relation to the Gospel, and the statement that the relation between the readings of one Mass is shown by the choice of their tituli. Controls the relationship classes. Read in page images at 200 dpi. Passage registered on this re-entry. Re-read on 2026-09-19 on the research re-entry from a copy fetched whole over verified TLS and matched to the registered SHA-256 before any page was read."
+
+[[bindings]]
+source_id = "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.tabella-ii"
+loci = [
+  "tabella-ii",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:4ea628ae9d7d40e2b2b4468a0c4eab0b75f4995f1600a952b12e6cf0732b72e4"
+context = "Tabella II, printed p. LI: Philippians on Sundays 25-28 of Year A. Read in a page image at 200 dpi. Passage registered on this re-entry. Re-read on 2026-09-19 on the research re-entry from a copy fetched whole over verified TLS and matched to the registered SHA-256 before any page was read."
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.48"
+loci = [
+  "48",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1c4e998ab16caffc29376658c96e0aee4d4f67e2065f6fdd26eec15f2ee6637e"
+context = "Entrance chant options; branch entrance-or-communion-chant-substitution. The whole numbered paragraph was read on 2026-09-19 in the dated response registered on this re-entry; the protected English is not retained."
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.51"
+loci = [
+  "51",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:18c72b3b3e8d7d9f61ee36adb54dc67598ed6edb5755c05ce783920c636e8421"
+context = "Sprinkling in place of the Penitential Act on Sundays; branch sprinkling-rite. The whole numbered paragraph was read on 2026-09-19 in the dated response registered on this re-entry; the protected English is not retained."
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.53"
+loci = [
+  "53",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:a613129176ca755b2df5fa6d04629b8fba192c0e3192a84e540c2099af9b6548"
+context = "Gloria on Sundays outside Advent and Lent. The whole numbered paragraph was read on 2026-09-19 in the dated response registered on this re-entry; the protected English is not retained."
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.61"
+loci = [
+  "61",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:11ce929f4eec5ab84fcabd8001ce5cff34106b8788a2dfaa1b691ddbe3a2ecac"
+context = "The psalm's relation to the reading (class responsorial) and the United States substitutes; branch psalm-or-acclamation-chant-substitution. The whole numbered paragraph was read on 2026-09-19 in the dated response registered on this re-entry; the protected English is not retained."
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.62"
+loci = [
+  "62",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:6f4fe2fe0fc2fa3f6e9154be1d1028ed5a5870c04d43ce99cf83bc1afc6643ba"
+context = "The acclamation as a rite in itself (class acclamatory); verses from the Lectionary or the Graduale. The whole numbered paragraph was read on 2026-09-19 in the dated response registered on this re-entry; the protected English is not retained."
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.63"
+loci = [
+  "63",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:a9e8a1228e14283a0735a66962700da0f6adb42abcacd027337a6f693c9fff24"
+context = "Applies only with one reading before the Gospel; read to confirm it does not apply here. The whole numbered paragraph was read on 2026-09-19 in the dated response registered on this re-entry; the protected English is not retained."
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.64"
+loci = [
+  "64",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:57be8b985ebbd147da949ea488505c409b3b4cac721d6c86d5d5c75e70cd8e6d"
+context = "The Sequence; none is appointed. The whole numbered paragraph was read on 2026-09-19 in the dated response registered on this re-entry; the protected English is not retained."
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.68"
+loci = [
+  "68",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:e270749a69ae8b09b8b341569717188efba1c015718261f05250200b4b4d6d4e"
+context = "Creed on Sundays. The whole numbered paragraph was read on 2026-09-19 in the dated response registered on this re-entry; the protected English is not retained."
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.74"
+loci = [
+  "74",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c5ee5ad97103e81dada06b906685e5ce02d241ffab5731b4df32538831dfde47"
+context = "Offertory chant under the norms of no. 48; branch offertory-chant. The whole numbered paragraph was read on 2026-09-19 in the dated response registered on this re-entry; the protected English is not retained."
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.87"
+loci = [
+  "87",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:b535cac724fb5a4cebadd8ec9b5bb827a07e6a4925cc5008a5840d7f7237962a"
+context = "Communion chant options; branch entrance-or-communion-chant-substitution. The whole numbered paragraph was read on 2026-09-19 in the dated response registered on this re-entry; the protected English is not retained."
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.364"
+loci = [
+  "364",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5536f40f7871974896739cf5e5f08c21775eb73c4cd00aee43444be90009f0f2"
+context = "Purpose of the Prefaces; branch compatible-preface-and-eucharistic-prayer. The whole numbered paragraph was read on 2026-09-19 in the dated response registered on this re-entry; the protected English is not retained."
+
+[[bindings]]
+source_id = "artifact.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.usccb-chapter-vii-html-2026-09-19-00067f46"
+loci = [
+  "363",
+  "364",
+  "365",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:22e85fbb5cf444e5645a7c1e072d7f85a433e792ce48ffe1d8844f5fd4fb203a"
+context = "The dated Chapter VII response in which nos. 363, 364 and 365 (a)-(d) were read whole on 2026-09-19: the proper orations and the Ordinary Time weekday alternatives (363), and the norms for choosing a Eucharistic Prayer, including II with its own or another Preface (b) and IV with its invariable Preface, usable on Sundays in Ordinary Time (d). This response differs by two bytes from the state the existing passage records pin, so those records are bound below as catalogued only."
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.363"
+loci = [
+  "363",
+]
+role = "official-control"
+states = ["cataloged"]
+context = "The registered paragraph record, pinned to the 2026-07-23 Chapter VII response, whose bytes this stage could not re-obtain. The paragraph itself was read in the 2026-09-19 response bound above. Catalogued here so the record this leaf's owner cites stands inside the research seal."
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-a"
+loci = [
+  "365(a)",
+]
+role = "official-control"
+states = ["cataloged"]
+context = "The registered paragraph record, pinned to the 2026-07-23 Chapter VII response, whose bytes this stage could not re-obtain. The paragraph itself was read in the 2026-09-19 response bound above. Catalogued here so the record this leaf's owner cites stands inside the research seal."
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-b"
+loci = [
+  "365(b)",
+]
+role = "official-control"
+states = ["cataloged"]
+context = "The registered paragraph record, pinned to the 2026-07-23 Chapter VII response, whose bytes this stage could not re-obtain. The paragraph itself was read in the 2026-09-19 response bound above. Catalogued here so the record this leaf's owner cites stands inside the research seal."
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-c"
+loci = [
+  "365(c)",
+]
+role = "official-control"
+states = ["cataloged"]
+context = "The registered paragraph record, pinned to the 2026-07-23 Chapter VII response, whose bytes this stage could not re-obtain. The paragraph itself was read in the 2026-09-19 response bound above. Catalogued here so the record this leaf's owner cites stands inside the research seal."
+
+[[bindings]]
+source_id = "passage.catholic-church.institutio-generalis-missalis-romani.english-us-2011-emended-2021.365-d"
+loci = [
+  "365(d)",
+]
+role = "official-control"
+states = ["cataloged"]
+context = "The registered paragraph record, pinned to the 2026-07-23 Chapter VII response, whose bytes this stage could not re-obtain. The paragraph itself was read in the 2026-09-19 response bound above. Catalogued here so the record this leaf's owner cites stands inside the research seal."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-24.paris-1865.titles-and-columns-553-556-facsimile-ab821fad"
+loci = [
+  "column-553",
+  "column-554",
+  "column-555",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f23d41438c4a2b2f5361482163dd38e2d882f4e94a2242d7d57c2fa532b6456d"
+context = "Jerome, Commentariorum in Isaiam liber XV, on Isaiah 55:6-7, 8-9 and 10-11, in Migne PL 24 (Paris, 1865, reprinting Vallarsi's second Verona edition), columns 553-555, read in rendered page images of the retained facsimile. Replaces the unidentified remote delivery bound at first submission. All six Latin quotations used in the records were checked on these columns and agree with what was quoted. Also read here: the summons is addressed by the prophet to his own people after 'turba gentilium' took up the mercies of David they refused; and the comment on vv. 8-9 cites Romans 11:33. No critical edition was compared."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-24.paris-1865.ia-djvu-ocr-7be28ebd"
+loci = [
+  "column-553",
+]
+role = "lead"
+states = ["cataloged", "acquired"]
+source_fingerprint = "sha256:80a89a5452671287575c7cc8f44008906ff16cbcc370048c23fe2db70bff2284"
+context = "Complete raw OCR of the volume, used only to locate Book XV on Isaiah 55 (near physical lines 38,020-38,200) before the page images were read. It controls no wording."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-26.paris-1845.columns-139-142-facsimile-654f1196"
+loci = [
+  "column-139",
+  "column-140",
+  "column-141",
+  "column-142",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:58f5dd6d92c512ee807431c84003e58599db13a9c27da3dfab05efbcb413c0e9"
+context = "Jerome, Commentariorum in Evangelium Matthaei liber III, on Matthew 20:1-16, Migne PL 26 (Paris, 1845), columns 140-142, read in rendered page images of the retained facsimile. Opened on this re-entry as one of the ancient commentaries scope section 4 had listed unopened. The parable is read from the saying that precedes it; his own reading of the hours as ages of life; the ages-of-the-world reading reported as that of others; the denarius as the king's image; the murmurers as wanting another to receive nothing; the elder brother of Luke 15. His lemma and comment include the second sentence of v. 16, which this Mass does not appoint."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-37.paris-1845.columns-1509-1510-and-1875-1876-facsimile-5ff13160"
+loci = [
+  "column-1509",
+  "column-1510",
+  "column-1875",
+  "column-1876",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c5eb290cba5628f26b4028bf8532fd467dc7085e03cd61d86c64a67d1d09231f"
+context = "Augustine, Enarrationes in Psalmos, Benedictine text in Migne PL 37 (Paris, 1845): Enarr. in Ps. 118 sermo 4.1-2 at columns 1509-1510 and Enarr. in Ps. 144.10-11 at columns 1875-1876, read in rendered page images of the retained facsimile. The quotations from 118 s. 4.1-2 and from 144.11 were checked on these columns and agree, with j for consonantal i. Augustine's psalter reads 'praecepisti' at Psalm 118:4. Sections 144.3-5, 12 and 21-22 were read only in the unregistered augustinus.it delivery described in scope section 5 and are not covered by this binding."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-92.paris-1862.ia-leaf-n521-0039807e"
+loci = [
+  "column-1025",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:04d5314e944fea5a54400651614c57fcb030f4452d7fe4a9774d606d0195fff8"
+context = "Bede, Liber retractationis in Actus apostolorum, chapter 16, Migne PL 92 (Paris, 1862), column 1025 B-C, read in the retained page image. Later-tier direct reception of Acts 16:14: purpuraria explained; Lydia as a figure of the Church, which received with inward devotion of heart the preaching the Jews repelled. Bede does not comment on the clause that the Lord opened her heart. The volume's registered OCR, fetched whole and hash-matched, was searched for Lydia, purpuraria and Thyatira and returned this locus only; its interleaved columns prevent a clean negative for the earlier Expositio."
+
+[[bindings]]
+source_id = "artifact.hilary-of-poitiers.tractatus-super-psalmos.csel-22-zingerle-1891.ia-leaf-n395-1365c640"
+loci = [
+  "118.11",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:75d338b08dfa8c407827baa68864dce04d3f133ab862440e484e331564751642"
+context = "Hilary, Tractatus in Psalmum 118, Aleph 11, CSEL 22 (Vienna, 1891) p. 366 lines 9-24, on verse 4, read in the retained page image: the commandments are to be carried out with anxious care, nothing with a slack or careless mind."
+
+[[bindings]]
+source_id = "artifact.hilary-of-poitiers.tractatus-super-psalmos.csel-22-zingerle-1891.ia-leaf-n396-edf5bd53"
+loci = [
+  "118.12",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:471f34b6352e69197a9a72ff1d6e8b11f03bc4ef510a2443162a513fe62812f3"
+context = "Hilary, Tractatus in Psalmum 118, Aleph 12, CSEL 22 p. 367 lines 1-5, on verse 5, read in the retained page image: unless directed by God we are weak by nature, and so must be helped and directed by his grace. Second ancient witness for Communion antiphon A."
+
+[[bindings]]
+source_id = "artifact.hilary-of-poitiers.tractatus-super-psalmos.csel-22-zingerle-1891.ia-leaf-n863-dd65e69a"
+loci = [
+  "144.14",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f6c232e12f92eab78ebc2b169b4f05391ce7772288ef8dc27a7f256296c05805"
+context = "Hilary, Tractatus in Psalmum 144.14, CSEL 22 p. 834 lines 24-33, read in the retained page image: God's justice has the will to show mercy without ceasing to be justice, whereas human justice tends to exclude mercy and human mercy justice. Section 14 treats verse 7b, which this Mass does not appoint, as the ground from which the appointed vv. 8-9 'necessarily follow' (section 15, p. 836, read in the OCR only)."
+
+[[bindings]]
+source_id = "artifact.hilary-of-poitiers.tractatus-super-psalmos.csel-22-zingerle-1891.ia-leaf-n867-00c13e9c"
+loci = [
+  "144.21",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:a118fea7327dccbb67be41ba59e31517ae70bf566adf0b5f6f79ff33ff8a09a0"
+context = "Hilary, Tractatus in Psalmum 144.20-21, CSEL 22 p. 838, on verses 17-18, read in the retained page image: God is near to all by nature (Acts 17:28); 'in truth' excludes idle and doubting invocation. Second ancient witness for the responsorial psalm."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.opera-editio-altera-veneta-tomus-3.venice-bettinelli-1745.title-matthew-20-john-10-facsimile-d362fdfe"
+loci = [
+  "In Matthaeum c. 20 lect. 1, printed pp. 258-262",
+  "In Ioannem c. 10 lect. 4, printed p. 662",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:4dc829ba43899381a42dedffdb052de8737f26bd1ef0b9f2eca6bd5db0681992"
+context = "Thomas Aquinas, lectures on Matthew 20:1-16 and on John 10:14-15, in Opera, editio altera Veneta, tomus III (Venice: Bettinelli, 1745). Medieval Doctoral reception. Printed pp. 262 and 662 (artifact pp. 6 and 7 of the retained facsimile) were read in page images at 500 dpi and carry every sentence quoted in the records; pp. 258-261 were read in the OCR and text layer only and are reported by paraphrase. On John the 1745 text prints 'probationis'. No comparison with the Marietti or Leonine text."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.opera-editio-altera-veneta-tomus-3.venice-bettinelli-1745.ia-djvu-ocr-10aa155e"
+loci = [
+  "In Matthaeum c. 20 lect. 1, physical lines 33100-33760",
+  "In Ioannem c. 10 lect. 4, physical lines 84900-85010",
+]
+role = "lead"
+states = ["cataloged", "acquired"]
+source_fingerprint = "sha256:9fcd48561f23ea12b2a7271b5cbcdeaee88f85652a5194fe6756bfb2b4aa558f"
+context = "Complete raw OCR of the 1745 volume, used to locate and to read pp. 258-261 in outline. It controls no wording."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.in-omnes-pauli-epistolas-commentaria.dessain-volume-2-1857.book-facsimile-e8b81493"
+loci = [
+  "Ad Philippenses c. 1 lect. 3, printed pp. 370-372 (artifact pp. 374-376)",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5993ed59d9e013a7b20933ea5af49aeb557c9f345062673f91248f15f9c67ebf"
+context = "Thomas Aquinas, Super Philippenses c. 1 lect. 3 on 1:18-24, in the tracked facsimile of the Dessain edition (Liege, 1857), vol. II. Second checked author on the second reading and its medieval Doctoral witness. Printed pp. 371-372 were read in rendered page images and carry every sentence quoted; p. 370 was read in the OCR."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.in-omnes-pauli-epistolas-commentaria.dessain-volume-2-1857.book-ocr-2b7b11dc"
+loci = [
+  "Ad Philippenses c. 1 lect. 3-4, physical lines 39060-39530",
+]
+role = "lead"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:fc0fe651fc1f34b1d124831a6538442a81cd47acb7ec6161c19a7bfb4269aadf"
+context = "Tracked OCR of the same volume, used to locate lect. 3 and to read lect. 4 on 1:27a in outline (what is required of them is only to live in a manner fitting the Gospel's teaching). Damaged; it controls no wording, and nothing is quoted from lect. 4."
+
+[[bindings]]
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+loci = [
+  "Psalm 118:1-8 (physical lines 4127-4149)",
+  "Psalm 144:2-3, 8-9, 17-18 (physical lines 5049-5077)",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
+context = "Robert Bellarmine, Explanatio in Psalmos, in John O'Sullivan's 1866 English, which the artifact record states is an abridged translation. Later saintly and Doctoral reception for the responsorial psalm and for Communion antiphon A. Read in the tracked historical text; the 1866 facsimile and the Latin were not compared."
+
+[[bindings]]
+source_id = "passage.augustine.in-iohannis-evangelium-tractatus.ccel-web-2026-09-17.47.3"
+loci = [
+  "47.3",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1e9845acadd5cc6d78cb97974cce54ce6e4a28df291aa263ca76d2b5c63901a8"
+context = "Tractate 47.3 (container physical lines 20965-21017), NPNF English: on John 10:15, the Son knows the Father by himself and we by him; Christ is both door and shepherd. Augustine passes from v. 11 to v. 15 and gives the appointed clause of v. 14 no separate comment."
+
+[[bindings]]
+source_id = "passage.augustine.in-iohannis-evangelium-tractatus.ccel-web-2026-09-17.47.4"
+loci = [
+  "47.4",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:ee9748c0a21289826a6f363f445a07c7824b8794b07a63c05659c1866b9077f4"
+context = "Tractate 47.4 (container physical lines 21019-21039), with 47.5 read as context (lines 21041-21057), NPNF English: Christ came in person to Israel and sent to the Gentiles; the 'other sheep' are the Gentiles, brought by him through those he sends; two flocks joined at the corner-stone. Context of the antiphon's verse, not the appointed verse."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.daily-readings.2026-09-20-web-2026-09-19.headings-and-citations"
+loci = [
+  "headings-and-citations",
+]
+role = "official-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:af692f192e514482b35f6e2d750e3207a1e4a82b4089095fcdbaf5633388eaf4"
+context = "The dated USCCB readings page for 20 September 2026: Lectionary 133 and the citation of every unit, with the psalm in the United States Lectionary's Hebrew numbering (145) and Cf. on the acclamation. Second dated official witness of research/context.md. Registered on the research re-entry; the bytes acquired are identical to those recorded by hash at context resolution. Only headings and citations were used; no proclaimed text is retained."
+
+# --- Sources of the Scripture chronology corpus's answers (second re-entry) ---
+#
+# The page-2 Date column rests on these nine cited records. The role is
+# `context` because the library's role vocabulary has no chronology role and
+# none of them witnesses an appointed text or its reception: each is the dated
+# reference work the corpus cites for a composition or event claim. Line
+# numbers are physical lines of the tracked article-text file.
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08179b-d4ee13fd"
+role = "context"
+states = ["cataloged"]
+context = "Catholic Encyclopedia, 'Isaias' (Souvay, 1910): the record the Scripture chronology corpus cites for the first reading's composition claim, 740-701 B.C., in research/chronology.toml. Bound because the page-2 Date column rests on it. The exact New Advent delivery is remote and was not re-obtained, so no state beyond cataloged is claimed; the article was read in its tracked article-text extraction, bound next."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08179b-d4ee13fd-article-text"
+loci = [
+  "line 9: the prophetical ministry 'from the closing year of Ozias, King of Juda, possibly up to that of Manasses', and the chronological sketch's '740, death of Azarias'",
+  "line 11: '740 B.C.' given as the year of that prince's death while reporting Jerome's view of chapter vi, and 'no prophecies appear to be later than 701 B.C.'",
+  "lines 33-39: the first collection's guarded attribution, the 'Second Isaias' section, and the Biblical Commission's decision of 28 June 1908 on chapters xl-lxvi",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f4d698ee3bc68e9257a7106cb2a663c8b5a4d2c78d05e3b3ad9cc535e938c5c8"
+context = "The tracked article-text extraction of the registered delivery, hashed and matched to its record (SHA-256 and byte size) before it was read on the research stage's second re-entry. The corpus label for the first reading is a composite, as the corpus's own basis and note say: its first phrase stands verbatim on line 9, its second on line 11, and the parenthesis '(740 B.C.)' is taken from line 11, where the article attaches that year to the death of Ozias. Every part stands in the article; the label is not one continuous sentence of it. The two years date the prophet's ministry. The article assigns no year to the writing of the collection or to chapters xl-lxvi, in which Isaiah 55 lies. It places liv-lv in its 'Second Isaias' section, reports as 'the contention of most of the modern non-Catholic scholars' that those chapters come from an author living towards the close of the Babylonian Captivity, and sets against it the Biblical Commission's decision that their exilic standpoint does not prove another author. This stage supplies no date from it."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8"
+role = "context"
+states = ["cataloged"]
+context = "Catholic Encyclopedia, 'St. Paul' (Prat, 1911): the record the Scripture chronology corpus cites for one of the second reading's two composition claims (A.D. 61) and for one of the two event claims behind the Alleluia verse's basis (second mission, A.D. 50-53) in research/chronology.toml. Bound because the page-2 Date column rests on it. The exact New Advent delivery is remote and was not re-obtained, so no state beyond cataloged is claimed; the article was read in its tracked article-text extraction, bound next."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8-article-text"
+loci = [
+  "line 45, read whole (section 'Chronology', whose earlier paragraphs from line 13 were read in their opening sentences only): the one-sentence list of chief dates, with 'second mission, 50-53' and '(Philemon; Colossians; Ephesians; Philippians), 61' inside 'captivity at Rome, 60-62'",
+  "lines 105-111: the section 'Second mission (Acts 15:36-18:22)', read at its heading, its opening paragraph and the sentence of line 111 on the first preaching at Philippi",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:83263e9b6b864dbc2776538285f276ac7740d8e39098d077148ce421ca998f4f"
+context = "The tracked article-text extraction of the registered delivery, hashed and matched to its record before it was read on the research stage's second re-entry. Both corpus labels stand verbatim in the one sentence of line 45, which the article introduces as a fixing of the chief dates that takes 'all certain or probable data' into account. The article's second-mission section is headed with Acts 15:36-18:22, the range in which Acts 16:14 falls, and places Philippi in it. It does not name Lydia."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12008a-1e39e824"
+role = "context"
+states = ["cataloged"]
+context = "Catholic Encyclopedia, 'Epistle to the Philippians' (Vander Heeren, 1911): the record the Scripture chronology corpus cites for the second of the second reading's two composition claims (A.D. 62-64) in research/chronology.toml. Bound because the page-2 Date column rests on it. The exact New Advent delivery is remote and was not re-obtained, so no state beyond cataloged is claimed; the article was read in its tracked article-text extraction, bound next."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12008a-1e39e824-article-text"
+loci = [
+  "line 55 (section 'Place and date'): written during the captivity, 'not at Caesarea, as some have maintained, but at Rome (A.D. 62-64)'",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:2bf6d48ad3c4135e9ea5562cb4870a8eb49aec0099aa2af1f735f7a16c4b0711"
+context = "The tracked article-text extraction of the registered delivery, hashed and matched to its record before it was read on the research stage's second re-entry. The corpus label stands verbatim on line 55. The same paragraph says critics do not agree whether the letter was written at the beginning or the end of the Roman sojourn, and that the author holds for the end. The article prints the ligature in 'Caesarea'; the locus above spells it out."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01117a-582c8526"
+role = "context"
+states = ["cataloged"]
+context = "Catholic Encyclopedia, 'Acts of the Apostles' (Breen, 1907): the record the Scripture chronology corpus cites for the composition claim of the Alleluia verse's basis (c. A.D. 64) in research/chronology.toml. Bound because the page-2 Date column rests on it. The exact New Advent delivery is remote and was not re-obtained, so no state beyond cataloged is claimed; the article was read in its tracked article-text extraction, bound next."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01117a-582c8526-article-text"
+loci = [
+  "line 71 (section 'Date of composition'): 'the year 64 is the most probable date for the Acts'",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:9a72b7ba39f49b911757d500055a42e274e143ee2b6e9b0383efbd024ae52d1a"
+context = "The tracked article-text extraction of the registered delivery, hashed and matched to its record before it was read on the research stage's second re-entry. The corpus label stands verbatim on line 71. The paragraph claims only 'a probable date for the completion of the book', reckoned as two years after Paul's coming to Rome, which it places in 62."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04"
+role = "context"
+states = ["cataloged"]
+context = "Catholic Encyclopedia, 'Biblical Chronology' (Howlett, 1908): the record the Scripture chronology corpus cites for the second of the two event claims behind the Alleluia verse's basis (second journey, c. A.D. 51-54) in research/chronology.toml. Bound because the page-2 Date column rests on it. The exact New Advent delivery is remote and was not re-obtained, so no state beyond cataloged is claimed; the article was read in its tracked article-text extraction, bound next."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04-article-text"
+loci = [
+  "line 215 (section 'The apostles'): the second journey '(xv, 36-xviii, 22) ... ended not very long before the third missionary expedition began, probably in 54, and began about three years previously, in 51'",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f8dd64daaeb2a33bcb9843f89a3b9572d7dda801f56a3c8092c534c536cc7eed"
+context = "The tracked article-text extraction of the registered delivery, hashed and matched to its record before it was read on the research stage's second re-entry. Both phrases of the corpus label stand verbatim in one sentence of line 215; the label gives them in the order beginning-then-end, joined by an ellipsis, where the sentence gives the end first. The sentence has just put the start of the third journey in the summer of 55, so 'probably in 54' is the end of the second. The article gives the journey's extent as Acts 15:36-18:22, in which Acts 16:14 falls. The paragraph was read from its opening through the dating of the Council of Jerusalem."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef"
+role = "context"
+states = ["cataloged"]
+context = "Catholic Encyclopedia, 'Gospel of St. Matthew' (Jacquier, 1911): the record the Scripture chronology corpus cites for five of the Gospel's six disputed composition claims (c. A.D. 38-45, 40-42, 40-45, 60-68 and 64-67) in research/chronology.toml. Bound because the page-2 Date column rests on it. The exact New Advent delivery is remote and was not re-obtained, so no state beyond cataloged is claimed; the article was read in its tracked article-text extraction, bound next."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef-article-text"
+loci = [
+  "line 201 (section 'Date and place of composition'): 'about A.D. 38-45', 'about the year 40-42', 'about the year 60-68' and 'about the years 64-67'",
+  "line 203: 'Catholic critics, in general, favour the years 40-45', with the individual Catholic, Protestant and liberal figures that follow",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:a5698ebe70292d9dc1c32df2c8cc440778cb8d0dc2f840f11d127482a4c4d5dd"
+context = "The tracked article-text extraction of the registered delivery, hashed and matched to its record before it was read on the research stage's second re-entry. All five corpus labels stand verbatim, four on line 201 and one on line 203; both paragraphs were read whole. The first paragraph opens by saying the ancient writers are at variance and the second that opinion in the author's day is divided, and the article settles on none of the five figures; of the testimony behind 64-67 it says the text's difficulties prevent 'any positive conclusion'. That agrees with the corpus's disposition of every claim as disputed."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"
+role = "context"
+states = ["cataloged"]
+context = "Catholic Encyclopedia, 'The New Testament' (Durand, 1912): the record the Scripture chronology corpus cites for one of the Gospel's composition claims (c. A.D. 50), for one of Communion antiphon B's two composition claims (c. A.D. 90-100), and beside Jacquier's article on the claim labelled 'about A.D. 38-45' in research/chronology.toml. Bound because the page-2 Date column rests on it. The exact New Advent delivery is remote and was not re-obtained, so no state beyond cataloged is claimed; the article was read in its tracked article-text extraction, bound next."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c-article-text"
+loci = [
+  "line 29: the original text of St. Matthew 'earlier than the Epistles of St. Paul and consequently about the year 50'",
+  "line 33: 'we must not expect from the ancients the precision of our modern chronology'",
+  "line 35: the Johannine writings 'from the year 90 to 100 (approximately)'",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:0a5a9e3b92db7d3a9953343ff8b1a04ec7baa2a01adbf31eadc28dc4e8f410d4"
+context = "The tracked article-text extraction of the registered delivery, hashed and matched to its record before it was read on the research stage's second re-entry, lines 25-35. The labels 'about the year 50' and 'from the year 90 to 100 (approximately)' stand verbatim. The figure 38-45 does not occur in this article: the corpus's own note says it cites Durand on that claim only for the caution on line 33, and the label itself is Jacquier's. 'About the year 50' is said of Matthew's original Aramaic text; of its Greek rendering the article says nothing definite is known."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08438a-7620a92c"
+role = "context"
+states = ["cataloged"]
+context = "Catholic Encyclopedia, 'Gospel of St. John' (Fonck, 1910): the record the Scripture chronology corpus cites for the second of Communion antiphon B's two composition claims (A.D. 96-100) in research/chronology.toml. Bound because the page-2 Date column rests on it. The exact New Advent delivery is remote and was not re-obtained, so no state beyond cataloged is claimed; the article was read in its tracked article-text extraction, bound next."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08438a-7620a92c-article-text"
+loci = [
+  "line 95 (section 'Circumstances of the composition'): 'the last decade of the first century, or to be still more precise, to 96 or one of the succeeding years'",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:2d7748398f07ac0668c1cedf99f2140fdcbbeee432e46056d379c5b1e6d4dcfb"
+context = "The tracked article-text extraction of the registered delivery, hashed and matched to its record before it was read on the research stage's second re-entry. The corpus label stands verbatim on line 95, in a sentence the article introduces as 'the general opinion' and prefaces with the admission that 'we possess no certain historical information' on the date. The upper bound of the corpus's interval is the article's 'last decade of the first century' in the same sentence."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"
+loci = ["Psalms introduction"]
+role = "context"
+states = ["cataloged"]
+context = "The protected introduction the Scripture chronology corpus cites for the one composition claim of the responsorial psalm and of Communion antiphon A, the whole-Psalter boundary 'before c. 165 B.C.' in research/chronology.toml. Bound because the page-2 Date column rests on it. Catalogued only, with no fingerprint: the registered artifact of 2026-07-28 is restricted and unretained, and this stage did not obtain its bytes. What this stage read, on 2026-09-19, was the page's current public delivery, which differs from the registered bytes in size and hash and is unregistered and unretained (research/scope.md sections 5 and 8). Read there at the sentence on dating: in substance the corpus label stands, as the corpus's own summary of protected prose and not as the source's wording. Nothing of the introduction is quoted in this leaf."

@@ -1,0 +1,70 @@
+# Controlling evidence this leaf's research reads outside the leaf and outside
+# the ancestry of its registered source bindings. The engine separately seals
+# the leaf's own research/, propers/ and instance/ records, every bound source
+# record with its ancestry and available payloads, and, for the chronology, the
+# computation code and the stable PC identity registry.
+#
+# - The Week XXV directory is this edition's canonical shared Missal owner. It
+#   alone carries the formulary's witnesses, and the research stage added four
+#   bounded findings to it. It is fingerprinted into research/chronology.toml.
+# - The edition registry directory holds the index, the formula dispositions
+#   (row PC-S51-A) and the 2026 occurrence record. The first two are
+#   fingerprinted into the chronology record; the third carries the dated
+#   occurrence that research/context.md resolves.
+# - The two postconciliar calendar files are the finding aids
+#   research/context.md used for the day and precedence computations. They are
+#   computation inputs to that record and are not appointment authorities: the
+#   index's Psalm 118:4-5 entry for this Mass is wrong and is not followed.
+# - The two postconciliar inventories hold the ot-25 rights rows that
+#   research/context.md and the owner read as leads for the display of the
+#   Latin and the approved English.
+# - The five authored Scripture-chronology files are the corpus whose answer is
+#   research/chronology.toml and research/chronology-annotations.tex. Every
+#   date the concise opening may print comes from them and from nowhere else.
+#   The nine source records the corpus cites for those answers (eight Catholic
+#   Encyclopedia articles and the NABRE Psalms introduction) are not declared
+#   here because each is bound by source ID in research/source-bindings.toml,
+#   which seals the cited record, its ancestry and, for the eight articles, the
+#   tracked article text this research read (research/scope.md section 8).
+# - The Catholic Encyclopedia rights record is the one place that settles the
+#   public-domain standing of those eight article texts, which this leaf's
+#   records quote in short phrases. Each artifact record names it only in
+#   prose, so binding ancestry does not reach it, and it is declared here.
+# - The canon and concordance data the chronology computation opens when it
+#   answers this leaf. Traced on the research re-entry (iteration 1) with a
+#   Python audit hook over `proper-chronology record --check` and
+#   `annotations --check`: the two runs open 1,576 files beneath src/, and
+#   every one of them lies under a path declared here or inside the leaf
+#   (research/scope.md section 8). Besides the five corpus files and the
+#   finding aids above they are the Clementine book index, the Clementine
+#   chapter files, and the verse texts of three editions that
+#   scripts/_psalter.py and scripts/_deuterocanon.py read to build the Psalter
+#   concordance behind the Hebrew-to-Vulgate conversions this leaf depends on
+#   (Psalm 145 to 144, Psalm 119:4-5 to 118:4-5): the Douay-Rheims (Challoner),
+#   the Revised Version and the World English Bible Catholic edition. Each is
+#   declared by edition directory, the smallest owner that covers every verse
+#   file the computation opens. The Douay directory is also where the research
+#   stage read its study-text boundaries.
+# - The liturgical authorities (national calendar, Missal, Universal Norms,
+#   General Calendar, 2008 variation list, Antiphonary, Ordo lectionum Missae,
+#   General Instruction) are not declared here because each is bound by source
+#   ID in research/source-bindings.toml, which seals its record and ancestry.
+paths = [
+  "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/25",
+  "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/registry",
+  "src/sources/calendars/postconciliar/propers.yaml",
+  "src/sources/calendars/postconciliar/rubrics.yaml",
+  "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+  "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml",
+  "src/sources/chronology/profiles.yaml",
+  "src/sources/chronology/events.yaml",
+  "src/sources/chronology/composition.yaml",
+  "src/sources/chronology/bindings.yaml",
+  "src/sources/chronology/gaps.yaml",
+  "src/sources/inventories/catholic-encyclopedia-rights-v1.toml",
+  "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc/artifacts/book-index-fcad78c2",
+  "src/sources/bibles/clementine-vulgate/chapters",
+  "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581",
+  "src/sources/works/convocation-of-canterbury/revised-version/editions/ebible-eng-rv",
+  "src/sources/works/ebible-org/world-english-bible/editions/catholic-eng-web-c",
+]
