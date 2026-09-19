@@ -1,6 +1,48 @@
 schema_version = 1
 
 [[deliverables]]
+id = "claude-postconciliar-twenty-fifth-three-documents-2026-09-19"
+owner = "PROJECT-WORK.md"
+promise = "Drive the proper-study v4 workflow for provider claude on the postconciliar Twenty-Fifth Sunday in Ordinary Time, Year A, for Sunday 2026-09-20 through terminal acceptance: expansive study, 10–12-page concise study and standalone homily with fresh cold reviews; document every workflow cycle encountered; recover parallel attempts to fix Claude's non-converging workflow runs; reconcile with main, push, verify the Pages workflow, and finish with an independent cold review."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "claude-pc-authorization"
+  criterion = "The exact provider and identity authorization is recorded in the production plan before the run is seeded, and the Claude leaf is authored independently of the GPT leaf for the same identity and of every 1962 leaf."
+  status = "pass"
+  evidence = ["guidance/liturgy/propers-production-plan.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-pc-run-accepted"
+  criterion = "A proper-study v4 run for provider claude, identity liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a, date 2026-09-20, reaches ACCEPTED with every review a fresh worker at the declared effort; the three reviewed PDFs and the canonical web edition are installed with exact reviewed bytes and the owning leaf archives the run evidence."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-pc-cycles-documented"
+  criterion = "Every repair cycle the run entered (review to owner and back, gate failure and retry, refused result) is recorded in a tracked record with its stage, iteration, cause, repair and outcome, and any repeatable lesson is promoted or explicitly declined."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-pc-looping-fix-recovery"
+  criterion = "Directories and branches parallel to this workspace are surveyed again, as a delta against the 2026-09-18 recovery record, for work that attempted to fix Claude's non-converging workflow runs; each new or changed item is classified as already on main, superseded, recovered, or recorded-only, with evidence."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-pc-main-and-pages"
+  criterion = "The work is reconciled with current main without rewriting published history, passes the deployment gates locally, reaches origin/main by fast-forward, and the triggered Pages run and the new public routes are verified."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-pc-final-cold-review"
+  criterion = "After integration, a fresh reviewer with no production history reviews the delivered three documents, the web edition and the run record, and its findings and their dispositions are recorded."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "claude-1962-seventeenth-three-documents-2026-09-18"
 owner = "PROJECT-WORK.md"
 promise = "Drive the proper-study v3 workflow for provider claude on the 1962 Seventeenth Sunday after Pentecost for Sunday 2026-09-20 through terminal acceptance: expansive study, 10–12-page concise study and standalone homily with fresh cold reviews; document every workflow cycle encountered; recover parallel attempts to fix Claude's non-converging workflow runs; reconcile with main, push, verify the Pages workflow, and finish with an independent cold review."

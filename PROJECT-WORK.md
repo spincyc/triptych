@@ -5,7 +5,31 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-09-18.
+Last reconciled: 2026-09-19.
+
+## Claude postconciliar Twenty-Fifth Sunday three documents, 2026-09-19
+
+<!-- promised-deliverable: claude-postconciliar-twenty-fifth-three-documents-2026-09-19 -->
+
+The maintainer requested the three proper-study documents for provider
+`claude` for the postconciliar Mass of Sunday 20 September 2026, the
+Twenty-Fifth Sunday in Ordinary Time, Year A
+(`liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a`),
+using the `proper-study` workflow and driven to completion; every workflow
+cycle encountered documented; recovery of work in parallel directories that
+attempted to fix Claude's non-converging workflow runs; reconciliation with
+`main`, push and Pages verification through workflow completion; and a final
+cold review. Sub-agents are allowed. The authorization is recorded in the
+[production plan](guidance/liturgy/propers-production-plan.md). This is an
+independent Claude production: it borrows neither the GPT leaf for the same
+identity, nor that leaf's accepted verdicts, nor anything from either
+provider's 1962 leaf for the same Sunday.
+
+**State: authorized, nothing seeded.** This is the first run of `proper-study`
+v4, the version the Claude Seventeenth Sunday run produced, and the first
+Claude run of the postconciliar path. The recovery request is a delta against
+the [2026-09-18 recovery record](workflows/reviews/claude-loop-recovery-2026-09-18/README.md),
+not a repeat of it.
 
 ## Claude 1962 Seventeenth Sunday three documents, 2026-09-18
 
