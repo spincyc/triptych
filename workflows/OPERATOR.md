@@ -95,6 +95,19 @@ New runs require that contract; existing schema-1 and older schema-2 publication
 keep their original validation rules. Source, content and visual reviewers
 judge the material; marker and PDF-count gates prove only mechanical placement.
 
+Version 4 is what the first real Claude run of this workflow found, and it
+changes no stage order. Each of the six review stages now declares
+`review_scope`, so a later evaluation of the same document is told what moved
+since it last read it, as the two older pipelines already tell their
+evaluators; under version 3 every re-review was a full cold read, and one
+review reached three consecutive rounds raising nothing but new findings
+against a ceiling of four. The six review schemas now admit the `accepted` and
+`escalation` severities that `common/result-format.md` documents in every one
+of their packets and that the engine has always handled; under version 3 a
+reviewer that followed its packet and accepted a defect had its whole
+submission refused. Both changes move the workflow digest, so a version-3 run
+cannot advance under them: complete it, or seed a new run.
+
 Both study authors now build their own settled, edition-scoped proofs before
 cold content review. The later three-document build may make bounded layout
 repairs, but changed source bytes invalidate their prior content seals. Before

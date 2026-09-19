@@ -15,14 +15,16 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-run-accepted"
   criterion = "A proper-study v3 run for provider claude, identity liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost, date 2026-09-20, reaches ACCEPTED with every review a fresh worker at the declared effort; the three reviewed PDFs and the canonical web edition are installed with exact reviewed bytes and the owning leaf archives the run evidence."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/record.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/terminal-status.json", "web/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md", "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.json"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "claude-cycles-documented"
   criterion = "Every repair cycle the run entered (review to owner and back, gate failure and retry, refused result) is recorded in a tracked record with its stage, iteration, cause, repair and outcome, and any repeatable lesson is promoted or explicitly declined."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/claude-1962-57-production-2026-09-19/CYCLES.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/production-review.md", "tools/tests/test_workflow_advisory_ownership.py"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "looping-fix-recovery"

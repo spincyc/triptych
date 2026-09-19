@@ -36,10 +36,50 @@ Six legacy-workflow convergence defects it names remain open and unrepaired,
 including the `seam` findings that never charge the repeat budget; no engine
 change was authorized by this request.
 
-**Production: in progress.** Run `1e02dc05f2df9940` was seeded at `72616eb9c`
-(`proper-study` v3). Every stage is dispatched as a fresh Claude Code harness
-subagent. Those inherit the driver's `xhigh` effort, so author stages declared
-`high` run one level higher; the run records this as intervention 0000.
+**Production: ACCEPTED.** Run `1e02dc05f2df9940` (`proper-study` v3, seeded at
+`72616eb9c`) reached its terminal publication gates over 86 packets and 86
+results. The three documents are a 38-page expansive study, a 12-page concise
+companion meeting the maintainer's 10-12-page requirement with its opening
+sequence proved by settled physical-page markers, and a 5-page homily whose
+1,429-word spoken body is about eleven minutes by arithmetic, with no timed
+delivery claimed. Installed bytes are the reviewed bytes; the canonical web
+edition matches its conversion receipt. The run's packets, results, seed
+identity, terminal records and interventions are archived under the leaf's
+`evaluations/proper-study-results/1e02dc05f2df9940/`.
+
+Every stage ran as a fresh Claude Code harness subagent, which inherits the
+driver's `xhigh` effort, so author stages declared `high` ran one level above
+it and no stage ran below its declared level; intervention 0000 records this.
+
+**Sixteen cycles, recorded.** Fifteen came from review findings and one from a
+mechanical seal, and no stage exhausted a budget; `study-review` came within
+one round of the stop for a review that will not terminate. Six of the fifteen
+were created by the repair of an earlier finding, which is what a dense
+document does to a cold reader. The blocking findings included a false claim
+of having searched a source, an invented disagreement between two Fathers, a
+psalm citation carried from a translator's own faulty note, a record claiming
+an edit that had been reverted, running heads overprinting in the built PDF,
+and an Augustine quotation truncated into an unqualified denial that the Word
+and the flesh are one. The full account is the
+[cycle record](workflows/reviews/claude-1962-57-production-2026-09-19/CYCLES.md).
+
+**Two advisories stand that no stage of the run could clear**, both
+research-owned record gaps whose evidence is present and verified: Aquinas is
+absent from `research/interpretations.md` section 3 although the manifest and
+the study develop him, and the Augustine clause the second reading now turns
+on is not transcribed into the research records. Intervention 0001 records the
+decision not to manufacture a blocking finding to force a research re-entry.
+
+**Four workflow defects the run exposed are repaired at v4**, each pinned by a
+test that fails without it: an advisory died when a different evaluator
+passed; the six review schemas refused the `accepted` and `escalation`
+severities their own packets document; `proper-study` scoped none of its
+re-reads where the older pipelines scope theirs; and a run's own
+standing-findings record made derived PDFs stale, which moved the clock in a
+log the run had sealed. A fifth is recorded and not repaired: the chronology
+tools read data files the engine neither seals nor lists. The only other run
+bound to v3 is the GPT postconciliar stub `9818cd3399aee297`, which holds no
+authored work and must be re-seeded.
 
 ## Three-document proper studies and homilies, 2026-09-17
 
