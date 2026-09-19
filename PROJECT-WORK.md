@@ -51,6 +51,21 @@ Every stage ran as a fresh Claude Code harness subagent, which inherits the
 driver's `xhigh` effort, so author stages declared `high` ran one level above
 it and no stage ran below its declared level; intervention 0000 records this.
 
+**Published and verified live.** Checkpoint `1a2e66c1c` was fast-forward
+pushed to `main` after the four local deploy gates passed:
+`make check-sources`, `make check-release-bindings`,
+`make check-deployment-sources`, `make public-site` and
+`public-alpha verify --deployment-target github-pages`. Two refusals on the
+way were correct and are recorded in their own commits: the publication
+inventory did not carry the new leaf, and the site-source approval no longer
+matched the regenerated catalogue.
+[Pages run 35436686356](https://github.com/spincyc/triptych/actions/runs/35436686356)
+succeeded on that exact SHA. All four public routes return HTTP 200 and are
+byte-identical to the local artifacts, at 38, 12 and 5 physical pages with the
+web page carrying its ten appointed-element anchors; the
+[deployment evidence](workflows/reviews/claude-1962-57-production-2026-09-19/deployment-evidence.json)
+records each comparison and what it does not cover.
+
 **Sixteen cycles, recorded.** Fifteen came from review findings and one from a
 mechanical seal, and no stage exhausted a budget; `study-review` came within
 one round of the stop for a review that will not terminate. Six of the fifteen

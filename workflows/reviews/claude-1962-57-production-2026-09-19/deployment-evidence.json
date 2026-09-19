@@ -1,0 +1,47 @@
+{
+  "record_type": "deployment-verification",
+  "verified_on": "2026-09-19",
+  "commit": "1a2e66c1c16c3e44c7814295872a9df2d902045c",
+  "workflow_run": "https://github.com/spincyc/triptych/actions/runs/35436686356",
+  "workflow_conclusion": "success",
+  "publication": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+  "provider": "claude",
+  "routes": [
+    {
+      "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf",
+      "http_status": 200,
+      "physical_pages": 38,
+      "sha256": "a5705241a178bc453e6a93c23f9f6e9201faac8630361470830e51b839dc05d5",
+      "compared_with": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf",
+      "http_status": 200,
+      "physical_pages": 12,
+      "sha256": "126bf160fb5de7e936399c24396d8bc93b46126e736e5f2d0b0a348591959dd7",
+      "compared_with": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf",
+      "http_status": 200,
+      "physical_pages": 5,
+      "sha256": "923fb4936d107d3dec13fc6cf1b7a9197aed5dbb1ef19ae20cc5bb8f2d2fb289",
+      "compared_with": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/web/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.html",
+      "http_status": 200,
+      "sha256": "a59334b9a1ba9f309f88411b7b25fc7cc8fab34fa8990eaad8e63fb95b5fd773",
+      "compared_with": "build/public-alpha/site/web/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.html",
+      "match": "byte-identical",
+      "appointed_element_anchors": 10
+    }
+  ],
+  "not_verified": [
+    "Visual presentation in a browser: the routes were fetched and compared as bytes, not rendered.",
+    "Routes of other publications: only this leaf's four were checked."
+  ]
+}

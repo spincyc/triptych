@@ -36,8 +36,9 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-main-and-pages"
   criterion = "The work is reconciled with current main without rewriting published history, passes the deployment gates locally, reaches origin/main by fast-forward, and the triggered Pages run and the new public routes are verified."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/claude-1962-57-production-2026-09-19/deployment-evidence.json", "PROJECT-WORK.md", ".github/workflows/pages.yml"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "claude-final-cold-review"
