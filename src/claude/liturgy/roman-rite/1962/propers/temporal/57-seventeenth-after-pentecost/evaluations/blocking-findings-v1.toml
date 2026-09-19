@@ -49,12 +49,24 @@ provider = "claude"
 run_id = "1e02dc05f2df9940"
 workflow = "proper-study"
 workflow_version = 3
-stage = "study-review"
-iteration = 1
+stage = "homily-review"
+iteration = 3
 disposition = "PASS"
 standing = 0
 accepted_count = 0
-advisory_count = 8
+advisory_count = 11
+observation_count = 0
+
+[[stages]]
+stage = "homily-review"
+iteration = 3
+disposition = "PASS"
+run_id = "1e02dc05f2df9940"
+workflow = "proper-study"
+workflow_version = 3
+standing = 0
+accepted_count = 0
+advisory_count = 1
 observation_count = 0
 
 [[stages]]
@@ -80,6 +92,26 @@ standing = 0
 accepted_count = 0
 advisory_count = 5
 observation_count = 0
+
+[[stages]]
+stage = "synthesis-review"
+iteration = 1
+disposition = "PASS"
+run_id = "1e02dc05f2df9940"
+workflow = "proper-study"
+workflow_version = 3
+standing = 0
+accepted_count = 0
+advisory_count = 2
+observation_count = 0
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-001"
+severity = "advisory"
+location = "sections/homily/90-note.tex, References, the fifth entry: \"St Augustine, \\work{Enarrationes in Psalmos} 109, 3--6, Latin text of Migne, PL 37.\""
+problem = "The entry cites the Latin as \"Latin text of Migne, PL 37\" without saying that it was read from a tracked digital transcription rather than from the printed columns. The reviewed expansive study's own apparatus discloses the delivery for this very source at sections/90-apparatus.tex line 114, \"Latin text of Migne, PL 36--37 (Wikisource and Corpus Corporum)\", and the leaf binds the passage to artifact.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-part-11-latin-text, which is where I verified the quoted matter (\"Respondeamus omnino quod Judaei, sed non remaneamus ubi Judaei\" and \"in forma Dei ... ideo Dominus David: sed temetipsum exinanisti formam servi accipiens; inde filius David\"). The same holds for the Jerome entry, whose passage record states in terms that printed-image collation was not performed. The note is otherwise scrupulous about routes, flagging the 1861 Cummiskey English as a historical study aid and not an approved liturgical translation, naming the NPNF translators for both Greek and Latin Fathers quoted in English, and saying that the Offertory antiphon is a compilation quoted in no English at all, so these two entries are the only place a reader could take a printed-page reading to have been performed when it was not."
+required_result = "The References either name the delivery through which each Latin text was actually read, matching the disclosure the reviewed study's apparatus already carries for the Enarrationes, or the note's \"English quoted, and its route\" paragraph states once that the Latin of Augustine on Ps 109 and of Jerome on Daniel is read from tracked digital transcriptions of Migne and not from the printed columns."
 
 [[advisories]]
 stage = "research-review"
@@ -144,3 +176,19 @@ severity = "advisory"
 location = "sections/10-each-element.tex, \"Introit: the just God and the servant's plea\" (PDF p. 9): \"Three verses further on, in the strophe the antiphon passes over, the psalm prays Faciem tuam illumina super servum tuum (v. 135)\""
 problem = "The offset is wrong on every reading available to the reader. The verses named in the sentences before are Ps 118:124 and the psalm verse Ps 118:1, and v. 135 is eleven verses after the first and a hundred and thirty-four after the second; counted from the antiphon's opening v. 137 it is two verses earlier, not three later. The rest of the sentence is exact and checkable -- v. 135 is the right verse, it does stand in the strophe Phe (vv. 129--136) that the antiphon passes over between v. 124 and v. 137, and it does carry the verb and construction the Offertory uses of the sanctuary, as research/scope.md 1.1a records. Only the numeral has no anchor, and a reader who counts finds nothing at the place the sentence sends him."
 required_result = "The sentence locates Ps 118:135 by something a reader can check -- for example \"Two verses before the antiphon's own verse 137, in the strophe the antiphon passes over\" -- or drops the offset and keeps the strophe and the verse number, which already fix the place."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-007"
+severity = "advisory"
+location = "sections/concise/04-themes.tex, penultimate paragraph (PDF p. 4): \"Two habits of speech run through the whole of it. The first is the word ``one'': seven times in three verses of the Epistle, once in the Collect's te solum Deum, and once more in the Gospel, where the Lord of David's psalm sits at the right hand of the God whom the great commandment names.\""
+problem = "The verse span is now right (SYN-002 is cleared), but two of the three sites the sentence counts are not occurrences of the word it announces. The Collect reads te solum Deum: solum is 'alone, only', not unus, and the 1962 Latin collated in propers/verified.md section 2 carries no unus anywhere in the prayer, which is why the 1861 English prints 'thee, the only true God' and the concise study's own map glosses it 'the one God'. The Gospel carries none either: I read Mt 22:34-46 in the tracked Clementine text (src/sources/bibles/clementine-vulgate/chapters/Matt/22.json) and the pericope has no unus, the only 'one' in the Douay of the passage being 'one of them, a doctor of the law' (v. 35) in an unrelated sense; and the clause the sentence offers in its place -- 'where the Lord of David's psalm sits at the right hand of the God whom the great commandment names' -- states an identification, not a word. So the paragraph opens by naming a habit of the appointed wording and then, at two of three sites, silently moves from the word to the theme. Only the Epistle's sevenfold unus is a count of a word; the second habit the same paragraph names, the plea to be heard, is described as a theme and is exact. Nothing in the argument turns on it and the paragraph's real point -- that the Mass keeps returning to the oneness of the God it asks to be loved -- is sound, which is why this does not block. I file it at the severity this leaf has fixed for the same class of textual slip, SYN-002 in this component and STU-007 in the study, both advisory and standing. The sentence is the concise study's own; the corresponding passage does not stand in the expansive study, so the slip enters at this derivation."
+required_result = "The sentence counts as the word 'one' only what the appointed Latin carries -- the Epistle's sevenfold unus -- and names the Collect's te solum and the Gospel's identification of the one God for what they are, or else the whole habit is stated as a habit of thought rather than of wording, so that a reader who turns to the Missal's Collect and Gospel finds what the sentence sends him for."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-008"
+severity = "advisory"
+location = "sections/concise/10-commentary.tex, 'The voice in which this people prays', second paragraph (PDF p. 9): \"The Offertory is the one element where a disagreement touches the praying subject himself.\""
+problem = "The paragraph eight lines above it reports a disagreement that touches the praying subject at least as directly. There Augustine hears the poor man of Ps 101 as Christ, head and body, 'Vox ergo una, quia caro una', and Cassiodorus declines to put the psalm in Christ's mouth and hears the poor of Christ instead -- a dispute precisely about whose voice the Alleluia is, which the same subsection then turns to account by giving the two answers to different readings. The Offertory's disagreement (Jerome allowing that a sinless Daniel joined himself to a sinful people out of humility, Augustine resting on 'My sins, and the sins of my people') is real and correctly reported, but it is not the only one of its kind in the formulary and the counter-example is printed on the same page. This is the third editorial superlative of the kind in this component: SYN-005 named the other two -- 'the one place in this formulary where two lines of exegesis run against each other' at Eph 4:6 and the Alleluia 'divid[ing] its witnesses more sharply than any other element' -- and both were repaired at iteration 1, leaving this one standing. Neither the expansive study nor research/interpretations.md section 3.6 claims uniqueness here; the study's comparison section lists six narrow disagreements without ranking them. No witness is misrepresented and nothing in the argument turns on it, which is why it does not block; it is filed at the severity SYN-005 fixed for the class."
+required_result = "The sentence introduces the Offertory's disagreement without the uniqueness claim -- for example 'At the Offertory the disagreement touches the praying subject himself' -- or says what distinguishes it from the Alleluia's disagreement over whose voice prays, so that the two statements in the same subsection agree."

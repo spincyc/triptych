@@ -1,0 +1,62 @@
+% Homily for the Seventeenth Sunday after Pentecost, derived from the two
+% reviewed studies of this same leaf. The spoken body is set larger and looser
+% than the studies --- 12.5pt on 17pt leading, unjustified, with a clear space
+% between paragraphs --- so that a speaker can lift his eyes from the page and
+% find his place again. The terminal note and the References return to the
+% leaf's ordinary type and are not read aloud.
+%
+% The three-document profile offers 12.5--13pt on 18pt leading as a starting
+% point and asks that the actual pages be judged rather than the numbers kept
+% as a quota. At 12.8pt on 18pt the speech ran to four pages of which the last
+% carried two paragraphs and was otherwise empty; at the values below it
+% occupies three well-filled pages, with the same relative leading the studies
+% use and type a point and a half larger than theirs.
+\input{common/preamble}
+\input{liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/format}
+
+\hypersetup{
+  pdftitle={Seventeenth Sunday after Pentecost: The Commandment and the Question},
+  pdfsubject={A homily for an adult parish assembly on the 1962 Missale Romanum proper for the Seventeenth Sunday after Pentecost, 20 September 2026: the questions asked in the Temple, the unity of the Epistle, and the Collect that asks for what the Gospel commands}
+}
+
+% The running head names the Sunday on the left and the document's use on the
+% right; the folio stands at the foot, where a speaker can find it.
+\fancyhead[R]{\footnotesize\itshape Homily}
+
+\begin{document}
+\thispagestyle{plain}
+
+\begin{center}
+{\footnotesize\scshape Missale Romanum 1962 \quad\textperiodcentered\quad Proper of Time \quad\textperiodcentered\quad 20 September 2026\par}
+\vspace{0.45em}
+{\Large\bfseries The Seventeenth Sunday after Pentecost\par}
+\vspace{0.2em}
+{\large\itshape The Commandment and the Question\par}
+\vspace{0.25em}
+{\small A homily\par}
+\end{center}
+\vspace{1.4em}
+
+\begingroup
+\linespread{1}%
+\fontsize{12.5}{17}\selectfont
+\raggedright
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.6em plus 0.15em}
+\input{liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/homily/10-homily}
+\par\endgroup
+
+\clearpage
+\input{liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/homily/90-note}
+% The metadata file prints the revision timestamp once, after the References;
+% the rights colophon follows it on the same final page. \Needspace ends the
+% page ahead of the colophon whenever the block cannot stand where the
+% References end, so the colophon never lands on a page of its own.
+\begingroup
+\hbadness=10000
+\setlength{\parindent}{0pt}
+\input{liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/generation-metadata}
+\Needspace{3\baselineskip}
+\TriptychRightsNotice
+\endgroup
+\end{document}
