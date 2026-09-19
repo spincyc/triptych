@@ -43,8 +43,9 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-final-cold-review"
   criterion = "After integration, a fresh reviewer with no production history reviews the delivered three documents, the web edition and the run record, and its findings and their dispositions are recorded."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/claude-1962-57-production-2026-09-19/COLD-REVIEW.md", "workflows/reviews/claude-1962-57-production-2026-09-19/CYCLES.md", "PROJECT-WORK.md"]
+  check = "path_exists"
 
 [[deliverables]]
 id = "propers-three-documents-2026-09-17"

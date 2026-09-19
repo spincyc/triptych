@@ -20,8 +20,10 @@ state.
 | visual-review | 2 | 1 |
 | artifact-gates | 3 | 1 |
 
-Sixteen cycles in all: fifteen driven by a review finding and one by a
-mechanical seal. No stage ever exhausted a budget. The closest approach was
+Fifteen cycles in all, which is exactly the run's non-PASS transitions:
+fourteen driven by a review finding and one by a mechanical seal. One review
+round split its findings across two owners and is one cycle, numbered 4 below,
+not two. No stage ever exhausted a budget. The closest approach was
 `study-review` at three consecutive purely-novel failing rounds against
 `max_novel_iterations` of four — one round short of the stop that hands the
 decision to a person.
@@ -48,14 +50,15 @@ decision to a person.
 
 ## What the cycles were actually made of
 
-**Six of the fifteen were created by the repair of an earlier finding.** Not
-by carelessness: a repair is new material in a dense document, and the next
-cold reader reads it. Cycle 3 came from an advisory that asked for a witness
-to be added; cycle 12 from printing the proof texts that cycle 11 required;
-cycle 13 from the record written for an edit that the same round correctly
-reverted; cycle 15 from the compression that paid for propagating cycles
-11–14 into the companion. One advisory in the concise document was introduced
-by a previous review's own prescribed wording.
+**Five of the fourteen review-driven cycles were created by the repair of an
+earlier finding.** Not by carelessness: a repair is new material in a dense
+document, and the next cold reader reads it. Cycle 3 came from an advisory
+that asked for a witness to be added; cycle 8 from the sentence that replaced
+the claim cycle 7 removed; cycle 12 from printing the proof texts that cycle
+11 required; cycle 13 from the record written for an edit that the same round
+correctly reverted; cycle 15 from the compression that paid for propagating
+cycles 11–14 into the companion. One advisory in the concise document was
+introduced by a previous review's own prescribed wording.
 
 **Two came from the boundary between owners, not from the documents.** Cycle
 9 was a mechanical seal, correct in principle — a content review is valid only
@@ -75,12 +78,16 @@ deny. No page-count check, log check or component check can reach any of them.
 the run, reviewers filed 60 distinct advisories against 21 distinct blocking
 findings, 20 of them from a review and one from the artifact gate's seal check. Authors
 cleared most of them while already in the files, which is what the channel is
-for. Two remain that no stage in the run could clear because they belong to a
-reviewed research record: Aquinas is absent from the interpretation audit
-though the manifest and the study develop him, and the Augustine clause the
-study now turns on is not transcribed into the research records. The evidence
-for both is present and verified. They are recorded in the leaf's
-standing-findings file, in intervention 0001, and here.
+for. Fifteen advisories and nine observations stand in the leaf's
+standing-findings file at the end of the run, most of them raised by the final
+passing reviews and none of them gating. Two of the fifteen are of a different
+kind, because no stage in the run could clear them: they belong to a reviewed
+research record. Aquinas is absent from the interpretation audit though the
+manifest and the study develop him, and the Augustine clause the study now
+turns on is not transcribed into the research records. The evidence for both
+is present and verified. Both stand in the standing-findings file and here;
+the first is also intervention 0001, and the second is reported in
+`author-study` iteration 7's own result.
 
 ## What was repaired in the workflow because of this run
 
@@ -112,3 +119,25 @@ declared level. A pinned-effort subagent definition could not be loaded
 without restarting the host session, and headless workers at an explicit
 effort were refused by the host's permission policy. Intervention 0000 records
 this against the run.
+
+## Corrections to this record and its commits
+
+An independent cold review of the whole delivery, run after the push, found
+two counting errors here and one stale paragraph in the register; all three
+are corrected above and in `PROJECT-WORK.md`. Two claims in already-pushed
+commit messages cannot be corrected in place and are corrected here instead.
+
+- `7e92e4600`'s subject says sixteen cycles. The run has fifteen non-PASS
+  transitions; fourteen are review-driven.
+- `ca3448f7f` says the three installed PDFs "each hash to the value their cold
+  reviewers and the visual review read". That is exact for the visual review,
+  whose seal carries the three installed hashes, and for the homily. It is not
+  exact for the two studies' content reviews: `study-review-0007` read proof
+  `a3309c36…` where the installed study is `a5705241…`. The difference is the
+  shared revision timestamp the later homily stage moved; the artifact gate
+  re-verified every seal after that rebuild, and the clean-room rebuild in the
+  cold review reproduced all three installed PDFs byte for byte.
+- `9d076ac69` regenerated the document catalogue without re-recording the
+  site-source approval, so that one commit does not pass `public-alpha
+  verify`; `1a2e66c1c` repairs it and says so. Only the final tree is
+  represented as deployable, and it is the tree that was pushed and verified.

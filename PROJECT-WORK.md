@@ -32,9 +32,15 @@ a driver handoff and a lane validator in an ignored `.scratch` of a workspace
 with no remote. They are preserved, with a derived summary of the eleven
 Claude loop runs, in
 [the recovery record](workflows/reviews/claude-loop-recovery-2026-09-18/README.md).
-Six legacy-workflow convergence defects it names remain open and unrepaired,
-including the `seam` findings that never charge the repeat budget; no engine
-change was authorized by this request.
+Six legacy-workflow convergence defects it names were open and unrepaired when
+that record was written, including the `seam` findings that never charge the
+repeat budget, and no engine change was authorized at that point.
+
+**Superseded the same day.** The maintainer then authorized engine changes
+wherever the defect and its fix are both clear. `d637adf6e` repairs the first
+of the six: a reviser shared by two owners now receives every finding it will
+repair, so a failing `seam` repair charges the repeat budget. **Five remain
+open**, and the recovery record carries the same correction.
 
 **Production: ACCEPTED.** Run `1e02dc05f2df9940` (`proper-study` v3, seeded at
 `72616eb9c`) reached its terminal publication gates over 86 packets and 86
@@ -66,8 +72,9 @@ web page carrying its ten appointed-element anchors; the
 [deployment evidence](workflows/reviews/claude-1962-57-production-2026-09-19/deployment-evidence.json)
 records each comparison and what it does not cover.
 
-**Sixteen cycles, recorded.** Fifteen came from review findings and one from a
-mechanical seal, and no stage exhausted a budget; `study-review` came within
+**Fifteen cycles, recorded.** Fourteen came from review findings and one from a
+mechanical seal, counted as the run's own non-PASS transitions, and no stage
+exhausted a budget; `study-review` came within
 one round of the stop for a review that will not terminate. Six of the fifteen
 were created by the repair of an earlier finding, which is what a dense
 document does to a cold reader. The blocking findings included a false claim
@@ -77,6 +84,15 @@ an edit that had been reverted, running heads overprinting in the built PDF,
 and an Augustine quotation truncated into an unqualified denial that the Word
 and the flesh are one. The full account is the
 [cycle record](workflows/reviews/claude-1962-57-production-2026-09-19/CYCLES.md).
+
+**Cold review, after the push.** An independent reviewer with no part in the
+production read the whole range and the tree, rebuilt all three documents from
+a clean copy to byte-identical PDFs, verified every hash in the run archive,
+and reverted each workflow repair to confirm its test is real. Its verdict is
+sound as published. It found two counting and currency errors in these records
+and six minor ones; all are dispositioned in the
+[cold review record](workflows/reviews/claude-1962-57-production-2026-09-19/COLD-REVIEW.md),
+and the two substantive ones are corrected above.
 
 **Two advisories stand that no stage of the run could clear**, both
 research-owned record gaps whose evidence is present and verified: Aquinas is

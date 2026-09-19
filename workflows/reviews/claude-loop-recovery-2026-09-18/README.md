@@ -69,7 +69,8 @@ its fix are clear. Two were repaired in the same session:
 - The `_check_review_scope` docstring no longer cites a pre-advance validator
   as if one were tracked.
 
-The rest are recorded, not repaired. They belong to the legacy `proper` and
+Five of the six below remain open; cold review 4.1 is repaired, as the row
+naming it says. The rest are recorded, not repaired. They belong to the legacy `proper` and
 `proper-finish` workflows. The `proper-study` successor routes each review's
 findings to one owner per repair target and carries upstream routes from
 every review. Items 4.2 and 4d would change shared fragments that a live
