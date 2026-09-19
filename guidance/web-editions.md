@@ -92,7 +92,12 @@ option list takes every `\item` label with it; a comment between a
 edition conditional written inline, `\ifdefined\TriptychSynthesisEdition
 … \else … \fi{}`, was spliced with the newlines that surrounded it and
 so cut its sentence in two at a paragraph break, which the paragraph
-audit now catches by its shape. When you meet a new one, add the audit
+audit now catches by its shape; and a macro whose text opens with a
+bracket, `\notread{…}` setting the unappointed half of a verse, was read by
+pandoc as the optional argument of the `\nopagebreak` ending the quotation
+environment before it and deleted with it, so every such macro now reaches
+pandoc behind an empty group and the audit requires each call's words in
+the output. When you meet a new one, add the audit
 that catches it, not just the fix. A macro the shim does not define and
 the audit does not know stops the conversion by design — extend the shim
 rather than dropping the leaf.

@@ -554,6 +554,104 @@ def local_definitions(preamble: str) -> str:
     return "\n".join(kept)
 
 
+# A bracket-opening command's argument count, optional default and replacement.
+BracketedCommand = tuple[int, str | None, str]
+
+
+def command_signature(text: str, cursor: int) -> tuple[int, str | None, str, int]:
+    """Read ``[n][default]{body}`` after a command name: count, default, body, body start."""
+    count, default = 0, None
+    cursor = skip_gap(text, cursor)
+    if text[cursor : cursor + 1] == "[":
+        close = text.index("]", cursor)
+        count = int(text[cursor + 1 : close].strip())
+        cursor = skip_gap(text, close + 1)
+        if text[cursor : cursor + 1] == "[":
+            close = text.index("]", cursor)
+            default = text[cursor + 1 : close]
+            cursor = skip_gap(text, close + 1)
+    body, _ = brace_group(text, cursor)
+    return count, default, body, cursor
+
+
+def guard_opening_brackets(
+    definitions: str,
+) -> tuple[str, dict[str, BracketedCommand]]:
+    """Put an empty group ahead of every command body that opens with ``[``.
+
+    Returns the guarded definitions and, for the audit, each such command's
+    argument count, optional default and replacement text.
+    """
+    out, index, guarded = [], 0, {}
+    for match in COMMAND_DEFINITION_RE.finditer(definitions):
+        try:
+            count, default, body, opening = command_signature(definitions, match.end())
+        except (ConversionError, ValueError):
+            continue
+        if not body.lstrip().startswith("["):
+            continue
+        guarded[match.group(1) or match.group(2)] = (count, default, body)
+        opening += 1
+        out.append(definitions[index:opening] + "{}")
+        index = opening
+    out.append(definitions[index:])
+    return "".join(out), guarded
+
+
+def word_phrase(text: str) -> str:
+    """The words of a text, casefolded and single-spaced, for sequence matching."""
+    return " ".join(word.casefold() for word in WORD_RE.findall(text))
+
+
+def bracketed_shortfalls(
+    body: str, markdown: str, commands: dict[str, BracketedCommand]
+) -> list[str]:
+    """Name every bracket-opening command call whose words the output lacks."""
+    failures: list[str] = []
+    expected: Counter[str] = Counter()
+    shown: dict[str, str] = {}
+    for name, (count, default, replacement) in sorted(commands.items()):
+        for match in re.finditer(re.escape("\\" + name) + r"(?![A-Za-z@])", body):
+            # A definition in the body names the command without calling it.
+            if DEFINITION_HEAD_RE.search(body, max(0, match.start() - 40), match.start()):
+                continue
+            cursor, arguments = match.end(), []
+            try:
+                for position in range(count):
+                    if position == 0 and default is not None:
+                        gap = skip_gap(body, cursor)
+                        if body[gap : gap + 1] == "[":
+                            close = body.index("]", gap)
+                            arguments.append(body[gap + 1 : close])
+                            cursor = close + 1
+                        else:
+                            arguments.append(default)
+                        continue
+                    argument, cursor = brace_group(body, cursor)
+                    arguments.append(argument)
+            except (ConversionError, ValueError):
+                failures.append(f"cannot read the arguments of a \\{name} call")
+                continue
+            text = replacement
+            for number, argument in enumerate(arguments, start=1):
+                text = text.replace(f"#{number}", argument)
+            phrase = word_phrase(CONTROL_WORD_RE.sub(" ", COMMENT_RE.sub("", text)))
+            if phrase:
+                expected[phrase] += 1
+                call = "\\" + name + "".join("{" + a + "}" for a in arguments)
+                shown.setdefault(phrase, re.sub(r"\s+", " ", call).strip())
+    output = MARKDOWN_TARGET_RE.sub("]", MARKDOWN_TAG_RE.sub(" ", markdown))
+    output = f" {word_phrase(output)} "
+    for phrase, wanted in expected.items():
+        found = output.count(f" {phrase} ")
+        if found < wanted:
+            failures.append(
+                f"bracketed macro payload dropped (expected {wanted}, found "
+                f"{found}): {shown[phrase]}"
+            )
+    return failures
+
+
 def deduplicate_contributions(body: str) -> str:
     """Keep contribution declarations inert in the reader-facing web edition."""
     out, index, previous = [], 0, None
@@ -701,6 +799,23 @@ PRE_CONVERSION_BREAKS_RE = re.compile(
 PERIOD_CENTERED_RE = re.compile(
     r"\\textperiodcentered(?![A-Za-z])(?:\s*\{\}|\s*)"
 )
+# Pandoc reads a `[` that follows many control words as that command's optional
+# argument and throws it away with the command: \par, \noindent, \nopagebreak,
+# \quad and \relax among them, none of which TeX gives such an argument, or only
+# a numeric one. TeX never meets the bracket there when a macro supplies it,
+# because it does not look through an unexpanded macro for one; pandoc expands
+# the macro first. A postconciliar study opened the quotation of Acts 16:14 with
+# `\notread{...}`, which sets the unappointed half of the verse in brackets,
+# inside an environment whose opening ends in \nopagebreak: the whole bracketed
+# clause reached the reader as nothing, and the conversion exited zero. An empty
+# group ahead of the bracket sets nothing in either reader and ends the
+# lookahead, so every command whose replacement text opens with `[` is handed to
+# pandoc with one, and the audit checks that each call's words arrived.
+COMMAND_DEFINITION_RE = re.compile(
+    r"\\(?:new|renew|provide)command\*?\s*"
+    r"(?:\{\s*\\([A-Za-z@]+)\s*\}|\\([A-Za-z@]+))"
+)
+DEFINITION_HEAD_RE = re.compile(r"\\(?:new|renew|provide)command\*?\s*\{?\s*\Z")
 
 
 def strip_contentless_breaks(markdown: str) -> str:
@@ -829,9 +944,10 @@ def audit_output(
     sources: str = "",
     rendered_anchors: list[str] | None = None,
     required_anchors: set[str] | None = None,
+    bracketed: dict[str, BracketedCommand] | None = None,
 ) -> list[str]:
     """Compare critical macro payloads in the LaTeX body against the Markdown."""
-    failures = []
+    failures = bracketed_shortfalls(body, markdown, bracketed or {})
     # A table pandoc could not write as a pipe table becomes an HTML table; a
     # table it dropped becomes neither.  A repeated-header longtable may split
     # into several tables, so only a shortfall is a loss.
@@ -993,10 +1109,16 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         failures = proper_anchor_failures(LABEL_RE.findall(strip_for_scan(body)), required_anchors, "source")
         if failures:
             raise ConversionError("\n".join(failures))
-    shim_text = ALIGNMENT_FIXUP_RE.sub("", SHIM.read_text(encoding="utf-8"))
-    locals_text = ALIGNMENT_FIXUP_RE.sub(
-        "", LIST_OPTION_RE.sub(r"\1", local_definitions(preamble))
+    shim_text, shim_bracketed = guard_opening_brackets(
+        ALIGNMENT_FIXUP_RE.sub("", SHIM.read_text(encoding="utf-8"))
     )
+    locals_text, locals_bracketed = guard_opening_brackets(ALIGNMENT_FIXUP_RE.sub(
+        "", LIST_OPTION_RE.sub(r"\1", local_definitions(preamble))
+    ))
+    body, bracketed = guard_opening_brackets(body)
+    # The shim wins conflicts, so its replacement text is the one to expect.
+    bracketed.update(locals_bracketed)
+    bracketed.update(shim_bracketed)
     failures = undefined_uses(sources, defined_names(shim_text + locals_text))
     if failures:
         raise ConversionError("\n".join(failures))
@@ -1054,6 +1176,7 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         shim_text + "\n\n" + raw_sources,
         rendered_anchors,
         required_anchors,
+        bracketed,
     )
     if failures:
         raise ConversionError("\n".join(failures))

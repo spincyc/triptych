@@ -225,6 +225,33 @@ class WebEditionConversionTests(unittest.TestCase):
         self.assertIn("sections/50-resumed-sundays.tex", markdown)
         self.assertNotIn("sections/-resumed", markdown)
 
+    def test_a_bracketed_macro_is_not_read_as_an_optional_argument(self) -> None:
+        # Pandoc expands \notread before \nopagebreak looks ahead, takes the
+        # bracket it finds for an optional argument and drops the clause; TeX
+        # sets it. The Acts verse of a postconciliar study lost half its words.
+        preamble = (
+            r"\newcommand{\notread}[1]{[\textit{#1}]}"
+            "\n"
+            r"\newenvironment{witness}[1]"
+            r"{\begin{quote}\textsc{#1}\par\nopagebreak}{\end{quote}}"
+        )
+        markdown = self.convert(
+            "\\begin{witness}{Douay--Rheims, Acts 16:14}\n"
+            r"\notread{And a certain woman named Lydia did hear:} whose heart "
+            "the Lord opened.\n\\end{witness}\n\n"
+            r"Also \noindent\notread{a second clause} here.",
+            preamble=preamble,
+        )
+        self.assertIn(r"\[*And a certain woman named Lydia did hear:*\] whose", markdown)
+        self.assertIn(r"\[*a second clause*\] here", markdown)
+        # A definition in the body is guarded too, and is not read as a call.
+        markdown = self.convert(
+            r"\newcommand{\gloss}[1]{[\textit{#1}]}"
+            "\n\n"
+            r"Text \noindent\gloss{a body-defined clause} ends."
+        )
+        self.assertIn(r"\[*a body-defined clause*\] ends", markdown)
+
     def test_a_middle_dot_separator_survives_and_keeps_its_spacing(self) -> None:
         # Pandoc drops \textperiodcentered silently. Braced, the space after it
         # is the author's; bare, TeX gobbles it, which is the Catalan geminate.
@@ -779,6 +806,44 @@ class WebEditionAuditTests(unittest.TestCase):
             "Composition: Before c. 165 B.C.",
             failures,
         )
+
+    def test_dropped_bracketed_macro_payload_is_reported(self) -> None:
+        definitions, bracketed = DRIVER.guard_opening_brackets(
+            r"\newcommand{\notread}[1]{[\textit{#1}]}"
+            "\n"
+            r"\newcommand\sic{[sic]}"
+            "\n"
+            r"\newcommand{\work}[1]{\textit{#1}}"
+        )
+        self.assertIn(r"\newcommand{\notread}[1]{{}[\textit{#1}]}", definitions)
+        self.assertIn(r"\newcommand\sic{{}[sic]}", definitions)
+        self.assertEqual(sorted(bracketed), ["notread", "sic"])
+        body = (
+            r"\notread{And a certain woman did hear:} whose heart. "
+            r"\notread{And a certain woman did hear:} again. Writ\sic."
+        )
+        failures = DRIVER.audit_output(
+            body,
+            self.minimal_markdown() + "\n> whose heart. \\[*And a certain woman "
+            "did hear:*\\] again. Writ.\n",
+            bracketed=bracketed,
+        )
+        self.assertIn(
+            "bracketed macro payload dropped (expected 2, found 1): "
+            r"\notread{And a certain woman did hear:}",
+            failures,
+        )
+        self.assertIn(
+            r"bracketed macro payload dropped (expected 1, found 0): \sic", failures
+        )
+        failures = DRIVER.audit_output(
+            body,
+            self.minimal_markdown() + "\n> \\[*And a certain woman did hear:*\\] "
+            "whose heart. \\[*And a certain woman did hear:*\\] again. "
+            "Writ\\[sic\\].\n",
+            bracketed=bracketed,
+        )
+        self.assertEqual(failures, [])
 
     def test_dropped_table_is_reported(self) -> None:
         failures = DRIVER.audit_output("Prose.", self.minimal_markdown(), tables=2)
