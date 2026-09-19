@@ -15,20 +15,23 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-pc-run-accepted"
   criterion = "A proper-study v4 run for provider claude, identity liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a, date 2026-09-20, reaches ACCEPTED with every review a fresh worker at the declared effort; the three reviewed PDFs and the canonical web edition are installed with exact reviewed bytes and the owning leaf archives the run evidence."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/472e2eb20876b22a/record.md", "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/472e2eb20876b22a/terminal-status.json", "web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.md", "release/publications/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.json"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "claude-pc-cycles-documented"
   criterion = "Every repair cycle the run entered (review to owner and back, gate failure and retry, refused result) is recorded in a tracked record with its stage, iteration, cause, repair and outcome, and any repeatable lesson is promoted or explicitly declined."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/claude-pc-s51-production-2026-09-19/CYCLES.md", "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/production-review.md", "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/472e2eb20876b22a/interventions"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "claude-pc-looping-fix-recovery"
   criterion = "Directories and branches parallel to this workspace are surveyed again, as a delta against the 2026-09-18 recovery record, for work that attempted to fix Claude's non-converging workflow runs; each new or changed item is classified as already on main, superseded, recovered, or recorded-only, with evidence."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/claude-loop-recovery-2026-09-19/README.md", "workflows/reviews/claude-loop-recovery-2026-09-19/SHA256SUMS", "workflows/reviews/claude-loop-recovery-2026-09-19/pinned-effort-agents", "workflows/reviews/claude-loop-recovery-2026-09-19/leaf-54-last-loop-run"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "claude-pc-main-and-pages"

@@ -25,11 +25,68 @@ independent Claude production: it borrows neither the GPT leaf for the same
 identity, nor that leaf's accepted verdicts, nor anything from either
 provider's 1962 leaf for the same Sunday.
 
-**State: authorized, nothing seeded.** This is the first run of `proper-study`
-v4, the version the Claude Seventeenth Sunday run produced, and the first
-Claude run of the postconciliar path. The recovery request is a delta against
-the [2026-09-18 recovery record](workflows/reviews/claude-loop-recovery-2026-09-18/README.md),
-not a repeat of it.
+**Production: ACCEPTED.** Run `472e2eb20876b22a` (`proper-study` v4, seeded at
+`02bae3f41`) reached its terminal publication gates over 33 packets and 33
+results, with no escalations. It is the first run of v4, the version the
+Claude Seventeenth Sunday run produced, and the first Claude run of the
+postconciliar path. The three documents are a 39-page expansive study
+developing three whole-formulary readings, a 12-page concise companion whose
+fixed opening is proved by settled physical-page markers, and a 6-page homily
+whose 1,482-word spoken body is about twelve minutes by arithmetic, with no
+timed delivery claimed. Installed bytes are the reviewed bytes and
+installation retypeset nothing; the canonical web edition matches its
+conversion receipt. The run's packets, results, seed identity, terminal
+records and interventions are archived under the leaf's
+`evaluations/proper-study-results/472e2eb20876b22a/`.
+
+Every stage ran as a fresh Claude Code harness subagent, which inherits the
+driver's `xhigh` effort, so author stages declared `high` ran one level above
+it and no stage ran below its declared level; intervention 0000 records this
+and the leaf's provenance record states both efforts. Stages through
+`build-artifacts` ran on Claude Fable 5.1; from `visual-review` onward, after
+the host's usage limit ended one dispatch and the maintainer changed the
+session model, they ran on Claude Opus 5. Intervention 0002 records it.
+
+**Four cycles, recorded.** All four came from cold reviews and none from a
+gate. Two returned to research: no controlling liturgical authority was bound
+or sealed, 153 verse files the chronology computation opens were undeclared,
+a Jerome witness was readable only over unverified TLS, the reception matrix
+was short of the profile's tiers, an Augustine sentence was misapplied, and
+then the nine sources the chronology record cites had no file in the seal.
+Two returned to the study: Chrysostom made to deny what his homily does not
+address and a false attribution to Jerome, then the self-narration that the
+repair of those attributions introduced. No stage came near an iteration
+budget. The full account is the
+[cycle record](workflows/reviews/claude-pc-s51-production-2026-09-19/CYCLES.md).
+
+**Recovery of the looping fixes: done, as a delta.** A read-only survey of 111
+repositories against the
+[2026-09-18 record](workflows/reviews/claude-loop-recovery-2026-09-18/README.md)
+found no unmerged loop-fix code anywhere and nothing changed outside this
+workspace since that survey. Four items existed nowhere on `main` and are
+preserved with checksums in
+[the 2026-09-19 recovery record](workflows/reviews/claude-loop-recovery-2026-09-19/README.md):
+an unpushed authoring pass and the standing-findings record of the last Claude
+loop run, recorded and deliberately not applied to the held leaf; the
+pinned-effort subagent definitions that answer the effort deviation both
+Claude runs recorded; and the Codex driver's lane validators. The six
+cold-review items the earlier record left unchecked are classified there
+against `main`: five absent, one mitigated.
+
+**One tool defect found and repaired.** The first web conversion exited zero
+and silently dropped a bracketed clause of Acts 16:14, which pandoc ate as the
+optional argument of the command before it. `tools/web-edition` now guards
+every such macro and audits for the loss, pinned by two regression tests. Every
+tracked web edition of both providers is byte-identical to a fresh conversion
+with the repaired converter.
+
+**Three gaps are recorded and not repaired**, none with a single clear fix:
+the chronology tools' unsealed inputs and uncited sources, which cost this run
+two cycles and which the Seventeenth Sunday run had already left to the owner;
+the house-voice screen's ignorance of "study" as a name for the work, which let
+one cycle's defect past preflight and which cannot be fixed by adding the word,
+since the companions legitimately call the study that; and the component gate
+that makes a homily declare eleven element keys when its speech uses seven.
 
 ## Claude 1962 Seventeenth Sunday three documents, 2026-09-18
 
