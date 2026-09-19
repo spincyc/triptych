@@ -1,0 +1,213 @@
+% Claude postconciliar proper study, Twenty-fifth Sunday in Ordinary Time,
+% Year A: leaf-local presentation. This file owns typography only; every
+% textual, historical, exegetical and rights judgment lives in the section
+% files and in the leaf's research records. The three entrypoints of the leaf
+% (main.tex, synthesis.tex, homily.tex) share it, so that a component used by
+% more than one of them sets identically in each. Because it is shared, it is
+% an input to each of the three reviews, and the study owns it whichever
+% entrypoint a later addition serves. The environments the concise companion's
+% fixed first page needs are therefore defined here already.
+%
+% Web-edition constraint: the canonical study is declared web-eligible, so no
+% landscape, multicols, TikZ or rule-line construct is used here or in any
+% research component.
+
+% --- Type and measure -------------------------------------------------------
+% Palatino (TeX Gyre Pagella through newpxtext) at 11pt on 15pt leading, on a
+% measure of about seventy characters.
+\usepackage{newpxtext}
+\linespread{1.1}
+\geometry{letterpaper,left=1.3in,right=1.3in,top=1in,bottom=1.05in,
+  headheight=14pt,headsep=20pt,footskip=32pt}
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{0pt plus 1pt}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+\brokenpenalty=10000
+\usepackage{xurl}
+\newcommand{\work}[1]{\textit{#1}}
+
+% Unnumbered sectioning that still reaches the contents and the running head.
+\usepackage{bookmark}
+\setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{1}
+% nobottomtitles*: a heading that would stand within \bottomtitlespace of the
+% foot of a page moves to the next, so that no heading is parted from the text
+% it introduces.
+\usepackage[nobottomtitles*]{titlesec}
+\renewcommand{\bottomtitlespace}{.14\textheight}
+\titleformat{\section}{\normalfont\Large\bfseries\raggedright}{}{0pt}{}
+\titlespacing*{\section}{0pt}{3.2ex plus 1ex minus .2ex}{1.4ex plus .2ex}
+\titleformat{\subsection}{\normalfont\large\bfseries\raggedright}{}{0pt}{}
+\titlespacing*{\subsection}{0pt}{2.6ex plus .8ex minus .2ex}{0.9ex plus .2ex}
+\titleformat{\subsubsection}{\normalfont\normalsize\bfseries\itshape\raggedright}{}{0pt}{}
+\titlespacing*{\subsubsection}{0pt}{2ex plus .6ex minus .2ex}{0.6ex plus .1ex}
+
+% Quiet running matter: the Sunday on the left, the current section on the
+% right, the folio centred below.
+%
+% fancyhdr sets the left and the right head string each in a box the full
+% width of the head, so an overlong right string prints over the left one
+% without any warning. The right box is therefore cut to what the fixed left
+% string and a gutter leave of the head, so that a string too long for it
+% wraps inside its own box and trips the \headheight warning a log inspection
+% catches. A section whose title is wider than that box declares a short
+% running form with \runninghead just before its heading; a starred heading,
+% which sets no mark, calls \runninghead just after it.
+%
+% \runninghead sets the mark at once and hands the same string to the next
+% \sectionmark, because \rightmark takes the first mark on a page and a mark
+% set only after \section would lose to the heading's own on the page the
+% heading opens. Its body holds only \gdef and \markright: the web converter
+% carries this definition into the document it hands pandoc, and a \newif
+% boolean there stops the conversion. The test is therefore an \ifx inside
+% \sectionmark, which LaTeX alone calls.
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\tptnoshorthead}{}
+\let\tptshortheadtext\tptnoshorthead
+\newcommand{\runninghead}[1]{\gdef\tptshortheadtext{#1}\markright{#1}}
+\renewcommand{\sectionmark}[1]{%
+  \ifx\tptshortheadtext\tptnoshorthead
+    \markright{#1}%
+  \else
+    \expandafter\markright\expandafter{\tptshortheadtext}%
+    \global\let\tptshortheadtext\tptnoshorthead
+  \fi}
+% Subsections set no mark: the right head names the section alone, so that a
+% page never runs under a subsection title longer than the box it is given.
+\renewcommand{\subsectionmark}[1]{}
+\newcommand{\tptheadsunday}{Twenty-fifth Sunday in Ordinary Time, Year A}
+\newlength{\tptheadgutter}
+\setlength{\tptheadgutter}{1.5em}
+\newlength{\tptheadleftwidth}
+\newlength{\tptheadrightwidth}
+\newcommand{\tptheadright}[1]{%
+  \settowidth{\tptheadleftwidth}{\footnotesize\scshape\tptheadsunday}%
+  \setlength{\tptheadrightwidth}{%
+    \dimexpr\headwidth-\tptheadleftwidth-\tptheadgutter\relax}%
+  \parbox[b]{\tptheadrightwidth}{\raggedleft\footnotesize\itshape #1}}
+\fancyhead[L]{\footnotesize\scshape\tptheadsunday}
+\fancyhead[R]{\tptheadright{\nouppercase{\rightmark}}}
+\fancyfoot[C]{\footnotesize\thepage}
+\fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}%
+  \fancyfoot[C]{\footnotesize\thepage}}
+
+% Physical-page evidence for the concise companion's fixed opening, whose
+% entrypoint shares this file; the study itself sets no page markers.
+\usepackage{zref-user,zref-abspage}
+
+% --- Appointed texts -----------------------------------------------------------
+% The English of an identified public-domain witness, whose name and locus
+% stand above it; the locus line of an element; and words printed only as
+% context, which the Mass does not read.
+\newenvironment{englishwitness}[1]{\begin{quote}\textsc{#1}\par\nopagebreak}{\end{quote}}
+\newcommand{\properlocus}[1]{\par{\small\noindent #1\par}\vspace{0.4ex}}
+\newcommand{\notread}[1]{[\textit{#1}]}
+
+% --- The four senses of each reading ---------------------------------------------
+\newenvironment{fourSenses}{\begin{description}}{\end{description}}
+
+% --- Scriptural Date and Location -----------------------------------------------
+% Two-tier dossier table after the postconciliar profile's page-2 standard: a
+% four-field summary row, then a full-width explanatory row, with an italic
+% event row for a narrated event and \midrule only between complete dossiers.
+%
+% Measurement note. The profile's starting widths are 0.14 / 0.18 / 0.35 /
+% 0.16\linewidth with a 0.92\linewidth explanatory row, to be changed only as
+% the complete single-page sheet requires. Two measurements are varied:
+%
+%   D1. Summary-tier widths 0.13 / 0.16 / 0.29 / 0.36\linewidth. The
+%       generated annotation prints six disputed composition labels at the
+%       Gospel and an event statement beside them, each as the chronology
+%       corpus words it, and a 0.16\linewidth Date cell sets them as a column
+%       of fragments.
+%   D2. Explanatory and event rows at 0.98\linewidth in \scriptsize, so that
+%       the same environment can hold seven dossiers on the single physical
+%       page the concise companion's page 2 must occupy.
+%
+% Kept as the profile gives them: the two-tier hierarchy, the four summary
+% fields, \footnotesize for the summary tier, \arraystretch 1.02, \LTpre
+% 0.15em, \LTpost 0pt, \cmidrule(lr){1-4} within a dossier and \midrule
+% between dossiers.
+\newenvironment{dossiertable}
+{\footnotesize
+ \renewcommand{\arraystretch}{1.02}%
+ \setlength{\LTpre}{0.15em}\setlength{\LTpost}{0pt}%
+ \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.13\linewidth}>{\raggedright\arraybackslash}p{0.16\linewidth}>{\raggedright\arraybackslash}p{0.29\linewidth}>{\raggedright\arraybackslash}p{0.36\linewidth}@{}}
+ \toprule
+ \textbf{Textual unit} & \textbf{Citation} & \textbf{Location} & \textbf{Date}\\
+ \midrule
+ \endhead}
+{\bottomrule\end{longtable}}
+
+% \chronodate{element-key}{content}: one dossier row's Date cell. It typesets
+% the content and nothing else. Every biblical date printed in this leaf comes
+% from the Scripture chronology corpus through the generated projection in
+% research/chronology-annotations.tex, which owns \chronologyannotation.
+\newcommand{\chronodate}[2]{#2}
+
+\newcommand{\dossierrowsize}{\scriptsize}
+\newcommand{\dossierprose}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash\dossierrowsize}p{0.98\linewidth}@{}}{#1}\\[0.1em]}
+\newcommand{\dossierevent}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash\dossierrowsize}p{0.98\linewidth}@{}}{\textit{#1}}\\}
+
+% --- Comparison and resolution tables ---------------------------------------------
+\newenvironment{comparisontable}[4]
+{\small\renewcommand{\arraystretch}{1.18}%
+ \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.17\linewidth}>{\raggedright\arraybackslash}p{0.26\linewidth}>{\raggedright\arraybackslash}p{0.26\linewidth}>{\raggedright\arraybackslash}p{0.26\linewidth}@{}}
+ \toprule
+ \textbf{#1} & \textbf{#2} & \textbf{#3} & \textbf{#4}\\
+ \midrule
+ \endhead}
+{\bottomrule\end{longtable}}
+
+% A stable branch identifier, set as machine text that may break at a hyphen.
+\newcommand{\bid}[1]{{\ttfamily\hyphenchar\font=45\relax #1}}
+\newenvironment{branchtable}
+{\footnotesize\renewcommand{\arraystretch}{1.12}\setlength{\tabcolsep}{4pt}%
+ \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.20\linewidth}>{\raggedright\arraybackslash}p{0.27\linewidth}>{\raggedright\arraybackslash}p{0.11\linewidth}>{\raggedright\arraybackslash}p{0.12\linewidth}>{\raggedright\arraybackslash}p{0.22\linewidth}@{}}
+ \toprule
+ \textbf{Branch ID} & \textbf{Authority and trigger} & \textbf{Status} & \textbf{Units affected} & \textbf{Resolution}\\
+ \midrule
+ \endhead}
+{\bottomrule\end{longtable}}
+
+% The study's map of the appointed elements.
+\newenvironment{maptable}
+{\small\renewcommand{\arraystretch}{1.15}%
+ \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.19\linewidth}>{\raggedright\arraybackslash}p{0.27\linewidth}>{\raggedright\arraybackslash}p{0.50\linewidth}@{}}
+ \toprule
+ \textbf{Element} & \textbf{Text and reference} & \textbf{What it says}\\
+ \midrule
+ \endhead}
+{\bottomrule\end{longtable}}
+
+% The concise companion's first physical page: the map of the appointed
+% elements and, beneath it, the four overview rows. Both are set one step
+% smaller than the study's map so that the complete inventory and the four
+% senses can stand together on the single page fixed for them, and their
+% column widths are chosen so that the two tables rule to the same measure:
+% 0.96\linewidth of columns plus two inter-column gaps in the three-column
+% map, and 0.9788\linewidth plus one gap in the two-column overview, each with
+% \tabcolsep at 4pt.
+\newenvironment{concisemaptable}
+{\footnotesize\renewcommand{\arraystretch}{1.04}\setlength{\tabcolsep}{4pt}%
+ \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.56\linewidth}@{}}
+ \toprule
+ \textbf{Element} & \textbf{Text and reference} & \textbf{What it says}\\
+ \midrule
+ \endhead}
+{\bottomrule\end{longtable}}
+
+\newenvironment{conciseoverview}
+{\footnotesize\renewcommand{\arraystretch}{1.06}\setlength{\tabcolsep}{4pt}%
+ \begin{longtable}{@{}>{\bfseries\raggedright\arraybackslash}p{0.15\linewidth}>{\raggedright\arraybackslash}p{0.8288\linewidth}@{}}
+ \toprule
+ \textbf{Sense} & \textbf{Synthesis}\\
+ \midrule
+ \endhead}
+{\bottomrule\end{longtable}}

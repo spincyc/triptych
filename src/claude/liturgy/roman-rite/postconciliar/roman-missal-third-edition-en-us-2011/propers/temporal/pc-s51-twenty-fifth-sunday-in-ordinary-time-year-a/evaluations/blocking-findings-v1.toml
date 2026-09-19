@@ -49,17 +49,41 @@ provider = "claude"
 run_id = "472e2eb20876b22a"
 workflow = "proper-study"
 workflow_version = 4
+stage = "synthesis-review"
+iteration = 0
+disposition = "PASS"
+standing = 0
+accepted_count = 0
+advisory_count = 6
+observation_count = 2
+
+[[stages]]
 stage = "research-review"
 iteration = 2
 disposition = "PASS"
+run_id = "472e2eb20876b22a"
+workflow = "proper-study"
+workflow_version = 4
 standing = 0
 accepted_count = 0
 advisory_count = 3
 observation_count = 0
 
 [[stages]]
-stage = "research-review"
+stage = "study-review"
 iteration = 2
+disposition = "PASS"
+run_id = "472e2eb20876b22a"
+workflow = "proper-study"
+workflow_version = 4
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 2
+
+[[stages]]
+stage = "synthesis-review"
+iteration = 0
 disposition = "PASS"
 run_id = "472e2eb20876b22a"
 workflow = "proper-study"
@@ -92,3 +116,37 @@ severity = "advisory"
 location = "research/scope.md section 3, 'Quotation check', first sentence"
 problem = "The count does not reconcile: thirty-three quotations searched, thirty-two matched, and two of Gregory's corrected. Thirty-two matches leave one quotation that did not match, and two are said to have been corrected, so the fate of at least one quotation is unstated. Two reviews have since matched the quotations in the texts, so no quotation is known to be unverified; the defect is in the audit statement."
 required_result = "State counts that reconcile: how many quotations were searched, how many matched as first written, which did not, and what was done with each."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-001"
+severity = "advisory"
+location = "sections/concise/10-commentary.tex, subsection 'The murmur, and what the householder's reply decides', first paragraph, lines 105-110 (rendered page 6): 'Chrysostom will have neither as a fact about the saved ... The complaint is a device of the story (64.3). On his account the murmuring and the reply, a third of the parable, have little to do'"
+problem = "Two compressions in one place say more about Chrysostom than the accepted study or Hom. in Matt. 64.3-4 does. (1) 'Chrysostom will have neither' makes him set aside Gregory's and Jerome's explanations, which he does not address. Gregory starts from the very premise Chrysostom voices (Hom. in Evang. 19.4: 'Coelorum etenim regnum nullus murmurans accipit, nullus qui accipit murmurare potest'), which the paragraph's opening clause gives without a name, and Jerome's envy is that of every earlier calling toward the Gentiles, not a state of the saved. The study says only that on the second interpretation the murmuring cannot be a fact about the saved and that Chrysostom says so with force; research/scope.md section 7 classes the three accounts of the murmuring as complementary. (2) The concise drops what Chrysostom says the device is for ('to teach us that these have enjoyed such honor, as could even have begotten envy in others', 64.3) and moves the study's judgement 'on this interpretation they have little to do' onto 'his account', although the same subsection two paragraphs later reports his statement that the Lord frames the story to show 'that the whole is of His love to man' (64.4). The reader is given a mild opposition the sources do not state and a harsher verdict on Chrysostom than the study reaches. It does not block because every quotation is exact, the three positions are each reported truly, and the sentence carries its own limit ('as a fact about the saved')."
+required_result = "State Chrysostom's account beside the other two in his own terms without making him answer them: for him the complaint depicts no real grievance of those men and is brought in to show how great an honour the late comers receive (64.3). Keep the judgement that the murmuring and the reply are left with little to do as a judgement about the second interpretation, as the study has it, and not as a description of Chrysostom's account."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-002"
+severity = "advisory"
+location = "sections/concise/01-inventory.tex, note under the map, line 40 ('every other element is required'), with sections/concise/90-apparatus.tex, paragraph 'Text and English'"
+problem = "The accepted study makes the same statement under its map and qualifies it in its scope appendix: 'Whether the United States Lectionary admits another Alleluia verse from a common set was not determined' (sections/90-apparatus.tex), which propers/verified.md also lists as outstanding. The concise apparatus keeps the study's other open question of text (the Greek evidence for Matthew 20:16 and the 16a lettering) and drops this one, so the concise says without qualification that the Alleluia verse is required while the records hold the point open. The appointment itself is not in doubt and no argument rests on the verse being the only one admitted, which is why this does not block."
+required_result = "Restore the open question in the concise scope note in one sentence, beside the sentence on Matthew 20:16, or word the page-one note so that it does not assert more about the Alleluia verse than the records establish."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-003"
+severity = "advisory"
+location = "sections/concise/10-commentary.tex, subsection 'Whose work is the coming? The opened heart and the psalmist's wish', last sentence, lines 250-252 (rendered page 9): 'The step rests on Augustine's argument and on no agreement between the two, and it does not reach the claim with which the third interpretation began, which Chrysostom states for himself.'"
+problem = "In the study the corresponding sentence has Chrysostom's different reading of Acts 16:14 as its subject: that difference 'does not reach the first step or the claim with which this interpretation began'. Compression joined it to a sentence whose subject is 'the step', so 'it' now reads as the second step and the clause says that the step does not reach the claim, which is not what is meant; 'the first step' was dropped as well. A reader can recover the sense from the preceding sentences, so nothing false is conveyed, but the sentence that bounds the one real difference in the third interpretation is the least clear in its paragraph."
+required_result = "Give the clause its own subject, for example that the difference between the two readings of Acts 16:14 touches neither the first step nor the claim with which the third interpretation began, which Chrysostom states for himself."
+
+[[observations]]
+stage = "study-review"
+location = "scripts/_house_voice.py, line 271 (SELF) with WORK_NAMED and the rule 'the work possesses the finding'"
+note = "First recorded at iteration 1 and still true: the screen's names for the work are guide, project, repository, document, leaf and publication, so a schema-2 leaf that calls itself 'the study' passes house-voice with the forms STU-008 raised. The iteration-2 author searched the six argumentative components for the word directly, and this review repeated the search on the third interpretation; that is a missing word in a gate and not a fact about this document."
+
+[[observations]]
+stage = "study-review"
+location = "research/interpretations.md, standing limits (line 43-44), Reading 3 ('and Chrysostom disputes it'; 'A real disagreement, to be preserved'; 'Chrysostom's objection above') and the Comparison ('his rule on details tells against one'; 'the one real dispute among the authors read'); research/scope.md, section 3.1, rows for Chrysostom and Aquinas on Matthew; research/production-review.md, 'For the cold reviewer, about the research records', items 1 to 6"
+note = "First recorded at iterations 0 and 1 and re-confirmed here at the bound sources: the research records, unchanged since research review, still say that Chrysostom disputes or objects to Augustine's second step, although Hom. in Acta 35 addresses no such claim and says nothing of where the willingness comes from; still list Jerome among those who expound the second sentence of Mt 20:16, which PL 26 col. 142 shows him carrying without comment; still say Chrysostom's rule on details tells against the ages of the world, which the study dropped under STU-003; and do not record his second application of that rule to 'No man hath hired us' (64.3) or Aquinas's division of the hours at David. The study as it stands follows the sources and not these sentences, and the production audit lists each point, but the concise and homily components name these records as references."
