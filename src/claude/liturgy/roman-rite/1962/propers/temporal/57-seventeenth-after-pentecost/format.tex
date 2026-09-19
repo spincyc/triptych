@@ -3,7 +3,10 @@
 % exegetical and rights judgment lives in the section files and in the
 % leaf's research records. It is shared by the three entrypoints of the leaf
 % (main.tex, synthesis.tex, homily.tex) so that a component used by more than
-% one of them sets identically in each.
+% one of them sets identically in each. Because it is shared, it is an input to
+% each of the three reviews: an environment added here for one entrypoint
+% re-opens the other two documents' accepted reviews, and the study owns the
+% file whichever entrypoint the addition serves.
 %
 % Web-edition constraint: the canonical study is declared web-eligible, so no
 % landscape, multicols, TikZ or rule-line construct is used here or in any
@@ -41,13 +44,71 @@
 
 % Quiet running matter: the Sunday on the left, the current section on the
 % right, the folio centred below.
+%
+% Width discipline. fancyhdr laps each of the two head strings out of a parbox
+% the full width of the head, so the left and the right string are free to
+% occupy the same space: a right string longer than what the left one leaves
+% simply prints over it, the \hss glue absorbs the overflow, and the log
+% reports neither an Overfull box nor anything else. That is a silent defect
+% and it happened here. The right box is therefore cut to what remains of the
+% head after the fixed left string and a gutter, so that a string too long for
+% it wraps inside its own box rather than reaching the left string, and the
+% second line trips fancyhdr's \headheight warning, which a log inspection
+% catches. The gutter is real white space and not glue: no setting of the two
+% strings can close it.
+%
+% The discipline bounds the damage; it is not the whole remedy. A wrapped head
+% is legible but ugly, so every section whose title is wider than
+% \tptheadrightwidth declares a short running form with \runninghead just
+% before its heading, and the full title stands unshortened in the section and
+% in the contents. \section* headings, which set no mark at all and would
+% otherwise leave the previous section's title standing over pages they do not
+% own, call \runninghead after the heading for the same reason.
+%
+% \runninghead sets the mark at once and also hands the same string to the next
+% \sectionmark, which prints it in place of the title it is given. Both halves
+% are needed. \rightmark takes the FIRST mark on the page, not the last, so a
+% mark set only after \section is beaten by the heading's own mark on the one
+% page where it matters most --- the page the heading opens; and \section* sets
+% no mark at all, so for a starred heading the immediate one is the only one.
+% An earlier attempt wrote \markright after the heading and left pages 20 and
+% 26 overprinting exactly as they were.
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-\renewcommand{\sectionmark}[1]{\markright{#1}}
-\fancyhead[L]{\footnotesize\scshape Seventeenth Sunday after Pentecost}
-\fancyhead[R]{\footnotesize\itshape\nouppercase{\rightmark}}
+% What may stand in \runninghead's body is decided by pandoc, not by LaTeX. The
+% web converter does not scan this preamble file, but it does carry its
+% \newcommand definitions into the document it hands pandoc, and it expands
+% every \runninghead of the body there. \gdef and \markright are safe --- the
+% one defines, the other pandoc knows and drops, which is right, because a
+% running head is not reader-facing text in a web edition. A \newif boolean is
+% not: \global\tptshortheadtrue here failed the conversion outright. The test
+% is therefore an \ifx, and it lives in \sectionmark, which LaTeX alone calls
+% and pandoc never expands. \let, not an empty \newcommand, sets and restores
+% the unset state, so \ifx compares two tokens identical by construction.
+\newcommand{\tptnoshorthead}{}
+\let\tptshortheadtext\tptnoshorthead
+\newcommand{\runninghead}[1]{\gdef\tptshortheadtext{#1}\markright{#1}}
+\renewcommand{\sectionmark}[1]{%
+  \ifx\tptshortheadtext\tptnoshorthead
+    \markright{#1}%
+  \else
+    \expandafter\markright\expandafter{\tptshortheadtext}%
+    \global\let\tptshortheadtext\tptnoshorthead
+  \fi}
+\newcommand{\tptheadsunday}{Seventeenth Sunday after Pentecost}
+\newlength{\tptheadgutter}
+\setlength{\tptheadgutter}{1.5em}
+\newlength{\tptheadleftwidth}
+\newlength{\tptheadrightwidth}
+\newcommand{\tptheadright}[1]{%
+  \settowidth{\tptheadleftwidth}{\footnotesize\scshape\tptheadsunday}%
+  \setlength{\tptheadrightwidth}{%
+    \dimexpr\headwidth-\tptheadleftwidth-\tptheadgutter\relax}%
+  \parbox[b]{\tptheadrightwidth}{\raggedleft\footnotesize\itshape #1}}
+\fancyhead[L]{\footnotesize\scshape\tptheadsunday}
+\fancyhead[R]{\tptheadright{\nouppercase{\rightmark}}}
 \fancyfoot[C]{\footnotesize\thepage}
 \fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}%
   \fancyfoot[C]{\footnotesize\thepage}}
@@ -95,7 +156,10 @@
 %       0.16\linewidth the Gospel's Date cell alone ran to thirteen lines, and
 %       at 0.32\linewidth the sheet still ran onto a second page.
 %   D2. Explanatory and event rows at 0.98\linewidth in \scriptsize, so that
-%       seven dossiers stand on the one physical page the sheet must occupy.
+%       seven dossiers stand on the single physical page the concise
+%       companion's page 2 must occupy. The study's own terminal appendix,
+%       which the profile does not confine to one page, prints the same seven
+%       dossiers across two.
 %
 % Kept as the profile fixes them: the two-tier hierarchy, the four summary
 % fields, \footnotesize for the summary tier, \arraystretch 1.02, \LTpre

@@ -49,25 +49,25 @@ provider = "claude"
 run_id = "1e02dc05f2df9940"
 workflow = "proper-study"
 workflow_version = 3
-stage = "homily-review"
-iteration = 3
+stage = "visual-review"
+iteration = 1
 disposition = "PASS"
 standing = 0
 accepted_count = 0
-advisory_count = 11
-observation_count = 0
+advisory_count = 12
+observation_count = 8
 
 [[stages]]
 stage = "homily-review"
-iteration = 3
+iteration = 5
 disposition = "PASS"
 run_id = "1e02dc05f2df9940"
 workflow = "proper-study"
 workflow_version = 3
 standing = 0
 accepted_count = 0
-advisory_count = 1
-observation_count = 0
+advisory_count = 3
+observation_count = 2
 
 [[stages]]
 stage = "research-review"
@@ -83,19 +83,7 @@ observation_count = 0
 
 [[stages]]
 stage = "study-review"
-iteration = 1
-disposition = "PASS"
-run_id = "1e02dc05f2df9940"
-workflow = "proper-study"
-workflow_version = 3
-standing = 0
-accepted_count = 0
-advisory_count = 5
-observation_count = 0
-
-[[stages]]
-stage = "synthesis-review"
-iteration = 1
+iteration = 7
 disposition = "PASS"
 run_id = "1e02dc05f2df9940"
 workflow = "proper-study"
@@ -103,15 +91,55 @@ workflow_version = 3
 standing = 0
 accepted_count = 0
 advisory_count = 2
-observation_count = 0
+observation_count = 2
+
+[[stages]]
+stage = "synthesis-review"
+iteration = 4
+disposition = "PASS"
+run_id = "1e02dc05f2df9940"
+workflow = "proper-study"
+workflow_version = 3
+standing = 0
+accepted_count = 0
+advisory_count = 3
+observation_count = 2
+
+[[stages]]
+stage = "visual-review"
+iteration = 1
+disposition = "PASS"
+run_id = "1e02dc05f2df9940"
+workflow = "proper-study"
+workflow_version = 3
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 2
 
 [[advisories]]
 stage = "homily-review"
-id = "HOM-001"
+id = "HOM-010"
 severity = "advisory"
-location = "sections/homily/90-note.tex, References, the fifth entry: \"St Augustine, \\work{Enarrationes in Psalmos} 109, 3--6, Latin text of Migne, PL 37.\""
-problem = "The entry cites the Latin as \"Latin text of Migne, PL 37\" without saying that it was read from a tracked digital transcription rather than from the printed columns. The reviewed expansive study's own apparatus discloses the delivery for this very source at sections/90-apparatus.tex line 114, \"Latin text of Migne, PL 36--37 (Wikisource and Corpus Corporum)\", and the leaf binds the passage to artifact.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-part-11-latin-text, which is where I verified the quoted matter (\"Respondeamus omnino quod Judaei, sed non remaneamus ubi Judaei\" and \"in forma Dei ... ideo Dominus David: sed temetipsum exinanisti formam servi accipiens; inde filius David\"). The same holds for the Jerome entry, whose passage record states in terms that printed-image collation was not performed. The note is otherwise scrupulous about routes, flagging the 1861 Cummiskey English as a historical study aid and not an approved liturgical translation, naming the NPNF translators for both Greek and Latin Fathers quoted in English, and saying that the Offertory antiphon is a compilation quoted in no English at all, so these two entries are the only place a reader could take a printed-page reading to have been performed when it was not."
-required_result = "The References either name the delivery through which each Latin text was actually read, matching the disclosure the reviewed study's apparatus already carries for the Enarrationes, or the note's \"English quoted, and its route\" paragraph states once that the Latin of Augustine on Ps 109 and of Jerome on Daniel is read from tracked digital transcriptions of Migne and not from the printed columns."
+location = "sections/homily/90-note.tex, \"Relation to the reviewed readings\", the sentence beginning \"What joins them is not an editorial device but Saint John Chrysostom's reading of the Gospel's two halves\""
+problem = "The note rests the join of the two carrying readings on Chrysostom's seventy-first homily on Matthew, \"where the question about the Christ follows from the commandment that names one God\". The commandment of the appointed pericope is Deut 6:5 as Mt 22:37 gives it, \"Thou shalt love the Lord thy God with thy whole heart and with thy whole soul and with thy whole mind\", and it names no \"one God\". The confession \"There is one God, and there is none other but He\" is Mark 12:32, which Chrysostom brings in expressly (\"But wherefore doth Matthew say that he asked, tempting Him, but Mark the contrary?\") and on which he then hangs the question (\"after having praised this man that said, that there is one God, He asks the question\"). I read the whole exposition in the tracked CCEL text of NPNF1 10, SHA-256 adb8f1c9a988c5050a20fb9fdbf75143dcb227e95e3dad2f560a63b757923648, at the lines the passage record passage.john-chrysostom.homiliae-in-matthaeum.ccel-web-2026-09-17.homily-71 bounds, and all three phrases the note credits to that homily stand there verbatim. The substance of the note's claim is therefore true and the guard it exists to satisfy is met: Chrysostom really does join the two halves in his own sequence, so the join is not an editorial construction wearing a Father's name. What is inexact is only which text carries \"one God\", in the one sentence whose whole work is to be exact about that. Nothing reaches a listener, because the spoken body is careful at the same point and says \"When Scripture says that there is one God\" without placing those words in today's Gospel."
+required_result = "The sentence names the text Chrysostom actually attaches the question to -- the scribe's confession he takes from Mark, which Matthew does not print -- or drops \"that names one God\" and rests the join on Chrysostom's own sequence, so that the note's single justification for calling the join patristic rather than editorial is exact about the text it rests on."
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-011"
+severity = "advisory"
+location = "sections/homily/10-homily.tex, fifth movement, the sentence \"Later, when the gifts are carried up, the Church borrows the words of Daniel, praying in exile for a desolate sanctuary and for the people that carries God's name\", read against sections/homily/90-note.tex, \"Texts quoted, and their route\""
+problem = "The note says the Offertory antiphon \"is a compilation that no Douay verse renders, so the homily describes it and quotes no English of it\". The homily does quote no English of it, and the second half of the description is the antiphon's own matter: populum istum, super quem invocatum est nomen tuum. The first half is not. The antiphon reads illumina faciem tuam super sanctuarium tuum and stops there, and the clause quod desertum est -- the sanctuary's desolation -- is precisely one of the departures from the Vulgate that propers/verified.md records the compiler as having cut, both in section 7 under Construction and in the Offertory row of the appointed-text-against-Bible table. Read of Daniel's own prayer at Dan 9:17 the description is true, and the participle attaches most naturally to Daniel, so no listener is told anything false and the movement's argument -- that Daniel prays as one of a people -- rests on matter the antiphon does carry. Read as the note says it should be read, as a description of the antiphon, it restores a word the antiphon does not have, in a leaf that is otherwise exact about which words this Mass sings."
+required_result = "Either the description keeps to what the antiphon carries -- the sanctuary and the people that bears God's name -- or the note states that what the fifth movement describes is Daniel's prayer in Daniel 9 and not the antiphon alone, so that the description and the note's account of it agree with propers/verified.md on what the compiler left out."
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-012"
+severity = "advisory"
+location = "sections/homily/10-homily.tex, third movement, first paragraph (\"Now the second question, which looks at first like a change of subject\"), the two sentences beginning \"Chrysostom reads the two halves of this Gospel as one lesson\""
+problem = "This paragraph carries the speech's structural turn from the commandment to the question, and it is the one place where the spoken line goes slack. The listener is given \"When Scripture says that there is one God\" as a premise with nothing to attach it to: those words are not in the Gospel he has just heard, and the speech never says where they stand. The sentence that follows is forty-three words with two parentheticals (\"he writes\", \"it is said\") wrapped round a quotation, and it then claims a consequence with \"and so\" from the unanchored premise, ending in \"the question that will not let anyone keep the commandment and lose him\", which asks a listener to hold two clauses in tension and resolve an implied \"both\" in the time it takes to say them. Three of the paragraph's five sentences are quotation or attribution, which is the nearest this homily comes to the assembled-from-quotations failure the criteria name; every other paragraph in the speech is markedly clearer and more concrete. The movement is not lost, because the next paragraph makes the same turn plainly and well (\"First we are told whom we must love with everything we have. Then we are shown who he is. The God of the great commandment has a face, and it is the face of the man asking the question\"), which is why this does not block."
+required_result = "The hinge either gives the listener the confession Chrysostom is glossing in words an adult assembly can place -- that Israel was told the Lord its God is one Lord -- or states the join in the speech's own voice and keeps Chrysostom only for \"to confess Him also to be God\", so that the paragraph turns the argument at the pace and concreteness the rest of the speech keeps."
 
 [[advisories]]
 stage = "research-review"
@@ -139,56 +167,88 @@ required_result = "Either the corpus owner's correction is carried out under gui
 
 [[advisories]]
 stage = "study-review"
-id = "STU-003"
-severity = "advisory"
-location = "sections/20-whole-heart-one-body.tex, \"Two commandments, one love\" (PDF p. 14): \"One of his homilies on the Gospels expounds the parable that stands just before this Gospel in Matthew, the king's wedding feast (Mt 22:1--13).\""
-problem = "Standing advisory from study-review iteration 0, restated unchanged because it is not cleared and this stage's entries replace the previous ones in evaluations/blocking-findings-v1.toml. The wedding feast does not stand just before this Gospel. Two pericopes intervene, as the study's own Gospel section says nine pages earlier (sections/10-each-element.tex: \"the tribute to Caesar (22:15--22), the Sadducees' question about the resurrection (22:23--33), and now the Pharisees\"). The research record is careful and says only that Gregory's homily is on \"the pericope that precedes this Gospel in Mt 22\" (research/scope.md 3.6). Nothing in the argument turns on it -- Gregory's contribution is correctly presented as doctrinal reception of the double commandment cited from Mk 12:30, not as exegesis of Mt 22:34--46 -- but the sentence contradicts the study elsewhere and a reader who follows the chapter will notice. The verse range itself is defensible: the tracked Wikisource Migne text heads Homily 38 \"LECTIO S. EVANG. SEC. MATTH. XXII, 1-13\", so 22:1--13 is that homily's own lection, although the parable runs to v. 14 as the study's own each-element section prints it."
-required_result = "The sentence places Gregory's parable accurately in Matthew 22, for example \"the parable that opens the same chapter\" or \"the parable of the king's wedding feast earlier in Matthew 22\", without disturbing the correct statement that Gregory expounds the parable and cites the commandment from Mark."
-
-[[advisories]]
-stage = "study-review"
-id = "STU-004"
-severity = "advisory"
-location = "sections/30-son-and-lord-of-david.tex, end of \"By the word of the Lord and the spirit of his mouth\" (PDF p. 23): \"The Trinitarian sense of the verse is the Fathers' reading and not a signal of the page.\""
-problem = "Standing advisory from study-review iteration 0, restated unchanged because it is not cleared and this stage's entries replace the previous ones. The sentence tells the reader that the study has declined to press an inference from the Missal's typography. That register belongs to the audit record, where research/interpretations.md 2.5 already holds it, and not to the body: a constraint on what may be asserted is met by not asserting it (guidance/liturgy/roman-1962-propers.md, Evidence and Claim Discipline). It also leaves the paragraph arguing against itself, since the lower-case spiritu is introduced only to be set aside while the votive Mass's capital is offered as evidence of how the same book read the verse. This remains the one sentence of its kind in a study that is otherwise disciplined about stating findings rather than the restraint behind them, so it does not amount to the recurring habit the editorial standard treats as a failure."
-required_result = "The paragraph states the typographic facts and the Fathers' reading of Ps 32:6 directly, without a sentence whose subject is what the study does or declines to conclude from the printing."
-
-[[advisories]]
-stage = "study-review"
-id = "STU-005"
-severity = "advisory"
-location = "proper-components.toml, [[lanes]] key = \"son-and-lord-of-david\", authors list (as REVIEW_INPUTS component_contract carries it); against sections/30-son-and-lord-of-david.tex (PDF pp. 21 and 24)"
-problem = "Standing advisory from study-review iteration 0, half cleared and restated for the remainder. The record half is now repaired: research/interpretations.md 2.6 no longer says Theodoret \"is not one of this reading's witnesses\" and instead states how he is used there (\"Theodoret is the second witness of that line here, and only of it ... He must not be credited with the distribution\"), which is accurate to the prose. The manifest half is not: the son-and-lord-of-david lane's authors list still reads Jerome, Augustine, John Chrysostom, Thomas Aquinas, Irenaeus, Basil the Great, Cassiodorus, Robert Bellarmine, with Theodoret absent, while the section names him twice and gives him substantive work (\"Theodoret of Cyrus names the same three relations lordship, providence and indwelling\", and again in \"The difficulties this confession must carry\", where he stands with Chrysostom against the distribution of Eph 4:6 among the Persons)."
-required_result = "The lane record and the prose agree: Theodoret of Cyrus is added to the son-and-lord-of-david lane's authors in proper-components.toml, matching research/interpretations.md 2.6 as it now stands; or, alternatively, the three relations in that section are attributed to Chrysostom alone and Theodoret is left to the first reading, with 2.6 adjusted back to match."
-
-[[advisories]]
-stage = "study-review"
 id = "STU-006"
 severity = "advisory"
-location = "proper-components.toml, the authors lists of [[lanes]] key = \"son-and-lord-of-david\" and key = \"just-judge-merciful-hearer\" (as REVIEW_INPUTS component_contract carries them); against sections/30-son-and-lord-of-david.tex (PDF pp. 23--24) and sections/40-just-judge-merciful-hearer.tex (PDF pp. 27, 29); and research/interpretations.md section 3"
-problem = "Beyond the single omission STU-005 names, the lane author lists do not describe the sections as written, in the same direction each time (no declared name is undeveloped; developed names are missing). The son-and-lord-of-david lane omits Rupert of Deutz and William Durandus, although the section develops both: Rupert \"says that Daniel was so exalted by the vision that he not only foresaw Christ coming for our salvation but learnt beforehand the times of his coming (De divinis officiis XII.17)\", which is what carries that reading's Christological weight for the Offertory, and Durandus \"reads its second half as Christ reproving the Pharisees de infidelitate, quia non credebant ipsum esse Deum\", which supports its controlling claim about the Gospel's second half. research/interpretations.md 2.2 and 2.3 already record both for that reading, so only the manifest is out of step. The just-judge-merciful-hearer lane omits John Chrysostom, whom the section uses for the Epistle (\"the lowliness that Chrysostom calls 'the basis of all virtue' because 'all is of grace'\") and whom research/interpretations.md 3.2 and 3.3 already record as a principal witness of that reading; and it omits Thomas Aquinas, whom the section develops at the Offertory (\"prayer must be made with confidence of obtaining, and that confidence comes from God's mercy\", Super Philippenses c. 4, on 4:6) and credits by name in that reading's moral sense. Aquinas is the harder case, because research/interpretations.md section 3 does not name him among that reading's witnesses either, although the evidence itself is properly held and honestly labelled at research/scope.md 3.7 (\"Aquinas uses Dan 9:18 as doctrine on prayer; he does not expound Daniel\"), which is exactly how the study uses it. Nothing here is a false claim to a reader of the PDF; the declared records simply no longer make the correspondence inspectable, which is what the manifest and audit exist for."
-required_result = "The lane records and the prose agree. Rupert of Deutz and William Durandus are added to the son-and-lord-of-david lane's authors; John Chrysostom and Thomas Aquinas are added to the just-judge-merciful-hearer lane's authors; and research/interpretations.md section 3 records Aquinas among that reading's witnesses with his locus (Super Phil. c. 4, on 4:6) and the source role scope.md 3.7 already gives him, doctrine on prayer rather than exegesis of Daniel. Alternatively, any name the repair chooses not to declare is removed from the prose that develops it."
+location = "research/interpretations.md section 3 (3.2 'Principal witnesses and their reasoning', the 3.3 element table's Offertory row, the 3.4 moral sense, and the lane's row in 'The three readings in brief'), against proper-components.toml [[lanes]] key = 'just-judge-merciful-hearer' and sections/40-just-judge-merciful-hearer.tex, 'Daniel's prayer and Daniel's people' (PDF p. 27) and that reading's moral sense (PDF p. 30)"
+problem = "Standing advisory from study-review iterations 0, 2, 3, 4, 5 and 6, still uncleared at iteration 7 and restated because this stage's entries replace its previous ones in evaluations/blocking-findings-v1.toml. It stays advisory: the severity was decided when the defect was first seen and does not change because the round has come round again. proper-components.toml declares Thomas Aquinas among the just-judge-merciful-hearer lane's authors, and sections/40 develops him there -- 'prayer must be made with confidence of obtaining, and that confidence comes from God's mercy' (Super Philippenses c. 4, on 4:6, using Dan 9:18, PDF p. 27) -- and credits him by name in that reading's moral sense ('Ask mercy and not reward, and pray with confidence because of God's mercies and not your justifications (Aquinas)', PDF p. 30). research/interpretations.md section 3 names him at none of its four loci; I counted the occurrences in this dispatch's own read of the sealed bytes and 'Aquinas' appears zero times between the section 3 heading and the section 4 heading. The evidence itself is sound and I checked it independently this round, not merely the record of it: research/scope.md 3.7 gives the locus, the Dessain 1857 vol. 2 p. 398 route, and exactly the source role the study uses ('Aquinas uses Dan 9:18 as doctrine on prayer; he does not expound Daniel'), and I read the sentence in the tracked Dessain OCR -- 'Item debet esse cum fiducia impetrandi, et hoc ex Dei misericordia. (Dan. 9.) Neque enim in justificationibus nostris prosternimus preces ante faciem tuam, sed in miserationibus tuis multis' -- which is the study's claim exactly. The same section's 'three readings in brief' row for this lane also omits John Chrysostom, whom the manifest declares and whom 3.2 and the 3.3 Epistle row both carry, so the summary row is narrower than the section it summarises as well as narrower than the manifest. The author of iteration 7 again declined to repair it and said so plainly in research/production-review.md, which is the right call: research/interpretations.md is the research stage's reviewed file and editing it from author-study would be the silent revision of a reviewed upstream document. No record of the leaf claims the repair has been made. No reader of the PDF meets a false claim; what is broken is the correspondence between the manifest, the interpretation audit and the section, which those records exist to make inspectable."
+required_result = "research/interpretations.md section 3 records Thomas Aquinas among the just-judge-merciful-hearer reading's witnesses, with his locus (Super Philippenses c. 4, on 4:6) and the source role research/scope.md 3.7 gives him, and his name in the 3.3 Offertory row, the 3.4 moral sense and the lane's row in 'The three readings in brief'; that same summary row also names John Chrysostom, whom 3.2 and the 3.3 Epistle row already carry. Its owner is the research stage, whose file this is; the author-study stage cannot clear it and should not try. Until that owner does it, no record of the leaf may state that it has been done."
 
 [[advisories]]
 stage = "study-review"
-id = "STU-007"
+id = "STU-017"
 severity = "advisory"
-location = "sections/10-each-element.tex, \"Introit: the just God and the servant's plea\" (PDF p. 9): \"Three verses further on, in the strophe the antiphon passes over, the psalm prays Faciem tuam illumina super servum tuum (v. 135)\""
-problem = "The offset is wrong on every reading available to the reader. The verses named in the sentences before are Ps 118:124 and the psalm verse Ps 118:1, and v. 135 is eleven verses after the first and a hundred and thirty-four after the second; counted from the antiphon's opening v. 137 it is two verses earlier, not three later. The rest of the sentence is exact and checkable -- v. 135 is the right verse, it does stand in the strophe Phe (vv. 129--136) that the antiphon passes over between v. 124 and v. 137, and it does carry the verb and construction the Offertory uses of the sanctuary, as research/scope.md 1.1a records. Only the numeral has no anchor, and a reader who counts finds nothing at the place the sentence sends him."
-required_result = "The sentence locates Ps 118:135 by something a reader can check -- for example \"Two verses before the antiphon's own verse 137, in the strophe the antiphon passes over\" -- or drops the offset and keeps the strophe and the verse number, which already fix the place."
+location = "research/interpretations.md section 2.3, the `alleluia` row ('For Augustine the one who prays is the eternal Word made poor, \"In principio erat Verbum … Verbum caro factum est\", head and body ... [A] Augustine En. 101 s. 1, 1–2'), and research/scope.md section 3.5, the 'Direct ancient exegesis, Latin' row; against sections/30-son-and-lord-of-david.tex, 'The other texts as confession', the Alleluia paragraph (PDF pp. 23–24)"
+problem = "The iteration-7 repair of STU-016 is sound and I verified it at its source, but it has left the interpretation audit behind the section it audits. sections/30 now quotes Augustine's sentence in full -- 'Christus et Ecclesia, utrumque unus: sed Verbum et caro non utrumque unum; Pater et Verbum utrumque unum; Christus et Ecclesia utrumque unus, unus quidam vir perfectus' -- and builds the reading's central Christological distinction on the two middle members of it, that the Father and the Word are one in substance while the Word and the flesh are not one substance and are nonetheless one person. Neither research record carries those two members. research/scope.md 3.5 quotes the sentence only as 'Christus et Ecclesia utrumque unus … unus quidam vir perfectus', eliding exactly the clause the second reading now turns on; research/interpretations.md 2.3 gives the Alleluia row a different Augustine quotation altogether ('In principio erat Verbum … Verbum caro factum est'), which the study no longer prints at that place. The evidence behind the study is not missing and that is why this does not block: the locus is registered and its reading recorded (scope.md 6.2 has 'En. in Ps. 101 s. 1, 1–3, tracked Migne text, part 11, re-hashed on the second reentry and s. 1, 2 re-read for the exact wording'), and I read the whole sentence myself in that tracked artifact (SHA-256 8b9dafef805536c0d4551fc427a6b7060fc1655326b0d1e14507b317dfcf711f) and found the study's transcription exact, down to the punctuation. What is missing is the transcription in the records, so the leaf's audit of the second reading does not show the clause on which that reading's hardest doctrinal sentence rests, and a later reader checking the section against the audit will not find it there. This is the same records-correspondence class the leaf has repeatedly weighed and fixed at advisory (STU-006, STU-008, HOM-001, SYN-009). Its owner is the research stage; the author-study stage was right not to edit a reviewed upstream file and, as with STU-006, cannot clear this one either."
+required_result = "research/scope.md section 3.5 quotes Augustine's sentence at En. in Ps. 101, s. 1, 2 including the members the study uses ('sed Verbum et caro non utrumque unum; Pater et Verbum utrumque unum'), and research/interpretations.md section 2.3's Alleluia row records that clause and the unus/unum distinction the second reading draws from it, in place of or beside the 'In principio erat Verbum' quotation the study no longer prints there, so that the interpretation audit shows the evidence for the reading's Christological distinction at the locus it already registers."
 
 [[advisories]]
 stage = "synthesis-review"
-id = "SYN-007"
+id = "SYN-020"
 severity = "advisory"
-location = "sections/concise/04-themes.tex, penultimate paragraph (PDF p. 4): \"Two habits of speech run through the whole of it. The first is the word ``one'': seven times in three verses of the Epistle, once in the Collect's te solum Deum, and once more in the Gospel, where the Lord of David's psalm sits at the right hand of the God whom the great commandment names.\""
-problem = "The verse span is now right (SYN-002 is cleared), but two of the three sites the sentence counts are not occurrences of the word it announces. The Collect reads te solum Deum: solum is 'alone, only', not unus, and the 1962 Latin collated in propers/verified.md section 2 carries no unus anywhere in the prayer, which is why the 1861 English prints 'thee, the only true God' and the concise study's own map glosses it 'the one God'. The Gospel carries none either: I read Mt 22:34-46 in the tracked Clementine text (src/sources/bibles/clementine-vulgate/chapters/Matt/22.json) and the pericope has no unus, the only 'one' in the Douay of the passage being 'one of them, a doctor of the law' (v. 35) in an unrelated sense; and the clause the sentence offers in its place -- 'where the Lord of David's psalm sits at the right hand of the God whom the great commandment names' -- states an identification, not a word. So the paragraph opens by naming a habit of the appointed wording and then, at two of three sites, silently moves from the word to the theme. Only the Epistle's sevenfold unus is a count of a word; the second habit the same paragraph names, the plea to be heard, is described as a theme and is exact. Nothing in the argument turns on it and the paragraph's real point -- that the Mass keeps returning to the oneness of the God it asks to be loved -- is sound, which is why this does not block. I file it at the severity this leaf has fixed for the same class of textual slip, SYN-002 in this component and STU-007 in the study, both advisory and standing. The sentence is the concise study's own; the corresponding passage does not stand in the expansive study, so the slip enters at this derivation."
-required_result = "The sentence counts as the word 'one' only what the appointed Latin carries -- the Epistle's sevenfold unus -- and names the Collect's te solum and the Gospel's identification of the one God for what they are, or else the whole habit is stated as a habit of thought rather than of wording, so that a reader who turns to the Missal's Collect and Gospel finds what the sentence sends him for."
+location = "sections/concise/01-inventory.tex, the note under the page-1 map (PDF p. 1): \"The Mass is of the second class, in green with Gloria and Credo; it says one set of orations and admits no commemoration.\""
+problem = "The clause states the rubric as a universal property of the Mass, and as a rule it is false: a Sunday of the second class does admit the commemoration of a second-class feast. The expansive study says so and supplies the reason it does not arise here -- \"The calendar's commemoration of Saints Eustace and Companions on that day gives way to the Sunday, since a Sunday of the second class admits no commemoration but that of a feast of the same class (Rubricae generales 111 b; Rubricae generales Missalis 434 b)\" (sections/00-opening.tex) -- and propers/verified.md 2 records the same bound, adding that none is due on 20 September 2026. The concise clause is that sentence truncated at exactly the point where the qualification begins, so the only rubrical statement page 1 makes is true of this occurrence and wrong as a rule, in a document whose profile makes the occurrence rule a sourced identity claim. The wording arrived from the required_result of SYN-018 at iteration 3, which asked only that the note stop appearing to contradict the three orations printed above it; it was not asked to state the commemoration rule without its bound, and the concise's own scope appendix cites RG 111 b and RGMR 434 b without restating it."
+required_result = "The page-1 note either restores the study's qualification -- no commemoration but that of a feast of the same class, and none due on 20 September 2026 -- or ties the clause explicitly to this occurrence, so that page 1 states no false rubric while still reading against the three orations in the map above it."
 
 [[advisories]]
 stage = "synthesis-review"
-id = "SYN-008"
+id = "SYN-021"
 severity = "advisory"
-location = "sections/concise/10-commentary.tex, 'The voice in which this people prays', second paragraph (PDF p. 9): \"The Offertory is the one element where a disagreement touches the praying subject himself.\""
-problem = "The paragraph eight lines above it reports a disagreement that touches the praying subject at least as directly. There Augustine hears the poor man of Ps 101 as Christ, head and body, 'Vox ergo una, quia caro una', and Cassiodorus declines to put the psalm in Christ's mouth and hears the poor of Christ instead -- a dispute precisely about whose voice the Alleluia is, which the same subsection then turns to account by giving the two answers to different readings. The Offertory's disagreement (Jerome allowing that a sinless Daniel joined himself to a sinful people out of humility, Augustine resting on 'My sins, and the sins of my people') is real and correctly reported, but it is not the only one of its kind in the formulary and the counter-example is printed on the same page. This is the third editorial superlative of the kind in this component: SYN-005 named the other two -- 'the one place in this formulary where two lines of exegesis run against each other' at Eph 4:6 and the Alleluia 'divid[ing] its witnesses more sharply than any other element' -- and both were repaired at iteration 1, leaving this one standing. Neither the expansive study nor research/interpretations.md section 3.6 claims uniqueness here; the study's comparison section lists six narrow disagreements without ranking them. No witness is misrepresented and nothing in the argument turns on it, which is why it does not block; it is filed at the severity SYN-005 fixed for the class."
-required_result = "The sentence introduces the Offertory's disagreement without the uniqueness claim -- for example 'At the Offertory the disagreement touches the praying subject himself' -- or says what distinguishes it from the Alleluia's disagreement over whose voice prays, so that the two statements in the same subsection agree."
+location = "sections/concise/10-commentary.tex, \"The voice in which this people prays\", first paragraph (PDF p. 8): \"Augustine supplies that third reading a second sentence on the same verse ---si me extollo, longe fis; si me humilio, inclinas aurem tuam ad me---\""
+problem = "That sentence is Augustine's gloss on Ps 101:3, not on the Alleluia's Ps 101:2, and the paragraph's \"the same verse\" can only mean the Alleluia's, which the paragraph opens by calling one verse long and which Bellarmine is then cited on in the next clause. In the leaf's own tracked Migne text (src/sources/works/augustine/enarrationes-in-psalmos/editions/latin-migne-corpus-corporum-wikisource-web-2026-09-05/artifacts/wikisource-part-11-latin-text/enarrationes-part-11.txt) Enarr. in Ps. 101, s. 1, 3 is headed \"[vers. 2, 3.]\": it quotes \"Exaudi, Domine, orationem meam, et clamor meus ad te perveniat\" and glosses it \"in geminatione affectus petentis est\", and only then quotes \"In quacumque die tribulor, inclina aurem tuam ad me\" and answers \"Tribulor enim deorsum; tu autem es sursum: si me extollo, longe fis; si me humilio, inclinas aurem tuam ad me\" -- the sentence is the gloss on v. 3's inclina aurem tuam ad me. research/scope.md 3.5 records it correctly, \"on v. 3\". The imprecision is not the concise's invention: the accepted expansive study carries it in its own words at sections/40-just-judge-merciful-hearer.tex, \"Augustine hears in its second verse humility inclining God's ear\", with the section locus (s. 1, 3) right beside it. It is advisory and not blocking because the edition's own lemma covers vv. 2-3 together, the section locus printed in the References (\"Ps 101, s. 1, 2-3\") is correct, and nothing doctrinal or comparative in the third reading turns on which of the two verses the sentence answers; but the document elsewhere is exact about which words this Mass sings, and here it is not."
+required_result = "The clause places the sentence where Augustine puts it -- in the same section of the same sermon, on the verse that follows the Alleluia's, rather than on the Alleluia's own verse -- and, if the expansive study is reopened for any other reason, its corresponding sentence is brought into agreement with research/scope.md 3.5 in the same way."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-022"
+severity = "advisory"
+location = "sections/concise/90-apparatus.tex, References, \"Liturgical books and Bibles\", the Douay--Rheims entry (PDF p. 11)"
+problem = "The themes section states that the lawyer \"is answered with Deut 6:5 and, unasked, with Lev 19:18 'like to this'\" (sections/concise/04-themes.tex, PDF p. 3). The Douay--Rheims entry lists Deut 6:5 among its loci but not Lev 19:18, so of the two Old Testament texts named in one sentence only one can be checked against a listed locus, and Leviticus appears nowhere in the References. propers/verified.md 6 records both as embedded citations of the pericope (Deut 6:5 at v. 37, Lev 19:18 at v. 39), so the claim is verifiable from the leaf's records; it is the apparatus that is asymmetric. The accepted expansive study's References carry the same omission."
+required_result = "Lev 19:18 is added to the Douay--Rheims loci beside Deut 6:5, so that both Old Testament texts the body names in that sentence are locatable from the References."
+
+[[advisories]]
+stage = "visual-review"
+id = "VIS-001"
+severity = "advisory"
+location = "57-seventeenth-after-pentecost-synthesis.pdf p. 2 (every full-width explanatory and event row of the Scriptural Date and Location dossier) and 57-seventeenth-after-pentecost.pdf pp. 33-34 (the same rows in the terminal dossier); set by \\dossierprose and \\dossierevent in src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/format.tex"
+problem = "The spanning explanatory and event rows are set in \\scriptsize (about 8pt on an 11pt base) across 0.98\\linewidth, which yields lines of roughly 115-125 characters -- by some margin the smallest type on the longest measure anywhere in the three documents. The glyphs themselves are clean and legible at print size, and the leaf documents the reduction as deliberate deviation D2 taken so that all seven dossiers stand on the single physical page the concise contract fixes for page 2, which the 1962 profile's own clause on changing measurements permits. But the profile fixes that spanning row at 0.92\\linewidth, and the leaf widened rather than narrowed it, so the one setting in the production that most taxes the eye is also the one that moved furthest from the fixed measure in the direction that hurts reading."
+required_result = "The dossier's full-width explanatory and event rows carry no more than about 100 characters per line at their present size -- for example by returning the spanning row to the profile's 0.92\\linewidth, or by indenting it under the summary tier -- while the complete seven-dossier inventory still occupies exactly physical page 2 of the concise PDF, page 2 still carries nothing else, and no evidence is dropped from any dossier. If no such setting keeps all seven dossiers on one page, the present measurement stands and the reason is recorded beside deviation D2 in format.tex."
+
+[[observations]]
+stage = "homily-review"
+location = "research/interpretations.md section 1.2, the John Chrysostom In Mt. hom. 71 bullet (\"Chrysostom reads the second as the way that leads to the first and by which the first is established\")"
+note = "The interpretation audit gives the establishing to the second commandment, where the accepted expansive study reads both clauses of Chrysostom's sentence of the second and says the opposite way round -- \"the love of neighbour opens the road to the love of God, and the love of God in its turn re-establishes the love of neighbour ... Each commandment holds the other up\" (sections/20-whole-heart-one-body.tex) -- and the spoken body follows the study (\"Each holds the other up\"). I read the sentence and its four proof texts myself in the tracked CCEL NPNF1 10 text and the study's reading is the better one: Jn 3:20 and 1 Tim 6:10 run from the failure of charity to the loss of God, Ps 13:1 and Jn 14:15 run back from God to the neighbour. So the homily is supported and I raise nothing against it; what is out of step is the audit, whose owner is the research stage. I record it rather than route it because the speech's own use is sound, because this is the records-correspondence class the leaf has repeatedly weighed at advisory (STU-006, STU-017), and because a repair here would reopen research review and every document below it for a sentence that misleads no reader."
+
+[[observations]]
+stage = "homily-review"
+location = "sections/homily/90-note.tex, \"Length and pace\", the third pace figure (\"and at 110 words a minute just under thirteen\")"
+note = "The arithmetic is right (1,429 words at 110 w.p.m. is 12.99 minutes) and the disclosure is the honest thing to print, but it is the one figure in the note that falls outside the profile's default 10-12 minute scope. The two figures the note leads with, 120 and 130 words a minute, put the speech at 11.9 and 11.0 minutes and inside it. I record this rather than raise it because the profile sets an unhurried pace as the standard and 110 w.p.m. is slower than unhurried, so the speech is within scope on the note's own leading figures; a reader who meets only the third figure could think otherwise."
+
+[[observations]]
+stage = "study-review"
+location = "sections/90-apparatus.tex, References: the entries for St Augustine (Enarrationes in Psalmos, 'on Ps 32, I, 6, 12, and II, s. 2, 5, 8, 15-18', PDF p. 37), Rupert of Deutz (De divinis officiis XII.17-18) and St Robert Bellarmine (on Pss 32:6, 12; 75:9-13; 101:2; 118:1, 124, 137) (PDF p. 38)"
+note = "Three reference loci still reach past what the study actually cites, unchanged in count from the last round. The body uses Augustine on Ps 32 at I, 12 and at II, s. 2, 5 and II, s. 2, 15-18, but nowhere at I, 6 or at II, s. 2, 8; it uses Rupert at XII.17 only, XII.18 being his Eighteenth Sunday, whose Gospel is Mt 23 and which reaches no claim of the study; and it uses Bellarmine on Ps 32:6 and 12, Ps 75, Ps 101:2 and Ps 118:124 and 137, but nowhere on Ps 118:1, which research/scope.md 3.1 records as read. Each is one item wider than the claims it supports rather than an unused source, which is ordinary scholarly latitude and does not reach my criteria as a finding; I record it again because a reader checking the apparatus against the body will find the mismatch."
+
+[[observations]]
+stage = "study-review"
+location = "sections/80-date-location.tex, the Date column of the Offertory dossier ('Historical setting: Duration: all these nations shall serve the king of Babylon seventy years', PDF p. 33) and of the Gospel dossier ('Event - No narrated-event date in the chronology corpus', PDF p. 34)"
+note = "Two of the seven Date cells still report a state of the chronology corpus rather than a date. The Offertory's historical-setting group prints a duration quoted from Jeremias instead of a date for the prayer in the first year of Darius the Mede that the same dossier's Location cell identifies, though its composition group does give B.C. 570-536; the Gospel's narrated event -- the controversy in the Temple, which the Location cell dates by nothing but Mt 21:23 -- has no date in the corpus and says so. Both are exactly what research/chronology-annotations.tex generates from research/chronology.toml, the study is forbidden to hand-author over them, and sections/90-apparatus.tex discloses the limit honestly, so this is not a defect of the study. I record it because these two cells are carried unchanged into the concise companion's physical page 2, where the Date column is the point of the sheet, and because the gap is in the shared chronology corpus rather than in this leaf."
+
+[[observations]]
+stage = "synthesis-review"
+location = "generation-metadata.tex, the shared revision record printed at the foot of the concise study (PDF p. 12): \"Last revised (UTC): 2026-09-19T08:05:00Z\""
+note = "The stamp is ahead of the record it dates. generation-metadata.tex was last written at 2026-09-19T07:28:33Z and the reviewed artifact (derive-synthesis-0004) was built at 07:32Z, and 08:05Z had not yet arrived when this review read the document (07:46Z). The same pattern runs back through the iterations -- 20:40Z, 21:30Z, 01:30Z, 07:10Z -- all round figures rather than the moment of writing, so the field reads as an estimate rather than a finalization timestamp. The record is shared by all three artifacts and is not the concise study's to own alone, which is why this is recorded rather than routed."
+
+[[observations]]
+stage = "synthesis-review"
+location = "sections/concise/10-commentary.tex, the six subsection titles and the way the three readings are named across them (PDF pp. 5-10)"
+note = "The themes page introduces the readings as \"The first\", \"The second\" and \"The third\", and the commentary then never uses those ordinals, naming them instead by descriptive tags that vary from unit to unit: \"the reading anchored in the commandment\" and \"the reading of the whole heart and the one body\" and \"the reading of the one body\"; \"the reading of David's son and David's Lord\" and \"the reading of David's Lord\"; \"the reading of the humbled people\", \"the reading anchored in the Introit\" and, in the first two units, no tag at all but \"Read from the Introit instead\". Nothing is misattributed and a careful reader can map every tag, so this is not raised as a finding; it is the one place where following three alternatives across six cross-proper questions costs the reader more than the interleaving itself does."
+
+[[observations]]
+stage = "visual-review"
+location = "57-seventeenth-after-pentecost-homily.pdf, document catalog"
+note = "The homily's PDF catalog declares /PageMode/UseOutlines but carries no /Outlines object, so a viewer that honours the page mode opens an empty bookmark pane; the study and the concise study both carry real outline trees alongside the same page mode. The homily is five pages and needs no bookmarks to be navigable, and my lane's criteria ask for navigation only of the study, so this is noted rather than raised."
+
+[[observations]]
+stage = "visual-review"
+location = "build/pdf-review/claude-57-vr0/.../57-seventeenth-after-pentecost-homily/ (review-run.json and its contact-sheets and pages)"
+note = "Contact sheets and page rasters for the homily were already present in the tree from an earlier pass, and their review-run.json records pdf_sha256 b6dfec59fc0b6e433a739753cdb700427794399cdd5f05d44662fbe4552127a2, which is not the homily PDF this dispatch seals (923fb4936d10...). They were rendered from a superseded build. This review therefore rendered its own rasters from the sealed bytes into build/pdf-review/claude-57-vr1 and used only those; a later reader who opens the vr0 sheets would be looking at a document the run has replaced."

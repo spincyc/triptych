@@ -42,7 +42,9 @@ witnesses read are those named in the References at their exact loci. The
 Greek Fathers were read in English (the Nicene and Post-Nicene and Ante-Nicene
 translations), with Chrysostom's gloss on Eph 4:6 and Theodoret's commentary on
 Eph 4:1--6 also read in Migne's Greek. Bellarmine was read only in O'Sullivan's
-abridged English of 1866. Some Latin texts were read in web deliveries of the
+abridged English of 1866, and that in a tracked web transcription of the
+translation (ecatholic2000.com), not on the 1866 printing. Some Latin texts
+were likewise read in web deliveries of the
 standard editions (augustinus.it, monumenta.ch, the Corpus Thomisticum) or in
 optical text layers of printed editions (Rupert, Durandus, Schuster,
 Guéranger, Irenaeus, Trent) rather than on printed page images. Not reached:
@@ -90,6 +92,17 @@ independently before this study was written.
 \par}
 
 \section*{References}
+% A starred heading sets no mark, so without this the Appendix that ends above
+% went on heading the pages of the bibliography. The heading must stay starred:
+% check-content-preflight finds the References section by that exact form, and
+% an ordinary \section --- which would set the mark itself, sections being
+% unnumbered here --- hides the bibliography from references-used and
+% unquoted-not-quoted. The mark is therefore set explicitly, through the
+% leaf-local \runninghead rather than through \markright directly, because the
+% web converter's macro whitelist does not carry \markright and this study is
+% the leaf's only web edition. The concise companion, which has no web edition,
+% writes \markright here.
+\runninghead{References}
 \addcontentsline{toc}{section}{References}
 \label{sec:references}
 
@@ -117,7 +130,7 @@ independently before this study was written.
 \item St Augustine, \work{On the Merits and Remission of Sins} II.13, Nicene and Post-Nicene Fathers, 1st ser., vol.~5.
 \item St Basil the Great, \work{On the Holy Spirit} 16.38, trans. B. Jackson, Nicene and Post-Nicene Fathers, 2nd ser., vol.~8 (NewAdvent text).
 \item Cassiodorus, \work{Expositio psalmorum}, Latin (monumenta.ch): on Ps~32:6, 12; Ps~75:12--13; Ps~101:1--2; Ps~118:124, 137.
-\item St John Chrysostom, \work{Homilies on Matthew} 71, trans. G. Prevost, rev. M.~B. Riddle, Nicene and Post-Nicene Fathers, 1st ser., vol.~10.
+\item St John Chrysostom, \work{Homilies on Matthew} 71, trans. G. Prevost, rev. M.~B. Riddle, Nicene and Post-Nicene Fathers, 1st ser., vol.~10. That edition's note on the psalm verse set beside the second commandment reads ``Ps.\ liii.\ 1'', in the Hebrew numbering; but the words it prints, ``They are corrupt, and become abominable in their ways'', are those of Ps~13:1 (Heb.\ 14:1), \latin{abominabiles facti sunt in studiis suis}, and not those of Ps~52:2 (Heb.\ 53:2), \latin{abominabiles facti sunt in iniquitatibus}.
 \item St John Chrysostom, \work{Homilies on Ephesians} 9--11, Nicene and Post-Nicene Fathers, 1st ser., vol.~13; the gloss on Eph 4:6 also in Migne, PG 62, col.~80.
 \item St Gregory the Great, \work{Homiliae in Evangelia} 38.9--10, Latin (Wikisource text).
 \item St Hilary of Poitiers, \work{Tractatus super Psalmos}, ed. A. Zingerle, CSEL 22 (Vienna, 1891): on Ps~118, \latin{Ain} 10 (pp.~500--501) and \latin{Sade} 1 (p.~515).
@@ -127,7 +140,7 @@ independently before this study was written.
 \item St Thomas Aquinas, \work{Super Ephesios} c.~4, lect.~1--2, and \work{Super Philippenses} c.~4, on 4:6, in \work{In omnes S.~Pauli Apostoli epistolas commentaria}, vol.~2 (Liège: Dessain, 1857), pp.~314--317, 398.
 \item St Thomas Aquinas, \work{Super Evangelium S.~Matthaei lectura} c.~22, lect.~4 (Marietti text, Corpus Thomisticum, \url{https://www.corpusthomisticum.org/cml21.html}).
 \item St Thomas Aquinas, \work{Postilla super Psalmos}, Ps~32, nn.~5, 11 (Parma text, Corpus Thomisticum, \url{https://www.corpusthomisticum.org/cps31.html}).
-\item St Robert Bellarmine, \work{A Commentary on the Book of Psalms}, trans. J. O'Sullivan (1866, abridged): on Pss~32:6, 12; 75:9--13; 101:2; 118:1, 124, 137.
+\item St Robert Bellarmine, \work{A Commentary on the Book of Psalms}, trans. J. O'Sullivan (1866, abridged), read in the eCatholic2000 transcription of that translation, \url{https://www.ecatholic2000.com/bellarmine/commentary-on-psalms.shtml}: on Pss~32:6, 12; 75:9--13; 101:2; 118:1, 124, 137.
 \item Council of Trent, sess.~XIII, \work{Decretum de ss.~Eucharistia}, cap.~2, in \work{Canones et decreta Concilii Tridentini} (Tauchnitz, 1887).
 \end{itemize}
 
