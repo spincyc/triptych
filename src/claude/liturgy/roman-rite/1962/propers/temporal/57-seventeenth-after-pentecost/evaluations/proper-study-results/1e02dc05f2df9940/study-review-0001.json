@@ -1,0 +1,445 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "STU-003",
+      "location": "sections/20-whole-heart-one-body.tex, \"Two commandments, one love\" (PDF p. 14): \"One of his homilies on the Gospels expounds the parable that stands just before this Gospel in Matthew, the king's wedding feast (Mt 22:1--13).\"",
+      "problem": "Standing advisory from study-review iteration 0, restated unchanged because it is not cleared and this stage's entries replace the previous ones in evaluations/blocking-findings-v1.toml. The wedding feast does not stand just before this Gospel. Two pericopes intervene, as the study's own Gospel section says nine pages earlier (sections/10-each-element.tex: \"the tribute to Caesar (22:15--22), the Sadducees' question about the resurrection (22:23--33), and now the Pharisees\"). The research record is careful and says only that Gregory's homily is on \"the pericope that precedes this Gospel in Mt 22\" (research/scope.md 3.6). Nothing in the argument turns on it -- Gregory's contribution is correctly presented as doctrinal reception of the double commandment cited from Mk 12:30, not as exegesis of Mt 22:34--46 -- but the sentence contradicts the study elsewhere and a reader who follows the chapter will notice. The verse range itself is defensible: the tracked Wikisource Migne text heads Homily 38 \"LECTIO S. EVANG. SEC. MATTH. XXII, 1-13\", so 22:1--13 is that homily's own lection, although the parable runs to v. 14 as the study's own each-element section prints it.",
+      "required_result": "The sentence places Gregory's parable accurately in Matthew 22, for example \"the parable that opens the same chapter\" or \"the parable of the king's wedding feast earlier in Matthew 22\", without disturbing the correct statement that Gregory expounds the parable and cites the commandment from Mark.",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-004",
+      "location": "sections/30-son-and-lord-of-david.tex, end of \"By the word of the Lord and the spirit of his mouth\" (PDF p. 23): \"The Trinitarian sense of the verse is the Fathers' reading and not a signal of the page.\"",
+      "problem": "Standing advisory from study-review iteration 0, restated unchanged because it is not cleared and this stage's entries replace the previous ones. The sentence tells the reader that the study has declined to press an inference from the Missal's typography. That register belongs to the audit record, where research/interpretations.md 2.5 already holds it, and not to the body: a constraint on what may be asserted is met by not asserting it (guidance/liturgy/roman-1962-propers.md, Evidence and Claim Discipline). It also leaves the paragraph arguing against itself, since the lower-case spiritu is introduced only to be set aside while the votive Mass's capital is offered as evidence of how the same book read the verse. This remains the one sentence of its kind in a study that is otherwise disciplined about stating findings rather than the restraint behind them, so it does not amount to the recurring habit the editorial standard treats as a failure.",
+      "required_result": "The paragraph states the typographic facts and the Fathers' reading of Ps 32:6 directly, without a sentence whose subject is what the study does or declines to conclude from the printing.",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-005",
+      "location": "proper-components.toml, [[lanes]] key = \"son-and-lord-of-david\", authors list (as REVIEW_INPUTS component_contract carries it); against sections/30-son-and-lord-of-david.tex (PDF pp. 21 and 24)",
+      "problem": "Standing advisory from study-review iteration 0, half cleared and restated for the remainder. The record half is now repaired: research/interpretations.md 2.6 no longer says Theodoret \"is not one of this reading's witnesses\" and instead states how he is used there (\"Theodoret is the second witness of that line here, and only of it ... He must not be credited with the distribution\"), which is accurate to the prose. The manifest half is not: the son-and-lord-of-david lane's authors list still reads Jerome, Augustine, John Chrysostom, Thomas Aquinas, Irenaeus, Basil the Great, Cassiodorus, Robert Bellarmine, with Theodoret absent, while the section names him twice and gives him substantive work (\"Theodoret of Cyrus names the same three relations lordship, providence and indwelling\", and again in \"The difficulties this confession must carry\", where he stands with Chrysostom against the distribution of Eph 4:6 among the Persons).",
+      "required_result": "The lane record and the prose agree: Theodoret of Cyrus is added to the son-and-lord-of-david lane's authors in proper-components.toml, matching research/interpretations.md 2.6 as it now stands; or, alternatively, the three relations in that section are attributed to Chrysostom alone and Theodoret is left to the first reading, with 2.6 adjusted back to match.",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-006",
+      "location": "proper-components.toml, the authors lists of [[lanes]] key = \"son-and-lord-of-david\" and key = \"just-judge-merciful-hearer\" (as REVIEW_INPUTS component_contract carries them); against sections/30-son-and-lord-of-david.tex (PDF pp. 23--24) and sections/40-just-judge-merciful-hearer.tex (PDF pp. 27, 29); and research/interpretations.md section 3",
+      "problem": "Beyond the single omission STU-005 names, the lane author lists do not describe the sections as written, in the same direction each time (no declared name is undeveloped; developed names are missing). The son-and-lord-of-david lane omits Rupert of Deutz and William Durandus, although the section develops both: Rupert \"says that Daniel was so exalted by the vision that he not only foresaw Christ coming for our salvation but learnt beforehand the times of his coming (De divinis officiis XII.17)\", which is what carries that reading's Christological weight for the Offertory, and Durandus \"reads its second half as Christ reproving the Pharisees de infidelitate, quia non credebant ipsum esse Deum\", which supports its controlling claim about the Gospel's second half. research/interpretations.md 2.2 and 2.3 already record both for that reading, so only the manifest is out of step. The just-judge-merciful-hearer lane omits John Chrysostom, whom the section uses for the Epistle (\"the lowliness that Chrysostom calls 'the basis of all virtue' because 'all is of grace'\") and whom research/interpretations.md 3.2 and 3.3 already record as a principal witness of that reading; and it omits Thomas Aquinas, whom the section develops at the Offertory (\"prayer must be made with confidence of obtaining, and that confidence comes from God's mercy\", Super Philippenses c. 4, on 4:6) and credits by name in that reading's moral sense. Aquinas is the harder case, because research/interpretations.md section 3 does not name him among that reading's witnesses either, although the evidence itself is properly held and honestly labelled at research/scope.md 3.7 (\"Aquinas uses Dan 9:18 as doctrine on prayer; he does not expound Daniel\"), which is exactly how the study uses it. Nothing here is a false claim to a reader of the PDF; the declared records simply no longer make the correspondence inspectable, which is what the manifest and audit exist for.",
+      "required_result": "The lane records and the prose agree. Rupert of Deutz and William Durandus are added to the son-and-lord-of-david lane's authors; John Chrysostom and Thomas Aquinas are added to the just-judge-merciful-hearer lane's authors; and research/interpretations.md section 3 records Aquinas among that reading's witnesses with his locus (Super Phil. c. 4, on 4:6) and the source role scope.md 3.7 already gives him, doctrine on prayer rather than exegesis of Daniel. Alternatively, any name the repair chooses not to declare is removed from the prose that develops it.",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-007",
+      "location": "sections/10-each-element.tex, \"Introit: the just God and the servant's plea\" (PDF p. 9): \"Three verses further on, in the strophe the antiphon passes over, the psalm prays Faciem tuam illumina super servum tuum (v. 135)\"",
+      "problem": "The offset is wrong on every reading available to the reader. The verses named in the sentences before are Ps 118:124 and the psalm verse Ps 118:1, and v. 135 is eleven verses after the first and a hundred and thirty-four after the second; counted from the antiphon's opening v. 137 it is two verses earlier, not three later. The rest of the sentence is exact and checkable -- v. 135 is the right verse, it does stand in the strophe Phe (vv. 129--136) that the antiphon passes over between v. 124 and v. 137, and it does carry the verb and construction the Offertory uses of the sanctuary, as research/scope.md 1.1a records. Only the numeral has no anchor, and a reader who counts finds nothing at the place the sentence sends him.",
+      "required_result": "The sentence locates Ps 118:135 by something a reader can check -- for example \"Two verses before the antiphon's own verse 137, in the strophe the antiphon passes over\" -- or drops the offset and keeps the strophe and the verse number, which already fix the place.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 1,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/00-opening.tex",
+          "references": [
+            "format.tex",
+            "research/context.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "appointed-texts",
+          "kind": "appointed-text",
+          "path": "sections/05-appointed-texts.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "appointed-texts"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "each-element",
+          "kind": "proper-treatment",
+          "path": "sections/10-each-element.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "whole-heart-one-body",
+          "kind": "interpretive-lane",
+          "path": "sections/20-whole-heart-one-body.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "son-and-lord-of-david",
+          "kind": "interpretive-lane",
+          "path": "sections/30-son-and-lord-of-david.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "just-judge-merciful-hearer",
+          "kind": "interpretive-lane",
+          "path": "sections/40-just-judge-merciful-hearer.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "whole-heart-one-body",
+            "son-and-lord-of-david",
+            "just-judge-merciful-hearer"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/50-comparison.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "scriptural-date-location",
+          "kind": "front-matter",
+          "path": "sections/80-date-location.tex",
+          "references": [
+            "format.tex",
+            "research/chronology-annotations.tex",
+            "research/chronology.toml",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "study-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-apparatus.tex",
+          "references": [
+            "propers/verified.md",
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine",
+            "John Chrysostom",
+            "Gregory the Great",
+            "Jerome",
+            "Theodoret of Cyrus",
+            "Thomas Aquinas",
+            "Cassiodorus"
+          ],
+          "component_keys": [
+            "whole-heart-one-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "whole-heart-one-body",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "Augustine",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Irenaeus",
+            "Basil the Great",
+            "Cassiodorus",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "son-and-lord-of-david"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "son-and-lord-of-david",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine",
+            "Jerome",
+            "Hilary of Poitiers",
+            "Cassiodorus",
+            "Robert Bellarmine",
+            "Rupert of Deutz",
+            "William Durandus"
+          ],
+          "component_keys": [
+            "just-judge-merciful-hearer"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "just-judge-merciful-hearer",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/format.tex": "d7cba8a2b3b1c67fbe423ee22b4b2f6c99a73481128868db883fba0e97c7105e",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/main.tex": "ca56ba721f7cd222468e068f4a386694c9591477065334353c7203d8043b134e",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/propers/verified.md": "60d85fbd70f9884c369d843230ce9c71795e08b9e0102257629b48138dc92408",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/chronology-annotations.tex": "3bf62cf41bfbc61275ce49a192bf6d94b4da80d1aa56248e4849e3b9d92b7f85",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/chronology.toml": "7321744467ba108d8ba22223060445081a81bb3f4e9a49d087aa8edb6c71165b",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/context.md": "76d4f8fd74608153a94e0e930d6b178b3cbfa8a7d9c4870250793643e5982e26",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/interpretations.md": "e2e1d8e7e7f3f53474c99731b9131bd909a4808fc34079339ef115485fbb1d45",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/scope.md": "00ec5c1f857decf764fbab8e1472540c23a767c7d2a27dabbe970e706ef629b3",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/source-bindings.toml": "24c0337eaa3de31d84681dcf85b740c8245d4be712093f663efd4baa47761f0e",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/00-opening.tex": "1fa1f4ac4bbf262cf56230701e6111d7b468d9048979d5345d1b38dc39a9318f",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/05-appointed-texts.tex": "703326b2f4b0f47644a217c00480c65ad35bbd33ca5b9a23386d30543a6c7b7a",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/10-each-element.tex": "282ddf8eeca45ef2e8a9a683e3ec7581906306a047e82a2b6796a45adcfb823c",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/20-whole-heart-one-body.tex": "d13a1626e47caffa440ee979ff5c2cb037a91ec16bfb053eaf45edb3d8e12eeb",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/30-son-and-lord-of-david.tex": "e9baeb715022d69966b6734686e74281214868f5356ed6cb19fed3c971084745",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/40-just-judge-merciful-hearer.tex": "f889847142920fb5c95d4f27aa3c0c2d8ace1925ee1061660f348b71dde93672",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/50-comparison.tex": "a8fea75fcc88236f9f8767586945e66f5beaa93751c238304de8ffd181b6f546",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/80-date-location.tex": "f4455e0fcad11959a91af8c7d1b0f69c1b9c8aa0d9c9a59af3886d3fd525481f",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/90-apparatus.tex": "f6ea241ad0ced0f706fa10fe01b993e4ae713c5003b6facc5360dacff64a9cfc",
+      "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "3",
+            "53629d2937dc0552647e5c8926b92373846c32b46c0fac662513b362073c6aef",
+            "1e02dc05f2df9940",
+            "72616eb9cc25c7ea7cc061c0e82efffc8b5ea882",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "Independent cold review of the expansive study src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/main.tex (sealed bytes re-hashed against REVIEW_INPUTS and matched for all nineteen files; artifact 57-seventeenth-after-pentecost.pdf, 38 physical pages, clean log with no overfull boxes or LaTeX warnings). The two blocking findings standing from iteration 0 are repaired and I verified each independently: the comparison's Trent claim is now restricted to the first and third readings and states positively that the second does not use the doctrine (Trent and Tridentin occur nowhere in sections/30-son-and-lord-of-david.tex), and the Gospel dossier now carries author, first audience and place of composition, distinguished from the narrated event, with the underlying loci recorded at research/scope.md section 7.6 in the already-bound Catholic Encyclopedia articles and no date, era or reign added outside the generated chronology annotations. Evidence checked at its own loci in the tracked corpus: Chrysostom Hom. 71 on Matthew and Hom. 9-11 on Ephesians (every quotation and every homily number correct in NPNF1 10 and 13), Irenaeus Adv. haer. I.22.1 in ANF 1, Cassiodorus on Ps 101, Gregory Hom. in Ev. 38.9-10 in the tracked Wikisource Latin, Aquinas Super Eph. c. 4 lect. 2 and Super Phil. c. 4 in the Dessain 1857 OCR, Schuster pp. 146-149, every Douay-Rheims quotation in the tracked Gutenberg text, and the whole Latin of the ten proper elements against propers/verified.md (identical). The three readings are distinguishable, internally coherent, carry four real and non-substitutable senses apiece, engage every appointed element, each develop substantive compatible reasoning from well more than two checked Fathers or saints, and each meet a genuine difficulty; source roles are honest (Gregory on the parable not the pericope, Irenaeus using the verse rather than expounding it, Rupert and Durandus expounding an office with another Gospel). Terminal chronology appendix, scope appendix, references and colophon are in place and the References carry only used sources at verifiable loci. Meaningful limits of this review: Aquinas Super Matthaeum, Basil De Spiritu Sancto, Bellarmine, Hilary's CSEL Latin, Jerome and the Migne Greek of Chrysostom and Theodoret are unregistered here and were not re-read at their own printings; Trent sess. XIII cap. 2 is not retained locally; no network source was consulted. Verdict PASS with five advisories, three of them my own standing advisories restated because this stage's entries replace the previous ones in evaluations/blocking-findings-v1.toml."
+}

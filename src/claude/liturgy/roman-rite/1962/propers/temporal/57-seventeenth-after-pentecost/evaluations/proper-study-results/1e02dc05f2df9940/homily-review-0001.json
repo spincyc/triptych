@@ -1,0 +1,242 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "HOM-005",
+      "location": "sections/homily/10-homily.tex, fourth movement, the Collect paragraph (lines 87-96), against lines 25-35",
+      "problem": "The homily stages a correction of the received English and builds a rhetorical turn on it. Having quoted the 1861 Cummiskey Collect (\"and with a clean heart follow thee, the only true God\"), it tells the assembly: \"Where that old English says ``with a clean heart'', the Latin says mente, with the mind --- the Gospel's own word, ``with thy whole mind''\", and then \"That prayer stood in the Roman books long before this Gospel was appointed for this Sunday; it was not composed for it, and it asks God for precisely what the Gospel commands of us.\" The point does not survive the Gospel, the Father the homily has just preached, or this leaf's own record. (1) The Gospel verse quoted at lines 25-27 names all three: \"with thy whole heart and with thy whole soul and with thy whole mind\", and the homily makes \"Three times, whole\" its own emphasis. \"With a clean heart\" is the Gospel's own word exactly as mente is, so the correction the sentence stages erases nothing, and the speech contradicts its own third paragraph audibly to the attentive listener the sentence addresses. (2) Augustine's gloss, which the homily preaches in that same third paragraph, refuses the very distinction the Collect paragraph then leans on: \"For when He says, 'With all thy heart, and with all thy soul, and with all thy mind,' He means that no part of our life is to be unoccupied\" (De doctrina christiana I.22.21, read in the leaf's own registered passage record passage.augustine.de-doctrina-christiana...i-22-20-21) -- one undivided totality, not three faculties among which the Collect may be shown to have picked the right one. (3) Both reviewed companions of this same owner carry the qualification the homily drops, and carry it precisely to stop this over-reading: sections/10-each-element.tex reads \"The 1962 wording te solum Deum pura mente is thus the later form of the prayer. Its mente meets the Gospel's in tota mente tua, as the older corde would have met ex toto corde tuo\", and sections/concise/04-themes.tex says the same. research/scope.md section 2.3 holds the evidence: the Old Gelasian (Vat. Reg. lat. 316, Wilson Liber III sect. XIII) reads te solum Dominum puro corde, and Wilson's apparatus records pura mente only for Pamelius's Gregorian. So the word the homily offers the assembly as the authentic one, against a merely \"old\" English, is the later reading, and the reading the oldest witness carries is the one that English happens to give. The antiquity sentence placed immediately after completes the impression. No single clause is false; the impression the passage leaves is, and it is delivered as the paragraph's teaching moment to people who cannot check it.",
+      "repair_target": "homily",
+      "required_result": "The passage no longer rests on mente being the Gospel's word in a way \"a clean heart\" is not. Either the philological turn goes and the paragraph states its real point directly -- that the Church asks of God what the Gospel commands of us, so that the commandment comes as a command and returns as a petition, which is sound, is what the paragraph exists for, and needs no textual argument to stand -- or, if a word is still to be singled out, the speech says what is true of it: the Gospel asks for heart, soul and mind together, and the Collect asks God for one of the three. The repair must not be made by importing more of the prayer's transmission history into the speech: the qualification belongs to the studies, which already carry it, and the evidence rule is satisfied by not asserting a fit rather than by explaining one away at the pulpit.",
+      "severity": "blocking"
+    }
+  ],
+  "iteration": 1,
+  "observations": [
+    {
+      "location": "sections/homily/10-homily.tex, lines 120-122",
+      "note": "\"At Communion the Church will sing an old verse over us\" quotes Ps 75:12 alone; the appointed antiphon (propers/verified.md section 9, no. 1610) is Ps 75:12-13 and runs on into the half the homily does not use, \"terribili, et ei qui aufert spiritum principum: terribili apud omnes reges terrae\", which is the half reading 3 leans on. The singular \"an old verse\" is accurate for what is quoted, the terminal note's Exact loci declares Ps 75:12, and selecting a clause is ordinary preaching, so I do not file it as a defect. Recorded so that a later cold read weighs those three facts before raising it."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "homily-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine",
+            "John Chrysostom",
+            "Gregory the Great",
+            "Jerome",
+            "Theodoret of Cyrus",
+            "Thomas Aquinas",
+            "Cassiodorus"
+          ],
+          "component_keys": [
+            "whole-heart-one-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "whole-heart-one-body",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "Augustine",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Irenaeus",
+            "Basil the Great",
+            "Cassiodorus",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "son-and-lord-of-david"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "son-and-lord-of-david",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine",
+            "Jerome",
+            "Hilary of Poitiers",
+            "Cassiodorus",
+            "Robert Bellarmine",
+            "Rupert of Deutz",
+            "William Durandus"
+          ],
+          "component_keys": [
+            "just-judge-merciful-hearer"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "just-judge-merciful-hearer",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/format.tex": "151f7b2bed32adc252192ebfd063b5ab341976affdd80ce8105f2abc236776e8",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/homily.tex": "0243ada0130006d06fc59429bb15e8fb3057cc5fa4122fc29b31fdcae3dca67b",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/interpretations.md": "e2e1d8e7e7f3f53474c99731b9131bd909a4808fc34079339ef115485fbb1d45",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/scope.md": "00ec5c1f857decf764fbab8e1472540c23a767c7d2a27dabbe970e706ef629b3",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/homily/10-homily.tex": "a4b55c5b8cd242357f1df049c7f440050f847cdc3a7909177ff170879bd1e39a",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/homily/90-note.tex": "8d47e23c9d469aa6bee0aa27879ed2b4cba93a300eb81e42441786bf2ce8e303",
+      "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "3",
+            "53629d2937dc0552647e5c8926b92373846c32b46c0fac662513b362073c6aef",
+            "1e02dc05f2df9940",
+            "72616eb9cc25c7ea7cc061c0e82efffc8b5ea882",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Cold review of the standalone homily for the Seventeenth Sunday after Pentecost (1962), src/claude/.../57-seventeenth-after-pentecost/homily.tex with sections/homily/10-homily.tex and 90-note.tex. All seven REVIEW_INPUTS file digests were recomputed and match. I read the spoken body continuously, then checked every quotation against propers/verified.md, the Douay verses, the registered 1861 Cummiskey oration English and the registered Augustine passage record; counted the spoken body independently at 1,445 words, exactly as the note states; and checked each locus in the note and References against research/scope.md sections 2.3, 3.6, 4.3 and 6.2 and research/interpretations.md section 4.5. The four standing homily-review findings from iteration 0 are all cleared: HOM-001 (the opening now counts three questions and has the Pharisees answer \"David's\"), HOM-002 (the locus is now I.22.21 within I.22.20-21), HOM-003 (Eph 4:4b is restored, so the seven are audible) and HOM-004 (the offering no longer promises a procession); the standing observation on \"a desolate sanctuary\" was weighed and is not raised. The argument is one, exegetical and speakable: it names only Chrysostom, Augustine and Jerome, exactly as interpretations.md section 4.5 licenses, credits no Father with the whole-formulary reading, invents no anecdote or clerical identity, composes no prayer, carries no apparatus or stage direction in the speech, and closes on a practicable response and on hope. Sentence length is right for delivery (median 19 words, mean 22). One blocking defect remains: the Collect paragraph preaches a philological point that the homily's own third paragraph, the Augustine it quotes there, and both reviewed studies of this owner each defeat. Limits of this review: I read no page image or manuscript myself and relied on the leaf's collation and registered passage records for the printed Latin and the patristic English; I did not build or time the document, and no delivery pace is certified here."
+}

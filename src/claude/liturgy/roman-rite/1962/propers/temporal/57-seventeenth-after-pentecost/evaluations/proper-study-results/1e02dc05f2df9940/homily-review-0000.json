@@ -1,0 +1,264 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "HOM-001",
+      "location": "sections/homily/10-homily.tex, opening paragraph (lines 9-17), against lines 54-55",
+      "problem": "The homily opens on the claim that \"Two questions are asked in today's Gospel, and only one of them is answered\", and says that when our Lord asks \"What think you of Christ? Whose son is he?\" \"the men who had come to trap him have nothing to say\". The appointed Gospel says the opposite: Mt 22:42 (Douay, the translation the note declares) reads \"They say to him: David's.\" The silence of Mt 22:46, which the homily quotes next and makes the frame of the whole speech, follows the further question of v. 45, \"If David then call him Lord, how is he his son?\", which the opening never mentions. The speech then contradicts itself at lines 54-55: \"They answer him truthfully, and they stop one step too soon: David's.\" A congregation that heard the Gospel proclaimed minutes earlier meets a false account of it in the homily's most prominent sentence and meets the correction three minutes later. The defect is the homily's own and not inherited: the expansive study's opening (sections/00-opening.tex, lines 20-26) narrates the exchange correctly, \"When they answer 'David's', he presses them with the psalm ... The Gospel ends in silence\", and research/interpretations.md 2.2 and sections/30-son-and-lord-of-david.tex line 21 do the same.",
+      "repair_target": "homily",
+      "required_result": "An opening that agrees with Mt 22:42-46 and with the homily's own later paragraph: the Pharisees do answer, \"David's\", and it is the question that follows on their answer -- how the one David calls Lord can be David's son -- to which no man is able to answer a word. The rhetorical frame of the unanswered question and the closing silence must rest on the verse that actually carries it, and the count of questions in the first sentence must match the account the speech then gives.",
+      "severity": "blocking"
+    },
+    {
+      "id": "HOM-002",
+      "location": "sections/homily/90-note.tex, \"Exact loci\" paragraph (lines 55-56) and References entry (line 78)",
+      "problem": "The note cites Augustine's \"no part of our life is to be unoccupied, and to afford room, as it were, for the wish to enjoy some other object\" as De doctrina christiana I.22.20, twice: in the exact-loci paragraph and again in the References. In the NPNF (Shaw) text the note itself declares as its route, that sentence stands in paragraph 21 of Book I chapter 22, which begins \"21. Neither ought any one to have joy in himself\"; paragraph 20, which begins \"20. Among all these things, then, those only are the true objects of\", does not contain it. The channel-and-current image the spoken body paraphrases at lines 30-32 (\"the way one current carries whatever falls into it. There is no second channel\") is in that same paragraph 21. The leaf's own research record cites the block correctly as I.22.20-21 (research/interpretations.md line 85, research/scope.md 3.6, passage record ...i-22-20-21). A reader who follows the note's locus does not find the quoted words, and the exact-loci paragraph exists for no other purpose than to be followed.",
+      "repair_target": "homily",
+      "required_result": "The locus corrected to I.22.21, or to the span I.22.20-21 that the research record uses, in both the Exact loci paragraph and the References entry, so that the note's one checkable claim about this quotation is true of the edition it names.",
+      "severity": "blocking"
+    },
+    {
+      "id": "HOM-003",
+      "location": "sections/homily/10-homily.tex, lines 71-73",
+      "problem": "The body reads the Epistle aloud as \"One body and one Spirit \\dots\\ One Lord, one faith, one baptism. One God and Father of all\", eliding Eph 4:4b, \"as you are called in one hope of your calling\", and then tells the assembly \"Seven times in three verses he says the word one.\" The count is true of Eph 4:4-6 and the leaf's research supports it, but an ellipsis is silent in delivery: the listener has just heard six, and is told seven. The friction is audible precisely to the attentive hearer the sentence is addressed to.",
+      "required_result": "Either the nine elided words of Eph 4:4b restored to the quotation -- which also supplies the \"one hope\" that the homily's own eschatological close reaches for -- or the sentence recast so that it does not ask the listener to count something the quotation did not give him.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-004",
+      "location": "sections/homily/10-homily.tex, lines 113-116, with line 102",
+      "problem": "\"We will stand and say the Creed ... and then we will bring bread and wine to this altar and receive the one we have just confessed\" sets a congregational act the assembly will literally perform in a minute (standing for the Credo) in parallel with one it will not: in the 1962 rite there is no procession of gifts by the faithful. The corporate sense in which the people offer with the priest is sound doctrine and is what the sentence means, and \"when the gifts are carried up\" at line 102 is unobjectionable; it is the parallel with the Creed, and the near-future \"we will\", that invite the hearer to expect an action this Mass does not contain.",
+      "required_result": "The offering stated in a way that is true of the rite being celebrated -- bread and wine carried to this altar and offered, and the assembly offering with them -- without promising the assembly a procession it will not make.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "observations": [
+    {
+      "location": "sections/homily/10-homily.tex, lines 101-104",
+      "note": "\"the Church borrows the words of Daniel, praying in exile for a sanctuary left desolate and for the people that carries God's name\" is accurate of Daniel praying in Dan 9:17, but the appointed Offertory antiphon drops that clause: it sings \"illumina faciem tuam super sanctuarium tuum\" without the Vulgate's \"quod desertum est\" (propers/verified.md lines 279-280 and 428). Read as describing Daniel, as the participle's placement invites, the sentence is true; read as describing the antiphon it adds a word the compilers removed. Recorded so a later cold read does not raise it as a defect without first weighing the first reading."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "homily-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine",
+            "John Chrysostom",
+            "Gregory the Great",
+            "Jerome",
+            "Theodoret of Cyrus",
+            "Thomas Aquinas",
+            "Cassiodorus"
+          ],
+          "component_keys": [
+            "whole-heart-one-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "whole-heart-one-body",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "Augustine",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Irenaeus",
+            "Basil the Great",
+            "Cassiodorus",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "son-and-lord-of-david"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "son-and-lord-of-david",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine",
+            "Jerome",
+            "Hilary of Poitiers",
+            "Cassiodorus",
+            "Robert Bellarmine",
+            "Rupert of Deutz",
+            "William Durandus"
+          ],
+          "component_keys": [
+            "just-judge-merciful-hearer"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "just-judge-merciful-hearer",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/format.tex": "151f7b2bed32adc252192ebfd063b5ab341976affdd80ce8105f2abc236776e8",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/homily.tex": "6176a346aad07e887b77e926eb7ce549863d1e81b74dcd9147fb460a7501e411",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/interpretations.md": "e2e1d8e7e7f3f53474c99731b9131bd909a4808fc34079339ef115485fbb1d45",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/scope.md": "00ec5c1f857decf764fbab8e1472540c23a767c7d2a27dabbe970e706ef629b3",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/homily/10-homily.tex": "fd734408928873538e3fc6cfcdce2fccb8513b06c26b8579b17f2f49e294b1a5",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/homily/90-note.tex": "cfd0ecb0c4cf287efa8c80a586acac50de384fb706cd6e58981b47b9bf2bbab8",
+      "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "3",
+            "53629d2937dc0552647e5c8926b92373846c32b46c0fac662513b362073c6aef",
+            "1e02dc05f2df9940",
+            "72616eb9cc25c7ea7cc061c0e82efffc8b5ea882",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Cold review of the standalone homily for the Seventeenth Sunday after Pentecost (sections/homily/10-homily.tex and 90-note.tex, entrypoint homily.tex), read continuously as a listener would hear it and then checked against the appointed texts in propers/verified.md, research/scope.md and research/interpretations.md, and against the library sources at their loci: every sealed byte matched REVIEW_INPUTS, the spoken body is exactly the 1,406 words the note claims, and the Chrysostom (In Mt. hom. 71), Augustine (En. in Ps. 109, 3-6), Jerome (In Dan. 9:5) and Douay-Rheims and 1861 Cummiskey quotations are verbatim at the places named. Two blocking defects remain, both the homily's own: the opening frame misstates the appointed Gospel and contradicts the speech's own third movement, and the terminal note gives the Augustine De doctrina christiana locus one paragraph short of the sentence it quotes, in both the exact-loci paragraph and the References."
+}

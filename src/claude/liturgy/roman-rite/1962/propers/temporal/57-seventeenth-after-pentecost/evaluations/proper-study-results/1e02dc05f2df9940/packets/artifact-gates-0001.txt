@@ -1,0 +1,16 @@
+WORKFLOW: proper-study v3
+WORKFLOW_DIGEST: 53629d2937dc0552647e5c8926b92373846c32b46c0fac662513b362073c6aef
+RUN_ID: 1e02dc05f2df9940
+COMMIT: 72616eb9cc25c7ea7cc061c0e82efffc8b5ea882
+STAGE: artifact-gates
+ITERATION: 1
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-09-20","proper":"liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost","provider":"claude","research_handoff":"none"}
+DOCUMENT_ROOT: src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost
+REPAIR_TARGETS: ["research","study","synthesis","homily"]
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: []
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

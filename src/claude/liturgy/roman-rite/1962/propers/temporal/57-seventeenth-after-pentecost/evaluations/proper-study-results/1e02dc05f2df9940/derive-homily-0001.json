@@ -1,0 +1,19 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/homily.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "HOM-001",
+      "note": "The opening of sections/homily/10-homily.tex now reads 'Three questions are asked in today's Gospel, and the last of them is never answered', narrates the answer 'David's' at Mt 22:42, quotes v. 45 as the question nobody answers, and hands the silence of v. 46 to it. The later paragraph no longer reports the answer as news, and the fourth movement's return to the silence asks 'How can the one David calls Lord be David's son?' in place of 'Whose son is he?', which the Gospel answers. Mt 22:45 was added to the note's list of canonical verses.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "HOM-002",
+      "note": "Checked against the retained CCEL transcription the note declares as its route: the quoted sentence and the channel-and-current image both stand in paragraph 21 of De doctrina christiana I.22. The Exact loci paragraph now reads I.22.21, naming the block I.22.20-21 it sits in, and the References entry reads I.22.20-21, the span the passage record and both studies cite.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "stage": "derive-homily",
+  "summary": "Repaired both blocking findings in the homily's own components and cleared both standing advisories in the same files. The opening now counts the three questions Mt 22:34-46 actually asks, gives the Pharisees their true answer 'David's' at v. 42, and rests the frame of the unanswered question and the closing silence on v. 45; the note's Exact loci and References now carry Augustine's De doctrina christiana at I.22.21 within the block I.22.20-21 the passage record and both studies use. Eph 4:4b is restored so the sevenfold 'one' is audible, and the offering is stated as the 1962 rite performs it. The spoken body is 1,445 words (11.1-12.0 minutes at 120-130 a minute); the 5-page proof settles in two passes with a clean log, the speech still ends on page 3, and every homily-gate check passes with the shared timestamp updated and both studies rebuilt unchanged at 38 and 12 pages."
+}

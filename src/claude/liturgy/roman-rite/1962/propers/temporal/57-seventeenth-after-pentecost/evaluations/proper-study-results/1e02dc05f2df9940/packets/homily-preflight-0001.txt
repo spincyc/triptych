@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v3
+WORKFLOW_DIGEST: 53629d2937dc0552647e5c8926b92373846c32b46c0fac662513b362073c6aef
+RUN_ID: 1e02dc05f2df9940
+COMMIT: 72616eb9cc25c7ea7cc061c0e82efffc8b5ea882
+STAGE: homily-preflight
+ITERATION: 1
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-09-20","proper":"liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost","provider":"claude","research_handoff":"none"}
+DOCUMENT_ROOT: src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"HOM-003","location":"sections/homily/10-homily.tex, lines 71-73","problem":"The body reads the Epistle aloud as \"One body and one Spirit \\dots\\ One Lord, one faith, one baptism. One God and Father of all\", eliding Eph 4:4b, \"as you are called in one hope of your calling\", and then tells the assembly \"Seven times in three verses he says the word one.\" The count is true of Eph 4:4-6 and the leaf's research supports it, but an ellipsis is silent in delivery: the listener has just heard six, and is told seven. The friction is audible precisely to the attentive hearer the sentence is addressed to.","required_result":"Either the nine elided words of Eph 4:4b restored to the quotation -- which also supplies the \"one hope\" that the homily's own eschatological close reaches for -- or the sentence recast so that it does not ask the listener to count something the quotation did not give him.","severity":"advisory"},{"id":"HOM-004","location":"sections/homily/10-homily.tex, lines 113-116, with line 102","problem":"\"We will stand and say the Creed ... and then we will bring bread and wine to this altar and receive the one we have just confessed\" sets a congregational act the assembly will literally perform in a minute (standing for the Credo) in parallel with one it will not: in the 1962 rite there is no procession of gifts by the faithful. The corporate sense in which the people offer with the priest is sound doctrine and is what the sentence means, and \"when the gifts are carried up\" at line 102 is unobjectionable; it is the parallel with the Creed, and the near-future \"we will\", that invite the hearer to expect an action this Mass does not contain.","required_result":"The offering stated in a way that is true of the rite being celebrated -- bread and wine carried to this altar and offered, and the assembly offering with them -- without promising the assembly a procession it will not make.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

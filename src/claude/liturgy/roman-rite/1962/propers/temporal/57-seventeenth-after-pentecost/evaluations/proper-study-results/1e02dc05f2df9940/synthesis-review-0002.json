@@ -1,0 +1,372 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "SYN-009",
+      "location": "sections/concise/90-apparatus.tex: 'Text, English and rights', first sentence (PDF p. 10); 'Reception and its limits' (PDF p. 11); and the References entry 'St Augustine, Enarrationes in Psalmos, Latin text of Migne, PL 36-37' (PDF p. 12)",
+      "problem": "The concise apparatus opens its text-control paragraph 'Every Latin form quoted here was read for the study on the page images of the CMAA facsimile of the typical edition and compared with the Pustet Missale Romanum of Ratisbon, 1862 and with the Clementine Vulgate'. The expansive study's corresponding sentence is bounded, and the bound is what makes it true: 'Every Latin form of the ten proper elements was read on the page images of the CMAA facsimile' (sections/90-apparatus.tex, 'Text control'). This document quotes far more patristic Latin than Missal Latin -- Augustine's 'Vox ergo una, quia caro una', Jerome's 'Dominus igitur David vocatur', Hilary's 'ex nobis autem initium est', Aquinas's 'fontale principium divinitatis', Cassiodorus's 'non eorum', among many others -- and none of it stands in the 1962 facsimile or in the Pustet Missal. Two disclosures the study carries also do not survive the derivation. The study's 'Reception' paragraph says 'Some Latin texts were read in web deliveries of the standard editions (augustinus.it, monumenta.ch, the Corpus Thomisticum) or in optical text layers of printed editions (Rupert, Durandus, Schuster, Gueranger, Irenaeus, Trent) rather than on printed page images'; the concise 'Reception and its limits' paragraph keeps the Greek-in-translation and the Bellarmine-in-English disclosures and drops that sentence entirely. And the study's References divide Augustine's Enarrationes between 'Latin text of Migne, PL 36-37 (Wikisource and Corpus Corporum)' for Pss 32, 101 and 109 and augustinus.it for Ps 75, 16-18 and Ps 118, s. 26, 5 and s. 28, 1; the concise entry prints all five psalms under 'Latin text of Migne, PL 36-37' with no delivery named, so the two loci the study says were read at augustinus.it are now assigned to Migne's columns. Nothing substantive is misreported -- I checked each of these quotations against the leaf's records and they are the texts the study read -- which is why this does not block. It is the class this leaf has twice weighed and fixed at advisory: HOM-001 against the homily's References for naming Migne without saying a tracked transcription was read, and STU-008 against the study's own Bellarmine entry.",
+      "required_result": "The text-control sentence carries the study's bound -- the Latin forms of the ten proper elements, not every Latin form quoted -- and the concise apparatus or References state through what the patristic Latin was actually read: at minimum the study's sentence on web deliveries and optical text layers is restored to 'Reception and its limits', and the Augustine entry returns Ps 75, 16-18 and Ps 118, s. 26, 5 and s. 28, 1 to the delivery the study records for them, so that no reader of this document alone takes a reading of Migne's columns or of the facsimile's page images to have been performed where it was not.",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-010",
+      "location": "sections/concise/03-date-location.tex, the Offertory explanatory row, last two sentences (PDF p. 2): '... neither a date nor a place of writing is given for that position. Its grounds put the writer at the court of Babylon, writing for the Jews of his time and later.'",
+      "problem": "In the expansive study the same matter is unambiguous: 'The same article's grounds for the traditional position give the place and the hearers ...' (sections/80-date-location.tex). Compression dropped 'for the traditional position', and the nearest antecedent of 'Its' is now 'that position', the critical theory whose place of writing the clause immediately before has just said the article does not give. On that reading the sentence contradicts the one before it, and it does so on the single sheet whose purpose is to keep the traditional attribution and the modern critical horizon distinct (guidance/liturgy/roman-1962-propers.md, 'Page 2: Scriptural date and location'). The row's own opening, 'Traditional attribution: Daniel the prophet', and the Location cell let an attentive reader recover the intended sense, and no date or place on the sheet is wrong, which is why this does not block.",
+      "required_result": "The sentence names whose grounds they are -- the article's grounds for the traditional position -- so that the court of Babylon and the hearers are not read as supplied for the critical theory the preceding clause says carries neither a date nor a place.",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-011",
+      "location": "sections/concise/03-date-location.tex, the Gospel explanatory row (PDF p. 2): 'The same article has the ecclesiastical writers agree that Matthew wrote for the Jews, and Jerome that he published it in Judea and in Hebrew, for believing Jews, before leaving Jerusalem'",
+      "problem": "'before leaving Jerusalem' is not part of what the leaf's record gives Jerome. research/scope.md quotes the 1911 Catholic Encyclopedia article's Jerome at one locus -- 'St. Jerome, summarizing tradition, teaches us that St. Matthew published his Gospel in Judea and in the Hebrew language, principally for those among the Jews who believed in Jesus' (In Matt. Prol.) -- and records the 'before his departure from Jerusalem' clause at a different locus (line 175) as the article's own statement. The expansive study keeps the two apart: '... principally for those among the Jews who believed in Jesus'; the article has him write 'before his departure from Jerusalem' (sections/80-date-location.tex). The concise folds the second into the Jerome clause, so a reader who turns to Jerome's prologue for the departure from Jerusalem will not find it there. The compound claim is true of the article, which the sentence names, and the Location cell states the same thing as the dossier's own judgment, so nothing on the sheet is false; only the attribution within it is.",
+      "required_result": "The row attributes to Jerome only what the article attributes to him and gives 'before leaving Jerusalem' to the article itself, as the expansive study's corresponding row does.",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-012",
+      "location": "sections/concise/04-themes.tex, the paragraph on how the parts reached the day (PDF p. 4): '... Durandus records that some churches read Mt 22:34-46 on the following Sunday; Prosper Gueranger reports that the present Gospel gave the day the name \u201cthe Sunday of the love of God\u201d only after that change.'",
+      "problem": "'that change' has no correct antecedent in the concise text. What Gueranger reports, as the expansive study states it, is that the name came 'only after the Gospel of the dropsical man and the wedding feast (Luke 14) was moved eight days earlier' (sections/10-each-element.tex). The concise never states that move. The only change-like event inside its own sentence is Durandus's report that some churches read Mt 22:34-46 on the following Sunday, which is a variant practice rather than the displacement Gueranger means, and which reverses the direction of the change if a reader takes it as the antecedent. The clause before it, that Rupert and Durandus expound this Sunday's office with Luke 14, lets the intended sense be reconstructed, and nothing else in the paragraph depends on it.",
+      "required_result": "The sentence names the change Gueranger's report depends on -- the replacement of the Luke 14 Gospel at this Sunday by the present one -- instead of pointing back to the variant practice Durandus records.",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-013",
+      "location": "sections/concise/10-commentary.tex, 'Two commandments, and what holds them together', third paragraph (PDF p. 5): Chrysostom 'reads the unbidden second commandment as exposing where the question came from --- \u201cfrom having no charity, from pining with envy\u201d'",
+      "problem": "The expansive study's comparison lists six narrow disagreements among the witnesses (sections/50-comparison.tex). The concise preserves five: Augustine and Cassiodorus over the voice of Ps 101; Jerome and Augustine over Daniel's own sins; Jerome with Aquinas against Chrysostom with Theodoret at Eph 4:6; Hilary and Augustine over where the servant's beginning lies; Bellarmine against Rupert and Durandus over the Introit's iudicium. The sixth, 'Chrysostom and Jerome give different reasons for the lawyer's question', is not preserved. The concise gives Chrysostom's account alone and makes interpretive use of it, where the study reports two: Chrysostom's, that the Pharisees hoped Jesus would amend the first commandment 'for the sake of showing that Himself too was God', and Jerome's, that the question was captious because every commandment of God is great so that any answer could be attacked (sections/10-each-element.tex). A reader of the concise alone meets one Father's reading of the lawyer's motive as though it were undisputed. The paragraph's own claim of agreement is carefully bounded to what the four make the link between the commandments, so nothing false is asserted and a concise study is entitled to select; but of the study's own list of material differences this is the one that compression removes without trace.",
+      "required_result": "The subsection either notes that the Fathers differ over the lawyer's motive, naming Jerome's reason beside Chrysostom's, or states Chrysostom's account without letting it stand as the reading of where the question came from.",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-014",
+      "location": "sections/concise/01-inventory.tex, the Alleluia row of the page-1 map (PDF p. 1): 'Alleluia & Ps 101:2'",
+      "problem": "The Alleluia is the one row of the ten whose 'Text and reference' cell carries no Latin incipit; the other nine all give one (Iustus es, Domine; Da, quaesumus, Domine, populo tuo; Beata gens; Oravi Deum meum ego Daniel; Maiestatem tuam, Domine; Vovete et reddite; Sanctificationibus tuis, with the Epistle and Gospel identified by citation as they are in the Missal). The expansive study's own map gives it 'Domine, exaudi; Ps 101:2' (sections/00-opening.tex), and propers/verified.md records the printed text 'Allel\u00faia, allel\u00faia. D\u00f3mine, ex\u00e1udi orati\u00f3nem meam ...' at marginal no. 1606. The element is present, correctly cited and recognizable from its verse, and the map satisfies the requirement to include every appointed element, so this costs a reader nothing but the column's consistency.",
+      "required_result": "The Alleluia row carries its Latin incipit as the other chants and orations do, as the expansive study's map has it.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 2,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/concise/01-inventory.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-inventory"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/concise/02-overview.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "concise-date-location",
+          "kind": "front-matter",
+          "path": "sections/concise/03-date-location.tex",
+          "references": [
+            "format.tex",
+            "research/chronology-annotations.tex",
+            "research/chronology.toml"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-overview"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/concise/04-themes.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-themes"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/concise/10-commentary.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/concise/90-apparatus.tex",
+          "references": [
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine",
+            "John Chrysostom",
+            "Gregory the Great",
+            "Jerome",
+            "Theodoret of Cyrus",
+            "Thomas Aquinas",
+            "Cassiodorus"
+          ],
+          "component_keys": [
+            "whole-heart-one-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "whole-heart-one-body",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "Augustine",
+            "John Chrysostom",
+            "Theodoret of Cyrus",
+            "Thomas Aquinas",
+            "Irenaeus",
+            "Basil the Great",
+            "Cassiodorus",
+            "Robert Bellarmine",
+            "Rupert of Deutz",
+            "William Durandus"
+          ],
+          "component_keys": [
+            "son-and-lord-of-david"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "son-and-lord-of-david",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine",
+            "Jerome",
+            "John Chrysostom",
+            "Hilary of Poitiers",
+            "Cassiodorus",
+            "Thomas Aquinas",
+            "Robert Bellarmine",
+            "Rupert of Deutz",
+            "William Durandus"
+          ],
+          "component_keys": [
+            "just-judge-merciful-hearer"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "just-judge-merciful-hearer",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/format.tex": "8679a274a48192f9c17c24eb88ce72f88cdae76183b38e590431e37804822b6a",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/propers/verified.md": "60d85fbd70f9884c369d843230ce9c71795e08b9e0102257629b48138dc92408",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/chronology-annotations.tex": "3bf62cf41bfbc61275ce49a192bf6d94b4da80d1aa56248e4849e3b9d92b7f85",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/chronology.toml": "7321744467ba108d8ba22223060445081a81bb3f4e9a49d087aa8edb6c71165b",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/interpretations.md": "e2e1d8e7e7f3f53474c99731b9131bd909a4808fc34079339ef115485fbb1d45",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/scope.md": "00ec5c1f857decf764fbab8e1472540c23a767c7d2a27dabbe970e706ef629b3",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/01-inventory.tex": "75ade9150ca310979acd8d88c4298851f028974faaaed772270379b908bc065e",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/02-overview.tex": "195cb3e3cd01deed88fac42c6698217c761ee00dbb7849c3450c55beaf6ff830",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/03-date-location.tex": "3e03243a2e7110088859db662bc8cd8b85bead4cf66fcd31d612abe6ae72bff3",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/04-themes.tex": "adc3a5acace54f2abba57caad3aa2f5655820ecbbb34868500c86ea0901c823b",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/10-commentary.tex": "ebf36e058d5ef6ef933d1cd7cb7476e3d6ecd85f1dec09510169dddb836b7dc9",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/90-apparatus.tex": "8d781798db18d456a220f0dec4115532d8be2945d94a8e022d3c11f9fe8ba580",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/synthesis.tex": "b12a50133662f94800466d283933039df2ee6852adb8105f2c19216b980274ab",
+      "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "3",
+            "53629d2937dc0552647e5c8926b92373846c32b46c0fac662513b362073c6aef",
+            "1e02dc05f2df9940",
+            "72616eb9cc25c7ea7cc061c0e82efffc8b5ea882",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "Cold review of the concise study of the Seventeenth Sunday after Pentecost (synthesis.tex with its six concise components), read on its own and then against the accepted expansive study, propers/verified.md, research/scope.md, research/interpretations.md, the generated chronology projection and the tracked Clementine text. All fourteen REVIEW_INPUTS hashes were recomputed and match, and the rendered artifact at build/tpt-runs/1e02dc05f2df9940/artifacts/derive-synthesis-0002 was inspected: twelve physical pages, and its settled .aux puts the inventory and the four overview rows on abspage 1, the sole Scriptural Date and Location sheet on 2, Themes and Movement on 3-4 and the commentary opening on 5, with no over- or underfull box in the log and a legible one-page dossier. Both advisories this stage left standing at iteration 1 are repaired: the page-4 'habits' sentence no longer counts the word 'one' at sites that do not carry it (I confirmed seven unus forms in Eph 4:4-6 and none in the Latin of Mt 22:34-46 in the tracked Clementine), and the Offertory paragraph no longer claims a unique disagreement. No blocking defect remains. Every quotation and locus I traced -- Augustine, Gregory, Chrysostom, Jerome, Hilary, Basil, Irenaeus, Cassiodorus, Theodoret, Aquinas, Bellarmine, Rupert, Durandus, Trent, the Gelasian and Gregorian loci -- is carried by the expansive study or the leaf's research records, so the derivation introduces no new source-dependent claim; the three readings' controlling claims and five of the study's six narrow disagreements are preserved and genuinely interleaved by question rather than recapped in blocks; the References cover every locus the body uses. Meaningful limits: I verified the patristic evidence through the leaf's tracked records and the expansive study, not on the original page images of Migne, CSEL or Dessain, and I did not re-audit the chronology corpus behind the generated Date cells. Six advisories are recorded, all of them about how this derivation states a source, an antecedent, or a difference it chose not to carry."
+}

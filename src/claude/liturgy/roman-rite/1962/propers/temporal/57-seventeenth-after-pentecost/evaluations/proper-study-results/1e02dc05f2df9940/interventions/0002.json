@@ -1,0 +1,6 @@
+{
+  "encoded": false,
+  "stage": "homily-review",
+  "text": "Workflow gap, recorded for the owner and not repairable mid-run: proper-study declares review_scope on none of its six review stages, while proper and proper-finish declare it on both of their evaluators. Every proper-study packet nevertheless compiles common/result-format.md, whose 'Reading REVIEW_SCOPE' section instructs the reviewer to read what moved and not to re-derive fresh blocking findings from settled prose. No proper-study reviewer has ever received that header, so every re-review is a full cold read. This run shows the cost: study-review reached three consecutive purely-novel failing rounds against max_novel_iterations of four, and each re-review of an already accepted document produced a fresh crop of advisories. The homily reviewer at iteration 5 noticed the missing header and restrained itself by its own judgement rather than by the engine's. Proposed fix after this run reaches a terminal disposition, since the pipeline is digest-bound: set review_scope on the six proper-study review stages and bump the workflow version.",
+  "timestamp": "2026-09-19T08:29:09Z"
+}

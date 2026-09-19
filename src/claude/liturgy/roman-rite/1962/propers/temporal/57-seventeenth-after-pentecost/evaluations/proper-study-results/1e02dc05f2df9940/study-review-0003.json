@@ -1,0 +1,444 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "STU-009",
+      "location": "sections/20-whole-heart-one-body.tex, subsection 'Two commandments, one love', the paragraph on Chrysostom (PDF p. 15: the sentence following the quotation 'Because this makes the way for that, and by it is again established'), and the same subsection's closing comparison, 'For Chrysostom it is mutual dependence, the second preparing and confirming the first'",
+      "problem": "The study's gloss inverts the second half of the sentence it has just quoted. It prints Chrysostom, In Mt. hom. 71: 'But wherefore \"like unto this?\" Because this makes the way for that, and by it is again established', and glosses it 'Love of neighbour opens the road to the love of God, and the love of God is in turn confirmed by it' -- that is, love of neighbour both prepares and confirms the love of God. In the quoted English the elided subject of 'is again established' is the same 'this' (the second commandment), so it is the second that is in turn established by the first. The Greek settles it: PG 58.661, Homily 71, reads '\u0394\u03b9\u03b1\u03c4\u03af \u03b4\u1f72, \u1f49\u03bc\u03bf\u03af\u03b1 \u03c4\u03b1\u03cd\u03c4\u03b7\u03c2; \u1f4d\u03c4\u03b9 \u03b1\u1f55\u03c4\u03b7 \u1f10\u03ba\u03b5\u03af\u03bd\u03b7\u03bd \u03c0\u03c1\u03bf\u03bf\u03b4\u03bf\u03c0\u03bf\u03b9\u03b5\u1fd6, \u03ba\u03b1\u1f76 \u03c0\u03b1\u03c1' \u03b1\u1f50\u03c4\u1fc6\u03c2 \u03c3\u03c5\u03b3\u03ba\u03c1\u03bf\u03c4\u03b5\u1fd6\u03c4\u03b1\u03b9 \u03c0\u03ac\u03bb\u03b9\u03bd' -- \u03b1\u1f55\u03c4\u03b7 (the second, just named, '\u1f08\u03b3\u03b1\u03c0\u03ae\u03c3\u03b5\u03b9\u03c2 \u03c4\u1f78\u03bd \u03c0\u03bb\u03b7\u03c3\u03af\u03bf\u03bd \u03c3\u03bf\u03c5') paves the way for \u1f10\u03ba\u03b5\u03af\u03bd\u03b7 (the first) and is in turn strengthened by it. Chrysostom's own proofs alternate in exactly that way: 'every one that doeth evil hateth the light' and 'the love of money ... erred from the faith' run neighbour-to-God, while 'The fool hath said in his heart, There is no God ... They are corrupt, and become abominable in their ways' and 'He that loveth me, will keep my commandment' run God-to-neighbour. The error is not confined to the gloss: the subsection's comparison then calls this 'mutual dependence' while describing a single direction twice ('the second preparing and confirming the first'), which is not mutual dependence at all, and the paragraph's closing suggestion that Chrysostom's 'bind ourselves together with one another and unto God' glosses 'like to this' rests on the same one-way reading. The leaf's own homily states the reciprocity correctly ('the love of the neighbour opens the road to the love of God; and the love of God, in its turn, re-establishes the love of the neighbour. Each holds the other up.', sections/homily/10-homily.tex), so the study and the homily derived from it now say opposite things about the same clause, and the study is the authority. The evidence is not at fault: research/interpretations.md 1.2 and research/scope.md quote the line without glossing its direction, so nothing needs re-retrieving.",
+      "repair_target": "study",
+      "required_result": "The Chrysostom paragraph of the first reading states the reciprocity in the direction his sentence gives it -- the love of neighbour makes the way for the love of God, and is in turn established by it -- and the subsection's comparison describes that mutual dependence rather than one direction twice. The study and sections/homily/10-homily.tex agree on the clause.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-006",
+      "location": "research/interpretations.md section 3 (3.2 'Principal witnesses and their reasoning', the 3.3 element table's Offertory row, and the 3.4 moral sense), against sections/40-just-judge-merciful-hearer.tex, 'Daniel's prayer and Daniel's people' (PDF p. 27) and that reading's moral sense (PDF p. 30)",
+      "problem": "Standing advisory from study-review iteration 0, restated because the remainder is still not cleared and this stage's entries replace the previous ones in evaluations/blocking-findings-v1.toml. The manifest half was repaired earlier: proper-components.toml now declares Thomas Aquinas among the just-judge-merciful-hearer lane's authors. The audit half is not. research/interpretations.md section 3.2 still names no Aquinas among that reading's witnesses; 3.3 gives the Offertory row only Jerome, Augustine, Rupert and Durandus; and 3.4's moral sense does not name him -- although the study develops him there at length ('prayer must be made with confidence of obtaining, and that confidence comes from God's mercy', Super Philippenses c. 4, on 4:6) and credits him by name in the reading's moral sense. The evidence itself is sound and the source role research/scope.md 3.7 records for him ('Aquinas uses Dan 9:18 as doctrine on prayer; he does not expound Daniel') is exactly the use the study makes. Nothing reaches a reader of the PDF as a false claim; what is broken is the correspondence between the manifest, the audit record and the sections, which those records exist to make inspectable, and it is now broken at the audit end.",
+      "required_result": "research/interpretations.md section 3 records Thomas Aquinas among the just-judge-merciful-hearer reading's witnesses, with his locus (Super Philippenses c. 4, on 4:6) and the source role research/scope.md 3.7 already gives him, and his name in the 3.3 Offertory row and the 3.4 moral sense, so that the audit record, the manifest and the section agree.",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-008",
+      "location": "sections/90-apparatus.tex, 'Reception' paragraph ('Bellarmine was read only in O'Sullivan's abridged English of 1866') and the References entry 'St Robert Bellarmine, A Commentary on the Book of Psalms, trans. J. O'Sullivan (1866, abridged)' (PDF pp. 35 and 37)",
+      "problem": "Standing advisory from study-review iteration 2, restated unchanged because the apparatus was rewritten this round for the running head and the disclosure was not added. Bellarmine remains the one witness whose delivery is undisclosed in an apparatus otherwise scrupulous about exactly this: the same paragraph names Augustine's Latin as 'Migne, PL 36-37 (Wikisource and Corpus Corporum)' and augustinus.it, and then says 'Some Latin texts were read in web deliveries of the standard editions (augustinus.it, monumenta.ch, the Corpus Thomisticum) or in optical text layers of printed editions (Rupert, Durandus, Schuster, Gueranger, Irenaeus, Trent)'. Bellarmine's English falls outside both categories of that sentence, so 'read only in O'Sullivan's abridged English of 1866' reads as the 1866 printing. The leaf's own record says otherwise: research/source-bindings.toml binds the passages to a tracked web transcription of O'Sullivan and states that the text was read there on reentry and re-hashed, and that the Latin original was not read. The study's ten Bellarmine citations are not in question; only the route by which they were read. This is the class of defect the leaf has already cleared elsewhere -- the homily's terminal note was corrected to say that Augustine's and Jerome's Latin were read in tracked digital transcriptions and not on Migne's printed columns.",
+      "required_result": "The apparatus or the References say through what the O'Sullivan English was actually read -- for example by adding Bellarmine's web transcription to the 'Reception' paragraph's list of deliveries, or by giving the References entry the stable locator the source binding already holds -- so that no reader takes a reading of the 1866 printing to have been performed when it was not.",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-010",
+      "location": "sections/30-son-and-lord-of-david.tex, 'The other texts as confession', the closing sentence of the paragraph on the Introit and Communion: 'The Postcommunion's Sanctificationibus tuis names a holiness that is God's own and given in the sacrament' (PDF p. 24)",
+      "problem": "This is the thinnest element-treatment in the study and the only one carried by a bare assertion. Every other element in the second reading is worked through a witness or a textual fact -- the Gradual's versicle through Irenaeus, Basil, Augustine, Cassiodorus, Aquinas and Bellarmine; the Alleluia through Augustine against Cassiodorus; the Offertory through Jerome, Rupert and Durandus; the Secret through the Preface that follows it -- and the first and third readings both give the Postcommunion a developed paragraph (Trent and the borrowed clause of St John of God in the first; Trent in the third). Here one clause asserts what 'sanctificationes' names, with no witness, no textual observation and nothing that belongs to this reading rather than to any other. The second reading is admirably honest about its thin places elsewhere -- it says outright that the Secret's words name neither the Son nor the Spirit, and 'The difficulties this confession must carry' lists the three texts that resist it -- so the silence here reads as an omission rather than a judgement.",
+      "required_result": "The second reading either shows what its confession of the one God in his Word and Spirit makes of the Postcommunion's sanctificationes, on a witness or a textual fact of the kind the reading uses elsewhere, or says plainly -- as it already does for the Secret -- that the Postcommunion contributes nothing distinctive to this reading.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 3,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/00-opening.tex",
+          "references": [
+            "format.tex",
+            "research/context.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "appointed-texts",
+          "kind": "appointed-text",
+          "path": "sections/05-appointed-texts.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "appointed-texts"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "each-element",
+          "kind": "proper-treatment",
+          "path": "sections/10-each-element.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "whole-heart-one-body",
+          "kind": "interpretive-lane",
+          "path": "sections/20-whole-heart-one-body.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "son-and-lord-of-david",
+          "kind": "interpretive-lane",
+          "path": "sections/30-son-and-lord-of-david.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "just-judge-merciful-hearer",
+          "kind": "interpretive-lane",
+          "path": "sections/40-just-judge-merciful-hearer.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "whole-heart-one-body",
+            "son-and-lord-of-david",
+            "just-judge-merciful-hearer"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/50-comparison.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "scriptural-date-location",
+          "kind": "front-matter",
+          "path": "sections/80-date-location.tex",
+          "references": [
+            "format.tex",
+            "research/chronology-annotations.tex",
+            "research/chronology.toml",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "study-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-apparatus.tex",
+          "references": [
+            "propers/verified.md",
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine",
+            "John Chrysostom",
+            "Gregory the Great",
+            "Jerome",
+            "Theodoret of Cyrus",
+            "Thomas Aquinas",
+            "Cassiodorus"
+          ],
+          "component_keys": [
+            "whole-heart-one-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "whole-heart-one-body",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "Augustine",
+            "John Chrysostom",
+            "Theodoret of Cyrus",
+            "Thomas Aquinas",
+            "Irenaeus",
+            "Basil the Great",
+            "Cassiodorus",
+            "Robert Bellarmine",
+            "Rupert of Deutz",
+            "William Durandus"
+          ],
+          "component_keys": [
+            "son-and-lord-of-david"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "son-and-lord-of-david",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine",
+            "Jerome",
+            "John Chrysostom",
+            "Hilary of Poitiers",
+            "Cassiodorus",
+            "Thomas Aquinas",
+            "Robert Bellarmine",
+            "Rupert of Deutz",
+            "William Durandus"
+          ],
+          "component_keys": [
+            "just-judge-merciful-hearer"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "just-judge-merciful-hearer",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/format.tex": "afe32aae071025c30d42a0f981c4b7a7ee62412aa1872c44ba3ca6bfb261e960",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/main.tex": "ca56ba721f7cd222468e068f4a386694c9591477065334353c7203d8043b134e",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/propers/verified.md": "60d85fbd70f9884c369d843230ce9c71795e08b9e0102257629b48138dc92408",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/chronology-annotations.tex": "3bf62cf41bfbc61275ce49a192bf6d94b4da80d1aa56248e4849e3b9d92b7f85",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/chronology.toml": "7321744467ba108d8ba22223060445081a81bb3f4e9a49d087aa8edb6c71165b",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/context.md": "76d4f8fd74608153a94e0e930d6b178b3cbfa8a7d9c4870250793643e5982e26",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/interpretations.md": "e2e1d8e7e7f3f53474c99731b9131bd909a4808fc34079339ef115485fbb1d45",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/scope.md": "00ec5c1f857decf764fbab8e1472540c23a767c7d2a27dabbe970e706ef629b3",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/source-bindings.toml": "24c0337eaa3de31d84681dcf85b740c8245d4be712093f663efd4baa47761f0e",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/00-opening.tex": "da316e2f0bdbf1eaf60b6c626f334227a8ca96948e3d72c1b3aa42817d8f6ab7",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/05-appointed-texts.tex": "703326b2f4b0f47644a217c00480c65ad35bbd33ca5b9a23386d30543a6c7b7a",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/10-each-element.tex": "63432700f93dabfa2f8f1df91c8f93289f17284af506d480b0dc4134a554d63c",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/20-whole-heart-one-body.tex": "7a5adc3e3117bbb17554f6f112bc450693de2b29634854c8e23e6d7bcc0d3aab",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/30-son-and-lord-of-david.tex": "7b286a9cb41fd0770c3c57d51f00b422ba5348105ed7642adbd9578d124d6ca4",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/40-just-judge-merciful-hearer.tex": "37f9b5fb2249f8d0e73d7a57641f9f684c3fde7735b5650e2cec0a5a9df92d77",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/50-comparison.tex": "a8fea75fcc88236f9f8767586945e66f5beaa93751c238304de8ffd181b6f546",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/80-date-location.tex": "a0a197e1ed1fb85cb2165aca6a437bd59a3cc82253560c7efa89e97450c6868f",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/90-apparatus.tex": "8938cda5e95414032533eb50acdbeafe0d60c727d68f6b1c63caac50d1f67f4f",
+      "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "3",
+            "53629d2937dc0552647e5c8926b92373846c32b46c0fac662513b362073c6aef",
+            "1e02dc05f2df9940",
+            "72616eb9cc25c7ea7cc061c0e82efffc8b5ea882",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "Independent cold review of the expansive study src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/main.tex and its nine section components. The packet seal was verified first: all nineteen files named in REVIEW_INPUTS hash exactly as stated. The built artifact 57-seventeenth-after-pentecost.pdf is 38 physical pages, inside the 20-50 bound, with a clean log (no Overfull box, no headheight warning); the running heads that the visual review found overprinting on pp. 20 and 26 are now legible with a real gutter, and pp. 36-37 are headed 'References' rather than by the Appendix above them. The three readings are distinguishable, internally coherent, each carries all ten elements and its own four senses, and each develops substantive contributions from more than two Fathers or Doctors. Evidence checked independently at the loci, not from the leaf's records: Gregory, Hom. in Ev. 38.10 in the tracked Wikisource Latin (the lectio there is indeed Mt 22:1-13, 'sicut in duobus lignis', 'qui sibi de se nihil relinquit', the coccus bis tinctus, the commandment cited from Mk 12:30 -- all as the study reports); Augustine, En. in Ps. 32 I.12 (the lemma really does read 'Dominus Deus eorum ... quem elegit Dominus', which is the point the study makes about the Gradual's wording) and 32 II s.2 n.5, 101 s.1, 109 3-6, in the tracked Migne text; Chrysostom, In Mt. hom. 71 and In Eph. hom. 9-11 in the tracked NPNF texts (every quotation verbatim); the Missal itself on the CMAA facsimile at printed p. 110, no. 714, where 'Beata gens' does stand after the Isaiah lesson 'Lavamini, mundi estote'. The Trinity Preface rubric, the September Ember days' fall in the week after this Sunday, and the omitted commemoration of Ss. Eustace all hold against the Missal and the leaf's occurrence record. The Scriptural Date and Location sheet the concise opening needs is present, with all seven scriptural elements and a generated chronology projection matching research/chronology-annotations.tex. Limits of this review: Cassiodorus (monumenta.ch), Bellarmine (O'Sullivan's English), Theodoret (PG 82), Hilary (CSEL 22), Rupert, Durandus, Gu\u00e9ranger and Schuster were not re-read at their loci, so their reported reasoning rests on the leaf's records and on internal coherence, not on my own inspection. One blocking defect remains: the study reverses the direction of the second half of Chrysostom's account of why the second commandment is 'like' the first, against the sentence it prints and against the Greek of PG 58.661, and against its own homily. Verdict: CHANGES_REQUIRED."
+}

@@ -1,0 +1,16 @@
+{
+  "disposition": "FAIL",
+  "findings": [
+    {
+      "check": "review-inputs",
+      "id": "STALE-STUDY-REVIEW",
+      "location": "study-review",
+      "problem": "current input bytes differ from the accepted review",
+      "repair_target": "study",
+      "required_result": "Repair or restore the owning deliverable and obtain a new independent review of its current bytes.",
+      "severity": "blocking"
+    }
+  ],
+  "iteration": 0,
+  "stage": "artifact-gates"
+}

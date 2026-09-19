@@ -1,0 +1,30 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-001",
+      "note": "Scope sections 2.3, 2.6, 3.2, 3.8, 3.10 and 5.1 and the Wilson 1894 binding are corrected. Both registered optical layers were re-fetched and matched, and pp. 231, 232 and 359 were read on unregistered IA page images (hashes in scope 6.2). The record now has the Old Gelasian III.xiii with its apparatus (Deum S2 Gerb.; pura mente Pam.; Pam. inserts a) and its different Postcommunion, and the Frankish Gelasian Hebd. XXI with Wilson's R./S./Gerb. note. The Collect's echo notes and the evidentiary consequence are revised. The tolerant re-run corrected further false negatives: Gregory hom. 20.11; Durandus's Eighteenth-Sunday chapter, which carries Mt 22:34-46 in some churches; and the Postcommunion at two Lenten Masses of the Gregorianum (Wilson 1915 pp. 32, 47). It also found kindred Leonine formulae (Feltoe pp. 9, 55, 133).",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-002",
+      "note": "The witness is now identified throughout as the Supplement to the Gregorian Sacramentary. Wilson's pp. xviii, xliii, xliv, 145, 147, 174 and 175 were read on page images from the registered tracked PDF, which is now bound. The locus is Supplement sect. XXXVI, p. 175, with cues at sects. XXXIIII-XXXVI. The 'Hadrianum's count' wording is gone and the transmission sequence is restated. The same page image also corrected an earlier misreading of footnote 1: O reads 'deum', the 1962 wording; it does not read 'dominum deum'.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-003",
+      "note": "The anagogical sense of just-judge-merciful-hearer now rests on appointed words and checked reception. It uses the Introit's secundum misericordiam tuam with Augustine s. 26.5, and Rupert XII.17 and Durandus VI.131 on this chant, marked as read within their Luke 14 office. It also uses the Postcommunion's remedia aeterna [T], and the Communion with Bellarmine on Ps 75 and Rupert. Ps 118:124b and Dan 9:24 are no longer used for this sense, and the allegorical bullet's Dan 9:20-27 is marked as unsung context reached through named witnesses [E].",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-004",
+      "note": "verified.md (discrepancy row and section 8) and context.md now say the conclusion is printed at length only as far as 'in unitate'. RG 115 a was read on the page image (printed p. XIX, PDF p. 17). The printed length is a typographic variable, shown by no. 1589 (long form) and no. 1599 (Per Dominum.). All three orations conclude identically in use. The Secret row of son-and-lord-of-david now records a minimal contribution shared with the other orations; its only link, maiestas to the Trinity Preface, is marked [E] and not distinctive.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": "Records written, all inside the leaf: research/scope.md, research/interpretations.md, research/source-bindings.toml (63 bindings; tools/source-library validate passes), propers/verified.md, research/context.md (the Secret-conclusion line). New bindings: the Wilson 1915 tracked PDF, the second Wilson 1894 OCR layer, Aquinas Super Psalmos cps31 (Ps 32 nn. 5, 11) and Bellarmine's Psalms in O'Sullivan's English (Pss 32, 75, 101, 118). research-preflight check passes locally, and the research-review seal builds and includes the new sources. review-dependencies.toml needed no change. Advisories: RES-006, the Pauline Epistle course, is recorded from facsimile loci (scope 2.5, 2.6, 3.3; interpretations 4.2). RES-007: Bellarmine was read for the four psalms and Aquinas for Ps 32; the Postilla's range (Pss 1-54) is corrected; Theodoret and other Greek psalm and Daniel exegesis are named unreached in scope 5.2. RES-005: the Ps 32 Davidic attribution is recorded in scope 7.4 as a request to the chronology corpus owner, with why it was not done here (bindings.yaml is a shared corpus outside the leaf). Section 7.4 now says the titles may be stated as textual observations with no date. chronology.toml was not regenerated. Remaining limits: the new Wilson 1894 and Feltoe page images are unregistered; Wilson 1894's preface, introduction, p. 224, appendix pp. 317 and 358, and index were read only in the OCR, as were Durandus's Eighteenth-Sunday chapter (its number is damaged in the layer) and Rupert; Bellarmine was read only in the abridged English; no critical sacramentary edition or manuscript was consulted. The tolerant-search script is scratch work and is not tracked. The chronology-annotations-current preflight fails only because format.tex does not yet exist, which is authoring-stage work. Nothing was committed.",
+  "stage": "research",
+  "summary": "Research reentry repaired all four blocking findings in the Claude leaf 57-seventeenth-after-pentecost. The orations' history now runs Old Gelasian III.xiii (Wilson 1894 p. 231: Collect 'te solum Dominum puro corde' and Secret, with a different Postcommunion), then Frankish Gelasian Hebd. XXI (p. 359: all three), then Gregorian Supplement sect. XXXVI (Wilson 1915 p. 175: R 'dominum', O 'deum'), then 1962 XVII. All of these were read on page images. The false Gelasian negative is withdrawn and every other negative was re-run with a tolerant method. The Secret's conclusion is corrected against RG 115 a in verified.md and context.md. Reading 2's Secret row and reading 3's anagogical sense were rewritten from appointed words and checked reception. Advisories RES-005, RES-006 and RES-007 were cleared as far as this stage's boundary allows."
+}

@@ -1,0 +1,361 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "SYN-020",
+      "location": "sections/concise/01-inventory.tex, the note under the page-1 map (PDF p. 1): \"The Mass is of the second class, in green with Gloria and Credo; it says one set of orations and admits no commemoration.\"",
+      "problem": "The clause states the rubric as a universal property of the Mass, and as a rule it is false: a Sunday of the second class does admit the commemoration of a second-class feast. The expansive study says so and supplies the reason it does not arise here -- \"The calendar's commemoration of Saints Eustace and Companions on that day gives way to the Sunday, since a Sunday of the second class admits no commemoration but that of a feast of the same class (Rubricae generales 111 b; Rubricae generales Missalis 434 b)\" (sections/00-opening.tex) -- and propers/verified.md 2 records the same bound, adding that none is due on 20 September 2026. The concise clause is that sentence truncated at exactly the point where the qualification begins, so the only rubrical statement page 1 makes is true of this occurrence and wrong as a rule, in a document whose profile makes the occurrence rule a sourced identity claim. The wording arrived from the required_result of SYN-018 at iteration 3, which asked only that the note stop appearing to contradict the three orations printed above it; it was not asked to state the commemoration rule without its bound, and the concise's own scope appendix cites RG 111 b and RGMR 434 b without restating it.",
+      "required_result": "The page-1 note either restores the study's qualification -- no commemoration but that of a feast of the same class, and none due on 20 September 2026 -- or ties the clause explicitly to this occurrence, so that page 1 states no false rubric while still reading against the three orations in the map above it.",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-021",
+      "location": "sections/concise/10-commentary.tex, \"The voice in which this people prays\", first paragraph (PDF p. 8): \"Augustine supplies that third reading a second sentence on the same verse ---si me extollo, longe fis; si me humilio, inclinas aurem tuam ad me---\"",
+      "problem": "That sentence is Augustine's gloss on Ps 101:3, not on the Alleluia's Ps 101:2, and the paragraph's \"the same verse\" can only mean the Alleluia's, which the paragraph opens by calling one verse long and which Bellarmine is then cited on in the next clause. In the leaf's own tracked Migne text (src/sources/works/augustine/enarrationes-in-psalmos/editions/latin-migne-corpus-corporum-wikisource-web-2026-09-05/artifacts/wikisource-part-11-latin-text/enarrationes-part-11.txt) Enarr. in Ps. 101, s. 1, 3 is headed \"[vers. 2, 3.]\": it quotes \"Exaudi, Domine, orationem meam, et clamor meus ad te perveniat\" and glosses it \"in geminatione affectus petentis est\", and only then quotes \"In quacumque die tribulor, inclina aurem tuam ad me\" and answers \"Tribulor enim deorsum; tu autem es sursum: si me extollo, longe fis; si me humilio, inclinas aurem tuam ad me\" -- the sentence is the gloss on v. 3's inclina aurem tuam ad me. research/scope.md 3.5 records it correctly, \"on v. 3\". The imprecision is not the concise's invention: the accepted expansive study carries it in its own words at sections/40-just-judge-merciful-hearer.tex, \"Augustine hears in its second verse humility inclining God's ear\", with the section locus (s. 1, 3) right beside it. It is advisory and not blocking because the edition's own lemma covers vv. 2-3 together, the section locus printed in the References (\"Ps 101, s. 1, 2-3\") is correct, and nothing doctrinal or comparative in the third reading turns on which of the two verses the sentence answers; but the document elsewhere is exact about which words this Mass sings, and here it is not.",
+      "required_result": "The clause places the sentence where Augustine puts it -- in the same section of the same sermon, on the verse that follows the Alleluia's, rather than on the Alleluia's own verse -- and, if the expansive study is reopened for any other reason, its corresponding sentence is brought into agreement with research/scope.md 3.5 in the same way.",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-022",
+      "location": "sections/concise/90-apparatus.tex, References, \"Liturgical books and Bibles\", the Douay--Rheims entry (PDF p. 11)",
+      "problem": "The themes section states that the lawyer \"is answered with Deut 6:5 and, unasked, with Lev 19:18 'like to this'\" (sections/concise/04-themes.tex, PDF p. 3). The Douay--Rheims entry lists Deut 6:5 among its loci but not Lev 19:18, so of the two Old Testament texts named in one sentence only one can be checked against a listed locus, and Leviticus appears nowhere in the References. propers/verified.md 6 records both as embedded citations of the pericope (Deut 6:5 at v. 37, Lev 19:18 at v. 39), so the claim is verifiable from the leaf's records; it is the apparatus that is asymmetric. The accepted expansive study's References carry the same omission.",
+      "required_result": "Lev 19:18 is added to the Douay--Rheims loci beside Deut 6:5, so that both Old Testament texts the body names in that sentence are locatable from the References.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 4,
+  "observations": [
+    {
+      "location": "generation-metadata.tex, the shared revision record printed at the foot of the concise study (PDF p. 12): \"Last revised (UTC): 2026-09-19T08:05:00Z\"",
+      "note": "The stamp is ahead of the record it dates. generation-metadata.tex was last written at 2026-09-19T07:28:33Z and the reviewed artifact (derive-synthesis-0004) was built at 07:32Z, and 08:05Z had not yet arrived when this review read the document (07:46Z). The same pattern runs back through the iterations -- 20:40Z, 21:30Z, 01:30Z, 07:10Z -- all round figures rather than the moment of writing, so the field reads as an estimate rather than a finalization timestamp. The record is shared by all three artifacts and is not the concise study's to own alone, which is why this is recorded rather than routed."
+    },
+    {
+      "location": "sections/concise/10-commentary.tex, the six subsection titles and the way the three readings are named across them (PDF pp. 5-10)",
+      "note": "The themes page introduces the readings as \"The first\", \"The second\" and \"The third\", and the commentary then never uses those ordinals, naming them instead by descriptive tags that vary from unit to unit: \"the reading anchored in the commandment\" and \"the reading of the whole heart and the one body\" and \"the reading of the one body\"; \"the reading of David's son and David's Lord\" and \"the reading of David's Lord\"; \"the reading of the humbled people\", \"the reading anchored in the Introit\" and, in the first two units, no tag at all but \"Read from the Introit instead\". Nothing is misattributed and a careful reader can map every tag, so this is not raised as a finding; it is the one place where following three alternatives across six cross-proper questions costs the reader more than the interleaving itself does."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/concise/01-inventory.tex",
+          "references": [
+            "format.tex",
+            "propers/verified.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-inventory"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/concise/02-overview.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "concise-date-location",
+          "kind": "front-matter",
+          "path": "sections/concise/03-date-location.tex",
+          "references": [
+            "format.tex",
+            "research/chronology-annotations.tex",
+            "research/chronology.toml"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-overview"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/concise/04-themes.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-themes"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/concise/10-commentary.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/concise/90-apparatus.tex",
+          "references": [
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine",
+            "John Chrysostom",
+            "Gregory the Great",
+            "Jerome",
+            "Theodoret of Cyrus",
+            "Thomas Aquinas",
+            "Cassiodorus"
+          ],
+          "component_keys": [
+            "whole-heart-one-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "whole-heart-one-body",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "Augustine",
+            "John Chrysostom",
+            "Theodoret of Cyrus",
+            "Thomas Aquinas",
+            "Irenaeus",
+            "Basil the Great",
+            "Cassiodorus",
+            "Robert Bellarmine",
+            "Rupert of Deutz",
+            "William Durandus"
+          ],
+          "component_keys": [
+            "son-and-lord-of-david"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "son-and-lord-of-david",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine",
+            "Jerome",
+            "John Chrysostom",
+            "Hilary of Poitiers",
+            "Cassiodorus",
+            "Thomas Aquinas",
+            "Robert Bellarmine",
+            "Rupert of Deutz",
+            "William Durandus"
+          ],
+          "component_keys": [
+            "just-judge-merciful-hearer"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "just-judge-merciful-hearer",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/format.tex": "afe32aae071025c30d42a0f981c4b7a7ee62412aa1872c44ba3ca6bfb261e960",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/propers/verified.md": "60d85fbd70f9884c369d843230ce9c71795e08b9e0102257629b48138dc92408",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/chronology-annotations.tex": "3bf62cf41bfbc61275ce49a192bf6d94b4da80d1aa56248e4849e3b9d92b7f85",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/chronology.toml": "7321744467ba108d8ba22223060445081a81bb3f4e9a49d087aa8edb6c71165b",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/interpretations.md": "e2e1d8e7e7f3f53474c99731b9131bd909a4808fc34079339ef115485fbb1d45",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/scope.md": "00ec5c1f857decf764fbab8e1472540c23a767c7d2a27dabbe970e706ef629b3",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/01-inventory.tex": "8b63216d100124d7644ce0c9fe6c294e349a1539a2dd9c9d442daf8b39275658",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/02-overview.tex": "195cb3e3cd01deed88fac42c6698217c761ee00dbb7849c3450c55beaf6ff830",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/03-date-location.tex": "2184da2c9827f8192fb32ef1d21ece97d9de54f40d5577bba32ededfea5bcc56",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/04-themes.tex": "6736ded66873567704d400d76d0af9505ca6eec8d342a05ae776dd646304b5c2",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/10-commentary.tex": "f6600b60a2cfd34fe490d0f97de210babbab8457cef52fd132c7efea47455987",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/90-apparatus.tex": "a6bc4a87fc6668be776600ddd93263ca02750bc497e0cb08bbc9613ee69c43b1",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/synthesis.tex": "b12a50133662f94800466d283933039df2ee6852adb8105f2c19216b980274ab",
+      "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "3",
+            "53629d2937dc0552647e5c8926b92373846c32b46c0fac662513b362073c6aef",
+            "1e02dc05f2df9940",
+            "72616eb9cc25c7ea7cc061c0e82efffc8b5ea882",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "Cold review of 57-seventeenth-after-pentecost-synthesis (synthesis.tex with its six concise components, sealed bytes re-hashed and matched; the current build derive-synthesis-0004 is 12 physical pages with inventory and the four overview rows settled on page 1, the sole chronology dossier on page 2, Themes and Movement filling pages 3-4, and the commentary opening page 5), read on its own and then against the accepted expansive study, propers/verified.md, research/scope.md, research/interpretations.md, research/chronology-annotations.tex and the tracked source texts behind the quotations. No blocking defect remains: every Latin and English quotation and every attribution in the concise was traced to the study or to the research records, the three readings' controlling claims and all six of the study's narrow disagreements survive, the evidence bounds that matter (the 1962 Offertory ending at 9:19, Gregory on the parable and not the pericope, Chrysostom and Theodoret not credited with Jerome's distribution at Eph 4:6, Rupert and Durandus reading the chants within a Luke 14 office) are carried, and no new source-dependent claim is introduced. Three advisories stand: a rubrical clause on page 1 that states the second-class Sunday's commemoration rule without its bound, an Augustine sentence attributed to the Alleluia's verse when it glosses the verse after it, and one Old Testament locus missing from the References. Checked limits: the readings' four senses were compared only through the concise's own prose and the study's, the chronology was checked against the generated projection and not re-derived, and the rendered evidence is the derive-synthesis-0004 artifact whose sources hash to this packet's seal."
+}

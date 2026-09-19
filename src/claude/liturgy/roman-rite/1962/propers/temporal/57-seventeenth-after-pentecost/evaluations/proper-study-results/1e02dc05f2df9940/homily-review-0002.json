@@ -1,0 +1,260 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "HOM-006",
+      "location": "sections/homily/10-homily.tex, fourth movement, the Collect paragraph, lines 91-93 (rendered homily PDF p. 3, first paragraph): \"The prayer is older than its place in this Sunday's Mass and was not composed for this Gospel, and still it asks of God what the Gospel commands of us.\"",
+      "problem": "The speech tells an adult parish assembly that the convergence it has just drawn between the Collect and the Gospel is not evidence of the compiler's design. Both halves of the clause are true and sourced (research/scope.md section 2.3 and the Collect's source row: the Old Gelasian places it in Liber III sect. XIII, a Sunday Mass carrying no number and no Gospel; the Frankish Gelasians set it at Hebd. XXI; the Supplement at Dominica XVIII). Truth is not the issue. The governing guidance forbids asserting the disclaimer in reader-facing prose: guidance/liturgy/roman-1962-propers.md, Evidence and Claim Discipline, 'A guide that has not established a compiler's intention simply does not claim one; it does not tell the reader that its observation does not prove a compiler's intention'; guidance/liturgy/propers-three-documents.md, The formulary is a compilation, 'Reader-facing prose does not disclaim a compiler's intention: the 1962 profile's evidence rule is satisfied by not asserting one.' The 'and still' construction makes the disclaiming function explicit - the sentence exists only to forestall an inference the assembly was never going to draw. Independently, the same three-document profile's homily section requires inline scholarly apparatus to be kept out of the speech, and a statement of the prayer's transmission relative to the formulary is apparatus; it already has its reviewed home in sections/10-each-element.tex (lines 45-55) and sections/concise/04-themes.tex (lines 29-34), where it is stated positively as documented history rather than as a disclaimer. The speech asserts no compositional design anywhere else, so nothing in it needs the disclaimer in order to be lawful. research/production-review.md records the clause as deliberately retained at the iteration-2 repair ('the disclaimer of composition kept, so no compiler's design is claimed'), which is precisely the reasoning the two profiles correct.",
+      "repair_target": "homily",
+      "required_result": "The spoken body asserts the convergence plainly and does not tell the assembly that it is not evidence of a compiler's design. Remove the composition disclaimer from the speech. The Collect quotation, the restatement in terms of the one current and no second channel, and the sentence the paragraph exists for ('The commandment comes to us as a command and goes back to God as a petition, because we cannot manufacture it ourselves') all stand unchanged, and the prayer's transmission history stays in the two studies that already carry it.",
+      "severity": "blocking"
+    },
+    {
+      "id": "HOM-007",
+      "location": "sections/homily/10-homily.tex, second movement, lines 37-42 (rendered homily PDF p. 1, final paragraph): \"Saint John Chrysostom gives the reason in a line: ``this makes the way for that, and by it is again established.'' The love of the neighbour opens the road to the love of God, and then keeps the road open.\"",
+      "problem": "The quotation is exact, collated against the tracked NPNF1 vol. 10 text at Homily LXXI, but the gloss assigns both of Chrysostom's clauses to love of neighbour and drops the return direction. In hom. 71 the four proof texts alternate - Jn 3:20 and 1 Tim 6:10 run from neighbour-love to God-love, Ps 53:1 and Jn 14:15 run from God-love to neighbour-love - and the sentences immediately following state both ('If therefore to love God is to love one's neighbor ... but to love one's neighbor worketh a keeping of the commandments'). The leaf's own research/interpretations.md names the mechanism 'mutual establishment' and distinguishes it from Augustine's ordering to God on exactly that ground. The direction the gloss drops is the one the homily's own fourth movement then leans on, that the one God loved with an undivided heart has one body in this world. Filed advisory rather than blocking because the English clause 'by it is again established' is ambiguous read alone, nothing false is predicated of Chrysostom (his Jn 3:20 text does support 'keeps the road open'), and the accepted expansive study glosses the sentence the same way, so a complete repair reaches settled reviewed prose outside this deliverable (see the observation on sections/20-whole-heart-one-body.tex).",
+      "required_result": "The gloss reports Chrysostom's reciprocity - neighbour-love making the way for the love of God, and the love of God re-establishing the love of neighbour - or else stops at the single direction the sentence can carry, so that a one-way dependence is not preached as Chrysostom's reason for 'like to this'.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-008",
+      "location": "sections/homily/10-homily.tex, fifth movement, lines 126-127 (rendered homily PDF p. 3, final paragraph): \"The last prayer of this Mass asks that ``our vices be cured'' and that ``an eternal remedy'' be given us.\"",
+      "problem": "The Postcommunion is the last of this Mass's three orations, not the last prayer of the Mass. The leaf's own research/context.md, the Conclusion row of its rite table, records what follows it at this very occurrence: Ite missa est, the Placeat, the blessing, and the last Gospel Jn 1:1-14 (RGMR 507-509, printed p. XXXV; Ordo Missae nos. 1132-1139). The two quoted fragments are exact Cummiskey 1861 ('May our vices be cured, O Almighty God! and an eternal remedy procured for us by these sacred mysteries'), and the theology of the sentence is sound; only the placement claim is wrong, and it is one the assembly will see falsified before it leaves the church. The phrase occurs nowhere in the research records or either study, so it is the speech's own.",
+      "required_result": "The sentence identifies the Postcommunion without claiming it closes the Mass - for instance as the last of this Mass's own prayers, or simply as the prayer after Communion - and nothing else in the paragraph changes.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 2,
+  "observations": [
+    {
+      "location": "sections/20-whole-heart-one-body.tex, subsection \"Two commandments, one love\", lines 65-69 and 89-90",
+      "note": "The accepted expansive study glosses the Chrysostom clause of HOM-007 the same way the homily does - 'Love of neighbour opens the road to the love of God, and the love of God is in turn confirmed by it' - and then summarises it as 'For Chrysostom it is mutual dependence, the second preparing and confirming the first', which describes one direction twice and is not mutual. research/interpretations.md calls the mechanism 'mutual establishment'. Recorded rather than filed as a finding because the expansive study is not this stage's deliverable and passed its own cold review; the point for a later reader is that clearing HOM-007 in the speech alone would leave the homily and the accepted study glossing one sentence of Chrysostom differently."
+    },
+    {
+      "location": "sections/homily/10-homily.tex, header comment line 7 (\"the vertical spaces mark the four movements\")",
+      "note": "The body carries four \\bigskip separators and therefore five blocks: the opening silence; the two commandments; David's son and David's Lord; the Epistle and the Collect; and the Introit, Offertory, Creed, Communion and Postcommunion. Nothing reader-facing depends on the count, but the miscount has already propagated: research/production-review.md calls lines 111-117 'the fourth movement' in its iteration-1 entry and lines 87-96 'the fourth movement' in its iteration-2 entry, so the two repair records disagree about which block they edited. My criteria reach the speech rather than its source comments, which is why this is an observation."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "homily-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine",
+            "John Chrysostom",
+            "Gregory the Great",
+            "Jerome",
+            "Theodoret of Cyrus",
+            "Thomas Aquinas",
+            "Cassiodorus"
+          ],
+          "component_keys": [
+            "whole-heart-one-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "whole-heart-one-body",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "Augustine",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Irenaeus",
+            "Basil the Great",
+            "Cassiodorus",
+            "Robert Bellarmine"
+          ],
+          "component_keys": [
+            "son-and-lord-of-david"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "son-and-lord-of-david",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine",
+            "Jerome",
+            "Hilary of Poitiers",
+            "Cassiodorus",
+            "Robert Bellarmine",
+            "Rupert of Deutz",
+            "William Durandus"
+          ],
+          "component_keys": [
+            "just-judge-merciful-hearer"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "just-judge-merciful-hearer",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/format.tex": "151f7b2bed32adc252192ebfd063b5ab341976affdd80ce8105f2abc236776e8",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/homily.tex": "0243ada0130006d06fc59429bb15e8fb3057cc5fa4122fc29b31fdcae3dca67b",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/interpretations.md": "e2e1d8e7e7f3f53474c99731b9131bd909a4808fc34079339ef115485fbb1d45",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/scope.md": "00ec5c1f857decf764fbab8e1472540c23a767c7d2a27dabbe970e706ef629b3",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/homily/10-homily.tex": "f23252e2aef2ee7a2e54005f240765b56e81834c81ddf8199e0e0d3a5543cf9f",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/homily/90-note.tex": "552796c46f56d9e0797ecdc7d2fd7782f38bc24ac905d1f67e315bc6a08a4a60",
+      "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "3",
+            "53629d2937dc0552647e5c8926b92373846c32b46c0fac662513b362073c6aef",
+            "1e02dc05f2df9940",
+            "72616eb9cc25c7ea7cc061c0e82efffc8b5ea882",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Cold review of the standalone homily 'The Seventeenth Sunday after Pentecost: The Commandment and the Question' (homily.tex, sections/homily/10-homily.tex and 90-note.tex), read continuously as a listener and then checked against its evidence: all seven sealed files re-hashed and matched REVIEW_INPUTS; every quoted Scripture verse collated verbatim against the tracked Douay-Rheims (Mt 22:36, 37, 39, 42, 45, 46; Eph 4:2-6; Ps 118:137 and 124; Ps 75:12); the Collect and Postcommunion English matched word for word against the 1861 Cummiskey text recorded in propers/verified.md; Augustine De doctrina christiana I.22.21 and Chrysostom In Mt. hom. 71 collated against the tracked NPNF1 vol. 2 and vol. 10 texts; Augustine En. in Ps. 109, 3-6 and Jerome In Dan. on 9:5 checked against research/scope.md section 3.6-3.7; the Creed rubric, the appointed inventory and the pericope construction checked against propers/verified.md; the combination and its permitted attributions checked against research/interpretations.md section 4.5; and the spoken word count recomputed independently as exactly 1,437 words, which reproduces the note's 11-12 minutes at 120-130 words a minute and 13.1 at 110. The speech is a genuine single exegetical argument on this Sunday's own texts, not a generic sermon and not a catena: it carries no citation, no direction to a preacher, no footnote dependence, no invented anecdote or personal experience, no clerical identity and no newly composed prayer, and its delivery note is exemplary in refusing to certify a timed performance. Limits: I did not collate the Greek of Chrysostom or the Latin of Augustine on Ps 109 and Jerome, relying on the registered English and the leaf's Latin extracts; I did not open the Missal or Cummiskey page images, relying on the reviewed propers/verified.md transcription; and page layout is the visual stage's, not mine. One blocking defect remains: the spoken body tells the assembly that the Collect's convergence with the Gospel is not evidence of a compiler's design, which the governing 1962 and three-document profiles forbid in reader-facing prose."
+}

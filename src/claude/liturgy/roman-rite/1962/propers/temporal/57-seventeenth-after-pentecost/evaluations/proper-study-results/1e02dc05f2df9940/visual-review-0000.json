@@ -1,0 +1,88 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "VIS-001",
+      "location": "57-seventeenth-after-pentecost.pdf physical page 20, running head",
+      "problem": "The two halves of the running head overprint each other. The left head \"Seventeenth Sunday after Pentecost\" and the right head \"David's Son and David's Lord: The One God Confessed in His Word and Spirit\" collide, so the final letters of \"Pentecost\" are struck through by the opening letters of \"David's\" and neither string is legible at the join; pdftotext cannot even keep them on one line. The cause is that format.tex sets \\fancyhead[L] and \\fancyhead[R] with no width discipline and \\renewcommand{\\sectionmark}[1]{\\markright{#1}} passes the full section title through, so a long interpretation title exceeds the head width; fancyhdr's \\hss glue absorbs the overflow silently, which is why the log reports zero Overfull boxes and no mechanical gate caught it. Page 26 is the same defect one hair short of colliding: \"Seventeenth Sunday after Pentecost\" and \"Thou Art Just, O Lord\": The Humbled People Prays with Daniel for Mercy\" are separated by less than a single word space and the right head runs to the right margin.",
+      "repair_target": "study",
+      "required_result": "Every page of the expansive study shows a legible, non-overlapping running head with a visible gutter between the left and right strings, page 20 included and page 26 comfortably clear. Achieve it in the study's own sources, for example by giving the long interpretation sections a short running form (an optional short title on \\section, or an explicit \\markright after the section) or by bounding the head boxes so the right string wraps or truncates rather than overprinting.",
+      "severity": "blocking"
+    },
+    {
+      "id": "VIS-002",
+      "location": "57-seventeenth-after-pentecost.pdf physical pages 36 and 37, running head",
+      "problem": "The References section carries the wrong running head. The References heading appears on page 36 and its entries fill pages 36-37 (Liturgical books and Bibles; Fathers, Doctors and saints), yet both pages are headed \"Appendix: Scope and Qualifications\", the section that ended above. A reader on page 37, looking at nothing but a bibliography, is told which section he is in and told wrongly. The cause is in sections/90-apparatus.tex, where line 92's \\section*{References} is starred and is followed by \\addcontentsline but by no \\markright, so the mark set by the preceding \\section{Appendix: Scope and Qualifications} persists. The concise companion does this correctly: sections/concise/90-apparatus.tex line 74 carries \\markright{References} and synthesis page 11 is duly headed \"References\", so the study is inconsistent with its own sibling within one leaf.",
+      "repair_target": "study",
+      "required_result": "Pages of the expansive study that carry the References section are headed \"References\", matching the behaviour the concise study already shows, and no page is headed with a section it does not contain.",
+      "severity": "blocking"
+    },
+    {
+      "id": "VIS-003",
+      "location": "57-seventeenth-after-pentecost.pdf physical page 3, \"The appointed elements at a glance\" table, Introit row",
+      "problem": "In the Introit row the second column's text \"Iustus es, Domine; Ps 118:137, 124; verse Ps 118:1\" fills its cell to the last point and ends roughly 0.05 in from the start of the third column's \"to be dealt with\", against a gutter of about 0.45 in on every other row of the same table. Nothing is clipped and nothing overlaps, and the log reports no Overfull box, but at that one line the two columns read as a single run of text and the table's column structure visibly breaks down. The concise study's version of the same map avoids it by printing the shorter \"verse 1\".",
+      "required_result": "The Introit row's second column keeps a gutter comparable to the other rows of the same table, either by widening the column or by shortening the cell to the concise map's shorter reference form.",
+      "severity": "advisory"
+    },
+    {
+      "id": "VIS-004",
+      "location": "57-seventeenth-after-pentecost.pdf physical pages 13 and 19 (and, less markedly, 25, 32 and 34)",
+      "problem": "Measured ink fill of the text block falls to 36% on page 13 and 38% on page 19, so roughly three-fifths of each page is white. Page 13 ends with a nine-line subsection on the Preface of the Most Holy Trinity; page 19 ends with the last three items of a four-senses list. In each case the following top-level section opens on a fresh page, which is what leaves the remainder blank; pages 25, 32 and 34 show the same effect at 60%, 49% and 50%. Against that measurement stand three facts also established by inspection: no page of the study is blank, every one of these pages ends its section with twelve to fourteen lines of substantive matter, and the study occupies 38 physical pages, squarely mid-range within the 20-50 contract, so the white space is the ordinary consequence of opening each major interpretation on a fresh page and not padding reaching for a page target. Any repair would move the pagination of the whole study and with it the settled physical-marker evidence, for a reader who is not misled.",
+      "required_result": "If anyone chose to act on it, the top-level section openers would be allowed to run on rather than always beginning a new page, or the preceding material would be extended, so that no interior page of the study falls below roughly two-thirds fill; the study's physical extent must stay within 20-50 pages and its opening-sequence evidence must be re-settled if pagination moves.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "artifacts": {
+      "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+      "pagination_evidence": {
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.aux": "e2b03c30c57490b09cd3bc26227ace328d7a8d5434998e9c61caf119094028ed",
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.log": "1d9d06d370dedde14af46aa46f170d4b8d4e8b51232828fb1ee558d3f4efde98",
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.aux": "3c1f31c2bcb6ff46995733c2b38a41e0b837f9daa8c0e38ee14cc5795c1203e1",
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.log": "0a6868caffe6515a7427146a7abdcc03cc72413d455f4db735dea3e7eee77f7f"
+      },
+      "pdfs": {
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf": "65ddd79b4a6d37f96687a14a3f5ae27b7f9b01acacc227dbae896f66585a2c31",
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf": "689f6e31fa5fe237711ccf3759ba4f24d92be6381aebccb7f015bb238fa0638a",
+        "build/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf": "0edcc07c76da6c29affb30dfad7431d166f370e4b450818ea66336276bed2967"
+      },
+      "provider": "claude",
+      "render_inputs": {
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/format.tex": "8679a274a48192f9c17c24eb88ce72f88cdae76183b38e590431e37804822b6a",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/generation-metadata.tex": "b62910051013fd4df175b96644b6b9efd86457b7537757b5e6ad158758dc2fa7",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/homily.tex": "0243ada0130006d06fc59429bb15e8fb3057cc5fa4122fc29b31fdcae3dca67b",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/main.tex": "ca56ba721f7cd222468e068f4a386694c9591477065334353c7203d8043b134e",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/proper-components.toml": "b49c277043415a35bba464f409b4362551a37714d3cd641ed67a9436db20b429",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/chronology-annotations.tex": "3bf62cf41bfbc61275ce49a192bf6d94b4da80d1aa56248e4849e3b9d92b7f85",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/00-opening.tex": "1fa1f4ac4bbf262cf56230701e6111d7b468d9048979d5345d1b38dc39a9318f",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/05-appointed-texts.tex": "703326b2f4b0f47644a217c00480c65ad35bbd33ca5b9a23386d30543a6c7b7a",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/10-each-element.tex": "63432700f93dabfa2f8f1df91c8f93289f17284af506d480b0dc4134a554d63c",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/20-whole-heart-one-body.tex": "4f9261d75b77edded7f80404461bc8137e5fbc5f6637c9a56784da805105a654",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/30-son-and-lord-of-david.tex": "b6b6cc40be26737ddbb597cfea4143ee28cbee439a8dce72741b1f045b4f11d8",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/40-just-judge-merciful-hearer.tex": "f889847142920fb5c95d4f27aa3c0c2d8ace1925ee1061660f348b71dde93672",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/50-comparison.tex": "a8fea75fcc88236f9f8767586945e66f5beaa93751c238304de8ffd181b6f546",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/80-date-location.tex": "a0a197e1ed1fb85cb2165aca6a437bd59a3cc82253560c7efa89e97450c6868f",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/90-apparatus.tex": "f6ea241ad0ced0f706fa10fe01b993e4ae713c5003b6facc5360dacff64a9cfc",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/01-inventory.tex": "75ade9150ca310979acd8d88c4298851f028974faaaed772270379b908bc065e",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/02-overview.tex": "195cb3e3cd01deed88fac42c6698217c761ee00dbb7849c3450c55beaf6ff830",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/03-date-location.tex": "3e03243a2e7110088859db662bc8cd8b85bead4cf66fcd31d612abe6ae72bff3",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/04-themes.tex": "adc3a5acace54f2abba57caad3aa2f5655820ecbbb34868500c86ea0901c823b",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/10-commentary.tex": "ebf36e058d5ef6ef933d1cd7cb7476e3d6ecd85f1dec09510169dddb836b7dc9",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/90-apparatus.tex": "8d781798db18d456a220f0dec4115532d8be2945d94a8e022d3c11f9fe8ba580",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/homily/10-homily.tex": "f63f8dc1c3286dae11f6f463520981fd34ec96b7b5f454a3e63b4cc4529dee3e",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/homily/90-note.tex": "0c92a5814e3930fc71c05de00be8b6102d50119c8ef961cf11cbc0df0f1804e9",
+        "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/synthesis.tex": "b12a50133662f94800466d283933039df2ee6852adb8105f2c19216b980274ab",
+        "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c"
+      },
+      "schema": 1
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+    "files": {},
+    "provider": "claude",
+    "review": "visual",
+    "schema": 1
+  },
+  "stage": "visual-review",
+  "summary": "Independent full-page visual inspection of all three artifacts of liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost, provider claude. Reviewed: 57-seventeenth-after-pentecost.pdf (receipt 0edcc07c76da6c29affb30dfad7431d166f370e4b450818ea66336276bed2967, 38 physical pages, pages 1-38 all opened as full-size 200 dpi rasters); 57-seventeenth-after-pentecost-synthesis.pdf (receipt 689f6e31fa5fe237711ccf3759ba4f24d92be6381aebccb7f015bb238fa0638a, 12 physical pages, pages 1-12 all opened full size); 57-seventeenth-after-pentecost-homily.pdf (receipt 65ddd79b4a6d37f96687a14a3f5ae27b7f9b01acacc227dbae896f66585a2c31, 5 physical pages, pages 1-5 all opened full size). Every PDF, pagination-evidence and render-input hash in research/artifacts.json was recomputed and matches REVIEW_INPUTS exactly; contact sheets were generated with tools/pdf-review and every page was then opened individually at full size, with extra magnified crops of the running heads of pages 14, 20 and 26 and of the page-3 glance table. Checked: physical extents (study 38, inside 20-50; concise 12, inside 10-12); the concise restored opening against both the settled zref-abspage markers in the synthesis .aux and the actual pages, confirming the complete ten-element propers map plus exactly four overview sense rows on physical page 1, Scriptural Date and Location alone and complete on page 2, substantive Themes and Movement filling pages 3-4, and developed interleaved commentary beginning on page 5; per-page ink-fill measured programmatically for all 55 pages; table and footnote integrity; font embedding (all faces subset and embedded in all three: TeX Gyre Pagella X regular/bold/italic/bold-italic plus LM Mono); the compact terminal rights colophon present on the last page of each artifact; and the TeX logs, which report zero Overfull and zero Underfull boxes. Judged for use: the study carries real navigation and substantial exposition; the concise work shows genuine interleaving of the three readings by question rather than successive lane summaries; the homily reads at comfortable type with recoverable paragraphs, its spoken body occupies pages 1-3 with no inline apparatus whatever, and its source-and-delivery note and references are cleanly separated onto pages 4-5. Meaningful limits: this review judges rendered presentation only, not source support or theological substance, and no human delivery of the homily was timed or claimed. Verdict CHANGES_REQUIRED: two blocking running-furniture defects in the expansive study, both silent to the build log because fancyhdr absorbs header overflow in infinitely shrinkable glue; two advisory findings beside them."
+}

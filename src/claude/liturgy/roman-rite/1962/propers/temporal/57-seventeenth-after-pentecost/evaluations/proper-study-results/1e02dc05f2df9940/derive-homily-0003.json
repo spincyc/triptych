@@ -1,0 +1,14 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/homily.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "HOM-006",
+      "note": "The composition disclaimer is gone from the speech. The sentence 'The prayer is older than its place in this Sunday's Mass and was not composed for this Gospel, and still it asks of God what the Gospel commands of us' is replaced by the plain assertion 'The prayer asks of God what the Gospel commands of us.' The convergence is now stated as convergence, with nothing telling the assembly what it is not evidence of. Everything the finding required to stand is unchanged: the Collect quotation, the restatement in the terms of Augustine's one current and no second channel, and 'The commandment comes to us as a command and goes back to God as a petition, because we cannot manufacture it ourselves.' Nothing of the prayer's transmission was imported in its place; it keeps its two reviewed homes in sections/10-each-element.tex and sections/concise/04-themes.tex, where it is stated positively as documented history. No study component, research record or source record was edited. research/production-review.md now records the iteration-3 repair and supersedes the iteration-2 entry that had recorded the disclaimer as deliberately retained.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 3,
+  "stage": "derive-homily",
+  "summary": "Repaired the single blocking finding in the homily's own spoken body: the Collect paragraph of the fourth movement no longer disclaims a compiler's design, and asserts the convergence with the Gospel plainly, while the Collect quotation, the one-current restatement and the command-and-petition sentence stand unchanged. Both standing advisories were cleared in the same file while in it: Chrysostom's reciprocity is now reported in both directions ('the love of God, in its turn, re-establishes the love of the neighbour'), and the Postcommunion is named as 'the prayer after Communion' rather than as the last prayer of the Mass. The spoken body is 1,429 words (11.0 to 11.9 minutes at 120 to 130 a minute, 13.0 at 110); the terminal note's count and pace, the shared revision timestamp (2026-09-19T00:05:00Z) and the production audit were brought into line, the 5-page proof settles in two passes with a clean log and reproduces byte-for-byte from a cold auxiliary file, the speech still ends on page 3, every homily-gate check passes, and both studies rebuilt at the new timestamp are unchanged at 38 and 12 pages. One upstream observation is reported for the homily's cold reviewer: the accepted expansive study glosses the same Chrysostom sentence one-directionally at sections/20-whole-heart-one-body.tex, which this stage may not edit."
+}

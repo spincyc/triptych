@@ -1,0 +1,240 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "HOM-009",
+      "location": "sections/homily/10-homily.tex, the header comment block, final line: \"the vertical spaces mark the four movements\"",
+      "problem": "The file's own header comment says the vertical spaces mark four movements. Four \\bigskip commands divide the spoken body into five blocks: the three questions and the silence; the double commandment with Augustine on the undivided heart and Chrysostom on \"like to this\"; Christ's own question with Chrysostom and Augustine on Ps 109; the Epistle's sevenfold \"one\" and the Collect; and the Introit, the Offertory, the Creed, the Communion and the Postcommunion. The leaf's own audit numbers them that way and not the comment's way, placing the Collect paragraph in \"the fourth movement\" (research/production-review.md, the homily iteration-2 entry and the HOM-006 entry of the iteration-3 record) and the Postcommunion sentence in \"the fifth movement\" (the HOM-008 entry of the same record), so the file states four where the record that repairs it counts five. Nothing reaches a reader of the PDF, since the comment is not typeset and no word of the speech depends on it; the cost falls on the next author or reviewer who navigates this file by movement number and finds its own count one short of the audit that addresses it.",
+      "required_result": "The header comment of sections/homily/10-homily.tex states the number of movements its four vertical spaces separate in agreement with the count research/production-review.md uses for this file, or is reworded to describe the spaces without asserting a count.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 4,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "homily-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine",
+            "John Chrysostom",
+            "Gregory the Great",
+            "Jerome",
+            "Theodoret of Cyrus",
+            "Thomas Aquinas",
+            "Cassiodorus"
+          ],
+          "component_keys": [
+            "whole-heart-one-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "whole-heart-one-body",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "Augustine",
+            "John Chrysostom",
+            "Theodoret of Cyrus",
+            "Thomas Aquinas",
+            "Irenaeus",
+            "Basil the Great",
+            "Cassiodorus",
+            "Robert Bellarmine",
+            "Rupert of Deutz",
+            "William Durandus"
+          ],
+          "component_keys": [
+            "son-and-lord-of-david"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "son-and-lord-of-david",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine",
+            "Jerome",
+            "John Chrysostom",
+            "Hilary of Poitiers",
+            "Cassiodorus",
+            "Thomas Aquinas",
+            "Robert Bellarmine",
+            "Rupert of Deutz",
+            "William Durandus"
+          ],
+          "component_keys": [
+            "just-judge-merciful-hearer"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "just-judge-merciful-hearer",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/format.tex": "8679a274a48192f9c17c24eb88ce72f88cdae76183b38e590431e37804822b6a",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/homily.tex": "0243ada0130006d06fc59429bb15e8fb3057cc5fa4122fc29b31fdcae3dca67b",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/interpretations.md": "e2e1d8e7e7f3f53474c99731b9131bd909a4808fc34079339ef115485fbb1d45",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/scope.md": "00ec5c1f857decf764fbab8e1472540c23a767c7d2a27dabbe970e706ef629b3",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/homily/10-homily.tex": "f63f8dc1c3286dae11f6f463520981fd34ec96b7b5f454a3e63b4cc4529dee3e",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/homily/90-note.tex": "0c92a5814e3930fc71c05de00be8b6102d50119c8ef961cf11cbc0df0f1804e9",
+      "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "3",
+            "53629d2937dc0552647e5c8926b92373846c32b46c0fac662513b362073c6aef",
+            "1e02dc05f2df9940",
+            "72616eb9cc25c7ea7cc061c0e82efffc8b5ea882",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Cold review of the standalone homily of liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost (claude leaf): homily.tex with the spoken body sections/homily/10-homily.tex and the terminal note sections/homily/90-note.tex; all seven sealed REVIEW_INPUTS digests were recomputed and match. The speech carries one intelligible exegetical argument -- the double commandment and Christ's counter-question stand together, so that the God we are told to love with an undivided heart is shown to be the one asking, and the Gospel's closing silence is answered by the Creed, the offering and Communion -- built on the Gospel in both halves, the Epistle, the Collect, the Introit, the Offertory, the Communion and the Postcommunion, moving from attention through understanding to a specific practicable response and to hope, and returning to its opening image; it could not be preached on another Sunday and it is not a string of quotations. I checked every attributed passage in the leaf's own tracked sources rather than in the studies' report of them: Augustine's \"no part of our life is to be unoccupied\" and the single channel of the affections stand verbatim in the CCEL NPNF1 2 text at De doctrina christiana I.22, paragraph 21, exactly the locus the note gives; Chrysostom's \"this makes the way for that, and by it is again established\" (his own answer to his own question \"wherefore 'like unto this?'\"), \"not to the rejection of the Son, but to make the distinction from idols\" and \"secretly leading them on to confess Him also to be God\" stand verbatim in the CCEL NPNF1 10 text of In Mt. hom. 71, which does join the two halves as the note claims; Augustine's \"Respondeamus omnino quod Judaei, sed non remaneamus ubi Judaei\" with \"in forma Dei ... Dominus David ... formam servi accipiens ... inde filius David\" stands in the tracked Migne Enarrationes part 11 at Ps 109, 6, where Augustine's own \"Judaei\" are the men our Lord questioned; and Jerome's five words \"quia unus e populo est\" stand as written at Dan 9:5 in the tracked Wikisource PL 25. Every Scripture quotation agrees word for word with the leaf's collated Douay-Rheims at the verses the note names (Mt 22:36, 37, 39, 42, 45, 46; Eph 4:2-6; Ps 118:137, 124; Ps 75:12), Eph 4:4-6 does say \"one\" seven times in three verses, the Collect and Postcommunion fragments are verbatim from the tracked 1861 Cummiskey payload at the printed pages the References give (431-433), the Offertory is described and quoted in no English as the rights record requires, and the Credo rubric at the end of the Gospel is no. 1607 as propers/verified.md records. I recounted the spoken body by the documented method and made it 1,429 words, the figure the note prints; the pace arithmetic (11.0-11.9 minutes at 120-130 words a minute, 13.0 at 110) is correct and the note states plainly that no delivery has been timed. The body is speakable verbatim: mean 17 words a sentence, median 14, no heading, no stage direction, no citation, no footnote dependence, one Latin phrase glossed as it is spoken; no anecdote, personal experience, clerical identity or composed prayer is manufactured, the whole-formulary reading is disclosed as editorial with no Father credited for it, and the attributions are exactly the ones research/interpretations.md section 4.5 permits. Meaningful limits: I read the patristic Latin and English in the tracked digital transcriptions the leaf registers and collated no printed page image, which is the limit the note itself discloses; I did not inspect the built PDF or any pagination, which belongs to the visual stage; and I timed no delivery. Verdict: PASS, with one advisory against a source comment that misstates the number of movements in the file it heads."
+}

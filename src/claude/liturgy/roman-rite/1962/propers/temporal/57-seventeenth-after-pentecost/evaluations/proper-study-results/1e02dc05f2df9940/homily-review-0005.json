@@ -1,0 +1,264 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "HOM-010",
+      "location": "sections/homily/90-note.tex, \"Relation to the reviewed readings\", the sentence beginning \"What joins them is not an editorial device but Saint John Chrysostom's reading of the Gospel's two halves\"",
+      "problem": "The note rests the join of the two carrying readings on Chrysostom's seventy-first homily on Matthew, \"where the question about the Christ follows from the commandment that names one God\". The commandment of the appointed pericope is Deut 6:5 as Mt 22:37 gives it, \"Thou shalt love the Lord thy God with thy whole heart and with thy whole soul and with thy whole mind\", and it names no \"one God\". The confession \"There is one God, and there is none other but He\" is Mark 12:32, which Chrysostom brings in expressly (\"But wherefore doth Matthew say that he asked, tempting Him, but Mark the contrary?\") and on which he then hangs the question (\"after having praised this man that said, that there is one God, He asks the question\"). I read the whole exposition in the tracked CCEL text of NPNF1 10, SHA-256 adb8f1c9a988c5050a20fb9fdbf75143dcb227e95e3dad2f560a63b757923648, at the lines the passage record passage.john-chrysostom.homiliae-in-matthaeum.ccel-web-2026-09-17.homily-71 bounds, and all three phrases the note credits to that homily stand there verbatim. The substance of the note's claim is therefore true and the guard it exists to satisfy is met: Chrysostom really does join the two halves in his own sequence, so the join is not an editorial construction wearing a Father's name. What is inexact is only which text carries \"one God\", in the one sentence whose whole work is to be exact about that. Nothing reaches a listener, because the spoken body is careful at the same point and says \"When Scripture says that there is one God\" without placing those words in today's Gospel.",
+      "required_result": "The sentence names the text Chrysostom actually attaches the question to -- the scribe's confession he takes from Mark, which Matthew does not print -- or drops \"that names one God\" and rests the join on Chrysostom's own sequence, so that the note's single justification for calling the join patristic rather than editorial is exact about the text it rests on.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-011",
+      "location": "sections/homily/10-homily.tex, fifth movement, the sentence \"Later, when the gifts are carried up, the Church borrows the words of Daniel, praying in exile for a desolate sanctuary and for the people that carries God's name\", read against sections/homily/90-note.tex, \"Texts quoted, and their route\"",
+      "problem": "The note says the Offertory antiphon \"is a compilation that no Douay verse renders, so the homily describes it and quotes no English of it\". The homily does quote no English of it, and the second half of the description is the antiphon's own matter: populum istum, super quem invocatum est nomen tuum. The first half is not. The antiphon reads illumina faciem tuam super sanctuarium tuum and stops there, and the clause quod desertum est -- the sanctuary's desolation -- is precisely one of the departures from the Vulgate that propers/verified.md records the compiler as having cut, both in section 7 under Construction and in the Offertory row of the appointed-text-against-Bible table. Read of Daniel's own prayer at Dan 9:17 the description is true, and the participle attaches most naturally to Daniel, so no listener is told anything false and the movement's argument -- that Daniel prays as one of a people -- rests on matter the antiphon does carry. Read as the note says it should be read, as a description of the antiphon, it restores a word the antiphon does not have, in a leaf that is otherwise exact about which words this Mass sings.",
+      "required_result": "Either the description keeps to what the antiphon carries -- the sanctuary and the people that bears God's name -- or the note states that what the fifth movement describes is Daniel's prayer in Daniel 9 and not the antiphon alone, so that the description and the note's account of it agree with propers/verified.md on what the compiler left out.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-012",
+      "location": "sections/homily/10-homily.tex, third movement, first paragraph (\"Now the second question, which looks at first like a change of subject\"), the two sentences beginning \"Chrysostom reads the two halves of this Gospel as one lesson\"",
+      "problem": "This paragraph carries the speech's structural turn from the commandment to the question, and it is the one place where the spoken line goes slack. The listener is given \"When Scripture says that there is one God\" as a premise with nothing to attach it to: those words are not in the Gospel he has just heard, and the speech never says where they stand. The sentence that follows is forty-three words with two parentheticals (\"he writes\", \"it is said\") wrapped round a quotation, and it then claims a consequence with \"and so\" from the unanchored premise, ending in \"the question that will not let anyone keep the commandment and lose him\", which asks a listener to hold two clauses in tension and resolve an implied \"both\" in the time it takes to say them. Three of the paragraph's five sentences are quotation or attribution, which is the nearest this homily comes to the assembled-from-quotations failure the criteria name; every other paragraph in the speech is markedly clearer and more concrete. The movement is not lost, because the next paragraph makes the same turn plainly and well (\"First we are told whom we must love with everything we have. Then we are shown who he is. The God of the great commandment has a face, and it is the face of the man asking the question\"), which is why this does not block.",
+      "required_result": "The hinge either gives the listener the confession Chrysostom is glossing in words an adult assembly can place -- that Israel was told the Lord its God is one Lord -- or states the join in the speech's own voice and keeps Chrysostom only for \"to confess Him also to be God\", so that the paragraph turns the argument at the pace and concreteness the rest of the speech keeps.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 5,
+  "observations": [
+    {
+      "location": "research/interpretations.md section 1.2, the John Chrysostom In Mt. hom. 71 bullet (\"Chrysostom reads the second as the way that leads to the first and by which the first is established\")",
+      "note": "The interpretation audit gives the establishing to the second commandment, where the accepted expansive study reads both clauses of Chrysostom's sentence of the second and says the opposite way round -- \"the love of neighbour opens the road to the love of God, and the love of God in its turn re-establishes the love of neighbour ... Each commandment holds the other up\" (sections/20-whole-heart-one-body.tex) -- and the spoken body follows the study (\"Each holds the other up\"). I read the sentence and its four proof texts myself in the tracked CCEL NPNF1 10 text and the study's reading is the better one: Jn 3:20 and 1 Tim 6:10 run from the failure of charity to the loss of God, Ps 13:1 and Jn 14:15 run back from God to the neighbour. So the homily is supported and I raise nothing against it; what is out of step is the audit, whose owner is the research stage. I record it rather than route it because the speech's own use is sound, because this is the records-correspondence class the leaf has repeatedly weighed at advisory (STU-006, STU-017), and because a repair here would reopen research review and every document below it for a sentence that misleads no reader."
+    },
+    {
+      "location": "sections/homily/90-note.tex, \"Length and pace\", the third pace figure (\"and at 110 words a minute just under thirteen\")",
+      "note": "The arithmetic is right (1,429 words at 110 w.p.m. is 12.99 minutes) and the disclosure is the honest thing to print, but it is the one figure in the note that falls outside the profile's default 10-12 minute scope. The two figures the note leads with, 120 and 130 words a minute, put the speech at 11.9 and 11.0 minutes and inside it. I record this rather than raise it because the profile sets an unhurried pace as the standard and 110 w.p.m. is slower than unhurried, so the speech is within scope on the note's own leading figures; a reader who meets only the third figure could think otherwise."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex",
+          "references": [
+            "format.tex",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "homily-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine",
+            "John Chrysostom",
+            "Gregory the Great",
+            "Jerome",
+            "Theodoret of Cyrus",
+            "Thomas Aquinas",
+            "Cassiodorus"
+          ],
+          "component_keys": [
+            "whole-heart-one-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "whole-heart-one-body",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "Augustine",
+            "John Chrysostom",
+            "Theodoret of Cyrus",
+            "Thomas Aquinas",
+            "Irenaeus",
+            "Basil the Great",
+            "Cassiodorus",
+            "Robert Bellarmine",
+            "Rupert of Deutz",
+            "William Durandus"
+          ],
+          "component_keys": [
+            "son-and-lord-of-david"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "son-and-lord-of-david",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine",
+            "Jerome",
+            "John Chrysostom",
+            "Hilary of Poitiers",
+            "Cassiodorus",
+            "Thomas Aquinas",
+            "Robert Bellarmine",
+            "Rupert of Deutz",
+            "William Durandus"
+          ],
+          "component_keys": [
+            "just-judge-merciful-hearer"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "just-judge-merciful-hearer",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/format.tex": "afe32aae071025c30d42a0f981c4b7a7ee62412aa1872c44ba3ca6bfb261e960",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/homily.tex": "0243ada0130006d06fc59429bb15e8fb3057cc5fa4122fc29b31fdcae3dca67b",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/interpretations.md": "e2e1d8e7e7f3f53474c99731b9131bd909a4808fc34079339ef115485fbb1d45",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/scope.md": "00ec5c1f857decf764fbab8e1472540c23a767c7d2a27dabbe970e706ef629b3",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/homily/10-homily.tex": "a510baf923a13826bdfdcd4595cdfccad9a4ab75d4d663b442b122cd84390a54",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/homily/90-note.tex": "980aa34fdabf11229a20493d01d94c5c22ca59437c00be1578d9793311974f9d",
+      "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "3",
+            "53629d2937dc0552647e5c8926b92373846c32b46c0fac662513b362073c6aef",
+            "1e02dc05f2df9940",
+            "72616eb9cc25c7ea7cc061c0e82efffc8b5ea882",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Reviewed the standalone homily for the Seventeenth Sunday after Pentecost (src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost: homily.tex, sections/homily/10-homily.tex, sections/homily/90-note.tex, with format.tex and src/common/preamble.tex); all seven sealed REVIEW_INPUTS digests were re-computed and match. The spoken body is finished preaching with one intelligible exegetical claim carried through five movements, and it is speakable verbatim: the file contains no command but four \\bigskip and one \\latin, no footnote, citation, heading or direction to the preacher. I counted the spoken body independently at 1,429 words, exactly the note's figure, and the note's pace arithmetic is right (11.0 to 11.9 minutes at 130 to 120 words a minute, 12.99 at 110), with no timed delivery claimed. I verified every attributed quotation at its stated locus in the leaf's own tracked payloads rather than from the studies' report of them: Augustine's \"no part of our life is to be unoccupied, and to afford room, as it were, for the wish to enjoy some other object\" in the CCEL NPNF1 2 text at De doctrina christiana I.22 paragraph 21, the paragraph the note names inside the block I.22.20-21; Chrysostom's three phrases in the CCEL NPNF1 10 text of Homily 71 within the lines that passage record bounds; Augustine's \"sed non remaneamus ubi Judaei\" and the form of God and form of a servant in the tracked Migne Enarrationes part 11 at Ps 109 section 6; and Jerome's \"Peccata populi, quia unus e populo est\" in the tracked Wikisource PL 25 text at Dan 9:5. Every English of an appointed text is a received witness quoted exactly: the six Douay-Rheims loci against the tracked verse texts (Mt 22:36, 37, 39, 42, 45, 46; Eph 4:2-6; Ps 118:137 and 124a; Ps 75:12), and the Collect and Postcommunion against the registered 1861 Cummiskey lines 161-163 at printed pp. 431-433. The Offertory is described and no English of it is quoted, the Gradual, Alleluia and Secret are absent as the note states, the Creed's appointment at no. 1607 agrees with propers/verified.md, and no liturgical prayer is composed, no anecdote, personal experience or clerical identity claimed, and no Father credited with the editorial whole-formulary reading. The advisory HOM-009 standing from iteration 4 is cleared by the current header comment. Meaningful limits: I read the patristic Latin and English in the leaf's tracked digital transcriptions, not on printed columns and not in the Greek; I did not re-verify the Missal facsimile page images; and no delivery was timed by me either. Verdict: PASS, with three advisories that gate nothing."
+}

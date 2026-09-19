@@ -1,0 +1,14 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/homily.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "HOM-005",
+      "note": "The philological turn is gone. The sentences telling the assembly that where the old English says 'with a clean heart' the Latin says mente, 'the Gospel's own word', and that the prayer asks God for 'precisely' what the Gospel commands, are removed. After the Collect is quoted the paragraph now reads: 'Kept clear of what corrupts us, and following God alone: that is the one current again, and no second channel. The prayer is older than its place in this Sunday's Mass and was not composed for this Gospel, and still it asks of God what the Gospel commands of us.' No word of the prayer is singled out against another, so the speech asserts no textual fit and needs none; the two petitions are restated in the terms of Augustine's one-current image the second movement already preached; the disclaimer of composition is kept, so no compiler's design is claimed; and the sentence the paragraph was built towards, that the commandment comes as a command and goes back to God as a petition, is untouched. Nothing of the prayer's transmission history was added: that qualification stays in sections/10-each-element.tex and sections/concise/04-themes.tex, which already carry it. The speech fell from 1,445 to 1,437 words; the note's word count, the shared revision timestamp and research/production-review.md were updated, and a fresh five-page author proof was read.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 2,
+  "stage": "derive-homily",
+  "summary": "Repaired the single blocking finding in the homily's own component: the Collect paragraph of the fourth movement no longer stages a correction of the quoted English, and now rests on the point it exists for, that the Church asks of God what the Gospel commands of us. No transmission history was imported in its place, no study component or research record was touched, and the terminal note's word count and the shared revision timestamp were brought into line. The spoken body is 1,437 words (11.1 to 12.0 minutes at 120 to 130 a minute); the 5-page proof settles in two passes with a clean log, the speech still ends on page 3, and every homily-gate check passes, with both studies rebuilt at the new timestamp and unchanged at 38 and 12 pages."
+}
