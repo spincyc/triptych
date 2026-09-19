@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "claude"
-audited_on = "2026-09-17"
+audited_on = "2026-09-19"
 discovery_rule = "src/claude/**/main.tex"
-publication_count = 52
-source_surface_file_count = 1127
-snapshot = "sha256:9170403f3af5a2989fb3bc78ed3f6e761800b3b208717b6701c831d21296b782"
+publication_count = 53
+source_surface_file_count = 1248
+snapshot = "sha256:820c275cb7b7bb01c2551920a681d41facf39454b82258cb20b776fdd1e94e61"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -473,6 +473,17 @@ inventory_state = "sources-categorized"
 source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "prayer-devotional", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost"
+relationship = "local"
+
+[[documents]]
+id = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"
+main = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "magisterial", "patristic", "scholastic", "scripture", "secondary"]
+[[documents.record_owners]]
+id = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"
 relationship = "local"
 
 [[documents]]
@@ -5415,6 +5426,732 @@ path = "src/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-p
 sha256 = "9367a6ad93801eccb43e107daa78351f53b8580687d2a9da0ef796dfaf83f9f3"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/blocking-findings-v1.toml"
+sha256 = "b52389e1f2e7d68e572e1369c8466b1eaaa32e92815c6c52b9b3aaadd4659669"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/artifact-gates-0000.txt"
+sha256 = "43d6982afa246bdffc6187debd24caa4e5e5384ac4d7b5852ad2c889b127bcb2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/artifact-gates-0001.txt"
+sha256 = "4d363c42738e08c0d1f4f9dacaccd6c1f9aea5aa420c0735590479c5989fda22"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/artifact-gates-0002.txt"
+sha256 = "1c39dc6a9b84a625572f7176e44b305ba9642c5019998b11198bf0bc7d915cd1"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/author-study-0000.txt"
+sha256 = "cbc49503400405cb01d47f29adb5ffa3da97ba323c3075138aa1055e410a6738"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/author-study-0001.txt"
+sha256 = "74f5217b80d06085371e909011107c318f3156ff32c1d1f226b5e8dd136e536d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/author-study-0002.txt"
+sha256 = "48b184313d870abd1a074e3d1771fc0c9acb50ce226ea5318ece4522558d4a54"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/author-study-0003.txt"
+sha256 = "e354633ccb4849ca11ba5b801208826df9d6c01afb20c3813b117e6b03c7c86a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/author-study-0004.txt"
+sha256 = "1d7d1cabaddc4a71d61287d31a0698c1651947454cd39f6178e89ce0844760b7"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/author-study-0005.txt"
+sha256 = "a43d9ecb0ab9bf9e19ee7aeaf322e586f2fe48fb4ab118cdabf412283e6ae408"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/author-study-0006.txt"
+sha256 = "5b1b3609b53a79eeeea02a5aa5860d6604bcfffe1a7e8543074515aa4665646a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/author-study-0007.txt"
+sha256 = "0a070f2adde97708ed9241e712d8e89703b3063cf07b165378768c121cef6f96"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/build-artifacts-0000.txt"
+sha256 = "665254de2788f9f0db361a37ae013f2fd98964b7950a234b55c424dc3534ff6c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/build-artifacts-0001.txt"
+sha256 = "c503b708f91bc51dbdcc929ef34e4cef250340c35fb7d1315da5a28d502ca97e"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/build-artifacts-0002.txt"
+sha256 = "03d936b1ca821268041774aadcacd47f68361d60280045cbbfb90e35ace06c74"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/derive-homily-0000.txt"
+sha256 = "6f5b7a1295a4c0107b53c349800bd1268cf0f932f629c59d3c9f145e78dff230"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/derive-homily-0001.txt"
+sha256 = "534b0b492e6c30ddd1953e9542c91a05da46c3e6e9a4feecbb332388daad0e45"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/derive-homily-0002.txt"
+sha256 = "4bacba89487508f8eb62aaa75512a8a5453ad52890741d34a8fd2c1d02f4ba44"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/derive-homily-0003.txt"
+sha256 = "d314cf541d2eebf6a31d1722aa01fc123f9a3751194f8387aaa5ec33ffa5bd79"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/derive-homily-0004.txt"
+sha256 = "e42a7ea42c60247a9e77ff604609efe4cb195150df8f06944796b9c404ad8420"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/derive-homily-0005.txt"
+sha256 = "f4067956177c9380549396c65e084c5719dd94ac0097f5c9577d593e523b3c40"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/derive-synthesis-0000.txt"
+sha256 = "5408082ae0165c546e0b8001fb67991eb7bce2bcaa79d606a072926799d09971"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/derive-synthesis-0001.txt"
+sha256 = "9bee2efed1f092843e5690d5d3ea75414204ec9b6fe44463769033d2d0d036a2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/derive-synthesis-0002.txt"
+sha256 = "bec33b5f0e590aa7eda9f7f070925ebca1a48902708b7539da724d6bbcc243a3"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/derive-synthesis-0003.txt"
+sha256 = "12da212c06c4ec8c11f38cec5cd5102cce442874b0f9adecdd2dbf6ce5d8e09f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/derive-synthesis-0004.txt"
+sha256 = "b70210a7c9fa5c7d28b09225d7852e8cb10fc2ce950f351dfd71fe22ff0906ab"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/generate-web-0000.txt"
+sha256 = "480122e2beac002bea07e9563105d34f7679a02ca07fa02ddb1de9b76156e665"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/homily-preflight-0000.txt"
+sha256 = "06249644a48860bcb4ad982d13f4552b621545744ae24b88a6354dff41d5fcb2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/homily-preflight-0001.txt"
+sha256 = "6715660798c6b9257b3e6205bd9f93e9bad6be05eabbb2eca5e3cadb3f1bee5e"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/homily-preflight-0002.txt"
+sha256 = "56b51276fc8e41511d19db1d431eeb5cc58cb01a851634d83bc86b68d6122ad2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/homily-preflight-0003.txt"
+sha256 = "5965e91f850c55e481fae64684f18a0b9c910ca279b80e5310af2172beb224c9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/homily-preflight-0004.txt"
+sha256 = "fc95e15de9143e7a15f3adafbdacb88f536249c35c87d8b77f836273e080457c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/homily-preflight-0005.txt"
+sha256 = "739b565a09ef6b5c6124d6da3bcfc4161d070ff93b62fe61b8129121eb419f1f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/homily-review-0000.txt"
+sha256 = "78da9356056d41b084bdb9dcc0930aa562ec22f3839d3eecd3478ce782409259"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/homily-review-0001.txt"
+sha256 = "b481849e309dd367967ec539680be1b88eed3b9810458039f85aa78e9c470426"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/homily-review-0002.txt"
+sha256 = "f71d8114c670150f3772616fc70a0ab4fa5b6cf502a52459ed5d951969e85170"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/homily-review-0003.txt"
+sha256 = "5f31530a4778527e0363999ecf7c63b2ce76d0f05f704a5b1d29b931c89a7818"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/homily-review-0004.txt"
+sha256 = "4deacfd7884c1cd9c82b2fbaf6dcf543d0801e522fed0cd576cc8ab7917ff7c0"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/homily-review-0005.txt"
+sha256 = "499b3e4b2a5522578f3f5c8b3a27d053fd3fbcd6de7705d740ed471024ac466a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/install-publication-0000.txt"
+sha256 = "17a5945202f661b96bdcb65c438bf533b0cada56af8f10ed871e596fa9f2a0b7"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/publication-gates-0000.txt"
+sha256 = "385867e045cc6d7c80f20f9984f142cf5739ef731ad67795bda71345c641fc80"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/research-0000.txt"
+sha256 = "a0b2ed19aeea179d93001c40936c2958b23cf6cf3c06776b2bc7d672c2e5a12a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/research-0001.txt"
+sha256 = "a53ca8b73a55f8407329aaea52511790764ac145813e5bcf883203571b0eb87f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/research-0002.txt"
+sha256 = "5f41d30a382d4bfda58df9fd841edf1f3df6417ca8faec88b40e64ca6a18ae8c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/research-0003.txt"
+sha256 = "c7e934754d851068df6b9c28038dc58a4279eb824bea0b30fbd784e521992a92"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/research-0004.txt"
+sha256 = "296f704ec8c516c6ddc2871e297877618dd9ef9fd89be73fade44d563a4c3858"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/research-preflight-0000.txt"
+sha256 = "d699bb103f13dcdf9a6d1c47bb2057f8dbcf5390f889c3cc6c1e31c0345bc840"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/research-preflight-0001.txt"
+sha256 = "a3f02881f03e67193bf097e1b70e282e437125a72f373495ac548614594ed66b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/research-preflight-0002.txt"
+sha256 = "980ae3f05d5b873974b70d1b9a707783265e5e6154c4a2f832a3890a12deb757"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/research-preflight-0003.txt"
+sha256 = "b452cb9393c5e20a2924d260376a15c59aac4023f9cf63731e5396c1a29b66b4"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/research-preflight-0004.txt"
+sha256 = "c4b69a6581c06e2c48190c581187532e552869618549f250c13590c82b0e71a7"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/research-review-0000.txt"
+sha256 = "54d2318fb6b5de1292a1bb3afbed833ad1540faf645229831ff1f700e0d0ef07"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/research-review-0001.txt"
+sha256 = "400cdd726510b320cc5e78b0f5e610b0bdec3e652712df200913fd4b7dc0de87"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/research-review-0002.txt"
+sha256 = "30cc1e970825ad7cba745b993a15622814226f412001281729fae7d7ce7c5331"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/research-review-0003.txt"
+sha256 = "5035cf9103dc37f7d30127724e5035bbed92e6c9d80653d99cb613ed5d9fe93f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/research-review-0004.txt"
+sha256 = "07489596ff95d673b1efa89a624c430fee10b63b0a2822217aa9e71025519553"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/resolve-context-0000.txt"
+sha256 = "28e8ea5491ada063cfdeddb57fce9ecd1c0e794bc901e94040f1f1352528d5c2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/scope-gate-0000.txt"
+sha256 = "235977193d1b91c9352ada80c912e252cbc5ee76fe93b3358671c17e39f1541c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/study-preflight-0000.txt"
+sha256 = "d6c3f2196592858e4009498dc7b8ccbdeb1300ef0c12f762afa843a0c1d443a8"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/study-preflight-0001.txt"
+sha256 = "d81a0c33f546a7e7f3532f81a52d3924decc9b2b8bf8d815b44874e0eaed7c71"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/study-preflight-0002.txt"
+sha256 = "7f53e306ff4c690cca2990d90423e24e11291375597a86cb07614d649236d0d3"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/study-preflight-0003.txt"
+sha256 = "e60615ca416598351abe5e5313abe7a5fe103a661cea030c5c3dec364f7aedf0"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/study-preflight-0004.txt"
+sha256 = "229cc59b944b6dbf247de090f9cd55cd8d00f32076ad19f62212215be1a14387"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/study-preflight-0005.txt"
+sha256 = "7c6eba6cdfe6086c1d3f74f0103bfd886d9f84afb033ad398ed350c1f4b1967c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/study-preflight-0006.txt"
+sha256 = "cd44b969da5741f2872eef7bb66de19f9834c51b93e1f96e0fd51509dc938238"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/study-preflight-0007.txt"
+sha256 = "de9cb3f6663ec930c410cf75fa1ef242acc432583690b53a31be6d6fd611b070"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/study-review-0000.txt"
+sha256 = "aaad158d4901fb785098337f4696c70bab1e82effd1c5b9ef2d9348e0672bd5e"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/study-review-0001.txt"
+sha256 = "32cbf280e201198d0d00449b1be59e195af520c5c5434e64f5cd8c77bc03722f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/study-review-0002.txt"
+sha256 = "24e2a181072a1a3891482c636a3febfc5c12e538dc758dbe79be7667e7aff69b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/study-review-0003.txt"
+sha256 = "d33777ba23797c019e3c7282777279a1d873f8d50bde96511e739c21c3616f93"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/study-review-0004.txt"
+sha256 = "2a1270b9489bc3d8d1c52fd19d8ac09fbe0cb394413b1f0c06d4683131590558"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/study-review-0005.txt"
+sha256 = "ab9302c072880df339ad40aa37a89b0688e0aa11a1367373cc81ad25140ec171"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/study-review-0006.txt"
+sha256 = "69806a98bd7bb9c19e9c7bf45c2e2f1ac87440a8dec2cb9091a344f2c6da9ba8"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/study-review-0007.txt"
+sha256 = "57858b034909ca42745cd103fbad0f7c09a79e0a2ff00d6629c034298dc2473b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/synthesis-preflight-0000.txt"
+sha256 = "299a00d677620165a8e60928a9a409691b02c078ae8f1a1ec01c76514a4dd3b1"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/synthesis-preflight-0001.txt"
+sha256 = "48344a8c9973b527cdd74e769ca9bf0e609422680b5a08c663f3d734c0712f6b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/synthesis-preflight-0002.txt"
+sha256 = "d592cbebfde9ceb55c87e7e151ef2ae4280ff7b0226e12e611a60263c31a73f2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/synthesis-preflight-0003.txt"
+sha256 = "c26dd36edae432c330d660d8776fed5ba69e05d835ca903a006c9a08a36e922b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/synthesis-preflight-0004.txt"
+sha256 = "8de19980343d59acc8d6518493b226280b04b3c9134aeff433cf70f33500d28a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/synthesis-review-0000.txt"
+sha256 = "66ef309012038b8ef50b24fa97053b585d2dc235e7bebea09d53a0f0f4ab89f7"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/synthesis-review-0001.txt"
+sha256 = "689581de9af7fee1964cfa14315b3692f92b76f696d707377aa934eab70a6125"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/synthesis-review-0002.txt"
+sha256 = "c28cf10e0daddf280485fce1c66d66c21eb9582c077f6b4ffced2f6513ba27a2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/synthesis-review-0003.txt"
+sha256 = "c851a604720ae2565f538267139a9ef9ccfacd75c767b4d98f5771379d348b82"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/synthesis-review-0004.txt"
+sha256 = "80677f79555a63f43185ede23088fbfafaf33ad485db4baa96ed1fb89544067d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/visual-review-0000.txt"
+sha256 = "e341da1254ba40aaa087b14dd08e6bcf04d1367a95b46bccfad044aaf0996eb8"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/visual-review-0001.txt"
+sha256 = "b39f7b62e309ce6c53f473bf6ef8d1cc75c75f95681254a6c0bb5ec066ce4ee5"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/packets/web-review-0000.txt"
+sha256 = "89a72be6f9c272019922b8a4fa3ab28f03f9c3909284754ec465b941a6c3fc73"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/1e02dc05f2df9940/record.md"
+sha256 = "d0125cfd089d98095f556abfaafef74e9d51991cf4aff2e433007ac165cbf27b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/format.tex"
+sha256 = "afe32aae071025c30d42a0f981c4b7a7ee62412aa1872c44ba3ca6bfb261e960"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/homily.tex"
+sha256 = "0243ada0130006d06fc59429bb15e8fb3057cc5fa4122fc29b31fdcae3dca67b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/main.tex"
+sha256 = "ca56ba721f7cd222468e068f4a386694c9591477065334353c7203d8043b134e"
+kind = "publication-main"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/proper-components.toml"
+sha256 = "b49c277043415a35bba464f409b4362551a37714d3cd641ed67a9436db20b429"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/propers/retrieved.txt"
+sha256 = "51325719fd5edd589219e12e553b1abfaf4598fd10df98ca5b8dae0a2e999c29"
+kind = "local-evidence-payload"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/propers/verified.md"
+sha256 = "60d85fbd70f9884c369d843230ce9c71795e08b9e0102257629b48138dc92408"
+kind = "proper-verification"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/chronology-annotations.tex"
+sha256 = "3bf62cf41bfbc61275ce49a192bf6d94b4da80d1aa56248e4849e3b9d92b7f85"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/chronology.toml"
+sha256 = "7321744467ba108d8ba22223060445081a81bb3f4e9a49d087aa8edb6c71165b"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/context.md"
+sha256 = "76d4f8fd74608153a94e0e930d6b178b3cbfa8a7d9c4870250793643e5982e26"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/interpretations.md"
+sha256 = "e2e1d8e7e7f3f53474c99731b9131bd909a4808fc34079339ef115485fbb1d45"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/production-review.md"
+sha256 = "c1f3cec31ba07ffddd7f2b28f106b80cf12cbb9797ba21d08c4641085e2c41f4"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/review-dependencies.toml"
+sha256 = "ead3caea854a3634e57883c7413540df51c0c4e2ee347653a902a0f0075a3266"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/scope.md"
+sha256 = "00ec5c1f857decf764fbab8e1472540c23a767c7d2a27dabbe970e706ef629b3"
+kind = "research-scope"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/source-bindings.toml"
+sha256 = "24c0337eaa3de31d84681dcf85b740c8245d4be712093f663efd4baa47761f0e"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/00-opening.tex"
+sha256 = "da316e2f0bdbf1eaf60b6c626f334227a8ca96948e3d72c1b3aa42817d8f6ab7"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/05-appointed-texts.tex"
+sha256 = "1d602639ce4f7d0844d6f9830cd888ef41978a14e849dcaa248ee10f3747ffb9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/10-each-element.tex"
+sha256 = "63432700f93dabfa2f8f1df91c8f93289f17284af506d480b0dc4134a554d63c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/20-whole-heart-one-body.tex"
+sha256 = "d41102521a44e7efa5a3326fa50a5bd65a51dac71e4b200fe38d0e804fa86526"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/30-son-and-lord-of-david.tex"
+sha256 = "226c35aca4c17e67c7c47b971f3a37b508414aa307d25aadff2f13db24f84122"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/40-just-judge-merciful-hearer.tex"
+sha256 = "37f9b5fb2249f8d0e73d7a57641f9f684c3fde7735b5650e2cec0a5a9df92d77"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/50-comparison.tex"
+sha256 = "08f6a00ffe7d1b546e3d79130f32dcc31b6aec79559d6014a2a8940d1cbc9481"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/80-date-location.tex"
+sha256 = "a0a197e1ed1fb85cb2165aca6a437bd59a3cc82253560c7efa89e97450c6868f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/90-apparatus.tex"
+sha256 = "48d3a9ce7ebc5ed8c9d2a8f5422651d0577473f2c054e0f7bde08425c8db5e4e"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/01-inventory.tex"
+sha256 = "8b63216d100124d7644ce0c9fe6c294e349a1539a2dd9c9d442daf8b39275658"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/02-overview.tex"
+sha256 = "195cb3e3cd01deed88fac42c6698217c761ee00dbb7849c3450c55beaf6ff830"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/03-date-location.tex"
+sha256 = "2184da2c9827f8192fb32ef1d21ece97d9de54f40d5577bba32ededfea5bcc56"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/04-themes.tex"
+sha256 = "6736ded66873567704d400d76d0af9505ca6eec8d342a05ae776dd646304b5c2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/10-commentary.tex"
+sha256 = "f6600b60a2cfd34fe490d0f97de210babbab8457cef52fd132c7efea47455987"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/90-apparatus.tex"
+sha256 = "a6bc4a87fc6668be776600ddd93263ca02750bc497e0cb08bbc9613ee69c43b1"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/homily/10-homily.tex"
+sha256 = "a510baf923a13826bdfdcd4595cdfccad9a4ab75d4d663b442b122cd84390a54"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/homily/90-note.tex"
+sha256 = "980aa34fdabf11229a20493d01d94c5c22ca59437c00be1578d9793311974f9d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/synthesis.tex"
+sha256 = "b12a50133662f94800466d283933039df2ee6852adb8105f2c19216b980274ab"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/web-edition.toml"
+sha256 = "2f0ad6f617fce6b39c1f7222cf87d5649e3ab9472dde923d009444cf05225274"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/format.tex"
