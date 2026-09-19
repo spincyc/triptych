@@ -456,3 +456,211 @@ remain to be done.
 2. No other upstream defect was met while deriving. The study's three
    interpretations, element settings and comparison answered every question
    the concise argument put to them.
+
+## Derive-homily
+
+Authored 19 September 2026 in `proper-study` v4, run `472e2eb20876b22a`, seeded
+at commit `02bae3f417048707bf5f76a9ef50b3236bf60701`, at iteration 0. No
+blocking, carried or advisory finding was forwarded to the stage. The homily is
+*The Twenty-fifth Sunday in Ordinary Time, Year A: The Wage and the Giver*,
+built from `homily.tex` for an adult parish assembly and derived from the two
+studies as their reviews accepted them. No research record, no component of
+either study and `format.tex` were edited; the homily's type is set inside
+`homily.tex`. In `proper-components.toml` the comment line above the homily
+components was brought up to date and no declaration changed.
+
+### What was written
+
+- `homily.tex`, the entrypoint: a compact title block naming the Missal,
+  Lectionary no. 133 and the date; the spoken body in one group at 13pt on
+  18pt leading, unjustified, with a paragraph space and a wider space between
+  movements; a page break; the terminal note; the shared generation record
+  and the rights colophon.
+- `homily-body` (`sections/homily/10-homily.tex`): the speech, in six
+  movements with no headings: the line at evening and the complaint, with the
+  question what the first-hired have lost; the householder's answer as payment
+  and gift, the psalm's two words, and the evil eye; the first reading as the
+  reason, its contrast of thoughts said of pardon; what the denarius is, why
+  it cannot be divided, and Paul; the two kinds of hearer; and the prayers of
+  the Mass, the second line at Communion, and one response for the week.
+- `homily-note` (`sections/homily/90-note.tex`): audience and occasion,
+  spoken length and arithmetical pace, relation to the reviewed
+  interpretations, the route of each quoted or reported text, exact loci, and
+  References for the nine sources the homily uses.
+
+### The argument and its relation to the reviewed interpretations
+
+The homily preaches the third interpretation (`gift`, *Because I Am Good*)
+joined to the second (`conversion`, *Seek the Lord While He May Be Found*).
+The studies call the first two interpretations complementary and the third
+different in kind, and record that all three take the householder as God, the
+denarius as eternal life and the first reading's contrast of thoughts as a
+statement about mercy; the combination stands on that ground. From `gift`:
+Augustine's payment and gift (*Sermo* 87.4) and the equal wage with unequal
+brightness (87.6); Aquinas on grief at goodness (*Super Matt.*, p. 262) and on
+mercy against requital (*Super Isaiam* c. 55); Jerome on the wish that another
+receive nothing and on the coin as the king's image (PL 26, col. 142);
+Augustine on calling in truth and God giving himself (*Enarr.* 144.22). From
+`conversion`: Chrysostom's two kinds of hearer (*Hom. in Matt.* 64.4) and
+Augustine against delay (87.8).
+
+One difference bears on the argument and is kept in the speech. For Chrysostom
+no one murmurs in the kingdom and the complaint is a device of the story
+(64.3); the `gift` interpretation makes the murmur the point. The speech quotes
+Chrysostom's sentence and applies the murmur to its hearers now and not to the
+saved. The qualification that the saints differ in brightness while equal in
+living for ever is spoken beside the claim that the wage cannot be divided.
+The contract with the first-hired is kept ("Justice to the one, a gift to the
+other").
+
+Each Father is credited only with what he says of his own passage. Four
+connections are spoken in the preacher's voice with no name attached, as the
+study draws them from the wording of the texts: the psalm's two words as the
+householder's two dealings; Paul adding hours where the murmurers reckon
+theirs; the keeping and the arriving both inside the Collect's prayer; and
+those who come to Communion hired at different hours and given the same food,
+the pledge of the one wage. "The first reading was chosen to stand beside this
+Gospel" paraphrases *Praenotanda* 106 and claims no more design than the
+Lectionary states.
+
+Left to the studies: the `economy` interpretation; the saying on first and
+last, on which Augustine, Chrysostom and Jerome differ; the Alleluia verse,
+with what Augustine and Chrysostom each say of Acts 16:14; the Prayer over the
+Offerings; both Communion antiphons; Hilary, Gregory, Bede and Bellarmine. The
+speech uses the Gospel, the first reading, the psalm, the second reading, the
+Entrance Antiphon, the Collect, Communion and the Prayer after Communion.
+
+### Texts, rights and what the speech does not assert
+
+Scripture is spoken in the Douay–Rheims (Challoner) at Mt 20:12, 13–14, 15;
+Isa 55:7–8; Ps 144:8, 17, 18; Phil 1:21, 23, 24, and the speech names the Douay
+Bible just before it first quotes it, because the assembly has heard the
+Lectionary's approved English, which is reproduced nowhere. The Entrance
+Antiphon, the Collect and the Prayer after Communion are described after the
+study's descriptions and are not quoted; nothing is said of the verb of the
+Collect's petition, as the study says nothing of it. Because another chant may
+lawfully replace the Entrance Antiphon, the speech says what "the antiphon the
+Missal sets at its entrance" says and does not say that the assembly sang it.
+Augustine's *Sermo* 87 and Chrysostom are quoted in the NPNF English the study
+prints; Jerome, Aquinas and Augustine's *Enarratio* are reported without
+quotation marks in English that renders the Latin the study prints. The speech
+contains no anecdote, no first-person experience, no clerical identity, no
+recited prayer and no stage direction, and it ends as preaching.
+
+### Evidence re-read at this stage
+
+Every sentence quoted or reported was read again in its witness; none of it
+changes a research record.
+
+- Douay–Rheims: Mt 19:27 and 20:1–16, Isa 55:6–9, Ps 144:8–9 and 17–18 and
+  Phil 1:20–27 in the tracked verse files; every quotation matches.
+- Augustine, *Sermo* 87.4, 6, 8 and 10–11, and Chrysostom, *Hom. in Matt.*
+  64.3–4, in the tracked NPNF texts; every quotation matches, and the two
+  reported sentences (the saints' brightness, 87.6; the eleventh hour promised
+  and the seventh not, 87.8) follow the English closely.
+- Jerome, PL 26, col. 142, on the page image of the retained facsimile:
+  "Denarius figuram regis habet. Recepisti ergo mercedem quam tibi promiseram,
+  hoc est, imaginem et similitudinem meam: quid quaeris amplius; et non tam
+  ipse plus accipere, quam alium nihil accipere desideras". Both sentences
+  stand in col. 142, which the note cites.
+- Aquinas on Matthew, p. 262 of the retained Venice facsimile, on the page
+  image: "sed nequam est proprie qui de bonitate dolet". Aquinas on Isaiah,
+  p. 556 of the retained Parma facsimile, on the page image: "Vos impii, ego
+  pius; vos ultionem cogitatis, ego misericordiam".
+- Augustine, *Enarr. in Ps.* 144.22: the augustinus.it page was fetched again
+  over verified TLS into scratch space; it has the byte count and SHA-256 the
+  scope record gives for the research stage's delivery, and reads "quanto
+  beatior eris, cum seipsum tibi dederit? … Ergo qui Deum ipsum … praeponit
+  his omnibus rebus quas accepit, ipse invocat Deum in veritate". It remains
+  the sentence's only witness here, and the note says so. Nothing was
+  registered or retained.
+
+### Spoken length, pace and rehearsal
+
+**Spoken word count: 1,482 words.** The count converts `10-homily.tex` through
+Pandoc's LaTeX reader to plain text and counts whitespace-separated words; a
+count of the uncommented source lines, with its two ties opened, gives the
+same figure. At 130 words a
+minute that is about 11.4 minutes, at 125 about 11.9, at 120 just over 12.3.
+These are arithmetic on the word count. No speaker has delivered the text and no
+delivery was timed.
+
+The prose was read through in full, silently and not aloud, for sense,
+sentence length and ease of speech. What the rehearsal changed: a first draft
+of 1,764 words was cut to 1,482 by removing the title the *Ordo* sets over the
+Gospel, the Alleluia verse, Aquinas's bailiff and king and a separate paragraph
+on the psalm, whose two words moved beside the householder's answer; the one
+sentence over fifty words (Chrysostom's two kinds of hearer) and the Collect
+sentence were each split in two; "requital" is glossed at once as "paying
+back", "denarius" as the coin agreed for the day and the Douay's "penny"; no
+sentence needs an ellipsis to be read, and Isaiah 55:7–8 is read whole. The
+longest sentences that remain are Isaiah 55:7, of 36 words, and two of the
+speech's own, of 33; the mean is under fifteen words.
+
+### Author proof and checks
+
+`make doc` for the `-homily` output settles with no overfull or underfull box,
+no LaTeX or pdfTeX warning, no undefined reference and no rerun request. The
+proof is
+`build/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf`:
+6 physical pages, letter size, SHA-256
+`99a0877432a268bd56b92c4cfe45011d059a00ab42498113def2f376457bd70f`, at revision
+timestamp 2026-09-19T18:27:31Z; removing the PDF and building again from
+unchanged sources reproduced the same bytes. All seven font resources (TeX Gyre
+Pagella and Latin Modern Mono) are embedded, subsetted and Unicode-mapped, and
+the document information carries the title, the subject and the tracked
+modification date. `tools/check-proper-components --phase artifacts --edition
+homily` passes, as do `python3 scripts/_proper_study.py check … --phase content
+--edition homily --require-presentation`, the twelve `check-content-preflight`
+checks the homily gate names and `provenance-matches-run`, run by hand with
+this run's header, and `tools/check-generation-metadata` against the rendered
+PDF.
+
+All six pages were inspected on a contact sheet of the final proof and each
+of them at reading size. The speech fills pages 1 to 3 and about half of page 4;
+the note stands whole on page 5; the References, the revision timestamp and
+the rights colophon share page 6. Two ties keep the last words of the first
+quotation together, so that no paragraph of the speech ends on a single
+word. At 12.5pt on 18pt the speech left its fourth
+page well under half full and the note ran over onto the References page; at
+13pt with a slightly wider paragraph space, and with the note shortened, each
+part stands on its own pages. The note fills page 5 to its last line, so a
+later addition to it will carry over.
+
+The shared generation record carries a third contribution for this stage and
+the revision timestamp above. The expansive study and the concise study were
+rebuilt at that timestamp: 39 pages, SHA-256
+`fd3a4d13f7bb980bbe3bb6025dac194997add5bf40a9f53eb4bced31af81dcb8`, and 12
+pages, SHA-256
+`09275d9d8d97c81068c262dc7cab16f24744ce9f1b0f1af9bce8fd39e2cfa96f`; the extracted
+text of each is identical to its preceding proof except for the timestamp
+line, and the artifacts check passes for both. The evidence scopes of the
+study review and the concise review, recomputed with `python3
+scripts/_proper_study.py seal`, are what those reviews sealed: the same files
+with the same digests, the same component contract and the same generation
+provenance. This is author verification; the shared-timestamp three-document
+build and the independent visual review remain to be done.
+
+### Limits that remain
+
+The Scripture spoken is the Douay–Rheims and differs in wording from what the
+assembly hears. The approved English of the Missal was read in no witness, so
+the three Missal texts are spoken of only as the study describes their Latin.
+Augustine's sentence on Psalm 144:18 has an electronic text as its only
+witness. Whether the United States Lectionary admits another Alleluia verse was
+not determined, and the speech does not use the verse.
+
+### For the cold reviewer, about upstream records
+
+1. The manifest names `research/interpretations.md` and `research/scope.md` as
+   references of the homily components. Those records still carry the
+   sentences the study review's standing observation lists (Chrysostom said to
+   dispute or object to Augustine's second step, among them). The homily does
+   not use Acts 16:14 or that step, and follows the accepted study wherever it
+   and the records differ. Nothing was repaired, because the records are the
+   research stage's.
+2. The studies cite Jerome's sentence on the wish that another receive
+   nothing at PL 26, 141–142. On the page image it stands in col. 142, directly
+   after the sentence on the coin. The homily's note cites col. 142; the
+   studies' wider range is not wrong.
+3. No other upstream defect was met while deriving.

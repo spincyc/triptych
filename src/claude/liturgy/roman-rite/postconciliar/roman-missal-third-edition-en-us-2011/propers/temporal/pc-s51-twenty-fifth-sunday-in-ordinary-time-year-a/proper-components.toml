@@ -183,7 +183,7 @@ depends_on = []
 element_keys = ["entrance-antiphon", "collect", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel", "prayer-over-offerings", "communion-antiphon-a", "communion-antiphon-b", "prayer-after-communion"]
 references = ["research/scope.md"]
 
-# --- Homily (homily.tex), to be written by the homily author ------------------
+# --- Homily (homily.tex), written at the derive-homily stage -------------------
 
 [[components]]
 key = "homily-body"

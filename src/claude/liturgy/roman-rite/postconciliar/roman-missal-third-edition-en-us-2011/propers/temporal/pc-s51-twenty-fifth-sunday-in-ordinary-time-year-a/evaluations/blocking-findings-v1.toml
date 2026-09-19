@@ -49,13 +49,25 @@ provider = "claude"
 run_id = "472e2eb20876b22a"
 workflow = "proper-study"
 workflow_version = 4
-stage = "synthesis-review"
+stage = "homily-review"
 iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 0
-advisory_count = 6
-observation_count = 2
+advisory_count = 8
+observation_count = 3
+
+[[stages]]
+stage = "homily-review"
+iteration = 0
+disposition = "PASS"
+run_id = "472e2eb20876b22a"
+workflow = "proper-study"
+workflow_version = 4
+standing = 0
+accepted_count = 0
+advisory_count = 2
+observation_count = 1
 
 [[stages]]
 stage = "research-review"
@@ -92,6 +104,22 @@ standing = 0
 accepted_count = 0
 advisory_count = 3
 observation_count = 0
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-001"
+severity = "advisory"
+location = "sections/homily/90-note.tex, paragraph 'Relation to the reviewed interpretations', the sentence beginning 'That the psalm's two words describe the householder's two dealings' (lines 36-41); with sections/homily/10-homily.tex lines 82-85 ('That is why this wage cannot be cut into shares ... he has no smaller self to give the latecomer'), lines 65-67 ('The men at the back of the line reasoned by the thoughts of men: more hours, more pay') and lines 112-114 ('So the murmur in this parable is no report from heaven. It is set before us now')"
+problem = "The note names four connections as the study's own, 'drawn from the wording of the texts; no Father makes them', and the sentence reads as the list of them. It leaves out the largest editorial step in the speech, the one its title rests on: that the parable's denarius is God giving himself and therefore cannot be divided. In the body that step is spoken in the preacher's voice directly after Jerome on the coin and Augustine on Psalm 144:18, and the accepted study marks it expressly as a joining of separate texts ('Two other witnesses say what the last reward is, each of his own text and neither of the parable', sections/40-because-i-am-good.tex lines 104-105). Two smaller steps of the same kind are also unlisted: the application of Isaiah 55:8 and Aquinas's antithesis to the labourers' arithmetic, and the inference drawn after Chrysostom's sentence that the murmur is set before the hearers now. It does not block because the body introduces Augustine as preaching on the psalm, the loci paragraph places his sentence at Enarrationes 144.22, and each attribution in the speech is accurate, so no reader is told that a Father said what he did not say; the defect is an incomplete account of which steps are the study's."
+required_result = "Beside the four connections already listed, the note says that identifying the parable's wage with God's gift of himself joins Jerome on the coin to Augustine on Psalm 144:18 and is the study's synthesis, and either names the two smaller applications as well or words the sentence so that it does not read as a complete list. The speech itself needs no change."
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-002"
+severity = "advisory"
+location = "sections/homily/10-homily.tex, the spoken body as a whole; most nearly the sixth movement, lines 138-143 ('Before this Mass ends another line will form ... The Lord himself, the pledge of that one wage')"
+problem = "The three-document profile makes the Homiletic Directory's orientation govern the homily's movement: the readings and prayers lead through Christ's Paschal mystery to Eucharistic participation and daily life. The speech reaches Communion and the coming week, but it never names the Lord's death or rising and never names Jesus as the teller of the parable. A search of the spoken body finds 'Christ' only in the three sentences on Philippians and 'The Lord himself' once at the Communion line, and finds no cross, blood, sacrifice, resurrection or 'Jesus'. The central claim, that the householder's wage is the giver himself, is therefore preached without the act in which he gives himself. The accepted study holds material that the derivation left out (Gregory on the thief as the labourer of the eleventh hour, Hom. in Evang. 19.3, and on the shepherd who feeds the redeemed with his own body and blood, 14.1). It does not block because the Communion movement does carry the assembly to Eucharistic participation, Christ is proclaimed as the wage in the Philippians movement, and the argument is complete and true without the addition."
+required_result = "If the speech is revised, one sentence, most naturally at the second line, says that the Lord given alike to each is the one who gave himself in his death and rising, so that the claim 'he gives himself' names how; the speech stays within its present length and adds no unsourced attribution."
 
 [[advisories]]
 stage = "research-review"
@@ -140,6 +168,11 @@ severity = "advisory"
 location = "sections/concise/10-commentary.tex, subsection 'Whose work is the coming? The opened heart and the psalmist's wish', last sentence, lines 250-252 (rendered page 9): 'The step rests on Augustine's argument and on no agreement between the two, and it does not reach the claim with which the third interpretation began, which Chrysostom states for himself.'"
 problem = "In the study the corresponding sentence has Chrysostom's different reading of Acts 16:14 as its subject: that difference 'does not reach the first step or the claim with which this interpretation began'. Compression joined it to a sentence whose subject is 'the step', so 'it' now reads as the second step and the clause says that the step does not reach the claim, which is not what is meant; 'the first step' was dropped as well. A reader can recover the sense from the preceding sentences, so nothing false is conveyed, but the sentence that bounds the one real difference in the third interpretation is the least clear in its paragraph."
 required_result = "Give the clause its own subject, for example that the difference between the two readings of Acts 16:14 touches neither the first step nor the claim with which the third interpretation began, which Chrysostom states for himself."
+
+[[observations]]
+stage = "homily-review"
+location = "proper-components.toml, component homily-body, element_keys (line 194), with scripts/_proper_components.py lines 433-439 ('must declare coverage of every element key')"
+note = "The component gate requires the homily component to declare every element key, so homily-body declares all eleven, while the speech uses seven and the note truthfully leaves the Alleluia verse, the Prayer over the Offerings and both Communion antiphons to the studies, as the profile allows ('without reciting an inventory of every minor proper'); the declared coverage says more than any homily written to the profile will do, which is a mismatch between the gate and the profile and not a fact about this document."
 
 [[observations]]
 stage = "study-review"

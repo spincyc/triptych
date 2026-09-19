@@ -1,0 +1,66 @@
+% Homily for the Twenty-fifth Sunday in Ordinary Time, Year A, derived from
+% the two reviewed studies of this same leaf. The spoken body is set larger
+% and looser than the studies --- 13pt on 18pt leading, unjustified, with a
+% clear space between paragraphs and a wider one between the six movements ---
+% so that a speaker can lift his eyes from the page and find his place again.
+% The terminal note and the References return to the leaf's ordinary type and
+% are not read aloud.
+%
+% The three-document profile offers 12.5--13pt on 18pt leading as a starting
+% point and asks that the actual pages be judged. At 12.5pt the speech left
+% its fourth page well under half full; at 13pt, with a slightly wider
+% paragraph space, it fills three pages and about half of the fourth, the
+% note stands whole on the fifth, and the References, the timestamp and the
+% rights colophon share the sixth.
+%
+% The shared format.tex is not touched: it is an input to the reviews of the
+% two studies. Everything the speech needs is set here, inside one group.
+\input{common/preamble}
+\input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/format}
+
+\hypersetup{
+  pdftitle={Twenty-fifth Sunday in Ordinary Time, Year A: The Wage and the Giver},
+  pdfsubject={A homily for an adult parish assembly on the proper of the Twenty-fifth Sunday in Ordinary Time, Year A, in the Roman Missal, Third Edition, for the dioceses of the United States of America, with Lectionary no. 133, 20 September 2026: the labourers paid alike, the householder's reply as justice and gift, the prophet's reason, the wage that is the giver himself, and the prayers of the Mass}
+}
+
+% The running head names the Sunday on the left and the document's use on the
+% right; the folio stands at the foot, where a speaker can find it.
+\fancyhead[R]{\footnotesize\itshape Homily}
+
+\begin{document}
+\thispagestyle{plain}
+
+\begin{center}
+{\footnotesize\scshape Roman Missal, Third Edition \quad\textperiodcentered\quad Lectionary for Mass, no.~133 \quad\textperiodcentered\quad 20 September 2026\par}
+\vspace{0.45em}
+{\Large\bfseries The Twenty-fifth Sunday in Ordinary Time, Year A\par}
+\vspace{0.2em}
+{\large\itshape The Wage and the Giver\par}
+\vspace{0.25em}
+{\small A homily\par}
+\end{center}
+\vspace{1.4em}
+
+\begingroup
+\linespread{1}%
+\fontsize{13}{18}\selectfont
+\raggedright
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.7em plus 0.15em}
+\input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/homily/10-homily}
+\par\endgroup
+
+\clearpage
+\input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/homily/90-note}
+% The metadata file prints the revision timestamp once, after the References;
+% the rights colophon follows it on the same final page. \Needspace ends the
+% page ahead of the colophon whenever the block cannot stand where the
+% References end, so the colophon never lands on a page of its own.
+\begingroup
+\hbadness=10000
+\setlength{\parindent}{0pt}
+\input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/generation-metadata}
+\Needspace{3\baselineskip}
+\TriptychRightsNotice
+\endgroup
+\end{document}
