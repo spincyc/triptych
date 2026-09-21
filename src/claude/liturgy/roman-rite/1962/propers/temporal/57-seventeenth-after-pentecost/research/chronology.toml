@@ -30,9 +30,14 @@
 # guide states that absence rather than filling it. `nonuniform` means its loci
 # have chronology but share no one assertion an element-wide Date cell could
 # truthfully print.
+#
+# `profile_comparisons` are separately requested evidence-profile answers.
+# They never alter `profile`, `claims`, or `publication_claims`. Each row names
+# the exact requested evidence profile, element, relation, subject, returned
+# leaf-profile claim and source ids; its input file is fingerprinted below.
 
 
-schema = 2
+schema = 3
 record_type = "proper-chronology"
 document = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"
 calendar = "roman-1962"
@@ -42,6 +47,10 @@ profile = "catholic-comprehensive-v1"
 formulary = "appointed"
 formulary_reason = ""
 generated_by = "tools/tpt proper-chronology record"
+
+[[comparison_dependencies]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/chronology-profile-comparisons.toml"
+sha256 = "cf130edd51ee40f0ffa0e00307ea5df94bf8f8abcc31d08db70be52503ae6c64"
 
 [[elements]]
 key = "introit"
@@ -1546,3 +1555,90 @@ status = ""
 reason = ""
 publication_status = ""
 publication_reason = ""
+
+[[profile_comparisons]]
+key = "critical-matthew-composition"
+element_key = "gospel"
+requested_profile = "catholic-critical-v1"
+relation = "composition"
+subject = "critical.gospel-of-matthew"
+status = "composition-only"
+reason = ""
+
+[[profile_comparisons.claims]]
+relation = "composition"
+subject = "critical.gospel-of-matthew"
+title = "The Greek Gospel of Matthew in the NABRE introduction"
+label = "post-A.D. 70 date"
+date = "post-A.D. 70 date"
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.matthew-introduction"]
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.22.34"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.22.35"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.22.36"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.22.37"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.22.38"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.22.39"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.22.40"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.22.41"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.22.42"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.22.43"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.22.44"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.22.45"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.22.46"
+inherited = true
+scope = "Matt"

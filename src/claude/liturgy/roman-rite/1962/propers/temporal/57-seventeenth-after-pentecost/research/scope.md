@@ -1,5 +1,11 @@
 # Research scope — Seventeenth Sunday after Pentecost (1962 Roman Rite)
 
+**Current revision, 21 September 2026:** the independently sourced dossier
+corrections are recorded in [the dated supplement](chronology-revision-2026-09-21.md).
+It updates Matthew's qualifications and critical comparison without assigning
+the older workflow a new verdict. The staged research account below remains the
+history of the original production, including its unresolved corpus requests.
+
 Audit record for the Claude 1962 leaf
 `liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost`,
 produced by the research stage of `proper-study` v3, run `1e02dc05f2df9940`,
@@ -182,10 +188,11 @@ Recorded so that later prose does not treat them as appointed:
 
 ## 2. How the formulary was assembled: evidence that its parts travelled separately
 
-The profile's caution for Ordinary Time governs this Sunday: a coherent theological
-reading of the whole Mass does not prove that its semi-continuous readings, its
-chants and its orations were composed as one unit. The evidence read this stage
-shows that they were not transmitted as one unit.
+The evidence specific to this 1962 Sunday after Pentecost requires the same
+discipline at a different historical object: a coherent theological reading of
+the whole Mass does not prove that its sequential Epistle, its Gospel, its chants
+and its orations were composed as one unit. The witnesses read at this stage show
+that those parts travelled separately before they reached this formulary.
 
 ### 2.1 The chants in the earliest graduals
 

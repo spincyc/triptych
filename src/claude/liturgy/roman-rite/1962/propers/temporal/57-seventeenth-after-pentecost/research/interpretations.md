@@ -215,7 +215,7 @@ claim marked below.
 - **The Introit and Offertory sit loosely.** They are chants of justice, mercy and
   intercession. Their contribution here is real but secondary; the reading must
   not force "love" into them.
-- **Ordinary Time.** Nothing shows the Gospel, the Epistle and the chants were
+- **Formulary history.** Nothing shows the Gospel, the Epistle and the chants were
   chosen for a theme of love. The Epistle stands where the Pauline course puts it,
   between Eph 3:13–21 on the Sixteenth Sunday and Ephesians resumed on the
   Nineteenth (scope §2.5); the Gospel is the least stable element, Luke 14 at this
@@ -637,7 +637,7 @@ humility exalted, **[A]** for those chants only.
   sense of mercy, not merits, and its Communion.
 - **Daniel's own sin.** Jerome allows that Daniel, sinless, joined himself to the
   people in humility; Augustine denies it. The reading must carry the disagreement.
-- **Ordinary Time.** The Introit, Offertory and Communion do travel together from the
+- **Formulary history.** The Introit, Offertory and Communion do travel together from the
   earliest graduals (scope §2.1), so a reading anchored in them rests on the oldest
   stable part of the formulary. The Gradual and Alleluia joined them later. The
   orations came by another road: the Collect and Secret from an unnumbered Sunday

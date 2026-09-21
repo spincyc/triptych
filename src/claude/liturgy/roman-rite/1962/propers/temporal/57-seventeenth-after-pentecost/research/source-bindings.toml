@@ -2,6 +2,40 @@ schema = 2
 record_type = "bindings"
 document = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"
 
+# Additional inspections for the authorized 2026-09-21 chronology revision;
+# the historical production's binding states below are not restamped.
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8-article-text"
+loci = ["Chronology, final table and preceding qualifications"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:83263e9b6b864dbc2776538285f276ac7740d8e39098d077148ce421ca998f4f"
+context = "Prat's retained chronology section read on 2026-09-21. Its captivity-letter row is the source of the generated Ephesians alternative. No new chronology is derived from its synchronisms and no whole-article reading is claimed."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c-article-text"
+loci = ["Origin, Matthew paragraph"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:0a5a9e3b92db7d3a9953343ff8b1a04ec7baa2a01adbf31eadc28dc4e8f410d4"
+context = "Origin discussion read on 2026-09-21: Durand's about-50 figure belongs to the Aramaic original; he leaves the Greek rendering undated. This qualifies the existing alternative without revising the traditional corpus."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.psalms-introduction"
+loci = ["Psalms introduction, second paragraph and the following account of literary forms"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:092abdeb9fe85d95c0ce47d277b6fcae28f4b72263ba0869b81de09ac8ac0cf5"
+context = "Complete September introduction inspected for the current dossier, supporting the broad limit and inability to date individual psalms securely. Does not certify reinspection of the July artifact still bound below. Protected text is summarized, not retained in tracked payloads."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.matthew-introduction"
+loci = ["Matthew introduction, final five prose paragraphs on authorship, sources, composition and place; narrative overview of chapters 19-25"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:31bd0451bc1d27c0a08ce7c93a7e9c294e6b390e99204ebbe59f3b401c9997dd"
+context = "Complete September introduction inspected for the current dossier. The independently adopted critical.gospel-of-matthew corpus unit supplies the post-70 comparison, probably at least a decade later; not a closed 80s interval. The anonymous author, mixed Christian readership and possible Antioch setting are this introduction's probabilistic account, kept distinct from the traditional alternatives and Temple episode. Protected text is summarized."
+
 # Publication-local record of how this leaf's research used the reusable source
 # library. It supplements, and does not replace, propers/verified.md (the text
 # control), research/scope.md (reception matrix, witness register, negative
