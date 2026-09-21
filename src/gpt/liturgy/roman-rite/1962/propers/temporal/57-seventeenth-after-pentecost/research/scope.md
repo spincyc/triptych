@@ -1,5 +1,11 @@
 # Bounded source scope and reception evidence
 
+**Current revision, 21 September 2026:** the new chronology and concise-opening
+work is recorded in [the dated supplement](chronology-revision-2026-09-21.md).
+It supersedes the date-free boundary of the historical research below.
+The supplement and revised publications require their own fresh review;
+the original production's reviews remain in its immutable archive.
+
 Research completed 17 September 2026 for the universal 1962 Seventeenth Sunday after Pentecost on 20 September 2026. This record reports the research actually performed; independent research review and reader-facing authoring remain outstanding. It supplies no evidence for another calendar family. The preliminary dossier was treated as leads and its principal claims checked in the actual source texts and images.
 
 ## Text, date and rights controls

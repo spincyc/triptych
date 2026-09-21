@@ -1,4 +1,6 @@
 schema = 2
+format_contract = "propers-format-v1"
+presentation_contract = "interpretive-pagination-v1"
 record_type = "proper-components"
 document = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"
 calendar = "roman-1962"
@@ -16,6 +18,20 @@ web = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"
 canonical_label = "Full PDF"
 synthesis_label = "Synthesis PDF"
 homily_label = "Homily PDF"
+
+# Physical-page roles of the concise companion's fixed opening
+# (guidance/liturgy/propers-three-documents.md). The reviewed home of the
+# chronology the concise page 2 prints is the study's terminal Scriptural
+# Date and Location appendix (component scriptural-date-location). The
+# research entrypoint imports the generated chronology definitions in its own
+# preamble; the concise page-2 component imports them itself, so that each
+# document run defines them exactly once.
+[presentation]
+inventory = "concise-inventory"
+overview = "concise-overview"
+chronology = "concise-date-location"
+themes = "concise-themes"
+commentary = "concise-study"
 
 [[components]]
 key = "format"
@@ -89,6 +105,17 @@ depends_on = []
 element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
 references = ["research/interpretations.md", "research/source-audit.md", "research/source-bindings.toml"]
 
+# The study's terminal historical appendix: the reviewed home of the
+# chronology the concise page 2 reprints.
+[[components]]
+key = "scriptural-date-location"
+kind = "front-matter"
+path = "sections/70-date-location.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "epistle", "gradual", "alleluia", "gospel", "offertory", "communion"]
+references = ["format.tex", "research/chronology-annotations.tex", "research/chronology.toml", "research/scope.md"]
+
 [[components]]
 key = "study-apparatus"
 kind = "terminal-apparatus"
@@ -97,6 +124,42 @@ modes = ["research"]
 depends_on = []
 element_keys = []
 references = []
+
+[[components]]
+key = "concise-inventory"
+kind = "front-matter"
+path = "sections/concise/01-inventory.tex"
+modes = ["synthesis"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["format.tex", "propers/verified.md"]
+
+[[components]]
+key = "concise-overview"
+kind = "front-matter"
+path = "sections/concise/02-overview.tex"
+modes = ["synthesis"]
+depends_on = ["concise-inventory"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["format.tex", "research/interpretations.md"]
+
+[[components]]
+key = "concise-date-location"
+kind = "front-matter"
+path = "sections/concise/03-date-location.tex"
+modes = ["synthesis"]
+depends_on = []
+element_keys = ["introit", "epistle", "gradual", "alleluia", "gospel", "offertory", "communion"]
+references = ["format.tex", "research/chronology-annotations.tex", "research/chronology.toml"]
+
+[[components]]
+key = "concise-themes"
+kind = "front-matter"
+path = "sections/concise/04-themes.tex"
+modes = ["synthesis"]
+depends_on = ["concise-overview"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "communion", "postcommunion"]
+references = ["format.tex", "research/interpretations.md"]
 
 [[components]]
 key = "concise-study"

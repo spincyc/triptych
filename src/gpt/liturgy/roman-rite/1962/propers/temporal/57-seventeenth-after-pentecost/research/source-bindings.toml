@@ -3,6 +3,68 @@ record_type = "bindings"
 document = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"
 
 [[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04621b-2a74931e-article-text"
+loci = ["Authorship and date of composition"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:fc5557f559eae0bdbb772b186537caf673a7c65b4a0eb5df420588673e57e1d9"
+context = "Retained Gigot article read on 2026-09-21: Danielic authorship, traditional composition, Babylonian residence and Jewish readers; critical authorship distinguished. No critical numerical date is imported locally and no fresh printed-volume collation is claimed."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05485a-66d722ae-article-text"
+loci = ["To whom addressed", "Date and place of composition; occasion", "Authenticity"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1f1fff0c74949e159b7c41798a891333e64322a070bdbc6ded225800858f1456"
+context = "Retained Ladeuze article read on 2026-09-21: the corpus's captivity interval, Rome/Caesarea uncertainty, disputed address and proposed circular to churches in Asia Minor. Criticism of Pauline authorship is reported as this 1909 source's survey, not a current census. Its additional prison subranges are not imported."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef-article-text"
+loci = ["Destination of the Gospel", "Date and place of composition"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:a5698ebe70292d9dc1c32df2c8cc440778cb8d0dc2f840f11d127482a4c4d5dd"
+context = "Re-read on 2026-09-21 for this dossier: Judea and believing Jewish readers in the received account, each traditional date's actual warrant, the unreliable dispersal tradition, conditional departure and inconclusive Irenaeus text. All five figures already belong to the corpus; the source's qualifications remain visible."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8-article-text"
+loci = ["Chronology, concluding table"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:83263e9b6b864dbc2776538285f276ac7740d8e39098d077148ce421ca998f4f"
+context = "Prat's complete chronology section read on 2026-09-21, including its qualified synchronisms and concluding captivity-letter row. Supports identification of the generated Ephesians alternative, not an independently harmonized date or a reading of the whole Paul article."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c-article-text"
+loci = ["Origin, paragraph beginning The Gospels are really the work"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:0a5a9e3b92db7d3a9953343ff8b1a04ec7baa2a01adbf31eadc28dc4e8f410d4"
+context = "Durand's Origin discussion re-read on 2026-09-21: about 50 concerns Matthew's Aramaic original; the Greek rendering is expressly undated. The distinction qualifies the existing generated alternative without changing it."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"
+role = "context"
+states = ["cataloged"]
+context = "Historical source identity still named by the shared corpus's broad Psalter boundary. This revision inspected the separately registered complete September response below, not the unavailable July bytes."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.psalms-introduction"
+loci = ["Psalms introduction, second paragraph and the following account of literary forms"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:092abdeb9fe85d95c0ce47d277b6fcae28f4b72263ba0869b81de09ac8ac0cf5"
+context = "Complete introduction inspected in the acquired September response: uncertain individual psalm dates and a broad pre-Maccabean limit. No exact occasion, authorship or writing-place inferred for any appointed psalm. Protected body remains untracked; prose summarizes."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.matthew-introduction"
+loci = ["Matthew introduction, final five prose paragraphs on authorship, sources, composition and place; narrative overview of chapters 19-25"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:31bd0451bc1d27c0a08ce7c93a7e9c294e6b390e99204ebbe59f3b401c9997dd"
+context = "Complete introduction inspected in the acquired September response. Its critical-profile record retains the post-70 bound and probable at-least-a-decade-later qualification; the generated governed comparison prints that boundary separately from the default traditional alternatives. Anonymous evangelist, mixed Christian audience and Antioch as plausible are not merged into the default answer. Protected body is not reproduced."
+
+[[bindings]]
 source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
 loci = ["Dominica decima septima post Pentecosten; printed398–400, PDF479–481; marginal1602–1611; calendarLI/PDF53; rubric111b XVIII/PDF16; Trinity Preface293/PDF374"]
 role = "textual-control"
@@ -39,18 +101,18 @@ source_fingerprint = "sha256:2c0c07bbac7a7e547fc0be807dfbb67f9a1746ea5ae62bd07c6
 
 [[bindings]]
 source_id = "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.verse-text-47-matthew-438b2953"
-loci = ["Matt.22.1-46"]
+loci = ["Matt.21.23", "Matt.22.1-46", "Matt.26.1-2"]
 role = "translation-control"
 states = ["cataloged", "acquired", "inspected"]
-context = "Complete canonical chapter read. Target Gospel replaces canonical34 opening; biblical study English must not be presented as verbatim adapted Missal English."
+context = "Complete canonical chapter read. Target Gospel replaces canonical34 opening; biblical study English must not be presented as verbatim adapted Missal English. On 2026-09-21, 21:23 and 26:1-2 were read in this retained text for the Temple location and narrative sequence; no absolute event date inferred."
 source_fingerprint = "sha256:2022a4e9ae6de3eb74e294aaf09990314ba1654bfafb37e65d5301779d83ace2"
 
 [[bindings]]
 source_id = "artifact.english-college-of-douay.douay-rheims-bible.american-1899-ebible.verse-text-56-ephesians-05619bc8"
-loci = ["Eph.4.1-32"]
+loci = ["Eph.1.1", "Eph.2.11-18", "Eph.4.1-32"]
 role = "translation-control"
 states = ["cataloged", "acquired", "inspected"]
-context = "Complete canonical chapter read, including diverse ministries and practical conduct. Fratres and target terminal doxology are liturgical additions not represented by these six Bible verses."
+context = "Complete canonical chapter read, including diverse ministries and practical conduct. Fratres and target terminal doxology are liturgical additions not represented by these six Bible verses. On 2026-09-21, 1:1 and 2:11-18 were read in this retained text for the received address and Gentile readership."
 source_fingerprint = "sha256:ab1acb96d4eb62dd9194eb1338d3e72a55e694257e31bfedcc8bbdbec68b291c"
 
 [[bindings]]
