@@ -1,4 +1,5 @@
 schema = 2
+format_contract = "propers-format-v1"
 record_type = "proper-components"
 document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"
 calendar = "postconciliar"
@@ -6,6 +7,7 @@ entrypoint = "main.tex"
 synthesis_entrypoint = "synthesis.tex"
 homily_entrypoint = "homily.tex"
 appointed_text_completeness = "rights-limited"
+presentation_contract = "interpretive-pagination-v1"
 element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
 
 [outputs]
@@ -16,6 +18,20 @@ web = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/pr
 canonical_label = "Research PDF"
 synthesis_label = "Synthesis PDF"
 homily_label = "Homily PDF"
+
+# Physical-page roles of the concise companion's fixed opening
+# (guidance/liturgy/propers-three-documents.md). The reviewed home of the
+# chronology they print is the study's terminal Scriptural Date and Location
+# appendix (component scriptural-date-location). The generated chronology
+# definitions have one importing owner per entrypoint: the concise page-2
+# component imports them for synthesis.tex, and the research appendix imports
+# them for main.tex; no shared file imports them twice.
+[presentation]
+inventory = "concise-inventory"
+overview = "concise-overview"
+chronology = "concise-date-location"
+themes = "concise-themes"
+commentary = "concise-commentary"
 
 [[components]]
 key = "opening"
@@ -80,6 +96,17 @@ element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "s
 depends_on = []
 references = ["research/source-audit.md", "research/interpretations.md"]
 
+# The study's terminal historical appendix: the reviewed home of the
+# chronology the concise page 2 reprints.
+[[components]]
+key = "scriptural-date-location"
+kind = "front-matter"
+path = "sections/70-date-location.tex"
+modes = ["research"]
+element_keys = ["entrance", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "communion-ps119", "communion-jn10"]
+depends_on = []
+references = ["research/chronology-annotations.tex", "research/chronology.toml", "research/source-audit.md"]
+
 [[components]]
 key = "study-apparatus"
 kind = "terminal-apparatus"
@@ -90,12 +117,39 @@ depends_on = []
 references = ["research/source-audit.md", "research/interpretations.md"]
 
 [[components]]
-key = "concise-opening"
+key = "concise-inventory"
 kind = "front-matter"
-path = "sections/synthesis-opening.tex"
+path = "sections/concise/01-inventory.tex"
 modes = ["synthesis"]
 element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
 depends_on = []
+references = ["research/source-audit.md", "research/interpretations.md"]
+
+[[components]]
+key = "concise-overview"
+kind = "front-matter"
+path = "sections/concise/02-overview.tex"
+modes = ["synthesis"]
+element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
+depends_on = ["concise-inventory"]
+references = ["research/source-audit.md", "research/interpretations.md"]
+
+[[components]]
+key = "concise-date-location"
+kind = "front-matter"
+path = "sections/concise/03-date-location.tex"
+modes = ["synthesis"]
+element_keys = ["entrance", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "communion-ps119", "communion-jn10"]
+depends_on = []
+references = ["research/chronology-annotations.tex", "research/chronology.toml", "research/source-audit.md"]
+
+[[components]]
+key = "concise-themes"
+kind = "front-matter"
+path = "sections/concise/04-themes.tex"
+modes = ["synthesis"]
+element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
+depends_on = ["concise-overview"]
 references = ["research/source-audit.md", "research/interpretations.md"]
 
 [[components]]
@@ -104,7 +158,7 @@ kind = "integrated-commentary"
 path = "sections/synthesis-commentary.tex"
 modes = ["synthesis"]
 element_keys = ["entrance", "collect", "first-reading", "responsorial-psalm", "second-reading", "acclamation", "gospel", "offerings", "communion-ps119", "communion-jn10", "after-communion"]
-depends_on = []
+depends_on = ["concise-themes"]
 references = ["research/source-audit.md", "research/interpretations.md"]
 
 [[components]]

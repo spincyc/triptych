@@ -144,6 +144,84 @@ Two passes were performed. The first reread the retained complete biblical conte
 
 English historical NPNF/ANF and O’Sullivan, Latin Gregory/Aquinas/Jerome and Latin Augustine were consulted as specified. No Hebrew/Greek critical edition was collated. Whole downloads are not whole-work reading: for example Jerome is only one offered part, NPNF8 is an abridged English expression, and Aquinas's three page images are a narrow read of a retained complete volume. The earlier New Advent/Corpus Thomisticum pages remain preliminary comparison witnesses, not silently renamed canonical texts. No zero-match corpus-wide query or exhaustive survey is claimed.
 
-Rejected: complete protected English liturgical bodies; a reconstructed prayer; Matthew20:16b as appointed text; simultaneous Communion options; suggested chant psalm verses as obligatory; Gregory's sermon occasion as this instance's calendar; Hebrew Psalm118 as the title of Psalm119; publisher YearC lessons as YearA appointments; catena or search snippets as direct inspections. No new factual biblical date is asserted, so no unsupported chronology enters the study.
+Rejected: complete protected English liturgical bodies; a reconstructed prayer; Matthew20:16b as appointed text; simultaneous Communion options; suggested chant psalm verses as obligatory; Gregory's sermon occasion as this instance's calendar; Hebrew Psalm118 as the title of Psalm119; publisher YearC lessons as YearA appointments; catena or search snippets as direct inspections. The original research submission asserted no biblical dates. The subsequently authored historical dossier is audited below; that earlier boundary no longer describes the current study.
 
 The research can support three readings within these limits. Outstanding edition work is full official2008/U.S.2011 altar-book collation and any desired new exact quotation from raw OCR/modern digital witnesses. Those limits require restrained study presentation, not claims of completed collation. Cold research judgment and downstream authoring, render, web and publication review remain separate work.
+
+
+## Historical dossier repair, 21 September 2026
+
+This is consumer authoring and claim checking, not cold review. The corpus-only
+acceptance in `src/sources/chronology/isaiah-relation-review-2026-09-21.md`
+does not accept these dossiers or any revised PDF. Prior workflow results and
+installed outputs remain historical; no acceptance packet or staleness baseline
+is restamped. The GPT leaf retains its own appointment input, including its
+identified Entrance basis, rather than importing Claude's inventory or prose.
+
+The expansive home is `sections/70-date-location.tex`; the page-2 condensation
+is `sections/concise/03-date-location.tex`. Their generated Date cells retain
+all default-cascade claims and relations. The explanatory prose also reports
+the separately selected `critical.gospel-of-matthew` bound and the source
+qualifications of the traditional alternatives. It would therefore be false to
+say the prose contains no biblical dates or that every prose assertion is in
+the default annotation. No date is inferred or substituted independently.
+
+### Evidence actually inspected
+
+Eight complete retained Catholic Encyclopedia article-text artifacts were
+available. Their SHA-256 and byte extents matched their manifests; inspection
+was at the loci below and surrounding arguments, not a fresh whole-encyclopedia
+read. The original New Advent responses were not re-fetched, and no printed
+facsimile was collated. Both the corpus-cited parents (cataloged only) and the
+inspected extractions are bound. Article years identify publications, not
+biblical events.
+
+| Source / locus in the complete retained extraction | Result used by this dossier |
+| --- | --- |
+| Souvay, *Isaias*, Life; First Isaias, final collection discussion; Second Isaias (physical lines 7–11, 33, 35–39) | Ministry era belongs to `traditional-attribution`, ending at an apparent last prophecy, not death. The tentative collection hypothesis is restricted to 1–35. The restoration horizon of 40–66 does not supply a composition year for 55. |
+| Jacquier, *Gospel of St. Matthew*, Destination; Date and place (195–203) | Five traditional figures have different warrants: Ascension reckoning; unreliable dispersal tradition; conditional later departure; inconclusive Irenaeus; Catholic opinion reported in 1911. Publication in Judea and converted Jewish readers are traditional reports, not the narrated setting. |
+| Durand, *The New Testament*, Origin (25–35) | His Matthew figure dates the Aramaic original, not the undated Greek rendering. His Johannine range is approximate; he does not supply Jacquier's earliest Matthew interval. |
+| Fonck, *Gospel of St. John*, Circumstances (91–111) | General opinion on date, with no certain historical dating claimed; reported composition at Ephesus for Christians in Asia Minor. |
+| Breen, *Acts of the Apostles*, Date of composition (69–71) | Probable completion during Paul's Roman captivity; not an exact Lydia event date or a Philippi writing site. |
+| Prat, *St. Paul*, Chronology and Second mission (45, 105–111) | Captivity-letter year and second-mission interval; Philippi occurs in the mission discussion, Lydia is not named there. |
+| Howlett, *Biblical Chronology*, The apostles (211–215) | Qualified second-journey interval, not a particular year of Lydia's conversion. |
+| Vander Heeren, *Epistle to the Philippians*, Place and date (53–55) | Roman writing location is the received account; early versus late in the captivity is disputed and the author prefers late. |
+
+The complete NABRE Isaiah, Psalms and Matthew introduction bodies already
+acquired on 21 September were read from the deterministic local extractions.
+The complete HTML responses matched their new registered hashes and extents.
+This was not another network acquisition. Their new passage records are bound;
+protected payloads remain outside tracked sources and publication bodies.
+
+- Isaiah generally attributes 40–55 to an anonymous poet prophesying near the
+  end of exile. The corpus's `israel.exile.second-isaias-oracles` is
+  `prophecy-given`, before return without borrowing its absolute date. Juda and
+  Jerusalem describe traditional ministry (Isaiah 1:1), not an established
+  writing site for this chapter; the late-exilic horizon is separately named.
+- Matthew's critical claim is a post-A.D. 70 bound, with “probably at least a
+  decade later”; “probably in the 80s” wrongly closed an open horizon and has
+  been repaired. The introduction frames its account as probabilistic and
+  proposes an unknown author and a plausible Antiochene setting for Jewish and
+  Gentile Christians. The central traditional alternatives remain unchanged.
+- Psalms corroborates the existing common pre-Maccabean composition bound,
+  not a final-assembly date or a secure individual date. The July source pin
+  remains cataloged only: this reinspection does not authenticate its bytes.
+
+Additional retained Douay–Rheims context was checked at Isaiah 1:1 and 55;
+Psalms 118:1–8 and 144:1–3; Matthew 19:1–2, 27–30 and 20:1–19; John
+9:39–10:21; Acts 1:1 and 16:12–15; Philippians 1:1, 7, 13. These establish
+the audience and narrated geography printed in the dossiers: Jesus addresses
+his disciples before the Jerusalem Passion prediction; John continues the
+exchange with Pharisees; Lydia hears Paul at Philippi by a river; Theophilus
+is named but not located; Paul writes in bonds to Philippi. The selected
+Psalm verses name no writing place. No Hebrew/Greek apparatus, new modern
+Philippians introduction, or exact writing site of an individual psalm was
+verified. Uncertainty remains explicit rather than supplied from memory.
+
+Both studies now list the eight encyclopedia articles and all three official
+introductions actually used. Their binding ancestry seals the inspected
+witnesses; `review-dependencies.toml` additionally declares the chronology
+corpus, canonical/concordance owners and encyclopedia rights inventory. The
+separate interpretation lanes have not been re-authored or transferred between
+providers. Mechanical checks and build results belong in production-review.md;
+independent research, content and visual acceptance remain required.
