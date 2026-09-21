@@ -946,10 +946,14 @@ def severed_runs(sources: str, markdown: str, span: int = 6) -> list[str]:
 
 
 def normalize_audit_text(text: str) -> str:
-    """Normalize spacing, dashes and bold wrappers without dropping their text."""
+    """Normalize spacing, punctuation and bold wrappers without dropping text."""
     text = replace_grouped_macro(text, "textbf", 1, lambda arguments: arguments[0])
     text = text.replace("**", "")
     text = COMMENT_RE.sub("", text).replace(r"\space", " ").replace("~", " ")
+    # Pandoc smartens an ASCII apostrophe within a name even though the source
+    # chronology payload retains ASCII.  This comparison is an omission audit,
+    # so that typographic substitution is immaterial; no prose output changes.
+    text = text.replace("\N{RIGHT SINGLE QUOTATION MARK}", "'")
     text = text.replace("--", "-")
     text = re.sub(r"[\N{EN DASH}\N{EM DASH}\N{MINUS SIGN}]", "-", text)
     return re.sub(r"\s+", " ", text.replace("\\", "")).strip()

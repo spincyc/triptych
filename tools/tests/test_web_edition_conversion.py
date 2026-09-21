@@ -902,6 +902,39 @@ class WebEditionAuditTests(unittest.TestCase):
             failures,
         )
 
+    def test_smart_apostrophe_does_not_hide_a_real_chronology_shortfall(self) -> None:
+        annotation = (
+            r"\textbf{Traditional attribution}: Isaias (ministry in Souvay's "
+            r"traditional account), B.C. 740--701."
+        )
+        rendered_payload = (
+            "\n**Traditional attribution**: Isaias (ministry in Souvay’s "
+            "traditional account), B.C. 740–701.\n"
+        )
+        failures = DRIVER.audit_output(
+            "Prose.",
+            self.minimal_markdown() + rendered_payload,
+            chronology_annotations=[annotation],
+        )
+        self.assertFalse(
+            any("generated chronology annotation payload shortfall" in item for item in failures),
+            failures,
+        )
+
+        failures = DRIVER.audit_output(
+            "Prose.",
+            self.minimal_markdown()
+            + "\n**Traditional attribution**: Isaias (ministry in Souvay’s "
+            "traditional account).\n",
+            chronology_annotations=[annotation],
+        )
+        self.assertIn(
+            "generated chronology annotation payload shortfall: expected 1, found 0: "
+            "Traditional attribution: Isaias (ministry in Souvay's traditional "
+            "account), B.C. 740-701.",
+            failures,
+        )
+
     def test_dropped_bracketed_macro_payload_is_reported(self) -> None:
         definitions, bracketed = DRIVER.guard_opening_brackets(
             r"\newcommand{\notread}[1]{[\textit{#1}]}"
