@@ -1231,6 +1231,14 @@ each assertion's leaf profile. It may not implement another fallback order or
 merge claims from leaf profiles itself. Explicit
 `catholic-traditional-v1` queries retain traditional-only semantics.
 
+An explicit second-profile comparison is not permission to merge profiles.
+The consumer must declare the comparison before generation, query one named
+evidence profile for one named subject and relation, and retain the comparison
+as a separate answer beside the default result. It may not add that claim to
+the default profile's candidates, replace a default relation, or devise a new
+fallback. The generated record must distinguish the requested comparison
+profile from the claim's returned leaf profile and carry its source ids.
+
 If the corpus returns no substantive assertion, or a typed unresolved state,
 the consumer **preserves that state or omits the date** according to its own
 profile. It does not invent one. It does not fall back to a model's
@@ -1274,6 +1282,16 @@ it does not import the 1962 calendar, source owner, or research judgments.
   inventories refuse; there is no fallback to another calendar's appointments.
   The generic postconciliar calendar remains a finding aid, not an override
   of this edition's checked citation evidence.
+- Either supported proper family may opt into an explicit comparison through
+  `research/chronology-profile-comparisons.toml`. This authored file contains
+  selections, never dates: `schema = 1`,
+  `record_type = "proper-chronology-profile-comparisons"`, the exact `document`,
+  and one or more `[[comparisons]]` rows. Each row has a distinct canonical
+  `key`, one appointed scriptural `element`, one evidence `profile`, and the
+  exact `relation` and `subject` to select. Cascade profiles, the default
+  profile, missing subjects, non-scriptural elements, duplicate selections,
+  and claims that do not apply at every locus of the element refuse. This file
+  never changes the default `profile` or `publication_claims`.
 - The input has `schema = 1`, `record_type = "proper-chronology-inputs"`,
   `document`, `calendar = "postconciliar"`, exact `formula`, repository-relative
   `shared_owner` ending in `propers/verified.md`, and ordered `[[elements]]`.
@@ -1304,6 +1322,8 @@ it does not import the 1962 calendar, source owner, or research judgments.
   an owner or appointment invalidates both currency checks even if the neutral
   corpus answer happens to remain unchanged. Those inputs and both chronology
   adapter modules are research dependencies for a sealed production run.
+  A profile-comparison input is fingerprinted independently for either family;
+  changing its selection makes both generated chronology artifacts stale.
 - `tools/tpt proper-chronology` is the command. `loci` prints the appointed
   loci and their statuses; `record` renders the answer as the leaf's
   `research/chronology.toml` and writes or verifies it; `annotations` projects
@@ -1321,12 +1341,19 @@ it does not import the 1962 calendar, source owner, or research judgments.
   corpus's prose, they run to thousands of characters, and a copy in a leaf
   would be a second place they could be edited. A reader who wants them runs
   `scripture-chronology query <locus> --evidence`.
+  Schema 3 also carries `profile_comparisons` separately from `elements`.
+  Each comparison records its element, requested evidence profile, relation,
+  subject, status, returned claims, leaf profiles, sources, and full locus
+  reach. A reviewer can therefore see that a critical comparison is present
+  without mistaking it for the default cascade's answer.
 - Manual consumers may display only the source's raw `label`; they may not
   mint, shorten, or edit a normalized date label. The sole exception is the
   deterministic `annotations` projection: its generated TeX may render the
   tool's concise `display_label` because the same sealed macro invocation also
   retains the subject, relation, leaf profile, disposition, and raw label for
   audit. That display is regenerated from the corpus, never hand-authored.
+  Schema 3 gives comparison groups their own sealed macros; those macros carry
+  the requested profile and source ids as well as the ordinary claim metadata.
 - The publication projection leads with traditional attribution and the
   passage's identified setting, event or retrospect, then textual history,
   then the distinct prophetic referent. This is presentation order, not a
@@ -1341,7 +1368,15 @@ it does not import the 1962 calendar, source owner, or research judgments.
   `chronology-claims-supported` refuses a claim the corpus does not assert at
   the verses that element appoints, and refuses a Date cell that bypasses its
   matching `\chronologyannotation{element-key}`, prints any figure with no
-  claim behind it, or omits an appointed Scripture.
+  claim behind it, or omits an appointed Scripture. It also scans reader-facing
+  prose for era-qualified forms such as `post-A.D. 70`, `A.D.~70`, and quoted
+  date labels. In explanatory dossier prose it also refuses a qualified date
+  or a two- or three-digit span that omits its era; every manually repeated
+  biblical date must say A.D., B.C., or A.M. so the checker can compare it to
+  the generated record. A form whose relation, era, and years are absent from
+  the generated default answer and every declared comparison refuses even when
+  it sits outside a Date cell. Prefer referring to “the displayed range” over
+  repeating a generated date when the number adds no explanatory value.
 
 The second refusal is the one that answers "it does not invent one". A date is
 a well-formed integer, so a wrong one reads exactly like a right one, and no
@@ -1463,6 +1498,15 @@ source. Check for them by name.
     moved, and `validate`, the coverage rebuild and 92 tests all passed over a
     corpus that is not valid YAML.
     **The loader now refuses a repeated key by file, line and name (§16).**
+
+12. **A prophet's ministry returned as a book's composition date.** The
+    Isaiah unit assigned the ministry's reference era to every verse as
+    `composition`, even while its note acknowledged the distinction.
+    A note cannot repair a wrong relation. A sourced ministry era may
+    orient a received `traditional-attribution`; a source dating prophetic
+    activity supports `prophecy-given` only over the extent it identifies.
+    A tentative collection hypothesis for one part does not date another
+    part or the whole book.
 
 ---
 

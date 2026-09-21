@@ -5,9 +5,30 @@ schema: triptych-chronology-bindings/v1
 # scripts/_projection.py projects into. Declared here so that no row's
 # numbering is a thing the reader assumed.
 numbering: vulgate
-updated: '2026-09-09'
-
+updated: '2026-09-21'
 bindings:
+  - relation: prophecy-given
+    event: israel.exile.second-isaias-oracles
+    scope: [{book: Is, chapter: 40, through: 55}]
+    note: >-
+      The NABRE introduction explicitly identifies chapters 40-55 as the
+      extent generally attributed to the late-exile poet. This binding
+      reaches neither chapters 1-39 nor 56-66 and asserts nothing about the
+      book's final assembly or the completion of every verse's wording.
+    sources:
+      - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.isaiah-introduction
+  - relation: traditional-attribution
+    event: israel.prophets.isaias-traditional-era
+    scope: [{book: Is}]
+    note: >-
+      Souvay's Isaias article reports the received attribution of the book to
+      Isaias, including chapters 40-66, in its account of the 1908 Pontifical
+      Biblical Commission response. That attribution identifies the prophet;
+      his ministry's reference era dates neither each oracle nor the writing
+      or assembly of the book. The article's tentative collection hypothesis
+      concerns the first collection only and does not date chapter 55.
+    sources:
+      - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08179b-d4ee13fd-article-text
   # An attribution identifies a figure; its reference era dates neither the
   # writing nor an occasion. These scopes follow inspected titles, not a
   # presumption that every psalm is Davidic.

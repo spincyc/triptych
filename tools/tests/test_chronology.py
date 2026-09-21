@@ -2637,6 +2637,48 @@ class TrackedHardCaseTests(unittest.TestCase):
     def relations(self, locus: str, system: str = "vulgate") -> set[str]:
         return {item.relation for item in self.ask(locus, system).assertions}
 
+    def test_isaias_ministry_is_attribution_not_composition(self) -> None:
+        self.assertNotIn("composition.book-of-isaias", _chronology.load().units)
+        for locus in ("Is.1.1", "Is.36.1", "Is.55.6", "Is.66.24"):
+            answer = self.ask(locus)
+            attribution = [
+                item for item in answer.assertions
+                if item.subject == "israel.prophets.isaias-traditional-era"
+            ]
+            self.assertEqual(len(attribution), 1, locus)
+            self.assertEqual(attribution[0].relation, "traditional-attribution")
+            self.assertNotIn("composition", {item.relation for item in answer.assertions})
+        self.assertEqual(self.ask("Is.55.6").status, "attribution-only")
+        self.assertIn("narrated-event", self.relations("Is.36.1"))
+        self.assertIn("prophetic-referent", self.relations("Is.53.5"))
+
+    def test_late_exile_isaias_horizon_is_narrow_and_critical(self) -> None:
+        for locus in ("Is.40.1", "Is.55.13"):
+            answer = _chronology.chronology(locus)
+            subjects = {item.subject: item for item in answer.assertions}
+            oracle = subjects["israel.exile.second-isaias-oracles"]
+            self.assertEqual(oracle.relation, "prophecy-given")
+            self.assertEqual(oracle.claim.profile, CRITICAL)
+            self.assertEqual(oracle.claim.date.label, "toward the end of the Babylonian exile")
+            self.assertNotIn("composition", {item.relation for item in answer.assertions})
+            self.assertEqual(answer.status, "dated")
+        for locus in ("Is.39.8", "Is.56.1"):
+            self.assertNotIn(
+                "israel.exile.second-isaias-oracles",
+                {item.subject for item in _chronology.chronology(locus).assertions},
+            )
+        self.assertNotIn("prophecy-given", self.relations("Is.55.6"))
+
+    def test_matthew_critical_bound_does_not_replace_traditional_alternatives(self) -> None:
+        traditional = self.ask("Matt.22.34")
+        default = _chronology.chronology("Matt.22.34")
+        self.assertEqual(default.assertions, traditional.assertions)
+        critical = _chronology.chronology("Matt.22.34", profile=CRITICAL)
+        composition = [item for item in critical.assertions if item.relation == "composition"]
+        self.assertEqual(len(composition), 1)
+        self.assertEqual(composition[0].subject, "critical.gospel-of-matthew")
+        self.assertEqual(composition[0].claim.date.label, "post-A.D. 70 date")
+
     def test_four_gospels_reach_one_crucifixion_with_one_set_of_claims(self) -> None:
         seen = []
         for locus in ("Matt.27.35", "Mark.15.24", "Luke.23.34", "John.19.23"):
@@ -4890,6 +4932,14 @@ class QuotedBasisTests(unittest.TestCase):
     # a fabricated claim with a fabricated quotation walked into, and it is why
     # an undeclared skip is now a failure.
     UNREOPENABLE = {
+        "event:israel.exile.second-isaias-oracles#0": (1, (
+            "The NABRE Isaiah introduction, freshly acquired and read in full "
+            "on 2026-09-21. Its restricted artifact records the exact hash and "
+            "public route; protected source bytes are not retained in Git.")),
+        "unit:critical.gospel-of-matthew#0": (1, (
+            "The NABRE Matthew introduction, freshly acquired and read in full "
+            "on 2026-09-21. The post-A.D. 70 phrase is in the restricted "
+            "source, not its retained summary; artifact hash and route are recorded.")),
         "event:apostolic-age.exile-of-saint-john-to-patmos#0": (2, (
             "Eusebius, Church History III.18.1, in the NPNF translation New "
             "Advent hosts. The artifact is registered and hashed but its bytes "
@@ -4938,6 +4988,11 @@ class QuotedBasisTests(unittest.TestCase):
         "date the passage record names; not reopenable from the edition's "
         "bytes in this repository.")
     SELF_WITNESSED = {
+        "unit:critical.gospel-of-matthew#0": (1, (
+            "The probable later-decade phrase also occurs in the bounded "
+            "passage summary, but that summary is not source bytes. Direct "
+            "inspection used the complete protected NABRE introduction on "
+            "2026-09-21, pinned by its restricted artifact hash.")),
         "event:israel.exodus.burning-bush#0": (1, HAYDOCK),
         "event:israel.exodus.moses-before-pharao#0": (1, HAYDOCK),
         "event:israel.wilderness.manna#1": (1, HAYDOCK),

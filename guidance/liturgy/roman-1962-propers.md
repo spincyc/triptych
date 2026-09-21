@@ -329,9 +329,11 @@ an absent date from memory or a publication-local source.
 
 `check-content-preflight` checks record and annotation currency and refuses
 unsupported claims, omitted appointed Scripture, and Date cells that bypass
-their generated annotations. Its numerical-claim scan reaches the Date cells;
-prose elsewhere still requires source review. Moving a figure outside a cell
-never exempts it from the shared-corpus requirement.
+their generated annotations. It also checks era-qualified dates throughout the
+edition and date-shaped spans in explanatory dossier prose. A manually repeated
+biblical date states A.D., B.C., or A.M.; moving a figure outside a cell never
+exempts it from the shared-corpus requirement. Human source review still judges
+ordinary numbers that are not recognizable chronology claims.
 
 ### Themes, commentary, and exploration
 

@@ -139,6 +139,11 @@ class AnnotationProjectionTests(unittest.TestCase):
             r"\textbf{Event} -- No narrated-event date in the chronology corpus.",
             chronology.render_annotations_tex(chronology.annotations(without_event)),
         )
+        compared = without_event._replace(comparison_dependencies=(("selection", "digest"),))
+        self.assertIn(
+            r"\textbf{Event} -- Narrated event date unresolved.",
+            chronology.render_annotations_tex(chronology.annotations(compared)),
+        )
 
     def test_partial_locus_gospel_event_is_a_nonuniform_gap(self) -> None:
         payload = self.payload(NATIVITY_OCTAVE)

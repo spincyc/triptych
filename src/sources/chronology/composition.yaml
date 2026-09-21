@@ -7,7 +7,7 @@ schema: triptych-chronology-composition/v1
 # scripts/_projection.py projects into. Declared here so that no row's
 # numbering is a thing the reader assumed.
 numbering: vulgate
-updated: '2026-09-04'
+updated: '2026-09-21'
 
 units:
   # --- nt-composition ----------------------------------------------------
@@ -1773,42 +1773,6 @@ units:
           from: {year: 132, era: bc}
           label: "not long after ... the year 132 B.C."
 
-  - id: composition.book-of-isaias
-    title: The Book of Isaias
-    scope: {book: Is}
-    dates:
-      - profile: catholic-traditional-v1
-        disposition: preferred
-        basis_class: traditional-catholic
-        basis: >-
-          Souvay's "Isaias" in the Catholic Encyclopedia places the prophetical
-          ministry "from the closing year of Ozias, King of Juda," which it gives as
-          the year of that prince's death, "740 B.C.", and holds that "since no
-          prophecies appear to be later than 701 B.C. , it is doubtful if Isaias saw the
-          reign of Manasses at all." Of the collection the article says it "might still
-          possibly be attributed to the last years of the Prophet's life or shortly
-          afterwards."
-        sources: [artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08179b-d4ee13fd]
-        note: >-
-          The two years date the PROPHET'S MINISTRY, which is the period the book's
-          prophecies come from; the article assigns no year to the writing or final
-          assembly of the collection and is expressly guarded about it — "The foregoing
-          analysis does not enable us to assert indubitably that this first collection
-          as such is the work of Isaias." 740 is attached by the article to the death of
-          Ozias while reporting Jerome's view of chapter vi, and 701 is the article's own
-          inference ("appear to be"). The traditional position on AUTHORSHIP carries no
-          year and is therefore not a second claim: the Pontifical Biblical Commission,
-          28 June 1908, decided that "There are no solid arguments to the fore, even
-          taken cumulatively, to prove that the book of Isaias is to be attributed not to
-          Isaias himself alone, but to two or rather to many authors". The article
-          concedes that the author of xl-lxvi "does speak from the point of view of the
-          Babylonian Captivity."
-        date:
-          precision: range
-          from: {year: 740, era: bc}
-          to: {year: 701, era: bc}
-          label: "from the closing year of Ozias, King of Juda (740 B.C.); no prophecies appear to be later than 701 B.C."
-
   - id: composition.book-of-jeremias
     title: The Book of Jeremias
     scope: {book: Jer}
@@ -2915,6 +2879,36 @@ units:
   # claims and explicit silences above remain exactly as authored. A dated
   # edition is positive evidence that its text existed by that edition, but is
   # never evidence that any passage was composed in the edition's year.
+
+  - id: critical.gospel-of-matthew
+    title: The Greek Gospel of Matthew in the NABRE introduction
+    scope: {book: Matt}
+    dates:
+      - profile: catholic-critical-v1
+        disposition: preferred
+        basis_class: catholic-critical
+        basis: >-
+          The official NABRE Matthew introduction presents the majority
+          scholarly account as probabilistic. Under that account it argues
+          for a "post-A.D. 70 date" from dependence on Mark and the reference
+          to Jerusalem's destruction in Matthew 22:7, and says composition
+          was "probably at least a decade later". The complete introduction
+          was inspected in its 2026-09-21 web state.
+        sources:
+          - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.matthew-introduction
+        note: >-
+          This is a critical lower bound on the Greek Gospel, not an exact
+          date, closed interval, narrated-event date or date of an Aramaic
+          predecessor. The probable later decade remains a qualification,
+          not a new exact endpoint. Traditional alternatives remain unchanged
+          and take precedence for this relation in the default cascade.
+        date:
+          precision: boundary
+          boundary:
+            direction: after
+            endpoint: {year: 70, era: ad}
+            statement: post-A.D. 70 date
+          label: "post-A.D. 70 date"
 
   - id: critical.psalms.latest-composition-boundary
     title: The latest composition boundary shared by the Psalms

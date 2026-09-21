@@ -57,7 +57,8 @@ CALENDAR = "roman-1962"
 # the stable ids belong: "event id, unit id, profile, relation ... so prose can
 # be regenerated without re-researching the fact".
 RECORD = "research/chronology.toml"
-RECORD_SCHEMA = 2
+RECORD_SCHEMA = 3
+LEGACY_RECORD_SCHEMA = 2
 RECORD_TYPE = "proper-chronology"
 GENERATOR = "tools/tpt proper-chronology record"
 
@@ -67,9 +68,18 @@ GENERATOR = "tools/tpt proper-chronology record"
 # deterministic display of the same assertions.  Neither file is an authoring
 # surface.
 ANNOTATIONS_RECORD = "research/chronology-annotations.tex"
-ANNOTATIONS_SCHEMA = 2
+ANNOTATIONS_SCHEMA = 3
+LEGACY_ANNOTATIONS_SCHEMA = 2
 ANNOTATIONS_TYPE = "proper-chronology-annotations"
 ANNOTATIONS_GENERATOR = "tools/tpt proper-chronology annotations"
+
+# Optional, authored selection of an additional evidence profile to show as a
+# comparison.  It is deliberately separate from both the appointment inventory
+# and the generated answer: an explicit comparison must never change the
+# default profile or be unioned into its claims by a consumer.
+COMPARISONS_INPUT = "research/chronology-profile-comparisons.toml"
+COMPARISONS_INPUT_SCHEMA = 1
+COMPARISONS_INPUT_TYPE = "proper-chronology-profile-comparisons"
 
 # The numbering the calendar must declare for a locus to cross into the corpus
 # unconverted. Both sides spell it the same word; neither is trusted to.
@@ -172,6 +182,19 @@ class Element(NamedTuple):
     publication_claims: tuple[Claim, ...]
 
 
+class ProfileComparison(NamedTuple):
+    """One governed, element-wide query of another evidence profile."""
+
+    key: str
+    element_key: str
+    requested_profile: str
+    relation: str
+    subject: str
+    status: str
+    reason: str
+    claims: tuple[Claim, ...]
+
+
 class Dossier(NamedTuple):
     """Everything the corpus answers about one proper's appointed Scripture.
 
@@ -191,6 +214,8 @@ class Dossier(NamedTuple):
     elements: tuple[Element, ...]
     appointment_dependencies: tuple[tuple[str, str], ...] = ()
     appointment_notes: tuple[str, ...] = ()
+    profile_comparisons: tuple[ProfileComparison, ...] = ()
+    comparison_dependencies: tuple[tuple[str, str], ...] = ()
 
     def element(self, key: str) -> Element | None:
         for item in self.elements:
@@ -228,6 +253,7 @@ class AnnotationGroup(NamedTuple):
     status: str
     reason: str
     claims: tuple[AnnotationClaim, ...]
+    requested_profile: str = ""
 
 
 class AnnotationElement(NamedTuple):
@@ -253,6 +279,7 @@ class AnnotationProjection(NamedTuple):
     elements: tuple[AnnotationElement, ...]
     appointment_dependencies: tuple[tuple[str, str], ...] = ()
     appointment_notes: tuple[str, ...] = ()
+    comparison_dependencies: tuple[tuple[str, str], ...] = ()
 
 
 # --- From a leaf id to its mass --------------------------------------------
@@ -638,6 +665,69 @@ def _audit_status(
     return status, reason
 
 
+def _profile_comparisons(
+    document: str,
+    elements: tuple[Element, ...],
+    default_profile: str,
+    root: Path,
+    provider: str,
+    corpus_root: Path | None,
+) -> tuple[tuple[ProfileComparison, ...], tuple[tuple[str, str], ...]]:
+    """Load and resolve an optional, explicit evidence-profile comparison.
+
+    The input selects one exact corpus subject and relation under one evidence
+    profile for one appointed element.  The query is repeated for every locus
+    and intersected just like the default publication answer.  Nothing from
+    this path is inserted into ``Element.publication_claims``: keeping the two
+    collections separate is what prevents a comparison from becoming an ad hoc
+    fallback or a silent cross-profile union.
+    """
+    import _proper_chronology_comparisons as comparison_inputs
+    corpus = _chronology.load(corpus_root)
+    by_key = {element.key: element for element in elements}
+    try:
+        rows, dependencies = comparison_inputs.load(
+            document, root, provider, default_profile, corpus.profiles, elements
+        )
+    except ValueError as exc:
+        raise ChronologyWiringError(str(exc)) from exc
+    comparisons: list[ProfileComparison] = []
+    for row in rows:
+        key, element_key, profile, relation, subject = row
+        where = f"{COMPARISONS_INPUT} comparison {key!r}"
+        element = by_key[element_key]
+        answers: list[tuple[str, str, str, list[Claim]]] = []
+        for locus in element.loci:
+            status, reason, claims = _claims_at(locus, profile, corpus_root)
+            selected = [
+                claim for claim in claims
+                if claim.relation == relation and claim.subject == subject
+            ]
+            answers.append((locus, status, reason, selected))
+        claims, status, reason = _common_claims(answers)
+        if not claims:
+            raise ChronologyWiringError(
+                f"{where}: {profile!r} returns no {relation!r} assertion for "
+                f"{subject!r} at every locus of {element_key!r}"
+            )
+        if any(claim.profile != profile for claim in claims):
+            raise ChronologyWiringError(
+                f"{where}: explicit evidence-profile query returned another profile"
+            )
+        comparisons.append(ProfileComparison(
+            key=key,
+            element_key=element_key,
+            requested_profile=profile,
+            relation=relation,
+            subject=subject,
+            status=status,
+            reason=reason,
+            claims=claims,
+        ))
+
+    return tuple(comparisons), dependencies
+
+
 def dossier(
     document: str,
     root: Path = ROOT,
@@ -712,6 +802,10 @@ def dossier(
                 publication_claims=publication_claims,
             )
         )
+    held_elements = tuple(elements)
+    comparisons, comparison_dependencies = _profile_comparisons(
+        document, held_elements, effective_profile, root, provider, corpus_root
+    )
     return Dossier(
         document=document,
         calendar="postconciliar" if inputs is not None else CALENDAR,
@@ -720,9 +814,11 @@ def dossier(
         profile=effective_profile,
         state=state,
         reason=reason,
-        elements=tuple(elements),
+        elements=held_elements,
         appointment_dependencies=inputs.dependencies if inputs is not None else (),
         appointment_notes=inputs.notes if inputs is not None else (),
+        profile_comparisons=comparisons,
+        comparison_dependencies=comparison_dependencies,
     )
 
 
@@ -917,6 +1013,30 @@ def annotations(found: Dossier) -> AnnotationProjection:
                     )
                 )
 
+        # A comparison remains its own generated group.  It is never appended
+        # to ``publication_claims`` or grouped with the default answer even
+        # when subject and relation happen to be the same.
+        for comparison in found.profile_comparisons:
+            if comparison.element_key != element.key:
+                continue
+            held = tuple(
+                _annotation_claim(claim, name_subject=True)
+                for claim in sorted(
+                    comparison.claims,
+                    key=lambda claim: (
+                        _chronology.DISPOSITIONS.index(claim.disposition),
+                        claim.date,
+                        claim.label,
+                    ),
+                )
+            )
+            groups.append(AnnotationGroup(
+                relation=comparison.relation,
+                status=comparison.status,
+                reason=comparison.reason,
+                claims=held,
+                requested_profile=comparison.requested_profile,
+            ))
         # A scriptural element with no assertions still needs a visible answer
         # in its Date cell.  Composition is the date of the text itself, and is
         # the only relation a bare corpus gap can honestly stand for here.
@@ -960,6 +1080,7 @@ def annotations(found: Dossier) -> AnnotationProjection:
             key=lambda group: (
                 ANNOTATION_RELATION_ORDER.get(group.relation, 999),
                 group.relation,
+                group.requested_profile,
                 group.claims[0].subject if group.claims else "",
             )
         )
@@ -984,6 +1105,7 @@ def annotations(found: Dossier) -> AnnotationProjection:
         elements=tuple(projected),
         appointment_dependencies=found.appointment_dependencies,
         appointment_notes=found.appointment_notes,
+        comparison_dependencies=found.comparison_dependencies,
     )
 
 
@@ -991,7 +1113,8 @@ def annotation_payload(found: AnnotationProjection) -> dict[str, object]:
     """The JSON-ready annotation contract, with source and display labels."""
     return {
         "status": "ok",
-        "schema": ANNOTATIONS_SCHEMA,
+        "schema": (ANNOTATIONS_SCHEMA if found.comparison_dependencies
+                   else LEGACY_ANNOTATIONS_SCHEMA),
         "projection_type": ANNOTATIONS_TYPE,
         "document": found.document,
         "calendar": found.calendar,
@@ -1004,6 +1127,8 @@ def annotation_payload(found: AnnotationProjection) -> dict[str, object]:
         **({"appointment_dependencies": dict(found.appointment_dependencies),
             "appointment_notes": list(found.appointment_notes)}
            if found.appointment_dependencies else {}),
+        **({"comparison_dependencies": dict(found.comparison_dependencies)}
+           if found.comparison_dependencies else {}),
         "elements": [
             {
                 "key": element.key,
@@ -1015,6 +1140,7 @@ def annotation_payload(found: AnnotationProjection) -> dict[str, object]:
                         "relation": group.relation,
                         "status": group.status,
                         "reason": group.reason,
+                        "requested_profile": group.requested_profile,
                         "claims": [
                             {
                                 "subject": claim.subject,
@@ -1053,18 +1179,21 @@ def _relation_label(relation: str) -> str:
     return RELATION_LABELS.get(relation, relation.replace("-", " ").title())
 
 
-def _gap_display(group: AnnotationGroup) -> str:
+def _gap_display(group: AnnotationGroup, *, comparison_enabled: bool = False) -> str:
     if group.relation == "narrated-event" and group.status == "research-pending":
-        return "No narrated-event date in the chronology corpus"
+        return ("Narrated event date unresolved" if comparison_enabled else
+                "No narrated-event date in the chronology corpus")
     if group.relation == "narrated-event" and group.status == NONUNIFORM:
         return "No single narrated-event assertion applies across every cited locus"
     return GAP_DISPLAY.get(group.status, group.status.replace("-", " ").capitalize())
 
 
-def _group_display(group: AnnotationGroup) -> str:
+def _group_display(group: AnnotationGroup, *, comparison_enabled: bool = False) -> str:
     relation = _relation_label(group.relation)
+    if group.requested_profile:
+        relation = f"Comparison ({group.requested_profile}) -- {relation}"
     if not group.claims:
-        return f"{relation} -- {_gap_display(group)}."
+        return f"{relation} -- {_gap_display(group, comparison_enabled=comparison_enabled)}."
     values = _candidate_display(group, lambda claim: claim.display_label)
     qualifier = f" -- {group.status}" if group.status != "preferred" else ""
     sentence = f"{relation}{qualifier}: {values}"
@@ -1078,7 +1207,10 @@ def render_annotations_text(found: AnnotationProjection) -> str:
     lines: list[str] = []
     for element in found.elements:
         lines.append(element.key)
-        lines.extend(f"  {_group_display(group)}" for group in element.groups)
+        lines.extend(
+            f"  {_group_display(group, comparison_enabled=bool(found.comparison_dependencies))}"
+            for group in element.groups
+        )
     return "\n".join(lines) + "\n"
 
 
@@ -1125,6 +1257,32 @@ def _tex_claim(claim: AnnotationClaim) -> str:
     )
 
 
+def _tex_comparison_claim(
+    claim: AnnotationClaim, requested_profile: str
+) -> str:
+    """A comparison claim with its requested profile and sources sealed in."""
+    arguments = (
+        claim.subject,
+        claim.relation,
+        requested_profile,
+        claim.profile,
+        claim.disposition,
+        ";".join(claim.sources),
+        claim.label,
+        claim.display_label,
+    )
+    reach_provenance = "".join(
+        "\\chronologyannotationreach"
+        f"{{{tex_escape(reach.locus)}}}"
+        f"{{{tex_escape(reach.scope)}}}"
+        f"{{{'true' if reach.inherited else 'false'}}}"
+        for reach in claim.reaches
+    )
+    return reach_provenance + "\\chronologyannotationcomparisonclaim" + "".join(
+        "{" + tex_escape(value) + "}" for value in arguments
+    )
+
+
 def _candidate_display(group: AnnotationGroup, render_claim) -> str:
     """All candidates, compactly labelled when dispositions differ."""
     buckets = {
@@ -1152,23 +1310,36 @@ def _candidate_display(group: AnnotationGroup, render_claim) -> str:
     return "; ".join(segments)
 
 
-def _tex_group(group: AnnotationGroup) -> str:
-    relation = r"\textbf{" + tex_escape(_relation_label(group.relation)) + "}"
+def _tex_group(group: AnnotationGroup, *, comparison_enabled: bool = False) -> str:
+    relation_label = _relation_label(group.relation)
+    if group.requested_profile:
+        relation_label = (
+            f"Comparison ({group.requested_profile}) -- {relation_label}"
+        )
+    relation = r"\textbf{" + tex_escape(relation_label) + "}"
     if not group.claims:
-        visible = f"{relation} -- {_gap_display(group)}."
+        visible = (
+            f"{relation} -- "
+            f"{_gap_display(group, comparison_enabled=comparison_enabled)}."
+        )
     else:
-        values = _candidate_display(group, _tex_claim)
+        render_claim = (
+            (lambda claim: _tex_comparison_claim(
+                claim, group.requested_profile
+            )) if group.requested_profile else _tex_claim
+        )
+        values = _candidate_display(group, render_claim)
         plain_values = _candidate_display(group, lambda claim: claim.display_label)
         qualifier = f" -- {group.status}" if group.status != "preferred" else ""
         visible = f"{relation}{qualifier}: {values}"
         if not plain_values.endswith((".", "?", "!", "\N{HORIZONTAL ELLIPSIS}")):
             visible += "."
-    return (
-        "\\chronologyannotationgroup"
-        f"{{{tex_escape(group.relation)}}}"
-        f"{{{tex_escape(group.status)}}}"
-        f"{{{visible}}}"
-    )
+    macro = ("\\chronologyannotationcomparisongroup"
+             if group.requested_profile else "\\chronologyannotationgroup")
+    profile = (f"{{{tex_escape(group.requested_profile)}}}"
+               if group.requested_profile else "")
+    return (macro + profile + f"{{{tex_escape(group.relation)}}}"
+            f"{{{tex_escape(group.status)}}}" f"{{{visible}}}")
 
 
 def render_annotations_tex(found: AnnotationProjection) -> str:
@@ -1176,7 +1347,7 @@ def render_annotations_tex(found: AnnotationProjection) -> str:
     lines = [
         "% Generated. Do not edit.",
         "% Deterministic projection of research/chronology.toml.",
-        f"% schema: {ANNOTATIONS_SCHEMA}",
+        f"% schema: {ANNOTATIONS_SCHEMA if found.comparison_dependencies else LEGACY_ANNOTATIONS_SCHEMA}",
         f"% document: {found.document}",
         f"% generated-by: {ANNOTATIONS_GENERATOR}",
         # These are intentionally `newcommand`, not `providecommand`. This
@@ -1193,11 +1364,24 @@ def render_annotations_tex(found: AnnotationProjection) -> str:
         r"    \PackageError{triptych}{No chronology annotation for #1}{}%",
         r"  \fi}",
     ]
+    if found.comparison_dependencies:
+        lines[6:6] = [
+            r"\newcommand{\chronologyannotationcomparisonclaim}[8]{#8}",
+        ]
+        group_at = lines.index(
+            r"\newcommand{\chronologyannotationgroup}[3]{#3}"
+        ) + 1
+        lines[group_at:group_at] = [
+            r"\newcommand{\chronologyannotationcomparisongroup}[4]{#4}",
+        ]
     if found.appointment_dependencies:
         lines.extend(f"% appointment-dependency: {path} sha256={digest}"
                      for path, digest in found.appointment_dependencies)
         lines.extend(f"% appointment-note: {tex_escape(note)}"
                      for note in found.appointment_notes)
+    if found.comparison_dependencies:
+        lines.extend(f"% comparison-dependency: {path} sha256={digest}"
+                     for path, digest in found.comparison_dependencies)
     for element in found.elements:
         lines.extend(
             (
@@ -1209,7 +1393,9 @@ def render_annotations_tex(found: AnnotationProjection) -> str:
         )
         for index, group in enumerate(element.groups):
             spacer = r"\space " if index else ""
-            lines.append(f"  {spacer}{_tex_group(group)}%")
+            lines.append(
+                f"  {spacer}{_tex_group(group, comparison_enabled=bool(found.comparison_dependencies))}%"
+            )
         lines.append("}")
     return "\n".join(lines) + "\n"
 
@@ -1253,6 +1439,14 @@ HEADER = """\
 # guide states that absence rather than filling it. `nonuniform` means its loci
 # have chronology but share no one assertion an element-wide Date cell could
 # truthfully print.
+"""
+
+COMPARISON_HEADER = """\
+#
+# `profile_comparisons` are separately requested evidence-profile answers.
+# They never alter `profile`, `claims`, or `publication_claims`. Each row names
+# the exact requested evidence profile, element, relation, subject, returned
+# leaf-profile claim and source ids; its input file is fingerprinted below.
 """
 
 
@@ -1307,12 +1501,18 @@ def _render_claim(lines: list[str], table: str, claim: Claim) -> None:
 
 def render(found: Dossier) -> str:
     """The record's canonical bytes. One dossier renders one way, always."""
-    lines = [HEADER.format(
+    header = HEADER.format(
         generator=GENERATOR,
         claim_field="chronology claim" if found.appointment_dependencies else "field",
         appointment_source="the reviewed edition input" if found.appointment_dependencies else "the calendar",
-    ), ""]
-    lines.append(_field("schema", RECORD_SCHEMA))
+    )
+    if found.comparison_dependencies:
+        header += COMPARISON_HEADER
+    lines = [header, ""]
+    lines.append(_field(
+        "schema",
+        RECORD_SCHEMA if found.comparison_dependencies else LEGACY_RECORD_SCHEMA,
+    ))
     lines.append(_field("record_type", RECORD_TYPE))
     lines.append(_field("document", found.document))
     lines.append(_field("calendar", found.calendar))
@@ -1327,6 +1527,9 @@ def render(found: Dossier) -> str:
         for path, digest in found.appointment_dependencies:
             lines.extend(("", "[[appointment_dependencies]]",
                           _field("path", path), _field("sha256", digest)))
+    for path, digest in found.comparison_dependencies:
+        lines.extend(("", "[[comparison_dependencies]]",
+                      _field("path", path), _field("sha256", digest)))
     for element in found.elements:
         lines.append("")
         lines.append("[[elements]]")
@@ -1342,6 +1545,16 @@ def render(found: Dossier) -> str:
             _render_claim(lines, "elements.claims", claim)
         for claim in element.publication_claims:
             _render_claim(lines, "elements.publication_claims", claim)
+    for comparison in found.profile_comparisons:
+        lines.append("")
+        lines.append("[[profile_comparisons]]")
+        for name in (
+            "key", "element_key", "requested_profile", "relation", "subject",
+            "status", "reason",
+        ):
+            lines.append(_field(name, getattr(comparison, name)))
+        for claim in comparison.claims:
+            _render_claim(lines, "profile_comparisons.claims", claim)
     return "\n".join(lines) + "\n"
 
 

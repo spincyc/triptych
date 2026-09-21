@@ -319,7 +319,10 @@ class PostconciliarChronologyTests(unittest.TestCase):
         self.assertNotIn(self.owner.relative_to(self.root).as_posix(), paths)
 
     def test_legacy_record_schema_and_projection_are_unchanged(self):
-        found = chronology.dossier(LEGACY)
+        # The production 1962 leaf now opts into an explicit comparison, so
+        # isolate the no-comparison path this compatibility assertion owns.
+        with patch.object(chronology, "_profile_comparisons", return_value=((), ())):
+            found = chronology.dossier(LEGACY)
         self.assertEqual(found.calendar, "roman-1962")
         self.assertEqual(found.appointment_dependencies, ())
         record = chronology.render(found)

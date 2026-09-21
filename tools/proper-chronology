@@ -234,6 +234,18 @@ def loci(arguments: argparse.Namespace) -> dict[str, object]:
             }
             for element in found.elements
         ],
+        "profile_comparisons": [
+            {
+                "key": comparison.key,
+                "element": comparison.element_key,
+                "requested_profile": comparison.requested_profile,
+                "relation": comparison.relation,
+                "subject": comparison.subject,
+                "status": comparison.status,
+                "claims": len(comparison.claims),
+            }
+            for comparison in found.profile_comparisons
+        ],
     }
 
 

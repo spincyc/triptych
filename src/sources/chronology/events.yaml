@@ -5,6 +5,37 @@
 schema: triptych-chronology-events/v1
 
 events:
+  - id: israel.prophets.isaias-traditional-era
+    title: Isaias (ministry in Souvay's traditional account)
+    note: >-
+      A reference era for the prophet named by the received attribution,
+      not a composition date or an occasion assigned to every passage.
+      Replaces the misclassified composition.book-of-isaias assertion.
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis_class: traditional-catholic
+        basis: >-
+          Charles Souvay, Isaias, Catholic Encyclopedia VIII (1910), Life,
+          places the ministry "from the closing year of Ozias, King of Juda",
+          identifies that king's death as "740 B.C.", and writes that
+          "no prophecies appear to be later than 701 B.C." The same account
+          reports disagreement about whether the calling in chapter 6 was
+          the first and preserves the tradition of survival under Manasses.
+        sources:
+          - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08179b-d4ee13fd-article-text
+        note: >-
+          These endpoints orient the attributed prophet's ministry in this
+          source's account; neither is a proved boundary on the writing.
+          The apparent latest prophecy is not the date of his death, which
+          Souvay says is unknown. The tentative final-collection discussion
+          concerns chapters 1-35 only; it supplies no composition date for
+          Isaiah 55 or for the completed book.
+        date:
+          precision: range
+          from: {year: 740, era: bc}
+          to: {year: 701, era: bc}
+          label: "from the closing year of Ozias, King of Juda (740 B.C.); no prophecies appear to be later than 701 B.C."
   # --- life-of-christ ----------------------------------------------------
   - id: life-of-christ.nativity
     title: The Nativity of Our Lord
@@ -11023,6 +11054,34 @@ events:
   # These events carry only catholic-critical-v1 claims. Their bindings can
   # therefore add critical fallback without changing what an explicit
   # catholic-traditional-v1 query answers.
+
+  - id: israel.exile.second-isaias-oracles
+    title: The prophetic activity behind Isaiah 40-55 in the NABRE introduction
+    dates:
+      - profile: catholic-critical-v1
+        disposition: preferred
+        basis_class: catholic-critical
+        basis: >-
+          The official NABRE Isaiah introduction generally attributes chapters
+          40-55 to an anonymous poet who prophesied "toward the end of the
+          Babylonian exile". The complete introduction was inspected in its
+          2026-09-21 web state. It distinguishes this activity from the
+          earlier prophet and from the book's final arrangement.
+        sources:
+          - passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.isaiah-introduction
+        note: >-
+          A critical prophetic horizon, not a composition date. The named
+          return-from-captivity event supplies the end of exile as an anchor;
+          none of its alternative absolute years is imported or calculated.
+          The source's general attribution and its undefined "toward" are
+          retained; no precise year, interval, or completion date is supplied.
+        date:
+          precision: boundary
+          boundary:
+            direction: before
+            anchor: israel.restoration.decree-of-cyrus
+            statement: toward the end of the Babylonian exile
+          label: "toward the end of the Babylonian exile"
 
   - id: israel.divided-kingdom.amos-oracles-under-jeroboam-ii
     title: Amos's delivery of his oracles under Jeroboam II
