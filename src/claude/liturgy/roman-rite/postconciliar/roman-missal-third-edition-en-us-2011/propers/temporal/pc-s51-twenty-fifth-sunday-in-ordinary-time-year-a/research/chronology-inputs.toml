@@ -4,8 +4,11 @@
 # elements are owned by the Week XXV shared owner, Lectionary elements by this
 # leaf. Psalms are declared in Hebrew numbering and converted by the canonical
 # concordance. For the responsorial psalm that is the printed form of the
-# United States witnesses (Psalm 145; the Latin Ordo prints Ps 144). For
-# Communion antiphon A it is a normalization to this leaf's Hebrew-first
+# United States witnesses (Psalm 145; the Latin Ordo prints Ps 144). For the
+# Entrance Antiphon, the official ICEL Antiphonary page identifies Psalm
+# 36[37]:39--40 as its basis; the input records that identification as Hebrew
+# Psalm 37:39--40 without claiming that the composed antiphon adapts the verses.
+# For Communion antiphon A it is a normalization to this leaf's Hebrew-first
 # convention: both witnesses of that Missal element print Vulgate numbering
 # (2002 Latin, "Ps 118, 4-5"; ICEL excerpt, "Ps 118: 4-5"), and the United
 # States Lectionary does not print the antiphon. The resolved locus,
@@ -21,8 +24,9 @@ shared_owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-e
 key = "entrance-antiphon"
 name = "Entrance Antiphon"
 owner = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/25/propers/verified.md"
-citations = []
-non_scriptural_reason = "Composed liturgical oracle. The Missal prints no scriptural locator, and the psalm basis named by the ICEL excerpt's compiler was tested and found thematic only, so no verse is queried and no date is given."
+citations = [
+  { ref = "Psalm 37:39-40", citation = "Psalm 37:39-40", system = "hebrew", kind = "identified-basis" },
+]
 
 [[elements]]
 key = "collect"

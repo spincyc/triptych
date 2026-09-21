@@ -394,7 +394,7 @@ loci = [
 role = "textual-control"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:678012a00e606f6bd2721e6b535bfe308442f481a9353a80f88c343ba15d3235"
-context = "Artifact p. 87 (printed p. 79): no citation on the Entrance antiphon, Ps 118: 4-5 and Jn 10: 14 on the two Communion antiphons, their either/or structure, and the compiler's sub-line naming Psalm 36[37]: 39-40 as the Entrance antiphon's basis. Corroborates the Latin; no approved English is retained. Passage registered on this re-entry. Re-read on 2026-09-19 on the research re-entry from a copy fetched whole over verified TLS and matched to the registered SHA-256 before any page was read."
+context = "Artifact p. 87 (printed p. 79): no citation on the Entrance antiphon, Ps 118: 4-5 and Jn 10: 14 on the two Communion antiphons, their either/or structure, and the official Antiphonary's sub-line identifying Psalm 36[37]: 39-40 as the Entrance antiphon's basis. Corroborates the Latin; no approved English is retained. Passage registered on this re-entry. Re-read on 2026-09-19 on the research re-entry from a copy fetched whole over verified TLS and matched to the registered SHA-256 before any page was read."
 
 [[bindings]]
 source_id = "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.dominica-xxv-per-annum-133"
@@ -776,7 +776,7 @@ context = "The dated USCCB readings page for 20 September 2026: Lectionary 133 a
 
 # --- Sources of the Scripture chronology corpus's answers (second re-entry) ---
 #
-# The page-2 Date column rests on these nine cited records. The role is
+# These are the earlier corpus pins; additional current introduction bindings below support the repaired dossier. The role is
 # `context` because the library's role vocabulary has no chronology role and
 # none of them witnesses an appointed text or its reception: each is the dated
 # reference work the corpus cites for a composition or event claim. Line
@@ -786,7 +786,7 @@ context = "The dated USCCB readings page for 20 September 2026: Lectionary 133 a
 source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08179b-d4ee13fd"
 role = "context"
 states = ["cataloged"]
-context = "Catholic Encyclopedia, 'Isaias' (Souvay, 1910): the record the Scripture chronology corpus cites for the first reading's composition claim, 740-701 B.C., in research/chronology.toml. Bound because the page-2 Date column rests on it. The exact New Advent delivery is remote and was not re-obtained, so no state beyond cataloged is claimed; the article was read in its tracked article-text extraction, bound next."
+context = "Catholic Encyclopedia, 'Isaias' (Souvay, 1910): the record the Scripture chronology corpus cites for the first reading's traditional-attribution ministry era, not a composition claim, in research/chronology.toml. Bound because the page-2 Date column rests on it. The exact New Advent delivery is remote and was not re-obtained, so no state beyond cataloged is claimed; the article was read in its tracked article-text extraction, bound next."
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08179b-d4ee13fd-article-text"
@@ -798,7 +798,7 @@ loci = [
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:f4d698ee3bc68e9257a7106cb2a663c8b5a4d2c78d05e3b3ad9cc535e938c5c8"
-context = "The tracked article-text extraction of the registered delivery, hashed and matched to its record (SHA-256 and byte size) before it was read on the research stage's second re-entry. The corpus label for the first reading is a composite, as the corpus's own basis and note say: its first phrase stands verbatim on line 9, its second on line 11, and the parenthesis '(740 B.C.)' is taken from line 11, where the article attaches that year to the death of Ozias. Every part stands in the article; the label is not one continuous sentence of it. The two years date the prophet's ministry. The article assigns no year to the writing of the collection or to chapters xl-lxvi, in which Isaiah 55 lies. It places liv-lv in its 'Second Isaias' section, reports as 'the contention of most of the modern non-Catholic scholars' that those chapters come from an author living towards the close of the Babylonian Captivity, and sets against it the Biblical Commission's decision that their exilic standpoint does not prove another author. This stage supplies no date from it."
+context = "The tracked article-text extraction of the registered delivery, hashed and matched to its record (SHA-256 and byte size) before it was read on the research stage's second re-entry. The corpus label for the first reading is a composite, as the corpus's own basis and note say: its first phrase stands verbatim on line 9, its second on line 11, and the parenthesis '(740 B.C.)' is taken from line 11, where the article attaches that year to the death of Ozias. Every part stands in the article; the label is not one continuous sentence of it. The two years date the prophet's ministry. The article assigns no year to the writing of the collection or to chapters xl-lxvi, in which Isaiah 55 lies. It places liv-lv in its 'Second Isaias' section, reports as 'the contention of most of the modern non-Catholic scholars' that those chapters come from an author living towards the close of the Babylonian Captivity, and sets against it the Biblical Commission's decision that their exilic standpoint does not prove another author. The current repair uses the corrected traditional-attribution relation, never a composition date. Reinspected for the 21 September 2026 consumer authoring repair at Life, lines 7-11; First Isaias, line 33; Second Isaias, lines 35-39. Ministry era and apparent end, not composition or death; the tentative collection hypothesis concerns chapters 1-35. The restoration horizon and reported 1908 attribution response do not date the writing of Isaiah 55. Hash and extent matched; no new facsimile collation or independent review."
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8"
@@ -815,7 +815,7 @@ loci = [
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:83263e9b6b864dbc2776538285f276ac7740d8e39098d077148ce421ca998f4f"
-context = "The tracked article-text extraction of the registered delivery, hashed and matched to its record before it was read on the research stage's second re-entry. Both corpus labels stand verbatim in the one sentence of line 45, which the article introduces as a fixing of the chief dates that takes 'all certain or probable data' into account. The article's second-mission section is headed with Acts 15:36-18:22, the range in which Acts 16:14 falls, and places Philippi in it. It does not name Lydia."
+context = "The tracked article-text extraction of the registered delivery, hashed and matched to its record before it was read on the research stage's second re-entry. Both corpus labels stand verbatim in the one sentence of line 45, which the article introduces as a fixing of the chief dates that takes 'all certain or probable data' into account. The article's second-mission section is headed with Acts 15:36-18:22, the range in which Acts 16:14 falls, and places Philippi in it. It does not name Lydia. Reinspected for the 21 September 2026 consumer authoring repair at Chronology, line 45; Second mission, lines 105-111. Captivity-letter chronology and second-mission interval; Philippi is placed in that mission but Lydia is not named in this section. Hash and extent matched; no new facsimile collation or independent review."
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12008a-1e39e824"
@@ -831,7 +831,7 @@ loci = [
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:2bf6d48ad3c4135e9ea5562cb4870a8eb49aec0099aa2af1f735f7a16c4b0711"
-context = "The tracked article-text extraction of the registered delivery, hashed and matched to its record before it was read on the research stage's second re-entry. The corpus label stands verbatim on line 55. The same paragraph says critics do not agree whether the letter was written at the beginning or the end of the Roman sojourn, and that the author holds for the end. The article prints the ligature in 'Caesarea'; the locus above spells it out."
+context = "The tracked article-text extraction of the registered delivery, hashed and matched to its record before it was read on the research stage's second re-entry. The corpus label stands verbatim on line 55. The same paragraph says critics do not agree whether the letter was written at the beginning or the end of the Roman sojourn, and that the author holds for the end. The article prints the ligature in 'Caesarea'; the locus above spells it out. Reinspected for the 21 September 2026 consumer authoring repair at Place and date, lines 53-55. Roman captivity is the author's received account, addressed to Philippi rather than written there; early versus late within captivity remains disputed. Hash and extent matched; no new facsimile collation or independent review."
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-1.new-york-1907.newadvent-01117a-582c8526"
@@ -847,7 +847,7 @@ loci = [
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:9a72b7ba39f49b911757d500055a42e274e143ee2b6e9b0383efbd024ae52d1a"
-context = "The tracked article-text extraction of the registered delivery, hashed and matched to its record before it was read on the research stage's second re-entry. The corpus label stands verbatim on line 71. The paragraph claims only 'a probable date for the completion of the book', reckoned as two years after Paul's coming to Rome, which it places in 62."
+context = "The tracked article-text extraction of the registered delivery, hashed and matched to its record before it was read on the research stage's second re-entry. The corpus label stands verbatim on line 71. The paragraph claims only 'a probable date for the completion of the book', reckoned as two years after Paul's coming to Rome, which it places in 62. Reinspected for the 21 September 2026 consumer authoring repair at Date of composition, lines 69-71. Completion is explicitly probable, within Paul's Roman captivity, distinct from the Philippi event. Hash and extent matched; no new facsimile collation or independent review."
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04"
@@ -863,7 +863,7 @@ loci = [
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:f8dd64daaeb2a33bcb9843f89a3b9572d7dda801f56a3c8092c534c536cc7eed"
-context = "The tracked article-text extraction of the registered delivery, hashed and matched to its record before it was read on the research stage's second re-entry. Both phrases of the corpus label stand verbatim in one sentence of line 215; the label gives them in the order beginning-then-end, joined by an ellipsis, where the sentence gives the end first. The sentence has just put the start of the third journey in the summer of 55, so 'probably in 54' is the end of the second. The article gives the journey's extent as Acts 15:36-18:22, in which Acts 16:14 falls. The paragraph was read from its opening through the dating of the Council of Jerusalem."
+context = "The tracked article-text extraction of the registered delivery, hashed and matched to its record before it was read on the research stage's second re-entry. Both phrases of the corpus label stand verbatim in one sentence of line 215; the label gives them in the order beginning-then-end, joined by an ellipsis, where the sentence gives the end first. The sentence has just put the start of the third journey in the summer of 55, so 'probably in 54' is the end of the second. The article gives the journey's extent as Acts 15:36-18:22, in which Acts 16:14 falls. The paragraph was read from its opening through the dating of the Council of Jerusalem. Reinspected for the 21 September 2026 consumer authoring repair at The apostles, lines 211-215. The qualified second-journey interval must not become an exact Lydia-conversion date. Hash and extent matched; no new facsimile collation or independent review."
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef"
@@ -880,7 +880,7 @@ loci = [
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:a5698ebe70292d9dc1c32df2c8cc440778cb8d0dc2f840f11d127482a4c4d5dd"
-context = "The tracked article-text extraction of the registered delivery, hashed and matched to its record before it was read on the research stage's second re-entry. All five corpus labels stand verbatim, four on line 201 and one on line 203; both paragraphs were read whole. The first paragraph opens by saying the ancient writers are at variance and the second that opinion in the author's day is divided, and the article settles on none of the five figures; of the testimony behind 64-67 it says the text's difficulties prevent 'any positive conclusion'. That agrees with the corpus's disposition of every claim as disputed."
+context = "The tracked article-text extraction of the registered delivery, hashed and matched to its record before it was read on the research stage's second re-entry. All five corpus labels stand verbatim, four on line 201 and one on line 203; both paragraphs were read whole. The first paragraph opens by saying the ancient writers are at variance and the second that opinion in the author's day is divided, and the article settles on none of the five figures; of the testimony behind 64-67 it says the text's difficulties prevent 'any positive conclusion'. That agrees with the corpus's disposition of every claim as disputed. Reinspected for the 21 September 2026 consumer authoring repair at Destination of the Gospel, lines 195-197; Date and place of composition, lines 199-203. The five alternatives retain unequal grounds: Ascension reckoning, unreliable dispersal tradition, conditional later departure, inconclusive Irenaeus, and Catholic opinion reported in 1911. Judea and converted Jewish readers are reported publication and audience locations, not the parable's scene. Hash and extent matched; no new facsimile collation or independent review."
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c"
@@ -898,7 +898,7 @@ loci = [
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:0a5a9e3b92db7d3a9953343ff8b1a04ec7baa2a01adbf31eadc28dc4e8f410d4"
-context = "The tracked article-text extraction of the registered delivery, hashed and matched to its record before it was read on the research stage's second re-entry, lines 25-35. The labels 'about the year 50' and 'from the year 90 to 100 (approximately)' stand verbatim. The figure 38-45 does not occur in this article: the corpus's own note says it cites Durand on that claim only for the caution on line 33, and the label itself is Jacquier's. 'About the year 50' is said of Matthew's original Aramaic text; of its Greek rendering the article says nothing definite is known."
+context = "The tracked article-text extraction of the registered delivery, hashed and matched to its record before it was read on the research stage's second re-entry, lines 25-35. The labels 'about the year 50' and 'from the year 90 to 100 (approximately)' stand verbatim. The figure 38-45 does not occur in this article: the corpus's own note says it cites Durand on that claim only for the caution on line 33, and the label itself is Jacquier's. 'About the year 50' is said of Matthew's original Aramaic text; of its Greek rendering the article says nothing definite is known. Reinspected for the 21 September 2026 consumer authoring repair at Origin, lines 25-35. Matthew's approximate date concerns the Aramaic original; the Greek rendering is undated. The Johannine range is approximate. Durand does not print Jacquier's earliest Matthew interval. Hash and extent matched; no new facsimile collation or independent review."
 
 [[bindings]]
 source_id = "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08438a-7620a92c"
@@ -914,11 +914,67 @@ loci = [
 role = "context"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:2d7748398f07ac0668c1cedf99f2140fdcbbeee432e46056d379c5b1e6d4dcfb"
-context = "The tracked article-text extraction of the registered delivery, hashed and matched to its record before it was read on the research stage's second re-entry. The corpus label stands verbatim on line 95, in a sentence the article introduces as 'the general opinion' and prefaces with the admission that 'we possess no certain historical information' on the date. The upper bound of the corpus's interval is the article's 'last decade of the first century' in the same sentence."
+context = "The tracked article-text extraction of the registered delivery, hashed and matched to its record before it was read on the research stage's second re-entry. The corpus label stands verbatim on line 95, in a sentence the article introduces as 'the general opinion' and prefaces with the admission that 'we possess no certain historical information' on the date. The upper bound of the corpus's interval is the article's 'last decade of the first century' in the same sentence. Reinspected for the 21 September 2026 consumer authoring repair at Circumstances of the composition, lines 91-111. The Gospel date is general opinion after the admission of no certain historical information. Ephesus and Christians in Asia Minor are reported writing and audience locations, not the scene of John 10. Hash and extent matched; no new facsimile collation or independent review."
 
 [[bindings]]
 source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"
 loci = ["Psalms introduction"]
 role = "context"
 states = ["cataloged"]
-context = "The protected introduction the Scripture chronology corpus cites for the one composition claim of the responsorial psalm and of Communion antiphon A, the whole-Psalter boundary 'before c. 165 B.C.' in research/chronology.toml. Bound because the page-2 Date column rests on it. Catalogued only, with no fingerprint: the registered artifact of 2026-07-28 is restricted and unretained, and this stage did not obtain its bytes. What this stage read, on 2026-09-19, was the page's current public delivery, which differs from the registered bytes in size and hash and is unregistered and unretained (research/scope.md sections 5 and 8). Read there at the sentence on dating: in substance the corpus label stands, as the corpus's own summary of protected prose and not as the source's wording. Nothing of the introduction is quoted in this leaf."
+context = "The protected introduction the Scripture chronology corpus cites for the one composition claim of the responsorial psalm and of Communion antiphon A, the whole-Psalter boundary 'before c. 165 B.C.' in research/chronology.toml. Bound because the page-2 Date column rests on it. Catalogued only, with no fingerprint: the registered artifact of 2026-07-28 is restricted and unretained, and this stage did not obtain its bytes. What the earlier stage read, on 2026-09-19, was the page's current public delivery, which differs from the registered bytes in size and hash and is unregistered and unretained (research/scope.md sections 5 and 8). Read there at the sentence on dating: in substance the corpus label stands, as the corpus's own summary of protected prose and not as the source's wording. Nothing of the introduction is quoted in this leaf."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.isaiah-introduction"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "The complete introduction generally attributes chapters 40-55 to an anonymous poet prophesying near the end of exile: prophecy-given, not composition or final formation. No absolute return year or exact writing site is asserted. Read on 21 September 2026 from the already acquired response and deterministic extraction; exact HTML hash and extent matched. Protected payloads remain untracked. Author check, not independent consumer acceptance."
+loci = ["Isaiah introduction, especially the final two prose paragraphs before the outline"]
+source_fingerprint = "sha256:fa0ac0484eb3790c7e3447c55fe8b6e344caaefd599a0cad4e71a927f698f2e3"
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.psalms-introduction"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "The complete introduction's pre-Maccabean limit supports the common composition bound, not a secure individual date or assembly date. This retrieval corroborates rather than replaces the older corpus pin. Read on 21 September 2026 from the already acquired response and deterministic extraction; exact HTML hash and extent matched. Protected payloads remain untracked. Author check, not independent consumer acceptance."
+loci = ["Psalms introduction, second paragraph and the following account of literary forms"]
+source_fingerprint = "sha256:092abdeb9fe85d95c0ce47d277b6fcae28f4b72263ba0869b81de09ac8ac0cf5"
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.matthew-introduction"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "The complete introduction's probabilistic scholarly account supports the post-A.D. 70 composition boundary, probably at least a decade later, with no closing year. It describes an unknown author and proposes Antioch in Syria as plausible for Jewish and Gentile Christians. This is separately identified critical evidence; traditional default alternatives remain unchanged. Read on 21 September 2026 from the already acquired response and deterministic extraction; exact HTML hash and extent matched. Protected payloads remain untracked. Author check, not independent consumer acceptance."
+loci = ["Matthew introduction, final five prose paragraphs on authorship, sources, composition and place; narrative overview of chapters 19-25"]
+source_fingerprint = "sha256:31bd0451bc1d27c0a08ce7c93a7e9c294e6b390e99204ebbe59f3b401c9997dd"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-27-isaias-7c9a1228"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Additional dossier context inspected in the retained Douay-Rheims verse text on 21 September 2026: book address or narrative geography, not new numerical chronology."
+loci = ["Is.1.1"]
+source_fingerprint = "sha256:41639d5457be3a0a6446fe59d3c59c7561aacfef7bc43089f650a7353452bbf8"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-47-matthew-dd0ba183"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Additional dossier context inspected in the retained Douay-Rheims verse text on 21 September 2026: book address or narrative geography, not new numerical chronology."
+loci = ["Matt.19.1-2"]
+source_fingerprint = "sha256:ed47ecb092ecb6256fb84450e8ad39d0debf2efe6c65442199a76a7fb1a8b98b"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-50-john-27b8f3ed"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Additional dossier context inspected in the retained Douay-Rheims verse text on 21 September 2026: book address or narrative geography, not new numerical chronology."
+loci = ["John.9.39-41"]
+source_fingerprint = "sha256:4498ea55e49e3577649969ed0bcf456423b8aec2f9edda55586c37190dfe77a4"
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-51-acts-73f7a420"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+context = "Additional dossier context inspected in the retained Douay-Rheims verse text on 21 September 2026: book address or narrative geography, not new numerical chronology."
+loci = ["Acts.1.1"]
+source_fingerprint = "sha256:dd87be0f13bd98112feedd55e3532a9a4dcbbfe28dee45371197dbc842acd2da"

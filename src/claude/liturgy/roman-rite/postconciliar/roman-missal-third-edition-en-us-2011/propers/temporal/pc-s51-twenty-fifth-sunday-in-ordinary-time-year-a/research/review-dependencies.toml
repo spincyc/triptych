@@ -21,11 +21,13 @@
 # - The five authored Scripture-chronology files are the corpus whose answer is
 #   research/chronology.toml and research/chronology-annotations.tex. Every
 #   date the concise opening may print comes from them and from nowhere else.
-#   The nine source records the corpus cites for those answers (eight Catholic
-#   Encyclopedia articles and the NABRE Psalms introduction) are not declared
+#   The chronology sources (eight Catholic Encyclopedia articles, their
+#   extractions, the older Psalms pin and the three 21 September NABRE introductions) are not declared
 #   here because each is bound by source ID in research/source-bindings.toml,
 #   which seals the cited record, its ancestry and, for the eight articles, the
 #   tracked article text this research read (research/scope.md section 8).
+#   Current repair bindings seal the new restricted introduction identities;
+#   protected response bytes stay outside the seal and publications.
 # - The Catholic Encyclopedia rights record is the one place that settles the
 #   public-domain standing of those eight article texts, which this leaf's
 #   records quote in short phrases. Each artifact record names it only in
@@ -40,7 +42,8 @@
 #   chapter files, and the verse texts of three editions that
 #   scripts/_psalter.py and scripts/_deuterocanon.py read to build the Psalter
 #   concordance behind the Hebrew-to-Vulgate conversions this leaf depends on
-#   (Psalm 145 to 144, Psalm 119:4-5 to 118:4-5): the Douay-Rheims (Challoner),
+#   (Psalm 37:39-40 to 36:39-40, Psalm 145 to 144, and Psalm 119:4-5 to
+#   118:4-5): the Douay-Rheims (Challoner),
 #   the Revised Version and the World English Bible Catholic edition. Each is
 #   declared by edition directory, the smallest owner that covers every verse
 #   file the computation opens. The Douay directory is also where the research

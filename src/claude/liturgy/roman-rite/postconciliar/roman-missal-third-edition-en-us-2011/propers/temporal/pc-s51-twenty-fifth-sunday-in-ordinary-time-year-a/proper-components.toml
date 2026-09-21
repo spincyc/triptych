@@ -1,4 +1,5 @@
 schema = 2
+format_contract = "propers-format-v1"
 record_type = "proper-components"
 document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"
 calendar = "postconciliar"
@@ -106,7 +107,7 @@ kind = "front-matter"
 path = "sections/80-date-location.tex"
 modes = ["research"]
 depends_on = []
-element_keys = ["first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel", "communion-antiphon-a", "communion-antiphon-b"]
+element_keys = ["entrance-antiphon", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel", "communion-antiphon-a", "communion-antiphon-b"]
 references = ["format.tex", "research/chronology-annotations.tex", "research/chronology.toml", "research/scope.md"]
 
 [[components]]
@@ -153,7 +154,7 @@ kind = "front-matter"
 path = "sections/concise/03-date-location.tex"
 modes = ["synthesis"]
 depends_on = []
-element_keys = ["first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel", "communion-antiphon-a", "communion-antiphon-b"]
+element_keys = ["entrance-antiphon", "first-reading", "responsorial-psalm", "second-reading", "gospel-acclamation", "gospel", "communion-antiphon-a", "communion-antiphon-b"]
 references = ["format.tex", "research/chronology-annotations.tex", "research/chronology.toml"]
 
 [[components]]

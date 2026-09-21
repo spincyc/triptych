@@ -103,7 +103,7 @@ Latin books and the Douay–Rheims use, in parentheses.
 
 | Order | Key | Element and exact locus | Liturgical place, extent and boundary | Status |
 | ---: | --- | --- | --- | --- |
-| 1 | `entrance-antiphon` | Entrance Antiphon *Salus populi ego sum*; Week XXV owner | Introductory Rites, at the entrance. A composed first-person oracle with no printed scriptural locator in the Latin Missal or in the ICEL antiphon excerpt; it is not a verse of Scripture | required |
+| 1 | `entrance-antiphon` | Entrance Antiphon *Salus populi ego sum*; Week XXV owner | Introductory Rites, at the entrance. A composed first-person oracle with no locator in the Latin Missal; the official ICEL Antiphonary identifies Psalm 36[37]:39–40 as its basis. It is neither the appointed wording of those verses nor an adaptation of them | required |
 | 2 | `collect` | Collect *Deus, qui sacrae legis omnia constituta*; Week XXV owner | Concludes the Introductory Rites, after the Gloria; long conclusion | required |
 | 3 | `first-reading` | Isaiah 55:6–9; Lectionary no. 133 | Liturgy of the Word, first reading. Whole verses; one form only | required |
 | 4 | `responsorial-psalm` | Psalm 145 (144):2–3, 8–9, 17–18, response from v. 18a; Lectionary no. 133 | After the first reading. Three two-verse strophes; the response is the first half of v. 18 only. The verse numbers are the same in both numberings | required |
@@ -128,8 +128,9 @@ were read at every boundary verse. Psalm 118:4–5 in both agrees with antiphon
 A clause for clause. Matthew 20:16 in both carries the second sentence that the
 appointment excludes. Philippians 1:20 in both begins before the appointed
 clause and 1:27 runs on beyond it. Acts 16:14 in both is third-person narrative. Psalm 36:39–40,
-which the ICEL excerpt's compiler names as the Entrance antiphon's basis, shares
-its theme and little of its wording. These are observations about extent; the
+which the official ICEL Antiphonary identifies as the Entrance antiphon's
+basis, shares its theme and little of its wording; the relation is therefore
+`identified-basis`, not `adaptation`. These are observations about extent; the
 textual history of each is left to research.
 
 **Relationship classes, preliminary.** Under the 1981 *Praenotanda* nos.

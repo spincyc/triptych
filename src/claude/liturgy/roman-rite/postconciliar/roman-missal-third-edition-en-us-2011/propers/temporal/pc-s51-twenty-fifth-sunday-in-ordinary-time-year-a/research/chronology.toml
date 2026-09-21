@@ -30,9 +30,14 @@
 # guide states that absence rather than filling it. `nonuniform` means its loci
 # have chronology but share no one assertion an element-wide Date cell could
 # truthfully print.
+#
+# `profile_comparisons` are separately requested evidence-profile answers.
+# They never alter `profile`, `claims`, or `publication_claims`. Each row names
+# the exact requested evidence profile, element, relation, subject, returned
+# leaf-profile claim and source ids; its input file is fingerprinted below.
 
 
-schema = 2
+schema = 3
 record_type = "proper-chronology"
 document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"
 calendar = "postconciliar"
@@ -42,7 +47,7 @@ profile = "catholic-comprehensive-v1"
 formulary = "appointed"
 formulary_reason = ""
 generated_by = "tools/tpt proper-chronology record"
-appointment_notes = ["entrance-antiphon: Composed liturgical oracle. The Missal prints no scriptural locator, and the psalm basis named by the ICEL excerpt's compiler was tested and found thematic only, so no verse is queried and no date is given.", "collect: Composed oration. Its allusion to the twofold commandment of love is a loose echo, which the page-2 rule excludes.", "first-reading: Isaiah 55:6-9; appointed; vulgate numbering; canonical verse queries, not appointed wording.", "responsorial-psalm: Psalm 145:2-3, 8-9, 17-18; appointed; hebrew numbering; canonical verse queries, not appointed wording.", "responsorial-psalm: Psalm 145:18a; response; hebrew numbering; whole-verse query envelope, not subverse chronology or appointed wording.", "second-reading: Philippians 1:20c-24, 27a; appointed; vulgate numbering; whole-verse query envelope, not subverse chronology or appointed wording.", "gospel-acclamation: Cf. Acts 16:14b; adaptation; vulgate numbering; whole-verse query envelope, not subverse chronology or appointed wording.", "gospel: Matthew 20:1-16a; appointed; vulgate numbering; whole-verse query envelope, not subverse chronology or appointed wording.", "prayer-over-offerings: Composed oration with no scriptural locator.", "communion-antiphon-a: Psalm 119:4-5; appointed; hebrew numbering; canonical verse queries, not appointed wording.", "communion-antiphon-b: John 10:14; appointed; vulgate numbering; canonical verse queries, not appointed wording.", "prayer-after-communion: Composed oration with no scriptural locator."]
+appointment_notes = ["entrance-antiphon: Psalm 37:39-40; identified-basis; hebrew numbering; canonical verse queries, not appointed wording.", "collect: Composed oration. Its allusion to the twofold commandment of love is a loose echo, which the page-2 rule excludes.", "first-reading: Isaiah 55:6-9; appointed; vulgate numbering; canonical verse queries, not appointed wording.", "responsorial-psalm: Psalm 145:2-3, 8-9, 17-18; appointed; hebrew numbering; canonical verse queries, not appointed wording.", "responsorial-psalm: Psalm 145:18a; response; hebrew numbering; whole-verse query envelope, not subverse chronology or appointed wording.", "second-reading: Philippians 1:20c-24, 27a; appointed; vulgate numbering; whole-verse query envelope, not subverse chronology or appointed wording.", "gospel-acclamation: Cf. Acts 16:14b; adaptation; vulgate numbering; whole-verse query envelope, not subverse chronology or appointed wording.", "gospel: Matthew 20:1-16a; appointed; vulgate numbering; whole-verse query envelope, not subverse chronology or appointed wording.", "prayer-over-offerings: Composed oration with no scriptural locator.", "communion-antiphon-a: Psalm 119:4-5; appointed; hebrew numbering; canonical verse queries, not appointed wording.", "communion-antiphon-b: John 10:14; appointed; vulgate numbering; canonical verse queries, not appointed wording.", "prayer-after-communion: Composed oration with no scriptural locator."]
 
 [[appointment_dependencies]]
 path = "guidance/liturgy/postconciliar-propers-registry.md"
@@ -58,29 +63,79 @@ sha256 = "954e8dc28912962cc6ded1c0eb83792ff8c1348fa1047d522a2195caab51bc8b"
 
 [[appointment_dependencies]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/instance/manifest.md"
-sha256 = "e9c676d49b8a6574847545c585a046b53df1b049ab37c95660a78e584b142b3a"
+sha256 = "26c7474671bf6333db4b5743e1a7f398d4000af3999d5026007db2857766b4df"
 
 [[appointment_dependencies]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/propers/verified.md"
-sha256 = "dd96d6d6a3e81d76e2e209875e0ffceb5b6be42484d407f8abe0cc0edcf83941"
+sha256 = "65abc5ef3e93154644af177fd1250c02b4c122f18fb420445fa2329af327b42e"
 
 [[appointment_dependencies]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/chronology-inputs.toml"
-sha256 = "7d9c123e2ea24a70321225d4c9c058406722c9f21a06d12c38c8aece614f6286"
+sha256 = "3c888dcb58db4bc66022b0cf17a8a1a4534a3f77ddea81c452775e2b83b7605d"
 
 [[appointment_dependencies]]
 path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/25/propers/verified.md"
-sha256 = "c3f4e8b30ba281d483340510be3f7cb31b84f762725634b4213425ce5822f906"
+sha256 = "1bf66d5abe631ac2fc00a3072ce49f13ac499b54d9d5e4adc120055567a34474"
+
+[[comparison_dependencies]]
+path = "src/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/chronology-profile-comparisons.toml"
+sha256 = "a39e84965db1fc5b391c2eb3d1923b61ae7b144b947eb9da9ab70031d3358c30"
 
 [[elements]]
 key = "entrance-antiphon"
 name = "Entrance Antiphon"
-refs = []
-loci = []
-status = ""
+refs = ["Psalm 37:39-40"]
+loci = ["Ps.36.39", "Ps.36.40"]
+status = "composition-only"
 reason = ""
-publication_status = ""
+publication_status = "composition-only"
 publication_reason = ""
+
+[[elements.claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.claims.reaches]]
+locus = "Ps.36.39"
+inherited = true
+scope = "Ps"
+
+[[elements.claims.reaches]]
+locus = "Ps.36.40"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims]]
+relation = "composition"
+subject = "critical.psalms.latest-composition-boundary"
+title = "The latest composition boundary shared by the Psalms"
+label = "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely"
+date = "before c. 165 B.C."
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"]
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.36.39"
+inherited = true
+scope = "Ps"
+
+[[elements.publication_claims.reaches]]
+locus = "Ps.36.40"
+inherited = true
+scope = "Ps"
 
 [[elements]]
 key = "collect"
@@ -97,15 +152,48 @@ key = "first-reading"
 name = "First Reading"
 refs = ["Isaiah 55:6-9"]
 loci = ["Is.55.6", "Is.55.7", "Is.55.8", "Is.55.9"]
-status = "composition-only"
+status = "dated"
 reason = ""
-publication_status = "composition-only"
+publication_status = "dated"
 publication_reason = ""
 
 [[elements.claims]]
-relation = "composition"
-subject = "composition.book-of-isaias"
-title = "The Book of Isaias"
+relation = "prophecy-given"
+subject = "israel.exile.second-isaias-oracles"
+title = "The prophetic activity behind Isaiah 40-55 in the NABRE introduction"
+label = "toward the end of the Babylonian exile"
+date = "toward the end of the Babylonian exile"
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.isaiah-introduction"]
+
+[[elements.claims.reaches]]
+locus = "Is.55.6"
+inherited = true
+scope = "Is.40 Is.41 Is.42 Is.43 Is.44 Is.45 Is.46 Is.47 Is.48 Is.49 Is.50 Is.51 Is.52 Is.53 Is.54 Is.55"
+
+[[elements.claims.reaches]]
+locus = "Is.55.7"
+inherited = true
+scope = "Is.40 Is.41 Is.42 Is.43 Is.44 Is.45 Is.46 Is.47 Is.48 Is.49 Is.50 Is.51 Is.52 Is.53 Is.54 Is.55"
+
+[[elements.claims.reaches]]
+locus = "Is.55.8"
+inherited = true
+scope = "Is.40 Is.41 Is.42 Is.43 Is.44 Is.45 Is.46 Is.47 Is.48 Is.49 Is.50 Is.51 Is.52 Is.53 Is.54 Is.55"
+
+[[elements.claims.reaches]]
+locus = "Is.55.9"
+inherited = true
+scope = "Is.40 Is.41 Is.42 Is.43 Is.44 Is.45 Is.46 Is.47 Is.48 Is.49 Is.50 Is.51 Is.52 Is.53 Is.54 Is.55"
+
+[[elements.claims]]
+relation = "traditional-attribution"
+subject = "israel.prophets.isaias-traditional-era"
+title = "Isaias (ministry in Souvay's traditional account)"
 label = "from the closing year of Ozias, King of Juda (740 B.C.); no prophecies appear to be later than 701 B.C."
 date = "740 B.C.-701 B.C."
 precision = "range"
@@ -113,7 +201,7 @@ disposition = "preferred"
 answerability = "answerable"
 basis_class = "traditional-catholic"
 profile = "catholic-traditional-v1"
-sources = ["artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08179b-d4ee13fd"]
+sources = ["artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08179b-d4ee13fd-article-text"]
 
 [[elements.claims.reaches]]
 locus = "Is.55.6"
@@ -136,9 +224,42 @@ inherited = true
 scope = "Is"
 
 [[elements.publication_claims]]
-relation = "composition"
-subject = "composition.book-of-isaias"
-title = "The Book of Isaias"
+relation = "prophecy-given"
+subject = "israel.exile.second-isaias-oracles"
+title = "The prophetic activity behind Isaiah 40-55 in the NABRE introduction"
+label = "toward the end of the Babylonian exile"
+date = "toward the end of the Babylonian exile"
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.isaiah-introduction"]
+
+[[elements.publication_claims.reaches]]
+locus = "Is.55.6"
+inherited = true
+scope = "Is.40 Is.41 Is.42 Is.43 Is.44 Is.45 Is.46 Is.47 Is.48 Is.49 Is.50 Is.51 Is.52 Is.53 Is.54 Is.55"
+
+[[elements.publication_claims.reaches]]
+locus = "Is.55.7"
+inherited = true
+scope = "Is.40 Is.41 Is.42 Is.43 Is.44 Is.45 Is.46 Is.47 Is.48 Is.49 Is.50 Is.51 Is.52 Is.53 Is.54 Is.55"
+
+[[elements.publication_claims.reaches]]
+locus = "Is.55.8"
+inherited = true
+scope = "Is.40 Is.41 Is.42 Is.43 Is.44 Is.45 Is.46 Is.47 Is.48 Is.49 Is.50 Is.51 Is.52 Is.53 Is.54 Is.55"
+
+[[elements.publication_claims.reaches]]
+locus = "Is.55.9"
+inherited = true
+scope = "Is.40 Is.41 Is.42 Is.43 Is.44 Is.45 Is.46 Is.47 Is.48 Is.49 Is.50 Is.51 Is.52 Is.53 Is.54 Is.55"
+
+[[elements.publication_claims]]
+relation = "traditional-attribution"
+subject = "israel.prophets.isaias-traditional-era"
+title = "Isaias (ministry in Souvay's traditional account)"
 label = "from the closing year of Ozias, King of Juda (740 B.C.); no prophecies appear to be later than 701 B.C."
 date = "740 B.C.-701 B.C."
 precision = "range"
@@ -146,7 +267,7 @@ disposition = "preferred"
 answerability = "answerable"
 basis_class = "traditional-catholic"
 profile = "catholic-traditional-v1"
-sources = ["artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08179b-d4ee13fd"]
+sources = ["artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08179b-d4ee13fd-article-text"]
 
 [[elements.publication_claims.reaches]]
 locus = "Is.55.6"
@@ -1847,3 +1968,105 @@ status = ""
 reason = ""
 publication_status = ""
 publication_reason = ""
+
+[[profile_comparisons]]
+key = "critical-matthew-composition"
+element_key = "gospel"
+requested_profile = "catholic-critical-v1"
+relation = "composition"
+subject = "critical.gospel-of-matthew"
+status = "composition-only"
+reason = ""
+
+[[profile_comparisons.claims]]
+relation = "composition"
+subject = "critical.gospel-of-matthew"
+title = "The Greek Gospel of Matthew in the NABRE introduction"
+label = "post-A.D. 70 date"
+date = "post-A.D. 70 date"
+precision = "boundary"
+disposition = "preferred"
+answerability = "answerable"
+basis_class = "catholic-critical"
+profile = "catholic-critical-v1"
+sources = ["passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-09-21.matthew-introduction"]
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.20.1"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.20.10"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.20.11"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.20.12"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.20.13"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.20.14"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.20.15"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.20.16"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.20.2"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.20.3"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.20.4"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.20.5"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.20.6"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.20.7"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.20.8"
+inherited = true
+scope = "Matt"
+
+[[profile_comparisons.claims.reaches]]
+locus = "Matt.20.9"
+inherited = true
+scope = "Matt"

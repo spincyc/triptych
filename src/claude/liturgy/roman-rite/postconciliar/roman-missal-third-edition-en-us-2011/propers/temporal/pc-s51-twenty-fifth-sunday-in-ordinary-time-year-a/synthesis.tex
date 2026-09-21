@@ -5,6 +5,7 @@
 % auxiliary file by the zref markers each opening component carries. No cover
 % or contents page stands before them.
 \input{common/preamble}
+\input{common/propers-format}
 \input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/format}
 
 \hypersetup{
@@ -13,14 +14,10 @@
 }
 
 \begin{document}
-\thispagestyle{plain}
 
-\begin{center}
-{\Large\bfseries The Twenty-fifth Sunday in Ordinary Time, Year A\par}
-\vspace{0.25em}
-{\footnotesize\scshape Roman Missal, Third Edition \quad\textperiodcentered\quad Lectionary for Mass, no.~133 \quad\textperiodcentered\quad {\normalfont\footnotesize\itshape three interpretations of the proper, compared}\par}
-\end{center}
-\vspace{-0.8em}
+\propertitle{The Twenty-fifth Sunday in Ordinary Time, Year A}{}
+{Roman Missal, Third Edition \quad\textperiodcentered\quad Lectionary for Mass, no.~133}
+{three interpretations of the proper, compared}
 
 \input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/concise/01-inventory}
 \input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/concise/02-overview}
@@ -39,7 +36,9 @@
 \hbadness=10000
 \setlength{\parindent}{0pt}
 \input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/generation-metadata}
-\Needspace{3\baselineskip}
+% The colophon is an indivisible minipage and expands the terminal page into
+% the otherwise unused footer area.  A separate preflight break here would
+% strand that compact block on a page of its own.
 \TriptychRightsNotice
 \endgroup
 \end{document}

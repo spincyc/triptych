@@ -75,7 +75,9 @@ how far it was checked. None changes an element, a locator or a boundary above.
 2. **The stated psalm basis, tested.** Against the tracked Clementine Vulgate,
    Psalm 36:39–40 shares two words with the antiphon and no clause. Psalm 34:3,
    Psalm 33:18 and Psalm 90:15 each share a clause-level phrase. None is a
-   quotation. Finding 1 stands: a composed text, with no identified verse.
+   quotation. Finding 1 stands: a composed text rather than a quotation or
+   adaptation, with Ps 36[37]:39--40 retained as the Antiphonary compiler's
+   identified scriptural basis.
 3. **Prayer after Communion, one earlier occurrence.** The wording *Quos tuis,
    Domine, reficis sacramentis, continuis attolle benignus auxiliis* through *et
    mysteriis capiamus et moribus* occurs as an *Oratio post Communionem* in the

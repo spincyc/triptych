@@ -45,7 +45,7 @@ is in the canonical owner and is not restated here.
 
 | Order | Key | Element | Locus | Status |
 | ---: | --- | --- | --- | --- |
-| 1 | `entrance-antiphon` | Entrance Antiphon *Salus populi ego sum* | Week XXV owner; composed, no printed scriptural locator | required |
+| 1 | `entrance-antiphon` | Entrance Antiphon *Salus populi ego sum* | Week XXV owner; composed, with Psalm 36[37]:39–40 identified as its basis by the official ICEL Antiphonary although the Missal prints no locator | required |
 | 2 | `collect` | Collect *Deus, qui sacrae legis omnia constituta* | Week XXV owner | required |
 | 3 | `first-reading` | First Reading | Isaiah 55:6–9; Lectionary no. 133 | required |
 | 4 | `responsorial-psalm` | Responsorial Psalm | Psalm 145 (144):2–3, 8–9, 17–18; response v. 18a | required |

@@ -20,14 +20,14 @@ research stage itself re-checked and what it did not.
 | --- | --- |
 | Sunday, cycle, occurrence, Lectionary no. 133 and every reading boundary | Collated at context resolution (`research/context.md`). Re-collated on the research re-entry: the USCCB 2026 calendar at printed pp. 5 and 38, the dated readings page, and *Ordo lectionum Missae* 1981 no. 133 were each re-read from bytes matched to their recorded hashes, and every figure agrees. All three are bound in `research/source-bindings.toml` |
 | Missal elements, order, *Vel:* structure, absent units | The Week XXV owner. Re-read on the research re-entry in the 2002 Latin at physical PDF pp. 288–289 and in the ICEL excerpt at printed p. 79; nothing differs from the owner's table |
-| Study-text boundaries | Re-read in this stage in the tracked Douay–Rheims (Challoner) and Clementine Vulgate at Isaiah 55, Psalm 144, Psalm 118:1–8, Psalm 36:37–40, Philippians 1:1–2:4, Acts 16:9–15 and 40, Matthew 19:16–20:19 and John 9:39–10:30 |
+| Study-text boundaries | Re-read in this stage in the tracked Douay–Rheims (Challoner) and Clementine Vulgate at Isaiah 55, Psalm 144, Psalm 118:1–8, Psalm 36:39–40, Philippians 1:1–2:4, Acts 16:9–15 and 40, Matthew 19:16–20:19 and John 9:39–10:30 |
 | Citation encoding | Every citation below was passed through `tools/citations parse` and returned `ok` with its partial-verse letters intact |
 
 ## Ordered textual units
 
 | Order | Key | Unit and boundary | Status | Rights disposition |
 | --- | --- | --- | --- | --- |
-| 1 | `entrance-antiphon` | *Salus populi ego sum*. Composed first-person oracle; the Missal prints no locator | required | Latin incipit and original description only. No Scripture translation stands for it |
+| 1 | `entrance-antiphon` | *Salus populi ego sum*. Composed first-person oracle; the Missal prints no locator, while the official ICEL Antiphonary identifies Psalm 36[37]:39–40 as its basis | required | Latin incipit and original description only. No Scripture translation stands for it; the psalm is an identified basis, not appointed wording or an adaptation |
 | 2 | `collect` | *Deus, qui sacrae legis omnia constituta*; long conclusion | required | Latin incipit and original description only |
 | 3 | `first-reading` | Isaiah 55:6–9, whole verses | required | Douay–Rheims (Challoner), public domain, labelled as study text |
 | 4 | `responsorial-psalm` | Psalm 145 (144):2–3, 8–9, 17–18; response from v. 18a | required | Douay–Rheims at Psalm 144; the response shown as the first half of v. 18 only |
@@ -60,14 +60,13 @@ in this leaf.
    *Ordo*'s lettering follows the *Nova Vulgata* or an older division was not
    determined. The appointment itself is not in doubt: all three witnesses in
    `research/context.md` give `20:1-16a`.
-2. **Entrance antiphon basis.** The ICEL excerpt's compiler names Psalm 36
-   (37):39–40. Against the Clementine text that psalm shares *salus* and
-   *tribulationis* with the antiphon and no clause. Closer verbal contacts are
-   Psalm 34:3 (*Salus tua ego sum*), Psalm 33:18 (*clamaverunt … exaudivit … ex
-   omnibus tribulationibus*) and Psalm 90:15 (*clamabit ad me, et ego exaudiam
-   eum … in tribulatione*). None is a quotation and the Missal identifies none.
-   The antiphon is therefore entered in `research/chronology-inputs.toml` as a
-   composed element with no citation, and receives no date.
+2. **Entrance antiphon basis.** The official ICEL Antiphonary identifies Psalm
+   36[37]:39–40 as the antiphon's basis. Against the Clementine text that psalm
+   shares *salus* and *tribulationis* with the antiphon and no whole clause;
+   the evidence does not make the composed antiphon an adaptation. The Missal
+   itself prints no locator. The chronology input therefore records Hebrew
+   Psalm 37:39–40 as `identified-basis`, preserving the Antiphonary's express
+   identification without presenting the psalm as appointed wording.
 3. **Acclamation.** Acts 16:14 is third-person narrative about Lydia at
    Philippi. `Cf.` is retained and the relationship is `adaptation`.
 4. **Communion antiphon A numbering.** Hebrew Psalm 119:4–5, Vulgate 118:4–5,

@@ -1,4 +1,5 @@
 \input{common/preamble}
+\input{common/propers-format}
 \input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/format}
 \input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/chronology-annotations}
 
@@ -8,21 +9,12 @@
 }
 
 \begin{document}
-\thispagestyle{plain}
 
-\begin{center}
-{\small\scshape Roman Missal, Third Edition \quad\textperiodcentered\quad Lectionary for Mass, no.~133\par}
-\vspace{1.2em}
-{\LARGE\bfseries The Twenty-fifth Sunday in Ordinary Time\par}
-\vspace{0.4em}
-{\Large\bfseries Year A\par}
-\vspace{0.5em}
-{\large\itshape Dominica XXV ``per annum''\par}
-\vspace{1em}
-{\normalsize The labourers in the vineyard and the goodness of the householder:\\
-a study of the proper in three interpretations\par}
-\end{center}
-\vspace{1.5em}
+\propertitle{The Twenty-fifth Sunday in Ordinary Time\\Year A}
+{Dominica XXV ``per annum''}
+{Roman Missal, Third Edition \quad\textperiodcentered\quad Lectionary for Mass, no.~133}
+{The labourers in the vineyard and the goodness of the householder:\\
+a study of the proper in three interpretations}
 
 {\small\tableofcontents}
 
@@ -36,22 +28,17 @@ a study of the proper in three interpretations\par}
 \input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/30-seek-the-lord-while-he-may-be-found}
 \clearpage
 \input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/40-because-i-am-good}
-\clearpage
 \input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/50-comparison}
-\clearpage
 \input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/80-date-location}
-\clearpage
 \input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/85-liturgical-resolution}
 \input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/90-apparatus}
 % The metadata file prints the revision timestamp once, after the References;
-% the rights colophon follows it on the same final page. \Needspace ends the
-% page ahead of the colophon whenever the block cannot stand where the
-% References end, so the colophon never lands on a page of its own.
+% the rights colophon follows it on the same final page. Its shared macro
+% recovers the footer area and keeps the compact notice in one minipage.
 \begingroup
 \hbadness=10000
 \setlength{\parindent}{0pt}
 \input{liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/generation-metadata}
-\Needspace{3\baselineskip}
 \TriptychRightsNotice
 \endgroup
 \end{document}

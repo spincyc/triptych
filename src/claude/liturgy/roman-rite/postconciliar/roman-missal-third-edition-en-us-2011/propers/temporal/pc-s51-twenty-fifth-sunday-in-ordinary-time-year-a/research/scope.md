@@ -219,7 +219,7 @@ that the sheep are his own "by predestination, calling and grace".
 | Element | Evidence | Role |
 | --- | --- | --- |
 | Entrance antiphon | Schuster, *The Sacramentary* vol. 3, p. 171 (OCR): earlier Roman introit with the station at Saints Cosmas and Damian; "emanates perhaps from the Itala" | history |
-| Entrance antiphon | Clementine comparison: clause-level contacts with Psalms 34:3, 33:18 and 90:15; the compiler's Psalm 36:39–40 is thematic | textual observation |
+| Entrance antiphon | The official Antiphonary identifies Psalm 36[37]:39–40 as its basis; Clementine comparison finds clause-level contacts with Psalms 34:3, 33:18 and 90:15 and only thematic contact with the identified basis, so the relation is not adaptation | liturgical identification and textual observation |
 | Prayer after Communion | *Missale Ambrosianum* 1712 (OCR): the same wording as a votive *Oratio post Communionem*, with *tuae* before *redemptionis* and the long conclusion; compared on the re-entry with the 2002 Latin, which lacks *tuae* and has the short conclusion | lead |
 | Collect; Prayer over the Offerings | no antecedent located; see section 6 | bounded negative |
 
@@ -306,6 +306,10 @@ searched.
 
 ## 8. Chronology
 
+Current disposition: the 21 September authoring repair below supersedes the
+first submission's Isaiah composition label. The earlier re-entry history is
+retained here as history, not as acceptance of the revised dossier.
+
 `research/chronology-inputs.toml` was written from this leaf's own verified
 citations. `tools/tpt proper-chronology` accepted it, resolved Hebrew Psalm 145
 to canonical Psalm 144 and Hebrew Psalm 119:4–5 to Psalm 118:4–5, and wrote
@@ -314,19 +318,22 @@ the files current with the corpus. The record was inspected. It answers:
 
 | Element | Corpus answer |
 | --- | --- |
-| First reading | Composition: B.C. 740–701 |
+| Entrance antiphon, identified basis (Psalm 37:39–40) | Composition: before c. 165 B.C.; this is the Psalter's common bound, not a date for the composed antiphon |
+| First reading | Traditional attribution: the prophet's ministry era, B.C. 740–701; separately, critical prophecy-given toward the end of exile before return, with no borrowed absolute year |
 | Responsorial psalm; Communion antiphon A | Composition: before c. 165 B.C. |
 | Second reading | Composition, disputed: A.D. 61; A.D. 62–64 |
 | Alleluia verse basis | Event, disputed: A.D. 50–53; c. A.D. 51–54. Composition: c. A.D. 64 |
 | Gospel | No narrated-event date. Composition, disputed across six labels from c. A.D. 38–45 to c. A.D. 60–68 |
 | Communion antiphon B | Composition, disputed: c. A.D. 90–100; A.D. 96–100 |
-| Entrance antiphon; three orations | No Scripture queried; no date |
+| Three orations | No Scripture queried; no date |
 
-The studies may print these and nothing else, through the generated macros.
+The Date cells print these through the generated macros. The revised prose
+also identifies the centrally authored critical Matthew boundary separately
+from the default traditional alternatives; its qualifications are audited below.
 
 ### 8.1 The sources behind the answers, read on the second re-entry
 
-The record's fifteen labels cite nine source records: eight Catholic
+The record's dated labels cite nine source records: eight Catholic
 Encyclopedia articles and the NABRE introduction to the Psalms. At first
 submission and on the first re-entry this stage had not read them. On the
 second re-entry each was read at the sentence carrying the label, with the
@@ -357,8 +364,9 @@ was seen.
 | Communion antiphon B | "96 or one of the succeeding years" | Fonck, "Gospel of St. John" (vol. 8, 1910), line 95, "Circumstances of the composition" | Verbatim, as "the general opinion", after "we possess no certain historical information". The interval's upper bound is the same sentence's "last decade of the first century" |
 | Responsorial psalm; Communion antiphon A | "before the Maccabean period, around 165 B.C.; no individual psalm can be dated securely" | NABRE, introduction to the Psalms | In substance, not in wording; see below |
 
-Every Catholic Encyclopedia label stands. The articles agree with the corpus's
-dispositions: where it marks a claim disputed, the article itself declines to
+The inspected numerical labels stand as source reports, but the former Isaiah
+composition relation did not: it has been corrected to traditional attribution.
+For the remaining claims the articles agree with the corpus's dispositions: where it marks a claim disputed, the article itself declines to
 settle the date or a second article gives another figure.
 
 **The NABRE introduction.** The registered artifact is restricted and
@@ -390,13 +398,12 @@ cites knows the alternative and prints no year for it.
 
 ### 8.2 Open questions for the corpus owner, traced inputs, and one citation
 
-**For the reviewer.** At Isaiah 55 the corpus returns one attribution-based
-range and records no alternative. This stage neither supplied one nor altered
-the answer, as the chronology profile requires. Whether the corpus should
-carry a disputed state at these verses, and whether a label that summarizes a
-protected source should be marked as a summary, are questions for the corpus's
-owner. No input changed on the second re-entry and nothing was regenerated;
-both `--check` runs still report the files current.
+**Current corpus disposition, 21 September.** The independent event recorded
+in `src/sources/chronology/isaiah-relation-review-2026-09-21.md` accepts only
+the corpus correction. The old Isaiah composition unit is withdrawn; ministry
+is traditional attribution and the critical late-exilic oracle has its own
+prophecy-given relation. Matthew's new critical lower bound has no invented
+upper endpoint. This is not independent acceptance of either consumer dossier.
 
 **Traced inputs.** On the re-entry both `--check` runs were executed under a
 Python audit hook that records every file opened. Together they open 1,590
@@ -417,6 +424,72 @@ element print Vulgate numbering (*Ps 118, 4-5*; `Ps 118: 4-5`). The input
 enters it as Hebrew Psalm 119:4–5, normalized to this leaf's Hebrew-first
 convention, and says so in its comment. The resolved locus is unchanged.
 
+### 8.3 Current consumer checks, 21 September 2026
+
+The author rechecked the dossier against the complete retained encyclopedia
+extractions at the loci in 8.1, extending Jacquier to *Destination of the
+Gospel* (195–197) and Fonck to the first-reader and location paragraphs
+(109–111). All eight payload hashes and byte extents matched their records.
+This is bounded inspection within complete witnesses, not facsimile collation
+or a claim to have reread all eight works in full. Earlier acquisition and
+review events above remain what they were.
+
+The complete newly registered NABRE Isaiah, Psalms and Matthew introduction
+bodies were read from the already acquired deterministic extractions, and each
+HTML response matched its registered hash and extent. No new network fetch is
+claimed. New passage bindings seal those dated identities, not protected
+payloads. The July Psalms response remains unavailable for exact comparison;
+the new introduction corroborates the corpus's common upper bound without
+replacing that older pin.
+
+The two current dossiers distinguish the following facts:
+
+- Souvay's ministry begins with Ozias and ends at the apparent last prophecy,
+  not death or the writing of Isaiah 55. His guarded collection hypothesis
+  concerns 1–35. NABRE *generally* attributes 40–55 to an anonymous poet
+  prophesying near the exile's end. The generated critical relation is
+  prophecy-given before return, without an absolute return year. Neither
+  source fixes the exact writing site of the appointed verses.
+- Jacquier's dispersal-based Matthew figure rests on an explicitly unreliable
+  tradition; the later departure reckoning is conditional; Irenaeus is
+  inconclusive; the Catholic-opinion figure reports 1911; Durand's last figure
+  belongs only to his Aramaic original. NABRE says post-A.D. 70, “probably at
+  least a decade later”, not “in the 80s”. This separate critical bound is
+  `critical.gospel-of-matthew`; the generated default composition alternatives
+  remain traditional. Its unknown author and plausible Antioch in Syria are
+  attributed critical judgments, beside Jacquier's traditional Judea and
+  converted-Jewish audience, not assertions about Jesus' parable location.
+- Fonck gives Ephesus and Asian Christian readers in his account of writing,
+  while conceding uncertain dating. These differ from the narrated encounter
+  with Pharisees. Breen's probable Roman-captivity completion of Acts differs
+  from the Philippi scene; Theophilus is named without a location. Prat and
+  Howlett's second-journey ranges are not exact dates of Lydia's conversion.
+  Vander Heeren's Rome is expressly the received account, with early/late
+  disagreement retained. No new critical imprisonment-location study is claimed.
+- The Psalter's critical composition bound is neither a secure date for an
+  individual poem nor a date of the anthology's final assembly. Its exact
+  writing places remain unstated. Psalm 144's Davidic title does not invent a
+  numerical attribution date absent from this consumer's corpus answer.
+
+Retained Douay–Rheims checks for these settings covered Isaiah 1:1 and 55;
+Psalms 118:1–8 and 144:1–3; Matthew 19:1–2, 27–30 and 20:1–19; John
+9:39–10:21; Acts 1:1 and 16:12–15; Philippians 1:1, 7, 13. New bindings
+supplement previously recorded context rather than upgrading an uninspected
+original-language apparatus. The Entrance remains this leaf's composed element,
+but its official Antiphonary identifies Psalm 36[37]:39–40 as a basis. The
+chronology query now records that source relation as `identified-basis`, not as
+an adaptation, and the projected date is the Psalter's common composition bound
+rather than a date for the antiphon.
+
+Both outputs' references now name all three NABRE introductions, and the
+scopes no longer describe ministry as composition, say no critical figure is
+printed, or extend earlier review to this repair. Generated annotation files
+were not edited by hand. Their Date cells are generated, but the prose also
+reports corpus-backed claims and qualifications; no claim that all prose is
+date-free or automatically generated is made. Source bindings and declared
+corpus/concordance owners carry the evidence boundary. Production checks below
+are author checks only, not independent research, content or visual acceptance.
+
 ## 9. Rights
 
 Scripture appears only in the public-domain Douay–Rheims (Challoner), labelled
@@ -433,9 +506,8 @@ library. The augustinus.it and Vatican pages are quoted in short phrases and
 are not retained. The chronology labels quoted in section 8 are short phrases
 of the Catholic Encyclopedia (New York, 1907–1912), public domain in the
 United States under the rights record declared in `review-dependencies.toml`;
-the article texts are tracked in the library. The NABRE introduction is
-protected: it is summarized in section 8, one figure is quoted, and the page
-is not retained. The page-2 Date column prints the chronology tool's generated
+the article texts are tracked in the library. The NABRE introductions are protected: section 8 records bounded summaries
+and brief source phrases; complete response bodies are not tracked. The page-2 Date column prints the chronology tool's generated
 display labels, not this prose.
 
 ## 10. Unresolved leads
@@ -457,6 +529,6 @@ display labels, not this prose.
    critical text of any witness.
 7. Every corpus in section 4.
 8. The NABRE Psalms introduction in its registered state of 28 July 2026,
-   whose restricted bytes were not obtained; only the current delivery was
-   read (section 8.1). The printed Catholic Encyclopedia was not seen; its
+   whose restricted bytes were not obtained; the later registered September delivery was
+   read (sections 8.1 and 8.3). The printed Catholic Encyclopedia was not seen; its
    eight articles were read in the tracked extractions of the New Advent text.
