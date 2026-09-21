@@ -1,6 +1,10 @@
 # Derive the concise comparison
 
 Read the accepted expansive study and write `synthesis.tex` and its components.
+Import `common/preamble` then `common/propers-format`, using the shared title,
+inventory, overview and dossier forms. Do not re-derive their layouts, change
+fonts or margins, or import the homily column helper. Emit literal unconditional
+component imports and keep literal markers in their declared source owners.
 The finished PDF targets 10–12 physical pages. Restore the first four pages
 specified in `guidance/liturgy/propers-three-documents.md`: page 1, complete
 propers map and four senses overview; page 2, Scriptural Date and Location;

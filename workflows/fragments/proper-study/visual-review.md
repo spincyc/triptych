@@ -6,6 +6,11 @@ sheet or successful renderer alone is not review. Check legible type and
 measure, consistent hierarchy, meaningful page breaks, reasonable density,
 table and footnote integrity, clipped or overlapping content, sparse spills,
 running furniture, embedded fonts, and the final compact rights colophon.
+Verify the shared Latin Modern, 11-point article, 0.75-inch-margin monochrome
+baseline, consistent keyed lane headings and four-senses blocks. The homily
+has a full-width title, two-column speech and separate full-width terminal
+apparatus; neither study has columns. A formatting migration also requires
+substantive-text preservation evidence, not a claim based on file counts.
 
 Judge each artifact for its use: navigation and substantial exposition in the
 study, visible interleaving in the concise work, comfortable reading and

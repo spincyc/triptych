@@ -1,0 +1,136 @@
+% Proper-study presentation only. Import after common/preamble.
+\geometry{letterpaper,margin=0.75in,headheight=22pt,headsep=10pt,footskip=24pt}
+\usepackage{xurl}
+\usepackage{bookmark}
+\usepackage[nobottomtitles*]{titlesec}
+\usepackage{fancyhdr}
+\usepackage{zref-user,zref-abspage}
+\usepackage{graphicx}
+\setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+\brokenpenalty=10000
+\renewcommand{\bottomtitlespace}{.12\textheight}
+\titleformat{\section}{\normalfont\Large\bfseries\raggedright}{}{0pt}{}
+\titlespacing*{\section}{0pt}{3ex plus .5ex minus .2ex}{1.2ex plus .2ex}
+\titleformat{\subsection}{\normalfont\large\bfseries\raggedright}{}{0pt}{}
+\titlespacing*{\subsection}{0pt}{2.4ex plus .5ex minus .2ex}{.8ex plus .2ex}
+\titleformat{\subsubsection}{\normalfont\normalsize\bfseries\itshape\raggedright}{}{0pt}{}
+\titlespacing*{\subsubsection}{0pt}{2ex plus .4ex minus .2ex}{.6ex plus .1ex}
+
+% Leaf files supply content fields, never another implementation.
+\newcommand{\propertitle}[4]{%
+  \thispagestyle{plain}%
+  \begin{center}
+  {\Large\bfseries #1\par}
+  \if\relax\detokenize{#2}\relax\else
+    \vspace{.25em}{\large #2\par}%
+  \fi
+  \if\relax\detokenize{#3}\relax\else
+    \vspace{.25em}{\small #3\par}%
+  \fi
+  \if\relax\detokenize{#4}\relax\else
+    {\small #4\par}%
+  \fi
+  \end{center}\vspace{.5em}}
+\newcommand{\properlane}[2]{\section{#2}\label{lane-#1}}
+\newcommand{\work}[1]{\textit{#1}}
+\newenvironment{fourSenses}
+  {\begin{description}[style=nextline,leftmargin=0pt,labelsep=0pt,itemsep=.4em]}
+  {\end{description}}
+
+% Bound both running heads so neither can silently overprint the other.
+\newcommand{\tptheadsunday}{}
+\newcommand{\tptnoshorthead}{}
+\let\tptshortheadtext\tptnoshorthead
+\newcommand{\runninghead}[1]{\gdef\tptshortheadtext{#1}\markright{#1}}
+\renewcommand{\sectionmark}[1]{%
+  \ifx\tptshortheadtext\tptnoshorthead
+    \markright{#1}%
+  \else
+    \expandafter\markright\expandafter{\tptshortheadtext}%
+    \global\let\tptshortheadtext\tptnoshorthead
+  \fi}
+\renewcommand{\subsectionmark}[1]{}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{\parbox[b]{.56\headwidth}{\footnotesize\raggedright\tptheadsunday}}
+\fancyhead[R]{\parbox[b]{.41\headwidth}{\footnotesize\raggedleft\nouppercase{\rightmark}}}
+\fancyfoot[C]{\footnotesize\thepage}
+\fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}%
+  \fancyfoot[C]{\footnotesize\thepage}}
+
+\newcommand{\Vsign}{\leavevmode\hbox{\rlap{\kern.16em\raisebox{.12ex}{\scalebox{.85}[1]{/}}}V}}
+\DeclareUnicodeCharacter{2123}{\Vsign}
+\DeclareUnicodeCharacter{01FD}{\'{\ae}}
+\DeclareUnicodeCharacter{01FC}{\'{\AE}}
+\newenvironment{latinproper}{\begin{quote}\itshape}{\end{quote}}
+\newenvironment{englishwitness}[1]{\begin{quote}\textsc{#1}\par\nopagebreak}{\end{quote}}
+\newcommand{\properlocus}[1]{\par{\small\noindent #1\par}}
+\newcommand{\notread}[1]{[\textit{#1}]}
+
+% Exact-width tables: internal gutters are deducted, not added to the measure.
+\newenvironment{maptable}
+{\small\renewcommand{\arraystretch}{1.12}%
+ \begin{longtable}{@{}>{\raggedright\arraybackslash}p{.17\linewidth}>{\raggedright\arraybackslash}p{.27\linewidth}>{\raggedright\arraybackslash}p{\dimexpr.56\linewidth-4\tabcolsep\relax}@{}}
+ \toprule
+ \textbf{Element} & \textbf{Text and reference} & \textbf{What it says}\\
+ \midrule\endhead}
+{\bottomrule\end{longtable}}
+\newenvironment{concisemaptable}
+{\footnotesize\renewcommand{\arraystretch}{1.06}%
+ \begin{longtable}{@{}>{\raggedright\arraybackslash}p{.15\linewidth}>{\raggedright\arraybackslash}p{.25\linewidth}>{\raggedright\arraybackslash}p{\dimexpr.60\linewidth-4\tabcolsep\relax}@{}}
+ \toprule
+ \textbf{Element} & \textbf{Text and reference} & \textbf{What it says}\\
+ \midrule\endhead}
+{\bottomrule\end{longtable}}
+\newenvironment{properinventory}[2]
+{\footnotesize\renewcommand{\arraystretch}{1.06}%
+ \begin{longtable}{@{}>{\raggedright\arraybackslash}p{.22\linewidth}>{\raggedright\arraybackslash}p{\dimexpr.78\linewidth-2\tabcolsep\relax}@{}}
+ \toprule\textbf{#1} & \textbf{#2}\\\midrule\endhead}
+{\bottomrule\end{longtable}}
+\newenvironment{conciseoverview}
+{\footnotesize\renewcommand{\arraystretch}{1.06}%
+ \begin{longtable}{@{}>{\bfseries\raggedright\arraybackslash}p{.15\linewidth}>{\raggedright\arraybackslash}p{\dimexpr.85\linewidth-2\tabcolsep\relax}@{}}
+ \toprule\textbf{Sense} & \textbf{Synthesis}\\\midrule\endhead}
+{\bottomrule\end{longtable}}
+
+\newcommand{\dossierunit}{Proper}
+\newenvironment{dossiertable}
+{\footnotesize\renewcommand{\arraystretch}{1.02}%
+ \setlength{\LTpre}{.15em}\setlength{\LTpost}{0pt}%
+ \begin{longtable}{@{}>{\raggedright\arraybackslash}p{.12\linewidth}>{\raggedright\arraybackslash}p{.15\linewidth}>{\raggedright\arraybackslash}p{.29\linewidth}>{\raggedright\arraybackslash}p{\dimexpr.44\linewidth-6\tabcolsep\relax}@{}}
+ \toprule\textbf{\dossierunit} & \textbf{Citation} & \textbf{Location} & \textbf{Date}\\
+ \midrule\endhead}
+{\bottomrule\end{longtable}}
+% The concise chronology is contractually one physical page.  Preserve the
+% same columns and hierarchy at a compact, still readable table size rather
+% than allowing the final row to become a nearly empty spill page.
+\newenvironment{concisedossiertable}
+{\fontsize{8.2}{9.15}\selectfont\renewcommand{\arraystretch}{.96}%
+ \renewcommand{\dossierrowsize}{\fontsize{8.2}{9.15}\selectfont}%
+ \setlength{\LTpre}{.1em}\setlength{\LTpost}{0pt}%
+ \begin{longtable}{@{}>{\raggedright\arraybackslash}p{.12\linewidth}>{\raggedright\arraybackslash}p{.15\linewidth}>{\raggedright\arraybackslash}p{.29\linewidth}>{\raggedright\arraybackslash}p{\dimexpr.44\linewidth-6\tabcolsep\relax}@{}}
+ \toprule\textbf{\dossierunit} & \textbf{Citation} & \textbf{Location} & \textbf{Date}\\
+ \midrule\endhead}
+{\bottomrule\end{longtable}}
+\newcommand{\chronodate}[2]{#2}
+\newcommand{\dossierrowsize}{\footnotesize}
+\newcommand{\dossierprose}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash\dossierrowsize}p{\linewidth}@{}}{#1}\\[.1em]}
+\newcommand{\dossierevent}[1]{\multicolumn{4}{@{}>{\raggedright\arraybackslash\dossierrowsize}p{\linewidth}@{}}{\textit{#1}}\\}
+
+\newenvironment{comparisontable}[4]
+{\small\renewcommand{\arraystretch}{1.12}%
+ \begin{longtable}{@{}>{\raggedright\arraybackslash}p{.17\linewidth}>{\raggedright\arraybackslash}p{.25\linewidth}>{\raggedright\arraybackslash}p{.25\linewidth}>{\raggedright\arraybackslash}p{\dimexpr.33\linewidth-6\tabcolsep\relax}@{}}
+ \toprule\textbf{#1} & \textbf{#2} & \textbf{#3} & \textbf{#4}\\\midrule\endhead}
+{\bottomrule\end{longtable}}
+\newcommand{\bid}[1]{{\ttfamily\hyphenchar\font=45\relax #1}}
+\newenvironment{branchtable}
+{\footnotesize\renewcommand{\arraystretch}{1.08}%
+ \begin{longtable}{@{}>{\raggedright\arraybackslash}p{.20\linewidth}>{\raggedright\arraybackslash}p{.26\linewidth}>{\raggedright\arraybackslash}p{.10\linewidth}>{\raggedright\arraybackslash}p{.12\linewidth}>{\raggedright\arraybackslash}p{\dimexpr.32\linewidth-8\tabcolsep\relax}@{}}
+ \toprule\textbf{Branch ID} & \textbf{Authority and trigger} & \textbf{Status} & \textbf{Units affected} & \textbf{Resolution}\\\midrule\endhead}
+{\bottomrule\end{longtable}}

@@ -1231,6 +1231,8 @@ SEALED_ANNOTATION_MACROS = (
     "chronologyannotation",
     "chronologyannotationgroup",
     "chronologyannotationclaim",
+    "chronologyannotationcomparisongroup",
+    "chronologyannotationcomparisonclaim",
     "chronologyannotationreach",
 )
 SEALED_ANNOTATION_NAMES = "|".join(SEALED_ANNOTATION_MACROS)
@@ -1306,6 +1308,65 @@ def _normalized_label(text: str) -> str:
     return " ".join(text.split())
 
 
+# Era-qualified dates are chronology prose even when they sit outside the
+# Date-cell API.  Both orders occur in the corpus and in TeX: ``A.D.~70`` and
+# ``570--536~B.C.``.  The optional leading word covers open boundaries such as
+# the NABRE's quoted ``post-A.D. 70 date``.  A narrow era requirement avoids
+# treating verse numbers, source volume numbers, and civil retrieval dates as
+# biblical chronology claims.
+ERA = r"(?:A\.\s*D\.|B\.\s*C\.|A\.\s*M\.)"
+YEAR_OR_SPAN = r"[0-9]+(?:\s*(?:-{1,2}|–|—|to|or)\s*[0-9]+)?"
+MANUAL_CHRONOLOGY_DATE = re.compile(
+    rf"(?ix)(?:\b(?:post-|pre-|after\s+|before\s+|about\s+|c\.\s*~?\s*)?"
+    rf"{ERA}\s*~?\s*{YEAR_OR_SPAN}(?:\s+date)?\b|"
+    rf"\b(?:about\s+|c\.\s*)?{YEAR_OR_SPAN}\s*~?\s*{ERA})"
+)
+ERA_IN_DATE = re.compile(ERA, re.I)
+
+# A manual date that omits its era is still a chronology claim. Keep this
+# deliberately narrower than arbitrary numbers: it reaches qualified dates,
+# two- or three-digit spans that are not verse ranges, and explicit
+# ``between N and N`` intervals. Chapter spans are screened at the match
+# site. Authors can always avoid ambiguity by leaving the date in the
+# generated annotation and referring to "the displayed range" in prose.
+QUALIFIED_ERALESS_DATE = re.compile(
+    rf"(?ix)\b(?:post-|pre-|after\s+|before\s+|about\s+|c\.\s*~?\s*)"
+    rf"(?!{ERA}\b){YEAR_OR_SPAN}\b"
+)
+BARE_ERALESS_SPAN = re.compile(
+    r"(?ix)(?<![:\d])\b[0-9]{2,3}\s*(?:-{1,2}|–|—|to|or)\s*"
+    r"[0-9]{2,3}\b"
+)
+BETWEEN_ERALESS_SPAN = re.compile(
+    r"(?ix)\bbetween\s+[0-9]{2,3}\s+and\s+[0-9]{2,3}\b"
+)
+
+
+def _date_signature(value: str) -> tuple[str, str, tuple[int, ...]] | None:
+    """The era, temporal relation and years in one TeX-neutral date.
+
+    Direction and precision are meaning, not typography: a post-A.D. 70
+    boundary must never authorize pre-70, exact-70 or merely approximate-70
+    prose.
+    """
+    normalized = _normalized_label(value)
+    era = ERA_IN_DATE.search(normalized)
+    if era is None:
+        return None
+    era_key = re.sub(r"[^A-Za-z]", "", era.group(0)).upper()
+    years = tuple(int(item) for item in re.findall(r"[0-9]+", normalized))
+    lowered = normalized.lower()
+    if re.search(r"(?:\bpost-|\bafter\s+)", lowered):
+        relation = "after"
+    elif re.search(r"(?:\bpre-|\bbefore\s+)", lowered):
+        relation = "before"
+    elif re.search(r"(?:\babout\s+|(?:^|\s)c\.\s*)", lowered):
+        relation = "approximate"
+    else:
+        relation = "exact"
+    return (era_key, relation, years) if years else None
+
+
 def _annotation_macro_definitions(leaf: Path, generated: Path) -> list[str]:
     """Definitions of the generated annotation API outside its own artifact.
 
@@ -1347,14 +1408,14 @@ def _annotation_macro_definitions(leaf: Path, generated: Path) -> list[str]:
     return problems
 
 
-def _date_cell_wrapper_integrity(leaf: Path) -> list[str]:
+def _date_cell_wrapper_integrity(
+    leaf: Path, root: Path, edition: str = LEAF_EDITION
+) -> list[str]:
     """The checked annotation remains the content TeX typesets for a cell.
 
-    `chronodate` is intentionally leaf-owned because it marks a table cell,
-    not a corpus fact. Under the generated-annotation contract its rendering
-    behavior is not leaf-defined: exactly one root `format.tex` definition
-    passes argument two through unchanged. A shadow definition could otherwise
-    discard or replace a byte-current annotation after every gate had passed.
+    Historical leaves own the wrapper in `format.tex`; migrated leaves use the
+    explicitly imported shared proper template. Either owner must pass argument
+    two through unchanged, and a leaf may not shadow the shared definition.
     """
     patterns = (
         DATE_CELL_LATEX_DEFINITION,
@@ -1365,33 +1426,61 @@ def _date_cell_wrapper_integrity(leaf: Path) -> list[str]:
     )
     problems: list[str] = []
     canonical = 0
-    paths = sorted({
+    owner = leaf / "format.tex"
+    manifest = leaf / "proper-components.toml"
+    if manifest.is_file():
+        from _proper_components import format_contract
+
+        data = tomllib.loads(manifest.read_text(encoding="utf-8"))
+        if format_contract(data):
+            owner = root / "src/common/propers-format.tex"
+            template_import = re.compile(
+                r"\\input\s*\{common/propers-format(?:\.tex)?\}")
+            for entry in entry_files(leaf, edition):
+                path = leaf / entry
+                if not path.is_file():
+                    problems.append(f"{entry}: missing shared-template entrypoint")
+                    continue
+                text = active_tex(path.read_text(encoding="utf-8"))
+                preamble = text.split(r"\begin{document}", 1)[0]
+                if (len(template_import.findall(preamble)) != 1 or
+                        len(template_import.findall(text)) != 1):
+                    problems.append(
+                        f"{entry}: requires exactly one literal "
+                        r"\input{common/propers-format} in its preamble")
+    owner_name = owner.relative_to(root).as_posix()
+    if not owner.is_file():
+        problems.append(f"{owner_name}: missing date-cell wrapper owner")
+    paths = {
         path
         for pattern in ("*.tex", "*.sty", "*.cls")
         for path in leaf.rglob(pattern)
-    })
-    for path in paths:
+    }
+    if owner.is_file():
+        paths.add(owner)
+    for path in sorted(paths):
         text = active_tex(path.read_text(encoding="utf-8"))
         matches = sorted(
             (match.start(), match.group("kind"), match.group("name"))
             for pattern in patterns for match in pattern.finditer(text)
         )
         for at, kind, name in matches:
-            if (path == leaf / "format.tex" and kind == "newcommand" and
+            if (path == owner and kind == "newcommand" and
                     CANONICAL_DATE_CELL_WRAPPER.match(text, at)):
                 canonical += 1
                 continue
             line = text.count("\n", 0, at) + 1
             problems.append(
-                f"{path.relative_to(leaf)}:{line}: \\{kind} redefines "
+                f"{path.relative_to(root)}:{line}: \\{kind} redefines "
                 f"\\{name}; under the generated annotation contract the "
                 "only definition is exactly "
-                r"\newcommand{\chronodate}[2]{#2} in format.tex, so the "
+                r"\newcommand{\chronodate}[2]{#2} in "
+                f"{owner_name}, so the "
                 "checked annotation reaches the reader unchanged"
             )
     if canonical != 1:
         problems.append(
-            "format.tex must define exactly one "
+            f"{owner_name} must define exactly one "
             r"\newcommand{\chronodate}[2]{#2}; found "
             f"{canonical} canonical definitions. The Date-cell wrapper is "
             "the checked annotation's carrier and may neither discard nor "
@@ -1692,7 +1781,7 @@ def check_chronology_annotations_current(
         "\\" + CHRONOLOGY_CELL in active_tex(edition_text(leaf, prose_path, edition))
         for prose_path in leaf_tex(leaf, edition)
     ):
-        problems.extend(_date_cell_wrapper_integrity(leaf))
+        problems.extend(_date_cell_wrapper_integrity(leaf, root, edition))
     if not path.is_file():
         problems.append(
             f"{why}, so the leaf must carry {path.relative_to(leaf)}; write "
@@ -1757,14 +1846,13 @@ def check_chronology_claims_supported(leaf: Path, root: Path,
     — the Gradual's undated psalm included — with nothing left to complain
     about.
 
-    WHAT THIS DOES NOT SEE: prose. The digit rule reaches inside `\\chronodate`
-    and nowhere else, so a figure in the explanatory row beneath the table, or
-    anywhere else in the guide, is required by
-    `guidance/liturgy/roman-1962-propers.md` and read by a human, not by this.
-    That guidance says so in as many words. A green result here is not a
-    statement that the page's prose was held against the corpus.
+    Era-qualified prose is checked separately. Forms such as ``A.D.~70``,
+    ``post-A.D. 70`` and quoted date labels outside a Date cell must have the
+    same era and explicit years as a claim in the generated default answer or
+    a declared profile comparison. This narrow scan does not treat every prose
+    number as chronology; verse, volume and page numbers remain outside it.
     """
-    _required, macros, why = _chronology_scope(leaf, edition)
+    required, macros, why = _chronology_scope(leaf, edition)
     if edition == LEAF_EDITION and three_document_study(leaf) and macros:
         # The v3 page-two inventory belongs to the concise edition. Counting
         # the whole leaf together both rejects a separate research appendix
@@ -1787,7 +1875,7 @@ def check_chronology_claims_supported(leaf: Path, root: Path,
     # tree need a registered calendar identity.
     marks = ("\\" + CHRONOLOGY_CLAIM, "\\" + CHRONOLOGY_CELL,
              "\\" + CHRONOLOGY_ANNOTATION)
-    if not macros and not any(
+    if not required and not macros and not any(
         mark in text for text in printed.values() for mark in marks
     ):
         return [], f"no chronology claim printed ({why})"
@@ -1796,14 +1884,32 @@ def check_chronology_claims_supported(leaf: Path, root: Path,
     # `publication_claims` is the exact assertion-identity intersection across
     # every locus an element appoints, and therefore safe to print once as the
     # date of that whole element.
+    comparisons: dict[str, list] = {}
+    for comparison in getattr(found, "profile_comparisons", ()):
+        comparisons.setdefault(comparison.element_key, []).extend(
+            comparison.claims
+        )
     supported: dict[str, set[tuple[str, str, str]]] = {
         element.key: {
             (claim.subject, claim.relation, _normalized_label(claim.label))
-            for claim in element.publication_claims
+            for claim in (*element.publication_claims,
+                          *comparisons.get(element.key, ()))
         }
         for element in found.elements
     }
     everywhere = set().union(*supported.values()) if supported else set()
+    supported_date_signatures = {
+        signature
+        for element in found.elements
+        for claim in (*element.publication_claims,
+                      *comparisons.get(element.key, ()))
+        # ``claim.date`` stores sortable endpoints and can look exact even
+        # when the source labels the claim approximate. Publication prose is
+        # authorized only by the source label or deterministic display, both
+        # of which preserve that relation.
+        for value in (claim.label, _wiring().concise_display_label(claim))
+        if (signature := _date_signature(value)) is not None
+    }
     problems: list[str] = []
     cells_for: dict[str, int] = {}
     cells_seen = 0
@@ -1965,13 +2071,85 @@ def check_chronology_claims_supported(leaf: Path, root: Path,
         for args, _at, _stop in _macro_calls(loose, CHRONOLOGY_CLAIM, 3):
             hold(args, f"{name}: \\{CHRONOLOGY_CLAIM} outside a date cell",
                  everywhere)
-        for args, _at, _stop in _macro_calls(
+        loose_claims = _macro_calls(loose, CHRONOLOGY_CLAIM, 3)
+        loose_annotations = _macro_calls(
             loose, CHRONOLOGY_ANNOTATION, 1
-        ):
+        )
+        for args, _at, _stop in loose_annotations:
             problems.append(
                 f"{name}: \\{CHRONOLOGY_ANNOTATION} for {args[0].strip()!r} "
                 f"stands outside a \\{CHRONOLOGY_CELL}; nothing says which "
                 f"appointed text its generated dates belong to")
+        prose_only = loose
+        for _args, at, stop in sorted(
+            [*loose_claims, *loose_annotations],
+            key=lambda item: item[1], reverse=True,
+        ):
+            prose_only = prose_only[:at] + " " + prose_only[stop:]
+        production = _stated_production(leaf)
+        manual_prose_bound = bool(getattr(found, "comparison_dependencies", ())) or (
+            production is not None
+            and production[0] == "proper-study"
+            and production[1] >= 6
+        )
+        for match in (MANUAL_CHRONOLOGY_DATE.finditer(prose_only)
+                      if manual_prose_bound else ()):
+            printed_date = match.group(0)
+            signature = _date_signature(printed_date)
+            if signature in supported_date_signatures:
+                continue
+            line = prose_only.count("\n", 0, match.start()) + 1
+            problems.append(
+                f"{name}:{line}: manual chronology date "
+                f"{_normalized_label(printed_date)!r} is absent from this "
+                "proper's generated chronology record. Era-qualified date "
+                "prose, including quoted labels and TeX-tied forms, must come "
+                "from the default answer or a declared "
+                f"{_wiring().COMPARISONS_INPUT} profile comparison."
+            )
+        # Era-less scanning is meaningful only in explanatory dossier prose.
+        # Elsewhere the same shapes are routinely verse, page, and patristic
+        # section ranges. The broader era-qualified scan above remains active
+        # throughout the edition.
+        dossier_prose = "\n".join(
+            args[0] for args, _at, _stop in _macro_calls(text, "dossierprose", 1)
+        )
+        if manual_prose_bound and dossier_prose:
+            era_qualified_spans = tuple(
+                (match.start(), match.end())
+                for match in MANUAL_CHRONOLOGY_DATE.finditer(dossier_prose)
+            )
+            era_less = []
+            for pattern in (QUALIFIED_ERALESS_DATE, BARE_ERALESS_SPAN,
+                            BETWEEN_ERALESS_SPAN):
+                era_less.extend(pattern.finditer(dossier_prose))
+            last_end = -1
+            for match in sorted(
+                era_less, key=lambda item: (item.start(), -(item.end() - item.start()))
+            ):
+                if match.start() < last_end:
+                    continue
+                last_end = match.end()
+                # Do not reclassify an era-qualified date or an explicitly
+                # named chapter span as an unbound date. Verse ranges are
+                # excluded by BARE_ERALESS_SPAN's colon lookbehind.
+                before = dossier_prose[max(0, match.start() - 40):match.start()]
+                if any(
+                    match.start() < stop and match.end() > at
+                    for at, stop in era_qualified_spans
+                ) or re.search(
+                    r"(?i)chapters?\s*~?\s*$", before
+                ):
+                    continue
+                line = dossier_prose.count("\n", 0, match.start()) + 1
+                problems.append(
+                    f"{name}:{line}: manual chronology date "
+                    f"{_normalized_label(match.group(0))!r} omits its era. "
+                    "Every manually repeated biblical date must state A.D., "
+                    "B.C., or A.M. so it can be matched to the generated "
+                    "chronology record; otherwise refer to the generated "
+                    "displayed date without repeating its number."
+                )
 
     if macros:
         wanted = [e.key for e in found.elements if e.loci]

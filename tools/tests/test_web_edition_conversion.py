@@ -656,9 +656,13 @@ class WebEditionConversionTests(unittest.TestCase):
         definitions = (
             r"\newcommand{\chronologyannotationclaim}[6]{#6}"
             "\n"
+            r"\newcommand{\chronologyannotationcomparisonclaim}[8]{#8}"
+            "\n"
             r"\newcommand{\chronologyannotationreach}[3]{}"
             "\n"
             r"\newcommand{\chronologyannotationgroup}[3]{#3}"
+            "\n"
+            r"\newcommand{\chronologyannotationcomparisongroup}[4]{#4}"
             "\n"
             r"\newcommand{\chronologyannotation}[1]{%"
             "\n"
@@ -699,6 +703,38 @@ class WebEditionConversionTests(unittest.TestCase):
                 )
                 self.assertIn(f"{marker}Event{marker}: A.D. 27.", markdown)
                 self.assertNotIn("triptychchronologyannotation@", markdown)
+
+    def test_generated_profile_comparison_keeps_display_and_hides_metadata(self) -> None:
+        definitions = (
+            r"\newcommand{\chronologyannotationcomparisonclaim}[8]{#8}"
+            "\n"
+            r"\newcommand{\chronologyannotationcomparisongroup}[4]{#4}"
+            "\n"
+            r"\newcommand{\chronologyannotation}[1]{%"
+            "\n"
+            r"  \ifcsname triptychchronologyannotation@#1\endcsname"
+            "\n"
+            r"    \csname triptychchronologyannotation@#1\endcsname"
+            "\n"
+            r"  \fi}"
+            "\n"
+            r"\expandafter\def\csname triptychchronologyannotation@gospel\endcsname{%"
+            "\n"
+            r"\chronologyannotationcomparisongroup{catholic-critical-v1}"
+            r"{composition}{preferred}{Critical comparison: "
+            r"\chronologyannotationcomparisonclaim{critical.gospel-of-matthew}"
+            r"{composition}{catholic-critical-v1}{catholic-critical-v1}"
+            r"{preferred}{passage.usccb.matthew}{post-A.D. 70 date}"
+            r"{Post-A.D. 70 date}.}%"
+            "\n}"
+        )
+        markdown = self.convert(
+            r"\chronologyannotation{gospel}", preamble=definitions
+        )
+        self.assertIn("Critical comparison: Post-A.D. 70 date.", markdown)
+        self.assertNotIn("critical.gospel-of-matthew", markdown)
+        self.assertNotIn("passage.usccb.matthew", markdown)
+        self.assertNotIn("chronologyannotationcomparison", markdown)
 
     def test_generated_chronology_annotation_without_definition_is_refused(self) -> None:
         with self.assertRaises(DRIVER.ConversionError) as raised:

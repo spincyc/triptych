@@ -26,15 +26,18 @@ the future concise opening roles. Follow the checker and owning profile for
 exact fields. Each interpretive lane
 is a separate component. Keep shared source ownership and references explicit.
 
-Choose generous, legible typography, navigable substantial sections, restrained
-running matter, and intentional breaks. The expansive study has no fixed
+Import `common/preamble` then `common/propers-format` literally and declare
+`format_contract = "propers-format-v1"`. Use the shared title, table, dossier,
+keyed lane-heading and four-senses forms described in the three-document
+profile. Keep ordinary semantic subsections and precise citations; supply
+content fields rather than local presentation implementations. Latin Modern,
+11-point article, 0.75-inch margins and monochrome are required. The expansive study has no fixed
 opening-page positions; the concise companion's first four pages are fixed
 by the owning three-document profile. Give its required reviewed chronology
 a home here, normally a shared terminal historical appendix.
-Palatino with a comfortable measure and roughly 11-point text on 15-point
-leading is one available starting point. Prefer ordinary semantic sectioning
-and simple shared formatting that the web converter already understands; an
-ornamental cover or an elaborate new macro system does not establish beauty.
+Do not repeat the concise four-page opening for every interpretation.
+Keep every component import literal and unconditional; a template macro may
+format its arguments but never choose or import a component dynamically.
 Put work-wide scope and used references at the end; display the one canonical
 generation timestamp and compact rights colophon. Set exact provenance from
 this packet and declare canonical web eligibility.

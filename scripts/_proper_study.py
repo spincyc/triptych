@@ -15,7 +15,7 @@ import tomllib
 from pathlib import Path
 
 from _proper_components import (include_graph, validate_liturgical_family,
-                                presentation_contract, pagination_aux_files)
+                                presentation_contract, format_contract, pagination_aux_files)
 from _corpus import active_tex, REVISION_RE, CONTRIBUTION_RE, PRODUCTION_RE, INHERITANCE_RE
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -27,7 +27,8 @@ RESEARCH_REVIEW_CONTRACT = "proper-study-v3"
 # research. The workflow digest covers recipes/fragments/schemas, not the code
 # those commands execute. Keep this bounded adapter/query dependency list here.
 CHRONOLOGY_COMPUTATION_INPUTS = (
-    "scripts/_proper_chronology.py", "scripts/_chronology.py", "scripts/_canon.py",
+    "scripts/_proper_chronology.py", "scripts/_proper_chronology_comparisons.py",
+    "scripts/_chronology.py", "scripts/_canon.py",
     "scripts/_loci.py", "scripts/_calendars.py", "scripts/_tooling.py",
     "scripts/_psalms.py", "scripts/_deuterocanon.py", "scripts/_projection.py",
     "scripts/_psalter.py", "tools/proper-chronology", "requirements-tools.txt",
@@ -407,7 +408,8 @@ def publication(root: Path, provider: str, document: str) -> None:
 
 
 def check(root: Path, provider: str, document: str, phase: str,
-          edition: str | None, *, require_presentation: bool = False) -> None:
+          edition: str | None, *, require_presentation: bool = False,
+          require_format: bool = False) -> None:
     scope(root, provider, document)
     leaf = leaf_path(root, provider, document)
     if phase == "scope":
@@ -423,6 +425,7 @@ def check(root: Path, provider: str, document: str, phase: str,
         review_inputs(root, provider, document, "research")
         return
     presentation_contract(manifest(leaf), required=require_presentation)
+    format_contract(manifest(leaf), required=require_format)
     if phase == "content":
         components(root, provider, document, "content", edition)
     elif phase == "artifacts":
@@ -441,6 +444,8 @@ def main() -> int:
     parser.add_argument("--edition", choices=tuple(EDITIONS))
     parser.add_argument("--require-presentation", action="store_true",
                         help="require the current physical pagination contract (proper-study v3)")
+    parser.add_argument("--require-format", action="store_true",
+                        help="require the shared proper typography contract (proper-study v6)")
     parser.add_argument("--date", default="undated")
     parser.add_argument("--review", choices=("research", "study", "synthesis", "homily", "visual", "web"))
     parser.add_argument("--review-contract", choices=(RESEARCH_REVIEW_CONTRACT,),
@@ -465,7 +470,7 @@ def main() -> int:
             raise ValueError("check requires --phase")
         else:
             check(root, args.provider, args.document, args.phase, args.edition,
-                  require_presentation=args.require_presentation)
+                  require_presentation=args.require_presentation, require_format=args.require_format)
     except (OSError, ValueError, KeyError, subprocess.TimeoutExpired) as error:
         print(f"proper-study: {error}", file=sys.stderr)
         return 1

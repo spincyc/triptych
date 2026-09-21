@@ -25,9 +25,12 @@ Rehearse the prose for sense and oral clarity; do not
 claim an audible or human rehearsal that did not happen. End as preaching;
 any recited prayer must reproduce an exact received human witness.
 
-Set comfortable speaking type and recoverable paragraphs. Keep homily-mode
-text around 12.5–13 points on 18-point leading as a useful starting point,
-then judge the actual pages rather than treating those values as a quota. Keep
+Import `common/preamble`, `common/propers-format`, and `common/propers-homily`
+literally, in that order. Use the full-width shared title, then enclose only
+the literal spoken-component import in `properhomily`: two Latin Modern
+columns at the shared 11-point baseline. Place the terminal apparatus after
+the environment's closing page break. Never put columns in the studies.
+Do not add local font, geometry or title overrides. Keep
 components local and update the common generation timestamp. Add no new
 source-dependent claims or repairs to the accepted study. Report upstream
 defects for the independent homily reviewer to route to their true owner.

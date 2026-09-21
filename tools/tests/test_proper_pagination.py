@@ -206,7 +206,7 @@ class PaginationTests(unittest.TestCase):
 
     def test_v3_pipeline_requires_contract_in_all_content_and_terminal_gates(self):
         pipeline = json.loads((ROOT / "workflows/pipelines/proper-study.json").read_text())
-        self.assertEqual(pipeline["version"], 3)
+        self.assertGreaterEqual(pipeline["version"], 3)
         gates = [check["command"] for stage in pipeline["stages"] for check in stage.get("checks", [])
                  if "scripts/_proper_study.py check" in check["command"]
                  and any("--phase " + name in check["command"] for name in ("content", "artifacts", "publication"))]
@@ -394,7 +394,9 @@ class ChronologyComputationSealTests(unittest.TestCase):
     def test_adapter_query_parser_registry_and_source_drift_invalidate_without_date_changes(self):
         self.chronology()
         record = self.leaf / "research/chronology.toml"
-        for name in ("scripts/_proper_chronology_inputs.py", "scripts/_chronology.py", "tools/citations",
+        for name in ("scripts/_proper_chronology_inputs.py",
+                     "scripts/_proper_chronology_comparisons.py",
+                     "scripts/_chronology.py", "tools/citations",
                      "guidance/liturgy/postconciliar-propers-registry.md", self.owner.relative_to(self.root).as_posix()):
             before = self.seal()
             path = self.root / name

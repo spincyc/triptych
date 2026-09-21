@@ -23,9 +23,11 @@ name-count alone does not demonstrate agreement. Are its authors'
 controlling claims compatible? Does each appointed element actually contribute?
 Are its four senses distinct and textually grounded? Do the two to five
 readings differ materially without invented conflict? Are the Fathers' own
-claims kept distinct from the editor's complete-Mass synthesis? For Ordinary
-Time, does the evidence respect independent semi-continuous courses and shared
-Missal prayers? Refuse thin themes or source lists that cannot support a study.
+claims kept distinct from the editor's complete-Mass synthesis? For a
+postconciliar Ordinary Time target, does the evidence respect independent
+semi-continuous courses and shared Missal prayers? For a 1962 target, does every
+such claim instead rest on evidence from that rite's own appointments and
+transmission? Refuse thin themes or source lists that cannot support a study.
 
 Use stable `RES-` finding IDs and repair target `research`. PASS authorizes
 study drafting from this bounded evidence, not a claim of exhaustive scholarship.

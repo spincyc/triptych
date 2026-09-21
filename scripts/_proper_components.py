@@ -9,6 +9,7 @@ from __future__ import annotations
 import re
 import subprocess
 import tomllib
+from collections import Counter
 from pathlib import Path
 
 MANIFEST = "proper-components.toml"
@@ -19,6 +20,7 @@ KEY = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 KINDS = {"front-matter", "appointed-text", "proper-treatment", "interpretive-lane",
          "integrated-commentary", "homily", "terminal-apparatus"}
 PRESENTATION_CONTRACT = "interpretive-pagination-v1"
+FORMAT_CONTRACT = "propers-format-v1"
 PRESENTATION_ROLES = ("inventory", "overview", "chronology", "themes", "commentary")
 PAGE_RANGES = {"research": (20, 50), "synthesis": (10, 12)}
 MARKER_PREFIX = "triptych:concise:"
@@ -30,6 +32,190 @@ MARKERS = {
     "themes": {"themes:start": 3, "themes:end": 4},
     "commentary": {"commentary:start": 5},
 }
+
+
+def format_contract(data: dict, *, required: bool = False) -> bool:
+    """Keep historical layouts valid until their explicit template migration."""
+    value = data.get("format_contract")
+    if value is None and not required:
+        return False
+    if data.get("schema") != 2 or value != FORMAT_CONTRACT:
+        raise ValueError(f"format_contract must be {FORMAT_CONTRACT!r}")
+    return True
+
+
+def tex_source(path: Path) -> str:
+    return re.sub(r"(?<!\\)%[^\n]*", "", path.read_text(encoding="utf-8"))
+
+
+def format_sources(data: dict, leaf: Path, provider_root: Path,
+                   records: dict, modes: tuple) -> None:
+    """Enforce the template's source shape; typography still needs page review."""
+    shared = ("common/preamble", "common/propers-format", "common/propers-homily")
+    imports = re.compile(r"\\(?:input|include)\s*\{([^{}]+)\}")
+    overrides = re.compile(
+        r"\\(?:documentclass|geometry|newgeometry|restoregeometry|"
+        r"fontsize|fontfamily|fontencoding|fontseries|fontshape|"
+        r"setmainfont|setsansfont|setmonofont|linespread|"
+        r"titleformat|titlespacing|fancyhead|fancyfoot|fancypagestyle|"
+        r"pagestyle|thispagestyle|markright|definecolor|colorlet|"
+        r"color|textcolor|pagecolor|colorbox|fcolorbox)\b|"
+        r"\\(?:usepackage|RequirePackage)(?:\[[^]]*\])?\s*\{[^}]*"
+        r"(?:mathpazo|newpx|palatino|tgpagella|times|newtx|fontspec|libertinus|"
+        r"geometry|fancyhdr|titlesec|typearea|fullpage|xcolor)[^}]*\}|"
+        r"\\(?:renewcommand|newcommand|def|let)\s*\{?\\"
+        r"(?:propertitle|properlane|chronodate|dossierprose|dossierevent|"
+        r"rmdefault|sfdefault|familydefault|headrulewidth|footrulewidth)\b|"
+        r"\\(?:newenvironment|renewenvironment)\s*\{"
+        r"(?:fourSenses|properhomily|maptable|concisemaptable|conciseoverview|"
+        r"properinventory|dossiertable|concisedossiertable|comparisontable|branchtable)\}|"
+        r"\\(?:setlength|addtolength)\s*\{\\(?:textwidth|textheight|"
+        r"linewidth|columnwidth|columnsep|oddsidemargin|evensidemargin|topmargin|"
+        r"headheight|headsep|footskip|paperwidth|paperheight)\}|"
+        r"\\(?:textwidth|textheight|linewidth|columnwidth|columnsep|"
+        r"oddsidemargin|evensidemargin|topmargin|headheight|headsep|"
+        r"footskip|paperwidth|paperheight|hsize|vsize)\s*=")
+
+    def expand(path: Path, reached: set[Path],
+               markers: dict[Path, str] | None = None) -> str:
+        def replace(match: re.Match) -> str:
+            value = match[1]
+            name = value if Path(value).suffix else value + ".tex"
+            target = (provider_root / name).resolve()
+            if target not in reached:
+                return match[0]
+            if markers and target in markers:
+                return markers[target]
+            return expand(target, reached, markers)
+        return imports.sub(replace, tex_source(path))
+
+    for mode in modes:
+        entry = leaf / ENTRYPOINTS[mode]
+        reached = include_graph(entry, leaf, provider_root)
+        source = expand(entry, reached)
+        entry_text = tex_source(entry)
+        preamble = entry_text.split(r"\begin{document}", 1)[0]
+        component_paths = {
+            (leaf / item["path"]).resolve(): item
+            for item in records.values()
+        }
+        direct_components = []
+        for match in imports.finditer(entry_text):
+            value = match[1]
+            name = value if Path(value).suffix else value + ".tex"
+            target = (provider_root / name).resolve()
+            if target in component_paths:
+                direct_components.append(target)
+        expected_components = [
+            (leaf / item["path"]).resolve()
+            for item in records.values()
+            if mode in item["modes"]
+        ]
+        if direct_components != expected_components:
+            raise ValueError(
+                f"{mode} component imports must be literal, unique, and follow manifest order")
+
+        def component_import_counts(path: Path, stack: tuple[Path, ...] = ()) -> Counter:
+            """Count every manifest-component import edge, including nested ones."""
+            if path in stack:
+                raise ValueError(f"{mode} component imports form a cycle")
+            counts = Counter()
+            for match in imports.finditer(tex_source(path)):
+                value = match[1]
+                name = value if Path(value).suffix else value + ".tex"
+                target = (provider_root / name).resolve()
+                if target not in reached:
+                    continue
+                if target in component_paths:
+                    counts[target] += 1
+                counts.update(component_import_counts(target, stack + (path,)))
+            return counts
+
+        component_counts = component_import_counts(entry)
+        expected_count = Counter(expected_components)
+        if component_counts != expected_count:
+            raise ValueError(
+                f"{mode} component imports must occur exactly once and only in the entrypoint")
+        selected = [match[1].removesuffix(".tex") for match in imports.finditer(preamble)
+                    if match[1].removesuffix(".tex") in shared]
+        expected = list(shared if mode == "homily" else shared[:2])
+        if selected != expected:
+            raise ValueError(f"{mode} requires ordered literal shared-template imports: {expected}")
+        for name in shared:
+            count = sum(match[1].removesuffix(".tex") == name for match in imports.finditer(source))
+            if count != (1 if name in expected else 0):
+                raise ValueError(f"{mode} shared-template import must occur exactly once in its mode")
+        if overrides.search(source):
+            raise ValueError(f"{mode} overrides shared template typography or formatting")
+        if len(re.findall(r"\\propertitle\s*\{", source)) != 1:
+            raise ValueError(f"{mode} requires exactly one shared propertitle")
+        if re.search(r"\\(?:twocolumn|onecolumn)\b|\\begin\s*\{multicols\*?\}", source):
+            raise ValueError("columns must use the homily-only shared environment")
+        blocks = list(re.finditer(r"\\(begin|end)\s*\{properhomily\}", source))
+        if mode != "homily":
+            if blocks:
+                raise ValueError(f"{mode} must not use homily columns")
+            continue
+        if [match[1] for match in blocks] != ["begin", "end"]:
+            raise ValueError("homily requires exactly one shared column environment")
+        if source.index(r"\propertitle") > blocks[0].start():
+            raise ValueError("homily title must precede the spoken columns")
+        body = next(item for item in records.values() if item["kind"] == "homily")
+        body_path = (leaf / body["path"]).resolve()
+        body_text = expand(body_path, reached).strip()
+        if source[blocks[0].end():blocks[1].start()].strip() != body_text.strip():
+            raise ValueError("homily columns must contain only the complete spoken component")
+        body_marker = "TRIPTYCH_FORMAT_SPOKEN_COMPONENT"
+        apparatus_items = [item for item in records.values()
+                           if item["kind"] == "terminal-apparatus"
+                           and "homily" in item["modes"]]
+        markers = {body_path: body_marker}
+        for index, item in enumerate(apparatus_items):
+            markers[(leaf / item["path"]).resolve()] = (
+                f"TRIPTYCH_FORMAT_TERMINAL_APPARATUS_{index}")
+        marked_source = expand(entry, reached, markers)
+        marked_blocks = list(re.finditer(
+            r"\\(begin|end)\s*\{properhomily\}", marked_source))
+        if (marked_source.count(body_marker) != 1
+                or marked_source[marked_blocks[0].end():marked_blocks[1].start()].strip()
+                != body_marker):
+            raise ValueError("homily spoken component must occur exactly once")
+        for item in apparatus_items:
+            marker = markers[(leaf / item["path"]).resolve()]
+            if (marked_source.count(marker) != 1
+                    or marker not in marked_source[marked_blocks[1].end():]):
+                raise ValueError("homily terminal apparatus must follow the spoken columns")
+
+    if "research" in modes:
+        for lane in data["lanes"]:
+            source = "\n".join(tex_source(leaf / records[key]["path"])
+                               for key in lane["component_keys"])
+            headings = re.findall(r"\\properlane\s*\{([^{}]+)\}\s*\{", source)
+            if headings != [lane["key"]]:
+                raise ValueError(f"lane {lane['key']} requires its shared keyed heading exactly once")
+            senses = re.findall(r"\\begin\{fourSenses\}(.*?)\\end\{fourSenses\}", source, re.S)
+            if len(senses) != 1:
+                raise ValueError(f"lane {lane['key']} requires one shared fourSenses block")
+            labels = re.findall(r"\\item\[([A-Za-z]+)\.\]", senses[0])
+            if labels != ["Literal", "Allegorical", "Moral", "Anagogical"]:
+                raise ValueError(f"lane {lane['key']} requires four ordered sense labels")
+
+
+def format_artifacts(data: dict, destination: Path, modes: tuple) -> None:
+    """Check actual embedded fonts, not merely a package named in the source."""
+    for mode in modes:
+        pdf = (destination / data["outputs"][mode]).with_suffix(".pdf")
+        result = subprocess.run(["pdffonts", str(pdf)], capture_output=True,
+                                text=True, timeout=30, check=False)
+        lines = result.stdout.splitlines()[2:]
+        if result.returncode or not lines:
+            raise ValueError(f"cannot determine {mode} embedded fonts")
+        for line in lines:
+            # Poppler's trailing fields are emb, sub, uni, object, generation.
+            fields = line.split()
+            name = re.sub(r"^[A-Z]{6}\+", "", fields[0]) if fields else ""
+            if len(fields) < 8 or not name.startswith("LM") or fields[-5] != "yes":
+                raise ValueError(f"{mode} requires embedded Latin Modern fonts: {line}")
 
 
 def presentation_contract(data: dict, *, required: bool = False) -> bool:
@@ -473,10 +659,17 @@ def audit_v2(data: dict, path: Path, provider_root: Path, *, phase: str = "conte
     if bound_components != {key for key, item in records.items() if item["kind"] == "interpretive-lane"}:
         raise ValueError("every interpretive-lane component must belong to one declared lane")
     paginated = presentation_contract(data)
+    formatted = format_contract(data)
     if paginated:
         presentation_sources(data, leaf, provider_root, records,
                              check_files=check_files and "synthesis" in modes)
     if check_files:
+        # The format contract is stricter than simple reachability: every
+        # selected component must be a literal, direct import, exactly once.
+        # Run it first so a transitive duplicate cannot be reported merely as
+        # a generic cross-mode include-graph mismatch.
+        if formatted:
+            format_sources(data, leaf, provider_root, records, modes)
         for mode in modes:
             reached = include_graph(entries[mode], leaf, provider_root)
             allowed = {entries[mode], (leaf / "generation-metadata.tex").resolve()}
@@ -499,3 +692,5 @@ def audit_v2(data: dict, path: Path, provider_root: Path, *, phase: str = "conte
                 raise ValueError(f"{mode} output is not a PDF")
         if paginated:
             presentation_artifacts(data, destination, modes)
+        if formatted:
+            format_artifacts(data, destination, modes)

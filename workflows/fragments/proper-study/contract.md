@@ -57,8 +57,11 @@ its evidence, never by trusting a predecessor's PASS. Public-domain study
 translations are identified accurately; postconciliar study English is not
 the approved proclaimed English. Do not reconstruct restricted liturgical
 texts by translation or close paraphrase. Claims of design must distinguish
-theological synthesis from historical compositional intent, particularly for
-the semi-continuous readings and shared prayers of Ordinary Time.
+theological synthesis from historical compositional intent. Apply the
+semi-continuous readings and shared-prayers premise only to a postconciliar
+Ordinary Time target. A 1962 target instead uses only its own Time-after-
+Pentecost appointments and their independently documented transmission; never
+project the postconciliar calendar or Lectionary structure into it.
 
 Use this run's exact header for generation provenance. Update the finalization
 timestamp and actual model contributions when render-relevant sources change.

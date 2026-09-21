@@ -252,6 +252,12 @@ then verse order, and distinguish composition, attributed setting, narrated
 event, and reception. Use the canonical chronology tool's generated record and
 annotations, including its alternatives, relation labels and unresolved states.
 Do not reuse another Sunday's dates or substitute hand-authored date labels.
+When the study needs to place another evidence profile beside the default
+answer, declare that exact element/profile/relation/subject selection in
+`research/chronology-profile-comparisons.toml` before regenerating. The
+generated comparison remains visibly distinct from the default cascade; prose
+must not splice a separately queried date into the default Date cell or its
+explanation.
 Postconciliar query inputs identify that edition's own verified appointments
 through the adapter specified in the [chronology profile](../scripture-chronology.md).
 Research review must inspect the new chronology and its controlling sources;
@@ -339,15 +345,57 @@ congregation, or exercised the ordained ministry.
 
 ## Composition and review
 
-Beauty follows from a legible, deliberate hierarchy: warm restrained type,
-comfortable measure, generous but purposeful margins, quiet running furniture,
-and meaningful breaks. Design each output for its use. The study needs
-navigation; the concise work needs visible relationships; the homily needs
-comfortable type and paragraphs that can be recovered at a glance while
-speaking. Do not shrink type, leave conspicuous blank pages, or add decorative
-material to satisfy a page target. Full-page inspection, log and extraction
-checks, metadata, font embedding, and build/install byte identity remain
-mandatory. No ornamental image is required.
+The maintainer restored the established house typography on 21 September 2026:
+Latin Modern, an 11-point article, 0.75-inch margins and monochrome printing.
+`src/common/propers-format.tex` owns proper-specific presentation; it is imported
+immediately after `common/preamble` and does not change unrelated publications.
+Leaf files supply title and running-head fields and substantive components,
+not font packages, geometry, title implementations or local table environments.
+Discretionary Palatino/Pagella and enlarged single-column homilies are
+superseded. New runs declare `format_contract = "propers-format-v1"`.
+Historical manifests remain valid until explicitly migrated.
+
+Use `\propertitle{title}{subtitle}{edition}{occasion}` for the full-width
+opening. The first field is the liturgical Sunday or formulary name, the
+second is an optional upright descriptive subtitle, and the last two fields
+give edition/date/use metadata. The macro owns the title page's plain style
+and spacing; leaf files do not add page-style commands around it. Use the
+shared map/overview/dossier environments for tabular content,
+`\properlane{stable-key}{descriptive title}` for each expansive interpretation,
+ordinary subsections for its arguments, and one `fourSenses` description
+block with Literal, Allegorical, Moral and Anagogical items. Citations remain
+in ordinary footnotes or precise prose references with shared type treatment.
+Each lane develops its own argument; it does not repeat the concise work's
+four-page opening.
+
+The homily alone also imports `common/propers-homily`. Its one
+`properhomily` environment encloses only the literal spoken-component import,
+after the title and before the terminal apparatus. It sets two columns in the
+same Latin Modern body type and ends with a page break. Keep this import out of
+both study entrypoints and their web input graph.
+
+The homily environment owns the semantic `Homily` running head. Leaf files use
+`\runninghead{...}` for any other short interior head; they do not call
+`\markright`, `\fancyhead` or page-style primitives directly.
+
+Import the spoken component exactly once, inside `properhomily`, and each
+homily terminal-apparatus component exactly once after it. Do not duplicate
+either component elsewhere to influence pagination. Leaf entrypoints and
+components must not reset shared page dimensions such as text width, text
+height, margins, paper size or column measure; make pagination repairs by
+editing real content boundaries and ordinary page-break hints.
+
+Entrypoints contain literal unconditional `\input{...}` commands in reading
+order. The template formats content; it must not hide imports behind macros,
+conditionals or computed paths. Concise components retain their literal zref
+markers and named presentation roles. Page positions and extent remain governed
+above, not inferred from a template call. Existing source prose is preserved
+in a formatting migration; new chronology still requires a fresh source review.
+
+Full-page inspection, log and extraction checks, embedded-font checks, metadata,
+substantive-text preservation and build/install byte identity remain mandatory.
+Do not enlarge type, pad pages or suppress evidence to meet page targets.
+No ornamental image is required.
 
 `proper-study` runs source resolution and research, cold research review,
 study authoring and cold review, concise authoring and cold review, homily
