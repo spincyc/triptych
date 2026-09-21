@@ -651,6 +651,65 @@ class WebEditionConversionTests(unittest.TestCase):
         self.assertIn("Born at Corps.", markdown)
         self.assertNotIn(":::", markdown)
         self.assertIn("Need (*Int.*)", markdown)
+        # The semantic definition-list dialect is deliberately limited to
+        # schema-2 proper studies, so established non-proper output does not
+        # change underneath already reviewed web editions.
+        self.assertNotRegex(markdown, r"(?m)^:\s+Born at Corps\.$")
+
+    def test_schema_two_proper_preserves_contents_at_its_source_position(self) -> None:
+        markdown = self.convert(
+            r"\label{proper-introit}" "\nOpening paragraph.\n\n"
+            r"\tableofcontents"
+            "\n\n"
+            r"\section{Second part}"
+            "\nSecond paragraph.\n",
+            proper=True,
+            proper_schema=2,
+            element_keys=("introit",),
+        )
+        self.assertEqual(markdown.count("[TOC]"), 1)
+        self.assertLess(markdown.index("Opening paragraph."), markdown.index("[TOC]"))
+        self.assertLess(markdown.index("[TOC]"), markdown.index("## Second part"))
+
+    def test_nonproper_contents_keeps_the_legacy_omission(self) -> None:
+        markdown = self.convert(
+            r"\tableofcontents" "\n\n" r"\section{Second part}" "\nText.\n"
+        )
+        self.assertNotIn("[TOC]", markdown)
+        self.assertIn("## Second part", markdown)
+
+    @unittest.skipUnless(importlib.util.find_spec("markdown"), "Python Markdown is not installed")
+    def test_four_senses_render_as_definition_terms_after_site_rewriting(self) -> None:
+        labels = ("Literal.", "Allegorical.", "Moral.", "Anagogical.")
+        items = "\n\n".join(
+            rf"\item[{label}] The {label[:-1].lower()} body." for label in labels
+        )
+        markdown = self.convert(
+            "\\label{proper-introit}\n\\begin{fourSenses}\n"
+            + items
+            + "\n\\end{fourSenses}\n",
+            preamble=(
+                r"\newenvironment{fourSenses}"
+                r"{\begin{description}[style=nextline,leftmargin=0pt]}"
+                r"{\end{description}}"
+            ),
+            proper=True,
+            proper_schema=2,
+            element_keys=("introit",),
+        )
+        for label in labels:
+            self.assertRegex(markdown, rf"(?m)^{re.escape(label)}$")
+        self.assertEqual(len(re.findall(r"(?m)^:\s+The .* body\.$", markdown)), 4)
+
+        site = runpy.run_path(str(ROOT / "tools/public-alpha"))
+        rendered = site["render_page"](
+            "web/test/studies/subject.md", markdown, "subject.html", True, {}
+        )
+        self.assertEqual(rendered.count("<dt>"), 4)
+        self.assertEqual(rendered.count("<dd>"), 4)
+        self.assertIn("<dt>Literal.</dt>", rendered)
+        self.assertRegex(rendered, r"<dd>\s*<p>The literal body\.</p>\s*</dd>")
+        self.assertNotIn("Literal.<br>", rendered)
 
     def test_generated_chronology_annotation_keeps_its_complete_payload(self) -> None:
         definitions = (

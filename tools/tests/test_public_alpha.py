@@ -1217,7 +1217,7 @@ class PublicAlphaTest(unittest.TestCase):
 
     def test_long_form_contents_marker_renders_linked_unique_anchors(self) -> None:
         headings = "\n\n".join(
-            f"## Part {number}\n\nText {number}."
+            f"## Part {number}\n\n### Detail {number}\n\nText {number}."
             for number in range(1, 121)
         )
         page = self.tool.render_page(
@@ -1230,6 +1230,8 @@ class PublicAlphaTest(unittest.TestCase):
         self.assertIn('<div class="toc">', page)
         self.assertEqual(page.count("<h2 id="), 120)
         self.assertEqual(page.count('<a href="#part-'), 120)
+        self.assertNotIn('<a href="#work">', page)
+        self.assertNotIn('<a href="#detail-', page)
         self.assertEqual(
             len(
                 {
@@ -1238,6 +1240,18 @@ class PublicAlphaTest(unittest.TestCase):
                 }
             ),
             120,
+        )
+
+    def test_reader_styles_preserve_contents_labels_and_upright_cues(self) -> None:
+        css = (
+            REPOSITORY_ROOT / "release/public-alpha/assets/site.css"
+        ).read_text(encoding="utf-8")
+        self.assertRegex(css, r"\.nodecor\s*\{[^}]*font-style:\s*normal;")
+        self.assertIn(".page-shell.reading .toc", css)
+        self.assertIn(".page-shell.reading dt", css)
+        self.assertRegex(
+            css,
+            r"\.page-shell\.reading dt\s*\{[^}]*font-weight:\s*700;",
         )
 
     def test_temporary_release_requires_request_time_controls(self) -> None:

@@ -17,7 +17,9 @@ class MarkdownRenderError(RuntimeError):
 
 # Web editions are endnote-heavy and carry their own section anchors, so
 # footnotes and heading attributes must become real markup rather than literal
-# [^n] and {#id} text. `fenced_code` is here because a triple-backtick block is
+# [^n] and {#id} text. Proper studies also retain their four-senses description
+# lists, so definition terms and bodies must become semantic markup. `fenced_code`
+# is here because a triple-backtick block is
 # not a Markdown core construct: without the extension the backticks are read as
 # an inline code span, so the block's lines run together inside a paragraph and
 # its language word prints as prose. The site's `reject_unrendered_code_fences`
@@ -26,6 +28,7 @@ class MarkdownRenderError(RuntimeError):
 MARKDOWN_EXTENSIONS = [
     "tables",
     "sane_lists",
+    "def_list",
     "toc",
     "footnotes",
     "attr_list",
@@ -74,5 +77,8 @@ def render_markdown(markdown_text: str, root: Path) -> str:
         ) from exc
     require_locked_markdown_dependency(root)
     return markdown.markdown(
-        markdown_text, extensions=MARKDOWN_EXTENSIONS, output_format="html5",
+        markdown_text,
+        extensions=MARKDOWN_EXTENSIONS,
+        extension_configs={"toc": {"toc_depth": "2-2"}},
+        output_format="html5",
     )

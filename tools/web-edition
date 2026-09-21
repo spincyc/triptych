@@ -49,16 +49,27 @@ ROOT = Path(__file__).resolve().parents[1]
 SHIM = Path(__file__).resolve().parents[1] / "scripts" / "web-shim.tex"
 SRC = ROOT / "src"
 OUT = ROOT / "build" / "web"
-# Every disabled extension names a construct the site's Markdown renderer would
-# print as literal punctuation: space-aligned tables, `:   ` definitions,
+# The legacy dialect disables constructs established conversions did not ask
+# the site to interpret: space-aligned tables, `:   ` definitions,
 # trailing-backslash breaks, `$...$` math, and caret-delimited superscripts.
-# Superscripts fall back to semantic <sup> tags. Heading attributes are kept
-# because the site reads them and a document's own cross-references need them.
+# Schema-2 proper studies selectively retain definition lists below. Superscripts
+# fall back to semantic <sup> tags. Heading attributes are kept because the site
+# reads them and a document's own cross-references need them.
 MARKDOWN_DIALECT = (
     "markdown-smart-simple_tables-multiline_tables-grid_tables"
     "-definition_lists-escaped_line_breaks-tex_math_dollars"
     "-bracketed_spans-raw_attribute-superscript"
 )
+# Schema-2 proper studies use description lists for each lane's four senses.
+# Preserve those as definition lists: unlike pandoc's fallback hard break, the
+# term/body relationship survives the site's whitespace-normalizing link pass.
+# The legacy dialect remains unchanged for every non-schema-2 publication.
+PROPER_STUDY_MARKDOWN_DIALECT = (
+    "markdown-smart-simple_tables-multiline_tables-grid_tables"
+    "-escaped_line_breaks-tex_math_dollars"
+    "-bracketed_spans-raw_attribute-superscript"
+)
+WEB_TOC_SENTINEL = "TRIPTYCHWEBTOCMARKER"
 
 UNNUMBERED_HEADING_ATTRIBUTE_RE = re.compile(
     r"^(#{1,6} .+?) \{#([^{} ]+) \.unnumbered\}$", re.MULTILINE
@@ -1104,7 +1115,18 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
     body = PRE_CONVERSION_BREAKS_RE.sub("", body)
     body, chronology_annotations = expand_chronology_annotations(body, preamble)
     title, subtitle = pdf_metadata(preamble)
-    body = TITLEPAGE_RE.sub("", body).replace(r"\tableofcontents", "")
+    body = TITLEPAGE_RE.sub("", body)
+    toc_count = body.count(r"\tableofcontents")
+    if required_anchors is not None:
+        # Keep the Contents at the author's chosen location.  A plain sentinel
+        # survives pandoc's LaTeX reader; after conversion it becomes the
+        # Python-Markdown toc extension's marker and therefore links the
+        # reflowed page rather than retaining meaningless print page numbers.
+        body = body.replace(
+            r"\tableofcontents", rf"\par {WEB_TOC_SENTINEL}\par"
+        )
+    else:
+        body = body.replace(r"\tableofcontents", "")
     body = REGISTER_ASSIGNMENT_RE.sub("", body)
     body = PARTIAL_RULE_RE.sub("", body)
     body = ALIGNMENT_FIXUP_RE.sub("", body)
@@ -1140,13 +1162,27 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         # output dialect is narrowed to what the site's Markdown renderer reads:
         # pipe tables only, no header attributes, and literal typography rather
         # than ASCII stand-ins no downstream renderer would resolve.
-        command = ["pandoc", "-f", "latex", "-t", MARKDOWN_DIALECT, "--wrap=none",
+        dialect = (
+            PROPER_STUDY_MARKDOWN_DIALECT
+            if required_anchors is not None
+            else MARKDOWN_DIALECT
+        )
+        command = ["pandoc", "-f", "latex", "-t", dialect, "--wrap=none",
                    "--shift-heading-level-by=1", handle.name]
         result = subprocess.run(command, capture_output=True, text=True)
     if result.returncode != 0:
         raise ConversionError(f"pandoc failed:\n{result.stderr.strip()}")
     if MATH_WARNING_RE.search(result.stderr):
         raise ConversionError(f"math left as raw TeX:\n{result.stderr.strip()}")
+    converted = result.stdout
+    if required_anchors is not None and toc_count:
+        converted_toc_count = converted.count(WEB_TOC_SENTINEL)
+        if converted_toc_count != toc_count:
+            raise ConversionError(
+                "table of contents marker shortfall: "
+                f"expected {toc_count}, found {converted_toc_count}"
+            )
+        converted = converted.replace(WEB_TOC_SENTINEL, "[TOC]")
     heading = f"# {title}\n"
     if subtitle:
         heading += f"\n*{subtitle}*\n"
@@ -1154,12 +1190,12 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
     if required_anchors is None:
         markdown = strip_contentless_breaks(
             normalize_unnumbered_headings(
-                resolve_anchors(result.stdout), set(LABEL_RE.findall(body))
+                resolve_anchors(converted), set(LABEL_RE.findall(body))
             )
         )
     else:
         markdown = strip_contentless_breaks(normalize_unnumbered_headings(
-            LINK_ATTRIBUTE_RE.sub(r"\1", result.stdout), set(LABEL_RE.findall(body))
+            LINK_ATTRIBUTE_RE.sub(r"\1", converted), set(LABEL_RE.findall(body))
         ))
         # Validate before legacy unlinking can erase a broken proper reference,
         # and again on the exact final publication, title and subtitle included.
