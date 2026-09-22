@@ -98,8 +98,9 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "author-standing-registry"
   criterion = "A tracked author-standing registry records each commentator's standing with a cited basis, validated by a check on the sources gate (proposal step 1; decisions D1-D3)."
-  status = "open"
-  evidence = ["guidance/liturgy/liturgical-commentators-plan-2026-09-22.md"]
+  status = "pass"
+  evidence = ["src/sources/inventories/author-standing-v1.toml", "scripts/_standing.py", "tools/tests/test_author_standing.py"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "formulary-loci"
@@ -110,8 +111,9 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "formulary-discovery"
   criterion = "A commentary-work-index verb finds the liturgical commentary on a formulary by its elements rather than its Sunday label, joins author standing and holdings, and flags label drift, with tests and a replayed example (proposal step 3)."
-  status = "open"
-  evidence = ["guidance/liturgy/liturgical-commentators-plan-2026-09-22.md", "tools/commentary-work-index"]
+  status = "pass"
+  evidence = ["tools/commentary-work-index", "scripts/_formulary.py", "tools/tests/test_formulary.py", "src/sources/commentary/formulary-loci.yaml"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "first-priority-acquisitions"

@@ -163,6 +163,32 @@ on, in
   [the three-document profile](guidance/liturgy/propers-three-documents.md#liturgical-commentators).
 - The workflow change still waits until that run publishes.
 
+**Landed (commentator code, commit 1).** This added:
+
+- `src/sources/inventories/author-standing-v1.toml`, which records 24 persons
+  with cited bases;
+- `src/sources/commentary/formulary-loci.yaml`, with 16 loci from 10 works
+  for the Eighteenth Sunday;
+- `commentary-work-index formulary`, which compares a commentator's Mass with
+  the calendar's element by element and flags Sunday-label drift;
+- `standing`, a new verb;
+- Rule 14 of [the catena guidance](guidance/catena.md) §12.
+
+For the Eighteenth Sunday, Bl. Schuster and the Fromage continuation match
+the 1962 formulary in full. Rupert, Honorius, Durandus and Sicard give that
+Sunday another Gospel and put Matthew 9 on their Nineteenth.
+
+The containment audit entered PG 124 (Theophylact on the Pauline epistles)
+and PL 85. PL 172 was registered as the 1895 Garnier reissue, a new edition,
+so Honorius IV.84–86 is now held.
+
+The registry classes Theodoret and Cassiodorus as ecclesiastical writers, not
+Fathers, and records the censure Theodoret incurred at Constantinople II (553).
+Every published lane still has two Fathers or saints without them.
+
+Regenerating the web source projection left `release-bindings status` stale.
+Rebinding is an operator approval and has not been done.
+
 **Open.** These may land now:
 
 - the author-standing registry
