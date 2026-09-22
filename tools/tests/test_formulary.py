@@ -144,6 +144,46 @@ class PortabilityTests(unittest.TestCase):
             self.project("no-such-mass")
 
 
+class ComparisonRegressionTests(unittest.TestCase):
+    """The two ways a match went wrong while the file was seeded, pinned."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        registry = _standing.Registry(ROOT)
+        cls.masses = {
+            n: _formulary.project(ROOT, "roman-1962", f"pentecost-{n}", registry=registry, citations=CITATIONS)
+            for n in range(11, 17)
+        }
+
+    def test_a_chant_cut_from_the_same_psalm_is_not_the_same_chant(self) -> None:
+        # Miserere mihi, Domine (Psalm 85:3) and Inclina, Domine (Psalm 85:1-3)
+        # share a verse and are two Introits.
+        row = by_locus(self.masses[15])["XII.16"]
+        self.assertNotIn("introit", row["same"])
+        self.assertEqual(row["same"], ["gospel"])
+
+    def test_a_longer_quotation_is_held_to_the_prayers_own_words(self) -> None:
+        # The calendar's incipit "Omnipotens sempiterne Deus" is a prefix of a
+        # dozen Collects; Durandus's "... de cuius munere venit" is not the
+        # Eleventh Sunday's.
+        self.assertNotIn("VI.127", by_locus(self.masses[11]))
+
+    def test_the_drift_runs_through_ruperts_twelfth_book(self) -> None:
+        for n in (12, 13, 14, 15, 16):
+            with self.subTest(sunday=n):
+                own = by_locus(self.masses[n])[f"XII.{n}"]
+                self.assertEqual(own["drift"]["status"], "none")
+                self.assertIn("gospel", own["different"])
+                if n > 12:
+                    earlier = by_locus(self.masses[n - 1])[f"XII.{n}"]
+                    self.assertEqual(earlier["same"], ["gospel"])
+                    self.assertEqual(earlier["drift"]["status"], "label-drift")
+
+    def test_a_structural_locus_by_topic_is_listed_under_no_mass(self) -> None:
+        for payload in self.masses.values():
+            self.assertNotIn("LXXIII", {row["locus"] for row in payload["structural"]})
+
+
 def mass(key: str, introit: str, gospel: str) -> dict:
     return {
         "key": key,
@@ -340,6 +380,19 @@ class ValidatorTests(unittest.TestCase):
     def test_season_without_ordinal_is_refused(self) -> None:
         errors = self.loci(self.GOOD.replace("          ordinal: 18\n", ""))
         self.assertTrue(any("season and ordinal together" in e for e in errors), errors)
+
+    def test_a_topic_on_a_non_structural_locus_is_refused(self) -> None:
+        errors = self.loci(self.GOOD.replace("          treatment:", "          topic: 'the Ember fasts'\n          treatment:"))
+        self.assertTrue(any("only a structural locus carries" in e for e in errors), errors)
+
+    def test_a_structural_locus_needs_an_occasion_or_a_topic(self) -> None:
+        structural = self.GOOD.replace("'whole-office'", "'structural'").split("          elements:")[0] + (
+            "          state: 'located'\n          checked_on: '2026-09-22'\n"
+        )
+        errors = self.loci(structural)
+        self.assertTrue(any("neither an occasion" in e for e in errors), errors)
+        topical = structural.replace("          treatment:", "          topic: 'the Ember fasts'\n          treatment:")
+        self.assertEqual(self.loci(topical), [])
 
 
 if __name__ == "__main__":

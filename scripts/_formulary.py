@@ -56,6 +56,12 @@ ROLES = (
 )
 # A locus is listed under a mass when it shares one of these, or two others.
 ANCHOR_ROLES = ("introit", "collect", "lesson", "epistle", "gospel")
+# A reading is a pericope, and any overlap with it is the same reading. A chant
+# or a prayer is identified by its opening: a chant cited only by scripture is
+# the same chant when that scripture reaches the verse its incipit is taken from,
+# because neighbouring chants are cut from the same psalm (Inclina, Domine is
+# Psalm 85:1-3 and Miserere mihi, Domine is 85:3).
+READING_ROLES = ("lesson", "epistle", "gospel")
 OCCASIONS = ("sunday-after-ember-saturday",)
 EMBERS = ("advent", "lent", "pentecost", "september")
 
@@ -64,7 +70,7 @@ WORK_FIELDS = {"work_id", "genre", "locus_grammar", "label_system", "writer", "n
 WRITER_FIELDS = {"person", "scope", "basis"}
 LOCUS_FIELDS = {
     "locus", "read_in", "lines", "pages", "printed", "own_label", "own_label_in_layer",
-    "season", "ordinal", "occasion", "treatment", "elements", "state", "checked_on", "notes",
+    "season", "ordinal", "occasion", "topic", "treatment", "elements", "state", "checked_on", "notes",
 }
 OCCASION_FIELDS = {"kind", "embers"}
 ELEMENT_FIELDS = {"role", "incipit", "ref", "said", "as", "alternative"}
@@ -528,8 +534,13 @@ def _locus_errors(
                         errors.append(f"{elabel} ref {element['ref']!r} parses to no range")
                 except Exception as error:  # the parser's own refusal, verbatim
                     errors.append(f"{elabel} ref {element['ref']!r} does not parse: {error}")
-    if treatment == "structural" and occasion is None:
-        errors.append(f"{label} is structural and states no occasion, so no mass can list it")
+    if treatment == "structural" and occasion is None and not str(locus.get("topic") or "").strip():
+        errors.append(
+            f"{label} is structural and states neither an occasion, which lists it under a mass, "
+            "nor a topic, which records what it is about"
+        )
+    if locus.get("topic") is not None and treatment != "structural":
+        errors.append(f"{label} gives a topic, which only a structural locus carries")
     return errors
 
 
@@ -551,12 +562,25 @@ def _incipit_of(proper: dict[str, Any]) -> str:
     return " ".join(text.split()[:6])
 
 
+def _opening_of(proper: dict[str, Any]) -> str:
+    """The fullest opening the calendar holds: its text where it has one.
+
+    A short incipit is a prefix of many prayers -- "Omnipotens sempiterne Deus"
+    opens a dozen Collects -- so a commentator's longer quotation is compared
+    with the prayer's own words wherever they are held.
+    """
+    text = " ".join(str(proper.get("text") or "").split())
+    return " ".join(text.split()[:16]) if text else _incipit_of(proper)
+
+
 class MassElement(NamedTuple):
     role: str
     name: str
     incipit: str
     refs: tuple[str, ...]
     spans: tuple[Span, ...]
+    opening: str = ""
+    source: tuple[Span, ...] = ()
 
 
 def mass_elements(document: dict[str, Any], mass: dict[str, Any], citations: Citations) -> list[MassElement]:
@@ -571,6 +595,7 @@ def mass_elements(document: dict[str, Any], mass: dict[str, Any], citations: Cit
             continue
         refs: list[str] = []
         spans: list[Span] = []
+        source: list[Span] = []
         for verse in proper.get("verses") or []:
             if not isinstance(verse, dict):
                 continue
@@ -581,8 +606,19 @@ def mass_elements(document: dict[str, Any], mass: dict[str, Any], citations: Cit
                 found = _spans(verse)
             if ref:
                 refs.append(ref)
-            spans.extend(found or _spans(verse))
-        out.append(MassElement(role, str(proper.get("name") or ""), _incipit_of(proper), tuple(refs), tuple(spans)))
+            found = found or _spans(verse)
+            if not source and found:
+                # The verse the chant's incipit is taken from: the first verse
+                # of the first citation, or the whole chapter where none is given.
+                first = found[0]
+                source = [Span(first.book, first.begin, first.begin if first.begin[1] else first.end)]
+            spans.extend(found)
+        out.append(
+            MassElement(
+                role, str(proper.get("name") or ""), _incipit_of(proper), tuple(refs), tuple(spans),
+                _opening_of(proper), tuple(source),
+            )
+        )
     return out
 
 
@@ -590,14 +626,17 @@ def _compare(element: dict[str, Any], candidates: list[MassElement], citations: 
     """`same` or `different` or `not-comparable`, with what decided it."""
     comparable = False
     spans = citations.spans(str(element["ref"])) if element.get("ref") else []
+    whole = element.get("role") in READING_ROLES or element.get("as") == "verse"
     for candidate in candidates:
-        if element.get("incipit") and candidate.incipit:
+        opening = candidate.opening or candidate.incipit
+        if element.get("incipit") and opening:
             comparable = True
-            if incipits_match(element["incipit"], candidate.incipit):
+            if incipits_match(element["incipit"], opening):
                 return "same", "incipit"
-        if spans and candidate.spans:
+        target = list(candidate.spans if whole else (candidate.source or candidate.spans))
+        if spans and target:
             comparable = True
-            if overlaps(spans, list(candidate.spans)):
+            if overlaps(spans, target):
                 return "same", "ref"
     return ("different", "") if comparable else ("not-comparable", "")
 
@@ -832,9 +871,10 @@ def project(
                 "a locus is listed when it shares one of "
                 + ", ".join(ANCHOR_ROLES)
                 + ", or two other elements, with this mass; shared means a quoted incipit "
-                "meets the calendar's (the shorter a prefix of the longer, two words at "
-                "least) or a cited or quoted verse overlaps the calendar's at the "
-                "precision recorded"
+                "meets the fullest opening the calendar holds (the shorter a prefix of the "
+                "longer, two words at least), or, by scripture, that a reading overlaps the "
+                "calendar's pericope and a chant reaches the verse the calendar's chant is "
+                "taken from, each at the precision recorded"
             ),
             "weak": "every shared element also matches other masses of this calendar",
             "drift": "the commentator's own season and Sunday number against the calendar's; information, not an error",
@@ -872,6 +912,9 @@ def summary(root: Path = ROOT, citations: Citations | None = None, registry: Any
             "works": len(works_of(data)),
             "loci": len(loci),
             "structural": sum(1 for _, locus in loci if locus.get("treatment") == "structural"),
+            "structural_by_topic_only": sum(
+                1 for _, locus in loci if locus.get("treatment") == "structural" and not locus.get("occasion")
+            ),
             "labels_replayed": replayed,
             "labels_not_replayable": len(loci) - replayed,
             "by_genre": {

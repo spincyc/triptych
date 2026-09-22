@@ -183,8 +183,8 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index formulary",
             (
-                "formulary loci: 10 works, 16 loci (2 structural)",
-                "  headings replayed against their lines: 15 · read in a facsimile, bounded by pages: 1",
+                "formulary loci: 11 works, 46 loci (6 structural, 4 of them by topic only and listed under no mass)",
+                "  headings replayed against their lines: 42 · read in a facsimile, bounded by pages: 4",
             ),
             "validates the loci file and replays every heading against the lines it was read in",
         ),
@@ -193,7 +193,7 @@ EXAMPLES = {
             (
                 "formulary: roman-1962 pentecost-18, Eighteenth Sunday after Pentecost (registry 58)",
                 "  its elements: introit Da pacem, Domine · collect Dirigat corda nostra · epistle 1 Corinthians 1:4-8 · gradual Laetatus sum · alleluia Timebunt gentes · gospel Matthew 9:1-8 · offertory Sanctificavit Moyses · secret Deus, qui nos, per hujus sacrificii · communion Tollite hostias · postcommunion Gratias tibi referimus",
-                "  14 loci compared on their elements; 14 listed, 2 structural",
+                "  40 loci compared on their elements; 14 listed, 2 structural",
                 "",
                 "   1. Alfredo Ildefonso Schuster — The Sacramentary (Liber Sacramentorum): Historical and Liturgical Notes on the Roman Missal, vol. III pp. 167-170",
                 "      his heading: Eighteenth Sunday after Pentecost. Tertia post natale Sancti Cypriani. (after-pentecost 18); no label drift",
@@ -1398,7 +1398,8 @@ def _render_formulary(payload: dict[str, Any]) -> None:
         totals = payload["totals"]
         print(
             f"formulary loci: {_plural(totals['works'], 'work', 'works')}, "
-            f"{_plural(totals['loci'], 'locus', 'loci')} ({totals['structural']} structural)"
+            f"{_plural(totals['loci'], 'locus', 'loci')} ({totals['structural']} structural, "
+            f"{totals['structural_by_topic_only']} of them by topic only and listed under no mass)"
         )
         print(
             f"  headings replayed against their lines: {totals['labels_replayed']}"

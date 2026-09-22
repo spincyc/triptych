@@ -641,7 +641,14 @@ names: incipits he quotes, scripture he quotes or cites in Clementine Vulgate
 numbering, and his own words where he describes rather than quotes. It names
 no calendar's mass. `formulary` compares those elements with the calendar
 mass's own, on every run. It lists a locus that shares the Introit, Collect,
-Lesson, Epistle or Gospel, or two other elements. Each listed row shows:
+Lesson, Epistle or Gospel, or two other elements. A quoted incipit is held to
+the fullest opening the calendar holds, the prayer's own words where it has
+them, because "Omnipotens sempiterne Deus" opens a dozen Collects. A reading
+cited by scripture is the same reading where it overlaps the pericope. A chant
+cited by scripture is the same chant only where it reaches the verse the
+calendar's chant is taken from, because neighbouring chants are cut from one
+psalm: *Inclina, Domine* is Psalm 85:1–3 and *Miserere mihi, Domine* is 85:3.
+Each listed row shows:
 
 - what the locus shares and what differs, the differing element beside the
   calendar's;
@@ -652,8 +659,9 @@ Lesson, Epistle or Gospel, or two other elements. Each listed row shows:
 
 A structural chapter names no element. It is listed only where its stated
 occasion is the mass's place in the calendar's own order, such as the Sunday
-after an Ember Saturday. No match is stored, so the same rows answer for any
-calendar.
+after an Ember Saturday. One with no such occasion, such as Amalarius on the
+September responsories of the night office, carries a topic and is listed
+under no mass. No match is stored, so the same rows answer for any calendar.
 
 Each row joins two records. It takes the author's standing from
 `src/sources/inventories/author-standing-v1.toml`, which `guidance/sources.md`
