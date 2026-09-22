@@ -706,6 +706,14 @@ Four registered tools reach this library, and they do different jobs:
 | `source-inventory` | the publication-source inventory and its classification review |
 | `source-family-migration` | the reviewed family-migration ledger |
 
+A work is often held only inside another record: a Migne volume, an Opera
+omnia tome, an anthology, a periodical, or a whole-volume layer filed under one
+of its constituents. Which record holds which works, and how much of each, is
+recorded in `inventories/source-containment-v1.toml`, not on the records, whose
+fingerprints a new field would move. `guidance/catena.md` §11 owns how that
+inventory is read and the rule that a commentary sweep checks holdings through
+it; `make check-sources` refuses a container-shaped record it does not enter.
+
 `source-reader` is the one that serves text, so it is the one bound by rights:
 a record with no publishable basis is projected as identity and absence, never
 as bytes. `tools/tpt source-reader list` reports the library's current extent —

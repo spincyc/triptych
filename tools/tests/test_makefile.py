@@ -210,6 +210,21 @@ with open(os.environ["MAKE_TEST_SOURCE_GATE_ORDER_LOG"], "a", encoding="utf-8") 
         )
         self.source_family_migration.chmod(0o755)
 
+        # `check-sources` also asks the commentary index whether every
+        # container record is entered in the containment inventory.
+        self.commentary_work_index = library / "commentary-work-index"
+        self.commentary_work_index.write_text(
+            """#!/usr/bin/env python3
+import os
+import sys
+
+with open(os.environ["MAKE_TEST_COMMENTARY_WORK_INDEX_LOG"], "a", encoding="utf-8") as log:
+    log.write(" ".join(sys.argv[1:]) + "\\n")
+""",
+            encoding="utf-8",
+        )
+        self.commentary_work_index.chmod(0o755)
+
         self.pdflatex = scripts / "fake-pdflatex"
         self.pdflatex.write_text(
             """#!/bin/sh
@@ -242,6 +257,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.source_inventory_log = self.root / "source-inventory.log"
         self.source_family_migration_log = self.root / "source-family-migration.log"
         self.source_gate_order_log = self.root / "source-gate-order.log"
+        self.commentary_work_index_log = self.root / "commentary-work-index.log"
         self.curriculum_rights_log = self.root / "curriculum-rights.log"
         self.pacman_log = self.root / "pacman.log"
         self.codex_log = self.root / "codex.log"
@@ -260,6 +276,9 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
                     self.source_family_migration_log
                 ),
                 "MAKE_TEST_SOURCE_GATE_ORDER_LOG": str(self.source_gate_order_log),
+                "MAKE_TEST_COMMENTARY_WORK_INDEX_LOG": str(
+                    self.commentary_work_index_log
+                ),
                 "MAKE_TEST_CURRICULUM_RIGHTS_LOG": str(
                     self.curriculum_rights_log
                 ),
@@ -306,6 +325,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
         self.source_inventory_log.write_text("", encoding="utf-8")
         self.source_family_migration_log.write_text("", encoding="utf-8")
         self.source_gate_order_log.write_text("", encoding="utf-8")
+        self.commentary_work_index_log.write_text("", encoding="utf-8")
         self.curriculum_rights_log.write_text("", encoding="utf-8")
 
     @staticmethod
@@ -372,6 +392,7 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
             ],
         )
         self.assertEqual(self.lines(self.source_family_migration_log), ["check"])
+        self.assertEqual(self.lines(self.commentary_work_index_log), ["containment"])
         self.assertEqual(
             self.lines(self.source_gate_order_log),
             ["library", "inventory", "family"],

@@ -1,0 +1,2843 @@
+# Which library records hold other works inside them, and how much of each.
+#
+# THE QUESTION THIS ANSWERS. A commentary lead names a work; the library holds
+# that work either under its own record or INSIDE another one -- a Migne
+# volume, an Opera omnia tome, an NPNF or ANF anthology, a periodical, or a
+# whole-volume optical layer filed under whichever constituent a lane happened
+# to be reading. Nothing linked a container to what it contains, so a sweep
+# that asked each lead's own record reported held witnesses as absent: the
+# Venice tomus of Aquinas holds Super Matthaeum entire, and its own record said
+# only in prose that the commentary was "not yet registered as such".
+# `tools/tpt commentary-work-index discover` reads this file and reports, for
+# every lead, the containers that hold it and whether the passage asked about
+# falls inside the constituent's extent there. `guidance/catena.md` §11 owns
+# the rule that a sweep asks through discover, never by work record alone.
+#
+# WHY HERE AND NOT ON THE RECORDS. `source-library`'s `source_fingerprint()`
+# hashes each record's whole data and its ancestors', and reviewed bindings pin
+# those fingerprints; a field added to any work or artifact record would move
+# every fingerprint under it. This file adds nothing to any record. It sits in
+# inventories/ because `source-library validate` accepts .toml there and
+# nowhere else outside its own schema.
+#
+# WHAT A ROW CLAIMS, AND ON WHAT EVIDENCE. Every constituent and every extent
+# below was read off the container's own description, notes or title, off a
+# constituent edition that names the container as its printing, or off a
+# segment or catena fragment that already points into the container's bytes.
+# Each row's `basis` says which. Nothing is supplied from general knowledge of
+# what such a volume usually holds: where a record says "among other works",
+# the other works are not listed, and the container says so in `unresolved`.
+#
+#   status = "resolved"    every work the record says the container prints is
+#                          listed
+#   status = "partial"     some are listed; `unresolved` says what is not
+#   status = "unresolved"  no constituent could be named from the record
+#
+#   scripture = [...]      the constituent's reach INSIDE this container, in
+#                          canonical (Vulgate) numbering, `Book C[:V][-C[:V]]`;
+#                          discover tests the asked passage against it
+#   whole = true           the whole work, as it survives, is printed here;
+#                          its reach is the work's own, which the index attests
+#   locator                where in the container it stands (columns, pages,
+#                          physical lines), when that is all the record states
+#   extent_unresolved      why no extent could be established
+#
+# A constituent the commentary index lists is named exactly as the index names
+# it (`author`, `title`), because that is the key discover joins on;
+# `work_id`, where the library has one, joins it to the library's record too.
+#
+# SNAPSHOT DISCIPLINE. Every entry pins `manifest_sha256`, the SHA-256 of the
+# container record's own manifest (work.toml, or artifact.toml for a
+# whole-volume layer). A record edited after review fails the check until its
+# entry is re-read and re-pinned; a pin is never refreshed without re-reading.
+#
+# WHAT FAILS `make check-sources`, through `commentary-work-index containment`:
+#   - a container-shaped record with no entry: a work whose work_type is in
+#     `shapes.work_types` or whose description matches
+#     `shapes.description_patterns`; an artifact whose own notes match
+#     `shapes.artifact_patterns` and whose owning work is not itself a
+#     container; and, derived and undeclarable, any work whose bytes another
+#     work's segment or catena fragment already points into;
+#   - an entry naming a record the library does not have;
+#   - a malformed extent, or a manifest changed since review;
+#   - a segment or fragment showing a constituent the entry does not list;
+#   - a constituent named other than the index names it.
+# A record shaped like a container that holds no other work is entered under
+# `not_containers` with the reason, so the judgment is recorded, not skipped.
+#
+# `identities` joins an index lead to a library work that no exact name match
+# can reach -- an author spelled differently, or a library record that holds
+# one part of the work the index names whole. Each row says which.
+
+schema = "triptych-source-containment/v1"
+record_type = "source-containment"
+audited_on = "2026-09-22"
+numbering = "vulgate"
+
+[shapes]
+work_types = [
+  "anthology",
+  "biblical-commentary-collection",
+  "collected-volume",
+  "collected-works",
+  "collected-works-volume",
+  "conciliar-collection",
+  "conciliar-translation-anthology",
+  "congregation-documentary-dossier",
+  "critical-documentary-selection",
+  "critical-source-collection",
+  "devotional-anthology",
+  "doctrinal-compilation",
+  "edited-anthology",
+  "edited-sermon-collection",
+  "edited-source-collection",
+  "encyclopedia-volume",
+  "legislative-proceedings",
+  "liturgical-source-collection",
+  "medieval-penitential-compilation",
+  "newspaper",
+  "newspaper-issue",
+  "official-gazette",
+  "official-liturgical-periodical",
+  "official-periodical",
+  "official-record",
+  "official-report",
+  "patristic-collection",
+  "patristic-translation-anthology",
+  "periodical-issue",
+  "periodical-volume",
+  "reference-encyclopedia",
+  "scholarly-journal-volume",
+]
+description_patterns = [
+  '\bcontainer (?:identit|volume|work|witness)',
+  '\bwork-level container\b',
+  '\b(?:periodical|anthology) container\b',
+  '\bregistered (?:here )?as a container\b',
+  '\bcontainer identity distinct\b',
+]
+artifact_patterns = [
+  '\bwhole[- ]volume\b',
+  '\bwhole of (?:the )?(?:leonine )?volume\b',
+  '\bamong other works\b',
+  '\bcomplete collected volume\b',
+  '\bcomplete optical text of the volume\b',
+  '\bcomplete offered ocr of the volume\b',
+]
+
+# ---------------------------------------------------------------------------
+# Identities: index leads the exact name join cannot reach
+# ---------------------------------------------------------------------------
+
+[[identities]]
+author = "Origen"
+title = "Selecta in Psalmos"
+work_id = "work.origen.selecta-in-psalmos"
+reason = "Same work, author spelled differently: the library's responsible reads 'Origen of Alexandria, under whose name the fragments are printed', and the index files the Selecta under 'Origen', not under its separate 'Origen of Alexandria' heading."
+
+[[identities]]
+author = "Cornelius a Lapide"
+title = "Commentaria in Scripturam Sacram"
+work_id = "work.cornelius-a-lapide.commentaria-in-pentateuchum"
+reason = "Part of the work the index names whole: the alias group for Commentaria in Scripturam Sacram lists 'commentaria in pentateuchum mosis', the library record's own title, but the library names the author 'Cornelius Cornelii a Lapide, S.J.'."
+
+[[identities]]
+author = "Ambrosiaster"
+title = "Commentarius in xiii epistulas Paulinas"
+work_id = "work.ambrosiaster.commentaria-in-epistolam-ad-corinthios-primam"
+reason = "Part of the work the index names whole: the library holds the commentary on First Corinthians, one of the thirteen epistles the index's title covers, under its own title."
+
+[[identities]]
+author = "Bede"
+title = "In Lucae Evangelium expositio"
+work_id = "work.bede.in-lucae-evangelium-expositio"
+reason = "Same work: the index carries Bede under two spellings, 'Bede' and 'Bede the Venerable', and the library record, whose responsible is 'Bede the Venerable', joins only the second by name."
+
+[[identities]]
+author = "Bede the Venerable"
+title = "In principium Genesis"
+work_id = "work.bede.in-principium-genesis"
+reason = "Same work: the index carries Bede under two spellings, and the library record, whose responsible is 'Bede', joins only the first by name."
+
+[[identities]]
+author = "Basil the Great"
+title = "Homiliae in Psalmos"
+work_id = "work.basil-of-caesarea.homilia-in-psalmum-33"
+reason = "Part of the work the index names whole: the library registers the homily on Psalm 33 as a work of its own, one of the homilies on the Psalms the index lists together."
+
+# ---------------------------------------------------------------------------
+# Shaped like containers, holding no other work
+# ---------------------------------------------------------------------------
+
+[[not_containers]]
+id = "work.catholic-encyclopedia.alphabetical-index"
+manifest_sha256 = "6eace4f4b347e9d9119649594272f8d87920a418d601d3cb95cc178bd79b30c0"
+reason = "A finding aid listing article titles, registered as a work of its own because it belongs to no numbered volume; it prints no article's text, so nothing is held inside it."
+
+[[not_containers]]
+id = "artifact.alexander-schmidt.shakespeare-lexicon.second-edition-1886-volume-2.ia-djvu-text-shakespearelexic02schmuoft-56900a74"
+manifest_sha256 = "b43e579492759e89e39d5b6f568f805bdd3f970e7f43e3dcbd02fe7e73f1095f"
+reason = "The whole of volume II of one dictionary, Schmidt's Shakespeare-Lexicon; no other work is printed in it."
+
+[[not_containers]]
+id = "artifact.ambrose.expositio-evangelii-secundum-lucam.csel-32-4-schenkl-1902.ia-djvu-ocr-expositioevange00schegoog"
+manifest_sha256 = "9ed81071b4c04d197a7166c86d787825a518b087582ec2cd0466c6a623be2a32"
+reason = "CSEL 32 pars IV prints the Expositio evangelii secundum Lucam alone: its edition title names that work only and the notes measure the volume as 'all ten books' of it."
+
+[[not_containers]]
+id = "artifact.catholic-church.missale-ad-usum-sarum.dickinson-burntisland-1861-1883.ia-djvu-ocr-1dccd4d1"
+manifest_sha256 = "52ef4e5ad32d7246cb26cfb088d11ec3fac64e671fc9b8371f47db39d64cdaca"
+reason = "The whole printed volume of one edition of one missal, Dickinson's Sarum Missal, with its own editorial footnotes; no separately identified work is printed in it."
+
+[[not_containers]]
+id = "artifact.charles-hamilton-sorley.marlborough-and-other-poems.cambridge-university-press-1916.ia-djvu-ocr-marlboroughother00sorl"
+manifest_sha256 = "2bb8ea9cb3c2dafc34b81848287c2e46807cb82f43c9ba9ea07e79fe5078bfb1"
+reason = "One author's collection of poems registered as a single work; the poem it is registered for is a part of that work and has no record of its own."
+
+[[not_containers]]
+id = "artifact.charles-hamilton-sorley.marlborough-and-other-poems.cambridge-university-press-1919.ia-djvu-ocr-marlboroughother00sorluoft"
+manifest_sha256 = "2aabe69cc75aaa8efd799f87ed6368142e0fb73b1dddf67ffa039872edd60d5d"
+reason = "The 1919 issue of the same single-author collection; no other work is printed in it."
+
+[[not_containers]]
+id = "artifact.church-of-england.book-of-common-prayer-1662-annexed-book.1891-printed-transcript-of-the-annexed-book.ia-djvu-ocr-e71bc116"
+manifest_sha256 = "8ff3947fa43762f7249791b90a1d9e3d4f4a966d34f7badd7ff61996f72ab5be"
+reason = "A printed transcript of one book, the 1662 Annexed Book; the whole volume is that book."
+
+[[not_containers]]
+id = "artifact.church-of-england.book-of-common-prayer.oxford-parker-1877-first-prayer-book-comparison.ia-djvu-text-firstprayerbooko00oxfouoft-414ac3a9"
+manifest_sha256 = "0ddddc6380a4c2b6d059bbc19778c6710344ac9170a1140872ffaec7e38761bd"
+reason = "Prints the First Prayer-Book of Edward VI beside its successive revisions: every text in it is an edition of the Book of Common Prayer, the work that owns the artifact."
+
+[[not_containers]]
+id = "artifact.clifton-johnson.highways-and-byways-of-the-south.macmillan-1904.ia-djvu-text-59289bd9"
+manifest_sha256 = "2c270099bab0e8a6d8d3ff6ead9771b90caabf7b3996c43beae1537555e62ffc"
+reason = "The whole of one travel narrative by one author, title page through index."
+
+[[not_containers]]
+id = "artifact.council-of-trent.canones-et-decreta.english-waterworth.ia-cu31924029369760-djvu-text"
+manifest_sha256 = "9a6c1fc346d29eb53662f7f12e5ad747f622d34e733386e01040c8c3b8b75cd4"
+reason = "Whole-volume OCR of Waterworth's translation of the canons and decrees of the one Council, the work that owns it; the record names no other work printed in the volume."
+
+[[not_containers]]
+id = "artifact.council-of-trent.canones-et-decreta.latin-tauchnitz-1887.ia-canonesetdecreta00coun-0-djvu-text"
+manifest_sha256 = "f71ad72caf03ae65045a34ecd45a44a69b58cf5130512bab0244a1a7785a5514"
+reason = "Whole-volume OCR of one Latin printing of the Council's canons and decrees; the record names no other work printed in it."
+
+[[not_containers]]
+id = "artifact.diocese-of-salisbury.missale-ad-usum-sarum.1861-1883-burntisland-dickinson.ia-djvu-ocr-685c74b2"
+manifest_sha256 = "f5a27f7d6d472ca270a90abf4ceec8f705e8803dbbec04e0668840f5213b602f"
+reason = "The whole scan of Dickinson's Sarum Missal, one edition of one missal."
+
+[[not_containers]]
+id = "artifact.diocese-of-salisbury.missale-ad-usum-sarum.1916-oxford-clarendon-legg.ia-djvu-ocr-68839565"
+manifest_sha256 = "ab4b3b49bce001b3563275808389595fbb30703f9d4e36d5996f347270bd0665"
+reason = "Legg's edition of the one Sarum Missal from three early manuscripts; every text in it is a witness to the work that owns it."
+
+[[not_containers]]
+id = "artifact.frank-edward-brightman.the-english-rite.london-rivingtons-1915-volume-1.ia-djvu-text-englishritebeing01briguoft-5d48be22"
+manifest_sha256 = "34306ec14364ce43ff490218b711c2eb170bafea583c0e64aa3f4829193390cd"
+reason = "Volume I of Brightman's synopsis, registered as one work; its parallel columns set the Prayer Book beside its sources, and the record names no work printed in it entire."
+
+[[not_containers]]
+id = "artifact.frank-edward-brightman.the-english-rite.london-rivingtons-1915-volume-2.ia-djvu-text-englishrite0002febr-f01e2067"
+manifest_sha256 = "4bc463f58de0f851ceb47b13c8eb8d663f66d91427198c296e72c11fcd5c118e"
+reason = "Volume II of the same single work, Brightman's synopsis."
+
+[[not_containers]]
+id = "artifact.friedrich-nietzsche.menschliches-allzumenschliches.english-zimmern-foulis-1910.ia-djvu-text-humanalltoohumanparti-591a7902"
+manifest_sha256 = "b1ca7a092d7a4b1d2fd89cd3fe9d819da33046e557ce96efacb51cdf93a32fd3"
+reason = "The whole of one translated work, Human, All-Too-Human Part I."
+
+[[not_containers]]
+id = "artifact.hilary-of-poitiers.tractatus-super-psalmos.csel-22-zingerle-1891.ia-djvu-ocr-shilariiepiscopi22hilauoft"
+manifest_sha256 = "5687acf7cb38bdd2bd7e3ce3279095115972957fedf097a7357586f3a626babe"
+reason = "CSEL 22 prints Hilary's Tractatus super Psalmos alone; the notes enumerate every tractate it prints (Psalms 1, 2, 9, 13, 14, 51-69, the title of 91, and 118-150), all of the one work that owns the artifact."
+
+[[not_containers]]
+id = "artifact.john-chrysostom.homiliae-in-matthaeum.migne-pg-57-paris.ia-djvu-ocr-1b95176e"
+manifest_sha256 = "2299af2c2eff0806b9d4d3b06b8a829ea3194f5ef02d7850fbb4ca34d73ba6d8"
+reason = "The notes measure the whole of PG 57 as 'Chrysostom's Homiliae in Matthaeum 1-44', the work that owns the artifact, and name nothing else in it."
+
+[[not_containers]]
+id = "artifact.john-henry-blunt.the-annotated-book-of-common-prayer.london-1866.ia-djvu-text-gtu-32400003882739-f3f87210"
+manifest_sha256 = "8dd69554dd79637bb767c7f215b487b166cb104e410bf91cdcd3bd10a24337b3"
+reason = "Blunt's annotated Prayer Book, registered as his one work; the record names no separately identified work printed in it."
+
+[[not_containers]]
+id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-djvu-ocr-v11theliturgicalyear"
+manifest_sha256 = "dd47546dca291461b150dbce0be92060359b924a558a84f94bac44f49245061b"
+reason = "One volume of Gueranger's single multi-volume work, The Liturgical Year; the volume holds a part of that work and no other."
+
+[[not_containers]]
+id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-pdf-95ba98e2"
+manifest_sha256 = "5b3c4a265c5edbb769149f84868b215b2086e8004848f5143759709a13d930b0"
+reason = "The same volume of Gueranger's one work, as a facsimile."
+
+[[not_containers]]
+id = "artifact.prosper-gueranger.the-liturgical-year.english-volume-10.ia-djvu-ocr-68111bbd"
+manifest_sha256 = "1be1875eba1f8d148eea6a15ee1540f7dc7499701726d482dc6544c1bf7b3015"
+reason = "One volume of Gueranger's single multi-volume work."
+
+[[not_containers]]
+id = "artifact.prosper-gueranger.the-liturgical-year.english-volume-14.ia-djvu-ocr-ba84d819"
+manifest_sha256 = "305813b9a5c24b5a553a310753e7dec959552cd9ed20bb9f32b0a837befc89a1"
+reason = "One volume of Gueranger's single multi-volume work."
+
+[[not_containers]]
+id = "artifact.william-burgess.the-bible-in-shakspeare.chicago-winona-1903.ia-djvu-text-bibleinshakspear00burg-8b7cd3a3"
+manifest_sha256 = "198a18102b6aa4cc83e28557e3bbe0c5f64112764c517e6cb02572ed0ad58543"
+reason = "The whole of one literary study by one author."
+
+[[not_containers]]
+id = "artifact.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.ia-djvu-ocr-b9b266dd"
+manifest_sha256 = "b06a3a050d9149aef293723d320f2097e1dccb424ac87c20049405c2e285165b"
+reason = "Tomus secundus of Durandus's one work, Books VI onward, and nothing else by the edition's own title."
+
+[[not_containers]]
+id = "artifact.william-shakespeare.sonnets.london-david-nutt-1890-tyler.ia-djvu-text-sonnetseditedwit00shakuoft-911925ef"
+manifest_sha256 = "2045334725718ab93c28a7ac43dcaa053adf40c8b6b51e67f70139590c2c747d"
+reason = "One edition of the Sonnets, registered as a single work, with its editor's notes; no other work is printed in it."
+
+# ---------------------------------------------------------------------------
+# Containers: Patrologia volumes
+# ---------------------------------------------------------------------------
+
+[[containers]]
+id = "work.jacques-paul-migne.patrologia-latina-volume-37"
+manifest_sha256 = "8daf4cf839950037fe9869ce8fdc31ff5da50785461c4d4102c7dd87e8c73be7"
+status = "resolved"
+basis = "Work description: 'Volume 37 of Migne's Patrologia Latina, containing the second part of Augustine's Enarrationes in Psalmos, Psalms 80-150.'"
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "Enarrationes in Psalmos"
+work_id = "work.augustine.enarrationes-in-psalmos"
+scripture = ["Psalms 80-150"]
+locator = "cols. 1033-1966"
+basis = "The container's description gives Psalms 80-150; edition.augustine.enarrationes-in-psalmos.latin-migne-pl37-paris-1845 gives 'Patrologia Latina 37 ... cols. 1033-1966'; segment psalm-88-columns-1139-1140 points into the volume's scan. Psalm numbers are Augustine's, which are the Vulgate's."
+
+[[containers]]
+id = "work.jacques-paul-migne.patrologia-latina-volume-26"
+manifest_sha256 = "33f7790536a34867e580b987019e43b77b6952c8a8b94c700e521f2f6132d2b5"
+status = "partial"
+basis = "Work description: 'the seventh Migne volume of Jerome's works, containing Jerome's commentaries on Matthew and selected Pauline epistles together with other exegetical works.'"
+unresolved = "The description names the Pauline commentaries only as 'selected Pauline epistles' and the rest as 'other exegetical works'. Only Galatians is established, by its own edition; which other epistles, and which other works, the record does not say."
+
+[[containers.constituents]]
+author = "Jerome"
+title = "Commentariorum in Matthaeum Libri IV"
+work_id = "work.jerome.commentariorum-in-evangelium-matthaei"
+whole = true
+locator = "cols. 15-218"
+basis = "Container description ('Jerome's commentaries on Matthew'); segment segment.jerome.commentariorum-in-evangelium-matthaei.vallarsi-migne-pl26-1845.pl26-columns-15-218: 'Jerome's Commentary on Matthew as printed at PL 26, columns 15-218.'"
+
+[[containers.constituents]]
+author = "Jerome"
+title = "Commentarii in Epistulam ad Galatas"
+work_id = "work.jerome.commentariorum-in-epistolam-ad-galatas"
+whole = true
+locator = "cols. 307-438D"
+basis = "edition.jerome.commentariorum-in-epistolam-ad-galatas.vallarsi-migne-pl26-1845, 'Vallarsi text reprinted in Patrologia Latina 26'; its DCO artifact notes: 'Complete work ... covering PL 26, cols. 307-438D'."
+
+[[containers]]
+id = "work.jacques-paul-migne.patrologia-latina-volume-24"
+manifest_sha256 = "51fcd63172a480ce0e1de7d97474342b8acacad81550164396549fadec4ab828"
+status = "resolved"
+basis = "Work description: 'the fourth Migne volume of Jerome's works, containing the eighteen books of his commentary on Isaiah and his commentary on Jeremiah.'"
+
+[[containers.constituents]]
+author = "Jerome"
+title = "Commentariorum in Isaiam libri XVIII"
+work_id = "work.jerome.commentarii-in-isaiam"
+whole = true
+basis = "Container description: 'the eighteen books of his commentary on Isaiah'. The raw OCR's notes locate Book XV on Isaiah 55:6-11 near physical lines 38,020-38,200."
+
+[[containers.constituents]]
+author = "Jerome"
+title = "Commentary on Jeremiah"
+whole = true
+basis = "Container description: 'and his commentary on Jeremiah'. Whole means the whole of what the work is: the extent-gating table in guidance/reading-plan-for-agents.md records that it breaks off about chapter 32."
+
+[[containers]]
+id = "work.jacques-paul-migne.patrologia-latina-volume-70"
+manifest_sha256 = "92dfa36409095645ce5d37acad5d2b115802de1a2e7d19e5268e39a915f76b1d"
+status = "partial"
+basis = "Work description: 'the first Migne volume of Cassiodorus, printing the Expositio in Psalterium continuously together with the Institutiones and shorter works.' Its OCR notes: 'carrying Cassiodorus's Expositio in Psalterium continuously'."
+unresolved = "The 'shorter works' the description mentions are not named."
+
+[[containers.constituents]]
+author = "Cassiodorus"
+title = "Expositio Psalmorum"
+work_id = "work.cassiodorus.expositio-psalmorum"
+whole = true
+basis = "Container description and OCR notes: the Expositio in Psalterium printed 'continuously', with the expositions of Vulgate Psalms 39, 85, 91 and 94 'all complete within it'. The container's edition notes name work.cassiodorus.expositio-psalmorum as the same work."
+
+[[containers.constituents]]
+author = "Cassiodorus"
+title = "Institutiones"
+locator = "printed after the Expositio"
+basis = "Container description: 'together with the Institutiones'."
+
+[[containers]]
+id = "work.jacques-paul-migne.patrologia-latina-volume-92"
+manifest_sha256 = "9fcc1fa5d85c0a459952f20a4f84726a9142905f358f555e517af91c1e4b78bf"
+status = "partial"
+basis = "Work description: 'the third Migne volume of Bede's works, printing his genuine exegetical works and containing the commentaries on Luke and on Acts ... Bede's exposition of Luke 7:11-17 falls at cols. 417-420.'"
+unresolved = "The description names only the commentaries on Luke and on Acts among Bede's 'genuine exegetical works'; the volume's other contents are not named."
+
+[[containers.constituents]]
+author = "Bede the Venerable"
+title = "In Lucae evangelium expositio"
+work_id = "work.bede.in-lucae-evangelium-expositio"
+whole = true
+locator = "Luke 7:11-17 at cols. 417-420"
+basis = "Container description ('containing the commentaries on Luke'); its OCR notes place the exposition of Luke 7:11-17 at cols. 417-420. The index also lists this work under 'Bede'; the identities table joins that spelling to the same record."
+
+[[containers.constituents]]
+author = "Bede the Venerable"
+title = "Expositio Actuum Apostolorum"
+whole = true
+locator = "the Liber retractationis stands at cols. 1025-1026 (leaf n521)"
+basis = "Container description ('the commentaries ... on Acts'); leaf ia-leaf-n521-0039807e carries PL 92 cols. 1025-1026 'under the running head of Bede's Liber retractationis in Actus apostolorum'. The index's alias group for this title includes 'retractatio in actus apostolorum', so both are listed under this one name."
+
+[[containers.constituents]]
+author = "Bede"
+title = "Expositio Actuum Apostolorum"
+whole = true
+locator = "as above: the index lists the same work under both of Bede's spellings"
+basis = "Same work and evidence as the preceding row; repeated because the index carries it under 'Bede' as well as 'Bede the Venerable' and discover joins on the exact spelling."
+
+[[containers]]
+id = "work.jacques-paul-migne.patrologia-latina-volume-105"
+manifest_sha256 = "a631304dc87a19f02378754350604ef7c6036bed9e2ad415362d9e27aa5bd022"
+status = "partial"
+basis = "Work description: the volume's 'Elenchus auctorum et operum qui in hoc tomo CV continentur' carries 'the Amalarian corpus -- the Regula canonicorum and the four books De ecclesiasticis officiis -- beside Agobard of Lyons'. edition.amalarius-of-metz.liber-de-ordine-antiphonarii.latin-migne-pl-105 names 'tomus 105, which prints the works of Theodulf of Orleans and Amalarius'."
+unresolved = "Agobard of Lyons and Theodulf of Orleans are named by author only; their works in the volume are not named."
+
+[[containers.constituents]]
+author = "Amalarius of Metz"
+title = "De ecclesiasticis officiis"
+locator = "the four books, as the volume's Elenchus lists them"
+basis = "Container description."
+
+[[containers.constituents]]
+author = "Amalarius of Metz"
+title = "Regula canonicorum"
+locator = "as the volume's Elenchus lists it"
+basis = "Container description."
+
+[[containers.constituents]]
+author = "Amalarius of Metz"
+title = "Liber de ordine antiphonarii"
+work_id = "work.amalarius-of-metz.liber-de-ordine-antiphonarii"
+locator = "capp. LXXII-LXXIV on leaf n660 of the other registered scan of this volume"
+basis = "edition.amalarius-of-metz.liber-de-ordine-antiphonarii.latin-migne-pl-105: 'Liber de ordine antiphonarii, in Migne's Patrologia Latina volume 105'."
+
+[[containers]]
+id = "work.jacques-paul-migne.patrologia-latina-volume-30"
+manifest_sha256 = "510a0bf4b9b62f5b4e72b880636ade1a774cb7b78140a1f2be6d54b06ff309cc"
+status = "partial"
+basis = "Work description: 'the eleventh volume of Jerome, holding works transmitted under Jerome's name including the Liber Comitis, the Roman lectionary list whose Sunday series runs at cols. 487-532.' OCR notes: 'the spuria of Jerome, 1,100+ printed pages'."
+unresolved = "Only the Liber Comitis is named among the spuria of Jerome the volume holds."
+
+[[containers.constituents]]
+author = "Transmitted under Jerome's name"
+title = "Liber Comitis"
+locator = "the Sunday series at cols. 487-532"
+basis = "Container description."
+
+[[containers]]
+id = "work.jacques-paul-migne.patrologia-latina-volume-56"
+manifest_sha256 = "5418a26dddd03164cff5ed9fe04226985285bbf9b37566a9062ad3a29f3a3919"
+status = "partial"
+basis = "Work description: 'including the Ballerini editorial appendix to the works of Leo the Great'; edition notes: 'The Statuta locus used by this study belongs to the Ballerini-derived editorial appendix and is represented through a cross-work segment'."
+unresolved = "The rest of the volume, the Ballerini appendix to Leo's works, is not enumerated."
+
+[[containers.constituents]]
+author = "Anonymous mid-fifth-century Gallic compiler, as reconstructed by modern editors"
+title = "Statuta ecclesiae antiqua"
+work_id = "work.anonymous.statuta-ecclesiae-antiqua"
+locator = "cols. 887-888 (artifact PDF p. 450), in the Ballerini appendix"
+basis = "Segment segment.anonymous.statuta-ecclesiae-antiqua.ballerini-migne-pl56-1850.pl56-columns-887-888."
+
+[[containers]]
+id = "work.jacques-paul-migne.patrologia-latina-volume-78"
+manifest_sha256 = "da6ef8ddcd4c5ef9d60e937f84f29f71af47ca70b3d1d1bca1333b787932c2c1"
+status = "partial"
+basis = "Work description: 'the volume of the Roman liturgical books ascribed to Gregory the Great ... Hugo Menard's edition of the Liber Sacramentorum at columns 25-240, Menard's Notae at 263-582, Angelo Rocca's Scholia at 583, the Benedictionale at 601-637, the Liber Antiphonarius at 641-723, the Liber Responsalis at 723-849, and the Ordines Romani, of which Ordo XIII was read at columns 1113-1114.'"
+unresolved = "The description lists what one run read from the volume, not an inventory of it; it does not claim the list is complete."
+
+[[containers.constituents]]
+author = "Ascribed to Gregory the Great"
+title = "Liber Sacramentorum"
+locator = "cols. 25-240, in Hugo Menard's edition"
+basis = "Container description."
+
+[[containers.constituents]]
+author = "Hugo Menard"
+title = "Notae"
+locator = "cols. 263-582"
+basis = "Container description: 'Menard's Notae at 263-582'."
+
+[[containers.constituents]]
+author = "Angelo Rocca"
+title = "Scholia"
+locator = "col. 583"
+basis = "Container description."
+
+[[containers.constituents]]
+author = "Ascribed to Gregory the Great"
+title = "Benedictionale"
+locator = "cols. 601-637"
+basis = "Container description."
+
+[[containers.constituents]]
+author = "Ascribed to Gregory the Great"
+title = "Liber Antiphonarius"
+locator = "cols. 641-723"
+basis = "Container description."
+
+[[containers.constituents]]
+author = "Ascribed to Gregory the Great"
+title = "Liber Responsalis"
+locator = "cols. 723-849"
+basis = "Container description."
+
+[[containers.constituents]]
+author = "Anonymous"
+title = "Ordines Romani"
+locator = "Ordo XIII at cols. 1113-1114"
+basis = "Container description."
+
+[[containers]]
+id = "work.migne.patrologia-latina-13"
+manifest_sha256 = "19f5ee64069d01e2c393f5eda3104aa627cde65038b7dc20b1bdca6d7916d1b9"
+status = "partial"
+basis = "Work description: 'carrying among other things the letters and decretals of Pope Siricius as reprinted from Coustant's edition.'"
+unresolved = "The description says 'among other things' and names nothing else."
+
+[[containers.constituents]]
+author = "Siricius"
+title = "Letters and decretals"
+locator = "reprinted from Coustant; n. 10 of the decretal at coll. 1139-1140"
+basis = "Container description; leaf-590-image notes."
+
+[[containers]]
+id = "work.migne.patrologia-latina-16"
+manifest_sha256 = "5c9e94c5ac8167a68c622e9e6d1876566dfa79e62d798c0acd4f2e84f0cf2d91"
+status = "partial"
+basis = "Work description: 'carrying the works of Ambrose of Milan, among them the six books De sacramentis with the Maurist preface and apparatus.'"
+unresolved = "Only De sacramentis is named among the works of Ambrose the volume carries."
+
+[[containers.constituents]]
+author = "Ambrose of Milan"
+title = "De sacramentis"
+whole = true
+basis = "Container description: 'the six books De sacramentis'."
+
+[[containers]]
+id = "work.jacques-paul-migne.patrologia-graeca-volume-29"
+manifest_sha256 = "bb92c16acd171dd9051d3828434134bd390f1f8b5eab710807453953598d096e"
+status = "partial"
+basis = "Edition notes: 'Collected Basil volume with Greek and facing Latin.' edition.basil-of-caesarea.homiliae-in-psalmos.migne-pg-29-paris names the Homiliae in Psalmos 'in Migne's Patrologia Graeca volume 29'; segment into the volume's facsimile for the homily on Psalm 33."
+unresolved = "The record calls it a collected Basil volume without enumerating it; only the homilies on the Psalms are established."
+
+[[containers.constituents]]
+author = "Basil the Great"
+title = "Homiliae in Psalmos"
+work_id = "work.basil-of-caesarea.homiliae-in-psalmos"
+locator = "the homily on Psalm 33 at cols. 349-385"
+basis = "edition.basil-of-caesarea.homiliae-in-psalmos.migne-pg-29-paris; the container facsimile's notes place the homily on Psalm 33 at cols. 349-385."
+
+[[containers.constituents]]
+author = "Basil of Caesarea"
+title = "Homilia in Psalmum 33"
+work_id = "work.basil-of-caesarea.homilia-in-psalmum-33"
+scripture = ["Psalms 33"]
+locator = "cols. 349-385, artifact PDF pp. 583-601"
+basis = "Segment segment.basil-of-caesarea.homilia-in-psalmum-33.1860-migne-pg29.cols-349-385. Basil's psalm number is the Septuagint's, which is the Vulgate's."
+
+# ---------------------------------------------------------------------------
+# Containers: collected works of Aquinas and Bonaventure
+# ---------------------------------------------------------------------------
+
+[[containers]]
+id = "work.thomas-aquinas.opera-editio-altera-veneta-tomus-3"
+manifest_sha256 = "231cbb47f1878df5d99fc44de0eb67f9ae6f08cbc5c9bcbad5ce3b26c35b59a1"
+status = "resolved"
+basis = "Work title: 'Commentaria in Evangelia S. Matthaei et S. Ioannis'; description: 'holding Aquinas's lectures on Matthew and on John as printed in the second Venetian edition, with Bernardo Maria de Rubeis's prefatory Admonitio on the authenticity of the Matthew commentary.' OCR notes locate Matthew 20 lectio 1 near physical lines 33,100-33,760 and John 10 lectio 4 near 84,900-85,010."
+
+[[containers.constituents]]
+author = "Thomas Aquinas"
+title = "Super Evangelium S. Matthaei lectura"
+whole = true
+locator = "Matthew 20 lectio 1 near OCR physical lines 33,100-33,760"
+basis = "Container title and description. The library holds no record of its own for this commentary; this volume is its only holding."
+
+[[containers.constituents]]
+author = "Thomas Aquinas"
+title = "Super Evangelium S. Ioannis lectura"
+work_id = "work.thomas-aquinas.super-evangelium-ioannis-lectura"
+whole = true
+locator = "John 10 lectio 4 near OCR physical lines 84,900-85,010"
+basis = "Container title and description."
+
+[[containers.constituents]]
+author = "Bernardo Maria de Rubeis"
+title = "Admonitio on the authenticity of the commentary on Matthew"
+locator = "prefatory"
+basis = "Container description."
+
+[[containers]]
+id = "work.thomas-aquinas.opera-omnia-volume-14"
+manifest_sha256 = "cfe33a678d3d848ec6631c524c38f7eb98468ac8e500ccc163ef445353d90239"
+status = "partial"
+basis = "Work title: 'Opera omnia, volume 14: Expositio in aliquot libros Veteris Testamenti et in Psalmos L'; description: 'the biblical commentaries remain separate constituent works.' Segments into the volume for the Isaiah commentary."
+unresolved = "The title names 'some books of the Old Testament' without saying which; only Isaiah (by segment) and the Psalms (by title) are established."
+
+[[containers.constituents]]
+author = "Thomas Aquinas"
+title = "Expositio super Isaiam ad litteram"
+work_id = "work.thomas-aquinas.expositio-super-isaiam-ad-litteram"
+locator = "chapter 55 bounded by segment; the rest of the commentary is not claimed"
+basis = "Segments segment.thomas-aquinas.expositio-super-isaiam-ad-litteram.1863-parma.isaiah55-facsimile and .isaiah55-ocr."
+
+[[containers.constituents]]
+author = "Thomas Aquinas"
+title = "Postilla super Psalmos"
+work_id = "work.thomas-aquinas.super-psalmos"
+locator = "the exposition the volume title calls 'in Psalmos L'"
+basis = "Container title; the index's alias group for Postilla super Psalmos includes 'expositio in psalmos'. Which psalms the volume reaches the record does not state beyond that title; the extent-gating table in guidance/reading-plan-for-agents.md records the Postilla stopping at Psalm 54."
+
+[[containers]]
+id = "work.thomas-aquinas.in-omnes-pauli-epistolas-commentaria"
+manifest_sha256 = "06bb6a660ea3e7d48fdfbf5c8bf685c8818454bc089eed657ae701e2449420cb"
+status = "partial"
+basis = "Description: 'Collected Latin commentaries on the Pauline epistles, published in multiple volumes; an acquired volume is not the complete collection.' Edition notes: 'Volume II begins with 2 Corinthians and contains Ephesians.'"
+unresolved = "Only volume II is held, and its contents beyond 2 Corinthians and Ephesians are not enumerated in the record."
+
+[[containers.constituents]]
+author = "Thomas Aquinas"
+title = "Super Epistolam ad Corinthios II lectura"
+whole = true
+locator = "opens volume II"
+basis = "Edition notes: 'Volume II begins with 2 Corinthians'."
+
+[[containers.constituents]]
+author = "Thomas Aquinas"
+title = "Super Epistolam B. Pauli ad Ephesios lectura"
+work_id = "work.thomas-aquinas.super-ephesios"
+scripture = ["Ephesians"]
+locator = "printed pp. 312-317 hold chapter 4 lectures 1-2"
+basis = "Segment segment.thomas-aquinas.super-ephesios.dessain-volume-2-1857.complete-commentary-ocr: 'Ephesians title, prologue and six chapters'."
+
+[[containers]]
+id = "work.bonaventure.opera-omnia-quaracchi"
+manifest_sha256 = "62ca04e422222a4c4a6cc436b8a0f9fb3d3ce70a4de9adf107d6a515500008b2"
+status = "partial"
+basis = "Edition notes: 'Volume 6 contains the Commentarius in Ecclesiasten, Commentarius in librum Sapientiae, and works on the Gospel of John.'"
+unresolved = "The 'works on the Gospel of John' are not named; only the index's Commentarius in Evangelium S. Ioannis is listed, with its extent unresolved."
+
+[[containers.constituents]]
+author = "Bonaventure"
+title = "Commentarius in Ecclesiasten"
+whole = true
+basis = "Edition notes."
+
+[[containers.constituents]]
+author = "Bonaventure"
+title = "Commentarius in librum Sapientiae"
+work_id = "work.bonaventure.commentarius-in-librum-sapientiae"
+whole = true
+locator = "Wisdom 16:20-21 at printed pp. 214-215"
+basis = "Edition notes; segment segment.bonaventure.commentarius-in-librum-sapientiae.1893-quaracchi.xvi.20-21-checked-text."
+
+[[containers.constituents]]
+author = "Bonaventure"
+title = "Commentarius in Evangelium S. Ioannis"
+extent_unresolved = "The edition notes say only 'works on the Gospel of John', without naming them or saying how much of each is printed."
+basis = "Edition notes."
+
+# ---------------------------------------------------------------------------
+# Containers: Nicene and Post-Nicene Fathers
+# ---------------------------------------------------------------------------
+
+[[containers]]
+id = "work.nicene-and-post-nicene-fathers.series-1-volume-1"
+manifest_sha256 = "6bda4d2d00c13091823a8f3f08c2a23b90c0f52b2bd1fb93c744f3228ec30010"
+status = "partial"
+basis = "Description: 'containing Augustine's Confessions and a selection of his letters in English'. edition.augustine.epistula-55.english-npnf1-1-new-advent-web-2026-09-05 cites this volume."
+unresolved = "The selected letters are not enumerated beyond Epistula 55. The volume's only edition registers no artifact: it is cataloged, not held."
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "Confessiones"
+work_id = "work.augustine-of-hippo.confessiones"
+whole = true
+basis = "Description; edition notes: 'Pilkington translated the Confessions'."
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "Epistula 55 ad Ianuarium"
+work_id = "work.augustine.epistula-55"
+whole = true
+locator = "among the selected letters, in Cunningham's translation"
+basis = "edition.augustine.epistula-55.english-npnf1-1-new-advent-web-2026-09-05: 'Nicene and Post-Nicene Fathers, First Series, volume 1'."
+
+[[containers]]
+id = "work.nicene-and-post-nicene-fathers.series-1-volume-2"
+manifest_sha256 = "eda5556815324002fe8cd984cebaa1418d2ff0539c339b5257e02a963f6a4cac"
+status = "resolved"
+basis = "Description: 'Collected English translations of Augustine's City of God and On Christian Doctrine.' Artifact notes: 'including both works'."
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "De civitate Dei"
+work_id = "work.augustine.de-civitate-dei"
+whole = true
+basis = "Description; CCEL artifact notes."
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "De doctrina christiana"
+work_id = "work.augustine.de-doctrina-christiana"
+whole = true
+basis = "Segment segment.augustine.de-doctrina-christiana.ccel-web-2026-09-17.complete-work: 'Complete constituent text with its local apparatus'."
+
+[[containers]]
+id = "work.nicene-and-post-nicene-fathers.series-1-volume-5"
+manifest_sha256 = "3c0f11618ee05eb85451fe02c0f011a2cdb698a4628c14d900e88e8b0ea70a11"
+status = "partial"
+basis = "Edition title: 'NPNF1-05: St. Augustine: Anti-Pelagian Writings'. Segment for De praedestinatione sanctorum; edition.augustine.de-gratia-et-libero-arbitrio.english-npnf1-5-new-advent-web-2026-09-05 cites this volume."
+unresolved = "The anti-Pelagian writings are not enumerated beyond the three named here."
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "De praedestinatione sanctorum"
+work_id = "work.augustine.de-praedestinatione-sanctorum"
+whole = true
+basis = "Segment segment.augustine.de-praedestinatione-sanctorum.ccel-web-2026-09-17.book-1: 'The first treatise, chapters 1-43'."
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "On the Gift of Perseverance"
+locator = "follows De praedestinatione sanctorum"
+basis = "The same segment's context: 'excludes the following On the Gift of Perseverance'."
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "De gratia et libero arbitrio"
+work_id = "work.augustine.de-gratia-et-libero-arbitrio"
+locator = "in this volume, as its own English edition records"
+basis = "edition.augustine.de-gratia-et-libero-arbitrio.english-npnf1-5-new-advent-web-2026-09-05."
+
+[[containers]]
+id = "work.nicene-and-post-nicene-fathers.series-1-volume-6"
+manifest_sha256 = "ed3eae018d1b07504a5146903ecf63d241ec898e0dbf3f7c2b816fee340f2887"
+status = "partial"
+basis = "Edition title: 'NPNF1-06: St. Augustine: Sermon on the Mount; Harmony of the Gospels; Homilies on the Gospels'. Segments for De consensu evangelistarum and Sermo 87; editions of De sermone Domini in monte and Sermo 98 cite this volume."
+unresolved = "The 'Homilies on the Gospels' are not enumerated beyond Sermons 87 and 98."
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "De sermone Domini in monte"
+work_id = "work.augustine.de-sermone-domini-in-monte"
+whole = true
+basis = "Edition title ('Sermon on the Mount'); edition.augustine.de-sermone-domini-in-monte.english-npnf-new-advent-web-2026-09-05 cites this volume."
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "De consensu evangelistarum"
+work_id = "work.augustine.de-consensu-evangelistarum"
+whole = true
+basis = "Edition title ('Harmony of the Gospels'); segment segment.augustine.de-consensu-evangelistarum.ccel-web-2026-09-17.complete-work: 'Complete constituent text with its local apparatus'."
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "Sermo 87"
+work_id = "work.augustine.sermo-87"
+whole = true
+locator = "printed as Sermon XXXVII of the 'Homilies on the Gospels'"
+basis = "Segment segment.augustine.sermo-87.ccel-web-2026-09-17.complete-sermon."
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "Sermo XCVIII"
+work_id = "work.augustine.sermo-98"
+locator = "among the 'Homilies on the Gospels'"
+basis = "edition.augustine.sermo-98.english-npnf1-6-new-advent-web-2026-09-05 cites this volume."
+
+[[containers]]
+id = "work.nicene-and-post-nicene-fathers.series-1-volume-7"
+manifest_sha256 = "756544b91a7d04ab1a360b6f35f8b28eeedf776c0bdc1dbb03ac2878e8cb91dd"
+status = "resolved"
+basis = "Description: 'John Gibb and James Innes's English translation of Augustine's Tractates on the Gospel of John together with the Homilies on the First Epistle of John and the Soliloquies.'"
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "In Iohannis evangelium tractatus CXXIV"
+work_id = "work.augustine.in-iohannis-evangelium-tractatus"
+whole = true
+basis = "Description; segment for Tractate XLVII; the work's own NPNF1-7 editions."
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "In epistolam Iohannis ad Parthos tractatus decem"
+whole = true
+basis = "Description: 'the Homilies on the First Epistle of John', a title the index's alias group for this work lists."
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "Soliloquies"
+whole = true
+basis = "Description: 'and the Soliloquies'."
+
+[[containers]]
+id = "work.nicene-and-post-nicene-fathers.series-1-volume-10"
+manifest_sha256 = "64f748a6adfa87fbc44e85db154af8f940cb56bec23b06847e75ce657a6e49d7"
+status = "resolved"
+basis = "Edition title: 'NPNF1-10: St. Chrysostom: Homilies on the Gospel of Saint Matthew'."
+
+[[containers.constituents]]
+author = "John Chrysostom"
+title = "Homiliae in Matthaeum"
+work_id = "work.john-chrysostom.homiliae-in-matthaeum"
+whole = true
+locator = "physical lines 614-49168 of the CCEL text"
+basis = "Segment segment.john-chrysostom.homiliae-in-matthaeum.ccel-web-2026-09-17.complete-homilies: 'Constituent title and all ninety homilies with their notes'."
+
+[[containers]]
+id = "work.nicene-and-post-nicene-fathers.series-1-volume-11"
+manifest_sha256 = "326bf20f8b3052955d75c37168b89a96e7dd252bbd13f16cf6e0482ae1f94556"
+status = "resolved"
+basis = "Edition title: 'NPNF1-11: St. Chrysostom: Homilies on the Acts of the Apostles and the Epistle to the Romans'."
+
+[[containers.constituents]]
+author = "John Chrysostom"
+title = "Homiliae in Acta Apostolorum"
+work_id = "work.john-chrysostom.homilies-on-acts"
+whole = true
+basis = "Edition title; segment for Homily XXXV."
+
+[[containers.constituents]]
+author = "John Chrysostom"
+title = "Homiliae in epistulam ad Romanos"
+work_id = "work.john-chrysostom.homilies-on-romans"
+whole = true
+basis = "Edition title; edition.john-chrysostom.homilies-on-romans.english-npnf1-11-new-advent-web-2026-07-29 cites this volume."
+
+[[containers]]
+id = "work.nicene-and-post-nicene-fathers.series-1-volume-12"
+manifest_sha256 = "10ee0df8995c966dc9d56091590d01816de94ac23991bd43d6a0caaa7be985e1"
+status = "resolved"
+basis = "Edition title: 'NPNF First Series, Volume XII: Saint Chrysostom, Homilies on the Epistles of Paul to the Corinthians'."
+
+[[containers.constituents]]
+author = "John Chrysostom"
+title = "Homiliae in epistulam i ad Corinthios"
+work_id = "work.john-chrysostom.homilies-on-first-corinthians"
+whole = true
+locator = "Homily XXIV at printed pp. 138-143"
+basis = "Edition title; facsimile notes."
+
+[[containers.constituents]]
+author = "John Chrysostom"
+title = "Homiliae in Epistulam II ad Corinthios"
+whole = true
+basis = "Edition title: 'Homilies on the Epistles of Paul to the Corinthians'; the index's alias group for this work lists 'homilies on the second epistle to the corinthians'."
+
+[[containers]]
+id = "work.nicene-and-post-nicene-fathers.series-1-volume-13"
+manifest_sha256 = "3b9fcf5867eac27bc6875c69dcb8d5599aa1881228cb2bc28fdacfb5e5417f88"
+status = "partial"
+basis = "Edition title: 'NPNF1-13: Saint Chrysostom, Pauline commentaries'; artifact notes: 'collected Pauline commentaries'. Segments for Ephesians and Philippians; editions of Galatians and Colossians cite this volume; the Ephesians segment's context names 'the following Philippians/Colossians/Thessalonians section'."
+unresolved = "The record does not name the commentaries on Timothy, Titus or Philemon; they are not listed."
+
+[[containers.constituents]]
+author = "John Chrysostom"
+title = "Commentarius in epistulam ad Galatas"
+work_id = "work.john-chrysostom.commentary-on-galatians"
+whole = true
+basis = "edition.john-chrysostom.commentary-on-galatians.english-npnf1-13-new-advent-web-2026-09-05 cites this volume."
+
+[[containers.constituents]]
+author = "John Chrysostom"
+title = "Homiliae in Epistulam ad Ephesios"
+work_id = "work.john-chrysostom.homilies-on-ephesians"
+whole = true
+basis = "Segment segment.john-chrysostom.homilies-on-ephesians.english-npnf13-ccel-web-2026-09-05.complete-commentary: 'Chrysostom's Ephesians argument and Homilies I-XXIV'."
+
+[[containers.constituents]]
+author = "John Chrysostom"
+title = "Homiliae in epistulam ad Philippenses"
+work_id = "work.john-chrysostom.homilies-on-philippians"
+locator = "Homilies III-IV bounded by segment"
+basis = "Segment segment.john-chrysostom.homilies-on-philippians.ccel-web-2026-09-17.homilies-3-4; the Ephesians segment's context."
+
+[[containers.constituents]]
+author = "John Chrysostom"
+title = "Homiliae in epistulam ad Colossenses"
+work_id = "work.john-chrysostom.homilies-on-colossians"
+locator = "in the section following Ephesians"
+basis = "edition.john-chrysostom.homilies-on-colossians.english-npnf1-13-new-advent-web-2026-07-29 cites this volume; the Ephesians segment's context."
+
+[[containers.constituents]]
+author = "John Chrysostom"
+title = "Homiliae in epistulam i ad Thessalonicenses"
+locator = "in the section following Ephesians"
+basis = "The Ephesians segment's context: 'The following Philippians/Colossians/Thessalonians section is excluded.'"
+
+[[containers.constituents]]
+author = "John Chrysostom"
+title = "Homiliae in epistulam ii ad Thessalonicenses"
+locator = "in the section following Ephesians"
+basis = "As above; the context names 'Thessalonians' without number, and both epistles' homilies are listed so neither lead is reported absent on a guess."
+
+[[containers]]
+id = "work.nicene-and-post-nicene-fathers.series-1-volume-14"
+manifest_sha256 = "29a4a0d6468299c49caf59dd5eea98361264648645b72c2f81cea9acee76ffb4"
+status = "resolved"
+basis = "Description: 'the English of Chrysostom's eighty-eight homilies on the Gospel of John ... together with the homilies on Hebrews.'"
+
+[[containers.constituents]]
+author = "John Chrysostom"
+title = "Homiliae in Ioannem"
+work_id = "work.john-chrysostom.homilies-on-john"
+whole = true
+locator = "Homily LXXXV on John 19:16-20:10, LXXXVI on John 20:10-11"
+basis = "Description."
+
+[[containers.constituents]]
+author = "John Chrysostom"
+title = "Homiliae in epistulam ad Hebraeos"
+whole = true
+basis = "Description: 'together with the homilies on Hebrews', a title the index's alias group for this work lists."
+
+[[containers]]
+id = "work.nicene-and-post-nicene-fathers.series-2-volume-1"
+manifest_sha256 = "5dab741e56c173bdb7070dbbb8465f072994574e312b44c25e5eb6f3319fb03c"
+status = "resolved"
+basis = "Description and edition title: 'Eusebius Pamphilus: Church History, Life of Constantine, Oration in Praise of Constantine'."
+
+[[containers.constituents]]
+author = "Eusebius of Caesarea"
+title = "Historia ecclesiastica"
+work_id = "work.eusebius.ecclesiastical-history"
+whole = true
+basis = "Description: 'McGiffert's annotated English translation of Eusebius's Church History'."
+
+[[containers.constituents]]
+author = "Eusebius of Caesarea"
+title = "Life of Constantine"
+whole = true
+basis = "Edition title: 'Life of Constantine'."
+
+[[containers.constituents]]
+author = "Eusebius of Caesarea"
+title = "Oration in Praise of Constantine"
+whole = true
+basis = "Edition title: 'Oration in Praise of Constantine'."
+
+[[containers]]
+id = "work.nicene-and-post-nicene-fathers.series-2-volume-2"
+manifest_sha256 = "92c17c43f7902d4ef32bb158cf402a3d002f1c60a05b7eaa447c83e0f1a76694"
+status = "resolved"
+basis = "Description: 'the Church Histories of Socrates Scholasticus and Sozomen in English'."
+
+[[containers.constituents]]
+author = "Socrates Scholasticus"
+title = "Church History"
+whole = true
+basis = "Description."
+
+[[containers.constituents]]
+author = "Sozomen"
+title = "Church History"
+whole = true
+basis = "Description; edition notes cite Sozomen I.23."
+
+[[containers]]
+id = "work.nicene-and-post-nicene-fathers.series-2-volume-3"
+manifest_sha256 = "5988df0825c0586b34ae492e6a27ae0089baf71d5728fc0511c6050d8c240287"
+status = "partial"
+basis = "Description: 'Theodoret's ecclesiastical history and the historical and biographical writings of Jerome, Gennadius, and Rufinus'; edition notes attribute its De viris illustribus to Richardson."
+unresolved = "The writings of Gennadius and Rufinus, and Jerome's beyond De viris illustribus, are not named."
+
+[[containers.constituents]]
+author = "Theodoret of Cyrus"
+title = "Ecclesiastical history"
+whole = true
+basis = "Description."
+
+[[containers.constituents]]
+author = "Jerome"
+title = "De viris illustribus"
+work_id = "work.jerome.de-viris-illustribus"
+whole = true
+basis = "Edition notes; edition.jerome.de-viris-illustribus.english-richardson-npnf2-3."
+
+[[containers]]
+id = "work.nicene-and-post-nicene-fathers.series-2-volume-5"
+manifest_sha256 = "d7f013a1c553bde8d26f95c6d03a7abbad567bb4e1d077ccd55ff94ce9043c0c"
+status = "partial"
+basis = "Description: 'the dogmatic and ascetic treatises of Gregory of Nyssa in English, including On the Soul and the Resurrection, On the Making of Man, the Great Catechism, and Against Eunomius'. A catena fragment declares constituent_of its edition."
+unresolved = "'Including' names four treatises; the volume's others are not named."
+
+[[containers.constituents]]
+author = "Gregory of Nyssa"
+title = "On the Soul and the Resurrection"
+whole = true
+basis = "Description: 'On the Soul and the Resurrection'."
+
+[[containers.constituents]]
+author = "Gregory of Nyssa"
+title = "De hominis opificio"
+work_id = "work.gregory-of-nyssa.de-hominis-opificio"
+whole = true
+basis = "Description: 'On the Making of Man'; its catena fragment declares constituent_of this volume's edition."
+
+[[containers.constituents]]
+author = "Gregory of Nyssa"
+title = "Oratio catechetica magna"
+work_id = "work.gregory-of-nyssa.oratio-catechetica-magna"
+whole = true
+basis = "Description: 'the Great Catechism'; edition.gregory-of-nyssa.oratio-catechetica-magna.moore-wilson-npnf2-5-ccel-web-2026-07-25 cites this volume."
+
+[[containers.constituents]]
+author = "Gregory of Nyssa"
+title = "Against Eunomius"
+whole = true
+basis = "Description: 'Against Eunomius'."
+
+[[containers]]
+id = "work.nicene-and-post-nicene-fathers.series-2-volume-6"
+manifest_sha256 = "7158ef3a1efd7fc8cd76434dd7d8bec21bd2937bf0695e4cd231745beffca5ef"
+status = "partial"
+basis = "Description: 'Jerome's letters, prefaces to the Vulgate books, and select treatises in English'. edition.jerome.letter-108.english-npnf2-6-1893 cites this volume; guidance/catena.md records Jerome's preface to the Hebrew Questions standing 'among the Prefaces in NPNF 2-6' and the Questions themselves absent from it."
+unresolved = "The letters, prefaces and select treatises are not enumerated beyond the two named here."
+
+[[containers.constituents]]
+author = "Jerome"
+title = "Letter 108"
+work_id = "work.jerome.letter-108"
+whole = true
+basis = "edition.jerome.letter-108.english-npnf2-6-1893."
+
+[[containers.constituents]]
+author = "Jerome"
+title = "Preface to the Hebrew Questions on Genesis"
+locator = "among the prefaces; the Questions themselves are not in the volume"
+basis = "guidance/catena.md §8, the translation-absence finding for the Hebrew Questions."
+
+[[containers]]
+id = "work.nicene-and-post-nicene-fathers.series-2-volume-7"
+manifest_sha256 = "a056b02fdafced3b74d1dc6c6d177c53162cf7ecbda0252929ff93527bcd26ed"
+status = "partial"
+basis = "Description: 'Edwin Hamilton Gifford's translation of the Catechetical Lectures of Cyril of Jerusalem and the orations and letters of Gregory Nazianzen'."
+unresolved = "Gregory Nazianzen's orations and letters are not enumerated; none is named."
+
+[[containers.constituents]]
+author = "Cyril of Jerusalem and the Jerusalem catechetical tradition"
+title = "Catechetical Lectures"
+work_id = "work.cyril-of-jerusalem.catechetical-lectures"
+whole = true
+basis = "Description."
+
+[[containers]]
+id = "work.nicene-and-post-nicene-fathers.series-2-volume-8"
+manifest_sha256 = "17fdcd0bb7ff35751144d3740e81251159b61a52a4f34f0f0064ce94ce8e5a26"
+status = "resolved"
+basis = "Description: 'containing Basil of Caesarea's letters, the Hexaemeron, and On the Spirit in English'. Nine catena fragments of the Hexaemeron declare constituent_of its edition."
+
+[[containers.constituents]]
+author = "Basil the Great"
+title = "Homiliae in Hexaemeron"
+work_id = "work.basil-of-caesarea.homiliae-in-hexaemeron"
+whole = true
+basis = "Description; the Hexaemeron fragments in src/sources/commentary/fragment-loci.yaml."
+
+[[containers.constituents]]
+author = "Basil of Caesarea"
+title = "De Spiritu Sancto"
+work_id = "work.basil-of-caesarea.de-spiritu-sancto"
+whole = true
+basis = "Description: 'On the Spirit'."
+
+[[containers.constituents]]
+author = "Basil of Caesarea"
+title = "Letters"
+locator = "the letters, as the description names them"
+basis = "Description: 'Basil of Caesarea's letters'; edition notes cite Letter 234."
+
+[[containers]]
+id = "work.nicene-and-post-nicene-fathers.series-2-volume-9"
+manifest_sha256 = "897292d9b218a49d9e925ddc2cd62f980fd7b51c940a9f3e13b4a83ac8e4403f"
+status = "partial"
+basis = "Description: 'Hilary of Poitiers on the Trinity and John of Damascus, including An Exact Exposition of the Orthodox Faith'."
+unresolved = "'Including' names one work of John of Damascus; his others in the volume are not named."
+
+[[containers.constituents]]
+author = "Hilary of Poitiers"
+title = "On the Trinity"
+whole = true
+basis = "Description: 'Hilary of Poitiers on the Trinity'."
+
+[[containers.constituents]]
+author = "John of Damascus"
+title = "An Exact Exposition of the Orthodox Faith"
+whole = true
+basis = "Description: 'An Exact Exposition of the Orthodox Faith'."
+
+[[containers]]
+id = "work.nicene-and-post-nicene-fathers.series-2-volume-11"
+manifest_sha256 = "6932fa854b48dc3354c628b90c893167a6606dbd96b2a9367a3d98bb57c574eb"
+status = "partial"
+basis = "Description: 'Sulpitius Severus, the Commonitory of Vincent of Lerins, and the works of John Cassian in English'."
+unresolved = "The works of Sulpitius Severus and of John Cassian are named by author only."
+
+[[containers.constituents]]
+author = "Vincent of Lerins"
+title = "The Commonitory"
+whole = true
+basis = "Description: 'the Commonitory of Vincent of Lerins'."
+
+[[containers]]
+id = "work.nicene-and-post-nicene-fathers.series-2-volume-12"
+manifest_sha256 = "1013aa0b59c57a8d1094e0ef826bdeff501d894fc2380cdde2f93aaf5556b1ca"
+status = "partial"
+basis = "Description: 'Charles Lett Feltoe's translation of the letters and sermons of Leo the Great together with works of Gregory the Great'. edition.gregory-the-great.regula-pastoralis.english-npnf2-12-new-advent-web-2026-09-05 cites this volume."
+unresolved = "Which of Leo's sermons and letters the volume prints is not stated; Gregory's works beyond the Regula pastoralis are not named."
+
+[[containers.constituents]]
+author = "Leo the Great"
+title = "Sermones"
+extent_unresolved = "The description says 'the letters and sermons of Leo the Great' without saying whether the volume prints all of them or a selection."
+basis = "Description; edition notes: 'Feltoe numbers Leo's sermons and their internal sections'."
+
+[[containers.constituents]]
+author = "Leo the Great"
+title = "Letters"
+extent_unresolved = "As for the sermons: all or a selection is not stated."
+basis = "Description."
+
+[[containers.constituents]]
+author = "Gregory the Great"
+title = "Regula pastoralis"
+work_id = "work.gregory-the-great.regula-pastoralis"
+whole = true
+basis = "edition.gregory-the-great.regula-pastoralis.english-npnf2-12-new-advent-web-2026-09-05."
+
+[[containers]]
+id = "work.nicene-and-post-nicene-fathers.series-2-volume-14"
+manifest_sha256 = "9a62f98ef0484a0236f1615991050ca9fe86d678ed15e6dce436fb8f79a7387e"
+status = "partial"
+basis = "Description: 'Henry R. Percival's English edition of the canons, definitions, letters, and selected acts of the seven ecumenical councils, with notes.' Its edition's passages address Nicaea canon 3 and the Trullan canons 6, 12, 13, 30 and 48."
+unresolved = "The canons, definitions, letters and acts are not enumerated beyond the councils the edition's own passages address."
+
+[[containers.constituents]]
+author = "First Council of Nicaea"
+title = "Canons"
+locator = "canon 3 among its passages, with Percival's notes"
+basis = "Passage nicaea-canon-3 on the container's own edition."
+
+[[containers.constituents]]
+author = "Council in Trullo"
+title = "Canons"
+locator = "canons 6, 12, 13, 30 and 48, with Percival's introductory note"
+basis = "Passages trullo-canon-6, -12, -13, -30, -48 and trullo-introductory-note on the container's own edition."
+
+# ---------------------------------------------------------------------------
+# Containers: Ante-Nicene Fathers
+# ---------------------------------------------------------------------------
+
+[[containers]]
+id = "work.ante-nicene-fathers.volume-1"
+manifest_sha256 = "934cc03a69eaeac397f601c032345828e6bbe14064acef77914fa24158a49c4f"
+status = "partial"
+basis = "Edition title: 'The Apostolic Fathers, Justin Martyr, and Irenaeus'. Segments into its OCR and facsimile for four works."
+unresolved = "The Apostolic Fathers other than Ignatius's Letter to the Smyrnaeans are not enumerated."
+
+[[containers.constituents]]
+author = "Ignatius of Antioch"
+title = "Letter to the Smyrnaeans"
+work_id = "work.ignatius-of-antioch.letter-to-the-smyrnaeans"
+whole = true
+basis = "Segment segment.ignatius-of-antioch.letter-to-the-smyrnaeans.roberts-donaldson-anf1-1887.anf1-ocr-12cdc519: 'The complete parallel-column English presentation of the shorter and longer recensions'."
+
+[[containers.constituents]]
+author = "Irenaeus of Lyons"
+title = "Adversus haereses"
+work_id = "work.irenaeus.adversus-haereses"
+whole = true
+basis = "Segments on the OCR and facsimile: 'Complete translated body of Against Heresies'."
+
+[[containers.constituents]]
+author = "Justin Martyr"
+title = "First Apology"
+work_id = "work.justin-martyr.first-apology"
+whole = true
+basis = "Segments: 'Complete translated body of the conventionally named First Apology, chapters 1-68'."
+
+[[containers.constituents]]
+author = "Justin Martyr"
+title = "Apologia secunda"
+work_id = "work.justin-martyr.second-apology"
+whole = true
+basis = "Segment: 'Complete translated body of the conventionally named Second Apology, chapters 1-15'."
+
+[[containers]]
+id = "work.ante-nicene-fathers.volume-3"
+manifest_sha256 = "b09e1051bcd8ae0e4aa31e6393e4d26c619ed7c93ed54f5ab5101047fd153e8d"
+status = "partial"
+basis = "Description: 'containing the apologetic, anti-Marcionite, and ethical works of Tertullian'. edition.tertullian.adversus-marcionem.english-holmes-anf3-newadvent-web-2026-07-28 cites this volume."
+unresolved = "Tertullian's apologetic and ethical works are not named. The volume's only edition registers no artifact: it is cataloged, not held."
+
+[[containers.constituents]]
+author = "Tertullian"
+title = "Adversus Marcionem"
+work_id = "work.tertullian.adversus-marcionem"
+whole = true
+basis = "Description ('anti-Marcionite ... works'); the work's ANF 3 edition."
+
+[[containers]]
+id = "work.ante-nicene-fathers.volume-4"
+manifest_sha256 = "313814b999faf570e44e01ae91ac05f59e2ad55795fcb6e7e0c7e255c6c6b8ad"
+status = "partial"
+basis = "Description: 'Tertullian's ascetic and disciplinary works (including On Modesty, On Fasting, On Monogamy, To His Wife, On the Apparel of Women, On the Veiling of Virgins, and On Exhortation to Chastity) together with Minucius Felix, Commodian, and Origen.' Edition title: 'Origen, Parts First and Second'. The ANF 4 editions of De principiis cite this volume."
+unresolved = "Minucius Felix and Commodian are named by author only; Origen's works beyond De principiis are not named. The volume's only edition registers no artifact."
+
+[[containers.constituents]]
+author = "Tertullian"
+title = "On Modesty"
+whole = true
+basis = "Description: 'On Modesty'."
+
+[[containers.constituents]]
+author = "Tertullian"
+title = "On Fasting"
+whole = true
+basis = "Description: 'On Fasting'."
+
+[[containers.constituents]]
+author = "Tertullian"
+title = "On Monogamy"
+whole = true
+basis = "Description: 'On Monogamy'."
+
+[[containers.constituents]]
+author = "Tertullian"
+title = "To His Wife"
+whole = true
+basis = "Description: 'To His Wife'."
+
+[[containers.constituents]]
+author = "Tertullian"
+title = "On the Apparel of Women"
+whole = true
+basis = "Description: 'On the Apparel of Women'."
+
+[[containers.constituents]]
+author = "Tertullian"
+title = "On the Veiling of Virgins"
+whole = true
+basis = "Description: 'On the Veiling of Virgins'."
+
+[[containers.constituents]]
+author = "Tertullian"
+title = "On Exhortation to Chastity"
+whole = true
+basis = "Description: 'On Exhortation to Chastity'."
+
+[[containers.constituents]]
+author = "Origen of Alexandria"
+title = "De principiis"
+work_id = "work.origen.de-principiis"
+whole = true
+basis = "edition.origen.de-principiis.crombie-anf4-ccel-web-2026-07-25 and crombie-anf4-newadvent-web-2026-07-25 cite this volume."
+
+[[containers]]
+id = "work.ante-nicene-fathers.volume-5"
+manifest_sha256 = "feff194d5606cb3316254fa1714147cb69fcda78549d1e3370e27b65fefe67fa"
+status = "partial"
+basis = "Description: 'Hippolytus, the works and letters of Cyprian of Carthage, the fragments of Caius, and Novatian'. Edition notes: 'The volume prints one recension of De ecclesiae catholicae unitate 4'."
+unresolved = "Hippolytus, Caius and Novatian are named by author only, and Cyprian's works beyond De unitate are not named. The volume's only edition registers no artifact."
+
+[[containers.constituents]]
+author = "Cyprian of Carthage"
+title = "De ecclesiae catholicae unitate"
+whole = true
+locator = "one recension of chapter 4 only"
+basis = "Edition notes."
+
+[[containers]]
+id = "work.ante-nicene-fathers.volume-6"
+manifest_sha256 = "e5e42bf832c35d55ddbadc16806d99c1c3e9c68b814002da66286455d9bfa017"
+status = "partial"
+basis = "Description: 'Gregory Thaumaturgus (including the Oration and Panegyric Addressed to Origen), Dionysius the Great, Julius Africanus, Anatolius and minor writers, Methodius, and Arnobius'. edition.anonymous.first-homily-on-the-annunciation.english-salmond-anf6-1886 cites this volume."
+unresolved = "The other writers are named by author only. The volume's only edition registers no artifact."
+
+[[containers.constituents]]
+author = "Gregory Thaumaturgus"
+title = "Oration and Panegyric Addressed to Origen"
+whole = true
+basis = "Description."
+
+[[containers.constituents]]
+author = "Anonymous"
+title = "First Homily on the Annunciation to the Holy Virgin Mary"
+work_id = "work.anonymous.first-homily-on-the-annunciation"
+whole = true
+basis = "edition.anonymous.first-homily-on-the-annunciation.english-salmond-anf6-1886."
+
+[[containers]]
+id = "work.ante-nicene-fathers.volume-9"
+manifest_sha256 = "8ec59fbca221d392cde58cde072ddf1e58cbb7e534611a48e32b2f9024ecf337"
+status = "partial"
+basis = "Description: 'recently recovered early Christian texts, John Keith's translation of the Clementine epistles, and John Patrick's translation of Origen's commentaries on Matthew and John.' Edition notes: 'this volume prints the surviving Greek books in translation' of the Matthew commentary."
+unresolved = "The 'recently recovered' texts are not named. The volume's only edition registers no artifact: it is cataloged, not held."
+
+[[containers.constituents]]
+author = "Origen"
+title = "Commentarium in Matthaeum"
+locator = "the surviving Greek books, in John Patrick's translation"
+basis = "Description and edition notes. Which books, and so which chapters of Matthew, the record does not say."
+
+[[containers.constituents]]
+author = "Origen"
+title = "Commentarii in evangelium Ioannis"
+locator = "in John Patrick's translation"
+basis = "Description: 'Origen's commentaries on Matthew and John'. The extant books are not enumerated."
+
+[[containers.constituents]]
+author = "Clement"
+title = "First Clement"
+whole = true
+basis = "Edition notes attribute 'its First Clement text to Keith'."
+
+# ---------------------------------------------------------------------------
+# Containers: other anthologies and collections
+# ---------------------------------------------------------------------------
+
+[[containers]]
+id = "work.alba-house.trustful-surrender-to-divine-providence"
+manifest_sha256 = "ba96ff0cf0c27adf92d51317a4f8da9d971276f9cd2cdefb1d68e12fe60f0dc9"
+status = "resolved"
+basis = "Description: 'Its Part I is an extract from Saint-Jure's De la connaissance et de l'amour du Fils de Dieu, book 3, chapter 8; its Part II, printed under the name of Claude de la Colombiere, comprises a compilation from Colombiere's sermons and a further chapter whose content corresponds to Saint-Jure's exercise toward divine providence in the same chapter.'"
+
+[[containers.constituents]]
+author = "Jean-Baptiste Saint-Jure"
+title = "De la connaissance et de l'amour du Fils de Dieu"
+locator = "book 3, chapter 8: Part I, and a further chapter of Part II printed under Colombiere's name"
+basis = "Description."
+
+[[containers.constituents]]
+author = "Claude de la Colombière"
+title = "Sermons de Claude de la Colombière"
+work_id = "work.claude-de-la-colombiere.sermons"
+locator = "a compilation from the sermons, as Part II"
+basis = "Description."
+
+[[containers]]
+id = "work.frances-m-m-comper.book-of-the-craft-of-dying"
+manifest_sha256 = "e30072f56a10799764a18eed9bc5a686b4bdce1087265d12fb266f676ba8cbea"
+status = "resolved"
+basis = "Description enumerates the constituent tracts."
+
+[[containers.constituents]]
+author = "Anonymous"
+title = "The Craft of Dying"
+whole = true
+basis = "Description: translated from an anonymous Latin ars moriendi, transcribed from Bodleian MS 423."
+
+[[containers.constituents]]
+author = "Ascribed to William Caxton"
+title = "Abridgment of the Craft of Dying"
+whole = true
+basis = "Description: 'an abridgment ascribed to William Caxton and translated from an untraced French source'."
+
+[[containers.constituents]]
+author = "Anonymous"
+title = "A further abridgment of the Craft of Dying"
+whole = true
+basis = "Description: 'a further abridgment'."
+
+[[containers.constituents]]
+author = "Suso"
+title = "Horologium sapientiae"
+locator = "chapters only"
+basis = "Description: 'chapters from Suso's Horologium sapientiae'."
+
+[[containers.constituents]]
+author = "Anonymous"
+title = "The Toure of all Toures"
+locator = "chapters only"
+basis = "Description."
+
+[[containers.constituents]]
+author = "Richard Rolle"
+title = "The Form of Living"
+locator = "chapters only"
+basis = "Description."
+
+[[containers.constituents]]
+author = "Anonymous"
+title = "Fragment from MS Bodley 423"
+whole = true
+basis = "Description."
+
+[[containers.constituents]]
+author = "Anonymous"
+title = "The Lamentation of the Dying Creature"
+whole = true
+basis = "Description."
+
+[[containers]]
+id = "work.germain-morin.sancti-augustini-sermones-post-maurinos-reperti"
+manifest_sha256 = "007507d8ac9260d60fe974b781c375e78c6e8543488219aed174ba70f7d6ed08"
+status = "partial"
+basis = "Description: 'Morin's collected critical edition of Augustinian sermons discovered after the Maurists ... the container and individual sermons have separate identities.' Segment into its facsimile for Sermo Frangipane V."
+unresolved = "Only Sermo Frangipane V is identified among the sermons the volume prints."
+
+[[containers.constituents]]
+author = "Augustine of Hippo"
+title = "Sermo Frangipane V"
+work_id = "work.augustine.sermo-frangipane-5"
+locator = "from printed p. 212; the segment bounds the heading and opening through p. 215"
+basis = "Segment segment.augustine.sermo-frangipane-5.morin-miscellanea-agostiniana.opening-pp212-215."
+
+[[containers]]
+id = "work.anonymous.early-medieval-penitential-collections"
+manifest_sha256 = "90a3f127def6804871f3dcb6e205b41d2a8fc68712ad06e2288bec22ed2d309f"
+status = "unresolved"
+basis = "Description: 'A work-level container for the discrete penitential materials printed with manuscript apparatus by Wasserschleben.'"
+unresolved = "The record names no individual penitential; its artifact notes cite printed pp. 158-159 and 211-212 without naming what stands there."
+
+[[containers]]
+id = "work.friedrich-wilhelm-hermann-wasserschleben.die-bussordnungen-der-abendlaendischen-kirche"
+manifest_sha256 = "2ac7dc7583d327fa2532f5ff2819b9e04b26ca3a4b0dc0bd4239dc1dd5346138"
+status = "unresolved"
+basis = "Description: 'Wasserschleben's 1851 collection of Latin western penitential texts'."
+unresolved = "The record names none of the penitentials it prints; its notes speak of 'named penitential materials' at printed pp. 185 and 340 without naming them."
+
+[[containers]]
+id = "work.pericles-pierre-joannou.discipline-generale-antique-volume-1-2"
+manifest_sha256 = "2db3ffd8b1a5fdf2bbbc885809926e7264663c6572edf096ca1126859ca764e4"
+status = "partial"
+basis = "Description: 'Joannou's modern collection of Greek texts, Latin versions, French translations ... for particular synods'; edition notes: 'separately bounded constituents such as the Canons of Laodicea'."
+unresolved = "The particular synods other than Laodicea are not named."
+
+[[containers.constituents]]
+author = "Synod of Laodicea"
+title = "Canons of the Synod of Laodicea"
+work_id = "work.council-of-laodicea.canons"
+locator = "canon 26 on printed p. 141"
+basis = "Segment segment.council-of-laodicea.canons.joannou-greek-latin-french-1962.canon-26-printed-page-141; edition notes."
+
+[[containers]]
+id = "work.mansi.sacrorum-conciliorum-collectio"
+manifest_sha256 = "7dc04988a19146d50933ce28e001b589e236161b0394a279cb5590b9f2a35eb3"
+status = "partial"
+basis = "Description: 'Its volumes are container witnesses: the councils and papal acts printed within them retain their own identity.' Edition notes for tomus II and tomus XXI name the councils they carry."
+unresolved = "Only the councils the two registered tomes' notes name are listed; the collection prints many more, and the registered artifacts are single leaves."
+
+[[containers.constituents]]
+author = "Council of Elvira"
+title = "Canons"
+locator = "tomus II, coll. 11-12 and again at coll. 245-246 in parallel Vulgatus and Emendatus columns"
+basis = "Edition notes, tomus II."
+
+[[containers.constituents]]
+author = "First Council of Nicaea"
+title = "Canons"
+locator = "tomus II; canon 3 at coll. 669-670 in Greek and the Dionysian Latin"
+basis = "Edition notes, tomus II; leaf-350-image notes."
+
+[[containers.constituents]]
+author = "First Lateran Council"
+title = "Canons"
+locator = "tomus XXI; canon XXI at coll. 285-286"
+basis = "Edition notes, tomus XXI."
+
+[[containers.constituents]]
+author = "Second Lateran Council"
+title = "Canons"
+locator = "tomus XXI; canons VI-VII at coll. 527-528"
+basis = "Edition notes, tomus XXI."
+
+[[containers.constituents]]
+author = "Council of Pisa of 1135"
+title = "Acts, as printed"
+locator = "tomus XXI, coll. 489-490"
+basis = "Edition notes, tomus XXI."
+
+[[containers]]
+id = "work.martin-gerbert.monumenta-veteris-liturgiae-alemannicae"
+manifest_sha256 = "3042182e5f3fc89767deefd8f26ea10cb372783c2e9ba5af9e173b0a63a9de98"
+status = "unresolved"
+basis = "Description: 'Gerbert's eighteenth-century collection of Alemannic liturgical witnesses.'"
+unresolved = "The record names none of the witnesses printed in it; its page images carry Mass formularies under running heads without naming the book they come from."
+
+[[containers]]
+id = "work.denzinger.enchiridion-symbolorum"
+manifest_sha256 = "542735640fc238ab349321d5aa3e40595411130315affb2003c1c27a15d4ef47"
+status = "partial"
+basis = "Description: 'numbered compilation of creeds, conciliar definitions, and magisterial documents'. The Latin artifact's notes name the documents listed here with their DS numbers."
+unresolved = "The compilation prints some thousands of numbered excerpts; only those its artifact notes name are listed."
+
+[[containers.constituents]]
+author = "Fourth Lateran Council under Innocent III"
+title = "Firmiter credimus"
+work_id = "work.fourth-lateran-council.firmiter-credimus"
+locator = "DS 800-802 (older numbering 428-430)"
+basis = "Latin artifact notes ('Lateran IV Firmiter at DS 801'); the work's own edition: 'as printed in Denzinger's Enchiridion ... nn. 800-802'."
+
+[[containers.constituents]]
+author = "Second Council of Lyons"
+title = "On the lot of the dead"
+locator = "DS 856-859"
+basis = "Latin artifact notes."
+
+[[containers.constituents]]
+author = "Not named in the record"
+title = "Benedictus Deus"
+locator = "DS 1000-1002"
+basis = "Latin artifact notes."
+
+[[containers.constituents]]
+author = "Council of Florence under Eugene IV"
+title = "Laetentur caeli"
+work_id = "work.council-of-florence.laetentur-caeli"
+locator = "DS 1304-1306"
+basis = "Latin artifact notes: 'the Florentine Laetentur caeli at DS 1304-1306'."
+
+[[containers.constituents]]
+author = "Council of Trent"
+title = "Canones et decreta Concilii Tridentini"
+work_id = "work.council-of-trent.canones-et-decreta"
+locator = "session VI canon 30 at DS 1580; the decree on purgatory at DS 1820"
+basis = "Latin artifact notes."
+
+[[containers]]
+id = "work.henri-lasserre.notre-dame-de-lourdes"
+manifest_sha256 = "9a98e42333936a88233ee6c68865d3cde8258a2cb25017810aae5b79578107af"
+status = "resolved"
+basis = "Description: 'documentary carrier of the mandement of 18 January 1862 ... Container identity distinct from the diocesan act it reproduces.'"
+
+[[containers.constituents]]
+author = "Bertrand-Severe Laurence, Bishop of Tarbes"
+title = "Mandement de Mgr l'Eveque de Tarbes, portant jugement sur l'Apparition qui a eu lieu a la Grotte de Lourdes"
+work_id = "work.diocese-of-tarbes.mandement-apparition-lourdes-1862"
+whole = true
+locator = "printed pp. 397-409"
+basis = "edition.diocese-of-tarbes.mandement-apparition-lourdes-1862: 'Henri Lasserre, Notre-Dame de Lourdes, Paris: Victor Palme, 1870, pp. 397-409'."
+
+[[containers]]
+id = "work.holy-see.message-of-fatima"
+manifest_sha256 = "6bcaf9c44d3d07cabd9748346d80b1b8e7676d7530000e509b6bf15db6301ed9"
+status = "resolved"
+basis = "Description enumerates the dossier's constituent documents; 'Loci are the dossier's named constituent documents.'"
+
+[[containers.constituents]]
+author = "Tarcisio Bertone"
+title = "Introduction"
+whole = true
+basis = "Description."
+
+[[containers.constituents]]
+author = "Sister Lucia"
+title = "Third Memoir: the first and second parts of the secret"
+locator = "with Fourth Memoir annotations"
+basis = "Description."
+
+[[containers.constituents]]
+author = "Sister Lucia"
+title = "The third part of the secret"
+whole = true
+locator = "written at Tuy, 3 January 1944, in facsimile and translation"
+basis = "Description."
+
+[[containers.constituents]]
+author = "John Paul II"
+title = "Letter of 19 April 2000"
+whole = true
+basis = "Description."
+
+[[containers.constituents]]
+author = "Not named in the record"
+title = "Record of the conversation with Sister Lucia of 27 April 2000"
+whole = true
+basis = "Description."
+
+[[containers.constituents]]
+author = "Angelo Sodano"
+title = "Announcement of 13 May 2000"
+whole = true
+basis = "Description."
+
+[[containers.constituents]]
+author = "Joseph Ratzinger"
+title = "Theological commentary"
+whole = true
+basis = "Description."
+
+[[containers]]
+id = "work.santuario-de-fatima.dcf-selecao-1917-1930"
+manifest_sha256 = "1dbc6c4daa666f11397a135f06147e61a3f66b84671d59c66cd45122ab85ac6e"
+status = "partial"
+basis = "Description: 'parish-priest and Formigao interrogations, contemporary press including O Seculo and Ilustracao Portuguesa, the 1922 provisao, the 1930 commission report, and the 1930 pastoral letter'."
+unresolved = "The description names classes of document; the individual interrogations and press items are not enumerated."
+
+[[containers.constituents]]
+author = "Jose Alves Correia da Silva, Bishop of Leiria"
+title = "Carta Pastoral sobre o culto de Nossa Senhora de Fatima"
+work_id = "work.diocese-of-leiria.carta-pastoral-fatima-1930"
+whole = true
+locator = "Doc. 133, printed pp. 539-551"
+basis = "edition.diocese-of-leiria.carta-pastoral-fatima-1930 cites this volume."
+
+[[containers.constituents]]
+author = "Diocese of Leiria"
+title = "Provisao of 3 May 1922"
+whole = true
+basis = "Description ('the 1922 provisao'); work.diocese-of-leiria.carta-pastoral-fatima-1930's description: 'the diocesan inquiry opened by the provisao of 3 May 1922'."
+
+[[containers.constituents]]
+author = "Commission not named in the record"
+title = "Commission report of 1930"
+whole = true
+basis = "Description: 'the 1930 commission report'."
+
+[[containers]]
+id = "work.richard-sutton-rust.freedoms-gift"
+manifest_sha256 = "9eff4ef90ddc2f80eedd748bffc576481f9c9454cd67c552d84ab32860752eee"
+status = "partial"
+basis = "Description: 'The abolitionist anthology, whose constituent articles retain their own author identities.' Segment into its facsimile."
+unresolved = "Only Garrison's article is identified among the anthology's contributions."
+
+[[containers.constituents]]
+author = "William Lloyd Garrison"
+title = "Guilt of the North—The National Compact"
+work_id = "work.william-lloyd-garrison.guilt-of-the-north-the-national-compact"
+whole = true
+locator = "printed pp. 34-40, PDF leaves 42-48"
+basis = "Segment segment.william-lloyd-garrison.guilt-of-the-north-the-national-compact.rust-freedoms-gift.pp34-40."
+
+# ---------------------------------------------------------------------------
+# Containers: encyclopedias
+# ---------------------------------------------------------------------------
+
+[[containers]]
+id = "work.catholic-encyclopedia.volume-2"
+manifest_sha256 = "6623135dc5b814f03ed40ec2179b2e49095ec30393109976c6c5e3b59597a27f"
+status = "partial"
+basis = "Description: 'the volume's container identity remains distinct from each contributor's article. Sydney Smith's article St. Robert Francis Romulus Bellarmine belongs to this volume.'"
+unresolved = "The volume prints an alphabetical run of signed articles. Its record names one; the articles held are its own per-article artifacts, which are not enumerated here because none is a separately registered work."
+
+[[containers.constituents]]
+author = "Sydney Smith"
+title = "St. Robert Francis Romulus Bellarmine"
+whole = true
+basis = "Description."
+
+[[containers]]
+id = "work.catholic-encyclopedia.volume-11"
+manifest_sha256 = "89c729d48c4ee457f1897e72956c99a0965d697e412655bf38e1022f580bc0f3"
+status = "partial"
+basis = "Description: 'Ferdinand Prat's article St. Paul belongs to this volume.'"
+unresolved = "As for every volume: the articles are its own per-article artifacts and are not enumerated here."
+
+[[containers.constituents]]
+author = "Ferdinand Prat"
+title = "St. Paul"
+whole = true
+basis = "Description."
+
+[[containers]]
+id = "work.catholic-encyclopedia.volume-13"
+manifest_sha256 = "7073b3d83f8f30ffb067ceb49f099af674cd6f73787a3a235381249cf5852964"
+status = "partial"
+basis = "Description: 'Herbert Thurston's articles The Rosary (with Andrew Shipman for the Eastern section) and Feast of the Holy Rosary belong to this volume.'"
+unresolved = "As for every volume: the articles are its own per-article artifacts and are not enumerated here."
+
+[[containers.constituents]]
+author = "Herbert Thurston, with Andrew Shipman"
+title = "The Rosary"
+whole = true
+basis = "Description."
+
+[[containers.constituents]]
+author = "Herbert Thurston"
+title = "Feast of the Holy Rosary"
+whole = true
+basis = "Description."
+
+[[containers]]
+id = "work.catholic-encyclopedia.volume-1"
+manifest_sha256 = "ca251da99a2c05980c5d71707500f0706cf5d253d936e2504a2cfc122964f3d0"
+status = "unresolved"
+basis = "Description: The first volume (1907) of the sixteen-volume Catholic Encyclopedia (New York: Robert Appleton Company, 1907-1912). Signed articles are cited by article title; the volume's container identity remains distinct from each contributor's article..."
+unresolved = "The volume prints an alphabetical run of signed articles and its record names none. The 18 artifacts registered on it are per-article deliveries held under the volume's own record; they are not enumerated here because none is a separately registered work."
+
+[[containers]]
+id = "work.catholic-encyclopedia.volume-3"
+manifest_sha256 = "776a3788103c1eb9d04658885e5fa9ffe518a2c9e07b84cfb484455a43c1e0f6"
+status = "unresolved"
+basis = "Description: Volume 3 of the original Catholic Encyclopedia (New York: Robert Appleton Company, 1907-1912). Its articles are signed scholarship of their date and are cited as early twentieth-century reference works, not as magisterial or current stateme..."
+unresolved = "The volume prints an alphabetical run of signed articles and its record names none. The 17 artifacts registered on it are per-article deliveries held under the volume's own record; they are not enumerated here because none is a separately registered work."
+
+[[containers]]
+id = "work.catholic-encyclopedia.volume-4"
+manifest_sha256 = "1eaeeaff9bdf1d453027d504dc0cc7d3644ab146cf045495011fd36e7e81c963"
+status = "unresolved"
+basis = "Description: Volume 4 of the original Catholic Encyclopedia (New York: Robert Appleton Company, 1907-1912). Its articles are signed scholarship of their date and are cited as early twentieth-century reference works, not as magisterial or current stateme..."
+unresolved = "The volume prints an alphabetical run of signed articles and its record names none. The 16 artifacts registered on it are per-article deliveries held under the volume's own record; they are not enumerated here because none is a separately registered work."
+
+[[containers]]
+id = "work.catholic-encyclopedia.volume-5"
+manifest_sha256 = "532b41fbee708c3f06c33374b4068bf12a68e99c681d9540f2f4245bcf463bc5"
+status = "unresolved"
+basis = "Description: The fifth volume (1909) of the sixteen-volume Catholic Encyclopedia (New York: Robert Appleton Company, 1907-1912). Signed articles are cited by article title; the volume's container identity remains distinct from each contributor's article..."
+unresolved = "The volume prints an alphabetical run of signed articles and its record names none. The 17 artifacts registered on it are per-article deliveries held under the volume's own record; they are not enumerated here because none is a separately registered work."
+
+[[containers]]
+id = "work.catholic-encyclopedia.volume-6"
+manifest_sha256 = "bb2f5c226724ff0e333fb83466b8441b94fa565a68b428aa70be12094caa0bad"
+status = "unresolved"
+basis = "Description: Volume 6 of the original Catholic Encyclopedia (New York: Robert Appleton Company, 1907-1912). Its articles are signed scholarship of their date and are cited as early twentieth-century reference works, not as magisterial or current stateme..."
+unresolved = "The volume prints an alphabetical run of signed articles and its record names none. The 12 artifacts registered on it are per-article deliveries held under the volume's own record; they are not enumerated here because none is a separately registered work."
+
+[[containers]]
+id = "work.catholic-encyclopedia.volume-7"
+manifest_sha256 = "48e648fb87e628e8275b464618a9cc82ff056108525500c1bb5610df338b8146"
+status = "unresolved"
+basis = "Description: The seventh volume (1910) of the sixteen-volume Catholic Encyclopedia (New York: Robert Appleton Company, 1907-1912). Signed articles are cited by article title; the volume's container identity remains distinct from each contributor's artic..."
+unresolved = "The volume prints an alphabetical run of signed articles and its record names none. The 6 artifacts registered on it are per-article deliveries held under the volume's own record; they are not enumerated here because none is a separately registered work."
+
+[[containers]]
+id = "work.catholic-encyclopedia.volume-8"
+manifest_sha256 = "a973b779e74b08dda53bd4abc84267babe2f8ac1be8341f0a764b12914afcade"
+status = "unresolved"
+basis = "Description: The eighth volume (1910) of the sixteen-volume Catholic Encyclopedia (New York: Robert Appleton Company, 1907-1912). Signed articles are cited by article title; the volume's container identity remains distinct from each contributor's articl..."
+unresolved = "The volume prints an alphabetical run of signed articles and its record names none. The 51 artifacts registered on it are per-article deliveries held under the volume's own record; they are not enumerated here because none is a separately registered work."
+
+[[containers]]
+id = "work.catholic-encyclopedia.volume-9"
+manifest_sha256 = "95499dfc911dcdcc2900178b0688129ca5671c8f524c19859516a28e9c4eba59"
+status = "unresolved"
+basis = "Description: Volume 9 of the original Catholic Encyclopedia (New York: Robert Appleton Company, 1907-1912). Its articles are signed scholarship of their date and are cited as early twentieth-century reference works, not as magisterial or current stateme..."
+unresolved = "The volume prints an alphabetical run of signed articles and its record names none. The 15 artifacts registered on it are per-article deliveries held under the volume's own record; they are not enumerated here because none is a separately registered work."
+
+[[containers]]
+id = "work.catholic-encyclopedia.volume-10"
+manifest_sha256 = "35e69d1e21b0c1b474e7fdc146b5c77f772d02c1e7ca137b195215b7734ad90f"
+status = "unresolved"
+basis = "Description: Volume 10 of the original Catholic Encyclopedia (New York: Robert Appleton Company, 1907-1912). Its articles are signed scholarship of their date and are cited as early twentieth-century reference works, not as magisterial or current statem..."
+unresolved = "The volume prints an alphabetical run of signed articles and its record names none. The 19 artifacts registered on it are per-article deliveries held under the volume's own record; they are not enumerated here because none is a separately registered work."
+
+[[containers]]
+id = "work.catholic-encyclopedia.volume-12"
+manifest_sha256 = "33c38def3e0a3deb9c0cc9dbf59f2286684ada7a066ae09ceab6729212b9dfa2"
+status = "unresolved"
+basis = "Description: Volume 12 of the original Catholic Encyclopedia (New York: Robert Appleton Company, 1907-1912). Its articles are signed scholarship of their date and are cited as early twentieth-century reference works, not as magisterial or current statem..."
+unresolved = "The volume prints an alphabetical run of signed articles and its record names none. The 10 artifacts registered on it are per-article deliveries held under the volume's own record; they are not enumerated here because none is a separately registered work."
+
+[[containers]]
+id = "work.catholic-encyclopedia.volume-14"
+manifest_sha256 = "a4f100c2a3bcd0d13f19ba481c850b59c7ee572f31cead4e9450e21c95c4f153"
+status = "unresolved"
+basis = "Description: The fourteenth volume (1912) of the sixteen-volume Catholic Encyclopedia (New York: Robert Appleton Company, 1907-1912). Signed articles are cited by article title; the volume's container identity remains distinct from each contributor's ar..."
+unresolved = "The volume prints an alphabetical run of signed articles and its record names none. The 14 artifacts registered on it are per-article deliveries held under the volume's own record; they are not enumerated here because none is a separately registered work."
+
+[[containers]]
+id = "work.catholic-encyclopedia.volume-15"
+manifest_sha256 = "0ab5c164a60a553caa20a2f06fdc718bf3aeb7dd49a46fbacc9ca4ca02aebd67"
+status = "unresolved"
+basis = "Description: Volume 15 of the original Catholic Encyclopedia (New York: Robert Appleton Company, 1907-1912). Its articles are signed scholarship of their date and are cited as early twentieth-century reference works, not as magisterial or current statem..."
+unresolved = "The volume prints an alphabetical run of signed articles and its record names none. The 6 artifacts registered on it are per-article deliveries held under the volume's own record; they are not enumerated here because none is a separately registered work."
+
+
+# ---------------------------------------------------------------------------
+# Containers: periodicals, gazettes, newspapers, proceedings
+# ---------------------------------------------------------------------------
+
+[[containers]]
+id = "work.holy-see.acta-apostolicae-sedis"
+manifest_sha256 = "dbd515d5261517853daef65aeb4db095e8e4140990356bd620bd06c98c98fc88"
+status = "partial"
+basis = "Description: 'Annual-volume editions and exact delivery artifacts remain container identities distinct from the constitutions, decrees, notifications, rescripts, and other acts printed within them.' Every constituent below is established by a segment into one of its volumes."
+unresolved = "The gazette prints every act of its year. Only acts the library registers through segments are listed; the notes of several registered volumes and fascicles name further acts at stated pages that no work record carries."
+
+[[containers.constituents]]
+author = "Catholic Church; promulgated by John Paul II"
+title = "Codex Canonum Ecclesiarum Orientalium (1990)"
+work_id = "work.catholic-church.codex-canonum-ecclesiarum-orientalium"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 82: artifact pp. 1045-1363"
+basis = "segment segment.catholic-church.codex-canonum-ecclesiarum-orientalium.latin-aas-82-1990.aas-82-1990-pages-1045-1363: The complete Latin Code as printed in the volume: the title and preliminary canons on printed p. 1061 through the final canons, with the promulgating constitution separately segmented at pp. 1033-1044."
+
+[[containers.constituents]]
+author = "Catholic Church"
+title = "Rubricae Breviarii et Missalis Romani"
+work_id = "work.catholic-church.rubricae-breviarii-et-missalis-romani"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 52: artifact pp. 597-740"
+basis = "segment segment.catholic-church.rubricae-breviarii-et-missalis-romani.latin-aas-52-1960.aas-52-1960-pages-597-740: The complete promulgated code with its accompanying Variationes, from the heading RUBRICAE BREVIARII ET MISSALIS ROMANI on printed p. 597 through the end of the Variationes in Martyrologio Romano on p. 740."
+
+[[containers.constituents]]
+author = "Francis"
+title = "In Erythraea nova constituitur Ecclesia Metropolitana Asmarensis"
+work_id = "work.francis.in-erythraea-nova-constituitur-ecclesia-metropolitana-asmarensis"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 107, fascicle 3 (March 2015): artifact p. 8"
+basis = "segment segment.francis.in-erythraea-nova-constituitur-ecclesia-metropolitana-asmarensis.latin-aas-107-2015.aas-107-2015-page-246: The complete constitution on printed Acta p. 246 (fascicle PDF page 8), from the rubric through the chancery subscription."
+
+[[containers.constituents]]
+author = "Sacred Congregation for the Doctrine of the Faith"
+title = "Notification concerning the Index of Prohibited Books"
+work_id = "work.holy-see.index-of-prohibited-books-notification-1966"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 58: artifact p. 445"
+basis = "segment segment.holy-see.index-of-prohibited-books-notification-1966.latin-aas-58-1966.aas-58-1966-page-445: The complete Latin notification on printed p. 445, from the dicastery heading and title through the date and subscriptions."
+
+[[containers.constituents]]
+author = "Sacred Congregation for Divine Worship"
+title = "Instructio de calendariis particularibus atque Officiorum et Missarum Propriis recognoscendis"
+work_id = "work.holy-see.instructio-calendaria-particularia-1970"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 62: artifact pp. 651-663"
+basis = "segment segment.holy-see.instructio-calendaria-particularia-1970.latin-aas-62-1970.aas-62-1970-pages-651-663: The complete instruction as printed within the 1970 Acta volume, from its heading and Roman numeral II on printed p. 651 through the subscription of Cardinal Gut and Archbishop Bugnini on printed p. 663, immediately before the next instruction, numbered III, on printed p. 664."
+
+[[containers.constituents]]
+author = "Sacred Congregation of Rites"
+title = "Decretum generale quo novus rubricarum Breviarii ac Missalis Romani codex promulgatur"
+work_id = "work.holy-see.novum-rubricarum-decretum-1960"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 52: artifact p. 596"
+basis = "segment segment.holy-see.novum-rubricarum-decretum-1960.latin-aas-52-1960.aas-52-1960-page-596: The complete general decree on printed p. 596, between the end of the motu proprio on p. 595 and the opening of the code's own text on p. 597."
+
+[[containers.constituents]]
+author = "Sacred Congregation of the Council"
+title = "Decretum: Novus index statuitur dierum festorum, quibus inest obligatio litandi Sacrum pro populo"
+work_id = "work.holy-see.novus-index-dierum-festorum-1960"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 52: artifact pp. 985-986"
+basis = "segment segment.holy-see.novus-index-dierum-festorum-1960.latin-aas-52-1960.aas-52-1960-pages-985-986: The complete decree on printed pp. 985-986, from its heading through the subscriptions, including both the FESTA DE PRAECEPTO and the FESTA NON DE PRAECEPTO lists."
+
+[[containers.constituents]]
+author = "Congregation for the Eastern Churches"
+title = "Pontificia Praecepta de clero uxorato orientali"
+work_id = "work.holy-see.pontificia-praecepta-de-clero-uxorato-orientali"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 106, fascicle 6 (June 2014): artifact pp. 74-77"
+basis = "segment segment.holy-see.pontificia-praecepta-de-clero-uxorato-orientali.italian-aas-106-2014.aas-106-2014-pages-496-499: The complete act: the Nota Introduttiva on pp. 496-498 and the Disposizioni approvate dal Santo Padre on pp. 498-499, ending with the dateline and the Prefect's signature."
+
+[[containers.constituents]]
+author = "John Paul II"
+title = "Sacri canones"
+work_id = "work.john-paul-ii.sacri-canones"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 82: artifact pp. 1033-1044"
+basis = "segment segment.john-paul-ii.sacri-canones.latin-aas-82-1990.aas-82-1990-pages-1033-1044: The complete constitution from its opening on printed p. 1033 to the papal subscription on p. 1044, including the promulgating clause and the entry-into-force clause on p. 1043."
+
+[[containers.constituents]]
+author = "Pope John XXIII"
+title = "Rubricarum instructum"
+work_id = "work.john-xxiii.rubricarum-instructum"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 52: artifact pp. 593-595"
+basis = "segment segment.john-xxiii.rubricarum-instructum.latin-aas-52-1960.aas-52-1960-pages-593-595: The complete motu proprio, from its heading under ACTA IOANNIS PP. XXIII on printed p. 593 through the papal subscription on p. 595, immediately before the Sacred Congregation of Rites section that opens on p. 596."
+
+[[containers.constituents]]
+author = "Pope Paul VI"
+title = "Ecclesiae Sanctae"
+work_id = "work.paul-vi.ecclesiae-sanctae"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 58: artifact pp. 757-787"
+basis = "segment segment.paul-vi.ecclesiae-sanctae.latin-aas-58-1966.aas-58-1966-pages-757-787: The complete official Latin Acta constituent on printed and artifact PDF pp. 757-787."
+
+[[containers.constituents]]
+author = "Paul VI"
+title = "Sacerdotalis caelibatus"
+work_id = "work.paul-vi.sacerdotalis-caelibatus"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 59: artifact pp. 657-697"
+basis = "segment segment.paul-vi.sacerdotalis-caelibatus.latin-aas-59-1967.aas-59-1967-pages-657-697: The complete encyclical as printed at pp. 657-697, including n. 2 with its note 1 on p. 659 and n. 42 on p. 674."
+
+[[containers.constituents]]
+author = "Pontifical Biblical Commission"
+title = "De auctore, de tempore compositionis et de historica veritate Evangeliorum secundum Marcum et secundum Lucam"
+work_id = "work.pontifical-biblical-commission.de-auctore-tempore-et-veritate-evangeliorum-marci-et-lucae"
+locator = "Acta Apostolicae Sedis, volume 4: artifact pp. 463-465"
+basis = "segment segment.pontifical-biblical-commission.de-auctore-tempore-et-veritate-evangeliorum-marci-et-lucae.latin-aas-4-1912.aas-4-1912-pages-463-465: The nine responsa printed as item I at AAS 4 (1912) 463-465. They begin with the title on p. 463 and conclude near the top of p. 465; the related item II on the Synoptic question follows before the common approval notice and signatures at the foot of p. 465."
+
+[[containers.constituents]]
+author = "Pontifical Biblical Commission"
+title = "De auctoribus et de tempore compositionis Psalmorum"
+work_id = "work.pontifical-biblical-commission.de-auctoribus-et-de-tempore-compositionis-psalmorum"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 2: artifact pp. 354-355"
+basis = "segment segment.pontifical-biblical-commission.de-auctoribus-et-de-tempore-compositionis-psalmorum.latin-aas-2-1910.aas-2-1910-pages-354-355: The complete eight responsa, from the heading De auctoribus et de tempore compositionis Psalmorum through the approval notice and consultors' signatures, printed at AAS 2 (1910) 354-355."
+
+[[containers.constituents]]
+author = "Second Vatican Council"
+title = "Ad gentes"
+work_id = "work.second-vatican-council.ad-gentes"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 58: artifact pp. 947-990"
+basis = "segment segment.second-vatican-council.ad-gentes.latin-aas-58-1966.aas-58-1966-pages-947-990: The complete official Latin Acta constituent, from the Decree's heading and article 1 on printed p. 947 through article 42, promulgation formula and date, papal subscription, common-subscription reference, and editorial asterisk on printed p. 990."
+
+[[containers.constituents]]
+author = "Second Vatican Council"
+title = "Apostolicam actuositatem"
+work_id = "work.second-vatican-council.apostolicam-actuositatem"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 58: artifact pp. 837-864"
+basis = "segment segment.second-vatican-council.apostolicam-actuositatem.latin-aas-58-1966.aas-58-1966-pages-837-864: The complete official Latin Acta constituent on printed and artifact PDF pp. 837-864."
+
+[[containers.constituents]]
+author = "Second Vatican Council"
+title = "Christus Dominus"
+work_id = "work.second-vatican-council.christus-dominus"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 58: artifact pp. 673-696"
+basis = "segment segment.second-vatican-council.christus-dominus.latin-aas-58-1966.aas-58-1966-pages-673-696: The complete official Latin Acta constituent on printed and artifact PDF pp. 673-696."
+
+[[containers.constituents]]
+author = "Second Vatican Council"
+title = "Notificatio concerning Dei Verbum"
+work_id = "work.second-vatican-council.dei-verbum-notificatio"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 58: artifact p. 836"
+basis = "segment segment.second-vatican-council.dei-verbum-notificatio.latin-aas-58-1966.aas-58-1966-page-836: The complete Latin Notificatio constituent on printed p. 836, from its heading through Pericle Felici's subscription."
+
+[[containers.constituents]]
+author = "Second Vatican Council"
+title = "Dei Verbum"
+work_id = "work.second-vatican-council.dei-verbum"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 58: artifact pp. 817-835"
+basis = "segment segment.second-vatican-council.dei-verbum.latin-aas-58-1966.aas-58-1966-pages-817-835: The complete official Latin Acta constituent, from the Constitution's heading on printed p. 817 through the final subscriptions and notarial attestations on printed p. 835."
+
+[[containers.constituents]]
+author = "Second Vatican Council"
+title = "Dignitatis humanae"
+work_id = "work.second-vatican-council.dignitatis-humanae"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 58: artifact pp. 929-946"
+basis = "segment segment.second-vatican-council.dignitatis-humanae.latin-aas-58-1966.aas-58-1966-pages-929-946: The complete official Latin Acta constituent, from the Declaration's heading and article 1 on printed p. 929 through the final subscriptions and attestations on printed p. 946."
+
+[[containers.constituents]]
+author = "Second Vatican Council Doctrinal Commission"
+title = "Doctrinal Commission declaration on conciliar theological qualification"
+work_id = "work.second-vatican-council.doctrinal-commission-declaration-1964-03-06"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 57: artifact p. 72; Acta Apostolicae Sedis, volume 58: artifact p. 836"
+basis = "segment segment.second-vatican-council.doctrinal-commission-declaration-1964-03-06.latin-aas-57-1965.aas-57-1965-page-72, segment.second-vatican-council.doctrinal-commission-declaration-1964-03-06.latin-aas-58-1966.aas-58-1966-page-836: The complete two-paragraph Latin declaration reproduced within the Lumen gentium Notificationes on printed p. 72."
+
+[[containers.constituents]]
+author = "Second Vatican Council"
+title = "Gaudium et spes"
+work_id = "work.second-vatican-council.gaudium-et-spes"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 58: artifact pp. 1025-1120"
+basis = "segment segment.second-vatican-council.gaudium-et-spes.latin-aas-58-1966.aas-58-1966-pages-1025-1120: The complete official Latin Acta constituent, from the Constitution's heading and article 1 on printed p. 1025 through the final subscriptions and notarial attestations on printed p. 1120."
+
+[[containers.constituents]]
+author = "Second Vatican Council"
+title = "Gravissimum educationis"
+work_id = "work.second-vatican-council.gravissimum-educationis"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 58: artifact pp. 728-739"
+basis = "segment segment.second-vatican-council.gravissimum-educationis.latin-aas-58-1966.aas-58-1966-pages-728-739: The complete official Latin Acta constituent on printed and artifact PDF pp. 728-739."
+
+[[containers.constituents]]
+author = "Second Vatican Council"
+title = "Inter mirifica"
+work_id = "work.second-vatican-council.inter-mirifica"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 56: artifact pp. 145-157"
+basis = "segment segment.second-vatican-council.inter-mirifica.latin-aas-56-1964.aas-56-1964-pages-145-157: The complete official Latin Acta constituent, from the Decree's heading and article 1 on printed p. 145 through the final conciliar subscriptions, continuation notice, and notarial attestations on printed p. 157."
+
+[[containers.constituents]]
+author = "Second Vatican Council"
+title = "Notificationes"
+work_id = "work.second-vatican-council.lumen-gentium-notificationes"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 57: artifact p. 72"
+basis = "segment segment.second-vatican-council.lumen-gentium-notificationes.latin-aas-57-1965.aas-57-1965-page-72: The complete Latin Notificationes constituent on printed p. 72, from its heading through the final sentence immediately before the separately titled Nota explicativa praevia."
+
+[[containers.constituents]]
+author = "Second Vatican Council"
+title = "Lumen gentium"
+work_id = "work.second-vatican-council.lumen-gentium"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 57: artifact pp. 5-71"
+basis = "segment segment.second-vatican-council.lumen-gentium.latin-aas-57-1965.aas-57-1965-pages-5-71: The complete official Latin Acta constituent, from the Constitution's heading on printed p. 5 through the final subscriptions and notarial attestations on printed p. 71."
+
+[[containers.constituents]]
+author = "Second Vatican Council"
+title = "Nostra aetate"
+work_id = "work.second-vatican-council.nostra-aetate"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 58: artifact pp. 740-744"
+basis = "segment segment.second-vatican-council.nostra-aetate.latin-aas-58-1966.aas-58-1966-pages-740-744: The complete official Latin Acta constituent, from the Declaration's heading and article 1 on printed p. 740 through its promulgation formula, papal signature, and reference to the common subscriptions on printed p. 744."
+
+[[containers.constituents]]
+author = "Second Vatican Council, Doctrinal Commission"
+title = "Nota explicativa praevia"
+work_id = "work.second-vatican-council.nota-explicativa-praevia"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 57: artifact pp. 72-75"
+basis = "segment segment.second-vatican-council.nota-explicativa-praevia.latin-aas-57-1965.aas-57-1965-pages-72-75: The complete Latin Nota explicativa praevia constituent, from its heading after the Notificationes on printed p. 72 through its final N.B. and the following Secretary General signature block on printed p. 75."
+
+[[containers.constituents]]
+author = "Second Vatican Council"
+title = "Optatam totius"
+work_id = "work.second-vatican-council.optatam-totius"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 58: artifact pp. 713-727"
+basis = "segment segment.second-vatican-council.optatam-totius.latin-aas-58-1966.aas-58-1966-pages-713-727: The complete official Latin Acta constituent on printed and artifact PDF pp. 713-727."
+
+[[containers.constituents]]
+author = "Second Vatican Council"
+title = "Notificatio concerning Orientalium Ecclesiarum"
+work_id = "work.second-vatican-council.orientalium-ecclesiarum-notificatio"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 57: artifact p. 89"
+basis = "segment segment.second-vatican-council.orientalium-ecclesiarum-notificatio.latin-aas-57-1965.aas-57-1965-page-89: The complete separately titled Notificatio on the lower portion of printed p. 89, from its heading through Pericle Felici's subscription."
+
+[[containers.constituents]]
+author = "Second Vatican Council"
+title = "Orientalium Ecclesiarum"
+work_id = "work.second-vatican-council.orientalium-ecclesiarum"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 57: artifact pp. 76-89"
+basis = "segment segment.second-vatican-council.orientalium-ecclesiarum.latin-aas-57-1965.aas-57-1965-pages-76-89: The complete official Latin Decree constituent, from its heading on printed p. 76 through the notarial attestations on printed p. 89, before the separately titled vacatio-legis Notificatio on the shared final page."
+
+[[containers.constituents]]
+author = "Second Vatican Council"
+title = "Perfectae caritatis"
+work_id = "work.second-vatican-council.perfectae-caritatis"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 58: artifact pp. 702-712"
+basis = "segment segment.second-vatican-council.perfectae-caritatis.latin-aas-58-1966.aas-58-1966-pages-702-712: The complete official Latin Acta constituent, from the Decree's heading and article 1 on printed p. 702 through article 25, promulgation formula, date, papal signature, common-subscription reference, and sole source note on printed p. 712."
+
+[[containers.constituents]]
+author = "Second Vatican Council"
+title = "Presbyterorum ordinis"
+work_id = "work.second-vatican-council.presbyterorum-ordinis"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 58: artifact pp. 991-1024"
+basis = "segment segment.second-vatican-council.presbyterorum-ordinis.latin-aas-58-1966.aas-58-1966-pages-991-1024: The complete official Latin Acta constituent, from the Decree's heading and article 1 on printed p. 991 through article 22, the promulgation formula and date, papal subscription, and reference to the common subscription pages on printed p. 1024."
+
+[[containers.constituents]]
+author = "Second Vatican Council"
+title = "Sacrosanctum Concilium"
+work_id = "work.second-vatican-council.sacrosanctum-concilium"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 56: artifact pp. 97-138"
+basis = "segment segment.second-vatican-council.sacrosanctum-concilium.latin-aas-56-1964.aas-56-1964-pages-97-138: The complete official Latin Acta constituent, from the Constitution's heading on printed p. 97 through the final subscriptions and notarial attestations on printed p. 138."
+
+[[containers.constituents]]
+author = "Second Vatican Council"
+title = "Unitatis Redintegratio"
+work_id = "work.second-vatican-council.unitatis-redintegratio"
+whole = true
+locator = "Acta Apostolicae Sedis, volume 57: artifact pp. 90-112"
+basis = "segment segment.second-vatican-council.unitatis-redintegratio.latin-aas-57-1965.aas-57-1965-pages-90-112: The complete official Latin Decree constituent, from its heading and article 1 on printed p. 90 through the final notarial attestation on printed p. 112."
+
+[[containers]]
+id = "work.holy-see.acta-sanctae-sedis"
+manifest_sha256 = "5e0fc0e08effabfa05fd1eac50ff908bb99074bb04099417edf93fd105f7b211"
+status = "partial"
+basis = "Description: 'Volume editions and exact delivery artifacts remain container identities distinct from the papal acts and other documents printed within them.'"
+unresolved = "Only acts the library registers through segments are listed."
+
+[[containers.constituents]]
+author = "Pope Pius IX"
+title = "Postquam Dei munere"
+work_id = "work.pius-ix.postquam-dei-munere"
+whole = true
+locator = "Acta Sanctae Sedis, volume 6: artifact pp. 65-67"
+basis = "segment segment.pius-ix.postquam-dei-munere.latin-ass-6-1870-1871.ass-6-pages-65-67: The complete apostolic letter on printed and artifact PDF pp. 65-67."
+
+[[containers.constituents]]
+author = "Pontifical Biblical Commission"
+title = "De Mosaica authentia Pentateuchi"
+work_id = "work.pontifical-biblical-commission.de-mosaica-authentia-pentateuchi"
+whole = true
+locator = "Acta Sanctae Sedis, volume 39: artifact pp. 379-380"
+basis = "segment segment.pontifical-biblical-commission.de-mosaica-authentia-pentateuchi.latin-ass-39-1906.ass-39-1906-pages-377-378: The complete four responsa, from the heading De Mosaica authentia Pentateuchi through the approval notice and consultors' signatures, printed at ASS 39 (1906) 377-378."
+
+[[containers]]
+id = "work.holy-see.notitiae"
+manifest_sha256 = "a38c4a4885bf3c761bab70eea6fffccbf5c6d744a0d782ad014424850debe3fa"
+status = "partial"
+basis = "Description: 'Issue editions and exact delivery artifacts remain container identities distinct from the documentary acts, notices, studies, and liturgical texts printed within them.'"
+unresolved = "Only acts the library registers through segments are listed."
+
+[[containers.constituents]]
+author = "Catholic Church"
+title = "De Exorcismis et Supplicationibus Quibusdam"
+work_id = "work.catholic-church.de-exorcismis-et-supplicationibus-quibusdam"
+locator = "Notitiae, volume 35, numbers 392-393: artifact pp. 44-61"
+basis = "segment segment.catholic-church.de-exorcismis-et-supplicationibus-quibusdam.latin-typical-1998-issued-1999.notitiae-pages-138-155: The official periodical reproduces the editio typica heading, proemium, and praenotanda on printed pp. 138-155."
+
+[[containers.constituents]]
+author = "Congregation for Divine Worship and the Discipline of the Sacraments"
+title = "Report on the 2004 emended reprint of De Exorcismis"
+work_id = "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-exorcismis-emended-reprint-report-2005"
+locator = "Notitiae, volume 41, numbers 463-464: artifact p. 63"
+basis = "segment segment.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-exorcismis-emended-reprint-report-2005.italian-notitiae-463-464.notitiae-page-165: The bounded De Exorcismis status paragraph on printed p. 165."
+
+[[containers.constituents]]
+author = "Congregation for Divine Worship and the Discipline of the Sacraments"
+title = "Decretum promulgating De Exorcismis et Supplicationibus Quibusdam"
+work_id = "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.decretum-de-exorcismis-1998"
+whole = true
+locator = "Notitiae, volume 35, numbers 392-393: artifact p. 43"
+basis = "segment segment.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.decretum-de-exorcismis-1998.latin-notitiae-392-393.notitiae-page-137: The complete decree on printed p. 137."
+
+[[containers.constituents]]
+author = "Congregation for Divine Worship and the Discipline of the Sacraments"
+title = "Litterae circulares ad Praesides Conferentiarum Episcoporum de versione vernacula locutionis pro multis in formula consecrationis calicis"
+work_id = "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.litterae-circulares-pro-multis-2006"
+locator = "Notitiae, volume 42 (2006), numbers 481-482: artifact pp. 57-59"
+basis = "segment segment.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.litterae-circulares-pro-multis-2006.italian-notitiae-481-482.notitiae-pages-441-443: The Latin preamble and the complete Italian circular letter as printed on journal pages 441-443, beginning with the heading CONGREGATIO DE CULTU DIVINO ET DISCIPLINA SACRAMENTORUM / LITTERAE CIRCULARES and ending with the letter's closing formula."
+
+[[containers.constituents]]
+author = "Congregation for Divine Worship and the Discipline of the Sacraments"
+title = "Notificatio de occurrentia memoriae obligatoriae Immaculati Cordis Beatae Mariae Virginis una cum altera memoria eiusdem gradus"
+work_id = "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.notificatio-de-occurrentia-memoriae-immaculati-cordis-1998"
+whole = true
+locator = "Notitiae, volume 35, numbers 392-393: artifact p. 63"
+basis = "segment segment.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.notificatio-de-occurrentia-memoriae-immaculati-cordis-1998.latin-notitiae-392-393.notitiae-page-157: The complete notification Prot. n. 2671/98/L on printed p. 157."
+
+[[containers.constituents]]
+author = "Congregation for Divine Worship and the Discipline of the Sacraments"
+title = "Notificatio de ritu Exorcismi"
+work_id = "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.notificatio-de-ritu-exorcismi-1999"
+whole = true
+locator = "Notitiae, volume 35, numbers 392-393: artifact p. 62"
+basis = "segment segment.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.notificatio-de-ritu-exorcismi-1999.latin-notitiae-392-393.notitiae-page-156: The complete notification on printed p. 156."
+
+[[containers.constituents]]
+author = "Congregation for Divine Worship and the Discipline of the Sacraments"
+title = "Reimpressio emendata 'Missalis Romani'"
+work_id = "work.holy-see.reimpressio-emendata-missalis-romani-notice-2008"
+whole = true
+locator = "Notitiae, volume 44, numbers 503-504: artifact p. 49"
+basis = "segment segment.holy-see.reimpressio-emendata-missalis-romani-notice-2008.italian-notitiae-503-504.notitiae-page-367: The complete Italian notice headed Reimpressio emendata 'Missalis Romani' on printed p. 367."
+
+[[containers.constituents]]
+author = "Congregation for Divine Worship and the Discipline of the Sacraments"
+title = "Variationes et additiones in reimpressione emendata 'Missalis Romani', editionis typicae tertiae"
+work_id = "work.holy-see.variationes-et-additiones-missalis-romani-2008"
+whole = true
+locator = "Notitiae, volume 44, numbers 503-504: artifact pp. 50-69"
+basis = "segment segment.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.notitiae-pages-368-387: The complete titled Latin variation list and its Supplementum, from the heading on printed p. 368 through the final Guadalupe collect on printed p. 387."
+
+[[containers]]
+id = "work.catholic-church.missale-romanum"
+manifest_sha256 = "ae029277a68493ed903cd608cd7abdb91797aaff614ab5646f7c6a2dbeaa2ffd"
+status = "partial"
+basis = "Container-shaped by derivation: segments of eight separately registered documents point into its editio typica tertia. The Missal's own formularies are the record's own work."
+unresolved = "Only the prefatory documents registered through segments are listed; other printed prefatory acts, and the constituents of its other editions, are not enumerated."
+
+[[containers.constituents]]
+author = "Catholic Church"
+title = "Calendarium Romanum generale"
+work_id = "work.catholic-church.calendarium-romanum-generale"
+whole = true
+locator = "Missale Romanum, editio typica tertia: artifact pp. 71-81"
+basis = "segment segment.catholic-church.calendarium-romanum-generale.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-71-81: The complete January-through-December General Roman Calendar, from its heading through the last December entry and before the separate temporal table."
+
+[[containers.constituents]]
+author = "Catholic Church"
+title = "Institutio Generalis Missalis Romani"
+work_id = "work.catholic-church.institutio-generalis-missalis-romani"
+whole = true
+locator = "Missale Romanum, editio typica tertia: artifact pp. 8-61"
+basis = "segment segment.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-8-61: The complete Latin General Instruction within the container Missal artifact, from its heading Institutio generalis Missalis Romani on artifact page 8 through the end of chapter IX and its source notes on artifact page 61, immediately before the apostolic letter Mysterii Paschalis."
+
+[[containers.constituents]]
+author = "Catholic Church"
+title = "Normae universales de anno liturgico et de calendario"
+work_id = "work.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario"
+whole = true
+locator = "Missale Romanum, editio typica tertia: artifact pp. 64-71"
+basis = "segment segment.catholic-church.normae-universales-de-anno-liturgico-et-de-calendario.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-64-71: The complete Universal Norms and Table of Liturgical Days, from the Norms heading through the table's conclusion."
+
+[[containers.constituents]]
+author = "Sacred Congregation for Divine Worship"
+title = "De editione typica altera Missalis Romani"
+work_id = "work.holy-see.de-editione-typica-altera-missalis-romani-1975"
+whole = true
+locator = "Missale Romanum, editio typica tertia: artifact p. 2"
+basis = "segment segment.holy-see.de-editione-typica-altera-missalis-romani-1975.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-2-2: The complete 1975 act as reprinted in the prefatory matter of the third typical edition, from its heading through its declaration of the second edition as typical."
+
+[[containers.constituents]]
+author = "Sacred Congregation for Divine Worship"
+title = "Decretum 'Celebrationis eucharisticae' de editione typica Missalis Romani"
+work_id = "work.holy-see.decretum-de-editione-typica-missalis-romani-1970"
+whole = true
+locator = "Missale Romanum, editio typica tertia: artifact p. 1"
+basis = "segment segment.holy-see.decretum-de-editione-typica-missalis-romani-1970.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-1-1: The complete 1970 promulgation decree as reprinted on the opening physical page of the third typical edition, following the title matter and edition-history line."
+
+[[containers.constituents]]
+author = "Congregation for Divine Worship and the Discipline of the Sacraments"
+title = "Decretum de editione typica tertia Missalis Romani"
+work_id = "work.holy-see.decretum-de-editione-typica-tertia-missalis-romani-2000"
+locator = "Missale Romanum, editio typica tertia: artifact pp. 2-3"
+basis = "segment segment.holy-see.decretum-de-editione-typica-tertia-missalis-romani-2000.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-2-3: The third-edition decree from its title through the date, signatures, and protocol number."
+
+[[containers.constituents]]
+author = "Pope Paul VI"
+title = "Missale Romanum (Apostolic Constitution)"
+work_id = "work.paul-vi.missale-romanum-constitutio"
+whole = true
+locator = "Missale Romanum, editio typica tertia: artifact pp. 4-7"
+basis = "segment segment.paul-vi.missale-romanum-constitutio.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-4-7: The complete Latin apostolic constitution as printed in the prefatory matter of the third typical edition, from its title through the dating clause and papal subscription."
+
+[[containers.constituents]]
+author = "Pope Paul VI"
+title = "Mysterii Paschalis"
+work_id = "work.paul-vi.mysterii-paschalis"
+whole = true
+locator = "Missale Romanum, editio typica tertia: artifact pp. 61-64"
+basis = "segment segment.paul-vi.mysterii-paschalis.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-61-64: The complete apostolic letter from its title through Paul VI's concluding date and signature."
+
+[[containers]]
+id = "work.all-the-year-round.new-series-volume-1"
+manifest_sha256 = "3dd90bba6be1a9724eda1f2feac9ee03489ca029a75d39be9c4ca02bf5de3cbe"
+status = "partial"
+basis = "Description: 'Periodical container for separately authored contributions. Percy Fitzgerald ... wrote the Fatal Zero installment on printed page 163.'"
+unresolved = "Only the Fatal Zero installment is identified among the volume's contributions."
+
+[[containers.constituents]]
+author = "Percy Fitzgerald"
+title = "Fatal Zero"
+work_id = "work.percy-fitzgerald.fatal-zero"
+locator = "the installment on printed p. 163 (digital leaf 173)"
+basis = "Description; segment segment.percy-fitzgerald.fatal-zero.all-the-year-round-1869-serialization.printed-page-163."
+
+[[containers]]
+id = "work.macmillans-magazine.volume-9"
+manifest_sha256 = "fbf15a2a35adcf8c94ce0f9408d0c6b3a35ef4d9e89f01efb105fc7f00286fe2"
+status = "partial"
+basis = "Description: 'Christina Rossetti's longest poem was first published in it at pp. 436-439 under a title taken from Luke 14:10.' The Rossetti Poetical Works description identifies that poem as 'The Lowest Room', 'first printed in Macmillan's Magazine under a title from Luke 14:10'."
+unresolved = "Only Rossetti's poem is identified among the volume's contributions."
+
+[[containers.constituents]]
+author = "Christina Georgina Rossetti"
+title = "The Lowest Room"
+whole = true
+locator = "pp. 436-439, printed under a title taken from Luke 14:10"
+basis = "This container's description with work.christina-rossetti.poetical-works's."
+
+[[containers]]
+id = "work.victorian-newsletter.number-22-fall-1962"
+manifest_sha256 = "9f67b3658803cd95d247adf90d1dba4fd29789fac7bba7449ed09826acb69328"
+status = "partial"
+basis = "Description: 'John Phillipson's note on the four dimensions in Elizabeth Barrett Browning's forty-third sonnet stands complete at p. 22.'"
+unresolved = "Only Phillipson's note is identified among the issue's contents."
+
+[[containers.constituents]]
+author = "John Phillipson"
+title = "Note on the four dimensions in Elizabeth Barrett Browning's forty-third sonnet"
+whole = true
+locator = "p. 22"
+basis = "Description."
+
+[[containers]]
+id = "work.societa-savonese-di-storia-patria.atti-e-memorie-nuova-serie-volume-37"
+manifest_sha256 = "300d40cbc6f4bc58ee3d345d4d3305ae08ce20a4cc303603619cbb298521d7b2"
+status = "partial"
+basis = "Description: 'the truthful container work for the complete publisher-hosted PDF and remains distinct from the separately authored articles printed within it.'"
+unresolved = "Only Scappaticci's article is identified among the volume's articles."
+
+[[containers.constituents]]
+author = "Leandra Scappaticci"
+title = "Frammenti di libri manoscritti della tradizione liturgica savonese"
+work_id = "work.leandra-scappaticci.frammenti-di-libri-manoscritti-della-tradizione-liturgica-savonese"
+whole = true
+locator = "printed pp. 155-195, PDF pp. 150-190"
+basis = "Segment segment.leandra-scappaticci.frammenti-di-libri-manoscritti-della-tradizione-liturgica-savonese.atti-e-memorie-2001.article-pages-155-195."
+
+[[containers]]
+id = "work.united-states-congress.congressional-record-1977-10-04"
+manifest_sha256 = "7f75765d8fff847929de80d9a3af1c0a46208e45da53391b26feed423d1fd764"
+status = "partial"
+basis = "Edition notes: 'The exact official download has 139 pages from Senate proceedings through Extensions of Remarks.' The page-derivative notes name Riegle's speech on printed p. 32287."
+unresolved = "Only Riegle's speech is identified among the day's proceedings."
+
+[[containers.constituents]]
+author = "Riegle"
+title = "Speech in the Senate proceedings"
+locator = "printed p. 32287 (PDF p. 90); continues on the next printed page"
+basis = "Notes of the page-32287 derivative artifact."
+
+[[containers]]
+id = "work.uk-parliament.hansard-official-report"
+manifest_sha256 = "96c0ba6069531436ed851e4378236433dc59ad999e528b29b4805e7f31cc0a51"
+status = "partial"
+basis = "Description: 'Two debates are registered here ... the 1942 Commons debate on family allowances ... and the 1949 Lords debate in which Lord Vansittart quotes Galatians 6:7'."
+unresolved = "The Official Report prints every sitting; only the two registered debates are listed."
+
+[[containers.constituents]]
+author = "House of Commons"
+title = "Debate on family allowances, 23 June 1942"
+whole = true
+locator = "HC Deb, fifth series, volume 380"
+basis = "Description; edition commons-volume-380-1942, whose artifact id historic-hansard-1942-06-23-family-allowances carries the date."
+
+[[containers.constituents]]
+author = "House of Lords"
+title = "Debate of 23 November 1949"
+whole = true
+locator = "HL Deb, fifth series, volume 165; Lord Vansittart quotes Galatians 6:7"
+basis = "Description; edition lords-volume-165-1949, whose artifact id historic-hansard-1949-11-23-news-agency carries the date."
+
+[[containers]]
+id = "work.united-kingdom-parliament.hansard-official-report"
+manifest_sha256 = "ca4c5d43d65771af006bcff449ac2eea7cf78ff1f3101919f22ae8777003a3b2"
+status = "partial"
+basis = "Description: 'registered here as a container identity: an edition is one sitting's debate or one dated state of the Hansard search API, and the acts and speeches printed inside remain distinct from it.'"
+unresolved = "Only the two registered debates are listed; the third edition is a dated search response, not a sitting, and holds no debate."
+
+[[containers.constituents]]
+author = "House of Commons"
+title = "Central Africa (printed 'Central Africal'), 3 December 1962"
+whole = true
+locator = "Hansard volume 668; Humphry Berkeley's speech entire"
+basis = "Edition 1962-12-03-commons-central-africa."
+
+[[containers.constituents]]
+author = "House of Lords"
+title = "British Policy In Central Africa, 19 December 1962"
+whole = true
+locator = "Hansard volume 245; Lord Milverton's speech entire"
+basis = "Edition 1962-12-19-lords-british-policy-in-central-africa."
+
+[[containers]]
+id = "work.newport-navalog.issue-1958-07-11"
+manifest_sha256 = "2eeb8638282c10e8c464c465dc2cf3a694061837ba4bb7c4fddcc203e4f81bb1"
+status = "partial"
+basis = "Description: 'Page 2 of the issue of 11 July 1958, carrying a piece written by a serving chaplain'."
+unresolved = "Only page 2 was retrieved; the piece is untitled in the record and the issue's other contents are not registered."
+
+[[containers.constituents]]
+author = "A serving chaplain, unnamed in the record"
+title = "Piece on the national motto"
+locator = "page 2"
+basis = "Description."
+
+[[containers]]
+id = "work.semi-weekly-interior-journal.issue-1895-11-19"
+manifest_sha256 = "13abef00cafb9a8cb7e98e21ea103e00bd2dc6835156f9791f968c12dcf30d14"
+status = "unresolved"
+basis = "Description: 'Page 2 of the issue of 19 November 1895.'"
+unresolved = "The record names no item on the page it registers."
+
+[[containers]]
+id = "work.the-progressive-farmer.issue-1889-01-15"
+manifest_sha256 = "bd9cb129f2ad31df408c489ae7061a1f1ae61d9d49cb27ef7dd99605f85ef2b6"
+status = "partial"
+basis = "Description: 'Page 8 of the issue of 15 January 1889, read in this run for a musical setting of a piece credited to the Farm, Field and Stockman.'"
+unresolved = "Only page 8 was retrieved; the setting is untitled in the record."
+
+[[containers.constituents]]
+author = "Credited to the Farm, Field and Stockman"
+title = "Musical setting"
+locator = "page 8"
+basis = "Description."
+
+[[containers]]
+id = "work.the-ranch.issue-1910-11-01"
+manifest_sha256 = "ea883157bc9ee9576b8b4843999613f459b4f618424031893ac787ba63649123"
+status = "partial"
+basis = "Description: 'Page 3 of the issue of 1 November 1910, read in this run for a popular-press inversion of the Gospel text.'"
+unresolved = "Only page 3 was retrieved; the item is untitled in the record."
+
+[[containers.constituents]]
+author = "Unnamed in the record"
+title = "Popular-press inversion of the Gospel text"
+locator = "page 3"
+basis = "Description."
+
+[[containers]]
+id = "work.the-washington-times.issue-1938-05-06"
+manifest_sha256 = "fbddc13c0e3c1cdc2975180cc5fef150e5a88c8e77a37534db760f4a72baf861"
+status = "partial"
+basis = "Description: 'Page 18 of the issue of 6 May 1938, carrying an unsigned humorous column'."
+unresolved = "Only page 18 was retrieved."
+
+[[containers.constituents]]
+author = "Unsigned"
+title = "Humorous column"
+locator = "page 18"
+basis = "Description."
+
+[[containers]]
+id = "work.san-antonio-daily-light.newspaper"
+manifest_sha256 = "10f9b1198fc41a0c5b642c7e8b6bf86c09cd4d4dae83e1836bc0a8da2aaf6a2d"
+status = "partial"
+basis = "Description: 'One 1890 issue is registered here, for a paragraph that reprints Galatians 6:9 ... with the harvest replaced by a cash prize.'"
+unresolved = "Only page 2 of one issue was retrieved."
+
+[[containers.constituents]]
+author = "Unsigned"
+title = "Paragraph reprinting Galatians 6:9 with a cash prize for the harvest"
+locator = "8 July 1890, page 2"
+basis = "Description; edition issue-1890-07-08."
+
+[[containers]]
+id = "work.santa-fe-daily-new-mexican.newspaper"
+manifest_sha256 = "b67b78a455783f4f0e8d8d6371f3ceb867bc2a865f62eed0bcb919e59778eaf7"
+status = "partial"
+basis = "Description: 'One 1890 issue is registered here, for an editorial that reprints Galatians 6:9 with a cash prize in place of the harvest.'"
+unresolved = "Only page 2 of one issue was retrieved."
+
+[[containers.constituents]]
+author = "Unsigned"
+title = "Editorial reprinting Galatians 6:9 with a cash prize for the harvest"
+locator = "18 July 1890, page 2"
+basis = "Description; edition issue-1890-07-18."
+
+# ---------------------------------------------------------------------------
+# Containers: whole-volume layers filed under one constituent's record
+# ---------------------------------------------------------------------------
+
+[[containers]]
+id = "artifact.theodoret-of-cyrus.interpretatio-epistolae-ad-galatas.1864-migne-pg82-paris.ia-djvu-ocr-db2067fd"
+manifest_sha256 = "127dc610e229153d61c1cdb439b20d815a61805a0e241ecf81ffb20ae1cc5c10"
+status = "partial"
+basis = "Artifact notes: 'Complete optical text layer of the whole volume (Migne PG 82, Theodoret's Pauline commentaries among other works)'. Edition notes: 'The Galatians commentary begins at PG 82:459'. Publication research records read Theodoret from this volume on 1 Cor 15 (PG 82:347-352), 2 Cor (from col. 376) and Ephesians 4 (cols. 532-533, located in this layer)."
+unresolved = "'Among other works' is not enumerated."
+
+[[containers.constituents]]
+author = "Theodoret of Cyrus"
+title = "Interpretatio in xiv epistulas sancti Pauli"
+whole = true
+basis = "Artifact notes: 'Theodoret's Pauline commentaries'; the loci above corroborate 1 and 2 Corinthians, Galatians and Ephesians in the volume."
+
+[[containers.constituents]]
+author = "Theodoret of Cyrus"
+title = "Interpretatio Epistolae ad Galatas"
+work_id = "work.theodoret-of-cyrus.interpretatio-epistolae-ad-galatas"
+scripture = ["Galatians"]
+locator = "from PG 82:459"
+basis = "Edition notes. The record that owns this layer is the Galatians part of the Pauline commentary above."
+
+[[containers]]
+id = "artifact.theodoret-of-cyrus.interpretatio-epistolae-ad-galatas.1864-migne-pg82-paris.wikimedia-pdf-7d6dd76e"
+manifest_sha256 = "57e868633bfeaa2fee3e074702be909370dd8dd6867b90ac9324919c19ab1f11"
+status = "partial"
+basis = "The complete PG 82 facsimile, 854 pages, of the same printing as the layer above ('The exact complete facsimile was acquired and hashed'; 'The printed title page dates the volume 1864'). Edition title: 'Theodoreti Cyrensis Episcopi Opera Omnia, tomus III (Patrologia Graeca 82)'."
+unresolved = "As for the optical layer of the same volume: its other works are not enumerated."
+
+[[containers.constituents]]
+author = "Theodoret of Cyrus"
+title = "Interpretatio in xiv epistulas sancti Pauli"
+whole = true
+basis = "The same volume's optical layer: 'Theodoret's Pauline commentaries'."
+
+[[containers.constituents]]
+author = "Theodoret of Cyrus"
+title = "Interpretatio Epistolae ad Galatas"
+work_id = "work.theodoret-of-cyrus.interpretatio-epistolae-ad-galatas"
+scripture = ["Galatians"]
+locator = "PG 82:479-484 on artifact pp. 233-235"
+basis = "Artifact notes."
+
+[[containers]]
+id = "artifact.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.wikimedia-pdf-72ee8714"
+manifest_sha256 = "c13677770bb7b5fce52719212483fff22768b8fdd3b2d698f0ed5d50a0f86bf3"
+status = "partial"
+basis = "Edition title: 'Theodoreti Cyrensis Episcopi Opera Omnia, tomus I (Patrologia Graeca 80)'; the exact whole facsimile, 1068 pages."
+unresolved = "The record names only the Interpretatio in Psalmos among the works of this tome of Theodoret's Opera omnia."
+
+[[containers.constituents]]
+author = "Theodoret of Cyrus"
+title = "Interpretatio in Psalmos"
+work_id = "work.theodoret-of-cyrus.interpretatio-in-psalmos"
+whole = true
+basis = "The edition's title and passages (Psalms 16 through 103 at cols. 968-1707)."
+
+[[containers]]
+id = "artifact.john-chrysostom.expositio-in-psalmos.migne-pg-55-paris.ia-djvu-ocr-d9b83186"
+manifest_sha256 = "289b25220517bc8d75c0f0fbfde7e158028e74ef922a7c24f6c1bfa7fefcfcca"
+status = "partial"
+basis = "Artifact notes: 'Complete optical text layer of the whole volume (Migne PG 55, Chrysostom's Expositio in Psalmos and the Homiliae in Psalmos)'."
+unresolved = "The notes also name 'the Homiliae in Psalmos'; the commentary index's alias table folds that title into Expositiones in Psalmos, so it is not listed as a second work, which would assert a split the index denies."
+
+[[containers.constituents]]
+author = "John Chrysostom"
+title = "Expositiones in Psalmos"
+work_id = "work.john-chrysostom.expositio-in-psalmos"
+whole = true
+locator = "Psalm 117 at cols. 331-332 (leaf n323)"
+basis = "Artifact notes; leaf ia-leaf-n323-e06ba5f0."
+
+[[containers]]
+id = "artifact.athanasius-of-alexandria.expositiones-in-psalmos.migne-pg-27-paris.ia-djvu-ocr-969a381f"
+manifest_sha256 = "5ab747292b8c8514649afbb0daa5cb2350e7b7bfc3eccfb26b515b5eab804af6"
+status = "partial"
+basis = "Artifact notes: 'Complete optical text layer of the whole volume (Migne PG 27, the Expositiones in Psalmos and De titulis psalmorum among other works)'."
+unresolved = "'Among other works' is not enumerated."
+
+[[containers.constituents]]
+author = "Athanasius of Alexandria"
+title = "Expositiones in Psalmos"
+work_id = "work.athanasius-of-alexandria.expositiones-in-psalmos"
+whole = true
+locator = "Psalm 83 at cols. 369-370, Psalm 94 at cols. 413-414"
+basis = "Artifact notes; leaves n191 and n213."
+
+[[containers.constituents]]
+author = "Athanasius of Alexandria"
+title = "De titulis psalmorum"
+whole = true
+basis = "Artifact notes."
+
+[[containers]]
+id = "artifact.origen.selecta-in-psalmos.migne-pg-12-paris.ia-djvu-ocr-d37cd225"
+manifest_sha256 = "595c644ebcd9ed182b5030b1e8d95fa63d217804c27b01cf9f01a8921dd080c7"
+status = "partial"
+basis = "Artifact notes: 'Complete optical text layer of the whole volume (Migne PG 12, Origen's exegetical remains including the Selecta in Psalmos)'."
+unresolved = "Origen's other exegetical remains in the volume are not named."
+
+[[containers.constituents]]
+author = "Origen"
+title = "Selecta in Psalmos"
+work_id = "work.origen.selecta-in-psalmos"
+whole = true
+locator = "Psalm 83 at cols. 1061-1062, Psalm 33 at cols. 1307-1308"
+basis = "Artifact notes; leaves n535 and n658."
+
+[[containers]]
+id = "artifact.basil-of-caesarea.homiliae-in-psalmos.migne-pg-29-paris.ia-djvu-ocr-f4b52a32"
+manifest_sha256 = "1d716d6658822ac3270bfd587506bdb27ddda3d8b1d49abf5c8eeb63784d53e0"
+status = "partial"
+basis = "Artifact notes: 'Complete optical text layer of the whole volume (Migne PG 29, Basil tomus I)'."
+unresolved = "The record names the volume as Basil tomus I without enumerating it."
+
+[[containers.constituents]]
+author = "Basil the Great"
+title = "Homiliae in Psalmos"
+work_id = "work.basil-of-caesarea.homiliae-in-psalmos"
+locator = "the homily on Psalm 33 at cols. 363-366 on leaves n592-n593"
+basis = "The owning edition's title; leaves n592 and n593."
+
+[[containers]]
+id = "artifact.amalarius-of-metz.liber-de-ordine-antiphonarii.latin-migne-pl-105.ia-djvu-ocr-f6438466"
+manifest_sha256 = "2aeb1398449e1b83aee985eba371ee0a44f5f7453364310359dc4fdc2a4aecd2"
+status = "partial"
+basis = "Artifact notes: 'Complete uncorrected OCR of Migne, Patrologia Latina vol. 105 (Theodulf, Amalarius), whole volume'. The same volume's contents are recorded on work.jacques-paul-migne.patrologia-latina-volume-105."
+unresolved = "Theodulf's works, and Agobard's, are not named by title."
+
+[[containers.constituents]]
+author = "Amalarius of Metz"
+title = "Liber de ordine antiphonarii"
+work_id = "work.amalarius-of-metz.liber-de-ordine-antiphonarii"
+whole = true
+basis = "The owning edition."
+
+[[containers.constituents]]
+author = "Amalarius of Metz"
+title = "De ecclesiasticis officiis"
+locator = "the four books"
+basis = "work.jacques-paul-migne.patrologia-latina-volume-105's description of the same volume."
+
+[[containers.constituents]]
+author = "Amalarius of Metz"
+title = "Regula canonicorum"
+basis = "work.jacques-paul-migne.patrologia-latina-volume-105's description of the same volume."
+locator = "as that volume's Elenchus lists it"
+
+[[containers]]
+id = "artifact.berno-of-reichenau.libellus-de-quibusdam-rebus-ad-missae-officium-pertinentibus.latin-migne-pl-142.ia-djvu-ocr-991758f7"
+manifest_sha256 = "88c9f2cbb39278eb8925311fe0ad0960462dbf407aaa99a81e76635ee73e3c15"
+status = "partial"
+basis = "Artifact notes: 'Complete uncorrected OCR of Migne, Patrologia Latina vol. 142 (Berno of Reichenau and others), whole volume.'"
+unresolved = "The 'others' are not named."
+
+[[containers.constituents]]
+author = "Berno of Reichenau"
+title = "Libellus de quibusdam rebus ad Missae officium pertinentibus"
+work_id = "work.berno-of-reichenau.libellus-de-quibusdam-rebus-ad-missae-officium-pertinentibus"
+whole = true
+basis = "The owning edition."
+
+[[containers]]
+id = "artifact.bernold-of-constance.micrologus-de-ecclesiasticis-observationibus.latin-migne-pl-151.ia-djvu-ocr-f7de4b32"
+manifest_sha256 = "30b52ef559acff2947a71e55e7daa220ee4d824e4228c28fde37e00b22e13e22"
+status = "partial"
+basis = "Artifact notes: 'Complete uncorrected OCR of Migne, Patrologia Latina vol. 151, which carries the Micrologus at cols. 973-1022; whole volume.'"
+unresolved = "The volume's other contents are not named."
+
+[[containers.constituents]]
+author = "Bernold of Constance, by the traditional attribution"
+title = "Micrologus de ecclesiasticis observationibus"
+work_id = "work.bernold-of-constance.micrologus-de-ecclesiasticis-observationibus"
+whole = true
+locator = "cols. 973-1022"
+basis = "Artifact notes."
+
+[[containers]]
+id = "artifact.john-beleth.summa-de-ecclesiasticis-officiis.latin-migne-pl-202.ia-djvu-ocr-22b781bf"
+manifest_sha256 = "510c6330cb348be48feb80e6cd354243557f1629cd3d9c208cdb4b72e0d58479"
+status = "partial"
+basis = "Artifact notes: 'Complete uncorrected OCR of Migne, Patrologia Latina vol. 202 (John Beleth), whole volume'; edition: 'tomus 202, the volume of John Beleth'."
+unresolved = "The record calls it the volume of John Beleth and names only his Summa; whether it prints other works is not stated."
+
+[[containers.constituents]]
+author = "John Beleth"
+title = "Summa de ecclesiasticis officiis"
+work_id = "work.john-beleth.summa-de-ecclesiasticis-officiis"
+whole = true
+locator = "printed as Rationale divinorum officiorum"
+basis = "The owning edition."
+
+[[containers]]
+id = "artifact.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.ia-djvu-ocr-2e2ca850"
+manifest_sha256 = "495e902d9190cd47dbb6a476058d48f143285db7bd99016582f038f25b8e1104"
+status = "partial"
+basis = "Artifact notes: 'Complete uncorrected OCR of Migne, Patrologia Latina vol. 170 (Rupert of Deutz), whole volume'; edition: 'tomus 170, the volume of Rupert of Deutz'."
+unresolved = "The record names only De divinis officiis; whether the volume prints Rupert's other works, and which, is not stated."
+
+[[containers.constituents]]
+author = "Rupert of Deutz"
+title = "De divinis officiis"
+work_id = "work.rupert-of-deutz.de-divinis-officiis"
+whole = true
+locator = "XII.12-16 at cols. 321-324 (leaves n166-n167)"
+basis = "The owning edition; its leaves."
+
+[[containers]]
+id = "artifact.sicard-of-cremona.mitrale.latin-migne-pl-213.ia-djvu-ocr-ea9fd813"
+manifest_sha256 = "a5688906a2cc848f97f2ef642802c36b1a0ab433cd32e46e83dbf11570cf1c11"
+status = "partial"
+basis = "Artifact notes: 'Complete uncorrected OCR of Migne, Patrologia Latina vol. 213 (Sicard of Cremona, Mitrale), whole volume'."
+unresolved = "The record names only the Mitrale; whether the volume prints other works is not stated."
+
+[[containers.constituents]]
+author = "Sicard of Cremona"
+title = "Mitrale seu de officiis ecclesiasticis summa"
+work_id = "work.sicard-of-cremona.mitrale"
+whole = true
+locator = "VIII.8-11 at cols. 593-594 (leaf n202)"
+basis = "The owning edition; its leaves."
+
+[[containers]]
+id = "artifact.anonymous-supplement-compiler.supplementum-tertiae-partis.leonine-v12-1906.ia-djvu-ocr-text"
+manifest_sha256 = "cccb9aedd5bb3684f766f42cdc7b27a83b7781a8a153ef2dc1bd8f9014d3fc56"
+status = "resolved"
+basis = "Artifact notes: 'the whole of Leonine volume 12, covering Tertia Pars qq. 60-90 with Cajetan's commentary and the Supplementum with its Leonine preface, indexes, and marginal apparatus.'"
+
+[[containers.constituents]]
+author = "Thomas Aquinas"
+title = "Summa theologiae"
+work_id = "work.thomas-aquinas.summa-theologiae"
+locator = "Tertia Pars qq. 60-90"
+basis = "Artifact notes."
+
+[[containers.constituents]]
+author = "Cajetan"
+title = "Commentary on the Summa theologiae"
+locator = "on Tertia Pars qq. 60-90"
+basis = "Artifact notes: 'with Cajetan's commentary'."
+
+[[containers.constituents]]
+author = "Anonymous compiler; the Leonine editors name only the 'Compilator Supplementi'"
+title = "Supplementum Tertiae Partis Summae theologiae"
+work_id = "work.anonymous-supplement-compiler.supplementum-tertiae-partis"
+whole = true
+basis = "Artifact notes; the owning edition."
+
+[[containers]]
+id = "artifact.william-durandus.rationale-divinorum-officiorum.1568-durandus-and-beleth-composite.ia-djvu-ocr-2bd5ccb5"
+manifest_sha256 = "9b48f69c671deab0305f558deec52c482044ef697b39a49e083c013cc1a6d87b"
+status = "resolved"
+basis = "Edition: 'An early printed composite volume: Durandus's Rationale divinorum officiorum with ... aliud Divinorum officiorum Rationale ab Ioanne Beletho ... appended'. Artifact notes: 'The volume also prints John Beleth's Summa, which is registered here as a separate work'."
+
+[[containers.constituents]]
+author = "William Durandus, bishop of Mende"
+title = "Rationale divinorum officiorum"
+work_id = "work.william-durandus.rationale-divinorum-officiorum"
+whole = true
+basis = "The owning edition."
+
+[[containers.constituents]]
+author = "John Beleth"
+title = "Summa de ecclesiasticis officiis"
+work_id = "work.john-beleth.summa-de-ecclesiasticis-officiis"
+whole = true
+locator = "appended, as 'aliud Divinorum officiorum Rationale'"
+basis = "Edition title and artifact notes."
+
+[[containers]]
+id = "artifact.philo.quis-rerum-divinarum-heres-sit.yonge-1854.ia-djvu-ocr-f60262d0"
+manifest_sha256 = "1a263f7f8f21970805a14be52e65ee9fe3afaeadaa6bebfb7a05a7bc1d498576"
+status = "partial"
+basis = "Artifact notes: 'Volume II of Yonge's Philo, containing On the Confusion of Languages, On the Migration of Abraham, Quis rerum divinarum heres sit, and six further treatises.'"
+unresolved = "Six further treatises are counted but not named."
+
+[[containers.constituents]]
+author = "Philo of Alexandria"
+title = "On the Confusion of Languages"
+whole = true
+basis = "Artifact notes: 'On the Confusion of Languages'."
+
+[[containers.constituents]]
+author = "Philo of Alexandria"
+title = "On the Migration of Abraham"
+whole = true
+basis = "Artifact notes: 'On the Migration of Abraham'."
+
+[[containers.constituents]]
+author = "Philo of Alexandria"
+title = "Quis rerum divinarum heres sit"
+work_id = "work.philo.quis-rerum-divinarum-heres-sit"
+whole = true
+basis = "Artifact notes; the owning edition."
+
+[[containers]]
+id = "artifact.andre-wilmart.le-comes-de-murbach.1913-revue-benedictine-volume-30.ia-djvu-ocr-e3bbfad4"
+manifest_sha256 = "35ad25a993ecb843ac44885efd7da908ca722b9a91a72adf6c4e329588e71c9d"
+status = "partial"
+basis = "Artifact notes: 'Complete uncorrected OCR of Revue Benedictine vol. 30 (1913) ... carries Wilmart's edition of the Comes of Murbach at pp. 25-69.'"
+unresolved = "The journal volume's other articles are not named."
+
+[[containers.constituents]]
+author = "Andre Wilmart"
+title = "Le comes de Murbach"
+work_id = "work.andre-wilmart.le-comes-de-murbach"
+whole = true
+locator = "pp. 25-69"
+basis = "Artifact notes."
+
+[[containers]]
+id = "artifact.germain-morin.le-plus-ancien-comes-ou-lectionnaire-de-leglise-romaine.1910-revue-benedictine-volume-27.ia-djvu-ocr-1a7d549e"
+manifest_sha256 = "e2c7d488c47b6985cff36159f2b6afb17cc3079d8ab3a708b827ee35af7cfebb"
+status = "partial"
+basis = "Artifact notes: 'Complete uncorrected OCR of Revue Benedictine vol. 27 (1910) ... carries Morin's edition of the Wuerzburg epistle comes at pp. 41-74.'"
+unresolved = "The journal volume's other articles are not named."
+
+[[containers.constituents]]
+author = "Germain Morin"
+title = "Le plus ancien comes ou lectionnaire de l'Eglise romaine"
+work_id = "work.germain-morin.le-plus-ancien-comes-ou-lectionnaire-de-leglise-romaine"
+whole = true
+locator = "pp. 41-74"
+basis = "Artifact notes."
+
+[[containers]]
+id = "artifact.germain-morin.liturgie-et-basiliques-de-rome-au-milieu-du-viie-siecle.1911-revue-benedictine-volume-28.ia-djvu-ocr-3de8a598"
+manifest_sha256 = "c6a50aae9ad69781614002fb947d2416dba6095a3bdd8bd1cb61d7d99033f037"
+status = "partial"
+basis = "Artifact notes: 'Complete uncorrected OCR of Revue Benedictine vol. 28 (1911) ... carries Morin's edition of the Wuerzburg gospel lists at pp. 296-330.'"
+unresolved = "The journal volume's other articles are not named."
+
+[[containers.constituents]]
+author = "Germain Morin"
+title = "Liturgie et basiliques de Rome au milieu du VIIe siecle d'apres les listes d'evangiles de Wurzbourg"
+work_id = "work.germain-morin.liturgie-et-basiliques-de-rome-au-milieu-du-viie-siecle"
+whole = true
+locator = "pp. 296-330"
+basis = "Artifact notes."
+
+[[containers]]
+id = "artifact.christina-rossetti.poetical-works.macmillan-1904.ia-djvu-text-437bc5ee"
+manifest_sha256 = "0f6d8a2dcae67199c5fef93292a984816b4dea2ce1bb6cb61905d434c04139be"
+status = "partial"
+basis = "Artifact notes: 'Uncorrected optical text of the whole volume, including William Michael Rossetti's memoir and notes'; work description: 'The Lowest Room ... stands at pp. 16-19 with a note at pp. 460-461.'"
+unresolved = "Christina Rossetti's poems are one collected work; only the poem the record names is listed beside her brother's memoir."
+
+[[containers.constituents]]
+author = "Christina Georgina Rossetti"
+title = "The Lowest Room"
+whole = true
+locator = "pp. 16-19, with a note at pp. 460-461"
+basis = "Work description."
+
+[[containers.constituents]]
+author = "William Michael Rossetti"
+title = "Memoir and notes"
+whole = true
+basis = "Artifact notes and edition title."
+
+[[containers]]
+id = "artifact.david-w-judd.life-and-writings-of-frank-forester.orange-judd-1882-volume-2.ia-djvu-text-life-and-writings-v2-e2fa26e9"
+manifest_sha256 = "79fe5bd6be977c119b8d37bcd1d722083161852ac30c788d00ed00586e6e6bf3"
+status = "unresolved"
+basis = "Work description: 'An edited life of the sporting writer Henry William Herbert, who wrote as Frank Forester, with selections from his writings, in two volumes.' Artifact notes: 'Uncorrected optical text of the whole of volume 2'."
+unresolved = "The record does not say which of Herbert's writings volume 2 selects; the chapter it cites, 'The Yorkshire Moors', is not attributed."
+
+# ---------------------------------------------------------------------------
+# Containers found by survey, not by the declared shapes: whole-volume
+# artifacts whose own notes do not use the words the shapes match
+# ---------------------------------------------------------------------------
+
+[[containers]]
+id = "artifact.anonymous.apostolic-constitutions.english-donaldson-anf7-1886.internet-archive-robarts-pdf"
+manifest_sha256 = "b48c4f00049e0522fd0fada54d54c2fd5f90389c7fe96ba718868c77fd66d083"
+status = "partial"
+basis = "Edition title: 'Constitutions of the Holy Apostles in The Ante-Nicene Fathers, volume VII'; artifact notes: 'Complete PDF acquired and hashed', 610 pages."
+unresolved = "The record names only the Constitutions among the contents of ANF volume VII."
+
+[[containers.constituents]]
+author = "Anonymous compiler"
+title = "Constitutiones Apostolorum"
+work_id = "work.anonymous.apostolic-constitutions"
+whole = true
+locator = "printed p. 493 on PDF p. 505"
+basis = "The owning edition and artifact notes."
+
+[[containers]]
+id = "artifact.anonymous.apostolic-constitutions.funk-greek-latin-1905-volume-1.internet-archive-harvard-pdf"
+manifest_sha256 = "4c4f1145493c567eb429d2f55f00524df98b9b419ad5ef2344bfe1c897af2cc7"
+status = "resolved"
+basis = "Edition title: 'Didascalia et Constitutiones Apostolorum, volume I'; artifact notes: 'Complete image-container PDF', 1032 pages."
+
+[[containers.constituents]]
+author = "Anonymous"
+title = "Didascalia Apostolorum"
+extent_unresolved = "The edition title names the Didascalia; how much of it volume I prints the record does not say."
+basis = "Edition title."
+
+[[containers.constituents]]
+author = "Anonymous compiler"
+title = "Constitutiones Apostolorum"
+work_id = "work.anonymous.apostolic-constitutions"
+locator = "printed pp. 528-529 on PDF pp. 598-599"
+basis = "Edition title and artifact notes."
+
+[[containers]]
+id = "artifact.origen.contra-celsum.greek-koetschau-gcs-1899.internet-archive-volume-1-pdf"
+manifest_sha256 = "3a6c7713ac0ad5d7dc5faa727d8a06797926cbc7b60b83f06dfe2a62085a32b4"
+status = "partial"
+basis = "Edition title: 'Origenes Werke, volumes 1-2', a collected edition; artifact: the whole volume-1 scan, 460 pages."
+unresolved = "The record names only Contra Celsum; whether volume 1 prints other works of Origen is not stated."
+
+[[containers.constituents]]
+author = "Origen"
+title = "Contra Celsum"
+work_id = "work.origen.contra-celsum"
+locator = "1.6 at printed pp. 59-60, 1.25 at pp. 75-77"
+basis = "Artifact notes."
+
+[[containers]]
+id = "artifact.origen.contra-celsum.greek-koetschau-gcs-1899.internet-archive-volume-2-pdf"
+manifest_sha256 = "31ec0e20721c259dc5e828922a4507110022e1e58567384ac7ad5a9b46cba579"
+status = "partial"
+basis = "Edition title: 'Origenes Werke, volumes 1-2'; artifact: the whole volume-2 scan, 552 pages."
+unresolved = "The record names only Contra Celsum; whether volume 2 prints other works of Origen is not stated."
+
+[[containers.constituents]]
+author = "Origen"
+title = "Contra Celsum"
+work_id = "work.origen.contra-celsum"
+locator = "7.4 at printed pp. 156-157"
+basis = "Artifact notes."

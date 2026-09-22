@@ -8,6 +8,7 @@ Usage:
     [--calendar CALENDAR ...] [--max-results-per-mass N]
     [--max-results-per-passage N] [--output PATH]
   commentary-work-index coverage [--book TOKEN] [--all]
+  commentary-work-index containment [--container ID] [--unresolved]
 
 This tool does not invoke external search agents. It works from curated mapping
 records in `--discovery`, and returns ranked work metadata for each passage.
@@ -21,6 +22,15 @@ deciding reason — is never replayed: `scripts/replay_examples.py` walks
 `tools/` alone, so a transcript recorded anywhere else is a claim nothing
 checks. The derivation itself stays in `scripts/_coverage.py`, where the index
 and the fragments already meet.
+
+`discover` also answers the question a sweep asks next -- is this work held? --
+for every work it lists: the library records that are that work, with their
+editions and artifacts, and every container the containment inventory records
+it inside, with the constituent's extent there and whether the passage asked
+about falls within it. A work held only inside a Migne volume or an NPNF
+anthology is reported held, and a work nothing joins is reported as having no
+registered holding, with the bound of that absence stated. `containment`
+validates that inventory; `make check-sources` runs it.
 
 The index and the propers speak two key spaces: the index is keyed one chapter
 at a time and a proper cites a verse range. A lookup therefore builds its key
@@ -45,6 +55,7 @@ from typing import Any, NamedTuple
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 import _calendars
+import _containment
 import _coverage
 from _commentary import (
     UNRECORDED,
@@ -72,18 +83,24 @@ EXAMPLES = {
                 "   1. Albert the Great \u2014 Super Iohannem (1280)",
                 "      role: doctor",
                 "      matched on the chapter, not the verses cited: John 3",
+                "      holdings: none registered",
                 "   2. Alcuin of York \u2014 Commentaria in S. Ioannis Evangelium (804)",
                 "      role: saintly",
                 "      matched on the chapter, not the verses cited: John 3",
+                "      holdings: none registered",
                 "   3. Augustine of Hippo \u2014 In Iohannis evangelium tractatus CXXIV (430)",
                 "      role: church-father",
                 "      matched on the chapter, not the verses cited: John 3",
+                "      holdings: held",
+                "        record work.augustine.in-iohannis-evangelium-tractatus (In Iohannis Evangelium Tractatus CXXIV): 6 editions [en, la], 7 artifacts (5 remote, 1 restricted, 1 tracked), 1 segment, 6 passages; joined by constituent, title",
+                "        inside work.nicene-and-post-nicene-fathers.series-1-volume-7: the whole work; 3 artifacts (1 remote, 2 tracked)",
+                "  none registered: no library record, fragment edge, identity row or containment entry joins this work; that is an absence from those joins, not proof that no copy exists",
             ),
         ),
         Example(
             "tools/commentary-work-index discover --passage 'Psalm 24:1-3' --numbering vulgate --max-results 2 --json",
             (
-                "{\"cited_numbering\":\"vulgate\",\"discoveries\":[{\"cited\":\"Psalm 24:1-3\",\"passage\":\"Psalms 24:1-24:3\"... [+499 chars]",
+                "{\"cited_numbering\":\"vulgate\",\"discoveries\":[{\"cited\":\"Psalm 24:1-3\",\"passage\":\"Psalms 24:1-24:3\"... [+21502 chars]",
             ),
         ),
         Example(
@@ -126,6 +143,27 @@ EXAMPLES = {
             "the cheapest kind of win: a work already acquired, named on a second book, nothing landed there",
         ),
     ),
+    "containment": (
+        Example(
+            "tools/commentary-work-index containment",
+            (
+                "containment: 114 containers (89 records, 25 whole-volume artifacts), 249 constituents, 49 of them commentary-index leads",
+                "  resolved 19 \u00b7 partial 78 \u00b7 unresolved 17 \u00b7 not containers 26 \u00b7 identities 6",
+            ),
+            "validates the inventory; a container-shaped record with no entry, an unknown record or a malformed extent fails it",
+        ),
+        Example(
+            "tools/commentary-work-index containment --container work.jacques-paul-migne.patrologia-latina-volume-37",
+            (
+                "containment: 114 containers (89 records, 25 whole-volume artifacts), 249 constituents, 49 of them commentary-index leads",
+                "  resolved 19 \u00b7 partial 78 \u00b7 unresolved 17 \u00b7 not containers 26 \u00b7 identities 6",
+                "",
+                "  work.jacques-paul-migne.patrologia-latina-volume-37  [resolved]",
+                "    Augustine of Hippo -- Enarrationes in Psalmos (index lead): Psalms 80-150",
+            ),
+            "one container, what it holds, and how far each constituent reaches inside it",
+        ),
+    ),
     "build-corpus": (
         Example(
             "tools/commentary-work-index discover --passage 'John 3:16' --max-results 2",
@@ -134,7 +172,7 @@ EXAMPLES = {
                 "   1. Albert the Great \u2014 Super Iohannem (1280)",
                 "      role: doctor",
                 "      matched on the chapter, not the verses cited: John 3",
-                "... 3 more lines",
+                "... 6 more lines",
             ),
             "read-only first: `discover` is the per-passage lookup `build-corpus` aggregates",
         ),
@@ -1123,6 +1161,17 @@ def _render_payload(
                     print(f"      matched on the chapter, not the verses cited: {loci}")
                 if work.get("source_hint"):
                     print(f"      source hint: {work['source_hint']}")
+                if work.get("holdings") is not None:
+                    _render_holdings(work["holdings"])
+            if any(
+                (work.get("holdings") or {}).get("status") == _containment.NONE
+                for work in works
+            ):
+                print(f"  none registered: {_containment.NONE_NOTE}")
+        return None
+
+    if payload.get("schema") == _containment.REPORT_SCHEMA:
+        _render_containment(payload)
         return None
 
     if payload.get("totals") is not None:
@@ -1155,6 +1204,102 @@ def _render_payload(
                 f"… and {len(payload['masses']) - 20} more masses (full output in YAML/JSON)"
             )
     return None
+
+
+def _storage(counts: dict[str, int]) -> str:
+    total = sum(counts.values())
+    if not total:
+        return "no artifacts"
+    parts = ", ".join(f"{count} {storage}" for storage, count in counts.items())
+    return f"{_plural(total, 'artifact', 'artifacts')} ({parts})"
+
+
+def _container_extent(row: dict[str, Any]) -> str:
+    """What a container holds of a lead, in words, and what that says of the passage."""
+    part = row.get("constituent") or {}
+    passage = row.get("passage")
+    if part.get("scripture"):
+        reach = "; ".join(part["scripture"])
+        verdict = {
+            _containment.INSIDE: "the passage is inside it",
+            _containment.PARTIALLY: "the passage is only partly inside it",
+            _containment.OUTSIDE: "the passage is OUTSIDE it",
+        }.get(passage, "the passage could not be tested against it")
+        return f"{reach} -- {verdict}"
+    if part.get("whole"):
+        return "the whole work" + (f" ({part['locator']})" if part.get("locator") else "")
+    if part.get("locator"):
+        return f"{part['locator']} -- its reach in scripture is not stated"
+    return "extent not established"
+
+
+def _render_holdings(holdings: dict[str, Any]) -> None:
+    """One line per record a lead is held in, and one per container."""
+    status = holdings.get("status")
+    if status == _containment.NONE:
+        print("      holdings: none registered")
+        return
+    print(f"      holdings: {status}")
+    for record in holdings.get("direct") or []:
+        languages = ", ".join(record.get("languages") or []) or "no language"
+        extra = []
+        if record.get("segment_count"):
+            extra.append(_plural(record["segment_count"], "segment", "segments"))
+        if record.get("passage_count"):
+            extra.append(_plural(record["passage_count"], "passage", "passages"))
+        print(
+            f"        record {record['work_id']} ({record['title']}): "
+            f"{_plural(len(record.get('editions') or []), 'edition', 'editions')} [{languages}], "
+            f"{_storage(record.get('artifact_storage') or {})}"
+            + (f", {', '.join(extra)}" if extra else "")
+            + f"; joined by {', '.join(record.get('joined_by') or [])}"
+        )
+    for row in holdings.get("containers") or []:
+        print(
+            f"        inside {row['container_id']}: {_container_extent(row)}; "
+            f"{_storage(row.get('artifact_storage') or {})}"
+        )
+
+
+def _render_containment(payload: dict[str, Any]) -> None:
+    totals = payload["totals"]
+    for error in payload.get("errors") or []:
+        print(error)
+    by_status = totals["by_status"]
+    print(
+        f"containment: {_plural(totals['containers'], 'container', 'containers')} "
+        f"({totals['work_containers']} records, {totals['artifact_containers']} whole-volume artifacts), "
+        f"{_plural(totals['constituents'], 'constituent', 'constituents')}, "
+        f"{totals['constituents_in_index']} of them commentary-index leads"
+    )
+    print(
+        "  "
+        + " · ".join(f"{status} {count}" for status, count in by_status.items())
+        + f" · not containers {totals['not_containers']}"
+        + f" · identities {totals['identities']}"
+    )
+    shown = payload.get("containers") or []
+    if payload.get("errors"):
+        print(f"containment inventory invalid: {_plural(len(payload['errors']), 'error', 'errors')}")
+        return
+    if not payload.get("listing") or not shown:
+        return
+    print()
+    for row in shown:
+        print(f"  {row['id']}  [{row['status']}]")
+        if row.get("unresolved"):
+            print(f"    not established: {row['unresolved']}")
+        for part in row.get("constituents") or []:
+            if part.get("scripture"):
+                extent = "; ".join(part["scripture"])
+            elif part.get("whole"):
+                extent = "whole work"
+            elif part.get("locator"):
+                extent = part["locator"]
+            else:
+                extent = f"extent not established: {part.get('extent_unresolved', '')}"
+            lead = " (index lead)" if part.get("in_index") else ""
+            print(f"    {part['author']} -- {part['title']}{lead}: {extent}")
 
 
 def _ranges(numbers: list[int]) -> str:
@@ -1273,6 +1418,9 @@ def run_discover(args: argparse.Namespace, citations) -> dict[str, object]:
         raise ValueError("no passage input provided")
 
     discoveries: list[dict[str, Any]] = []
+    # Holdings are read from the repository's own library whatever --discovery
+    # names: the index is an input a caller may substitute, the library is not.
+    holdings = _containment.Holdings()
     for passage in passages:
         try:
             records = _parse_passage_value(citations, passage)
@@ -1315,9 +1463,22 @@ def run_discover(args: argparse.Namespace, citations) -> dict[str, object]:
         except Exception as error:
             raise ValueError(f"invalid passage {named}: {error}") from error
 
+        # A lead is not the end of a sweep: the next question is whether the
+        # work is held, and a work held only inside a container was reported
+        # absent by every sweep that asked its own record. The answer is
+        # attached to each work rather than listed apart, so no consumer can
+        # read the lead without passing the holding.
+        asked = holdings.books.passage_spans(canonical) if discovery.numbering == (
+            holdings.inventory.get("numbering")
+        ) else []
+        listed = _sort_works([_coerce_work_record(item) for item in works])
+        for work in listed:
+            work["holdings"] = holdings.for_work(
+                work.get("author") or "", work.get("title") or "", work.get("work_id"), asked
+            )
         entry: dict[str, Any] = {
             "passage": ref,
-            "works": _sort_works([_coerce_work_record(item) for item in works]),
+            "works": listed,
         }
         if refused:
             entry["refused_loci"] = refused
@@ -1338,6 +1499,13 @@ def run_discover(args: argparse.Namespace, citations) -> dict[str, object]:
         "cited_numbering": args.numbering,
         "max_results": args.max_results,
         "discoveries": discoveries,
+        # What "held" and "none" are measured against, so an absence carries
+        # its own bound wherever the payload travels.
+        "holdings_basis": {
+            "inventory": _containment.INVENTORY_RELATIVE.as_posix(),
+            "joins": list(_containment.JOINS),
+            "none_means": _containment.NONE_NOTE,
+        },
     }
 
     return payload
@@ -1483,6 +1651,28 @@ def run_coverage(arguments: argparse.Namespace) -> dict[str, Any]:
     return report
 
 
+def run_containment(arguments: argparse.Namespace) -> dict[str, Any]:
+    """Validate the containment inventory and report what it records.
+
+    Every container-shaped record in the library must have an entry, every
+    entry must name a record the library has and still describe the bytes it
+    was reviewed against, and every extent must parse. `status` is `invalid`
+    when any of that fails, and the verb exits non-zero, which is what makes
+    `make check-sources` refuse a container nobody has entered.
+    """
+    report = _containment.report()
+    rows = report["containers"]
+    if arguments.container:
+        rows = [row for row in rows if row["id"] == arguments.container]
+        if not rows:
+            raise ValueError(f"no containment entry for {arguments.container}")
+    elif arguments.unresolved:
+        rows = [row for row in rows if row["status"] != _containment.RESOLVED]
+    report["containers"] = rows
+    report["listing"] = bool(arguments.container or arguments.unresolved)
+    return report
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         prog="commentary-work-index",
@@ -1607,9 +1797,30 @@ def main(argv: list[str] | None = None) -> int:
         help="list every (work, book) pair, including those with nothing missing",
     )
 
+    contained = with_examples(
+        sub.add_parser(
+            "containment",
+            help="Validate the containment inventory: which records hold which works.",
+            parents=[shared],
+        ),
+        EXAMPLES["containment"],
+    )
+    contained.add_argument(
+        "--container",
+        default=None,
+        help="show one container entry, by its work or artifact id",
+    )
+    contained.add_argument(
+        "--unresolved",
+        action="store_true",
+        help="list every container whose constituents or extents are not fully established",
+    )
+
     def dispatch(arguments: argparse.Namespace):
         if arguments.command == "coverage":
             return run_coverage(arguments)
+        if arguments.command == "containment":
+            return run_containment(arguments)
         if arguments.command == "discover":
             citations = _load_citations_tool()
             return run_discover(arguments, citations)
@@ -1629,6 +1840,7 @@ def main(argv: list[str] | None = None) -> int:
             "discover": dispatch,
             "build-corpus": dispatch,
             "coverage": dispatch,
+            "containment": dispatch,
         },
         renderer=render,
         prefix="commentary-work-index",

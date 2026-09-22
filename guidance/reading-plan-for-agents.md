@@ -216,6 +216,7 @@ explicitly after any edit to the plan or the tool.
 | Ingesting one run | `harvest record --results --model --audited-on` | hand-editing the ledger |
 | Confidence | `harvest promote` — appearances ÷ runs | a score from the model |
 | The passage→works lookup | `passage-commentary-index.yaml` | written by hand |
+| Whether a lead is held, and where | `discover`'s `holdings`, per `guidance/catena.md` §11 | a search by work record alone |
 | Entry to the source library | human review under `guidance/sources.md` | a harvest alone |
 
 **`harvest ask` is the only verb in this repository that calls a model, and

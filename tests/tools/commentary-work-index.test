@@ -402,6 +402,31 @@ if [ -e "$sandbox/src" ]; then
 fi
 
 # ---------------------------------------------------------------------------
+# discover answers the question a sweep asks next: is each lead held?
+#
+# Holdings are read from the repository's own library whatever --discovery
+# names, so these assert the SHAPE of the answer and not today's holdings.
+out="$(discover --passage "John 3:16" --json)"
+contains '"holdings":{"containers":' "$out" "every work carries its holdings"
+contains '"holdings_basis":{' "$out" "the payload says what a holding is measured against"
+contains '"none_means":' "$out" "an absence carries its own bound"
+out="$(discover --passage "John 3:16")"
+contains "holdings:" "$out" "holdings are visible in text output"
+
+# containment validates the inventory discover reads, and is read-only.
+out="$(run_tool containment --json)"
+contains '"status":"ok"' "$out" "the tracked containment inventory validates"
+contains '"schema":"triptych-source-containment-report/v1"' "$out" "containment report schema"
+run_tool containment >/dev/null
+out="$(run_tool containment --container work.jacques-paul-migne.patrologia-latina-volume-37)"
+contains "Psalms 80-150" "$out" "one container's constituents and their extent"
+reject "an unknown container" containment --container work.no-such.volume
+if [ -e "$sandbox/src" ]; then
+	echo "containment wrote into the working directory" >&2
+	exit 1
+fi
+
+# ---------------------------------------------------------------------------
 # Negative cases: bad input is refused, never guessed at.
 reject "unknown verb" bogus
 reject "discover with no passage input" discover --discovery "$sandbox/discovery.yaml"

@@ -8,7 +8,7 @@ of works the vault should acquire.
 
 | Stage | Tool | Input | Output |
 | --- | --- | --- | --- |
-| Lookup | `tools/tpt commentary-work-index discover` | `passage-commentary-index.yaml` | works for one passage |
+| Lookup | `tools/tpt commentary-work-index discover` | `passage-commentary-index.yaml`, the source library and `../inventories/source-containment-v1.toml` | works for one passage, each with what the library holds of it |
 | Union | `tools/tpt commentary-work-index build-corpus` | the index plus `../calendars/*/propers.yaml` | `mass-commentary-corpus.yaml` |
 | Harvest | `tools/tpt harvest {plan,record}` | a passage | one run's candidates, into `harvest-ledger.yaml` |
 | Identity | `tools/tpt harvest aliases` | the ledger | `work-aliases.yaml` |

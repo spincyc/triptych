@@ -541,3 +541,73 @@ is data, and it has to have somewhere to live.
 
 `commentary-work-index coverage` is the verb; `make check-commentary-coverage`
 is the one line it prints into the build.
+
+---
+
+## 11. Holdings: what is held of a lead, through the records that contain it
+
+§10 subtracts what is held from what a work reaches. Before that there is a
+simpler question, and it was being answered wrongly: **is this lead held at
+all?** L2 in §1 is "we possess this work", and the library possesses a great
+deal of it only *inside another record* — a Migne volume, an Opera omnia tome,
+an NPNF or ANF anthology, a periodical, a whole-volume optical layer filed under
+whichever constituent a lane happened to be reading. Nothing linked a container
+to what it contains. A sweep that checked each lead by its own work record
+therefore reported held witnesses as absent, and one proper study did so in
+three consecutive review rounds: Aquinas on Matthew, printed entire in the
+Venice tomus the library held, has no record of its own, and PL 37 said only in
+prose that it carries Augustine on Psalms 80–150.
+
+> **Rule 13.** A sweep checks holdings through containers, via `discover`. A
+> lead is not "not held" because its own work record is missing, a title search
+> found nothing, or `source-library` has no record by that id. The answer is the
+> `holdings` `commentary-work-index discover` attaches to every work it lists:
+> the library records that are that work, with their editions and artifacts,
+> and every container recorded to hold it, with the constituent's extent there
+> and whether the passage asked about is inside it.
+
+The containment edge lives in
+`src/sources/inventories/source-containment-v1.toml`, beside the records rather
+than on them, for the reason §7 gives: a field added to a work or artifact
+record moves its `source_fingerprint` and every reviewed binding pinned above
+it. Its own header states what each field claims; what matters to a reader of
+`discover` is what the answers mean.
+
+| `holdings.status` | Meaning |
+| --- | --- |
+| `held` | a library record of the work carries artifacts or segments |
+| `held-in-container` | the work has no holding of its own; a container prints it |
+| `cataloged-only` | a record or container exists, with no artifact registered |
+| `none` | nothing joins the lead; see below |
+
+A container row says how far the constituent reaches inside it: a scripture
+extent in canonical numbering, tested against the passage (`inside`,
+`partial`, `outside`), or `whole-work` where the container prints the whole of
+it and the index already attests the reach. `outside` is a result, not a miss:
+PL 37 holds Augustine on Psalms 80–150 and says nothing of Psalm 20.
+
+**"None registered" is an absence from the joins**, and as narrow as
+`guidance/sources.md` requires every negative claim to be. A lead reaches the
+library by an index `work_id`, an `identities` row in the inventory, a
+containment constituent, a catena fragment's `work_alias`, or an exact
+author-and-title match through the harvest's own alias titles, the library's
+author read up to its first comma or through a declared equivalence — nothing
+looser,
+because a join made by resemblance is how two works become one. A work held
+under a name none of those reaches is still reported absent; the remedy is an
+`identities` row with its reason, never a fuzzier match. The rows are not the
+`work_id` reconciliation of §8 item 6, which remains open: they close the misses
+a sweep has actually hit.
+
+`commentary-work-index containment` validates the inventory, and
+`make check-sources` runs it. It refuses a container-shaped record nobody has
+entered — a work of a declared container type or whose description calls it a
+container, an artifact whose own notes call it a whole volume, and any record
+another work's segment or catena fragment already points into — an entry naming
+a record the library does not have, a malformed extent, and an entry whose
+container record has changed since its `manifest_sha256` was pinned. A record
+shaped like a container that holds no other work is entered as such, with the
+reason. So a new container cannot be registered silently: registering one is
+entering it here, read off its own description and notes, with whatever those
+do not establish marked unresolved rather than supplied from what such a volume
+usually holds.
