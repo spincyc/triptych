@@ -42,7 +42,10 @@
 # Chrysostom in PG 55, Theodoret in PG 80 and PG 82, the PG 27 Expositiones,
 # Bellarmine, Augustine in PL 37 and on augustinus.it, Aquinas on Matthew (Venice
 # 1745) and on 1 Corinthians, Cornelius a Lapide on the Pentateuch, Rupert of Deutz
-# in PL 170 and Gueranger's vol. XI -- are all bound in
+# in PL 170 and the continuation of Gueranger's vol. XI -- and those added on the
+# third re-entry -- Theophylact in PG 124, Anthony's Sunday sermon, Schuster,
+# Durandus, Sicard, Honorius, Berno, the Micrologus, the Wuerzburg lists, the Comes
+# of Murbach and PL 30 -- are all bound in
 # research/source-bindings.toml and are sealed with their records and payloads by
 # that route, so they are not repeated here. The unregistered Internet Archive
 # page images read beside them are listed with their digests in research/scope.md
@@ -66,6 +69,20 @@
 # - The 1962 calendar index is also the record research/scope.md section 2.7
 #   reads for the Nineteenth Sunday's appointments (pentecost-19), against which
 #   Rupert of Deutz's placement of this Gospel is compared.
+# - Three repository-wide inventories were read on the third re-entry as controlling
+#   evidence for claims research/scope.md makes about the library and about the
+#   liturgical commentators. The containment inventory is what sections 3.5-3.7 and
+#   5.2 check each lead's holdings against, and it states the PG 124 and PL 172
+#   extents those sections report. The Mass-keyed locus inventory is what
+#   `tools/commentary-work-index formulary --calendar roman-1962 --mass pentecost-18`
+#   read for sections 2.7 and 3.11's element comparison. The author-standing
+#   registry is the source of every standing research/scope.md and
+#   research/interpretations.md state for a commentator (Schuster blessed; the
+#   others ecclesiastical writers; Guéranger a Servant of God; the continuator's
+#   name). All three are other owners' records and are not edited here.
+# - The profile subsection the third re-entry applies, Liturgical commentators,
+#   lives in guidance/liturgy/propers-three-documents.md; it is guidance, not a
+#   source record, and is not declared here.
 paths = [
   "src/sources/calendars/roman-1962/propers.yaml",
   "src/sources/calendars/roman-1962/rubrics.yaml",
@@ -79,6 +96,9 @@ paths = [
   "src/sources/chronology/gaps.yaml",
   "src/sources/bibles/clementine-vulgate/chapters",
   "src/sources/commentary/passage-commentary-index.yaml",
+  "src/sources/commentary/formulary-loci.yaml",
+  "src/sources/inventories/source-containment-v1.toml",
+  "src/sources/inventories/author-standing-v1.toml",
   "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc",
   "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581",
   "src/sources/works/convocation-of-canterbury/revised-version/editions/ebible-eng-rv",

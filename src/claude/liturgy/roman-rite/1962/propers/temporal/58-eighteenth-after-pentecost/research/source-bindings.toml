@@ -54,8 +54,23 @@ document = "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-penteco
 # Explanatio on all three psalms, Augustine's own Latin in PL 37 and on
 # augustinus.it, Aquinas's lectura on Matthew in the Venice 1745 volume, Cornelius
 # a Lapide on Ex 24:4-8, and -- as documented reception of the compilation and not
-# as exegesis -- Rupert of Deutz in PL 170 and Gueranger's Liturgical Year vol.
-# XI. research/scope.md sections 3, 4, 5.2 and 6.3 carry what each gave.
+# as exegesis -- Rupert of Deutz in PL 170 and the continuation of Gueranger's
+# Liturgical Year vol. XI. research/scope.md sections 3, 4, 5.2 and 6.3 carry what
+# each gave.
+#
+# The THIRD re-entry of 2026-09-22 took the registered set of whole volumes from
+# the artifact records themselves, read each lead author's artifact records for
+# provenance and extent, and ran tools/commentary-work-index formulary for this
+# Mass. It bound Theophylact on 1 Cor 1:4-8 in the PG 124 whole-volume layer (which
+# an earlier pass had called a John-only holding); St Anthony's Sunday sermon on
+# Mt 9:1; the registered liturgical commentators on this Mass -- Bl. Ildefonso
+# Schuster, Durandus, Sicard, Honorius (the 1895 PL 172 layer), Berno and the
+# Micrologus -- beside Rupert and the continuation; and the transmission lists the
+# library registers: the Wuerzburg epistle and gospel lists, the Comes of Murbach
+# and the Liber Comitis of PL 30. The Liturgical Year vol. XI is the posthumous
+# continuation, and its binding now says so. Ambrosiaster on 1 Cor 1:4-8 was read on
+# a later delivery of its registered page whose digest did not match, and is not
+# bound. research/scope.md sections 2.7, 3.5-3.7, 3.11, 4 and 6.3 carry the result.
 
 # ---------------------------------------------------------------------------
 # Liturgical text control
@@ -658,7 +673,7 @@ context = "Later reception at the Offertory's own cited locus, which every earli
 # Documented reception of the compilation: liturgical commentators who expound
 # the Mass of this Sunday as their books gave it
 #
-# Kept apart from the exegesis above. Neither witness below comments on a
+# Kept apart from the exegesis above. No witness in this group comments on a
 # biblical passage for its own sake; each comments on a Mass, and what each says
 # is evidence of how that Mass was read, not of what a Father taught.
 # ---------------------------------------------------------------------------
@@ -677,4 +692,107 @@ loci = ["vol-xi-p-393", "vol-xi-p-394", "vol-xi-p-400", "vol-xi-p-401", "vol-xi-
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:41e33739805822d7fa17bd959aee1a9bc45e53b9142ac700e0871842608e5a50"
-context = "Gueranger's chapter on this Sunday in the English Liturgical Year, Time after Pentecost vol. II (series vol. XI), in the facsimile this checkout tracks (SHA-256 recomputed and matched, 95ba98e2...92690). The chapter runs from printed p. 393 to p. 409 = PDF pp. 414-430 (printed + 21). It was read in the PDF's text layer and every sentence research/scope.md quotes was checked on the page images of PDF pp. 414, 415, 422, 423, 424, 426 and 427. What it gives, in research/scope.md sections 2.7 and 3.11: the Sunday follows the September Ember days and the question of its having replaced the vacant Sunday after ordinations, called Dominica vacat in ancient books; the interruption of the Ephesians epistles by 1 Cor 1; Rupert's report of another Gospel, the chair of Moses, and its harmony with the Moses Offertory; the present Gospel read of the prerogative which these same men -- the Church's pastors -- have of forgiving sins; and the Offertory's two ancient verses printed in full. Two limits are stated. The translation dates the other Gospel to the thirteenth century, which is Gueranger's or his translator's dating and not Rupert's, and nothing here rests on it. And this is a nineteenth-century liturgical commentator on the Tridentine Mass, whose readings are reported as his and never as the Fathers'."
+context = "The chapter on this Sunday in the English Liturgical Year, Time after Pentecost vol. II (series vol. XI), second edition, 1909, in the facsimile this checkout tracks (SHA-256 recomputed and matched, 95ba98e2...92690). WHOSE WORDS: the edition record says the preface identifies this as the second volume of the Continuation after Gueranger's death and does not name the continuator, and the work record's responsible party is Prosper Gueranger and continuators; Gueranger died in 1875. Every sentence research/scope.md and research/interpretations.md take from it is therefore cited as the continuation's and none as Gueranger's. The library's author-standing registry and formulary-loci inventory name the continuator Dom Lucien Fromage OSB (1845-1916); this stage read the French original's preface signature, Fr. L. F., O. S. B., Solesmes, in the Internet Archive text layer lanneliturgiqu11gu (digest c24539c7...fd6c07, as the registry records) and did not re-open the BnF records the registry cites. The chapter runs from printed p. 393 to p. 409 = PDF pp. 414-430 (printed + 21). It was read in the PDF's text layer and every sentence research/scope.md quotes was checked on the page images of PDF pp. 414, 415, 422, 423, 424, 426 and 427. What it gives, in research/scope.md sections 2.7 and 3.11: the Sunday follows the September Ember days and the medieval liturgists discussed its having replaced the vacant Sunday after ordinations (footnotes 1 and 2 on p. 393 cite Berno cap. v and the Micrologus cap. xxix, both read on the third re-entry); the interruption of the Ephesians epistles by 1 Cor 1; the Epistle's gifts read of the powers conferred at the Ember ordinations; Rupert's report of another Gospel, the chair of Moses, and its harmony with the Moses Offertory, which the continuation dates, at p. 402, to the thirteenth century, in many Churches of the west -- the qualifier is the book's and is kept, and the dating is the continuation's or its translator's, not Rupert's; the present Gospel read of the prerogative which these same men -- the Church's pastors -- have of forgiving sins; and the Offertory's two ancient verses printed in full. It is a liturgical commentator on the Roman Missal of its day, documented reception of the compilation, never the Fathers'."
+
+[[bindings]]
+source_id = "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-volume-3-ocr-4d8c8988"
+loci = ["vol. III, printed pp. 167-170, Eighteenth Sunday after Pentecost, Tertia post natale Sancti Cypriani = optical-layer physical lines 10470-10710"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:04f9c86491a663faa60eb325af91ca9056441e83aadb4608fbb0d8b87136a32f"
+context = "Bl. Ildefonso Schuster (beatified 1996; standing blessed in the author-standing registry) on the 1962 Mass itself, every element of which is his. The tracked layer's SHA-256 was recomputed and matched (4d8c8988...a65e419). The layer located the chapter; every sentence research/scope.md and research/interpretations.md quote was read on the page images of the same Internet Archive volume, JPEG 2000 leaves 0182-0185 of the LiberSacramentorum vol. 3 set = printed pp. 167-170, unregistered, digests in research/scope.md section 6.3, because the registered facsimile PDF returned HTTP 500 on 2026-09-22. What it gives: the Sunday as a Dominica vacat whose formulary is later than the Ember vigil but recorded by Paul the Deacon (his attribution, not checked); the Collect as grace directing free will; the Gradual first of the return from the Babylonian exile and then of the heavenly Jerusalem; and at the Gospel, v. 8 first as the crowd's inadequate confession and then, in a deeper and prophetic sense, as the power of remitting sins communicated to the apostles and their successors in the priesthood -- the one registered witness who reads Mt 9:8 itself of the ministry, reading the 1962 pairing; the Offertory as cut down from an antiphon whose old verses were Moses' intercession and his prayer to see God's glory (Ex 33:13-23); the Communion as God giving himself to his people. Documented reception of the compilation; under the profile a Blessed may be one of a reading's two authors beside a Father or canonized saint."
+
+[[bindings]]
+source_id = "artifact.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.ia-djvu-ocr-b9b266dd"
+loci = ["Liber VI, capita CXXXV-CXXXVI, Lyon 1612 tomus II, page headed 419 and its verso = optical-layer physical lines 17086-17159"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5be12620687e1829e19de144d3c79009d8b9dce221c126174799a60e3facbb4a"
+context = "Durandus of Mende (ecclesiastical writer) on the Eighteenth and Nineteenth Sundays after Pentecost. The tracked layer's SHA-256 was recomputed and matched (b9b266dd...305b5d); every word quoted was read on the Internet Archive page images rationalediuinor02dura leaves n342 and n343, unregistered, digests in research/scope.md section 6.3. VI.135 shares this formulary's Introit, Epistle, Gradual, Offertory and Communion; its Gospel is in quibusdam Ecclesiis Mt 23 (super cathedram Mosi) and in quibusdam Ecclesiis Mt 22 (Accesserunt), and its Alleluia Laudate Dominum omnes gentes. He reads the Mass of the prelates: Prophetae tui, id est, Praelati fideles inveniantur; the Offertory's Moses as the pattern for prelates who offer themselves; Tollite hostias, loquitur enim de Praelatis. VI.136 puts Mt 9:1-8 at the Nineteenth in quibusdam Ecclesiis and reads the paralytics as healed merito fide Praelatorum. The page prints decimaseptima inside the chapter on the eighteenth, and the Epistle as a thanksgiving de Ephesiis of a text cited as 1 ad Cor. cap. 1; both are reported, not corrected. Documented reception of a Mass with another Gospel: cited only for the shared elements and for Mt 9 at VI.136."
+
+[[bindings]]
+source_id = "artifact.sicard-of-cremona.mitrale.latin-migne-pl-213.ia-djvu-ocr-ea9fd813"
+loci = ["Mitrale VIII.18-19, PL 213, columns 599-600 = optical-layer physical lines 29685-29749"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f7ef227833c6454f7bea588021ba7c000d14f6dc1220746e710f6f3d8a19f761"
+context = "Sicard of Cremona (ecclesiastical writer) on the Eighteenth and Nineteenth Sundays after Pentecost. The tracked layer's SHA-256 was recomputed and matched (ea9fd813...199e44); the layer interleaves the two columns, so every word quoted was read on the Internet Archive page image patrologiaecursu0213mign leaf n205 = cols. 599-600, unregistered, digest in research/scope.md section 6.3. VIII.18's Gospel is Accesserunt (Mt 22), vel secundum alios Mt 23; he reads the Mass of the return from captivity: the Introit as Daniel's voice asking peace for the returning people, the Epistle as thanks for the return of the captives, the remission of sins and the gifts, the Offertory and Communion as bidding the returning people raise altars and immolate victims as Moses did. VIII.19 sets Christ, who told the healed paralytic Surge, tolle lectum tuum, beside Cyrus who freed the captives. Documented reception of a Mass with another Gospel, cited only for the shared elements and for Mt 9 at VIII.19; it gives no ministerial reading."
+
+[[bindings]]
+source_id = "artifact.honorius-augustodunensis.gemma-animae.1895-garnier-migne-pl-172.ia-djvu-ocr-2ebfcb5f"
+loci = ["IV.84", "IV.85", "IV.86"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:472c828bf45f8c1c1d4e99c11211b27a8834e420d9bc76cf99a1d51833bfdffb"
+context = "Honorius Augustodunensis (ecclesiastical writer), Gemma animae IV.84-86, in the whole-volume layer of the 1895 Garnier PL 172, which this library registered before the third re-entry and which replaces, for this locus, the restricted 1854 facsimile an earlier pass took for the only route. The tracked layer's SHA-256 was recomputed and matched (2ebfcb5f...9444b1); IV.84-86 stand at physical lines 56955-57068, and every word quoted was read on the Internet Archive page images patrologiaecursu0172mign leaves n360 (cols. 721-722) and n361 (cols. 723-724), unregistered, digests in research/scope.md section 6.3. IV.84 (sub lege) shares this formulary's Introit, Collect, Epistle, Gradual, Offertory and Communion, with the Gospel of the two precepts (Mt 22) and another Alleluia, and reads the Mass of Daniel's prayer for the people's return from Babylon; IV.85 (sub gratia) reads it of Gregory the Great's peace between the Romans and the Lombards, with Fiat pax as peace in turribus Ecclesiae; IV.86, the Nineteenth, reads Mt 9's civitatem suam as Jerusalem regained cum Jesu sacerdote. Documented reception of a Mass with another Gospel; it gives no ministerial reading."
+
+[[bindings]]
+source_id = "artifact.berno-of-reichenau.libellus-de-quibusdam-rebus-ad-missae-officium-pertinentibus.latin-migne-pl-142.ia-djvu-ocr-991758f7"
+loci = ["Libellus V, the vacant Sunday after the September fast and the following Sunday, PL 142, column 1070 = optical-layer physical lines 85740-85819"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:4778aee25531318267265263f4cd2dd69bb05dcae281e5fd650bbf8d6e3433d3"
+context = "Berno of Reichenau (ecclesiastical writer; first half of the eleventh century by his work record) on the office of the vacant week after the September fast. The tracked layer's SHA-256 was recomputed and matched (991758f7...5818c0); every word quoted was read on the Internet Archive page image patrologiaecursu0142mign leaf n544 = cols. 1069-1070, unregistered, digest in research/scope.md section 6.3, the first page image of this volume the library's records mention. He gives this formulary's Introit, Gradual and verse, Offertory with the verses Locutus est Dominus ad Moysen and Oravit Moyses Dominum, Communion and Collect, with the Gospel of Mt 23; he paraphrases the Communion adorare Dominum in aula sancta ejus (the aula datum of research/scope.md section 5.1.7) and explains the Collect from it: no sacrifice pleases God sine ejus adjutorio. The next Sunday has Mt 9 with Salus populi. The continuation of The Liturgical Year cites this chapter at vol. XI p. 393 note 1. Documented reception of a Mass with another Gospel, cited for the shared elements."
+
+[[bindings]]
+source_id = "artifact.bernold-of-constance.micrologus-de-ecclesiasticis-observationibus.latin-migne-pl-151.ia-djvu-ocr-f7de4b32"
+loci = ["Micrologus XXIX, De vacantibus Dominicis = optical-layer physical lines 78170-78236"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:d18f2adf9a8a4257e4b9826ccbdb1d910b32559fefc9cadede2219c903d8a9bf"
+context = "The Micrologus chapter on the vacant Sundays after the Ember fasts, which the continuation of The Liturgical Year cites at vol. XI p. 393 note 2. The tracked layer's SHA-256 was recomputed and matched (f7de4b32...9fa95d53); read in the layer only, its chapter numeral damaged there, no page image opened, and quoted in short phrases. Structural evidence for this Sunday's place after the September Ember Saturday: the sacramentary calls these Sundays vacant; after the autumn fast some supply the following Sunday from the Wednesday office and the Romans repeat Sunday offices; they were anciently vacant because the Saturday ordinations ran into the Sunday. No reading of the Mass is taken from it."
+
+# ---------------------------------------------------------------------------
+# Later exegesis and Sunday preaching reached on the third re-entry
+# ---------------------------------------------------------------------------
+
+[[bindings]]
+source_id = "artifact.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864.ia-djvu-ocr-9a1fc730"
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f613b2b003f7e7556a5cb9d38b84d668d3095cab69b4191dfe925907f05416b4"
+context = "Theophylact's commentary on 1 Cor 1:4-8, which this whole-volume layer of PG 124 carries although the work record it hangs on is his John commentary. An earlier pass of this stage recorded Theophylact on 1 Corinthians as unreached because John only was held; the artifact's own provenance says the whole Patrologia Graeca volume 124, and its table of contents (physical lines 211-232) lists In Epistolam I ad Corinthios at col. 563. The 3,544,388-byte layer was fetched on 2026-09-22 and its SHA-256 recomputed and matched (9a1fc730...c5e66c); nothing is retained, as the record requires. The heading stands at physical line 44683, v. 4 at 45001, v. 7 at 45045, v. 8 at 45153. The layer's recognition of vv. 4-6 is past reading and its record forbids quoting the Greek from it, so every word quoted in research/scope.md sections 3.6 and 4.7 and research/interpretations.md section 3.2, Latin and Greek, was read on the Internet Archive page images of the same item, leaves n282 (cols. 565-566) and n283 (cols. 567-568), unregistered, digests in research/scope.md section 6.3. No loci array is given because the work record's locus_pattern admits John chapters only. What it gives: at v. 4 the thanksgiving deflates the Corinthians' pride because grace is neither debt nor repayment; at v. 7 the praise is for the spiritual and the blame for the carnal, or they had the gifts and fell away; at v. 8 Confirmabit shows them somewhat shaken and Sine crimine already liable to charges. A passage on v. 7 printed in square brackets and closed Cod. Arundel. is Migne's supplement, reported as such."
+
+[[bindings]]
+source_id = "artifact.anthony-of-padua.sermons-for-sundays-and-festivals.2026-09-05-spilsbury-hosted-compilation.compilation-pdf-3699ff43"
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:533c8a3b3ee1941ebfb0aeb49fce670f1f4920f455bfe2326f6fdb23ba7471e2"
+context = "St Anthony of Padua's Sunday sermon headed Nineteenth Sunday after Pentecost, whose Gospel is Mt 9:1-8, in Paul Spilsbury's English. The PDF was re-fetched on 2026-09-22 and matched the registered SHA-256 (3699ff43...6721be, 1,556,456 bytes); it is storage = restricted because the translator reserves copyright, so nothing is retained or quoted and research/scope.md section 3.5 summarises it. No loci array is given because the work record's locus_pattern admits only two other Sundays. His Mass is not this one: its Introit is Omnia quae fecisti and its Epistle Eph 4:23, which he concords with the Gospel, so the sermon is reception of this Gospel as a Sunday Gospel and of nothing else here. He reads the four bearers as humility, poverty, patience and obedience, the sins forgiven by the merits of others (through the Gloss), and v. 8 as the crowd's fear and praise, with no ministerial sense."
+
+# ---------------------------------------------------------------------------
+# Transmission of the Epistle and Gospel: the lists, read at this Sunday's
+# readings on the third re-entry (research/scope.md section 2.7)
+# ---------------------------------------------------------------------------
+
+[[bindings]]
+source_id = "artifact.germain-morin.le-plus-ancien-comes-ou-lectionnaire-de-leglise-romaine.1910-revue-benedictine-volume-27.ia-djvu-ocr-1a7d549e"
+loci = ["Revue Benedictine 27, printed pp. 62-63, the Wuerzburg epistle list, items CLI-CLIII and Morin's note on CLIII = optical-layer physical lines 3805-3915"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:ab6e92b7dd8b1785805f5cce2c6a3b1152aceac398c3e1b0f00b032cd4a76742"
+context = "Transmission of the Epistle. The tracked layer's SHA-256 was recomputed and matched (1a7d549e...488ac2). Item CLIII and Morin's note on it were read on the Internet Archive page image revuebenedictineabbmared27 leaf n74 = printed p. 63, unregistered, digest in research/scope.md section 6.3: after the September Ember Saturday's lessons (item CLII, p. 62, read in the layer only, including Ex 32:11-14, Moses' intercession), 1 Cor 1:4-8 stands with the 1962's exact extent as the second lesson under In nat. angeli, and Morin notes that in Alcuin's lectionary, as in the Roman missal of his day, it is assigned to the Sunday after the Ember days. A placement, read as Morin prints the list; no manuscript was opened and nothing about a compiler is inferred."
+
+[[bindings]]
+source_id = "artifact.germain-morin.liturgie-et-basiliques-de-rome-au-milieu-du-viie-siecle.1911-revue-benedictine-volume-28.ia-djvu-ocr-3de8a598"
+loci = ["Revue Benedictine 28, printed pp. 315-316, the Wuerzburg gospel list from Ebd. I to Ebd. IIII post natale sancti Cypriani = optical-layer physical lines 19716-19789"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:b3d01167fe1ab7b7dc0d326bd61a9ae6dd23529efdd29c3e526d23e95c419fff"
+context = "Transmission of the Gospel. The tracked layer's SHA-256 was recomputed and matched (3de8a598...c61c90f); pp. 315-316 were read on the Internet Archive page images revuebenedictineabbmared28 leaves n326 and n327, unregistered, digests in research/scope.md section 6.3. Mt 9:1-8 (Ascendens Ihs. in nauicula ... glorificauerunt qui dedit talem potestatem hominib.) stands at Ebd. III post nt. sci. Cypriani; the September Ember week falls between Ebd. I (Lk 14:1) and Ebd. II, the Sunday at Sts Cosmas and Damian, whose gospel is Mt 22 (the Sadducees); Ebd. IIII is Mt 22:2. Tertia post natale Sancti Cypriani is the name Schuster gives the 1962's Eighteenth Sunday. A placement, read as Morin prints the list."
+
+[[bindings]]
+source_id = "artifact.andre-wilmart.le-comes-de-murbach.1913-revue-benedictine-volume-30.ia-djvu-ocr-e3bbfad4"
+loci = ["Revue Benedictine 30, printed p. 50, Murbach items CXXXIIII-CXL = optical-layer physical lines 3615-3670"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5d250df571f670201375047ab174e19c28617fb45a3e6bfc01fdf0f2a576a808"
+context = "Transmission of the Epistle and Gospel in a Frankish comes. The tracked layer's SHA-256 was recomputed and matched (e3bbfad4...845e2e); p. 50 was read on the Internet Archive page image revuebenedictineabbmared30 leaf n63, unregistered, digest in research/scope.md section 6.3, where the layer's xvint is XVIIII. Item CXXXVII, Ebd. XVIIII post pentect., the first Sunday after the September Ember items, pairs 1 Cor 1:4 with Mt 22:34 (the Sadducees); item CXXXVIIII, Ebd. XX, pairs Eph 4:23 with Mt 9:1. A placement, read as Wilmart prints it."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-30.paris-1846.ia-djvu-text-dd20c7b3"
+loci = ["Liber Comitis, the Sundays of the seventh month round the September Ember week = physical lines 41945-42175", "the anonymous commentary on 1 Corinthians, at 1 Cor 1:4-8 = physical lines 58230-58340, located and not used"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:e9196de624cd2450dfabd6746ed95bd69e6458145b55feacd39094f674728032"
+context = "Migne's PL 30, spuria of Jerome, in the tracked layer (SHA-256 recomputed and matched, dd20c7b3...fdf0c9), read in the layer only; no page image was opened. The Liber Comitis sets 1 Cor 1:4 ... usque adventus Domini nostri Jesu Christi with Mt 22 (Accedentes ad Jesum Sadducei) at the Dominica mensis VII before the September Ember week, and Eph 4:23 with Mt 9 (Ascendens Jesus in navicula, usque potestatem talem hominibus) at the Dominica mensis VII after the Ember Saturday. The volume also carries an anonymous commentary on 1 Corinthians whose lemma on v. 4 stands at lines 58296-58297; no library record names it or its author, so it is recorded in research/scope.md section 3.6 as a located lead and no reading is taken from it."

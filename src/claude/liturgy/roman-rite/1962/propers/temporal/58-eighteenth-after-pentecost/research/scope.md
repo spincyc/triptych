@@ -29,8 +29,27 @@ Athanasius on Pss 95 and 101, Theodoret on 1 Cor 1:4–8, Bellarmine on all thre
 psalms, Augustine's own Latin in PL 37 (including Ps 121, which no tracked Latin
 carries), Aquinas's lectura on Mt 9:1–8, Cornelius a Lapide on Ex 24:4–8, and — as
 documented reception of the compilation, not as exegesis — Rupert of Deutz and
-Guéranger on this Sunday's Mass. The new § 2.7, § 3.11, § 4.6 and § 4.7, and the
+the continuation of Guéranger's *Liturgical Year* on this Sunday's Mass. The new § 2.7, § 3.11, § 4.6 and § 4.7, and the
 rewritten §§ 3.2–3.8, 4.1–4.5, 5.2, 6.3 and 10, carry the result.
+
+**Re-entered a third time on 2026-09-22**, after a third research review found
+four defects: a registered whole-volume layer (PG 124) recorded as holding
+Theophylact's John only, when it carries his commentary on 1 Corinthians; the
+registered liturgical commentators on this Mass other than Rupert left unread,
+two of them recorded falsely as having no registered route; every reading from
+*The Liturgical Year* vol. XI put in Guéranger's mouth, when that volume is the
+posthumous continuation; and a claim that the Gospel–Offertory pairing is "the
+1962 book's and not ancient", which no evidence supported. This pass read
+Theophylact on 1 Cor 1:4–8 in PG 124; read Bl. Ildefonso Schuster, Durandus,
+Sicard, Honorius, Berno and the Micrologus on this Mass, with the continuation;
+read the transmission lists the library registers — the Würzburg epistle and
+gospel lists, the Comes of Murbach and the *Liber Comitis* of PL 30 — at this
+Sunday's readings; re-checked every "no registered route" and "only … is held"
+statement against the artifact records of that author's registered works,
+reading their provenance and extent and, where a record did not say, the
+volume's own table of contents; and ran `commentary-work-index formulary` for
+this Mass, which did not exist on the earlier passes. §§ 2.7, 3.1, 3.5–3.8,
+3.11, 4.2, 4.3, 4.5–4.7, 5.1.7, 5.2, 6.3, 9 and 10 carry the result.
 `ARGS.research_handoff` is `none`; no handoff dossier was supplied. Nothing below
 is taken from the other provider's leaves, from any postconciliar record, or from
 this provider's neighbouring Sundays, except where a neighbouring Sunday's printed
@@ -395,17 +414,81 @@ The 1862 Pustet prints this formulary complete, in the same order, at its pp.
 there. The collation is in `propers/verified.md`; the one real spelling difference
 is `expectántibus` (1862) for `exspectántibus` (1962).
 
-### 2.7 Where the Gospel stood: Rupert of Deutz's books
+### 2.7 Where the Gospel and the Epistle stood: the lists, and the commentators' books
 
 §§ 2.1–2.3 place the oration-set and the chant-set; this section places the
-Gospel, which neither sacramentary nor gradual carries. **Read on the page images**
-of Migne, PL 170, cols. 325–328 (Internet Archive `patrologiaecursu0170mign`,
-leaves n168 and n169, unregistered, digests in § 6.3), located in the tracked
-optical layer `artifact.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.ia-djvu-ocr-2e2ca850`
-(SHA-256 recomputed and matched, `2e2ca850…ed376`) at physical lines 23431–23519.
+Gospel and the Epistle, which neither sacramentary nor gradual carries. It has two
+kinds of evidence and keeps them apart: **transmission lists** (a capitulary of
+gospels, an epistle list, two *comites*), which say which reading a book set at
+which place; and **liturgical commentators**, who say which Mass their books gave
+them and then expound it (§ 3.11). Neither kind says who moved a reading, when, or
+why, and nothing below infers it.
 
-Rupert, *De divinis officiis* XII, **caput XVIII**, headed *Dominica decima octava
-post Pentecosten* (col. 326), expounds a Mass whose chants and Epistle are this
+**The transmission lists, read at this Sunday's readings.** Every list below is a
+registered, tracked optical layer; each placement was read in the layer and, for
+the three Revue Bénédictine editions, then on the page image named, unregistered
+and retained nowhere (digests in § 6.3). The *Liber Comitis* was read in the PL 30
+layer only.
+
+| Witness | Where 1 Cor 1:4–8 stands | Where Mt 9:1–8 stands |
+| --- | --- | --- |
+| **Würzburg epistle list**, Morin, *Revue Bénédictine* 27 (1910), item **CLIII**, printed p. 63 (layer lines 3913–3915; leaf n74) | Immediately after the September Ember Saturday's lessons, as the second lesson (*cuius supra*) under *In nat. angeli*, with the incipit *FF gratias ago deo meo semper pro uobis in gratia dei usq. sine cremine in die aduentus dni ni ihu xpi* — the 1962's own extent. **Morin's note on CLIII**: *Cette péricope ne paraît point se rattacher spécialement à la dédicace de S. Michel : dans le lectionnaire d'Alcuin, comme au missel romain actuel, elle est assignée au dimanche qui suit les Quatre-Temps.* No Sunday between the Ember Saturday and the feast is given a lesson | — (an epistle list) |
+| **Würzburg gospel list**, Morin, *Revue Bénédictine* 28 (1911), printed pp. 315–316 (layer lines 19716–19789; leaves n326, n327) | — (a gospel list) | *EBD. III POST NT. SCI. CYPRIANI … Mt. k. LXX. Ascendens Ihs. in nauicula transfretauit usq. glorificauerunt qui dedit talem potestatem hominib.* The Ember week falls between *Ebd. I post nt. sci. Cypriani* (Lk 14:1) and *Ebd. II*, the Sunday *ad scos Cosmae et Damiano*, whose gospel is Mt 22 (*Accesserunt ad Ihm. sadducaei*; Morin's note 3 on its ending). *Ebd. IIII* is Mt 22:2, the wedding feast |
+| **Comes of Murbach**, Wilmart, *Revue Bénédictine* 30 (1913), printed p. 50 (layer lines 3641–3659; leaf n63) | Item CXXXVII, ***Ebd. XVIIII post pentect.***, *I Cor. Gratias ago [I, 4]*, with *Mat. … Accesserunt ad I. Sadducaei [XXII, 34]* — the first Sunday after the Ember week in that list | Item CXXXVIIII, *Ebd. XX post pentecost.*, *Eph. Renovamini autem [IV, 23]* with *Mat. LXX Ascendens I. in naviculam [IX, 1]* |
+| ***Liber Comitis*** printed among Jerome's spuria, PL 30 (tracked layer lines 41994–42080; no page image opened) | *Dominica mensis VII*, the Sunday **before** the September Ember week: *Fratres, gratias ago Deo meo, usque adventus Domini nostri Jesu Christi*, with Mt 22 (*Accedentes ad Jesum Sadducei*) | *Dominica mensis VII* after the Ember Saturday: *Fratres, renovamini spiritu mentis vestrae* (Eph 4:23) with *Ascendens Jesus in navicula, usque potestatem talem hominibus* |
+
+The ordinal the finding that prompted this pass read in the Murbach layer as
+*xvint* is ***XVIIII*** on the page image. What the four lists show, as fact and no
+further: in the seventh-century Roman gospel list Mt 9:1–8 is a Sunday gospel
+counted from St Cyprian's feast, the *third* after it — the name Bl. Schuster gives
+the 1962's Eighteenth Sunday, *Tertia post natale Sancti Cypriani* (§ 3.11); in the
+Würzburg epistle list 1 Cor 1:4–8 has the 1962's exact extent and stands after the
+September Ember Saturday with no Sunday of its own, which is what Morin's note and
+Schuster's *Dominica vacat* both describe; and in the Murbach comes and the *Liber
+Comitis* the two readings stand at **different** Sundays — 1 Cor 1:4 with Mt 22,
+Mt 9 with Eph 4:23. **No list here gives the 1962's pairing of 1 Cor 1:4–8 with
+Mt 9:1–8**, and none gives the chants beside its readings, so none shows when the
+Gospel and the chant-set with its Offertory first stood together. Morin, Wilmart
+and Migne's comes are editions of the lists, read as those editors print them; no
+manuscript was opened.
+
+**The liturgical commentators' books.** `tools/commentary-work-index formulary
+--calendar roman-1962 --mass pentecost-18`, run on 2026-09-22, compares each
+registered commentator's Mass with this formulary element by element and lists
+fourteen loci (a finding aid; each was then read at its locus, § 3.11). What each
+commentator's own heading and Gospel are:
+
+| Commentator (standing, per `src/sources/inventories/author-standing-v1.toml`) | His heading | His Gospel for the Mass with *Da pacem* and 1 Cor 1 | Where Mt 9:1–8 stands in his book |
+| --- | --- | --- | --- |
+| **Rupert of Deutz**, *De div. off.* XII.18–19 (ecclesiastical writer) | *Dominica decima octava post Pentecosten* | Mt 23, the chair of Moses | XII.19, the Nineteenth, with Eph 4 and *Salus populi* |
+| **Honorius**, *Gemma animae* IV.84–86 (ecclesiastical writer) | *Dominica decima octava, «Da pacem», sub lege* | Mt 22, the two precepts | IV.86, the Nineteenth, *Salus populi* |
+| **Sicard of Cremona**, *Mitrale* VIII.18–19 (ecclesiastical writer) | *Dominica decima octava post Pentecosten* | Mt 22 (*Accesserunt*), *vel secundum alios* Mt 23 | VIII.19, the Nineteenth |
+| **William Durandus**, *Rationale* VI.135–136 (ecclesiastical writer) | *De dominica decimaoctava post Pentecosten* | *in quibusdam Ecclesiis* Mt 23; *Euangelium in quibusdam Ecclesiis* Mt 22 | VI.136, the Nineteenth, *in quibusdam Ecclesiis* |
+| **Berno of Reichenau**, *Libellus* V (ecclesiastical writer) | the vacant Sunday *finito septimi mensis jejunio* | Mt 23, the chair of Moses (he names no Epistle) | *In sequenti Dominica*, with *Salus populi* |
+| **Bl. Ildefonso Schuster**, *The Sacramentary* III pp. 167–170 (Blessed) | *Eighteenth Sunday after Pentecost. Tertia post natale Sancti Cypriani* | **Mt 9:1–8** — every element the 1962's | — |
+| **The continuation of Guéranger's *Liturgical Year***, Time after Pentecost II (1909), pp. 393–409 (its writer an ecclesiastical writer; § 3.11) | *The Eighteenth Sunday after Pentecost* | **Mt 9:1–8** | — |
+
+So five registered commentators, the earliest of them Berno in the eleventh century
+(`composed` on his work record) and the latest Durandus (d. 1296, by the standing
+registry), give the Mass of *Da pacem* and 1 Cor 1 a Gospel from Mt 22 or Mt 23
+and put the paralytic at the Nineteenth Sunday; Sicard and Durandus each name
+**both** Gospels, as the use of different churches (*secundum alios*, *in quibusdam
+Ecclesiis*). The two modern commentators, who expound the Roman Missal as it was
+printed in their day, read the 1962's own pairing. The continuation itself says, at
+printed p. 402: *In the thirteenth century, in many Churches of the west, the
+Gospel for to-day was that wherein our Lord speaks of the scribes and pharisees as
+seated on the chair of Moses*, and cites
+Rupert for it; that dating, and its qualifier *in many Churches of the west*, are
+the continuation's (or its translator's), and neither Rupert's text nor anything
+else here dates the usage.
+
+**Rupert, read on the page images** of Migne, PL 170, cols. 325–328 (Internet
+Archive `patrologiaecursu0170mign`, leaves n168 and n169, unregistered, digests in
+§ 6.3), located in the tracked optical layer
+`artifact.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.ia-djvu-ocr-2e2ca850`
+(SHA-256 recomputed and matched, `2e2ca850…ed376`) at physical lines 23431–23519.
+*De divinis officiis* XII, **caput XVIII**, headed *Dominica decima octava post
+Pentecosten* (col. 326), expounds a Mass whose chants and Epistle are this
 formulary's — Introit *Da pacem*, Epistle *Gratias ago Deo meo pro vobis* (1 Cor 1),
 Gradual verse *Fiat pax in virtute tua*, Offertory *Sanctificavit Moses* **with its
 verse** *Videns Moses, procidens adoravit, dicens: Obsecro, Domine, dimitte peccata
@@ -424,26 +507,40 @@ ambulavero* and *Tu mandasti* — which is the chant-set, and the Epistle, that 
 
 What this adds to § 2.5, as documented fact and within its bound:
 
-- In the books Rupert expounds, the paralytic of Mt 9 stood **one Sunday later**
-  than in the 1962, with the Nineteenth's chants and Epistle, and this Sunday's
-  chants and Epistle stood with the Gospel of the chair of Moses. So the Gospel,
-  like the orations and the chants, travelled separately from the rest of the
-  formulary.
-- **The Offertory once had verses**, and the first of them is Moses' intercession
-  for the people's sin, *Obsecro, Domine, dimitte peccata populi tui*, which Rupert
-  sets beside the golden calf and *Dimitte me, ut irascatur furor meus* (he cites
-  *Exod. xxxii*; the verse's own scriptural sources were not traced here). Guéranger prints both ancient verses in full (vol. XI, printed pp. 407–408;
-  § 3.11). The 1962 prints the antiphon alone.
-- Guéranger (vol. XI, printed pp. 393–394) records that this Sunday follows the
-  September Ember days, that medieval liturgists discussed its having replaced the
-  *Dominica vacat* after ordinations, and that 1 Cor 1 interrupts the run of
-  Ephesians epistles; and (p. 402) that the Gospel was once the chair of Moses,
-  citing Rupert. **His translation dates that usage to "the thirteenth century"**;
-  Rupert's own text gives no date, the dating is Guéranger's or his translator's,
-  and nothing here rests on it.
-- **It does not establish** when, where or by whom the Gospel was moved, and no
-  such claim is made. Rupert is one witness to one set of books; no lectionary,
-  comes or evangeliary was opened.
+- In the books the lists and five of the seven commentators witness, the paralytic
+  of Mt 9 stood apart from this Sunday's Epistle — in the two Frankish *comites*
+  and in all five commentators' books, one Sunday later than in the 1962 — and this
+  Sunday's chants and Epistle stood with a Gospel from Mt 22 or Mt 23. So the
+  Gospel, like the orations and the chants, travelled separately from the rest of
+  the formulary. Schuster and the continuation read the 1962's pairing, and the
+  gospel list of Würzburg puts Mt 9 at the Sunday Schuster names.
+- **The Offertory once had verses.** Rupert gives the first, Moses' intercession
+  for the people's sin, *Obsecro, Domine, dimitte peccata populi tui*, and sets it
+  beside the golden calf and *Dimitte me, ut irascatur furor meus* (he cites *Exod.
+  xxxii*); Berno names two verses by their incipits, *Locutus est Dominus ad Moysen*
+  and *Oravit Moyses Dominum* (PL 142, col. 1070, page image); Schuster describes
+  the ancient Offertory as Moses' intercession for the apostate people and his
+  prayer to see God's glory, citing *Exod. xxxiii, 13–23*; and the continuation
+  prints the ancient verses in full (vol. XI, printed pp. 407–408). The Würzburg
+  epistle list's Ember Saturday lessons include Ex 32:11–14, *orauit moyses dnm
+  deum suum … placatus est dns* (item CLII, RB 27 printed p. 62, layer line 3851, read in the layer only), the
+  intercession the verses sing. The verses' own scriptural sources were not traced
+  further here. The 1962 prints the antiphon alone.
+- The continuation (vol. XI, printed pp. 393–394) records that this Sunday follows
+  the September Ember days, that *the liturgists of the Middle Ages* discussed its
+  having replaced the vacant Sunday after ordinations — its footnotes 1 and 2 cite
+  *BERNO AUG., cap. v, etc.* and *MICROLOG., cap. xxix*, both of which the library
+  registers and this pass read (§ 3.11, § 5.2) — and that 1 Cor 1 interrupts the run
+  of Ephesians epistles. Schuster (p. 167) says the same of the Epistle and calls the
+  interpolation *fairly ancient, since it is recorded by Paul the Deacon*; that
+  attribution is Schuster's and no homiliary was opened to check it.
+- **It does not establish** when, where or by whom the Gospel was set beside this
+  Epistle and these chants, and no such claim is made — in either direction. The
+  lists show that the 1962's two readings stood at different Sundays in the
+  Frankish *comites* and that Mt 9 was a Sunday gospel counted from St Cyprian in
+  the Roman list; the commentators show which Gospel each of their books had. None
+  of this makes the 1962's pairing either early or late, and § 10.16 carries the
+  bound to the studies.
 
 ---
 
@@ -468,10 +565,17 @@ from him are recorded at § 3.5. Corpora searched are named in §5.
   Ecclesiasticum*), Walafrid Strabo (*Glossa ordinaria*), Hugh of Saint-Cher,
   Nicholas of Lyra, Denis the Carthusian and Cornelius a Lapide, all at chapter
   granularity and all as leads (`discover --passage "Sir 36:18"`, re-run on
-  2026-09-22, returns exactly these six). None has a registered route: the library
-  holds a Lapide for the Pentateuch and the Pauline epistles only, Hugh for three
-  single psalm chapters, and no record for the other four; no registered Migne
-  volume prints any of them. None was reached in text.
+  2026-09-22, returns exactly these six). None has a registered route. **Re-checked
+  on the third re-entry against each author's artifact records, not their work
+  titles**: the library's three a Lapide artifacts under the Pauline commentary
+  are the 1614 Antwerp *Commentaria in omnes D. Pauli epistolas* (its layer, its
+  facsimile and the item's metadata) and its two under the Pentateuch are the 1700
+  folio's layer and a checked-text excerpt on Gen 15, so no volume of his reaches
+  Ecclesiasticus; Hugh's three artifacts are single chapters of the Morard
+  *Postilla* on Pss 83, 94 and 117, each record saying the whole-Psalter route
+  was refused; and Rabanus, Walafrid, Lyra and Denis have no record at all. No
+  whole-volume layer in the set § 5.2 lists prints any of the six. None was
+  reached in text.
 - **Textual state** (`propers/verified.md`): the antiphon is not the Clementine's
   wording and not the Greek's. This is the element with the least reception and
   the most textual divergence, and the study must say so rather than fill it.
@@ -937,23 +1041,67 @@ from him are recorded at § 3.5. Corpora searched are named in §5.
   - **Read through an unregistered delivery**: Thomas Aquinas, *Catena aurea in
     quatuor Evangelia* — the library holds the *Catena* only *in Lucam*; the
     *Catena in Matthaeum* was read on Corpus Thomisticum (§ 6.3).
-  - **No registered route**: Hilary, *Commentarius in Matthaeum* (the library holds
-    his *Tractatus super Psalmos* only, and no PL 9); Rabanus Maurus, *Commentariorum
-    in Matthaeum libri VIII*; Albert the Great, *Super Matthaeum*; Chromatius,
-    *Tractatus in Matthaeum*; Paschasius Radbertus, *Expositio in Matheo* (two
-    rows); Theophylact, *Enarratio in Evangelium Matthaei* (the library holds his
-    John only); Bruno of Segni, *Commentaria in Matthaeum*; Walafrid Strabo,
-    *Glossa ordinaria*; Nicholas of Lyra; Denis the Carthusian (two rows); Juan
-    Maldonado; Hugh of Saint-Cher (the library holds three single psalm chapters
-    of his *Postilla*, restricted, and no Gospel); Cornelius a Lapide,
-    *Commentaria in Scripturam Sacram* (the library holds his Pentateuch and his
-    Pauline epistles, and no Gospel). None of the registered Migne volumes — PL 24,
-    26, 30, 37, 56, 70, 78, 92, 105, 170; PG 27, 29, 55, 57, 80, 82 — contains any
-    of these works on Matthew (PG 57 carries Chrysostom's own Greek homilies, § 6.3).
+  - **No registered route**, each re-checked on the third re-entry against the
+    artifact records of that author's registered works and their stated extent:
+    Hilary, *Commentarius in Matthaeum* (his registered artifacts are the CSEL 22
+    *Tractatus super Psalmos*, whose record gives its extent as Pss 1, 2, 9, 13,
+    14, 51–69, the title of 91 and 118–150, with four single leaves of it; the
+    library's NPNF2-9 record carries his *De Trinitate*; no PL 9 is registered);
+    Rabanus Maurus, *Commentariorum in Matthaeum libri VIII* (no record);
+    Albert the Great, *Super Matthaeum* (no record); Chromatius, *Tractatus in
+    Matthaeum* (no record); Paschasius Radbertus, *Expositio in Matheo* (two rows;
+    no record); Theophylact, *Enarratio in Evangelium Matthaei* — **the library's
+    one Theophylact artifact is the whole-volume layer of PG 124**, whose table of
+    contents (physical lines 211–232, read on the third re-entry) lists the
+    commentary on the Pauline epistles from Romans to 2 Thessalonians, and the
+    containment inventory adds the continuation of the John commentary from
+    Jn 7:52 at the head of the volume; the Matthew commentary is in PG 123, which is not
+    registered; Bruno of Segni, *Commentaria in Matthaeum* (no record); Walafrid
+    Strabo, *Glossa ordinaria* (no record); Nicholas of Lyra (no record); Denis the
+    Carthusian (two rows; no record); Juan Maldonado (no record); Hugh of
+    Saint-Cher (three restricted single chapters of the Morard *Postilla*, on
+    Pss 83, 94 and 117; no Gospel); Cornelius a Lapide, *Commentaria in Scripturam
+    Sacram* (the 1614 Pauline and 1700 Pentateuch commentaries only, § 3.1; no
+    Gospel). No whole volume in the registered set § 5.2 lists contains any of
+    these works on Matthew; PG 57 carries Chrysostom's own Greek homilies (§ 6.3).
+  - **Aquinas's *Catena aurea***: the library's two artifacts of it are Corpus
+    Thomisticum pages of the *Catena in Lucam*, capita 4–8 and 14–18, both
+    restricted; the *Catena in Matthaeum* is held in no state (§ 6.3).
+  - **Not an index lead, found on the third re-entry: St Anthony of Padua's Sunday
+    sermon on this Gospel.** The library registers Paul Spilsbury's English of
+    St Anthony of Padua's Sunday and festival sermons,
+    `artifact.anthony-of-padua.sermons-for-sundays-and-festivals.2026-09-05-spilsbury-hosted-compilation.compilation-pdf-3699ff43`
+    (restricted; re-fetched 2026-09-22 and matched, `3699ff43…6721be`). Its sermon
+    headed *Nineteenth Sunday after Pentecost* takes Mt 9:1 as its Gospel, **with
+    another Mass round it** — the Introit *Omnia quae fecisti* and the Epistle
+    Eph 4:23, which Anthony concords clause by clause with the Gospel's three parts
+    — so it is reception of this Gospel as a Sunday Gospel and of nothing else in
+    this formulary. He reads the boat allegorically as the Cross and morally as the
+    penitent's descent and ascent; the four who carry the paralytic as humility,
+    poverty, patience and obedience, who uncover the roof by contrition and let the
+    man down in confession; *seeing their faith* through the Gloss, that the sins
+    were forgiven by the merits of others; and v. 8 as the crowd's fear and praise,
+    which he joins to his Introit's confession of sin. He gives v. 8 no ministerial
+    sense. The translation is under the translator's copyright, so this is a
+    summary and nothing is quoted; the Latin of this sermon is not registered.
+    Anthony is not in the standing registry, and this record claims no standing for
+    him beyond what the library records.
   - **So the later reception of the Gospel is no longer a negative.** It has one
-    Doctor read at his own locus. Beyond him it is bounded by the registered
-    library and that index, and by nothing wider; no external delivery of an
-    unregistered lead was tried (§ 5.2).
+    Doctor read at his own locus, and Anthony's Sunday sermon beside him. Beyond
+    them it is bounded by the registered library and that index, and by nothing
+    wider; no external delivery of an unregistered lead was tried (§ 5.2).
+  - **Documented reception of the compilation at this Gospel**, kept apart from
+    the exegesis above (§ 3.11): Bl. Ildefonso Schuster, commenting on the 1962
+    Mass itself, reads v. 8 of the power of remitting sins *communicated to men —
+    that is, to the apostles and to their successors in the priesthood*; the
+    continuation of *The Liturgical Year* reads the present Gospel of the pastors'
+    *prerogative … of forgiving sins*; and, where their books put this Gospel at the
+    Nineteenth Sunday, Rupert reads the bearers as prelates who offer the sinner by
+    prayer, Durandus reads the paralytics as healed *merito fide Praelatorum*,
+    Honorius reads *civitatem suam* as Jerusalem to which the people returned with
+    Jesus the priest, Sicard sets Christ the healer beside Cyrus who freed the
+    captives, and Berno reads the healing and the forgiveness into the next
+    Sunday's Collect.
 - **Not reached:** Hilary's *Commentarius in Matthaeum* VIII at its own locus. He
   is the one Father of the four whose Gospel reading is still reported by another
   — by the *Catena* on vv. 1–2, and now also by Aquinas's lectura on v. 8. See
@@ -1011,6 +1159,85 @@ from him are recorded at § 3.5. Corpora searched are named in §5.
     showed them as for the present liable to charges." After v. 9 he says, in a
     sentence read in the layer only (lines 16787–16789), that having smoothed their
     hearing with praises and blessings Paul now begins the accusation.
+- **Direct, in Greek with Migne's facing Latin: Theophylact of Ohrid**, *In
+  epistolam I ad Corinthios*, caput I, on vv. 4–8, **PG 124, cols. 565–568**. The
+  registered whole-volume layer
+  `artifact.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864.ia-djvu-ocr-9a1fc730`
+  was fetched on 2026-09-22 and its SHA-256 recomputed and matched (`9a1fc730…c5e66c`,
+  3,544,388 bytes); its table of contents (lines 211–232) lists *Commentarius in
+  omnes divi Pauli Epistolas … in Epistolam I ad Corinthios 563*, the heading *IN
+  EPISTOLAM I AD CORINTHIOS* stands at line 44683 and v. 7 at 45045. The layer's
+  recognition of vv. 4–6 is past reading, so **every word below was read on the
+  page images** of the same Internet Archive item, leaves n282 (cols. 565–566) and
+  n283 (cols. 567–568), unregistered, digests in § 6.3; the Latin is Migne's facing
+  translation, and the Greek words are from the images. What he says:
+  - v. 4 (Latin col. 566, Greek col. 565): *Gratos nos esse docet … Gratiarum enim actio propter gratiam
+    fit: gratia autem non est debitum, neque compensatio. Atque hoc Corinthiorum
+    fastum deprimit* — the Greek *ἡ δὲ χάρις οὐκ ὀφειλή, οὐδὲ ἀμοιβή. Τοῦτο δὲ τὴν
+    ἔπαρσιν τῶν Κορινθίων καθαιρεῖ*; and on *super gratia Dei*, *Erudit per hoc
+    ipsos Corinthios, Deo gratias semper agere, et non propriis operibus.*
+  - vv. 5–6: the riches are God's and given through the Son, *qua, quaeso, fronte
+    vos ingrati, homines vobisipsis in doctores asciscitis?*; the testimony was
+    confirmed *non … per externam sapientiam … sed per signa atque dona* (col. 567).
+  - v. 7 (col. 567), in the main text: *Si in donis nihil illis deerat, quomodo in
+    procursu carnales eos vocat? Dicendum itaque est, quod neque omnes fuerint
+    spirituales, neque omnes carnales. Quare quae nunc dicit, ad spirituales dicit;
+    illa vero, ad carnales. Vel quod verisimile erat eos in principio omnis generis
+    charismata consecutos, deinceps autem ad socordiam relapsos.* A second passage
+    on v. 7, **printed in square brackets and closed by the words *Cod. Arundel.***
+    — Migne's supplement from a codex, not the main text — gives the same two
+    solutions more fully (*Neque encomia, neque accusationes aeque omnino in omnes,
+    sed pro singulorum meritis … Alii enim ex illis adhuc diligentes, alii
+    negligentes erant*) and a third, that the praises are set in *per
+    administrationem quamdam*, *οἰκονομικῶς*, to open the hearers' ears. On
+    *exspectantibus revelationem* he says the mention of the second coming
+    frightens them: *Nam si Christus revelandus est, quomodo vos alios praesides et
+    praeceptores habetis?*
+  - v. 8 (Latin col. 567, Greek col. 568): *Cum dicit, «Confirmabit», ostendit eos nonnihil concussos, et
+    cum ait: «Sine crimine», significat eos jam criminibus obnoxios* — the Greek
+    *σαλευομένους* and *ἐγκλήμασι νῦν ὑποκειμένους* on the image; and the name of
+    Christ is set here oftener than in any other letter so that the Corinthians
+    remember by whom they were saved and whose name they bear: *Nam Christiani a
+    Christo, non ab alio quopiam humano nomine.*
+  - **So Theophylact stands with Chrysostom and Theodoret at v. 8**, reading
+    *confirmabit … sine crimine* as showing them shaken and already liable to
+    charges, **and with the other pair at v. 7**, where he answers how Paul can
+    praise men he will call carnal by dividing the body — the praise is for the
+    spiritual, the blame for the carnal. The bracketed Arundel passage is reported
+    as Migne prints it and is not given as Theophylact's own main text.
+- **Direct, Latin, and not an index lead: Ambrosiaster**, *Commentaria in
+  Epistolam ad Corinthios Primam*, on vv. 4–8. The library registers
+  `artifact.ambrosiaster.commentaria-in-epistolam-ad-corinthios-primam.latin-migne-pl17-wikisource-web-2026-07-28.wikisource-html`
+  (remote), a Latin Wikisource transcription of PL 17, cols. 185–293. The same URL
+  was fetched on 2026-09-22 and **did not return the registered bytes**: the
+  response is 299,710 bytes, SHA-256
+  `8d6c0e35af1c3fe96a96b207be4eec1afc9b0428c98e9ccc2d2fe2767ca040d5`, against the
+  registered 299,422 bytes and `25a67a20…f170`. The page has been revised since
+  registration, so what was read is an unregistered later delivery of the
+  registered transcription, and it is not bound. What it gives: at v. 4 Paul writes
+  to one congregation of two peoples, *In una enim plebe duobus populis scribit, ut
+  cum arguit, qui male versantur, sciant sibi haec scripta: similiter et cum laudat,
+  sciat qui in regula manet, ad se haec dici*; the grace given is that *qui credit
+  in Christum, salvus sit sine opere: sola fide gratis accipit remissionem
+  peccatorum*; and at v. 8 the Apostle is confident of those he praises, *quia
+  inviolati usque ad futurum judicium erunt … Cum hos laudat, illos qui in errore
+  pseudoapostolorum depravati fuerant, invitat: dum enim horum fidem praedicat,
+  illos ad poenitentiam vocat.* So Ambrosiaster reads v. 8 as a promise to the sound
+  part and the praise as a call to the rest — the division a Lapide and Aquinas
+  make. The attribution of the commentary is the
+  conventional one its work record gives, *Ambrosiaster*, and no more is claimed;
+  the text is a transcription of Migne and not a critical edition.
+- **Located and not used: the Pauline commentary printed among Jerome's spuria in
+  PL 30.** The tracked PL 30 layer
+  (`artifact.jacques-paul-migne.patrologia-latina-volume-30.paris-1846.ia-djvu-text-dd20c7b3`)
+  carries a commentary on 1 Corinthians whose lemma *Gratias ago Deo meo semper pro
+  vobis, in gratia Dei* stands at lines 58296–58297 (*Primum solito laudando provocat
+  ad profectum*), and v. 8 at 58267–58273, the layer printing the two columns out
+  of reading order (*Orat pro ipsis, ut usque ad finem vitae
+  suae irreprehensibiles … permaneant*). Neither the library's work record for
+  PL 30 nor the containment inventory names this commentary or its author — the
+  inventory lists only the *Liber Comitis* in the volume — so no attribution could
+  be carried from it, and it is recorded as a located lead and not as a witness.
 - **Direct, later, a Doctor: Thomas Aquinas**, *Super I ad Corinthios*, cap. 1
   lect. 1, in the part the work record says survives from Thomas's own hand, read
   on the registered Corpus Thomisticum page (re-fetched 2026-09-22, digest matched;
@@ -1061,26 +1288,53 @@ from him are recorded at § 3.5. Corpora searched are named in §5.
 - **What the index returns for the Epistle, and what the library holds.**
   `tools/commentary-work-index discover --passage "1 Cor 1:4"` returns fourteen
   rows, all at chapter granularity. **Read**: Chrysostom (*Hom. in 1 Cor.* 2, on a
-  public delivery; § 6.3); Theodoret (PG 82, above); Thomas Aquinas, *Super
+  public delivery; § 6.3); Theodoret (PG 82, above); **Theophylact, both rows** (*In
+  omnes D. Pauli apostoli epistolas enarrationes* and *Expositio in epistolas sancti
+  Pauli*, one commentary under two titles, held inside the PG 124 whole-volume
+  layer, above — an earlier draft of this record called both rows unreached because
+  "John only is held", which the layer's own provenance, *the whole Patrologia
+  Graeca volume 124*, and its table of contents contradict); Thomas Aquinas, *Super
   Epistolas S. Pauli lectura* (Corpus Thomisticum, above); Cornelius a Lapide
   (*Commentaria in Scripturam Sacram* in the index; the registered Pauline
-  volume, above). **No registered route**: Origen, *Fragmenta* (the library holds
-  *Contra Celsum*, *De principiis* and the *Selecta in Psalmos*); Theophylact, two
-  rows (John only is held); Peter Lombard, *Collectanea* (the *Sententiae* only);
-  Rabanus Maurus, *Enarrationes in epistolas*; Hugh of Saint-Cher; Nicholas of
-  Lyra; Denis the Carthusian, two rows; Willem Hessels van Est. None of these is
-  printed in a registered Migne volume. The later reception of the Epistle is
-  therefore four witnesses read at their loci, bounded beyond them by the
-  registered library and that index.
-- **Where the four stand at v. 8, and it is a real division.** Chrysostom and
-  Theodoret read *confirmabit … sine crimine* as showing the Corinthians still
-  liable to reproof — for both the praise of vv. 4–7 is the physician's
-  preparation for the cure, though Theodoret insists it is also true. Aquinas and a
-  Lapide read v. 8 as a promise to a body most of which was sound — *sine peccato
-  mortali* (Aquinas), *toti Ecclesiae, in qua plerique erant sancti et inculpati*
-  (a Lapide) — and Aquinas refers the riches to the more perfect in whom the rest
-  share by charity. Theodoret and Aquinas agree that the thanksgiving is meant to
-  make the correction bearable. § 4.7 records the division.
+  volume, above). **No registered route**, each re-checked on the third re-entry
+  against the artifact records of the author's registered works: Origen,
+  *Fragmenta* (his registered artifacts are the GCS *Contra Celsum* volumes 1 and
+  2, two New Advent pages of the ANF4 *Contra Celsum*, two single leaves of PG 12,
+  and the whole-volume layer of PG 12, which
+  its record describes as *Origen's exegetical remains including the Selecta in
+  Psalmos*; that layer, re-fetched and matched (`d37cd225…e87220`), recognizes
+  Migne's Latin as Greek characters and could not be read for a table of
+  contents, and its three hits for *Κορινθ-* at lines 5739, 61440 and 121547 are
+  citations of the letter inside other expositions, not a commentary on it; no
+  commentary of Origen on 1 Corinthians was located there; his *De principiis* has a
+  work record and no artifact); Peter Lombard,
+  *Collectanea* (his one registered artifact is volume 2 of the 1981 Grottaferrata
+  *Sententiae*, restricted; no PL 191 or 192 is registered); Rabanus Maurus,
+  *Enarrationes in epistolas* (no record); Hugh of Saint-Cher (three psalm
+  chapters only, § 3.5); Nicholas of Lyra (no record); Denis the Carthusian, two
+  rows (no record); Willem Hessels van Est (no record). None of these is printed in
+  a whole volume of the registered set § 5.2 lists. **Two witnesses the index does
+  not return** were found on the same sweep and are recorded above: Ambrosiaster,
+  registered, read on a later delivery of the registered page; and the anonymous
+  commentary in PL 30, located and not used. The later reception of the Epistle is
+  therefore five index witnesses read at their loci, with Ambrosiaster beside
+  them, bounded beyond them by the registered library and that index.
+- **Where the six stand at v. 8, and it is a real division.** Chrysostom,
+  Theodoret and Theophylact read *confirmabit … sine crimine* as showing the
+  Corinthians still liable to reproof — *τέως ὄντας ἐγκλήμασιν ὑπευθύνους*
+  (Theodoret), *nonnihil concussos … jam criminibus obnoxios* (Theophylact) — and
+  for all three the praise of vv. 4–7 deflates or prepares, though Theodoret insists
+  it is also true. Ambrosiaster, Aquinas and a Lapide read v. 8 as a promise to a
+  body most of which was sound — *inviolati usque ad futurum judicium erunt*
+  (Ambrosiaster), *sine peccato mortali* (Aquinas), *toti Ecclesiae, in qua
+  plerique erant sancti et inculpati* (a Lapide). **On vv. 4–7 the line runs
+  differently**: Ambrosiaster (*in una plebe duobus populis*), Aquinas (the riches
+  belong to the more perfect), a Lapide (*plerique … sancti*) and Theophylact at
+  v. 7 (*neque omnes fuerint spirituales, neque omnes carnales*) all divide the
+  body, the praise for one part and the blame for another; Chrysostom does not.
+  Theodoret and Aquinas agree that the thanksgiving is meant to make the correction
+  bearable, and Theophylact's bracketed Arundel passage gives that as a third
+  solution. § 4.7 records the division.
 
 ### 3.7 Offertory — the antiphon cited to Ex 24:4–5 (no. 1675)
 
@@ -1099,14 +1353,25 @@ from him are recorded at § 3.5. Corpora searched are named in §5.
     59 is on Ex 23:31 and *interrogatio* 60 on the tabernacle of Ex 25. **He asks
     no question on Ex 24.** A clean negative, bounded by this work.
   - **Cornelius a Lapide**, *Commentaria in Pentateuchum*, below.
-  - **No registered route**: Augustine's *Quaestiones in Heptateuchum* (the
-    library holds none of the *Quaestiones*); Gregory of Nyssa's *De vita Moysis*
-    (the library holds *De hominis opificio* and the *Oratio catechetica*);
-    Isidore; Rabanus; Bede's *De tabernaculo* (the library holds his Luke and
-    Genesis commentaries, and PL 92, which carries neither); Cyril's *Glaphyra*
-    (his John and Luke only); Ephrem; Procopius; Rupert's *De sancta Trinitate*
-    (PL 170, which is registered, carries his *De divinis officiis* and not the
-    *De Trinitate*); Lyra, Denis, Hugh.
+  - **No registered route**, each re-checked on the third re-entry against the
+    artifact records of the author's registered works: Augustine's *Quaestiones in
+    Heptateuchum* (the library's only *Quaestiones* of Augustine is the
+    *Quaestiones evangeliorum*, a PL 35 transcription; its one PL 34 holding is a
+    keyed text of the *De Genesi ad litteram* alone, so the earlier sentence that
+    it holds "none of the *Quaestiones*" is corrected); Gregory of Nyssa's *De vita
+    Moysis* (his registered artifacts are single-work New Advent deliveries of the
+    NPNF2-5 *De hominis opificio* and *Oratio catechetica*; no PG 44 is
+    registered); Isidore (the Lindsay *Etymologiae* layer and three of its leaves
+    only); Rabanus (no record); Bede's *De tabernaculo* (his registered artifacts
+    are the *In Lucam* on Corpus Corporum and a keyed PL 91 text of *In principium
+    Genesis* alone, whose record calls the one wiki page *the whole of it*; the
+    PL 92 whole volume carries Luke and Acts); Cyril's *Glaphyra* (his registered
+    artifacts are the LFC English of John — the volume-1 layer and single-book
+    deliveries of books 4 and 12 — and the Payne Smith English of Luke); Ephrem and Procopius (no record); Rupert's *De sancta
+    Trinitate* (PL 170's own *Elenchus*, layer lines 416–441, read on the third
+    re-entry, lists *De divinis officiis* and his shorter works and not the *De
+    Trinitate*, which Migne prints elsewhere); Lyra, Denis (no record); Hugh (Pss
+    83, 94 and 117 only).
 - **Later reception at the Offertory's own locus: Cornelius a Lapide**,
   *Commentaria in Pentateuchum* (1700 folio), on Ex 24:4–8, in the registered
   optical layer (fetched 2026-09-22, digest matched; physical lines 79138–79245;
@@ -1151,9 +1416,15 @@ from him are recorded at § 3.5. Corpora searched are named in §5.
   subject — in a checked Father at his own locus.
 - **Documented reception of the compilation.** Rupert of Deutz expounds this
   Offertory, with the verse the 1962 no longer prints (*Videns Moses, procidens
-  adoravit … dimitte peccata populi tui*), as the pastor's model of intercession,
-  and Guéranger prints both ancient verses; § 2.7 and § 3.11. That is how the chant
-  was read in the Mass, not what a Father said of Exodus.
+  adoravit … dimitte peccata populi tui*), as the pastor's model of intercession;
+  Durandus, of the prelates who must offer themselves *totos … incensum, et postea
+  multas hostias*; Honorius (*sub lege*) and Sicard, of the people returned from
+  Babylon who must build an altar as Moses did; Honorius (*sub gratia*), of the
+  sacrifice of praise Gregory the Great offered for the people; Berno names two
+  of its old verses; Schuster describes the old verses as Moses' intercession for
+  the apostate people and his prayer to see God's glory; and the continuation of
+  *The Liturgical Year* prints them in full. § 2.7 and § 3.11. That is how the
+  chant was read in the Mass, not what a Father said of Exodus.
 - **Textual state:** the antiphon is a compilation; see `propers/verified.md`,
   *The Offertory's wording*. Its four non-Exodus-24:4–5 clauses were located by
   literal search of the whole tracked Clementine, and the Greek was checked.
@@ -1289,15 +1560,123 @@ from him are recorded at § 3.5. Corpora searched are named in §5.
 ### 3.11 Documented reception of the compilation: the liturgical commentators
 
 **This section is not exegesis of the passages, and nothing in it may be cited as
-the Fathers'.** It records what two named liturgical commentators say of this
-Sunday's Mass as their books gave it — the kind of witness the three-document
-contract names as documented reception of the compilation. Their Mass is not in
-every part the 1962's (§ 2.7), and each reading below is attributed to its author.
+the Fathers'.** It records what the registered liturgical commentators say of this
+Sunday's Mass as their books gave it — the witness the three-document profile names
+under *Liturgical commentators*: reception of the compilation, identified by its
+elements and never by its Sunday number. § 2.7 tabulates each commentator's
+heading and Gospel against this formulary; `commentary-work-index formulary` made
+that comparison and each locus below was then read. Where a commentator's Mass had
+another Gospel, only what he says of the elements this formulary keeps is
+attributed to him for this Mass, and what he says of Mt 9 at another Sunday is
+reception of that Gospel at that locus. Standing is taken from
+`src/sources/inventories/author-standing-v1.toml`: Schuster is **Blessed**; every
+other commentator here is an **ecclesiastical writer**, and Guéranger himself, who
+wrote none of the volume read here, is a Servant of God.
 
-- **Rupert of Deutz**, *De divinis officiis* XII.18–19, PL 170, cols. 326–327,
-  read on the page images (§ 2.7 gives the identification and § 6.3 the digests).
-  He reads the whole Eighteenth-Sunday Mass as addressed to *eidem, qui vocatus
-  est superius, id est praelatus est domui Christi, et curam animarum suscepit*:
+**The commentators on the 1962 pairing itself.**
+
+- **Bl. Ildefonso Schuster**, *The Sacramentary (Liber Sacramentorum)*, English
+  (London: Burns Oates & Washbourne, 1927), vol. III, printed pp. 167–170, headed
+  *Eighteenth Sunday after Pentecost. Tertia post natale Sancti Cypriani*. Located
+  in the tracked optical layer
+  `artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-volume-3-ocr-4d8c8988`
+  (SHA-256 recomputed and matched, `4d8c8988…a65e419`) at physical lines
+  10470–10710, and **every sentence quoted read on the page images** of the same
+  Internet Archive volume, leaves 0182–0185 of its JPEG 2000 set (= printed
+  pp. 167–170), unregistered, digests in § 6.3. The registered 158 MB facsimile PDF
+  returned HTTP 500 from Internet Archive on 2026-09-22 and was not opened; the
+  leaves are the same scan's page images. Every element of his Mass is the 1962's.
+  What he says, element by element:
+  - the Sunday: *According to the Roman rite, this Sunday coming after the vigil at
+    St Peter's should be styled Dominica vacat*; 1 Cor breaks the Ephesians series
+    and *at once reveals its later origin. Yet this interpolation is fairly ancient,
+    since it is recorded by Paul the Deacon*; outside Rome, where the Ember vigil
+    was not kept, *the Dominica vacat of the Roman Sacramentaries soon received …
+    its own liturgical formulary* (p. 167);
+  - the Introit: the prophets' promises must be taken spiritually, not *after the
+    manner of the Jews and the ancient Millenarians*; salvation through grace is the
+    true object of hope (pp. 167–168);
+  - the Collect: *All the good which we do is the work of grace, it is a gift
+    received from God*, with 1 Cor 4:7 (p. 168);
+  - the Gradual: the psalmist *after the afflictions of the Babylonian exile* rejoices
+    at the news that his people will again cross the threshold of the temple; God
+    restores the ruins of Jerusalem; *All this is, of course, to be glorified by a
+    spiritual interpretation. The peace which is here described is the atmosphere of
+    the heavenly Jerusalem* (p. 168) — the literal return first, then the heavenly
+    city, as Bellarmine has it (§ 4.6);
+  - the Alleluia: the Gentiles and their kings adhering to the New Covenant
+    (pp. 168–169);
+  - **the Gospel** (p. 169): *Sin, being a debt contracted with divine justice, can
+    only be remitted by God himself, hence the power to forgive sins granted by
+    Jesus to the Church is a proof of his divinity.* The crowd's words *may be
+    understood as a subjective judgement on the part of the people who had not yet
+    grasped the divine nature of Christ*; but *The words, however, have a still
+    deeper meaning* — the divine nature worked through the human, hypostatically
+    united — and the narrative *is both symbolical and prophetic. This power of
+    remitting sins had to be communicated to men—that is, to the apostles and to
+    their successors in the priesthood; consequently, the Holy Ghost widens the
+    field of this evangelizing energy, and the crowd at once rejoices that men also
+    have received from heaven such truly divine authority.* (The book italicises *to
+    men*, which this quotation cannot show.) **Schuster holds both readings of v. 8
+    and ranks them**: the crowd's inadequate confession, which is Chrysostom's
+    reading, and a deeper, prophetic sense of the priesthood;
+  - the Offertory: *epitomized from Exodus xxiv*; *It is to be regretted … that in
+    the Roman Missal this splendid Offertory is cut down to a single verse*, since in
+    the old antiphonaries Moses intercedes for the apostate people and asks to see
+    God's glory (Ex 33:13–23) (pp. 169–170);
+  - the Secret: the exchange in which *whilst we offer him our gifts he, in his turn,
+    bestows on us the gift of himself*; the Communion: *In the Old Covenant it was the
+    people who brought gifts to God in his temple, in the New it is God who gives
+    himself to his people*; the Postcommunion: a fervent Communion is the best
+    preparation for the next (p. 170).
+- **The continuation of Prosper Guéranger's *The Liturgical Year***, *Time after
+  Pentecost*, vol. II (series vol. XI), English, second edition (Stanbrook Abbey;
+  London: Burns & Oates, 1909), printed pp. 393–409, in the tracked facsimile
+  (§ 6.3). **Who wrote it.** The library's edition record says the volume's preface
+  *identifies this as the second volume of the Continuation after Guéranger's death
+  but does not name the continuator*; the work record's responsible party is
+  *Prosper Guéranger and continuators*; Guéranger died in 1875 (standing registry),
+  and the volume is of 1909. So **no sentence below is Guéranger's**, and every one
+  is cited as the continuation's. The library's author-standing registry and its
+  Mass-keyed locus inventory, `src/sources/commentary/formulary-loci.yaml`, name
+  the continuator as **Dom Lucien Fromage OSB (1845–1916)**, on the BnF authority
+  records and the French original's preface; this stage checked the French
+  preface in the Internet Archive text layer of *L'Année liturgique*, *Deuxième
+  volume de la continuation … Tome II* (Paris: Oudin, 1911; item
+  `lanneliturgiqu11gu`, response SHA-256 `c24539c7…fd6c07`, matching the digest the
+  registry records), where it is signed ***Fr. L. F., O. S. B., Solesmes***, and did
+  not re-open the BnF records. The attribution to Fromage therefore rests on the
+  registry's sources and the initials this stage read; a study that names him
+  should say "the continuation of *The Liturgical Year* (Dom Lucien Fromage)", as
+  the plan behind the registry directs, and never "Guéranger". What it says:
+  - the Epistle's gifts, after the September Ember ordinations: *the powers
+    conferred by the imposition of the bishop's hands on the ministers of the Church
+    are the most marvellous gift that is known on earth* (p. 394), and the other
+    parts of the Mass are *most appropriate to the prerogatives of the new
+    priesthood*;
+  - the Introit's prophets as *the pastors, whom the Church sends* (pp. 394–395);
+  - the Gradual's house as heaven and also *the temple in which we are now
+    assembled, and into which we are introduced by … His priests* (p. 401);
+  - Rupert's other Gospel and its harmony with the Moses Offertory (pp. 402–403,
+    with the dating reported in § 2.7); and then the present Gospel of the same
+    pastors: *the faithful … are now invited to meditate upon the prerogative which
+    these same men have of forgiving sins and healing souls* (p. 403; the book
+    italicises *forgiving sins*, which this quotation cannot show), with the keys and
+    the sacrament of Penance (pp. 403–404); the paralytic as the human race, carried
+    to the Church by the apostles' faith (p. 405);
+  - the Offertory's Moses as *the type of those faithful prophets mentioned in the
+    Introit … the model of those true leaders of God's people, who devote themselves
+    in order to procure mercy and peace for those whom they guide* (p. 406), with the
+    ancient verses in full (pp. 407–408).
+
+**The commentators whose Mass had another Gospel.** Each is cited here only for the
+elements his Mass shares with this formulary, and for Mt 9 only where his book puts
+it, at the Nineteenth Sunday.
+
+- **Rupert of Deutz**, *De divinis officiis* XII.18–19, PL 170, cols. 326–327, read on
+  the page images (§ 2.7, § 6.3). Gospel of his Eighteenth Sunday: Mt 23. He reads
+  the whole Mass as addressed to *eidem, qui vocatus est superius, id est praelatus
+  est domui Christi, et curam animarum suscepit*:
   - the Offertory: *Sint sicut ipse Moses, de cujus exemplo, quod ecclesiastici
     sequi debeant rectores, longa et valida declamatio est in offerenda:
     Sanctificavit Moses, et versibus ejus* — the rectors must seek *non tam
@@ -1319,33 +1698,141 @@ every part the 1962's (§ 2.7), and each reading below is attributed to its auth
   intervenire, ut videns Dominus fidem illorum, dicat: Confide, fili*; and the
   Introit *Salus populi* as Christ's own testimony *quod … curatione paralytici
   comprobatur, videlicet quia potestatem haberet in terra dimittendi peccata*.
-  **Rupert therefore reads peace as the remission of sins and the Mass as the
-  office of those who intercede for the people's sins** — but his Mass paired that
-  Offertory with another Gospel, and the forgiveness he reads into its chants is
-  the pastor's intercession, not the power of absolution.
-- **Prosper Guéranger**, *The Liturgical Year*, Time after Pentecost vol. II
-  (series vol. XI), English 1909, printed pp. 393–409, in the tracked facsimile,
-  checked on the page images (§ 6.3). He reads the Epistle's gifts of the Ember
-  ordinations — *the powers conferred by the imposition of the bishop's hands on
-  the ministers of the Church are the most marvellous gift that is known on earth*
-  (p. 394) — the Introit's prophets as *the pastors, whom the Church sends* (pp. 394–
-  395), and the Gradual's house as heaven and also *the temple in which we are now
-  assembled, and into which we are introduced by … His priests* (p. 401). He
-  reports Rupert's other Gospel and its harmony with the Moses Offertory (pp.
-  402–403), and then reads the present Gospel of the same pastors: *the faithful …
-  are now invited to meditate upon the prerogative which these same men have of
-  forgiving sins and healing souls* (p. 403; the book italicises *forgiving sins*,
-  which this quotation cannot show), with the power of the keys and the
-  sacrament of Penance (pp. 403–404). He also reads the paralytic as the human
-  race, carried to the Church by the apostles' faith (p. 405). The Offertory's
-  Moses is *the type of those faithful prophets mentioned in the Introit … the
-  model of those true leaders of God's people, who devote themselves in order to
-  procure mercy and peace for those whom they guide* (p. 406).
-- **What this changes.** The ministerial and priestly sense of this Sunday's Mass
-  is no longer only the editor's: it is **documented reception** — Rupert's
-  (intercession) and Guéranger's (the power of forgiving sins), each commenting on
-  the Mass and not on Matthew. It is still not a Father's reading of Mt 9:8 (§ 4.3),
-  and the study must say whose it is.
+- **William Durandus**, *Rationale divinorum officiorum* VI.135–136, Lyon 1612,
+  tomus II, located in the tracked layer
+  `artifact.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.ia-djvu-ocr-b9b266dd`
+  (SHA-256 recomputed and matched, `b9b266dd…305b5d`) at lines 17086–17159 and read
+  on the page images, Internet Archive `rationalediuinor02dura` leaves n342 (headed
+  printed p. 419) and n343 (its verso), unregistered, digests in § 6.3. His Gospel
+  for the Mass: *in quibusdam Ecclesiis* Mt 23 and *in quibusdam Ecclesiis* Mt 22
+  (*Accesserunt*); his Alleluia *Laudate Dominum omnes gentes*. He reads the Mass of
+  the prelates — *in hac … dnica agitur de Praelatis, qui sunt in primo loco* (the
+  printing reads *decimaseptima* at the ellipsis, inside its chapter on the
+  eighteenth Sunday, and the slip is reported, not corrected) — and
+  the Introit *Da pacem Dne sustinentibus te: vt Prophetae tui, id est, Praelati
+  fideles inueniantur: supplendum est, non infideles, sicut Scribae et Pharisaei*;
+  the Gradual's house as the wedding feast *in quibus erit aeterna pax*; the
+  Offertory's Moses as the pattern for prelates, who *debent … se totos offerre
+  incensum, et postea multas hostias*; and the Communion *Tollite hostias, loquitur
+  enim de Praelatis*. He reports that *scripserunt quidam* the Introit was sung
+  because on that day Pope Zachary made peace with the Lombards. He calls the
+  Epistle a thanksgiving *de Ephesiis* — so the page reads, of a text he cites as
+  *1. ad Cor. cap. 1.* At **VI.136**, the Nineteenth, the Mass *respondet
+  praecedenti* — the faithful prelates of *Da pacem* — *si faciant, quod habetur in
+  Euangelio, quod legitur in hac dominica, in quibusdam Ecclesiis, scilicet:
+  Ascendens Iesus*: the paralytics are those *in delitiis carnis ita dissoluti*
+  that they cannot do good works, *et merito fide Praelatorum sanantur: et ideo
+  bonum est habere bonos Praelatos*.
+- **Honorius Augustodunensis**, *Gemma animae* IV.84–86, PL 172 (Paris: Garnier,
+  1895), cols. 722–724, located in the tracked layer
+  `artifact.honorius-augustodunensis.gemma-animae.1895-garnier-migne-pl-172.ia-djvu-ocr-2ebfcb5f`
+  (SHA-256 recomputed and matched, `2ebfcb5f…9444b1`) at lines 56955–57068 and read
+  on the page images, Internet Archive `patrologiaecursu0172mign` leaves n360
+  (cols. 721–722) and n361 (cols. 723–724), unregistered, digests in § 6.3. **This
+  is a route the earlier passes did not use**: the Honorius holdings they could have
+  found were a restricted Documenta Catholica Omnia facsimile of the whole *Gemma
+  animae* from the 1854 PL 172 and a checked transcription of IV.65–68; the
+  whole-volume layer of the 1895 printing was registered before this pass, and it is
+  read here in place of the restricted facsimile. His Gospel: Mt 22, the two precepts. He reads the Mass twice:
+  - ***sub lege*** (IV.84), of the captivity: *In hujus Dominicae officio
+    repraesentatur Danielis oratio, et angeli Gabrielis collocutio* — after seventy
+    years Daniel prayed for the people's freedom, and the Introit *verba Danielis
+    repraesentat*; the Epistle's *nihil deesse in ulla gratia* is the angel's
+    prophecy; the Gradual rejoices *quia populus in domum Domini iturus
+    praenuntiatur*, the verse prays *ut pax populo fiat*; the Offertory teaches them
+    *ut reversi altare Domino construant, sicut Moyses praecepit*; the Communion
+    that they offer gifts *pro gratiarum actione*;
+  - ***sub gratia*** (IV.85), of Gregory the Great's peace between the Romans and
+    the Lombards: *Pro pace ergo Christiani populi Gregorius sic orasse legitur: Da
+    pacem*; the Epistle is his admonition *pro pacis vinculo*; *In Versu denuo orat,
+    ut pax in turribus Ecclesiae fiat*; the Offertory is the sacrifice of praise he
+    offered for the people as Moses once did; and the Communion bids them offer
+    *pro sua concordia Deo hostias laudis*;
+  - at **IV.86**, the Nineteenth, the office *de principatu Cyri regis accipit*, and
+    the Gospel *concordat, quod Jesum in civitatem suam venisse narrat (Matth. ix)
+    quia populum cum Jesu sacerdotem Jerusalem redisse constat* — the city Christ
+    enters is Jerusalem, to which the people returned with Jeshua the priest.
+- **Sicard of Cremona**, *Mitrale* VIII.18–19, PL 213, cols. 599–600, located in the
+  tracked layer `artifact.sicard-of-cremona.mitrale.latin-migne-pl-213.ia-djvu-ocr-ea9fd813`
+  (SHA-256 recomputed and matched, `ea9fd813…199e44`) at lines 29685–29749 and read
+  on the page image, Internet Archive `patrologiaecursu0213mign` leaf n205,
+  unregistered, digest in § 6.3. His Gospel: *Accesserunt* (Mt 22), *vel, secundum
+  alios, in alio … evangelio* Mt 23. He reads the Mass, like Honorius *sub lege*,
+  of the return from captivity: *Maximus itaque Daniel revertentes a peccatorum
+  captivitate monet in Evangelio*; *In epistola gratias agit Paulus de reversione
+  captivorum et remissione peccatorum, et collatione donorum*; *Introitus itaque
+  vox est Danielis, pacem revertenti populo deprecantis*; the Gradual rejoices
+  *quia populus intraturus in domum Domini praenuntiatur*; and *in offerenda et
+  communione invitat et monet populum revertentem, ad instar Moysi, altaria erigere
+  et hostias immolare*. At VIII.19, the Nineteenth: *Sic noster Cyrus, ut in
+  hodierno legitur evangelio dixit paralytico sanato: Surge, tolle lectum tuum et
+  vade in domum tuam … Qui ergo populum a captivitate liberavit, qui paralyticum a
+  dissolutione sanavit, veraciter in introitu cantat: Salus.*
+- **Berno of Reichenau**, *Libellus de quibusdam rebus ad Missae officium
+  pertinentibus* V, PL 142, col. 1070, located in the tracked layer
+  `artifact.berno-of-reichenau.libellus-de-quibusdam-rebus-ad-missae-officium-pertinentibus.latin-migne-pl-142.ia-djvu-ocr-991758f7`
+  (SHA-256 recomputed and matched, `991758f7…5818c0`) at lines 85768–85819 and read
+  on the page image, Internet Archive `patrologiaecursu0142mign` leaf n544
+  (cols. 1069–1070), unregistered, digest in § 6.3 — the first page image of this
+  volume the library's records mention. His Mass is the office of the vacant week
+  after the September fast: the cantor asks peace *ut prophetae ejus fideles
+  inveniantur*; *Laetatus sum* and *Fiat pax in virtute tua*; the Gospel Mt 23,
+  *Super cathedram Moysis*; the Offertory *Sanctificavit Moyses altare Domino*
+  with the verses *Locutus est Dominus ad Moysen* and *Oravit Moyses Dominum*; the
+  Communion paraphrased *tollere hostias, et introire in atria Domini, adorare
+  Dominum in aula sancta ejus (Psal. xcv)*; and then the Collect, which he explains
+  from the Communion: *Et quia Deo nec in sacrificio, nec in oblatione hostiarum
+  sine ejus adjutorio placere possumus, nec in atria ejus introire, nec in aula ejus
+  adorare eum, merito sacerdos ex sua et nostra voce Deum deprecatur, dicens:
+  Dirigat corda nostra … quia tibi sine [te] placere non possumus.* At the next
+  Sunday, *Salus populi*, the Gospel not only heals the paralytic *verum etiam
+  dimittit peccata*, and the Collect *Omnipotens et misericors* asks that as he
+  walked free, *ita et nos mente et corpore expediti*, may do God's will.
+
+**Structural witnesses, named and not used for any reading.** The **Micrologus**
+XXIX, *De vacantibus Dominicis* (PL 151, tracked layer
+`artifact.bernold-of-constance.micrologus-de-ecclesiasticis-observationibus.latin-migne-pl-151.ia-djvu-ocr-f7de4b32`,
+SHA-256 recomputed and matched, `f7de4b32…9fa95d53`, lines 78170–78236, the chapter
+numeral damaged in the layer; no page image opened) says the four Sundays after the
+Ember fasts *in libro Sacramentorum vacantes praetitulantur, eo quod propriis careant
+officiis*, that after the autumn fast *quidam ex quarta feria Dominicam sequentem
+inofficiant … Sed Romani hujusmodi penuriam repetitione Dominicalium officiorum
+supplent*, and that these Sundays were anciently vacant because the ordinations
+were celebrated so late on the Saturday that they belonged to the Sunday. It is the
+work the continuation cites (p. 393, note 2), and it is structural evidence for this
+Sunday's place, not a reading of its Mass. **John Beleth**'s *Summa* L (PL 202) is
+listed by the formulary tool as structural for the Sunday after an Ember Saturday;
+it was not opened, because nothing here turns on it. **Amalarius** (PL 105) is
+recorded in the standing registry as censured at Quierzy in 838 on the division of
+the Host, and was used only as the negative § 5.2 reports. **John Henry Blunt**'s
+*Annotated Book of Common Prayer* (1866), which the tool lists at his *Nineteenth
+Sunday after Trinity* for its Collect *Dirigat corda* and Gospel Mt 9, is a writer
+outside Catholic communion (standing registry) and supplies no reading here; it was
+not opened.
+
+**What this changes.** The ministerial and priestly sense of this Sunday's Mass is
+documented reception, and in more places than the earlier passes recorded:
+
+- **On the 1962 pairing itself**, by a Blessed: Schuster reads v. 8 of the power of
+  remitting sins communicated to the apostles and their successors in the
+  priesthood, while granting the crowd's words a first sense as an inadequate
+  confession; and the continuation reads the present Gospel of the pastors'
+  prerogative of forgiving sins.
+- **On the Mass with another Gospel**: Rupert (the rectors who intercede for the
+  people's sins; peace as *peccatorum remissio*) and Durandus (the Mass of the
+  prelates; *Tollite hostias … de Praelatis*); and at their Nineteenth Sunday, on
+  Mt 9 itself, Rupert (the prelates offer the paralytic by prayer) and Durandus
+  (the paralytics are healed *merito fide Praelatorum*).
+- **And not everywhere**: Honorius and Sicard read the same chants of the people
+  returned from Babylon, and Honorius's *sub gratia* reading of Gregory's peace
+  with the Lombards; Honorius reads the Gospel's city as Jerusalem regained, and
+  Sicard sets Christ the healer beside Cyrus; Berno reads the Collect as the
+  admission that no sacrifice pleases God without his help. None of these three
+  reads the Mass of the priesthood.
+
+It is still not a Father's reading of Mt 9:8 (§ 4.3), and the study must say whose
+it is. Under the profile, Schuster may be one of a reading's two authors provided
+the other is a Father or canonized saint; no other commentator here may be.
 
 ---
 
@@ -1399,8 +1886,11 @@ Dominus aliquem propter fidem suam: aliquando propter preces suas, et aliorum* �
 sometimes for the sick man's own faith, sometimes for his prayers and those of
 others — and he reads the bearers tropologically as *illi qui suis monitionibus
 portant eum ad Deum*. Rupert, commenting on the Mass (§ 3.11), reads the bearers as
-the prelates who offer the sinner by prayer; that is liturgical reception, not
-exegesis, and it sides with Jerome's *fides offerentium*.
+the prelates who offer the sinner by prayer, and Durandus has the paralytics healed
+*merito fide Praelatorum*; that is liturgical reception, not exegesis, of Mt 9 at
+their Nineteenth Sunday, and it sides with Jerome's *fides offerentium*. St Anthony's
+Sunday sermon (§ 3.5) takes the same side through the Gloss — the sins were forgiven
+by the merits of others — and makes the bearers four virtues.
 
 **This disagreement is load-bearing** for any reading of the formulary that turns
 on the Collect's *tibi sine te placére non póssumus*, and it is preserved in
@@ -1421,8 +1911,9 @@ Augustine at *De cons. evang.* II. xxv does not reach the verse. Hilary, as Aqui
 reports him on v. 8, reads *hominibus* of the power *ut fiant filii Dei* (Jn 1:12)
 — adoption, not absolution. That negative stands.
 
-**But the question is no longer answered by the Fathers alone**, and three
-witnesses checked on the second re-entry each bear on it at a different place:
+**But the question is not answered by the Fathers alone.** Below the Fathers the
+ministerial sense stands in one exegete at v. 6 and in the liturgical commentators,
+and the commentators divide:
 
 - **Aquinas, at v. 6, at his own locus** (*Super Matth.* IX, Venice 1745, p. 122):
   *Videtur quod per hoc non ostendatur, quia etiam ipsi Apostoli habebant
@@ -1431,23 +1922,48 @@ witnesses checked on the second re-entry each bear on it at a different place:
   the verse's proof of Christ's divinity, and answers that they have it by way of
   ministry, not of authority. **This is a Doctor connecting Mt 9:6 with the
   Apostles' power to forgive**, at the verse *authority-on-earth* already turns on
-  (`research/interpretations.md` § 4.3); it is not a reading of v. 8, and it is
-  made to protect the proof of divinity, not to found the ministry.
-- **Rupert of Deutz, on the Mass** (§ 3.11): peace is *peccatorum remissio*, the
-  Offertory's Moses is the pastor who intercedes for the people's sins, and the
-  prelates offer the paralytic by prayer. Liturgical reception, not exegesis; and
-  in his books this Offertory stood with another Gospel (§ 2.7).
-- **Guéranger, on the Mass** (§ 3.11): the present Gospel invites the faithful *to
-  meditate upon the prerogative which these same men* — the Church's pastors —
-  *have of forgiving sins*, with the keys and Penance. A nineteenth-century
-  liturgical commentator on the Tridentine Mass.
+  (`research/interpretations.md` § 2.1); it is not a reading of v. 8, and it is made
+  to protect the proof of divinity, not to found the ministry.
+- **Bl. Ildefonso Schuster, on the 1962 Mass itself, at v. 8** (§ 3.11, *The
+  Sacramentary* III p. 169): *This power of remitting sins had to be communicated to
+  men—that is, to the apostles and to their successors in the priesthood … the crowd
+  at once rejoices that men also have received from heaven such truly divine
+  authority.* He gives the crowd's words first as *a subjective judgement on the
+  part of the people who had not yet grasped the divine nature of Christ* — which is
+  Chrysostom's reading — and the priestly sense as a deeper, *symbolical and
+  prophetic* one. **This is the one registered witness who reads v. 8 itself of the
+  ministry, and he reads the 1962 pairing.** He is a liturgical commentator and a
+  Blessed, not a Father.
+- **The continuation of *The Liturgical Year*, on the 1962 Mass** (§ 3.11): the
+  present Gospel invites the faithful *to meditate upon the prerogative which these
+  same men* — the Church's pastors, ordained at the Ember days — *have of forgiving
+  sins*, with the keys and Penance. A liturgical commentator writing in 1909, whose
+  words are the continuator's and not Guéranger's.
+- **Rupert of Deutz and William Durandus, on a Mass with another Gospel** (§ 3.11):
+  for Rupert peace is *peccatorum remissio* and the Offertory's Moses the pastor
+  who intercedes for the people's sins; for Durandus the Mass is *de Praelatis* and
+  *Tollite hostias … loquitur … de Praelatis*. Where their books put Mt 9, at the
+  Nineteenth Sunday, Rupert's prelates offer the paralytic by prayer and Durandus's
+  paralytics are healed *merito fide Praelatorum*. That is intercession and the
+  prelates' faith, not the power of absolution, and neither of them reads v. 8.
+- **Honorius, Sicard and Berno do not read the Mass of the ministry at all**
+  (§ 3.11): Honorius and Sicard read its chants of the people returned from
+  Babylon, Honorius reads the Gospel's city (at his Nineteenth) as Jerusalem regained
+  with Jeshua the priest, and Berno reads the healing and the forgiveness into the
+  next Sunday's Collect. St Anthony's Sunday sermon on the Gospel gives v. 8 no
+  ministerial sense (§ 3.5).
 
 So the ministerial sense has a documented home: at v. 6 in Aquinas, as ministry
-beneath Christ's authority, and in the liturgical commentators' reading of this
-Mass. It has none in a Father at v. 8. The study may use it with those
-attributions; it may not put it in Chrysostom's, Jerome's, Augustine's or Hilary's
-mouth, and it must not present Rupert's reading as the 1962 Mass's own, since his
-Mass had another Gospel.
+beneath Christ's authority; **at v. 8 in Schuster, on this Mass**; in the
+continuation's reading of this Mass; and in Rupert's and Durandus's readings of a
+Mass with another Gospel and of Mt 9 at another Sunday. It has none in a Father at
+v. 8, and three registered medieval commentators read the same chants otherwise.
+The study may use it with those attributions; it may not put it in Chrysostom's,
+Jerome's, Augustine's or Hilary's mouth; it may present Schuster's reading, and the
+continuation's, as readings of the 1962 pairing, and must not present Rupert's or
+Durandus's as such, since their Mass had another Gospel; and it may not present the
+ministerial reading as the commentators' common one, since Honorius and Sicard read
+the same Mass of the return from exile.
 
 ### 4.4 Is the paralytic an individual or the Gentiles? Hilary against the literal readers
 
@@ -1476,14 +1992,28 @@ that said.
 Hilary's is a different order of reading, not a contradiction; the study must
 present it as the allegorical sense and not as what the others say.
 
-### 4.5 A disagreement that the evidence does **not** support
+### 4.5 Where the evidence shows no disagreement, and where it now does
 
-No disagreement was located among the checked witnesses about the meaning of
-*Da pacem* — the only witness to it is Rupert, commenting on the Mass, who reads it
-as *peccata dimitte* (§ 3.11) — about the Offertory's compilation, or about the
-Collect's *sine te placere non possumus*. Where § 3.1 has no witness and § 3.7 has
-only a later exegete at Ex 24 and a liturgical commentator on the chant, the study
-must not manufacture a dispute to fill the space.
+No disagreement was located among the checked witnesses about the Offertory's
+compilation or about the Collect's *sine te placere non possumus*, which Schuster
+and Berno both read as the confession that nothing we do pleases God without his
+grace (§ 3.11). Where § 3.1 has no exegetical witness and § 3.7 has only a later
+exegete at Ex 24 and the liturgical commentators on the chant, the study must not
+manufacture a dispute to fill the space.
+
+**On *Da pacem* the earlier sentence of this section is withdrawn.** It said the only
+witness to the Introit's meaning was Rupert. Seven registered commentators read it,
+and they read it three ways: of the forgiveness of sins (Rupert: *Pax enim Dei,
+peccatorum remissio est*); of the Church's prelates or pastors, *Prophetae tui, id
+est, Praelati* (Durandus; Berno's cantor asks the same *ut prophetae ejus fideles
+inveniantur* without glossing it; the continuation's *pastors, whom the Church
+sends*); and of the captivity — the words of Daniel praying for the people's return
+(Honorius *sub lege*, Sicard) — or of Gregory the Great's prayer for peace with the
+Lombards (Honorius *sub gratia*), which Durandus also reports as what *quidam*
+wrote of Pope Zachary. Schuster reads it of the prophets' promises taken spiritually
+and of salvation through grace. These are liturgical commentators on a Mass, not
+exegetes of Ecclus 36:18, and § 3.1's negative for the verse stands; but a study may
+not now say that the Introit's sense is attested once.
 
 ### 4.6 Is Ps 121 of the city rebuilt or of the heavenly city? The Greeks against the Latins
 
@@ -1507,6 +2037,14 @@ Bellarmine holds both: the literal sense is the exiles' joy at the return, and t
 psalm "treats of the celestial, and not the earthly Jerusalem" in the sense he
 thinks the Holy Spirit chiefly intended.
 
+The liturgical commentators on the Mass divide the same way (§ 3.11), and this is
+reception of the chant, not exegesis of the psalm: Bl. Schuster reads the Gradual
+first of the psalmist rejoicing *after the afflictions of the Babylonian exile* and
+then, *of course*, of *the heavenly Jerusalem*; Honorius (*sub lege*) and Sicard
+read the whole Mass's chants of the people returning from captivity; the
+continuation reads the house as heaven and as the church where the faithful are
+assembled.
+
 **This is a material disagreement about what the psalm is about, and it is
 preserved.** § 10.2's earlier sentence that the checked witnesses read the psalms
 "of it and not of a place" is withdrawn: for Ps 121 two Greek Fathers read it of a
@@ -1518,22 +2056,39 @@ historical sense and then says it was fulfilled properly only after the
 Incarnation (§ 3.4) — and at Ps 95:8–9 there is none: Theodoret reads the courts as
 the churches.
 
-### 4.7 Is the praise of 1 Cor 1:4–8 true, and does v. 8 accuse? Four readers in two pairs
+### 4.7 Is the praise of 1 Cor 1:4–8 true, and does v. 8 accuse? Six readers, divided twice
 
 Chrysostom: the praise is strategy and v. 8's *unreprovable* "marks them out as
 still wavering, and liable to reproof." Theodoret (PG 82, cols. 229–232): Paul
 "first tends their hearing, so that the cure may be received," **and** what he says
 is true, for he thanks God for gifts really given; and *ἀνεγκλήτους* "showed them
-as for the present liable to charges." Aquinas (*Super I Cor.* 1 lect. 1): the
-thanks are given *ut correctionem suorum defectuum tolerabilius ferant*, but the
-riches belong to the more perfect and are shared by charity, and *sine crimine* is
-*sine peccato mortali* — a promise. A Lapide: the Apostle speaks *toti Ecclesiae,
-in qua plerique erant sancti et inculpati*, and the rebuke begins at v. 10.
+as for the present liable to charges." Theophylact (PG 124, cols. 565–568): the
+thanksgiving *Corinthiorum fastum deprimit*, since grace is *non … debitum, neque
+compensatio*; at v. 7 *neque omnes fuerint spirituales, neque omnes carnales*, so
+the praise is for the spiritual and the blame for the carnal, or they had the gifts
+at first and fell away; and at v. 8 *Confirmabit* shows them *nonnihil concussos*
+and *Sine crimine* shows them *jam criminibus obnoxios*. Ambrosiaster (PL 17, on a
+later delivery of the registered transcription): *In una … plebe duobus populis
+scribit*, the praise for those who keep the rule and the blame for those who do
+not, and at v. 8 *inviolati usque ad futurum judicium erunt*. Aquinas (*Super I
+Cor.* 1 lect. 1): the thanks are given *ut correctionem suorum defectuum
+tolerabilius ferant*, but the riches belong to the more perfect and are shared by
+charity, and *sine crimine* is *sine peccato mortali* — a promise. A Lapide: the
+Apostle speaks *toti Ecclesiae, in qua plerique erant sancti et inculpati*, and the
+rebuke begins at v. 10.
 
-So on v. 8 Chrysostom and Theodoret stand against Aquinas and a Lapide; on the
-purpose of the thanksgiving Theodoret and Aquinas agree that it prepares a
-correction, and Theodoret alone insists in terms that it is also true. The
-division at v. 8 is real and the study may not report the four as one.
+**So the six divide twice, and not along the same line.** At **v. 8** Chrysostom,
+Theodoret and Theophylact read accusation, and Ambrosiaster, Aquinas and a Lapide
+read promise. At **vv. 4–7** Ambrosiaster, Aquinas, a Lapide and Theophylact (at
+v. 7) divide the congregation, the praise belonging to one part and the blame to
+another, while Chrysostom treats the praise as addressed to a body he is about to
+rebuke as a whole. **Theophylact therefore sides with the first pair at v. 8 and
+gives the second pair's solution at vv. 4–7**, and the bracketed Codex Arundel
+passage Migne prints with him adds a third, that the praises are set in by economy
+to open the hearers' ears — which is also Theodoret's point and, in Aquinas's
+words, the purpose of the thanksgiving. The divisions are real and the study may
+not report the six as one; Ambrosiaster's attribution is the conventional one, and
+Theophylact's bracketed passage is Migne's supplement and not his main text.
 
 ---
 
@@ -1638,14 +2193,26 @@ not exist.
      that a Latin translator of Theodoret chose *aula* for it, are data,
      recorded; neither identifies the Missal's psalter.
 
+   - **Berno of Reichenau, in the eleventh century, paraphrases the Communion
+     with *aula*.** Expounding this Sunday's chants (PL 142, col. 1070, read on
+     the page image, leaf n544; § 3.11), he writes *Et in communione hortatur nos
+     Psalmista cum Moyse tollere hostias, et introire in atria Domini, adorare
+     Dominum in aula sancta ejus (Psal. xcv)*, and again *nec in atria ejus
+     introire, nec in aula ejus adorare eum*. That is the first witness this
+     record has to *aula* at this verse **as the chant was sung**, some eight
+     centuries before 1862. It is a commentator's paraphrase, in his own syntax,
+     not a copy of a gradual, and it settles no psalter; it does show that *aula*
+     is not a modern reading of the chant.
+
    **What this does and does not settle.** It settles that both Latin expositors
    this study reads at this verse — Augustine in the fifth century and Cassiodorus
    in the sixth — had *atrio* in front of them, and that the
    Corpus Corporum files are faithful to Migne at this lemma. It does **not**
    identify the Missal's *aula sancta* with any psalter: no Roman Psalter, no
    Gallican or *iuxta Hebraeos* witness and no critical edition was opened, the
-   chant's own transmission was not traced behind 1862, and *aula* remains a
-   reading this record can place in the Missal and nowhere else.
+   chant's own transmission was not traced in any gradual behind 1862, and *aula*
+   is a reading this record can place in the Missal and, as a paraphrase of the
+   sung Communion, in Berno — and in no psalter.
 8. **Cantus Index** for the chants of this formulary. Its full-text search
    requires JavaScript and returned no usable result to a plain HTTP client. No
    chant record for *Da pacem Domine*, *Laetatus sum*, *Sanctificavit Moyses* or
@@ -1685,9 +2252,31 @@ Ps 121:1 list was then presented as covering all three psalms. **The rule as now
 kept**: `tools/commentary-work-index discover` is run for every appointed locus —
 on 2026-09-22 for Ps 95:8, Ps 101:16, Ps 121:1, Ps 121:7, Mt 9:1, 1 Cor 1:4, Ex 24:4
 and Sir 36:18 — and for each lead it returns, the registered work records **and**
-the registered collected and whole volumes (the Migne volumes PL 24, 26, 30, 37,
-56, 70, 78, 92, 105, 170 and PG 27, 29, 55, 57, 80, 82, and the *Opera* volumes) are
-checked for the text before it is called unreached. The lists below are what the
+the registered collected and whole volumes are checked for the text before it is
+called unreached. **That list of whole volumes was itself incomplete until the third
+re-entry**, which named only the Migne volumes the earlier passes had opened and so
+missed the PG 124 layer that carries Theophylact on 1 Corinthians. The registered
+set, taken on 2026-09-22 from every artifact record under `src/sources/works/`
+whose provenance or notes describe a whole Migne volume, and from the containment
+inventory `src/sources/inventories/source-containment-v1.toml`, is:
+**PL** 24 (layer and facsimile), 26 (facsimile, no text layer), 30 (two layers),
+37 (facsimile), 56 (facsimile), 70, 78, 92, 105 (two layers of different scans),
+142, 151, 170, 172 (the 1895 Garnier printing), 202, 213 and Migne's 1862 *Missale
+mixtum* volume; **PG** 12, 27, 29 (a layer and a facsimile, and a second layer under
+Basil), 55, 57, 80 (facsimile), 82 (layer and facsimile) and 124. The library also
+holds Migne-derived texts of **single works only** — keyed or transcribed texts, or
+facsimiles of one work — from PL 14, 17, 23, 25, 26 (Galatians), 34, 35, 40, 53, 76,
+91, 100, 115 and 131, and single leaves of PL 13 and 16; none of these is a whole
+volume and each was read for its own extent where a lead's author matched. Beside
+them stand the non-Migne collected volumes the containment inventory enters — the
+Venice 1745 Aquinas tomus III and the Aquinas *Opera omnia* volume 14, the NPNF and
+ANF volumes, Bonaventure's Quaracchi *Opera* — and the whole-volume layers of the
+liturgical commentators (Durandus 1568 and 1612, Schuster III, *The Liturgical Year*
+vols X, XI and XIII–XV as registered). **And the rule now reads the artifact, not the work
+title**: for each author a lead names, every artifact record of every registered
+work of that author is read for its provenance and stated extent, and where a
+whole-volume record does not enumerate its contents the volume's own table of
+contents is read (PG 124, PL 26, PL 170 on the third re-entry). The lists below are what the
 index returned for the locus each names, and nothing is carried from one locus to
 another. § 6.3 names, per reception witness, which registered route was tried and
 what it gave, and every registered route deliberately not used, with its reason.
@@ -1743,9 +2332,30 @@ Each is now in § 3 (or § 2.7 and § 3.11) and bound in
   its registered facsimile (§ 3.5, §§ 4.1–4.3); and *Super I ad Corinthios* on
   1 Cor 1:4–8, in the registered Corpus Thomisticum page (§ 3.6, § 4.7).
 - **Cornelius a Lapide**, *Commentaria in Pentateuchum*, on Ex 24:4–8 (§ 3.7).
-- **Rupert of Deutz**, *De divinis officiis* XII.18–19, and **Guéranger**, *The
-  Liturgical Year* vol. XI, as documented reception of the compilation (§ 2.7,
-  § 3.11).
+- **Rupert of Deutz**, *De divinis officiis* XII.18–19, and **the continuation of
+  Guéranger's *The Liturgical Year***, vol. XI (which the second re-entry wrongly
+  attributed to Guéranger himself), as documented reception of the compilation
+  (§ 2.7, § 3.11).
+
+**Reached on the third re-entry, and no longer negatives.** Each is now in § 2.7,
+§ 3 or § 3.11 and, where its bytes were the registered ones, bound in
+`research/source-bindings.toml`.
+
+- **Theophylact**, *In epistolam I ad Corinthios* 1:4–8, in the registered PG 124
+  whole-volume layer and on its page images (§ 3.6, § 4.7).
+- **Ambrosiaster** on 1 Cor 1:4–8, registered but not an index lead; read on a later
+  delivery of the registered page whose bytes no longer match, and therefore not
+  bound (§ 3.6, § 4.7).
+- **St Anthony of Padua**'s Sunday sermon on Mt 9:1, in the registered, restricted
+  Spilsbury English (§ 3.5).
+- **Bl. Ildefonso Schuster**, *The Sacramentary* III pp. 167–170; **Durandus**,
+  *Rationale* VI.135–136; **Sicard**, *Mitrale* VIII.18–19; **Honorius**, *Gemma
+  animae* IV.84–86, in the 1895 PL 172 layer; **Berno**, *Libellus* V; the
+  **Micrologus** XXIX — all registered, all tracked layers, and all but the
+  Micrologus read on page images (§ 3.11).
+- **The transmission lists**: the Würzburg epistle list (Morin, RB 27) and gospel
+  list (Morin, RB 28), the Comes of Murbach (Wilmart, RB 30) and the *Liber
+  Comitis* (PL 30), at this Sunday's readings (§ 2.7).
 
 **Still not reached, and why.**
 
@@ -1791,11 +2401,30 @@ Each is now in § 3 (or § 2.7 and § 3.11) and bound in
     *No registered route*: Nicholas of Lyra; Peter Lombard; Denis the Carthusian
     (two rows); Hugh of Saint-Cher; Albert the Great; Bruno the Carthusian;
     Euthymius; Jerome, *Commentarioli*; Prosper; Walafrid Strabo.
-  - None of the unreached works is printed in a registered Migne volume. **Jerome's
-    two psalm works** are the one case worth a sentence: the index's
-    *Commentarioli* and *Tractatus* are not in PL 26, which the library registers
-    for Jerome on Matthew; whether PL 26 prints any other psalm work under his name
-    was not checked, and nothing here rests on one.
+  - Re-checked on the third re-entry against the artifact records: Peter Lombard's
+    one artifact is the restricted Grottaferrata *Sententiae* vol. 2; Hugh's are
+    Pss 83, 94 and 117; Alcuin's are a keyed PL 100 text of the *Interrogationes*
+    and its export; Arnobius has no record, and the library's one PL 53 holding is a
+    keyed text of Eustathius's Latin Basil alone; Gregory's registered artifacts are
+    the *Homiliae in Evangelia* (a PL 76 facsimile of that work, and Wikisource
+    texts), the *Homiliae in Hiezechihelem* and the *Regula pastoralis*, with PL 78;
+    Prosper, Albert, Bruno the Carthusian, Denis, Lyra, Euthymius, Walafrid and
+    Rolle have no record (Rolle's one appearance is his *Form of Living* inside the
+    Comper *Book of the Craft of Dying*). None of these works is printed in a whole
+    volume of the registered set above.
+  - **Jerome's two psalm works**, which the earlier pass said it had not checked,
+    were checked: PL 26's own *Elenchus operum* (read in the Internet Archive text
+    layer of the same scan, item `patrologiaecurs240unkngoog`, unregistered,
+    response SHA-256 `74c5dd24a294e30a8a1de023ef9842b41a79f52410fae49113156b075ce0d046`,
+    lines 225–249) lists Matthew, Origen's homilies on Luke, Galatians, Ephesians,
+    Titus, Philemon, Job, and ***Breviarium in Psalmos*, col. 821**; the preface
+    (line 495) says the volume closes with an *Appendix, quae Breviarium in
+    Psalterium … aliosque in Psalmos Tractatus falso ascriptos Hieronymo continet*.
+    So PL 26 prints a psalm exposition **falsely ascribed to Jerome**, not the
+    index's *Commentarioli* or *Tractatus*, and neither of those is registered. The
+    *Breviarium* is a registered route to a psalm exposition of admittedly false
+    ascription and no settled author; it was not read, because no attribution
+    could be carried from it, and it is recorded as a lead.
   - The psalms now have six direct witnesses on Ps 121, five on Ps 101 and five on
     Ps 95, in Latin and Greek, and they disagree materially about Ps 121 (§ 4.6);
     that is enough for § 3 and it is not a patristic consensus (§ 10.2).
@@ -1807,36 +2436,50 @@ Each is now in § 3 (or § 2.7 and § 3.11) and bound in
 - **The later and Doctoral reception of the two large lections.** § 3.5 and § 3.6
   now carry, row by row, what the index returns for Mt 9:1 (nineteen rows) and
   1 Cor 1:4 (fourteen rows) and the registration state of each, found by work
-  record and by collected and whole volume. **Read**: for the Gospel, Aquinas's
-  lectura (and the *Catena aurea* through an unregistered delivery); for the
-  Epistle, Theodoret, Aquinas and a Lapide. **Unreached, with no registered
-  route**: for the Gospel, Hilary's *Commentarius*, Rabanus, Albert, Chromatius,
-  Paschasius, Theophylact, Bruno of Segni, the *Glossa*, Lyra, Denis, Maldonado,
-  Hugh, and a Lapide on the Gospels; for the Epistle, Origen, Theophylact, Peter
-  Lombard, Rabanus, Hugh, Lyra, Denis and Estius. The corpora searched are the
+  record, by collected and whole volume, and by each artifact's stated extent.
+  **Read**: for the Gospel, Aquinas's lectura (and the *Catena aurea* through an
+  unregistered delivery), with Anthony's Sunday sermon beside it; for the Epistle,
+  Theodoret, **Theophylact**, Aquinas and a Lapide, with Ambrosiaster beside them.
+  **Unreached, with no registered route**: for the Gospel, Hilary's
+  *Commentarius*, Rabanus, Albert, Chromatius, Paschasius, Theophylact on Matthew
+  (PG 123 is not registered; PG 124 carries his Paul and the end of his John),
+  Bruno of Segni, the *Glossa*, Lyra, Denis, Maldonado, Hugh, and a Lapide on the
+  Gospels; for the Epistle, Origen, Peter Lombard, Rabanus, Hugh, Lyra, Denis and
+  Estius. The corpora searched are the
   registered source library, its collected volumes and the repository's
   passage→work index, and nothing wider; no external delivery of any unregistered
   lead was tried.
-- **The Ordines and the medieval liturgical commentators.** **Rupert of Deutz was
-  opened on the second re-entry** and is in § 2.7 and § 3.11, with Guéranger. The
-  earlier rationale for leaving him unopened — that nothing in § 3 or § 4 turned on
-  him — was wrong: he expounds this Sunday's Mass, records a different Gospel for
-  it, and bears on §§ 4.3 and 4.5 and on what `research/interpretations.md` may say
-  no witness supports. Of the others: **Amalarius** is registered in the tracked
-  PL 105 layer; a search of it for this Mass's chant and Gospel incipits (*Da
-  pacem*, *Sanctificavit*, *Tollite hostias*, *paralytic-*) returns one hit, at
-  physical line 17725, which is a pastoral rule on giving the sacraments to the
-  dying on the faith of their friends, citing the paralytic in Luke's form (*Homo,
-  dimittuntur tibi peccata*); it is not a comment on this Mass, its author inside
-  the volume was not identified, and nothing is built on it. **PL 78**, registered
-  with a tracked layer, carries Ménard's edition of the Gregorian sacramentary; the
-  layer prints this formulary's three orations at physical lines 14353–14360 under
-  a heading it renders `HEBDOMADA XXU POST PENTECOSTEN`, immediately before
-  `HEBDOMADA XX` — apparently the Nineteenth, which would agree with the Hadrianum
-  (§ 2.2) — with Ménard's variant *ut et tuam cognoscamus veritatem, et eam dignis
-  mentibus ac moribus*. That was read in the layer only, the heading is damaged,
-  no page image was opened, and nothing in § 2 rests on it; it is recorded as a
-  lead. **Durandus and Honorius** have no registered route and were not reached.
+- **The Ordines and the medieval liturgical commentators.** **The earlier sentence
+  of this record that Durandus and Honorius "have no registered route and were not
+  reached" was false for both**, and is withdrawn. Durandus's *Rationale* has two
+  tracked whole-volume layers, the 1568 Lyon composite and the 1612 Lyon tomus II;
+  Honorius's *Gemma animae* is registered over a restricted PL 172 facsimile and,
+  since before this pass, over the tracked layer of the whole 1895 PL 172. Both were
+  read on the third re-entry, with Sicard (PL 213), Berno (PL 142), Schuster (vol.
+  III) and the Micrologus (PL 151), all registered and none named by the earlier
+  passes (§ 3.11). The 1568 Durandus layer was not opened: the 1612 printing's
+  chapters were read on its page images, and the 1568 layer would give a second
+  printing of the same chapters without changing any claim. The restricted 1854
+  PL 172 facsimile of Honorius was not opened, because the 1895 layer and its page
+  images carry IV.84–86 whole. **Rupert of Deutz was opened on the second re-entry**
+  and remains in § 2.7 and § 3.11. **Amalarius** is registered in the tracked PL 105
+  layer; a search of it for this Mass's chant and Gospel incipits (*Da pacem*,
+  *Sanctificavit*, *Tollite hostias*, *paralytic-*) returns one hit, at physical
+  line 17725, which is a pastoral rule on giving the sacraments to the dying on the
+  faith of their friends, citing the paralytic in Luke's form (*Homo, dimittuntur
+  tibi peccata*); it is not a comment on this Mass, its author inside the volume
+  was not identified, and nothing is built on it — and the standing registry
+  records Amalarius's censure at Quierzy, which confines him to structural evidence
+  in any case. **Beleth** (PL 202) and **Blunt** are listed by the formulary tool
+  and were not opened, for the reasons § 3.11 gives. **PL 78**, registered with a
+  tracked layer, carries Ménard's edition of the Gregorian sacramentary; the layer
+  prints this formulary's three orations at physical lines 14353–14360 under a
+  heading it renders `HEBDOMADA XXU POST PENTECOSTEN`, immediately before `HEBDOMADA
+  XX` — apparently the Nineteenth, which would agree with the Hadrianum (§ 2.2) —
+  with Ménard's variant *ut et tuam cognoscamus veritatem, et eam dignis mentibus ac
+  moribus*. That was read in the layer only, the heading is damaged, no page image
+  was opened, and nothing in § 2 rests on it; it is recorded as a lead. **No
+  *Ordo Romanus* was searched for this Sunday**, and none is cited.
 
 ### 5.3 The gallery and the proposal quota
 
@@ -1971,7 +2614,7 @@ of this stage as unreached, or not named at all. Each is bound in
 | Aquinas, *Super I ad Corinthios* | `artifact.thomas-aquinas.super-i-ad-corinthios.latin-corpusthomisticum-web-2026-07-26.c1c-html-8be5b71c`, re-fetched 2026-09-22 and matched (`8be5b71c…a8c7c`), `restricted` | Cap. 1 lect. 1 on vv. 4–8 in locally parsed text; quoted only in short phrases |
 | Cornelius a Lapide, *Commentaria in Pentateuchum* | `artifact.cornelius-a-lapide.commentaria-in-pentateuchum.antwerp-1700.ia-djvu-ocr-d1f91f40`, 7,195,178 bytes, SHA-256 `d1f91f40…dac470`, fetched and matched 2026-09-22, `remote` | Lines 79014–79245, Ex 24:4–8. **Layer only; no page image opened**, so § 3.7 normalises and says so, and transcribes nothing the layer garbles |
 | Rupert of Deutz, *De divinis officiis* XII.18–19 | `artifact.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.ia-djvu-ocr-2e2ca850`, **tracked**, SHA-256 `2e2ca850…ed376` matched | Lines 23431–23519 to locate; every word quoted read on the page images, leaves n168 (cols. 325–326) and n169 (cols. 327–328), as the artifact's own note requires |
-| Guéranger, *The Liturgical Year* XI | `artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-pdf-95ba98e2`, **tracked**, SHA-256 `95ba98e2…92690` matched | The chapter on this Sunday, printed pp. 393–409 = PDF pp. 414–430, in the text layer; every sentence quoted checked on the rendered pages (PDF pp. 414, 415, 422, 423, 424, 426, 427) |
+| The continuation of Guéranger's *The Liturgical Year*, vol. XI (1909; not Guéranger's words, § 3.11) | `artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-pdf-95ba98e2`, **tracked**, SHA-256 `95ba98e2…92690` matched | The chapter on this Sunday, printed pp. 393–409 = PDF pp. 414–430, in the text layer; every sentence quoted checked on the rendered pages (PDF pp. 414, 415, 422, 423, 424, 426, 427); on the third re-entry p. 393 re-read for its footnotes 1–2 (Berno, Micrologus) and p. 402 for *in many Churches of the west* |
 
 **Unregistered page images read on the second re-entry**, fetched on 2026-09-22
 from `https://archive.org/download/<item>/page/n<leaf>.jpg`, retained nowhere,
@@ -1995,6 +2638,55 @@ digests given so that a later run can register them.
 | same, n607 | p. 578, §§ 13–14 | 2216 × 3736 | `94d7edda601da9587dde3477c103804bca9cca0a10b0232fbcdd77fb489b5c19` |
 | same, n608 | p. 579, §§ 14–15 | 2216 × 3736 | `763890005df1fc5dfa3a9013926e9682b114ebec9168394007909aa55f2569c5` |
 
+**Registered routes opened on the third re-entry.** Every one was registered before
+this pass; none had been opened by an earlier pass, and two — Durandus and Honorius
+— had been recorded as having no registered route. Each whose bytes matched is bound
+in `research/source-bindings.toml`.
+
+| Witness | Registered route | What was read, and how |
+| --- | --- | --- |
+| Theophylact, *In epistolam I ad Corinthios* 1:4–8 | `artifact.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864.ia-djvu-ocr-9a1fc730`, 3,544,388 bytes, SHA-256 `9a1fc730…c5e66c`, fetched and matched 2026-09-22, `remote` | Table of contents at lines 211–232; the 1 Corinthians heading at 44683, v. 4 at 45001, v. 7 at 45045, v. 8 at 45153. Vv. 4–6 are past reading in the layer, so every word quoted, Latin and Greek, was read on the page images, leaves n282 (cols. 565–566) and n283 (cols. 567–568) |
+| Bl. Ildefonso Schuster, *The Sacramentary* III pp. 167–170 | `artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-volume-3-ocr-4d8c8988`, **tracked**, SHA-256 `4d8c8988…a65e419` recomputed and matched | Lines 10470–10710, the whole chapter; every sentence quoted read on the same volume's page images, JPEG 2000 leaves 0182–0185. The registered facsimile PDF, `…ia-scan-volume-3-410f6d11`, returned HTTP 500 on 2026-09-22 and was not opened |
+| Durandus, *Rationale* VI.135–136 | `artifact.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.ia-djvu-ocr-b9b266dd`, **tracked**, SHA-256 `b9b266dd…305b5d` recomputed and matched | Lines 17086–17159; every word quoted read on the page images, leaves n342 (headed p. 419) and n343 |
+| Sicard, *Mitrale* VIII.18–19 | `artifact.sicard-of-cremona.mitrale.latin-migne-pl-213.ia-djvu-ocr-ea9fd813`, **tracked**, SHA-256 `ea9fd813…199e44` recomputed and matched | Lines 29685–29749, where the layer interleaves the two columns; read on the page image, leaf n205 = PL 213 cols. 599–600 |
+| Honorius, *Gemma animae* IV.84–86 | `artifact.honorius-augustodunensis.gemma-animae.1895-garnier-migne-pl-172.ia-djvu-ocr-2ebfcb5f`, **tracked**, SHA-256 `2ebfcb5f…9444b1` recomputed and matched | Lines 56955–57068; read on the page images, leaves n360 (cols. 721–722) and n361 (cols. 723–724) |
+| Berno, *Libellus* V | `artifact.berno-of-reichenau.libellus-de-quibusdam-rebus-ad-missae-officium-pertinentibus.latin-migne-pl-142.ia-djvu-ocr-991758f7`, **tracked**, SHA-256 `991758f7…5818c0` recomputed and matched | Lines 85740–85819; read on the page image, leaf n544 = PL 142 cols. 1069–1070 |
+| Micrologus XXIX | `artifact.bernold-of-constance.micrologus-de-ecclesiasticis-observationibus.latin-migne-pl-151.ia-djvu-ocr-f7de4b32`, **tracked**, SHA-256 `f7de4b32…9fa95d53` recomputed and matched | Lines 78170–78236, **layer only**; structural, quoted in short phrases |
+| Würzburg epistle list | `artifact.germain-morin.le-plus-ancien-comes-ou-lectionnaire-de-leglise-romaine.1910-revue-benedictine-volume-27.ia-djvu-ocr-1a7d549e`, **tracked**, SHA-256 `1a7d549e…488ac2` recomputed and matched | Items CLI–CLIII at lines 3820–3915; item CLIII and Morin's note on it read on the page image, leaf n74 = printed p. 63; the Ember Saturday's Ex 32 lesson (item CLII, p. 62) in the layer only |
+| Würzburg gospel list | `artifact.germain-morin.liturgie-et-basiliques-de-rome-au-milieu-du-viie-siecle.1911-revue-benedictine-volume-28.ia-djvu-ocr-3de8a598`, **tracked**, SHA-256 `3de8a598…c61c90f` recomputed and matched | Lines 19716–19789; read on the page images, leaves n326 and n327 = printed pp. 315–316 |
+| Comes of Murbach | `artifact.andre-wilmart.le-comes-de-murbach.1913-revue-benedictine-volume-30.ia-djvu-ocr-e3bbfad4`, **tracked**, SHA-256 `e3bbfad4…845e2e` recomputed and matched | Lines 3641–3659; read on the page image, leaf n63 = printed p. 50, where the layer's *xvint* is *XVIIII* |
+| *Liber Comitis*, and the anonymous Pauline commentary, PL 30 | `artifact.jacques-paul-migne.patrologia-latina-volume-30.paris-1846.ia-djvu-text-dd20c7b3`, **tracked**, SHA-256 `dd20c7b3…fdf0c9` recomputed and matched | *Liber Comitis* at lines 41945–42175; the commentary on 1 Cor 1:4–8 at lines 58230–58340. **Layer only**; no page image opened |
+| St Anthony of Padua, Sunday sermon on Mt 9:1 (Spilsbury English) | `artifact.anthony-of-padua.sermons-for-sundays-and-festivals.2026-09-05-spilsbury-hosted-compilation.compilation-pdf-3699ff43`, 1,556,456 bytes, SHA-256 `3699ff43…6721be`, re-fetched and matched 2026-09-22, `restricted` | The sermon headed *Nineteenth Sunday after Pentecost*, in locally extracted text; summarised, not quoted, because the translation is under copyright |
+
+**Unregistered page images and deliveries read on the third re-entry**, fetched on
+2026-09-22 from `https://archive.org/download/<item>/page/n<leaf>.jpg` (the Schuster
+leaves from the volume's `_jp2.zip` set), retained nowhere.
+
+| Item, leaf | What it carries | Size | SHA-256 |
+| --- | --- | --- | --- |
+| `bim_early-english-books-1641-1700_patrologiae-cursus-completus-_1864_124`, n282 | PG 124 cols. 565–566, Theophylact on 1 Cor 1:2–6 | 4893 × 7900 | `5d4a3fbf622fd924f9dd3301db704e3e72c17bc0af58a5e90ac1779cad2e4ebc` |
+| same, n283 | PG 124 cols. 567–568, 1 Cor 1:6–8, with the bracketed Arundel passage | 4949 × 7804 | `dbb31f8616a2f809974dc01f88d16872ae83724a997343fa40a6097c556d87ef` |
+| `LiberSacramentorum`, vol. 3 JP2 leaf 0182 | Schuster III p. 167 | 1360 × 1930 | `b0987df368e28e18dcfb3ad7e8c6ea072a0d0c62f6c34db1af0179cd10d01ca2` |
+| same, 0183 | p. 168 | 1360 × 1954 | `3822102bc228fc80a820dfdef23af5f10cdf18051ce3c1d72e6bce9078fadfc7` |
+| same, 0184 | p. 169 | 1360 × 1947 | `8fbada82c0c87d6b9f817a84b4eec73b1da8c73967e8ecef9f9577abaef3b273` |
+| same, 0185 | p. 170 | 1360 × 1963 | `9dfc9161f8027dd6dcd50a316aa2a022fa7f9af2f2d96464bb3d448821d63815` |
+| `rationalediuinor02dura`, n342 | Durandus 1612 t. II, headed p. 419, VI.135 | 2648 × 4075 | `ac1ec66aabb3812adae1af4ea88c5ceb9360f7c9efa671b0040281cfc01541ba` |
+| same, n343 | its verso, end of VI.135 and VI.136 | 2648 × 4075 | `390a2234936fe302cb77508e665cdaca76c5cfb5105f1198d595eb255dcbd366` |
+| `patrologiaecursu0213mign`, n205 | PL 213 cols. 599–600, Sicard VIII.17–20 | 2249 × 3647 | `165e0b6b393dc350ad2dd60a3db139bfb834f9c2baa606bbca9e80746fc748ea` |
+| `patrologiaecursu0172mign`, n360 | PL 172 cols. 721–722, Honorius IV.80–84 | 2275 × 3690 | `732dbd22f6cb8adccf102cef26855d614a6aad75f4bc82c04b04cea92e08211f` |
+| same, n361 | PL 172 cols. 723–724, IV.84–90 | 2275 × 3690 | `9b68bf438a76f2a31c85e6ff409b4382aa1f380fb4e5ce0af929aefcc279433c` |
+| `patrologiaecursu0142mign`, n544 | PL 142 cols. 1069–1070, Berno V | 2266 × 3610 | `4860ce44efa4c11f8bda9876d822f64ecd571e17a30e441a6e22c0a634997b67` |
+| `revuebenedictineabbmared27`, n74 | RB 27 p. 63, Würzburg epistle list CLIII–CLXII with Morin's notes | 3343 × 5345 | `30175c8c78dd4327054a03dd2d5c08fd77e645f40ca24531591da974623ad0e1` |
+| `revuebenedictineabbmared28`, n326 | RB 28 p. 315, Würzburg gospel list, *Ebd. I–II post nt. sci. Cypriani* and the Ember week | 3605 × 5425 | `13d17026938032604a2913548a86a1de2c82745b4227c83ba56179a350273044` |
+| same, n327 | RB 28 p. 316, *Ebd. III–IIII post nt. sci. Cypriani* | 3704 × 5497 | `583aab31cc9444ee4493ba47b5b3f88ee80d38aba8f5f220bffc667abe5aa039` |
+| `revuebenedictineabbmared30`, n63 | RB 30 p. 50, Murbach CXXXIIII–CXL | 3521 × 5568 | `f751dc22626e9079e72478cad04b00f1036180fba1c2ebb25fd7cf8257898cd6` |
+
+| Delivery | What it is | SHA-256 | Why it is not bound |
+| --- | --- | --- | --- |
+| `https://la.wikisource.org/wiki/Commentaria_in_Epistolam_ad_Corinthios_Primam_(Ambrosiaster)`, 299,710 bytes | A later response of the registered Ambrosiaster page | `8d6c0e35af1c3fe96a96b207be4eec1afc9b0428c98e9ccc2d2fe2767ca040d5` | The registered artifact's digest (`25a67a20…f170`, 299,422 bytes) was not reproduced; the page has been revised, so these are not the registered bytes |
+| `https://archive.org/download/lanneliturgiqu11gu/lanneliturgiqu11gu_djvu.txt`, 1,178,533 bytes | Text layer of *L'Année liturgique*, 2nd vol. of the continuation, Paris 1911 | `c24539c74426ab89d37b6dd1fb4909297c1361b15b555a760165920fd7fd6c07` | Unregistered; read only for the preface's signature, which the author-standing registry already cites at this digest |
+| `https://archive.org/download/patrologiaecurs240unkngoog/patrologiaecurs240unkngoog_djvu.txt`, 4,745,230 bytes | Text layer of the same PL 26 scan the registered facsimile is | `74c5dd24a294e30a8a1de023ef9842b41a79f52410fae49113156b075ce0d046` | Unregistered; read only for PL 26's *Elenchus* and preface (§ 5.2) |
+
 **Registered routes that exist and were deliberately not used, with the reason.**
 
 | Route | Why not |
@@ -2007,6 +2699,13 @@ digests given so that a later run can register them.
 | `artifact.john-chrysostom.homiliae-in-matthaeum.migne-pg-57-paris.ia-djvu-ocr-1b95176e` — Chrysostom's Greek *Hom. in Matth.*, **tracked** | Chrysostom on the Gospel is read in the registered CCEL English at his own locus (below), and every claim §§ 3.5 and 4.1–4.3 make from him is a claim about his argument, not his Greek wording. The Greek would confirm the translation, not the locus. A study that quotes a Greek word of Homily 29 should open it |
 | `artifact.theodoret-of-cyrus.interpretatio-epistolae-ad-galatas.1864-migne-pg82-paris.wikimedia-pdf-7d6dd76e` — PG 82 facsimile, 112,586,234 bytes | The same columns were read on the Internet Archive page images of the same printing (above); a second facsimile of them would add nothing |
 | `artifact.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78.ia-djvu-ocr-301707e7` — PL 78, Ménard's Gregorian sacramentary, **tracked layer** | Read in the layer only, as a lead (§ 5.2); no page image was fetched, because § 2 rests on Wilson's Hadrianum and the gregorien.info report of the Sextuplex and this later printed edition would add a third placement without changing either |
+| `artifact.william-durandus.rationale-divinorum-officiorum.1568-durandus-and-beleth-composite.ia-djvu-ocr-2bd5ccb5` — the 1568 Lyon Durandus, **tracked layer** | The 1612 printing's VI.135–136 were read on page images; the 1568 layer would give a second printing of the same chapters and change no claim |
+| `artifact.honorius-augustodunensis.gemma-animae.1854-migne-pl-172.migne-facsimile-pdf-906be8c5` — the 1854 PL 172 *Gemma animae*, `restricted` | IV.84–86 were read whole in the registered 1895 layer and its page images; the restricted facsimile would add a second printing of the same columns |
+| `artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-scan-volume-3-410f6d11` — Schuster III facsimile PDF | Internet Archive returned HTTP 500 for it on 2026-09-22; the same scan's page images were read instead (above) |
+| `artifact.john-beleth.summa-de-ecclesiasticis-officiis.latin-migne-pl-202.ia-djvu-ocr-22b781bf` — Beleth, **tracked layer** | Listed by the formulary tool as structural evidence for the Sunday after an Ember Saturday; nothing here turns on it beyond what the Micrologus and Berno give |
+| `artifact.john-henry-blunt.the-annotated-book-of-common-prayer.london-1866.ia-djvu-text-gtu-32400003882739-f3f87210` — Blunt, **tracked** | A writer outside Catholic communion (standing registry), who supplies comparative data only; no comparison here needs his Trinity-19 tables |
+| PL 26's *Breviarium in Psalmos*, col. 821, inside `…patrologia-latina-volume-26.paris-1845.internet-archive-google-pdf-0d889bd6` | Printed by Migne in an appendix of psalm works *falso ascriptos Hieronymo*; no attribution could be carried from it (§ 5.2) |
+| The anonymous commentary on 1 Corinthians in PL 30, inside `…patrologia-latina-volume-30.paris-1846.ia-djvu-text-dd20c7b3` | No library record names it or its author; located and recorded, not used (§ 3.6) |
 
 **Read on public deliveries, with the registration state of each now stated.**
 Each is cited in `References` in the ordinary way. **Every response digest below
@@ -2068,6 +2767,18 @@ declared where it occurs**: the Latin from the two a Lapide optical layers (§ 3
 web transcription whose facsimile was not opened (§ 3.2–3.4, 3.8); and the
 Latin from Migne's editions and CSEL, where the ligatures *æ* and *œ* are written
 out and *&* is written *et*.
+
+**The third re-entry's quotations.** Every word quoted from Theophylact, Schuster,
+Durandus, Sicard, Honorius, Berno, the Würzburg lists and the Murbach comes was read
+on the page image named in the table above, the layers serving only to locate. Two
+witnesses were read in the layer only and are quoted in short phrases with that
+said where they are used: the Micrologus (§ 3.11) and PL 30, for the *Liber
+Comitis* (§ 2.7) and the anonymous Pauline commentary (§ 3.6). Ambrosiaster is
+quoted from a later delivery of a registered transcription (§ 3.6), and Anthony is
+summarised and never quoted. The 1612 Durandus is quoted as the page prints it, with
+long *s* written *s*, ligatures and *&* written out, a macron standing for an omitted
+*m* or *n* written out (*supplendũ* as *supplendum*), and the other contractions
+(*Dne*, *dnica*) left as the page abbreviates them; its *u* and *v* are the page's.
 
 ### 6.4 Chronology
 
@@ -2360,13 +3071,24 @@ universal calendar may rest on either institute's own observances.
   monumenta.ch states no terms at all and silence is not a grant. Quote the Latin;
   do not reproduce the host's page.
 - **The witnesses added on the second re-entry.** Migne's PG 27, 55, 80, 82 and
-  PL 37, 170, the Venice 1745 Aquinas, the 1700 a Lapide and Guéranger's 1909
-  English are public-domain printings, and O'Sullivan's 1866 Bellarmine is public
-  domain; quote them as their records allow. The Internet Archive page images read
+  PL 37, 170, the Venice 1745 Aquinas, the 1700 a Lapide and the 1909 English of
+  the continuation of Guéranger's *Liturgical Year* are public-domain printings,
+  and O'Sullivan's 1866 Bellarmine is public domain; quote them as their records allow. The Internet Archive page images read
   beside them are unregistered and retained nowhere. The Corpus Thomisticum page
   of Aquinas on 1 Corinthians is `restricted` (a modern delivery of uncertain
   status) and is quoted only in short phrases; the augustinus.it page is `remote`
   with rights unresolved and is quoted nowhere.
+- **The witnesses added on the third re-entry.** Migne's PG 124 (1864), PL 142,
+  151, 213 and 30, the 1895 PL 172, the 1612 Lyon Durandus, the *Revue Bénédictine*
+  volumes of 1910, 1911 and 1913, and the 1927 London English of Schuster's
+  *Sacramentary* are public-domain printings by date in the United States, and are
+  quoted as their records allow; the page images read beside them are unregistered
+  and retained nowhere. **St Anthony's sermon is read in a translation whose
+  translator reserves copyright** (the artifact is `restricted`): it is summarised
+  in this record and must not be quoted in a study; a study that wants Anthony's
+  words needs the Latin, which the library does not register for this sermon. The
+  Ambrosiaster transcription is public domain in its text and was read on a
+  Wikimedia delivery whose markup is not retained.
 - **The two dated Ordos** (§ 8.1) are `restricted`: institutional authored text
   with no affirmative grant. Cite the dated entry as a fact; reproduce no wording.
 
@@ -2462,9 +3184,14 @@ and no English is composed or paraphrased anywhere.
    Cornelius a Lapide on Ex 24:4–8, who joins the altar and the covenant blood to
    the Eucharist (§ 3.7) — and no Father; the nearest patristic witness remains
    Chrysostom on Hebrews 9, which is exegesis of Hebrews. The Offertory **as a
-   chant** has documented liturgical reception in Rupert and Guéranger (§ 3.11),
-   which is reception of the compilation and not exegesis. Say each for what it
-   is.
+   chant** has documented liturgical reception in seven registered commentators —
+   Rupert, Durandus, Honorius, Sicard, Berno, Bl. Schuster and the continuation of
+   *The Liturgical Year* (§ 3.11) — who read it of the pastor's intercession, of
+   the prelates' self-offering, of the returned exiles building an altar, or of
+   the lost verses of Moses' intercession; that is reception of the compilation
+   and not exegesis. **The Introit, too, is now read by those commentators, three
+   ways** (§ 4.5), though its verse still has no exegetical witness. Say each for
+   what it is.
 4. **The Offertory's and the Introit's textual sources are unidentified.** What is
    established is negative and exact (§ 5.1). Neither an Old Latin exemplar nor a
    Greek reading was found that accounts for them, and no claim about a compiler's
@@ -2505,39 +3232,75 @@ and no English is composed or paraphrased anywhere.
 11. **Four `rights-withheld` rows in the roman-1962 translations overlay name this
     Mass** (§ 9.1). Three are stale on the overlay's own condition and one, the
     Offertory, is not. Nothing downstream may publish an English Offertory.
-12. **The registered library was swept three times, and only the third swept it by
-    artifact coverage.** The first sweep asked which of the *unreached* leads the
+12. **The registered library was swept four times, and only the last two swept it
+    by artifact coverage.** The first sweep asked which of the *unreached* leads the
     library held; the second, which of the witnesses the study *already quotes* it
     held (five of eight); both asked by work record. The third, on the second
     re-entry, ran the index for every appointed locus and checked the registered
     collected and whole volumes for every lead, and reached eleven registered
-    routes the first two had missed (§ 5.2, § 6.3). **Quotation wording**: the New
-    Advent deliveries modernise the 1888 second person and the NPNF English of
-    Augustine abridges (§ 6.3); a study that wants an offline-checkable quotation
-    should take the CCEL wording, and a study that quotes Augustine's Latin should
-    take PL 37. **The one genuinely unregistered delivery** among the reception
-    witnesses is the *Catena aurea in Matthaeum*, which is exactly the witness
-    §§ 3.5, 4.4 and 10.1 attribute Hilary and Rabanus through; Aquinas's lectura
-    now reports Hilary on v. 8 as well.
+    routes the first two had missed — but it checked a list of whole volumes that
+    was itself incomplete and read work titles, so it recorded PG 124 as holding
+    Theophylact's John "only". The fourth, on the third re-entry, took the whole
+    registered set of volumes from the artifact records (§ 5.2), read each lead
+    author's artifact records for provenance and extent, read the volume's own
+    table of contents where a record did not enumerate it, and ran the formulary
+    tool for the liturgical commentators; it reached Theophylact, the six
+    liturgical commentators and the four transmission lists, found Ambrosiaster
+    and Anthony, and corrected six statements of what the library holds (§§ 3.5,
+    3.6, 3.7, 5.2). **Quotation wording**: the New Advent deliveries modernise the
+    1888 second person and the NPNF English of Augustine abridges (§ 6.3); a study
+    that wants an offline-checkable quotation should take the CCEL wording, and a
+    study that quotes Augustine's Latin should take PL 37. **The one genuinely
+    unregistered delivery** among the reception witnesses is the *Catena aurea in
+    Matthaeum*, which is exactly the witness §§ 3.5, 4.4 and 10.1 attribute Hilary
+    and Rabanus through; Aquinas's lectura now reports Hilary on v. 8 as well.
+    Ambrosiaster is read on a later delivery of a registered page whose bytes no
+    longer match, and is therefore not bound.
 13. **Both lections now have later reception at their own loci.** The Epistle has
-    Theodoret, Aquinas and a Lapide beside Chrysostom, and they divide two against
-    two on whether v. 8 accuses (§ 4.7). The Gospel has Aquinas's lectura, which
-    among other things raises the Apostles' power to forgive sins at v. 6 and
-    answers *per viam administrationis, non auctoritatis* (§ 4.3). Beyond those,
-    each lection's later reception is bounded by the registered library, its
-    collected volumes and the passage→work index, and by nothing wider (§ 3.5,
-    § 3.6, § 5.2).
+    Theodoret, Theophylact, Aquinas and a Lapide beside Chrysostom, with
+    Ambrosiaster, and the six divide twice: three against three on whether v. 8
+    accuses, and four against Chrysostom on whether the praise of vv. 4–7 is for
+    part of the body only (§ 4.7). Theophylact's bracketed Codex Arundel passage is
+    Migne's supplement, not his main text, and must be cited so. The Gospel has
+    Aquinas's lectura, which among other things raises the Apostles' power to
+    forgive sins at v. 6 and answers *per viam administrationis, non auctoritatis*
+    (§ 4.3), and St Anthony's Sunday sermon, which may be summarised and not quoted
+    (§ 9). Beyond those, each lection's later reception is bounded by the registered
+    library, its collected volumes and the passage→work index, and by nothing wider
+    (§ 3.5, § 3.6, § 5.2).
 14. **What a research PASS covers**: study drafting from this bounded evidence. It
     is not a claim to have searched every witness; § 5.2 names, locus by locus,
     what the index returns and what was not reached, and § 6.3 names, for each
     witness reached, which registered route served and which registered routes
     were deliberately not used.
 15. **The ministerial and priestly sense has a documented home, and it is not a
-    Father's.** At Mt 9:6 in Aquinas (ministry beneath Christ's authority); at
-    Ps 95:8 in Theodoret, the PG 27 expositions and Bellarmine (sacrifice offered
-    by priests in the churches — a reading of the Communion's verse, not of the
-    Gospel); and in the liturgical commentators on this Mass, Rupert (intercession)
-    and Guéranger (the power of forgiving sins) (§ 3.11). No Father reads Mt 9:8 of
-    it (§ 4.3). The study may use it with those attributions and no others, and
-    must not present Rupert's Mass as the 1962's: his paired this Offertory with
-    the Gospel of the chair of Moses (§ 2.7).
+    Father's.** At Mt 9:6 in Aquinas (ministry beneath Christ's authority); **at
+    Mt 9:8 in Bl. Ildefonso Schuster, commenting on the 1962 Mass itself** (the
+    power of remitting sins communicated to the apostles and their successors in the
+    priesthood, as a deeper sense beside the crowd's inadequate confession); at
+    Ps 95:8 in Theodoret, the PG 27 expositions and Bellarmine (sacrifice offered by
+    priests in the churches — a reading of the Communion's verse, not of the
+    Gospel); in the continuation of *The Liturgical Year*, on this Mass (the pastors'
+    prerogative of forgiving sins); and in Rupert and Durandus, on a Mass with
+    another Gospel (intercession; the prelates) and on Mt 9 at their Nineteenth
+    Sunday (the prelates offer the paralytic; he is healed *merito fide
+    Praelatorum*) (§ 3.11). No Father reads Mt 9:8 of it (§ 4.3), and Honorius and
+    Sicard read the same chants of the return from exile, not of the priesthood.
+    The study may use the ministerial sense with those attributions and no others;
+    it may present Schuster's and the continuation's readings as readings of the
+    1962 pairing, and must not present Rupert's or Durandus's as such; and the
+    continuation's words are never Guéranger's. **Under the profile's
+    *Liturgical commentators* rule Schuster, a Blessed, may be one of a reading's
+    two authors if the other is a Father or canonized saint; no other commentator
+    here may be.**
+16. **The age of the pairing is asserted in neither direction.** The 1862 Pustet
+    prints this Gospel with this Offertory (§ 2.6); the Würzburg gospel list puts
+    Mt 9:1–8 at the third Sunday after St Cyprian, the name Schuster gives this
+    Sunday; the Murbach comes and the *Liber Comitis* put 1 Cor 1:4 with Mt 22 and
+    Mt 9 with Eph 4:23; five registered commentators give the Mass of this Epistle
+    and these chants a Gospel from Mt 22 or Mt 23, two of them naming both as the
+    use of different churches; the continuation dates the chair-of-Moses Gospel to
+    *the thirteenth century, in many Churches of the west*. None of these witnesses
+    shows when the 1962's Gospel first stood beside its Offertory (§ 2.7). A study
+    may state these placements, each with its witness; it may not call the pairing
+    "the 1962 book's", "not ancient", "immemorial" or "ancient".

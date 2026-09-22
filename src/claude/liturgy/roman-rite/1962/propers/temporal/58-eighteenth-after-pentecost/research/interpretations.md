@@ -37,11 +37,21 @@ Two further boundaries apply throughout and are not repeated at each occurrence:
   psalm: it says which witnesses, and where they diverge it says that too
   (`research/scope.md` §§ 3.3, 3.8, 4.6, 10.2).
 - **Two kinds of later witness are kept apart from the Fathers.** Aquinas,
-  Bellarmine and Cornelius a Lapide are later exegetes read at their own loci.
-  Rupert of Deutz and Guéranger are liturgical commentators on this Sunday's Mass
-  — documented reception of the compilation, not exegesis of its passages — and
-  Rupert's Mass had another Gospel (`research/scope.md` §§ 2.7, 3.11). Each is
-  named as what he is wherever he is used.
+  Bellarmine, Cornelius a Lapide and Theophylact are later exegetes read at their
+  own loci, and St Anthony of Padua preaches this Gospel as a Sunday Gospel. The
+  liturgical commentators — Bl. Ildefonso Schuster and the continuation of
+  Guéranger's *Liturgical Year* on the 1962 Mass itself; Rupert of Deutz, Durandus,
+  Honorius, Sicard and Berno on a Mass with this Epistle and these chants but
+  another Gospel — are documented reception of the compilation, not exegesis of its
+  passages (`research/scope.md` §§ 2.7, 3.11). Each is named as what he is wherever
+  he is used, and a commentator whose Mass had another Gospel is cited only for the
+  elements his Mass shares with this one. **The *Liturgical Year* volume read here is
+  the posthumous continuation (1909), not Guéranger**: its words are cited as the
+  continuation's — "the continuation of *The Liturgical Year* (Dom Lucien Fromage)",
+  as the library's standing registry names its writer — and never as Guéranger's.
+  Under the profile's *Liturgical commentators* rule, Schuster, a Blessed, may be one
+  of a reading's two authors provided the other is a Father or canonized saint; no
+  other commentator here may be.
 
 ## Element keys
 
@@ -195,6 +205,15 @@ Bellarmine gives both senses, the return from Babylon first and the heavenly
 Jerusalem as the higher. Chrysostom's own turn to his hearers is moral, and it
 serves this reading's literal sense well: Christians are slower to go up to the
 house of prayer than the returning exiles were (`research/scope.md` §§ 3.2, 4.6).
+The liturgical commentators on the Mass carry the same division into the chant
+(`research/scope.md` §§ 3.11, 4.6): Bl. Schuster reads the Gradual first of the
+psalmist rejoicing after the Babylonian exile and then of the peace of *the heavenly
+Jerusalem*, which is this reading's order of senses; Honorius and Sicard read the
+whole Mass's chants of the people returned from captivity and give it no heavenly
+city; and Honorius's *sub gratia* reads *Da pacem* as Gregory the Great's prayer for
+peace between the Romans and the Lombards and *Fiat pax in virtute tua* as peace *in
+turribus Ecclesiae*. These are readings of the Mass, not of the psalm, and the
+reading may use them only under those names.
 
 **Where the Alleluia and the Communion stand.** At Ps 101:16 Theodoret, the Greek
 who reads Ps 121 of the rebuilt city alone, says the fear of the nations was
@@ -404,17 +423,47 @@ Christ sanctioned the new covenant and which he named in instituting the
 Eucharist. A seventeenth-century Jesuit, read in an optical layer only.
 
 **Documented reception of the compilation, not exegesis** (`research/scope.md`
-§§ 2.7, 3.11). Rupert of Deutz reads this Sunday's chants of the rectors of
-souls: *Da pacem* as *peccata dimitte, pax enim Dei peccatorum remissio est*; *Fiat
-pax in virtute tua* as *remissio peccatorum in Spiritu sancto*; the Offertory's
-Moses — with the verse *Obsecro, Domine, dimitte peccata populi tui* — as the
-pastor's model of intercession. **But his Mass paired that Offertory with the
-Gospel of the chair of Moses; the paralytic stood at his Nineteenth Sunday**, where
-he reads the bearers as prelates who offer the sinner by prayer. Guéranger,
-commenting on the Mass with its present Gospel, reads that Gospel as inviting the
-faithful "to meditate upon the prerogative which these same men" — the pastors —
-"have of forgiving sins and healing souls." Both are liturgical commentators on a
-Mass, and are cited as such.
+§§ 2.7, 3.11, 4.3). The commentators on this Mass divide, and the reading must say
+which of them it uses.
+
+- **Bl. Ildefonso Schuster, on the 1962 Mass itself** (*The Sacramentary* III,
+  pp. 167–170). Sin *can only be remitted by God himself, hence the power to forgive
+  sins granted by Jesus to the Church is a proof of his divinity*; the crowd's words
+  at v. 8 are first *a subjective judgement on the part of the people who had not yet
+  grasped the divine nature of Christ* — Chrysostom's reading — and then, in a deeper
+  and *prophetic* sense: *This power of remitting sins had to be communicated to
+  men—that is, to the apostles and to their successors in the priesthood*. He regrets
+  that the Offertory has lost the verses in which Moses intercedes for the people,
+  and he reads the Communion: *In the Old Covenant it was the people who brought gifts
+  to God in his temple, in the New it is God who gives himself to his people.* **He is
+  a Blessed, and the one registered witness who reads Mt 9:8 itself of the ministry,
+  on the Mass this study is about.** Under the profile he may be one of this
+  reading's two authors beside Aquinas, a canonized Doctor — Aquinas at v. 6,
+  Schuster at v. 8, and the connexion between the two verses the editor's; the
+  reading's patristic authors remain Chrysostom and Augustine.
+- **The continuation of *The Liturgical Year*, on the 1962 Mass** (vol. XI,
+  pp. 393–409): after the Ember ordinations the Epistle's gifts are *the powers
+  conferred by the imposition of the bishop's hands*, and the present Gospel invites
+  the faithful *to meditate upon the prerogative which these same men* — the pastors
+  — *have of forgiving sins and healing souls*. The continuator's words, not
+  Guéranger's.
+- **Rupert of Deutz and William Durandus, on a Mass with another Gospel.** Rupert
+  reads the chants of the rectors of souls: *Da pacem* as *peccata dimitte, pax enim
+  Dei peccatorum remissio est*; *Fiat pax in virtute tua* as *remissio peccatorum in
+  Spiritu sancto*; the Offertory's Moses — with the verse *Obsecro, Domine, dimitte
+  peccata populi tui* — as the pastor's model of intercession. Durandus reads the Mass
+  *de Praelatis*: *Prophetae tui, id est, Praelati*, and *Tollite hostias, loquitur
+  enim de Praelatis*. **Their Mass paired that Offertory with the Gospel of Mt 23 or
+  Mt 22; the paralytic stood at their Nineteenth Sunday**, where Rupert reads the
+  bearers as prelates who offer the sinner by prayer and Durandus has the paralytics
+  healed *merito fide Praelatorum*. They may be cited for the chants and for Mt 9 at
+  that locus, never as readers of the 1962 pairing.
+- **Honorius and Sicard read the same chants otherwise**: of the people returned
+  from Babylon, Daniel's prayer for peace in the Introit and an altar to be built as
+  Moses built one in the Offertory; Honorius, at his Nineteenth Sunday, reads the
+  Gospel's *civitatem suam* as the Jerusalem the people regained *cum Jesu
+  sacerdote*. The reading must not present the ministerial sense as the
+  commentators' common one.
 
 ### 2.3 How every element contributes
 
@@ -437,11 +486,16 @@ Mass, and are cited as such.
 - `gospel` — the centre, treated above.
 - `offertory` — Moses sanctifies an altar, offers holocausts, immolates victims,
   and makes an evening sacrifice; the Mass says this over its own gifts. *Historical
-  note:* the pairing of this Offertory with this Gospel is the 1962 book's and not
-  immemorial — Rupert's books set the same Offertory, with a verse on Moses'
-  intercession for the people's sins, beside the Gospel of the chair of Moses
-  (`research/scope.md` § 2.7). The reading may use the 1962 pairing; it may not
-  call it ancient.
+  note:* the pairing of this Offertory with this Gospel is attested in the 1862
+  Pustet and the 1962 book and read by Schuster and the continuation; five
+  registered medieval commentators — Rupert, Honorius, Sicard, Durandus, Berno —
+  set the same Offertory, in Rupert's and Berno's books with verses on Moses'
+  intercession, beside a Gospel from Mt 23 or Mt 22, Sicard and Durandus naming both
+  as the use of different churches; the Frankish *comites* of Murbach and the *Liber
+  Comitis* set this Gospel with Eph 4:23, and the seventh-century Roman gospel list
+  of Würzburg sets it at the third Sunday after St Cyprian (`research/scope.md`
+  § 2.7). None of these shows when this Gospel first stood beside this Offertory,
+  and the reading asserts the pairing's age in neither direction.
   *Textual observation:* the antiphon is a compilation, and its verbs
   (*sanctificávit*, *fecit sacrifícium vespertínum in odórem suavitátis*) are not
   in Ex 24:4–5 in either Latin or Greek. The Church's chant has already reworked
@@ -487,31 +541,48 @@ risen soul carrying its bed, and Hilary, as Aquinas reports him, reads *hominibu
 of the power *ut fiant filii Dei*.
 
 **What the later witnesses do support, and where.** The ministerial sense is not
-the editor's invention, but it stands in three places and none of them is a
-Father's reading of v. 8 (`research/scope.md` § 4.3):
+the editor's invention. It stands below the Fathers in these places, and in none of
+them is it a Father's reading of v. 8 (`research/scope.md` §§ 3.11, 4.3):
 
 - **Aquinas at v. 6**, at his own locus: the Apostles have the power to forgive
   *per viam administrationis, non auctoritatis*. A Doctor, a different verse — the
   verse this reading already turns on — and a statement made to keep the
   authority Christ's.
+- **Bl. Ildefonso Schuster at v. 8, on the 1962 Mass**: the power of remitting sins
+  *communicated to men—that is, to the apostles and to their successors in the
+  priesthood*, given as a deeper and prophetic sense beside the crowd's inadequate
+  confession. A Blessed and a liturgical commentator, reading this pairing.
+- **The continuation of *The Liturgical Year*, on the 1962 Mass**: the pastors'
+  *prerogative … of forgiving sins*, after the Ember ordinations. The continuator's
+  words.
 - **Theodoret, the PG 27 expositions and Bellarmine at Ps 95:8**: the sacrifices
   brought into the courts are those the Church's priests offer. That is the
   Communion's verse, not the Gospel's.
-- **Rupert and Guéranger on this Mass**: peace as remission of sins and the
-  Offertory's Moses as the interceding pastor (Rupert); the pastors' "prerogative
-  … of forgiving sins" (Guéranger). Liturgical reception, and Rupert's Mass had
-  another Gospel.
+- **Rupert and Durandus, on a Mass with another Gospel**: peace as remission of sins
+  and the Offertory's Moses as the interceding pastor (Rupert); the Mass *de
+  Praelatis* (Durandus); and at their Nineteenth Sunday, on Mt 9, the prelates who
+  offer the paralytic by prayer (Rupert) and the paralytics healed *merito fide
+  Praelatorum* (Durandus). Intercession and the prelates' faith, not absolution,
+  and not readings of the 1962 pairing.
+
+**And where it does not stand.** Honorius and Sicard read the same chants of the
+people returned from Babylon, and St Anthony's Sunday sermon gives v. 8 no
+ministerial sense (`research/scope.md` §§ 3.5, 3.11). The ministerial reading is one
+reception of this Mass among others, not the tradition's single reading of it.
 
 **The answer this reading gives.** Take the step only as far as the witnesses take
 it, and name each. The Gospel establishes that the authority is exercised **on
 earth**, visibly, by one who is also man; Aquinas says at that verse that the
-Apostles exercise it by ministry and not by authority; the Mass's own prayers claim
-a present effect for a visible rite (*éfficis*, *vegetáti*); and the liturgical
-commentators read the Mass of the pastors who forgive and intercede. That is
+Apostles exercise it by ministry and not by authority; Schuster, commenting on this
+Mass, reads v. 8 of that power communicated to the apostles and their successors;
+the Mass's own prayers claim a present effect for a visible rite (*éfficis*,
+*vegetáti*); and the continuation reads the Mass of the pastors who forgive. That is
 enough for the whole formulary to hold together without putting a doctrine in the
 Fathers' mouths. What the reading may not do is attribute the ministerial reading
-of v. 8 to Chrysostom, Jerome, Augustine or Hilary, or present Rupert's reading as
-a reading of the 1962 pairing.
+of v. 8 to Chrysostom, Jerome, Augustine or Hilary; present Rupert's or Durandus's
+reading as a reading of the 1962 pairing; put the continuation's words in
+Guéranger's mouth; or present the ministerial reading as the commentators' only
+one.
 
 **The alternative reading of the same evidence.** The Offertory can be heard as
 pure figure and nothing more: Moses' sacrifice is recalled at the moment of
@@ -612,6 +683,29 @@ the riches belong to the more perfect and are possessed by the rest through the
 charity that joins them (*Super I Cor.* 1 lect. 1). Both keep what Chrysostom
 keeps — the gifts are God's — and both say, as Chrysostom does not, that the
 praise is true (`research/scope.md` §§ 3.6, 4.7).
+
+**Theophylact, and Ambrosiaster beside him, on the same verses.** Theophylact (PG 124,
+cols. 565–567, on the page images) puts this reading's thesis in one line: the
+thanksgiving *Corinthiorum fastum deprimit*, because *gratia autem non est debitum,
+neque compensatio* — grace is neither a debt nor a repayment — and Paul teaches them
+to give thanks always, *et non propriis operibus*. Ambrosiaster (PL 17, read on a
+later delivery of the registered transcription) says of the grace given in Christ
+Jesus that *qui credit in Christum, salvus sit sine opere: sola fide gratis accipit
+remissionem peccatorum*. They divide, as the six readers of the lection do, on v. 8
+(`research/scope.md` § 4.7): Theophylact hears accusation there, with Chrysostom;
+Ambrosiaster a promise, with Aquinas. On the gifts being given and not earned they
+agree with each other and with Chrysostom.
+
+**Documented reception of the compilation, not exegesis.** Two liturgical
+commentators read the Collect exactly as this reading does. Berno of Reichenau
+(PL 142, col. 1070) explains it from the Communion: *quia Deo nec in sacrificio, nec
+in oblatione hostiarum sine ejus adjutorio placere possumus, nec in atria ejus
+introire … merito sacerdos ex sua et nostra voce Deum deprecatur, dicens: Dirigat
+corda nostra*. Bl. Ildefonso Schuster, on the 1962 Mass (*The Sacramentary* III,
+p. 168): *All the good which we do is the work of grace, it is a gift received from
+God*, with *quid gloriaris, quasi non acceperis?* Berno's Mass had another Gospel,
+and he is cited for the Collect and the Communion only; Schuster, a Blessed, reads
+this Mass whole (`research/scope.md` § 3.11).
 
 ### 3.3 How every element contributes
 
@@ -724,7 +818,7 @@ rather than resolved.
 | What is the Offertory for? | the people standing by their own sacrifice | the altar where remission is worked | the antiphon whose verbs are all Moses' |
 | What is *pax*? | the city's strength: charity for Augustine and Cassiodorus, the firmness peace confers for Hilary | not addressed directly | not addressed directly |
 | Principal witness | Augustine on three psalms, with Cassiodorus on all three and Hilary's *Tractatus* on Ps 121 | Chrysostom on Matthew and Hebrews, with Aquinas on Mt 9:6 | Chrysostom on 1 Corinthians, with Theodoret and Aquinas beside him |
-| Where it is weakest | inherits Augustine's anti-Donatist register, and the Greek Fathers read its governing psalm of the earthly city rebuilt | no Father reads Mt 9:8 of the ministry; the ministerial sense stands only in Aquinas at v. 6, in the priestly reading of Ps 95:8, and in the liturgical commentators, and Rupert's Mass paired the Offertory with another Gospel | tends toward quietism if pressed |
+| Where it is weakest | inherits Augustine's anti-Donatist register, and the Greek Fathers read its governing psalm of the earthly city rebuilt | no Father reads Mt 9:8 of the ministry; the ministerial sense stands in Aquinas at v. 6, in Bl. Schuster at v. 8 on this Mass, in the continuation of *The Liturgical Year*, in the priestly reading of Ps 95:8, and in Rupert and Durandus on a Mass with another Gospel — and Honorius and Sicard read the same chants of the return from exile | tends toward quietism if pressed |
 
 ### 4.3 How they relate
 
@@ -732,20 +826,24 @@ They are not rivals about the same question, and the study should say so rather
 than stage a contest. They are three different governing emphases over one set of
 texts, and each explains something the others leave alone: the first is the only
 one that accounts for why Ps 121:1 is appointed twice; the second is the only one
-that gives a meaning to the 1962's placing of a Mosaic altar at the offering of
-*this* Gospel — a placing that is the 1962 book's and not ancient, since Rupert's
-Mass set the same Offertory beside the Gospel of the chair of Moses and read it
-there of the pastor's intercession (`research/scope.md` §§ 2.7, 3.11); the third is
-the only one that accounts for the thanksgiving at both ends.
+that gives a meaning to the placing, in the 1962 book as in the 1862, of a Mosaic
+altar at the offering of *this* Gospel — a placing whose age this record does not
+establish in either direction, since the medieval commentators' books set the same
+Offertory beside a Gospel from Mt 23 or Mt 22 and the earliest lists put this Gospel
+at other places (`research/scope.md` §§ 2.7, 10.16); the third is the only one that
+accounts for the thanksgiving at both ends.
 
 **Where they agree, and it is worth saying because it looks like a disagreement.**
 All three treat *qui dedit potestátem talem homínibus* the same way. § 2.3's
 alleluia row and § 2.5 both follow Chrysostom in reading the crowd's words as an
 inadequate confession, and § 2.5 says in terms that no checked Father takes the
 verse as the ministerial power and that the reading may take the ministerial sense
-only where the later witnesses put it — Aquinas at v. 6, the liturgical
-commentators on the Mass — and under their names; § 1 gives the verse no weight
-either. `authority-on-earth`'s hinge is **Mt 9:6**,
+only where the later witnesses put it — Aquinas at v. 6; Bl. Schuster at v. 8 and
+the continuation of *The Liturgical Year*, both on this Mass; Rupert and Durandus on
+a Mass with another Gospel — and under their names; § 1 gives the verse no weight
+either. The one registered witness who reads v. 8 itself of the ministry is
+Schuster, and he gives the crowd's inadequate confession first, as Chrysostom does,
+so even he does not set the two readings against each other. `authority-on-earth`'s hinge is **Mt 9:6**,
 *potestátem in terra dimitténdi peccáta* — the sentence § 2.1 quotes — and not
 Mt 9:8. Nothing in this record sets one reading against another about the Gospel's
 last verse, and a study that staged that contest would be inventing it.
@@ -810,9 +908,13 @@ on earth* (why the forgiveness happens here and not in private), and the
 Communion's courts (where the Mass is going). It must not attribute a ministerial
 reading of Mt 9:8 to any Father, since none checked gives one; if it speaks of the
 Church's ministry of forgiveness it must do so as Aquinas does at v. 6 — ministry
-beneath Christ's authority — or as the liturgical commentators read this Mass, and
-say whose the reading is; and it must not manufacture the Fathers' approval of the
-editor's arrangement or present the Offertory's pairing with this Gospel as
-ancient. Exact loci, the
+beneath Christ's authority — or as Bl. Ildefonso Schuster reads v. 8 on this Mass,
+or as the continuation of *The Liturgical Year* reads it (never "Guéranger"), and
+say whose the reading is; it must not present Rupert's or Durandus's reading of
+their Mass as a reading of this Gospel; it must not manufacture the Fathers'
+approval of the editor's arrangement; and it must assert the age of the Offertory's
+pairing with this Gospel in neither direction — neither "ancient" nor "the 1962
+book's" nor "not ancient" — since no checked witness shows when the two first stood
+together (`research/scope.md` § 10.16). Exact loci, the
 delivery estimate and the word count belong in the homily's terminal note, not in
 the speech.
