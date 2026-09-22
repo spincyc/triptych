@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.fssp-france.ordo-du-mois.web-2026-09-22.html-0fe38941"
+edition_id = "edition.fssp-france.ordo-du-mois.web-2026-09-22"
+artifact_type = "web-page"
+media_type = "text/html"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "This modern page includes institutional authored text, compilation and site markup. Public access does not establish redistribution rights, and no affirmative grant was identified in the retrieved page. Only identity and factual-locus metadata are retained."
+rights_jurisdiction = "United States"
+source_url = "https://www.fssp.fr/ordo-du-mois/"
+provenance = "Retrieved complete over HTTPS on 2026-09-22 by the research stage of workflow run 71b6f89518984232 and hashed before the response was parsed. The September 2026 section was then read in locally parsed response text. Nothing in the path from the server to this hash passed through a language model."
+retrieved = "2026-09-22"
+sha256 = "0fe389417a93b8ba0b8fbf596dc56cfb78dcdba34605e4e5d4b625b0429d203a"
+byte_size = 169631
+indexable = false
+notes = "Complete offered HTML response, 352 physical lines, carrying the ordo for September and October 2026. IDENTITY LIMITATION, MEASURED HERE AND NOT ASSUMED: this delivery is not byte-stable, so this SHA-256 identifies one response and no later fetch reproduces it. Two responses taken minutes apart on 2026-09-22 differed, by 57,725 bytes and by one byte of length (169,631 against 169,630), the divergence beginning at offset 67,090 in a per-response WordPress token of the form /*wp_block_styles_on_demand_placeholder:<hex>*/ whose differing width shifts everything after it. A consumer must therefore treat the digest as the identity of the response this record was written from, not as a value a reader can re-obtain; it is recorded because an exact response identity is still what a dated occurrence claim has to name. Access limitation: no exact HTML or article-text derivative is retained because its modern text and presentation lack an affirmative redistribution basis; offline readers have this dated identity and factual passage record, not the original page. Reopening its wording requires the public URL and will yield a later state."

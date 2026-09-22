@@ -1,0 +1,17 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.icrsp-france.ordo.web-2026-09-22.html-2233cf19"
+edition_id = "edition.icrsp-france.ordo.web-2026-09-22"
+artifact_type = "web-page"
+media_type = "text/html"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "This modern page includes institutional authored text, compilation and site markup. Public access does not establish redistribution rights, and no affirmative grant was identified in the retrieved page. Only identity and factual-locus metadata are retained."
+rights_jurisdiction = "United States"
+source_url = "https://icrspfrance.fr/ordo.php"
+provenance = "Retrieved complete over HTTPS on 2026-09-22 by the research stage of workflow run 71b6f89518984232 and hashed before the response was parsed. The September 2026 section was then read in locally parsed response text. Nothing in the path from the server to this hash passed through a language model."
+retrieved = "2026-09-22"
+sha256 = "2233cf193b0e53f0fbd17a1862214be942110f18c6d451032ea3f858bca8564d"
+byte_size = 111681
+indexable = false
+notes = "Complete offered HTML response, 1679 physical lines, carrying the institute's dated ordo entries for September 2026. IDENTITY LIMITATION, MEASURED HERE AND NOT ASSUMED: this delivery is not byte-stable, so this SHA-256 identifies one response and no later fetch reproduces it. Two responses taken minutes apart on 2026-09-22 differed, by 110 bytes, all of them inside a per-response Content-Security-Policy attribute nonce=\"...\" on the page's first inline script at offset 1,941. A consumer must therefore treat the digest as the identity of the response this record was written from, not as a value a reader can re-obtain; it is recorded because an exact response identity is still what a dated occurrence claim has to name. Access limitation: no exact HTML or article-text derivative is retained because its modern text and presentation lack an affirmative redistribution basis; offline readers have this dated identity and factual passage record, not the original page. Reopening its wording requires the public URL and will yield a later state."

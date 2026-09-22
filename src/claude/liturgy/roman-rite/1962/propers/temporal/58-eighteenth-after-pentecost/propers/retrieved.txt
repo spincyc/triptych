@@ -1,0 +1,330 @@
+RETRIEVED — Eighteenth Sunday after Pentecost, 1962 Missale Romanum
+Unedited finding aid. NOT publication text. Optical-reading errors are preserved deliberately.
+
+Two machine pulls follow. Neither controls any published wording: every Latin form
+in propers/verified.md was read on page images of the controlling facsimile at 200,
+400 and the pages' own native 500 ppi.
+
+==============================================================================
+PULL 1 — the controlling facsimile's own embedded text layer
+==============================================================================
+Represented edition : Missale Romanum, editio typica (Typis Polyglottis Vaticanis, 1962)
+Artifact            : artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+Whole-file SHA-256  : 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a
+                      82,815,941 bytes; the whole file was fetched on 2026-09-22 from the
+                      registered source URL and hashed before any page was read, and the
+                      digest and byte length matched the registered record.
+Method              : poppler pdftotext in -layout mode over artifact PDF pp. 491-492
+                      (printed pp. 410-411). Two-column layout is flattened line by line,
+                      so the two columns interleave; drop capitals are detached or lost.
+Extract SHA-256     : 887fddae263bf80b487c92be0260894a6d6684c7c32a3184190a7d56649db98f
+                      (the two pages exactly as the tool emits them, form feeds included)
+Boundaries shown    : printed p. 410 opens with the close of Sabbato Quatuor Temporum
+                      septembris (Secret no. 1666, Communion no. 1667, Postcommunion
+                      no. 1668) and then carries the heading DOMINICA DECIMA OCTAVA and
+                      nos. 1669-1674; printed p. 411 carries nos. 1675-1678 and then
+                      begins DOMINICA DECIMA NONA post Pentecosten at no. 1679.
+Known misreadings   : 'P atres' and 'F atres' for Fratres and 'TPXeus / JLy' for Deus,
+                      '/~*\ ratias / v J J' for Gratias, '/ C o n c e d e , ... V ^' for
+                      Concede (all drop capitals); 'desk' for desit in the Epistle;
+                      'qusesumus' for quaesumus and 'earn' for eam in the Secret;
+                      'OfFertorium' for Offertorium; 'edii-cerem' for educerem and
+                      'iEgypti' for Aegypti in the preceding formulary's Communion;
+                      'Graduate' for Graduale on p. 411. The marginal numbers of the
+                      right-hand column of printed p. 410 are clipped at that page's
+                      inner margin in the scan itself: the layer emits '167' for 1671
+                      and '168' for 1684.
+
+----- artifact PDF pp. 491-492 (printed pp. 410-411), pdftotext -layout -----
+      410                           Dominica XVIII post Pentecosten
+
+                          Secreta                    Lectio Epistolae beati Pauli Apostoli
+1666 / C o n c e d e ,   quaesumus,    omnipotens       ad Corinthios.           1 Cor. 1, 4-8
+      V ^ Deus: u t oculis tuae maiestatis
+      munus oblatum, et gratiam nobis devo-
+      tionis obtineat, et effectum beatae per-
+                                                     P    atres: Gratias ago Deo meo sem- 167
+                                                          per pro vobis in gratia Dei, quae
+                                                     data est vobis in Christo Iesu: quod in
+      ennitatis acquirat. Per Dominum no-            omnibus divites facti estis in illo, in
+      strum Iesum Christum, Filium t u u m :         omni verbo, et in omni scientia: sicut
+      Qui tecum vivit et regnat in unitate.          testimonium Christi confirmatum est
+                                                     in vobis: ita ut nihil vobis desk in ulla
+             Antiphona ad Communionem                gratia, exspectantibus revelationem Do-
+1667 Levit. 23, 41 et 43 Mense septimo               mini nostri Iesu Christi, qui et confir-
+     festa celebrabitis, c u m in tabernaculis       mabit vos usque in finem sine crimi-
+     habitare fecerim filios Israel, cum edii-       ne, in die adventus Domini nostri Iesu
+     cerem eos de terra iEgypti, ego Domi-           Christi.
+     nus Deus vester.                                      Graduale                  Ps. 121, 1 et 7
+                           Postcommunio                      Laetatus sum in his, quae dicta sunt 167;
+1668 T J e r f i c i a n t in nobis, D o m i n e , quaesu- mihi: in domum Domini ibimus. Y. Fiat
+     JL m u s , t u a sacramenta q u o d conti- pax in virtute tua: et abundantia in
+     n e n t : u t , quae n u n c specie g e r i m u s , turribus tuis.
+     r e r u m veritate capiamus. P e r D o m i -            Alleluia, alleluia. V. Ps. 101, 16 Ti- 16T-
+     num nostrum.                                          mebunt gentes nomen tuum, Domine,
+                                                           et omnes reges terrae gloriam tuam.
+                          DOMINICA                         Alleluia.
+               DECIMA OCTAVA
+                post Pentecosten                       Sequentia sancti Evangelii secun-
+                                                        dum Matthaeum.          Mt. 9, 1-8
+                       II classis
+                                                    n illo tempore: Ascendens Iesus in i67
+       Ant. ad in
+                Introitum           Eccli. 36, 18    Inaviculam, transfretavit, et venit in
+
+
+
+      D
+ 1669 " V ^ ^ ^ a pacem, Domine, sustinenti- civitatem suam. Et ecce offerebant ei
+                   bus te, ut prophetae tui fide- paralyticum iacentem in lecto. Et vi-
+                   les inveniantur: exaudi pre- dens Iesus fidem illorum, dixit paraly-
+                   ces servi tui, et plebis tuae tico: Confide, fili, remittuntur tibi pec-
+       Israel. Ps. 121, 1 Laetatus sum in his, cata tua. Et ecce quidam de scribis di-
+       quae dicta sunt mihi: in domum Do- xerunt intra se: Hie blasphemat. Et cum
+       mini ibimus.                               vidisset Iesus cogitationes eorum, di-
+          V. Gloria Patri.                        xit: Ut quid cogitatis mala in cordibus
+                         Oratio                   vestris? Quid est facilius dicere: Di-
+            irigat corda nostra, quaesumus, mittuntur tibi peccata tua; an dicere:
+  1670
+       D      Domine, tuae miserationis ope- Surge, et ambula? Ut autem sciatis,
+       ratio: quia tibi sine te placere non pos- quia Filius hominis habet potestatem
+       sumus. Per Dominum.                        in terra dimittendi peccata, tune ait
+
+----- page break -----
+                               Dominica XIX post Pentecosten                            411
+
+      paralytico: Surge, tolle lectum tuum, dite, popule meus, legem meam: incli-
+      et vade in domum tuam. Et surrexit, nate aurem vestram in verba oris mei.
+      et abiit in domum suam. Videntes                V. Gloria Patri.
+      autem turbae timuerunt, et glorificave-                        Oratio
+      runt Deum, qui dedit potestatem talem
+                                                        mnipotens et misericors Deus, 1680
+      hominibus.                          Credo.
+                                                 O        universa nobis adversantia pro-
+1675 Ant. ad OfFertorium Exodi 24, 4 et 5 pitiatus exclude: ut mente et corpore
+         Sanctificavit Moyses altare Domino, pariter expediti, quae tua sunt, liberis
+      offerens super illud holocausta, et im- mentibus exsequamur. Per Dominum.
+      molans victimas: fecit sacrificium ve-
+      spertinum in odorem suavitatis Domi- Lectio Epistolae beati Pauli Apostoli
+      no Deo, in conspectu filiorum Israel.           ad Ephesios.           Ephes. 4, 23-28
+                                                        atres: Renovamini spiritu mentis 1681
+                         Secreta
+1676 "TPXeus, qui nos, per huius sacrificii      F      vestrae, et induite novum homi-
+      JLy veneranda commercia, unius sum- nem, qui secundum Deum creatus est
+      mae divinitatis participes efficis: praesta, in iustitia et sanctitate veritatis. Prop-
+      qusesumus; ut, sicut tuam cognosci- ter quod deponentes mendacium, lo-
+      mus veritatem, sic earn dignis moribus quimini veritatem unusquisque cum
+      assequamur. Per Dominum.                     proximo suo: quoniam sumus invicem
+         Praefatio de Ssma Trinitate.              membra. Irascimini, et nolite peccare:
+                                                   sol non occidat super iracundiam ve-
+1677 Ant. ad Communionem              Ps. 95, 8-9 stram. Nolite locum dare diabolo: qui
+         Tollite hostias, et introite in atria furabatur, iam non furetur; magis
+                                                   autem laboret, operando manibus suis,
+      eius: adorate Dominum in aula sancta
+                                                   quod bonum est, ut habeat unde tri-
+      eius.
+                                                   buat necessitatem patienti.
+                    Postcommunio
+1678 /~*\ ratias tibi referimus, Domine, sacro Graduate                            Ps. 140, 2
+      v J J munere vegetati: tuam misericor-          Dirigatur oratio mea sicut incen- 1682
+      diam deprecantes; ut dignos nos eius sum in conspectu tuo, Domine. V. Ele-
+      participatione perficias. Per Dominum. vatio manuum mearum sacrificium
+                                                   vespertinum.
+      DOMINICA DECIMA NONA Alleluia, alleluia. V. Ps. 104, 1 Con- 1683
+                                                   fitemini Domino, et invocate nomen
+                 post Pentecosten                  eius: annuntiate inter gentes opera
+                        II classis
+                                                   eius. Alleluia.
+ 1679          Antiphona ad Introitum
+                                                         Sequentia sancti Evangelii secun-
+
+
+   S
+              alus populi ego sum, dicit Do-
+                minus: de quacumque tribula-              dum Matthaeum.        Mt. 22, 1-14
+                                                                                              168
+                tione clamaverint ad me, exau- T n illo tempore: Loquebatur Iesus 4
+                diam eos: et ero illorum Do- X. principibus sacerdotum et pharisaeis
+      minus in perpetuum. Ps. 77, 1 Atten- in parabolis, dicens: Simile factum est
+
+      32 - Missale Romanum
+
+----- page break -----
+
+==============================================================================
+PULL 2 — the second 1962 witness's Internet Archive optical layer
+==============================================================================
+Represented edition : Missale Romanum, editio iuxta typicam (Benziger Brothers,
+                      New York, 1962) — a publisher edition conformed to the typical
+                      edition, not a controlling witness.
+Artifact            : artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu-ocr
+Whole-file SHA-256  : 2a2da44d4f2054ffd9fa5a0fa87ec427fe2a99410f438112282eed82254585ce
+                      2,788,999 bytes; fetched 2026-09-22 and matched before use.
+Method              : literal extract of the whole-volume djvu.txt at physical lines
+                      61206-61352, which run from the formulary's own heading to its
+                      Postcommunion, immediately before the Nineteenth Sunday's heading.
+                      The Benziger's own printed pages are 404-406; the formulary stands
+                      on its pp. 404-405.
+Known misreadings   : 'sustinSnti-bus' for sustinentibus; 'proph6tse tui Rd&les' for
+                      prophetae tui fideles; 'Lzetatus' for Laetatus; 'd6mum' for domum
+                      (but see propers/verified.md: the Benziger page image really does
+                      print an acute there); 'XCor. 1,4-8' for 1 Cor. 1, 4-8; 'Conffde'
+                      for Confide; 'Ut antem' for Ut autem; 'al> i i t' for abiit;
+                      '0i\\-cis' for efficis; 'Prrefatio de Ssma Trinitate' for Praefatio;
+                      'qutesumus' for quaesumus; 'Exodi.24,4et5' for Exodi 24, 4 et 5.
+
+----- Benziger djvu.txt, physical lines 61206-61352 -----
+
+
+
+DOMINICA 
+DECIMA OCTAVA 
+POST PENTECOSTEN 
+
+II classis 
+
+Antiphona ad Introitum 
+
+Eccli. 36, 18 
+
+Da pacem, D6mine, sustinSnti- 
+bus te, ut proph6tse tui Rd& 
+les inveni&ntur: ex&udi pre- 
+ces servi tui, et plebis tuse Israel. 
+Ps. 121, 1 Lzetatus sum in his, qufe 
+dicta sunt mihi: in d6mum Domi- 
+ni Ibimus. y. G16ria Patri. Da pa- 
+cem. 
+
+
+
+Dominica XVIII 
+
+
+
+post Pentecosten 
+
+
+
+405 
+
+
+
+Oratio 
+
+Dfrigat corda nostra, qufesumus, 
+D6mine, tuse miserationis 
+oper6tio: quia tibi sine te plac^re 
+non p6ssumus. Per D6minum. 
+
+L6ctio Epistolse be&ti Pauli Ap6stoli 
+
+ad Corinthios 
+XCor. 1,4-8 
+
+Fratres: Grfitias ago Deo meo 
+semper pro vobis in gratia Dei, 
+quse data est vobis in Christo Iesu: 
+quod in omnibus divites facti estis 
+in illo, in omni verbo, et in omni sci- 
+entia: sicut testim6nium Christi 
+confirm&tum est in vobis: ita ut ni- 
+hil vobis desit in ulla gratia, exspe- 
+ctantibus revelati6nem D6mini no- 
+stri Iesu Christi, qui et confirm6bit 
+vos usque in finem sine crfmine, in 
+die adventus D6mini nostri Iesu 
+Christi. 
+
+Graduale Ps. 121, 1 et 7 Lsetatus 
+sum in his, quse dicta sunt mihi: in 
+domiun D6mini fbimus. y . Fiat pax 
+in virtute tua: et abunddntia in tur- 
+ribus tuis. 
+
+Alleluia, alleluia. y. Ps. 101, 16 
+Tim6bunt gentes nomen tuum, D6- 
+mine: et omnes reges terrse gl6riam 
+tuam. Alleluia. 
+
+^ Sequcntia sancti Evang61ii se- 
+cundum Matthseum 
+
+Matth. 9, 1-8 
+
+In illo t^mpore: Asc6ndens Iesus 
+in navfculam, transfret&vit, et 
+venit in civitdtem suam. Et ecce 
+offer6bant ei paralyticum iac6ntem 
+in lecto. Et videns Iesus fidem ill6- 
+rum, dixit paralytico: Conffde, fili, 
+remittuntur tibi pecc&ta tua. Et 
+ecce quidam de scribis dix6runt in- 
+tra se: Hic blasph£mat. Et cum vi- 
+disset Iesus cogitati6nes e6rum, 
+
+
+
+dixit: Ut quid cogit&tis mala in 
+c6rdibus vestris? Quid est facilius 
+dlcere: Dimittuntur tibi pecc&ta 
+tua; an dicere: Surge, et fimbula? 
+Ut antem scidtis, quia Filius h6mi- 
+nis habet potest&tem in terra dimit- 
+t6ndi pecc&ta, tunc ait paralytico: 
+Surge, tolle lectum tuum, et vade in 
+domum tuam. Et surrexit, et al> i i t in 
+domum suam. Vid6ntes autem tur- 
+bae timuerunt, et glorificav6runt 
+Deum, qui dedit potest&tem talem 
+hominibus. 
+
+Credo. 
+Antiphona ad Offertorium 
+
+Exodi.24,4et5 
+
+Sanctificfivit M6yses altfire D6- 
+mino, 6fferens super illud holo- 
+cAusta, et immolans vfctimas: fecit 
+sacrificium vespertinum in odo- 
+rem suavit&tis D6mino Deo, in con- 
+sp6ctu fili6rum Israel. 
+
+Secreta 
+
+Deus, qui nos per huius sacrificii 
+venerAnda commSrcia, unfus 
+summae divinit&tis participes 0i\\- 
+cis: prsesta, qutesumus; ut, sicut 
+tuam cogn6scimus veritAtem, sic 
+eam dignis m6ribus assequamur. 
+Per Dominum . 
+
+Prrefatio de Ssma Trinitate. 
+
+Antiphona ad Communionem 
+
+Ps. 95, 8-9 
+
+T611ite h6stias, et introite in &tria 
+eius: ador&te D6minum in aula 
+sancta eius. 
+
+Postcommunio 
+
+Gratias tibi ref6rimus, D6mine, 
+sacro munere vegetdti: tuam 
+miseric6rdiam deprec£ntes; ut di- 
+gnos nos eius participati6ne perfi- 
+cias. Per D6minum. 
+
+
+
+
+==============================================================================
+END OF FINDING AID
+==============================================================================
+Neither pull was used to establish a reading. Both were used only to locate pages,
+to count marginal numbers, and to record what an optical layer of each witness says
+so that a later reader can tell a transcription choice from a scanning artefact.

@@ -1,0 +1,86 @@
+# Controlling evidence this leaf's research reads outside the leaf and outside the
+# ancestry of its registered source bindings. The engine separately seals the
+# leaf's own research/ and propers/ records, every bound source record with its
+# ancestry and available payloads, and the chronology computation code and
+# identity registry as computation inputs.
+#
+# - The 1962 calendar index is the finding aid research/context.md used for
+#   identity and occurrence and the index the mass-propers and proper-chronology
+#   tools resolve this formulary through; the companion rubric registry drove the
+#   precedence computation that record reports. Neither is the source of record
+#   for any wording.
+# - The facsimile-rights inventory settles, once for the repository, the Latin
+#   publication basis that propers/verified.md relies on. The Latin provenance
+#   ledger carries four of this Sunday's ten elements as collated and permitted
+#   and is the record research/scope.md section 9 reports the other six against.
+# - The roman-1962 English-translation overlay carries four `untranslated` rows
+#   for mass `pentecost-18` -- Collect, Secret, Postcommunion and Offertory --
+#   each `availability = "unavailable"` with a `rights-withheld` reason over the
+#   1861 Cummiskey edition. research/context.md cites those rows when it states
+#   this Mass's English position and research/scope.md section 9.1 answers them
+#   against the bound Cummiskey passage, so the file has to be reviewable with
+#   the leaf. It is another owner's record and is not edited here.
+# - The five authored Scripture-chronology files are the corpus whose answer is
+#   research/chronology.toml and research/chronology-annotations.tex.
+# - The canon and concordance data the chronology computation actually opens when
+#   it answers this leaf, traced on 2026-09-22 with a Python audit hook over
+#   `proper-chronology record --check`: the Clementine book index, the Clementine
+#   chapter files, and the Douay-Rheims (Challoner), Revised Version and World
+#   English Bible Catholic verse texts. The three verse-text editions are declared
+#   by edition directory, the smallest owner that covers every verse text the
+#   computation opens.
+#
+# The tolerant literal searches this stage ran over the whole Clementine chapter
+# store (research/scope.md section 5.1) read the same directory that is already
+# declared below for the chronology computation.
+#
+# Nothing else outside this leaf is read that is not reached through the ancestry
+# of a registered binding. In particular the patristic and liturgical-history
+# witnesses added on re-entry -- Jerome at PL 26, Hilary's CSEL 22 Tractatus,
+# Cassiodorus on Pss 95, 101 and 121, the two gregorien.info pages, and the two
+# dated 2026-09-22 Ordo passages -- and those added on the second re-entry --
+# Chrysostom in PG 55, Theodoret in PG 80 and PG 82, the PG 27 Expositiones,
+# Bellarmine, Augustine in PL 37 and on augustinus.it, Aquinas on Matthew (Venice
+# 1745) and on 1 Corinthians, Cornelius a Lapide on the Pentateuch, Rupert of Deutz
+# in PL 170 and Gueranger's vol. XI -- are all bound in
+# research/source-bindings.toml and are sealed with their records and payloads by
+# that route, so they are not repeated here. The unregistered Internet Archive
+# page images read beside them are listed with their digests in research/scope.md
+# section 6.3. The tracked PL 78 and PL 105 layers, read only as leads that nothing
+# rests on (research/scope.md section 5.2), are not declared.
+#
+# - The passage-to-work index src/sources/commentary/passage-commentary-index.yaml
+#   is declared below. It was first treated as a finding aid that nothing rested
+#   on, and that was wrong: research/scope.md section 5.1.1 bounds the Introit
+#   antiphon's negative on two legs, the first of which is what that index returns
+#   for Sirach 36, and sections 3.1, 3.5, 3.6 and 3.7 report its mappings for
+#   Sirach 36, Exodus 24, Matthew 9 and 1 Corinthians 1 as fact -- section 5.2 now
+#   bounds the Gospel's and the Epistle's later reception on it as well. Its bytes
+#   have to be reviewable with the leaf for a later dispatch to re-check those
+#   bounds. It is another owner's record and is not edited here. The queries this
+#   stage ran against it through `tools/commentary-work-index discover`, re-run
+#   for every appointed locus on the second re-entry of 2026-09-22, were Ps 95:8,
+#   Ps 101:16, Ps 121:1, Ps 121:7 (all --numbering vulgate), Mt 9:1, 1 Cor 1:4,
+#   Ex 24:4 and Sir 36:18; research/scope.md sections 3.1 and 3.5-3.7 and 5.2 give
+#   each locus's rows as returned.
+# - The 1962 calendar index is also the record research/scope.md section 2.7
+#   reads for the Nineteenth Sunday's appointments (pentecost-19), against which
+#   Rupert of Deutz's placement of this Gospel is compared.
+paths = [
+  "src/sources/calendars/roman-1962/propers.yaml",
+  "src/sources/calendars/roman-1962/rubrics.yaml",
+  "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml",
+  "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+  "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+  "src/sources/chronology/profiles.yaml",
+  "src/sources/chronology/events.yaml",
+  "src/sources/chronology/composition.yaml",
+  "src/sources/chronology/bindings.yaml",
+  "src/sources/chronology/gaps.yaml",
+  "src/sources/bibles/clementine-vulgate/chapters",
+  "src/sources/commentary/passage-commentary-index.yaml",
+  "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc",
+  "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581",
+  "src/sources/works/convocation-of-canterbury/revised-version/editions/ebible-eng-rv",
+  "src/sources/works/ebible-org/world-english-bible/editions/catholic-eng-web-c",
+]

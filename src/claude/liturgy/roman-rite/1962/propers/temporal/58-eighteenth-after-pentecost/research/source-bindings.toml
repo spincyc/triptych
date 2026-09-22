@@ -1,0 +1,680 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost"
+
+# Publication-local record of how this leaf's research used the reusable source
+# library. It supplements, and does not replace, propers/verified.md (the text
+# control), research/scope.md (reception matrix, witness register, negative
+# results and bounds) and research/interpretations.md.
+#
+# States describe what the research stage of run 71b6f89518984232 did with each
+# record on 2026-09-22, not what the record could support. `inspected` means this
+# stage read the bound locus itself; `verified` is claimed only for the
+# liturgical page images collated word for word. Reception witnesses stand at
+# `inspected` where they are registered and have no binding where they are not.
+#
+# No `negative-search` binding appears. Every negative this leaf records
+# (research/scope.md section 5.1) was reached by a tolerant literal search that
+# strips diacritics and folds i/j and u/v, which is not one of the library's
+# canonical search modes, so no replayable receipt exists and no `searched`
+# state is claimed. The scope record states each negative's exact boundary
+# instead.
+#
+# The re-entry of 2026-09-22 swept the library a second time, for the reception
+# witnesses this study actually uses and not only for the leads it had recorded
+# as unreached, and found registered routes for five of them that the first pass
+# had not tried. Those routes were opened and are bound below: the tracked CCEL
+# NPNF1-8 English of the whole Enarrationes (Pss 95, 101 and 121), the registered
+# New Advent page for Enarr. in Ps. 101, the tracked Migne Latin of the
+# Enarrationes for Pss 95 and 101, the tracked CCEL NPNF1-10 and NPNF1-6 texts
+# carrying Chrysostom's Hom. in Matth. 29 and Augustine's De consensu
+# evangelistarum, and Migne's own PL 70 for Cassiodorus. research/scope.md
+# section 6.3 states, per witness, which route was tried and what it gave.
+#
+# Witnesses read from public deliveries the library does not register — New
+# Advent for Chrysostom on 1 Corinthians and on Hebrews and for Augustine on
+# Pss 95 and 121; Corpus Thomisticum for the Catena aurea in Matthaeum, of which
+# this library holds no state; the Internet Archive page images of the 1862
+# Pustet (leaves n435, n436), of the Benziger 1962 (leaves n480, n481) and of
+# Wilson's Gelasian (leaves n324, n325); and the live USCCB Psalms introduction —
+# have no binding. Their retrieval, extent and SHA-256 are recorded in
+# research/scope.md section 6, and they are cited in References in the ordinary
+# way. The New Advent page for Enarr. in Ps. 101 is the one delivery of that set
+# the library does register, and it is now bound.
+#
+# The SECOND re-entry of 2026-09-22 swept the library a third way: by artifact
+# coverage and not only by work record. tools/commentary-work-index discover was
+# run for every appointed locus (Ps 95:8, Ps 101:16, Ps 121:1, Ps 121:7, Mt 9:1,
+# 1 Cor 1:4, Ex 24:4, Sir 36:18), and for each lead it returned the registered
+# collected-volume and whole-volume artifacts were checked for the work. Eleven
+# registered routes that earlier passes had recorded as unreached, or had not
+# named, were opened and are bound in the last two groups below: Chrysostom in
+# PG 55 and Theodoret in PG 80 on Ps 121, Theodoret in PG 80 and Athanasius in
+# PG 27 on Pss 95 and 101, Theodoret in PG 82 on 1 Cor 1:4-8, Bellarmine's
+# Explanatio on all three psalms, Augustine's own Latin in PL 37 and on
+# augustinus.it, Aquinas's lectura on Matthew in the Venice 1745 volume, Cornelius
+# a Lapide on Ex 24:4-8, and -- as documented reception of the compilation and not
+# as exegesis -- Rupert of Deutz in PL 170 and Gueranger's Liturgical Year vol.
+# XI. research/scope.md sections 3, 4, 5.2 and 6.3 carry what each gave.
+
+# ---------------------------------------------------------------------------
+# Liturgical text control
+# ---------------------------------------------------------------------------
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = [
+  "Dominica decima octava post Pentecosten, printed pp. 410-411 = artifact PDF pp. 491-492, marginal nos. 1669-1678",
+  "printed p. 410 left column, Secret, Communion and Postcommunion of Sabbato Quatuor Temporum septembris, nos. 1666-1668, read for the opening boundary",
+  "printed p. 411 left column, heading DOMINICA DECIMA NONA post Pentecosten and Introit no. 1679, read for the closing boundary",
+  "printed p. 411 right column, Oratio no. 1680 and Epistle no. 1681 of the Nineteenth Sunday, read in the text layer for the Hadrianum comparison in research/scope.md section 2.2",
+  "running heads of printed pp. 410 and 411",
+  "right-hand margin strip of printed p. 410 at native 500 ppi, read for the clipped marginal numbers of that column",
+]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-22"
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
+context = "The exact remote facsimile controls every Latin form, heading, citation, marginal number, rank and rubric of this formulary and both of its boundaries. The whole file was fetched on 2026-09-22 and hashed before any page was opened; digest and byte length matched the record (648fdb8f...d3518a, 82,815,941 bytes). Pages 491-492 were rendered at 200 and 400 dpi and then cropped at the pages' own native 500 ppi: p. 491 left column below the heading, right column in three sections, and a strip at its right-hand margin; p. 492 left column in two sections. No reading was taken from the embedded text layer, which misreads desit as desk, Fratres as P atres and F atres, and eam as earn, and which emits the clipped marginal numbers as 167 and 168."
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-pentecost-18-orations"
+loci = [
+  "Collect at printed p. 410, no. 1670; artifact PDF p. 491; Offertory at printed p. 411, no. 1675; artifact PDF p. 492; Secret at printed p. 411, no. 1676; artifact PDF p. 492; Postcommunion at printed p. 411, no. 1678; artifact PDF p. 492",
+]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-22"
+source_fingerprint = "sha256:f2c4676936ce5d9c38d5c67e005eda42ebddc2871d28a04647dcb0f05a66574d"
+context = "The four non-scriptural propers re-read on this stage's own 500 ppi crops of PDF pp. 491-492 and found as the passage records them, with the conclusion the typical edition prints at all three orations: Per Dominum., the short form. The printed length of a conclusion is a typographic variable of the edition; the same page prints the preceding formulary's Secret conclusion at length as far as in unitate (propers/verified.md section 8)."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.benziger-iuxta-typicam-1962.ia-djvu-ocr"
+loci = [
+  "whole-file text layer, physical lines 61206-61352, the formulary from its heading to its Postcommunion",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5c2d162e9079b438862a80692742bb1e85a16c60e9730040aeef4a0275a32144"
+context = "The second 1962 witness, a publisher edition conformed to the typical edition. Its whole text layer was fetched on 2026-09-22 and hashed (2a2da44d...4585ce) before use, and the formulary's lines are kept in propers/retrieved.txt. The readings themselves were taken from the item's page images of its printed pp. 404-405, which are not registered, are not retained, and are served only at 800 x 1158 px; their digests are in research/scope.md section 6.1. Eleven divergences from the typical edition are tabulated in propers/verified.md and none is adopted; two are substantive (a repetition cue after Gloria Patri, and a misprinted acute on domum in the Introit verse)."
+
+# ---------------------------------------------------------------------------
+# The public-domain antecedent and the rights route
+# ---------------------------------------------------------------------------
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+loci = [
+  "physical lines 51669-51811, the whole formulary from the heading Dominica XVIII post Pentecosten to the pre-1960 Tertia ad libitum after the Postcommunion",
+]
+role = "rights-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-09-22"
+source_fingerprint = "sha256:efd4426beabe5385be4e5df4542255c488fe460dee069ab999231255702d5b0f"
+context = "The tracked public-domain antecedent. Its SHA-256 was recomputed here (f34bc7cf...2502162) and matched. Every element of the 1962 formulary stands in it in the same words; the differences are tabulated element by element in propers/verified.md. This is the textual basis for publishing the whole formulary's Latin on 17 U.S.C. 103(b), as src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml requires. The optical layer was read alongside the page images of the same pages, which are not registered."
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.pentecost-18-orations"
+loci = [
+  "Collect at printed p. 350; text-layer lines 51686-51692; Offertory at printed p. 351; text-layer lines 51772-51778; Secret at printed p. 351; text-layer lines 51780-51789; Postcommunion at printed p. 351; text-layer lines 51801-51807",
+]
+role = "rights-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f39801a7d398f2caa807fc5aaf124530aa42be709beb5249f93913c2fe932476"
+context = "The four non-scriptural propers in the tracked 1862 layer at the registered lines. The record's own notes say no page image of the 1862 had been read when it was written; this stage read the images of printed pp. 350 and 351 (Internet Archive bub_gb_E7sPAAAAIAAJ leaves n435 and n436, unregistered, digests in research/scope.md section 6.1) and found the registered lines to agree with them apart from optical noise. That reading is reported to the passage's owner and the shared record is not edited here."
+
+# ---------------------------------------------------------------------------
+# Transmission: where the parts of this formulary stand in the ancient books
+# ---------------------------------------------------------------------------
+
+[[bindings]]
+source_id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ia-djvu-ocr-gelasiansacrame00wilsgoog"
+loci = [
+  "physical lines 21548-21580, Liber III sections xiii-xv, printed pp. 232-233",
+  "physical lines 15310-15381, Liber I section xciii, the Mass for the dedication of a former synagogue, with its Postcommunion at 15341-15344 and the running heads of printed pp. 141-143",
+  "physical lines 12585-12598, Liber I section lix, the second occurrence of this formulary's Secret",
+  "physical lines 640-642, the edition's table of contents for Liber I sections xciii and xciv",
+  "physical line 11487, the Exsultet, the second occurrence of the phrase ueneranda commercia in this layer (line 11485, which an earlier draft of this binding gave, reads resurrectionis vexilla suscepit and carries no occurrence)",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:8386191bf9d4c1f090c5a3089fd3434c0d93b22562341c308199f7c13b2fa747"
+context = "Fetched 2026-09-22 and hashed (039123ca...684d84) before use. Liber III section XIV, headed Item alia Missa with no Sunday number, carries this formulary's Collect, Secret and Postcommunion as a set, with a second Collect beside the first, and Wilson's footnote assigning the Mass to the twenty-second Sunday after Pentecost in R, S and Gerbert and to the nineteenth in Pamelius. BOTH of Wilson's Liber I cross-references at III. xiv were resolved in this layer on re-entry. The Postcommunion stands a second time at 15341-15344 in the Mass for the dedication of a place that had been a synagogue, and the section number is now settled from the edition's own table of contents at line 640 (xciii, printed p. 141) rather than from the running heads, which read I. xciv over both printed p. 142 and printed p. 143 because this compositor heads a page with the section it runs into. The Secret stands a second time at 12585-12598 in Liber I section lix, reading cognovimus and dignis moribus without et mentibus -- the 1962's own readings -- under four OCR corruptions (huiiis, commerda, partidpes, efiecisti) that are why literal probes on the ordinary spellings missed it. Every reading and every apparatus note cited in research/scope.md section 2.1 from Liber III was confirmed on the page image of printed p. 232 (Internet Archive LiberSacramentorumRomanaeEcclesiae leaf n324, unregistered); both Liber I occurrences were read in this layer only and no Liber I page image was opened."
+
+[[bindings]]
+source_id = "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7"
+loci = [
+  "printed p. 175 = PDF p. 233, sections CXXXVI-CXXXVIII",
+  "printed p. 174 = PDF p. 232, sections CXXXIIII-CXXXV and their chant-cue footnotes a and b",
+]
+role = "direct-witness"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:b6b2f002fa1d0aecd709fb76d2379c4470e563def3d4c752cad2a2d1b1d6ffb0"
+context = "The tracked payload, SHA-256 recomputed here (96fd93c7...8681) and matched, rendered to page images at 300 dpi. Section CXXXVII, DOMINICA .XVIIII. POST PENTECOSTEN, carries this formulary's three orations; the footnote b of printed p. 174, attached to section CXXXV, DOMINICA .XVII., carries its four chants as a cue set with a different Alleluia. Both were read on the page images, not in the text extract, which flattens Wilson's footnotes into the wrong column order and would have attached the chant cues to the wrong Sunday."
+
+[[bindings]]
+source_id = "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-djvu-ocr-sacramentariumle00cath"
+role = "context"
+states = ["cataloged", "acquired"]
+source_fingerprint = "sha256:0141699efaeccd0efa1e387773fbeee1a2eb2ad30124ab0dfbc4d49186fabd40"
+context = "Fetched 2026-09-22 and hashed (7e7e82fe...cad21b) before use. Searched for this formulary's three orations and found to carry none of them; the ten hits on Gratias tibi referimus are ten other prayers. The search was the tolerant one described in the header, not a canonical library search mode, so no searched state and no negative-search binding is claimed; research/scope.md section 2.4 states the negative and its boundary."
+
+[[bindings]]
+source_id = "corpus.catholic-church.ancient-sacramentaries-2026-08-01"
+role = "corpus-boundary"
+states = ["cataloged"]
+context = "The declared boundary within which the Veronense negative and the Gelasian and Hadrianum positives stand. Its own record names what it does not hold: no eighth-century Gelasian, no Ambrosian book, no Gregorian supplement beyond Wilson, no medieval diocesan sacramentary. Read for those limits; two of its eight members were opened and are bound above."
+
+# ---------------------------------------------------------------------------
+# The Latin Bible text against which the appointed text was collated
+# ---------------------------------------------------------------------------
+
+[[bindings]]
+source_id = "edition.catholic-church.vulgata-clementina.ebible-latvuc"
+role = "context"
+states = ["cataloged"]
+context = "The Latin Bible text of the edition the Missal prints, read in its tracked chapter files. Beyond the verse-level collations bound below, the whole tracked text of all 73 books was searched for the Offertory's and the Introit's distinctive phrases; the results, positive and negative, are in research/scope.md section 5.1 and propers/verified.md."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-21-psalms-d20e21f8"
+loci = ["Ps.95.1-13", "Ps.101.1-17", "Ps.121.1-9", "Ps.140.2", "Ps.147.1-6"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1481d71b5253d2bf9644408f82c40a7cd90fce2191d6586d9fa24b0f62d49130"
+context = "The Latin of the three appointed psalms in their complete context, with their Vulgate titles; Ps 140:2 as the only Psalter occurrence of sacrificium vespertinum, a phrase the Offertory uses; and Ps 147:3, Qui posuit fines tuos pacem, as the verse the Hadrianum's bracketed and queried Alleluia cue would be if Wilson's reading is right."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-02-exodus-489219e2"
+loci = ["Ex.24.1-18", "Ex.29.41"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f66a5f177501b3101db81fae4b4549108e0ddb13478544d42bd760398f415a02"
+context = "The Latin of the Offertory's cited chapter in full, establishing that vv. 4-5 read aedificavit altare and obtulerunt holocausta immolaveruntque victimas pacificas, and that the antiphon's closing in conspectu filiorum Israel stands at v. 17."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-26-ecclesiasticus-47e0c32c"
+loci = ["Ecclus.36.15-20"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:4684fa2aecac39a227241c498dc62c7533a1d2a760a7e2040f6ce6383ffa848e"
+context = "The Latin of the Introit's cited verse and its neighbours, establishing that Ecclus 36:18 reads Da mercedem sustinentibus te ... et exaudi orationes servorum tuorum, which the Missal's antiphon does not."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-47-matthew-2d02758d"
+loci = ["Matt.9.1-8"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:da1db83ff564af32d9e8dab7773456aa467a354ded799029638be74368323843"
+context = "The Latin of the Gospel, read for the collation in propers/verified.md section 6: the Missal's liturgical opening replaces the Clementine's Et ascendens, and the rest differs only in orthography and two points of pointing -- Confide fili at v. 2 without the Missal's comma, and peccata tua: at v. 5 where the Missal sets a semicolon. An earlier draft of that collation asserted a third, a Clementine comma after facilius at v. 5; this artifact's row Matt 9 5 reads Quid est facilius dicere: with no comma there, and the assertion is withdrawn. Re-read on 2026-09-22."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-53-1-corinthians-82f86d50"
+loci = ["1Cor.1.1-13"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c82beb331c7ee02b49e217eb826eb024d8c87614af17bbb662f8374cd5880b74"
+context = "The Latin of the Epistle with its address and the paragraph the lection stops short of, read for the collation and for the literary context on which Chrysostom's reading of vv. 4-8 depends."
+
+# ---------------------------------------------------------------------------
+# The lawful English routes
+# ---------------------------------------------------------------------------
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+loci = ["Ps.95.1-13", "Ps.101.14-18", "Ps.121.1-9"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+context = "The registered public-domain English of the three appointed psalms, read in the tracked verse text at the Vulgate loci. These are canonical verses. At Ps 95:9 the Douay reads in his holy court, which cannot carry the Missal's in aula sancta eius; propers/verified.md states the rule for that case."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-26-ecclesiasticus-c9d262f0"
+loci = ["Ecclus.36.1-19"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:3452d146cbe0f6865d02307cba892923e69b6ebdb18489b2dffee07628210ffb"
+context = "The registered public-domain English of the Introit's cited chapter. Its v. 18, Reward them that patiently wait for thee ... and hear the prayers of thy servants, renders the Clementine and not the Missal's antiphon, and cannot carry Da pacem, Domine or plebis tuae Israel."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-02-exodus-56072879"
+loci = ["Ex.24.1-8"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:2cf6c449848a14ea55e8a13f58e765a62bd457d60ed057db356b06fbf9d35227"
+context = "The registered public-domain English of the Offertory's cited verses and their frame, read at the Vulgate loci. It renders the Clementine and not the compiled antiphon."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-47-matthew-dd0ba183"
+loci = ["Matt.9.1-13"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:ed47ecb092ecb6256fb84450e8ad39d0debf2efe6c65442199a76a7fb1a8b98b"
+context = "The registered public-domain English of the Gospel and of the pericope that follows it, read at the Vulgate loci. Its v. 1 reads And entering into a boat, which cannot carry the Missal's In illo tempore: Ascendens Iesus."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-53-1-corinthians-ffc4f260"
+loci = ["1Cor.1.1-13"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:86aa4aafa5cb1a66218d81b3f7735715d33eac0a1b62c9c471499728c0838a11"
+context = "The registered public-domain English of the Epistle with its context. The liturgical address Fratres has no Douay verse and must be shown as the Missal's addition."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.psalm-numbering-ee3c7757"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c3702f219d6641eb66186bd7d3d557375aec2843467d0d54aabe3397ec7e8fb7"
+context = "The repository's psalm concordance, read to fix the Hebrew and English numbers this leaf prints: Vulgate 95 = Hebrew 96 = English 96; Vulgate 101 = Hebrew 102, whose v. 1 is the inscription that English Bibles leave unnumbered, so Vulgate 101:16 = English 102:15; Vulgate 121 = Hebrew 122; and Vulgate 147 = Hebrew 147:12-20, so the Hadrianum's Qui posuit cue at Vulgate 147:3 is Hebrew 147:14."
+
+[[bindings]]
+source_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.post-pentecosten-18"
+loci = ["post-pentecosten-18"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:a70ef51a51fb54e9cd927ed2c0dc3417c5c2402b510a068a8a05cb61f79b0894"
+context = "The registered public-domain English of the Collect, Secret and Postcommunion, under the heading XVIII. SUNDAY AFTER PENTECOST, read in the tracked payload at the registered lines. This stage did not open the 1861 scan, so the payload has not been checked here against its own page images."
+
+[[bindings]]
+source_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.temporal-orations-en"
+loci = ["post-pentecosten-18"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:200494ff703c571c74a56a4a6c9a0c32279d2a9136280490748327dd9e1c538c"
+context = "The tracked public-domain payload over which the passage above is addressed. Its SHA-256 was recomputed here and matched."
+
+# ---------------------------------------------------------------------------
+# The Greek checked for two chant texts
+# ---------------------------------------------------------------------------
+
+[[bindings]]
+source_id = "artifact.catss.lxxm-morphology.unicode-fddec9b.github-archive-fddec9b-74c72484"
+loci = ["02.Exod.txt at Ex 24:4, 5, 6 and 17", "34.Sirach.txt at Sir 36:12-22"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:72d8dd57e164e5bf068d4c95765e9e4d2911136d962a2204c6ef44dd3f1a5a45"
+context = "Fetched 2026-09-22 and hashed (74c72484...4d8891, 3,303,738 bytes) before use, to test whether the Greek accounts for the Offertory's and the Introit's departures from the Clementine. It does not: LXX Ex 24:4 reads oikodomesen thysiasterion, 24:5 ethysan thysian soteriou, and Sir 36:15 dos misthon tois hypomenousin se. The record is registered storage = restricted; the bytes were held only in the run's scratch directory, are not installed, and the readings are reported rather than reproduced at length."
+
+# ---------------------------------------------------------------------------
+# The controlling chronology source owners, inspected in this boundary
+# ---------------------------------------------------------------------------
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-5.new-york-1909.newadvent-05263a-c3fe190d-article-text"
+loci = ["Ecclesiasticus, the author and the time sections"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:b66b6724817ab06e6cf07a0b57a6d99ada3aa4a2141ffc4588f4cb248229ce2f"
+context = "The source behind the Introit's two Ecclesiasticus composition claims. Read here: the argument from the grandson's thirty-eighth year of Ptolemy Euergetes to 132 B.C., hence the author 'between 190 and 170 B.C.'; and the older position, identifying Simon I, that refers the book to 'about 280 B.C.'"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-4.new-york-1908.newadvent-04364a-2b6b401d-article-text"
+loci = ["Epistles to the Corinthians, the section on the occasion of the first epistle"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:2c5a67a9de90b5b450ea940a7cb51ea9be20294327949032898093fe32b1f20c"
+context = "One of the Epistle's two disputed composition claims, read at its locus: 'St. Paul at once wrote the First Epistle to the Corinthians and sent it by Titus about Easter A.D. 57.'"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-11.new-york-1911.newadvent-11567b-bff0dda8-article-text"
+loci = ["St. Paul, the chronological table"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:83263e9b6b864dbc2776538285f276ac7740d8e39098d077148ce421ca998f4f"
+context = "The Epistle's other disputed composition claim, read at its locus: the retained table gives 'third mission, 53-57; (1 and 2 Corinthians; Galatians), 56'. The two authorities disagree by a year and the page-2 dossier must name both."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-10.new-york-1911.newadvent-10057a-e7b6ccef-article-text"
+loci = ["Gospel of St. Matthew, the date of composition section"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:a5698ebe70292d9dc1c32df2c8cc440778cb8d0dc2f840f11d127482a4c4d5dd"
+context = "Five of the Gospel's six disputed composition claims, read at their locus, where the article presents them as a range of positions rather than as findings: 38-45 (Theophylact, Euthymius, Nicephorus), 40-42 (the Apostles' separation), 40-45 ('Catholic critics, in general'), 60-68 (Eusebius's later departure) and 64-67 (Irenaeus), with the article's own warning that the Irenaeus text 'presents difficulties of interpretation which render its meaning uncertain'."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14530a-0a19aa2c-article-text"
+loci = ["The New Testament, the paragraph on the dates of the Gospels"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:0a5a9e3b92db7d3a9953343ff8b1a04ec7baa2a01adbf31eadc28dc4e8f410d4"
+context = "The Gospel's sixth composition claim, read at its locus: 'The original text of St. Matthew is certainly prior to the ruin of Jerusalem ... and consequently about the year 50. We know nothing definite of the date of its being rendered into Greek.'"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-14.new-york-1912.newadvent-14499a-82b12b6e-article-text"
+loci = ["Temple of Jerusalem, the opening paragraph"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:a8809347715feb198ef0948c5f69fdf7b527b0629f686f7ef5d95a26cd364156"
+context = "The source of the Communion's superscription-setting claim, read at its locus: 'After the return from captivity Zorobabel raised it again from its ruins (537 B.C.).' The claim answers the title of Ps 95, quando domus aedificabatur post captivitatem, and is not a composition date for the psalm."
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03738a-5eb03e5b-article-text"
+loci = ["General Chronology, the Christian Era section"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f05c8e31ca06decdffb3ed7f5260eb25a1908d50ba9984368d7937e7044f6edf"
+context = "One of the Communion's two disputed prophetic-referent claims, read at its locus: the birth of Christ 'really occurred three years earlier than he placed it, or in the year of Rome 750 which he styles 3 B.C.'"
+
+[[bindings]]
+source_id = "artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04-article-text"
+loci = ["Biblical Chronology, the section on the date of the Nativity"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f8dd64daaeb2a33bcb9843f89a3b9572d7dda801f56a3c8092c534c536cc7eed"
+context = "The other disputed prophetic-referent claim, read at its locus: 'if Herod died in the year 4 B.C., we should be taken to 6 or 7 B.C. as the year of the Nativity.' Both claims are inherited at psalm-group scope and neither dates Ps 95."
+
+[[bindings]]
+source_id = "passage.united-states-conference-of-catholic-bishops.new-american-bible-revised-edition.english-usccb-web-2026-07-28.psalms-introduction"
+loci = ["Psalms introduction"]
+role = "context"
+states = ["cataloged", "inspected"]
+source_fingerprint = "sha256:9d846d7a068a2f4ff21fbe83aa4460c0a7c96864afb26ad6692af23b96ab63df"
+context = "The source of the Psalter-wide composition boundary that three of this formulary's elements carry. The registered artifact retains no payload, so the live page was read on 2026-09-22 (response digest in research/scope.md section 6.4) and the statement confirmed: 'Seventy-three Psalms are attributed to David, but there is no sure way of dating any Psalm. Some are preexilic (before 587), and others are postexilic (after 539), but not as late as the Maccabean period (ca. 165).' Protected prose is summarized, not retained in tracked payloads. The same introduction is also the plainest statement of the numbering hazard this leaf's psalms raise."
+
+# ---------------------------------------------------------------------------
+# Patristic reception reached through the source library on re-entry
+#
+# research/scope.md section 5.2 previously recorded four of these as unreached.
+# Each was in fact registered here, and the entries below name the route that
+# served. States are `inspected`: each was read at the locus stated, in the
+# language stated, and none was collated against a critical edition.
+#
+# The three Cassiodorus bindings carry no `loci` array. That is not an omission:
+# work.cassiodorus.expositio-psalmorum declares
+# locus_pattern = '(?:16|24|64|88)\.…', which admits four psalm numbers and none
+# of the ones this formulary appoints -- although the library itself registers
+# artifacts of that work for Psalms 39, 70, 85, 95, 97, 101 and 121. Widening the
+# pattern would change the work record's fingerprint and therefore every
+# Cassiodorus binding in every leaf, which is a repository-wide review obligation
+# and not this leaf's to trigger. The host sectiones read are named in each
+# binding's context instead, and the gap is reported to the library's owner.
+# ---------------------------------------------------------------------------
+
+[[bindings]]
+source_id = "segment.jerome.commentariorum-in-evangelium-matthaei.vallarsi-migne-pl26-1845.pl26-columns-15-218"
+loci = ["liber-1"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:b4b4c1532f3ece509e86983d588765108d73d82a8b03954bfa2a409fcf0cc41c"
+context = "Liber I at Mt 9:1-8, which is PL 26, columns 53-56 = artifact PDF pages 32-33; PDF page 14 (columns 17-18) was read first, only to fix the column-to-page rule. The loci array carries the work's own registered grammar, which addresses books and not Migne columns. Jerome at his own locus, which research/scope.md section 5.2 had recorded as not reached after four external deliveries failed; the registered route is this segment over the Migne PL 26 scan. The 63,426,233-byte controlling artifact was fetched on 2026-09-22 and its SHA-256 recomputed and matched (0d889bd6...0245e4) before any page was rendered. The scan carries no text layer -- pdftotext over the segment's whole page range, PDF pp. 13-116, returns 104 bytes -- so both pages were rendered at 200 dpi and read as images. What this settles is in research/scope.md section 3.5: Jerome's own wording at Mt 9:1-8, and two places where the Catena aurea's Jerome lemma departs from it, splicing the lemma on vv. 1-2 into the lemma on vv. 5-6 and carrying a tropological sentence the commentary does not have at this pericope. It also settles a negative that section 4.3 and research/interpretations.md section 2.5 rest on: Jerome comments on Mt 9:7-8 in one sentence, about the risen soul carrying its bed, and says nothing about qui dedit potestatem talem hominibus."
+
+[[bindings]]
+source_id = "artifact.hilary-of-poitiers.tractatus-super-psalmos.csel-22-zingerle-1891.ia-djvu-ocr-shilariiepiscopi22hilauoft"
+loci = ["121.1-5", "121.13-14"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:270b160fa7bcdcdcc2553168c73f3cc4f1c72448c47c7ceb1e47a0942f69a540"
+context = "Physical lines 29495-30011 of the controlling artifact, the tractatus in psalmum CXXI whole, whose running heads inside that span print CSEL 22 pp. 570, 571, 574, 575, 578 and 580; the loci array carries the work's own registered psalm.section grammar. Hilary on Ps 121, the psalm this formulary appoints three times over two elements. The work record says this edition preserves Pss 118-150 and tools/commentary-work-index discover returns it for Ps 121; research/scope.md section 5.2 had not named it among the leads at all. The 2,729,218-byte OCR layer was fetched on 2026-09-22 and its SHA-256 recomputed and matched (6b39d974...14a7fa) before use. The tractatus was located by heading and bounded by the next one (PSALMUS CXXII at line 30012) rather than by a search receipt: the artifact is registered indexable = false, so no searched state is claimed and this is an inspection. Sections 1-5 on v. 1 and the exposition of v. 7 are what research/scope.md sections 3.2 and 3.3 report, including the material divergence from Augustine and Cassiodorus over what the city's uirtus is and what the turres are. The checkable addresses are physical lines: the psalm heading at 29495, section 1 opening at 29501 and section 6 at 29680, so sections 1-5 are 29501-29679; the whole exposition of v. 7 at 29911-29962, opening under the marker the scan prints as '1 3.' and ending at tamquam turrium firmitate praestiterint, with the next section, on v. 8, at 29963. The loci array carries the edition's division of that second range, which the damaged scan does not itself show; section 3.2 was extended this round from sections 1-3 to 1-5 so that the two sections research/interpretations.md section 1.2 rests on -- 4 on aedificatur ut ciuitas and 5 on the reason for the plural ibimus -- have a matrix row and a stated locus. SECOND RE-ENTRY: the optical layer is badly damaged on several pages of this tractatus (lines 29660-29665 read Sfd (|ui;i unum ecclesiie ...), so every Latin quotation research/scope.md sections 3.2 and 3.3 and research/interpretations.md section 1.2 take from it was checked on 2026-09-22 against the page images of the same Internet Archive item (shilariiepiscopi22hilauoft leaves n599-n602 = CSEL 22 pp. 570-573 and n607-n608 = pp. 578-579, unregistered, digests in research/scope.md section 6.3). The images control the wording; the layer only locates it. Three readings earlier drafts had reconstructed from the layer were wrong and are corrected: section 2 reads quia eadem et Sion est, section 4 Hierusalem, quae aedificatur ut ciuitas, and section 5 tunc sancta Hierusalem, quia Hierusalem aedificatur ut ciuitas. The section figures 13 and 14 are legible on the image of p. 578, so the loci array states what the page prints. The ae and oe ligatures of the edition are written out."
+
+[[bindings]]
+source_id = "artifact.cassiodorus.expositio-psalmorum.latin-corpus-corporum-monumenta-web-2026-09-05.monumenta-ps101-apparatus-latin-text"
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:bb052fe5fe1a359e9f7eee9b909393023dfa8cdce21b45e24c6985be9fca075f"
+context = "Cassiodorus on the Alleluia verse, in a file this checkout already tracks: no network was needed and research/scope.md section 5.2 had nonetheless recorded him as unreached on all three psalms. Sectio 22 is the appointed verse itself, Et timebunt gentes nomen tuum, Domine, et omnes reges terrae gloriam tuam, read of the nations converted out of idolatry and of kings who rule themselves; sectio 23, on v. 17, names the building -- aedificata est Sion, hoc est mater Ecclesia, de vivis lapidibus fabricata -- and sectio 21 identifies the lapides of v. 15 as Christians. research/scope.md section 3.4 carries the readings. The caveat is now narrower than it was. This is still a transcription of a transcription of Migne, and it settles nothing about Adriaen's critical text, which nobody here has opened; but Migne's own optical layer, PL 70, was fetched and read this round at the lemmata of Pss 95, 101 and 121 and agrees with these files at every one, so the earlier statement that they could settle nothing about what Migne printed is withdrawn as to Migne. research/scope.md section 6.3 carries the check."
+
+[[bindings]]
+source_id = "artifact.cassiodorus.expositio-psalmorum.latin-corpus-corporum-monumenta-web-2026-09-22.monumenta-ps95-apparatus-latin-text"
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:3481ed1dc9e93ba635cb2e0da221589f4258069be3c3b3444c5e396f9bef31dc"
+context = "Read at the host's sectiones 1-2 (the psalm title and its literal and spiritual senses) and 13-14 (Ps 95:8-9, the two clauses the Communion takes). Cassiodorus on the Communion, registered and retained by this stage because the repository held no state of this work carrying Ps 95. The exact delivery (21640d6c...3df8a) was fetched on 2026-09-22 from the address the 2026-09-05 edition's own rumpfid rule gives, and this Latin was derived from it offline by the transformation that record describes -- verified before use by re-deriving the already-tracked Ps 101 file from its own re-fetched parent and reproducing it byte for byte. research/scope.md section 3.8 carries the readings, including the one place Cassiodorus and Augustine visibly diverge: the plural atria of v. 8 read as the apostles and prophets against the singular atrium of v. 9 read as the catholic Church. His lemma at v. 9 is in atrio sancto eius, which bears on the unresolved psalter question at section 5.1.7 without settling it."
+
+[[bindings]]
+source_id = "artifact.cassiodorus.expositio-psalmorum.latin-corpus-corporum-monumenta-web-2026-09-22.monumenta-ps121-apparatus-latin-text"
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:9da0f984a195910f7c758926fda6fa4d7e8de4857e4018031974beb5e1439693"
+context = "Read at the host's sectiones 2 (the ascent), 6 (Ps 121:1, the Introit verse and the Gradual respond) and 12 (Ps 121:7, the Gradual verse). Cassiodorus on the Introit verse, the Gradual respond and the Gradual verse, registered and retained by this stage on the same footing and by the same verified derivation as the Ps 95 file, from the exact delivery f95cb469...193eca. research/scope.md sections 3.2 and 3.3 carry the readings: the house as domus de vivis lapidibus fabricata at v. 1, and at v. 7 the city's uirtus as the peace of the saints which is also charity, with the turres read as the martyrs -- against Hilary, who reads the same two clauses otherwise."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-70.paris-1865.ia-djvu-ocr-patrologiaecurs27goog"
+loci = ["column-679", "column-713", "column-909", "column-913"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:8dc2a4aa5c993e4168e5347d42f1447fcd2af13740ad23c324acbf5246ae4840"
+context = "Migne's own printed Cassiodorus, opened this round because research/scope.md section 6.3 had said that the Corpus Corporum files -- a transcription of a transcription of Migne -- could settle nothing about what Migne printed. The 5,244,841-byte optical layer of the whole volume was fetched on 2026-09-22 and its SHA-256 recomputed and matched (d777c4c6...63a2e) before anything was read; nothing is retained, because the record registers it storage = remote. Read at physical lines 52404-52418, 52443-52444 and 52496-52512 (Ps 95:8 and 9 and the atria/atrium distinction, between the layer's column markers 679 at line 52369 and 682 at 52540; the v. 8 lemma, Vers. 8. Afferte Domino gloriam nomini ejus; tollite hostias, stands at 52502, re-read on the layer re-fetched and matched on 2026-09-22, and not at 52499, which an earlier draft gave), 55123 (Ps 101:16, on the page headed 713 EXPOSITIO IN PSALTERIUM. PSAL. CI. 714), 69955-69965 (Ps 121:1, on the page headed 909/910) and 70260-70262 with 70284-70287 (Ps 121:7 and the uirtus-as-charitas sentence, after the page head at 70207). The loci array names the column figure the layer prints nearest before each place read; the facing column is 680, 714, 910 and 914. Two limits are stated rather than glossed. The layer does not print the printed reading order: the v. 9 lemma of Ps 95 stands at line 52417 and the v. 8 lemma at 52502. And the optical recognition of this Latin is poor -- it prints in atrto $ancl0 for in atrio sancto -- so it is a locating and confirming layer and nothing here is quoted from it as Migne's letterform. What it does settle is stated in research/scope.md sections 5.1.7 and 6.3: Migne has atrio and not aula at Ps 95:9, and carries the Ps 101:16, Ps 121:1 and Ps 121:7 lemmata as the Corpus Corporum transcription has them. It does not settle what Adriaen printed; CCSL 98 was deliberately not opened, for the reason section 6.3 gives."
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
+loci = ["95.9-10", "101.16-17", "121.2", "121.12-13"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
+context = "The registered route for Augustine on all three of this formulary's psalms, and a file this checkout already tracks: the complete CCEL NPNF1-8 English, 5,029,159 bytes and 81,685 physical lines, needing no network. The first pass of this stage read Augustine on Pss 95, 101 and 121 on three New Advent pages and recorded the library as registering none of them; it registers this one, which carries all three. Read this round at Psalm XCVI section 9 at physical line 48059 and section 10 at 48078 (section 11 opening at 48086), Psalm CII section 16 at 50512 and section 17 at 50522, and Psalm CXXII, opening at 60234, sections 2 and 3 at 60246 and 60259 and sections 12 and 13 at 60439 and 60456, the series titling each exposition by the Hebrew number. Every sentence research/scope.md sections 3.2, 3.3, 3.4 and 3.8 quote stands here at the same section. Two limits: the NPNF editors' abridgments are in this text too, printed as four-dot ellipses inside the exposition -- one of them, closing Psalm CXXII section 12 at Love is strong as death..., omits Augustine's reading of the towers, which PL 37 col. 1628 prints and research/scope.md section 3.3 now carries; and this 1888 text keeps the second person of its own century -- if ye will enter, thou hast entered, He said not I forgive thee thy sins -- where the New Advent delivery those sections quote prints you and your. The difference is of delivery and not of sense, and research/scope.md section 6.3 records it rather than silently harmonising the two."
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf-new-advent-web-2026-09-05.newadvent-1801102-adb31091"
+loci = ["101.15-19"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:be5b8b5065c51b2c745e1659a7f5a40c7f05379d88a1d4ca3f10f9941fdd33e9"
+context = "The exact New Advent delivery of Enarr. in Ps. 101 that research/scope.md section 3.4 quotes, and the one page of that set the library registers: the record's source_url and SHA-256 (adb31091...4e57a) are the URL and the digest section 6.3 gives, and the re-fetch of 2026-09-22 matched both. It was recorded as unregistered by the first pass of this stage and is bound here instead. Sections 15-19 were read, 16 and 17 quoted. The artifact is registered storage = remote with rights_status = unresolved, because the host states a revision of its own inside the text and no distribution basis for the revised bytes has been established: nothing is retained, an offline reader cannot open this page from a checkout, and quotation is short and attributed to the NPNF translation and never to the host's presentation. The offline route to the same exposition is the tracked CCEL NPNF1-8 text bound above and the tracked Latin bound below."
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-part-10-latin-text"
+loci = ["95.9-10"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:9cf8f08b364472a4336d8267bb0af12398fa23462763db8e1167b221263dfc1d"
+context = "Augustine's own Latin on the Communion's two clauses, tracked in this checkout and read here without a network: IN PSALMUM XCV at line 108 of the file, section 9 on Tollite hostias, et introite in atria ejus at line 119 and section 10 on Adorate Dominum in atrio sancto ejus: in catholica Ecclesia at line 120. It settles one thing the record needed and section 5.1.7 now states: Augustine's own lemma at Ps 95:9 reads in atrio sancto ejus, so his psalter, like the one Cassiodorus read, did not have aula there. It is a normalised transcription of a web transcription of Migne, not a critical text and not a collation of a psalter, so it is a second witness on the reading and not an identification of the Missal's source."
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-part-11-latin-text"
+loci = ["101.16-17"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c063ad0fa767d407db9e1e6b8d6fbbb55d21402170f50787e8fad39966618c9d"
+context = "Augustine's own Latin on the Alleluia verse, tracked in this checkout: IN PSALMUM CI at line 1 of the file, section 16 at line 20 opening Et timebunt Gentes nomen tuum, Domine, et omnes reges terrae gloriam tuam and section 17 at line 21 with Quoniam aedificabit Dominus Sion ... Et videbitur in gloria sua. It confirms at the Latin what research/scope.md section 3.4 reports from the English, including the section-to-verse alignment that section's numbering caution turns on: the Latin prints vers. 16 against section 16, so the section numbers and not the NPNF marginal verse numbers are the reliable locus. Ps 121 has no tracked Latin in this edition -- its registered parts run 31-40, 61-66, 80-89, 90-100 and 101-110 -- but Augustine's own Latin on Ps 121 is not therefore unreached: the registered whole-volume facsimile of PL 37 (bound below) was opened on the second re-entry and Ps 121 sections 2 and 12 were read on its page images, as were Ps 95 sections 9-10 and Ps 101 sermo I sections 16-17. Sections 16-17 stand in sermo I, which runs to v. 20 in this file; sermo II begins at v. 20."
+
+[[bindings]]
+source_id = "segment.john-chrysostom.homiliae-in-matthaeum.ccel-web-2026-09-17.complete-homilies"
+loci = ["29"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:3256f7ab4e49f1dc14e2a0ccbd11d96e3081e94da59d9301d628ce87055c3e88"
+context = "Chrysostom on the Gospel, through the registered segment over the tracked CCEL NPNF1-10 text artifact.nicene-and-post-nicene-fathers.series-1-volume-10.ccel-web-2026-09-17.ccel-text-adb8f1c9. The first pass read Homily 29 on a New Advent page and recorded the library as registering no route to it; the segment bounds all ninety homilies at physical lines 614-49168 of that artifact, and Homily XXIX stands at lines 18438-18793, headed Matt. IX. 1, 2, with Homily XXX opening at 18794. Every sentence research/scope.md section 3.5 and sections 4.1, 4.2 and 4.3 quote from Homily 29 stands here, at those lines, with one recorded difference of delivery: this 1888 text reads He said not, I forgive thee thy sins, but, thy sins be forgiven thee where the New Advent page reads I forgive you your sins ... your sins be forgiven you. The segment is an English translation delivery; no Greek was collated, and the registered Migne PG 57 optical layer of Homilies 1-44 was not opened here."
+
+[[bindings]]
+source_id = "segment.augustine.de-consensu-evangelistarum.ccel-web-2026-09-17.complete-work"
+loci = ["II.25.57-58"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:2b7be4f00a78b070bda79f0abcfe22d2b8a2ea95e269fa544fa4eb2ed047de9f"
+context = "Augustine's harmony at the Gospel, through the registered segment over the tracked CCEL NPNF1-6 text artifact.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.ccel-text-ce371798, which the first pass did not try. The segment bounds the whole treatise at physical lines 6929-22951; the Chapter XXV heading stands at 12672, paragraph 57 at 12679-12698, paragraph 58 at 12700-12791, and paragraph 59, which leaves this pericope, at 12793. Both sentences research/scope.md section 3.5 and section 4.1 quote stand here word for word, including the translator's brackets in For these sins were [thus said to be] forgiven to the man and the sentence the question would be more difficult to solve if Matthew mentioned Nazareth by name at line 12729; Capernaum as a kind of metropolis stands at 12747. English translation delivery only: no Latin was collated."
+
+[[bindings]]
+source_id = "artifact.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.antwerp-1614.ia-djvu-text-197365b2"
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c4d988333a8b12da35e3dc2ddfb6e254aae284bf32726579088d2b25891097ca"
+context = "Later reception of the Epistle, which research/scope.md section 3.6 had none of. tools/commentary-work-index discover returns Cornelius a Lapide first for 1 Cor 1:4, and this library tracks the whole optical layer of his Antwerp 1614 Pauline commentary, 3,103,885 bytes and 97,832 lines, so it needed no network. His exposition of 1 Cor 1:4-8 stands at physical lines 40030-40130, verse by verse under the printed Vers. 4 marker. research/scope.md section 3.6 carries what it gives and the one place it stands against Chrysostom. Three bounds. The layer carries each printed page twice -- the same exposition stands again at 40466-40560 -- which is a property of the Internet Archive derivative and not of the printing. Its recognition of this black-letter Latin with long s is poor (fadi for facti, teflimonium for testimonium), so it is a finding and confirming layer and the printed page images were not opened. And the binding carries no loci array: work.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas declares locus_pattern = '(?:prooemium|epistola-ad-galatas-argumentum)', two named loci of an earlier leaf's work, so a scriptural locus is rejected by source-library validate; this is the same library defect the Cassiodorus note above reports, in a second work record, and widening either pattern is a repository-wide review obligation and not this leaf's to trigger."
+
+# ---------------------------------------------------------------------------
+# The earliest graduals, through the registered chant database
+#
+# Both records below are the database's own reading of the six manuscripts
+# Hesbert collated, not a collation of a manuscript and not Hesbert's printed
+# Antiphonale Missarum Sextuplex, which this repository does not hold. Their
+# artifact records say so and research/scope.md sections 2.3 and 10.5 keep the
+# bound.
+# ---------------------------------------------------------------------------
+
+[[bindings]]
+source_id = "artifact.gregorien-info.gregorien-info-chant-database.web-2026-09-05.chant-8121-gradual-timebunt-gentes-72145226"
+loci = [
+  "the whole rendered chant record: piece text, AMS calendar block, and the Antiphonale missarum sextuplex citation line",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:46c07e93a316a79f62b955187b9c6801a043e487e9e206fc49473f2592c2afe3"
+context = "Re-fetched on 2026-09-22 and the registered SHA-256 and byte size recomputed and matched (72145226...10d6e0, 20,959 bytes). research/scope.md section 5.2 had bounded the chant evidence by saying Hesbert was not held and not reached without naming this registered material, which carries the whole Hesbert citation line for this formulary's own Timebunt gentes: nr.00 R; nr.26 M B C K S; nr.187 B; nr.188 K S; nr.189a B; nr.198 R B. What it shows matters for section 2.3: in these six books Timebunt gentes is a GRADUAL, with the verse Quoniam aedificavit Dominus Sion, and it stands at other days than the Eighteenth Sunday after Pentecost. The text the 1962 sings as its Alleluia is therefore an old Roman chant that travelled in another genre and at other Sundays."
+
+[[bindings]]
+source_id = "artifact.gregorien-info.gregorien-info-chant-database.web-2026-09-05.calendar-ams-day-819-684af370"
+loci = [
+  "the whole day page, Dominica XVII post Pentecosten, ten chant rows with manuscript sigla",
+]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:4505127b09a755e66a529c0de54aa6571dd3590e127b4dd0d0f49c7ae3933bf1"
+context = "Re-fetched on 2026-09-22 and the registered SHA-256 and byte size recomputed and matched (684af370...0224f7, 7,190 bytes). Read to fix how the Sextuplex numbering stands against the Hadrianum's: the AMS Seventeenth Sunday carries Iustus es Domine, Unam petii a Domino, Oravi Deum meum and Vovete et reddite, which is the cue Wilson prints at the Hadrianum's section CXXXIIII, DOMINICA .XVI. It also carries Timebunt gentes as one of five alternative graduals for that day, in B. The AMS day for the Eighteenth Sunday itself, day 823, is not a registered artifact; it was read live on 2026-09-22 and its response digest is in research/scope.md section 6.2, where it is named for a later run to register."
+
+# ---------------------------------------------------------------------------
+# The dated occurrence witnesses for 27 September 2026
+#
+# research/context.md read both live, kept no bytes and registered nothing. This
+# stage registered a dated edition, artifact and passage for each so that the
+# evidence for the civil date is inside the research seal. Neither delivery is
+# byte-stable: see the artifact records and research/scope.md section 8.1.
+# ---------------------------------------------------------------------------
+
+[[bindings]]
+source_id = "passage.fssp-france.ordo-du-mois.web-2026-09-22.2026-09-27"
+loci = ["2026-09-27"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:35a5d8655bdd4eec44a28b8d804990f40a5a087fc2c63c5b630cf9b80f6d4faf"
+context = "One of the two dated official witnesses the occurrence claim is corroborated by. Registered by this stage from a response fetched and hashed on 2026-09-22 (0fe38941...d203a, 169,631 bytes, 352 lines) and read in locally parsed response text: 18e Dimanche apres la Pentecote, 2eme classe, Vert, with an optional solemnity of Ste Therese de l'Enfant Jesus that belongs to this institute's own calendar and is not imported. The page's duplicate Dimanche 27 septembre row, reading de la ferie (4eme classe, Vert), was re-read live this round and is recorded in the passage record as an error in the witness. THE DIGEST IS NOT RE-OBTAINABLE: two responses minutes apart differ by 57,725 bytes at a per-response WordPress token, so it identifies one response and nothing a reader can fetch again."
+
+[[bindings]]
+source_id = "passage.icrsp-france.ordo.web-2026-09-22.2026-09-27"
+loci = ["2026-09-27"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:d56372462b7c9d5ad46d5b390c79e8f4947ebab04b474bbfafe8ac7166bf5373"
+context = "The second dated official witness. Registered by this stage from a response fetched and hashed on 2026-09-22 (2233cf19...8564d, 111,681 bytes, 1,679 lines) and read in locally parsed response text: XVIIIe Dimanche apres la Pentecote (4e de septembre), IIe classe, ornements vert, Gloria, Credo, Or. pro Papa, Preface de la T. Ste Trinite, and the Mass named by its Introit incipit, Da pacem -- which is an independent identification of the formulary and not only of the day. The Oratio pro Papa and the institute's solemnity of Ste Therese and the Holy Face belong to this calendar and are not imported; a second-class Sunday admits no added oration. THE DIGEST IS NOT RE-OBTAINABLE: two responses minutes apart differ by 110 bytes at a per-response Content-Security-Policy nonce."
+
+# ---------------------------------------------------------------------------
+# Direct and later exegesis reached on the second re-entry, by artifact coverage
+#
+# Every one of these was registered before this run and recorded by an earlier
+# pass of this stage as unreached or not named. States are `inspected`: each was
+# read at the locus stated, and the page image was read wherever the note says
+# so. Where a work record declares no locus_pattern, the loci are free text;
+# where it declares one that cannot address a scriptural locus, no loci array is
+# given and the place read is named in context.
+# ---------------------------------------------------------------------------
+
+[[bindings]]
+source_id = "artifact.john-chrysostom.expositio-in-psalmos.migne-pg-55-paris.ia-djvu-ocr-d9b83186"
+loci = ["Expositio in Psalmum CXXI, PG 55, columns 347-351 = optical-layer physical lines 45635-46230"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:cba162b4f3fbc1418675bd030ea07524d2fa16b3814cb78905b2735eb4be6b6e"
+context = "Chrysostom's own Greek exposition of Ps 121, the psalm of the Introit verse, Gradual respond and Gradual verse. The 9,609,040-byte whole-volume optical layer was fetched on 2026-09-22 and its SHA-256 recomputed and matched (d9b83186...3781b4) before it was read; nothing is retained, as the record requires. The heading EIS TON RKA' PSALMON stands at physical line 45635, the v. 1 lemma at 45636, the v. 7 exposition at 45881-45890, and the next psalm's heading at 46231. The Greek recognition of this exposition is good, but every column figure and every Greek word quoted in research/scope.md sections 3.2, 3.3 and 4.6 was re-read on the Internet Archive page images of the same item (leaves n339 = cols. 347-348 Greek, n340 = cols. 349-350 Greek, n343 = col. 351; unregistered, digests in research/scope.md section 6.3), because the record says the layer's numerals misread. What it gives: the psalm read wholly of the exiles returning from Babylon to the city and the house of prayer, v. 3 of the city's ruined towers and walls, v. 7 of peace for the rebuilt city after the war that destroyed it, and a moral application to Christians slow to go up to the house of prayer. It carries no allegory of the heavenly Jerusalem or of the Church, and that is the material disagreement research/scope.md section 4.6 preserves against Augustine, Hilary and Cassiodorus."
+
+[[bindings]]
+source_id = "artifact.theodoret-of-cyrus.interpretatio-in-psalmos.migne-pg80-paris-1860.wikimedia-pdf-72ee8714"
+loci = [
+  "Psalm 95:7-9, PG 80, columns 1647-1648 = artifact PDF p. 872",
+  "Psalm 101:14-16, PG 80, columns 1679-1680 = artifact PDF p. 890",
+  "Psalm 121:1-9, PG 80, columns 1879-1882 = artifact PDF pp. 996-997",
+  "Quaestiones in Exodum, interrogationes 59-60, PG 80, columns 277-280 = artifact PDF pp. 147-148, read for the negative at Ex 24",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f431d1af4d23e9bc63a710fdaa7d8198d2aba0ac1853cde486c5307cbc031b66"
+context = "Theodoret on all three appointed psalms and, in the same volume, his Quaestiones in Octateuchum at the Offertory's chapter. The 129,500,554-byte facsimile was fetched on 2026-09-22 and its SHA-256 recomputed and matched (72ee8714...bcdd8) before any page was rendered; nothing is retained. The PDF's text layer was used to locate the pages; every column figure and every Greek sentence quoted in research/scope.md was read on the page images rendered at 200 dpi. Ps 121 is read wholly of the return from the captivity, as Chrysostom reads it; Ps 101:16 is read first of the neighbours who saw the return and then, in terms, as fulfilled properly and truly after the Incarnation; Ps 95:8-9 of the rational sacrifices the priests offer continually and of the churches as the courts, with Mal 1:10-11. His Greek lemma at Ps 95:9 is en aule hagia autou and Migne's facing Latin renders it in aula sancta ejus, which research/scope.md section 5.1.7 records as a datum and not as an identification of the Missal's source. The Quaestiones in Exodum pass from interrogatio 59 (Ex 23:31) to interrogatio 60 (the tabernacle, Ex 25) with no question on Ex 24: a clean negative for the Offertory's locus in this work. This volume is also the one the record already binds elsewhere for Pss 87 and 103, whose registered passages fixed the column arithmetic."
+
+[[bindings]]
+source_id = "artifact.theodoret-of-cyrus.interpretatio-epistolae-ad-galatas.1864-migne-pg82-paris.ia-djvu-ocr-db2067fd"
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:a87476c2b0a367a5ea19bffcd2900f76722fb54389febaaa91e58f5606dfc2fa"
+context = "Theodoret's Interpretatio in I Cor. 1:4-8, which this whole-volume layer of PG 82 carries although the work record it hangs on is his Galatians commentary. The 8,475,812-byte layer was fetched on 2026-09-22 and its SHA-256 recomputed and matched (db2067fd...8f2ad) before it was read; nothing is retained. The heading of the commentary on 1 Corinthians stands at physical line 16372, v. 4 at 16583 and vv. 7-8 at 16765-16773. The columns were read on the Internet Archive page images (leaves n131 = PG 82 cols. 229-230 and n132 = cols. 231-232; unregistered, digests in research/scope.md section 6.3). No loci array is given because the work record's locus_pattern admits Galatians only. What it gives, in research/scope.md sections 3.6 and 4.7: at v. 4 Paul, being about to accuse, first soothes the hearing so that the cure may be received, and yet what he says is not false, because he thanks God for gifts they really had; at v. 8 the word unreprovable shows them as for the present liable to charges. Theodoret therefore stands with Chrysostom on v. 8 and between Chrysostom and a Lapide on vv. 4-7."
+
+[[bindings]]
+source_id = "artifact.athanasius-of-alexandria.expositiones-in-psalmos.migne-pg-27-paris.ia-djvu-ocr-969a381f"
+loci = [
+  "Psalm 95, hypothesis and vv. 7-9, PG 27, columns 415-416",
+  "Psalm 101:16-17, PG 27, column 429",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:9279ccbfb0fa0acf382af6fa5ac592e89a63317cf9f7c0ba7221b5f2982d2c31"
+context = "The Expositiones in Psalmos printed under Athanasius's name in PG 27, on the Communion's and the Alleluia's psalms. The 6,205,972-byte whole-volume layer was fetched on 2026-09-22 and its SHA-256 recomputed and matched (969a381f...f4269). Its recognition of these columns is too poor to locate the lemmata by search, so the columns were found by arithmetic from the registered leaf n213 (cols. 413-414) and read on the Internet Archive page images n214 (cols. 415-416) and n221 (cols. 429-430), unregistered, digests in research/scope.md section 6.3; every word quoted is from the images. What it gives: Ps 95 is read after its title of the Church founded through the whole world after the release from the spiritual captivity; at vv. 7-9 the families of the nations are the leaders of the churches, priests and presidents, who offer spiritual sacrifices in God's divine courts, that is, the churches; at Ps 101:16 the calling of the nations joined to the stones of the former people, and at v. 17 Sion is the Church. The attribution of these brief expositions is Migne's and is reported as his; no claim is made here about their authorship."
+
+[[bindings]]
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+loci = [
+  "Psalm 95, physical lines 3413-3439, verse 8 at line 3431",
+  "Psalm 101, physical lines 3565-3622, the paragraphs numbered 14-18 at lines 3595-3603",
+  "Psalm 121, physical lines 4535-4556, verse 1 at line 4541 and verse 7 at line 4553",
+]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
+context = "Bellarmine, a Doctor of the Church, on all three appointed psalms, in a file this checkout tracks (SHA-256 recomputed and matched, 357551e1...51bc2). It is O'Sullivan's 1866 English, which its own translator abridged: it omits Bellarmine's philological discussion, variant readings and psalm prefaces, so nothing here is offered as the Latin work's wording, and the record's note that the facsimile controls quotation stands; the facsimile was not opened. Two alignments are stated. At Ps 101 the translation numbers the paragraph on Timebunt gentes 15, one behind the Vulgate verse (as NPNF does), so the Alleluia verse is the paragraph at line 3597; at Ps 121 the numbering agrees with the Vulgate. At Ps 121:7 the transcription prints may your walk be always secure, which is plainly walls; it is reported as printed. What it gives, in research/scope.md sections 3.2-3.4, 3.8 and 4.6: Ps 121 read first of the exiles' joy at the news of the return and the rebuilding of city and temple, and then, far more happily, of the heavenly house; Ps 101:16 of the conversion of the nations while the new Sion is building, with the explicit refusal at the paragraph numbered 18 to read the psalm of the Babylonian return; Ps 95:8 of the spiritual sacrifices of the converted nations and, in the second place, of the Eucharistic sacrifice offered through the hands of the priests of the New Testament."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-37.paris-1845.internet-archive-google-pdf-afe6878f"
+loci = ["column-1233", "column-1234", "column-1304", "column-1618", "column-1619", "column-1628"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:2ade0ab5c395b64671569442b2a44cfbe0e5934b85e0c495a7dacf9097cfff1d"
+context = "Migne's own print of Augustine, Enarrationes in Psalmos 80-150, the only registered route to his Latin on Ps 121 and his printed Latin on Pss 95 and 101. The 48,479,761-byte facsimile was fetched on 2026-09-22 and its SHA-256 recomputed and matched (afe6878f...97bb4). The scan has no text layer, so the pages were found by the column arithmetic the registered records fix (PDF p. 63 = cols. 1139-1140, two columns a page) and read as images at 250 dpi: PDF p. 110 = cols. 1233-1234, Ps 95 sections 9 and 10; PDF p. 145 = cols. 1303-1304, Ps 101 sermo I sections 16 and 17; PDF p. 302 = cols. 1617-1618, the heading IN PSALMUM CXXI ENARRATIO at col. 1618; PDF p. 303 = cols. 1619-1620, section 2; PDF p. 307 = cols. 1627-1628, section 12. Two things it settles that no English route could. Augustine's lemma at Ps 121:1 reads Jucundatus sum in his qui dixerunt mihi, not the Missal's Laetatus sum in his quae dicta sunt mihi, which is the textual ground of his reading of the verse as joy at the companions who said it. And section 12, which the NPNF English abridges with an ellipsis, does expound the towers: abundantia in turribus tuis, id est, in excelsis tuis -- the few who will sit in judgment, to whom the many placed at the right hand will belong. research/scope.md sections 3.2, 3.3 and 3.8 correct the earlier statement that Augustine is no witness on the towers."
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.latin-augustinus-it-web-2026-09-05.augustinus-it-ps101-i-9c30d781"
+loci = ["101.16-17"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:ca82a97304951f2528f87605746ea221ccbbb83c1128808a657b2f149134cc69"
+context = "The augustinus.it Latin of Enarr. in Ps. 101 sermo I, re-fetched on 2026-09-22; the response matched the registered SHA-256 (9c30d781...cd05d, 44,734 bytes) and was read in locally parsed text. Sections 16 and 17, on vv. 16 and 17, agree word for word with the tracked Corpus Corporum Latin and with PL 37 col. 1304, apart from the site's i for j. It is registered storage = remote and rights unresolved, so nothing is retained and it is quoted nowhere; it is bound as a third agreeing witness to the Latin. The sibling artifact ...augustinus-it-ps101-ii-71f61f8e was re-fetched as well and matched its digest (71f61f8e...875fd) but is deliberately not bound: sermo II begins at v. 20 and does not reach the Alleluia verse. Its record's note, which says the reverse -- that sermo II covers vv. 13-29 and sermo I does not reach v. 16 -- is wrong on the evidence of both Latin deliveries and of PL 37, and is reported to its owner rather than edited here."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.opera-editio-altera-veneta-tomus-3.venice-bettinelli-1745.ia-djvu-ocr-10aa155e"
+loci = ["Super Evangelium S. Matthaei lectura, caput IX, on Mt 9:1-8, printed pp. 120-122 = optical-layer physical lines 16227-16540"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:9fcd48561f23ea12b2a7271b5cbcdeaee88f85652a5194fe6756bfb2b4aa558f"
+context = "Aquinas's lectura on Matthew at the Gospel, in a layer this checkout tracks (SHA-256 recomputed and matched, 10aa155e...63efee). The layer is a locating witness only, as its record says, so every word research/scope.md sections 3.5, 4.1, 4.2 and 4.3 quote was read on the page images of the registered facsimile bound next. Located at: Caput IX at physical line 16227; navicula significat crucem, vel Ecclesiam at 16345; the question of Capernaum and Nazareth at 16352; curat aliquando Dominus ... propter preces suas et aliorum at 16399; the objection from the Apostles' power and its answer, per viam administrationis, non auctoritatis, at 16493-16496; the tropology Surge, a peccato per contritionem at 16514; Hilary's reading of hominibus at 16535; the next pericope at 16540. This is the eighteenth-century vulgate text of the lectura, a reportatio, not the Leonine or Marietti text, and its edition record says no identity with either is asserted."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.opera-editio-altera-veneta-tomus-3.venice-bettinelli-1745.internet-archive-google-pdf-adb333e0"
+loci = ["printed pp. 120-122 = artifact PDF pp. 138-140, Super Matthaeum caput IX on Mt 9:1-8"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:d7899f29a0c836a95f288f542cb1d25f6126057349cb6d32d24329b9b1eaf2fe"
+context = "The facsimile that controls the Aquinas wording quoted from the layer above. The 56,148,876-byte PDF was fetched on 2026-09-22 and its SHA-256 recomputed and matched (adb333e0...785de8); nothing is retained, as the record requires. PDF pp. 139 and 140 were rendered at their native 600 ppi and read column by column; PDF p. 138 was read for the running head. The edition's rule that printed pages run eighteen behind PDF pages holds here."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.super-i-ad-corinthios.latin-corpusthomisticum-web-2026-07-26.c1c-html-8be5b71c"
+loci = ["1.l1"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:b19414609ff57fc7c9dd943ed4bc54893a47bc6fe1fb131964a23ce1e0c6a47a"
+context = "Aquinas's lectura on 1 Cor 1:4-8, caput 1 lectio 1, in the part of the commentary (chapters 1 to 7:10) that the work record says survives in a text from Thomas's own hand. The registered page was re-fetched on 2026-09-22 and the response matched the registered SHA-256 (8be5b71c...a8c7c, 277,757 bytes); it is storage = restricted and rights unresolved, so nothing is retained and it is quoted only in the short phrases research/scope.md section 3.6 needs. What it gives: Paul first gives thanks for their goods ut correctionem suorum defectuum tolerabilius ferant; the riches of utterance and knowledge are referendum ... ad eos qui erant in Ecclesia perfectiores, in whom the lesser also possess them through charity (with Augustine on John); and at v. 8 sine crimine is id est, sine peccato mortali, not sine peccato, with 1 Jn 1:8. Aquinas thus reads the praise as a softening before correction, like Theodoret, and v. 8 as a promise and not a covert accusation, like a Lapide. The library's other Aquinas I Corinthians artifact, ...c1r-html-69b559c1, carries chapters 11-13 and was not needed."
+
+[[bindings]]
+source_id = "artifact.cornelius-a-lapide.commentaria-in-pentateuchum.antwerp-1700.ia-djvu-ocr-d1f91f40"
+loci = ["Ex.24.4-8"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:26b87a44cd528fc800269d743766e0cba40992eac08471402960f805afd8079e"
+context = "Later reception at the Offertory's own cited locus, which every earlier pass recorded as having none. The 7,195,178-byte layer was fetched on 2026-09-22 and its SHA-256 recomputed and matched (d1f91f40...dac470); nothing is retained. The Exodus 24 text stands at physical lines 79014-79016 and the exposition of vv. 4-8 at 79138-79245: v. 4 at 79138 (the twelve titles as rude stones set up so that the covenant sacrifices were signified as offered for the twelve tribes, and the view of Abulensis and Cajetan that the altar itself was built of them), vv. 6-8 at 79195-79202 (Christ ratified the new covenant with his own blood, which he expressed in instituting the Eucharist, Hic est sanguis novi testamenti, and the argument drawn from it against the Sacramentarians), v. 5 at 79238-79242 (the young men were the firstborn, who were priests under the law of nature before the Aaronic priesthood, with Augustine's contrary view reported). The layer is uncorrected recognition of a long-s folio and its record says a quotation from it is a quotation of the layer; research/scope.md section 3.7 therefore gives this Latin in normalised orthography, says so, and quotes nothing it could not read. The printed page images were not opened. This is a seventeenth-century Jesuit and is labelled so."
+
+# ---------------------------------------------------------------------------
+# Documented reception of the compilation: liturgical commentators who expound
+# the Mass of this Sunday as their books gave it
+#
+# Kept apart from the exegesis above. Neither witness below comments on a
+# biblical passage for its own sake; each comments on a Mass, and what each says
+# is evidence of how that Mass was read, not of what a Father taught.
+# ---------------------------------------------------------------------------
+
+[[bindings]]
+source_id = "artifact.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.ia-djvu-ocr-2e2ca850"
+loci = ["Liber XII, capita XVIII-XIX, PL 170, columns 326-327 = optical-layer physical lines 23431-23519"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:7ec56124e31762f147f8aed197516894e92dc2d5ec7de99bcc91a9f11d1a98d3"
+context = "Rupert of Deutz's chapters on the Eighteenth and Nineteenth Sundays after Pentecost, in a layer this checkout tracks (SHA-256 recomputed and matched, 2e2ca850...ed376). The artifact's own note requires that wording quoted from this volume be collated against page images, so every word research/scope.md sections 2.7 and 3.11 quote was read on the Internet Archive page images of the same item, leaves n168 (cols. 325-326) and n169 (cols. 327-328), unregistered, digests in research/scope.md section 6.3; the layer's reading Matth. xxi for the image's Matth. xxiii is one of the corrections that made the check necessary. Caput XVIII (heading at physical line 23433, col. 326) expounds a Mass with this formulary's Introit Da pacem, Epistle 1 Cor 1, Gradual Fiat pax, Offertory Sanctificavit Moses with its verse Videns Moses procidens adoravit ... dimitte peccata populi tui, and Communion Tollite hostias, but with the Gospel of the scribes and Pharisees on the chair of Moses (Matth. xxiii). Caput XIX (heading at line 23488, cols. 326-327) gives the paralytic of Matthew 9 to the Nineteenth Sunday, with the Epistle of Eph 4 and the chants Salus populi, Elevatio manuum (as the Gradual's verse), Si ambulavero and Tu mandasti. Rupert reads the whole Eighteenth-Sunday Mass of the rectors of souls: Da pacem as peccata dimitte, for pax Dei peccatorum remissio est; Fiat pax in virtute tua as remissio peccatorum in Spiritu sancto; the Offertory's Moses as the pastor's model of intercession for the people's sins; Tollite hostias as the office of intercession for subjects. At the Nineteenth he reads the bearers of the paralytic as the prelates who offer him by prayer. This is a named liturgical commentator expounding the Mass as his books gave it, and it is documented reception of the compilation, not patristic exegesis of the passages."
+
+[[bindings]]
+source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-pdf-95ba98e2"
+loci = ["vol-xi-p-393", "vol-xi-p-394", "vol-xi-p-400", "vol-xi-p-401", "vol-xi-p-402", "vol-xi-p-403", "vol-xi-p-404", "vol-xi-p-405", "vol-xi-p-406", "vol-xi-p-407", "vol-xi-p-408", "vol-xi-p-409"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:41e33739805822d7fa17bd959aee1a9bc45e53b9142ac700e0871842608e5a50"
+context = "Gueranger's chapter on this Sunday in the English Liturgical Year, Time after Pentecost vol. II (series vol. XI), in the facsimile this checkout tracks (SHA-256 recomputed and matched, 95ba98e2...92690). The chapter runs from printed p. 393 to p. 409 = PDF pp. 414-430 (printed + 21). It was read in the PDF's text layer and every sentence research/scope.md quotes was checked on the page images of PDF pp. 414, 415, 422, 423, 424, 426 and 427. What it gives, in research/scope.md sections 2.7 and 3.11: the Sunday follows the September Ember days and the question of its having replaced the vacant Sunday after ordinations, called Dominica vacat in ancient books; the interruption of the Ephesians epistles by 1 Cor 1; Rupert's report of another Gospel, the chair of Moses, and its harmony with the Moses Offertory; the present Gospel read of the prerogative which these same men -- the Church's pastors -- have of forgiving sins; and the Offertory's two ancient verses printed in full. Two limits are stated. The translation dates the other Gospel to the thirteenth century, which is Gueranger's or his translator's dating and not Rupert's, and nothing here rests on it. And this is a nineteenth-century liturgical commentator on the Tridentine Mass, whose readings are reported as his and never as the Fathers'."
