@@ -21,6 +21,13 @@ KINDS = {"front-matter", "appointed-text", "proper-treatment", "interpretive-lan
          "integrated-commentary", "homily", "terminal-apparatus"}
 PRESENTATION_CONTRACT = "interpretive-pagination-v1"
 FORMAT_CONTRACT = "propers-format-v1"
+AUTHORITY_CONTRACT = "authority-standing-v1"
+AUTHORITY_REGISTRY = Path("src/sources/inventories/author-standing-v1.toml")
+# Decision D1 of 2026-09-22: Fathers, canonized saints (Doctors among them) and
+# the Blessed may carry a reading, and at least one of the two must be a Father
+# or a canonized saint.
+AUTHORITY_COUNTS = frozenset({"father", "doctor", "saint", "blessed"})
+AUTHORITY_ANCHORS = frozenset({"father", "doctor", "saint"})
 PRESENTATION_ROLES = ("inventory", "overview", "chronology", "themes", "commentary")
 PAGE_RANGES = {"research": (20, 50), "synthesis": (10, 12)}
 MARKER_PREFIX = "triptych:concise:"
@@ -72,6 +79,64 @@ def format_contract(data: dict, *, required: bool = False) -> bool:
     if data.get("schema") != 2 or value != FORMAT_CONTRACT:
         raise ValueError(f"format_contract must be {FORMAT_CONTRACT!r}")
     return True
+
+
+def authority_contract(data: dict, *, required: bool = False) -> bool:
+    """Opt in explicitly; a manifest that does not declare it is checked as before."""
+    value = data.get("authority_contract")
+    if value is None and not required:
+        return False
+    if data.get("schema") != 2 or value != AUTHORITY_CONTRACT:
+        raise ValueError(f"authority_contract must be {AUTHORITY_CONTRACT!r}")
+    return True
+
+
+def authority_lanes(data: dict, repository: Path) -> None:
+    """Each lane's carrying authors, judged against the author-standing registry.
+
+    A lane names every author it draws on in `authors` and the ones who carry
+    the reading in `carrying_authors`. At least two distinct persons must carry
+    it, each a Father, a canonized saint or one of the Blessed by the registry,
+    and at least one a Father or a canonized saint. Names are resolved through
+    the registry, so one person cited under two names counts once.
+    """
+    import sys
+
+    scripts = str(Path(__file__).resolve().parent)
+    if scripts not in sys.path:
+        sys.path.insert(0, scripts)
+    import _standing  # noqa: E402  (only a manifest that opts in reaches this)
+
+    path = Path(repository) / AUTHORITY_REGISTRY
+    if not path.is_file():
+        raise ValueError(f"authority contract requires the author-standing registry {AUTHORITY_REGISTRY.as_posix()}")
+    try:
+        _standing.load(Path(repository))
+        registry = _standing.Registry(Path(repository))
+    except _standing.StandingError as error:
+        raise ValueError(f"authority contract cannot read the author-standing registry: {error}") from error
+    for lane in data.get("lanes", []):
+        key = lane.get("key", "unknown") if isinstance(lane, dict) else "unknown"
+        authors = {author.strip().casefold() for author in strings(lane.get("authors"), f"lane {key} authors")}
+        carrying = strings(lane.get("carrying_authors"), f"lane {key} carrying_authors")
+        persons: dict[str, str] = {}
+        for name in carrying:
+            if name.strip().casefold() not in authors:
+                raise ValueError(f"lane {key} carrying author {name!r} is not among its authors")
+            person = registry.for_name(name)
+            if person is None:
+                raise ValueError(f"lane {key} carrying author {name!r} has no author-standing row")
+            standing = person.get("standing")
+            if standing not in AUTHORITY_COUNTS:
+                raise ValueError(
+                    f"lane {key} carrying author {name!r} is {standing!r}; only a Father, a canonized "
+                    "saint or one of the Blessed may carry a reading"
+                )
+            persons[str(person.get("id"))] = str(standing)
+        if len(persons) < 2:
+            raise ValueError(f"lane {key} requires two distinct carrying authors by the author-standing registry")
+        if not set(persons.values()) & AUTHORITY_ANCHORS:
+            raise ValueError(f"lane {key} requires a Father or a canonized saint among its carrying authors")
 
 
 def tex_source(path: Path) -> str:
@@ -661,7 +726,8 @@ def include_graph(entry: Path, leaf: Path, provider_root: Path) -> set[Path]:
 
 
 def audit_v2(data: dict, path: Path, provider_root: Path, *, phase: str = "content",
-             edition: str | None = None, build_root: Path | None = None) -> None:
+             edition: str | None = None, build_root: Path | None = None,
+             require_authority: bool = False) -> None:
     if data.get("schema") != 2:
         raise ValueError("three-edition validation requires schema = 2")
     if phase not in {"scope", "content", "artifacts"} or (edition is not None and edition not in MODES):
@@ -767,6 +833,8 @@ def audit_v2(data: dict, path: Path, provider_root: Path, *, phase: str = "conte
     if bound_components != {key for key, item in records.items() if item["kind"] == "interpretive-lane"}:
         raise ValueError("every interpretive-lane component must belong to one declared lane")
     lane_source_paths(data, leaf, exists=check_files)
+    if authority_contract(data, required=require_authority):
+        authority_lanes(data, provider_root.parent.parent)
     paginated = presentation_contract(data)
     formatted = format_contract(data)
     if paginated:

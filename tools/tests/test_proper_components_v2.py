@@ -306,5 +306,134 @@ class ProperV2Tests(unittest.TestCase):
         self.assertIn("proper-homily", listed.stdout)
 
 
+REGISTRY = """schema = "triptych-author-standing/v1"
+record_type = "author-standing"
+audited_on = "2026-09-22"
+""" + "".join(
+    f"""
+[[persons]]
+id = "{pid}"
+name = "{name}"
+names = {names}
+died = "unknown"
+standing = "{standing}"
+standing_basis = "Fixture."
+basis_sources = ["https://example.org/{pid}"]
+confession = "Catholic"
+"""
+    for pid, name, names, standing in (
+        ("augustine", "Augustine of Hippo", '["Augustine", "Augustine of Hippo"]', "father"),
+        ("thomas-aquinas", "Thomas Aquinas", '["Thomas Aquinas"]', "doctor"),
+        ("gregory-the-great", "Gregory the Great", '["Gregory", "Gregory the Great"]', "father"),
+        ("ildefonso-schuster", "Ildefonso Schuster", '["Ildefonso Schuster"]', "blessed"),
+        ("another-blessed", "Another Blessed", '["Another Blessed"]', "blessed"),
+        ("rupert-of-deutz", "Rupert of Deutz", '["Rupert of Deutz"]', "ecclesiastical-writer"),
+    )
+)
+
+
+class AuthorityContractTests(unittest.TestCase):
+    """Decision D1 of 2026-09-22, checked only for a manifest that opts in."""
+
+    def setUp(self):
+        (ROOT / ".scratch/components").mkdir(parents=True, exist_ok=True)
+        self.tmp = tempfile.TemporaryDirectory(dir=ROOT / ".scratch/components")
+        self.addCleanup(self.tmp.cleanup)
+        self.root = Path(self.tmp.name)
+        self.data, self.path, self.provider = fixture(self.root)
+        self.registry = self.root / components.AUTHORITY_REGISTRY
+        self.registry.parent.mkdir(parents=True)
+        self.registry.write_text(REGISTRY)
+
+    def opt_in(self, *carrying):
+        data = copy.deepcopy(self.data)
+        data["authority_contract"] = components.AUTHORITY_CONTRACT
+        for lane in data["lanes"]:
+            lane["authors"] = sorted(set(lane["authors"]) | set(carrying[0] if carrying else ()))
+            lane["carrying_authors"] = list(carrying[0]) if carrying else list(lane["authors"])
+        save(data, self.path)
+        return data
+
+    def audit(self, data, **kwargs):
+        components.audit_v2(data, self.path, self.provider, **kwargs)
+
+    def test_a_father_and_a_doctor_carry_a_reading(self):
+        self.audit(self.opt_in(["Augustine", "Thomas Aquinas"]))
+
+    def test_one_of_the_blessed_may_carry_beside_a_father(self):
+        self.audit(self.opt_in(["Ildefonso Schuster", "Augustine"]))
+
+    def test_an_ecclesiastical_writer_may_not_carry(self):
+        with self.assertRaisesRegex(ValueError, "only a Father, a canonized saint or one of the Blessed"):
+            self.audit(self.opt_in(["Augustine", "Rupert of Deutz"]))
+
+    def test_two_of_the_blessed_need_a_father_or_saint(self):
+        with self.assertRaisesRegex(ValueError, "requires a Father or a canonized saint"):
+            self.audit(self.opt_in(["Ildefonso Schuster", "Another Blessed"]))
+
+    def test_one_person_under_two_names_counts_once(self):
+        with self.assertRaisesRegex(ValueError, "two distinct carrying authors"):
+            self.audit(self.opt_in(["Augustine", "Augustine of Hippo"]))
+
+    def test_a_name_the_registry_lacks_is_refused(self):
+        with self.assertRaisesRegex(ValueError, "has no author-standing row"):
+            self.audit(self.opt_in(["Augustine", "Origen"]))
+
+    def test_a_carrying_author_must_be_among_the_authors(self):
+        data = self.opt_in(["Augustine", "Thomas Aquinas"])
+        data["lanes"][0]["carrying_authors"] = ["Augustine", "Gregory the Great"]
+        with self.assertRaisesRegex(ValueError, "is not among its authors"):
+            self.audit(data)
+
+    def test_a_lane_without_carrying_authors_is_refused(self):
+        data = self.opt_in(["Augustine", "Thomas Aquinas"])
+        del data["lanes"][1]["carrying_authors"]
+        with self.assertRaisesRegex(ValueError, "carrying_authors"):
+            self.audit(data)
+
+    def test_a_missing_registry_is_refused(self):
+        self.registry.unlink()
+        with self.assertRaisesRegex(ValueError, "requires the author-standing registry"):
+            self.audit(self.opt_in(["Augustine", "Thomas Aquinas"]))
+
+    def test_an_unknown_contract_is_refused(self):
+        data = self.opt_in(["Augustine", "Thomas Aquinas"])
+        data["authority_contract"] = "authority-standing-v0"
+        with self.assertRaisesRegex(ValueError, "authority_contract must be"):
+            self.audit(data)
+
+    def test_requiring_the_contract_refuses_a_manifest_without_it(self):
+        with self.assertRaisesRegex(ValueError, "authority_contract must be"):
+            self.audit(self.data, require_authority=True)
+
+    def test_the_default_path_never_consults_standing(self):
+        # No contract declared: the audit runs exactly as before, the registry
+        # is never read, lanes may name any authors, and nothing new is imported.
+        self.registry.unlink()
+        data = copy.deepcopy(self.data)
+        data["lanes"][0]["authors"] = ["Rupert of Deutz", "William Durandus"]
+        data["lanes"][0]["carrying_authors"] = ["Rupert of Deutz"]
+        save(data, self.path)
+        with mock.patch.object(components, "authority_lanes", side_effect=AssertionError("consulted")):
+            for phase in ("scope", "content"):
+                self.audit(data, phase=phase)
+
+    def test_the_default_path_still_refuses_what_it_refused(self):
+        data = copy.deepcopy(self.data)
+        data["lanes"][0]["authors"] = ["Augustine", "augustine"]
+        with self.assertRaisesRegex(ValueError, "at least two distinct authors"):
+            self.audit(data)
+
+    def test_the_tracked_registry_resolves_every_published_lane_author(self):
+        import tomllib
+        import _standing
+
+        registry = _standing.Registry(ROOT)
+        for manifest in sorted(ROOT.glob("src/*/liturgy/**/proper-components.toml")):
+            for lane in tomllib.loads(manifest.read_text()).get("lanes", []):
+                for author in lane["authors"]:
+                    self.assertIsNotNone(registry.for_name(author), f"{manifest}: {author}")
+
+
 if __name__ == "__main__":
     unittest.main()
