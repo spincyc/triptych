@@ -10,10 +10,10 @@ record_type = "research-staleness"
 # edit now (guidance/staleness.md). Clear an entry by deleting it in the commit
 # that revises the leaf.
 #
-# CAUTION: `research-staleness rebaseline` and `bootstrap` rewrite this file from
-# [[editions]] alone and do not preserve this block. Whoever rebaselines must
-# carry it forward, and the diff of that commit will show it removed if they
-# do not.
+# Keep this block above the first [[editions]]. `research-staleness rebaseline`
+# carries everything above that table forward verbatim and refuses to run if a
+# [[revision_due]] table stands below it; `bootstrap` never overwrites an
+# existing ledger.
 #
 # The ten entries of 2026-09-22 implement the maintainer's decision D7
 # (guidance/liturgy/liturgical-commentators-plan-2026-09-22.md): the Time after

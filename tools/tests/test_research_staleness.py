@@ -111,6 +111,35 @@ class ResearchStalenessTests(unittest.TestCase):
         (new_leaf / "main.tex").write_text("main")
         self.assertEqual(1, self.tool.cmd_status(None))
 
+    def test_rebaseline_carries_hand_written_obligations_forward(self):
+        self.tool.cmd_bootstrap()
+        head, marker, rest = self.tool.LEDGER.read_text().partition("[[editions]]")
+        block = (
+            "# written by hand\n"
+            "[[revision_due]]\n"
+            'provider = "gpt"\n'
+            'leaf = "articles/example"\n'
+            'correction = "test"\n'
+        )
+        self.tool.LEDGER.write_text(head + block + "\n" + marker + rest)
+        (self.gpt_leaf / "research/scope.md").write_text("scope v2")
+        self.tool.cmd_rebaseline("gpt", "articles/example", False)
+        after = self.tool.LEDGER.read_text()
+        self.assertIn(block.rstrip("\n"), after)
+        self.assertEqual(1, after.count("schema = "))
+        self.assertLess(after.index("[[revision_due]]"), after.index("[[editions]]"))
+        self.assertEqual(0, self.tool.cmd_explain("gpt", "articles/example"))
+
+    def test_rebaseline_refuses_an_obligation_it_cannot_carry(self):
+        self.tool.cmd_bootstrap()
+        with self.tool.LEDGER.open("a", encoding="utf-8") as ledger:
+            ledger.write('\n[[revision_due]]\nprovider = "gpt"\nleaf = "articles/example"\n')
+        before = self.tool.LEDGER.read_text()
+        (self.gpt_leaf / "research/scope.md").write_text("scope v2")
+        with self.assertRaises(self.tool.StalenessError):
+            self.tool.cmd_rebaseline("gpt", "articles/example", False)
+        self.assertEqual(before, self.tool.LEDGER.read_text())
+
     def test_bootstrap_refuses_second_run(self):
         self.tool.cmd_bootstrap()
         with self.assertRaises(self.tool.StalenessError):

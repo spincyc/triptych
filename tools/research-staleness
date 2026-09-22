@@ -246,12 +246,45 @@ def toml_escape(value: str) -> str:
     return value.replace("\\", "\\\\").replace('"', '\\"')
 
 
+def ledger_preamble() -> list[str]:
+    """Hand-written matter above the first `[[editions]]`, carried forward.
+
+    The writer owns the header and the `[[editions]]` tables and nothing else.
+    What a person writes between them, comments and `[[revision_due]]`
+    obligations, is a record the tool cannot regenerate, and a rebaseline that
+    rewrote it away would delete an obligation with nothing to show for it but
+    a diff. It is carried forward verbatim. A `[[revision_due]]` placed after
+    the first `[[editions]]` cannot be carried by position, so it is refused
+    before anything is written.
+    """
+    if not LEDGER.is_file():
+        return []
+    lines = LEDGER.read_text(encoding="utf-8").splitlines()
+    first = lines.index("[[editions]]") if "[[editions]]" in lines else len(lines)
+    if any(line.strip() == "[[revision_due]]" for line in lines[first:]):
+        raise StalenessError(
+            "a [[revision_due]] table follows the first [[editions]]; move it "
+            "above the editions, where the ledger writer carries it forward"
+        )
+    header = {f"schema = {SCHEMA}", 'record_type = "research-staleness"'}
+    kept = [line for line in lines[:first] if line not in header]
+    while kept and not kept[0].strip():
+        kept.pop(0)
+    while kept and not kept[-1].strip():
+        kept.pop()
+    return kept
+
+
 def write_ledger(entries: dict[tuple[str, str], dict]) -> None:
+    preamble = ledger_preamble()
     lines = [
         f"schema = {SCHEMA}",
         'record_type = "research-staleness"',
         "",
     ]
+    if preamble:
+        lines.extend(preamble)
+        lines.append("")
     for (provider, leaf) in sorted(entries):
         entry = entries[(provider, leaf)]
         lines.append("[[editions]]")
