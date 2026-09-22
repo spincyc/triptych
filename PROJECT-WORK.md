@@ -5,7 +5,116 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-09-21.
+Last reconciled: 2026-09-22.
+
+## Claude 1962 Eighteenth Sunday three documents, 2026-09-22
+
+<!-- promised-deliverable: claude-1962-eighteenth-three-documents-2026-09-22 -->
+
+The maintainer asked for the Claude production of the 1962 Mass of Sunday 27
+September 2026, the Eighteenth Sunday after Pentecost
+(`liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost`).
+It was first seeded under the legacy schema-1 `proper` workflow. The target
+had no authorization, and the profile reserves `proper` for legacy work. On
+the maintainer's decision the target was authorized in the
+[production plan](guidance/liturgy/propers-production-plan.md) and the legacy
+run was abandoned unadvanced. `proper-study` v6 run `71b6f89518984232` was
+seeded at the authorization commit, with date 2026-09-27 and audience "adult
+parish assembly".
+
+**In progress.** The scope gate and context stage passed. Research has been
+through three rounds, each repaired in full. Each round's cold review raised
+only new findings, so research-review stands at 2 of 4 consecutive novel
+rounds and 1 of 4 repeats. The same class of defect recurred in every round:
+the record called a registered witness unregistered or unreachable. Its cause
+is repository-wide, and the next section repairs it. The run is held between
+stages until that repair lands, so the next review packet seals the fixed
+tool.
+
+**Host interventions**, recorded in the run:
+
+- The Claude Code host could not pin the declared effort for the first six
+  agent stages, so those stages inherited `xhigh`.
+- The driver session restarted during research-review iteration 2. The
+  stopped reviewer had left no result. One fresh reviewer ran against the
+  unchanged packet.
+- From that restart, stages are dispatched to pinned-effort agent definitions
+  at their declared level.
+- At the same restart the model changed. Everything before ran as
+  `claude-opus-5[1m]`; everything after runs as `claude-opus-5-5[1m]`. The
+  leaf's contribution declarations must say so (requirement
+  `claude-model-provenance`).
+
+**Defects found and not repaired here**, recorded in the leaf's research scope:
+
+- `work.cassiodorus.expositio-psalmorum` and
+  `work.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas` declare
+  `locus_pattern`s narrower than the artifacts the library registers under
+  them. Widening either one moves fingerprints corpus-wide.
+- The New Advent deliveries modernise the NPNF second person.
+- The registered `source_url` of the second 1962 facsimile digitisation
+  returns 404, although the payload itself matches its hash.
+
+## Commentary holdings through containers, 2026-09-22
+
+<!-- promised-deliverable: commentary-holdings-through-containers-2026-09-22 -->
+
+The maintainer asked for the repository-wide tooling that stops a research
+sweep from reporting a held witness as absent. The cause, found by the
+Eighteenth Sunday reviews: many commentaries are held only inside a container
+record, such as Augustine on Pss 80–150 in PL 37, Aquinas on Matthew in a
+Venice collected volume, or Theodoret in PG 80 and 82. Nothing links the
+container to the works it contains, so a sweep that checks each lead by work
+record finds nothing.
+
+Existing source records cannot carry the link. `tools/source-library`
+fingerprints hash a record and its ancestors, and reviewed bindings in
+published leaves pin those fingerprints, so the link lives in a new inventory.
+
+**In progress** on a side branch in an isolated worktree. It merges while the
+Eighteenth Sunday run is held.
+
+## Liturgical commentators: standing, keying and inclusion, 2026-09-22
+
+<!-- promised-deliverable: liturgical-commentators-2026-09-22 -->
+
+The maintainer asked how Triptych should source, store and include
+appropriately authoritative liturgical commentators, with Guéranger's *The
+Liturgical Year* as the example. The question arose when the Eighteenth
+Sunday research denied that any witness reads that Sunday's Gospel as the
+priests' power to forgive sins, and a review found two registered commentators
+who do.
+
+**Decided.** A read-only design study was reviewed, and the maintainer
+decided D1–D10. The decisions are recorded, with the proposal they were made
+on, in
+[the plan of 2026-09-22](guidance/liturgy/liturgical-commentators-plan-2026-09-22.md):
+
+- The Blessed count toward a reading's two authors, provided one of the two is
+  a Father or canonized saint.
+- Commentators with no cultus never count, though they remain witnesses to the
+  Mass as a compilation.
+- Commentators are keyed to a formulary by its elements, not by their own
+  Sunday labels.
+- The *Liturgical Year* continuation is credited to Lucien Fromage.
+- Rule changes wait until the Eighteenth Sunday run publishes.
+
+**Open.** These may land now:
+
+- the author-standing registry
+- the Mass-keyed locus file and discovery verb, after the containment tooling
+  merges
+- the first-priority acquisitions
+- the opt-in authority check
+- the rights record and the duplicate-layer note
+
+These wait until that run publishes:
+
+- the guidance rule
+- the workflow version
+
+The leaves that credit the continuation to Guéranger must be recounted before
+any is marked stale; the proposal's count of seven is wrong.
 
 ## Shared proper-study presentation, 2026-09-21
 

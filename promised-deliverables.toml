@@ -1,6 +1,150 @@
 schema_version = 1
 
 [[deliverables]]
+id = "claude-1962-eighteenth-three-documents-2026-09-22"
+owner = "PROJECT-WORK.md"
+promise = "Drive the proper-study workflow for provider claude on the 1962 Eighteenth Sunday after Pentecost for Sunday 2026-09-27 through terminal acceptance: expansive study, concise study and standalone homily with fresh cold reviews, every workflow cycle and host intervention documented, and every contributing model declared exactly."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "claude-authorization"
+  criterion = "The exact provider and identity authorization is recorded in the production plan before the run is seeded, and the Claude leaf is authored independently of any other leaf."
+  status = "pass"
+  evidence = ["guidance/liturgy/propers-production-plan.md"]
+  check = "contains"
+  path = "guidance/liturgy/propers-production-plan.md"
+  needle = "- Authorized 2026-09-22: provider `claude`, identity `liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost`."
+
+  [[deliverables.requirements]]
+  id = "claude-run-accepted"
+  criterion = "A proper-study v6 run for provider claude, identity liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost, date 2026-09-27, audience adult parish assembly, reaches ACCEPTED with every review a fresh worker; the reviewed PDFs and the canonical web edition are installed with exact reviewed bytes and the owning leaf archives the run evidence."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "guidance/liturgy/propers-production-plan.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-cycles-documented"
+  criterion = "Every repair cycle the run entered and every host intervention (effort not pinnable for the first six agent stages; the driver restart and relaunched reviewer; the change of model mid-run) is recorded in a tracked record with its stage, iteration, cause, repair and outcome."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-model-provenance"
+  criterion = "The leaf's generation metadata declares each contributing model exactly and separately, as guidance/editorial.md requires, including that the context and research stages through research-review iteration 1 ran as claude-opus-5[1m] and later stages as claude-opus-5-5[1m], or a tracked record states why a stage's contribution is not declared."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "guidance/editorial.md"]
+
+[[deliverables]]
+id = "commentary-holdings-through-containers-2026-09-22"
+owner = "PROJECT-WORK.md"
+promise = "Make commentary discovery report every registered holding of a mapped work, including holdings that exist only inside a container record (a Migne volume, a collected-works volume, a translation anthology), so that a research sweep cannot report a held witness as absent; do so without editing any existing source record."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "containment-inventory"
+  criterion = "A new tracked inventory links every container-shaped source record to its constituent works with extents established from repository evidence, marks any it cannot establish as unresolved, and leaves every existing source record byte-identical."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "tools/source-library"]
+
+  [[deliverables.requirements]]
+  id = "discover-reports-holdings"
+  criterion = "tools/commentary-work-index discover reports, for each listed work, its direct and container holdings, whether the queried passage lies inside a container's extent, and when the work has no registered holding, in both JSON and text output, with existing fields unchanged."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "tools/commentary-work-index"]
+
+  [[deliverables.requirements]]
+  id = "container-check"
+  criterion = "A check on the repository's sources gate refuses a container-shaped record with no containment entry, an entry naming an unknown record, and a malformed extent, with tests for each refusal."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "Makefile"]
+
+  [[deliverables.requirements]]
+  id = "eighteenth-sunday-acceptance-cases"
+  criterion = "For Mt 9:1-8, Pss 95, 101 and 121 (Vulgate) and 1 Cor 1:4-8, discover surfaces each holding the Eighteenth Sunday research reviews found missed, or the tracked record states why the index does not map that work."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "merged-without-disturbing-review"
+  criterion = "The change reaches the workspace branch while the Eighteenth Sunday run is held between stages, so that no review's sealed inputs change while a reviewer is reading them."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
+id = "liturgical-commentators-2026-09-22"
+owner = "PROJECT-WORK.md"
+promise = "Work out and implement how Triptych sources, stores, keys and includes appropriately authoritative liturgical commentators such as Gueranger's The Liturgical Year: author standing, Mass-keyed discovery robust to Sunday-label drift, first-priority acquisitions, and the inclusion rule, under the maintainer's decisions of 2026-09-22."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "maintainer-decisions-recorded"
+  criterion = "The maintainer's decisions D1-D10 and the proposal they were made on are recorded in a tracked maintainer record."
+  status = "pass"
+  evidence = ["guidance/liturgy/liturgical-commentators-plan-2026-09-22.md", "PROJECT-WORK.md"]
+  check = "contains"
+  path = "guidance/liturgy/liturgical-commentators-plan-2026-09-22.md"
+  needle = "## Maintainer decisions, 2026-09-22"
+
+  [[deliverables.requirements]]
+  id = "author-standing-registry"
+  criterion = "A tracked author-standing registry records each commentator's standing with a cited basis, validated by a check on the sources gate (proposal step 1; decisions D1-D3)."
+  status = "open"
+  evidence = ["guidance/liturgy/liturgical-commentators-plan-2026-09-22.md"]
+
+  [[deliverables.requirements]]
+  id = "formulary-loci"
+  criterion = "src/sources/commentary/formulary-loci.yaml records commentators' Mass loci element by element with each commentator's own Sunday label as data, including the continuation credited to Lucien Fromage, validated on the sources gate (proposal step 2; decisions D4 and D7)."
+  status = "open"
+  evidence = ["guidance/liturgy/liturgical-commentators-plan-2026-09-22.md"]
+
+  [[deliverables.requirements]]
+  id = "formulary-discovery"
+  criterion = "A commentary-work-index verb finds the liturgical commentary on a formulary by its elements rather than its Sunday label, joins author standing and holdings, and flags label drift, with tests and a replayed example (proposal step 3)."
+  status = "open"
+  evidence = ["guidance/liturgy/liturgical-commentators-plan-2026-09-22.md", "tools/commentary-work-index"]
+
+  [[deliverables.requirements]]
+  id = "first-priority-acquisitions"
+  criterion = "The first-priority sources of the proposal's section 3.3 are registered as new editions or artifacts, with no existing record edited, and the source checks pass (proposal step 4; decision D8)."
+  status = "open"
+  evidence = ["guidance/liturgy/liturgical-commentators-plan-2026-09-22.md", "guidance/sources.md"]
+
+  [[deliverables.requirements]]
+  id = "authority-contract-opt-in"
+  criterion = "An opt-in authority contract in scripts/_proper_components.py checks a reading's two authors against the standing registry under decision D1, with tests (proposal step 6; decision D5)."
+  status = "open"
+  evidence = ["guidance/liturgy/liturgical-commentators-plan-2026-09-22.md", "scripts/_proper_components.py"]
+
+  [[deliverables.requirements]]
+  id = "inclusion-guidance-after-publication"
+  criterion = "After the Claude 1962 Eighteenth Sunday run publishes, the inclusion rule is added to guidance/liturgy/propers-three-documents.md and the 1962 profile, with a clause that it does not reopen earlier accepted research (proposal step 5; decision D6)."
+  status = "open"
+  evidence = ["guidance/liturgy/liturgical-commentators-plan-2026-09-22.md", "guidance/liturgy/propers-three-documents.md"]
+
+  [[deliverables.requirements]]
+  id = "workflow-version-after-publication"
+  criterion = "After the Claude 1962 Eighteenth Sunday run publishes, the reviewer sentence, the standing pointers and the mandatory authority check reach a new proper-study version (proposal step 7; decisions D5 and D6)."
+  status = "open"
+  evidence = ["guidance/liturgy/liturgical-commentators-plan-2026-09-22.md", "workflows/pipelines/proper-study.json"]
+
+  [[deliverables.requirements]]
+  id = "continuation-attribution-staleness"
+  criterion = "The published leaves that credit the Liturgical Year continuation to Gueranger are recounted from the tracked files and placed on the research-staleness record for their next revision (decision D7)."
+  status = "open"
+  evidence = ["guidance/liturgy/liturgical-commentators-plan-2026-09-22.md"]
+
+  [[deliverables.requirements]]
+  id = "google-pages-rights-record"
+  criterion = "One rights record under src/sources/inventories/ settles the status of Google usage-guidelines pages in retained scans (decision D9)."
+  status = "open"
+  evidence = ["guidance/liturgy/liturgical-commentators-plan-2026-09-22.md"]
+
+  [[deliverables.requirements]]
+  id = "duplicate-text-layer-documented"
+  criterion = "The two artifact records for one Liturgical Year volume XI text layer are documented as duplicates pending the next deliberate schema change (decision D10)."
+  status = "open"
+  evidence = ["guidance/liturgy/liturgical-commentators-plan-2026-09-22.md"]
+
+[[deliverables]]
 id = "propers-shared-format-2026-09-21"
 owner = "PROJECT-WORK.md"
 promise = "Restore shared proper-specific Latin Modern typography and consistent title, table, dossier, lane and four-senses presentation in the four recent GPT/Claude proper leaves; restore concise opening pages and homily-only two-column speech without changing existing prose or accepting unreviewed chronology; extend gates, inspect all affected PDFs, commit coherently and push to main with deployment verification."
