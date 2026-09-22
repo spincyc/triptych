@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.jacques-paul-migne.patrologia-latina-volume-9.1844-paris.ia-djvu-text-db389fea"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-9.1844-paris"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The volume was published at Paris in 1844, and a work first published abroad before 1931 is out of United States copyright; that line is the one guidance/missals.md records as current on 1 January 2026 and it moves every January, so it is written here as derived for calendar year 2026 and not as a standing rule. Restoration under 17 U.S.C. 104A could not reach it: ninety-five years from 1844 ran out in 1939. THE GOOGLE QUESTION WAS DECIDED ON THESE BYTES. Probes run case-insensitively over the whole file with runs of non-alphanumeric characters collapsed: \"usage guidelines\" 0; \"about google book search\" 0; \"this is a digital copy\" 0; \"digitized by google\" 0; \"google book search\" 0. No notice, licence, reservation or condition of any kind appears in the file; it opens with the Internet Archive's own scanning credit, \"Digitized by the Internet Archive in 2011 with funding from University of Toronto\". A faithful mechanical reproduction of a public-domain work is not original authorship (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)), and machine optical character recognition adds no human authorship on top of it. NOT RELIED ON: that the item is available, that the download succeeded, or that any host marks the scan public domain."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/patrologiaecur09mign/patrologiaecur09mign_djvu.txt"
+provenance = "Acquired whole over HTTPS by the research stage of workflow run 71b6f89518984232 on 2026-09-22, in the re-entry that answered study-review finding STU-001, and hashed before use. The SHA-1 of the retrieved bytes (84d65a115a3b0caa08411cc0df9da590a891c030) and the byte size (3,896,515) match the Internet Archive item's own file list for this file, and the SHA-256 matches the one the study reviewer recorded for the same file (db389fea...ada51). Identified from the item metadata of patrologiaecur09mign (title 'Patrologiae cursus completus : Series latina', volume 9) after a search of the source library under Hilary of Poitiers, Commentarius in Matthaeum, In Evangelium Matthaei commentarius, PL 9 and Patrologia Latina 9 found no registered route. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-22"
+sha256 = "db389fea8c090bebde4325a371a1e9a767ffba6000f2c3799f3f04ea033ada51"
+byte_size = 3896515
+path = "src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/editions/1844-paris/artifacts/ia-djvu-text-db389fea/pl-9-djvu.txt"
+encoding = "utf-8"
+indexable = true
+notes = "Uncorrected optical text of the whole volume, 85,814 LF-terminated lines, valid UTF-8. Hilary's Commentarius in Matthaeum, caput VIII (Mt 8:23-9:8), stands at about physical lines 75880-76150, with the Maurist footnotes interleaved; the optical order across Migne's two print columns and the notes is unreliable there. QUOTE FROM THIS ARTIFACT ONLY AFTER CHECKING THE PAGE IMAGE: the sister artifact columns-957-962-facsimile-0f29c602 retains the three pages of caput VIII."

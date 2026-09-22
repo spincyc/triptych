@@ -1,11 +1,11 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 2778,
-  "editions": 1004,
+  "artifacts": 2784,
+  "editions": 1006,
   "passages": 5184,
   "readable": 3059,
-  "works": 726
+  "works": 728
  },
  "facets": {
   "authors": [
@@ -787,7 +787,7 @@
    },
    {
     "id": "Jacques-Paul Migne, publisher and series editor",
-    "works": 8
+    "works": 10
    },
    {
     "id": "James Joyce",
@@ -1696,16 +1696,16 @@
     "works": 11
    },
    {
+    "id": "collected-volume",
+    "works": 10
+   },
+   {
     "id": "apostolic-letter-motu-proprio",
     "works": 9
    },
    {
     "id": "decree",
     "works": 9
-   },
-   {
-    "id": "collected-volume",
-    "works": 8
    },
    {
     "id": "encyclopedia-volume",
@@ -3006,7 +3006,7 @@
     "id": "en"
    },
    {
-    "editions": 296,
+    "editions": 298,
     "id": "la"
    },
    {
@@ -3132,7 +3132,7 @@
     "label": "18th century"
    },
    {
-    "editions": 174,
+    "editions": 176,
     "id": "1800",
     "label": "19th century"
    },
@@ -3149,8 +3149,8 @@
   ],
   "rights": [
    {
-    "artifacts": 1553,
-    "editions": 349,
+    "artifacts": 1559,
+    "editions": 351,
     "id": "public-domain"
    },
    {
@@ -14946,6 +14946,66 @@
     "la"
    ],
    "title": "Patrologiae cursus completus, Series Latina, volume 92"
+  },
+  {
+   "alternate_titles": [
+    "Patrologia Latina 107",
+    "PL 107",
+    "B. Rabani Mauri opera omnia, tomus primus"
+   ],
+   "author": "Jacques-Paul Migne, publisher and series editor",
+   "category": "collected-volume",
+   "directory": "editions/jacques-paul-migne/patrologia-latina-volume-107/",
+   "editions": [
+    {
+     "date": "1864",
+     "file": "1864-1864-paris.json",
+     "id": "edition.jacques-paul-migne.patrologia-latina-volume-107.1864-paris",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "B. Rabani Mauri opera omnia, tomus primus (Patrologia Latina 107, Paris, 1864)",
+     "year": 1864
+    }
+   ],
+   "id": "work.jacques-paul-migne.patrologia-latina-volume-107",
+   "languages": [
+    "la"
+   ],
+   "title": "Patrologiae cursus completus, series latina, tomus CVII"
+  },
+  {
+   "alternate_titles": [
+    "Patrologia Latina 9",
+    "PL 9",
+    "Sancti Hilarii Pictaviensis episcopi opera omnia, tomus I"
+   ],
+   "author": "Jacques-Paul Migne, publisher and series editor",
+   "category": "collected-volume",
+   "directory": "editions/jacques-paul-migne/patrologia-latina-volume-9/",
+   "editions": [
+    {
+     "date": "1844",
+     "file": "1844-1844-paris.json",
+     "id": "edition.jacques-paul-migne.patrologia-latina-volume-9.1844-paris",
+     "language": "la",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "Sancti Hilarii Pictaviensis episcopi opera omnia, tomus I (Patrologia Latina 9, Paris, 1844)",
+     "year": 1844
+    }
+   ],
+   "id": "work.jacques-paul-migne.patrologia-latina-volume-9",
+   "languages": [
+    "la"
+   ],
+   "title": "Patrologiae cursus completus, series latina, tomus IX"
   },
   {
    "alternate_titles": [],

@@ -18,15 +18,19 @@ never blended, and no Father is made to approve an arrangement he never saw.
 
 Two further boundaries apply throughout and are not repeated at each occurrence:
 
-- **Jerome is read at his own locus; Hilary on Matthew is still the Catena's.**
-  Jerome's Gospel readings below come from *Comm. in Matth.* I at PL 26,
-  cols. 53–56, read on the page images (`research/scope.md` § 3.5). Where the
-  *Catena in Matthaeum* differs from PL 26 — and at this pericope it splices two
-  lemmata and carries one sentence the commentary does not have there — the
-  commentary governs and the difference is marked. Hilary's Matthew commentary has
-  no registered route and was not reached; every reading attributed to him **on
-  the Gospel** is Aquinas's report of him — in the *Catena* on vv. 1–2, in the
-  lectura on v. 8 — and is labelled so.
+- **Every Father on the Gospel is read at his own locus, and none through the
+  Catena.** Jerome's Gospel readings below come from *Comm. in Matth.* I at PL 26,
+  cols. 53–56. Hilary's come from *In Matth.* VIII §§ 3–8 at PL 9, cols. 959–962,
+  both read on the page images (`research/scope.md` § 3.5). Rabanus is read at
+  PL 107, cols. 870–873. Where the *Catena in Matthaeum* or Aquinas's lectura
+  differs from them, the commentary governs and the difference is marked. At this
+  pericope the Catena splices Jerome, and splices Hilary's § 6 into his § 5. It
+  gives under Jerome's name a sentence that is Ambrose's (*Exp. in Lc.* V.10). And
+  it gives under Rabanus's name a wording that is not in PL 107. The lectura's
+  *ut fiant filii Dei* is Aquinas's summary of Hilary on v. 8, not Hilary's words.
+  **An earlier version of this record attributed Hilary on the Gospel only as
+  Aquinas reported him. Every such passage below is now replaced by what PL 9
+  prints.**
 - **Each psalm has five or six checked witnesses, in Latin and Greek, and they are
   named, not totalled.** Ps 121: Augustine, Cassiodorus, Hilary, Chrysostom,
   Theodoret, Bellarmine. Pss 95 and 101: Augustine, Cassiodorus, Theodoret, the
@@ -223,12 +227,19 @@ Theodoret reads the courts as the churches (§ 3.8). So the Latin and Greek
 witnesses agree on the Alleluia's and the Communion's psalms, and part only on the
 Gradual's.
 
-**Hilary on the Gospel, through the Catena.** *Dei civitas fidelium plebs est: in
-hanc ergo introivit per navim, idest Ecclesiam, vectus* — the city Christ enters
-is the people of the faithful, and the boat he crosses in is the Church. This is
-the one checked witness that reads the Gospel's *civitátem suam* as a city in the
-same sense the chants mean, and it is **Aquinas's report of Hilary**, not Hilary's
-commentary, which has no registered route and was not reached.
+**Hilary on the Gospel, *In Matth.* VIII § 4 (PL 9, cols. 959–960), at his own
+locus.** He reads the Gerasene episode and the healing of the paralytic as one
+figure. The Gerasene town that begs Christ to leave *Judaici populi habet
+speciem*: the law that does not receive the Gospels. *A qua repudiatus, in
+civitatem suam revertitur … Deo civitas fidelium plebs est. In hanc igitur navi, id
+est Ecclesia, vectus introiit.* Rejected by the city of the law, he goes back to his
+own city, and to God the city is the people of the faithful. He enters it by the
+boat, which is the Church. This is the one checked witness that reads the Gospel's
+*civitátem suam* as a city in the sense the chants mean. Two cautions. The Maurist
+text reads *Deo civitas*, and *Dei civitas* is the older editions' reading, which
+the Catena carries (PL 9, col. 960, note h). And Hilary names no town, so his
+allegory stands beside any literal identification and does not compete with one
+(`research/scope.md` § 4.1).
 
 ### 1.3 How every element contributes
 
@@ -245,8 +256,9 @@ commentary, which has no registered route and was not reached.
 - `gospel` — the city entered by boat; the paralytic's healing as the crowd's
   first, inadequate glorification of God (Chrysostom). *Editorial synthesis:*
   the movement from *civitátem suam* to the chants' *domus Domini* is the editor's
-  join, resting on Hilary's allegorical identification and on nothing Chrysostom
-  or Augustine says.
+  join. It rests on Hilary's allegorical identification (PL 9, col. 960) and on
+  nothing Chrysostom or Augustine says. Hilary himself reads the crowd's praise
+  otherwise than Chrysostom does, as honour fittingly rendered (§ 2.5).
 - `offertory` — Moses sanctifying an altar *in conspéctu filiórum Israël*: the
   people are present to their own sacrifice. *Textual observation:* that closing
   phrase is the one clause of the antiphon that stands verbatim in Exodus 24, at
@@ -399,8 +411,21 @@ terra* that Christ earned divinity; and then: *Videtur quod per hoc non
 ostendatur, quia etiam ipsi Apostoli habebant potestatem. Sed dicendum, quod ipsi
 habebant per viam administrationis, non auctoritatis.* The Apostles too have the
 power to forgive sins — by way of ministry, not of authority. **This is the one
-checked witness at the Gospel's own locus who connects Mt 9:6 with the Church's
-ministers**, and he does it to keep the authority Christ's. His tropology is
+checked witness who connects Mt 9:6 with the Church's ministers**, and he does it
+to keep the authority Christ's.
+
+**Ambrose, *Expositio in Lucam* V.13, on the parallel of v. 3** (Lk 5:21). It was
+read in the tracked transcription of PL 15, not on page images
+(`research/scope.md` §§ 3.5, 4.3). On the scribes' *quis potest dimittere peccata
+nisi solus Deus* he writes, in a parenthesis: *qui per eos quoque dimittit,
+quibus dimittendi tribuit potestatem* — God, who alone forgives, forgives also
+through those to whom he has given the power to forgive. He says it in order to
+rank forgiveness below the raising of bodies, and he says it of Luke's scribes,
+not of Matthew's crowd. Bede takes the clause into *In Lucam* II (PL 92,
+col. 388B), and Rabanus prints it at Mt 9:3 (PL 107, col. 871). **This is the one
+Father, and a Doctor, in whom this reading's step from Christ's authority to the
+Church's ministry has patristic warrant at this pericope.** It is at v. 3's
+parallel, and it is not a reading of v. 8. His tropology is
 penitential: *Surge, a peccato per contritionem; tolle lectum, per
 satisfactionem … et vade in domum tuam, in domum aeternitatis, vel in
 conscientiam propriam.*
@@ -519,10 +544,14 @@ which of them it uses.
   Hebrews 9); the authority claimed at Capernaum is exercised there.
 - **Moral.** The sinner's part is to be brought, to be laid down, and then to obey
   the one command he is given — *surge, tolle lectum tuum* — carrying what once
-  carried him. Rabanus, through the Catena: *lectum tollere est carnem a terrenis
-  desideriis ad voluptatem spiritus attollere.* Aquinas, at his own locus, makes the
+  carried him. Bede, *In Lucam* II on the parallel verse (PL 92, cols. 388D–389A),
+  in words Rabanus takes over at Mt 9:6 (PL 107, col. 873): *Lectum vero tollere
+  est, ipsam quoque carnem per continentiae frena correptam, spe coelestium
+  praemiorum deliciis privare terrenis*. Aquinas, at his own locus, makes the
   command penitential: *Surge, a peccato per contritionem; tolle lectum, per
-  satisfactionem.*
+  satisfactionem.* (**The Catena's "Rabanus", *lectum tollere est carnem a
+  terrenis desideriis ad voluptatem spiritus attollere*, is not in PL 107 and is
+  withdrawn** — `research/scope.md` § 3.5.)
 - **Anagogical.** The forgiveness given now is confirmation *usque in finem sine
   crímine*, and its term is *dies advéntus Dómini nostri Iesu Christi*. The Mass
   does not end the matter; it opens it toward the day.
@@ -535,15 +564,29 @@ absolve, and then to let the Offertory's altar and the Secret's *commércia* be
 where that power acts. **No Father checked here reads v. 8 that way.** Chrysostom
 reads the crowd's words as a *deficient* confession — "But nevertheless they
 still creep upon the earth. … But they did not retain these things clearly" —
-Augustine does not reach the verse at *De cons. evang.* II. xxv, Jerome at his own
-locus says nothing about v. 8 beyond a single tropological sentence about the
-risen soul carrying its bed, and Hilary, as Aquinas reports him, reads *hominibus*
-of the power *ut fiant filii Dei*.
+Augustine does not reach the verse at *De cons. evang.* II. xxv, and Jerome at his
+own locus says nothing about v. 8 beyond a single tropological sentence about the
+risen soul carrying its bed. Hilary, at his own locus (*In Matth.* VIII § 8,
+PL 9, cols. 961–962), says the power was *soli … Christo … debitum, soli de
+communione paternae substantiae*. God is honoured because through his word men
+received *potestas … ac via … et peccatorum remissionis, et corporum
+resurrectionis, et reversionis in coelum*. Men are the recipients of forgiveness,
+not its ministers. (An earlier version of this record gave Hilary's reading as
+*ut fiant filii Dei*, "adoption, not absolution". Those words are Aquinas's
+lectura, and Hilary names the remission of sins first; the sentence is
+withdrawn.) Hilary also parts from Chrysostom about the crowd: he calls the honour
+it renders fitting, *conclusa sunt omnia suo ordine*, where Chrysostom calls it an
+inadequate confession.
 
-**What the later witnesses do support, and where.** The ministerial sense is not
-the editor's invention. It stands below the Fathers in these places, and in none of
-them is it a Father's reading of v. 8 (`research/scope.md` §§ 3.11, 4.3):
+**What the other witnesses do support, and where.** The ministerial sense is not
+the editor's invention. It stands in one Father at the parallel of v. 3, and below
+the Fathers in the other places listed. In none of them is it a Father's reading of
+v. 8 (`research/scope.md` §§ 3.5, 3.11, 4.3):
 
+- **Ambrose at Lk 5:21, the parallel of v. 3** (*Exp. in Lc.* V.13, transcription
+  of PL 15): God forgives *per eos quoque … quibus dimittendi tribuit potestatem*.
+  Bede repeats it, and Rabanus prints it at Mt 9:3. A Father and Doctor, but on
+  Luke's scribes and in a parenthesis, and not on v. 8.
 - **Aquinas at v. 6**, at his own locus: the Apostles have the power to forgive
   *per viam administrationis, non auctoritatis*. A Doctor, a different verse — the
   verse this reading already turns on — and a statement made to keep the
@@ -576,10 +619,13 @@ earth**, visibly, by one who is also man; Aquinas says at that verse that the
 Apostles exercise it by ministry and not by authority; Schuster, commenting on this
 Mass, reads v. 8 of that power communicated to the apostles and their successors;
 the Mass's own prayers claim a present effect for a visible rite (*éfficis*,
-*vegetáti*); and the continuation reads the Mass of the pastors who forgive. That is
+*vegetáti*); and the continuation reads the Mass of the pastors who forgive.
+Ambrose, on the scribes' question in Luke, has already said that God forgives
+through those to whom he gave the power. That is
 enough for the whole formulary to hold together without putting a doctrine in the
 Fathers' mouths. What the reading may not do is attribute the ministerial reading
-of v. 8 to Chrysostom, Jerome, Augustine or Hilary; present Rupert's or Durandus's
+of v. 8 to Chrysostom, Jerome, Augustine or Hilary, or to Ambrose, whose clause
+is on Lk 5:21; present Rupert's or Durandus's
 reading as a reading of the 1962 pairing; put the continuation's words in
 Guéranger's mouth; or present the ministerial reading as the commentators' only
 one.
@@ -658,12 +704,24 @@ Domino, quæ si misericordia ejus sanata fuerit, tantum roboris accipit, ut port
 statim lectulum suum* — the soul lying paralysed in its own body is *carried to
 the Lord by someone else*, and receives strength only afterwards.
 
-**A correction this record owes its own earlier draft.** The sentence
-*unusquisque enim aeger petendae salutis precatores debet adhibere* — "every sick
-man must employ intercessors" — which an earlier pass attributed to Jerome and
-which this reading leaned on, is the **Catena's** wording and is not in PL 26 at
-this pericope. Jerome's own tropological sentence, quoted above, carries the same
-weight for this reading and is what it now uses.
+**A correction this record owes its own earlier draft, now completed.** An earlier
+pass attributed to Jerome the sentence *unusquisque enim aeger petendae salutis
+precatores debet adhibere* — "every sick man must employ intercessors" — and this
+reading leaned on it. It is not in PL 26 at this pericope. The fourth re-entry found
+it in **Ambrose, *Expositio in Lucam* V.10**, on Luke's paralytic (tracked
+transcription of PL 15): *unusquisque aeger petendae precatores salutis debet
+adhibere … Sint igitur aliqui monitores mentis*. The Catena put it under Jerome.
+Jerome's own tropological sentence, quoted above, is what this reading uses for
+Jerome.
+
+**Ambrose, *Exp. in Lc.* V.10–11, beside Jerome** (`research/scope.md` §§ 3.5,
+4.2). On *quorum fidem … ut vidit* he takes Jerome's side in so many words: *Magnus
+Dominus qui aliorum merito ignoscit aliis, et dum alios probat, aliis relaxat
+errata*. He then turns it to the hearer: *Si gravium peccatorum diffidis veniam,
+adhibe precatores, adhibe Ecclesiam quae pro te precetur*. He is a Father and
+Doctor, and he is the second checked witness for the reading's claim that the
+healing was moved by faith that was not the sick man's. The text is a
+transcription, not image-collated, and it is on Luke.
 
 **John Chrysostom, *Hom. in Matth.* 29**, refuses exactly that: "Seeing, it is
 said, their faith; that is, the faith of them that had let the man down … Or
@@ -737,11 +795,16 @@ this Mass whole (`research/scope.md` § 3.11).
 - **Literal.** Paul thanks God for gifts the Corinthians did not earn and are
   misusing; a paralysed man is carried to Jesus and forgiven before he is healed;
   a psalmist tells the nations to come into the courts with a sacrifice.
-- **Allegorical.** The Church is the paralytic: carried by the faith of others
-  into the presence of the one who forgives first and heals after. Hilary, through
-  the Catena, takes this furthest — *in paralytico gentium universitas offertur
-  medenda* — and adds *fides enim sola iustificat*, meaning that the law could not
-  loose what faith looses.
+- **Allegorical.** The Church is the paralytic, carried into the presence of the
+  one who forgives first and heals after. Hilary takes this furthest, at his own
+  locus (*In Matth.* VIII § 5, PL 9, col. 960). *In paralytico gentium universitas
+  offertur medenda*: the whole of the nations is offered for healing, carried by
+  angels, and called son because Adam was God's first work. What it is forgiven is
+  Adam's first transgression, *indulgentia primae transgressionis*, for *we do not
+  read that the paralytic had sinned*. (Hilary's *fides enim sola justificat* does not belong to
+  this allegory. It stands in § 6, on the scribes' murmur, in his literal account:
+  Christ forgave what the law could not loose. The Catena spliced it into § 5, and
+  an earlier version of this sense followed the Catena; that is withdrawn.)
 - **Moral.** The gifts that most tempt us to pride — utterance, knowledge,
   strength of mind — are exactly the ones Paul lists as given. The practical form
   of the Collect is to let oneself be carried: the paralysed soul, in Jerome's own
@@ -814,11 +877,11 @@ rather than resolved.
 | --- | --- | --- | --- |
 | What is the Mass about? | a city being built | a power being exercised | a gift being acknowledged |
 | Which element governs? | `gradual` (and the doubled Ps 121:1) | `gospel` | `collect` |
-| What is the Gospel for? | the boat and the city (Hilary, through the Catena) | the centre and the proof | the man who did nothing |
+| What is the Gospel for? | the boat and the city (Hilary, *In Matth.* VIII § 4, PL 9) | the centre and the proof | the man who did nothing |
 | What is the Offertory for? | the people standing by their own sacrifice | the altar where remission is worked | the antiphon whose verbs are all Moses' |
 | What is *pax*? | the city's strength: charity for Augustine and Cassiodorus, the firmness peace confers for Hilary | not addressed directly | not addressed directly |
 | Principal witness | Augustine on three psalms, with Cassiodorus on all three and Hilary's *Tractatus* on Ps 121 | Chrysostom on Matthew and Hebrews, with Aquinas on Mt 9:6 | Chrysostom on 1 Corinthians, with Theodoret and Aquinas beside him |
-| Where it is weakest | inherits Augustine's anti-Donatist register, and the Greek Fathers read its governing psalm of the earthly city rebuilt | no Father reads Mt 9:8 of the ministry; the ministerial sense stands in Aquinas at v. 6, in Bl. Schuster at v. 8 on this Mass, in the continuation of *The Liturgical Year*, in the priestly reading of Ps 95:8, and in Rupert and Durandus on a Mass with another Gospel — and Honorius and Sicard read the same chants of the return from exile | tends toward quietism if pressed |
+| Where it is weakest | inherits Augustine's anti-Donatist register, and the Greek Fathers read its governing psalm of the earthly city rebuilt | no Father reads Mt 9:8 of the ministry; the ministerial sense stands in one Father, Ambrose, at Lk 5:21 (the parallel of v. 3), in Aquinas at v. 6, in Bl. Schuster at v. 8 on this Mass, in the continuation of *The Liturgical Year*, in the priestly reading of Ps 95:8, and in Rupert and Durandus on a Mass with another Gospel — and Honorius and Sicard read the same chants of the return from exile | tends toward quietism if pressed |
 
 ### 4.3 How they relate
 
@@ -848,34 +911,43 @@ so even he does not set the two readings against each other. `authority-on-earth
 Mt 9:8. Nothing in this record sets one reading against another about the Gospel's
 last verse, and a study that staged that contest would be inventing it.
 
-**Where they genuinely conflict, and it survives compression.** They inherit, in
-opposite directions, the disagreement the witnesses actually have about
-*civitátem suam* (`research/scope.md` § 4.1).
+**The Gospel's city: compatible uses, not a conflict.** An earlier version of this
+section held that `peace-of-the-house` "needs the city left open" and
+`authority-on-earth` needs it located, and it called that the Fathers' own
+conflict. **That premise is withdrawn** (`research/scope.md` § 4.1). Hilary, read
+at his own locus (PL 9, cols. 959–960), names no town. His allegory rests on the
+contrast between the Gerasene town, which figures the Jewish people and the law,
+and the people of the faithful, so it holds whichever town the literal sense
+names. Augustine (*De cons. evang.* II.25.58) does not refuse to settle the
+question: both of his solutions put the healing at Capernaum. Aquinas gives the
+three-city harmony and the allegory *in civitatem gentium* in the same lecture. So
+the three readings use the clause in compatible ways:
+- `peace-of-the-house` reads it allegorically, with Hilary;
+- `authority-on-earth` reads it as the literal place of a verifiable sign;
+- `nothing-of-our-own` does not use it.
 
-- `peace-of-the-house` needs the city left open, because the sense it takes from
-  the Gospel is Hilary's *Dei civitas fidelium plebs est* — the boat is the
-  Church and the city entered is the people of God. That reading only works while
-  the town is not pinned down, which is why Augustine's refusal to settle the
-  question matters to it.
-- `authority-on-earth` needs the opposite. Its whole claim is about *where*: the
-  Son of Man has this power **on earth**, at a place, in front of witnesses who
-  can check the visible half of it. Its two principal witnesses pin the town and
-  disagree about which one — Chrysostom names Capernaum, "that which had Him
-  continually inhabiting it"; Jerome at PL 26, col. 54 says flatly *Civitatem ejus
-  non aliam intelligimus quam Nazareth* — and neither leaves it open. Aquinas, who
-  harmonises the two (Bethlehem by birth, Nazareth by upbringing, Capernaum by
-  dwelling and miracles), also gives the allegory `peace-of-the-house` wants —
-  *in civitatem gentium, quae sibi datae sunt* — so the later Doctor holds both
-  sides of this conflict and the Fathers do not.
+No witness sets these uses against each other, and the study must not.
 
-So the two readings want incompatible things from the same clause: one wants it
-unlocated so it can be the Church, the other wants it located so the power can be
-exercised somewhere. Neither is refuted by the evidence, the disagreement is the
-Fathers' own and not the editor's, and it does not dissolve when the study is
-compressed. `nothing-of-our-own` takes no position on the city; the dispute it
-carries is internal to itself — Jerome against Chrysostom on whose faith healed
-the man (§ 3.6) — and the study keeps that one inside the third reading rather
-than between readings.
+**Where the real disagreements stand: each inside the reading that carries it.**
+- **Which town**: Chrysostom's Capernaum ("that which had Him continually inhabiting
+  it") against Jerome's Nazareth (*Civitatem ejus non aliam intelligimus quam
+  Nazareth*, PL 26, col. 54). Augustine and Aquinas harmonise towards Capernaum.
+  The dispute sits inside `authority-on-earth`, whose literal sense needs a place,
+  and the reading should report it there without deciding it.
+- **Whose faith**: Jerome and Ambrose (the bearers' faith; *aliorum merito
+  ignoscit aliis*) against Chrysostom (the sick man shared it), with Aquinas
+  declining to choose. This dispute sits inside `nothing-of-our-own` (§§ 3.2, 3.5).
+- **What Ps 121 is about**: the Greek Fathers' earthly Jerusalem rebuilt against the
+  Latins' heavenly city. This dispute sits inside `peace-of-the-house` (§ 1.2;
+  `research/scope.md` § 4.6).
+- **What the crowd's praise at v. 8 is**: Chrysostom's inadequate confession
+  against Hilary's honour fittingly rendered. Neither of them reads it of
+  ministers, and none of the three readings turns on it (above).
+
+Where the readings' *answers* part is set out in the table at § 4.2: what the Mass
+is about, which element governs, what the Gospel and the Offertory are for. Those
+are differences of governing emphasis, not incompatibilities. None of them is a
+contest between witnesses, and the study should not stage one.
 
 ### 4.4 Notes for the concise study's page-1 overview
 

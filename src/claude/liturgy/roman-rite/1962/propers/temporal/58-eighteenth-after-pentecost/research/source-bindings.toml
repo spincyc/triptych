@@ -796,3 +796,85 @@ role = "context"
 states = ["cataloged", "acquired", "inspected"]
 source_fingerprint = "sha256:e9196de624cd2450dfabd6746ed95bd69e6458145b55feacd39094f674728032"
 context = "Migne's PL 30, spuria of Jerome, in the tracked layer (SHA-256 recomputed and matched, dd20c7b3...fdf0c9), read in the layer only; no page image was opened. The Liber Comitis sets 1 Cor 1:4 ... usque adventus Domini nostri Jesu Christi with Mt 22 (Accedentes ad Jesum Sadducei) at the Dominica mensis VII before the September Ember week, and Eph 4:23 with Mt 9 (Ascendens Jesus in navicula, usque potestatem talem hominibus) at the Dominica mensis VII after the Ember Saturday. The volume also carries an anonymous commentary on 1 Corinthians whose lemma on v. 4 stands at lines 58296-58297; no library record names it or its author, so it is recorded in research/scope.md section 3.6 as a located lead and no reading is taken from it."
+
+# ---------------------------------------------------------------------------
+# The fourth re-entry of 2026-09-22: Hilary and Rabanus on the Gospel at their
+# own loci, and the Latin sources the Catena and Rabanus draw on
+#
+# Answers study-review finding STU-001. Hilary's Commentarius in Matthaeum and
+# Rabanus's Commentariorum in Matthaeum had been recorded as having no
+# registered route and were attributed only through Aquinas. This pass
+# registered Migne's PL 9 (1844) and PL 107 (1864) under the Migne namespace --
+# each as a tracked whole-volume optical text, a remote whole scan, and a
+# tracked three-page facsimile excerpt of the columns read -- entered both
+# volumes in inventories/source-containment-v1.toml, and read Hilary's caput
+# VIII sections 1-8 and Rabanus on Mt 9:1-8 on the page images. Reading them
+# showed that Rabanus's spiritual sense of Mt 9:6 is Bede's, and that the
+# Catena's Jerome tropology is Ambrose's; the two registered Luke commentaries
+# that establish that are bound last. research/scope.md sections 3.5, 4.1,
+# 4.3, 4.4, 5.2, 6.3 and 10 carry what each gave.
+# ---------------------------------------------------------------------------
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-9.1844-paris.columns-957-962-facsimile-0f29c602"
+loci = ["column-958", "column-959", "column-960", "column-961", "column-962"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1362f9f6af42aa51899b3930c43226424879ea7911a54009d7b0b13f10ea94a8"
+context = "Hilary of Poitiers, Commentarius in Matthaeum, caput VIII (Mt 8:23-9:8), sections 1-8, in the Maurist text reprinted at PL 9, read whole on the page images at native 400 ppi: section 3 at col. 959, section 4 at cols. 959-960, section 5 at col. 960, sections 6-8 at cols. 961-962, with the Maurist notes (h), (j) at col. 960 and (a)-(f) at cols. 961-962. The Maurist italic section headings are editorial. What this settles is in research/scope.md section 3.5: at section 4 the Gerasene town is the figure of the Jewish people and the law, which rejects Christ, and he returns in civitatem suam, Deo civitas fidelium plebs est (the Maurists read Deo against the older editions' Dei, note h), entering it by the boat, id est Ecclesia; at section 5 the paralytic is the whole of the nations offered for healing, called son because Adam is the first work of God, and forgiven the first transgression, for we do not read that the paralytic had sinned; the clause quod lex laxare non poterat; fides enim sola justificat stands in section 6, on the scribes' murmur; at section 7 the return home is the way back to paradise; and at section 8, on v. 8, the honour went to God because potestas hominibus ac via data sit per verbum ejus, et peccatorum remissionis, et corporum resurrectionis, et reversionis in coelum. Hilary does not say ut fiant filii Dei; that is Aquinas's summary in his lectura."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-9.1844-paris.internet-archive-pdf-eab6d2f4"
+loci = ["pdf-page-7", "pdf-page-8", "pdf-page-493", "pdf-page-494", "pdf-page-495"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:aac0b6000cf35e826d415d4ee14e20e0a040b318ff7ddd776e3803ceec1f46eb"
+context = "The whole remote scan from which the excerpt above was extracted, fetched on 2026-09-22 and hashed before any page was opened (SHA-256 eab6d2f4...67c0a, 80,742,141 bytes; SHA-1 matching the Internet Archive's file list). PDF page 7, the title page, was read for the edition's identity and date (1844, not the item metadata's 1800) and page 8, the Elenchus, for the constituent works and the commentary's opening column, 917."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-9.1844-paris.ia-djvu-text-db389fea"
+loci = ["column-958", "column-959", "column-960", "column-961", "column-962"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1ffb9ec5d69f6ca5e9957af74962f6045bdead5118c600449e3c1fce55bee5bd"
+context = "The whole-volume optical text, used to locate caput VIII (about physical lines 75880-76150) and as a check on the images. Every reading research/scope.md quotes from Hilary was taken off the page images of the excerpt above; where this layer differs (it reads Adanx ubiinuii veniam for Adam obtinuit veniam, and interleaves the notes with the text) the image governs. The file's SHA-256 is the one the study reviewer recorded for the same delivery."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-107.1864-paris.columns-869-874-facsimile-9d084bb1"
+loci = ["column-870", "column-871", "column-872", "column-873"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:e0d26f1d5ef32e38d769894f8d3e50a837bb632a3b92d95868bfc1e1c1b4f412"
+context = "Rabanus Maurus, Commentariorum in Matthaeum lib. III, at Mt 9:1-8, PL 107, cols. 870-873, read on the page images at native 300 ppi; the scan of col. 873 is faint and was read with contrast raised, against the optical text. What this settles is in research/scope.md section 3.5: at v. 1 Rabanus reproduces Augustine's harmony (De cons. evang. II.25.58) without a siglum and gives no allegory of the city; at v. 2, under (Beda.), the bearers are the good teachers who suggest the hope of healing and the help of intercession; at v. 3 he prints, inside a passage marked (Hieron.), Sed, licet nescientes, verum dicebant, quia nemo dimittere peccata nisi Deus potest: qui per eos quoque dimittit, quibus dimittendi dedit potestatem; at v. 6 his spiritual sense -- surgere de lecto est animam se a carnalibus desideriis ... abstrahere. Lectum vero tollere, est ipsam quoque carnem, per continentiae frena correptam, spe coelestium praemiorum a deliciis segregare terrenis. Sublato autem lecto domum ire, ad paradisum redire est -- with an Aliter on the soul's return ad internam sui custodiam; and at v. 8, under (Beda.), praise of the power's speed, and nothing of ministers. The Catena aurea's Rabanus lemma (lectum tollere est carnem a terrenis desideriis ad voluptatem spiritus attollere) is not this wording."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-107.1864-paris.internet-archive-pdf-249f1795"
+loci = ["pdf-page-7", "pdf-page-8", "pdf-page-439", "pdf-page-440", "pdf-page-441"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:d94d27795b12cf99ada8c4842d56e1c549897e7c40433509798e72c6f280bf09"
+context = "The whole remote scan from which the excerpt above was extracted, fetched on 2026-09-22 and hashed before any page was opened (SHA-256 249f1795...9c708d2, 60,617,436 bytes; SHA-1 matching the Internet Archive's file list). PDF page 7, the title page, was read for the edition (Colvener's text, 1864) and page 8, the Elenchus, for the commentary's opening column, 727."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-107.1864-paris.ia-djvu-text-5b8a4b8b"
+loci = ["column-870", "column-871", "column-872", "column-873"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f46dd80fe29ddd52cbaf7d81009b328bf011400b6917c0473b5f04f9bb443bae"
+context = "The whole-volume optical text, used to locate Mt 9:1-8 in lib. III (about physical lines 97500-97760) and read beside the faint image of col. 873. The page images govern every reading research/scope.md reports."
+
+[[bindings]]
+source_id = "artifact.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.wikisource-in-lucam-116db0ca"
+loci = ["2", "Lc.5.18", "Lc.5.21", "Lc.5.24"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:a8214a57556d9412ed34e019cedb24cfaeaa8a7160276453c7b23875c0214805"
+context = "Bede, In Lucae evangelium expositio II, on Lk 5:18, 5:21 and 5:24, read to identify the source of three passages Rabanus prints at Mt 9:2, 9:3 and 9:6. At PL 92 col. 387A (the transcription's marker), on the bearers: ministris qui eam sublevent et Christo afferant, id est, bonis doctoribus qui spem sanationis opemque intercessionis suggerant -- which Rabanus prints under (Beda.). The registered remote delivery was re-fetched on 2026-09-22 and matched its registered SHA-256 (116db0ca...247d8a, 973,336 bytes). At PL 92 col. 388B (the transcription's embedded marker): Verum dicunt scribae, quia nemo dimittere peccata nisi Deus potest, qui per eos quoque dimittit, quibus dimittendi tribuit potestatem. At cols. 388D-389A: Spiritaliter de lecto surgere, est animam se a carnalibus desideriis, ubi aegra quiescebat, abstrahere. Lectum vero tollere est, ipsam quoque carnem per continentiae frena correptam, spe coelestium praemiorum deliciis privare terrenis ... Sublato autem lecto domum ire, ad paradisum redire est ... Aliter. Sanus qui languebat, lectum reportat domum, cum anima peccatorum remissione accepta, ad internam sui custodiam cum ipso se corpore refert. Rabanus's v. 6 paragraph is this, with small variants. A transcription, not collated with page images."
+
+[[bindings]]
+source_id = "artifact.ambrose.expositio-evangelii-secundum-lucam.latin-migne-wikisource-book-5.wikisource-book-5-fde2303a"
+loci = ["5.10", "5.11", "5.12", "5.13", "5.14"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c2006d04da072c4dc606413e5328a3048b3f97d28e8b04c19278bcb743ebc4b4"
+context = "Ambrose, Expositio Evangelii secundum Lucam V.10-14, on the paralytic of Lk 5:18-24, the parallel of this Gospel, in the tracked Wikisource transcription of Migne's PL 15 (SHA-256 recomputed and matched, fde2303a...0ac52; the embedded column markers put V.10-14 in cols. 1357-1358). Read because two sentences the study had met only in the Catena and in Rabanus stand here. V.10: unusquisque aeger petendae precatores salutis debet adhibere, per quos nostrae vitae compago resoluta, actuumque nostrorum clauda vestigia verbi coelestis remedio reformentur. Sint igitur aliqui monitores mentis -- the sentence the Catena aurea gives under Jerome's name after Jerome's own juxta tropologiam. V.11: Magnus Dominus qui aliorum merito ignoscit aliis ... adhibe precatores, adhibe Ecclesiam quae pro te precetur. V.13: quis enim potest peccata dimittere nisi solus Deus, qui per eos quoque dimittit, quibus dimittendi tribuit potestatem. V.14: domum suam repetere, hoc est, ad paradisum redire ... ea est enim vera domus, quae hominem prima suscepit: non jure amissa, sed fraude. On Luke, not Matthew, and on v. 21 (Mt 9:3), not on the crowd's words. A transcription, not collated with page images."

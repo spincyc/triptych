@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.jacques-paul-migne.patrologia-latina-volume-107.1864-paris.ia-djvu-text-5b8a4b8b"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-107.1864-paris"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The volume was published at Paris in 1864, and a work first published abroad before 1931 is out of United States copyright; that line is the one guidance/missals.md records as current on 1 January 2026 and it moves every January, so it is written here as derived for calendar year 2026 and not as a standing rule. Restoration under 17 U.S.C. 104A could not reach it: ninety-five years from 1864 ran out in 1959. THE GOOGLE QUESTION WAS DECIDED ON THESE BYTES. Probes run case-insensitively over the whole file with runs of non-alphanumeric characters collapsed: \"usage guidelines\" 0; \"about google book search\" 0; \"this is a digital copy\" 0; \"digitized by google\" 0; \"google book search\" 0. No notice, licence, reservation or condition of any kind appears in the file. The item is the University of Toronto (PIMS) copy digitized by the Internet Archive. A faithful mechanical reproduction of a public-domain work is not original authorship (Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y. 1999)), and machine optical character recognition adds no human authorship on top of it. NOT RELIED ON: that the item is available, that the download succeeded, or that any host marks the scan public domain."
+rights_jurisdiction = "United States"
+source_url = "https://archive.org/download/patrologiaecur107mign/patrologiaecur107mign_djvu.txt"
+provenance = "Acquired whole over HTTPS by the research stage of workflow run 71b6f89518984232 on 2026-09-22, in the re-entry that answered study-review finding STU-001, and hashed before use. The SHA-1 of the retrieved bytes (8bb9e60adbcf6bef9d036ff034078911f70e34aa) and the byte size (4,177,219) match the Internet Archive item's own file list. Identified from the item metadata of patrologiaecur107mign (title 'Patrologiae cursus completus : Series latina 107') after a search of the source library under Rabanus Maurus, Hrabanus, Commentariorum in Matthaeum, PL 107 and Patrologia Latina 107 found no registered route. No source text passed through a language model at any point in the path from the server to this hash."
+retrieved = "2026-09-22"
+sha256 = "5b8a4b8b0921c7b78fbf07e007ac9481b55ff967edbc0284fc97af28c5faf657"
+byte_size = 4177219
+path = "src/sources/works/jacques-paul-migne/patrologia-latina-volume-107/editions/1864-paris/artifacts/ia-djvu-text-5b8a4b8b/pl-107-djvu.txt"
+encoding = "utf-8"
+indexable = true
+notes = "Uncorrected optical text of the whole volume, 120,603 LF-terminated lines, valid UTF-8. Rabanus, Commentariorum in Matthaeum lib. III, at Mt 9:1-8, stands at about physical lines 97500-97760; the optical order across the two print columns is unreliable there and much of column 873 is badly recognised. QUOTE FROM THIS ARTIFACT ONLY AFTER CHECKING THE PAGE IMAGE: the sister artifact columns-869-874-facsimile-9d084bb1 retains the three pages."

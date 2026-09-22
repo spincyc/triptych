@@ -50,6 +50,24 @@ reading their provenance and extent and, where a record did not say, the
 volume's own table of contents; and ran `commentary-work-index formulary` for
 this Mass, which did not exist on the earlier passes. §§ 2.7, 3.1, 3.5–3.8,
 3.11, 4.2, 4.3, 4.5–4.7, 5.1.7, 5.2, 6.3, 9 and 10 carry the result.
+
+**Re-entered a fourth time on 2026-09-22**, after study review (STU-001) found that
+the study printed three readings of the Gospel under Hilary's name and one under
+Rabanus's only as Aquinas's *Catena aurea* and lectura report them. The Catena
+supplies leads, not a check of the named author, and at this pericope the record
+had already shown the Catena's Jerome to be spliced. This pass registered Migne's
+**PL 9** (1844) and **PL 107** (1864): a whole-volume text layer (tracked), the whole
+scan (remote, for its measured size) and a three-page facsimile excerpt (tracked)
+of each. It read **Hilary, *Commentarius in Matthaeum* VIII §§ 1–8, at PL 9,
+cols. 958–962**, and **Rabanus on Mt 9:1–8 at PL 107, cols. 870–873**, both on
+the page images. Reading them showed that the Catena and the lectura depart from
+Hilary in four places, and that the Catena's "Rabanus" is not Rabanus's wording.
+Rabanus's own spiritual sense of v. 6 is **Bede's**, *In Lucam* II, and the
+paradise sentence in it is **Ambrose's**, *Expositio in Lucam* V.14. The Catena's
+"Jerome" *precatores* sentence also turned out to be **Ambrose's**, *Exp. in Lc.*
+V.10. The pass also re-read Augustine, *De cons. evang.* II.25.58, against the
+premise that Hilary's allegory needs the town left unidentified, and withdrew that
+premise. §§ 3, 3.5, 4.1–4.4, 5.2, 6.3 and 10 carry the result.
 `ARGS.research_handoff` is `none`; no handoff dossier was supplied. Nothing below
 is taken from the other provider's leaves, from any postconciliar record, or from
 this provider's neighbouring Sundays, except where a neighbouring Sunday's printed
@@ -551,11 +569,11 @@ One row per distinct appointed passage or composed proper, as the profile requir
 locus given. `Through the Catena` means the passage was read in Aquinas's
 *Catena aurea*, at its own verified locus, as Aquinas reports it, and **not** at
 the named Father's own locus; those are attributions the study must either verify
-at PL or attribute through the Catena. **After the re-entry sweep of § 5.2 only
-one attribution in this matrix is still of that kind**, Hilary on the Gospel
-(reported by the Catena on vv. 1–2 and by Aquinas's lectura on v. 8);
-Jerome, who was, is now read at PL 26 and the two places where the Catena departs
-from him are recorded at § 3.5. Corpora searched are named in §5.
+at PL or attribute through the Catena. **After the fourth re-entry no
+attribution in this matrix is of that kind any longer.** Jerome is read at PL 26,
+Hilary at PL 9 and Rabanus at PL 107, and § 3.5 records each place where the
+Catena, or Aquinas's lectura, departs from them. The Catena is still quoted in
+§ 3.5, but only to mark those departures. Corpora searched are named in § 5.
 
 ### 3.1 Introit antiphon — Ecclus 36:18 (no. 1669)
 
@@ -573,8 +591,10 @@ from him are recorded at § 3.5. Corpora searched are named in §5.
   folio's layer and a checked-text excerpt on Gen 15, so no volume of his reaches
   Ecclesiasticus; Hugh's three artifacts are single chapters of the Morard
   *Postilla* on Pss 83, 94 and 117, each record saying the whole-Psalter route
-  was refused; and Rabanus, Walafrid, Lyra and Denis have no record at all. No
-  whole-volume layer in the set § 5.2 lists prints any of the six. None was
+  was refused; and Walafrid, Lyra and Denis have no record at all. Rabanus has
+  one registered volume since the fourth re-entry, PL 107, but it is tomus I of his
+  works and carries his Genesis and Matthew and not his Ecclesiasticus (its
+  Elenchus, § 5.2). No whole-volume layer in the set § 5.2 lists prints any of the six. None was
   reached in text.
 - **Textual state** (`propers/verified.md`): the antiphon is not the Clementine's
   wording and not the Greek's. This is the element with the least reception and
@@ -971,24 +991,178 @@ from him are recorded at § 3.5. Corpora searched are named in §5.
   (b) The Catena's tropological sentence *unusquisque enim aeger petendae salutis
   precatores debet adhibere* is **not** in PL 26 at this place; what Jerome's own
   *juxta tropologiam* says is the sentence about the soul offered by a *perfectus
-  doctor*, quoted above. The Catena's wording differs in detail elsewhere too
+  doctor*, quoted above. **The fourth re-entry found where the Catena's sentence
+  comes from: Ambrose, *Exp. in Lc.* V.10** (below). The Catena's wording differs in detail elsewhere too
   (*forsitan prius dimittuntur peccata* against Migne's *forsan dimittuntur prius
   peccata tua*). Anything the study takes from Jerome must be taken from PL 26,
   not from the Catena.
-- **Through the Catena** (Aquinas, *Catena in Matthaeum* cap. 9 lect. 1, read in
-  the Latin at `corpusthomisticum.org/cmt05.html`, whole-file SHA-256 recorded in
-  §6):
-  - **Hilary** — *a Iudaea repudiatus in civitatem suam revertitur. Dei civitas
-    fidelium plebs est: in hanc ergo introivit per navim, idest Ecclesiam, vectus*;
-    and *In paralytico autem gentium universitas offertur medenda … huic
-    remittuntur animae peccata, quae lex laxare non poterat: fides enim sola
-    iustificat.*
-  - **Rabanus** — *Surgere autem est animam a carnalibus desideriis abstrahere;
-    lectum tollere est carnem a terrenis desideriis ad voluptatem spiritus
-    attollere; domum ire est ad Paradisum redire.*
-  - The Catena also carries "Ioannes episcopus" (*Quantum valet apud Deum fides
-    propria, apud quem sic valuit aliena …*) and the *Glossa* on whether
-    *ut sciatis* is Christ's words or the Evangelist's.
+- **Direct: Hilary of Poitiers**, *Commentarius in Matthaeum*, caput VIII
+  (Mt 8:23–9:8), §§ 1–8, in the Maurist text reprinted at **PL 9 (Paris, 1844),
+  cols. 958–962**. It was read whole on the page images at native 400 ppi: artifact
+  PDF pp. 493–495 of
+  `artifact.jacques-paul-migne.patrologia-latina-volume-9.1844-paris.internet-archive-pdf-eab6d2f4`,
+  retained as `…columns-957-962-facsimile-0f29c602`. The italic section headings
+  (*Adam obtinuit veniam*, *Christum esse Deum* …) are the Maurists', not Hilary's.
+  Hilary reads the Gerasene episode and the paralytic as one typological sequence,
+  and says so at § 3: the details of both episodes *hanc habent causam*. What he
+  says, section by section:
+  - **§ 3 (col. 959), the literal sequence.** Among the details listed: *et ne urbem
+    Dominus adiret legatio, et reditus ejus in patriam, et illic paralytici in
+    lecto jacentis oblatio, et (c) pro fidei merito in tempore ipso peccatorum
+    remissio, et murmur Scribarum …*. Christ goes back *in patriam*, and Hilary
+    names no town. Note (c): *pro fidei merito* is absent from three manuscripts.
+  - **§ 4 (cols. 959–960), the city.** The two demoniacs *extra urbem, id est, extra
+    legis et prophetarum synagogam* are the origins of the nations. Then: *Urbs
+    illa Judaici populi habet speciem, quae Christi operibus auditis, Domino suo
+    obviam pergit, prohibens ne fines suos urbemque contingeret; neque enim
+    Evangelia (g) lex recipit: a qua repudiatus, in civitatem suam revertitur
+    (Matth. ix, 1). (h) Deo civitas fidelium plebs est. In hanc igitur navi, id
+    est (i) Ecclesia, vectus introiit.* **The city that rejects him is the
+    Gerasene town, as the figure of the Jewish people and the law.** "His own
+    city" is set against it, and to God the city is the people of the faithful.
+    Note (h): the older editions read *Dei civitas*, which the manuscripts do not
+    support. Note (i): the older editions read *id est Ecclesiam*.
+  - **§ 5 (col. 960), the paralytic.** *Jamque in paralytico gentium universitas
+    offertur medenda.* The words of the cure matter: not *Sanus esto*, not *Surge
+    et ambula*, but *Constans esto fili, remissa sunt tibi peccata tua*. *In Adam
+    uno peccata universis gentibus remittuntur. Hic itaque Angelis ministrantibus
+    curandus offertur, hic filius nuncupatur, (j) quia primum Dei opus est: huic
+    remittuntur animae peccata, et indulgentia primae transgressionis ex venia
+    est. Non enim paralyticum peccasse aliquid accepimus*, with Jn 9:3. The
+    bearers are **angels**. The man is called son because Adam was God's first
+    work (note (j), with Lk 3:38), and the sin forgiven is **Adam's first
+    transgression**. Note (j) also records the manuscript reading *angelis
+    ministrandus offertur* and rejects it (*male*).
+  - **§ 6 (col. 961), the scribes' murmur, "the order of truth in the events".**
+    *Movet Scribas remissum ab homine peccatum: hominem enim tantum in Jesu
+    Christo contuebantur. Et remissum est (b) ab eo, quod lex laxare non poterat;
+    fides enim sola justificat.* Then: *nemo potest dimittere peccata, nisi solus
+    Deus: ergo qui remittit Deus est … Deus in homine manens curationem homini
+    praestabat.* **The *sola fides* clause belongs here, to the literal account of
+    v. 3**, and not to the nations of § 5.
+  - **§ 7 (col. 961), vv. 6–7.** Christ adds *Tolle lectum tuum, et vade in domum
+    tuam* so that the whole work may be set out: *Primum remissionem tribuit
+    peccati, dehinc virtutem resurrectionis ostendit, tum sublatione lectuli
+    infirmitatem ac dolorem corporibus docuit afuturum, postremo reditu in domum
+    propriam iter in paradisum credentibus esse redhibendum, ex quo Adam parens
+    universorum peccati labe dissolutus excesserat.* **The return home is the way
+    back to paradise**, restored to believers.
+  - **§ 8 (cols. 961–962), v. 8.** The crowd's fear belongs to the *ordo mysterii*:
+    *Magni enim timoris res est, non dimissis a Christo peccatis in mortem
+    resolvi: quia nullus sit in domum aeternam reditus, si cui indulta non fuerit
+    venia delictorum.* His lemma is *qui tantam dedit potestatem hominibus*. Then:
+    *Conclusa sunt omnia suo ordine, et cessante jam desperationis timore honor
+    Deo redditur, quod tantam dederit hominibus potestatem: sed soli hoc Christo
+    erat debitum, soli de communione paternae substantiae haec agere erat
+    familiare. Non ergo hoc venit in admirationem, quod posset ista … alioquin
+    laus de uno homine, non de pluribus exstitisset: sed delati Deo honoris hinc
+    causa est, quod potestas hominibus (f) ac via data sit per verbum ejus, et
+    peccatorum remissionis, et corporum resurrectionis, et reversionis in
+    coelum.* The power belongs to Christ alone, of one substance with the Father.
+    The honour paid to God is for what the many **receive** through his word: a
+    power and a way of the remission of sins, of the resurrection of bodies and of
+    the return to heaven. **Men here are the ones who receive the gift. Nothing
+    in the passage makes them its ministers.** Note (f): the older editions read
+    *hac via*, and four manuscripts read *ac via*. Unlike Chrysostom, Hilary
+    treats the crowd's praise as fitting (*conclusa sunt omnia suo ordine*) and
+    does not call it an inadequate confession (§ 4.3).
+- **Where Aquinas departs from Hilary, and where he does not.** The *Catena in
+  Matthaeum* (cap. 9 lect. 1, Corpus Thomisticum, re-fetched 2026-09-22 and
+  matched, `55b33797…4ac32`) departs from PL 9 in four places:
+  (a) It opens *Mystice autem a Iudaea repudiatus*. Hilary's subject is *a qua*,
+  the town that figures the Jewish people and the law, and the Catena drops the
+  Gerasene town entirely.
+  (b) It reads *Dei civitas* and *per navim, idest Ecclesiam*, the older editions'
+  readings, which the Maurists reject.
+  (c) **It splices.** § 5 on the nations runs straight into § 6's *quae lex
+  laxare non poterat: fides enim sola iustificat*, and then into § 7's
+  *virtutem resurrectionis ostendit*. It omits *In Adam uno … indulgentia primae
+  transgressionis … Non enim paralyticum peccasse aliquid accepimus*, and it
+  reads *angelis ministrandus* (the reading the Maurists call *male*) and *quia
+  Dei opus est* for *quia primum Dei opus est*.
+  (d) On v. 8 the Catena gives Hilary **faithfully in substance**: *honor Deo
+  redditur, quod potestas hominibus hac via data sit per verbum eius, et
+  peccatorum remissionis, et corporum resurrectionis, et reversionis in caelum*.
+  **Aquinas's lectura** (Venice 1745, p. 122, below) summarises the same section
+  as *Qui dedit talem potestatem hominibus, ut fiant filii Dei*, with Jn 1:12.
+  **Those words are Aquinas's, not Hilary's.** Hilary names remission of sins
+  first among the gifts, so "adoption, not absolution" misstates him.
+- **Direct, later, a saint: Rabanus Maurus**, *Commentariorum in Matthaeum*
+  lib. III, at Mt 9:1–8, **PL 107 (Paris, 1864), cols. 870–873**. It was read on the
+  page images at native 300 ppi: artifact PDF pp. 439–441 of
+  `artifact.jacques-paul-migne.patrologia-latina-volume-107.1864-paris.internet-archive-pdf-249f1795`,
+  retained as `…columns-869-874-facsimile-9d084bb1`. The scan of col. 873 is faint
+  and was read with contrast raised, against the tracked optical layer. Rabanus
+  compiles, and the 1864 printing marks his sources with marginal sigla:
+  - v. 1 (col. 870), unmarked: Augustine's harmony from *De cons. evang.* II.25.58,
+    nearly verbatim, including the comparison with the *civitas Dei* of Ps 86 and
+    Capernaum as *tanquam metropolis*. Rabanus gives **no allegory of the city**.
+  - v. 2 (col. 870), *(Beda.)*: the cure is the salvation of a soul after long
+    carnal torpor, and it needs *ministris qui eam sublevent et Christo afferant,
+    id est bonis doctoribus, qui spem sanationis opemque intercessionis
+    suggerant*. The four bearers are the four Gospels or the four virtues. The
+    sentence is Bede's own, *In Lucam* II on Lk 5:18 (PL 92, col. 387A). Then
+    Jerome's *O mira humilitas* (*Hieron.*), Augustine on *fili*/*homo* (*Aug.*),
+    and, under *(Joan. Chrysost.)*, *Intuendum sane quantum propria cujusque fides
+    apud Deum valeat, ubi tantum valuit aliena … Merito Christus offerentium
+    fidem respicit* (cols. 870–871).
+  - v. 3 (col. 871), inside a passage headed *(Hieron.)*: *Sed, licet nescientes,
+    verum dicebant, quia nemo dimittere peccata, nisi Deus, potest: qui per eos
+    quoque dimittit, quibus dimittendi dedit potestatem.* That sentence stands in
+    Bede, *In Lucam* II (PL 92, col. 388B, *tribuit* for *dedit*), and before him
+    in Ambrose, *Exp. in Lc.* V.13 (below). The siglum does not identify it.
+  - v. 6 (col. 873), after a *(Joan. Chr.)* passage and with no fresh siglum:
+    *Spiritaliter autem, surgere de lecto est animam se a carnalibus desideriis,
+    ubi aegra jacebat, abstrahere. Lectum vero tollere, est ipsam quoque carnem,
+    per continentiae frena correptam, spe coelestium praemiorum a deliciis
+    segregare terrenis. Sublato autem lecto domum ire, ad paradisum redire est;
+    haec etenim vera est domus nostra, quae hominem prima suscepit, non jure
+    amissa, sed fraude, tandem restituta per eum qui fraudulento hosti nihil
+    debuit. Aliter, sanus qui languerat domum reportat lectum, cum anima,
+    remissione accepta peccatorum, ad internam sui custodiam cum ipso se corpore
+    refert, ne quid perversi, unde iterum juste feriatur, admittat.* **This is
+    Bede, *In Lucam* II on Lk 5:24 (PL 92, cols. 388D–389A)**, almost word for
+    word: Bede reads *ubi aegra quiescebat* and *deliciis privare terrenis*, and
+    adds a sentence on David's bed that Rabanus omits. **Bede's paradise sentence
+    is Ambrose's**, *Exp. in Lc.* V.14.
+  - v. 8 (col. 873), *(Beda.)*: *Quam miranda divinae potentiae virtus, ubi nulla
+    temporis interveniente mora, jussu Salvatoris salus festina comitatur!* The
+    bystanders turn to praise. Rabanus says **nothing of ministers** at v. 8.
+  - **Where the Catena departs from Rabanus.** Its lemma, *lectum tollere est
+    carnem a terrenis desideriis ad voluptatem spiritus attollere; domum ire est
+    ad Paradisum redire, vel ad internam sui custodiam, ne iterum peccet*, is an
+    abridgement and a rewording. **The clause *ad voluptatem spiritus attollere*
+    is not in PL 107.** Rabanus's own words are *per continentiae frena correptam,
+    spe coelestium praemiorum a deliciis segregare terrenis*.
+- **The Catena's other lemmata at this pericope.** Beyond Hilary and Rabanus, the
+  Catena carries "Ioannes episcopus" (*Quantum valet apud Deum fides propria, apud
+  quem sic valuit aliena …*) and the *Glossa* on whether *ut sciatis* is Christ's
+  words or the Evangelist's. Neither is checked at its own locus, and nothing here
+  rests on them. **Its "Jerome" tropology is two authors.** The first clause,
+  *iuxta tropologiam … a perfecto doctore domino offertur curanda*, is Jerome's
+  (PL 26, col. 55). What follows, *unusquisque enim aeger petendae salutis
+  precatores debet adhibere, per quos actuum nostrorum clauda vestigia verbi
+  caelestis remedio reformentur. Sunt igitur monitores mentis …*, is **Ambrose,
+  *Exp. in Lc.* V.10**, on the paralytic of Lk 5:18–19.
+- **Direct, a Father and Doctor, on the parallel pericope: Ambrose**, *Expositio
+  Evangelii secundum Lucam* V.10–14, on Lk 5:18–24. It was read in the tracked
+  Wikisource transcription of PL 15, not on page images. The transcription's
+  column markers put the passage at cols. 1357–1358, and its SHA-256
+  `fde2303a…0ac52` was recomputed and matched. It is exegesis of Luke's paralytic,
+  which the harmonists identify with Matthew's; it is not a comment on Mt 9.
+  - V.10: the sick man must *petendae precatores salutis … adhibere*, *monitores
+    mentis* who lift the soul toward higher things.
+  - V.11, on *quorum fidem … ut vidit*: *Magnus Dominus qui aliorum merito
+    ignoscit aliis, et dum alios probat, aliis relaxat errata … Si gravium
+    peccatorum diffidis veniam, adhibe precatores, adhibe Ecclesiam quae pro te
+    precetur* (§ 4.2).
+  - V.13, on Lk 5:21–23: *Quamvis igitur magnum sit hominibus peccata dimittere
+    (quis enim potest peccata dimittere nisi solus Deus, qui per eos quoque
+    dimittit, quibus dimittendi tribuit potestatem); tamen multo divinius est
+    resurrectionem donare corporibus* (§ 4.3).
+  - V.14, on v. 24: *domum suam repetere, hoc est, ad paradisum redire censetur;
+    ea est enim vera domus, quae hominem prima suscepit: non jure amissa, sed
+    fraude.*
 - **Direct, later, a Doctor: Thomas Aquinas**, *Super Evangelium S. Matthaei
   lectura*, caput IX, on Mt 9:1–8, **read on the page images** of the registered
   Venice 1745 facsimile, *Opera*, tomus III, printed pp. 120–122 = PDF pp. 138–140
@@ -1025,30 +1199,31 @@ from him are recorded at § 3.5. Corpora searched are named in §5.
     a peccato per contritionem; tolle lectum, per satisfactionem … et vade in
     domum tuam, in domum aeternitatis, vel in conscientiam propriam.*
   - v. 8: *Videntes autem turbae, non scribae … timuerunt … glorificaverunt Deum:
-    quia omnia in Deum retulerunt*; and on *hominibus* he reports Hilary: *Qui
-    dedit talem potestatem hominibus, ut fiant filii Dei*, with Jn 1:12. That is a
-    second Hilary attribution through Aquinas, and a reading of v. 8 that is not
-    the ministerial one.
+    quia omnia in Deum retulerunt*; and on *hominibus*, *ideo Hilarius exponit:
+    Qui dedit talem potestatem hominibus, Ut fiant filii Dei*, with Jn 1:12
+    (optical layer, line 16535 of the physical range). **That is Aquinas's summary
+    and not Hilary's wording.** Hilary at PL 9, col. 962 names the remission of
+    sins, the resurrection of bodies and the return to heaven (above). The lectura
+    is right that Hilary does not read v. 8 ministerially, and wrong about the
+    gift he names.
 - **Later and Doctoral reception: what the index returns and what the library
-  holds.** The Rabanus lemma above is the Catena's report and not Rabanus at his
-  own locus. `tools/commentary-work-index discover --passage "Mt 9:1"`, run again
+  holds.** `tools/commentary-work-index discover --passage "Mt 9:1"`, run again
   on 2026-09-22, returns nineteen rows, all matched at chapter granularity, on
   Matthew 9 and not on the verses. With the registration state of each, found by
   work record **and** by the registered collected and whole volumes:
   - **Read**: Jerome, *Commentariorum in Matthaeum* (PL 26); Chrysostom, *Homiliae
     in Matthaeum*; Thomas Aquinas, *Super Evangelium S. Matthaei lectura* (Venice
-    1745, above).
+    1745, above); **Hilary, *Commentarius in Matthaeum* (PL 9), and Rabanus
+    Maurus, *Commentariorum in Matthaeum libri VIII* (PL 107)**. Both were
+    registered on the fourth re-entry and are entered in the containment
+    inventory, so `discover` now reports them *held-in-container* (above).
   - **Read through an unregistered delivery**: Thomas Aquinas, *Catena aurea in
     quatuor Evangelia* — the library holds the *Catena* only *in Lucam*; the
     *Catena in Matthaeum* was read on Corpus Thomisticum (§ 6.3).
   - **No registered route**, each re-checked on the third re-entry against the
-    artifact records of that author's registered works and their stated extent:
-    Hilary, *Commentarius in Matthaeum* (his registered artifacts are the CSEL 22
-    *Tractatus super Psalmos*, whose record gives its extent as Pss 1, 2, 9, 13,
-    14, 51–69, the title of 91 and 118–150, with four single leaves of it; the
-    library's NPNF2-9 record carries his *De Trinitate*; no PL 9 is registered);
-    Rabanus Maurus, *Commentariorum in Matthaeum libri VIII* (no record);
-    Albert the Great, *Super Matthaeum* (no record); Chromatius, *Tractatus in
+    artifact records of that author's registered works and their stated extent.
+    Until the fourth re-entry this list opened with Hilary and Rabanus, and both
+    are now read (above). The remaining entries: Albert the Great, *Super Matthaeum* (no record); Chromatius, *Tractatus in
     Matthaeum* (no record); Paschasius Radbertus, *Expositio in Matheo* (two rows;
     no record); Theophylact, *Enarratio in Evangelium Matthaei* — **the library's
     one Theophylact artifact is the whole-volume layer of PG 124**, whose table of
@@ -1102,10 +1277,12 @@ from him are recorded at § 3.5. Corpora searched are named in §5.
     Jesus the priest, Sicard sets Christ the healer beside Cyrus who freed the
     captives, and Berno reads the healing and the forgiveness into the next
     Sunday's Collect.
-- **Not reached:** Hilary's *Commentarius in Matthaeum* VIII at its own locus. He
-  is the one Father of the four whose Gospel reading is still reported by another
-  — by the *Catena* on vv. 1–2, and now also by Aquinas's lectura on v. 8. See
-  § 5.2.
+- **No Father of the Gospel's is now reported only by another.** Hilary's
+  *Commentarius* VIII, which earlier passes recorded as unreached, is read above
+  at PL 9, and Ambrose on Luke's paralytic has been added beside him. The
+  Catena and the lectura are kept only to show where they depart from their
+  authors. SC 254 (Doignon), the modern critical edition, was not reached, so
+  Hilary is read in the Maurist text as Migne reprints it (§ 5.2).
 
 ### 3.6 Epistle — 1 Cor 1:4–8 (no. 1671)
 
@@ -1310,7 +1487,8 @@ from him are recorded at § 3.5. Corpora searched are named in §5.
   work record and no artifact); Peter Lombard,
   *Collectanea* (his one registered artifact is volume 2 of the 1981 Grottaferrata
   *Sententiae*, restricted; no PL 191 or 192 is registered); Rabanus Maurus,
-  *Enarrationes in epistolas* (no record); Hugh of Saint-Cher (three psalm
+  *Enarrationes in epistolas* (no record of the work; the one registered Rabanus
+  volume, PL 107, does not carry it); Hugh of Saint-Cher (three psalm
   chapters only, § 3.5); Nicholas of Lyra (no record); Denis the Carthusian, two
   rows (no record); Willem Hessels van Est (no record). None of these is printed in
   a whole volume of the registered set § 5.2 lists. **Two witnesses the index does
@@ -1362,7 +1540,8 @@ from him are recorded at § 3.5. Corpora searched are named in §5.
     Moysis* (his registered artifacts are single-work New Advent deliveries of the
     NPNF2-5 *De hominis opificio* and *Oratio catechetica*; no PG 44 is
     registered); Isidore (the Lindsay *Etymologiae* layer and three of its leaves
-    only); Rabanus (no record); Bede's *De tabernaculo* (his registered artifacts
+    only); Rabanus (no record of the *Commentaria in Exodum*; PL 107, registered on
+    the fourth re-entry, does not carry it); Bede's *De tabernaculo* (his registered artifacts
     are the *In Lucam* on Corpus Corporum and a keyed PL 91 text of *In principium
     Genesis* alone, whose record calls the one wiki page *the whole of it*; the
     PL 92 whole volume carries Luke and Acts); Cyril's *Glaphyra* (his registered
@@ -1848,11 +2027,32 @@ Jerome (*Comm. in Matth.* I, PL 26, col. 54, read at his own locus this round):
 *Civitatem ejus non aliam intelligimus quam Nazareth, unde et Nazaræus appellatus
 est.* He gives no reason and offers no alternative.
 
-Augustine (*De cons. evang.* II. xxv. 58) holds the difficulty open and offers two
-solutions rather than one: Galilee as a whole may be called Christ's city, and
-Capernaum was its metropolis; or Matthew may have passed over the interval in
-silence. He explicitly says the question "would be more difficult to solve if
-Matthew mentioned Nazareth by name."
+Augustine (*De cons. evang.* II. xxv. 58; tracked CCEL NPNF1-6 text, lines
+12700–12791, re-read on the fourth re-entry) **does not refuse to settle the
+question, and an earlier sentence of this record that he "holds the difficulty
+open" is withdrawn.** He is reconciling Matthew with Mark. He takes "His own city"
+in the first instance as Nazareth: Mark speaks of the incident "as taking place not
+in His own city, which indeed is called Nazareth, but in Capharnaum". Both of his
+solutions then **put the healing at Capernaum**:
+- Galilee may be called Christ's city, as a realm of many cities is called a Roman
+  state, as the city of God of Ps 86:3 comprehends many nations, and as God's
+  people in many cities is one house of Israel. "Who can doubt that … Jesus
+  wrought this work in His own city …, inasmuch as He did it in the city of
+  Capharnaum", which was also "a kind of metropolis" of Galilee.
+- Or Matthew "has simply passed over all that happened after Jesus came into His
+  own city until He reached Capharnaum".
+
+He says the question "would be more difficult to solve if Matthew mentioned
+Nazareth by name". That is a remark about the difficulty of the harmony, not a
+refusal to name the place. Rabanus (PL 107, col. 870) reproduces this whole
+harmony at v. 1 and gives no other reading of the city.
+
+Hilary (*In Matth.* VIII § 4, PL 9, cols. 959–960, at his own locus) **names no
+town.** § 3 says only *reditus ejus in patriam*. His reading of *civitatem suam*
+is typological, and it rests on a contrast inside the narrative: the Gerasene town
+that begs Christ to leave *Judaici populi habet speciem*, the law that does not
+receive the Gospels; *a qua repudiatus, in civitatem suam revertitur … Deo
+civitas fidelium plebs est*.
 
 Aquinas (*Super Matth.* IX, Venice 1745, p. 121) does harmonise it, and in two
 ways: Christ had three cities — Bethlehem *ratione nativitatis*, Nazareth *ratione
@@ -1862,11 +2062,22 @@ Galilee's metropolis; or the Evangelists pass over a journey *per Nazareth* to
 Capernaum. Before any of that he reads the words allegorically: *in civitatem
 gentium, quae sibi datae sunt* (Ps 2:8), with the boat as the cross or the Church.
 
-**This is a real disagreement among the Fathers and it is not harmonised here**;
-Aquinas's harmony is his, and a study that uses it must say so. It matters for the
-study because Hilary's reading — *Dei civitas fidelium plebs est* — depends on
-leaving the identification open, and Aquinas's allegory (*civitas gentium*) is a
-second reading of the same kind, at his own locus.
+**The disagreement about the town is real, and it is between Chrysostom and
+Jerome**: Capernaum against Nazareth. Augustine resolves the harmony in favour of
+Capernaum, and Aquinas's three-city harmony is his own; a study that uses it must
+say so. The disagreement is not harmonised here.
+
+**The premise of an earlier version of this section is withdrawn.** It said that
+Hilary's reading "depends on leaving the identification open". Nothing in Hilary
+supports that. His allegory works through the contrast between the Gerasene town
+and the people of the faithful, and it holds whichever town the literal sense
+names. It contradicts neither Chrysostom's Capernaum nor Jerome's Nazareth, nor
+Augustine's Capernaum-in-Galilee. Aquinas gives the three-city harmony and the
+allegory *in civitatem gentium, quae sibi datae sunt* in the same lecture, which
+shows the literal identification and the allegory side by side at one locus. So
+the allegorical reading of the city and the literal reading of the place are
+**compatible uses of one clause**. No witness makes them compete, and a study
+must not present them as a conflict (`research/interpretations.md` § 4.3).
 
 ### 4.2 Whose faith? Jerome against Chrysostom
 
@@ -1892,6 +2103,17 @@ their Nineteenth Sunday, and it sides with Jerome's *fides offerentium*. St Anth
 Sunday sermon (§ 3.5) takes the same side through the Gloss — the sins were forgiven
 by the merits of others — and makes the bearers four virtues.
 
+**Two Fathers read at their own loci on the fourth re-entry.** Ambrose, on Luke's
+paralytic (*Exp. in Lc.* V.11, transcription of PL 15), sides with Jerome in so
+many words: *Magnus Dominus qui aliorum merito ignoscit aliis, et dum alios probat,
+aliis relaxat errata*. He turns it into counsel: *adhibe precatores, adhibe
+Ecclesiam quae pro te precetur*. Hilary (PL 9, cols. 959–960) says only *pro fidei
+merito* (§ 3; absent from three manuscripts) without saying whose faith. In his
+allegory the bearers are **angels** (*Angelis ministrantibus curandus offertur*).
+He does not take part in the Jerome–Chrysostom question. The Catena's
+*precatores* sentence, which an earlier draft gave to Jerome, is Ambrose's V.10
+(§ 4.4).
+
 **This disagreement is load-bearing** for any reading of the formulary that turns
 on the Collect's *tibi sine te placére non póssumus*, and it is preserved in
 `research/interpretations.md` § 3 rather than smoothed.
@@ -1907,9 +2129,33 @@ clearly."
 **No Father checked here draws the ministerial reading from v. 8.** Jerome, read
 whole at his own locus in PL 26, cols. 55–56, comments on vv. 7–8 in a single
 sentence about the risen soul carrying its bed, and goes straight to v. 9.
-Augustine at *De cons. evang.* II. xxv does not reach the verse. Hilary, as Aquinas
-reports him on v. 8, reads *hominibus* of the power *ut fiant filii Dei* (Jn 1:12)
-— adoption, not absolution. That negative stands.
+Augustine at *De cons. evang.* II. xxv does not reach the verse. **Hilary, now read
+at his own locus (PL 9, cols. 961–962)**, says the power to forgive belonged to
+Christ alone, *de communione paternae substantiae*. The honour paid to God is
+*quod potestas hominibus ac via data sit per verbum ejus, et peccatorum
+remissionis, et corporum resurrectionis, et reversionis in coelum*: men are those
+who **receive** the power and the way of forgiveness, resurrection and return, and
+none of this makes them its ministers. **An earlier sentence of this section gave
+Hilary's reading as "*ut fiant filii Dei* — adoption, not absolution". That was
+Aquinas's summary, and it is withdrawn** (§ 3.5): Hilary names the remission of
+sins first among the gifts. Hilary also differs from Chrysostom about the crowd.
+Chrysostom calls its praise an inadequate confession. Hilary says *conclusa sunt
+omnia suo ordine* and treats the honour rendered as fitting, while insisting that
+the power itself was Christ's alone. The negative stands: at v. 8 no Father
+checked reads *hominibus* of ministers.
+
+**But a Father does connect Christ's forgiving with men to whom the power is
+given, at the parallel of v. 3, and the record must now say so.** Ambrose, on
+Luke's paralytic (*Exp. in Lc.* V.13; tracked transcription of PL 15, not
+image-collated), writes *Quamvis igitur magnum sit hominibus peccata dimittere
+(quis enim potest peccata dimittere nisi solus Deus, qui per eos quoque dimittit,
+quibus dimittendi tribuit potestatem)*. He says this on the scribes' *quis potest
+dimittere peccata nisi solus Deus* (Lk 5:21 = Mt 9:3), in a parenthesis, in order
+to rank the forgiving of sins below the raising of bodies. He does not say it of
+the crowd's words. Bede takes the clause into his *In Lucam* II (PL 92, col. 388B),
+and Rabanus prints it at Mt 9:3 (PL 107, col. 871). So the ministerial sense has a
+Father's warrant at the pericope's **v. 3 parallel**, in Ambrose. It still has
+none at v. 8.
 
 **But the question is not answered by the Fathers alone.** Below the Fathers the
 ministerial sense stands in one exegete at v. 6 and in the liturgical commentators,
@@ -1953,13 +2199,21 @@ and the commentators divide:
   next Sunday's Collect. St Anthony's Sunday sermon on the Gospel gives v. 8 no
   ministerial sense (§ 3.5).
 
-So the ministerial sense has a documented home: at v. 6 in Aquinas, as ministry
-beneath Christ's authority; **at v. 8 in Schuster, on this Mass**; in the
-continuation's reading of this Mass; and in Rupert's and Durandus's readings of a
-Mass with another Gospel and of Mt 9 at another Sunday. It has none in a Father at
-v. 8, and three registered medieval commentators read the same chants otherwise.
-The study may use it with those attributions; it may not put it in Chrysostom's,
-Jerome's, Augustine's or Hilary's mouth; it may present Schuster's reading, and the
+So the ministerial sense has a documented home:
+- in **Ambrose, a Father and Doctor, at Lk 5:21**, the parallel of Mt 9:3, where
+  God forgives *per eos quoque … quibus dimittendi tribuit potestatem*, with Bede
+  and Rabanus after him;
+- at v. 6 in Aquinas, as ministry beneath Christ's authority;
+- **at v. 8 in Schuster, on this Mass**;
+- in the continuation's reading of this Mass;
+- and in Rupert's and Durandus's readings of a Mass with another Gospel and of
+  Mt 9 at another Sunday.
+
+It has none in a Father at v. 8, and three registered medieval commentators read
+the same chants otherwise. The study may use it with those attributions. It may
+cite Ambrose only at Lk 5:21 and only for his clause, and its Latin is
+controlled by a transcription of PL 15 and not by page images. It may not put the ministerial sense in Chrysostom's,
+Jerome's, Augustine's or Hilary's mouth, nor in Ambrose's at v. 8; it may present Schuster's reading, and the
 continuation's, as readings of the 1962 pairing, and must not present Rupert's or
 Durandus's as such, since their Mass had another Gospel; and it may not present the
 ministerial reading as the commentators' common one, since Honorius and Sicard read
@@ -1967,10 +2221,19 @@ the same Mass of the return from exile.
 
 ### 4.4 Is the paralytic an individual or the Gentiles? Hilary against the literal readers
 
-Hilary (through the Catena): *In paralytico autem gentium universitas offertur
-medenda* — in the paralytic the whole body of the Gentiles is offered for healing;
-and *fides enim sola iustificat*, which in his context means that the law could not
-loose what faith looses.
+Hilary (*In Matth.* VIII § 5, PL 9, col. 960, at his own locus): *Jamque in
+paralytico gentium universitas offertur medenda* — in the paralytic the whole body
+of the nations is offered for healing. The reading is carried by Adam: *In Adam uno
+peccata universis gentibus remittuntur*. The man is called son *quia primum Dei
+opus est*, he is brought by angels, and what is forgiven is *indulgentia primae
+transgressionis*, *non enim paralyticum peccasse aliquid accepimus*. **An earlier
+version of this section, following the Catena, joined to this *fides enim sola
+iustificat* "in his context".** At his own locus that clause is not in this
+context. It stands in § 6 (col. 961), on the scribes' murmur at v. 3, in what
+Hilary calls the *veritatis ordo* of the events: *Et remissum est ab eo, quod lex
+laxare non poterat; fides enim sola justificat*. There it says that Christ forgave
+what the law could not loose. The Catena splices it into § 5 (§ 3.5(c)), and the
+study may not present it as part of the allegory of the nations.
 
 Chrysostom, Augustine and Jerome all read the episode as an episode, and Jerome
 gives the tropological application to the **individual soul**, in his own words
@@ -1980,17 +2243,30 @@ si misericordia ejus sanata fuerit, tantum roboris accipit, ut portet statim
 lectulum suum.* The soul is **offered to the Lord for healing by a perfect
 teacher**, and receives its strength afterwards.
 
-**The word *precatores* is not Jerome's here.** *Unusquisque enim aeger petendae
-salutis precatores debet adhibere* — "every sick man must employ intercessors" —
-is the **Catena aurea's** wording, and § 3.5(b) records that it is not in PL 26 at
-this pericope; § 10.1 says the same. An earlier draft of this record and of
-`research/interpretations.md` § 3.2 attributed it to Jerome, and both now correct
-it. Anything the study takes from Jerome's tropology must be the *perfectus
-doctor* sentence; *precatores* may be cited only as the Catena's, and only with
-that said.
+**The word *precatores* is not Jerome's here, and it is now found: it is
+Ambrose's.** *Unusquisque enim aeger petendae salutis precatores debet adhibere* —
+"every sick man must employ intercessors". § 3.5 records that this is not in PL 26
+at this pericope. It stands in Ambrose, *Exp. in Lc.* V.10, on Luke's paralytic:
+*unusquisque aeger petendae precatores salutis debet adhibere, per quos nostrae
+vitae compago resoluta, actuumque nostrorum clauda vestigia verbi coelestis
+remedio reformentur. Sint igitur aliqui monitores mentis …* (tracked transcription
+of PL 15). The Catena sets it under Jerome's name, straight after Jerome's own
+*juxta tropologiam*. Anything the study takes from Jerome's tropology must be the
+*perfectus doctor* sentence. *Precatores* may be cited as Ambrose's, at *Exp. in
+Lc.* V.10, on Luke's paralytic, and not as Jerome's.
 
-Hilary's is a different order of reading, not a contradiction; the study must
-present it as the allegorical sense and not as what the others say.
+The tropology of the individual soul therefore has three Latin Fathers at their
+own loci:
+- Jerome's *perfectus doctor* offers the soul (PL 26, col. 55);
+- Ambrose's sick man calls in *precatores*, *monitores mentis* and the Church
+  (*Exp. in Lc.* V.10–11);
+- Bede has *boni doctores* who suggest *spem sanationis opemque intercessionis*
+  (*In Lucam* II on Lk 5:18, PL 92, col. 387A by the transcription's marker).
+  Rabanus prints the sentence at Mt 9:2 under *(Beda.)* (PL 107, col. 870).
+
+Hilary's is a different order of reading, the whole of the nations in Adam, and
+not a contradiction of these. The study must present it as the allegorical sense
+and not as what the others say.
 
 ### 4.5 Where the evidence shows no disagreement, and where it now does
 
@@ -2359,12 +2635,27 @@ Each is now in § 3 (or § 2.7 and § 3.11) and bound in
 
 **Still not reached, and why.**
 
-- **Hilary of Poitiers, *Commentarius in Matthaeum* VIII** (PL 9, SC 254). No
-  registered route exists: the library holds Hilary's *Tractatus super Psalmos*
-  and not his Matthew commentary, and PL 9 is not among its Migne volumes. The
-  same four external deliveries were tried again and none served it. His readings
-  in § 3.5 remain reported ones — the Catena's on vv. 1–2 and Aquinas's lectura on
-  v. 8 — and he is the **only** Father of the Gospel's four in that position.
+- **Hilary of Poitiers, *Commentarius in Matthaeum* VIII: reached on the fourth
+  re-entry, and withdrawn from this list.** Earlier passes recorded that the library
+  held no route to it, which was true: PL 9 was not among its Migne volumes, and
+  four external deliveries had failed. The fourth re-entry took the Internet
+  Archive item `patrologiaecur09mign` whole and registered it:
+  - the text layer, `…ia-djvu-text-db389fea`, tracked; its SHA-256 is the one the
+    study reviewer had recorded;
+  - the whole scan, `…internet-archive-pdf-eab6d2f4`, 80,742,141 bytes, remote for
+    its size;
+  - the pages read, as `…columns-957-962-facsimile-0f29c602`, tracked.
+
+  It read caput VIII §§ 1–8 on the page images (§ 3.5). **Still not reached**: the
+  modern critical edition, J. Doignon, SC 254, which is not publicly reachable.
+  Hilary is therefore read in the Maurist text with its manuscript notes, not
+  collated against Doignon, and the study should cite PL 9 by column.
+- **Rabanus Maurus, *Commentariorum in Matthaeum libri VIII*: reached on the fourth
+  re-entry.** PL 107 (1864) was registered in the same three forms from
+  `patrologiaecur107mign`, and Mt 9:1–8 was read at cols. 870–873 (§ 3.5). His
+  other commentaries on this Mass's texts — on Exodus, on Ecclesiasticus, on the
+  Pauline epistles — remain unreached. The registered PL 107 is tomus I of his works
+  and does not carry them.
 - **Hesbert, *Antiphonale Missarum Sextuplex*** itself, the printed collation.
   Not held by this repository and not reached; no scan of it was located on a
   public route. **What the repository does hold, and what this record previously
@@ -2440,8 +2731,10 @@ Each is now in § 3 (or § 2.7 and § 3.11) and bound in
   **Read**: for the Gospel, Aquinas's lectura (and the *Catena aurea* through an
   unregistered delivery), with Anthony's Sunday sermon beside it; for the Epistle,
   Theodoret, **Theophylact**, Aquinas and a Lapide, with Ambrosiaster beside them.
-  **Unreached, with no registered route**: for the Gospel, Hilary's
-  *Commentarius*, Rabanus, Albert, Chromatius, Paschasius, Theophylact on Matthew
+  **Read on the fourth re-entry**: for the Gospel, Hilary's *Commentarius* (PL 9)
+  and Rabanus (PL 107), at their own loci, with Ambrose and Bede on Luke's
+  paralytic beside them (§ 3.5). **Unreached, with no registered route**: for the
+  Gospel, Albert, Chromatius, Paschasius, Theophylact on Matthew
   (PG 123 is not registered; PG 124 carries his Paul and the end of his John),
   Bruno of Segni, the *Glossa*, Lyra, Denis, Maldonado, Hugh, and a Lapide on the
   Gospels; for the Epistle, Origen, Peter Lombard, Rabanus, Hugh, Lyra, Denis and
@@ -2554,11 +2847,24 @@ in `research/source-bindings.toml`.
 | Cassiodorus, *Expositio psalmorum*, in Ps. CI | `artifact.cassiodorus.expositio-psalmorum.latin-corpus-corporum-monumenta-web-2026-09-05.monumenta-ps101-apparatus-latin-text`, **tracked in this checkout**, SHA-256 `bed53e26…c45ff` | the whole exposition, 38 sectiones; sectiones 21–23 for the Alleluia verse and its frame |
 | Cassiodorus, in Ps. XCV and in Ps. CXXI | `artifact.…latin-corpus-corporum-monumenta-web-2026-09-22.monumenta-ps95-apparatus-latin-text` (SHA-256 `06e1919c…94b0a`) and `…monumenta-ps121-apparatus-latin-text` (SHA-256 `38f93abc…4bb92`), both **registered and retained by this stage** from the exact deliveries `21640d6c…3df8a` and `f95cb469…193eca` | both expositions whole, 21 and 16 sectiones; Ps 95 sectiones 1–2, 13, 14 and Ps 121 sectiones 2, 6, 12 |
 
+
 The derivation that produced the two new Latin files was **checked before it was
 used**: run over the re-fetched Ps 101 delivery (which itself returned the
 registered digest `ac7c0acd…618855`), it reproduced the already-tracked Ps 101
 Latin byte for byte. That is why the Ps 95 and Ps 121 files can be trusted to
 stand in the same relation to their sources as the tracked one does to its.
+
+**Registered and read on the fourth re-entry (STU-001).** PL 9 and PL 107 were
+registered by this stage; Bede and Ambrose were already registered. Each has a
+binding in `research/source-bindings.toml`.
+
+| Witness | Identity | What was read |
+| --- | --- | --- |
+| Hilary, *Commentarius in Matthaeum* VIII §§ 1–8 | `artifact.jacques-paul-migne.patrologia-latina-volume-9.1844-paris.columns-957-962-facsimile-0f29c602` (tracked, SHA-256 `0f29c602…315649`), extracted from `…internet-archive-pdf-eab6d2f4` (remote, SHA-256 `eab6d2f4…67c0a`, 80,742,141 bytes; SHA-1 matched the Internet Archive's file list); text layer `…ia-djvu-text-db389fea` (tracked, SHA-256 `db389fea…ada51`, the digest the study reviewer recorded) | PL 9, cols. 958–962 = parent PDF pp. 493–495, at native 400 ppi, with the Maurist notes; PDF pp. 7–8 (title page, 1844; Elenchus) |
+| Rabanus, *Commentariorum in Matthaeum* III, at Mt 9:1–8 | `artifact.jacques-paul-migne.patrologia-latina-volume-107.1864-paris.columns-869-874-facsimile-9d084bb1` (tracked, SHA-256 `9d084bb1…621ef`), extracted from `…internet-archive-pdf-249f1795` (remote, SHA-256 `249f1795…9c708d2`, 60,617,436 bytes); text layer `…ia-djvu-text-5b8a4b8b` (tracked) | PL 107, cols. 870–873 = parent PDF pp. 439–441, at native 300 ppi; col. 873 is faint and was read with contrast raised against the text layer; PDF pp. 7–8 (title page, 1864; Elenchus) |
+| Bede, *In Lucam* II, on Lk 5:18, 21, 24 | `artifact.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.wikisource-in-lucam-116db0ca` (remote), re-fetched and matched `116db0ca…247d8a` | PL 92, cols. 387A, 388B, 388D–389A by the transcription's markers; a transcription, not image-collated |
+| Ambrose, *Exp. in Lc.* V.10–14 | `artifact.ambrose.expositio-evangelii-secundum-lucam.latin-migne-wikisource-book-5.wikisource-book-5-fde2303a` (tracked, SHA-256 recomputed and matched `fde2303a…0ac52`) | PL 15, cols. 1357–1358 by the transcription's markers; a transcription, not image-collated |
+| Augustine, *De cons. evang.* II.25.58, re-read | the registered segment over the tracked CCEL NPNF1-6 text (above and § 3.5) | lines 12700–12791, for § 4.1's withdrawn premise |
 
 **Two defects in the library, found while binding and reported rather than
 fixed.** `work.cassiodorus.expositio-psalmorum` declares `locus_pattern =
@@ -2722,7 +3028,7 @@ text, which is the column the first pass of this stage did not have.
 | Augustine, *Enarr. in Ps.* 101 (NPNF1-8) | `https://www.newadvent.org/fathers/1801102.htm` | `adb31091e2f92062d89831f7b914aef93045e7dbb0f800a63a91e6b2f444e57a` | §§ 15–19 | **This exact page is a registered artifact** and is now bound; the same text is also tracked in the CCEL English and in Migne's Latin |
 | Augustine, *Enarr. in Ps.* 121 (NPNF1-8) | `https://www.newadvent.org/fathers/1801122.htm` | `b2f96cc93e40f2b151cb4548254b4d482b2f38b0c6bb1a5b29df222581719f31` | §§ 2, 12, 13 | This page is unregistered; **the English is registered** and tracked in the CCEL NPNF1-8, which was read. No Latin of Ps 121 is *tracked*, but Migne's Latin is **registered** in the PL 37 facsimile and was read on its page images on the second re-entry (above) |
 | Augustine, *De cons. evang.* II. xxiii–xxvi (NPNF1-6) | `https://www.newadvent.org/fathers/1602223.htm` … `1602226.htm` | chapter 25's page: `519be078c5b269538fabd580a8a1cf2faa229cf37da80afcbf5af85ab2c6193a` | chapter 25 in full; 23, 24 and 26 read for the boundary | These pages are unregistered; **the text is registered** and tracked, through the CCEL segment above, which was read and agrees |
-| Aquinas, *Catena in Matthaeum* capp. 5–9 | `https://www.corpusthomisticum.org/cmt05.html` | `55b3379759bb33c2b9b918b8fc13d6a6a29e1aacd782ad0e457e306f0fd4ac32` | cap. 9 lect. 1 | **Genuinely unregistered, and the only one of the eight that is.** The library holds `work.thomas-aquinas.catena-aurea-in-lucam` and no state of the *Catena in Matthaeum* at all. This is the delivery §§ 3.5, 4.4 and 10.1 attribute Hilary and Rabanus through, and the reason those attributions are labelled *through the Catena* |
+| Aquinas, *Catena in Matthaeum* capp. 5–9 | `https://www.corpusthomisticum.org/cmt05.html` | `55b3379759bb33c2b9b918b8fc13d6a6a29e1aacd782ad0e457e306f0fd4ac32` | cap. 9 lect. 1 | **Genuinely unregistered, and the only one of the eight that is.** The library holds `work.thomas-aquinas.catena-aurea-in-lucam` and no state of the *Catena in Matthaeum* at all. Hilary and Rabanus were attributed through this delivery until the fourth re-entry read them at PL 9 and PL 107. It is now used only to record where the Catena departs from them, and from Jerome (§ 3.5) |
 
 **Every reception witness stands at `inspected`, not `verified`.** Each was read
 at the locus stated, in the language stated; none was collated against a critical
@@ -3144,14 +3450,41 @@ and no English is composed or paraphrased anywhere.
 
 ## 10. Evidence bounds and open items for later stages
 
-1. **One Father of the Gospel's four is still the Catena's, and it is Hilary.**
-   Jerome was read whole at his own locus this round, on the page images of PL 26,
-   cols. 53–56 (§ 3.5), and everything the study takes from him must come from
-   there and not from the Catena, whose Jerome lemma splices two loci and carries
-   a tropological sentence the commentary does not have at that place. Hilary's
-   *Commentarius in Matthaeum* has no registered route and was not reached;
-   attribute him through Aquinas — the *Catena aurea* on vv. 1–2, the lectura on
-   v. 8 — or leave him out. Do not present him as read.
+1. **Every Father of the Gospel is now read at his own locus. Where a catena or a
+   later Doctor reports him, the report is used only to mark how it departs from
+   him.** Jerome is read at PL 26, cols. 53–56, and Hilary at PL 9, cols. 958–962,
+   both on page images. Rabanus is read at PL 107, cols. 870–873. Ambrose on
+   Luke's paralytic, and Bede, are read in transcriptions of PL 15 and PL 92
+   (§ 3.5). What the study may and may not say:
+   - **Hilary on the city (§ 4):** Christ, rejected by the Gerasene town, which
+     figures the Jewish people and the law, returns to his own city; *Deo civitas
+     fidelium plebs est*, entered by the boat, the Church. Cite PL 9, col. 960. The
+     Maurists read *Deo*, not the Catena's *Dei*. The reading does not depend on
+     leaving the town unnamed (§ 4.1).
+   - **Hilary on the paralytic (§ 5):** the whole of the nations, forgiven Adam's
+     first transgression. The bearers are angels, and the man is son because Adam
+     was God's first work. Cite PL 9, col. 960. *Fides enim sola justificat* is not
+     part of this allegory. It stands in § 6 (col. 961), in his literal account of
+     v. 3, and says that Christ forgave what the law could not loose.
+   - **Hilary on v. 8 (§ 8):** the honour is paid to God because men received,
+     through his word, the power and the way of the remission of sins, the
+     resurrection of bodies and the return to heaven. The power itself was Christ's
+     alone. Cite PL 9, cols. 961–962. **Do not write *ut fiant filii Dei*, "the
+     power to become sons of God", or "another gift altogether", as Hilary's**:
+     those words are Aquinas's lectura summarising him.
+   - **Hilary on the return home (§ 7):** the way back to paradise, from which
+     Adam went out. Cite PL 9, col. 961.
+   - **Rabanus:** his spiritual sense of v. 6 is Bede's (*In Lucam* II, PL 92,
+     cols. 388D–389A), and its paradise sentence is Ambrose's (*Exp. in Lc.* V.14).
+     **The Catena's *lectum tollere est carnem a terrenis desideriis ad voluptatem
+     spiritus attollere* is not in Rabanus and must not be printed under his
+     name.** A moral sense on *tolle lectum* may cite Rabanus at PL 107, col. 873,
+     in his own words (*per continentiae frena correptam, spe coelestium
+     praemiorum a deliciis segregare terrenis*), saying that he takes it from Bede.
+     Or it may cite Bede at his own locus, or Hilary § 7.
+   - **The Catena's "Jerome" *precatores* sentence is Ambrose's**, *Exp. in Lc.*
+     V.10 (§ 4.4).
+   - SC 254 was not reached. Hilary is read in the Maurist text as PL 9 prints it.
 2. **The psalms now have five or six direct witnesses each, in Latin and Greek,
    and on Ps 121 they disagree about what the psalm is about.** Ps 121:1 and 121:7:
    Augustine, Cassiodorus, Hilary, Chrysostom, Theodoret, Bellarmine. Ps 101:16:
@@ -3252,8 +3585,9 @@ and no English is composed or paraphrased anywhere.
     that wants an offline-checkable quotation should take the CCEL wording, and a
     study that quotes Augustine's Latin should take PL 37. **The one genuinely
     unregistered delivery** among the reception witnesses is the *Catena aurea in
-    Matthaeum*, which is exactly the witness §§ 3.5, 4.4 and 10.1 attribute Hilary
-    and Rabanus through; Aquinas's lectura now reports Hilary on v. 8 as well.
+    Matthaeum*. Since the fourth re-entry nothing is attributed through it. It
+    is cited only for where it departs from Jerome, Hilary and Rabanus, whom the
+    record now reads at PL 26, PL 9 and PL 107 (§ 3.5).
     Ambrosiaster is read on a later delivery of a registered page whose bytes no
     longer match, and is therefore not bound.
 13. **Both lections now have later reception at their own loci.** The Epistle has

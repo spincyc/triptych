@@ -83,6 +83,11 @@
 # - The profile subsection the third re-entry applies, Liturgical commentators,
 #   lives in guidance/liturgy/propers-three-documents.md; it is guidance, not a
 #   source record, and is not declared here.
+# - The fourth re-entry (STU-001) added no path here. Everything it read is a
+#   bound source record whose ancestry the engine seals -- the new PL 9 and
+#   PL 107 records, Bede's In Lucam and Ambrose's Expositio in Lucam book V --
+#   except the containment inventory, already declared, which it extended with
+#   the two volumes' entries.
 paths = [
   "src/sources/calendars/roman-1962/propers.yaml",
   "src/sources/calendars/roman-1962/rubrics.yaml",

@@ -3134,3 +3134,69 @@ author = "Gaufridus Grossus, monk of Tiron"
 title = "Vita S. Bernardi de Tironio"
 locator = "as the volume's Elenchus lists it"
 basis = "The Elenchus: 'GAUFRIDUS GROSSUS MONACHUS TIRONIENSIS'."
+
+[[containers]]
+id = "work.jacques-paul-migne.patrologia-latina-volume-9"
+manifest_sha256 = "9a45ac683fca6a3a73e954f3e942c25adaf9c2e4a5be5feb72e640b00d98f835"
+status = "partial"
+basis = "Work description, which transcribes the volume's own Elenchus operum (artifact PDF page 8, read on the image): 'Hilary's Tractatus super psalmos (col. 231), the Commentarius in psalmos XV, XXI, XLI (col. 890), and the Commentarius in Evangelium Matthaei (col. 917)', besides prefaces, lives and testimonies."
+unresolved = "The Tractatus super psalmos as printed here is not enumerated psalm by psalm in the record, and the Commentarius in psalmos XV, XXI, XLI is not joined to any index title; neither has been collated against this volume."
+
+[[containers.constituents]]
+author = "Hilary of Poitiers"
+title = "Commentarius in Matthaeum"
+whole = true
+locator = "cols. 917 to the end of the volume's text; caput VIII (Mt 8:23-9:8) at cols. 958-962"
+basis = "Work description ('the Commentarius in Evangelium Matthaei (col. 917)', from the Elenchus, which lists nothing after it); artifact.jacques-paul-migne.patrologia-latina-volume-9.1844-paris.columns-957-962-facsimile-0f29c602 notes: 'Hilary, Commentarius in Matthaeum, from the end of caput VII section 9 through the whole of caput VIII'."
+
+[[containers.constituents]]
+author = "Hilary of Poitiers"
+title = "Tractatus super Psalmos"
+work_id = "work.hilary-of-poitiers.tractatus-super-psalmos"
+locator = "from col. 231, as the Elenchus lists it"
+basis = "Work description ('Hilary's Tractatus super psalmos (col. 231)')."
+
+[[containers]]
+id = "work.jacques-paul-migne.patrologia-latina-volume-107"
+manifest_sha256 = "876a62dfffc9e2a51a25c277ab733b3e97feef182425e55abd3fdc004e5e6fbf"
+status = "partial"
+basis = "Work description, which transcribes the volume's own Elenchus (artifact PDF page 8, read on the image): De laudibus sanctae crucis (133), De clericorum institutione (293), Liber de oblatione puerorum (419), Commentariorum in Genesim libri quatuor (439), Liber de computo (669), Commentariorum in Matthaeum libri octo (727)."
+unresolved = "Only the two exegetical works are joined to index titles; De laudibus sanctae crucis, De clericorum institutione, the Liber de oblatione puerorum and the Liber de computo are named by the Elenchus and entered below by locator only."
+
+[[containers.constituents]]
+author = "Rabanus Maurus"
+title = "Commentariorum in Matthaeum libri VIII"
+whole = true
+locator = "from col. 727; lib. III at Mt 9:1-8 at cols. 870-874"
+basis = "Work description ('Commentariorum in Matthaeum libri octo (727)'); artifact.jacques-paul-migne.patrologia-latina-volume-107.1864-paris.columns-869-874-facsimile-9d084bb1 notes: 'Commentariorum in Matthaeum lib. III, from the end of Mt 8 through the whole of Mt 9:1-8'."
+
+[[containers.constituents]]
+author = "Rabanus Maurus"
+title = "Commentaria in Genesim"
+whole = true
+locator = "from col. 439"
+basis = "Work description ('Commentariorum in Genesim libri quatuor (439)')."
+
+[[containers.constituents]]
+author = "Rabanus Maurus"
+title = "De laudibus sanctae crucis"
+locator = "from col. 133"
+basis = "Work description."
+
+[[containers.constituents]]
+author = "Rabanus Maurus"
+title = "De clericorum institutione"
+locator = "from col. 293"
+basis = "Work description."
+
+[[containers.constituents]]
+author = "Rabanus Maurus"
+title = "Liber de oblatione puerorum"
+locator = "from col. 419"
+basis = "Work description."
+
+[[containers.constituents]]
+author = "Rabanus Maurus"
+title = "Liber de computo"
+locator = "from col. 669"
+basis = "Work description."
