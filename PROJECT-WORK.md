@@ -80,6 +80,17 @@ reception of the compilation, and records that no Father reads Mt 9:8 so.
   leaf's contribution declarations must say so (requirement
   `claude-model-provenance`).
 
+**Escalated to the maintainer (study-review iteration 1, STU-005).** The 1962
+profile's page-2 rule gives the traditional date wherever the chronology
+supplies one. `tools/check-content-preflight` (`chronology-claims-supported`)
+and `guidance/scripture-chronology.md` §14.1 admit only element-wide claims
+and comparisons that hold at every locus. So the Introit's Ecclesiasticus
+date cannot be printed: 190–170 B.C. preferred, c. 280 B.C. alternate. The
+Introit joins Ecclus 36:18 to Ps 121:1, and no locus-specific date for a
+mixed-source element can reach the dossier. Only a change to the tool or the
+guidance can settle it; the leaf says the text is dated twice without giving
+the dates.
+
 **Pre-existing test failure, unrelated and not repaired.**
 `tools.tests.test_roman_1962_finding_aid` fails 66 != 663 in
 `test_historical_english_gaps_are_an_exact_typed_text_free_set`. It fails
