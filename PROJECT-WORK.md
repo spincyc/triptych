@@ -35,6 +35,15 @@ containment inventory had missed, and six registered liturgical commentators
 that no workflow step sweeps, Bl. Ildefonso Schuster among them. The run is
 held before research iteration 4 until Mass-keyed discovery and the
 containment fix land, so the last repair round sweeps with complete tools.
+Research iteration 4 then ran against the merged tools and repaired all four
+findings. The ministerial reading of the Gospel now rests on Aquinas and on
+Bl. Schuster's commentary on the 1962 Mass itself.
+
+The research now declares `formulary-loci.yaml`, `source-containment-v1.toml`
+and `author-standing-v1.toml` as dependencies, so they are sealed into this
+run from its next review. None of the three may change until the run
+publishes: a change after research-review accepts would return the run to
+research.
 Research iteration 3 had attributed the
 ministerial sense of the Gospel to Aquinas at Mt 9:6 (*per viam
 administrationis, non auctoritatis*) and to the liturgical commentators as
@@ -188,6 +197,36 @@ Every published lane still has two Fathers or saints without them.
 
 Regenerating the web source projection left `release-bindings status` stale.
 Rebinding is an operator approval and has not been done.
+
+**Landed (sources lane and commentator code, commit 2).**
+
+- The sources lane registered eight new Time-after-Pentecost editions: French
+  Oudin volumes 10–13 and 15, and English Duffy volumes 10–12 of 1879–1890.
+  All are non-Google Toronto scans. Their text layers and title or preface
+  excerpts are tracked, and the PDFs are remote. The new records credit the
+  continuation to Dom Lucien Fromage. The evidence is the "Fr. L. F., O. S. B."
+  preface signatures, read on the page images, and four BnF records. French
+  volume 14 was refused because its scan has no title page.
+- D9, D10: `src/sources/inventories/google-usage-guidelines-rights-v1.toml`
+  settles the Google front-matter question toward retention. A scan is never
+  refused only for Google's page, which is kept, labelled and never quoted as
+  the book. The maintainer has not yet confirmed that direction. The same
+  record documents the duplicated volume XI text layer.
+- D7: ten published leaves (Claude 49, 51, 53–57; GPT 49, 50, 53) stand as
+  `[[revision_due]]` obligations in the research-staleness ledger. The
+  ledger's writer now carries them through a rebaseline, and refuses to run
+  rather than drop one.
+- The opt-in authority contract is in `scripts/_proper_components.py`. A
+  manifest that does not opt in is audited exactly as before.
+
+**Deferred until the Eighteenth Sunday run publishes.** These change
+`formulary-loci.yaml` or `author-standing-v1.toml`, which that run now seals:
+
+- commentator-code commit 3, which adds the other Sundays' loci and tightens
+  element matching (branch `wt/commentator-code`);
+- two data corrections: the 1883 English volume XI is now registered, and the
+  Fromage row should give the vol. XI preface year as 1882, read on the page
+  image.
 
 **Open.** These may land now:
 

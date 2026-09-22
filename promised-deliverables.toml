@@ -118,14 +118,18 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "first-priority-acquisitions"
   criterion = "The first-priority sources of the proposal's section 3.3 are registered as new editions or artifacts, with no existing record edited, and the source checks pass (proposal step 4; decision D8)."
-  status = "open"
-  evidence = ["guidance/liturgy/liturgical-commentators-plan-2026-09-22.md", "guidance/sources.md"]
+  status = "pass"
+  evidence = ["src/sources/works/prosper-gueranger/the-liturgical-year/editions/french-oudin-1911-volume-11/edition.toml", "src/sources/works/prosper-gueranger/the-liturgical-year/editions/french-oudin-1911-volume-10/edition.toml", "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1883-volume-11/edition.toml", "src/sources/works/honorius-augustodunensis/gemma-animae/editions/1895-garnier-migne-pl-172/edition.toml"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "authority-contract-opt-in"
   criterion = "An opt-in authority contract in scripts/_proper_components.py checks a reading's two authors against the standing registry under decision D1, with tests (proposal step 6; decision D5)."
-  status = "open"
-  evidence = ["guidance/liturgy/liturgical-commentators-plan-2026-09-22.md", "scripts/_proper_components.py"]
+  status = "pass"
+  evidence = ["scripts/_proper_components.py", "tools/tests/test_proper_components_v2.py"]
+  check = "contains"
+  path = "scripts/_proper_components.py"
+  needle = "authority-standing-v1"
 
   [[deliverables.requirements]]
   id = "inclusion-guidance-after-publication"
@@ -153,20 +157,26 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "continuation-attribution-staleness"
   criterion = "The published leaves that credit the Liturgical Year continuation to Gueranger are recounted from the tracked files and placed on the research-staleness record for their next revision (decision D7)."
-  status = "open"
-  evidence = ["guidance/liturgy/liturgical-commentators-plan-2026-09-22.md"]
+  status = "pass"
+  evidence = ["src/sources/inventories/research-staleness-v1.toml", "tools/research-staleness", "tools/tests/test_research_staleness.py"]
+  check = "contains"
+  path = "src/sources/inventories/research-staleness-v1.toml"
+  needle = "[[revision_due]]"
 
   [[deliverables.requirements]]
   id = "google-pages-rights-record"
   criterion = "One rights record under src/sources/inventories/ settles the status of Google usage-guidelines pages in retained scans (decision D9)."
   status = "open"
-  evidence = ["guidance/liturgy/liturgical-commentators-plan-2026-09-22.md"]
+  evidence = ["src/sources/inventories/google-usage-guidelines-rights-v1.toml", "PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
   id = "duplicate-text-layer-documented"
   criterion = "The two artifact records for one Liturgical Year volume XI text layer are documented as duplicates pending the next deliberate schema change (decision D10)."
-  status = "open"
-  evidence = ["guidance/liturgy/liturgical-commentators-plan-2026-09-22.md"]
+  status = "pass"
+  evidence = ["src/sources/inventories/google-usage-guidelines-rights-v1.toml"]
+  check = "contains"
+  path = "src/sources/inventories/google-usage-guidelines-rights-v1.toml"
+  needle = "[duplicate_text_layer_records]"
 
 [[deliverables]]
 id = "propers-shared-format-2026-09-21"
