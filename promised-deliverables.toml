@@ -151,8 +151,19 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "other-gospel-commentators-rule"
   criterion = "After the Claude 1962 Eighteenth Sunday run publishes, the three-document profile states decision D11: a commentator whose Mass had another Gospel is cited in reader-facing documents only for an element this formulary shares and never in support of a connection to its Gospel; the difference stays in research records and at most one clause of the scope appendix; and the Eighteenth Sunday leaf carries a revision obligation to apply it."
-  status = "open"
+  status = "waived"
+  waiver_reason = "Superseded by other-gospel-commentators-rule-landed: study-review iteration 0 returned the Eighteenth Sunday run to research, so D11 landed before research iteration 5 and that leaf is authored under it; no post-publication revision obligation is needed."
+  waiver_authority = "maintainer decision D11, 2026-09-22, and the maintainer's statement that other Masses do not belong in a 1962 guide"
   evidence = ["guidance/liturgy/liturgical-commentators-plan-2026-09-22.md", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "other-gospel-commentators-rule-landed"
+  criterion = "The three-document profile states decision D11 for a commentator whose Mass had another Gospel or chant: the difference stays in research records and at most one scope-appendix clause, reader-facing prose cites him only for shared elements and never in support of a link to this formulary's Gospel, and the readings, concise study and homily do not mention his other Mass; it lands before the Eighteenth Sunday research is reviewed again, so that leaf is authored under it."
+  status = "pass"
+  evidence = ["guidance/liturgy/propers-three-documents.md", "guidance/liturgy/liturgical-commentators-plan-2026-09-22.md"]
+  check = "contains"
+  path = "guidance/liturgy/propers-three-documents.md"
+  needle = "a 1962 guide is\nnot the place for other Masses"
 
   [[deliverables.requirements]]
   id = "workflow-version-after-publication"

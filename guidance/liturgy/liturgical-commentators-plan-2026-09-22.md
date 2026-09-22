@@ -52,10 +52,14 @@ formulary's history, and in at most one clause of the scope appendix. The
 readings, the concise study and the homily never mention it. Reason: a reader
 of a 1962 guide is not served by other Masses. Citing a commentator on a
 shared chant beside this Gospel implies a link he never made, and a disclosure
-sentence repairs that only by adding the other Mass. The rule lands with step
-5's successor after the Eighteenth Sunday run publishes. That run's research
-seals the current three-document profile. Its own study follows the rule as
-sealed and takes D11 at its first revision.
+sentence repairs that only by adding the other Mass. It was first set to land after the Eighteenth Sunday run published, because
+that run's accepted research sealed the three-document profile. Study-review
+iteration 0 then returned the run to research (STU-001), so every downstream
+document and review would rerun anyway. D11 therefore landed in the hold
+before research iteration 5, and the Eighteenth Sunday study is re-authored
+under it. The maintainer had said that other Masses do not belong in a 1962
+guide. The rule applies to a differing chant as to a differing Gospel, for the
+same reason.
 
 **Erratum to the proposal.** §0, §1.3 and D7 count seven published leaves that
 credit the continuation to Guéranger with a corrected imprint. A search of the

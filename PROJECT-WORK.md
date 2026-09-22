@@ -49,6 +49,14 @@ research.
 and the novel-round counter at 3 of 4. Advisories RES-024 to RES-027 and two
 observations stand in the leaf's `evaluations/blocking-findings-v1.toml`. The
 run advanced to `author-study`.
+
+Study-review iteration 0 failed with five blocking findings. STU-001, owned
+by research, concerns Hilary on Matthew: the study quoted him only as
+Aquinas's *Catena* reports him, and his own text in PL 9 differs. The engine
+therefore returned the run to research iteration 5. The four study-owned
+findings wait for re-authoring. Because every downstream document reruns,
+decision D11 (commentators whose Mass had another Gospel or chant) landed in
+that hold, and the study is re-authored under it.
 Research iteration 3 had attributed the
 ministerial sense of the Gospel to Aquinas at Mt 9:6 (*per viam
 administrationis, non auctoritatis*) and to the liturgical commentators as
@@ -235,12 +243,6 @@ Rebinding is an operator approval and has not been done.
 - the Honorius IV.85 row in `formulary-loci.yaml` omits the Alleluia and
   Offertory, which IV.85 names (raised as an observation in research-review
   iteration 4);
-- D11 (commentators whose Mass had another Gospel: shared chants only, no link
-  to this Gospel, the difference kept out of the readings, concise study and
-  homily) lands in the three-document profile. The Eighteenth Sunday leaf
-  follows the rule as sealed, citing Rupert on *Da pacem* inside its priestly
-  reading and discussing other Masses in `30-authority-on-earth.tex`. It takes
-  D11 at its first revision; add its `[[revision_due]]` when it publishes;
 - Theophylact has no row in `author-standing-v1.toml`. Whether the "outside
   Catholic communion" limit applies to him is the maintainer's judgement
   (raised as an observation in research-review iteration 4).

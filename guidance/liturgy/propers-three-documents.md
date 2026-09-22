@@ -187,12 +187,17 @@ from `src/sources/commentary/formulary-loci.yaml`. Record in
 that differ. A commentator's "eighteenth Sunday" is evidence only for the
 elements it shares with this formulary.
 
-Where his Mass had another Gospel or chant, attribute to him only what he says
-of the elements this formulary keeps, record which element differed, and say
-so once where he is first used. Do not present him as a reader of a Gospel his
-Mass did not have. Where his books place this formulary's Gospel on another
-Sunday, what he says of it there is reception of that Gospel, cited at that
-locus.
+Where his Mass had another Gospel or another chant, record the difference in
+`research/scope.md`, where it keeps the studies from asserting anything about
+the formulary's history, and in at most one clause of the expansive study's
+scope appendix. In reader-facing prose, cite him only for what he says of an
+element this formulary shares. Never cite him in support of a connection
+between that element and this formulary's Gospel, which his Mass did not set
+beside it. The readings, the concise study and the homily do not mention his
+other Gospel, his other chants or the Mass they belonged to: a 1962 guide is
+not the place for other Masses. Where his books place this formulary's Gospel
+on another Sunday, what he says of it there is reception of that Gospel. Cite
+it at that locus, without narrating the Sunday on which he read it.
 
 Standing decides what a commentator may carry.
 `src/sources/inventories/author-standing-v1.toml` records each author's
