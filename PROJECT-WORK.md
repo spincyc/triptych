@@ -44,6 +44,11 @@ and `author-standing-v1.toml` as dependencies, so they are sealed into this
 run from its next review. None of the three may change until the run
 publishes: a change after research-review accepts would return the run to
 research.
+
+**Research accepted** at research-review iteration 4, with no blocking finding
+and the novel-round counter at 3 of 4. Advisories RES-024 to RES-027 and two
+observations stand in the leaf's `evaluations/blocking-findings-v1.toml`. The
+run advanced to `author-study`.
 Research iteration 3 had attributed the
 ministerial sense of the Gospel to Aquinas at Mt 9:6 (*per viam
 administrationis, non auctoritatis*) and to the liturgical commentators as
@@ -227,6 +232,12 @@ Rebinding is an operator approval and has not been done.
 - two data corrections: the 1883 English volume XI is now registered, and the
   Fromage row should give the vol. XI preface year as 1882, read on the page
   image.
+- the Honorius IV.85 row in `formulary-loci.yaml` omits the Alleluia and
+  Offertory, which IV.85 names (raised as an observation in research-review
+  iteration 4);
+- Theophylact has no row in `author-standing-v1.toml`. Whether the "outside
+  Catholic communion" limit applies to him is the maintainer's judgement
+  (raised as an observation in research-review iteration 4).
 
 **Open.** These may land now:
 
