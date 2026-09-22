@@ -43,6 +43,20 @@ The maintainer therefore moved step 5 into the hold before research iteration
 [the three-document profile](propers-three-documents.md#liturgical-commentators).
 Step 7, the workflow change, still waits for that run to publish.
 
+**D11, 2026-09-22: commentators whose Mass had another Gospel.** The
+maintainer decided that such a commentator is cited in a reader-facing
+document only for what he says of an element this formulary shares, and never
+in support of a connection to this formulary's Gospel. The Gospel difference
+stays in the research records, where it guards against false claims about the
+formulary's history, and in at most one clause of the scope appendix. The
+readings, the concise study and the homily never mention it. Reason: a reader
+of a 1962 guide is not served by other Masses. Citing a commentator on a
+shared chant beside this Gospel implies a link he never made, and a disclosure
+sentence repairs that only by adding the other Mass. The rule lands with step
+5's successor after the Eighteenth Sunday run publishes. That run's research
+seals the current three-document profile. Its own study follows the rule as
+sealed and takes D11 at its first revision.
+
 **Erratum to the proposal.** §0, §1.3 and D7 count seven published leaves that
 credit the continuation to Guéranger with a corrected imprint. A search of the
 published leaves for that imprint finds more than seven, and the set it names

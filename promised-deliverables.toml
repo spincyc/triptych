@@ -149,6 +149,12 @@ state = "in_progress"
   needle = "### Liturgical commentators"
 
   [[deliverables.requirements]]
+  id = "other-gospel-commentators-rule"
+  criterion = "After the Claude 1962 Eighteenth Sunday run publishes, the three-document profile states decision D11: a commentator whose Mass had another Gospel is cited in reader-facing documents only for an element this formulary shares and never in support of a connection to its Gospel; the difference stays in research records and at most one clause of the scope appendix; and the Eighteenth Sunday leaf carries a revision obligation to apply it."
+  status = "open"
+  evidence = ["guidance/liturgy/liturgical-commentators-plan-2026-09-22.md", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
   id = "workflow-version-after-publication"
   criterion = "After the Claude 1962 Eighteenth Sunday run publishes, the reviewer sentence, the standing pointers and the mandatory authority check reach a new proper-study version (proposal step 7; decisions D5 and D6)."
   status = "open"
