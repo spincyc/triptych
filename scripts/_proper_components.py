@@ -32,6 +32,36 @@ MARKERS = {
     "themes": {"themes:start": 3, "themes:end": 4},
     "commentary": {"commentary:start": 5},
 }
+FORMAT_CONFIGURATION_COMMANDS = {"dossierunit", "tptheadsunday"}
+CHRONOLOGY_COMMANDS = {
+    "chronologyannotation", "chronologyannotationclaim",
+    "chronologyannotationcomparisonclaim", "chronologyannotationreach",
+    "chronologyannotationgroup", "chronologyannotationcomparisongroup",
+}
+COMMAND_DEFINITION_RE = re.compile(
+    r"\\(?P<kind>(?:new|renew|provide)command|DeclareRobustCommand|"
+    r"(?:New|Renew|Provide|Declare)DocumentCommand)\*?\s*"
+    r"(?:\{\s*)?\\(?P<name>[A-Za-z@]+)"
+)
+ENVIRONMENT_DEFINITION_RE = re.compile(
+    r"\\(?P<kind>(?:new|renew|provide)environment|"
+    r"(?:New|Renew|Provide|Declare)DocumentEnvironment|newtcolorbox)\*?\s*"
+    r"\{(?P<name>[A-Za-z@]+\*?)\}"
+)
+PRIMITIVE_DEFINITION_RE = re.compile(
+    r"\\(?:def|gdef|edef|xdef|let|futurelet|newif|newcount|newdimen|newskip|"
+    r"newmuskip|newtoks|newbox|newread|newwrite|chardef|mathchardef|countdef|"
+    r"dimendef|skipdef|muskipdef|toksdef|csdef|csedef|csgdef|csxdef|cslet|"
+    r"csletcs|letcs|csundef|undef|LetLtxMacro|globaldefs)\b"
+)
+COMMAND_COPY_RE = re.compile(
+    r"\\(?:New|Renew|Declare|Provide)CommandCopy\b"
+)
+FILE_EXECUTION_COMMANDS = {
+    "catchfiledef", "catchfileedef", "catchfilegdef", "documentclass",
+    "everyeof", "loadclass", "loadclasswithoptions", "openin", "read",
+    "readline", "requirepackage", "scantokens", "usepackage",
+}
 
 
 def format_contract(data: dict, *, required: bool = False) -> bool:
@@ -46,6 +76,64 @@ def format_contract(data: dict, *, required: bool = False) -> bool:
 
 def tex_source(path: Path) -> str:
     return re.sub(r"(?<!\\)%[^\n]*", "", path.read_text(encoding="utf-8"))
+
+
+def _generated_chronology(path: Path, leaf: Path) -> bool:
+    return path.resolve() == (leaf / "research/chronology-annotations.tex").resolve()
+
+
+def audit_executable_tex(path: Path, leaf: Path, text: str) -> None:
+    """Reject file execution that is not a literal ``input``/``include`` edge."""
+    if "^^" in text:
+        raise ValueError(
+            f"{path.name}: TeX character-code notation may not obfuscate controls")
+    computed = list(re.finditer(r"\\(?:if)?csname(.*?)\\endcsname", text, re.S))
+    if len(computed) != len(re.findall(r"\\(?:if)?csname\b", text)) or len(computed) != len(
+            re.findall(r"\\endcsname\b", text)):
+        raise ValueError(f"{path.name}: unmatched computed control sequence")
+    for match in computed:
+        name = re.sub(r"\s+", "", match.group(1))
+        if (not _generated_chronology(path, leaf)
+                or not re.fullmatch(r"triptychchronologyannotation@(?:#1|[a-z0-9-]+)", name)):
+            raise ValueError(f"{path.name}: computed control sequences are not allowed")
+
+    for match in re.finditer(r"\\([A-Za-z@]+)", text):
+        command = match.group(1)
+        normalized = command.lstrip("@").casefold()
+        if command in {"input", "include"}:
+            continue
+        if ("input" in normalized or "include" in normalized
+                or normalized in FILE_EXECUTION_COMMANDS):
+            raise ValueError(
+                f"{path.name}: executable file input overrides the shared template graph; "
+                "use a literal unconditional include")
+
+
+def audit_format_definitions(path: Path, leaf: Path, text: str) -> None:
+    """Keep format ownership in the two shared templates, including aliases."""
+    chronology = _generated_chronology(path, leaf)
+    for match in COMMAND_DEFINITION_RE.finditer(text):
+        kind, name = match.group("kind"), match.group("name")
+        if kind == "renewcommand" and name in FORMAT_CONFIGURATION_COMMANDS:
+            continue
+        if chronology and kind == "newcommand" and name in CHRONOLOGY_COMMANDS:
+            continue
+        raise ValueError(
+            f"{path.name}: local command definition overrides shared format ownership")
+    if ENVIRONMENT_DEFINITION_RE.search(text):
+        raise ValueError(
+            f"{path.name}: local environment definition overrides shared format ownership")
+    if COMMAND_COPY_RE.search(text):
+        raise ValueError(
+            f"{path.name}: local command-copy aliases override shared format ownership")
+    for match in PRIMITIVE_DEFINITION_RE.finditer(text):
+        if (chronology and match.group() == r"\def"
+                and re.match(r"\s*\\csname\b", text[match.end():])):
+            continue
+        raise ValueError(
+            f"{path.name}: local aliases, definitions, and undefinitions are forbidden")
+    if re.search(r"\\(?:ExplSyntaxOn|catcode)\b", text):
+        raise ValueError(f"{path.name}: dynamic control-sequence definitions are forbidden")
 
 
 def format_sources(data: dict, leaf: Path, provider_root: Path,
@@ -82,7 +170,7 @@ def format_sources(data: dict, leaf: Path, provider_root: Path,
             value = match[1]
             name = value if Path(value).suffix else value + ".tex"
             target = (provider_root / name).resolve()
-            if target not in reached:
+            if target not in reached or not target.is_relative_to(leaf.resolve()):
                 return match[0]
             if markers and target in markers:
                 return markers[target]
@@ -92,6 +180,9 @@ def format_sources(data: dict, leaf: Path, provider_root: Path,
     for mode in modes:
         entry = leaf / ENTRYPOINTS[mode]
         reached = include_graph(entry, leaf, provider_root)
+        for path in reached:
+            if path.is_relative_to(leaf.resolve()):
+                audit_format_definitions(path, leaf, tex_source(path))
         source = expand(entry, reached)
         entry_text = tex_source(entry)
         preamble = entry_text.split(r"\begin{document}", 1)[0]
@@ -263,6 +354,8 @@ def presentation_sources(data: dict, leaf: Path, provider_root: Path,
               for role in PRESENTATION_ROLES for name in MARKERS[role]}
     found = []
     for path in reached:
+        if not path.is_relative_to(leaf.resolve()):
+            continue
         text = re.sub(r"(?<!\\)%[^\n]*", "", path.read_text())
         if (path.resolve() != (leaf / chronology["path"]).resolve()
                 and re.search(r"\\chronodate\s*\{", text)):
@@ -439,6 +532,22 @@ def owned_path(leaf: Path, value: object, field: str, *, exists: bool = True) ->
     return target
 
 
+def lane_source_paths(data: dict, leaf: Path, *, exists: bool = True) -> set[Path]:
+    """Resolve lane evidence at its sole owner beneath ``research/``."""
+    result: set[Path] = set()
+    research = (leaf / "research").resolve()
+    for lane in data.get("lanes", []):
+        key = lane.get("key", "unknown") if isinstance(lane, dict) else "unknown"
+        if not isinstance(lane, dict):
+            raise ValueError("lanes must be tables")
+        for source in strings(lane.get("sources"), f"lane {key} sources"):
+            path = owned_path(leaf, source, f"lane {key} source", exists=exists)
+            if not path.is_relative_to(research):
+                raise ValueError(f"lane {key} source must be owned beneath research/")
+            result.add(path)
+    return result
+
+
 def outputs(data: dict) -> dict[str, str]:
     """Validate identities before any consumer joins them onto a filesystem root."""
     if data.get("schema") not in {1, 2} or data.get("record_type") != "proper-components":
@@ -499,8 +608,8 @@ def include_graph(entry: Path, leaf: Path, provider_root: Path) -> set[Path]:
     """Walk static, unconditional local includes; refuse unsupported ambiguity.
 
     The build resolves TeX inputs from the provider directory and src/. Local
-    content must use that same spelling. Shared inputs are checked for existence
-    and retained ownership; their own TeX macros are outside this graph.
+    content must use that same spelling. The returned graph includes shared
+    sources and is the semantic graph used by review, recorder, and web gates.
     """
     visited: set[Path] = set()
     stack: set[Path] = set()
@@ -513,7 +622,9 @@ def include_graph(entry: Path, leaf: Path, provider_root: Path) -> set[Path]:
             return
         visited.add(path)
         stack.add(path)
-        text = re.sub(r"(?<!\\)%[^\n]*", "", path.read_text(encoding="utf-8"))
+        text = tex_source(path)
+        if path.resolve().is_relative_to(leaf.resolve()):
+            audit_executable_tex(path, leaf, text)
         depth = 0
         for match in token.finditer(text):
             command = match.group()
@@ -542,8 +653,7 @@ def include_graph(entry: Path, leaf: Path, provider_root: Path) -> set[Path]:
             if not target.is_relative_to(provider_root.resolve()) and not target.is_relative_to((provider_root.parent / "common").resolve()):
                 raise ValueError(f"{path.name}: include escapes its provider/common source owners")
             validate_liturgical_family(leaf, provider_root, target)
-            if target.is_relative_to(leaf.resolve()):
-                walk(target)
+            walk(target)
         stack.remove(path)
 
     walk(entry)
@@ -641,8 +751,6 @@ def audit_v2(data: dict, path: Path, provider_root: Path, *, phase: str = "conte
         authors = strings(lane.get("authors"), f"lane {key} authors")
         if len({author.strip().casefold() for author in authors}) < 2:
             raise ValueError(f"lane {key} requires at least two distinct authors")
-        for source in strings(lane.get("sources"), f"lane {key} sources"):
-            owned_path(leaf, source, f"lane {key} source", exists=check_files)
         if set(strings(lane.get("senses"), f"lane {key} senses")) != SENSES:
             raise ValueError(f"lane {key} requires all four senses")
         if set(strings(lane.get("element_keys"), f"lane {key} element_keys")) != set(elements):
@@ -658,6 +766,7 @@ def audit_v2(data: dict, path: Path, provider_root: Path, *, phase: str = "conte
             raise ValueError(f"lane {key} component coverage must include every element key")
     if bound_components != {key for key, item in records.items() if item["kind"] == "interpretive-lane"}:
         raise ValueError("every interpretive-lane component must belong to one declared lane")
+    lane_source_paths(data, leaf, exists=check_files)
     paginated = presentation_contract(data)
     formatted = format_contract(data)
     if paginated:
@@ -674,6 +783,8 @@ def audit_v2(data: dict, path: Path, provider_root: Path, *, phase: str = "conte
             reached = include_graph(entries[mode], leaf, provider_root)
             allowed = {entries[mode], (leaf / "generation-metadata.tex").resolve()}
             allowed.update(component_paths.values())
+            allowed.update(path for path in reached
+                           if path.is_relative_to((provider_root.parent / "common").resolve()))
             for component in components:
                 if mode in component["modes"]:
                     allowed.update((leaf / ref).resolve() for ref in component.get("references", []))

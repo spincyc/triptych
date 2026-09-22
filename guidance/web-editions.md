@@ -138,6 +138,12 @@ than styling alone. Component-scoped references accompany exactly the
 components that use them. Preflight rejects a component included in one mode
 when it depends on a component omitted from that mode.
 
+For a current schema-2 proper, conversion assembles exactly the same recursive,
+literal source graph accepted by the component checker. A source present only
+in TeX's recorder or only in the converter is an error. Generated Markdown uses
+semantic `<br>` elements where a hard break is needed and contains no trailing
+spaces or tabs.
+
 For schema 2, author one explicit `\label{proper-<element-key>}` at each
 appointed text or its rights-safe locator. Put it immediately after a heading
 that names only that element, or immediately before the element's paragraph

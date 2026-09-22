@@ -95,6 +95,12 @@ class WebEditionConversionTests(unittest.TestCase):
         self.assertIn("## Body", markdown)
         self.assertNotIn("Dropped title page", markdown)
 
+    def test_generated_markdown_has_no_trailing_whitespace(self) -> None:
+        cleaned = DRIVER.clean_markdown_line_endings("Title  \nSubtitle \t\nPlain\n")
+        self.assertEqual(cleaned, "Title<br>\nSubtitle<br>\nPlain\n")
+        markdown = self.convert("First line.\n\nSecond line.")
+        self.assertIsNone(re.search(r"[ \t]+$", markdown, re.MULTILINE))
+
     @unittest.skipUnless(importlib.util.find_spec("markdown"), "Python Markdown is not installed")
     def test_superscripts_survive_the_actual_site_renderer(self) -> None:
         # Pandoc's default ^137^ reached the site's reader as literal carets.

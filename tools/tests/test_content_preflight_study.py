@@ -83,11 +83,24 @@ class StudyPreflightTests(unittest.TestCase):
         owner = self.root / "src/common/propers-format.tex"
         owner.parent.mkdir()
         owner.write_text(r"\newcommand{\chronodate}[2]{#2}" + "\n")
+        (owner.parent / "preamble.tex").write_text("% Shared engine preamble.\n")
         for entry in ("main.tex", "synthesis.tex", "homily.tex"):
             path = self.leaf / entry
-            path.write_text("\\input{common/propers-format}\n"
+            path.write_text("\\input{common/preamble}\n"
+                            "\\input{common/propers-format}\n"
                             "\\begin{document}\n" + path.read_text())
         return owner
+
+    def test_current_schema_two_shared_inputs_are_not_leaf_prose(self):
+        format_owner = self.shared_date_wrapper()
+        preamble_owner = format_owner.parent / "preamble.tex"
+        files = PREFLIGHT.reader_facing(self.leaf, "research")
+        self.assertIn((self.leaf / "main.tex").resolve(), files)
+        self.assertIn((self.leaf / "sections/research.tex").resolve(), files)
+        self.assertNotIn(format_owner.resolve(), files)
+        self.assertNotIn(preamble_owner.resolve(), files)
+        self.assertTrue(all(path.is_relative_to(self.leaf.resolve()) for path in files))
+        self.assertEqual(self.check("house-voice", "research")[0], [])
 
     def wrapper_problems(self, edition="leaf"):
         return PREFLIGHT._date_cell_wrapper_integrity(

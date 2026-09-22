@@ -38,7 +38,7 @@ class PaginationTests(unittest.TestCase):
             (self.leaf / (key + ".tex")).write_text(body)
         chronology = next(item for item in self.data["components"] if item["key"] == "chronology")
         chronology["references"] = ["research/chronology-annotations.tex"]
-        (self.leaf / "research").mkdir()
+        (self.leaf / "research").mkdir(exist_ok=True)
         (self.leaf / chronology["references"][0]).write_text("% Generated annotation fixture.\n")
         path = self.leaf / "chronology.tex"
         end = "\\zlabel{triptych:concise:chronology:end}"
@@ -350,9 +350,17 @@ class ChronologyComputationSealTests(unittest.TestCase):
         for name in ("context.md", "scope.md", "interpretations.md"):
             (self.leaf / "research" / name).write_text("Checked fixture evidence.")
         (self.leaf / "research/source-bindings.toml").write_text("bindings = []\n")
-        self.owner = self.leaf.parent / "shared/25-ordinary/source.md"
+        self.owner = self.leaf.parent / "shared/ordinary-time/weeks/25/propers/verified.md"
         self.owner.parent.mkdir(parents=True)
         self.owner.write_text("Owning edition appointment witness.")
+        registry = self.leaf.parents[1] / "registry/formula-dispositions.md"
+        registry.parent.mkdir(parents=True)
+        registry.write_text(
+            "| Full publication slug | Canonical owner |\n"
+            "| --- | --- |\n"
+            "| `pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a` | "
+            "[owner](../temporal/shared/ordinary-time/weeks/25/propers/verified.md) |\n"
+        )
         (self.leaf / "research/review-dependencies.toml").write_text(
             "paths = [" + json.dumps(self.owner.relative_to(self.root).as_posix()) + "]\n")
         self.manifest = self.leaf / "proper-components.toml"

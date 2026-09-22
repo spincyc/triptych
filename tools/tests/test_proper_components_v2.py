@@ -32,6 +32,7 @@ def fixture(root: Path):
     provider = root / "src/gpt"
     leaf = provider / "proper"
     leaf.mkdir(parents=True)
+    (leaf / "research").mkdir()
     elements = ["introit", "collect", "gospel", "communion"]
     data = dict(schema=2, record_type="proper-components", document="proper", calendar="roman-1962",
                 entrypoint="main.tex", synthesis_entrypoint="synthesis.tex",
@@ -53,10 +54,11 @@ def fixture(root: Path):
                                        element_keys=list(elements), references=[], depends_on=[]))
         (leaf / (key + ".tex")).write_text("Substantive fixture text.\n")
     for key in ("augustine", "gregory"):
-        data["lanes"].append(dict(key=key, authors=[key.title(), "Thomas Aquinas"], sources=["sources.md"],
+        data["lanes"].append(dict(key=key, authors=[key.title(), "Thomas Aquinas"],
+                                  sources=["research/sources.md"],
                                   senses=sorted(components.SENSES), element_keys=list(elements),
                                   component_keys=[key]))
-    (leaf / "sources.md").write_text("Checked loci in source records.\n")
+    (leaf / "research/sources.md").write_text("Checked loci in source records.\n")
     (leaf / "generation-metadata.tex").write_text("Fixture provenance.\n")
     for mode, name in components.ENTRYPOINTS.items():
         body = "\\hypersetup{pdftitle={" + mode + "}}\n\\begin{document}\n"
@@ -181,8 +183,15 @@ class ProperV2Tests(unittest.TestCase):
             self.audit()
 
     def test_missing_lane_source_fails_content(self):
-        (self.path.parent / "sources.md").unlink()
+        (self.path.parent / "research/sources.md").unlink()
         with self.assertRaisesRegex(ValueError, "source"):
+            self.audit()
+
+    def test_lane_sources_have_one_research_owner(self):
+        outside = self.path.parent / "sources.md"
+        outside.write_text("Duplicate audit outside its owner.\n")
+        self.data["lanes"][0]["sources"] = ["sources.md"]
+        with self.assertRaisesRegex(ValueError, "owned beneath research"):
             self.audit()
 
     def test_no_output_can_escape_or_create_a_second_web_identity(self):

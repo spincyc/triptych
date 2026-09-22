@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import json
+import os
+import re
 import shutil
 import subprocess
 import tempfile
@@ -198,6 +200,47 @@ class ProperFormatTests(unittest.TestCase):
             with self.subTest(text=text), self.assertRaisesRegex(ValueError, "lane"):
                 self.audit()
 
+    def test_every_shared_format_control_rejects_local_alias_or_undefinition(self):
+        shared = "\n".join(
+            (self.root / "src/common" / name).read_text()
+            for name in ("propers-format.tex", "propers-homily.tex")
+        )
+        commands = {match.group("name") for match in components.COMMAND_DEFINITION_RE.finditer(shared)}
+        commands -= components.FORMAT_CONFIGURATION_COMMANDS
+        environments = {
+            match.group("name") for match in components.ENVIRONMENT_DEFINITION_RE.finditer(shared)
+        }
+        controls = commands | environments | {"end" + name for name in environments}
+        self.assertTrue({"propertitle", "properlane", "fourSenses", "endfourSenses",
+                         "maptable", "endmaptable", "properhomily", "endproperhomily"} <= controls)
+        path = self.leaf / "treatment.tex"
+        original = path.read_text()
+        for control in sorted(controls):
+            for source in (r"\relax", r"\undefined"):
+                path.write_text(original + f"\n\\let\\{control}{source}\n")
+                with self.subTest(control=control, source=source), self.assertRaisesRegex(
+                        ValueError, "aliases|definitions|undefinitions"):
+                    self.audit(edition="research")
+        path.write_text(original)
+
+    def test_computed_shared_definition_is_refused(self):
+        path = self.leaf / "treatment.tex"
+        path.write_text(path.read_text() +
+                        "\\expandafter\\def\\csname propertitle\\endcsname{Spoof}\n")
+        with self.assertRaisesRegex(ValueError, "computed control"):
+            self.audit(edition="research")
+
+    def test_latex_command_copy_aliases_are_refused(self):
+        path = self.leaf / "treatment.tex"
+        original = path.read_text()
+        for command in ("NewCommandCopy", "RenewCommandCopy", "DeclareCommandCopy",
+                        "ProvideCommandCopy"):
+            path.write_text(original + f"\\{command}\\propertitle\\relax\n")
+            with self.subTest(command=command), self.assertRaisesRegex(
+                    ValueError, "command-copy aliases"):
+                self.audit(edition="research")
+        path.write_text(original)
+
     def test_rendered_fonts_must_be_latin_modern_and_embedded(self):
         header = "name type encoding emb sub uni object ID\n----\n"
         for name, embedded, ok in (("ABCDEF+LMRoman10-Regular", "yes", True),
@@ -239,6 +282,14 @@ class ProperFormatTests(unittest.TestCase):
             "\\begin{document}\\propertitle{Title}{Subtitle}{Edition}{Occasion}\n"
             "\\makeatletter\\typeout{BASE-SIZE=\\f@size}\\makeatother\n"
             "\\typeout{TEXT-WIDTH=\\the\\textwidth}\n"
+            "\\properlane{proof}{Shared lane}\n"
+            "\\begin{fourSenses}"
+            "\\item[Literal.] Literal proof.\\item[Allegorical.] Allegorical proof."
+            "\\item[Moral.] Moral proof.\\item[Anagogical.] Anagogical proof."
+            "\\end{fourSenses}\n"
+            "\\begin{maptable}A & B & C\\\\\\end{maptable}\n"
+            "\\begin{comparisontable}{One}{Two}{Three}{Four}"
+            "E & F & G & H\\\\\\end{comparisontable}\n"
             "\\begin{properhomily}\\typeout{SPEECH-WIDTH=\\the\\linewidth}\n"
             + "A spoken paragraph that remains in the shared type.\n\n" * 120
             + "\\end{properhomily}\\typeout{NOTE-WIDTH=\\the\\linewidth}\n"
@@ -261,10 +312,80 @@ class ProperFormatTests(unittest.TestCase):
         self.assertNotIn("Homily", extracted[0])
         self.assertTrue(any("Sunday head" in page and "Homily" in page
                             for page in extracted[1:]))
+        joined = "\n".join(extracted)
+        for text in ("Shared lane", "Literal proof", "A", "One", "Four"):
+            self.assertIn(text, joined)
         fonts = subprocess.run(
             ["pdffonts", "proof.pdf"], cwd=build, capture_output=True,
             text=True, check=True).stdout
         self.assertNotIn("LMRoman10-Italic", fonts)
+
+    @unittest.skipUnless(shutil.which("pdflatex") and shutil.which("pdftotext"),
+                         "requires TeX and Poppler")
+    def test_rendered_obfuscated_inputs_are_rejected_by_the_semantic_graph(self):
+        (self.leaf / "unowned.tex").write_text("UNDECLARED MEANING-BEARING PROSE.\n")
+        treatment = self.leaf / "treatment.tex"
+        original = treatment.read_text()
+        attacks = (
+            ("computed", r"\csname input\endcsname{proper/unowned}", "computed control"),
+            ("hex", r"\^^69nput{proper/unowned}", "character-code notation"),
+        )
+        environment = dict(os.environ)
+        environment["TEXINPUTS"] = "../:"
+        for name, attack, error in attacks:
+            treatment.write_text(original + attack + "\n")
+            build = self.root / f"{name}-input-build"
+            build.mkdir()
+            result = subprocess.run(
+                ["pdflatex", "-interaction=nonstopmode", "-halt-on-error",
+                 "-output-directory", str(build), "proper/main.tex"],
+                cwd=self.provider, env=environment, capture_output=True, text=True,
+            )
+            self.assertEqual(result.returncode, 0, result.stdout[-2500:])
+            extracted = subprocess.run(
+                ["pdftotext", str(build / "main.pdf"), "-"], capture_output=True,
+                text=True, check=True,
+            ).stdout
+            self.assertIn("UNDECLARED MEANING-BEARING PROSE", extracted)
+            with self.subTest(name=name), self.assertRaisesRegex(ValueError, error):
+                self.audit(edition="research")
+        treatment.write_text(original)
+
+    @unittest.skipUnless(shutil.which("pdflatex"), "requires TeX")
+    def test_rendered_aliases_cannot_replace_shared_homily_columns(self):
+        common = (self.root / "src/common").as_posix()
+        attacks = (
+            ("hex-let", r"\^^6cet\properhomily\quote" + "\n"
+             + r"\^^6cet\endproperhomily\endquote", "character-code notation"),
+            ("command-copy", r"\RenewCommandCopy\properhomily\quote" + "\n"
+             + r"\RenewCommandCopy\endproperhomily\endquote", "command-copy aliases"),
+        )
+        entry = self.leaf / "homily.tex"
+        original = entry.read_text()
+        for name, attack, error in attacks:
+            source = self.root / f"{name}.tex"
+            source.write_text(
+                "\\input{" + common + "/preamble}\n"
+                "\\input{" + common + "/propers-format}\n"
+                "\\input{" + common + "/propers-homily}\n"
+                + attack + "\n\\begin{document}\n"
+                "\\typeout{TEXT-WIDTH=\\the\\textwidth}\n"
+                "\\begin{properhomily}\\typeout{SPOOF-WIDTH=\\the\\linewidth}"
+                "Rendered alias proof.\\end{properhomily}\n\\end{document}\n"
+            )
+            result = subprocess.run(
+                ["pdflatex", "-interaction=nonstopmode", "-halt-on-error", source.name],
+                cwd=self.root, capture_output=True, text=True,
+            )
+            self.assertEqual(result.returncode, 0, result.stdout[-2500:])
+            values = dict(re.findall(r"(TEXT-WIDTH|SPOOF-WIDTH)=([0-9.]+)", result.stdout))
+            self.assertGreater(float(values["SPOOF-WIDTH"]),
+                               float(values["TEXT-WIDTH"]) * 0.75)
+            entry.write_text(original.replace(r"\begin{document}",
+                                              attack + "\n\\begin{document}"))
+            with self.subTest(name=name), self.assertRaisesRegex(ValueError, error):
+                self.audit(edition="homily")
+        entry.write_text(original)
 
 
 if __name__ == "__main__":

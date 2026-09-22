@@ -14,7 +14,7 @@ import sys
 import tomllib
 from pathlib import Path
 
-from _proper_components import (include_graph, validate_liturgical_family,
+from _proper_components import (include_graph, lane_source_paths, validate_liturgical_family,
                                 presentation_contract, format_contract, pagination_aux_files)
 from _corpus import active_tex, REVISION_RE, CONTRIBUTION_RE, PRODUCTION_RE, INHERITANCE_RE
 
@@ -128,11 +128,13 @@ def render_inputs(root: Path, provider: str, document: str) -> dict[str, str]:
     leaf = leaf_path(root, provider, document)
     paths.update(path for path in leaf.rglob("*") if path.suffix in {".tex", ".sty", ".cls", ".bib"})
     paths.add(leaf / "proper-components.toml")
-    for suffix in EDITIONS.values():
+    formatted = format_contract(manifest(leaf))
+    for mode, suffix in EDITIONS.items():
         recorder = root / "build" / provider / f"{document}{suffix}.fls"
         if not recorder.is_file():
             raise ValueError(f"missing build recorder: {recorder.relative_to(root)}")
         cwd = root / "src" / provider
+        recorded: set[Path] = set()
         for line in recorder.read_text().splitlines():
             if line.startswith("PWD "):
                 cwd = Path(line[4:])
@@ -141,6 +143,23 @@ def render_inputs(root: Path, provider: str, document: str) -> dict[str, str]:
                 path = (cwd / path).resolve() if not path.is_absolute() else path.resolve()
                 if path.is_relative_to(root / "src") and path.is_file():
                     paths.add(path)
+                    recorded.add(path)
+        if formatted:
+            entry = leaf / ("main.tex" if mode == "research" else mode + ".tex")
+            semantic = include_graph(entry, leaf, root / "src" / provider)
+            unexpected = sorted(
+                path.relative_to(root).as_posix() for path in recorded - semantic
+                if path.suffix in {".tex", ".sty", ".cls", ".bib"}
+            )
+            missing = sorted(path.relative_to(root).as_posix() for path in semantic - recorded)
+            if unexpected or missing:
+                details = []
+                if unexpected:
+                    details.append("recorder-only: " + ", ".join(unexpected))
+                if missing:
+                    details.append("semantic-only: " + ", ".join(missing))
+                raise ValueError(f"{mode} recorder disagrees with the semantic source graph ("
+                                 + "; ".join(details) + ")")
     for path in paths:
         validate_liturgical_family(leaf, root / "src" / provider, path)
     return {str(path.relative_to(root)): digest(path)
@@ -209,6 +228,8 @@ def research_dependencies(root: Path, provider: str, document: str) -> set[Path]
     declared = tomllib.loads(record.read_text()).get("paths")
     if not isinstance(declared, list) or any(not isinstance(item, str) for item in declared):
         raise ValueError("research/review-dependencies.toml requires paths = [repository-relative evidence paths]")
+    canonical_owner = (postconciliar_shared_owner(root, provider, document)
+                       if "/postconciliar/" in document else None)
     paths, shared_owner = set(), False
     for name in declared:
         path = root / name
@@ -217,7 +238,9 @@ def research_dependencies(root: Path, provider: str, document: str) -> set[Path]
         validate_liturgical_family(leaf, root / "src" / provider, path)
         if not path.resolve().is_relative_to(root / "src"):
             raise ValueError("evidence dependencies must name tracked source owners under src/")
-        if "/propers/temporal/shared/" in name or "/propers/general-calendar/shared/" in name:
+        resolved = path.resolve()
+        if canonical_owner is not None and (resolved == canonical_owner
+                                             or resolved.is_relative_to(canonical_owner)):
             shared_owner = True
         selected = [path] if path.is_file() else [item for item in path.rglob("*") if item.is_file()]
         if not selected:
@@ -228,6 +251,76 @@ def research_dependencies(root: Path, provider: str, document: str) -> set[Path]
     if "/postconciliar/" in document and not shared_owner:
         raise ValueError("postconciliar research must bind its edition's canonical shared Missal formulary owner")
     return paths
+
+
+def postconciliar_shared_owner(root: Path, provider: str, document: str) -> Path:
+    """Resolve one exact edition owner from the target's edition registry row."""
+    parts = Path(document).parts
+    if (len(parts) != 7 or parts[:3] != ("liturgy", "roman-rite", "postconciliar")
+            or parts[4] != "propers" or parts[5] not in {"temporal", "general-calendar"}):
+        raise ValueError("postconciliar document must identify one edition and formulary family")
+    edition_root = root / "src" / provider / Path(*parts[:5])
+    registry = edition_root / "registry/formula-dispositions.md"
+    if not registry.is_file():
+        raise ValueError("postconciliar edition has no formula-dispositions registry")
+    slug = parts[6]
+    lines = registry.read_text().splitlines()
+
+    def cells(line: str) -> list[str]:
+        stripped = line.strip()
+        if not stripped.startswith("|") or not stripped.endswith("|"):
+            return []
+        return [cell.strip() for cell in stripped[1:-1].split("|")]
+
+    rows = []
+    for index, line in enumerate(lines[:-1]):
+        header = cells(line)
+        normalized = [re.sub(r"[*_`]", "", cell).strip().casefold()
+                      for cell in header]
+        if normalized.count("full publication slug") != 1:
+            continue
+        separator = cells(lines[index + 1])
+        if (len(separator) != len(header)
+                or any(re.fullmatch(r":?-{3,}:?", cell) is None for cell in separator)):
+            continue
+        slug_column = normalized.index("full publication slug")
+        for row_line in lines[index + 2:]:
+            row = cells(row_line)
+            if not row:
+                break
+            if len(row) == len(header) and row[slug_column] == f"`{slug}`":
+                rows.append(row_line)
+    if len(rows) != 1:
+        raise ValueError(
+            "postconciliar formula-dispositions registry must contain one exact target slug row")
+    candidates = set()
+    for row in rows:
+        for target in re.findall(r"\[[^]]+\]\(([^)]+)\)", row):
+            resolved = (registry.parent / target).resolve()
+            if "/shared/" in resolved.as_posix() and resolved.name == "verified.md":
+                candidates.add(resolved)
+    if len(candidates) != 1:
+        raise ValueError(
+            "postconciliar formula-dispositions registry must name one exact canonical shared owner")
+    record = candidates.pop()
+    if record.parent.name != "propers":
+        raise ValueError("canonical shared owner must end in propers/verified.md")
+    owner = record.parent.parent
+    family_root = (edition_root / parts[5] / "shared").resolve()
+    if not owner.is_relative_to(family_root):
+        raise ValueError("canonical shared owner is outside the target formulary family")
+    relative = owner.relative_to(family_root).parts
+    if parts[5] == "general-calendar":
+        valid = len(relative) == 2 and relative[0] == "formularies"
+    else:
+        valid = ((len(relative) == 2 and relative[0] == "formularies")
+                 or (len(relative) == 3 and relative[:2] == ("ordinary-time", "weeks")
+                     and re.fullmatch(r"\d{2}", relative[2]) is not None))
+    if not valid:
+        raise ValueError("canonical shared owner has no registry-authorized layout")
+    if not record.is_file():
+        raise ValueError(f"missing canonical shared owner: {record.relative_to(root)}")
+    return owner
 
 
 def chronology_computation_inputs(root: Path, provider: str, document: str) -> dict[str, str]:
@@ -294,24 +387,15 @@ def review_inputs(root: Path, provider: str, document: str, review: str, *,
         for item in selected:
             paths.add(leaf / item["path"])
             paths.update(leaf / name for name in item.get("references", []))
-        # Include shared styles and literal neutral inputs too: a later author
-        # must not change the earlier reviewed rendering through shared files.
-        pending = list(paths)
-        seen = set()
-        while pending:
-            path = pending.pop()
-            if path in seen:
-                continue
-            seen.add(path)
-            for name in re.findall(r"\\(?:input|include)\s*\{([^{}]+)\}", path.read_text()):
-                if "\\" in name or "#" in name:
-                    continue
-                for base in (root / "src" / provider, root / "src"):
-                    target = base / (name if Path(name).suffix else name + ".tex")
-                    if target.is_file():
-                        paths.add(target)
-                        pending.append(target)
-                        break
+        # Lane evidence is research-owned, but a study acceptance also binds the
+        # exact evidence map it reviewed.
+        if mode == "research":
+            paths.update(lane_source_paths(data, leaf))
+        # References can own further literal TeX dependencies. Use the same
+        # parser as the component gate and web converter for their closure.
+        for path in list(paths):
+            if path.suffix == ".tex":
+                paths.update(include_graph(path, leaf, root / "src" / provider))
         for path in list(paths):
             if path.name != "generation-metadata.tex":
                 continue

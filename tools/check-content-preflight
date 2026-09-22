@@ -2237,7 +2237,14 @@ def reader_facing(leaf: Path, edition: str = LEAF_EDITION) -> list[Path]:
                 # An early phase may legitimately precede either companion.
                 continue
             paths.update(include_graph(entry, leaf, provider_root))
-        return sorted(path for path in paths if path.name not in NOT_PROSE)
+        # The component checker's semantic graph deliberately retains shared
+        # engine/template inputs for sealing, recorder reconciliation, and web
+        # conversion. Content preflight reads this leaf's reader-facing prose;
+        # shared graph members are neither prose owned here nor paths that its
+        # diagnostics can express relative to the leaf.
+        owner = leaf.resolve()
+        return sorted(path for path in paths
+                      if path.is_relative_to(owner) and path.name not in NOT_PROSE)
     seen: set[Path] = set()
     order: list[Path] = []
     root = leaf.resolve()

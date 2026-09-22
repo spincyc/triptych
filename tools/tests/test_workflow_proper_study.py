@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 import _proper_study as study
 from _workflow import WorkflowEngine, WorkflowError
+from tools.tests.test_proper_components_v2 import fixture as component_fixture, save as save_components
 
 TLM = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"
 PC = ("liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/"
@@ -346,6 +347,92 @@ class ResearchSealTests(unittest.TestCase):
             "paths = [" + json.dumps(str(opposite.relative_to(self.root))) + "]\n")
         with self.assertRaisesRegex(ValueError, "boundary"):
             self.seal()
+
+    def test_lane_source_mutation_changes_the_study_seal(self):
+        data, manifest, _ = component_fixture(self.root)
+        save_components(data, manifest)
+        leaf = manifest.parent
+        for entry in study.EDITIONS:
+            path = leaf / ("main.tex" if entry == "research" else entry + ".tex")
+            path.write_text(path.read_text().replace("\\input{proper/generation-metadata}\n", ""))
+        before = study.review_inputs(self.root, "gpt", "proper", "study")
+        lane_source = leaf / "research/sources.md"
+        lane_source.write_text("Changed evidence map after study review.\n")
+        self.assertNotEqual(before, study.review_inputs(self.root, "gpt", "proper", "study"))
+
+
+class PostconciliarOwnerTests(unittest.TestCase):
+    EDITION = "roman-missal-third-edition-en-us-2011"
+
+    def setUp(self):
+        temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary.cleanup)
+        self.root = Path(temporary.name)
+
+    def fixture(self, family: str, slug: str, owner: str) -> tuple[str, Path]:
+        document = (f"liturgy/roman-rite/postconciliar/{self.EDITION}/"
+                    f"propers/{family}/{slug}")
+        leaf = self.root / "src/gpt" / document
+        (leaf / "research").mkdir(parents=True)
+        proper_root = self.root / "src/gpt/liturgy/roman-rite/postconciliar" / self.EDITION / "propers"
+        record = proper_root / owner / "propers/verified.md"
+        record.parent.mkdir(parents=True)
+        record.write_text("Canonical edition formulary owner.\n")
+        registry = proper_root / "registry/formula-dispositions.md"
+        registry.parent.mkdir(parents=True, exist_ok=True)
+        relative = Path("..") / owner / "propers/verified.md"
+        registry.write_text(
+            "| Formula | Full publication slug | Canonical owner |\n"
+            "| --- | --- | --- |\n"
+            f"| `FORMULA` | `{slug}` | [Owner]({relative.as_posix()}) |\n"
+        )
+        (leaf / "research/review-dependencies.toml").write_text(
+            "paths = [" + json.dumps(record.relative_to(self.root).as_posix()) + "]\n"
+        )
+        return document, record
+
+    def test_exact_temporal_and_general_calendar_owners_are_accepted(self):
+        cases = (
+            ("temporal", "pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+             "temporal/shared/ordinary-time/weeks/25"),
+            ("general-calendar", "pc-r07-all-saints-abc",
+             "general-calendar/shared/formularies/pc-r07-all-saints"),
+        )
+        for family, slug, owner in cases:
+            with self.subTest(family=family):
+                document, record = self.fixture(family, slug, owner)
+                self.assertIn(record, study.research_dependencies(self.root, "gpt", document))
+
+    def test_similarly_named_neutral_path_cannot_spoof_the_canonical_owner(self):
+        document, _ = self.fixture(
+            "temporal", "pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+            "temporal/shared/ordinary-time/weeks/25",
+        )
+        fake = self.root / "src/sources/unrelated/propers/temporal/shared/not-an-owner.txt"
+        fake.parent.mkdir(parents=True)
+        fake.write_text("Unrelated provider-neutral record.\n")
+        leaf = self.root / "src/gpt" / document
+        (leaf / "research/review-dependencies.toml").write_text(
+            "paths = [" + json.dumps(fake.relative_to(self.root).as_posix()) + "]\n"
+        )
+        with self.assertRaisesRegex(ValueError, "canonical shared Missal formulary owner"):
+            study.research_dependencies(self.root, "gpt", document)
+
+    def test_target_slug_mentioned_in_another_rows_qualification_is_not_its_row(self):
+        slug = "pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"
+        document, record = self.fixture(
+            "temporal", slug, "temporal/shared/ordinary-time/weeks/25",
+        )
+        registry = record.parents[6] / "registry/formula-dispositions.md"
+        registry.write_text(
+            "| Full publication slug | Canonical owner | Qualification |\n"
+            "| --- | --- | --- |\n"
+            "| `pc-s50-twenty-fourth-sunday-in-ordinary-time-year-a` | "
+            "[Owner](../temporal/shared/ordinary-time/weeks/25/propers/verified.md) | "
+            f"See `{slug}` for comparison. |\n"
+        )
+        with self.assertRaisesRegex(ValueError, "exact target slug row"):
+            study.postconciliar_shared_owner(self.root, "gpt", document)
 
 
 

@@ -51,11 +51,14 @@ postconciliar family is rooted at
 `src/<provider>/liturgy/roman-rite/postconciliar/<edition-locale>/propers/`.
 Keep context, evidence judgments, all three authored documents, and durable
 reviews beneath the owning leaf. A postconciliar shared Missal formulary stays
-beneath that same postconciliar edition tree. Build, installed PDF, and web
-paths mirror the respective canonical identity. There is no common Sunday
-leaf above these roots. Check indirect dependencies as well as direct imports:
-this boundary covers every oration, chant, reading, and optional branch, not
-only the Gospel or the final document title.
+beneath that same postconciliar edition tree. The edition's formula-dispositions
+row names its exact canonical shared owner; the research dependency must equal
+that directory or descend from it. A provider-neutral or similarly named
+`propers/.../shared/` path does not satisfy this requirement. Build, installed
+PDF, and web paths mirror the respective canonical identity. There is no common
+Sunday leaf above these roots. Check indirect dependencies as well as direct
+imports: this boundary covers every oration, chant, reading, and optional
+branch, not only the Gospel or the final document title.
 
 ## One owner, three reading experiences
 
@@ -94,6 +97,11 @@ connections are editorial synthesis. An author need not comment on every
 proper; do not attribute the editor's complete Mass synthesis to an author who
 only explained one passage. A catena supplies leads, not proof that its named
 author or underlying work has been checked.
+
+Every lane's declared `sources` path belongs beneath the same leaf's
+`research/` directory. Its bytes are research evidence and are also included
+in the immutable study-review input seal. Moving the record outside that owner
+or changing it after either acceptance invalidates the applicable review.
 
 ### The formulary is a compilation
 
@@ -391,6 +399,15 @@ conditionals or computed paths. Concise components retain their literal zref
 markers and named presentation roles. Page positions and extent remain governed
 above, not inferred from a template call. Existing source prose is preserved
 in a formatting migration; new chronology still requires a fresh source review.
+
+The component gate, content-review seal, TeX recorder audit, and canonical web
+conversion use one recursively resolved semantic source graph. A computed or
+otherwise executable file-input mechanism outside its literal graph fails
+before review, and recorder-only or converter-only sources fail the downstream
+gate. Leaf sources may configure only the documented title/running-head fields;
+they must not define, alias, redefine, or undefine shared format commands or
+either control sequence of a shared environment. Generated chronology helpers
+are the sole narrowly checked definition exception.
 
 Full-page inspection, log and extraction checks, embedded-font checks, metadata,
 substantive-text preservation and build/install byte identity remain mandatory.

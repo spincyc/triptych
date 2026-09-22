@@ -127,7 +127,7 @@ COMMAND_RE = re.compile(r"\\(?:([A-Za-z@]+)|.)", re.DOTALL)
 ENVIRONMENT_RE = re.compile(r"\\(?:begin|end)\s*\{([A-Za-z@]+\*?)\}")
 COMMENT_RE = re.compile(r"(?<!\\)%.*")
 MATH_RE = re.compile(r"\$\$.*?\$\$|\$[^$]*\$|\\\\\(.*?\\\\\)|\\\\\[.*?\\\\\]", re.DOTALL)
-INPUT_RE = re.compile(r"\\input\s*\{([^{}]+)\}")
+INPUT_RE = re.compile(r"\\(?:input|include)\s*\{([^{}]+)\}")
 TITLEPAGE_RE = re.compile(r"\\begin\{titlepage\}.*?\\end\{titlepage\}", re.DOTALL)
 PRINT_EDITION_BRANCH_RE = re.compile(
     r"\\ifdefined\\TriptychPrintEdition(.*?)\\else(.*?)\\fi",
@@ -289,6 +289,16 @@ def flatten(text: str) -> str:
     return re.sub(r"\s+", " ", text.replace("\\", "")).strip()
 
 
+def clean_markdown_line_endings(markdown: str) -> str:
+    """Preserve hard breaks as HTML while emitting no trailing whitespace."""
+    terminal_newline = markdown.endswith("\n")
+    lines = []
+    for line in markdown.splitlines():
+        match = re.search(r"[ \t]{2,}$", line)
+        lines.append((line[:match.start()] + "<br>") if match else line.rstrip(" \t"))
+    return "\n".join(lines) + ("\n" if terminal_newline else "")
+
+
 def strip_for_scan(text: str) -> str:
     return MATH_RE.sub(" ", COMMENT_RE.sub("", text))
 
@@ -441,13 +451,18 @@ def assemble(
         out.append(text[index : match.start()])
         index = match.end()
         name = match.group(1).strip()
-        # The shim replaces the shared preamble; every other include is content
-        # or a definition the document needs.
+        # The shim replaces the shared preamble. Tests and historical sources
+        # need not provide a physical copy; schema-2 graph validation already
+        # requires and records it when the current contract applies.
         if name.endswith("common/preamble"):
+            target = resolve_input(name, provider)
+            if seen is not None and target is not None:
+                seen[target.resolve()] = target.read_text(encoding="utf-8")
             continue
         target = resolve_input(name, provider)
         if target is None:
             raise ConversionError(f"cannot resolve \\input{{{name}}}")
+        target = target.resolve()
         nested = target.read_text(encoding="utf-8")
         nested = select_web_branches(nested, proper=proper)
         if seen is not None:
@@ -1094,16 +1109,38 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         raise ConversionError(f"no such document: {main}")
     source = main.read_text(encoding="utf-8")
     proper = (main.parent / "proper-components.toml").is_file()
+    components = None
+    semantic_graph = None
+    if proper:
+        components = tomllib.loads((main.parent / "proper-components.toml").read_text())
+        if components.get("schema") == 2 and components.get("format_contract") == "propers-format-v1":
+            from _proper_components import include_graph
+            try:
+                semantic_graph = include_graph(main, main.parent, SRC / provider)
+            except ValueError as exc:
+                raise ConversionError(f"schema-2 semantic source graph rejected: {exc}") from exc
     source = select_web_branches(source, proper=proper)
     head, tail = split_document(source)
     # Preamble includes supply definitions but never content, so they are not
     # scanned; only what reaches the body can lose scholarship.
-    preamble = assemble(head, provider, None, proper=proper)
+    preamble_sources: dict[Path, str] = {}
+    preamble = assemble(head, provider, preamble_sources, proper=proper)
     sources: dict[Path, str] = {main: tail}
     body = assemble(tail, provider, sources, proper=proper)
+    if semantic_graph is not None:
+        assembled_graph = {main.resolve(), *preamble_sources, *sources}
+        if assembled_graph != semantic_graph:
+            missing = sorted(path.as_posix() for path in semantic_graph - assembled_graph)
+            extra = sorted(path.as_posix() for path in assembled_graph - semantic_graph)
+            details = []
+            if missing:
+                details.append("not assembled: " + ", ".join(missing))
+            if extra:
+                details.append("not accepted: " + ", ".join(extra))
+            raise ConversionError("schema-2 web graph disagrees with the semantic source graph ("
+                                  + "; ".join(details) + ")")
     required_anchors = None
     if proper:
-        components = tomllib.loads((main.parent / "proper-components.toml").read_text())
         if components.get("schema") == 2:
             from _proper_components import KEY, strings
             try:
@@ -1178,7 +1215,7 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         raise ConversionError(f"pandoc failed:\n{result.stderr.strip()}")
     if MATH_WARNING_RE.search(result.stderr):
         raise ConversionError(f"math left as raw TeX:\n{result.stderr.strip()}")
-    converted = result.stdout
+    converted = clean_markdown_line_endings(result.stdout)
     if required_anchors is not None and toc_count:
         converted_toc_count = converted.count(WEB_TOC_SENTINEL)
         if converted_toc_count != toc_count:
@@ -1230,7 +1267,7 @@ def convert(provider: str, leaf: str, out: Path = OUT) -> Path:
         raise ConversionError("\n".join(failures))
     destination = out / provider / f"{leaf}.md"
     destination.parent.mkdir(parents=True, exist_ok=True)
-    destination.write_text(f"{heading}\n{markdown}", encoding="utf-8")
+    destination.write_text(clean_markdown_line_endings(f"{heading}\n{markdown}"), encoding="utf-8")
     return destination
 
 
