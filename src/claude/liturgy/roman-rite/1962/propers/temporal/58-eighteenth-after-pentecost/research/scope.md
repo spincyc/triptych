@@ -68,6 +68,24 @@ paradise sentence in it is **Ambrose's**, *Expositio in Lucam* V.14. The Catena'
 V.10. The pass also re-read Augustine, *De cons. evang.* II.25.58, against the
 premise that Hilary's allegory needs the town left unidentified, and withdrew that
 premise. §§ 3, 3.5, 4.1–4.4, 5.2, 6.3 and 10 carry the result.
+
+**Re-entered a fifth time on 2026-09-22**, after research review (RES-028) found
+that the fourth pass's insertion of an Ambrose paragraph into
+`research/interpretations.md` § 2.2 had left Aquinas's penitential tropology of
+Mt 9:6 (*per contritionem … per satisfactionem … in domum aeternitatis*) reading
+as Ambrose's. The sentence is restored to Aquinas by name, § 2.2 now gives Ambrose
+only what *Exp. in Lc.* V.10–15 says (his own reading of the command, V.14, is the
+body lifted and the return to paradise), and §§ 2.2, 2.5 and 3.2 of that record and
+§§ 3.5, 4.2 and 4.3 here were re-read for any other sentence the insertions had
+moved under another author; the only other was § 3.2's "refuses exactly that",
+now naming Jerome and Ambrose. The pass also read Ambrose V.15 and re-read, on the
+page images or in the registered deliveries, Bede's column markers, Rabanus's col.
+871, Schuster p. 169, the continuation's p. 405, the French preface's date, the
+Würzburg gospel list's *Ebd. IIII*, Morin's numbering of the Ember Saturday
+lessons and Honorius IV.84's Alleluia, and corrected the slips the review's
+advisories named; and it brought the study-facing permissions into line with the
+profile's *Liturgical commentators* rule (decision D11). §§ 2.7, 3.5, 3.11, 4.2,
+4.3, 4.6, 6.3 and 10 carry the result.
 `ARGS.research_handoff` is `none`; no handoff dossier was supplied. Nothing below
 is taken from the other provider's leaves, from any postconciliar record, or from
 this provider's neighbouring Sundays, except where a neighbouring Sunday's printed
@@ -451,7 +469,7 @@ layer only.
 | Witness | Where 1 Cor 1:4–8 stands | Where Mt 9:1–8 stands |
 | --- | --- | --- |
 | **Würzburg epistle list**, Morin, *Revue Bénédictine* 27 (1910), item **CLIII**, printed p. 63 (layer lines 3913–3915; leaf n74) | Immediately after the September Ember Saturday's lessons, as the second lesson (*cuius supra*) under *In nat. angeli*, with the incipit *FF gratias ago deo meo semper pro uobis in gratia dei usq. sine cremine in die aduentus dni ni ihu xpi* — the 1962's own extent. **Morin's note on CLIII**: *Cette péricope ne paraît point se rattacher spécialement à la dédicace de S. Michel : dans le lectionnaire d'Alcuin, comme au missel romain actuel, elle est assignée au dimanche qui suit les Quatre-Temps.* No Sunday between the Ember Saturday and the feast is given a lesson | — (an epistle list) |
-| **Würzburg gospel list**, Morin, *Revue Bénédictine* 28 (1911), printed pp. 315–316 (layer lines 19716–19789; leaves n326, n327) | — (a gospel list) | *EBD. III POST NT. SCI. CYPRIANI … Mt. k. LXX. Ascendens Ihs. in nauicula transfretauit usq. glorificauerunt qui dedit talem potestatem hominib.* The Ember week falls between *Ebd. I post nt. sci. Cypriani* (Lk 14:1) and *Ebd. II*, the Sunday *ad scos Cosmae et Damiano*, whose gospel is Mt 22 (*Accesserunt ad Ihm. sadducaei*; Morin's note 3 on its ending). *Ebd. IIII* is Mt 22:2, the wedding feast |
+| **Würzburg gospel list**, Morin, *Revue Bénédictine* 28 (1911), printed pp. 315–316 (layer lines 19716–19810; leaves n326, n327) | — (a gospel list) | *EBD. III POST NT. SCI. CYPRIANI … Mt. k. LXX. Ascendens Ihs. in nauicula transfretauit usq. glorificauerunt qui dedit talem potestatem hominib.* The Ember week falls between *Ebd. I post nt. sci. Cypriani* (Lk 14:1) and *Ebd. II*, the Sunday *ad scos Cosmae et Damiano*, whose gospel is Mt 22 (*Accesserunt ad Ihm. sadducaei*; Morin's note 3 on its ending). *Ebd. IIII post nt. sci. Cypriani*, lower on p. 316 after the October and early-November feasts (layer line 19808), is Mt 18:23–35, *Simile est regnum cælorum homini regi qui uoluit rationem usq. fratri suo de cordibus uestris*, read on leaf n327. (An earlier version of this cell gave Mt 22:2.) |
 | **Comes of Murbach**, Wilmart, *Revue Bénédictine* 30 (1913), printed p. 50 (layer lines 3641–3659; leaf n63) | Item CXXXVII, ***Ebd. XVIIII post pentect.***, *I Cor. Gratias ago [I, 4]*, with *Mat. … Accesserunt ad I. Sadducaei [XXII, 34]* — the first Sunday after the Ember week in that list | Item CXXXVIIII, *Ebd. XX post pentecost.*, *Eph. Renovamini autem [IV, 23]* with *Mat. LXX Ascendens I. in naviculam [IX, 1]* |
 | ***Liber Comitis*** printed among Jerome's spuria, PL 30 (tracked layer lines 41994–42080; no page image opened) | *Dominica mensis VII*, the Sunday **before** the September Ember week: *Fratres, gratias ago Deo meo, usque adventus Domini nostri Jesu Christi*, with Mt 22 (*Accedentes ad Jesum Sadducei*) | *Dominica mensis VII* after the Ember Saturday: *Fratres, renovamini spiritu mentis vestrae* (Eph 4:23) with *Ascendens Jesus in navicula, usque potestatem talem hominibus* |
 
@@ -479,12 +497,12 @@ commentator's own heading and Gospel are:
 | Commentator (standing, per `src/sources/inventories/author-standing-v1.toml`) | His heading | His Gospel for the Mass with *Da pacem* and 1 Cor 1 | Where Mt 9:1–8 stands in his book |
 | --- | --- | --- | --- |
 | **Rupert of Deutz**, *De div. off.* XII.18–19 (ecclesiastical writer) | *Dominica decima octava post Pentecosten* | Mt 23, the chair of Moses | XII.19, the Nineteenth, with Eph 4 and *Salus populi* |
-| **Honorius**, *Gemma animae* IV.84–86 (ecclesiastical writer) | *Dominica decima octava, «Da pacem», sub lege* | Mt 22, the two precepts | IV.86, the Nineteenth, *Salus populi* |
+| **Honorius**, *Gemma animae* IV.84–86 (ecclesiastical writer) | *Dominica decima octava, «Da pacem», sub lege* | Mt 22, the two precepts; and his Alleluia is ***Laudate Dominum*** (IV.84, PL 172 col. 723A, read on leaf n361; Migne's parenthesis refers it to *Psal. cxxxiv*), not the 1962's *Timebunt gentes* | IV.86, the Nineteenth, *Salus populi* |
 | **Sicard of Cremona**, *Mitrale* VIII.18–19 (ecclesiastical writer) | *Dominica decima octava post Pentecosten* | Mt 22 (*Accesserunt*), *vel secundum alios* Mt 23 | VIII.19, the Nineteenth |
 | **William Durandus**, *Rationale* VI.135–136 (ecclesiastical writer) | *De dominica decimaoctava post Pentecosten* | *in quibusdam Ecclesiis* Mt 23; *Euangelium in quibusdam Ecclesiis* Mt 22 | VI.136, the Nineteenth, *in quibusdam Ecclesiis* |
 | **Berno of Reichenau**, *Libellus* V (ecclesiastical writer) | the vacant Sunday *finito septimi mensis jejunio* | Mt 23, the chair of Moses (he names no Epistle) | *In sequenti Dominica*, with *Salus populi* |
 | **Bl. Ildefonso Schuster**, *The Sacramentary* III pp. 167–170 (Blessed) | *Eighteenth Sunday after Pentecost. Tertia post natale Sancti Cypriani* | **Mt 9:1–8** — every element the 1962's | — |
-| **The continuation of Guéranger's *Liturgical Year***, Time after Pentecost II (1909), pp. 393–409 (its writer an ecclesiastical writer; § 3.11) | *The Eighteenth Sunday after Pentecost* | **Mt 9:1–8** | — |
+| **The continuation of Guéranger's *Liturgical Year***, Time after Pentecost II (written in the early 1880s; English printing of 1909 read), pp. 393–409 (its writer an ecclesiastical writer; § 3.11) | *The Eighteenth Sunday after Pentecost* | **Mt 9:1–8** | — |
 
 So five registered commentators, the earliest of them Berno in the eleventh century
 (`composed` on his work record) and the latest Durandus (d. 1296, by the standing
@@ -499,6 +517,18 @@ seated on the chair of Moses*, and cites
 Rupert for it; that dating, and its qualifier *in many Churches of the west*, are
 the continuation's (or its translator's), and neither Rupert's text nor anything
 else here dates the usage.
+
+**What the studies may do with this table (decision D11, the profile's *Liturgical
+commentators* rule).** The five medieval commentators' other Gospels, their other
+chants (Honorius's and Durandus's Alleluia, Rupert's and Berno's Offertory verses)
+and the Sundays at which their books put Mt 9 are recorded here so that the studies
+assert nothing about the formulary's history. They are scope-record material. The
+expansive study may give them at most one clause of its scope appendix; the
+readings, the concise study and the homily do not mention them. In reader-facing
+prose each of the five is cited only for what he says of an element this formulary
+shares, and never in support of a connection between that element and Mt 9:1–8,
+which his Mass did not set beside it. What he says of Mt 9 where his book puts it is
+reception of that Gospel, cited at that locus without naming the Sunday.
 
 **Rupert, read on the page images** of Migne, PL 170, cols. 325–328 (Internet
 Archive `patrologiaecursu0170mign`, leaves n168 and n169, unregistered, digests in
@@ -528,7 +558,9 @@ What this adds to § 2.5, as documented fact and within its bound:
 - In the books the lists and five of the seven commentators witness, the paralytic
   of Mt 9 stood apart from this Sunday's Epistle — in the two Frankish *comites*
   and in all five commentators' books, one Sunday later than in the 1962 — and this
-  Sunday's chants and Epistle stood with a Gospel from Mt 22 or Mt 23. So the
+  Sunday's Introit, Gradual, Offertory antiphon and Communion, with its Epistle in
+  all but Berno, who names none, stood with a Gospel from Mt 22 or Mt 23; Honorius
+  and Durandus give another Alleluia, *Laudate Dominum*. So the
   Gospel, like the orations and the chants, travelled separately from the rest of
   the formulary. Schuster and the continuation read the 1962's pairing, and the
   gospel list of Würzburg puts Mt 9 at the Sunday Schuster names.
@@ -541,7 +573,7 @@ What this adds to § 2.5, as documented fact and within its bound:
   prayer to see God's glory, citing *Exod. xxxiii, 13–23*; and the continuation
   prints the ancient verses in full (vol. XI, printed pp. 407–408). The Würzburg
   epistle list's Ember Saturday lessons include Ex 32:11–14, *orauit moyses dnm
-  deum suum … placatus est dns* (item CLII, RB 27 printed p. 62, layer line 3851, read in the layer only), the
+  deum suum … placatus est dns* (item CL by Morin's numbering, which his notes on CXLVI, CXLVII and CLI fix; RB 27 printed p. 62, layer line 3851, read in the layer only; an earlier version said CLII), the
   intercession the verses sing. The verses' own scriptural sources were not traced
   further here. The 1962 prints the antiphon alone.
 - The continuation (vol. XI, printed pp. 393–394) records that this Sunday follows
@@ -1087,8 +1119,13 @@ Catena, or Aquinas's lectura, departs from them. The Catena is still quoted in
   as *Qui dedit talem potestatem hominibus, ut fiant filii Dei*, with Jn 1:12.
   **Those words are Aquinas's, not Hilary's.** Hilary names remission of sins
   first among the gifts, so "adoption, not absolution" misstates him.
-- **Direct, later, a saint: Rabanus Maurus**, *Commentariorum in Matthaeum*
-  lib. III, at Mt 9:1–8, **PL 107 (Paris, 1864), cols. 870–873**. It was read on the
+- **Direct, later: Rabanus Maurus**, *Commentariorum in Matthaeum* lib. III, at
+  Mt 9:1–8, **PL 107 (Paris, 1864), cols. 870–873**. The author-standing registry
+  has no row for him, so this record claims no standing for him (an earlier version
+  called him "a saint"): `saint` is `commentary-work-index`'s role label for his
+  row, not a registry fact, and the running head of the PL 107 page read here is
+  *B. RABANI MAURI*. He carries no reading, and is read as a compiler whose sources
+  are traced. It was read on the
   page images at native 300 ppi: artifact PDF pp. 439–441 of
   `artifact.jacques-paul-migne.patrologia-latina-volume-107.1864-paris.internet-archive-pdf-249f1795`,
   retained as `…columns-869-874-facsimile-9d084bb1`. The scan of col. 873 is faint
@@ -1103,13 +1140,26 @@ Catena, or Aquinas's lectura, departs from them. The Catena is still quoted in
     suggerant*. The four bearers are the four Gospels or the four virtues. The
     sentence is Bede's own, *In Lucam* II on Lk 5:18 (PL 92, col. 387A). Then
     Jerome's *O mira humilitas* (*Hieron.*), Augustine on *fili*/*homo* (*Aug.*),
-    and, under *(Joan. Chrysost.)*, *Intuendum sane quantum propria cujusque fides
-    apud Deum valeat, ubi tantum valuit aliena … Merito Christus offerentium
-    fidem respicit* (cols. 870–871).
+    and, under *(Joan. Chrysost.)* (col. 871A–B, re-read on the page image this
+    round), *Intuendum sane quantum propria cujusque fides apud Deum valeat, ubi
+    tantum valuit aliena, ut totus homo repente, hoc est exterius interiusque, jam
+    salvatus exsurgeret, aliorumque merito aliis relaxarentur errata … Merito
+    Christus offerentium fidem respicit*. **The opening sentence is Bede's, not
+    Chrysostom's**: it stands in *In Lucam* II on Lk 5:20, between the
+    transcription's (0387D) and (0388A) markers (PL 92, cols. 387D–388A, *quanti …
+    tanti* and *laxarentur*), and Bede builds it on Ambrose, *Exp. in Lc.* V.11,
+    *aliorum merito ignoscit aliis … aliis relaxat errata*. It must not be cited as
+    Chrysostom's. The rest of the passage (*Audit veniam et tacet paralyticus …
+    Merito Christus offerentium fidem respicit, et vecordiam sic jacentis
+    respicit*) was not found in Bede's *In Lucam* and is not traced here; it takes
+    the side opposite to Chrysostom's own in *Hom. in Matth.* 29, where the sick
+    man shared the faith (§ 4.2).
   - v. 3 (col. 871), inside a passage headed *(Hieron.)*: *Sed, licet nescientes,
     verum dicebant, quia nemo dimittere peccata, nisi Deus, potest: qui per eos
     quoque dimittit, quibus dimittendi dedit potestatem.* That sentence stands in
-    Bede, *In Lucam* II (PL 92, col. 388B, *tribuit* for *dedit*), and before him
+    Bede, *In Lucam* II on Lk 5:21 (PL 92, col. 388A by the transcription's
+    markers: it stands after (0388A) and before (0388B); *tribuit* for *dedit*;
+    an earlier version said 388B), and before him
     in Ambrose, *Exp. in Lc.* V.13 (below). The siglum does not identify it.
   - v. 6 (col. 873), after a *(Joan. Chr.)* passage and with no fresh siglum:
     *Spiritaliter autem, surgere de lecto est animam se a carnalibus desideriis,
@@ -1145,9 +1195,10 @@ Catena, or Aquinas's lectura, departs from them. The Catena is still quoted in
   caelestis remedio reformentur. Sunt igitur monitores mentis …*, is **Ambrose,
   *Exp. in Lc.* V.10**, on the paralytic of Lk 5:18–19.
 - **Direct, a Father and Doctor, on the parallel pericope: Ambrose**, *Expositio
-  Evangelii secundum Lucam* V.10–14, on Lk 5:18–24. It was read in the tracked
+  Evangelii secundum Lucam* V.10–15, on Lk 5:18–26. It was read in the tracked
   Wikisource transcription of PL 15, not on page images. The transcription's
-  column markers put the passage at cols. 1357–1358, and its SHA-256
+  column markers put V.10–14 at cols. 1357–1358 and carry V.15 into col. 1359
+  (the part of V.15 quoted below is in col. 1358), and its SHA-256
   `fde2303a…0ac52` was recomputed and matched. It is exegesis of Luke's paralytic,
   which the harmonists identify with Matthew's; it is not a comment on Mt 9.
   - V.10: the sick man must *petendae precatores salutis … adhibere*, *monitores
@@ -1156,13 +1207,25 @@ Catena, or Aquinas's lectura, departs from them. The Catena is still quoted in
     ignoscit aliis, et dum alios probat, aliis relaxat errata … Si gravium
     peccatorum diffidis veniam, adhibe precatores, adhibe Ecclesiam quae pro te
     precetur* (§ 4.2).
-  - V.13, on Lk 5:21–23: *Quamvis igitur magnum sit hominibus peccata dimittere
+  - V.13, under the lemma *(Vers. 23.) Quid est facilius dicere*, recalling the
+    scribes' question of v. 21: *Quamvis igitur magnum sit hominibus peccata dimittere
     (quis enim potest peccata dimittere nisi solus Deus, qui per eos quoque
     dimittit, quibus dimittendi tribuit potestatem); tamen multo divinius est
     resurrectionem donare corporibus* (§ 4.3).
-  - V.14, on v. 24: *domum suam repetere, hoc est, ad paradisum redire censetur;
-    ea est enim vera domus, quae hominem prima suscepit: non jure amissa, sed
-    fraude.*
+  - V.14, on v. 24: the bed is the human body, bidden to be lifted (*quid est
+    aliud, nisi quia humanum jubetur corpus attolli?*), a bed of pain become a bed
+    of rest; *domum suam repetere, hoc est, ad paradisum redire censetur; ea est
+    enim vera domus, quae hominem prima suscepit: non jure amissa, sed fraude.* No
+    contrition or satisfaction: the penitential tropology of the command is
+    Aquinas's (below), not Ambrose's.
+  - V.15, under the lemma *(Vers. 25.)*, on Lk 5:25–26, the parallel of Mt 9:7–8:
+    *Nec mora ulla sanitatis intervenit … Spectant surgentem increduli, mirantur
+    abeuntem: et divini operis miracula malunt timere quam credere. Nam si
+    credidissent, non timuissent utique, sed dilexissent … Et ideo isti, quia non
+    diligebant, calumniabantur* (col. 1358, by the transcription's markers). The
+    onlookers' fear is unbelief's, and those who fear are those who calumniated.
+    Luke's verse has no *potestatem talem hominibus*, and he says nothing of it
+    (§ 4.3). The range read now runs V.10–15.
 - **Direct, later, a Doctor: Thomas Aquinas**, *Super Evangelium S. Matthaei
   lectura*, caput IX, on Mt 9:1–8, **read on the page images** of the registered
   Venice 1745 facsimile, *Opera*, tomus III, printed pp. 120–122 = PDF pp. 138–140
@@ -1226,7 +1289,9 @@ Catena, or Aquinas's lectura, departs from them. The Catena is still quoted in
     are now read (above). The remaining entries: Albert the Great, *Super Matthaeum* (no record); Chromatius, *Tractatus in
     Matthaeum* (no record); Paschasius Radbertus, *Expositio in Matheo* (two rows;
     no record); Theophylact, *Enarratio in Evangelium Matthaei* — **the library's
-    one Theophylact artifact is the whole-volume layer of PG 124**, whose table of
+    three Theophylact artifacts are the whole-volume layer of PG 124 and two
+    checked-text excerpts of its John commentary at Jn 20** (an earlier version
+    said one), and the layer's table of
     contents (physical lines 211–232, read on the third re-entry) lists the
     commentary on the Pauline epistles from Romans to 2 Thessalonians, and the
     containment inventory adds the continuation of the John commentary from
@@ -1276,7 +1341,8 @@ Catena, or Aquinas's lectura, departs from them. The Catena is still quoted in
     Honorius reads *civitatem suam* as Jerusalem to which the people returned with
     Jesus the priest, Sicard sets Christ the healer beside Cyrus who freed the
     captives, and Berno reads the healing and the forgiveness into the next
-    Sunday's Collect.
+    Sunday's Collect. Under D11 those five are cited in the studies at their loci
+    for what they say of Mt 9, without naming the Sunday (§ 2.7).
 - **No Father of the Gospel's is now reported only by another.** Hilary's
   *Commentarius* VIII, which earlier passes recorded as unreached, is read above
   at PL 9, and Ambrose on Luke's paralytic has been added beside him. The
@@ -1746,8 +1812,13 @@ elements and never by its Sunday number. § 2.7 tabulates each commentator's
 heading and Gospel against this formulary; `commentary-work-index formulary` made
 that comparison and each locus below was then read. Where a commentator's Mass had
 another Gospel, only what he says of the elements this formulary keeps is
-attributed to him for this Mass, and what he says of Mt 9 at another Sunday is
-reception of that Gospel at that locus. Standing is taken from
+attributed to him for this Mass, and never in support of a connection between
+such an element and Mt 9:1–8, which his Mass did not set beside it; what he says of
+Mt 9 where his book puts it is reception of that Gospel at that locus, cited
+without naming the Sunday; and his other Gospel, his other chants and his Mass are
+scope-record material, with at most one clause in the expansive study's scope
+appendix (the profile's *Liturgical commentators* rule, decision D11; § 2.7).
+Standing is taken from
 `src/sources/inventories/author-standing-v1.toml`: Schuster is **Blessed**; every
 other commentator here is an **ecclesiastical writer**, and Guéranger himself, who
 wrote none of the volume read here, is a Servant of God.
@@ -1796,9 +1867,10 @@ wrote none of the volume read here, is a Servant of God.
     their successors in the priesthood; consequently, the Holy Ghost widens the
     field of this evangelizing energy, and the crowd at once rejoices that men also
     have received from heaven such truly divine authority.* (The book italicises *to
-    men*, which this quotation cannot show.) **Schuster holds both readings of v. 8
-    and ranks them**: the crowd's inadequate confession, which is Chrysostom's
-    reading, and a deeper, prophetic sense of the priesthood;
+    men*, which this quotation cannot show.) **Schuster gives v. 8 three senses, in
+    this order**: the crowd's subjective judgement, which is Chrysostom's reading;
+    *a still deeper meaning*, the hypostatic union; and *Further*, the symbolical
+    and prophetic sense of the priesthood;
   - the Offertory: *epitomized from Exodus xxiv*; *It is to be regretted … that in
     the Roman Missal this splendid Offertory is cut down to a single verse*, since in
     the old antiphonaries Moses intercedes for the apostate people and asks to see
@@ -1814,16 +1886,24 @@ wrote none of the volume read here, is a Servant of God.
   (§ 6.3). **Who wrote it.** The library's edition record says the volume's preface
   *identifies this as the second volume of the Continuation after Guéranger's death
   but does not name the continuator*; the work record's responsible party is
-  *Prosper Guéranger and continuators*; Guéranger died in 1875 (standing registry),
-  and the volume is of 1909. So **no sentence below is Guéranger's**, and every one
+  *Prosper Guéranger and continuators*; Guéranger died in 1875 (standing registry).
+  The chapter was written in the early 1880s: the French original's preface is
+  signed and dated *Fr. L. F., O. S. B., Solesmes, le 27 octobre 1882* (read on the
+  registered front-matter facsimile
+  `artifact.prosper-gueranger.the-liturgical-year.french-oudin-1911-volume-11.front-matter-facsimile-85a2d57c`,
+  SHA-256 `85a2d57c…04b0d3` recomputed and matched), and the library's locus
+  inventory records the English first edition of 1883 (vol. II p. 407; not checked
+  here). 1909 is only the date of the printing read. So **no sentence below is
+  Guéranger's**, and every one
   is cited as the continuation's. The library's author-standing registry and its
   Mass-keyed locus inventory, `src/sources/commentary/formulary-loci.yaml`, name
   the continuator as **Dom Lucien Fromage OSB (1845–1916)**, on the BnF authority
   records and the French original's preface; this stage checked the French
   preface in the Internet Archive text layer of *L'Année liturgique*, *Deuxième
   volume de la continuation … Tome II* (Paris: Oudin, 1911; item
-  `lanneliturgiqu11gu`, response SHA-256 `c24539c7…fd6c07`, matching the digest the
-  registry records), where it is signed ***Fr. L. F., O. S. B., Solesmes***, and did
+  `lanneliturgiqu11gu`, registered and tracked as
+  `artifact.prosper-gueranger.the-liturgical-year.french-oudin-1911-volume-11.ia-djvu-text-c24539c7`,
+  SHA-256 `c24539c7…fd6c07`), where it is signed ***Fr. L. F., O. S. B., Solesmes***, and did
   not re-open the BnF records. The attribution to Fromage therefore rests on the
   registry's sources and the initials this stage read; a study that names him
   should say "the continuation of *The Liturgical Year* (Dom Lucien Fromage)", as
@@ -1841,8 +1921,16 @@ wrote none of the volume read here, is a Servant of God.
     pastors: *the faithful … are now invited to meditate upon the prerogative which
     these same men have of forgiving sins and healing souls* (p. 403; the book
     italicises *forgiving sins*, which this quotation cannot show), with the keys and
-    the sacrament of Penance (pp. 403–404); the paralytic as the human race, carried
-    to the Church by the apostles' faith (p. 405);
+    the sacrament of Penance (pp. 403–404); and at p. 405, read on the page image
+    (PDF p. 426), **an allegory that applies v. 8's own words to the Church's power
+    of remitting sins**: the paralytic is the human race, carried to the Church by
+    the apostles' faith; the Church says to it *Be of good heart, son! thy sins are
+    forgiven thee!*; it rises and carries its bed *by the labour of penance*; and
+    *the angels, beholding such a spectacle of conversion and holiness, are in
+    amazement, and sing glory to God, who gave such power to men* (the book
+    italicises *God, who gave such power to men*, with a footnote to Lk 5:26). This
+    is the continuator's allegorical reading of v. 8, following p. 404's *the power,
+    which her divine Head gave her, of remitting sin*;
   - the Offertory's Moses as *the type of those faithful prophets mentioned in the
     Introit … the model of those true leaders of God's people, who devote themselves
     in order to procure mercy and peace for those whom they guide* (p. 406), with the
@@ -1992,16 +2080,19 @@ not opened.
 **What this changes.** The ministerial and priestly sense of this Sunday's Mass is
 documented reception, and in more places than the earlier passes recorded:
 
-- **On the 1962 pairing itself**, by a Blessed: Schuster reads v. 8 of the power of
-  remitting sins communicated to the apostles and their successors in the
-  priesthood, while granting the crowd's words a first sense as an inadequate
-  confession; and the continuation reads the present Gospel of the pastors'
-  prerogative of forgiving sins.
-- **On the Mass with another Gospel**: Rupert (the rectors who intercede for the
+- **On the 1962 pairing itself**, by a Blessed: Schuster reads v. 8, in the third of
+  his three senses, of the power of remitting sins communicated to the apostles and
+  their successors in the priesthood, after the crowd's subjective judgement and the
+  hypostatic union; and the continuation reads the present Gospel of the pastors'
+  prerogative of forgiving sins and applies v. 8's words allegorically to the
+  Church's power (p. 405).
+- **On the Mass with another Gospel**, recorded here and not a home of the sense
+  for the studies (D11; § 4.3): Rupert (the rectors who intercede for the
   people's sins; peace as *peccatorum remissio*) and Durandus (the Mass of the
-  prelates; *Tollite hostias … de Praelatis*); and at their Nineteenth Sunday, on
-  Mt 9 itself, Rupert (the prelates offer the paralytic by prayer) and Durandus
-  (the paralytics are healed *merito fide Praelatorum*).
+  prelates; *Tollite hostias … de Praelatis*); and where their books put Mt 9,
+  Rupert (the prelates offer the paralytic by prayer) and Durandus (the paralytics
+  are healed *merito fide Praelatorum*), which is citable at that locus as reception
+  of the Gospel, without naming the Sunday.
 - **And not everywhere**: Honorius and Sicard read the same chants of the people
   returned from Babylon, and Honorius's *sub gratia* reading of Gregory's peace
   with the Lombards; Honorius reads the Gospel's city as Jerusalem regained, and
@@ -2107,7 +2198,11 @@ by the merits of others — and makes the bearers four virtues.
 paralytic (*Exp. in Lc.* V.11, transcription of PL 15), sides with Jerome in so
 many words: *Magnus Dominus qui aliorum merito ignoscit aliis, et dum alios probat,
 aliis relaxat errata*. He turns it into counsel: *adhibe precatores, adhibe
-Ecclesiam quae pro te precetur*. Hilary (PL 9, cols. 959–960) says only *pro fidei
+Ecclesiam quae pro te precetur*. Bede builds his own sentence on it (*aliorumque
+merito, aliis laxarentur errata*, *In Lucam* II, PL 92, cols. 387D–388A), and
+Rabanus prints Bede's sentence at Mt 9:2 under the siglum *(Joan. Chrysost.)*,
+followed by *Merito Christus offerentium fidem respicit* (PL 107, col. 871; § 3.5):
+the siglum notwithstanding, the passage takes Jerome's side and not Chrysostom's. Hilary (PL 9, cols. 959–960) says only *pro fidei
 merito* (§ 3; absent from three manuscripts) without saying whose faith. In his
 allegory the bearers are **angels** (*Angelis ministrantibus curandus offertur*).
 He does not take part in the Jerome–Chrysostom question. The Catena's
@@ -2145,21 +2240,37 @@ the power itself was Christ's alone. The negative stands: at v. 8 no Father
 checked reads *hominibus* of ministers.
 
 **But a Father does connect Christ's forgiving with men to whom the power is
-given, at the parallel of v. 3, and the record must now say so.** Ambrose, on
-Luke's paralytic (*Exp. in Lc.* V.13; tracked transcription of PL 15, not
-image-collated), writes *Quamvis igitur magnum sit hominibus peccata dimittere
-(quis enim potest peccata dimittere nisi solus Deus, qui per eos quoque dimittit,
-quibus dimittendi tribuit potestatem)*. He says this on the scribes' *quis potest
-dimittere peccata nisi solus Deus* (Lk 5:21 = Mt 9:3), in a parenthesis, in order
-to rank the forgiving of sins below the raising of bodies. He does not say it of
-the crowd's words. Bede takes the clause into his *In Lucam* II (PL 92, col. 388B),
+given, glossing the scribes' question at the parallel of v. 3, and the record must
+say so.** Ambrose, on Luke's paralytic (*Exp. in Lc.* V.13; tracked transcription
+of PL 15, not image-collated), writes *Quamvis igitur magnum sit hominibus peccata
+dimittere (quis enim potest peccata dimittere nisi solus Deus, qui per eos quoque
+dimittit, quibus dimittendi tribuit potestatem)*. The section follows the lemma
+*(Vers. 23.) Quid est facilius dicere* (Lk 5:23 = Mt 9:5); V.12 covers vv. 21–22.
+So the parenthesis stands in his comment on v. 23, and it quotes and glosses the
+scribes' question of v. 21 (= Mt 9:3). He says it in order to rank the forgiving of
+sins below the raising of bodies, and he does not say it of the crowd's words. (An
+earlier version of this section placed the clause "on" Lk 5:21.) Bede takes the
+clause into his *In Lucam* II on Lk 5:21 (PL 92, col. 388A: it stands after the
+transcription's (0388A) marker and before (0388B); an earlier version said 388B),
 and Rabanus prints it at Mt 9:3 (PL 107, col. 871). So the ministerial sense has a
-Father's warrant at the pericope's **v. 3 parallel**, in Ambrose. It still has
-none at v. 8.
+Father's warrant at this pericope, as a gloss on the scribes' question of the
+**v. 3 parallel**, in Ambrose. It still has none at v. 8.
+
+**What Ambrose says at the parallel of v. 8.** V.15, the section immediately after
+those this record first read, is on Lk 5:25–26, the parallel of Mt 9:7–8: *Spectant
+surgentem increduli, mirantur abeuntem: et divini operis miracula malunt timere quam
+credere. Nam si credidissent, non timuissent utique, sed dilexissent; perfecta enim
+dilectio timorem excludit foras … Et ideo isti, quia non diligebant,
+calumniabantur* (transcription, col. 1358). The onlookers' fear is the fear of the
+unbelieving, and he identifies those who fear with those who calumniated. That is a
+negative judgement on the reaction, on Chrysostom's side and against Hilary's
+honour fittingly rendered (`research/interpretations.md` § 4.3). Luke's verse has no
+*qui dedit potestatem talem hominibus*, and Ambrose says nothing of power given to
+men. The range of Ambrose read here is now V.10–15.
 
 **But the question is not answered by the Fathers alone.** Below the Fathers the
-ministerial sense stands in one exegete at v. 6 and in the liturgical commentators,
-and the commentators divide:
+ministerial sense stands in one exegete at v. 6 and in two liturgical commentators
+on the 1962 Mass, and the commentators divide:
 
 - **Aquinas, at v. 6, at his own locus** (*Super Matth.* IX, Venice 1745, p. 122):
   *Videtur quod per hoc non ostendatur, quia etiam ipsi Apostoli habebant
@@ -2171,53 +2282,72 @@ and the commentators divide:
   (`research/interpretations.md` § 2.1); it is not a reading of v. 8, and it is made
   to protect the proof of divinity, not to found the ministry.
 - **Bl. Ildefonso Schuster, on the 1962 Mass itself, at v. 8** (§ 3.11, *The
-  Sacramentary* III p. 169): *This power of remitting sins had to be communicated to
-  men—that is, to the apostles and to their successors in the priesthood … the crowd
-  at once rejoices that men also have received from heaven such truly divine
-  authority.* He gives the crowd's words first as *a subjective judgement on the
-  part of the people who had not yet grasped the divine nature of Christ* — which is
-  Chrysostom's reading — and the priestly sense as a deeper, *symbolical and
-  prophetic* one. **This is the one registered witness who reads v. 8 itself of the
-  ministry, and he reads the 1962 pairing.** He is a liturgical commentator and a
-  Blessed, not a Father.
+  Sacramentary* III p. 169). He gives the verse three senses, in this order:
+  first, the crowd's words *may be understood as a subjective judgement on the part
+  of the people who had not yet grasped the divine nature of Christ* — which is
+  Chrysostom's reading; second, *The words, however, have a still deeper meaning*:
+  the divine nature worked the miracles through the human, so the verse teaches
+  that his human nature was *truly united hypostatically to the Word*; third,
+  *Further*, the narrative *is both symbolical and prophetic. This power of
+  remitting sins had to be communicated to men—that is, to the apostles and to their
+  successors in the priesthood … the crowd at once rejoices that men also have
+  received from heaven such truly divine authority.* **He is the one author eligible
+  under the profile's standing rule who reads v. 8 of the ministry, and he reads the
+  1962 pairing.** (An earlier version called him "the one registered witness" who
+  does so; the continuation, next, also applies v. 8's words to the Church's power.)
+  He is a liturgical commentator and a Blessed, not a Father.
 - **The continuation of *The Liturgical Year*, on the 1962 Mass** (§ 3.11): the
   present Gospel invites the faithful *to meditate upon the prerogative which these
   same men* — the Church's pastors, ordained at the Ember days — *have of forgiving
-  sins*, with the keys and Penance. A liturgical commentator writing in 1909, whose
-  words are the continuator's and not Guéranger's.
+  sins*, with the keys and Penance (pp. 403–404); and at p. 405 its allegory of the
+  paralytic as the human race ends with the angels who *sing glory to God, who gave
+  such power to men*, applying v. 8's words to the power of remitting sins the Church
+  exercises. A liturgical commentator writing in the early 1880s (the French
+  original's preface is dated Solesmes, 27 October 1882), read in the English
+  printing of 1909; the words are the continuator's and not Guéranger's.
 - **Rupert of Deutz and William Durandus, on a Mass with another Gospel** (§ 3.11):
   for Rupert peace is *peccatorum remissio* and the Offertory's Moses the pastor
   who intercedes for the people's sins; for Durandus the Mass is *de Praelatis* and
-  *Tollite hostias … loquitur … de Praelatis*. Where their books put Mt 9, at the
-  Nineteenth Sunday, Rupert's prelates offer the paralytic by prayer and Durandus's
-  paralytics are healed *merito fide Praelatorum*. That is intercession and the
-  prelates' faith, not the power of absolution, and neither of them reads v. 8.
+  *Tollite hostias … loquitur … de Praelatis*. Where their books put Mt 9, Rupert's
+  prelates offer the paralytic by prayer and Durandus's paralytics are healed
+  *merito fide Praelatorum*. That is intercession and the prelates' faith, not the
+  power of absolution, and neither of them reads v. 8. **Under D11 this is
+  scope-record material and not a home of the ministerial sense for the studies**:
+  their readings of the chants may be cited only for what they say of those
+  elements, never in support of joining them to Mt 9:1–8; what they say of Mt 9 is
+  citable at that locus as reception of the Gospel, without naming the Sunday.
 - **Honorius, Sicard and Berno do not read the Mass of the ministry at all**
-  (§ 3.11): Honorius and Sicard read its chants of the people returned from
-  Babylon, Honorius reads the Gospel's city (at his Nineteenth) as Jerusalem regained
-  with Jeshua the priest, and Berno reads the healing and the forgiveness into the
-  next Sunday's Collect. St Anthony's Sunday sermon on the Gospel gives v. 8 no
-  ministerial sense (§ 3.5).
+  (§ 3.11): Honorius and Sicard read the chants their Masses share with this one as
+  the voice of the people returned from Babylon, Honorius reads the Gospel's city (IV.86) as
+  Jerusalem regained with Jeshua the priest, and Berno reads the healing and the
+  forgiveness into a Collect this formulary does not have. St Anthony's Sunday sermon
+  on the Gospel gives v. 8 no ministerial sense (§ 3.5).
 
-So the ministerial sense has a documented home:
-- in **Ambrose, a Father and Doctor, at Lk 5:21**, the parallel of Mt 9:3, where
-  God forgives *per eos quoque … quibus dimittendi tribuit potestatem*, with Bede
-  and Rabanus after him;
+So the ministerial sense has a documented home that the studies may use:
+- in **Ambrose, a Father and Doctor, *Exp. in Lc.* V.13**, in his comment on
+  Lk 5:23, glossing the scribes' question of Lk 5:21 (= Mt 9:3), where God forgives
+  *per eos quoque … quibus dimittendi tribuit potestatem*, with Bede and Rabanus
+  after him;
 - at v. 6 in Aquinas, as ministry beneath Christ's authority;
-- **at v. 8 in Schuster, on this Mass**;
-- in the continuation's reading of this Mass;
-- and in Rupert's and Durandus's readings of a Mass with another Gospel and of
-  Mt 9 at another Sunday.
+- **at v. 8 in Schuster, on this Mass**, as the third of his three senses;
+- in the continuation's reading of this Mass, including its allegorical use of
+  v. 8's words at p. 405.
+
+Rupert's and Durandus's readings are recorded above and are not among these homes.
 
 It has none in a Father at v. 8, and three registered medieval commentators read
-the same chants otherwise. The study may use it with those attributions. It may
-cite Ambrose only at Lk 5:21 and only for his clause, and its Latin is
-controlled by a transcription of PL 15 and not by page images. It may not put the ministerial sense in Chrysostom's,
-Jerome's, Augustine's or Hilary's mouth, nor in Ambrose's at v. 8; it may present Schuster's reading, and the
-continuation's, as readings of the 1962 pairing, and must not present Rupert's or
-Durandus's as such, since their Mass had another Gospel; and it may not present the
-ministerial reading as the commentators' common one, since Honorius and Sicard read
-the same Mass of the return from exile.
+the shared chants otherwise. The study may use the ministerial sense with the four
+attributions listed and no others. It may cite Ambrose only for his clause, as a
+gloss on the scribes' question in his comment on Lk 5:23, and its Latin is
+controlled by a transcription of PL 15 and not by page images. It may not put the
+ministerial sense in Chrysostom's, Jerome's, Augustine's or Hilary's mouth, nor in
+Ambrose's at v. 8; it may present Schuster's reading, and the continuation's, as
+readings of the 1962 pairing; it may not cite Rupert, Durandus, Honorius, Sicard or
+Berno in support of joining any element of this Mass to Mt 9:1–8, nor mention their
+other Gospels, their other chants or the Masses they belonged to, except in at most
+one clause of the expansive study's scope appendix (§ 2.7, D11); and it may not
+present the ministerial reading as the commentators' common one, since Honorius and
+Sicard read the shared chants of the return from exile.
 
 ### 4.4 Is the paralytic an individual or the Gentiles? Hilary against the literal readers
 
@@ -2323,8 +2453,9 @@ assembled.
 
 **This is a material disagreement about what the psalm is about, and it is
 preserved.** § 10.2's earlier sentence that the checked witnesses read the psalms
-"of it and not of a place" is withdrawn: for Ps 121 two Greek Fathers read it of a
-place and of nothing else. The study may take the Latin reading as its own
+"of it and not of a place" is withdrawn: for Ps 121 Chrysostom, a Greek Father, and
+Theodoret, a Greek exegete whom the standing registry records as an ecclesiastical
+writer, read it of a place and of nothing else. The study may take the Latin reading as its own
 allegorical sense; it may not say the Fathers agree on it, and a literal sense
 that ignores the return from exile ignores the only reading the Greek witnesses
 give. At Ps 101:16 the division is narrower — Theodoret gives the verse a first,
@@ -2862,8 +2993,8 @@ binding in `research/source-bindings.toml`.
 | --- | --- | --- |
 | Hilary, *Commentarius in Matthaeum* VIII §§ 1–8 | `artifact.jacques-paul-migne.patrologia-latina-volume-9.1844-paris.columns-957-962-facsimile-0f29c602` (tracked, SHA-256 `0f29c602…315649`), extracted from `…internet-archive-pdf-eab6d2f4` (remote, SHA-256 `eab6d2f4…67c0a`, 80,742,141 bytes; SHA-1 matched the Internet Archive's file list); text layer `…ia-djvu-text-db389fea` (tracked, SHA-256 `db389fea…ada51`, the digest the study reviewer recorded) | PL 9, cols. 958–962 = parent PDF pp. 493–495, at native 400 ppi, with the Maurist notes; PDF pp. 7–8 (title page, 1844; Elenchus) |
 | Rabanus, *Commentariorum in Matthaeum* III, at Mt 9:1–8 | `artifact.jacques-paul-migne.patrologia-latina-volume-107.1864-paris.columns-869-874-facsimile-9d084bb1` (tracked, SHA-256 `9d084bb1…621ef`), extracted from `…internet-archive-pdf-249f1795` (remote, SHA-256 `249f1795…9c708d2`, 60,617,436 bytes); text layer `…ia-djvu-text-5b8a4b8b` (tracked) | PL 107, cols. 870–873 = parent PDF pp. 439–441, at native 300 ppi; col. 873 is faint and was read with contrast raised against the text layer; PDF pp. 7–8 (title page, 1864; Elenchus) |
-| Bede, *In Lucam* II, on Lk 5:18, 21, 24 | `artifact.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.wikisource-in-lucam-116db0ca` (remote), re-fetched and matched `116db0ca…247d8a` | PL 92, cols. 387A, 388B, 388D–389A by the transcription's markers; a transcription, not image-collated |
-| Ambrose, *Exp. in Lc.* V.10–14 | `artifact.ambrose.expositio-evangelii-secundum-lucam.latin-migne-wikisource-book-5.wikisource-book-5-fde2303a` (tracked, SHA-256 recomputed and matched `fde2303a…0ac52`) | PL 15, cols. 1357–1358 by the transcription's markers; a transcription, not image-collated |
+| Bede, *In Lucam* II, on Lk 5:18, 21, 24 | `artifact.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.wikisource-in-lucam-116db0ca` (remote), re-fetched and matched `116db0ca…247d8a` | PL 92, cols. 387A, 387D–388A (the sentence Rabanus prints under *(Joan. Chrysost.)*), 388A (the clause on the scribes; an earlier version said 388B) and 388D–389A, by the transcription's markers; a transcription, not image-collated |
+| Ambrose, *Exp. in Lc.* V.10–15 | `artifact.ambrose.expositio-evangelii-secundum-lucam.latin-migne-wikisource-book-5.wikisource-book-5-fde2303a` (tracked, SHA-256 recomputed and matched `fde2303a…0ac52`) | PL 15, cols. 1357–1359 by the transcription's markers (V.15 added on the fifth re-entry); a transcription, not image-collated |
 | Augustine, *De cons. evang.* II.25.58, re-read | the registered segment over the tracked CCEL NPNF1-6 text (above and § 3.5) | lines 12700–12791, for § 4.1's withdrawn premise |
 
 **Two defects in the library, found while binding and reported rather than
@@ -2920,7 +3051,7 @@ of this stage as unreached, or not named at all. Each is bound in
 | Aquinas, *Super I ad Corinthios* | `artifact.thomas-aquinas.super-i-ad-corinthios.latin-corpusthomisticum-web-2026-07-26.c1c-html-8be5b71c`, re-fetched 2026-09-22 and matched (`8be5b71c…a8c7c`), `restricted` | Cap. 1 lect. 1 on vv. 4–8 in locally parsed text; quoted only in short phrases |
 | Cornelius a Lapide, *Commentaria in Pentateuchum* | `artifact.cornelius-a-lapide.commentaria-in-pentateuchum.antwerp-1700.ia-djvu-ocr-d1f91f40`, 7,195,178 bytes, SHA-256 `d1f91f40…dac470`, fetched and matched 2026-09-22, `remote` | Lines 79014–79245, Ex 24:4–8. **Layer only; no page image opened**, so § 3.7 normalises and says so, and transcribes nothing the layer garbles |
 | Rupert of Deutz, *De divinis officiis* XII.18–19 | `artifact.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.ia-djvu-ocr-2e2ca850`, **tracked**, SHA-256 `2e2ca850…ed376` matched | Lines 23431–23519 to locate; every word quoted read on the page images, leaves n168 (cols. 325–326) and n169 (cols. 327–328), as the artifact's own note requires |
-| The continuation of Guéranger's *The Liturgical Year*, vol. XI (1909; not Guéranger's words, § 3.11) | `artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-pdf-95ba98e2`, **tracked**, SHA-256 `95ba98e2…92690` matched | The chapter on this Sunday, printed pp. 393–409 = PDF pp. 414–430, in the text layer; every sentence quoted checked on the rendered pages (PDF pp. 414, 415, 422, 423, 424, 426, 427); on the third re-entry p. 393 re-read for its footnotes 1–2 (Berno, Micrologus) and p. 402 for *in many Churches of the west* |
+| The continuation of Guéranger's *The Liturgical Year*, vol. XI (written in the early 1880s; English printing of 1909; not Guéranger's words, § 3.11) | `artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-pdf-95ba98e2`, **tracked**, SHA-256 `95ba98e2…92690` matched | The chapter on this Sunday, printed pp. 393–409 = PDF pp. 414–430, in the text layer; every sentence quoted checked on the rendered pages (PDF pp. 414, 415, 422, 423, 424, 426, 427); on the third re-entry p. 393 re-read for its footnotes 1–2 (Berno, Micrologus) and p. 402 for *in many Churches of the west* |
 
 **Unregistered page images read on the second re-entry**, fetched on 2026-09-22
 from `https://archive.org/download/<item>/page/n<leaf>.jpg`, retained nowhere,
@@ -2958,8 +3089,8 @@ in `research/source-bindings.toml`.
 | Honorius, *Gemma animae* IV.84–86 | `artifact.honorius-augustodunensis.gemma-animae.1895-garnier-migne-pl-172.ia-djvu-ocr-2ebfcb5f`, **tracked**, SHA-256 `2ebfcb5f…9444b1` recomputed and matched | Lines 56955–57068; read on the page images, leaves n360 (cols. 721–722) and n361 (cols. 723–724) |
 | Berno, *Libellus* V | `artifact.berno-of-reichenau.libellus-de-quibusdam-rebus-ad-missae-officium-pertinentibus.latin-migne-pl-142.ia-djvu-ocr-991758f7`, **tracked**, SHA-256 `991758f7…5818c0` recomputed and matched | Lines 85740–85819; read on the page image, leaf n544 = PL 142 cols. 1069–1070 |
 | Micrologus XXIX | `artifact.bernold-of-constance.micrologus-de-ecclesiasticis-observationibus.latin-migne-pl-151.ia-djvu-ocr-f7de4b32`, **tracked**, SHA-256 `f7de4b32…9fa95d53` recomputed and matched | Lines 78170–78236, **layer only**; structural, quoted in short phrases |
-| Würzburg epistle list | `artifact.germain-morin.le-plus-ancien-comes-ou-lectionnaire-de-leglise-romaine.1910-revue-benedictine-volume-27.ia-djvu-ocr-1a7d549e`, **tracked**, SHA-256 `1a7d549e…488ac2` recomputed and matched | Items CLI–CLIII at lines 3820–3915; item CLIII and Morin's note on it read on the page image, leaf n74 = printed p. 63; the Ember Saturday's Ex 32 lesson (item CLII, p. 62) in the layer only |
-| Würzburg gospel list | `artifact.germain-morin.liturgie-et-basiliques-de-rome-au-milieu-du-viie-siecle.1911-revue-benedictine-volume-28.ia-djvu-ocr-3de8a598`, **tracked**, SHA-256 `3de8a598…c61c90f` recomputed and matched | Lines 19716–19789; read on the page images, leaves n326 and n327 = printed pp. 315–316 |
+| Würzburg epistle list | `artifact.germain-morin.le-plus-ancien-comes-ou-lectionnaire-de-leglise-romaine.1910-revue-benedictine-volume-27.ia-djvu-ocr-1a7d549e`, **tracked**, SHA-256 `1a7d549e…488ac2` recomputed and matched | Items CL–CLIII at lines 3785–3915; item CLIII and Morin's note on it read on the page image, leaf n74 = printed p. 63; the Ember Saturday's Ex 32 lesson (item CL by Morin's numbering, which his notes on CXLVI, CXLVII and CLI fix; p. 62; an earlier version said CLII) in the layer only |
+| Würzburg gospel list | `artifact.germain-morin.liturgie-et-basiliques-de-rome-au-milieu-du-viie-siecle.1911-revue-benedictine-volume-28.ia-djvu-ocr-3de8a598`, **tracked**, SHA-256 `3de8a598…c61c90f` recomputed and matched | Lines 19716–19810; read on the page images, leaves n326 and n327 = printed pp. 315–316 (n327 re-fetched on the fifth re-entry and matched its recorded digest, to read *Ebd. IIII*, Mt 18:23–35) |
 | Comes of Murbach | `artifact.andre-wilmart.le-comes-de-murbach.1913-revue-benedictine-volume-30.ia-djvu-ocr-e3bbfad4`, **tracked**, SHA-256 `e3bbfad4…845e2e` recomputed and matched | Lines 3641–3659; read on the page image, leaf n63 = printed p. 50, where the layer's *xvint* is *XVIIII* |
 | *Liber Comitis*, and the anonymous Pauline commentary, PL 30 | `artifact.jacques-paul-migne.patrologia-latina-volume-30.paris-1846.ia-djvu-text-dd20c7b3`, **tracked**, SHA-256 `dd20c7b3…fdf0c9` recomputed and matched | *Liber Comitis* at lines 41945–42175; the commentary on 1 Cor 1:4–8 at lines 58230–58340. **Layer only**; no page image opened |
 | St Anthony of Padua, Sunday sermon on Mt 9:1 (Spilsbury English) | `artifact.anthony-of-padua.sermons-for-sundays-and-festivals.2026-09-05-spilsbury-hosted-compilation.compilation-pdf-3699ff43`, 1,556,456 bytes, SHA-256 `3699ff43…6721be`, re-fetched and matched 2026-09-22, `restricted` | The sermon headed *Nineteenth Sunday after Pentecost*, in locally extracted text; summarised, not quoted, because the translation is under copyright |
@@ -2990,7 +3121,7 @@ leaves from the volume's `_jp2.zip` set), retained nowhere.
 | Delivery | What it is | SHA-256 | Why it is not bound |
 | --- | --- | --- | --- |
 | `https://la.wikisource.org/wiki/Commentaria_in_Epistolam_ad_Corinthios_Primam_(Ambrosiaster)`, 299,710 bytes | A later response of the registered Ambrosiaster page | `8d6c0e35af1c3fe96a96b207be4eec1afc9b0428c98e9ccc2d2fe2767ca040d5` | The registered artifact's digest (`25a67a20…f170`, 299,422 bytes) was not reproduced; the page has been revised, so these are not the registered bytes |
-| `https://archive.org/download/lanneliturgiqu11gu/lanneliturgiqu11gu_djvu.txt`, 1,178,533 bytes | Text layer of *L'Année liturgique*, 2nd vol. of the continuation, Paris 1911 | `c24539c74426ab89d37b6dd1fb4909297c1361b15b555a760165920fd7fd6c07` | Unregistered; read only for the preface's signature, which the author-standing registry already cites at this digest |
+| `https://archive.org/download/lanneliturgiqu11gu/lanneliturgiqu11gu_djvu.txt`, 1,178,533 bytes | Text layer of *L'Année liturgique*, 2nd vol. of the continuation, Paris 1911 | `c24539c74426ab89d37b6dd1fb4909297c1361b15b555a760165920fd7fd6c07` | **Not unregistered, as an earlier version of this row said**: the library registers and tracks it as `artifact.prosper-gueranger.the-liturgical-year.french-oudin-1911-volume-11.ia-djvu-text-c24539c7`. It was read only for the preface's signature and is not bound; the preface's date (27 October 1882), which § 3.11 now uses, was read on the page image of the registered front-matter facsimile `…french-oudin-1911-volume-11.front-matter-facsimile-85a2d57c` (printed p. vij), which is not bound either, because the work's locus grammar (`vol-…-p-<arabic>`) has no form for a roman-numbered preface page |
 | `https://archive.org/download/patrologiaecurs240unkngoog/patrologiaecurs240unkngoog_djvu.txt`, 4,745,230 bytes | Text layer of the same PL 26 scan the registered facsimile is | `74c5dd24a294e30a8a1de023ef9842b41a79f52410fae49113156b075ce0d046` | Unregistered; read only for PL 26's *Elenchus* and preface (§ 5.2) |
 
 **Registered routes that exist and were deliberately not used, with the reason.**
@@ -3481,7 +3612,17 @@ and no English is composed or paraphrased anywhere.
      name.** A moral sense on *tolle lectum* may cite Rabanus at PL 107, col. 873,
      in his own words (*per continentiae frena correptam, spe coelestium
      praemiorum a deliciis segregare terrenis*), saying that he takes it from Bede.
-     Or it may cite Bede at his own locus, or Hilary § 7.
+     Or it may cite Bede at his own locus, or Hilary § 7. **The passage Rabanus
+     prints at Mt 9:2 under *(Joan. Chrysost.)* (PL 107, col. 871) opens with
+     Bede's sentence** (*Intuendum sane … aliorumque merito aliis relaxarentur
+     errata*; *In Lucam* II, PL 92, cols. 387D–388A, built on Ambrose V.11) and must
+     not be cited as Chrysostom's; its sequel, *Merito Christus offerentium fidem
+     respicit*, is untraced and takes Jerome's side, not Chrysostom's.
+   - **Aquinas's tropology of v. 6** (*Surge, a peccato per contritionem; tolle
+     lectum, per satisfactionem … in domum aeternitatis, vel in conscientiam
+     propriam*, Venice 1745, p. 122) is Aquinas's and must never be printed under
+     Ambrose's or any Father's name. Ambrose's own reading of the command
+     (*Exp. in Lc.* V.14) is the body lifted and the return to paradise.
    - **The Catena's "Jerome" *precatores* sentence is Ambrose's**, *Exp. in Lc.*
      V.10 (§ 4.4).
    - SC 254 was not reached. Hilary is read in the Maurist text as PL 9 prints it.
@@ -3607,34 +3748,52 @@ and no English is composed or paraphrased anywhere.
     what the index returns and what was not reached, and § 6.3 names, for each
     witness reached, which registered route served and which registered routes
     were deliberately not used.
-15. **The ministerial and priestly sense has a documented home, and it is not a
-    Father's.** At Mt 9:6 in Aquinas (ministry beneath Christ's authority); **at
-    Mt 9:8 in Bl. Ildefonso Schuster, commenting on the 1962 Mass itself** (the
+15. **The ministerial and priestly sense has a documented home, and apart from one
+    Father's gloss on the scribes' question it is not a Father's.** In Ambrose,
+    *Exp. in Lc.* V.13, in his comment on Lk 5:23, glossing the scribes' question of
+    Lk 5:21 (= Mt 9:3): God forgives *per eos quoque, quibus dimittendi tribuit
+    potestatem* (a transcription of PL 15; Bede and Rabanus repeat it). At Mt 9:6 in
+    Aquinas (ministry beneath Christ's authority). **At Mt 9:8 in Bl. Ildefonso
+    Schuster, commenting on the 1962 Mass itself**, as the third of three senses
+    given in order (the crowd's subjective judgement; the hypostatic union; the
     power of remitting sins communicated to the apostles and their successors in the
-    priesthood, as a deeper sense beside the crowd's inadequate confession); at
-    Ps 95:8 in Theodoret, the PG 27 expositions and Bellarmine (sacrifice offered by
-    priests in the churches — a reading of the Communion's verse, not of the
-    Gospel); in the continuation of *The Liturgical Year*, on this Mass (the pastors'
-    prerogative of forgiving sins); and in Rupert and Durandus, on a Mass with
-    another Gospel (intercession; the prelates) and on Mt 9 at their Nineteenth
-    Sunday (the prelates offer the paralytic; he is healed *merito fide
-    Praelatorum*) (§ 3.11). No Father reads Mt 9:8 of it (§ 4.3), and Honorius and
-    Sicard read the same chants of the return from exile, not of the priesthood.
-    The study may use the ministerial sense with those attributions and no others;
-    it may present Schuster's and the continuation's readings as readings of the
-    1962 pairing, and must not present Rupert's or Durandus's as such; and the
-    continuation's words are never Guéranger's. **Under the profile's
-    *Liturgical commentators* rule Schuster, a Blessed, may be one of a reading's
-    two authors if the other is a Father or canonized saint; no other commentator
-    here may be.**
+    priesthood). In the continuation of *The Liturgical Year*, on this Mass (the
+    pastors' prerogative of forgiving sins, and at p. 405 an allegorical use of
+    v. 8's own words for the Church's power). At Ps 95:8 in Theodoret, the PG 27
+    expositions and Bellarmine (sacrifice offered by priests in the churches — a
+    reading of the Communion's verse, not of the Gospel). No Father reads Mt 9:8 of
+    it (§ 4.3); Ambrose at the parallel of v. 8 (V.15) judges the onlookers' fear as
+    unbelief's and says nothing of power given to men. Honorius and Sicard read the
+    shared chants of the return from exile, not of the priesthood. The study may use
+    the ministerial sense with those attributions and no others, and may present
+    Schuster's and the continuation's readings as readings of the 1962 pairing; the
+    continuation's words are never Guéranger's. **Rupert and Durandus are not among
+    those homes.** Their readings of the chants (peace as remission of sins; the
+    Mass *de Praelatis*) belong to Masses with another Gospel, and under the
+    profile's *Liturgical commentators* rule (D11) they, like Honorius, Sicard and
+    Berno, are cited in the readings only for what they say of an element this
+    formulary shares, and never in support of a connection between that element
+    and Mt 9:1–8. What they say of Mt 9 where their books put it (the prelates offer
+    the paralytic; he is healed *merito fide Praelatorum*) may be cited at that
+    locus as reception of the Gospel, without naming the Sunday (§ 3.11). **Under
+    the profile's *Liturgical commentators* rule Schuster, a Blessed, may be one of
+    a reading's two authors if the other is a Father or canonized saint; no other
+    commentator here may be.**
 16. **The age of the pairing is asserted in neither direction.** The 1862 Pustet
-    prints this Gospel with this Offertory (§ 2.6); the Würzburg gospel list puts
-    Mt 9:1–8 at the third Sunday after St Cyprian, the name Schuster gives this
-    Sunday; the Murbach comes and the *Liber Comitis* put 1 Cor 1:4 with Mt 22 and
-    Mt 9 with Eph 4:23; five registered commentators give the Mass of this Epistle
-    and these chants a Gospel from Mt 22 or Mt 23, two of them naming both as the
-    use of different churches; the continuation dates the chair-of-Moses Gospel to
-    *the thirteenth century, in many Churches of the west*. None of these witnesses
-    shows when the 1962's Gospel first stood beside its Offertory (§ 2.7). A study
-    may state these placements, each with its witness; it may not call the pairing
-    "the 1962 book's", "not ancient", "immemorial" or "ancient".
+    prints this Gospel with this Offertory (§ 2.6), and Schuster and the
+    continuation read them together. The other placements are recorded in § 2.7 for
+    the scope record: the Würzburg gospel list puts Mt 9:1–8 at the third Sunday
+    after St Cyprian, the name Schuster gives this Sunday; the Murbach comes and the
+    *Liber Comitis* put 1 Cor 1:4 with Mt 22 and Mt 9 with Eph 4:23; five registered
+    commentators give Masses that share this Introit, Gradual, Offertory antiphon
+    and Communion, and this Epistle in all but Berno, who names none, a Gospel from
+    Mt 22 or Mt 23, two of them naming both as the use of different churches, and
+    Honorius and Durandus another Alleluia; the continuation dates the
+    chair-of-Moses Gospel to *the thirteenth century, in many Churches of the west*.
+    None of these witnesses shows when the 1962's Gospel first stood beside its
+    Offertory (§ 2.7). **These placements are scope-record material.** The
+    commentators' other Gospels, other chants and Masses may take at most one clause
+    of the expansive study's scope appendix (D11), and the lists' placements, if the
+    study uses them at all, belong in the same appendix with their witnesses; the
+    readings, the concise study and the homily mention none of them. No study may
+    call the pairing "the 1962 book's", "not ancient", "immemorial" or "ancient".

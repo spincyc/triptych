@@ -88,6 +88,14 @@
 #   PL 107 records, Bede's In Lucam and Ambrose's Expositio in Lucam book V --
 #   except the containment inventory, already declared, which it extended with
 #   the two volumes' entries.
+# - The fifth re-entry (RES-028 and the advisories beside it) adds one path: the
+#   registered French edition of the continuation's volume, whose tracked
+#   front-matter facsimile carries the preface's date (Solesmes, 27 October 1882)
+#   that research/scope.md sections 3.11 and 4.3 now use to date the writing of
+#   the continuation, and whose tracked text layer carries the signature. Neither
+#   artifact is bound (the work's locus grammar has no form for the preface's
+#   roman-numbered page), so the edition directory is declared here. Everything
+#   else it read is a bound source record or an inventory already declared.
 paths = [
   "src/sources/calendars/roman-1962/propers.yaml",
   "src/sources/calendars/roman-1962/rubrics.yaml",
@@ -104,6 +112,7 @@ paths = [
   "src/sources/commentary/formulary-loci.yaml",
   "src/sources/inventories/source-containment-v1.toml",
   "src/sources/inventories/author-standing-v1.toml",
+  "src/sources/works/prosper-gueranger/the-liturgical-year/editions/french-oudin-1911-volume-11",
   "src/sources/works/catholic-church/vulgata-clementina/editions/ebible-latvuc",
   "src/sources/works/english-college-of-douay/douay-rheims-bible/editions/challoner-gutenberg-1581",
   "src/sources/works/convocation-of-canterbury/revised-version/editions/ebible-eng-rv",
