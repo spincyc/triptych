@@ -177,3 +177,108 @@ pdf-review`; two forced page breaks in the dossier were revised so that the
 appendix opens on a fresh page and turns between dossiers, not inside one.
 This is author verification; the shared-timestamp three-document build and
 independent visual review remain to be done.
+
+## Author-study, iteration 1
+
+Revised 22 September 2026 in the same run, at author-study iteration 1, after
+study review iteration 0 returned five blocking findings. STU-001 went to
+research, which re-entered and passed research review at its iteration 6;
+STU-002 to STU-005 were carried to this stage. The iteration-0 entry above is
+kept as the record of that pass; where it describes Hilary on the Gospel "as the
+*Catena aurea* reports him", Rabanus, or Rupert and Durandus in the second
+reading, this entry supersedes it.
+
+### Carried findings
+
+- **STU-002.** The comparison's "genuine conflict" paragraph is replaced. The
+  three readings now use the Gospel's city compatibly: the first allegorically
+  with Hilary, who names no town (*In Matth.* VIII.4, PL 9, cols. 959–960); the
+  second as the literal place of a verifiable sign; the third not at all.
+  Aquinas's lecture is cited for holding the harmony and the allegory together.
+  The real disagreements are set inside the readings that carry them:
+  Chrysostom against Jerome on the town (second), Jerome and Ambrose against
+  Chrysostom on whose faith (third), the Greek against the Latin readers of
+  Ps 121 (first). Augustine is described accurately in the comparison, the
+  element-by-element Gospel paragraph and the second reading: reconciling
+  Matthew with Mark, he takes "his own city" first as Nazareth, places the
+  healing at Capernaum and offers two explanations. The second reading's title
+  and three sentences that named Capernaum as the place no longer decide the
+  town.
+- **STU-003.** Chrysostom's "not only the beginnings must be good, but the end
+  also" and "there is need of many labors to be able to come unto the end" are
+  attributed to 1 Cor 1:7 (*Hom. in 1 Cor.* 2, § 6), in the third reading's
+  answer to quietism. His reading of v. 8 is given only as covert accusation
+  (§ 7). The New Advent delivery was re-fetched for this stage; its SHA-256,
+  `66bffe29…4b5858`, matches `research/scope.md` § 6.3, and §§ 6 and 7 were read
+  there. The sentence is withdrawn from the second reading.
+- **STU-004.** The second reading's anagogical sense now develops the command to
+  go home: Hilary's order of the cure ending in the way into paradise given back
+  to believers (VIII.7), Ambrose's true home lost by fraud (*Exp. in Lc.* V.14)
+  and Aquinas's house of eternity. The third reading's anagogical sense is its
+  own: the end given as the beginning was, through 1 Cor 1:8 (the confirming is
+  Christ's on either reading), Hilary on what the many receive at v. 8
+  (VIII.8), and the Postcommunion's *perficias* with God as its subject. 1 Cor
+  1:8 and *perficias* are anchors of the third reading only; the distinction
+  between completion and perfection is dropped.
+- **STU-005, partly repaired.** The Introit's explanatory row now says that the
+  record answers its two loci separately: at Ecclus 36:18 a preferred interval
+  and an alternate approximate year for the composition of Ecclesiasticus, both
+  from the *Catholic Encyclopedia*'s "Ecclesiasticus" (1909) under the
+  traditional Catholic profile, and at Ps 121:1 the Psalter boundary given with
+  the Gradual. The scope appendix's Chronology paragraph says the Introit has
+  two separate answers. **The record's labels are not printed.** Printed with
+  their era, both were refused by `check-content-preflight --check
+  chronology-claims-supported`: its supported set is built only from each
+  element's `publication_claims` and declared profile comparisons, the Introit's
+  `publication_claims` is empty because the element is nonuniform, and a
+  comparison that does not hold at every locus of an element is itself refused
+  (`guidance/scripture-chronology.md` § 14.1). No route in the current tooling
+  lets a locus-specific date for a nonuniform element reach dossier prose. That
+  is a question for the maintainer about the chronology contract, reported
+  here for the cold reviewer; this stage cannot edit the checker or the
+  guidance.
+
+### Revision to the re-entered research
+
+The study now follows the research as re-entered for STU-001 and RES-028:
+
+- Hilary on the Gospel is cited from his *Commentarius in Matthaeum* at PL 9 and
+  no longer through Aquinas: the city (§ 4, with the Maurist *Deo civitas*), the
+  paralytic as the nations, brought by angels and pardoned Adam's first
+  transgression (§ 5), the return home as the way into paradise (§ 7), and v. 8
+  as fitting praise for a power and a way given to men (§ 8). The Catena's
+  *ut fiant filii Dei* and its splice of *quae lex laxare non poterat* are gone.
+- The Catena's "Rabanus" is withdrawn from the second reading's moral sense and
+  replaced by Bede, *In Lucam* II on Lk 5:24.
+- Ambrose, *Exp. in Lc.* V.11–15, enters the second reading (V.13 as the one
+  Father's warrant for the ministerial step, glossing the scribes' question;
+  V.14; V.15 beside Chrysostom on the crowd's fear) and the third (V.11 with
+  Jerome on whose faith). The research's negative sentence about V.14 (RES-031)
+  is not repeated.
+- Under the profile's *Liturgical commentators* rule, the readings and the
+  element-by-element section no longer mention the commentators' other Gospels
+  or Sundays; Rupert and Durandus are withdrawn from the second reading, and
+  the scope appendix carries the one permitted clause. The second reading's
+  paragraph on the pairing's history keeps only the 1862 and 1962 books.
+- Advisories STU-006, STU-007, STU-009, STU-010 (in part), STU-012 and STU-013
+  were cleared while in those files.
+
+The manifest's lane authors now add Ambrose and Bede to the second reading and
+Ambrose to the third, and drop Rupert and Durandus from the second. Carrying
+authors are unchanged.
+
+**Substantive word count: 14,967 words** (13,809 without the `\latin{}`
+quotations), by the method of the iteration-0 entry and excluding the opening's
+map table; the three readings account for 10,220. The finished PDF is 33
+physical pages.
+
+### Author proof and checks
+
+`make doc` settles with 33 pages; `check-proper-components --phase artifacts
+--edition research`, `check-generation-metadata` and every
+`check-content-preflight` check for the research edition pass, including
+provenance-matches-run against this run. The rights colophon was kept off a
+page of its own by merging two pairs of References entries and dropping the
+Catena entry, which the study no longer quotes or relies on. This remains author
+verification; the shared-timestamp three-document build and independent visual
+review are still to be done.
