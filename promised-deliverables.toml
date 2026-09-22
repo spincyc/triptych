@@ -37,37 +37,48 @@ state = "in_progress"
 id = "commentary-holdings-through-containers-2026-09-22"
 owner = "PROJECT-WORK.md"
 promise = "Make commentary discovery report every registered holding of a mapped work, including holdings that exist only inside a container record (a Migne volume, a collected-works volume, a translation anthology), so that a research sweep cannot report a held witness as absent; do so without editing any existing source record."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "containment-inventory"
   criterion = "A new tracked inventory links every container-shaped source record to its constituent works with extents established from repository evidence, marks any it cannot establish as unresolved, and leaves every existing source record byte-identical."
-  status = "open"
-  evidence = ["PROJECT-WORK.md", "tools/source-library"]
+  status = "pass"
+  evidence = ["src/sources/inventories/source-containment-v1.toml", "scripts/_containment.py", "PROJECT-WORK.md"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "discover-reports-holdings"
   criterion = "tools/commentary-work-index discover reports, for each listed work, its direct and container holdings, whether the queried passage lies inside a container's extent, and when the work has no registered holding, in both JSON and text output, with existing fields unchanged."
-  status = "open"
-  evidence = ["PROJECT-WORK.md", "tools/commentary-work-index"]
+  status = "pass"
+  evidence = ["tools/commentary-work-index", "tools/tests/test_containment.py", "tests/tools/commentary-work-index.test"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "container-check"
   criterion = "A check on the repository's sources gate refuses a container-shaped record with no containment entry, an entry naming an unknown record, and a malformed extent, with tests for each refusal."
-  status = "open"
-  evidence = ["PROJECT-WORK.md", "Makefile"]
+  status = "pass"
+  evidence = ["Makefile", "scripts/_containment.py", "tools/tests/test_containment.py"]
+  check = "contains"
+  path = "Makefile"
+  needle = "check-source-containment"
 
   [[deliverables.requirements]]
   id = "eighteenth-sunday-acceptance-cases"
   criterion = "For Mt 9:1-8, Pss 95, 101 and 121 (Vulgate) and 1 Cor 1:4-8, discover surfaces each holding the Eighteenth Sunday research reviews found missed, or the tracked record states why the index does not map that work."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "tools/tests/test_containment.py"]
+  check = "contains"
+  path = "PROJECT-WORK.md"
+  needle = "maps De consensu evangelistarum on 29 chapters but not on Matthew 9"
 
   [[deliverables.requirements]]
   id = "merged-without-disturbing-review"
   criterion = "The change reaches the workspace branch while the Eighteenth Sunday run is held between stages, so that no review's sealed inputs change while a reviewer is reading them."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
+  check = "contains"
+  path = "PROJECT-WORK.md"
+  needle = "merged while the run was held after research iteration 3"
 
 [[deliverables]]
 id = "liturgical-commentators-2026-09-22"

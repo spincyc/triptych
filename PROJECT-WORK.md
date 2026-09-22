@@ -27,9 +27,12 @@ through three rounds, each repaired in full. Each round's cold review raised
 only new findings, so research-review stands at 2 of 4 consecutive novel
 rounds and 1 of 4 repeats. The same class of defect recurred in every round:
 the record called a registered witness unregistered or unreachable. Its cause
-is repository-wide, and the next section repairs it. The run is held between
-stages until that repair lands, so the next review packet seals the fixed
-tool.
+was repository-wide, and the next section repaired it. The run was held after
+research iteration 3 until that repair merged; research-review iteration 3 then
+began against the merged tree. Research iteration 3 now attributes the
+ministerial sense of the Gospel to Aquinas at Mt 9:6 (*per viam
+administrationis, non auctoritatis*) and to the liturgical commentators as
+reception of the compilation, and records that no Father reads Mt 9:8 so.
 
 **Host interventions**, recorded in the run:
 
@@ -71,8 +74,51 @@ Existing source records cannot carry the link. `tools/source-library`
 fingerprints hash a record and its ancestors, and reviewed bindings in
 published leaves pin those fingerprints, so the link lives in a new inventory.
 
-**In progress** on a side branch in an isolated worktree. It merges while the
-Eighteenth Sunday run is held.
+**Done.** The change merged while the run was held after research iteration 3.
+
+- **Inventory.** `src/sources/inventories/source-containment-v1.toml` records
+  114 containers (89 work records and 25 whole-volume artifacts) and 249
+  constituents, 49 of them commentary-index leads. Six identity rows join an
+  index lead to a library work that no name match reaches. The check refuses a
+  container record that changed after its entry was reviewed, so every entry
+  pins its container's own manifest hash.
+- **Resolution.** 19 containers are fully resolved, 78 are partial (each
+  carries an `unresolved` note) and 17 are unresolved: the early penitential
+  collections, Gerbert's *Monumenta*, twelve Catholic Encyclopedia volumes, one
+  newspaper issue and one novel's whole-volume layer.
+  `commentary-work-index containment --unresolved` lists them. 26 records are
+  entered as not containers, each with a reason.
+- **Discovery.** `commentary-work-index discover` gives every listed work a
+  `holdings` status (`held`, `held-in-container`, `cataloged-only`, `none`),
+  its direct records, and its containers. For each container it states the
+  extent and whether the queried passage lies inside it. `make
+  check-source-containment`, which `make check-sources` now requires, keeps
+  the inventory true.
+- **Rule.** Rule 13 of [the catena guidance](guidance/catena.md) §11 states
+  it.
+
+**Acceptance.** For Mt 9:1–8, Aquinas's *Super Matthaeum* is now
+`held-in-container` in the Venice 1745 tomus 3. Jerome is held with PL 26;
+Chrysostom's homilies with NPNF1 vol. 10; Augustine on the three psalms with
+PL 37 (Psalms 80–150, passage inside); and Cassiodorus, Theodoret, Bellarmine,
+the Athanasian *Expositiones* and Chrysostom on Ps 121 with PL 70, PG 80,
+their tracked texts, PG 27 and PG 55 respectively. Theodoret on 1 Corinthians
+is held with PG 82.
+
+One named witness is not surfaced, because of the index, not the holdings:
+the index maps De consensu evangelistarum on 29 chapters but not on Matthew 9.
+On Matthew 8 it surfaces, held inside NPNF1 vol. 6.
+
+**Hazard found while building it.** A scratch copy of the repository placed
+inside the clone without its own `.git` resolves git commands to the enclosing
+checkout. The lane's baseline runs did this. Afterwards the live checkout was
+verified clean, the maintainer record intact, and the held workflow packet
+replayed deterministically.
+
+**Open.** The reconciliation of index work ids with library work ids is still
+open ([catena](guidance/catena.md) §8 item 6), and the 78 partial containers
+carry their own open notes. Discovering a commentary from the Mass rather than
+a passage is the next section's work.
 
 ## Liturgical commentators: standing, keying and inclusion, 2026-09-22
 
