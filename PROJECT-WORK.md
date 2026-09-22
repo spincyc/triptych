@@ -493,9 +493,15 @@ the calendar, proper, research, interpretation and acceptance trees separate.
 The v6 hardening and chronology/rite audits, exact artifact identities,
 provider-specific reviews and final integration evidence are durable at
 `workflows/reviews/propers-three-documents-v6-final-2026-09-21/`. Local release
-gates and the external transport still precede the authorized push to `main`;
-deployment facts will be recorded only after the exact pushed snapshot and its
-public routes have been observed.
+gates passed before publication. Commit
+`b048fa37e8e784fbcc351bce201f9e676d3d5008` reached both the workspace branch
+and `origin/main` without rewriting history; Pages run
+[35691184227](https://github.com/spincyc/triptych/actions/runs/35691184227)
+completed successfully. The four canonical HTML studies and all twelve PDFs
+then returned HTTP 200 and matched the verified Pages artifact byte for byte.
+The [deployment evidence](workflows/reviews/propers-three-documents-v6-final-2026-09-21/deployment-evidence.json)
+records every route and digest. The two proper-study deliverables are complete;
+the ignored external-review transport is the final closeout artifact.
 
 ## Traditional context and salient dates in GPT propers, 2026-09-09
 

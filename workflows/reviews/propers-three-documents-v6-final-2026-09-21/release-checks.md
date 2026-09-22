@@ -32,6 +32,12 @@ Node comparison opened it, producing one `ENOENT`. Running the same four checks
 serially immediately passed. No tracked byte or document result changed; the
 final evidence is the serial run.
 
-Deployment remains deliberately absent from this local record. The exact
-pushed commit, Pages run and public-route identities are recorded only after
-they have been observed.
+The exact candidate commit
+`b048fa37e8e784fbcc351bce201f9e676d3d5008` was pushed to `main`.
+GitHub Pages run
+[35691184227](https://github.com/spincyc/triptych/actions/runs/35691184227)
+completed successfully after fresh typesetting and all deployment checks.
+Post-deployment retrieval verified HTTP 200 and byte identity against the
+verified Pages artifact for four canonical HTML routes and twelve PDF routes;
+the per-route evidence is retained in
+[deployment-evidence.json](deployment-evidence.json).

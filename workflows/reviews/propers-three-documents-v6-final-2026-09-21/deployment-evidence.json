@@ -1,0 +1,188 @@
+{
+  "record_type": "deployment-verification",
+  "verified_at": "2026-09-22T05:48:17Z",
+  "commit": "b048fa37e8e784fbcc351bce201f9e676d3d5008",
+  "branch": "main",
+  "workflow_run_id": 35691184227,
+  "workflow_run": "https://github.com/spincyc/triptych/actions/runs/35691184227",
+  "workflow_started_at": "2026-09-22T05:33:38Z",
+  "workflow_completed_at": "2026-09-22T05:44:33Z",
+  "workflow_conclusion": "success",
+  "routes": [
+    {
+      "url": "https://mystago.gy/web/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.html",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 102993,
+      "sha256": "ccfbe31d4891268e54e58eb70acc767e4e6b99d9ccc79721b62eb24d03f5435f",
+      "compared_with": "build/public-alpha/site/web/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.html",
+      "local_sha256": "ccfbe31d4891268e54e58eb70acc767e4e6b99d9ccc79721b62eb24d03f5435f",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "bytes": 471419,
+      "sha256": "0ecd7d768fb793e92cc2e2b06f0d9cd3ec504874bc692eed7a7aae9d1bb2b305",
+      "compared_with": "build/public-alpha/site/pdf/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf",
+      "local_sha256": "0ecd7d768fb793e92cc2e2b06f0d9cd3ec504874bc692eed7a7aae9d1bb2b305",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "bytes": 462521,
+      "sha256": "ba14d046656b05e0af8094895f149c88fa27054b68e939dd4d4fef6d8446261c",
+      "compared_with": "build/public-alpha/site/pdf/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf",
+      "local_sha256": "ba14d046656b05e0af8094895f149c88fa27054b68e939dd4d4fef6d8446261c",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "bytes": 242757,
+      "sha256": "63eb6b1126af403fadc67c08b4eca0d8f718f2247692a6d6c759a30ef8dc348d",
+      "compared_with": "build/public-alpha/site/pdf/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf",
+      "local_sha256": "63eb6b1126af403fadc67c08b4eca0d8f718f2247692a6d6c759a30ef8dc348d",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.html",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 91474,
+      "sha256": "35b05984933837466937a439f8530528a76f1e4ac1e25dbfccd63215a418e0f4",
+      "compared_with": "build/public-alpha/site/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.html",
+      "local_sha256": "35b05984933837466937a439f8530528a76f1e4ac1e25dbfccd63215a418e0f4",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "bytes": 439290,
+      "sha256": "335f6316dce984e4926a40a6b01b9543d923cf97bf2049fb202ed26ae7f95290",
+      "compared_with": "build/public-alpha/site/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf",
+      "local_sha256": "335f6316dce984e4926a40a6b01b9543d923cf97bf2049fb202ed26ae7f95290",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "bytes": 418902,
+      "sha256": "5c8dd1a8660b1b894f64bfc34f0592b133b78559a8856b243f531d4b56db160d",
+      "compared_with": "build/public-alpha/site/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+      "local_sha256": "5c8dd1a8660b1b894f64bfc34f0592b133b78559a8856b243f531d4b56db160d",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "bytes": 273997,
+      "sha256": "2544843ff387a2d2ebe347c848a87b148b67cd710aa5fb1182dd60a151c81ab4",
+      "compared_with": "build/public-alpha/site/pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf",
+      "local_sha256": "2544843ff387a2d2ebe347c848a87b148b67cd710aa5fb1182dd60a151c81ab4",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/web/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.html",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 135905,
+      "sha256": "12477eade363b1a4e8d9d6a297bfeddb9b9804e8fc9fb883a84c88e95d63c3b0",
+      "compared_with": "build/public-alpha/site/web/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.html",
+      "local_sha256": "12477eade363b1a4e8d9d6a297bfeddb9b9804e8fc9fb883a84c88e95d63c3b0",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "bytes": 540318,
+      "sha256": "60812b8145520e0ef05706e7b63680aa7880681ae293859bd51f38d67728ab68",
+      "compared_with": "build/public-alpha/site/pdf/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf",
+      "local_sha256": "60812b8145520e0ef05706e7b63680aa7880681ae293859bd51f38d67728ab68",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "bytes": 450164,
+      "sha256": "1f829093361895e89919ce3a9f3eec488decdecb066ab26b61b5d371ea138bf0",
+      "compared_with": "build/public-alpha/site/pdf/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf",
+      "local_sha256": "1f829093361895e89919ce3a9f3eec488decdecb066ab26b61b5d371ea138bf0",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "bytes": 275035,
+      "sha256": "01f1a71b949cb783d2a8125ae9ba43a2bfa59c7223101dfee54c612f3c7ca3d1",
+      "compared_with": "build/public-alpha/site/pdf/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf",
+      "local_sha256": "01f1a71b949cb783d2a8125ae9ba43a2bfa59c7223101dfee54c612f3c7ca3d1",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.html",
+      "http_status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "bytes": 142619,
+      "sha256": "b32ef1a4997aebb406d993ee8cfd9b4ad410654fd346442a97e2521d08afc9f8",
+      "compared_with": "build/public-alpha/site/web/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.html",
+      "local_sha256": "b32ef1a4997aebb406d993ee8cfd9b4ad410654fd346442a97e2521d08afc9f8",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "bytes": 543769,
+      "sha256": "d1deef4105a936ee3d1c5ed03fbb073308239f295f1699a08c7f299dc456b1f3",
+      "compared_with": "build/public-alpha/site/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf",
+      "local_sha256": "d1deef4105a936ee3d1c5ed03fbb073308239f295f1699a08c7f299dc456b1f3",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "bytes": 432658,
+      "sha256": "1557ded8a26a4c266cd3d784c3c08a893252e213ee36b74c6aa5d810bb93b452",
+      "compared_with": "build/public-alpha/site/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.pdf",
+      "local_sha256": "1557ded8a26a4c266cd3d784c3c08a893252e213ee36b74c6aa5d810bb93b452",
+      "match": "byte-identical"
+    },
+    {
+      "url": "https://mystago.gy/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "bytes": 284155,
+      "sha256": "8a36680292e73eb54110898327849a99d825924410c79cc928984100f1c36998",
+      "compared_with": "build/public-alpha/site/pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf",
+      "local_sha256": "8a36680292e73eb54110898327849a99d825924410c79cc928984100f1c36998",
+      "match": "byte-identical"
+    }
+  ],
+  "summary": {
+    "route_count": 16,
+    "html_routes": 4,
+    "pdf_routes": 12,
+    "all_http_200": true,
+    "all_byte_identical": true
+  },
+  "scope": [
+    "Both providers' 1962 Seventeenth Sunday study, synthesis, homily and canonical web route.",
+    "Both providers' U.S. 2011 postconciliar Twenty-fifth Sunday Year A study, synthesis, homily and canonical web route."
+  ],
+  "limits": [
+    "HTTP and byte identity were rechecked after the exact Pages run; browser presentation is covered by the retained cold-review evidence.",
+    "The workflow's conditional restored-corpus installation step was skipped because fresh container typesetting completed successfully; all substantive verification and deployment steps passed."
+  ]
+}

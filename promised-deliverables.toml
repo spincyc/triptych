@@ -4,7 +4,7 @@ schema_version = 1
 id = "propers-shared-format-2026-09-21"
 owner = "PROJECT-WORK.md"
 promise = "Restore shared proper-specific Latin Modern typography and consistent title, table, dossier, lane and four-senses presentation in the four recent GPT/Claude proper leaves; restore concise opening pages and homily-only two-column speech without changing existing prose or accepting unreviewed chronology; extend gates, inspect all affected PDFs, commit coherently and push to main with deployment verification."
-state = "in_progress"
+state = "complete"
   [[deliverables.requirements]]
   id = "chronology-repair-and-consumers"
   criterion = "Under the maintainer's expanded authorization, repair the shared Isaiah ministry/composition error from inspected sources, preserve Matthew's source-specific qualifications, independently review the corrected claims and GPT dossiers, and refresh every affected current consumer without rewriting historical acceptance evidence."
@@ -32,8 +32,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "format-main-deployment"
   criterion = "Coherent reviewed commits reach origin/main without history rewriting after applicable local deployment gates pass; the exact Pages run and affected public routes are verified."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/propers-three-documents-v6-final-2026-09-21/deployment-evidence.json"]
 
 [[deliverables]]
 id = "claude-postconciliar-twenty-fifth-three-documents-2026-09-19"
@@ -133,7 +133,7 @@ state = "complete"
 id = "propers-three-documents-2026-09-17"
 owner = "PROJECT-WORK.md"
 promise = "Build and exercise a robust versioned proper-study successor while preserving legacy proper schema 1; produce a 20–50-page expansive study, 10–12-page concise interleaved alternative reading document with the established first four pages, and standalone speakable exegetical pedagogical homily for both GPT Sunday propers on 2026-09-20, with independent cold review, guidance revision and reruns, six beautiful reviewed PDFs and canonical web editions."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "reusable-three-output-contracts"
@@ -192,8 +192,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "recovered-main-and-pages"
   criterion = "Recovered work is preserved in coherent commits, reconciled with current main without rewriting history, and pushed; the exact pushed snapshot passes the Pages workflow and the six Sunday PDFs and two canonical web routes are verified live. Held publications remain excluded."
-  status = "open"
-  evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml", "workflows/reviews/propers-three-documents-v6-final-2026-09-21/README.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml", "workflows/reviews/propers-three-documents-v6-final-2026-09-21/README.md", "workflows/reviews/propers-three-documents-v6-final-2026-09-21/deployment-evidence.json"]
 
 [[deliverables]]
 id = "proper-salient-dates-2026-09-09"
