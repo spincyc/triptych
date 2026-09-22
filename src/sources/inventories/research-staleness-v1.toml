@@ -1,6 +1,149 @@
 schema = 1
 record_type = "research-staleness"
 
+# REVISION OBLIGATIONS, written by hand, not by tools/research-staleness.
+#
+# Each [[revision_due]] names a published leaf whose next revision owes a named
+# correction that no fingerprint below can express, because the defect is in
+# the leaf's own prose rather than in a changed input. It is a flag for that
+# revision, not a finding that the leaf is wrong elsewhere, and it authorizes no
+# edit now (guidance/staleness.md). Clear an entry by deleting it in the commit
+# that revises the leaf.
+#
+# CAUTION: `research-staleness rebaseline` and `bootstrap` rewrite this file from
+# [[editions]] alone and do not preserve this block. Whoever rebaselines must
+# carry it forward, and the diff of that commit will show it removed if they
+# do not.
+#
+# The ten entries of 2026-09-22 implement the maintainer's decision D7
+# (guidance/liturgy/liturgical-commentators-plan-2026-09-22.md): the Time after
+# Pentecost volumes of The Liturgical Year are the posthumous continuation of
+# Guéranger's series, credited to Dom Lucien Fromage, O.S.B. (1845-1916), with
+# the evidence recorded in the new edition records under
+# src/sources/works/prosper-gueranger/the-liturgical-year/editions/ (for
+# example french-oudin-1911-volume-11/edition.toml). The set was recounted from
+# the tracked reader-facing sources of every published 1962 and postconciliar
+# proper leaf of both providers, as the plan's erratum required; the plan's
+# count of seven was not used. A leaf is listed when its reader-facing text
+# (a) attributes words or readings of a Time-after-Pentecost volume to
+# Guéranger by name, or (b) prints the imprint "Dublin: (James) Duffy, 1900" for
+# volume XI, which the edition record corrected to Stanbrook/Burns & Oates, 1909
+# on 2026-09-05. Leaves that name the continuation correctly (gpt 55, gpt 56) and
+# leaves whose only mention is in research records (claude 52, gpt 54, gpt 57)
+# are not listed.
+
+[[revision_due]]
+provider = "claude"
+leaf = "liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost"
+recorded_on = "2026-09-22"
+decision = "D7, guidance/liturgy/liturgical-commentators-plan-2026-09-22.md"
+correction = "Credit the Time after Pentecost volume to the continuation (Dom Lucien Fromage), not to Guéranger. Its imprint (1909) is already correct."
+evidence = [
+  "sections/30-commentary.tex:698 Dom Laurence Shepherd's English of Guéranger's \\work{The Liturgical Year}, whose 1909 volume introduces the Mass",
+  "sections/99-references.tex:26-27 \\item Prosper Guéranger, \\work{The Liturgical Year} \\dots\\ \\work{Time after Pentecost}, vol.~II, 2nd ed.",
+]
+
+[[revision_due]]
+provider = "claude"
+leaf = "liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost"
+recorded_on = "2026-09-22"
+decision = "D7, guidance/liturgy/liturgical-commentators-plan-2026-09-22.md"
+correction = "Credit the continuation (Dom Lucien Fromage), not Guéranger; and drop the statement that the library's registered volume XI is 'the Duffy printing of 1900', which its edition record corrected to 1909."
+evidence = [
+  "sections/30-commentary.tex:306 Guéranger keys the Collect to the publican",
+  "sections/90-scope.tex:133-134 the repository's registered edition of that volume is the Duffy printing of 1900",
+]
+
+[[revision_due]]
+provider = "claude"
+leaf = "liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost"
+recorded_on = "2026-09-22"
+decision = "D7, guidance/liturgy/liturgical-commentators-plan-2026-09-22.md"
+correction = "Credit the continuation (Dom Lucien Fromage), not Guéranger, throughout; correct the volume XI imprint to Stanbrook Abbey / Burns & Oates, 1909."
+evidence = [
+  "sections/30-commentary.tex:341 Guéranger, reporting Abbot Rupert, reads the",
+  "sections/99-references.tex:58-60 \\item Prosper Guéranger, \\work{The Liturgical Year} ... 2nd ed.\\ (Dublin: Duffy, 1900), pp.~307--326",
+]
+
+[[revision_due]]
+provider = "claude"
+leaf = "liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost"
+recorded_on = "2026-09-22"
+decision = "D7, guidance/liturgy/liturgical-commentators-plan-2026-09-22.md"
+correction = "Credit the continuation (Dom Lucien Fromage), not Guéranger, throughout; correct the volume XI imprint to Stanbrook Abbey / Burns & Oates, 1909."
+evidence = [
+  "sections/30-commentary.tex:1044 Guéranger makes one interpretive move on this Collect",
+  "sections/30-commentary.tex:830 English, the Duffy 1900 edition of \\work{The Liturgical Year} vol.~XI",
+  "sections/99-references.tex:207-208 \\item Guéranger, Prosper, \\work{The Liturgical Year}, vol.~XI (Dublin: Duffy, 1900)",
+]
+
+[[revision_due]]
+provider = "claude"
+leaf = "liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost"
+recorded_on = "2026-09-22"
+decision = "D7, guidance/liturgy/liturgical-commentators-plan-2026-09-22.md"
+correction = "Credit the continuation (Dom Lucien Fromage), not Guéranger. Its imprint (1909) is already correct."
+evidence = [
+  "sections/30-commentary.tex:193 Guéranger's 1909 volume shows the formulary before the 1960 change",
+  "sections/99-references.tex:79 \\item Prosper Guéranger, \\work{The Liturgical Year: Time after Pentecost}",
+]
+
+[[revision_due]]
+provider = "claude"
+leaf = "liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost"
+recorded_on = "2026-09-22"
+decision = "D7, guidance/liturgy/liturgical-commentators-plan-2026-09-22.md"
+correction = "Credit the continuation (Dom Lucien Fromage), not Guéranger, throughout; correct the volume XI imprint to Stanbrook Abbey / Burns & Oates, 1909."
+evidence = [
+  "sections/30-commentary.tex:931 who reads it is Guéranger}, above this Secret at printed p.~370",
+  "sections/99-references.tex:150-151 \\item Guéranger, P., \\work{The Liturgical Year}, vol.~XI, English of Dom Laurence Shepherd (Dublin: Duffy, 1900)",
+]
+
+[[revision_due]]
+provider = "claude"
+leaf = "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"
+recorded_on = "2026-09-22"
+decision = "D7, guidance/liturgy/liturgical-commentators-plan-2026-09-22.md"
+correction = "Credit the continuation (Dom Lucien Fromage), not Guéranger, in all three documents; correct the volume 11 imprint to Stanbrook Abbey / Burns & Oates, 1909."
+evidence = [
+  "sections/00-opening.tex:44 Prosper Guéranger records that the present Gospel gave the day its name",
+  "sections/90-apparatus.tex:153 \\item Prosper Guéranger, \\work{The Liturgical Year}, vol.~11, trans. Laurence Shepherd (James Duffy, 1900)",
+  "sections/concise/90-apparatus.tex:113 the same entry, (James Duffy, 1900)",
+]
+
+[[revision_due]]
+provider = "gpt"
+leaf = "liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost"
+recorded_on = "2026-09-22"
+decision = "D7, guidance/liturgy/liturgical-commentators-plan-2026-09-22.md"
+correction = "Credit the continuation (Dom Lucien Fromage), not Guéranger. Its imprint, Dublin: James Duffy & Sons, 1883, is correct for the scan it cites (liturgicalyear11gura); the plan listed this leaf under 'Duffy, 1900', which it does not print."
+evidence = [
+  "main.tex:225 Guéranger offers direct historical reception of this complete liturgical close",
+  "main.tex:303 \\item Prosper Guéranger, ... \\emph{The Liturgical Year}: The Time after Pentecost}, vol.~II, trans. Laurence Shepherd (Dublin: James Duffy \\& Sons, 1883)",
+]
+
+[[revision_due]]
+provider = "gpt"
+leaf = "liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost"
+recorded_on = "2026-09-22"
+decision = "D7, guidance/liturgy/liturgical-commentators-plan-2026-09-22.md"
+correction = "Credit the continuation (Dom Lucien Fromage), not Guéranger, throughout; correct the volume XI imprint to Stanbrook Abbey / Burns & Oates, 1909."
+evidence = [
+  "sections/28-postcommunion.tex:13 Guéranger says that the sacrament repairs the losses caused by human",
+  "main.tex:122 \\item Prosper Guéranger, ... \\emph{The Liturgical Year}}, vol.~XI (Dublin: James Duffy, 1900), p.~271",
+]
+
+[[revision_due]]
+provider = "gpt"
+leaf = "liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost"
+recorded_on = "2026-09-22"
+decision = "D7, guidance/liturgy/liturgical-commentators-plan-2026-09-22.md"
+correction = "Credit the continuation (Dom Lucien Fromage), not Guéranger, throughout; correct the volume XI imprint to Stanbrook Abbey / Burns & Oates, 1909."
+evidence = [
+  "sections/30-commentary.tex:211 Guéranger, reporting Rupert of Deutz, explicitly joins the repeated covenant",
+  "sections/99-references.tex:40-42 Prosper Guéranger, ... vol.~XI (Dublin: Duffy, 1900), pp.~307--326",
+]
+
 [[editions]]
 provider = "claude"
 leaf = "articles/canon-law/clerical-celibacy-chastity-and-continence"

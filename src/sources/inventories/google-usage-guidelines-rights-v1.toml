@@ -1,0 +1,539 @@
+# How this repository treats a scan whose front matter carries Google's
+# usage-guidelines page, settled once so that it is not settled again, for PDFs,
+# page images and text layers alike.
+#
+# This file exists because the repository had been holding two answers to one
+# question at the same time, and a third in silence. Twenty-one artifact records
+# refuse to retain bytes because Google's front matter or stamp is in them, all
+# resting on the absence of a distribution grant and most of them citing the
+# Cummiskey 1843 text layer's disposition as settled. Seven tracked payloads
+# carry Google's front matter: two Mozarabic text layers retain it after arguing
+# an implied licence in src/sources/inventories/ambrosian-and-mozarabic-rights-v1.toml,
+# and five retain it without a word, among them the tracked PDF of The Liturgical
+# Year volume XI, whose own text layer was refused for exactly that page. A
+# rights position stated in three places in three wordings is three positions
+# (guidance/sources.md, "Settle a recurring rights question once"). The
+# maintainer's decision D9 of 2026-09-22
+# (guidance/liturgy/liturgical-commentators-plan-2026-09-22.md) asked for one.
+#
+# It is not legal advice, it is not an opinion of counsel, and it binds nobody
+# outside this repository. Where it states a proposition of law it states the
+# jurisdiction, and the jurisdiction throughout is the United States.
+
+rights_schema = 1
+record_type = "google-usage-guidelines-rights"
+recorded_on = "2026-09-22"
+jurisdiction = "United States"
+
+rule = """
+An exact artifact is never refused retention, and never recorded unresolved,
+merely because its front matter carries Google's usage-guidelines page: the page
+is kept in the exact bytes unaltered, identified in the artifact's record as
+Google's and not the book's, never quoted, cited or counted as the book's text,
+and the artifact's storage is decided on the ordinary grounds of
+guidance/sources.md -- the printing's own United States rights basis, measured
+size, duplication -- with a non-Google scan of the same printing preferred when
+it is equally complete and legible.
+"""
+
+holding = """
+The same rule governs a PDF, a page-image set and an optical text layer, because
+the page is the same prose in each and the reasoning below does not depend on
+the medium. It also governs Google's shorter front matter, "This is a
+reproduction of a library book that was digitized by Google ...", and the
+four-word page-foot stamp "Digitized by Google" (see `the_other_google_matter`).
+
+What the rule does not do: it does not make the page the book, it does not
+license the page to anyone under Triptych's CC BY 4.0 licence (THIRD_PARTY.md:
+retained source bytes "keep their own status"), and it does not reach any
+question other than Google's own front matter and stamp. `not_settled_here`
+names the adjacent Google questions it leaves open.
+
+Existing records are not edited by this file. Every record whose disposition
+this rule supersedes is listed in `census`, with what it needs at its next
+deliberate revision. Their records are fingerprinted and pinned by reviewed
+source bindings, so the correction is a consumer review, not a mechanical
+rewrite (guidance/sources.md, "A changed fingerprint is a consumer review
+obligation").
+"""
+
+[the_page]
+question = "What is Google's usage-guidelines page, in its own words?"
+answer = "Modern prose of Google's authorship that Google put at the front of every Google Books file, asking that its attribution travel with the file."
+reasoning = """
+It is quoted here from bytes this repository already tracks, so a reader with no
+network can check every word: lines 56922-56954 of
+artifact.jacques-paul-migne.patrologia-graeca-volume-29.1860-paris.full-text-layer-2898b217
+carry it entire, and so does PDF page 1 of
+artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-pdf-95ba98e2.
+It has three parts.
+
+1. A statement: "This is a digital copy of a book that was preserved for
+   generations on library shelves before it was carefully scanned by Google as
+   part of a project to make the world's books discoverable online. It has
+   survived long enough for the copyright to expire and the book to enter the
+   public domain."
+2. "Usage guidelines": "Google is proud to partner with libraries to digitize
+   public domain materials and make them widely accessible. Public domain books
+   belong to the public and we are merely their custodians. ... We also ask that
+   you: + Make non-commercial use of the files ... we request that you use these
+   files for personal, non-commercial purposes. + Refrain from automated
+   querying Do not send automated queries of any sort to Google's system ...
+   + Maintain attribution The Google "watermark" you see on each file is
+   essential for informing people about this project and helping them find
+   additional materials through Google Book Search. Please do not remove it.
+   + Keep it legal ..."
+3. "About Google Book Search": a paragraph on Google's mission, ending with the
+   address of books.google.com.
+
+It is Google's writing, not a reproduction of anything, so the faithful-copy
+reasoning of Bridgeman Art Library v. Corel Corp., 36 F. Supp. 2d 191 (S.D.N.Y.
+1999) does not reach it, as the Mozarabic record already observed. It reserves
+nothing: it claims no copyright in the book or the scan, it frames every use
+term as a request ("We also ask that you", "we request that you"), and the only
+term addressed to the file itself is that its attribution not be removed.
+"""
+
+[why_it_may_be_retained]
+question = "On what footing does this repository redistribute Google's page inside a retained file?"
+answer = "An implied non-exclusive licence manifested by the page itself, and, independently, fair use."
+reasoning = """
+IMPLIED LICENCE. A non-exclusive licence needs no writing and may be implied
+from conduct (17 U.S.C. Sec. 101 excludes a non-exclusive licence from a
+"transfer of copyright ownership", so Sec. 204(a)'s writing requirement does not
+apply to it; Effects Associates, Inc. v. Cohen, 908 F.2d 555, 558 (9th Cir.
+1990)). Google wrote this page to travel inside a freely downloadable file of a
+public-domain book, says in it that such books "belong to the public", and asks
+that its attribution not be removed. Passing the file on intact, with the page
+in it, is the use the page contemplates and asks for. This is the reasoning of
+ambrosian-and-mozarabic-rights-v1.toml `[the_hosts]`
+`shape_three_google_scan_and_its_own_front_matter`, adopted here for every
+medium and every Google-scanned book, not only the Mozarabic ones.
+
+THE REQUESTS ARE NOT CONDITIONS. "Personal, non-commercial" use is requested,
+not made a condition of any licence to the book, and the book is not Google's
+to license. The repository's own use is non-commercial research. It does not
+offer the page, or any retained source bytes, under its own CC BY 4.0 licence
+(THIRD_PARTY.md, "Retained Reusable Source Artifacts"), so it purports to
+authorise nobody's commercial use of Google's words. "Refrain from automated
+querying" is addressed to Google's systems, not to the file.
+
+FAIR USE, INDEPENDENTLY. If no licence were implied, reproducing the page as an
+incidental part of an unaltered evidentiary copy of a public-domain book would
+be fair use under 17 U.S.C. Sec. 107, on this repository's reading: the purpose
+is archival and evidentiary, not the page's own; the page is informational and
+functional; it is reproduced whole only because the exact bytes are the
+evidence; and no market for the page exists or is touched -- the retention
+carries Google's attribution further, which is what the page asks. This is the
+project's reasoning, not a holding, and it is recorded so that it can be
+attacked on its own terms.
+
+WHAT IS NOT RELIED ON. That the file downloaded, that the Internet Archive
+serves it, that any host labels the item public domain, or that Google has not
+objected. The United States status of the book inside the file must still be
+established per artifact, on its own evidence, as guidance/sources.md requires.
+"""
+
+[conditions]
+question = "What must a record do when it retains such a file?"
+answer = "Four things, and a fifth when it chooses."
+items = """
+1. KEEP THE EXACT BYTES EXACT. Never strip the page from an exact artifact. A
+   notice-free derivative may be made, as a separate artifact with its own
+   record, a stated replayable cut and a derived_from edge -- the Dessain route
+   of artifact.thomas-aquinas.in-omnes-pauli-epistolas-commentaria.dessain-volume-2-1857.book-ocr-2b7b11dc
+   ("Take exact parent bytes from byte offset 3010 ... removes exactly 50
+   LF-delimited wrapper lines") -- but it is not required and is not a rights
+   precondition.
+2. SAY WHERE THE PAGE IS. The record names its physical lines or its artifact
+   page and says it is Google's, not the book's. Of the seven tracked payloads
+   that carry Google front matter today, two say so (the Mozarabic records) and
+   five do not; `census` lists them.
+3. NEVER TREAT IT AS THE BOOK. It is not quoted as source text, not cited as
+   evidence about the book, and not counted by a search or a negative: a
+   raw-line query that could match "public domain", "google" or "copyright"
+   inside such a file must bound its lines to exclude the page.
+4. DECIDE STORAGE ON THE ORDINARY GROUNDS. The printing's own United States
+   rights basis, measured size and duplication, as for any other artifact. A
+   large Google PDF may still stay `remote` on a measured size argument; it may
+   not stay `unresolved` on account of the page.
+5. PREFER A NON-GOOGLE SCAN WHEN IT IS AS GOOD. Where a non-Google scan of the
+   same printing is equally complete and legible -- an Internet Archive Scribe
+   scan, a library's own digitisation -- register that one first. This is the
+   maintainer's D9 preference, kept as a quality preference: such scans carry no
+   third-party prose to identify, and their text layers are usually better. It is
+   no longer a rights requirement. The 2026-09-22 Time-after-Pentecost
+   acquisitions followed it: all eight are Toronto Scribe scans with no Google
+   matter at all.
+"""
+
+[the_other_google_matter]
+question = "Does the same answer govern Google's shorter reproduction statement and its page-foot stamp?"
+answer = "Yes for the statement; and the stamp alone never bars retention."
+reasoning = """
+THE REPRODUCTION STATEMENT. Older Google files open instead with "This is a
+reproduction of a library book that was digitized by Google as part of an
+ongoing effort to preserve the information in books and make it universally
+accessible", followed by "Google books" and the address of books.google.com.
+It is Google's front matter doing the same job in fewer words, and it is
+treated exactly as the usage-guidelines page. Three tracked Revue bénédictine
+text layers carry it at lines 1-3 (`census`); one Migne text layer was refused
+for it.
+
+THE STAMP. "Digitized by Google" at the foot of each page is four words naming
+the digitiser. Words and short phrases are not subject to copyright (37 C.F.R.
+Sec. 202.1(a)); the stamp carries no notice, reserves nothing, and is the very
+attribution the usage guidelines ask users to keep. The library already tracks
+it in many files, with that reasoning written out at
+artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf
+and artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1843.roman-missal-1843-text-6949d12f,
+and it is retained there deliberately as the only page-boundary evidence in
+those layers. Five Gerbert records nevertheless refused bytes for the stamp
+alone, calling it "Google-authored matter" and citing the Cummiskey 1843
+refusal, which was about the front-matter page and not the stamp. Under this
+record the stamp is never a ground for non-retention.
+"""
+
+[the_contradiction_reconciled]
+question = "Which existing dispositions does this settle, and which way?"
+answer = "The retaining records were right; the refusals rest on superseded reasoning."
+reasoning = """
+THE LITURGICAL YEAR VOLUME XI, which the plan names. The tracked PDF
+artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-pdf-95ba98e2
+carries the usage-guidelines page as its PDF page 1, and its record does not
+mention it. The text layer of the same Internet Archive item,
+artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-djvu-ocr-f4c31a52,
+carries the same page at its lines 1-44 (read on 2026-09-22 in a fresh fetch
+whose SHA-256 matched the record) and was refused for it. Under this record the
+PDF's disposition stands, its record should say where the page is, and the text
+layer is retainable; see `duplicate_text_layer_records` for why that record is
+not the one to change now.
+
+THE CHAIN OF REFUSALS. The Cummiskey 1843 text layer
+(artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1843.ia-djvu-ocr)
+was recorded "remote and unresolved" because "no distribution grant was
+established" for Google's page. Later records adopted that disposition by
+citation -- often in the words "following the disposition already settled at"
+it -- for the usage-guidelines page, for the reproduction statement, and for the
+stamp. None engaged the implied-licence reasoning the Mozarabic record had set
+out, and none noted that the same repository tracked the same prose elsewhere.
+The absence of an express grant was treated as a refusal; this record holds that
+the page itself is the grant, and that fair use would suffice without it.
+
+WHY THE RETAINING SIDE AND NOT THE REFUSING ONE. Three reasons, in order of
+weight. The retaining side has an argued basis and the refusing side has only
+an absence. The retaining side is what the repository actually does with its
+tracked bytes, in seven payloads; choosing refusal would have declared seven
+live retentions unlawful with no way to correct them now, since their records
+are fingerprinted and pinned. And refusal costs evidence: it is why, until
+2026-09-22, this library held no searchable English text file of The Liturgical
+Year's Time after Pentecost volume II that a reader could open offline; the
+tracked PDF's embedded text is not registered as an indexable artifact.
+"""
+
+[census]
+note = """
+Every artifact record in the library, as of 2026-09-22, whose bytes carry
+Google's front matter or stamp and whose disposition this record touches.
+Produced by the commands in `how_to_check_this_record`; the lists there are the
+measured ones, and these rows interpret them. Nothing listed here was edited.
+"""
+tracked_with_google_front_matter = """
+Retained, and conforming under this record. What each record still needs is its
+own identification of the page (condition 2).
+
+  artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.rome-monaldini-1755.missale-mixtum-1755-nypl-text-ed70e3ae
+      usage-guidelines page, identified by its record ("lines 1 to about 43").
+  artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.paris-migne-1862.liturgia-mozarabica-1862-text-769ccd75
+      usage-guidelines page, identified by its record ("lines 1 to about 46").
+  artifact.jacques-paul-migne.patrologia-graeca-volume-29.1860-paris.full-text-layer-2898b217
+      usage-guidelines page at lines 56922-56954, the end of the file; the record
+      does not mention it.
+  artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-pdf-95ba98e2
+      usage-guidelines page as PDF page 1; the record does not mention it.
+  artifact.germain-morin.le-plus-ancien-comes-ou-lectionnaire-de-leglise-romaine.1910-revue-benedictine-volume-27.ia-djvu-ocr-1a7d549e
+  artifact.germain-morin.liturgie-et-basiliques-de-rome-au-milieu-du-viie-siecle.1911-revue-benedictine-volume-28.ia-djvu-ocr-3de8a598
+  artifact.andre-wilmart.le-comes-de-murbach.1913-revue-benedictine-volume-30.ia-djvu-ocr-e3bbfad4
+      the reproduction statement at lines 1-3; each record says the file
+      "carries none of the host's markup, navigation or apparatus", which those
+      three lines contradict.
+"""
+refused_for_the_usage_guidelines_page = """
+Not retained because the page is in the bytes. That reason is superseded. Each
+is retainable on this ground at its next deliberate revision, subject to the
+ordinary grounds; where another ground also applies it is named.
+
+  artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1843.ia-djvu-ocr
+  artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-djvu-ocr
+  artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf
+      (24,767,551 bytes; a size argument may still keep it remote.)
+  artifact.frederick-charles-husenbeth.missal-for-the-use-of-the-laity.dolman-1853.ia-djvu-ocr
+  artifact.catholic-church.missale-ad-usum-sarum.dickinson-burntisland-1861-1883.ia-djvu-ocr-1dccd4d1
+  artifact.david-w-judd.life-and-writings-of-frank-forester.orange-judd-1882-volume-1.ia-djvu-text-926ae2ed
+  artifact.martin-gerbert.monumenta-veteris-liturgiae-alemannicae.sankt-blasien-1777-1779.ia-djvu-text-monumentaveteri00gerbgoog-45863bc7
+  artifact.martin-gerbert.monumenta-veteris-liturgiae-alemannicae.sankt-blasien-1777-1779.ia-djvu-text-monumentaveteri01gerbgoog-cb858b10
+  artifact.prosper-gueranger.the-liturgical-year.english-volume-10.ia-djvu-ocr-68111bbd
+  artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-djvu-ocr-f4c31a52
+      (one of two records of the same bytes; `duplicate_text_layer_records`.)
+  artifact.prosper-gueranger.the-liturgical-year.english-volume-14.ia-djvu-ocr-ba84d819
+  artifact.thomas-aquinas.in-omnes-pauli-epistolas-commentaria.dessain-volume-2-1857.ia-ocr-2529728f
+  artifact.thomas-aquinas.in-omnes-pauli-epistolas-commentaria.dessain-volume-2-1857.ia-pdf-8d69fd95
+      (both `restricted`; their notice-free derivatives are already tracked, so
+      duplication, not rights, is now the ground for holding them remote.)
+"""
+refused_for_the_reproduction_statement = """
+  artifact.jacques-paul-migne.patrologia-latina-volume-30.paris-1846.ia-djvu-text-google-6a14e6bd
+      superseded; a second, non-Google text layer of the same volume is already
+      tracked (ia-djvu-text-dd20c7b3), so duplication may still keep it remote.
+"""
+refused_for_the_stamp_alone = """
+  artifact.martin-gerbert.monumenta-veteris-liturgiae-alemannicae.sankt-blasien-1777-1779.ia-djvu-text-bub-gb-hmzok1m-aiqc-6fc74f4f
+  artifact.martin-gerbert.monumenta-veteris-liturgiae-alemannicae.sankt-blasien-1777-1779.ia-djvu-text-bub-gb-rikpaaaaiaaj-790c6fb0
+  artifact.martin-gerbert.monumenta-veteris-liturgiae-alemannicae.sankt-blasien-1777-1779.ia-page-image-rikp-n193-d2d12d58
+  artifact.martin-gerbert.monumenta-veteris-liturgiae-alemannicae.sankt-blasien-1777-1779.ia-page-image-rikp-n227-77162145
+  artifact.martin-gerbert.monumenta-veteris-liturgiae-alemannicae.sankt-blasien-1777-1779.ia-page-image-rikp-n231-876b4fae
+      superseded: the stamp is never a ground for non-retention.
+  artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-bookreader-leaf-437-62750f41
+  artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-bookreader-leaf-439-8899e8da
+      these two page images carry only the stamp and were held back to match
+      their parent PDF's disposition; both grounds are superseded.
+"""
+refused_on_the_generic_two_part_reason = """
+Seventeen text-layer records share one sentence: "no distribution grant was
+established for the derivative itself or for the digitiser's own front matter
+where the file carries it". This record answers its second half. It does not
+answer the first -- whether an Internet Archive optical-character-recognition
+derivative needs a grant at all -- although the library tracks many such layers
+on the reading that machine recognition adds no human authorship (for example
+artifact.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.ia-djvu-ocr-2e2ca850
+and artifact.jacques-paul-migne.patrologia-latina-volume-30.paris-1846.ia-djvu-text-dd20c7b3,
+and the eight text layers registered on 2026-09-22 under
+work.prosper-gueranger.the-liturgical-year). That second contradiction is named
+here and left for its own rights record; the seventeen records do not say
+whether Google's page is in their bytes, and none was fetched to find out.
+
+  artifact.ambrose.expositio-evangelii-secundum-lucam.csel-32-4-schenkl-1902.ia-djvu-ocr-expositioevange00schegoog
+  artifact.catholic-church.liber-mozarabicus-sacramentorum.ferotin-1912.ia-djvu-ocr-lelibermozarabic06cath
+  artifact.catholic-church.missale-bobbiense.lowe-1917.ia-djvu-ocr-bobbiomissalgall01cath
+  artifact.catholic-church.missale-gothicum.bannister-1917.ia-djvu-ocr-missalegothicumg01cath
+  artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ia-djvu-ocr-gelasiansacrame00wilsgoog
+  artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ia-djvu-ocr-libersacramentorum
+  artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-djvu-ocr-gregoriansacrame00cath
+  artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-djvu-ocr-sacramentariuml00feltgoog
+  artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ia-djvu-ocr-sacramentariumle00cath
+  artifact.charles-hamilton-sorley.marlborough-and-other-poems.cambridge-university-press-1916.ia-djvu-ocr-marlboroughother00sorl
+  artifact.charles-hamilton-sorley.marlborough-and-other-poems.cambridge-university-press-1919.ia-djvu-ocr-marlboroughother00sorluoft
+  artifact.cyril-of-alexandria.commentary-on-john.english-pusey-randell-lfc-1874-1885.ia-djvu-ocr-commentaryongosp01cyri
+  artifact.cyril-of-alexandria.commentary-on-luke.english-payne-smith-oxford-1859.ia-djvu-ocr-commentaryupongo01cyri
+  artifact.hilary-of-poitiers.tractatus-super-psalmos.csel-22-zingerle-1891.ia-djvu-ocr-shilariiepiscopi22hilauoft
+  artifact.jacques-paul-migne.patrologia-latina-volume-70.paris-1865.ia-djvu-ocr-patrologiaecurs27goog
+  artifact.jacques-paul-migne.patrologia-latina-volume-92.paris-1862.ia-djvu-ocr-patrologiaecurs54unkngoog
+  artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-djvu-ocr-v11theliturgicalyear
+      (the second record of the volume XI bytes; `duplicate_text_layer_records`.)
+"""
+
+[duplicate_text_layer_records]
+question = "Why are there two records of one Liturgical Year volume XI text layer, and what is done about it?"
+answer = "Two registration lanes recorded the same bytes on the same day; both records stand until the next deliberate schema change, by the maintainer's decision D10 of 2026-09-22."
+reasoning = """
+THE FACT. Two artifact records under
+edition.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11
+describe one byte stream, the Internet Archive DjVuTXT layer at
+https://archive.org/download/V11TheLiturgicalYear/V11TheLiturgicalYear_djvu.txt:
+
+  artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-djvu-ocr-f4c31a52
+  artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-djvu-ocr-v11theliturgicalyear
+
+Both record sha256 f4c31a52e210be7d6439c674baad74ff5e7e9af6cf9dda4776d57d2bdf73506e,
+byte_size 1169523, the same source_url, retrieved 2026-09-05, storage "remote"
+and rights_status "unresolved". A fresh fetch on 2026-09-22 returned the same
+digest. They differ only in prose: the first carries the byte-level Google probe
+and a 34,838-line extent; the second carries the generic two-part rights
+sentence. Neither retains a payload, which is why the validator's
+duplicate-retained-bytes check does not see them.
+
+WHO DEPENDS ON EACH. The first is bound by
+src/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost/research/source-bindings.toml;
+the second by
+src/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost/research/source-bindings.toml.
+Both bindings pin source fingerprints, and the source-reader projection at
+src/web/data/structure/sources/editions/prosper-gueranger/the-liturgical-year/
+lists both artifacts.
+
+WHY NOTHING IS CHANGED NOW. Deleting either record breaks a published leaf's
+binding; editing either moves the fingerprint that binding pinned; and schema
+version 1 and 2 artifacts have no field that says "this id denotes the same
+bytes as that one", so an alias cannot be recorded without a schema decision
+(guidance/sources.md, "Schema stability"). The maintainer chose to leave both
+(D10): no fingerprint moves now.
+
+WHAT IS STALE IN THEM, RECORDED SO IT IS NOT MISTAKEN FOR CURRENT. The first
+record's rights_basis says the volume "was published in 1900"; its edition
+record, corrected on 2026-09-05, says 1909. Its access limitation says "Neither
+this text layer nor the PDF is retained"; the PDF,
+artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-pdf-95ba98e2,
+has been tracked since 2026-09-05. And its refusal rests on reasoning this
+record supersedes.
+
+WHAT TO DO AT THE NEXT DELIBERATE SCHEMA CHANGE. Fold the two into one record,
+keeping the other id resolvable as an alias; retain the payload under this
+record's rule, with the Google page identified at lines 1-44; correct the
+publication year; and re-review the Fifteenth and Sixteenth Sunday bindings
+against the merged fingerprint. Until then a new binding should name the
+f4c31a52 record, which carries the byte-level evidence. A reader without the
+network already has two routes to this translation's words: the tracked 1909
+PDF, and the tracked text layer of the 1883 first printing of the same volume,
+artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-djvu-text-95cdb0fc,
+whose pagination differs (the Eighteenth Sunday opens at p. 407 in 1883 and
+p. 393 in 1909).
+
+THE CLASS, FOR SCALE. The library holds 19 digests that more than one artifact
+record describes, measured by the command in `how_to_check_this_record`. This is
+the only pair inside a single edition; the others span two editions or delivery
+records of one work, most from separate registration lanes of 2026-09-05. They
+are not decided here.
+"""
+
+[routes_examined]
+question = "What else was considered?"
+answer = "Three routes. One adopted, one kept available, one refused."
+examined = """
+REFUSE EVERY FILE THAT CARRIES THE PAGE, PDF AND TEXT ALIKE. Refused. It would
+make the refusals consistent by making seven live retentions unlawful, including
+the two that argued the question and the volume XI facsimile that published
+leaves bind, and it rests
+on nothing but the absence of an express grant from an author who asked in
+writing for the page to travel with the file. It would also throw away the
+text of every Google-only book the library holds.
+
+RETAIN ONLY A NOTICE-FREE DERIVATIVE, EXACT BYTES REMOTE. Kept available, not
+required. It is the host-presentation route of guidance/sources.md and it works
+where the page is one contiguous block, as it is in every file examined here;
+the Dessain derivatives already use it. But it spends two records where one
+would do, it discards the exact bytes a reader might need, and it does the one
+thing the page asks users not to do.
+
+RETAIN THE EXACT FILE WITH THE PAGE IN IT, IDENTIFIED. Adopted, for the reasons
+in `why_it_may_be_retained`, with the conditions in `conditions`.
+"""
+
+[not_settled_here]
+reasoning = """
+Three adjacent Google questions surfaced in the census and are left open, each
+for its own record:
+
+1. Page images downloaded from books.google.com itself, such as
+   artifact.catholic-church.rituale-romanum.latin-rome-1614.google-books-pa198-jpeg
+   and its twenty-one siblings, recorded unresolved because "no separate
+   redistribution license for Google's scan bytes was located". That is a
+   question about Google's scan images and any terms of service accepted when
+   downloading them from Google, not about the front-matter page, and nothing
+   here decides it. Bridgeman bears on it, as does the reasoning of the tracked
+   Liturgical Year PDF's own record, which treats a Google scan as a mechanical
+   facsimile that originates no right.
+2. A Google Books scan republished by a third site, such as
+   artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf.
+3. Rights in an Internet Archive optical-character-recognition derivative as
+   such (`census`, `refused_on_the_generic_two_part_reason`).
+"""
+
+[what_would_change_this]
+question = "What would move the position, and in which direction?"
+answer = "Four things; edit this record rather than arguing around it."
+reasoning = """
+A STATEMENT FROM GOOGLE. Terms that address redistribution of these files or of
+the page -- a licence, a refusal, a changed notice -- go here in their own words,
+and the position is re-read against them. A refusal would move the page, not the
+books: the retained files would be replaced by notice-free derivatives on the
+stated cuts, which exist for every file in `census`.
+
+AN AUTHORITY AGAINST THE IMPLIED LICENCE AND THE FAIR USE ALIKE. Either suffices
+as the position stands; a controlling decision against both would have the same
+consequence as a refusal from Google.
+
+A FILE WHOSE GOOGLE MATTER IS NOT SEVERABLE. Every file examined carries the
+page as one contiguous block. A file that interleaved Google's prose with the
+book's would need its own record.
+
+A JURISDICTION OTHER THAN THE UNITED STATES. This record says nothing about any
+other, and the page itself warns that public-domain status varies by country.
+"""
+
+[how_to_check_this_record]
+question = "Which of this record's assertions can a reader with no network reopen, and how?"
+answer = "Every list and count. Four commands, run from the repository root."
+limits = '''
+These commands read what this repository holds. For remote artifacts they read
+the records, not the bytes; the one remote file re-read on 2026-09-22, the
+volume XI text layer, is named where it is used. The legal reasoning is not
+checkable by command and is labelled as the project's reading.
+'''
+checks = '''
+Each command was run against this checkout on 2026-09-22, before and after the
+eight Time-after-Pentecost editions were added, and the output quoted is what it
+printed.
+
+1. TRACKED PAYLOADS THAT CARRY GOOGLE FRONT MATTER. Text layers are read as
+   files, PDFs through pdftotext; runs of non-alphanumeric characters are
+   collapsed because these scans double their spaces:
+
+     python3 -c "
+     import glob,re,subprocess,tomllib
+     for p in sorted(glob.glob('src/sources/works/**/artifact.toml',recursive=True)):
+         r=tomllib.load(open(p,'rb'))
+         if r.get('storage')!='tracked' or not r.get('path'): continue
+         mt=r.get('media_type','')
+         if mt.startswith('text/'): t=open(r['path'],encoding='utf-8',errors='replace').read()
+         elif mt=='application/pdf': t=subprocess.run(['pdftotext',r['path'],'-'],capture_output=True,text=True).stdout
+         else: continue
+         n=re.sub('[^a-z0-9]+',' ',t.lower())
+         if any(k in n for k in ('usage guidelines','about google book search','this is a reproduction of a library book')): print(r['id'])
+     "
+
+   Seven ids: the three Revue bénédictine text layers, the two Mozarabic text
+   layers, the Patrologia Graeca 29 text layer and the Liturgical Year volume XI
+   PDF, as listed in `census`.
+
+2. RECORDS REFUSED ON GOOGLE-MATTER GROUNDS:
+
+     python3 -c "
+     import glob,re,tomllib
+     pat=re.compile(r\"Google's own prose|Google-authored|Google's own front matter|modern Google notice|Google.s modern opening notice\")
+     for p in sorted(glob.glob('src/sources/works/*/*/editions/*/artifacts/*/artifact.toml')):
+         r=tomllib.load(open(p,'rb'))
+         if r.get('storage')!='tracked' and pat.search(r.get('rights_basis') or ''): print(r['id'])
+     "
+
+   Twenty-one ids, classified in `census` as thirteen for the usage-guidelines
+   page, one for the reproduction statement, and seven for the stamp or a
+   parent's disposition.
+
+3. RECORDS REFUSED ON THE GENERIC TWO-PART REASON: the same loop with the
+   literal "digitiser's own front matter where the file carries it" in place of
+   the pattern. Seventeen ids.
+
+4. DIGESTS DESCRIBED BY MORE THAN ONE ARTIFACT RECORD:
+
+     python3 -c "
+     import glob,tomllib,collections
+     by=collections.defaultdict(list)
+     for p in glob.glob('src/sources/works/**/artifact.toml',recursive=True):
+         r=tomllib.load(open(p,'rb'))
+         if r.get('sha256'): by[r['sha256']].append(r['id'])
+     print(sum(1 for v in by.values() if len(v)>1))
+     "
+
+   19. The pair of `duplicate_text_layer_records` is the one whose two ids share
+   an edition.
+'''
+
+[what_this_does_not_establish]
+reasoning = """
+It does not establish that any book is in the public domain: each retained file
+still needs its own United States basis for the book it carries. It does not
+make Google's page part of any work, edition or passage. It does not authorise
+any existing record to be rewritten; the corrections it implies are listed in
+`census` for the next deliberate revision of each record and its consumers. And
+it originates no right in this project: Google's words remain Google's, and the
+books remain the public's.
+"""

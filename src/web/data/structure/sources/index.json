@@ -1,8 +1,8 @@
 {
  "advisory": "Derived from the source library's own work, edition, artifact, segment and passage records. A passage is readable here only where the artifact that controls it records an affirmative distribution basis and is stored in the repository; every other passage is listed with the reason its text is not shown. Rights are read from the records and never inferred from whether bytes happen to be on disk.",
  "counted": {
-  "artifacts": 2754,
-  "editions": 996,
+  "artifacts": 2778,
+  "editions": 1004,
   "passages": 5184,
   "readable": 3059,
   "works": 726
@@ -3002,7 +3002,7 @@
   ],
   "languages": [
    {
-    "editions": 533,
+    "editions": 536,
     "id": "en"
    },
    {
@@ -3014,7 +3014,7 @@
     "id": "mul"
    },
    {
-    "editions": 28,
+    "editions": 33,
     "id": "fr"
    },
    {
@@ -3132,12 +3132,12 @@
     "label": "18th century"
    },
    {
-    "editions": 171,
+    "editions": 174,
     "id": "1800",
     "label": "19th century"
    },
    {
-    "editions": 222,
+    "editions": 227,
     "id": "1900",
     "label": "20th century"
    },
@@ -3149,8 +3149,8 @@
   ],
   "rights": [
    {
-    "artifacts": 1529,
-    "editions": 341,
+    "artifacts": 1553,
+    "editions": 349,
     "id": "public-domain"
    },
    {
@@ -20928,6 +20928,45 @@
    "directory": "editions/prosper-gueranger/the-liturgical-year/",
    "editions": [
     {
+     "date": "1879",
+     "file": "1879-english-duffy-1879-volume-10.json",
+     "id": "edition.prosper-gueranger.the-liturgical-year.english-duffy-1879-volume-10",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "The Liturgical Year: The Time after Pentecost, Volume I (First Volume of the Continuation)",
+     "year": 1879
+    },
+    {
+     "date": "1883",
+     "file": "1883-english-duffy-1883-volume-11.json",
+     "id": "edition.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "The Liturgical Year: The Time after Pentecost, Volume II (Second Volume of the Continuation)",
+     "year": 1883
+    },
+    {
+     "date": "1890",
+     "file": "1890-english-duffy-1890-volume-12.json",
+     "id": "edition.prosper-gueranger.the-liturgical-year.english-duffy-1890-volume-12",
+     "language": "en",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "The Liturgical Year: Time after Pentecost, Volume III (Volume III of the Continuation)",
+     "year": 1890
+    },
+    {
      "date": "1900",
      "file": "1900-english-volume-10.json",
      "id": "edition.prosper-gueranger.the-liturgical-year.english-volume-10",
@@ -20981,6 +21020,19 @@
      "year": 1909
     },
     {
+     "date": "1909",
+     "file": "1909-french-oudin-1909-volume-15.json",
+     "id": "edition.prosper-gueranger.the-liturgical-year.french-oudin-1909-volume-15",
+     "language": "fr",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "L'Année liturgique: Le Temps après la Pentecôte, tome VI (sixième volume de la continuation)",
+     "year": 1909
+    },
+    {
      "date": "1910",
      "file": "1910-english-volume-14.json",
      "id": "edition.prosper-gueranger.the-liturgical-year.english-volume-14",
@@ -20993,6 +21045,58 @@
      ],
      "title": "The Liturgical Year: Time after Pentecost, Volume V",
      "year": 1910
+    },
+    {
+     "date": "1911",
+     "file": "1911-french-oudin-1911-volume-10.json",
+     "id": "edition.prosper-gueranger.the-liturgical-year.french-oudin-1911-volume-10",
+     "language": "fr",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "L'Année liturgique: Le Temps après la Pentecôte, tome I (premier volume de la continuation)",
+     "year": 1911
+    },
+    {
+     "date": "1911",
+     "file": "1911-french-oudin-1911-volume-11.json",
+     "id": "edition.prosper-gueranger.the-liturgical-year.french-oudin-1911-volume-11",
+     "language": "fr",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "L'Année liturgique: Le Temps après la Pentecôte, tome II (deuxième volume de la continuation)",
+     "year": 1911
+    },
+    {
+     "date": "1911",
+     "file": "1911-french-oudin-1911-volume-12.json",
+     "id": "edition.prosper-gueranger.the-liturgical-year.french-oudin-1911-volume-12",
+     "language": "fr",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "L'Année liturgique: Le Temps après la Pentecôte, tome III (troisième volume de la continuation)",
+     "year": 1911
+    },
+    {
+     "date": "1913",
+     "file": "1913-french-oudin-1913-volume-13.json",
+     "id": "edition.prosper-gueranger.the-liturgical-year.french-oudin-1913-volume-13",
+     "language": "fr",
+     "passages": 0,
+     "readable": 0,
+     "rights": [
+      "public-domain"
+     ],
+     "title": "L'Année liturgique: Le Temps après la Pentecôte, tome IV (quatrième volume de la continuation)",
+     "year": 1913
     }
    ],
    "id": "work.prosper-gueranger.the-liturgical-year",
