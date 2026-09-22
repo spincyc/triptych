@@ -1,0 +1,14 @@
+{
+  "disposition": "FAIL",
+  "findings": [
+    {
+      "check": "web-editions-current",
+      "id": "GATE-WEB-EDITIONS-CURRENT",
+      "problem": "command exited 2: Tracked web edition is stale: web/claude/articles/canon-law/natural-positive-divine-human-law.md\nTracked web edition is stale: web/claude/liturgy/roman-rite/1962/reference/assembling-the-mass.md\nTracked web edition is stale: web/claude/liturgy/roman-rite/1962/reference/liturgical-calendar.md\nTracked web edition is stale: web/claude/liturgy/roman-rite/postconciliar/2008-latin-2011-us-english/ordinary/00-order-of-mass.md\nTracked web edition is stale: web/claude/liturgy/roman-rite/postconciliar/rom",
+      "required_result": "The reviewed web editions must derive from their current canonical sources.",
+      "severity": "blocking"
+    }
+  ],
+  "iteration": 0,
+  "stage": "publication-gates"
+}

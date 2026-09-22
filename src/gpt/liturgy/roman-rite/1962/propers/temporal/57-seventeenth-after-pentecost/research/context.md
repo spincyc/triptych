@@ -200,10 +200,10 @@ and release records are not changed by this context-only resolution.
 
 ## Resolution provenance and checks
 
-- Workflow: `proper-study`, version `5`.
-- Workflow digest: `a792d34630f149d8bea52ba6e0e9740f711885730ff9e5a1f37938527bf7cf1d`.
-- Run: `1e968a20f48d8087`.
-- Seed commit: `11e8183cad34d3cc8c3b8918e0fea77bc9e7898f`.
+- Workflow: `proper-study`, version `6`.
+- Workflow digest: `a965af881c1e4110b6e4698001b4f06b9a688a93a1f1652c292d15002afe1768`.
+- Run: `090e496c9d6d4104`.
+- Seed commit: `30c7baebd99056e4faac09a0f13cb085f9de1ea7`.
 - Stage: `resolve-context`, iteration `0`, declared effort `high`.
 - Completed: two calendar computations; exact SHA-256 checks of the controlling
   Missal and both cached dated Ordos; direct image inspection at the six PDF

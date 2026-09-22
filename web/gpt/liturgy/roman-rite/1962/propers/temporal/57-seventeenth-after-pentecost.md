@@ -4,10 +4,6 @@
 
 **Seventeenth Sunday after Pentecost**
 
-*Love, Unity, and the Healing of Worship*
-
-1962 Roman Missal · 20 September 2026
-
 ## The heart commanded to love
 
 The command to love God with the whole heart stands inside a Mass that repeatedly asks God to heal the heart. The worshipper acknowledges divine justice, asks for mercy, hears the call to patience, confesses the Lord whom David himself worships, and approaches mysteries whose fruit is the cure of vice and an eternal remedy. Love is exacting: it reaches every part of the person and every neighbor. Yet the Mass does not leave the hearer alone with that demand. Its prayers ask for the freedom, purity, strength, and lasting healing that obedience requires.
@@ -30,6 +26,8 @@ Three readings unfold that belonging. The first follows the healing of divided d
 | Postcommunion | Sacred mysteries heal vices and bring an eternal remedy. |
 
 The Sunday is of the second class in the 1962 Missal. For the universal calendar on 20 September 2026 it is the Seventeenth Sunday after Pentecost; the ordinary commemoration of SS. Eustace and Companions is omitted. The three prayers and seven scriptural elements above constitute the proper under study. The texts follow, then the explanation of each element and the three sustained readings.[^1]
+
+[TOC]
 
 ## The appointed texts
 
@@ -193,7 +191,7 @@ Augustine distinguishes common fidelity—faith, hope, and godly living—from p
 
 The last prayer asks that sacred mysteries cure vices and procure an eternal remedy. Its realism is striking: reception is followed by a request for healing, not a declaration that moral struggle has disappeared. Thomas explains the Eucharist through spiritual nourishment—sustaining, increasing, restoring, and delighting the life of grace—and through the Passion of the Christ present in it. He then directs its fruit toward the perfect peace and unity of glory. The prayer thus names both the present wound and the final good. A change of conduct matters because love is being healed for communion that lasts.[^14]
 
-## God heals the heart that he commands to love
+## God heals the heart that he commands to love {#lane-healed-charity}
 
 A whole heart is more than a heart stirred by a strong religious feeling. In the Gospel it names the undivided direction of a person’s love, reaching thought, desire, and action. Augustine explains the command as leaving no part of the self outside its relation to God. Even love of oneself finds its proper order there. A person who loves himself as though he were his own final good misunderstands what is good for him; love becomes rightly ordered when it seeks the God in whom its good is found. The neighbor belongs within that ordering, because the good sought for oneself is also to be sought for another.[^15]
 
@@ -233,15 +231,23 @@ Yet preservation does not abolish freedom. Thomas explicitly allows the possibil
 
 ### The four senses of healed charity
 
-**Literal.** The formulary joins distinct acts of speech: the psalmist’s obedience and supplication, Paul’s appeal to a called community, Jesus’ commands and question, Daniel’s intercession, and the Church’s petitions for purification. The law requires love; the prayers ask for real help. Neither command nor need disappears when they are heard together.
+Literal.
 
-**Allegorical.** David’s Son is David’s Lord, and the divine Word strengthens his people through the Spirit. Christ meets the afflicted in his body and gives sacramental life through his Passion. The healing sought by the prayers reaches its Christian center in the Lord whose command the Gospel proclaims.
+: The formulary joins distinct acts of speech: the psalmist’s obedience and supplication, Paul’s appeal to a called community, Jesus’ commands and question, Daniel’s intercession, and the Church’s petitions for purification. The law requires love; the prayers ask for real help. Neither command nor need disappears when they are heard together.
 
-**Moral.** The whole person learns to direct love toward God and to seek the neighbor’s good, including an enemy’s. Humility, patient endurance, fitting correction, and fulfilled commitments give that love its daily form. Asking for grace and acting with grace are one movement, rather than competing explanations of obedience.
+Allegorical.
 
-**Anagogical.** The cure of vice tends toward the eternal remedy. Thomas’s account of perfect peace and unity in glory gives the Postcommunion its full horizon: love’s healing is completed in life with God and the saints. Judgment remains serious because the heart’s direction matters; hope remains possible because the remedy is God’s gift.[^26]
+: David’s Son is David’s Lord, and the divine Word strengthens his people through the Spirit. Christ meets the afflicted in his body and gives sacramental life through his Passion. The healing sought by the prayers reaches its Christian center in the Lord whose command the Gospel proclaims.
 
-## The one Lord gathers a people who bear one another
+Moral.
+
+: The whole person learns to direct love toward God and to seek the neighbor’s good, including an enemy’s. Humility, patient endurance, fitting correction, and fulfilled commitments give that love its daily form. Asking for grace and acting with grace are one movement, rather than competing explanations of obedience.
+
+Anagogical.
+
+: The cure of vice tends toward the eternal remedy. Thomas’s account of perfect peace and unity in glory gives the Postcommunion its full horizon: love’s healing is completed in life with God and the saints. Judgment remains serious because the heart’s direction matters; hope remains possible because the remedy is God’s gift.[^26]
+
+## The one Lord gathers a people who bear one another {#lane-one-people}
 
 The Mass gives the assembly more than a collection of individual religious tasks. The Collect addresses the needs of God’s people, Paul names one body, the Gradual sings election, Daniel intercedes for a sanctuary and a people, and the final prayers ask for healing in the plural. Even the singular voice of the Introit stands beside the blessed walkers of God’s law. A person approaches God as a servant whose need is personal, yet whose good belongs within a common calling.
 
@@ -287,15 +293,23 @@ Within that common subjection, different ministries remain real. Chrysostom argu
 
 ### The four senses of a gathered people
 
-**Literal.** Israel’s elected people, the afflicted psalmist, Daniel’s community, Paul’s addressees, and Jesus’ interlocutors have distinct settings. Their words include communal calling, real supplication, creation praise, and concrete commands. The liturgical assembly receives these different voices without making their historical speakers identical.
+Literal.
 
-**Allegorical.** The Church is the body of David’s Lord, established through Word and Spirit, praying with its Head, and nourished by his mysteries. The heavenly city supplies the common destination toward which election and calling are ordered.
+: Israel’s elected people, the afflicted psalmist, Daniel’s community, Paul’s addressees, and Jesus’ interlocutors have distinct settings. Their words include communal calling, real supplication, creation praise, and concrete commands. The liturgical assembly receives these different voices without making their historical speakers identical.
 
-**Moral.** Shared baptism and hope require humble service across differences. Correction serves charity, patience refuses contempt, and knowledge is offered as a common good. Different tasks remain, but neither envy nor self-exaltation may define the relations among those who perform them.
+Allegorical.
 
-**Anagogical.** The one hope tends toward a shared inheritance and perfected peace. Bellarmine’s movement from faith, hope, and charity to vision, and Thomas’s account of sacramental unity perfected in glory, give the gathered people an end beyond every temporary alliance or ruler. The Postcommunion asks that present healing bear precisely that lasting fruit.[^37]
+: The Church is the body of David’s Lord, established through Word and Spirit, praying with its Head, and nourished by his mysteries. The heavenly city supplies the common destination toward which election and calling are ordered.
 
-## Mercy makes worship fruitful in a faithful life
+Moral.
+
+: Shared baptism and hope require humble service across differences. Correction serves charity, patience refuses contempt, and knowledge is offered as a common good. Different tasks remain, but neither envy nor self-exaltation may define the relations among those who perform them.
+
+Anagogical.
+
+: The one hope tends toward a shared inheritance and perfected peace. Bellarmine’s movement from faith, hope, and charity to vision, and Thomas’s account of sacramental unity perfected in glory, give the gathered people an end beyond every temporary alliance or ruler. The Postcommunion asks that present healing bear precisely that lasting fruit.[^37]
+
+## Mercy makes worship fruitful in a faithful life {#lane-faithful-offering}
 
 The person who enters confessing God’s justice is later commanded to pay what has been vowed. Between those moments the Mass asks for purification, proclaims love and lordship, intercedes for a people, and enacts mysteries that heal. This movement places religious speech under the claim of fidelity. What is acknowledged, requested, and offered must reach conduct. At the same time, the final prayer asks for a remedy: a faithful life is the fruit of mercy, never a substitute offered in order to make mercy unnecessary.
 
@@ -333,7 +347,9 @@ That endurance has a moral analogue in the Epistle. To carry another in prayer w
 
 The Secret refuses to leave the meaning of offering at the level of sincere intention. It asks that the sacred things enacted free the people from offenses past and future. Thomas locates sacramental efficacy in Christ present and in his Passion, and explains its mode through nourishment. Food does more than remind a hungry person that eating would be desirable; it sustains life. So the sacramental action gives grace and strengthens the charity whose practice the Gospel commands.[^45]
 
-The analogy also explains why preservation and subsequent freedom can coexist. Nourishment strengthens a living person without turning him into someone incapable of later harming himself. Thomas’s explicit account of free will prevents the future-directed petition from becoming advance absolution. The faithful ask to be guarded and strengthened, and their later choices remain consequential. The holy action reaches the future by giving life to be lived, not by making future conduct irrelevant.[^46]
+The analogy also explains why preservation and subsequent freedom can coexist. Nourishment strengthens a living person without turning him into someone incapable of later harming himself. Thomas’s explicit account of free will prevents the future-directed petition from becoming advance absolution.
+
+The faithful ask to be guarded and strengthened, and their later choices remain consequential. The holy action reaches the future by giving life to be lived, not by making future conduct irrelevant.[^46]
 
 Augustine’s discussion of remembrance in Psalm 75 gives continuity to that life. He relates baptismal renewal and the daily sacrificial remembrance of Christ to the need not to forget who has healed us. Repetition in worship can therefore sustain a real history of grace. It need not mean that an earlier gift was unreal, nor that gratitude may replace conversion. Remembering a mercy means allowing it to govern the life that follows.[^47]
 
@@ -347,13 +363,21 @@ The feared sovereign of the final chant prevents this fidelity from being reduce
 
 ### The four senses of faithful offering
 
-**Literal.** Confession, supplication, commands, vows, and prayers for healing retain their distinct purposes. In the Mass’s actual sequence they accompany an approach to God, hearing, intercession, a holy action, reception, and a request for its lasting fruit. Daniel’s sanctuary and the psalm’s divine judgment give the sequence more than a private emotional meaning.
+Literal.
 
-**Allegorical.** David’s Lord is the saving Christ in whom the people approaches the Father. His Passion gives the mysteries their efficacy; his body carries the afflicted in a common voice. The Christian offering depends upon this prior divine gift.
+: Confession, supplication, commands, vows, and prayers for healing retain their distinct purposes. In the Mass’s actual sequence they accompany an approach to God, hearing, intercession, a holy action, reception, and a request for its lasting fruit. Daniel’s sanctuary and the psalm’s divine judgment give the sequence more than a private emotional meaning.
 
-**Moral.** Worship bears fruit when confession becomes renunciation of self-justification, intercession becomes patient care, and promised fidelity becomes conduct. Particular vows retain their seriousness, while the common law of love remains binding on every state of life. Divine help enables the response rather than excusing its absence.
+Allegorical.
 
-**Anagogical.** The Lord before whom princes lose their power grants a remedy whose end is eternal. Thomas directs present sacramental nourishment toward perfect peace with the saints. The Postcommunion’s final request therefore reaches beyond a better week to the completion of a life in faithful communion with God.[^50]
+: David’s Lord is the saving Christ in whom the people approaches the Father. His Passion gives the mysteries their efficacy; his body carries the afflicted in a common voice. The Christian offering depends upon this prior divine gift.
+
+Moral.
+
+: Worship bears fruit when confession becomes renunciation of self-justification, intercession becomes patient care, and promised fidelity becomes conduct. Particular vows retain their seriousness, while the common law of love remains binding on every state of life. Divine help enables the response rather than excusing its absence.
+
+Anagogical.
+
+: The Lord before whom princes lose their power grants a remedy whose end is eternal. Thomas directs present sacramental nourishment toward perfect peace with the saints. The Postcommunion’s final request therefore reaches beyond a better week to the completion of a life in faithful communion with God.[^50]
 
 ## One charity, three questions
 
@@ -365,13 +389,35 @@ The witnesses also differ in ways that enrich those questions. Bellarmine’s cr
 
 The last word belongs to the petition for an eternal remedy. Love’s present work is neither dismissed as impossible nor declared already finished. A people that asks to be healed can practice patient charity without pretending that its members have no wounds. A person who confesses the Lord can offer a faithful life without claiming that fidelity is self-created. The Mass commands, gives, judges, and heals within one approach to God.
 
+## Scriptural Date and Location
+
+Each passage this Mass reads or sings from Scripture, once, in canonical order; beneath each, its traditional frame and the modern critical limit warranted by the stated sources. The Collect, Secret and Postcommunion are composed liturgical prayers and carry no biblical date. Alternatives and unresolved states remain explicit.
+
+| **Proper** | **Citation** | **Location** | **Date** |
+|:---|:---|:---|:---|
+| Gradual | Ps. 32:6, 12 (modern 33) | No place named in the appointed verses | **Composition**: Before c. 165 B.C. |
+| The appointed verses join two of the psalm’s movements: the blessedness of the people the Lord chose for his inheritance (v. 12) and the heavens established by his word and spirit (v. 6). The Douay–Rheims heading reads “A psalm for David”, an attribution without a named occasion or place of writing, first audience or stage in the attributed author’s life. No traditional era is established for this psalm. The NABRE introduction supplies the broad limit shown for the Psalter, not a precise date for this poem, and denies that individual psalms can be dated with certainty. |  |  |  |
+| Communion | Ps. 75:12–13 (modern 76) | Judea and Sion, named earlier in the psalm as the place of God’s dwelling and victory (vv. 2–3) | **Composition**: Before c. 165 B.C. |
+| The superscription ascribes the psalm to Asaph, “a canticle to the Assyrians” (v. 1), without attaching a date or era. In the complete psalm God breaks the weapons of war in Sion and rises to judgment “to save all the meek of the earth” (vv. 4, 10); the appointed conclusion commands vows and their payment and gathers gift-bearers before the Lord who humbles the spirit of princes. Neither title nor verses fixes an occasion, first audience, stage in the attributed author’s life or place of composition. The Date column therefore carries only the Psalter-wide modern limit; this individual psalm is not securely dated. |  |  |  |
+| Alleluia | Ps. 101:2 (modern 102) | Sion named in the psalm’s turn from lament to hope (vv. 14, 17) | **Composition**: Before c. 165 B.C. |
+| The superscription describes the poor man’s anxious prayer and supplication before the Lord (v. 1): an afflicted speaker, no author, no traditional date, first audience or authorial life-stage. The appointed verse is the psalm’s opening cry for a hearing; the complete poem moves from that frailty to the rebuilding of Sion and the gathering of peoples to serve the Lord. Sion is the object of the psalm’s hope, not an established place of writing, and the general Psalter boundary does not date any particular restoration. |  |  |  |
+| Introit | Ps. 118:1, 124, 137 (modern 119) | No place named | **Composition**: Before c. 165 B.C. |
+| An alphabetical psalm in praise of the law, with no named author and no traditional date or setting. The antiphon places the confession of God’s just judgment before the petition for mercy (vv. 137, 124), reversing their order in the complete psalm, and the verse sung with it is the psalm’s opening beatitude over those who walk in the law of the Lord (v. 1). No particular crisis, first audience or writing-place is established by the appointed verses, nor can an authorial life-stage be established where no author is named. The date shown is only the Psalter-wide modern limit; this individual psalm is not securely dated. |  |  |  |
+| Offertory | Dan. 9:17–19, adapted | Daniel at the court of Babylon, in the first year of Darius the Mede (9:1); prayer for the desolate sanctuary of Jerusalem (9:17) | **Historical setting**: Duration: all these nations shall serve the king of Babylon seventy years. **Composition**: B.C. 570–536. |
+| Traditional attribution: the prophet Daniel, in the Exile, recording his own prayer (“I, Daniel”, 9:2) when he understood from Jeremias that the seventy years of desolation were ending. The 1908 *Catholic Encyclopedia* article that admits 570–536 B.C. as the book’s date grounds the traditional position in details it says only “a resident in Babylon” could supply, written by Daniel, “owing to his position at the court of Babylon”, “for the comfort of the Jews of his time and of subsequent ages”. Gigot also reports the critical attribution to an unknown later author rather than Daniel; his account describes scholarship of 1908, not a fresh survey of present opinion, and it establishes no numerical modern critical date for that alternative. The “seventy years” carried in the Date column is the duration of the servitude within the prayer’s setting (Jer. 25:11–12), not a composition date. The chant selects and rearranges Daniel’s petitions; its liturgical form has its own history, distinct from the composition of the chapter. |  |  |  |
+| Gospel | Matt. 22:34–46 | Written, in the received account, in Judea before Matthew’s departure from Jerusalem, for the Jews who had believed; the encounter narrated in the Temple at Jerusalem (21:23) | **Event** – Narrated event date unresolved. **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. **Comparison (catholic-critical-v1) – Composition** – composition-only: The Greek Gospel of Matthew in the NABRE introduction, Post-A.D. 70 date. |
+| *Narrated event: the last of the Lord’s controversies in the Temple (21:23–22:46), shortly before the Passion forecast at 26:1–2. No numerical narrated-event date for these verses is established here.* |  |  |  |
+| Traditional attribution: St Matthew the Apostle, whom the Missal’s heading names (*secundum Matthaeum*). The received frame comes from the early writers as the 1911 *Catholic Encyclopedia* article reports them: the ecclesiastical writers agree that Matthew wrote for the Jews, and Jerome summarizes the tradition that he published his Gospel in Judea, in the Hebrew tongue, chiefly for those among the Jews who had believed in Jesus. The Date column keeps the article’s disputed alternatives, which are not of equal standing. About A.D. 38–45 rests on early writers counting eight years (Eusebius in his Chronicle, Theophylact, Euthymius Zigabenus) or fifteen years (Nicephorus Callistus) from the Ascension. About A.D. 40–42 follows the tradition that the apostles separated twelve years after the Ascension, a tradition the article itself calls “admittedly not too reliable”. The years A.D. 40–45 report the article’s survey of Catholic critics of its own day, who in general favoured that range. About A.D. 60–68 is the conditional alternative that results if, following Eusebius, the definitive departure of the apostles is fixed later. About A.D. 64–67 rests on a text of Irenaeus—Matthew writing while Peter and Paul were evangelizing and founding the Church of Rome—whose difficulties of interpretation, the article says, prevent any positive conclusion. About A.D. 50 is Durand’s date in the 1912 article on the New Testament, given for the Aramaic original alone; he holds that nothing definite is known of when it was rendered into Greek. These alternatives concern composition, while the Temple locates the narrated controversy; no numerical date for that event is established here. A separately generated comparison records the NABRE’s post-A.D. 70 boundary for the Greek Gospel, probably at least a decade later. It supplies no precise endpoint and remains distinct from the default traditional alternatives. |  |  |  |
+| Epistle | Eph. 4:1–6 | Paul, “a prisoner in the Lord” (4:1), writing in captivity; to the saints at Ephesus (1:1) | **Composition** – disputed: A.D. 58–63; A.D. 61. |
+| Traditional attribution: St Paul, in one of the letters of his captivity. The 1909 *Catholic Encyclopedia* article assigns the captivity letters to the period A.D. 58–63 shown in the Date column, judging that they follow the Epistle to the Romans and precede the first persecution, and it leaves the place—Caesarea or Rome—“a much mooted question”, while remarking that the liberty and activity the letters display suit the Roman captivity better. The encyclopedia’s 1911 chronology of St Paul assigns Ephesians, with Philemon, Colossians and Philippians, the single year shown. The first hearers are the church addressed in the received text of 1:1, gentiles once “afar off” and now “made nigh” (2:11–18). The same 1909 article reports that most liberal critics since Schleiermacher have denied the letter to Paul, a position for which it gives no numerical date; no additional modern critical date is established here. It also holds the words “at Ephesus” in 1:1 to be no part of the primitive text and reads the letter as a circular to churches Paul had not visited, probably in Asia Minor. The address above is the received biblical text, not a settled identification of the original recipients. |  |  |  |
+
 ## Appendix: Scope and Qualifications
 
 This study concerns the universal 1962 Roman Missal formulary for the Seventeenth Sunday after Pentecost on 20 September 2026. It includes all ten proper elements and identifies the Credo and Trinity Preface appointments; it does not reproduce the complete Ordinary, expanded prayer conclusions, or Preface. No particular local calendar has been specified. The dated French institutional Ordos corroborate the universal occurrence without supplying an unidentified parish’s local overlay.
 
 The Latin is a normalized transcription of the Vatican 1962 typical edition, checked during research against its facsimile and compared with Pustet’s 1862 public-domain antecedent. Stress marks and typographical ligatures are normalized; the target’s wording and printed extent control. Cummiskey’s anonymous 1861 human English supplies the three orations, including its historical phrasing concerning future offenses. The scriptural English is the registered American 1899 Douay–Rheims canonical study text, not a complete English version of the adapted liturgical Latin. Its retained transcription was read; no new collation of the 1899 print is claimed. These inherited texts remain public domain under the recorded source dispositions; the complete modern facsimiles and website presentations are not relicensed by this work.
 
-The biblical contexts examined are Matthew 22, Ephesians 4, Daniel 9, and Psalms 32, 75, 101, and 118. Psalm citations use the Missal’s numbering; common modern equivalents are given with the texts. No dates of biblical composition or narrated events are asserted. The reception is bounded to the exact loci cited below. Chrysostom and Augustine are principally read in historical English; the NPNF Psalms are abridged. Jerome’s Latin and Bellarmine’s historical English are retained transcriptions, not newly collated critical texts. Bellarmine’s translator omitted philological discussion, variant readings, and original psalm prefaces. Their contributions here are paraphrases. Thomas’s Ephesians commentary was researched in the retained 1857 Latin facsimile; the English *Summa* witness includes disclosed electronic-editor modifications.
+The biblical contexts examined are Matthew 22, Ephesians 4, Daniel 9, and Psalms 32, 75, 101, and 118, with Matthew 21:23 and 26:1–2 locating the Gospel scene. Psalm citations use the Missal’s numbering; common modern equivalents are given with the texts. The Date cells in *Scriptural Date and Location* are generated from `research/chronology.toml`, preserving alternatives and unresolved states. The admitted evidence establishes no numerical modern critical date for Daniel or Ephesians and no numerical narrated-event date for the Gospel. A separately attributed comparison gives the NABRE’s post-A.D. 70 boundary for the Greek Gospel, without a precise endpoint or any union with the default traditional alternatives. The reception is bounded to the exact loci cited below. Chrysostom and Augustine are principally read in historical English; the NPNF Psalms are abridged. Jerome’s Latin and Bellarmine’s historical English are retained transcriptions, not newly collated critical texts. Bellarmine’s translator omitted philological discussion, variant readings, and original psalm prefaces. Their contributions here are paraphrases. Thomas’s Ephesians commentary was researched in the retained 1857 Latin facsimile; the English *Summa* witness includes disclosed electronic-editor modifications.
 
 The three whole-formulary readings are editorial syntheses grounded in these witnesses. No Father is credited with composing or interpreting this precise Sunday as a whole. Thomas’s sacramental teaching illuminates the Secret and Postcommunion; no direct ancient exposition of their exact wording or that of the Collect was established in the bounded research. Catena-only attributions and the unverified additional leads listed in the research scope do not support this study. Biblical speakers retain their distinct settings, and personal sin is not attributed to Christ through the voice of his members.
 
@@ -383,7 +429,7 @@ The source research received an independent workflow review before authoring. Th
 
 2.  *The Roman Missal Translated into the English Language for the Use of the Laity* (Philadelphia: Eugene Cummiskey, 1861), pp. 431–433, three orations for the Seventeenth Sunday after Pentecost; [facsimile](https://archive.org/details/romanmissaltran00churgoog), PDF pp. 440–442. Anonymous human translation; underlying historical text public domain.
 
-3.  *Douay–Rheims Bible*, American 1899 edition, registered eBible transcription: Matt. 22; Eph. 4; Dan. 9; Pss. 32,75,101,118. Exact appointed verses and canonical/liturgical distinctions accompany the texts above. Public-domain study English.
+3.  *Douay–Rheims Bible*, American 1899 edition, registered eBible transcription: Matt. 21:23; 22; 26:1–2; Eph. 1:1; 2:11–18; 4; Dan. 9; Pss. 32,75,101,118. Exact appointed verses and canonical/liturgical distinctions accompany the texts above. Public-domain study English.
 
 4.  John Chrysostom, *Homilies on Matthew*, hom. 71, opening exposition of Matt. 22:34–46, trans. George Prevost, revised M. B. Riddle, NPNF1, vol. 10 (1888), retained CCEL text. [Comparison reading locator](https://www.newadvent.org/fathers/200171.htm). The later moral continuation is not independently used here.
 
@@ -403,7 +449,11 @@ The source research received an independent workflow review before authoring. Th
 
 12. FSSP France, [Ordo du mois](https://www.fssp.fr/ordo-du-mois/), September 2026, entry for 20 September; ICRSP France, [Ordo](https://icrspfrance.fr/ordo.php), entry for 20 September 2026. Entries checked during research on 17 September 2026; institutional corroboration of universal occurrence, not a specified local Ordo.
 
-**Last revised (UTC):** 2026-09-17T23:45:46Z
+13. Chronology witnesses, retained New Advent article texts in the *Catholic Encyclopedia*: F. E. Gigot, [“Book of Daniel”](https://www.newadvent.org/cathen/04621b.htm), vol. 4 (1908), “Authorship and date of composition”; P. Ladeuze, [“Epistle to the Ephesians”](https://www.newadvent.org/cathen/05485a.htm), vol. 5 (1909), “To whom addressed”, “Date and place of composition” and “Authenticity”; F. Prat, [“St. Paul”](https://www.newadvent.org/cathen/11567b.htm), vol. 11 (1911), “Chronology”, final table; E. Jacquier, [“Gospel of St. Matthew”](https://www.newadvent.org/cathen/10057a.htm), vol. 10 (1911), “Destination” and “Date and place of composition”; A. Durand, [“The New Testament”](https://www.newadvent.org/cathen/14530a.htm), vol. 14 (1912), “Origin”, paragraph on Matthew’s Aramaic original.
+
+14. *New American Bible Revised Edition*, introductions to [Psalms](https://bible.usccb.org/bible/psalms/0) (superscriptions and broad chronological limit) and [Matthew](https://bible.usccb.org/bible/matthew/0) (the separately identified post-A.D. 70 critical boundary and its probabilistic qualification), official USCCB web edition, inspected 21 September 2026. Protected introductions summarized, not reproduced.
+
+**Last revised (UTC):** 2026-09-22T00:08:03Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

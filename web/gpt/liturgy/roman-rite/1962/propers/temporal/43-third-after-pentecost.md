@@ -54,7 +54,7 @@ TLM propers: the endangered sinner sought, strengthened, and welcomed into joy
 >
 > The propers disclose neither indulgence without conversion nor vigilance without trust. God’s merciful gaze receives confessed need; his care makes humble resistance possible; Christ seeks until the lost is found and calls heaven to rejoice over repentance; the recovered person then enters the Church’s praise, offering, sanctification, and hope of everlasting mercy. Divine initiative remains first throughout, while repentance, resistance, offering, and reception remain real human acts.
 
-**1. Behold need** → **2. Entrust and resist** → **3. Seek and restore** → **4. Offer and rejoice**  
+**1. Behold need** → **2. Entrust and resist** → **3. Seek and restore** → **4. Offer and rejoice**<br>
 *Introit–Collect* *Epistle–Alleluia* *Gospel* *Offertory–Postcommunion*
 
 *Reading order.* This four-stage sequence is a source-grounded synopsis of the appointed wording and the identified reception below; no cited witness is presented as author of the complete Roman formulary.

@@ -463,19 +463,19 @@ Modern copyrighted translations and scholarship are summarized rather than repro
 
 ### Terms that can mislead
 
-Old Latin or *Vetus Latina*.  
+Old Latin or *Vetus Latina*.<br>
 A modern collective designation for Latin biblical forms earlier than, or independent of, the Vulgate revisions. It is not the title of one uniform edition. The evidence includes manuscripts, fragments, patristic quotations, and liturgical witnesses.
 
-Vulgate.  
+Vulgate.<br>
 A later title for the Latin biblical tradition associated principally, but not wholly, with Jerome. In late antiquity *editio vulgata* could instead designate the commonly received Septuagintal form of the Old Testament. Calling Jerome’s work “the Vulgate” is convenient only if that anachronism is acknowledged.
 
-Original text.  
+Original text.<br>
 Avoided unless the object is specified. This study instead speaks of a translator’s recoverable source text, the earliest attainable Vulgate form, a manuscript reading, or the text printed by a named edition.
 
-Authentic.  
+Authentic.<br>
 At Trent this was a status for the old Vulgate among Latin editions in defined public uses. Pius XII later explained that the status was juridical rather than primarily a judgment of critical reconstruction (*Divino afflante Spiritu*, 20–22).
 
-Official and critical.  
+Official and critical.<br>
 These answer different questions. A typical edition governs an institutional use; a historical critical edition reconstructs a textual stage from selected witnesses. One label does not entail the other.
 
 ### Publication boundary

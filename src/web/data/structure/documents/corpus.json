@@ -3,7 +3,7 @@
  "counted": {
   "documents": 196,
   "issues": 224,
-  "pages": 6297,
+  "pages": 6281,
   "titles_unrecorded": 0,
   "works": 142
  },
@@ -26,15 +26,19 @@
   },
   {
    "documents": 4,
+   "id": "GPT-6"
+  },
+  {
+   "documents": 4,
    "id": "GPT-6-based Codex agent"
   },
   {
    "documents": 2,
-   "id": "GPT-6"
+   "id": "claude-fable-5-1"
   },
   {
-   "documents": 2,
-   "id": "claude-fable-5-1"
+   "documents": 1,
+   "id": "gpt-6-astra"
   }
  ],
  "providers": [
@@ -87,9 +91,9 @@
    "version": "7"
   },
   {
-   "digest": "e318311c264a5a3a620c9da404ad4d4ab3d4291815421d7753d2630044ecdeb0",
+   "digest": "a965af881c1e4110b6e4698001b4f06b9a688a93a1f1652c292d15002afe1768",
    "id": "proper-study",
-   "version": "4"
+   "version": "6"
   },
   {
    "digest": "a6bfeaa2f1d269297a9d4ff956950214ef946318e4db6c99eed16d180b4e25ad",
@@ -6220,14 +6224,14 @@
      "also": [
       {
        "kind": "synthesis",
-       "pages": 12,
+       "pages": 10,
        "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf",
        "subject": "Concise study of the 1962 Missale Romanum proper for the Seventeenth Sunday after Pentecost: the appointed elements, four overview senses, the scriptural dossier, the movement of the formulary, and a commentary comparing three readings of the whole Mass",
        "title": "Seventeenth Sunday after Pentecost: A Concise Study of the Proper in the 1962 Roman Missal"
       },
       {
        "kind": "homily",
-       "pages": 5,
+       "pages": 3,
        "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf",
        "subject": "A homily for an adult parish assembly on the 1962 Missale Romanum proper for the Seventeenth Sunday after Pentecost, 20 September 2026: the questions asked in the Temple, the unity of the Epistle, and the Collect that asks for what the Gospel commands",
        "title": "Seventeenth Sunday after Pentecost: The Commandment and the Question"
@@ -6235,6 +6239,16 @@
      ],
      "authorization": "perpetual-public-repository-2026",
      "contributions": [
+      {
+       "model": "GPT-6",
+       "qualifiers": "unexposed: reasoning effort and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; 21 September 2026 recovery integration of the shared propers house style, 1962-only chronology and research boundaries, concise page contract, form-neutral homily repair, regenerated evidence, and final release validation; unexposed: client version and server revision"
+      },
+      {
+       "model": "gpt-6-astra",
+       "qualifiers": "effort=xhigh; unexposed: other model qualifiers",
+       "runtime": "Factory Droid API agent; shared proper-template integration and source-bound chronology, audience and geography corrections for the 21 September revision, with consumer preflight and build checks; the recorded workflow provenance identifies the historical production, not acceptance of this revision; unexposed: client version and server revision"
+      },
       {
        "model": "claude-opus-5[1m]",
        "qualifiers": "effort=high; unexposed: sampling configuration",
@@ -6253,9 +6267,11 @@
      ],
      "eligibility": "eligible",
      "models": [
+      "GPT-6",
+      "gpt-6-astra",
       "claude-opus-5[1m]"
      ],
-     "pages": 38,
+     "pages": 31,
      "pdf": "pdf/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf",
      "produced": {
       "run_id": "1e02dc05f2df9940",
@@ -6266,7 +6282,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-09-18",
-     "revised": "2026-09-19T08:10:00Z",
+     "revised": "2026-09-21T23:18:36Z",
      "status": "alpha",
      "subject": "Expansive study of the 1962 Missale Romanum proper for the Seventeenth Sunday after Pentecost: appointed texts, each element in its setting, three readings of the whole formulary with their four senses, and a comparison",
      "title": "Seventeenth Sunday after Pentecost: A Study of the Proper in the 1962 Roman Missal",
@@ -6277,14 +6293,14 @@
      "also": [
       {
        "kind": "synthesis",
-       "pages": 5,
+       "pages": 10,
        "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf",
-       "subject": "A concise comparison of three readings of the 1962 Roman Missal propers for 20 September 2026",
+       "subject": "A concise comparison of three readings of the 1962 Roman Missal propers for 20 September 2026, with the appointed-elements map, four overview senses, the scriptural dossier, and the movement of the formulary",
        "title": "Seventeenth Sunday after Pentecost: Love Received and Lived"
       },
       {
        "kind": "homily",
-       "pages": 4,
+       "pages": 3,
        "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf",
        "subject": "A homily for an adult parish assembly on the 1962 Roman Missal propers for 20 September 2026",
        "title": "Seventeenth Sunday after Pentecost: The Heart That Learns to Love"
@@ -6292,6 +6308,16 @@
      ],
      "authorization": "perpetual-public-repository-2026",
      "contributions": [
+      {
+       "model": "GPT-6",
+       "qualifiers": "unexposed: reasoning effort and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; 21 September 2026 recovery integration of the shared propers house style, rite-separated chronology comparison, concise page contract, cold-review repairs, regenerated evidence, and final release validation; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; independent research-stage recheck of governing and antecedent missal witnesses, complete biblical contexts, bounded patristic and later reception, rights and source bindings, chronology generation, and interpretive records; unexposed: client version and server revision"
+      },
       {
        "model": "GPT-6",
        "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
@@ -6310,30 +6336,30 @@
       {
        "model": "GPT-6",
        "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
-       "runtime": "Codex API agent; presentation-only removal of four study section breaks and widow/orphan protection, three-artifact build and mechanical checks, and bounded visual-review artifact preparation; unexposed: client version and server revision"
+       "runtime": "Codex API agent; migration of all three documents to the shared propers house style, exact concise opening-page schema, generated chronology dossier, and expanded comparative commentary; unexposed: client version and server revision"
       },
       {
        "model": "GPT-6",
        "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
-       "runtime": "Codex API agent; three-artifact rebuild following operator-added appointed-text navigation labels, source-seal comparison, mechanical PDF checks and bounded raster preparation; unexposed: client version and server revision"
+       "runtime": "Codex API agent; natural study and concise terminal reflow, running-head and sentence-continuity repair, explicit chronology evidence limits, substantive concise themes expansion, and bounded mechanical and visual review; unexposed: client version and server revision"
       }
      ],
      "eligibility": "eligible",
      "models": [
       "GPT-6"
      ],
-     "pages": 23,
+     "pages": 22,
      "pdf": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf",
      "produced": {
-      "run_id": "80a724fb8410dc3d",
-      "seed_commit": "af9b2d10a98a6aac2ce44cc84d6358ede8e630e8",
-      "workflow_digest": "1375f708d8670b2f4ccaf1869cfaa6fe67fe6946dc2b962c766bcdc499d3b47e",
+      "run_id": "090e496c9d6d4104",
+      "seed_commit": "30c7baebd99056e4faac09a0f13cb085f9de1ea7",
+      "workflow_digest": "a965af881c1e4110b6e4698001b4f06b9a688a93a1f1652c292d15002afe1768",
       "workflow_id": "proper-study",
-      "workflow_version": "1"
+      "workflow_version": "6"
      },
      "provider": "gpt",
      "reviewed": "2026-09-17",
-     "revised": "2026-09-17T23:45:46Z",
+     "revised": "2026-09-22T00:08:03Z",
      "status": "alpha",
      "subject": "An expansive study of the 1962 Roman Missal propers for 20 September 2026",
      "title": "Seventeenth Sunday after Pentecost: Love, Unity, and the Healing of Worship",
@@ -9230,14 +9256,14 @@
      "also": [
       {
        "kind": "synthesis",
-       "pages": 12,
+       "pages": 10,
        "pdf": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.pdf",
        "subject": "Concise study of the proper of the Twenty-fifth Sunday in Ordinary Time, Year A, in the Roman Missal, Third Edition, for the dioceses of the United States of America, with Lectionary no. 133: the appointed elements, four overview senses, the scriptural dossier, the movement of the formulary, and a commentary comparing three interpretations of the whole Mass",
        "title": "Twenty-fifth Sunday in Ordinary Time, Year A: A Concise Study of the Proper in the Roman Missal, Third Edition"
       },
       {
        "kind": "homily",
-       "pages": 6,
+       "pages": 4,
        "pdf": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf",
        "subject": "A homily for an adult parish assembly on the proper of the Twenty-fifth Sunday in Ordinary Time, Year A, in the Roman Missal, Third Edition, for the dioceses of the United States of America, with Lectionary no. 133, 20 September 2026: the labourers paid alike, the householder's reply as justice and gift, the prophet's reason, the wage that is the giver himself, and the prayers of the Mass",
        "title": "Twenty-fifth Sunday in Ordinary Time, Year A: The Wage and the Giver"
@@ -9245,6 +9271,11 @@
      ],
      "authorization": "perpetual-public-repository-2026",
      "contributions": [
+      {
+       "model": "GPT-6",
+       "qualifiers": "unexposed: reasoning effort and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; 21 September 2026 recovery integration of the shared propers house style, postconciliar-only chronology and source-owner boundaries, concise page contract, regenerated evidence, and final release validation; unexposed: client version and server revision"
+      },
       {
        "model": "claude-fable-5-1",
        "qualifiers": "packet-declared-effort=high; host-dispatched-effort=xhigh; unexposed: sampling configuration",
@@ -9263,9 +9294,10 @@
      ],
      "eligibility": "eligible",
      "models": [
+      "GPT-6",
       "claude-fable-5-1"
      ],
-     "pages": 39,
+     "pages": 31,
      "pdf": "pdf/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf",
      "produced": {
       "run_id": "472e2eb20876b22a",
@@ -9276,7 +9308,7 @@
      },
      "provider": "claude",
      "reviewed": "2026-09-19",
-     "revised": "2026-09-19T18:27:31Z",
+     "revised": "2026-09-21T23:45:56Z",
      "status": "alpha",
      "subject": "Expansive study of the proper of the Twenty-fifth Sunday in Ordinary Time, Year A, in the Roman Missal, Third Edition, for the dioceses of the United States of America, with Lectionary no. 133: appointed texts, each element in its setting, three interpretations of the whole formulary with their four senses, and a comparison",
      "title": "Twenty-fifth Sunday in Ordinary Time, Year A: A Study of the Proper in the Roman Missal, Third Edition",
@@ -9287,14 +9319,14 @@
      "also": [
       {
        "kind": "synthesis",
-       "pages": 5,
+       "pages": 10,
        "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.pdf",
        "subject": "Roman Missal, Third Edition, United States 2011: concise comparison of the propers for 20 September 2026",
        "title": "Twenty-fifth Sunday in Ordinary Time, Year A: Learning to Share the Gift"
       },
       {
        "kind": "homily",
-       "pages": 4,
+       "pages": 3,
        "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-homily.pdf",
        "subject": "Roman Missal, Third Edition, United States 2011: homily for an adult parish assembly, 20 September 2026",
        "title": "Twenty-fifth Sunday in Ordinary Time, Year A: Room for Another's Joy"
@@ -9302,6 +9334,11 @@
      ],
      "authorization": "perpetual-public-repository-2026",
      "contributions": [
+      {
+       "model": "GPT-6",
+       "qualifiers": "unexposed: reasoning effort and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; 21 September 2026 recovery integration of the shared propers house style, rite-separated chronology comparison, concise page contract, running-head and cold-review repairs, regenerated evidence, and final release validation; unexposed: client version and server revision"
+      },
       {
        "model": "GPT-6",
        "qualifiers": "effort=high; unexposed: exact model identifier beyond GPT-6 and additional model qualifiers",
@@ -9316,6 +9353,31 @@
        "model": "GPT-6",
        "qualifiers": "effort=high; unexposed: exact model identifier beyond GPT-6 and additional model qualifiers",
        "runtime": "OpenAI Codex API agent; homily authorship, reviewed-study derivation, independent re-derivation after upstream repair, silent oral-clarity read-through, and homily proof checks; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model identifier beyond GPT-6 and additional model qualifiers",
+       "runtime": "OpenAI Codex API agent; research revalidation of the resolved context, complete retained biblical contexts, direct patristic evidence, later reception supports, source bindings and rights limits, and canonical chronology records; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model identifier beyond GPT-6 and additional model qualifiers",
+       "runtime": "OpenAI Codex API agent; expansive study re-derivation from the revalidated research, schema-2 manifest and study-component verification, and author-proof inspection; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model identifier beyond GPT-6 and additional model qualifiers",
+       "runtime": "OpenAI Codex API agent; concise study re-derivation from the accepted expansive study, fixed four-page opening and interleaved commentary verification, generation-record finalization, and synthesis proof inspection; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model identifier beyond GPT-6 and additional model qualifiers",
+       "runtime": "OpenAI Codex API agent; concise study page-four development, direct-claim editorial revision for SYN-001 and SYN-002, generation-record finalization, and synthesis proof inspection; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model identifier beyond GPT-6 and additional model qualifiers",
+       "runtime": "OpenAI Codex API agent; homily re-derivation from the accepted expansive and concise studies, retained-prose comparison against current upstream repairs, silent oral-clarity read-through, generation-record finalization, and homily proof verification; unexposed: client version and server revision"
       }
      ],
      "eligibility": "eligible",
@@ -9325,15 +9387,15 @@
      "pages": 20,
      "pdf": "pdf/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.pdf",
      "produced": {
-      "run_id": "8f4e6454c021280a",
-      "seed_commit": "af9b2d10a98a6aac2ce44cc84d6358ede8e630e8",
-      "workflow_digest": "1375f708d8670b2f4ccaf1869cfaa6fe67fe6946dc2b962c766bcdc499d3b47e",
+      "run_id": "bbe114e132356b38",
+      "seed_commit": "30c7baebd99056e4faac09a0f13cb085f9de1ea7",
+      "workflow_digest": "a965af881c1e4110b6e4698001b4f06b9a688a93a1f1652c292d15002afe1768",
       "workflow_id": "proper-study",
-      "workflow_version": "1"
+      "workflow_version": "6"
      },
      "provider": "gpt",
      "reviewed": "2026-09-17",
-     "revised": "2026-09-18T00:26:15Z",
+     "revised": "2026-09-22T03:05:25Z",
      "status": "alpha",
      "subject": "Roman Missal, Third Edition, United States 2011: expansive study of the propers for 20 September 2026",
      "title": "Twenty-fifth Sunday in Ordinary Time, Year A: The Gift We Share",

@@ -348,12 +348,12 @@ The oldest Latin witness to the substance of several of its sections is Ambrose 
 
 > ***De sacramentis* IV, 5, 21 — the prayer over the offering**
 >
-> *Vis scire quia verbis coelestibus consecratur? Accipe quae sunt verba. Dicit sacerdos: Fac nobis, inquit, hanc oblationem ascriptam, ratam, rationabilem, acceptabilem: quod figura est corporis et sanguinis Domini nostri Iesu Christi.*  
+> *Vis scire quia verbis coelestibus consecratur? Accipe quae sunt verba. Dicit sacerdos: Fac nobis, inquit, hanc oblationem ascriptam, ratam, rationabilem, acceptabilem: quod figura est corporis et sanguinis Domini nostri Iesu Christi.*<br>
 > Compare the 2008 Missal at n. 88: *Quam oblationem tu, Deus, in omnibus, quaesumus, benedictam, adscriptam, ratam, rationabilem, acceptabilemque facere digneris: ut nobis Corpus et Sanguis fiat dilectissimi Filii tui, Domini nostri Iesu Christi.*
 
 > ***De sacramentis* IV, 6, 27 — the anamnesis, oblation, and *Supplices***
 >
-> *Et sacerdos dicit: Ergo memores gloriosissimae eius passionis, et ab inferis resurrectionis, et in coelum ascensionis, offerimus tibi hanc immaculatam hostiam, rationabilem hostiam, incruentam hostiam, hunc panem sanctum, et calicem vitae aeternae: et petimus et precamur, ut hanc oblationem suscipias in sublimi altari tuo per manus angelorum tuorum, sicut suscipere dignatus es munera pueri tui iusti Abel, et sacrificium patriarchae nostri Abrahae, et quod tibi obtulit summus sacerdos Melchisedech.*  
+> *Et sacerdos dicit: Ergo memores gloriosissimae eius passionis, et ab inferis resurrectionis, et in coelum ascensionis, offerimus tibi hanc immaculatam hostiam, rationabilem hostiam, incruentam hostiam, hunc panem sanctum, et calicem vitae aeternae: et petimus et precamur, ut hanc oblationem suscipias in sublimi altari tuo per manus angelorum tuorum, sicut suscipere dignatus es munera pueri tui iusti Abel, et sacrificium patriarchae nostri Abrahae, et quod tibi obtulit summus sacerdos Melchisedech.*<br>
 > Compare the 2008 Missal at nn. 92–94: *Unde et memores … tam beatae passionis, necnon et ab inferis resurrectionis, sed et in caelos gloriosae ascensionis: offerimus … hostiam puram, hostiam sanctam, hostiam immaculatam, Panem sanctum vitae aeternae et Calicem salutis perpetuae. Supra quae … sicuti accepta habere dignatus es munera pueri tui iusti Abel, et sacrificium Patriarchae nostri Abrahae, et quod tibi obtulit summus sacerdos tuus Melchisedech … Supplices te rogamus, omnipotens Deus: iube haec perferri per manus sancti Angeli tui in sublime altare tuum …*
 
 Three cautions follow, and this study observes them. First, the Milanese prayer is not the Roman Canon, and no claim is made that Ambrose is quoting Rome. Second, the correspondence proves the antiquity of the material, not the antiquity of the arrangement: the Canon’s present order, including the position of the intercessions, is a later Roman achievement whose stages cannot be reconstructed from these witnesses. Third, the individual sections of the Canon reach us in sacramentaries considerably later than the material they transmit, so that manuscript date, composition date, and Roman adoption are three different questions; this study does not attempt to date the sections severally and does not repeat conjectural datings as fact.
@@ -512,8 +512,8 @@ Of these, the announcements are conditional and the Instruction’s “if they a
 
 The 2002 Missal printed one dismissal: *Ite, missa est*, answered *Deo gratias*. The 2008 reprint added three alternatives at n. 144, printed in the *Supplementum* under the heading *Ad n. 144 Ordinis Missae*:[^85]
 
-> *Ite, ad Evangelium Domini annuntiandum.*  
-> *Vel: Ite in pace, glorificando vita vestra Dominum.*  
+> *Ite, ad Evangelium Domini annuntiandum.*<br>
+> *Vel: Ite in pace, glorificando vita vestra Dominum.*<br>
 > *Vel: Ite in pace.*
 
 This is the most substantive addition the 2008 reprint made to the Order of Mass, and it is a deliberate act of interpretation. *Ite, missa est* is famously opaque: the noun *missa* in late Latin means a dismissal, and the formula’s literal sense is closer to “go, it is the dismissal” than to anything theological; the word later gave the whole rite its name. The three added formulas do not translate it. They say what the dismissal is for, in the terms the Instruction had already used at n. 90 c: going to announce the Gospel of the Lord, going in peace glorifying the Lord by one’s life. In other words, the 2008 book supplies, as options beside the ancient formula, explicit missionary readings of an act whose ancient formula does not carry them.

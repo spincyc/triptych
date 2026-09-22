@@ -193,16 +193,16 @@ Sources were checked through 2026-07-27. Internal source, theological-boundary, 
 
 ## References
 
-Scripture  
+Scripture<br>
 Exodus 12–13; Deuteronomy 5; Isaiah 40, 42, 49, 52–55; Jeremiah 31; Ezekiel 36–37; Matthew 26; Mark 14; Luke 22; John 1, 13, 18–19; Romans 5 and 12; 1 Corinthians 5 and 10–11; Galatians 2; Ephesians 5; Philippians 4; Hebrews 7–10 and 13; 1 Peter 1–2; Revelation 5.
 
-Early Christian witnesses  
+Early Christian witnesses<br>
 Justin Martyr, *First Apology* 65–67, Dods and Reith translation in *Ante-Nicene Fathers* 1 (1887); Irenaeus, *Against Heresies* IV.18.4–5, Roberts and Rambaut translation in *Ante-Nicene Fathers* 1 (1887); Ambrose, *De sacramentis* IV.5.21–23 and IV.6.27, Latin in *Patrologia Latina* 16 (1880); Augustine, *City of God* X.6, Marcus Dods translation (1871), checked with Hoffmann’s CSEL 40 Latin (1899–1900).
 
-Scholastic source  
+Scholastic source<br>
 Thomas Aquinas, *Summa theologiae* III, qq. 73, 76, 79, and 83.
 
-Authoritative teaching  
+Authoritative teaching<br>
 Council of Trent, session XXII, chapters 1–2 and canon 3 on the Sacrifice of the Mass; Second Vatican Council, *Sacrosanctum Concilium* 47; *Catechism of the Catholic Church* 1322–1323, 1362–1377, 1382, 1390, 1402–1405; *General Instruction of the Roman Missal* 79; John Paul II, *Ecclesia de Eucharistia* 11–12; Benedict XVI, *Sacramentum Caritatis* 9–11.
 
 **Last revised (UTC):** 2026-07-27T13:27:22Z

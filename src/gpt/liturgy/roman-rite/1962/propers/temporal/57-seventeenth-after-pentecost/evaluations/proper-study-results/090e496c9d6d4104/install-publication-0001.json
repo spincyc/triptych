@@ -1,0 +1,18 @@
+{
+  "artifact_path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "GATE-WEB-EDITIONS-CURRENT",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": [
+    "Accepted PDF hashes remain 0ecd7d768fb793e92cc2e2b06f0d9cd3ec504874bc692eed7a7aae9d1bb2b305, ba14d046656b05e0af8094895f149c88fa27054b68e939dd4d4fef6d8446261c, and 63eb6b1126af403fadc67c08b4eca0d8f718f2247692a6d6c759a30ef8dc348d for the study, synthesis, and homily respectively.",
+    "The canonical web edition remains byte-identical to its accepted SHA-256 a90987a6a5e6bfcb0e7cc98c9802ae1812f057e21c5811abaa7b5217659ea9bf.",
+    "All fifteen stale web-edition diffs were limited to semantic <br> hard-break substitution and trailing-horizontal-whitespace removal; no source prose changed."
+  ],
+  "stage": "install-publication",
+  "summary": "Reinstalled the three accepted PDFs with normal Make recipes, preserved their reviewed hashes, and retained the accepted canonical web artifact. Regenerated and reviewed the fifteen stale web editions, installed the exact derived bytes, refreshed only their release bindings, and passed the publication, release, catalog, source, and global web-current checks."
+}

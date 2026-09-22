@@ -1,10 +1,45 @@
 schema_version = 1
 
 [[deliverables]]
+id = "propers-shared-format-2026-09-21"
+owner = "PROJECT-WORK.md"
+promise = "Restore shared proper-specific Latin Modern typography and consistent title, table, dossier, lane and four-senses presentation in the four recent GPT/Claude proper leaves; restore concise opening pages and homily-only two-column speech without changing existing prose or accepting unreviewed chronology; extend gates, inspect all affected PDFs, commit coherently and push to main with deployment verification."
+state = "in_progress"
+  [[deliverables.requirements]]
+  id = "chronology-repair-and-consumers"
+  criterion = "Under the maintainer's expanded authorization, repair the shared Isaiah ministry/composition error from inspected sources, preserve Matthew's source-specific qualifications, independently review the corrected claims and GPT dossiers, and refresh every affected current consumer without rewriting historical acceptance evidence."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "src/sources/chronology/isaiah-relation-review-2026-09-21.md", "src/sources/chronology/events.yaml", "src/sources/chronology/bindings.yaml", "src/sources/chronology/composition.yaml", "workflows/reviews/propers-three-documents-v6-final-2026-09-21/cold-reviews/chronology-rites/REPORT.md"]
+
+  [[deliverables.requirements]]
+  id = "shared-format-and-regressions"
+  criterion = "One proper-specific template owns the 11-point Latin Modern article, 0.75-inch margins and monochrome presentation, title/table/dossier/lane styles; workflow guidance and regression gates enforce literal imports, template/font/lane layout and homily-only columns without changing unrelated publications."
+  status = "pass"
+  evidence = ["src/common/propers-format.tex", "src/common/propers-homily.tex", "tools/tests/test_propers_format.py", "workflows/reviews/propers-three-documents-v6-final-2026-09-21/cold-reviews/workflow-hardening/REPORT.md"]
+
+  [[deliverables.requirements]]
+  id = "four-leaf-migration"
+  criterion = "All three entrypoints of both providers' 1962 Seventeenth Sunday and postconciliar Twenty-fifth Sunday Year A use the shared template; concise pages 1/2/3-4/5 contain inventory plus four senses, reviewed chronology, themes, and integrated commentary respectively; existing substantive prose is preserved and no archived GPT chronology draft receives unearned acceptance."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/propers-three-documents-v6-final-2026-09-21/artifact-identities.json"]
+
+  [[deliverables.requirements]]
+  id = "fresh-format-review"
+  criterion = "Every affected PDF is rebuilt, mechanically checked and freshly inspected on every page; fonts, metadata, physical markers, web fidelity and substantive-text preservation are verified, and only reviewed bytes are installed with current publication records."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/propers-three-documents-v6-final-2026-09-21/README.md", "workflows/reviews/propers-three-documents-v6-final-2026-09-21/artifact-identities.json"]
+
+  [[deliverables.requirements]]
+  id = "format-main-deployment"
+  criterion = "Coherent reviewed commits reach origin/main without history rewriting after applicable local deployment gates pass; the exact Pages run and affected public routes are verified."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "claude-postconciliar-twenty-fifth-three-documents-2026-09-19"
 owner = "PROJECT-WORK.md"
 promise = "Drive the proper-study v4 workflow for provider claude on the postconciliar Twenty-Fifth Sunday in Ordinary Time, Year A, for Sunday 2026-09-20 through terminal acceptance: expansive study, 10–12-page concise study and standalone homily with fresh cold reviews; document every workflow cycle encountered; recover parallel attempts to fix Claude's non-converging workflow runs; reconcile with main, push, verify the Pages workflow, and finish with an independent cold review."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "claude-pc-authorization"
@@ -43,14 +78,15 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-pc-final-cold-review"
   criterion = "After integration, a fresh reviewer with no production history reviews the delivered three documents, the web edition and the run record, and its findings and their dispositions are recorded."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/propers-three-documents-v6-final-2026-09-21/cold-reviews/claude-postconciliar/REPORT.md", "workflows/reviews/propers-three-documents-v6-final-2026-09-21/cold-reviews/claude-postconciliar-web/REPORT.md", "PROJECT-WORK.md"]
+  check = "path_exists"
 
 [[deliverables]]
 id = "claude-1962-seventeenth-three-documents-2026-09-18"
 owner = "PROJECT-WORK.md"
 promise = "Drive the proper-study v3 workflow for provider claude on the 1962 Seventeenth Sunday after Pentecost for Sunday 2026-09-20 through terminal acceptance: expansive study, 10–12-page concise study and standalone homily with fresh cold reviews; document every workflow cycle encountered; recover parallel attempts to fix Claude's non-converging workflow runs; reconcile with main, push, verify the Pages workflow, and finish with an independent cold review."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "claude-authorization"
@@ -115,49 +151,49 @@ state = "in_progress"
   id = "separate-liturgical-paths"
   criterion = "The 1962 and postconciliar runs independently resolve their own calendars, propers, sources, interpretations and publications; guidance and negative tests prevent cross-family liturgical owner/component imports or mixed appointments while permitting generic shared infrastructure and independent primary-source reuse."
   status = "pass"
-  evidence = ["guidance/liturgy/propers-three-documents.md", "tools/tests/test_proper_components_v2.py", "tools/tests/test_workflow_proper_study.py", "workflows/reviews/propers-three-documents-implementation-2026-09-17.md"]
+  evidence = ["guidance/liturgy/propers-three-documents.md", "tools/tests/test_proper_components_v2.py", "tools/tests/test_workflow_proper_study.py", "workflows/reviews/propers-three-documents-v6-final-2026-09-21/cold-reviews/chronology-rites/REPORT.md"]
 
   [[deliverables.requirements]]
   id = "whole-proper-four-sense-lanes"
   criterion = "Each expansive full study develops two to five coherent patristic or saintly interpretive lanes; every lane interprets the whole proper and individually develops all four senses, with checked reception distinguished from original editorial synthesis and no unsupported attribution."
   status = "pass"
-  evidence = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/interpretations.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/80a724fb8410dc3d/study-review-0002.json", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/interpretations.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/8f4e6454c021280a/study-review-0002.json"]
+  evidence = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/interpretations.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/study-review-0000.json", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/interpretations.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/study-review-0001.json"]
 
   [[deliverables.requirements]]
   id = "interleaved-reading-and-speakable-homily"
   criterion = "Each proper has a concise independently usable reading document interleaving appointed texts and interpretation, and a distinct standalone homily with a coherent exegetical and pedagogical argument suitable for oral delivery; the adult-parish 10–12-minute working assumption or its expressly revised replacement is documented and reviewed."
   status = "pass"
-  evidence = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/80a724fb8410dc3d/synthesis-review-0002.json", "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/80a724fb8410dc3d/homily-review-0002.json", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/8f4e6454c021280a/synthesis-review-0001.json", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/8f4e6454c021280a/homily-review-0001.json"]
+  evidence = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/synthesis-review-0000.json", "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/homily-review-0000.json", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/synthesis-review-0001.json", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/homily-review-0000.json"]
 
   [[deliverables.requirements]]
   id = "six-reviewed-publications"
   criterion = "All six PDFs are beautifully typeset, built to settled references, mechanically checked and visually reviewed on every page, then installed with exact reviewed-byte identity; canonical web editions pass fidelity and presentation review, and build, catalogue and release records discover the correct outputs without claiming unperformed approval."
-  status = "open"
-  evidence = ["workflows/reviews/propers-three-documents-recipes-v2-2026-09-17/live-application/final-artifact-identity.json", "workflows/reviews/propers-three-documents-production-2026-09-17.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/propers-three-documents-v6-final-2026-09-21/artifact-identities.json", "workflows/reviews/propers-three-documents-v6-final-2026-09-21/README.md"]
 
   [[deliverables.requirements]]
   id = "durable-cold-reviews-and-corrections"
   criterion = "Every substantive deliverable receives cold independent review against its actual evidence; findings, corrections, governing-guidance revisions and independent re-review dispositions are preserved in tracked records, with no self-acceptance or ignored run directory serving as the sole durable evidence."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/propers-three-documents-v6-final-2026-09-21/README.md", "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/record.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/record.md"]
 
   [[deliverables.requirements]]
   id = "real-workflow-completion-and-evaluation"
   criterion = "The successor is driven on both real Sunday instances through successful completion after required revisions and reruns; tracked iteration evaluation identifies actual state transitions, findings, guidance changes, regression results and terminal dispositions, preserves legacy run history, and leaves no required output or blocking review finding unresolved."
-  status = "open"
-  evidence = ["workflows/reviews/propers-three-documents-production-2026-09-17.md", "workflows/reviews/propers-three-documents-recipes-v2-2026-09-17/live-application/RECORD.md"]
+  status = "pass"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/terminal-status.json", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/terminal-status.json", "workflows/reviews/propers-three-documents-v6-final-2026-09-21/README.md"]
 
   [[deliverables.requirements]]
   id = "restored-concise-opening-and-extent"
   criterion = "Each concise interpretive PDF is approximately 10–12 physical pages: page 1 maps every appointed element followed by four senses overview rows; page 2 is Scriptural Date and Location using the canonical chronology corpus; pages 3–4 are The Propers: Themes and Movement; developed interleaved commentary begins page 5. Each expansive study is 20–50 pages and retains two to five whole-formulary interpretations with each lane's own four senses. The reusable contract, physical page gates, fresh independent reviews and new real workflow runs enforce the revision without padding or altering historical acceptance."
-  status = "open"
-  evidence = ["PROJECT-WORK.md", "workflows/reviews/propers-three-documents-integration-checkpoint-2026-09-17/REPORT.md"]
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/propers-three-documents-v6-final-2026-09-21/artifact-identities.json", "workflows/reviews/propers-three-documents-v6-final-2026-09-21/README.md"]
 
   [[deliverables.requirements]]
   id = "recovered-main-and-pages"
   criterion = "Recovered work is preserved in coherent commits, reconciled with current main without rewriting history, and pushed; the exact pushed snapshot passes the Pages workflow and the six Sunday PDFs and two canonical web routes are verified live. Held publications remain excluded."
-  status = "pass"
-  evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml", "workflows/reviews/propers-three-documents-v3-recovery-2026-09-18/deployment-evidence.json", "workflows/reviews/propers-three-documents-v3-recovery-2026-09-18/pages-review.md"]
+  status = "open"
+  evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml", "workflows/reviews/propers-three-documents-v6-final-2026-09-21/README.md"]
 
 [[deliverables]]
 id = "proper-salient-dates-2026-09-09"

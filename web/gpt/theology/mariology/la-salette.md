@@ -734,136 +734,136 @@ This source-audited Catholic study instrument is not an act of the Magisterium, 
 
 This chronology records documentary, juridical, devotional, and biographical events without assigning them one authority.
 
-7 November 1831  
+7 November 1831<br>
 Françoise Mélanie Mathieu Calvat is born at Corps.
 
-August 1835  
+August 1835<br>
 Pierre Maximin Giraud is born at Corps; civil-date references vary between 26 and 27 August.
 
-1845–1847  
+1845–1847<br>
 Potato disease, grain distress, high prices, and famine conditions affect France and Europe with substantial regional differences.
 
-19 September 1846  
+19 September 1846<br>
 Maximin, eleven, and Mélanie, fourteen, report the encounter with the luminous weeping Beautiful Lady on Mont Planeau. The public discourse, two separate private communications, and final commission belong to the reported event.
 
-20 September 1846  
+20 September 1846<br>
 The Pra relation, the first written account, is composed in Mélanie’s presence. The lost original survives through Abbé Lagier’s certified February 1847 copy and early derivatives.
 
-October 1846  
+October 1846<br>
 Early documents attest the children’s claim that each received a separate private communication.
 
-February 1847  
+February 1847<br>
 Abbé Lagier copies the Pra relation and records early testimony.
 
-July–October 1847  
+July–October 1847<br>
 Bishop de Bruillard appoints Rousselot and Orcel to investigate; they gather testimony and report.
 
-19 September 1847  
+19 September 1847<br>
 The Missionaries’ chronology estimates at least 30,000 pilgrims on the first anniversary.
 
-8 November–13 December 1847  
+8 November–13 December 1847<br>
 Eight diocesan discernment conferences examine the dossier at Grenoble.
 
-1848  
+1848<br>
 Rousselot publishes a favorable report; France undergoes revolution amid continuing controversy over La Salette.
 
-1849  
+1849<br>
 The Missionaries’ chronology reports 15,000 persons enrolled in the confraternity of Our Lady Reconciliatrix.
 
-25 September 1850  
+25 September 1850<br>
 Maximin meets Saint Jean-Marie Vianney at Ars; their disputed exchange produces serious doubt and later contradictory explanations.
 
-3 July 1851  
+3 July 1851<br>
 The surviving clean manuscript of Maximin’s communication is dated at Grenoble; some chronologies begin the writing procedure on 2 July.
 
-6 July 1851  
+6 July 1851<br>
 Mélanie completes the extant rewritten manuscript of her communication at Grenoble.
 
-18 July 1851  
+18 July 1851<br>
 Canons Gérin and Rousselot deliver the sealed manuscripts and episcopal letter to Pius IX.
 
-19 September 1851  
+19 September 1851<br>
 Bishop Philibert de Bruillard issues the controlling positive legacy judgment and authorizes the cult of Our Lady of La Salette.
 
-1 and 25 May 1852  
+1 and 25 May 1852<br>
 De Bruillard’s pastoral letter announces the shrine and Missionaries; the cornerstone is laid on 25 May.
 
-1853–1854  
+1853–1854<br>
 Jacques-Marie-Achille Ginoulhiac succeeds de Bruillard; he declines to permit Mélanie’s final profession at Corenc.
 
-4 November 1854  
+4 November 1854<br>
 Ginoulhiac issues his *Instruction pastorale et Mandement*, condemning Déléon’s *Mémoire au Pape*, defending the established devotion and prior judgment, and separating posterior predictions from the 1846 fact.
 
-18–19 September 1855  
+18–19 September 1855<br>
 A near-contemporary report says Ginoulhiac described the children’s mission as completed; his anniversary allocution sends pilgrims out as missionaries. The later polished shepherds-and-Church maxim summarizes this pastoral movement but is not treated as a verbatim decree.
 
-2 February 1858  
+2 February 1858<br>
 The first group of Missionaries makes religious vows. The 1879 text later claims 1858 as its authorized publication year, a statement absent from Mélanie’s extant 1851 manuscript.
 
-1865  
+1865<br>
 Maximin serves six months in the Papal Zouaves; the *Annales de Notre-Dame de La Salette* begins publication.
 
-1866  
+1866<br>
 Maximin publishes *Ma profession de foi sur l’apparition de Notre-Dame de La Salette*.
 
-1 March 1875  
+1 March 1875<br>
 Maximin dies at Corps.
 
-21 November 1878  
+21 November 1878<br>
 Mélanie dates her long retrospective apparition narrative and expanded secret at Castellammare.
 
-1879  
+1879<br>
 The Missionaries receive Roman recognition; the basilica is consecrated and its image crowned in August. Mélanie’s booklet is printed at Lecce with local permission dated 15 November.
 
-1880  
+1880<br>
 An archival Holy Office dossier, as published in later scholarship, reports measures to withdraw Mélanie’s booklet and restrict similar writing or explanation; no public AAS decree or independently inspected archival original controls this entry.
 
-14–15 December 1904  
+14–15 December 1904<br>
 Mélanie dies at Altamura, Italy.
 
-21 December 1915  
+21 December 1915<br>
 The Holy Office issues the AAS decree against discussion of the so-called secret while expressly preserving devotion to Mary as Reconciliatrix of La Salette.
 
-12 April and 5 June 1916  
+12 April and 5 June 1916<br>
 The Holy Office and Congregation of the Index proscribe *La Leçon de l’Hôpital Notre-Dame d’Ypres*; the official notices print the author as “Dr Henry Mariam” and “Dr Henri Mariavé.”
 
-9–10 May 1923  
+9–10 May 1923<br>
 The Holy Office proscribes and condemns the named 1922 Société Saint-Augustin booklet. Its AAS title prints the event date as 19 September 1845 \[*sic*\].
 
-8 October 1945 / 1946  
+8 October 1945 / 1946<br>
 Pius XII’s *Notre dévotion*, published in the 1946 AAS volume for the centenary, encourages the shrine, missionaries, and public call to conversion and reparation.
 
-14 June and 15 November 1966  
+14 June and 15 November 1966<br>
 The CDF removes the Index’s force as ecclesiastical law with attached censures while addressing conscience under natural law; it later clarifies the abrogation of old automatic book-law penalties. These acts do not by themselves decide the current force of every standalone earlier command.
 
-1983  
+1983<br>
 The current Latin Code takes effect; canon 6 abrogates Apostolic See penal laws not retained in the Code.
 
-6 May 1996  
+6 May 1996<br>
 John Paul II writes to Bishop Louis Dufaux for the 150th anniversary, interpreting La Salette as a message of hope, conversion, and reconciliation in Christ.
 
-1999  
+1999<br>
 Michel Corteville locates the sealed-era manuscripts in the historical Holy Office archive.
 
-4 May 2000  
+4 May 2000<br>
 John Paul II addresses the Missionaries’ general chapter on their reconciliation charism.
 
-2002  
+2002<br>
 René Laurentin and Michel Corteville publish *Découverte du secret de La Salette* with the early texts and archival material.
 
-2016  
+2016<br>
 The French Church’s Nominis service reports an 18 March CDW decree for the 19 September observance; the current French national liturgical calendar directly verifies the optional celebration, while the underlying decree was not inspected here.
 
-2021  
+2021<br>
 Grenoble–Vienne and the Shrine celebrate the 175th anniversary with a diocesan Marian year and pastoral program.
 
-19 May 2024  
+19 May 2024<br>
 The DDF’s new norms for alleged supernatural phenomena take effect. Their presentation explicitly cites the 1851 La Salette wording as a legacy formula; they do not reclassify the case.
 
-4 November 2025  
+4 November 2025<br>
 The DDF issues *Mater Populi Fidelis*, supplying current safeguards for Marian cooperation, mediation, and intercession.
 
-16 July 2026  
+16 July 2026<br>
 DDF index, Holy See acts, Diocese, Shrine, public-message sources, and current reception rechecked. No later competent reclassification or supersession located.
 
 ## References

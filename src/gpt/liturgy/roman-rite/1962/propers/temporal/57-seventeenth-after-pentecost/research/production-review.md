@@ -1118,3 +1118,273 @@ The current three PDFs are 23, 5 and 4 pages and match the exact hashes in `rese
 The source review counts remain 7,443 substantive study words, 1,686 concise words and 1,283 spoken homily words. Homily delivery is estimated at 10.7–11.7 minutes at 110–120 words per minute; no timed human performance is claimed. Historical translation/collation limits and the universal-calendar/local-observance distinction remain as recorded in the research and prose.
 
 Exact engine-retained stage results, original manifest/bootstrap, actual terminal response/status and actual terminal replay are archived under `evaluations/proper-study-results/80a724fb8410dc3d/`; `record.md` binds their hashes. Terminal replay reports retained packet integrity with `deterministic: null`; it does not re-perform any editorial review or reconstruct all prior decisions. The prior real nonterminal deterministic replay is separately retained. The operator label intervention and the historical transient proof loss remain honestly recorded; terminal acceptance does not erase either event.
+
+## Proper-study v6 author-study, iteration 0 — 21 September 2026
+
+The expansive study was freshly read against the independently reviewed
+research for `proper-study` version 6, run `090e496c9d6d4104`, workflow digest
+`a965af881c1e4110b6e4698001b4f06b9a688a93a1f1652c292d15002afe1768`,
+seeded at commit `30c7baebd99056e4faac09a0f13cb085f9de1ea7`. It remains a
+complete 1962 Seventeenth Sunday after Pentecost study: the opening maps all
+ten appointed elements; the lawful Latin and historical English witnesses are
+identified; each element receives substantive commentary; three distinct
+whole-formulary readings develop multiple checked Fathers or saints and their
+own literal, allegorical, moral and anagogical senses; and a short comparison
+and the reviewed scriptural chronology precede the terminal apparatus. No
+postconciliar appointment or interpretation supplies this leaf.
+
+The interpretive exposition remains **7,443 substantive words**: opening and
+map 522; element commentary 1,900; healed charity 1,464; gathered people
+1,523; faithful offering 1,672; comparison 362. This reproduces the established
+Pandoc LaTeX-AST count of prose text nodes, excluding headings, notes, raw
+commands, the appointed-text reproduction, the separately generated historical
+chronology appendix and terminal apparatus. The source limits remain those in
+`scope.md`: the retained historical English witnesses are not new critical
+collations; Jerome and Bellarmine are used through disclosed retained
+transcriptions; no direct ancient commentary on the exact three orations was
+established; the whole-Mass readings are editorial syntheses rather than
+attributions to a Father; and no local-calendar overlay was specified.
+
+The exact packet build command completed twice and settled a **22-page**
+author proof with no fatal error, undefined reference, overfull or underfull
+box, or LaTeX/package warning. The required research-edition artifact-phase
+component check passed. `pdfinfo` reports an unencrypted Letter-size PDF 1.7,
+471,419 bytes. All 22 full-page rasters were inspected: the appointed-text
+continuations, interpretive lane transitions, four-senses blocks, chronology
+tables, footnotes, references, revision display and final rights colophon are
+legible and unclipped, with no sparse spill page or damaged running matter.
+
+The exact proof submitted for cold review is
+`build/tpt-runs/090e496c9d6d4104/artifacts/author-study-0000/proof/57-seventeenth-after-pentecost-author-proof.pdf`,
+SHA-256
+`0ecd7d768fb793e92cc2e2b06f0d9cd3ec504874bc692eed7a7aae9d1bb2b305`.
+Its copied LaTeX log is beside the proof under the same stage artifact root,
+and its dedicated replaceable raster tree is
+`build/tpt-runs/090e496c9d6d4104/artifacts/author-study-0000/rasters/`.
+This is author verification, not independent study acceptance or final
+three-document visual review. No research evidence, study prose, shared
+formatting source, companion, installed publication, prior review result or
+historical run record was changed in this stage.
+
+## Proper-study v6 derive-synthesis, iteration 0 — 21 September 2026
+
+The existing concise study was freshly compared with the accepted expansive
+study and its three reviewed interpretations for `proper-study` version 6,
+run `090e496c9d6d4104`. Its fixed opening maps all ten appointed elements,
+prints exactly four overview senses, carries the generated chronology on page
+2, and develops the formulary's movement on pages 3--4. The integrated
+commentary begins on page 5 and interleaves healed charity, the gathered
+people and faithful offering through five cross-proper questions. It preserves
+the important differences concerning the Gospel questioner's motive, the
+meanings of one spirit, created and spiritual heavens, Head-and-members
+prayer, Daniel's confession, common and particular vows, and public and inward
+judgment. All ten appointed elements contribute, and the three readings'
+literal, allegorical, moral and anagogical conclusions remain distinguishable.
+No new evidence-dependent claim or upstream defect was found, so the accepted
+prose, component membership and shared generation record were retained.
+
+The current concise argument contains **3,975 substantive words**: 249 in the
+appointed-elements map, 99 in the four-senses overview, 1,094 in the thematic
+movement and 2,533 in the integrated commentary. The count uses Pandoc's
+LaTeX abstract syntax tree and counts prose text nodes while excluding
+headings, footnotes and raw commands. The generated chronology dossier and
+terminal apparatus are excluded, consistently with the study count's
+exclusion of its generated chronology appendix. The earlier 1,686-word audit
+entries describe the pre-pagination-recovery commentary and do not describe
+this settled ten-page source.
+
+The packet's exact build command completed through its fixed-point passes and
+produced a settled **10-page** author proof. The required synthesis artifact
+component check passed. The auxiliary evidence places inventory and overview
+on physical page 1, chronology on page 2, themes on pages 3--4 and integrated
+commentary on page 5. The final log contains no fatal error, undefined
+reference, overfull or underfull box, or LaTeX/package warning. `pdfinfo`
+reports an unencrypted Letter-size PDF 1.7, 462,521 bytes. All ten full-page
+rasters were inspected; the dense chronology sheet, opening argument,
+commentary, footnotes, scope appendix, references, revision display and rights
+colophon are legible and unclipped, with no damaged running matter or spill
+page.
+
+The exact proof submitted for cold review is
+`build/tpt-runs/090e496c9d6d4104/artifacts/derive-synthesis-0000/proof/57-seventeenth-after-pentecost-synthesis-author-proof.pdf`,
+SHA-256
+`ba14d046656b05e0af8094895f149c88fa27054b68e939dd4d4fef6d8446261c`.
+Its settled auxiliary file has SHA-256
+`5b66a7d44b75f8372c1289acff6651da0b33a1d85b1b855d4f3659e1e1cef055`,
+and the copied final log has SHA-256
+`14797ec0a6d485afe1c2e3e7c56b329dd1070218e1b50f4b6551e778a6a252dc`.
+Both are beside the proof. The dedicated replaceable raster tree is
+`build/tpt-runs/090e496c9d6d4104/artifacts/derive-synthesis-0000/rasters/`.
+This is author verification, not independent synthesis acceptance or the
+workflow's final three-document visual review.
+
+## Proper-study v6 derive-homily, iteration 0 — 21 September 2026
+
+Both reviewed studies, their terminal apparatus and the interpretation record
+were freshly read with the standalone homily for `proper-study` version 6,
+run `090e496c9d6d4104`. The homily's governing healed-charity argument remains
+coherent and source-bounded. It joins both movements of Matthew 22:34--46---the
+twofold command of love and David's Son confessed as Lord---with the patient
+charity and received unity of Ephesians 4:1--6, then places that demand within
+the Introit's appeal to mercy, the Collect's request for purified allegiance,
+the Secret's plea for cleansing and preservation, and the Postcommunion's
+eternal remedy. Its practical treatment of correction preserves the reviewed
+distinction between charitable truth and humiliation, and its account of the
+Eucharist preserves continuing freedom rather than implying automatic
+perseverance. No new source-dependent claim or upstream defect was found, so
+the accepted speech, terminal apparatus, component membership and shared
+generation record were retained.
+
+A fresh silent editorial reading checked sentence sense, transitions, oral
+clarity, the concrete opening question, the practicable response and the final
+return to the next sentence. The prose-only body contains **1,283 words** by a
+fresh Pandoc plain-text count, excluding title and apparatus. At 110--120 words
+per minute this supports the stated **10.7--11.7 minute** estimate for an adult
+parish assembly. This was neither an audible rehearsal nor a timed human
+delivery. The exact loci, interpretation relation, audience and delivery
+estimate remain outside the spoken body under `Source and delivery note` and
+`References`.
+
+The homily-edition component check and complete content preflight pass. The
+preflight confirms 32 valid bindings, five used reference entries, three
+whole-formulary interpretation lanes and exact version-6 packet provenance.
+The document build completed its two settling passes and produced an
+unencrypted, three-page Letter-size PDF 1.7 of 242,757 bytes. Its log contains
+no fatal error, undefined reference, overfull or underfull box, or
+LaTeX/package warning. All three full-page rasters were inspected: the
+two-column speech is legible and continuous across its two pages, and the
+source-and-delivery note, five references, revision display and rights
+colophon are legible and unclipped on page 3.
+
+The exact author proof submitted for cold review is
+`build/tpt-runs/090e496c9d6d4104/artifacts/derive-homily-0000/proof/57-seventeenth-after-pentecost-homily-author-proof.pdf`,
+SHA-256
+`63eb6b1126af403fadc67c08b4eca0d8f718f2247692a6d6c759a30ef8dc348d`.
+Its settled auxiliary file has SHA-256
+`96da8bd61cc21463cd3eda0260cb058d26e765e456536a181a79f8efa1798486`,
+and its copied final log has SHA-256
+`77c7fc454b6534a9513d0d578028f60e3123294fb48549971bd19a596a63f3b5`.
+Both are beside the proof; the dedicated raster tree is under the same stage
+artifact root. This is author verification, not independent homily acceptance
+or the workflow's final three-document visual review.
+
+## Proper-study v6 build-artifacts, iteration 0 — 21 September 2026
+
+All three packet-prescribed `make doc` builds completed successfully for
+`proper-study` version 6, run `090e496c9d6d4104`. No layout or other source
+edits were made in this stage. The final build artifacts are:
+
+| Output | Pages | Bytes | SHA-256 |
+| --- | ---: | ---: | --- |
+| `build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf` | 22 | 471,419 | `0ecd7d768fb793e92cc2e2b06f0d9cd3ec504874bc692eed7a7aae9d1bb2b305` |
+| `build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf` | 10 | 462,521 | `ba14d046656b05e0af8094895f149c88fa27054b68e939dd4d4fef6d8446261c` |
+| `build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf` | 3 | 242,757 | `63eb6b1126af403fadc67c08b4eca0d8f718f2247692a6d6c759a30ef8dc348d` |
+
+The expansive and concise works satisfy their required 20--50-page and
+10--12-page ranges. Settled absolute-page labels in the concise auxiliary put
+the complete inventory and all four overview senses on physical page 1,
+chronology alone on page 2, themes from page 3 through page 4, and developed
+commentary beginning on page 5. The auxiliary hashes are
+`5cebdacde2e5647ca86cae0a9fb9765ade3088094caca2d3dc1fb57e77e92e6e`
+for the expansive study and
+`5b66a7d44b75f8372c1289acff6651da0b33a1d85b1b855d4f3659e1e1cef055`
+for the concise study.
+
+The three final logs contain no fatal error, undefined reference, overfull or
+underfull box, rerun request, or LaTeX/package warning. Ghostscript parsed all
+three PDFs with the null-page device without an error. `pdfinfo` reports three
+unencrypted Letter-size PDF 1.7 files, and `pdffonts` reports every font
+embedded, subsetted and Unicode-mapped. Layout-preserving extraction succeeded
+for every page: the expansive extraction is 12,494 words and 85,780 bytes, the
+concise extraction 6,066 words and 43,696 bytes, and the homily extraction
+1,780 words and 13,592 bytes. Page-by-page extraction inspection found the
+expected running matter and section sequence, complete terminal references and
+rights matter, and no replacement or NUL characters.
+
+The PDFs, settled auxiliaries, final logs, table of contents and extracted
+texts are retained under
+`build/tpt-runs/090e496c9d6d4104/artifacts/build-artifacts-0000/proof/`.
+`research/artifacts.json` records the exact three PDF hashes, the expansive and
+concise pagination evidence, and all render-input hashes after the final build.
+The bounded review helper produced 35 page rasters under
+`build/tpt-runs/090e496c9d6d4104/artifacts/build-artifacts-0000/rasters/`.
+Those rasters are prepared for the following fresh visual reviewer; this build
+stage does not claim that independent visual acceptance. No remaining build,
+pagination, extraction, font-embedding or PDF-structure limitation was found,
+and no PDF was installed.
+
+## Proper-study v6 visual review, web review and installation, iteration 0 — 21 September 2026
+
+The workflow's independent visual-review result passed after inspection of all
+35 rendered pages. The accepted PDF receipts are
+`0ecd7d768fb793e92cc2e2b06f0d9cd3ec504874bc692eed7a7aae9d1bb2b305`
+for the 22-page expansive study,
+`ba14d046656b05e0af8094895f149c88fa27054b68e939dd4d4fef6d8446261c`
+for the 10-page concise study, and
+`63eb6b1126af403fadc67c08b4eca0d8f718f2247692a6d6c759a30ef8dc348d`
+for the three-page homily. The independent web-review result also passed for
+the canonical Markdown with SHA-256
+`a90987a6a5e6bfcb0e7cc98c9802ae1812f057e21c5811abaa7b5217659ea9bf`.
+
+The three normal `make install-doc` recipes completed for the bare,
+`-synthesis`, and `-homily` IDs. Each installed PDF is byte-identical to both
+its reviewed build artifact and the accepted receipt above. The reviewed
+canonical Markdown was installed byte-for-byte at
+`web/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md`
+and staged for the publication gate; its installed SHA-256 remains the accepted
+web receipt above. The three existing per-publication records were checked and
+preserved: each names its exact output ID, `library/traditional-latin-mass.md`,
+`alpha`, and `perpetual-public-repository-2026`. The calendar row already links
+the Full PDF, Synthesis PDF, Homily PDF and canonical web edition in schema-2
+order, and the canonical primary-provider publication marker remains unique.
+
+## Proper-study v6 installation repair, iteration 1 — 21 September 2026
+
+The publication gate returned one blocking finding,
+`GATE-WEB-EDITIONS-CURRENT`: fifteen tracked web editions were stale after the
+reviewed converter changed hard line breaks from trailing spaces to semantic
+`<br>` elements. The fifteen editions were regenerated from their canonical
+sources with `tools/tpt web-edition`. A byte-level comparison proved that every
+change was limited to that semantic hard-break substitution and removal of
+trailing horizontal whitespace; no source prose was changed. The generated
+bytes were installed at their existing tracked `web/` paths, and the release
+binding refresh was restricted to those fifteen paths. It updated those
+fifteen bindings and the two deterministic release authorization records.
+
+Before that repair, the artifact snapshot check passed and the three normal
+`make install-doc` recipes were rerun for the bare, `-synthesis`, and `-homily`
+IDs. Build and installed bytes remain equal to the accepted review seals:
+`0ecd7d768fb793e92cc2e2b06f0d9cd3ec504874bc692eed7a7aae9d1bb2b305`,
+`ba14d046656b05e0af8094895f149c88fa27054b68e939dd4d4fef6d8446261c`,
+and
+`63eb6b1126af403fadc67c08b4eca0d8f718f2247692a6d6c759a30ef8dc348d`,
+respectively. The reviewed canonical Markdown for this owner remains
+byte-identical to its accepted receipt,
+`a90987a6a5e6bfcb0e7cc98c9802ae1812f057e21c5811abaa7b5217659ea9bf`.
+
+The document catalog, source-reader projection, publication-source inventory,
+and source-family ledger were refreshed with their owning tools. The scoped
+publication check, release-binding check, scoped public-alpha check, document
+catalog check, global web-current check, and `make check-sources` all pass.
+The web-current sweep subsequently exposed one presentation defect in a
+different 1962 reference work: print-only checkbox geometry had disappeared
+from its generated web checklist. The shared web shim now gives that existing
+macro a semantic empty-box rendering, with focused regression coverage. The
+reference edition was regenerated and independently rechecked; no proper-study
+PDF, source paragraph, appointment or reviewed Sunday web byte changed.
+
+## Proper-study v6 terminal disposition and archive — 22 September 2026
+
+Publication-gates iteration 0 returned one corpus-wide web-current failure and
+routed it to installation. After the generated-edition repair above,
+install-publication iteration 1 passed and publication-gates iteration 1
+returned `PASS` with no findings or escalations. The engine reached
+`ACCEPTED`.
+
+The owning leaf preserves the exact v6 history under
+`evaluations/proper-study-results/090e496c9d6d4104/`: 23 accepted result
+submissions, their 23 packet texts, the immutable seed manifest and bootstrap,
+the terminal engine state, and exact terminal status and replay outputs. Fresh
+status and replay commands reproduce those terminal records; replay reports
+`recorded_file_intact: true`. This archive records the failed global gate and
+its real repair rather than presenting a synthetic straight-line success.

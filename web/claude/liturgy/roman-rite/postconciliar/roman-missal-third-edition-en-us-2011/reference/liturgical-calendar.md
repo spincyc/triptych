@@ -2,8 +2,8 @@
 
 *A source-first reference to the norms of the postconciliar liturgical year for the dioceses of the United States of America: the structure of the year, the table of liturgical days, ranks, occurrence and transfer, the movable cycle, Ordinary Time and its omitted week, the Sunday and weekday Lectionary cycles, and the proper calendars of nation, diocese and church*
 
-**The Liturgical Calendar of the Roman Missal, Third Edition**  
-Norms of the postconciliar liturgical year for the dioceses of the United States of America  
+**The Liturgical Calendar of the Roman Missal, Third Edition**<br>
+Norms of the postconciliar liturgical year for the dioceses of the United States of America<br>
 Grounded in the Latin *Normae universales de anno liturgico et de calendario* and the *Institutio generalis Missalis Romani* of the 2002 *editio typica tertia*, and in the *Praenotanda* of the *Ordo lectionum Missae*, 1981 *editio typica altera*. Normative cutoff 25 July 2026. A study reference, not an *Ordo* and not an act of authority: see *Scope, Edition, and Qualifications*.
 
 ## The structure of the liturgical year {#sec:structure}
@@ -26,7 +26,7 @@ Three cycles are named in one sentence: the week with its Sunday, the year with 
 
 > **Locus:** <span class="smallcaps">nualc</span> 3
 >
-> *Unusquisque dies sanctificatur liturgicis populi Dei celebrationibus, præsertim vero sacrificio eucharistico et Officio divino.  
+> *Unusquisque dies sanctificatur liturgicis populi Dei celebrationibus, præsertim vero sacrificio eucharistico et Officio divino.<br>
 > Dies liturgicus decurrit a media nocte ad mediam noctem. Celebratio vero dominicæ et sollemnitatum incipit iam vespere diei præcedentis.*
 
 Two rules are packed together, and they are frequently confused. The default liturgical day is the civil day, midnight to midnight. The exception is not a shift of the day but an anticipated beginning of a *celebration*: only Sundays and solemnities begin already on the evening of the preceding day. Feasts do not, unless they are feasts of the Lord occurring on a Sunday in Ordinary Time or Christmas Time and substituting for its Office (<span class="smallcaps">nualc</span> 13); memorials never do.
@@ -143,9 +143,9 @@ Two provisions convert an obligatory memorial into an optional one without amend
 
 > **Locus:** <span class="smallcaps">nualc</span> 16
 >
-> *Hebdomadæ dies, qui post dominicam decurrunt, feriæ nuncupantur; diversa tamen ratione celebrantur, iuxta momentum ipsis proprium:  
-> a) feria IV Cinerum et feriæ Hebdomadæ sanctæ, a feria II ad feriam V inclusive, omnibus aliis celebrationibus præferuntur;  
-> b) feriæ Adventus, a die 17 ad diem 24 decembris inclusive, et omnes feriæ Quadragesimæ memoriis obligatoriis præferuntur;  
+> *Hebdomadæ dies, qui post dominicam decurrunt, feriæ nuncupantur; diversa tamen ratione celebrantur, iuxta momentum ipsis proprium:<br>
+> a) feria IV Cinerum et feriæ Hebdomadæ sanctæ, a feria II ad feriam V inclusive, omnibus aliis celebrationibus præferuntur;<br>
+> b) feriæ Adventus, a die 17 ad diem 24 decembris inclusive, et omnes feriæ Quadragesimæ memoriis obligatoriis præferuntur;<br>
 > c) ceteræ feriæ omnibus sollemnitatibus et festis cedunt et cum memoriis componuntur.*
 
 Three tiers of weekday, and the top tier is genuinely formidable: Ash Wednesday and Monday to Thursday of Holy Week are preferred to *all other celebrations* without qualification. A solemnity occurring on one of them is not celebrated that day at all but transferred under <span class="smallcaps">nualc</span> 60. The Annunciation, fixed to 25 March, is the standard case, and the Norms provide for it by name.
@@ -233,7 +233,7 @@ Place 12 is the only entry in the table that carries a substantive rule inside 
 
 > **Locus:** <span class="smallcaps">nualc</span> 60
 >
-> *Si eodem die plures celebrationes occurrunt, fit de ea quæ in tabula dierum liturgicorum superiorem obtinet locum. Attamen sollemnitas, quæ impeditur a die liturgico, qui præcedentia gaudeat, ad proximiorem diem transferatur qui sit liber a diebus sub nn. 1-8 in tabula præcedentiæ recensitis, servatis iis quæ n. 5 statuuntur. Sollemnitas vero Annuntiationis Domini, quotiescumque occurrit aliquo die Hebdomadæ sanctæ, semper ad feriam II post dominicam II Paschæ erit transferenda.  
+> *Si eodem die plures celebrationes occurrunt, fit de ea quæ in tabula dierum liturgicorum superiorem obtinet locum. Attamen sollemnitas, quæ impeditur a die liturgico, qui præcedentia gaudeat, ad proximiorem diem transferatur qui sit liber a diebus sub nn. 1-8 in tabula præcedentiæ recensitis, servatis iis quæ n. 5 statuuntur. Sollemnitas vero Annuntiationis Domini, quotiescumque occurrit aliquo die Hebdomadæ sanctæ, semper ad feriam II post dominicam II Paschæ erit transferenda.<br>
 > Reliquæ celebrationes eo anno omittuntur.*
 
 Four distinct dispositions are compressed into one article, and confusing them is the commonest error in calendar work. They are worth separating.
@@ -371,7 +371,7 @@ The Missal preserves one liturgical act by which the year’s movable dates are 
 
 > **Locus:** <span class="smallcaps">nualc</span> 44
 >
-> *Tempus “per annum” incipit feria II quæ sequitur dominicam post diem 6 ianuarii occurrentem et protrahitur usque ad feriam III ante Quadragesimam inclusive; iterum incipit feria II post dominicam Pentecostes et explicit ante I Vesperas dominicæ I Adventus.  
+> *Tempus “per annum” incipit feria II quæ sequitur dominicam post diem 6 ianuarii occurrentem et protrahitur usque ad feriam III ante Quadragesimam inclusive; iterum incipit feria II post dominicam Pentecostes et explicit ante I Vesperas dominicæ I Adventus.<br>
 > Eadem ratione adhibetur series formulariorum, quæ pro dominicis et feriis huius temporis invenitur tum in Missali tum in Liturgia Horarum (voll. III-IV).*
 
 Two facts follow immediately and are the source of everything else in this section. First, Ordinary Time is the residue: the seasons with a character of their own are laid down first, and what is left is thirty-three or thirty-four weeks. Second, the count is *not* stated. <span class="smallcaps">nualc</span> 43 says that the number varies; <span class="smallcaps">nualc</span> 44 says where the two runs begin and end; neither says how to number the weeks, which week is dropped in a thirty-three-week year, or what becomes of its material. The Universal Norms simply do not contain the rule that reference works most often attribute to them.
@@ -384,17 +384,17 @@ Before the Sunday and weekday Masses of Ordinary Time, the *editio typica tertia
 
 > **Locus:** *Missale Romanum* (2002), *Tempus “per annum”*, rubrics 1 and 2
 >
-> *. Tempus “per annum” complectitur 34 vel 33 hebdomadas. Initium sumit feria II, quæ sequitur dominicam post diem 6 ianuarii occurrentem, et pergit usque ad initium Quadragesimæ; iterum incipit feria II post dominicam Pentecostes, et explicit sabbato ante dominicam I Adventus.  
-> 2. Ratio computandi dominicas et hebdomadas “per annum” est sequens:  
-> a) Dominica in qua fit festum Baptismatis Domini locum tenet primæ dominicæ “per annum”; hebdomada tamen quæ sequitur computatur prima “per annum”. Reliquæ dominicæ et hebdomadæ ordine progressivo numerantur usque ad initium Quadragesimæ.  
+> *. Tempus “per annum” complectitur 34 vel 33 hebdomadas. Initium sumit feria II, quæ sequitur dominicam post diem 6 ianuarii occurrentem, et pergit usque ad initium Quadragesimæ; iterum incipit feria II post dominicam Pentecostes, et explicit sabbato ante dominicam I Adventus.<br>
+> 2. Ratio computandi dominicas et hebdomadas “per annum” est sequens:<br>
+> a) Dominica in qua fit festum Baptismatis Domini locum tenet primæ dominicæ “per annum”; hebdomada tamen quæ sequitur computatur prima “per annum”. Reliquæ dominicæ et hebdomadæ ordine progressivo numerantur usque ad initium Quadragesimæ.<br>
 > b) Post Pentecosten, si hebdomadæ “per annum” sunt 34, resumitur series ab ea hebdomada, quæ immediate sequitur ultimam ante Quadragesimam celebratam, attendendo tamen quod Missæ dominicæ Pentecostes et sollemnitatis Ss.mæ Trinitatis locum tenent Missarum dominicalium. Si vero hebdomadæ “per annum” sunt 33, omittitur prima hebdomada, quæ sumenda esset post Pentecosten.*
 
 Rubric 3 then states what the Missal supplies and how it is used, and its second half is easy to overlook and consequential:
 
 > **Locus:** *Missale Romanum* (2002), *Tempus “per annum”*, rubric 3
 >
-> *In Missali proinde exhibentur 34 Missæ pro dominicis et feriis huius temporis, quæ adhibentur hac ratione:  
-> a) In dominicis sumitur de more Missa, quæ respondet numero dominicæ “per annum”, nisi occurrat sollemnitas vel festum Domini, quæ locum teneant dominicæ.  
+> *In Missali proinde exhibentur 34 Missæ pro dominicis et feriis huius temporis, quæ adhibentur hac ratione:<br>
+> a) In dominicis sumitur de more Missa, quæ respondet numero dominicæ “per annum”, nisi occurrat sollemnitas vel festum Domini, quæ locum teneant dominicæ.<br>
 > b) In feriis vero quælibet e 34 Missis dici potest, attenta utilitate pastorali fidelium.*
 
 ### The Lectionary’s rule
@@ -409,12 +409,12 @@ Number 104 then gives the rule in three parts:
 
 > **Locus:** <span class="smallcaps">olm</span> *Praenotanda* 104, 1–3, with footnotes 115 and 116
 >
-> *) Dominica in qua fit Festum Baptismatis Domini locum tenet dominicae I “per annum”; proinde, lectiones hebdomadae I inchoantur feria secunda post dominicam quae post diem 6 ianuarii occurrit. Si festum Baptismatis Domini celebratur feria secunda post dominicam in qua celebrata est Epiphania, lectiones hebdomadae I inchoantur feria tertia.  
-> 2) Dominica quae sequitur Festum Baptismatis Domini est secunda “per annum”. Reliquae ordine progressivo numerantur, usque ad dominicam quae praecedit initium Quadragesimae. Lectiones hebdomadae in qua occurrit feria quarta Cinerum, post diem quae illam praecedit, intermittuntur.  
-> 3) Quando lectiones temporis “per annum” post dominicam Pentecostes resumuntur, ordinantur hoc modo:  
-> — Si dominicae “per annum” sunt 34, ea sumitur hebdomada quae immediate sequitur hebdomadam cuius lectiones ultimo loco adhibitae sunt ante Quadragesimam.<sup>115</sup>  
-> — Si dominicae “per annum” sunt 33, omittitur prima hebdomada quae sumenda esset post Pentecosten, ut retineantur in fine anni textus eschatologici qui ultimis duabus hebdomadis assignantur.<sup>116</sup>  
-> <sup>115</sup> Ita, v. g., si hebdomadae ante Quadragesimam fuerunt sex, feria secunda post Pentecosten incipit hebdomada septima. Sollemnitas Ss.mae Trinitatis locum tenet dominicae “per annum”.  
+> *) Dominica in qua fit Festum Baptismatis Domini locum tenet dominicae I “per annum”; proinde, lectiones hebdomadae I inchoantur feria secunda post dominicam quae post diem 6 ianuarii occurrit. Si festum Baptismatis Domini celebratur feria secunda post dominicam in qua celebrata est Epiphania, lectiones hebdomadae I inchoantur feria tertia.<br>
+> 2) Dominica quae sequitur Festum Baptismatis Domini est secunda “per annum”. Reliquae ordine progressivo numerantur, usque ad dominicam quae praecedit initium Quadragesimae. Lectiones hebdomadae in qua occurrit feria quarta Cinerum, post diem quae illam praecedit, intermittuntur.<br>
+> 3) Quando lectiones temporis “per annum” post dominicam Pentecostes resumuntur, ordinantur hoc modo:<br>
+> — Si dominicae “per annum” sunt 34, ea sumitur hebdomada quae immediate sequitur hebdomadam cuius lectiones ultimo loco adhibitae sunt ante Quadragesimam.<sup>115</sup><br>
+> — Si dominicae “per annum” sunt 33, omittitur prima hebdomada quae sumenda esset post Pentecosten, ut retineantur in fine anni textus eschatologici qui ultimis duabus hebdomadis assignantur.<sup>116</sup><br>
+> <sup>115</sup> Ita, v. g., si hebdomadae ante Quadragesimam fuerunt sex, feria secunda post Pentecosten incipit hebdomada septima. Sollemnitas Ss.mae Trinitatis locum tenet dominicae “per annum”.<br>
 > <sup>116</sup> Si hebdomadae ante Quadragesimam fuerunt, v. g., quinque, feria secunda post Pentecosten, omissa hebdomada sexta, incipitur ab hebdomada septima.*
 
 **Working rendering (project, not an approved translation).** ) When the readings of Ordinary Time are resumed after Pentecost Sunday, they are arranged as follows. If the Sundays of Ordinary Time are thirty-four, that week is taken which immediately follows the week whose readings were used last before Lent. If the Sundays of Ordinary Time are thirty-three, the first week that would have been taken after Pentecost is omitted, so that the eschatological texts assigned to the last two weeks may be retained at the end of the year. — Footnote 115: thus, for example, if the weeks before Lent were six, the seventh week begins on the Monday after Pentecost; the Solemnity of the Most Holy Trinity takes the place of a Sunday in Ordinary Time. Footnote 116: if the weeks before Lent were, for example, five, then on the Monday after Pentecost, the sixth week being omitted, a beginning is made from the seventh week.
@@ -563,8 +563,8 @@ Three rules of hygiene follow, and they are the ones this reference has found mo
 
 > **Locus:** <span class="smallcaps">nualc</span> 49
 >
-> *In calendario generali universus cyclus celebrationum inscribitur, tum mysterii salutis in Proprio de tempore, tum eorum Sanctorum qui momentum universale præ se ferunt, et ideo obligatorie ab omnibus celebrantur, tum aliorum qui universalitatem et continuitatem sanctitatis in populo Dei demonstrant.  
-> Calendaria vero particularia celebrationes magis proprias continent congruenti ratione cum cyclo generali organice compositas. Singulæ enim Ecclesiæ vel familiæ religiosæ Sanctos, qui ipsis sunt peculiari ratione propria, peculiari honore prosequantur oportet.  
+> *In calendario generali universus cyclus celebrationum inscribitur, tum mysterii salutis in Proprio de tempore, tum eorum Sanctorum qui momentum universale præ se ferunt, et ideo obligatorie ab omnibus celebrantur, tum aliorum qui universalitatem et continuitatem sanctitatis in populo Dei demonstrant.<br>
+> Calendaria vero particularia celebrationes magis proprias continent congruenti ratione cum cyclo generali organice compositas. Singulæ enim Ecclesiæ vel familiæ religiosæ Sanctos, qui ipsis sunt peculiari ratione propria, peculiari honore prosequantur oportet.<br>
 > Calendaria tamen particularia, a competenti auctoritate componenda, ab Apostolica Sede sunt probanda.*
 
 Three classes are distinguished inside the general calendar itself and they correspond exactly to the three grades of the sanctoral: the mystery of salvation in the Proper of Time; those saints whose significance is universal, celebrated obligatorily by all; and others who show the universality and continuity of holiness in the people of God — which is the theological description of what an optional memorial is for. The particular calendar contains what is more properly its own, organically composed with the general cycle, and it requires the approval of the Apostolic See.

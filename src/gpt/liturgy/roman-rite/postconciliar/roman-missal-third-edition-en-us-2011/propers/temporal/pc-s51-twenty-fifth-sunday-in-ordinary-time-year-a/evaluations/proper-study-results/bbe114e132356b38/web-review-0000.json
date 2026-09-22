@@ -1,0 +1,17 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "review_inputs": {
+    "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a",
+    "files": {},
+    "provider": "gpt",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.md": "245d39ec02d1ea3b147b0131134fd3f7b39db96d3483ba2a1fe531340c1fa2cd"
+    }
+  },
+  "stage": "web-review",
+  "summary": "PASS for canonical web conversion SHA-256 245d39ec02d1ea3b147b0131134fd3f7b39db96d3483ba2a1fe531340c1fa2cd from research/web-artifact.json. Exact re-conversion matched byte for byte; all 34 sealed source, PDF, and pagination hashes matched; the 20-page research PDF retained the three interpretations, their four senses, chronology, references, revision, and rights matter; and locked-renderer desktop/mobile browser review plus static checks found nine working TOC targets, all 11 proper and three lane anchors, three semantic four-sense lists, 37 linked notes, two responsive tables, and no missing or duplicate fragment, TeX or production debris, or observed presentation defect, with review bounded to this canonical page rather than external links or whole-site navigation."
+}

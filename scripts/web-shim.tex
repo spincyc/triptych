@@ -51,6 +51,11 @@
 \newcommand{\textexclamdown}{¡}
 \newcommand{\textquestiondown}{¿}
 \newcommand{\slash}{/}
+% A print checkbox may be drawn from an empty \fbox and \rule.  Pandoc drops
+% that geometry, which otherwise leaves an empty table cell or a bare list
+% marker.  The first definition wins in Pandoc's macro table, so this semantic
+% glyph deliberately precedes any leaf-local print definition.
+\newcommand{\checkbox}{☐}
 
 % ------------------------------------------------------------- semantic inlines
 \newcommand{\sourceurl}[2]{\href{#1}{#2}}

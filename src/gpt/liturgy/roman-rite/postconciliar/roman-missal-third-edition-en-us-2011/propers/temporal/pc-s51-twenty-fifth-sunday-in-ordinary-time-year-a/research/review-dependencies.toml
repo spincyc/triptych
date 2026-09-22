@@ -15,6 +15,11 @@ paths = [
   "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-reimpressio-emendata-2008/edition.toml",
   "src/sources/works/united-states-conference-of-catholic-bishops/liturgical-calendar-dioceses-united-states/work.toml",
   "src/sources/works/united-states-conference-of-catholic-bishops/liturgical-calendar-dioceses-united-states/editions/2026",
+  # Exact dated Lectionary appointment control: the work record and this
+  # edition directory (edition, restricted artifact metadata, and bounded
+  # headings-and-citations passage) are sealed even without retained HTML.
+  "src/sources/works/united-states-conference-of-catholic-bishops/daily-readings/work.toml",
+  "src/sources/works/united-states-conference-of-catholic-bishops/daily-readings/editions/2026-09-19-page-for-2026-09-20",
   "src/sources/inventories/icel-web-permission-rights-v1.toml",
   # Inventories do not traverse source_ids or prose links: seal the rights
   # evidence and its work/edition/artifact ancestry explicitly.

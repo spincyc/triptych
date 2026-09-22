@@ -1,5 +1,26 @@
 # PC-S51-A: bounded research scope
 
+Current `proper-study` v6 research revalidation completed 21 September 2026
+(workflow digest `a965af881c1e4110b6e4698001b4f06b9a688a93a1f1652c292d15002afe1768`,
+run `bbe114e132356b38`, seed commit
+`30c7baebd99056e4faac09a0f13cb085f9de1ea7`, research iteration 0, single
+high-effort execution, and no research handoff). This pass reread the resolved
+context and complete retained biblical contexts; rechecked the controlling
+Augustine, Chrysostom, and Gregory passages; and checked the remaining
+reception supports and limits against the source audit, current bindings,
+rights chain, chronology products, and external-owner declaration. It found
+no contextual or interpretive correction requiring changed appointments or
+source records. The older run and reentry paragraphs below remain the audit
+history of acquisition and earlier repairs; this paragraph records only the
+current run's reinspection and does not create review acceptance.
+
+Research re-entry iteration 1 repaired the same run's evidence boundary for
+the registered USCCB daily-readings work and its exact 20 September 2026
+edition. `source-bindings.toml` now pins the bounded headings-and-citations
+passage and its artifact ancestry, while `review-dependencies.toml` explicitly
+seals the work record and exact edition directory. This is a dependency repair,
+not a new retrieval or a cold-review verdict.
+
 Research stage independently checked 17 September 2026. This is evidence submitted for cold research review, not a review verdict or production/release approval.
 
 Execution provenance: `proper-study` v1, workflow digest `1375f708d8670b2f4ccaf1869cfaa6fe67fe6946dc2b962c766bcdc499d3b47e`; run `8f4e6454c021280a`; starting commit `af9b2d10a98a6aac2ce44cc84d6358ede8e630e8`; stage `research`, iteration `0`, single execution, declared effort `high`. The preliminary research handoff supplied leads only. No authoring, render or review event is implied by this research provenance.
@@ -73,15 +94,17 @@ artifact/segment and payload ancestry through source-bindings.toml. The
 dependency compiler was run to check the resulting file boundary; the workflow
 driver must check the actual next emitted review seal.
 
-The dated daily reading page, publisher and CBCEW chair-book corroboration,
-and Latin Augustine sermon remain ordinary bibliographic evidence in the
-already sealed leaf or shared-owner audits, with their recorded access and
-edition limits; no matching registered source owner was found for those exact
-deliveries. The preliminary archdiocesan Collect item, unchecked commentary
-leads, and unused ancient-prayer/antecedent-English rights routes are not
-adopted controlling evidence. No restricted bytes, new source IDs, additional
-liturgical selections, full-book collation, or cold-review verdict result from
-this dependency repair.
+The dated daily-reading page is now registered and bound through its exact
+headings-and-citations passage; its work, edition and artifact ancestry are
+part of the declared research boundary. The publisher and CBCEW chair-book
+corroboration and Latin Augustine sermon remain ordinary bibliographic
+evidence in the already sealed leaf or shared-owner audits, with their recorded
+access and edition limits; no matching registered source owner was found for
+those exact deliveries. The preliminary archdiocesan Collect item, unchecked
+commentary leads, and unused ancient-prayer/antecedent-English rights routes
+are not adopted controlling evidence. No restricted bytes, new source IDs,
+additional liturgical selections, full-book collation, or cold-review verdict
+result from this dependency repair.
 
 ## Family, instance, and whole-formulary boundary
 

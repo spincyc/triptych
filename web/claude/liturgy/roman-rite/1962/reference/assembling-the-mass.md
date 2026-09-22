@@ -2,8 +2,8 @@
 
 *A working reference for the 1960 Codex rubricarum as printed in the 1962 Missale Romanum: determining the liturgical day, applying the table of precedence, disposing of the impeded day by omission, commemoration, transfer or reposition, testing which category of Mass is admitted, and assembling the formulary from Ordinary, Proper and Common through the Preface and the Last Gospel, with six worked cases and the contested readings preserved*
 
-**Assembling the Mass**  
-How a day’s Mass is put together out of the 1962 *Missale Romanum*  
+**Assembling the Mass**<br>
+How a day’s Mass is put together out of the 1962 *Missale Romanum*<br>
 The 1960 *Rubricae generales* as printed in the 1962 Vatican typical edition. A study aid, not an Ordo and not a permission: see *Scope, Editions, and Qualifications*.
 
 ## Five decisions, taken in order

@@ -152,7 +152,7 @@ Every creature receives being and is conserved in it; its nature and actions are
 
 The word *every* closes the remaining distance. It includes the one who has followed the argument. The eyes crossing this line, the intellect joining premise to conclusion, the will deciding whether to remain attentive: none stands outside the claim as a spectator. The act by which the judgment is made is itself among the acts whose actuality is being received.
 
-*I am.*  
+*I am.*<br>
 *I am not from myself.*
 
 Existence is not added to a self already waiting to receive it. There is no more original self behind received being to which the mind can retreat. Nothing has become less certain: *I am*. What gives way is the imagined foothold of a self more original than its received being. This is ontological vertigo: the certainty remains while the fantasy of self-grounding does not.
@@ -179,7 +179,7 @@ What begins to recede is not reverence before the first source but the demand to
 
 Reason has therefore reached a precise conclusion, and a precise limit. It can know analogically that the first source freely wills and causes created good. It cannot by this argument enter the inner life of God, derive the Trinity, or specify the whole relation into which the creature has discovered itself. A mechanical First Mover is no longer enough; neither is a generic word for transcendence. The one who gives this act of being has always been present to it.
 
-**God loves.  
+**God loves.<br>
 The creature is being held in existence now.**
 
 The next question is no longer whether God is near. It is what truth requires of the creature to whom he has never been absent.

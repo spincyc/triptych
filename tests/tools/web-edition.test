@@ -107,4 +107,28 @@ if [ ! -s "$sandbox/batch/gpt/$second.md" ]; then
 	exit 1
 fi
 
+# A print checkbox is commonly drawn as an empty framed rule. Pandoc drops that
+# page geometry; the web shim must retain the checklist's semantic marker in
+# both table cells and list items rather than emitting empty rows or bare '-'
+# paragraphs. Keep the assertion tied to the source's own count so adding a
+# checklist item does not require an unrelated test edit.
+worksheet_leaf="liturgy/roman-rite/1962/reference/assembling-the-mass"
+worksheet_source="$repo/src/gpt/$worksheet_leaf/sections/95-checklist.tex"
+run_tool --provider gpt --output "$sandbox/checkbox" "$worksheet_leaf" >/dev/null
+worksheet_page="$sandbox/checkbox/gpt/$worksheet_leaf.md"
+source_checkboxes="$(grep -o '\\checkbox' "$worksheet_source" | wc -l | tr -d ' ')"
+web_checkboxes="$(grep -o '☐' "$worksheet_page" | wc -l | tr -d ' ')"
+if [ "$web_checkboxes" -ne "$source_checkboxes" ]; then
+	echo "checkbox shortfall: source has $source_checkboxes, web has $web_checkboxes" >&2
+	exit 1
+fi
+if ! grep -q '☐.*Preparation' "$worksheet_page"; then
+	echo "table checkbox did not remain attached to Preparation" >&2
+	exit 1
+fi
+if ! grep -q '☐.*every candidate and particular-calendar source is present' "$worksheet_page"; then
+	echo "list checkbox did not remain attached to its checklist text" >&2
+	exit 1
+fi
+
 echo ok

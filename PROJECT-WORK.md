@@ -5,7 +5,96 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-09-19.
+Last reconciled: 2026-09-21.
+
+## Shared proper-study presentation, 2026-09-21
+
+<!-- promised-deliverable: propers-shared-format-2026-09-21 -->
+
+The maintainer requested restoration of the Latin Modern, 11-point article,
+0.75-inch-margin, monochrome baseline for the recent GPT and Claude
+Seventeenth Sunday after Pentecost and Twenty-fifth Sunday in Ordinary Time,
+Year A studies. One proper-specific template must own titles, tables, dossiers,
+lane hierarchy, four senses and typography without changing unrelated works.
+The concise editions retain or regain the established four-page opening;
+homilies use a full-width title, two-column speech and separate terminal
+apparatus. Literal unconditional component imports and physical-page markers
+remain mandatory. Existing prose is preserved. The archived GPT chronology
+drafts remain unreviewed unless a fresh source review establishes their claims.
+
+**Expanded authorization.** After fresh review found that the shared Isaiah
+composition claim actually dates the prophet's ministry, the maintainer
+authorized repair of the shared chronology and affected consumers. This
+includes source-specific Matthew qualifications and newly reviewed GPT
+dossiers; it does not authorize treating archived drafts or historical
+acceptance packets as approval of revised claims.
+
+**In progress.** Recovery found a clean tree at `11e8183ca`; no implementation
+was lost. The shared templates, twelve entrypoint migrations, keyed lanes,
+format-contract checks and regression suite are implemented but uncommitted.
+Initial proofs build and use embedded Latin Modern fonts; final full-page
+inspection and installation remain open. The GPT concise openings and extent
+targets are being restored. The fresh chronology review blocked unchanged
+adoption of both archived GPT dossiers: Isaiah's relation was wrong, Matthew
+needed source-specific qualifications, and geography and historical horizons
+were incomplete. The official USCCB Psalms introduction has now been freshly
+read; it supports a broad pre-Maccabean limit, not precise dates or occasions
+for individual psalms.
+
+**Chronology correction reviewed and adopted as corpus data.** A fresh
+independent reviewer inspected the frozen handoff
+`build/agent-handoffs/20260921T141201Z-isaiah-relation-repair` against the
+complete retained Souvay, Jacquier and Durand article texts and the complete
+freshly acquired NABRE introductions, and resolved all four blocking questions
+for the correction: the traditional-attribution repair, the chapters 40–55
+`prophecy-given` horizon with its before-return anchor, the probabilistic
+critical Matthew bound with untouched traditional alternatives, and the
+consumer boundary. The verdict and its limits are recorded in
+`src/sources/chronology/isaiah-relation-review-2026-09-21.md`. Consumer repair
+is under way: both providers' PC-S51-A records and annotations and the GPT
+1962 leaf's are regenerated against the repaired corpus; the Claude PC-S51-A
+dossier prose now carries the corrected Isaiah relations and the
+source-specific Matthew qualifications. The reviewer flagged that the
+installed Claude PC-S51-A web edition still renders the withdrawn label and
+must be regenerated with the PDFs. Fresh consumer cold review, PDF and web
+rebuilds, prose-preservation evidence, coherent commits and verified main
+deployment remain open. Historical workflow acceptance is not acceptance of
+revised bytes.
+
+**Release candidate complete, 22 September.** The shared Latin Modern,
+11-point, 0.75-inch-margin monochrome format now owns the title hierarchy,
+opening-page suppression, bounded running matter, tables, chronology dossiers,
+interpretive lanes, four-senses blocks and the homily's two-column speech.
+Literal one-time component imports, shared-command ownership, lane-source
+hashing, exact postconciliar owner resolution and reconciliation of the
+semantic graph with TeX recorder inputs fail closed under proper-study v6.
+Independent hardening review passed 308 focused tests, 346 adjacent tests, 144
+live content checks, 12 wrapper checks, four web conversions and all four
+semantic-graph reconciliations. The separate chronology/rite review passed 566
+tests and found zero cross-family reference among 159 path-valued liturgical
+references.
+
+All twelve revised PDFs are installed with reviewed-byte identity. GPT 1962 is
+22/10/3 pages; GPT postconciliar is 20/10/3; Claude 1962 is 31/10/3; Claude
+postconciliar is 31/10/4. Every concise edition has the complete map and four
+senses on page 1, chronology on page 2, themes on pages 3--4 and commentary
+from page 5. Every expansive study remains within 20--50 pages with three
+whole-formulary readings and three distinct four-senses distillations. All 157
+pages received full-page review. The four canonical web editions were freshly
+regenerated and reviewed. A global-currentness repair initially exposed lost
+print-only checkbox geometry in an older reference guide; the web shim now
+preserves all 24 boxes semantically, with regression coverage and independent
+re-review. No Sunday PDF or liturgical source changed in that repair.
+
+The final identities and durable cold-review record are under
+`workflows/reviews/propers-three-documents-v6-final-2026-09-21/`. The two new
+GPT v6 runs, `090e496c9d6d4104` and `bbe114e132356b38`, both reached
+`ACCEPTED`; each owning rite leaf archives its complete packets, results,
+terminal state and reproducible terminal status/replay output. Inventories,
+the family ledger, source and document projections, and exact release bindings
+have been refreshed after the archive and production records settled. Final
+integration review, commit, `main` push, Pages verification and the standard
+external-review handoff remain.
 
 ## Claude postconciliar Twenty-Fifth Sunday three documents, 2026-09-19
 
@@ -381,6 +470,32 @@ Work stays on `feature/codex/propers/homily`; the maintainer's renewed request
 explicitly authorizes the validated push to `main` and its Pages deployment.
 Existing chronology-corpus and historical workflow
 promises remain distinct and are not closed by these consumers.
+
+**Revised production accepted, 22 September.** Proper-study v6 run
+`090e496c9d6d4104` drove the 1962 leaf through 23 accepted submissions; its
+first publication gate correctly failed on globally stale generated web
+editions, returned to installation and passed after a reviewed repair. Run
+`bbe114e132356b38` drove the postconciliar leaf through 30 accepted
+submissions, including real research, study and concise repair cycles. Both
+terminal states are `ACCEPTED`, and each exact packet/result history now lives
+under its own rite's `evaluations/proper-study-results/` tree.
+
+The installed GPT documents are 22/10/3 pages for the 1962 Sunday and 20/10/3
+for the postconciliar Sunday. The final synthesis reviews confirm the fixed
+first-four-page schema and an interleaved account of genuine alternatives;
+the final homily reviews confirm continuous exegetical speech with its
+apparatus outside the spoken body. All 68 GPT pages and both canonical web
+editions received fresh workflow cold review. The parallel Claude sets were
+also retypeset in the restored shared style and independently re-reviewed, so
+the complete four-owner release contains 157 reviewed PDF pages while keeping
+the calendar, proper, research, interpretation and acceptance trees separate.
+
+The v6 hardening and chronology/rite audits, exact artifact identities,
+provider-specific reviews and final integration evidence are durable at
+`workflows/reviews/propers-three-documents-v6-final-2026-09-21/`. Local release
+gates and the external transport still precede the authorized push to `main`;
+deployment facts will be recorded only after the exact pushed snapshot and its
+public routes have been observed.
 
 ## Traditional context and salient dates in GPT propers, 2026-09-09
 

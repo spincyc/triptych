@@ -1,0 +1,17 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "review_inputs": {
+    "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+    "files": {},
+    "provider": "gpt",
+    "review": "web",
+    "schema": 1,
+    "web": {
+      "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md": "a90987a6a5e6bfcb0e7cc98c9802ae1812f057e21c5811abaa7b5217659ea9bf"
+    }
+  },
+  "stage": "web-review",
+  "summary": "Reviewed the complete canonical Markdown at build/web/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md, conversion SHA-256 a90987a6a5e6bfcb0e7cc98c9802ae1812f057e21c5811abaa7b5217659ea9bf from research/web-artifact.json, against the canonical source, all 50 source notes, and the 22-page reviewed study PDF; all substantive text, three interpretation boundaries and twelve sense paragraphs survive, with only print-only running matter absent. Rendering these exact bytes through the current site renderer and inspecting them in Chromium at desktop and mobile sizes confirmed the ten proper anchors, three lane anchors, tables, thirty scripture superscripts, footnote navigation, revision and rights matter, with no duplicate IDs, broken internal references, TeX debris, exposed production metadata, or blocking presentation defect; the mobile chronology table remains readable through the site's intentional horizontal scrolling."
+}

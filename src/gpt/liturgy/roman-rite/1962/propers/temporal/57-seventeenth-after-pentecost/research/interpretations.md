@@ -1,6 +1,6 @@
 # Proposed coherent whole-formulary readings
 
-Independently checked during the research stage on 17 September 2026 for the universal 1962 Seventeenth Sunday after Pentecost, 20 September 2026. This records completed bounded research, not an independent review verdict. Cold research review and reader-facing authoring remain outstanding. No postconciliar proper or study supplies evidence for this leaf.
+Independently rechecked on 21 September 2026 during proper-study v6 run `090e496c9d6d4104` for the universal 1962 Seventeenth Sunday after Pentecost, 20 September 2026. The source-grounded lanes remain supported after the chronology correction recorded in the dated supplement. This records completed bounded research, not an independent review verdict. Cold research review and reader-facing authoring remain outstanding. No postconciliar proper or study supplies evidence for this leaf.
 
 Stable lane keys: `healed-charity`, `one-people`, `faithful-offering`. These name editorial arguments, not historical schools. Exact source URLs, languages, retention states and checked loci live in `scope.md`; textual identity and rights in `source-audit.md`. The principal arguments have been independently read in their retained witnesses; scope.md records the completed proportionate second search and excludes unverified optional leads.
 

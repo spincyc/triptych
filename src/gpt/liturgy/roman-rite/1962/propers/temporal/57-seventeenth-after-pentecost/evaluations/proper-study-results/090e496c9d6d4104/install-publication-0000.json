@@ -1,0 +1,15 @@
+{
+  "artifact_path": "pdf/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf",
+  "disposition": "PASS",
+  "iteration": 0,
+  "notes": [
+    "Installed PDF: pdf/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf; SHA-256 0ecd7d768fb793e92cc2e2b06f0d9cd3ec504874bc692eed7a7aae9d1bb2b305.",
+    "Installed PDF: pdf/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf; SHA-256 ba14d046656b05e0af8094895f149c88fa27054b68e939dd4d4fef6d8446261c.",
+    "Installed PDF: pdf/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf; SHA-256 63eb6b1126af403fadc67c08b4eca0d8f718f2247692a6d6c759a30ef8dc348d.",
+    "Installed and staged canonical web edition: web/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md; SHA-256 a90987a6a5e6bfcb0e7cc98c9802ae1812f057e21c5811abaa7b5217659ea9bf.",
+    "Preserved release records for the bare, -synthesis, and -homily IDs under release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/; each names library/traditional-latin-mass.md, alpha, and perpetual-public-repository-2026.",
+    "Artifact and publication phase checks, scoped public-alpha policy, document-catalogue checks, publication inventories, source projection, source-family ledger, make check-sources, and scoped diff checks passed. Five unrelated pre-existing release-binding drifts and six unrelated stale Claude web editions were not adopted by this scoped installation."
+  ],
+  "stage": "install-publication",
+  "summary": "Installed the accepted 22-page study, 10-page concise study, three-page homily, and canonical Markdown; every installed artifact is byte-identical to its accepted receipt, the web edition is staged, and the scoped publication checks pass. Preserved the three correct alpha release records and existing schema-2 catalog wiring, recorded the installation in the production audit, and refreshed the deterministic document/source projections, publication inventories, family ledger, and only this work's release bindings."
+}

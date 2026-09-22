@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gpt"
-audited_on = "2026-09-18"
+audited_on = "2026-09-22"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 142
-source_surface_file_count = 2288
-snapshot = "sha256:69b67f2a7b5ed26545737faac68cf971368d5086dc625746a08a8c56ab1698ad"
+source_surface_file_count = 2360
+snapshot = "sha256:eeec6e8869799b988019bc1e7c5ec54534006b9c28fabd2da60105edf3b0ecf2"
 
 [[owners]]
 id = "owner.biographies.shared"
@@ -9504,13 +9504,157 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/blocking-findings-v1.toml"
-sha256 = "b5709d06d49cf62b186037f44592211e7a174d8ea1b60131e336d90b755eee1e"
+sha256 = "d4d54d5ccbc9845531a0afc67a6378f5b93a96568901508b0109c3da61c92f7e"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/pagination-revision-proposal/README.md"
 sha256 = "272c7fe226ba5ed2c352aa8d01a3f733b00f013a1b5f7b39bda8aaee1eed949f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/packets/artifact-gates-0000.txt"
+sha256 = "883db9fb47e5d1d22c1c0bb9ebc0f31cd1bc4641a2855f8619c00a07636394aa"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/packets/author-study-0000.txt"
+sha256 = "bf2d9ccd784e481575029417fc57ae361f138e717e40f45f6b48eec2936827d7"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/packets/build-artifacts-0000.txt"
+sha256 = "63a54c462048957560f86f036fc29095c51bcbadb2df3dc9a85cd5f831d574d0"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/packets/derive-homily-0000.txt"
+sha256 = "7ee1ea8de625c03a21bb39bb927313a8291a32793b29418338b0f2aab117fbd5"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/packets/derive-synthesis-0000.txt"
+sha256 = "12e566979ade1951321a39414ef193f1cfbb6b767c13bfe5b6bc97ab60805a1c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/packets/generate-web-0000.txt"
+sha256 = "e7a949e4591983646e67c2a45b70c6ecb6f36e85260e67281f6e55af4b7074ce"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/packets/homily-preflight-0000.txt"
+sha256 = "0a155c2ec81d98cfc16141b8d2ef6a917d56221a0fb9090cfd45de04a6680acb"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/packets/homily-review-0000.txt"
+sha256 = "1936aa85634750f34a18dcf6d883016a06b8e65b23f2babf36c040765bd27d35"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/packets/install-publication-0000.txt"
+sha256 = "c6bccf55fb5e5e4bf6d6ee391e60a99b9317c52cd4b612f144da8562b7e3c875"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/packets/install-publication-0001.txt"
+sha256 = "f4a0c154e3e8942a1e8c638fe95834561b0cf7cfcbe7e7b2e9739577bd92fd5d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/packets/publication-gates-0000.txt"
+sha256 = "58862c4bc242b5aa5c89db4b8f69705371a65a2d36ab200b1978631f8bfc2795"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/packets/publication-gates-0001.txt"
+sha256 = "c365468183e1a093f8b1f8081585760a5de6091f2236a8fda9121e285017cc42"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/packets/research-0000.txt"
+sha256 = "edc294a953e6a9e04d185aa83496755e752174ed331cb944a2445ed78623d5a2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/packets/research-preflight-0000.txt"
+sha256 = "071a02d06c4a13f3c106191d5bcbe4d29c5b36f97eff7037068fe2a909d18194"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/packets/research-review-0000.txt"
+sha256 = "8266716fca4110bd3d4152e4860871123bd88a78ef270574819286f5fc7126a8"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/packets/resolve-context-0000.txt"
+sha256 = "e7ad9f7e71614532ba2cff5dedbaebef85533fef6b071e3361772bdb0d15aef5"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/packets/scope-gate-0000.txt"
+sha256 = "a7ad584540f2c9cb86e42f2788b8066b0fe3f9283d55cb9ef454e89a731c90c9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/packets/study-preflight-0000.txt"
+sha256 = "16fe47dd139f82146306b8a1c54b07f81657b1f4d1183c1672517eb77aea8d1d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/packets/study-review-0000.txt"
+sha256 = "f703f7e87825990ca40dec4bc0b179da4c3fe1250019250dd6f4346c2b9e6805"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/packets/synthesis-preflight-0000.txt"
+sha256 = "f49a4d6550c9cee9ad12e2780eada2056c25bdc897a204f9068177de7a2fb2c5"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/packets/synthesis-review-0000.txt"
+sha256 = "00214d1901c6f60ab05a5fd001b80e79f5353a4436a79cc97f990727bfcb05ae"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/packets/visual-review-0000.txt"
+sha256 = "bb5e346f1a9fc0e3b00f7c4e56a44663607a7952552a087d2c85e0965680c456"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/packets/web-review-0000.txt"
+sha256 = "ac4ef86566a52941d189417ec2ed463d288f5ab8fcb9e8d6dbad79aaa65a449b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/evaluations/proper-study-results/090e496c9d6d4104/record.md"
+sha256 = "e4b32d6b8e662d4bbdad940e3232e3dcd2349e75f7f81ce89a88d69f573e109b"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
 
@@ -9864,25 +10008,25 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-penteco
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/format.tex"
-sha256 = "5ba0336ae41e34754e77f06bf9b6e0aa553b4ed1acd41db15a6757b0083884d8"
+sha256 = "9e6fa744bfc86b35718e72618be4c34ae6347a7197fb292f3f40495486c18f8c"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/homily.tex"
-sha256 = "a55468801eb5afb53341f850bff04e580af98b01326f2e777cb8a1a5f738759d"
+sha256 = "ef4bf84bd1cd7e09405e226fda97ae7de00c951c22172086b921b177ca35df76"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/main.tex"
-sha256 = "8e559c412ab9f0330cc6a236e5f51ded3c39e7969d6bee4deb451b997d1f8d82"
+sha256 = "4eee0a19ca838e7f8ecd08acc126dac96758d03b9ccda00096448604d9aeffeb"
 kind = "publication-main"
 owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/proper-components.toml"
-sha256 = "7b35714c312bc2df252803d1e23cca3247b5e05811e38e82ea2e60e0cfd3d6be"
+sha256 = "75b93f12f52b6ae63eb8331d75dde2ad8ab1762a0c1edb61133e31eba7e2f879"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
 
@@ -9899,8 +10043,32 @@ kind = "proper-verification"
 owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/chronology-annotations.tex"
+sha256 = "1006e67afe7199e9ae7237e5d2543a3be9c86d5a123ebbc6c0fa3ffc45be52b6"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/chronology-profile-comparisons.toml"
+sha256 = "cf130edd51ee40f0ffa0e00307ea5df94bf8f8abcc31d08db70be52503ae6c64"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/chronology-revision-2026-09-21.md"
+sha256 = "e39176a459ac37ceef2434410903251675151c99e014ae29928d9c067aca7eb2"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/chronology.toml"
+sha256 = "8e27a4eadc277244ca922e432d89338e91aacfd1a7319c0c1c33c770ea0012eb"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/context.md"
-sha256 = "662dde5b402bc638c50698ce0bee99e718308036846c349872b9f0a8f4f4de24"
+sha256 = "dc85f86c8a8df488192dbc4b6d3a065c2ca8d37f5d71dcb88e8c64ca47a44805"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
 
@@ -9912,25 +10080,25 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-penteco
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/interpretations.md"
-sha256 = "e3bb9a397ed2918aed093ba8e9ee2e1e1d542242a97f7d380288071eafc5ddac"
+sha256 = "f677985e6d757f0e5617bd50fd7bd2dffd6d897678f1c8c05b70cdf76c7ecc46"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/production-review.md"
-sha256 = "255002316d76a258bd769eb518d6b1556c4be70c12216efffa999fc1061e7159"
+sha256 = "19f9ab8ee27464872afaadbc6312a8ce439e10c98333fc66b4348528e59f69c0"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/review-dependencies.toml"
-sha256 = "93b3f572c985f01e23b977c10cce0434280742d616598fd1025f359a9eee836d"
+sha256 = "47570dadc55dfdd558614d579fc95b16d68d04f1111596de90656713e0f1847d"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/scope.md"
-sha256 = "5ee740379979cc5b305b2eae9e16edfef3c08567cc071cf9e569e6c2211fcd1d"
+sha256 = "7ca6ab0d354027876fe11bd416a01ebc1a069d0829eba80addfa29c6bdb9ce8e"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
 
@@ -9942,7 +10110,7 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-penteco
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/source-bindings.toml"
-sha256 = "9a3918cac237b05a29dd80382135acee325e3a34decea4a625a77f15c8061c03"
+sha256 = "4ee52b8c6c0162d3b915b458011ca8fc346308f66cc12a87b514cab19708f33a"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
 
@@ -9966,19 +10134,19 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-penteco
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/30-healed-charity.tex"
-sha256 = "1283f8d1dd74ae6d3c4a90da01dd2cdf7da0308642ee2eba39c0d5a6566371f4"
+sha256 = "e1c33c2634827fa2b5e7ec2d9b14810579c7b28e3f183c808ef725bf503b69b5"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/40-one-people.tex"
-sha256 = "1c2c23e8a7ab7721b545ab334a6ffa4d26ac31a86b0ea3765715421bf35f5b03"
+sha256 = "42c2c7f707f488e5b7598764efcedf27249950d9c10368322fb0f4eadca39ac7"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/50-faithful-offering.tex"
-sha256 = "82803c1c607f79dda194ea7f03b2902ef00b4e99c1a97a83499e95f44c05a373"
+sha256 = "eead3a32d6766be1decbedf1477ac9ab3fdbbc9bdfd9332883be04eefd6ec6c3"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
 
@@ -9989,8 +10157,38 @@ kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/70-date-location.tex"
+sha256 = "5881a82fce955deae4ebc8e7b39c63e421f5c14bf3487fa52dee28243bbbf07b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/90-study-apparatus.tex"
-sha256 = "a340110e055265d48eb062ed1bd736aa726d4201eed27a86e722f628ab6b650e"
+sha256 = "f49babd27aa6452b8a5e74f1ce0989df83a8934a65b785397fb900ef7e5ead70"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/01-inventory.tex"
+sha256 = "778885cc27d741ec39790ab5b289547c76f887bc995cedb06abc367c45ebb41a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/02-overview.tex"
+sha256 = "e4110f49a2bb8531d85912f98590a656036d482ad58d56a136c317aec9a03163"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/03-date-location.tex"
+sha256 = "3abeac20e7d75f405dafb147c54e4f3e29bed1d568d8ffceb062690c1353d076"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/04-themes.tex"
+sha256 = "e24b1bc205640713d6a41957a3f41048a2f8961b6901ec1748e67c010362a44d"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
 
@@ -10008,19 +10206,19 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-penteco
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/synthesis/10-study.tex"
-sha256 = "008b8b12719c69eb5ff0bf340453bdd0524f3f66dcd80354b702544a81d75140"
+sha256 = "d3a587b6c3dea78600326b97d9b3e40a54b967f516345854b9986de31760f217"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/synthesis/90-apparatus.tex"
-sha256 = "5b75c9f6a59086867f637cb6a5158cb9c5d8a69060015ebc4c327737ec731122"
+sha256 = "392a3dce0d15ca0893d52d6804b2fcbb9a5a17538bbbf923ac40a2988f0dc609"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/synthesis.tex"
-sha256 = "642f7451f2debd6836ba4d840be966e877321a952c353d2841c16e095a914413"
+sha256 = "ac34626e87ca24552ea607371ad1ac3d69a19eaaf81c0dbc7f6bf8a131455235"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost"]
 
@@ -13026,7 +13224,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/blocking-findings-v1.toml"
-sha256 = "48bef15112711bcd44b58c818fb3a9b2ac88a4bfc1a53b65e42991551ca714b4"
+sha256 = "067960c887d1508a753d87db9b5d12a49d645639a42ba1acf0c6fee4a11519c6"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
 
@@ -13301,8 +13499,194 @@ kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/artifact-gates-0000.txt"
+sha256 = "014edd870defda6c5c0ecef0d826a36de7b8e00b5bb9c625d116578c8082f412"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/author-study-0000.txt"
+sha256 = "c986ed15c245ac18fae235c181621a83646b68ccca1f65f01ddbbe38d6054924"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/author-study-0001.txt"
+sha256 = "d3cf8d44473309c619e34f8017ba06f8ffec66b4d1e5dce7608d21b8c806945a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/build-artifacts-0000.txt"
+sha256 = "a7726414141d156e7fa164809cb020f8f68df707422efee98bbac565177f7a64"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/derive-homily-0000.txt"
+sha256 = "ce384366aaa36941ed0bf7d5257ff4480ee8b74b174eb6efae0b7e65d34bf069"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/derive-synthesis-0000.txt"
+sha256 = "d804349d786e60adb5afcc35a570bd84dd173cc025a73fb116a304fe1abff779"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/derive-synthesis-0001.txt"
+sha256 = "558c95c02cc017afb8e8b482fa628c9b661ebb881bdf9aeac1faf4df3853a642"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/generate-web-0000.txt"
+sha256 = "e5f2ea26ed01673af9aca2b2f68253ec10b99c31199573a032b2be39b0afff27"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/homily-preflight-0000.txt"
+sha256 = "eebe09cb8c3728699f88c1ef6e5cb992da6fb490a20da68b901997d93d6756e7"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/homily-review-0000.txt"
+sha256 = "b47d0f0be3e7b6f8f561ba61c69ca56c31a1bbd0f6ed5720f057bd50a2a25042"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/install-publication-0000.txt"
+sha256 = "fcfd1a852f6a85eb0bfdd8ad89b26ac691cd78f8b2ea12f82d82eb6295e88e96"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/publication-gates-0000.txt"
+sha256 = "9d43df4e9f7c567dc8121f4f7cd79775af87e99c84eb8b1cd2214022614585ab"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/research-0000.txt"
+sha256 = "73be4d3a7a9c0c834e5d2a777d7e693c8125629df0f22b064630af81950fa608"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/research-0001.txt"
+sha256 = "d4203801522f31a825f95f6284182160549490facbce86be79bf1f1fb2667433"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/research-preflight-0000.txt"
+sha256 = "f4a59d83149e2360b7eac1d93319394963055f8e94ea4e1c1c7a717725b7a444"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/research-preflight-0001.txt"
+sha256 = "8857d5ddcdd67f94511d8b531685c538ca81cc5ab6113275d726d4527c2ca450"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/research-review-0000.txt"
+sha256 = "57659367c97560ab8590557f7d9244e833353e15160c28f82d17bedfa7e1df6c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/research-review-0001.txt"
+sha256 = "47dd0bf7fbe85d52abb7e2147dc04c94591ffa926bd6b2620c3fd5544b09f260"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/resolve-context-0000.txt"
+sha256 = "54838aab3cf835af09793db09e1b0498444eb8902e25e90886a88c3a7438e16e"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/scope-gate-0000.txt"
+sha256 = "860e4e74438ee3d96ab8563f3a7a428f7189be3991f8228d70dc0a361d42201a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/study-preflight-0000.txt"
+sha256 = "4b3a55e9ac6bfa56dc30e0538fddbee3137f784a3af6e642f3773845d0a74158"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/study-preflight-0001.txt"
+sha256 = "f594e1a5bfe75867d97bac0a243e35fbabfedae57373d05efa0177eb653dead5"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/study-review-0000.txt"
+sha256 = "3a90bc2480fb09b9b0645c43189851a2c071aeca3ef34d65e571bd692944c2d1"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/study-review-0001.txt"
+sha256 = "a4c0ae433773265120512f777f1a119849f6e83149ea751c6ad56efe877b634d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/synthesis-preflight-0000.txt"
+sha256 = "41df927a9162a94303c04834377973d59cc648bdba922943cb1d6703b9286228"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/synthesis-preflight-0001.txt"
+sha256 = "8633daaff4e00cd2ede13d4d1c749c5d1ffe9b77f87ea07c580bfc69e6aa57fe"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/synthesis-review-0000.txt"
+sha256 = "2891050ed9873ba25cae23450e7e2a0618ff685148dc05e8ed83dfb86b088c32"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/synthesis-review-0001.txt"
+sha256 = "e4f5e427e610b50c37f7517fe7c96c6806e7f614104de36a2f550bd3e5fb62ee"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/visual-review-0000.txt"
+sha256 = "bd4a623224ec605831ce8cff4722ef8abe82039f13f123e5b73465d0335fcc30"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/packets/web-review-0000.txt"
+sha256 = "d191a4395a8aee4ea8d913b6d76f972bf2ecbb4b0c8b3dcc01f080cd77d727d6"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/evaluations/proper-study-results/bbe114e132356b38/record.md"
+sha256 = "786caf50861012ce5e34e8b4da1363697e2641308596c466558aa7612b0e481c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/homily.tex"
-sha256 = "32201817d1e8e1d613bb291cc558c75d7d8504cdc48b0f60b3aadc0e50af96b2"
+sha256 = "2fc642fe84f5c506ba9ed2e5d880129a7650aea1df81a847b094cfa8012d0355"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
 
@@ -13314,13 +13698,13 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/main.tex"
-sha256 = "1137fadf039c394287b9ed5f774d13b3cf6d6ae397b77f4bcd8119e0c76f6e83"
+sha256 = "4bef0e59e9b781819a12e62c992599b8191cae8944643cfeb2637c1aab92c25a"
 kind = "publication-main"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/proper-components.toml"
-sha256 = "ec4e4232a8dbba50e6a166bf78f15e6457c3b6b8398d9a7b5be6eddc093dafe4"
+sha256 = "62ab4af12a1069d951aeb5729db9211e5381a17ca8710862e9cdb02cf771a5c3"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
 
@@ -13337,56 +13721,80 @@ kind = "research-record"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/chronology-annotations.tex"
+sha256 = "ba267ecb631ae97fae5d16751af19c56d1012d307c99c4454e3f54090f77095a"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/chronology-inputs.toml"
+sha256 = "e0cc18992a9f9bd410546fad2bf9d8596535d32fde724f1c575906ab54616df1"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/chronology-profile-comparisons.toml"
+sha256 = "a39e84965db1fc5b391c2eb3d1923b61ae7b144b947eb9da9ab70031d3358c30"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/chronology.toml"
+sha256 = "024c86810e785e2638dc90a58ea5ebd49568bae70d6ae84dd5b628d4d0c6424a"
+kind = "research-record"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/context-source-plan.md"
-sha256 = "ed9498dd28338326629a22a84caa9266d188cf1501b640881dead943fc03df19"
+sha256 = "bbe866a26324f7e24aed00ca17bcc36f2cf9c3b46f154ae24676c9a05242126c"
 kind = "research-record"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/context.md"
-sha256 = "83821b3a71e15df77bd294a6aa6ef3d5be55e1f2b4859f8b1f7ff7730e4456f5"
+sha256 = "793d776c6159f2abd1796ed2215ef73268562daba7d0529b204238c7fb71fed1"
 kind = "research-record"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/edition-manifest.md"
-sha256 = "8c9d43c6d6ae48253167b5dc13a3ae774df43e2d1111a00cdc06eb109f78c17f"
+sha256 = "7a4ac07a330aa914fcaea1b2b64b1606e6fabddce45f58e9fc57828611eff8e7"
 kind = "research-record"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/interpretations.md"
-sha256 = "f399b2bd86ea0ef6c4997ed09660278b02ca43c3294eb6792d65581bce66646b"
+sha256 = "5d6d82e7224285c92f7b937c7cd03abe55f821635e2d9fa5aefcbdf8bbef5f29"
 kind = "research-record"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/production-review.md"
-sha256 = "8a8c2b7885ec827990d2a085ab72787b05ec6fe27419082bfd905b07f6424b4d"
+sha256 = "daa4a7e032d4cccb4b15e804d83197234fe043fac50133ecdc25f28f0dd701de"
 kind = "research-record"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/review-dependencies.toml"
-sha256 = "827fedf1ad1225dc5a41d996aeac3f0aa7515bf787d1fe957b26ed60edfc8256"
+sha256 = "093a8cf980640d2a5364711543b0d38899c321f67c4321ada4c91f9050a0d8ba"
 kind = "research-record"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/scope.md"
-sha256 = "c7126aedbf50adfa3cf2938c6985c2c0f6fcb8d8932310f6292402f39de5d083"
+sha256 = "d484f3098e49c8550b7a6a61bfb0e04f98d72834ed887917c75845bfd0e9d0d9"
 kind = "research-scope"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/source-audit.md"
-sha256 = "3f66b8da4d4eaba71ee8eee9ab2d62ae483341a933d76be8d83cf3618cde36be"
+sha256 = "3ab50b3738bcffe00f1a0e35283452cd397afc3e48caad233f266424d69d037b"
 kind = "legacy-source-audit"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/research/source-bindings.toml"
-sha256 = "b1fcfc405109f85c49c8da8a607544297b659e225049c64bd4c1df565a6ae093"
+sha256 = "84e6f886ce4b9320d74afbb50073db4887fe31e5a5fa1854c22d0425f33d4796"
 kind = "source-binding"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
 
@@ -13410,19 +13818,25 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/20-gift-cultivation.tex"
-sha256 = "01dccad4f4853257c783b0fdaa4200e463fd06967bac83f380da98227ca32e95"
+sha256 = "5714c0431dfba355a4a2b5db1d370ff4113f172db131527d58f0b46903ad9a19"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/30-conversion-without-rivalry.tex"
-sha256 = "99142ff7d907c602d246155938bbc019d2042119dafd9a4a06746970f7e0029b"
+sha256 = "3baaefb41e40078a44863ce57d996fc27b6944c2f9148efa1157cd2eb0ccdcf6"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/40-one-people-through-ages.tex"
-sha256 = "8618589d3df3e154b6d7eb9b9e80daa94c54b92531816a5aede632bbc49d63c7"
+sha256 = "5f8dabc08df05908f82669f6d36ce330b59d1e81661c481940e53e25896f9f67"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/70-date-location.tex"
+sha256 = "c3e38eaaa0586bcbbe9fce3891857d64cd3dbdc0811a77c8aa2996574ebf7635"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
 
@@ -13434,7 +13848,31 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/90-apparatus.tex"
-sha256 = "e63646cf6a6808d71acbbdb19652422a41dad5f0dda93ed32d02e408cdca827d"
+sha256 = "6cfe5050029ec65cabd08ba496cc7aeae38a163c61151c06e1ee88536310bccc"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/concise/01-inventory.tex"
+sha256 = "1bee304c2e8b6c417dae15d20ca640a68154d2be56b05f11647fb8b7e6d02b18"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/concise/02-overview.tex"
+sha256 = "27c14894f54e6bbc3ffea475a4440c1b2069b515d491f35f34e1fc0027f11e88"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/concise/03-date-location.tex"
+sha256 = "cef82e35b6b0717b5e8487599719e288a5ea93bee02e04f366fb8840daa395cf"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/concise/04-themes.tex"
+sha256 = "a43109b47fb6288b996bf389e24972fc9c6f9b8ebb592ebab6cebc3467e3e771"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
 
@@ -13452,31 +13890,25 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/homily-opening.tex"
-sha256 = "a430f5681ceacc7cea4168ce5433310e4c364c670984b679d884d34a3e8d959f"
+sha256 = "e8c43ee381f94944a1db05eb697879c346e2f4e6973e798c91b2818661b53d84"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/synthesis-apparatus.tex"
-sha256 = "643ca2b62740e069803e94d04db604133c0a503ea012a019fc50f8e3db8b61c7"
+sha256 = "e9bc05b5d3eac03b4af4a48c9d060702a20c077de9747145a719b510eb683e7f"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/synthesis-commentary.tex"
-sha256 = "5d2a2f7dfa96a85493005d131a001afa0265c1c81448a325cacbe3c2c1244bb0"
-kind = "rendered-content"
-owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
-
-[[files]]
-path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/sections/synthesis-opening.tex"
-sha256 = "a6ce35799c875f824809ea1c024264513b7091bec789292b7a26bd1c0cb78be5"
+sha256 = "0cddfcc2d7e1e909df14180556ce0cf3d707953489f0508b0fe96d60720626dc"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a/synthesis.tex"
-sha256 = "f8aaa68c623d01aa79c123867820386ee99ed0e66a405d45ff645e13334667b4"
+sha256 = "7db4c44c18ddfff8dc20555b23679416bd8c3ec8270acf4280485bc24c36c7e8"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"]
 

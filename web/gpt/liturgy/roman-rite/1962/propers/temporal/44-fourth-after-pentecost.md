@@ -56,7 +56,7 @@ TLM propers: light, travail, Christ’s word, and the merciful compelling of reb
 >
 > The propers neither leave creation, Church, or will to save themselves nor reduce them to inert instruments. God illumines, orders, forgives, commands, receives, mercifully compels, purifies, and protects; creatures groan, hope, pray, obey, confess, follow, offer, and take refuge. Christ’s word brings exhausted labor into apostolic service, while Romans keeps that service inside the larger hope of bodily and cosmic liberation.
 
-**1. Light & order** → **2. Groan, ask & obey** → **3. Sight & conversion** → **4. Refuge & effect**  
+**1. Light & order** → **2. Groan, ask & obey** → **3. Sight & conversion** → **4. Refuge & effect**<br>
 *Introit–Collect* *Epistle–Gospel* *Offertory–Secret* *Communion–Postcommunion*
 
 ### Illumined life moves under received order (*Int., Coll., Ep.*)

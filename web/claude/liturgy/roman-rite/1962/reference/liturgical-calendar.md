@@ -201,7 +201,7 @@ n. 9 defines the Sunday as *dies Domini initio cuiusque hebdomadae occurrens*, 
 
 > **n. 11: Sundays of the I class**
 >
-> \(a\) the First to Fourth of Advent; (b) the First to Fourth of Lent; (c) the First and Second of the Passion; (d) the Sunday of the Resurrection, that is, Easter; (e) *dominica in albis*, Low Sunday; (f) the Sunday of Pentecost.  
+> \(a\) the First to Fourth of Advent; (b) the First to Fourth of Lent; (c) the First and Second of the Passion; (d) the Sunday of the Resurrection, that is, Easter; (e) *dominica in albis*, Low Sunday; (f) the Sunday of Pentecost.<br>
 > And: *Dominicae Paschatis et Pentecostes sunt pariter festa I classis cum octava* — the Sundays of Easter and Pentecost are likewise feasts of the I class with an octave.
 
 n. 12 disposes of the rest in five words: *Omnes aliae dominicae sunt II classis*. There are therefore fourteen I class Sundays in every year — four of Advent, four of Lent, two of the Passion, Easter, Low Sunday, and Pentecost — and all others are of the II class.
@@ -236,9 +236,9 @@ n. 21 defines the feria as any day of the week other than Sunday, and n. 22 ma
 
 > **nn. 23–26: the four classes of feria**
 >
-> **I class** (n. 23): (a) Ash Wednesday; (b) all the ferias of Holy Week. *These are preferred to any feasts whatever, and admit no commemoration except one privileged commemoration.*  
-> **II class** (n. 24): (a) the ferias of Advent from 17 to 23 December; (b) the Ember ferias of Advent, of Lent, and of September. *These are preferred to particular feasts of the II class; if impeded, they must be commemorated.*  
-> **III class** (n. 25): (a) the ferias of Lent and Passiontide, from the Thursday after Ash Wednesday to the Saturday before the Second Sunday of the Passion inclusive, not named above — *these are preferred to feasts of the III class*; (b) the ferias of Advent to 16 December inclusive, not named above — *these yield to feasts of the III class*. *If impeded, both must be commemorated.*  
+> **I class** (n. 23): (a) Ash Wednesday; (b) all the ferias of Holy Week. *These are preferred to any feasts whatever, and admit no commemoration except one privileged commemoration.*<br>
+> **II class** (n. 24): (a) the ferias of Advent from 17 to 23 December; (b) the Ember ferias of Advent, of Lent, and of September. *These are preferred to particular feasts of the II class; if impeded, they must be commemorated.*<br>
+> **III class** (n. 25): (a) the ferias of Lent and Passiontide, from the Thursday after Ash Wednesday to the Saturday before the Second Sunday of the Passion inclusive, not named above — *these are preferred to feasts of the III class*; (b) the ferias of Advent to 16 December inclusive, not named above — *these yield to feasts of the III class*. *If impeded, both must be commemorated.*<br>
 > **IV class** (n. 26): all ferias not named in nn. 23–25. *If impeded, they are never commemorated.*
 
 The asymmetry inside the III class is the point most often mislearned. A Lenten feria of the III class *outranks* a III class feast; an Advent feria of the III class *yields* to one. Both are commemorated when impeded, so a Lenten weekday and an Advent weekday behave identically in the commemoration count and oppositely in occurrence. The code says so in as many words, and the table at n. 91 encodes it by placing the Lenten and Passiontide ferias at line 22, above all III class feasts, and the Advent ferias at line 25, below them.
@@ -369,7 +369,7 @@ Two integers describe the shape of any 1962 year, and the rest of the temporal a
 
 > **The two counts**
 >
-> ***E*, the number of Sundays after the Epiphany that actually occur.** The Sundays after the Epiphany run from the Sunday following 6 January to the Sunday before Septuagesima. The first always occurs, because the seven days from 7 to 13 January always contain exactly one Sunday; it carries the feast of the Holy Family by n. 17 b. *E* ranges from 1 to 6.  
+> ***E*, the number of Sundays after the Epiphany that actually occur.** The Sundays after the Epiphany run from the Sunday following 6 January to the Sunday before Septuagesima. The first always occurs, because the seven days from 7 to 13 January always contain exactly one Sunday; it carries the feast of the Holy Family by n. 17 b. *E* ranges from 1 to 6.<br>
 > ***P*, the number of Sundays after Pentecost.** These run from Trinity Sunday, which is the first, to the Sunday before the First Sunday of Advent, which is the last. Hence *P* is the number of days from Pentecost to the First Sunday of Advent, divided by seven, less one. *P* ranges from 23 to 28.
 
 The range of *P* is not a modern inference. The Missal’s own perpetual *Tabula paschalis antiqua reformata* prints the number of Sundays after Pentecost for every combination of epact and dominical letter, and its column runs from 28 at the earliest Easters down to 23 at the two latest. The rows for Easter on 24 and 25 April both print 23; the rows for Easter from 22 to 26 March print 28. The *Tabella temporaria* confirms both extremes in dated form: 2008, with Easter on 23 March, prints 28; 2011, with Easter on 24 April, prints 23.
@@ -468,7 +468,7 @@ Hence the two propositions that a reference must keep apart:
 
 > **Ordinal and formulary**
 >
-> **The ordinal** of a Sunday after Pentecost is its position in the count from Trinity Sunday. It runs from 1 to *P*, and *P* can be 23, 25, 26, 27, or 28 as well as 24.  
+> **The ordinal** of a Sunday after Pentecost is its position in the count from Trinity Sunday. It runs from 1 to *P*, and *P* can be 23, 25, 26, 27, or 28 as well as 24.<br>
 > **The formulary** used on that Sunday is the one n. 18 assigns to that position. For the first twenty-three positions it is the like-numbered Mass after Pentecost. For positions 24 and beyond it is a resumed Epiphany Mass, except for the final position, which always takes the Mass headed *Dominica XXIV et ultima post Pentecosten*.
 
 The Missal itself signals the distinction in its running head. The twenty-fourth formulary is not titled *Dominica XXIV post Pentecosten* but *Dominica XXIV et ultima post Pentecosten* — the Twenty-fourth *and last*. The number is a place in the book; the word *ultima* is the operative identification. To say “the last Sunday after Pentecost is the twenty-fourth” is true of the formulary and false of the count in about four years out of five — the count is exactly twenty-four in only 44 of the 201 years from 1900 to 2100. To compute the last Sunday’s identity by adding one to twenty-three, or by counting weeks from Pentecost, is to produce an ordinal for which the Missal has no Mass.
@@ -485,14 +485,14 @@ Two readings are defensible on the text, and this reference gives both rather th
 
 > **Reading A: the last place always takes the Twenty-fourth Mass**
 >
-> **Claim.** In a year of twenty-three Sundays after Pentecost, the twenty-third and last Sunday takes the Mass headed *Dominica XXIV et ultima post Pentecosten*, and the formulary of the Twenty-third Sunday is omitted that year.  
-> **Textual support.** The clause *Ultimo tamen loco semper ponitur ea quae in ordine est XXIV post Pentecosten* is unrestricted in its own terms: *semper* is not qualified by the enumerated cases, and the subject is identified by its place in the printed order, not by the ordinal of the Sunday. The formulary’s own title, *et ultima*, describes it as the Mass of the last Sunday. The clause *omissis, si opus sit, ceteris, quae aliquando locum habere non possunt* — the rest being omitted, if need be, which sometimes cannot have a place — reads naturally as covering whatever printed Mass finds no place, and in a twenty-three-Sunday year the Mass that finds no place is the Twenty-third.  
+> **Claim.** In a year of twenty-three Sundays after Pentecost, the twenty-third and last Sunday takes the Mass headed *Dominica XXIV et ultima post Pentecosten*, and the formulary of the Twenty-third Sunday is omitted that year.<br>
+> **Textual support.** The clause *Ultimo tamen loco semper ponitur ea quae in ordine est XXIV post Pentecosten* is unrestricted in its own terms: *semper* is not qualified by the enumerated cases, and the subject is identified by its place in the printed order, not by the ordinal of the Sunday. The formulary’s own title, *et ultima*, describes it as the Mass of the last Sunday. The clause *omissis, si opus sit, ceteris, quae aliquando locum habere non possunt* — the rest being omitted, if need be, which sometimes cannot have a place — reads naturally as covering whatever printed Mass finds no place, and in a twenty-three-Sunday year the Mass that finds no place is the Twenty-third.<br>
 > **Consequence.** The eschatological Gospel of the last Sunday, Matthew 24:15–35, is heard every year without exception.
 
 > **Reading B: the count simply stops, and the Twenty-fourth Mass is omitted**
 >
-> **Claim.** In a year of twenty-three Sundays after Pentecost, the Sundays are celebrated in their printed order to the Twenty-third, which is the last; the Twenty-fourth formulary is not used that year.  
-> **Textual support.** Both loci embed the *semper* clause inside a construction whose premise is a surplus. n. 18 governs *dominicae post Epiphaniam quae … impediuntur* and states the “last place” rule as a proviso — *tamen* — on the four enumerated resumption cases; the Missal’s rubric states it inside a period beginning *Si dominicae post Pentecosten fuerint plures quam XXIV, tunc…*. On this reading *ultimo loco* means “last among the resumed sequence”, and the rule is that resumed Epiphany Masses must not be allowed to displace the Twenty-fourth from the end. Where no resumption occurs, the proviso has nothing to govern. n. 14’s principle that an impeded Sunday’s Mass is neither anticipated nor resumed points the same way: a formulary for which the year has no Sunday is simply not said.  
+> **Claim.** In a year of twenty-three Sundays after Pentecost, the Sundays are celebrated in their printed order to the Twenty-third, which is the last; the Twenty-fourth formulary is not used that year.<br>
+> **Textual support.** Both loci embed the *semper* clause inside a construction whose premise is a surplus. n. 18 governs *dominicae post Epiphaniam quae … impediuntur* and states the “last place” rule as a proviso — *tamen* — on the four enumerated resumption cases; the Missal’s rubric states it inside a period beginning *Si dominicae post Pentecosten fuerint plures quam XXIV, tunc…*. On this reading *ultimo loco* means “last among the resumed sequence”, and the rule is that resumed Epiphany Masses must not be allowed to displace the Twenty-fourth from the end. Where no resumption occurs, the proviso has nothing to govern. n. 14’s principle that an impeded Sunday’s Mass is neither anticipated nor resumed points the same way: a formulary for which the year has no Sunday is simply not said.<br>
 > **Consequence.** In roughly one year in fifty the twenty-fourth formulary is not used.
 
 *Editorial assessment, offered as such.* Reading A is the stronger of the two on the wording, because *semper* is an unusually emphatic word to place inside a subordinate condition, because the formulary’s printed title says *et ultima*, and because the older books gave the same Mass the same title under a rubrical tradition that plainly regarded it as the Mass of the year’s last Sunday. Reading B is not thereby refuted: its structural argument about the scope of the proviso is sound Latin, and it has the advantage of requiring no displacement of a printed formulary in a case the legislator never addressed.
@@ -707,7 +707,7 @@ n. 100 grants the right of reposition — the permanent relocation of a feast w
 
 > **n. 100: who may be reposited**
 >
-> The right of reposition belongs to *all* feasts of the I and II class, and to *particular* feasts of the III class occurring outside Advent and Lent that are impeded in the whole diocese, or in the whole Order or Congregation, or in one’s own church.  
+> The right of reposition belongs to *all* feasts of the I and II class, and to *particular* feasts of the III class occurring outside Advent and Lent that are impeded in the whole diocese, or in the whole Order or Congregation, or in one’s own church.<br>
 > By contrast, feasts of the III class of the universal Church that are perpetually impeded in some particular calendar, and III class feasts of a diocese or of an Order or Congregation that are perpetually impeded in only some churches, are perpetually either commemorated or entirely omitted, according to the rubrics.
 
 n. 101 gives the destination in terms that parallel n. 61 c: feasts to be reposited, if of the I or II class, are assigned to the nearest following day that is not of the I or II class; if of the III class, to the nearest following day free from other Offices of equal or higher grade. n. 102 then makes the relocation permanent in the strong sense: the day to which a perpetually impeded feast has been reposited *habetur tamquam dies proprius*, is held as its proper day, on which the feast is celebrated at the same grade as in its proper seat.
@@ -736,7 +736,7 @@ n. 109 lists the privileged commemorations exhaustively:
 
 > **n. 109: privileged commemorations**
 >
-> \(a\) of a Sunday; (b) of a liturgical day of the I class; (c) of the days within the octave of the Nativity of the Lord; (d) of the Ember ferias of September; (e) of the ferias of Advent, of Lent, and of the Passion; (f) of the greater Litanies, in the Mass.  
+> \(a\) of a Sunday; (b) of a liturgical day of the I class; (c) of the days within the octave of the Nativity of the Lord; (d) of the Ember ferias of September; (e) of the ferias of Advent, of Lent, and of the Passion; (f) of the greater Litanies, in the Mass.<br>
 > *Omnes aliae commemorationes sunt commemorationes ordinariae* — all other commemorations are ordinary.
 
 Two entries repay attention. Clause (d) singles out the September Ember ferias among the three sets of Ember days; the Advent and Lenten Ember ferias are covered instead by clause (e), which privileges the ferias of those seasons generally. And clause (f) is confined to the Mass, in keeping with n. 81’s rule that nothing is done about the greater Litanies in the Office.

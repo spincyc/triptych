@@ -1097,3 +1097,71 @@ three outputs and is not a deployment verification. The Claude publication
 inventory records the current digest of every source-bearing file in the leaf,
 the standing-findings file among them. A later write into the leaf, such as an
 archive of this run, makes that inventory stale until it is refreshed again.
+
+## Postconciliar chronology consumer repair — 21 September 2026
+
+This is a subsequent authoring and repair record, not a new workflow acceptance.
+Earlier review dispositions, build hashes, page counts and installation records
+above describe their historical bytes, not the current chronology or format
+revision. In particular, the earlier statement that critical positions appear
+without figures is superseded by the current dossier and scope. No engine-owned
+result or archive was changed.
+
+The terminal and concise dossiers now distinguish Isaiah's traditional
+ministry attribution from composition, and from the separately attributed
+critical late-exilic prophecy horizon. The tentative collection of Isaiah
+1–35 does not date chapter 55 or the whole book. Matthew's NABRE position is
+the open post-A.D. 70 boundary, probably at least a decade later, not a bounded
+date in the 80s. Traditional alternatives retain their unequal warrants.
+Writing place, first readership and narrative setting remain distinct,
+including the qualifications on Matthew, John, Acts and Philippians. Psalter
+bounds do not supply precise individual dates or a date of final assembly.
+The composed Entrance remains distinct from Scripture, but the official ICEL
+Antiphonary's express identification of Psalm 36[37]:39–40 now enters the
+scriptural inventory as `identified-basis`, not as an adaptation.
+
+`research/scope.md` records the retained witnesses actually inspected and the
+limits of those checks. Both apparatus components, used references, source
+bindings and review-dependency explanations have been reconciled with that
+scope. There are 94 valid publication bindings and eight scriptural elements
+with 18 chronology assertions. No shared corpus addition was required, and no
+generated chronology annotation was hand-edited by this repair.
+
+All three canonical Make builds exited 0: **31 research, 10 synthesis and
+4 homily pages**. The concise dossier initially overflowed physical page 2;
+prose compression retained its substantive qualifications without reducing
+type, and the final component artifact check passes. No padding was added to
+restore an earlier page count. The final log screen found no warning,
+undefined-reference or overfull/underfull-box diagnostic; the word “Rerun”
+occurred only in the `rerunfilecheck` package description. Removing one
+trailing space in the research apparatus and rebuilding exited 0. A later
+visual reflow removed forced breaks without changing the source argument; the
+current hashes are recorded in the final repair report.
+
+The following scoped checks exited 0: `bindings-valid`,
+`chronology-record-current`, `chronology-annotations-current`,
+`chronology-claims-supported`, `references-used`, `house-voice`,
+`restricted-not-reproduced`, `structural-meta-labels`, and
+`check-proper-components --phase artifacts`. The critical-profile query for
+Matthew 20:1 returned `composition-only` and `post-A.D. 70 date`.
+`source-library validate` exited 0. `make check-sources` exited 2 on the
+out-of-scope installed GPT 1962 synthesis PDF's subject mismatch with its
+current source; this repair did not update that publication.
+
+The external-evidence dependency audit found no missing external source owner
+among the observed opens, but this provider's trace reused in-process caches
+and is not a fresh exhaustive cold trace. The opened leaf-local
+`proper-components.toml` was absent from the research seal; this is reported
+to the coordinating tooling owner, not treated as a complete seal pass.
+
+Review rasters and contact sheets were generated under
+`build/pc-consumer-chronology-review-20260921/`. The concise dossier's physical
+page 2 and the three outputs' contact sheets were opened. This does not
+establish full-size page-by-page inspection, final-page acceptance or a
+no-padding verdict. Diagnostic logs are under `.scratch/propers-format/`.
+
+Independent research, content and visual acceptance remain outstanding.
+Generation metadata was not refreshed with an invented model identity or
+review event; finalization belongs to the coordinator. No installed PDF or web
+edition, release inventory, Git index, commit or push was changed by this
+consumer repair.

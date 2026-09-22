@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v6
+WORKFLOW_DIGEST: a965af881c1e4110b6e4698001b4f06b9a688a93a1f1652c292d15002afe1768
+RUN_ID: 090e496c9d6d4104
+COMMIT: 30c7baebd99056e4faac09a0f13cb085f9de1ea7
+STAGE: homily-preflight
+ITERATION: 0
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-09-20","proper":"liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost","provider":"gpt","research_handoff":"none"}
+DOCUMENT_ROOT: src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: []
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

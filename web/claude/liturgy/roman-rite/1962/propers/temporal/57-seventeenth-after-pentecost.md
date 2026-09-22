@@ -2,14 +2,12 @@
 
 *Expansive study of the 1962 Missale Romanum proper for the Seventeenth Sunday after Pentecost: appointed texts, each element in its setting, three readings of the whole formulary with their four senses, and a comparison*
 
-<span class="smallcaps">Missale Romanum 1962 · Proper of Time</span>
-
 **The Seventeenth Sunday after Pentecost**
 
-*Dominica decima septima post Pentecosten*
-
-The whole heart, the one Lord, and the plea for mercy:  
+The whole heart, the one Lord, and the plea for mercy:<br>
 a study of the proper in three readings
+
+[TOC]
 
 ## The Two Questions of the Seventeenth Sunday {#sec:opening}
 
@@ -24,7 +22,7 @@ The day’s texts thus put three questions to those who pray them: what God comm
 ### The appointed elements at a glance
 
 | **Element** | **Text and reference** | **What it says** |
-|:------------|:-------------------|:------------------------------------|
+|:---|:---|:---|
 | Introit | *Iustus es, Domine*; Ps 118:137, 124; verse 1 | God is just and his judgment right; the servant asks to be dealt with according to God’s mercy. |
 | Collect | *Da, quaesumus, Domine, populo tuo* | That the people may shun the devil’s contagion and follow God alone with a pure mind. |
 | Epistle | Eph 4:1–6 | Paul, a prisoner, pleads for a life worthy of the calling: humility, mildness, patience, mutual support in charity, the unity of the Spirit in the bond of peace; one body, one Spirit, one hope, one Lord, one faith, one baptism, one God and Father of all. |
@@ -226,7 +224,17 @@ The 1962 Missal also borrows its second clause for a later composition, the Coll
 
 The Preface is not proper to this Sunday. The Missal appoints it for every Sunday of the second class outside the Christmas and Easter seasons (p. 293, no. 1082). It is nonetheless the confession this Mass makes before the Canon. Its proper clause, *Qui cum unigénito Fílio tuo, et Spíritu Sancto, unus es Deus, unus es Dóminus*, confesses the one God with the Son and the Holy Spirit, “not in a singularity of one Person, but in a Trinity of one substance” (1861 English). It ends by adoring *et in persónis propríetas, et in esséntia únitas, et in maiestáte … æquálitas*. Its “one God … one Lord” stands close in wording to the Epistle’s “one Lord … one God and Father”. The second reading takes up that closeness.
 
-## The Whole Heart for the One God, and the One Body That Love Gathers {#sec:whole-heart-one-body}
+### From settings to readings of the whole formulary
+
+These settings rule out a shortcut. No biblical author or ancient commentator wrote about this Mass as a finished sequence, and not every part reached the Sunday at the same time. The three old chants already belonged together before the present Gospel was appointed here; the Pauline lesson belongs to the Missal’s course through the Epistles; the prayers have their own sacramentary history; and the Trinity Preface comes from the Sunday rubric rather than from this formulary. A reading of the whole must therefore preserve each element’s own scriptural argument before it asks what the liturgical sequence makes audible between them.
+
+The readings that follow make that second inquiry in three different places. One begins with the commandment and asks how the Epistle’s unity and the prayers of the people sound when charity controls the hearing. One begins with Christ’s question and asks how the Epistle’s confession, the Gradual’s word and spirit, and the appointed Preface sound when the identity of David’s Lord controls it. One begins with the older chant cycle and asks how every element is received by a people that first confesses divine justice and then petitions for mercy. Each must pass through every part of the Mass, state which texts actually bear its claim, and admit the places where another reading explains more.
+
+The witnesses remain attached to the passages they expound. Their agreements can form a lane; their disagreements cannot be erased to make one. Where Augustine and Cassiodorus hear different speakers in the poor man, or Jerome and Chrysostom construe the Epistle’s final words differently, the reading keeps the difference visible and limits what can be inferred from it. The unity proposed below belongs to the editor’s comparison of the appointed texts, while the patristic and saintly testimony supplies its tested parts.
+
+## The Whole Heart for the One God, and the One Body That Love Gathers {#lane-whole-heart-one-body}
+
+<span id="sec:whole-heart-one-body" data-label="sec:whole-heart-one-body"></span>
 
 Heard from the lawyer’s question, the Mass is a lesson in one love with two objects. God is to be loved with the whole heart, and the neighbour within that same love; the Epistle then shows what such love looks like when it is lived by many people at once: humility, patience, mutual bearing and a unity kept in the bond of peace. Around the Gospel and the Epistle the other texts become the prayer of a people that asks to follow God alone, rejoices to possess him and to be his possession, prays with the one voice of head and members, pays the vows common to every Christian, and asks the sacrament to heal the vices that break charity.
 
@@ -286,19 +294,25 @@ The chants of this Sunday speak of justice, mercy, humility and vows more than o
 
 ### The four senses of this reading
 
-Literal.  
-In the Temple, Jesus answers a doctor of the law that the greatest commandment is to love God with the whole heart, soul and mind, that the second, to love one’s neighbour as oneself, is like it, and that the law and the prophets depend on both. Paul, a prisoner, urges the Ephesians to walk worthily of their calling in humility, mildness and patience, bearing one another in charity and keeping the unity of the Spirit, because they are one body with one hope, one Lord, one faith, one baptism and one God and Father of all.
+Literal.
 
-Allegorical.  
-The one body is Christ and the Church, one voice of head and members, so that the poor man of the Alleluia is Christ praying in his members (Augustine). The blessed nation of the Gradual is the people gathered from all nations into the heavenly city and won by Christ’s blood (Augustine; Cassiodorus). The neighbour who showed mercy to the man left half dead is Christ himself, who “desired to be called our neighbor” (Augustine).
+: In the Temple, Jesus answers a doctor of the law that the greatest commandment is to love God with the whole heart, soul and mind, that the second, to love one’s neighbour as oneself, is like it, and that the law and the prophets depend on both. Paul, a prisoner, urges the Ephesians to walk worthily of their calling in humility, mildness and patience, bearing one another in charity and keeping the unity of the Spirit, because they are one body with one hope, one Lord, one faith, one baptism and one God and Father of all.
 
-Moral.  
-Love God without reserving any part of life for another enjoyment (Augustine) and without measure, leaving nothing of oneself to oneself (Gregory); love every neighbour for God’s sake, and see God loved in him (Aquinas). Bear with the weak brother, the poor and the widow (Jerome), wait with mercy on another’s defects (Aquinas), forbear as God forbears (Chrysostom), and refuse the vainglory that breeds envy. Hold the truth in common and in humility, and pay the vows common to every Christian (Augustine).
+Allegorical.
 
-Anagogical.  
-The one hope of the calling is the kingdom, the one house of the Father with its many mansions (Jerome). There the blessed nation will possess God and be possessed by him (Augustine), and the beatitude now held in beginning and in hope will be held perfectly (Aquinas). The Postcommunion’s *remedia aeterna* look to that same end, the healing of every vice that divides love completed in glory.
+: The one body is Christ and the Church, one voice of head and members, so that the poor man of the Alleluia is Christ praying in his members (Augustine). The blessed nation of the Gradual is the people gathered from all nations into the heavenly city and won by Christ’s blood (Augustine; Cassiodorus). The neighbour who showed mercy to the man left half dead is Christ himself, who “desired to be called our neighbor” (Augustine).
 
-## David’s Son and David’s Lord: The One God Confessed in His Word and Spirit {#sec:son-and-lord-of-david}
+Moral.
+
+: Love God without reserving any part of life for another enjoyment (Augustine) and without measure, leaving nothing of oneself to oneself (Gregory); love every neighbour for God’s sake, and see God loved in him (Aquinas). Bear with the weak brother, the poor and the widow (Jerome), wait with mercy on another’s defects (Aquinas), forbear as God forbears (Chrysostom), and refuse the vainglory that breeds envy. Hold the truth in common and in humility, and pay the vows common to every Christian (Augustine).
+
+Anagogical.
+
+: The one hope of the calling is the kingdom, the one house of the Father with its many mansions (Jerome). There the blessed nation will possess God and be possessed by him (Augustine), and the beatitude now held in beginning and in hope will be held perfectly (Aquinas). The Postcommunion’s *remedia aeterna* look to that same end, the healing of every vice that divides love completed in glory.
+
+## David’s Son and David’s Lord: The One God Confessed in His Word and Spirit {#lane-son-and-lord-of-david}
+
+<span id="sec:son-and-lord-of-david" data-label="sec:son-and-lord-of-david"></span>
 
 Heard from Christ’s own question, the Mass is a confession of faith. “What think you of Christ? Whose son is he?” The Fathers answer that the Christ is David’s son according to the flesh and David’s Lord according to his eternal birth from the Father, equal to him in honour and power. The Epistle’s “one Lord, one faith, one baptism, one God and Father of all” is read by some of them as the confession of the Trinity, and by others as the one God’s lordship, providence and indwelling, which the Son shares without inferiority. The Gradual’s “By the word of the Lord the heavens were established, and all the power of them by the spirit of his mouth” is the verse in which the Fathers hear the Father creating by his Word and his Spirit. The God whom the Collect asks to follow “alone”, and whom the Gospel commands to be loved with the whole heart, is then the God whose Son sits at his right hand; and the Preface appointed for this Sunday confesses him as “one God, and one Lord … in a Trinity of one substance”.
 
@@ -358,19 +372,25 @@ Three texts resist being made simple witnesses of the Trinity. The distribution 
 
 ### The four senses of this reading
 
-Literal.  
-Jesus asks the Pharisees whose son the Christ is and, when they answer “David’s”, asks how David, speaking by the Spirit in Ps 109, can call him Lord; no one can answer him. Paul grounds the Church’s unity in one Lord, one faith, one baptism and one God and Father of all. The psalmist praises the Lord by whose word the heavens were made firm and all their host by the breath of his mouth.
+Literal.
 
-Allegorical.  
-Christ is David’s son in the flesh and David’s Lord from eternity, in the form of the servant and in the form of God (Augustine, Jerome, Chrysostom, Aquinas). The one God who creates by his Word and his Spirit is Father, Son and Holy Spirit (Irenaeus, Basil, Augustine, Cassiodorus, Aquinas, Bellarmine), above all, through all and in all (Jerome, Aquinas). The heavens made firm by the Word and the Spirit are also the apostles made strong (Augustine, Cassiodorus, Aquinas).
+: Jesus asks the Pharisees whose son the Christ is and, when they answer “David’s”, asks how David, speaking by the Spirit in Ps 109, can call him Lord; no one can answer him. Paul grounds the Church’s unity in one Lord, one faith, one baptism and one God and Father of all. The psalmist praises the Lord by whose word the heavens were made firm and all their host by the breath of his mouth.
 
-Moral.  
-Answer Christ’s question as the Church does, and do not stop where his questioners stopped; exchange a proud silence for a humble confession (Augustine). Guard the one faith and the one baptism against the division that breaks the bond of peace (Jerome). Follow the one God alone, knowing that “one God” shuts out the idols and not the Son (Chrysostom).
+Allegorical.
 
-Anagogical.  
-The Son sits at the Father’s right hand until every enemy is made his footstool (Ps 109:1), with dominion over the rebellious (Aquinas). The blessed nation of the Gradual’s psalm is, for Bellarmine, most happy “when we shall see him as he is”, and for Aquinas its beatitude, begun now in hope, is to cleave to God by knowledge and love, perfectly hereafter. The vision so promised is of the God whom the Preface confesses, adored in a distinction of Persons, a unity of essence and an equality of majesty.
+: Christ is David’s son in the flesh and David’s Lord from eternity, in the form of the servant and in the form of God (Augustine, Jerome, Chrysostom, Aquinas). The one God who creates by his Word and his Spirit is Father, Son and Holy Spirit (Irenaeus, Basil, Augustine, Cassiodorus, Aquinas, Bellarmine), above all, through all and in all (Jerome, Aquinas). The heavens made firm by the Word and the Spirit are also the apostles made strong (Augustine, Cassiodorus, Aquinas).
 
-## “Thou Art Just, O Lord”: The Humbled People Prays with Daniel for Mercy {#sec:just-judge-merciful-hearer}
+Moral.
+
+: Answer Christ’s question as the Church does, and do not stop where his questioners stopped; exchange a proud silence for a humble confession (Augustine). Guard the one faith and the one baptism against the division that breaks the bond of peace (Jerome). Follow the one God alone, knowing that “one God” shuts out the idols and not the Son (Chrysostom).
+
+Anagogical.
+
+: The Son sits at the Father’s right hand until every enemy is made his footstool (Ps 109:1), with dominion over the rebellious (Aquinas). The blessed nation of the Gradual’s psalm is, for Bellarmine, most happy “when we shall see him as he is”, and for Aquinas its beatitude, begun now in hope, is to cleave to God by knowledge and love, perfectly hereafter. The vision so promised is of the God whom the Preface confesses, adored in a distinction of Persons, a unity of essence and an equality of majesty.
+
+## “Thou Art Just, O Lord”: The Humbled People Prays with Daniel for Mercy {#lane-just-judge-merciful-hearer}
+
+<span id="sec:just-judge-merciful-hearer" data-label="sec:just-judge-merciful-hearer"></span>
 
 Heard from its opening chant, the Mass is the prayer of a people that confesses God’s justice and asks his mercy. The Introit begins with a confession, “Thou art just, O Lord: and thy judgment is right”, and asks to be dealt with “according to thy mercy”. The Offertory is Daniel’s own prayer for the desolate sanctuary and for the people on whom God’s name is called, drawn from a chapter that confesses the same pair: “To thee, O Lord, justice”, “But to thee, the Lord our God, mercy and forgiveness”. The Alleluia is the cry of the poor man from the fifth penitential psalm. The orations ask escape from the devil’s contagion, release from past and future sins, and the cure of vices; the Communion renders vows to the God who takes away the spirit of the proud. The Epistle’s humility, mildness and patience describe the bearing of such a people, and the Gospel ends with questioners who fall silent where a humble confession was asked of them.
 
@@ -422,17 +442,21 @@ The Gospel is not penitential. It enters here only through Augustine’s contras
 
 ### The four senses of this reading
 
-Literal.  
-In the first year of Darius, Daniel, understanding from Jeremias that the seventy years of Jerusalem’s desolation were ending, prays in fasting, sackcloth and ashes, confesses Israel’s sins and God’s justice, and begs God to make his face shine on the desolate sanctuary and to hear for his own name’s sake. The psalmist confesses God just and his judgment right and asks to be dealt with in mercy; the poor man pours out his prayer; the faithful are summoned to pay their vows to the God who is terrible to kings.
+Literal.
 
-Allegorical.  
-The poor man who prays is Christ praying in his afflicted members (Augustine) or every poor one of Christ interceding for the whole world (Cassiodorus). The desolate sanctuary and the people called by God’s name are the Church in her trials; Schuster, offering it as his own suggestion, hears the antiphon as the prayer of Rome under the Lombards. Daniel’s answered prayer opens onto the time of Christ’s coming, as Rupert, Durandus and Jerome read it with the prophecy that followed; the 1962 antiphon itself ends at the petitions.
+: In the first year of Darius, Daniel, understanding from Jeremias that the seventy years of Jerusalem’s desolation were ending, prays in fasting, sackcloth and ashes, confesses Israel’s sins and God’s justice, and begs God to make his face shine on the desolate sanctuary and to hear for his own name’s sake. The psalmist confesses God just and his judgment right and asks to be dealt with in mercy; the poor man pours out his prayer; the faithful are summoned to pay their vows to the God who is terrible to kings.
 
-Moral.  
-Confess God’s justice and your own sin, and not only the sins of others (Augustine). Ask mercy and not reward, and pray with confidence because of God’s mercies and not your justifications (Aquinas). Intercede for the whole people as one of it (Jerome), and for the calamities of the world (Cassiodorus). Say “Thou art just, O Lord” in every danger and in every affliction (Cassiodorus, Hilary). Vow what you can and pay it, relying on God; rule the earth of your own flesh, and let God take away the spirit of pride (Augustine).
+Allegorical.
 
-Anagogical.  
-The Introit asks the just God for mercy and not for the servant’s own justice (Augustine). Reading its chant, Rupert hears that mercy as the host’s “Friend, go up higher” at the heavenly banquet, and Durandus hears its judgment as the one by which the humble will be exalted in paradise. Bellarmine reads the Communion’s psalm of the general judgment, which saves all the meek of the earth, and its God as terrible in judgment even to kings. The Postcommunion calls the remedies it asks eternal. The judgment the people confesses as just is the judgment at which it hopes to find mercy.
+: The poor man who prays is Christ praying in his afflicted members (Augustine) or every poor one of Christ interceding for the whole world (Cassiodorus). The desolate sanctuary and the people called by God’s name are the Church in her trials; Schuster, offering it as his own suggestion, hears the antiphon as the prayer of Rome under the Lombards. Daniel’s answered prayer opens onto the time of Christ’s coming, as Rupert, Durandus and Jerome read it with the prophecy that followed; the 1962 antiphon itself ends at the petitions.
+
+Moral.
+
+: Confess God’s justice and your own sin, and not only the sins of others (Augustine). Ask mercy and not reward, and pray with confidence because of God’s mercies and not your justifications (Aquinas). Intercede for the whole people as one of it (Jerome), and for the calamities of the world (Cassiodorus). Say “Thou art just, O Lord” in every danger and in every affliction (Cassiodorus, Hilary). Vow what you can and pay it, relying on God; rule the earth of your own flesh, and let God take away the spirit of pride (Augustine).
+
+Anagogical.
+
+: The Introit asks the just God for mercy and not for the servant’s own justice (Augustine). Reading its chant, Rupert hears that mercy as the host’s “Friend, go up higher” at the heavenly banquet, and Durandus hears its judgment as the one by which the humble will be exalted in paradise. Bellarmine reads the Communion’s psalm of the general judgment, which saves all the meek of the earth, and its God as terrible in judgment even to kings. The Postcommunion calls the remedies it asks eternal. The judgment the people confesses as just is the judgment at which it hopes to find mercy.
 
 ## The Three Readings Compared {#sec:comparison}
 
@@ -441,7 +465,7 @@ The three readings share more than they divide. All three hear the Mass as the p
 They part on the questions below.
 
 | **Question** | **The whole heart and the one body** | **David’s son and David’s Lord** | **“Thou art just, O Lord”** |
-|:------------|:------------------|:------------------|:------------------|
+|:---|:---|:---|:---|
 | Where it is anchored | The Gospel’s first half (vv. 34–40); the Epistle’s appeal (vv. 1–4) | The Gospel’s second half (vv. 41–46); the Epistle’s “one Lord … one God and Father” (vv. 5–6); the Gradual’s versicle | The Introit; the Offertory; the Alleluia; the Communion |
 | What “one” means | One love, and one body that love keeps | One Lord and one God, confessed in Father, Word and Spirit | One people, called by one name, praying |
 | The Gradual | The blessed nation that possesses God and is his inheritance (v. 12) | The heavens made firm by the Word and the Spirit (v. 6) | The people chosen by God’s gift and not its own merit (v. 12) |
@@ -460,22 +484,22 @@ Each reading ends at the same place, the silence that closes the Gospel. “No m
 Each passage the Mass reads or sings from Scripture, once, in canonical order; beneath each, its historical judgment and critical horizon.
 
 | **Proper** | **Citation** | **Location** | **Date** |
-|:---------|:----------|:--------------------|:---------------------------|
-| Gradual | Ps 32:12, 6 (Heb. 33) | No place named | **Composition**: Before c. 165 B.C. |
-| Titled *Psalmus David*, “A psalm for David” (v. 1): an attribution by title, with no traditional date or era attached. A hymn of the just to God’s creating word (vv. 1–9) and to the nation he chose (v. 12). The date is the modern critical boundary for the whole Psalter, within which no single psalm can be dated securely. |  |  |  |
+|:---|:---|:---|:---|
+| Gradual | Ps 32:6, 12 (Heb. 33) | No place named | **Composition**: Before c. 165 B.C. |
+| Titled *Psalmus David*, “A psalm for David” (v. 1): an attribution by title, with no traditional era held for this psalm in the chronology record. A hymn of the just to God’s creating word (vv. 1–9) and to the nation he chose (v. 12). The date is the modern critical boundary for the whole Psalter, within which no single psalm can be dated securely. |  |  |  |
 | Communion | Ps 75:12–13 (Heb. 76) | Judea and Sion named as God’s dwelling (vv. 2–3) | **Composition**: Before c. 165 B.C. |
 | Titled “a psalm for Asaph: a canticle to the Assyrians” (v. 1), with no date or era attached. God broke the weapons of war in Sion and rose to judgment “to save all the meek of the earth” (vv. 4, 10). The date is the Psalter’s critical boundary only. |  |  |  |
 | Alleluia | Ps 101:2 (Heb. 102) | Sion named in the psalm’s turn to hope (vv. 14, 17) | **Composition**: Before c. 165 B.C. |
 | Titled “The prayer of the poor man, when he was anxious” (v. 1); no author named, no traditional date held. The fifth penitential psalm, moving from lament to the rebuilding of Sion. The date is the Psalter’s critical boundary only. |  |  |  |
-| Introit | Ps 118:137, 124, 1 (Heb. 119) | No place named | **Composition**: Before c. 165 B.C. |
+| Introit | Ps 118:1, 124, 137 (Heb. 119) | No place named | **Composition**: Before c. 165 B.C. |
 | An alphabetical psalm in praise of God’s law, with no title beyond *Alleluia*; no author named, no traditional date held. The date is the Psalter’s critical boundary only. |  |  |  |
 | Offertory | Dan 9:17–19, compiled | Daniel at the court of Babylon; for the Jews of his own time and after. Event: the kingdom of the Chaldeans, first year of Darius the Mede (9:1); prayer for the desolate sanctuary of Jerusalem (9:17) | **Historical setting**: Duration: all these nations shall serve the king of Babylon seventy years. **Composition**: B.C. 570–536. |
-| Traditional attribution: Daniel the prophet, in the Exile, telling his own prayer (“I, Daniel”, 9:2) when he understood from Jeremias that the seventy years of desolation were ending. The 1908 *Catholic Encyclopedia* article that holds the traditional date sets against it a more recent critical theory, widely accepted by contemporary scholars, that an unknown later author composed the book; no date is given for that position here. The same article’s grounds for the traditional position give the place and the hearers: only “a resident in Babylon” could have written the book’s details, and Daniel, “owing to his position at the court of Babylon”, wrote “for the comfort of the Jews of his time and of subsequent ages”. For the later author it supposes, the article names no place of writing at all. |  |  |  |
-| Gospel | Mt 22:34–46 | Matthew in Judea, before he left Jerusalem; to the Jews who had believed. Event: the Temple, Jerusalem (21:23) | **Event** – No narrated-event date in the chronology corpus. **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. |
+| Traditional attribution: Daniel the prophet, in the Exile, telling his own prayer (“I, Daniel”, 9:2) when he understood from Jeremias that the seventy years of desolation were ending. The 1908 *Catholic Encyclopedia* article that holds the traditional date sets against it a more recent critical theory, widely accepted by scholars of its time, that an unknown later author composed the book; no date is given for that position here. The same article’s grounds for the traditional position give the place and the hearers: only “a resident in Babylon” could have written the book’s details, and Daniel, “owing to his position at the court of Babylon”, wrote “for the comfort of the Jews of his time and of subsequent ages”. For the later author it supposes, the article names no place of writing at all. |  |  |  |
+| Gospel | Mt 22:34–46 | Matthew in Judea, before he left Jerusalem; to the Jews who had believed. Event: the Temple, Jerusalem (21:23) | **Event** – Narrated event date unresolved. **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. **Comparison (catholic-critical-v1) – Composition** – composition-only: The Greek Gospel of Matthew in the NABRE introduction, Post-A.D. 70 date. |
 | *Narrated event: the last of Christ’s controversies in the Temple (21:23–22:46), before the Passion is foretold “after two days” (26:1–2).* |  |  |  |
-| Traditional attribution: St Matthew the Apostle, whom the Missal’s heading names (*secundum Matthaeum*); the Date column keeps the traditional ranges of the *Catholic Encyclopedia* (1911, 1912) as disputed alternatives. Protestant and liberal critics named in the 1911 article date the Gospel variously, many later than those ranges; no date is given for that position here. Outside its date section the same article gives the first hearers and the place of writing: the ecclesiastical writers “agree in declaring that St. Matthew wrote his Gospel for the Jews”; Origen holds that it was “published for Jews converted to the Faith”; Jerome, summarizing tradition, that Matthew “published his Gospel in Judea and in the Hebrew language, principally for those among the Jews who believed in Jesus”; the article has him write “before his departure from Jerusalem”. One qualification it quotes without adopting: Zahn thinks the book meant rather for Jews not yet Christians. The Temple above locates the controversy the Gospel narrates, not the writing of the Gospel. |  |  |  |
+| Traditional attribution: St Matthew the Apostle, whom the Missal’s heading names (*secundum Matthaeum*); the Date column keeps the traditional ranges of the *Catholic Encyclopedia* (1911, 1912) as disputed alternatives, not equally established estimates. Jacquier’s c. A.D. 38–45 counts eight or fifteen years after the Ascension with early writers; c. A.D. 40–42 follows an apostolic dispersal tradition he calls “admittedly not too reliable”; A.D. 40–45 reports the Catholic critics of his own day. His c. A.D. 60–68 depends on a later proposed apostolic departure; his c. A.D. 64–67 rests on Irenaeus’s statement about Peter and Paul at Rome, whose difficulties of interpretation prevent a positive conclusion. Durand’s c. A.D. 50 concerns the Aramaic original alone; he leaves the Greek rendering undated. Outside its date section Jacquier’s article gives the first hearers and the place of writing: the ecclesiastical writers “agree in declaring that St. Matthew wrote his Gospel for the Jews”; Origen holds that it was “published for Jews converted to the Faith”; Jerome, summarizing tradition, that Matthew “published his Gospel in Judea and in the Hebrew language, principally for those among the Jews who believed in Jesus”; the article has him write “before his departure from Jerusalem”. One qualification it quotes without adopting: Zahn thinks the book meant rather for Jews not yet Christians. The NABRE introduction’s critical account concerns the Greek Gospel: after A.D. 70, probably at least a decade later, with the overall account presented as probable. It describes an anonymous evangelist using Mark and other traditions, and Jewish and Gentile Christian readers. Antioch in Roman Syria is a plausible suggestion, not an established writing-place. The Temple above locates the controversy the Gospel narrates, not the writing of the Gospel; the corpus gives that encounter no date. |  |  |  |
 | Epistle | Eph 4:1–6 | Paul, “a prisoner in the Lord” (4:1), at Rome or Caesarea; to the saints at Ephesus (1:1) | **Composition** – disputed: A.D. 58–63; A.D. 61. |
-| Traditional attribution: St Paul, in a letter of his captivity; the *Catholic Encyclopedia* dates the captivity letters within the range shown, leaving Rome or Caesarea open (1909), and its chronology of St Paul gives Ephesians the single year shown (1911). The first hearers are the church at Ephesus, gentiles once “afar off” and now “made nigh” (2:11–18). Most liberal critics since Schleiermacher have denied the letter to Paul (so the 1909 article); no date is given for that position here. That article also holds the words “at Ephesus” in 1:1 to be no part of the primitive text, and reads the letter as a circular to churches Paul had not visited; the address above is the received text the Missal’s Bible prints. |  |  |  |
+| Traditional attribution: St Paul, in a letter of his captivity; the *Catholic Encyclopedia* dates the captivity letters within the range shown, leaving Rome or Caesarea open (1909), and its chronology of St Paul gives Ephesians the single year shown (1911). The first hearers are the church at Ephesus, gentiles once “afar off” and now “made nigh” (2:11–18). Most liberal critics since Schleiermacher have denied the letter to Paul (so the 1909 article); no date is given for that position here. That article also holds the words “at Ephesus” in 1:1 to be no part of the primitive text, and reads the letter as a circular to churches Paul had not visited, probably in Asia Minor; the address above is the received biblical text, not a settled identification of the first recipients. |  |  |  |
 
 ## Appendix: Scope and Qualifications {#sec:scope}
 
@@ -489,7 +513,7 @@ Each passage the Mass reads or sings from Scripture, once, in canonical order; b
 
 **History of the formulary.** The chant and sacramentary witnesses are cited in editions and a database view: H. A. Wilson’s editions of the Gelasian (1894) and Gregorian (1915) sacramentaries, read on their page images; and gregorien.info’s view of Hesbert’s *Antiphonale Missarum Sextuplex* for the earliest graduals. No critical edition of the sacramentaries (Deshusses, Mohlberg), no manuscript, no edition of the Roman psalter and no Old Latin text of Daniel was consulted.
 
-**Chronology.** Every date in the Scriptural Date and Location table comes from the Scripture chronology corpus, through the record generated for this formulary. That record gives the four psalms only the modern critical boundary for the Psalter, which it takes from the introduction to the Psalms in the New American Bible, Revised Edition (summarized, not quoted); it holds no traditional date for them. For Daniel, Matthew and Ephesians it holds only the traditional dates reported by the *Catholic Encyclopedia*, and the modern critical positions are therefore named without figures. The Gospel’s narrated event is undated. The record and its sources are audited in `research/scope.md`.
+**Chronology.** The Date cells in Scriptural Date and Location come from the Scripture chronology corpus, through the record generated for this formulary. That default-profile record gives the four psalms only the modern critical boundary for the Psalter, which it takes from the introduction to the Psalms in the New American Bible, Revised Edition (summarized, not quoted); it holds no traditional date for them. For Daniel, Matthew and Ephesians it holds only the traditional dates reported by the *Catholic Encyclopedia*. A separate critical-profile query supplies Matthew’s post-A.D. 70 comparison in the explanatory prose; it does not replace or merge the traditional alternatives. No critical date for Daniel or Ephesians is supplied. The Gospel’s narrated event is undated. The record and its sources are audited in `research/scope.md`.
 
 **Rights.** The Latin of the formulary is published on the basis of its public-domain antecedent, the Pustet Missal of 1862 (17 U.S.C. 103(b)); the Douay–Rheims, the 1861 Cummiskey English, the Latin Fathers in Migne and the nineteenth-century English translations are in the public domain. The Marietti Latin of Aquinas on Matthew and the Corpus Thomisticum text of his commentary on the Psalms are modern presentations and are quoted briefly. The New American Bible introduction and the dated Ordos are cited, not reproduced.
 
@@ -575,10 +599,10 @@ Each passage the Mass reads or sings from Scripture, once, in canonical order; b
 
 - *The Catholic Encyclopedia* (New York, 1907–1912): F. E. Gigot, “Book of Daniel” (vol. 4, 1908); P. Ladeuze, “Epistle to the Ephesians” (vol. 5, 1909); E. Jacquier, “Gospel of St. Matthew” (vol. 10, 1911); F. Prat, “St. Paul” (vol. 11, 1911); A. Durand, “The New Testament” (vol. 14, 1912).
 
-- United States Conference of Catholic Bishops, *New American Bible, Revised Edition*, introduction to the Psalms (summarized, not quoted).
+- United States Conference of Catholic Bishops, *New American Bible, Revised Edition*, introductions to [Psalms](https://bible.usccb.org/bible/psalms/0), superscriptions and chronological limit, and [Matthew](https://bible.usccb.org/bible/matthew/0), narrative overview and final paragraphs on authorship, sources, date and place. Official web edition inspected 21 September 2026; summarized, not reproduced.
 
 - Fraternité Saint-Pierre (France), *Ordo du mois*, entry for 20 September 2026; Institut du Christ Roi Souverain Prêtre (France), *Ordo*, entry for 20 September 2026.
 
-**Last revised (UTC):** 2026-09-19T08:10:00Z
+**Last revised (UTC):** 2026-09-21T23:18:36Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

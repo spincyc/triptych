@@ -1,31 +1,45 @@
 {
   "document": "liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost",
+  "pagination_evidence": {
+    "build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.aux": "5b66a7d44b75f8372c1289acff6651da0b33a1d85b1b855d4f3659e1e1cef055",
+    "build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.log": "14797ec0a6d485afe1c2e3e7c56b329dd1070218e1b50f4b6551e778a6a252dc",
+    "build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.aux": "5cebdacde2e5647ca86cae0a9fb9765ade3088094caca2d3dc1fb57e77e92e6e",
+    "build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.log": "2d2a27996bc4ecb4c5ed1619560059e80d0e770212c1c4cc5f5e8298ab8ae5b5"
+  },
   "pdfs": {
-    "build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf": "c8bf81d0525aa180905cc13013f0dccaf6d6bec5a266cb6bfa7574b8c7f55034",
-    "build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf": "f9bd82d76591565e3c433fcb53b1974530a74e262765953aa712c73324ca2372",
-    "build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf": "111bb840a0cb669f4d058d9467f7e26c09815bb517f1d84a1ced1c3db5654b7f"
+    "build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-homily.pdf": "63eb6b1126af403fadc67c08b4eca0d8f718f2247692a6d6c759a30ef8dc348d",
+    "build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.pdf": "ba14d046656b05e0af8094895f149c88fa27054b68e939dd4d4fef6d8446261c",
+    "build/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.pdf": "0ecd7d768fb793e92cc2e2b06f0d9cd3ec504874bc692eed7a7aae9d1bb2b305"
   },
   "provider": "gpt",
   "render_inputs": {
     "src/common/preamble.tex": "5b05ced1e6e15c25ebb5f8993fec45928afd39839cede213e1ddb756d5a9649c",
-    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/format.tex": "5ba0336ae41e34754e77f06bf9b6e0aa553b4ed1acd41db15a6757b0083884d8",
-    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/generation-metadata.tex": "53fc5a364aa1da2c5c7531551cddef6d634f008db8f890cf0f72081515e9dcff",
-    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/homily.tex": "a55468801eb5afb53341f850bff04e580af98b01326f2e777cb8a1a5f738759d",
-    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/main.tex": "8e559c412ab9f0330cc6a236e5f51ded3c39e7969d6bee4deb451b997d1f8d82",
-    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/proper-components.toml": "7b35714c312bc2df252803d1e23cca3247b5e05811e38e82ea2e60e0cfd3d6be",
+    "src/common/propers-format.tex": "7f91b70650c728071db9044bfaf48a4f3f28ea8f777f279dda49be867afb4486",
+    "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/format.tex": "9e6fa744bfc86b35718e72618be4c34ae6347a7197fb292f3f40495486c18f8c",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/generation-metadata.tex": "78214c9c0c258aaef2cc6198a142ec4d3e0397379e7c509ca799f9c7810f74b4",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/homily.tex": "ef4bf84bd1cd7e09405e226fda97ae7de00c951c22172086b921b177ca35df76",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/main.tex": "4eee0a19ca838e7f8ecd08acc126dac96758d03b9ccda00096448604d9aeffeb",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/proper-components.toml": "75b93f12f52b6ae63eb8331d75dde2ad8ab1762a0c1edb61133e31eba7e2f879",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/research/chronology-annotations.tex": "1006e67afe7199e9ae7237e5d2543a3be9c86d5a123ebbc6c0fa3ffc45be52b6",
     "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/00-opening.tex": "6ff032d21137f2be893738c1a42e3a3829f2e1de31b5a739a71e50f62b1fab1e",
     "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/10-appointed-text.tex": "b956cfcc904b09e1cc577030253694825c6a2a04e3819454592ba343acdfdb42",
     "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/20-commentary.tex": "04c50977c106416a4f1bf3595f84a4392d41ede3ec8e1fcd686a5eac59cfcaa6",
-    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/30-healed-charity.tex": "1283f8d1dd74ae6d3c4a90da01dd2cdf7da0308642ee2eba39c0d5a6566371f4",
-    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/40-one-people.tex": "1c2c23e8a7ab7721b545ab334a6ffa4d26ac31a86b0ea3765715421bf35f5b03",
-    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/50-faithful-offering.tex": "82803c1c607f79dda194ea7f03b2902ef00b4e99c1a97a83499e95f44c05a373",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/30-healed-charity.tex": "e1c33c2634827fa2b5e7ec2d9b14810579c7b28e3f183c808ef725bf503b69b5",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/40-one-people.tex": "42c2c7f707f488e5b7598764efcedf27249950d9c10368322fb0f4eadca39ac7",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/50-faithful-offering.tex": "eead3a32d6766be1decbedf1477ac9ab3fdbbc9bdfd9332883be04eefd6ec6c3",
     "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/60-comparison.tex": "bfa7d5d5aa1390535202bf54fe14b6670ee0a0a5ba4126c44de967d688ad5533",
-    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/90-study-apparatus.tex": "a340110e055265d48eb062ed1bd736aa726d4201eed27a86e722f628ab6b650e",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/70-date-location.tex": "5881a82fce955deae4ebc8e7b39c63e421f5c14bf3487fa52dee28243bbbf07b",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/90-study-apparatus.tex": "f49babd27aa6452b8a5e74f1ce0989df83a8934a65b785397fb900ef7e5ead70",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/01-inventory.tex": "778885cc27d741ec39790ab5b289547c76f887bc995cedb06abc367c45ebb41a",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/02-overview.tex": "e4110f49a2bb8531d85912f98590a656036d482ad58d56a136c317aec9a03163",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/03-date-location.tex": "3abeac20e7d75f405dafb147c54e4f3e29bed1d568d8ffceb062690c1353d076",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/concise/04-themes.tex": "e24b1bc205640713d6a41957a3f41048a2f8961b6901ec1748e67c010362a44d",
     "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/homily/10-homily.tex": "687f16aeecb988f6af38599ca35f99ab0dbdda14cc53e81d147f3b0ec63fb2f2",
     "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/homily/90-apparatus.tex": "b5581d7608d426115b73f78620169e6d6bfdc443e5af8391f14a49783a1290be",
-    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/synthesis/10-study.tex": "008b8b12719c69eb5ff0bf340453bdd0524f3f66dcd80354b702544a81d75140",
-    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/synthesis/90-apparatus.tex": "5b75c9f6a59086867f637cb6a5158cb9c5d8a69060015ebc4c327737ec731122",
-    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/synthesis.tex": "642f7451f2debd6836ba4d840be966e877321a952c353d2841c16e095a914413"
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/synthesis/10-study.tex": "d3a587b6c3dea78600326b97d9b3e40a54b967f516345854b9986de31760f217",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/sections/synthesis/90-apparatus.tex": "392a3dce0d15ca0893d52d6804b2fcbb9a5a17538bbbf923ac40a2988f0dc609",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost/synthesis.tex": "ac34626e87ca24552ea607371ad1ac3d69a19eaaf81c0dbc7f6bf8a131455235"
   },
   "schema": 1
 }

@@ -89,22 +89,22 @@ The Temporale is generated rather than copied onto fixed civil dates. Let Easter
 
 ### Seasonal generation rules
 
-Advent  
+Advent<br>
 Its four Sundays are class I. Ember Wednesday, Friday, and Saturday and the ferias from December 17 through 23 are class II; the other Advent ferias are class III. December 24 has its own class-I vigil in the fixed table.
 
-Christmas cycle  
+Christmas cycle<br>
 Christmas has a privileged octave. December 26–31 are class-II octave days, with the saints or commemorations shown in the fixed table; January 1 is the class-I octave day. The Sunday within the octave is class II. Epiphany is class I; the Sundays after Epiphany are class II and ordinary weekday ferias class IV unless another rule supplies a rank.
 
-Septuagesima  
+Septuagesima<br>
 Its three Sundays are class II. Weekday ferias are class IV.
 
-Lent and Passiontide  
+Lent and Passiontide<br>
 Sundays are class I. Ash Wednesday and Monday through Wednesday of Holy Week are class I. Ember Days are class II. Other Lenten ferias are class III and have the seasonal privileges assigned by the Code. The Sacred Triduum is governed by its own highest-order rules.
 
-Easter cycle  
+Easter cycle<br>
 Easter and its octave are class I. Low Sunday is class I; later Sundays through the Sunday after Ascension are class II. The weekday ferias outside the octave are class IV unless another rule intervenes. Ascension and Pentecost are class I; Pentecost has a class-I octave.
 
-After Pentecost  
+After Pentecost<br>
 Sundays are class II except the class-I feasts assigned to Sunday. Ordinary weekday ferias are class IV. September Ember Wednesday, Friday, and Saturday are class II.
 
 On an otherwise unimpeded class-IV Saturday, the Office and Mass of the Blessed Virgin Mary on Saturday supply the recurring observance prescribed by General Rubrics nn. 78–79. Its seasonal forms do not turn it into a fourth class of feast.
@@ -563,16 +563,16 @@ The United States section is deliberately separate. A national calendar, diocesa
 
 > **Evidence labels used in this study**
 >
-> Printed baseline  
+> Printed baseline<br>
 > Data directly attested in the 1962 typical Missal or the 1960 Code.
 >
-> Particular layer  
+> Particular layer<br>
 > Data attested for the United States or another competent particular calendar, kept distinct from the general calendar.
 >
-> Later option  
+> Later option<br>
 > A permission enacted after 1962, such as *Cum sanctissima*; it does not retroactively alter the printed baseline.
 >
-> Unresolved lead  
+> Unresolved lead<br>
 > Material found only in a composite scan, index, modern Ordo, or secondary compilation; excluded from normative tables pending provenance checks.
 
 ## References

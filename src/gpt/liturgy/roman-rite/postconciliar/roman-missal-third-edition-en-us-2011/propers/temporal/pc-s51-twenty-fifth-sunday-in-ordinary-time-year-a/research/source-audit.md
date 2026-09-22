@@ -1,5 +1,19 @@
 # PC-S51-A: source and rights audit
 
+The `proper-study` v6 research run revalidated this source map on 21 September
+2026 (workflow digest
+`a965af881c1e4110b6e4698001b4f06b9a688a93a1f1652c292d15002afe1768`, run
+`bbe114e132356b38`, research iteration 0). It checked the retained biblical and
+reception evidence, exact bindings, rights chain, chronology records, and
+declared external owners. No source-library mutation, new acquisition, or
+change to the documented source limits was required.
+
+Research re-entry iteration 1 repaired the dependency boundary for the
+registered USCCB daily-readings work and its exact 20 September 2026 edition.
+The new official-control binding pins the bounded headings-and-citations
+passage and its work, edition, and restricted artifact ancestry; the review
+dependency declaration also names the work and exact edition directory.
+
 Research independently checked 17 September 2026, including retained witnesses, bounded second searches and the new direct readings below. No cold-review, publication or ecclesiastical approval is asserted.
 
 ## Direct sources actually inspected
@@ -63,7 +77,7 @@ Aquinas places return from Babylon in the chapter's literal horizon and mystical
 
 ## Dated Lectionary witness
 
-USCCB complete daily page, https://bible.usccb.org/bible/readings/092026.cfm , retrieved17 September 2026; retained only in disposable scratch for checking. HTML SHA256 `9581da4f98293b2551dfbe2db4ff7939d26898ea3255c732bf4610d7b02e9015`. Browser initially403; complete curl response later succeeded. Checked title, Lectionary 133, every heading/verse boundary, response, adapted acclamation and final Gospel line. No claim about an entire printed Lectionary follows from this daily page. Exact wording remains restricted; the record retains locators and original analytical description only.
+USCCB complete daily page, https://bible.usccb.org/bible/readings/092026.cfm , retrieved17 September 2026; the response used for checking was temporary, while the registered artifact record preserves its exact byte count, SHA256 `9581da4f98293b2551dfbe2db4ff7939d26898ea3255c732bf4610d7b02e9015`, provenance and rights disposition without retaining the restricted payload. Browser initially403; complete curl response later succeeded. The registered passage `passage.united-states-conference-of-catholic-bishops.daily-readings.2026-09-20-web-2026-09-19.headings-and-citations` controls the checked title, Lectionary 133, every heading/verse boundary, response locus, adapted acclamation and final Gospel boundary. No claim about an entire printed Lectionary follows from this daily page. Exact wording remains restricted; the passage record retains locators and original analytical description only.
 
 ## Canonical retention and rights disposition
 

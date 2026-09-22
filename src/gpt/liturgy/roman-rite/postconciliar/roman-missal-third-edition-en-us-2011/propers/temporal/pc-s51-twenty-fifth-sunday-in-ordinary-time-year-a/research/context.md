@@ -1,6 +1,9 @@
 # PC-S51-A: context and appointed elements
 
-Context independently resolved 17 September 2026 for the proper-study resolve-context stage. This record settles the studied instance and source plan; it records no cold-review, publication, or ecclesiastical approval.
+Context independently resolved 17 September 2026 and revalidated 21 September
+2026 for this proper-study resolve-context stage. This record settles the
+studied instance and source plan; it records no cold-review, publication, or
+ecclesiastical approval.
 
 ## Exact identity
 
@@ -8,7 +11,23 @@ Calendar family: `postconciliar`. Celebration: Twenty-fifth Sunday in Ordinary T
 
 Governing books: Roman Missal, Third Edition, English for the dioceses of the United States of America (2011 implementation), and the Lectionary for Mass for Use in the Dioceses of the United States of America, Second Typical Edition, Volume I (1998/2001), with the 2017 Supplement where applicable. The dated national calendar identifies the underlying Ordo lectionum Missae, editio typica altera (1981), as emended. The Latin edition relationship is third typical edition, 2008 emended reprint. Territory: United States; language: approved U.S. English for liturgical identity, historical public-domain English only for study quotation. Context: adult parish Sunday Mass. General calendar resolution only: no supplied local solemnity or parish proper overrides. Requested study cycle: A. Actually appointed cycle on 2026-09-20: A; no cycle substitution is made. The arithmetic is 2026 mod 3 = 1 under guidance/liturgy/calendar-computation.md. The cycle interval runs from 2025-11-30 until the Advent boundary on 2026-11-29 (last Year A Sunday: 2026-11-22). For week numbering, Pentecost 2026-05-24 is the Sunday of resumed Week VIII; seventeen weeks later is Week XXV. Independently, 2026-09-20 is nine weeks before Week XXXIV on 2026-11-22, again giving XXV. The last pre-Lenten week is VI and Week VII is omitted in this thirty-three-week year. The calendar tool independently returned week 25 and Year A; it is a finding aid, not the occurrence authority. A weekday cycle is not applicable to this Sunday.
 
-Official dated authorities independently inspected on 17 September 2026: [USCCB, Liturgical Calendar 2026](https://www.usccb.org/resources/2026cal.pdf), printed p. 5 / PDF p. 7 for cycle and book identity and printed p. 38 / PDF p. 40 for this Sunday (page image checked), and [USCCB, 20 September 2026](https://bible.usccb.org/bible/readings/092026.cfm), complete individual daily page freshly retrieved and read. The source identifies the Sunday and Lectionary 133 and supplies exactly the reading units below. The page's wording is restricted; no complete NABRE/Lectionary text is retained in this leaf. Fresh retrieval evidence and remaining source work are in [context-source-plan.md](context-source-plan.md). The national calendar appoints the Sunday in green; the fixed September 20 memorial of Saints Andrew Kim Tae-gon, Paul Chong Ha-sang, and companions supplies no additional texts to this Sunday. No diocesan, religious, parish, titular, dedication, or patronal solemnity has been supplied, so none is resolved or ruled out for an unnamed church.
+Official dated authorities independently reinspected on 21 September 2026:
+[USCCB, Liturgical Calendar 2026](https://www.usccb.org/resources/2026cal.pdf),
+printed p. 5 / PDF p. 7 for cycle and book identity and printed p. 38 / PDF
+p. 40 for this Sunday, and [USCCB, 20 September
+2026](https://bible.usccb.org/bible/readings/092026.cfm). The live calendar
+identifies the Sunday, color, Lectionary 133 and the three readings; the indexed
+official daily page and its existing exact-byte passage record additionally
+confirm the Psalm, response locus and acclamation below. Direct retrieval of
+the daily URL returned HTTP 403 in this run, so no new artifact acquisition is
+claimed. The page's wording is restricted; no complete NABRE/Lectionary text is
+retained in this leaf. Reinspection evidence and remaining source limits are in
+[context-source-plan.md](context-source-plan.md). The national calendar
+appoints the Sunday in green; the fixed September 20 memorial of Saints Andrew
+Kim Tae-gon, Paul Chong Ha-sang, and companions supplies no additional texts to
+this Sunday. No diocesan, religious, parish, titular, dedication, or patronal
+solemnity has been supplied, so none is resolved or ruled out for an unnamed
+church.
 
 Canonical shared Missal owner: [Week25](../../shared/ordinary-time/weeks/25/propers/verified.md), shared with cycles B/C but containing no cycle-specific readings. Only that owner records Missal collation and reusable oration descriptions. The collection Makefile and edition registry were integrated by their authorized owner and independently inspected in this stage: all three PDF outputs depend explicitly on the Week 25 owner. The governing edition records are `../../registry/README.md`, `../../registry/formula-dispositions.md`, and `../../registry/occurrences-2026.md` relative to this leaf. Their PC-S51-A disposition adopts this exact identity without a new cycle expansion. The research stage has now completed the authoritative `instance/manifest.md` and target `propers/verified.md`; this context record remains their occurrence evidence, not a replacement for them.
 
@@ -36,7 +55,13 @@ The first Communion option is the editorial working branch for the eventual homi
 
 The concrete per-element source plan is [context-source-plan.md](context-source-plan.md). Use exact registered Douay–Rheims Challoner book artifacts for historical study text, clearly distinguished from approved proclaimed wording. Use owner incipits and analytic descriptions for orations and the composed Entrance; do not translate or reconstruct prayers. Keep copyright-protected bodies outside public payloads. Biblical textual variations and subverse cutting require an explicit study-text note.
 
-Research records are preparatory inputs for a full study, deliberately concise comparison, and speakable homily of approximately 10–12 minutes for adults. No prose output has yet been authored. Remaining source limits, bounded reception searches, and independent review remain in scope.md and source-audit.md. The complete source audit does not assert exhaustive patristic coverage or historical compositional unity of this Ordinary Time assemblage.
+Research records are the canonical inputs for a full study, deliberately
+concise comparison, and speakable homily of approximately 10–12 minutes for
+adults. Existing prose outputs were not changed by this stage and receive no
+new verdict from it. Remaining source limits, bounded reception searches, and
+independent review obligations remain in scope.md and source-audit.md. The
+complete source audit does not assert exhaustive patristic coverage or
+historical compositional unity of this Ordinary Time assemblage.
 
 ## Governing chant layer
 

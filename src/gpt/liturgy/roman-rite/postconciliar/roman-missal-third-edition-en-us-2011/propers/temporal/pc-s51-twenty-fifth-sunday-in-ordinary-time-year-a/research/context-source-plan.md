@@ -1,8 +1,37 @@
 # PC-S51-A: resolved source plan
 
-Resolved 17 September 2026. The ordered inventory is in [context.md](context.md).
-This plan identifies reusable evidence and remaining research; it does not
-accept the preliminary interpretations or certify unperformed collation.
+Resolved 17 September 2026 and independently revalidated 21 September 2026.
+The ordered inventory is in [context.md](context.md). This plan identifies
+reusable evidence and remaining verification; it does not inherit an earlier
+run's verdict or certify unperformed collation.
+
+## Current-run revalidation
+
+The existing source library was read before the live check. The registered
+2026 USCCB calendar artifact and its cycle, week-numbering, and September 20
+passage records were inspected, as were the registered exact-byte daily-page
+artifact and its headings-and-citations passage record, the Week 25 owner, and
+this leaf's bindings and audits. No research handoff was supplied for this run,
+and no new source artifact was acquired.
+
+The live 61-page USCCB calendar was opened again on 21 September 2026. Its
+cycle table still gives Year A from 30 November 2025 through 22 November 2026,
+and its September 20 entry still gives the Twenty-fifth Sunday in Ordinary
+Time, green, Isaiah 55:6--9, Philippians 1:20c--24, 27a, Matthew 20:1--16a,
+Lectionary 133, and Psalter Week I. The official daily-reading URL returned an
+HTTP 403 to direct retrieval in this run, but the official-domain indexed page
+was current and confirmed the complete headings: Psalm 145:2--3, 8--9, 17--18
+with response locus 18a and the acclamation Cf. Acts 16:14b, in addition to the
+calendar's three readings. The existing restricted exact-byte record from 19
+September 2026 independently carries those same headings and boundaries. No
+proclaimed English wording was copied or retained.
+
+The repository finding aid was rerun as `calendar-days day --date 2026-09-20
+--calendar postconciliar --json`. It returned Ordinary Time week 25, Year A,
+weekday Cycle II, and the fixed-date Korean-martyrs memorial as an unranked
+candidate. The official dated national calendar, rather than that computation,
+establishes the Sunday appointment. A weekday cycle remains inapplicable to
+this Sunday celebration.
 
 ## Independently inspected occurrence evidence
 
@@ -40,14 +69,13 @@ accept the preliminary interpretations or certify unperformed collation.
   witness directly confirms the present target; no exhaustive future-decree
   or unknown local-calendar claim follows.
 
-## Existing library read before acquisition
+## Existing library and source ownership
 
 The current calendar artifact record, ICEL Antiphonary edition/artifact record,
 Challoner/Gutenberg edition identity, the leaf's source bindings and source
-audit, and the Week 25 shared owner were read before new retrievals. The
-preliminary handoff was read in full as leads. Its claim that no shared owner
-or bindings existed is superseded by the files now present. Its patristic
-conclusions remain research-stage inputs, not accepted interpretation.
+audit, and the Week 25 shared owner were read before the live check. Existing
+research and prose remain inputs to later stages, not a verdict inherited by
+this stage.
 
 The shared [Week 25 owner](../../shared/ordinary-time/weeks/25/propers/verified.md)
 is the sole authority for common Missal element evidence, locators, rights and
@@ -93,27 +121,23 @@ policy govern each artifact and surface.
 
 ## Work that remains for research and downstream owners
 
-1. Complete `instance/manifest.md` and `propers/verified.md` from this context,
-   without copying the shared owner's Missal collation. The edition registry
-   now adopts PC-S51-A and the dated occurrence; its present context link can
-   point to the completed instance manifest when that file exists.
-2. Independently inspect the retained patristic and saintly passages before
-   developing interpretations. Existing `scope.md`, `source-audit.md`,
-   `source-bindings.toml` and `interpretations.md` are a useful corpus and claim
-   map, not a predecessor's PASS. Seek the outstanding direct Isaiah reception
-   and preserve negative findings and edition/transcription ceilings.
-3. Complete any needed official 2008 variation-list and exact 2011 U.S.
+1. Independently inspect the retained evidence needed for any new or revised
+   claim. Existing `scope.md`, `source-audit.md`, `source-bindings.toml`,
+   `interpretations.md`, and completed prose are a useful corpus and claim map,
+   not a predecessor's PASS.
+2. Complete any needed official 2008 variation-list and exact 2011 U.S.
    Missal checks in the shared owner through its authorized writer. Until
    then, the source-located study may use only the identified witness layers
    and must not claim diplomatic control over an uninspected altar book.
-4. Preserve all open choice classes in context.md and branches.md. No supplied
+3. Preserve all open choice classes in context.md and branches.md. No supplied
    parish evidence selects a chant, Preface, Eucharistic Prayer, ritual
    substitution or local solemnity. The homily's working Psalm Communion
    branch is editorial scope, not a report of performance.
-5. Keep reception findings in scope.md, coherent interpretation arguments in
+4. Keep reception findings in scope.md, coherent interpretation arguments in
    interpretations.md and completed production/review facts in
-   production-review.md. No authoring, rendering or review has been performed
-   by resolve-context. The existing comment-only main.tex was preserved.
+   production-review.md. This resolve-context stage did not author, render, or
+   review the studies or homily. It preserved the existing substantive
+   `main.tex` entrypoint.
 
 The authorized shared-file integrator added and this stage inspected the
 Makefile prerequisites linking all three PC-S51-A PDF outputs to

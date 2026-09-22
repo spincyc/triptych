@@ -879,3 +879,435 @@ hashes and paths are recorded in
 This terminal record changes no prose, research-seal input, PDF, web conversion
 or accepted review. The source, rights, collation, screen-review and unperformed
 audible-rehearsal limits recorded above remain in force.
+
+## Postconciliar chronology consumer repair — 21 September 2026
+
+This is a subsequent authoring and repair record, not a new workflow acceptance.
+The earlier accepted reviews, artifact hashes and installed identities above
+remain historical; they do not accept the current chronology or format revision.
+No engine-owned result or archive was changed.
+
+The research and concise dossiers now distinguish Isaiah's traditional
+ministry attribution from composition, and from the separately attributed
+critical late-exilic prophecy horizon. The proposed collection of Isaiah
+1–35 is not applied to chapter 55 or to the whole book. Matthew's NABRE
+position is the open post-A.D. 70 boundary, probably at least a decade later,
+not a bounded date in the 80s. Traditional alternatives retain their unequal
+warrants. Writing place, first readership and narrative setting remain
+distinct, including the qualifications on Matthew, John, Acts and Philippians.
+Psalter bounds are not precise individual dates or dates of final assembly.
+The Entrance biblical-basis dossier remains this provider's own inventory.
+
+`research/scope.md` records the retained witnesses actually inspected and the
+limits of those checks. The apparatus, used references, source bindings,
+edition manifest and review dependencies have been reconciled with that scope.
+There are 50 valid publication bindings and eight scriptural elements with
+18 chronology assertions. No shared corpus addition was required, and no
+generated chronology annotation was hand-edited by this repair.
+
+All three canonical Make builds exited 0: **22 research, 10 synthesis and
+3 homily pages**. The concise dossier initially overflowed physical page 2;
+prose compression retained its substantive qualifications without reducing
+type, and the final component artifact check passes. These are current build
+counts, not targets to be reached through padding. The final log screen found
+no warning, undefined-reference or overfull/underfull-box diagnostic; the
+word “Rerun” occurred only in the `rerunfilecheck` package description.
+
+The following scoped checks exited 0: `bindings-valid`,
+`chronology-record-current`, `chronology-annotations-current`,
+`chronology-claims-supported`, `references-used`, `house-voice`,
+`restricted-not-reproduced`, `structural-meta-labels`, and
+`check-proper-components --phase artifacts`. The critical-profile query for
+Matthew 20:1 returned `composition-only` and `post-A.D. 70 date`.
+`source-library validate` exited 0. `make check-sources` exited 2 on the
+out-of-scope installed GPT 1962 synthesis PDF's subject mismatch with its
+current source; this repair did not update that publication.
+
+The external-evidence dependency audit found no missing external source owner.
+It did identify the opened leaf-local `proper-components.toml` as absent
+from the research seal; this is reported to the coordinating tooling owner,
+not treated as a complete seal pass.
+
+Review rasters and contact sheets were generated under
+`build/pc-consumer-chronology-review-20260921/`. The concise dossier's physical
+page 2 and the three outputs' contact sheets were opened. This does not
+establish full-size page-by-page inspection, final-page acceptance or a
+no-padding verdict. In particular, the study's major-section forced breaks
+remain for the layout reviewer to assess. Diagnostic logs are under
+`.scratch/propers-format/`.
+
+Independent research, content and visual acceptance remain outstanding.
+Generation metadata was not refreshed with an invented model identity or
+review event; finalization belongs to the coordinator. No installed PDF or web
+edition, release inventory, Git index, commit or push was changed by this
+consumer repair.
+
+## Expansive study author proof — proper-study v6
+
+Author-study iteration 0 for run `bbe114e132356b38` rederived the expansive
+study from the independently reviewed current research. The reviewed evidence
+preserves the same eleven appointed elements, two mutually exclusive Communion
+options and three defensible interpretive lanes. The existing study prose and
+schema-2 component architecture already expressed those inputs accurately, so
+this stage retained the settled `main.tex`, research-mode components and
+`proper-components.toml` rather than introducing a merely stylistic rewrite.
+The generation record now identifies this run and this author pass.
+
+The substantive study body contains **6,608 words**: a 253-word opening, 1,993
+words of element-by-element exposition, interpretive lanes of 1,263, 1,308 and
+1,481 words, and a 310-word concluding comparison. The lawful study-text and
+locator component, terminal historical dossier and apparatus are additional.
+All eleven elements contribute to each lane, each lane develops at least two
+checked Fathers or saints and its own literal, allegorical, moral and
+anagogical senses, and the two Communion options remain alternatives.
+
+The canonical author build completed in two settled passes and produced a
+20-page research PDF. The component artifact check, content preflight,
+generation-metadata check, provenance-to-run check and proper-study content
+check all exited 0. The build-log screen found no warning, overfull or
+underfull box, undefined reference, fatal error, emergency stop, rerun request
+or multiply defined label. Every reported font is embedded. The 20-page
+contact sheet was inspected, with the two chronology pages and final
+references/rights page opened at full raster size; no clipping, overlap,
+missing text or unreadable colophon was found. Page 18's open lower half is the
+natural end of the chronology appendix, not added filler.
+
+The exact proof is
+`build/tpt-runs/bbe114e132356b38/artifacts/author-study-0/proof/study.pdf`,
+SHA256
+`8bdebdd9171173b9cfa5861bbeded5e85fa4cecb64893d7cafad7b8df0d59678`.
+Its build log, extraction, metadata, font inventory, check report, word count
+and replaceable page rasters are beside it under the same stage artifact
+directory.
+
+The study retains the reviewed source limits: the patristic and saintly sweep
+is bounded rather than exhaustive; complete official 2008 Latin and U.S. 2011
+altar-book collation remains unperformed; no direct ancient exposition of the
+three composed orations was verified; and historical English, OCR or modern
+digital witnesses keep their recorded edition limits. Restricted ICEL and CCD
+bodies are not reproduced. This author verification is neither a cold content
+review nor the later independent visual review, and it changes no installed
+PDF, web edition, release record, Git index, commit or remote ref.
+
+## Expansive study author proof reentry — proper-study v6, iteration 1
+
+This reentry addresses `STALE-STUDY-REVIEW`, the engine finding that the prior
+cold-review inputs changed after dispatch. It introduces no new research or
+study prose: `main.tex`, the research-mode components, the schema-2 manifest,
+the three interpretive lanes and their **6,608-word** substantive body remain
+the settled iteration-0 deliverable. The current source graph was allowed to
+stabilize before author verification so the workflow can issue a new sealed,
+independent review packet from the resulting state.
+
+The canonical `make doc` target exited 0, and the required current
+`check-proper-components --phase artifacts --edition research` invocation
+exited 0 against the settled checker. The resulting PDF is byte-identical to
+the iteration-0 author proof: **20 letter-size pages**, **439,290 bytes**, and
+SHA-256
+`8bdebdd9171173b9cfa5861bbeded5e85fa4cecb64893d7cafad7b8df0d59678`.
+The TeX diagnostic screen again found no warning, overfull or underfull box,
+undefined reference, fatal error, emergency stop, rerun request or multiply
+defined label; all reported fonts are embedded subsets. The new contact sheet
+and all twenty page rasters were inspected, with the chronology appendix and
+terminal references/rights page checked at full size. No clipping, overlap,
+lost text or unreadable colophon was observed, and page 18's open lower half
+remains the natural end of the chronology appendix.
+
+The exact reentry proof is
+`build/tpt-runs/bbe114e132356b38/artifacts/author-study-1/proof/study.pdf`,
+SHA-256
+`8bdebdd9171173b9cfa5861bbeded5e85fa4cecb64893d7cafad7b8df0d59678`.
+Its build log, extraction, metadata, font inventory, component-check record,
+word count and replaceable rasters are beside it in the same iteration
+artifact directory. The reviewed source and rights limits stated above remain
+unchanged. A new cold study review, not this author proof, decides acceptance.
+
+## Concise study author proof — proper-study v6
+
+Derive-synthesis iteration 0 for run `bbe114e132356b38` rederived the concise
+comparison from the accepted expansive study. The current synthesis sources
+already preserve the study's three controlling interpretations and their
+material differences, so this stage retained the settled prose rather than
+introducing a merely stylistic rewrite. The argument compares the personal and
+corporate vineyard identifications, the distinct accounts of generosity and
+payment order, gift and willing response, timely conversion, service to the
+one people, and the two mutually exclusive Communion endings. No new
+evidence-dependent claim or upstream repair was introduced.
+
+The substantive concise body contains **3,385 words**: 796 in the two-page
+Themes and Movement argument and 2,589 in the developed interleaved
+commentary. The reproducible count converts the two components through
+Pandoc's LaTeX AST, excludes headings, notes and tables, and counts
+whitespace-separated plain prose. It excludes the page-1 inventory and
+four-senses overview, page-2 generated chronology dossier, title, terminal
+scope, references, metadata and rights colophon.
+
+The shared generation record now carries the finalization timestamp
+`2026-09-22T02:14:38Z` and this run's actual concise-study contribution while
+preserving the packet's exact proper-study v6 digest, run and seed commit.
+The schema-2 manifest and synthesis-only component membership remain truthful;
+`synthesis.tex` imports the shared preamble and propers format followed by
+literal unconditional component imports.
+
+The canonical `make doc` target completed two settled passes and produced a
+**10-page** letter-size PDF. The required synthesis artifact checker exited 0
+and verified the physical-page contract: inventory and exactly four overview
+senses on page 1, chronology alone on page 2, themes on pages 3--4 and
+developed commentary beginning on page 5. The final log contains no warning,
+overfull or underfull box, undefined reference, fatal error, emergency stop,
+rerun request or multiply defined label. All reported fonts are embedded
+subsets with Unicode mappings, and text extraction succeeded.
+
+The contact sheet and all ten full-size page rasters were inspected. No
+clipping, overlap, missing text, detached heading or unreadable terminal
+matter was observed. This is an author proof inspection, not the following
+independent synthesis review. Replaceable raster evidence is under
+`build/tpt-runs/bbe114e132356b38/artifacts/derive-synthesis-0/rasters/`.
+
+The exact proof files are:
+
+- PDF: `build/tpt-runs/bbe114e132356b38/artifacts/derive-synthesis-0/proof/synthesis.pdf`, SHA-256 `4b55b95fc45452a0b7af02559ca0b00c56936360f771e27e5f3f202d70f67778`.
+- auxiliary: `build/tpt-runs/bbe114e132356b38/artifacts/derive-synthesis-0/proof/synthesis.aux`, SHA-256 `787bda1b6d90622039d6a793df51b458a0ea84440ce622a42902479e8296e036`.
+- log: `build/tpt-runs/bbe114e132356b38/artifacts/derive-synthesis-0/proof/build.log`, SHA-256 `6dd0adcd24d3cd14b56bc4356ba8e57fe3d91250f37940ad50383fffcd81caa1`.
+
+The extraction, metadata, font inventory, component-check record, diagnostics,
+hash list and word-count record are beside those files. The reviewed source,
+rights and collation limits stated above remain unchanged. No installed PDF,
+web edition, release record, Git index, commit or remote ref was changed.
+
+## Concise study author proof repair — proper-study v6, iteration 1
+
+Derive-synthesis iteration 1 for run `bbe114e132356b38` addresses `SYN-001`
+and `SYN-002`. The second Themes and Movement page now develops the accepted
+study's distinct accounts of the common reward, unequal waiting and present
+response. The four cited passages now state the liturgical relations and the
+witnesses' differences directly, without instructions, hypothetical document
+forms or narration of the comparison process. No new evidence-dependent claim
+or upstream repair was introduced.
+
+The substantive concise body now contains **3,482 words**: 923 in the two-page
+Themes and Movement argument and 2,559 in the developed interleaved commentary.
+The count retains iteration 0's exclusions and applies the same Pandoc prose
+boundary to the revision delta. The shared generation record carries the
+finalization timestamp `2026-09-22T02:39:04Z` and this repair's actual model
+contribution.
+
+The canonical `make doc` target completed two settled passes and produced a
+**10-page** letter-size PDF. The required synthesis artifact checker and the
+synthesis-mode `house-voice` check exited 0. Settled auxiliary evidence places
+inventory and all four overview senses on physical page 1, chronology on page
+2, themes on pages 3--4 and developed commentary on page 5. The log contains no
+warning, overfull or underfull box, undefined reference, fatal error, emergency
+stop, rerun request or multiply defined label. All reported fonts are embedded
+subsets with Unicode mappings, and text extraction succeeded.
+
+The contact sheet and all ten full-size page rasters were inspected. Page 4 is
+substantively occupied to a normal lower margin, with no padding or displaced
+apparatus. No clipping, overlap, missing text, detached heading or unreadable
+terminal matter was observed. Replaceable raster evidence is under
+`build/tpt-runs/bbe114e132356b38/artifacts/derive-synthesis-1/review/`.
+
+The exact proof files are:
+
+- PDF: `build/tpt-runs/bbe114e132356b38/artifacts/derive-synthesis-1/proof/synthesis.pdf`, SHA-256 `e5be1fe9c0a8275ab6270bc0474d39a7a89b64d75bec4d97de4d281f03076b56`.
+- auxiliary: `build/tpt-runs/bbe114e132356b38/artifacts/derive-synthesis-1/proof/synthesis.aux`, SHA-256 `92e5285b75b8fcf0357388a18b669323be038a9f837b6278f4470bd0ecd38d83`.
+- log: `build/tpt-runs/bbe114e132356b38/artifacts/derive-synthesis-1/proof/build.log`, SHA-256 `212bd362e089edcc3a7bff0b499676159452eedaea39df0e760014579e5c9a2f`.
+
+The extraction, check record and word-count record are beside those files. The
+reviewed source, rights and collation limits stated above remain unchanged. No
+installed PDF, web edition, release record, Git index, commit or remote ref was
+changed.
+
+## Homily author proof — proper-study v6
+
+Derive-homily iteration 0 for run `bbe114e132356b38` rederived the standalone
+homily from the independently accepted expansive and concise studies. A direct
+comparison against both current proofs confirmed that the settled homily body
+still presents their compatible gift-and-cultivation and conversion-without-
+rivalry readings accurately after the synthesis repair. It was therefore
+retained rather than stylistically rewritten. The speech joins the Gospel's
+kept promise and unwelcome equality to Isaiah's summons and abundant mercy,
+Paul's fruitful service, the Collect's love of God and neighbor, and the
+Eucharistic movement from receiving Christ's self-gift to serving others.
+
+The literal spoken component contains **1,288 whitespace-separated words**.
+At the stated unhurried estimate of 115--125 words per minute, it is
+**10.3--11.2 minutes** before additional pauses. A silent read-through checked
+sentence sense, transitions, repeated motifs and oral clarity. No audible
+rehearsal or timed human delivery is claimed. The title and terminal
+source-and-delivery apparatus remain outside the spoken component.
+
+`homily.tex` imports `common/preamble`, `common/propers-format` and
+`common/propers-homily` literally in that order. Its sole `properhomily`
+environment encloses exactly one literal import of `sections/homily-body.tex`;
+the source-and-delivery note, `References`, generation record and rights
+colophon follow the environment's closing page break. The shared generation
+record now carries this run's provenance, the finalization timestamp
+`2026-09-22T03:05:25Z`, and this actual homily contribution.
+
+The homily preserves the accepted studies' limits. It does not reproduce or
+reconstruct the restricted Lectionary or ICEL prayer bodies, claim one enacted
+Communion option, attribute the whole modern formulary to a Father, or turn a
+word-count estimate into a human rehearsal. Its pastoral examples are
+applications rather than reported events. The exact patristic loci used in the
+speech are identified under the terminal `References` heading.
+
+The canonical `make doc` target completed two settled passes and produced a
+**3-page**, **273,997-byte** letter-size PDF. The homily content-phase component
+check and all twelve owning preflight checks exited 0, including used
+references, source bindings, rights, interpretive coverage, house voice,
+chronology and provenance. The log contains no warning, overfull or underfull
+box, undefined reference, fatal error, emergency stop, rerun request or
+multiply defined label; the sole `Rerun` match is the `rerunfilecheck` package
+description. All reported fonts are embedded subsets with Unicode mappings,
+and text extraction succeeded.
+
+All three full-size page rasters were inspected. The spoken body occupies
+physical pages 1--2 in two balanced columns, ends as preaching, and is followed
+by the forced page break. The source note, four-item `References`, generation
+timestamp and rights colophon remain legible and unclipped on page 3. No text
+overlap, detached heading, missing content or artificial padding was observed.
+
+The exact author proof is
+`build/tpt-runs/bbe114e132356b38/artifacts/derive-homily-0/proof/homily.pdf`,
+SHA-256
+`2544843ff387a2d2ebe347c848a87b148b67cd710aa5fb1182dd60a151c81ab4`.
+Its build log, extraction and replaceable page rasters are beside it. The
+artifact-phase component checker correctly withheld acceptance because the
+metadata change differs from the earlier visual-review snapshot; establishing
+a new immutable review snapshot belongs to the following independent review
+stages. This author proof changes no installed PDF, web edition, release
+record, Git index, commit or remote ref.
+
+## Build artifacts — proper-study v6, iteration 0
+
+Completed 22 September 2026 UTC for run `bbe114e132356b38`. All three packet-
+specified `make doc DOC=<output-id> PROVIDER=gpt` targets completed in settled
+passes from the shared finalization timestamp `2026-09-22T03:05:25Z`. This
+stage made no layout or render-source edit and did not change accepted prose,
+evidence, component membership or generation declarations.
+
+| Output | Pages | Bytes | SHA-256 |
+| --- | ---: | ---: | --- |
+| research study | 20 | 439290 | `335f6316dce984e4926a40a6b01b9543d923cf97bf2049fb202ed26ae7f95290` |
+| concise study | 10 | 418902 | `5c8dd1a8660b1b894f64bfc34f0592b133b78559a8856b243f531d4b56db160d` |
+| homily | 3 | 273997 | `2544843ff387a2d2ebe347c848a87b148b67cd710aa5fb1182dd60a151c81ab4` |
+
+The outputs are the canonical mirrored paths under `build/gpt/` for the bare
+document id, `-synthesis` and `-homily`. `research/artifacts.json` records the
+exact PDF bytes, pagination evidence and render-input hashes. The prescribed
+snapshot command completed, and `scripts/_proper_study.py check --phase
+artifacts` passed against that snapshot, the component graph and all three
+rendered metadata records.
+
+The final TeX logs contain no fatal error, warning, undefined reference,
+overfull or underfull box, emergency stop, rerun request or multiply defined
+label; the only matches for warning-related words identify loaded packages.
+`pdfinfo`, `pdffonts`, plain and layout-aware text extraction and Ghostscript
+parsing with `-dPDFSTOPONERROR` exited 0 for all three PDFs. The study,
+synthesis and homily list 14, 16 and 11 font rows respectively; every row is
+embedded, subsetted and Unicode-mapped. qpdf is unavailable, so no qpdf check
+is claimed.
+
+The extracted study and concise text preserve every accepted section,
+reference list, terminal qualification, rights colophon and the current
+timestamp. Comparison with the accepted author proofs found only the expected
+finalization-timestamp change in the prose stream. The homily PDF is byte-
+identical to its accepted author proof and its extraction contains all three
+nonempty pages, the complete speech, the separate source-and-delivery note,
+four references, timestamp and rights colophon. Its two-column spoken pages
+extract in display order rather than continuous speech order with the generic
+extractor; this known mechanical limitation does not change the PDF's content
+or page images and remains visible to downstream accessibility work. No
+replacement character or missing terminal matter was found in any extraction.
+
+The concise auxiliary settles the presentation contract exactly: inventory,
+overview and all four sense markers are on physical page 1; chronology begins
+and ends on page 2; themes begin on page 3 and end on page 4; and commentary
+begins on page 5. The 20-page research study and 10-page concise study meet
+their required physical-page ranges.
+
+The repository PDF-review helper generated 33 individual page rasters, 33
+thumbnails and three contact sheets beneath
+`build/tpt-runs/bbe114e132356b38/artifacts/build-artifacts-0000/rasters/`.
+The sibling `proof/` directory retains exact copies of the three PDFs, all
+three final logs, the settled concise auxiliary and all three text
+extractions. These records establish artifact identity and mechanical checks;
+the fresh visual evaluator remains responsible for full-size page-by-page
+acceptance. The previously recorded source, rights and altar-book collation
+limits remain. No PDF was installed, and no web output, release control, Git
+index, commit or remote ref was changed by this stage.
+
+## Proper-study v6 reviews and installation — 22 September 2026
+
+The engine's independent study review passed at iteration 1 after reading the
+complete 20-page study against its sealed sources, interpretation audit,
+chronology bindings and exact patristic loci. The independent synthesis review
+passed at iteration 1 after confirming that the repaired 10-page concise study
+preserves the accepted study's controlling interpretations and source bounds,
+fills physical pages 3--4 with substantive comparison and replaces the two
+reported process-narration defects with direct qualified claims. The
+independent homily review passed at iteration 0 after a silent continuous
+reading of the 1,288-word spoken body and comparison with the reviewed studies
+and retained sources. The recorded 10.3--11.2-minute duration remains an
+estimate at 115--125 words per minute; no audible rehearsal or timed human
+delivery is claimed.
+
+The independent visual-review result passed after inspection of all 33
+full-size rendered pages. The accepted PDF receipts are
+`335f6316dce984e4926a40a6b01b9543d923cf97bf2049fb202ed26ae7f95290`
+for the 20-page research study,
+`5c8dd1a8660b1b894f64bfc34f0592b133b78559a8856b243f531d4b56db160d`
+for the 10-page concise study, and
+`2544843ff387a2d2ebe347c848a87b148b67cd710aa5fb1182dd60a151c81ab4`
+for the three-page homily. The review found the required embedded Latin Modern
+presentation, page bounds, concise opening sequence, two-column spoken body
+and terminal apparatus legible and intact, with no clipping, overlap,
+unresolved layout warning or rights-only spill page.
+
+The independent web-review result passed for the canonical Markdown with
+SHA-256
+`245d39ec02d1ea3b147b0131134fd3f7b39db96d3483ba2a1fe531340c1fa2cd`.
+Exact regeneration matched byte for byte; all 34 sealed source, PDF and
+pagination hashes matched; static and locked-renderer desktop/mobile review
+found the complete study, nine working contents targets, all eleven proper and
+three interpretation anchors, three semantic four-senses lists, 37 linked
+notes and two responsive tables, with no missing or duplicate fragment, TeX
+debris or production debris. That review was bounded to the canonical page,
+not external links or whole-site navigation.
+
+The three normal `make install-doc` recipes completed for the bare,
+`-synthesis` and `-homily` IDs. Each installed PDF is byte-identical to its
+reviewed build artifact and to the accepted receipt above. The canonical
+Markdown was installed byte for byte at
+`web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.md`
+and staged for the publication gate; its installed hash remains the accepted
+web receipt above.
+
+The three existing publication records were read and preserved. Each carries
+schema version 1, its exact bare, `-synthesis` or `-homily` ID, catalog
+`library/novus-ordo-liturgy.md`, status `alpha`, and authorization
+`perpetual-public-repository-2026`. The catalog keeps exactly one canonical GPT
+publication marker and its Year A row links Research PDF, Synthesis PDF,
+Homily PDF and Read in schema-2 order while preserving the Claude links and
+the planned Cycle B and C cells. No companion row or second web authority was
+created. These are completed review and installation facts; they do not claim
+a commit, push, deployment or human delivery.
+
+## Proper-study v6 terminal disposition and archive — 22 September 2026
+
+Publication-gates iteration 0 returned `PASS` with no findings or
+escalations, and the engine reached `ACCEPTED`. The owning leaf preserves the
+exact v6 history under
+`evaluations/proper-study-results/bbe114e132356b38/`: 30 accepted result
+submissions, their 30 packet texts, the immutable seed manifest and bootstrap,
+the terminal engine state, and exact terminal status and replay outputs. Fresh
+status and replay commands reproduce those terminal records; replay reports
+`recorded_file_intact: true`.
+
+The archive retains each real repair cycle: one research dependency finding,
+one stale study-review finding after the research repair, and two concise
+study findings about the second themes page. Their owning stages repaired the
+issues and the downstream cold reviews reran before final build, web review,
+installation and terminal acceptance. The archive does not claim a commit,
+push, deployment or human delivery.

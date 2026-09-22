@@ -2,16 +2,13 @@
 
 *Expansive study of the proper of the Twenty-fifth Sunday in Ordinary Time, Year A, in the Roman Missal, Third Edition, for the dioceses of the United States of America, with Lectionary no. 133: appointed texts, each element in its setting, three interpretations of the whole formulary with their four senses, and a comparison*
 
-<span class="smallcaps">Roman Missal, Third Edition · Lectionary for Mass, no. 133</span>
+**The Twenty-fifth Sunday in Ordinary Time<br>
+Year A**
 
-**The Twenty-fifth Sunday in Ordinary Time**
-
-**Year A**
-
-*Dominica XXV “per annum”*
-
-The labourers in the vineyard and the goodness of the householder:  
+The labourers in the vineyard and the goodness of the householder:<br>
 a study of the proper in three interpretations
+
+[TOC]
 
 ## A Full Day’s Wage for One Hour’s Work {#sec:opening}
 
@@ -28,8 +25,8 @@ The Sunday’s question is therefore what kind of justice pays the last as the f
 ### The appointed elements at a glance
 
 | **Element** | **Text and reference** | **What it says** |
-|:-------------|:-------------------|:-----------------------------------|
-| Entrance Antiphon | *Salus populi ego sum*; a composed text, with no scriptural reference printed | The Lord names himself the salvation of the people, promises to hear them from whatever tribulation they cry out of, and declares himself their Lord for ever. |
+|:---|:---|:---|
+| Entrance Antiphon | *Salus populi ego sum*; a composed text whose basis the official Antiphonary identifies as Ps 37 (36):39–40, though the Missal prints no locator | The Lord names himself the salvation of the people, promises to hear them from whatever tribulation they cry out of, and declares himself their Lord for ever. |
 | Collect | *Deus, qui sacrae legis omnia constituta* | The address rests all that the sacred law lays down on the love of God and of neighbour; the petition is that those who keep God’s precepts may reach eternal life. |
 | First Reading | Isa 55:6–9 | Seek the Lord while he may be found; let the wicked return, for God is bountiful to forgive; his thoughts and ways are as far above ours as heaven above earth. |
 | Responsorial Psalm | Ps 145 (144):2–3, 8–9, 17–18; response from v. 18a | Daily praise of the Lord’s greatness; the Lord gracious, merciful and patient, sweet to all; just in all his ways and near to all who call on him in truth. |
@@ -155,7 +152,7 @@ The texts of this Mass come from two books with separate histories. The antiphon
 
 ### The Lord’s oracle at the entrance
 
-The Entrance Antiphon, *Salus populi ego sum, dicit Dominus*, is spoken in God’s own person. He names himself the salvation of the people; he promises to hear them from whatever tribulation they cry out of; he declares himself their Lord for ever. The Missal prints no scriptural reference beside it, in Latin or in English, and it is not a verse of Scripture. The *Antiphonary* excerpted from the English Missal carries a compiler’s note that the text is based on Ps 37 (36):39–40, but in the Clementine Vulgate that psalm shares with the antiphon only the words *salus* and *tribulationis*. Closer phrases stand elsewhere in the Psalter: *Salus tua ego sum* (Ps 35 (34):3), *clamaverunt … exaudivit … ex omnibus tribulationibus* (Ps 34 (33):18) and *clamabit ad me, et ego exaudiam eum … in tribulatione* (Ps 91 (90):15). None of them is quoted: the antiphon is a composed oracle whose nearest contacts in the Psalter are phrases and not verses. Ildefonso Schuster, who knew it as an Introit of the earlier Roman Missal sung at the two stational Masses in the basilica of Saints Cosmas and Damian, thought that it “emanates perhaps from the Itala” (*The Sacramentary*, vol. 3, p. 171). The Mass therefore begins before anyone has asked for anything: God speaks first, and what he says is a promise to hear.
+The Entrance Antiphon, *Salus populi ego sum, dicit Dominus*, is spoken in God’s own person. He names himself the salvation of the people; he promises to hear them from whatever tribulation they cry out of; he declares himself their Lord for ever. The Missal prints no scriptural reference beside it, in Latin or in English, and it is not a verse of Scripture. The official *Antiphonary* identifies Ps 37 (36):39–40 as the text’s basis, but in the Clementine Vulgate that psalm shares with the antiphon only the words *salus* and *tribulationis*. Closer phrases stand elsewhere in the Psalter: *Salus tua ego sum* (Ps 35 (34):3), *clamaverunt … exaudivit … ex omnibus tribulationibus* (Ps 34 (33):18) and *clamabit ad me, et ego exaudiam eum … in tribulatione* (Ps 91 (90):15). None of them is quoted: the antiphon is a composed oracle, and the Antiphonary’s relation is an identified basis rather than an adaptation. Ildefonso Schuster, who knew it as an Introit of the earlier Roman Missal sung at the two stational Masses in the basilica of Saints Cosmas and Damian, thought that it “emanates perhaps from the Itala” (*The Sacramentary*, vol. 3, p. 171). The Mass therefore begins before anyone has asked for anything: God speaks first, and what he says is a promise to hear.
 
 ### The Collect: the law and its two loves
 
@@ -205,7 +202,9 @@ John 10:14 is spoken to the Pharisees after the healing of the man born blind (9
 
 The last prayer, *Quos tuis, Domine, reficis sacramentis*, commends those whom God restores with his sacraments to his continual help. Its purpose clause names what they are to possess, the effect of redemption, *redemptionis effectum*, and the two places where they are to possess it: *et mysteriis … et moribus*, in the mysteries and in conduct. The Mass that opened with God’s promise to hear ends by asking that what is received at the altar be found again in the way its communicants live.
 
-## One Wage across the Ages: The Day as the History of Salvation {#sec:one-wage-across-the-ages}
+## One Wage across the Ages: The Day as the History of Salvation {#lane-economy}
+
+<span id="sec:one-wage-across-the-ages" data-label="sec:one-wage-across-the-ages"></span>
 
 Heard in its widest sense, the householder’s day is the whole history of the world. God has been calling labourers into his vineyard since the first just man, Israel through the long day and the nations at its end, and at evening he gives them all the one reward, which is eternal life. The parable then declares that the late comers’ equal share is God’s faithfulness to his own purpose and no wrong done to those who came before.
 
@@ -255,19 +254,25 @@ Jerome reports the scheme as the view of others and prefers to read the hours as
 
 ### The four senses of this interpretation
 
-Literal.  
-A landowner hires workers at five hours of one day, pays the last as he agreed to pay the first, and defends his right to do so. Isaiah promises abundant pardon to the wicked who return, because God’s ways are not ours. Paul, imprisoned and uncertain of his sentence, stays at his work for a young church. Luke records that the Lord opened the heart of a Gentile woman at Philippi.
+Literal.
 
-Allegorical.  
-The day is the history of salvation and the vineyard is the Church from Abel to the last of the elect (Gregory). Christ is the householder who “went out” when he made himself known to the nations after Pentecost (Augustine). The one denarius is the life he opens to Israel and to the Gentiles together. Lydia signifies the Church, which took to heart the preaching the Jews had driven away (Bede), and the two flocks become one fold under one shepherd (Gregory; Augustine).
+: A landowner hires workers at five hours of one day, pays the last as he agreed to pay the first, and defends his right to do so. Isaiah promises abundant pardon to the wicked who return, because God’s ways are not ours. Paul, imprisoned and uncertain of his sentence, stays at his work for a young church. Luke records that the Lord opened the heart of a Gentile woman at Philippi.
 
-Moral.  
-Those who have long been in the Church do not resent those who arrive late, and do not count their years of service as a claim on God. Every earlier calling, Jerome says, envied the Gentiles the grace of the Gospel, and the same grievance can return in anyone who came before another. Those born into the faith have less excuse for idleness than those to whom no prophet came (Gregory). The labourer who has borne the day’s burden stays at his post for the sake of those called late, as Paul does.
+Allegorical.
 
-Anagogical.  
-At the evening of the world all the just, from Abel onward, “will receive together … the blessedness of the resurrection” (Augustine). They will differ in brightness and be equal in life without end (Augustine), one beatitude shared according to the measure of each (Aquinas). The fathers who waited long have already passed, after their delay, to the joys of the kingdom, and those who come after the Mediator are led to it as soon as they leave the body (Gregory).
+: The day is the history of salvation and the vineyard is the Church from Abel to the last of the elect (Gregory). Christ is the householder who “went out” when he made himself known to the nations after Pentecost (Augustine). The one denarius is the life he opens to Israel and to the Gentiles together. Lydia signifies the Church, which took to heart the preaching the Jews had driven away (Bede), and the two flocks become one fold under one shepherd (Gregory; Augustine).
 
-## Seek the Lord While He May Be Found: The Day as a Human Life {#sec:seek-the-lord}
+Moral.
+
+: Those who have long been in the Church do not resent those who arrive late, and do not count their years of service as a claim on God. Every earlier calling, Jerome says, envied the Gentiles the grace of the Gospel, and the same grievance can return in anyone who came before another. Those born into the faith have less excuse for idleness than those to whom no prophet came (Gregory). The labourer who has borne the day’s burden stays at his post for the sake of those called late, as Paul does.
+
+Anagogical.
+
+: At the evening of the world all the just, from Abel onward, “will receive together … the blessedness of the resurrection” (Augustine). They will differ in brightness and be equal in life without end (Augustine), one beatitude shared according to the measure of each (Aquinas). The fathers who waited long have already passed, after their delay, to the joys of the kingdom, and those who come after the Mediator are led to it as soon as they leave the body (Gregory).
+
+## Seek the Lord While He May Be Found: The Day as a Human Life {#lane-conversion}
+
+<span id="sec:seek-the-lord" data-label="sec:seek-the-lord"></span>
 
 The same day can be measured on a smaller clock. It is one human life, from the morning of childhood to the last hour of old age, and the householder goes out into every part of it. God calls at every age; the one who comes late is truly received; therefore no one may despair. And because no one knows how long his day will be, no one may wait for a later hour. Heard in this way the Mass is a summons to turn now, addressed equally to those who have served long and to those who have long stood idle. The prophet’s “while he may be found” is its motto, and nearly every other text supplies either the promise that a late cry is heard or the warning that the time is short.
 
@@ -317,19 +322,25 @@ Augustine names the chief difficulty himself: the parable, taken alone, seems to
 
 ### The four senses of this interpretation
 
-Literal.  
-Men are hired at five hours of one working day and all are paid the day’s wage. A prophet calls his people to seek the Lord and return to him while there is time, promising pardon. An apostle who longs to be with Christ judges that his remaining alive is needful for others, and asks of them only a life worthy of the Gospel.
+Literal.
 
-Allegorical.  
-The hours of the day are the ages of a life, from the child called from the womb to the old man at the edge of night (Jerome; Augustine; Gregory). The householder who goes out is Christ making himself known (Augustine alone, *Sermo* 87.9). The thief who confessed God on the cross is the labourer of the eleventh hour, paid before the first (Gregory). The God of the first reading is the father who runs gladly to meet the son returning after a long time (Jerome).
+: Men are hired at five hours of one working day and all are paid the day’s wage. A prophet calls his people to seek the Lord and return to him while there is time, promising pardon. An apostle who longs to be with Christ judges that his remaining alive is needful for others, and asks of them only a life worthy of the Gospel.
 
-Moral.  
-Turn today. Do not despair over a wasted past, for all is forgiven the one who turns; do not presume on a future no one has promised (Augustine). Work for the Lord’s gains and not your own (Gregory), let life bear fruit (Chrysostom; Aquinas), prove by deeds that you know the shepherd (Gregory), and despair of no one else.
+Allegorical.
 
-Anagogical.  
-The evening is each person’s death, whose day God has mercifully hidden (Augustine), and beyond it the common reckoning when the steward calls the labourers. What was sought in time is then possessed: to be dissolved and to be with Christ, which Paul calls “by far the better”, and the one denarius of eternal life.
+: The hours of the day are the ages of a life, from the child called from the womb to the old man at the edge of night (Jerome; Augustine; Gregory). The householder who goes out is Christ making himself known (Augustine alone, *Sermo* 87.9). The thief who confessed God on the cross is the labourer of the eleventh hour, paid before the first (Gregory). The God of the first reading is the father who runs gladly to meet the son returning after a long time (Jerome).
 
-## Because I Am Good: The Wage as Gift and the Giver as Reward {#sec:because-i-am-good}
+Moral.
+
+: Turn today. Do not despair over a wasted past, for all is forgiven the one who turns; do not presume on a future no one has promised (Augustine). Work for the Lord’s gains and not your own (Gregory), let life bear fruit (Chrysostom; Aquinas), prove by deeds that you know the shepherd (Gregory), and despair of no one else.
+
+Anagogical.
+
+: The evening is each person’s death, whose day God has mercifully hidden (Augustine), and beyond it the common reckoning when the steward calls the labourers. What was sought in time is then possessed: to be dissolved and to be with Christ, which Paul calls “by far the better”, and the one denarius of eternal life.
+
+## Because I Am Good: The Wage as Gift and the Giver as Reward {#lane-gift}
+
+<span id="sec:because-i-am-good" data-label="sec:because-i-am-good"></span>
 
 The first two interpretations read the parable from its hours. The third reads it from its evening. The parable turns on the householder’s answer to the complaint, and the answer says three things: the first are wronged in nothing; what the last receive is no payment but a gift; and the giver’s reason is his own goodness. Four expositors of the Gospel state this of the same verses, and the rest of the Mass presses the point further, until the wage itself turns out to be the giver. The *Ordo lectionum Missae* marks the same place in the two readings it correlates. The title it sets over the Gospel is the householder’s question, “Is thy eye evil, because I am good?”, and the title it sets over the first reading is the sentence that explains such goodness, “my thoughts are not your thoughts”. The second reading has a title of its own, from its own course.
 
@@ -383,24 +394,28 @@ The strongest difficulty lies in the parable’s own terms. The first-hired have
 
 ### The four senses of this interpretation
 
-Literal.  
-A householder keeps his contract with the first, chooses to be generous to the last, and asks whether an eye is evil because he is good. The prophet grounds God’s abundant pardon in thoughts that are not ours. The psalm calls the same Lord merciful and just. An apostle for whom to live is Christ consents to live longer for his people’s sake.
+Literal.
 
-Allegorical.  
-The householder’s goodness is the goodness of Christ, the good shepherd. Of the shepherd of John 10 and his sheep, and not of the parable, Gregory says that he knows his own by loving them and feeds those he has redeemed with his own body and blood; Aquinas, that the sheep are his by predestination, calling and grace; and Augustine, that they acknowledge in his blood their own price and find his body and blood on the altar. Of the parable’s coin Jerome says that it bears the king’s figure and that the wage promised is the king’s own image and likeness, and he does not name Christ there. The likeness given to each labourer alike is Christ.
+: A householder keeps his contract with the first, chooses to be generous to the last, and asks whether an eye is evil because he is good. The prophet grounds God’s abundant pardon in thoughts that are not ours. The psalm calls the same Lord merciful and just. An apostle for whom to live is Christ consents to live longer for his people’s sake.
 
-Moral.  
-Work without reckoning, as Paul does; ask for what is commanded (Augustine; Hilary); boast of no merit, since merits are gifts (Augustine); rejoice at another’s undeserved good. To grieve at goodness is the evil eye (Aquinas), and the wish that another receive nothing is its mark (Jerome).
+Allegorical.
 
-Anagogical.  
-The one denarius is God giving himself. Of the coin itself Jerome says that the wage promised is the king’s own image and likeness. Augustine and Gregory speak each of his own text and neither of the parable: of the psalm’s promise to those who call in truth Augustine asks, “how much more blessed will you be when he gives you himself?”, and of the pasture that the shepherd’s sheep find Gregory says that it is the present face of God. A reward of that kind cannot in itself be more to one and less to another, though each receives it according to the measure of his charity.
+: The householder’s goodness is the goodness of Christ, the good shepherd. Of the shepherd of John 10 and his sheep, and not of the parable, Gregory says that he knows his own by loving them and feeds those he has redeemed with his own body and blood; Aquinas, that the sheep are his by predestination, calling and grace; and Augustine, that they acknowledge in his blood their own price and find his body and blood on the altar. Of the parable’s coin Jerome says that it bears the king’s figure and that the wage promised is the king’s own image and likeness, and he does not name Christ there. The likeness given to each labourer alike is Christ.
+
+Moral.
+
+: Work without reckoning, as Paul does; ask for what is commanded (Augustine; Hilary); boast of no merit, since merits are gifts (Augustine); rejoice at another’s undeserved good. To grieve at goodness is the evil eye (Aquinas), and the wish that another receive nothing is its mark (Jerome).
+
+Anagogical.
+
+: The one denarius is God giving himself. Of the coin itself Jerome says that the wage promised is the king’s own image and likeness. Augustine and Gregory speak each of his own text and neither of the parable: of the psalm’s promise to those who call in truth Augustine asks, “how much more blessed will you be when he gives you himself?”, and of the pasture that the shepherd’s sheep find Gregory says that it is the present face of God. A reward of that kind cannot in itself be more to one and less to another, though each receives it according to the measure of his charity.
 
 ## The Three Interpretations Compared {#sec:comparison}
 
 All three interpretations take the householder as God, the denarius as eternal life, and the first reading’s contrast of thoughts as a statement about mercy. All three find the same Christ in the parable: the one who went out to the nations, the one who calls each person at every age, and the one whose goodness is the reason for the wage. They differ in the question they put to the parable, and therefore in the verses on which they rest and in what they ask of the other texts.
 
 | **Question** | **One wage across the ages** | **The day as a human life** | **Because I am good** |
-|:------------|:------------------|:------------------|:------------------|
+|:---|:---|:---|:---|
 | What is the day? | The history of the world, from the first just man to the end. | One human life, from childhood to extreme old age. | Not decisive; the evening’s answer is. |
 | Who are the last? | The Gentiles, and with them all who come after Christ (Gregory); all Christians (Augustine); the people of the nations (Jerome’s report; Aquinas). | Those who turn to God late in life, and the thief on the cross. | Anyone, as one who receives what is not owed. |
 | Where does the weight fall? | On the hiring through the day, vv. 1–7. | On the question at the eleventh hour, “Why stand you here all the day idle?”, v. 6. | On the householder’s reply, vv. 13–15, from which the *Ordo* takes its title. |
@@ -420,26 +435,28 @@ The Missal’s prayers are patient of all three hearings because they say someth
 
 ## Scriptural Date and Location {#sec:date-location}
 
-Each passage the Mass reads or sings from Scripture, once, in canonical order; beneath each, its attribution, its setting and the critical horizon. The Entrance Antiphon and the three orations are composed liturgical texts and carry no biblical date.
+Each passage the Mass reads or sings from Scripture, and each biblical basis an official liturgical source identifies, once, in canonical order; beneath each, its attribution, its setting and the critical horizon. The Entrance Antiphon is composed, but the official Antiphonary identifies a psalm basis; the three orations carry no biblical date.
 
 | **Textual unit** | **Citation** | **Location** | **Date** |
-|:---------|:-----------|:--------------------|:-------------------------|
+|:---|:---|:---|:---|
+| Entrance Antiphon, identified basis | Ps 37 (36):39–40 | No place named in the verses | **Composition**: Before c. 165 B.C. |
+| The official ICEL Antiphonary identifies these verses as the basis of the composed antiphon; the Missal itself prints no locator. The relation is identified basis, not adaptation. The date is the Psalter’s common critical composition bound, not a date for this psalm or for the antiphon. |  |  |  |
 | Communion Antiphon, first option | Ps 119 (118):4–5 | No place named in the verses | **Composition**: Before c. 165 B.C. |
-| The opening strophe of the alphabetical psalm of the law; the verses name no author and no place, and no traditional date is held for them. The date is the modern critical boundary for the whole Psalter, within which no single psalm can be dated securely. |  |  |  |
+| The opening strophe of the alphabetical psalm of the law; the verses name no author and no place, and no traditional date is held for them. The date is the common critical composition bound in the NABRE Psalms introduction, not a precise date for this psalm or for the Psalter’s assembly. |  |  |  |
 | Responsorial Psalm | Ps 145 (144):2–3, 8–9, 17–18; response v. 18a | No place named | **Composition**: Before c. 165 B.C. |
 | Headed in the Douay–Rheims “Praise, for David himself” (v. 1): an attribution by title, with no traditional date attached. An alphabetical hymn to “God my king”. The date is the Psalter’s critical boundary only. |  |  |  |
-| First Reading | Isa 55:6–9 | Isaias, prophesying “concerning Juda and Jerusalem” (1:1); to his own people | **Composition**: B.C. 740–701. |
-| Traditional attribution: the prophet Isaias, whose ministry the *Catholic Encyclopedia* (1910) bounds by the range shown; the article assigns no year to the writing of the book or of chapters 40–66. It treats chapters 54–55 under the heading “Second Isaias” and reports the contention of most modern non-Catholic scholars that those chapters come from an author “living towards the close of the Babylonian Captivity”, against which it sets the Pontifical Biblical Commission’s decision of 28 June 1908 and concludes that the author’s speaking “from the point of view of the Babylonian Captivity” is no proof that he lived and wrote then. No date is given here for the critical position. |  |  |  |
-| Gospel | Mt 20:1–16a | Spoken to the disciples on the way to Jerusalem, after Peter’s question (19:27) and before the third prediction of the Passion (20:17–19) | **Event** – No narrated-event date in the chronology corpus. **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. |
+| First Reading | Isa 55:6–9 | Traditional ministry: Juda and Jerusalem (1:1); critical horizon: Babylonian exile; writing site unestablished | **Traditional attribution**: Isaias (ministry in Souvay’s traditional account), B.C. 740–701. **Prophecy given**: Toward the end of the Babylonian exile. |
+| Traditional attribution: the prophet Isaias; the range shown is the era the *Catholic Encyclopedia* (1910) gives his ministry, from the closing year of Ozias to the apparent date of his latest prophecies. The article’s tentative collection hypothesis concerns chapters 1–35, not this chapter or the whole book. It treats chapters 54–55 under the heading “Second Isaias” and reports the contention of most modern non-Catholic scholars that those chapters come from an author “living towards the close of the Babylonian Captivity”, against which it sets the Pontifical Biblical Commission’s decision of 28 June 1908. The separate critical horizon comes from the introduction to Isaiah in the New American Bible Revised Edition (NABRE), which generally attributes chapters 40–55 to an anonymous poet prophesying toward the end of the Babylonian exile. That is a horizon for the prophecy, not a date for the writing or final assembly of the book. The exile is the prophetic horizon, not proof of an exact place of writing. |  |  |  |
+| Gospel | Mt 20:1–16a | Spoken to the disciples on the way to Jerusalem, after Peter’s question (19:27) and before the third prediction of the Passion (20:17–19) | **Event** – Narrated event date unresolved. **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. **Comparison (catholic-critical-v1) – Composition** – composition-only: The Greek Gospel of Matthew in the NABRE introduction, Post-A.D. 70 date. |
 | *Narrated event: a parable of Jesus, told within the journey that ends at Jerusalem (20:17–18).* |  |  |  |
-| Traditional attribution: St Matthew the Apostle. The Date column keeps as disputed alternatives the figures the *Catholic Encyclopedia* reports (1911, 1912): its article on the Gospel opens its discussion of the date with the words “Ancient ecclesiastical writers are at variance” and says that in its own day “opinion is rather divided”; the figure of a single year, printed last, is said in the article on the New Testament of the original text of Matthew, which its author holds to have been Aramaic. The article on the Gospel lists further modern figures, which the chronology record does not carry and which are not printed here. |  |  |  |
+| Traditional attribution: St Matthew the Apostle. The Date column keeps as disputed alternatives the figures the *Catholic Encyclopedia* reports (1911, 1912): its article on the Gospel opens its discussion of the date with the words “Ancient ecclesiastical writers are at variance” and says that in its own day “opinion is rather divided”. The alternatives are not of equal standing in their own sources: about A.D. 38–45 reckons from the Ascension; about A.D. 40–42 rests on a tradition of the apostles’ dispersal that the article itself calls “admittedly not too reliable”; A.D. 40–45 is the article’s report of Catholic opinion in its own day; about A.D. 60–68 is conditional on a later definitive departure of the apostles; about A.D. 64–67 rests on a text of Irenaeus whose difficulties of interpretation, the article says, prevent any positive conclusion; and the single year printed last is said in the article on the New Testament of the original text of Matthew, which its author holds to have been Aramaic, the Greek rendering being left undated. The principal modern critical account in the NABRE introduction gives a “post-A.D. 70 date”, “probably at least a decade later”, without an upper bound. Its account is probabilistic. Jacquier’s “Destination of the Gospel” reports publication in Judea for converted Jews; NABRE describes an unknown author and proposes Antioch in Syria as a plausible location for Jewish and Gentile Christians. The writing place is distinct from the parable’s scene. |  |  |  |
 | Communion Antiphon, second option | Jn 10:14 | Spoken to the Pharisees after the healing of the man born blind (9:40–10:6) | **Composition** – disputed: c. A.D. 90–100; A.D. 96–100. |
 | *Narrated event: the discourse of the good shepherd.* |  |  |  |
-| Traditional attribution: St John the Apostle. The *Catholic Encyclopedia* gives the first range shown for “the Johannine writings” (1912) and the second as “the general opinion” for the Gospel, after conceding that “we possess no certain historical information” (1910). The Missal adapts the verse by adding *dicit Dominus* and the noun *oves*. |  |  |  |
+| Traditional attribution: St John the Apostle. The *Catholic Encyclopedia* gives the first range shown for “the Johannine writings” (1912) and the second as “the general opinion” for the Gospel, after conceding that “we possess no certain historical information” (1910). In “Circumstances of the composition”, Fonck reports Ephesus as the writing place and Christians of Asia Minor as the first readers, not as the discourse’s setting. The Missal adapts the verse by adding *dicit Dominus* and the noun *oves*. |  |  |  |
 | Alleluia verse (its basis) | cf. Acts 16:14b, an adaptation | Event: Philippi, “the chief city of part of Macedonia, a colony” (16:12), by the riverside on the sabbath (16:13) | **Event** – disputed: A.D. 50–53; c. A.D. 51–54. **Composition**: c. A.D. 64. |
 | *Narrated event: the conversion of Lydia during St Paul’s second missionary journey (Acts 15:36–18:22).* |  |  |  |
-| Traditional attribution: St Luke. The two event ranges are those the *Catholic Encyclopedia* gives for the second journey in its articles on St Paul (1911) and on biblical chronology (1908); the former places Philippi in that journey without naming Lydia. The composition date is the one its article on Acts (1907) calls most probable for the completion of the book, two years after Paul’s coming to Rome. The liturgical verse is a petition formed on Luke’s narrative sentence and is not itself a verse of Scripture. |  |  |  |
-| Second Reading | Phil 1:20c–24, 27a | Paul in bonds (1:7, 13), at Rome; to “all the saints in Christ Jesus who are at Philippi” (1:1) | **Composition** – disputed: A.D. 61; A.D. 62–64. |
+| Traditional attribution: St Luke. The two event ranges are those the *Catholic Encyclopedia* gives for the second journey in its articles on St Paul (1911) and on biblical chronology (1908); the former places Philippi in that journey without naming Lydia. The composition date is the one its article on Acts (1907) calls most probable for the completion of the book during Paul’s Roman captivity, a different setting from Philippi. Acts addresses Theophilus (1:1) without locating him. The liturgical verse is a petition formed on Luke’s narrative sentence and is not itself a verse of Scripture. |  |  |  |
+| Second Reading | Phil 1:20c–24, 27a | Paul in bonds (1:7, 13), at Rome in the received account; to “all the saints in Christ Jesus who are at Philippi” (1:1) | **Composition** – disputed: A.D. 61; A.D. 62–64. |
 | Traditional attribution: St Paul, writing from captivity. The first figure is the year the *Catholic Encyclopedia*’s chronology of St Paul gives the captivity letters, within the Roman captivity (1911); the second is the range its article on the letter gives for Paul “at Rome” (1911), where it adds that critics disagree whether the letter falls early or late in the Roman sojourn and that its author holds for late. |  |  |  |
 
 ## Appendix: Liturgical Resolution {#sec:liturgical-resolution}
@@ -455,7 +472,7 @@ Each passage the Mass reads or sings from Scripture, once, in canonical order; b
 **Branches.** No selection among the following was supplied, and none is inferred. Both Communion antiphons are studied in full.
 
 | **Branch ID** | **Authority and trigger** | **Status** | **Units affected** | **Resolution** |
-|:--------------|:------------------|:--------|:--------|:---------------|
+|:---|:---|:---|:---|:---|
 | communion-antiphon-psalm | The Missal prints Ps 119 (118):4–5 first | appointed alternative | Communion Antiphon | Unselected; studied in full. |
 | communion-antiphon-good-shepherd | The Missal prints Jn 10:14 second, under *Vel* | appointed alternative | Communion Antiphon | Unselected; studied in full. Rubric 6 for Ordinary Time prefers an antiphon that agrees with the Gospel of the day; the books do not say whether either does. |
 | entrance-or-communion-chant-substitution | *General Instruction* 48 and 87: the Missal antiphon, a chant of the *Graduale Romanum* or *Graduale Simplex*, or another approved chant | permitted | Entrance; Communion | Unselected; the Missal antiphons are the texts studied. |
@@ -479,11 +496,11 @@ Each passage the Mass reads or sings from Scripture, once, in canonical order; b
 
 **Relations among the elements.** Three relations are stated by the liturgical books: the first reading is chosen in relation to the Gospel (*Praenotanda* 106), the psalm responds to the first reading (*General Instruction* 61), and the acclamation greets the Gospel (*General Instruction* 62). The second reading and the Gospel each belong to a semi-continuous course, and the Missal’s antiphons and orations serve all three years. That the Alleluia verse’s basis and the second reading both concern Philippi is an observation about the texts. Every other connection drawn between one element and another is this study’s synthesis: grounded in a witness’s statement about his own passage where one is cited, and otherwise an editorial proposal resting on the wording of the texts. No witness cited comments on this Mass, and no connection claims that the formulary was composed to make it.
 
-**Chronology.** Every date in the Scriptural Date and Location table comes from the Scripture chronology corpus through the record generated for this formulary. For the two psalms that record holds only the modern critical boundary of the Psalter, which it summarizes from the introduction to the Psalms in the New American Bible, Revised Edition; it holds no traditional date for them. For Isaiah, Matthew, John, Acts and Philippians it holds the dates reported in the *Catholic Encyclopedia*, and later critical positions are named without figures. For Isaiah 55 it returns the range of the prophet’s ministry and records no alternative. The Gospel’s narrated event is undated. The record and the sentences behind its labels are audited in `research/scope.md`.
+**Chronology.** The Date cells retain the shared chronology corpus’s relations and alternatives. Its Isaiah ministry era is traditional attribution, beside the separate critical late-exilic prophecy horizon; neither dates composition. The Psalter has a common composition bound, not a final-assembly date. Matthew’s NABRE boundary is separately attributed critical evidence, not part of the default traditional alternatives. No date is held for the Gospel’s narrated event. Writing sites, first readers and narrative settings are distinguished; the source checks and their limits are recorded in `research/scope.md`.
 
 **Rights.** The Douay–Rheims, the Clementine Vulgate, the Nicene and Post-Nicene Fathers, O’Sullivan’s Bellarmine, the volumes of Migne, the Vienna Hilary, the Venice, Liège and Parma printings of Aquinas and the *Catholic Encyclopedia* are in the public domain. Gregory’s Latin is quoted in short phrases from a licensed electronic edition. The Latin and English of the Missal, the *Ordo lectionum Missae*, the Lectionary, the *General Instruction*, the national calendar, the *Nova Vulgata* and the New American Bible introduction are protected; they are cited, and of the Latin books only incipits, the three titles of the *Ordo* and a few words needed by the argument are quoted.
 
-**Records.** The composition of the target is audited in `propers/verified.md`; the reception search, loci, disagreements and negative results in `research/scope.md`; and the reasoning behind the three interpretations, with the class of every cross-element link, in `research/interpretations.md`. The research records were reviewed independently before this study was written.
+**Records.** The composition of the target is audited in `propers/verified.md`; the reception search, loci, disagreements and negative results in `research/scope.md`; and the reasoning behind the three interpretations, with the class of every cross-element link, in `research/interpretations.md`. Earlier research received independent review; that review does not cover the revised historical dossier.
 
 ## References
 
@@ -503,7 +520,7 @@ Each passage the Mass reads or sings from Scripture, once, in canonical order; b
 
 - *General Instruction of the Roman Missal*, United States edition of 2011 with the emendations of 2021, nos. 48, 51, 53, 61–64, 68, 74, 87, 363–365.
 
-- The Holy Bible, Douay–Rheims version, revised by Bishop Richard Challoner (Project Gutenberg text): Lev 18:5; Ps 21:11; Ps 118:1–8; Ps 144; Isa 1:1; 55; 56:3–8; Mt 19:16–20:19; 22:40; Lk 15:28–32; Jn 9:39–10:30; Acts 16:9–15, 40; 17:28; Rom 3:9; 9:3; 10:5; 11:33; Gal 2:20; Eph 2:14; Phil 1:1–2:4; Col 4:3; 1 Jn 2:4, 18.
+- The Holy Bible, Douay–Rheims version, revised by Bishop Richard Challoner (Project Gutenberg text): Lev 18:5; Ps 21:11; Ps 118:1–8; Ps 144; Isa 1:1; 55; 56:3–8; Mt 19:16–20:19; 22:40; Lk 15:28–32; Jn 9:39–10:30; Acts 1:1; 16:9–15, 40; 17:28; Rom 3:9; 9:3; 10:5; 11:33; Gal 2:20; Eph 2:14; Phil 1:1–2:4; Col 4:3; 1 Jn 2:4, 18.
 
 - *Biblia Sacra Vulgatae editionis* (Clementine Vulgate), eBible.org text: Lev 18:5; Ps 33:18; 34:3; 36:39–40; 90:15; 118:4–5; Mt 20:16; Jn 10:14; Rom 10:5.
 
@@ -543,8 +560,8 @@ Each passage the Mass reads or sings from Scripture, once, in canonical order; b
 
 - *The Catholic Encyclopedia* (New York, 1907–1912): A. E. Breen, “Acts of the Apostles” (vol. 1, 1907); J. Howlett, “Biblical Chronology” (vol. 3, 1908); C. Souvay, “Isaias” (vol. 8, 1910); L. Fonck, “Gospel of St. John” (vol. 8, 1910); J. E. Jacquier, “Gospel of St. Matthew” (vol. 10, 1911); F. Prat, “St. Paul” (vol. 11, 1911); A. Vander Heeren, “Epistle to the Philippians” (vol. 12, 1911); A. Durand, “The New Testament” (vol. 14, 1912); read in the New Advent text.
 
-- United States Conference of Catholic Bishops, *New American Bible, Revised Edition*, introduction to the Psalms (summarized, not quoted).
+- United States Conference of Catholic Bishops, *New American Bible, Revised Edition*, introductions to [Isaiah](https://bible.usccb.org/bible/isaiah/0), [Psalms](https://bible.usccb.org/bible/psalms/0) and [Matthew](https://bible.usccb.org/bible/matthew/0), registered 21 September 2026 web state (summarized, with brief source phrases).
 
-**Last revised (UTC):** 2026-09-19T18:27:31Z
+**Last revised (UTC):** 2026-09-21T23:45:56Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.

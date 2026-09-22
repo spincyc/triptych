@@ -539,7 +539,7 @@ All web sources were fetched over HTTPS, hashed (SHA-256), and read on 2026-07-2
 
 - *Catechism of the Catholic Church* 1954–1960. English: <https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_three/article_1/i_the_natural_moral_law.html>; Latin (typical-edition text): <https://www.vatican.va/archive/catechism_lt/p3s1c3a1_lt.htm>.
 
-- John Paul II, encyclical *Veritatis splendor* (6 August 1993), nn. 12, 40–45, English:  
+- John Paul II, encyclical *Veritatis splendor* (6 August 1993), nn. 12, 40–45, English:<br>
   <https://www.vatican.va/content/john-paul-ii/en/encyclicals/documents/hf_jp-ii_enc_06081993_veritatis-splendor.html>; Latin text AAS 85 (1993) 1133–1228 (not collated).
 
 - Second Vatican Council, declaration *Dignitatis humanae* (7 December 1965), n. 3, English: <https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651207_dignitatis-humanae_en.html>.

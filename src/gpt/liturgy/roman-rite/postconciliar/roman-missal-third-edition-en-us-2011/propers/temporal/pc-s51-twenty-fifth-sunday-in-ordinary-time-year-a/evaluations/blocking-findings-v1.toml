@@ -46,11 +46,11 @@ standing_findings_schema = 4
 record_type = "standing-blocking-findings"
 document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a"
 provider = "gpt"
-run_id = "8f4e6454c021280a"
+run_id = "bbe114e132356b38"
 workflow = "proper-study"
-workflow_version = 1
+workflow_version = 6
 stage = "web-review"
-iteration = 1
+iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 0
@@ -59,11 +59,11 @@ observation_count = 0
 
 [[stages]]
 stage = "homily-review"
-iteration = 1
+iteration = 0
 disposition = "PASS"
-run_id = "8f4e6454c021280a"
+run_id = "bbe114e132356b38"
 workflow = "proper-study"
-workflow_version = 1
+workflow_version = 6
 standing = 0
 accepted_count = 0
 advisory_count = 0
@@ -71,11 +71,11 @@ observation_count = 0
 
 [[stages]]
 stage = "research-review"
-iteration = 2
+iteration = 1
 disposition = "PASS"
-run_id = "8f4e6454c021280a"
+run_id = "bbe114e132356b38"
 workflow = "proper-study"
-workflow_version = 1
+workflow_version = 6
 standing = 0
 accepted_count = 0
 advisory_count = 0
@@ -83,11 +83,11 @@ observation_count = 0
 
 [[stages]]
 stage = "study-review"
-iteration = 2
+iteration = 1
 disposition = "PASS"
-run_id = "8f4e6454c021280a"
+run_id = "bbe114e132356b38"
 workflow = "proper-study"
-workflow_version = 1
+workflow_version = 6
 standing = 0
 accepted_count = 0
 advisory_count = 0
@@ -97,9 +97,9 @@ observation_count = 0
 stage = "synthesis-review"
 iteration = 1
 disposition = "PASS"
-run_id = "8f4e6454c021280a"
+run_id = "bbe114e132356b38"
 workflow = "proper-study"
-workflow_version = 1
+workflow_version = 6
 standing = 0
 accepted_count = 0
 advisory_count = 0
@@ -107,11 +107,11 @@ observation_count = 0
 
 [[stages]]
 stage = "visual-review"
-iteration = 1
+iteration = 0
 disposition = "PASS"
-run_id = "8f4e6454c021280a"
+run_id = "bbe114e132356b38"
 workflow = "proper-study"
-workflow_version = 1
+workflow_version = 6
 standing = 0
 accepted_count = 0
 advisory_count = 0
@@ -119,11 +119,11 @@ observation_count = 0
 
 [[stages]]
 stage = "web-review"
-iteration = 1
+iteration = 0
 disposition = "PASS"
-run_id = "8f4e6454c021280a"
+run_id = "bbe114e132356b38"
 workflow = "proper-study"
-workflow_version = 1
+workflow_version = 6
 standing = 0
 accepted_count = 0
 advisory_count = 0

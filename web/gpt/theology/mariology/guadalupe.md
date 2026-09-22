@@ -680,77 +680,77 @@ This chronology deliberately places the date represented beside the date of the 
 
 ### Reported event and formation of the record
 
-9–12 December 1531.  
+9–12 December 1531.<br>
 Date of the four encounters with Juan Diego and the appearance to Juan Bernardino in the received narrative; roses, image, healing, and shrine request culminate on 12 December. This is the event date represented by later witnesses, not the date of an extant deposition.
 
-1554\.  
+1554\.<br>
 Francisco Cervantes de Salazar refers to a church associated with the Mother of God at Tepeyac. The reference helps establish an early sacred site but does not narrate Juan Diego or the image’s origin.
 
-September 1556.  
+September 1556.<br>
 Archbishop Alonso de Montúfar’s promotion of the cult and Franciscan provincial Francisco de Bustamante’s opposing sermon produce an ecclesiastical information. The record documents an image, shrine, pilgrims, offerings, miracle controversy, and the allegation of an Indigenous painter named Marcos. The surviving proceeding does not give the complete apparition narrative.
 
-2 April 1563; 1566.  
+2 April 1563; 1566.<br>
 Francisco Verdugo Quetzalmamalitzin’s will funds Masses at the Guadalupe chapel; Juan Bautista’s annals record a 1566 procession involving Spanish dignitaries and Indigenous participants. These are named evidence of cult and participation, not the complete apparition narrative.
 
-Late sixteenth and early seventeenth centuries.  
+Late sixteenth and early seventeenth centuries.<br>
 Nahuatl annals, shrine references, donations, jurisdictional disputes, sermons, and histories attest a developing cult with witnesses of unequal date and transmission. Juan Bautista and Chimalpahin use a verb for the image being shown or made public in 1555–1556, not an unambiguous technical statement of supernatural apparition. Bernal Díaz’s later history records the church and reported miracles. Each witness must be evaluated item by item rather than assembled into a fictional single archive.
 
-1648\.  
+1648\.<br>
 Miguel Sánchez publishes *Imagen de la Virgen María Madre de Dios de Guadalupe*, the first located complete printed Spanish narrative, interpreted through Revelation 12 and a providential theology of New Spain.
 
-1649\.  
+1649\.<br>
 Luis Laso de la Vega publishes the principally Nahuatl *Huei tlamahuiçoltica*, including the *Nican mopohua*. This is the controlling extant witness for the received dialogue and sequence. A sixteenth-century composition associated with Antonio Valeriano remains defended and disputed.
 
-1665–1666.  
+1665–1666.<br>
 Ecclesiastical *Informaciones* gather twenty testimonies about the origin and cult. The leading interrogatory already summarizes the account and follows the 1648–1649 books; family-memory and extra-question details retain a different but limited value. These are important juridical and memory witnesses approximately 135 years after the represented event, not contemporaneous depositions or a modern DDF judgment.
 
 ### Cult, patronage, and papal reception
 
-1737\.  
+1737\.<br>
 Civil and ecclesial Mexico embraces Guadalupan patronage amid epidemic, part of the movement later confirmed by papal authority.
 
-1754\.  
+1754\.<br>
 Benedict XIV confirms patronage and liturgical privileges, as recorded in Pius X’s 1910 apostolic letter. The act belongs to approved cult and liturgy.
 
-1895\.  
+1895\.<br>
 The venerated image is canonically crowned. The honor concerns the image and Marian title in their public cult.
 
-12 October 1945.  
+12 October 1945.<br>
 Pius XII addresses Mexico for the fiftieth anniversary of the coronation and presents Guadalupe within Mexican and continental Catholic life.
 
-27 January 1979.  
+27 January 1979.<br>
 John Paul II visits the Basilica during his first international apostolic journey and entrusts the evangelizing mission of Latin America to Our Lady of Guadalupe.
 
-6 May 1990.  
+6 May 1990.<br>
 John Paul II beatifies Juan Diego at the Basilica, authorizing his public cult within the scope then granted.
 
-22 January / 25 March 1999.  
+22 January / 25 March 1999.<br>
 *Ecclesia in America* presents Guadalupe as a model of inculturated evangelization and calls for a continental feast. The competent dicastery’s decree, dated 25 March, orders 12 December into the calendars of every nation and territory in America.
 
-31 July 2002.  
+31 July 2002.<br>
 John Paul II canonizes Juan Diego in Mexico City. The act authoritatively proposes his holiness and universal public cult; it is not a technical ruling on every source or feature of the image.
 
-13 February 2016.  
+13 February 2016.<br>
 Francis preaches at the Basilica, emphasizing Mary’s choice of a lowly Indigenous messenger, the dignity of those overlooked, hope, and service.
 
-12 December 2023 and 2024.  
+12 December 2023 and 2024.<br>
 Francis warns against ideological and commercial manipulation of Guadalupe and returns attention to maternal presence, the image, roses, humility, and charity.
 
-19 May 2024.  
+19 May 2024.<br>
 The DDF’s new procedural norms take effect. They govern new discernments and do not retroactively rename Guadalupe’s historical reception. No post-norm reclassification of Guadalupe was located through this study’s as-of date.
 
-12 December 2025.  
+12 December 2025.<br>
 Leo XIV narrates and interprets the Guadalupan appearance in Saint Peter’s Basilica, directing it toward Christ, charity, unity, family, education, life, accompaniment, and public service. This is the newest papal reception located through 16 July 2026.
 
 ### Material history and modern claim circulation
 
-About 1784–1785; inquiry 1820–1823.  
+About 1784–1785; inquiry 1820–1823.<br>
 A later juridical file records reports that silversmiths accidentally spilled *agua fuerte* across part of the image. The precise event year, liquid and concentration, exposure, and damage chain are uncertain; “1791 nitric-acid accident” is therefore too exact. Survival alone does not decide supernatural cause.
 
-14 November 1921.  
+14 November 1921.<br>
 A bomb explodes below the altar. A report published the next day describes damage around the altar, a bent bronze crucifix, and the intact image, frame, and protective glass. The report establishes a bounded observed outcome, not supernatural causation, technical impossibility, or the culprit’s identity.
 
-Twentieth century to internet era.  
+Twentieth century to internet era.<br>
 Limited photography and examinations generate disputed claims about eyes, fibers, pigments, preservation, and image formation. Philip S. Callahan’s 1981 infrared report is real but narrow and frequently overstated. Later NASA, body-temperature, heartbeat, music, constellation, and absolute no-pigment claims circulate without a located controlling protocol; repetition is reception history, not cumulative scientific verification.
 
 ## References

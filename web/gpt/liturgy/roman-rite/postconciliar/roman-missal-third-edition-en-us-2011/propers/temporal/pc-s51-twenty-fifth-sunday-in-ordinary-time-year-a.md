@@ -2,11 +2,7 @@
 
 *Roman Missal, Third Edition, United States 2011: expansive study of the propers for 20 September 2026*
 
-**The Gift We Share**
-
-Twenty-fifth Sunday in Ordinary Time, Year A
-
-Roman Missal, Third Edition · United States, 2011
+**Twenty-fifth Sunday in Ordinary Time, Year A**
 
 20 September 2026
 
@@ -30,6 +26,8 @@ Three readings of the whole formulary develop that movement. Augustine’s accou
 | Prayer over the Offerings | *Munera, quaesumus, Domine*. |
 | Communion | Psalm 119:4–5 **or** John 10:14. |
 | Prayer after Communion | *Quos tuis, Domine*. |
+
+[TOC]
 
 ## Study texts and liturgical locators
 
@@ -211,7 +209,7 @@ If John 10:14 is chosen instead, Christ’s knowledge of his sheep and their kno
 
 The Prayer after Communion asks for continuing help so that redemption bears fruit in sacramental life and conduct. It gives the whole movement an unfinished moral horizon: reception has occurred, but the life corresponding to it still lies before the assembly. The opening confidence in divine help returns as dependence after the gift. The final petition does not send the workers away to establish their independence; it sends recipients toward the charity that the Collect named at the beginning.
 
-## God gives himself and cultivates his people
+## God gives himself and cultivates his people {#lane-gift-cultivation}
 
 ### The giver does not become richer
 
@@ -245,15 +243,23 @@ Each Communion alternative emphasizes a different aspect of that dependence. Wit
 
 ### Four senses of the gift
 
-**Literal.** Isaiah joins seeking and forsaking to abundant pardon; the psalm joins greatness to truthful invocation; Paul weighs departure against fruitful service; the landowner keeps his promise while giving freely. The Entrance promises help in distress, the Collect names twofold love, and the acclamation seeks receptive hearing. Offerings, either Communion text, and the final prayer carry faith into sacramental participation and conduct.
+Literal.
 
-**Allegorical.** Christ is the manifest caller and the Shepherd who enters hearts. His word cultivates the Church, and his Blood purchases and nourishes its members. The law of charity takes flesh in a body whose members receive their life from him. The divine giver is not enriched by them; they are changed by his self-gift.
+: Isaiah joins seeking and forsaking to abundant pardon; the psalm joins greatness to truthful invocation; Paul weighs departure against fruitful service; the landowner keeps his promise while giving freely. The Entrance promises help in distress, the Collect names twofold love, and the acclamation seeks receptive hearing. Offerings, either Communion text, and the final prayer carry faith into sacramental participation and conduct.
 
-**Moral.** Desire the giver, receive the call, and spend what has been given in another’s service. Another’s restoration does not subtract from one’s own good. Requested obedience and Paul’s willing labor replace the effort to turn religion into a claim upon God. Charity becomes fruitful because grace reaches both the beginning and continuation of the response.
+Allegorical.
 
-**Anagogical.** The common denarius is endless life with God, equal in duration without denying different glory. The Collect’s eternal end, Paul’s desire for Christ, the psalm’s enduring praise, and the Shepherd’s pasture converge there. The final joy is shared possession of a good that no late arrival can diminish.
+: Christ is the manifest caller and the Shepherd who enters hearts. His word cultivates the Church, and his Blood purchases and nourishes its members. The law of charity takes flesh in a body whose members receive their life from him. The divine giver is not enriched by them; they are changed by his self-gift.
 
-## It is still time to enter, and the work is mercy
+Moral.
+
+: Desire the giver, receive the call, and spend what has been given in another’s service. Another’s restoration does not subtract from one’s own good. Requested obedience and Paul’s willing labor replace the effort to turn religion into a claim upon God. Charity becomes fruitful because grace reaches both the beginning and continuation of the response.
+
+Anagogical.
+
+: The common denarius is endless life with God, equal in duration without denying different glory. The Collect’s eternal end, Paul’s desire for Christ, the psalm’s enduring praise, and the Shepherd’s pasture converge there. The final joy is shared possession of a good that no late arrival can diminish.
+
+## It is still time to enter, and the work is mercy {#lane-conversion-without-rivalry}
 
 ### A late invitation asks for a real answer
 
@@ -289,15 +295,23 @@ The Psalm Communion, if used, keeps this response in the grammar of dependence: 
 
 ### Four senses of the timely call
 
-**Literal.** The invitations come at different hours, and those called respond. Isaiah’s present summons, the psalm’s patient mercy, Paul’s useful remaining, and Lydia’s attention describe real acts in their own contexts. The Entrance promises help, the Collect names charity, and the Eucharistic prayers carry reception toward a lived response. The two Communion alternatives accent either requested obedience or relationship with the Shepherd.
+Literal.
 
-**Allegorical.** Christ calls people into the vineyard of his commandments during the working day of life. His word addresses the Church now, and his sacramental gift sustains its charity. The good Shepherd and the caller are not competing masters; the members receiving him are drawn into the pattern of his service.
+: The invitations come at different hours, and those called respond. Isaiah’s present summons, the psalm’s patient mercy, Paul’s useful remaining, and Lydia’s attention describe real acts in their own contexts. The Entrance promises help, the Collect names charity, and the Eucharistic prayers carry reception toward a lived response. The two Communion alternatives accent either requested obedience or relationship with the Shepherd.
 
-**Moral.** Begin without despair and persevere without entitlement. Augustine’s warning against delay guards Chrysostom’s encouragement of late converts. Exchange envy for mercy and comparative excuses for concrete almsgiving and service. The opened heart must attend, and the person receiving Communion must live what faith confesses.
+Allegorical.
 
-**Anagogical.** Full hope is offered to the latecomer, and the kingdom’s joy contains no envy. Eternal communion releases the hearer from the fear that a late beginning makes genuine conversion pointless. The same hope refuses presumption: today’s call is an opportunity to enter, not a guarantee that tomorrow’s call will be available.
+: Christ calls people into the vineyard of his commandments during the working day of life. His word addresses the Church now, and his sacramental gift sustains its charity. The good Shepherd and the caller are not competing masters; the members receiving him are drawn into the pattern of his service.
 
-## One vineyard older and larger than ourselves
+Moral.
+
+: Begin without despair and persevere without entitlement. Augustine’s warning against delay guards Chrysostom’s encouragement of late converts. Exchange envy for mercy and comparative excuses for concrete almsgiving and service. The opened heart must attend, and the person receiving Communion must live what faith confesses.
+
+Anagogical.
+
+: Full hope is offered to the latecomer, and the kingdom’s joy contains no envy. Eternal communion releases the hearer from the fear that a late beginning makes genuine conversion pointless. The same hope refuses presumption: today’s call is an opportunity to enter, not a guarantee that tomorrow’s call will be available.
+
+## One vineyard older and larger than ourselves {#lane-one-people-through-ages}
 
 ### The people of God exceed one generation
 
@@ -341,13 +355,21 @@ The Prayer after Communion asks that the redemption received become a lived real
 
 ### Four senses of the gathered people
 
-**Literal.** One landowner gathers several groups into one vineyard. The appointed sequence includes Israel’s prophetic and psalmic witness, Paul’s apostolic service, the adapted memory of Lydia’s hearing, and Jesus’ parable. The Entrance, Collect, offerings, either Communion text, and final prayer address the worship and conduct of a people, with distinct roles in its celebration.
+Literal.
 
-**Allegorical.** Gregory identifies the vineyard with the universal Church from Abel to the last elect. Christ brings the fathers and the later called toward one kingdom; Augustine’s preaching and Pentecost explain the manifest gathering of the body. The Shepherd purchases and nourishes that body, whose common law is charity.
+: One landowner gathers several groups into one vineyard. The appointed sequence includes Israel’s prophetic and psalmic witness, Paul’s apostolic service, the adapted memory of Lydia’s hearing, and Jesus’ parable. The Entrance, Collect, offerings, either Communion text, and final prayer address the worship and conduct of a people, with distinct roles in its celebration.
 
-**Moral.** Belonging early gives responsibility for others, not possession of their admission. Gregory’s labor of bringing others toward life, Augustine’s care for friends, Paul’s useful remaining, and Lydia’s hospitality make corporate membership active. Obedience sought at Communion becomes a life that cultivates other members rather than resenting their arrival.
+Allegorical.
 
-**Anagogical.** Earlier and later generations are ordered toward the same kingdom. Gregory’s account of paradise opened by Christ and Augustine’s common resurrection remain distinct explanations of the waiting. The Collect’s eternal life, Paul’s desire for Christ, enduring praise, and the Shepherd’s pasture converge on the joy of a gathered people whose last arrivals are welcomed.
+: Gregory identifies the vineyard with the universal Church from Abel to the last elect. Christ brings the fathers and the later called toward one kingdom; Augustine’s preaching and Pentecost explain the manifest gathering of the body. The Shepherd purchases and nourishes that body, whose common law is charity.
+
+Moral.
+
+: Belonging early gives responsibility for others, not possession of their admission. Gregory’s labor of bringing others toward life, Augustine’s care for friends, Paul’s useful remaining, and Lydia’s hospitality make corporate membership active. Obedience sought at Communion becomes a life that cultivates other members rather than resenting their arrival.
+
+Anagogical.
+
+: Earlier and later generations are ordered toward the same kingdom. Gregory’s account of paradise opened by Christ and Augustine’s common resurrection remain distinct explanations of the waiting. The Collect’s eternal life, Paul’s desire for Christ, enduring praise, and the Shepherd’s pasture converge on the joy of a gathered people whose last arrivals are welcomed.
 
 ## What changes when the readings are heard together
 
@@ -359,6 +381,32 @@ The distinct explanations of payment order remain important. Augustine stresses 
 
 The connections among the appointed elements extend beyond a sequence of separate lessons. The opened heart before the Gospel and the requested obedience at Communion describe a response dependent on divine help. Paul’s labor for others and Augustine’s account of the Eucharistic table show charity receiving a gift and becoming self-gift. The Collect and final prayer enclose that movement with love sought and redemption lived. The Psalm Communion emphasizes enabled fidelity; the John Communion emphasizes belonging to the self-giving Shepherd. The end is neither an account settled in one’s favor nor a higher place secured against a neighbor. It is a life increasingly able to rejoice in the good it shares.
 
+## Scriptural Date and Location {#sec:date-location}
+
+Each passage the Mass reads or sings from Scripture, once, in canonical order; beneath each, its attribution, its setting and the critical horizon. The three orations are composed liturgical texts and carry no biblical date; the Entrance is entered through its identified biblical basis, and the acclamation through its adaptation of a biblical sentence.
+
+| **Textual unit** | **Citation** | **Location** | **Date** |
+|:---|:---|:---|:---|
+| Entrance (its basis) | Ps 37 (36):39–40 | No place named in the verses | **Composition**: Before c. 165 B.C. |
+| The composed antiphon *Salus populi ego sum* is treated through its identified biblical basis, Psalm 37:39–40, rather than as a verbatim extract or a historical event. These verses specify no author, place or occasion. No traditional date is held for them. The NABRE Psalms introduction supplies the common pre-Maccabean composition bound, not a precise date for this psalm or the Psalter’s assembly. |  |  |  |
+| Communion, Psalm option | Ps 119 (118):4–5 | No place named in the verses | **Composition**: Before c. 165 B.C. |
+| The opening petition of the great alphabetical psalm of the law: a command received, followed by the wish that one’s ways be directed to keep it. No author is named and no traditional date is held; the date shown is the Psalter’s common critical composition bound (NABRE, Psalms introduction). This is one of the Missal’s two alternative Communion texts for the day. |  |  |  |
+| Responsorial Psalm | Ps 145 (144):2–3, 8–9, 17–18; response v. 18a | No place named | **Composition**: Before c. 165 B.C. |
+| An alphabetical hymn to “God my king”, headed in the Douay–Rheims “Praise, for David himself” (v. 1): an attribution by title, with no traditional date attached. The response is taken from v. 18a. The date shown is the common composition bound in the NABRE Psalms introduction, which does not securely date an individual psalm. Neither the title nor these verses locates the writing. |  |  |  |
+| First Reading | Isa 55:6–9 | Traditional ministry: Juda and Jerusalem (1:1); critical horizon: Babylonian exile; writing place unestablished | **Traditional attribution**: Isaias (ministry in Souvay’s traditional account), B.C. 740–701. **Prophecy given**: Toward the end of the Babylonian exile. |
+| The two printed relations answer different questions and are not to be merged. The first is the inherited attribution of the book to the prophet Isaias: the range shown, 740–701 B.C., bounds his ministry in the *Catholic Encyclopedia*’s traditional account (Souvay, 1910, “Life”), from the closing year of Ozias to the apparent latest prophecy, not his death. It does not date this chapter’s writing; Souvay’s tentative collection hypothesis concerns chapters 1–35. The second is the critical horizon of the prophetic activity: the official NABRE introduction generally attributes chapters 40–55 to an anonymous poet prophesying toward the end of the Babylonian exile. The prophecy addresses restoration from exile (Souvay, “Second Isaias”); that horizon is not a date for the writing or final assembly of the book, nor proof of a particular writing site. |  |  |  |
+| Gospel | Mt 20:1–16a | Spoken to the disciples on the journey toward Jerusalem, after Peter’s question (19:27) | **Event** – Narrated event date unresolved. **Composition** – disputed: c. A.D. 38–45; c. A.D. 40–42; A.D. 40–45; c. A.D. 60–68; c. A.D. 64–67; c. A.D. 50. **Comparison (catholic-critical-v1) – Composition** – composition-only: The Greek Gospel of Matthew in the NABRE introduction, Post-A.D. 70 date. |
+| *Narrated event: a parable of Jesus, told within the journey that ends at Jerusalem, before the third prediction of the Passion (20:17–19); the chronology corpus holds no date for the narrated event.* |  |  |  |
+| Traditional attribution: St Matthew the Apostle. The printed figures are the disputed alternatives the *Catholic Encyclopedia* reports, and they are not of equal standing. About A.D. 38–45 comes from early ecclesiastical writers counting from the Ascension. About A.D. 40–42 rests on a tradition of the Apostles’ dispersal, which the 1911 article itself calls “admittedly not too reliable”. A.D. 40–45 is the range reported by its survey of the Catholic critics of its day. About A.D. 60–68 is a conditional reckoning that fixes the Apostles’ definitive departure later. About A.D. 64–67 rests on a text of Irenaeus whose difficulties of interpretation the article says prevent any positive conclusion. About A.D. 50 is Durand’s date (1912) for the Aramaic original only; of the Greek rendering, he writes, we know nothing definite. The NABRE introduction states the modern critical horizon concisely: the “post-A.D. 70 date”, “probably at least a decade later”, within its probabilistic account; no closing year is given. Jacquier’s “Destination” reports a Jewish-Christian audience and publication in Judea; the NABRE instead regards the author as unknown and Antioch in Syria as a plausible composition site for a community with Jewish and Gentile Christians. Neither writing location is the setting of Jesus’ parable. |  |  |  |
+| Communion, John option | Jn 10:14 | Spoken to the Pharisees after the healing of the man born blind (9:40–10:6) | **Composition** – disputed: c. A.D. 90–100; A.D. 96–100. |
+| *Narrated event: the discourse of the good shepherd; no event date is held.* |  |  |  |
+| Traditional attribution: St John the Apostle. The two printed ranges are the received disputed alternatives reported by the *Catholic Encyclopedia*: Durand’s approximate range for the Johannine writings (1912) and Fonck’s “general opinion”, preceded by his admission that certain historical dating is unavailable (1910, “Circumstances of the composition”). Fonck reports Ephesus as the writing place and Christians in Asia Minor as the first readers; those are not the scene of Jesus’ discourse. The Missal adapts the verse. Christ’s knowledge of his sheep belongs to a discourse of self-offering, and this option stands as an alternative to the Psalm text in the one Communion slot, not as a rite consecutive to it. |  |  |  |
+| Acclamation (its basis) | cf. Acts 16:14b, an adaptation | Event: Philippi in Macedonia, by the riverside on the sabbath (16:12–13) | **Event** – disputed: A.D. 50–53; c. A.D. 51–54. **Composition**: c. A.D. 64. |
+| *Narrated event: the conversion of Lydia during St Paul’s second missionary journey (Acts 15:36–18:22).* |  |  |  |
+| Traditional attribution: St Luke. The two printed event ranges are disputed alternatives the *Catholic Encyclopedia* gives for the second missionary journey in its articles on St Paul (1911) and on biblical chronology (1908); the composition figure is the date its article on Acts (1907) calls the most probable for the completion of the book. The mission’s date and the book’s composition are distinct relations. Breen’s probable composition setting is Paul’s Roman captivity, not Lydia’s Philippi; Acts addresses Theophilus (1:1), whose location is not supplied there. The liturgical verse adapts Luke’s narrative sentence into a petition for receptive hearing; it is not itself a verse of Scripture. |  |  |  |
+| Second Reading | Phil 1:20c–24, 27a | Paul in bonds (1:7, 13), at Rome in the received chronology; to “all the saints in Christ Jesus who are at Philippi” (1:1) | **Composition** – disputed: A.D. 61; A.D. 62–64. |
+| Traditional attribution: St Paul, writing from imprisonment. The printed figures are disputed alternatives within the Roman captivity: the first is the year the *Catholic Encyclopedia*’s chronology of St Paul assigns the captivity letters (1911); the second, the range its article on the letter gives for Paul “at Rome” (1911), where critics are said to disagree whether the letter falls early or late in the Roman sojourn. The apostle’s present imprisonment frames his alternatives of continued service and being with Christ; his hoped-for departure is not a dated narrated event. |  |  |  |
+
 ## Appendix: Scope and Qualifications
 
 This study concerns the Twenty-fifth Sunday in Ordinary Time, Year A, on 20 September 2026, under the general United States calendar: Roman Missal, Third Edition, U.S. English implemented in 2011, and U.S. Lectionary for Mass, second typical edition, no. 133. No diocesan, religious, titular, dedication, or other proper solemnity at a particular church has been supplied. The dated national appointment does not determine an unnamed church’s local calendar. The September 20 memorial supplies no additional proper to this Sunday.
@@ -367,7 +415,7 @@ The studied layer is the Missal’s Entrance, three orations and two alternative
 
 The English Scripture printed here is the public-domain Douay–Rheims Challoner study text in the registered Gutenberg delivery, which draws on multiple Challoner editions. It is not the approved proclaimed English of the U.S. Lectionary. Restricted ICEL and CCD bodies are not reproduced. The composed Entrance, adapted acclamation, and orations receive locators and commentary, not replacement liturgical renderings. Historical biblical words retain their own public-domain status and are not offered under the project’s content license. The study is a companion to the approved books, not a book for liturgical recitation.
 
-The shared Week 25 formulary audit alone owns common Missal witness collation and its limits. Complete official 2008 Latin and U.S. 2011 altar-book collation has not been performed. The source-located descriptions used here do not claim diplomatic control of those uninspected books. The local instance manifest and target text audit own the dated inventory and the Lectionary’s cuts. Biblical composition dates are outside this study’s claims.
+The shared Week 25 formulary audit alone owns common Missal witness collation and its limits. Complete official 2008 Latin and U.S. 2011 altar-book collation has not been performed. The source-located descriptions used here do not claim diplomatic control of those uninspected books. The local instance manifest and target text audit own the dated inventory and the Lectionary’s cuts. The historical dossier distinguishes attribution, prophetic activity, composition and narrated event. Its Date cells are generated from the shared chronology corpus; the separately attributed NABRE Matthew boundary belongs to the critical profile, not to the default traditional composition alternatives. Psalter bounds date neither individual poems precisely nor the collection’s final assembly. Writing places and first audiences are distinguished from scenes narrated; uncertain locations remain qualified.
 
 The three whole-formulary interpretations are editorial theological syntheses of checked arguments. None of the cited Fathers is credited with constructing this modern Mass assemblage. The Old Testament and Gospel are correlated under the Lectionary’s arrangement; the Psalm is responsorial and the acclamation prepares the Gospel. Philippians belongs to the semi-continuous apostolic course, while the orations and Missal antiphons are shared across the Sunday cycles. Their theological convergence is not a claim of a single historical compositional design.[^37]
 
@@ -377,7 +425,7 @@ The bounded reception research includes historical English Augustine and Chrysos
 
 NPNF denotes *Nicene and Post-Nicene Fathers*, first series; ANF denotes *Ante-Nicene Fathers*. Section numbers follow the cited work, with the Psalm abridgment’s exception below.
 
-1.  *Douay–Rheims Bible*, Challoner, Gutenberg eBook 1581 delivery: Isaiah 55; Psalms 36, 118, 144; Matthew 19:16–20:34; Philippians 1; Acts 16; John 10.
+1.  *Douay–Rheims Bible*, Challoner, Gutenberg eBook 1581 delivery: Isaiah 1:1; 55; Psalms 36, 118, 144; Matthew 19:1–20:34; Philippians 1; Acts 1:1; 16; John 9:39–10:42.
 
 2.  USCCB, [20 September 2026](https://bible.usccb.org/bible/readings/092026.cfm), Lectionary 133; *2026 Liturgical Calendar*, printed pp. 5, 38. Checked 17 September 2026.
 
@@ -403,7 +451,11 @@ NPNF denotes *Nicene and Post-Nicene Fathers*, first series; ANF denotes *Ante-N
 
 13. Bellarmine, *Commentary on the Psalms*, O’Sullivan, trans. (1866): Psalm 36 on 30–40; 118 on 5–7; 144 on 8–9, 17–21. Abridged English, retained eCatholic2000 historical-body witness.
 
-**Last revised (UTC):** 2026-09-18T00:26:15Z
+14. *The Catholic Encyclopedia*, New York, retained New Advent article texts: C. Souvay, “Isaias” (VIII, 1910), “Life”, “First Isaias”, “Second Isaias”; J. E. Jacquier, “Gospel of St. Matthew” (X, 1911), “Destination”, “Date and place of composition”; A. Durand, “The New Testament” (XIV, 1912), “Origin”; L. Fonck, “Gospel of St. John” (VIII, 1910), “Circumstances of the composition”; A. E. Breen, “Acts of the Apostles” (I, 1907), “Date of composition”; F. Prat, “St. Paul” (XI, 1911), “Chronology”, “Second mission”; J. Howlett, “Biblical Chronology” (III, 1908), “The apostles”; A. Vander Heeren, “Epistle to the Philippians” (XII, 1911), “Place and date”.
+
+15. USCCB, *New American Bible, Revised Edition*, introductions to [Isaiah](https://bible.usccb.org/bible/isaiah/0), [Psalms](https://bible.usccb.org/bible/psalms/0), and [Matthew](https://bible.usccb.org/bible/matthew/0); complete introduction bodies inspected in the registered 21 September 2026 web state. Protected texts; historical orientation only.
+
+**Last revised (UTC):** 2026-09-22T03:05:25Z
 
 **Reuse and rights.** To the extent Triptych holds the rights, project-created content and design are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Scripture, liturgical or official texts, received prayers or hymns, quotations, fonts, and other third-party material retain their own status; public-domain material remains public domain. Identify changes. Attribution implies neither Triptych nor ecclesiastical approval. See `LICENSE` and `THIRD_PARTY.md` in the source.
 

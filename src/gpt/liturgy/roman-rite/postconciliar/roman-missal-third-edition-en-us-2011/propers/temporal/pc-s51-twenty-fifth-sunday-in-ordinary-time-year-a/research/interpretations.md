@@ -1,5 +1,14 @@
 # PC-S51-A: proposed interpretations
 
+Current-run revalidation on 21 September 2026 (workflow digest
+`a965af881c1e4110b6e4698001b4f06b9a688a93a1f1652c292d15002afe1768`, run
+`bbe114e132356b38`, research iteration 0) reread the resolved context, complete
+retained biblical contexts, and controlling Augustine, Chrysostom, and Gregory
+arguments, then checked the remaining supports and limits against the source
+audit and bindings. The three lanes remain defensible as written; no new lane
+or unsupported claim was added, and this revalidation does not create review
+acceptance.
+
 Research stage checked 17 September 2026. Submitted evidence is subject to independent cold review; no review verdict, publication or ecclesiastical approval is asserted.
 
 ## Three coherent interpretive lanes across the whole formulary
