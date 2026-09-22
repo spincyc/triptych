@@ -57,6 +57,10 @@ therefore returned the run to research iteration 5. The four study-owned
 findings wait for re-authoring. Because every downstream document reruns,
 decision D11 (commentators whose Mass had another Gospel or chant) landed in
 that hold, and the study is re-authored under it.
+Research iterations 5 and 6 read Hilary (PL 9) and Rabanus (PL 107) in their
+own texts, corrected a displaced attribution, and applied D11 throughout the
+research records. Research-review iteration 6 accepted the research, and the
+run returned to `author-study` carrying STU-002 to STU-005.
 Research iteration 3 had attributed the
 ministerial sense of the Gospel to Aquinas at Mt 9:6 (*per viam
 administrationis, non auctoritatis*) and to the liturgical commentators as
@@ -243,6 +247,14 @@ Rebinding is an operator approval and has not been done.
 - the Honorius IV.85 row in `formulary-loci.yaml` omits the Alleluia and
   Offertory, which IV.85 names (raised as an observation in research-review
   iteration 4);
+- Rabanus has no row in `author-standing-v1.toml`; PL 107 heads him "B.",
+  Blessed (research-review iteration 5, RES-029);
+- Peter Chrysologus, a Doctor, preaches the Eighteenth Sunday's Gospel as the
+  day's reading in Sermo 50, *De paralytico curato*. The library registers no
+  Chrysologus, and the passage-commentary index maps him only at Luke 22, so
+  no sweep could reach him. Research-review iteration 6 raised this as
+  RES-032 and an observation. Registering him and mapping him at Matthew 9
+  are sourcing follow-ups;
 - Theophylact has no row in `author-standing-v1.toml`. Whether the "outside
   Catholic communion" limit applies to him is the maintainer's judgement
   (raised as an observation in research-review iteration 4).
