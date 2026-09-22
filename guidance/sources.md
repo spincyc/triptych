@@ -714,6 +714,20 @@ fingerprints a new field would move. `guidance/catena.md` §11 owns how that
 inventory is read and the rule that a commentary sweep checks holdings through
 it; `make check-sources` refuses a container-shaped record it does not enter.
 
+Who an author is, as the Church has judged him, is recorded once, in
+`inventories/author-standing-v1.toml`: one row per person, a standing from a
+closed set (Father, Doctor, saint, Blessed, Venerable, Servant of God,
+ecclesiastical writer, historian, outside Catholic communion), the act or
+convention it rests on, and the sources that basis was read from. A censure
+records the body, the year and the point. Locus rows, harvest tags and study
+records point to the registry and never restate it; the commentary harvest's
+`role` stays a model's lead data. `commentary-work-index standing` validates the
+registry and `make check-sources` runs it. The check refuses a basis that cites
+nothing and a name given to two people. It reports, and does not fail on, a
+liturgical commentary or published lane author with no row. The registry
+records standing and decides nothing about how a publication uses an author;
+`guidance/catena.md` §12 owns how the Mass-keyed commentary loci join it.
+
 `source-reader` is the one that serves text, so it is the one bound by rights:
 a record with no publishable basis is projected as identity and absence, never
 as bytes. `tools/tpt source-reader list` reports the library's current extent —

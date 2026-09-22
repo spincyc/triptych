@@ -611,3 +611,65 @@ reason. So a new container cannot be registered silently: registering one is
 entering it here, read off its own description and notes, with whatever those
 do not establish marked unresolved rather than supplied from what such a volume
 usually holds.
+
+---
+
+## 12. Mass-keyed loci: the commentaries on a formulary
+
+§11 answers what is held of a lead that a passage names. A liturgical
+commentator is never such a lead. He expounds a Mass rather than a chapter:
+Rupert of Deutz, Honorius, Sicard and Durandus walk the year's offices, and
+Schuster and *The Liturgical Year* the Missal's. The harvest is keyed by
+chapter and cut off at 1900, so it lists none of them. They are keyed to the
+Mass, and the key cannot be the commentator's Sunday number, because his
+numbering drifts from any calendar's. Rupert's *Dominica decima octava* has the
+chants and Epistle of the 1962 Eighteenth Sunday and the Gospel of the chair
+of Moses. The 1962 Gospel of that Sunday, the paralytic, is his *nineteenth*.
+Filed by heading, his chapter lands on the wrong Mass. Filed by Gospel alone,
+the chapter sharing five elements with the Mass is lost.
+
+> **Rule 14.** A sweep of a formulary's reception runs
+> `commentary-work-index formulary --calendar C --mass M` for the liturgical
+> commentaries keyed to that Mass. It also runs `discover` for each passage
+> the Mass cites, and reads holdings through containers by Rule 13. No
+> commentator's Sunday number, title search or work record stands in for the
+> first, and none stands in for the second.
+
+`src/sources/commentary/formulary-loci.yaml` records each locus as the
+commentator gives it. It keeps his heading as data and lists the elements he
+names: incipits he quotes, scripture he quotes or cites in Clementine Vulgate
+numbering, and his own words where he describes rather than quotes. It names
+no calendar's mass. `formulary` compares those elements with the calendar
+mass's own, on every run. It lists a locus that shares the Introit, Collect,
+Lesson, Epistle or Gospel, or two other elements. Each listed row shows:
+
+- what the locus shares and what differs, the differing element beside the
+  calendar's;
+- his heading, with `LABEL DRIFT` where its season or number is not the
+  calendar's (information, never an error);
+- `WEAK` where every shared element also matches other masses of that
+  calendar.
+
+A structural chapter names no element. It is listed only where its stated
+occasion is the mass's place in the calendar's own order, such as the Sunday
+after an Ember Saturday. No match is stored, so the same rows answer for any
+calendar.
+
+Each row joins two records. It takes the author's standing from
+`src/sources/inventories/author-standing-v1.toml`, which `guidance/sources.md`
+describes; where the file names a work's writer, as Lucien Fromage for the
+*Liturgical Year*'s continuation, the standing is the writer's. It takes the
+work's holding from the containment join of §11.
+
+`make check-sources` validates the file through `formulary` with no mass. The
+check refuses an unquoted string, an unknown key, a role outside the
+vocabulary, and a structural locus that names elements. It also refuses a
+locus whose heading does not occur in the lines of the tracked layer it names;
+that is a chapter filed at the wrong lines. A locus read only in a facsimile
+gives pages, which are bounded but not replayed, and the check says how many
+such loci there are.
+
+A match is a finding aid. It does not show what the commentator says of the
+shared elements, and a study still reads the locus and binds it. This section
+governs finding commentators. How a study weighs or uses what it finds is not
+decided here.

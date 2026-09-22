@@ -1,0 +1,64 @@
+{
+ "artifacts": [
+  {
+   "artifact_type": "ocr-text",
+   "byte_size": 4174594,
+   "edition_owned": true,
+   "id": "artifact.honorius-augustodunensis.gemma-animae.1895-garnier-migne-pl-172.ia-djvu-ocr-2ebfcb5f",
+   "media_type": "text/plain; charset=utf-8",
+   "notes": "Extent as retrieved and measured: complete uncorrected OCR of Migne, Patrologia Latina vol. 172 (Honorius Augustodunensis and others; Paris: Garnier, 1895), whole volume, 115,977 LF-terminated lines. The volume's own Elenchus, at lines 430-515, lists every work it prints; the containment inventory enters them. Gemma animae stands at lines 42628-58295. Uncorrected optical recognition: a locating and searching layer, not a text of record; column figures and chapter numbers in it are damaged in places, and a reading quoted from it is collated against a page image before it is relied on.",
+   "page_count": null,
+   "retrieved": "2026-09-22",
+   "rights": "public-domain",
+   "rights_basis": "The printing reproduced here was published at Paris in 1895, before 1931, and is in the public domain in the United States: the repository's own rights reading, recorded at guidance/missals.md section 5 against Cornell's public-domain chart current at 1 January 2026, is that a work first published abroad before 1931 is in the public domain with no term running. The Internet Archive's optical character recognition of a public-domain printing is a mechanical transcription that adds no original authorship, is served without a copyright claim asserted over it, and carries none of the host's markup, navigation or apparatus; a search of the whole file finds no 'Google' and no 'usage guidelines' string. The bytes are retained because guidance/sources.md makes retention the project-wide default and none of its three exemptions reaches this file: it may lawfully be republished, it is not restricted, and at 4.17 MB it is well within what this library already retains.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/patrologiaecursu0172mign/patrologiaecursu0172mign_djvu.txt",
+   "storage": "tracked"
+  },
+  {
+   "artifact_type": "page-scan-image",
+   "byte_size": 1082315,
+   "edition_owned": true,
+   "id": "artifact.honorius-augustodunensis.gemma-animae.1895-garnier-migne-pl-172.ia-leaf-n4-1f98e4c8",
+   "media_type": "image/jpeg",
+   "notes": "One page image, leaf n4: the volume's title page, 2275 by 3690 pixels. Read on this image: 'PATROLOGIAE LATINAE TOMUS CLXXII', the authors 'HONORIUS AUGUSTODUNENSIS. RAINALDUS REM., ADALBERTUS MOGUNT., OLDEGARIUS TARRAC., ARCHIEPISCOPI. GERARDUS ENGOLISM., STEPH. DE BALGIACO AUGUSTODUN., EPISCOPI. ODO ABBAS S. REMIGII. GAUFRIDUS GROSSUS MON. TIRON.', and the imprint 'PARISIIS / APUD GARNIER FRATRES, EDITORES ET J.-P. MIGNE SUCCESSORES, / IN VIA DICTA: AVENUE DU MAINE, 208 / 1895'. One leaf only.",
+   "page_count": 1,
+   "retrieved": "2026-09-22",
+   "rights": "public-domain",
+   "rights_basis": "The printing reproduced here was published at Paris in 1895, before 1931, and is in the public domain in the United States: the repository's own rights reading, recorded at guidance/missals.md section 5 against Cornell's public-domain chart current at 1 January 2026, is that a work first published abroad before 1931 is in the public domain with no term running. A faithful photographic reproduction of one page of a public-domain printing adds no original authorship of its own. Retained because guidance/sources.md makes retention the default and this 1.08 MB image is neither restricted nor a size argument; it is the page the edition's imprint and year were read on.",
+   "rights_jurisdiction": "United States",
+   "source_url": "https://archive.org/download/patrologiaecursu0172mign/page/n4.jpg?fit=cover&quality=100",
+   "storage": "tracked"
+  }
+ ],
+ "edition": {
+  "authority": null,
+  "date": "1895",
+  "editors": [
+   "Jacques-Paul Migne"
+  ],
+  "id": "edition.honorius-augustodunensis.gemma-animae.1895-garnier-migne-pl-172",
+  "jurisdiction": null,
+  "language": "la",
+  "publication": "Parisiis: apud Garnier fratres, editores et J.-P. Migne successores, in via dicta Avenue du Maine, 208, 1895. Patrologiae Latinae tomus CLXXII: Honorius Augustodunensis and others. The copy is the Claremont School of Theology's, scanned by the Internet Archive as item patrologiaecursu0172mign.",
+  "title": "Gemma animae, in Migne's Patrologia Latina volume 172 (Paris: Garnier, 1895)",
+  "translators": [],
+  "year": 1895
+ },
+ "passages": [],
+ "schema": "triptych-source-reader/v1",
+ "work": {
+  "alternate_titles": [
+   "Gemma animae de divinis officiis",
+   "The Jewel of the Soul"
+  ],
+  "author": "Honorius Augustodunensis",
+  "category": "liturgical-commentary",
+  "description": "Honorius Augustodunensis's medieval exposition of divine worship. Book IV coordinates temporal Sundays, their chants, readings, and typological or historical interpretations in paired chapters labeled 'under the law' and 'under grace'.",
+  "id": "work.honorius-augustodunensis.gemma-animae",
+  "languages": [
+   "la"
+  ],
+  "title": "Gemma animae"
+ }
+}

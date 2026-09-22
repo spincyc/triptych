@@ -118,6 +118,7 @@ description_patterns = [
 ]
 artifact_patterns = [
   '\bwhole[- ]volume\b',
+  '\bwhole (?:[a-z]+ ){1,3}volume\b',
   '\bwhole of (?:the )?(?:leonine )?volume\b',
   '\bamong other works\b',
   '\bcomplete collected volume\b',
@@ -2841,3 +2842,295 @@ title = "Contra Celsum"
 work_id = "work.origen.contra-celsum"
 locator = "7.4 at printed pp. 156-157"
 basis = "Artifact notes."
+
+# ---------------------------------------------------------------------------
+# Whole Migne volume layers entered 2026-09-22 after a systematic audit
+#
+# A cold review found the whole of PG 124 registered under Theophylact's John
+# commentary and entered nowhere, so `discover` reported no holding for his
+# Pauline commentary at 1 Corinthians 1:4, which the layer prints at line 45001.
+# Its provenance says "the whole Patrologia Graeca volume 124", which the
+# pattern '\bwhole[- ]volume\b' could not see; the second artifact pattern
+# above now reads "whole" and "volume" with up to three words between them, and
+# finds no other record. Every registered text layer or facsimile naming a
+# Migne volume was then listed and read: the rest are single-work extracts
+# (Wikisource and Corpus Corporum texts, Documenta Catholica Omnia PDFs of one
+# work each) or are already entered. PL 85, whose notes call it "the first tome
+# of Migne's Liturgia Mozarabica, Patrologia Latina 85" without the word
+# "whole", is entered below by that reading rather than by a pattern, and PL 172
+# is the Gemma animae layer registered the same day. Each entry's constituents
+# were read in the layer itself.
+# ---------------------------------------------------------------------------
+
+[[containers]]
+id = "artifact.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864.ia-djvu-ocr-9a1fc730"
+manifest_sha256 = "ebf4a6c29d9ce74186a0e61ed19c0ab9a51b61d28323b9dce274a5ff5a5e8a88"
+status = "resolved"
+basis = "The layer itself, fetched whole on 2026-09-22 and matching the record's sha256 9a1fc730...: its Elenchus at lines 211-232 ('AUCTORUM ET OPERUM QUI IN HOC TOMO [CX]XIV CONTINENTUR. THEOPHYLACTUS BULGARIAE ARCHIEPISCOPUS') and its closing 'ORDO RERUM QUAE IN HOC TOMO CONTINENTUR' at lines 111089-111123 list Theophylact's commentary on John (continuatio) from column 9 and his commentary on the Pauline epistles from column 319, Romans to 2 Thessalonians, with the prefaces of Philippus Montanus, T. Bailey and the Venetian editor to the latter. The record's provenance: 'text of the whole Patrologia Graeca volume 124'."
+
+[[containers.constituents]]
+author = "Theophylact of Ohrid"
+title = "Enarratio in evangelium Ioannis"
+work_id = "work.theophylact-of-ohrid.enarratio-in-evangelium-ioannis"
+scripture = ["John 7:52-21:25"]
+locator = "'COMMENTARIUS IN JOANNEM (CONTINUATIO.)' at physical lines 260-24975, from column 9"
+basis = "The layer: the continuation opens on John 7:52 (its Greek column quotes 'Me kai su ek tes Galilaias ei?') and its running heads reach 'ENARRATIO IN EVANGELIUM JOANNIS. -- CAP. XXI.' at line 24547; the Pauline commentary's heading follows at line 24976."
+
+[[containers.constituents]]
+author = "Theophylact of Ohrid"
+title = "In omnes D. Pauli apostoli epistolas enarrationes"
+scripture = ["Romans", "1 Corinthians", "2 Corinthians", "Galatians", "Ephesians", "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians"]
+locator = "'IN OMNES DIVI PAULI EPISTOLAS' from physical line 24976, column 319, to the end of the volume; 1 Corinthians 1:4 at line 45001"
+basis = "The Elenchus and the Ordo rerum list 'Commentarius in omnes divi Pauli Epistolas' with a commentary on each epistle from Romans (col. 335) to 2 Thessalonians (col. 1327); the last running head is 'EXPOSITIO IN EPIST. II AD THESS. -- CAP. III.' The rest of the Pauline commentary is in PG 125, which is not held. The commentary index names this one work under three titles; this row carries the index's canonical one."
+
+[[containers.constituents]]
+author = "Theophylact of Ohrid"
+title = "Expositio in epistolas sancti Pauli"
+scripture = ["Romans", "1 Corinthians", "2 Corinthians", "Galatians", "Ephesians", "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians"]
+locator = "the same commentary, from physical line 24976"
+basis = "The same work as the row above: the commentary index lists it a second time under this title, as a separate lead at 1 Corinthians 1, and a lead joins a constituent only by the index's exact title."
+
+[[containers.constituents]]
+author = "Theophylact of Ohrid"
+title = "Expositio in Epistolas S. Pauli"
+scripture = ["Romans", "1 Corinthians", "2 Corinthians", "Galatians", "Ephesians", "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians"]
+locator = "the same commentary, from physical line 24976"
+basis = "The same work again, under the index's third title for it."
+
+[[containers]]
+id = "artifact.archdiocese-of-toledo.missale-mixtum-mozarabicum.paris-migne-1862.liturgia-mozarabica-1862-text-769ccd75"
+manifest_sha256 = "774ea3d436bd666ca33a1d01430364e5d49b5f3c3fd70434f345278319ef2a7e"
+status = "resolved"
+basis = "The layer's Elenchus at lines 366-384 ('LIBRORUM QUAE IN HOC TOMO LXXXV CONTINENTUR'): a Praefatio in Missale Mixtum, the Missale mixtum in its prior and posterior parts, and an Appendix of the Missa S. Pelagii martyris, a Kalendarium vetus and a Kalendarium Gotho-Hispanum. The edition's title page, as the edition record quotes it: 'Missale mixtum praefatione, notis et appendicibus ab Alexandro Lesleo ornatum'. The artifact notes: 'the first tome of Migne's Liturgia Mozarabica, Patrologia Latina 85'."
+
+[[containers.constituents]]
+author = "Archdiocese of Toledo (the Hispano-Mozarabic rite)"
+title = "Missale mixtum secundum regulam beati Isidori dictum Mozarabes"
+work_id = "work.archdiocese-of-toledo.missale-mixtum-mozarabicum"
+whole = true
+locator = "Missalis Mixti pars prior and pars posterior, as the volume's Elenchus lists them"
+basis = "The owning edition and the Elenchus."
+
+[[containers.constituents]]
+author = "Alexander Lesley"
+title = "Praefatio in Missale Mixtum"
+locator = "as the volume's Elenchus lists it; the Elenchus's name for its author is damaged in the layer ('Fr. Ani. Lorenzafim'), so the author is taken from the title page's 'praefatione ... ab Alexandro Lesleo'"
+basis = "The Elenchus and the title page quoted in the edition record."
+
+[[containers.constituents]]
+author = "Hispano-Mozarabic rite, appended by Alexander Lesley"
+title = "Missa S. Pelagii martyris"
+locator = "the Appendix, as the volume's Elenchus lists it"
+basis = "The Elenchus."
+
+[[containers.constituents]]
+author = "Hispano-Mozarabic rite, appended by Alexander Lesley"
+title = "Kalendarium vetus"
+locator = "the Appendix, as the volume's Elenchus lists it"
+basis = "The Elenchus."
+
+[[containers.constituents]]
+author = "Hispano-Mozarabic rite, appended by Alexander Lesley"
+title = "Kalendarium Gotho-Hispanum"
+locator = "the Appendix, as the volume's Elenchus lists it"
+basis = "The Elenchus."
+
+[[containers]]
+id = "artifact.honorius-augustodunensis.gemma-animae.1895-garnier-migne-pl-172.ia-djvu-ocr-2ebfcb5f"
+manifest_sha256 = "a45668c1b80e08c294546dd4d3f727a712719d481e77aa0fd2402bf9e00ff8cc"
+status = "resolved"
+basis = "The layer's own Elenchus at lines 430-515 ('ELENCHUS AUCTORUM ET OPERUM QUI IN HOC TOMO CLXXII CONTINENTUR'), read in full on 2026-09-22; the title page, read on leaf n4, names the same authors. The Elenchus's column figures are damaged in the layer and are not recorded as figures except where the text was located."
+
+[[containers.constituents]]
+author = "Honorius Augustodunensis"
+title = "Gemma animae"
+work_id = "work.honorius-augustodunensis.gemma-animae"
+whole = true
+locator = "cols. 541-738, physical lines 42628-58295"
+basis = "The owning edition; its heading and explicit located in the layer."
+
+[[containers.constituents]]
+author = "Honorius Augustodunensis"
+title = "De philosophia mundi"
+locator = "Operum pars prima, didascalica et historica, as the volume's Elenchus lists it"
+basis = "The Elenchus."
+
+[[containers.constituents]]
+author = "Honorius Augustodunensis"
+title = "De solis affectibus"
+locator = "Operum pars prima, as the volume's Elenchus lists it"
+basis = "The Elenchus."
+
+[[containers.constituents]]
+author = "Honorius Augustodunensis"
+title = "De imagine mundi"
+locator = "Operum pars prima, as the volume's Elenchus lists it"
+basis = "The Elenchus."
+
+[[containers.constituents]]
+author = "Honorius Augustodunensis"
+title = "Summa totius de omnimoda historia"
+locator = "Operum pars prima, as the volume's Elenchus lists it"
+basis = "The Elenchus."
+
+[[containers.constituents]]
+author = "Honorius Augustodunensis"
+title = "De scriptoribus ecclesiasticis"
+locator = "Operum pars prima, as the volume's Elenchus lists it"
+basis = "The Elenchus."
+
+[[containers.constituents]]
+author = "Honorius Augustodunensis"
+title = "Hexaemeron"
+locator = "Operum pars secunda, exegetica, as the volume's Elenchus lists it"
+basis = "The Elenchus."
+
+[[containers.constituents]]
+author = "Honorius Augustodunensis"
+title = "De decem plagis Aegypti spiritualiter"
+locator = "Operum pars secunda, as the volume's Elenchus lists it"
+basis = "The Elenchus."
+
+[[containers.constituents]]
+author = "Honorius Augustodunensis"
+title = "Expositio psalmorum selectorum"
+locator = "Operum pars secunda, as the volume's Elenchus lists it"
+basis = "The Elenchus, which adds that fuller excerpts of his exposition of the Psalter are printed with Gerhoh in Patrologia Latina 193."
+
+[[containers.constituents]]
+author = "Honorius Augustodunensis"
+title = "Quaestiones et responsiones in Proverbia et Ecclesiasten"
+locator = "Operum pars secunda, as the volume's Elenchus lists it"
+basis = "The Elenchus."
+
+[[containers.constituents]]
+author = "Honorius Augustodunensis"
+title = "Expositio in Cantica canticorum"
+locator = "Operum pars secunda, as the volume's Elenchus lists it; its explicit stands at physical line 42604, just before Gemma animae"
+basis = "The Elenchus; the explicit 'Explicit expositio in Cantica canticorum' located in the layer."
+
+[[containers.constituents]]
+author = "Honorius Augustodunensis"
+title = "Sigillum Beatae Mariae"
+locator = "Operum pars secunda, as the volume's Elenchus lists it"
+basis = "The Elenchus."
+
+[[containers.constituents]]
+author = "Honorius Augustodunensis"
+title = "Sacramentarium"
+locator = "Operum pars tertia, liturgica, from col. 737, physical line 58310, directly after Gemma animae"
+basis = "The Elenchus; its heading located in the layer."
+
+[[containers.constituents]]
+author = "Honorius Augustodunensis"
+title = "Speculum Ecclesiae"
+locator = "Operum pars tertia, as the volume's Elenchus lists it"
+basis = "The Elenchus."
+
+[[containers.constituents]]
+author = "Honorius Augustodunensis"
+title = "Elucidarium"
+locator = "Operum pars quarta, dogmatica et ascetica, as the volume's Elenchus lists it"
+basis = "The Elenchus."
+
+[[containers.constituents]]
+author = "Honorius Augustodunensis"
+title = "Liber duodecim quaestionum"
+locator = "Operum pars quarta, as the volume's Elenchus lists it"
+basis = "The Elenchus."
+
+[[containers.constituents]]
+author = "Honorius Augustodunensis"
+title = "Libellus octo quaestionum"
+locator = "Operum pars quarta, as the volume's Elenchus lists it"
+basis = "The Elenchus."
+
+[[containers.constituents]]
+author = "Honorius Augustodunensis"
+title = "Inevitabile sive Dialogus de libero arbitrio"
+locator = "Operum pars quarta, as the volume's Elenchus lists it"
+basis = "The Elenchus."
+
+[[containers.constituents]]
+author = "Honorius Augustodunensis"
+title = "Scala coeli major"
+locator = "Operum pars quarta, as the volume's Elenchus lists it"
+basis = "The Elenchus."
+
+[[containers.constituents]]
+author = "Honorius Augustodunensis"
+title = "Scala coeli minor"
+locator = "Operum pars quarta, as the volume's Elenchus lists it"
+basis = "The Elenchus."
+
+[[containers.constituents]]
+author = "Honorius Augustodunensis"
+title = "De animae exsilio et patria"
+locator = "Operum pars quarta, as the volume's Elenchus lists it"
+basis = "The Elenchus."
+
+[[containers.constituents]]
+author = "Honorius Augustodunensis"
+title = "De vita claustrali"
+locator = "Operum pars quarta, as the volume's Elenchus lists it"
+basis = "The Elenchus."
+
+[[containers.constituents]]
+author = "Honorius Augustodunensis"
+title = "Eucharistion"
+locator = "Operum pars quarta, as the volume's Elenchus lists it"
+basis = "The Elenchus."
+
+[[containers.constituents]]
+author = "Honorius Augustodunensis"
+title = "Summa gloria de Apostolico et Augusto"
+locator = "Operum pars quarta, as the volume's Elenchus lists it"
+basis = "The Elenchus."
+
+[[containers.constituents]]
+author = "Stephanus de Balgiaco, bishop of Autun"
+title = "De sacramento altaris"
+locator = "as the volume's Elenchus lists it"
+basis = "The Elenchus: 'STEPHANUS DE BALGIACO AUGUSTODUNENSIS EPISCOPUS'."
+
+[[containers.constituents]]
+author = "Stephanus de Balgiaco, bishop of Autun"
+title = "Chartae"
+locator = "as the volume's Elenchus lists it"
+basis = "The Elenchus."
+
+[[containers.constituents]]
+author = "Gerardus, bishop of Angouleme"
+title = "Epistolae et diplomata"
+locator = "as the volume's Elenchus lists it"
+basis = "The Elenchus: 'GERARDUS ENGOLISMENSIS EPISCOPUS'."
+
+[[containers.constituents]]
+author = "Odo, abbot of Saint-Remi at Reims"
+title = "Epistolae"
+locator = "as the volume's Elenchus lists it"
+basis = "The Elenchus: 'ODO ABBAS S. REMIGII REMENSIS'."
+
+[[containers.constituents]]
+author = "Adalbertus, archbishop of Mainz"
+title = "Epistolae"
+locator = "as the volume's Elenchus lists it"
+basis = "The Elenchus: 'ADALBERTUS MOGUNTINUS ARCHIEPISCOPUS'."
+
+[[containers.constituents]]
+author = "Rainaldus II, archbishop of Reims"
+title = "Epistolae et diplomata"
+locator = "as the volume's Elenchus lists it"
+basis = "The Elenchus: 'RAINALDUS II REMENSIS ARCHIEPISCOPUS'."
+
+[[containers.constituents]]
+author = "Oldegarius, bishop of Tarragona"
+title = "Epistolae"
+locator = "as the volume's Elenchus lists it"
+basis = "The Elenchus: 'OLDEGARIUS TARRACONENSIS EPISCOPUS'."
+
+[[containers.constituents]]
+author = "Gaufridus Grossus, monk of Tiron"
+title = "Vita S. Bernardi de Tironio"
+locator = "as the volume's Elenchus lists it"
+basis = "The Elenchus: 'GAUFRIDUS GROSSUS MONACHUS TIRONIENSIS'."

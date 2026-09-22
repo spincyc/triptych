@@ -1,0 +1,396 @@
+# Mass-keyed commentary loci: each commentator's Mass as HE gives it.
+#
+# THE QUESTION THIS ANSWERS. Which liturgical commentators expound a given
+# Mass? Not "which chapter is headed with its Sunday number": a commentator's
+# numbering drifts from any calendar's, and a heading files him under the wrong
+# Mass. Rupert of Deutz's "Dominica decima octava" has the 1962 Eighteenth
+# Sunday's chants and Epistle with the Gospel of the chair of Moses; the 1962
+# Gospel of that Sunday is his NINETEENTH. So each locus records the elements
+# the commentator names, and `tools/tpt commentary-work-index formulary
+# --calendar C --mass M` compares them with that calendar's mass, element by
+# element, every run. No match to any calendar is stored here, so none can
+# drift from the calendar it would restate (guidance/the-shape.md section 2).
+# guidance/catena.md section 12 owns how the file is read.
+#
+# THE MATCH IS A FINDING AID. It says where a commentator's Mass and a
+# calendar's share elements. It verifies nothing about what he says of them;
+# a study still reads the locus and binds it in its own source records.
+#
+# A LOCUS ROW.
+#   locus             his own division, in the work's `locus_grammar`
+#   read_in, lines    the tracked text layer the locus was read in, and its
+#                     physical lines; `make check-sources` replays the heading
+#                     against them. A locus read in a facsimile gives `pages`
+#                     instead, which are bounded but not replayed.
+#   own_label         his heading, as a reading of the page; where the text
+#                     layer's optical recognition differs, `own_label_in_layer`
+#                     carries the layer's exact string, which is what is replayed
+#   season, ordinal   his heading's Sunday, never a calendar's; absent when his
+#                     heading carries no number
+#   occasion          where his text places the Sunday in the year without a
+#                     number, such as the Sunday after an Ember Saturday
+#   treatment         whole-office: he expounds the formulary as one office;
+#                     per-element: he comments on its parts in turn;
+#                     single-element: one part only; structural: the Sunday's
+#                     place in the year, naming no element, listed by occasion
+#   elements          what he names. `incipit` is words he quotes. `ref` is the
+#                     scripture he quotes, cites or unambiguously describes, in
+#                     Clementine Vulgate numbering, at the narrowest extent his
+#                     words establish -- a chapter only where he gives no more.
+#                     `said` is his own words where he describes rather than
+#                     quotes; an element with `said` is reported as described,
+#                     and its incipit or ref is the identification of what he
+#                     describes. `alternative` carries his own qualifier where
+#                     he gives a second text ("in quibusdam Ecclesiis").
+#   state, checked_on located: read in a text layer; inspected: read on a page
+#                     image. Every row here is `located` on the date given.
+#
+# EVERY STRING IS QUOTED. An unquoted comma or colon in a Latin incipit
+# silently splits it into a second key (guidance/sources.md); the check refuses
+# any unquoted string.
+#
+# WHAT IS HERE. The loci of every registered liturgical commentary for the 1962
+# Eighteenth Sunday after Pentecost (registry 58), and the neighbouring chapter
+# wherever a commentator's Gospel of the paralytic sits under another Sunday.
+# Standing is never recorded here; it is the author-standing registry's
+# (src/sources/inventories/author-standing-v1.toml). Holdings are never recorded
+# here; they are the containment inventory's.
+
+schema: 'triptych-commentary-formulary-loci/v1'
+updated: '2026-09-22'
+numbering: 'vulgate'
+works:
+
+  - work_id: 'work.rupert-of-deutz.de-divinis-officiis'
+    genre: 'office-exposition'
+    locus_grammar: 'XII.<chapter>: Book XII, one chapter a Sunday after Pentecost'
+    label_system: "Rupert's own 'Dominica N post Pentecosten', one chapter for each; the volume's table at layer lines 104540-104580 numbers them"
+    loci:
+      - locus: 'XII.18'
+        read_in: 'artifact.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.ia-djvu-ocr-2e2ca850'
+        lines: [23433, 23485]
+        own_label: 'Dominica decima octava post Pentecosten'
+        own_label_in_layer: 'Dominica, decima octava post Pentecosten.'
+        season: 'after-pentecost'
+        ordinal: 18
+        treatment: 'whole-office'
+        elements:
+          - {role: 'introit', incipit: 'Da pacem', ref: 'Sirach 36:18'}
+          - {role: 'epistle', incipit: 'Gratias ago Deo meo pro vobis', ref: '1 Corinthians 1:4'}
+          - {role: 'gradual', incipit: 'Fiat pax in virtute tua', ref: 'Psalm 121:7', as: 'verse'}
+          - {role: 'gospel', said: 'juxta Evangelium ejusdem officii, sint sicut Scribae et Pharisaei, qui sederunt super cathedram Mosi', ref: 'Matthew 23:2'}
+          - {role: 'offertory', incipit: 'Sanctificavit Moses', ref: 'Exodus 24:4-5'}
+          - {role: 'communion', incipit: 'Tollite hostias', ref: 'Psalm 95:8'}
+        state: 'located'
+        checked_on: '2026-09-22'
+        notes: "The layer prints the Gospel's citation as '(Matth. xxi)'; the words he gives are Matthew 23:2. His Introit is quoted with 'inquiunt' inserted: 'Da pacem, inquiunt, Domine, sustinentibus te'."
+      - locus: 'XII.19'
+        read_in: 'artifact.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.ia-djvu-ocr-2e2ca850'
+        lines: [23487, 23534]
+        own_label: 'Dominica decima nona post Pentecosten'
+        season: 'after-pentecost'
+        ordinal: 19
+        treatment: 'whole-office'
+        elements:
+          - {role: 'gospel', said: 'In evangelio Dominicae nonae decimae ait Dominus paralytico ... Confide, fili, remittuntur tibi peccata tua', ref: 'Matthew 9:2-6'}
+          - {role: 'epistle', said: 'juxta praeeuntem epistolam renovatur spiritu mentis suae ... Qui furabatur, jam non furetur', ref: 'Ephesians 4:23-28'}
+          - {role: 'introit', incipit: 'Salus populi ego sum'}
+          - {role: 'gradual', incipit: 'Elevatio manuum mearum', ref: 'Psalm 140:2', as: 'verse'}
+          - {role: 'offertory', incipit: 'Si ambulavero in medio tribulationis', ref: 'Psalm 137:7'}
+          - {role: 'communion', incipit: 'Tu mandasti mandata tua custodiri nimis', ref: 'Psalm 118:4'}
+        state: 'located'
+        checked_on: '2026-09-22'
+        notes: 'The opening of the Gospel quotation is lost at a column break in the layer (lines 23489-23496); what survives is Matthew 9:2-6.'
+
+  - work_id: 'work.william-durandus.rationale-divinorum-officiorum'
+    genre: 'office-exposition'
+    locus_grammar: 'VI.<chapter>: Book VI, the temporal year, with the Ember-day chapters between Sundays; printings number the chapters differently, so the locus is the Lyon 1612 tomus secundus numbering the layer carries'
+    label_system: "Durandus's own 'De dominica N post Pentecosten', one chapter for each"
+    loci:
+      - locus: 'VI.135'
+        read_in: 'artifact.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.ia-djvu-ocr-b9b266dd'
+        lines: [17086, 17126]
+        own_label: 'De dominica decimaoctava post Pentecosten'
+        own_label_in_layer: 'Dc dominica dccimaodaua poft Pcntccoftcn,'
+        season: 'after-pentecost'
+        ordinal: 18
+        treatment: 'whole-office'
+        elements:
+          - {role: 'gospel', incipit: 'Super cathedram Mosi', ref: 'Matthew 23:2', alternative: 'in quibusdam Ecclesiis'}
+          - {role: 'gospel', incipit: 'Accesserunt ad Iesum', ref: 'Matthew 22:35-44', alternative: 'in quibusdam Ecclesiis', said: 'Accesserunt ad Iesum, quod est Matth. 22 ... Quod est mandatum magnum ... Diliges Dominum Deum tuum ... Quid vobis videtur de Christo'}
+          - {role: 'introit', incipit: 'Da pacem Domine sustinentibus te', ref: 'Sirach 36:18'}
+          - {role: 'epistle', incipit: 'Gratias ago semper Deo meo', ref: '1 Corinthians 1:4'}
+          - {role: 'gradual', incipit: 'Laetatus sum', ref: 'Psalm 121:1'}
+          - {role: 'alleluia', incipit: 'Laudate Dominum omnes gentes', ref: 'Psalm 116:1'}
+          - {role: 'offertory', incipit: 'Sanctificavit Moses altare Domino', ref: 'Exodus 24:4-5'}
+          - {role: 'communion', incipit: 'Tollite hostias', ref: 'Psalm 95:8'}
+        state: 'located'
+        checked_on: '2026-09-22'
+        notes: "Uncorrected optical text of a 1612 printing: long s reads as f and e as c throughout, so the incipits are readings of the layer, not its strings. He gives both Gospels 'in quibusdam Ecclesiis' and calls the Communion 'postcommu.'; the Introit's verse is Laetatus sum, or 'in aliis ecclesiis' Bonum est."
+      - locus: 'VI.136'
+        read_in: 'artifact.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.ia-djvu-ocr-b9b266dd'
+        lines: [17130, 17159]
+        own_label: 'De decimanona dominica post Pentecosten'
+        own_label_in_layer: 'De decimanona dominica poft Pentccoftcn.'
+        season: 'after-pentecost'
+        ordinal: 19
+        treatment: 'whole-office'
+        elements:
+          - {role: 'gospel', incipit: 'Ascendens Iesus', ref: 'Matthew 9:1', alternative: 'in quibusdam Ecclesiis'}
+          - {role: 'introit', incipit: 'Salus populi ego sum'}
+          - {role: 'epistle', incipit: 'Renovamini spiritu mentis vestrae', ref: 'Ephesians 4:23-24'}
+          - {role: 'gradual', incipit: 'Dirigatur oratio mea sicut incensum', ref: 'Psalm 140:2'}
+          - {role: 'alleluia', said: 'Alleluia vero dicitur in voce paralytici sanati, scilicet dextera Domini fecit virtutem', ref: 'Psalm 117:16'}
+          - {role: 'offertory', incipit: 'Si ambulavero in medio tribulationis', ref: 'Psalm 137:7'}
+        state: 'located'
+        checked_on: '2026-09-22'
+        notes: 'He opens the chapter by tying it to the preceding one through the Introit Da pacem.'
+
+  - work_id: 'work.honorius-augustodunensis.gemma-animae'
+    genre: 'office-exposition'
+    locus_grammar: "IV.<chapter>: Book IV, each temporal Sunday in a pair of chapters, 'sub lege' and then 'sub gratia'"
+    label_system: "Honorius's own 'Dominica N, <Introit incipit>, sub lege', the following 'Sub gratia' chapter unnumbered"
+    loci:
+      - locus: 'IV.84'
+        read_in: 'artifact.honorius-augustodunensis.gemma-animae.1895-garnier-migne-pl-172.ia-djvu-ocr-2ebfcb5f'
+        lines: [56955, 56999]
+        own_label: 'Dominica decima octava, Da pacem, sub lege'
+        own_label_in_layer: 'Dominica decima octava. « Da pacem » sub lege.'
+        season: 'after-pentecost'
+        ordinal: 18
+        treatment: 'whole-office'
+        elements:
+          - {role: 'introit', incipit: 'Da pacem, Domine, sustinentibus te', ref: 'Sirach 36:18'}
+          - {role: 'collect', said: 'In Oratione postulat ut ... Deus corda eorum dirigat', incipit: 'Dirigat corda'}
+          - {role: 'epistle', said: 'in qua nihil deesse in ulla gratia praedicatur (I Cor. 1)', ref: '1 Corinthians 1:7'}
+          - {role: 'gradual', said: 'In Graduali propheta de angeli promissione laetatur, quia populus in domum Domini iturus praenuntiatur', ref: 'Psalm 121:1'}
+          - {role: 'alleluia', incipit: 'Laudate Dominum'}
+          - {role: 'gospel', said: 'In Evangelio populum exhortatur, ut in patria legem Moysi in duobus praeceptis dilectionis implere non obliviscatur', ref: 'Matthew 22:37-40'}
+          - {role: 'offertory', incipit: 'Sanctificavit Moyses altare', ref: 'Exodus 24:4-5'}
+          - {role: 'communion', incipit: 'Tollite hostias', ref: 'Psalm 95:8'}
+        state: 'located'
+        checked_on: '2026-09-22'
+        notes: "A footnote intrudes into the Collect sentence in the layer (lines 56970-56985). The Alleluia's citation is damaged ('Laudate Domi- qmwm (Psal. cxxxiv)'), so no ref is given for it; it is not Timebunt gentes."
+      - locus: 'IV.85'
+        read_in: 'artifact.honorius-augustodunensis.gemma-animae.1895-garnier-migne-pl-172.ia-djvu-ocr-2ebfcb5f'
+        lines: [57002, 57026]
+        own_label: 'Sub gratia'
+        own_label_in_layer: 'Cap. LXXXV. — Sub gratia.'
+        treatment: 'whole-office'
+        elements:
+          - {role: 'introit', incipit: 'Da pacem Domine, sustinentibus te', ref: 'Sirach 36:18'}
+          - {role: 'collect', said: 'In Oratione vero corda a Deo dirigi precatur', incipit: 'Dirigat corda'}
+          - {role: 'epistle', said: 'In Epistola intelligitur ejus admonitio, quam fecit pro pacis vinculo (I Cor. 1)', ref: '1 Corinthians 1'}
+          - {role: 'gradual', said: 'In Versu denuo orat, ut pax in turribus Ecclesiae fiat', ref: 'Psalm 121:7', as: 'verse'}
+          - {role: 'gospel', said: 'Evangelium innuit qualiter populum in gemina dilectione copulaverit', ref: 'Matthew 22:37-40'}
+          - {role: 'communion', incipit: 'Tollite hostias', ref: 'Psalm 95:8'}
+          - {role: 'communion', said: 'Hae duae Communiones, scilicet Vovete (Psal. lxxv) et Tollite hostias (Psal. xcv)', ref: 'Psalm 75:12', alternative: 'the second of the two Communions he names'}
+        state: 'located'
+        checked_on: '2026-09-22'
+        notes: "The 'sub gratia' half of IV.84's Sunday: its heading carries no number, so no season or ordinal is recorded for it."
+      - locus: 'IV.86'
+        read_in: 'artifact.honorius-augustodunensis.gemma-animae.1895-garnier-migne-pl-172.ia-djvu-ocr-2ebfcb5f'
+        lines: [57029, 57068]
+        own_label: 'Dominica decima nona, Salus populi, sub lege'
+        own_label_in_layer: 'Dominica decima nona, « Salus populi, » sub lege.'
+        season: 'after-pentecost'
+        ordinal: 19
+        treatment: 'whole-office'
+        elements:
+          - {role: 'introit', incipit: 'Salus populi ego sum'}
+          - {role: 'collect', said: 'In Oratione universa eis adversantia excludi rogant', incipit: 'Omnipotens et misericors'}
+          - {role: 'epistle', said: 'In Epistola monent eos novum hominem per justitiam induere (Ephes. iv)', ref: 'Ephesians 4:24'}
+          - {role: 'gradual', incipit: 'Dirigatur oratio mea', ref: 'Psalm 140:2'}
+          - {role: 'alleluia', said: 'In Alleluia, Dextera Dei (Psal. cxvii), Deo plaudit', ref: 'Psalm 117:16'}
+          - {role: 'gospel', said: 'Evangelium concordat, quod Jesum in civitatem suam venisse narrat (Matth. ix)', ref: 'Matthew 9:1'}
+          - {role: 'offertory', incipit: 'Si ambulavero in medio tribulationis', ref: 'Psalm 137:7'}
+          - {role: 'communion', incipit: 'Tu mandasti mandata', ref: 'Psalm 118:4'}
+        state: 'located'
+        checked_on: '2026-09-22'
+
+  - work_id: 'work.sicard-of-cremona.mitrale'
+    genre: 'office-exposition'
+    locus_grammar: 'VIII.<chapter>: Book VIII, chapter N on the Nth Sunday after Pentecost'
+    label_system: "Sicard's own 'Dominica N post Pentecosten', one chapter for each"
+    loci:
+      - locus: 'VIII.18'
+        read_in: 'artifact.sicard-of-cremona.mitrale.latin-migne-pl-213.ia-djvu-ocr-ea9fd813'
+        lines: [29685, 29728]
+        own_label: 'Dominica decima octava post Pentecosten'
+        season: 'after-pentecost'
+        ordinal: 18
+        treatment: 'whole-office'
+        elements:
+          - {role: 'introit', incipit: 'Da pacem, Domine, sustinentibus te', ref: 'Sirach 36:18'}
+          - {role: 'gospel', said: 'in Evangelio. Accesserunt, ut legem Moysi in duobus praeceptis observare non obliviscantur', ref: 'Matthew 22:35-40'}
+          - {role: 'gospel', said: 'Vel, secundum alios, in alio monet evangelio, ut cum sederint in cathedra, si bene praedicant, non male vivant', ref: 'Matthew 23:2-3', alternative: 'secundum alios'}
+          - {role: 'epistle', said: 'In epistola gratias agit Paulus de reversione captivorum et remissione peccatorum, et collatione donorum', ref: '1 Corinthians 1:4'}
+          - {role: 'gradual', incipit: 'Laetatus sum', ref: 'Psalm 121:1'}
+          - {role: 'offertory', said: 'in offerenda ... monet populum revertentem, ad instar Moysi, altaria erigere', ref: 'Exodus 24:4-5'}
+        state: 'located'
+        checked_on: '2026-09-22'
+        notes: "The layer reads the chapter's number 'CAPUT XVII.', a second XVII between XVII and XIX; Book VIII numbers each chapter by its Sunday, so this is XVIII. His 'in offerenda et communione ... hostias immolare' covers the Communion too, but does not name it clearly enough to identify, so no Communion element is recorded."
+      - locus: 'VIII.19'
+        read_in: 'artifact.sicard-of-cremona.mitrale.latin-migne-pl-213.ia-djvu-ocr-ea9fd813'
+        lines: [29729, 29749]
+        own_label: 'Dominica decima nona post Pentecosten'
+        own_label_in_layer: 'DOMINICA DECIMA NÓNA POST PENTECOSTEN.'
+        season: 'after-pentecost'
+        ordinal: 19
+        treatment: 'whole-office'
+        elements:
+          - {role: 'introit', incipit: 'Salus populi ego sum'}
+          - {role: 'gospel', said: 'ut in hodierno legitur evangelio dixit paralytico sanato: Surge, tolle lectum tuum et vade in domum tuam', ref: 'Matthew 9:6'}
+          - {role: 'epistle', said: 'ut in epistola dicitur, oportet te novum hominem induere', ref: 'Ephesians 4:24'}
+          - {role: 'gradual', said: 'orationem et elevationem manuum, in graduali dirigit ad eum, dicens: Dirigatur', ref: 'Psalm 140:2'}
+          - {role: 'offertory', incipit: 'Si ambulavero', ref: 'Psalm 137:7'}
+          - {role: 'communion', incipit: 'Tu mandasti', ref: 'Psalm 118:4'}
+        state: 'located'
+        checked_on: '2026-09-22'
+
+  - work_id: 'work.berno-of-reichenau.libellus-de-quibusdam-rebus-ad-missae-officium-pertinentibus'
+    genre: 'mass-exposition'
+    locus_grammar: 'the chapter, with the Sunday as he names it where one chapter walks several'
+    label_system: 'Berno names no Sunday number in chapter V: he walks the Sundays after Pentecost by their offices and calls this one the Sunday that is vacant after the fast of the seventh month'
+    loci:
+      - locus: 'V, the vacant Sunday after the September fast'
+        read_in: 'artifact.berno-of-reichenau.libellus-de-quibusdam-rebus-ad-missae-officium-pertinentibus.latin-migne-pl-142.ia-djvu-ocr-991758f7'
+        lines: [85768, 85804]
+        own_label: 'finito septimi mensis jejunio'
+        occasion: {kind: 'sunday-after-ember-saturday', embers: ['september']}
+        treatment: 'whole-office'
+        elements:
+          - {role: 'introit', said: 'in introitu missae cantor pacem a Domino rogat ut prophetae ejus fideles inveniantur', ref: 'Sirach 36:18'}
+          - {role: 'gradual', incipit: 'Laetatus sum', ref: 'Psalm 121:1'}
+          - {role: 'gradual', incipit: 'Fiat pax in virtute tua', ref: 'Psalm 121:7', as: 'verse'}
+          - {role: 'gospel', incipit: 'Super cathedram Moysis', ref: 'Matthew 23:2'}
+          - {role: 'offertory', incipit: 'Sanctificavit Moyses altare Domino', ref: 'Exodus 24:4-5'}
+          - {role: 'communion', said: 'hortatur nos Psalmista cum Moyse tollere hostias, et introire in atria Domini', ref: 'Psalm 95:8'}
+          - {role: 'collect', incipit: 'Dirigat corda nostra'}
+        state: 'located'
+        checked_on: '2026-09-22'
+        notes: "No page image of this volume is held, and the layer loses the words just before 'quae vacat' at a column break (lines 85779-85785). He argues that after the September fast the Sunday should repeat the previous week's office rather than the Ember Wednesday's, then walks this Mass, placing the Collect after the Communion in his discussion."
+      - locus: 'V, the following Sunday'
+        read_in: 'artifact.berno-of-reichenau.libellus-de-quibusdam-rebus-ad-missae-officium-pertinentibus.latin-migne-pl-142.ia-djvu-ocr-991758f7'
+        lines: [85804, 85819]
+        own_label: 'In sequenti Dominica'
+        own_label_in_layer: 'In. se- quenti Dominica'
+        treatment: 'whole-office'
+        elements:
+          - {role: 'introit', incipit: 'Salus populi ego sum'}
+          - {role: 'gospel', said: 'in Evangelio non solum sanat paralyticum ... Confide, fili, remittuntur tibi peccata tua (Matth. ix)', ref: 'Matthew 9:2'}
+          - {role: 'collect', said: 'ut omnipotens et misericors Deus universa nobis adversantia propitiatus excludat', incipit: 'Omnipotens et misericors'}
+          - {role: 'epistle', said: 'Propter quod loquimini veritatem unusquisque cum proximo suo', ref: 'Ephesians 4:25'}
+        state: 'located'
+        checked_on: '2026-09-22'
+
+  - work_id: 'work.bernold-of-constance.micrologus-de-ecclesiasticis-observationibus'
+    genre: 'structural'
+    locus_grammar: 'the chapter'
+    label_system: 'chapter titles by subject; no Sunday numbers'
+    loci:
+      - locus: 'XXIX'
+        read_in: 'artifact.bernold-of-constance.micrologus-de-ecclesiasticis-observationibus.latin-migne-pl-151.ia-djvu-ocr-f7de4b32'
+        lines: [78173, 78236]
+        own_label: 'De vacantibus Dominicis'
+        occasion: {kind: 'sunday-after-ember-saturday', embers: ['advent', 'lent', 'pentecost', 'september']}
+        treatment: 'structural'
+        state: 'located'
+        checked_on: '2026-09-22'
+        notes: "The layer reads the heading's number 'XXXIX'; the volume's own list of chapters at line 76354 gives 'Cap. XXIX. De vacantibus Dominicis'. The four Sundays after the Ember fasts are titled vacant in the Sacramentary because the ordinations of the Saturday ran into them; after the autumn fast some supply the Sunday from the Ember Wednesday's office, while the Romans repeat a Sunday office."
+
+  - work_id: 'work.john-beleth.summa-de-ecclesiasticis-officiis'
+    genre: 'office-exposition'
+    locus_grammar: 'the chapter'
+    label_system: 'chapter titles by subject'
+    loci:
+      - locus: 'L'
+        read_in: 'artifact.john-beleth.summa-de-ecclesiasticis-officiis.latin-migne-pl-202.ia-djvu-ocr-22b781bf'
+        lines: [3683, 3728]
+        own_label: 'Quibus horis celebretur missa'
+        occasion: {kind: 'sunday-after-ember-saturday', embers: ['advent', 'lent', 'pentecost', 'september']}
+        treatment: 'structural'
+        state: 'located'
+        checked_on: '2026-09-22'
+        notes: "At lines 3705-3708: on the Ember Saturdays the Mass 'valde sero celebrari et potest et debet propter sacros ordines: quod etiam ad sequentem spectet Dominicam'. He names no element of the following Sunday's Mass."
+
+  - work_id: 'work.ildefonso-schuster.the-sacramentary'
+    genre: 'missal-commentary'
+    locus_grammar: 'volume and printed pages'
+    label_system: "the modern Missal's 'N Sunday after Pentecost', with the old Roman names ('Tertia post natale Sancti Cypriani')"
+    loci:
+      - locus: 'vol. III pp. 167-170'
+        read_in: 'artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-volume-3-ocr-4d8c8988'
+        lines: [10500, 10701]
+        own_label: 'Eighteenth Sunday after Pentecost. Tertia post natale Sancti Cypriani.'
+        own_label_in_layer: 'EIGHTEENTH SUNDAY AFTER PENTECOST Tertia post natale Sancti Cyprtani.'
+        season: 'after-pentecost'
+        ordinal: 18
+        treatment: 'per-element'
+        elements:
+          - {role: 'introit', said: 'The Introit, instead of being taken from the Psalms, is from Ecclesiasticus (xxxvi, 18)', ref: 'Sirach 36:18'}
+          - {role: 'collect', said: 'The Collect asks that this divine goodness may, through its grace, direct the motions of our free will', incipit: 'Dirigat corda'}
+          - {role: 'epistle', said: 'In the passage from the First Epistle to the Corinthians (i, 4-8)', ref: '1 Corinthians 1:4-8'}
+          - {role: 'gradual', said: 'The Gradual, from Psalm cxxi', ref: 'Psalm 121'}
+          - {role: 'alleluia', said: 'The alleluiatic verse comes from Psalm ci', ref: 'Psalm 101'}
+          - {role: 'gospel', said: 'The Gospel, derived from St Matthew (ix, 1-8), describes the healing of the man who was sick of the palsy', ref: 'Matthew 9:1-8'}
+          - {role: 'offertory', said: 'The Offertory is epitomized from Exodus xxiv', ref: 'Exodus 24'}
+          - {role: 'secret', said: 'The Secret reminds us first that the holy Sacrifice brings us into such close intercourse with God', incipit: 'Deus qui nos per hujus sacrificii'}
+          - {role: 'communion', said: 'The Communion is from Psalm xcv: Bring up sacrifices and come into his courts', ref: 'Psalm 95:8-9'}
+          - {role: 'postcommunion', said: 'In the Post-Communion, after having rendered thanks to God for the Sacrament which we have received', incipit: 'Gratias tibi referimus'}
+        state: 'located'
+        checked_on: '2026-09-22'
+        notes: "English translation (Burns Oates & Washbourne, 1927) of an Italian original not held; he quotes the Mass in English, so its parts are identified by the references he gives and by what he says of the Missal's orations. He calls this Sunday, by the Roman rite, a 'Dominica vacat' after the vigil at St Peter's."
+
+  - work_id: 'work.prosper-gueranger.the-liturgical-year'
+    genre: 'missal-commentary'
+    locus_grammar: 'the chapter for each Sunday; printed pages vary by printing, so the locus names the volume and its printed pages'
+    label_system: "the Missal's 'The N Sunday after Pentecost'"
+    writer:
+      person: 'lucien-fromage'
+      scope: 'the Time after Pentecost volumes, the continuation after Guéranger''s death, which are the only volumes this file enters'
+      basis: "Decision D7 of 2026-09-22 (guidance/liturgy/liturgical-commentators-plan-2026-09-22.md). The French second volume of the continuation, Le Temps après la Pentecôte tome II, is prefaced 'Fr. L. F., O. S. B., Solesmes' (Internet Archive lanneliturgiqu11gu, text layer lines 111-115); the BnF names Lucien Fromage (1845-1916) its preface-writer (cb321334875) and the series' continuator (cb318196703). The English Time after Pentecost II translates that volume. The registry row lucien-fromage cites these sources."
+    loci:
+      - locus: 'Time after Pentecost II (series vol. XI), pp. 393-409'
+        read_in: 'artifact.prosper-gueranger.the-liturgical-year.english-duffy-1900-volume-11.ia-pdf-95ba98e2'
+        pages: [414, 430]
+        printed: '1909 Stanbrook printing, pp. 393-409; the first edition of 1883 prints it at vol. II p. 407'
+        own_label: 'The Eighteenth Sunday after Pentecost'
+        season: 'after-pentecost'
+        ordinal: 18
+        treatment: 'per-element'
+        elements:
+          - {role: 'introit', incipit: 'Da pacem, Domine, sustinentibus te'}
+          - {role: 'collect', incipit: 'Dirigat corda nostra'}
+          - {role: 'epistle', incipit: 'Fratres, Gratias ago Deo meo', ref: '1 Corinthians 1:4-8'}
+          - {role: 'gradual', incipit: 'Laetatus sum in his, quae dicta sunt mihi'}
+          - {role: 'alleluia', incipit: 'Timebunt gentes nomen tuum, Domine'}
+          - {role: 'gospel', incipit: 'Ascendens Jesus in naviculam', ref: 'Matthew 9:1-8'}
+          - {role: 'offertory', incipit: 'Sanctificavit Moyses altare Domino'}
+          - {role: 'secret', incipit: 'Deus, qui nos per hujus sacrificii'}
+          - {role: 'communion', incipit: 'Tollite hostias, et introite in atria ejus'}
+          - {role: 'postcommunion', incipit: 'Gratias tibi referimus, Domine'}
+        state: 'located'
+        checked_on: '2026-09-22'
+        notes: "Read in the facsimile's embedded text layer, PDF pages 414-430 (printed 393-409), where the Mass is printed in Latin beside the English; the refs are the chapters it prints ('Caput I', 'Caput IX') and the verses its text runs. The locus is bounded by pages and not replayed, because the only local copy is the PDF. The first-edition page is the plan's reading of the 1883 layer and is not registered here."
+
+  - work_id: 'work.john-henry-blunt.the-annotated-book-of-common-prayer'
+    genre: 'missal-commentary'
+    locus_grammar: 'trinity-<n>: the Prayer Book Sunday after Trinity'
+    label_system: "the Book of Common Prayer's 'The N Sunday after Trinity', which counts from Trinity Sunday; his tables set the Salisbury, modern Roman and Eastern readings beside it"
+    loci:
+      - locus: 'trinity-19'
+        read_in: 'artifact.john-henry-blunt.the-annotated-book-of-common-prayer.london-1866.ia-djvu-text-gtu-32400003882739-f3f87210'
+        lines: [36312, 36400]
+        own_label: 'The Nineteenth Sunday after Trinity'
+        season: 'after-trinity'
+        ordinal: 19
+        treatment: 'per-element'
+        elements:
+          - {role: 'collect', incipit: 'Dirigat corda nostra'}
+          - {role: 'gospel', said: 'In the miracle by which our Blessed Lord restored to life the dead limbs of a paralytic ... Thy sins be forgiven thee ... Arise and walk ... that the Son of man hath power on earth to forgive sins', ref: 'Matthew 9:2-6'}
+          - {role: 'epistle', said: 'St. Paul writes to the Ephesians in much detail concerning the Christian moral law, and shows its relation to the newness of nature', ref: 'Ephesians 4'}
+          - {role: 'introit', said: 'Introit. I am the Saviour of My people, saith the Lord ... Ps. Hear My law, O My people', ref: 'Psalm 77:1', as: 'verse'}
+        state: 'located'
+        checked_on: '2026-09-22'
+        notes: "The Collect is printed in Latin under 'DOMINICA XIX. POST TRINITATEM. Oratio.', its drop initial lost in the layer ('IRIGAT corda nostra'). His reading tables at lines 36334-36352 are too scrambled in the layer to assign rows to Sundays, so no element is taken from them. A witness outside Catholic communion: historical and comparative data only."

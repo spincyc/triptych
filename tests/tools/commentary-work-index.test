@@ -427,6 +427,33 @@ if [ -e "$sandbox/src" ]; then
 fi
 
 # ---------------------------------------------------------------------------
+# formulary finds the commentaries keyed to a Mass by its elements, never by
+# the Sunday number; standing is the one record of who each author is. Both are
+# read-only, and with no mass formulary validates the loci file.
+out="$(run_tool formulary)"
+contains "formulary loci:" "$out" "the loci file validates"
+out="$(run_tool formulary --calendar roman-1962 --mass pentecost-18)"
+contains "Rupert of Deutz" "$out" "a commentator whose heading matches"
+contains "LABEL DRIFT: his after-pentecost 19 against the calendar's after-pentecost 18" "$out" \
+	"a nineteenth-Sunday chapter carrying the eighteenth Sunday's Gospel is flagged"
+contains "differs: gospel: his Matthew 23:2" "$out" "an eighteenth-Sunday chapter with another Gospel says so"
+contains "structural:" "$out" "the vacant-Sunday chapters are listed by occasion"
+out="$(run_tool formulary --calendar roman-1962 --mass pentecost-18 --json)"
+contains '"schema":"triptych-commentary-formulary-report/v1"' "$out" "formulary report schema"
+contains '"status":"label-drift"' "$out" "drift travels in the payload"
+reject "formulary with a mass and no calendar" formulary --mass pentecost-18
+reject "formulary for a mass the calendar lacks" formulary --calendar roman-1962 --mass no-such-mass
+out="$(run_tool standing)"
+contains "author standing:" "$out" "the registry validates"
+out="$(run_tool standing --person amalarius-of-metz)"
+contains "censured by a synod held at Kiersy (Quierzy) (838)" "$out" "a censure is shown with its point"
+reject "standing for an unknown person" standing --person no-such-person
+if [ -e "$sandbox/src" ]; then
+	echo "formulary or standing wrote into the working directory" >&2
+	exit 1
+fi
+
+# ---------------------------------------------------------------------------
 # Negative cases: bad input is refused, never guessed at.
 reject "unknown verb" bogus
 reject "discover with no passage input" discover --discovery "$sandbox/discovery.yaml"

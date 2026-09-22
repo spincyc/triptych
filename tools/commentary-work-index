@@ -9,6 +9,8 @@ Usage:
     [--max-results-per-passage N] [--output PATH]
   commentary-work-index coverage [--book TOKEN] [--all]
   commentary-work-index containment [--container ID] [--unresolved]
+  commentary-work-index formulary [--calendar CALENDAR --mass KEY]
+  commentary-work-index standing [--person ID]
 
 This tool does not invoke external search agents. It works from curated mapping
 records in `--discovery`, and returns ranked work metadata for each passage.
@@ -31,6 +33,17 @@ about falls within it. A work held only inside a Migne volume or an NPNF
 anthology is reported held, and a work nothing joins is reported as having no
 registered holding, with the bound of that absence stated. `containment`
 validates that inventory; `make check-sources` runs it.
+
+`formulary` finds the liturgical commentaries keyed to a Mass. A commentator
+heads his chapter with his own Sunday number, and the numbers drift from any
+calendar's, so the verb never matches on the number: it compares the elements
+each locus in `src/sources/commentary/formulary-loci.yaml` names with the
+calendar mass's own, reports each commentator's heading and whether it drifts,
+and joins the author's standing and the work's holding. With no mass it
+validates that file, replaying every heading against the text layer it was read
+in. `standing` validates `src/sources/inventories/author-standing-v1.toml`,
+the one record of who each author is, and reports which commentaries and lane
+authors it covers. `make check-sources` runs both.
 
 The index and the propers speak two key spaces: the index is keyed one chapter
 at a time and a proper cites a verse range. A lookup therefore builds its key
@@ -57,6 +70,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 import _calendars
 import _containment
 import _coverage
+import _formulary
+import _standing
 from _commentary import (
     UNRECORDED,
     chapter_loci,
@@ -100,7 +115,7 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index discover --passage 'Psalm 24:1-3' --numbering vulgate --max-results 2 --json",
             (
-                "{\"cited_numbering\":\"vulgate\",\"discoveries\":[{\"cited\":\"Psalm 24:1-3\",\"passage\":\"Psalms 24:1-24:3\"... [+21502 chars]",
+                "{\"cited_numbering\":\"vulgate\",\"discoveries\":[{\"cited\":\"Psalm 24:1-3\",\"passage\":\"Psalms 24:1-24:3\"... [+22500 chars]",
             ),
         ),
         Example(
@@ -147,21 +162,74 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index containment",
             (
-                "containment: 114 containers (89 records, 25 whole-volume artifacts), 249 constituents, 49 of them commentary-index leads",
-                "  resolved 19 \u00b7 partial 78 \u00b7 unresolved 17 \u00b7 not containers 26 \u00b7 identities 6",
+                "containment: 117 containers (89 records, 28 whole-volume artifacts), 290 constituents, 53 of them commentary-index leads",
+                "  resolved 22 · partial 78 · unresolved 17 · not containers 26 · identities 6",
             ),
             "validates the inventory; a container-shaped record with no entry, an unknown record or a malformed extent fails it",
         ),
         Example(
             "tools/commentary-work-index containment --container work.jacques-paul-migne.patrologia-latina-volume-37",
             (
-                "containment: 114 containers (89 records, 25 whole-volume artifacts), 249 constituents, 49 of them commentary-index leads",
-                "  resolved 19 \u00b7 partial 78 \u00b7 unresolved 17 \u00b7 not containers 26 \u00b7 identities 6",
+                "containment: 117 containers (89 records, 28 whole-volume artifacts), 290 constituents, 53 of them commentary-index leads",
+                "  resolved 22 · partial 78 · unresolved 17 · not containers 26 · identities 6",
                 "",
                 "  work.jacques-paul-migne.patrologia-latina-volume-37  [resolved]",
                 "    Augustine of Hippo -- Enarrationes in Psalmos (index lead): Psalms 80-150",
             ),
             "one container, what it holds, and how far each constituent reaches inside it",
+        ),
+    ),
+    "formulary": (
+        Example(
+            "tools/commentary-work-index formulary",
+            (
+                "formulary loci: 10 works, 16 loci (2 structural)",
+                "  headings replayed against their lines: 15 · read in a facsimile, bounded by pages: 1",
+            ),
+            "validates the loci file and replays every heading against the lines it was read in",
+        ),
+        Example(
+            "tools/commentary-work-index formulary --calendar roman-1962 --mass pentecost-18",
+            (
+                "formulary: roman-1962 pentecost-18, Eighteenth Sunday after Pentecost (registry 58)",
+                "  its elements: introit Da pacem, Domine · collect Dirigat corda nostra · epistle 1 Corinthians 1:4-8 · gradual Laetatus sum · alleluia Timebunt gentes · gospel Matthew 9:1-8 · offertory Sanctificavit Moyses · secret Deus, qui nos, per hujus sacrificii · communion Tollite hostias · postcommunion Gratias tibi referimus",
+                "  14 loci compared on their elements; 14 listed, 2 structural",
+                "",
+                "   1. Alfredo Ildefonso Schuster — The Sacramentary (Liber Sacramentorum): Historical and Liturgical Notes on the Roman Missal, vol. III pp. 167-170",
+                "      his heading: Eighteenth Sunday after Pentecost. Tertia post natale Sancti Cypriani. (after-pentecost 18); no label drift",
+                "      shares: introit Sirach 36:18 (described), collect Dirigat corda (described), epistle 1 Corinthians 1:4-8 (described), gradual Psalm 121 (described), alleluia Psalm 101 (described), gospel Matthew 9:1-8 (described), offertory Exodus 24 (described), secret Deus qui nos per hujus sacrificii (described), communion Psalm 95:8-9 (described), postcommunion Gratias tibi referimus (described)",
+                "      standing: blessed · holding: held",
+                "      read in artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-volume-3-ocr-4d8c8988 lines 10500-10701; located 2026-09-22",
+                "",
+                "   2. Lucien Fromage — The Liturgical Year, Time after Pentecost II (series vol. XI), pp. 393-409",
+                "... 135 more lines",
+            ),
+            "matched on elements, never on the Sunday number; each row keeps the commentator's own heading and says where it drifts",
+        ),
+    ),
+    "standing": (
+        Example(
+            "tools/commentary-work-index standing",
+            (
+                "author standing: 24 persons · father 8 · doctor 2 · blessed 1 · servant-of-god 1 · ecclesiastical-writer 11 · non-catholic 1",
+                "  liturgical commentaries with a row: 11 of 11 · published lane authors with a row: 14 of 14",
+            ),
+            "validates the registry; coverage is reported, never failed",
+        ),
+        Example(
+            "tools/commentary-work-index standing --person theodoret-of-cyrus",
+            (
+                "author standing: 24 persons · father 8 · doctor 2 · blessed 1 · servant-of-god 1 · ecclesiastical-writer 11 · non-catholic 1",
+                "  liturgical commentaries with a row: 11 of 11 · published lane authors with a row: 14 of 14",
+                "",
+                "  Theodoret of Cyrus (theodoret-of-cyrus), died about 457: ecclesiastical-writer",
+                "    basis: Bishop of Cyrus, born at Antioch about 393, died about 457 (Catholic Encyclopedia, 'Theodoret'). The Catholic Encyclopedia's 'Second Council of Constantinople' calls him and Theodore of Mopsuestia 'ecclesiastical writers'. No cultus is recorded. The liturgical-commentators plan of 2026-09-22 listed him as a Father 'by patrological convention'; the sources read here do not bear that out.",
+                "    source: https://www.newadvent.org/cathen/14574b.htm",
+                "    source: https://www.newadvent.org/cathen/04308b.htm",
+                "    censured by Second Council of Constantinople, the Fifth General Council, ratified by Vigilius (553): his writings against St Cyril of Alexandria and the Council of Ephesus, one of the Three Chapters",
+                "    note: Restored to his see by the Council of Chalcedon (451) after anathematizing Nestorius (Catholic Encyclopedia, 'Three Chapters'). His exegesis is not what was condemned.",
+            ),
+            "one person: the standing, its basis and sources, and any censure",
         ),
     ),
     "build-corpus": (
@@ -1174,6 +1242,14 @@ def _render_payload(
         _render_containment(payload)
         return None
 
+    if payload.get("schema") == _formulary.REPORT_SCHEMA:
+        _render_formulary(payload)
+        return None
+
+    if payload.get("schema") == _standing.REPORT_SCHEMA:
+        _render_standing(payload)
+        return None
+
     if payload.get("totals") is not None:
         _render_coverage(payload)
         return None
@@ -1300,6 +1376,140 @@ def _render_containment(payload: dict[str, Any]) -> None:
                 extent = f"extent not established: {part.get('extent_unresolved', '')}"
             lead = " (index lead)" if part.get("in_index") else ""
             print(f"    {part['author']} -- {part['title']}{lead}: {extent}")
+
+
+def _element_words(row: dict[str, Any]) -> str:
+    """How a commentator's element is shown: what he quotes, else what he cites."""
+    shown = row.get("incipit") or row.get("ref") or ""
+    extras = []
+    if row.get("ref") and row.get("incipit"):
+        extras.append(str(row["ref"]))
+    if row.get("said"):
+        extras.append("described")
+    if row.get("as"):
+        extras.append(f"as {row['as']}")
+    return f"{shown}" + (f" ({', '.join(extras)})" if extras else "")
+
+
+def _render_formulary(payload: dict[str, Any]) -> None:
+    for error in payload.get("errors") or []:
+        print(error)
+    if payload.get("mass") is None:
+        totals = payload["totals"]
+        print(
+            f"formulary loci: {_plural(totals['works'], 'work', 'works')}, "
+            f"{_plural(totals['loci'], 'locus', 'loci')} ({totals['structural']} structural)"
+        )
+        print(
+            f"  headings replayed against their lines: {totals['labels_replayed']}"
+            f" \u00b7 read in a facsimile, bounded by pages: {totals['labels_not_replayable']}"
+        )
+        if payload.get("errors"):
+            print(f"formulary loci invalid: {_plural(len(payload['errors']), 'error', 'errors')}")
+        return
+    mass = payload["mass"]
+    registry = f" (registry {mass['registry']})" if mass.get("registry") else ""
+    print(f"formulary: {payload['calendar']} {mass['key']}, {mass['name']}{registry}")
+    print(
+        "  its elements: "
+        + " \u00b7 ".join(
+            f"{e['role']} " + (e["incipit"] or "; ".join(e["refs"]) or "(no text held)")
+            for e in payload["elements"]
+        )
+    )
+    print(
+        f"  {payload['loci_compared']} loci compared on their elements; "
+        f"{len(payload['listed'])} listed, {len(payload['structural'])} structural"
+    )
+    for ordinal, row in enumerate(payload["listed"], start=1):
+        who = (row.get("writer") or {}).get("name") or (row.get("standing") or {}).get("name") or row["responsible"]
+        print()
+        print(f"  {ordinal:>2}. {who} \u2014 {row['title']}, {row['locus']}")
+        if row.get("writer"):
+            print(f"      writer: {row['writer']['name']}, for {row['writer']['scope']}")
+        heading = f"      his heading: {row['own_label']}"
+        drift = row["drift"]
+        if drift["status"] == "none":
+            heading += f" ({row['season']} {row['ordinal']}); no label drift"
+        elif drift["status"] == "label-drift":
+            heading += f"; LABEL DRIFT: {drift['note']}"
+        else:
+            heading += f"; {drift['note']}"
+        print(heading)
+        same = [e for e in row["elements"] if e["result"] == "same"]
+        print(
+            "      shares: "
+            + ", ".join(
+                f"{e['role']}" + (f" [{e['alternative']}]" if e.get("alternative") else "") + f" {_element_words(e)}"
+                for e in same
+            )
+        )
+        for e in row["elements"]:
+            if e["result"] != "different":
+                continue
+            theirs = "; ".join(
+                c["incipit"] or "; ".join(c["refs"]) for c in e["calendar"]
+            )
+            alternative = f" [{e['alternative']}]" if e.get("alternative") else ""
+            print(f"      differs: {e['role']}{alternative}: his {_element_words(e)}, the calendar's {theirs}")
+        if row.get("not_named_by_commentator"):
+            print(f"      not named by him: {', '.join(row['not_named_by_commentator'])}")
+        weak = row.get("weak") or {}
+        if weak.get("weak"):
+            counts = ", ".join(f"{k} at {v} masses" for k, v in weak["recurrence"].items())
+            print(f"      WEAK: every shared element recurs elsewhere in this calendar: {counts}")
+        standing = row.get("standing") or {}
+        holding = (row.get("holding") or {}).get("status", "not joined")
+        censured = f", {standing['censures']} censure(s) recorded" if standing.get("censures") else ""
+        print(f"      standing: {standing.get('standing', 'no registry row')}{censured} \u00b7 holding: {holding}")
+        where = (
+            f"lines {row['lines'][0]}-{row['lines'][1]}" if row.get("lines")
+            else f"pages {row['pages'][0]}-{row['pages'][1]}"
+        )
+        print(f"      read in {row['read_in']} {where}; {row['state']} {row['checked_on']}")
+    if payload["structural"]:
+        print()
+        print("  structural: on this Sunday's place in the year, listed by occasion, never by elements")
+        for row in payload["structural"]:
+            who = (row.get("standing") or {}).get("name") or row["responsible"]
+            embers = ", ".join((row.get("occasion") or {}).get("embers") or [])
+            print(f"   - {who} \u2014 {row['title']}, {row['locus']}: {row['own_label']}")
+            print(f"     the Sunday after an Ember Saturday ({embers}); lines {row['lines'][0]}-{row['lines'][1]}")
+    print()
+    print(f"  {payload['basis']['finding_aid']}")
+
+
+def _render_standing(payload: dict[str, Any]) -> None:
+    for error in payload.get("errors") or []:
+        print(error)
+    totals = payload["totals"]
+    print(
+        f"author standing: {_plural(totals['persons'], 'person', 'persons')} \u00b7 "
+        + " \u00b7 ".join(f"{k} {v}" for k, v in totals["by_standing"].items())
+    )
+    print(
+        f"  liturgical commentaries with a row: "
+        f"{totals['liturgical_commentaries'] - totals['liturgical_commentaries_without_row']}"
+        f" of {totals['liturgical_commentaries']} \u00b7 published lane authors with a row: "
+        f"{totals['lane_authors'] - totals['lane_authors_without_row']} of {totals['lane_authors']}"
+    )
+    for label, missing in payload["uncovered"].items():
+        for item in missing:
+            print(f"  no row yet ({label.replace('_', ' ')}): {item}")
+    if payload.get("errors"):
+        print(f"author standing invalid: {_plural(len(payload['errors']), 'error', 'errors')}")
+    person = payload.get("person")
+    if not person:
+        return
+    print()
+    print(f"  {person['name']} ({person['id']}), died {person['died']}: {person['standing']}")
+    print(f"    basis: {person['standing_basis']}")
+    for source in person.get("basis_sources") or []:
+        print(f"    source: {source}")
+    for censure in person.get("censures") or []:
+        print(f"    censured by {censure['body']} ({censure['year']}): {censure['point']}")
+    if person.get("notes"):
+        print(f"    note: {person['notes']}")
 
 
 def _ranges(numbers: list[int]) -> str:
@@ -1673,6 +1883,41 @@ def run_containment(arguments: argparse.Namespace) -> dict[str, Any]:
     return report
 
 
+def run_formulary(arguments: argparse.Namespace) -> dict[str, Any]:
+    """Validate the loci file, or project it onto one calendar mass.
+
+    The projection refuses to run over an invalid file: a heading that is not in
+    the lines it names is a locus filed under the wrong chapter, and matching it
+    would report that chapter's Mass as the commentator's.
+    """
+    if bool(arguments.calendar) != bool(arguments.mass):
+        raise ValueError("give --calendar and --mass together, or neither to validate the loci file")
+    registry = _standing.Registry()
+    citations = _formulary.Citations()
+    summary = _formulary.summary(citations=citations, registry=registry)
+    if not arguments.mass or summary["status"] != "ok":
+        return summary
+    return _formulary.project(
+        _formulary.ROOT,
+        arguments.calendar,
+        arguments.mass,
+        registry=registry,
+        holdings=_containment.Holdings(),
+        citations=citations,
+    )
+
+
+def run_standing(arguments: argparse.Namespace) -> dict[str, Any]:
+    """Validate the author-standing registry; show one person when asked."""
+    report = _standing.report()
+    if arguments.person:
+        row = _standing.Registry().by_id.get(arguments.person)
+        if row is None:
+            raise ValueError(f"no author-standing row for {arguments.person}")
+        report["person"] = row
+    return report
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         prog="commentary-work-index",
@@ -1816,11 +2061,48 @@ def main(argv: list[str] | None = None) -> int:
         help="list every container whose constituents or extents are not fully established",
     )
 
+    formulary = with_examples(
+        sub.add_parser(
+            "formulary",
+            help="Find the liturgical commentaries keyed to a Mass, by its elements.",
+            parents=[shared],
+        ),
+        EXAMPLES["formulary"],
+    )
+    formulary.add_argument(
+        "--calendar",
+        default=None,
+        help="calendar directory under src/sources/calendars, such as roman-1962",
+    )
+    formulary.add_argument(
+        "--mass",
+        default=None,
+        help="the calendar's mass key, such as pentecost-18; omit both to validate the loci file",
+    )
+
+    standing = with_examples(
+        sub.add_parser(
+            "standing",
+            help="Validate the author-standing registry: who each author is, and on what basis.",
+            parents=[shared],
+        ),
+        EXAMPLES["standing"],
+    )
+    standing.add_argument(
+        "--person",
+        default=None,
+        help="show one person's row, by the id the registry keys it on",
+    )
+
     def dispatch(arguments: argparse.Namespace):
         if arguments.command == "coverage":
             return run_coverage(arguments)
         if arguments.command == "containment":
             return run_containment(arguments)
+        if arguments.command == "formulary":
+            return run_formulary(arguments)
+        if arguments.command == "standing":
+            return run_standing(arguments)
         if arguments.command == "discover":
             citations = _load_citations_tool()
             return run_discover(arguments, citations)
@@ -1841,6 +2123,8 @@ def main(argv: list[str] | None = None) -> int:
             "build-corpus": dispatch,
             "coverage": dispatch,
             "containment": dispatch,
+            "formulary": dispatch,
+            "standing": dispatch,
         },
         renderer=render,
         prefix="commentary-work-index",

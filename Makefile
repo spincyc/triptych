@@ -246,6 +246,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-source-inventory check-source-inventory-tool \
 	check-source-family-migration check-source-family-migration-tool \
 	check-source-family-screening check-source-containment \
+	check-commentator-inventories \
 	check-source-graph check-publication-inventories \
 	check-artwork-manifests \
 	check-catena check-catena-structure check-catena-paragraphs \
@@ -477,7 +478,8 @@ check-deployment-sources: check-act-history \
 	@$(PYTHON) tools/tpt calendar-rubrics check
 	@$(PYTHON) tools/tpt mass-ordinary check
 
-check-sources: check-deployment-sources check-source-containment
+check-sources: check-deployment-sources check-source-containment \
+		check-commentator-inventories
 	@$(PYTHON) $(SOURCE_FAMILY_MIGRATION_TOOL) check
 
 # A work held only inside another record -- a Migne volume, an NPNF anthology,
@@ -491,6 +493,15 @@ check-sources: check-deployment-sources check-source-containment
 # registered silently. `guidance/catena.md` section 11 owns the rule.
 check-source-containment:
 	@$(PYTHON) tools/tpt commentary-work-index containment
+
+# Who each author is -- Father, Doctor, saint, Blessed, or an ecclesiastical
+# writer -- and which liturgical commentaries expound a Mass, recorded by the
+# elements each commentator names rather than by his Sunday number, which drifts.
+# This refuses a standing without a cited basis and a locus whose heading is not
+# in the lines it names; `guidance/catena.md` section 12 owns both files.
+check-commentator-inventories:
+	@$(PYTHON) tools/tpt commentary-work-index standing
+	@$(PYTHON) tools/tpt commentary-work-index formulary
 
 check-source-library:
 	@$(PYTHON) -m unittest discover -s tools/tests -p 'test_source_library.py' -v
@@ -602,6 +613,7 @@ help:
 		'make check-source-family-migration-tool  Test family migration ledger tooling' \
 		'make check-source-family-screening  Require every migration review unit to be screened' \
 		'make check-source-containment  Require every container record to say which works it holds' \
+		'make check-commentator-inventories  Validate author standing and the Mass-keyed commentary loci' \
 		'make check-curriculum-structure  Build and audit every Ecclesiastical Latin publication hierarchy' \
 		'make check-metadata  Validate structured and inherited AI provenance' \
 		'make check-web-editions  Validate per-leaf web-edition eligibility declarations' \

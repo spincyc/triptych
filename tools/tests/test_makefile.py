@@ -392,7 +392,10 @@ printf 'test PDF for %s\\n' "$job_name" > "$output_directory/$job_name.pdf"
             ],
         )
         self.assertEqual(self.lines(self.source_family_migration_log), ["check"])
-        self.assertEqual(self.lines(self.commentary_work_index_log), ["containment"])
+        self.assertEqual(
+            self.lines(self.commentary_work_index_log),
+            ["containment", "standing", "formulary"],
+        )
         self.assertEqual(
             self.lines(self.source_gate_order_log),
             ["library", "inventory", "family"],

@@ -1,0 +1,416 @@
+# Who an author is, as the Church has judged him: one row per person.
+#
+# THE QUESTION THIS ANSWERS. A proper study's reading rests on "Fathers or
+# saints", and a liturgical commentator is a witness of another kind. Nothing
+# recorded which author is which: the component checker counted any two names,
+# and the commentary harvest's `role` is a model's lead data, which tags Rupert
+# of Deutz `saintly` on some rows and `ecclesiastical-writer` on others. Standing
+# is a fact about a person, and this file is its one home. Locus rows
+# (`src/sources/commentary/formulary-loci.yaml`), harvest tags and study records
+# point here and never restate it.
+#
+# THE CLOSED SET, IN PRECEDENCE ORDER. A person carries the first that is true
+# of him, so Augustine is `father` although he is also a Doctor and a saint; the
+# basis says the rest.
+#
+#   father                 a Father of the Church: the patristic age, with the
+#                          notes the Catholic Encyclopedia's "Fathers of the
+#                          Church" gives after Fessler -- orthodox doctrine and
+#                          learning, holiness of life, antiquity -- and the
+#                          Church's approval
+#   doctor                 a canonized saint declared a Doctor of the Church
+#   saint                  canonized, by a papal act or by the ancient cultus
+#   blessed                beatified
+#   venerable              heroic virtue decreed
+#   servant-of-god         a cause opened
+#   ecclesiastical-writer  an orthodox Catholic writer with none of the above;
+#                          the Catholic Encyclopedia's term for an early author
+#                          "who fail[s] to reach this standard"
+#   historian              a modern historian or editor of the liturgy
+#   non-catholic           outside Catholic communion
+#
+# WHAT A ROW CLAIMS, AND ON WHAT. `standing_basis` states the act or the
+# convention and its date; `basis_sources` cites every source the basis was read
+# from, as an https URL or a library record id. Every source was fetched whole
+# with curl on 2026-09-22 and read locally; none passed through a model. A web
+# search was used only to locate a page, never to read one. Where a source
+# gives no date, `died` says so rather than supplying one. `censures` records a
+# judgment on a point -- the body, the year, the point, the source -- and a
+# study never cites the person for that point.
+#
+# `id` is the person's work-id namespace where the library has one; `namespaces`
+# lists every namespace that is this person (Augustine has two). `names` are the
+# forms a study's lane or the commentary index cites him by, compared with case
+# and spacing folded; a name belongs to one person only.
+#
+# WHAT IS CHECKED. `tools/tpt commentary-work-index standing`, run by `make
+# check-sources`, refuses unknown fields, a standing outside the set, a basis
+# citing nothing, a source that is neither a URL nor a library record, a
+# repeated person, name or namespace, and a namespace the library does not have.
+# It REPORTS, and does not fail on, a liturgical commentary or a published lane
+# author with no row: the judgment is the maintainer's, and a new registration
+# must not turn the source gate red for want of it.
+#
+# WHAT THIS FILE DOES NOT SAY. How a study may use a person of each standing is
+# not decided here. The maintainer's decision D1 of 2026-09-22 is recorded in
+# guidance/liturgy/liturgical-commentators-plan-2026-09-22.md, and the rule that
+# applies it lands in the proper-study guidance and its opt-in component
+# contract, which read this file.
+
+schema = "triptych-author-standing/v1"
+record_type = "author-standing"
+audited_on = "2026-09-22"
+
+# ---------------------------------------------------------------------------
+# Fathers, Doctors and saints named as lane authors by published proper studies
+# ---------------------------------------------------------------------------
+
+[[persons]]
+id = "augustine"
+namespaces = ["augustine", "augustine-of-hippo"]
+name = "Augustine of Hippo"
+names = ["Augustine", "Augustine of Hippo", "St Augustine"]
+died = "28 August 430"
+standing = "father"
+standing_basis = "Bishop of Hippo (396-430), a Father of the patristic age; one of the four Latin Doctors, whose feasts a decree of Boniface VIII (1298) ordered kept as doubles throughout the Church (Catholic Encyclopedia, 'Doctors of the Church'). Death on 28 August 430 per the Catholic Encyclopedia's 'St. Augustine of Hippo'."
+basis_sources = [
+  "https://www.newadvent.org/cathen/02084a.htm",
+  "https://www.newadvent.org/cathen/05075a.htm",
+  "https://www.newadvent.org/cathen/06001a.htm",
+]
+confession = "Catholic"
+
+[[persons]]
+id = "basil-of-caesarea"
+namespaces = ["basil-of-caesarea"]
+name = "Basil of Caesarea"
+names = ["Basil of Caesarea", "Basil the Great", "St Basil"]
+died = "1 January 379"
+standing = "father"
+standing_basis = "Bishop of Caesarea, 'one of the most distinguished Doctors of the Church', born probably 329, died 1 January 379 (Catholic Encyclopedia, 'St. Basil the Great'); one of the three pre-eminent Eastern Doctors, whose feasts Pius V's Breviary of 1568 raised to doubles (Catholic Encyclopedia, 'Doctors of the Church')."
+basis_sources = [
+  "https://www.newadvent.org/cathen/02330b.htm",
+  "https://www.newadvent.org/cathen/05075a.htm",
+  "https://www.newadvent.org/cathen/06001a.htm",
+]
+confession = "Catholic"
+
+[[persons]]
+id = "bede"
+namespaces = ["bede"]
+name = "Bede"
+names = ["Bede", "Bede the Venerable", "The Venerable Bede", "Venerable Bede"]
+died = "735"
+standing = "father"
+standing_basis = "Classed among the Fathers by the Catholic Encyclopedia's 'Fathers of the Church' ('St. Isidore of Seville (d. 636) and the Venerable Bede (d. 735) are to be classed among the Fathers'); declared a Doctor of the Church by Leo XIII's decree of 13 November 1899 (Catholic Encyclopedia, 'The Venerable Bede'). Born 672 or 673, died 735."
+basis_sources = [
+  "https://www.newadvent.org/cathen/06001a.htm",
+  "https://www.newadvent.org/cathen/02384a.htm",
+]
+confession = "Catholic"
+notes = "'Venerable' in his name is the traditional honorific, not the canonical standing of that name; he is a Father and a Doctor."
+
+[[persons]]
+id = "gregory-the-great"
+namespaces = ["gregory-the-great"]
+name = "Gregory the Great"
+names = ["Gregory the Great", "Gregory I", "Pope Gregory the Great", "St Gregory the Great"]
+died = "12 March 604"
+standing = "father"
+standing_basis = "Pope and 'Doctor of the Church; born at Rome about 540; died 12 March 604', canonized 'by popular acclamation' at his death (Catholic Encyclopedia, 'St. Gregory the Great'); one of the four Latin Doctors of Boniface VIII's decree of 1298 (Catholic Encyclopedia, 'Doctors of the Church')."
+basis_sources = [
+  "https://www.newadvent.org/cathen/06780a.htm",
+  "https://www.newadvent.org/cathen/05075a.htm",
+  "https://www.newadvent.org/cathen/06001a.htm",
+]
+confession = "Catholic"
+
+[[persons]]
+id = "hilary-of-poitiers"
+namespaces = ["hilary-of-poitiers"]
+name = "Hilary of Poitiers"
+names = ["Hilary of Poitiers", "St Hilary of Poitiers"]
+died = "368, on 1 November by the most accredited opinion or on 13 January by the Roman Breviary"
+standing = "father"
+standing_basis = "Bishop of Poitiers in the fourth century (Catholic Encyclopedia, 'St. Hilary of Poitiers'); Pius IX gave him the title of Doctor in 1851 (Catholic Encyclopedia, 'Doctors of the Church')."
+basis_sources = [
+  "https://www.newadvent.org/cathen/07349b.htm",
+  "https://www.newadvent.org/cathen/05075a.htm",
+  "https://www.newadvent.org/cathen/06001a.htm",
+]
+confession = "Catholic"
+
+[[persons]]
+id = "irenaeus"
+namespaces = ["irenaeus"]
+name = "Irenaeus of Lyons"
+names = ["Irenaeus", "Irenaeus of Lyons", "Irenaeus of Lyon", "St Irenaeus"]
+died = "not stated by the cited article, which calls martyrdom 'not very probable'"
+standing = "father"
+standing_basis = "'Bishop of Lyons, and Father of the Church', born in the first half of the second century (Catholic Encyclopedia, 'St. Irenaeus'); declared Doctor of the Church, 'Doctor unitatis', by Pope Francis's decree of 21 January 2022 (Holy See Press Office bulletin of that day)."
+basis_sources = [
+  "https://www.newadvent.org/cathen/08130b.htm",
+  "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2022/01/21/220121b.html",
+  "https://www.newadvent.org/cathen/06001a.htm",
+]
+confession = "Catholic"
+
+[[persons]]
+id = "jerome"
+namespaces = ["jerome"]
+name = "Jerome"
+names = ["Jerome", "St Jerome"]
+died = "30 September 420"
+standing = "father"
+standing_basis = "Born at Stridon about 340-2, died at Bethlehem 30 September 420 (Catholic Encyclopedia, 'St. Jerome'); one of the four Latin Doctors of Boniface VIII's decree of 1298 (Catholic Encyclopedia, 'Doctors of the Church')."
+basis_sources = [
+  "https://www.newadvent.org/cathen/08341a.htm",
+  "https://www.newadvent.org/cathen/05075a.htm",
+  "https://www.newadvent.org/cathen/06001a.htm",
+]
+confession = "Catholic"
+
+[[persons]]
+id = "john-chrysostom"
+namespaces = ["john-chrysostom"]
+name = "John Chrysostom"
+names = ["John Chrysostom", "Chrysostom", "St John Chrysostom"]
+died = "14 September 407"
+standing = "father"
+standing_basis = "Bishop of Constantinople, 'Doctor of the Church, born at Antioch, c. 347; died at Commana in Pontus, 14 September, 407' (Catholic Encyclopedia, 'St. John Chrysostom'); one of the three pre-eminent Eastern Doctors (Catholic Encyclopedia, 'Doctors of the Church')."
+basis_sources = [
+  "https://www.newadvent.org/cathen/08452b.htm",
+  "https://www.newadvent.org/cathen/05075a.htm",
+  "https://www.newadvent.org/cathen/06001a.htm",
+]
+confession = "Catholic"
+
+[[persons]]
+id = "robert-bellarmine"
+namespaces = ["robert-bellarmine"]
+name = "Robert Bellarmine"
+names = ["Robert Bellarmine", "Bellarmine", "St Robert Bellarmine"]
+died = "17 September 1621"
+standing = "doctor"
+standing_basis = "Jesuit theologian and cardinal, born 4 October 1542, died 17 September 1621; 'canonized by Pope Pius XI in 1930, and declared a Doctor of the Universal Church in 1931' (New Advent's note to the Catholic Encyclopedia's 'St. Robert Bellarmine')."
+basis_sources = ["https://www.newadvent.org/cathen/02411d.htm"]
+confession = "Catholic"
+
+[[persons]]
+id = "thomas-aquinas"
+namespaces = ["thomas-aquinas"]
+name = "Thomas Aquinas"
+names = ["Thomas Aquinas", "Aquinas", "St Thomas Aquinas"]
+died = "7 March 1274"
+standing = "doctor"
+standing_basis = "Died 7 March 1274 and 'canonized by John XXII, 18 July, 1323' (Catholic Encyclopedia, 'St. Thomas Aquinas'); 'declared a Doctor by the Dominican St. Pius V in his new edition of the Breviary (1568)' (Catholic Encyclopedia, 'Doctors of the Church')."
+basis_sources = [
+  "https://www.newadvent.org/cathen/14663b.htm",
+  "https://www.newadvent.org/cathen/05075a.htm",
+]
+confession = "Catholic"
+
+[[persons]]
+id = "cassiodorus"
+namespaces = ["cassiodorus"]
+name = "Cassiodorus"
+names = ["Cassiodorus", "Flavius Magnus Aurelius Cassiodorus Senator"]
+died = "about 583"
+standing = "ecclesiastical-writer"
+standing_basis = "'Roman writer, statesman, and monk, b. about 490; d. about 583' (Catholic Encyclopedia, 'Cassiodorus'). Neither that article nor 'Fathers of the Church' calls him a Father or records a cultus. The liturgical-commentators plan of 2026-09-22 listed him as a Father 'by patrological convention'; no source read for this row states that convention, so the row records the standing the sources support and the plan's claim stays open until one does."
+basis_sources = [
+  "https://www.newadvent.org/cathen/03405c.htm",
+  "https://www.newadvent.org/cathen/06001a.htm",
+]
+confession = "Catholic"
+notes = "Revisit if a patrology is read that classes him among the Fathers; the change would be to `father` with that citation."
+
+[[persons]]
+id = "theodoret-of-cyrus"
+namespaces = ["theodoret-of-cyrus"]
+name = "Theodoret of Cyrus"
+names = ["Theodoret of Cyrus", "Theodoret"]
+died = "about 457"
+standing = "ecclesiastical-writer"
+standing_basis = "Bishop of Cyrus, born at Antioch about 393, died about 457 (Catholic Encyclopedia, 'Theodoret'). The Catholic Encyclopedia's 'Second Council of Constantinople' calls him and Theodore of Mopsuestia 'ecclesiastical writers'. No cultus is recorded. The liturgical-commentators plan of 2026-09-22 listed him as a Father 'by patrological convention'; the sources read here do not bear that out."
+basis_sources = [
+  "https://www.newadvent.org/cathen/14574b.htm",
+  "https://www.newadvent.org/cathen/04308b.htm",
+]
+confession = "Catholic"
+notes = "Restored to his see by the Council of Chalcedon (451) after anathematizing Nestorius (Catholic Encyclopedia, 'Three Chapters'). His exegesis is not what was condemned."
+
+[[persons.censures]]
+body = "Second Council of Constantinople, the Fifth General Council, ratified by Vigilius"
+year = "553"
+point = "his writings against St Cyril of Alexandria and the Council of Ephesus, one of the Three Chapters"
+source = "https://www.newadvent.org/cathen/04308b.htm"
+
+# ---------------------------------------------------------------------------
+# Authors of the registered liturgical commentaries
+# ---------------------------------------------------------------------------
+
+[[persons]]
+id = "ildefonso-schuster"
+namespaces = ["ildefonso-schuster"]
+name = "Alfredo Ildefonso Schuster"
+names = ["Alfredo Ildefonso Schuster", "Ildefonso Schuster", "Schuster"]
+died = "30 August 1954"
+standing = "blessed"
+standing_basis = "Benedictine, Cardinal Archbishop of Milan; beatified by John Paul II on 12 May 1996 (the Pope's homily of that day on vatican.va; the USCCB and Holy See lists of that pontificate's beatifications). Died 30 August 1954 (Holy See, conference on Blessed Schuster at Farfa, 6 November 2004)."
+basis_sources = [
+  "https://www.vatican.va/content/john-paul-ii/it/homilies/1996/documents/hf_jp-ii_hom_19960512_beatificazioni.html",
+  "https://www.usccb.org/offices/general-secretariat/beatifications-during-pope-john-paul-iis-pontificate",
+  "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_list_blesseds-jp-ii_en.html",
+  "https://www.vatican.va/news_services/liturgy/2004/documents/ns_lit_doc_20041106_marini-schuster_it.html",
+]
+confession = "Catholic"
+
+[[persons]]
+id = "prosper-gueranger"
+namespaces = ["prosper-gueranger"]
+name = "Prosper Guéranger"
+names = ["Prosper Guéranger", "Prosper Gueranger", "Dom Prosper Guéranger", "Guéranger"]
+died = "30 January 1875"
+standing = "servant-of-god"
+standing_basis = "Abbot of Solesmes, born 4 April 1805, died at Solesmes 30 January 1875 (Catholic Encyclopedia, 'Prosper Louis Pascal Guéranger'). The Bishop of Le Mans opened the diocesan process of beatification and canonization 'du Serviteur de Dieu, Dom Prosper Guéranger' on Wednesday 21 December 2005, and the cause 'en est à sa phase diocésaine' (the Association pour la canonisation de dom Guéranger's pages on the opening and on the process)."
+basis_sources = [
+  "https://www.newadvent.org/cathen/07058a.htm",
+  "https://www.domgueranger.net/ouverture-de-la-cause-de-beatification-de-dom-gueranger-osb-2/",
+  "https://www.domgueranger.net/le-proces-de-beatification-et-de-canonisation/",
+]
+confession = "Catholic"
+notes = "The Time after Pentecost volumes of The Liturgical Year are the posthumous continuation by Lucien Fromage (decision D7 of 2026-09-22); they are not Guéranger's words."
+
+[[persons]]
+id = "lucien-fromage"
+name = "Lucien Fromage"
+names = ["Lucien Fromage", "Dom Lucien Fromage", "Fromage"]
+died = "February 1916"
+standing = "ecclesiastical-writer"
+standing_basis = "Monk and priest of the Benedictine abbey of Solesmes, 1845-1916, born 8 May 1845 and died February 1916 (BnF authority record cb13171283h); the BnF names him continuator (relator 257) of L'Année liturgique (cb318196703) and preface-writer (relator 080) of its 'Deuxième volume de la continuation. Le temps après la Pentecôte. Tome II' (cb321334875), whose preface in the 1911 Oudin printing is signed 'Fr. L. F., O. S. B., Solesmes' (Internet Archive lanneliturgiqu11gu, text layer sha256 c24539c74426ab89d37b6dd1fb4909297c1361b15b555a760165920fd7fd6c07, lines 111-115). No cause, beatification or canonization is recorded in these sources."
+basis_sources = [
+  "https://catalogue.bnf.fr/ark:/12148/cb13171283h",
+  "https://catalogue.bnf.fr/ark:/12148/cb318196703",
+  "https://catalogue.bnf.fr/ark:/12148/cb321334875",
+  "https://archive.org/download/lanneliturgiqu11gu/lanneliturgiqu11gu_djvu.txt",
+]
+confession = "Catholic"
+notes = "No library namespace: his continuation is registered under work.prosper-gueranger.the-liturgical-year, and formulary-loci.yaml names him as that work's writer for the Time after Pentecost volumes. The preface's year is damaged in the layer ('i8<i2')."
+
+[[persons]]
+id = "rupert-of-deutz"
+namespaces = ["rupert-of-deutz"]
+name = "Rupert of Deutz"
+names = ["Rupert of Deutz", "Rupert, abbot of Deutz", "Rupertus Tuitiensis"]
+died = "1135"
+standing = "ecclesiastical-writer"
+standing_basis = "Benedictine abbot of Deutz, dead by 1135 ('the well-known Abbot Rupert of Deutz (1135)', Catholic Encyclopedia, 'Impanation'), named among the twelfth-century liturgical writers in 'Rites'. The Catholic Encyclopedia has no article on him and records no cultus."
+basis_sources = [
+  "https://www.newadvent.org/cathen/07694a.htm",
+  "https://www.newadvent.org/cathen/13064b.htm",
+  "work.rupert-of-deutz.de-divinis-officiis",
+]
+confession = "Catholic"
+notes = "Long suspected of teaching impanation; the same article judges that he 'nevertheless believed in the Transubstantiation', and no body censured him. That is recorded here and not under censures."
+
+[[persons]]
+id = "william-durandus"
+namespaces = ["william-durandus"]
+name = "William Durandus"
+names = ["William Durandus", "William Durandus, bishop of Mende", "Guilelmus Durandus", "Durandus of Mende"]
+died = "1 November 1296"
+standing = "ecclesiastical-writer"
+standing_basis = "Canonist, Bishop of Mende and 'one of the most important medieval liturgical writers', born about 1237, died at Rome 1 November 1296 (Catholic Encyclopedia, 'William Durandus'). No cultus is recorded."
+basis_sources = ["https://www.newadvent.org/cathen/05207a.htm"]
+confession = "Catholic"
+
+[[persons]]
+id = "honorius-augustodunensis"
+namespaces = ["honorius-augustodunensis"]
+name = "Honorius Augustodunensis"
+names = ["Honorius Augustodunensis", "Honorius of Autun"]
+died = "unknown; he 'flourished between the years 1106 and 1135'"
+standing = "ecclesiastical-writer"
+standing_basis = "A theologian and encyclopedic writer, 'one of the most mysterious personages in all the medieval period', who flourished between 1106 and 1135 (Catholic Encyclopedia, 'Honorius of Autun'). No cultus is recorded."
+basis_sources = ["https://www.newadvent.org/cathen/07461a.htm"]
+confession = "Catholic"
+
+[[persons]]
+id = "sicard-of-cremona"
+namespaces = ["sicard-of-cremona"]
+name = "Sicard of Cremona"
+names = ["Sicard of Cremona", "Sicardus Cremonensis"]
+died = "1215"
+standing = "ecclesiastical-writer"
+standing_basis = "Bishop of Cremona from 1185, died 1215 (Catholic Encyclopedia, 'Sicard'). No cultus is recorded."
+basis_sources = ["https://www.newadvent.org/cathen/13770b.htm"]
+confession = "Catholic"
+
+[[persons]]
+id = "john-beleth"
+namespaces = ["john-beleth"]
+name = "John Beleth"
+names = ["John Beleth", "Ioannes Belethus"]
+died = "unknown; the sources say only that he wrote in the twelfth century"
+standing = "ecclesiastical-writer"
+standing_basis = "'A liturgical writer of the twelfth century and an Englishman by birth' (Catholic Encyclopedia, 'Feast of Fools'), named among the twelfth-century liturgical writers in 'Rites'. The Catholic Encyclopedia has no article on him and records no cultus."
+basis_sources = [
+  "https://www.newadvent.org/cathen/06132a.htm",
+  "https://www.newadvent.org/cathen/13064b.htm",
+]
+confession = "Catholic"
+
+[[persons]]
+id = "bernold-of-constance"
+namespaces = ["bernold-of-constance"]
+name = "Bernold of Constance"
+names = ["Bernold of Constance", "Bernold of Constance, by the traditional attribution"]
+died = "16 September 1100"
+standing = "ecclesiastical-writer"
+standing_basis = "'Historian and theologian, b. in Swabia about 1054; d. at Schaffhausen, 16 September, 1100', priest from 1084 (Catholic Encyclopedia, 'Bernold of Constance'). No cultus is recorded."
+basis_sources = ["https://www.newadvent.org/cathen/02512c.htm"]
+confession = "Catholic"
+notes = "The Micrologus is his by the traditional attribution (the work record); the Catholic Encyclopedia's 'Rites' names its author 'Berno of Constance'."
+
+[[persons]]
+id = "berno-of-reichenau"
+namespaces = ["berno-of-reichenau"]
+name = "Berno of Reichenau"
+names = ["Berno of Reichenau", "Berno Augiensis"]
+died = "7 June 1048"
+standing = "ecclesiastical-writer"
+standing_basis = "Abbot of Reichenau from 1008, died 7 June 1048 (Catholic Encyclopedia, 'Berno (Abbot of Reichenau)'). No cultus is recorded."
+basis_sources = ["https://www.newadvent.org/cathen/02512a.htm"]
+confession = "Catholic"
+
+[[persons]]
+id = "amalarius-of-metz"
+namespaces = ["amalarius-of-metz"]
+name = "Amalarius of Metz"
+names = ["Amalarius of Metz", "Amalarius"]
+died = "about 850"
+standing = "ecclesiastical-writer"
+standing_basis = "'A liturgical writer, b. at Metz, in the last quarter of the eighth century; d. about 850', probably Bishop of Trier from about 811 (Catholic Encyclopedia, 'Amalarius of Metz'). No cultus is recorded."
+basis_sources = ["https://www.newadvent.org/cathen/01376b.htm"]
+confession = "Catholic"
+
+[[persons.censures]]
+body = "a synod held at Kiersy (Quierzy)"
+year = "838"
+point = "his opinion concerning the signification of the parts of the divided Host at Mass"
+source = "https://www.newadvent.org/cathen/01376b.htm"
+
+[[persons]]
+id = "john-henry-blunt"
+namespaces = ["john-henry-blunt"]
+name = "John Henry Blunt"
+names = ["John Henry Blunt"]
+died = "11 April 1884"
+standing = "non-catholic"
+standing_basis = "Ecclesiastical historian of the Church of England, 1823-1884, ordained deacon in 1852 and priest in 1855 'with the object of taking holy orders in the church of England', vicar of Kennington and of Beverston; died in London on 11 April 1884 (Dictionary of National Biography, 1885-1900, 'Blunt, John Henry')."
+basis_sources = [
+  "https://en.wikisource.org/wiki/Dictionary_of_National_Biography,_1885-1900/Blunt,_John_Henry",
+  "work.john-henry-blunt.the-annotated-book-of-common-prayer",
+]
+confession = "Church of England"
