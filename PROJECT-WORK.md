@@ -29,7 +29,13 @@ rounds and 1 of 4 repeats. The same class of defect recurred in every round:
 the record called a registered witness unregistered or unreachable. Its cause
 was repository-wide, and the next section repaired it. The run was held after
 research iteration 3 until that repair merged; research-review iteration 3 then
-began against the merged tree. Research iteration 3 now attributes the
+began against the merged tree. It failed on four new findings, bringing the
+consecutive novel rounds to 3 of 4. It found PG 124's Theophylact, which the
+containment inventory had missed, and six registered liturgical commentators
+that no workflow step sweeps, Bl. Ildefonso Schuster among them. The run is
+held before research iteration 4 until Mass-keyed discovery and the
+containment fix land, so the last repair round sweeps with complete tools.
+Research iteration 3 had attributed the
 ministerial sense of the Gospel to Aquinas at Mt 9:6 (*per viam
 administrationis, non auctoritatis*) and to the liturgical commentators as
 reception of the compilation, and records that no Father reads Mt 9:8 so.
@@ -47,6 +53,11 @@ reception of the compilation, and records that no Father reads Mt 9:8 so.
   `claude-opus-5[1m]`; everything after runs as `claude-opus-5-5[1m]`. The
   leaf's contribution declarations must say so (requirement
   `claude-model-provenance`).
+
+**Pre-existing test failure, unrelated and not repaired.**
+`tools.tests.test_roman_1962_finding_aid` fails 66 != 663 in
+`test_historical_english_gaps_are_an_exact_typed_text_free_set`. It fails
+identically on the upstream commit this workspace began from.
 
 **Defects found and not repaired here**, recorded in the leaf's research scope:
 
@@ -143,7 +154,14 @@ on, in
 - Commentators are keyed to a formulary by its elements, not by their own
   Sunday labels.
 - The *Liturgical Year* continuation is credited to Lucien Fromage.
-- Rule changes wait until the Eighteenth Sunday run publishes.
+- The guidance rule was first deferred until the Eighteenth Sunday run
+  published, then landed during the run's hold before research iteration 4.
+  Research-review iteration 3 had found Bl. Ildefonso Schuster reading that
+  Sunday's Gospel of the priesthood, which under D1 lets Aquinas and Schuster
+  carry the priestly reading as its own interpretation. The rule is the
+  "Liturgical commentators" subsection of
+  [the three-document profile](guidance/liturgy/propers-three-documents.md#liturgical-commentators).
+- The workflow change still waits until that run publishes.
 
 **Open.** These may land now:
 
@@ -154,9 +172,8 @@ on, in
 - the opt-in authority check
 - the rights record and the duplicate-layer note
 
-These wait until that run publishes:
+This waits until that run publishes:
 
-- the guidance rule
 - the workflow version
 
 The leaves that credit the continuation to Guéranger must be recounted before

@@ -155,7 +155,8 @@ distinct from adopted evidence when determining this boundary.
 Group compatible *arguments*, not reputations, periods, nationalities, or
 quotations sharing a word. An author may contribute to several interpretations
 when different checked passages support them. Each interpretation draws
-substantively on at least two distinct patristic or saintly authors. A second
+substantively on at least two distinct patristic or saintly authors, as
+[Liturgical commentators](#liturgical-commentators) defines them. A second
 name without a developed contribution does not meet this requirement. The authors
 must agree on its controlling claims; preserve any narrower disagreement
 beside the relevant claim. If a central disagreement would undo the argument,
@@ -169,6 +170,48 @@ doctrines. Explain that relationship concretely. Neither smooth incompatible
 identifications into one account nor dramatize complementary emphases as a
 dispute. A coherent whole-Mass reading is editorial synthesis over a
 compilation, as [above](#the-formulary-is-a-compilation).
+
+### Liturgical commentators
+
+A liturgical commentator expounds a Mass or office as a whole, as Rupert of
+Deutz, Honorius, Sicard, Durandus, Schuster and *The Liturgical Year* do, or
+preaches the Sunday's readings as a cycle, as Anthony of Padua and Alphonsus
+Liguori did. His witness is reception of the compilation as his books gave it,
+and it is used in that role.
+
+Identify his Mass by its elements, never by its Sunday number. Compare the
+Introit, Collect, Epistle, Gospel and other elements he names with the
+governing edition's; `commentary-work-index formulary` reports that comparison
+from `src/sources/commentary/formulary-loci.yaml`. Record in
+`research/scope.md` his own heading beside the elements that match and those
+that differ. A commentator's "eighteenth Sunday" is evidence only for the
+elements it shares with this formulary.
+
+Where his Mass had another Gospel or chant, attribute to him only what he says
+of the elements this formulary keeps, record which element differed, and say
+so once where he is first used. Do not present him as a reader of a Gospel his
+Mass did not have. Where his books place this formulary's Gospel on another
+Sunday, what he says of it there is reception of that Gospel, cited at that
+locus.
+
+Standing decides what a commentator may carry.
+`src/sources/inventories/author-standing-v1.toml` records each author's
+standing and its basis. The two authors an interpretation requires are
+Fathers of the Church, canonized saints (Doctors among them) and the Blessed,
+provided that at least one of the two is a Father or a canonized saint. A
+Venerable, a Servant of God or any other orthodox ecclesiastical writer is
+never one of the two. He may be a reading's principal witness to the Mass as a
+Mass, and may support any claim his checked locus makes, provided two eligible
+authors carry the reading. A censured writer, and a writer outside Catholic
+communion, supplies structural and contextual evidence only. Record the
+censure, and never cite a writer for the point on which he was censured.
+
+Attribute words to the writer the locus inventory names. A posthumous
+continuation published under a founder's series name is the continuator's and
+is cited as the continuation. Research first submitted for review before
+2026-09-22 is not reopened for this subsection alone. The maintainer's
+decisions behind this subsection, and their reasoning, are recorded in
+[the plan of 2026-09-22](liturgical-commentators-plan-2026-09-22.md).
 
 ## The expansive study
 

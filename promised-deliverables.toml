@@ -128,8 +128,19 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "inclusion-guidance-after-publication"
   criterion = "After the Claude 1962 Eighteenth Sunday run publishes, the inclusion rule is added to guidance/liturgy/propers-three-documents.md and the 1962 profile, with a clause that it does not reopen earlier accepted research (proposal step 5; decision D6)."
-  status = "open"
+  status = "waived"
+  waiver_reason = "Superseded by inclusion-guidance-in-hold. Research-review iteration 3 found Bl. Ildefonso Schuster reading this Sunday's Gospel of the priesthood, so decision D1 could let the priestly reading stand as its own interpretation this Sunday; the maintainer moved the rule's landing into the hold before research iteration 4."
+  waiver_authority = "maintainer decision, 2026-09-22"
   evidence = ["guidance/liturgy/liturgical-commentators-plan-2026-09-22.md", "guidance/liturgy/propers-three-documents.md"]
+
+  [[deliverables.requirements]]
+  id = "inclusion-guidance-in-hold"
+  criterion = "The inclusion rule, with decisions D1-D3 applied and a clause that research first submitted for review before 2026-09-22 is not reopened for it alone, is added to guidance/liturgy/propers-three-documents.md and the 1962 profile while the Eighteenth Sunday run is held before research iteration 4, so that iteration and every later stage and review of the run read it, and no sealed review input changes after it was sealed."
+  status = "pass"
+  evidence = ["guidance/liturgy/propers-three-documents.md", "guidance/liturgy/roman-1962-propers.md", "guidance/liturgy/liturgical-commentators-plan-2026-09-22.md"]
+  check = "contains"
+  path = "guidance/liturgy/propers-three-documents.md"
+  needle = "### Liturgical commentators"
 
   [[deliverables.requirements]]
   id = "workflow-version-after-publication"
