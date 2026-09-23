@@ -56,6 +56,12 @@ state = "in_progress"
   evidence = ["PROJECT-WORK.md", "tools/web-edition"]
 
   [[deliverables.requirements]]
+  id = "first-column-prefix-empty-bold"
+  criterion = "Maintainer decision of 2026-09-23: the converter no longer turns a first-column prefix such as bfseries-raggedright into an empty bold paragraph with unbolded text; the fix carries tests; every affected installed edition of both providers is regenerated, any leak the resulting pipe-table conversion exposes in PC-S42/43 is cleaned, and an independent reviewer confirms each diff is only the intended repair; no PDF render input changes."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "tools/web-edition"]
+
+  [[deliverables.requirements]]
   id = "web-bindings-reapproved"
   criterion = "The release bindings of the regenerated editions are re-recorded only after a fresh operator approval, with ONLY scoped to them."
   status = "open"
