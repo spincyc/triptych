@@ -61,6 +61,17 @@ under it. The maintainer had said that other Masses do not belong in a 1962
 guide. The rule applies to a differing chant as to a differing Gospel, for the
 same reason.
 
+**D12, 2026-09-23: lectionary history.** The maintainer extended D11's
+principle to the history of a formulary's texts in early lectionary and
+sacramentary lists. The history of this formulary's own texts may appear in
+the expansive study, where it can replace an unsupported claim about a
+pairing's age. It never appears in the concise study or the homily, and what
+another Sunday's Mass contained stays in the research records. The rule lands
+in the three-document profile after the Claude 1962 Eighteenth Sunday run
+publishes, because that run's accepted reviews seal the current profile. That
+Sunday's accepted study already keeps such history to one paragraph of its
+element-by-element section and is not revised for D12.
+
 **Erratum to the proposal.** §0, §1.3 and D7 count seven published leaves that
 credit the continuation to Guéranger with a corrected imprint. A search of the
 published leaves for that imprint finds more than seven, and the set it names

@@ -166,6 +166,12 @@ state = "in_progress"
   needle = "a 1962 guide is\nnot the place for other Masses"
 
   [[deliverables.requirements]]
+  id = "lectionary-history-rule-after-publication"
+  criterion = "After the Claude 1962 Eighteenth Sunday run publishes, the three-document profile states decision D12: lectionary and sacramentary history of the formulary's own texts may appear only in the expansive study, never in the concise study or homily, and another Sunday's Mass contents stay in research records."
+  status = "open"
+  evidence = ["guidance/liturgy/liturgical-commentators-plan-2026-09-22.md", "guidance/liturgy/propers-three-documents.md"]
+
+  [[deliverables.requirements]]
   id = "workflow-version-after-publication"
   criterion = "After the Claude 1962 Eighteenth Sunday run publishes, the reviewer sentence, the standing pointers and the mandatory authority check reach a new proper-study version (proposal step 7; decisions D5 and D6)."
   status = "open"
