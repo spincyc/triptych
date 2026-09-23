@@ -9,5 +9,5 @@ alternate_titles = [
   "Commentaria in omnes Divi Pauli Epistolas",
 ]
 languages = ["la"]
-locus_pattern = '(?:prooemium|epistola-ad-galatas-argumentum)'
+locus_pattern = '(?:prooemium|epistola-(?:ad-romanos|i-ad-corinthios|ii-ad-corinthios|ad-galatas)-argumentum|(?:(?:Rom|1Cor)\.(?:[1-9]|1[0-6])|2Cor\.(?:[1-9]|1[0-3])|Gal\.[1-6])(?:\.[1-9][0-9]?(?:-[1-9][0-9]?)?)?)'
 description = "Cornelius a Lapide's Catholic commentary on the Pauline epistles. Its general proemium treats Pauline chronology and order; each epistle is introduced by its own argumentum before the verse-by-verse exposition."

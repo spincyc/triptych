@@ -393,15 +393,15 @@ context = "The source of the Psalter-wide composition boundary that three of thi
 # served. States are `inspected`: each was read at the locus stated, in the
 # language stated, and none was collated against a critical edition.
 #
-# The three Cassiodorus bindings carry no `loci` array. That is not an omission:
-# work.cassiodorus.expositio-psalmorum declares
-# locus_pattern = '(?:16|24|64|88)\.…', which admits four psalm numbers and none
-# of the ones this formulary appoints -- although the library itself registers
-# artifacts of that work for Psalms 39, 70, 85, 95, 97, 101 and 121. Widening the
-# pattern would change the work record's fingerprint and therefore every
-# Cassiodorus binding in every leaf, which is a repository-wide review obligation
-# and not this leaf's to trigger. The host sectiones read are named in each
-# binding's context instead, and the gap is reported to the library's owner.
+# The three Cassiodorus bindings were written with no `loci` array, because
+# work.cassiodorus.expositio-psalmorum then declared
+# locus_pattern = '(?:16|24|64|88)\.…', which admitted four psalm numbers and
+# none of the ones this formulary appoints, and widening it was a
+# repository-wide review obligation rather than this leaf's. The locus-pattern
+# rebinding sweep of 2026-09-23 widened it to every Vulgate psalm and carried
+# every binding of the work through the fingerprint change; each binding now
+# carries as `loci` the host sectiones its context names, each checked in the
+# bound file. The Lapide binding further down was treated the same way.
 # ---------------------------------------------------------------------------
 
 [[bindings]]
@@ -422,23 +422,26 @@ context = "Physical lines 29495-30011 of the controlling artifact, the tractatus
 
 [[bindings]]
 source_id = "artifact.cassiodorus.expositio-psalmorum.latin-corpus-corporum-monumenta-web-2026-09-05.monumenta-ps101-apparatus-latin-text"
+loci = ["101.21-23"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-source_fingerprint = "sha256:bb052fe5fe1a359e9f7eee9b909393023dfa8cdce21b45e24c6985be9fca075f"
+source_fingerprint = "sha256:e65d25c7a69df79a3c7e6a1f7315b3b26a99c09a7aefddcf5d3b66742fb7936d"
 context = "Cassiodorus on the Alleluia verse, in a file this checkout already tracks: no network was needed and research/scope.md section 5.2 had nonetheless recorded him as unreached on all three psalms. Sectio 22 is the appointed verse itself, Et timebunt gentes nomen tuum, Domine, et omnes reges terrae gloriam tuam, read of the nations converted out of idolatry and of kings who rule themselves; sectio 23, on v. 17, names the building -- aedificata est Sion, hoc est mater Ecclesia, de vivis lapidibus fabricata -- and sectio 21 identifies the lapides of v. 15 as Christians. research/scope.md section 3.4 carries the readings. The caveat is now narrower than it was. This is still a transcription of a transcription of Migne, and it settles nothing about Adriaen's critical text, which nobody here has opened; but Migne's own optical layer, PL 70, was fetched and read this round at the lemmata of Pss 95, 101 and 121 and agrees with these files at every one, so the earlier statement that they could settle nothing about what Migne printed is withdrawn as to Migne. research/scope.md section 6.3 carries the check."
 
 [[bindings]]
 source_id = "artifact.cassiodorus.expositio-psalmorum.latin-corpus-corporum-monumenta-web-2026-09-22.monumenta-ps95-apparatus-latin-text"
+loci = ["95.1-2", "95.13-14"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-source_fingerprint = "sha256:3481ed1dc9e93ba635cb2e0da221589f4258069be3c3b3444c5e396f9bef31dc"
+source_fingerprint = "sha256:3ee346fcbb13f235add9f24008e7d94abeff10d872ac330ce59d419b0ab37d0e"
 context = "Read at the host's sectiones 1-2 (the psalm title and its literal and spiritual senses) and 13-14 (Ps 95:8-9, the two clauses the Communion takes). Cassiodorus on the Communion, registered and retained by this stage because the repository held no state of this work carrying Ps 95. The exact delivery (21640d6c...3df8a) was fetched on 2026-09-22 from the address the 2026-09-05 edition's own rumpfid rule gives, and this Latin was derived from it offline by the transformation that record describes -- verified before use by re-deriving the already-tracked Ps 101 file from its own re-fetched parent and reproducing it byte for byte. research/scope.md section 3.8 carries the readings, including the one place Cassiodorus and Augustine visibly diverge: the plural atria of v. 8 read as the apostles and prophets against the singular atrium of v. 9 read as the catholic Church. His lemma at v. 9 is in atrio sancto eius, which bears on the unresolved psalter question at section 5.1.7 without settling it."
 
 [[bindings]]
 source_id = "artifact.cassiodorus.expositio-psalmorum.latin-corpus-corporum-monumenta-web-2026-09-22.monumenta-ps121-apparatus-latin-text"
+loci = ["121.2", "121.6", "121.12"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-source_fingerprint = "sha256:9da0f984a195910f7c758926fda6fa4d7e8de4857e4018031974beb5e1439693"
+source_fingerprint = "sha256:8fc8c4cc464f1f6b3d3d35771a11b396c6d4a6da08ff40c9c2c12dadaa1aefc8"
 context = "Read at the host's sectiones 2 (the ascent), 6 (Ps 121:1, the Introit verse and the Gradual respond) and 12 (Ps 121:7, the Gradual verse). Cassiodorus on the Introit verse, the Gradual respond and the Gradual verse, registered and retained by this stage on the same footing and by the same verified derivation as the Ps 95 file, from the exact delivery f95cb469...193eca. research/scope.md sections 3.2 and 3.3 carry the readings: the house as domus de vivis lapidibus fabricata at v. 1, and at v. 7 the city's uirtus as the peace of the saints which is also charity, with the turres read as the martyrs -- against Hilary, who reads the same two clauses otherwise."
 
 [[bindings]]
@@ -499,10 +502,11 @@ context = "Augustine's harmony at the Gospel, through the registered segment ove
 
 [[bindings]]
 source_id = "artifact.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.antwerp-1614.ia-djvu-text-197365b2"
+loci = ["1Cor.1.4-8"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-source_fingerprint = "sha256:c4d988333a8b12da35e3dc2ddfb6e254aae284bf32726579088d2b25891097ca"
-context = "Later reception of the Epistle, which research/scope.md section 3.6 had none of. tools/commentary-work-index discover returns Cornelius a Lapide first for 1 Cor 1:4, and this library tracks the whole optical layer of his Antwerp 1614 Pauline commentary, 3,103,885 bytes and 97,832 lines, so it needed no network. His exposition of 1 Cor 1:4-8 stands at physical lines 40030-40130, verse by verse under the printed Vers. 4 marker. research/scope.md section 3.6 carries what it gives and the one place it stands against Chrysostom. Three bounds. The layer carries each printed page twice -- the same exposition stands again at 40466-40560 -- which is a property of the Internet Archive derivative and not of the printing. Its recognition of this black-letter Latin with long s is poor (fadi for facti, teflimonium for testimonium), so it is a finding and confirming layer and the printed page images were not opened. And the binding carries no loci array: work.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas declares locus_pattern = '(?:prooemium|epistola-ad-galatas-argumentum)', two named loci of an earlier leaf's work, so a scriptural locus is rejected by source-library validate; this is the same library defect the Cassiodorus note above reports, in a second work record, and widening either pattern is a repository-wide review obligation and not this leaf's to trigger."
+source_fingerprint = "sha256:aa41c60535fe74b07ae88130bf2c70aba39ae301cac11cc10b42d19bc717db58"
+context = "Later reception of the Epistle, which research/scope.md section 3.6 had none of. tools/commentary-work-index discover returns Cornelius a Lapide first for 1 Cor 1:4, and this library tracks the whole optical layer of his Antwerp 1614 Pauline commentary, 3,103,885 bytes and 97,832 lines, so it needed no network. His exposition of 1 Cor 1:4-8 stands at physical lines 40030-40130, verse by verse under the printed Vers. 4 marker. research/scope.md section 3.6 carries what it gives and the one place it stands against Chrysostom. Three bounds. The layer carries each printed page twice -- the same exposition stands again at 40466-40560 -- which is a property of the Internet Archive derivative and not of the printing. Its recognition of this black-letter Latin with long s is poor (fadi for facti, teflimonium for testimonium), so it is a finding and confirming layer and the printed page images were not opened. And the binding was written with no loci array: work.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas then declared locus_pattern = '(?:prooemium|epistola-ad-galatas-argumentum)', two named loci of an earlier leaf's work, so a scriptural locus was rejected by source-library validate; the locus-pattern rebinding sweep of 2026-09-23 widened the pattern to the epistles this volume carries and added the locus 1Cor.1.4-8, checked at the lines above."
 
 # ---------------------------------------------------------------------------
 # The earliest graduals, through the registered chant database

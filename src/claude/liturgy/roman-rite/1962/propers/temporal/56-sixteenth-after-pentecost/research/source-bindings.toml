@@ -820,7 +820,7 @@ context = "Corroborates at optical state that the Lenten feria carrying this Sun
 source_id = "artifact.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.antwerp-1614.ia-djvu-text-197365b2"
 role = "lead"
 states = ["cataloged", "acquired", "inspected"]
-source_fingerprint = "sha256:c4d988333a8b12da35e3dc2ddfb6e254aae284bf32726579088d2b25891097ca"
+source_fingerprint = "sha256:aa41c60535fe74b07ae88130bf2c70aba39ae301cac11cc10b42d19bc717db58"
 context = "Bound as a control against citing it. The artifact is titled Commentaria in omnes D. Pauli Epistolas and stops at Galatians 6:17: the last running heads are COMMENT. IN EPIST. AD GALAT., there is no ad Ephesios running head anywhere in it, and the 54 hits on Ephes variants are cross-references inside commentary on other epistles. The repository's own commentary discovery index nevertheless lists Lapide against this Sunday's pericope. The defect is silent, because the title promises all the epistles and the work is famous for covering them, so a citation of this artifact for Lapide on Ephesians 3 would name an extent its bytes do not hold. Nothing of Lapide's exposition is cited from it; what the full edition publishes from it is the extent itself, and References carries the printing, its optical layer and the whole-layer search so that extent can be checked. This says nothing about whether Lapide commented on Ephesians, which he did."
 
 [[bindings]]
@@ -1034,37 +1034,42 @@ context = "An unresolved lead and not a source of any published claim: the citat
 
 [[bindings]]
 source_id = "artifact.cassiodorus.expositio-psalmorum.latin-corpus-corporum-monumenta-web-2026-09-05.monumenta-ps85-0b368b26"
+loci = ["85.2", "85.4", "85.6", "85.8", "85.10", "85.18", "85.23-24"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-source_fingerprint = "sha256:1f915f73b5855329212fb1bd51b7e5ee659626778dee3d5a38992acfcfdd40ba"
+source_fingerprint = "sha256:9e2c8f7bb8e7041aaf7ab128dd85cc1a69bfce059171d859ac0d6bec78e9aa4d"
 context = "Locus in Ps. LXXXV, sections 2, 4, 6, 8, 10, 18, 23-24. Cassiodorus on the Introit's psalm: the divisio assigning all three appointed verses to Christ alone, the poor man as Christ in the form of a servant, tota die as one human life crying by its works, and the formal definition of suavis ac mitis at v. 5. His lemma at v. 5 is the Introit antiphon's second half word for word, against the Clementine, with no manuscript variant recorded in Migne's apparatus; his v. 1 reads egenus and aurem tuam ad me where the missal reads inops and mihi, which is why the guide does not let his poverty word stand in for the chant's. A Migne-derived web transcription delivered by monumenta.ch, not Adriaen's CCSL 98 and not PL 70 read at a column: the section numbers are the host's, no PL 70 column marker stands on the page, and the four single words on which his agreement with the chant turns were not collated against a critical text. The host's rights are unresolved, so quotation is short and is attributed to the text and never to the host's presentation."
 
 [[bindings]]
 source_id = "artifact.cassiodorus.expositio-psalmorum.latin-corpus-corporum-monumenta-web-2026-09-05.monumenta-ps101-ac7c0acd"
+loci = ["101.2-3", "101.22-23"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-source_fingerprint = "sha256:2543cfad271383db76e731715acdcf1155a569885326737eeefa46583c0a6b6f"
+source_fingerprint = "sha256:07c33ce58b2369774a4dca5bf0b9439e00900369d2e438b893aaa3fdf926a781"
 context = "Locus in Ps. CI, sections 2-3, 22-23. Cassiodorus on the Gradual's two verses, whose lemma carries the missal's maiestate where the Clementine reads gloria. He records Augustine's identification of the psalm's speaker with Christ and declines it, assigning the psalm to a nameless afflicted poor man; he reads the building as finished and the seeing in majesty as the Judgment, in the sheep-and-goats formula he uses again at the Communion's psalm. Same edition state and same citation rule as the Ps. 85 binding above: cited by lemma, the page's verse numerals running level with the missal here."
 
 [[bindings]]
 source_id = "artifact.cassiodorus.expositio-psalmorum.latin-corpus-corporum-monumenta-web-2026-09-05.monumenta-ps97-aaf708e1"
+loci = ["97.2", "97.4", "97.6-7", "97.14"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-source_fingerprint = "sha256:5ed5d3b6830b09061fd89e48d3cb3c440513991fda97178ae093b3b82be46fed"
+source_fingerprint = "sha256:d32676d92268eeeb970638fcf2e0cb41b0e1bd8b23d096eec9e9f6b02679d1bd"
 context = "Locus in Ps. XCVII, sections 2, 4, 6-7, 14. Cassiodorus on the Alleluia's verse: the new song as regeneration and Incarnation, sung by those taking the sacraments of the new birth, with the Gospel healings named and then set aside because the saints did them too, so that the novelty is the Resurrection. His lemma carries the chant's explicit Dominus against the Clementine. His psalter reads salvavit eum in the unsung half-verse where Augustine reads Sanavit ei and the Clementine Salvavit sibi, which is why the guide states that the material past the Alleluia's cut is not one text. The page's verse numerals run one ahead of the missal from the first verse, so the locus is cited by lemma."
 
 [[bindings]]
 source_id = "artifact.cassiodorus.expositio-psalmorum.latin-corpus-corporum-monumenta-web-2026-09-05.monumenta-ps39-5b83d44a"
+loci = ["39.13", "39.21-24", "39.27-28"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-source_fingerprint = "sha256:0b1994c1170d671a19037b0f797be183dc7ca9f9a3e77f7440ca32f1a294915b"
+source_fingerprint = "sha256:33792f77a26c99f27083e865ca188dea900adb407f406ea53864bc5e89c0fa27"
 context = "Locus in Ps. XXXIX, sections 13, 21-24, 27-28. Cassiodorus on the Offertory's verses. His lemma is the missal's clause word for word, Domine, in auxilium meum respice, with no manuscript variant recorded against it in Migne's apparatus, and his gloss on it -- that God's regard is itself our protection -- is the thesis Aquinas states seven centuries later. On the imprecation he reads a prayer for the persecutors' conversion, which is one of the four ways the checked witnesses relieve it and not the received reading. The page's verse numerals run three ahead of the missal at this psalm, beginning at Exspectans exspectavi, so the locus is cited by lemma."
 
 [[bindings]]
 source_id = "artifact.cassiodorus.expositio-psalmorum.latin-corpus-corporum-monumenta-web-2026-09-05.monumenta-ps70-15d9747f"
+loci = ["70.4", "70.21-23", "70.32-33"]
 role = "reception"
 states = ["cataloged", "acquired", "inspected"]
-source_fingerprint = "sha256:c2396b82bd1b0a1e640f22ac659f0a4784e43d3e888286b2210a62499f3f63d6"
+source_fingerprint = "sha256:cc9055c2e47f51c5d119725944db70d8f7a55ad92a03266b3dbebc4008ce26b9"
 context = "Locus in Ps. LXX, sections 4, 21-23, 32-33. Cassiodorus on the Communion's three verses. He opens and closes the psalm on gratuitous grace in Augustine's own words, quae nullis meritis praecedentibus gratis semper impenditur, and names doctor Augustinus inside these five psalms, so at that clause he corroborates and does not judge independently -- the guide says so where it uses him there. Where he differs he is a second judgment: solius refers the remembering to the Judgment rather than excluding the singer's own righteousness, and the Church's three ages are periodised unlike Augustine's."
 
 [[bindings]]
