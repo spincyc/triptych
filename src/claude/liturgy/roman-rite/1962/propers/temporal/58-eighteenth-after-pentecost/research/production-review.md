@@ -978,3 +978,89 @@ page. The note's wording was tightened, and nothing was set smaller. The
 proof shows no clipping, collision, missing text, blank page or heading-only
 page. This is an author proof inspection, not the independent visual
 evaluation.
+
+## Build-artifacts
+
+Iteration 0 of the build stage for run `71b6f89518984232` at commit
+`fa5355745b5e973584f047a7f59a20ad22676d64`. No source file was edited at this
+stage: no layout repair was needed, so no content seal is affected and the
+shared generation record keeps its revision timestamp `2026-09-23T15:35:00Z`,
+which all three PDFs display.
+
+### Builds
+
+The three earlier proofs, with their auxiliary, log, recorder and metadata
+stamps, were deleted, and each output was built fresh with
+`make doc DOC=<id> PROVIDER=claude` for the bare document, `-synthesis` and
+`-homily`. Each build settled through the Makefile's fixed-point passes and
+passed generation-metadata validation, and the two companions passed the
+component manifest check. The fresh builds reproduced the author proofs byte
+for byte.
+
+| Output | Physical pages | PDF SHA-256 |
+| --- | --- | --- |
+| `build/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.pdf` | 34 | `5dd437b0355d8fb1d20896f6e0a4d4dd31eeba738e2fa8f91adf4c990560821b` |
+| `build/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-synthesis.pdf` | 12 | `ea145b8e60cc2c651bf78f417cdfbcef68ea91582a76bbd334f56e7f05a3a161` |
+| `build/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-homily.pdf` | 3 | `62a1014c221118c3f432069eecba1147615d723dcfebb25b062d5e52eb2d4bb7` |
+
+The expansive study falls within 20–50 pages and the concise study within
+10–12. The concise study's settled auxiliary file is SHA-256
+`462a8f9e960cdda5fdf5b065a768e40e967e02010a8442e00b75d1e6b21f8528`; its
+log is `616a78dadf49c70bb927251b323c6bc76e4dec6ecc07db2efbbbfd0cd4397afc`.
+The expansive study's auxiliary file and log are
+`1b4b9eb18cf6af9a247303aca3d045c27557527c738fd92013fc24265ac66328` and
+`34d4e74d2bb62ad16c2f6f4a41f1a6019058041559abb25a66755d48c81e081e`.
+
+### Log, font, structure and extraction checks
+
+- **Logs.** None of the three logs has a TeX error, an undefined or
+  multiply defined reference, an overfull or underfull box, a LaTeX or
+  package warning, or a rerun request. The only line matching "warning" is
+  the `rerunfilecheck` package banner.
+- **Fonts.** Every font is Latin Modern (Roman, Roman Caps or Mono), Type 1,
+  embedded, subsetted and Unicode-mapped. Nothing was substituted.
+- **Structure.** All three are unencrypted letter-size PDF 1.7 files from
+  pdfTeX 1.40.29. Their titles and subjects name the Missal and the Sunday.
+  Poppler's `pdfinfo`, `pdffonts` and `pdftotext` read them without a parse
+  error. No stricter PDF validator (qpdf or pypdf) was installed, so none was
+  run.
+- **Extraction.** Text extracts from every page, with no `??` marker and no
+  replacement character. The extracted word counts, apparatus included, are
+  22,123 for the study, 9,461 for the concise study and 2,438 for the homily.
+- **Concise opening.** The settled `zref` evidence places the inventory,
+  the overview and the four sense rows (literal, allegorical, moral,
+  anagogical) on physical page 1. It places the chronology on page 2, the
+  themes from page 3 to page 4, and the start of the commentary on page 5.
+  The extracted text agrees. Page 1 carries the map and exactly the four
+  sense rows. Page 2 is headed only "Scriptural Date and Location". Pages 3
+  and 4 carry "The Propers: Themes and Movement". Page 5 opens "The Propers:
+  Detailed Commentary".
+- **Gates run ahead.** Both `tools/check-proper-components --phase artifacts`
+  and `scripts/_proper_study.py check --phase artifacts --require-presentation
+  --require-format` pass against the snapshot below. The second check
+  includes `check-generation-metadata` on each PDF.
+
+### Snapshot and rasters
+
+`python3 scripts/_proper_study.py snapshot` wrote `research/artifacts.json`
+from the final builds. It records the three PDF hashes above, 27 render
+inputs, and the pagination evidence for the two studies (their auxiliary files
+and logs). Bounded rasters and contact sheets for all 49 pages came from
+`tools/tpt pdf-review` and are in the run's `build-artifacts-0000/rasters`
+child. The logs, auxiliary files, extracted text and check output are kept
+beside that child, outside it.
+
+### Remaining limitations for the visual reviewer
+
+The build worker only glanced at the contact sheets to decide whether a layout
+repair was needed. That glance is not the visual review. Two pages of the
+expansive study are short because they end a section that the next heading
+starts on a fresh page:
+
+- page 22 (about 280 words) ends the second reading's four senses;
+- page 29 (about 150 words) ends "The Three Readings Compared" before the
+  Scriptural Date and Location appendix.
+
+These are ordinary section ends, not warnings, and they were left alone
+because any repair would be a source edit that reopens reviewed content. The
+visual reviewer should judge whether either is a sparse spill.
