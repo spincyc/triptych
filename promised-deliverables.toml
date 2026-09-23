@@ -50,6 +50,12 @@ state = "in_progress"
   needle = "scriptural-date-and-location"
 
   [[deliverables.requirements]]
+  id = "pc-s42-s43-span-leak"
+  criterion = "Maintainer decision of 2026-09-23: the converter span leak that puts a stray '2-4' span prefix and an empty bold paragraph into the dossier note rows of the Claude PC-S42 and PC-S43 web editions is fixed with a test, both editions are regenerated, and an independent reviewer confirms each diff removes only the junk; no PDF render input changes."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "tools/web-edition"]
+
+  [[deliverables.requirements]]
   id = "web-bindings-reapproved"
   criterion = "The release bindings of the regenerated editions are re-recorded only after a fresh operator approval, with ONLY scoped to them."
   status = "open"
