@@ -564,7 +564,10 @@ prose that it carries Augustine on Psalms 80–150.
 > `holdings` `commentary-work-index discover` attaches to every work it lists:
 > the library records that are that work, with their editions and artifacts,
 > and every container recorded to hold it, with the constituent's extent there
-> and whether the passage asked about is inside it.
+> and whether the passage asked about is inside it. A sweep runs `discover`
+> with `--max-results 0`, so that no lead is cut: the default cap keeps a list
+> readable, and a capped list says so (`truncated`, and a "showing N of M" line)
+> rather than passing for the passage's whole list.
 
 The containment edge lives in
 `src/sources/inventories/source-containment-v1.toml`, beside the records rather
@@ -630,8 +633,8 @@ the chapter sharing five elements with the Mass is lost.
 
 > **Rule 14.** A sweep of a formulary's reception runs
 > `commentary-work-index formulary --calendar C --mass M` for the liturgical
-> commentaries keyed to that Mass. It also runs `discover` for each passage
-> the Mass cites, and reads holdings through containers by Rule 13. No
+> commentaries keyed to that Mass. It also runs `discover`, uncapped, for each
+> passage the Mass cites, and reads holdings through containers by Rule 13. No
 > commentator's Sunday number, title search or work record stands in for the
 > first, and none stands in for the second.
 

@@ -95,15 +95,16 @@ EXAMPLES = {
             "tools/commentary-work-index discover --passage 'John 3:16' --max-results 3",
             (
                 "passage: John 3:16",
-                "   1. Albert the Great \u2014 Super Iohannem (1280)",
+                "  showing 3 of 17 leads; --max-results 0 lists every one",
+                "   1. Albert the Great — Super Iohannem (1280)",
                 "      role: doctor",
                 "      matched on the chapter, not the verses cited: John 3",
                 "      holdings: none registered",
-                "   2. Alcuin of York \u2014 Commentaria in S. Ioannis Evangelium (804)",
+                "   2. Alcuin of York — Commentaria in S. Ioannis Evangelium (804)",
                 "      role: saintly",
                 "      matched on the chapter, not the verses cited: John 3",
                 "      holdings: none registered",
-                "   3. Augustine of Hippo \u2014 In Iohannis evangelium tractatus CXXIV (430)",
+                "   3. Augustine of Hippo — In Iohannis evangelium tractatus CXXIV (430)",
                 "      role: church-father",
                 "      matched on the chapter, not the verses cited: John 3",
                 "      holdings: held",
@@ -115,7 +116,7 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index discover --passage 'Psalm 24:1-3' --numbering vulgate --max-results 2 --json",
             (
-                "{\"cited_numbering\":\"vulgate\",\"discoveries\":[{\"cited\":\"Psalm 24:1-3\",\"passage\":\"Psalms 24:1-24:3\"... [+22500 chars]",
+                "{\"cited_numbering\":\"vulgate\",\"discoveries\":[{\"cited\":\"Psalm 24:1-3\",\"passage\":\"Psalms 24:1-24:3\"... [+22535 chars]",
             ),
         ),
         Example(
@@ -162,16 +163,16 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index containment",
             (
-                "containment: 119 containers (91 records, 28 whole-volume artifacts), 298 constituents, 57 of them commentary-index leads",
-                "  resolved 22 · partial 80 · unresolved 17 · not containers 26 · identities 6",
+                "containment: 121 containers (91 records, 30 whole-volume artifacts), 319 constituents, 59 of them commentary-index leads",
+                "  resolved 24 · partial 80 · unresolved 17 · not containers 26 · identities 6",
             ),
             "validates the inventory; a container-shaped record with no entry, an unknown record or a malformed extent fails it",
         ),
         Example(
             "tools/commentary-work-index containment --container work.jacques-paul-migne.patrologia-latina-volume-37",
             (
-                "containment: 119 containers (91 records, 28 whole-volume artifacts), 298 constituents, 57 of them commentary-index leads",
-                "  resolved 22 · partial 80 · unresolved 17 · not containers 26 · identities 6",
+                "containment: 121 containers (91 records, 30 whole-volume artifacts), 319 constituents, 59 of them commentary-index leads",
+                "  resolved 24 · partial 80 · unresolved 17 · not containers 26 · identities 6",
                 "",
                 "  work.jacques-paul-migne.patrologia-latina-volume-37  [resolved]",
                 "    Augustine of Hippo -- Enarrationes in Psalmos (index lead): Psalms 80-150",
@@ -211,7 +212,7 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index standing",
             (
-                "author standing: 28 persons · father 9 · doctor 2 · blessed 1 · servant-of-god 1 · ecclesiastical-writer 14 · non-catholic 1",
+                "author standing: 30 persons · father 10 · doctor 2 · saint 2 · blessed 1 · servant-of-god 1 · ecclesiastical-writer 13 · non-catholic 1",
                 "  liturgical commentaries with a row: 11 of 11 · published lane authors with a row: 19 of 19",
             ),
             "validates the registry; coverage is reported, never failed",
@@ -219,7 +220,7 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index standing --person theodoret-of-cyrus",
             (
-                "author standing: 28 persons · father 9 · doctor 2 · blessed 1 · servant-of-god 1 · ecclesiastical-writer 14 · non-catholic 1",
+                "author standing: 30 persons · father 10 · doctor 2 · saint 2 · blessed 1 · servant-of-god 1 · ecclesiastical-writer 13 · non-catholic 1",
                 "  liturgical commentaries with a row: 11 of 11 · published lane authors with a row: 19 of 19",
                 "",
                 "  Theodoret of Cyrus (theodoret-of-cyrus), died about 457: ecclesiastical-writer",
@@ -237,10 +238,10 @@ EXAMPLES = {
             "tools/commentary-work-index discover --passage 'John 3:16' --max-results 2",
             (
                 "passage: John 3:16",
-                "   1. Albert the Great \u2014 Super Iohannem (1280)",
+                "  showing 2 of 17 leads; --max-results 0 lists every one",
+                "   1. Albert the Great — Super Iohannem (1280)",
                 "      role: doctor",
-                "      matched on the chapter, not the verses cited: John 3",
-                "... 6 more lines",
+                "... 7 more lines",
             ),
             "read-only first: `discover` is the per-passage lookup `build-corpus` aggregates",
         ),
@@ -852,9 +853,10 @@ def _lookup_works(
         if entry.get("matched") == "chapter":
             entry["matched_loci"].sort(key=position.__getitem__)
 
+    total = len(ordered)
     if max_results > 0:
         ordered = ordered[:max_results]
-    return passage_ref, ordered, refused
+    return passage_ref, ordered, refused, total
 
 
 def _category_for_kind(kind: object) -> str:
@@ -1063,7 +1065,7 @@ def _build_mass_coverage(
         )
         passage_to_masses[passage_ref].append(mass_id)
 
-        _, works, refused = _lookup_works(
+        _, works, refused, _total = _lookup_works(
             discovery, citations, item["passage"], max_per_passage
         )
         for row in refused:
@@ -1213,6 +1215,12 @@ def _render_payload(
                 print(f"  cited as: {item['cited']}")
             for row in item.get("refused_loci") or []:
                 print(f"  refused {row['locus']}: {row['reason']}")
+            if item.get("truncated"):
+                cut = item["truncated"]
+                print(
+                    f"  showing {cut['shown']} of {cut['total']} leads; "
+                    "--max-results 0 lists every one"
+                )
             works = item.get("works", [])
             if not works:
                 print("  - no mapped commentaries yet")
@@ -1668,7 +1676,7 @@ def run_discover(args: argparse.Namespace, citations) -> dict[str, object]:
             raise ValueError(f"invalid passage {named}: {error}") from error
 
         try:
-            ref, works, refused = _lookup_works(
+            ref, works, refused, total = _lookup_works(
                 discovery, citations, canonical, args.max_results
             )
         except Exception as error:
@@ -1693,6 +1701,12 @@ def run_discover(args: argparse.Namespace, citations) -> dict[str, object]:
         }
         if refused:
             entry["refused_loci"] = refused
+        # A capped list is not the passage's whole list. Saying so is what
+        # keeps a sweep from reading the cut as a negative (guidance/catena.md
+        # Rule 13): a lead below the cap is still a lead, and at Matthew 9 the
+        # default cap once hid the Glossa ordinaria without a word.
+        if len(listed) < total:
+            entry["truncated"] = {"shown": len(listed), "total": total}
         cited = _coerce_str(record.get("cited_ref") or record.get("ref"))
         if cited and cited != ref:
             entry["cited"] = cited

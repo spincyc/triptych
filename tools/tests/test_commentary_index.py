@@ -736,5 +736,53 @@ class GenesisAliasCoverageTests(unittest.TestCase):
                 self.assertIn("migne", group, "no Migne determination, not even 'none'")
 
 
+
+class TruncationTests(unittest.TestCase):
+    """A capped list says it was capped (guidance/catena.md Rule 13).
+
+    `discover` caps each passage at twenty leads by default. A sweep that read
+    a capped list as the passage's whole list reported the leads below the cap
+    as absent, and at Matthew 9 the cap hid the Glossa ordinaria without a word.
+    """
+
+    def setUp(self) -> None:
+        self.citations = work_index._load_citations_tool()
+        works = [
+            work_index._coerce_work_record(
+                {"author": f"Author {n}", "title": f"Work {n}", "confidence": 1 - n / 10}
+            )
+            for n in range(3)
+        ]
+        self.discovery = work_index.Discovery(CANONICAL, {"Joel 2": works}, {})
+
+    def test_a_capped_lookup_reports_the_whole_count(self) -> None:
+        _, shown, _, total = work_index._lookup_works(
+            self.discovery, self.citations, "Joel 2", 2
+        )
+        self.assertEqual((len(shown), total), (2, 3))
+
+    def test_an_uncapped_lookup_shows_every_lead(self) -> None:
+        _, shown, _, total = work_index._lookup_works(
+            self.discovery, self.citations, "Joel 2", 0
+        )
+        self.assertEqual((len(shown), total), (3, 3))
+
+    def test_discover_marks_a_capped_passage_and_not_an_uncapped_one(self) -> None:
+        import json
+        import subprocess
+
+        def run(*extra: str) -> dict:
+            result = subprocess.run(
+                [str(ROOT / "tools" / "commentary-work-index"), "discover",
+                 "--passage", "Matthew 9:1-8", "--json", *extra],
+                capture_output=True, text=True, check=True, cwd=ROOT,
+            )
+            return json.loads(result.stdout)["discoveries"][0]
+
+        capped = run("--max-results", "1")
+        self.assertEqual(capped["truncated"]["shown"], 1)
+        self.assertGreater(capped["truncated"]["total"], 1)
+        self.assertNotIn("truncated", run("--max-results", "0"))
+
 if __name__ == "__main__":
     unittest.main()
