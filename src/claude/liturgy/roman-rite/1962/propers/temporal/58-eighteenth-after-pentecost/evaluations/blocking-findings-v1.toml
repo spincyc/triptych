@@ -49,13 +49,13 @@ provider = "claude"
 run_id = "71b6f89518984232"
 workflow = "proper-study"
 workflow_version = 6
-stage = "homily-review"
-iteration = 1
+stage = "visual-review"
+iteration = 0
 disposition = "PASS"
 standing = 0
-accepted_count = 1
-advisory_count = 12
-observation_count = 2
+accepted_count = 3
+advisory_count = 15
+observation_count = 3
 
 [[stages]]
 stage = "homily-review"
@@ -105,6 +105,18 @@ accepted_count = 0
 advisory_count = 1
 observation_count = 0
 
+[[stages]]
+stage = "visual-review"
+iteration = 0
+disposition = "PASS"
+run_id = "71b6f89518984232"
+workflow = "proper-study"
+workflow_version = 6
+standing = 0
+accepted_count = 2
+advisory_count = 3
+observation_count = 1
+
 [[accepted]]
 stage = "homily-review"
 id = "HOM-011"
@@ -113,6 +125,24 @@ location = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-af
 problem = "The homily author reported this upstream gap in research/production-review.md ('Upstream observation reported for the homily's cold reviewer'), and I confirmed it. The study announces Aquinas's three disabilities and gives two of his three answers. The third, 'quia ire non poterat, dixit, Et ambula', stands in the controlling facsimile. I read it on the page image of the Venice 1745 PDF p. 140 (printed p. 122; SHA-256 adb333e0...85de8 matched). The homily now gives all three, so the homily and the study differ on this one point. Neither misquotes."
 required_result = "If the study is re-entered for any other reason, complete the triad in this sentence with the third answer. Record the locus in research/scope.md 3.5 and research/interpretations.md 3.4, beside the portabatur clause that RES-034 already names."
 accepted_because = "The two answers the study gives are exact, and the reading's claim does not rest on the third. The study has passed its own review. Adding the clause would re-enter an accepted upstream owner, which reruns the concise study, the homily and every dependent review, all for one missing clause. A reader of the study misses a completed triad but is told nothing false."
+
+[[accepted]]
+stage = "visual-review"
+id = "VIS-001"
+severity = "accepted"
+location = "58-eighteenth-after-pentecost.pdf, physical page 29 (end of 'The Three Readings Compared'; sections/50-comparison.tex before the \\clearpage in main.tex)"
+problem = "Page 29 is a sparse closing page: about eight lines (three short paragraphs, ~150 words, ~18% of the text block) end the comparison, and the rest of the page is blank because main.tex forces the Scriptural Date and Location appendix onto page 30."
+required_result = "If the study is reopened for another reason, end the comparison without a near-empty closing page, either by letting its last paragraphs set on page 28 or by starting the appendix on the same page, without enlarging type or padding."
+accepted_because = "The page is the natural end of the study's body before a terminal appendix that properly opens on a fresh page. It is readable and misleads no one. Repair would mean either cutting settled, reviewed prose or dropping the forced break, which re-flows the two-page dossier around its own deliberate \\newpage. Either way the pagination moves and dependent reviews rerun, for a gain of one mostly empty page in 34."
+
+[[accepted]]
+stage = "visual-review"
+id = "VIS-002"
+severity = "accepted"
+location = "58-eighteenth-after-pentecost.pdf, physical pages 27-28, comparison table in 'The Three Readings Compared' (sections/50-comparison.tex)"
+problem = "The seven-row comparison table breaks after six rows, so its last row, 'Where it is weakest', stands alone on page 28 under the repeated header."
+required_result = "If the study is reopened, set the comparison table so that it does not carry a single row onto the following page, without leaving a larger gap on page 27."
+accepted_because = "The header repeats correctly, so the carried row reads unambiguously. Keeping the table whole would push all seven rows to page 28 and leave half of page 27 empty, trading one layout flaw for a worse one."
 
 [[advisories]]
 stage = "homily-review"
@@ -210,6 +240,30 @@ location = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-af
 problem = "The first sentence of the Themes says the Mass has a 'single prayer', but the same paragraph closes on 'a prayer to be made worthy of what has been received' (the Postcommunion). The page-1 map also lists the Secret and Postcommunion as prayers, and page 4 says the Mass 'ends its prayers with thanks'. The study's rubrical sense is exact: 'The Mass has one Collect' and 'a single oration of each kind' (sections/00-opening.tex). 'Only oration' is also the study's own usage (sections/05-appointed-texts.tex, 50-comparison.tex), and the page-1 note 'one oration of each kind' explains it. But 'single prayer' in plain English says something false, and an adult lay reader meets it in the thesis sentence. No argument rests on it, and the Collect is plainly the prayer meant."
 required_result = "Name the Collect in the thesis, for example 'and confesses in its Collect that without God we cannot please God' or 'in its one Collect'. For the same reason, line 38 could read 'It is the Mass's only collect'. Leave the rest of the paragraph unchanged."
 
+[[advisories]]
+stage = "visual-review"
+id = "VIS-003"
+severity = "advisory"
+location = "58-eighteenth-after-pentecost.pdf, physical page 30, introductory sentence above the dossier table (sections/80-date-location.tex, lines 3-6)"
+problem = "The second line of the introductory sentence ('and critical horizon.') sets about 1.7 pt above the dossier's top rule, so the rule reads as an underline. Only the lack of descenders in that line prevents an actual collision."
+required_result = "Separate the introductory sentence from the table's top rule by ordinary vertical space in the leaf component, so that no line of the note can touch or appear to underline the rule. Do not change shared table dimensions."
+
+[[advisories]]
+stage = "visual-review"
+id = "VIS-004"
+severity = "advisory"
+location = "58-eighteenth-after-pentecost.pdf, physical page 27 and repeated header on page 28, comparison table header (sections/50-comparison.tex line 30; comparisontable in src/common/propers-format.tex)"
+problem = "The bold header 'Power on earth to forgive' fills its whole column, leaving only about 7 pt before 'Thanks at both ends'. At a glance the two headers read as one run-on phrase."
+required_result = "Make the column headers visibly distinct, for example with a shorter lane label in the header or a wider inter-column gutter in the shared table style, so that no header abuts its neighbour."
+
+[[advisories]]
+stage = "visual-review"
+id = "VIS-005"
+severity = "advisory"
+location = "58-eighteenth-after-pentecost-homily.pdf, physical pages 1-2, movement breaks in the two-column speech (sections/homily/10-homily.tex \\bigskip breaks; properhomily in src/common/propers-homily.tex)"
+problem = "The five \\bigskip breaks between the speech's movements render at unequal heights. The first, in the left column of page 1, stretches to about 42 pt; the others measure about 22-27 pt. multicols balances its flush columns by stretching that glue, so the first division looks like a larger section break than the rest."
+required_result = "Give the homily's movement breaks a uniform visible height, for example with ragged columns in the homily environment or fixed, non-stretching break spacing, so that all movements are divided alike."
+
 [[observations]]
 stage = "research-review"
 location = "src/sources/commentary/passage-commentary-index.yaml, the only Peter Chrysologus row (passage 'Luke 22', lines 30819-30824)"
@@ -219,6 +273,11 @@ note = "Still true, and carried from research-review 6. The index lists Chrysolo
 stage = "research-review"
 location = "src/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost/research/scope.md, header paragraphs (lines 13-86), 'Re-entered a fifth time on 2026-09-22'"
 note = "The header still undercounts the re-entries. Research iteration 7 revised only research/interpretations.md, for STU-020. Neither the scope header nor research/production-review.md mentions it yet; the record's own 'an earlier version ... is withdrawn' notes are its only trace."
+
+[[observations]]
+stage = "visual-review"
+location = "src/common/propers-format.tex, dossiertable and concisedossiertable, against guidance/liturgy/roman-1962-propers.md, 'Page 2: Scriptural date and location'"
+note = "The shared dossier tables use columns of .12/.15/.29/.44 linewidth, and the concise one sets 8.2 pt type. The 1962 profile specifies 0.14/0.18/0.35/0.16 and \\footnotesize. In this document both sheets remain legible and complete, but the profile text and the shared style disagree on the measurements."
 
 [[escalations]]
 stage = "study-review"
