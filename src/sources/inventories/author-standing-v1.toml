@@ -482,3 +482,42 @@ basis_sources = [
   "work.john-henry-blunt.the-annotated-book-of-common-prayer",
 ]
 confession = "Church of England"
+
+# ---------------------------------------------------------------------------
+# Commentary-index authors registered 2026-09-23
+#
+# Their sources were fetched whole with curl on 2026-09-23 and read locally,
+# a day after the rows above; New Advent's own letter index located the
+# Chrysologus article, and the Paschasius article, which that index does not
+# list, was reached by its volume and page number (11518a) and confirmed by its
+# title and its citation line.
+# ---------------------------------------------------------------------------
+
+[[persons]]
+id = "peter-chrysologus"
+namespaces = ["peter-chrysologus"]
+name = "Peter Chrysologus"
+names = ["Peter Chrysologus", "Chrysologus", "Petrus Chrysologus", "St Peter Chrysologus"]
+died = "450"
+standing = "father"
+standing_basis = "Bishop of Ravenna from 433, 'Born at Imola, 406; died there, 450' (Catholic Encyclopedia, 'St. Peter Chrysologus', vol. 11, 1911); among the Fathers whose preaching the Catholic Encyclopedia's 'Fathers of the Church' characterizes ('the short sermons of Peter Chrysologus ... The eloquence of these Fathers'); declared a Doctor of the Church by Benedict XIII in 1729 ('St. Peter Chrysologus by Benedict XIII (1729)', Catholic Encyclopedia, 'Doctors of the Church'). A Father before a Doctor, by this file's precedence."
+basis_sources = [
+  "https://www.newadvent.org/cathen/11762c.htm",
+  "https://www.newadvent.org/cathen/06001a.htm",
+  "https://www.newadvent.org/cathen/05075a.htm",
+]
+confession = "Catholic"
+notes = "The Catholic Encyclopedia's article adds that some of the 176 homilies Felix of Ravenna collected are interpolations and that other homilies of his circulate in other collections under other names; the ascription of Sermo 50 is recorded on passage.peter-chrysologus.sermones.1894-garnier-migne-pl-52.sermo-50 and not settled here."
+
+[[persons]]
+id = "paschasius-radbertus"
+name = "Paschasius Radbertus"
+names = ["Paschasius Radbertus", "St Paschasius Radbertus", "Radbertus"]
+died = "c. 860, by the cited article, which calls the date 865 improbable"
+standing = "saint"
+standing_basis = "Abbot of Corbie, 'b. at Soissons, 786; d. in the Monastery of Corbie, c. 860'; after miracles at his grave 'his remains were solemnly removed by order of the pope, 12 July, 1073', and 'His feast is on 26 April' (Catholic Encyclopedia, 'St. Paschasius Radbertus', vol. 11, 1911). Canonized by the ancient form of a papal translation of relics; not a Father by the Catholic Encyclopedia's limits of the patristic age, and not a Doctor."
+basis_sources = [
+  "https://www.newadvent.org/cathen/11518a.htm",
+]
+confession = "Catholic"
+notes = "The commentary index's `role` is a model's lead data and tags him `saintly` on the Matthew rows promoted 2026-09-23, because promotion takes the role of the earliest run's attribution; 78 of the ledger's 87 attributions to him say `saint`. This row is his standing."
