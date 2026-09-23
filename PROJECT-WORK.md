@@ -80,6 +80,28 @@ reception of the compilation, and records that no Father reads Mt 9:8 so.
   leaf's contribution declarations must say so (requirement
   `claude-model-provenance`).
 
+**Release rebind approved, not yet applied.** On 2026-09-23 the driver asked
+for the release-rebind approval. It covers the bindings left stale by this
+production's source projections, the commentator and containment tooling, and
+the opt-in authority contract. The maintainer answered, verbatim, "approved".
+It is applied at `publication-gates`, after `install-publication` has written
+the release record, installed PDFs and web edition, so that the authorization
+signs final bytes. The steps are `make refresh-release-bindings`, filtered with
+`ONLY` if anything unrelated is uncommitted, then `make approve-release` with a
+note quoting that answer.
+
+All three documents are accepted:
+
+- the expansive study at study-review iteration 3;
+- the concise study at synthesis-review iteration 1;
+- the homily at homily-review iteration 1.
+
+Homily-review accepted HOM-011: the study names Aquinas's three troubles and
+gives two answers, and fixing that would reopen three accepted documents.
+HOM-010 is advisory: the homily reaches the Paschal mystery and the Eucharist
+only inside quotations. It is a candidate for the leaf's first revision if the
+maintainer wants it.
+
 **Escalated to the maintainer (study-review iteration 1, STU-005).** The 1962
 profile's page-2 rule gives the traditional date wherever the chronology
 supplies one. `tools/check-content-preflight` (`chronology-claims-supported`)
