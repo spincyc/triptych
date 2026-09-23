@@ -9,26 +9,36 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "converter-renders-title-fields"
   criterion = "tools/web-edition (or its pandoc shim) renders every non-empty field of the proper title macro, without changing src/common/propers-format.tex or any other PDF render input, and a test covers a title with all four fields."
-  status = "open"
-  evidence = ["PROJECT-WORK.md", "tools/web-edition"]
+  status = "pass"
+  evidence = ["scripts/web-shim.tex", "tools/web-edition", "tools/tests/test_web_edition_conversion.py"]
+  check = "contains"
+  path = "scripts/web-shim.tex"
+  needle = "propertitle"
 
   [[deliverables.requirements]]
   id = "title-audit"
   criterion = "An audit in the web-edition checks fails when a title line the source declares is absent from the generated edition, with a test for the refusal."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["tools/web-edition", "tools/tests/test_web_edition_conversion.py"]
+  check = "contains"
+  path = "tools/web-edition"
+  needle = "title_shortfalls"
 
   [[deliverables.requirements]]
   id = "installed-editions-regenerated-and-reviewed"
   criterion = "Every installed proper web edition the defect affected is regenerated, its receipt refreshed, and an independent reviewer confirms each diff is only the restored title lines; check-web-editions-current passes and no installed PDF changed."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["web/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.md", "web/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md", "web/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.md", "PROJECT-WORK.md"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "dossier-notes-full-width"
   criterion = "Maintainer decision of 2026-09-23: a proper dossier's spanned note rows render as full-width blocks beneath their row on the web rather than squeezed into the first column; guidance/web-editions.md states the handling; a commented-out note never reaches the output and a header-only table is refused (review findings WEB-R-001 and WEB-R-002); every affected installed edition is regenerated and independently reviewed."
-  status = "open"
-  evidence = ["guidance/web-editions.md", "tools/web-edition", "PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["guidance/web-editions.md", "tools/web-edition", "tools/tests/test_web_edition_conversion.py"]
+  check = "contains"
+  path = "tools/web-edition"
+  needle = "lift_dossier_notes"
 
   [[deliverables.requirements]]
   id = "dossier-mobile-no-clip"

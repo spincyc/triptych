@@ -28,10 +28,18 @@ rows as full-width blocks beneath their row, and to stop the site stylesheet
 clipping a dossier's Date column at phone width. The first is in the converter;
 the second is a stylesheet change.
 
-**In progress.** The converter change is merged (`0df032e15`) and its five
-regenerated editions passed an independent review. The review's blocking
-converter finding, that a commented-out note would be published, is being
-fixed. The stylesheet change is being made.
+**Converter done.** Commits `0df032e15`, `9ff2a7dd1` and `b0ecfe540` restore
+the title lines, lift dossier notes beneath their rows, and add a title audit
+and a header-only-table audit. Five installed editions were regenerated:
+Claude 57, 58 and PC-S51 and GPT 57 and PC-S51. An independent reviewer
+confirmed each diff is only the intended change, and that all 123 tracked
+editions regenerate byte-for-byte. The review found and closed two further
+defects: commented-out notes would have been published (WEB-R-001), and
+`\Needspace*` leaked its length (WEB-R-004, which predates this work). No PDF
+render input changed.
+
+**Open.** The stylesheet change for phone width is in progress. The release
+bindings of the five editions await a fresh operator approval.
 
 ## Locus-pattern rebinding sweep, 2026-09-23
 
