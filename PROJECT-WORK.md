@@ -260,7 +260,7 @@ Rebinding is an operator approval and has not been done.
 - D9, D10: `src/sources/inventories/google-usage-guidelines-rights-v1.toml`
   settles the Google front-matter question toward retention. A scan is never
   refused only for Google's page, which is kept, labelled and never quoted as
-  the book. The maintainer has not yet confirmed that direction. The same
+  the book. The maintainer confirmed that direction (retain) on 2026-09-23. The same
   record documents the duplicated volume XI text layer.
 - D7: ten published leaves (Claude 49, 51, 53–57; GPT 49, 50, 53) stand as
   `[[revision_due]]` obligations in the research-staleness ledger. The

@@ -183,8 +183,9 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "google-pages-rights-record"
   criterion = "One rights record under src/sources/inventories/ settles the status of Google usage-guidelines pages in retained scans (decision D9)."
-  status = "open"
+  status = "pass"
   evidence = ["src/sources/inventories/google-usage-guidelines-rights-v1.toml", "PROJECT-WORK.md"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "duplicate-text-layer-documented"
