@@ -38,8 +38,20 @@ defects: commented-out notes would have been published (WEB-R-001), and
 `\Needspace*` leaked its length (WEB-R-004, which predates this work). No PDF
 render input changed.
 
-**Open.** The stylesheet change for phone width is in progress. The release
-bindings of the five editions await a fresh operator approval.
+**Stylesheet done.** In `bcf729430` a CSS-only rule, keyed on the dossier's
+section heading and guarded by a test, sets the dossier as a two-line grid
+per row at 760 px and below. At 320, 390 and 1280 px no dossier table of the
+site's 64 clips (64 of 64 did at phone width), and none of the other 661
+tables changed in any measure. It also removes a 16 px desktop clip on the
+Claude PC-S43 edition.
+
+Two things are out of scope. Most other reading tables still clip at phone
+width, 454 of 603 at 390 px, which is the roadmap's open Reader table-cell
+reflow obligation. The PC-S42 and PC-S43 dossiers show a pre-existing
+converter span leak.
+
+**Open.** The release bindings of the five editions and `site.css` await a
+fresh operator approval.
 
 ## Locus-pattern rebinding sweep, 2026-09-23
 

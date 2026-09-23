@@ -43,8 +43,11 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "dossier-mobile-no-clip"
   criterion = "Maintainer decision of 2026-09-23: at phone width (390 px) no column of a proper dossier table is clipped behind horizontal scrolling on the site; the stylesheet change is scoped so other reading tables do not regress, and is verified by rendering at 390 px and 1280 px."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["release/public-alpha/assets/site.css", "tools/tests/test_public_alpha.py", "guidance/web-editions.md"]
+  check = "contains"
+  path = "release/public-alpha/assets/site.css"
+  needle = "scriptural-date-and-location"
 
   [[deliverables.requirements]]
   id = "web-bindings-reapproved"
