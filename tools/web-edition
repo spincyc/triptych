@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter
+import html
 from html.parser import HTMLParser
 import re
 import subprocess
@@ -1276,13 +1277,18 @@ PRE_CONVERSION_BREAKS_RE = re.compile(
 # space. Bare, TeX gobbles what follows, and the Catalan geminate in
 # `Miscel\textperiodcentered lania` means no space at all. Both forms are in the
 # corpus and they differ by exactly that.
+# TeX skips the spaces after a control word and one line end with them, never a
+# blank line: that is a paragraph break, and it must survive the substitution.
+CONTROL_WORD_SPACE = r"[ \t]*(?:\n(?![ \t]*\n)[ \t]*)?"
 PERIOD_CENTERED_RE = re.compile(
-    r"\\textperiodcentered(?![A-Za-z])(?:\s*\{\}|\s*)"
+    r"\\textperiodcentered(?![A-Za-z])" + CONTROL_WORD_SPACE + r"(?:\{\})?"
 )
 # Pandoc drops \textemdash and \textendash outright, and the number after either
 # with them: "1884\textendash 94" published as "1884". They are set as the
 # characters themselves, with the same reading of a following space as above.
-TEXT_DASH_RE = re.compile(r"\\text(em|en)dash(?![A-Za-z])(?:\s*\{\}|\s*)")
+TEXT_DASH_RE = re.compile(
+    r"\\text(em|en)dash(?![A-Za-z])" + CONTROL_WORD_SPACE + r"(?:\{\})?"
+)
 
 
 def set_text_dashes(text: str) -> str:
@@ -1641,6 +1647,14 @@ def cell_opening(cell: str, macros: dict[str, Macro] | None = None) -> tuple[str
         word = re.match(r"\\([A-Za-z@]+)\*?", text)
         if word:
             name, after = word.group(1), text[word.end():]
+            # The leaf's and the shim's own definitions come first: they are what
+            # pandoc expands, whatever a built-in of the same name would do.
+            if name in macros:
+                call = macro_call(text, word.end(), macros[name])
+                if call is None:
+                    return None, False, "unreadable macro"
+                text = call[0] + text[call[1]:]
+                continue
             if after.startswith("{}"):
                 text = after[2:]
                 continue
@@ -1664,12 +1678,6 @@ def cell_opening(cell: str, macros: dict[str, Macro] | None = None) -> tuple[str
                     return None, False, "unreadable command"
                 text = text[cursor:]
                 continue
-            if name in macros:
-                call = macro_call(text, word.end(), macros[name])
-                if call is None:
-                    return None, False, "unreadable macro"
-                text = call[0] + text[call[1]:]
-                continue
             if name in OPENING_LETTER_COMMANDS:
                 return None, False, "letter command"
             if name.startswith("if") or name in ("csname", "expandafter", "else", "fi"):
@@ -1688,7 +1696,7 @@ def cell_opening(cell: str, macros: dict[str, Macro] | None = None) -> tuple[str
         break
     if text.startswith("$"):
         return None, False, "math or nested table"
-    run, index, whole = [], 0, False
+    run, index, whole, expansions = [], 0, False, 0
     while True:
         if index >= len(text):
             whole = True
@@ -1696,6 +1704,13 @@ def cell_opening(cell: str, macros: dict[str, Macro] | None = None) -> tuple[str
         character = text[index]
         if character == "\\":
             word = re.match(r"\\([A-Za-z@]+)\*?", text[index:])
+            if word and word.group(1) in macros and expansions < 64:
+                call = macro_call(text, index + word.end(), macros[word.group(1)])
+                if call is None:
+                    break
+                text = text[:index] + call[0] + text[call[1]:]
+                expansions += 1
+                continue
             if word and word.group(1) in OPENING_TEXT_COMMANDS:
                 after = index + word.end()
                 if text[after:].lstrip().startswith("{"):
@@ -1728,7 +1743,13 @@ def table_source_openings(
     environments = table_environments(strip_tex_comments(definitions) + "\n" + strip_tex_comments(body))
     names = "|".join(re.escape(name) for name in environments)
     begin_re = re.compile(r"\\begin\s*\{(" + names + r")\}")
-    builders = {name: macro for name, macro in macros.items() if begin_re.search(macro[2])}
+    # A command that opens or closes a table is expanded where it is used, so a
+    # table opened by one command and closed by another ends at its closer.
+    end_re = re.compile(r"\\end\s*\{(" + names + r")\}")
+    builders = {name: macro for name, macro in macros.items()
+                if begin_re.search(macro[2]) or end_re.search(macro[2])}
+    # The converter drops the title page, and so does the audit.
+    text = TITLEPAGE_RE.sub("", text)
     rows_macros = {name: macro for name, macro in macros.items()
                    if "&" in macro[2] or "\\\\" in macro[2]}
     text = expand_macros(text, builders)
@@ -1786,7 +1807,7 @@ FOOTNOTE_REFERENCE_RE = re.compile(
 
 def reduced(text: str) -> str:
     text = FOOTNOTE_REFERENCE_RE.sub("", text)
-    text = MARKDOWN_TAG_RE.sub("", MARKDOWN_TARGET_RE.sub("]", text))
+    text = html.unescape(MARKDOWN_TAG_RE.sub("", MARKDOWN_TARGET_RE.sub("]", text)))
     return "".join(ch for ch in text.casefold() if ch.isalnum())
 
 

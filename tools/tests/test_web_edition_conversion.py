@@ -1259,6 +1259,37 @@ class WebEditionConversionTests(unittest.TestCase):
         self.assertIn("From 1884\N{EN DASH}94; in 1903\N{EM DASH}1904 too; x\N{EM DASH} y.", markdown)
         self.assertRegex(markdown, "(?m)^\\| \N{EN DASH}5 +\\| A +\\|$")
 
+    def test_substituted_symbol_keeps_a_following_paragraph_break(self) -> None:
+        # The substitutions read the space after the command as TeX does: spaces
+        # and one line end, never a blank line.
+        for command, character in ((r"\textemdash", "\N{EM DASH}"), (r"\textendash", "\N{EN DASH}"),
+                                   (r"\textperiodcentered", "\N{MIDDLE DOT}")):
+            with self.subTest(command=command):
+                markdown = self.convert(
+                    "The first paragraph ends" + command + "\n\nSecond paragraph.\n\n"
+                    "Joined" + command + "\n  across one line end."
+                )
+                self.assertIn("The first paragraph ends" + character + "\n\nSecond paragraph.", markdown)
+                self.assertIn("Joined" + character + "across one line end.", markdown)
+
+    def test_audit_accepts_leaf_macros_entities_command_tables_and_title_pages(self) -> None:
+        # Each of these once made the row-opening audit refuse a correct edition.
+        preamble = (
+            "\\newcommand{\\yr}{1903}\n"
+            "\\renewcommand{\\latin}[1]{1903 #1}\n"
+            "\\newcommand{\\tstart}{\\begin{longtable}{ll}}\n"
+            "\\newcommand{\\tstop}{\\end{longtable}}"
+        )
+        markdown = self.convert(
+            "\\begin{titlepage}\\begin{tabular}{l}A title page 1962\\\\\\end{tabular}\\end{titlepage}\n"
+            "\\begin{longtable}{ll}\n\\yr{} founded & x\\\\\n\\latin{Roma} & y\\\\\n"
+            "Peter \\& Paul & \\begin{tabular}{l}a\\\\ b\\end{tabular}\\\\\n\\end{longtable}\n\n"
+            "\\tstart\n1851 & A letter\\\\\n\\tstop\n\nProse after the table.\\\\\nA second line, 1852.",
+            preamble=preamble,
+        )
+        self.assertRegex(markdown, r"1903 founded")
+        self.assertIn("A second line, 1852.", markdown)
+
     def test_a_number_lost_by_an_unguarded_trigger_stops_the_conversion(self) -> None:
         # With the triggers left in place, the row-opening audit refuses.
         with mock.patch.object(DRIVER, "terminate_swallowers", side_effect=lambda text: text):
@@ -1736,6 +1767,36 @@ class WebEditionAuditTests(unittest.TestCase):
             "| Outer | <table><tr><td>1</td></tr><tr><td>2</td></tr></table> |\n"
         )
         self.assertEqual(DRIVER.lost_cell_openings(body, markdown, definitions), [])
+
+    def test_leaf_macros_are_read_before_built_ins_and_layout(self) -> None:
+        definitions = "\\newcommand{\\yr}{1903}\n\\renewcommand{\\latin}[1]{1903 #1}"
+        body = "\\begin{longtable}{ll}\n\\yr{} founded & \\latin{Roma}\\\\\n\\end{longtable}"
+        cells, _, _ = DRIVER.table_source_openings(body, definitions)
+        self.assertEqual(sorted(cells), [("1903founded", True), ("1903roma", True)])
+        # A lost "1903" is now seen, where it once read as plain "founded".
+        self.assertEqual(
+            DRIVER.lost_cell_openings(body, "| founded | Roma |\n|:-|:-|\n", definitions),
+            ["'1903founded' (expected 1, found 0)", "'1903roma' (expected 1, found 0)"],
+        )
+
+    def test_html_cell_entities_are_decoded(self) -> None:
+        body = "\\begin{longtable}{ll}\nPeter \\& Paul & x\\\\\n\\end{longtable}"
+        markdown = "<table>\n<tbody>\n<tr>\n<td>Peter &amp; Paul</td>\n<td>x</td>\n</tr>\n</tbody>\n</table>\n"
+        self.assertEqual(DRIVER.lost_cell_openings(body, markdown, ""), [])
+
+    def test_table_closed_by_a_command_ends_there(self) -> None:
+        definitions = ("\\newcommand{\\tstart}{\\begin{longtable}{ll}}\n"
+                       "\\newcommand{\\tstop}{\\end{longtable}}")
+        body = ("\\tstart\n1851 & A letter\\\\\n\\tstop\n\n"
+                "Prose after the table.\\\\\nA second line, 1852.\n")
+        cells, _, _ = DRIVER.table_source_openings(body, definitions)
+        self.assertEqual(sorted(cells), [("1851", True), ("aletter", True)])
+
+    def test_title_page_tables_are_not_audited(self) -> None:
+        body = ("\\begin{titlepage}\\begin{tabular}{l}A title page\\\\\\end{tabular}\\end{titlepage}\n"
+                "\\begin{tabular}{l}1903\\\\\\end{tabular}")
+        cells, _, _ = DRIVER.table_source_openings(body, "")
+        self.assertEqual(sorted(cells), [("1903", True)])
 
     def test_repeated_header_is_reported_but_not_a_matching_data_row(self) -> None:
         header = "| **Date** | **Event** |\n|:-|:-|\n"

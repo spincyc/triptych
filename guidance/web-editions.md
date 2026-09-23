@@ -106,7 +106,8 @@ rewrites any of it, refuses an edition in which any source table cell's
 opening is missing from the output's cells, so neither a variant nobody has
 met yet nor the converter's own rewriting can lose one silently; pandoc
 drops `\textemdash` and `\textendash` with the number after them, so they
-are set as the characters; a longtable declaring `\endfirsthead` and
+are set as the characters, the space after them read as TeX reads it and
+never across a blank line, which once joined two paragraphs; a longtable declaring `\endfirsthead` and
 `\endhead` published its header twice, the continuation head as the first
 body row, so only the first head is kept, each longtable read alone and in
 either order of its heads, and the audit refuses a first body row that
