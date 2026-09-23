@@ -81,6 +81,12 @@ Eighteenth Sunday run. Recorded so a later session does not re-derive them.
   his writings against Cyril. Neither may be one of an interpretation's two
   authors; both remain usable as supporting witnesses. Every published lane
   already has two Fathers or saints without them.
+- **Rabanus Maurus is a saint.** The current Martyrologium Romanum (2004, p.
+  133) gives his feast on 4 February and calls him *sanctus*. The maintainer
+  supplied this on 2026-09-23 through the English Wikipedia's report of that
+  entry, after the 1902 and 1914 recensions, which omit him, had been read.
+  He may be one of an interpretation's two authors and may anchor a Blessed
+  under D1.
 - **Theophylact of Ohrid is an ecclesiastical writer, not a writer outside
   Catholic communion under D3.** His Western reception is long (the *Catena
   aurea* names him over a thousand times on Mark, Luke and John, though never
