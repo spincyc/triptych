@@ -7,6 +7,23 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-09-22.
 
+## Per-passage dossier dates, 2026-09-23
+
+<!-- promised-deliverable: chronology-per-passage-dates-2026-09-23 -->
+
+Study-review iteration 1 of the Eighteenth Sunday run escalated STU-005. The
+1962 profile dates every appointed passage on page 2, but
+`chronology-claims-supported` admits no date for an element whose passages
+carry different dates, so the Introit's Ecclesiasticus text went undated. The
+maintainer decided on 2026-09-23 that such a row may state each passage's own
+date, labelled by its locus and drawn only from the generated record.
+
+**Planned.** The work covers the checker, `guidance/scripture-chronology.md`
+§14.1 and the 1962 profile's page-2 rule. It waits until the Eighteenth Sunday
+run publishes, because that run's gates use the checker and its reviews seal
+the chronology inputs. The leaf then dates its Introit at its first revision,
+which is recorded as a revision obligation in the research-staleness ledger.
+
 ## Claude 1962 Eighteenth Sunday three documents, 2026-09-22
 
 <!-- promised-deliverable: claude-1962-eighteenth-three-documents-2026-09-22 -->
